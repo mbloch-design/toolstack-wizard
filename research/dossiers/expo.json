@@ -3,7 +3,7 @@
   "slug": "expo",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Expo",
     "vendor": "650 Industries, Inc. (Expo)",
@@ -52,7 +52,7 @@
         "keyLimits": [
           {
             "en": "15 Android + 15 iOS builds/month, low-priority queue, updates to 1K MAUs, 25 projects, 20 GiB storage, 100 GiB bandwidth.",
-            "fr": null
+            "fr": "15 builds Android + 15 builds iOS par mois, file à priorité basse, mises à jour jusqu'à 1 000 MAU, 25 projets, 20 Gio de stockage, 100 Gio de bande passante."
           }
         ],
         "sourceIds": [
@@ -73,7 +73,7 @@
         "keyLimits": [
           {
             "en": "$45 of build credit included, high-priority queue, updates to 3K MAUs, 50 projects, 20 GiB storage, 100 GiB bandwidth.",
-            "fr": null
+            "fr": "45 $ de crédit de build inclus, file à priorité haute, mises à jour jusqu'à 3 000 MAU, 50 projets, 20 Gio de stockage, 100 Gio de bande passante."
           }
         ],
         "sourceIds": [
@@ -94,7 +94,7 @@
         "keyLimits": [
           {
             "en": "$225 of build credit, 2 concurrent builds, 2h build timeout, updates to 50K MAUs, 100 projects, 1 TiB storage, 1 TiB bandwidth, priority support, SSO.",
-            "fr": null
+            "fr": "225 $ de crédit de build, 2 builds simultanés, délai de build de 2 heures, mises à jour jusqu'à 50 000 MAU, 100 projets, 1 Tio de stockage, 1 Tio de bande passante, support prioritaire, SSO."
           }
         ],
         "sourceIds": [
@@ -115,7 +115,7 @@
         "keyLimits": [
           {
             "en": "$1,000 build credit, 5 concurrent builds, updates to 1M+ MAUs, 300 projects, 10 TiB storage, 40 TiB bandwidth, SLAs and strategic support.",
-            "fr": null
+            "fr": "1 000 $ de crédit de build, 5 builds simultanés, mises à jour jusqu'à plus d'1 million de MAU, 300 projets, 10 Tio de stockage, 40 Tio de bande passante, SLA et support stratégique."
           }
         ],
         "sourceIds": [
@@ -127,14 +127,14 @@
     "addOns": [
       {
         "en": "Extra Android build: $1 (medium) or $2 (large) per build beyond included credit.",
-        "fr": null,
+        "fr": "Build Android supplémentaire : 1 $ (medium) ou 2 $ (large) par build au-delà du crédit inclus.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Extra iOS build: $2 (medium) or $4 (large) per build beyond included credit.",
-        "fr": null,
+        "fr": "Build iOS supplémentaire : 2 $ (medium) ou 4 $ (large) par build au-delà du crédit inclus.",
         "sourceIds": [
           "s1"
         ]
@@ -143,7 +143,7 @@
     "cautions": [
       {
         "en": "Build costs are usage-based beyond the plan's included credit; heavy CI usage can exceed the flat monthly fee quickly.",
-        "fr": null,
+        "fr": "Le coût des builds dépend de l'usage au-delà du crédit inclus dans le forfait ; une utilisation CI intensive peut vite dépasser le prix mensuel fixe.",
         "sourceIds": [
           "s1"
         ]
@@ -154,28 +154,28 @@
     "capabilities": [
       {
         "en": "EAS Build, Submit and Update services for React Native app CI/CD.",
-        "fr": null,
+        "fr": "Services EAS Build, Submit et Update pour l'intégration et le déploiement continus d'applications React Native.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Over-the-air (OTA) update delivery without app store review.",
-        "fr": null,
+        "fr": "Diffusion de mises à jour over-the-air (OTA) sans passage par la validation des stores.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "CI/CD Workflows automation and end-to-end code signing (Production plan and above).",
-        "fr": null,
+        "fr": "Automatisation des workflows CI/CD et signature de code de bout en bout (à partir du plan Production).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Website hosting via Expo Router.",
-        "fr": null,
+        "fr": "Hébergement de sites web via Expo Router.",
         "sourceIds": [
           "s1"
         ]
@@ -184,14 +184,14 @@
     "limitations": [
       {
         "en": "Free plan build queue is low-priority, which can slow down CI turnaround.",
-        "fr": null,
+        "fr": "La file de build du plan gratuit est à priorité basse, ce qui peut ralentir les délais de CI.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Builds beyond the plan's included credit are billed per build, so costs scale with usage.",
-        "fr": null,
+        "fr": "Les builds au-delà du crédit inclus dans le forfait sont facturées à l'unité, donc le coût augmente avec l'usage.",
         "sourceIds": [
           "s1"
         ]
@@ -206,31 +206,24 @@
   },
   "alternatives": [
     {
-      "slug": "eas-build",
-      "reason": {
-        "en": "EAS Build is Expo's own build service, often referenced separately as a competing/complementary product for React Native CI.",
-        "fr": null
-      }
-    },
-    {
       "slug": "codemagic",
       "reason": {
         "en": "Mobile CI/CD platform competing directly with Expo's build and deploy services.",
-        "fr": null
+        "fr": "Plateforme de CI/CD mobile en concurrence directe avec les services de build et de déploiement d'Expo."
       }
     },
     {
       "slug": "firebase",
       "reason": {
         "en": "Common alternative/complement for mobile app backend and distribution.",
-        "fr": null
+        "fr": "Alternative ou complément courant pour le backend et la distribution d'applications mobiles."
       }
     },
     {
       "slug": "vercel",
       "reason": {
         "en": "Comparable developer platform philosophy (build, deploy, preview) applied to web instead of mobile.",
-        "fr": null
+        "fr": "Philosophie de plateforme développeur comparable (build, déploiement, preview), appliquée au web plutôt qu'au mobile."
       }
     }
   ],
@@ -238,5 +231,125 @@
   "unknowns": [
     "Exact overage pricing for storage/bandwidth beyond plan quotas not detailed on the pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The Free plan covers 15 Android and 15 iOS builds a month with 25 projects at no cost, and the $19/month Starter plan already includes $45 of build credit.",
+        "fr": "Le plan Free couvre 15 builds Android et 15 builds iOS par mois avec 25 projets sans frais, et le plan Starter à 19 $/mois inclut déjà 45 $ de crédit de build.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: the dossier documents plan limits and build credits, but no first-use or setup-time evidence from the collected sources.",
+        "fr": "Note neutre : le dossier documente les limites des plans et les crédits de build, mais aucune preuve de prise en main ou de temps d'installation ne figure dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers the promised build, submit and update pipeline directly: OTA updates reach users without app store review, as stated.",
+        "fr": "Le pipeline de build, de soumission et de mise à jour promis fonctionne directement : les mises à jour OTA atteignent les utilisateurs sans validation des stores, comme annoncé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "The Enterprise tier scales to 1M+ MAUs, 10 TiB storage, 40 TiB bandwidth and 5 concurrent builds, a high ceiling for mobile CI/CD.",
+        "fr": "Le plan Enterprise monte jusqu'à plus d'1 million de MAU, 10 Tio de stockage, 40 Tio de bande passante et 5 builds simultanés, un plafond élevé pour du CI/CD mobile.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: reversibility (data export, migration path away from EAS) is not covered by the collected sources.",
+        "fr": "Note neutre : la réversibilité (export des données, migration hors d'EAS) ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "React Native developers who need a build, submission and OTA update pipeline, from solo side projects to production apps shipped by a small team.",
+      "fr": "Développeurs React Native qui ont besoin d'un pipeline de build, de soumission et de mise à jour OTA, du projet perso solo jusqu'aux applications en production gérées par une petite équipe."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a solo developer builds and submits a React Native app via EAS on the Free plan, shipping to app stores without managing native build infrastructure.",
+      "fr": "Usage : un développeur solo build et soumet une application React Native via EAS sur le plan Free, publiée sur les stores sans gérer d'infrastructure de build native."
+    },
+    {
+      "en": "Usage: a small team on the Starter or Production plan pushes an OTA update to live users, fixing a bug without waiting for app store review.",
+      "fr": "Usage : une petite équipe sur le plan Starter ou Production pousse une mise à jour OTA aux utilisateurs en production, corrigeant un bug sans attendre la validation du store."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "React Native CI/CD",
+      "fr": "CI/CD React Native"
+    },
+    "shortDescription": {
+      "en": "Cloud platform that builds, submits and updates React Native mobile apps, with over-the-air updates bypassing app store review.",
+      "fr": "Plateforme cloud qui build, soumet et met à jour des apps React Native, avec des mises à jour over-the-air sans validation de store."
+    },
+    "longDescription": {
+      "en": "Expo runs the build, submission and update pipeline for React Native apps through EAS Build, Submit and Update. It handles native compilation, store submission and over-the-air updates that reach users without app store review, plus CI/CD workflow automation and code signing on higher plans.\n\nThe Free plan covers 15 Android and 15 iOS builds a month with a 25-project cap, enough for solo prototyping. Paid plans start at $19/month (Starter) with included build credit, scaling to Production and Enterprise for teams shipping to large user bases. Extra builds beyond the included credit are billed per build.",
+      "fr": "Expo gère le pipeline de build, de soumission et de mise à jour des applications React Native via EAS Build, Submit et Update. La plateforme prend en charge la compilation native, la soumission aux stores et les mises à jour over-the-air sans validation des stores, plus l'automatisation CI/CD et la signature de code sur les plans supérieurs.\n\nLe plan Free couvre 15 builds Android et 15 builds iOS par mois avec un plafond de 25 projets, suffisant pour du prototypage solo. Les plans payants démarrent à 19 $/mois (Starter) avec un crédit de build inclus, jusqu'aux plans Production et Enterprise pour les équipes visant une large audience. Les builds au-delà du crédit inclus sont facturés à l'unité."
+    },
+    "pros": [
+      {
+        "en": "Generous free tier for solo prototyping, with 15+15 monthly builds at no cost.",
+        "fr": "Offre gratuite généreuse pour prototyper en solo, avec 15+15 builds mensuels sans frais."
+      },
+      {
+        "en": "Clear plan ladder from Free to Enterprise, so cost can grow with team size and MAU volume.",
+        "fr": "Échelle de plans claire de Free à Enterprise, le coût pouvant grandir avec la taille de l'équipe et le volume de MAU."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Build costs become usage-based once the included credit runs out, making monthly spend harder to predict for CI-heavy teams.",
+        "fr": "Le coût des builds devient variable une fois le crédit inclus épuisé, ce qui rend la dépense mensuelle difficile à prévoir pour les équipes qui compilent beaucoup."
+      },
+      {
+        "en": "Free plan's low-priority build queue can slow down iteration during active development.",
+        "fr": "La file de build à priorité basse du plan Free peut ralentir les itérations pendant le développement actif."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You build React Native apps and want a single pipeline for native builds, store submission and OTA updates.",
+        "fr": "Tu développes des applications React Native et veux un seul pipeline pour les builds natifs, la soumission aux stores et les mises à jour OTA."
+      },
+      "avoidIf": {
+        "en": "You need predictable flat pricing regardless of build volume, or you are not building with React Native/Expo.",
+        "fr": "Tu as besoin d'un prix fixe et prévisible quel que soit le volume de builds, ou tu ne développes pas avec React Native/Expo."
+      },
+      "threshold": {
+        "en": "Worth upgrading past the Free plan's 15+15 monthly build cap: the Starter plan costs $19/month with $45 of included build credit.",
+        "fr": "Le passage au payant se justifie dès que le plafond de 15+15 builds mensuels du plan Free est dépassé : le plan Starter coûte 19 $/mois avec 45 $ de crédit de build inclus."
+      },
+      "billingTraps": {
+        "en": "Builds beyond the plan's included credit are billed per build ($1-4 depending on platform and size), so CI-heavy usage can exceed the flat monthly price.",
+        "fr": "Les builds au-delà du crédit inclus dans le forfait sont facturés à l'unité (1 à 4 $ selon la plateforme et la taille), donc un usage CI intensif peut dépasser le prix mensuel fixe."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "Removed 'eas-build' from alternatives: EAS Build is Expo's own build service (same vendor, same pricing table already described in this dossier), not an independent competitor. It was likely a stale/duplicate catalogue entry; worth checking whether eas-build.json should exist at all, or should be merged into expo."
+  ]
 }

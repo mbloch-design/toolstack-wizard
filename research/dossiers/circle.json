@@ -3,7 +3,8 @@
   "slug": "circle",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Circle",
     "vendor": "Circle Technologies, Inc.",
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": 89, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "3 admins, 10 moderators, 20 spaces, 200GB storage, 2,500 AI credits/month" }],
+        "keyLimits": [{ "en": "3 admins, 10 moderators, 20 spaces, 200GB storage, 2,500 AI credits/month", "fr": "3 administrateurs, 10 modérateurs, 20 espaces, 200 Go de stockage, 2 500 crédits IA/mois" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": null,
         "price": { "monthly": 199, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 admins, 15 moderators, 30 spaces, 500GB storage, workflows included, 2,500 AI credits/month" }],
+        "keyLimits": [{ "en": "5 admins, 15 moderators, 30 spaces, 500GB storage, workflows included, 2,500 AI credits/month", "fr": "5 administrateurs, 15 modérateurs, 30 espaces, 500 Go de stockage, workflows inclus, 2 500 crédits IA/mois" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": null,
         "price": { "monthly": 419, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "10 admins, 100 moderators, 100 spaces, 1TB storage, advanced automation, 5,000 AI credits/month" }],
+        "keyLimits": [{ "en": "10 admins, 100 moderators, 100 spaces, 1TB storage, advanced automation, 5,000 AI credits/month", "fr": "10 administrateurs, 100 modérateurs, 100 espaces, 1 To de stockage, automatisation avancée, 5 000 crédits IA/mois" }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,24 +65,24 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Unlimited admins, moderators and spaces, 1TB+ storage, dedicated support, negotiable AI credits" }],
+        "keyLimits": [{ "en": "Unlimited admins, moderators and spaces, 1TB+ storage, dedicated support, negotiable AI credits", "fr": "Administrateurs, modérateurs et espaces illimités, stockage 1 To ou plus, support dédié, crédits IA négociables" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "professional",
     "addOns": [],
     "cautions": [
-      { "en": "Listed prices appear to reflect annual billing; monthly-billing prices are not explicitly stated on the pricing page.", "sourceIds": ["s1"] }
+      { "en": "Listed prices appear to reflect annual billing; monthly-billing prices are not explicitly stated on the pricing page.", "fr": "Les prix affichés semblent correspondre à une facturation annuelle ; les tarifs en facturation mensuelle ne sont pas explicitement indiqués sur la page tarifs.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Community platform combining discussion spaces, courses, events and member management", "sourceIds": ["s1"] },
-      { "en": "Built-in AI credits for content/community features across all paid plans", "sourceIds": ["s1"] }
+      { "en": "Community platform combining discussion spaces, courses, events and member management", "fr": "Plateforme communautaire combinant espaces de discussion, cours, événements et gestion des membres", "sourceIds": ["s1"] },
+      { "en": "Built-in AI credits for content/community features across all paid plans", "fr": "Crédits IA intégrés pour les fonctionnalités de contenu/communauté sur tous les plans payants", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No free plan; entry price of $89/month is high relative to simpler community tools", "sourceIds": ["s1"] },
-      { "en": "Admin, moderator and space counts are capped even on the entry Professional plan", "sourceIds": ["s1"] }
+      { "en": "No free plan; entry price of $89/month is high relative to simpler community tools", "fr": "Aucun plan gratuit ; le prix d'entrée de 89 $/mois est élevé face à des outils communautaires plus simples", "sourceIds": ["s1"] },
+      { "en": "Admin, moderator and space counts are capped even on the entry Professional plan", "fr": "Le nombre d'administrateurs, de modérateurs et d'espaces est plafonné même sur le plan d'entrée Professional", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Zapier", "slug": "zapier", "sourceIds": ["s1"] },
@@ -90,16 +91,65 @@
     "platforms": ["web", "ios", "android"]
   },
   "alternatives": [
-    { "slug": "thinkific", "reason": { "en": "Alternative combining courses and community for creators and educators." } },
-    { "slug": "kajabi", "reason": { "en": "All-in-one platform for courses, community and membership monetization." } },
-    { "slug": "podia", "reason": { "en": "Simpler, cheaper alternative for creators combining courses and community." } }
+    { "slug": "thinkific", "reason": { "en": "Alternative combining courses and community for creators and educators.", "fr": "Alternative combinant cours et communauté pour créateurs et formateurs." } },
+    { "slug": "kajabi", "reason": { "en": "All-in-one platform for courses, community and membership monetization.", "fr": "Plateforme tout-en-un pour cours, communauté et monétisation des abonnements." } },
+    { "slug": "podia", "reason": { "en": "Simpler, cheaper alternative for creators combining courses and community.", "fr": "Alternative plus simple et moins chère pour les créateurs combinant cours et communauté." } }
   ],
   "missingAlternatives": [
     { "name": "Mighty Networks", "officialUrl": "https://www.mightynetworks.com", "reason": "Main direct competitor for community + courses platforms, not in the catalogue." },
     { "name": "Discourse", "officialUrl": "https://www.discourse.org", "reason": "Open-source community forum alternative, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "At $89/month entry price with no free plan, Circle costs more upfront than simpler community tools, but it replaces separate discussion, course and event tools for a creator building a paid community.", "fr": "Avec un prix d'entrée de 89 $/mois sans plan gratuit, Circle coûte plus cher au départ que des outils communautaires plus simples, mais remplace des outils séparés de discussion, cours et événements pour un créateur qui bâtit une communauté payante.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time to a first useful result (launching a space or course) is not detailed in the collected sources.", "fr": "Note neutre : le temps pour obtenir un premier résultat utile (lancer un espace ou un cours) n'est pas détaillé dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers discussion spaces, courses, events and member management together as promised, with AI credits included on every paid plan.", "fr": "Livre espaces de discussion, cours, événements et gestion des membres ensemble comme promis, avec crédits IA inclus sur chaque plan payant.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Scales from 3 admins/20 spaces on Professional to unlimited admins and spaces on Circle Plus, with advanced automation on Scale, covering small to large community needs.", "fr": "Évolue de 3 administrateurs/20 espaces sur Professional à des administrateurs et espaces illimités sur Circle Plus, avec automatisation avancée sur Scale, couvrant des besoins de petite à grande communauté.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export and data-portability options on leaving Circle are not covered by the collected sources.", "fr": "Note neutre : les options d'export et de portabilité des données en quittant Circle ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "Content creators and educators building a paid community around discussions, courses and events.", "fr": "Créateurs de contenu et formateurs qui bâtissent une communauté payante autour de discussions, cours et événements." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Launch a paid community: open discussion spaces and events for members, with AI credits available for content tasks.", "fr": "Lancer une communauté payante : ouvrir des espaces de discussion et événements pour les membres, avec des crédits IA disponibles pour les tâches de contenu." },
+    { "en": "Sell a course alongside community access: bundle courses with ongoing discussion spaces instead of running them on separate tools.", "fr": "Vendre un cours avec accès à la communauté : regrouper cours et espaces de discussion continus plutôt que de les gérer sur des outils séparés." }
+  ],
+  "editorial": {
+    "tagline": { "en": "Community platform", "fr": "Plateforme communautaire" },
+    "shortDescription": { "en": "Circle combines discussion spaces, courses, events and member management in one community platform with built-in AI credits.", "fr": "Circle combine espaces de discussion, cours, événements et gestion des membres dans une plateforme communautaire avec crédits IA intégrés." },
+    "longDescription": {
+      "en": "Circle bundles discussion spaces, courses, events and member management into one platform, so a creator or small team can run a paid community without stitching together a forum, a course host and an events tool. Every paid plan includes AI credits for content and community features.\n\nThere is no free plan: Professional starts at $89/month for 3 admins, 10 moderators and 20 spaces, with Business and Scale raising those caps and adding automation. Listed prices appear to reflect annual billing, since monthly-only rates are not explicitly stated on the pricing page.",
+      "fr": "Circle regroupe espaces de discussion, cours, événements et gestion des membres dans une seule plateforme, pour qu'un créateur ou une petite équipe gère une communauté payante sans assembler un forum, un hébergeur de cours et un outil d'événements séparés. Chaque plan payant inclut des crédits IA pour le contenu et la communauté.\n\nIl n'y a pas de plan gratuit : Professional démarre à 89 $/mois pour 3 administrateurs, 10 modérateurs et 20 espaces, Business et Scale relevant ces plafonds et ajoutant de l'automatisation. Les prix affichés semblent correspondre à une facturation annuelle, les tarifs purement mensuels n'étant pas explicitement indiqués sur la page tarifs."
+    },
+    "pros": [
+      { "en": "Combines discussion, courses, events and member management in one platform instead of several tools", "fr": "Combine discussion, cours, événements et gestion des membres dans une seule plateforme plutôt que plusieurs outils" },
+      { "en": "AI credits included on every paid plan, from Professional up to Scale", "fr": "Crédits IA inclus sur chaque plan payant, de Professional à Scale" }
+    ],
+    "cons": [
+      { "en": "No free plan: entry cost is $89/month before any customization", "fr": "Aucun plan gratuit : le coût d'entrée est de 89 $/mois avant toute personnalisation" },
+      { "en": "Admin, moderator and space counts are capped even on the entry Professional plan", "fr": "Le nombre d'administrateurs, de modérateurs et d'espaces est plafonné même sur le plan d'entrée Professional" }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want discussion, courses and events on one platform instead of managing separate tools for each.", "fr": "Tu veux discussion, cours et événements sur une seule plateforme plutôt que de gérer un outil séparé pour chacun." },
+      "avoidIf": { "en": "You run a small, free or low-budget community: $89/month with no free tier is a high entry cost for that.", "fr": "Tu gères une petite communauté gratuite ou à petit budget : 89 $/mois sans palier gratuit est un coût d'entrée élevé pour ce cas." },
+      "threshold": { "en": "Professional costs $89/month for 3 admins, 10 moderators and 20 spaces; Business at $199/month raises those caps and adds workflows.", "fr": "Professional coûte 89 $/mois pour 3 administrateurs, 10 modérateurs et 20 espaces ; Business à 199 $/mois relève ces plafonds et ajoute les workflows." }
+    }
+  },
   "unknowns": [
     "Monthly (non-annual) billing prices for each plan were not explicitly stated on the pricing page reached"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Price-field inconsistency: pricing.cautions notes that the listed plan prices 'appear to reflect annual billing', but they are stored in plan.price.monthly with annualPerMonth left null for every plan. Worth a human check on the official pricing page to confirm whether these are true monthly rates or annual-equivalent rates mislabeled."
+  ]
 }

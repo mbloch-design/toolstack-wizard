@@ -3,7 +3,8 @@
   "slug": "recharts",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Recharts",
     "vendor": "Recharts Group (open source project)",
@@ -33,7 +34,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Fully free MIT-licensed library, no paid tier"
+        "en": "Fully free MIT-licensed library, no paid tier",
+        "fr": "Bibliothèque entièrement gratuite sous licence MIT, sans palier payant"
       },
       "sourceIds": [
         "s1"
@@ -49,14 +51,14 @@
     "capabilities": [
       {
         "en": "Composable React charting components (line, area, bar, and more) built on SVG",
-        "fr": null,
+        "fr": "Composants de graphiques React assemblables (ligne, aire, barres, et plus) construits en SVG",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Customizable charts through component properties and custom sub-components",
-        "fr": null,
+        "fr": "Graphiques personnalisables via les propriétés des composants et des sous-composants sur mesure",
         "sourceIds": [
           "s1"
         ]
@@ -65,14 +67,14 @@
     "limitations": [
       {
         "en": "Relies only minimally on D3 internally, so it lacks some of D3's lower-level flexibility for highly custom visualizations",
-        "fr": null,
+        "fr": "Ne s'appuie que de façon minime sur D3 en interne, ce qui lui manque une partie de la flexibilité bas niveau de D3 pour des visualisations très personnalisées",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Homepage documentation does not state a minimum required React version",
-        "fr": null,
+        "fr": "La documentation de la page d'accueil ne précise pas de version minimale requise de React",
         "sourceIds": [
           "s1"
         ]
@@ -83,30 +85,133 @@
       "web"
     ]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A React developer who needs standard chart types (line, bar, area) as composable components without writing low-level D3 code.",
+      "fr": "Un ou une développeur React qui a besoin de types de graphiques courants (ligne, barres, aire) sous forme de composants assemblables, sans écrire de code D3 bas niveau."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Dashboard charts: drop a line or bar chart component into a React admin dashboard with props instead of writing SVG/D3 rendering code.",
+      "fr": "Graphiques de tableau de bord : intégrer un composant graphique en ligne ou en barres dans un dashboard React via des props, sans écrire de code de rendu SVG/D3."
+    },
+    {
+      "en": "Custom chart styling: compose custom sub-components to adjust tooltips, axes, or legends on a chart beyond the default look.",
+      "fr": "Personnalisation de graphique : assembler des sous-composants sur mesure pour ajuster infobulles, axes ou légendes au-delà du rendu par défaut."
+    }
+  ],
   "alternatives": [
     {
       "slug": "chartjs",
       "reason": {
         "en": "Popular alternative charting library, canvas-based rather than SVG/React-component based",
-        "fr": null
+        "fr": "Bibliothèque de graphiques alternative très utilisée, basée sur canvas plutôt que sur des composants SVG/React"
       }
     },
     {
       "slug": "d3js",
       "reason": {
         "en": "Lower-level charting/visualization library that Recharts is partly built on top of",
-        "fr": null
+        "fr": "Bibliothèque de visualisation bas niveau sur laquelle Recharts s'appuie en partie"
       }
     },
     {
       "slug": "apexcharts",
       "reason": {
         "en": "Alternative JS charting library with similar declarative chart types",
-        "fr": null
+        "fr": "Bibliothèque de graphiques JS alternative avec des types de graphiques déclaratifs similaires"
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A fully free MIT-licensed library that replaces custom D3/SVG chart code with ready-made React components, at no cost.",
+        "fr": "Une bibliothèque entièrement gratuite sous licence MIT qui remplace du code de graphique D3/SVG sur mesure par des composants React prêts à l'emploi, sans coût.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Composable components with standard chart types let a React developer render a usable chart through props, without writing low-level D3 code.",
+        "fr": "Les composants assemblables avec des types de graphiques courants permettent à un développeur React d'afficher un graphique utilisable via des props, sans écrire de code D3 bas niveau.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers the advertised composable React chart components (line, area, bar) built on SVG as described on the homepage.",
+        "fr": "Fournit bien les composants de graphiques React assemblables annoncés (ligne, aire, barres) construits en SVG, comme décrit sur la page d'accueil.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Covers standard chart types and custom sub-components well, but relies only minimally on D3 internally and so lacks some of D3's lower-level flexibility for highly custom visualizations.",
+        "fr": "Couvre bien les types de graphiques courants et les sous-composants sur mesure, mais ne s'appuie que de façon minime sur D3 en interne et manque donc d'une partie de sa flexibilité bas niveau pour des visualisations très personnalisées.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "A fully free, MIT-licensed open-source library with no vendor lock-in: the code and charts stay in the project's own codebase.",
+        "fr": "Une bibliothèque open source entièrement gratuite sous licence MIT, sans dépendance à un éditeur : le code et les graphiques restent dans le code du projet.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "React charting library",
+      "fr": "Bibliothèque de graphiques React"
+    },
+    "shortDescription": {
+      "en": "Free, open-source React charting library with composable SVG components for line, bar, and area charts.",
+      "fr": "Bibliothèque de graphiques React gratuite et open source, avec des composants SVG assemblables pour graphiques en ligne, barres et aire."
+    },
+    "longDescription": {
+      "en": "Recharts is a free, MIT-licensed React charting library built on SVG, with composable components for line, area, bar, and other standard chart types. Charts are customized through component properties and custom sub-components rather than low-level drawing code.\n\nThere is no paid tier: the whole library is open source. It relies only minimally on D3 internally, so it covers common dashboard and reporting charts well but lacks some of D3's lower-level flexibility for highly custom visualizations. It fits a React developer who wants standard charts as components rather than hand-rolled SVG or D3 code.",
+      "fr": "Recharts est une bibliothèque de graphiques React gratuite sous licence MIT, en SVG, avec des composants pour les graphiques en ligne, aire, barres et d'autres types courants. Les graphiques se personnalisent via les propriétés des composants et des sous-composants sur mesure, plutôt que par du code de dessin bas niveau.\n\nIl n'y a pas de palier payant : toute la bibliothèque est open source. Elle s'appuie peu sur D3 en interne, ce qui couvre bien les graphiques de tableau de bord courants, mais manque de la flexibilité bas niveau de D3 pour des visualisations très personnalisées. Elle convient à un développeur React qui veut des graphiques courants en composants plutôt que du code SVG ou D3 écrit à la main."
+    },
+    "pros": [
+      {
+        "en": "Fully free and open source, with no paid tier or usage limits.",
+        "fr": "Entièrement gratuite et open source, sans palier payant ni limite d'usage."
+      },
+      {
+        "en": "Composable React components cover standard chart types without writing SVG or D3 code by hand.",
+        "fr": "Les composants React assemblables couvrent les types de graphiques courants sans écrire de code SVG ou D3 à la main."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Lacks some of D3's lower-level flexibility for highly custom visualizations.",
+        "fr": "Manque d'une partie de la flexibilité bas niveau de D3 pour des visualisations très personnalisées."
+      },
+      {
+        "en": "The homepage documentation does not state a minimum required React version.",
+        "fr": "La documentation de la page d'accueil ne précise pas de version minimale requise de React."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You are a React developer who needs standard chart types as components without writing low-level D3 or SVG code.",
+        "fr": "Tu es développeur React et tu as besoin de types de graphiques courants sous forme de composants, sans écrire de code D3 ou SVG bas niveau."
+      },
+      "avoidIf": {
+        "en": "You need highly custom, low-level visualizations that need D3's full flexibility.",
+        "fr": "Tu as besoin de visualisations très personnalisées et bas niveau qui demandent toute la flexibilité de D3."
+      },
+      "threshold": {
+        "en": "No cost threshold: the library is fully free and open source.",
+        "fr": "Pas de seuil de coût : la bibliothèque est entièrement gratuite et open source."
+      }
+    }
+  },
   "unknowns": [],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

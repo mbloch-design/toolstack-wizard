@@ -3,7 +3,8 @@
   "slug": "quixel-megascans",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Quixel Megascans",
     "vendor": "Epic Games, Inc.",
@@ -40,7 +41,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "A growing selection of Megascans and Megaplants assets is free to use under the Fab Standard License across all engines and tools"
+        "en": "A growing selection of Megascans and Megaplants assets is free to use under the Fab Standard License across all engines and tools",
+        "fr": "Une sélection croissante d'assets Megascans et Megaplants est gratuite sous la licence Fab Standard, pour tous les moteurs et outils"
       },
       "sourceIds": [
         "s2"
@@ -62,7 +64,7 @@
         "keyLimits": [
           {
             "en": "Paid assets are priced individually on Fab; no fixed subscription plan is published",
-            "fr": null
+            "fr": "Les assets payants sont tarifés individuellement sur Fab ; aucun plan d'abonnement fixe n'est publié"
           }
         ],
         "sourceIds": [
@@ -75,7 +77,7 @@
     "cautions": [
       {
         "en": "Megascans was free unlimited through the end of 2024; since 2025 Epic Games began charging for a majority of the library while keeping a growing subset free, so exact current pricing per asset is not published as a fixed plan.",
-        "fr": null,
+        "fr": "Megascans était intégralement gratuit jusqu'à fin 2024 ; depuis 2025, Epic Games fait payer la majorité de la bibliothèque tout en gardant un sous-ensemble croissant gratuit, donc le prix exact par asset n'est pas publié comme un plan fixe.",
         "sourceIds": [
           "s1",
           "s2"
@@ -88,14 +90,14 @@
     "capabilities": [
       {
         "en": "Library of photoscanned 3D surfaces, props, and plants (Megascans and Megaplants) for use in games, film, and archviz",
-        "fr": null,
+        "fr": "Bibliothèque de surfaces, accessoires et plantes 3D photoscannés (Megascans et Megaplants) pour le jeu vidéo, le cinéma et l'architecture",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Assets usable across multiple engines and tools under the Fab Standard License, not limited to Unreal Engine",
-        "fr": null,
+        "fr": "Assets utilisables dans plusieurs moteurs et outils sous la licence Fab Standard, pas seulement dans Unreal Engine",
         "sourceIds": [
           "s2"
         ]
@@ -104,14 +106,14 @@
     "limitations": [
       {
         "en": "Distribution now goes exclusively through the Fab marketplace; the original standalone Quixel Bridge plugin/site model was retired",
-        "fr": null,
+        "fr": "La distribution passe désormais exclusivement par la marketplace Fab ; l'ancien modèle du plugin et du site autonome Quixel Bridge a été abandonné",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Not all assets are free; individual paid assets exist on Fab and exact current pricing per asset was not accessible from this session",
-        "fr": null,
+        "fr": "Les assets ne sont pas tous gratuits ; des assets payants à l'unité existent sur Fab et le prix exact par asset n'a pas pu être consulté lors de cette session",
         "sourceIds": [
           "s1"
         ]
@@ -130,10 +132,126 @@
       "web"
     ]
   },
-  "alternatives": [],
-  "missingAlternatives": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A 3D artist or small studio working in games, film, or archviz who needs ready-made photoscanned surfaces and plants instead of modeling them from scratch.",
+      "fr": "Un ou une artiste 3D ou petit studio en jeu vidéo, cinéma ou architecture qui a besoin de surfaces et plantes photoscannées prêtes à l'emploi plutôt que de les modéliser soi-même."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Environment art: drop photoscanned rock, ground, or bark surfaces from the free selection into a game level or archviz scene without scanning or sculpting them.",
+      "fr": "Décor d'environnement : intégrer des surfaces photoscannées (roche, sol, écorce) de la sélection gratuite dans un niveau de jeu ou une scène d'architecture sans les scanner ou sculpter soi-même."
+    },
+    {
+      "en": "Vegetation dressing: populate a scene with Megaplants assets usable across multiple engines, not limited to Unreal Engine.",
+      "fr": "Habillage végétal : peupler une scène avec des assets Megaplants utilisables dans plusieurs moteurs, pas seulement dans Unreal Engine."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "adobe-substance-3d",
+      "reason": {
+        "en": "Overlapping library of PBR materials and surfaces for 3D work, a direct competitor for texture and surface assets.",
+        "fr": "Bibliothèque concurrente de matériaux PBR et de surfaces pour la 3D, un concurrent direct pour les assets de texture et de surface."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    { "name": "Poly Haven", "officialUrl": "https://polyhaven.com", "reason": "Free photoscanned textures, HDRIs, and models library, direct free alternative, not in the catalogue" },
+    { "name": "Sketchfab", "officialUrl": "https://sketchfab.com", "reason": "3D asset marketplace with scanned and modeled props competing for the same use case, not in the catalogue" }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A growing selection stays free, which saves real modeling time, but since 2025 much of the library now requires paying per asset with no published fixed price to budget against.",
+        "fr": "Une sélection croissante reste gratuite, ce qui fait gagner un vrai temps de modélisation, mais depuis 2025 une grande partie de la bibliothèque demande de payer à l'asset, sans prix fixe publié pour budgéter.",
+        "sourceIds": ["s1", "s2"]
+      },
+      "simplicite": {
+        "en": "Assets are ready to drop into a scene under the Fab Standard License across engines, with no scanning or sculpting skill required.",
+        "fr": "Les assets sont prêts à intégrer dans une scène sous la licence Fab Standard, quel que soit le moteur, sans compétence de scan ou de sculpture requise.",
+        "sourceIds": ["s2"]
+      },
+      "utilisation": {
+        "en": "Delivers usable photoscanned surfaces and plants as advertised, but the move to Fab and the loss of the standalone Bridge tool changed the delivery workflow.",
+        "fr": "Fournit bien des surfaces et plantes photoscannées utilisables comme annoncé, mais le passage à Fab et la disparition de l'outil Bridge autonome ont changé le flux de récupération des assets.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "A large library of photoscanned surfaces and plants usable across multiple engines and tools, not limited to one renderer.",
+        "fr": "Une large bibliothèque de surfaces et plantes photoscannées utilisables dans plusieurs moteurs et outils, pas limitée à un seul moteur de rendu.",
+        "sourceIds": ["s2"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: once downloaded, assets are regular files usable outside Fab, but export or license-portability details beyond that are not covered by the collected sources.",
+        "fr": "Note neutre : une fois téléchargés, les assets sont des fichiers classiques utilisables hors de Fab, mais les détails d'export ou de portabilité de licence au-delà ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s2"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Photoscanned 3D assets",
+      "fr": "Assets 3D photoscannés"
+    },
+    "shortDescription": {
+      "en": "Library of photoscanned surfaces and plants for games, film, and archviz, with a growing free selection on the Fab marketplace.",
+      "fr": "Bibliothèque de surfaces et plantes photoscannées pour le jeu vidéo, le cinéma et l'architecture, avec une sélection gratuite croissante sur la marketplace Fab."
+    },
+    "longDescription": {
+      "en": "Quixel Megascans is a library of photoscanned 3D surfaces, props, and plants (Megaplants) usable in games, film, and architectural visualization. Assets work across multiple engines and tools under the Fab Standard License, not just Unreal Engine, and distribution now runs exclusively through the Fab marketplace after the standalone Quixel Bridge tool was retired.\n\nA growing selection of assets stays free. Since 2025 the rest of the library is sold per asset with no fixed published price, so budgeting depends on which assets a project needs. It suits a 3D artist or small studio who wants ready-made surfaces instead of scanning or sculpting them.",
+      "fr": "Quixel Megascans est une bibliothèque de surfaces, accessoires et plantes 3D photoscannés (Megaplants) utilisable dans le jeu vidéo, le cinéma et la visualisation architecturale. Les assets fonctionnent dans plusieurs moteurs et outils sous la licence Fab Standard, pas seulement dans Unreal Engine, et la distribution passe désormais exclusivement par la marketplace Fab depuis l'abandon de l'outil autonome Quixel Bridge.\n\nUne sélection croissante d'assets reste gratuite. Depuis 2025, le reste de la bibliothèque se vend à l'unité sans prix fixe publié, donc le budget dépend des assets dont un projet a besoin. Cela convient à un artiste 3D ou un petit studio qui veut des surfaces prêtes à l'emploi plutôt que de les scanner ou sculpter."
+    },
+    "pros": [
+      {
+        "en": "A growing selection of surfaces and plants stays free under the Fab Standard License.",
+        "fr": "Une sélection croissante de surfaces et plantes reste gratuite sous la licence Fab Standard."
+      },
+      {
+        "en": "Assets work across multiple engines and tools, not locked to Unreal Engine.",
+        "fr": "Les assets fonctionnent dans plusieurs moteurs et outils, sans être enfermés dans Unreal Engine."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Most of the library now requires paying per asset, with no fixed published price to budget against.",
+        "fr": "La majorité de la bibliothèque demande désormais de payer à l'asset, sans prix fixe publié pour budgéter."
+      },
+      {
+        "en": "The standalone Quixel Bridge tool was retired; everything now runs through the Fab marketplace.",
+        "fr": "L'outil autonome Quixel Bridge a été abandonné ; tout passe désormais par la marketplace Fab."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need ready-made photoscanned surfaces or plants and can work within the growing free selection on Fab.",
+        "fr": "Tu as besoin de surfaces ou plantes photoscannées prêtes à l'emploi et tu peux te contenter de la sélection gratuite croissante sur Fab."
+      },
+      "avoidIf": {
+        "en": "You need a predictable monthly asset budget; per-asset pricing on Fab is not published as a fixed plan.",
+        "fr": "Tu as besoin d'un budget d'assets mensuel prévisible ; le prix à l'unité sur Fab n'est pas publié comme un plan fixe."
+      },
+      "threshold": {
+        "en": "No fixed threshold: check the free selection first, since paid assets are priced individually with no published rate card.",
+        "fr": "Pas de seuil fixe : vérifie d'abord la sélection gratuite, car les assets payants sont tarifés à l'unité sans grille tarifaire publiée."
+      }
+    }
+  },
   "unknowns": [
     "The official fab.com/megascans pricing/product page returned HTTP 403 (anti-bot) during this session; current per-asset pricing structure could not be directly verified on the source page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "pricing.plans[0] (« Individual paid assets ») est marqué onQuote car aucun prix par asset n'est publié, mais ce n'est pas un vrai devis commercial : à vérifier si regularPriceUnknown / comparePlanKey null est la bonne représentation une fois la page fab.com/megascans accessible (actuellement bloquée par anti-bot, cf. unknowns)."
+  ]
 }

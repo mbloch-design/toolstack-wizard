@@ -3,7 +3,7 @@
   "slug": "zoom",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Zoom Workplace",
     "vendor": "Zoom Communications, Inc.",
@@ -33,7 +33,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "40-minute limit per meeting, up to 100 participants, no cloud storage, limited AI features (3 summaries/month, 20 AI queries/month)"
+        "en": "40-minute limit per meeting, up to 100 participants, no cloud storage, limited AI features (3 summaries/month, 20 AI queries/month)",
+        "fr": "Limite de 40 minutes par réunion, jusqu'à 100 participants, pas de stockage cloud, fonctions IA limitées (3 résumés/mois, 20 requêtes IA/mois)"
       },
       "sourceIds": [
         "s1"
@@ -55,7 +56,7 @@
         "keyLimits": [
           {
             "en": "Meetings up to 30 hours, 100 participants, 10 GB cloud storage per user, unlimited AI summaries/queries, Zoom Mail and Calendar included",
-            "fr": null
+            "fr": "Réunions jusqu'à 30 heures, 100 participants, 10 Go de stockage cloud par utilisateur, résumés et requêtes IA illimités, Zoom Mail et Calendar inclus"
           }
         ],
         "sourceIds": [
@@ -76,7 +77,7 @@
         "keyLimits": [
           {
             "en": "300 participants, 10 GB cloud storage per user, unlimited whiteboards and scheduler pages, SSO and managed domains",
-            "fr": null
+            "fr": "300 participants, 10 Go de stockage cloud par utilisateur, tableaux blancs et pages de planification illimités, SSO et domaines gérés"
           }
         ],
         "sourceIds": [
@@ -97,7 +98,7 @@
         "keyLimits": [
           {
             "en": "1,000+ participants, unlimited cloud storage, full PBX phone system, end-to-end encryption",
-            "fr": null
+            "fr": "1 000 participants ou plus, stockage cloud illimité, système téléphonique PBX complet, chiffrement de bout en bout"
           }
         ],
         "sourceIds": [
@@ -113,14 +114,14 @@
     "capabilities": [
       {
         "en": "Video conferencing and online meetings with cloud recording, whiteboards, and built-in AI meeting summaries on paid tiers",
-        "fr": null,
+        "fr": "Visioconférence et réunions en ligne avec enregistrement cloud, tableaux blancs et résumés de réunion par IA intégrés sur les plans payants",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Zoom Mail and Calendar bundled from the Pro plan upward",
-        "fr": null,
+        "fr": "Zoom Mail et Calendar inclus à partir du plan Pro",
         "sourceIds": [
           "s1"
         ]
@@ -129,14 +130,14 @@
     "limitations": [
       {
         "en": "Free plan caps group meetings at 40 minutes and provides no cloud storage",
-        "fr": null,
+        "fr": "Le plan gratuit plafonne les réunions de groupe à 40 minutes et ne fournit aucun stockage cloud",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Larger meeting sizes (300+, 1,000+ participants) and unlimited storage require Business or Enterprise tiers",
-        "fr": null,
+        "fr": "Les réunions plus grandes (300+, 1 000+ participants) et le stockage illimité nécessitent les plans Business ou Enterprise",
         "sourceIds": [
           "s1"
         ]
@@ -154,18 +155,132 @@
       "slug": "google-meet",
       "reason": {
         "en": "Direct video conferencing competitor bundled with Google Workspace",
-        "fr": null
+        "fr": "Concurrent direct en visioconférence, inclus dans Google Workspace"
       }
     },
     {
       "slug": "microsoft-teams",
       "reason": {
         "en": "Direct video conferencing and meetings competitor bundled with Microsoft 365",
-        "fr": null
+        "fr": "Concurrent direct en visioconférence et réunions, inclus dans Microsoft 365"
       }
     }
   ],
   "missingAlternatives": [],
   "unknowns": [],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Pro at $14.16/month (annual) removes the 40-minute cap and adds 10 GB storage plus unlimited AI summaries, a clear upgrade over the free tier for anyone running regular meetings.",
+        "fr": "Pro à 14,16 $/mois (annuel) supprime la limite de 40 minutes et ajoute 10 Go de stockage ainsi que des résumés IA illimités, une nette amélioration par rapport au plan gratuit pour qui tient des réunions régulières.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The free plan requires no setup beyond signing up and lets a user host a meeting with up to 100 participants immediately.",
+        "fr": "Le plan gratuit ne demande aucune configuration au-delà de l'inscription et permet d'organiser immédiatement une réunion avec jusqu'à 100 participants.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It delivers video conferencing, recording, and AI summaries as promised on paid tiers, without needing a separate meeting tool.",
+        "fr": "L'outil délivre visioconférence, enregistrement et résumés IA comme promis sur les plans payants, sans nécessiter d'outil de réunion séparé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Scales from 100 participants on the free and Pro plans up to 1,000+ with a full PBX phone system on Enterprise, a wide range for the category.",
+        "fr": "L'outil passe de 100 participants sur les plans gratuit et Pro à 1 000 ou plus avec un système téléphonique PBX complet sur Enterprise, une large couverture pour la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export of cloud recordings, chat history, and meeting data when leaving Zoom is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des enregistrements cloud, de l'historique des discussions et des données de réunion en cas de départ de Zoom ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams and operations staff who need reliable video meetings, recordings, and basic calendar/mail tools without managing separate conferencing infrastructure.",
+      "fr": "Petites équipes et personnel opérationnel qui ont besoin de réunions vidéo fiables, d'enregistrements et d'outils de calendrier/mail basiques, sans gérer une infrastructure de visioconférence séparée."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Use case: host a client call longer than 40 minutes with cloud recording and an automatic AI summary on the Pro plan.",
+      "fr": "Cas d'usage : organiser un appel client de plus de 40 minutes avec enregistrement cloud et résumé automatique par IA sur le plan Pro."
+    },
+    {
+      "en": "Use case: run a 300-person all-hands meeting with SSO-managed access on the Business plan.",
+      "fr": "Cas d'usage : organiser une réunion générale de 300 personnes avec un accès géré par SSO sur le plan Business."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Video meetings",
+      "fr": "Réunions vidéo"
+    },
+    "shortDescription": {
+      "en": "Video conferencing platform with cloud recording, whiteboards, and AI meeting summaries, free up to 40 minutes per group meeting.",
+      "fr": "Plateforme de visioconférence avec enregistrement cloud, tableaux blancs et résumés de réunion par IA, gratuite jusqu'à 40 minutes par réunion de groupe."
+    },
+    "longDescription": {
+      "en": "Zoom Workplace runs video meetings with cloud recording, whiteboards, and AI-generated summaries on paid tiers, plus Zoom Mail and Calendar bundled from Pro upward. The free plan already supports up to 100 participants, but caps group meetings at 40 minutes with no cloud storage.\n\nPro starts at $14.16/month per seat (annual) and removes the time cap while adding 10 GB storage and unlimited AI summaries. It suits a small team or solo operator holding regular client calls or meetings past 40 minutes, while Business and Enterprise add larger participant counts, SSO, and a full phone system for bigger organizations.",
+      "fr": "Zoom Workplace organise des réunions vidéo avec enregistrement cloud, tableaux blancs et résumés générés par IA sur les plans payants, ainsi que Zoom Mail et Calendar dès Pro. Le plan gratuit gère déjà jusqu'à 100 participants, mais plafonne les réunions de groupe à 40 minutes sans stockage cloud.\n\nPro démarre à 14,16 $/mois par utilisateur (annuel) et supprime cette limite de temps tout en ajoutant 10 Go de stockage et des résumés IA illimités. Il convient à une petite équipe ou un indépendant qui tient des appels clients ou réunions de plus de 40 minutes, tandis que Business et Enterprise ajoutent participants, SSO et système téléphonique complet pour les grandes organisations."
+    },
+    "pros": [
+      {
+        "en": "Free plan already supports up to 100 participants without signing up for a paid tier.",
+        "fr": "Le plan gratuit gère déjà jusqu'à 100 participants sans souscrire un plan payant."
+      },
+      {
+        "en": "AI meeting summaries and cloud recording are included from the Pro plan, no separate tool needed.",
+        "fr": "Les résumés de réunion par IA et l'enregistrement cloud sont inclus dès le plan Pro, sans outil séparé."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free group meetings are capped at 40 minutes, forcing an upgrade for anything longer.",
+        "fr": "Les réunions de groupe gratuites sont plafonnées à 40 minutes, ce qui oblige à passer au payant au-delà."
+      },
+      {
+        "en": "Larger meeting sizes and unlimited storage require moving up to Business or Enterprise.",
+        "fr": "Les réunions plus grandes et le stockage illimité nécessitent de passer à Business ou Enterprise."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You hold meetings regularly that run past 40 minutes and want recording and AI summaries built in.",
+        "fr": "Tu organises régulièrement des réunions de plus de 40 minutes et tu veux l'enregistrement et les résumés IA intégrés."
+      },
+      "avoidIf": {
+        "en": "You only need occasional short calls under 40 minutes, where the free plan already covers the need.",
+        "fr": "Tu n'as besoin que d'appels courts occasionnels de moins de 40 minutes, où le plan gratuit couvre déjà le besoin."
+      },
+      "threshold": {
+        "en": "At $14.16/month per seat (annual) for Pro, it's worth it once the 40-minute free cap or the lack of cloud storage starts getting in the way.",
+        "fr": "À 14,16 $/mois par utilisateur (annuel) pour Pro, ça devient rentable dès que la limite gratuite de 40 minutes ou l'absence de stockage cloud devient gênante."
+      }
+    }
+  },
+  "reviewNotes": []
 }

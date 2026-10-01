@@ -3,7 +3,8 @@
   "slug": "dovetail",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Dovetail",
     "vendor": "Dovetail Research Pty Ltd",
@@ -25,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "1 channel, 1 project, 1 dashboard, limited docs, basic chat queries, no AI agents" }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "1 channel, 1 project, 1 dashboard, limited docs, basic chat queries, no AI agents", "fr": "1 canal, 1 projet, 1 tableau de bord, documents limités, requêtes de chat basiques, aucun agent IA" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -35,7 +36,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 channel, 1 project, 1 dashboard, limited docs, no AI agents" }],
+        "keyLimits": [{ "en": "1 channel, 1 project, 1 dashboard, limited docs, no AI agents", "fr": "1 canal, 1 projet, 1 tableau de bord, documents limités, aucun agent IA" }],
         "sourceIds": ["s1"]
       },
       {
@@ -45,46 +46,94 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Unlimited channels, projects, dashboards, docs and AI agents; SSO and advanced access controls; invoiced net-30" }],
+        "keyLimits": [{ "en": "Unlimited channels, projects, dashboards, docs and AI agents; SSO and advanced access controls; invoiced net-30", "fr": "Canaux, projets, tableaux de bord, documents et agents IA illimités ; SSO et contrôles d'accès avancés ; facturation à 30 jours" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "free",
     "addOns": [
-      { "en": "HIPAA compliance add-on (Enterprise only, paid)", "sourceIds": ["s1"] }
+      { "en": "HIPAA compliance add-on (Enterprise only, paid)", "fr": "Option de conformité HIPAA (Enterprise uniquement, payante)", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Dovetail publishes only Free and Enterprise on its official pricing page as of September 2026; third-party sources reference a discontinued self-serve Professional tier around $29-39/editor/month, but this is not confirmed on the current official page.", "sourceIds": ["s1", "s2"] }
+      { "en": "Dovetail publishes only Free and Enterprise on its official pricing page as of September 2026; third-party sources reference a discontinued self-serve Professional tier around $29-39/editor/month, but this is not confirmed on the current official page.", "fr": "Dovetail n'affiche que Free et Enterprise sur sa page tarifs officielle en septembre 2026 ; des sources tierces évoquent un ancien palier Professional en libre-service autour de 29-39 $/éditeur/mois, mais cela n'est pas confirmé sur la page actuelle.", "sourceIds": ["s1", "s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Centralized research repository with search across calls, documents, and surveys", "sourceIds": ["s1"] },
-      { "en": "AI-generated summaries and semantic clustering of qualitative feedback", "sourceIds": ["s1"] },
-      { "en": "Autonomous AI 'Agents' that track signals and proactively surface insights (Enterprise)", "sourceIds": ["s1"] },
-      { "en": "Docs generation with customer clips and translation across 75 languages", "sourceIds": ["s1"] }
+      { "en": "Centralized research repository with search across calls, documents, and surveys", "fr": "Repository de recherche centralisé avec recherche dans les appels, documents et enquêtes", "sourceIds": ["s1"] },
+      { "en": "AI-generated summaries and semantic clustering of qualitative feedback", "fr": "Résumés générés par IA et regroupement sémantique des retours qualitatifs", "sourceIds": ["s1"] },
+      { "en": "Autonomous AI 'Agents' that track signals and proactively surface insights (Enterprise)", "fr": "Agents IA autonomes qui suivent des signaux et font remonter des insights de façon proactive (Enterprise)", "sourceIds": ["s1"] },
+      { "en": "Docs generation with customer clips and translation across 75 languages", "fr": "Génération de documents avec extraits clients et traduction dans 75 langues", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No public self-serve paid tier between Free and Enterprise as of September 2026", "sourceIds": ["s1"] },
-      { "en": "Free plan is capped to a single channel, project, and dashboard, unsuitable for ongoing team use", "sourceIds": ["s1"] }
+      { "en": "No public self-serve paid tier between Free and Enterprise as of September 2026", "fr": "Aucun palier payant en libre-service entre Free et Enterprise en septembre 2026", "sourceIds": ["s1"] },
+      { "en": "Free plan is capped to a single channel, project, and dashboard, unsuitable for ongoing team use", "fr": "Le plan Free se limite à un seul canal, projet et tableau de bord, insuffisant pour un usage d'équipe continu", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
   "alternatives": [
-    { "slug": "posthog", "reason": { "en": "Alternative analytics/feedback platform with product usage data alongside qualitative insight." } },
-    { "slug": "mixpanel", "reason": { "en": "Product analytics platform sometimes used alongside or instead of a dedicated research repository." } },
-    { "slug": "hotjar", "reason": { "en": "Session recording and feedback tool covering qualitative user research needs." } }
+    { "slug": "lookback", "reason": { "en": "Direct competitor for live user interview recording and centralizing research findings.", "fr": "Concurrent direct pour l'enregistrement d'entretiens utilisateurs en direct et la centralisation des résultats de recherche." } },
+    { "slug": "hotjar", "reason": { "en": "Session recording and feedback tool covering adjacent qualitative user research needs.", "fr": "Outil d'enregistrement de sessions et de retours couvrant des besoins de recherche utilisateur qualitative proches." } }
   ],
   "missingAlternatives": [
-    { "name": "Lookback", "officialUrl": "https://www.lookback.io", "reason": "Direct competitor for live user interview recording and research repository." },
     { "name": "EnjoyHQ", "officialUrl": "https://www.enjoyhq.com", "reason": "Direct competitor: research repository and insight management." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The Free plan is capped to one channel, project and dashboard, so a solo user or small team gets a real preview but must jump to a custom-quoted Enterprise plan for ongoing use, with no public mid-tier to compare cost against.", "fr": "Le plan Free se limite à un canal, un projet et un tableau de bord : un indépendant ou une petite équipe a un vrai aperçu, mais doit passer à un plan Enterprise sur devis pour un usage continu, sans palier intermédiaire public pour comparer le coût.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: first-use ease is not covered in detail by the collected sources beyond listing the Free plan's feature caps.", "fr": "Note neutre : la facilité de prise en main ne figure pas en détail dans les sources relevées, au-delà des limites du plan Free.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Neutral score: whether AI summaries and semantic clustering reliably replace manual analysis without workarounds is not documented in the collected sources.", "fr": "Note neutre : les sources relevées ne précisent pas si les résumés IA et le regroupement sémantique remplacent fiablement une analyse manuelle sans contournement.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Centralizes calls, documents and surveys with AI summaries, semantic clustering, autonomous Agents and multi-language docs generation on the Enterprise tier, a broad feature set for a research repository.", "fr": "Centralise appels, documents et enquêtes avec résumés IA, regroupement sémantique, Agents autonomes et génération de documents multilingues sur le palier Enterprise, un ensemble de fonctionnalités large pour un repository de recherche.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export and data-portability options are not covered by the collected sources.", "fr": "Note neutre : les options d'export et de portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "Ops-minded small teams that run user interviews and need a shared place to store and search findings without a dedicated researcher.", "fr": "Petites équipes orientées opérations qui mènent des entretiens utilisateurs et ont besoin d'un espace partagé pour stocker et retrouver leurs résultats, sans chercheur dédié." },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Centralize interviews: upload call recordings and transcripts, get an AI summary, and tag recurring themes across projects.", "fr": "Centraliser les entretiens : importer enregistrements et transcriptions, obtenir un résumé IA, et taguer les thèmes récurrents entre projets." },
+    { "en": "Share findings: build a doc with customer clips and insights, then publish it for stakeholders outside the research team.", "fr": "Partager les résultats : construire un document avec extraits clients et insights, puis le publier pour des parties prenantes hors équipe recherche." }
+  ],
+  "editorial": {
+    "tagline": { "en": "User research repository", "fr": "Repository de recherche utilisateur" },
+    "shortDescription": { "en": "Dovetail centralizes user interviews, documents and surveys into a searchable repository with AI summaries and semantic clustering.", "fr": "Dovetail centralise entretiens utilisateurs, documents et enquêtes dans un repository consultable, avec résumés IA et regroupement sémantique." },
+    "longDescription": {
+      "en": "Dovetail stores calls, documents and surveys in one searchable repository, using AI to summarize and cluster qualitative feedback so teams stop digging through raw transcripts. Docs let teams package findings with customer clips for stakeholders, and Enterprise adds autonomous Agents that surface insights on their own.\n\nThe Free plan is capped to one channel, project and dashboard, enough to try the tool but not to run ongoing research. Beyond that, Dovetail publishes no public paid tier: the only way up is a custom-quoted Enterprise plan, which makes it hard to budget for a small team without talking to sales.",
+      "fr": "Dovetail stocke appels, documents et enquêtes dans un repository consultable, avec une IA qui résume et regroupe les retours qualitatifs pour éviter de fouiller des transcriptions brutes. Les Docs permettent d'empaqueter des résultats avec des extraits clients pour les parties prenantes, et Enterprise ajoute des Agents autonomes qui font remonter des insights seuls.\n\nLe plan Free se limite à un canal, un projet et un tableau de bord, suffisant pour essayer mais pas pour une recherche continue. Au-delà, Dovetail ne publie aucun palier payant public : la seule évolution possible est un plan Enterprise sur devis, difficile à budgéter pour une petite équipe sans passer par un commercial."
+    },
+    "pros": [
+      { "en": "Single searchable place for calls, documents and surveys instead of scattered files", "fr": "Un seul espace consultable pour appels, documents et enquêtes au lieu de fichiers éparpillés" },
+      { "en": "AI summaries and semantic clustering reduce manual transcript review", "fr": "Résumés IA et regroupement sémantique réduisent la relecture manuelle des transcriptions" }
+    ],
+    "cons": [
+      { "en": "No public paid plan between Free and Enterprise, so pricing requires a sales conversation", "fr": "Aucun plan payant public entre Free et Enterprise, donc le prix passe par un commercial" },
+      { "en": "Free plan's single channel, project and dashboard cap rules out ongoing team use", "fr": "La limite à un canal, un projet et un tableau de bord du plan Free exclut un usage d'équipe continu" }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run user interviews regularly and need a shared, searchable repository rather than scattered docs and recordings.", "fr": "Tu mènes des entretiens utilisateurs régulièrement et as besoin d'un repository partagé et consultable plutôt que de documents éparpillés." },
+      "avoidIf": { "en": "You need a fixed, predictable monthly price: Dovetail's only path beyond Free is a custom Enterprise quote.", "fr": "Tu as besoin d'un prix mensuel fixe et prévisible : au-delà de Free, Dovetail ne propose qu'un devis Enterprise sur mesure." },
+      "threshold": { "en": "Free covers 1 channel, 1 project and 1 dashboard; beyond that there is no published price point to compare against.", "fr": "Free couvre 1 canal, 1 projet et 1 tableau de bord ; au-delà, aucun prix public n'est disponible pour comparer." }
+    }
+  },
   "unknowns": [
     "Whether a mid-tier paid plan (e.g. Professional) still exists behind a sales conversation despite not being listed publicly",
     "Exact number of AI credits/queries included on the Free plan"
   ],
   "conflicts": [
     { "en": "Seed pricingText mentioned a paid plan 'from ~29€/month', but the current official pricing page (September 2026) shows only Free and Enterprise (custom), with no public self-serve paid tier." }
+  ],
+  "reviewNotes": [
+    "Catalogue correction: 'Lookback' was listed in missingAlternatives by the cloud session but is actually already in the catalogue (slug 'lookback'); moved to alternatives and removed from missingAlternatives.",
+    "pricing.comparePlanKey is set to 'free' (model is freemium) because the only paid plan (Enterprise) is onQuote with no public price; worth a human check that this is the intended comparison basis for budgets/sorting."
   ]
 }

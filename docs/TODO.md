@@ -38,6 +38,11 @@ Budget : test 10 $ max, production 70 $ max, marge 20 $ intouchable.
 - [ ] Bots Discord : domaine qui ne répond plus, produit sans source **[décision]** (à joindre aux produits arrêtés)
 - [ ] Wolters Kluwer : holding à plusieurs produits traitée comme un outil unique **[décision]** : découper ou retirer la fiche
 - [ ] Prix à vérifier : Unity Pro (annuel divisé par 12), NetSuite (estimations tierces seulement)
+- [x] Dernier lot local AC à AJ (01/10/2026) : 38 fiches fusionnées sur 53. **Complétion terminée : 293 fiches recherchées en ligne**, 41 dossiers en `hold`, n8n exclu. Retenues (prix sans source officielle) : gusto, apollo-io, microsoft-dynamics-365-finance-operations, cinema-4d, photopea, redshift, roam-research, vimeo ; `hold` : lottie, substance-3d-designer, archicad, dashlane, lightroom-mobile, artlist, ae-newton3.
+- [ ] Vérification manuelle des prix retenus : tous les dossiers avec `hold` ou « compared price has no official source » (`node scripts/research/merge.mjs` en simulation les liste)
+- [ ] Doublons catalogue : `apollo` / `apollo-io`, `lottie` / `lottiefiles`
+- [ ] Apollo : l'agent a remplacé HubSpot, Pipedrive, lemlist, La Growth Machine par des alternatives plus faibles ; restaurer avant fusion
+- [ ] Prix à vérifier : Smartsuite (minimum 3 sièges sur tous les plans), Kajabi (179 $ contre 55 $ dans l'ancien catalogue)
 - [ ] Afficher le champ `tagline` des fiches dans le catalogue (aujourd'hui `toolTaglines.ts`) et un badge « produit arrêté / racheté » depuis `lifecycle`
 - [ ] Compléter en local chaque dossier « faits » : note sur 5 axes, cible, textes EN puis FR (hors crédit)
 - [ ] Outils au-delà du top 100 : recherche en local, lot par lot, dans l'ordre de `batches`

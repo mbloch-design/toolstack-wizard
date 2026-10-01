@@ -3,7 +3,6 @@
   "slug": "substance-3d-designer",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
   "identity": {
     "officialName": "Substance 3D Designer",
     "vendor": "Adobe Inc.",
@@ -15,7 +14,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.adobe.com/products/substance3d/apps/designer.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Substance 3D Designer" }
+    {
+      "id": "s1",
+      "url": "https://www.adobe.com/products/substance3d/apps/designer.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Adobe Substance 3D Designer"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,62 +29,289 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": [{ "en": "Free access exists for students and teachers only (non-commercial, community assets, 5GB storage), not a general free plan" }], "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": [
+        {
+          "en": "Free access exists for students and teachers only (non-commercial, community assets, 5GB storage), not a general free plan",
+          "fr": "Un accès gratuit existe uniquement pour les étudiants et enseignants (usage non commercial, assets communautaires, 5 Go de stockage), ce n'est pas un plan gratuit général"
+        }
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "collection",
         "name": "Substance 3D Collection",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 59.99, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 59.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Includes Designer, Painter, Sampler, Stager; 20,000+ assets; 100GB storage" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Includes Designer, Painter, Sampler, Stager; 20,000+ assets; 100GB storage",
+            "fr": "Inclut Designer, Painter, Sampler, Stager ; plus de 20 000 assets ; 100 Go de stockage"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "collection-teams",
         "name": "Collection for Teams",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 119.99, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 119.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Annual commitment billed monthly, per license, 1TB storage, business admin features" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Annual commitment billed monthly, per license, 1TB storage, business admin features",
+            "fr": "Engagement annuel facturé mensuellement, par licence, 1 To de stockage, fonctions d'administration pour entreprise"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "collection",
     "addOns": [],
     "cautions": [
-      { "en": "Substance 3D Designer is not sold standalone on this page; the only individual purchase path shown is the full Substance 3D Collection bundle (Designer, Painter, Sampler, Stager).", "sourceIds": ["s1"] },
-      { "en": "The Collection for Teams price is per license under an annual commitment billed in monthly installments, not a month-to-month rate.", "sourceIds": ["s1"] }
+      {
+        "en": "Substance 3D Designer is not sold standalone on this page; the only individual purchase path shown is the full Substance 3D Collection bundle (Designer, Painter, Sampler, Stager).",
+        "fr": "Substance 3D Designer n'est pas vendu seul sur cette page ; le seul parcours d'achat individuel proposé est le bundle complet Substance 3D Collection (Designer, Painter, Sampler, Stager).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The Collection for Teams price is per license under an annual commitment billed in monthly installments, not a month-to-month rate.",
+        "fr": "Le tarif de Collection for Teams s'entend par licence, sous engagement annuel facturé en mensualités, et non à un tarif mois par mois.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Node-based, fully procedural and non-destructive 3D material, pattern and image-filter authoring.", "sourceIds": ["s1"] },
-      { "en": "Large built-in content library of nodes, filters, patterns and randomizable noises.", "sourceIds": ["s1"] },
-      { "en": "Parametric HDR lighting stage creation, with Pantone and OpenColorIO color management support.", "sourceIds": ["s1"] },
-      { "en": "Dedicated shader graph for authoring MDL materials, and export to other Substance 3D apps and major 3D formats.", "sourceIds": ["s1"] }
+      {
+        "en": "Node-based, fully procedural and non-destructive 3D material, pattern and image-filter authoring.",
+        "fr": "Création de matériaux, motifs et filtres d'image 3D par noeuds, entièrement procédurale et non destructive.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Large built-in content library of nodes, filters, patterns and randomizable noises.",
+        "fr": "Large bibliothèque de contenus intégrée : noeuds, filtres, motifs et bruits paramétrables.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Parametric HDR lighting stage creation, with Pantone and OpenColorIO color management support.",
+        "fr": "Création de scènes d'éclairage HDR paramétriques, avec gestion des couleurs Pantone et OpenColorIO.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Dedicated shader graph for authoring MDL materials, and export to other Substance 3D apps and major 3D formats.",
+        "fr": "Graphe de shaders dédié pour créer des matériaux MDL, avec export vers les autres applications Substance 3D et les principaux formats 3D.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Not sold as a standalone subscription on the official page; commercial use requires buying the full Substance 3D Collection bundle.", "sourceIds": ["s1"] },
-      { "en": "Free access is restricted to students/teachers, non-commercial use only, with a small 5GB storage cap.", "sourceIds": ["s1"] }
+      {
+        "en": "Not sold as a standalone subscription on the official page; commercial use requires buying the full Substance 3D Collection bundle.",
+        "fr": "Pas vendu en abonnement autonome sur la page officielle ; un usage commercial impose d'acheter le bundle complet Substance 3D Collection.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Free access is restricted to students/teachers, non-commercial use only, with a small 5GB storage cap.",
+        "fr": "L'accès gratuit est réservé aux étudiants et enseignants, en usage non commercial, avec un stockage limité à 5 Go.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["desktop"]
+    "platforms": [
+      "desktop"
+    ]
   },
-  "audience": null,
-  "useCases": [],
-  "alternatives": [
-    { "slug": "substance-3d-painter", "reason": { "en": "Sibling Adobe app in the same suite, focused on texturing rather than procedural material creation." } },
-    { "slug": "blender", "reason": { "en": "Free alternative covering procedural material and texture creation within a full 3D suite." } }
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "3D artists and designers (games, VFX, product visualization) who build reusable procedural materials instead of hand-painting every texture.",
+      "fr": "Artistes et designers 3D (jeux vidéo, VFX, visualisation produit) qui créent des matériaux procéduraux réutilisables plutôt que de peindre chaque texture à la main."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: build a procedural, non-destructive material graph for a game or product asset, result a parametric material that can be tweaked and reused across multiple models.",
+      "fr": "Usage : construire un graphe de matériau procédural et non destructif pour un asset de jeu ou de produit, résultat un matériau paramétrique modifiable et réutilisable sur plusieurs modèles."
+    },
+    {
+      "en": "Usage: author a custom MDL shader material and export it to another Substance 3D app or a game engine, result a consistent material library shared across the production pipeline.",
+      "fr": "Usage : créer un matériau shader MDL personnalisé et l'exporter vers une autre application Substance 3D ou un moteur de jeu, résultat une bibliothèque de matériaux cohérente partagée sur toute la chaîne de production."
+    }
   ],
-  "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "alternatives": [
+    {
+      "slug": "substance-3d-painter",
+      "reason": {
+        "en": "Sibling Adobe app in the same suite, focused on texturing rather than procedural material creation.",
+        "fr": "Application sœur chez Adobe, dans la même suite, orientée texturing plutôt que création de matériaux procéduraux."
+      }
+    },
+    {
+      "slug": "blender",
+      "reason": {
+        "en": "Free alternative covering procedural material and texture creation within a full 3D suite.",
+        "fr": "Alternative gratuite couvrant la création de matériaux et textures procéduraux au sein d'une suite 3D complète."
+      }
+    },
+    {
+      "slug": "marmoset-toolbag",
+      "reason": {
+        "en": "Real-time rendering and baking tool commonly used alongside or instead of Substance for material and texture work.",
+        "fr": "Outil de rendu temps réel et de baking souvent utilisé en complément ou à la place de Substance pour le travail de matériaux et textures."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "ArmorPaint",
+      "officialUrl": "https://armorpaint.org",
+      "reason": "Open-source node-based 3D texturing/material tool, not in the catalogue."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Not sold standalone: getting Designer means paying at least $59.99/month for the full Substance 3D Collection bundle, a significant commitment for a single procedural-material tool.",
+        "fr": "Pas vendu seul : obtenir Designer implique de payer au moins 59,99 $/mois pour le bundle complet Substance 3D Collection, un engagement important pour un seul outil de matériaux procéduraux.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and learning curve for the node-based workflow are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la courbe d'apprentissage du workflow par noeuds ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers fully procedural, non-destructive material authoring as promised, with a dedicated MDL shader graph and export to other Substance 3D apps and major 3D formats.",
+        "fr": "Tient sa promesse de création de matériaux entièrement procédurale et non destructive, avec un graphe de shaders MDL dédié et un export vers les autres applications Substance 3D et les principaux formats 3D.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Combines a large built-in content library, parametric HDR lighting stages, and Pantone/OpenColorIO color management, a broad feature set for procedural material work.",
+        "fr": "Combine une large bibliothèque de contenus intégrée, des scènes d'éclairage HDR paramétriques et une gestion des couleurs Pantone/OpenColorIO, un ensemble de fonctionnalités étendu pour le travail de matériaux procéduraux.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export and data portability on leaving the tool are not covered by the collected sources.",
+        "fr": "Note neutre : l'export et la portabilité des données en cas de départ de l'outil ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Procedural 3D materials",
+      "fr": "Matériaux 3D procéduraux"
+    },
+    "shortDescription": {
+      "en": "Substance 3D Designer is Adobe's node-based tool for authoring procedural, non-destructive 3D materials, patterns, and image filters.",
+      "fr": "Substance 3D Designer est l'outil Adobe par noeuds pour créer des matériaux, motifs et filtres d'image 3D procéduraux et non destructifs."
+    },
+    "longDescription": {
+      "en": "Substance 3D Designer is a node-based authoring tool for building fully procedural, non-destructive 3D materials, patterns, and image filters, with a large built-in content library and a dedicated shader graph for MDL materials.\n\nIt isn't sold as a standalone subscription: the official page only lists it inside the Substance 3D Collection, starting at $59.99/month, which also includes Painter, Sampler, and Stager. A Teams plan runs $119.99/month per license under an annual commitment. Free access is limited to students and teachers for non-commercial use.",
+      "fr": "Substance 3D Designer est un outil de création par noeuds pour construire des matériaux, motifs et filtres d'image 3D entièrement procéduraux et non destructifs, avec une large bibliothèque de contenus intégrée et un graphe de shaders dédié aux matériaux MDL.\n\nIl n'est pas vendu en abonnement autonome : la page officielle ne le propose qu'à l'intérieur de la Substance 3D Collection, à partir de 59,99 $/mois, qui inclut aussi Painter, Sampler et Stager. Un plan Teams coûte 119,99 $/mois par licence sous engagement annuel. L'accès gratuit se limite aux étudiants et enseignants pour un usage non commercial."
+    },
+    "pros": [
+      {
+        "en": "Fully procedural, non-destructive workflow keeps materials parametric and reusable instead of baked, one-off textures.",
+        "fr": "Le workflow entièrement procédural et non destructif garde les matériaux paramétriques et réutilisables, au lieu de textures figées à usage unique."
+      },
+      {
+        "en": "Bundled into the Substance 3D Collection with Painter, Sampler, and Stager, plus a 20,000+ asset library and 100GB storage.",
+        "fr": "Inclus dans la Substance 3D Collection avec Painter, Sampler et Stager, plus une bibliothèque de plus de 20 000 assets et 100 Go de stockage."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Not available as a standalone purchase on the official page: buying it means paying for the full Collection bundle even if only Designer is needed.",
+        "fr": "Pas disponible à l'achat seul sur la page officielle : l'acheter implique de payer tout le bundle Collection même si seul Designer est nécessaire."
+      },
+      {
+        "en": "Free access is restricted to students and teachers for non-commercial use with just 5GB storage, not usable for paid work.",
+        "fr": "L'accès gratuit est réservé aux étudiants et enseignants pour un usage non commercial avec seulement 5 Go de stockage, inutilisable pour un travail rémunéré."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need procedural, parametric material authoring and are fine paying for the full Substance 3D Collection to get it.",
+        "fr": "Tu as besoin de création de matériaux procéduraux et paramétriques et tu acceptes de payer pour toute la Substance 3D Collection pour l'obtenir."
+      },
+      "avoidIf": {
+        "en": "You only need to texture existing models rather than build new procedural materials, or you need a free option for commercial work.",
+        "fr": "Tu as seulement besoin de texturer des modèles existants plutôt que de créer de nouveaux matériaux procéduraux, ou tu as besoin d'une option gratuite pour un usage commercial."
+      },
+      "threshold": {
+        "en": "Budget at least $719.88/year ($59.99/month) for the individual Collection plan; a Teams license runs $1,439.88/year under an annual commitment.",
+        "fr": "Prévoir au moins 719,88 $/an (59,99 $/mois) pour le plan Collection individuel ; une licence Teams coûte 1 439,88 $/an sous engagement annuel."
+      },
+      "billingTraps": {
+        "en": "Collection for Teams requires an annual commitment billed in monthly installments, not a flexible month-to-month plan.",
+        "fr": "Collection for Teams impose un engagement annuel facturé en mensualités, pas un plan flexible mois par mois."
+      }
+    }
+  },
   "unknowns": [
     "Exact system requirements/OS platform list was not shown on this page (linked out to separate documentation).",
     "Whether a Designer-only single-app subscription exists outside the Collection bundle was not confirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "pricing.model is set to \"subscription\" but the dossier's own cautions state Substance 3D Designer is only sold inside the Substance 3D Collection bundle, never standalone: this matches the schema's \"bundle_only\" model definition better and should be double-checked on the official page.",
+    "The catalogue's existing pricingText for this tool mentions a cheaper \"Texturing\" plan at $24.99/month ($249.88/year, bundled with Painter) that is not captured anywhere in this dossier's pricing.plans (only Collection at $59.99 and Collection for Teams at $119.99 are listed): worth re-checking the official pricing page for a Designer+Painter-only tier."
+  ],
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
+  "hold": "sold only inside the Substance 3D Collection (bundle_only) but modelled as subscription"
 }

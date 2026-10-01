@@ -3848,11 +3848,11 @@
     "slug": "bigquery",
     "name": "BigQuery",
     "categoryId": "analytics",
-    "shortDescription": "Data warehouse Google managé pour analytics à grande échelle.",
-    "shortDescriptionEn": "Managed Google data warehouse for large-scale analytics.",
+    "shortDescription": "Entrepôt de données cloud serverless pour l'analyse SQL à grande échelle, facturé selon les données interrogées et le stockage utilisé.",
+    "shortDescriptionEn": "Serverless Google Cloud data warehouse for SQL analytics at scale, billed by data scanned and storage used.",
     "pricing": {
-      "free": "Quota gratuit selon les limites Google Cloud en vigueur",
-      "paid": "Paiement à l'usage pour stockage et calcul, ou capacité réservée"
+      "free": "Plan gratuit : 1 To de traitement de requêtes par mois et 10 Go de stockage actif par mois sans frais (palier gratuit de Google Cloud).",
+      "paid": "Plan On-demand (Standard Edition, pay-per-use) sur devis."
     },
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://cloud.google.com/bigquery",
@@ -4179,11 +4179,11 @@
     "slug": "bolt-business",
     "name": "Bolt Business",
     "categoryId": "finance",
-    "shortDescription": "Plateforme polyvalente de gestion de la mobilité et des flottes.",
-    "shortDescriptionEn": "Versatile platform for mobility and fleet management.",
+    "shortDescription": "Bolt Business centralise les dépenses de trajets, trottinettes et location de voiture des employés sur une facture, avec des plafonds de dépense, sans coût d'abonnement.",
+    "shortDescriptionEn": "Bolt Business centralizes employee ride, scooter and car rental expenses on one invoice with spending controls, at no subscription cost.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Plan gratuit : Aucun abonnement, aucun frais par siège, aucun coût d'activation, aucune dépense minimale ; on paie uniquement les trajets effectués, aux tarifs standards Bolt grand public.",
+      "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://bolt.eu/business",
@@ -4201,7 +4201,10 @@
       "PME",
       "Entreprises nomades/mobiles"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "bolt-new",
@@ -4748,12 +4751,14 @@
     "slug": "budibase",
     "name": "Budibase",
     "categoryId": "nocode-web",
-    "shortDescription": "Plateforme low-code pour apps internes, formulaires et workflows.",
-    "shortDescriptionEn": "Low-code platform for internal apps, forms, and workflows.",
+    "shortDescription": "Constructeur low-code pour apps internes, formulaires et automatisations, gratuit et illimité en auto-hébergé, ou plafonné par actions mensuelles sur les plans cloud.",
+    "shortDescriptionEn": "Low-code builder for internal apps, forms, and automations, free and unlimited self-hosted, or capped by monthly actions on cloud plans.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Édition open source auto-hébergée gratuite avec actions, apps, automatisations, agents et utilisateurs illimités ; support communautaire uniquement",
+      "paid": "Dès 19 $/mois, plan Pro."
     },
+    "defaultMonthlyPrice": 16.32,
+    "compareMonthlyPrice": 16.32,
     "websiteUrl": "https://budibase.com",
     "ogImageUrl": "https://budibase.com/og.png",
     "tool_type": "metier",
@@ -4771,7 +4776,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "THEO"
+      "CLAIRE"
     ],
     "substitutable": false
   },
@@ -4846,12 +4851,14 @@
     "slug": "bullmq",
     "name": "BullMQ",
     "categoryId": "nocode-web",
-    "shortDescription": "Queues Node.js basées sur Redis pour jobs, retries et workers.",
-    "shortDescriptionEn": "Redis-backed Node.js queues for jobs, retries, and workers.",
+    "shortDescription": "Bibliothèque open source de files de jobs Redis pour Node.js, avec un palier Pro payant pour les fonctions avancées.",
+    "shortDescriptionEn": "Open-source Redis-backed job queue library for Node.js, with an optional $139-a-month Pro tier for advanced features and support.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Bibliothèque open source complète (licence MIT), sans limite artificielle sur le nombre de workers ou la concurrence",
+      "paid": "Dès 116,25 $/mois, plan BullMQ Pro Standard."
     },
+    "defaultMonthlyPrice": 99.83,
+    "compareMonthlyPrice": 99.83,
     "websiteUrl": "https://bullmq.io",
     "ogImageUrl": "https://bullmq.io/images/cover.jpg",
     "tool_type": "metier",
@@ -5112,12 +5119,15 @@
     "slug": "calltrackingmetrics",
     "name": "CallTrackingMetrics",
     "categoryId": "communication",
-    "shortDescription": "Suivi d'appels et d'attribution marketing multicanal (appels, SMS, formulaires, chat).",
-    "shortDescriptionEn": "Multi-channel call tracking and marketing attribution (calls, SMS, forms, chat).",
-    "pricing": "À partir de 79$/mois + frais d'usage ; Startup à 499$/mois ; Growth à 999$/mois pour des fonctionnalités avancées.",
-    "defaultMonthlyPrice": 69.2,
-    "compareMonthlyPrice": 10,
-    "affiliateLink": "https://calltrackingmetrics.com",
+    "shortDescription": "CTM suit les appels, SMS, formulaires et chats sur les canaux marketing, et attribue chaque lead à sa campagne source pour les équipes ventes.",
+    "shortDescriptionEn": "CTM tracks calls, SMS, forms and chat across marketing channels and attributes each lead to its source campaign for sales and marketing teams.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 65 $/mois, plan Marketing Lite."
+    },
+    "defaultMonthlyPrice": 55.82,
+    "compareMonthlyPrice": 55.82,
+    "affiliateLink": "https://www.ctm.com",
     "ogImageUrl": "https://www.ctm.com/wp-content/uploads/2026/01/social-general-2026_768x402.jpg",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
@@ -5131,7 +5141,10 @@
       "Agences",
       "Équipes commerciales data-driven"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "campaigner",
@@ -5238,8 +5251,14 @@
     "slug": "canva-ai",
     "name": "Canva AI",
     "categoryId": "ai-general",
-    "shortDescription": "Suite d'outils IA (Magic Studio) intégrée dans Canva pour la génération d'images, suppression d'arrière-plan, gestion d'objets et suggestions de layout assistées par IA, accessible via les plans payants.",
-    "shortDescriptionEn": "AI-powered design features built into Canva: image generation, background removal, Magic Write.",
+    "shortDescription": "Canva AI (Magic Studio) ajoute génération d'image par IA, suppression d'arrière-plan et écriture IA dans Canva, avec des plafonds d'usage mensuels selon le plan.",
+    "shortDescriptionEn": "Canva AI (Magic Studio) adds AI image generation, background removal and AI writing inside Canva, with monthly usage caps by plan.",
+    "pricing": {
+      "free": "Plan gratuit : 50 utilisations Magic Studio (IA) par mois, Text to Image et Magic Write limités ; Background Remover, Magic Eraser et Magic Expand sont réservés aux plans payants.",
+      "paid": "Dès 15 $/mois, plan Canva Pro."
+    },
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
     "websiteUrl": "https://www.canva.com/ai/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-ai.jpg",
     "tool_type": "ia",
@@ -5260,7 +5279,10 @@
       "PME sans designers",
       "Creators de contenu Social"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "ALIX"
+    ]
   },
   {
     "id": "canva-kits",
@@ -6004,14 +6026,14 @@
     "slug": "chatgpt",
     "name": "ChatGPT",
     "categoryId": "ai-general",
-    "shortDescription": "Éditeur de ChatGPT et des modèles GPT : assistant IA conversationnel (web, apps, API) pour rédaction, code, analyse et automatisation, avec une gamme de modèles et une API développeur.",
-    "shortDescriptionEn": "Maker of ChatGPT and the GPT models: a conversational AI assistant (web, apps, API) for writing, code, analysis and automation, with a range of models and a developer API.",
+    "shortDescription": "Assistant IA conversationnel pour la rédaction, le code et l'analyse, gratuit sur un modèle de base ou débloqué sur les paliers payants jusqu'à une API.",
+    "shortDescriptionEn": "Conversational AI assistant for writing, coding, and analysis, free on a base model or unlocked further on paid tiers up to a developer API.",
     "pricing": {
-      "free": "ChatGPT gratuit avec accès à un modèle de base ; le modèle phare est réservé aux paliers payants.",
-      "paid": "Free: 0 $ ; Go: 8 $/mois ; Plus: 20 $/mois ; Pro: 100 $ et 200 $/mois (deux paliers) ; Business: 20 $/siège/mois (annuel) ; Enterprise sur devis"
+      "free": "Plan gratuit : Accès gratuit à un modèle de base avec un usage limité ; les modèles phares sont réservés aux paliers payants",
+      "paid": "Dès 20 $/mois, plan Plus."
     },
-    "defaultMonthlyPrice": 17.32,
-    "compareMonthlyPrice": 17.32,
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
     "affiliateLink": "https://chat.openai.com",
     "ogImageUrl": "/og-screenshots/chatgpt.jpg",
     "tool_type": "ia",
@@ -6037,6 +6059,9 @@
       "Toute personne utilisant l'IA au quotidien"
     ],
     "prescription_quality": "ferme",
+    "personas": [
+      "MARC"
+    ],
     "freeAlternative": "chatgpt"
   },
   {
@@ -6176,14 +6201,14 @@
     "slug": "circle",
     "name": "Circle",
     "categoryId": "formation-education",
-    "shortDescription": "La plateforme de communauté en ligne pour créateurs et formateurs.",
-    "shortDescriptionEn": "The online community platform for creators and educators.",
+    "shortDescription": "Circle combine espaces de discussion, cours, événements et gestion des membres dans une plateforme communautaire avec crédits IA intégrés.",
+    "shortDescriptionEn": "Circle combines discussion spaces, courses, events and member management in one community platform with built-in AI credits.",
     "pricing": {
-      "free": "14 jours trial",
-      "paid": "49$/mois (Basic)"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 89 $/mois, plan Professional."
     },
-    "defaultMonthlyPrice": 42.44,
-    "compareMonthlyPrice": 42.44,
+    "defaultMonthlyPrice": 76.43,
+    "compareMonthlyPrice": 76.43,
     "affiliateLink": "https://circle.so",
     "ogImageUrl": "https://cdn.builder.io/api/v1/image/assets%2Fd5e2d72a033944e1a916c5c34902a1ff%2Fc62a43f7c8824fc3a43967e1044a13b4",
     "substitution_cluster_v2": "learning-platform",
@@ -6204,8 +6229,7 @@
     ],
     "prescription_quality": "ferme",
     "personas": [
-      "sofia",
-      "theo"
+      "ALIX"
     ]
   },
   {
@@ -8709,10 +8733,14 @@
     "slug": "digitalocean",
     "name": "DigitalOcean",
     "categoryId": "nocode-web",
-    "shortDescription": "Alternative simple et prévisible à AWS pour héberger une app ou un site sans se noyer dans la complexité.",
-    "shortDescriptionEn": "Simple, predictable alternative to AWS for hosting an app or site without drowning in complexity.",
-    "pricing": "À partir de 5$/mois pour un Droplet (serveur) basique.",
-    "defaultMonthlyPrice": 5,
+    "shortDescription": "Hébergement cloud à l'usage avec machines virtuelles, Kubernetes managé, PaaS et stockage d'objets, à partir de 4 dollars par mois.",
+    "shortDescriptionEn": "Usage-based cloud hosting with virtual machines, managed Kubernetes, PaaS, and object storage, starting at $4 a month.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 90 jours.",
+      "paid": "Dès 4 $/mois, plan Droplets."
+    },
+    "defaultMonthlyPrice": 3.43,
+    "compareMonthlyPrice": 3.43,
     "websiteUrl": "https://digitalocean.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/digitalocean.jpg",
     "substitution_cluster_v2": "cloud-hosting-paas",
@@ -8731,7 +8759,10 @@
       "Développeurs solo",
       "Petites/moyennes équipes"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "THEO"
+    ]
   },
   {
     "id": "directus",
@@ -8771,12 +8802,14 @@
     "slug": "discord",
     "name": "Discord",
     "categoryId": "communication",
-    "shortDescription": "Messagerie vocale et textuelle par serveurs, gratuite, avec Nitro en option (9,99$/mois).",
-    "shortDescriptionEn": "Voice and text messaging by servers, free, with optional Nitro ($9.99/mo).",
+    "shortDescription": "Discord est une plateforme gratuite de chat vocal, vidéo et texte organisée en serveurs communautaires, avec Nitro en amélioration payante optionnelle.",
+    "shortDescriptionEn": "Discord is a free voice, video and text chat platform organized into community servers, with Nitro as an optional paid upgrade.",
     "pricing": {
-      "free": "Gratuit, sans limite de membres ni de serveurs.",
-      "paid": "Nitro Basic 2,99$/mois ; Nitro 9,99$/mois (99,99$/an) : avatars animés, fichiers jusqu'à 500 Mo, streaming 4K. Boost de serveur à 4,99$/mois (3,49$ pour les abonnés Nitro)."
+      "free": "Plan gratuit : Messagerie, voix/vidéo et fonctionnalités de serveur de base gratuites, sans limite de membres ou de serveurs ; Nitro est une amélioration payante optionnelle, pas requise pour l'usage de base.",
+      "paid": "Dès 2,99 $/mois, plan Nitro Basic."
     },
+    "defaultMonthlyPrice": 2.57,
+    "compareMonthlyPrice": 2.57,
     "websiteUrl": "https://discord.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/665643dd8c7ac752237b5cef_Discord-OG-1200x630.jpg",
     "substitution_cluster_v2": "team-chat",
@@ -8794,7 +8827,10 @@
       "Communautés et fandoms",
       "Startups cherchant une commu gratuite"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "ALIX"
+    ]
   },
   {
     "id": "django",
@@ -9062,13 +9098,13 @@
     "slug": "dovetail",
     "name": "Dovetail",
     "categoryId": "analytics",
-    "shortDescription": "Recherche utilisateur, analyse d’interviews, tags, insights et repository research.",
-    "shortDescriptionEn": "User research, interview analysis, tagging, insights, and research repository.",
+    "shortDescription": "Dovetail centralise entretiens utilisateurs, documents et enquêtes dans un repository consultable, avec résumés IA et regroupement sémantique.",
+    "shortDescriptionEn": "Dovetail centralizes user interviews, documents and surveys into a searchable repository with AI summaries and semantic clustering.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 29€/mois environ"
+      "free": "Plan gratuit : 1 canal, 1 projet, 1 tableau de bord, documents limités, requêtes de chat basiques, aucun agent IA",
+      "paid": "Dès 0 $/mois, plan Free."
     },
-    "defaultMonthlyPrice": 29,
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://dovetail.com",
     "ogImageUrl": "https://dovetail.com/media/Social_Meta1.png",
     "substitution_cluster_v2": "user-research-platform",
@@ -9087,7 +9123,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "designer"
+      "CLAIRE"
     ]
   },
   {
@@ -9301,11 +9337,11 @@
     "slug": "ae-duik",
     "name": "Duik Ángela",
     "categoryId": "design-tools",
-    "shortDescription": "Le plugin de rigging de personnages de référence pour After Effects. Gratuit.",
-    "shortDescriptionEn": "The reference character rigging plugin for After Effects. Free.",
+    "shortDescription": "Boîte à outils gratuite et open source de rigging de personnages et d'accessoires pour After Effects, avec wiggle, rebond et cycles de marche automatisés.",
+    "shortDescriptionEn": "Free, open-source character and prop rigging toolkit for After Effects, with built-in wiggle, bounce and walk-cycle automation.",
     "pricing": {
-      "free": "Entièrement gratuit et open source",
-      "paid": ""
+      "free": "Plan gratuit : Entièrement gratuit et open source (GNU GPL-v3), sans restriction de fonctionnalités.",
+      "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://rxlaboratorio.org/rx-tool/duik/",
@@ -9329,8 +9365,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "sofia",
-      "alix"
+      "SOFIA"
     ],
     "substitutable": false
   },
@@ -10297,12 +10332,14 @@
     "slug": "expo",
     "name": "Expo",
     "categoryId": "nocode-web",
-    "shortDescription": "Plateforme React Native pour build, preview, déploiement et services mobiles.",
-    "shortDescriptionEn": "React Native platform for builds, previews, deployment, and mobile services.",
+    "shortDescription": "Plateforme cloud qui build, soumet et met à jour des apps React Native, avec des mises à jour over-the-air sans validation de store.",
+    "shortDescriptionEn": "Cloud platform that builds, submits and updates React Native mobile apps, with over-the-air updates bypassing app store review.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : 15 Android and 15 iOS builds/month, low-priority build queue, updates to 1K MAUs, 25 projects, 45 min build timeout, 20 GiB storage, 100 GiB bandwidth.",
+      "paid": "Dès 19 $/mois, plan Starter."
     },
+    "defaultMonthlyPrice": 16.32,
+    "compareMonthlyPrice": 16.32,
     "websiteUrl": "https://expo.dev",
     "ogImageUrl": "https://static.expo.dev/static/home/9-2025/og-image.png",
     "tool_type": "metier",
@@ -12171,13 +12208,14 @@
     "slug": "fusion-360",
     "name": "Fusion 360",
     "categoryId": "design-tools",
-    "shortDescription": "Plateforme de conception et fabrication d'Autodesk réunissant CAO, FAO (CAM), simulation (CAE) et électronique (PCB) dans un seul outil, avec gestion des données intégrée.",
-    "shortDescriptionEn": "Autodesk's design and manufacturing platform combining CAD, CAM, simulation (CAE) and electronics (PCB) in a single tool, with built-in data management.",
+    "shortDescription": "Autodesk Fusion combine CAO paramétrique, fabrication (CAM), simulation (CAE) et conception PCB dans un seul abonnement connecté au cloud.",
+    "shortDescriptionEn": "Autodesk Fusion combines parametric CAD, manufacturing (CAM), simulation (CAE) and PCB design in a single cloud-connected subscription.",
     "pricing": {
-      "free": "Fusion pour usage personnel : gratuit pour les projets non commerciaux (fonctions réduites). Pas de plan gratuit commercial.",
-      "paid": "Usage personnel: gratuit (non commercial) ; Abonnement standard: 85 $/utilisateur/mois ou 680 $/utilisateur/an ; Startup: 150 $/utilisateur pour un terme de 3 ans (programme sur conditions)"
+      "free": "Plan gratuit : Fusion usage personnel : gratuit pour des projets non commerciaux d'amateur, fonctionnalités réduites",
+      "paid": "Dès 57 $/mois, plan Fusion (standard subscription)."
     },
-    "defaultMonthlyPrice": 70,
+    "defaultMonthlyPrice": 48.95,
+    "compareMonthlyPrice": 48.95,
     "websiteUrl": "https://www.autodesk.com/products/fusion-360/overview",
     "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/7cubXgLsTdlFLouyd2X4Vs/c12e1a3fa9a58107fb5bf41835183909/fusion-2027-banner-1920x1080-v4.jpg",
     "substitution_cluster_v2": "3d-software",
@@ -12199,7 +12237,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "designer"
+      "SOFIA"
     ]
   },
   {
@@ -12499,14 +12537,13 @@
     "slug": "getida",
     "name": "Getida",
     "categoryId": "nocode-web",
-    "shortDescription": "Solution d’audit et remboursement Amazon FBA.",
-    "shortDescriptionEn": "Amazon FBA auditing and reimbursement solution.",
+    "shortDescription": "Audite les comptes Amazon FBA et dépose les demandes de remboursement pour stocks perdus ou endommagés, en facturant une commission uniquement sur les montants récupérés.",
+    "shortDescriptionEn": "Audits Amazon FBA accounts and files reimbursement claims for lost or damaged inventory, charging a commission only on amounts recovered.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Plan gratuit : Inscription gratuite, aucun abonnement ni frais de mise en place ; facturé uniquement sous forme de commission sur les remboursements récupérés avec succès",
+      "paid": "Plan Commission-based recovery sur devis."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://getida.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/getida.jpg",
     "substitution_cluster_v2": "website-app-builder",
@@ -12522,7 +12559,10 @@
       "Gestionnaires d'inventaire",
       "E-commerce B2B"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ]
   },
   {
     "id": "getresponse",
@@ -13190,12 +13230,13 @@
     "slug": "gcp",
     "name": "Google Cloud",
     "categoryId": "nocode-web",
-    "shortDescription": "Cloud Google pour compute, data, IA, services managés et infrastructure.",
-    "shortDescriptionEn": "Google cloud for compute, data, AI, managed services, and infrastructure.",
+    "shortDescription": "Google Cloud Platform propose du calcul, stockage, bases de données, réseau et IA/ML managés, facturés à l'usage réel.",
+    "shortDescriptionEn": "Google Cloud Platform offers managed compute, storage, database, networking and AI/ML services, billed by actual usage.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Always Free : usage mensuel plafonné sur plus de 20 produits (Compute Engine, Cloud Storage, BigQuery, Cloud Run, GKE, etc.), sans date de fin mais les plafonds et conditions peuvent changer avec 30 jours de préavis",
+      "paid": "Dès 0 $/mois, plan Always Free."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://cloud.google.com",
     "ogImageUrl": "https://cloud.google.com/_static/cloud/images/social-icon-google-cloud-1200-630.png",
     "tool_type": "metier",
@@ -14723,11 +14764,14 @@
     "slug": "hostfully",
     "name": "Hostfully",
     "categoryId": "nocode-web",
-    "shortDescription": "Logiciel de gestion de location courte durée avec site de réservation directe inclus.",
-    "shortDescriptionEn": "Short-term rental management software with a built-in direct booking site.",
-    "pricing": "À partir de 129$/mois plus frais de mise en place ; Pro (5-10 logements), Pro Plus (jusqu'à 19), Premium (20+).",
-    "defaultMonthlyPrice": 113,
-    "compareMonthlyPrice": 0,
+    "shortDescription": "Logiciel de gestion de locations courte durée pour les réservations, la distribution multicanal et les messages aux voyageurs, facturé par bien géré.",
+    "shortDescriptionEn": "Short-term rental property management software for reservations, channel management and guest messaging, priced per managed property.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 15 $/mois, plan Growth."
+    },
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
     "affiliateLink": "https://hostfully.com",
     "ogImageUrl": "https://www.hostfully.com/wp-content/uploads/2025/12/hostfully.png",
     "substitution_cluster_v2": "website-app-builder",
@@ -14743,7 +14787,10 @@
       "Propriétaires multi-unités",
       "Airbnb property managers"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "hotjar",
@@ -15382,12 +15429,14 @@
     "slug": "infisical",
     "name": "Infisical",
     "categoryId": "security",
-    "shortDescription": "Gestion de secrets open-source pour équipes dev.",
-    "shortDescriptionEn": "Open-source secret management for dev teams.",
+    "shortDescription": "Plateforme open source de gestion de secrets, d'accès et de certificats pour développeurs, avec un cœur gratuit auto-hébergeable.",
+    "shortDescriptionEn": "Open-source secrets, access and certificate management platform for developers, with a free self-hostable core.",
     "pricing": {
-      "free": "Gratuit (open-source)",
-      "paid": "Cloud à partir de 0$/mois"
+      "free": "Plan gratuit : Secrets Management free tier: 5 identities, 3 environments, 10 secret syncs. Certificate Management free tier: up to 2 internal CAs, 10 SANs, ACME integration. MIT-licensed open-source core can also be self-hosted for free.",
+      "paid": "Dès 20 $/mois, plan Pro (Secrets Management)."
     },
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
     "websiteUrl": "https://infisical.com",
     "tool_type": "core",
     "substitution_cluster_v2": "secrets-management",
@@ -16282,13 +16331,14 @@
     "slug": "kajabi",
     "name": "Kajabi",
     "categoryId": "formation-education",
-    "shortDescription": "La plateforme tout-en-un pour créateurs : cours, communauté, email, paiements.",
-    "shortDescriptionEn": "The all-in-one platform for creators: courses, community, email, payments.",
+    "shortDescription": "Plateforme tout-en-un pour héberger formations, communautés et pages de vente avec paiements intégrés, à partir de 179 dollars par mois.",
+    "shortDescriptionEn": "All-in-one platform for hosting courses, communities, and sales pages with built-in payments, starting at $179 a month.",
     "pricing": {
-      "paid": "55$/mois (Basic) à 199$/mois (Growth)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 143 $/mois, plan Basic."
     },
-    "defaultMonthlyPrice": 47.63,
-    "compareMonthlyPrice": 47.63,
+    "defaultMonthlyPrice": 122.8,
+    "compareMonthlyPrice": 122.8,
     "affiliateLink": "https://kajabi.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/693317e747432cd054b3bdc6/6945afe48a3d5c04269841e5_LOGO.png",
     "substitution_cluster_v2": "learning-platform",
@@ -16310,8 +16360,7 @@
     ],
     "prescription_quality": "ferme",
     "personas": [
-      "sofia",
-      "theo"
+      "ALIX"
     ]
   },
   {
@@ -16764,11 +16813,11 @@
     "slug": "knockout",
     "name": "Knockout",
     "categoryId": "ui-components",
-    "shortDescription": "Framework MVVM JavaScript pour des UIs réactives, précurseur de React et Vue.",
-    "shortDescriptionEn": "JavaScript MVVM framework for reactive UIs, a precursor to React and Vue.",
+    "shortDescription": "Bibliothèque JavaScript gratuite et open source qui lie les éléments du DOM à un modèle de vue, avec rafraîchissement automatique et suivi des dépendances.",
+    "shortDescriptionEn": "Free, open source JavaScript library binding DOM elements to a view model, with automatic UI refresh and dependency tracking.",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit : Bibliothèque entièrement gratuite sous licence MIT",
+      "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://knockoutjs.com",
@@ -16788,7 +16837,7 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "DEV"
+      "THEO"
     ],
     "betterAlternative": "react"
   },
@@ -17032,13 +17081,14 @@
     "slug": "la-growth-machine",
     "name": "La Growth Machine",
     "categoryId": "automation",
-    "shortDescription": "Automatisation multi-canal LinkedIn + Email.",
-    "shortDescriptionEn": "Multi-channel LinkedIn + Email automation.",
+    "shortDescription": "La Growth Machine automatise des séquences de prospection LinkedIn, email et appels, avec enrichissement de leads intégré pour la vente B2B.",
+    "shortDescriptionEn": "La Growth Machine automates LinkedIn, email, and call outreach sequences with built-in lead enrichment for B2B sales prospecting.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 60€/mois"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 60 €/mois, plan Basic."
     },
     "defaultMonthlyPrice": 60,
+    "compareMonthlyPrice": 60,
     "websiteUrl": "https://www.lagrowthmachine.com",
     "substitution_cluster_v2": "linkedin-automation",
     "functional_needs": [
@@ -17280,14 +17330,14 @@
     "slug": "later",
     "name": "Later",
     "categoryId": "email-productivity",
-    "shortDescription": "Outil complet de gestion des réseaux sociaux et Link in Bio.",
-    "shortDescriptionEn": "All-in-one social media management and Link in Bio tool.",
+    "shortDescription": "Outil de planification social media et de link in bio avec calendrier visuel, à partir de 25 dollars par mois pour un ensemble de profils.",
+    "shortDescriptionEn": "Social media scheduling and link-in-bio tool with a visual calendar, starting at $25 a month for one profile set.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 18,75 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "defaultMonthlyPrice": 16.1,
+    "compareMonthlyPrice": 16.1,
     "affiliateLink": "https://later.com",
     "ogImageUrl": "https://images.ctfassets.net/nfpsrlop6sws/4huePv7JX8n0dtdtSC1bsO/80e2b8336635bcee33675bb901c93804/later-meta-image.jpg",
     "substitution_cluster_v2": "email-outreach",
@@ -17303,7 +17353,10 @@
       "E-commerce social media",
       "Small marketing teams"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "ALIX"
+    ]
   },
   {
     "id": "launchnow",
@@ -20956,14 +21009,13 @@
     "slug": "mixpanel",
     "name": "Mixpanel",
     "categoryId": "analytics",
-    "shortDescription": "Analytics produit basé sur les utilisateurs trackés par mois (MTU), avec funnels et rétention.",
-    "shortDescriptionEn": "Product analytics priced by monthly tracked users (MTU), with funnels and retention.",
+    "shortDescription": "Mixpanel suit l'usage produit avec funnels, rétention et replay de session, facturé au volume d'événements mensuels plutôt qu'à un tarif fixe par siège.",
+    "shortDescriptionEn": "Mixpanel tracks product usage with funnels, retention and session replay, billed on monthly events rather than a flat seat price.",
     "pricing": {
-      "free": "Jusqu'à 50 000 MTU, funnels et segmentation, 3 projets",
-      "paid": "Growth dès 17.52€/mois (10 000 MTU), évolutif selon le volume"
+      "free": "Plan gratuit : Jusqu'à 1 M d'événements suivis par mois, 10 000 replays de session par mois, jusqu'à 1 000 MEU d'expérimentation par mois, jusqu'à 10 feature flags actifs, sièges illimités.",
+      "paid": "Dès 0 $/mois, plan Growth."
     },
-    "defaultMonthlyPrice": 17.52,
-    "compareMonthlyPrice": 17.52,
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://mixpanel.com",
     "ogImageUrl": "https://framerusercontent.com/assets/KHyJwfBzTDm8CBtgWokK94nAuQ.png",
     "logo": "https://logo.clearbit.com/mixpanel.com",
@@ -20982,7 +21034,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "marc"
+      "THEO"
     ]
   },
   {
@@ -21806,12 +21858,13 @@
     "slug": "nestjs",
     "name": "NestJS",
     "categoryId": "nocode-web",
-    "shortDescription": "Framework Node.js structuré pour API, services et backends maintenables.",
-    "shortDescriptionEn": "Structured Node.js framework for APIs, services, and maintainable backends.",
+    "shortDescription": "Un framework Node.js open source, basé sur TypeScript, pour construire des applications serveur et API structurées et modulaires.",
+    "shortDescriptionEn": "An open source, TypeScript-based Node.js framework for building structured, modular server-side applications and APIs.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Fully free and open source under the MIT License; no usage caps on the framework itself.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://nestjs.com",
     "ogImageUrl": "https://nestjs.com/nest-og.png",
     "tool_type": "metier",
@@ -23111,11 +23164,11 @@
     "slug": "oracle-fusion-cloud",
     "name": "Oracle Fusion Cloud",
     "categoryId": "erp",
-    "shortDescription": "Oracle Fusion Cloud est un système ERP ou finance à connecter prudemment au reste de la stack.",
-    "shortDescriptionEn": "Modular Oracle cloud ERP suite for large organizations, covering Finance, Supply Chain, HCM, Manufacturing with native AI and machine learning.",
+    "shortDescription": "Oracle Fusion Cloud est une suite ERP d'entreprise modulaire couvrant finance, supply chain, RH et production, vendue sur devis avec un minimum de 25 utilisateurs.",
+    "shortDescriptionEn": "Oracle Fusion Cloud is a modular enterprise ERP suite covering finance, supply chain, HR and manufacturing, sold on quote with a 25-user minimum.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
@@ -26150,14 +26203,13 @@
     "slug": "profile-builder-3",
     "name": "Profile Builder 3",
     "categoryId": "design-tools",
-    "shortDescription": "Profile Builder est une extension paramétrique et BIM pour SketchUp Pro. Le slug historique vise Profile Builder 3, mais cette version a été remplacée par Profile Builder 4, l'offre actuelle de MindSight Studios.",
-    "shortDescriptionEn": "Profile Builder is a parametric and BIM extension for SketchUp Pro. The historical slug refers to Profile Builder 3, but that version has been superseded by Profile Builder 4, MindSight Studios' current product.",
+    "shortDescription": "Extension SketchUp Pro pour profils et assemblages paramétriques non destructifs, avec sélection intelligente de chemin et édition de trous, vendue sous licence à paiement unique.",
+    "shortDescriptionEn": "SketchUp Pro plugin for parametric, non-destructive profiles and assemblies, with smart-path selection and hole editing, sold as a one-time license.",
     "pricing": {
-      "free": "Pas de version gratuite permanente; essai complet gratuit de 30 jours.",
-      "paid": "Essai: Gratuit pendant 30 jours ; Version 4 Pro: 119 $ US, paiement unique par poste ; Étudiant / enseignant: 75 % de réduction, usage non commercial et preuve requise"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 119 $ (licence à vie), plan Pro License."
     },
-    "defaultMonthlyPrice": 8,
-    "compareMonthlyPrice": 8,
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://profilebuilder4sketchup.com",
     "ogImageUrl": "https://i.ytimg.com/vi/8dBg3jJzccs/maxresdefault.jpg",
     "tool_type": "metier",
@@ -26173,7 +26225,10 @@
       "Designers d'intérieur",
       "Constructeurs et menuisiers"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "SOFIA"
+    ]
   },
   {
     "id": "profitwell",
@@ -26372,14 +26427,14 @@
     "slug": "proposify",
     "name": "Proposify",
     "categoryId": "organization",
-    "shortDescription": "Création de propositions commerciales professionnelles.",
-    "shortDescriptionEn": "Professional commercial proposals.",
+    "shortDescription": "Proposify crée, envoie et suit des propositions commerciales avec signature électronique et modèles de marque, facturé par utilisateur.",
+    "shortDescriptionEn": "Proposify builds, sends and tracks sales proposals with e-signature and branded templates, billed per seat.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 14 jours avec les fonctionnalités du plan Team.",
-      "paid": "Basic 29$/utilisateur/mois ; Team 49$/utilisateur/mois (le plus populaire) ; Business 65$/utilisateur/mois. Remise de 25-35% en facturation annuelle."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 19 $/mois, plan Basic."
     },
-    "defaultMonthlyPrice": 29,
-    "compareMonthlyPrice": 27,
+    "defaultMonthlyPrice": 16.32,
+    "compareMonthlyPrice": 16.32,
     "websiteUrl": "https://proposify.com",
     "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
@@ -26958,14 +27013,14 @@
     "slug": "quickbooks-online",
     "name": "QuickBooks Online",
     "categoryId": "finance",
-    "shortDescription": "Logiciel de comptabilité et facturation pour freelances, PME et auto-entrepreneurs.",
-    "shortDescriptionEn": "Accounting and invoicing software for freelancers, SMBs and self-employed.",
+    "shortDescription": "Logiciel de comptabilité en ligne pour la facturation, le suivi des dépenses et la tenue de livres, avec multi-utilisateurs et inventaire sur les offres supérieures.",
+    "shortDescriptionEn": "Cloud accounting software for invoicing, expense tracking and bookkeeping, with higher tiers adding multi-user access, inventory and project profitability.",
     "pricing": {
-      "free": "Essai gratuit 30 jours",
-      "paid": "Simple Start à 38$/mois (réductions de lancement fréquentes, ex: -50% les 3 premiers mois)"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 38 $/mois, plan Simple Start."
     },
-    "defaultMonthlyPrice": 33.29,
-    "compareMonthlyPrice": 32,
+    "defaultMonthlyPrice": 32.63,
+    "compareMonthlyPrice": 32.63,
     "websiteUrl": "https://quickbooks.intuit.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/quickbooks-online.jpg",
     "substitution_cluster_v2": "accounting-ops",
@@ -26982,7 +27037,10 @@
       "consultant",
       "other"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "quillbot",
@@ -27013,12 +27071,14 @@
     "slug": "quixel-megascans",
     "name": "Quixel Megascans",
     "categoryId": "creation",
-    "shortDescription": "Bibliothèque d'assets 3D photoscannés (surfaces, props, végétation), via Fab (Epic).",
-    "shortDescriptionEn": "Library of photoscanned 3D assets (surfaces, props, plants), via Fab (Epic).",
+    "shortDescription": "Bibliothèque de surfaces et plantes photoscannées pour le jeu vidéo, le cinéma et l'architecture, avec une sélection gratuite croissante sur la marketplace Fab.",
+    "shortDescriptionEn": "Library of photoscanned surfaces and plants for games, film, and archviz, with a growing free selection on the Fab marketplace.",
     "pricing": {
-      "free": "Nombreux assets gratuits sur Fab (Epic)",
-      "paid": "Certains assets payants à l'unité sur Fab."
+      "free": "Plan gratuit : Une sélection croissante d'assets Megascans et Megaplants est gratuite sous la licence Fab Standard, pour tous les moteurs et outils",
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
     },
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "websiteUrl": "https://quixel.com/megascans",
     "ogImageUrl": "https://cdn.quixel.com/quixel/thumbs/page-thumb-quixel.jpg",
     "substitution_cluster_v2": "creative-assets",
@@ -27036,7 +27096,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "designer"
+      "SOFIA"
     ]
   },
   {
@@ -27573,13 +27633,14 @@
     "slug": "recharts",
     "name": "Recharts",
     "categoryId": "design-tools",
-    "shortDescription": "Bibliothèque de graphiques React construite avec D3.js.",
-    "shortDescriptionEn": "React charting library built on top of D3.js.",
+    "shortDescription": "Bibliothèque de graphiques React gratuite et open source, avec des composants SVG assemblables pour graphiques en ligne, barres et aire.",
+    "shortDescriptionEn": "Free, open-source React charting library with composable SVG components for line, bar, and area charts.",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit : Bibliothèque entièrement gratuite sous licence MIT, sans palier payant",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "websiteUrl": "https://recharts.org",
+    "compareMonthlyPrice": 0,
+    "websiteUrl": "https://recharts.github.io",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/recharts.jpg",
     "host_app": "react",
     "substitution_cluster_v2": "charting-library",
@@ -27597,7 +27658,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "DEV"
+      "THEO"
     ]
   },
   {
@@ -28287,12 +28348,14 @@
     "slug": "resend",
     "name": "Resend",
     "categoryId": "email-productivity",
-    "shortDescription": "API email développeur pour emails transactionnels propres.",
-    "shortDescriptionEn": "Developer email API for clean transactional email.",
+    "shortDescription": "Resend est une API email pour développeurs, pour l'envoi transactionnel et marketing, avec des SDK officiels et un forfait gratuit de 3000 emails par mois.",
+    "shortDescriptionEn": "Resend is a developer email API for transactional and marketing email, with official SDKs and a free tier covering 3,000 emails per month.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : 3,000 emails/month, capped at 100 emails/day, 3 domains, 30-day data retention",
+      "paid": "Dès 20 $/mois, plan Pro."
     },
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
     "websiteUrl": "https://resend.com",
     "ogImageUrl": "https://resend.com/static/cover.png",
     "substitution_cluster_v2": "email-productivity",
@@ -28979,14 +29042,14 @@
     "slug": "rocketlink",
     "name": "RocketLink",
     "categoryId": "email-productivity",
-    "shortDescription": "Raccourcisseur d’URL avec reciblage publicitaire.",
-    "shortDescriptionEn": "URL shortener with ad retargeting.",
+    "shortDescription": "Raccourcisseur d'URL par abonnement avec pixels de reciblage publicitaire, domaines personnalisés et analytique des clics, le volume mensuel de liens étant plafonné selon le plan.",
+    "shortDescriptionEn": "Subscription URL shortener with ad retargeting pixels, custom domains, and click analytics, with monthly link volume capped by plan.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas de plan gratuit permanent, essai de 10 jours.",
+      "paid": "Dès 19 $/mois, plan Liftoff."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 16.32,
+    "compareMonthlyPrice": 16.32,
     "affiliateLink": "https://rocketlink.io",
     "ogImageUrl": "https://rocketlink.io/wp-content/uploads/2020/08/fb-og-wymiary-1200x630-px.png",
     "substitution_cluster_v2": "email-outreach",
@@ -29002,7 +29065,10 @@
       "Growth hackers",
       "Créateurs de contenu"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "ALIX"
+    ]
   },
   {
     "id": "rork",
@@ -30540,13 +30606,14 @@
     "slug": "shipstation",
     "name": "ShipStation",
     "categoryId": "nocode-web",
-    "shortDescription": "Gestion d’expéditions, étiquettes et transporteurs pour e-commerce.",
-    "shortDescriptionEn": "Shipping labels, carriers, and fulfillment workflows for e-commerce.",
+    "shortDescription": "Logiciel d'expédition multi-transporteurs pour boutiques en ligne, qui génère les étiquettes et compare les tarifs, avec un prix qui évolue selon le volume mensuel d'expéditions.",
+    "shortDescriptionEn": "Multi-carrier shipping software for e-commerce stores, generating labels and comparing rates, with pricing that scales by monthly shipment volume.",
     "pricing": {
-      "free": "",
-      "paid": "Tarif à vérifier selon plan et usage"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 14,99 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 12.87,
+    "compareMonthlyPrice": 12.87,
     "websiteUrl": "https://www.shipstation.com",
     "ogImageUrl": "https://www.shipstation.com/wp-content/uploads/2016/12/gear_green.png",
     "substitution_cluster_v2": "ecommerce",
@@ -30564,7 +30631,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "THEO"
+      "CLAIRE"
     ],
     "substitutable": false
   },
@@ -30993,14 +31060,14 @@
     "slug": "simvoly",
     "name": "Simvoly",
     "categoryId": "automation",
-    "shortDescription": "Constructeur de sites web et plateforme e-commerce.",
-    "shortDescriptionEn": "Website builder and e-commerce platform.",
+    "shortDescription": "Simvoly regroupe créateur de site, funnels de vente, email marketing et communauté payante dans un seul abonnement, dès 18 $ par mois.",
+    "shortDescriptionEn": "Simvoly bundles a website builder, sales funnels, email marketing and a membership community into one subscription, starting at $18 a month.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 12 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 10.3,
+    "compareMonthlyPrice": 10.3,
     "affiliateLink": "https://simvoly.com",
     "ogImageUrl": "https://content.app-sources.com/s/24444282803329/uploads/A-Home/simvoly-share-0311267.png",
     "substitution_cluster_v2": "automation-orchestration",
@@ -31016,7 +31083,10 @@
       "Revendeurs SaaS",
       "Consultants"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ]
   },
   {
     "id": "skatter",
@@ -31254,14 +31324,14 @@
     "slug": "smartsuite",
     "name": "SmartSuite",
     "categoryId": "organization",
-    "shortDescription": "Plateforme collaborative de gestion du travail pour équipes.",
-    "shortDescriptionEn": "Collaborative work management platform for teams.",
+    "shortDescription": "SmartSuite est une plateforme de gestion du travail collaborative avec plusieurs vues (grille, kanban, calendrier, Gantt) et de l'automatisation intégrée pour les équipes.",
+    "shortDescriptionEn": "SmartSuite is a collaborative work management platform with grid, kanban, calendar and Gantt views plus built-in automation for teams.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 14 jours du plan Professional, sans carte bancaire",
-      "paid": "Team à 15$/mois/utilisateur (minimum 3 sièges) ; Professional à 30$/mois/utilisateur (annuel) ; Enterprise à 50$/mois/utilisateur (minimum 10 sièges)"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 15 $/mois, plan Team."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
     "affiliateLink": "https://smartsuite.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/60c1fb51c4706f216cc5b134/61b1e97f2e923565ed87e025_SmartSuite-OG.jpg",
     "substitution_cluster_v2": "workspace-ops",
@@ -31278,7 +31348,10 @@
       "Gestionnaires de portefeuille et PMO",
       "Grandes organisations multi-domaine"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "smtp-com",
@@ -31501,12 +31574,14 @@
     "slug": "socialbee",
     "name": "SocialBee",
     "categoryId": "email-productivity",
-    "shortDescription": "Calendrier social, recyclage de contenus et publication multiréseaux.",
-    "shortDescriptionEn": "Social calendars, content recycling and multi-network publishing.",
+    "shortDescription": "SocialBee planifie et recycle les posts sur les réseaux sociaux, avec une génération de contenu IA illimitée sur chaque plan payant.",
+    "shortDescriptionEn": "SocialBee schedules and recycles social media posts across platforms, with unlimited AI content generation on every paid plan.",
     "pricing": {
-      "free": "Essai Pro de 14 jours sans carte bancaire.",
-      "paid": "Bootstrap 29 USD/mois pour 5 profils, Accelerate 49 USD pour 10, Pro 99 USD pour 25. Annuel : 290, 490 ou 990 USD/an. Utilisateurs et espaces supplémentaires payants, taxes à confirmer."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 24,17 $/mois, plan Bootstrap."
     },
+    "defaultMonthlyPrice": 20.76,
+    "compareMonthlyPrice": 20.76,
     "affiliateLink": "https://get.socialbee.io/ezo1u6nhi8ow",
     "websiteUrl": "https://socialbee.com",
     "ogImageUrl": "/og-images/socialbee-review.webp",
@@ -31528,8 +31603,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "ALIX",
-      "MARC"
+      "ALIX"
     ]
   },
   {
@@ -35248,13 +35322,14 @@
     "slug": "twinmotion",
     "name": "Twinmotion",
     "categoryId": "design-tools",
-    "shortDescription": "Logiciel de visualisation 3D temps réel par Epic Games, permettant de convertir des modèles 3D (SketchUp, Revit, 3ds Max, Blender, Rhino) en images et vidéos photogrammétriques haute qualité. Éditeur pour l'immobilier, l'architecture, le design de produit et le previs VFX.",
-    "shortDescriptionEn": "Real-time 3D visualization software by Epic Games that converts 3D models (SketchUp, Revit, 3ds Max, Blender, Rhino) into photorealistic images and videos. Editor for real estate, architecture, product design, and VFX previz.",
+    "shortDescription": "Twinmotion transforme des modèles 3D SketchUp, Revit ou Blender en rendus photoréalistes temps réel, gratuit pour les entreprises sous 1 M$ de chiffre d'affaires.",
+    "shortDescriptionEn": "Twinmotion turns 3D models from SketchUp, Revit or Blender into real-time photorealistic renders, free for companies under $1M revenue.",
     "pricing": {
-      "free": "Gratuit pour les entreprises avec CA <1M$ annuel, pour les étudiants, éducateurs et hobbyistes. Accès complet au logiciel sans limitations de rendu ou d'export.",
-      "paid": "Free (revenu <$1M/an): Gratuit ; Commercial (revenu >$1M/an ou Twinmotion Cloud): $445/an par siège"
+      "free": "Plan gratuit : Gratuit pour les entreprises de moins d'1 M$ de chiffre d'affaires annuel, pour les étudiants, enseignants et amateurs ; les exports ne sont pas plafonnés à 2K de résolution mais Twinmotion Cloud n'est pas inclus.",
+      "paid": "Dès 37 $/mois, plan Commercial seat (revenue over $1M or Twinmotion Cloud needed)."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 31.77,
+    "compareMonthlyPrice": 31.77,
     "affiliateLink": "https://www.twinmotion.com",
     "ogImageUrl": "/og-screenshots/twinmotion.jpg",
     "tool_type": "metier",
@@ -35276,7 +35351,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "designer"
+      "SOFIA"
     ]
   },
   {
@@ -38447,13 +38522,14 @@
     "slug": "zoom",
     "name": "Zoom",
     "categoryId": "communication",
-    "shortDescription": "Visioconférence et réunions en ligne",
-    "shortDescriptionEn": "Video conferencing and online meetings.",
+    "shortDescription": "Plateforme de visioconférence avec enregistrement cloud, tableaux blancs et résumés de réunion par IA, gratuite jusqu'à 40 minutes par réunion de groupe.",
+    "shortDescriptionEn": "Video conferencing platform with cloud recording, whiteboards, and AI meeting summaries, free up to 40 minutes per group meeting.",
     "pricing": {
-      "free": "Gratuit avec limite de 40 minutes par réunion de groupe",
-      "paid": "Pro à 13,33$/mois (annuel) ou 16,99$/mois (mensuel) : réunions jusqu'à 30h, 5 Go de stockage cloud"
+      "free": "Plan gratuit : Limite de 40 minutes par réunion, jusqu'à 100 participants, pas de stockage cloud, fonctions IA limitées (3 résumés/mois, 20 requêtes IA/mois)",
+      "paid": "Dès 14,16 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 13.33,
+    "defaultMonthlyPrice": 12.16,
+    "compareMonthlyPrice": 12.16,
     "websiteUrl": "https://zoom.us",
     "ogImageUrl": "https://st1.zoom.us/homepage/20260622-1234/primary/dist/assets/images/thumb.png",
     "bundle_parent": "zoom-pro",
@@ -38470,7 +38546,10 @@
       "PME",
       "Formateurs et webinaires"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "zoom-ai-companion",

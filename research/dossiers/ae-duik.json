@@ -3,7 +3,8 @@
   "slug": "ae-duik",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Duik Ángela",
     "vendor": "RxLaboratorio",
@@ -33,7 +34,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Fully free and open-source (GNU GPL-v3), no feature restrictions."
+        "en": "Fully free and open-source (GNU GPL-v3), no feature restrictions.",
+        "fr": "Entièrement gratuit et open source (GNU GPL-v3), sans restriction de fonctionnalités."
       },
       "sourceIds": [
         "s1"
@@ -53,7 +55,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Complete rigging and animation toolkit, no paywall for core features."
+            "en": "Complete rigging and animation toolkit, no paywall for core features.",
+            "fr": "Boîte à outils complète de rigging et d'animation, sans fonctionnalité principale payante."
           }
         ],
         "sourceIds": [
@@ -82,18 +85,21 @@
     "capabilities": [
       {
         "en": "Character, prop and camera rigging toolkit for After Effects, described as the industry-standard rigging tool.",
+        "fr": "Boîte à outils de rigging de personnages, d'accessoires et de caméras pour After Effects, présentée comme l'outil de rigging de référence.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Automation features for common animation tasks: wiggle, random motion, wheel, spring, bounce, looper, swing, blink, and walk/run cycles.",
+        "fr": "Fonctions d'automatisation pour les tâches d'animation courantes : wiggle, mouvement aléatoire, roue, ressort, rebond, boucle, swing, clignement et cycles de marche/course.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Keyframe and interpolation management tools, plus camera controls and scripting/expression utilities.",
+        "fr": "Outils de gestion des keyframes et de l'interpolation, ainsi que contrôles de caméra et utilitaires de script/expressions.",
         "sourceIds": [
           "s1"
         ]
@@ -102,12 +108,14 @@
     "limitations": [
       {
         "en": "Works only inside Adobe After Effects; not a standalone application.",
+        "fr": "Fonctionne uniquement dans Adobe After Effects ; ce n'est pas une application autonome.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Requires learning a rigging-specific workflow; official paid guide and video courses exist because the learning curve is non-trivial.",
+        "fr": "Nécessite d'apprendre un flux de travail spécifique au rigging ; un guide et des cours vidéo payants existent parce que la courbe d'apprentissage n'est pas négligeable.",
         "sourceIds": [
           "s1"
         ]
@@ -119,31 +127,132 @@
       "mac"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A freelance motion designer or small studio animating characters and props in After Effects who wants rigging automation instead of manual keyframing.",
+      "fr": "Une motion designer indépendante ou une petite équipe qui anime personnages et accessoires dans After Effects et veut automatiser le rigging plutôt que de poser chaque keyframe à la main."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: rig a character or prop in After Effects for 2D animation without manually keyframing every joint.",
+      "fr": "Usage : riguer un personnage ou un accessoire dans After Effects pour l'animation 2D sans poser de keyframe sur chaque articulation."
+    },
+    {
+      "en": "Usage: automate walk cycles, bounces and swing motions with built-in presets instead of hand-animating each frame.",
+      "fr": "Usage : automatiser les cycles de marche, rebonds et mouvements de balancement avec des préréglages intégrés plutôt qu'animer chaque image à la main."
+    }
+  ],
   "alternatives": [
     {
       "slug": "ae-rubberhose",
       "reason": {
-        "en": "Existing catalogue alternative, another After Effects rigging tool with a simpler limb-rigging focus."
+        "en": "Existing catalogue alternative, another After Effects rigging tool with a simpler limb-rigging focus.",
+        "fr": "Alternative du catalogue déjà retenue, un autre outil de rigging pour After Effects centré sur un rigging de membres plus simple."
       }
     },
     {
       "slug": "ae-bao-boa",
       "reason": {
-        "en": "Existing catalogue alternative, bone/rigging plugin for After Effects."
+        "en": "Existing catalogue alternative, a bone and rigging plugin for After Effects.",
+        "fr": "Alternative du catalogue déjà retenue, un plugin d'ossature et de rigging pour After Effects."
       }
     },
     {
       "slug": "ae-overlord",
       "reason": {
-        "en": "Existing catalogue alternative, After Effects rigging and animation plugin."
+        "en": "Existing catalogue alternative, an After Effects rigging and animation plugin.",
+        "fr": "Alternative du catalogue déjà retenue, un plugin de rigging et d'animation pour After Effects."
       }
     }
   ],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Free and open-source with no feature restrictions, described by its own publisher as the industry-standard After Effects rigging tool; that framing comes from the vendor's own page rather than an independent source.",
+        "fr": "Gratuit et open source sans restriction de fonctionnalités, présenté par son propre éditeur comme l'outil de rigging de référence pour After Effects ; cette description vient de la page de l'éditeur, pas d'une source indépendante.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "The official page itself sells a paid user guide and video courses because the rigging-specific workflow has a real learning curve, so a first useful result is not immediate.",
+        "fr": "La page officielle vend elle-même un guide utilisateur et des cours vidéo payants car le flux de travail spécifique au rigging a une vraie courbe d'apprentissage, un premier résultat utile n'est donc pas immédiat.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers character, prop and camera rigging plus automated wiggle, bounce, spring and walk-cycle tools as described, without needing a separate rigging tool.",
+        "fr": "Tient la promesse de rigging de personnages, d'accessoires et de caméras, avec des outils automatisés de wiggle, rebond, ressort et cycles de marche, sans outil de rigging séparé.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Covers rigging, automation presets and keyframe/interpolation management in one toolkit, though the dossier does not benchmark its ceiling directly against Rubberhose or Overlord.",
+        "fr": "Réunit rigging, préréglages d'automatisation et gestion des keyframes/interpolation dans une seule boîte à outils, mais le dossier ne compare pas directement son plafond à Rubberhose ou Overlord.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: exporting or reusing rigs outside After Effects is not covered by the collected sources.",
+        "fr": "Note neutre : l'export ou la réutilisation des rigs en dehors d'After Effects ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Character rigging",
+      "fr": "Rigging de personnages"
+    },
+    "shortDescription": {
+      "en": "Free, open-source character and prop rigging toolkit for After Effects, with built-in wiggle, bounce and walk-cycle automation.",
+      "fr": "Boîte à outils gratuite et open source de rigging de personnages et d'accessoires pour After Effects, avec wiggle, rebond et cycles de marche automatisés."
+    },
+    "longDescription": {
+      "en": "Duik Ángela is a free, open-source character, prop and camera rigging toolkit for After Effects, widely used as a reference rigging tool in motion design. It automates common animation tasks such as wiggle, random motion, spring, bounce, swing, blink and walk or run cycles, alongside keyframe and interpolation management.\n\nIt costs nothing to use under the GNU GPL-v3 license; an official user guide (39 EUR) and name-your-own-price video courses are optional for learning the rigging-specific workflow. It works only inside After Effects, so it fits a freelance motion designer or small studio already working there.",
+      "fr": "Duik Ángela est une boîte à outils gratuite et open source de rigging de personnages, d'accessoires et de caméras pour After Effects, utilisée comme référence du rigging en motion design. Elle automatise des tâches courantes (wiggle, mouvement aléatoire, ressort, rebond, swing, clignement, cycles de marche ou de course) et gère keyframes et interpolation.\n\nSon usage est gratuit sous licence GNU GPL-v3 ; un guide utilisateur (39 EUR) et des cours vidéo à prix libre sont proposés en option. L'outil fonctionne uniquement dans After Effects, ce qui le destine à un motion designer indépendant ou une petite équipe qui y travaille déjà."
+    },
+    "pros": [
+      {
+        "en": "Completely free and open-source, with no paywalled core features.",
+        "fr": "Entièrement gratuit et open source, sans fonctionnalité principale payante."
+      },
+      {
+        "en": "Covers a wide range of animation automation (wiggle, bounce, walk cycles) that would otherwise require manual keyframing.",
+        "fr": "Couvre un large éventail d'automatisations d'animation (wiggle, rebond, cycles de marche) qui demanderaient sinon un keyframing manuel."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Works only inside After Effects, adding no value without it.",
+        "fr": "Fonctionne uniquement dans After Effects, sans aucune utilité sans ce logiciel."
+      },
+      {
+        "en": "The rigging-specific workflow has a real learning curve; an official paid guide and video courses exist to cover it.",
+        "fr": "Le flux de travail spécifique au rigging a une vraie courbe d'apprentissage ; un guide et des cours vidéo payants existent pour la couvrir."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you animate characters or props in After Effects and want rigging automation without manual keyframing.",
+        "fr": "Garde-le si tu animes des personnages ou des accessoires dans After Effects et veux automatiser le rigging sans keyframing manuel."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you don't use After Effects, or want a standalone rigging application.",
+        "fr": "Évite-le si tu n'utilises pas After Effects, ou si tu cherches une application de rigging autonome."
+      },
+      "threshold": {
+        "en": "Free to use; budget 39 EUR only if you want the official user guide.",
+        "fr": "Gratuit à l'usage ; prévois 39 EUR seulement si tu veux le guide utilisateur officiel."
+      }
+    }
+  },
   "unknowns": [
     "Exact current version number and release cadence beyond what was shown (v17.1.21, with an alpha pre-release for members) may have changed since access."
   ],

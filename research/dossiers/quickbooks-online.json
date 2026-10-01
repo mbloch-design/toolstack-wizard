@@ -3,7 +3,8 @@
   "slug": "quickbooks-online",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "QuickBooks Online",
     "vendor": "Intuit Inc.",
@@ -57,7 +58,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "1 user, 2 accountant seats, send 2 invoices/month free (unlimited with Payments), 1 connected bank account, automated bookkeeping"
+            "en": "1 user, 2 accountant seats, send 2 invoices/month free (unlimited with Payments), 1 connected bank account, automated bookkeeping",
+            "fr": "1 utilisateur, 2 accès comptable, 2 factures gratuites/mois (illimité avec Payments), 1 compte bancaire connecté, tenue de livres automatisée"
           }
         ],
         "sourceIds": [
@@ -77,7 +79,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "3 users, 2 accountant seats, enhanced reports, employee time tracking"
+            "en": "3 users, 2 accountant seats, enhanced reports, employee time tracking",
+            "fr": "3 utilisateurs, 2 accès comptable, rapports enrichis, suivi du temps des employés"
           }
         ],
         "sourceIds": [
@@ -97,7 +100,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "5 users, 2 accountant seats, budget planning, project profitability, inventory management, up to 40 classes/locations"
+            "en": "5 users, 2 accountant seats, budget planning, project profitability, inventory management, up to 40 classes/locations",
+            "fr": "5 utilisateurs, 2 accès comptable, planification budgétaire, rentabilité par projet, gestion des stocks, jusqu'à 40 classes/sites"
           }
         ],
         "sourceIds": [
@@ -117,7 +121,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "25 users, 3 accountant seats, unlimited classes/locations/custom KPIs, batch invoices and expenses, priority support"
+            "en": "25 users, 3 accountant seats, unlimited classes/locations/custom KPIs, batch invoices and expenses, priority support",
+            "fr": "25 utilisateurs, 3 accès comptable, classes/sites/KPI personnalisés illimités, factures et dépenses groupées, support prioritaire"
           }
         ],
         "sourceIds": [
@@ -137,6 +142,7 @@
     "cautions": [
       {
         "en": "Frequent launch promotion of 50% off for the first 3 months (e.g. Simple Start at $19/mo instead of $38/mo); the regular, non-promotional price is the one recorded here.",
+        "fr": "Promotion de lancement fréquente de 50 % pendant les 3 premiers mois (par exemple Simple Start à 19 $/mois au lieu de 38 $/mois) ; le prix régulier hors promotion est celui retenu ici.",
         "sourceIds": [
           "s1"
         ]
@@ -147,18 +153,21 @@
     "capabilities": [
       {
         "en": "Accounting, invoicing and expense tracking for freelancers, self-employed and small businesses, with profit & loss reporting.",
+        "fr": "Comptabilité, facturation et suivi des dépenses pour indépendants, auto-entrepreneurs et petites entreprises, avec compte de résultat.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Automated bookkeeping, bank connections, bill pay with free ACH, and payment acceptance built into invoices.",
+        "fr": "Tenue de livres automatisée, connexions bancaires, paiement des factures fournisseurs par ACH gratuit, et encaissement des paiements intégré aux factures.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Higher tiers add inventory management, project profitability tracking, budget planning and construction-specific financials (Advanced).",
+        "fr": "Les offres supérieures ajoutent gestion des stocks, suivi de rentabilité par projet, planification budgétaire et finances spécifiques au BTP (Advanced).",
         "sourceIds": [
           "s1"
         ]
@@ -167,12 +176,14 @@
     "limitations": [
       {
         "en": "No free plan; the entry paid tier (Simple Start) already limits to 1 user and 2 invoices/month without the Payments add-on.",
+        "fr": "Pas d'offre gratuite ; l'offre d'entrée payante (Simple Start) limite déjà à 1 utilisateur et 2 factures/mois sans l'option Payments.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Multi-user access, inventory and project tracking require moving up to Essentials or Plus, raising cost quickly for a growing team.",
+        "fr": "L'accès multi-utilisateurs, les stocks et le suivi de projet nécessitent de passer à Essentials ou Plus, ce qui fait grimper le coût rapidement pour une équipe en croissance.",
         "sourceIds": [
           "s1"
         ]
@@ -183,31 +194,52 @@
       "web"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A small business owner or ops lead handling invoicing, bookkeeping and expense tracking without a dedicated accountant on staff.",
+      "fr": "Une responsable ops ou dirigeante de petite entreprise qui gère la facturation, la comptabilité et le suivi des dépenses sans comptable salarié dédié."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: send invoices and track expenses as a freelancer, with automatic bank reconciliation on Simple Start.",
+      "fr": "Usage : envoyer des factures et suivre ses dépenses en tant qu'indépendant, avec rapprochement bancaire automatique sur Simple Start."
+    },
+    {
+      "en": "Usage: manage multi-user bookkeeping and project profitability as a small team on the Essentials or Plus plan.",
+      "fr": "Usage : gérer la comptabilité à plusieurs utilisateurs et la rentabilité par projet en petite équipe sur l'offre Essentials ou Plus."
+    }
+  ],
   "alternatives": [
     {
       "slug": "pennylane",
       "reason": {
-        "en": "Existing catalogue alternative already flagged for QuickBooks Online in the tool's current alternatives."
+        "en": "Existing catalogue alternative already flagged for QuickBooks Online in the tool's current alternatives.",
+        "fr": "Alternative du catalogue déjà retenue pour QuickBooks Online dans les correspondances actuelles de l'outil."
       }
     },
     {
       "slug": "indy",
       "reason": {
-        "en": "Existing catalogue alternative, simpler invoicing/accounting tool for independents."
+        "en": "Existing catalogue alternative, a simpler invoicing and accounting tool for independents.",
+        "fr": "Alternative du catalogue déjà retenue, un outil de facturation et comptabilité plus simple pour les indépendants."
       }
     },
     {
       "slug": "xero",
       "reason": {
-        "en": "Direct competitor with similar plan structure for freelancers and small businesses."
+        "en": "Direct competitor with a similar plan structure for freelancers and small businesses.",
+        "fr": "Concurrent direct avec une structure d'offres comparable pour les indépendants et petites entreprises."
       }
     },
     {
       "slug": "freshbooks",
       "reason": {
-        "en": "Comparable accounting and invoicing tool targeting freelancers and small teams."
+        "en": "Comparable accounting and invoicing tool targeting freelancers and small teams.",
+        "fr": "Outil de comptabilité et facturation comparable, qui cible indépendants et petites équipes."
       }
     }
   ],
@@ -218,8 +250,89 @@
       "reason": "Free accounting/invoicing tool for very small businesses, direct low-cost alternative not in the catalogue"
     }
   ],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The entry tier costs $38/month yet caps free invoicing at 2 per month without the Payments add-on, a real cost for a freelance budget compared to leaner catalogue alternatives.",
+        "fr": "L'offre d'entrée coûte 38 $/mois mais limite la facturation gratuite à 2 factures par mois sans l'option Payments, un coût réel pour un budget d'indépendant face à des alternatives du catalogue plus légères.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Automated bookkeeping and bank connections are built into the entry plan, so a first useful result, an invoice or a reconciled account, needs no specialist setup.",
+        "fr": "La tenue de livres automatisée et les connexions bancaires sont incluses dans l'offre d'entrée, si bien qu'une facture ou un compte rapproché s'obtient sans mise en place spécialisée.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers invoicing, expense tracking, bank reconciliation and profit and loss reporting as advertised, with no third-party tool needed for the core promise.",
+        "fr": "Tient la promesse de facturation, suivi des dépenses, rapprochement bancaire et compte de résultat, sans outil tiers nécessaire pour l'usage principal.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "The Advanced tier covers budgeting, project profitability, inventory and unlimited custom KPIs, though the dossier does not compare its ceiling directly to competitors like Xero.",
+        "fr": "L'offre Advanced couvre budgets, rentabilité par projet, stocks et KPI personnalisés illimités, mais le dossier ne compare pas directement son plafond à des concurrents comme Xero.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability format options are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export et de portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Accounting software",
+      "fr": "Logiciel de comptabilité"
+    },
+    "shortDescription": {
+      "en": "Cloud accounting software for invoicing, expense tracking and bookkeeping, with higher tiers adding multi-user access, inventory and project profitability.",
+      "fr": "Logiciel de comptabilité en ligne pour la facturation, le suivi des dépenses et la tenue de livres, avec multi-utilisateurs et inventaire sur les offres supérieures."
+    },
+    "longDescription": {
+      "en": "QuickBooks Online handles invoicing, expense tracking, bank reconciliation and profit and loss reporting for freelancers and small businesses. Automated bookkeeping, bank connections and built-in payment acceptance come standard, and higher tiers add inventory management, project profitability tracking, budget planning and construction-specific financials.\n\nPricing starts at $38/month for a single user on Simple Start, rising to $340/month for 25 users on Advanced; there is no free plan but a 30-day trial. It fits a solo freelancer on the entry plan, with a jump to Essentials or Plus needed as soon as a second user or inventory tracking is required.",
+      "fr": "QuickBooks Online gère la facturation, le suivi des dépenses, le rapprochement bancaire et le compte de résultat pour les indépendants et petites entreprises. La tenue de livres automatisée, les connexions bancaires et l'encaissement des paiements sont inclus en standard, et les offres supérieures ajoutent gestion des stocks, suivi de rentabilité par projet, budgets et finances spécifiques au BTP.\n\nLes tarifs démarrent à 38 $/mois pour un utilisateur sur Simple Start et montent jusqu'à 340 $/mois pour 25 utilisateurs sur Advanced ; il n'y a pas d'offre gratuite, mais un essai de 30 jours. L'outil convient à un indépendant sur l'offre d'entrée, avec un passage à Essentials ou Plus nécessaire dès qu'un deuxième utilisateur ou le suivi des stocks est requis."
+    },
+    "pros": [
+      {
+        "en": "Automated bookkeeping and bank connections cut manual data entry from day one.",
+        "fr": "La tenue de livres automatisée et les connexions bancaires réduisent la saisie manuelle dès le premier jour."
+      },
+      {
+        "en": "Scales from a solo freelancer plan up to a 25-user tier with industry-specific financials, without changing software.",
+        "fr": "Évolue d'une offre pour indépendant jusqu'à un palier de 25 utilisateurs avec des finances spécifiques au secteur, sans changer d'outil."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan, and the entry tier caps free invoicing at 2 emails per month without the Payments add-on.",
+        "fr": "Pas d'offre gratuite, et l'offre d'entrée limite la facturation gratuite à 2 envois par mois sans l'option Payments."
+      },
+      {
+        "en": "Adding users or inventory tracking means jumping to a notably more expensive tier.",
+        "fr": "Ajouter des utilisateurs ou le suivi des stocks oblige à passer à une offre nettement plus chère."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you want all-in-one invoicing, expense tracking and bookkeeping that scales with your team size.",
+        "fr": "Garde-le si tu veux facturation, suivi des dépenses et comptabilité réunis dans un seul outil qui évolue avec la taille de ton équipe."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you only need basic invoicing and don't want to pay a recurring per-account subscription.",
+        "fr": "Évite-le si tu n'as besoin que d'une facturation basique et ne veux pas payer un abonnement récurrent par compte."
+      },
+      "threshold": {
+        "en": "Budget at least $38/month for Simple Start (1 user); multi-user access starts at $85/month with Essentials.",
+        "fr": "Prévois au moins 38 $/mois pour Simple Start (1 utilisateur) ; l'accès multi-utilisateurs démarre à 85 $/mois avec Essentials."
+      }
+    }
+  },
   "unknowns": [
     "Whether taxes are included in the listed USD prices is not stated on the pricing page.",
     "Regional (non-US) pricing may differ from the US prices captured here."

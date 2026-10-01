@@ -3,7 +3,8 @@
   "slug": "digitalocean",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "DigitalOcean",
     "vendor": "DigitalOcean Holdings, Inc.",
@@ -58,7 +59,7 @@
         "keyLimits": [
           {
             "en": "Per-second billing (60-second minimum), free outbound data transfer starting at 500 GiB/month",
-            "fr": null
+            "fr": "Facturation à la seconde (minimum de 60 secondes), transfert de données sortant gratuit à partir de 500 Gio par mois"
           }
         ],
         "sourceIds": [
@@ -79,7 +80,7 @@
         "keyLimits": [
           {
             "en": "Free entry tier for managed app hosting",
-            "fr": null
+            "fr": "Palier d'entrée gratuit pour l'hébergement d'applications managées"
           }
         ],
         "sourceIds": [
@@ -100,7 +101,7 @@
         "keyLimits": [
           {
             "en": "Free managed control plane",
-            "fr": null
+            "fr": "Plan de contrôle managé gratuit"
           }
         ],
         "sourceIds": [
@@ -121,7 +122,7 @@
         "keyLimits": [
           {
             "en": "S3-compatible object storage with integrated CDN",
-            "fr": null
+            "fr": "Stockage d'objets compatible S3 avec CDN intégré"
           }
         ],
         "sourceIds": [
@@ -134,7 +135,7 @@
     "cautions": [
       {
         "en": "Pricing is usage-based per product (compute, storage, Kubernetes); the $4/month Droplet is the smallest entry point, not a flat account price.",
-        "fr": null,
+        "fr": "La tarification dépend de l'usage par produit (calcul, stockage, Kubernetes) ; le Droplet à 4 $ par mois est le plus petit point d'entrée, pas un prix de compte forfaitaire.",
         "sourceIds": [
           "s1"
         ]
@@ -145,14 +146,14 @@
     "capabilities": [
       {
         "en": "Virtual machines (Droplets), managed Kubernetes, managed App Platform PaaS, and S3-compatible object storage (Spaces)",
-        "fr": null,
+        "fr": "Machines virtuelles (Droplets), Kubernetes managé, plateforme applicative managée App Platform, et stockage d'objets compatible S3 (Spaces)",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Simple, predictable per-second or monthly pricing compared to larger hyperscale clouds",
-        "fr": null,
+        "fr": "Tarification simple et prévisible à la seconde ou au mois, comparée aux grands clouds hyperscale",
         "sourceIds": [
           "s1"
         ]
@@ -161,14 +162,14 @@
     "limitations": [
       {
         "en": "No permanent free tier for compute; only a $5, 90-day trial credit for new accounts",
-        "fr": null,
+        "fr": "Aucun palier gratuit permanent pour le calcul ; seulement un crédit d'essai de 5 $ pendant 90 jours pour les nouveaux comptes",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Fewer regions and managed-service breadth than AWS or Google Cloud",
-        "fr": null,
+        "fr": "Moins de régions et moins de services managés que AWS ou Google Cloud",
         "sourceIds": [
           "s1"
         ]
@@ -179,37 +180,140 @@
       "web"
     ]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer or small team deploying web apps, APIs, or Kubernetes clusters who wants predictable usage-based pricing without AWS or GCP's complexity.",
+      "fr": "Un ou une développeur ou petite équipe qui déploie des applications web, API ou clusters Kubernetes et veut une tarification à l'usage prévisible, sans la complexité d'AWS ou GCP."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "App hosting: deploy a web app or API on a $4/month Droplet, billed per second, instead of managing a hyperscale cloud account.",
+      "fr": "Hébergement d'application : déployer une application web ou une API sur un Droplet à 4 $ par mois, facturé à la seconde, sans gérer un compte cloud hyperscale."
+    },
+    {
+      "en": "Managed Kubernetes: run a small cluster with a free managed control plane starting at $12/month for the worker nodes.",
+      "fr": "Kubernetes managé : faire tourner un petit cluster avec un plan de contrôle managé gratuit, à partir de 12 $ par mois pour les nœuds de travail."
+    }
+  ],
   "alternatives": [
     {
       "slug": "aws",
       "reason": {
         "en": "Larger hyperscale cloud competitor with a much broader (and more complex) service catalogue",
-        "fr": null
+        "fr": "Concurrent cloud hyperscale plus large, avec un catalogue de services beaucoup plus étendu et plus complexe"
       }
     },
     {
       "slug": "gcp",
       "reason": {
         "en": "Hyperscale cloud alternative for compute, storage, and Kubernetes",
-        "fr": null
+        "fr": "Alternative cloud hyperscale pour le calcul, le stockage et Kubernetes"
       }
     },
     {
       "slug": "vercel",
       "reason": {
         "en": "Simpler deployment platform overlapping with App Platform for web app hosting",
-        "fr": null
+        "fr": "Plateforme de déploiement plus simple, qui recoupe App Platform pour l'hébergement d'applications web"
       }
     },
     {
       "slug": "fly-io",
       "reason": {
         "en": "Developer-focused cloud hosting alternative with usage-based pricing",
-        "fr": null
+        "fr": "Alternative cloud orientée développeurs, avec une tarification à l'usage"
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A $4/month Droplet with per-second billing and free outbound transfer up to 500 GiB gives real infrastructure at a cost a solo developer can justify.",
+        "fr": "Un Droplet à 4 $ par mois, facturé à la seconde, avec du transfert sortant gratuit jusqu'à 500 Gio, donne une vraie infrastructure à un coût justifiable pour un développeur solo.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Simple, predictable per-second or monthly pricing per product, compared to larger hyperscale clouds, gets a Droplet or App Platform deployment running quickly.",
+        "fr": "Une tarification simple et prévisible à la seconde ou au mois par produit, comparée aux grands clouds hyperscale, permet de déployer un Droplet ou une App Platform rapidement.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers the advertised virtual machines, managed Kubernetes, PaaS, and object storage directly, without extra configuration layers.",
+        "fr": "Fournit bien les machines virtuelles, le Kubernetes managé, le PaaS et le stockage d'objets annoncés, sans couches de configuration supplémentaires.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Covers the core infrastructure needs (compute, Kubernetes, storage, PaaS) well, but has fewer regions and a narrower managed-service catalogue than AWS or Google Cloud.",
+        "fr": "Couvre bien les besoins d'infrastructure de base (calcul, Kubernetes, stockage, PaaS), mais avec moins de régions et un catalogue de services managés plus restreint qu'AWS ou Google Cloud.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "S3-compatible object storage (Spaces) and standard virtual machines keep workloads portable to other providers using the same tooling.",
+        "fr": "Le stockage d'objets compatible S3 (Spaces) et des machines virtuelles standards gardent les charges de travail portables vers d'autres fournisseurs avec les mêmes outils.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Developer cloud hosting",
+      "fr": "Cloud développeur"
+    },
+    "shortDescription": {
+      "en": "Usage-based cloud hosting with virtual machines, managed Kubernetes, PaaS, and object storage, starting at $4 a month.",
+      "fr": "Hébergement cloud à l'usage avec machines virtuelles, Kubernetes managé, PaaS et stockage d'objets, à partir de 4 dollars par mois."
+    },
+    "longDescription": {
+      "en": "DigitalOcean offers virtual machines (Droplets), managed Kubernetes, a managed App Platform PaaS, and S3-compatible object storage (Spaces), billed per second or per month depending on the product. It positions itself as a simpler, more predictable alternative to AWS or Google Cloud.\n\nA Droplet starts at $4 a month with free outbound transfer up to 500 GiB, Kubernetes adds a free control plane from $12 a month in worker nodes, and App Platform has a free entry tier. There is no permanent free compute tier, only a $5, 90-day trial credit for new accounts. It fits a developer or small team that wants real infrastructure without AWS or GCP's complexity.",
+      "fr": "DigitalOcean propose des machines virtuelles (Droplets), du Kubernetes managé, une PaaS (App Platform) et du stockage S3 (Spaces), facturés à la seconde ou au mois. Il se positionne comme une alternative plus simple et prévisible à AWS ou Google Cloud.\n\nUn Droplet démarre à 4 $ par mois avec du transfert sortant gratuit jusqu'à 500 Gio, Kubernetes ajoute un plan de contrôle gratuit à partir de 12 $ par mois pour les nœuds, et App Platform a un palier gratuit. Il n'y a pas de palier de calcul gratuit permanent, seulement un crédit d'essai de 5 $ pendant 90 jours. Il convient à un développeur ou une petite équipe qui veut une infrastructure sans la complexité d'AWS ou GCP."
+    },
+    "pros": [
+      {
+        "en": "Predictable per-second billing starting at $4 a month for a Droplet.",
+        "fr": "Facturation à la seconde prévisible, à partir de 4 $ par mois pour un Droplet."
+      },
+      {
+        "en": "Covers compute, Kubernetes, PaaS, and object storage in one simple product line.",
+        "fr": "Couvre le calcul, Kubernetes, le PaaS et le stockage d'objets dans une gamme de produits simple."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No permanent free compute tier, only a $5, 90-day trial credit.",
+        "fr": "Aucun palier de calcul gratuit permanent, seulement un crédit d'essai de 5 $ pendant 90 jours."
+      },
+      {
+        "en": "Fewer regions and a narrower managed-service catalogue than AWS or Google Cloud.",
+        "fr": "Moins de régions et un catalogue de services managés plus restreint qu'AWS ou Google Cloud."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want predictable usage-based cloud pricing for apps, Kubernetes, or storage without AWS or GCP's complexity.",
+        "fr": "Tu veux une tarification cloud à l'usage prévisible pour des applications, Kubernetes ou du stockage, sans la complexité d'AWS ou GCP."
+      },
+      "avoidIf": {
+        "en": "You need the broadest possible region coverage or managed-service catalogue that only AWS or Google Cloud provide.",
+        "fr": "Tu as besoin de la plus large couverture de régions ou du catalogue de services managés le plus complet, que seuls AWS ou Google Cloud proposent."
+      },
+      "threshold": {
+        "en": "Budget starts at $4 a month for a basic Droplet; a managed Kubernetes cluster adds at least $12 a month in worker nodes.",
+        "fr": "Le budget démarre à 4 $ par mois pour un Droplet de base ; un cluster Kubernetes managé ajoute au moins 12 $ par mois en nœuds de travail."
+      }
+    }
+  },
   "unknowns": [],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

@@ -3,7 +3,6 @@
   "slug": "archicad",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
   "identity": {
     "officialName": "Archicad",
     "vendor": "Graphisoft SE",
@@ -15,7 +14,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://graphisoft.com/solutions/archicad", "tier": 1, "accessedOn": "2026-09-25", "title": "Archicad product page" }
+    {
+      "id": "s1",
+      "url": "https://graphisoft.com/solutions/archicad",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Archicad product page"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,63 +29,286 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": [{ "en": "Free licenses exist for students and teachers only, not a commercial free plan" }], "sourceIds": ["s1"] },
-    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": [
+        {
+          "en": "Free licenses exist for students and teachers only, not a commercial free plan",
+          "fr": "Des licences gratuites existent uniquement pour les étudiants et enseignants, ce n'est pas une offre gratuite commerciale"
+        }
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 30,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "studio",
         "name": "Archicad Studio",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 201, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 201,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Local collaboration only; $2,414 billed annually" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Local collaboration only; $2,414 billed annually",
+            "fr": "Collaboration locale uniquement ; 2 414 $ facturés annuellement"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "collaborate",
         "name": "Archicad Collaborate",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 237, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 237,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds cloud-based BIMcloud teamwork; $2,840 billed annually; most popular plan" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds cloud-based BIMcloud teamwork; $2,840 billed annually; most popular plan",
+            "fr": "Ajoute le travail en équipe BIMcloud dans le cloud ; 2 840 $ facturés annuellement ; plan le plus populaire"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "studio",
     "addOns": [],
     "cautions": [
-      { "en": "Both plan prices are annual commitments shown as a monthly-equivalent figure; the $201/$237 monthly numbers are not month-to-month rates.", "sourceIds": ["s1"] }
+      {
+        "en": "Both plan prices are annual commitments shown as a monthly-equivalent figure; the $201/$237 monthly numbers are not month-to-month rates.",
+        "fr": "Les deux tarifs sont des engagements annuels présentés comme un équivalent mensuel ; les montants de 201 $/237 $ ne sont pas des tarifs facturés mois par mois.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Full BIM authoring: parametric walls, slabs, roofs, columns, beams, doors, windows, stairs, railings and curtain walls with intelligent relationships.", "sourceIds": ["s1"] },
-      { "en": "Real-time multi-user collaboration via BIMcloud with automatic synchronization (on the Collaborate plan).", "sourceIds": ["s1"] },
-      { "en": "MEP design capabilities (mechanical, electrical, plumbing) with clash detection.", "sourceIds": ["s1"] },
-      { "en": "OpenBIM interoperability via IFC 4.3, BCF and IDS support for cross-platform collaboration.", "sourceIds": ["s1"] },
-      { "en": "Built-in AI assistant for workflow support (labeled BETA) and an AI Visualizer for photorealistic renders.", "sourceIds": ["s1"] }
+      {
+        "en": "Full BIM authoring: parametric walls, slabs, roofs, columns, beams, doors, windows, stairs, railings and curtain walls with intelligent relationships.",
+        "fr": "Création BIM complète : murs, dalles, toits, poteaux, poutres, portes, fenêtres, escaliers, garde-corps et murs-rideaux paramétriques aux relations intelligentes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Real-time multi-user collaboration via BIMcloud with automatic synchronization (on the Collaborate plan).",
+        "fr": "Collaboration multi-utilisateur en temps réel via BIMcloud avec synchronisation automatique (sur le plan Collaborate).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "MEP design capabilities (mechanical, electrical, plumbing) with clash detection.",
+        "fr": "Conception MEP (mécanique, électrique, plomberie) avec détection de collisions.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "OpenBIM interoperability via IFC 4.3, BCF and IDS support for cross-platform collaboration.",
+        "fr": "Interopérabilité OpenBIM via la prise en charge d'IFC 4.3, BCF et IDS pour la collaboration multiplateforme.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in AI assistant for workflow support (labeled BETA) and an AI Visualizer for photorealistic renders.",
+        "fr": "Assistant IA intégré pour l'aide au flux de travail (étiqueté BETA) et un AI Visualizer pour des rendus photoréalistes.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Real-time BIMcloud teamwork requires the more expensive Collaborate plan; the base Studio plan supports local collaboration only.", "sourceIds": ["s1"] },
-      { "en": "Priced as an annual commitment; no month-to-month plan was shown on the product page.", "sourceIds": ["s1"] }
+      {
+        "en": "Real-time BIMcloud teamwork requires the more expensive Collaborate plan; the base Studio plan supports local collaboration only.",
+        "fr": "Le travail en équipe en temps réel via BIMcloud nécessite le plan Collaborate, plus cher ; le plan Studio de base ne gère que la collaboration locale.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Priced as an annual commitment; no month-to-month plan was shown on the product page.",
+        "fr": "Tarifé sous forme d'engagement annuel ; aucun plan mois par mois n'était affiché sur la page produit.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["desktop"]
+    "platforms": [
+      "desktop"
+    ]
   },
-  "audience": null,
-  "useCases": [],
-  "alternatives": [],
-  "missingAlternatives": [
-    { "name": "Autodesk Revit", "officialUrl": "https://www.autodesk.com/products/revit", "reason": "Leading BIM competitor for architects and engineers, not in the catalogue." },
-    { "name": "Vectorworks Architect", "officialUrl": "https://www.vectorworks.net/architect", "reason": "Alternative BIM/CAD platform for architecture practices, not in the catalogue." }
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "Architects and small building-design practices who need full BIM authoring and MEP coordination, not generic digital freelancers.",
+      "fr": "Architectes et petites agences de conception bâtiment qui ont besoin d'une création BIM complète et d'une coordination MEP, pas des indépendants du numérique au sens large."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: model a building using parametric BIM elements (walls, slabs, doors, windows) with intelligent relationships, result a coordinated 3D model that updates automatically when elements change.",
+      "fr": "Usage : modéliser un bâtiment avec des éléments BIM paramétriques (murs, dalles, portes, fenêtres) aux relations intelligentes, résultat un modèle 3D coordonné qui se met à jour automatiquement quand les éléments changent."
+    },
+    {
+      "en": "Usage: collaborate on a shared BIM model in real time via BIMcloud on the Collaborate plan, result several team members editing the same project without version conflicts.",
+      "fr": "Usage : collaborer en temps réel sur un modèle BIM partagé via BIMcloud sur le plan Collaborate, résultat plusieurs membres de l'équipe qui modifient le même projet sans conflit de version."
+    }
   ],
-  "rating": null,
-  "editorial": null,
+  "alternatives": [
+    {
+      "slug": "sketchup-pro",
+      "reason": {
+        "en": "Widely used architectural 3D modeling tool covering overlapping design and documentation workflows.",
+        "fr": "Outil de modélisation 3D architecturale très utilisé, couvrant des workflows de conception et de documentation proches."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Autodesk Revit",
+      "officialUrl": "https://www.autodesk.com/products/revit",
+      "reason": "Leading BIM competitor for architects and engineers, not in the catalogue."
+    },
+    {
+      "name": "Vectorworks Architect",
+      "officialUrl": "https://www.vectorworks.net/architect",
+      "reason": "Alternative BIM/CAD platform for architecture practices, not in the catalogue."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Full professional BIM functionality justifies the cost for an architecture practice, but the entry Studio plan already requires a $2,414/year annual commitment with no month-to-month option.",
+        "fr": "Les fonctionnalités BIM professionnelles complètes justifient le coût pour une agence d'architecture, mais le plan Studio d'entrée impose déjà un engagement annuel de 2 414 $/an, sans option mois par mois.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The feature set (full parametric BIM authoring, MEP design, clash detection) is professional-grade architecture software, which implies real training is needed before a first useful result, not a quick-start tool.",
+        "fr": "L'étendue des fonctionnalités (création BIM paramétrique complète, conception MEP, détection de collisions) correspond à un logiciel professionnel d'architecture, ce qui suppose une vraie formation avant un premier résultat utile, pas un outil à prise en main rapide.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers full BIM authoring, MEP coordination with clash detection, and OpenBIM interoperability as described, without needing third-party plugins for the core workflow.",
+        "fr": "Tient sa promesse de création BIM complète, de coordination MEP avec détection de collisions et d'interopérabilité OpenBIM, sans plugin tiers nécessaire pour le flux de travail principal.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Combines parametric BIM authoring, MEP design, clash detection, real-time BIMcloud collaboration, and an AI Visualizer, a broad professional feature set.",
+        "fr": "Combine création BIM paramétrique, conception MEP, détection de collisions, collaboration BIMcloud en temps réel et AI Visualizer, un ensemble de fonctionnalités professionnelles étendu.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "OpenBIM interoperability through IFC 4.3, BCF, and IDS gives a real open-format export path out of the tool, better than a closed proprietary format.",
+        "fr": "L'interopérabilité OpenBIM via IFC 4.3, BCF et IDS offre un vrai chemin d'export en formats ouverts hors de l'outil, mieux qu'un format propriétaire fermé.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "BIM architecture platform",
+      "fr": "Plateforme BIM architecture"
+    },
+    "shortDescription": {
+      "en": "Archicad is Graphisoft's BIM platform for architects to design, model, and collaborate on building projects from concept through construction.",
+      "fr": "Archicad est la plateforme BIM de Graphisoft pour concevoir, modéliser et collaborer sur des projets de bâtiment, du concept à la construction."
+    },
+    "longDescription": {
+      "en": "Archicad is a full BIM authoring tool for architecture: parametric walls, slabs, roofs, doors, windows, and more with intelligent relationships, plus MEP design with clash detection and OpenBIM interoperability through IFC 4.3, BCF, and IDS.\n\nThe entry Studio plan costs $201/month under an annual commitment ($2,414/year) and covers local collaboration only; the Collaborate plan adds real-time BIMcloud teamwork for $237/month ($2,840/year). There's no month-to-month option, and the free tier is limited to students and teachers.",
+      "fr": "Archicad est un outil BIM complet pour l'architecture : murs, dalles, toits, portes, fenêtres et autres éléments paramétriques aux relations intelligentes, avec conception MEP, détection de collisions et interopérabilité OpenBIM via IFC 4.3, BCF et IDS.\n\nLe plan d'entrée Studio coûte 201 $/mois sous engagement annuel (2 414 $/an) et ne couvre que la collaboration locale ; le plan Collaborate ajoute le travail en temps réel via BIMcloud pour 237 $/mois (2 840 $/an). Il n'y a pas d'option mois par mois, et l'offre gratuite se limite aux étudiants et enseignants."
+    },
+    "pros": [
+      {
+        "en": "Full parametric BIM authoring plus MEP design with clash detection, covering architecture and systems coordination in one tool.",
+        "fr": "Création BIM paramétrique complète et conception MEP avec détection de collisions, couvrant architecture et coordination des systèmes dans un seul outil."
+      },
+      {
+        "en": "OpenBIM interoperability (IFC 4.3, BCF, IDS) makes it usable alongside other BIM software in a cross-platform team.",
+        "fr": "L'interopérabilité OpenBIM (IFC 4.3, BCF, IDS) le rend utilisable aux côtés d'autres logiciels BIM dans une équipe multiplateforme."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No month-to-month billing: both plans are annual commitments shown as a monthly-equivalent price, not flexible monthly rates.",
+        "fr": "Pas de facturation mois par mois : les deux plans sont des engagements annuels présentés comme un prix mensuel équivalent, pas des tarifs mensuels flexibles."
+      },
+      {
+        "en": "Real-time multi-user collaboration via BIMcloud requires the pricier Collaborate plan; the base Studio plan only supports local collaboration.",
+        "fr": "La collaboration multi-utilisateur en temps réel via BIMcloud nécessite le plan Collaborate, plus cher ; le plan Studio de base ne gère que la collaboration locale."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need full BIM authoring with MEP coordination and OpenBIM interoperability, and you're ready to commit to an annual license.",
+        "fr": "Tu as besoin d'une création BIM complète avec coordination MEP et interopérabilité OpenBIM, et tu es prêt à t'engager sur une licence annuelle."
+      },
+      "avoidIf": {
+        "en": "You need flexible month-to-month billing or only want basic 2D/3D CAD drafting without BIM relationships.",
+        "fr": "Tu as besoin d'une facturation flexible mois par mois, ou tu veux seulement du dessin CAO 2D/3D basique sans relations BIM."
+      },
+      "threshold": {
+        "en": "Budget at least $2,414/year for the entry Studio plan under annual commitment; Collaborate costs $2,840/year for real-time BIMcloud teamwork.",
+        "fr": "Prévoir au moins 2 414 $/an pour le plan Studio d'entrée sous engagement annuel ; Collaborate coûte 2 840 $/an pour le travail en équipe en temps réel via BIMcloud."
+      },
+      "billingTraps": {
+        "en": "Both plans require an annual commitment; the $201/$237 figures are monthly-equivalent prices, not actual month-to-month billing.",
+        "fr": "Les deux plans imposent un engagement annuel ; les montants de 201 $/237 $ sont des prix mensuels équivalents, pas une facturation réelle mois par mois."
+      }
+    }
+  },
   "unknowns": [
     "Exact currency/price for regions outside the US was not verified.",
     "Whether Windows and macOS support are fully feature-equivalent for BIMcloud teamwork was only stated in general terms."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "pricing.plans[].price.monthly holds $201 (Studio) and $237 (Collaborate), but the dossier's own caution and keyLimits confirm these are annual-commitment, monthly-equivalent figures ($2,414/year and $2,840/year), not true month-to-month rates. Per the schema's price.monthly vs price.annualPerMonth distinction, these values likely belong in annualPerMonth with monthly left null; worth re-checking the official pricing page for whether a real month-to-month rate exists separately.",
+    "The catalogue's existing pricingText for this tool shows EUR figures (203 EUR/mois, 2 440 EUR/an for Studio; 239 EUR/mois, 2 870 EUR/an for Collaborate) from a 2026-07-24 check, while this dossier captured USD figures ($201/$2,414 and $237/$2,840) from a US region check on 2026-09-25. Worth confirming whether this is a genuine regional price difference or a stale figure before merging."
+  ],
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
+  "hold": "monthly figures are annual-commitment monthly equivalents; move to annualPerMonth. Also add revit and vectorworks as alternatives (both in catalogue)"
 }

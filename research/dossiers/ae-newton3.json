@@ -3,7 +3,7 @@
   "slug": "ae-newton3",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Newton",
     "vendor": "Motion Boutique / aescripts + aeplugins",
@@ -93,7 +93,8 @@
         "en": "Newton 3 (the slug's originally researched product) is no longer the current sale version; the official page now sells Newton 4 at 249.99 USD, with a 99.99 USD upgrade price for Newton 3 owners. No public price for standalone Newton 3 remains on the live page.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Newton 3 (le produit initialement recherché pour ce slug) n'est plus la version en vente actuelle ; la page officielle vend désormais Newton 4 à 249,99 $, avec un prix de mise à niveau à 99,99 $ pour les propriétaires de Newton 3. Aucun prix public pour Newton 3 seul ne figure sur la page en ligne."
       }
     ]
   },
@@ -103,13 +104,15 @@
         "en": "2D physics simulation engine for After Effects: makes layers behave like solid objects with gravity, collisions, friction and springs.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Moteur de simulation physique 2D pour After Effects : fait se comporter les calques comme des objets solides avec gravité, collisions, friction et ressorts."
       },
       {
         "en": "Applies realistic forces (bounces, oscillations) to text, shapes and other layers without manual keyframing.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Applique des forces réalistes (rebonds, oscillations) au texte, aux formes et autres calques sans animation manuelle par images clés."
       }
     ],
     "limitations": [
@@ -117,13 +120,15 @@
         "en": "One-time purchase with no free trial mentioned; buyers cannot test before purchasing.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Achat unique sans essai gratuit mentionné ; impossible de tester avant d'acheter."
       },
       {
         "en": "Plugin-only tool, works exclusively inside After Effects and adds no value without it.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Plugin exclusivement utilisable dans After Effects, sans valeur ajoutée en dehors de ce logiciel."
       }
     ],
     "integrations": [],
@@ -132,17 +137,131 @@
       "mac"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Motion designers working in After Effects who need realistic physics-driven motion (bounces, collisions, springs) without manual keyframing.",
+      "fr": "Motion designers qui travaillent dans After Effects et ont besoin d'un mouvement réaliste piloté par la physique (rebonds, collisions, ressorts) sans animation manuelle par images clés."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Use case: make animated text or shape layers bounce and collide realistically for a motion graphics intro, without hand-keyframing each bounce.",
+      "fr": "Cas d'usage : faire rebondir et entrer en collision de manière réaliste du texte ou des formes animées pour une intro de motion design, sans animer chaque rebond à la main."
+    },
+    {
+      "en": "Use case: add spring-like oscillation to a UI element or logo reveal inside an existing After Effects project.",
+      "fr": "Cas d'usage : ajouter une oscillation type ressort à un élément d'interface ou à une révélation de logo dans un projet After Effects existant."
+    }
+  ],
   "alternatives": [],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A one-time 249.99 USD license (or 99.99 USD upgrade for existing Newton 3 owners) replaces hours of manual keyframing for physics-like motion, but there is no trial to confirm fit before paying.",
+        "fr": "Une licence à vie à 249,99 $ (ou une mise à niveau à 99,99 $ pour les propriétaires de Newton 3) remplace des heures d'animation manuelle par images clés pour un mouvement physique, mais aucun essai ne permet de vérifier l'adéquation avant d'acheter.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Applies physics forces (gravity, collisions, friction, springs, bounces, oscillations) to layers as described, without needing a separate physics tool outside After Effects.",
+        "fr": "Applique des forces physiques (gravité, collisions, friction, ressorts, rebonds, oscillations) aux calques comme décrit, sans nécessiter un outil physique séparé hors After Effects.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers core 2D rigid-body physics (gravity, collisions, friction, springs) for After Effects layers, a focused but real capability rather than a general-purpose simulation suite.",
+        "fr": "Couvre la physique 2D de base (gravité, collisions, friction, ressorts) pour les calques After Effects, une capacité ciblée mais réelle plutôt qu'une suite de simulation généraliste.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: project portability or export when stopping use of the plugin is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité du projet ou l'export en cas d'arrêt du plugin ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "AE physics plugin",
+      "fr": "Plugin physique pour AE"
+    },
+    "shortDescription": {
+      "en": "Newton is an After Effects plugin that gives layers realistic 2D physics (gravity, collisions, springs) without manual keyframing, sold as a one-time license.",
+      "fr": "Newton est un plugin After Effects qui donne aux calques une physique 2D réaliste (gravité, collisions, ressorts) sans animation manuelle, vendu en licence à vie."
+    },
+    "longDescription": {
+      "en": "Newton is a 2D physics simulation plugin for After Effects: it makes text, shape and other layers behave like solid objects, with gravity, collisions, friction and springs, applying realistic bounces and oscillations without manual keyframing.\n\nThe current version, Newton 4, is a one-time purchase at 249.99 USD, with a 99.99 USD discounted upgrade for existing Newton 3 owners; there is no free trial. It suits a motion designer who animates directly in After Effects and wants physics-driven motion, and adds no value outside that software.",
+      "fr": "Newton est un plugin de simulation physique 2D pour After Effects : il fait se comporter le texte, les formes et les autres calques comme des objets solides, avec gravité, collisions, friction et ressorts, en appliquant des rebonds et oscillations réalistes sans animation manuelle par images clés.\n\nLa version actuelle, Newton 4, est un achat unique à 249,99 $, avec une mise à niveau à prix réduit à 99,99 $ pour les propriétaires de Newton 3 ; il n'y a pas d'essai gratuit. L'outil convient à un motion designer qui anime directement dans After Effects et veut un mouvement piloté par la physique, et n'apporte aucune valeur hors de ce logiciel."
+    },
+    "pros": [
+      {
+        "en": "Replaces manual keyframing for bounces, collisions and springs with a physics simulation.",
+        "fr": "Remplace l'animation manuelle par images clés pour les rebonds, collisions et ressorts par une simulation physique."
+      },
+      {
+        "en": "One-time license with no recurring subscription fee.",
+        "fr": "Licence à vie, sans abonnement récurrent."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free trial to test the plugin before buying.",
+        "fr": "Aucun essai gratuit pour tester le plugin avant d'acheter."
+      },
+      {
+        "en": "Works only inside After Effects, with no standalone use.",
+        "fr": "Fonctionne uniquement dans After Effects, sans usage autonome."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You animate in After Effects and regularly need realistic physics-driven motion like bounces, collisions or springs.",
+        "fr": "Tu animes dans After Effects et tu as régulièrement besoin d'un mouvement réaliste piloté par la physique, comme des rebonds, collisions ou ressorts."
+      },
+      "avoidIf": {
+        "en": "You don't use After Effects, or you only need this kind of motion occasionally and can hand-keyframe it.",
+        "fr": "Tu n'utilises pas After Effects, ou tu n'as besoin de ce type de mouvement qu'occasionnellement et peux l'animer à la main."
+      },
+      "threshold": {
+        "en": "At 249.99 USD one-time (or 99.99 USD to upgrade from Newton 3), it pays off once physics-driven animation becomes a recurring part of your motion design work.",
+        "fr": "À 249,99 $ en achat unique (ou 99,99 $ pour la mise à niveau depuis Newton 3), ça devient rentable dès que l'animation pilotée par la physique revient régulièrement dans ton travail de motion design."
+      }
+    }
+  },
   "unknowns": [
     "No free trial availability could be confirmed; the FAQ page was not fully accessible for a definitive answer.",
     "Whether Newton 3 (the base slug's named version) is still purchasable standalone, or only via the Newton 4 upgrade path, was not fully clarified from the pages reached."
   ],
   "conflicts": [
     "The seed data (queue) describes this slug as 'Newton 3' with a 249.99 USD price and a separate 99.99 USD Newton 4 upgrade, but the live official page now sells Newton 4 itself at 249.99 USD with the 99.99 USD price being the Newton-3-owner upgrade discount, not a Newton 4 standalone upgrade fee from a different base. This should be reconciled at fusion time."
-  ]
+  ],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "No catalogue competitor matches Newton's specific 2D physics-simulation niche for After Effects (ae-duik and ae-rubberhose are rigging/bones tools, a different need); alternatives left empty rather than listing an unrelated plugin as a substitute.",
+    "The seed data described this slug as 'Newton 3' at 249.99 USD with a separate 99.99 USD Newton 4 upgrade; the live page now sells Newton 4 itself at 249.99 USD, with 99.99 USD being the upgrade price for Newton 3 owners specifically. Identity/pricing fields in this dossier reflect the current Newton 4 sale; verify the catalogue entry name matches before merge."
+  ],
+  "hold": "Newton 3 replaced by Newton 4; dossier mixes both versions"
 }

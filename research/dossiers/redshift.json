@@ -3,7 +3,7 @@
   "slug": "redshift",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Redshift",
     "vendor": "Maxon Computer GmbH",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.maxon.net/en/buy", "tier": 1, "accessedOn": "2026-09-25", "title": "Maxon buy/pricing page" },
-    { "id": "s2", "url": "https://www.bhphotovideo.com/c/product/1805465-REG/maxon_rs_y_redshift_annual_subscription.html", "tier": 2, "accessedOn": "2026-09-25", "title": "B&H Photo Video listing of Redshift annual subscription price" }
+    {
+      "id": "s1",
+      "url": "https://www.maxon.net/en/buy",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Maxon buy/pricing page"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.bhphotovideo.com/c/product/1805465-REG/maxon_rs_y_redshift_annual_subscription.html",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "B&H Photo Video listing of Redshift annual subscription price"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -25,7 +37,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -33,43 +51,236 @@
         "name": "Redshift standalone (annual billing)",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 49, "annualPerMonth": 24.08, "oneTime": null },
+        "price": {
+          "monthly": 49,
+          "annualPerMonth": 24.08,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Annual subscription listed at $289/year (~$24/month equivalent) by a reseller, roughly half the monthly rate of $49/month.", "fr": null }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "Annual subscription listed at $289/year (~$24/month equivalent) by a reseller, roughly half the monthly rate of $49/month.",
+            "fr": "Abonnement annuel affiché à 289 $/an (environ 24 $/mois équivalent) par un revendeur, soit environ la moitié du tarif mensuel de 49 $/mois."
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
       }
     ],
     "comparePlanKey": "redshift-annual",
     "addOns": [],
     "cautions": [
-      { "en": "Redshift is also included at no extra cost with every Cinema 4D subscription and with Maxon One, so buying it standalone only makes sense for users of other 3D applications (Houdini, Maya, 3ds Max, Blender) needing just the renderer.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Redshift is also included at no extra cost with every Cinema 4D subscription and with Maxon One, so buying it standalone only makes sense for users of other 3D applications (Houdini, Maya, 3ds Max, Blender) needing just the renderer.",
+        "fr": "Redshift est aussi inclus sans coût supplémentaire avec tout abonnement Cinema 4D et avec Maxon One, donc l'acheter seul n'a de sens que pour les utilisateurs d'autres applications 3D (Houdini, Maya, 3ds Max, Blender) qui n'ont besoin que du moteur de rendu.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "GPU-accelerated biased renderer widely used in motion design, VFX and archviz for fast photorealistic rendering.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Plugs into multiple host 3D applications (Cinema 4D, Houdini, Maya, 3ds Max, Blender, Katana) rather than being a standalone DCC tool.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "GPU-accelerated biased renderer widely used in motion design, VFX and archviz for fast photorealistic rendering.",
+        "fr": "Moteur de rendu biaisé accéléré par GPU largement utilisé en motion design, VFX et archviz pour un rendu photoréaliste rapide.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Plugs into multiple host 3D applications (Cinema 4D, Houdini, Maya, 3ds Max, Blender, Katana) rather than being a standalone DCC tool.",
+        "fr": "Se connecte à plusieurs applications 3D hôtes (Cinema 4D, Houdini, Maya, 3ds Max, Blender, Katana) plutôt que d'être un outil de création autonome.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No free tier; requires an ongoing subscription per seat.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "As a render engine, it depends on a compatible GPU and a host 3D application to be useful; it is not a full content-creation suite.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No free tier; requires an ongoing subscription per seat.",
+        "fr": "Aucun palier gratuit ; nécessite un abonnement continu par siège.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "As a render engine, it depends on a compatible GPU and a host 3D application to be useful; it is not a full content-creation suite.",
+        "fr": "En tant que moteur de rendu, il dépend d'un GPU compatible et d'une application 3D hôte pour être utile ; ce n'est pas une suite de création de contenu complète.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Cinema 4D", "slug": "cinema-4d", "sourceIds": ["s1"] }
+      {
+        "name": "Cinema 4D",
+        "slug": "cinema-4d",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["windows", "mac"]
+    "platforms": [
+      "windows",
+      "mac"
+    ]
   },
   "alternatives": [
-    { "slug": "octane-render", "reason": { "en": "Another GPU-accelerated renderer plugging into similar host 3D applications.", "fr": null } },
-    { "slug": "v-ray", "reason": { "en": "Widely used renderer across 3ds Max, Maya, SketchUp and other DCC tools.", "fr": null } },
-    { "slug": "corona-renderer", "reason": { "en": "Physically based renderer competing in archviz and product visualization.", "fr": null } }
+    {
+      "slug": "octane-render",
+      "reason": {
+        "en": "Another GPU-accelerated renderer plugging into similar host 3D applications.",
+        "fr": "Un autre moteur de rendu accéléré par GPU se connectant à des applications 3D hôtes similaires."
+      }
+    },
+    {
+      "slug": "v-ray",
+      "reason": {
+        "en": "Widely used renderer across 3ds Max, Maya, SketchUp and other DCC tools.",
+        "fr": "Moteur de rendu très utilisé sous 3ds Max, Maya, SketchUp et d'autres outils DCC."
+      }
+    },
+    {
+      "slug": "corona-renderer",
+      "reason": {
+        "en": "Physically based renderer competing in archviz and product visualization.",
+        "fr": "Moteur de rendu physique concurrent en archviz et visualisation produit."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Arnold", "officialUrl": "https://www.autodesk.com/products/arnold/overview", "reason": "Major production renderer (Autodesk) frequently compared to Redshift, listed only as an alternativeCandidate." }
+    {
+      "name": "Arnold",
+      "officialUrl": "https://www.autodesk.com/products/arnold/overview",
+      "reason": "Major production renderer (Autodesk) frequently compared to Redshift, listed only as an alternativeCandidate."
+    }
   ],
   "unknowns": [
     "Exact current monthly price on the official maxon.net buy page not independently re-confirmed; figures rely on a reseller listing.",
     "Whether a free trial is offered was not confirmed on the official site."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Buying it standalone only pays off for users of other host apps (Houdini, Maya, 3ds Max, Blender), since Cinema 4D and Maxon One already include it.",
+        "fr": "L'acheter seul n'est rentable que pour les utilisateurs d'autres applications hôtes (Houdini, Maya, 3ds Max, Blender), puisque Cinema 4D et Maxon One l'incluent déjà.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "As a plugin render engine for an existing 3D application, it requires a working host scene already set up before it produces anything.",
+        "fr": "En tant que moteur de rendu plugin pour une application 3D existante, il nécessite une scène déjà configurée dans l'application hôte avant de produire quoi que ce soit.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers fast GPU-accelerated photorealistic rendering across the host applications it plugs into, as described.",
+        "fr": "Fournit un rendu photoréaliste rapide accéléré par GPU dans les applications hôtes auxquelles il se connecte, comme annoncé.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Widely used in motion design, VFX and archviz production, and plugs into most major 3D applications on the market.",
+        "fr": "Largement utilisé en production motion design, VFX et archviz, et se connecte à la plupart des grandes applications 3D du marché.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether rendered scenes or settings can be migrated to another renderer is not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité de migrer des scènes ou réglages de rendu vers un autre moteur ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A 3D artist or motion designer working in Houdini, Maya, 3ds Max or Blender who needs fast GPU rendering without switching to Cinema 4D for it.",
+      "fr": "Un ou une artiste 3D ou motion designer travaillant sous Houdini, Maya, 3ds Max ou Blender qui a besoin d'un rendu GPU rapide sans passer à Cinema 4D pour l'obtenir."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Faster turnaround: switch a Maya or Blender scene's render engine to Redshift to cut render times on a tight client deadline.",
+      "fr": "Délai raccourci : bascule le moteur de rendu d'une scène Maya ou Blender vers Redshift pour réduire les temps de rendu sur un délai client serré."
+    },
+    {
+      "en": "Cross-app pipeline: render the same look consistently when a studio's assets move between Houdini and 3ds Max on the same project.",
+      "fr": "Pipeline multi-applications : garde un rendu cohérent quand les assets d'un studio passent de Houdini à 3ds Max sur le même projet."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "GPU render engine",
+      "fr": "Moteur de rendu GPU"
+    },
+    "shortDescription": {
+      "en": "Redshift is a GPU-accelerated renderer that plugs into Houdini, Maya, 3ds Max, Blender and other 3D applications for fast photorealistic rendering.",
+      "fr": "Redshift est un moteur de rendu GPU qui se connecte à Houdini, Maya, 3ds Max, Blender et d'autres applications 3D pour un rendu rapide."
+    },
+    "longDescription": {
+      "en": "Redshift is a GPU-accelerated biased renderer used across motion design, VFX and archviz for fast photorealistic output. Rather than being a standalone content-creation tool, it plugs into host 3D applications: Cinema 4D, Houdini, Maya, 3ds Max, Blender and Katana.\n\nA standalone subscription runs around $49 a month, but it is already bundled free with every Cinema 4D subscription and with Maxon One. Buying it separately only makes sense for users of other 3D applications who just need the renderer, not the rest of Cinema 4D.",
+      "fr": "Redshift est un moteur de rendu biaisé accéléré par GPU utilisé en motion design, VFX et archviz pour un rendu photoréaliste rapide. Plutôt qu'un outil de création de contenu autonome, il se connecte à des applications 3D hôtes : Cinema 4D, Houdini, Maya, 3ds Max, Blender et Katana.\n\nUn abonnement autonome tourne autour de 49 $ par mois, mais il est déjà inclus gratuitement avec tout abonnement Cinema 4D et avec Maxon One. L'acheter séparément n'a de sens que pour les utilisateurs d'autres applications 3D qui n'ont besoin que du moteur de rendu, pas du reste de Cinema 4D."
+    },
+    "pros": [
+      {
+        "en": "Plugs into most major 3D applications (Houdini, Maya, 3ds Max, Blender), so a studio does not need to switch its main software to get GPU rendering.",
+        "fr": "Se connecte à la plupart des grandes applications 3D (Houdini, Maya, 3ds Max, Blender), donc un studio n'a pas besoin de changer de logiciel principal pour obtenir le rendu GPU."
+      },
+      {
+        "en": "Already included free with Cinema 4D and Maxon One, so existing Maxon customers get it without an extra subscription.",
+        "fr": "Déjà inclus gratuitement avec Cinema 4D et Maxon One, donc les clients Maxon existants l'obtiennent sans abonnement supplémentaire."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free tier at all for standalone use, unlike some open-source alternatives.",
+        "fr": "Aucun palier gratuit pour une utilisation autonome, contrairement à certaines alternatives open source."
+      },
+      {
+        "en": "On its own it does nothing without a compatible host 3D application and a GPU, so it adds to an existing software bill rather than replacing one.",
+        "fr": "Seul, il ne sert à rien sans une application 3D hôte compatible et un GPU, donc il s'ajoute à une facture logicielle existante plutôt que d'en remplacer une."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You already use Houdini, Maya, 3ds Max or Blender and need fast GPU rendering without switching to Cinema 4D.",
+        "fr": "Tu utilises déjà Houdini, Maya, 3ds Max ou Blender et as besoin d'un rendu GPU rapide sans passer à Cinema 4D."
+      },
+      "avoidIf": {
+        "en": "You already have a Cinema 4D or Maxon One subscription, since Redshift is already included at no extra cost.",
+        "fr": "Tu as déjà un abonnement Cinema 4D ou Maxon One, puisque Redshift est déjà inclus sans coût supplémentaire."
+      },
+      "threshold": {
+        "en": "Budget around $49/month standalone (about $24/month on an annual plan per a reseller listing) before buying it outside a Maxon bundle.",
+        "fr": "Prévois environ 49 $/mois en autonome (environ 24 $/mois sur un plan annuel selon un revendeur) avant de l'acheter hors d'un pack Maxon."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Le prix mensuel (49 $/mois) vient de la page officielle Maxon tandis que l'équivalent annuel (24,08 $/mois) vient d'un revendeur (B&H) ; les deux chiffres n'ont pas été confirmés sur la même page, à revérifier sur maxon.net/en/buy."
+  ],
+  "completedLocallyOn": "2026-10-01"
 }

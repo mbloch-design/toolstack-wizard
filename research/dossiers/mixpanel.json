@@ -3,7 +3,7 @@
   "slug": "mixpanel",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Mixpanel",
     "vendor": "Mixpanel, Inc.",
@@ -32,7 +32,10 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": "Up to 1M monthly tracked events, 10K session replays/month, up to 1K experiment MEU/month, up to 10 active feature flags, unlimited seats.",
+      "limits": {
+        "en": "Up to 1M monthly tracked events, 10K session replays/month, up to 1K experiment MEU/month, up to 10 active feature flags, unlimited seats.",
+        "fr": "Jusqu'à 1 M d'événements suivis par mois, 10 000 replays de session par mois, jusqu'à 1 000 MEU d'expérimentation par mois, jusqu'à 10 feature flags actifs, sièges illimités."
+      },
       "sourceIds": [
         "s1"
       ]
@@ -52,7 +55,7 @@
         "keyLimits": [
           {
             "en": "Up to 1M events/month, 10K session replays/month, funnels and retention analysis, unlimited seats.",
-            "fr": null
+            "fr": "Jusqu'à 1 M d'événements par mois, 10 000 replays de session par mois, analyses de funnels et de rétention, sièges illimités."
           }
         ],
         "sourceIds": [
@@ -73,7 +76,7 @@
         "keyLimits": [
           {
             "en": "Up to 20M events/month included, then volume-based pricing; up to 500K session replays/month, 5K experiment MEU included, up to 50 active feature flags, unlimited saved cohorts, up to 5 alerts.",
-            "fr": null
+            "fr": "Jusqu'à 20 M d'événements inclus par mois, puis facturation au volume ; jusqu'à 500 000 replays de session par mois, 5 000 MEU d'expérimentation inclus, jusqu'à 50 feature flags actifs, cohortes enregistrées illimitées, jusqu'à 5 alertes."
           }
         ],
         "sourceIds": [
@@ -94,7 +97,7 @@
         "keyLimits": [
           {
             "en": "Up to 1T events/month, custom session replay and experiment volumes, unlimited alerts, anomaly detection, root cause analysis, Metric Trees, dedicated success team.",
-            "fr": null
+            "fr": "Jusqu'à 1 000 milliards d'événements par mois, volumes de replay et d'expérimentation personnalisés, alertes illimitées, détection d'anomalies, analyse de cause racine, Metric Trees, équipe dédiée."
           }
         ],
         "sourceIds": [
@@ -107,14 +110,14 @@
     "cautions": [
       {
         "en": "Growth plan starts free but bills on volume beyond the included 20M monthly events; the entry paid price point depends on actual event volume rather than a flat listed rate.",
-        "fr": null,
+        "fr": "Le plan Growth démarre gratuitement mais facture au volume au-delà des 20 M d'événements mensuels inclus ; le prix d'entrée payant dépend donc du trafic réel plutôt que d'un tarif fixe affiché.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Pricing model changed from monthly tracked users (MTU) to monthly events as the primary billing metric; older MTU-based pricing (used in the seed data) is outdated.",
-        "fr": null,
+        "fr": "Le modèle de tarification est passé des utilisateurs trackés par mois (MTU) aux événements mensuels comme mesure de facturation principale ; l'ancienne tarification au MTU (utilisée dans la fiche de départ) est obsolète.",
         "sourceIds": [
           "s1"
         ]
@@ -125,28 +128,28 @@
     "capabilities": [
       {
         "en": "Product analytics with funnels, retention analysis and custom event tracking.",
-        "fr": null,
+        "fr": "Analytics produit avec funnels, analyse de rétention et suivi d'événements personnalisés.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Session replay integrated into the same platform, with volume tiers per plan.",
-        "fr": null,
+        "fr": "Replay de session intégré à la même plateforme, avec des paliers de volume selon le plan.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Feature flags and experimentation (MEU-based) built into the product.",
-        "fr": null,
+        "fr": "Feature flags et expérimentation (basés sur les MEU) intégrés au produit.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Anomaly detection, root cause analysis and Metric Trees on Enterprise.",
-        "fr": null,
+        "fr": "Détection d'anomalies, analyse de cause racine et Metric Trees sur Enterprise.",
         "sourceIds": [
           "s1"
         ]
@@ -155,14 +158,14 @@
     "limitations": [
       {
         "en": "Free plan is capped at 1M events/month and 10 active feature flags, limiting use for higher-traffic products.",
-        "fr": null,
+        "fr": "Le plan gratuit est plafonné à 1 M d'événements par mois et 10 feature flags actifs, ce qui limite l'usage pour des produits à fort trafic.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Growth plan's exact price beyond the included event volume is not a flat published number, making budgeting less predictable.",
-        "fr": null,
+        "fr": "Le prix exact du plan Growth au-delà du volume inclus n'est pas un tarif fixe publié, ce qui rend le budget moins prévisible.",
         "sourceIds": [
           "s1"
         ]
@@ -178,28 +181,28 @@
       "slug": "amplitude",
       "reason": {
         "en": "Already listed as a current alternative; direct competitor in product analytics.",
-        "fr": null
+        "fr": "Déjà listé comme alternative actuelle ; concurrent direct en analytics produit."
       }
     },
     {
       "slug": "google-analytics",
       "reason": {
         "en": "Already listed as a current alternative; broader web analytics competitor.",
-        "fr": null
+        "fr": "Déjà listé comme alternative actuelle ; concurrent plus généraliste en analytics web."
       }
     },
     {
       "slug": "posthog",
       "reason": {
         "en": "Open-source product analytics alternative with self-hosting option.",
-        "fr": null
+        "fr": "Alternative open source en analytics produit, avec option d'auto-hébergement."
       }
     },
     {
       "slug": "hotjar",
       "reason": {
         "en": "Overlaps on session replay and behavioral analytics use cases.",
-        "fr": null
+        "fr": "Recoupe les cas d'usage de replay de session et d'analyse comportementale."
       }
     }
   ],
@@ -210,5 +213,122 @@
   ],
   "conflicts": [
     "Seed pricing (comparePriceMonthlyEur 17.52, MTU-based model) reflects Mixpanel's older monthly-tracked-users pricing; the current official page prices by monthly events instead, so the seed's pricing model is outdated."
-  ]
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free tier covers up to 1M events and unlimited seats, and already includes funnels, retention and session replay, which usually requires several separate tools.",
+        "fr": "Le palier gratuit couvre jusqu'à 1 M d'événements avec des sièges illimités, et inclut déjà funnels, rétention et replay de session, ce qui demande d'habitude plusieurs outils séparés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Getting a first useful funnel requires instrumenting custom events in the product first, which takes developer time before any analysis is possible.",
+        "fr": "Obtenir un premier funnel utile demande d'abord d'instrumenter des événements personnalisés dans le produit, ce qui prend du temps de développement avant toute analyse.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Funnels, retention analysis and session replay work as described, without workarounds, on the same dashboard.",
+        "fr": "Les funnels, l'analyse de rétention et le replay de session fonctionnent comme annoncé, sans contournement, dans le même tableau de bord.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Enterprise tier adds anomaly detection, root cause analysis and Metric Trees on top of the standard funnel and retention toolkit, well above a basic event tracker.",
+        "fr": "Le palier Enterprise ajoute détection d'anomalies, analyse de cause racine et Metric Trees en plus des funnels et de la rétention standard, bien au-delà d'un simple traqueur d'événements.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability options are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export et de portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer or technical founder instrumenting their own product who needs funnels, retention and session replay beyond what a website analytics tool provides.",
+      "fr": "Un développeur ou fondateur technique qui instrumente son propre produit et a besoin de funnels, de rétention et de replay de session au-delà de ce qu'offre un outil d'analytics web classique."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Feature adoption: instrument a new feature's events and see where users drop off in the funnel within a day of shipping it.",
+      "fr": "Adoption d'une fonctionnalité : instrumente les événements d'une nouvelle fonctionnalité et vois où les utilisateurs abandonnent dans le funnel dès le lendemain de sa mise en ligne."
+    },
+    {
+      "en": "Checkout debugging: watch session replays of paying users to find exactly where they get stuck before completing a purchase.",
+      "fr": "Débogage du paiement : regarde les replays de session d'utilisateurs payants pour trouver précisément où ils bloquent avant de finaliser un achat."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Product analytics",
+      "fr": "Analytics produit"
+    },
+    "shortDescription": {
+      "en": "Mixpanel tracks product usage with funnels, retention and session replay, billed on monthly events rather than a flat seat price.",
+      "fr": "Mixpanel suit l'usage produit avec funnels, rétention et replay de session, facturé au volume d'événements mensuels plutôt qu'à un tarif fixe par siège."
+    },
+    "longDescription": {
+      "en": "Mixpanel is a product analytics platform built around funnels, retention curves and custom event tracking, with session replay, feature flags and experimentation layered into the same dashboard. Enterprise customers add anomaly detection, root cause analysis and Metric Trees.\n\nThe Growth plan starts free for up to 20M monthly events, then bills on volume beyond that threshold rather than a flat monthly rate, so the entry paid price depends on actual traffic. It suits product and growth teams instrumenting their own app who need deeper behavioral data than a website analytics tool provides.",
+      "fr": "Mixpanel est une plateforme d'analytics produit organisée autour des funnels, des courbes de rétention et du suivi d'événements personnalisés, avec replay de session, feature flags et expérimentation dans le même tableau de bord. Les clients Enterprise ont en plus la détection d'anomalies, l'analyse de cause racine et les Metric Trees.\n\nLe plan Growth démarre gratuitement jusqu'à 20 millions d'événements mensuels, puis facture au volume au-delà de ce seuil plutôt qu'à un tarif mensuel fixe, donc le prix d'entrée payant dépend du trafic réel. Il convient aux équipes produit et growth qui instrumentent leur propre application et ont besoin de données comportementales plus fines qu'un outil d'analytics web classique."
+    },
+    "pros": [
+      {
+        "en": "Free tier covers up to 1M events a month and unlimited seats, enough to run real product analytics before paying anything.",
+        "fr": "Le palier gratuit couvre jusqu'à 1 M d'événements par mois avec des sièges illimités, assez pour faire de l'analytics produit réel avant de payer quoi que ce soit."
+      },
+      {
+        "en": "Session replay, feature flags and experimentation live in the same dashboard as the funnels, with no separate tool to buy.",
+        "fr": "Le replay de session, les feature flags et l'expérimentation vivent dans le même tableau de bord que les funnels, sans outil séparé à acheter."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Paid pricing beyond 20M events is not a flat published rate, so the real monthly bill depends on volume and is hard to predict in advance.",
+        "fr": "La tarification payante au-delà de 20 M d'événements n'est pas un tarif fixe publié, donc la facture mensuelle réelle dépend du volume et reste difficile à prévoir."
+      },
+      {
+        "en": "Useful funnels require instrumenting events in the product first, which takes developer time before any analysis is possible.",
+        "fr": "Des funnels utiles demandent d'abord d'instrumenter des événements dans le produit, ce qui prend du temps de développement avant toute analyse."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Your product already sends, or you can instrument, custom events and you need funnels, retention or session replay beyond basic website traffic numbers.",
+        "fr": "Ton produit envoie déjà des événements personnalisés, ou tu peux les instrumenter, et tu as besoin de funnels, de rétention ou de replay de session au-delà des chiffres de trafic web basiques."
+      },
+      "avoidIf": {
+        "en": "You just need basic website traffic numbers, or you cannot commit developer time to event instrumentation.",
+        "fr": "Tu as juste besoin de chiffres de trafic web basiques, ou tu ne peux pas consacrer de temps de développement à l'instrumentation des événements."
+      },
+      "threshold": {
+        "en": "Free up to 20M events a month on Growth; past that the per-event overage rate is not published, so get a quote before committing budget.",
+        "fr": "Gratuit jusqu'à 20 millions d'événements par mois sur Growth ; au-delà, le tarif de dépassement par événement n'est pas public, donc demande un devis avant d'engager un budget."
+      },
+      "billingTraps": {
+        "en": "The Growth plan's entry price looks free, but overage beyond 20M monthly events is billed on volume with no published flat rate, so a traffic spike can raise the bill unpredictably.",
+        "fr": "Le prix d'entrée du plan Growth paraît gratuit, mais le dépassement au-delà de 20 millions d'événements mensuels est facturé au volume sans tarif fixe publié, donc un pic de trafic peut faire grimper la facture de façon imprévisible."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01"
 }

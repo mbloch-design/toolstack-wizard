@@ -3,7 +3,8 @@
   "slug": "shipstation",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "ShipStation",
     "vendor": "Auctane, Inc.",
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": 14.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Entry tier covers 50 shipments/month, scaling to 174.99 USD/month at 5,000 shipments; 3 users included; basic automation, rate shopping, LTL comparison, return labels, email support" }],
+        "keyLimits": [{ "en": "Entry tier covers 50 shipments/month, scaling to 174.99 USD/month at 5,000 shipments; 3 users included; basic automation, rate shopping, LTL comparison, return labels, email support", "fr": "Offre d'entrée pour 50 expéditions/mois, jusqu'à 174,99 $/mois à 5 000 expéditions ; 3 utilisateurs inclus ; automatisation de base, comparaison de tarifs, comparaison LTL, étiquettes de retour, support par e-mail" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": null,
         "price": { "monthly": 29.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Entry tier from 50 shipments/month up to 100,000+ (3,599.99 USD/month at top tier); 10 users included; unlimited automations, order combining/splitting, API access, phone support, branded returns portal" }],
+        "keyLimits": [{ "en": "Entry tier from 50 shipments/month up to 100,000+ (3,599.99 USD/month at top tier); 10 users included; unlimited automations, order combining/splitting, API access, phone support, branded returns portal", "fr": "De 50 expéditions/mois jusqu'à 100 000+ (3 599,99 $/mois au palier le plus haut) ; 10 utilisateurs inclus ; automatisations illimitées, fusion/division de commandes, accès API, support téléphonique, portail de retour à l'image de la marque" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,39 +55,141 @@
         "minSeats": null,
         "price": { "monthly": 349.99, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Scales up to 7,499.99 USD/month at 100,000+ shipments; 15 users included; advanced inventory/warehouse management, custom analytics, ODBC access, dedicated implementation" }],
+        "keyLimits": [{ "en": "Scales up to 7,499.99 USD/month at 100,000+ shipments; 15 users included; advanced inventory/warehouse management, custom analytics, ODBC access, dedicated implementation", "fr": "Jusqu'à 7 499,99 $/mois à 100 000+ expéditions ; 15 utilisateurs inclus ; gestion avancée des stocks et de l'entrepôt, analyses personnalisées, accès ODBC, mise en œuvre dédiée" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Price scales by monthly shipment volume within each plan tier (e.g. Standard ranges from $29.99 to $3,599.99/month), not a flat fee; the entry price only applies at the lowest shipment tier.", "sourceIds": ["s1"] },
-      { "en": "Annual billing gives a 20% discount versus monthly; figures recorded here are monthly billing.", "sourceIds": ["s1"] }
+      { "en": "Price scales by monthly shipment volume within each plan tier (e.g. Standard ranges from $29.99 to $3,599.99/month), not a flat fee; the entry price only applies at the lowest shipment tier.", "fr": "Le prix évolue selon le volume mensuel d'expéditions à l'intérieur de chaque offre (par exemple Standard va de 29,99 $ à 3 599,99 $/mois), ce n'est pas un tarif fixe ; le prix d'entrée ne s'applique qu'au plus bas palier d'expéditions.", "sourceIds": ["s1"] },
+      { "en": "Annual billing gives a 20% discount versus monthly; figures recorded here are monthly billing.", "fr": "La facturation annuelle donne une remise de 20 % par rapport au mensuel ; les montants retenus ici sont ceux de la facturation mensuelle.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Multi-carrier shipping label generation, rate shopping across carriers, and LTL freight comparison for e-commerce order fulfillment.", "sourceIds": ["s1"] },
-      { "en": "Order automation rules, order combining/splitting, and a branded customer returns portal on Standard and above.", "sourceIds": ["s1"] },
-      { "en": "API access for custom integrations, and advanced inventory/warehouse management plus custom analytics on the Premium tier.", "sourceIds": ["s1"] }
+      { "en": "Multi-carrier shipping label generation, rate shopping across carriers, and LTL freight comparison for e-commerce order fulfillment.", "fr": "Génération d'étiquettes d'expédition multi-transporteurs, comparaison des tarifs entre transporteurs et comparaison de fret LTL pour la logistique e-commerce.", "sourceIds": ["s1"] },
+      { "en": "Order automation rules, order combining/splitting, and a branded customer returns portal on Standard and above.", "fr": "Règles d'automatisation des commandes, fusion/division de commandes et portail de retour client à l'image de la marque à partir de Standard.", "sourceIds": ["s1"] },
+      { "en": "API access for custom integrations, and advanced inventory/warehouse management plus custom analytics on the Premium tier.", "fr": "Accès API pour des intégrations sur mesure, et gestion avancée des stocks et de l'entrepôt avec analyses personnalisées sur l'offre Premium.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Advanced inventory and warehouse management features are reserved for the Premium tier, starting at $349.99/month.", "sourceIds": ["s1"] },
-      { "en": "Cost rises steeply with shipment volume within the same plan, which can make budgeting unpredictable for growing stores.", "sourceIds": ["s1"] }
+      { "en": "Advanced inventory and warehouse management features are reserved for the Premium tier, starting at $349.99/month.", "fr": "Les fonctions avancées de gestion des stocks et de l'entrepôt sont réservées à l'offre Premium, à partir de 349,99 $/mois.", "sourceIds": ["s1"] },
+      { "en": "Cost rises steeply with shipment volume within the same plan, which can make budgeting unpredictable for growing stores.", "fr": "Le coût grimpe fortement avec le volume d'expéditions à l'intérieur d'une même offre, ce qui peut rendre le budget imprévisible pour une boutique en croissance.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An e-commerce ops owner who ships daily orders across multiple carriers and needs rate shopping and automation beyond a single carrier's tools.",
+      "fr": "Une responsable ops e-commerce qui expédie des commandes quotidiennes auprès de plusieurs transporteurs et a besoin de comparaison de tarifs et d'automatisation au-delà des outils d'un seul transporteur."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: generate shipping labels and compare carrier rates for an online store's daily order volume.",
+      "fr": "Usage : générer des étiquettes d'expédition et comparer les tarifs des transporteurs pour le volume quotidien de commandes d'une boutique en ligne."
+    },
+    {
+      "en": "Usage: automate order routing and branded return labels as order volume grows past the entry tier.",
+      "fr": "Usage : automatiser le routage des commandes et les étiquettes de retour à l'image de la marque quand le volume dépasse l'offre d'entrée."
+    }
+  ],
   "alternatives": [],
   "missingAlternatives": [
     { "name": "ShipBob", "officialUrl": "https://www.shipbob.com", "reason": "Fulfillment and shipping platform competing directly with ShipStation, not in the catalogue" },
     { "name": "EasyShip", "officialUrl": "https://www.easyship.com", "reason": "Multi-carrier shipping software alternative for e-commerce, not in the catalogue" }
   ],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The entry price is low ($14.99/month) but climbs steeply with shipment volume within the same tier, weakening the value case for a scaling store compared to a flat-fee alternative.",
+        "fr": "Le prix d'entrée est bas (14,99 $/mois) mais grimpe fortement avec le volume d'expéditions à l'intérieur de la même offre, ce qui affaiblit l'intérêt économique face à une alternative à tarif fixe.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Rate shopping, label generation and LTL comparison are available from the entry tier without custom setup.",
+        "fr": "La comparaison de tarifs, la génération d'étiquettes et la comparaison LTL sont disponibles dès l'offre d'entrée sans configuration particulière.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers multi-carrier label generation, rate shopping and order automation as promised, without needing a separate tool for the core fulfillment workflow.",
+        "fr": "Tient la promesse de génération d'étiquettes multi-transporteurs, de comparaison de tarifs et d'automatisation des commandes, sans outil tiers pour le flux de logistique principal.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Advanced inventory and warehouse management, custom analytics and ODBC access are reserved for the $349.99/month Premium tier, so the entry and mid tiers cover a narrower slice of capability.",
+        "fr": "La gestion avancée des stocks et de l'entrepôt, les analyses personnalisées et l'accès ODBC sont réservés à l'offre Premium à 349,99 $/mois, les offres d'entrée et intermédiaire couvrant un périmètre plus restreint.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability options when leaving the platform are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export et de portabilité des données en cas de départ de la plateforme ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Shipping software",
+      "fr": "Logiciel d'expédition"
+    },
+    "shortDescription": {
+      "en": "Multi-carrier shipping software for e-commerce stores, generating labels and comparing rates, with pricing that scales by monthly shipment volume.",
+      "fr": "Logiciel d'expédition multi-transporteurs pour boutiques en ligne, qui génère les étiquettes et compare les tarifs, avec un prix qui évolue selon le volume mensuel d'expéditions."
+    },
+    "longDescription": {
+      "en": "ShipStation generates shipping labels across multiple carriers, compares rates and LTL freight options, and automates order routing for e-commerce fulfillment. Standard and above add order combining and splitting, a branded customer returns portal and API access for custom integrations.\n\nPricing starts at $14.99/month for 50 shipments and climbs with volume within each tier, up to $349.99/month for Premium's advanced inventory and warehouse management. It suits a growing online store that ships daily and wants rate shopping and automation beyond a single carrier's dashboard.",
+      "fr": "ShipStation génère des étiquettes d'expédition auprès de plusieurs transporteurs, compare les tarifs et les options de fret LTL, et automatise le routage des commandes pour la logistique e-commerce. À partir de Standard, l'outil ajoute la fusion et la division de commandes, un portail de retour à l'image de la marque et un accès API pour des intégrations sur mesure.\n\nLes tarifs démarrent à 14,99 $/mois pour 50 expéditions et grimpent avec le volume à l'intérieur de chaque offre, jusqu'à 349,99 $/mois pour la gestion avancée des stocks et de l'entrepôt sur Premium. L'outil convient à une boutique en ligne en croissance qui expédie au quotidien et veut comparer les tarifs et automatiser au-delà du tableau de bord d'un seul transporteur."
+    },
+    "pros": [
+      {
+        "en": "Rate shopping across multiple carriers plus LTL comparison in one place, instead of checking each carrier separately.",
+        "fr": "Comparaison de tarifs entre plusieurs transporteurs et comparaison LTL réunies au même endroit, au lieu de vérifier chaque transporteur séparément."
+      },
+      {
+        "en": "Order automation rules and a branded returns portal remove manual steps once volume grows.",
+        "fr": "Les règles d'automatisation des commandes et le portail de retour à l'image de la marque suppriment des étapes manuelles quand le volume augmente."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Advanced inventory and warehouse management are reserved for the $349.99/month Premium tier.",
+        "fr": "La gestion avancée des stocks et de l'entrepôt est réservée à l'offre Premium à 349,99 $/mois."
+      },
+      {
+        "en": "The monthly bill rises steeply with shipment volume inside the same plan, making budgeting harder for a growing store.",
+        "fr": "La facture mensuelle grimpe fortement avec le volume d'expéditions à l'intérieur d'une même offre, ce qui complique le budget d'une boutique en croissance."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you ship across multiple carriers and need rate shopping and automation as volume grows.",
+        "fr": "Garde-le si tu expédies auprès de plusieurs transporteurs et as besoin de comparaison de tarifs et d'automatisation quand le volume augmente."
+      },
+      "avoidIf": {
+        "en": "Avoid it if your shipment volume is unpredictable, since the bill can jump sharply within the same plan tier.",
+        "fr": "Évite-le si ton volume d'expéditions est imprévisible, car la facture peut bondir fortement à l'intérieur de la même offre."
+      },
+      "threshold": {
+        "en": "Budget from $14.99/month for up to 50 shipments on Starter; Standard, needed for API access and unlimited automations, starts at $29.99/month.",
+        "fr": "Prévois à partir de 14,99 $/mois pour jusqu'à 50 expéditions sur Starter ; Standard, nécessaire pour l'accès API et les automatisations illimitées, démarre à 29,99 $/mois."
+      },
+      "billingTraps": {
+        "en": "The listed monthly price only applies at the lowest shipment volume in each tier; cost rises steeply as shipment volume grows within the same plan.",
+        "fr": "Le prix mensuel affiché ne s'applique qu'au plus bas volume d'expéditions de chaque offre ; le coût grimpe fortement à mesure que le volume augmente dans la même offre."
+      }
+    }
+  },
   "unknowns": [
     "The catalogue's alternativeCandidates list for shipstation contained no direct shipping/fulfillment competitors (only generic dev/no-code tools), so no in-catalogue alternatives could be selected.",
     "Whether taxes are included in listed USD prices is not stated on the pricing page."

@@ -3,7 +3,8 @@
   "slug": "apollo-io",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Apollo.io",
     "vendor": "Apollo.io, Inc.",
@@ -59,7 +60,7 @@
         "keyLimits": [
           {
             "en": "1 user, Gmail-only sending, limited credits, database access.",
-            "fr": null
+            "fr": "1 utilisateur, envoi via Gmail uniquement, crédits limités, accès à la base de données."
           }
         ],
         "sourceIds": [
@@ -80,7 +81,7 @@
         "keyLimits": [
           {
             "en": "Email sequencing with A/B testing, higher credit allowance than Free.",
-            "fr": null
+            "fr": "Séquences d'e-mails avec tests A/B, allocation de crédits plus élevée que le plan Free."
           }
         ],
         "sourceIds": [
@@ -101,7 +102,7 @@
         "keyLimits": [
           {
             "en": "Call recording, sales pipeline management (Opportunities), higher credit allowance.",
-            "fr": null
+            "fr": "Enregistrement d'appels, gestion du pipeline commercial (Opportunities), allocation de crédits plus élevée."
           }
         ],
         "sourceIds": [
@@ -122,7 +123,7 @@
         "keyLimits": [
           {
             "en": "3-seat minimum, API access, highest credit allowance.",
-            "fr": null
+            "fr": "Minimum de 3 sièges, accès API, allocation de crédits la plus élevée."
           }
         ],
         "sourceIds": [
@@ -135,14 +136,14 @@
     "cautions": [
       {
         "en": "Export credits are consumed separately when syncing contact data outside Apollo, on top of the per-seat subscription.",
-        "fr": null,
+        "fr": "Les crédits d'export sont consommés séparément lors de la synchronisation des données de contact hors d'Apollo, en plus de l'abonnement par siège.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Plan price amounts (Basic/Professional/Organization) could not be read directly from the official pricing page's rendered content in this session; figures were cross-checked against a third-party pricing summary and should be re-verified against apollo.io/pricing.",
-        "fr": null,
+        "fr": "Les montants des plans (Basic/Professional/Organization) n'ont pas pu être lus directement sur le contenu rendu de la page tarifs officielle lors de cette session ; les chiffres ont été recoupés avec un résumé tarifaire tiers et doivent être revérifiés sur apollo.io/pricing.",
         "sourceIds": [
           "s2"
         ]
@@ -153,21 +154,21 @@
     "capabilities": [
       {
         "en": "B2B contact and company database with 240M contacts and 30M companies for lead sourcing.",
-        "fr": null,
+        "fr": "Base de données B2B de contacts et d'entreprises avec 240 millions de contacts et 30 millions d'entreprises pour le sourcing de leads.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Email sequencing with A/B testing for outbound sales outreach.",
-        "fr": null,
+        "fr": "Séquences d'e-mails avec tests A/B pour la prospection commerciale sortante.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Call recording and sales pipeline (Opportunities) management on paid plans.",
-        "fr": null,
+        "fr": "Enregistrement d'appels et gestion du pipeline commercial (Opportunities) sur les plans payants.",
         "sourceIds": [
           "s1"
         ]
@@ -176,14 +177,14 @@
     "limitations": [
       {
         "en": "Free and lower-tier plans restrict email sending to Gmail only; Microsoft 365 and other providers require a paid plan.",
-        "fr": null,
+        "fr": "Les plans Free et les paliers inférieurs limitent l'envoi d'e-mails à Gmail uniquement ; Microsoft 365 et les autres fournisseurs nécessitent un plan payant.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Bulk lead selection is capped by a record selection limit, restricting large list-building actions.",
-        "fr": null,
+        "fr": "La sélection de leads en masse est plafonnée par une limite d'enregistrements, ce qui restreint la constitution de grandes listes en une seule action.",
         "sourceIds": [
           "s1"
         ]
@@ -230,47 +231,118 @@
       "web"
     ]
   },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "Independent salespeople, founders or small sales teams running their own B2B outbound prospecting, who need a contact database and outreach tool in one place rather than a separate persona like a developer or designer.",
+      "fr": "Commerciaux indépendants, fondateurs ou petites équipes de vente qui mènent eux-mêmes leur prospection B2B outbound, et ont besoin d'une base de contacts et d'un outil de prospection réunis plutôt qu'une cible comme développeur ou designer."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: search the 240M-contact database for a target job title, so a user builds a cold outreach list without buying a separate data provider.",
+      "fr": "Usage : chercher dans la base de 240 millions de contacts un intitulé de poste cible, pour qu'un utilisateur constitue une liste de prospection sans acheter un fournisseur de données séparé."
+    },
+    {
+      "en": "Usage: launch an A/B tested email sequence to a prospect list, so a sales rep tests subject lines and follow-ups systematically.",
+      "fr": "Usage : lancer une séquence d'e-mails testée en A/B sur une liste de prospects, pour qu'un commercial teste objets et relances de façon systématique."
+    }
+  ],
   "alternatives": [
-    {
-      "slug": "hubspot",
-      "reason": {
-        "en": "Already listed as a current alternative; overlaps on sales pipeline and outreach tooling.",
-        "fr": null
-      }
-    },
-    {
-      "slug": "pipedrive",
-      "reason": {
-        "en": "Already listed as a current alternative; competing CRM/sales pipeline tool.",
-        "fr": null
-      }
-    },
-    {
-      "slug": "lemlist",
-      "reason": {
-        "en": "Already listed as a current alternative; direct competitor for outbound email sequencing.",
-        "fr": null
-      }
-    },
-    {
-      "slug": "la-growth-machine",
-      "reason": {
-        "en": "Already listed as a current alternative; competing multi-channel outbound prospecting tool.",
-        "fr": null
-      }
-    },
     {
       "slug": "cognism",
       "reason": {
         "en": "Direct competitor in B2B contact database and sales intelligence.",
-        "fr": null
+        "fr": "Concurrent direct sur la base de données B2B et le sales intelligence."
+      }
+    },
+    {
+      "slug": "attio",
+      "reason": {
+        "en": "Go-to-market CRM that overlaps with Apollo.io's lightweight pipeline (Opportunities) and contact management for sales teams.",
+        "fr": "CRM go-to-market qui chevauche le pipeline léger d'Apollo.io (Opportunities) et la gestion de contacts pour les équipes commerciales."
+      }
+    },
+    {
+      "slug": "linkedin",
+      "reason": {
+        "en": "LinkedIn's Sales Navigator tier competes directly on sourcing B2B leads before outreach.",
+        "fr": "Le palier Sales Navigator de LinkedIn est en concurrence directe sur le sourcing de leads B2B avant la prospection."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A free tier gives access to the 240M-contact database, and the entry paid plan at $49/month (annual) adds email sequencing, replacing the cost of a separate data provider plus a separate sequencing tool for a solo seller.",
+        "fr": "Un palier gratuit donne accès à la base de 240 millions de contacts, et le plan payant d'entrée à 49 $/mois (annuel) ajoute les séquences d'e-mails, ce qui remplace le coût d'un fournisseur de données séparé et d'un outil de séquençage séparé pour un commercial seul.",
+        "sourceIds": ["s1", "s2"]
+      },
+      "simplicite": {
+        "en": "The free plan allows a quick first search and outreach attempt, but it is limited to Gmail sending and capped credits, so a real sequencing workflow needs the paid tier and its own setup.",
+        "fr": "Le plan gratuit permet une première recherche et un premier envoi rapide, mais il est limité à l'envoi via Gmail et à des crédits plafonnés, donc un vrai flux de séquençage demande le palier payant et sa propre mise en place.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Database search, sequencing and call recording work as described, but bulk lead selection is capped, which forces workarounds for large list-building, keeping this axis at a middle score.",
+        "fr": "La recherche dans la base, le séquençage et l'enregistrement d'appels fonctionnent comme décrit, mais la sélection de leads en masse est plafonnée, ce qui impose des contournements pour constituer de grandes listes, d'où une note intermédiaire sur cet axe.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "A 240M-contact / 30M-company database combined with sequencing, call recording and pipeline management in one product covers most of a small sales team's outbound stack.",
+        "fr": "Une base de 240 millions de contacts et 30 millions d'entreprises combinée au séquençage, à l'enregistrement d'appels et à la gestion de pipeline dans un seul produit couvre la majeure partie de la pile outbound d'une petite équipe commerciale.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Exporting contact data outside Apollo consumes separate credits on top of the subscription, which is direct evidence of friction when trying to take data out of the tool.",
+        "fr": "Exporter des données de contact hors d'Apollo consomme des crédits séparés en plus de l'abonnement, ce qui est une preuve directe de friction pour sortir ses données de l'outil.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Sales prospecting", "fr": "Prospection commerciale" },
+    "shortDescription": {
+      "en": "Apollo.io combines a 240-million-contact B2B database with email sequencing, call recording and a sales pipeline for prospecting and outbound sales.",
+      "fr": "Apollo.io associe une base de 240 millions de contacts B2B à des séquences d'e-mails, un enregistrement d'appels et un pipeline commercial pour l'outbound."
+    },
+    "longDescription": {
+      "en": "Apollo.io gives sales teams a searchable database of 240 million contacts and 30 million companies, plus email sequencing with A/B testing, call recording and lightweight pipeline management (Opportunities). Everything needed to find, contact and track prospects lives in one tool instead of separate point products.\n\nA free plan exists but limits sending to Gmail only and caps credits; paid plans start at $49 per user per month billed annually. Exporting contact data outside Apollo consumes separate credits. Apollo.io suits individual sales reps or small teams running outbound campaigns who want a database and outreach tool combined.",
+      "fr": "Apollo.io donne aux équipes commerciales une base de données consultable de 240 millions de contacts et 30 millions d'entreprises, avec des séquences d'e-mails avec tests A/B, l'enregistrement d'appels et une gestion de pipeline légère (Opportunities). Tout ce qu'il faut pour trouver, contacter et suivre des prospects tient dans un seul outil au lieu de plusieurs produits séparés.\n\nUn plan gratuit existe mais limite l'envoi à Gmail et plafonne les crédits ; les plans payants démarrent à 49 $ par utilisateur et par mois en engagement annuel. Exporter des contacts hors d'Apollo consomme des crédits séparés. Apollo.io convient à un commercial indépendant ou une petite équipe menant des campagnes outbound, avec base de données et prospection réunies."
+    },
+    "pros": [
+      { "en": "Free plan lets a solo user test the 240M-contact database before paying anything.", "fr": "Le plan gratuit permet à un utilisateur seul de tester la base de 240 millions de contacts avant de payer quoi que ce soit." },
+      { "en": "Combines database, outreach sequencing and call recording in one subscription instead of three separate tools.", "fr": "Combine base de données, séquençage de prospection et enregistrement d'appels dans un seul abonnement au lieu de trois outils séparés." }
+    ],
+    "cons": [
+      { "en": "Free and lower-tier plans only send through Gmail; Microsoft 365 and other providers require a paid plan.", "fr": "Les plans Free et les paliers inférieurs n'envoient que via Gmail ; Microsoft 365 et les autres fournisseurs nécessitent un plan payant." },
+      { "en": "Exporting contact data outside Apollo consumes separate credits on top of the subscription.", "fr": "Exporter des données de contact hors d'Apollo consomme des crédits séparés en plus de l'abonnement." },
+      { "en": "Bulk lead selection is capped, limiting large list-building in one action.", "fr": "La sélection de leads en masse est plafonnée, ce qui limite la constitution de grandes listes en une seule action." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need one tool to source B2B contacts and run outbound email sequences without separate database and sequencing subscriptions.", "fr": "Tu as besoin d'un seul outil pour sourcer des contacts B2B et lancer des séquences d'e-mails outbound sans abonnements séparés pour la base et le séquençage." },
+      "avoidIf": { "en": "Your team already has 3 or more sellers, since the Organization plan requires a minimum of 3 seats at $119 per seat per month billed annually.", "fr": "Ton équipe compte déjà 3 commerciaux ou plus, puisque le plan Organization impose un minimum de 3 sièges à 119 $ par siège et par mois en engagement annuel." },
+      "threshold": { "en": "The Basic plan costs $49 per user per month billed annually (the cheapest paid tier); anything beyond that should be justified by the extra credits or features of Professional or Organization.", "fr": "Le plan Basic coûte 49 $ par utilisateur et par mois en engagement annuel (le palier payant le moins cher) ; tout prix supérieur doit se justifier par les crédits ou fonctions supplémentaires de Professional ou Organization." },
+      "billingTraps": { "en": "Export credits are billed separately from the subscription when syncing contacts outside Apollo, and the Organization plan requires a minimum of 3 seats at $119 per seat per month billed annually.", "fr": "Les crédits d'export sont facturés séparément de l'abonnement lors de la synchronisation des contacts hors d'Apollo, et le plan Organization impose un minimum de 3 sièges à 119 $ par siège et par mois en engagement annuel." }
+    }
+  },
   "unknowns": [
     "Exact monthly/annual price amounts for Basic, Professional and Organization plans were not visible in the fetched official pricing page content and were sourced from a third-party breakdown; needs re-verification on apollo.io/pricing.",
     "Credit allowances per plan (number of email/mobile/export credits) not confirmed from the primary source."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Basic/Professional/Organization plan price amounts in this dossier come only from a tier-2 third-party source (s2), not from the official apollo.io/pricing page directly (see sources and cautions); re-verify all four amounts (59/49, 99/79, 149/119) against the official page before publishing.",
+    "The catalogue's alternativeCandidates list (seed.mjs) for apollo-io includes a separate entry with slug \"apollo\" whose shortDescription ('Prospection commerciale B2B : sourcing de leads, séquences d'e-mails et CRM léger') appears to describe Apollo.io itself under a different catalogue slug. This looks like a duplicate catalogue entry for the same product and was excluded from alternatives; worth a catalogue dedup check.",
+    "The dossier's original alternatives (hubspot, pipedrive, lemlist, la-growth-machine) are not in this dossier's alternativeCandidates list because those tools are catalogued under different category/substitution-cluster tags (crm, email-productivity, automation) than apollo-io's own tags (category: communication, cluster: crm-prospection), even though they are real outbound-sales competitors already linked as apollo-io's live-site alternatives. Replaced here with candidates from the seed list (cognism, attio, linkedin) per the instruction to only use alternativeCandidates slugs; a human reviewer may want to keep the original four instead since they are stronger matches."
+  ]
 }

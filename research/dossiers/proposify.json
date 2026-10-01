@@ -3,7 +3,8 @@
   "slug": "proposify",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Proposify",
     "vendor": "Proposify Inc.",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 29, "annualPerMonth": 19, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "10 proposal sends/month ($0.50 overage), 1 collaborator, no custom fields, no integrations" }],
+        "keyLimits": [{ "en": "10 proposal sends/month ($0.50 overage), 1 collaborator, no custom fields, no integrations", "fr": "10 envois de propositions/mois (dépassement à 0,50 $), 1 collaborateur, pas de champs personnalisés, pas d'intégrations" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 49, "annualPerMonth": 41, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "30 proposal sends/month ($0.30 overage), 3 collaborators, custom fields and integrations included" }],
+        "keyLimits": [{ "en": "30 proposal sends/month ($0.30 overage), 3 collaborators, custom fields and integrations included", "fr": "30 envois de propositions/mois (dépassement à 0,30 $), 3 collaborateurs, champs personnalisés et intégrations inclus" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,7 +55,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "75 proposal sends/month ($0.75 overage), 5 collaborators, SSO, API access, dedicated success manager; starts around $3,900/year" }],
+        "keyLimits": [{ "en": "75 proposal sends/month ($0.75 overage), 5 collaborators, SSO, API access, dedicated success manager; starts around $3,900/year", "fr": "75 envois de propositions/mois (dépassement à 0,75 $), 5 collaborateurs, SSO, accès API, chargé de compte dédié ; à partir d'environ 3 900 $/an" }],
         "sourceIds": ["s1"]
       },
       {
@@ -64,37 +65,83 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom pricing and terms" }],
+        "keyLimits": [{ "en": "Custom pricing and terms", "fr": "Tarifs et conditions sur mesure" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "basic",
     "addOns": [],
     "cautions": [
-      { "en": "Each plan caps monthly proposal sends and charges an overage fee per send beyond the cap; heavier usage can push the effective cost well above the listed plan price.", "sourceIds": ["s1"] },
-      { "en": "14-day free trial grants full Team-plan features, which is more generous than the actual entry Basic plan.", "sourceIds": ["s1"] }
+      { "en": "Each plan caps monthly proposal sends and charges an overage fee per send beyond the cap; heavier usage can push the effective cost well above the listed plan price.", "fr": "Chaque plan plafonne les envois mensuels de propositions et facture un dépassement par envoi au-delà du plafond ; un usage intensif peut faire grimper le coût réel bien au-delà du prix affiché.", "sourceIds": ["s1"] },
+      { "en": "14-day free trial grants full Team-plan features, which is more generous than the actual entry Basic plan.", "fr": "L'essai gratuit de 14 jours donne accès aux fonctionnalités complètes du plan Team, plus généreux que le plan d'entrée Basic réellement souscrit.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Proposal creation, editing and branded templates for professional sales documents", "sourceIds": ["s1"] },
-      { "en": "E-signature and proposal tracking/analytics (opens, views)", "sourceIds": ["s1"] }
+      { "en": "Proposal creation, editing and branded templates for professional sales documents", "fr": "Création, édition et modèles de marque pour des documents commerciaux professionnels", "sourceIds": ["s1"] },
+      { "en": "E-signature and proposal tracking/analytics (opens, views)", "fr": "Signature électronique et suivi/analytique des propositions (ouvertures, consultations)", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Basic plan lacks custom fields and third-party integrations entirely", "sourceIds": ["s1"] },
-      { "en": "SSO and API access are gated behind the Business plan and above", "sourceIds": ["s1"] }
+      { "en": "Basic plan lacks custom fields and third-party integrations entirely", "fr": "Le plan Basic est totalement dépourvu de champs personnalisés et d'intégrations tierces", "sourceIds": ["s1"] },
+      { "en": "SSO and API access are gated behind the Business plan and above", "fr": "Le SSO et l'accès API ne sont disponibles qu'à partir du plan Business", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
   "alternatives": [
-    { "slug": "better-proposals", "reason": { "en": "Direct competitor for proposal creation and e-signature workflows." } },
-    { "slug": "airslate", "reason": { "en": "Document workflow and e-signature platform covering similar proposal-to-close processes." } }
+    { "slug": "better-proposals", "reason": { "en": "Direct competitor for proposal creation and e-signature workflows.", "fr": "Concurrent direct pour la création de propositions et la signature électronique." } },
+    { "slug": "airslate", "reason": { "en": "Document workflow and e-signature platform covering similar proposal-to-close processes.", "fr": "Plateforme de workflow documentaire et signature électronique couvrant un processus proposition-signature similaire." } }
   ],
   "missingAlternatives": [
     { "name": "PandaDoc", "officialUrl": "https://www.pandadoc.com", "reason": "Main direct competitor for proposal, quote and e-signature software, not in the catalogue." },
     { "name": "Qwilr", "officialUrl": "https://qwilr.com", "reason": "Direct competitor for interactive web-based proposals, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The entry Basic plan at $19-29/month only allows 10 sends and 1 collaborator with no integrations, so a growing freelancer quickly needs Team ($41-49/month) to get custom fields and integrations.", "fr": "Le plan d'entrée Basic à 19-29 $/mois ne permet que 10 envois et 1 collaborateur sans intégrations, donc un indépendant qui grandit doit vite passer à Team (41-49 $/mois) pour les champs personnalisés et les intégrations.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "A dedicated proposal builder with branded templates is designed to produce a sendable proposal quickly, without technical setup.", "fr": "Un créateur de propositions dédié avec modèles de marque est conçu pour produire une proposition envoyable rapidement, sans configuration technique.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers proposal creation, e-signature and tracking as promised, but every plan caps monthly sends with per-send overage fees, a real constraint on the stated promise.", "fr": "Livre création de propositions, signature électronique et suivi comme promis, mais chaque plan plafonne les envois mensuels avec des frais de dépassement, une vraie contrainte sur la promesse annoncée.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers proposal creation, e-signature and tracking/analytics; custom fields, SSO and API access are reserved for the Team plan and above, which caps what the entry plan can do.", "fr": "Couvre création de propositions, signature électronique et suivi/analytique ; champs personnalisés, SSO et accès API sont réservés au plan Team et au-dessus, ce qui plafonne les capacités du plan d'entrée.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export and data-portability options on leaving Proposify are not covered by the collected sources.", "fr": "Note neutre : les options d'export et de portabilité des données en quittant Proposify ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "Independent consultants and small agencies who send sales proposals regularly and need e-signature and tracking built in.", "fr": "Consultants indépendants et petites agences qui envoient des propositions commerciales régulièrement et ont besoin de signature électronique et de suivi intégrés." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Send a sales proposal: build it from a branded template, send it for e-signature, and track when the prospect opens it.", "fr": "Envoyer une proposition commerciale : la construire depuis un modèle de marque, l'envoyer pour signature électronique, et suivre son ouverture par le prospect." },
+    { "en": "Standardize team proposals: on the Team plan, share custom fields and templates across collaborators so every proposal follows the same format.", "fr": "Standardiser les propositions d'équipe : sur le plan Team, partager champs personnalisés et modèles entre collaborateurs pour que chaque proposition suive le même format." }
+  ],
+  "editorial": {
+    "tagline": { "en": "Sales proposal software", "fr": "Logiciel de propositions commerciales" },
+    "shortDescription": { "en": "Proposify builds, sends and tracks sales proposals with e-signature and branded templates, billed per seat.", "fr": "Proposify crée, envoie et suit des propositions commerciales avec signature électronique et modèles de marque, facturé par utilisateur." },
+    "longDescription": {
+      "en": "Proposify is a dedicated proposal builder: branded templates, e-signature, and tracking of opens and views replace sending static PDFs and guessing whether a prospect read them. It sits squarely in the proposal-to-close step of a sales process.\n\nThe entry Basic plan starts at $19/month billed annually ($29 month-to-month) but allows only 10 sends and 1 collaborator with no custom fields or integrations. Moving to Team at $41/month annually unlocks those, and every plan charges a per-send overage fee once the monthly cap is hit, so actual cost scales with how many proposals go out.",
+      "fr": "Proposify est un créateur de propositions dédié : modèles de marque, signature électronique et suivi des ouvertures et consultations remplacent l'envoi de PDF statiques dont on ignore s'ils ont été lus. L'outil se concentre sur l'étape proposition-signature d'un processus commercial.\n\nLe plan d'entrée Basic démarre à 19 $/mois en engagement annuel (29 $ sans engagement) mais ne permet que 10 envois et 1 collaborateur, sans champs personnalisés ni intégrations. Passer à Team à 41 $/mois en annuel débloque ces fonctions, et chaque plan facture un dépassement par envoi au-delà du plafond mensuel, donc le coût réel évolue avec le nombre de propositions envoyées."
+    },
+    "pros": [
+      { "en": "Dedicated proposal builder with branded templates, e-signature and open/view tracking in one tool", "fr": "Créateur de propositions dédié avec modèles de marque, signature électronique et suivi des ouvertures dans un seul outil" },
+      { "en": "Team plan adds custom fields and integrations at a moderate price increase over Basic", "fr": "Le plan Team ajoute champs personnalisés et intégrations pour une hausse de prix modérée par rapport à Basic" }
+    ],
+    "cons": [
+      { "en": "Entry Basic plan caps sends at 10/month and allows only 1 collaborator, with integrations entirely missing", "fr": "Le plan d'entrée Basic plafonne les envois à 10/mois et n'autorise qu'1 collaborateur, sans aucune intégration" },
+      { "en": "Overage fees per proposal send apply on every plan once the monthly cap is reached", "fr": "Des frais de dépassement par proposition envoyée s'appliquent sur chaque plan une fois le plafond mensuel atteint" }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You send sales proposals often enough to need e-signature and tracking built in, not just a PDF attachment.", "fr": "Tu envoies des propositions commerciales assez souvent pour avoir besoin de signature électronique et de suivi intégrés, pas juste d'un PDF en pièce jointe." },
+      "avoidIf": { "en": "You send very few proposals per month: 10 sends on Basic with no integrations may not be worth $19-29/month over a simple PDF/e-signature combo.", "fr": "Tu envoies très peu de propositions par mois : 10 envois sur Basic sans intégrations ne valent peut-être pas 19-29 $/mois face à un simple PDF plus signature électronique." },
+      "threshold": { "en": "Basic costs $19/month billed annually ($228/year) for 10 sends and 1 collaborator; Team at $41/month annually ($492/year) adds custom fields and integrations.", "fr": "Basic coûte 19 $/mois en engagement annuel (228 $/an) pour 10 envois et 1 collaborateur ; Team à 41 $/mois en annuel (492 $/an) ajoute champs personnalisés et intégrations." }
+    }
+  },
   "unknowns": [
     "Exact Business plan monthly-equivalent price and minimum seat count beyond the ~$3,900/year starting figure"
   ],

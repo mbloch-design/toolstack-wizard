@@ -3,7 +3,8 @@
   "slug": "gcp",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Google Cloud Platform",
     "vendor": "Google LLC",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "Always Free: capped monthly usage of 20+ products (Compute Engine, Cloud Storage, BigQuery, Cloud Run, GKE, etc.), no end date but usage caps and terms can change with 30 days notice" }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Always Free: capped monthly usage of 20+ products (Compute Engine, Cloud Storage, BigQuery, Cloud Run, GKE, etc.), no end date but usage caps and terms can change with 30 days notice", "fr": "Always Free : usage mensuel plafonné sur plus de 20 produits (Compute Engine, Cloud Storage, BigQuery, Cloud Run, GKE, etc.), sans date de fin mais les plafonds et conditions peuvent changer avec 30 jours de préavis" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Capped free monthly usage across 20+ products (Compute Engine, Cloud Storage, BigQuery, Cloud Run, GKE)" }],
+        "keyLimits": [{ "en": "Capped free monthly usage across 20+ products (Compute Engine, Cloud Storage, BigQuery, Cloud Run, GKE)", "fr": "Usage mensuel gratuit plafonné sur plus de 20 produits (Compute Engine, Cloud Storage, BigQuery, Cloud Run, GKE)" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,40 +45,89 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Billed per-resource consumption (compute, storage, network, API calls); no flat plan price" }],
+        "keyLimits": [{ "en": "Billed per-resource consumption (compute, storage, network, API calls); no flat plan price", "fr": "Facturation à la consommation par ressource (calcul, stockage, réseau, appels API) ; aucun prix de plan fixe" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "always-free",
     "addOns": [],
     "cautions": [
-      { "en": "Google Cloud also offers $300 in free trial credits for new accounts, separate from the permanent Always Free tier; do not conflate the two.", "sourceIds": ["s1"] },
-      { "en": "As a usage-based platform, there is no single 'entry price'; real cost depends entirely on the services and volumes consumed.", "sourceIds": ["s1"] }
+      { "en": "Google Cloud also offers $300 in free trial credits for new accounts, separate from the permanent Always Free tier; do not conflate the two.", "fr": "Google Cloud propose aussi 300 $ de crédits d'essai pour les nouveaux comptes, distincts du palier permanent Always Free ; ne pas confondre les deux.", "sourceIds": ["s1"] },
+      { "en": "As a usage-based platform, there is no single 'entry price'; real cost depends entirely on the services and volumes consumed.", "fr": "Plateforme facturée à l'usage, il n'existe pas de « prix d'entrée » unique ; le coût réel dépend entièrement des services et volumes consommés.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Broad catalogue of compute, storage, database, networking, and data-analytics managed services", "sourceIds": ["s1"] },
-      { "en": "Managed AI/ML services (Vertex AI) alongside core infrastructure", "sourceIds": ["s1"] }
+      { "en": "Broad catalogue of compute, storage, database, networking, and data-analytics managed services", "fr": "Large catalogue de services managés de calcul, stockage, bases de données, réseau et analyse de données", "sourceIds": ["s1"] },
+      { "en": "Managed AI/ML services (Vertex AI) alongside core infrastructure", "fr": "Services IA/ML managés (Vertex AI) en complément de l'infrastructure de base", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No fixed pricing plan makes cost forecasting harder for teams without cloud cost management expertise" },
-      { "en": "Always Free tier usage caps are modest and easily exceeded by production workloads", "sourceIds": ["s1"] }
+      { "en": "No fixed pricing plan makes cost forecasting harder for teams without cloud cost management expertise", "fr": "L'absence de plan tarifaire fixe complique la prévision des coûts pour les équipes sans expertise en gestion de coûts cloud" },
+      { "en": "Always Free tier usage caps are modest and easily exceeded by production workloads", "fr": "Les plafonds du palier Always Free sont modestes et vite dépassés par des charges de production", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
   "alternatives": [
-    { "slug": "aws", "reason": { "en": "Primary competing hyperscale cloud provider with an equivalent usage-based service catalogue." } },
-    { "slug": "digitalocean", "reason": { "en": "Simpler, more predictably priced cloud alternative for smaller teams." } },
-    { "slug": "vercel", "reason": { "en": "Alternative for frontend/serverless hosting workloads that would otherwise run on GCP." } },
-    { "slug": "supabase", "reason": { "en": "Alternative managed backend/database platform for teams not needing full GCP breadth." } }
+    { "slug": "aws", "reason": { "en": "Primary competing hyperscale cloud provider with an equivalent usage-based service catalogue.", "fr": "Principal fournisseur cloud hyperscale concurrent, avec un catalogue de services facturés à l'usage équivalent." } },
+    { "slug": "digitalocean", "reason": { "en": "Simpler, more predictably priced cloud alternative for smaller teams.", "fr": "Alternative cloud plus simple et au prix plus prévisible pour les petites équipes." } },
+    { "slug": "vercel", "reason": { "en": "Alternative for frontend/serverless hosting workloads that would otherwise run on GCP.", "fr": "Alternative pour l'hébergement frontend/serverless qui tournerait sinon sur GCP." } },
+    { "slug": "supabase", "reason": { "en": "Alternative managed backend/database platform for teams not needing full GCP breadth.", "fr": "Plateforme backend/base de données managée alternative pour les équipes n'ayant pas besoin de toute l'étendue de GCP." } }
   ],
   "missingAlternatives": [
     { "name": "Microsoft Azure", "officialUrl": "https://azure.microsoft.com", "reason": "Third major hyperscale cloud competitor, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The Always Free tier covers modest workloads at no cost, but real projects move to pay-as-you-go with no flat entry price, so value depends entirely on how well a team manages usage.", "fr": "Le palier Always Free couvre des charges modestes sans frais, mais un vrai projet bascule en paiement à l'usage sans prix d'entrée fixe : la valeur dépend entièrement de la maîtrise de la consommation par l'équipe.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "A usage-based model across 20+ products without a fixed plan makes a first useful result and cost forecasting harder without prior cloud experience.", "fr": "Un modèle à l'usage sur plus de 20 produits sans plan fixe complique un premier résultat utile et la prévision des coûts sans expérience cloud préalable.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the broad managed-infrastructure catalogue it promises, from compute to AI/ML services, without workarounds.", "fr": "Livre le large catalogue d'infrastructure managée promis, du calcul aux services IA/ML, sans contournement.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers compute, storage, databases, networking, data analytics and managed AI/ML (Vertex AI) in one platform, a category reference for breadth.", "fr": "Couvre calcul, stockage, bases de données, réseau, analyse de données et IA/ML managée (Vertex AI) sur une seule plateforme, une référence de catégorie pour l'étendue.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export and data-portability specifics when leaving GCP are not covered by the collected sources.", "fr": "Note neutre : les modalités d'export et de portabilité des données en quittant GCP ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "Developers and small technical teams who need managed cloud infrastructure (compute, storage, databases, AI/ML) without running their own servers.", "fr": "Développeurs et petites équipes techniques qui ont besoin d'une infrastructure cloud managée (calcul, stockage, bases de données, IA/ML) sans gérer leurs propres serveurs." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Host a backend: deploy an API on managed compute with a managed database, staying inside Always Free limits for a low-traffic project.", "fr": "Héberger un backend : déployer une API sur du calcul managé avec une base de données managée, en restant sous les plafonds Always Free pour un projet à faible trafic." },
+    { "en": "Run data analytics: load exported data into BigQuery and query it directly instead of maintaining a self-hosted data warehouse.", "fr": "Faire de l'analyse de données : charger des données exportées dans BigQuery et les interroger directement plutôt que de maintenir un entrepôt de données auto-hébergé." }
+  ],
+  "editorial": {
+    "tagline": { "en": "Cloud infrastructure platform", "fr": "Plateforme d'infrastructure cloud" },
+    "shortDescription": { "en": "Google Cloud Platform offers managed compute, storage, database, networking and AI/ML services, billed by actual usage.", "fr": "Google Cloud Platform propose du calcul, stockage, bases de données, réseau et IA/ML managés, facturés à l'usage réel." },
+    "longDescription": {
+      "en": "Google Cloud Platform packages a broad catalogue of managed infrastructure, from Compute Engine and Cloud Storage to BigQuery and Vertex AI, so a team can run production workloads without operating its own servers. An Always Free tier covers capped monthly usage across 20+ products indefinitely, alongside a separate $300 trial credit for new accounts.\n\nThere is no flat subscription: pay-as-you-go pricing means the real monthly cost depends entirely on the services and volumes consumed, which makes budgeting harder without prior cloud cost management experience. It fits teams already comfortable with infrastructure decisions more than those wanting a single predictable price.",
+      "fr": "Google Cloud Platform regroupe un large catalogue d'infrastructure managée, de Compute Engine et Cloud Storage à BigQuery et Vertex AI, pour faire tourner des charges de production sans gérer ses propres serveurs. Un palier Always Free couvre un usage mensuel plafonné sur plus de 20 produits de façon permanente, en plus d'un crédit d'essai séparé de 300 $ pour les nouveaux comptes.\n\nIl n'y a pas d'abonnement fixe : la facturation à l'usage fait que le coût mensuel réel dépend entièrement des services et volumes consommés, ce qui complique le budget sans expérience préalable de gestion des coûts cloud. L'outil convient mieux aux équipes déjà à l'aise avec les décisions d'infrastructure qu'à celles qui cherchent un prix unique prévisible."
+    },
+    "pros": [
+      { "en": "Always Free tier covers over 20 products indefinitely at no cost for modest usage", "fr": "Le palier Always Free couvre plus de 20 produits indéfiniment sans frais pour un usage modeste" },
+      { "en": "Single platform spans compute, storage, databases, analytics and managed AI/ML", "fr": "Une seule plateforme couvre calcul, stockage, bases de données, analytique et IA/ML managée" }
+    ],
+    "cons": [
+      { "en": "No flat pricing plan: real cost depends entirely on usage and is hard to forecast upfront", "fr": "Aucun plan tarifaire fixe : le coût réel dépend entièrement de l'usage et est difficile à prévoir à l'avance" },
+      { "en": "Always Free caps are modest and easily exceeded once a project leaves the prototype stage", "fr": "Les plafonds Always Free sont modestes et vite dépassés dès qu'un projet sort du stade de prototype" }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need managed infrastructure across compute, data and AI/ML and are comfortable managing usage-based cloud costs.", "fr": "Tu as besoin d'infrastructure managée pour le calcul, la donnée et l'IA/ML, et es à l'aise avec la gestion de coûts cloud à l'usage." },
+      "avoidIf": { "en": "You want one fixed monthly price to budget against: GCP's cost depends entirely on consumption.", "fr": "Tu veux un prix mensuel fixe pour budgéter : le coût de GCP dépend entièrement de la consommation." },
+      "threshold": { "en": "The Always Free tier has no monthly cost up to its usage caps; beyond that, cost is usage-based with no fixed comparison price.", "fr": "Le palier Always Free n'a aucun coût mensuel jusqu'à ses plafonds d'usage ; au-delà, le coût est à l'usage, sans prix de comparaison fixe." }
+    }
+  },
   "unknowns": [
     "No single comparable 'entry paid plan' price exists for this catalogue's comparison field given the pure usage-based model"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Pricing model is pure usage-based (model: usage) with comparePlanKey set to the free tier ('always-free'); there is no paid self-serve plan to use as a comparison price, which may need a specific handling rule at merge time (see brief 5.4 on the usage model)."
+  ]
 }

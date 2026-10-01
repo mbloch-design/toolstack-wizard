@@ -3,7 +3,7 @@
   "slug": "discord",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Discord",
     "vendor": "Discord Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://discord.com/nitro", "tier": 1, "accessedOn": "2026-09-25", "title": "Discord Nitro pricing and features" }
+    {
+      "id": "s1",
+      "url": "https://discord.com/nitro",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Discord Nitro pricing and features"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Full core messaging, voice/video and server features free with no member or server limit; Nitro is an optional paid enhancement, not required for core use.", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Full core messaging, voice/video and server features free with no member or server limit; Nitro is an optional paid enhancement, not required for core use.",
+        "fr": "Messagerie, voix/vidéo et fonctionnalités de serveur de base gratuites, sans limite de membres ou de serveurs ; Nitro est une amélioration payante optionnelle, pas requise pour l'usage de base."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,48 +47,248 @@
         "name": "Nitro Basic",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 2.99, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 2.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "50MB uploads, custom app icons, custom stickers (300+), longer messages up to 4,000 characters, join up to 200 servers.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "50MB uploads, custom app icons, custom stickers (300+), longer messages up to 4,000 characters, join up to 200 servers.",
+            "fr": "Envois de 50 Mo, icônes d'application personnalisées, stickers personnalisés (300+), messages plus longs jusqu'à 4 000 caractères, jusqu'à 200 serveurs rejoints."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "nitro",
         "name": "Nitro",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 9.99, "annualPerMonth": 8.33, "oneTime": null },
+        "price": {
+          "monthly": 9.99,
+          "annualPerMonth": 8.33,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "500MB uploads, HD video streaming, 2 server Boosts + 30% off additional Boosts, Xbox Game Pass Starter Edition with 10 hrs/month cloud gaming, custom profiles/video backgrounds.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "500MB uploads, HD video streaming, 2 server Boosts + 30% off additional Boosts, Xbox Game Pass Starter Edition with 10 hrs/month cloud gaming, custom profiles/video backgrounds.",
+            "fr": "Envois de 500 Mo, streaming vidéo HD, 2 Boosts de serveur + 30 % de réduction sur les Boosts supplémentaires, Xbox Game Pass Starter Edition avec 10h/mois de cloud gaming, profils et fonds d'écran vidéo personnalisés."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "nitro-basic",
     "addOns": [
-      { "en": "Server Boosts (beyond what's included in Nitro): $4.99/month, discounted to $3.49/month for Nitro subscribers.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Server Boosts (beyond what's included in Nitro): $4.99/month, discounted to $3.49/month for Nitro subscribers.",
+        "fr": "Boosts de serveur (au-delà de ceux inclus dans Nitro) : 4,99 $/mois, réduits à 3,49 $/mois pour les abonnés Nitro.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Nitro annual pricing ($99.99/year for full Nitro) was mentioned in some sources but not directly confirmed as annualPerMonth in the fetched content; recorded monthly figure only is certain.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Nitro annual pricing ($99.99/year for full Nitro) was mentioned in some sources but not directly confirmed as annualPerMonth in the fetched content; recorded monthly figure only is certain.",
+        "fr": "Un prix annuel pour Nitro (99,99 $/an pour Nitro complet) a été mentionné dans certaines sources mais n'a pas été confirmé directement comme annualPerMonth dans le contenu récupéré ; seul le chiffre mensuel enregistré est certain.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Free voice, video and text chat organized into community servers with channels, roles and permissions.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Nitro subscription adds custom emoji use anywhere, higher upload limits, HD streaming and server boosting perks.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Free voice, video and text chat organized into community servers with channels, roles and permissions.",
+        "fr": "Chat vocal, vidéo et texte gratuit organisé en serveurs communautaires avec salons, rôles et permissions.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Nitro subscription adds custom emoji use anywhere, higher upload limits, HD streaming and server boosting perks.",
+        "fr": "L'abonnement Nitro ajoute l'usage d'emojis personnalisés partout, des limites d'envoi plus élevées, le streaming HD et les avantages de boost de serveur.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free tier caps file uploads at a lower size than Nitro (standard free upload limit well below the 500MB Nitro allows).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Custom emoji/stickers use across other servers, and HD video streaming, require a paid Nitro subscription.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Free tier caps file uploads at a lower size than Nitro (standard free upload limit well below the 500MB Nitro allows).",
+        "fr": "Le palier gratuit plafonne les envois de fichiers à une taille inférieure à Nitro (limite d'envoi gratuite standard bien en dessous des 500 Mo permis par Nitro).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Custom emoji/stickers use across other servers, and HD video streaming, require a paid Nitro subscription.",
+        "fr": "L'usage d'emojis/stickers personnalisés sur d'autres serveurs, ainsi que le streaming vidéo HD, nécessitent un abonnement Nitro payant.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web", "windows", "mac", "ios", "android"]
+    "platforms": [
+      "web",
+      "windows",
+      "mac",
+      "ios",
+      "android"
+    ]
   },
   "alternatives": [
-    { "slug": "slack", "reason": { "en": "Widely used team/community chat platform with voice, video and channel-based organization, direct competitor for community and team communication.", "fr": null } }
+    {
+      "slug": "slack",
+      "reason": {
+        "en": "Widely used team/community chat platform with voice, video and channel-based organization, direct competitor for community and team communication.",
+        "fr": "Plateforme de chat d'équipe et de communauté largement utilisée, avec voix, vidéo et organisation par salons, concurrent direct pour la communication d'équipe et de communauté."
+      }
+    },
+    {
+      "slug": "microsoft-teams",
+      "reason": {
+        "en": "Enterprise chat and video platform covering the same team communication need, for organizations that need Microsoft 365 integration.",
+        "fr": "Plateforme de chat et vidéo d'entreprise couvrant le même besoin de communication d'équipe, pour les organisations qui ont besoin de l'intégration Microsoft 365."
+      }
+    },
+    {
+      "slug": "circle",
+      "reason": {
+        "en": "Paid community platform competing for the same audience-building use case as a Discord community server.",
+        "fr": "Plateforme de communauté payante concurrente sur le même usage de construction d'audience qu'un serveur communautaire Discord."
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "Exact Nitro annual price ($99.99/year figure seen elsewhere) not independently confirmed from the primary source fetch in this session."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Core messaging, voice, video and server features are free with no member or server limit, so a community can run entirely without paying.",
+        "fr": "La messagerie, la voix, la vidéo et les fonctionnalités de serveur de base sont gratuites sans limite de membres ou de serveurs, donc une communauté peut fonctionner entièrement sans payer.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Creating a server and inviting members takes minutes, with no setup required to get voice and text channels working.",
+        "fr": "Créer un serveur et inviter des membres prend quelques minutes, sans configuration requise pour que les salons vocaux et textuels fonctionnent.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers free voice, video and text chat organized by channels, roles and permissions exactly as described.",
+        "fr": "Fournit un chat vocal, vidéo et texte gratuit organisé par salons, rôles et permissions exactement comme annoncé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers community chat well, but it is not built for formal business features like SSO or admin reporting that enterprise chat tools provide.",
+        "fr": "Couvre bien le chat communautaire, mais n'est pas conçu pour des fonctionnalités d'entreprise formelles comme le SSO ou le reporting admin que fournissent les outils de chat professionnels.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether message history or server data can be bulk-exported is not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité d'exporter en masse l'historique des messages ou les données de serveur ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator or community builder who runs a free community server for an audience and only needs Nitro's extras (uploads, custom emoji, boosts) once the server grows.",
+      "fr": "Un créateur de contenu ou bâtisseur de communauté qui gère un serveur communautaire gratuit pour son audience et n'a besoin des extras Nitro (envois, emojis personnalisés, boosts) qu'une fois le serveur en croissance."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Audience community: run a free server with channels for announcements, discussion and voice hangouts, growing an audience without any subscription cost.",
+      "fr": "Communauté d'audience : gère un serveur gratuit avec des salons pour les annonces, la discussion et les rendez-vous vocaux, pour faire grandir une audience sans coût d'abonnement."
+    },
+    {
+      "en": "Boosting perks: use server Boosts (with the discount a Nitro subscriber gets) to unlock higher upload limits and better audio quality for the whole community.",
+      "fr": "Boost de serveur : utilise les Boosts de serveur (avec la réduction accordée aux abonnés Nitro) pour débloquer des limites d'envoi plus élevées et une meilleure qualité audio pour toute la communauté."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Community chat",
+      "fr": "Chat communautaire"
+    },
+    "shortDescription": {
+      "en": "Discord is a free voice, video and text chat platform organized into community servers, with Nitro as an optional paid upgrade.",
+      "fr": "Discord est une plateforme gratuite de chat vocal, vidéo et texte organisée en serveurs communautaires, avec Nitro en amélioration payante optionnelle."
+    },
+    "longDescription": {
+      "en": "Discord organizes free voice, video and text chat into community servers with channels, roles and permissions, with no member or server limit on the free tier. Nitro, an optional paid subscription, adds higher upload limits, custom emoji use anywhere, HD streaming and server boosting perks.\n\nNitro Basic starts at $2.99 a month and full Nitro at $9.99 a month ($8.33 billed annually). It suits a content creator or community builder who wants a free community space first and only pays once the server's needs (bigger uploads, boosts) outgrow the free tier.",
+      "fr": "Discord organise le chat vocal, vidéo et texte gratuit en serveurs communautaires avec salons, rôles et permissions, sans limite de membres ou de serveurs sur le palier gratuit. Nitro, un abonnement payant optionnel, ajoute des limites d'envoi plus élevées, l'usage d'emojis personnalisés partout, le streaming HD et des avantages de boost de serveur.\n\nNitro Basic démarre à 2,99 $ par mois et Nitro complet à 9,99 $ par mois (8,33 $ facturé annuellement). L'outil convient à un créateur de contenu ou bâtisseur de communauté qui veut d'abord un espace communautaire gratuit et ne paie qu'une fois que les besoins du serveur (envois plus gros, boosts) dépassent le palier gratuit."
+    },
+    "pros": [
+      {
+        "en": "Core community features (unlimited members, unlimited servers, voice and video) stay free with no forced upgrade.",
+        "fr": "Les fonctionnalités communautaires de base (membres illimités, serveurs illimités, voix et vidéo) restent gratuites sans mise à niveau forcée."
+      },
+      {
+        "en": "Nitro's price is low enough ($2.99 to $9.99/month) that a creator can upgrade gradually as the community's needs grow.",
+        "fr": "Le prix de Nitro est assez bas (2,99 à 9,99 $/mois) pour qu'un créateur puisse monter en gamme progressivement selon les besoins de la communauté."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Not built for formal business admin needs like SSO or structured reporting that enterprise chat tools provide.",
+        "fr": "Pas conçu pour des besoins d'administration d'entreprise formels comme le SSO ou le reporting structuré que fournissent les outils de chat professionnels."
+      },
+      {
+        "en": "Custom emoji use on other servers and HD video streaming both require a paid Nitro subscription, not available free.",
+        "fr": "L'usage d'emojis personnalisés sur d'autres serveurs et le streaming vidéo HD nécessitent tous deux un abonnement Nitro payant, non disponibles gratuitement."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want a free community or team chat space with voice and video, and only need Nitro's extras occasionally.",
+        "fr": "Tu veux un espace de chat communautaire ou d'équipe gratuit avec voix et vidéo, et tu n'as besoin des extras Nitro qu'occasionnellement."
+      },
+      "avoidIf": {
+        "en": "You need enterprise admin features like SSO or compliance reporting that a dedicated business chat tool provides.",
+        "fr": "Tu as besoin de fonctionnalités d'administration d'entreprise comme le SSO ou le reporting de conformité que fournit un outil de chat professionnel dédié."
+      },
+      "threshold": {
+        "en": "Budget $2.99/month for Nitro Basic once you need bigger uploads, or $9.99/month ($8.33/month annual) for full Nitro with HD streaming and server boosts.",
+        "fr": "Prévois 2,99 $/mois pour Nitro Basic dès que tu as besoin d'envois plus gros, ou 9,99 $/mois (8,33 $/mois en annuel) pour Nitro complet avec streaming HD et boosts de serveur."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Le prix annuel de Nitro (99,99 $/an) vu dans d'autres sources n'a pas été confirmé directement sur la page officielle consultée ; seul le tarif mensuel (9,99 $/mois) est enregistré avec certitude, à revérifier sur discord.com/nitro."
+  ],
+  "completedLocallyOn": "2026-10-01"
 }

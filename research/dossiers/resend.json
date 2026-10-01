@@ -3,7 +3,7 @@
   "slug": "resend",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Resend",
     "vendor": "Resend, Inc.",
@@ -135,13 +135,15 @@
         "en": "Self-serve plans are billed monthly only; there is no annual discount.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Les plans en libre-service sont facturés uniquement au mois ; il n'existe pas de remise annuelle."
       },
       {
         "en": "A separate Marketing plan track (contacts-based, Free up to 1,000 contacts, Pro from $40) exists alongside the transactional plans; the two are billed independently.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Un plan Marketing séparé (basé sur les contacts, gratuit jusqu'à 1000 contacts, Pro à partir de 40 $) existe en parallèle des plans transactionnels ; les deux sont facturés indépendamment."
       }
     ]
   },
@@ -151,25 +153,29 @@
         "en": "Developer email API for transactional and batch email sending (up to 100 emails per request), with official SDKs for Node.js, Python, PHP, Ruby, Go, Java, Rust, .NET and Laravel.",
         "sourceIds": [
           "s2"
-        ]
+        ],
+        "fr": "API email pour développeurs, pour l'envoi transactionnel et par lot (jusqu'à 100 emails par requête), avec des SDK officiels pour Node.js, Python, PHP, Ruby, Go, Java, Rust, .NET et Laravel."
       },
       {
         "en": "React Email integration for building email templates as React components.",
         "sourceIds": [
           "s2"
-        ]
+        ],
+        "fr": "Intégration avec React Email pour créer des templates d'emails sous forme de composants React."
       },
       {
         "en": "Domain verification and deliverability tooling (SPF, DKIM, DMARC), webhooks for delivery events, and inbound email processing.",
         "sourceIds": [
           "s2"
-        ]
+        ],
+        "fr": "Vérification de domaine et outils de délivrabilité (SPF, DKIM, DMARC), webhooks pour les événements d'envoi, et traitement des emails entrants."
       },
       {
         "en": "Marketing email features: contact/segment management and automation flows, billed separately by contact count.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Fonctions d'email marketing : gestion des contacts/segments et automatisations, facturées séparément selon le nombre de contacts."
       }
     ],
     "limitations": [
@@ -177,19 +183,22 @@
         "en": "Free plan capped at 100 emails per day even though the monthly quota is 3,000, which limits burst sending.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Le forfait gratuit est plafonné à 100 emails par jour même si le quota mensuel est de 3000, ce qui limite les envois en rafale."
       },
       {
         "en": "No annual billing discount on self-serve plans; enterprise-only custom terms exist above Scale.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Aucune remise annuelle sur les forfaits en libre-service ; des conditions personnalisées existent uniquement au-delà de Scale, sur devis."
       },
       {
         "en": "Explicitly prohibits inbox scraping and unsolicited bulk email; recipients must have opted in.",
         "sourceIds": [
           "s2"
-        ]
+        ],
+        "fr": "Interdit explicitement le scraping de boîtes mail et l'envoi d'emails non sollicités en masse ; les destinataires doivent avoir donné leur accord."
       }
     ],
     "integrations": [
@@ -212,25 +221,45 @@
       "web"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers who need to wire transactional email (signups, password resets, notifications) into an app via an API, with room to add marketing sends later.",
+      "fr": "Développeurs qui doivent brancher l'email transactionnel (inscriptions, réinitialisations de mot de passe, notifications) dans une app via une API, avec la possibilité d'ajouter l'envoi marketing plus tard."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: a SaaS app sends transactional emails (signup confirmations, password resets) from its backend via the API and official SDKs.",
+      "fr": "Cas d'usage : une app SaaS envoie des emails transactionnels (confirmations d'inscription, réinitialisations de mot de passe) depuis son backend via l'API et les SDK officiels."
+    },
+    {
+      "en": "Use case: a startup builds React Email templates for its product notifications, then layers marketing newsletters on the separate contacts-based plan.",
+      "fr": "Cas d'usage : une startup construit ses templates d'emails avec React Email pour ses notifications produit, puis ajoute une newsletter marketing via le forfait séparé basé sur les contacts."
+    }
+  ],
   "alternatives": [
     {
       "slug": "mailgun",
       "reason": {
-        "en": "Another developer-first transactional email API with usage-based pricing."
+        "en": "Another developer-first transactional email API with usage-based pricing.",
+        "fr": "Une autre API email transactionnelle pensée pour les développeurs, avec une tarification à l'usage."
       }
     },
     {
       "slug": "brevo",
       "reason": {
-        "en": "Combines transactional and marketing email in one platform with a generous free tier."
+        "en": "Combines transactional and marketing email in one platform with a generous free tier.",
+        "fr": "Combine email transactionnel et marketing sur une seule plateforme, avec un forfait gratuit généreux."
       }
     },
     {
       "slug": "mailerlite",
       "reason": {
-        "en": "Alternative for teams that want marketing email plus basic transactional sending."
+        "en": "Alternative for teams that want marketing email plus basic transactional sending.",
+        "fr": "Une alternative pour les équipes qui veulent l'email marketing plus un envoi transactionnel basique."
       }
     }
   ],
@@ -246,11 +275,116 @@
       "reason": "Long-standing transactional and marketing email API, direct Resend competitor, not in the catalogue"
     }
   ],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free plan covers 3,000 emails/month, and Pro at $20/month includes 50,000 emails, which is a low cost of entry for a developer who needs transactional email.",
+        "fr": "Le forfait gratuit couvre 3000 emails par mois, et Pro à 20 $/mois en inclut 50 000, un coût d'entrée faible pour un développeur qui a besoin d'emails transactionnels.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Official SDKs for nine languages/frameworks and a documented API suggest a quick integration, though no measured time-to-first-send was found in the collected sources.",
+        "fr": "Des SDK officiels pour neuf langages/frameworks et une API documentée laissent penser à une intégration rapide, mais aucune mesure du temps pour le premier envoi ne figure dans les sources relevées.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Domain verification, deliverability tooling (SPF, DKIM, DMARC), webhooks and inbound processing cover the core sending/receiving promise as described by the vendor.",
+        "fr": "Vérification de domaine, outils de délivrabilité (SPF, DKIM, DMARC), webhooks et traitement des emails entrants couvrent la promesse d'envoi/réception telle que décrite par l'éditeur.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Plans scale from 3,000 emails/month free up to 2,500,000 emails/month at $1,150 on Scale, a wide range, though no comparison to the category ceiling was found.",
+        "fr": "Les forfaits vont de 3000 emails gratuits par mois jusqu'à 2 500 000 emails/mois à 1150 $ sur Scale, une large couverture, sans point de comparaison avec le plafond de la catégorie dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or account portability when leaving Resend is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données ou la portabilité du compte en cas de départ de Resend ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Email API for developers",
+      "fr": "API email pour développeurs"
+    },
+    "shortDescription": {
+      "en": "Resend is a developer email API for transactional and marketing email, with official SDKs and a free tier covering 3,000 emails per month.",
+      "fr": "Resend est une API email pour développeurs, pour l'envoi transactionnel et marketing, avec des SDK officiels et un forfait gratuit de 3000 emails par mois."
+    },
+    "longDescription": {
+      "en": "Resend lets developers send transactional and marketing email through a documented API, with official SDKs for Node.js, Python, PHP, Ruby, Go, Java, Rust and .NET, plus React Email for building templates as components. It handles domain verification, deliverability (SPF, DKIM, DMARC), webhooks and inbound processing.\n\nPricing starts free for 3,000 emails per month (capped at 100 per day), then $20/month for 50,000 emails on Pro, rising to $90/month on Scale. Billing is monthly only, with no annual discount. It suits a solo developer or small team wiring up transactional email quickly, with marketing sends available on a separate contacts-based plan.",
+      "fr": "Resend permet aux développeurs d'envoyer des emails transactionnels et marketing via une API documentée, avec des SDK officiels pour Node.js, Python, PHP, Ruby, Go, Java, Rust et .NET, plus React Email pour créer des templates sous forme de composants. L'outil gère la vérification de domaine, la délivrabilité (SPF, DKIM, DMARC), les webhooks et la réception des emails entrants.\n\nLe tarif démarre gratuitement pour 3000 emails par mois (plafonné à 100 par jour), puis 20 $/mois pour 50 000 emails avec Pro, jusqu'à 90 $/mois avec Scale. La facturation est mensuelle uniquement, sans remise annuelle. L'outil convient à un développeur solo ou une petite équipe voulant brancher rapidement l'envoi transactionnel, avec l'envoi marketing en forfait séparé basé sur les contacts."
+    },
+    "pros": [
+      {
+        "en": "Generous free tier: 3,000 emails/month before any payment.",
+        "fr": "Forfait gratuit généreux : 3000 emails par mois avant de payer."
+      },
+      {
+        "en": "Official SDKs across nine languages/frameworks, plus React Email for template-as-code.",
+        "fr": "SDK officiels pour neuf langages/frameworks, plus React Email pour des templates en code."
+      },
+      {
+        "en": "Built-in deliverability tooling (SPF, DKIM, DMARC) and webhooks included from the start.",
+        "fr": "Outils de délivrabilité intégrés (SPF, DKIM, DMARC) et webhooks inclus dès le départ."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan capped at 100 emails/day, limiting burst sends despite the 3,000/month quota.",
+        "fr": "Forfait gratuit plafonné à 100 emails par jour, ce qui limite les envois en rafale malgré le quota mensuel de 3000."
+      },
+      {
+        "en": "No annual billing discount on self-serve plans.",
+        "fr": "Aucune remise annuelle sur les forfaits en libre-service."
+      },
+      {
+        "en": "Marketing email (contacts, automations) is billed on a separate plan from transactional sending.",
+        "fr": "L'envoi marketing (contacts, automatisations) est facturé sur un forfait distinct de l'envoi transactionnel."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're a developer who needs transactional email wired into an app quickly, with room to grow into higher volumes.",
+        "fr": "Tu es développeur et tu veux brancher rapidement l'envoi transactionnel dans ton app, avec de la marge pour monter en volume."
+      },
+      "avoidIf": {
+        "en": "You need annual billing discounts or a single plan that also covers full marketing automation.",
+        "fr": "Tu as besoin de remises annuelles ou d'un seul forfait qui couvre aussi l'automatisation marketing complète."
+      },
+      "threshold": {
+        "en": "Above 50,000 emails/month, the $20/month Pro plan stops covering usage, and the $90/month Scale plan becomes the real cost to budget.",
+        "fr": "Au-delà de 50 000 emails par mois, le forfait Pro à 20 $/mois ne suffit plus : il faut budgétiser le forfait Scale à 90 $/mois."
+      },
+      "billingTraps": {
+        "en": "Scale overage is billed per email beyond the included quota, and extra domains cost $20/month for 100 more domains.",
+        "fr": "Le dépassement sur Scale est facturé à l'email au-delà du quota inclus, et les domaines supplémentaires coûtent 20 $/mois pour 100 domaines de plus."
+      }
+    }
+  },
   "unknowns": [
     "Exact tiered price points between Pro ($20-$35) and Scale ($90-$1,150) were shown as sliding-scale ranges on the marketing page rather than fixed steps; only endpoints were captured.",
     "Whether taxes are included in listed USD prices is not stated on the pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

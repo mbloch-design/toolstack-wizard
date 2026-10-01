@@ -3,7 +3,7 @@
   "slug": "lightroom-mobile",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Adobe Lightroom (mobile)",
     "vendor": "Adobe Inc.",
@@ -52,7 +52,7 @@
         "keyLimits": [
           {
             "en": "Free iOS/Android app with core capture, editing and sharing tools; no cloud storage plan included.",
-            "fr": null
+            "fr": "Application iOS/Android gratuite avec les outils de base de capture, retouche et partage ; aucune offre de stockage cloud incluse."
           }
         ],
         "sourceIds": [
@@ -73,7 +73,7 @@
         "keyLimits": [
           {
             "en": "Full Lightroom on mobile, desktop and web plus Lightroom Classic; 1TB cloud storage; annual plan billed monthly.",
-            "fr": null
+            "fr": "Lightroom complet sur mobile, desktop et web, plus Lightroom Classic ; 1 To de stockage cloud ; offre annuelle facturée au mois."
           }
         ],
         "sourceIds": [
@@ -94,7 +94,7 @@
         "keyLimits": [
           {
             "en": "Adds Photoshop on desktop and mobile to the Lightroom plan; 1TB cloud storage; annual plan billed monthly.",
-            "fr": null
+            "fr": "Ajoute Photoshop sur desktop et mobile à l'offre Lightroom ; 1 To de stockage cloud ; offre annuelle facturée au mois."
           }
         ],
         "sourceIds": [
@@ -107,7 +107,7 @@
     "cautions": [
       {
         "en": "Prices shown are the promotional annual-billed-monthly rate; Creative Cloud Pro (20+ apps including Lightroom) is offered at an introductory $34.99/mo for 3 months before reverting to $69.99/mo.",
-        "fr": null,
+        "fr": "Les prix affichés sont le tarif promotionnel annuel facturé au mois ; Creative Cloud Pro (20+ applications dont Lightroom) est proposé à un tarif d'appel de 34,99 $/mois pendant 3 mois avant de repasser à 69,99 $/mois.",
         "sourceIds": [
           "s1"
         ]
@@ -118,21 +118,21 @@
     "capabilities": [
       {
         "en": "Non-destructive photo editing with presets, on mobile, desktop and web, synced via the cloud.",
-        "fr": null,
+        "fr": "Retouche photo non destructive avec presets, sur mobile, desktop et web, synchronisée via le cloud.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Free mobile app for capture, editing and sharing without requiring a paid subscription.",
-        "fr": null,
+        "fr": "Application mobile gratuite pour la capture, la retouche et le partage, sans abonnement payant requis.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Cloud storage and sync across devices included with paid plans (1TB on Lightroom and Photography plans).",
-        "fr": null,
+        "fr": "Stockage et synchronisation cloud entre appareils inclus avec les offres payantes (1 To sur les offres Lightroom et Photography).",
         "sourceIds": [
           "s1"
         ]
@@ -141,14 +141,14 @@
     "limitations": [
       {
         "en": "Full desktop-grade editing and cloud storage require a paid Lightroom or Photography subscription; the free mobile app alone is limited.",
-        "fr": null,
+        "fr": "La retouche complète façon desktop et le stockage cloud nécessitent un abonnement payant Lightroom ou Photography ; l'application mobile gratuite seule est limitée.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Part of the Adobe Creative Cloud ecosystem, meaning cancellation and pricing changes follow Adobe's broader subscription terms.",
-        "fr": null,
+        "fr": "Fait partie de l'écosystème Adobe Creative Cloud : la résiliation et les changements de prix suivent les conditions d'abonnement globales d'Adobe.",
         "sourceIds": [
           "s1"
         ]
@@ -166,21 +166,21 @@
       "slug": "affinity-photo",
       "reason": {
         "en": "One-time-purchase photo editing alternative to Adobe's subscription model.",
-        "fr": null
+        "fr": "Alternative de retouche photo à achat unique, face au modèle par abonnement d'Adobe."
       }
     },
     {
       "slug": "snapseed",
       "reason": {
         "en": "Free mobile photo editing app, direct alternative to Lightroom mobile for casual editing.",
-        "fr": null
+        "fr": "Application mobile de retouche photo gratuite, alternative directe à Lightroom mobile pour une retouche occasionnelle."
       }
     },
     {
       "slug": "canva",
       "reason": {
         "en": "Broader creative tool sometimes used as a lighter-weight alternative for photo editing and sharing.",
-        "fr": null
+        "fr": "Outil créatif plus large, parfois utilisé comme alternative plus légère pour la retouche et le partage de photos."
       }
     }
   ],
@@ -191,5 +191,126 @@
   ],
   "conflicts": [
     "Seed websiteUrl (https://lightroommobile.com) conflicts with the official Adobe product domain; flagged in identity.statusNote."
-  ]
+  ],
+  "completedLocallyOn": "2026-10-01",
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Content creators and photographers who shoot and edit on their phone and want their library synced to desktop without buying separate storage.",
+      "fr": "Créateurs de contenu et photographes qui shootent et retouchent sur leur téléphone et veulent synchroniser leur photothèque vers un ordinateur sans acheter de stockage à part."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Usage: edit and organize photos on a phone during a shoot or trip, using the free Lightroom mobile app before syncing to a paid plan for full desktop editing.",
+      "fr": "Usage : retoucher et organiser ses photos sur smartphone pendant un shooting ou un voyage, avec l'application mobile Lightroom gratuite, avant de synchroniser vers une offre payante pour la retouche complète sur ordinateur."
+    },
+    {
+      "en": "Usage: sync and back up a photo library across phone, desktop and web with 1TB of cloud storage, using the Lightroom Individual plan instead of manually copying files between devices.",
+      "fr": "Usage : synchroniser et sauvegarder sa photothèque entre mobile, ordinateur et web avec 1 To de stockage cloud, via le plan Lightroom Individual, plutôt que de copier les fichiers manuellement d'un appareil à l'autre."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free app covers basic capture and editing at no cost, and the $11.99/mo Lightroom plan adds 1TB of storage across devices, but the subscription follows Adobe's broader Creative Cloud pricing and cancellation terms, which affects long-term value certainty.",
+        "fr": "L'application gratuite couvre la capture et la retouche de base sans frais, et l'offre Lightroom à 11,99 $/mois ajoute 1 To de stockage sur tous les appareils, mais l'abonnement suit les conditions tarifaires et de résiliation globales de Creative Cloud, ce qui pèse sur la certitude de la valeur à long terme.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The free mobile app is built for immediate capture, editing and sharing, with no setup beyond installing it, so a first useful result comes quickly.",
+        "fr": "L'application mobile gratuite est conçue pour la capture, la retouche et le partage immédiats, sans autre installation que celle de l'application, d'où un premier résultat utile rapide.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Non-destructive editing and cross-device sync work as described once on a paid plan; the free app alone delivers capture and editing but not cloud sync, exactly as stated.",
+        "fr": "La retouche non destructive et la synchronisation entre appareils fonctionnent comme annoncé une fois sur une offre payante ; l'application gratuite seule offre capture et retouche mais pas de synchronisation cloud, conformément à ce qui est indiqué.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Full Lightroom and Lightroom Classic are included for desktop-grade editing beyond the mobile app, positioning it among the most capable photo editing options in its category.",
+        "fr": "Lightroom complet et Lightroom Classic sont inclus pour une retouche de niveau desktop au-delà de l'application mobile, ce qui place l'outil parmi les plus complets de sa catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: reversibility (export formats, ease of moving an edited library out of Lightroom/Creative Cloud) is not covered by the collected sources.",
+        "fr": "Note neutre : la réversibilité (formats d'export, facilité à sortir une photothèque retouchée de Lightroom/Creative Cloud) ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Mobile photo editing",
+      "fr": "Retouche photo mobile"
+    },
+    "shortDescription": {
+      "en": "A mobile app for non-destructive photo editing and cloud sync, free to use with optional paid plans for storage and desktop tools.",
+      "fr": "Une application mobile de retouche photo non destructive avec synchronisation cloud, gratuite, avec des offres payantes optionnelles pour le stockage et le desktop."
+    },
+    "longDescription": {
+      "en": "Lightroom mobile is Adobe's free iOS and Android app for capturing, editing and sharing photos with non-destructive tools and presets. It is part of the broader Lightroom ecosystem, which also includes desktop and web apps and the separate Lightroom Classic application.\n\nThe mobile app itself costs nothing, but cloud sync and storage require a paid plan: Lightroom Individual starts at $11.99/mo (annual plan billed monthly) for 1TB of storage across devices, and adding Photoshop moves to the $19.99/mo Photography plan. Both follow Adobe's Creative Cloud subscription terms, so pricing and cancellation follow Adobe's broader rules rather than a standalone app policy.",
+      "fr": "Lightroom mobile est l'application iOS et Android gratuite d'Adobe pour capturer, retoucher et partager des photos avec des outils de retouche non destructive et des presets. Elle fait partie de l'écosystème Lightroom, qui inclut aussi les applications desktop et web ainsi que Lightroom Classic, une application séparée.\n\nL'application mobile est gratuite, mais la synchronisation et le stockage cloud nécessitent une offre payante : Lightroom Individual démarre à 11,99 $/mois (engagement annuel facturé au mois) pour 1 To de stockage sur tous les appareils, et l'ajout de Photoshop fait passer à l'offre Photography à 19,99 $/mois. Les deux suivent les conditions d'abonnement Creative Cloud d'Adobe, donc le tarif et la résiliation obéissent aux règles globales d'Adobe."
+    },
+    "pros": [
+      {
+        "en": "The mobile app is free to use for basic capture and editing, with no account upgrade required to start.",
+        "fr": "L'application mobile est gratuite pour la capture et la retouche de base, sans besoin de passer à un compte payant pour commencer."
+      },
+      {
+        "en": "Paid plans include 1TB of cloud storage synced automatically across phone, desktop and web.",
+        "fr": "Les offres payantes incluent 1 To de stockage cloud synchronisé automatiquement entre mobile, ordinateur et web."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Cloud sync and storage are locked behind a paid plan; the free app alone does not back up a library.",
+        "fr": "La synchronisation et le stockage cloud sont réservés aux offres payantes : l'application gratuite seule ne sauvegarde pas la photothèque."
+      },
+      {
+        "en": "Pricing and cancellation follow Adobe's wider Creative Cloud subscription terms rather than a standalone policy.",
+        "fr": "Le tarif et la résiliation suivent les conditions d'abonnement Creative Cloud globales d'Adobe plutôt qu'une politique propre à l'application."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You shoot and edit on your phone and want cloud sync to desktop without buying separate storage.",
+        "fr": "Tu shootes et retouches sur ton téléphone et tu veux une synchronisation cloud vers ton ordinateur sans acheter de stockage à part."
+      },
+      "avoidIf": {
+        "en": "You want a one-time purchase with no subscription, or you don't need cloud sync across devices.",
+        "fr": "Tu veux un achat unique sans abonnement, ou tu n'as pas besoin de synchronisation cloud entre appareils."
+      },
+      "threshold": {
+        "en": "The entry paid plan, Lightroom Individual, is $11.99/mo (annual plan billed monthly) for 1TB of storage; below that, only the free app without cloud sync is available.",
+        "fr": "L'offre payante d'entrée, Lightroom Individual, est à 11,99 $/mois (engagement annuel facturé au mois) pour 1 To de stockage ; en dessous, seule l'application gratuite sans synchronisation cloud est disponible."
+      },
+      "billingTraps": {
+        "en": "The $11.99/mo and $19.99/mo rates are annual-commitment pricing billed monthly, not month-to-month; check for early-cancellation fees before committing.",
+        "fr": "Les tarifs à 11,99 $ et 19,99 $/mois sont des prix avec engagement annuel facturés au mois, pas un paiement mensuel sans engagement ; vérifie les frais de résiliation anticipée avant de t'engager."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Les offres lightroom-individual et photography-individual précisent dans keyLimits qu'il s'agit d'un engagement annuel facturé au mois, mais le montant (11,99 $ et 19,99 $) est stocké dans price.monthly plutôt que price.annualPerMonth comme le prévoit le schéma (section 5.2). A vérifier sur la page officielle et corriger le champ si confirmé."
+  ],
+  "hold": "annual-plan-billed-monthly prices stored in price.monthly"
 }

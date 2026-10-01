@@ -3,7 +3,7 @@
   "slug": "budibase",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Budibase",
     "vendor": "Budibase Ltd.",
@@ -33,7 +33,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Free self-hosted open source edition with unlimited actions, apps, automations, agents, and users; community support only"
+        "en": "Free self-hosted open source edition with unlimited actions, apps, automations, agents, and users; community support only",
+        "fr": "Édition open source auto-hébergée gratuite avec actions, apps, automatisations, agents et utilisateurs illimités ; support communautaire uniquement"
       },
       "sourceIds": [
         "s1"
@@ -60,7 +61,7 @@
         "keyLimits": [
           {
             "en": "5K actions/month (10K annually), 2K AI credits, 1 creator, 1 workspace",
-            "fr": null
+            "fr": "5 000 actions/mois (10 000 en annuel), 2 000 crédits IA, 1 créateur, 1 espace de travail"
           }
         ],
         "sourceIds": [
@@ -81,7 +82,7 @@
         "keyLimits": [
           {
             "en": "20K actions/month (50K annually), 10K AI credits, expandable creators at $50 each, custom branding, SSO",
-            "fr": null
+            "fr": "20 000 actions/mois (50 000 en annuel), 10 000 crédits IA, créateurs supplémentaires à 50 $ chacun, marque personnalisée, SSO"
           }
         ],
         "sourceIds": [
@@ -102,7 +103,7 @@
         "keyLimits": [
           {
             "en": "250K actions/month, 50K AI credits, 3 creators included, 30 days logs, unlimited workspaces",
-            "fr": null
+            "fr": "250 000 actions/mois, 50 000 crédits IA, 3 créateurs inclus, 30 jours de logs, espaces de travail illimités"
           }
         ],
         "sourceIds": [
@@ -114,7 +115,7 @@
     "addOns": [
       {
         "en": "End users at $5/month; additional creators at $50/month",
-        "fr": null,
+        "fr": "Utilisateurs finaux à 5 $/mois ; créateurs supplémentaires à 50 $/mois",
         "sourceIds": [
           "s1"
         ]
@@ -123,7 +124,7 @@
     "cautions": [
       {
         "en": "Action quotas are hard monthly limits on cloud plans; exceeding them requires upgrading rather than paying overages.",
-        "fr": null,
+        "fr": "Les quotas d'actions sont des limites mensuelles strictes sur les plans cloud ; les dépasser oblige à changer de plan plutôt qu'à payer un supplément.",
         "sourceIds": [
           "s1"
         ]
@@ -134,14 +135,14 @@
     "capabilities": [
       {
         "en": "Low-code builder for internal apps, forms, and workflows with automations and AI agents",
-        "fr": null,
+        "fr": "Constructeur low-code pour apps internes, formulaires et workflows, avec automatisations et agents IA",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Free, unlimited self-hosted open source edition alongside a managed cloud offering",
-        "fr": null,
+        "fr": "Édition open source auto-hébergée gratuite et illimitée, en plus d'une offre cloud gérée",
         "sourceIds": [
           "s1"
         ]
@@ -150,14 +151,14 @@
     "limitations": [
       {
         "en": "Cloud plans cap monthly actions (agent calls, automation steps, database operations) by tier, from 5K on Pro up to 250K on Business",
-        "fr": null,
+        "fr": "Les plans cloud plafonnent les actions mensuelles (appels d'agent, étapes d'automatisation, opérations base de données) selon le plan, de 5 000 sur Pro à 250 000 sur Business",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Only 1 creator seat included on Pro; additional creators cost $50/month each",
-        "fr": null,
+        "fr": "Seulement 1 siège créateur inclus sur Pro ; les créateurs supplémentaires coûtent 50 $/mois chacun",
         "sourceIds": [
           "s1"
         ]
@@ -170,14 +171,142 @@
   },
   "alternatives": [
     {
+      "slug": "retool",
+      "reason": {
+        "en": "Direct competitor for building internal apps and admin panels with a low-code builder",
+        "fr": "Concurrent direct pour construire des apps internes et des panneaux d'administration avec un constructeur low-code"
+      }
+    },
+    {
+      "slug": "appsmith",
+      "reason": {
+        "en": "Open source low-code builder for internal tools, the closest match to Budibase's free self-hosted model",
+        "fr": "Constructeur low-code open source pour outils internes, l'équivalent le plus proche du modèle auto-hébergé gratuit de Budibase"
+      }
+    },
+    {
       "slug": "bubble",
       "reason": {
         "en": "No-code/low-code app builder competitor for internal tools and web apps",
-        "fr": null
+        "fr": "Concurrent no-code/low-code pour construire des outils internes et des applications web"
       }
     }
   ],
   "missingAlternatives": [],
   "unknowns": [],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The self-hosted edition is free and unlimited, and the cloud Pro plan at $19/month for 5K actions is cheap for a small team's first internal app.",
+        "fr": "L'édition auto-hébergée est gratuite et illimitée, et le plan cloud Pro à 19 $/mois pour 5 000 actions reste bon marché pour la première app interne d'une petite équipe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A low-code builder still requires learning the platform's data model and automation logic before producing a usable app, more than a plug-and-play tool but less than full coding.",
+        "fr": "Un constructeur low-code demande encore d'apprendre le modèle de données et la logique d'automatisation de la plateforme avant de produire une app utilisable, plus qu'un outil prêt à l'emploi mais moins que du code complet.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It builds working internal apps, forms, and automations as advertised, on both the free self-hosted edition and the cloud plans.",
+        "fr": "L'outil construit des apps internes, formulaires et automatisations fonctionnels comme annoncé, aussi bien sur l'édition auto-hébergée gratuite que sur les plans cloud.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Action quotas scale from 5K to 250K/month across cloud tiers, and the self-hosted edition removes the cap entirely, covering small projects up to larger business workloads.",
+        "fr": "Les quotas d'actions vont de 5 000 à 250 000/mois selon les plans cloud, et l'édition auto-hébergée supprime totalement le plafond, couvrant les petits projets comme les charges d'entreprise plus importantes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Being open source and self-hostable, the underlying app data and configuration stay under the user's control rather than locked in a vendor's cloud only.",
+        "fr": "Étant open source et auto-hébergeable, les données de l'application et sa configuration restent sous le contrôle de l'utilisateur plutôt qu'enfermées uniquement dans le cloud de l'éditeur.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams and ops staff who need an internal app, form, or workflow tool without hiring a developer, and want the option to self-host for free.",
+      "fr": "Petites équipes et personnel opérationnel qui ont besoin d'une app interne, d'un formulaire ou d'un outil de workflow sans embaucher de développeur, avec la possibilité de s'auto-héberger gratuitement."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Use case: build an internal request-approval form and workflow for free on the self-hosted edition, with no action limit.",
+      "fr": "Cas d'usage : construire gratuitement un formulaire de demande et d'approbation interne avec workflow sur l'édition auto-hébergée, sans limite d'actions."
+    },
+    {
+      "en": "Use case: run a small team's customer database app on the cloud Pro plan, staying under the 5K monthly action quota.",
+      "fr": "Cas d'usage : gérer l'app de base de données clients d'une petite équipe sur le plan cloud Pro, en restant sous le quota de 5 000 actions mensuelles."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Low-code internal apps",
+      "fr": "Apps internes low-code"
+    },
+    "shortDescription": {
+      "en": "Low-code builder for internal apps, forms, and automations, free and unlimited self-hosted, or capped by monthly actions on cloud plans.",
+      "fr": "Constructeur low-code pour apps internes, formulaires et automatisations, gratuit et illimité en auto-hébergé, ou plafonné par actions mensuelles sur les plans cloud."
+    },
+    "longDescription": {
+      "en": "Budibase builds internal apps, forms, and workflows with automations and AI agents through a low-code interface. The self-hosted open source edition is completely free, with unlimited actions, apps, and users, while a managed cloud offering adds hosting and support.\n\nCloud pricing starts at $19/month for Pro, which includes 5K actions/month and 1 creator seat; extra creators cost $50/month each. It suits a small team wanting an internal tool without hiring a developer, especially one comfortable self-hosting for free, while cloud plans fit teams that would rather not run their own infrastructure but need to watch their monthly action quota.",
+      "fr": "Budibase construit des apps internes, des formulaires et des workflows avec automatisations et agents IA via une interface low-code. L'édition open source auto-hébergée est entièrement gratuite, avec actions, apps et utilisateurs illimités, tandis qu'une offre cloud gérée ajoute l'hébergement et le support.\n\nLe tarif cloud démarre à 19 $/mois pour Pro, qui inclut 5 000 actions/mois et 1 siège créateur ; les créateurs supplémentaires coûtent 50 $/mois chacun. Il convient à une petite équipe qui veut un outil interne sans embaucher de développeur, surtout si elle est à l'aise pour s'auto-héberger gratuitement, tandis que les plans cloud conviennent aux équipes qui préfèrent ne pas gérer leur propre infrastructure mais doivent surveiller leur quota mensuel d'actions."
+    },
+    "pros": [
+      {
+        "en": "Self-hosted edition is free and unlimited, with no action cap at all.",
+        "fr": "L'édition auto-hébergée est gratuite et illimitée, sans aucun plafond d'actions."
+      },
+      {
+        "en": "14-day trial on cloud plans before committing to a monthly subscription.",
+        "fr": "Essai de 14 jours sur les plans cloud avant de s'engager sur un abonnement mensuel."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Cloud plans cap monthly actions hard; going over means upgrading, not paying an overage.",
+        "fr": "Les plans cloud plafonnent strictement les actions mensuelles ; les dépasser oblige à changer de plan, pas à payer un supplément."
+      },
+      {
+        "en": "Only 1 creator seat is included on Pro, with extra creators at $50/month each.",
+        "fr": "Un seul siège créateur est inclus sur Pro, les créateurs supplémentaires coûtant 50 $/mois chacun."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want a low-code internal app builder and are comfortable self-hosting for free, or your team's monthly actions fit a cloud tier.",
+        "fr": "Tu veux un constructeur d'apps internes low-code et tu es à l'aise pour t'auto-héberger gratuitement, ou le volume mensuel d'actions de ton équipe tient dans un plan cloud."
+      },
+      "avoidIf": {
+        "en": "Your team needs more than 1 creator working at once on the cloud Pro plan, since extra seats add $50/month each.",
+        "fr": "Ton équipe a besoin de plus d'un créateur travaillant en même temps sur le plan cloud Pro, car chaque siège supplémentaire ajoute 50 $/mois."
+      },
+      "threshold": {
+        "en": "At $19/month for 5K actions on cloud Pro, it's worth it once self-hosting isn't an option and the team's usage stays under that monthly action quota.",
+        "fr": "À 19 $/mois pour 5 000 actions sur le plan cloud Pro, ça vaut le coup dès que l'auto-hébergement n'est pas envisageable et que l'usage de l'équipe reste sous ce quota mensuel d'actions."
+      }
+    }
+  },
+  "reviewNotes": []
 }

@@ -3,7 +3,7 @@
   "slug": "gusto",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Gusto",
     "vendor": "Gusto, Inc.",
@@ -52,7 +52,7 @@
         "keyLimits": [
           {
             "en": "Base fee $49/month + $6/employee/month; single-state payroll, basic onboarding, employee self-service.",
-            "fr": null
+            "fr": "Frais de base de 49 $/mois + 6 $/employé/mois ; paie mono-état, intégration basique, libre-service employé."
           }
         ],
         "sourceIds": [
@@ -73,7 +73,7 @@
         "keyLimits": [
           {
             "en": "Base fee $80/month + $12/employee/month; adds multi-state payroll and time tracking.",
-            "fr": null
+            "fr": "Frais de base de 80 $/mois + 12 $/employé/mois ; ajoute la paie multi-états et le suivi du temps."
           }
         ],
         "sourceIds": [
@@ -94,7 +94,7 @@
         "keyLimits": [
           {
             "en": "Base fee $180/month + $22/employee/month; adds certified HR pros, priority support, payroll migration, custom reports.",
-            "fr": null
+            "fr": "Frais de base de 180 $/mois + 22 $/employé/mois ; ajoute l'accès à des pros RH certifiés, un support prioritaire, la migration de paie et des rapports personnalisés."
           }
         ],
         "sourceIds": [
@@ -115,7 +115,7 @@
         "keyLimits": [
           {
             "en": "Base fee $35/month + $6/contractor/month; contractor payments, 1099-NEC filing, international contractor payments in 120+ countries.",
-            "fr": null
+            "fr": "Frais de base de 35 $/mois + 6 $/freelance/mois ; paiements de freelances, déclaration 1099-NEC, paiements de freelances internationaux dans plus de 120 pays."
           }
         ],
         "sourceIds": [
@@ -127,7 +127,7 @@
     "addOns": [
       {
         "en": "HR add-ons and benefits administration can raise the per-employee cost by roughly $10-30/month depending on plan.",
-        "fr": null,
+        "fr": "Les options RH et la gestion des avantages sociaux peuvent augmenter le coût par employé d'environ 10 à 30 $/mois selon le plan.",
         "sourceIds": [
           "s1"
         ]
@@ -136,14 +136,14 @@
     "cautions": [
       {
         "en": "Pricing is base fee plus per-employee fee, so the effective monthly cost scales directly with headcount (a 10-person team on Simple costs roughly $109/month).",
-        "fr": null,
+        "fr": "Le tarif est composé d'un forfait de base plus un montant par employé, donc le coût mensuel réel augmente directement avec l'effectif (une équipe de 10 personnes sur Simple coûte environ 109 $/mois).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Official gusto.com pricing page returned an access error during this research session; figures come from third-party pricing trackers and were not independently verified on gusto.com. Re-verify before publishing.",
-        "fr": null,
+        "fr": "La page tarifs officielle de gusto.com a renvoyé une erreur d'accès pendant cette session de recherche ; les chiffres proviennent de comparateurs tiers et n'ont pas été vérifiés indépendamment sur gusto.com. À revérifier avant publication.",
         "sourceIds": [
           "s1"
         ]
@@ -154,21 +154,21 @@
     "capabilities": [
       {
         "en": "Automated payroll runs with tax filing and compliance support in all US states.",
-        "fr": null,
+        "fr": "Exécution automatisée de la paie avec déclaration fiscale et conformité dans tous les États américains.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Employee benefits administration (health insurance, retirement plans).",
-        "fr": null,
+        "fr": "Gestion des avantages sociaux des employés (assurance santé, plans de retraite).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Contractor payments and 1099-NEC filing, including international contractors.",
-        "fr": null,
+        "fr": "Paiements de freelances et déclaration 1099-NEC, y compris pour les freelances internationaux.",
         "sourceIds": [
           "s1"
         ]
@@ -177,14 +177,14 @@
     "limitations": [
       {
         "en": "No free tier; every plan carries a base monthly fee plus a per-employee fee.",
-        "fr": null,
+        "fr": "Aucune offre gratuite ; chaque plan comprend un forfait de base mensuel plus un montant par employé.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Multi-state payroll requires at least the Plus plan, not available on Simple.",
-        "fr": null,
+        "fr": "La paie multi-états nécessite au moins le plan Plus, non disponible sur Simple.",
         "sourceIds": [
           "s1"
         ]
@@ -202,28 +202,28 @@
       "slug": "rippling",
       "reason": {
         "en": "Direct competitor combining payroll, HR and IT for small and mid-size teams.",
-        "fr": null
+        "fr": "Concurrent direct combinant paie, RH et IT pour les petites et moyennes équipes."
       }
     },
     {
       "slug": "justworks",
       "reason": {
         "en": "PEO-style payroll and benefits alternative targeting small businesses.",
-        "fr": null
+        "fr": "Alternative de paie et d'avantages sociaux de type PEO destinée aux petites entreprises."
       }
     },
     {
       "slug": "bamboohr",
       "reason": {
         "en": "HR platform competing on the broader HR/people-ops use case.",
-        "fr": null
+        "fr": "Plateforme RH concurrente sur le besoin plus large de gestion RH/people ops."
       }
     },
     {
       "slug": "deel",
       "reason": {
         "en": "Alternative for global/international payroll and contractor payments.",
-        "fr": null
+        "fr": "Alternative pour la paie internationale et les paiements de freelances à l'étranger."
       }
     }
   ],
@@ -232,5 +232,125 @@
     "Official pricing page (gusto.com) blocked access (HTTP 403) during this session; plan prices sourced from third-party trackers and should be re-verified directly on gusto.com.",
     "Exact benefits/HR add-on pricing not confirmed from an official source."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Automated payroll and tax filing in every US state removes a recurring compliance burden, but every plan carries a base fee plus a per-employee charge that scales directly with headcount, with no free tier to offset it.",
+        "fr": "La paie automatisée et la déclaration fiscale dans tous les États américains suppriment une charge de conformité récurrente, mais chaque plan ajoute un forfait de base plus un montant par employé qui augmente directement avec l'effectif, sans offre gratuite pour compenser.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The Simple plan is explicitly described with basic onboarding and employee self-service, but the dossier has no measured first-run or setup-time evidence.",
+        "fr": "Le plan Simple est explicitement décrit avec une intégration basique et un libre-service employé, mais le dossier ne contient aucune mesure du temps de prise en main.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers automated payroll runs with tax filing directly as described, in all US states, without a documented workaround.",
+        "fr": "La paie automatisée avec déclaration fiscale fonctionne directement comme annoncé, dans tous les États américains, sans contournement documenté.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers payroll, benefits administration, contractor payments and multi-state compliance across four plans, a broad feature set for the category.",
+        "fr": "Couvre la paie, la gestion des avantages sociaux, les paiements de freelances et la conformité multi-états sur quatre plans, un périmètre large pour la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and migration away from Gusto are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et la migration hors de Gusto ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small US businesses that need payroll, tax filing and benefits handled in one place, with a dedicated plan for teams that only pay contractors.",
+      "fr": "Petites entreprises américaines qui doivent gérer paie, déclaration fiscale et avantages sociaux en un seul endroit, avec un plan dédié aux équipes qui ne paient que des freelances."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a small business owner runs payroll and automatic state and federal tax filing on the Simple plan for a single-state team.",
+      "fr": "Usage : un dirigeant de petite entreprise gère la paie et la déclaration fiscale automatique, étatique et fédérale, sur le plan Simple pour une équipe mono-état."
+    },
+    {
+      "en": "Usage: a company with only freelancers uses the Contractor Only plan to pay and file 1099-NEC forms for US and international contractors.",
+      "fr": "Usage : une entreprise qui n'emploie que des freelances utilise le plan Contractor Only pour les payer et déclarer les formulaires 1099-NEC, y compris à l'international."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Payroll and HR",
+      "fr": "Paie et RH"
+    },
+    "shortDescription": {
+      "en": "US payroll platform handling tax filing, employee benefits and contractor payments for small businesses.",
+      "fr": "Plateforme de paie américaine qui gère la déclaration fiscale, les avantages sociaux et les paiements de freelances pour les petites entreprises."
+    },
+    "longDescription": {
+      "en": "Gusto runs payroll for US-based teams, filing state and federal taxes automatically and handling employee benefits like health insurance and retirement plans. A separate Contractor Only plan covers 1099-NEC filing and payments to contractors in more than 120 countries, for businesses with no W-2 employees.\n\nThere is no free tier: every plan combines a monthly base fee with a per-employee charge, starting around $55/month for a single employee on Simple. Multi-state payroll and time tracking require the Plus plan; certified HR support and custom reporting are reserved for Premium.",
+      "fr": "Gusto gère la paie des équipes basées aux États-Unis, avec déclaration fiscale automatique aux niveaux étatique et fédéral, et prend en charge les avantages sociaux comme l'assurance santé et les plans de retraite. Un plan distinct, Contractor Only, couvre la déclaration 1099-NEC et les paiements de freelances dans plus de 120 pays, pour les entreprises sans employé salarié.\n\nIl n'y a pas d'offre gratuite : chaque plan combine un forfait mensuel de base et un montant par employé, à partir d'environ 55 $/mois pour un seul employé sur Simple. La paie multi-états et le suivi du temps nécessitent le plan Plus ; l'accès à des pros RH certifiés et les rapports personnalisés sont réservés à Premium."
+    },
+    "pros": [
+      {
+        "en": "Tax filing is handled automatically in every US state, removing a recurring compliance task.",
+        "fr": "La déclaration fiscale est gérée automatiquement dans tous les États américains, supprimant une tâche de conformité récurrente."
+      },
+      {
+        "en": "A dedicated Contractor Only plan exists for businesses that pay freelancers instead of employees.",
+        "fr": "Un plan dédié Contractor Only existe pour les entreprises qui paient des freelances plutôt que des employés."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free tier, and the base-fee-plus-per-employee pricing means cost rises with every hire.",
+        "fr": "Pas d'offre gratuite, et le tarif en forfait de base plus montant par employé fait monter le coût à chaque embauche."
+      },
+      {
+        "en": "Multi-state payroll and certified HR support are locked behind the Plus and Premium plans.",
+        "fr": "La paie multi-états et le support RH certifié sont réservés aux plans Plus et Premium."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run US payroll and want automated tax filing and benefits administration in one place.",
+        "fr": "Tu gères une paie américaine et veux la déclaration fiscale automatisée et la gestion des avantages sociaux au même endroit."
+      },
+      "avoidIf": {
+        "en": "You only pay international contractors with no US payroll need, and the Contractor Only plan alone would cover it.",
+        "fr": "Tu ne paies que des freelances à l'international sans besoin de paie américaine, auquel cas le seul plan Contractor Only suffirait."
+      },
+      "threshold": {
+        "en": "Priced for real use from the Simple plan's $55/month (a $49 base fee plus $6 for one employee); a 10-person team runs about $109/month per the dossier's own example.",
+        "fr": "Le tarif réel démarre à 55 $/mois sur le plan Simple (49 $ de base plus 6 $ pour un employé) ; une équipe de 10 personnes coûte environ 109 $/mois selon l'exemple du dossier."
+      },
+      "billingTraps": {
+        "en": "Every plan adds a per-employee monthly fee on top of the base price, so cost grows with headcount, and HR/benefits add-ons can add roughly $10-30/month more.",
+        "fr": "Chaque plan ajoute un montant mensuel par employé en plus du forfait de base, donc le coût grandit avec l'effectif, et les options RH/avantages sociaux peuvent ajouter environ 10 à 30 $/mois de plus."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "Pricing source is tier 2 (third-party aggregator), not gusto.com directly: the official pricing page returned a 403 during the cloud research session. Re-verify the Simple/Plus/Premium/Contractor Only base fees and per-employee amounts directly on gusto.com before this dossier is merged into the catalogue."
+  ]
 }

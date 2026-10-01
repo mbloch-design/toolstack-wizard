@@ -3,7 +3,7 @@
   "slug": "nestjs",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "NestJS",
     "vendor": "Kamil Mysliwiec / NestJS open-source project",
@@ -52,7 +52,7 @@
         "keyLimits": [
           {
             "en": "MIT-licensed framework, no cost to use, self-hosted by the adopting team.",
-            "fr": null
+            "fr": "Framework sous licence MIT, gratuit à l'usage, auto-hébergé par l'équipe qui l'adopte."
           }
         ],
         "sourceIds": [
@@ -73,7 +73,7 @@
         "keyLimits": [
           {
             "en": "Technical guidance, architectural reviews, mentoring, code reviews and long-term support (LTS); no public price.",
-            "fr": null
+            "fr": "Accompagnement technique, revues d'architecture, mentorat, revues de code et support long terme (LTS) ; aucun prix public."
           }
         ],
         "sourceIds": [
@@ -85,21 +85,21 @@
     "addOns": [
       {
         "en": "Official NestJS courses/certification program, priced separately.",
-        "fr": null,
+        "fr": "Programme officiel de cours et de certification NestJS, facturé séparément.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Observe (observability platform) and Devtools (dev workflow tooling), separate paid offerings.",
-        "fr": null,
+        "fr": "Observe (plateforme d'observabilité) et Devtools (outils de workflow dev), offres payantes séparées.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Deploy (\"Mau!\") - AWS infrastructure provisioning/management service, separate paid offering.",
-        "fr": null,
+        "fr": "Deploy (« Mau! ») : service de provisionnement et de gestion d'infrastructure AWS, offre payante séparée.",
         "sourceIds": [
           "s1"
         ]
@@ -108,7 +108,7 @@
     "cautions": [
       {
         "en": "The core framework is free and open source; costs only arise from optional paid services (Enterprise Support, courses, Observe, Devtools, Deploy).",
-        "fr": null,
+        "fr": "Le framework de base est gratuit et open source ; les coûts ne viennent que des services payants optionnels (support entreprise, cours, Observe, Devtools, Deploy).",
         "sourceIds": [
           "s1"
         ]
@@ -119,28 +119,28 @@
     "capabilities": [
       {
         "en": "Modular Node.js/TypeScript framework for building server-side applications with a structured architecture.",
-        "fr": null,
+        "fr": "Framework Node.js/TypeScript modulaire pour construire des applications serveur avec une architecture structurée.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Built-in dependency injection for maintainability and testability.",
-        "fr": null,
+        "fr": "Injection de dépendances intégrée pour la maintenabilité et la testabilité.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Native support for building microservice architectures.",
-        "fr": null,
+        "fr": "Prise en charge native des architectures microservices.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Decorator-based, strongly-typed code style leveraging TypeScript.",
-        "fr": null,
+        "fr": "Style de code typé à base de décorateurs, qui s'appuie sur TypeScript.",
         "sourceIds": [
           "s1"
         ]
@@ -149,14 +149,14 @@
     "limitations": [
       {
         "en": "As a framework rather than a hosted platform, teams must handle their own hosting, scaling and infrastructure.",
-        "fr": null,
+        "fr": "En tant que framework et non plateforme hébergée, l'équipe doit gérer elle-même l'hébergement, la montée en charge et l'infrastructure.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "No official managed backend/database included; relies on integrating third-party services.",
-        "fr": null,
+        "fr": "Aucune base de données ni backend géré inclus : il faut intégrer des services tiers.",
         "sourceIds": [
           "s1"
         ]
@@ -172,21 +172,21 @@
       "slug": "flask",
       "reason": {
         "en": "Comparable structured backend framework in a different language ecosystem (Python).",
-        "fr": null
+        "fr": "Framework backend structuré comparable, dans un autre écosystème de langage (Python)."
       }
     },
     {
       "slug": "php",
       "reason": {
         "en": "Represents general-purpose server-side language/framework alternatives for building APIs.",
-        "fr": null
+        "fr": "Représente les alternatives générales en langage/framework serveur pour construire des API."
       }
     },
     {
       "slug": "python",
       "reason": {
         "en": "Broader language alternative commonly used for backend API development.",
-        "fr": null
+        "fr": "Alternative de langage plus large, couramment utilisée pour le développement d'API backend."
       }
     }
   ],
@@ -205,5 +205,123 @@
   "unknowns": [
     "Pricing for Enterprise Support, Observe, Devtools and Deploy (Mau!) not publicly disclosed on the homepage."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Backend and full-stack developers who want an opinionated, typed structure for a Node.js API instead of assembling Express middleware by hand.",
+      "fr": "Développeurs backend et full-stack qui veulent une structure typée et balisée pour une API Node.js, plutôt que d'assembler des middlewares Express à la main."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: scaffold a typed REST API backend for a SaaS product, structuring controllers, services and modules so the codebase stays maintainable as the team grows.",
+      "fr": "Usage : démarrer une API REST typée pour un produit SaaS, en structurant contrôleurs, services et modules pour garder le code maintenable quand l'équipe grandit."
+    },
+    {
+      "en": "Usage: split a Node.js backend into microservices, using NestJS's built-in microservice transport layer to connect services without adding a separate framework.",
+      "fr": "Usage : découper un backend Node.js en microservices, grâce à la couche de transport microservices intégrée à NestJS, sans framework supplémentaire."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "NestJS is fully free and open source under the MIT License; the only costs come from optional add-ons (Enterprise Support, courses, Observe, Devtools, Deploy), so the framework itself has no cost to justify.",
+        "fr": "NestJS est entièrement gratuit et open source sous licence MIT ; les seuls coûts viennent d'options facultatives (support entreprise, cours, Observe, Devtools, Deploy), donc le framework lui-même n'a aucun coût à justifier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Getting a first useful API running means being comfortable with TypeScript, decorators and dependency injection concepts, not a no-code or minimal-setup start.",
+        "fr": "Obtenir une première API utile suppose d'être à l'aise avec TypeScript, les décorateurs et l'injection de dépendances, ce n'est pas un démarrage no-code ou minimal.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The framework delivers the modular, dependency-injected backend structure and native microservice support it describes, without requiring a third-party workaround to get there.",
+        "fr": "Le framework tient la promesse d'une structure backend modulaire avec injection de dépendances et support natif des microservices, sans contournement tiers nécessaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Native support for microservice architectures alongside REST/GraphQL APIs, plus a decorator-based typed style, cover most backend needs a Node.js team would face.",
+        "fr": "Le support natif des architectures microservices, en plus des API REST/GraphQL, et le style typé à décorateurs couvrent la plupart des besoins backend d'une équipe Node.js.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "The framework is MIT-licensed and self-hosted, so there is no account or vendor data to migrate away from, but a NestJS codebase still means a real rewrite to switch to another framework.",
+        "fr": "Le framework est sous licence MIT et auto-hébergé : il n'y a pas de compte ni de données chez un éditeur à migrer, mais changer de framework demande quand même de réécrire le code.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Structured Node.js framework",
+      "fr": "Framework Node.js structuré"
+    },
+    "shortDescription": {
+      "en": "An open source, TypeScript-based Node.js framework for building structured, modular server-side applications and APIs.",
+      "fr": "Un framework Node.js open source, basé sur TypeScript, pour construire des applications serveur et API structurées et modulaires."
+    },
+    "longDescription": {
+      "en": "NestJS is an open source Node.js framework that brings a structured, modular architecture to backend development, using TypeScript and dependency injection to keep larger codebases maintainable. It has native support for building microservice architectures alongside traditional REST or GraphQL APIs.\n\nThe framework itself is free under the MIT License, with no official pricing for using it. Paid options exist on top of it: enterprise support, official courses and separate tools like Observe or Deploy, but none are required to build or run a NestJS application. It suits developers who want framework-level structure rather than a bare Node.js setup.",
+      "fr": "NestJS est un framework Node.js open source qui apporte une architecture structurée et modulaire au développement backend, en s'appuyant sur TypeScript et l'injection de dépendances pour garder un code maintenable à grande échelle. Il prend nativement en charge les architectures microservices, en plus des API REST ou GraphQL classiques.\n\nLe framework est gratuit sous licence MIT, sans tarif officiel pour l'utiliser. Des options payantes existent autour de lui : support entreprise, formations officielles et outils séparés comme Observe ou Deploy, mais aucun n'est nécessaire pour construire ou faire tourner une application NestJS. Il convient aux développeurs qui veulent une structure de framework plutôt qu'une installation Node.js nue."
+    },
+    "pros": [
+      {
+        "en": "Entirely free to adopt, with no plan tiers or seat limits to budget for.",
+        "fr": "Entièrement gratuit à adopter, sans palier ni limite de sièges à budgéter."
+      },
+      {
+        "en": "Backed by a large open source community and ecosystem of modules.",
+        "fr": "Porté par une large communauté open source et un écosystème de modules."
+      },
+      {
+        "en": "A clear project structure makes it easier for several developers to work on the same codebase.",
+        "fr": "Sa structure de projet claire facilite le travail à plusieurs développeurs sur le même code."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No managed hosting or database is included; teams must set up and pay for their own infrastructure.",
+        "fr": "Aucun hébergement ni base de données géré inclus : l'équipe doit mettre en place et payer sa propre infrastructure."
+      },
+      {
+        "en": "The learning curve is steeper than a minimal Node.js setup for developers unfamiliar with dependency injection.",
+        "fr": "La courbe d'apprentissage est plus raide qu'une installation Node.js minimale pour qui ne connaît pas l'injection de dépendances."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're building a Node.js backend with a team and want an opinionated, typed structure instead of assembling your own stack.",
+        "fr": "Tu construis un backend Node.js à plusieurs et tu veux une structure typée et balisée plutôt que d'assembler ta propre stack."
+      },
+      "avoidIf": {
+        "en": "You need a quick, minimal API with no framework overhead, or your team has no TypeScript experience.",
+        "fr": "Tu veux une API rapide et minimale sans overhead de framework, ou ton équipe ne connaît pas TypeScript."
+      },
+      "threshold": {
+        "en": "The framework costs $0 to use; the only cost trigger is whether you need paid Enterprise Support (priced on request) for contracted SLAs and mentoring.",
+        "fr": "Le framework coûte 0 $ à l'usage ; le seul déclencheur de coût est le besoin ou non de l'Enterprise Support payant (sur devis) pour des SLA contractuels et du mentoring."
+      },
+      "billingTraps": null
+    }
+  }
 }

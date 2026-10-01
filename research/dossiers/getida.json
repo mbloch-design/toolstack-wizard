@@ -3,7 +3,8 @@
   "slug": "getida",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "GETIDA",
     "vendor": "GETIDA Inc.",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "Free to join, no subscription or setup fees; charged only as a commission on successful reimbursements recovered" }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Free to join, no subscription or setup fees; charged only as a commission on successful reimbursements recovered", "fr": "Inscription gratuite, aucun abonnement ni frais de mise en place ; facturé uniquement sous forme de commission sur les remboursements récupérés avec succès" }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -34,24 +35,24 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "25% commission on successful Amazon FBA reimbursements recovered; first $400 in recovered refunds not charged; enterprise/high-volume rates negotiable (~10-18%)" }],
+        "keyLimits": [{ "en": "25% commission on successful Amazon FBA reimbursements recovered; first $400 in recovered refunds not charged; enterprise/high-volume rates negotiable (~10-18%)", "fr": "Commission de 25 % sur les remboursements Amazon FBA récupérés avec succès ; les premiers 400 $ de remboursements récupérés ne sont pas facturés ; tarifs entreprise/gros volume négociables (environ 10-18 %)" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "commission",
     "addOns": [],
     "cautions": [
-      { "en": "This is a pure success-fee / commission model, not a subscription: there is no fixed monthly price, only a percentage of recovered reimbursements, invoiced every 30 days.", "sourceIds": ["s1"] }
+      { "en": "This is a pure success-fee / commission model, not a subscription: there is no fixed monthly price, only a percentage of recovered reimbursements, invoiced every 30 days.", "fr": "Il s'agit d'un modèle pur de commission au succès, pas d'un abonnement : aucun prix mensuel fixe, seulement un pourcentage des remboursements récupérés, facturé tous les 30 jours.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Automated auditing of Amazon FBA accounts to detect lost, damaged or overcharged inventory eligible for reimbursement", "sourceIds": ["s1"] },
-      { "en": "Files and manages reimbursement claims with Amazon on the seller's behalf", "sourceIds": ["s1"] }
+      { "en": "Automated auditing of Amazon FBA accounts to detect lost, damaged or overcharged inventory eligible for reimbursement", "fr": "Audit automatisé des comptes Amazon FBA pour détecter les stocks perdus, endommagés ou surfacturés éligibles à un remboursement", "sourceIds": ["s1"] },
+      { "en": "Files and manages reimbursement claims with Amazon on the seller's behalf", "fr": "Dépose et gère les demandes de remboursement auprès d'Amazon pour le compte du vendeur", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Commission-based pricing means costs scale with recovered amounts and are not predictable upfront" },
-      { "en": "Only useful for active Amazon FBA sellers, not a general-purpose analytics or business tool" }
+      { "en": "Commission-based pricing means costs scale with recovered amounts and are not predictable upfront", "fr": "La tarification à la commission fait que le coût dépend des montants récupérés et n'est pas prévisible à l'avance", "sourceIds": ["s1"] },
+      { "en": "Only useful for active Amazon FBA sellers, not a general-purpose analytics or business tool", "fr": "Utile uniquement pour les vendeurs Amazon FBA actifs, pas un outil d'analytique ou de gestion généraliste", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
@@ -66,5 +67,110 @@
   ],
   "conflicts": [
     { "en": "Seed pricingText described a '10€/month Pro version', but the official homepage describes a pure commission-based (no subscription) pricing model; no fixed monthly fee was found." }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The first $400 recovered is free of commission and the service only charges 25% of money it actually recovers, so a seller never pays more than the reimbursement it finds.",
+        "fr": "Les premiers 400 $ récupérés sont sans commission et le service ne facture que 25 % de l'argent qu'il récupère réellement, donc un vendeur ne paie jamais plus que le remboursement trouvé.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Joining is free with no setup fee, and the service audits the account and files claims on the seller's behalf, requiring little manual work to get a first result.",
+        "fr": "L'inscription est gratuite sans frais de mise en place, et le service audite le compte et dépose les demandes pour le vendeur, ce qui demande peu de travail manuel pour obtenir un premier résultat.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "It audits FBA accounts and files reimbursement claims with Amazon as advertised, without the seller needing a separate auditing tool.",
+        "fr": "Il audite les comptes FBA et dépose les demandes de remboursement auprès d'Amazon comme annoncé, sans que le vendeur ait besoin d'un outil d'audit séparé.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "It covers one specific task, Amazon FBA reimbursement auditing and filing, well, but it is not a broader inventory or business management tool.",
+        "fr": "Il couvre bien une tâche précise, l'audit et le dépôt des remboursements Amazon FBA, mais ce n'est pas un outil plus large de gestion des stocks ou de l'activité.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether a seller can export their audit history or claim records if they stop using GETIDA is not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité pour un vendeur d'exporter son historique d'audit ou ses demandes en cas d'arrêt de GETIDA ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Amazon FBA sellers and the consultants managing their accounts who want lost or damaged inventory reimbursed without auditing claims manually.",
+      "fr": "Vendeurs Amazon FBA et les consultants qui gèrent leurs comptes, qui veulent se faire rembourser les stocks perdus ou endommagés sans auditer les demandes manuellement."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: let GETIDA audit an Amazon FBA account for lost or damaged inventory and file the reimbursement claims automatically, paying only a commission on what's recovered.",
+      "fr": "Cas d'usage : laisser GETIDA auditer un compte Amazon FBA pour trouver les stocks perdus ou endommagés et déposer les demandes de remboursement automatiquement, en ne payant qu'une commission sur les montants récupérés."
+    },
+    {
+      "en": "Use case: a consultant managing several sellers' FBA accounts uses GETIDA to recover the first $400 per account commission-free before deciding whether to continue.",
+      "fr": "Cas d'usage : un consultant qui gère les comptes FBA de plusieurs vendeurs utilise GETIDA pour récupérer les premiers 400 $ par compte sans commission avant de décider de continuer."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Amazon FBA reimbursements",
+      "fr": "Remboursements Amazon FBA"
+    },
+    "shortDescription": {
+      "en": "Audits Amazon FBA accounts and files reimbursement claims for lost or damaged inventory, charging a commission only on amounts recovered.",
+      "fr": "Audite les comptes Amazon FBA et dépose les demandes de remboursement pour stocks perdus ou endommagés, en facturant une commission uniquement sur les montants récupérés."
+    },
+    "longDescription": {
+      "en": "GETIDA automatically audits Amazon FBA accounts to find inventory that was lost, damaged, or overcharged by Amazon, then files and manages the reimbursement claims on the seller's behalf. It's a single-purpose service built around one recurring FBA pain point rather than a general inventory or business tool.\n\nThere's no subscription: joining is free, the first $400 recovered carries no fee, and GETIDA otherwise takes a 25% commission on what it successfully recovers (lower, negotiable rates exist for high volume). It fits an active FBA seller or the consultant managing their account, and makes little sense for anyone not actively selling on Amazon FBA.",
+      "fr": "GETIDA audite les comptes Amazon FBA pour trouver les stocks perdus, endommagés ou surfacturés, puis dépose et gère les demandes de remboursement pour le vendeur. C'est un service à vocation unique construit autour d'un problème récurrent du FBA, plutôt qu'un outil généraliste de gestion des stocks.\n\nIl n'y a pas d'abonnement : l'inscription est gratuite, les premiers 400 $ récupérés sont sans frais, et GETIDA prend ensuite une commission de 25 % sur ce qu'il récupère (des tarifs réduits existent pour les gros volumes). Il convient à un vendeur FBA actif ou au consultant qui gère son compte, et a peu de sens pour qui ne vend pas sur Amazon FBA."
+    },
+    "pros": [
+      {
+        "en": "No subscription or setup fee; the first $400 recovered is commission-free.",
+        "fr": "Aucun abonnement ni frais de mise en place ; les premiers 400 $ récupérés sont sans commission."
+      },
+      {
+        "en": "Handles the audit and the claim filing with Amazon, so the seller doesn't do that manually.",
+        "fr": "Prend en charge l'audit et le dépôt des demandes auprès d'Amazon, sans que le vendeur ait à le faire manuellement."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Cost is unpredictable upfront since it scales with whatever amount gets recovered.",
+        "fr": "Le coût n'est pas prévisible à l'avance puisqu'il dépend du montant effectivement récupéré."
+      },
+      {
+        "en": "Only useful to active Amazon FBA sellers, not a broader business or inventory tool.",
+        "fr": "Utile uniquement aux vendeurs Amazon FBA actifs, pas un outil plus large de gestion ou de stocks."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You sell actively on Amazon FBA and want lost or damaged inventory reimbursed without auditing claims yourself.",
+        "fr": "Tu vends activement sur Amazon FBA et tu veux te faire rembourser les stocks perdus ou endommagés sans auditer les demandes toi-même."
+      },
+      "avoidIf": {
+        "en": "You don't sell through Amazon FBA, since the entire service is built around that one reimbursement process.",
+        "fr": "Tu ne vends pas via Amazon FBA, puisque tout le service est construit autour de ce seul processus de remboursement."
+      },
+      "threshold": {
+        "en": "With no fixed fee and the first $400 recovered free of commission, there's no cost threshold to weigh; the only question is whether the 25% commission on amounts above that is acceptable for the recovery effort saved.",
+        "fr": "Sans frais fixe et avec les premiers 400 $ récupérés sans commission, il n'y a pas de seuil de coût à peser ; la seule question est de savoir si la commission de 25 % sur les montants au-delà est acceptable pour l'effort de récupération évité."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Seed catalogue pricingText described a '10EUR/month Pro version', but the official GETIDA homepage researched here shows a pure commission-based model (25% of recovered reimbursements, first $400 free, no subscription); worth re-checking the official page before merging to confirm there is no separate subscription tier."
   ]
 }

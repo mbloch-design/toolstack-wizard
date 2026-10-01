@@ -3,7 +3,7 @@
   "slug": "cinema-4d",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Cinema 4D",
     "vendor": "Maxon Computer GmbH",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.maxon.net/en/buy", "tier": 1, "accessedOn": "2026-09-25", "title": "Maxon buy/pricing page" },
-    { "id": "s2", "url": "https://www.toolfarm.com/buy/maxon_cinema_4d_subscription/", "tier": 2, "accessedOn": "2026-09-25", "title": "Toolfarm reseller listing of Cinema 4D subscription pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.maxon.net/en/buy",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Maxon buy/pricing page"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.toolfarm.com/buy/maxon_cinema_4d_subscription/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Toolfarm reseller listing of Cinema 4D subscription pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -25,7 +37,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -33,51 +51,248 @@
         "name": "Cinema 4D (annual billing)",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 109, "annualPerMonth": 69.91, "oneTime": null },
+        "price": {
+          "monthly": 109,
+          "annualPerMonth": 69.91,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Includes Redshift GPU rendering and 5 Team Render nodes at no extra cost; annual billing saves roughly 30%+ vs monthly.", "fr": null }],
-        "sourceIds": ["s2"]
+        "keyLimits": [
+          {
+            "en": "Includes Redshift GPU rendering and 5 Team Render nodes at no extra cost; annual billing saves roughly 30%+ vs monthly.",
+            "fr": "Inclut le rendu GPU Redshift et 5 nœuds Team Render sans coût supplémentaire ; la facturation annuelle fait économiser environ 30 % ou plus par rapport au mensuel."
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
       },
       {
         "key": "maxon-one",
         "name": "Maxon One (bundle: Cinema 4D, Redshift, Red Giant, ZBrush, Forger, Universe)",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 149, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 149,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Bundle price varies by source (some show ~$99.91-105.41/month billed annually with promotions); official rate not independently re-confirmed beyond the buy page tabs in this session.", "fr": null }],
-        "sourceIds": ["s1", "s2"]
+        "keyLimits": [
+          {
+            "en": "Bundle price varies by source (some show ~$99.91-105.41/month billed annually with promotions); official rate not independently re-confirmed beyond the buy page tabs in this session.",
+            "fr": "Le prix du pack varie selon la source (certaines affichent environ 99,91 à 105,41 $/mois facturé annuellement avec promotions) ; le tarif officiel n'a pas été reconfirmé indépendamment au-delà des onglets de la page d'achat durant cette session."
+          }
+        ],
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
       }
     ],
     "comparePlanKey": "cinema4d-annual",
     "addOns": [],
     "cautions": [
-      { "en": "The official maxon.net/en/buy page splits pricing across Individuals/Teams/Educational/Mobile/Reseller tabs and did not render specific numeric rates during automated fetch; figures above are corroborated by a reseller (Toolfarm) and should be re-verified against the live tabs.", "fr": null, "sourceIds": ["s1", "s2"] }
+      {
+        "en": "The official maxon.net/en/buy page splits pricing across Individuals/Teams/Educational/Mobile/Reseller tabs and did not render specific numeric rates during automated fetch; figures above are corroborated by a reseller (Toolfarm) and should be re-verified against the live tabs.",
+        "fr": "La page officielle maxon.net/en/buy répartit les prix sur des onglets Particuliers/Équipes/Éducation/Mobile/Revendeurs et n'a pas affiché de tarifs chiffrés précis lors de la récupération automatisée ; les chiffres ci-dessus sont corroborés par un revendeur (Toolfarm) et doivent être revérifiés sur les onglets en direct.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Full 3D content creation suite for motion graphics, modeling, animation and rendering, considered a reference tool in motion design.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Includes Redshift GPU renderer and Team Render distributed rendering nodes bundled with every subscription.", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Full 3D content creation suite for motion graphics, modeling, animation and rendering, considered a reference tool in motion design.",
+        "fr": "Suite 3D complète pour le motion design, la modélisation, l'animation et le rendu, considérée comme un outil de référence en motion design.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Includes Redshift GPU renderer and Team Render distributed rendering nodes bundled with every subscription.",
+        "fr": "Inclut le moteur de rendu GPU Redshift et les nœuds de rendu distribué Team Render intégrés à chaque abonnement.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No free tier; requires an ongoing paid subscription (monthly or annual) to use.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Full feature set (SSO, dedicated license dashboard, premium support) is reserved for the Teams pricing tier, not the individual plan.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No free tier; requires an ongoing paid subscription (monthly or annual) to use.",
+        "fr": "Aucun palier gratuit ; nécessite un abonnement payant continu (mensuel ou annuel) pour être utilisé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Full feature set (SSO, dedicated license dashboard, premium support) is reserved for the Teams pricing tier, not the individual plan.",
+        "fr": "L'ensemble complet de fonctionnalités (SSO, tableau de bord de licences dédié, support premium) est réservé au palier tarifaire Équipes, pas au plan individuel.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["windows", "mac"]
+    "platforms": [
+      "windows",
+      "mac"
+    ]
   },
   "alternatives": [
-    { "slug": "blender", "reason": { "en": "Free, open-source general-purpose 3D suite covering modeling, animation and rendering.", "fr": null } },
-    { "slug": "maya", "reason": { "en": "Autodesk's industry-standard 3D animation and VFX software, direct competitor in professional studios.", "fr": null } },
-    { "slug": "3ds-max", "reason": { "en": "Autodesk's 3D modeling and rendering tool, commonly compared for motion graphics and viz work.", "fr": null } }
+    {
+      "slug": "blender",
+      "reason": {
+        "en": "Free, open-source general-purpose 3D suite covering modeling, animation and rendering.",
+        "fr": "Suite 3D généraliste gratuite et open source couvrant modélisation, animation et rendu."
+      }
+    },
+    {
+      "slug": "maya",
+      "reason": {
+        "en": "Autodesk's industry-standard 3D animation and VFX software, direct competitor in professional studios.",
+        "fr": "Logiciel d'animation 3D et VFX de référence chez Autodesk, concurrent direct dans les studios professionnels."
+      }
+    },
+    {
+      "slug": "3ds-max",
+      "reason": {
+        "en": "Autodesk's 3D modeling and rendering tool, commonly compared for motion graphics and viz work.",
+        "fr": "Outil de modélisation et de rendu 3D d'Autodesk, souvent comparé pour le motion design et la visualisation."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "Houdini", "officialUrl": "https://www.sidefx.com/products/houdini/", "reason": "Major procedural 3D/VFX competitor frequently compared to Cinema 4D, appears only as an alternativeCandidate, not in currentAlternatives." }
+    {
+      "name": "Houdini",
+      "officialUrl": "https://www.sidefx.com/products/houdini/",
+      "reason": "Major procedural 3D/VFX competitor frequently compared to Cinema 4D, appears only as an alternativeCandidate, not in currentAlternatives."
+    }
   ],
   "unknowns": [
     "Exact current Maxon One bundle price not independently confirmed; the official buy page's specific dollar figures did not render in this session's automated fetch.",
     "Trial period length (if any) not confirmed on the official site."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A single subscription bundles the GPU renderer (Redshift) and distributed render nodes at no extra cost, which would otherwise be separate purchases.",
+        "fr": "Un seul abonnement regroupe le moteur de rendu GPU (Redshift) et les nœuds de rendu distribué sans coût supplémentaire, alors que ce seraient normalement des achats séparés.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "A professional 3D and motion design suite with modeling, animation and rendering in one application requires real training time before a first polished result.",
+        "fr": "Une suite 3D et motion design professionnelle avec modélisation, animation et rendu dans une seule application demande un vrai temps de formation avant un premier résultat abouti.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers on its promise as a motion design and 3D reference tool, with Redshift rendering included rather than bolted on separately.",
+        "fr": "Tient sa promesse d'outil de référence en motion design et 3D, avec le rendu Redshift inclus plutôt qu'ajouté séparément.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Considered a reference tool in motion design, covering modeling, animation and rendering at a professional studio level.",
+        "fr": "Considéré comme un outil de référence en motion design, couvrant modélisation, animation et rendu à un niveau studio professionnel.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: project file portability and export to other 3D suites are not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des fichiers de projet et l'export vers d'autres suites 3D ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A motion designer or 3D artist who needs a full modeling, animation and rendering suite with GPU rendering included, rather than assembling separate tools.",
+      "fr": "Un ou une motion designer ou artiste 3D qui a besoin d'une suite complète de modélisation, d'animation et de rendu avec le rendu GPU inclus, plutôt que d'assembler des outils séparés."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Motion graphics: model and animate a branded title sequence or product explainer, then render it with the bundled Redshift GPU renderer.",
+      "fr": "Motion design : modélise et anime un générique de marque ou une vidéo explicative produit, puis effectue le rendu avec le moteur GPU Redshift inclus."
+    },
+    {
+      "en": "Distributed rendering: use the included Team Render nodes to split a complex animation's render across several machines instead of waiting on one.",
+      "fr": "Rendu distribué : utilise les nœuds Team Render inclus pour répartir le rendu d'une animation complexe sur plusieurs machines au lieu d'attendre sur une seule."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "3D motion design",
+      "fr": "Motion design 3D"
+    },
+    "shortDescription": {
+      "en": "Cinema 4D is a 3D modeling, animation and rendering suite for motion design, bundling the Redshift GPU renderer in every subscription.",
+      "fr": "Cinema 4D est une suite de modélisation, animation et rendu 3D pour le motion design, avec le moteur GPU Redshift inclus dans chaque abonnement."
+    },
+    "longDescription": {
+      "en": "Cinema 4D is a full 3D content creation suite covering modeling, animation and rendering, widely used as a reference tool in motion design. Every subscription bundles the Redshift GPU renderer and Team Render distributed rendering nodes at no extra cost.\n\nThere is no free tier: the entry annual plan runs about $70 a month billed yearly, or $109 billed monthly. Team-level features like SSO and premium support sit on a separate Teams tier. It suits motion designers and 3D artists who need a complete suite rather than separate modeling, animation and rendering tools.",
+      "fr": "Cinema 4D est une suite 3D complète couvrant modélisation, animation et rendu, largement utilisée comme outil de référence en motion design. Chaque abonnement inclut le moteur de rendu GPU Redshift et les nœuds de rendu distribué Team Render sans coût supplémentaire.\n\nIl n'y a pas de palier gratuit : le plan annuel d'entrée revient à environ 70 $ par mois facturé à l'année, ou 109 $ facturé au mois. Les fonctionnalités de niveau équipe comme le SSO et le support premium se trouvent sur un palier Équipes séparé. L'outil convient aux motion designers et artistes 3D qui ont besoin d'une suite complète plutôt que d'outils séparés de modélisation, d'animation et de rendu."
+    },
+    "pros": [
+      {
+        "en": "Bundles a GPU renderer and distributed render nodes into every subscription instead of charging for them separately.",
+        "fr": "Inclut un moteur de rendu GPU et des nœuds de rendu distribué dans chaque abonnement au lieu de les facturer à part."
+      },
+      {
+        "en": "Covers modeling, animation and rendering in one application, reducing the number of separate tools a motion designer needs.",
+        "fr": "Couvre modélisation, animation et rendu dans une seule application, ce qui réduit le nombre d'outils séparés dont a besoin un motion designer."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free tier at all, unlike Blender; every month without a subscription means no access to the software.",
+        "fr": "Aucun palier gratuit, contrairement à Blender ; chaque mois sans abonnement signifie aucun accès au logiciel."
+      },
+      {
+        "en": "Team-level features like SSO and a dedicated license dashboard sit behind the separate Teams pricing tier, not the individual plan.",
+        "fr": "Les fonctionnalités de niveau équipe comme le SSO et un tableau de bord de licences dédié sont réservées au palier tarifaire Équipes séparé, pas au plan individuel."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You do motion design or 3D work regularly enough to justify a recurring subscription and want the GPU renderer bundled in.",
+        "fr": "Tu fais du motion design ou de la 3D assez régulièrement pour justifier un abonnement récurrent et tu veux le moteur de rendu GPU inclus."
+      },
+      "avoidIf": {
+        "en": "You need 3D occasionally or are on a tight budget; a free suite like Blender covers the same core workflow without a subscription.",
+        "fr": "Tu n'as besoin de 3D qu'occasionnellement ou ton budget est serré ; une suite gratuite comme Blender couvre le même flux de travail de base sans abonnement."
+      },
+      "threshold": {
+        "en": "Budget about $70/month billed annually (or $109/month billed monthly) for one seat before adding the Maxon One bundle.",
+        "fr": "Prévois environ 70 $/mois facturé à l'année (ou 109 $/mois facturé au mois) pour un siège, avant d'envisager le pack Maxon One."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01"
 }

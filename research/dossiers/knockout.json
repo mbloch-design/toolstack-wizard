@@ -3,7 +3,7 @@
   "slug": "knockout",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Knockout.js",
     "vendor": "Knockout.js (open source project)",
@@ -33,7 +33,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Fully free MIT-licensed library"
+        "en": "Fully free MIT-licensed library",
+        "fr": "Bibliothèque entièrement gratuite sous licence MIT"
       },
       "sourceIds": [
         "s1"
@@ -49,14 +50,14 @@
     "capabilities": [
       {
         "en": "Declarative data-bindings linking DOM elements to a JavaScript view model, with automatic UI refresh on data changes",
-        "fr": null,
+        "fr": "Liaisons de données déclaratives entre les éléments du DOM et un modèle de vue JavaScript, avec rafraîchissement automatique de l'interface lors des changements de données",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Dependency tracking between model properties and templating for dynamic UI generation",
-        "fr": null,
+        "fr": "Suivi des dépendances entre les propriétés du modèle et moteur de templates pour générer une interface dynamique",
         "sourceIds": [
           "s1"
         ]
@@ -65,14 +66,14 @@
     "limitations": [
       {
         "en": "Small and lightweight (66kb minified) by design, offering a narrower scope than full frameworks like React or Vue",
-        "fr": null,
+        "fr": "Petite et légère (66 ko minifiée) par conception, avec un périmètre plus étroit que des frameworks complets comme React ou Vue",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Development has slowed considerably; latest stable release is 3.5.3 with limited recent updates compared to modern frameworks",
-        "fr": null,
+        "fr": "Le développement a nettement ralenti ; la dernière version stable est la 3.5.3, avec peu de mises à jour récentes par rapport aux frameworks modernes",
         "sourceIds": [
           "s1"
         ]
@@ -88,18 +89,139 @@
       "slug": "react",
       "reason": {
         "en": "Modern component-based UI library that has largely superseded Knockout for new projects",
-        "fr": null
+        "fr": "Bibliothèque d'interface moderne à base de composants qui a largement remplacé Knockout pour les nouveaux projets"
       }
     },
     {
       "slug": "vue-cli",
       "reason": {
         "en": "Modern reactive framework covering similar declarative-binding use cases",
-        "fr": null
+        "fr": "Framework réactif moderne couvrant des cas d'usage similaires de liaison déclarative"
+      }
+    },
+    {
+      "slug": "alpinejs",
+      "reason": {
+        "en": "Small, dependency-free library for declarative behavior directly in HTML, the closest modern equivalent to Knockout's lightweight scope",
+        "fr": "Bibliothèque légère et sans dépendance pour un comportement déclaratif directement dans le HTML, l'équivalent moderne le plus proche du périmètre léger de Knockout"
       }
     }
   ],
   "missingAlternatives": [],
   "unknowns": [],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 2,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Fully free MIT-licensed library with no cost at all, so any UI it helps ship is a pure gain for the budget.",
+        "fr": "Bibliothèque entièrement gratuite sous licence MIT, sans aucun coût, donc toute interface qu'elle aide à livrer est un gain pur pour le budget.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Declarative data-bindings are easy to read, but a developer still needs JavaScript and view-model knowledge to get a first useful result, unlike a no-code tool.",
+        "fr": "Les liaisons de données déclaratives sont faciles à lire, mais il faut tout de même des connaissances en JavaScript et en modèles de vue pour obtenir un premier résultat utile, à la différence d'un outil no-code.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It does what it promises, binding DOM elements to a view model with automatic refresh, without needing a workaround or third-party library for that core behavior.",
+        "fr": "L'outil fait ce qu'il promet, lier des éléments du DOM à un modèle de vue avec rafraîchissement automatique, sans nécessiter de contournement ni de bibliothèque tierce pour ce comportement central.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Deliberately small (66kb) and narrower in scope than full frameworks like React or Vue, and development has slowed considerably since its peak, which caps how far it can grow with a project.",
+        "fr": "Délibérément petite (66 ko) et plus étroite en périmètre que des frameworks complets comme React ou Vue, et le développement a nettement ralenti depuis son apogée, ce qui limite sa capacité à suivre la croissance d'un projet.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "As a plain open source MIT library with no vendor platform or hosted data, there is nothing to export or migrate away from beyond swapping the code for another library.",
+        "fr": "En tant que simple bibliothèque open source sous licence MIT, sans plateforme d'éditeur ni données hébergées, il n'y a rien à exporter ou migrer en dehors de remplacer le code par une autre bibliothèque.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers maintaining an existing Knockout.js codebase, or picking a minimal, dependency-free binding library for a small web project.",
+      "fr": "Développeurs qui maintiennent une base de code Knockout.js existante, ou qui choisissent une bibliothèque de liaison minimale et sans dépendance pour un petit projet web."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Use case: bind a form's inputs to a JavaScript view model so the UI updates automatically as values change, without manual DOM manipulation.",
+      "fr": "Cas d'usage : lier les champs d'un formulaire à un modèle de vue JavaScript pour que l'interface se mette à jour automatiquement quand les valeurs changent, sans manipulation manuelle du DOM."
+    },
+    {
+      "en": "Use case: maintain and extend an existing legacy Knockout.js application without rewriting it in a newer framework.",
+      "fr": "Cas d'usage : maintenir et faire évoluer une application Knockout.js existante sans la réécrire dans un framework plus récent."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "MVVM JS library",
+      "fr": "Bibliothèque JS MVVM"
+    },
+    "shortDescription": {
+      "en": "Free, open source JavaScript library binding DOM elements to a view model, with automatic UI refresh and dependency tracking.",
+      "fr": "Bibliothèque JavaScript gratuite et open source qui lie les éléments du DOM à un modèle de vue, avec rafraîchissement automatique et suivi des dépendances."
+    },
+    "longDescription": {
+      "en": "Knockout.js is a small JavaScript library that binds DOM elements declaratively to a view model: change a property in the model and the UI updates automatically, no manual DOM manipulation needed. It also tracks dependencies between properties and offers templating for dynamic UI generation.\n\nIt's free and MIT-licensed, with no pricing tiers to weigh. It suits a developer maintaining an existing Knockout codebase or wanting a lightweight, dependency-free binding library for a small project, less someone starting a new large application, where development has slowed and most tooling has moved to React or Vue.",
+      "fr": "Knockout.js est une petite bibliothèque JavaScript qui lie de façon déclarative les éléments du DOM à un modèle de vue : une propriété change dans le modèle et l'interface se met à jour automatiquement, sans manipulation manuelle du DOM. Elle suit aussi les dépendances entre propriétés et propose un moteur de templates pour générer une interface dynamique.\n\nElle est gratuite et sous licence MIT, sans palier de prix à comparer. Elle convient à un développeur qui maintient une base Knockout existante ou qui veut une bibliothèque de liaison légère et sans dépendance pour un petit projet, moins à quelqu'un qui démarre une grande application neuve, le développement ayant ralenti et l'outillage ayant largement migré vers React ou Vue."
+    },
+    "pros": [
+      {
+        "en": "Completely free and open source, with no pricing decision to make.",
+        "fr": "Entièrement gratuite et open source, sans décision de prix à prendre."
+      },
+      {
+        "en": "Very small footprint (66kb minified), easy to drop into an existing page.",
+        "fr": "Empreinte très réduite (66 ko minifiée), facile à ajouter à une page existante."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Development has slowed considerably, with the latest stable release stuck at 3.5.3.",
+        "fr": "Le développement a nettement ralenti, la dernière version stable restant bloquée à la 3.5.3."
+      },
+      {
+        "en": "Narrower scope than full modern frameworks like React or Vue.",
+        "fr": "Périmètre plus étroit que les frameworks modernes complets comme React ou Vue."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You maintain an existing Knockout.js codebase or need a minimal, dependency-free data-binding library.",
+        "fr": "Tu maintiens une base de code Knockout.js existante ou tu as besoin d'une bibliothèque de liaison de données minimale et sans dépendance."
+      },
+      "avoidIf": {
+        "en": "You're starting a new large application, since development has slowed and most ecosystems have moved to React or Vue.",
+        "fr": "Tu démarres une nouvelle grande application, car le développement a ralenti et la plupart des écosystèmes ont migré vers React ou Vue."
+      },
+      "threshold": {
+        "en": "Being free, there's no cost threshold; the real question is whether its narrower scope (66kb, no large modern ecosystem) still covers what the project needs.",
+        "fr": "Étant gratuite, il n'y a pas de seuil de coût ; la vraie question est de savoir si son périmètre plus étroit (66 ko, pas de grand écosystème moderne) couvre encore les besoins du projet."
+      }
+    }
+  },
+  "reviewNotes": []
 }

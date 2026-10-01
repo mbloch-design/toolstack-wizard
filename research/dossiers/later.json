@@ -3,7 +3,8 @@
   "slug": "later",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Later",
     "vendor": "Later.com Inc. (Mavrck / Later)",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 25, "annualPerMonth": 18.75, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 social set (8 profiles total), 1 user, 30 posts per profile per month, 5 AI credits/month, basic scheduling and link in bio.", "fr": null }],
+        "keyLimits": [{ "en": "1 social set (8 profiles total), 1 user, 30 posts per profile per month, 5 AI credits/month, basic scheduling and link in bio.", "fr": "1 ensemble de réseaux sociaux (8 profils au total), 1 utilisateur, 30 publications par profil et par mois, 5 crédits IA par mois, planification de base et link in bio." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 1,
         "price": { "monthly": 50, "annualPerMonth": 37.50, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "2 social sets (16 profiles total), 2 users, 180 posts per profile per month, 50 AI credits/month, collaboration tools, social inbox, UGC collection.", "fr": null }],
+        "keyLimits": [{ "en": "2 social sets (16 profiles total), 2 users, 180 posts per profile per month, 50 AI credits/month, collaboration tools, social inbox, UGC collection.", "fr": "2 ensembles de réseaux sociaux (16 profils au total), 2 utilisateurs, 180 publications par profil et par mois, 50 crédits IA par mois, outils de collaboration, boîte de réception sociale, collecte de contenu généré par les utilisateurs." }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,38 +55,149 @@
         "minSeats": 1,
         "price": { "monthly": 110, "annualPerMonth": 82.50, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "6 social sets (48 profiles total), 4 users, unlimited posts, 100 AI credits/month, custom analytics, meta ads analytics, competitive benchmarking, priority support.", "fr": null }],
+        "keyLimits": [{ "en": "6 social sets (48 profiles total), 4 users, unlimited posts, 100 AI credits/month, custom analytics, meta ads analytics, competitive benchmarking, priority support.", "fr": "6 ensembles de réseaux sociaux (48 profils au total), 4 utilisateurs, publications illimitées, 100 crédits IA par mois, analytique personnalisée, analytique des publicités Meta, benchmark concurrentiel, support prioritaire." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [
-      { "en": "Extra social set: $11.25/month.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Extra user: $3.75/month.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Extra 100 AI credits: $3.75/month.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Extra social set: $11.25/month.", "fr": "Ensemble de réseaux sociaux supplémentaire : 11,25 $ par mois.", "sourceIds": ["s1"] },
+      { "en": "Extra user: $3.75/month.", "fr": "Utilisateur supplémentaire : 3,75 $ par mois.", "sourceIds": ["s1"] },
+      { "en": "Extra 100 AI credits: $3.75/month.", "fr": "100 crédits IA supplémentaires : 3,75 $ par mois.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Annual billing gives 3 months free (25% savings) versus paying monthly; the annualPerMonth figures above already reflect that discount.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Annual billing gives 3 months free (25% savings) versus paying monthly; the annualPerMonth figures above already reflect that discount.", "fr": "La facturation annuelle offre 3 mois gratuits (25 % d'économie) par rapport au paiement mensuel ; les montants annualPerMonth ci-dessus intègrent déjà cette remise.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Social media scheduling across multiple platforms with a visual content calendar and best-time-to-post suggestions.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Link in Bio tool for driving traffic from social profiles to a customizable landing page.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Social inbox and user-generated content (UGC) collection tools on Growth and above.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Social media scheduling across multiple platforms with a visual content calendar and best-time-to-post suggestions.", "fr": "Planification des publications sur plusieurs réseaux sociaux avec un calendrier de contenu visuel et des suggestions de meilleur moment pour publier.", "sourceIds": ["s1"] },
+      { "en": "Link in Bio tool for driving traffic from social profiles to a customizable landing page.", "fr": "Outil Link in Bio pour rediriger le trafic des profils sociaux vers une page d'atterrissage personnalisable.", "sourceIds": ["s1"] },
+      { "en": "Social inbox and user-generated content (UGC) collection tools on Growth and above.", "fr": "Boîte de réception sociale et outils de collecte de contenu généré par les utilisateurs à partir du plan Growth.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No free plan; entry Starter plan starts at $25/month (or $18.75/month annual) with a hard cap of 30 posts per profile per month.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Advanced analytics (custom analytics, meta ads analytics, competitive benchmarking) are reserved for the top Scale plan.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No free plan; entry Starter plan starts at $25/month (or $18.75/month annual) with a hard cap of 30 posts per profile per month.", "fr": "Pas de plan gratuit ; le plan d'entrée Starter démarre à 25 $ par mois (ou 18,75 $ par mois à l'année) avec une limite stricte de 30 publications par profil et par mois.", "sourceIds": ["s1"] },
+      { "en": "Advanced analytics (custom analytics, meta ads analytics, competitive benchmarking) are reserved for the top Scale plan.", "fr": "L'analytique avancée (analytique personnalisée, publicités Meta, benchmark concurrentiel) est réservée au plan Scale, le plus haut de gamme.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web", "ios", "android"]
   },
-  "alternatives": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator or small brand managing several social profiles who needs a visual calendar and link-in-bio page without hiring a social media team.",
+      "fr": "Un ou une créateur de contenu ou petite marque qui gère plusieurs profils sociaux et a besoin d'un calendrier visuel et d'une page link in bio sans embaucher d'équipe social media."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Multi-platform scheduling: plan and queue a month of posts across 8 social profiles from one visual calendar on the Starter plan.",
+      "fr": "Planification multi-plateformes : organiser et programmer un mois de publications sur 8 profils sociaux depuis un calendrier visuel unique, sur le plan Starter."
+    },
+    {
+      "en": "Link-in-bio traffic: route followers from Instagram and TikTok bios to a customizable landing page that lists products or links.",
+      "fr": "Trafic via link in bio : rediriger les abonnés depuis les bios Instagram et TikTok vers une page personnalisable listant produits ou liens."
+    }
+  ],
+  "alternatives": [
+    { "slug": "socialbee", "reason": { "en": "Direct social media scheduling competitor with a similar visual calendar and recycling of evergreen posts.", "fr": "Concurrent direct en planification de réseaux sociaux, avec un calendrier visuel similaire et le recyclage de publications evergreen." } },
+    { "slug": "metricool", "reason": { "en": "Social media scheduler and analytics tool covering the same multi-platform posting use case.", "fr": "Outil de planification et d'analytique des réseaux sociaux couvrant le même usage de publication multi-plateformes." } },
+    { "slug": "planoly", "reason": { "en": "Visual content calendar and scheduler aimed at a similar creator/small-brand audience.", "fr": "Calendrier de contenu visuel et planificateur destiné à un public similaire de créateurs et petites marques." } },
+    { "slug": "hootsuite", "reason": { "en": "Established social media management competitor covering scheduling and a social inbox.", "fr": "Concurrent établi en gestion des réseaux sociaux, avec planification et boîte de réception sociale." } }
+  ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Starter costs $25/month with only 30 posts per profile per month and 1 user; the time saved has to be weighed against that hard cap for a solo creator.",
+        "fr": "Starter coûte 25 $ par mois pour seulement 30 publications par profil et par mois et 1 utilisateur ; le temps gagné doit être mis en regard de cette limite stricte pour un créateur solo.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "A visual content calendar with best-time-to-post suggestions gets a first batch of posts scheduled quickly without training.",
+        "fr": "Un calendrier de contenu visuel avec des suggestions de meilleur moment pour publier permet de programmer un premier lot de publications rapidement sans formation.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers multi-platform scheduling and a link-in-bio page as advertised, with a social inbox added from Growth.",
+        "fr": "Assure bien la planification multi-plateformes et la page link in bio comme annoncé, avec une boîte de réception sociale ajoutée à partir de Growth.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Covers scheduling, link in bio, and UGC collection, but advanced analytics and ad benchmarking only unlock on the top $110/month Scale plan.",
+        "fr": "Couvre planification, link in bio et collecte d'UGC, mais l'analytique avancée et le benchmark publicitaire ne se débloquent qu'au plan Scale à 110 $ par mois.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or migration options when leaving Later are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ou de migration des données en quittant Later ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Social media scheduler",
+      "fr": "Planificateur social media"
+    },
+    "shortDescription": {
+      "en": "Social media scheduling and link-in-bio tool with a visual calendar, starting at $25 a month for one profile set.",
+      "fr": "Outil de planification social media et de link in bio avec calendrier visuel, à partir de 25 dollars par mois pour un ensemble de profils."
+    },
+    "longDescription": {
+      "en": "Later schedules posts across social platforms from a visual content calendar, with best-time-to-post suggestions and a Link in Bio landing page to route followers to other content. Growth and Scale add a shared social inbox, UGC collection, and team collaboration tools.\n\nThere is no free plan: Starter costs $25 a month ($18.75 annual) for one profile set and 30 posts per profile per month. Growth ($50/month) and Scale ($110/month) raise those caps and add analytics. It suits a solo creator or small brand managing several profiles who wants one calendar instead of posting manually on each platform.",
+      "fr": "Later planifie les publications sociales depuis un calendrier de contenu visuel, avec des suggestions de meilleur moment pour publier et une page Link in Bio vers d'autres contenus. Growth et Scale ajoutent une boîte de réception sociale, la collecte d'UGC et des outils de collaboration d'équipe.\n\nIl n'y a pas de plan gratuit : Starter coûte 25 $ par mois (18,75 $ à l'année) pour un ensemble de profils et 30 publications par profil et par mois. Growth (50 $) et Scale (110 $) relèvent ces limites et ajoutent de l'analytique. Il convient à un créateur solo ou une petite marque qui gère plusieurs profils et veut un calendrier unique plutôt que de publier à la main sur chaque plateforme."
+    },
+    "pros": [
+      {
+        "en": "Visual content calendar and best-time-to-post suggestions get a first schedule running quickly.",
+        "fr": "Le calendrier de contenu visuel et les suggestions de meilleur moment pour publier permettent de démarrer vite."
+      },
+      {
+        "en": "Link in Bio page is built in, without a separate landing-page tool.",
+        "fr": "La page Link in Bio est intégrée, sans avoir besoin d'un outil de page d'atterrissage séparé."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan, and Starter caps posts at 30 per profile per month.",
+        "fr": "Aucun plan gratuit, et Starter limite les publications à 30 par profil et par mois."
+      },
+      {
+        "en": "Custom analytics and ad benchmarking only unlock on the $110/month Scale plan.",
+        "fr": "L'analytique personnalisée et le benchmark publicitaire ne se débloquent qu'au plan Scale à 110 $ par mois."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You manage several social profiles and want one visual calendar plus a link-in-bio page in a single tool.",
+        "fr": "Tu gères plusieurs profils sociaux et tu veux un calendrier visuel et une page link in bio dans un seul outil."
+      },
+      "avoidIf": {
+        "en": "You post on a single platform occasionally and don't need a paid scheduling tool.",
+        "fr": "Tu publies occasionnellement sur une seule plateforme et tu n'as pas besoin d'un outil de planification payant."
+      },
+      "threshold": {
+        "en": "Starter costs $25 a month (or $18.75 a month billed annually) for one profile set capped at 30 posts per profile per month.",
+        "fr": "Starter coûte 25 $ par mois (ou 18,75 $ par mois facturé à l'année) pour un ensemble de profils limité à 30 publications par profil et par mois."
+      },
+      "billingTraps": {
+        "en": "Extra social sets, users, and AI credits are all separate add-ons ($11.25, $3.75, and $3.75 a month respectively), on top of the plan price.",
+        "fr": "Les ensembles de réseaux, utilisateurs et crédits IA supplémentaires sont tous des compléments séparés (respectivement 11,25 $, 3,75 $ et 3,75 $ par mois), en plus du prix du plan."
+      }
+    }
+  },
   "unknowns": [
-    "No currentAlternatives were provided in the seed for this tool; a direct catalogue-native alternative (e.g. Buffer, SocialBee, Metricool) was not confirmed as present among alternativeCandidates in a directly comparable form, so alternatives list is left empty pending curation.",
     "Exact list of supported social platforms per plan not itemized in the source excerpt retrieved."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

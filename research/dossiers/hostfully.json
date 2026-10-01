@@ -3,7 +3,8 @@
   "slug": "hostfully",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Hostfully",
     "vendor": "Hostfully, Inc.",
@@ -51,7 +52,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Per-property pricing starting at $15/property/month, plus a platform fee, for operators managing 1-50 listings."
+            "en": "Per-property pricing starting at $15/property/month, plus a platform fee, for operators managing 1-50 listings.",
+            "fr": "Tarification par bien à partir de 15 $/bien/mois, plus des frais de plateforme, pour les gestionnaires de 1 à 50 biens."
           }
         ],
         "sourceIds": [
@@ -71,7 +73,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Per-property pricing starting at $25/property/month, plus a platform fee, for operators managing 51-199 listings."
+            "en": "Per-property pricing starting at $25/property/month, plus a platform fee, for operators managing 51-199 listings.",
+            "fr": "Tarification par bien à partir de 25 $/bien/mois, plus des frais de plateforme, pour les gestionnaires de 51 à 199 biens."
           }
         ],
         "sourceIds": [
@@ -91,12 +94,14 @@
     "cautions": [
       {
         "en": "The official pricing page does not publish numbers directly and routes visitors to sales; per-property rates and platform fee were found via third-party sources, not the vendor's own published figures, and should be reverified before publishing.",
+        "fr": "La page tarifaire officielle ne publie pas de chiffres directement et renvoie les visiteurs vers les équipes commerciales ; les tarifs par bien et les frais de plateforme viennent de sources tierces, pas des chiffres publiés par l'éditeur, et doivent être revérifiés avant publication.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "A separate legacy 'Premium' per-property pricing model exists in Hostfully's own help documentation, suggesting past pricing structure changes.",
+        "fr": "Un ancien modèle de tarification par bien nommé « Premium » existe dans la documentation d'aide de Hostfully, ce qui suggère des changements passés de structure tarifaire.",
         "sourceIds": [
           "s1"
         ]
@@ -107,12 +112,14 @@
     "capabilities": [
       {
         "en": "Short-term rental property management software: reservations, channel management, and guest communication.",
+        "fr": "Logiciel de gestion de locations courte durée : réservations, distribution multicanal et communication avec les voyageurs.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Built-in direct booking website/site generator to reduce reliance on OTAs like Airbnb and Booking.com.",
+        "fr": "Générateur de site de réservation directe intégré pour réduire la dépendance aux OTA comme Airbnb et Booking.com.",
         "sourceIds": [
           "s1"
         ]
@@ -121,12 +128,14 @@
     "limitations": [
       {
         "en": "Pricing is not transparently published on the official site; prospective customers must talk to sales to get an exact quote.",
+        "fr": "Les tarifs ne sont pas publiés de manière transparente sur le site officiel ; il faut contacter les équipes commerciales pour obtenir un devis exact.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Per-property pricing plus a separate platform fee means monthly cost is not a single flat number and requires calculation based on portfolio size.",
+        "fr": "Le prix par bien plus des frais de plateforme séparés font que le coût mensuel n'est pas un chiffre fixe et dépend d'un calcul selon la taille du portefeuille.",
         "sourceIds": [
           "s1"
         ]
@@ -137,8 +146,25 @@
       "web"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A short-term rental operator or small property management team handling reservations and guest communication across several listings.",
+      "fr": "Une gestionnaire de locations courte durée ou une petite équipe qui gère réservations et communication avec les voyageurs sur plusieurs biens."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: manage reservations and guest messaging across multiple short-term rental listings from one dashboard.",
+      "fr": "Usage : gérer réservations et messages aux voyageurs sur plusieurs biens en location courte durée depuis un seul tableau de bord."
+    },
+    {
+      "en": "Usage: launch a direct booking website to reduce commission paid to Airbnb and Booking.com.",
+      "fr": "Usage : lancer un site de réservation directe pour réduire les commissions versées à Airbnb et Booking.com."
+    }
+  ],
   "alternatives": [],
   "missingAlternatives": [
     {
@@ -152,11 +178,99 @@
       "reason": "Vacation rental management and direct booking competitor, not in the catalogue"
     }
   ],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A built-in direct booking site can cut OTA commissions over time, but the lack of published pricing makes it hard to judge value against competitors upfront.",
+        "fr": "Un site de réservation directe intégré peut réduire les commissions des OTA dans la durée, mais l'absence de tarifs publiés rend l'évaluation de la valeur difficile face aux concurrents.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Reservations, channel management and guest messaging are bundled in one dashboard, but the collected facts do not describe onboarding time to a first useful result.",
+        "fr": "Réservations, distribution multicanal et messages aux voyageurs sont réunis dans un seul tableau de bord, mais les faits recueillis ne précisent pas le temps de prise en main.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers reservations, channel management, guest communication and a direct booking site as described, covering the core property-management workflow.",
+        "fr": "Tient la promesse de réservations, distribution multicanal, communication avec les voyageurs et site de réservation directe, couvrant le flux de gestion locative principal.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Covers the core short-term rental management workflow, but the dossier does not detail advanced capabilities such as dynamic pricing or multi-channel analytics.",
+        "fr": "Couvre le flux principal de gestion locative courte durée, mais le dossier ne détaille pas de capacités avancées comme la tarification dynamique ou les analyses multicanales.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability when switching property management systems are not covered by the collected sources.",
+        "fr": "Note neutre : l'export et la portabilité des données lors d'un changement de logiciel de gestion locative ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Property management",
+      "fr": "Gestion locative"
+    },
+    "shortDescription": {
+      "en": "Short-term rental property management software for reservations, channel management and guest messaging, priced per managed property.",
+      "fr": "Logiciel de gestion de locations courte durée pour les réservations, la distribution multicanal et les messages aux voyageurs, facturé par bien géré."
+    },
+    "longDescription": {
+      "en": "Hostfully handles reservations, channel management and guest communication for short-term rental operators, with a built-in direct booking website to cut dependence on OTAs like Airbnb and Booking.com.\n\nPricing is per property per month: reportedly around $15 for operators managing 1 to 50 listings, and $25 for 51 to 199, plus a separate platform fee. The official site withholds exact figures and routes to sales, so these numbers need reverification; it suits a property manager with a growing portfolio who wants fewer OTA fees.",
+      "fr": "Hostfully gère les réservations, la distribution multicanal et la communication avec les voyageurs pour les gestionnaires de locations courte durée, avec un site de réservation directe intégré pour réduire la dépendance aux OTA comme Airbnb et Booking.com.\n\nLa tarification se fait par bien et par mois : environ 15 $ pour les gestionnaires de 1 à 50 biens, et 25 $ pour 51 à 199, selon des sources tierces, plus des frais de plateforme séparés. Le site officiel ne publie pas ces chiffres et renvoie vers les équipes commerciales ; l'outil convient à un gestionnaire dont le portefeuille grandit et qui veut réduire les commissions des OTA."
+    },
+    "pros": [
+      {
+        "en": "Combines reservations, channel management and guest messaging in one dashboard instead of juggling separate tools.",
+        "fr": "Réunit réservations, distribution multicanal et messages aux voyageurs dans un seul tableau de bord plutôt que de jongler entre plusieurs outils."
+      },
+      {
+        "en": "A built-in direct booking website helps reduce commission paid to Airbnb and Booking.com over time.",
+        "fr": "Un site de réservation directe intégré aide à réduire la commission versée à Airbnb et Booking.com dans la durée."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Exact pricing is not published on the official site; getting a real quote means talking to sales.",
+        "fr": "Le tarif exact n'est pas publié sur le site officiel ; obtenir un devis réel demande de contacter les équipes commerciales."
+      },
+      {
+        "en": "Per-property pricing plus a separate platform fee makes the total monthly cost hard to estimate upfront.",
+        "fr": "Le prix par bien plus des frais de plateforme séparés rendent le coût mensuel total difficile à estimer à l'avance."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you manage several short-term rental listings and want reservations, channel management and a direct booking site in one place.",
+        "fr": "Garde-le si tu gères plusieurs biens en location courte durée et veux réservations, distribution multicanal et site de réservation directe réunis."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you manage a single property or need transparent, instantly visible pricing before committing.",
+        "fr": "Évite-le si tu ne gères qu'un seul bien, ou si tu as besoin d'un tarif transparent et visible immédiatement avant de t'engager."
+      },
+      "threshold": {
+        "en": "Budget from roughly $15/property/month on the Growth tier (1-50 listings) plus a separate platform fee, per third-party figures; confirm the exact amount with sales before committing.",
+        "fr": "Prévois environ 15 $/bien/mois sur l'offre Growth (1 à 50 biens) plus des frais de plateforme séparés, selon des chiffres tiers ; confirme le montant exact avec les équipes commerciales avant de t'engager."
+      },
+      "billingTraps": {
+        "en": "Per-property pricing plus a separate platform fee means the real monthly bill is not a single flat number and scales with portfolio size.",
+        "fr": "Le prix par bien plus des frais de plateforme séparés font que la facture mensuelle réelle n'est pas un chiffre fixe et augmente avec la taille du portefeuille."
+      }
+    }
+  },
   "unknowns": [
     "Exact published price points were not confirmed directly on hostfully.com; the official FAQ page withholds numbers and routes to sales, so the $15/$25 per-property figures come from third-party review sites and need reverification.",
     "The catalogue's alternativeCandidates list for hostfully contained no direct property-management competitors (only generic dev/no-code tools), so no in-catalogue alternatives could be selected."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "pricing.plans[growth/pro].price and the per-property/platform-fee mechanism were not found on Hostfully's own pricing page (which withholds numbers and routes to sales); the $15 and $25 per-property figures come from third-party sources and need direct verification on hostfully.com before publishing."
+  ]
 }

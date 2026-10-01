@@ -3,7 +3,8 @@
   "slug": "bullmq",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "BullMQ",
     "vendor": "Taskforce.sh Inc.",
@@ -33,7 +34,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Full open source library (MIT), no artificial limits on workers/concurrency"
+        "en": "Full open source library (MIT), no artificial limits on workers/concurrency",
+        "fr": "Bibliothèque open source complète (licence MIT), sans limite artificielle sur le nombre de workers ou la concurrence"
       },
       "sourceIds": [
         "s1"
@@ -55,7 +57,7 @@
         "keyLimits": [
           {
             "en": "Node.js and Bun only; grouping, batches, observables, professional support",
-            "fr": null
+            "fr": "Node.js et Bun uniquement ; regroupement de jobs, lots, observables, support professionnel"
           }
         ],
         "sourceIds": [
@@ -68,7 +70,7 @@
     "cautions": [
       {
         "en": "The core BullMQ library is free and open source; BullMQ Pro is a separate paid commercial add-on ($139/month or $1,395/year) for advanced features and support.",
-        "fr": null,
+        "fr": "La bibliothèque BullMQ de base est gratuite et open source ; BullMQ Pro est un module commercial payant séparé (139 $ par mois ou 1 395 $ par an) pour des fonctions avancées et du support.",
         "sourceIds": [
           "s1"
         ]
@@ -79,21 +81,21 @@
     "capabilities": [
       {
         "en": "Redis-backed job queues for Node.js (and Bun, with Python/Rust/Elixir/PHP clients) with workers, delayed jobs, and rate limiting",
-        "fr": null,
+        "fr": "Files de jobs adossées à Redis pour Node.js (et Bun, avec des clients Python, Rust, Elixir et PHP), avec workers, jobs différés et limitation de débit",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Recurring job schedulers using cron expressions or fixed intervals, plus job flows with parent-child relationships",
-        "fr": null,
+        "fr": "Planification de jobs récurrents via des expressions cron ou des intervalles fixes, ainsi que des flux de jobs avec relations parent-enfant",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Auto-retry with exponential backoff and event monitoring",
-        "fr": null,
+        "fr": "Nouvelle tentative automatique avec backoff exponentiel et suivi des événements",
         "sourceIds": [
           "s1"
         ]
@@ -102,14 +104,14 @@
     "limitations": [
       {
         "en": "Advanced features like job grouping, batching, and RxJS observables require the paid BullMQ Pro tier",
-        "fr": null,
+        "fr": "Les fonctions avancées comme le regroupement de jobs, les lots et les observables RxJS demandent le palier payant BullMQ Pro",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Requires a self-managed Redis instance; BullMQ itself is a library, not a hosted service",
-        "fr": null,
+        "fr": "Nécessite une instance Redis gérée soi-même ; BullMQ est une bibliothèque, pas un service hébergé",
         "sourceIds": [
           "s1"
         ]
@@ -120,10 +122,127 @@
       "web"
     ]
   },
-  "alternatives": [],
-  "missingAlternatives": [],
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A Node.js developer who needs reliable background job queues (retries, delays, scheduling) backed by Redis, without building that infrastructure from scratch.",
+      "fr": "Un ou une développeur Node.js qui a besoin de files de jobs fiables (nouvelles tentatives, délais, planification) adossées à Redis, sans construire cette infrastructure lui-même."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Background processing: queue and retry email sending or image resizing jobs with exponential backoff using the free open-source library.",
+      "fr": "Traitement en arrière-plan : mettre en file et relancer automatiquement des envois d'e-mails ou des redimensionnements d'images avec backoff exponentiel, via la bibliothèque open source gratuite."
+    },
+    {
+      "en": "Multi-step pipelines: chain parent-child job flows for a data-processing pipeline, with cron-based recurring jobs for scheduled runs.",
+      "fr": "Pipelines multi-étapes : chaîner des flux de jobs parent-enfant pour un pipeline de traitement de données, avec des jobs récurrents planifiés par cron."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "celery",
+      "reason": {
+        "en": "Equivalent distributed task queue, commonly used in Python backends instead of a Redis-backed Node.js queue like BullMQ.",
+        "fr": "File de tâches distribuée équivalente, couramment utilisée dans les back-ends Python à la place d'une file Node.js adossée à Redis comme BullMQ."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    { "name": "RabbitMQ", "officialUrl": "https://www.rabbitmq.com", "reason": "Widely used message broker and job queue alternative, not in the catalogue" },
+    { "name": "Amazon SQS", "officialUrl": "https://aws.amazon.com/sqs/", "reason": "Managed queue service often chosen instead of a self-hosted Redis queue, not in the catalogue" },
+    { "name": "Sidekiq", "officialUrl": "https://sidekiq.org", "reason": "Equivalent background job library for Ruby backends, not in the catalogue" }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The core library is free and open source with no artificial limits, and the $139/month Pro tier only adds optional advanced features and support.",
+        "fr": "La bibliothèque de base est gratuite, open source et sans limite artificielle, et le palier Pro à 139 $ par mois n'ajoute que des fonctions avancées et du support optionnels.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Getting a first job queue running needs a working Redis instance and Node.js setup code, not a one-click result.",
+        "fr": "Faire tourner une première file de jobs demande une instance Redis fonctionnelle et du code de mise en place Node.js, pas un résultat en un clic.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers the advertised job queue features (workers, delayed jobs, rate limiting, retries, cron scheduling) as described on the homepage.",
+        "fr": "Assure bien les fonctions annoncées de file de jobs (workers, jobs différés, limitation de débit, nouvelles tentatives, planification cron) comme décrit sur la page d'accueil.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Covers job flows with parent-child relationships, recurring schedulers, and multi-language clients, with grouping/batching/observables available on Pro.",
+        "fr": "Couvre les flux de jobs avec relations parent-enfant, la planification récurrente et des clients multi-langages, avec regroupement, lots et observables disponibles sur Pro.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: as a library over a self-managed Redis instance, data stays in your own infrastructure, but explicit export/migration guidance is not covered by the collected sources.",
+        "fr": "Note neutre : en tant que bibliothèque sur une instance Redis gérée par toi, les données restent dans ta propre infrastructure, mais des indications explicites d'export ou de migration ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Redis job queue",
+      "fr": "File de jobs Redis"
+    },
+    "shortDescription": {
+      "en": "Open-source Redis-backed job queue library for Node.js, with an optional $139-a-month Pro tier for advanced features and support.",
+      "fr": "Bibliothèque open source de files de jobs Redis pour Node.js, avec un palier Pro payant pour les fonctions avancées."
+    },
+    "longDescription": {
+      "en": "BullMQ is an open-source library that runs Redis-backed job queues for Node.js and Bun, with worker processes, delayed jobs, rate limiting, automatic retries, and cron-based recurring schedulers. Job flows let one job trigger others in a parent-child chain.\n\nThe core library is free (MIT license) and has no artificial limits; it needs a self-managed Redis instance to run. BullMQ Pro, a separate paid add-on at $139 a month (or $116.25/month billed annually), adds job grouping, batching, RxJS observables, and professional support for teams that outgrow the free library.",
+      "fr": "BullMQ est une bibliothèque open source qui fait tourner des files de jobs adossées à Redis pour Node.js et Bun, avec des workers, des jobs différés, une limitation de débit, des nouvelles tentatives automatiques et une planification récurrente par cron. Les flux de jobs permettent à un job d'en déclencher d'autres dans une chaîne parent-enfant.\n\nLa bibliothèque de base est gratuite (licence MIT) et sans limite artificielle ; elle nécessite une instance Redis gérée par toi. BullMQ Pro, un module payant séparé à 139 $ par mois (ou 116,25 $ par mois facturé à l'année), ajoute le regroupement de jobs, les lots, les observables RxJS et un support professionnel pour les équipes qui dépassent les besoins de la bibliothèque gratuite."
+    },
+    "pros": [
+      {
+        "en": "The core job queue library is free, open source, and has no artificial limits.",
+        "fr": "La bibliothèque de file de jobs de base est gratuite, open source et sans limite artificielle."
+      },
+      {
+        "en": "Covers retries, delayed jobs, cron scheduling, and parent-child job flows out of the box.",
+        "fr": "Couvre nativement les nouvelles tentatives, les jobs différés, la planification cron et les flux de jobs parent-enfant."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Requires running and managing your own Redis instance; it is not a hosted service.",
+        "fr": "Demande de faire tourner et de gérer sa propre instance Redis ; ce n'est pas un service hébergé."
+      },
+      {
+        "en": "Job grouping, batching, and observables are locked behind the $139-a-month Pro tier.",
+        "fr": "Le regroupement de jobs, les lots et les observables sont réservés au palier Pro à 139 $ par mois."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You are a Node.js developer who already runs Redis and needs reliable background job processing.",
+        "fr": "Tu es développeur Node.js, tu as déjà Redis en place et tu as besoin d'un traitement de jobs en arrière-plan fiable."
+      },
+      "avoidIf": {
+        "en": "You want a fully managed queue service without operating Redis yourself.",
+        "fr": "Tu veux un service de file managé sans avoir à opérer Redis toi-même."
+      },
+      "threshold": {
+        "en": "The library is free; budget $139 a month (or $116.25/month billed annually) only if you need Pro's grouping, batching, or professional support.",
+        "fr": "La bibliothèque est gratuite ; prévois 139 $ par mois (ou 116,25 $ par mois à l'année) uniquement si tu as besoin du regroupement, des lots ou du support professionnel de Pro."
+      }
+    }
+  },
   "unknowns": [
     "BullMQ Pro Enterprise and Embedded plan pricing are on quote only, not published publicly."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "pricing.model est noté « freemium », mais BullMQ est d'abord une bibliothèque open source (licence MIT) avec un module commercial payant optionnel (BullMQ Pro) : le modèle « open_source » collerait mieux à la grille de la section 5.1. Laissé en l'état, à vérifier côté fusion."
+  ]
 }

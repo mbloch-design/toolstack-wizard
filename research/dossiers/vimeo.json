@@ -3,7 +3,7 @@
   "slug": "vimeo",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Vimeo",
     "vendor": "Vimeo, Inc.",
@@ -40,13 +40,35 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "Free plan exists but is very limited (small weekly upload cap, Vimeo branding, no ad-free player)."
+        "en": "Free plan exists but is very limited (small weekly upload cap, Vimeo branding, no ad-free player).",
+        "fr": "Un plan gratuit existe mais reste très limité (petit plafond d'upload hebdomadaire, marque Vimeo visible, pas de lecteur sans publicité)."
       },
       "sourceIds": [
         "s1"
       ]
     },
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Small weekly upload cap, Vimeo branding, no ad-free player.",
+            "fr": "Petit plafond d'upload hebdomadaire, marque Vimeo visible, pas de lecteur sans publicité."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
       {
         "key": "starter",
         "name": "Starter",
@@ -135,13 +157,15 @@
         "en": "Monthly billing costs roughly 65% more than annual billing across all self-serve tiers (e.g. Starter is $20/mo billed monthly vs $12/mo billed annually).",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "La facturation mensuelle coûte environ 65 % plus cher que l'engagement annuel sur tous les plans en libre-service (ex. Starter à 20 $/mois facturé au mois contre 12 $/mois en annuel)."
       },
       {
         "en": "All self-serve plans share a 2 TB monthly bandwidth cap, which can be a hidden limitation for high-traffic embeds.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Tous les plans en libre-service partagent un plafond de bande passante de 2 To par mois, une limite cachée pour les intégrations à fort trafic."
       }
     ]
   },
@@ -151,13 +175,15 @@
         "en": "Ad-free professional video hosting and sharing with customizable, brandable players.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Hébergement et partage de vidéos professionnelles sans publicité, avec lecteurs personnalisables et à l'image de la marque."
       },
       {
         "en": "Privacy and access controls for restricting who can view or embed videos.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Contrôles de confidentialité et d'accès pour restreindre qui peut voir ou intégrer les vidéos."
       }
     ],
     "limitations": [
@@ -165,13 +191,15 @@
         "en": "Free plan is very limited compared to competitors, pushing most real use to paid tiers.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Le plan gratuit est très limité par rapport aux concurrents, ce qui pousse l'essentiel de l'usage réel vers les plans payants."
       },
       {
         "en": "Shared 2 TB monthly bandwidth cap across self-serve plans can constrain high-traffic use cases.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Le plafond partagé de bande passante de 2 To par mois sur les plans en libre-service peut contraindre les usages à fort trafic."
       }
     ],
     "integrations": [],
@@ -179,28 +207,151 @@
       "web"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Content creators and small businesses who need ad-free, brandable video hosting with privacy controls, beyond what a free consumer platform offers.",
+      "fr": "Créateurs de contenu et petites entreprises qui ont besoin d'un hébergement vidéo sans publicité et personnalisable, avec des contrôles de confidentialité, au-delà d'une plateforme grand public gratuite."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: host a portfolio or client-facing video ad-free with a branded, customizable player and restricted viewing access.",
+      "fr": "Cas d'usage : héberger une vidéo de portfolio ou destinée à un client, sans publicité, avec un lecteur personnalisé et un accès restreint."
+    },
+    {
+      "en": "Use case: embed product or marketing videos on a website while staying under the shared monthly bandwidth cap.",
+      "fr": "Cas d'usage : intégrer des vidéos produit ou marketing sur un site web tout en restant sous le plafond partagé de bande passante mensuelle."
+    }
+  ],
   "alternatives": [
     {
       "slug": "loom",
       "reason": {
-        "en": "Existing catalogue alternative, video recording and sharing tool with a different focus (async communication vs. professional hosting)."
+        "en": "Existing catalogue alternative, video recording and sharing tool with a different focus (async communication vs. professional hosting).",
+        "fr": "Alternative déjà au catalogue, outil d'enregistrement et de partage vidéo avec un focus différent (communication asynchrone plutôt qu'hébergement professionnel)."
+      }
+    },
+    {
+      "slug": "wistia",
+      "reason": {
+        "en": "Direct professional video hosting competitor with marketing-focused features.",
+        "fr": "Concurrent direct pour l'hébergement vidéo professionnel, avec des fonctions orientées marketing."
+      }
+    },
+    {
+      "slug": "vidyard",
+      "reason": {
+        "en": "Another professional video hosting and sharing platform with viewer analytics, covering the same core need.",
+        "fr": "Autre plateforme d'hébergement et de partage vidéo professionnel avec analytique des spectateurs, pour le même besoin principal."
       }
     }
   ],
-  "missingAlternatives": [
-    {
-      "name": "Wistia",
-      "officialUrl": "https://wistia.com",
-      "reason": "Direct professional video hosting competitor with marketing-focused features, not in the catalogue"
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Starter costs $12/month billed annually for ad-free hosting and a brandable player, but the free plan is very limited, pushing most real use onto a paid tier.",
+        "fr": "Starter coûte 12 $/mois facturé annuellement pour un hébergement sans publicité et un lecteur personnalisable, mais le plan gratuit est très limité, ce qui pousse l'essentiel de l'usage réel vers un plan payant.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Ad-free hosting with customizable players and privacy/access controls delivers the core hosting and sharing promise as described by the vendor.",
+        "fr": "L'hébergement sans publicité avec lecteurs personnalisables et contrôles de confidentialité/accès tient la promesse d'hébergement et de partage telle que décrite par l'éditeur.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Plans scale from Starter to Advanced with more analytics and team features, but all self-serve tiers share the same 2 TB monthly bandwidth cap, which limits the ceiling for high-traffic use.",
+        "fr": "Les plans vont de Starter à Advanced avec plus d'analytique et de fonctions d'équipe, mais tous les plans en libre-service partagent le même plafond de 2 To de bande passante par mois, ce qui limite le plafond pour un usage à fort trafic.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or portability when leaving Vimeo is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données ou la portabilité en cas de départ de Vimeo ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Professional video hosting",
+      "fr": "Hébergement vidéo professionnel"
+    },
+    "shortDescription": {
+      "en": "Vimeo is ad-free professional video hosting with customizable players and privacy controls, starting at $12/month billed annually.",
+      "fr": "Vimeo héberge des vidéos professionnelles sans publicité, avec lecteurs personnalisables et contrôles de confidentialité, dès 12 $/mois en annuel."
+    },
+    "longDescription": {
+      "en": "Vimeo hosts and shares professional video without ads, with brandable, customizable players and privacy or access controls to restrict who can view or embed a video.\n\nThe free plan is very limited (small weekly upload cap, Vimeo branding), so most real use moves to Starter at $12/month billed annually (or $20/month monthly), up to Advanced at $75/month for more analytics and team features. All self-serve plans share a 2 TB monthly bandwidth cap. It suits a creator or small business sharing professional video, not high-traffic embeds that would hit the bandwidth ceiling.",
+      "fr": "Vimeo héberge et partage des vidéos pro sans publicité, avec des lecteurs personnalisables et des contrôles de confidentialité ou d'accès pour restreindre qui peut voir ou intégrer une vidéo.\n\nLe plan gratuit est très limité (petit plafond d'upload hebdomadaire, marque Vimeo visible), donc l'usage réel passe sur Starter à 12 $/mois en annuel (ou 20 $/mois au mois), jusqu'à Advanced à 75 $/mois pour plus d'analytique et de fonctions d'équipe. Tous les plans en libre-service partagent un plafond de 2 To de bande passante par mois. L'outil convient à un créateur ou une petite entreprise, pas à des intégrations à fort trafic qui dépasseraient ce plafond."
+    },
+    "pros": [
+      {
+        "en": "Ad-free, brandable player even on the entry paid plan.",
+        "fr": "Lecteur sans publicité et personnalisable dès le plan payant d'entrée."
+      },
+      {
+        "en": "Privacy and access controls built in to restrict who can view or embed a video.",
+        "fr": "Contrôles de confidentialité et d'accès intégrés pour restreindre qui peut voir ou intégrer une vidéo."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan is too limited for most real use, pushing new users toward a paid tier quickly.",
+        "fr": "Le plan gratuit est trop limité pour un usage réel, ce qui pousse vite les nouveaux utilisateurs vers un plan payant."
+      },
+      {
+        "en": "All self-serve plans share the same 2 TB monthly bandwidth cap, regardless of tier.",
+        "fr": "Tous les plans en libre-service partagent le même plafond de 2 To de bande passante par mois, quel que soit le plan."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need ad-free, brandable video hosting with privacy controls for professional or client-facing content.",
+        "fr": "Tu as besoin d'un hébergement vidéo sans publicité et personnalisable, avec des contrôles de confidentialité, pour du contenu professionnel ou destiné à des clients."
+      },
+      "avoidIf": {
+        "en": "You need to embed high-traffic video that could exceed the shared 2 TB monthly bandwidth cap.",
+        "fr": "Tu dois intégrer des vidéos à fort trafic qui pourraient dépasser le plafond partagé de 2 To de bande passante mensuelle."
+      },
+      "threshold": {
+        "en": "Starter at $12/month billed annually ($144/year) is worth it once you need ad-free hosting and a branded player beyond the limited free plan.",
+        "fr": "Starter à 12 $/mois en annuel (144 $/an) devient rentable dès que tu as besoin d'un hébergement sans publicité et d'un lecteur personnalisé au-delà du plan gratuit limité."
+      },
+      "billingTraps": {
+        "en": "Monthly billing costs roughly 65% more than the annual rate on every self-serve plan (e.g. Starter at $20/month vs $12/month annually).",
+        "fr": "La facturation mensuelle coûte environ 65 % plus cher que le tarif annuel sur tous les plans en libre-service (ex. Starter à 20 $/mois contre 12 $/mois en annuel)."
+      }
     }
-  ],
-  "rating": {},
-  "editorial": {},
+  },
   "unknowns": [
     "Exact free-plan upload/storage caps were not independently re-verified from the live pricing page (fetch returned only footer content); figures rely on third-party summaries and the help center article.",
     "Whether taxes are included in listed USD prices is not stated."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

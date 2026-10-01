@@ -3,7 +3,8 @@
   "slug": "microsoft-dynamics-365-finance-operations",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Microsoft Dynamics 365 Finance",
     "vendor": "Microsoft Corporation",
@@ -52,7 +53,7 @@
         "keyLimits": [
           {
             "en": "Full user license for finance module only; adding a second app (e.g. Supply Chain Management) costs an additional $30/user/month.",
-            "fr": null
+            "fr": "Licence utilisateur complète pour le seul module finance ; ajouter une deuxième application (par exemple Supply Chain Management) coûte 30 $ par utilisateur et par mois en plus."
           }
         ],
         "sourceIds": [
@@ -73,7 +74,7 @@
         "keyLimits": [
           {
             "en": "Includes 1,000 Copilot credits per user per month.",
-            "fr": null
+            "fr": "Inclut 1 000 crédits Copilot par utilisateur et par mois."
           }
         ],
         "sourceIds": [
@@ -94,7 +95,7 @@
         "keyLimits": [
           {
             "en": "Read-only access and basic data entry; same rate for Activity User licenses.",
-            "fr": null
+            "fr": "Accès en lecture seule et saisie de données basique ; même tarif pour les licences Activity User."
           }
         ],
         "sourceIds": [
@@ -106,7 +107,7 @@
     "addOns": [
       {
         "en": "Second app add-on (e.g. Supply Chain Management alongside Finance): +$30/user/month.",
-        "fr": null,
+        "fr": "Module complémentaire pour une deuxième application (par exemple Supply Chain Management en plus de Finance) : +30 $ par utilisateur et par mois.",
         "sourceIds": [
           "s1"
         ]
@@ -115,14 +116,14 @@
     "cautions": [
       {
         "en": "As of January 15, 2026, Microsoft began enforcing license compliance: users without the correct license lose access to Dynamics 365 Finance & Operations applications.",
-        "fr": null,
+        "fr": "Depuis le 15 janvier 2026, Microsoft applique la conformité des licences : les utilisateurs sans la bonne licence perdent l'accès aux applications Dynamics 365 Finance & Operations.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Pricing figures were not fetched directly from the official Microsoft pricing page in this session (aggregated from partner/reseller summaries); re-verify against microsoft.com/en-us/dynamics-365/products/finance/pricing.",
-        "fr": null,
+        "fr": "Les montants n'ont pas été relevés directement sur la page tarifs officielle de Microsoft lors de cette session (ils viennent de résumés de partenaires et revendeurs) ; à revérifier sur microsoft.com/en-us/dynamics-365/products/finance/pricing.",
         "sourceIds": [
           "s1"
         ]
@@ -133,21 +134,21 @@
     "capabilities": [
       {
         "en": "Cloud-based financial management covering accounting, cash management and regulatory compliance.",
-        "fr": null,
+        "fr": "Gestion financière dans le cloud couvrant la comptabilité, la trésorerie et la conformité réglementaire.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Supply chain integration available as an add-on module alongside Finance.",
-        "fr": null,
+        "fr": "Intégration de la chaîne d'approvisionnement disponible en module complémentaire à Finance.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "AI and automation features via Copilot credits on the Premium tier.",
-        "fr": null,
+        "fr": "Fonctions d'IA et d'automatisation via des crédits Copilot sur le palier Premium.",
         "sourceIds": [
           "s1"
         ]
@@ -156,14 +157,14 @@
     "limitations": [
       {
         "en": "Full user licenses are expensive per seat (from $210/user/month), targeting large enterprises rather than small teams.",
-        "fr": null,
+        "fr": "Les licences utilisateur complètes sont coûteuses par siège (à partir de 210 $ par utilisateur et par mois), pensées pour les grandes entreprises plutôt que pour les petites équipes.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "License enforcement (as of January 2026) means misconfigured licensing can cut off application access.",
-        "fr": null,
+        "fr": "L'application des licences (depuis janvier 2026) signifie qu'une licence mal configurée peut couper l'accès à l'application.",
         "sourceIds": [
           "s1"
         ]
@@ -174,40 +175,149 @@
       "web"
     ]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A finance or ops lead inside a larger organization that already runs on Microsoft's stack and needs multi-module ERP licensing, not a freelancer or small team.",
+      "fr": "Un ou une responsable finance ou ops dans une organisation déjà équipée Microsoft et qui a besoin d'une licence ERP multi-module, pas un indépendant ou une petite équipe."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Core accounting: centralize accounting, cash management, and regulatory reporting for one legal entity on the Finance (single app) plan.",
+      "fr": "Comptabilité générale : centraliser la comptabilité, la trésorerie et le reporting réglementaire d'une entité sur le plan Finance (single app)."
+    },
+    {
+      "en": "Supply chain add-on: extend Finance with Supply Chain Management for an extra $30 per user per month to cover purchasing and inventory.",
+      "fr": "Ajout chaîne d'approvisionnement : étendre Finance avec Supply Chain Management pour 30 $ par utilisateur et par mois en plus pour couvrir achats et stocks."
+    }
+  ],
   "alternatives": [
     {
       "slug": "netsuite",
       "reason": {
         "en": "Direct competitor in cloud ERP/finance for mid-size to large organizations.",
-        "fr": null
+        "fr": "Concurrent direct en ERP et finance cloud pour les organisations de taille moyenne à grande."
       }
     },
     {
       "slug": "sap-s4hana",
       "reason": {
         "en": "Major enterprise ERP competitor covering finance and operations.",
-        "fr": null
+        "fr": "Grand concurrent ERP d'entreprise couvrant la finance et les opérations."
       }
     },
     {
       "slug": "sage-intacct",
       "reason": {
         "en": "Cloud financial management alternative, often positioned for mid-market.",
-        "fr": null
+        "fr": "Alternative de gestion financière cloud, souvent positionnée pour le marché intermédiaire."
       }
     },
     {
       "slug": "oracle-fusion-cloud",
       "reason": {
         "en": "Enterprise cloud ERP/finance competitor.",
-        "fr": null
+        "fr": "Concurrent ERP et finance cloud pour l'entreprise."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 2,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Full user licenses start at $210/user/month and a second app adds $30/user/month on top: hard to justify for a solo user or small team against cheaper accounting tools.",
+        "fr": "Les licences complètes démarrent à 210 $ par utilisateur et par mois, et une deuxième application ajoute 30 $ de plus : difficile à justifier pour un indépendant ou une petite équipe face à des outils de comptabilité moins chers.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "The licensing model spans multiple seat types (full user, Team Member, per-app add-ons) and strict compliance enforcement since January 2026, which takes real setup care to get right.",
+        "fr": "Le modèle de licence combine plusieurs types de siège (utilisateur complet, Team Member, modules par application) avec une application stricte depuis janvier 2026, ce qui demande une configuration soignée.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers the advertised core accounting, cash management, and compliance functions within the licensed module, as described on the pricing page.",
+        "fr": "Assure les fonctions annoncées de comptabilité, trésorerie et conformité dans le module sous licence, comme décrit sur la page tarifs.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Enterprise-grade ERP with an optional Supply Chain Management module and Copilot AI credits on the Premium tier, built for large organizations.",
+        "fr": "ERP de niveau entreprise avec un module optionnel Supply Chain Management et des crédits d'IA Copilot sur le palier Premium, pensé pour les grandes organisations.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability options are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export et de portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Enterprise finance ERP",
+      "fr": "ERP financier d'entreprise"
+    },
+    "shortDescription": {
+      "en": "Cloud ERP module for enterprise accounting, cash management, and compliance, priced per user from $210 a month.",
+      "fr": "Module ERP cloud pour la comptabilité, la trésorerie et la conformité des grandes entreprises, à partir de 210 dollars par utilisateur et par mois."
+    },
+    "longDescription": {
+      "en": "Dynamics 365 Finance is Microsoft's cloud ERP module for core accounting, cash management, and regulatory compliance. Each license covers one function: adding Supply Chain Management or another Dynamics 365 app means a separate add-on license, not a bundled upgrade. The Premium tier adds Copilot AI credits inside the finance workflow.\n\nFull user licenses start at $210 a month, with a cheaper $8 a month Team Member tier for read-only or data-entry access. Since January 2026, Microsoft enforces license compliance strictly, so a misassigned seat can lose access. This pricing and modular structure target large organizations with a dedicated finance team, not freelancers or small teams.",
+      "fr": "Dynamics 365 Finance est le module ERP cloud de Microsoft pour la comptabilité, la trésorerie et la conformité réglementaire. Chaque licence couvre une seule fonction : ajouter Supply Chain Management ou une autre application Dynamics 365 demande une licence séparée, pas une mise à niveau groupée. Le palier Premium ajoute des crédits Copilot au flux de travail finance.\n\nLes licences complètes démarrent à 210 $ par mois, avec un palier Team Member à 8 $ par mois pour un accès en lecture ou en saisie simple. Depuis janvier 2026, Microsoft applique strictement la conformité des licences : une mauvaise affectation peut couper l'accès. Cette tarification vise les grandes organisations avec une équipe finance dédiée, pas les indépendants ou petites équipes."
+    },
+    "pros": [
+      {
+        "en": "Covers accounting, cash management, and compliance in one licensed module.",
+        "fr": "Couvre comptabilité, trésorerie et conformité dans un seul module sous licence."
+      },
+      {
+        "en": "The Premium tier bundles AI (Copilot) credits directly into the finance workflow.",
+        "fr": "Le palier Premium intègre directement des crédits d'IA Copilot dans le flux de travail finance."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Full user licenses start at $210 a month, before adding any second app.",
+        "fr": "Les licences utilisateur complètes démarrent à 210 $ par mois, avant tout module supplémentaire."
+      },
+      {
+        "en": "Strict license enforcement since January 2026 can cut access for misassigned seats.",
+        "fr": "L'application stricte des licences depuis janvier 2026 peut couper l'accès en cas de mauvaise affectation."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Your organization already runs on Microsoft's stack and has a dedicated finance team to manage multi-module ERP licensing.",
+        "fr": "Ton organisation utilise déjà l'écosystème Microsoft et dispose d'une équipe finance dédiée pour gérer une licence ERP multi-module."
+      },
+      "avoidIf": {
+        "en": "You are a freelancer or a small team looking for simple accounting software.",
+        "fr": "Tu es indépendant ou en petite équipe et tu cherches un simple logiciel de comptabilité."
+      },
+      "threshold": {
+        "en": "Budget at least $210 per user per month for one full Finance license, plus $30 per user per month for each additional app.",
+        "fr": "Prévois au moins 210 $ par utilisateur et par mois pour une licence Finance complète, plus 30 $ par utilisateur et par mois pour chaque application supplémentaire."
+      },
+      "billingTraps": {
+        "en": "Adding a second Dynamics 365 app is a separate per-user add-on at $30/month, not included in the base license; a misassigned license can cut off access entirely since January 2026.",
+        "fr": "Ajouter une deuxième application Dynamics 365 est un supplément séparé de 30 $ par utilisateur et par mois, non inclus dans la licence de base ; une mauvaise affectation de licence peut couper l'accès complètement depuis janvier 2026."
+      }
+    }
+  },
   "unknowns": [
     "Official Microsoft pricing page could not be fetched directly in this session; all figures come from third-party partner pricing guides and should be re-verified on microsoft.com.",
     "Regional/currency variations (outside US) not covered."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Tous les montants (210 $, 300 $, 8 $, 30 $) viennent de guides tiers (encorebusiness.com, erpresearch.com) et non de la page tarifs officielle Microsoft : à vérifier sur microsoft.com/en-us/dynamics-365/products/finance/pricing avant publication."
+  ]
 }

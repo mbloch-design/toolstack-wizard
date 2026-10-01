@@ -3,7 +3,7 @@
   "slug": "canva-ai",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Canva AI (Magic Studio)",
     "vendor": "Canva Pty Ltd",
@@ -40,13 +40,35 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "50 Magic Studio (AI) uses per month, limited Text to Image, Magic Write; Background Remover, Magic Eraser and Magic Expand are paid-plan-only."
+        "en": "50 Magic Studio (AI) uses per month, limited Text to Image, Magic Write; Background Remover, Magic Eraser and Magic Expand are paid-plan-only.",
+        "fr": "50 utilisations Magic Studio (IA) par mois, Text to Image et Magic Write limités ; Background Remover, Magic Eraser et Magic Expand sont réservés aux plans payants."
       },
       "sourceIds": [
         "s2"
       ]
     },
     "plans": [
+      {
+        "key": "free",
+        "name": "Canva Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "50 Magic Studio (AI) uses per month, limited Text to Image, Magic Write; Background Remover, Magic Eraser and Magic Expand are paid-plan-only.",
+            "fr": "50 utilisations Magic Studio (IA) par mois, Text to Image et Magic Write limités ; Background Remover, Magic Eraser et Magic Expand réservés aux plans payants."
+          }
+        ],
+        "sourceIds": [
+          "s2"
+        ]
+      },
       {
         "key": "pro",
         "name": "Canva Pro",
@@ -95,7 +117,8 @@
         "en": "Canva AI is not sold separately; its features and monthly usage caps (Magic Studio credits) are bundled into and gated by the underlying Canva Free/Pro/Business plan tier.",
         "sourceIds": [
           "s2"
-        ]
+        ],
+        "fr": "Canva AI n'est pas vendu séparément ; ses fonctions et ses plafonds d'usage mensuel (crédits Magic Studio) sont intégrés et verrouillés par le plan Canva Free/Pro/Business sous-jacent."
       }
     ]
   },
@@ -105,13 +128,15 @@
         "en": "AI image generation (Text to Image), background removal, object/element manipulation, and AI-assisted layout suggestions, bundled as 'Magic Studio' inside Canva.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Génération d'images par IA (Text to Image), suppression d'arrière-plan, manipulation d'objets/éléments et suggestions de mise en page assistées par IA, regroupées sous 'Magic Studio' dans Canva."
       },
       {
         "en": "Magic Write for AI-generated text/copy directly inside Canva designs.",
         "sourceIds": [
           "s2"
-        ]
+        ],
+        "fr": "Magic Write pour générer du texte/des accroches par IA directement dans les designs Canva."
       }
     ],
     "limitations": [
@@ -119,13 +144,15 @@
         "en": "Monthly usage caps on AI (Magic Studio) actions apply even on paid plans: 50/month on Free, 500/month on Pro.",
         "sourceIds": [
           "s2"
-        ]
+        ],
+        "fr": "Des plafonds d'usage mensuel s'appliquent aux actions IA (Magic Studio) même sur les plans payants : 50/mois sur Free, 500/mois sur Pro."
       },
       {
         "en": "Core AI removal/expansion tools (Background Remover, Magic Eraser, Magic Expand) are locked behind a paid plan entirely.",
         "sourceIds": [
           "s2"
-        ]
+        ],
+        "fr": "Les outils IA de suppression/extension (Background Remover, Magic Eraser, Magic Expand) sont entièrement réservés à un plan payant."
       }
     ],
     "integrations": [],
@@ -133,28 +160,149 @@
       "web"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Content creators and small-business marketers who want AI image generation and editing built into the design tool they already use, without a separate AI app.",
+      "fr": "Créateurs de contenu et marketeurs de petites entreprises qui veulent la génération et l'édition d'images par IA intégrées à l'outil de design qu'ils utilisent déjà, sans app IA séparée."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: generate a social media visual from a text prompt with Text to Image, then remove its background without leaving the Canva editor.",
+      "fr": "Cas d'usage : générer un visuel pour les réseaux sociaux à partir d'un prompt texte avec Text to Image, puis en retirer l'arrière-plan sans quitter l'éditeur Canva."
+    },
+    {
+      "en": "Use case: draft marketing copy for a design with Magic Write, staying inside the monthly AI usage allowance of the Pro plan.",
+      "fr": "Cas d'usage : rédiger un texte marketing pour un design avec Magic Write, en restant dans le quota d'usage IA mensuel du plan Pro."
+    }
+  ],
   "alternatives": [
     {
       "slug": "firefly",
       "reason": {
-        "en": "Adobe's AI creative suite offering comparable generative image and design features."
+        "en": "Adobe's AI creative suite offering comparable generative image and design features.",
+        "fr": "Suite créative IA d'Adobe offrant des fonctions comparables de génération d'images et de design."
       }
     },
     {
       "slug": "leonardo-ai",
       "reason": {
-        "en": "AI image generation tool that overlaps with Canva AI's Text to Image capability."
+        "en": "AI image generation tool that overlaps with Canva AI's Text to Image capability.",
+        "fr": "Outil de génération d'images par IA qui recoupe la capacité Text to Image de Canva AI."
+      }
+    },
+    {
+      "slug": "krea-ai",
+      "reason": {
+        "en": "AI image generation and editing tool covering the same core need as Canva AI's Magic Studio image features.",
+        "fr": "Outil de génération et d'édition d'images par IA qui couvre le même besoin principal que les fonctions image de Magic Studio."
       }
     }
   ],
   "missingAlternatives": [],
-  "rating": {},
-  "editorial": {},
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "AI features are bundled into the existing Canva Pro plan at $15/month rather than sold separately, but monthly usage caps (50 on Free, 500 on Pro) limit how much value heavy users can extract.",
+        "fr": "Les fonctions IA sont intégrées au plan Canva Pro existant à 15 $/mois plutôt que vendues séparément, mais les plafonds d'usage mensuel (50 sur Free, 500 sur Pro) limitent la valeur pour un usage intensif.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Magic Studio features (Text to Image, Magic Write, background removal) are built directly into the Canva design surface, usable immediately without separate setup.",
+        "fr": "Les fonctions Magic Studio (Text to Image, Magic Write, suppression d'arrière-plan) sont intégrées directement dans l'interface de design Canva, utilisables immédiatement sans configuration séparée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Core AI actions (image generation, background removal, Magic Write) work as described, but Background Remover, Magic Eraser and Magic Expand are entirely locked out on the Free plan.",
+        "fr": "Les actions IA principales (génération d'image, suppression d'arrière-plan, Magic Write) fonctionnent comme décrit, mais Background Remover, Magic Eraser et Magic Expand sont totalement verrouillés sur le plan Free.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Covers image generation, background/object editing, layout suggestions and AI text, a solid everyday feature set, but each paid tier still caps monthly AI actions rather than offering unlimited use.",
+        "fr": "Couvre génération d'image, édition d'arrière-plan/objets, suggestions de mise en page et texte IA, un ensemble solide pour un usage courant, mais chaque plan payant plafonne quand même les actions IA mensuelles plutôt que de les rendre illimitées.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export or portability of AI-generated assets when leaving Canva is not covered by the collected sources.",
+        "fr": "Note neutre : l'export ou la portabilité des éléments générés par IA en cas de départ de Canva ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "AI design assistant",
+      "fr": "Assistant IA de design"
+    },
+    "shortDescription": {
+      "en": "Canva AI (Magic Studio) adds AI image generation, background removal and AI writing inside Canva, with monthly usage caps by plan.",
+      "fr": "Canva AI (Magic Studio) ajoute génération d'image par IA, suppression d'arrière-plan et écriture IA dans Canva, avec des plafonds d'usage mensuels selon le plan."
+    },
+    "longDescription": {
+      "en": "Canva AI, branded Magic Studio, bundles AI image generation (Text to Image), background removal, object manipulation and AI-assisted layout suggestions directly inside the Canva editor, plus Magic Write for AI-generated copy.\n\nIt isn't sold separately: Free includes 50 Magic Studio uses per month with Background Remover locked out, while Canva Pro at $15/month raises the cap to 500 uses and unlocks removal tools. It suits a content creator or small-business marketer already designing in Canva who wants AI features on top, not someone who needs unlimited AI generation outside usage caps.",
+      "fr": "Canva AI, sous la marque Magic Studio, intègre génération d'image par IA (Text to Image), suppression d'arrière-plan, manipulation d'objets et suggestions de mise en page assistées par IA directement dans l'éditeur Canva, plus Magic Write pour le texte généré par IA.\n\nL'outil n'est pas vendu séparément : Free inclut 50 utilisations Magic Studio par mois avec Background Remover verrouillé, tandis que Canva Pro à 15 $/mois monte le plafond à 500 utilisations et débloque les outils de suppression. Il convient à un créateur de contenu ou un marketeur de petite entreprise qui conçoit déjà dans Canva et veut des fonctions IA en plus, pas à quelqu'un qui a besoin d'une génération IA illimitée hors plafond."
+    },
+    "pros": [
+      {
+        "en": "AI features live inside the same editor used for design, with no separate app to learn.",
+        "fr": "Les fonctions IA sont intégrées au même éditeur que le design, sans app séparée à apprendre."
+      },
+      {
+        "en": "Free plan includes 50 AI uses per month to try Text to Image and Magic Write before paying.",
+        "fr": "Le plan gratuit inclut 50 utilisations IA par mois pour essayer Text to Image et Magic Write avant de payer."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Monthly AI usage caps apply even on the paid Pro plan (500 uses/month), not unlimited use.",
+        "fr": "Des plafonds d'usage IA mensuels s'appliquent même sur le plan payant Pro (500 utilisations/mois), pas un usage illimité."
+      },
+      {
+        "en": "Background Remover, Magic Eraser and Magic Expand are completely unavailable on the free plan.",
+        "fr": "Background Remover, Magic Eraser et Magic Expand sont totalement indisponibles sur le plan gratuit."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You already design in Canva and want AI image generation, background removal and AI writing without switching tools.",
+        "fr": "Tu conçois déjà dans Canva et tu veux la génération d'image par IA, la suppression d'arrière-plan et l'écriture IA sans changer d'outil."
+      },
+      "avoidIf": {
+        "en": "You need AI image generation without a monthly usage cap, or the removal tools without upgrading off the free plan.",
+        "fr": "Tu as besoin d'une génération d'image IA sans plafond mensuel, ou des outils de suppression sans passer au plan payant."
+      },
+      "threshold": {
+        "en": "Upgrade to Canva Pro at $15/month once the free plan's 50 monthly AI uses or the lack of Background Remover becomes a real constraint.",
+        "fr": "Passe à Canva Pro à 15 $/mois dès que les 50 utilisations IA mensuelles du plan gratuit, ou l'absence de Background Remover, deviennent une vraie contrainte."
+      }
+    }
+  },
   "unknowns": [
     "The official canva.com/ai page returned HTTP 403 (anti-bot block); pricing and plan details were sourced from the general Canva pricing page and third-party summaries instead, and should be reverified directly at fusion time.",
     "Exact list of features gated behind Free vs Pro vs Business (beyond the ones listed) was not fully itemized."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "The official canva.com/ai page returned HTTP 403 during cloud research; pricing/plan details rely on the general Canva pricing page and third-party summaries (source s2) and should be reverified directly on canva.com/pricing before publishing."
+  ]
 }

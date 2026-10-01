@@ -3,7 +3,7 @@
   "slug": "rocketlink",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "RocketLink",
     "vendor": "RocketLink",
@@ -58,7 +58,7 @@
         "keyLimits": [
           {
             "en": "20 links/month, 2 pixels, 4 custom scripts/CTAs, 1 custom domain",
-            "fr": null
+            "fr": "20 liens/mois, 2 pixels, 4 scripts/CTA personnalisés, 1 domaine personnalisé"
           }
         ],
         "sourceIds": [
@@ -79,7 +79,7 @@
         "keyLimits": [
           {
             "en": "100 links/month, 5 pixels, 20 custom scripts/CTAs, 5 custom domains",
-            "fr": null
+            "fr": "100 liens/mois, 5 pixels, 20 scripts/CTA personnalisés, 5 domaines personnalisés"
           }
         ],
         "sourceIds": [
@@ -100,7 +100,7 @@
         "keyLimits": [
           {
             "en": "1,000 links/month, 50 pixels, 100 custom scripts/CTAs, 50 custom domains",
-            "fr": null
+            "fr": "1 000 liens/mois, 50 pixels, 100 scripts/CTA personnalisés, 50 domaines personnalisés"
           }
         ],
         "sourceIds": [
@@ -113,7 +113,7 @@
     "cautions": [
       {
         "en": "No free plan; link creation is capped per month on every tier (20 to 1,000), unlike some competitors with unlimited link creation.",
-        "fr": null,
+        "fr": "Aucun plan gratuit ; la création de liens est plafonnée chaque mois sur tous les plans (de 20 à 1 000), contrairement à certains concurrents qui ne limitent pas le nombre de liens.",
         "sourceIds": [
           "s1"
         ]
@@ -124,14 +124,14 @@
     "capabilities": [
       {
         "en": "URL shortening with click analytics and ad retargeting pixels (Facebook/Google-style pixel tracking)",
-        "fr": null,
+        "fr": "Raccourcissement d'URL avec analytique des clics et pixels de reciblage publicitaire (suivi façon Facebook/Google)",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Custom domains with free SSL, browser extensions, and CSV export of reports",
-        "fr": null,
+        "fr": "Domaines personnalisés avec SSL gratuit, extensions de navigateur et export CSV des rapports",
         "sourceIds": [
           "s1"
         ]
@@ -140,14 +140,14 @@
     "limitations": [
       {
         "en": "Monthly link creation is capped by plan (20 on the entry tier); no free plan available",
-        "fr": null,
+        "fr": "La création de liens est plafonnée chaque mois selon le plan (20 sur le plan d'entrée) ; aucun plan gratuit",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Number of pixels and custom scripts/CTAs is limited by plan tier",
-        "fr": null,
+        "fr": "Le nombre de pixels et de scripts/CTA personnalisés est limité selon le plan",
         "sourceIds": [
           "s1"
         ]
@@ -166,10 +166,145 @@
       "web"
     ]
   },
-  "alternatives": [],
-  "missingAlternatives": [],
+  "alternatives": [
+    {
+      "slug": "pretty-links",
+      "reason": {
+        "en": "Covers the same core need of shortening and tracking links, with its own click analytics.",
+        "fr": "Couvre le même besoin principal de raccourcissement et de suivi de liens, avec sa propre analytique des clics."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Bitly",
+      "officialUrl": "https://bitly.com",
+      "reason": "Major URL shortener with click analytics and custom domains, direct competitor, not in the catalogue."
+    },
+    {
+      "name": "Rebrandly",
+      "officialUrl": "https://www.rebrandly.com",
+      "reason": "Branded link shortener with retargeting pixel support, direct competitor, not in the catalogue."
+    }
+  ],
   "unknowns": [
     "Exact annual/discounted pricing was not shown on the pricing page during this session; only monthly prices were confirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "At $19/month for only 20 links and no free plan, the entry tier is usable but its value depends entirely on how much a retargeting pixel tied to a short link is worth to the buyer; that return isn't shown on the pricing page.",
+        "fr": "À 19 $/mois pour seulement 20 liens et sans plan gratuit, le plan d'entrée reste utilisable mais sa valeur dépend entièrement de ce qu'apporte un pixel de reciblage lié à un lien court, un retour que la page de prix ne montre pas.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A browser extension and a 10-day trial let a new user shorten links and set up a pixel without extra setup.",
+        "fr": "Une extension de navigateur et un essai de 10 jours permettent à un nouvel utilisateur de raccourcir des liens et de configurer un pixel sans configuration supplémentaire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It delivers link shortening, click analytics, and ad retargeting pixels as advertised, without needing a separate tracking tool.",
+        "fr": "L'outil délivre raccourcissement de lien, analytique des clics et pixels de reciblage comme annoncé, sans nécessiter un outil de suivi séparé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Pixels, custom scripts/CTAs and domains scale with the plan (up to 50 pixels and 1,000 links/month on Galaxy), a moderate ceiling rather than an unlimited one.",
+        "fr": "Pixels, scripts/CTA personnalisés et domaines augmentent avec le plan (jusqu'à 50 pixels et 1 000 liens/mois sur Galaxy), un plafond moyen plutôt qu'illimité.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Only CSV export of reports is mentioned; nothing in the collected sources confirms a full export of the underlying links, redirects, or pixel configurations.",
+        "fr": "Seul l'export CSV des rapports est mentionné ; rien dans les sources relevées ne confirme un export complet des liens, redirections ou configurations de pixel sous-jacents.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Independent creators and small marketers who run paid retargeting campaigns and need shortened, trackable links with their own pixels.",
+      "fr": "Créateurs indépendants et petits marketeurs qui mènent des campagnes de reciblage payant et ont besoin de liens raccourcis et traçables avec leurs propres pixels."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Use case: shorten a promotional link with a Facebook retargeting pixel attached, to re-target visitors who didn't convert.",
+      "fr": "Cas d'usage : raccourcir un lien promotionnel avec un pixel de reciblage Facebook, pour relancer les visiteurs qui n'ont pas converti."
+    },
+    {
+      "en": "Use case: set up a custom domain for links shared in an Instagram or TikTok bio, with per-campaign click tracking.",
+      "fr": "Cas d'usage : configurer un domaine personnalisé pour les liens partagés en bio Instagram ou TikTok, avec un suivi des clics par campagne."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Link shortener & pixels",
+      "fr": "Liens courts et pixels"
+    },
+    "shortDescription": {
+      "en": "Subscription URL shortener with ad retargeting pixels, custom domains, and click analytics, with monthly link volume capped by plan.",
+      "fr": "Raccourcisseur d'URL par abonnement avec pixels de reciblage publicitaire, domaines personnalisés et analytique des clics, le volume mensuel de liens étant plafonné selon le plan."
+    },
+    "longDescription": {
+      "en": "RocketLink shortens URLs and attaches ad retargeting pixels to them, so a single short link can also feed a Facebook or Google-style campaign. It adds custom domains with free SSL, a browser extension, and CSV export of click reports.\n\nThere's no free plan: the entry Liftoff tier starts at $19/month for 20 links, 2 pixels and 1 custom domain, with a 10-day trial to test it first. It fits a solo creator or small marketer running a handful of tracked campaigns, less a team that needs to generate links in volume, since every tier caps monthly link creation.",
+      "fr": "RocketLink raccourcit des URL et leur attache des pixels de reciblage publicitaire, si bien qu'un seul lien court peut aussi alimenter une campagne façon Facebook ou Google. L'outil ajoute des domaines personnalisés avec SSL gratuit, une extension de navigateur et un export CSV des rapports de clics.\n\nIl n'y a pas de plan gratuit : le plan d'entrée Liftoff démarre à 19 $/mois pour 20 liens, 2 pixels et 1 domaine personnalisé, avec un essai de 10 jours pour le tester d'abord. Il convient à un créateur solo ou un petit marketeur qui suit quelques campagnes, moins à une équipe qui doit générer des liens en volume, puisque chaque plan plafonne la création mensuelle de liens."
+    },
+    "pros": [
+      {
+        "en": "10-day trial to test the pixel tracking before paying.",
+        "fr": "Essai de 10 jours pour tester le suivi par pixel avant de payer."
+      },
+      {
+        "en": "Custom domains with free SSL included from the entry plan.",
+        "fr": "Domaines personnalisés avec SSL gratuit inclus dès le plan d'entrée."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan, unlike many URL shorteners.",
+        "fr": "Aucun plan gratuit, contrairement à beaucoup de raccourcisseurs d'URL."
+      },
+      {
+        "en": "Monthly link creation is capped on every tier, from 20 to 1,000.",
+        "fr": "La création de liens mensuelle est plafonnée sur tous les plans, de 20 à 1 000."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run paid retargeting campaigns and want pixel tracking built into your shortened links.",
+        "fr": "Tu mènes des campagnes de reciblage payant et tu veux un suivi par pixel intégré à tes liens raccourcis."
+      },
+      "avoidIf": {
+        "en": "You need unlimited link creation or a free tier, since every plan here caps monthly links.",
+        "fr": "Tu as besoin d'une création de liens illimitée ou d'un plan gratuit, car ici chaque plan plafonne les liens mensuels."
+      },
+      "threshold": {
+        "en": "At $19/month for 20 links on Liftoff, it's worth it only if the retargeting pixels on those links drive campaign value beyond what a plain free shortener gives you.",
+        "fr": "À 19 $/mois pour 20 liens sur Liftoff, ça ne vaut le coup que si les pixels de reciblage sur ces liens apportent une valeur de campagne supérieure à celle d'un simple raccourcisseur gratuit."
+      }
+    }
+  },
+  "reviewNotes": [
+    "The catalogue seed describes RocketLink's paid plan as '15EUR/month', but the official pricing page researched here shows USD pricing starting at $19/month (Liftoff) with no EUR plan at that amount; worth re-checking the pricing page for region-based currency before merging."
+  ]
 }

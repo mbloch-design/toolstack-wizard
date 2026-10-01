@@ -3,7 +3,7 @@
   "slug": "profile-builder-3",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Profile Builder 4",
     "vendor": "MindSight Studios",
@@ -34,7 +34,7 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 119 },
         "onQuote": false,
-        "keyLimits": [{ "en": "Single-seat perpetual license, requires SketchUp Pro" }],
+        "keyLimits": [{ "en": "Single-seat perpetual license, requires SketchUp Pro", "fr": "Licence perpétuelle pour un seul poste, nécessite SketchUp Pro" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,24 +44,24 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": 29.75 },
         "onQuote": false,
-        "keyLimits": [{ "en": "75% discount off the Pro license, non-commercial use only, proof of student/teacher status required" }],
+        "keyLimits": [{ "en": "75% discount off the Pro license, non-commercial use only, proof of student/teacher status required", "fr": "75 % de réduction sur la licence Pro, usage non commercial uniquement, preuve du statut étudiant/enseignant exigée" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "This is a plugin for SketchUp Pro, not a standalone application: a separate SketchUp Pro license is also required.", "sourceIds": ["s1"] }
+      { "en": "This is a plugin for SketchUp Pro, not a standalone application: a separate SketchUp Pro license is also required.", "fr": "C'est une extension pour SketchUp Pro, pas une application autonome : une licence SketchUp Pro séparée est également requise.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Parametric profiles and assemblies for adaptable, non-destructive modeling in SketchUp", "sourceIds": ["s1"] },
-      { "en": "Smart-path selection and hole creation/editing tools", "sourceIds": ["s1"] }
+      { "en": "Parametric profiles and assemblies for adaptable, non-destructive modeling in SketchUp", "fr": "Profils et assemblages paramétriques pour une modélisation adaptable et non destructive dans SketchUp", "sourceIds": ["s1"] },
+      { "en": "Smart-path selection and hole creation/editing tools", "fr": "Outils de sélection intelligente de chemin et de création/édition de trous", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Requires SketchUp Pro as a host application; not usable standalone", "sourceIds": ["s1"] },
-      { "en": "No explicit BIM-specific feature set stated on the current product page", "sourceIds": ["s1"] }
+      { "en": "Requires SketchUp Pro as a host application; not usable standalone", "fr": "Nécessite SketchUp Pro comme application hôte ; non utilisable de façon autonome", "sourceIds": ["s1"] },
+      { "en": "No explicit BIM-specific feature set stated on the current product page", "fr": "Aucune fonctionnalité BIM spécifique explicitement annoncée sur la page produit actuelle", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "SketchUp Pro", "slug": "sketchup-pro", "sourceIds": ["s1"] },
@@ -70,8 +70,7 @@
     "platforms": ["windows", "macos"]
   },
   "alternatives": [
-    { "slug": "sketchup-pro", "reason": { "en": "Host application for this plugin; often considered together in a design-tools stack decision." } },
-    { "slug": "enscape", "reason": { "en": "Complementary/competing extension used for architectural visualization workflows around SketchUp." } }
+    { "slug": "fredo6-bundle", "reason": { "en": "Another SketchUp extension bundle covering parametric modeling needs such as extrusions and profiles, for the same host application.", "fr": "Un autre ensemble d'extensions SketchUp couvrant des besoins de modélisation paramétrique comme les extrusions et profils, pour la même application hôte." } }
   ],
   "missingAlternatives": [
     { "name": "1001bit Pro", "officialUrl": "https://sketchucation.com", "reason": "Alternative parametric profile/molding plugin for SketchUp, not in the catalogue." }
@@ -81,5 +80,109 @@
   ],
   "conflicts": [
     { "en": "The catalogue entry is named 'Profile Builder 3', but the vendor's current, actively sold and documented product is Profile Builder 4; no separate page for version 3 was found." }
-  ]
+  ],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A $119 one-time license for a tool that speeds up repetitive profile and molding modeling is a reasonable one-off cost, though the gain depends entirely on how often the user models that kind of geometry.",
+        "fr": "Une licence unique à 119 $ pour un outil qui accélère la modélisation répétitive de profils et moulures reste un coût ponctuel raisonnable, même si le gain dépend entièrement de la fréquence à laquelle l'utilisateur modélise ce type de géométrie.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "The 30-day trial lets a SketchUp user test the parametric profile tools directly, but getting a useful first result still assumes existing comfort with SketchUp modeling.",
+        "fr": "L'essai de 30 jours permet à un utilisateur de SketchUp de tester directement les outils de profil paramétrique, mais obtenir un premier résultat utile suppose déjà une certaine aisance avec la modélisation SketchUp.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "It delivers parametric, non-destructive profile and assembly modeling with smart-path and hole tools as advertised, without needing a separate plugin for that task.",
+        "fr": "Il délivre une modélisation paramétrique et non destructive de profils et assemblages, avec des outils de sélection de chemin et de trous comme annoncé, sans nécessiter une extension séparée pour cette tâche.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "It covers parametric profiles and assemblies well within SketchUp, but the current product page states no explicit BIM-specific feature set, so its ceiling for BIM workflows specifically is unclear.",
+        "fr": "Il couvre bien les profils et assemblages paramétriques dans SketchUp, mais la page produit actuelle n'annonce aucune fonctionnalité BIM spécifique, ce qui laisse son plafond pour les workflows BIM particulièrement incertain.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "As a plugin tied to SketchUp Pro with a perpetual license, geometry stays in the host SketchUp file, but nothing in the collected sources describes an export path for the parametric profile data itself if the plugin is dropped.",
+        "fr": "En tant qu'extension liée à SketchUp Pro avec une licence perpétuelle, la géométrie reste dans le fichier SketchUp hôte, mais rien dans les sources relevées ne décrit un moyen d'exporter les données de profil paramétrique elles-mêmes si l'extension est abandonnée.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "SketchUp Pro users, mainly in architecture and interior design, who model repetitive moldings, frames, or profile-based assemblies and want a parametric, non-destructive workflow.",
+      "fr": "Utilisateurs de SketchUp Pro, surtout en architecture et design d'intérieur, qui modélisent des moulures, cadres ou assemblages à base de profils de façon répétitive et veulent un workflow paramétrique et non destructif."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: model a run of custom molding or trim as a parametric profile in SketchUp, then adjust its path non-destructively without rebuilding the geometry.",
+      "fr": "Cas d'usage : modéliser une moulure ou une plinthe sur mesure comme profil paramétrique dans SketchUp, puis ajuster son chemin sans reconstruire la géométrie."
+    },
+    {
+      "en": "Use case: use smart-path selection and hole tools to quickly cut openings into a profile-based assembly during an architectural design pass.",
+      "fr": "Cas d'usage : utiliser la sélection intelligente de chemin et les outils de trous pour percer rapidement des ouvertures dans un assemblage à base de profils lors d'une phase de conception architecturale."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Parametric profiles for SketchUp",
+      "fr": "Profils paramétriques pour SketchUp"
+    },
+    "shortDescription": {
+      "en": "SketchUp Pro plugin for parametric, non-destructive profiles and assemblies, with smart-path selection and hole editing, sold as a one-time license.",
+      "fr": "Extension SketchUp Pro pour profils et assemblages paramétriques non destructifs, avec sélection intelligente de chemin et édition de trous, vendue sous licence à paiement unique."
+    },
+    "longDescription": {
+      "en": "Profile Builder models parametric profiles and assemblies inside SketchUp Pro, with smart-path selection and hole creation/editing tools for non-destructive changes. It's a plugin, not a standalone app, so it only runs on top of an existing SketchUp Pro license.\n\nThe Pro license is a one-time $119 payment per seat, with a 75% student/educator discount and a 30-day trial. Note that the catalogue slug points to Profile Builder 3, while MindSight Studios currently sells and documents only Profile Builder 4. It suits a SketchUp user in architecture or interior design who repeatedly models moldings, frames, or profile-based assemblies, less someone needing a BIM-specific feature set, which the current product page doesn't explicitly claim.",
+      "fr": "Profile Builder modélise des profils et assemblages paramétriques dans SketchUp Pro, avec sélection intelligente de chemin et outils de création/édition de trous pour modifications non destructives. C'est une extension, pas une app autonome : elle exige une licence SketchUp Pro existante.\n\nLa licence Pro coûte 119 $ en paiement unique par poste, avec 75 % de réduction étudiants/enseignants et un essai de 30 jours. Le slug du catalogue renvoie à la version 3, alors que MindSight Studios ne vend et documente que la version 4 aujourd'hui. L'extension convient à un utilisateur de SketchUp en architecture ou design d'intérieur qui modélise souvent moulures, cadres ou assemblages à base de profils, moins à qui a besoin de fonctions BIM spécifiques."
+    },
+    "pros": [
+      {
+        "en": "One-time purchase rather than a subscription, with a 30-day trial to test it first.",
+        "fr": "Achat unique plutôt qu'un abonnement, avec un essai de 30 jours pour le tester d'abord."
+      },
+      {
+        "en": "75% student/educator discount makes it accessible for learning or school projects.",
+        "fr": "Réduction de 75 % pour les étudiants/enseignants, ce qui le rend accessible pour l'apprentissage ou les projets scolaires."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Requires a separate SketchUp Pro license to run at all.",
+        "fr": "Nécessite une licence SketchUp Pro séparée pour fonctionner."
+      },
+      {
+        "en": "The catalogue name refers to version 3, but only version 4 is currently sold and documented.",
+        "fr": "Le nom au catalogue renvoie à la version 3, alors que seule la version 4 est aujourd'hui vendue et documentée."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You already use SketchUp Pro and repeatedly model moldings, trims, or other profile-based assemblies.",
+        "fr": "Tu utilises déjà SketchUp Pro et tu modélises régulièrement des moulures, plinthes ou autres assemblages à base de profils."
+      },
+      "avoidIf": {
+        "en": "You don't have a SketchUp Pro license, since the plugin can't run without it.",
+        "fr": "Tu n'as pas de licence SketchUp Pro, car l'extension ne peut pas fonctionner sans elle."
+      },
+      "threshold": {
+        "en": "At a one-time $119 for the Pro license, it pays off once modeling profile-based geometry by hand in plain SketchUp starts costing more time than a single purchase.",
+        "fr": "Pour un paiement unique de 119 $ pour la licence Pro, l'outil devient rentable dès que modéliser des géométries à base de profils à la main dans SketchUp seul commence à coûter plus de temps qu'un achat unique."
+      }
+    }
+  },
+  "reviewNotes": []
 }

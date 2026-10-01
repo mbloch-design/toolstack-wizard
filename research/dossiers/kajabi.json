@@ -3,7 +3,8 @@
   "slug": "kajabi",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Kajabi",
     "vendor": "Kajabi LLC",
@@ -53,7 +54,7 @@
         "keyLimits": [
           {
             "en": "5 products, 2,500 contacts, 1 community, 1 website, 2 admin users",
-            "fr": null
+            "fr": "5 produits, 2 500 contacts, 1 communauté, 1 site web, 2 utilisateurs administrateurs"
           }
         ],
         "sourceIds": [
@@ -74,7 +75,7 @@
         "keyLimits": [
           {
             "en": "50 products, 25,000 contacts, 1 community, 1 website, 11 admin users, 500 AI credits",
-            "fr": null
+            "fr": "50 produits, 25 000 contacts, 1 communauté, 1 site web, 11 utilisateurs administrateurs, 500 crédits IA"
           }
         ],
         "sourceIds": [
@@ -95,7 +96,7 @@
         "keyLimits": [
           {
             "en": "Unlimited products, 100,000 contacts, 3 communities, 3 websites, 26 admin users, 1,000 AI credits",
-            "fr": null
+            "fr": "Produits illimités, 100 000 contacts, 3 communautés, 3 sites web, 26 utilisateurs administrateurs, 1 000 crédits IA"
           }
         ],
         "sourceIds": [
@@ -107,7 +108,7 @@
     "addOns": [
       {
         "en": "Extra contact blocks of 25,000 for $125/month; additional AI credits at $15/month",
-        "fr": null,
+        "fr": "Blocs de contacts supplémentaires de 25 000 pour 125 $ par mois ; crédits IA supplémentaires à 15 $ par mois",
         "sourceIds": [
           "s1"
         ]
@@ -116,7 +117,7 @@
     "cautions": [
       {
         "en": "Payment processing fees of 2.7% to 2.9% plus $0.30 apply per transaction depending on plan.",
-        "fr": null,
+        "fr": "Des frais de traitement des paiements de 2,7 % à 2,9 % plus 0,30 $ s'appliquent par transaction selon le plan.",
         "sourceIds": [
           "s1"
         ]
@@ -127,21 +128,21 @@
     "capabilities": [
       {
         "en": "Course and community hosting with unlimited marketing emails, landing pages, and funnels on every plan",
-        "fr": null,
+        "fr": "Hébergement de formations et de communautés avec e-mails marketing, pages d'atterrissage et tunnels illimités sur tous les plans",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Built-in payments and product sales without needing separate checkout tools",
-        "fr": null,
+        "fr": "Paiements et vente de produits intégrés, sans avoir besoin d'outils de paiement séparés",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "AI credits included for content generation, scaling with plan tier",
-        "fr": null,
+        "fr": "Crédits IA inclus pour la génération de contenu, dont le volume augmente avec le plan",
         "sourceIds": [
           "s1"
         ]
@@ -150,14 +151,14 @@
     "limitations": [
       {
         "en": "Number of products, contacts, and admin users is capped by plan; Basic is limited to 5 products and 2 admin users",
-        "fr": null,
+        "fr": "Le nombre de produits, de contacts et d'utilisateurs administrateurs est limité selon le plan ; Basic est plafonné à 5 produits et 2 utilisateurs administrateurs",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "No free plan; all tiers require a paid subscription starting at $179/month (or $143/month annual)",
-        "fr": null,
+        "fr": "Pas de plan gratuit ; tous les paliers demandent un abonnement payant à partir de 179 $ par mois (ou 143 $ par mois à l'année)",
         "sourceIds": [
           "s1"
         ]
@@ -168,39 +169,148 @@
       "web"
     ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A course creator or coach who wants to host courses, a community, and sales pages in one subscription without stitching together separate tools.",
+      "fr": "Un ou une créateur de formation ou coach qui veut héberger ses formations, sa communauté et ses pages de vente dans un seul abonnement, sans assembler plusieurs outils séparés."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Course launch: host up to 5 courses, collect payments, and email 2,500 contacts from one Basic plan account.",
+      "fr": "Lancement de formation : héberger jusqu'à 5 formations, encaisser les paiements et envoyer des e-mails à 2 500 contacts depuis un seul compte Basic."
+    },
+    {
+      "en": "Community plus courses: run a paid community alongside unlimited courses and AI-assisted content drafting on the Pro plan.",
+      "fr": "Communauté et formations : gérer une communauté payante en plus de formations illimitées et de la rédaction de contenu assistée par IA, sur le plan Pro."
+    }
+  ],
   "alternatives": [
     {
       "slug": "thinkific",
       "reason": {
         "en": "Direct course-platform competitor with a similar all-in-one positioning",
-        "fr": null
+        "fr": "Concurrent direct en plateforme de formation, avec un positionnement tout-en-un similaire"
       }
     },
     {
       "slug": "podia",
       "reason": {
         "en": "All-in-one creator platform for courses, communities, and digital products",
-        "fr": null
+        "fr": "Plateforme créateur tout-en-un pour formations, communautés et produits numériques"
       }
     },
     {
       "slug": "learnworlds",
       "reason": {
         "en": "Course platform aimed at similar creator/coach audience",
-        "fr": null
+        "fr": "Plateforme de formation destinée à un public similaire de créateurs et coachs"
       }
     },
     {
       "slug": "circle",
       "reason": {
         "en": "Community-first alternative overlapping with Kajabi communities feature",
-        "fr": null
+        "fr": "Alternative centrée communauté qui recouvre la fonction communautés de Kajabi"
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Basic replaces separate course, email, and checkout tools for $179/month, but that is a meaningful cost for a solo creator just starting out.",
+        "fr": "Basic remplace des outils séparés de formation, e-mail et paiement pour 179 $ par mois, mais c'est un coût significatif pour un créateur solo qui débute.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Course hosting, email marketing, landing pages, and built-in payments are bundled on every plan, so a first course and sales page can go live without connecting separate tools.",
+        "fr": "Hébergement de formation, e-mail marketing, pages d'atterrissage et paiements sont réunis sur chaque plan, ce qui permet de lancer une première formation et une page de vente sans connecter d'outils séparés.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Delivers the advertised all-in-one course, community, and sales functions directly, without needing third-party checkout or email tools.",
+        "fr": "Assure bien les fonctions annoncées de formation, communauté et vente tout-en-un, sans avoir besoin d'outils tiers de paiement ou d'e-mail.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Pro supports unlimited products, 100,000 contacts, and 3 communities plus 1,000 AI credits, covering a large creator business.",
+        "fr": "Pro prend en charge des produits illimités, 100 000 contacts et 3 communautés, plus 1 000 crédits IA, ce qui couvre une activité créateur de taille importante.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: options for exporting courses, contacts, or content if leaving Kajabi are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export des formations, contacts ou contenus en quittant Kajabi ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "All-in-one course platform",
+      "fr": "Plateforme de formation tout-en-un"
+    },
+    "shortDescription": {
+      "en": "All-in-one platform for hosting courses, communities, and sales pages with built-in payments, starting at $179 a month.",
+      "fr": "Plateforme tout-en-un pour héberger formations, communautés et pages de vente avec paiements intégrés, à partir de 179 dollars par mois."
+    },
+    "longDescription": {
+      "en": "Kajabi bundles course and community hosting with unlimited marketing emails, landing pages, sales funnels, and built-in payment processing on every plan, so a creator doesn't need separate tools for each step. AI credits for content generation scale with the plan tier.\n\nThere is no free plan: Basic starts at $179 a month ($143 annual) for 5 products, 2,500 contacts, and 2 admin users, and payment processing fees of 2.7% to 2.9% plus $0.30 apply on top. It fits a course creator or coach who wants courses, community, and sales in one subscription rather than stitching several tools together.",
+      "fr": "Kajabi réunit l'hébergement de formations et de communautés avec des e-mails marketing, pages d'atterrissage et tunnels de vente illimités, et des paiements intégrés sur chaque plan, pour éviter un outil séparé à chaque étape. Les crédits IA pour la génération de contenu augmentent avec le plan.\n\nIl n'y a pas de plan gratuit : Basic démarre à 179 $ par mois (143 $ à l'année) pour 5 produits, 2 500 contacts et 2 utilisateurs administrateurs, et des frais de paiement de 2,7 % à 2,9 % plus 0,30 $ s'ajoutent en plus. Il convient à un créateur de formation ou un coach qui veut formations, communauté et vente dans un seul abonnement plutôt que d'assembler plusieurs outils."
+    },
+    "pros": [
+      {
+        "en": "Course hosting, community, email, and payments are bundled on every plan without extra tools.",
+        "fr": "Formation, communauté, e-mail et paiements sont réunis sur chaque plan sans outils supplémentaires."
+      },
+      {
+        "en": "AI credits for content generation are included and scale with the plan.",
+        "fr": "Les crédits IA pour la génération de contenu sont inclus et augmentent avec le plan."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan; the entry Basic tier costs $179 a month before payment processing fees.",
+        "fr": "Pas de plan gratuit ; le palier d'entrée Basic coûte 179 $ par mois avant les frais de traitement des paiements."
+      },
+      {
+        "en": "Products, contacts, and admin users are all capped by plan, with Basic limited to 5 products and 2 admins.",
+        "fr": "Produits, contacts et utilisateurs administrateurs sont tous limités selon le plan, Basic étant plafonné à 5 produits et 2 administrateurs."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want to host courses, a community, and sales pages together in one subscription without connecting separate tools.",
+        "fr": "Tu veux héberger formations, communauté et pages de vente ensemble dans un seul abonnement, sans connecter d'outils séparés."
+      },
+      "avoidIf": {
+        "en": "You only need a simple course host and don't want to pay $179 a month plus per-transaction fees.",
+        "fr": "Tu as juste besoin d'héberger une formation simple et tu ne veux pas payer 179 $ par mois en plus des frais par transaction."
+      },
+      "threshold": {
+        "en": "Budget at least $179 a month ($143 annual) for Basic, plus 2.7% to 2.9% and $0.30 per transaction in payment fees.",
+        "fr": "Prévois au moins 179 $ par mois (143 $ à l'année) pour Basic, plus 2,7 % à 2,9 % et 0,30 $ par transaction en frais de paiement."
+      },
+      "billingTraps": {
+        "en": "Payment processing fees (2.7% to 2.9% plus $0.30 per transaction) apply on top of the subscription, and extra contact blocks of 25,000 cost $125/month each.",
+        "fr": "Des frais de traitement des paiements (2,7 % à 2,9 % plus 0,30 $ par transaction) s'ajoutent à l'abonnement, et chaque bloc supplémentaire de 25 000 contacts coûte 125 $ par mois."
+      }
+    }
+  },
   "unknowns": [],
   "conflicts": [
     "The internal catalogue seed listed Kajabi at $55-199/month; the current official pricing page (accessed 2026-09-25) shows $179-499/month, a significant increase over the seed figure."
+  ],
+  "reviewNotes": [
+    "Écart de prix important avec la fiche catalogue actuelle (55-199 $/mois) contre 179-499 $/mois relevé sur kajabi.com/pricing le 25/09/2026 : à vérifier sur le site de l'éditeur avant toute mise à jour de la fiche (déjà noté dans conflicts)."
   ]
 }

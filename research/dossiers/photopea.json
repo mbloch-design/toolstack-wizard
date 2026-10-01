@@ -3,7 +3,7 @@
   "slug": "photopea",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Photopea",
     "vendor": "Ivan Kutskir",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://costbench.com/software/design/photopea/", "tier": 2, "accessedOn": "2026-09-25", "title": "Photopea free vs premium pricing summary" },
-    { "id": "s2", "url": "https://costbench.com/software/design/photopea/free-plan/", "tier": 2, "accessedOn": "2026-09-25", "title": "Photopea free plan limits" }
+    {
+      "id": "s1",
+      "url": "https://costbench.com/software/design/photopea/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Photopea free vs premium pricing summary"
+    },
+    {
+      "id": "s2",
+      "url": "https://costbench.com/software/design/photopea/free-plan/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Photopea free plan limits"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -25,7 +37,17 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Ad-supported, full PSD support, 40+ file format compatibility, layers/masks/blending, 500 MB PeaDrive storage, shorter edit history, base AI credits.", "sourceIds": ["s1", "s2"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Ad-supported, full PSD support, 40+ file format compatibility, layers/masks/blending, 500 MB PeaDrive storage, shorter edit history, base AI credits.",
+        "fr": "Financé par la publicité, support complet des fichiers PSD, compatibilité avec plus de 40 formats, calques/masques/fusion, 500 Mo de stockage PeaDrive, historique d'édition plus court, crédits IA de base."
+      },
+      "sourceIds": [
+        "s1",
+        "s2"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -33,10 +55,21 @@
         "name": "Premium",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 5, "annualPerMonth": 4.17, "oneTime": null },
+        "price": {
+          "monthly": 5,
+          "annualPerMonth": 4.17,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "$5/month or $50/year; removes ads, widens editor to full screen width, raises PeaDrive storage from 500 MB to 5 GB, doubles edit history length, adds more AI credits and priority support.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "$5/month or $50/year; removes ads, widens editor to full screen width, raises PeaDrive storage from 500 MB to 5 GB, doubles edit history length, adds more AI credits and priority support.",
+            "fr": "5 $/mois ou 50 $/an ; retire les publicités, élargit l'éditeur à toute la largeur d'écran, fait passer le stockage PeaDrive de 500 Mo à 5 Go, double la longueur de l'historique d'édition, ajoute plus de crédits IA et un support prioritaire."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "premium",
@@ -45,25 +78,186 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Runs entirely in the browser, no install required, and opens/edits native PSD files with layers, masks and blending modes preserved.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Supports 40+ file formats (PSD, XD, Sketch, XCF, AI, PDF and more), acting as a fallback editor across design tool ecosystems.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Runs entirely in the browser, no install required, and opens/edits native PSD files with layers, masks and blending modes preserved.",
+        "fr": "Fonctionne entièrement dans le navigateur, sans installation, et ouvre/édite des fichiers PSD natifs en conservant calques, masques et modes de fusion.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Supports 40+ file formats (PSD, XD, Sketch, XCF, AI, PDF and more), acting as a fallback editor across design tool ecosystems.",
+        "fr": "Prend en charge plus de 40 formats de fichiers (PSD, XD, Sketch, XCF, AI, PDF et plus), servant d'éditeur de secours entre les écosystèmes d'outils de design.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free tier is ad-supported and caps cloud storage (PeaDrive) at 500 MB.", "fr": null, "sourceIds": ["s1", "s2"] },
-      { "en": "Edit history length is shorter on the free plan than on Premium.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Free tier is ad-supported and caps cloud storage (PeaDrive) at 500 MB.",
+        "fr": "Le palier gratuit est financé par la publicité et plafonne le stockage cloud (PeaDrive) à 500 Mo.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      {
+        "en": "Edit history length is shorter on the free plan than on Premium.",
+        "fr": "La longueur de l'historique d'édition est plus courte sur le palier gratuit que sur Premium.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "adobe-photoshop", "reason": { "en": "The desktop application Photopea most directly mirrors and substitutes for in many workflows.", "fr": null } },
-    { "slug": "affinity-photo", "reason": { "en": "Paid one-time-purchase photo editor competing for users leaving Photoshop.", "fr": null } },
-    { "slug": "pixelmator-pro", "reason": { "en": "Mac-native photo/design editor targeting similar budget-conscious creative users.", "fr": null } }
+    {
+      "slug": "adobe-photoshop",
+      "reason": {
+        "en": "The desktop application Photopea most directly mirrors and substitutes for in many workflows.",
+        "fr": "L'application de bureau que Photopea imite et remplace le plus directement dans de nombreux flux de travail."
+      }
+    },
+    {
+      "slug": "affinity-photo",
+      "reason": {
+        "en": "Paid one-time-purchase photo editor competing for users leaving Photoshop.",
+        "fr": "Éditeur photo payant à achat unique, concurrent auprès des utilisateurs qui quittent Photoshop."
+      }
+    },
+    {
+      "slug": "pixelmator-pro",
+      "reason": {
+        "en": "Mac-native photo/design editor targeting similar budget-conscious creative users.",
+        "fr": "Éditeur photo et design natif Mac visant un public soucieux de son budget, similaire à celui de Photopea."
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "Exact AI credit allowance difference between free and Premium was not precisely quantified in the sources checked.",
     "Whether Premium billing is per-account or supports team seats was not confirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A free, ad-supported browser editor that opens native PSD files covers most occasional Photoshop-style edits without any subscription.",
+        "fr": "Un éditeur gratuit dans le navigateur, financé par la publicité, qui ouvre des fichiers PSD natifs couvre la plupart des retouches occasionnelles de type Photoshop sans aucun abonnement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Runs directly in the browser with no install, and opens familiar PSD files immediately with layers and masks intact.",
+        "fr": "Fonctionne directement dans le navigateur sans installation, et ouvre immédiatement des fichiers PSD familiers avec calques et masques intacts.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Edits PSD, XD, Sketch, AI, PDF and dozens of other formats as described, acting as a real fallback editor.",
+        "fr": "Édite les fichiers PSD, XD, Sketch, AI, PDF et des dizaines d'autres formats comme annoncé, et sert de vrai éditeur de secours.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers the core Photoshop-style feature set (layers, masks, blending) but is a single-developer browser tool, not a full professional suite.",
+        "fr": "Couvre l'essentiel des fonctionnalités de type Photoshop (calques, masques, fusion) mais reste un outil de navigateur développé par une seule personne, pas une suite professionnelle complète.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether PeaDrive files can be bulk-exported or if there is an API is not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité d'exporter en masse les fichiers PeaDrive ou l'existence d'une API ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A designer or freelancer who needs to open and edit a PSD file occasionally without owning a Photoshop license or installing desktop software.",
+      "fr": "Un ou une designer ou freelance qui doit ouvrir et éditer un fichier PSD occasionnellement sans posséder de licence Photoshop ni installer de logiciel de bureau."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Quick PSD edit: open a client's layered PSD file in the browser to tweak text or swap an image, with no software to install.",
+      "fr": "Retouche PSD rapide : ouvre le fichier PSD en calques d'un client dans le navigateur pour modifier un texte ou remplacer une image, sans logiciel à installer."
+    },
+    {
+      "en": "Cross-format fallback: open a Sketch or XD file received from a client on a machine without the original design app installed.",
+      "fr": "Secours multi-format : ouvre un fichier Sketch ou XD reçu d'un client sur une machine où l'application de design d'origine n'est pas installée."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Browser photo editor",
+      "fr": "Éditeur photo navigateur"
+    },
+    "shortDescription": {
+      "en": "Photopea is a free, ad-supported browser editor that opens native PSD and 40+ other design file formats, no install required.",
+      "fr": "Photopea est un éditeur gratuit et financé par la publicité, dans le navigateur, qui ouvre les PSD natifs et 40+ autres formats, sans installation."
+    },
+    "longDescription": {
+      "en": "Photopea runs entirely in the browser and opens native PSD files with layers, masks and blending modes preserved. It also supports more than 40 other formats (XD, Sketch, XCF, AI, PDF), making it a practical fallback editor when the original design app is not available.\n\nThe free tier is ad-supported and caps PeaDrive cloud storage at 500MB. Premium removes ads and raises storage to 5GB for $5 a month or $50 a year. It suits designers and freelancers who need occasional PSD or cross-format edits without a Photoshop license.",
+      "fr": "Photopea fonctionne entièrement dans le navigateur et ouvre des fichiers PSD natifs en conservant calques, masques et modes de fusion. Il prend aussi en charge plus de 40 autres formats (XD, Sketch, XCF, AI, PDF), ce qui en fait un éditeur de secours pratique quand l'application de design d'origine n'est pas disponible.\n\nLe palier gratuit est financé par la publicité et plafonne le stockage cloud PeaDrive à 500 Mo. Premium retire les publicités et porte le stockage à 5 Go pour 5 $ par mois ou 50 $ par an. L'outil convient aux designers et freelances qui ont besoin de retouches PSD ou multi-formats occasionnelles sans licence Photoshop."
+    },
+    "pros": [
+      {
+        "en": "Opens native PSD files with layers and masks intact, directly in the browser, with no install and no license to buy.",
+        "fr": "Ouvre les fichiers PSD natifs en conservant calques et masques, directement dans le navigateur, sans installation ni licence à acheter."
+      },
+      {
+        "en": "Supports 40+ formats beyond PSD, useful as a fallback when a client sends a Sketch or XD file you don't have the app for.",
+        "fr": "Prend en charge plus de 40 formats au-delà du PSD, utile comme solution de secours quand un client envoie un fichier Sketch ou XD dont tu n'as pas l'application."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free tier is ad-supported, which interrupts the editing experience compared to a paid desktop editor.",
+        "fr": "Le palier gratuit est financé par la publicité, ce qui interrompt l'expérience d'édition par rapport à un éditeur de bureau payant."
+      },
+      {
+        "en": "Cloud storage is capped at 500MB on the free tier, too tight for storing many project files long-term.",
+        "fr": "Le stockage cloud est plafonné à 500 Mo sur le palier gratuit, trop juste pour stocker de nombreux fichiers de projet sur la durée."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need to open or edit PSD and similar design files occasionally and don't want to buy a Photoshop license for that alone.",
+        "fr": "Tu as besoin d'ouvrir ou d'éditer des fichiers PSD et similaires occasionnellement et tu ne veux pas acheter une licence Photoshop juste pour ça."
+      },
+      "avoidIf": {
+        "en": "You edit images daily and need a distraction-free, ad-free workspace with more cloud storage than the free tier offers.",
+        "fr": "Tu édites des images au quotidien et as besoin d'un espace de travail sans publicité avec plus de stockage cloud que n'offre le palier gratuit."
+      },
+      "threshold": {
+        "en": "Upgrade to Premium at $5/month (or $50/year) once the ads or the 500MB PeaDrive cap start getting in the way.",
+        "fr": "Passe à Premium à 5 $/mois (ou 50 $/an) dès que les publicités ou le plafond de 500 Mo de PeaDrive commencent à gêner."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "pricing.freePlan.exists est true mais aucun plan de pricing.plans n'est à 0 : le palier gratuit n'a pas de ligne de plan dédiée (seul Premium est listé). À vérifier sur photopea.com."
+  ]
 }

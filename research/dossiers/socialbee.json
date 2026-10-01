@@ -3,7 +3,7 @@
   "slug": "socialbee",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "SocialBee",
     "vendor": "SocialBee (SOCIALBEE SRL)",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://socialbee.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "SocialBee pricing page" }
+    {
+      "id": "s1",
+      "url": "https://socialbee.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "SocialBee pricing page"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,73 +30,317 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "bootstrap",
         "name": "Bootstrap",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 29, "annualPerMonth": 24.17, "oneTime": null },
+        "price": {
+          "monthly": 29,
+          "annualPerMonth": 24.17,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 social profiles, 1 user per workspace, unlimited AI content generation, 10 content categories, analytics up to 3 months.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "5 social profiles, 1 user per workspace, unlimited AI content generation, 10 content categories, analytics up to 3 months.",
+            "fr": "5 profils sociaux, 1 utilisateur par espace de travail, génération de contenu IA illimitée, 10 catégories de contenu, analytics sur 3 mois."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "accelerate",
         "name": "Accelerate",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 49, "annualPerMonth": 40.83, "oneTime": null },
+        "price": {
+          "monthly": 49,
+          "annualPerMonth": 40.83,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "10 social profiles, 1 user per workspace, advanced analytics, hashtag organizer, post approval, CSV uploads, 2-year data history.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "10 social profiles, 1 user per workspace, advanced analytics, hashtag organizer, post approval, CSV uploads, 2-year data history.",
+            "fr": "10 profils sociaux, 1 utilisateur par espace de travail, analytics avancées, organisateur de hashtags, validation des posts, imports CSV, historique de données sur 2 ans."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "account",
         "minSeats": 3,
-        "price": { "monthly": 99, "annualPerMonth": 82.50, "oneTime": null },
+        "price": {
+          "monthly": 99,
+          "annualPerMonth": 82.5,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "25 social profiles, 5 workspaces, 3 users per workspace, export reports, internal notes, bulk editing, 2-year data history.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "25 social profiles, 5 workspaces, 3 users per workspace, export reports, internal notes, bulk editing, 2-year data history.",
+            "fr": "25 profils sociaux, 5 espaces de travail, 3 utilisateurs par espace de travail, export de rapports, notes internes, édition en masse, historique de données sur 2 ans."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "bootstrap",
     "addOns": [
-      { "en": "Extra user: $10/month or $100/year.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Extra workspace: $10/month or $100/year.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Extra profile set (5 profiles): $15/month or $150/year.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Extra user: $10/month or $100/year.",
+        "fr": "Utilisateur supplémentaire : 10 $/mois ou 100 $/an.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Extra workspace: $10/month or $100/year.",
+        "fr": "Espace de travail supplémentaire : 10 $/mois ou 100 $/an.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Extra profile set (5 profiles): $15/month or $150/year.",
+        "fr": "Lot de profils supplémentaires (5 profils) : 15 $/mois ou 150 $/an.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "A visible promo (code SBDAY2026, 50% off monthly plans for 3 months, expiring around June 10) was excluded from the plan prices above per pricing rules; only the regular list prices are recorded.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Agency-tier plans (Pro50/Pro100/Pro150, $179-$449/month) exist above Pro for larger profile counts but are not recorded here as they exceed the target audience's needs.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "A visible promo (code SBDAY2026, 50% off monthly plans for 3 months, expiring around June 10) was excluded from the plan prices above per pricing rules; only the regular list prices are recorded.",
+        "fr": "Une promotion visible (code SBDAY2026, 50 % de réduction sur les plans mensuels pendant 3 mois, expirant vers le 10 juin) a été exclue des prix ci-dessus conformément aux règles de tarification ; seuls les prix de liste habituels sont enregistrés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Agency-tier plans (Pro50/Pro100/Pro150, $179-$449/month) exist above Pro for larger profile counts but are not recorded here as they exceed the target audience's needs.",
+        "fr": "Des paliers agence (Pro50/Pro100/Pro150, 179-449 $/mois) existent au-dessus de Pro pour davantage de profils, mais ne sont pas enregistrés ici car ils dépassent les besoins de la cible.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Schedules and publishes social media posts across multiple platforms with content categorization for organizing post types.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Evergreen content recycling: automatically re-shares and re-queues older posts based on content categories.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AI-assisted content generation included unlimited on all paid plans.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Schedules and publishes social media posts across multiple platforms with content categorization for organizing post types.",
+        "fr": "Planifie et publie des posts sur les réseaux sociaux sur plusieurs plateformes, avec une catégorisation du contenu pour organiser les types de posts.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Evergreen content recycling: automatically re-shares and re-queues older posts based on content categories.",
+        "fr": "Recyclage de contenu evergreen : republie et replanifie automatiquement les anciens posts selon leurs catégories de contenu.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-assisted content generation included unlimited on all paid plans.",
+        "fr": "Génération de contenu assistée par IA incluse en illimité sur tous les plans payants.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No free plan; only a 14-day trial before payment is required.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Entry Bootstrap plan is limited to a single user per workspace, restricting collaboration without upgrading or buying add-on seats.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No free plan; only a 14-day trial before payment is required.",
+        "fr": "Aucun plan gratuit ; seulement un essai de 14 jours avant le paiement obligatoire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Entry Bootstrap plan is limited to a single user per workspace, restricting collaboration without upgrading or buying add-on seats.",
+        "fr": "Le plan d'entrée Bootstrap est limité à un seul utilisateur par espace de travail, ce qui restreint la collaboration sans mise à niveau ou achat de sièges supplémentaires.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "buffer", "reason": { "en": "Widely used social media scheduling tool targeting the same solo/small team audience.", "fr": null } },
-    { "slug": "metricool", "reason": { "en": "Social scheduling and analytics platform competing on similar pricing tiers.", "fr": null } },
-    { "slug": "publer", "reason": { "en": "Budget social media scheduler often compared directly to SocialBee.", "fr": null } }
+    {
+      "slug": "buffer",
+      "reason": {
+        "en": "Widely used social media scheduling tool targeting the same solo/small team audience.",
+        "fr": "Outil de planification de réseaux sociaux largement utilisé, visant le même public solo/petite équipe."
+      }
+    },
+    {
+      "slug": "metricool",
+      "reason": {
+        "en": "Social scheduling and analytics platform competing on similar pricing tiers.",
+        "fr": "Plateforme de planification et d'analytics social media sur des paliers de prix similaires."
+      }
+    },
+    {
+      "slug": "publer",
+      "reason": {
+        "en": "Budget social media scheduler often compared directly to SocialBee.",
+        "fr": "Planificateur de réseaux sociaux économique souvent comparé directement à SocialBee."
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "Exact list of supported social platforms (Instagram, Facebook, LinkedIn, TikTok, etc.) was not itemized in the source page excerpt retrieved.",
     "Mobile app availability (iOS/Android) not confirmed in this session."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Unlimited AI content generation on every paid plan is a real inclusion, but there is no free tier, so the value only starts after the 14-day trial ends.",
+        "fr": "La génération de contenu IA illimitée sur tous les plans payants est une vraie inclusion, mais il n'y a pas de palier gratuit, donc la valeur ne démarre qu'après la fin de l'essai de 14 jours.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Scheduling and content categorization are set up quickly, and evergreen recycling runs automatically once categories are defined.",
+        "fr": "La planification et la catégorisation de contenu se mettent en place rapidement, et le recyclage evergreen tourne automatiquement une fois les catégories définies.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Schedules, publishes and recycles posts across platforms as described, with content categorization doing real organizational work.",
+        "fr": "Planifie, publie et recycle les posts sur plusieurs plateformes comme annoncé, avec une catégorisation de contenu qui organise réellement le travail.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers scheduling, recycling and AI content generation well for a small team, but the entry Bootstrap plan caps collaboration at a single user.",
+        "fr": "Couvre bien la planification, le recyclage et la génération de contenu IA pour une petite équipe, mais le plan d'entrée Bootstrap plafonne la collaboration à un seul utilisateur.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether scheduled content or categories can be exported if a team switches tools is not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité d'exporter le contenu planifié ou les catégories en cas de changement d'outil ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A solo content creator or small brand that posts regularly across several social platforms and wants evergreen content recycled automatically instead of reposting manually.",
+      "fr": "Un créateur de contenu solo ou une petite marque qui poste régulièrement sur plusieurs réseaux sociaux et veut que le contenu evergreen soit republié automatiquement plutôt qu'à la main."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Content recycling: tag evergreen posts into a category once, and let SocialBee automatically re-queue them for months without rebuilding the calendar.",
+      "fr": "Recyclage de contenu : catégorise une fois les posts evergreen, et laisse SocialBee les replanifier automatiquement pendant des mois sans refaire le calendrier."
+    },
+    {
+      "en": "Batch scheduling: use unlimited AI content generation to draft a week of posts across 5 profiles in one sitting.",
+      "fr": "Planification groupée : utilise la génération de contenu IA illimitée pour rédiger une semaine de posts sur 5 profils en une seule session."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Social media scheduler",
+      "fr": "Planificateur réseaux sociaux"
+    },
+    "shortDescription": {
+      "en": "SocialBee schedules and recycles social media posts across platforms, with unlimited AI content generation on every paid plan.",
+      "fr": "SocialBee planifie et recycle les posts sur les réseaux sociaux, avec une génération de contenu IA illimitée sur chaque plan payant."
+    },
+    "longDescription": {
+      "en": "SocialBee schedules and publishes posts across social platforms, organized into content categories. Its evergreen recycling automatically re-shares and re-queues older posts by category, and every paid plan includes unlimited AI content generation.\n\nThere is no free tier, only a 14-day trial; the entry Bootstrap plan starts at $29 a month ($24.17 billed annually) for 5 social profiles and a single user. It suits a solo creator or small brand that wants content recycling handled automatically rather than manually reposting.",
+      "fr": "SocialBee planifie et publie des posts sur les réseaux sociaux, organisés en catégories de contenu. Son recyclage evergreen republie et replanifie automatiquement les anciens posts selon leur catégorie, et chaque plan payant inclut une génération de contenu IA illimitée.\n\nIl n'y a pas de palier gratuit, seulement un essai de 14 jours ; le plan d'entrée Bootstrap démarre à 29 $ par mois (24,17 $ facturé annuellement) pour 5 profils sociaux et un seul utilisateur. L'outil convient à un créateur solo ou une petite marque qui veut automatiser le recyclage de contenu plutôt que de republier à la main."
+    },
+    "pros": [
+      {
+        "en": "Evergreen content recycling handles re-sharing automatically by category, saving the manual work of rebuilding a posting calendar.",
+        "fr": "Le recyclage de contenu evergreen gère la republication automatiquement par catégorie, évitant le travail manuel de reconstruire un calendrier de posts."
+      },
+      {
+        "en": "Unlimited AI content generation is included on every paid plan rather than gated behind a higher tier.",
+        "fr": "La génération de contenu IA illimitée est incluse sur chaque plan payant plutôt que réservée à un palier supérieur."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan, only a 14-day trial, so there is no way to test it long-term without paying.",
+        "fr": "Aucun plan gratuit, seulement un essai de 14 jours, donc impossible de le tester longtemps sans payer."
+      },
+      {
+        "en": "The entry Bootstrap plan allows only one user per workspace, forcing an upgrade or an add-on seat to collaborate.",
+        "fr": "Le plan d'entrée Bootstrap n'autorise qu'un seul utilisateur par espace de travail, ce qui oblige à passer au plan supérieur ou à acheter un siège en plus pour collaborer."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You post evergreen content regularly across a handful of profiles and want recycling handled automatically rather than manually.",
+        "fr": "Tu postes régulièrement du contenu evergreen sur quelques profils et veux que le recyclage soit automatisé plutôt que manuel."
+      },
+      "avoidIf": {
+        "en": "You need more than one user on the entry plan, or you want a free tier to test before paying.",
+        "fr": "Tu as besoin de plus d'un utilisateur sur le plan d'entrée, ou tu veux un palier gratuit pour tester avant de payer."
+      },
+      "threshold": {
+        "en": "Budget $29/month ($24.17/month billed annually) for the entry Bootstrap plan, plus $10/month per extra user if you need to collaborate.",
+        "fr": "Prévois 29 $/mois (24,17 $/mois facturé annuellement) pour le plan d'entrée Bootstrap, plus 10 $/mois par utilisateur supplémentaire pour collaborer."
+      },
+      "billingTraps": {
+        "en": "Extra users, workspaces and profile sets are all separate add-ons at $10-15/month each, which can push the real bill well above the base plan price.",
+        "fr": "Les utilisateurs, espaces de travail et lots de profils supplémentaires sont tous des add-ons séparés à 10-15 $/mois chacun, ce qui peut pousser la facture réelle bien au-dessus du prix du plan de base."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Une promotion (code SBDAY2026, -50% pendant 3 mois) était visible sur la page de prix et a été exclue des montants enregistrés conformément à la règle anti-promotion ; à revérifier que les prix de liste (29/49/99 $) sont bien les prix réguliers hors promotion."
+  ],
+  "completedLocallyOn": "2026-10-01"
 }

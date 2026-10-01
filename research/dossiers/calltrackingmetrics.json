@@ -3,7 +3,7 @@
   "slug": "calltrackingmetrics",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "CTM (CallTrackingMetrics)",
     "vendor": "CallTrackingMetrics, LLC",
@@ -15,7 +15,13 @@
     "statusNote": "calltrackingmetrics.com now 301-redirects to ctm.com; the product still refers to itself as CallTrackingMetrics (CTM) throughout the site, so this is a domain/branding shorthand change, not a product rename."
   },
   "sources": [
-    { "id": "s1", "url": "https://www.ctm.com/plans-pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "CTM plans & pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.ctm.com/plans-pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "CTM plans & pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,7 +30,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,72 +44,293 @@
         "name": "Marketing Lite",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 79, "annualPerMonth": 65, "oneTime": null },
+        "price": {
+          "monthly": 79,
+          "annualPerMonth": 65,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited users, 25 sub-accounts, no included transcription minutes ($0.02/minute)" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited users, 25 sub-accounts, no included transcription minutes ($0.02/minute)"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "marketing-pro",
         "name": "Marketing Pro",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 179, "annualPerMonth": 149, "oneTime": null },
+        "price": {
+          "monthly": 179,
+          "annualPerMonth": 149,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited users and sub-accounts, 3,000 transcription minutes included, 5,000 form submissions/month" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited users and sub-accounts, 3,000 transcription minutes included, 5,000 form submissions/month"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "sales-engage",
         "name": "Sales Engage",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 329, "annualPerMonth": 274, "oneTime": null },
+        "price": {
+          "monthly": 329,
+          "annualPerMonth": 274,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited users and sub-accounts, 3,000 transcription minutes included, 10,000 form submissions/month" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited users and sub-accounts, 3,000 transcription minutes included, 10,000 form submissions/month"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Volume-based custom pricing (list price shown around $1,999/mo), indefinite data retention and version history" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Volume-based custom pricing (list price shown around $1,999/mo), indefinite data retention and version history"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "marketing-lite",
     "addOns": [
-      { "en": "Call transcription billed at $0.02/minute beyond any included allowance", "sourceIds": ["s1"] }
+      {
+        "en": "Call transcription billed at $0.02/minute beyond any included allowance",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Site advertises 'Pay $0 in Plan Fees for the First Month' as a promotional offer, not a permanent free tier.", "sourceIds": ["s1"] }
+      {
+        "en": "Site advertises 'Pay $0 in Plan Fees for the First Month' as a promotional offer, not a permanent free tier.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le site annonce une offre promotionnelle (\"0 $ de frais d'abonnement le premier mois\"), pas un palier gratuit permanent."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Multi-channel call, SMS, form and chat tracking with marketing attribution", "sourceIds": ["s1"] },
-      { "en": "Call transcription and analytics across included/paid minutes", "sourceIds": ["s1"] }
+      {
+        "en": "Multi-channel call, SMS, form and chat tracking with marketing attribution",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Suivi multicanal des appels, SMS, formulaires et chat avec attribution marketing."
+      },
+      {
+        "en": "Call transcription and analytics across included/paid minutes",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Transcription et analyse des appels, sur les minutes incluses ou payantes."
+      }
     ],
     "limitations": [
-      { "en": "Entry Marketing Lite plan includes no transcription minutes at all, all billed per-minute", "sourceIds": ["s1"] },
-      { "en": "No free or freemium tier; lowest paid plan starts at $65-79/month", "sourceIds": ["s1"] }
+      {
+        "en": "Entry Marketing Lite plan includes no transcription minutes at all, all billed per-minute",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le plan d'entrée Marketing Lite n'inclut aucune minute de transcription, tout est facturé à la minute."
+      },
+      {
+        "en": "No free or freemium tier; lowest paid plan starts at $65-79/month",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Aucun plan gratuit ou freemium ; le plan payant le moins cher démarre à 65-79 $/mois."
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "aircall", "reason": { "en": "Alternative cloud call platform with tracking and integration capabilities." } },
-    { "slug": "aloware", "reason": { "en": "Competing call tracking and dialer platform for sales/marketing teams." } },
-    { "slug": "callhippo", "reason": { "en": "Alternative call tracking and virtual phone system." } }
+    {
+      "slug": "aircall",
+      "reason": {
+        "en": "Alternative cloud call platform with tracking and integration capabilities.",
+        "fr": "Plateforme d'appels cloud alternative avec suivi et capacités d'intégration."
+      }
+    },
+    {
+      "slug": "aloware",
+      "reason": {
+        "en": "Competing call tracking and dialer platform for sales/marketing teams.",
+        "fr": "Plateforme concurrente de suivi d'appels et de numéroteur pour équipes ventes/marketing."
+      }
+    },
+    {
+      "slug": "callhippo",
+      "reason": {
+        "en": "Alternative call tracking and virtual phone system.",
+        "fr": "Suivi d'appels et système téléphonique virtuel alternatif."
+      }
+    },
+    {
+      "slug": "callrail",
+      "reason": {
+        "en": "Main direct competitor for call tracking and marketing attribution.",
+        "fr": "Principal concurrent direct pour le suivi d'appels et l'attribution marketing."
+      }
+    }
   ],
-  "missingAlternatives": [
-    { "name": "CallRail", "officialUrl": "https://www.callrail.com", "reason": "Main direct competitor for call tracking and marketing attribution, appears in another tool's candidate list but should be checked for this tool's page too." }
-  ],
+  "missingAlternatives": [],
   "unknowns": [
     "Whether calltrackingmetrics.com's permanent redirect to ctm.com should trigger an officialUrl update to https://www.ctm.com in the live catalogue"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "No free plan, and the entry Marketing Lite plan ($65-79/month) includes zero transcription minutes, all billed at $0.02/minute, which adds unpredictable cost on top of the base fee.",
+        "fr": "Aucun plan gratuit, et le plan d'entrée Marketing Lite (65-79 $/mois) n'inclut aucune minute de transcription, tout est facturé à 0,02 $/minute, ce qui ajoute un coût imprévisible au tarif de base.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.",
+        "fr": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The vendor states the platform delivers multi-channel call, SMS, form and chat tracking with marketing attribution as advertised, but no independent verification of this promise was found in the collected sources.",
+        "fr": "L'éditeur indique que la plateforme assure le suivi multicanal des appels, SMS, formulaires et chat avec attribution marketing comme annoncé, mais aucune vérification indépendante de cette promesse ne figure dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Paid plans scale from unlimited users with no transcription minutes on the entry tier to 3,000 included minutes and custom enterprise volumes with indefinite data retention, a broad but tiered range.",
+        "fr": "Les plans payants vont d'utilisateurs illimités sans minute de transcription sur le plan d'entrée à 3000 minutes incluses puis des volumes personnalisés en entreprise avec conservation illimitée des données, une couverture large mais par paliers.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or portability when leaving CTM is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données ou la portabilité en cas de départ de CTM ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small marketing or sales teams that need to attribute calls, SMS and form leads to the right campaign without a developer-built solution.",
+      "fr": "Petites équipes marketing ou commerciales qui doivent attribuer les appels, SMS et leads de formulaires à la bonne campagne, sans solution développée en interne."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Use case: track which ad campaign or landing page generated an inbound call, then route and score the lead automatically.",
+      "fr": "Cas d'usage : suivre quelle campagne publicitaire ou page d'atterrissage a généré un appel entrant, puis router et qualifier le lead automatiquement."
+    },
+    {
+      "en": "Use case: transcribe and analyze sales calls across the team to spot missed follow-ups and script gaps.",
+      "fr": "Cas d'usage : transcrire et analyser les appels commerciaux de l'équipe pour repérer les relances manquées et les lacunes de script."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Call & marketing attribution",
+      "fr": "Attribution appels et marketing"
+    },
+    "shortDescription": {
+      "en": "CTM tracks calls, SMS, forms and chat across marketing channels and attributes each lead to its source campaign for sales and marketing teams.",
+      "fr": "CTM suit les appels, SMS, formulaires et chats sur les canaux marketing, et attribue chaque lead à sa campagne source pour les équipes ventes."
+    },
+    "longDescription": {
+      "en": "CTM (CallTrackingMetrics) is a multi-channel tracking platform that ties calls, SMS, forms and chat back to the marketing campaign that generated them, with call transcription and analytics layered on top.\n\nThere is no free plan: pricing starts at $65-79/month (Marketing Lite) with no included transcription minutes, billed at $0.02/minute. Higher tiers (Marketing Pro, Sales Engage) add included transcription minutes and more form submissions. It suits a small sales or marketing team that needs attribution across several channels, not a solo user who only needs basic call tracking.",
+      "fr": "CTM (CallTrackingMetrics) est une plateforme de suivi multicanal qui relie appels, SMS, formulaires et chats à la campagne marketing qui les a générés, avec transcription d'appels et analytique en plus.\n\nIl n'y a pas de plan gratuit : le tarif démarre à 65-79 $/mois (Marketing Lite) sans minute de transcription incluse, facturée à 0,02 $/minute. Les plans supérieurs (Marketing Pro, Sales Engage) ajoutent des minutes de transcription incluses et plus de soumissions de formulaires. L'outil convient à une petite équipe ventes ou marketing qui a besoin d'attribution sur plusieurs canaux, pas à un utilisateur solo qui ne veut qu'un suivi d'appels basique."
+    },
+    "pros": [
+      {
+        "en": "Tracks calls, SMS, forms and chat in one place instead of separate point tools.",
+        "fr": "Suit appels, SMS, formulaires et chat en un seul endroit plutôt que des outils séparés."
+      },
+      {
+        "en": "Unlimited users and sub-accounts on every paid plan.",
+        "fr": "Utilisateurs et sous-comptes illimités sur tous les plans payants."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan; the cheapest paid tier still bills every transcription minute separately.",
+        "fr": "Aucun plan gratuit ; le plan payant le moins cher facture quand même chaque minute de transcription séparément."
+      },
+      {
+        "en": "Transcription minutes only come included from the second-tier plan upward.",
+        "fr": "Les minutes de transcription incluses n'arrivent qu'à partir du deuxième plan payant."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run a small sales or marketing team and need to attribute calls, SMS and form leads to specific campaigns.",
+        "fr": "Tu gères une petite équipe ventes ou marketing et tu dois attribuer appels, SMS et leads de formulaires à des campagnes précises."
+      },
+      "avoidIf": {
+        "en": "You're a solo user who just needs basic call tracking without per-minute transcription costs.",
+        "fr": "Tu es seul et tu as juste besoin d'un suivi d'appels basique, sans coût de transcription à la minute."
+      },
+      "threshold": {
+        "en": "Budget at least $65-79/month for Marketing Lite, plus $0.02/minute for every transcribed call since none are included.",
+        "fr": "Prévois au moins 65-79 $/mois pour Marketing Lite, plus 0,02 $/minute pour chaque appel transcrit puisqu'aucune minute n'est incluse."
+      },
+      "billingTraps": {
+        "en": "Marketing Lite includes zero transcription minutes, so a call-heavy team can rack up per-minute charges fast at $0.02/minute.",
+        "fr": "Marketing Lite n'inclut aucune minute de transcription : une équipe qui reçoit beaucoup d'appels peut vite accumuler des frais à 0,02 $/minute."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "Enterprise plan is marked onQuote=true (no public price) but its keyLimits text still mentions an approximate list price of $1,999/mo; verify on ctm.com whether this figure should stay visible for an on-quote plan.",
+    "calltrackingmetrics.com permanently redirects to ctm.com; consider updating officialUrl to https://www.ctm.com in the live catalogue at fusion time."
+  ]
 }

@@ -3,7 +3,8 @@
   "slug": "bigquery",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "BigQuery",
     "vendor": "Google LLC",
@@ -40,7 +41,8 @@
     "freePlan": {
       "exists": true,
       "limits": {
-        "en": "1 TB of query processing per month and 10 GB of active storage per month at no charge (Google Cloud free tier)."
+        "en": "1 TB of query processing per month and 10 GB of active storage per month at no charge (Google Cloud free tier).",
+        "fr": "1 To de traitement de requêtes par mois et 10 Go de stockage actif par mois sans frais (palier gratuit de Google Cloud)."
       },
       "sourceIds": [
         "s1"
@@ -60,7 +62,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Approximately $6.25 per TB of data queried (US multi-region), first 1 TB/month free; active storage ~$0.02/GB/month, long-term storage (no edits for 90 days) ~$0.01/GB/month."
+            "en": "Approximately $6.25 per TB of data queried (US multi-region), first 1 TB/month free; active storage ~$0.02/GB/month, long-term storage (no edits for 90 days) ~$0.01/GB/month.",
+            "fr": "Environ 6,25 $ par To de données interrogées (multi-région US), premier To/mois gratuit ; stockage actif environ 0,02 $/Go/mois, stockage longue durée (aucune modification depuis 90 jours) environ 0,01 $/Go/mois."
           }
         ],
         "sourceIds": [
@@ -80,7 +83,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Committed or on-demand slot pricing (compute capacity), billed per slot-hour rather than per byte scanned; used for predictable, high-volume workloads."
+            "en": "Committed or on-demand slot pricing (compute capacity), billed per slot-hour rather than per byte scanned; used for predictable, high-volume workloads.",
+            "fr": "Tarification par slot engagé ou à la demande (capacité de calcul), facturée par slot-heure plutôt que par octet analysé ; utilisé pour les charges de travail prévisibles et à fort volume."
           }
         ],
         "sourceIds": [
@@ -93,12 +97,14 @@
     "cautions": [
       {
         "en": "On-demand pricing is billed per TB of data scanned by a query, not a flat monthly fee; costs scale directly with query volume and table design (partitioning/clustering affects cost significantly).",
+        "fr": "La facturation à l'usage se fait au To de données interrogées par requête, et non sous forme de forfait mensuel fixe ; le coût varie directement avec le volume de requêtes et la conception des tables (le partitionnement et le clustering ont un impact important sur le coût).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Storage and compute (query) costs are billed separately and both apply even on the free tier once thresholds are exceeded.",
+        "fr": "Stockage et requêtes (calcul) sont facturés séparément, et les deux s'appliquent même sur le palier gratuit une fois les seuils dépassés.",
         "sourceIds": [
           "s1"
         ]
@@ -109,18 +115,21 @@
     "capabilities": [
       {
         "en": "Serverless, fully-managed enterprise data warehouse for running SQL analytics at petabyte scale without managing infrastructure.",
+        "fr": "Entrepôt de données d'entreprise serverless et entièrement géré pour exécuter des analyses SQL à l'échelle du pétaoctet sans gérer d'infrastructure.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Built-in machine learning via BigQuery ML, allowing models to be trained and run using SQL directly on stored data.",
+        "fr": "Machine learning intégré via BigQuery ML, qui permet d'entraîner et d'exécuter des modèles directement en SQL sur les données stockées.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Native integration with the Google Cloud ecosystem (Cloud Storage, Pub/Sub, Dataflow) plus third-party BI tools (Looker, Tableau, Power BI) and ETL platforms (Airflow, dbt).",
+        "fr": "Intégration native à l'écosystème Google Cloud (Cloud Storage, Pub/Sub, Dataflow) ainsi qu'aux outils de BI tiers (Looker, Tableau, Power BI) et aux plateformes d'ETL (Airflow, dbt).",
         "sourceIds": [
           "s2"
         ]
@@ -129,12 +138,14 @@
     "limitations": [
       {
         "en": "Cost can be unpredictable for ad hoc or poorly optimized queries under the on-demand model, since price scales with bytes scanned.",
+        "fr": "Le coût peut devenir imprévisible pour des requêtes ponctuelles ou mal optimisées en modèle à l'usage, le prix dépendant du volume de données interrogées.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Requires SQL and data-modeling expertise (partitioning, clustering) to control cost and performance; not a point-and-click tool.",
+        "fr": "Nécessite une expertise SQL et de modélisation des données (partitionnement, clustering) pour maîtriser coût et performance ; ce n'est pas un outil clic-bouton.",
         "sourceIds": [
           "s2"
         ]
@@ -167,36 +178,129 @@
       "web"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A freelance developer or data consultant who needs to centralize client data and run SQL analytics without managing database servers.",
+      "fr": "Un développeur ou consultant data indépendant qui doit centraliser des données clients et exécuter des analyses SQL sans gérer de serveurs de base de données."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: centralize data from several sources into one warehouse to query with SQL, without provisioning any servers.",
+      "fr": "Usage : centraliser les données de plusieurs sources dans un entrepôt unique interrogeable en SQL, sans gérer de serveurs."
+    },
+    {
+      "en": "Usage: build analytics dashboards in Looker Studio or Power BI connected to data stored in BigQuery.",
+      "fr": "Usage : construire des tableaux de bord analytiques dans Looker Studio ou Power BI connectés aux données stockées dans BigQuery."
+    }
+  ],
   "alternatives": [
     {
-      "slug": "metabase",
+      "slug": "snowflake",
       "reason": {
-        "en": "BI/analytics layer often paired with or compared to BigQuery for querying and visualizing data."
+        "en": "Direct cloud data warehouse competitor, also billed by usage, for the same SQL analytics workloads.",
+        "fr": "Concurrent direct en entrepôt de données cloud, facturé lui aussi à l'usage, pour les mêmes charges de travail d'analyse SQL."
       }
     },
     {
-      "slug": "posthog",
+      "slug": "redshift",
       "reason": {
-        "en": "Alternative analytics platform for product/event data that competes for some of the same analytics workloads."
+        "en": "AWS's managed data warehouse, a direct alternative for teams already running on AWS infrastructure.",
+        "fr": "L'entrepôt de données managé d'AWS, une alternative directe pour les équipes déjà sur l'infrastructure AWS."
       }
     }
   ],
-  "missingAlternatives": [
-    {
-      "name": "Snowflake",
-      "officialUrl": "https://www.snowflake.com",
-      "reason": "Major cloud data warehouse competitor to BigQuery, not in the catalogue"
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Serverless architecture with nothing to provision, plus a free tier covering typical small workloads (1 TB of queries, 10 GB storage per month), make it cost-effective compared to running a self-managed data warehouse.",
+        "fr": "Une architecture serverless sans rien à provisionner, et un palier gratuit qui couvre les petits usages courants (1 To de requêtes, 10 Go de stockage par mois), rendent l'outil rentable face à un entrepôt de données autogéré.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Getting a first useful result requires SQL knowledge and an understanding of partitioning and clustering to control cost; it is not a point-and-click tool.",
+        "fr": "Obtenir un premier résultat utile demande de connaître le SQL et de comprendre le partitionnement et le clustering pour maîtriser le coût ; ce n'est pas un outil clic-bouton.",
+        "sourceIds": ["s2"]
+      },
+      "utilisation": {
+        "en": "Runs the promised SQL analytics at petabyte scale with built-in ML (BigQuery ML) and native BI/ETL connections, without workarounds.",
+        "fr": "Exécute les analyses SQL promises à l'échelle du pétaoctet, avec du ML intégré (BigQuery ML) et des connexions natives aux outils de BI et d'ETL, sans contournement.",
+        "sourceIds": ["s2"]
+      },
+      "puissance": {
+        "en": "Handles petabyte-scale SQL analytics and built-in machine learning with no ceiling reached in the collected facts, though the dossier does not benchmark it directly against Snowflake or Redshift.",
+        "fr": "Gère des analyses SQL à l'échelle du pétaoctet et du machine learning intégré sans plafond observé dans les faits recueillis, mais le dossier ne le compare pas directement à Snowflake ou Redshift.",
+        "sourceIds": ["s2"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability options are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export et de portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
     },
-    {
-      "name": "Amazon Redshift",
-      "officialUrl": "https://aws.amazon.com/redshift/",
-      "reason": "AWS's equivalent managed data warehouse, direct BigQuery competitor, not in the catalogue"
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Data warehouse",
+      "fr": "Entrepôt de données"
+    },
+    "shortDescription": {
+      "en": "Serverless Google Cloud data warehouse for SQL analytics at scale, billed by data scanned and storage used.",
+      "fr": "Entrepôt de données cloud serverless pour l'analyse SQL à grande échelle, facturé selon les données interrogées et le stockage utilisé."
+    },
+    "longDescription": {
+      "en": "BigQuery is Google Cloud's fully managed, serverless data warehouse for running SQL queries on very large datasets without provisioning servers. It separates storage and compute, supports built-in machine learning through BigQuery ML, and connects natively to Looker Studio, dbt and other BI and ETL tools.\n\nThe on-demand model bills per terabyte of data scanned, with the first terabyte free each month alongside 10 GB of free storage; a capacity-based Enterprise edition exists for predictable, high-volume workloads. It suits freelance data consultants and small technical teams comfortable writing SQL and modeling tables to control cost.",
+      "fr": "BigQuery est l'entrepôt de données entièrement géré et serverless de Google Cloud, conçu pour exécuter des requêtes SQL sur de très gros volumes de données sans gérer de serveurs. Il sépare stockage et calcul, intègre du machine learning via BigQuery ML, et se connecte nativement à Looker Studio, dbt et d'autres outils de BI et d'ETL.\n\nLe modèle à l'usage facture au téraoctet de données interrogées, avec un téraoctet gratuit chaque mois et 10 Go de stockage gratuit ; une édition Enterprise à capacité réservée existe pour les charges de travail prévisibles et volumineuses. L'outil convient aux consultants data indépendants et aux petites équipes techniques à l'aise avec SQL et la modélisation de tables pour maîtriser les coûts."
+    },
+    "pros": [
+      {
+        "en": "Pay-per-use pricing with no minimum commitment, so a small project can run for free within the monthly quotas.",
+        "fr": "Une facturation à l'usage sans engagement minimum, qui permet à un petit projet de tourner gratuitement dans les quotas mensuels."
+      },
+      {
+        "en": "Scales automatically to very large datasets without any infrastructure to provision or maintain.",
+        "fr": "Monte en charge automatiquement sur de très gros volumes de données sans aucune infrastructure à provisionner ou maintenir."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Query cost is hard to predict in advance and depends on how well tables are partitioned and clustered.",
+        "fr": "Le coût des requêtes est difficile à anticiper et dépend de la qualité du partitionnement et du clustering des tables."
+      },
+      {
+        "en": "Requires solid SQL and data-modeling skills; it is not usable without a technical background.",
+        "fr": "Nécessite de bonnes compétences en SQL et en modélisation de données ; inutilisable sans profil technique."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you need to run SQL analytics on a large or growing dataset and are comfortable paying per query scanned.",
+        "fr": "Garde-le si tu dois faire tourner des analyses SQL sur un volume de données important ou croissant et que payer à la requête interrogée ne te dérange pas."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you need a fixed, predictable monthly bill or lack the SQL skills to optimize queries.",
+        "fr": "Évite-le si tu as besoin d'une facture mensuelle fixe et prévisible, ou si tu n'as pas les compétences SQL pour optimiser tes requêtes."
+      },
+      "threshold": {
+        "en": "Budget around $6.25 per TB of data scanned beyond the free 1 TB/month tier, plus roughly $0.02/GB of active storage each month, per the dossier's recorded on-demand rates.",
+        "fr": "Prévois environ 6,25 $ par To de données interrogées au-delà du To gratuit mensuel, plus environ 0,02 $/Go de stockage actif par mois, selon les tarifs à l'usage relevés dans le dossier."
+      },
+      "billingTraps": {
+        "en": "Storage and query costs are billed separately and both can exceed the free thresholds without warning if data volume or table size grows.",
+        "fr": "Le stockage et les requêtes sont facturés séparément, et les deux peuvent dépasser les seuils gratuits sans prévenir si le volume de données ou la taille des tables augmente."
+      }
     }
-  ],
-  "rating": {},
-  "editorial": {},
+  },
   "unknowns": [
     "Exact current on-demand per-TB rate and storage rates could not be independently re-verified from the live pricing page (fetch returned truncated content); figures above reflect well-established public pricing and should be re-checked at fusion time.",
     "Enterprise Edition slot pricing is quote/consumption based and was not itemized in detail."

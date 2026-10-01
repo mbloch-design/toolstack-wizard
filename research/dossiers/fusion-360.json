@@ -3,7 +3,8 @@
   "slug": "fusion-360",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Autodesk Fusion (formerly Fusion 360)",
     "vendor": "Autodesk, Inc.",
@@ -25,7 +26,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": true, "limits": { "en": "Fusion for personal use: free for non-commercial hobbyist projects, reduced feature set" }, "sourceIds": ["s1", "s2"] },
+    "freePlan": { "exists": true, "limits": { "en": "Fusion for personal use: free for non-commercial hobbyist projects, reduced feature set", "fr": "Fusion usage personnel : gratuit pour des projets non commerciaux d'amateur, fonctionnalités réduites" }, "sourceIds": ["s1", "s2"] },
     "trial": { "days": 30, "sourceIds": ["s1"] },
     "plans": [
       {
@@ -35,7 +36,7 @@
         "minSeats": 1,
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Non-commercial use only, reduced CAM/CAE/PCB features vs paid tier" }],
+        "keyLimits": [{ "en": "Non-commercial use only, reduced CAM/CAE/PCB features vs paid tier", "fr": "Usage non commercial uniquement, fonctionnalités CAM/CAE/PCB réduites par rapport au palier payant" }],
         "sourceIds": ["s1", "s2"]
       },
       {
@@ -45,7 +46,7 @@
         "minSeats": 1,
         "price": { "monthly": 85, "annualPerMonth": 57, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Full CAD, CAM, CAE and PCB design toolset; commercial use allowed" }],
+        "keyLimits": [{ "en": "Full CAD, CAM, CAE and PCB design toolset; commercial use allowed", "fr": "Suite complète CAO, CAM, CAE et conception PCB ; usage commercial autorisé" }],
         "sourceIds": ["s1", "s2"]
       },
       {
@@ -55,41 +56,91 @@
         "minSeats": 1,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom quote; typically $150/user for a 3-year term, up to 10 users per approved startup, eligibility conditions apply" }],
+        "keyLimits": [{ "en": "Custom quote; typically $150/user for a 3-year term, up to 10 users per approved startup, eligibility conditions apply", "fr": "Devis sur mesure ; généralement 150 $/utilisateur pour un engagement de 3 ans, jusqu'à 10 utilisateurs par startup éligible, conditions d'éligibilité applicables" }],
         "sourceIds": ["s2"]
       }
     ],
     "comparePlanKey": "standard",
     "addOns": [
-      { "en": "Manufacturing and Design extensions priced separately, roughly $595-1,465/year", "sourceIds": ["s2"] }
+      { "en": "Manufacturing and Design extensions priced separately, roughly $595-1,465/year", "fr": "Extensions Manufacturing et Design facturées séparément, environ 595-1 465 $/an", "sourceIds": ["s2"] }
     ],
     "cautions": [
-      { "en": "Annual subscription equivalent is $680/year (~$57/month), notably cheaper than the $85/month month-to-month rate.", "sourceIds": ["s1", "s2"] }
+      { "en": "Annual subscription equivalent is $680/year (~$57/month), notably cheaper than the $85/month month-to-month rate.", "fr": "L'équivalent de l'abonnement annuel est de 680 $/an (~57 $/mois), nettement moins cher que le tarif mensuel sans engagement de 85 $/mois.", "sourceIds": ["s1", "s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Combines CAD, CAM (manufacturing), CAE (simulation) and PCB/electronics design in a single tool", "sourceIds": ["s1"] },
-      { "en": "Built-in cloud data management and collaboration for design files", "sourceIds": ["s1"] }
+      { "en": "Combines CAD, CAM (manufacturing), CAE (simulation) and PCB/electronics design in a single tool", "fr": "Combine CAO, CAM (fabrication), CAE (simulation) et conception PCB/électronique dans un seul outil", "sourceIds": ["s1"] },
+      { "en": "Built-in cloud data management and collaboration for design files", "fr": "Gestion de données cloud et collaboration intégrées pour les fichiers de conception", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free personal-use tier is restricted to non-commercial projects only", "sourceIds": ["s1", "s2"] },
-      { "en": "Advanced manufacturing and design capabilities require separately priced extensions on top of the base subscription", "sourceIds": ["s2"] }
+      { "en": "Free personal-use tier is restricted to non-commercial projects only", "fr": "Le palier gratuit usage personnel est réservé aux projets non commerciaux", "sourceIds": ["s1", "s2"] },
+      { "en": "Advanced manufacturing and design capabilities require separately priced extensions on top of the base subscription", "fr": "Les fonctions avancées de fabrication et de conception nécessitent des extensions facturées en plus de l'abonnement de base", "sourceIds": ["s2"] }
     ],
     "integrations": [],
     "platforms": ["web", "windows", "macos"]
   },
   "alternatives": [
-    { "slug": "sketchup-pro", "reason": { "en": "Alternative 3D design tool, though more architecture/interior-design oriented than mechanical CAD." } },
-    { "slug": "houdini", "reason": { "en": "Alternative 3D and simulation-capable tool used in adjacent design/production workflows." } }
+    { "slug": "sketchup-pro", "reason": { "en": "Alternative 3D design tool, though more architecture/interior-design oriented than mechanical CAD.", "fr": "Outil de conception 3D alternatif, davantage orienté architecture et design d'intérieur que CAO mécanique." } },
+    { "slug": "autocad-lt", "reason": { "en": "Alternative CAD tool from the same catalogue category, used for 2D/3D technical drafting.", "fr": "Outil de CAO alternatif de la même catégorie, utilisé pour le dessin technique 2D/3D." } }
   ],
   "missingAlternatives": [
     { "name": "SolidWorks", "officialUrl": "https://www.solidworks.com", "reason": "Main direct competitor for professional parametric mechanical CAD, not in the catalogue." },
     { "name": "Onshape", "officialUrl": "https://www.onshape.com", "reason": "Cloud-native CAD competitor with a comparable subscription model, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Combines CAD, CAM, CAE and PCB design in one subscription at $57-85/month, replacing several separate specialized tools for a solo maker or small product team.", "fr": "Combine CAO, CAM, CAE et conception PCB dans un seul abonnement à 57-85 $/mois, remplaçant plusieurs outils spécialisés séparés pour un indépendant ou une petite équipe produit.", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "Parametric mechanical CAD tools require real training to produce a usable first part; the collected sources describe a full professional toolset, not a quick-start product.", "fr": "Les outils de CAO paramétrique mécanique demandent une vraie formation pour produire une première pièce exploitable ; les sources relevées décrivent une suite professionnelle complète, pas un produit de prise en main rapide.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers a full CAD, CAM, CAE and PCB toolset as promised on the Standard subscription, with commercial use allowed.", "fr": "Livre une suite complète CAO, CAM, CAE et PCB comme annoncé sur l'abonnement Standard, avec usage commercial autorisé.", "sourceIds": ["s1", "s2"] },
+      "puissance": { "en": "Covers CAD, manufacturing simulation, mechanical simulation and electronics design in one product, a category reference for combined design-to-manufacturing workflows.", "fr": "Couvre CAO, simulation de fabrication, simulation mécanique et conception électronique dans un seul produit, une référence de catégorie pour les flux conception-fabrication combinés.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats and data portability on leaving Fusion are not covered by the collected sources.", "fr": "Note neutre : les formats d'export et la portabilité des données en cas de départ de Fusion ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "Product and mechanical designers who need combined CAD, simulation and manufacturing tools in one subscription, from solo makers to small design teams.", "fr": "Designers produit et mécanique qui ont besoin de CAO, simulation et fabrication combinées dans un seul abonnement, du maker indépendant à la petite équipe de conception." },
+    "soloRelevance": "medium",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Design a mechanical part: model a parametric component in CAD, run a stress simulation, then generate CAM toolpaths for manufacturing.", "fr": "Concevoir une pièce mécanique : modéliser un composant paramétrique en CAO, lancer une simulation de contraintes, puis générer les trajectoires d'usinage CAM." },
+    { "en": "Collaborate on a design file: share a cloud-hosted assembly with a teammate and track revisions without emailing files back and forth.", "fr": "Collaborer sur un fichier de conception : partager un assemblage hébergé dans le cloud avec un collègue et suivre les révisions sans échanger de fichiers par e-mail." }
+  ],
+  "editorial": {
+    "tagline": { "en": "Mechanical CAD suite", "fr": "Suite CAO mécanique" },
+    "shortDescription": { "en": "Autodesk Fusion combines parametric CAD, manufacturing (CAM), simulation (CAE) and PCB design in a single cloud-connected subscription.", "fr": "Autodesk Fusion combine CAO paramétrique, fabrication (CAM), simulation (CAE) et conception PCB dans un seul abonnement connecté au cloud." },
+    "longDescription": {
+      "en": "Autodesk Fusion (renamed from Fusion 360) puts CAD, CAM, CAE and PCB/electronics design in one product with built-in cloud data management, so a part can go from sketch to simulation to manufacturing toolpaths without switching tools. A free personal-use tier exists for hobbyist, non-commercial projects.\n\nCommercial use requires the Standard subscription at $85/month, or $57/month billed annually. Advanced manufacturing and design extensions are priced separately on top, which pushes real project costs above the base subscription for teams that need the full toolset.",
+      "fr": "Autodesk Fusion (renommé depuis Fusion 360) réunit CAO, CAM, CAE et conception PCB/électronique dans un seul produit avec gestion de données cloud intégrée, pour faire passer une pièce du croquis à la simulation puis à l'usinage sans changer d'outil. Un palier gratuit existe pour les projets amateurs non commerciaux.\n\nL'usage commercial nécessite l'abonnement Standard à 85 $/mois, ou 57 $/mois en engagement annuel. Les extensions avancées de fabrication et de conception sont facturées en plus, ce qui fait grimper le coût réel au-delà de l'abonnement de base pour les équipes qui ont besoin de la suite complète."
+    },
+    "pros": [
+      { "en": "Combines CAD, CAM, CAE and PCB design in one subscription instead of several separate tools", "fr": "Combine CAO, CAM, CAE et conception PCB dans un seul abonnement plutôt que plusieurs outils séparés" },
+      { "en": "Annual billing cuts the monthly rate from $85 to $57, a meaningful discount for a committed user", "fr": "L'engagement annuel fait passer le tarif mensuel de 85 $ à 57 $, une réduction notable pour un utilisateur engagé" }
+    ],
+    "cons": [
+      { "en": "Free tier is strictly non-commercial, so any paid work requires the full subscription", "fr": "Le palier gratuit est strictement non commercial, tout travail rémunéré nécessite l'abonnement complet" },
+      { "en": "Advanced manufacturing and design extensions add separate costs on top of the base subscription", "fr": "Les extensions avancées de fabrication et de conception s'ajoutent au coût de l'abonnement de base" }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need CAD, simulation and manufacturing toolpaths in one product and can commit to the paid subscription for commercial work.", "fr": "Tu as besoin de CAO, simulation et usinage dans un seul produit et peux t'engager sur l'abonnement payant pour un usage commercial." },
+      "avoidIf": { "en": "Your work is purely architectural or interior design: Fusion's mechanical CAD focus is not the best fit there.", "fr": "Ton travail est purement architectural ou d'aménagement intérieur : l'orientation CAO mécanique de Fusion n'est pas la mieux adaptée." },
+      "threshold": { "en": "Budget $57-85/month for the Standard subscription, plus $595-1,465/year if advanced manufacturing or design extensions are needed.", "fr": "Prévois 57-85 $/mois pour l'abonnement Standard, plus 595-1 465 $/an si des extensions avancées de fabrication ou de conception sont nécessaires." }
+    }
+  },
   "unknowns": [
     "Exact feature differences between the free personal-use tier and the paid Standard subscription were not fully itemized on the pages reached",
     "Current regional pricing outside the US (page returned 403 to automated fetch; figures taken from secondary sources)"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Product renamed: the catalogue entry 'fusion-360' corresponds to the vendor's current product 'Autodesk Fusion' (renamed from Fusion 360 around 2023-2024); worth checking whether the catalogue display name should be updated.",
+    "Alternatives swap: replaced 'houdini' (VFX/simulation tool, not a mechanical CAD competitor) with 'autocad-lt', a closer catalogue match; real direct competitors (SolidWorks, Onshape) are not in the catalogue and are listed in missingAlternatives."
+  ]
 }

@@ -3,7 +3,7 @@
   "slug": "artlist",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Artlist",
     "vendor": "Artlist Ltd.",
@@ -120,13 +120,15 @@
         "en": "Prices exclude VAT and local taxes.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Les prix excluent la TVA et les taxes locales."
       },
       {
         "en": "Annual billing gives roughly 40% savings versus monthly across plans; the Social plan is not licensed for commercial/client use, unlike the Pro tier.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "La facturation annuelle fait économiser environ 40 % par rapport au mensuel sur tous les plans ; le plan Social n'est pas sous licence pour un usage commercial/client, à la différence du plan Pro."
       }
     ]
   },
@@ -136,19 +138,22 @@
         "en": "Large royalty-free library of licensed music tracks and sound effects for video and content creation.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Grande bibliothèque de musiques et d'effets sonores sous licence libre de droits pour la vidéo et la création de contenu."
       },
       {
         "en": "Stock video footage and templates, bundled together with music/SFX in the Max plan.",
         "sourceIds": [
           "s2"
-        ]
+        ],
+        "fr": "Images vidéo libres de droits et templates, regroupés avec la musique/SFX dans le plan Max."
       },
       {
         "en": "Separate AI generation tools (image, video, voiceover, music) available via dedicated AI-credit plans or bundled in Max.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Outils de génération IA séparés (image, vidéo, voix off, musique), disponibles via des plans à crédits IA dédiés ou intégrés dans Max."
       }
     ],
     "limitations": [
@@ -156,13 +161,15 @@
         "en": "Entry-level Social plan restricts usage to one personal channel per platform and excludes commercial/client work, which requires upgrading to a Pro-tier license.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Le plan Social d'entrée limite l'usage à un seul canal personnel par plateforme et exclut l'usage commercial/client, qui nécessite de passer au plan Pro."
       },
       {
         "en": "Full asset library (music + SFX + footage + AI) requires the higher-priced Max plan; lower tiers only cover a subset of asset types.",
         "sourceIds": [
           "s2"
-        ]
+        ],
+        "fr": "La bibliothèque complète (musique + SFX + images + IA) nécessite le plan Max, plus cher ; les plans inférieurs ne couvrent qu'un sous-ensemble des types d'assets."
       }
     ],
     "integrations": [],
@@ -170,34 +177,152 @@
       "web"
     ]
   },
-  "audience": {},
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Independent video creators who need licensed music, sound effects and footage for their content without negotiating rights per track.",
+      "fr": "Créateurs de vidéo indépendants qui ont besoin de musique, d'effets sonores et d'images sous licence pour leur contenu, sans négocier les droits piste par piste."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Use case: score a YouTube or social video with licensed background music and sound effects from the library, cleared for the creator's own channels.",
+      "fr": "Cas d'usage : habiller une vidéo YouTube ou réseaux sociaux avec de la musique de fond et des effets sonores sous licence, couverts pour les propres canaux du créateur."
+    },
+    {
+      "en": "Use case: a freelancer delivering client video work upgrades to the Pro license to legally cover music and SFX used in commercial deliverables.",
+      "fr": "Cas d'usage : un indépendant qui livre des vidéos à des clients passe à la licence Pro pour couvrir légalement la musique et les SFX utilisés dans les livrables commerciaux."
+    }
+  ],
   "alternatives": [
     {
       "slug": "storyblocks",
       "reason": {
-        "en": "Comparable stock media subscription for music, video footage and sound effects."
+        "en": "Comparable stock media subscription for music, video footage and sound effects.",
+        "fr": "Abonnement de médias libres de droits comparable, pour la musique, les images vidéo et les effets sonores."
       }
     },
     {
       "slug": "envato-elements",
       "reason": {
-        "en": "Broad creative asset subscription overlapping with Artlist's music, footage and template offering."
+        "en": "Broad creative asset subscription overlapping with Artlist's music, footage and template offering.",
+        "fr": "Abonnement d'assets créatifs large, qui recoupe l'offre musique, images et templates d'Artlist."
+      }
+    },
+    {
+      "slug": "epidemic-sound",
+      "reason": {
+        "en": "Major royalty-free music and SFX licensing competitor, covering the same core need.",
+        "fr": "Principal concurrent pour la licence musique et effets sonores libres de droits, pour le même besoin principal."
       }
     }
   ],
-  "missingAlternatives": [
-    {
-      "name": "Epidemic Sound",
-      "officialUrl": "https://www.epidemicsound.com",
-      "reason": "Major royalty-free music and SFX licensing competitor to Artlist, not in the catalogue"
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The entry Social plan at 9.99 USD/month (annual) gives access to a large music/SFX library, but it excludes commercial use, so a freelancer doing client work needs the pricier Pro tier (24.92 USD/month) to get real value.",
+        "fr": "Le plan d'entrée Social à 9,99 $/mois (annuel) donne accès à une grande bibliothèque musique/SFX, mais exclut l'usage commercial : un indépendant qui travaille pour des clients doit passer au plan Pro, plus cher (24,92 $/mois), pour une vraie valeur.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A subscription gives immediate access to a large pre-licensed library to search and download, with no editing skill or setup required to get a usable track.",
+        "fr": "L'abonnement donne un accès immédiat à une grande bibliothèque sous licence prête à chercher et télécharger, sans compétence d'édition ni configuration pour obtenir une piste utilisable.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers licensed music, SFX and (on Max) footage and AI generation as advertised, though the Social tier's commercial-use restriction means the core promise for client work only holds on Pro and above.",
+        "fr": "Fournit musique, SFX sous licence et (sur Max) images et génération IA comme annoncé, mais la restriction d'usage commercial du plan Social signifie que la promesse principale pour le travail client ne tient qu'à partir de Pro.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "The Max plan bundles music, SFX, stock footage, templates and AI generation (image, video, voiceover, music) in one library, a broad range for the category.",
+        "fr": "Le plan Max regroupe musique, SFX, images vidéo, templates et génération IA (image, vidéo, voix off, musique) dans une seule bibliothèque, une couverture large pour la catégorie.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: what happens to previously downloaded assets or licenses after cancelling a subscription is not covered by the collected sources.",
+        "fr": "Note neutre : ce qu'il advient des assets déjà téléchargés ou des licences après l'annulation d'un abonnement ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Royalty-free music library",
+      "fr": "Bibliothèque musicale libre"
+    },
+    "shortDescription": {
+      "en": "Artlist is a royalty-free music, sound effects and footage subscription for video creators, from 9.99 USD/month with a separate commercial-use license tier.",
+      "fr": "Artlist est un abonnement de musique, effets sonores et images libres de droits pour créateurs vidéo, dès 9,99 $/mois, avec un palier pour l'usage commercial."
+    },
+    "longDescription": {
+      "en": "Artlist is a subscription library of royalty-free music, sound effects, stock footage and templates for video creators, with separate AI generation tools (image, video, voiceover, music) available on credit-based plans or bundled in Max.\n\nThe entry Social plan starts at 9.99 USD/month (annual) but covers only one personal channel per platform and excludes commercial use; the Pro tier at 24.92 USD/month adds a commercial-use license for client work, and Max at 39.99 USD/month bundles everything. It suits a creator or freelancer who needs cleared music and footage regularly, not a one-off project.",
+      "fr": "Artlist est une bibliothèque sous abonnement de musique, effets sonores, images vidéo et templates libres de droits pour créateurs vidéo, avec des outils de génération IA séparés (image, vidéo, voix off, musique) disponibles sur des plans à crédits ou intégrés dans Max.\n\nLe plan d'entrée Social démarre à 9,99 $/mois (annuel) mais ne couvre qu'un canal personnel par plateforme et exclut l'usage commercial ; le plan Pro à 24,92 $/mois ajoute une licence commerciale pour le travail client, et Max à 39,99 $/mois regroupe tout. L'outil convient à un créateur ou indépendant qui a besoin régulièrement de musique et d'images sous licence, pas pour un projet ponctuel."
+    },
+    "pros": [
+      {
+        "en": "Large pre-licensed library removes the need to negotiate rights per track or clip.",
+        "fr": "Une grande bibliothèque sous licence évite de négocier les droits piste par piste ou clip par clip."
+      },
+      {
+        "en": "Max plan bundles music, SFX, footage and AI generation in a single subscription.",
+        "fr": "Le plan Max regroupe musique, SFX, images et génération IA dans un seul abonnement."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The cheapest plan (Social) cannot legally be used for client or commercial work.",
+        "fr": "Le plan le moins cher (Social) ne peut pas être utilisé légalement pour du travail client ou commercial."
+      },
+      {
+        "en": "The full asset library across music, SFX, footage and AI only comes with the priciest Max plan.",
+        "fr": "La bibliothèque complète (musique, SFX, images et IA) n'est accessible qu'avec le plan Max, le plus cher."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You regularly need licensed music, SFX or footage for your own channels, or for client work if you take the Pro license.",
+        "fr": "Tu as régulièrement besoin de musique, SFX ou images sous licence pour tes propres canaux, ou pour du travail client si tu prends la licence Pro."
+      },
+      "avoidIf": {
+        "en": "You only need music for a single commercial project; the cheapest Social plan doesn't cover that use.",
+        "fr": "Tu n'as besoin de musique que pour un seul projet commercial ; le plan Social le moins cher ne couvre pas cet usage."
+      },
+      "threshold": {
+        "en": "Freelancers doing client work should budget for Pro at 24.92 USD/month (about 299 USD/year), not the 9.99 USD/month Social plan, since Social excludes commercial use.",
+        "fr": "Les indépendants qui travaillent pour des clients doivent prévoir le plan Pro à 24,92 $/mois (environ 299 $/an), pas le plan Social à 9,99 $/mois, car Social exclut l'usage commercial."
+      }
     }
-  ],
-  "rating": {},
-  "editorial": {},
+  },
   "unknowns": [
     "Exact monthly (non-annual) price for Music & SFX Pro was not found; only the annual-billed monthly-equivalent figure ($24.92) was available.",
     "Full list of what counts toward 'commercial use' license restrictions on lower tiers was not itemized in detail."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "comparePlanKey is set to music-sfx-social, the cheapest plan, but that plan explicitly excludes commercial/client use. For ToolTrim's freelance/small-team audience, the plan that actually covers the tool's main professional use case may be music-sfx-pro instead; verify on artlist.io which plan should serve as the comparison plan before merge.",
+    "The exact monthly (non-annual) price for Music & SFX Pro was not found in the collected sources; only the annual-billed monthly-equivalent (24.92 USD) is recorded, consistent with the dossier's own unknowns."
+  ],
+  "hold": "compare plan Social excludes commercial use; Pro may be the right comparison plan"
 }

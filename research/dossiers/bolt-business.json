@@ -3,7 +3,7 @@
   "slug": "bolt-business",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Bolt Business",
     "vendor": "Bolt Technology OÜ",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://bolt.eu/en/blog/bolt-business-pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Bolt Business pricing blog post" }
+    {
+      "id": "s1",
+      "url": "https://bolt.eu/en/blog/bolt-business-pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Bolt Business pricing blog post"
+    }
   ],
   "pricing": {
     "model": "free",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "EU",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "No subscription fee, no per-seat charge, no activation cost, no minimum spend; pay only for rides taken at standard Bolt consumer fares.", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "No subscription fee, no per-seat charge, no activation cost, no minimum spend; pay only for rides taken at standard Bolt consumer fares.",
+        "fr": "Aucun abonnement, aucun frais par siège, aucun coût d'activation, aucune dépense minimale ; on paie uniquement les trajets effectués, aux tarifs standards Bolt grand public."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,36 +47,207 @@
         "name": "Bolt Business (free account, pay per ride)",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "No fixed price; costs are entirely per-ride, at the same fares as standard Bolt consumer rides, which vary by city and demand (surge pricing applies).", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "No fixed price; costs are entirely per-ride, at the same fares as standard Bolt consumer rides, which vary by city and demand (surge pricing applies).",
+            "fr": "Pas de prix fixe ; les coûts sont entièrement au trajet, aux mêmes tarifs que les trajets Bolt grand public standards, qui varient selon la ville et la demande (tarification dynamique applicable)."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "There is no fixed per-ride rate: fares vary by city and fluctuate with demand/surge pricing, so no single number can represent 'the price' of the service.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "There is no fixed per-ride rate: fares vary by city and fluctuate with demand/surge pricing, so no single number can represent 'the price' of the service.",
+        "fr": "Il n'y a pas de tarif fixe par trajet : les prix varient selon la ville et fluctuent avec la demande/tarification dynamique, donc aucun chiffre unique ne peut représenter « le prix » du service.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Centralized ride management for teams: add employees, set spending controls, and get a single consolidated monthly invoice.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Multi-modal transport options in one platform: rides, e-scooters, e-bikes and car rentals.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Expense reporting integrations for corporate accounting workflows.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Centralized ride management for teams: add employees, set spending controls, and get a single consolidated monthly invoice.",
+        "fr": "Gestion centralisée des trajets pour les équipes : ajoute des employés, définit des plafonds de dépense, et reçoit une facture mensuelle unique consolidée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Multi-modal transport options in one platform: rides, e-scooters, e-bikes and car rentals.",
+        "fr": "Options de transport multimodal sur une seule plateforme : trajets, trottinettes électriques, vélos électriques et location de voiture.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Expense reporting integrations for corporate accounting workflows.",
+        "fr": "Intégrations de notes de frais pour les flux comptables en entreprise.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No fixed subscription pricing means costs are unpredictable and depend entirely on ride volume and local surge pricing.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Service availability and fare competitiveness depend on the city; Bolt does not operate everywhere Uber does.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No fixed subscription pricing means costs are unpredictable and depend entirely on ride volume and local surge pricing.",
+        "fr": "L'absence de tarification fixe par abonnement rend les coûts imprévisibles, car ils dépendent entièrement du volume de trajets et de la tarification dynamique locale.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Service availability and fare competitiveness depend on the city; Bolt does not operate everywhere Uber does.",
+        "fr": "La disponibilité du service et la compétitivité des tarifs dépendent de la ville ; Bolt n'est pas présent partout où Uber l'est.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
   "alternatives": [],
-  "missingAlternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Uber for Business",
+      "officialUrl": "https://www.uber.com/us/en/business/",
+      "reason": "Main global competitor for corporate ride management, not present in the catalogue."
+    }
+  ],
   "unknowns": [
     "No currentAlternatives or clear same-category catalogue matches were found among the seed's alternativeCandidates (mostly unrelated finance/payment tools), so alternatives list is left empty.",
     "Exact enterprise-tier features (if any beyond the free self-serve account) not confirmed; the source describes only the free, pay-per-ride model."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "No subscription, no per-seat fee and no minimum spend means a team only pays for rides it actually takes, with a single consolidated invoice replacing individual expense claims.",
+        "fr": "Aucun abonnement, aucun frais par siège et aucune dépense minimale signifient qu'une équipe ne paie que les trajets réellement pris, avec une facture unique consolidée qui remplace les notes de frais individuelles.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Adding employees and setting spending controls is the only setup step before the team can start booking rides on standard consumer fares.",
+        "fr": "Ajouter des employés et définir des plafonds de dépense est la seule étape de configuration avant que l'équipe puisse réserver des trajets aux tarifs grand public standards.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers centralized ride management and a single invoice as described, but costs remain unpredictable since fares vary by city and surge pricing.",
+        "fr": "Fournit la gestion centralisée des trajets et une facture unique comme annoncé, mais les coûts restent imprévisibles car les tarifs varient selon la ville et la tarification dynamique.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers rides, e-scooters, e-bikes and car rentals under one account, but availability and fare competitiveness depend heavily on the city.",
+        "fr": "Couvre trajets, trottinettes électriques, vélos électriques et location de voiture sous un seul compte, mais la disponibilité et la compétitivité des tarifs dépendent fortement de la ville.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether ride history and expense data can be exported if a team switches providers is not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité d'exporter l'historique des trajets et les données de dépenses en cas de changement de fournisseur ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An operations or office manager at a small team who needs to centralize employee ride expenses with spending controls and one invoice, without negotiating a corporate transport contract.",
+      "fr": "Une ou un responsable ops ou admin dans une petite équipe qui doit centraliser les dépenses de trajets des employés avec des plafonds de dépense et une facture unique, sans négocier un contrat de transport d'entreprise."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Client meeting trips: let employees book rides to client meetings under a company account with a spending limit, instead of claiming taxi receipts individually.",
+      "fr": "Déplacements en rendez-vous client : laisse les employés réserver des trajets vers des rendez-vous clients sous un compte entreprise avec un plafond de dépense, au lieu de faire des notes de frais individuelles pour les taxis."
+    },
+    {
+      "en": "Monthly expense consolidation: replace dozens of individual ride receipts with one consolidated monthly invoice for accounting.",
+      "fr": "Consolidation mensuelle des dépenses : remplace des dizaines de reçus de trajets individuels par une seule facture mensuelle consolidée pour la comptabilité."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Business ride management",
+      "fr": "Gestion des trajets entreprise"
+    },
+    "shortDescription": {
+      "en": "Bolt Business centralizes employee ride, scooter and car rental expenses on one invoice with spending controls, at no subscription cost.",
+      "fr": "Bolt Business centralise les dépenses de trajets, trottinettes et location de voiture des employés sur une facture, avec des plafonds de dépense, sans coût d'abonnement."
+    },
+    "longDescription": {
+      "en": "Bolt Business is a free corporate account layer on top of Bolt's consumer transport network: rides, e-scooters, e-bikes and car rentals. Admins add employees, set spending controls and receive one consolidated monthly invoice instead of individual receipts.\n\nThere is no subscription fee, per-seat charge or minimum spend; the company only pays for rides at standard Bolt consumer fares, which vary by city and fluctuate with demand. It suits a small team's operations manager who wants centralized, controlled travel expenses without negotiating a corporate contract.",
+      "fr": "Bolt Business est une couche de compte entreprise gratuite au-dessus du réseau de transport grand public de Bolt : trajets, trottinettes électriques, vélos électriques et location de voiture. Les admins ajoutent des employés, définissent des plafonds de dépense et reçoivent une facture mensuelle unique consolidée au lieu de reçus individuels.\n\nIl n'y a ni frais d'abonnement, ni frais par siège, ni dépense minimale ; l'entreprise ne paie que les trajets aux tarifs grand public Bolt standards, qui varient selon la ville et fluctuent avec la demande. L'outil convient à un·e responsable ops de petite équipe qui veut des dépenses de déplacement centralisées et maîtrisées sans négocier de contrat d'entreprise."
+    },
+    "pros": [
+      {
+        "en": "No subscription or per-seat fee at all; a small team can set it up and only pay for rides actually taken.",
+        "fr": "Aucun abonnement ni frais par siège ; une petite équipe peut le mettre en place et ne payer que les trajets réellement pris."
+      },
+      {
+        "en": "One consolidated monthly invoice replaces individual ride receipts, simplifying expense reporting for the admin.",
+        "fr": "Une facture mensuelle unique consolidée remplace les reçus de trajets individuels, ce qui simplifie les notes de frais pour l'admin."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Costs are entirely unpredictable month to month since fares depend on city and real-time demand rather than a fixed rate.",
+        "fr": "Les coûts sont totalement imprévisibles d'un mois à l'autre, car les tarifs dépendent de la ville et de la demande en temps réel plutôt que d'un tarif fixe."
+      },
+      {
+        "en": "Service availability and fare competitiveness depend on the city, with no guarantee Bolt covers every location a team travels to.",
+        "fr": "La disponibilité du service et la compétitivité des tarifs dépendent de la ville, sans garantie que Bolt couvre chaque lieu où une équipe se déplace."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Your team needs occasional business rides with spending controls and one consolidated invoice, and Bolt operates in your cities.",
+        "fr": "Ton équipe a besoin de trajets professionnels occasionnels avec des plafonds de dépense et une facture unique consolidée, et Bolt opère dans tes villes."
+      },
+      "avoidIf": {
+        "en": "You need predictable, fixed monthly transport costs for budgeting, since fares here fluctuate with city and demand.",
+        "fr": "Tu as besoin de coûts de transport mensuels fixes et prévisibles pour ton budget, car les tarifs ici fluctuent selon la ville et la demande."
+      },
+      "threshold": {
+        "en": "No fixed threshold to budget: costs scale with actual ride volume at standard local Bolt fares, so track usage rather than a flat monthly number.",
+        "fr": "Pas de seuil fixe à budgéter : les coûts suivent le volume réel de trajets aux tarifs Bolt locaux standards, donc il faut suivre l'usage plutôt qu'un montant mensuel fixe."
+      }
+    }
+  },
+  "reviewNotes": [],
+  "completedLocallyOn": "2026-10-01"
 }

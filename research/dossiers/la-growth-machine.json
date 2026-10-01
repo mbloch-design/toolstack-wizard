@@ -3,7 +3,6 @@
   "slug": "la-growth-machine",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
   "identity": {
     "officialName": "La Growth Machine",
     "vendor": "La Growth Machine",
@@ -34,7 +33,7 @@
         "minSeats": 1,
         "price": { "monthly": 60, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "LinkedIn and email automation only, 250 leads enriched/month, 1 sending email per identity, up to 3 identities, 3 team members" }],
+        "keyLimits": [{ "en": "LinkedIn and email automation only, 250 leads enriched/month, 1 sending email per identity, up to 3 identities, 3 team members", "fr": "Automatisation LinkedIn et email uniquement, 250 leads enrichis par mois, 1 email d'envoi par identité, jusqu'à 3 identités, 3 membres d'équipe" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +43,7 @@
         "minSeats": 1,
         "price": { "monthly": 120, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds calls channel, 400 leads enriched/month, up to 6 active campaigns, unlimited identities, 25 team members, A/B testing" }],
+        "keyLimits": [{ "en": "Adds calls channel, 400 leads enriched/month, up to 6 active campaigns, unlimited identities, 25 team members, A/B testing", "fr": "Ajoute le canal appels, 400 leads enrichis par mois, jusqu'à 6 campagnes actives, identités illimitées, 25 membres d'équipe, tests A/B" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,29 +53,29 @@
         "minSeats": 1,
         "price": { "monthly": 120, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds X (Twitter) channel, 1,000 leads enriched/month, unlimited campaigns and team members, HubSpot/Pipedrive sync" }],
+        "keyLimits": [{ "en": "Adds X (Twitter) channel, 1,000 leads enriched/month, unlimited campaigns and team members, HubSpot/Pipedrive sync", "fr": "Ajoute le canal X (Twitter), 1 000 leads enrichis par mois, campagnes et membres d'équipe illimités, synchronisation HubSpot/Pipedrive" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "basic",
     "addOns": [],
     "cautions": [
-      { "en": "Pricing is per identity (per sending account), not a flat account price: cost scales directly with the number of LinkedIn/email identities used.", "sourceIds": ["s1"] },
-      { "en": "Pro and Ultimate share the same €120/month per-identity list price; the difference is in included channels and features, not price.", "sourceIds": ["s1"] },
-      { "en": "Annual billing gives 2 months free on Pro and Ultimate, not reflected in the monthly figures listed here.", "sourceIds": ["s1"] }
+      { "en": "Pricing is per identity (per sending account), not a flat account price: cost scales directly with the number of LinkedIn/email identities used.", "fr": "Le tarif est par identité (par compte d'envoi), pas un prix de compte forfaitaire : le coût augmente directement avec le nombre d'identités LinkedIn/email utilisées.", "sourceIds": ["s1"] },
+      { "en": "Pro and Ultimate share the same €120/month per-identity list price; the difference is in included channels and features, not price.", "fr": "Pro et Ultimate affichent le même tarif de 120 €/mois par identité ; la différence porte sur les canaux et fonctionnalités inclus, pas sur le prix.", "sourceIds": ["s1"] },
+      { "en": "Annual billing gives 2 months free on Pro and Ultimate, not reflected in the monthly figures listed here.", "fr": "La facturation annuelle offre 2 mois gratuits sur Pro et Ultimate, non reflétés dans les montants mensuels indiqués ici.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Multi-channel outbound automation combining LinkedIn, email, and (on higher tiers) calls and X (Twitter) in a single sequence.", "sourceIds": ["s1"] },
-      { "en": "Built-in lead enrichment with a monthly quota that scales by plan (250 to 1,000 leads/month).", "sourceIds": ["s1"] },
-      { "en": "Multichannel inbox and A/B testing on campaigns from the Pro tier up.", "sourceIds": ["s1"] },
-      { "en": "CRM sync (HubSpot, Pipedrive) and CRM enrichment on the top Ultimate tier.", "sourceIds": ["s1"] }
+      { "en": "Multi-channel outbound automation combining LinkedIn, email, and (on higher tiers) calls and X (Twitter) in a single sequence.", "fr": "Automatisation de prospection multicanal combinant LinkedIn, email et, sur les offres supérieures, appels et X (Twitter) dans une seule séquence.", "sourceIds": ["s1"] },
+      { "en": "Built-in lead enrichment with a monthly quota that scales by plan (250 to 1,000 leads/month).", "fr": "Enrichissement de leads intégré avec un quota mensuel qui augmente selon le plan (250 à 1 000 leads par mois).", "sourceIds": ["s1"] },
+      { "en": "Multichannel inbox and A/B testing on campaigns from the Pro tier up.", "fr": "Boîte de réception multicanal et tests A/B sur les campagnes à partir du plan Pro.", "sourceIds": ["s1"] },
+      { "en": "CRM sync (HubSpot, Pipedrive) and CRM enrichment on the top Ultimate tier.", "fr": "Synchronisation CRM (HubSpot, Pipedrive) et enrichissement CRM sur le plan Ultimate.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Basic plan is capped at 3 sending identities and does not include the calls or X channels.", "sourceIds": ["s1"] },
-      { "en": "No free plan; only a 14-day trial before billing starts.", "sourceIds": ["s1"] },
-      { "en": "CRM sync (HubSpot/Pipedrive) requires the top Ultimate tier, not available on Basic or Pro.", "sourceIds": ["s1"] }
+      { "en": "Basic plan is capped at 3 sending identities and does not include the calls or X channels.", "fr": "Le plan Basic est limité à 3 identités d'envoi et n'inclut pas les canaux appels ou X.", "sourceIds": ["s1"] },
+      { "en": "No free plan; only a 14-day trial before billing starts.", "fr": "Pas de plan gratuit : seulement un essai de 14 jours avant le début de la facturation.", "sourceIds": ["s1"] },
+      { "en": "CRM sync (HubSpot/Pipedrive) requires the top Ultimate tier, not available on Basic or Pro.", "fr": "La synchronisation CRM (HubSpot/Pipedrive) nécessite le plan Ultimate, non disponible sur Basic ou Pro.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "HubSpot", "slug": null, "sourceIds": ["s1"] },
@@ -84,18 +83,81 @@
     ],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
-  "alternatives": [
-    { "slug": "waalaxy", "reason": { "en": "Direct competitor for LinkedIn + email multi-channel prospecting automation." } },
-    { "slug": "phantombuster", "reason": { "en": "Overlaps on LinkedIn automation and lead scraping for similar outbound use cases." } }
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Independent consultants and small sales/agency teams running their own B2B outbound prospecting instead of relying on an SDR team.",
+      "fr": "Consultants indépendants et petites équipes commerciales ou d'agence qui mènent eux-mêmes leur prospection B2B outbound, sans équipe SDR dédiée."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Usage: automate a combined LinkedIn and email outreach sequence for a consulting offer, result a steady flow of qualified sales conversations without manual follow-up.",
+      "fr": "Usage : automatiser une séquence de prospection combinant LinkedIn et email pour une offre de conseil, résultat un flux régulier de conversations commerciales qualifiées sans relance manuelle."
+    },
+    {
+      "en": "Usage: enrich and sync leads captured during a campaign directly to HubSpot or Pipedrive on the Ultimate plan, result a sales pipeline that stays current without manual data entry.",
+      "fr": "Usage : enrichir et synchroniser les leads capturés pendant une campagne directement vers HubSpot ou Pipedrive sur le plan Ultimate, résultat un pipeline commercial à jour sans saisie manuelle."
+    }
   ],
-  "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "alternatives": [
+    { "slug": "waalaxy", "reason": { "en": "Direct competitor for LinkedIn + email multi-channel prospecting automation.", "fr": "Concurrent direct pour l'automatisation de prospection multicanal LinkedIn + email." } },
+    { "slug": "phantombuster", "reason": { "en": "Overlaps on LinkedIn automation and lead scraping for similar outbound use cases.", "fr": "Chevauche l'automatisation LinkedIn et le scraping de leads pour des usages outbound similaires." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Lemlist", "officialUrl": "https://www.lemlist.com", "reason": "Major multi-channel cold outreach competitor (email + LinkedIn), not in the catalogue." },
+    { "name": "Expandi", "officialUrl": "https://expandi.io", "reason": "Cloud-based LinkedIn automation competitor with similar per-identity pricing logic, not in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Combines LinkedIn, email, and lead enrichment in one subscription, but the entry Basic plan already costs €60/month per identity with no free tier to validate fit first.", "fr": "Combine LinkedIn, email et enrichissement de leads dans un seul abonnement, mais le plan Basic d'entrée coûte déjà 60 €/mois par identité, sans offre gratuite pour valider l'usage au préalable.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: onboarding time and learning curve are not covered by the collected sources.", "fr": "Note neutre : le temps de prise en main et la courbe d'apprentissage ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers its core promise of multi-channel outbound sequencing with built-in enrichment and, on Ultimate, direct CRM sync, without needing a separate scraping or enrichment tool.", "fr": "Tient sa promesse de séquences de prospection multicanal avec enrichissement intégré et, sur Ultimate, synchronisation CRM directe, sans besoin d'un outil de scraping ou d'enrichissement séparé.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers four outbound channels (LinkedIn, email, calls, X) plus CRM sync at the top tier, a broader channel mix than a single-channel LinkedIn automation tool.", "fr": "Couvre quatre canaux de prospection (LinkedIn, email, appels, X) plus la synchronisation CRM sur le plan le plus haut, un éventail de canaux plus large qu'un outil d'automatisation LinkedIn mono-canal.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability on leaving the tool are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité en cas de départ de l'outil ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Multi-channel prospecting", "fr": "Prospection multicanal" },
+    "shortDescription": {
+      "en": "La Growth Machine automates LinkedIn, email, and call outreach sequences with built-in lead enrichment for B2B sales prospecting.",
+      "fr": "La Growth Machine automatise des séquences de prospection LinkedIn, email et appels, avec enrichissement de leads intégré pour la vente B2B."
+    },
+    "longDescription": {
+      "en": "La Growth Machine runs outbound sequences across LinkedIn, email, and (on higher tiers) calls and X, combining the channels in a single campaign with built-in lead enrichment and A/B testing from the Pro tier up.\n\nPlans start at €60/month per identity for LinkedIn and email only, rising to €120/month per identity for Pro and Ultimate, which add more channels, a higher enrichment quota, and CRM sync. There's no free plan, only a 14-day trial, so it suits consultants and small sales teams ready to commit to paid outbound prospecting.",
+      "fr": "La Growth Machine orchestre des séquences de prospection sur LinkedIn, email et, sur les offres supérieures, les appels et X, en combinant les canaux dans une seule campagne avec enrichissement de leads intégré et tests A/B à partir du plan Pro.\n\nLes plans démarrent à 60 €/mois par identité pour LinkedIn et email seuls, jusqu'à 120 €/mois par identité pour Pro et Ultimate, qui ajoutent des canaux, un quota d'enrichissement plus élevé et la synchronisation CRM. Il n'y a pas de plan gratuit, seulement un essai de 14 jours : l'outil convient aux consultants et petites équipes commerciales prêts à investir dans la prospection outbound payante."
+    },
+    "pros": [
+      { "en": "Combines LinkedIn, email, and (on higher tiers) calls and X in one sequence instead of juggling separate tools.", "fr": "Combine LinkedIn, email et, sur les offres supérieures, appels et X dans une seule séquence au lieu de jongler entre plusieurs outils." },
+      { "en": "Lead enrichment and CRM sync (HubSpot, Pipedrive) are built in on the Ultimate tier, cutting manual list-building.", "fr": "L'enrichissement de leads et la synchronisation CRM (HubSpot, Pipedrive) sont intégrés sur le plan Ultimate, ce qui réduit la construction manuelle de listes." }
+    ],
+    "cons": [
+      { "en": "No free plan: only a 14-day trial before the €60/month per-identity billing starts.", "fr": "Pas de plan gratuit : seulement un essai de 14 jours avant le début de la facturation à 60 €/mois par identité." },
+      { "en": "Pro and Ultimate cost the same €120/month per identity; CRM sync only unlocks on Ultimate, which can be confusing when choosing a plan.", "fr": "Pro et Ultimate coûtent le même prix, 120 €/mois par identité ; la synchronisation CRM ne se débloque que sur Ultimate, ce qui peut prêter à confusion au moment de choisir un plan." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run B2B outbound sales via LinkedIn and email and want to combine channels with built-in enrichment in one tool.", "fr": "Tu fais de la prospection B2B outbound via LinkedIn et email et tu veux combiner les canaux avec un enrichissement intégré dans un seul outil." },
+      "avoidIf": { "en": "You only need basic LinkedIn automation or want a free tier to test before paying anything.", "fr": "Tu as seulement besoin d'une automatisation LinkedIn basique ou tu veux une offre gratuite pour tester avant de payer." },
+      "threshold": { "en": "Budget at least €720/year per identity for the entry Basic plan (€60/month x 12) before considering Pro or Ultimate at €1,440/year per identity.", "fr": "Prévoir au moins 720 €/an par identité pour le plan Basic d'entrée (60 €/mois x 12) avant d'envisager Pro ou Ultimate à 1 440 €/an par identité." },
+      "billingTraps": { "en": "Price scales per LinkedIn/email identity used, not a flat per-seat price, so adding sending identities increases the bill directly.", "fr": "Le tarif augmente par identité LinkedIn/email utilisée, pas de prix forfaitaire par siège : ajouter des identités d'envoi fait grimper la facture directement." }
+    }
+  },
   "unknowns": [
     "Exact annual per-month price after the 2-months-free discount was not calculated on the pricing page.",
     "Agency plan pricing beyond the 6-identity minimum was not disclosed publicly."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "pricing.plans[].unit is set to \"seat\" but the dossier's own cautions describe billing per sending identity/account rather than per team seat; worth confirming on the pricing page whether \"seat\" is the correct unit classification or if a distinct identity-based unit should be used."
+  ],
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01"
 }

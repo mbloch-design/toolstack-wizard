@@ -3,7 +3,7 @@
   "slug": "infisical",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Infisical",
     "vendor": "Infisical, Inc.",
@@ -52,7 +52,7 @@
         "keyLimits": [
           {
             "en": "5 identities, 3 environments, 10 secret syncs (Secrets Management).",
-            "fr": null
+            "fr": "5 identités, 3 environnements, 10 synchronisations de secrets (Secrets Management)."
           }
         ],
         "sourceIds": [
@@ -73,7 +73,7 @@
         "keyLimits": [
           {
             "en": "Unlimited identities, SAML SSO, secret versioning, 30-day audit log retention. Priced per identity (human + machine).",
-            "fr": null
+            "fr": "Identités illimitées, SSO SAML, versioning des secrets, rétention des logs d'audit sur 30 jours. Tarifé par identité (humaine ou machine)."
           }
         ],
         "sourceIds": [
@@ -94,7 +94,7 @@
         "keyLimits": [
           {
             "en": "Dynamic secrets, gateways, full rotation, custom roles, 90-day audit log retention.",
-            "fr": null
+            "fr": "Secrets dynamiques, gateways, rotation complète, rôles personnalisés, rétention des logs d'audit sur 90 jours."
           }
         ],
         "sourceIds": [
@@ -115,7 +115,7 @@
         "keyLimits": [
           {
             "en": "LDAP, SCIM, approval workflows, external KMS/HSM support, 99.99% SLA.",
-            "fr": null
+            "fr": "LDAP, SCIM, workflows d'approbation, support KMS/HSM externe, SLA de 99,99 %."
           }
         ],
         "sourceIds": [
@@ -127,14 +127,14 @@
     "addOns": [
       {
         "en": "Privileged Access (PAM) is billed separately: Pro at $20/user/month (up to 50 resources, 30-day session recording retention), Enterprise custom.",
-        "fr": null,
+        "fr": "Le Privileged Access (PAM) est facturé séparément : Pro à 20 $/utilisateur/mois (jusqu'à 50 ressources, rétention des enregistrements de session sur 30 jours), Enterprise sur devis.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Certificate Management billed separately with its own free and Enterprise tiers, no per-unit charge stated.",
-        "fr": null,
+        "fr": "La Certificate Management est facturée séparément, avec ses propres offres Free et Enterprise, sans tarif à l'unité indiqué.",
         "sourceIds": [
           "s1"
         ]
@@ -143,7 +143,7 @@
     "cautions": [
       {
         "en": "Infisical bundles three separately-priced products (Secrets Management, Privileged Access, Certificate Management); total cost depends on which are combined.",
-        "fr": null,
+        "fr": "Infisical regroupe trois produits facturés séparément (Secrets Management, Privileged Access, Certificate Management) ; le coût total dépend des produits combinés.",
         "sourceIds": [
           "s1"
         ]
@@ -154,28 +154,28 @@
     "capabilities": [
       {
         "en": "Secrets management with per-identity billing, secret versioning, and dynamic secrets/rotation on higher tiers.",
-        "fr": null,
+        "fr": "Gestion de secrets facturée par identité, avec versioning des secrets et secrets dynamiques/rotation sur les plans supérieurs.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Privileged access management (PAM) with session recording for human users.",
-        "fr": null,
+        "fr": "Gestion des accès à privilèges (PAM) avec enregistrement de session pour les utilisateurs humains.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Certificate management including internal CAs and ACME integration.",
-        "fr": null,
+        "fr": "Gestion de certificats, y compris autorités de certification internes et intégration ACME.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "SSO via SAML and OIDC, supporting Okta, Entra ID, Google, Keycloak, Auth0 and others; SCIM provisioning and LDAP available.",
-        "fr": null,
+        "fr": "SSO via SAML et OIDC, compatible Okta, Entra ID, Google, Keycloak, Auth0 et autres ; provisioning SCIM et LDAP disponibles.",
         "sourceIds": [
           "s1"
         ]
@@ -184,14 +184,14 @@
     "limitations": [
       {
         "en": "Free tier caps secrets management at 5 identities and 3 environments, small for growing teams.",
-        "fr": null,
+        "fr": "Le plan gratuit plafonne la gestion de secrets à 5 identités et 3 environnements, étroit pour une équipe en croissance.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Advanced dynamic secrets, gateways and full rotation require the Advanced tier, not included in Pro.",
-        "fr": null,
+        "fr": "Les secrets dynamiques avancés, les gateways et la rotation complète nécessitent le plan Advanced, non inclus dans Pro.",
         "sourceIds": [
           "s1"
         ]
@@ -207,21 +207,21 @@
       "slug": "vault",
       "reason": {
         "en": "HashiCorp Vault is the established open-source/self-hosted secrets management competitor.",
-        "fr": null
+        "fr": "HashiCorp Vault est le concurrent historique de la gestion de secrets open source/auto-hébergée."
       }
     },
     {
       "slug": "doppler",
       "reason": {
         "en": "Direct competitor in cloud secrets management for dev teams.",
-        "fr": null
+        "fr": "Concurrent direct sur la gestion de secrets cloud pour les équipes de développement."
       }
     },
     {
       "slug": "dotenv-vault",
       "reason": {
         "en": "Lighter-weight alternative for environment variable/secret storage.",
-        "fr": null
+        "fr": "Alternative plus légère pour le stockage de variables d'environnement et de secrets."
       }
     }
   ],
@@ -229,5 +229,123 @@
   "unknowns": [
     "Whether the MIT-licensed self-hosted core includes all Pro/Advanced features or only the Free-tier feature set was not stated explicitly on the pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A usable free tier (5 identities, 3 environments) plus an MIT-licensed self-hosted core means a small team can run real secrets management at no cost before paying $20/identity/month on Pro.",
+        "fr": "Une offre gratuite utilisable (5 identités, 3 environnements) et un cœur open source auto-hébergeable sous licence MIT permettent à une petite équipe de gérer de vrais secrets sans frais avant de payer 20 $/identité/mois sur Pro.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: the dossier lists plan limits and features but has no first-use or setup-time evidence for the hosted or self-hosted paths.",
+        "fr": "Note neutre : le dossier liste les limites et fonctionnalités des plans, mais ne contient aucune preuve de temps de prise en main pour le mode hébergé ou auto-hébergé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers secrets management, SSO and certificate management as described, with SAML/OIDC support for named identity providers confirming the SSO claim.",
+        "fr": "La gestion de secrets, le SSO et la gestion de certificats fonctionnent comme annoncé, avec un support SAML/OIDC pour des fournisseurs d'identité nommés qui confirme la promesse de SSO.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers secrets management, privileged access management with session recording, and certificate management with internal CAs, a broad security scope for the category.",
+        "fr": "Couvre la gestion de secrets, la gestion des accès à privilèges avec enregistrement de session, et la gestion de certificats avec autorités de certification internes, un périmètre large pour la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "The MIT-licensed open-source core can be self-hosted, which gives a concrete exit path away from the hosted Cloud offering.",
+        "fr": "Le cœur open source sous licence MIT peut être auto-hébergé, ce qui offre une issue concrète pour sortir de l'offre Cloud hébergée.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers and platform teams who need to centralize secrets, SSO and certificate management instead of scattering credentials across .env files and ad hoc scripts.",
+      "fr": "Développeurs et équipes plateforme qui doivent centraliser la gestion des secrets, le SSO et les certificats plutôt que d'éparpiller les identifiants dans des fichiers .env et des scripts maison."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: a small dev team stores API keys and database credentials on the Free plan, syncing secrets across 3 environments for up to 5 identities.",
+      "fr": "Usage : une petite équipe dev stocke ses clés API et identifiants de base de données sur le plan Free, en synchronisant les secrets sur 3 environnements pour jusqu'à 5 identités."
+    },
+    {
+      "en": "Usage: a growing company upgrades to Pro to add SAML SSO and secret versioning once it needs unlimited identities and 30-day audit log retention.",
+      "fr": "Usage : une entreprise en croissance passe à Pro pour ajouter le SSO SAML et le versioning des secrets dès qu'elle a besoin d'identités illimitées et d'une rétention des logs d'audit de 30 jours."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Secrets management",
+      "fr": "Gestion de secrets"
+    },
+    "shortDescription": {
+      "en": "Open-source secrets, access and certificate management platform for developers, with a free self-hostable core.",
+      "fr": "Plateforme open source de gestion de secrets, d'accès et de certificats pour développeurs, avec un cœur gratuit auto-hébergeable."
+    },
+    "longDescription": {
+      "en": "Infisical centralizes secrets management for development teams, with secret versioning, dynamic secrets and rotation on higher plans. It also bundles two separately priced products: privileged access management with session recording, and certificate management with internal CAs and ACME support, plus SAML/OIDC SSO and SCIM provisioning.\n\nThe Free plan covers 5 identities and 3 environments at no cost, and the MIT-licensed core can be self-hosted. Paid Secrets Management starts at $20/identity/month on Pro, rising to $40 on Advanced for dynamic secrets and gateways; Privileged Access and Certificate Management are billed on top.",
+      "fr": "Infisical centralise la gestion des secrets pour les équipes de développement, avec versioning des secrets, secrets dynamiques et rotation sur les plans supérieurs. La plateforme regroupe aussi deux produits facturés séparément : la gestion des accès à privilèges avec enregistrement de session, et la gestion de certificats avec autorités de certification internes et support ACME, plus le SSO SAML/OIDC et le provisioning SCIM.\n\nLe plan Free couvre 5 identités et 3 environnements sans frais, et le cœur sous licence MIT peut être auto-hébergé. La gestion de secrets payante démarre à 20 $/identité/mois sur Pro, jusqu'à 40 $ sur Advanced pour les secrets dynamiques et les gateways ; le Privileged Access et la Certificate Management sont facturés en plus."
+    },
+    "pros": [
+      {
+        "en": "MIT-licensed open-source core can be self-hosted for free, avoiding vendor lock-in on the hosted Cloud offering.",
+        "fr": "Le cœur open source sous licence MIT peut être auto-hébergé gratuitement, évitant une dépendance totale à l'offre Cloud hébergée."
+      },
+      {
+        "en": "SSO covers a wide range of named identity providers (Okta, Entra ID, Google, Keycloak, Auth0) rather than a generic SAML-only claim.",
+        "fr": "Le SSO couvre un large éventail de fournisseurs d'identité nommés (Okta, Entra ID, Google, Keycloak, Auth0) plutôt qu'une simple promesse SAML générique."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Total cost is hard to predict upfront since Secrets Management, Privileged Access and Certificate Management are three separately priced products.",
+        "fr": "Le coût total est difficile à anticiper, car Secrets Management, Privileged Access et Certificate Management sont trois produits facturés séparément."
+      },
+      {
+        "en": "The Free plan's 5-identity cap is reached quickly once both human and machine identities (CI jobs, services) are counted.",
+        "fr": "Le plafond de 5 identités du plan Free est vite atteint dès qu'on compte à la fois les identités humaines et machine (jobs CI, services)."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want centralized secrets management with the option to self-host, and you can live within 5 identities before paying.",
+        "fr": "Tu veux centraliser la gestion de secrets avec la possibilité de t'auto-héberger, et 5 identités suffisent avant de passer au payant."
+      },
+      "avoidIf": {
+        "en": "You need dynamic secrets or gateways immediately, which require the $40/identity/month Advanced plan rather than the $20 Pro entry point.",
+        "fr": "Tu as besoin de secrets dynamiques ou de gateways dès le départ, ce qui nécessite le plan Advanced à 40 $/identité/mois plutôt que l'entrée Pro à 20 $."
+      },
+      "threshold": {
+        "en": "Worth paying once past the Free plan's 5-identity cap: the Pro plan costs $20/identity/month for unlimited identities and SAML SSO.",
+        "fr": "Le passage au payant se justifie une fois le plafond de 5 identités du plan Free dépassé : le plan Pro coûte 20 $/identité/mois pour des identités illimitées et le SSO SAML."
+      },
+      "billingTraps": {
+        "en": "Pricing is per identity, counting both human and machine (CI/service) identities, and Privileged Access is a separate $20/user/month charge on top of Secrets Management.",
+        "fr": "Le tarif est par identité, humaine et machine (CI/service) confondues, et le Privileged Access est facturé séparément 20 $/utilisateur/mois en plus de la gestion de secrets."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

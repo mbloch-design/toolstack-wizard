@@ -3,7 +3,8 @@
   "slug": "smartsuite",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "SmartSuite",
     "vendor": "SmartSuite Inc.",
@@ -34,7 +35,7 @@
         "minSeats": 3,
         "price": { "monthly": 20, "annualPerMonth": 15, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Minimum 3 billable users, 5,000 records per solution, 50GB storage, 30-day recycle bin.", "fr": null }],
+        "keyLimits": [{ "en": "Minimum 3 billable users, 5,000 records per solution, 50GB storage, 30-day recycle bin.", "fr": "Minimum 3 utilisateurs facturables, 5 000 enregistrements par solution, 50 Go de stockage, corbeille de 30 jours." }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": 5,
         "price": { "monthly": 36, "annualPerMonth": 32, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Minimum 5 billable users, 100,000 records per solution, 100GB storage, 45-day recycle bin, folders, Gmail/Outlook integrations, advanced permissions.", "fr": null }],
+        "keyLimits": [{ "en": "Minimum 5 billable users, 100,000 records per solution, 100GB storage, 45-day recycle bin, folders, Gmail/Outlook integrations, advanced permissions.", "fr": "Minimum 5 utilisateurs facturables, 100 000 enregistrements par solution, 100 Go de stockage, corbeille de 45 jours, dossiers, intégrations Gmail/Outlook, permissions avancées." }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,25 +55,25 @@
         "minSeats": 10,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Unlimited solutions, 400,000 records per solution, 500GB storage, 60-day recycle bin, SSO, SCIM, audit logs, IP restrictions, DLP, European data residency, premium support.", "fr": null }],
+        "keyLimits": [{ "en": "Unlimited solutions, 400,000 records per solution, 500GB storage, 60-day recycle bin, SSO, SCIM, audit logs, IP restrictions, DLP, European data residency, premium support.", "fr": "Solutions illimitées, 400 000 enregistrements par solution, 500 Go de stockage, corbeille de 60 jours, SSO, SCIM, journaux d'audit, restrictions IP, DLP, hébergement des données en Europe, support premium." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "team",
     "addOns": [],
     "cautions": [
-      { "en": "Team and Professional plans require minimums of 3 and 5 billable seats respectively, raising the effective monthly floor above the per-seat sticker price.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Team and Professional plans require minimums of 3 and 5 billable seats respectively, raising the effective monthly floor above the per-seat sticker price.", "fr": "Les plans Team et Professional imposent des minimums de 3 et 5 sièges facturables, ce qui fait grimper le coût mensuel réel au-dessus du prix affiché par siège.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Collaborative work management with multiple view types: grid, card, kanban, calendar, timeline, gantt, chart, form, map.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "SmartSuite AI, automation builder, dashboards and 200+ workflow templates included on all plans.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "REST API access and support for 15 languages.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Collaborative work management with multiple view types: grid, card, kanban, calendar, timeline, gantt, chart, form, map.", "fr": "Gestion de travail collaborative avec plusieurs types de vues : grille, carte, kanban, calendrier, timeline, Gantt, graphique, formulaire, carte géographique.", "sourceIds": ["s1"] },
+      { "en": "SmartSuite AI, automation builder, dashboards and 200+ workflow templates included on all plans.", "fr": "SmartSuite AI, un créateur d'automatisations, des tableaux de bord et plus de 200 modèles de workflows inclus sur tous les plans.", "sourceIds": ["s1"] },
+      { "en": "REST API access and support for 15 languages.", "fr": "Accès à une API REST et prise en charge de 15 langues.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No permanent free plan, only a 14-day trial of Professional.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Advanced security features (SSO, SCIM, DLP, audit logs) are Enterprise-only.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No permanent free plan, only a 14-day trial of Professional.", "fr": "Pas de plan gratuit permanent, seulement un essai de 14 jours du plan Professional.", "sourceIds": ["s1"] },
+      { "en": "Advanced security features (SSO, SCIM, DLP, audit logs) are Enterprise-only.", "fr": "Les fonctions de sécurité avancées (SSO, SCIM, DLP, journaux d'audit) sont réservées au plan Enterprise.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Gmail", "slug": "gmail", "sourceIds": ["s1"] },
@@ -80,14 +81,96 @@
     ],
     "platforms": ["web", "ios", "android"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small operations or admin teams that want one configurable workspace for projects, light CRM and process tracking instead of several disconnected tools.",
+      "fr": "Petites équipes ops ou admin qui veulent un seul espace de travail configurable pour les projets, un CRM léger et le suivi de process, plutôt que plusieurs outils séparés."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Usage: set up a client project tracker using kanban and Gantt views, so a small team sees project status and deadlines in one workspace.",
+      "fr": "Usage : mettre en place un suivi de projets clients avec des vues kanban et Gantt, pour qu'une petite équipe voie l'état des projets et les échéances dans un seul espace."
+    },
+    {
+      "en": "Usage: build a lightweight CRM module with automations, so a team moves and notifies leads through stages without manual updates.",
+      "fr": "Usage : construire un module de CRM léger avec des automatisations, pour qu'une équipe fasse avancer et notifie les leads à travers les étapes sans mise à jour manuelle."
+    }
+  ],
   "alternatives": [
-    { "slug": "notion", "reason": { "en": "Broad work management/knowledge tool competing on flexible database and workflow use cases.", "fr": null } },
-    { "slug": "asana", "reason": { "en": "Direct competitor in team task and project management.", "fr": null } },
-    { "slug": "process-street", "reason": { "en": "Overlaps on workflow/process template use cases for small teams.", "fr": null } }
+    { "slug": "notion", "reason": { "en": "Broad work management/knowledge tool competing on flexible database and workflow use cases.", "fr": "Outil de gestion du travail et de connaissances tout aussi flexible, en concurrence sur les cas d'usage de base de données et de workflow." } },
+    { "slug": "asana", "reason": { "en": "Direct competitor in team task and project management.", "fr": "Concurrent direct sur la gestion de tâches et de projets en équipe." } },
+    { "slug": "process-street", "reason": { "en": "Overlaps on workflow/process template use cases for small teams.", "fr": "Chevauchement sur les cas d'usage de modèles de workflows et de process pour petites équipes." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Most features (AI, automation, dashboards, 200+ templates) are included from the Team plan, but the 3-seat minimum on Team and 5-seat minimum on Professional raise the real monthly floor above the per-seat sticker price.",
+        "fr": "La plupart des fonctions (IA, automatisation, tableaux de bord, plus de 200 modèles) sont incluses dès le plan Team, mais les minimums de 3 sièges sur Team et 5 sur Professional font grimper le coût mensuel réel au-dessus du prix affiché par siège.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Neutral score: the dossier lists 200+ ready-made templates, which should ease a first setup, but the sources collected say nothing about actual onboarding time for the full view system (grid, kanban, Gantt, map, chart).",
+        "fr": "Note neutre : le dossier mentionne plus de 200 modèles prêts à l'emploi, ce qui devrait faciliter un premier démarrage, mais les sources relevées ne disent rien du temps de prise en main réel de l'ensemble des vues (grille, kanban, Gantt, carte, graphique).",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "The platform combines project tracking, automation, dashboards and a REST API in one tool, matching the all-in-one work management promise described on the pricing page.",
+        "fr": "La plateforme réunit le suivi de projets, l'automatisation, les tableaux de bord et une API REST dans un seul outil, conforme à la promesse d'outil de gestion du travail tout-en-un décrite sur la page tarifs.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Nine view types, an automation builder, SmartSuite AI, a REST API and enterprise-grade controls (SSO, SCIM, DLP, audit logs) on the top plan indicate a broad capability ceiling for a work management tool.",
+        "fr": "Neuf types de vues, un créateur d'automatisations, SmartSuite AI, une API REST et des contrôles de niveau entreprise (SSO, SCIM, DLP, journaux d'audit) sur le plan le plus élevé indiquent un plafond de capacité large pour un outil de gestion du travail.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "The dossier confirms REST API access on all plans, which supports some data portability, but the collected sources say nothing about complete export formats or a bulk-export tool.",
+        "fr": "Le dossier confirme un accès API REST sur tous les plans, ce qui permet une certaine portabilité des données, mais les sources relevées ne disent rien des formats d'export complets ni d'un outil d'export en masse.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Work management", "fr": "Travail collaboratif" },
+    "shortDescription": {
+      "en": "SmartSuite is a collaborative work management platform with grid, kanban, calendar and Gantt views plus built-in automation for teams.",
+      "fr": "SmartSuite est une plateforme de gestion du travail collaborative avec plusieurs vues (grille, kanban, calendrier, Gantt) et de l'automatisation intégrée pour les équipes."
+    },
+    "longDescription": {
+      "en": "SmartSuite combines multiple views (grid, kanban, calendar, timeline, Gantt, map) with built-in automation, AI and dashboards into one configurable work management system. Teams model projects, CRMs or operational trackers without separate tools, and access over 200 ready-made templates to start faster.\n\nPaid plans start at $15 per seat per month billed annually, but the Team plan requires a minimum of 3 billable seats, so a single freelancer pays more than the sticker price suggests. There is no permanent free plan, only a 14-day trial. SmartSuite suits small teams standardizing scattered workflows more than solo users.",
+      "fr": "SmartSuite réunit plusieurs vues (grille, kanban, calendrier, timeline, Gantt, carte) avec automatisation intégrée, IA et tableaux de bord dans un seul système de gestion du travail configurable. Les équipes modélisent des projets, des CRM ou des suivis opérationnels sans outils séparés, avec plus de 200 modèles prêts à l'emploi pour démarrer plus vite.\n\nLes plans payants démarrent à 15 $ par utilisateur et par mois en engagement annuel, mais le plan Team impose un minimum de 3 sièges facturables, ce qui fait grimper le prix réel pour un indépendant seul. Il n'existe pas de plan gratuit permanent, seulement un essai de 14 jours. SmartSuite convient mieux à une petite équipe qui structure des workflows dispersés qu'à un utilisateur seul."
+    },
+    "pros": [
+      { "en": "Single platform replaces several point tools (project tracking, light CRM, process docs) with one subscription.", "fr": "Une seule plateforme remplace plusieurs outils séparés (suivi de projets, CRM léger, documentation de process) avec un seul abonnement." },
+      { "en": "200+ ready-made templates reduce setup time compared to building views from scratch.", "fr": "Plus de 200 modèles prêts à l'emploi réduisent le temps de mise en place par rapport à la construction de vues depuis zéro." }
+    ],
+    "cons": [
+      { "en": "No permanent free plan: only a 14-day trial before paying.", "fr": "Pas de plan gratuit permanent : seulement un essai de 14 jours avant de payer." },
+      { "en": "Team and Professional plans require 3 and 5 billable seats minimum, raising the real entry cost above the sticker price.", "fr": "Les plans Team et Professional imposent un minimum de 3 et 5 sièges facturables, ce qui fait grimper le coût d'entrée réel au-dessus du prix affiché." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "A team of 3 or more people wants one tool to replace a scattered mix of docs, trackers and spreadsheets, using the Team plan's templates to start fast.", "fr": "Une équipe de 3 personnes ou plus veut un seul outil pour remplacer un mélange dispersé de documents, de suivis et de tableurs, en s'appuyant sur les modèles du plan Team pour démarrer vite." },
+      "avoidIf": { "en": "You work alone: the cheapest plan still requires paying for 3 billable seats even if you use only one.", "fr": "Tu travailles seul : le plan le moins cher impose quand même de payer 3 sièges facturables même si tu n'en utilises qu'un." },
+      "threshold": { "en": "The Team plan costs $15 per seat per month billed annually, but only with a minimum of 3 billable seats: budget for that floor even as a very small team.", "fr": "Le plan Team coûte 15 $ par utilisateur et par mois en engagement annuel, mais avec un minimum de 3 sièges facturables : prévois ce plancher même pour une toute petite équipe." },
+      "billingTraps": { "en": "The cheapest plan (Team) requires a minimum of 3 billable seats and the next tier (Professional) requires 5, even for solo or near-solo use.", "fr": "Le plan le moins cher (Team) impose un minimum de 3 sièges facturables et le palier suivant (Professional) en impose 5, même pour un usage solo ou quasi solo." }
+    }
+  },
   "unknowns": [
     "Signature Plan (mentioned as a tailored option) has no public pricing or feature detail."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "pricing.comparePlanKey is set to \"team\" (the cheapest plan), but every plan on the pricing page carries a seat minimum (3 on Team, 5 on Professional, 10 on Enterprise) : no plan can actually be bought and used by a single person, which section 5.4's comparison rule assumes. Worth re-checking on smartsuite.com/pricing whether a true 1-seat option exists."
+  ]
 }

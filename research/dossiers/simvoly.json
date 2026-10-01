@@ -3,7 +3,7 @@
   "slug": "simvoly",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Simvoly",
     "vendor": "Simvoly",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://simvoly.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Simvoly pricing page" }
+    {
+      "id": "s1",
+      "url": "https://simvoly.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Simvoly pricing page"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,7 +30,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,70 +44,300 @@
         "name": "Starter",
         "unit": "account",
         "minSeats": 2,
-        "price": { "monthly": 18, "annualPerMonth": 12, "oneTime": null },
+        "price": {
+          "monthly": 18,
+          "annualPerMonth": 12,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 website, 1 domain, 20 GB bandwidth (~20k visitors/month), 100 marketing subscribers, 1,200 emails/month, 1 community (100 members), 5 videos up to 10 min each, 2 admin seats.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "1 website, 1 domain, 20 GB bandwidth (~20k visitors/month), 100 marketing subscribers, 1,200 emails/month, 1 community (100 members), 5 videos up to 10 min each, 2 admin seats.",
+            "fr": "1 site, 1 domaine, 20 Go de bande passante (environ 20 000 visiteurs/mois), 100 abonnés marketing, 1 200 emails/mois, 1 communauté (100 membres), 5 vidéos de 10 min max chacune, 2 sièges admin."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "account",
         "minSeats": 2,
-        "price": { "monthly": 36, "annualPerMonth": 29, "oneTime": null },
+        "price": {
+          "monthly": 36,
+          "annualPerMonth": 29,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 website, 5 funnels, 6 domain connections, 60 GB bandwidth, 100 marketing subscribers, 1,200 emails/month, 1 community (100 members), 5 videos up to 10 min each.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "1 website, 5 funnels, 6 domain connections, 60 GB bandwidth, 100 marketing subscribers, 1,200 emails/month, 1 community (100 members), 5 videos up to 10 min each.",
+            "fr": "1 site, 5 funnels, 6 connexions de domaine, 60 Go de bande passante, 100 abonnés marketing, 1 200 emails/mois, 1 communauté (100 membres), 5 vidéos de 10 min max chacune."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 49, "annualPerMonth": 39, "oneTime": null },
+        "price": {
+          "monthly": 49,
+          "annualPerMonth": 39,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 website, 10 funnels, 11 domain connections, 100 GB bandwidth, 1,000 marketing subscribers, 12,000 emails/month, full e-commerce with 100 products, A/B testing, upsells/downsells.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "1 website, 10 funnels, 11 domain connections, 100 GB bandwidth, 1,000 marketing subscribers, 12,000 emails/month, full e-commerce with 100 products, A/B testing, upsells/downsells.",
+            "fr": "1 site, 10 funnels, 11 connexions de domaine, 100 Go de bande passante, 1 000 abonnés marketing, 12 000 emails/mois, e-commerce complet avec 100 produits, tests A/B, upsells/downsells."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "elite",
         "name": "Elite",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 97, "annualPerMonth": 79, "oneTime": null },
+        "price": {
+          "monthly": 97,
+          "annualPerMonth": 79,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 websites, unlimited funnels/domains, 200 GB bandwidth, 2,500 marketing subscribers, 30,000 emails/month, unlimited products and full e-commerce features.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "5 websites, unlimited funnels/domains, 200 GB bandwidth, 2,500 marketing subscribers, 30,000 emails/month, unlimited products and full e-commerce features.",
+            "fr": "5 sites, funnels/domaines illimités, 200 Go de bande passante, 2 500 abonnés marketing, 30 000 emails/mois, produits illimités et fonctionnalités e-commerce complètes."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [
-      { "en": "Email/marketing subscriber add-ons scale from 500 to 500,000 subscribers, ranging roughly $9 to $1,499/month.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Email/marketing subscriber add-ons scale from 500 to 500,000 subscribers, ranging roughly $9 to $1,499/month.",
+        "fr": "Les add-ons d'abonnés email/marketing vont de 500 à 500 000 abonnés, de 9 $ à environ 1 499 $/mois.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Separate White Label plans ($69-$497/month) exist for agencies reselling Simvoly under their own brand; not recorded as the main plans as they target agencies, not end users.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Separate White Label plans ($69-$497/month) exist for agencies reselling Simvoly under their own brand; not recorded as the main plans as they target agencies, not end users.",
+        "fr": "Des plans White Label séparés (69-497 $/mois) existent pour les agences revendant Simvoly sous leur propre marque ; non enregistrés comme plans principaux car ils visent les agences, pas les utilisateurs finaux.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Drag-and-drop website builder with e-commerce (product catalog, upsells/downsells, A/B testing on higher plans).", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Sales funnel builder integrated with the website builder, plus email marketing and video hosting.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Community/membership feature (member-gated content) bundled into every plan.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Drag-and-drop website builder with e-commerce (product catalog, upsells/downsells, A/B testing on higher plans).",
+        "fr": "Créateur de site web en glisser-déposer avec e-commerce (catalogue produits, upsells/downsells, tests A/B sur les plans supérieurs).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Sales funnel builder integrated with the website builder, plus email marketing and video hosting.",
+        "fr": "Créateur de funnel de vente intégré au créateur de site, plus email marketing et hébergement vidéo.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Community/membership feature (member-gated content) bundled into every plan.",
+        "fr": "Fonctionnalité de communauté/adhésion (contenu réservé aux membres) incluse dans chaque plan.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No free plan; entry Starter plan starts at $18/month (or $12/month annual) with tight bandwidth and email caps.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "E-commerce features (A/B testing, upsells/downsells) are gated behind the Premium plan and above, unavailable on Starter/Business.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No free plan; entry Starter plan starts at $18/month (or $12/month annual) with tight bandwidth and email caps.",
+        "fr": "Aucun plan gratuit ; le plan d'entrée Starter démarre à 18 $/mois (ou 12 $/mois en annuel) avec des plafonds de bande passante et d'emails serrés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "E-commerce features (A/B testing, upsells/downsells) are gated behind the Premium plan and above, unavailable on Starter/Business.",
+        "fr": "Les fonctionnalités e-commerce (tests A/B, upsells/downsells) sont réservées au plan Premium et au-dessus, indisponibles sur Starter/Business.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "alternatives": [],
+  "alternatives": [
+    {
+      "slug": "squarespace",
+      "reason": {
+        "en": "Hosted website builder covering the same core use case (site, store, content) for a solo or small team audience.",
+        "fr": "Créateur de site hébergé couvrant le même besoin principal (site, boutique, contenu) pour un public solo ou petite équipe."
+      }
+    },
+    {
+      "slug": "wordpress-com",
+      "reason": {
+        "en": "Hosted website builder with a free tier and paid plans for e-commerce, a direct substitute for a simple website or store.",
+        "fr": "Créateur de site hébergé avec un palier gratuit et des plans payants pour l'e-commerce, substitut direct pour un site ou une boutique simple."
+      }
+    },
+    {
+      "slug": "pagecloud",
+      "reason": {
+        "en": "Website and online store builder targeting the same core need as Simvoly.",
+        "fr": "Créateur de site et de boutique en ligne visant le même besoin principal que Simvoly."
+      }
+    }
+  ],
   "missingAlternatives": [
-    { "name": "Systeme.io", "officialUrl": "https://systeme.io/", "reason": "Comparable all-in-one website/funnel/email/community builder, not present in the seed's alternativeCandidates for this tool." }
+    {
+      "name": "Systeme.io",
+      "officialUrl": "https://systeme.io/",
+      "reason": "Comparable all-in-one website/funnel/email/community builder, not present in the seed's alternativeCandidates for this tool."
+    }
   ],
   "unknowns": [
     "Free trial availability and length not confirmed on the pricing page excerpt retrieved (site states 'No Credit Card' required in some context but no explicit trial-day count found).",
     "No currentAlternatives were provided in the seed for this tool; alternatives list is left empty pending a genuine catalogue match."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Bundles a website builder, funnel builder, email marketing, video hosting and a community feature into one plan, but e-commerce (the main draw for many buyers) is gated behind Premium at $49/month.",
+        "fr": "Regroupe créateur de site, créateur de funnel, email marketing, hébergement vidéo et fonctionnalité communauté dans un seul plan, mais l'e-commerce (l'attrait principal pour beaucoup) est réservé à Premium à 49 $/mois.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A drag-and-drop builder with a community feature bundled in requires no separate setup for membership content, unlike stitching together a site builder and a community tool.",
+        "fr": "Un créateur en glisser-déposer avec une fonctionnalité communauté intégrée ne demande pas de configuration séparée pour le contenu réservé aux membres, contrairement à l'association d'un créateur de site et d'un outil de communauté distinct.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers a working site, funnel and community as described, but A/B testing and upsells only activate on the Premium plan and above.",
+        "fr": "Livre un site, un funnel et une communauté fonctionnels comme annoncé, mais les tests A/B et les upsells ne s'activent qu'à partir du plan Premium.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers website, funnel, email and community needs for a small business, but bandwidth and email caps on the entry plans are tight for anything beyond a small audience.",
+        "fr": "Couvre les besoins de site, funnel, email et communauté d'une petite entreprise, mais les plafonds de bande passante et d'emails des plans d'entrée sont serrés au-delà d'une petite audience.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether a site, its content and its subscriber list can be exported if the team switches tools is not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité d'exporter un site, son contenu et sa liste d'abonnés en cas de changement d'outil ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "A solo consultant or small business owner who wants a website, a sales funnel, email marketing and a membership community in one subscription instead of several separate tools.",
+      "fr": "Un ou une consultant·e solo ou petit·e entrepreneur·se qui veut un site, un funnel de vente, l'email marketing et une communauté payante dans un seul abonnement plutôt que plusieurs outils séparés."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Launch a paid community: bundle a membership area with the main website so clients access gated content without a separate community platform.",
+      "fr": "Lancer une communauté payante : intègre un espace membres au site principal pour que les clients accèdent au contenu réservé sans plateforme de communauté séparée."
+    },
+    {
+      "en": "Sell with upsells: build a checkout funnel with upsells and downsells on the Premium plan to increase average order value on a small product catalog.",
+      "fr": "Vendre avec des upsells : construis un funnel de paiement avec upsells et downsells sur le plan Premium pour augmenter le panier moyen sur un petit catalogue produits."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Site, funnel and store",
+      "fr": "Site, funnel et boutique"
+    },
+    "shortDescription": {
+      "en": "Simvoly bundles a website builder, sales funnels, email marketing and a membership community into one subscription, starting at $18 a month.",
+      "fr": "Simvoly regroupe créateur de site, funnels de vente, email marketing et communauté payante dans un seul abonnement, dès 18 $ par mois."
+    },
+    "longDescription": {
+      "en": "Simvoly is a drag-and-drop website and sales funnel builder that also includes email marketing, video hosting and a membership community feature on every plan. E-commerce with A/B testing and upsells/downsells only activates on the Premium plan and above.\n\nThe entry Starter plan costs $18 a month ($12 annually) for one site with tight bandwidth and email caps. It suits a solo consultant or small business that wants a site, funnel and paid community in one subscription instead of stitching several tools together.",
+      "fr": "Simvoly est un créateur de site et de funnel de vente en glisser-déposer qui inclut aussi l'email marketing, l'hébergement vidéo et une fonctionnalité de communauté payante sur chaque plan. L'e-commerce avec tests A/B et upsells/downsells ne s'active qu'à partir du plan Premium.\n\nLe plan d'entrée Starter coûte 18 $ par mois (12 $ en annuel) pour un site avec des plafonds de bande passante et d'emails serrés. Il convient à un·e consultant·e solo ou une petite entreprise qui veut un site, un funnel et une communauté payante dans un seul abonnement plutôt que d'assembler plusieurs outils."
+    },
+    "pros": [
+      {
+        "en": "Bundles a membership community feature into every plan, avoiding a separate subscription for gated content.",
+        "fr": "Intègre une fonctionnalité de communauté payante dans chaque plan, ce qui évite un abonnement séparé pour le contenu réservé."
+      },
+      {
+        "en": "Covers site, funnel, email and video in one subscription, reducing the number of tools a small business needs to pay for.",
+        "fr": "Couvre site, funnel, email et vidéo dans un seul abonnement, ce qui réduit le nombre d'outils qu'une petite entreprise doit payer séparément."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan, and the entry Starter plan caps bandwidth at 20GB and emails at 1,200 a month, tight for a growing audience.",
+        "fr": "Aucun plan gratuit, et le plan d'entrée Starter plafonne la bande passante à 20 Go et les emails à 1 200 par mois, ce qui est serré pour une audience en croissance."
+      },
+      {
+        "en": "Real e-commerce features (A/B testing, upsells/downsells) require upgrading to Premium at $49/month, not available on the cheaper plans.",
+        "fr": "Les vraies fonctionnalités e-commerce (tests A/B, upsells/downsells) demandent de passer à Premium à 49 $/mois, indisponibles sur les plans moins chers."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want a site, a sales funnel, email marketing and a paid community together in one subscription instead of separate tools.",
+        "fr": "Tu veux un site, un funnel de vente, l'email marketing et une communauté payante ensemble dans un seul abonnement plutôt que des outils séparés."
+      },
+      "avoidIf": {
+        "en": "You need real e-commerce (A/B testing, upsells) from day one, since that only works on the $49/month Premium plan and above.",
+        "fr": "Tu as besoin d'un vrai e-commerce (tests A/B, upsells) dès le départ, car cela ne fonctionne qu'à partir du plan Premium à 49 $/mois."
+      },
+      "threshold": {
+        "en": "Budget $18/month ($12/month annual) for Starter if you just need a site and funnel, or $49/month for Premium once you need real e-commerce.",
+        "fr": "Prévois 18 $/mois (12 $/mois en annuel) pour Starter si tu n'as besoin que d'un site et d'un funnel, ou 49 $/mois pour Premium dès que tu as besoin d'un vrai e-commerce."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Aucune durée d'essai gratuit n'a été trouvée sur la page de prix consultée (le site mentionne « sans carte bancaire » dans un autre contexte, sans nombre de jours d'essai explicite) ; à revérifier sur simvoly.com/pricing."
+  ],
+  "completedLocallyOn": "2026-10-01"
 }

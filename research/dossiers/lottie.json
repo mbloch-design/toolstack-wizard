@@ -3,7 +3,8 @@
   "slug": "lottie",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Lottie",
     "vendor": "LottieFiles (Design Barn Inc.)",
@@ -15,7 +16,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://lottiefiles.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "LottieFiles pricing page" }
+    {
+      "id": "s1",
+      "url": "https://lottiefiles.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "LottieFiles pricing page"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,7 +31,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "The Lottie animation format and runtime libraries are open source and free; LottieFiles the platform also offers a limited free tier for browsing/hosting animations.", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "The Lottie animation format and runtime libraries are open source and free; LottieFiles the platform also offers a limited free tier for browsing/hosting animations.",
+        "fr": "Le format d'animation Lottie et ses bibliothèques d'exécution sont open source et gratuits ; la plateforme LottieFiles propose aussi un palier gratuit limité pour parcourir et héberger des animations."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,63 +48,275 @@
         "name": "Individual",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 19.99, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 19.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "2 GB storage, 10 GB CDN hosting/month, unlimited access to premium Lottie animations (250,000+), billed annually per user.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "2 GB storage, 10 GB CDN hosting/month, unlimited access to premium Lottie animations (250,000+), billed annually per user.",
+            "fr": "2 Go de stockage, 10 Go d'hébergement CDN par mois, accès illimité aux animations Lottie premium (plus de 250 000), facturé à l'année par utilisateur."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "team",
         "name": "Team",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 24.99, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 24.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 GB storage, 50 GB CDN hosting/month, unlimited team files, version history, feedback/comments, roles & permissions, unified admin/billing, 600 AI credits/month (vs 300 on Individual).", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "5 GB storage, 50 GB CDN hosting/month, unlimited team files, version history, feedback/comments, roles & permissions, unified admin/billing, 600 AI credits/month (vs 300 on Individual).",
+            "fr": "5 Go de stockage, 50 Go d'hébergement CDN par mois, fichiers d'équipe illimités, historique des versions, commentaires, rôles et permissions, administration et facturation unifiées, 600 crédits IA par mois (contre 300 sur Individual)."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom storage and CDN hosting; built for larger teams needing more control, security, visibility and onboarding support.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Custom storage and CDN hosting; built for larger teams needing more control, security, visibility and onboarding support.",
+            "fr": "Stockage et hébergement CDN sur mesure ; pensé pour les grandes équipes qui ont besoin de plus de contrôle, de sécurité, de visibilité et d'accompagnement au démarrage."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "individual",
     "addOns": [],
     "cautions": [
-      { "en": "A figure of $119.99/user/month appeared for Enterprise in one source alongside a 'contact sales' note; since Enterprise has no fixed public price, it is recorded as onQuote true rather than using that figure.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "All paid plans bill annually only; no monthly billing option was found for Individual or Team.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "A figure of $119.99/user/month appeared for Enterprise in one source alongside a 'contact sales' note; since Enterprise has no fixed public price, it is recorded as onQuote true rather than using that figure.",
+        "fr": "Un montant de 119,99 $ par utilisateur et par mois apparaissait pour Enterprise dans une source, à côté d'une mention « contacter les ventes » ; comme Enterprise n'a pas de prix public fixe, ce plan est noté sur devis plutôt que d'utiliser ce chiffre.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "All paid plans bill annually only; no monthly billing option was found for Individual or Team.",
+        "fr": "Tous les plans payants sont facturés uniquement à l'année ; aucune option de facturation mensuelle n'a été trouvée pour Individual ou Team.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Open JSON-based format (Lottie) for lightweight, scalable vector animations that render natively on web, iOS and Android via open-source runtime libraries.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "LottieFiles platform hosts, previews and lets users edit/customize a library of 250,000+ premium and free Lottie animations.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Figma plugin and other design-tool integrations for exporting animations directly as Lottie files.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Open JSON-based format (Lottie) for lightweight, scalable vector animations that render natively on web, iOS and Android via open-source runtime libraries.",
+        "fr": "Format ouvert basé sur JSON (Lottie) pour des animations vectorielles légères et redimensionnables, affichées nativement sur le web, iOS et Android via des bibliothèques d'exécution open source.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "LottieFiles platform hosts, previews and lets users edit/customize a library of 250,000+ premium and free Lottie animations.",
+        "fr": "La plateforme LottieFiles héberge, prévisualise et permet de modifier une bibliothèque de plus de 250 000 animations Lottie gratuites et premium.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Figma plugin and other design-tool integrations for exporting animations directly as Lottie files.",
+        "fr": "Plugin Figma et autres intégrations avec des outils de design pour exporter directement les animations au format Lottie.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free tier storage/hosting is limited; scaling usage (CDN hosting, storage) requires the paid Individual or Team plan.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Team collaboration features (version history, roles & permissions, comments) are gated behind the Team plan, unavailable to Individual users.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Free tier storage/hosting is limited; scaling usage (CDN hosting, storage) requires the paid Individual or Team plan.",
+        "fr": "Le stockage et l'hébergement du palier gratuit sont limités ; augmenter l'usage (hébergement CDN, stockage) demande le plan payant Individual ou Team.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Team collaboration features (version history, roles & permissions, comments) are gated behind the Team plan, unavailable to Individual users.",
+        "fr": "Les fonctions de collaboration d'équipe (historique des versions, rôles et permissions, commentaires) sont réservées au plan Team, indisponibles pour les utilisateurs Individual.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] }
+      {
+        "name": "Figma",
+        "slug": "figma",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A designer or front-end developer who needs lightweight, scalable animations exported straight from design tools into a web or mobile app.",
+      "fr": "Un ou une designer ou développeur front-end qui a besoin d'animations légères et redimensionnables, exportées directement depuis les outils de design vers une application web ou mobile."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "App micro-interactions: export a loading spinner or onboarding animation from Figma as a Lottie file and render it natively in a mobile app.",
+      "fr": "Micro-interactions d'application : exporter une animation de chargement ou d'onboarding depuis Figma en fichier Lottie et l'afficher nativement dans une application mobile."
+    },
+    {
+      "en": "Team animation library: a small design team subscribes to the Team plan to share, version, and comment on a shared set of Lottie files.",
+      "fr": "Bibliothèque d'animations d'équipe : une petite équipe de design souscrit au plan Team pour partager, versionner et commenter un ensemble de fichiers Lottie."
+    }
+  ],
   "alternatives": [
-    { "slug": "rive", "reason": { "en": "Competing interactive vector animation format/tool with its own runtime, targeting similar app/web animation use cases.", "fr": null } },
-    { "slug": "greensock", "reason": { "en": "JavaScript animation library (GSAP) often used as an alternative to Lottie for web animation delivery.", "fr": null } },
-    { "slug": "lottiefiles", "reason": { "en": "The LottieFiles platform itself is closely tied to the Lottie format and appears as a separate catalogue entry for the hosting/editing service.", "fr": null } }
+    {
+      "slug": "rive",
+      "reason": {
+        "en": "Competing interactive vector animation format/tool with its own runtime, targeting similar app/web animation use cases.",
+        "fr": "Format et outil d'animation vectorielle interactive concurrent, avec son propre moteur, pour des usages d'animation web et application similaires."
+      }
+    },
+    {
+      "slug": "greensock",
+      "reason": {
+        "en": "JavaScript animation library (GSAP) often used as an alternative to Lottie for web animation delivery.",
+        "fr": "Bibliothèque d'animation JavaScript (GSAP) souvent utilisée en alternative à Lottie pour diffuser des animations sur le web."
+      }
+    }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The core Lottie format is free and open source, with the paid LottieFiles plan ($19.99/user/month) only needed once storage, hosting, or team collaboration scales up.",
+        "fr": "Le format Lottie reste gratuit et open source ; le plan LottieFiles payant (19,99 $ par utilisateur et par mois) n'est nécessaire que quand le stockage, l'hébergement ou la collaboration d'équipe augmentent.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A Figma plugin exports animations directly as Lottie files, and the runtime libraries render them with no custom animation code needed.",
+        "fr": "Un plugin Figma exporte directement les animations en fichiers Lottie, et les bibliothèques d'exécution les affichent sans code d'animation personnalisé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers lightweight, scalable vector animations across web, iOS, and Android as advertised, via open-source runtime libraries.",
+        "fr": "Diffuse bien des animations vectorielles légères et redimensionnables sur le web, iOS et Android comme annoncé, via des bibliothèques d'exécution open source.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers common animation needs well, but the collected sources describe no advanced timeline or physics features beyond standard vector playback.",
+        "fr": "Couvre bien les besoins d'animation courants, mais les sources relevées ne décrivent pas de fonctions avancées de timeline ou de physique au-delà de la lecture vectorielle standard.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: the Lottie JSON format itself is open, but export/migration options from the LottieFiles platform specifically are not covered by the collected sources.",
+        "fr": "Note neutre : le format JSON Lottie est ouvert, mais les options d'export ou de migration propres à la plateforme LottieFiles ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Vector animation format",
+      "fr": "Format d'animation vectorielle"
+    },
+    "shortDescription": {
+      "en": "Open JSON-based format and platform for lightweight vector animations across web, iOS, and Android, free to use and open source.",
+      "fr": "Format JSON ouvert et plateforme pour des animations vectorielles légères sur le web, iOS et Android, gratuit et open source."
+    },
+    "longDescription": {
+      "en": "Lottie is an open, JSON-based format for scalable vector animations that render natively on web, iOS, and Android through open-source runtime libraries. The LottieFiles platform built around it hosts a library of over 250,000 animations, a Figma plugin for direct export, and basic editing tools.\n\nThe format and runtime stay free. LottieFiles' own paid tier starts at $19.99 a month per user (billed annually) once storage or CDN hosting needs grow, and the Team plan at $24.99 adds version history and shared permissions. It fits designers and front-end developers adding animated micro-interactions without hand-coding them.",
+      "fr": "Lottie est un format ouvert basé sur JSON pour des animations vectorielles redimensionnables, affichées nativement sur le web, iOS et Android grâce à des bibliothèques d'exécution open source. La plateforme LottieFiles héberge une bibliothèque de plus de 250 000 animations, avec un plugin Figma pour l'export direct et des outils d'édition.\n\nLe format et le moteur d'exécution restent gratuits. Le palier payant de LottieFiles démarre à 19,99 $ par mois et par utilisateur (facturé à l'année) une fois que les besoins de stockage ou d'hébergement CDN augmentent, et le plan Team à 24,99 $ ajoute l'historique des versions et les permissions partagées. Il convient aux designers et développeurs front-end qui ajoutent des micro-interactions animées sans les coder à la main."
+    },
+    "pros": [
+      {
+        "en": "The core animation format and runtime libraries are free and open source.",
+        "fr": "Le format d'animation et les bibliothèques d'exécution restent gratuits et open source."
+      },
+      {
+        "en": "Direct Figma export removes the need to hand-code animations for a first result.",
+        "fr": "L'export direct depuis Figma évite de coder les animations à la main pour un premier résultat."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Paid LottieFiles plans bill annually only, with no monthly option found.",
+        "fr": "Les plans payants de LottieFiles sont facturés uniquement à l'année, sans option mensuelle trouvée."
+      },
+      {
+        "en": "Team collaboration features (version history, roles, comments) require the Team plan, unavailable on Individual.",
+        "fr": "Les fonctions de collaboration d'équipe (historique des versions, rôles, commentaires) demandent le plan Team, indisponibles sur Individual."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need lightweight, scalable animations exported straight from a design tool into a web or mobile app.",
+        "fr": "Tu as besoin d'animations légères et redimensionnables, exportées directement depuis un outil de design vers une application web ou mobile."
+      },
+      "avoidIf": {
+        "en": "You need advanced timeline or physics-based animation beyond standard vector playback.",
+        "fr": "Tu as besoin d'animations avancées avec timeline ou physique, au-delà de la lecture vectorielle standard."
+      },
+      "threshold": {
+        "en": "The format stays free; budget $19.99 a month per user (annual) once you need more storage or CDN hosting on LottieFiles.",
+        "fr": "Le format reste gratuit ; prévois 19,99 $ par mois et par utilisateur (facturé à l'année) dès que tu as besoin de plus de stockage ou d'hébergement CDN sur LottieFiles."
+      }
+    }
+  },
   "unknowns": [
     "No monthly billing option confirmed for paid plans; only annual per-seat equivalents were found.",
     "Exact AI credit usage mechanics (what consumes a credit) not detailed in the source excerpt."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Le dossier mélange deux entités du catalogue : « lottie » (le format ouvert) et « lottiefiles » (la plateforme éditeur, fiche séparée). Toute la grille tarifaire relevée ici (Individual, Team, Enterprise) décrit en réalité l'offre LottieFiles, pas le format Lottie lui-même qui est gratuit. lottiefiles a été retiré des alternatives car c'est l'éditeur du format, pas un concurrent ; à vérifier si les deux fiches ne devraient pas être fusionnées ou clairement distinguées côté contenu."
+  ],
+  "hold": "pricing grid is the LottieFiles platform, not the free Lottie format; overlaps slug lottiefiles"
 }
