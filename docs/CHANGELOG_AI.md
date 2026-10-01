@@ -1,3 +1,7 @@
+## 2026-10-01 — Validation Bing Webmaster Tools
+
+- Ajout de la balise `msvalidate.01` dans le document HTML racine afin que la page d’accueil soit vérifiable par Bing.
+
 ## 2026-09-30 — Nouvelle fiche Viso AI
 
 - Ajoute une fiche FR/EN qui distingue Viso Now de Viso Suite, les usages annoncés, les limites de crédits et les publics adaptés.
