@@ -3,7 +3,7 @@
   "slug": "google-earth-studio",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Google Earth Studio",
     "vendor": "Google LLC",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.google.com/earth/studio/", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Earth Studio" }
+    {
+      "id": "s1",
+      "url": "https://www.google.com/earth/studio/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Google Earth Studio"
+    }
   ],
   "pricing": {
     "model": "free",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Full tool free; requires Chrome desktop and a Google account, access granted after signup request.", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Full tool free; requires Chrome desktop and a Google account, access granted after signup request.",
+        "fr": "Outil entièrement gratuit ; nécessite Chrome sur ordinateur et un compte Google, accès accordé après une demande d'inscription."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,10 +47,21 @@
         "name": "Free",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Full tool free; requires Chrome desktop and a Google account, access granted after signup request.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Full tool free; requires Chrome desktop and a Google account, access granted after signup request.",
+            "fr": "Outil entièrement gratuit ; nécessite Chrome sur ordinateur et un compte Google, accès accordé après une demande d'inscription."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "free",
@@ -44,25 +70,203 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Keyframe-based animation tool over Google Earth's satellite and 3D imagery, matching the workflow of industry-standard motion design tools.", "sourceIds": ["s1"] },
-      { "en": "Pre-built templates for common moves such as orbits and point-to-point flights.", "sourceIds": ["s1"] },
-      { "en": "Customizable effects including sun position and camera field of view, plus map label and pin placement.", "sourceIds": ["s1"] },
-      { "en": "Camera export compatible with Adobe After Effects for further post-production.", "sourceIds": ["s1"] }
+      {
+        "en": "Keyframe-based animation tool over Google Earth's satellite and 3D imagery, matching the workflow of industry-standard motion design tools.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Outil d'animation par images clés appliqué à l'imagerie satellite et 3D de Google Earth, proche du fonctionnement des logiciels de motion design standards."
+      },
+      {
+        "en": "Pre-built templates for common moves such as orbits and point-to-point flights.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Modèles prêts à l'emploi pour les mouvements courants comme les orbites et les trajets point à point."
+      },
+      {
+        "en": "Customizable effects including sun position and camera field of view, plus map label and pin placement.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Effets personnalisables incluant la position du soleil et le champ de vision de la caméra, plus le placement des étiquettes et repères sur la carte."
+      },
+      {
+        "en": "Camera export compatible with Adobe After Effects for further post-production.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Export de caméra compatible avec Adobe After Effects pour la suite de la post-production."
+      }
     ],
     "limitations": [
-      { "en": "Runs only in the desktop version of Google Chrome, no native app or mobile support.", "sourceIds": ["s1"] },
-      { "en": "Access requires signing in with a Google account and requesting permission before use, not instant self-serve.", "sourceIds": ["s1"] },
-      { "en": "Camera export interoperability is documented specifically for Adobe After Effects, limiting portability to other compositing tools.", "sourceIds": ["s1"] }
+      {
+        "en": "Runs only in the desktop version of Google Chrome, no native app or mobile support.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Fonctionne uniquement dans la version ordinateur de Google Chrome, sans application native ni support mobile."
+      },
+      {
+        "en": "Access requires signing in with a Google account and requesting permission before use, not instant self-serve.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "L'accès demande de se connecter avec un compte Google et de faire une demande d'autorisation avant utilisation, pas d'accès immédiat en libre-service."
+      },
+      {
+        "en": "Camera export interoperability is documented specifically for Adobe After Effects, limiting portability to other compositing tools.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "L'export de caméra est documenté spécifiquement pour Adobe After Effects, ce qui limite la portabilité vers d'autres outils de compositing."
+      }
     ],
     "integrations": [
-      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s1"] }
+      {
+        "name": "Adobe After Effects",
+        "slug": "adobe-after-effects",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "blender", "reason": { "en": "General-purpose 3D animation suite that can also produce map/terrain flythroughs, with far more creative control." } }
+    {
+      "slug": "blender",
+      "reason": {
+        "en": "General-purpose 3D animation suite that can also produce map/terrain flythroughs, with far more creative control.",
+        "fr": "Suite 3D généraliste qui peut aussi produire des survols de carte/terrain, avec beaucoup plus de contrôle créatif."
+      }
+    },
+    {
+      "slug": "mapbox",
+      "reason": {
+        "en": "Mapping and location platform that can build custom map animations and flythroughs outside Google's ecosystem.",
+        "fr": "Plateforme cartographique qui permet de créer des animations de carte et des survols personnalisés en dehors de l'écosystème Google."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "unknowns": ["Whether the tool is still actively maintained by Google (no changelog or last-update date found on the official page)."],
-  "conflicts": []
+  "unknowns": [
+    "Whether the tool is still actively maintained by Google (no changelog or last-update date found on the official page)."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The tool is entirely free and covers a specific motion-design job (map/satellite flythroughs) that would otherwise need paid 3D terrain tools.",
+        "fr": "L'outil est entièrement gratuit et couvre un besoin précis de motion design (survols de carte/satellite) qui demanderait sinon des outils 3D de terrain payants.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Keyframe animation follows a familiar motion-design workflow, but access requires a request and approval step before first use.",
+        "fr": "L'animation par images clés suit un flux de motion design familier, mais l'accès demande une étape de requête et d'approbation avant la première utilisation.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It delivers its stated promise directly: templates for orbits and flights produce usable camera animations over real map imagery.",
+        "fr": "Il tient sa promesse directement : les modèles d'orbites et de trajets produisent des animations de caméra utilisables sur de l'imagerie de carte réelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "The tool is narrowly scoped to map/globe flythroughs rather than general 3D animation, with no native app or mobile support.",
+        "fr": "L'outil se limite aux survols de carte/globe plutôt qu'à l'animation 3D générale, sans application native ni support mobile.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data or project portability out of Google Earth Studio beyond the After Effects camera export is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des données ou du projet hors de Google Earth Studio, au-delà de l'export caméra vers After Effects, ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Motion designers and video editors who need map or globe flythroughs without 3D terrain modeling.",
+      "fr": "Motion designers et monteurs vidéo qui ont besoin de survols de carte ou de globe sans modéliser de terrain en 3D."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Video intro: animate a satellite orbit or flight path into a city or landmark to open a video or title sequence.",
+      "fr": "Intro vidéo : animer une orbite satellite ou un trajet de vol vers une ville ou un monument pour ouvrir une vidéo ou un générique."
+    },
+    {
+      "en": "Post-production: export camera moves to Adobe After Effects to composite additional graphics or footage over the Earth imagery.",
+      "fr": "Post-production : exporter les mouvements de caméra vers Adobe After Effects pour ajouter des graphismes ou des images par-dessus l'imagerie Earth."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Satellite flythrough animation",
+      "fr": "Survol satellite animé"
+    },
+    "shortDescription": {
+      "en": "A free browser-based tool that turns Google Earth's satellite and 3D imagery into keyframed camera animations for video production.",
+      "fr": "Un outil gratuit dans le navigateur qui transforme l'imagerie satellite et 3D de Google Earth en animations de caméra par images clés pour la vidéo."
+    },
+    "longDescription": {
+      "en": "Google Earth Studio is a free, browser-based animation tool that applies keyframe techniques, familiar from standard motion design software, to Google Earth's satellite and 3D imagery. It includes templates for common moves like orbits and point-to-point flights, plus controls for sun position, camera field of view and map labels.\n\nThe tool is entirely free but requires desktop Chrome and a Google account, with access granted only after requesting it. Camera data exports to Adobe After Effects for further compositing, which makes it a fit for motion designers who need map or globe flythroughs without building 3D terrain from scratch.",
+      "fr": "Google Earth Studio est un outil d'animation gratuit dans le navigateur qui applique des techniques d'images clés, proches des logiciels de motion design classiques, à l'imagerie satellite et 3D de Google Earth. Il propose des modèles pour les mouvements courants (orbites, trajets point à point), avec des réglages pour le soleil, le champ de vision de la caméra et les étiquettes de carte.\n\nL'outil est entièrement gratuit mais demande Chrome sur ordinateur et un compte Google, l'accès n'étant accordé qu'après une demande. Les données de caméra s'exportent vers Adobe After Effects pour la suite du montage, ce qui en fait un outil pour les motion designers qui ont besoin de survols de carte ou de globe sans terrain 3D."
+    },
+    "pros": [
+      {
+        "en": "Entirely free, with no paid tier at all.",
+        "fr": "Entièrement gratuit, sans aucune offre payante."
+      },
+      {
+        "en": "Camera export to Adobe After Effects fits directly into existing motion design pipelines.",
+        "fr": "L'export de caméra vers Adobe After Effects s'intègre directement dans les pipelines de motion design existants."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Runs only in desktop Chrome, with no native app or mobile support.",
+        "fr": "Fonctionne uniquement sur Chrome ordinateur, sans application native ni support mobile."
+      },
+      {
+        "en": "Access requires a request and approval before use, not instant self-serve.",
+        "fr": "L'accès demande une requête et une approbation avant utilisation, pas d'accès immédiat en libre-service."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a map or satellite flythrough for a video and already work in Adobe After Effects.",
+        "fr": "Tu as besoin d'un survol de carte ou satellite pour une vidéo et tu travailles déjà avec Adobe After Effects."
+      },
+      "avoidIf": {
+        "en": "You need to work outside Chrome desktop, or want instant access without a request step.",
+        "fr": "Tu dois travailler hors de Chrome sur ordinateur, ou tu veux un accès immédiat sans étape de demande."
+      },
+      "threshold": {
+        "en": "No cost threshold: the tool is entirely free, so the only investment is the time to request access and learn the keyframe workflow.",
+        "fr": "Aucun seuil de coût : l'outil est entièrement gratuit, le seul investissement est le temps de demander l'accès et d'apprendre le flux par images clés."
+      }
+    }
+  }
 }

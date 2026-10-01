@@ -3,7 +3,7 @@
   "slug": "pika-labs",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Pika",
     "vendor": "Pika Labs, Inc.",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://pika.art/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Pika Pricing" },
-    { "id": "s2", "url": "https://pika.art", "tier": 1, "accessedOn": "2026-09-25", "title": "Pika product page" }
+    {
+      "id": "s1",
+      "url": "https://pika.art/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Pika Pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://pika.art",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Pika product page"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -25,7 +37,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "0 credits/month (pack purchases only), 2 parallel video generations and 2 parallel image+audio generations, all models, no watermark.", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "0 credits/month (pack purchases only), 2 parallel video generations and 2 parallel image+audio generations, all models, no watermark.",
+        "fr": "0 crédit par mois (achat de packs uniquement), 2 générations vidéo en parallèle et 2 générations image+audio en parallèle, tous les modèles, sans filigrane."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -33,84 +54,364 @@
         "name": "Free",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "0 credits/month (pack purchases only), 2 parallel video generations, 2 parallel image+audio generations, all models, no watermark.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "0 credits/month (pack purchases only), 2 parallel video generations and 2 parallel image+audio generations, all models, no watermark.",
+            "fr": "0 crédit par mois (achat de packs uniquement), 2 générations vidéo en parallèle et 2 générations image+audio en parallèle, tous les modèles, sans filigrane."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "starter",
         "name": "Starter",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 10, "annualPerMonth": 8, "oneTime": null },
+        "price": {
+          "monthly": 10,
+          "annualPerMonth": 8,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "900 credits/month, 2 parallel video generations, 8 parallel image+audio generations.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "900 credits/month, 2 parallel video generations, 8 parallel image+audio generations.",
+            "fr": "900 crédits par mois, 2 générations vidéo en parallèle, 8 générations image+audio en parallèle."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "creator",
         "name": "Creator",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 35, "annualPerMonth": 28, "oneTime": null },
+        "price": {
+          "monthly": 35,
+          "annualPerMonth": 28,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "3,150 credits/month, 8 parallel video generations, 32 parallel image+audio generations, commercial license included.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "3,150 credits/month, 8 parallel video generations, 32 parallel image+audio generations, commercial license included.",
+            "fr": "3 150 crédits par mois, 8 générations vidéo en parallèle, 32 générations image+audio en parallèle, licence commerciale incluse."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "fancy",
         "name": "Fancy",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 95, "annualPerMonth": 76, "oneTime": null },
+        "price": {
+          "monthly": 95,
+          "annualPerMonth": 76,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "8,550+ credits/month, unlimited parallel generations, commercial license, priority queue.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "8,550+ credits/month, unlimited parallel generations, commercial license, priority queue.",
+            "fr": "Plus de 8 550 crédits par mois, générations en parallèle illimitées, licence commerciale, file d'attente prioritaire."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Custom credits/month, unlimited parallel generations, dedicated support.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Custom credits/month, unlimited parallel generations, dedicated support.",
+            "fr": "Crédits mensuels sur mesure, générations en parallèle illimitées, support dédié."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [
-      { "name": "Credit pack 3,000 credits", "unit": "usage", "price": { "oneTime": 50 }, "sourceIds": ["s1"] },
-      { "name": "Credit pack 66,000 credits (+10% bonus)", "unit": "usage", "price": { "oneTime": 1000 }, "sourceIds": ["s1"] }
+      {
+        "name": "Credit pack 3,000 credits",
+        "unit": "usage",
+        "price": {
+          "oneTime": 50
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Credit pack 66,000 credits (+10% bonus)",
+        "unit": "usage",
+        "price": {
+          "oneTime": 1000
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Only the Creator plan and above include a commercial license; Free and Starter outputs cannot be used commercially.", "sourceIds": ["s1"] },
-      { "en": "Free plan has no monthly credits at all, only credit-pack top-ups, so it is not usable for any sustained generation.", "sourceIds": ["s1"] }
+      {
+        "en": "Only the Creator plan and above include a commercial license; Free and Starter outputs cannot be used commercially.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Seule l'offre Creator et les offres supérieures incluent une licence commerciale ; les sorties des offres Free et Starter ne peuvent pas être utilisées commercialement."
+      },
+      {
+        "en": "Free plan has no monthly credits at all, only credit-pack top-ups, so it is not usable for any sustained generation.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "L'offre gratuite n'a aucun crédit mensuel, seulement des recharges par pack, elle n'est donc pas utilisable pour une génération soutenue."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "AI video generation from text prompts, including multi-shot videos up to 30 seconds, plus video extension and motion transfer.", "sourceIds": ["s2"] },
-      { "en": "Image generation and editing (swap, remove, restyle elements), including product shots and reusable custom characters.", "sourceIds": ["s2"] },
-      { "en": "Audio tools: music generation (Pika Music), sound effects (Pika SFX), and speech synthesis with multiple voices.", "sourceIds": ["s2"] },
-      { "en": "Aggregates multiple third-party AI models (Seedance, MiniMax, GPT Image, Gemini Omni Flash, Grok Imagine) behind one interface, plus a developer API.", "sourceIds": ["s2"] }
+      {
+        "en": "AI video generation from text prompts, including multi-shot videos up to 30 seconds, plus video extension and motion transfer.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Génération de vidéo par IA à partir de texte, incluant des vidéos multi-plans jusqu'à 30 secondes, plus l'extension de vidéo et le transfert de mouvement."
+      },
+      {
+        "en": "Image generation and editing (swap, remove, restyle elements), including product shots and reusable custom characters.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Génération et édition d'images (remplacer, supprimer, restyliser des éléments), incluant des visuels produit et des personnages réutilisables."
+      },
+      {
+        "en": "Audio tools: music generation (Pika Music), sound effects (Pika SFX), and speech synthesis with multiple voices.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Outils audio : génération de musique (Pika Music), effets sonores (Pika SFX) et synthèse vocale avec plusieurs voix."
+      },
+      {
+        "en": "Aggregates multiple third-party AI models (Seedance, MiniMax, GPT Image, Gemini Omni Flash, Grok Imagine) behind one interface, plus a developer API.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Agrège plusieurs modèles IA tiers (Seedance, MiniMax, GPT Image, Gemini Omni Flash, Grok Imagine) derrière une seule interface, avec une API pour développeurs."
+      }
     ],
     "limitations": [
-      { "en": "Commercial license is gated to the Creator plan and above; lower tiers cannot legally use outputs commercially.", "sourceIds": ["s1"] },
-      { "en": "Free plan carries no recurring credits, making it unusable beyond one-off top-up purchases.", "sourceIds": ["s1"] },
-      { "en": "Priority queue and early access to new models are reserved for the top Fancy/Enterprise tiers, so lower-tier users face slower generation and delayed access to new models.", "sourceIds": ["s1"] }
+      {
+        "en": "Commercial license is gated to the Creator plan and above; lower tiers cannot legally use outputs commercially.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "La licence commerciale est réservée à l'offre Creator et aux offres supérieures ; les offres inférieures ne permettent pas d'usage commercial légal des sorties."
+      },
+      {
+        "en": "Free plan carries no recurring credits, making it unusable beyond one-off top-up purchases.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "L'offre gratuite n'a aucun crédit récurrent, ce qui la rend inutilisable au-delà d'achats ponctuels de recharge."
+      },
+      {
+        "en": "Priority queue and early access to new models are reserved for the top Fancy/Enterprise tiers, so lower-tier users face slower generation and delayed access to new models.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "La file d'attente prioritaire et l'accès anticipé aux nouveaux modèles sont réservés aux offres Fancy/Enterprise, donc les utilisateurs des offres inférieures ont une génération plus lente et un accès retardé aux nouveaux modèles."
+      }
     ],
     "integrations": [
-      { "name": "OpenAI (GPT Image)", "slug": null, "sourceIds": ["s2"] },
-      { "name": "ElevenLabs", "slug": "elevenlabs", "sourceIds": ["s2"] }
+      {
+        "name": "OpenAI (GPT Image)",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "name": "ElevenLabs",
+        "slug": "elevenlabs",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "runway", "reason": { "en": "Direct competitor in AI video generation with a comparable credit-based pricing model." } }
+    {
+      "slug": "runway",
+      "reason": {
+        "en": "Direct competitor in AI video generation with a comparable credit-based pricing model.",
+        "fr": "Concurrent direct en génération vidéo par IA avec un modèle de tarification à crédits comparable."
+      }
+    },
+    {
+      "slug": "kling",
+      "reason": {
+        "en": "Direct competitor in AI text-to-video generation, also credit-based.",
+        "fr": "Concurrent direct en génération vidéo par IA à partir de texte, également à crédits."
+      }
+    },
+    {
+      "slug": "leonardo-ai",
+      "reason": {
+        "en": "AI image and video generation platform with a comparable credit system, covering overlapping use cases.",
+        "fr": "Plateforme de génération d'images et de vidéos par IA avec un système de crédits comparable, aux usages proches."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "unknowns": ["Exact credit cost per second of video or per image generation, needed to translate the monthly credit allowance into a concrete output volume, was not published on the pricing page."],
-  "conflicts": []
+  "unknowns": [
+    "Exact credit cost per second of video or per image generation, needed to translate the monthly credit allowance into a concrete output volume, was not published on the pricing page."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The exact credit cost per second of video or per image is not published, so the real cost-to-output ratio of each plan cannot be confirmed from the sources alone.",
+        "fr": "Le coût exact en crédits par seconde de vidéo ou par image n'est pas publié, donc le vrai rapport coût/production de chaque offre ne peut pas être confirmé à partir des seules sources.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "One interface and one API give access to several third-party AI models at once, instead of juggling separate tools.",
+        "fr": "Une seule interface et une seule API donnent accès à plusieurs modèles IA tiers à la fois, au lieu de jongler entre plusieurs outils.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "The platform delivers its stated generation promise directly across video, image, music and voice.",
+        "fr": "La plateforme tient directement sa promesse de génération, en vidéo, image, musique et voix.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Aggregating several leading third-party models plus a developer API is broad for the AI generation category.",
+        "fr": "Agréger plusieurs modèles tiers de premier plan et une API pour développeurs, c'est large pour la catégorie de la génération IA.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export of generated assets or account data portability is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des contenus générés ou la portabilité des données du compte ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Independent content creators who need AI video, image and audio generation for paid client work.",
+      "fr": "Créateurs de contenu indépendants qui ont besoin de génération IA vidéo, image et audio pour du travail client payant."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Client video content: generate a short multi-shot video from a text prompt on the Creator plan, with a commercial license included.",
+      "fr": "Contenu vidéo client : générer une courte vidéo multi-plans à partir d'un texte sur l'offre Creator, licence commerciale incluse."
+    },
+    {
+      "en": "Brand assets: create a reusable custom character and product shots, then add generated music or voice with Pika's audio tools.",
+      "fr": "Assets de marque : créer un personnage réutilisable et des visuels produit, puis ajouter musique ou voix générées avec les outils audio de Pika."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "AI video generator",
+      "fr": "Génération vidéo IA"
+    },
+    "shortDescription": {
+      "en": "A credit-based AI platform for generating and editing video, images, music and voice from text prompts, aggregating several third-party models.",
+      "fr": "Une plateforme IA à crédits pour générer et éditer vidéo, images, musique et voix à partir de texte, en agrégeant plusieurs modèles tiers."
+    },
+    "longDescription": {
+      "en": "Pika generates and edits video, images, music, sound effects and speech from text prompts, aggregating third-party models (Seedance, MiniMax, GPT Image, Gemini Omni Flash, Grok Imagine) behind one interface and a developer API. It supports multi-shot videos up to 30 seconds, video extension, motion transfer and reusable custom characters.\n\nThe free plan carries no monthly credits, only one-off credit-pack purchases, so sustained use starts at Starter ($10/month, or $8/month billed annually) for 900 credits. A commercial license only applies from the Creator plan ($35/month) upward, so it fits a solo creator making paid client work, not someone testing on the free tier alone.",
+      "fr": "Pika génère et édite vidéo, images, musique, effets sonores et voix à partir de texte, en agrégeant des modèles tiers (Seedance, MiniMax, GPT Image, Gemini Omni Flash, Grok Imagine) derrière une seule interface et une API. L'outil gère des vidéos multi-plans jusqu'à 30 secondes, l'extension de vidéo, le transfert de mouvement et des personnages réutilisables.\n\nL'offre gratuite n'a aucun crédit mensuel, seulement des achats ponctuels de packs, donc un usage régulier démarre avec Starter (10 $/mois, ou 8 $/mois en facturation annuelle) pour 900 crédits. La licence commerciale n'est incluse qu'à partir de l'offre Creator (35 $/mois), ce qui convient à un créateur solo qui facture du travail client, pas à quelqu'un qui teste l'offre gratuite."
+    },
+    "pros": [
+      {
+        "en": "Aggregates several third-party AI models (video, image, music, voice) behind one interface and API.",
+        "fr": "Agrège plusieurs modèles IA tiers (vidéo, image, musique, voix) derrière une seule interface et une API."
+      },
+      {
+        "en": "Supports multi-shot video up to 30 seconds, plus video extension and motion transfer.",
+        "fr": "Gère la vidéo multi-plans jusqu'à 30 secondes, plus l'extension de vidéo et le transfert de mouvement."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free plan has no recurring credits, only one-off top-up purchases.",
+        "fr": "L'offre gratuite n'a aucun crédit récurrent, seulement des achats ponctuels de recharge."
+      },
+      {
+        "en": "Commercial use of outputs is restricted to the Creator plan and above.",
+        "fr": "L'usage commercial des sorties est réservé à l'offre Creator et aux offres supérieures."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You produce video, image or audio content commercially and want several AI models in one credit-based tool.",
+        "fr": "Tu produis du contenu vidéo, image ou audio à but commercial et tu veux plusieurs modèles IA dans un seul outil à crédits."
+      },
+      "avoidIf": {
+        "en": "You only want to test the tool occasionally without committing to a paid credit plan.",
+        "fr": "Tu veux juste tester l'outil de temps en temps sans t'engager sur une offre payante à crédits."
+      },
+      "threshold": {
+        "en": "Budget at least $35/month for the Creator plan, the cheapest tier that includes a commercial license for client work.",
+        "fr": "Compte au moins 35 $/mois pour l'offre Creator, l'offre la moins chère qui inclut une licence commerciale pour du travail client."
+      },
+      "billingTraps": {
+        "en": "The free plan has zero monthly credits, so any real use requires either a paid plan or a one-off credit pack starting at $50 for 3,000 credits.",
+        "fr": "L'offre gratuite n'a aucun crédit mensuel, donc tout usage réel suppose une offre payante ou un pack de crédits ponctuel à partir de 50 $ pour 3 000 crédits."
+      }
+    }
+  }
 }

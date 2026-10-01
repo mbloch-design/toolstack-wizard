@@ -3,7 +3,7 @@
   "slug": "gmail",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Gmail",
     "vendor": "Google LLC",
@@ -48,7 +48,7 @@
       "exists": true,
       "limits": {
         "en": "Free personal @gmail.com account with 15GB storage shared across Gmail, Drive and Photos.",
-        "fr": null
+        "fr": "Compte personnel @gmail.com gratuit avec 15 Go de stockage partagés entre Gmail, Drive et Photos."
       },
       "sourceIds": [
         "s1"
@@ -69,7 +69,7 @@
         "keyLimits": [
           {
             "en": "Custom @company email via Gmail, 30GB pooled storage per user, no Gemini AI features. Price is a third-party estimate, not independently confirmed on workspace.google.com's interactive calculator in this session.",
-            "fr": null
+            "fr": "Email @entreprise personnalisé via Gmail, 30 Go de stockage mutualisé par utilisateur, sans les fonctions IA Gemini. Le prix est une estimation tierce, non confirmée directement sur le calculateur interactif de workspace.google.com lors de cette session."
           }
         ],
         "sourceIds": [
@@ -90,7 +90,7 @@
         "keyLimits": [
           {
             "en": "2TB pooled storage per user, adds Gemini AI in Docs/Sheets/Slides/Drive/Meet/Chat. Price is a third-party estimate.",
-            "fr": null
+            "fr": "2 To de stockage mutualisé par utilisateur, ajoute l'IA Gemini dans Docs/Sheets/Slides/Drive/Meet/Chat. Le prix est une estimation tierce."
           }
         ],
         "sourceIds": [
@@ -111,7 +111,7 @@
         "keyLimits": [
           {
             "en": "5TB pooled storage per user, adds eSignature with Docs/PDFs. Price is a third-party estimate.",
-            "fr": null
+            "fr": "5 To de stockage mutualisé par utilisateur, ajoute la signature électronique avec Docs/PDF. Le prix est une estimation tierce."
           }
         ],
         "sourceIds": [
@@ -132,7 +132,7 @@
         "keyLimits": [
           {
             "en": "5TB+ storage per user (expandable on request), no minimum or maximum user count, unlike Starter/Standard/Plus which cap at 300 users.",
-            "fr": null
+            "fr": "Plus de 5 To de stockage par utilisateur (extensible sur demande), sans nombre minimum ou maximum d'utilisateurs, contrairement à Starter/Standard/Plus limités à 300 utilisateurs."
           }
         ],
         "sourceIds": [
@@ -145,7 +145,7 @@
     "cautions": [
       {
         "en": "Business Starter/Standard/Plus per-user prices come from a third-party summary, not directly confirmed on workspace.google.com's official pricing page in this session, which requires an interactive calculator for exact figures.",
-        "fr": null,
+        "fr": "Les prix par utilisateur de Business Starter/Standard/Plus viennent d'un résumé tiers, non confirmés directement sur la page tarifaire officielle de workspace.google.com lors de cette session, qui demande un calculateur interactif pour les chiffres exacts.",
         "sourceIds": [
           "s2",
           "s3"
@@ -153,7 +153,7 @@
       },
       {
         "en": "Business Starter, Standard and Plus plans are capped at a maximum of 300 users; only Enterprise has no user limit.",
-        "fr": null,
+        "fr": "Les offres Business Starter, Standard et Plus sont plafonnées à 300 utilisateurs maximum ; seule Enterprise n'a pas de limite.",
         "sourceIds": [
           "s2"
         ]
@@ -164,21 +164,21 @@
     "capabilities": [
       {
         "en": "Free @gmail.com email with 15GB storage shared across Gmail, Drive and Photos.",
-        "fr": null,
+        "fr": "Email @gmail.com gratuit avec 15 Go de stockage partagés entre Gmail, Drive et Photos.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Business email with custom domain and pooled per-user storage (30GB to 5TB+) via Google Workspace plans.",
-        "fr": null,
+        "fr": "Email professionnel avec nom de domaine personnalisé et stockage mutualisé par utilisateur (30 Go à plus de 5 To) via les offres Google Workspace.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "AI features (Gemini in Docs, Sheets, Slides, Drive, Meet, Chat) available from Business Standard tier upward.",
-        "fr": null,
+        "fr": "Fonctions IA (Gemini dans Docs, Sheets, Slides, Drive, Meet, Chat) disponibles à partir de l'offre Business Standard.",
         "sourceIds": [
           "s2"
         ]
@@ -187,14 +187,14 @@
     "limitations": [
       {
         "en": "Free personal tier lacks a custom domain and is limited to 15GB storage shared across all Google services.",
-        "fr": null,
+        "fr": "L'offre personnelle gratuite n'a pas de nom de domaine personnalisé et se limite à 15 Go de stockage partagés entre tous les services Google.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Business Starter plan does not include Gemini AI features, which require at least the Standard tier.",
-        "fr": null,
+        "fr": "L'offre Business Starter n'inclut pas les fonctions IA Gemini, qui demandent au moins l'offre Standard.",
         "sourceIds": [
           "s2"
         ]
@@ -207,11 +207,147 @@
       "android"
     ]
   },
-  "alternatives": [],
+  "alternatives": [
+    {
+      "slug": "zoho",
+      "reason": {
+        "en": "Business email and office suite competitor with its own free and paid tiers.",
+        "fr": "Concurrent pour l'email professionnel et la suite bureautique, avec ses propres offres gratuite et payantes."
+      }
+    },
+    {
+      "slug": "microsoft-365",
+      "reason": {
+        "en": "Outlook and Exchange-based business email bundled with the Microsoft office suite.",
+        "fr": "Email professionnel Outlook/Exchange intégré à la suite bureautique Microsoft."
+      }
+    }
+  ],
   "missingAlternatives": [],
   "unknowns": [
-    "Official per-user dollar prices for Business Starter/Standard/Plus not confirmed directly on workspace.google.com's official pricing page in this session (it requires an interactive calculator); figures used here come from a third-party source and should be re-verified.",
-    "No alternativeCandidates were provided in the seed for this slug; no catalogue alternatives could be selected."
+    "Official per-user dollar prices for Business Starter/Standard/Plus not confirmed directly on workspace.google.com's own pricing page in this session (it requires an interactive calculator); figures used here come from a third-party source and should be re-verified."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free personal tier covers most individual needs at 15GB, and the cheapest paid Business tier adds a custom domain and pooled storage for a modest per-user price.",
+        "fr": "L'offre personnelle gratuite couvre la plupart des besoins individuels avec 15 Go, et l'offre Business la moins chère ajoute un domaine personnalisé et du stockage mutualisé pour un prix modéré par utilisateur.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "simplicite": {
+        "en": "Gmail is a widely known interface usable immediately without training, for both the free and paid tiers.",
+        "fr": "Gmail est une interface largement connue, utilisable immédiatement sans formation, aussi bien en gratuit qu'en payant.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It delivers its core promise directly: sending, receiving and storing email and files, with no workaround needed.",
+        "fr": "Il tient sa promesse de base directement : envoyer, recevoir et stocker emails et fichiers, sans contournement nécessaire.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Business Workspace plans bundle email with Drive, Meet, Chat and Gemini AI, a broad office suite rather than email alone.",
+        "fr": "Les offres Business Workspace associent l'email à Drive, Meet, Chat et l'IA Gemini, une suite bureautique large plutôt qu'un simple email.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export and data portability out of Gmail/Workspace are not covered by the collected sources.",
+        "fr": "Note neutre : l'export et la portabilité des données hors de Gmail/Workspace ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams and solo operators who need professional email and already run their business inside Google's office suite.",
+      "fr": "Petites équipes et indépendants qui ont besoin d'une messagerie professionnelle et travaillent déjà dans la suite bureautique de Google."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Daily operations: give every team member a professional @yourcompany.com address through Workspace instead of a personal Gmail account.",
+      "fr": "Opérations quotidiennes : donner à chaque membre de l'équipe une adresse @tonentreprise.com via Workspace plutôt qu'un compte Gmail personnel."
+    },
+    {
+      "en": "Document collaboration: use Gmail alongside Drive and Meet, included in every Workspace plan, to centralize files and calls.",
+      "fr": "Collaboration documentaire : utiliser Gmail avec Drive et Meet, inclus dans chaque offre Workspace, pour centraliser fichiers et appels."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Email and Workspace",
+      "fr": "Messagerie et Workspace"
+    },
+    "shortDescription": {
+      "en": "A free personal email service that scales into a paid Google Workspace business suite with shared storage, Gmail, Drive and Gemini AI.",
+      "fr": "Un service de messagerie personnelle gratuit qui évolue vers une suite professionnelle Google Workspace avec stockage partagé, Gmail, Drive et l'IA Gemini."
+    },
+    "longDescription": {
+      "en": "Gmail is Google's email client, free for personal use with 15GB of storage shared across Gmail, Drive and Photos. For organizations, the same interface runs on Google Workspace, which adds a custom domain, pooled per-user storage and administration tools.\n\nPaid plans start around $7 per user per month billed annually ($8.40 billed monthly) for Business Starter, rising through Standard and Plus for more storage and Gemini AI features, with a custom-priced Enterprise tier for larger, uncapped teams. It suits any small team that already works inside Google's ecosystem and wants shared company email without running its own mail server.",
+      "fr": "Gmail est le client email de Google, gratuit pour un usage personnel avec 15 Go de stockage partagés entre Gmail, Drive et Photos. Pour les organisations, la même interface tourne sous Google Workspace, qui ajoute un nom de domaine personnalisé, un stockage mutualisé par utilisateur et des outils d'administration.\n\nLes offres payantes démarrent autour de 7 $ par utilisateur et par mois en engagement annuel (8,40 $ en mensuel) pour Business Starter, puis montent vers Standard et Plus pour plus de stockage et l'IA Gemini, avec une offre Enterprise sur devis pour les grandes équipes sans limite de sièges. Elle convient aux petites équipes déjà installées dans Google qui veulent une messagerie partagée sans gérer de serveur mail."
+    },
+    "pros": [
+      {
+        "en": "Generous free tier (15GB) good enough for most personal use before any upgrade is needed.",
+        "fr": "Offre gratuite généreuse (15 Go), suffisante pour la plupart des usages personnels avant toute mise à niveau."
+      },
+      {
+        "en": "Business plans scale smoothly from a single founder to large uncapped Enterprise teams.",
+        "fr": "Les offres Business montent en puissance sans rupture, d'un fondateur seul jusqu'aux grandes équipes Enterprise sans limite."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Gemini AI features are withheld from the cheapest Business Starter plan.",
+        "fr": "Les fonctions IA Gemini sont absentes de l'offre Business Starter, la moins chère."
+      },
+      {
+        "en": "Business Starter, Standard and Plus plans cap out at 300 users, pushing larger teams to a quoted Enterprise plan.",
+        "fr": "Les offres Business Starter, Standard et Plus plafonnent à 300 utilisateurs, ce qui oblige les grandes équipes à passer sur l'offre Enterprise sur devis."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Your team already lives in Google Docs, Sheets and Meet and you want one shared company email without extra infrastructure.",
+        "fr": "Ton équipe travaille déjà avec Docs, Sheets et Meet et tu veux une messagerie d'entreprise partagée sans infrastructure supplémentaire."
+      },
+      "avoidIf": {
+        "en": "You need advanced email compliance or archiving, or a collaboration suite outside Google's ecosystem.",
+        "fr": "Tu as besoin d'archivage ou de conformité email avancée, ou d'une suite collaborative hors de l'écosystème Google."
+      },
+      "threshold": {
+        "en": "Budget around $84 per user per year for Business Starter (annual billing), the cheapest paid tier with a custom domain.",
+        "fr": "Compte environ 84 $ par utilisateur et par an pour Business Starter (facturation annuelle), l'offre payante la moins chère avec nom de domaine personnalisé."
+      },
+      "billingTraps": {
+        "en": "Beyond 300 users, Business Starter/Standard/Plus cannot scale further; only the quoted Enterprise tier removes the user cap.",
+        "fr": "Au-delà de 300 utilisateurs, Business Starter/Standard/Plus ne montent pas plus haut ; seule l'offre Enterprise sur devis lève la limite d'utilisateurs."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Business Starter/Standard/Plus monthly prices ($8.40/$16.80/$26.40, annual $7/$14/$22 per user) come from a third-party summary (s3), not Google's own interactive pricing calculator; verify directly on workspace.google.com before publishing."
+  ]
 }

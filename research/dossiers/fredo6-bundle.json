@@ -3,7 +3,7 @@
   "slug": "fredo6-bundle",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Fredo6 Bundle",
     "vendor": "Fredo6 (independent developer)",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://sketchucation.com/pluginstore?pauthor=fredo6", "tier": 1, "accessedOn": "2026-09-25", "title": "Fredo6 plugins on SketchUcation" }
+    {
+      "id": "s1",
+      "url": "https://sketchucation.com/pluginstore?pauthor=fredo6",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Fredo6 plugins on SketchUcation"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,7 +30,18 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "Most Fredo6 plugins (FredoScale, FredoCorner, FredoBend, Curviloft, etc.) are free; only a few (FredoPortrait, FredoSpline) are marked licensed/paid" }], "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": [
+        {
+          "en": "Most Fredo6 plugins (FredoScale, FredoCorner, FredoBend, Curviloft, etc.) are free; only a few (FredoPortrait, FredoSpline) are marked licensed/paid",
+          "fr": "La plupart des extensions Fredo6 (FredoScale, FredoCorner, FredoBend, Curviloft, etc.) sont gratuites ; seules quelques-unes (FredoPortrait, FredoSpline) sont payantes sous licence"
+        }
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,43 +49,215 @@
         "name": "Free plugins",
         "unit": "one_time",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 0
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Most of the 40+ plugins in the bundle (FredoScale, FredoCorner, Curviloft, etc.) are free to download" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Most of the 40+ plugins in the bundle (FredoScale, FredoCorner, Curviloft, etc.) are free to download",
+            "fr": "La plupart des 40+ extensions du bundle (FredoScale, FredoCorner, Curviloft, etc.) sont gratuites à télécharger"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "free-plugins",
     "addOns": [
-      { "en": "FredoPortrait and FredoSpline require a separate paid license; exact prices not published on the listing page", "sourceIds": ["s1"] }
+      {
+        "en": "FredoPortrait and FredoSpline require a separate paid license; exact prices not published on the listing page",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "FredoPortrait et FredoSpline nécessitent une licence payante séparée ; les prix exacts ne sont pas publiés sur la page de la boutique"
+      }
     ],
     "cautions": [
-      { "en": "The 'bundle' is not a single purchase: it is a collection of 40+ individually distributed plugins, most free, a couple paid, requiring the shared LibFredo6 library.", "sourceIds": ["s1"] }
+      {
+        "en": "The 'bundle' is not a single purchase: it is a collection of 40+ individually distributed plugins, most free, a couple paid, requiring the shared LibFredo6 library.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le « bundle » n'est pas un achat unique : c'est une collection de plus de 40 extensions distribuées individuellement, la plupart gratuites, deux payantes, nécessitant la bibliothèque partagée LibFredo6."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Grouped distribution of 40+ specialized SketchUp modeling extensions (FredoScale, FredoCorner, FredoBend, Curviloft, BezierSpline, etc.)", "sourceIds": ["s1"] },
-      { "en": "Covers geometric transformation, curve/spline drawing, and toolbar management workflows", "sourceIds": ["s1"] }
+      {
+        "en": "Grouped distribution of 40+ specialized SketchUp modeling extensions (FredoScale, FredoCorner, FredoBend, Curviloft, BezierSpline, etc.)",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Distribution groupée de plus de 40 extensions de modélisation spécialisées pour SketchUp (FredoScale, FredoCorner, FredoBend, Curviloft, etc.)"
+      },
+      {
+        "en": "Covers geometric transformation, curve/spline drawing, and toolbar management workflows",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Couvre la transformation géométrique, le tracé de courbes et de splines, et la gestion des barres d'outils"
+      }
     ],
     "limitations": [
-      { "en": "Not a unified product: each plugin is installed and updated separately from SketchUcation", "sourceIds": ["s1"] },
-      { "en": "Requires the shared LibFredo6 library (SketchUp 2017+) as infrastructure, not a standalone tool", "sourceIds": ["s1"] }
+      {
+        "en": "Not a unified product: each plugin is installed and updated separately from SketchUcation",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Pas un produit unifié : chaque extension s'installe et se met à jour séparément depuis SketchUcation"
+      },
+      {
+        "en": "Requires the shared LibFredo6 library (SketchUp 2017+) as infrastructure, not a standalone tool",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Nécessite la bibliothèque partagée LibFredo6 (SketchUp 2017 ou plus) comme infrastructure, ce n'est pas un outil autonome"
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "SketchUp users (designers, architects) who want free, specialized modeling extensions for scaling, curves and edges.",
+      "fr": "Utilisateurs de SketchUp (designers, architectes) qui veulent des extensions de modélisation gratuites et spécialisées pour le redimensionnement, les courbes et les angles."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Shape editing: a SketchUp user installs FredoScale to scale, stretch or bend part of a model without rebuilding the geometry.",
+      "fr": "Édition de formes : un utilisateur de SketchUp installe FredoScale pour redimensionner, étirer ou courber une partie du modèle sans le reconstruire."
+    },
+    {
+      "en": "Organic modeling: a designer uses Curviloft to loft curved surfaces between profile lines for furniture or product shapes.",
+      "fr": "Modélisation organique : un designer utilise Curviloft pour créer des surfaces courbes entre des lignes de profil, pour du mobilier ou des objets."
+    }
+  ],
   "alternatives": [
-    { "slug": "sketchup-pro", "reason": { "en": "Host application these plugins extend; some equivalent modeling tools are native in Pro" } }
+    {
+      "slug": "sketchup-pro",
+      "reason": {
+        "en": "Host application these plugins extend; some equivalent modeling tools are native in Pro",
+        "fr": "Application hôte que ces extensions prolongent ; certains outils de modélisation équivalents sont natifs dans Pro"
+      }
+    },
+    {
+      "slug": "1001bit-tools",
+      "reason": {
+        "en": "Another SketchUp plugin bundle covering similar modeling and productivity extensions.",
+        "fr": "Un autre pack d'extensions SketchUp couvrant des fonctions de modélisation et de productivité similaires."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Most of the 40+ plugins are free and cover real modeling gaps in SketchUp, at no cost beyond the time to install them.",
+        "fr": "La plupart des 40+ extensions sont gratuites et comblent des manques réels de modélisation dans SketchUp, sans coût autre que le temps d'installation.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Each of the 40+ plugins installs separately and requires the shared LibFredo6 library first, adding setup steps before a first result.",
+        "fr": "Chacune des 40+ extensions s'installe séparément et demande d'abord la bibliothèque partagée LibFredo6, ce qui ajoute des étapes avant un premier résultat.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Individual plugins perform their specific function, but finding and updating the right one across 40+ separate downloads is not frictionless.",
+        "fr": "Chaque extension remplit sa fonction précise, mais trouver et mettre à jour la bonne parmi plus de 40 téléchargements séparés n'est pas sans friction.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Each plugin is narrowly specialized rather than a comprehensive modeling platform on its own.",
+        "fr": "Chaque extension est ciblée sur une tâche précise plutôt que de former à elle seule une plateforme de modélisation complète.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data portability is not a relevant concept for a plugin bundle and is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des données n'est pas un concept pertinent pour un pack d'extensions et ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "SketchUp modeling plugins",
+      "fr": "Extensions SketchUp"
+    },
+    "shortDescription": {
+      "en": "Fredo6 Bundle is a collection of over 40 free SketchUp modeling plugins (FredoScale, Curviloft and others), with a couple sold separately.",
+      "fr": "Fredo6 Bundle regroupe plus de 40 extensions de modélisation gratuites pour SketchUp (FredoScale, Curviloft, etc.), avec quelques-unes vendues séparément."
+    },
+    "longDescription": {
+      "en": "Fredo6 Bundle is not a single product but a set of more than 40 specialized SketchUp extensions distributed individually on SketchUcation: FredoScale for scaling and bending, FredoCorner for rounding edges, Curviloft for lofted curved surfaces, and others covering geometric transformation and curve drawing. All of them need the shared LibFredo6 library to run, on SketchUp 2017 or later.\n\nMost of the plugins are free to download; only FredoPortrait and FredoSpline require a separate paid license, with prices not published on the listing page. Because each extension is installed and updated on its own, there is no single bundle purchase or unified changelog.",
+      "fr": "Fredo6 Bundle n'est pas un produit unique mais un ensemble de plus de 40 extensions SketchUp spécialisées, distribuées individuellement sur SketchUcation : FredoScale pour redimensionner et courber, FredoCorner pour arrondir les angles, Curviloft pour créer des surfaces courbes par lissage, et d'autres pour la transformation géométrique et le tracé de courbes. Toutes nécessitent la bibliothèque partagée LibFredo6, sur SketchUp 2017 ou version ultérieure.\n\nLa plupart des extensions sont gratuites à télécharger ; seules FredoPortrait et FredoSpline demandent une licence payante séparée, dont le prix n'est pas publié sur la page de la boutique. Comme chaque extension s'installe et se met à jour séparément, il n'existe ni achat groupé unique ni changelog commun."
+    },
+    "pros": [
+      {
+        "en": "Most of the 40+ plugins are free, covering a wide range of modeling needs (scaling, corners, curved surfaces).",
+        "fr": "La plupart des 40+ extensions sont gratuites et couvrent un large éventail de besoins de modélisation (redimensionnement, angles, surfaces courbes)."
+      },
+      {
+        "en": "Each plugin is narrowly focused, so it is easy to install only what a specific modeling task needs.",
+        "fr": "Chaque extension est ciblée, donc on installe facilement seulement ce dont une tâche de modélisation a besoin."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Not a unified product: each plugin installs and updates separately, with no single bundle purchase page.",
+        "fr": "Pas un produit unifié : chaque extension s'installe et se met à jour séparément, sans page d'achat groupée."
+      },
+      {
+        "en": "Requires installing the shared LibFredo6 library first, an extra setup step before any plugin works.",
+        "fr": "Demande d'installer d'abord la bibliothèque partagée LibFredo6, une étape de configuration supplémentaire avant que les extensions fonctionnent."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you already model in SketchUp and want free, specialized tools for scaling, curves or edge work.",
+        "fr": "Garde Fredo6 Bundle si tu modélises déjà dans SketchUp et que tu veux des outils gratuits et spécialisés pour le redimensionnement, les courbes ou les angles."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you want one installer and one changelog: each plugin is managed separately on SketchUcation.",
+        "fr": "Évite-le si tu veux un seul installeur et un seul changelog : chaque extension se gère séparément sur SketchUcation."
+      },
+      "threshold": {
+        "en": "Most plugins cost nothing; only FredoPortrait and FredoSpline are paid, with prices not published, so budget zero for the core bundle and check the listing page before buying either of those two.",
+        "fr": "La plupart des extensions ne coûtent rien ; seules FredoPortrait et FredoSpline sont payantes, à un prix non publié, donc prévois un budget nul pour le socle et vérifie la page de la boutique avant d'acheter ces deux-là."
+      }
+    }
+  },
   "unknowns": [
     "Exact prices for the paid plugins (FredoPortrait, FredoSpline) not shown on the SketchUcation listing",
     "No single official 'bundle' purchase page found; distribution is per-plugin"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

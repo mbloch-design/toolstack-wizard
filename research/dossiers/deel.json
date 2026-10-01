@@ -3,7 +3,8 @@
   "slug": "deel",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Deel",
     "vendor": "Deel, Inc.",
@@ -15,13 +16,7 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://www.deel.com/pricing",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Deel pricing"
-    }
+    { "id": "s1", "url": "https://www.deel.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Deel pricing" }
   ],
   "pricing": {
     "model": "per_seat",
@@ -30,190 +25,173 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": {
-      "exists": false,
-      "limits": null,
-      "sourceIds": [
-        "s1"
-      ]
-    },
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
     "plans": [
       {
         "key": "contractor-management",
         "name": "Contractor Management",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": 49,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": 49, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Centralized contractor management, payments in 120+ currencies, automated invoicing, tax-form guidance, worker classification compliance.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Centralized contractor management, payments in 120+ currencies, automated invoicing, tax-form guidance, worker classification compliance.", "fr": "Gestion centralisée des prestataires, paiements en plus de 120 devises, facturation automatisée, accompagnement sur les formulaires fiscaux, conformité de classification des travailleurs." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "contractor-of-record",
         "name": "Contractor of Record",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": 325,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": 325, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Adds compliant misclassification protection on top of contractor management.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Adds compliant misclassification protection on top of contractor management.", "fr": "Ajoute une protection contre la mauvaise classification en plus de la gestion des prestataires." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "us-peo",
         "name": "US PEO",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": 125,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": 125, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Co-employment across all 50 US states, managed payroll/tax filings, benefits (healthcare, dental, vision, 401(k)).",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Co-employment across all 50 US states, managed payroll/tax filings, benefits (healthcare, dental, vision, 401(k)).", "fr": "Coemploi dans les 50 États américains, paie et déclarations fiscales gérées, avantages (santé, dentaire, vision, 401(k))." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "eor-global",
         "name": "EOR (Global)",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": 599,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": 599, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Full legal employment in 130+ countries via Employer of Record, automated onboarding, on-demand HR/legal/tax support.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Full legal employment in 130+ countries via Employer of Record, automated onboarding, on-demand HR/legal/tax support.", "fr": "Emploi légal complet dans plus de 130 pays via portage salarial (EOR), intégration automatisée, support RH/juridique/fiscal à la demande." }],
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "contractor-management",
     "addOns": [
-      {
-        "en": "Find Talent (recruiting): $14 per worker/month for job posting, AI-powered screening and interview scheduling.",
-        "fr": null,
-        "sourceIds": ["s1"]
-      }
+      { "en": "Find Talent (recruiting): $14 per worker/month for job posting, AI-powered screening and interview scheduling.", "fr": "Find Talent (recrutement) : 14 $ par travailleur et par mois pour la publication d'offres, la présélection par IA et la planification d'entretiens.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      {
-        "en": "Pricing is per worker/employee, not a flat account fee, and varies widely by hiring type: $49/contractor/month for management vs $599/employee/month for global EOR.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "No long-term contract required (month-to-month available), but total cost scales directly with headcount across each hiring category used.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Pricing is per worker/employee, not a flat account fee, and varies widely by hiring type: $49/contractor/month for management vs $599/employee/month for global EOR.", "fr": "Le tarif est par travailleur ou salarié, pas un forfait de compte fixe, et varie fortement selon le type d'embauche : 49 $/prestataire/mois pour la gestion contre 599 $/salarié/mois pour l'EOR mondial.", "sourceIds": ["s1"] },
+      { "en": "No long-term contract required (month-to-month available), but total cost scales directly with headcount across each hiring category used.", "fr": "Aucun engagement long terme requis (mensuel sans engagement disponible), mais le coût total augmente directement avec l'effectif dans chaque catégorie d'embauche utilisée.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      {
-        "en": "Global payroll, contracts and Employer-of-Record services covering 150+ countries.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Contractor payment automation with invoicing and tax-form (e.g. W-9/W-8) guidance in 120+ currencies.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "US PEO co-employment offering managed benefits and payroll tax filings across all 50 states.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Global payroll, contracts and Employer-of-Record services covering 150+ countries.", "fr": "Paie mondiale, contrats et services de portage salarial (EOR) couvrant plus de 150 pays.", "sourceIds": ["s1"] },
+      { "en": "Contractor payment automation with invoicing and tax-form (e.g. W-9/W-8) guidance in 120+ currencies.", "fr": "Automatisation du paiement des prestataires avec facturation et accompagnement sur les formulaires fiscaux (ex. W-9/W-8) dans plus de 120 devises.", "sourceIds": ["s1"] },
+      { "en": "US PEO co-employment offering managed benefits and payroll tax filings across all 50 states.", "fr": "Coemploi PEO aux États-Unis avec gestion des avantages sociaux et des déclarations fiscales de paie dans les 50 États.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      {
-        "en": "No free tier; every hiring type (contractor, PEO, EOR) is billed per person per month starting at $49.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "EOR pricing at $599/employee/month is materially higher than direct local payroll for companies already established in a country.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "No free tier; every hiring type (contractor, PEO, EOR) is billed per person per month starting at $49.", "fr": "Aucun palier gratuit ; chaque type d'embauche (prestataire, PEO, EOR) est facturé par personne et par mois à partir de 49 $.", "sourceIds": ["s1"] },
+      { "en": "EOR pricing at $599/employee/month is materially higher than direct local payroll for companies already established in a country.", "fr": "Le tarif EOR de 599 $/salarié/mois est nettement plus élevé qu'une paie locale directe pour une entreprise déjà implantée dans un pays.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
-  "alternatives": [
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or HR lead on a small team hiring contractors or employees across several countries without a local entity in each one.",
+      "fr": "Une ou un responsable ops ou RH dans une petite équipe qui embauche des prestataires ou des salariés dans plusieurs pays sans entité locale dans chacun."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
     {
-      "slug": "rippling",
-      "reason": {
-        "en": "HR/IT/payroll platform covering overlapping global workforce management needs.",
-        "fr": null
-      }
+      "en": "Contractor payouts: pay international freelancers through Deel's Contractor Management plan, with automated invoicing and tax-form guidance instead of manual bank transfers.",
+      "fr": "Paiement de prestataires : payer des freelances internationaux via le plan Contractor Management de Deel, avec facturation automatisée et accompagnement fiscal plutôt que des virements bancaires manuels."
     },
     {
-      "slug": "bamboohr",
-      "reason": {
-        "en": "HR platform sometimes compared for core HRIS features, though narrower on global EOR.",
-        "fr": null
-      }
+      "en": "Hiring abroad without an entity: use the global EOR plan to legally employ someone in a country where the company has no local subsidiary.",
+      "fr": "Embauche à l'étranger sans entité : utiliser le plan EOR mondial pour employer légalement quelqu'un dans un pays où l'entreprise n'a pas de filiale locale."
     }
+  ],
+  "alternatives": [
+    { "slug": "rippling", "reason": { "en": "HR/IT/payroll platform covering overlapping global workforce management needs.", "fr": "Plateforme RH/IT/paie couvrant des besoins de gestion de la main-d'œuvre mondiale similaires." } },
+    { "slug": "oyster", "reason": { "en": "Direct global Employer-of-Record and contractor management competitor to Deel.", "fr": "Concurrent direct de Deel sur le portage salarial (EOR) mondial et la gestion de prestataires." } },
+    { "slug": "bamboohr", "reason": { "en": "HR platform sometimes compared for core HRIS features, though narrower on global EOR.", "fr": "Plateforme RH parfois comparée pour les fonctions SIRH de base, mais plus étroite sur l'EOR mondial." } }
   ],
   "missingAlternatives": [
     { "name": "Remote", "officialUrl": "https://remote.com", "reason": "Direct global EOR, payroll and contractor management competitor to Deel, listed in the seed alternativeCandidates but not present as a catalogue slug." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Deel replaces setting up a local entity to hire abroad, but at 599 dollars per employee per month for global EOR the dossier shows it costs materially more than direct local payroll where a company is already established.",
+        "fr": "Deel évite de créer une entité locale pour embaucher à l'étranger, mais à 599 dollars par salarié et par mois pour l'EOR mondial, le dossier montre un coût nettement supérieur à une paie locale directe là où l'entreprise est déjà implantée.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Contractor management is described as centralized with automated invoicing, but the dossier does not state a setup duration for a first payout.",
+        "fr": "La gestion des prestataires est décrite comme centralisée avec facturation automatisée, mais le dossier ne précise pas de durée de mise en place pour un premier paiement.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Payroll, contractor payments and EOR employment work as described across the stated country and currency coverage, with no workaround mentioned.",
+        "fr": "La paie, les paiements de prestataires et l'emploi via EOR fonctionnent comme annoncé sur la couverture de pays et de devises indiquée, sans contournement mentionné.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Coverage spans contractor management, US PEO and EOR in 130+ countries in one platform, a wide ceiling compared to tools limited to a single hiring type.",
+        "fr": "La couverture va de la gestion de prestataires au PEO américain et à l'EOR dans plus de 130 pays sur une seule plateforme, un plafond large face à des outils limités à un seul type d'embauche.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and transition support when moving contractors or employees off Deel are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et l'accompagnement à la transition en cas de départ de prestataires ou de salariés de Deel ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Global hiring and payroll", "fr": "Paie et embauche mondiales" },
+    "shortDescription": {
+      "en": "Deel handles contractor payments, US PEO and global Employer-of-Record hiring, priced per worker from 49 to 599 dollars a month.",
+      "fr": "Deel gère les paiements de prestataires, le PEO américain et l'embauche en portage salarial mondial, facturé par travailleur de 49 à 599 dollars par mois."
+    },
+    "longDescription": {
+      "en": "Deel covers four ways to put someone to work across borders: contractor management with automated invoicing and tax guidance, a compliance layer against worker misclassification, US PEO co-employment with managed benefits, and global Employer of Record for full legal employment in 130+ countries, all billed per worker per month.\n\nPrices run from 49 dollars a month for contractor management up to 599 dollars a month for global EOR, with no free tier and no long-term contract required. It fits an ops or HR lead hiring across several countries without local entities, while a company already set up locally may find direct payroll cheaper than the EOR tier.",
+      "fr": "Deel couvre quatre façons de faire travailler quelqu'un par-delà les frontières : la gestion de prestataires avec facturation automatisée, une couche de conformité contre la mauvaise classification, le coemploi PEO américain avec avantages gérés, et le portage salarial mondial (EOR) pour un emploi légal dans plus de 130 pays, le tout facturé par travailleur et par mois.\n\nLes tarifs vont de 49 dollars par mois pour la gestion de prestataires jusqu'à 599 dollars pour l'EOR mondial, sans palier gratuit ni engagement long terme. L'outil convient à une équipe ops ou RH qui embauche dans plusieurs pays sans entité locale, tandis qu'une entreprise déjà implantée localement trouvera une paie directe moins chère que le palier EOR."
+    },
+    "pros": [
+      { "en": "Covers contractor payments, PEO and EOR in one platform instead of juggling separate vendors per country.", "fr": "Couvre les paiements de prestataires, le PEO et l'EOR sur une seule plateforme plutôt que de jongler avec des prestataires séparés par pays." },
+      { "en": "No long-term contract required; billing is month-to-month per worker.", "fr": "Aucun engagement long terme requis ; la facturation est mensuelle sans engagement, par travailleur." }
+    ],
+    "cons": [
+      { "en": "Global EOR at 599 dollars per employee per month is expensive compared to direct local payroll where the company already has a presence.", "fr": "L'EOR mondial à 599 dollars par salarié et par mois est coûteux face à une paie locale directe là où l'entreprise est déjà présente." },
+      { "en": "Cost scales directly with headcount across every hiring category used, which adds up fast for a growing team.", "fr": "Le coût augmente directement avec l'effectif dans chaque catégorie d'embauche utilisée, ce qui grimpe vite pour une équipe en croissance." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep Deel if you need to legally pay or employ people in countries where you have no local entity.",
+        "fr": "Garde Deel si tu dois payer ou employer légalement des personnes dans des pays où tu n'as pas d'entité locale."
+      },
+      "avoidIf": {
+        "en": "Avoid the EOR plan if you already have a local entity in the country, since direct payroll is typically cheaper than 599 dollars per employee per month.",
+        "fr": "Évite le plan EOR si tu as déjà une entité locale dans le pays, car une paie directe coûte en général moins cher que 599 dollars par salarié et par mois."
+      },
+      "threshold": {
+        "en": "Contractor Management at 588 dollars a year per worker (49 dollars x 12) is worth it once it replaces the time spent on manual invoicing and tax-form handling for that contractor.",
+        "fr": "Le plan Contractor Management à 588 dollars par an et par travailleur (49 dollars x 12) se justifie dès qu'il remplace le temps passé sur la facturation manuelle et les démarches fiscales pour ce prestataire."
+      },
+      "billingTraps": {
+        "en": "Cost is per worker per month across every hiring category in use at once, so mixing contractors, PEO and EOR workers multiplies the monthly bill rather than sharing a flat fee.",
+        "fr": "Le coût est par travailleur et par mois dans chaque catégorie d'embauche utilisée en même temps, donc mélanger prestataires, salariés PEO et EOR multiplie la facture mensuelle au lieu de partager un forfait unique."
+      }
+    }
+  },
   "unknowns": [
     "Annual billing discounts, if any, not shown on the pricing page in this session; only monthly per-worker prices were visible."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

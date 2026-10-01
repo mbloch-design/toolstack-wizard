@@ -3,7 +3,8 @@
   "slug": "autocad-lt",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "AutoCAD LT",
     "vendor": "Autodesk, Inc.",
@@ -35,45 +36,135 @@
         "minSeats": 1,
         "price": { "monthly": 70, "annualPerMonth": 45, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "2D drafting and documentation only; no 3D modeling toolset included (that is reserved for full AutoCAD)" }],
+        "keyLimits": [{ "en": "2D drafting and documentation only; no 3D modeling toolset included (that is reserved for full AutoCAD)", "fr": "Dessin et documentation 2D uniquement ; aucun outil de modélisation 3D inclus (réservé à AutoCAD complet)" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "subscription",
     "addOns": [],
     "cautions": [
-      { "en": "Reported prices vary between sources ($540/year via one figure, ~$440-520/year via others); revalidate the current figure directly on autodesk.com before publishing, since direct access was blocked during this research.", "sourceIds": ["s1"] },
-      { "en": "A 30-day return policy applies to annual/multi-year subscriptions; monthly subscriptions have a 15-day return window.", "sourceIds": ["s1"] }
+      { "en": "Reported prices vary between sources ($540/year via one figure, ~$440-520/year via others); revalidate the current figure directly on autodesk.com before publishing, since direct access was blocked during this research.", "fr": "Les prix rapportés varient selon les sources (540 $/an pour l'une, environ 440-520 $/an pour d'autres) ; revérifie le chiffre actuel directement sur autodesk.com avant publication, l'accès direct ayant été bloqué pendant cette recherche.", "sourceIds": ["s1"] },
+      { "en": "A 30-day return policy applies to annual/multi-year subscriptions; monthly subscriptions have a 15-day return window.", "fr": "Une politique de remboursement de 30 jours s'applique aux abonnements annuels ou pluriannuels ; les abonnements mensuels ont une fenêtre de 15 jours.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "2D technical drafting and documentation tool, a lighter version of full AutoCAD", "sourceIds": ["s1"] },
-      { "en": "Aimed at small teams and freelancers who need basic CAD without 3D modeling tools", "sourceIds": ["s1"] }
+      { "en": "2D technical drafting and documentation tool, a lighter version of full AutoCAD", "fr": "Outil de dessin technique et de documentation 2D, une version allégée d'AutoCAD complet", "sourceIds": ["s1"] },
+      { "en": "Aimed at small teams and freelancers who need basic CAD without 3D modeling tools", "fr": "Destiné aux petites équipes et indépendants qui ont besoin de CAO basique sans outils de modélisation 3D", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No 3D modeling toolset, unlike the full AutoCAD subscription", "sourceIds": ["s1"] },
-      { "en": "No permanent free tier, only a 15-day trial", "sourceIds": ["s1"] }
+      { "en": "No 3D modeling toolset, unlike the full AutoCAD subscription", "fr": "Aucun outil de modélisation 3D, contrairement à l'abonnement AutoCAD complet", "sourceIds": ["s1"] },
+      { "en": "No permanent free tier, only a 15-day trial", "fr": "Pas de palier gratuit permanent, seulement un essai de 15 jours", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "An independent consultant or small studio producing 2D technical drawings who doesn't need full 3D modeling.",
+      "fr": "Un consultant indépendant ou un petit bureau produisant des plans techniques 2D sans besoin de modélisation 3D complète."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Technical drafting: produce and annotate 2D floor plans or technical drawings for a client deliverable using standard drafting tools.",
+      "fr": "Dessin technique : produire et annoter des plans 2D ou des dessins techniques pour un livrable client avec des outils de dessin standards."
+    },
+    {
+      "en": "Documentation handoff: export drawings in shared CAD formats so a contractor or full-AutoCAD user downstream can open and build on them.",
+      "fr": "Transmission de documentation : exporter des dessins dans des formats CAO partagés pour qu'un prestataire ou un utilisateur d'AutoCAD complet puisse les ouvrir et les compléter."
+    }
+  ],
   "alternatives": [
-    { "slug": "sketchup-pro", "reason": { "en": "Alternative CAD/drafting tool for smaller studios needing 2D/3D drawing" } }
+    { "slug": "sketchup-pro", "reason": { "en": "Alternative CAD/drafting tool for smaller studios needing 2D/3D drawing", "fr": "Outil de CAO/dessin alternatif pour les petites structures ayant besoin de dessin 2D/3D" } }
   ],
   "missingAlternatives": [
     { "name": "ARES Commander", "officialUrl": "https://www.graebert.com/ares-commander", "reason": "Direct lower-cost AutoCAD LT alternative for 2D/3D CAD, not in the catalogue" },
     { "name": "DraftSight", "officialUrl": "https://www.draftsight.com", "reason": "Common budget 2D CAD alternative to AutoCAD LT, not in the catalogue" }
   ],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "At roughly $45 to $70 a month for 2D-only drafting, cheaper 2D-only competitors like ARES Commander or DraftSight exist, but they are not in the catalogue to compare directly.",
+        "fr": "À environ 45 à 70 $ par mois pour du dessin 2D uniquement, des concurrents 2D moins chers comme ARES Commander ou DraftSight existent, mais ils ne sont pas au catalogue pour une comparaison directe.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "The dossier does not describe onboarding time; AutoCAD LT is a professional drafting tool and the sources give no first-hour-result claim.",
+        "fr": "Le dossier ne décrit pas de temps de prise en main ; AutoCAD LT est un outil de dessin professionnel et les sources n'avancent aucun résultat dès la première heure.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "The tool delivers 2D drafting and documentation as described, with the 3D toolset explicitly reserved for the full AutoCAD subscription rather than missing by omission.",
+        "fr": "L'outil assure le dessin et la documentation 2D comme annoncé, les outils 3D étant explicitement réservés à l'abonnement AutoCAD complet plutôt qu'absents par défaut.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Capped to 2D drafting by design, which limits its ceiling compared to full AutoCAD or other CAD suites with 3D modeling.",
+        "fr": "Plafonné au dessin 2D par conception, ce qui limite son plafond de capacité face à AutoCAD complet ou à d'autres suites CAO avec modélisation 3D.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: file export formats and data portability on leaving the subscription are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données en cas de résiliation ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "2D CAD drafting", "fr": "Dessin CAO 2D" },
+    "shortDescription": {
+      "en": "AutoCAD LT is Autodesk's 2D-only drafting subscription, a lighter alternative to full AutoCAD for teams that don't need 3D modeling.",
+      "fr": "AutoCAD LT est l'abonnement de dessin 2D uniquement d'Autodesk, une alternative allégée à AutoCAD complet pour qui n'a pas besoin de modélisation 3D."
+    },
+    "longDescription": {
+      "en": "AutoCAD LT strips full AutoCAD down to 2D drafting and documentation: layout, annotation and technical drawing tools, without the 3D modeling toolset reserved for the full subscription. It is a straightforward fit for anyone whose output is flat technical drawings rather than 3D models.\n\nPricing runs from roughly 45 to 70 dollars a month per seat depending on billing term, with a 15-day trial and no free tier; sources disagree on the exact current figure, so it is worth checking autodesk.com directly before committing. It suits a freelancer or small studio doing 2D-only work, while anyone needing 3D has to step up to full AutoCAD.",
+      "fr": "AutoCAD LT réduit AutoCAD complet au dessin et à la documentation 2D : mise en page, annotation et outils de dessin technique, sans les outils de modélisation 3D réservés à l'abonnement complet. C'est un choix direct pour qui produit des plans plats plutôt que des modèles 3D.\n\nLe tarif tourne autour de 45 à 70 dollars par mois et par poste selon la facturation, avec un essai de 15 jours et aucun palier gratuit ; les sources ne s'accordent pas sur le chiffre exact, donc mieux vaut vérifier sur autodesk.com avant de s'engager. Il convient à un indépendant qui ne fait que du 2D, tandis que tout besoin en 3D impose de passer à AutoCAD complet."
+    },
+    "pros": [
+      { "en": "Focused 2D drafting toolset without paying for the 3D modeling features of full AutoCAD.", "fr": "Outils de dessin 2D ciblés, sans payer pour les fonctions de modélisation 3D d'AutoCAD complet." },
+      { "en": "Familiar AutoCAD file formats and workflow for teams already used to the Autodesk ecosystem.", "fr": "Formats de fichiers et flux de travail AutoCAD familiers pour les équipes déjà habituées à l'écosystème Autodesk." }
+    ],
+    "cons": [
+      { "en": "No 3D modeling at all, so growing into 3D work means switching to a pricier product.", "fr": "Aucune modélisation 3D, donc tout besoin futur en 3D impose de passer à un produit plus cher." },
+      { "en": "The official pricing page was unreachable during research, and third-party sources disagree on the exact current price.", "fr": "La page tarifs officielle était inaccessible pendant la recherche, et les sources tierces ne s'accordent pas sur le prix exact actuel." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep AutoCAD LT if your deliverables are strictly 2D technical drawings and you need compatibility with other AutoCAD users.",
+        "fr": "Garde AutoCAD LT si tes livrables sont strictement des plans techniques 2D et que tu dois rester compatible avec d'autres utilisateurs d'AutoCAD."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you expect to need 3D modeling soon, since that means paying again for full AutoCAD rather than upgrading within LT.",
+        "fr": "Évite-le si tu penses avoir besoin de 3D prochainement, car cela impose de repayer pour AutoCAD complet plutôt que de simplement monter en gamme dans LT."
+      },
+      "threshold": {
+        "en": "Compare against the roughly 540 dollars a year figure quoted by third-party sources before committing, and confirm the current number directly with Autodesk since this dossier could not verify it on the official page.",
+        "fr": "Compare au chiffre d'environ 540 dollars par an avancé par des sources tierces avant de t'engager, et confirme le montant actuel directement auprès d'Autodesk puisque ce dossier n'a pas pu le vérifier sur la page officielle."
+      },
+      "billingTraps": {
+        "en": "Annual subscriptions get a 30-day return window versus 15 days for monthly billing, so cancelling late in that window still carries a charge.",
+        "fr": "Les abonnements annuels ont une fenêtre de remboursement de 30 jours contre 15 jours pour la facturation mensuelle, donc une résiliation tardive dans cette fenêtre reste facturée."
+      }
+    }
+  },
   "unknowns": [
     "Official Autodesk pricing page returned HTTP 403 during direct fetch; exact current monthly/annual price should be reverified directly before publishing",
     "Regional pricing (non-US) not verified"
   ],
   "conflicts": [
     "Search sources disagree on the current annual price: one figure states $540/year while others state $440-$520/year; not resolved during this research pass."
+  ],
+  "reviewNotes": [
+    "Price conflict across secondary sources ($540/year vs $440-520/year) and the official Autodesk pricing page was blocked (HTTP 403) during research: the $70 monthly / $45 annualPerMonth figures in this dossier come from a tier-2 source and should be reverified directly on autodesk.com before publishing."
   ]
 }

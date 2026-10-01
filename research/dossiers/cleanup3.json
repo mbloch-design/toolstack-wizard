@@ -3,7 +3,8 @@
   "slug": "cleanup3",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "CleanUp³",
     "vendor": "Thomas Thomassen (ThomThom)",
@@ -25,17 +26,17 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "Fully free extension, no paid tier" }], "sourceIds": ["s2"] },
+    "freePlan": { "exists": true, "limits": { "en": "Fully free extension, no paid tier", "fr": "Extension entièrement gratuite, sans palier payant" }, "sourceIds": ["s2"] },
     "trial": null,
     "plans": [
       {
         "key": "free",
         "name": "Free",
-        "unit": "one_time",
+        "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Fully free extension, no paid tier" }],
+        "keyLimits": [{ "en": "Fully free extension, no paid tier", "fr": "Extension entièrement gratuite, sans palier payant" }],
         "sourceIds": ["s2"]
       }
     ],
@@ -45,28 +46,112 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Cleans up SketchUp models by removing unnecessary geometry, unused materials, duplicate faces, and stray edges", "sourceIds": ["s2"] },
-      { "en": "Reduces file size to keep large 3D models lighter and faster", "sourceIds": ["s2"] }
+      { "en": "Cleans up SketchUp models by removing unnecessary geometry, unused materials, duplicate faces, and stray edges", "fr": "Nettoie les modèles SketchUp en supprimant la géométrie inutile, les matériaux non utilisés, les faces dupliquées et les arêtes parasites", "sourceIds": ["s2"] },
+      { "en": "Reduces file size to keep large 3D models lighter and faster", "fr": "Réduit la taille des fichiers pour garder les gros modèles 3D plus légers et plus rapides", "sourceIds": ["s2"] }
     ],
     "limitations": [
-      { "en": "Requires the companion library TT_Lib2 as a mandatory dependency", "sourceIds": ["s2"] },
-      { "en": "Latest release (v3.4.6, Feb 2024) supports SketchUp 2022-2026 only, no legacy version support confirmed", "sourceIds": ["s2"] }
+      { "en": "Requires the companion library TT_Lib2 as a mandatory dependency", "fr": "Nécessite la bibliothèque compagnon TT_Lib2 comme dépendance obligatoire", "sourceIds": ["s2"] },
+      { "en": "Latest release (v3.4.6, Feb 2024) supports SketchUp 2022-2026 only, no legacy version support confirmed", "fr": "La dernière version (v3.4.6, février 2024) ne prend en charge que SketchUp 2022-2026, sans support confirmé des versions plus anciennes", "sourceIds": ["s2"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A designer or modeler working in SketchUp who needs to keep large model files clean and light without manual geometry cleanup.",
+      "fr": "Une designeuse ou un modéliste travaillant sous SketchUp qui doit garder de gros fichiers propres et légers sans nettoyage manuel de la géométrie."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "File size cleanup: run CleanUp³ on a heavy SketchUp model before sharing it, removing unused materials and stray edges to make the file lighter.",
+      "fr": "Nettoyage de taille de fichier : lancer CleanUp³ sur un modèle SketchUp lourd avant de le partager, en retirant matériaux inutilisés et arêtes parasites pour l'alléger."
+    },
+    {
+      "en": "Pre-export tidy-up: strip duplicate faces and unnecessary geometry from a model before exporting it to another CAD or rendering tool.",
+      "fr": "Mise au propre avant export : retirer les faces dupliquées et la géométrie inutile d'un modèle avant de l'exporter vers un autre outil de CAO ou de rendu."
+    }
+  ],
   "alternatives": [
-    { "slug": "sketchup-pro", "reason": { "en": "Host application this plugin extends" } }
+    { "slug": "solid-inspector2", "reason": { "en": "Companion free SketchUp extension that targets geometry-health issues (non-solid groups, inverted faces) rather than CleanUp3's cleanup scope", "fr": "Extension SketchUp gratuite similaire ciblant les problèmes de géométrie (groupes non solides, faces inversées) plutôt que le nettoyage de CleanUp3" } }
   ],
-  "missingAlternatives": [
-    { "name": "Solid Inspector²", "officialUrl": "https://sketchucation.com/plugin/1751-solid_inspector%C2%B2", "reason": "Common companion/alternative SketchUp cleanup tool, referenced as a current alternative in the seed but not present in the catalogue as a full entry" }
-  ],
-  "rating": null,
-  "editorial": null,
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A free extension that removes unused geometry and materials to shrink file size carries no cost against a real, recurring modeling problem.",
+        "fr": "Une extension gratuite qui retire géométrie et matériaux inutilisés pour réduire la taille des fichiers ne coûte rien face à un problème de modélisation récurrent et réel.",
+        "sourceIds": ["s2"]
+      },
+      "simplicite": {
+        "en": "The tool runs a cleanup pass from within SketchUp once installed with its mandatory TT_Lib2 dependency, with no complex configuration described.",
+        "fr": "L'outil lance une passe de nettoyage depuis SketchUp une fois installé avec sa dépendance obligatoire TT_Lib2, sans configuration complexe décrite.",
+        "sourceIds": ["s2"]
+      },
+      "utilisation": {
+        "en": "It performs the stated cleanup (unused geometry, materials, duplicate faces, stray edges) without a described workaround needed.",
+        "fr": "Il effectue le nettoyage annoncé (géométrie inutile, matériaux, faces dupliquées, arêtes parasites) sans contournement décrit.",
+        "sourceIds": ["s2"]
+      },
+      "puissance": {
+        "en": "Scope is limited to cleanup tasks rather than broader modeling or repair, which caps its ceiling against a full modeling toolset.",
+        "fr": "Le périmètre se limite au nettoyage plutôt qu'à la modélisation ou à la réparation plus large, ce qui plafonne sa capacité face à une suite de modélisation complète.",
+        "sourceIds": ["s2"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: as a free utility with no stored account data, export or portability concepts don't apply and are not covered by the sources.",
+        "fr": "Note neutre : en tant qu'utilitaire gratuit sans donnée de compte stockée, les notions d'export ou de portabilité ne s'appliquent pas et ne figurent pas dans les sources.",
+        "sourceIds": ["s2"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "SketchUp model cleanup", "fr": "Nettoyage de modèles SketchUp" },
+    "shortDescription": {
+      "en": "CleanUp³ is a free SketchUp extension that strips unused geometry, materials and duplicate faces to shrink and tidy large model files.",
+      "fr": "CleanUp³ est une extension SketchUp gratuite qui retire géométrie, matériaux et faces dupliquées inutiles pour alléger et ranger les gros modèles."
+    },
+    "longDescription": {
+      "en": "CleanUp³ scans a SketchUp model and removes what shouldn't still be there: unused materials, duplicate faces, stray edges and other leftover geometry that accumulates during modeling. The result is a smaller, faster file without manually hunting for clutter.\n\nIt is entirely free and requires the TT_Lib2 library as a dependency; the latest release supports SketchUp 2022 through 2026. It fits any SketchUp user, solo or in a small studio, who regularly shares or exports heavy models and wants a quick cleanup pass before doing so.",
+      "fr": "CleanUp³ analyse un modèle SketchUp et retire ce qui n'a plus lieu d'être : matériaux inutilisés, faces dupliquées, arêtes parasites et autre géométrie qui s'accumule pendant la modélisation. Résultat : un fichier plus léger et plus rapide, sans traquer le superflu à la main.\n\nL'extension est entièrement gratuite et nécessite la bibliothèque TT_Lib2 comme dépendance ; la dernière version prend en charge SketchUp 2022 à 2026. Elle convient à toute personne utilisant SketchUp, seule ou en petit studio, qui partage ou exporte régulièrement des modèles lourds et veut un nettoyage rapide avant de le faire."
+    },
+    "pros": [
+      { "en": "Completely free with no account or paid tier to manage.", "fr": "Entièrement gratuit, sans compte ni palier payant à gérer." },
+      { "en": "Targets a concrete, recurring problem: bloated SketchUp files full of unused geometry.", "fr": "Cible un problème concret et récurrent : des fichiers SketchUp alourdis par de la géométrie inutile." }
+    ],
+    "cons": [
+      { "en": "Needs the separate TT_Lib2 library installed to work, an extra setup step.", "fr": "Nécessite l'installation séparée de la bibliothèque TT_Lib2, une étape de configuration supplémentaire." },
+      { "en": "Scope is narrow: it cleans geometry but doesn't repair solid or inspection errors.", "fr": "Le périmètre est étroit : il nettoie la géométrie mais ne répare pas les erreurs de solidité ou d'inspection." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep CleanUp³ if you regularly work with heavy SketchUp models and want a free, quick way to shrink file size before sharing or exporting.",
+        "fr": "Garde CleanUp³ si tu travailles régulièrement sur des modèles SketchUp lourds et veux un moyen gratuit et rapide d'alléger le fichier avant de le partager ou de l'exporter."
+      },
+      "avoidIf": {
+        "en": "Skip it if your main issue is solid-geometry errors (non-solid groups, inverted faces) rather than clutter, since that is Solid Inspector2's job.",
+        "fr": "Passe ton chemin si ton problème principal porte sur des erreurs de géométrie solide (groupes non solides, faces inversées) plutôt que sur le superflu, car c'est le rôle de Solid Inspector2."
+      },
+      "threshold": {
+        "en": "Always worth installing since it is free; the only cost is the one-time setup of its TT_Lib2 dependency.",
+        "fr": "Toujours justifié puisqu'il est gratuit ; le seul coût est la configuration ponctuelle de sa dépendance TT_Lib2."
+      }
+    }
+  },
   "unknowns": [
     "No official standalone pricing page found beyond the SketchUp Extension Warehouse listing, which could not be scraped for full detail"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "Tier A targets 3-6 alternatives, but the catalogue's SketchUp-plugin cluster has no other tool solving the same cleanup need; only Solid Inspector2 is a close neighbour (geometry repair, not cleanup). Left at 1 alternative rather than padding with unrelated plugins."
+  ]
 }

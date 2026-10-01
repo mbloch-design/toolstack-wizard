@@ -3,7 +3,7 @@
   "slug": "browzwear",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Browzwear",
     "vendor": "Browzwear Solutions Pte Ltd",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://browzwear.com/blog/browzwear-pricing-plan", "tier": 2, "accessedOn": "2026-09-25", "title": "Browzwear announces new pricing plans (blog)" }
+    {
+      "id": "s1",
+      "url": "https://browzwear.com/blog/browzwear-pricing-plan",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Browzwear announces new pricing plans (blog)"
+    }
   ],
   "pricing": {
     "model": "quote",
@@ -24,7 +30,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,43 +44,217 @@
         "name": "Freelancer",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 75, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 75,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Full 3D digital product creation functionality on a single-user license" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Full 3D digital product creation functionality on a single-user license",
+            "fr": "Fonctionnalités complètes de création de produits numériques 3D sur une licence mono-utilisateur"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "freelancer",
     "addOns": [],
     "cautions": [
-      { "en": "Most pricing beyond the entry Freelancer tier is not publicly disclosed; teams and larger organizations must contact sales for a quote.", "sourceIds": ["s1"] }
+      {
+        "en": "Most pricing beyond the entry Freelancer tier is not publicly disclosed; teams and larger organizations must contact sales for a quote.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "La majorité des tarifs au-delà du forfait Freelancer d'entrée n'est pas publique ; les équipes et grandes organisations doivent contacter les ventes pour un devis."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "3D garment prototyping and digital twin creation for fashion (VStitcher)", "sourceIds": ["s1"] },
-      { "en": "New self-serve pricing plans (launched Feb 2026) targeting independent designers and small teams", "sourceIds": ["s1"] }
+      {
+        "en": "3D garment prototyping and digital twin creation for fashion (VStitcher)",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Prototypage 3D de vêtements et création de jumeaux numériques pour la mode (VStitcher)"
+      },
+      {
+        "en": "New self-serve pricing plans (launched Feb 2026) targeting independent designers and small teams",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Nouveaux forfaits en libre-service (lancés en février 2026) destinés aux designers indépendants et aux petites équipes"
+      }
     ],
     "limitations": [
-      { "en": "Full pricing for teams/organizations is not published and requires a custom quote", "sourceIds": ["s1"] },
-      { "en": "The official pricing page could not be accessed directly during research (404/blocked)", "sourceIds": ["s1"] }
+      {
+        "en": "Full pricing for teams/organizations is not published and requires a custom quote",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le tarif complet pour les équipes et organisations n'est pas publié et nécessite un devis personnalisé"
+      },
+      {
+        "en": "The official pricing page could not be accessed directly during research (404/blocked)",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "La page de tarifs officielle n'a pas pu être consultée directement lors de la recherche (404/bloquée)"
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Independent fashion and apparel designers who want to prototype garments in 3D without physical samples.",
+      "fr": "Designers de mode et de vêtements indépendants qui veulent prototyper leurs créations en 3D sans échantillons physiques."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Digital sampling: an independent designer builds a 3D garment prototype in VStitcher instead of making a physical sample.",
+      "fr": "Échantillonnage numérique : un designer indépendant crée un prototype de vêtement en 3D dans VStitcher au lieu de fabriquer un échantillon physique."
+    },
+    {
+      "en": "Self-serve start: a freelance pattern maker subscribes to the Freelancer plan alone, without going through a sales quote.",
+      "fr": "Démarrage en libre-service : un modéliste freelance s'abonne seul au forfait Freelancer, sans passer par un devis commercial."
+    }
+  ],
   "alternatives": [
-    { "slug": "clo-3d", "reason": { "en": "Direct competitor in 3D fashion/garment design software" } },
-    { "slug": "adobe-substance-3d", "reason": { "en": "General 3D content creation suite also used in fashion/product visualization" } }
+    {
+      "slug": "clo-3d",
+      "reason": {
+        "en": "Direct competitor in 3D fashion/garment design software",
+        "fr": "Concurrent direct dans les logiciels de conception 3D de vêtements et de mode"
+      }
+    },
+    {
+      "slug": "adobe-substance-3d",
+      "reason": {
+        "en": "General 3D content creation suite also used in fashion/product visualization",
+        "fr": "Suite de création de contenu 3D généraliste, également utilisée pour la visualisation mode et produit"
+      }
+    },
+    {
+      "slug": "marvelous-designer",
+      "reason": {
+        "en": "Direct competitor for 3D garment simulation and digital fashion prototyping.",
+        "fr": "Concurrent direct pour la simulation 3D de vêtements et le prototypage de mode numérique."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Digital 3D prototyping can replace physical sampling, but no comparative cost data is available to judge value against alternatives.",
+        "fr": "Le prototypage 3D numérique peut remplacer l'échantillonnage physique, mais aucune donnée comparative de coût n'est disponible pour juger la valeur face aux alternatives.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to a first usable 3D prototype is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour obtenir un premier prototype 3D utilisable ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The Freelancer plan is described as full 3D creation functionality, but the source is a secondary blog post rather than the official pricing page, which limits confidence.",
+        "fr": "Le forfait Freelancer est décrit comme offrant toutes les fonctions de création 3D, mais la source est un article de blog secondaire plutôt que la page officielle, ce qui limite la confiance.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "VStitcher is an established 3D garment tool, but no comparison data positions it as a category reference versus CLO 3D or others.",
+        "fr": "VStitcher est un outil 3D de vêtements établi, mais aucune donnée comparative n'en fait une référence de catégorie face à CLO 3D ou d'autres.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "3D garment design",
+      "fr": "Conception 3D de vêtements"
+    },
+    "shortDescription": {
+      "en": "Browzwear is 3D garment prototyping software (VStitcher) for fashion, with a self-serve Freelancer plan and quote-based pricing above it.",
+      "fr": "Browzwear est un logiciel de prototypage 3D de vêtements (VStitcher) pour la mode, avec un forfait Freelancer en libre-service et des tarifs sur devis au-delà."
+    },
+    "longDescription": {
+      "en": "Browzwear's VStitcher creates 3D digital twins of garments, letting a designer prototype a product without cutting physical fabric for every iteration. In February 2026 the company introduced self-serve pricing plans aimed at independent designers and small teams, a change from its earlier sales-led model.\n\nThe Freelancer plan costs 75 USD a month for a single-user license with full 3D creation functionality. Pricing above that tier is not published: teams and larger organizations still go through a custom quote, and the official pricing page could not be reached directly during this research, so confirm current terms on browzwear.com before subscribing.",
+      "fr": "VStitcher de Browzwear crée des jumeaux numériques 3D de vêtements, permettant à un designer de prototyper un produit sans découper de tissu physique à chaque itération. En février 2026, l'entreprise a lancé des forfaits en libre-service destinés aux designers indépendants et aux petites équipes, un changement par rapport à son modèle commercial précédent.\n\nLe forfait Freelancer coûte 75 $ par mois pour une licence mono-utilisateur avec toutes les fonctions de création 3D. Les tarifs au-dessus de ce forfait ne sont pas publiés : les équipes et grandes organisations passent toujours par un devis, et la page de tarifs officielle n'a pas pu être consultée directement lors de cette recherche. Vérifie donc les conditions actuelles sur browzwear.com avant de t'abonner."
+    },
+    "pros": [
+      {
+        "en": "The Freelancer plan is self-serve and publicly priced, unlike most of the rest of the pricing range.",
+        "fr": "Le forfait Freelancer est en libre-service et son prix est public, contrairement au reste de la grille tarifaire."
+      },
+      {
+        "en": "VStitcher covers full 3D garment creation, avoiding physical sample iterations.",
+        "fr": "VStitcher couvre la création 3D complète de vêtements, ce qui évite les itérations d'échantillons physiques."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Pricing above the Freelancer tier is not public; teams must go through a sales quote.",
+        "fr": "Les tarifs au-dessus du forfait Freelancer ne sont pas publics ; les équipes doivent passer par un devis commercial."
+      },
+      {
+        "en": "The official pricing page was not reachable during research, so terms should be reconfirmed directly.",
+        "fr": "La page de tarifs officielle était inaccessible pendant la recherche, les conditions sont donc à reconfirmer directement."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you are an independent designer who wants self-serve 3D garment prototyping without a sales call.",
+        "fr": "Garde Browzwear si tu es designer indépendant et que tu veux du prototypage 3D de vêtements en libre-service, sans appel commercial."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you need team pricing now: anything beyond the Freelancer plan requires a custom quote.",
+        "fr": "Évite Browzwear si tu as besoin d'un tarif d'équipe tout de suite : tout ce qui dépasse le forfait Freelancer passe par un devis."
+      },
+      "threshold": {
+        "en": "Entry cost is 75 USD a month for the self-serve Freelancer plan, the only publicly priced tier.",
+        "fr": "Le tarif d'entrée est de 75 $ par mois pour le forfait Freelancer en libre-service, le seul dont le prix est public."
+      }
+    }
+  },
   "unknowns": [
     "Official pricing page (browzwear.com/pricing-plans and browzwear.com/pricing) returned a 404 during research; pricing confirmed only via a secondary blog post",
     "Pricing for tiers above Freelancer (teams, enterprise) not public",
     "Learner License (student) terms mentioned in secondary sources but not verified on an official page"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "pricing.model is set to \"quote\", but the Freelancer plan has a public price of 75 USD/month; consider reclassifying as subscription with only higher tiers on quote. The official pricing page (browzwear.com/pricing-plans) returned a 404 during research, so this and all pricing facts rely on a secondary blog post (tier 2 source) and should be reverified directly."
+  ]
 }

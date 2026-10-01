@@ -3,7 +3,7 @@
   "slug": "signrequest",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "SignRequest",
     "vendor": "SignRequest B.V. (a Box company)",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://signrequest.com/en/plans", "tier": 1, "accessedOn": "2026-09-25", "title": "SignRequest plans" }
+    {
+      "id": "s1",
+      "url": "https://signrequest.com/en/plans",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "SignRequest plans"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,71 +30,321 @@
     "verifiedOn": "2026-09-25",
     "region": "EU",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "10 documents signed per user per month, basic signing features" }], "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": [
+        {
+          "en": "10 documents signed per user per month, basic signing features",
+          "fr": "10 documents signés par utilisateur et par mois, fonctions de signature de base"
+        }
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "professional",
         "name": "Professional",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 9,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited documents (fair use), 1 team, up to 5 users, 5 templates, custom branding, 17 languages" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited documents (fair use), 1 team, up to 5 users, 5 templates, custom branding, 17 languages",
+            "fr": "Documents illimités (usage raisonnable), 1 équipe, jusqu'à 5 utilisateurs, 5 modèles, marque personnalisée, 17 langues"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 15, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 15,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited teams and users, unlimited templates, API access (extra fee), Slack/Zapier/Salesforce integrations, SSO" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited teams and users, unlimited templates, API access (extra fee), Slack/Zapier/Salesforce integrations, SSO",
+            "fr": "Équipes et utilisateurs illimités, modèles illimités, accès API (en plus), intégrations Slack/Zapier/Salesforce, SSO"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "professional",
     "addOns": [
-      { "en": "Bulk send and API access on the Business plan require additional fees", "sourceIds": ["s1"] }
+      {
+        "en": "Bulk send and API access on the Business plan require additional fees",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "L'envoi en masse et l'accès API sur le forfait Business sont facturés en plus"
+      }
     ],
     "cautions": [
-      { "en": "Yearly plans require a minimum one-year commitment, while monthly plans can be cancelled immediately.", "sourceIds": ["s1"] },
-      { "en": "\"Unlimited\" documents on paid plans is governed by a Fair Use Policy; sending more than twice the average volume requires purchasing document bundles.", "sourceIds": ["s1"] }
+      {
+        "en": "Yearly plans require a minimum one-year commitment, while monthly plans can be cancelled immediately.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les forfaits annuels imposent un engagement minimum d'un an, alors que les forfaits mensuels peuvent être résiliés immédiatement."
+      },
+      {
+        "en": "\"Unlimited\" documents on paid plans is governed by a Fair Use Policy; sending more than twice the average volume requires purchasing document bundles.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les documents « illimités » des forfaits payants sont encadrés par une politique d'usage raisonnable ; dépasser deux fois le volume moyen demande d'acheter des lots de documents."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Electronic signature workflow with secure audit trail and legal proof", "sourceIds": ["s1"] },
-      { "en": "Support for 17 languages and cloud document storage", "sourceIds": ["s1"] },
-      { "en": "Integrations with Slack, Zapier, Salesforce and premium connectors (M-Files, Topdesk, Formdesk) on Business plan", "sourceIds": ["s1"] }
+      {
+        "en": "Electronic signature workflow with secure audit trail and legal proof",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Circuit de signature électronique avec piste d'audit sécurisée et valeur de preuve légale"
+      },
+      {
+        "en": "Support for 17 languages and cloud document storage",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Prise en charge de 17 langues et stockage des documents dans le cloud"
+      },
+      {
+        "en": "Integrations with Slack, Zapier, Salesforce and premium connectors (M-Files, Topdesk, Formdesk) on Business plan",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Intégrations avec Slack, Zapier, Salesforce et des connecteurs premium (M-Files, Topdesk, Formdesk) sur le forfait Business"
+      }
     ],
     "limitations": [
-      { "en": "Free plan capped at 10 documents per user per month", "sourceIds": ["s1"] },
-      { "en": "API access and bulk send require additional fees even on the Business plan", "sourceIds": ["s1"] }
+      {
+        "en": "Free plan capped at 10 documents per user per month",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Forfait gratuit plafonné à 10 documents par utilisateur et par mois"
+      },
+      {
+        "en": "API access and bulk send require additional fees even on the Business plan",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "L'accès API et l'envoi en masse restent payants en plus, même sur le forfait Business"
+      }
     ],
     "integrations": [
-      { "name": "Slack", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Zapier", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Salesforce", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Google", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Slack",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Zapier",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Salesforce",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Google",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small business admins and teams who need to send and track contracts for electronic signature.",
+      "fr": "Administrateurs et équipes de petites entreprises qui doivent envoyer et suivre des contrats pour signature électronique."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Contract signing: a small business sends a contract for e-signature and keeps a secure audit trail as legal proof.",
+      "fr": "Signature de contrat : une petite entreprise envoie un contrat à signer électroniquement et conserve une piste d'audit sécurisée comme preuve légale."
+    },
+    {
+      "en": "Team rollout: an admin on the Business plan connects SignRequest to Salesforce and Zapier for unlimited teams and users.",
+      "fr": "Déploiement en équipe : un administrateur sur le forfait Business connecte SignRequest à Salesforce et Zapier pour des équipes et utilisateurs illimités."
+    }
+  ],
   "alternatives": [
-    { "slug": "docusign", "reason": { "en": "Larger, more established e-signature competitor" } },
-    { "slug": "yousign", "reason": { "en": "European e-signature alternative with similar pricing positioning" } },
-    { "slug": "pandadoc", "reason": { "en": "E-signature plus document workflow competitor" } },
-    { "slug": "adobe-acrobat-sign", "reason": { "en": "Enterprise-grade e-signature alternative" } }
+    {
+      "slug": "docusign",
+      "reason": {
+        "en": "Larger, more established e-signature competitor",
+        "fr": "Concurrent de signature électronique plus établi et plus important"
+      }
+    },
+    {
+      "slug": "yousign",
+      "reason": {
+        "en": "European e-signature alternative with similar pricing positioning",
+        "fr": "Alternative européenne de signature électronique, avec un positionnement tarifaire similaire"
+      }
+    },
+    {
+      "slug": "pandadoc",
+      "reason": {
+        "en": "E-signature plus document workflow competitor",
+        "fr": "Concurrent combinant signature électronique et circuit documentaire"
+      }
+    },
+    {
+      "slug": "adobe-acrobat-sign",
+      "reason": {
+        "en": "Enterprise-grade e-signature alternative",
+        "fr": "Alternative de signature électronique de niveau entreprise"
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A real free tier for occasional use plus affordable paid tiers with CRM integrations offer good value for the price.",
+        "fr": "Un vrai forfait gratuit pour un usage occasionnel et des forfaits payants abordables avec intégrations CRM offrent un bon rapport qualité-prix.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to send a first document for signature is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour envoyer un premier document à signer ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Signature workflow and audit trail deliver the stated promise, with the fair-use policy as the only documented caveat.",
+        "fr": "Le circuit de signature et la piste d'audit tiennent la promesse annoncée, avec la politique d'usage raisonnable comme seule réserve documentée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers signature, branding and CRM integrations well for small teams, but API access and bulk sending cost extra even at the top tier.",
+        "fr": "Couvre bien la signature, la marque et les intégrations CRM pour les petites équipes, mais l'accès API et l'envoi en masse restent payants même au forfait le plus haut.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export format and data portability on account closure are not covered by the collected sources.",
+        "fr": "Note neutre : le format d'export et la portabilité des données à la fermeture du compte ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Electronic signatures",
+      "fr": "Signature électronique"
+    },
+    "shortDescription": {
+      "en": "SignRequest is e-signature software with a free 10-documents-a-month plan and paid tiers that add teams, branding and integrations.",
+      "fr": "SignRequest est un outil de signature électronique, gratuit jusqu'à 10 documents par mois, avec des forfaits payants pour les équipes, la marque et les intégrations."
+    },
+    "longDescription": {
+      "en": "SignRequest handles electronic signature requests with a secure audit trail accepted as legal proof, in 17 languages and with cloud document storage. The free plan covers 10 documents per user a month; Professional adds unlimited documents under a fair-use policy, custom branding and up to 5 users, while Business removes the team-size limit and adds Slack, Zapier and Salesforce integrations plus SSO.\n\nProfessional starts at 9 EUR a month and Business at 15 EUR, but yearly billing requires a one-year commitment while monthly plans can be cancelled any time, and API access or bulk sending cost extra even on Business.",
+      "fr": "SignRequest gère les demandes de signature électronique avec une piste d'audit sécurisée valant preuve légale, en 17 langues et avec stockage cloud des documents. Le forfait gratuit couvre 10 documents par utilisateur et par mois ; Professional ajoute des documents illimités sous une politique d'usage raisonnable, une marque personnalisée et jusqu'à 5 utilisateurs, tandis que Business supprime la limite d'équipe et ajoute les intégrations Slack, Zapier et Salesforce plus le SSO.\n\nProfessional démarre à 9 € par mois et Business à 15 €, mais l'engagement annuel impose un an alors que les forfaits mensuels se résilient à tout moment, et l'accès API ou l'envoi en masse restent payants en plus, même sur Business."
+    },
+    "pros": [
+      {
+        "en": "The free plan covers real occasional use: 10 documents per user a month with legal-proof audit trails.",
+        "fr": "Le forfait gratuit couvre un usage occasionnel réel : 10 documents par utilisateur et par mois, avec piste d'audit à valeur légale."
+      },
+      {
+        "en": "Professional and Business add custom branding, SSO and CRM integrations without a steep price jump.",
+        "fr": "Professional et Business ajoutent marque personnalisée, SSO et intégrations CRM sans forte hausse de prix."
+      }
+    ],
+    "cons": [
+      {
+        "en": "API access and bulk sending cost extra even on the top Business plan.",
+        "fr": "L'accès API et l'envoi en masse restent payants en plus, même sur le forfait Business le plus haut."
+      },
+      {
+        "en": "Yearly billing locks in a one-year commitment, unlike the monthly plans.",
+        "fr": "La facturation annuelle impose un engagement d'un an, contrairement aux forfaits mensuels."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if your team signs a moderate volume of documents and wants Slack, Zapier or Salesforce built in.",
+        "fr": "Garde SignRequest si ton équipe signe un volume modéré de documents et veut Slack, Zapier ou Salesforce intégrés."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you need API access or bulk sending included in the price: both cost extra on every plan.",
+        "fr": "Évite SignRequest si tu as besoin de l'accès API ou de l'envoi en masse inclus dans le prix : les deux sont facturés en plus sur chaque forfait."
+      },
+      "threshold": {
+        "en": "Entry paid cost is 9 EUR a month (108 EUR a year) for the Professional plan, the comparison plan for a single user.",
+        "fr": "Le tarif d'entrée payant est de 9 € par mois (108 € par an) pour le forfait Professional, le forfait de comparaison pour un seul utilisateur."
+      },
+      "billingTraps": {
+        "en": "Yearly plans commit for a full year, while 'unlimited' documents on paid plans are capped by a fair-use policy that can require buying document bundles.",
+        "fr": "Les forfaits annuels engagent pour une année complète, et les documents « illimités » des forfaits payants sont plafonnés par une politique d'usage raisonnable qui peut imposer l'achat de lots de documents."
+      }
+    }
+  },
   "unknowns": [
     "Annual discount amount not stated on the fetched page (only monthly prices given)",
     "Exact cost of bulk-send document bundles not published"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

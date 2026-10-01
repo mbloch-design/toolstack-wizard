@@ -3,7 +3,8 @@
   "slug": "opus-clip",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Opus Clip",
     "vendor": "Opus Pro Inc.",
@@ -15,13 +16,7 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://www.opus.pro/pricing",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Opus Clip pricing"
-    }
+    { "id": "s1", "url": "https://www.opus.pro/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Opus Clip pricing" }
   ],
   "pricing": {
     "model": "freemium",
@@ -32,162 +27,166 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": {
-        "en": "Post one clip per day, 3-day media storage, watermarked animated captions, single 9:16 aspect ratio, no credit card required.",
-        "fr": null
-      },
-      "sourceIds": [
-        "s1"
-      ]
+      "limits": { "en": "Post one clip per day, 3-day media storage, watermarked animated captions, single 9:16 aspect ratio, no credit card required.", "fr": "Publication d'un clip par jour, stockage média de 3 jours, sous-titres animés avec filigrane, un seul format 9:16, aucune carte bancaire requise." },
+      "sourceIds": ["s1"]
     },
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Post one clip per day, 3-day media storage, watermarked animated captions, single 9:16 aspect ratio, no credit card required.", "fr": "Publication d'un clip par jour, stockage média de 3 jours, sous-titres animés avec filigrane, un seul format 9:16, aucune carte bancaire requise." }],
+        "sourceIds": ["s1"]
+      },
       {
         "key": "starter",
         "name": "Starter",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": 15,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": 15, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "3 AI B-Roll clips/month, 3 stock clips/month, 20 AI voiceovers/day, watermark-free exports for 30 days, 29-day media storage.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "3 AI B-Roll clips/month, 3 stock clips/month, 20 AI voiceovers/day, watermark-free exports for 30 days, 29-day media storage.", "fr": "3 clips B-Roll IA par mois, 3 clips de stock par mois, 20 voix off IA par jour, exports sans filigrane pendant 30 jours, stockage média de 29 jours." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": 29,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": 29, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Up to 30GB video files, 100GB fixed storage, unlimited stock B-roll, 50 AI image clips/day, team workspace for 2-4 users, scheduler for 6 platforms.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Up to 30GB video files, 100GB fixed storage, unlimited stock B-roll, 50 AI image clips/day, team workspace for 2-4 users, scheduler for 6 platforms.", "fr": "Fichiers vidéo jusqu'à 30 Go, stockage fixe de 100 Go, B-roll de stock illimité, 50 clips image IA par jour, espace d'équipe pour 2 à 4 personnes, planificateur pour 6 plateformes." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [
-          {
-            "en": "Unlimited storage and team members, dedicated processing queue, custom branding, priority support, full API access.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Unlimited storage and team members, dedicated processing queue, custom branding, priority support, full API access.", "fr": "Stockage et membres d'équipe illimités, file de traitement dédiée, marque personnalisée, support prioritaire, accès API complet." }],
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      {
-        "en": "Free plan limits exports to a single daily post with a 3-day storage expiration, and adds watermarked animated captions, which is a hard constraint for regular use.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Free plan limits exports to a single daily post with a 3-day storage expiration, and adds watermarked animated captions, which is a hard constraint for regular use.", "fr": "Le plan gratuit limite les exports à une publication quotidienne avec expiration du stockage à 3 jours, et ajoute des sous-titres animés filigranés, une contrainte forte pour un usage régulier.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      {
-        "en": "AI-driven detection of clip-worthy moments in long-form video using spoken words, visual objects, sound and emotion analysis.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Automatic reframing, virality scoring, and AI B-roll/voiceover generation for short-form output.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Built-in social scheduler posting to up to 6 platforms (YouTube Shorts, TikTok, Instagram and others) on paid plans.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "AI-driven detection of clip-worthy moments in long-form video using spoken words, visual objects, sound and emotion analysis.", "fr": "Détection par IA des moments à fort potentiel dans une vidéo longue, en analysant les mots prononcés, les objets visuels, le son et l'émotion.", "sourceIds": ["s1"] },
+      { "en": "Automatic reframing, virality scoring, and AI B-roll/voiceover generation for short-form output.", "fr": "Recadrage automatique, score de viralité et génération de B-roll ou de voix off par IA pour des formats courts.", "sourceIds": ["s1"] },
+      { "en": "Built-in social scheduler posting to up to 6 platforms (YouTube Shorts, TikTok, Instagram and others) on paid plans.", "fr": "Planificateur social intégré publiant sur jusqu'à 6 plateformes (YouTube Shorts, TikTok, Instagram et autres) sur les plans payants.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      {
-        "en": "Free tier caps output to one clip per day and expires stored media after 3 days.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "AI B-roll, stock clips and voiceovers are metered per month/day even on paid tiers below Business, requiring an upgrade for heavier use.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Free tier caps output to one clip per day and expires stored media after 3 days.", "fr": "Le palier gratuit limite la production à un clip par jour et supprime les médias stockés après 3 jours.", "sourceIds": ["s1"] },
+      { "en": "AI B-roll, stock clips and voiceovers are metered per month/day even on paid tiers below Business, requiring an upgrade for heavier use.", "fr": "Le B-roll IA, les clips de stock et les voix off restent limités par mois ou par jour même sur les plans payants en dessous de Business, ce qui impose une mise à niveau pour un usage plus intensif.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
-  "alternatives": [
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator repurposing long-form video (podcasts, streams, interviews) into short clips for social platforms.",
+      "fr": "Une créatrice de contenu qui transforme des vidéos longues (podcasts, streams, interviews) en clips courts pour les réseaux sociaux."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
     {
-      "slug": "descript",
-      "reason": {
-        "en": "Video/audio editor with AI clipping and repurposing features aimed at content creators.",
-        "fr": null
-      }
+      "en": "Podcast repurposing: upload a long-form episode and let Opus Clip surface the clip-worthy moments, reframe them and schedule the result across social platforms.",
+      "fr": "Valorisation de podcast : importer un épisode long et laisser Opus Clip repérer les moments forts, les recadrer et programmer le résultat sur les réseaux sociaux."
     },
     {
-      "slug": "capcut",
-      "reason": {
-        "en": "Popular free/low-cost video editor with short-form clipping and auto-captioning tools.",
-        "fr": null
-      }
-    },
-    {
-      "slug": "crayo-ai",
-      "reason": {
-        "en": "AI short-form video generation tool targeting the same creator repurposing use case.",
-        "fr": null
-      }
+      "en": "Livestream highlights: turn a recorded stream into several short clips with AI-generated captions, staying within the Starter plan's monthly AI B-roll and voiceover limits.",
+      "fr": "Temps forts de live : transformer un enregistrement de stream en plusieurs clips courts avec sous-titres générés par IA, en restant dans les limites mensuelles de B-roll et de voix off IA du plan Starter."
     }
   ],
+  "alternatives": [
+    { "slug": "descript", "reason": { "en": "Video/audio editor with AI clipping and repurposing features aimed at content creators.", "fr": "Éditeur vidéo/audio avec des fonctions de découpe et de valorisation par IA destinées aux créateurs de contenu." } },
+    { "slug": "capcut", "reason": { "en": "Popular free/low-cost video editor with short-form clipping and auto-captioning tools.", "fr": "Éditeur vidéo gratuit ou peu coûteux très utilisé, avec découpe en formats courts et sous-titrage automatique." } },
+    { "slug": "crayo-ai", "reason": { "en": "AI short-form video generation tool targeting the same creator repurposing use case.", "fr": "Outil de génération de vidéos courtes par IA visant le même usage de valorisation de contenu." } }
+  ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Automated detection and reframing of clip-worthy moments at 15 dollars a month replaces manual clipping work that otherwise takes real editing time.",
+        "fr": "La détection et le recadrage automatisés des moments forts pour 15 dollars par mois remplacent un travail de découpe manuel qui demanderait sinon un vrai temps de montage.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "The free plan requires no credit card and produces a first clip the same day, though it is watermarked and capped at one post per day.",
+        "fr": "Le plan gratuit ne demande aucune carte bancaire et produit un premier clip le jour même, bien qu'il soit filigrané et limité à une publication par jour.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Clip detection, reframing and the built-in scheduler work as described on paid plans, with limits clearly stated rather than hidden behind a workaround.",
+        "fr": "La détection de clips, le recadrage et le planificateur intégré fonctionnent comme annoncé sur les plans payants, avec des limites clairement indiquées plutôt que cachées derrière un contournement.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Covers detection, reframing, AI B-roll/voiceover and scheduling in one tool, but AI generation stays metered even on Pro, capping its ceiling below a dedicated video suite.",
+        "fr": "Couvre détection, recadrage, B-roll/voix off IA et planification dans un seul outil, mais la génération IA reste limitée même sur Pro, ce qui plafonne sa capacité en dessous d'une suite vidéo dédiée.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: exporting account history or clip metadata when leaving the service is not covered by the collected sources.",
+        "fr": "Note neutre : l'export de l'historique du compte ou des métadonnées de clips en cas de départ du service ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI video clipping", "fr": "Découpe vidéo par IA" },
+    "shortDescription": {
+      "en": "Opus Clip uses AI to find and reframe clip-worthy moments in long videos, exporting short-form clips with a built-in social scheduler.",
+      "fr": "Opus Clip utilise l'IA pour repérer et recadrer les moments forts d'une vidéo longue, puis exporte des clips courts avec un planificateur social intégré."
+    },
+    "longDescription": {
+      "en": "Opus Clip scans long-form video for spoken words, visible objects, sound and emotional cues to flag clip-worthy moments, then reframes them for short-form platforms and scores them for virality. Paid plans add AI B-roll, voiceover generation and a scheduler covering up to 6 social platforms.\n\nThe free plan allows one watermarked post a day with 3-day storage; the Starter plan starts at 15 dollars a month with 30-day watermark-free exports, while Pro at 29 dollars a month adds team workspace and bigger storage. It fits a solo creator repurposing podcasts or streams, with heavier AI generation needs pushing toward the on-quote Business plan.",
+      "fr": "Opus Clip analyse une vidéo longue pour repérer mots prononcés, objets visibles, son et signaux émotionnels, puis recadre les moments forts pour les formats courts et leur attribue un score de viralité. Les plans payants ajoutent du B-roll IA, de la voix off générée et un planificateur couvrant jusqu'à 6 réseaux sociaux.\n\nLe plan gratuit autorise une publication filigranée par jour avec 3 jours de stockage ; Starter démarre à 15 dollars par mois avec des exports sans filigrane, tandis que Pro à 29 dollars ajoute un espace d'équipe et plus de stockage. Il convient à une créatrice solo qui valorise des podcasts, un besoin IA plus poussé menant au plan Business sur devis."
+    },
+    "pros": [
+      { "en": "Automated clip detection and reframing save real editing time compared to manual clipping.", "fr": "La détection et le recadrage automatisés des clips font gagner un vrai temps de montage face à une découpe manuelle." },
+      { "en": "Built-in scheduler posts to several social platforms without a separate tool.", "fr": "Le planificateur intégré publie sur plusieurs réseaux sociaux sans outil séparé." }
+    ],
+    "cons": [
+      { "en": "The free plan is capped hard enough (one post a day, 3-day storage, watermark) to push most regular users to a paid plan quickly.", "fr": "Le plan gratuit est limité assez fort (une publication par jour, stockage de 3 jours, filigrane) pour pousser vite la plupart des utilisateurs réguliers vers un plan payant." },
+      { "en": "AI B-roll, stock clips and voiceovers stay metered by day or month even on the Pro plan.", "fr": "Le B-roll IA, les clips de stock et les voix off restent limités par jour ou par mois même sur le plan Pro." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep Opus Clip if you regularly repurpose long-form video into short clips and want detection, reframing and scheduling in one tool.",
+        "fr": "Garde Opus Clip si tu transformes régulièrement des vidéos longues en clips courts et veux détection, recadrage et planification dans un seul outil."
+      },
+      "avoidIf": {
+        "en": "Avoid staying on the free plan for regular output, since the daily post cap, 3-day storage and watermark make it unworkable past occasional use.",
+        "fr": "Évite de rester sur le plan gratuit pour une production régulière, car la limite d'une publication par jour, le stockage de 3 jours et le filigrane le rendent impraticable au-delà d'un usage occasionnel."
+      },
+      "threshold": {
+        "en": "Worth upgrading to Starter once the 180 dollars a year (15 dollars x 12) costs less than the time spent manually finding and cutting clips.",
+        "fr": "La mise à niveau vers Starter se justifie dès que les 180 dollars par an (15 dollars x 12) coûtent moins cher que le temps passé à chercher et découper des clips à la main."
+      }
+    }
+  },
   "unknowns": [
     "Annual/discounted pricing for Starter and Pro plans not shown on the pricing page in this session; only monthly prices were visible."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

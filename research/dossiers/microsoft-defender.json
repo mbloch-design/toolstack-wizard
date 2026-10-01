@@ -3,7 +3,7 @@
   "slug": "microsoft-defender",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Microsoft Defender for Business",
     "vendor": "Microsoft Corporation",
@@ -51,7 +51,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Annual subscription (auto-renews), up to 300 users, up to 5 devices per user, no minimum device requirement."
+            "en": "Annual subscription (auto-renews), up to 300 users, up to 5 devices per user, no minimum device requirement.",
+            "fr": "Abonnement annuel à renouvellement automatique, jusqu'à 300 utilisateurs, jusqu'à 5 appareils par utilisateur, sans minimum d'appareils."
           }
         ],
         "sourceIds": [
@@ -71,7 +72,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Includes Defender for Business plus the full Microsoft 365 productivity suite."
+            "en": "Includes Defender for Business plus the full Microsoft 365 productivity suite.",
+            "fr": "Inclut Defender for Business ainsi que l'intégralité de la suite bureautique Microsoft 365."
           }
         ],
         "sourceIds": [
@@ -85,7 +87,8 @@
         "en": "Defender for Business Servers add-on to protect Windows and Linux servers under the same admin console.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Extension Defender for Business Servers pour protéger les serveurs Windows et Linux depuis la même console d'administration."
       }
     ],
     "cautions": [
@@ -93,7 +96,8 @@
         "en": "Standalone plan is capped at 300 users, so it is not viable for larger organizations without moving to enterprise Defender plans.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Le forfait autonome est plafonné à 300 utilisateurs, il ne convient donc pas aux grandes organisations sans passer aux forfaits Defender entreprise."
       }
     ]
   },
@@ -103,25 +107,29 @@
         "en": "AI-powered endpoint detection and response (EDR) against malware and ransomware.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Détection et réponse aux menaces (EDR) pilotée par IA contre les malwares et les ransomwares."
       },
       {
         "en": "Automatic attack disruption for human-operated ransomware.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Interruption automatique des attaques pour les ransomwares pilotés par des opérateurs humains."
       },
       {
         "en": "Attack surface reduction: network protection, firewall, reduction rules, web category blocking.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Réduction de la surface d'attaque : protection réseau, pare-feu, règles de réduction, blocage de catégories de sites web."
       },
       {
         "en": "Automated investigation, threat response and vulnerability management, with a simplified setup wizard.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Investigation automatisée, réponse aux menaces et gestion des vulnérabilités, avec un assistant de configuration simplifié."
       }
     ],
     "limitations": [
@@ -129,13 +137,15 @@
         "en": "Standalone plan caps out at 300 users and 5 devices per user, unsuitable for larger deployments.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Le forfait autonome plafonne à 300 utilisateurs et 5 appareils par utilisateur, ce qui ne convient pas aux déploiements plus importants."
       },
       {
         "en": "Server protection is a separate paid add-on, not included in the base per-user price.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "La protection des serveurs est une extension payante séparée, non incluse dans le prix de base par utilisateur."
       }
     ],
     "integrations": [],
@@ -151,13 +161,15 @@
     {
       "slug": "crowdstrike",
       "reason": {
-        "en": "Direct competitor in AI-powered endpoint detection and response for SMBs and enterprises."
+        "en": "Direct competitor in AI-powered endpoint detection and response for SMBs and enterprises.",
+        "fr": "Concurrent direct en détection et réponse aux menaces pilotée par IA, pour PME et grandes entreprises."
       }
     },
     {
       "slug": "vanta",
       "reason": {
-        "en": "Overlaps in the broader SMB security/compliance space, though focused on compliance automation rather than EDR."
+        "en": "Overlaps in the broader SMB security/compliance space, though focused on compliance automation rather than EDR.",
+        "fr": "Chevauchement dans le domaine plus large de la sécurité et conformité PME, mais centré sur l'automatisation de la conformité plutôt que sur l'EDR."
       }
     }
   ],
@@ -171,5 +183,125 @@
   "unknowns": [
     "Whether a free trial is offered for Defender for Business was not confirmed on the pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small business owners or admins who need endpoint protection against malware and ransomware without a dedicated security team.",
+      "fr": "Dirigeants ou administrateurs de petites entreprises qui ont besoin d'une protection des postes contre les malwares et les ransomwares sans équipe sécurité dédiée."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Endpoint protection: an IT admin enrolls company laptops and phones so Defender blocks malware and ransomware automatically.",
+      "fr": "Protection des postes : un administrateur IT inscrit les ordinateurs et téléphones de l'entreprise pour que Defender bloque automatiquement malwares et ransomwares."
+    },
+    {
+      "en": "Bundled security: a small business on Microsoft 365 Business Premium gets Defender for Business included with its productivity suite.",
+      "fr": "Sécurité groupée : une petite entreprise sur Microsoft 365 Business Premium reçoit Defender for Business inclus avec sa suite bureautique."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "At 3 USD per user per month it adds AI-powered endpoint protection cheaply, but no comparative cost data against other EDR tools is available.",
+        "fr": "À 3 $ par utilisateur et par mois, il ajoute une protection des postes pilotée par IA à bas coût, mais aucune donnée comparative face aux autres outils EDR n'est disponible.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A simplified setup wizard is mentioned, but no concrete time-to-first-result is stated in the collected sources.",
+        "fr": "Un assistant de configuration simplifié est mentionné, mais aucun délai concret pour un premier résultat n'est précisé dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Blocks malware and automatically disrupts ransomware attacks in progress, matching the stated promise without a mentioned workaround.",
+        "fr": "Bloque les malwares et interrompt automatiquement les attaques de ransomware en cours, conformément à la promesse annoncée, sans contournement mentionné.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers detection, response, attack surface reduction and vulnerability management, but is capped at 300 users with no comparison data to call it a category reference.",
+        "fr": "Couvre la détection, la réponse, la réduction de la surface d'attaque et la gestion des vulnérabilités, mais plafonne à 300 utilisateurs, sans donnée comparative pour en faire une référence de catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability are not covered by the collected sources.",
+        "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Endpoint security",
+      "fr": "Sécurité des postes"
+    },
+    "shortDescription": {
+      "en": "Microsoft Defender for Business is AI-powered endpoint protection against malware and ransomware for organizations with up to 300 users.",
+      "fr": "Microsoft Defender for Business protège les postes contre malwares et ransomwares grâce à l'IA, pour des organisations jusqu'à 300 utilisateurs."
+    },
+    "longDescription": {
+      "en": "Microsoft Defender for Business brings AI-powered endpoint detection and response to small and medium organizations: it blocks malware and ransomware, reduces the attack surface with firewall and network protection rules, and can automatically disrupt a human-operated ransomware attack in progress. Automated investigation and a simplified setup wizard let an admin without a dedicated security team get protection running.\n\nThe standalone plan costs 3 USD per user per month and covers up to 300 users with 5 devices each; server protection and larger deployments need a separate add-on or an enterprise Defender plan. It is also bundled into Microsoft 365 Business Premium at 22 USD per user per month.",
+      "fr": "Microsoft Defender for Business apporte une détection et réponse aux menaces pilotée par IA aux petites et moyennes organisations : il bloque malwares et ransomwares, réduit la surface d'attaque grâce au pare-feu et aux règles réseau, et peut interrompre automatiquement une attaque de ransomware en cours. L'investigation automatisée et un assistant de configuration simplifié permettent à un administrateur sans équipe sécurité dédiée de démarrer.\n\nLe forfait autonome coûte 3 $ par utilisateur et par mois et couvre jusqu'à 300 utilisateurs avec 5 appareils chacun ; la protection des serveurs et les déploiements plus importants demandent une extension payante ou un forfait Defender entreprise. Il est aussi inclus dans Microsoft 365 Business Premium à 22 $ par utilisateur et par mois."
+    },
+    "pros": [
+      {
+        "en": "Blocks malware and automatically disrupts human-operated ransomware attacks in progress.",
+        "fr": "Bloque les malwares et interrompt automatiquement les attaques de ransomware en cours."
+      },
+      {
+        "en": "Can be bundled into Microsoft 365 Business Premium for teams already on that suite.",
+        "fr": "Peut être intégré à Microsoft 365 Business Premium pour les équipes déjà sur cette suite."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Capped at 300 users and 5 devices per user, so it does not scale to larger organizations.",
+        "fr": "Plafonné à 300 utilisateurs et 5 appareils par utilisateur, donc ne convient pas aux grandes organisations."
+      },
+      {
+        "en": "Server protection is a separate paid add-on, not included in the base price.",
+        "fr": "La protection des serveurs est une extension payante séparée, non incluse dans le prix de base."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you run a small or medium organization (up to 300 users) that needs endpoint protection without a dedicated security team.",
+        "fr": "Garde Defender for Business si tu diriges une organisation petite ou moyenne (jusqu'à 300 utilisateurs) qui a besoin d'une protection des postes sans équipe sécurité dédiée."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you need to protect servers by default or have more than 300 users: both require extra add-ons or an enterprise plan.",
+        "fr": "Évite-le si tu dois protéger des serveurs par défaut ou si tu as plus de 300 utilisateurs : les deux demandent une extension ou un forfait entreprise."
+      },
+      "threshold": {
+        "en": "Entry cost is 3 USD per user per month, about 36 USD per user per year for the standalone plan.",
+        "fr": "Le tarif d'entrée est de 3 $ par utilisateur et par mois, soit environ 36 $ par utilisateur et par an pour le forfait autonome."
+      },
+      "billingTraps": {
+        "en": "The standalone plan is an annual subscription that auto-renews, and server protection is billed as a separate add-on.",
+        "fr": "Le forfait autonome est un abonnement annuel à renouvellement automatique, et la protection des serveurs est facturée en extension séparée."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "Both plans list identical monthly and annualPerMonth prices (3 USD and 22 USD respectively); the standalone plan's keyLimits also says it is sold only as an annual subscription. Worth confirming on microsoft.com whether a genuine month-to-month rate exists or whether annualPerMonth was duplicated from monthly."
+  ]
 }

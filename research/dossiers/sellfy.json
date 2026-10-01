@@ -3,7 +3,7 @@
   "slug": "sellfy",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Sellfy",
     "vendor": "Sellfy OÜ",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://sellfy.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Sellfy pricing" }
+    {
+      "id": "s1",
+      "url": "https://sellfy.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Sellfy pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,75 +30,315 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "starter",
         "name": "Starter",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 29, "annualPerMonth": 22, "oneTime": null },
+        "price": {
+          "monthly": 29,
+          "annualPerMonth": 22,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Annual sales capped at $10k, zero transaction fees, unlimited products" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Annual sales capped at $10k, zero transaction fees, unlimited products",
+            "fr": "Ventes annuelles plafonnées à 10 000 $, aucuns frais de transaction, produits illimités"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 79, "annualPerMonth": 59, "oneTime": null },
+        "price": {
+          "monthly": 79,
+          "annualPerMonth": 59,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Annual sales capped at $50k, removes Sellfy branding, 10,000 email marketing credits" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Annual sales capped at $50k, removes Sellfy branding, 10,000 email marketing credits",
+            "fr": "Ventes annuelles plafonnées à 50 000 $, retire la marque Sellfy, 10 000 crédits d'e-mail marketing"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 159, "annualPerMonth": 119, "oneTime": null },
+        "price": {
+          "monthly": 159,
+          "annualPerMonth": 119,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Annual sales capped at $200k, priority support, 50,000 email marketing credits, 20GB file size limit" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Annual sales capped at $200k, priority support, 50,000 email marketing credits, 20GB file size limit",
+            "fr": "Ventes annuelles plafonnées à 200 000 $, support prioritaire, 50 000 crédits d'e-mail marketing, fichiers jusqu'à 20 Go"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Each plan has an annual sales cap; exceeding it triggers a required upgrade or 2% overage fees, on top of standard PayPal/Stripe processing fees (2.9% + 30 cents).", "sourceIds": ["s1"] }
+      {
+        "en": "Each plan has an annual sales cap; exceeding it triggers a required upgrade or 2% overage fees, on top of standard PayPal/Stripe processing fees (2.9% + 30 cents).",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Chaque forfait a un plafond de ventes annuel ; le dépasser impose une mise à niveau ou des frais de dépassement de 2 %, en plus des frais standards PayPal/Stripe (2,9 % + 30 cents)."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Sells digital products, physical goods, subscriptions, and print-on-demand items from one storefront", "sourceIds": ["s1"] },
-      { "en": "Built-in email marketing with coupon codes and customer reviews", "sourceIds": ["s1"] },
-      { "en": "Store customization with themes and custom domain support", "sourceIds": ["s1"] }
+      {
+        "en": "Sells digital products, physical goods, subscriptions, and print-on-demand items from one storefront",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Vend produits numériques, biens physiques, abonnements et articles à la demande depuis une seule boutique"
+      },
+      {
+        "en": "Built-in email marketing with coupon codes and customer reviews",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "E-mail marketing intégré avec codes promo et avis clients"
+      },
+      {
+        "en": "Store customization with themes and custom domain support",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Personnalisation de la boutique avec thèmes et prise en charge d'un domaine personnalisé"
+      }
     ],
     "limitations": [
-      { "en": "No permanent free plan, only a 14-day trial", "sourceIds": ["s1"] },
-      { "en": "Annual sales are capped per plan, requiring an upgrade once a store grows past the tier's cap", "sourceIds": ["s1"] }
+      {
+        "en": "No permanent free plan, only a 14-day trial",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Pas de forfait gratuit permanent, seulement un essai de 14 jours"
+      },
+      {
+        "en": "Annual sales are capped per plan, requiring an upgrade once a store grows past the tier's cap",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les ventes annuelles sont plafonnées par forfait, ce qui impose une mise à niveau une fois le plafond du forfait dépassé"
+      }
     ],
     "integrations": [
-      { "name": "PayPal", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Stripe", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "PayPal",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Stripe",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Independent creators who sell digital products, courses or print-on-demand merch without building a full online store.",
+      "fr": "Créateurs indépendants qui vendent des produits numériques, des cours ou des articles à la demande sans construire une boutique en ligne complète."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Digital product sales: a creator sells an ebook or course file directly from a Sellfy storefront with built-in checkout.",
+      "fr": "Vente de produits numériques : un créateur vend un ebook ou un cours directement depuis une boutique Sellfy avec paiement intégré."
+    },
+    {
+      "en": "Print-on-demand merch: a creator adds a branded t-shirt or mug to their store without holding inventory, fulfilled on each order.",
+      "fr": "Produits à la demande : un créateur ajoute un t-shirt ou un mug à sa marque dans sa boutique sans stock, fabriqué à chaque commande."
+    }
+  ],
   "alternatives": [
-    { "slug": "gumroad", "reason": { "en": "Direct competitor for selling digital products with a simpler storefront" } },
-    { "slug": "woocommerce", "reason": { "en": "Self-hosted e-commerce alternative for a full online store" } },
-    { "slug": "shopify-payments", "reason": { "en": "Larger e-commerce platform competitor with broader product scope" } }
+    {
+      "slug": "gumroad",
+      "reason": {
+        "en": "Direct competitor for selling digital products with a simpler storefront",
+        "fr": "Concurrent direct pour vendre des produits numériques, avec une boutique plus simple"
+      }
+    },
+    {
+      "slug": "woocommerce",
+      "reason": {
+        "en": "Self-hosted e-commerce alternative for a full online store",
+        "fr": "Alternative e-commerce auto-hébergée pour une boutique en ligne complète"
+      }
+    },
+    {
+      "slug": "shopify-payments",
+      "reason": {
+        "en": "Larger e-commerce platform competitor with broader product scope",
+        "fr": "Concurrent de plateforme e-commerce plus large, avec un périmètre produit plus étendu"
+      }
+    },
+    {
+      "slug": "podia",
+      "reason": {
+        "en": "Competitor for selling digital products, courses and memberships from one storefront.",
+        "fr": "Concurrent pour vendre produits numériques, cours et abonnements depuis une seule boutique."
+      }
+    },
+    {
+      "slug": "lemon-squeezy",
+      "reason": {
+        "en": "Competitor for selling digital products with built-in checkout and tax handling.",
+        "fr": "Concurrent pour vendre des produits numériques, avec paiement intégré et gestion de la taxe."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Reasonable entry price for a full storefront, but overage fees and upgrade pressure reduce value once a store grows.",
+        "fr": "Prix d'entrée raisonnable pour une boutique complète, mais les frais de dépassement et la pression à monter de gamme réduisent la valeur une fois la boutique en croissance.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to launch a first storefront is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour lancer une première boutique ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Storefront, email marketing and print-on-demand work together as described, with no mentioned workaround.",
+        "fr": "La boutique, l'e-mail marketing et l'impression à la demande fonctionnent ensemble comme décrit, sans contournement mentionné.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers the core needs of a small digital storefront, but annual sales caps and a 20GB file limit set a visible ceiling.",
+        "fr": "Couvre les besoins de base d'une petite boutique numérique, mais les plafonds de ventes annuels et la limite de 20 Go posent un plafond visible.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and store migration options are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export des données et de migration de boutique ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Digital product storefront",
+      "fr": "Boutique de produits numériques"
+    },
+    "shortDescription": {
+      "en": "Sellfy is an online storefront for digital products, physical goods and print-on-demand, with an annual sales cap on every plan.",
+      "fr": "Sellfy est une boutique en ligne pour produits numériques, biens physiques et impression à la demande, avec un plafond de ventes annuel sur chaque forfait."
+    },
+    "longDescription": {
+      "en": "Sellfy puts digital products, physical goods, subscriptions and print-on-demand items in one storefront, with built-in email marketing, coupon codes and customer reviews to help a creator sell without stitching together separate tools. Store customization covers themes and a custom domain.\n\nEvery plan has an annual sales cap: 10k USD on Starter, 50k on Business, 200k on Premium, after which an upgrade or 2% overage fee applies on top of standard PayPal or Stripe processing fees. There is no permanent free plan, only a 14-day trial.",
+      "fr": "Sellfy réunit produits numériques, biens physiques, abonnements et impression à la demande dans une seule boutique, avec e-mail marketing intégré, codes promo et avis clients pour vendre sans assembler plusieurs outils séparés. La personnalisation de la boutique couvre les thèmes et un domaine personnalisé.\n\nChaque forfait a un plafond de ventes annuel : 10 000 $ sur Starter, 50 000 $ sur Business, 200 000 $ sur Premium, au-delà duquel une mise à niveau ou des frais de dépassement de 2 % s'appliquent, en plus des frais standards PayPal ou Stripe. Il n'existe pas de forfait gratuit permanent, seulement un essai de 14 jours."
+    },
+    "pros": [
+      {
+        "en": "Sells digital products, physical goods and print-on-demand from a single storefront with no separate tools.",
+        "fr": "Vend produits numériques, biens physiques et impression à la demande depuis une seule boutique, sans outil séparé."
+      },
+      {
+        "en": "Built-in email marketing and customer reviews are included rather than sold as add-ons.",
+        "fr": "L'e-mail marketing et les avis clients sont inclus plutôt que vendus en option."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Every plan has an annual sales cap, forcing an upgrade or overage fee once a store grows past it.",
+        "fr": "Chaque forfait a un plafond de ventes annuel, qui oblige à monter de gamme ou à payer des frais de dépassement une fois dépassé."
+      },
+      {
+        "en": "No permanent free plan: only a 14-day trial before billing starts.",
+        "fr": "Pas de forfait gratuit permanent : seulement un essai de 14 jours avant la facturation."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you sell digital products or print-on-demand merch and your annual sales stay under the plan's cap.",
+        "fr": "Garde Sellfy si tu vends des produits numériques ou des articles à la demande et que ton chiffre d'affaires annuel reste sous le plafond du forfait."
+      },
+      "avoidIf": {
+        "en": "Avoid it if your store already sells past 10k USD a year: you will need the Business plan or pay overage fees.",
+        "fr": "Évite Sellfy si ta boutique dépasse déjà 10 000 $ de ventes par an : il faudra passer au forfait Business ou payer des frais de dépassement."
+      },
+      "threshold": {
+        "en": "Entry cost is 22 USD a month billed annually (264 USD a year) for the Starter plan, capped at 10k USD in annual sales.",
+        "fr": "Le tarif d'entrée est de 22 $ par mois en facturation annuelle (264 $ par an) pour le forfait Starter, plafonné à 10 000 $ de ventes annuelles."
+      },
+      "billingTraps": {
+        "en": "Exceeding a plan's annual sales cap triggers a required upgrade or a 2% overage fee, on top of standard payment-processor fees.",
+        "fr": "Dépasser le plafond de ventes annuel du forfait oblige à monter de gamme ou entraîne des frais de dépassement de 2 %, en plus des frais standards du prestataire de paiement."
+      }
+    }
+  },
   "unknowns": [
     "30-day money-back guarantee terms and exclusions not detailed",
     "Exact overage fee mechanics beyond the stated 2% figure not fully specified"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

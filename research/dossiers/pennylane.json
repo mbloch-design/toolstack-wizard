@@ -3,7 +3,7 @@
   "slug": "pennylane",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Pennylane",
     "vendor": "Pennylane",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.pennylane.com/fr/tarifs/small", "tier": 1, "accessedOn": "2026-09-25", "title": "Pennylane tarifs indépendants" }
+    {
+      "id": "s1",
+      "url": "https://www.pennylane.com/fr/tarifs/small",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Pennylane tarifs indépendants"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,78 +30,309 @@
     "verifiedOn": "2026-09-25",
     "region": "FR",
     "taxIncluded": false,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 15, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 15,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "starter",
         "name": "Starter",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 7, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 7,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 user, up to 1,200 invoices/year, core invoicing and payment features; requires activating a Pennylane Pro account." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "1 user, up to 1,200 invoices/year, core invoicing and payment features; requires activating a Pennylane Pro account.",
+            "fr": "1 utilisateur, jusqu'à 1 200 factures par an, fonctions de facturation et de paiement de base ; nécessite d'activer un compte Pennylane Pro."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "basique",
         "name": "Basique",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 14, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 14,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 user, up to 1,200 invoices/year, adds partial invoices, commercial documents, supplier management." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "1 user, up to 1,200 invoices/year, adds partial invoices, commercial documents, supplier management.",
+            "fr": "1 utilisateur, jusqu'à 1 200 factures par an, ajoute les factures partielles, les documents commerciaux et la gestion des fournisseurs."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "essentiel",
         "name": "Essentiel",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 24, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 24,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 user, up to 1,200 invoices/year, adds cash flow forecasting, expense tracking, analytics, recurring invoices." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "1 user, up to 1,200 invoices/year, adds cash flow forecasting, expense tracking, analytics, recurring invoices.",
+            "fr": "1 utilisateur, jusqu'à 1 200 factures par an, ajoute la prévision de trésorerie, le suivi des dépenses, les statistiques et les factures récurrentes."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 79, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 79,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Adds accounting module: validation workflows, financial reports, tax declarations." }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Adds accounting module: validation workflows, financial reports, tax declarations.",
+            "fr": "Ajoute le module comptable : circuits de validation, rapports financiers, déclarations fiscales."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Prices shown are HT (excl. tax) for the independent/small business pricing page; other pricing pages may apply to larger businesses.", "sourceIds": ["s1"] }
+      {
+        "en": "Prices shown are HT (excl. tax) for the independent/small business pricing page; other pricing pages may apply to larger businesses.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les prix affichés sont HT, pour la page tarifs indépendants/petites entreprises ; d'autres grilles tarifaires peuvent s'appliquer aux entreprises plus grandes."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Real-time collaborative accounting shared between the business owner and their accountant.", "sourceIds": ["s1"] },
-      { "en": "Built-in electronic invoicing compliance included at no additional cost across all plans.", "sourceIds": ["s1"] },
-      { "en": "Cash flow forecasting, expense tracking and recurring invoices from the Essentiel tier.", "sourceIds": ["s1"] },
-      { "en": "Full accounting module (validation circuits, financial reports, tax declarations) at the Premium tier.", "sourceIds": ["s1"] }
+      {
+        "en": "Real-time collaborative accounting shared between the business owner and their accountant.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Comptabilité collaborative en temps réel, partagée entre le dirigeant et son comptable."
+      },
+      {
+        "en": "Built-in electronic invoicing compliance included at no additional cost across all plans.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Conformité à la facturation électronique intégrée, incluse sans coût supplémentaire sur tous les forfaits."
+      },
+      {
+        "en": "Cash flow forecasting, expense tracking and recurring invoices from the Essentiel tier.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Prévision de trésorerie, suivi des dépenses et factures récurrentes à partir du forfait Essentiel."
+      },
+      {
+        "en": "Full accounting module (validation circuits, financial reports, tax declarations) at the Premium tier.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Module comptable complet (circuits de validation, rapports financiers, déclarations fiscales) sur le forfait Premium."
+      }
     ],
     "limitations": [
-      { "en": "All plans are single-user and capped at 1,200 invoices/year, unsuitable for larger volumes.", "sourceIds": ["s1"] },
-      { "en": "The Starter plan requires activating a separate Pennylane Pro account, adding a setup step.", "sourceIds": ["s1"] }
+      {
+        "en": "All plans are single-user and capped at 1,200 invoices/year, unsuitable for larger volumes.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Tous les forfaits sont mono-utilisateur et plafonnés à 1 200 factures par an, ce qui ne convient pas aux volumes plus importants."
+      },
+      {
+        "en": "The Starter plan requires activating a separate Pennylane Pro account, adding a setup step.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le forfait Starter nécessite d'activer un compte Pennylane Pro séparé, ce qui ajoute une étape de configuration."
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "shine", "reason": { "en": "French freelancer/small-business finance competitor covering banking and invoicing." } },
-    { "slug": "qonto", "reason": { "en": "Overlaps in French SME finance and expense/invoicing management." } },
-    { "slug": "freshbooks", "reason": { "en": "Cloud accounting and invoicing competitor for freelancers and small businesses." } }
+    {
+      "slug": "shine",
+      "reason": {
+        "en": "French freelancer/small-business finance competitor covering banking and invoicing.",
+        "fr": "Concurrent français pour les indépendants et petites entreprises, couvrant banque et facturation."
+      }
+    },
+    {
+      "slug": "qonto",
+      "reason": {
+        "en": "Overlaps in French SME finance and expense/invoicing management.",
+        "fr": "Chevauchement sur la finance des PME françaises et la gestion des dépenses et de la facturation."
+      }
+    },
+    {
+      "slug": "freshbooks",
+      "reason": {
+        "en": "Cloud accounting and invoicing competitor for freelancers and small businesses.",
+        "fr": "Concurrent de comptabilité et facturation cloud pour indépendants et petites entreprises."
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [
     "Whether prices differ for non-independent (larger company) tiers was not checked; only the small-business pricing page was reviewed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Solo independents and small business owners in France who need invoicing and accounting shared live with their accountant.",
+      "fr": "Indépendants et petits dirigeants en France qui ont besoin d'une facturation et d'une comptabilité partagées en direct avec leur comptable."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Invoicing and bookkeeping: a freelancer issues invoices and shares real-time bookkeeping access with their accountant from the same account.",
+      "fr": "Facturation et comptabilité : un indépendant émet ses factures et partage sa comptabilité en temps réel avec son comptable depuis le même compte."
+    },
+    {
+      "en": "Tax and cash flow: a solo business owner on the Essentiel plan tracks expenses and forecasts cash flow before upgrading to the full accounting module.",
+      "fr": "Trésorerie et fiscalité : un chef d'entreprise solo sur le forfait Essentiel suit ses dépenses et anticipe sa trésorerie avant de passer au module comptable complet."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Electronic invoicing compliance is included at every price point from 7 EUR a month, removing the need for a separate compliance tool.",
+        "fr": "La conformité à la facturation électronique est incluse dès 7 € par mois, ce qui évite d'avoir besoin d'un outil de conformité séparé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time for a first invoice is not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main pour émettre une première facture ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Invoicing, bookkeeping and tax compliance features match the stated promise without a mentioned workaround.",
+        "fr": "Les fonctions de facturation, de comptabilité et de conformité fiscale tiennent la promesse annoncée sans contournement mentionné.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Capped at 1,200 invoices a year and a single user on every plan, so it covers an independent's needs but not a growing team's.",
+        "fr": "Plafonné à 1 200 factures par an et à un seul utilisateur sur tous les forfaits, il couvre les besoins d'un indépendant mais pas ceux d'une équipe qui grandit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability are not covered by the collected sources.",
+        "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Accounting and invoicing",
+      "fr": "Comptabilité et facturation"
+    },
+    "shortDescription": {
+      "en": "Pennylane is single-user accounting and invoicing software for French independents, with electronic invoicing compliance included on every plan.",
+      "fr": "Pennylane est un logiciel de facturation et comptabilité pour un seul utilisateur, pensé pour les indépendants français, avec facturation électronique incluse partout."
+    },
+    "longDescription": {
+      "en": "Pennylane combines invoicing and accounting in one place that the business owner and their accountant can both see in real time. Every plan includes electronic invoicing compliance at no extra cost, and the Essentiel tier adds cash flow forecasting, expense tracking and recurring invoices for a single user handling up to 1,200 invoices a year.\n\nPlans run from 7 EUR a month for basic invoicing up to 79 EUR a month for the full accounting module with validation workflows and tax declarations. The entry Starter plan also requires activating a separate Pennylane Pro account, an extra setup step worth knowing before subscribing.",
+      "fr": "Pennylane réunit facturation et comptabilité dans un espace que le dirigeant et son comptable consultent en temps réel. Chaque forfait inclut la conformité à la facturation électronique sans coût supplémentaire, et le forfait Essentiel ajoute la prévision de trésorerie, le suivi des dépenses et les factures récurrentes, pour un seul utilisateur et jusqu'à 1 200 factures par an.\n\nLes forfaits vont de 7 € par mois pour la facturation de base à 79 € par mois pour le module comptable complet avec circuits de validation et déclarations fiscales. Le forfait Starter d'entrée demande aussi d'activer un compte Pennylane Pro séparé, une étape à connaître avant de s'abonner."
+    },
+    "pros": [
+      {
+        "en": "Electronic invoicing compliance is included on every plan at no extra cost.",
+        "fr": "La conformité à la facturation électronique est incluse sur tous les forfaits, sans coût additionnel."
+      },
+      {
+        "en": "Real-time shared access lets the accountant work from the same data as the business owner.",
+        "fr": "L'accès partagé en temps réel permet au comptable de travailler sur les mêmes données que le dirigeant."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Every plan is limited to a single user, so it does not fit a growing team.",
+        "fr": "Chaque forfait est limité à un seul utilisateur, ce qui ne convient pas à une équipe qui grandit."
+      },
+      {
+        "en": "The Starter plan requires activating a separate Pennylane Pro account before use.",
+        "fr": "Le forfait Starter demande d'activer un compte Pennylane Pro séparé avant utilisation."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you are a solo independent in France who wants invoicing and accounting shared live with your accountant.",
+        "fr": "Garde Pennylane si tu es indépendant en France et que tu veux une facturation et une comptabilité partagées en direct avec ton comptable."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you need more than one user or more than 1,200 invoices a year: no plan covers that.",
+        "fr": "Évite Pennylane si tu as besoin de plusieurs utilisateurs ou de plus de 1 200 factures par an : aucun forfait ne le couvre."
+      },
+      "threshold": {
+        "en": "Entry cost is 7 EUR a month (84 EUR a year) for the Starter plan, the cheapest a single person can use for invoicing.",
+        "fr": "Le tarif d'entrée est de 7 € par mois (84 € par an) pour le forfait Starter, le moins cher qu'une seule personne peut utiliser pour facturer."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

@@ -3,7 +3,8 @@
   "slug": "soldo",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Soldo",
     "vendor": "Soldo Financial Services Ireland DAC",
@@ -34,7 +35,7 @@
         "minSeats": null,
         "price": { "monthly": 27, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 wallet, 3 users, 3 cards, up to 20 monthly bank transfers" }],
+        "keyLimits": [{ "en": "1 wallet, 3 users, 3 cards, up to 20 monthly bank transfers", "fr": "1 portefeuille, 3 utilisateurs, 3 cartes, jusqu'à 20 virements bancaires par mois" }],
         "sourceIds": ["s1"]
       },
       {
@@ -44,7 +45,7 @@
         "minSeats": null,
         "price": { "monthly": 39, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "3 wallets, 3 users, 3 cards, up to 30 monthly bank transfers, budget management, multi-currency" }],
+        "keyLimits": [{ "en": "3 wallets, 3 users, 3 cards, up to 30 monthly bank transfers, budget management, multi-currency", "fr": "3 portefeuilles, 3 utilisateurs, 3 cartes, jusqu'à 30 virements bancaires par mois, gestion de budgets, multidevises" }],
         "sourceIds": ["s1"]
       },
       {
@@ -54,27 +55,27 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Unlimited wallets, users, cards and bank transfers; role-based access; custom approval workflows; SAP Concur integration" }],
+        "keyLimits": [{ "en": "Unlimited wallets, users, cards and bank transfers; role-based access; custom approval workflows; SAP Concur integration", "fr": "Portefeuilles, utilisateurs, cartes et virements illimités ; accès par rôle ; workflows d'approbation personnalisés ; intégration SAP Concur" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "standard",
     "addOns": [
-      { "en": "Additional fees for extra card issuance and cash withdrawals, listed separately from plan prices", "sourceIds": ["s1"] }
+      { "en": "Additional fees for extra card issuance and cash withdrawals, listed separately from plan prices", "fr": "Frais supplémentaires pour l'émission de cartes additionnelles et les retraits d'espèces, facturés en plus du prix du plan", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Base plan prices exclude VAT (+VAT stated explicitly).", "sourceIds": ["s1"] }
+      { "en": "Base plan prices exclude VAT (+VAT stated explicitly).", "fr": "Les prix des plans de base sont hors TVA (TVA en sus explicitement indiquée).", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Prepaid company cards with per-card spending controls and receipt capture", "sourceIds": ["s1"] },
-      { "en": "Multi-wallet budget management with multi-currency spending on Plus plan", "sourceIds": ["s1"] },
-      { "en": "100+ system integrations and SAP Concur connector on the Unlimited plan", "sourceIds": ["s1"] }
+      { "en": "Prepaid company cards with per-card spending controls and receipt capture", "fr": "Cartes prépayées pro avec plafonds de dépense par carte et capture des justificatifs", "sourceIds": ["s1"] },
+      { "en": "Multi-wallet budget management with multi-currency spending on Plus plan", "fr": "Gestion de budgets multi-portefeuilles avec dépenses multidevises sur le plan Plus", "sourceIds": ["s1"] },
+      { "en": "100+ system integrations and SAP Concur connector on the Unlimited plan", "fr": "Plus de 100 intégrations et un connecteur SAP Concur sur le plan Unlimited", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No permanent free plan, only a 30-day trial", "sourceIds": ["s1"] },
-      { "en": "Entry Standard plan caps monthly bank transfers at 20 and is limited to 3 users/cards", "sourceIds": ["s1"] }
+      { "en": "No permanent free plan, only a 30-day trial", "fr": "Pas de plan gratuit permanent, seulement un essai de 30 jours", "sourceIds": ["s1"] },
+      { "en": "Entry Standard plan caps monthly bank transfers at 20 and is limited to 3 users/cards", "fr": "Le plan Standard d'entrée plafonne les virements mensuels à 20 et se limite à 3 utilisateurs/cartes", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "SAP Concur", "slug": null, "sourceIds": ["s1"] },
@@ -82,19 +83,107 @@
     ],
     "platforms": ["web", "ios", "android"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A small business ops or finance lead issuing and controlling cards for a handful of employees.",
+      "fr": "Une ou un responsable ops ou finance d'une petite structure qui distribue et contrôle des cartes pour quelques salariés."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Team expense control: issue a prepaid card per employee with its own spending cap, and review transactions as receipts are captured.",
+      "fr": "Contrôle des dépenses d'équipe : émettre une carte prépayée par salarié avec son propre plafond, et vérifier les transactions au fil de la capture des justificatifs."
+    },
+    {
+      "en": "Project budgets: open a dedicated wallet with a monthly budget on the Plus plan, and let several cards draw from it without separate approvals each time.",
+      "fr": "Budgets de projet : ouvrir un portefeuille dédié avec un budget mensuel sur le plan Plus, et laisser plusieurs cartes y puiser sans validation séparée à chaque fois."
+    }
+  ],
   "alternatives": [
-    { "slug": "spendesk", "reason": { "en": "Direct competitor for company cards and spend management" } },
-    { "slug": "payhawk", "reason": { "en": "Similar European expense/card management platform" } },
-    { "slug": "qonto", "reason": { "en": "Business account with card/expense features aimed at the same target" } }
+    { "slug": "spendesk", "reason": { "en": "Direct competitor for company cards and spend management", "fr": "Concurrent direct pour les cartes pro et la gestion des dépenses" } },
+    { "slug": "payhawk", "reason": { "en": "Similar European expense/card management platform", "fr": "Plateforme européenne similaire de gestion des dépenses et des cartes" } },
+    { "slug": "qonto", "reason": { "en": "Business account with card/expense features aimed at the same target", "fr": "Compte pro avec fonctions de carte et de dépenses visant la même cible" } }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Card-level limits and receipt capture replace manual reimbursement, but the dossier's facts don't show a cost advantage over similarly priced tools like Spendesk or Qonto.",
+        "fr": "Les plafonds par carte et la capture des justificatifs remplacent les notes de frais manuelles, mais les faits du dossier ne montrent pas d'avantage de coût face à des outils comparables comme Spendesk ou Qonto.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Issuing a first card is described as a core Standard-plan feature, but the dossier does not state an onboarding or setup duration.",
+        "fr": "L'émission d'une première carte est une fonctionnalité de base du plan Standard, mais le dossier ne précise aucune durée de mise en route.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Card issuance, spending caps and receipt capture work as described on the official pricing page, with no workaround mentioned.",
+        "fr": "L'émission de cartes, les plafonds de dépense et la capture des justificatifs fonctionnent comme annoncé sur la page tarifs officielle, sans contournement mentionné.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "The Unlimited plan adds role-based access, custom approval workflows and a SAP Concur connector, but the dossier has no comparison showing it leads the category.",
+        "fr": "Le plan Unlimited ajoute des accès par rôle, des workflows d'approbation personnalisés et un connecteur SAP Concur, mais le dossier ne montre pas qu'il domine la catégorie.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and API portability are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et la portabilité via API ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Company expense cards", "fr": "Cartes de dépenses pro" },
+    "shortDescription": {
+      "en": "Soldo issues prepaid company cards with per-card spending limits, multi-wallet budgets, and receipt capture for small business expense management.",
+      "fr": "Soldo distribue des cartes prépayées pro avec plafonds par carte, budgets multi-portefeuilles et capture de justificatifs pour gérer les dépenses d'une petite équipe."
+    },
+    "longDescription": {
+      "en": "Soldo combines prepaid company cards with spending controls: each card carries its own limit and category rules, and receipts are captured through the mobile app instead of filed afterward. Wallets group cards under a shared monthly budget, so a manager can track a department or project without reconciling expense reports by hand.\n\nThe Standard plan starts at £27 a month for one wallet and three cards, with a 30-day trial and no permanent free tier. It suits a small team or ops lead replacing personal reimbursement with controlled company cards, while heavier multi-currency or approval-workflow needs push toward the costlier Plus or on-quote Unlimited plan.",
+      "fr": "Soldo combine des cartes prépayées pro et des contrôles de dépense : chaque carte a son propre plafond, et les justificatifs sont capturés via l'appli mobile plutôt que classés après coup. Les portefeuilles regroupent des cartes sous un budget mensuel commun, pour suivre un projet sans reconstituer des notes de frais à la main.\n\nLe plan Standard démarre à 27 £ par mois pour un portefeuille et trois cartes, avec un essai de 30 jours et aucun palier gratuit. Il convient à une petite équipe qui remplace le remboursement personnel par des cartes pro contrôlées, tandis que des besoins poussés en multidevises ou en workflows poussent vers le plan Plus ou l'Unlimited sur devis."
+    },
+    "pros": [
+      { "en": "Per-card spending limits and category rules reduce misuse without manual expense reports.", "fr": "Les plafonds par carte et les règles de catégorie limitent les abus sans note de frais manuelle." },
+      { "en": "Receipt capture and wallet budgets give a live view of team spend.", "fr": "La capture des justificatifs et les budgets par portefeuille donnent une vue en temps réel des dépenses de l'équipe." }
+    ],
+    "cons": [
+      { "en": "No permanent free plan, only a 30-day trial before billing starts.", "fr": "Pas de plan gratuit permanent, seulement un essai de 30 jours avant la facturation." },
+      { "en": "The entry Standard plan caps transfers and users at a low ceiling (3 users, 20 transfers a month).", "fr": "Le plan Standard d'entrée plafonne assez bas les virements et les utilisateurs (3 utilisateurs, 20 virements par mois)." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep Soldo if you need to hand out company cards to a few people with per-card limits and automatic receipt capture.",
+        "fr": "Garde Soldo si tu dois distribuer des cartes pro à quelques personnes avec des plafonds par carte et une capture automatique des justificatifs."
+      },
+      "avoidIf": {
+        "en": "Avoid it if your team is past 3 cardholders on a tight budget, since Plus or the on-quote Unlimited plan quickly add to the base price.",
+        "fr": "Évite-le si ton équipe dépasse 3 porteurs de carte avec un budget serré, car le plan Plus ou l'Unlimited sur devis font vite grimper la facture."
+      },
+      "threshold": {
+        "en": "Worth it once the Standard plan's 324 pounds a year (27 pounds x 12) costs less than the time spent chasing receipts by hand.",
+        "fr": "Rentable dès que les 324 livres par an du plan Standard (27 livres x 12) coûtent moins cher que le temps passé à courir après les justificatifs à la main."
+      },
+      "billingTraps": {
+        "en": "Listed prices exclude VAT, and extra card issuance or cash withdrawals carry separate fees on top of the plan price.",
+        "fr": "Les prix affichés sont hors TVA, et l'émission de cartes supplémentaires ou les retraits d'espèces sont facturés en plus du prix du plan."
+      }
+    }
+  },
   "unknowns": [
     "Claimed '62% time savings on claims' and '80% time savings on reporting' figures are unsubstantiated marketing claims from Soldo's own site and were excluded from facts",
     "No stated per-seat pricing beyond the plan base price (Standard/Plus include only 3 users at the listed price)"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

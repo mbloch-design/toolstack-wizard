@@ -3,7 +3,8 @@
   "slug": "envato-elements",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Envato Elements",
     "vendor": "Envato Pty Ltd",
@@ -15,13 +16,7 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://elements.envato.com/pricing",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Envato Elements pricing"
-    }
+    { "id": "s1", "url": "https://elements.envato.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Envato Elements pricing" }
   ],
   "pricing": {
     "model": "subscription",
@@ -30,183 +25,165 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": false,
-    "freePlan": {
-      "exists": false,
-      "limits": null,
-      "sourceIds": [
-        "s1"
-      ]
-    },
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
     "plans": [
       {
         "key": "core",
         "name": "Core",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": 39,
-          "annualPerMonth": 16.5,
-          "oneTime": null
-        },
+        "price": { "monthly": 39, "annualPerMonth": 16.5, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Unlimited downloads of the 29M+ creative asset library, 20 AI credits/month, lifetime commercial license.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Unlimited downloads of the 29M+ creative asset library, 20 AI credits/month, lifetime commercial license.", "fr": "Téléchargements illimités de la bibliothèque de plus de 29 millions d'éléments créatifs, 20 crédits IA par mois, licence commerciale à vie." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "plus",
         "name": "Plus",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": 59,
-          "annualPerMonth": 39,
-          "oneTime": null
-        },
+        "price": { "monthly": 59, "annualPerMonth": 39, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "200 AI credits/month, up to 3 parallel AI generations, unlimited stock downloads.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "200 AI credits/month, up to 3 parallel AI generations, unlimited stock downloads.", "fr": "200 crédits IA par mois, jusqu'à 3 générations IA en parallèle, téléchargements de stock illimités." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "ultimate",
         "name": "Ultimate",
         "unit": "account",
         "minSeats": 1,
-        "price": {
-          "monthly": 259,
-          "annualPerMonth": 168,
-          "oneTime": null
-        },
+        "price": { "monthly": 259, "annualPerMonth": 168, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "500 to 2,000 AI credits/month (selectable tiers), 10 parallel AI generations, unlimited stock downloads.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "500 to 2,000 AI credits/month (selectable tiers), 10 parallel AI generations, unlimited stock downloads.", "fr": "500 à 2000 crédits IA par mois (paliers au choix), 10 générations IA en parallèle, téléchargements de stock illimités." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [
-          {
-            "en": "Custom seats, unlimited stock downloads, custom licensing terms, dedicated account manager.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Custom seats, unlimited stock downloads, custom licensing terms, dedicated account manager.", "fr": "Sièges personnalisés, téléchargements de stock illimités, conditions de licence sur mesure, gestionnaire de compte dédié." }],
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "core",
     "addOns": [],
     "cautions": [
-      {
-        "en": "Stock asset downloads are unlimited but subject to a Fair Use Policy not detailed on the pricing page itself.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Stock asset downloads are unlimited but subject to a Fair Use Policy not detailed on the pricing page itself.", "fr": "Les téléchargements d'éléments de stock sont illimités mais soumis à une politique d'usage raisonnable non détaillée sur la page tarifs elle-même.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      {
-        "en": "Unlimited downloads of a library of 29M+ creative assets: photos, video, music, sound effects, graphics, fonts, 3D templates.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Bundled AI generation tools (image, video, audio) consuming a monthly AI-credit allowance.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Lifetime commercial license included with every download.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Unlimited downloads of a library of 29M+ creative assets: photos, video, music, sound effects, graphics, fonts, 3D templates.", "fr": "Téléchargements illimités d'une bibliothèque de plus de 29 millions d'éléments créatifs : photos, vidéos, musique, effets sonores, graphismes, polices, modèles 3D.", "sourceIds": ["s1"] },
+      { "en": "Bundled AI generation tools (image, video, audio) consuming a monthly AI-credit allowance.", "fr": "Outils de génération IA intégrés (image, vidéo, audio) consommant un quota mensuel de crédits IA.", "sourceIds": ["s1"] },
+      { "en": "Lifetime commercial license included with every download.", "fr": "Licence commerciale à vie incluse avec chaque téléchargement.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      {
-        "en": "No free tier or usage-based entry point; the cheapest plan is a $39/month (or $16.50/month annual) subscription.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "AI generation is capped by a monthly credit allowance that varies by plan, unlike the unlimited stock downloads.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "No free tier or usage-based entry point; the cheapest plan is a $39/month (or $16.50/month annual) subscription.", "fr": "Aucun palier gratuit ni accès à l'usage ; le plan le moins cher est un abonnement à 39 $/mois (ou 16,50 $/mois en annuel).", "sourceIds": ["s1"] },
+      { "en": "AI generation is capped by a monthly credit allowance that varies by plan, unlike the unlimited stock downloads.", "fr": "La génération IA est plafonnée par un quota de crédits mensuel qui varie selon le plan, contrairement aux téléchargements de stock illimités.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
-  "alternatives": [
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A content creator or small studio who regularly needs stock video, music, graphics and templates for client or channel work.",
+      "fr": "Une créatrice de contenu ou un petit studio qui a régulièrement besoin de vidéos, musiques, graphismes et modèles pour des clients ou une chaîne."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
     {
-      "slug": "storyblocks",
-      "reason": {
-        "en": "Comparable all-in-one stock asset subscription (video, audio, images) for creators.",
-        "fr": null
-      }
+      "en": "Video production: pull royalty-free stock footage, music and graphic templates from the library to assemble a client video without licensing each asset separately.",
+      "fr": "Production vidéo : puiser des images de stock, de la musique et des modèles graphiques libres de droits dans la bibliothèque pour monter une vidéo client sans licencier chaque élément séparément."
     },
     {
-      "slug": "motion-array",
-      "reason": {
-        "en": "Subscription library of video templates, stock footage and music aimed at video creators.",
-        "fr": null
-      }
-    },
-    {
-      "slug": "adobe-cc",
-      "reason": {
-        "en": "Broader creative suite subscription that also bundles Adobe Stock assets.",
-        "fr": null
-      }
+      "en": "Social content batch: generate short AI images or video clips within the monthly credit allowance to complement stock assets for a content calendar.",
+      "fr": "Production de contenu social en lot : générer de courtes images ou vidéos par IA dans la limite du quota mensuel pour compléter les éléments de stock d'un calendrier de contenu."
     }
   ],
+  "alternatives": [
+    { "slug": "storyblocks", "reason": { "en": "Comparable all-in-one stock asset subscription (video, audio, images) for creators.", "fr": "Abonnement tout-en-un comparable à des éléments de stock (vidéo, audio, images) pour créateurs." } },
+    { "slug": "motion-array", "reason": { "en": "Subscription library of video templates, stock footage and music aimed at video creators.", "fr": "Bibliothèque par abonnement de modèles vidéo, d'images de stock et de musique destinée aux créateurs vidéo." } },
+    { "slug": "adobe-cc", "reason": { "en": "Broader creative suite subscription that also bundles Adobe Stock assets.", "fr": "Abonnement à une suite créative plus large qui intègre aussi les éléments Adobe Stock." } }
+  ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Unlimited downloads of a 29M+ asset library plus a lifetime commercial license for 39 dollars a month covers what would otherwise be many per-asset licensing fees.",
+        "fr": "Des téléchargements illimités d'une bibliothèque de plus de 29 millions d'éléments avec licence commerciale à vie pour 39 dollars par mois couvre ce qui demanderait sinon de nombreuses licences à l'unité.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Downloading and using a stock asset is a single-step action with a lifetime license attached, with no stated setup beyond subscribing.",
+        "fr": "Télécharger et utiliser un élément de stock est une action en une étape avec une licence à vie attachée, sans configuration annoncée au-delà de l'abonnement.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Unlimited stock downloads work as advertised; the AI generation features are clearly metered by credits rather than described as unlimited and then restricted.",
+        "fr": "Les téléchargements de stock illimités fonctionnent comme annoncé ; les fonctions de génération IA sont clairement limitées par des crédits plutôt que décrites comme illimitées puis restreintes.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "A 29M+ multi-format library (video, audio, graphics, fonts, 3D) plus bundled AI generation covers a wide range of creative needs in one subscription.",
+        "fr": "Une bibliothèque multi-format de plus de 29 millions d'éléments (vidéo, audio, graphisme, polices, 3D) avec génération IA intégrée couvre un large éventail de besoins créatifs dans un seul abonnement.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: what happens to previously downloaded assets' usage rights after cancellation, and any export of account history, is not covered by the collected sources.",
+        "fr": "Note neutre : le sort des droits d'usage des éléments déjà téléchargés après résiliation, et un éventuel export de l'historique de compte, ne figurent pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Stock asset subscription", "fr": "Abonnement d'éléments de stock" },
+    "shortDescription": {
+      "en": "Envato Elements is a subscription giving unlimited access to a 29M+ library of stock video, audio, graphics and templates, plus AI generation tools.",
+      "fr": "Envato Elements donne un accès illimité à une bibliothèque de plus de 29 millions d'éléments de stock (vidéo, audio, graphisme) et à des outils IA."
+    },
+    "longDescription": {
+      "en": "Envato Elements bundles unlimited downloads of stock photos, video, music, sound effects, graphics, fonts and 3D templates under a single subscription, with a lifetime commercial license on every download. AI image, video and audio generation tools are included too, metered by a monthly credit allowance rather than unlimited.\n\nThe Core plan starts at 39 dollars a month, or 16.50 dollars a month billed annually, with no free tier. It fits a content creator or small studio that regularly needs varied stock assets, while heavier AI generation use pushes toward the pricier Plus or Ultimate plans for more credits.",
+      "fr": "Envato Elements regroupe des téléchargements illimités de photos, vidéos, musique, effets sonores, graphismes, polices et modèles 3D de stock dans un seul abonnement, avec une licence commerciale à vie sur chaque téléchargement. Des outils de génération IA (image, vidéo, audio) sont aussi inclus, mais limités par un quota mensuel de crédits plutôt qu'illimités.\n\nLe plan Core démarre à 39 dollars par mois, ou 16,50 dollars par mois en facturation annuelle, sans palier gratuit. Il convient à une créatrice de contenu ou un petit studio qui a régulièrement besoin d'éléments de stock variés, tandis qu'un usage plus intensif de la génération IA pousse vers les plans Plus ou Ultimate, plus chers, pour plus de crédits."
+    },
+    "pros": [
+      { "en": "Unlimited stock downloads across many asset types under one flat subscription.", "fr": "Téléchargements de stock illimités sur de nombreux types d'éléments sous un seul abonnement forfaitaire." },
+      { "en": "Lifetime commercial license included, removing per-project licensing hassle.", "fr": "Licence commerciale à vie incluse, ce qui évite les démarches de licence par projet." }
+    ],
+    "cons": [
+      { "en": "No free tier; the entry Core plan already costs 39 dollars a month if billed monthly.", "fr": "Pas de palier gratuit ; le plan Core d'entrée coûte déjà 39 dollars par mois en facturation mensuelle." },
+      { "en": "AI generation is credit-limited even on paid plans, unlike the unlimited stock downloads.", "fr": "La génération IA reste limitée par des crédits même sur les plans payants, contrairement aux téléchargements de stock illimités." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep Envato Elements if you regularly need varied stock assets (video, music, graphics) across projects and want one flat subscription instead of per-asset licenses.",
+        "fr": "Garde Envato Elements si tu as régulièrement besoin d'éléments de stock variés (vidéo, musique, graphisme) sur plusieurs projets et préfères un abonnement forfaitaire aux licences à l'unité."
+      },
+      "avoidIf": {
+        "en": "Avoid it if your main need is heavy AI generation, since credits run out fast on the entry plans and the top Ultimate tier costs 259 dollars a month.",
+        "fr": "Évite-le si ton besoin principal est une génération IA intensive, car les crédits s'épuisent vite sur les plans d'entrée et le palier Ultimate coûte 259 dollars par mois."
+      },
+      "threshold": {
+        "en": "Worth it once the 198 dollars a year of the annual Core plan (16.50 dollars x 12) costs less than licensing a handful of individual stock assets elsewhere.",
+        "fr": "Rentable dès que les 198 dollars par an du plan Core annuel (16,50 dollars x 12) coûtent moins cher que de licencier quelques éléments de stock à l'unité ailleurs."
+      }
+    }
+  },
   "unknowns": [
     "No free trial confirmed on the pricing page; third-party trackers sometimes mention trial offers that were not visible in this session.",
     "Exact AI-credit cost per generation type (image vs video vs audio) not detailed on the pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

@@ -3,7 +3,7 @@
   "slug": "google-play-console",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Google Play Console",
     "vendor": "Google LLC",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://google.play/business/", "tier": 1, "accessedOn": "2026-09-25", "title": "Google Play for Business" }
+    {
+      "id": "s1",
+      "url": "https://google.play/business/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Google Play for Business"
+    }
   ],
   "pricing": {
     "model": "quote",
@@ -24,33 +30,211 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "The one-time developer registration fee amount was not visible on the fetched page; it is a one-time cost per developer account, not a subscription.", "sourceIds": ["s1"] }
+      {
+        "en": "The one-time developer registration fee amount was not visible on the fetched page; it is a one-time cost per developer account, not a subscription.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le montant des frais d'inscription développeur uniques n'était pas visible sur la page récupérée ; il s'agit d'un coût unique par compte développeur, pas d'un abonnement."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "App release management: internal sharing, closed/open testing, pre-launch reports and staged production releases.", "sourceIds": ["s1"] },
-      { "en": "Growth and analytics tools including acquisition reporting, store listing A/B experiments, custom store listings and translation services.", "sourceIds": ["s1"] },
-      { "en": "Monetization via Google Play Billing for in-app products and subscriptions, with price experiments.", "sourceIds": ["s1"] },
-      { "en": "Quality monitoring through Android vitals reports, Android Performance Tuner and app size analysis.", "sourceIds": ["s1"] }
+      {
+        "en": "App release management: internal sharing, closed/open testing, pre-launch reports and staged production releases.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Gestion de la sortie d'app : partage interne, tests fermés/ouverts, rapports avant lancement et déploiements progressifs en production."
+      },
+      {
+        "en": "Growth and analytics tools including acquisition reporting, store listing A/B experiments, custom store listings and translation services.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Outils de croissance et d'analytique incluant les rapports d'acquisition, les tests A/B de fiche store, les fiches store personnalisées et les services de traduction."
+      },
+      {
+        "en": "Monetization via Google Play Billing for in-app products and subscriptions, with price experiments.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Monétisation via Google Play Billing pour les produits et abonnements intégrés, avec des tests de prix."
+      },
+      {
+        "en": "Quality monitoring through Android vitals reports, Android Performance Tuner and app size analysis.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Suivi qualité via les rapports Android vitals, Android Performance Tuner et l'analyse de la taille de l'app."
+      }
     ],
     "limitations": [
-      { "en": "Requires a one-time paid developer registration to publish any app; the exact fee was not shown on the page fetched.", "sourceIds": ["s1"] },
-      { "en": "Tied exclusively to distribution on the Google Play Store; not usable for other Android app stores or platforms.", "sourceIds": ["s1"] }
+      {
+        "en": "Requires a one-time paid developer registration to publish any app; the exact fee was not shown on the page fetched.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Demande une inscription développeur payante unique pour publier une app ; le montant exact n'était pas affiché sur la page récupérée."
+      },
+      {
+        "en": "Tied exclusively to distribution on the Google Play Store; not usable for other Android app stores or platforms.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Lié exclusivement à la distribution sur le Google Play Store ; non utilisable pour d'autres stores ou plateformes Android."
+      }
     ],
     "integrations": [],
-    "platforms": ["web", "android"]
+    "platforms": [
+      "web",
+      "android"
+    ]
   },
-  "alternatives": [],
-  "missingAlternatives": [
-    { "name": "Apple App Store Connect", "officialUrl": "https://appstoreconnect.apple.com", "reason": "Direct equivalent console for publishing iOS apps, not in the catalogue" }
+  "alternatives": [
+    {
+      "slug": "app-store-connect",
+      "reason": {
+        "en": "Direct equivalent console for publishing, testing and monetizing apps, but for the iOS App Store instead of Google Play.",
+        "fr": "Console équivalente directe pour publier, tester et monétiser des apps, mais pour l'App Store iOS plutôt que Google Play."
+      }
+    }
   ],
-  "unknowns": ["The exact one-time developer registration fee amount was not visible on the fetched business overview page (a redirect from the console 'about' URL)."],
-  "conflicts": []
+  "missingAlternatives": [
+    {
+      "name": "Apple App Store Connect",
+      "officialUrl": "https://appstoreconnect.apple.com",
+      "reason": "Direct equivalent console for publishing iOS apps, not in the catalogue"
+    }
+  ],
+  "unknowns": [
+    "The exact one-time developer registration fee amount was not visible on the fetched business overview page (a redirect from the console 'about' URL)."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The cost is a one-time developer registration fee rather than a recurring subscription, but the exact amount is not confirmed, making the value hard to judge precisely.",
+        "fr": "Le coût est un frais d'inscription unique plutôt qu'un abonnement récurrent, mais le montant exact n'est pas confirmé, ce qui rend la valeur difficile à juger précisément.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: the console bundles release management, growth and monetization in one place, but first-use onboarding time is not detailed by the sources.",
+        "fr": "Note neutre : la console regroupe gestion de sortie, croissance et monétisation au même endroit, mais le temps de prise en main n'est pas détaillé dans les sources.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "It delivers its stated promise directly: apps can be tested, released in stages and monetized without third-party tools.",
+        "fr": "Il tient sa promesse directement : les apps peuvent être testées, déployées par étapes et monétisées sans outils tiers.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Release management, growth tools, monetization and quality monitoring together cover a broad range for an app console.",
+        "fr": "Gestion de sortie, outils de croissance, monétisation et suivi qualité réunis couvrent un large périmètre pour une console d'app.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data or listing portability away from the Google Play Store is not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des données ou de la fiche store hors du Google Play Store ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Android developers who need to publish, test and monetize an app on the Google Play Store.",
+      "fr": "Développeurs Android qui doivent publier, tester et monétiser une application sur le Google Play Store."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "App launch: run closed and open testing tracks with pre-launch reports before a staged production rollout.",
+      "fr": "Lancement d'app : lancer des tests fermés et ouverts avec des rapports avant lancement avant un déploiement progressif en production."
+    },
+    {
+      "en": "In-app monetization: sell subscriptions or in-app products through Google Play Billing and run price experiments.",
+      "fr": "Monétisation in-app : vendre des abonnements ou des produits intégrés via Google Play Billing et lancer des tests de prix."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Android app publishing",
+      "fr": "Publication d'apps Android"
+    },
+    "shortDescription": {
+      "en": "The console for publishing, testing, monetizing and monitoring Android apps on the Google Play Store, with a one-time developer registration fee.",
+      "fr": "La console pour publier, tester, monétiser et suivre des applications Android sur le Google Play Store, avec des frais d'inscription développeur uniques."
+    },
+    "longDescription": {
+      "en": "Google Play Console manages the full app release lifecycle: internal sharing, closed and open testing, pre-launch reports and staged production rollouts. It also covers growth (acquisition reporting, store listing A/B tests, translations) and quality monitoring through Android vitals and performance tuning.\n\nPublishing requires a one-time paid developer registration fee, whose exact amount was not visible on the page reviewed here; there is no recurring subscription beyond that. In-app monetization runs through Google Play Billing with support for price experiments. It fits any developer who wants to ship and monetize an Android app on the Play Store, exclusively.",
+      "fr": "Google Play Console gère tout le cycle de publication d'une application : partage interne, tests fermés et ouverts, rapports avant lancement et déploiement progressif en production. Il couvre aussi la croissance (rapports d'acquisition, tests A/B de fiche store, traductions) et le suivi qualité via Android vitals et l'optimisation des performances.\n\nPublier une app suppose des frais d'inscription développeur uniques, dont le montant exact n'était pas visible sur la page consultée ici ; il n'y a pas d'abonnement récurrent au-delà. La monétisation in-app passe par Google Play Billing avec prise en charge des tests de prix. L'outil convient à tout développeur qui veut publier et monétiser une application Android, exclusivement sur le Play Store."
+    },
+    "pros": [
+      {
+        "en": "Covers the full release lifecycle: testing, staged rollout, growth tools and quality monitoring in one console.",
+        "fr": "Couvre tout le cycle de sortie : tests, déploiement progressif, outils de croissance et suivi qualité dans une seule console."
+      },
+      {
+        "en": "One-time registration fee rather than a recurring subscription.",
+        "fr": "Frais d'inscription uniques plutôt qu'un abonnement récurrent."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Tied exclusively to the Google Play Store; not usable for other Android app stores.",
+        "fr": "Lié exclusivement au Google Play Store ; non utilisable pour d'autres stores Android."
+      },
+      {
+        "en": "The exact registration fee amount is not transparent on the page reviewed here.",
+        "fr": "Le montant exact des frais d'inscription n'est pas transparent sur la page consultée ici."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You are publishing an Android app on the Google Play Store and need release management, testing and monetization tools.",
+        "fr": "Tu publies une application Android sur le Google Play Store et tu as besoin de gestion de sortie, de tests et d'outils de monétisation."
+      },
+      "avoidIf": {
+        "en": "You want to distribute an Android app outside the Play Store, or need an iOS equivalent instead.",
+        "fr": "Tu veux distribuer une app Android en dehors du Play Store, ou tu as besoin de l'équivalent iOS."
+      },
+      "threshold": {
+        "en": "Budget the one-time developer registration fee to open an account; the exact amount is not stated on the page reviewed and should be confirmed before budgeting.",
+        "fr": "Prévois les frais d'inscription développeur uniques pour ouvrir un compte ; le montant exact n'est pas indiqué sur la page consultée et doit être confirmé avant de budgétiser."
+      }
+    }
+  }
 }

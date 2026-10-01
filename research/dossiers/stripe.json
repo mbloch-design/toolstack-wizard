@@ -3,7 +3,8 @@
   "slug": "stripe",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Stripe",
     "vendor": "Stripe, Inc.",
@@ -51,8 +52,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "2.9% + 30\u00a2 per successful domestic card transaction, no setup or monthly fee. International cards add 1.5%, currency conversion adds 1%, manually entered cards add 0.5%. Usage-based, no fixed plan price.",
-            "fr": null
+            "en": "2.9% + 30¢ per successful domestic card transaction, no setup or monthly fee. International cards add 1.5%, currency conversion adds 1%, manually entered cards add 0.5%. Usage-based, no fixed plan price.",
+            "fr": "2,9 % + 0,30 $ par transaction carte domestique réussie, sans frais de mise en place ni abonnement mensuel. Les cartes internationales ajoutent 1,5 %, la conversion de devise ajoute 1 %, la saisie manuelle de carte ajoute 0,5 %. Tarif à l'usage, sans prix de plan fixe."
           }
         ],
         "sourceIds": [
@@ -65,21 +66,23 @@
     "addOns": [
       {
         "en": "Custom domain for hosted pages/checkout: $10/month.",
-        "fr": null,
-        "sourceIds": ["s1"]
+        "fr": "Domaine personnalisé pour les pages hébergées/le checkout : 10 $/mois.",
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "cautions": [
       {
         "en": "No flat subscription fee; cost scales with transaction volume and card type (domestic vs international, manual entry, currency conversion each add a surcharge on top of the base rate).",
-        "fr": null,
+        "fr": "Pas de forfait fixe ; le coût varie selon le volume de transactions et le type de carte (domestique ou internationale, saisie manuelle, conversion de devise ajoutent chacun une surcharge au tarif de base).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Custom/enterprise pricing available for high-volume merchants, negotiated directly and not published.",
-        "fr": null,
+        "fr": "Un tarif sur mesure existe pour les marchands à fort volume, négocié directement et non publié.",
         "sourceIds": [
           "s1"
         ]
@@ -90,21 +93,21 @@
     "capabilities": [
       {
         "en": "Payment processing across 195 countries and 135+ currencies, with access to 100+ payment methods.",
-        "fr": null,
+        "fr": "Traitement des paiements dans 195 pays et plus de 135 devises, avec accès à plus de 100 moyens de paiement.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Built-in fraud prevention via Radar Lite and PCI compliance included at no extra cost.",
-        "fr": null,
+        "fr": "Prévention de la fraude intégrée via Radar Lite et conformité PCI incluse sans coût supplémentaire.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "99.999% average historical uptime and 24/7 customer support.",
-        "fr": null,
+        "fr": "Disponibilité historique moyenne de 99,999 % et support client 24 h/24, 7 j/7.",
         "sourceIds": [
           "s1"
         ]
@@ -113,14 +116,14 @@
     "limitations": [
       {
         "en": "No flat monthly plan for standard payments; every transaction incurs a fee, which can be costly at scale compared to negotiated enterprise rates.",
-        "fr": null,
+        "fr": "Pas de forfait mensuel fixe pour les paiements standards ; chaque transaction entraîne des frais, ce qui peut coûter cher à grande échelle face à des tarifs entreprise négociés.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "International and manually entered cards, plus currency conversion, each add extra surcharges on top of the base processing rate.",
-        "fr": null,
+        "fr": "Les cartes internationales, la saisie manuelle et la conversion de devise ajoutent chacune une surcharge au tarif de traitement de base.",
         "sourceIds": [
           "s1"
         ]
@@ -131,32 +134,148 @@
       "web"
     ]
   },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer or technical founder integrating payment processing into a product via API rather than through a pre-built checkout tool.",
+      "fr": "Un développeur ou un fondateur technique qui intègre le traitement des paiements dans un produit via API plutôt qu'avec un outil de caisse prêt à l'emploi."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "SaaS billing: integrate Stripe's API to charge domestic cards at checkout, accepting the 2.9% + 30 cent per-transaction fee instead of building payment infrastructure.",
+      "fr": "Facturation SaaS : intégrer l'API Stripe pour débiter des cartes domestiques au paiement, en acceptant les frais de 2,9 % + 0,30 $ par transaction plutôt que de construire une infrastructure de paiement."
+    },
+    {
+      "en": "International sales: accept foreign cards and multiple currencies through Stripe, factoring in the added international and conversion surcharges on top of the base rate.",
+      "fr": "Ventes internationales : accepter des cartes étrangères et plusieurs devises via Stripe, en tenant compte des surcharges internationales et de conversion ajoutées au tarif de base."
+    }
+  ],
   "alternatives": [
     {
       "slug": "paypal",
       "reason": {
         "en": "Widely used competing payment processor with comparable per-transaction pricing.",
-        "fr": null
+        "fr": "Processeur de paiement concurrent très répandu, avec une tarification à la transaction comparable."
       }
     },
     {
       "slug": "razorpay",
       "reason": {
         "en": "Payment processing competitor, particularly strong in emerging markets.",
-        "fr": null
+        "fr": "Concurrent du traitement des paiements, particulièrement fort sur les marchés émergents."
       }
     },
     {
       "slug": "gocardless",
       "reason": {
         "en": "Alternative payments infrastructure focused on bank-to-bank and recurring payments.",
-        "fr": null
+        "fr": "Infrastructure de paiement alternative centrée sur les virements bancaires et les paiements récurrents."
       }
     }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "No setup or monthly fee and pay-per-transaction pricing means a small business pays nothing until it actually processes a sale.",
+        "fr": "Aucun frais de mise en place ou d'abonnement mensuel : une petite structure ne paie rien tant qu'elle ne traite pas réellement une vente.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Stripe is API-first; the dossier does not describe a no-code first-result path, so a first working integration likely needs developer time rather than an hour of no-code setup.",
+        "fr": "Stripe est d'abord une API ; le dossier ne décrit pas de parcours sans code pour un premier résultat, donc une première intégration fonctionnelle demande probablement du temps de développeur plutôt qu'une heure sans code.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Payment processing, fraud prevention and PCI compliance work as described across 195 countries and 100+ payment methods, without a stated workaround.",
+        "fr": "Le traitement des paiements, la prévention de la fraude et la conformité PCI fonctionnent comme annoncé dans 195 pays et avec plus de 100 moyens de paiement, sans contournement mentionné.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Coverage of 195 countries, 135+ currencies and 100+ payment methods puts its reach at the top of the payment-processing category.",
+        "fr": "Une couverture de 195 pays, plus de 135 devises et plus de 100 moyens de paiement place sa portée au sommet de la catégorie des processeurs de paiement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and migration of transaction history to another processor are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et la migration de l'historique des transactions vers un autre processeur ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Payment processing API",
+      "fr": "API de paiement"
+    },
+    "shortDescription": {
+      "en": "Stripe is a usage-based payment processing platform charging per transaction, covering 195 countries and 100+ payment methods.",
+      "fr": "Stripe est une plateforme de traitement des paiements facturée à l'usage par transaction, couvrant 195 pays et plus de 100 moyens de paiement."
+    },
+    "longDescription": {
+      "en": "Stripe processes card and other payments through an API, charging 2.9% plus 30 cents per successful domestic transaction with no setup or monthly fee. International cards, currency conversion and manually entered cards each add a surcharge on top of that base rate, and fraud prevention plus PCI compliance come included.\n\nThere is no flat plan: cost scales directly with transaction volume and card type, and high-volume merchants can negotiate custom enterprise pricing. It fits a developer or technical team integrating payments directly into a product, while a business wanting a no-code checkout may prefer a more guided tool.",
+      "fr": "Stripe traite les paiements par carte via une API, en facturant 2,9 % plus 0,30 $ par transaction domestique réussie, sans frais de mise en place ni abonnement mensuel. Les cartes internationales, la conversion de devise et la saisie manuelle ajoutent chacune une surcharge au tarif de base, et la prévention de la fraude ainsi que la conformité PCI sont incluses.\n\nIl n'y a pas de forfait fixe : le coût varie avec le volume de transactions et le type de carte, et les marchands à fort volume peuvent négocier un tarif sur mesure. Stripe convient à une équipe technique qui intègre les paiements dans un produit, tandis qu'une structure voulant un paiement sans code préférera un outil plus guidé."
+    },
+    "pros": [
+      {
+        "en": "No setup or monthly fee: cost only appears once a transaction actually succeeds.",
+        "fr": "Aucun frais de mise en place ou d'abonnement mensuel : le coût n'apparaît qu'une fois la transaction réellement réussie."
+      },
+      {
+        "en": "Broad reach, 195 countries and 100+ payment methods, without switching providers per market.",
+        "fr": "Une portée large, 195 pays et plus de 100 moyens de paiement, sans changer de prestataire selon le marché."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Every transaction carries a fee, which adds up at high volume compared to a negotiated enterprise rate.",
+        "fr": "Chaque transaction entraîne des frais, qui s'accumulent à fort volume face à un tarif entreprise négocié."
+      },
+      {
+        "en": "Integration is developer-oriented; there's no stated no-code setup path in the collected facts.",
+        "fr": "L'intégration est orientée développeur ; les faits recueillis ne mentionnent pas de parcours de mise en place sans code."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep Stripe if you need to accept payments programmatically across many countries and currencies without negotiating a custom contract first.",
+        "fr": "Garde Stripe si tu dois accepter des paiements de façon programmatique dans de nombreux pays et devises sans négocier d'abord un contrat sur mesure."
+      },
+      "avoidIf": {
+        "en": "Avoid relying only on the published rate if your volume is high enough that a negotiated enterprise rate would cost less per transaction.",
+        "fr": "Évite de te fier seulement au tarif publié si ton volume est assez élevé pour qu'un tarif entreprise négocié coûte moins cher par transaction."
+      },
+      "threshold": {
+        "en": "At the published 2.9% + 30 cents rate, the per-transaction fee becomes a meaningful cost once monthly processed volume is large enough that it is worth requesting a custom rate from Stripe.",
+        "fr": "Au tarif publié de 2,9 % + 0,30 $, les frais par transaction deviennent un coût significatif dès que le volume mensuel traité justifie de demander un tarif sur mesure à Stripe."
+      }
+    }
+  },
   "unknowns": [
     "No explicit maximum transaction volume cap stated; enterprise/custom pricing exists but exact thresholds and negotiated rates are not public."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The standard processing plan is marked onQuote: true and regularPriceUnknown: true, but the dossier's own facts show a public, non-promotional rate (2.9% + 30 cents domestic). This looks like a usage model misclassified as a quote-only plan rather than a genuine inconsistency in the published price; verify on stripe.com/pricing whether a structured comparePlanKey (e.g. the base domestic rate) should replace the quote flag."
+  ],
+  "hold": "standard 2.9% + 0.30 rate is public but stored as onQuote; reclassify as usage before publishing"
 }

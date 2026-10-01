@@ -3,7 +3,8 @@
   "slug": "loopio",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Loopio",
     "vendor": "Loopio Inc.",
@@ -15,13 +16,7 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://loopio.com/pricing/",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Loopio pricing (tier names only, no public dollar amounts)"
-    }
+    { "id": "s1", "url": "https://loopio.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Loopio pricing (tier names only, no public dollar amounts)" }
   ],
   "pricing": {
     "model": "quote",
@@ -30,161 +25,156 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": {
-      "exists": false,
-      "limits": null,
-      "sourceIds": [
-        "s1"
-      ]
-    },
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
     "plans": [
       {
         "key": "foundations",
         "name": "Foundations",
         "unit": "seat",
         "minSeats": 10,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [
-          {
-            "en": "Entry tier; Loopio does not publish dollar pricing, only tier names and seat counts on its official pricing page.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Entry tier; Loopio does not publish dollar pricing, only tier names and seat counts on its official pricing page.", "fr": "Palier d'entrée ; Loopio ne publie aucun prix en dollars, seulement des noms de palier et des nombres de sièges sur sa page tarifs officielle." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "enhanced",
         "name": "Enhanced",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [
-          {
-            "en": "Mid tier, on quote, requires contacting sales for pricing.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Mid tier, on quote, requires contacting sales for pricing.", "fr": "Palier intermédiaire, sur devis, nécessite de contacter les ventes pour obtenir un tarif." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [
-          {
-            "en": "Top tier, custom pricing negotiated with sales based on team size and contract length.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Top tier, custom pricing negotiated with sales based on team size and contract length.", "fr": "Palier le plus élevé, tarif personnalisé négocié avec les ventes selon la taille de l'équipe et la durée du contrat." }],
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      {
-        "en": "No public dollar figures are shown on the official pricing page; all tiers require contacting sales, so this dossier's seed estimate (~$20,000/year for 10 seats on Foundations) comes from third-party procurement trackers, not a primary source, and is not repeated as fact here.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "No public dollar figures are shown on the official pricing page; all tiers require contacting sales, so this dossier's seed estimate (~$20,000/year for 10 seats on Foundations) comes from third-party procurement trackers, not a primary source, and is not repeated as fact here.", "fr": "Aucun chiffre en dollars n'apparaît sur la page tarifs officielle ; tous les paliers exigent de contacter les ventes, donc l'estimation de départ de ce dossier (environ 20 000 $/an pour 10 sièges sur Foundations) vient de trackers d'achat tiers, pas d'une source primaire, et n'est pas reprise ici comme un fait.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      {
-        "en": "Centralized content library for RFP, RFI and security-questionnaire responses.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "AI-assisted automation to draft and populate tender/proposal answers from the content library.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Collaboration workflow for multiple contributors and reviewers on a single response project.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Centralized content library for RFP, RFI and security-questionnaire responses.", "fr": "Bibliothèque de contenu centralisée pour les réponses aux appels d'offres, RFI et questionnaires de sécurité.", "sourceIds": ["s1"] },
+      { "en": "AI-assisted automation to draft and populate tender/proposal answers from the content library.", "fr": "Automatisation assistée par IA pour rédiger et préremplir les réponses d'appels d'offres à partir de la bibliothèque de contenu.", "sourceIds": ["s1"] },
+      { "en": "Collaboration workflow for multiple contributors and reviewers on a single response project.", "fr": "Flux de collaboration pour plusieurs contributeurs et relecteurs sur un même projet de réponse.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      {
-        "en": "No self-serve free trial; access requires booking a demo with sales.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "No public pricing at all, making budget comparison against competitors difficult without a sales conversation.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "No self-serve free trial; access requires booking a demo with sales.", "fr": "Aucun essai gratuit en libre-service ; l'accès nécessite de réserver une démonstration avec les ventes.", "sourceIds": ["s1"] },
+      { "en": "No public pricing at all, making budget comparison against competitors difficult without a sales conversation.", "fr": "Aucun tarif public, ce qui rend la comparaison de budget avec les concurrents difficile sans échange avec les ventes.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
-  "alternatives": [
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A bid, sales or ops lead on a small team who manages recurring RFP and security-questionnaire responses.",
+      "fr": "Une ou un responsable appels d'offres, ventes ou ops dans une petite équipe qui gère des réponses récurrentes à des RFP et questionnaires de sécurité."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
     {
-      "slug": "process-street",
-      "reason": {
-        "en": "Workflow and process documentation tool sometimes used to manage RFP checklists.",
-        "fr": null
-      }
+      "en": "RFP response: pull pre-approved answers from the content library to assemble a tender response, instead of rewriting answers from scratch each time.",
+      "fr": "Réponse à appel d'offres : puiser des réponses préapprouvées dans la bibliothèque de contenu pour monter une réponse, au lieu de tout réécrire à chaque fois."
     },
     {
-      "slug": "confluence",
-      "reason": {
-        "en": "Knowledge base tool teams sometimes repurpose as a lightweight RFP content library.",
-        "fr": null
-      }
+      "en": "Security questionnaire turnaround: use the AI-assisted drafting to populate a vendor security questionnaire from existing answers, then route it to reviewers before submission.",
+      "fr": "Traitement de questionnaires de sécurité : utiliser la rédaction assistée par IA pour préremplir un questionnaire fournisseur à partir de réponses existantes, puis le faire relire avant envoi."
     }
+  ],
+  "alternatives": [
+    { "slug": "process-street", "reason": { "en": "Workflow and process documentation tool sometimes used to manage RFP checklists.", "fr": "Outil de workflow et de documentation de processus parfois utilisé pour gérer des listes d'appels d'offres." } },
+    { "slug": "confluence", "reason": { "en": "Knowledge base tool teams sometimes repurpose as a lightweight RFP content library.", "fr": "Outil de base de connaissances que certaines équipes détournent comme bibliothèque de contenu RFP légère." } }
   ],
   "missingAlternatives": [
-    {
-      "name": "Responsive (RFPIO)",
-      "officialUrl": "https://www.responsive.io/",
-      "reason": "Direct, well-known RFP/proposal-response software competitor, not in the catalogue."
-    }
+    { "name": "Responsive (RFPIO)", "officialUrl": "https://www.responsive.io/", "reason": "Direct, well-known RFP/proposal-response software competitor, not in the catalogue." }
   ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A centralized content library can cut repeated RFP drafting work, but with no public price the dossier cannot establish value for cost.",
+        "fr": "Une bibliothèque de contenu centralisée peut réduire le travail répété de rédaction d'appels d'offres, mais sans prix public le dossier ne peut pas établir le rapport valeur/coût.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "Access requires booking a sales demo rather than self-serve signup, and the dossier states no onboarding duration.",
+        "fr": "L'accès nécessite de réserver une démonstration commerciale plutôt qu'une inscription en libre-service, et le dossier ne précise aucune durée de mise en route.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "The content library and AI-assisted drafting work as described for assembling RFP and security-questionnaire responses, with no workaround mentioned.",
+        "fr": "La bibliothèque de contenu et la rédaction assistée par IA fonctionnent comme annoncé pour monter des réponses à appels d'offres et questionnaires de sécurité, sans contournement mentionné.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Three tiers scaling from Foundations to Enterprise cover growing team needs, but the dossier has no comparison showing it leads the RFP-software category.",
+        "fr": "Trois paliers allant de Foundations à Enterprise couvrent des besoins d'équipe croissants, mais le dossier ne montre pas de comparaison prouvant qu'il domine la catégorie des logiciels d'appels d'offres.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export of the content library or answer history when leaving Loopio is not covered by the collected sources.",
+        "fr": "Note neutre : l'export de la bibliothèque de contenu ou de l'historique des réponses en cas de départ de Loopio ne figure pas dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "RFP response software", "fr": "Réponses aux appels d'offres" },
+    "shortDescription": {
+      "en": "Loopio centralizes RFP, RFI and security-questionnaire answers in one library with AI-assisted drafting, sold only on quote.",
+      "fr": "Loopio centralise les réponses aux appels d'offres, RFI et questionnaires de sécurité dans une bibliothèque avec rédaction assistée par IA, vendu uniquement sur devis."
+    },
+    "longDescription": {
+      "en": "Loopio keeps a team's pre-approved answers to RFPs, RFIs and security questionnaires in one searchable library, then uses AI-assisted drafting to populate a new response and route it through reviewers before submission. The goal is to stop rewriting the same answers project after project.\n\nAll three tiers, Foundations, Enhanced and Enterprise, are sold on quote with no published dollar price and no self-serve trial; access starts with a sales demo. It fits a bid or ops team handling recurring, formal response work, while a team wanting transparent self-serve pricing may prefer a lighter workflow tool instead.",
+      "fr": "Loopio conserve les réponses préapprouvées d'une équipe aux appels d'offres, RFI et questionnaires de sécurité dans une bibliothèque consultable, puis utilise une rédaction assistée par IA pour préremplir une nouvelle réponse et la faire relire avant envoi. L'objectif est d'arrêter de réécrire les mêmes réponses projet après projet.\n\nLes trois paliers, Foundations, Enhanced et Enterprise, sont vendus sur devis sans prix public et sans essai en libre-service ; l'accès démarre par une démonstration commerciale. L'outil convient à une équipe appels d'offres ou ops qui traite des réponses formelles récurrentes, tandis qu'une équipe cherchant un tarif transparent en libre-service préférera peut-être un outil de workflow plus léger."
+    },
+    "pros": [
+      { "en": "Centralized answer library cuts repeated drafting work across RFPs.", "fr": "La bibliothèque de réponses centralisée réduit le travail de rédaction répété d'un appel d'offres à l'autre." },
+      { "en": "AI-assisted drafting plus a structured review workflow for multiple contributors.", "fr": "Rédaction assistée par IA et flux de relecture structuré pour plusieurs contributeurs." }
+    ],
+    "cons": [
+      { "en": "No published pricing at all, so budgeting requires a sales conversation before you can compare it to anything.", "fr": "Aucun tarif publié, donc établir un budget nécessite un échange commercial avant de pouvoir comparer avec autre chose." },
+      { "en": "No self-serve trial; evaluating the product means booking a demo first.", "fr": "Pas d'essai en libre-service ; évaluer le produit passe d'abord par la réservation d'une démonstration." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep Loopio if your team answers RFPs or security questionnaires often enough that a shared content library and AI drafting save real rework.",
+        "fr": "Garde Loopio si ton équipe répond assez souvent à des appels d'offres ou questionnaires de sécurité pour qu'une bibliothèque partagée et la rédaction IA évitent de réelles reprises."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you handle RFPs only occasionally, since the Foundations tier requires at least 10 seats and the cost is only disclosed after a sales call.",
+        "fr": "Évite-le si tu ne traites des appels d'offres qu'occasionnellement, car le palier Foundations exige au moins 10 sièges et le coût n'est révélé qu'après un appel commercial."
+      },
+      "threshold": {
+        "en": "No published price makes a numeric threshold impossible here; get a quote for the 10-seat Foundations minimum and compare it against the hours currently spent rewriting answers before committing.",
+        "fr": "L'absence de prix publié rend tout seuil chiffré impossible ici ; demande un devis pour le minimum de 10 sièges du palier Foundations et compare-le au temps actuellement passé à réécrire des réponses avant de t'engager."
+      }
+    }
+  },
   "unknowns": [
     "No public dollar pricing found on the official pricing page for any tier (Foundations, Enhanced, Enterprise); all require a sales quote.",
     "Minimum contract length and exact seat-pricing mechanics beyond the 10-seat Foundations starting point not confirmed on the official site."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

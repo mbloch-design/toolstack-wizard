@@ -3,7 +3,8 @@
   "slug": "airtable",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Airtable",
     "vendor": "Formagrid, Inc. (Airtable)",
@@ -15,13 +16,7 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://airtable.com/pricing",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Airtable pricing"
-    }
+    { "id": "s1", "url": "https://airtable.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Airtable pricing" }
   ],
   "pricing": {
     "model": "freemium",
@@ -32,164 +27,166 @@
     "taxIncluded": null,
     "freePlan": {
       "exists": true,
-      "limits": {
-        "en": "Free for teams; read-only collaborators, form submissions and share links do not count toward seats.",
-        "fr": null
-      },
-      "sourceIds": [
-        "s1"
-      ]
+      "limits": { "en": "Free for teams; read-only collaborators, form submissions and share links do not count toward seats.", "fr": "Gratuit pour les équipes ; les collaborateurs en lecture seule, les soumissions de formulaire et les liens de partage ne comptent pas dans les sièges." },
+      "sourceIds": ["s1"]
     },
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Free for teams; read-only collaborators, form submissions and share links do not count toward seats.", "fr": "Gratuit pour les équipes ; les collaborateurs en lecture seule, les soumissions de formulaire et les liens de partage ne comptent pas dans les sièges." }],
+        "sourceIds": ["s1"]
+      },
       {
         "key": "team",
         "name": "Team",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": 20,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": 20, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Billed per seat with edit permissions, annual billing; read-only collaborators and form submissions are free.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Billed per seat with edit permissions, annual billing; read-only collaborators and form submissions are free.", "fr": "Facturé par siège avec droits de modification, facturation annuelle ; les collaborateurs en lecture seule et les soumissions de formulaire sont gratuits." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": 45,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": 45, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Adds customization, larger data scale and administrative features; prorated billing for mid-cycle additions.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Adds customization, larger data scale and administrative features; prorated billing for mid-cycle additions.", "fr": "Ajoute personnalisation, volumes de données plus grands et fonctions d'administration ; facturation au prorata pour les ajouts en cours de cycle." }],
+        "sourceIds": ["s1"]
       },
       {
         "key": "enterprise-scale",
         "name": "Enterprise Scale",
         "unit": "seat",
         "minSeats": 1,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [
-          {
-            "en": "Unlimited org units, workspaces and bases; requires sales consultation for pricing.",
-            "fr": null
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
+        "keyLimits": [{ "en": "Unlimited org units, workspaces and bases; requires sales consultation for pricing.", "fr": "Unités d'organisation, espaces de travail et bases illimités ; nécessite une consultation commerciale pour le tarif." }],
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "team",
     "addOns": [],
     "cautions": [
-      {
-        "en": "Monthly (non-annual) price for Team and Business not shown on the pricing page in this session; only the annual-billed per-seat rate was visible ($20 and $45 respectively).",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Monthly (non-annual) price for Team and Business not shown on the pricing page in this session; only the annual-billed per-seat rate was visible ($20 and $45 respectively).", "fr": "Le prix mensuel (hors engagement annuel) des plans Team et Business n'était pas affiché sur la page tarifs pendant cette session ; seul le tarif par siège facturé annuellement était visible (20 $ et 45 $ respectivement).", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      {
-        "en": "Flexible relational-database-style workspace combining spreadsheet UI with linked records, views and automations.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Free plan available to teams with core building blocks, positioned to replace lighter CRM, project and content tools.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Data retention policy: Airtable states it will never remove data when plan limits (records, attachments) are reached, only prompt an upgrade.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Flexible relational-database-style workspace combining spreadsheet UI with linked records, views and automations.", "fr": "Espace de travail flexible façon base de données relationnelle, combinant une interface tableur avec des enregistrements liés, des vues et des automatisations.", "sourceIds": ["s1"] },
+      { "en": "Free plan available to teams with core building blocks, positioned to replace lighter CRM, project and content tools.", "fr": "Plan gratuit disponible pour les équipes avec les briques de base, positionné pour remplacer des outils plus légers de CRM, de projet ou de contenu.", "sourceIds": ["s1"] },
+      { "en": "Data retention policy: Airtable states it will never remove data when plan limits (records, attachments) are reached, only prompt an upgrade.", "fr": "Politique de conservation des données : Airtable indique ne jamais supprimer de données en cas de dépassement des limites du plan (enregistrements, pièces jointes), seulement inciter à une mise à niveau.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      {
-        "en": "Records, attachments, automations and API usage are capped by plan; exceeding them requires an upgrade rather than pay-as-you-go overage.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Only seats with edit permissions are billed, so per-seat costs can be hard to predict for teams with mixed access levels.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Records, attachments, automations and API usage are capped by plan; exceeding them requires an upgrade rather than pay-as-you-go overage.", "fr": "Les enregistrements, pièces jointes, automatisations et l'usage de l'API sont plafonnés par plan ; les dépasser impose une mise à niveau plutôt qu'un dépassement payé à l'usage.", "sourceIds": ["s1"] },
+      { "en": "Only seats with edit permissions are billed, so per-seat costs can be hard to predict for teams with mixed access levels.", "fr": "Seuls les sièges avec droits de modification sont facturés, ce qui rend le coût par siège difficile à anticiper pour des équipes aux niveaux d'accès mélangés.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
-    "platforms": [
-      "web",
-      "ios",
-      "android"
-    ]
+    "platforms": ["web", "ios", "android"]
   },
-  "alternatives": [
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or project lead on a small team building a flexible database to track work, content or a lightweight CRM without engineering help.",
+      "fr": "Une ou un responsable ops ou projet dans une petite équipe qui construit une base flexible pour suivre le travail, du contenu ou un CRM léger, sans aide technique."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
     {
-      "slug": "smartsheet",
-      "reason": {
-        "en": "Spreadsheet/database hybrid work management tool targeting similar flexible-database use cases.",
-        "fr": null
-      }
+      "en": "Lightweight CRM: track leads and deals in a linked-record base with custom views per stage, replacing a spreadsheet shared over email.",
+      "fr": "CRM léger : suivre prospects et affaires dans une base à enregistrements liés avec des vues personnalisées par étape, à la place d'une feuille partagée par e-mail."
     },
     {
-      "slug": "notion",
-      "reason": {
-        "en": "All-in-one workspace often compared to Airtable for lightweight database and project tracking needs.",
-        "fr": null
-      }
-    },
-    {
-      "slug": "monday-com",
-      "reason": {
-        "en": "Work OS platform competing for team project/database management budgets.",
-        "fr": null
-      }
+      "en": "Content calendar: plan and track content status across a team with automations and read-only share links for stakeholders who don't need an edit seat.",
+      "fr": "Calendrier de contenu : planifier et suivre le statut du contenu en équipe avec des automatisations et des liens de partage en lecture seule pour les parties prenantes qui n'ont pas besoin d'un siège d'édition."
     }
   ],
+  "alternatives": [
+    { "slug": "smartsheet", "reason": { "en": "Spreadsheet/database hybrid work management tool targeting similar flexible-database use cases.", "fr": "Outil de gestion du travail hybride tableur/base de données visant des usages de base flexible similaires." } },
+    { "slug": "notion", "reason": { "en": "All-in-one workspace often compared to Airtable for lightweight database and project tracking needs.", "fr": "Espace de travail tout-en-un souvent comparé à Airtable pour des besoins légers de base de données et de suivi de projet." } },
+    { "slug": "monday-com", "reason": { "en": "Work OS platform competing for team project/database management budgets.", "fr": "Plateforme Work OS concurrente sur les budgets de gestion de projet et de base de données d'équipe." } }
+  ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A free plan already covers core database and automation building blocks for a team, and Airtable states it never deletes data over plan limits, only prompts an upgrade.",
+        "fr": "Un plan gratuit couvre déjà les briques de base de base de données et d'automatisation pour une équipe, et Airtable indique ne jamais supprimer de données au-delà des limites du plan, seulement inciter à une mise à niveau.",
+        "sourceIds": ["s1"]
+      },
+      "simplicite": {
+        "en": "The spreadsheet-style interface over a relational database is familiar enough that teams are described as using it without engineering help, though no specific first-hour result is stated.",
+        "fr": "L'interface façon tableur sur une base relationnelle est assez familière pour que des équipes soient décrites comme l'utilisant sans aide technique, même si aucun résultat précis en une heure n'est indiqué.",
+        "sourceIds": ["s1"]
+      },
+      "utilisation": {
+        "en": "Linked records, views and automations work as described for the stated use cases, with plan caps clearly disclosed rather than hidden.",
+        "fr": "Les enregistrements liés, les vues et les automatisations fonctionnent comme annoncé pour les usages visés, avec des plafonds de plan clairement indiqués plutôt que cachés.",
+        "sourceIds": ["s1"]
+      },
+      "puissance": {
+        "en": "Combining relational-database structure, automations and a free entry point covers a wide range of lightweight database needs within the catalogue's project/database category.",
+        "fr": "La combinaison d'une structure de base de données relationnelle, d'automatisations et d'un point d'entrée gratuit couvre un large éventail de besoins de base légère dans la catégorie projet/base de données du catalogue.",
+        "sourceIds": ["s1"]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and API-based data portability when leaving Airtable are not detailed in the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données via API en cas de départ d'Airtable ne sont pas détaillés dans les sources relevées.",
+        "sourceIds": ["s1"]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Flexible team database", "fr": "Base de données flexible" },
+    "shortDescription": {
+      "en": "Airtable is a spreadsheet-style relational database with views and automations, free for small teams and billed per edit seat beyond that.",
+      "fr": "Airtable est une base de données relationnelle façon tableur avec vues et automatisations, gratuite pour les petites équipes et facturée par siège d'édition au-delà."
+    },
+    "longDescription": {
+      "en": "Airtable combines a spreadsheet interface with a relational database underneath: linked records, custom views and automations let a team model a CRM, content calendar or project tracker without engineering help. Only seats with edit permissions are billed; read-only collaborators, form submissions and share links stay free.\n\nThe free plan covers the core building blocks, while Team moves to 20 dollars a month per seat (annual billing) and Business to 45 dollars for more customization and scale. It fits a small team building its own lightweight database, while very large or governance-heavy needs point to the on-quote Enterprise Scale plan.",
+      "fr": "Airtable combine une interface tableur avec une base de données relationnelle en dessous : enregistrements liés, vues personnalisées et automatisations permettent à une équipe de modéliser un CRM ou un suivi de projet sans aide technique. Seuls les sièges avec droits de modification sont facturés ; les collaborateurs en lecture seule et les liens de partage restent gratuits.\n\nLe plan gratuit couvre les briques de base, tandis que Team passe à 20 dollars par mois et par siège (facturation annuelle) et Business à 45 dollars pour plus de personnalisation. L'outil convient à une petite équipe qui construit sa propre base légère, tandis que des besoins très volumineux pointent vers le plan Enterprise Scale sur devis."
+    },
+    "pros": [
+      { "en": "A capable free plan covers real database and automation needs before any seat is billed.", "fr": "Un plan gratuit capable couvre de vrais besoins de base de données et d'automatisation avant toute facturation de siège." },
+      { "en": "Airtable states it never deletes data past plan limits, only prompts an upgrade, reducing the risk of losing work.", "fr": "Airtable indique ne jamais supprimer de données au-delà des limites du plan, seulement inciter à une mise à niveau, ce qui réduit le risque de perdre du travail." }
+    ],
+    "cons": [
+      { "en": "Records, attachments and automations are hard-capped by plan, with upgrade as the only way past the ceiling.", "fr": "Enregistrements, pièces jointes et automatisations sont strictement plafonnés par plan, la mise à niveau étant le seul moyen de dépasser le plafond." },
+      { "en": "The monthly (non-annual) rate for Team and Business wasn't published on the pricing page checked, only the annual-billed figure.", "fr": "Le tarif mensuel (hors engagement annuel) des plans Team et Business n'était pas publié sur la page tarifs consultée, seulement le tarif facturé à l'année." }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep Airtable if a small team needs a flexible, linked-record database with automations and doesn't want to build one from scratch.",
+        "fr": "Garde Airtable si une petite équipe a besoin d'une base flexible à enregistrements liés avec automatisations et ne veut pas en construire une de zéro."
+      },
+      "avoidIf": {
+        "en": "Avoid paying for extra edit seats you don't need, since read-only collaborators and form submissions already stay free.",
+        "fr": "Évite de payer des sièges d'édition en trop, car les collaborateurs en lecture seule et les soumissions de formulaire restent déjà gratuits."
+      },
+      "threshold": {
+        "en": "Team at 240 dollars a year per seat (20 dollars x 12) is worth it once the free plan's record or automation caps start blocking real work.",
+        "fr": "Le plan Team à 240 dollars par an et par siège (20 dollars x 12) se justifie dès que les plafonds d'enregistrements ou d'automatisations du plan gratuit commencent à bloquer le travail réel."
+      }
+    }
+  },
   "unknowns": [
     "Exact numeric limits for records, attachments, and automations per plan not extracted in this session (page referenced them without listing figures)."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

@@ -27,6 +27,9 @@ Budget : test 10 $ max, production 70 $ max, marge 20 $ intouchable.
 - [ ] Session enchaînée c3 à c10 (24 outils) en cours, directement sur `main`
 - [ ] Lots c11 à c21 (10 outils chacun, 110 outils) : d'abord c11 à c13, vérifier le coût par fiche, puis c14 à c21
 - [ ] Compléter en local puis fusionner chaque lot reçu (c3 et suivants)
+- [x] Lot local M, N, O (01/10/2026) : 24 fiches fusionnées (173 en tout). Retenues : browzwear, autocad-lt, gmail (prix sans source officielle) ; tubebody, adobe-acrobat, stripe (`hold`).
+- [ ] Prix à vérifier sur le site de l'éditeur : Rydoo (forfait de comparaison à 5 postes minimum), Microsoft Defender et Adobe Acrobat (mensuel = annuel), Restream Business (239 $ pour 2 postes, pas un vrai prix par poste), Stripe (taux public classé « sur devis »), TubeBuddy (prix Pro/Legend non confirmés)
+- [ ] Doublon catalogue : `tubebody` et `tubebuddy`
 - [ ] Afficher le champ `tagline` des fiches dans le catalogue (aujourd'hui `toolTaglines.ts`) et un badge « produit arrêté / racheté » depuis `lifecycle`
 - [ ] Compléter en local chaque dossier « faits » : note sur 5 axes, cible, textes EN puis FR (hors crédit)
 - [ ] Outils au-delà du top 100 : recherche en local, lot par lot, dans l'ordre de `batches`

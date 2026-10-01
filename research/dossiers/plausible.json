@@ -3,7 +3,7 @@
   "slug": "plausible",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Plausible Analytics",
     "vendor": "Plausible Insights OÜ",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://plausible.io/", "tier": 1, "accessedOn": "2026-09-25", "title": "Plausible Analytics homepage/pricing" }
+    {
+      "id": "s1",
+      "url": "https://plausible.io/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Plausible Analytics homepage/pricing"
+    }
   ],
   "pricing": {
     "model": "usage",
@@ -24,88 +30,343 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 30,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "starter",
         "name": "Starter",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 9, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 9,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 10k monthly pageviews, 1 site, 3 years data retention" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Up to 10k monthly pageviews, 1 site, 3 years data retention",
+            "fr": "Jusqu'à 10 000 pages vues par mois, 1 site, 3 ans de conservation des données"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "growth",
         "name": "Growth",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 14, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 14,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 10k pageviews (expandable), up to 3 sites, up to 3 team members" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Up to 10k pageviews (expandable), up to 3 sites, up to 3 team members",
+            "fr": "Jusqu'à 10 000 pages vues (extensible), jusqu'à 3 sites, jusqu'à 3 membres d'équipe"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 19, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 19,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Up to 10k pageviews (expandable), up to 10 sites, up to 10 team members, 5 years retention, Stats API 600 req/hour" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Up to 10k pageviews (expandable), up to 10 sites, up to 10 team members, 5 years retention, Stats API 600 req/hour",
+            "fr": "Jusqu'à 10 000 pages vues (extensible), jusqu'à 10 sites, jusqu'à 10 membres d'équipe, 5 ans de conservation, Stats API à 600 requêtes/heure"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "10+ sites/team members, SSO, managed proxy, raw data exports" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "10+ sites/team members, SSO, managed proxy, raw data exports",
+            "fr": "10+ sites ou membres d'équipe, SSO, proxy managé, exports de données brutes"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Pricing scales with monthly pageviews within each tier; higher pageview volumes cost more even on the same plan name.", "sourceIds": ["s1"] }
+      {
+        "en": "Pricing scales with monthly pageviews within each tier; higher pageview volumes cost more even on the same plan name.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le tarif évolue avec le nombre de pages vues mensuelles au sein de chaque forfait ; un volume de trafic plus élevé coûte plus cher même sous le même nom de forfait."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Privacy-focused, cookieless web analytics presented as a GDPR-friendly alternative to Google Analytics", "sourceIds": ["s1"] },
-      { "en": "Google Analytics data import and Google Tag Manager template for setup", "sourceIds": ["s1"] },
-      { "en": "Stats API and Data Studio connector on Business plan for custom reporting", "sourceIds": ["s1"] }
+      {
+        "en": "Privacy-focused, cookieless web analytics presented as a GDPR-friendly alternative to Google Analytics",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Analytics web sans cookies et axé sur la vie privée, présenté comme une alternative conforme RGPD à Google Analytics"
+      },
+      {
+        "en": "Google Analytics data import and Google Tag Manager template for setup",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Import des données Google Analytics et modèle Google Tag Manager pour la mise en place"
+      },
+      {
+        "en": "Stats API and Data Studio connector on Business plan for custom reporting",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Stats API et connecteur Data Studio sur le forfait Business pour du reporting personnalisé"
+      }
     ],
     "limitations": [
-      { "en": "No permanent free plan, only a 30-day trial", "sourceIds": ["s1"] },
-      { "en": "Advanced features (custom properties, funnels, revenue attribution) reserved for the Business tier", "sourceIds": ["s1"] }
+      {
+        "en": "No permanent free plan, only a 30-day trial",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Pas de forfait gratuit permanent, seulement un essai de 30 jours"
+      },
+      {
+        "en": "Advanced features (custom properties, funnels, revenue attribution) reserved for the Business tier",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les fonctions avancées (propriétés personnalisées, tunnels de conversion, attribution de revenus) sont réservées au forfait Business"
+      }
     ],
     "integrations": [
-      { "name": "Google Analytics", "slug": null, "sourceIds": ["s1"] },
-      { "name": "Google Tag Manager", "slug": "google-tag-manager", "sourceIds": ["s1"] },
-      { "name": "Looker Studio", "slug": "looker-studio", "sourceIds": ["s1"] },
-      { "name": "Slack", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Google Analytics",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Google Tag Manager",
+        "slug": "google-tag-manager",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Looker Studio",
+        "slug": "looker-studio",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Slack",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers and site owners who want privacy-friendly analytics without a cookie consent banner.",
+      "fr": "Développeurs et éditeurs de sites qui veulent des analytics respectueux de la vie privée, sans bannière de consentement."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Privacy-first analytics: a developer replaces Google Analytics on their site with cookieless, GDPR-friendly tracking that needs no consent banner.",
+      "fr": "Analytics respectueux de la vie privée : un développeur remplace Google Analytics par un suivi sans cookies et conforme RGPD, sans bannière de consentement."
+    },
+    {
+      "en": "Custom reporting: a small team on the Business plan pulls traffic data into Looker Studio through the Stats API.",
+      "fr": "Reporting personnalisé : une petite équipe sur le forfait Business récupère ses données de trafic dans Looker Studio via la Stats API."
+    }
+  ],
   "alternatives": [
-    { "slug": "fathom-analytics", "reason": { "en": "Direct privacy-first analytics competitor with a similar pricing model" } },
-    { "slug": "simple-analytics", "reason": { "en": "Another lightweight, cookieless GA alternative" } },
-    { "slug": "posthog", "reason": { "en": "Broader product analytics suite that also covers web analytics" } },
-    { "slug": "mixpanel", "reason": { "en": "Event-based analytics alternative for product teams" } }
+    {
+      "slug": "fathom-analytics",
+      "reason": {
+        "en": "Direct privacy-first analytics competitor with a similar pricing model",
+        "fr": "Concurrent direct axé sur la vie privée, avec un modèle tarifaire similaire"
+      }
+    },
+    {
+      "slug": "simple-analytics",
+      "reason": {
+        "en": "Another lightweight, cookieless GA alternative",
+        "fr": "Une autre alternative légère à Google Analytics, sans cookies"
+      }
+    },
+    {
+      "slug": "posthog",
+      "reason": {
+        "en": "Broader product analytics suite that also covers web analytics",
+        "fr": "Suite d'analytics produit plus large qui couvre aussi les analytics web"
+      }
+    },
+    {
+      "slug": "mixpanel",
+      "reason": {
+        "en": "Event-based analytics alternative for product teams",
+        "fr": "Alternative d'analytics par événements pour les équipes produit"
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A 9 USD entry plan removes the need for a cookie consent banner, a real compliance gain for the price.",
+        "fr": "Un forfait d'entrée à 9 $ évite d'avoir besoin d'une bannière de consentement aux cookies, un vrai gain de conformité pour ce prix.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A Google Analytics import tool and GTM template ease the switch, but no stated time-to-setup is given.",
+        "fr": "Un outil d'import depuis Google Analytics et un modèle GTM facilitent la migration, mais aucun délai de mise en place n'est précisé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Cookieless, GDPR-friendly tracking works as described, with no workaround mentioned.",
+        "fr": "Le suivi sans cookies et conforme RGPD fonctionne comme décrit, sans contournement mentionné.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Deliberately lightweight compared to full product-analytics suites; custom properties, funnels and revenue attribution are reserved for the top tier.",
+        "fr": "Volontairement léger comparé aux suites complètes d'analytics produit ; propriétés personnalisées, tunnels et attribution de revenus sont réservés au forfait le plus haut.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "The Stats API only exists on the Business plan, so raw data export is not available by default.",
+        "fr": "La Stats API n'existe que sur le forfait Business, l'export des données brutes n'est donc pas disponible par défaut.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Privacy-first web analytics",
+      "fr": "Analytics sans cookies"
+    },
+    "shortDescription": {
+      "en": "Plausible is cookieless, GDPR-friendly web analytics billed by monthly pageviews, with no permanent free plan beyond a 30-day trial.",
+      "fr": "Plausible est un outil d'analytics sans cookies et conforme RGPD, facturé selon le trafic mensuel, sans forfait gratuit permanent au-delà d'un essai de 30 jours."
+    },
+    "longDescription": {
+      "en": "Plausible positions itself as a lightweight, privacy-focused alternative to Google Analytics: no cookies, a GDPR-friendly setup, and a Google Analytics import tool plus a Google Tag Manager template to switch over. Pricing scales with monthly pageviews rather than features alone, so the same plan name can cost more once traffic grows.\n\nThe Starter plan starts at 9 USD a month for up to 10k pageviews and one site; Growth and Business add more sites, team members and, on Business, a Stats API and Looker Studio connector for custom reporting. There is no permanent free plan, only a 30-day trial.",
+      "fr": "Plausible se présente comme une alternative légère et respectueuse de la vie privée à Google Analytics : pas de cookies, une configuration conforme RGPD, et un outil d'import depuis Google Analytics ainsi qu'un modèle Google Tag Manager pour basculer facilement. Le tarif évolue avec le trafic mensuel plutôt qu'avec les fonctionnalités seules, donc un même forfait peut coûter plus cher si le trafic augmente.\n\nLe forfait Starter démarre à 9 $ par mois pour 10 000 pages vues et un site ; Growth et Business ajoutent sites, membres d'équipe et, sur Business, une Stats API et un connecteur Looker Studio. Il n'existe pas de forfait gratuit permanent, seulement un essai de 30 jours."
+    },
+    "pros": [
+      {
+        "en": "Cookieless, GDPR-friendly tracking avoids the need for a cookie consent banner.",
+        "fr": "Le suivi sans cookies et conforme RGPD évite d'avoir besoin d'une bannière de consentement."
+      },
+      {
+        "en": "Google Analytics import and a GTM template make switching from GA straightforward.",
+        "fr": "L'import depuis Google Analytics et un modèle GTM simplifient la migration depuis GA."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No permanent free plan: only a 30-day trial before billing starts.",
+        "fr": "Pas de forfait gratuit permanent : seulement un essai de 30 jours avant la facturation."
+      },
+      {
+        "en": "Advanced features like the Stats API and custom reporting are reserved for the Business tier.",
+        "fr": "Des fonctions avancées comme la Stats API et le reporting personnalisé sont réservées au forfait Business."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you want privacy-friendly analytics without a cookie banner and your traffic stays within the plan's pageview tier.",
+        "fr": "Garde Plausible si tu veux des analytics respectueux de la vie privée sans bannière de cookies et que ton trafic reste dans le palier de pages vues du forfait."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you want a permanent free tier or need the Stats API without upgrading to Business.",
+        "fr": "Évite Plausible si tu cherches un forfait gratuit permanent ou si tu as besoin de la Stats API sans passer au forfait Business."
+      },
+      "threshold": {
+        "en": "Entry cost is 9 USD a month (108 USD a year) for the Starter plan, covering up to 10k pageviews on one site.",
+        "fr": "Le tarif d'entrée est de 9 $ par mois (108 $ par an) pour le forfait Starter, jusqu'à 10 000 pages vues sur un site."
+      },
+      "billingTraps": {
+        "en": "Pricing scales with pageviews within a plan, so traffic growth can raise the bill even without changing plan name.",
+        "fr": "Le tarif évolue avec le nombre de pages vues au sein d'un même forfait, donc une hausse de trafic peut augmenter la facture sans changer de forfait."
+      }
+    }
+  },
   "unknowns": [
     "Exact annual discount percentage not stated on the fetched page",
     "Pageview overage pricing beyond the base 10k tier not detailed"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

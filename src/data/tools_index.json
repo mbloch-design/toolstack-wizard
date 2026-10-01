@@ -1616,14 +1616,14 @@
     "slug": "airtable",
     "name": "Airtable",
     "categoryId": "project-management",
-    "shortDescription": "La base de données flexible qui remplace 5 outils (CRM, projets, contenus).",
-    "shortDescriptionEn": "The flexible database that replaces 5 tools (CRM, projects, content).",
+    "shortDescription": "Airtable est une base de données relationnelle façon tableur avec vues et automatisations, gratuite pour les petites équipes et facturée par siège d'édition au-delà.",
+    "shortDescriptionEn": "Airtable is a spreadsheet-style relational database with views and automations, free for small teams and billed per edit seat beyond that.",
     "pricing": {
-      "free": "Plan gratuit disponible",
-      "paid": "24$/mois (Team)"
+      "free": "Plan gratuit : Gratuit pour les équipes ; les collaborateurs en lecture seule, les soumissions de formulaire et les liens de partage ne comptent pas dans les sièges.",
+      "paid": "Dès 20 $/mois, plan Team."
     },
-    "defaultMonthlyPrice": 20.78,
-    "compareMonthlyPrice": 17.32,
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
     "affiliateLink": "https://airtable.com",
     "ogImageUrl": "https://cdn.sanity.io/images/hlcyrtq5/production/00c20d5108d1335f5a243ddcd70ea4a2d6d9a844-1200x630.webp",
     "substitution_cluster_v2": "project-management-general",
@@ -1646,6 +1646,9 @@
       "Consultants"
     ],
     "prescription_quality": "silence",
+    "personas": [
+      "CLAIRE"
+    ],
     "freeAlternative": "notion"
   },
   {
@@ -3970,10 +3973,11 @@
     "slug": "blender",
     "name": "Blender",
     "categoryId": "design-tools",
-    "shortDescription": "Suite 3D complète open source : modélisation, animation, rendu, compositing.",
-    "shortDescriptionEn": "Complete open-source 3D suite: modeling, animation, rendering, and compositing.",
+    "shortDescription": "Une suite 3D gratuite et open source qui couvre modélisation, animation, rendu et compositing, utilisable commercialement sans inscription.",
+    "shortDescriptionEn": "A free, open-source 3D suite covering modeling, animation, rendering and compositing, usable commercially without registration.",
     "pricing": {
-      "free": "Entièrement gratuit et open source"
+      "free": "Plan gratuit : Entièrement gratuit, aucune offre payante pour les fonctionnalités de base.",
+      "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://blender.org",
@@ -3999,8 +4003,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "sofia",
-      "alix"
+      "SOFIA"
     ],
     "substitutable": false
   },
@@ -6307,10 +6310,11 @@
     "slug": "cleanup3",
     "name": "CleanUp³",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin SketchUp gratuit pour nettoyer un modèle 3D et alléger les fichiers.",
-    "shortDescriptionEn": "Free SketchUp plugin to clean a 3D model and keep files light.",
+    "shortDescription": "CleanUp³ est une extension SketchUp gratuite qui retire géométrie, matériaux et faces dupliquées inutiles pour alléger et ranger les gros modèles.",
+    "shortDescriptionEn": "CleanUp³ is a free SketchUp extension that strips unused geometry, materials and duplicate faces to shrink and tidy large model files.",
     "pricing": {
-      "free": "Gratuit (don possible à l'auteur)"
+      "free": "Plan gratuit : Extension entièrement gratuite, sans palier payant",
+      "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://extensions.sketchup.com/extension/046175e5-a87d-4f49-89c9-4f146ccf6c8c/cleanup%C2%B3",
@@ -6328,7 +6332,10 @@
       "Architectes",
       "Designers 3D"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "SOFIA"
+    ]
   },
   {
     "id": "cleanvoice",
@@ -8341,12 +8348,14 @@
     "slug": "deel",
     "name": "Deel",
     "categoryId": "hris-payroll",
-    "shortDescription": "Contrats et paiements internationaux, gestion des prestataires et emploi via EOR.",
-    "shortDescriptionEn": "International contracts and payments, contractor management and EOR employment.",
+    "shortDescription": "Deel gère les paiements de prestataires, le PEO américain et l'embauche en portage salarial mondial, facturé par travailleur de 49 à 599 dollars par mois.",
+    "shortDescriptionEn": "Deel handles contractor payments, US PEO and global Employer-of-Record hiring, priced per worker from 49 to 599 dollars a month.",
     "pricing": {
-      "free": "Démo gratuite sur demande, pas un essai gratuit des services payants.",
-      "paid": "Contractor Management : 49 $US/prestataire/mois. Contractor of Record : 325 $US/prestataire/mois. EOR : 599 $US/salarié/mois. PEO États-Unis : 125 $US/salarié/mois. Coût complet et conditions par pays à confirmer."
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 49 $/mois, plan Contractor Management."
     },
+    "defaultMonthlyPrice": 42.08,
+    "compareMonthlyPrice": 42.08,
     "affiliateLink": "https://get.deel.com/hftlk37l5raa",
     "websiteUrl": "https://www.deel.com/",
     "ogImageUrl": "/og-images/deel.jpg",
@@ -9983,14 +9992,14 @@
     "slug": "envato-elements",
     "name": "Envato Elements",
     "categoryId": "design-tools",
-    "shortDescription": "Abonnement aux assets créatifs illimités incluant photos, vidéos, musique, sons, graphiques, fonts, templates 3D et outils IA (génération vidéo, image, audio).",
-    "shortDescriptionEn": "Subscription to unlimited creative assets including photos, videos, music, sound effects, graphics, fonts, 3D templates, and AI tools (video, image, audio generation).",
+    "shortDescription": "Envato Elements donne un accès illimité à une bibliothèque de plus de 29 millions d'éléments de stock (vidéo, audio, graphisme) et à des outils IA.",
+    "shortDescriptionEn": "Envato Elements is a subscription giving unlimited access to a 29M+ library of stock video, audio, graphics and templates, plus AI generation tools.",
     "pricing": {
-      "free": "Aucun tier gratuit ; abonnement payant uniquement. Montants sur la page officielle pour plans spécifiques.",
-      "paid": "Envato Elements (monthly): À partir de 14,50 €/mois ; Envato Elements (annual): Réduction à l'année (montants sur site officiel) ; Envato Elements Teams: Plans d'équipe disponibles (montants sur site officiel)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 16,50 $/mois, plan Core."
     },
-    "defaultMonthlyPrice": 15.18,
-    "compareMonthlyPrice": 15.18,
+    "defaultMonthlyPrice": 14.17,
+    "compareMonthlyPrice": 14.17,
     "affiliateLink": "https://elements.envato.com",
     "ogImageUrl": "https://assets.elements.envato.com/apps/storefront/audio.compressed-11d9cee9c59e9605c2cf.avif",
     "logo": "https://logo.clearbit.com/elements.envato.com",
@@ -10015,7 +10024,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "lina"
+      "ALIX"
     ]
   },
   {
@@ -11956,13 +11965,12 @@
     "slug": "fredo6-bundle",
     "name": "Fredo6 Bundle",
     "categoryId": "design-tools",
-    "shortDescription": "Suite de plugins SketchUp spécialisés dans la modélisation avancée. Le bundle Fredo6 regroupe des outils comme FredoCorner (coins arrondis), FredoScale (transformations), FredoBend (déformation de géométrie), et autres extensions pour optimiser les workflows de conception architecturale et paramétrique.",
-    "shortDescriptionEn": "Suite of specialized SketchUp plugins for advanced modeling. The Fredo6 Bundle groups together tools like FredoCorner (rounded corners), FredoScale (geometric transformations), FredoBend (geometry deformation), and other extensions to optimize architectural and parametric design workflows.",
+    "shortDescription": "Fredo6 Bundle regroupe plus de 40 extensions de modélisation gratuites pour SketchUp (FredoScale, Curviloft, etc.), avec quelques-unes vendues séparément.",
+    "shortDescriptionEn": "Fredo6 Bundle is a collection of over 40 free SketchUp modeling plugins (FredoScale, Curviloft and others), with a couple sold separately.",
     "pricing": {
-      "free": "Certains plugins Fredo6 (comme LibFredo6, Joint Push Pull) restent gratuits ; le bundle payant comprend les extensions avancées.",
-      "paid": "Bundle Fredo6: Montants sur la page officielle SketchUcation ; Plugin individual: Montants sur la page officielle SketchUcation"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 0 $ (licence à vie), plan Free plugins."
     },
-    "defaultMonthlyPrice": 4,
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://sketchucation.com/pluginstore?pauthor=fredo6",
     "ogImageUrl": "/og-screenshots/fredo6-bundle.jpg",
@@ -11979,7 +11987,10 @@
       "Modélisateurs 3D",
       "Designers produit"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "SOFIA"
+    ]
   },
   {
     "id": "fredocorner",
@@ -13240,12 +13251,13 @@
     "slug": "google-earth-studio",
     "name": "Google Earth Studio",
     "categoryId": "creation",
-    "shortDescription": "Animation de cartes et vues satellite pour vidéos et cartographie narrative.",
-    "shortDescriptionEn": "Map and satellite view animation for videos and narrative cartography.",
+    "shortDescription": "Un outil gratuit dans le navigateur qui transforme l'imagerie satellite et 3D de Google Earth en animations de caméra par images clés pour la vidéo.",
+    "shortDescriptionEn": "A free browser-based tool that turns Google Earth's satellite and 3D imagery into keyframed camera animations for video production.",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Plan gratuit : Outil entièrement gratuit ; nécessite Chrome sur ordinateur et un compte Google, accès accordé après une demande d'inscription.",
+      "paid": "Pas d'offre payante obligatoire."
     },
+    "compareMonthlyPrice": 0,
     "websiteUrl": "https://www.google.com/earth/studio/",
     "ogImageUrl": "https://www.google.com/earth/studio/assets/static/images/social.jpg",
     "substitution_cluster_v2": "motion-compositing",
@@ -13264,7 +13276,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "designer"
+      "SOFIA"
     ]
   },
   {
@@ -13338,12 +13350,14 @@
     "slug": "google-play-console",
     "name": "Google Play Console",
     "categoryId": "nocode-web",
-    "shortDescription": "Portail Google pour publier, tester et suivre les apps Android.",
-    "shortDescriptionEn": "Google portal for publishing, testing, and monitoring Android apps.",
+    "shortDescription": "La console pour publier, tester, monétiser et suivre des applications Android sur le Google Play Store, avec des frais d'inscription développeur uniques.",
+    "shortDescriptionEn": "The console for publishing, testing, monetizing and monitoring Android apps on the Google Play Store, with a one-time developer registration fee.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "websiteUrl": "https://play.google.com/console",
     "ogImageUrl": "https://www.gstatic.com/marketing-cms/assets/images/15/b9/77649f194169be94fc4631a785bc/play-symbol.webp=n-w1440-h811-fcrop64=1,000011c0ffffeeca-rw",
     "tool_type": "metier",
@@ -14362,14 +14376,14 @@
     "slug": "heptabase",
     "name": "Heptabase",
     "categoryId": "organization",
-    "shortDescription": "Tableau blanc visuel pour la gestion des connaissances.",
-    "shortDescriptionEn": "Visual whiteboard for knowledge management.",
+    "shortDescription": "Heptabase est un outil de prise de notes visuelles à canevas infini avec IA intégrée, vendu en abonnement après un essai de 7 jours.",
+    "shortDescriptionEn": "Heptabase is visual note-taking software with infinite-canvas whiteboards and a built-in AI agent, sold only as a paid subscription after a 7-day trial.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 7 jours sans carte bancaire.",
-      "paid": "13,99$/mois en mensuel, 8,99$/mois en annuel (107,88$/an). Lifetime à 659$ (≈6 ans d'annuel)."
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 8,99 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 8.99,
-    "compareMonthlyPrice": 8,
+    "defaultMonthlyPrice": 7.72,
+    "compareMonthlyPrice": 7.72,
     "websiteUrl": "https://heptabase.com",
     "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
@@ -14387,21 +14401,21 @@
       "Chercheurs",
       "Écrivains"
     ],
-    "prescription_quality": "silence",
-    "personas": [
-      "MARC",
-      "SOFIA"
-    ]
+    "prescription_quality": "silence"
   },
   {
     "id": "heroku",
     "slug": "heroku",
     "name": "Heroku",
     "categoryId": "nocode-web",
-    "shortDescription": "Plateforme de déploiement (PaaS) qui met une app en ligne en quelques commandes, sans gérer de serveur.",
-    "shortDescriptionEn": "Deployment platform (PaaS) that gets an app online in a few commands, no server management needed.",
-    "pricing": "À partir de 5$/mois (dynos Eco/Basic), facturation à l'usage au-delà.",
-    "defaultMonthlyPrice": 5,
+    "shortDescription": "Une plateforme qui déploie des applications backend via git push, avec bases de données gérées et mise à l'échelle automatique, sans gérer de serveurs.",
+    "shortDescriptionEn": "A platform-as-a-service that deploys and runs backend applications via git push, with managed databases and automatic scaling, without managing servers.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 7 $/mois, plan Basic Dyno."
+    },
+    "defaultMonthlyPrice": 6.01,
+    "compareMonthlyPrice": 6.01,
     "websiteUrl": "https://heroku.com",
     "ogImageUrl": "https://www.heroku.com/wp-content/uploads/2025/08/heroku-card-dark.png",
     "substitution_cluster_v2": "cloud-hosting-paas",
@@ -14419,7 +14433,10 @@
       "Developers solos",
       "Teams sans ops dédiquée"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "THEO"
+    ]
   },
   {
     "id": "hex",
@@ -18551,14 +18568,14 @@
     "slug": "loopio",
     "name": "Loopio",
     "categoryId": "organization",
-    "shortDescription": "Automatisation des réponses RFP et appels d'offres.",
-    "shortDescriptionEn": "RFP and tender response automation.",
+    "shortDescription": "Loopio centralise les réponses aux appels d'offres, RFI et questionnaires de sécurité dans une bibliothèque avec rédaction assistée par IA, vendu uniquement sur devis.",
+    "shortDescriptionEn": "Loopio centralizes RFP, RFI and security-questionnaire answers in one library with AI-assisted drafting, sold only on quote.",
     "pricing": {
-      "free": "Pas de plan gratuit : pas d'essai en libre accès, démo sur demande.",
-      "paid": "Foundations à partir de 20 000$/an (10 sièges inclus) ; Enhanced et Enterprise sur devis selon taille d'équipe et durée de contrat. Engagement annuel minimum ≈15 000$."
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "defaultMonthlyPrice": 1667,
-    "compareMonthlyPrice": 1530,
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "websiteUrl": "https://loopio.com",
     "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
@@ -18576,7 +18593,7 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "MARC"
+      "CLAIRE"
     ]
   },
   {
@@ -20496,14 +20513,14 @@
     "slug": "microsoft-defender",
     "name": "Microsoft Defender",
     "categoryId": "security",
-    "shortDescription": "Sécurité endpoint (antivirus, EDR) pour PME, dès 3$/utilisateur/mois.",
-    "shortDescriptionEn": "Endpoint security (antivirus, EDR) for SMBs, from $3/user/month.",
+    "shortDescription": "Microsoft Defender for Business protège les postes contre malwares et ransomwares grâce à l'IA, pour des organisations jusqu'à 300 utilisateurs.",
+    "shortDescriptionEn": "Microsoft Defender for Business is AI-powered endpoint protection against malware and ransomware for organizations with up to 300 users.",
     "pricing": {
-      "free": "",
-      "paid": "À partir de 3$/utilisateur/mois en autonome, inclus dans Microsoft 365 Business Premium (22$/utilisateur/mois)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 3 $/mois, plan Defender for Business (standalone)."
     },
-    "defaultMonthlyPrice": 3,
-    "compareMonthlyPrice": 3,
+    "defaultMonthlyPrice": 2.58,
+    "compareMonthlyPrice": 2.58,
     "affiliateLink": "https://microsoft.com/security/business/microsoft-defender",
     "logo": "https://logo.clearbit.com/microsoft.com",
     "tool_type": "specialise",
@@ -20521,7 +20538,7 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "marc"
+      "CLAIRE"
     ]
   },
   {
@@ -22949,14 +22966,14 @@
     "slug": "opus-clip",
     "name": "Opus Clip",
     "categoryId": "creation",
-    "shortDescription": "Transforme tes longues vidéos en clips viraux courts avec l'IA.",
-    "shortDescriptionEn": "Turn your long videos into viral short clips with AI.",
+    "shortDescription": "Opus Clip utilise l'IA pour repérer et recadrer les moments forts d'une vidéo longue, puis exporte des clips courts avec un planificateur social intégré.",
+    "shortDescriptionEn": "Opus Clip uses AI to find and reframe clip-worthy moments in long videos, exporting short-form clips with a built-in social scheduler.",
     "pricing": {
-      "free": "Gratuit avec 60 crédits/mois",
-      "paid": "Starter 15$/mois · Pro ~14,50$/mois (annuel)"
+      "free": "Plan gratuit : Publication d'un clip par jour, stockage média de 3 jours, sous-titres animés avec filigrane, un seul format 9:16, aucune carte bancaire requise.",
+      "paid": "Dès 15 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 13.8,
-    "compareMonthlyPrice": 13.8,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
     "websiteUrl": "https://www.opus.pro",
     "ogImageUrl": "https://cdn.prod.website-files.com/6388604483b03a9ecb34d695/6893fad68d6058a917d7f3c6_mainpage_thumbnail.jpg",
     "tool_type": "ia",
@@ -22978,7 +22995,10 @@
       "Podcasteurs vidéo",
       "Community / social media managers"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "personas": [
+      "ALIX"
+    ]
   },
   {
     "id": "opusclip",
@@ -24016,11 +24036,11 @@
     "slug": "pennylane",
     "name": "Pennylane",
     "categoryId": "finance",
-    "shortDescription": "Comptabilité collaborative en temps réel",
-    "shortDescriptionEn": "Real-time collaborative accounting.",
+    "shortDescription": "Pennylane est un logiciel de facturation et comptabilité pour un seul utilisateur, pensé pour les indépendants français, avec facturation électronique incluse partout.",
+    "shortDescriptionEn": "Pennylane is single-user accounting and invoicing software for French independents, with electronic invoicing compliance included on every plan.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Basique dès 14€/mois (indépendant) ; Essentiel dès 24€/mois ; Premium dès 79€/mois (selon nombre d'utilisateurs et de factures)"
+      "free": "Pas de plan gratuit permanent, essai de 15 jours.",
+      "paid": "Dès 7 €/mois, plan Starter."
     },
     "defaultMonthlyPrice": 7,
     "compareMonthlyPrice": 7,
@@ -24042,7 +24062,10 @@
       "TPE/PME en France",
       "Cabinets comptables"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "MARC"
+    ]
   },
   {
     "id": "pennylane-ai-selon-dispo",
@@ -24523,14 +24546,14 @@
     "slug": "pika-labs",
     "name": "Pika Labs",
     "categoryId": "ai-general",
-    "shortDescription": "Plateforme créative IA permettant de générer des vidéos, d'automatiser des workflows avec des agents IA, et d'appliquer des effets d'édition vidéo powered par IA.",
-    "shortDescriptionEn": "Creative AI platform enabling video generation, workflow automation with AI agents, and AI-powered video editing effects.",
+    "shortDescription": "Une plateforme IA à crédits pour générer et éditer vidéo, images, musique et voix à partir de texte, en agrégeant plusieurs modèles tiers.",
+    "shortDescriptionEn": "A credit-based AI platform for generating and editing video, images, music and voice from text prompts, aggregating several third-party models.",
     "pricing": {
-      "free": "Accès gratuit disponible sans carte bancaire",
-      "paid": "Pika Free: Gratuit (accès de base) ; Pika Premium: Montants sur la page officielle"
+      "free": "Plan gratuit : 0 crédit par mois (achat de packs uniquement), 2 générations vidéo en parallèle et 2 générations image+audio en parallèle, tous les modèles, sans filigrane.",
+      "paid": "Dès 8 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 8,
-    "compareMonthlyPrice": 8,
+    "defaultMonthlyPrice": 6.87,
+    "compareMonthlyPrice": 6.87,
     "affiliateLink": "https://pika.art",
     "ogImageUrl": "https://pika.art/_next/image?url=%2Fimages%2Flanding%2Fapi-club-banner-bg.webp&w=3840&q=75",
     "tool_type": "ia",
@@ -24551,9 +24574,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "alix",
-      "theo"
+      "ALIX"
     ],
     "betterAlternative": {
       "tool": "runway",
@@ -25004,14 +25025,14 @@
     "slug": "plausible",
     "name": "Plausible Analytics",
     "categoryId": "analytics",
-    "shortDescription": "L'alternative RGPD-friendly à Google Analytics, simple et respectueuse.",
-    "shortDescriptionEn": "The GDPR-friendly alternative to Google Analytics, simple and privacy-focused.",
+    "shortDescription": "Plausible est un outil d'analytics sans cookies et conforme RGPD, facturé selon le trafic mensuel, sans forfait gratuit permanent au-delà d'un essai de 30 jours.",
+    "shortDescriptionEn": "Plausible is cookieless, GDPR-friendly web analytics billed by monthly pageviews, with no permanent free plan beyond a 30-day trial.",
     "pricing": {
-      "free": "Essai 30 jours (pas de version gratuite)",
-      "paid": "9$/mois (10k pages vues) à 69$/mois (1M pages vues)"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 9 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 7.79,
-    "compareMonthlyPrice": 7.79,
+    "defaultMonthlyPrice": 7.73,
+    "compareMonthlyPrice": 7.73,
     "affiliateLink": "https://plausible.io",
     "ogImageUrl": "https://plausible.io/assets/images/plausible_promo.jpg",
     "substitution_cluster_v2": "analytics",
@@ -25031,6 +25052,9 @@
       "Sites EU"
     ],
     "prescription_quality": "ferme",
+    "personas": [
+      "THEO"
+    ],
     "freeAlternative": "google-analytics"
   },
   {
@@ -25902,9 +25926,12 @@
     "slug": "product-hunt",
     "name": "Product Hunt",
     "categoryId": "communication",
-    "shortDescription": "Plateforme communautaire de découverte de nouveaux produits tech, lancée chaque jour.",
-    "shortDescriptionEn": "Community platform for discovering new tech products, launched daily.",
-    "pricing": "Gratuit pour lancer un produit ; options de promotion payante disponibles.",
+    "shortDescription": "Une plateforme communautaire où de nouveaux produits tech sont lancés, votés et commentés chaque jour par les utilisateurs et les créateurs.",
+    "shortDescriptionEn": "A community-driven platform where new tech products are launched, voted on and discussed by users and makers every day.",
+    "pricing": {
+      "free": "Plan gratuit : Gratuit pour parcourir, voter, commenter et lancer un produit sur le classement du jour.",
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
+    },
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://producthunt.com",
@@ -25925,7 +25952,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "lina"
+      "MARC"
     ]
   },
   {
@@ -28331,14 +28358,14 @@
     "slug": "restream",
     "name": "Restream",
     "categoryId": "creation",
-    "shortDescription": "Service de diffusion en direct multi-plateformes.",
-    "shortDescriptionEn": "Multi-platform live streaming service.",
+    "shortDescription": "Restream diffuse en direct vers plusieurs plateformes à la fois, gratuit pour 2 chaînes avec la marque Restream visible.",
+    "shortDescriptionEn": "Restream is live multistreaming software that broadcasts to several platforms at once, free for 2 channels with Restream branding.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 19 $/mois, plan Standard."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "defaultMonthlyPrice": 16.32,
+    "compareMonthlyPrice": 16.32,
     "affiliateLink": "https://restream.io",
     "ogImageUrl": "https://restream.io/images/home-page-open-graph-image.png",
     "substitution_cluster_v2": "content-creation",
@@ -28354,7 +28381,10 @@
       "Créateurs de contenu live",
       "Équipes marketing / webinaires"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "ALIX"
+    ]
   },
   {
     "id": "retool",
@@ -29067,13 +29097,14 @@
     "slug": "rydoo",
     "name": "Rydoo",
     "categoryId": "finance",
-    "shortDescription": "Notes de frais automatisées avec OCR.",
-    "shortDescriptionEn": "Automated expense reports with OCR.",
+    "shortDescription": "Rydoo numérise les reçus et automatise l'approbation des notes de frais pour des équipes dans plusieurs pays, vendu par blocs de 5 postes minimum.",
+    "shortDescriptionEn": "Rydoo scans receipts and automates expense approval for teams across multiple countries, with plans sold in blocks of at least 5 seats.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "À partir de 8€/mois par utilisateur"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 8 €/mois, plan Essentials."
     },
     "defaultMonthlyPrice": 8,
+    "compareMonthlyPrice": 8,
     "websiteUrl": "https://www.rydoo.com",
     "tool_type": "gestion",
     "substitution_cluster_v2": "expense-management",
@@ -29958,14 +29989,14 @@
     "slug": "sellfy",
     "name": "Sellfy",
     "categoryId": "nocode-web",
-    "shortDescription": "Plateforme e-commerce pour créer des boutiques en ligne.",
-    "shortDescriptionEn": "E-commerce platform for creating online stores.",
+    "shortDescription": "Sellfy est une boutique en ligne pour produits numériques, biens physiques et impression à la demande, avec un plafond de ventes annuel sur chaque forfait.",
+    "shortDescriptionEn": "Sellfy is an online storefront for digital products, physical goods and print-on-demand, with an annual sales cap on every plan.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 22 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "defaultMonthlyPrice": 18.89,
+    "compareMonthlyPrice": 18.89,
     "affiliateLink": "https://sellfy.com",
     "ogImageUrl": "https://wf-assets.sellfy.com/6849a70cf522bf852d943fa2_sellfy-og-min.png",
     "substitution_cluster_v2": "website-app-builder",
@@ -29982,7 +30013,10 @@
       "Entrepreneurs sans codage",
       "Vendeurs de produits numériques"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "ALIX"
+    ]
   },
   {
     "id": "sellsy",
@@ -30712,13 +30746,13 @@
     "slug": "signrequest",
     "name": "SignRequest",
     "categoryId": "legal-contracts",
-    "shortDescription": "Signature électronique simple et rapide.",
-    "shortDescriptionEn": "Simple and fast electronic signature.",
+    "shortDescription": "SignRequest est un outil de signature électronique, gratuit jusqu'à 10 documents par mois, avec des forfaits payants pour les équipes, la marque et les intégrations.",
+    "shortDescriptionEn": "SignRequest is e-signature software with a free 10-documents-a-month plan and paid tiers that add teams, branding and integrations.",
     "pricing": {
-      "free": "Plan gratuit : 10 documents signés par mois.",
-      "paid": "Professional 9€/utilisateur/mois (jusqu'à 5 utilisateurs) ; Business 15€/utilisateur/mois (utilisateurs illimités)."
+      "free": "Plan gratuit : [object Object]",
+      "paid": "Dès 9 €/mois, plan Professional."
     },
-    "defaultMonthlyPrice": 7,
+    "defaultMonthlyPrice": 9,
     "compareMonthlyPrice": 9,
     "websiteUrl": "https://signrequest.com",
     "substitution_cluster_v2": "esignature",
@@ -30736,8 +30770,7 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "CLAIRE",
-      "MARC"
+      "CLAIRE"
     ]
   },
   {
@@ -31453,13 +31486,14 @@
     "slug": "soldo",
     "name": "Soldo",
     "categoryId": "finance",
-    "shortDescription": "Cartes prépayées et gestion des frais professionnels.",
-    "shortDescriptionEn": "Prepaid cards and professional expense management.",
+    "shortDescription": "Soldo distribue des cartes prépayées pro avec plafonds par carte, budgets multi-portefeuilles et capture de justificatifs pour gérer les dépenses d'une petite équipe.",
+    "shortDescriptionEn": "Soldo issues prepaid company cards with per-card spending limits, multi-wallet budgets, and receipt capture for small business expense management.",
     "pricing": {
-      "free": "Essai gratuit 30 jours",
-      "paid": "À partir de 6€/mois par utilisateur"
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 27 £/mois, plan Standard."
     },
-    "defaultMonthlyPrice": 6,
+    "defaultMonthlyPrice": 31.49,
+    "compareMonthlyPrice": 31.49,
     "websiteUrl": "https://www.soldo.com",
     "tool_type": "gestion",
     "substitution_cluster_v2": "expense-management",
@@ -31486,11 +31520,11 @@
     "slug": "solid-inspector2",
     "name": "Solid Inspector²",
     "categoryId": "design-tools",
-    "shortDescription": "Extension SketchUp gratuite et open-source qui inspecte et répare les groupes/composants solides. Détecte les erreurs de géométrie courantes (trous, arêtes parasites, faces inversées) et offre des corrections automatiques.",
-    "shortDescriptionEn": "Free and open-source SketchUp extension that inspects and repairs solid groups and components. Detects common geometry errors (holes, stray edges, inverted faces) and offers automatic fixes.",
+    "shortDescription": "Solid Inspector2 est une extension SketchUp gratuite qui détecte et répare les erreurs de géométrie solide comme les groupes non solides ou les faces inversées.",
+    "shortDescriptionEn": "Solid Inspector2 is a free, open-source SketchUp extension that finds and repairs solid-geometry errors like non-solid groups and inverted faces.",
     "pricing": {
-      "free": "Extension complètement gratuite. Source code disponible sur GitHub.",
-      "paid": "Voir le tarif officiel."
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://extensions.sketchup.com/en/content/solid-inspector",
@@ -31508,7 +31542,10 @@
       "Ingénieurs produit",
       "Designers impression 3D"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "personas": [
+      "SOFIA"
+    ]
   },
   {
     "id": "solid-js",
@@ -36015,14 +36052,14 @@
     "slug": "vercel",
     "name": "Vercel",
     "categoryId": "nocode-web",
-    "shortDescription": "La plateforme de déploiement frontend la plus rapide.",
-    "shortDescriptionEn": "The fastest frontend deployment platform.",
+    "shortDescription": "Une plateforme de déploiement basée sur git pour les apps frontend et serverless, avec environnements de prévisualisation, réseau en périphérie et une offre Hobby gratuite.",
+    "shortDescriptionEn": "A git-based deployment platform for frontend and serverless apps, with preview environments, an edge network and a free Hobby tier.",
     "pricing": {
-      "free": "Hobby plan complet",
-      "paid": "20$/mois (Pro)"
+      "free": "Plan gratuit : 1 M d'invocations de fonctions par mois, 1 M de requêtes edge par mois, 100 Go de transfert de données par mois.",
+      "paid": "Dès 20 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 17.32,
-    "compareMonthlyPrice": 17.32,
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
     "affiliateLink": "https://vercel.com",
     "ogImageUrl": "https://lishhsx6kmthaacj.public.blob.vercel-storage.com/og-home-not-x.png",
     "tool_type": "metier",
@@ -36043,8 +36080,7 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "theo",
-      "alix"
+      "THEO"
     ],
     "substitutable": false
   },

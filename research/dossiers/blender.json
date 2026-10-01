@@ -3,7 +3,7 @@
   "slug": "blender",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Blender",
     "vendor": "Blender Foundation",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.blender.org/about/license/", "tier": 1, "accessedOn": "2026-09-25", "title": "Blender License" }
+    {
+      "id": "s1",
+      "url": "https://www.blender.org/about/license/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Blender License"
+    }
   ],
   "pricing": {
     "model": "open_source",
@@ -24,7 +30,16 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Entirely free, no paid tier for core functionality.", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Entirely free, no paid tier for core functionality.",
+        "fr": "Entièrement gratuit, aucune offre payante pour les fonctionnalités de base."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [],
     "comparePlanKey": null,
@@ -33,22 +48,188 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Complete 3D suite covering modeling, animation, rendering and compositing.", "sourceIds": ["s1"] },
-      { "en": "Released under GPL (core, version 2 or later), with some components under Apache 2.0, MIT or BSD licenses (e.g. Cycles rendering engine).", "sourceIds": ["s1"] },
-      { "en": "Free to use, distribute, modify and sell work created with it, including commercial use, with no registration or mandatory internet connection.", "sourceIds": ["s1"] }
+      {
+        "en": "Complete 3D suite covering modeling, animation, rendering and compositing.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Suite 3D complète couvrant la modélisation, l'animation, le rendu et le compositing."
+      },
+      {
+        "en": "Released under GPL (core, version 2 or later), with some components under Apache 2.0, MIT or BSD licenses (e.g. Cycles rendering engine).",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Publié sous licence GPL (noyau, version 2 ou ultérieure), avec certains composants sous licence Apache 2.0, MIT ou BSD (par exemple le moteur de rendu Cycles)."
+      },
+      {
+        "en": "Free to use, distribute, modify and sell work created with it, including commercial use, with no registration or mandatory internet connection.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Libre d'utilisation, de distribution et de modification, et de vente du travail créé avec, y compris en usage commercial, sans inscription ni connexion internet obligatoire."
+      }
     ],
     "limitations": [
-      { "en": "No official paid support tier; the project relies on voluntary donations to the Blender Development Fund rather than a commercial support contract.", "sourceIds": ["s1"] },
-      { "en": "As free open-source software, there is no vendor SLA or guaranteed response time for issues.", "sourceIds": ["s1"] }
+      {
+        "en": "No official paid support tier; the project relies on voluntary donations to the Blender Development Fund rather than a commercial support contract.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Aucune offre de support payant officielle ; le projet s'appuie sur des dons volontaires au Blender Development Fund plutôt que sur un contrat de support commercial."
+      },
+      {
+        "en": "As free open-source software, there is no vendor SLA or guaranteed response time for issues.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "En tant que logiciel libre gratuit, il n'y a pas de garantie de service ni de délai de réponse garanti côté éditeur."
+      }
     ],
     "integrations": [],
-    "platforms": ["windows", "macos", "linux"]
+    "platforms": [
+      "windows",
+      "macos",
+      "linux"
+    ]
   },
   "alternatives": [
-    { "slug": "cinema-4d", "reason": { "en": "Commercial 3D suite aimed at motion graphics, with paid support and a more polished UI." } },
-    { "slug": "maya", "reason": { "en": "Industry-standard commercial 3D animation tool for studios, subscription-based." } }
+    {
+      "slug": "cinema-4d",
+      "reason": {
+        "en": "Commercial 3D suite aimed at motion graphics, with paid support and a more polished UI.",
+        "fr": "Suite 3D commerciale orientée motion design, avec support payant et une interface plus soignée."
+      }
+    },
+    {
+      "slug": "maya",
+      "reason": {
+        "en": "Industry-standard commercial 3D animation tool for studios, subscription-based.",
+        "fr": "Outil d'animation 3D commercial de référence pour les studios, par abonnement."
+      }
+    },
+    {
+      "slug": "houdini",
+      "reason": {
+        "en": "Procedural 3D and VFX suite used in studio pipelines, with paid support unlike Blender's community model.",
+        "fr": "Suite 3D procédurale et VFX utilisée dans les pipelines de studio, avec un support payant contrairement au modèle communautaire de Blender."
+      }
+    }
   ],
   "missingAlternatives": [],
   "unknowns": [],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 5,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The entire suite, including commercial use of anything made with it, is free, which is the strongest possible cost-to-value ratio.",
+        "fr": "L'ensemble de la suite, y compris l'usage commercial de ce qu'on crée avec, est gratuit, le meilleur rapport coût/valeur possible.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time for a first useful result is not detailed by the collected sources, and 3D software typically has a learning curve.",
+        "fr": "Note neutre : le temps de prise en main pour un premier résultat utile ne figure pas dans les sources relevées, et les logiciels 3D ont en général une courbe d'apprentissage.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The suite delivers its stated promise directly: a full pipeline from modeling to compositing in one tool.",
+        "fr": "La suite tient directement sa promesse : un pipeline complet, de la modélisation au compositing, dans un seul outil.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "A complete 3D pipeline (modeling, animation, rendering, compositing) with a dedicated render engine is broad for the category.",
+        "fr": "Un pipeline 3D complet (modélisation, animation, rendu, compositing) avec un moteur de rendu dédié, c'est large pour la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: the breadth of open export formats and data portability is not detailed by the collected sources.",
+        "fr": "Note neutre : l'étendue des formats d'export ouverts et la portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "3D artists and designers, solo or in small studios, who need a complete pipeline without licensing costs.",
+      "fr": "Artistes et designers 3D, seuls ou en petit studio, qui ont besoin d'un pipeline complet sans coût de licence."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "3D modeling and animation: build and animate a character or scene from scratch using Blender's full modeling and animation toolset.",
+      "fr": "Modélisation et animation 3D : construire et animer un personnage ou une scène de zéro avec les outils complets de modélisation et d'animation de Blender."
+    },
+    {
+      "en": "Commercial render output: render a scene with Cycles and sell the finished work, with no licensing fee owed to the Blender Foundation.",
+      "fr": "Rendu commercial : rendre une scène avec Cycles et vendre le résultat final, sans redevance de licence due à la Blender Foundation."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Free 3D suite",
+      "fr": "Suite 3D gratuite"
+    },
+    "shortDescription": {
+      "en": "A free, open-source 3D suite covering modeling, animation, rendering and compositing, usable commercially without registration.",
+      "fr": "Une suite 3D gratuite et open source qui couvre modélisation, animation, rendu et compositing, utilisable commercialement sans inscription."
+    },
+    "longDescription": {
+      "en": "Blender is a complete 3D suite for modeling, animation, rendering and compositing, released under the GPL with some components under Apache 2.0, MIT or BSD licenses, such as the Cycles render engine. There is no paid tier: the entire toolset, including commercial use of anything created with it, is free.\n\nThere is no official paid support plan or vendor SLA; the project runs on voluntary donations to the Blender Development Fund rather than a commercial contract. It fits anyone doing 3D work, solo or in a studio, who wants a full pipeline without licensing costs and can rely on community support instead of a guaranteed response time.",
+      "fr": "Blender est une suite 3D complète pour la modélisation, l'animation, le rendu et le compositing, publiée sous licence GPL avec certains composants sous Apache 2.0, MIT ou BSD, comme le moteur de rendu Cycles. Aucune offre payante : l'ensemble des outils, y compris l'usage commercial, est gratuit.\n\nIl n'existe pas de support payant officiel ni de garantie de service côté éditeur ; le projet vit des dons volontaires au Blender Development Fund plutôt que d'un contrat commercial. L'outil convient à qui fait de la 3D, seul ou en studio, et veut un pipeline complet sans coût de licence, en comptant sur la communauté plutôt que sur un délai de réponse garanti."
+    },
+    "pros": [
+      {
+        "en": "Entirely free for personal and commercial use, including selling work made with it.",
+        "fr": "Entièrement gratuit pour un usage personnel et commercial, y compris pour vendre le travail réalisé avec."
+      },
+      {
+        "en": "Covers the full 3D pipeline (modeling to compositing) in one suite.",
+        "fr": "Couvre tout le pipeline 3D (de la modélisation au compositing) dans une seule suite."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No official paid support tier or vendor SLA.",
+        "fr": "Aucune offre de support payant officielle ni de garantie de service côté éditeur."
+      },
+      {
+        "en": "Relies on community support rather than a guaranteed response time for issues.",
+        "fr": "S'appuie sur le soutien communautaire plutôt que sur un délai de réponse garanti pour les problèmes."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a complete 3D pipeline at no cost and are comfortable relying on community support.",
+        "fr": "Tu as besoin d'un pipeline 3D complet sans dépense et tu es à l'aise avec un support communautaire."
+      },
+      "avoidIf": {
+        "en": "You need a guaranteed SLA or a vendor support contract for mission-critical production work.",
+        "fr": "Tu as besoin d'une garantie de service ou d'un contrat de support éditeur pour une production critique."
+      },
+      "threshold": {
+        "en": "No cost threshold: the suite is entirely free, so the only ongoing cost is a voluntary donation if you want to support development.",
+        "fr": "Aucun seuil de coût : la suite est entièrement gratuite, le seul coût récurrent est un don volontaire si tu veux soutenir le développement."
+      }
+    }
+  }
 }

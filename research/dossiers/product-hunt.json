@@ -3,7 +3,7 @@
   "slug": "product-hunt",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Product Hunt",
     "vendor": "Product Hunt (AngelList/Neo backed)",
@@ -34,7 +34,7 @@
       "exists": true,
       "limits": {
         "en": "Free to browse, upvote, comment and launch a product on the daily leaderboard.",
-        "fr": null
+        "fr": "Gratuit pour parcourir, voter, commenter et lancer un produit sur le classement du jour."
       },
       "sourceIds": [
         "s1"
@@ -55,7 +55,7 @@
         "keyLimits": [
           {
             "en": "Paid promotion/sponsorship option for companies to promote products; no public price found.",
-            "fr": null
+            "fr": "Option payante de promotion/sponsoring pour que les entreprises mettent en avant leurs produits ; aucun prix public trouvé."
           }
         ],
         "sourceIds": [
@@ -69,7 +69,7 @@
     "cautions": [
       {
         "en": "The core product-discovery and launch experience is free; monetization (advertising/sponsorship, a subscription referenced as 'Subscribe' in navigation) has no public dollar pricing visible on the about page.",
-        "fr": null,
+        "fr": "La découverte et le lancement de produits sont gratuits ; la monétisation (publicité/sponsoring, un abonnement mentionné comme « Subscribe » dans la navigation) n'affiche aucun prix public sur la page à propos.",
         "sourceIds": [
           "s1"
         ]
@@ -80,21 +80,21 @@
     "capabilities": [
       {
         "en": "Community-driven daily leaderboard ranking new tech products by user votes and reviews.",
-        "fr": null,
+        "fr": "Un classement quotidien communautaire qui classe les nouveaux produits tech selon les votes et avis des utilisateurs.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Discovery across categories including AI, design and developer tools.",
-        "fr": null,
+        "fr": "Découverte de produits par catégories, dont l'IA, le design et les outils pour développeurs.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Paid advertising/sponsorship option for companies to promote products on the platform.",
-        "fr": null,
+        "fr": "Option publicitaire payante pour que les entreprises mettent en avant leurs produits sur la plateforme.",
         "sourceIds": [
           "s1"
         ]
@@ -103,14 +103,14 @@
     "limitations": [
       {
         "en": "No transparent public pricing for paid features (advertising, subscription); details require contacting the team.",
-        "fr": null,
+        "fr": "Aucun prix public transparent pour les fonctions payantes (publicité, abonnement) ; il faut contacter l'équipe pour le détail.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Ranking depends on community voting, which the about page did not detail in terms of moderation or anti-gaming mechanics.",
-        "fr": null,
+        "fr": "Le classement dépend du vote de la communauté, sans détail sur la modération ou les mécanismes anti-triche sur la page à propos.",
         "sourceIds": [
           "s1"
         ]
@@ -122,10 +122,134 @@
     ]
   },
   "alternatives": [],
-  "missingAlternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "BetaList",
+      "officialUrl": "https://betalist.com",
+      "reason": "Early-stage startup launch/discovery platform, direct competitor, not in the catalogue"
+    },
+    {
+      "name": "Hacker News (Show HN)",
+      "officialUrl": "https://news.ycombinator.com",
+      "reason": "Common alternative venue for launching and getting feedback on a new product, not in the catalogue"
+    }
+  ],
   "unknowns": [
     "No public pricing figures found for advertising/sponsorship or any subscription tier.",
-    "No catalogue alternativeCandidates fit Product Hunt's core discovery/launch use case in the seed list; none selected."
+    "No catalogue alternativeCandidates fit Product Hunt's core discovery/launch use case; none selected."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The core discovery and launch experience is free, but visibility gained from a single launch day varies widely and no evidence here measures real return.",
+        "fr": "La découverte et le lancement sont gratuits, mais la visibilité obtenue en une journée de lancement varie beaucoup et rien ici n'en mesure le retour réel.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Browsing, voting, commenting and launching a product are free and described as straightforward, with no setup barrier mentioned.",
+        "fr": "Parcourir, voter, commenter et lancer un produit sont gratuits et présentés comme simples, sans barrière de mise en place mentionnée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The ranking mechanism is not detailed in terms of moderation or anti-gaming safeguards, so whether it reliably surfaces quality products cannot be confirmed from this source alone.",
+        "fr": "Le mécanisme de classement n'est pas détaillé côté modération ou anti-triche, donc on ne peut pas confirmer qu'il fait remonter des produits de qualité de façon fiable à partir de cette seule source.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "The platform covers discovery, voting and launch only; it does not offer analytics, CRM or follow-up tools beyond that core loop.",
+        "fr": "La plateforme couvre uniquement la découverte, le vote et le lancement ; elle n'offre pas d'analytique, de CRM ou d'outils de suivi au-delà de cette boucle de base.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data portability and account export are not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des données et l'export du compte ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Independent consultants and founders launching their own product or service who want a free, one-day spike of visibility among early adopters.",
+      "fr": "Consultants indépendants et fondateurs qui lancent leur propre produit ou service et veulent un pic de visibilité gratuit, le temps d'une journée, auprès des early adopters."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Launch day: submit a new app to the daily leaderboard to get early visibility and direct user feedback.",
+      "fr": "Jour de lancement : soumettre une nouvelle app au classement du jour pour obtenir de la visibilité et des retours utilisateurs rapides."
+    },
+    {
+      "en": "Audience research: browse categories like AI or developer tools to see what competitors are shipping and how users react.",
+      "fr": "Veille concurrentielle : parcourir des catégories comme l'IA ou les outils pour développeurs pour voir ce que lancent les concurrents et comment les utilisateurs réagissent."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Product launch platform",
+      "fr": "Lancement de produits"
+    },
+    "shortDescription": {
+      "en": "A community-driven platform where new tech products are launched, voted on and discussed by users and makers every day.",
+      "fr": "Une plateforme communautaire où de nouveaux produits tech sont lancés, votés et commentés chaque jour par les utilisateurs et les créateurs."
+    },
+    "longDescription": {
+      "en": "Product Hunt is a free, community-driven platform where new tech products are submitted to a daily leaderboard and ranked by user votes, comments and reviews across categories like AI, design and developer tools. Companies can also pay for advertising or sponsorship to promote their product further, though no public dollar price is shown for that option.\n\nBrowsing, voting and launching a product cost nothing, which makes it accessible to any solo founder or small team. It fits anyone preparing a product launch who wants a concentrated day of visibility among early adopters, rather than a sustained acquisition channel on its own.",
+      "fr": "Product Hunt est une plateforme communautaire gratuite où de nouveaux produits tech sont soumis à un classement quotidien et classés selon les votes, commentaires et avis des utilisateurs, dans des catégories comme l'IA, le design ou les outils pour développeurs. Les entreprises peuvent aussi payer pour de la publicité ou du sponsoring afin de mettre davantage en avant leur produit, sans qu'aucun prix public ne soit affiché pour cette option.\n\nParcourir, voter et lancer un produit ne coûte rien, ce qui le rend accessible à tout fondateur solo ou petite équipe. L'outil convient à qui prépare un lancement et veut une journée de visibilité concentrée auprès des early adopters, plus qu'un canal d'acquisition durable à lui seul."
+    },
+    "pros": [
+      {
+        "en": "Free to use for browsing, voting and launching products.",
+        "fr": "Gratuit pour parcourir, voter et lancer des produits."
+      },
+      {
+        "en": "Wide reach among tech-curious early adopters and makers.",
+        "fr": "Large audience d'early adopters et de créateurs curieux de nouvelles technologies."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No transparent pricing for paid promotion or sponsorship; details require contacting the team.",
+        "fr": "Aucun prix transparent pour la promotion ou le sponsoring payant ; il faut contacter l'équipe."
+      },
+      {
+        "en": "Ranking and anti-gaming mechanics are not documented publicly.",
+        "fr": "Le mécanisme de classement et les protections anti-triche ne sont pas documentés publiquement."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You are launching a product and want a one-day spike of free visibility among early adopters.",
+        "fr": "Tu lances un produit et tu veux un pic de visibilité gratuit, le temps d'une journée, auprès des early adopters."
+      },
+      "avoidIf": {
+        "en": "You expect Product Hunt alone to produce lasting customer acquisition without any other promotion.",
+        "fr": "Tu attends de Product Hunt seul une acquisition client durable, sans aucune autre action de promotion."
+      },
+      "threshold": {
+        "en": "No price threshold for the core use: browsing, voting and launching are free; only paid advertising or sponsorship requires contacting the team for a quote.",
+        "fr": "Aucun seuil de prix pour l'usage de base : parcourir, voter et lancer sont gratuits ; seules la publicité ou le sponsoring payants demandent de contacter l'équipe pour un devis."
+      }
+    }
+  }
 }

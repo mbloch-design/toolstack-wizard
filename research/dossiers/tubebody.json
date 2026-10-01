@@ -3,7 +3,7 @@
   "slug": "tubebody",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "TubeBuddy",
     "vendor": "TubeBuddy, LLC",
@@ -34,7 +34,7 @@
       "exists": true,
       "limits": {
         "en": "Basic video and thumbnail tools with limited access to features like Next Video Ideas.",
-        "fr": null
+        "fr": "Outils de base pour vidéos et miniatures, avec un accès limité à des fonctions comme Next Video Ideas."
       },
       "sourceIds": [
         "s1"
@@ -55,7 +55,7 @@
         "keyLimits": [
           {
             "en": "Smart tools for new creators: basic video/thumbnail tools, basic title and tag optimization, limited Next Video Ideas. Tied to a single YouTube channel, one user per license. Exact dollar price not confirmed on the official pricing page in this session (renders dynamically by region); third-party trackers cite figures ranging roughly $15-49/month depending on region and billing cycle.",
-            "fr": null
+            "fr": "Outils intelligents pour les nouveaux créateurs : outils de base pour vidéos/miniatures, optimisation de base des titres et tags, Next Video Ideas limité. Lié à une seule chaîne YouTube, un utilisateur par licence. Le prix exact n'est pas confirmé sur la page tarifaire officielle lors de cette session (affichage dynamique selon la région) ; des trackers tiers citent des chiffres allant d'environ 15 à 49 $/mois selon la région et la facturation."
           }
         ],
         "sourceIds": [
@@ -76,7 +76,7 @@
         "keyLimits": [
           {
             "en": "All Pro features plus content strategy tools, advanced reporting, full search/SEO access, bulk processing, audience tools, YouTube Shorts linking, topical analysis. Includes 2 user seats. Exact dollar price not confirmed on the official pricing page in this session (renders dynamically by region).",
-            "fr": null
+            "fr": "Toutes les fonctions Pro plus des outils de stratégie de contenu, des rapports avancés, un accès SEO/recherche complet, le traitement en masse, des outils d'audience, le lien avec YouTube Shorts et l'analyse thématique. Inclut 2 sièges utilisateur. Le prix exact n'est pas confirmé sur la page tarifaire officielle lors de cette session (affichage dynamique selon la région)."
           }
         ],
         "sourceIds": [
@@ -97,7 +97,7 @@
         "keyLimits": [
           {
             "en": "Unlimited Next Video Ideas, 1:1 training, dedicated support, automated channel reviews, advanced AI analytics, unlimited user seats.",
-            "fr": null
+            "fr": "Next Video Ideas illimité, formation individuelle, support dédié, revues de chaîne automatisées, analytique IA avancée, sièges utilisateur illimités."
           }
         ],
         "sourceIds": [
@@ -110,14 +110,14 @@
     "cautions": [
       {
         "en": "TubeBuddy localizes displayed prices by region and offers both monthly and annual billing; exact dollar figures for Pro and Legend were not readable from the official pricing page content fetched in this session, so no price is stated as fact here (see unknowns).",
-        "fr": null,
+        "fr": "TubeBuddy adapte les prix affichés par région et propose une facturation mensuelle ou annuelle ; les montants exacts pour Pro et Legend n'étaient pas lisibles sur le contenu de la page tarifaire officielle récupéré lors de cette session, donc aucun prix n'est présenté comme un fait ici (voir unknowns).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "30-day refund policy available through TubeBuddy Support; no long-term contract, cancel anytime.",
-        "fr": null,
+        "fr": "Politique de remboursement sous 30 jours disponible via le support TubeBuddy ; aucun engagement long terme, résiliable à tout moment.",
         "sourceIds": [
           "s1"
         ]
@@ -128,21 +128,21 @@
     "capabilities": [
       {
         "en": "YouTube SEO and tag optimization tools to improve video discoverability.",
-        "fr": null,
+        "fr": "Outils de SEO YouTube et d'optimisation des tags pour améliorer la visibilité des vidéos dans la recherche.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Content strategy tools including audience understanding, topical analysis and Next Video Ideas (on Legend and above).",
-        "fr": null,
+        "fr": "Outils de stratégie de contenu incluant la compréhension de l'audience, l'analyse thématique et Next Video Ideas (à partir de Legend).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Bulk processing/editing tools for managing multiple videos at once (Legend and above).",
-        "fr": null,
+        "fr": "Outils de traitement/édition en masse pour gérer plusieurs vidéos à la fois (à partir de Legend).",
         "sourceIds": [
           "s1"
         ]
@@ -151,14 +151,14 @@
     "limitations": [
       {
         "en": "Free and Pro licenses are tied to a single YouTube channel and a single user; multi-seat access starts at Legend (2 seats).",
-        "fr": null,
+        "fr": "Les licences Free et Pro sont liées à une seule chaîne YouTube et un seul utilisateur ; l'accès multi-sièges ne commence qu'à Legend (2 sièges).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Content strategy tools, advanced reporting and full SEO access are gated behind the Legend tier, not available on Pro.",
-        "fr": null,
+        "fr": "Les outils de stratégie de contenu, les rapports avancés et l'accès SEO complet sont réservés à l'offre Legend, indisponibles sur Pro.",
         "sourceIds": [
           "s1"
         ]
@@ -174,7 +174,7 @@
       "slug": "vidiq",
       "reason": {
         "en": "Direct competitor offering YouTube SEO, tag research and channel analytics tools.",
-        "fr": null
+        "fr": "Concurrent direct qui propose des outils de SEO YouTube, de recherche de tags et d'analytique de chaîne."
       }
     }
   ],
@@ -182,5 +182,122 @@
   "unknowns": [
     "Exact monthly/annual dollar prices for the Pro and Legend plans could not be confirmed from the official pricing page content fetched in this session; the page renders prices dynamically by region."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Plan prices are not published as fixed public figures and vary by region, making the real cost-to-value ratio hard to judge from the sources alone.",
+        "fr": "Les prix des offres ne sont pas publiés sous forme de chiffres fixes et varient par région, ce qui rend difficile de juger le vrai rapport coût/valeur à partir des seules sources.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and first-result speed are not detailed in the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la rapidité du premier résultat ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The tool delivers its stated SEO optimization and content strategy promise directly through tag, title and thumbnail tools.",
+        "fr": "L'outil tient sa promesse de SEO et de stratégie de contenu directement via les outils de tags, titres et miniatures.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Beyond basic SEO, it covers bulk processing, audience tools and topical analysis on higher tiers, broad for the category.",
+        "fr": "Au-delà du SEO de base, il couvre le traitement en masse, les outils d'audience et l'analyse thématique sur les offres supérieures, ce qui est large pour la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or portability out of TubeBuddy is not covered by the collected sources.",
+        "fr": "Note neutre : l'export ou la portabilité des données hors de TubeBuddy ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Independent YouTube creators who want data-driven SEO tools to grow a single channel.",
+      "fr": "Créateurs YouTube indépendants qui veulent des outils SEO basés sur la donnée pour développer une seule chaîne."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Video optimization: run tag and title suggestions before publishing to improve a video's chance of being found in search.",
+      "fr": "Optimisation vidéo : utiliser les suggestions de tags et de titres avant publication pour améliorer les chances d'être trouvé dans la recherche."
+    },
+    {
+      "en": "Channel audit: use bulk processing and reporting on the Legend plan to review and update older videos at scale.",
+      "fr": "Audit de chaîne : utiliser le traitement en masse et les rapports de l'offre Legend pour revoir et mettre à jour d'anciennes vidéos à grande échelle."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "YouTube SEO toolkit",
+      "fr": "Outils SEO YouTube"
+    },
+    "shortDescription": {
+      "en": "A YouTube toolkit that helps creators optimize titles, tags and thumbnails, track channel analytics and plan content to grow views and subscribers.",
+      "fr": "Une boîte à outils YouTube qui aide les créateurs à optimiser titres, tags et miniatures, suivre les statistiques de chaîne et planifier le contenu."
+    },
+    "longDescription": {
+      "en": "TubeBuddy is a YouTube-focused toolkit for tag research, title and thumbnail testing, and channel analytics, tied to a single YouTube channel per license. Free users get basic tools; Pro and Legend unlock deeper SEO, bulk editing and content-strategy features such as Next Video Ideas.\n\nExact prices were not readable on the official pricing page during this review, as TubeBuddy localizes them by region; third-party trackers cite Pro at roughly $15 to $49 per month depending on region and billing cycle, and Legend costs more for 2 seats. It fits a solo creator who wants data-driven SEO tools without hiring an agency.",
+      "fr": "TubeBuddy est une boîte à outils YouTube pour la recherche de tags, le test de titres et de miniatures, et l'analyse de chaîne, liée à une seule chaîne par licence. La version gratuite donne les outils de base ; Pro et Legend débloquent un SEO plus poussé, l'édition en masse et la stratégie de contenu.\n\nLes prix exacts n'étaient pas lisibles sur la page officielle, TubeBuddy les adaptant par région ; des trackers tiers citent Pro autour de 15 à 49 $ par mois, et Legend coûte plus cher pour 2 sièges. L'outil convient à un créateur solo qui veut des outils SEO basés sur la donnée sans agence."
+    },
+    "pros": [
+      {
+        "en": "Dedicated YouTube SEO tools (tags, titles, thumbnails) beyond what YouTube Studio offers natively.",
+        "fr": "Des outils SEO YouTube dédiés (tags, titres, miniatures) au-delà de ce que propose nativement YouTube Studio."
+      },
+      {
+        "en": "30-day refund policy and month-to-month billing, no long-term contract.",
+        "fr": "Remboursement possible sous 30 jours et facturation mensuelle, sans engagement long terme."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Exact plan prices are not published in a fixed, region-independent way.",
+        "fr": "Les prix des offres ne sont pas publiés de façon fixe, indépendamment de la région."
+      },
+      {
+        "en": "Free and Pro licenses are locked to a single channel and a single user.",
+        "fr": "Les licences Free et Pro sont limitées à une seule chaîne et un seul utilisateur."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run one YouTube channel solo and want dedicated tag, title and thumbnail optimization tools.",
+        "fr": "Tu gères une seule chaîne YouTube en solo et tu veux des outils dédiés pour optimiser tags, titres et miniatures."
+      },
+      "avoidIf": {
+        "en": "You manage multiple channels or a team, since multi-seat access only starts at the Legend tier.",
+        "fr": "Tu gères plusieurs chaînes ou une équipe : l'accès multi-sièges ne commence qu'à partir de l'offre Legend."
+      },
+      "threshold": {
+        "en": "Expect to pay roughly $15 to $49 per month for Pro depending on your region, the only figures publicly tracked for this plan.",
+        "fr": "Compte environ 15 à 49 $ par mois pour Pro selon ta région, seules données publiques trouvées pour cette offre."
+      }
+    }
+  },
+  "reviewNotes": [
+    "Pro and Legend plan prices are not confirmed as fixed figures on the official pricing page (it renders dynamically by region); the $15-49/month range cited for Pro comes from third-party trackers, not tubebuddy.com directly, and should be re-checked before publishing a comparePlanKey amount."
+  ],
+  "hold": "Pro/Legend prices unconfirmed on the official page; compared plan resolves to 0. Also duplicate of slug tubebuddy"
 }

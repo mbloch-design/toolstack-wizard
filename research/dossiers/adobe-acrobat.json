@@ -3,7 +3,7 @@
   "slug": "adobe-acrobat",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Adobe Acrobat Pro",
     "vendor": "Adobe Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.adobe.com/acrobat/pricing/pricing.html", "tier": 1, "accessedOn": "2026-09-25", "title": "Adobe Acrobat Pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.adobe.com/acrobat/pricing/pricing.html",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Adobe Acrobat Pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,7 +30,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,67 +44,311 @@
         "name": "Acrobat Express",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 9.99, "annualPerMonth": 9.99, "oneTime": null },
+        "price": {
+          "monthly": 9.99,
+          "annualPerMonth": 9.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Basic PDF tools (create, convert, export, password-protect, compress), AI summaries and PDF Spaces.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Basic PDF tools (create, convert, export, password-protect, compress), AI summaries and PDF Spaces.",
+            "fr": "Outils PDF de base (création, conversion, export, protection par mot de passe, compression), résumés IA et PDF Spaces."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "standard",
         "name": "Acrobat Standard",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 14.99, "annualPerMonth": 14.99, "oneTime": null },
+        "price": {
+          "monthly": 14.99,
+          "annualPerMonth": 14.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "PDF editing and organization, e-signature collection, form filling and signing.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "PDF editing and organization, e-signature collection, form filling and signing.",
+            "fr": "Édition et organisation de PDF, collecte de signatures électroniques, remplissage et signature de formulaires."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Acrobat Pro",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 19.99, "annualPerMonth": 19.99, "oneTime": null },
+        "price": {
+          "monthly": 19.99,
+          "annualPerMonth": 19.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "70+ advanced PDF tools, redaction, web forms, OCR for scans.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "70+ advanced PDF tools, redaction, web forms, OCR for scans.",
+            "fr": "Plus de 70 outils PDF avancés, rédaction, formulaires web, OCR pour les scans."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "studio",
         "name": "Acrobat Studio",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 24.99, "annualPerMonth": 24.99, "oneTime": null },
+        "price": {
+          "monthly": 24.99,
+          "annualPerMonth": 24.99,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Everything in Pro plus an AI Assistant, PDF Spaces, and design tools via Adobe Express.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Everything in Pro plus an AI Assistant, PDF Spaces, and design tools via Adobe Express.",
+            "fr": "Tout ce qu'offre Pro, plus un assistant IA, les PDF Spaces et des outils de design via Adobe Express."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "The advertised monthly price is only for an annual commitment billed monthly; the true pay-monthly (cancel anytime) price is higher, e.g. Pro is $19.99/mo on an annual plan versus $29.99/mo cancel-anytime.", "sourceIds": ["s1"] }
+      {
+        "en": "The advertised monthly price is only for an annual commitment billed monthly; the true pay-monthly (cancel anytime) price is higher, e.g. Pro is $19.99/mo on an annual plan versus $29.99/mo cancel-anytime.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le prix mensuel affiché suppose un engagement annuel facturé au mois ; le vrai prix sans engagement est plus élevé, par exemple Pro est à 19,99 $/mois en engagement annuel contre 29,99 $/mois sans engagement."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Create, convert, export, compress and password-protect PDFs across the plan range.", "sourceIds": ["s1"] },
-      { "en": "70+ advanced PDF tools in the Pro tier, including redaction, web forms and OCR for scanned documents.", "sourceIds": ["s1"] },
-      { "en": "E-signature collection and form filling/signing built into Standard and above.", "sourceIds": ["s1"] },
-      { "en": "AI Assistant and AI summaries/insights available on higher tiers (Express and Studio).", "sourceIds": ["s1"] }
+      {
+        "en": "Create, convert, export, compress and password-protect PDFs across the plan range.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Créer, convertir, exporter, compresser et protéger des PDF par mot de passe sur toute la gamme d'offres."
+      },
+      {
+        "en": "70+ advanced PDF tools in the Pro tier, including redaction, web forms and OCR for scanned documents.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Plus de 70 outils PDF avancés dans l'offre Pro, dont la rédaction, les formulaires web et l'OCR pour les documents scannés."
+      },
+      {
+        "en": "E-signature collection and form filling/signing built into Standard and above.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Collecte de signatures électroniques et remplissage/signature de formulaires intégrés dès l'offre Standard."
+      },
+      {
+        "en": "AI Assistant and AI summaries/insights available on higher tiers (Express and Studio).",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Assistant IA et résumés/analyses IA disponibles sur les offres supérieures (Express et Studio)."
+      }
     ],
     "limitations": [
-      { "en": "Free usage is limited to Acrobat Reader (view/print only); any editing, conversion or signing feature requires a paid plan.", "sourceIds": ["s1"] },
-      { "en": "Advanced tools like redaction and OCR are gated to the Pro and Studio tiers, not available on Express or Standard.", "sourceIds": ["s1"] },
-      { "en": "The headline monthly price requires an annual commitment; monthly billing without commitment costs noticeably more.", "sourceIds": ["s1"] }
+      {
+        "en": "Free usage is limited to Acrobat Reader (view/print only); any editing, conversion or signing feature requires a paid plan.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "L'usage gratuit se limite à Acrobat Reader (lecture/impression uniquement) ; toute fonction d'édition, de conversion ou de signature demande une offre payante."
+      },
+      {
+        "en": "Advanced tools like redaction and OCR are gated to the Pro and Studio tiers, not available on Express or Standard.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les outils avancés comme la rédaction et l'OCR sont réservés aux offres Pro et Studio, indisponibles sur Express ou Standard."
+      },
+      {
+        "en": "The headline monthly price requires an annual commitment; monthly billing without commitment costs noticeably more.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le prix mensuel affiché suppose un engagement annuel ; la facturation mensuelle sans engagement coûte nettement plus cher."
+      }
     ],
     "integrations": [],
-    "platforms": ["web", "windows", "macos", "ios", "android"]
+    "platforms": [
+      "web",
+      "windows",
+      "macos",
+      "ios",
+      "android"
+    ]
   },
-  "alternatives": [],
-  "missingAlternatives": [
-    { "name": "Foxit PDF Editor", "officialUrl": "https://www.foxit.com/pdf-editor/", "reason": "Common lower-cost Acrobat alternative for PDF editing/signing, not in the catalogue" }
+  "alternatives": [
+    {
+      "slug": "pdf-agile",
+      "reason": {
+        "en": "Lower-cost PDF editor covering similar creation, editing and conversion needs.",
+        "fr": "Éditeur PDF moins cher qui couvre des besoins similaires de création, édition et conversion."
+      }
+    }
   ],
-  "unknowns": ["Whether the Standard/Pro/Studio Reader mobile apps carry any feature restrictions versus desktop was not detailed on the pricing page.", "Free trial length is mentioned as available but the exact number of days is not stated on the pricing page."],
-  "conflicts": []
+  "missingAlternatives": [
+    {
+      "name": "Foxit PDF Editor",
+      "officialUrl": "https://www.foxit.com/pdf-editor/",
+      "reason": "Common lower-cost Acrobat alternative for PDF editing/signing, not in the catalogue"
+    },
+    {
+      "name": "Smallpdf",
+      "officialUrl": "https://smallpdf.com",
+      "reason": "Popular browser-based PDF editing and conversion competitor, not in the catalogue"
+    },
+    {
+      "name": "Nitro PDF",
+      "officialUrl": "https://www.gonitro.com",
+      "reason": "Business-oriented PDF editor and e-signature competitor, not in the catalogue"
+    }
+  ],
+  "unknowns": [
+    "Whether the Standard/Pro/Studio Reader mobile apps carry any feature restrictions versus desktop was not detailed on the pricing page.",
+    "Free trial length is mentioned as available but the exact number of days is not stated on the pricing page."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Prices seem moderate for the feature range, but the advertised monthly figure requires an annual commitment and the true pay-monthly cost is not shown, making the real value harder to judge.",
+        "fr": "Les prix semblent modérés pour l'étendue des fonctions, mais le montant mensuel affiché suppose un engagement annuel et le vrai prix sans engagement n'est pas indiqué, ce qui rend la valeur réelle plus difficile à juger.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Core PDF tasks are familiar, but the split of tools across four tiers (e.g. OCR only from Pro) adds a decision step before a first useful result.",
+        "fr": "Les tâches PDF de base sont familières, mais la répartition des outils sur quatre offres (l'OCR seulement à partir de Pro) ajoute une étape de choix avant un premier résultat utile.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Pro delivers the stated promise directly: creation, editing, signing, redaction and OCR all work without a third-party workaround.",
+        "fr": "Pro tient sa promesse directement : création, édition, signature, rédaction et OCR fonctionnent tous sans contournement tiers.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "70+ tools on the Pro tier, including redaction and OCR, is broad for the PDF-editing category.",
+        "fr": "Plus de 70 outils sur l'offre Pro, dont la rédaction et l'OCR, c'est large pour la catégorie de l'édition PDF.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability out of Acrobat are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données hors d'Acrobat ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams and admins who handle contracts, forms and scanned documents and need more than free PDF viewing.",
+      "fr": "Petites équipes et personnes en charge de l'admin qui traitent contrats, formulaires et documents scannés, au-delà de la simple lecture gratuite de PDF."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Contract signing: send a PDF for e-signature and collect signatures from clients directly within Acrobat Standard or above.",
+      "fr": "Signature de contrat : envoyer un PDF pour signature électronique et recueillir les signatures des clients directement depuis Acrobat Standard ou une offre supérieure."
+    },
+    {
+      "en": "Document redaction: permanently remove sensitive information from a scanned contract using OCR and redaction tools in Acrobat Pro.",
+      "fr": "Rédaction de document : supprimer définitivement des informations sensibles d'un contrat scanné grâce à l'OCR et aux outils de rédaction d'Acrobat Pro."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "PDF editing suite",
+      "fr": "Suite d'édition PDF"
+    },
+    "shortDescription": {
+      "en": "A subscription suite for creating, editing, signing and converting PDFs, with advanced tools like redaction and OCR on higher-tier plans.",
+      "fr": "Une suite par abonnement pour créer, modifier, signer et convertir des PDF, avec des outils avancés comme la rédaction et l'OCR sur les offres supérieures."
+    },
+    "longDescription": {
+      "en": "Adobe Acrobat is a subscription PDF suite spanning four tiers. Express covers basic creation, conversion and compression; Standard adds e-signature collection and form filling; Pro unlocks 70+ advanced tools including redaction, web forms and OCR for scans; Studio adds an AI Assistant, PDF Spaces and Adobe Express design tools.\n\nPrices range from $9.99 to $24.99 per month, but all advertised figures require an annual commitment billed monthly; cancel-anytime billing costs more, which the pricing page does not spell out as a separate number next to each plan. It fits anyone who regularly edits, signs or converts PDFs and needs more than free Acrobat Reader's view-only access.",
+      "fr": "Adobe Acrobat est une suite PDF par abonnement avec quatre offres. Express couvre la création, la conversion et la compression de base ; Standard ajoute signature et remplissage de formulaires ; Pro débloque plus de 70 outils avancés dont la rédaction, les formulaires web et l'OCR pour les scans ; Studio ajoute un assistant IA, les PDF Spaces et les outils de design d'Adobe Express.\n\nLes prix vont de 9,99 $ à 24,99 $ par mois, mais ces montants supposent un engagement annuel facturé au mois ; la facturation sans engagement coûte plus cher, sans que la page l'indique séparément. L'outil convient à qui modifie, signe ou convertit des PDF régulièrement, au-delà de la lecture gratuite d'Acrobat Reader."
+    },
+    "pros": [
+      {
+        "en": "Covers the full PDF workflow: creation, editing, e-signature, redaction and OCR in one subscription.",
+        "fr": "Couvre tout le flux PDF : création, édition, signature électronique, rédaction et OCR dans un seul abonnement."
+      },
+      {
+        "en": "Available across desktop, web and mobile platforms.",
+        "fr": "Disponible sur ordinateur, web et mobile."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free usage is limited to view/print only in Acrobat Reader; any editing requires a paid plan.",
+        "fr": "L'usage gratuit se limite à la lecture/impression dans Acrobat Reader ; toute édition demande une offre payante."
+      },
+      {
+        "en": "The advertised monthly price requires an annual commitment; the actual cancel-anytime price is not shown on the pricing page.",
+        "fr": "Le prix mensuel affiché suppose un engagement annuel ; le vrai prix sans engagement n'est pas affiché sur la page tarifaire."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You regularly edit, sign or convert PDFs and need advanced tools like redaction or OCR, not just viewing.",
+        "fr": "Tu modifies, signes ou convertis des PDF régulièrement et tu as besoin d'outils avancés comme la rédaction ou l'OCR, pas juste de la lecture."
+      },
+      "avoidIf": {
+        "en": "You only need to view and print PDFs, which Acrobat Reader already does for free.",
+        "fr": "Tu as seulement besoin de voir et d'imprimer des PDF, ce qu'Acrobat Reader fait déjà gratuitement."
+      },
+      "threshold": {
+        "en": "Budget about $240 per year for Acrobat Pro (12 x $19.99) on the annual commitment, the tier that includes redaction and OCR.",
+        "fr": "Compte environ 240 $ par an pour Acrobat Pro (12 x 19,99 $) en engagement annuel, l'offre qui inclut la rédaction et l'OCR."
+      },
+      "billingTraps": {
+        "en": "The $19.99/month Pro price requires an annual commitment; paying month to month without commitment costs more, a figure not shown next to the plan.",
+        "fr": "Le prix de 19,99 $/mois pour Pro suppose un engagement annuel ; payer au mois sans engagement coûte plus cher, un chiffre non affiché à côté de l'offre."
+      }
+    }
+  },
+  "reviewNotes": [
+    "pricing.plans show identical monthly and annualPerMonth values for all four plans ($9.99/$9.99, $14.99/$14.99, $19.99/$19.99, $24.99/$24.99) even though pricing.cautions states the true cancel-anytime monthly price is higher (e.g. Pro at $29.99/mo versus $19.99/mo annual); the 'monthly' field most likely should carry the cancel-anytime price and 'annualPerMonth' the committed one. Needs a check on adobe.com/acrobat/pricing before merge."
+  ],
+  "hold": "monthly equals annualPerMonth on every plan while cautions say month-to-month is higher; confirm on adobe.com"
 }

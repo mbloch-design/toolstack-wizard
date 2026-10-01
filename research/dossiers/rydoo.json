@@ -3,7 +3,7 @@
   "slug": "rydoo",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Rydoo",
     "vendor": "Rydoo",
@@ -51,7 +51,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Mobile app with receipt scanner, unlimited expenses, mileage tracking, basic integrations (Uber, Lyft, Slack), single approval flow, multi-country compliance."
+            "en": "Mobile app with receipt scanner, unlimited expenses, mileage tracking, basic integrations (Uber, Lyft, Slack), single approval flow, multi-country compliance.",
+            "fr": "Application mobile avec scanner de reçus, dépenses illimitées, suivi kilométrique, intégrations de base (Uber, Lyft, Slack), circuit de validation unique, conformité multi-pays."
           }
         ],
         "sourceIds": [
@@ -71,7 +72,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Adds per diems/daily allowances, online accounting integrations (QuickBooks, Xero, Exact), automated card reconciliation, customizable policies, multi-level approvals, custom fields."
+            "en": "Adds per diems/daily allowances, online accounting integrations (QuickBooks, Xero, Exact), automated card reconciliation, customizable policies, multi-level approvals, custom fields.",
+            "fr": "Ajoute les indemnités journalières, les intégrations comptables en ligne (QuickBooks, Xero, Exact), le rapprochement automatique des cartes, des politiques personnalisables, des validations à plusieurs niveaux et des champs personnalisés."
           }
         ],
         "sourceIds": [
@@ -91,7 +93,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Adds Rydoo Cards, SFTP access, API access, priority support. Active-user pricing: billed only for users who perform an action that month."
+            "en": "Adds Rydoo Cards, SFTP access, API access, priority support. Active-user pricing: billed only for users who perform an action that month.",
+            "fr": "Ajoute les cartes Rydoo, l'accès SFTP, l'accès API et un support prioritaire. Facturation à l'utilisateur actif : seuls les utilisateurs ayant effectué une action dans le mois sont facturés."
           }
         ],
         "sourceIds": [
@@ -111,7 +114,8 @@
         "onQuote": true,
         "keyLimits": [
           {
-            "en": "Adds AI-powered Smart Audit, advanced approval workflows, insights dashboard, SAML SSO, HR connect, scheduled exports."
+            "en": "Adds AI-powered Smart Audit, advanced approval workflows, insights dashboard, SAML SSO, HR connect, scheduled exports.",
+            "fr": "Ajoute l'audit intelligent par IA, des circuits de validation avancés, un tableau de bord d'analyse, le SSO SAML, la connexion RH et des exports planifiés."
           }
         ],
         "sourceIds": [
@@ -126,13 +130,15 @@
         "en": "Essentials and Pro require a minimum of 5 users; not usable as a true single-seat plan.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Essentials et Pro exigent un minimum de 5 utilisateurs ; impossible de s'abonner pour un seul poste."
       },
       {
         "en": "Business and Enterprise plans use active-user billing, so cost is not simply seats x price.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Les forfaits Business et Enterprise facturent à l'utilisateur actif, le coût ne correspond donc pas simplement au nombre de postes multiplié par le prix."
       }
     ]
   },
@@ -142,25 +148,29 @@
         "en": "OCR receipt scanning via mobile app for automated expense capture.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Numérisation OCR des reçus via l'application mobile pour une saisie automatique des dépenses."
       },
       {
         "en": "Mileage tracking and multi-country tax/compliance support.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Suivi kilométrique et prise en charge de la fiscalité et de la conformité dans plusieurs pays."
       },
       {
         "en": "AI-powered Smart Audit that automatically analyzes all expenses (Enterprise tier).",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Audit intelligent par IA qui analyse automatiquement toutes les dépenses (forfait Enterprise)."
       },
       {
         "en": "Accounting integrations with QuickBooks, Xero and Exact from the Pro tier up.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Intégrations comptables avec QuickBooks, Xero et Exact à partir du forfait Pro."
       }
     ],
     "limitations": [
@@ -168,13 +178,15 @@
         "en": "Essentials and Pro plans require a minimum of 5 seats, ruling out true solo use.",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "Les forfaits Essentials et Pro exigent un minimum de 5 postes, ce qui exclut un usage réellement solo."
       },
       {
         "en": "API access and SFTP export are gated behind the Business plan (30-seat minimum, quote-based).",
         "sourceIds": [
           "s1"
-        ]
+        ],
+        "fr": "L'accès API et l'export SFTP sont réservés au forfait Business (minimum 30 postes, sur devis)."
       }
     ],
     "integrations": [
@@ -210,19 +222,22 @@
     {
       "slug": "spendesk",
       "reason": {
-        "en": "Direct competitor for expense management and card spend control for SMEs."
+        "en": "Direct competitor for expense management and card spend control for SMEs.",
+        "fr": "Concurrent direct pour la gestion des notes de frais et le contrôle des dépenses par carte pour les PME."
       }
     },
     {
       "slug": "payhawk",
       "reason": {
-        "en": "Overlaps for expense reports, cards and finance automation in Europe."
+        "en": "Overlaps for expense reports, cards and finance automation in Europe.",
+        "fr": "Chevauchement sur les notes de frais, les cartes et l'automatisation financière en Europe."
       }
     },
     {
       "slug": "soldo",
       "reason": {
-        "en": "Competes for expense tracking and company card management."
+        "en": "Competes for expense tracking and company card management.",
+        "fr": "Concurrence sur le suivi des dépenses et la gestion des cartes d'entreprise."
       }
     }
   ],
@@ -236,5 +251,125 @@
   "unknowns": [
     "No free trial length was stated on the pricing page; self-service signup exists but trial terms are unclear."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Finance and ops teams who need to collect, approve and reconcile employee expenses across several countries.",
+      "fr": "Équipes finance et ops qui doivent collecter, approuver et réconcilier les notes de frais de leurs salariés dans plusieurs pays."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Expense capture: an employee photographs a receipt and Rydoo's OCR fills in the amount, date and category automatically.",
+      "fr": "Saisie des notes de frais : un salarié photographie un reçu et l'OCR de Rydoo remplit automatiquement le montant, la date et la catégorie."
+    },
+    {
+      "en": "Multi-country reimbursement: a finance manager applies per diem and mileage rules that differ by country from a single approval flow.",
+      "fr": "Remboursement multi-pays : un responsable finance applique des règles de per diem et de kilométrage différentes selon le pays depuis un seul circuit de validation."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "OCR scanning and multi-country compliance save manual work for teams, but the 5-seat minimum and quote-based advanced tiers raise the entry cost for small teams.",
+        "fr": "La numérisation OCR et la conformité multi-pays font gagner du temps aux équipes, mais le minimum de 5 postes et les forfaits avancés sur devis augmentent le coût d'entrée pour les petites équipes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: setup time and learning curve for a first expense report are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main pour une première note de frais ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Receipt OCR, mileage tracking and approval workflows match the stated promise without mentioning workarounds.",
+        "fr": "L'OCR des reçus, le suivi kilométrique et les circuits de validation tiennent la promesse annoncée sans contournement mentionné.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers multi-country compliance, AI-powered Smart Audit and advanced approval workflows at the top tiers.",
+        "fr": "Couvre la conformité multi-pays, l'audit intelligent par IA et des circuits de validation avancés sur les forfaits les plus hauts.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "API access and SFTP export exist only on the quote-based Business plan (30-seat minimum), so data portability is not available by default.",
+        "fr": "L'accès API et l'export SFTP n'existent que sur le forfait Business sur devis (minimum 30 postes), la portabilité des données n'est donc pas disponible par défaut.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Expense management",
+      "fr": "Notes de frais"
+    },
+    "shortDescription": {
+      "en": "Rydoo scans receipts and automates expense approval for teams across multiple countries, with plans sold in blocks of at least 5 seats.",
+      "fr": "Rydoo numérise les reçus et automatise l'approbation des notes de frais pour des équipes dans plusieurs pays, vendu par blocs de 5 postes minimum."
+    },
+    "longDescription": {
+      "en": "Rydoo handles expense reports end to end: employees photograph receipts, OCR extracts the amount and category, and approval flows route the claim automatically. Mileage tracking and country-specific compliance rules make it suited to teams spread across several markets, and the top tier adds an AI audit that checks every expense instead of a sample.\n\nPlans start at 10 EUR per seat per month (8 EUR billed annually), but Essentials and Pro require at least 5 seats, so a single freelancer cannot subscribe alone. API access and SFTP exports only appear on the Business plan, which is quote-based and billed by active user rather than a flat per-seat fee.",
+      "fr": "Rydoo gère les notes de frais de bout en bout : le salarié photographie son reçu, l'OCR en extrait le montant et la catégorie, et le circuit de validation achemine la demande automatiquement. Le suivi kilométrique et les règles de conformité par pays conviennent aux équipes réparties sur plusieurs marchés, et le forfait le plus haut ajoute un audit par IA qui contrôle chaque dépense.\n\nLes forfaits démarrent à 10 € par poste et par mois (8 € en facturation annuelle), mais Essentials et Pro exigent au moins 5 postes : un indépendant seul ne peut pas s'abonner. L'accès API et l'export SFTP ne sont disponibles que sur le forfait Business, sur devis et facturé à l'utilisateur actif."
+    },
+    "pros": [
+      {
+        "en": "Receipt OCR and mileage tracking remove manual data entry from expense reports.",
+        "fr": "L'OCR des reçus et le suivi kilométrique suppriment la saisie manuelle des notes de frais."
+      },
+      {
+        "en": "Compliance rules adapt per country, useful for teams operating in several markets.",
+        "fr": "Les règles de conformité s'adaptent par pays, utile pour des équipes présentes dans plusieurs marchés."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Essentials and Pro plans cannot be bought for fewer than 5 users.",
+        "fr": "Les forfaits Essentials et Pro ne peuvent pas être achetés pour moins de 5 utilisateurs."
+      },
+      {
+        "en": "API access and SFTP export require the quote-based Business plan.",
+        "fr": "L'accès API et l'export SFTP demandent le forfait Business, sur devis."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you manage expense reports for a team of 5 people or more across different countries.",
+        "fr": "Garde Rydoo si tu gères les notes de frais d'une équipe d'au moins 5 personnes dans plusieurs pays."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you are a solo freelancer: no plan fits a single seat.",
+        "fr": "Évite Rydoo si tu es indépendant seul : aucun forfait n'est pensé pour un seul poste."
+      },
+      "threshold": {
+        "en": "Entry cost is 8 EUR per seat per month billed annually, with a 5-seat minimum, so about 480 EUR per year to start.",
+        "fr": "Le tarif d'entrée est de 8 € par poste et par mois en facturation annuelle, avec un minimum de 5 postes, soit environ 480 € par an pour démarrer."
+      },
+      "billingTraps": {
+        "en": "Essentials and Pro require buying at least 5 seats even for a smaller team, and Business/Enterprise bill by active user rather than a flat per-seat rate.",
+        "fr": "Essentials et Pro obligent à acheter au moins 5 postes même pour une équipe plus petite, et Business/Enterprise facturent à l'utilisateur actif plutôt qu'à un tarif fixe par poste."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "comparePlanKey \"essentials\" requires a minimum of 5 seats, so no plan lets a single person subscribe alone; this conflicts with the single-person comparison rule in brief section 5.4. Worth re-checking rydoo.com/pricing for a true single-seat option."
+  ]
 }

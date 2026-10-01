@@ -3,7 +3,7 @@
   "slug": "restream",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Restream",
     "vendor": "Restream, Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://restream.io/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Restream pricing" }
+    {
+      "id": "s1",
+      "url": "https://restream.io/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Restream pricing"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -24,7 +30,18 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "Stream to 2 channels simultaneously, includes Restream branding" }], "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": [
+        {
+          "en": "Stream to 2 channels simultaneously, includes Restream branding",
+          "fr": "Diffuse sur 2 chaînes simultanément, inclut la marque Restream"
+        }
+      ],
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -32,78 +49,305 @@
         "name": "Standard",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 19, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 19,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Stream on 3 channels at once, removes branding, guest channel access" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Stream on 3 channels at once, removes branding, guest channel access",
+            "fr": "Diffuse sur 3 chaînes à la fois, retire la marque, accès aux invités"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "professional",
         "name": "Professional",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 49, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 49,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Multistream to 5 channels, full HD 1080p, 4K recording, dual-format streaming" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Multistream to 5 channels, full HD 1080p, 4K recording, dual-format streaming",
+            "fr": "Multidiffusion sur 5 chaînes, Full HD 1080p, enregistrement 4K, diffusion en double format"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "seat",
         "minSeats": 2,
-        "price": { "monthly": 239, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 239,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Stream on 8 channels, website player with 1,000 concurrent viewers, 2 included team seats" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Stream on 8 channels, website player with 1,000 concurrent viewers, 2 included team seats",
+            "fr": "Diffuse sur 8 chaînes, lecteur pour site web jusqu'à 1 000 spectateurs simultanés, 2 postes d'équipe inclus"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "SSO, dedicated account management, unlimited capabilities" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "SSO, dedicated account management, unlimited capabilities",
+            "fr": "SSO, gestion de compte dédiée, capacités illimitées"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "standard",
     "addOns": [
-      { "en": "Clips add-on: from $19/mo (50 clips) up to $59/mo (250 clips) depending on plan", "sourceIds": ["s1"] },
-      { "en": "Webinars add-on: from $99/mo (100 attendees) up to $299/mo (500 attendees) depending on plan", "sourceIds": ["s1"] }
+      {
+        "en": "Clips add-on: from $19/mo (50 clips) up to $59/mo (250 clips) depending on plan",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Extension Clips : de 19 $/mois (50 extraits) à 59 $/mois (250 extraits) selon le forfait"
+      },
+      {
+        "en": "Webinars add-on: from $99/mo (100 attendees) up to $299/mo (500 attendees) depending on plan",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Extension Webinaires : de 99 $/mois (100 participants) à 299 $/mois (500 participants) selon le forfait"
+      }
     ],
     "cautions": [
-      { "en": "Annual billing gives a 20% discount across all paid plans, but the page shows monthly prices by default.", "sourceIds": ["s1"] }
+      {
+        "en": "Annual billing gives a 20% discount across all paid plans, but the page shows monthly prices by default.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "La facturation annuelle offre une remise de 20 % sur tous les forfaits payants, mais la page affiche les prix mensuels par défaut."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Simultaneous multi-platform live streaming (multistreaming) to several social/video platforms at once", "sourceIds": ["s1"] },
-      { "en": "Studio for co-hosting guests and branded overlays", "sourceIds": ["s1"] },
-      { "en": "4K recording and dual horizontal/vertical format streaming on Professional plan", "sourceIds": ["s1"] }
+      {
+        "en": "Simultaneous multi-platform live streaming (multistreaming) to several social/video platforms at once",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Diffusion en direct simultanée sur plusieurs plateformes sociales et vidéo à la fois (multidiffusion)"
+      },
+      {
+        "en": "Studio for co-hosting guests and branded overlays",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Studio pour accueillir des invités et ajouter des habillages personnalisés"
+      },
+      {
+        "en": "4K recording and dual horizontal/vertical format streaming on Professional plan",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Enregistrement 4K et diffusion en formats horizontal et vertical sur le forfait Professional"
+      }
     ],
     "limitations": [
-      { "en": "Free plan limited to 2 simultaneous channels and carries Restream branding", "sourceIds": ["s1"] },
-      { "en": "Clips and Webinars are paid add-ons on top of the base plan price, not included by default", "sourceIds": ["s1"] }
+      {
+        "en": "Free plan limited to 2 simultaneous channels and carries Restream branding",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le forfait gratuit est limité à 2 chaînes simultanées et affiche la marque Restream"
+      },
+      {
+        "en": "Clips and Webinars are paid add-ons on top of the base plan price, not included by default",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les extraits et les webinaires sont des extensions payantes en plus du prix du forfait de base, non inclus par défaut"
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Independent streamers and creators who broadcast live to several platforms at once.",
+      "fr": "Streamers et créateurs indépendants qui diffusent en direct sur plusieurs plateformes à la fois."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Multistreaming: a creator broadcasts live to several social platforms at once from a single studio session.",
+      "fr": "Multidiffusion : un créateur diffuse en direct sur plusieurs réseaux sociaux en même temps depuis une seule session de studio."
+    },
+    {
+      "en": "Branded recording: a streamer on the Professional plan records in 4K and streams in both horizontal and vertical formats for repurposing.",
+      "fr": "Enregistrement de marque : un streamer sur le forfait Professional enregistre en 4K et diffuse en format horizontal et vertical pour réutiliser son contenu."
+    }
+  ],
   "alternatives": [
-    { "slug": "opus-clip", "reason": { "en": "Overlapping use case for repurposing live/video content into clips" } }
+    {
+      "slug": "opus-clip",
+      "reason": {
+        "en": "Overlapping use case for repurposing live/video content into clips",
+        "fr": "Usage proche pour transformer un contenu live ou vidéo en extraits courts"
+      }
+    },
+    {
+      "slug": "streamlabs",
+      "reason": {
+        "en": "Popular multistreaming/broadcast competitor.",
+        "fr": "Concurrent populaire de multidiffusion et de diffusion en direct."
+      }
+    }
   ],
   "missingAlternatives": [
-    { "name": "StreamYard", "officialUrl": "https://streamyard.com", "reason": "Main direct competitor for multistreaming studio software, not in the catalogue" },
-    { "name": "Streamlabs", "officialUrl": "https://streamlabs.com", "reason": "Popular multistreaming/broadcast competitor, not in the catalogue" }
+    {
+      "name": "StreamYard",
+      "officialUrl": "https://streamyard.com",
+      "reason": "Main direct competitor for multistreaming studio software, not in the catalogue"
+    }
   ],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free plan is usable for real streaming, but paid tiers escalate quickly to 239 USD a month with no comparative pricing data against competitors.",
+        "fr": "Le forfait gratuit permet un vrai streaming, mais les forfaits payants grimpent vite jusqu'à 239 $ par mois, sans donnée tarifaire comparative face aux concurrents.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to set up a first multistream is not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour configurer une première multidiffusion ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Multistreaming to several platforms at once, with studio co-hosting, works as described and no workaround is mentioned.",
+        "fr": "La multidiffusion simultanée sur plusieurs plateformes, avec studio pour les invités, fonctionne comme décrit et aucun contournement n'est mentionné.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers multistreaming, recording and studio features well, but the sharp price jump to Business (239 USD) for team seats suggests a ceiling for growing teams.",
+        "fr": "Couvre bien la multidiffusion, l'enregistrement et les fonctions de studio, mais le bond de prix vers Business (239 $) pour les postes d'équipe laisse penser à un plafond pour les équipes en croissance.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and account portability are not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et la portabilité du compte ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Multistreaming studio",
+      "fr": "Studio de multidiffusion"
+    },
+    "shortDescription": {
+      "en": "Restream is live multistreaming software that broadcasts to several platforms at once, free for 2 channels with Restream branding.",
+      "fr": "Restream diffuse en direct vers plusieurs plateformes à la fois, gratuit pour 2 chaînes avec la marque Restream visible."
+    },
+    "longDescription": {
+      "en": "Restream sends one live stream to several social and video platforms at once, with a studio for co-hosting guests and branded overlays. Higher tiers add 4K recording and dual horizontal and vertical format streaming on the Professional plan, useful for repurposing a live show into short clips afterward.\n\nThe free plan covers 2 simultaneous channels with Restream branding; Standard at 19 USD a month removes the branding and adds a third channel, while Business at 239 USD a month includes 2 team seats, 8 channels and a website player. Clips and webinars are separate paid add-ons, not included by default.",
+      "fr": "Restream envoie un flux en direct vers plusieurs plateformes sociales et vidéo en même temps, avec un studio pour accueillir des invités et des habillages personnalisés. Les forfaits supérieurs ajoutent l'enregistrement 4K et la diffusion en formats horizontal et vertical sur le forfait Professional, utile pour réutiliser un live en extraits courts ensuite.\n\nLe forfait gratuit couvre 2 chaînes simultanées avec la marque Restream ; Standard à 19 $ par mois retire la marque et ajoute une troisième chaîne, tandis que Business à 239 $ par mois inclut 2 postes d'équipe, 8 chaînes et un lecteur pour site web. Les extraits et les webinaires sont des options payantes séparées, non inclus par défaut."
+    },
+    "pros": [
+      {
+        "en": "Broadcasts to several platforms at once from a single studio, with guest co-hosting built in.",
+        "fr": "Diffuse sur plusieurs plateformes à la fois depuis un seul studio, avec invitation de guests intégrée."
+      },
+      {
+        "en": "The free plan is usable for real streaming on 2 channels, not just a demo.",
+        "fr": "Le forfait gratuit permet un vrai streaming sur 2 chaînes, pas seulement une démo."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Clips and webinars are paid add-ons on top of the plan price, not included by default.",
+        "fr": "Les extraits et les webinaires sont des options payantes en plus du prix du forfait, non inclus par défaut."
+      },
+      {
+        "en": "Business plan pricing jumps sharply to 239 USD a month for team seats and more channels.",
+        "fr": "Le forfait Business fait un bond à 239 $ par mois pour les postes d'équipe et plus de chaînes."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep it if you stream live to several platforms at once and can live with Restream branding on the free plan.",
+        "fr": "Garde Restream si tu diffuses en direct sur plusieurs plateformes à la fois et que la marque Restream sur le forfait gratuit ne te dérange pas."
+      },
+      "avoidIf": {
+        "en": "Avoid it if you need a small paid team plan: Business jumps straight to 239 USD a month for 2 seats.",
+        "fr": "Évite Restream si tu cherches un petit forfait payant pour une équipe : Business passe directement à 239 $ par mois pour 2 postes."
+      },
+      "threshold": {
+        "en": "Entry paid cost is 19 USD a month (228 USD a year) for the Standard plan, removing branding and adding a third channel.",
+        "fr": "Le tarif d'entrée payant est de 19 $ par mois (228 $ par an) pour le forfait Standard, qui retire la marque et ajoute une troisième chaîne."
+      },
+      "billingTraps": {
+        "en": "Clips and webinars are billed as separate add-ons on top of the base plan, and annual billing gives a 20% discount not shown by default on the pricing page.",
+        "fr": "Les extraits et les webinaires sont facturés en options séparées en plus du forfait de base, et la facturation annuelle offre une remise de 20 % non affichée par défaut sur la page de tarifs."
+      }
+    }
+  },
   "unknowns": [
     "Exact platform list supported for simultaneous streaming not detailed on the fetched summary",
     "Annual price-per-month equivalents not captured (only the 20% discount rate is known)"
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "missingAlternatives listed Streamlabs as not in the catalogue, but the slug \"streamlabs\" exists in tools_v4.json; moved it into alternatives instead.",
+    "Business plan uses unit \"seat\" with minSeats 2, but the facts describe a flat 239 USD/month price covering 2 included seats rather than a per-seat multiplier; worth confirming on restream.io/pricing whether additional seats are priced separately."
+  ]
 }

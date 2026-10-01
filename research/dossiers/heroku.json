@@ -3,7 +3,7 @@
   "slug": "heroku",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Heroku",
     "vendor": "Salesforce, Inc.",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.heroku.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Heroku Pricing" },
-    { "id": "s2", "url": "https://www.heroku.com/platform/", "tier": 1, "accessedOn": "2026-09-25", "title": "Heroku Platform" }
+    {
+      "id": "s1",
+      "url": "https://www.heroku.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Heroku Pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.heroku.com/platform/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Heroku Platform"
+    }
   ],
   "pricing": {
     "model": "usage",
@@ -25,7 +37,13 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "trial": null,
     "plans": [
       {
@@ -33,67 +51,345 @@
         "name": "Eco Dyno",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 5, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 5,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "0.5 GB RAM, 1x-4x compute; Eco dynos sleep after 30 minutes of inactivity, personal accounts limited to this tier.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "0.5 GB RAM, 1x-4x compute; Eco dynos sleep after 30 minutes of inactivity, personal accounts limited to this tier.",
+            "fr": "0,5 Go de RAM, calcul 1x-4x ; les dynos Eco se mettent en veille après 30 minutes d'inactivité, les comptes personnels sont limités à cette offre."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "basic",
         "name": "Basic Dyno",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 7, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 7,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "0.5 GB RAM, always on (does not sleep).", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "0.5 GB RAM, always on (does not sleep).",
+            "fr": "0,5 Go de RAM, toujours actif (ne se met pas en veille)."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "standard-1x",
         "name": "Standard-1X Dyno",
         "unit": "usage",
         "minSeats": null,
-        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 25,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "0.5 GB RAM, 1x-4x compute, production tier.", "sourceIds": ["s1"] }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "0.5 GB RAM, 1x-4x compute, production tier.",
+            "fr": "0,5 Go de RAM, calcul 1x-4x, offre de production."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "basic",
     "addOns": [
-      { "name": "Heroku Postgres Essential-0", "unit": "usage", "price": { "monthly": 5 }, "sourceIds": ["s1"] },
-      { "name": "Heroku Key-Value Store Mini", "unit": "usage", "price": { "monthly": 3 }, "sourceIds": ["s1"] }
+      {
+        "name": "Heroku Postgres Essential-0",
+        "unit": "usage",
+        "price": {
+          "monthly": 5
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Heroku Key-Value Store Mini",
+        "unit": "usage",
+        "price": {
+          "monthly": 3
+        },
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Cost scales per dyno and per add-on: a real app needs a web dyno plus a database add-on, so the effective monthly floor is above the cheapest single line item.", "sourceIds": ["s1"] },
-      { "en": "Eco dynos (the cheapest tier) sleep after 30 minutes of inactivity and are restricted to personal accounts, not a production-ready always-on option.", "sourceIds": ["s1"] }
+      {
+        "en": "Cost scales per dyno and per add-on: a real app needs a web dyno plus a database add-on, so the effective monthly floor is above the cheapest single line item.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Le coût augmente par dyno et par module : une vraie application a besoin d'un dyno web et d'un module base de données, donc le plancher mensuel réel dépasse le prix de la ligne la moins chère."
+      },
+      {
+        "en": "Eco dynos (the cheapest tier) sleep after 30 minutes of inactivity and are restricted to personal accounts, not a production-ready always-on option.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les dynos Eco (l'offre la moins chère) se mettent en veille après 30 minutes d'inactivité et sont réservés aux comptes personnels, ce n'est pas une option toujours active prête pour la production."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Platform-as-a-service that deploys apps via git push or CI/CD without managing servers, using managed containers (dynos).", "sourceIds": ["s2"] },
-      { "en": "Fully managed data services: Heroku Postgres, Heroku Key-Value Store (Redis-compatible), and Apache Kafka on Heroku.", "sourceIds": ["s1", "s2"] },
-      { "en": "Automated application monitoring, threshold alerting and auto-scaling included at no extra cost.", "sourceIds": ["s2"] },
-      { "en": "Elements Marketplace offers third-party add-ons for logging, monitoring and extended data storage.", "sourceIds": ["s2"] },
-      { "en": "Supports multiple languages natively: Node.js, Ruby, Java, PHP, Python, Go, Scala, Clojure and .NET.", "sourceIds": ["s2"] }
+      {
+        "en": "Platform-as-a-service that deploys apps via git push or CI/CD without managing servers, using managed containers (dynos).",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Plateforme-as-a-service qui déploie les applications via git push ou CI/CD sans gérer de serveurs, grâce à des conteneurs gérés (dynos)."
+      },
+      {
+        "en": "Fully managed data services: Heroku Postgres, Heroku Key-Value Store (Redis-compatible), and Apache Kafka on Heroku.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ],
+        "fr": "Services de données entièrement gérés : Heroku Postgres, Heroku Key-Value Store (compatible Redis) et Apache Kafka sur Heroku."
+      },
+      {
+        "en": "Automated application monitoring, threshold alerting and auto-scaling included at no extra cost.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Surveillance applicative automatisée, alertes par seuil et mise à l'échelle automatique incluses sans coût supplémentaire."
+      },
+      {
+        "en": "Elements Marketplace offers third-party add-ons for logging, monitoring and extended data storage.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "La marketplace Elements propose des modules tiers pour les logs, la surveillance et le stockage de données étendu."
+      },
+      {
+        "en": "Supports multiple languages natively: Node.js, Ruby, Java, PHP, Python, Go, Scala, Clojure and .NET.",
+        "sourceIds": [
+          "s2"
+        ],
+        "fr": "Prend en charge nativement plusieurs langages : Node.js, Ruby, Java, PHP, Python, Go, Scala, Clojure et .NET."
+      }
     ],
     "limitations": [
-      { "en": "No free tier: the cheapest option (Eco dyno) still costs $5/month and sleeps after 30 minutes of inactivity.", "sourceIds": ["s1"] },
-      { "en": "Real projects require stacking multiple paid line items (dyno + Postgres + Redis), so total cost is higher than the headline price of a single dyno.", "sourceIds": ["s1"] },
-      { "en": "The newer Kubernetes-powered Fir dynos require a Private Space, adding architectural complexity for full network isolation.", "sourceIds": ["s1"] }
+      {
+        "en": "No free tier: the cheapest option (Eco dyno) still costs $5/month and sleeps after 30 minutes of inactivity.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Aucune offre gratuite : l'option la moins chère (dyno Eco) coûte quand même 5 $/mois et se met en veille après 30 minutes d'inactivité."
+      },
+      {
+        "en": "Real projects require stacking multiple paid line items (dyno + Postgres + Redis), so total cost is higher than the headline price of a single dyno.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Un vrai projet demande d'empiler plusieurs lignes payantes (dyno + Postgres + Redis), donc le coût total dépasse le prix affiché d'un seul dyno."
+      },
+      {
+        "en": "The newer Kubernetes-powered Fir dynos require a Private Space, adding architectural complexity for full network isolation.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Les nouveaux dynos Fir basés sur Kubernetes demandent un Private Space, ce qui ajoute de la complexité d'architecture pour une isolation réseau complète."
+      }
     ],
     "integrations": [
-      { "name": "Salesforce", "slug": null, "sourceIds": ["s2"] }
+      {
+        "name": "Salesforce",
+        "slug": null,
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
   "alternatives": [
-    { "slug": "vercel", "reason": { "en": "Similar deploy-from-git simplicity, but frontend-focused and with a real free tier." } },
-    { "slug": "digitalocean", "reason": { "en": "Managed app platform with comparable PaaS ergonomics at generally lower prices." } }
+    {
+      "slug": "vercel",
+      "reason": {
+        "en": "Similar deploy-from-git simplicity, but frontend-focused and with a real free tier.",
+        "fr": "Simplicité de déploiement depuis git comparable, mais orientée front-end et avec une vraie offre gratuite."
+      }
+    },
+    {
+      "slug": "netlify",
+      "reason": {
+        "en": "Git-based deploy platform with a comparable free tier, more frontend/JAMstack-focused than Heroku.",
+        "fr": "Plateforme de déploiement basée sur git avec une offre gratuite comparable, plus orientée front-end/JAMstack qu'Heroku."
+      }
+    },
+    {
+      "slug": "render",
+      "reason": {
+        "en": "Direct Heroku-style PaaS competitor with managed databases and a free tier for web services.",
+        "fr": "Concurrent direct dans le style Heroku, avec bases de données gérées et une offre gratuite pour les services web."
+      }
+    },
+    {
+      "slug": "fly-io",
+      "reason": {
+        "en": "Usage-based deploy platform positioned as a modern Heroku successor, with global edge regions.",
+        "fr": "Plateforme de déploiement à l'usage positionnée comme un successeur moderne de Heroku, avec des régions edge mondiales."
+      }
+    },
+    {
+      "slug": "railway",
+      "reason": {
+        "en": "Usage-based PaaS with git-push deploys and a comparable developer experience to Heroku.",
+        "fr": "PaaS à l'usage avec déploiement par git push et une expérience développeur comparable à Heroku."
+      }
+    },
+    {
+      "slug": "digitalocean",
+      "reason": {
+        "en": "Managed app platform with comparable PaaS ergonomics at generally lower prices.",
+        "fr": "Plateforme applicative gérée avec une ergonomie PaaS comparable, à des prix généralement plus bas."
+      }
+    }
   ],
-  "missingAlternatives": [
-    { "name": "Railway", "officialUrl": "https://railway.com", "reason": "Direct Heroku-style PaaS competitor with usage-based pricing, not in the catalogue" }
+  "missingAlternatives": [],
+  "unknowns": [
+    "No free tier confirmed anywhere on the pricing page; the exact monthly total for a minimal production app (dyno + database) is not stated as a single figure."
   ],
-  "unknowns": ["No free tier confirmed anywhere on the pricing page; the exact monthly total for a minimal production app (dyno + database) is not stated as a single figure."],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "There is no free tier and real projects stack several paid line items, but managed Postgres/Redis and automated scaling remove real operational overhead.",
+        "fr": "Il n'y a pas d'offre gratuite et un vrai projet empile plusieurs lignes payantes, mais Postgres/Redis gérés et la mise à l'échelle automatique suppriment une vraie charge opérationnelle.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Apps deploy via a simple git push or CI/CD, without any server configuration.",
+        "fr": "Les applications se déploient par un simple git push ou via CI/CD, sans aucune configuration serveur.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "The platform delivers its PaaS promise directly, with managed data services and automated monitoring included by default.",
+        "fr": "La plateforme tient sa promesse de PaaS directement, avec des services de données gérés et une surveillance automatisée inclus par défaut.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "The feature set (managed data services, multi-language support, add-ons) is solid, but RAM is capped at 0.5GB even up to the Standard-1X production tier.",
+        "fr": "L'ensemble de fonctionnalités (services de données gérés, support multi-langage, modules) est solide, mais la RAM reste plafonnée à 0,5 Go même jusqu'à l'offre de production Standard-1X.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export of app data or portability off Heroku is not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données applicatives ou la portabilité hors d'Heroku ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers who want to deploy and scale backend applications without managing their own servers.",
+      "fr": "Développeurs qui veulent déployer et faire évoluer des applications backend sans gérer leurs propres serveurs."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Small production app: deploy a web app on a Basic dyno ($7/month) plus a managed Postgres add-on, without configuring servers.",
+      "fr": "Petite application en production : déployer une app web sur un dyno Basic (7 $/mois) avec un module Postgres géré, sans configurer de serveurs."
+    },
+    {
+      "en": "CI/CD pipeline: push code via git or connect a CI pipeline to auto-deploy changes to staging and production dynos.",
+      "fr": "Pipeline CI/CD : pousser le code via git ou connecter un pipeline CI pour déployer automatiquement les changements vers les dynos de test et de production."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Cloud app hosting",
+      "fr": "Hébergement cloud d'apps"
+    },
+    "shortDescription": {
+      "en": "A platform-as-a-service that deploys and runs backend applications via git push, with managed databases and automatic scaling, without managing servers.",
+      "fr": "Une plateforme qui déploie des applications backend via git push, avec bases de données gérées et mise à l'échelle automatique, sans gérer de serveurs."
+    },
+    "longDescription": {
+      "en": "Heroku is a platform-as-a-service built on managed containers called dynos, deploying apps through git push or CI/CD without server management. It bundles managed Postgres, a Redis-compatible key-value store and Kafka, plus automated monitoring and scaling included at no extra cost.\n\nPricing is usage-based with no free tier: the cheapest Eco dyno costs $5 per month but sleeps after 30 minutes of inactivity, so a real always-on app starts at the $7 Basic dyno, plus paid add-ons like Postgres from $5 per month. It suits developers who want git-push simplicity for a small production app without managing infrastructure.",
+      "fr": "Heroku est une plateforme-as-a-service construite sur des conteneurs gérés appelés dynos, qui déploie des applications via git push ou CI/CD sans gérer de serveurs. Elle inclut Postgres géré, un magasin clé-valeur compatible Redis et Kafka, plus surveillance et mise à l'échelle automatisées sans coût supplémentaire.\n\nLa tarification est à l'usage, sans offre gratuite : le dyno Eco le moins cher coûte 5 $ par mois mais se met en veille après 30 minutes d'inactivité, donc une app toujours active démarre avec le dyno Basic à 7 $, plus des modules payants comme Postgres à partir de 5 $ par mois. Il convient aux développeurs qui veulent la simplicité du git push pour une petite app en production sans gérer d'infrastructure."
+    },
+    "pros": [
+      {
+        "en": "Git-push deployment and managed data services (Postgres, Redis, Kafka) without any server administration.",
+        "fr": "Déploiement par git push et services de données gérés (Postgres, Redis, Kafka) sans aucune administration serveur."
+      },
+      {
+        "en": "Automated monitoring, alerting and scaling included at no extra cost on every dyno.",
+        "fr": "Surveillance, alertes et mise à l'échelle automatisées incluses sans coût supplémentaire sur chaque dyno."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free tier: even the cheapest Eco dyno costs $5/month and sleeps after inactivity.",
+        "fr": "Aucune offre gratuite : même le dyno Eco le moins cher coûte 5 $/mois et se met en veille après inactivité."
+      },
+      {
+        "en": "Real projects stack multiple paid line items (dyno + database + cache), pushing the effective monthly cost well above the headline price.",
+        "fr": "Un vrai projet empile plusieurs lignes payantes (dyno + base de données + cache), ce qui pousse le coût mensuel réel bien au-dessus du prix affiché."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want git-push deploys and managed Postgres/Redis for a small production app without touching server infrastructure.",
+        "fr": "Tu veux déployer par git push et profiter de Postgres/Redis gérés pour une petite application en production sans toucher à l'infrastructure serveur."
+      },
+      "avoidIf": {
+        "en": "You are on a tight budget and need a true free tier, or an always-on hobby project at no cost.",
+        "fr": "Tu as un budget serré et as besoin d'une vraie offre gratuite, ou d'un projet perso toujours actif sans frais."
+      },
+      "threshold": {
+        "en": "Budget at least $12/month for an always-on app (Basic dyno at $7 plus Postgres Essential-0 at $5), before any Redis add-on.",
+        "fr": "Compte au moins 12 $ par mois pour une application toujours active (dyno Basic à 7 $ plus Postgres Essential-0 à 5 $), avant tout module Redis."
+      },
+      "billingTraps": {
+        "en": "Cost scales per dyno and per add-on: a real app needs a web dyno plus at least one data add-on, pushing the real floor above the cheapest advertised dyno.",
+        "fr": "Le coût s'additionne par dyno et par module : une vraie application a besoin d'un dyno web et d'au moins un module de données, ce qui pousse le plancher réel au-dessus du prix du dyno le moins cher affiché."
+      }
+    }
+  }
 }
