@@ -3,7 +3,7 @@
   "slug": "unbounce",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Unbounce",
     "vendor": "Unbounce Marketing Solutions Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://unbounce.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Unbounce pricing" }
+    {
+      "id": "s1",
+      "url": "https://unbounce.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Unbounce pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,90 +30,328 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "starter",
         "name": "Starter",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 29, "annualPerMonth": 22, "oneTime": null },
+        "price": {
+          "monthly": 29,
+          "annualPerMonth": 22,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 pages, up to 500 monthly visitors, 1 user, 1 root domain.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "5 pages, up to 500 monthly visitors, 1 user, 1 root domain.",
+            "fr": "5 pages, jusqu'à 500 visiteurs mensuels, 1 utilisateur, 1 domaine racine."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "build",
         "name": "Build",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 99, "annualPerMonth": 74, "oneTime": null },
+        "price": {
+          "monthly": 99,
+          "annualPerMonth": 74,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited pages, up to 20,000 monthly visitors, 1 user, 1 root domain; includes popups, sticky bars, multi-step forms, AI copywriting, 1,000+ integrations.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited pages, up to 20,000 monthly visitors, 1 user, 1 root domain; includes popups, sticky bars, multi-step forms, AI copywriting, 1,000+ integrations.",
+            "fr": "Pages illimitées, jusqu'à 20 000 visiteurs mensuels, 1 utilisateur, 1 domaine racine ; inclut popups, barres collantes, formulaires multi-étapes, rédaction IA, plus de 1 000 intégrations."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "experiment",
         "name": "Experiment",
         "unit": "account",
         "minSeats": 3,
-        "price": { "monthly": 149, "annualPerMonth": 112, "oneTime": null },
+        "price": {
+          "monthly": 149,
+          "annualPerMonth": 112,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited A/B testing, up to 30,000 monthly visitors, 3 users, 2 root domains, unlimited variants, manual traffic allocation, confidence intervals, dynamic text replacement.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited A/B testing, up to 30,000 monthly visitors, 3 users, 2 root domains, unlimited variants, manual traffic allocation, confidence intervals, dynamic text replacement.",
+            "fr": "Tests A/B illimités, jusqu'à 30 000 visiteurs mensuels, 3 utilisateurs, 2 domaines racines, variantes illimitées, répartition manuelle du trafic, intervalles de confiance, remplacement dynamique de texte."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "optimize",
         "name": "Optimize",
         "unit": "account",
         "minSeats": 5,
-        "price": { "monthly": 249, "annualPerMonth": 187, "oneTime": null },
+        "price": {
+          "monthly": 249,
+          "annualPerMonth": 187,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "AI traffic optimization, up to 50,000 monthly visitors, 5 users, 3 root domains, page/popup scheduling, advanced triggers, industry benchmarking, audience insights.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "AI traffic optimization, up to 50,000 monthly visitors, 5 users, 3 root domains, page/popup scheduling, advanced triggers, industry benchmarking, audience insights.",
+            "fr": "Optimisation du trafic par IA, jusqu'à 50 000 visiteurs mensuels, 5 utilisateurs, 3 domaines racines, planification de pages/popups, déclencheurs avancés, comparaison sectorielle, analyse d'audience."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "concierge",
         "name": "Concierge & Agency",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Unlimited pages, 100,000+ monthly visitors, higher user/domain limits, dedicated success manager, implementation services.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited pages, 100,000+ monthly visitors, higher user/domain limits, dedicated success manager, implementation services.",
+            "fr": "Pages illimitées, plus de 100 000 visiteurs mensuels, limites d'utilisateurs/domaines plus élevées, chargé de compte dédié, services d'implémentation."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "build",
     "addOns": [],
     "cautions": [
-      { "en": "The entry Starter plan caps visitors at 500/month and provides only 5 pages, well below what most active landing-page campaigns need; Build is the first plan without a page cap.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "The entry Starter plan caps visitors at 500/month and provides only 5 pages, well below what most active landing-page campaigns need; Build is the first plan without a page cap.",
+        "fr": "Le plan d'entrée Starter plafonne les visiteurs à 500/mois et ne donne que 5 pages, bien en dessous des besoins de la plupart des campagnes de landing pages actives ; Build est le premier plan sans plafond de pages.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Drag-and-drop landing page builder with 100+ templates and AI copywriting assistance.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Built-in A/B testing with unlimited variants, manual traffic allocation and statistical confidence intervals on higher plans.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Popups, sticky bars and multi-step forms for on-site conversion, plus 1,000+ third-party integrations.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Drag-and-drop landing page builder with 100+ templates and AI copywriting assistance.",
+        "fr": "Constructeur de landing pages en glisser-déposer avec plus de 100 modèles et une assistance de rédaction par IA.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in A/B testing with unlimited variants, manual traffic allocation and statistical confidence intervals on higher plans.",
+        "fr": "Tests A/B intégrés avec variantes illimitées, répartition manuelle du trafic et intervalles de confiance statistiques sur les plans supérieurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Popups, sticky bars and multi-step forms for on-site conversion, plus 1,000+ third-party integrations.",
+        "fr": "Popups, barres collantes et formulaires multi-étapes pour la conversion sur site, plus de 1 000 intégrations tierces.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Monthly visitor caps apply to every plan (from 500 to 50,000); exceeding them requires an upgrade.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "A/B testing tools are gated to the Experiment plan and above, not available on Starter or Build.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Monthly visitor caps apply to every plan (from 500 to 50,000); exceeding them requires an upgrade.",
+        "fr": "Des plafonds de visiteurs mensuels s'appliquent à chaque plan (de 500 à 50 000) ; les dépasser nécessite une mise à niveau.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "A/B testing tools are gated to the Experiment plan and above, not available on Starter or Build.",
+        "fr": "Les outils de test A/B sont réservés au plan Experiment et au-delà, non disponibles sur Starter ou Build.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Marketing consultants and small teams running paid-traffic campaigns who need dedicated landing pages with conversion tracking.",
+      "fr": "Consultants marketing et petites équipes qui pilotent des campagnes de trafic payant et ont besoin de landing pages dédiées avec suivi de conversion."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Marketing consultant: build a dedicated landing page for a client's ad campaign with AI copywriting on the Build plan, without touching the main website.",
+      "fr": "Consultant marketing : construire une landing page dédiée pour la campagne publicitaire d'un client avec la rédaction IA du plan Build, sans toucher au site principal."
+    },
+    {
+      "en": "Small team: run unlimited A/B variant tests on Experiment to find the highest-converting page before scaling ad spend.",
+      "fr": "Petite équipe : lancer des tests A/B à variantes illimitées sur Experiment pour trouver la page la plus convertissante avant d'augmenter le budget publicitaire."
+    }
+  ],
   "alternatives": [
-    { "slug": "leadpages", "reason": { "en": "Direct competitor focused on standalone landing pages with a similar drag-and-drop builder.", "fr": null } },
-    { "slug": "instapage", "reason": { "en": "Landing page and conversion optimization platform targeting the same PPC/marketing use case.", "fr": null } },
-    { "slug": "webflow", "reason": { "en": "More general visual web builder that can also serve as a landing-page tool with deeper design control.", "fr": null } },
-    { "slug": "carrd", "reason": { "en": "Lightweight single-page site builder, a much cheaper alternative for simple landing pages.", "fr": null } }
+    {
+      "slug": "leadpages",
+      "reason": {
+        "en": "Direct competitor focused on standalone landing pages with a similar drag-and-drop builder.",
+        "fr": "Concurrent direct centré sur les landing pages autonomes avec un constructeur en glisser-déposer similaire."
+      }
+    },
+    {
+      "slug": "instapage",
+      "reason": {
+        "en": "Landing page and conversion optimization platform targeting the same PPC/marketing use case.",
+        "fr": "Plateforme de landing pages et d'optimisation de conversion visant le même usage PPC/marketing."
+      }
+    },
+    {
+      "slug": "webflow",
+      "reason": {
+        "en": "More general visual web builder that can also serve as a landing-page tool with deeper design control.",
+        "fr": "Constructeur web visuel plus général qui peut aussi servir d'outil de landing page avec un contrôle de design plus poussé."
+      }
+    },
+    {
+      "slug": "carrd",
+      "reason": {
+        "en": "Lightweight single-page site builder, a much cheaper alternative for simple landing pages.",
+        "fr": "Constructeur de site mono-page léger, une alternative beaucoup moins chère pour des landing pages simples."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The first plan without a page cap (Build, $99/month) adds AI copywriting and 1,000+ integrations, but A/B testing, the tool's core conversion benefit, only unlocks from Experiment at $149/month.",
+        "fr": "Le premier plan sans plafond de pages (Build, 99 $/mois) ajoute la rédaction IA et plus de 1 000 intégrations, mais les tests A/B, le bénéfice central de l'outil pour la conversion, ne se débloquent qu'à partir d'Experiment à 149 $/mois.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Drag-and-drop builder with 100+ templates gets a landing page live quickly without coding, a stated design goal of the product.",
+        "fr": "Le constructeur en glisser-déposer avec plus de 100 modèles permet de mettre une landing page en ligne rapidement sans coder, un objectif de conception affiché du produit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers landing pages, popups and on-site conversion tools as promised, but the headline A/B testing feature is gated above the entry Build plan.",
+        "fr": "Livre landing pages, popups et outils de conversion sur site comme promis, mais la fonctionnalité phare de test A/B est réservée au-dessus du plan d'entrée Build.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Unlimited A/B variants, statistical confidence intervals, AI traffic optimization and 1,000+ integrations on higher plans cover advanced conversion-optimization needs.",
+        "fr": "Variantes A/B illimitées, intervalles de confiance statistiques, optimisation du trafic par IA et plus de 1 000 intégrations sur les plans supérieurs couvrent des besoins avancés d'optimisation de conversion.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export format and page/data portability out of Unbounce were not covered by the collected sources.",
+        "fr": "Note neutre : le format d'export et la portabilité des pages ou données hors d'Unbounce ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Landing page builder",
+      "fr": "Constructeur de landing pages"
+    },
+    "shortDescription": {
+      "en": "Unbounce is a landing page builder with drag-and-drop design, AI copywriting and A/B testing, priced by monthly visitor cap.",
+      "fr": "Unbounce est un constructeur de landing pages en glisser-déposer avec rédaction IA et tests A/B, facturé selon un plafond de visiteurs mensuels."
+    },
+    "longDescription": {
+      "en": "Unbounce is a drag-and-drop landing page builder with 100+ templates, AI copywriting, popups, sticky bars and multi-step forms for on-site conversion, plus 1,000+ third-party integrations. Built-in A/B testing with unlimited variants and statistical confidence intervals becomes available from the Experiment plan up.\n\nEvery plan carries a monthly visitor cap, from 500 on Starter ($29/month) to 50,000 on Optimize ($249/month); Build, at $99/month ($74 billed annually), is the first plan without a page limit. It suits marketing consultants and small teams running paid-traffic campaigns who need dedicated landing pages separate from their main site.",
+      "fr": "Unbounce est un constructeur de landing pages en glisser-déposer avec plus de 100 modèles, une rédaction IA, des popups, des barres collantes et des formulaires multi-étapes, plus de 1 000 intégrations tierces. Les tests A/B avec variantes illimitées deviennent disponibles à partir du plan Experiment.\n\nChaque plan comporte un plafond de visiteurs mensuels, de 500 sur Starter (29 $/mois) à 50 000 sur Optimize (249 $/mois) ; Build, à 99 $/mois (74 $ en facturation annuelle), est le premier plan sans limite de pages. Il convient aux consultants marketing qui pilotent des campagnes de trafic payant."
+    },
+    "pros": [
+      {
+        "en": "Drag-and-drop builder with AI copywriting gets a campaign-specific landing page live without a developer.",
+        "fr": "Le constructeur en glisser-déposer avec rédaction IA met en ligne une landing page de campagne sans développeur."
+      },
+      {
+        "en": "1,000+ integrations connect the page to existing marketing and CRM tools without custom code.",
+        "fr": "Plus de 1 000 intégrations connectent la page aux outils marketing et CRM existants sans code personnalisé."
+      }
+    ],
+    "cons": [
+      {
+        "en": "A/B testing, the tool's core conversion-optimization feature, is locked behind the Experiment plan and above.",
+        "fr": "Les tests A/B, la fonctionnalité centrale d'optimisation de conversion, sont réservés au plan Experiment et au-delà."
+      },
+      {
+        "en": "Every plan enforces a monthly visitor cap, so a traffic spike can force an unplanned upgrade.",
+        "fr": "Chaque plan impose un plafond de visiteurs mensuels, donc un pic de trafic peut forcer une mise à niveau imprévue."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run paid-traffic campaigns and need dedicated, testable landing pages separate from your main website.",
+        "fr": "Tu pilotes des campagnes de trafic payant et as besoin de landing pages dédiées et testables, séparées de ton site principal."
+      },
+      "avoidIf": {
+        "en": "You just need one or two simple pages without A/B testing, where a cheaper single-page builder costs less.",
+        "fr": "Tu as juste besoin d'une ou deux pages simples sans tests A/B, où un constructeur mono-page moins cher suffit."
+      },
+      "threshold": {
+        "en": "Budget $99/month ($74/month billed annually) for Build, the first plan without a page cap; add Experiment at $149/month for A/B testing.",
+        "fr": "Prévois 99 $/mois (74 $/mois en facturation annuelle) pour Build, le premier plan sans plafond de pages ; ajoute Experiment à 149 $/mois pour les tests A/B."
+      }
+    }
+  },
   "unknowns": [],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

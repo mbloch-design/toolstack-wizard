@@ -3,7 +3,8 @@
   "slug": "productive-io",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Productive",
     "vendor": "Productive.io",
@@ -35,7 +36,7 @@
         "price": { "monthly": 10, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "5 account-level custom fields, 1 sales pipeline, 7-day recycle bin retention.", "sourceIds": ["s1"] }
+          { "en": "5 account-level custom fields, 1 sales pipeline, 7-day recycle bin retention.", "fr": "5 champs personnalisés au niveau du compte, 1 pipeline commercial, corbeille conservée 7 jours." }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "15 account-level custom fields, 3 sales pipelines, 180-day recycle bin retention, adds HRIS/invoicing integrations and rate cards.", "sourceIds": ["s1"] }
+          { "en": "15 account-level custom fields, 3 sales pipelines, 180-day recycle bin retention, adds HRIS/invoicing integrations and rate cards.", "fr": "15 champs personnalisés au niveau du compte, 3 pipelines commerciaux, corbeille conservée 180 jours, ajoute les intégrations HRIS/facturation et les grilles tarifaires." }
         ],
         "sourceIds": ["s1"]
       },
@@ -59,7 +60,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "20+ custom fields, 5 pipelines, revenue forecasting, multiple subsidiaries, advanced security (SSO, 2FA enforcement, SCIM).", "sourceIds": ["s1"] }
+          { "en": "20+ custom fields, 5 pipelines, revenue forecasting, multiple subsidiaries, advanced security (SSO, 2FA enforcement, SCIM).", "fr": "20 champs personnalisés et plus, 5 pipelines, prévisions de revenus, plusieurs filiales, sécurité avancée (SSO, 2FA obligatoire, SCIM)." }
         ],
         "sourceIds": ["s1"]
       }
@@ -67,20 +68,20 @@
     "comparePlanKey": "professional",
     "addOns": [],
     "cautions": [
-      { "en": "Note: the seed's own snapshot listed pricing as unpublished/on-quote, but the live pricing page shows public per-seat rates for Essential and Professional; only Ultimate is quote-based.", "sourceIds": ["s1"] },
-      { "en": "The pricing page's annual-vs-monthly figures for Essential/Professional could not be resolved cleanly (annual appeared to price higher per month than monthly billing), so only the monthly rate is recorded; verify the annual rate locally before publishing.", "sourceIds": ["s1"] }
+      { "en": "Note: the seed's own snapshot listed pricing as unpublished/on-quote, but the live pricing page shows public per-seat rates for Essential and Professional; only Ultimate is quote-based.", "fr": "Note : le relevé initial indiquait un tarif non public/sur devis, mais la page tarifaire en ligne affiche des tarifs par siège publics pour Essential et Professional ; seul Ultimate est sur devis.", "sourceIds": ["s1"] },
+      { "en": "The pricing page's annual-vs-monthly figures for Essential/Professional could not be resolved cleanly (annual appeared to price higher per month than monthly billing), so only the monthly rate is recorded; verify the annual rate locally before publishing.", "fr": "Les chiffres annuel contre mensuel de la page tarifaire pour Essential/Professional n'ont pas pu être résolus clairement (l'annuel semblait coûter plus cher par mois que le mensuel) ; seul le tarif mensuel est retenu ici. Vérifie le tarif annuel avant publication.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "All-in-one agency management: project management, resource planning, budgeting, and invoicing in one platform.", "sourceIds": ["s1"] },
-      { "en": "Time tracking with an AI assistant and AI-assisted time entries.", "sourceIds": ["s1"] },
-      { "en": "Reporting and forecasting, with a Scenario Builder on higher tiers.", "sourceIds": ["s1"] },
-      { "en": "API access and native Slack integration on all plans.", "sourceIds": ["s1"] }
+      { "en": "All-in-one agency management: project management, resource planning, budgeting, and invoicing in one platform.", "fr": "Gestion d'agence tout-en-un : gestion de projet, planification des ressources, budgets et facturation dans une seule plateforme.", "sourceIds": ["s1"] },
+      { "en": "Time tracking with an AI assistant and AI-assisted time entries.", "fr": "Suivi du temps avec un assistant IA et des saisies de temps assistées par IA.", "sourceIds": ["s1"] },
+      { "en": "Reporting and forecasting, with a Scenario Builder on higher tiers.", "fr": "Reporting et prévisions, avec un Scenario Builder sur les offres supérieures.", "sourceIds": ["s1"] },
+      { "en": "API access and native Slack integration on all plans.", "fr": "Accès API et intégration Slack native sur toutes les offres.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Advanced security controls (SSO, 2FA enforcement, SCIM) are Ultimate-only and require a custom quote.", "sourceIds": ["s1"] },
-      { "en": "HubSpot integration and webhooks are limited to the top Ultimate tier.", "sourceIds": ["s1"] }
+      { "en": "Advanced security controls (SSO, 2FA enforcement, SCIM) are Ultimate-only and require a custom quote.", "fr": "Les contrôles de sécurité avancés (SSO, 2FA obligatoire, SCIM) sont réservés à Ultimate et demandent un devis sur mesure.", "sourceIds": ["s1"] },
+      { "en": "HubSpot integration and webhooks are limited to the top Ultimate tier.", "fr": "L'intégration HubSpot et les webhooks sont limités à l'offre Ultimate la plus haute.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] },
@@ -88,16 +89,65 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "An agency or consulting team lead who needs project management, resource planning, budgeting and invoicing together in one platform.", "fr": "Une responsable d'agence ou de conseil qui a besoin de gestion de projet, planification des ressources, budgets et facturation regroupés dans une seule plateforme." },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Run the agency: track project budgets, time, and invoicing together on the Professional plan instead of three separate tools.", "fr": "Piloter l'agence : suivre budgets de projet, temps et facturation ensemble avec l'offre Professional au lieu de trois outils séparés." },
+    { "en": "Forecast: use the Scenario Builder and revenue forecasting on Professional or Ultimate to plan resourcing ahead of new projects.", "fr": "Prévoir : utiliser le Scenario Builder et les prévisions de revenus sur Professional ou Ultimate pour planifier les ressources avant de nouveaux projets." }
+  ],
   "alternatives": [
-    { "slug": "asana", "reason": { "en": "Project management competitor used by agencies for delivery tracking." } },
-    { "slug": "clickup", "reason": { "en": "All-in-one work management tool covering similar project and time-tracking ground." } },
-    { "slug": "monday-com", "reason": { "en": "Work OS competitor with project, resource, and budget tracking." } }
+    { "slug": "asana", "reason": { "en": "Project management competitor used by agencies for delivery tracking.", "fr": "Concurrent en gestion de projet utilisé par les agences pour suivre la livraison." } },
+    { "slug": "clickup", "reason": { "en": "All-in-one work management tool covering similar project and time-tracking ground.", "fr": "Outil de gestion du travail tout-en-un couvrant un périmètre similaire de projet et de suivi du temps." } },
+    { "slug": "monday-com", "reason": { "en": "Work OS competitor with project, resource, and budget tracking.", "fr": "Concurrent type Work OS avec suivi de projet, de ressources et de budget." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Bundles project management, resource planning, budgeting and invoicing for a per-seat price starting at $10/month, cheaper than running three separate tools for an agency.", "fr": "Regroupe gestion de projet, planification des ressources, budgets et facturation pour un prix par siège dès 10 $/mois, moins cher que trois outils séparés pour une agence.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Core project and time-tracking features work without a specialist, but advanced security and HubSpot integration require moving to the quote-based Ultimate tier.", "fr": "Les fonctions de base de projet et de suivi du temps fonctionnent sans spécialiste, mais la sécurité avancée et l'intégration HubSpot demandent de passer à l'offre Ultimate sur devis.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers project management, resource planning, budgeting, invoicing and AI-assisted time tracking as promised, with native Slack integration on every plan.", "fr": "Assure la gestion de projet, la planification des ressources, les budgets, la facturation et le suivi du temps assisté par IA comme promis, avec l'intégration Slack native sur toutes les offres.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers the full agency-management stack (project, resource, budget, invoice, forecast) in one platform, broader than a single-purpose project tool.", "fr": "Couvre toute la chaîne de gestion d'agence (projet, ressources, budget, facturation, prévisions) dans une seule plateforme, plus large qu'un outil de projet mono-fonction.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability out of Productive are not covered by the collected sources.", "fr": "Note neutre : le format d'export et la portabilité des données hors de Productive ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Agency management", "fr": "Gestion d'agence" },
+    "shortDescription": { "en": "Productive bundles project management, resource planning, budgeting and invoicing for agencies and consulting teams in one platform.", "fr": "Productive regroupe gestion de projet, planification des ressources, budgets et facturation pour agences et équipes conseil dans une seule plateforme." },
+    "longDescription": {
+      "en": "Productive runs project management, resource planning, budgeting and invoicing in one platform, with AI-assisted time tracking, reporting, and a Scenario Builder for forecasting on higher tiers. Native Slack integration and API access come on every plan.\n\nThere's no free plan: Essential starts at $10/user/month with 1 sales pipeline and 5 custom fields, Professional at $25/user/month adds HRIS/invoicing integrations and more pipelines, and Ultimate is quote-based with advanced security (SSO, SCIM) and revenue forecasting. It fits an agency or consulting team lead who wants project, resource and budget tracking in one place, more than a solo freelancer.",
+      "fr": "Productive réunit gestion de projet, planification des ressources, budgets et facturation dans une seule plateforme, avec suivi du temps assisté par IA, reporting et un Scenario Builder pour les prévisions sur les offres supérieures. L'intégration Slack native et l'accès API sont inclus sur toutes les offres.\n\nPas d'offre gratuite : Essential démarre à 10 $/utilisateur/mois avec 1 pipeline commercial et 5 champs personnalisés, Professional à 25 $/utilisateur/mois ajoute les intégrations HRIS/facturation et plus de pipelines, et Ultimate est sur devis avec sécurité avancée (SSO, SCIM) et prévisions de revenus. Convient à une responsable d'agence ou de conseil qui veut suivi de projet, de ressources et de budget au même endroit, plus qu'à un indépendant seul."
+    },
+    "pros": [
+      { "en": "Project management, resource planning, budgeting and invoicing run in one platform instead of several tools.", "fr": "Gestion de projet, planification des ressources, budgets et facturation tournent dans une seule plateforme plutôt que dans plusieurs outils." },
+      { "en": "Native Slack integration and API access are included from the entry Essential plan.", "fr": "L'intégration Slack native et l'accès API sont inclus dès l'offre d'entrée Essential." }
+    ],
+    "cons": [
+      { "en": "Advanced security (SSO, 2FA enforcement, SCIM) and HubSpot integration require the quote-based Ultimate tier.", "fr": "La sécurité avancée (SSO, 2FA obligatoire, SCIM) et l'intégration HubSpot demandent l'offre Ultimate sur devis." },
+      { "en": "No free plan; pricing is per seat, which adds up for a growing team.", "fr": "Pas d'offre gratuite ; le tarif est par siège, ce qui s'accumule pour une équipe en croissance." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Your agency or consulting team wants project, resource, budget and invoicing tracking together without separate tools.", "fr": "Ton agence ou équipe conseil veut suivre projet, ressources, budget et facturation ensemble sans outils séparés." },
+      "avoidIf": { "en": "You're a solo freelancer who doesn't need resource planning or multi-pipeline sales tracking.", "fr": "Tu es un indépendant seul qui n'a pas besoin de planification des ressources ni de suivi commercial multi-pipeline." },
+      "threshold": { "en": "The comparison plan, Professional, costs $300/year per seat at the $25/month rate; budget per seat before adding team members.", "fr": "L'offre de comparaison, Professional, coûte 300 $/an par siège au tarif de 25 $/mois ; prévois ce budget par siège avant d'ajouter des membres." }
+    }
+  },
   "unknowns": [
     "Minimum seat count for Essential/Professional not stated as a hard requirement on the pricing page beyond the 10-user example used in the calculator."
   ],
   "conflicts": [
     "The queue seed snapshot flagged pricing as unpublished (comparePlan: 'Prix non public'), but the current official pricing page publishes per-seat rates for two of the three plans."
+  ],
+  "reviewNotes": [
+    "The official pricing page's annual billing figures for Essential/Professional could not be resolved cleanly against monthly billing during research (annual appeared to price higher per month); only the monthly rate was recorded. Confirm the actual annual per-seat rate on productive.io/pricing before publishing."
   ]
 }

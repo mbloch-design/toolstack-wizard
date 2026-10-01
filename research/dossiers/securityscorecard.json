@@ -3,7 +3,7 @@
   "slug": "securityscorecard",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "SecurityScorecard",
     "vendor": "SecurityScorecard, Inc.",
@@ -34,7 +34,7 @@
       "exists": true,
       "limits": {
         "en": "A free account is available giving access to a scorecard for one's own domain, questionnaire responses and basic dashboards.",
-        "fr": null
+        "fr": "Un compte gratuit donne accès à une fiche de notation pour son propre domaine, aux réponses de questionnaires et à des tableaux de bord de base."
       },
       "sourceIds": [
         "s1"
@@ -47,7 +47,7 @@
     "cautions": [
       {
         "en": "No public price list; paid tiers (reported informally as Core, Premium, Elite) require contacting sales, and cost scales with the number of vendors/domains monitored plus optional add-on modules.",
-        "fr": null,
+        "fr": "Aucune grille de prix publique : les formules payantes (rapportées de façon informelle comme Core, Premium, Elite) nécessitent de contacter les ventes, et le coût augmente avec le nombre de fournisseurs/domaines surveillés plus des modules optionnels.",
         "sourceIds": [
           "s1"
         ]
@@ -58,21 +58,21 @@
     "capabilities": [
       {
         "en": "Continuous third-party risk monitoring producing A-F security ratings for vendors and one's own organization.",
-        "fr": null,
+        "fr": "Surveillance continue du risque tiers, produisant des notes de sécurité de A à F pour les fournisseurs et pour sa propre organisation.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Automatic discovery of hidden third- and fourth-party vendors across the extended supply chain.",
-        "fr": null,
+        "fr": "Découverte automatique des fournisseurs tiers et quaternaires cachés dans l'ensemble de la chaîne d'approvisionnement étendue.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "AI-accelerated security questionnaire automation and predictive attack-path analytics (TITAN suite).",
-        "fr": null,
+        "fr": "Automatisation des questionnaires de sécurité accélérée par l'IA et analyse prédictive des chemins d'attaque (suite TITAN).",
         "sourceIds": [
           "s1"
         ]
@@ -81,14 +81,14 @@
     "limitations": [
       {
         "en": "No self-serve pricing; a sales engagement is required to get a quote for any paid tier.",
-        "fr": null,
+        "fr": "Aucune tarification en libre-service : un engagement commercial est nécessaire pour obtenir un devis sur n'importe quelle formule payante.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Oriented toward enterprise vendor-risk programs, not toward assessing one's own product for a small team.",
-        "fr": null,
+        "fr": "Orienté vers les grands programmes de gestion du risque fournisseur en entreprise, pas vers l'évaluation de son propre produit pour une petite équipe.",
         "sourceIds": [
           "s1"
         ]
@@ -119,14 +119,14 @@
       "slug": "creditsafe",
       "reason": {
         "en": "Alternative source of third-party risk/business data used in vendor due diligence.",
-        "fr": null
+        "fr": "Autre source de données de risque/affaires tiers utilisée dans la diligence raisonnable sur les fournisseurs."
       }
     },
     {
       "slug": "dun-bradstreet",
       "reason": {
         "en": "Established provider of business and vendor risk data competing for the same due-diligence use case.",
-        "fr": null
+        "fr": "Fournisseur établi de données de risque affaires et fournisseurs, concurrent sur le même usage de diligence raisonnable."
       }
     }
   ],
@@ -134,5 +134,119 @@
   "unknowns": [
     "No public pricing figures could be verified for any paid tier; third-party estimates exist but are not confirmed by SecurityScorecard's own site and were excluded."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "No public pricing is available for any paid tier, so the sources give no way to weigh cost against benefit.",
+        "fr": "Aucun prix public n'est disponible pour une formule payante, donc les sources ne permettent pas de peser le coût face au bénéfice.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A free account gives immediate access to one's own scorecard, but every paid tier requires a sales engagement, a mixed signal on ease of first use.",
+        "fr": "Un compte gratuit donne un accès immédiat à sa propre fiche de notation, mais chaque formule payante nécessite un engagement commercial, un signal mixte sur la facilité du premier usage.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "A-F security ratings, vendor discovery and questionnaire automation are documented as delivered, matching the stated risk-monitoring promise.",
+        "fr": "Les notes de sécurité de A à F, la découverte de fournisseurs et l'automatisation des questionnaires sont documentées comme livrées, conformément à la promesse de surveillance du risque annoncée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Automatic discovery of hidden third- and fourth-party vendors plus AI-accelerated predictive attack-path analytics indicate an advanced capability ceiling.",
+        "fr": "La découverte automatique de fournisseurs tiers et quaternaires cachés, avec une analyse prédictive des chemins d'attaque accélérée par l'IA, indique un plafond de capacité avancé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or migration-out options for scorecards and vendor data are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ou de migration en sortie des fiches de notation et données fournisseurs ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Security and ops teams monitoring vendor risk, though the product targets enterprise-scale programs.",
+      "fr": "Équipes sécurité et ops qui surveillent le risque fournisseur, même si le produit cible des programmes à l'échelle entreprise."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Vendor due diligence: pull an A-F security rating for a prospective vendor before signing a contract.",
+      "fr": "Diligence raisonnable fournisseur : obtenir une note de sécurité de A à F pour un futur fournisseur avant de signer un contrat."
+    },
+    {
+      "en": "Own-domain monitoring: check a free scorecard for your own company's domain to see how external scanners rate it.",
+      "fr": "Surveillance de son propre domaine : consulter une fiche de notation gratuite pour le domaine de son entreprise et voir comment les scanners externes le notent."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Vendor risk ratings",
+      "fr": "Notation du risque fournisseur"
+    },
+    "shortDescription": {
+      "en": "Third-party risk platform giving A-F security ratings for vendors, with a free own-domain account and quote-only paid tiers.",
+      "fr": "Plateforme de risque tiers : notes de sécurité de A à F pour les fournisseurs, compte gratuit pour son domaine, formules payantes sur devis."
+    },
+    "longDescription": {
+      "en": "SecurityScorecard continuously monitors third-party risk, producing A-F security ratings for vendors and for one's own organization, with automatic discovery of hidden third- and fourth-party vendors across the supply chain. Its TITAN suite adds AI-accelerated questionnaire automation and predictive attack-path analytics.\n\nA free account gives access to a scorecard for your own domain, questionnaire responses and basic dashboards. Paid tiers (informally reported as Core, Premium and Elite) have no public pricing: cost scales with the number of vendors and domains monitored, requires a sales engagement, and is oriented toward enterprise vendor-risk programs rather than a small team assessing its own exposure.",
+      "fr": "SecurityScorecard surveille en continu le risque tiers, produisant des notes de sécurité de A à F pour les fournisseurs et pour sa propre organisation, avec une découverte automatique des fournisseurs tiers et quaternaires cachés dans la chaîne d'approvisionnement. Sa suite TITAN ajoute une automatisation des questionnaires par IA et une analyse prédictive des chemins d'attaque.\n\nUn compte gratuit donne accès à une fiche de notation pour son propre domaine, aux réponses de questionnaires et à des tableaux de bord de base. Les formules payantes n'ont pas de prix public : le coût augmente avec le nombre de fournisseurs surveillés, nécessite un engagement commercial, et vise des programmes de risque fournisseur à l'échelle entreprise plutôt qu'une petite équipe."
+    },
+    "pros": [
+      {
+        "en": "Free account gives an immediate A-F rating for your own domain with no sales process.",
+        "fr": "Le compte gratuit donne une note A à F immédiate pour son propre domaine, sans processus commercial."
+      },
+      {
+        "en": "Automatic discovery of hidden third- and fourth-party vendors goes beyond a simple vendor list.",
+        "fr": "La découverte automatique de fournisseurs tiers et quaternaires cachés va au-delà d'une simple liste de fournisseurs."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No public pricing for any paid tier; every upgrade requires a sales conversation.",
+        "fr": "Aucun prix public pour les formules payantes : chaque mise à niveau nécessite une conversation commerciale."
+      },
+      {
+        "en": "Built for enterprise vendor-risk programs, not for assessing a small team's own exposure.",
+        "fr": "Conçu pour des programmes de risque fournisseur en entreprise, pas pour évaluer l'exposition d'une petite équipe."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run vendor due diligence at a scale that justifies a sales-led enterprise risk-monitoring contract.",
+        "fr": "Tu gères une diligence raisonnable fournisseur à une échelle qui justifie un contrat de surveillance du risque en entreprise mené par les ventes."
+      },
+      "avoidIf": {
+        "en": "You only need a quick check of your own domain's security posture; the free account already covers that.",
+        "fr": "Tu as seulement besoin d'un contrôle rapide de la posture de sécurité de ton propre domaine : le compte gratuit couvre déjà ce besoin."
+      },
+      "threshold": {
+        "en": "No public price exists for the paid tiers; cost depends on a vendor quote scaled to the number of domains monitored, so there is no fixed threshold to compare against.",
+        "fr": "Aucun prix public n'existe pour les formules payantes : le coût dépend d'un devis éditeur proportionnel au nombre de domaines surveillés, donc il n'y a pas de seuil fixe à comparer."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

@@ -3,7 +3,7 @@
   "slug": "bubble",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Bubble",
     "vendor": "Bubble Group, Inc.",
@@ -34,7 +34,7 @@
       "exists": true,
       "limits": {
         "en": "Development-version access only, 1 app editor, 6 hours of server logs, 50K workload units/month, includes API connector.",
-        "fr": null
+        "fr": "Accès à la version de développement uniquement, 1 éditeur d'application, 6 heures de logs serveur, 50 000 unités de charge/mois, connecteur API inclus."
       },
       "sourceIds": [
         "s1"
@@ -55,7 +55,7 @@
         "keyLimits": [
           {
             "en": "Development-version access only, 1 app editor, 50K workload units/month.",
-            "fr": null
+            "fr": "Accès à la version de développement uniquement, 1 éditeur d'application, 50 000 unités de charge/mois."
           }
         ],
         "sourceIds": [
@@ -76,7 +76,7 @@
         "keyLimits": [
           {
             "en": "Live website with custom domain, 175K workload units/month, 5 mobile build submissions/month, 3 live app versions, basic version control, 2 days of server logs.",
-            "fr": null
+            "fr": "Site en ligne avec domaine personnalisé, 175 000 unités de charge/mois, 5 soumissions mobiles/mois, 3 versions d'application en ligne, contrôle de version basique, 2 jours de logs serveur."
           }
         ],
         "sourceIds": [
@@ -97,7 +97,7 @@
         "keyLimits": [
           {
             "en": "250K workload units/month, 2 app editors, 10 custom branches, premium version control with 2FA, 14 days of server logs, 10 mobile build submissions/month.",
-            "fr": null
+            "fr": "250 000 unités de charge/mois, 2 éditeurs d'application, 10 branches personnalisées, contrôle de version avancé avec 2FA, 14 jours de logs serveur, 10 soumissions mobiles/mois."
           }
         ],
         "sourceIds": [
@@ -118,7 +118,7 @@
         "keyLimits": [
           {
             "en": "500K workload units/month, 5 app editors, 25 custom branches, 20 days of server logs, 20 mobile build submissions/month, sub-apps feature.",
-            "fr": null
+            "fr": "500 000 unités de charge/mois, 5 éditeurs d'application, 25 branches personnalisées, 20 jours de logs serveur, 20 soumissions mobiles/mois, fonctionnalité sous-applications."
           }
         ],
         "sourceIds": [
@@ -139,7 +139,7 @@
         "keyLimits": [
           {
             "en": "Custom workload, hosting location and build limits, dedicated support team, invoice/ACH payment options.",
-            "fr": null
+            "fr": "Charge, localisation d'hébergement et limites de build personnalisées, équipe de support dédiée, options de paiement par facture ou prélèvement."
           }
         ],
         "sourceIds": [
@@ -152,14 +152,14 @@
     "cautions": [
       {
         "en": "Pricing is measured in workload units (WU), a consumption metric representing server resources used, rather than a flat seat-based or usage-tier model, so real monthly cost depends on app complexity and traffic.",
-        "fr": null,
+        "fr": "La tarification se mesure en unités de charge (WU), une métrique de consommation représentant les ressources serveur utilisées, plutôt qu'un modèle par siège ou par palier fixe, donc le coût réel dépend de la complexité et du trafic de l'application.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "The Free plan only supports a development version; a live public website with a custom domain requires at least the Starter plan.",
-        "fr": null,
+        "fr": "Le plan gratuit ne permet qu'une version de développement ; un site public avec un domaine personnalisé nécessite au moins le plan Starter.",
         "sourceIds": [
           "s1"
         ]
@@ -170,14 +170,14 @@
     "capabilities": [
       {
         "en": "No-code visual builder for creating full web applications with a database and custom business logic (workflows).",
-        "fr": null,
+        "fr": "Constructeur visuel no-code pour créer des applications web complètes avec base de données et logique métier personnalisée (workflows).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Native mobile app build/submission pipeline included on paid plans (5 to 20 submissions per month depending on tier).",
-        "fr": null,
+        "fr": "Pipeline natif de build et de soumission d'applications mobiles inclus sur les plans payants (5 à 20 soumissions par mois selon le palier).",
         "sourceIds": [
           "s1"
         ]
@@ -186,14 +186,14 @@
     "limitations": [
       {
         "en": "Free plan cannot publish a live website with a custom domain, restricting it to development/prototyping use.",
-        "fr": null,
+        "fr": "Le plan gratuit ne permet pas de publier un site en ligne avec un domaine personnalisé, le limitant au développement et au prototypage.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Cost scales with workload units consumed, which can be hard to predict in advance for a non-technical builder before launch.",
-        "fr": null,
+        "fr": "Le coût évolue avec les unités de charge consommées, difficiles à anticiper pour un créateur non technique avant le lancement.",
         "sourceIds": [
           "s1"
         ]
@@ -206,24 +206,31 @@
   },
   "alternatives": [
     {
-      "slug": "wordpress",
+      "slug": "webflow",
       "reason": {
-        "en": "Broader web-building alternative, though more content-site oriented than full app logic.",
-        "fr": null
+        "en": "Major no-code web builder frequently compared to Bubble for building full sites and apps visually.",
+        "fr": "Constructeur no-code majeur souvent comparé à Bubble pour créer des sites et applications complètes visuellement."
       }
     },
     {
-      "slug": "wix",
+      "slug": "glide",
       "reason": {
-        "en": "No-code website builder competitor, though generally less suited to complex app logic than Bubble.",
-        "fr": null
+        "en": "No-code app builder covering a similar database-driven app use case, with a stronger mobile-first focus.",
+        "fr": "Constructeur d'applications no-code couvrant un usage similaire d'applications pilotées par base de données, avec une approche plus orientée mobile."
+      }
+    },
+    {
+      "slug": "softr",
+      "reason": {
+        "en": "No-code app builder for building web apps and portals on top of a database, targeting the same non-technical builder.",
+        "fr": "Constructeur no-code pour créer des applications web et des portails au-dessus d'une base de données, pour le même créateur non technique."
       }
     },
     {
       "slug": "budibase",
       "reason": {
         "en": "No-code/low-code app builder competitor with an open-source option.",
-        "fr": null
+        "fr": "Concurrent no-code/low-code avec une option open source."
       }
     }
   ],
@@ -232,15 +239,126 @@
       "name": "Adalo",
       "officialUrl": "https://www.adalo.com/",
       "reason": "Direct no-code app-builder competitor, especially for mobile apps, not present in the catalogue."
-    },
-    {
-      "name": "Webflow",
-      "officialUrl": "https://webflow.com/",
-      "reason": "Major no-code web builder frequently compared to Bubble, absent from the catalogue."
     }
   ],
   "unknowns": [
     "annualPerMonth pricing was not shown separately from monthly on the fetched page; only a single price per plan was displayed, so annual billing terms are unconfirmed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Lets a non-technical builder ship a full web app with a database and custom logic from $59/month, far below hiring a developer team.",
+        "fr": "Permet à un créateur non technique de livrer une application web complète avec base de données et logique personnalisée dès 59 $/mois, bien en dessous du coût d'une équipe de développement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to a first working app on the free development version was not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour obtenir une première application fonctionnelle sur le plan gratuit ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers a live, publicly reachable app with custom domain and mobile submissions from Starter up, though the free plan only covers development.",
+        "fr": "Livre une application accessible publiquement avec domaine personnalisé et soumissions mobiles à partir de Starter, mais le plan gratuit ne couvre que le développement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Supports custom workflows, a full database and native mobile app submissions, scaling up to sub-apps and dedicated hosting at Enterprise.",
+        "fr": "Prend en charge des workflows personnalisés, une base de données complète et des soumissions d'applications mobiles natives, avec sous-applications et hébergement dédié en Enterprise.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability out of Bubble were not covered by the collected sources.",
+        "fr": "Note neutre : l'export des données et la portabilité hors de Bubble ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Independent consultants and small teams building a custom web app or internal tool without hiring developers.",
+      "fr": "Consultants indépendants et petites équipes qui construisent une application web ou un outil interne sur mesure sans embaucher de développeurs."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Independent consultant: build a client-facing web app with a database and custom workflows on Starter, without writing code.",
+      "fr": "Consultant indépendant : construire une application web pour un client avec base de données et workflows personnalisés sur Starter, sans écrire de code."
+    },
+    {
+      "en": "Small team: prototype an internal tool for free on the development plan, then publish it live once validated.",
+      "fr": "Petite équipe : prototyper un outil interne gratuitement sur le plan de développement, puis le publier une fois validé."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "No-code app builder",
+      "fr": "Créateur d'applications no-code"
+    },
+    "shortDescription": {
+      "en": "Bubble is a no-code visual builder for web applications with a database and custom logic, priced by server workload rather than seats.",
+      "fr": "Bubble est un constructeur visuel no-code pour des applications web avec base de données et logique personnalisée, facturé à la charge serveur plutôt qu'au siège."
+    },
+    "longDescription": {
+      "en": "Bubble is a no-code visual builder for full web applications, combining a drag-and-drop interface with a database and custom workflows for business logic. Paid plans add a native mobile app build and submission pipeline, from 5 submissions a month on Starter up to 20 on Team.\n\nThe free plan only supports a development version; publishing a live site with a custom domain requires at least Starter, at $59/month. Cost is metered in workload units rather than seats, so it scales with app complexity and traffic. It suits consultants and small teams building a custom app without hiring developers, provided they can plan around a usage-based bill.",
+      "fr": "Bubble est un constructeur visuel no-code pour des applications web complètes, combinant glisser-déposer, base de données et workflows personnalisés pour la logique métier. Les plans payants ajoutent un pipeline natif de build et de soumission mobile, de 5 soumissions/mois sur Starter à 20 sur Team.\n\nLe plan gratuit ne permet qu'une version de développement ; publier un site avec domaine personnalisé demande au moins Starter, à 59 $/mois. Le coût est mesuré en unités de charge plutôt qu'au siège, donc il évolue avec la complexité et le trafic de l'application."
+    },
+    "pros": [
+      {
+        "en": "Combines a visual builder, database and custom workflows in one tool, without separate hosting to configure.",
+        "fr": "Combine constructeur visuel, base de données et workflows personnalisés dans un seul outil, sans hébergement séparé à configurer."
+      },
+      {
+        "en": "Native mobile app build and submission pipeline is included from the Starter plan up.",
+        "fr": "Pipeline natif de build et de soumission d'applications mobiles inclus dès le plan Starter."
+      }
+    ],
+    "cons": [
+      {
+        "en": "The free plan cannot publish a live site with a custom domain, limiting it to development and prototyping.",
+        "fr": "Le plan gratuit ne peut pas publier de site en ligne avec domaine personnalisé, le limitant au développement et au prototypage."
+      },
+      {
+        "en": "Workload-unit pricing is hard to predict in advance for a non-technical builder before launch.",
+        "fr": "La tarification en unités de charge est difficile à anticiper pour un créateur non technique avant le lancement."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a database-backed web app with custom logic and are ready to budget for usage-based pricing.",
+        "fr": "Tu as besoin d'une application web avec base de données et logique personnalisée, et tu peux budgéter une tarification à l'usage."
+      },
+      "avoidIf": {
+        "en": "You only need a simple marketing site or blog, where a flat-rate builder costs less and is more predictable.",
+        "fr": "Tu as seulement besoin d'un site vitrine ou d'un blog simple, où un constructeur à prix fixe coûte moins cher et reste plus prévisible."
+      },
+      "threshold": {
+        "en": "Budget at least $59/month (Starter) to publish a live app with a custom domain.",
+        "fr": "Prévois au moins 59 $/mois (Starter) pour publier une application en ligne avec un domaine personnalisé."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "No annualPerMonth figure was shown separately on the pricing page; confirm whether Bubble offers an annual-billing discount on bubble.io/pricing."
+  ]
 }

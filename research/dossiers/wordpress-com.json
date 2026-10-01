@@ -3,7 +3,8 @@
   "slug": "wordpress-com",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "WordPress.com",
     "vendor": "Automattic Inc.",
@@ -15,13 +16,7 @@
     "statusNote": null
   },
   "sources": [
-    {
-      "id": "s1",
-      "url": "https://wordpress.com/pricing/",
-      "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "WordPress.com pricing"
-    }
+    { "id": "s1", "url": "https://wordpress.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "WordPress.com pricing" }
   ],
   "pricing": {
     "model": "freemium",
@@ -34,170 +29,152 @@
       "exists": true,
       "limits": {
         "en": "1 GB storage, WordPress.com subdomain only, unlimited pages/posts, basic 7-day stats, no plugins or custom domain, ads shown to visitors.",
-        "fr": null
+        "fr": "1 Go de stockage, sous-domaine WordPress.com uniquement, pages et articles illimités, statistiques basiques sur 7 jours, aucun plugin ni domaine personnalisé, publicités affichées aux visiteurs."
       },
-      "sourceIds": [
-        "s1"
-      ]
+      "sourceIds": ["s1"]
     },
     "trial": null,
     "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 GB storage, WordPress.com subdomain only, no plugins or custom domain, ads shown to visitors.", "fr": "1 Go de stockage, sous-domaine WordPress.com uniquement, aucun plugin ni domaine personnalisé, publicités affichées aux visiteurs." }
+        ],
+        "sourceIds": ["s1"]
+      },
       {
         "key": "personal",
         "name": "Personal",
         "unit": "account",
         "minSeats": null,
-        "price": {
-          "monthly": 9,
-          "annualPerMonth": 4,
-          "oneTime": null
-        },
+        "price": { "monthly": 9, "annualPerMonth": 4, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "6 GB storage; free domain for 1 year, removes visitor ads, guided site builder, premium themes.",
-            "fr": null
-          }
+          { "en": "6 GB storage; free domain for 1 year, removes visitor ads, guided site builder, premium themes.", "fr": "6 Go de stockage ; domaine gratuit pendant 1 an, suppression des publicités visiteurs, créateur de site guidé, thèmes premium." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "account",
         "minSeats": null,
-        "price": {
-          "monthly": 18,
-          "annualPerMonth": 8,
-          "oneTime": null
-        },
+        "price": { "monthly": 18, "annualPerMonth": 8, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "13 GB storage; adds payment buttons, video uploads, premium analytics with UTM tracking.",
-            "fr": null
-          }
+          { "en": "13 GB storage; adds payment buttons, video uploads, premium analytics with UTM tracking.", "fr": "13 Go de stockage ; ajoute des boutons de paiement, l'envoi de vidéos, des statistiques premium avec suivi UTM." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "business",
         "name": "Business",
         "unit": "account",
         "minSeats": null,
-        "price": {
-          "monthly": 40,
-          "annualPerMonth": 25,
-          "oneTime": null
-        },
+        "price": { "monthly": 40, "annualPerMonth": 25, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "50 GB storage (expandable); plugin support, built-in AI assistant, 250 GB VideoPress, email marketing, one-click restores.",
-            "fr": null
-          }
+          { "en": "50 GB storage (expandable); plugin support, built-in AI assistant, 250 GB VideoPress, email marketing, one-click restores.", "fr": "50 Go de stockage (extensible) ; prise en charge des plugins, assistant IA intégré, 250 Go VideoPress, email marketing, restaurations en un clic." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "commerce",
         "name": "Commerce",
         "unit": "account",
         "minSeats": null,
-        "price": {
-          "monthly": 70,
-          "annualPerMonth": 45,
-          "oneTime": null
-        },
+        "price": { "monthly": 70, "annualPerMonth": 45, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "50 GB storage (expandable); WooCommerce integration, unlimited products, sell in 60+ countries, 0% transaction fees.",
-            "fr": null
-          }
+          { "en": "50 GB storage (expandable); WooCommerce integration, unlimited products, sell in 60+ countries, 0% transaction fees.", "fr": "50 Go de stockage (extensible) ; intégration WooCommerce, produits illimités, vente dans plus de 60 pays, 0 % de frais de transaction." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "personal",
     "addOns": [],
     "cautions": [
-      {
-        "en": "Monthly prices are roughly double the annual-equivalent rate shown on the pricing page (e.g. Personal $9/mo vs $4/mo billed annually); multi-year commitments unlock further discounts.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Plugin support and a custom domain are unavailable below the Business plan, a common upgrade trigger.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Monthly prices are roughly double the annual-equivalent rate shown on the pricing page (e.g. Personal $9/mo vs $4/mo billed annually); multi-year commitments unlock further discounts.", "fr": "Les prix mensuels sont environ le double du tarif équivalent annuel affiché (ex. Personal à 9 $/mois contre 4 $/mois facturé à l'année) ; des engagements sur plusieurs années donnent des remises supplémentaires.", "sourceIds": ["s1"] },
+      { "en": "Plugin support and a custom domain are unavailable below the Business plan, a common upgrade trigger.", "fr": "La prise en charge des plugins et un domaine personnalisé ne sont pas disponibles sous le plan Business, une raison fréquente de passer à l'offre supérieure.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      {
-        "en": "Hosted website builder and blogging platform built on WordPress, with guided site setup and premium themes.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Built-in AI assistant and e-commerce (WooCommerce) integration on higher-tier plans.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Hosted website builder and blogging platform built on WordPress, with guided site setup and premium themes.", "fr": "Créateur de site et plateforme de blog hébergée, basée sur WordPress, avec une configuration de site guidée et des thèmes premium.", "sourceIds": ["s1"] },
+      { "en": "Built-in AI assistant and e-commerce (WooCommerce) integration on higher-tier plans.", "fr": "Assistant IA intégré et intégration e-commerce (WooCommerce) sur les plans supérieurs.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      {
-        "en": "Free plan cannot use a custom domain, cannot install plugins, and shows ads to visitors.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Third-party plugin support (beyond built-in features) requires the Business plan or above.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Free plan cannot use a custom domain, cannot install plugins, and shows ads to visitors.", "fr": "Le plan gratuit ne permet ni domaine personnalisé ni installation de plugins, et affiche des publicités aux visiteurs.", "sourceIds": ["s1"] },
+      { "en": "Third-party plugin support (beyond built-in features) requires the Business plan or above.", "fr": "La prise en charge de plugins tiers (au-delà des fonctions intégrées) demande le plan Business ou supérieur.", "sourceIds": ["s1"] }
     ],
     "integrations": [
-      {
-        "name": "WooCommerce",
-        "slug": "woocommerce",
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "name": "WooCommerce", "slug": "woocommerce", "sourceIds": ["s1"] }
     ],
-    "platforms": [
-      "web",
-      "ios",
-      "android"
-    ]
+    "platforms": ["web", "ios", "android"]
   },
-  "alternatives": [],
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A content creator who wants a hosted blog or site without managing their own WordPress installation or hosting.", "fr": "Une personne qui crée du contenu et veut un blog ou un site hébergé sans gérer elle-même une installation WordPress ou un hébergement." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Start: launch a free blog on a WordPress.com subdomain to publish posts before deciding to pay for a custom domain.", "fr": "Démarrage : lancer un blog gratuit sur un sous-domaine WordPress.com pour publier des articles avant de payer pour un domaine personnalisé." },
+    { "en": "Grow: upgrade to Business to install third-party plugins and use the built-in AI assistant once the free tier's limits become a problem.", "fr": "Croissance : passer au plan Business pour installer des plugins tiers et utiliser l'assistant IA intégré une fois les limites du plan gratuit atteintes." }
+  ],
+  "alternatives": [
+    { "slug": "wix", "reason": { "en": "Hosted all-in-one website builder covering the same need, a site and blog without managing WordPress.", "fr": "Créateur de site hébergé tout-en-un qui couvre le même besoin : un site et un blog sans gérer WordPress." } },
+    { "slug": "webflow", "reason": { "en": "Hosted website builder for the same core job with more visual design control.", "fr": "Créateur de site hébergé pour le même besoin, avec plus de contrôle sur le design." } },
+    { "slug": "cargo-site", "reason": { "en": "Hosted site builder covering the same need for a simpler, portfolio-style site.", "fr": "Créateur de site hébergé qui couvre le même besoin pour un site plus simple, type portfolio." } }
+  ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The free tier is usable for a basic blog, but a custom domain and plugins require Business at $25/month billed annually, a real jump for a solo site.", "fr": "Le plan gratuit permet un blog basique, mais un domaine personnalisé et les plugins demandent le plan Business à 25 $/mois facturé à l'année, un vrai saut pour un site individuel.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Guided site setup and no hosting to configure deliver a usable site quickly, without a technical setup step.", "fr": "La configuration de site guidée et l'absence d'hébergement à gérer permettent d'obtenir un site utilisable rapidement, sans étape technique.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the promised hosted blog/site experience as described, with AI assistance and e-commerce on higher tiers.", "fr": "Tient la promesse d'un blog ou site hébergé tel que décrit, avec assistance IA et e-commerce sur les plans supérieurs.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers blogging and basic e-commerce through WooCommerce, but plugin support and storage are capped by plan, below a self-hosted WordPress ceiling.", "fr": "Couvre le blog et l'e-commerce basique via WooCommerce, mais la prise en charge des plugins et le stockage sont plafonnés selon le plan, sous le plafond d'un WordPress auto-hébergé.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and site-migration options were not covered by the collected sources.", "fr": "Note neutre : les options d'export de données et de migration de site ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Hosted website builder", "fr": "Site web hébergé" },
+    "shortDescription": {
+      "en": "Hosted blogging and website platform built on WordPress, with a free tier and paid plans adding a custom domain, plugins and e-commerce.",
+      "fr": "Plateforme hébergée de blog et de site basée sur WordPress, avec un plan gratuit et des plans payants pour domaine, plugins et e-commerce."
+    },
+    "longDescription": {
+      "en": "WordPress.com is a hosted version of WordPress: no server to set up, a guided builder, and a free tier for a basic blog on a WordPress.com subdomain. Paid plans add a custom domain, premium themes, a built-in AI assistant and, at the top tier, a WooCommerce-powered store with no transaction fees.\n\nThe free plan shows ads and blocks plugins and custom domains, so most real sites need at least the Personal plan, and third-party plugins require Business. It fits someone who wants a working site today without managing WordPress hosting themselves.",
+      "fr": "WordPress.com est une version hébergée de WordPress : pas de serveur à configurer, un créateur de site guidé, et un plan gratuit pour un blog basique sur un sous-domaine WordPress.com. Les plans payants ajoutent un domaine personnalisé, des thèmes premium, un assistant IA intégré et, sur le plan le plus élevé, une boutique WooCommerce sans frais de transaction.\n\nLe plan gratuit affiche des publicités et bloque les plugins et le domaine personnalisé, donc la plupart des sites réels ont besoin au moins du plan Personal, et les plugins tiers demandent le plan Business. Il convient à qui veut un site opérationnel tout de suite sans gérer soi-même l'hébergement WordPress."
+    },
+    "pros": [
+      { "en": "No hosting or server setup to manage, unlike a self-hosted WordPress site.", "fr": "Aucun hébergement ni serveur à configurer, contrairement à un WordPress auto-hébergé." },
+      { "en": "Built-in AI assistant and WooCommerce store included on higher plans without extra setup.", "fr": "Assistant IA intégré et boutique WooCommerce inclus sur les plans supérieurs, sans configuration supplémentaire." }
+    ],
+    "cons": [
+      { "en": "Free plan blocks a custom domain and all plugins, pushing most real sites to a paid plan quickly.", "fr": "Le plan gratuit bloque le domaine personnalisé et tous les plugins, ce qui pousse vite la plupart des sites réels vers un plan payant." },
+      { "en": "Third-party plugin support, a core WordPress feature, only starts at the Business plan.", "fr": "La prise en charge des plugins tiers, une fonction centrale de WordPress, ne commence qu'au plan Business." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Keep if you want a hosted WordPress site with no server to manage and are fine paying for a custom domain and plugins as the site grows.", "fr": "À garder si tu veux un site WordPress hébergé sans serveur à gérer et acceptes de payer pour le domaine personnalisé et les plugins au fur et à mesure que le site grandit." },
+      "avoidIf": { "en": "Avoid if you need third-party plugins or full hosting control from day one; a self-hosted WordPress site or WooCommerce fits that better.", "fr": "À éviter si tu as besoin de plugins tiers ou d'un contrôle total de l'hébergement dès le départ ; un WordPress auto-hébergé ou WooCommerce correspond mieux." },
+      "threshold": { "en": "Decision threshold: the Business plan, at $25/month billed annually, is the entry point for plugins and a true production site.", "fr": "Seuil de décision : le plan Business, à 25 $/mois facturé à l'année, est le point d'entrée pour les plugins et un vrai site en production." }
+    }
+  },
+  "reviewNotes": [],
   "unknowns": [
-    "No directly comparable website-builder alternativeCandidates (e.g. Wix, Squarespace) were present in the seed's list; alternatives left empty rather than guessed from unrelated automation tools."
+    "No directly comparable website-builder alternativeCandidates (e.g. Wix, Squarespace) were present in the seed's list for this slug; wix, webflow and cargo-site were added from the general catalogue instead."
   ],
   "conflicts": []
 }

@@ -915,11 +915,11 @@
     "website": "https://apexcharts.com",
     "category": "ui-components",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit : La bibliothèque ApexCharts de base est gratuite et open source (sous licence MIT)",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Graphiques SVG interactifs pour React et Vue.js.",
-    "description_en": "Interactive SVG charts for React and Vue.js."
+    "description_fr": "Bibliothèque JavaScript de graphiques gratuite et open source, avec plus de 20 types de graphiques SVG pour React, Vue, Angular et JavaScript natif.",
+    "description_en": "Free, open-source JavaScript charting library with 20+ SVG chart types for React, Vue, Angular and vanilla JS, built for fast rendering."
   },
   {
     "name": "Apollo",
@@ -1156,11 +1156,11 @@
     "website": "https://ashbyhq.com",
     "category": "hris-payroll",
     "pricing": {
-      "free": "Pas de palier gratuit ; tarification entreprise sur devis, à partir d'un ticket d'entrée élevé.",
-      "paid": "Foundations, jusqu'à 100 employés: 400 $/mois; réduction de 10 % possible avec engagement annuel ; Plus, 101 à 1 000 employés: Sur devis ; Enterprise, plus de 1 000 employés: Sur devis"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 360 $/mois, plan All-In-One Foundations."
     },
-    "description_fr": "ATS (logiciel de suivi des candidatures) moderne pour startups et scale-ups, orienté analytics, entretiens structurés et reporting approfondi.",
-    "description_en": "Modern ATS (applicant tracking software) for startups and scale-ups, focused on analytics, structured interviews, and in-depth reporting."
+    "description_fr": "Ashby est un système de suivi des candidatures complet avec sourcing, planification et recrutement assisté par IA, à prix fixe jusqu'à 100 salariés.",
+    "description_en": "Ashby is a full applicant tracking system with sourcing, scheduling and AI-assisted hiring, flat-priced for companies up to 100 employees."
   },
   {
     "name": "Astute Graphics",
@@ -1398,11 +1398,11 @@
     "website": "https://aws.amazon.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Le Free Tier couvre trois types d'offres : des ressources toujours gratuites dans certaines limites, des ressources gratuites 12 mois pour les nouveaux comptes (ex. 750 heures/mois d'EC2 t3.micro), et des essais gratuits limités dans le temps sur certains services.",
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
     },
-    "description_fr": "Cloud complet pour compute, stockage, réseau, data et services managés.",
-    "description_en": "Full cloud for compute, storage, networking, data, and managed services."
+    "description_fr": "AWS est une plateforme cloud à l'usage pour le calcul, le stockage, les bases de données, le réseau et l'IA.",
+    "description_en": "AWS is a pay-as-you-go cloud platform for compute, storage, databases, networking and AI across hundreds of services."
   },
   {
     "name": "Axe DevTools",
@@ -1769,11 +1769,11 @@
     "website": "https://bolt.new",
     "category": "ai-general",
     "pricing": {
-      "free": "Accès gratuit limité par crédits Claude API ; StackBlitz (parent) facture les accès avancés.",
-      "paid": "Free: 0 $ (limité par crédit) ; Premium / Pro: montants sur la page officielle ou StackBlitz"
+      "free": "Plan gratuit : 300 000 jetons/jour, 1 M de jetons/mois, projets publics/privés, uploads de fichiers de 10 Mo, hébergement de site avec la marque Bolt.",
+      "paid": "Dès 25 $/mois, plan Pro."
     },
-    "description_fr": "Générateur d'applications web full-stack par IA (frontend React, backend Node.js) : décrivez l'app en langage naturel, Bolt génère code exécutable et dépliable dans le navigateur sans configuration locale.",
-    "description_en": "AI-powered full-stack web app generator (React frontend, Node.js backend): describe your app in natural language, Bolt generates executable, deployable code in the browser with zero local setup."
+    "description_fr": "Bolt.new est un outil IA qui génère des applications web full-stack déployables à partir de prompts en langage naturel, entièrement dans le navigateur.",
+    "description_en": "Bolt.new is an AI tool that generates deployable full-stack web apps from natural-language prompts, running entirely in the browser."
   },
   {
     "name": "BoomPop",
@@ -1967,9 +1967,12 @@
     "url_en": "https://tooltrim.com/en/tool/bubble",
     "website": "https://bubble.io",
     "category": "nocode-web",
-    "pricing": "Gratuit pour tester ; plans payants à partir de ~32$/mois pour un projet en production.",
-    "description_fr": "Outil no-code pour construire une vraie application web avec base de données et logique métier.",
-    "description_en": "No-code tool to build a real web application with database and business logic."
+    "pricing": {
+      "free": "Plan gratuit : Accès à la version de développement uniquement, 1 éditeur d'application, 6 heures de logs serveur, 50 000 unités de charge/mois, connecteur API inclus.",
+      "paid": "Dès 59 $/mois, plan Starter."
+    },
+    "description_fr": "Bubble est un constructeur visuel no-code pour des applications web avec base de données et logique personnalisée, facturé à la charge serveur plutôt qu'au siège.",
+    "description_en": "Bubble is a no-code visual builder for web applications with a database and custom logic, priced by server workload rather than seats."
   },
   {
     "name": "Buddy Punch",
@@ -2701,11 +2704,11 @@
     "website": "https://clickup.com",
     "category": "project-management",
     "pricing": {
-      "free": "Free Forever : tâches et membres illimités, 60 Mo de stockage partagé, fonctionnalités avancées limitées.",
-      "paid": "Unlimited : 10 $US/utilisateur/mois en mensuel ou 7 $US en annuel. Business : 19 $US en mensuel ou 12 $US en annuel. Enterprise sur devis. Offres IA et crédits à budgéter séparément ; tous les membres de l’espace passent au payant."
+      "free": "Plan gratuit : 60 Mo de stockage, tâches illimitées, jusqu'à 2 équipes/espaces, 1 formulaire, vues de base, 100 exécutions d'automatisation par mois.",
+      "paid": "Dès 7 $/mois, plan Unlimited."
     },
-    "description_fr": "Tâches, documents et vues projet dans un espace de travail personnalisable.",
-    "description_en": "Tasks, documents and project views in a customizable workspace.",
+    "description_fr": "Outil de gestion de travail tout-en-un : tâches, documents, tableaux de bord et chat, plan gratuit limité, formules payantes par siège.",
+    "description_en": "All-in-one work management tool combining tasks, docs, dashboards and chat, with a 60 MB free plan and per-seat paid tiers.",
     "alternatives": [
       "notion"
     ]
@@ -3516,11 +3519,11 @@
     "website": "https://www.getdbt.com",
     "category": "analytics",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : 1 siège, 3 000 modèles/mois, 1 projet (offre dbt Core/Developer).",
+      "paid": "Dès 100 $/mois, plan Starter."
     },
-    "description_fr": "Transformation SQL, modèles data et documentation de pipelines analytiques.",
-    "description_en": "SQL transformation, data models, and analytics pipeline documentation."
+    "description_fr": "dbt transforme le SQL en modèles de données versionnés et testables, avec une offre solo gratuite et un IDE dans le navigateur.",
+    "description_en": "dbt turns SQL into version-controlled, testable data models with a free solo plan and a browser-based IDE."
   },
   {
     "name": "Deel",
@@ -3659,11 +3662,11 @@
     "website": "https://didomi.io",
     "category": "legal-contracts",
     "pricing": {
-      "free": "",
-      "paid": "Sur devis uniquement, selon le volume de visiteurs uniques mensuels"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "Plateforme de gestion du consentement (CMP) enterprise, sur devis.",
-    "description_en": "Enterprise consent management platform (CMP), quote-based."
+    "description_fr": "Plateforme de gestion du consentement avec bandeaux conformes au RGPD, synchronisation entre appareils et suivi de conformité, entièrement tarifée sur devis sur plusieurs modules.",
+    "description_en": "Consent Management Platform with GDPR-grade banners, cross-device sync and compliance monitoring, priced entirely on quote across several modules."
   },
   {
     "name": "DigitalOcean",
@@ -4260,11 +4263,11 @@
     "website": "https://www.esko.com/en/products/studio",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai gratuit disponible ; pas de version gratuite permanente. Achat ou abonnement requis pour usage professionnel.",
-      "paid": "Esko Studio: Montants sur demande (editions et plans disponibles)"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "Suite logicielle d'emballage 3D pour designers, utilisant le plugin Adobe Illustrator pour concevoir et visualiser des boîtes, étiquettes et emballages souples avec rendu photorealist.",
-    "description_en": "3D packaging design software suite for designers, using Adobe Illustrator plugin to design and visualize boxes, labels, and flexible packaging with photorealistic rendering."
+    "description_fr": "Esko Studio est un plugin Adobe Illustrator pour la conception packaging 3D et la visualisation photoréaliste, avec une tarification disponible uniquement sur demande.",
+    "description_en": "Esko Studio is an Adobe Illustrator plugin for 3D packaging design and photorealistic visualization, with pricing available only on request."
   },
   {
     "name": "ESLint",
@@ -4441,14 +4444,14 @@
     "slug": "fellow",
     "url_fr": "https://tooltrim.com/fr/tool/fellow",
     "url_en": "https://tooltrim.com/en/tool/fellow",
-    "website": "https://fellow.app",
+    "website": "https://fellow.ai",
     "category": "ai-general",
     "pricing": {
-      "free": "Gratuit avec fonctions de base",
-      "paid": "Pro à partir de 6€/mois"
+      "free": "Plan gratuit : 5 notes IA à vie, 5 enregistrements IA à vie, jusqu'à 5 sièges.",
+      "paid": "Dès 7 $/mois, plan Team."
     },
-    "description_fr": "App de réunions IA : agendas collaboratifs, notes et suivi des actions.",
-    "description_en": "AI meeting app: collaborative agendas, notes and action tracking."
+    "description_fr": "Fellow est un assistant de réunion IA avec agendas collaboratifs, notes automatisées et suivi des actions, gratuit pour un plafond à vie de 5 notes.",
+    "description_en": "Fellow is an AI meeting assistant with collaborative agendas, automated notes and action-item tracking, free for a lifetime cap of 5 notes."
   },
   {
     "name": "Fig",
@@ -5086,9 +5089,12 @@
     "url_en": "https://tooltrim.com/en/tool/freshbooks",
     "website": "https://freshbooks.com",
     "category": "finance",
-    "pricing": "À partir de 15€/mois selon le nombre de clients facturables.",
-    "description_fr": "Logiciel de comptabilité et facturation pensé pour les freelances et petites entreprises.",
-    "description_en": "Accounting and invoicing software designed for freelancers and small businesses."
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 23 $/mois, plan Lite."
+    },
+    "description_fr": "Logiciel de facturation et comptabilité pour freelances et petites entreprises, sans plan gratuit et avec un plafond de clients sur la formule d'entrée.",
+    "description_en": "Invoicing and accounting software for freelancers and small businesses, with no free plan and a client-count cap on the entry tier."
   },
   {
     "name": "Freshservice",
@@ -6327,11 +6333,11 @@
     "website": "https://www.hyperbrowser.ai",
     "category": "automation",
     "pricing": {
-      "free": "Gratuit avec 1 000 crédits de démarrage",
-      "paid": "Startup 30$/mois · Scale 100$/mois"
+      "free": "Plan gratuit : 1 000 crédits, 1 navigateur simultané, aucune carte bancaire requise.",
+      "paid": "Dès 30 $/mois, plan Startup."
     },
-    "description_fr": "Infrastructure de navigateurs cloud pour agents IA et scraping à grande échelle.",
-    "description_en": "Cloud browser infrastructure for AI agents and large-scale scraping."
+    "description_fr": "Infrastructure de navigateur cloud facturée à l'usage pour agents IA, avec CAPTCHA et proxies résidentiels sur les formules payantes.",
+    "description_en": "Usage-priced cloud browser infrastructure for AI agents and large-scale scraping, with CAPTCHA solving and residential proxies on paid plans."
   },
   {
     "name": "Iconify for Figma",
@@ -6661,11 +6667,11 @@
     "website": "https://itch.io",
     "category": "creation",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan gratuit : Gratuit pour parcourir, acheter et publier ; itch.io prélève une commission choisie par le créateur (0 à 30 %) sur les ventes payantes au lieu d'un abonnement.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Plateforme de distribution pour jeux indés, prototypes et game jams.",
-    "description_en": "Distribution platform for indie games, prototypes, and game jams."
+    "description_fr": "Marketplace ouvert pour distribuer jeux indés, prototypes et assets créatifs, sans validation et avec une commission fixée par le créateur.",
+    "description_en": "Open marketplace for distributing indie games, prototypes and creative assets, with no approval process and a creator-set revenue share."
   },
   {
     "name": "Izabysof",
@@ -6741,11 +6747,11 @@
     "website": "https://getjobber.com",
     "category": "organization",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 14 jours sur le plan Grow.",
-      "paid": "Core 39$/mois (1 utilisateur) ; Connect 119$/mois (5 utilisateurs inclus, +29$/utilisateur sup.) ; Grow 199$/mois (10 utilisateurs inclus, +29$/sup.) ; Plus 599$/mois (15 utilisateurs inclus, +29$/sup.). Jusqu'à -40% en facturation annuelle."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 21 $/mois, plan Core."
     },
-    "description_fr": "Gestion de service terrain (devis, planning, facturation) avec app mobile très bien notée.",
-    "description_en": "Field service management (quotes, scheduling, invoicing) with a highly rated mobile app."
+    "description_fr": "Outil de gestion de service terrain pour devis, planification, facturation et paiements, sans plan gratuit et avec un tarif par utilisateur supplémentaire.",
+    "description_en": "Field service management tool for quoting, scheduling, invoicing and payments, with no free plan and a per-extra-user fee."
   },
   {
     "name": "Joint Push Pull",
@@ -6908,11 +6914,11 @@
     "website": "https://www.kelio.com",
     "category": "finance",
     "pricing": {
-      "free": "Aucun plan gratuit",
-      "paid": "À partir de 8€/mois par utilisateur"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "Gestion des temps et planification RH.",
-    "description_en": "Time management and HR scheduling."
+    "description_fr": "Kelio suit le temps, la présence et les congés des salariés, avec un contrôle d'accès aux bâtiments par badge possible, sur devis.",
+    "description_en": "Kelio tracks employee time, attendance and leave, and can add badge-based building access control on quote-based pricing."
   },
   {
     "name": "Keynote",
@@ -8046,11 +8052,11 @@
     "website": "https://maced.ai",
     "category": "security",
     "pricing": {
-      "free": "Démo disponible",
-      "paid": "Business 249$/mois"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 249 $/mois, plan Starter."
     },
-    "description_fr": "Plateforme de cybersécurité IA pour détecter et bloquer les menaces en temps réel.",
-    "description_en": "AI cybersecurity platform to detect and block threats in real time."
+    "description_fr": "Test d'intrusion autonome par IA pour applications web, API, code, infrastructure et cloud, avec rapports prêts pour l'audit et pull requests de correction générées automatiquement.",
+    "description_en": "Autonomous AI pentesting for web apps, APIs, code, infrastructure and cloud, with audit-ready reports and auto-generated fix pull requests."
   },
   {
     "name": "MadMapper",
@@ -8523,11 +8529,11 @@
     "website": "https://www.memberstack.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 29€/mois environ"
+      "free": "Plan gratuit : Gratuit tant que le site est en mode test/non lancé, avec accès complet aux fonctionnalités ; les coûts démarrent une fois le site lancé publiquement.",
+      "paid": "Dès 25 $/mois, plan Basic."
     },
-    "description_fr": "Membership et authentification no-code pour sites Webflow et produits légers.",
-    "description_en": "No-code membership and authentication for Webflow sites and lightweight products."
+    "description_fr": "Membership et verrouillage de paiement no-code pour sites Webflow, WordPress ou sur mesure, avec des frais par transaction sur la plupart des formules payantes.",
+    "description_en": "No-code membership and payment gating for Webflow, WordPress or custom sites, with per-transaction fees on most paid tiers."
   },
   {
     "name": "Meme Templates",
@@ -9229,11 +9235,11 @@
     "website": "https://www.netsuite.com",
     "category": "erp",
     "pricing": {
-      "free": "Aucun plan gratuit, pas d'essai en libre accès.",
-      "paid": "Prix sur devis uniquement, fonction des modules, utilisateurs et volume — généralement plusieurs milliers d'euros/mois pour une PME."
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "L'ERP cloud d'Oracle pour centraliser finance, stocks et opérations à l'échelle.",
-    "description_en": "Oracle's cloud ERP to centralize finance, inventory, and operations at scale."
+    "description_fr": "NetSuite est une suite ERP cloud couvrant finance, stocks, achats et gestion des commandes, facturée par utilisateur nommé sur un contrat négocié et sur devis.",
+    "description_en": "NetSuite is a cloud ERP suite covering finance, inventory, procurement and order management, priced per named user on a negotiated, quote-only contract."
   },
   {
     "name": "Newman",
@@ -10989,11 +10995,11 @@
     "website": "https://productive.io",
     "category": "project-management",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 25 $/mois, plan Professional."
     },
-    "description_fr": "Outil tout-en-un de gestion d'agence : gestion de projet, planification des ressources, budgets, facturation et reporting dans une seule plateforme, avec fonctions IA et intégrations (Jira, QuickBooks…).",
-    "description_en": "All-in-one agency management tool: project management, resource planning, budgets, invoicing and reporting in one platform, with AI features and integrations."
+    "description_fr": "Productive regroupe gestion de projet, planification des ressources, budgets et facturation pour agences et équipes conseil dans une seule plateforme.",
+    "description_en": "Productive bundles project management, resource planning, budgeting and invoicing for agencies and consulting teams in one platform."
   },
   {
     "name": "Profile Builder 3",
@@ -11492,11 +11498,11 @@
     "website": "https://react.dev",
     "category": "ui-components",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": null
+      "free": "Plan gratuit.",
+      "paid": "Pas d'offre payante obligatoire."
     },
-    "description_fr": "Bibliothèque JavaScript pour construire des interfaces utilisateur.",
-    "description_en": "A JavaScript library for building user interfaces."
+    "description_fr": "React est une bibliothèque JavaScript gratuite et open source pour construire des interfaces à base de composants, désormais gouvernée par la React Foundation indépendante.",
+    "description_en": "React is a free, open-source JavaScript library for building component-based user interfaces, now governed by the independent React Foundation."
   },
   {
     "name": "React Hook Form",
@@ -12183,11 +12189,11 @@
     "website": "https://www.rocketlawyer.com",
     "category": "legal-contracts",
     "pricing": {
-      "free": "Essai possible ; l'accès aux documents et aux consultations passe par une adhésion payante.",
-      "paid": "Adhésion mensuelle: environ 40 $/mois, résiliable à tout moment ; Adhésion annuelle (Rocket Legal+): environ 240 $/an, avec remises sur les services additionnels ; Agent enregistré: service additionnel, tarif réduit pour les membres"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 12,41 $/mois, plan Standard."
     },
-    "description_fr": "Plateforme juridique par abonnement (marché américain et britannique) : centaines de modèles de documents personnalisables via un questionnaire guidé, création d'entreprise, agent enregistré et consultations d'avocats incluses dans l'adhésion.",
-    "description_en": "Subscription legal platform (US and UK markets): hundreds of customisable document templates via a guided questionnaire, company formation, registered agent and attorney consultations included in the membership."
+    "description_fr": "Service par abonnement qui génère des modèles de documents juridiques, avec questions-réponses IA et relecture de contrats illimitées, signature électronique et avocats selon quota.",
+    "description_en": "Subscription service generating legal document templates with unlimited AI Q&A, contract review and e-signature, plus quota-based attorney access."
   },
   {
     "name": "RocketLink",
@@ -12475,11 +12481,11 @@
     "website": "https://www.sap.com/products/erp/s4hana.html",
     "category": "erp",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "SAP S/4HANA est un système ERP ou finance à connecter prudemment au reste de la stack.",
-    "description_en": "Next-generation SAP enterprise ERP (cloud and on-premise) for large organizations, replacing legacy systems with in-memory analytics and embedded AI."
+    "description_fr": "Suite ERP d'entreprise pour finance, supply chain et production, sans prix public et avec un projet d'implémentation mené par les ventes.",
+    "description_en": "Enterprise ERP suite for finance, supply chain and manufacturing, with no public pricing and a sales-led implementation project."
   },
   {
     "name": "SAP SuccessFactors",
@@ -12619,11 +12625,11 @@
     "website": "https://securityscorecard.com",
     "category": "vendor-risk-data",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Plan gratuit : Un compte gratuit donne accès à une fiche de notation pour son propre domaine, aux réponses de questionnaires et à des tableaux de bord de base.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "SecurityScorecard fournit des données de risque ou de conformité sur les fournisseurs.",
-    "description_en": "Third-party risk management (TPRM) platform assessing vendor security posture with A-F ratings, real-time monitoring, and threat intelligence to identify and mitigate cyber risks across extended supply chains."
+    "description_fr": "Plateforme de risque tiers : notes de sécurité de A à F pour les fournisseurs, compte gratuit pour son domaine, formules payantes sur devis.",
+    "description_en": "Third-party risk platform giving A-F security ratings for vendors, with a free own-domain account and quote-only paid tiers."
   },
   {
     "name": "Segment",
@@ -15000,11 +15006,11 @@
     "website": "https://unbounce.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Essai de 14 jours, démarrage annoncé sans carte bancaire.",
-      "paid": "Mensuel : Starter 29 USD, Build 99 USD, Experiment 149 USD, Optimize 249 USD. Limites de trafic : 500, 20 000, 30 000 et 50 000. Tests A/B dès Experiment. Offres Agency/Concierge sur devis, taxes à confirmer."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 74 $/mois, plan Build."
     },
-    "description_fr": "Landing pages de campagne et tests de conversion.",
-    "description_en": "Campaign landing pages and conversion testing."
+    "description_fr": "Unbounce est un constructeur de landing pages en glisser-déposer avec rédaction IA et tests A/B, facturé selon un plafond de visiteurs mensuels.",
+    "description_en": "Unbounce is a landing page builder with drag-and-drop design, AI copywriting and A/B testing, priced by monthly visitor cap."
   },
   {
     "name": "uncovr",
@@ -15049,11 +15055,11 @@
     "website": "https://unity.com",
     "category": "creation",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Plan gratuit : Unity Personal : gratuit pour les particuliers, créateurs individuels et petites équipes sous 200 000 $ de revenus ou de financement sur les 12 derniers mois ; publication web, bureau, AR/VR et mobile ; 1 000 crédits IA mensuels.",
+      "paid": "Dès 192,50 $/mois, plan Unity Pro."
     },
-    "description_fr": "Moteur temps réel pour jeux, applications interactives et expériences 3D.",
-    "description_en": "Real-time engine for games, interactive apps, and 3D experiences."
+    "description_fr": "Unity est un moteur temps réel pour créer des jeux et des apps 3D/AR/VR, gratuit sous un seuil de revenus ou de financement.",
+    "description_en": "Unity is a real-time engine for building games and interactive 3D/AR/VR apps, free until a project crosses a revenue or funding threshold."
   },
   {
     "name": "Unreal Engine",
@@ -15203,11 +15209,11 @@
     "website": "https://www.vectorworks.net",
     "category": "design-tools",
     "pricing": {
-      "free": "Pas de version gratuite grand public. Accès académique disponible pour les étudiants.",
-      "paid": "Service Select Subscription: Montants sur la page officielle ; Cloud Services: Montants sur la page officielle"
+      "free": "Pas de plan gratuit.",
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
     },
-    "description_fr": "Plateforme 3D CAO intégrée pour architecture, paysagisme, design d'éclairage et scénographie. Offre BIM natif, outils de modélisation 3D avancés et documentation projet. Disponible en plusieurs variantes selon la spécialité : Architect, Landmark, Spotlight et Fundamentals.",
-    "description_en": "Integrated 3D CAD platform for architecture, landscape design, lighting design, and scenic design. Offers native BIM, advanced 3D modeling tools, and project documentation. Available in specialist variants: Architect, Landmark, Spotlight, and Fundamentals."
+    "description_fr": "Vectorworks est une plateforme CAO/BIM 3D avec des gammes spécialisées pour l'architecture, le paysage, l'éclairage et la scénographie.",
+    "description_en": "Vectorworks is a 3D CAD/BIM platform with discipline-specific lines for architecture, landscape, lighting and scenic design."
   },
   {
     "name": "Vercel",
@@ -15758,9 +15764,12 @@
     "url_en": "https://tooltrim.com/en/tool/woocommerce",
     "website": "https://woocommerce.com",
     "category": "nocode-web",
-    "pricing": "Plugin gratuit ; coûts réels en hébergement (~10-30€/mois) et extensions payantes selon les besoins.",
-    "description_fr": "Plugin e-commerce gratuit qui transforme un site WordPress en boutique en ligne.",
-    "description_en": "Free e-commerce plugin that turns a WordPress site into an online store."
+    "pricing": {
+      "free": "Plan gratuit : Le plugin WooCommerce de base est gratuit sur un site WordPress existant et s'adapte de 1 à plus de 100 000 commandes par jour.",
+      "paid": "Dès 0 $/mois, plan WooCommerce (core plugin)."
+    },
+    "description_fr": "Plugin WordPress open source qui transforme un site en boutique en ligne, avec passerelles de paiement, calcul des taxes et centaines d'extensions payantes.",
+    "description_en": "Open-source WordPress plugin that turns a site into an online store, with payment gateways, tax calculation and hundreds of paid extensions."
   },
   {
     "name": "Wordfence",
@@ -15798,11 +15807,11 @@
     "website": "https://wordpress.com",
     "category": "automation",
     "pricing": {
-      "free": "Plan gratuit limité avec sous-domaine WordPress.com",
-      "paid": "Personal 9$/mois, Premium 18$/mois, Business 40$/mois, Commerce 70$/mois (tarifs réduits jusqu'à 55% en facturation annuelle)"
+      "free": "Plan gratuit : 1 Go de stockage, sous-domaine WordPress.com uniquement, pages et articles illimités, statistiques basiques sur 7 jours, aucun plugin ni domaine personnalisé, publicités affichées aux visiteurs.",
+      "paid": "Dès 4 $/mois, plan Personal."
     },
-    "description_fr": "Constructeur de site web et plateforme de blog.",
-    "description_en": "Website builder and blogging platform."
+    "description_fr": "Plateforme hébergée de blog et de site basée sur WordPress, avec un plan gratuit et des plans payants pour domaine, plugins et e-commerce.",
+    "description_en": "Hosted blogging and website platform built on WordPress, with a free tier and paid plans adding a custom domain, plugins and e-commerce."
   },
   {
     "name": "Workable",

@@ -3,7 +3,8 @@
   "slug": "vectorworks",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Vectorworks",
     "vendor": "Vectorworks, Inc. (Nemetschek Group)",
@@ -27,7 +28,7 @@
     "region": "US",
     "taxIncluded": null,
     "regularPriceUnknown": true,
-    "freePlan": { "exists": false, "limits": "Academic access available for students, not a public free plan.", "sourceIds": ["s1"] },
+    "freePlan": { "exists": false, "limits": { "en": "Academic access available for students, not a public free plan.", "fr": "Accès académique proposé aux étudiants, pas une offre gratuite publique." }, "sourceIds": ["s1"] },
     "plans": [
       {
         "key": "quote",
@@ -37,40 +38,91 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Pricing varies by product line (Architect, Landmark, Spotlight, Fundamentals) and by subscription vs. perpetual-license path; not published as a fixed list price.", "sourceIds": ["s1", "s2"] }
+          { "en": "Pricing varies by product line (Architect, Landmark, Spotlight, Fundamentals) and by subscription vs. perpetual-license path; not published as a fixed list price.", "fr": "Le prix varie selon la gamme de produit (Architect, Landmark, Spotlight, Fundamentals) et selon l'abonnement ou la licence perpétuelle choisie ; pas publié comme un prix de liste fixe." }
         ],
         "sourceIds": ["s1", "s2"]
       }
     ],
     "comparePlanKey": null,
     "addOns": [
-      { "en": "Vectorworks Service Select: annual software-service plan for perpetual-license holders, included free for subscription customers.", "sourceIds": ["s3"] }
+      { "en": "Vectorworks Service Select: annual software-service plan for perpetual-license holders, included free for subscription customers.", "fr": "Vectorworks Service Select : offre annuelle de service logiciel pour les détenteurs de licence perpétuelle, incluse gratuitement pour les clients en abonnement.", "sourceIds": ["s3"] }
     ],
     "cautions": [
-      { "en": "No published price list on the official site; a reseller/quote process determines the final price by product variant, region, and license type.", "sourceIds": ["s1", "s2"] }
+      { "en": "No published price list on the official site; a reseller/quote process determines the final price by product variant, region, and license type.", "fr": "Pas de grille tarifaire publiée sur le site officiel ; un processus de revendeur ou de devis détermine le prix final selon la variante de produit, la région et le type de licence.", "sourceIds": ["s1", "s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Integrated 3D CAD/BIM modeling across architecture, landscape, lighting, and scenic design.", "sourceIds": ["s1"] },
-      { "en": "Native BIM authoring with project documentation tools.", "sourceIds": ["s1"] },
-      { "en": "Specialist product lines for different disciplines: Architect, Landmark, Spotlight, Fundamentals.", "sourceIds": ["s1"] },
-      { "en": "Cloud services integration alongside desktop modeling.", "sourceIds": ["s1"] }
+      { "en": "Integrated 3D CAD/BIM modeling across architecture, landscape, lighting, and scenic design.", "fr": "Modélisation 3D CAO/BIM intégrée pour l'architecture, le paysagisme, l'éclairage et la scénographie.", "sourceIds": ["s1"] },
+      { "en": "Native BIM authoring with project documentation tools.", "fr": "Création BIM native avec des outils de documentation de projet.", "sourceIds": ["s1"] },
+      { "en": "Specialist product lines for different disciplines: Architect, Landmark, Spotlight, Fundamentals.", "fr": "Gammes de produits spécialisées selon la discipline : Architect, Landmark, Spotlight, Fundamentals.", "sourceIds": ["s1"] },
+      { "en": "Cloud services integration alongside desktop modeling.", "fr": "Intégration de services cloud en complément de la modélisation sur poste de travail.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No public price list; buyers must go through sales or a reseller for a quote.", "sourceIds": ["s1", "s2"] },
-      { "en": "Service Select (support/updates plan) availability varies by country.", "sourceIds": ["s3"] }
+      { "en": "No public price list; buyers must go through sales or a reseller for a quote.", "fr": "Pas de grille tarifaire publique ; les acheteurs doivent passer par le commercial ou un revendeur pour un devis.", "sourceIds": ["s1", "s2"] },
+      { "en": "Service Select (support/updates plan) availability varies by country.", "fr": "La disponibilité de Service Select (offre de support et mises à jour) varie selon le pays.", "sourceIds": ["s3"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "An independent architect, landscape designer or lighting/scenic designer who needs discipline-specific BIM/CAD, and can go through a quote process to buy.", "fr": "Un architecte, paysagiste ou concepteur lumière/scénographe indépendant qui a besoin d'un BIM/CAO spécialisé par discipline, et qui peut passer par un devis pour acheter." },
+    "soloRelevance": "medium",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Design: model an architecture or landscape project in native BIM and produce project documentation from the same file.", "fr": "Concevoir : modéliser un projet d'architecture ou de paysage en BIM natif et produire la documentation de projet depuis le même fichier." },
+    { "en": "Plan a show: use the Spotlight product line to design lighting or scenic layouts for a live event.", "fr": "Planifier un spectacle : utiliser la gamme Spotlight pour concevoir l'éclairage ou la scénographie d'un événement en direct." }
+  ],
   "alternatives": [
-    { "slug": "sketchup-pro", "reason": { "en": "Competing 3D CAD tool used across architecture and design workflows." } }
+    { "slug": "sketchup-pro", "reason": { "en": "Competing 3D CAD tool used across architecture and design workflows.", "fr": "Outil de CAO 3D concurrent utilisé dans les flux de travail d'architecture et de design." } },
+    { "slug": "autocad", "reason": { "en": "Widely used CAD competitor for architecture and technical drawing, without Vectorworks' discipline-specific product lines.", "fr": "Concurrent CAO très répandu pour l'architecture et le dessin technique, sans les gammes spécialisées par discipline de Vectorworks." } },
+    { "slug": "revit", "reason": { "en": "Direct BIM competitor for architecture projects, from the same Autodesk-vs-Nemetschek comparison set.", "fr": "Concurrent BIM direct pour les projets d'architecture, dans le même comparatif Autodesk contre Nemetschek." } },
+    { "slug": "archicad", "reason": { "en": "Direct BIM competitor aimed at architecture firms, often compared side by side with Vectorworks Architect.", "fr": "Concurrent BIM direct visant les agences d'architecture, souvent comparé directement à Vectorworks Architect." } },
+    { "slug": "rhino", "reason": { "en": "3D modeling competitor used for the free-form design work Vectorworks also covers.", "fr": "Concurrent de modélisation 3D utilisé pour le travail de conception libre que couvre aussi Vectorworks." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Neutral-leaning score: with no public price list, the cost-versus-benefit of a given product line and license type cannot be judged from the collected sources.", "fr": "Note proche de la neutralité : sans grille tarifaire publique, le rapport coût-bénéfice d'une gamme et d'un type de licence donnés ne peut pas être jugé à partir des sources relevées.", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "Choosing between subscription and perpetual license, and between four discipline-specific product lines, adds setup complexity before a first useful result.", "fr": "Choisir entre abonnement et licence perpétuelle, et entre quatre gammes spécialisées par discipline, ajoute de la complexité avant un premier résultat utile.", "sourceIds": ["s1", "s2"] },
+      "utilisation": { "en": "Delivers integrated 3D CAD/BIM modeling and project documentation across architecture, landscape, lighting and scenic design as described.", "fr": "Assure la modélisation 3D CAO/BIM intégrée et la documentation de projet pour l'architecture, le paysage, l'éclairage et la scénographie comme décrit.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Native BIM authoring plus four discipline-specific product lines cover a broad professional range, comparable to category leaders.", "fr": "La création BIM native et quatre gammes spécialisées par discipline couvrent un large éventail professionnel, comparable aux références de la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability out of Vectorworks are not covered by the collected sources.", "fr": "Note neutre : le format d'export et la portabilité des données hors de Vectorworks ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "3D CAD / BIM", "fr": "CAO 3D / BIM" },
+    "shortDescription": { "en": "Vectorworks is a 3D CAD/BIM platform with discipline-specific lines for architecture, landscape, lighting and scenic design.", "fr": "Vectorworks est une plateforme CAO/BIM 3D avec des gammes spécialisées pour l'architecture, le paysage, l'éclairage et la scénographie." },
+    "longDescription": {
+      "en": "Vectorworks models projects in native BIM with project documentation tools, split into four discipline-specific lines: Architect, Landmark, Spotlight and Fundamentals, plus cloud services alongside the desktop app. Choosing between a subscription or a perpetual license adds a decision most single-product CAD tools don't require.\n\nThere is no public price list: cost depends on the product line, license type (subscription or perpetual) and region, settled through a reseller or sales quote; perpetual-license holders can add the Vectorworks Service Select support plan separately, included free for subscription customers. It fits an architect, landscape or lighting/scenic designer who needs discipline-specific BIM and can go through a quote process to buy.",
+      "fr": "Vectorworks modélise les projets en BIM natif avec des outils de documentation, répartis en quatre gammes : Architect, Landmark, Spotlight et Fundamentals, plus des services cloud en complément du poste de travail. Choisir entre abonnement et licence perpétuelle ajoute une décision que la plupart des outils CAO mono-produit ne demandent pas.\n\nPas de grille tarifaire publique : le coût dépend de la gamme, de la licence et de la région, réglé via un revendeur ou un devis ; les détenteurs de licence perpétuelle peuvent ajouter séparément le support Service Select, inclus pour les clients en abonnement. Convient à un architecte, paysagiste ou concepteur lumière/scénographe qui a besoin d'un BIM par discipline et qui peut passer par un devis."
+    },
+    "pros": [
+      { "en": "Native BIM authoring and project documentation live in the same file.", "fr": "La création BIM native et la documentation de projet vivent dans le même fichier." },
+      { "en": "Four discipline-specific product lines target architecture, landscape, lighting and scenic design directly.", "fr": "Quatre gammes spécialisées visent directement l'architecture, le paysage, l'éclairage et la scénographie." }
+    ],
+    "cons": [
+      { "en": "No public price list; every purchase goes through a reseller or sales quote.", "fr": "Pas de grille tarifaire publique ; chaque achat passe par un revendeur ou un devis commercial." },
+      { "en": "Choosing between subscription and perpetual license, and between four product lines, adds setup complexity upfront.", "fr": "Choisir entre abonnement et licence perpétuelle, et entre quatre gammes de produits, ajoute de la complexité au départ." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need discipline-specific BIM/CAD (architecture, landscape, lighting or scenic design) and can go through a reseller or sales quote.", "fr": "Tu as besoin d'un BIM/CAO spécialisé par discipline (architecture, paysage, éclairage ou scénographie) et tu peux passer par un revendeur ou un devis." },
+      "avoidIf": { "en": "You want a published price to compare before talking to sales, or a single general-purpose CAD tool without discipline-specific lines.", "fr": "Tu veux un prix publié à comparer avant de parler au commercial, ou un seul outil CAO généraliste sans gammes spécialisées par discipline." },
+      "threshold": { "en": "No public price exists to set a numeric threshold; get a reseller or sales quote for the specific product line and license type before comparing to alternatives.", "fr": "Aucun prix public ne permet de fixer un seuil chiffré ; demande un devis à un revendeur ou au commercial pour la gamme et le type de licence voulus avant de comparer aux alternatives." }
+    }
+  },
   "unknowns": [
     "No numeric pricing found anywhere on official pages; third-party estimator sites give ranges but are not treated as proof.",
     "Desktop OS platform support (Windows/Mac specifics) not confirmed from the pages read."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

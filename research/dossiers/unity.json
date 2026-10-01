@@ -3,7 +3,7 @@
   "slug": "unity",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Unity",
     "vendor": "Unity Technologies",
@@ -34,7 +34,7 @@
       "exists": true,
       "limits": {
         "en": "Unity Personal: free for hobbyists, individuals and small teams with under $200K revenue/funding in the prior 12 months; publish to web, desktop, AR/VR and mobile; 1,000 monthly AI credits.",
-        "fr": null
+        "fr": "Unity Personal : gratuit pour les particuliers, créateurs individuels et petites équipes sous 200 000 $ de revenus ou de financement sur les 12 derniers mois ; publication web, bureau, AR/VR et mobile ; 1 000 crédits IA mensuels."
       },
       "sourceIds": [
         "s1"
@@ -55,7 +55,7 @@
         "keyLimits": [
           {
             "en": "Free for individuals/small teams under $200K revenue or funding in the prior 12 months; 1,000 monthly AI credits.",
-            "fr": null
+            "fr": "Gratuit pour les particuliers et petites équipes sous 200 000 $ de revenus ou de financement sur 12 mois ; 1 000 crédits IA mensuels."
           }
         ],
         "sourceIds": [
@@ -76,7 +76,7 @@
         "keyLimits": [
           {
             "en": "Required for businesses with over $200K in annual revenue/funding; adds console and Apple Vision Pro publishing, 2,000 monthly AI credits, expedited support.",
-            "fr": null
+            "fr": "Obligatoire pour les entreprises au-dessus de 200 000 $ de revenus ou de financement annuels ; ajoute la publication console et Apple Vision Pro, 2 000 crédits IA mensuels, support prioritaire."
           }
         ],
         "sourceIds": [
@@ -97,7 +97,7 @@
         "keyLimits": [
           {
             "en": "Required for businesses exceeding $25M annual revenue; adds cloud/on-prem build automation, read-only source code access, 3,000 monthly AI credits, dedicated support.",
-            "fr": null
+            "fr": "Obligatoire pour les entreprises dépassant 25 M$ de revenus annuels ; ajoute l'automatisation de build cloud/sur site, l'accès en lecture au code source, 3 000 crédits IA mensuels, support dédié."
           }
         ],
         "sourceIds": [
@@ -118,7 +118,7 @@
         "keyLimits": [
           {
             "en": "For non-gaming/entertainment applications at companies with over $1M in finances; includes industry-specific solution toolkits.",
-            "fr": null
+            "fr": "Pour les usages hors jeu et divertissement dans des entreprises avec plus de 1 M$ de finances ; inclut des kits sectoriels."
           }
         ],
         "sourceIds": [
@@ -131,7 +131,7 @@
     "cautions": [
       {
         "en": "Revenue/funding thresholds gate which plan is legally required (Personal under $200K, Pro under $25M, Enterprise above), a licensing mechanic distinct from feature-based tiering.",
-        "fr": null,
+        "fr": "Des seuils de revenus ou de financement déterminent quel plan est légalement requis (Personal sous 200 000 $, Pro sous 25 M$, Enterprise au-delà), une mécanique de licence distincte d'un étagement par fonctionnalités.",
         "sourceIds": [
           "s1"
         ]
@@ -142,14 +142,14 @@
     "capabilities": [
       {
         "en": "Real-time engine for building games, interactive applications, and 3D/AR/VR experiences, publishing to web, desktop, mobile, and consoles (Pro+).",
-        "fr": null,
+        "fr": "Moteur temps réel pour créer des jeux, des applications interactives et des expériences 3D/AR/VR, avec publication web, bureau, mobile et consoles (à partir de Pro).",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Includes a monthly allowance of AI credits across all tiers (1,000 on Personal, up to 3,000 on Enterprise).",
-        "fr": null,
+        "fr": "Inclut un quota mensuel de crédits IA sur tous les plans (1 000 en Personal, jusqu'à 3 000 en Enterprise).",
         "sourceIds": [
           "s1"
         ]
@@ -158,14 +158,14 @@
     "limitations": [
       {
         "en": "Console and Apple Vision Pro publishing require Unity Pro or above; not available on the free Personal tier.",
-        "fr": null,
+        "fr": "La publication console et Apple Vision Pro exige Unity Pro ou supérieur ; non disponible sur le plan gratuit Personal.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Mandatory upgrade to Pro once a project/company crosses the $200K revenue or funding threshold, even if usage otherwise stays modest.",
-        "fr": null,
+        "fr": "Passage obligatoire à Pro dès qu'un projet ou une société dépasse le seuil de 200 000 $ de revenus ou de financement, même si l'usage reste modeste.",
         "sourceIds": [
           "s1"
         ]
@@ -182,27 +182,150 @@
   },
   "alternatives": [
     {
-      "slug": "blender",
+      "slug": "unreal-engine",
       "reason": {
-        "en": "Free/open-source 3D tool with overlapping real-time and game-content creation use cases.",
-        "fr": null
+        "en": "The main direct real-time 3D/game engine competitor, free to start with royalty-based pricing instead of revenue thresholds.",
+        "fr": "Le principal concurrent direct en moteur temps réel 3D/jeu, gratuit au départ avec un modèle à redevances plutôt qu'à seuils de revenus."
+      }
+    },
+    {
+      "slug": "godot",
+      "reason": {
+        "en": "Free, open-source game engine covering the same real-time 3D and 2D game development use case.",
+        "fr": "Moteur de jeu gratuit et open source couvrant le même usage de développement de jeux temps réel en 2D et 3D."
       }
     }
   ],
   "missingAlternatives": [
     {
-      "name": "Unreal Engine",
-      "officialUrl": "https://www.unrealengine.com/",
-      "reason": "The primary direct competitor real-time/game engine, absent from the catalogue."
+      "name": "GameMaker",
+      "officialUrl": "https://gamemaker.io/",
+      "reason": "Popular 2D-focused game engine competitor, absent from the catalogue."
     },
     {
-      "name": "Godot",
-      "officialUrl": "https://godotengine.org/",
-      "reason": "Free, open-source game engine competitor increasingly compared to Unity, not present in the catalogue."
+      "name": "CryEngine",
+      "officialUrl": "https://www.cryengine.com/",
+      "reason": "High-end real-time 3D engine competing for the same AAA/visualization projects, not in the catalogue."
     }
   ],
   "unknowns": [
     "Annual per-month equivalent for Unity Pro ($192.50) was calculated from the stated $2,310/year figure, not shown as an explicit monthly-equivalent line on the page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Free for individuals and small teams under $200K revenue, with console and AI tooling unlocked as the project grows, so early cost stays low relative to what the engine delivers.",
+        "fr": "Gratuit pour les particuliers et petites équipes sous 200 000 $ de revenus, avec consoles et outils IA débloqués à mesure que le projet grandit, donc un coût de départ faible pour ce que le moteur apporte.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: first-result time to a working build was not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour obtenir un premier résultat ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Ships production-ready publishing to web, desktop, mobile and, from Pro, console and Apple Vision Pro, matching its stated promise.",
+        "fr": "Publication prête pour la production sur web, bureau, mobile et, à partir de Pro, console et Apple Vision Pro, conforme à sa promesse affichée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Scales from hobby projects to console titles and enterprise cloud/on-prem build automation at the top tier, a reference-level range for a real-time engine.",
+        "fr": "S'étend de projets amateurs à des titres console et à l'automatisation de build cloud/sur site en entreprise, une amplitude de référence pour un moteur temps réel.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export format and project portability out of Unity were not covered by the collected sources.",
+        "fr": "Note neutre : le format d'export et la portabilité d'un projet hors d'Unity ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers building games or interactive 3D/AR/VR applications who need a real-time engine with console and multi-platform publishing.",
+      "fr": "Développeurs qui créent des jeux ou des applications interactives 3D/AR/VR et ont besoin d'un moteur temps réel avec publication console et multiplateforme."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Solo developer: prototype a mobile game for free on Unity Personal, then publish to iOS and Android without paying while under the revenue threshold.",
+      "fr": "Développeur solo : prototyper un jeu mobile gratuitement sur Unity Personal, puis le publier sur iOS et Android sans payer tant que le seuil de revenus n'est pas atteint."
+    },
+    {
+      "en": "Small studio: use Unity Pro to add console publishing and expedited support once the project starts generating revenue above $200K.",
+      "fr": "Petit studio : passer à Unity Pro pour ajouter la publication console et un support prioritaire une fois le projet au-delà de 200 000 $ de revenus."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Real-time 3D engine",
+      "fr": "Moteur 3D temps réel"
+    },
+    "shortDescription": {
+      "en": "Unity is a real-time engine for building games and interactive 3D/AR/VR apps, free until a project crosses a revenue or funding threshold.",
+      "fr": "Unity est un moteur temps réel pour créer des jeux et des apps 3D/AR/VR, gratuit sous un seuil de revenus ou de financement."
+    },
+    "longDescription": {
+      "en": "Unity is a real-time engine for building games and interactive 3D, AR and VR applications, publishing to web, desktop and mobile on every tier, with console and Apple Vision Pro support from Pro up. It ships a monthly allowance of AI credits on every plan, and scales to cloud or on-premise build automation and read-only source access at the Enterprise tier.\n\nUnity Personal is free for individuals and small teams under $200K in revenue or funding over the prior year. Crossing that threshold makes Unity Pro mandatory, at $210/month ($192.50 on an annual plan). It suits solo developers and small studios building games or interactive 3D content who are ready to track their own revenue against the licensing thresholds.",
+      "fr": "Unity est un moteur temps réel pour créer des jeux et des applications interactives 3D, AR et VR, avec publication web, bureau et mobile sur tous les plans, et un support console et Apple Vision Pro à partir de Pro. Chaque plan inclut un quota mensuel de crédits IA.\n\nUnity Personal est gratuit pour les particuliers et petites équipes sous 200 000 $ de revenus ou de financement. Dépasser ce seuil rend Unity Pro obligatoire, à 210 $/mois (192,50 $ en engagement annuel). Il convient aux développeurs solo et petits studios créant des jeux ou du contenu 3D interactif."
+    },
+    "pros": [
+      {
+        "en": "Free entry tier with no artificial feature cap until the revenue threshold is crossed.",
+        "fr": "Plan d'entrée gratuit sans limite de fonctionnalités artificielle jusqu'au seuil de revenus."
+      },
+      {
+        "en": "Publishes across web, desktop, mobile and, from Pro, console and Apple Vision Pro from one project.",
+        "fr": "Publie sur web, bureau, mobile et, à partir de Pro, console et Apple Vision Pro depuis un seul projet."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Upgrading to Pro is mandatory once revenue or funding crosses $200K, regardless of how light the actual usage is.",
+        "fr": "Le passage à Pro est obligatoire dès que les revenus ou le financement dépassent 200 000 $, quelle que soit la légèreté de l'usage réel."
+      },
+      {
+        "en": "Enterprise and Industry tiers are quote-only, so costs for large studios are not comparable without a sales conversation.",
+        "fr": "Les plans Enterprise et Industry sont sur devis, donc les coûts pour les gros studios ne sont pas comparables sans échange commercial."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You are building a game or interactive 3D/AR/VR app and want a free start that scales to console publishing later.",
+        "fr": "Tu construis un jeu ou une app interactive 3D/AR/VR et veux démarrer gratuitement tout en pouvant publier sur console plus tard."
+      },
+      "avoidIf": {
+        "en": "You need a free, no-threshold engine regardless of your project's future revenue, or you don't plan to ship to console.",
+        "fr": "Tu veux un moteur gratuit sans seuil quel que soit le revenu futur du projet, ou tu ne prévois pas de sortie console."
+      },
+      "threshold": {
+        "en": "Budget $2,310/year (Unity Pro, annual billing) once your project or company crosses $200K in revenue or funding.",
+        "fr": "Prévois 2 310 $/an (Unity Pro, facturation annuelle) dès que ton projet ou ta société dépasse 200 000 $ de revenus ou de financement."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "Unity Pro's annualPerMonth ($192.50) was derived from a $2,310/year figure rather than shown directly as a monthly-equivalent line; confirm on unity.com/pricing."
+  ]
 }

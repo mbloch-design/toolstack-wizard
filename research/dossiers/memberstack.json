@@ -3,7 +3,7 @@
   "slug": "memberstack",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Memberstack",
     "vendor": "Memberstack",
@@ -41,7 +41,7 @@
       "exists": true,
       "limits": {
         "en": "Free while the site is in test/unlaunched mode, with full feature access; costs begin once the site is launched publicly.",
-        "fr": null
+        "fr": "Gratuit tant que le site est en mode test/non lancé, avec accès complet aux fonctionnalités ; les coûts démarrent une fois le site lancé publiquement."
       },
       "sourceIds": [
         "s1"
@@ -63,7 +63,7 @@
         "keyLimits": [
           {
             "en": "Up to 1,000 members, 4% transaction fee plus Stripe fees; social logins, Stripe payments, custom SSO, branded emails, email campaigns.",
-            "fr": null
+            "fr": "Jusqu'à 1 000 membres, 4 % de frais de transaction plus les frais Stripe ; connexions sociales, paiements Stripe, SSO personnalisé, emails à l'image de la marque, campagnes email."
           }
         ],
         "sourceIds": [
@@ -84,7 +84,7 @@
         "keyLimits": [
           {
             "en": "Up to 5,000 members, 2% transaction fee plus Stripe fees.",
-            "fr": null
+            "fr": "Jusqu'à 5 000 membres, 2 % de frais de transaction plus les frais Stripe."
           }
         ],
         "sourceIds": [
@@ -105,7 +105,7 @@
         "keyLimits": [
           {
             "en": "10,000+ members, 0.9% transaction fee plus Stripe fees.",
-            "fr": null
+            "fr": "10 000+ membres, 0,9 % de frais de transaction plus les frais Stripe."
           }
         ],
         "sourceIds": [
@@ -126,7 +126,7 @@
         "keyLimits": [
           {
             "en": "10,000+ members, zero Memberstack transaction fees (standard Stripe processing fees still apply).",
-            "fr": null
+            "fr": "10 000+ membres, aucun frais de transaction Memberstack (les frais de traitement Stripe standards restent applicables)."
           }
         ],
         "sourceIds": [
@@ -139,7 +139,7 @@
     "cautions": [
       {
         "en": "Every paid tier below the top plan charges a per-transaction fee (4% down to 0.9%) on top of the flat monthly price, so revenue-heavy sites pay significantly more than the sticker price.",
-        "fr": null,
+        "fr": "Chaque formule payante sous la plus haute facture un frais par transaction (de 4 % à 0,9 %) en plus du prix mensuel fixe, donc les sites à fort revenu paient bien plus que le prix affiché.",
         "sourceIds": [
           "s1"
         ]
@@ -150,21 +150,21 @@
     "capabilities": [
       {
         "en": "No-code membership authentication (email/password, one-time login codes, social logins) embeddable in Webflow, WordPress or custom-coded sites.",
-        "fr": null,
+        "fr": "Authentification de membership no-code (email/mot de passe, codes de connexion à usage unique, connexions sociales) intégrable dans Webflow, WordPress ou un site codé sur mesure.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Stripe-based payments, subscriptions and free trials with no-code page/content gating.",
-        "fr": null,
+        "fr": "Paiements, abonnements et essais gratuits via Stripe, avec verrouillage de contenu no-code.",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Developer tools: API, data attributes and \"MemberScripts\" for extending default behavior with custom code.",
-        "fr": null,
+        "fr": "Outils développeur : API, attributs de données et « MemberScripts » pour étendre le comportement par défaut avec du code personnalisé.",
         "sourceIds": [
           "s2"
         ]
@@ -173,14 +173,14 @@
     "limitations": [
       {
         "en": "Per-transaction fees apply on all paid tiers except the top \"Established\" plan, in addition to Stripe's own processing fees.",
-        "fr": null,
+        "fr": "Des frais par transaction s'appliquent sur toutes les formules payantes sauf la plus haute (« Established »), en plus des frais de traitement propres à Stripe.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "The free mode only works while the site is unlaunched; going live requires moving to a paid plan.",
-        "fr": null,
+        "fr": "Le mode gratuit ne fonctionne que tant que le site n'est pas lancé : passer en production nécessite une formule payante.",
         "sourceIds": [
           "s1"
         ]
@@ -206,10 +206,140 @@
       "web"
     ]
   },
-  "alternatives": [],
-  "missingAlternatives": [],
-  "unknowns": [
-    "No alternativeCandidates were provided in the seed for this slug (mostly unrelated dev-infra tools); alternatives left empty rather than guessed from an unrelated candidate list."
+  "alternatives": [
+    {
+      "slug": "memberful",
+      "reason": {
+        "en": "Direct membership and subscription-gating competitor for the same no-code/low-code audience.",
+        "fr": "Concurrent direct en membership et verrouillage d'abonnement, pour le même public no-code/low-code."
+      }
+    }
   ],
-  "conflicts": []
+  "missingAlternatives": [
+    {
+      "name": "Outseta",
+      "officialUrl": "https://www.outseta.com",
+      "reason": "Combined membership, billing and CRM competitor for website builders, not currently in the catalogue."
+    }
+  ],
+  "unknowns": [],
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 2,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Every paid tier below the top plan charges a per-transaction fee (4% down to 0.9%) on top of the flat monthly price, so revenue-heavy sites pay significantly more than the sticker price.",
+        "fr": "Chaque formule payante sous la plus haute facture un frais par transaction (de 4 % à 0,9 %) en plus du prix mensuel fixe, donc les sites à fort revenu paient bien plus que le prix affiché.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Described as no-code membership authentication embeddable in Webflow, WordPress or a custom-coded site, aimed at quick setup without development work.",
+        "fr": "Décrit comme une authentification de membership no-code intégrable dans Webflow, WordPress ou un site codé sur mesure, pensée pour une mise en place rapide sans développement.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Social logins, Stripe payments and no-code content gating are documented as delivered features, matching the stated membership promise.",
+        "fr": "Les connexions sociales, les paiements Stripe et le verrouillage de contenu no-code sont des fonctionnalités documentées et livrées, conformément à la promesse de membership annoncée.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Covers core no-code membership needs (auth, payments, gating) but the sources give no evidence of a category-reference-level ceiling.",
+        "fr": "Couvre les besoins de base en membership no-code (auth, paiements, verrouillage) mais les sources ne donnent aucune preuve d'un plafond de référence dans la catégorie.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: member-data export or migration-out options are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export des données membres ou de migration en sortie ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "No-code site builders adding membership and payment gating to a Webflow or custom site.",
+      "fr": "Créateurs de sites no-code qui ajoutent du membership et un verrouillage de paiement à un site Webflow ou sur mesure."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Paid content gating: lock pages or sections of a Webflow site behind a subscription without writing backend code.",
+      "fr": "Verrouillage de contenu payant : restreindre des pages ou sections d'un site Webflow derrière un abonnement sans écrire de code serveur."
+    },
+    {
+      "en": "Member login: add email/password or social login to a site and manage member accounts through Memberstack's dashboard.",
+      "fr": "Connexion membre : ajouter une connexion email/mot de passe ou sociale à un site et gérer les comptes membres depuis le tableau de bord de Memberstack."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "No-code membership",
+      "fr": "Membership no-code"
+    },
+    "shortDescription": {
+      "en": "No-code membership and payment gating for Webflow, WordPress or custom sites, with per-transaction fees on most paid tiers.",
+      "fr": "Membership et verrouillage de paiement no-code pour sites Webflow, WordPress ou sur mesure, avec des frais par transaction sur la plupart des formules payantes."
+    },
+    "longDescription": {
+      "en": "Memberstack adds no-code membership authentication (email/password, one-time login codes, social logins) and Stripe-based payments to a Webflow, WordPress or custom-coded site, with no-code content gating and developer tools (API, MemberScripts) for custom behavior.\n\nIt's free to use while a site stays in test/unlaunched mode; launching publicly requires a paid plan starting at $29/month ($25 annually) for up to 1,000 members. Every tier below the top plan also charges a per-transaction fee, from 4% down to 0.9%, on top of Stripe's own processing fees, which adds up for revenue-heavy sites.",
+      "fr": "Memberstack ajoute une authentification de membership no-code (email/mot de passe, codes de connexion à usage unique, connexions sociales) et des paiements via Stripe à un site Webflow, WordPress ou sur mesure, avec un verrouillage de contenu no-code et des outils développeur (API, MemberScripts) pour un comportement personnalisé.\n\nL'usage est gratuit tant que le site reste en mode test/non lancé ; le passage en production nécessite une formule payante à partir de 29 $/mois (25 $ en annuel) pour 1 000 membres. Chaque formule sous la plus haute facture aussi un frais par transaction, de 4 % à 0,9 %, en plus des frais de traitement propres à Stripe, ce qui pèse pour les sites à fort revenu."
+    },
+    "pros": [
+      {
+        "en": "No-code setup embeds directly into Webflow, WordPress or a custom site without backend development.",
+        "fr": "La mise en place no-code s'intègre directement à Webflow, WordPress ou un site sur mesure sans développement serveur."
+      },
+      {
+        "en": "Free to use while a site is still in test/unlaunched mode.",
+        "fr": "Gratuit tant que le site reste en mode test/non lancé."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Per-transaction fees (4% down to 0.9%) apply on every tier except the most expensive one.",
+        "fr": "Des frais par transaction (de 4 % à 0,9 %) s'appliquent sur chaque formule sauf la plus chère."
+      },
+      {
+        "en": "Launching a site publicly always requires moving to a paid plan; there's no free production tier.",
+        "fr": "Le lancement public d'un site nécessite toujours une formule payante : il n'y a pas de palier gratuit en production."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're building membership or paid-content gating into a Webflow or no-code site without writing backend auth code.",
+        "fr": "Tu construis du membership ou du contenu payant verrouillé sur un site Webflow ou no-code sans écrire de code d'authentification serveur."
+      },
+      "avoidIf": {
+        "en": "Your site already generates significant revenue and the per-transaction fee would outweigh the flat monthly savings.",
+        "fr": "Ton site génère déjà un revenu significatif et le frais par transaction dépasserait l'économie du prix mensuel fixe."
+      },
+      "threshold": {
+        "en": "Worth the Basic plan ($29/month, $300/year) up to 1,000 members; above that, the 4% transaction fee on revenue matters more than the plan price itself.",
+        "fr": "Rentable sur le plan Basic (29 $/mois, 300 $/an) jusqu'à 1 000 membres ; au-delà, le frais de transaction de 4 % sur le revenu pèse plus que le prix de la formule elle-même."
+      },
+      "billingTraps": {
+        "en": "Per-transaction fees stack on top of the flat monthly price on every tier except the top one, and only disappear entirely on the $499/month Established plan.",
+        "fr": "Les frais par transaction s'ajoutent au prix mensuel fixe sur chaque formule sauf la plus haute, et ne disparaissent totalement qu'avec le plan Established à 499 $/mois."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

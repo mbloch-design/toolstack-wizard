@@ -3,7 +3,8 @@
   "slug": "wolters-kluwer",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Wolters Kluwer",
     "vendor": "Wolters Kluwer N.V.",
@@ -15,8 +16,20 @@
     "statusNote": "Corporate homepage returned HTTP 403 to automated fetch; content confirmed via search instead."
   },
   "sources": [
-    { "id": "s1", "url": "https://www.wolterskluwer.com/en/solutions/compliance-intelligence", "tier": 1, "accessedOn": "2026-09-25", "title": "Compliance Intelligence | Wolters Kluwer" },
-    { "id": "s2", "url": "https://www.wolterskluwer.com/en/about-us/organization/legal-and-regulatory", "tier": 1, "accessedOn": "2026-09-25", "title": "Legal & Regulatory Division | Wolters Kluwer" }
+    {
+      "id": "s1",
+      "url": "https://www.wolterskluwer.com/en/solutions/compliance-intelligence",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Compliance Intelligence | Wolters Kluwer"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.wolterskluwer.com/en/about-us/organization/legal-and-regulatory",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Legal & Regulatory Division | Wolters Kluwer"
+    }
   ],
   "pricing": {
     "model": "quote",
@@ -25,35 +38,207 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": [] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": []
+    },
     "plans": [],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "No public price list found for any Wolters Kluwer compliance/legal product; enterprise sales is quote-only.", "sourceIds": ["s1"] }
+      {
+        "en": "No public price list found for any Wolters Kluwer compliance/legal product; enterprise sales is quote-only.",
+        "fr": "Aucune grille tarifaire publique trouvée pour les produits de conformité/juridique Wolters Kluwer ; la vente se fait uniquement sur devis auprès des commerciaux grands comptes.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Compliance Intelligence: AI-powered monitoring of global regulatory bodies, summarizing proposed changes, guidance, and enforcement actions with red-lined updates.", "sourceIds": ["s1"] },
-      { "en": "A portfolio of separate legal/regulatory products (VitalLaw, Legisway, Kleos, TyMetrix 360, ELM Solutions) rather than a single tool.", "sourceIds": ["s2"] }
+      {
+        "en": "Compliance Intelligence: AI-powered monitoring of global regulatory bodies, summarizing proposed changes, guidance, and enforcement actions with red-lined updates.",
+        "fr": "Compliance Intelligence : veille réglementaire mondiale assistée par IA, résumant les changements proposés, les recommandations et les mesures coercitives avec un suivi des modifications.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "A portfolio of separate legal/regulatory products (VitalLaw, Legisway, Kleos, TyMetrix 360, ELM Solutions) rather than a single tool.",
+        "fr": "Un portefeuille de produits juridiques/réglementaires distincts (VitalLaw, Legisway, Kleos, TyMetrix 360, ELM Solutions) plutôt qu'un seul outil.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "'Wolters Kluwer' is a corporate umbrella, not one product; a prospective buyer must pick a specific solution (e.g. Compliance Intelligence, Legisway) before pricing or scope can be evaluated.", "sourceIds": ["s2"] },
-      { "en": "No self-serve trial or public pricing; all engagement goes through enterprise sales.", "sourceIds": ["s1"] }
+      {
+        "en": "'Wolters Kluwer' is a corporate umbrella, not one product; a prospective buyer must pick a specific solution (e.g. Compliance Intelligence, Legisway) before pricing or scope can be evaluated.",
+        "fr": "« Wolters Kluwer » est une holding, pas un produit unique ; un acheteur potentiel doit choisir une solution précise (ex. Compliance Intelligence, Legisway) avant de pouvoir évaluer le prix ou le périmètre.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "No self-serve trial or public pricing; all engagement goes through enterprise sales.",
+        "fr": "Pas d'essai en libre-service ni de tarif public ; toute prise de contact passe par les commerciaux grands comptes.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "alternatives": [
-    { "slug": "docusign", "reason": { "en": "Overlaps for contract/e-signature workflows offered within the Wolters Kluwer legal portfolio." } }
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A compliance or legal ops lead at a regulated business who needs regulatory monitoring software and can go through an enterprise sales quote.",
+      "fr": "Une responsable conformité ou legal ops d'une entreprise régulée qui a besoin d'un outil de veille réglementaire et qui peut passer par un devis grands comptes."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Monitor: track proposed regulatory changes and enforcement actions across jurisdictions with Compliance Intelligence's AI summaries.",
+      "fr": "Surveiller : suivre les changements réglementaires proposés et les mesures coercitives dans plusieurs juridictions avec les résumés IA de Compliance Intelligence."
+    },
+    {
+      "en": "Manage contracts: pick a specific portfolio product like Legisway for contract and legal-matter management instead of the generic Wolters Kluwer brand.",
+      "fr": "Gérer les contrats : choisir un produit précis du portefeuille comme Legisway pour la gestion des contrats et des dossiers juridiques, plutôt que la marque générique Wolters Kluwer."
+    }
   ],
-  "missingAlternatives": [],
+  "alternatives": [
+    {
+      "slug": "docusign",
+      "reason": {
+        "en": "Overlaps for contract/e-signature workflows offered within the Wolters Kluwer legal portfolio.",
+        "fr": "Recoupe les flux de contrats et signature électronique proposés dans le portefeuille juridique Wolters Kluwer."
+      }
+    },
+    {
+      "slug": "onetrust",
+      "reason": {
+        "en": "Compliance and regulatory-risk management competitor, closer to the Compliance Intelligence product than a pure e-signature tool.",
+        "fr": "Concurrent sur la gestion de la conformité et du risque réglementaire, plus proche du produit Compliance Intelligence qu'un simple outil de signature électronique."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Thomson Reuters (Regulatory Intelligence)",
+      "officialUrl": "https://www.thomsonreuters.com",
+      "reason": "Major regulatory-intelligence and legal-information competitor, not confirmed in the catalogue."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: with no public pricing for any product in the portfolio, the cost-versus-benefit cannot be judged from the collected sources.",
+        "fr": "Note neutre : sans tarif public pour aucun produit du portefeuille, le rapport coût-bénéfice ne peut pas être jugé à partir des sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A buyer must first identify which specific product (Compliance Intelligence, Legisway, VitalLaw...) fits their need before evaluating or buying anything, adding a step most single-product tools don't require.",
+        "fr": "Un acheteur doit d'abord identifier quel produit précis (Compliance Intelligence, Legisway, VitalLaw...) correspond à son besoin avant de pouvoir évaluer ou acheter quoi que ce soit, une étape que la plupart des outils mono-produit n'imposent pas.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Compliance Intelligence delivers AI-powered regulatory monitoring with red-lined updates as described on the official solution page.",
+        "fr": "Compliance Intelligence assure la veille réglementaire assistée par IA avec suivi des modifications, comme décrit sur la page officielle de la solution.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "The portfolio spans regulatory monitoring, contract management and legal-matter management across several named products, broader than a single-purpose compliance tool.",
+        "fr": "Le portefeuille couvre la veille réglementaire, la gestion des contrats et la gestion des dossiers juridiques à travers plusieurs produits nommés, plus large qu'un outil de conformité mono-fonction.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export format and data portability are not covered by the collected sources.",
+        "fr": "Note neutre : le format d'export et la portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Regulatory compliance suite",
+      "fr": "Suite conformité réglementaire"
+    },
+    "shortDescription": {
+      "en": "Wolters Kluwer sells a portfolio of separate legal and compliance products, including AI-powered regulatory monitoring, on a quote-only basis.",
+      "fr": "Wolters Kluwer vend un portefeuille de produits juridiques et de conformité distincts, dont une veille réglementaire assistée par IA, uniquement sur devis."
+    },
+    "longDescription": {
+      "en": "Wolters Kluwer is a corporate umbrella over a portfolio of separate legal and regulatory products rather than a single tool. Compliance Intelligence uses AI to monitor global regulatory bodies and summarize proposed changes, guidance and enforcement actions with red-lined updates; other named products (VitalLaw, Legisway, Kleos, TyMetrix 360, ELM Solutions) cover legal research, contract and legal-matter management separately.\n\nThere is no public price list and no self-serve trial: every engagement goes through enterprise sales, and a buyer must first pick the specific product that fits before pricing or scope can be evaluated. It fits a compliance or legal ops lead at a regulated business, more than someone looking for one product with a published price.",
+      "fr": "Wolters Kluwer est une holding au-dessus d'un portefeuille de produits juridiques et réglementaires distincts, plutôt qu'un seul outil. Compliance Intelligence utilise l'IA pour surveiller les organismes réglementaires mondiaux et résumer changements proposés, recommandations et mesures coercitives avec un suivi des modifications ; d'autres produits (VitalLaw, Legisway, Kleos, TyMetrix 360, ELM Solutions) couvrent séparément recherche juridique, contrats et dossiers juridiques.\n\nPas de grille tarifaire publique ni d'essai en libre-service : toute prise de contact passe par les commerciaux grands comptes, et l'acheteur doit d'abord choisir le produit qui correspond avant d'évaluer prix ou périmètre. Convient à une responsable conformité ou legal ops d'une entreprise régulée, plus qu'à qui cherche un produit avec un prix publié."
+    },
+    "pros": [
+      {
+        "en": "Compliance Intelligence's AI summarizes regulatory changes and enforcement actions with red-lined updates.",
+        "fr": "Compliance Intelligence résume par IA les changements réglementaires et les mesures coercitives avec un suivi des modifications."
+      },
+      {
+        "en": "A broad portfolio covers regulatory monitoring, legal research and contract management under one vendor.",
+        "fr": "Un large portefeuille couvre la veille réglementaire, la recherche juridique et la gestion des contrats chez un seul fournisseur."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No public pricing or self-serve trial for any product in the portfolio.",
+        "fr": "Pas de tarif public ni d'essai en libre-service pour aucun produit du portefeuille."
+      },
+      {
+        "en": "The 'Wolters Kluwer' catalogue entry conflates several separate products, so buyers must first identify the right one.",
+        "fr": "L'entrée catalogue « Wolters Kluwer » regroupe plusieurs produits distincts ; l'acheteur doit d'abord identifier le bon."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need AI-powered regulatory monitoring or another named Wolters Kluwer product and can go through an enterprise sales quote.",
+        "fr": "Tu as besoin d'une veille réglementaire assistée par IA ou d'un autre produit nommé Wolters Kluwer et tu peux passer par un devis grands comptes."
+      },
+      "avoidIf": {
+        "en": "You want a single product with a published price and a self-serve trial before talking to sales.",
+        "fr": "Tu veux un seul produit avec un prix publié et un essai en libre-service avant de parler au commercial."
+      },
+      "threshold": {
+        "en": "No public price exists to set a numeric threshold; get an enterprise quote for the specific product (e.g. Compliance Intelligence) before comparing to alternatives.",
+        "fr": "Aucun prix public ne permet de fixer un seuil chiffré ; demande un devis grands comptes pour le produit précis (ex. Compliance Intelligence) avant de comparer aux alternatives."
+      }
+    }
+  },
   "unknowns": [
     "The catalogue entry treats 'Wolters Kluwer' as a single tool, but it is actually a multi-brand conglomerate; which specific product (Compliance Intelligence, Legisway, VitalLaw, etc.) the fiche should describe is unresolved.",
     "No pricing figures found anywhere, official or third-party."
   ],
   "conflicts": [
     "Seed pricingText claims 'À partir de 49€/mois' but no source on the official domain confirms any public monthly price; this figure could not be verified and is not carried into pricing.plans."
-  ]
+  ],
+  "reviewNotes": [
+    "The catalogue models 'Wolters Kluwer' as a single tool, but it is a multi-brand conglomerate (Compliance Intelligence, VitalLaw, Legisway, Kleos, TyMetrix 360, ELM Solutions). This fiche describes Compliance Intelligence as the lead product since it had the clearest official source, but the catalogue entry itself may need to be split or renamed; flag for an editorial decision rather than correcting here.",
+    "Seed data claimed a public price 'À partir de 49€/mois', but no official page confirms any public monthly price for any Wolters Kluwer product; this figure appears to be invented or mis-sourced and should not be published."
+  ],
+  "hold": "holding company with several products; editorial decision on how to split the listing"
 }

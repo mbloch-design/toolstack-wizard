@@ -3,7 +3,8 @@
   "slug": "legalplace",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "LegalPlace",
     "vendor": "LegalPlace",
@@ -15,7 +16,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://legalplace.fr", "tier": 1, "accessedOn": "2026-09-25", "title": "LegalPlace homepage" }
+    {
+      "id": "s1",
+      "url": "https://legalplace.fr",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "LegalPlace homepage"
+    }
   ],
   "pricing": {
     "model": "usage",
@@ -24,66 +31,282 @@
     "verifiedOn": "2026-09-25",
     "region": "FR",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "creation",
         "name": "Création d'entreprise",
         "unit": "one_time",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 0 },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 0
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Service fee starts at 0 EUR, but mandatory legal/registry fees are added on top and vary by legal structure" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Service fee starts at 0 EUR, but mandatory legal/registry fees are added on top and vary by legal structure",
+            "fr": "Le tarif du service démarre à 0 EUR, mais les frais légaux et de greffe obligatoires s'ajoutent en plus et varient selon la forme juridique"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "invoicing",
         "name": "Logiciel de facturation",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 8.25, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 8.25,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "invoicing",
     "addOns": [
-      { "en": "Business address domiciliation (Paris), with CFE tax reduction claims up to 1,000 EUR/year", "sourceIds": ["s1"] },
-      { "en": "Business modification filings (director change, registered seat transfer), dissolution filings, professional insurance", "sourceIds": ["s1"] }
+      {
+        "en": "Business address domiciliation (Paris), with CFE tax reduction claims up to 1,000 EUR/year",
+        "fr": "Domiciliation d'entreprise (Paris), avec des réductions de CFE revendiquées jusqu'à 1 000 EUR par an",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Business modification filings (director change, registered seat transfer), dissolution filings, professional insurance",
+        "fr": "Formalités de modification d'entreprise (changement de dirigeant, transfert de siège social), formalités de dissolution, assurance professionnelle",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "The advertised 0 EUR company-creation price covers only LegalPlace's service fee; official registry/legal fees are mandatory and billed separately.", "sourceIds": ["s1"] },
-      { "en": "Accounting and most administrative services are priced on request, not shown publicly.", "sourceIds": ["s1"] }
+      {
+        "en": "The advertised 0 EUR company-creation price covers only LegalPlace's service fee; official registry/legal fees are mandatory and billed separately.",
+        "fr": "Le prix de 0 EUR annoncé pour la création d'entreprise ne couvre que les frais de service de LegalPlace ; les frais légaux et de greffe officiels sont obligatoires et facturés séparément.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Accounting and most administrative services are priced on request, not shown publicly.",
+        "fr": "La comptabilité et la plupart des services administratifs sont tarifés sur devis, sans affichage public.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Online company formation for multiple French legal structures (SAS, SARL, SASU, EURL, SCI, auto-entreprise, associations) with automated document generation and e-signature.", "sourceIds": ["s1"] },
-      { "en": "Dedicated accountant support with compliance handling for VAT, financial statements and tax declarations, including the 2026 e-invoicing reform.", "sourceIds": ["s1"] },
-      { "en": "Business address domiciliation service in Paris with a professional bank account and capital-deposit attestation.", "sourceIds": ["s1"] },
-      { "en": "Handles ongoing legal changes: director changes, registered seat transfers, status amendments, and company dissolution filings.", "sourceIds": ["s1"] }
+      {
+        "en": "Online company formation for multiple French legal structures (SAS, SARL, SASU, EURL, SCI, auto-entreprise, associations) with automated document generation and e-signature.",
+        "fr": "Création d'entreprise en ligne pour plusieurs formes juridiques françaises (SAS, SARL, SASU, EURL, SCI, auto-entreprise, associations), avec génération automatique de documents et signature électronique.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Dedicated accountant support with compliance handling for VAT, financial statements and tax declarations, including the 2026 e-invoicing reform.",
+        "fr": "Accompagnement par un comptable dédié, avec gestion de la conformité TVA, des comptes annuels et des déclarations fiscales, y compris la réforme de facturation électronique de 2026.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Business address domiciliation service in Paris with a professional bank account and capital-deposit attestation.",
+        "fr": "Service de domiciliation d'entreprise à Paris, avec un compte bancaire professionnel et une attestation de dépôt de capital.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Handles ongoing legal changes: director changes, registered seat transfers, status amendments, and company dissolution filings.",
+        "fr": "Gère les changements juridiques en cours de vie de l'entreprise : changement de dirigeant, transfert de siège social, modification des statuts et formalités de dissolution.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Focused on French company law only; not usable for formation or compliance outside France.", "sourceIds": ["s1"] },
-      { "en": "Most services beyond invoicing software are quote-based or fee-on-top, not fixed self-service pricing.", "sourceIds": ["s1"] }
+      {
+        "en": "Focused on French company law only; not usable for formation or compliance outside France.",
+        "fr": "Centré uniquement sur le droit des sociétés français ; inutilisable pour la création ou la conformité hors de France.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Most services beyond invoicing software are quote-based or fee-on-top, not fixed self-service pricing.",
+        "fr": "La plupart des services, au-delà du logiciel de facturation, sont sur devis ou avec des frais en plus, sans tarif fixe en libre-service.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "A French solo founder or small business owner handling company formation and ongoing legal/accounting admin without a lawyer.",
+      "fr": "Une fondatrice ou un fondateur solo en France, ou une petite équipe, qui gère la création d'entreprise et l'administratif juridique et comptable sans avocat."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Create: form a SAS or SASU online, with documents and e-signature generated automatically, paying only the mandatory registry fees.",
+      "fr": "Créer : constituer une SAS ou une SASU en ligne, avec documents et signature électronique générés automatiquement, en payant uniquement les frais de greffe obligatoires."
+    },
+    {
+      "en": "Maintain: use the invoicing software and a dedicated accountant to handle VAT and annual accounts once the company is running.",
+      "fr": "Gérer : utiliser le logiciel de facturation et un comptable dédié pour la TVA et les comptes annuels une fois l'entreprise en activité."
+    }
+  ],
   "alternatives": [
-    { "slug": "legalstart", "reason": { "en": "Direct French competitor for online company formation and legal document services." } },
-    { "slug": "captain-contrat", "reason": { "en": "Same category of French legaltech for business creation and legal procedures." } },
-    { "slug": "rocket-lawyer", "reason": { "en": "Comparable guided legal-document and business-formation platform, US/UK-focused rather than French." } }
+    {
+      "slug": "legalstart",
+      "reason": {
+        "en": "Direct French competitor for online company formation and legal document services.",
+        "fr": "Concurrent français direct pour la création d'entreprise en ligne et les services de documents juridiques."
+      }
+    },
+    {
+      "slug": "captain-contrat",
+      "reason": {
+        "en": "Same category of French legaltech for business creation and legal procedures.",
+        "fr": "Même catégorie de legaltech française pour la création d'entreprise et les démarches juridiques."
+      }
+    },
+    {
+      "slug": "rocket-lawyer",
+      "reason": {
+        "en": "Comparable guided legal-document and business-formation platform, US/UK-focused rather than French.",
+        "fr": "Plateforme comparable de documents juridiques et de création d'entreprise guidée, orientée US/UK plutôt que française."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A 0 EUR service fee for formation is attractive, but most surrounding services (accounting, domiciliation extras) are quote-based, making total value hard to judge upfront.",
+        "fr": "Des frais de service à 0 EUR pour la création sont attractifs, mais la plupart des services autour (comptabilité, options de domiciliation) sont sur devis, ce qui rend le rapport qualité-prix difficile à juger à l'avance.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Automated document generation and e-signature for company formation suggest a fast first result, but the collected sources don't detail the actual onboarding steps.",
+        "fr": "La génération automatique de documents et la signature électronique pour la création d'entreprise suggèrent un premier résultat rapide, mais les sources relevées ne détaillent pas les étapes réelles d'intégration.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Covers the stated company-formation and ongoing legal-change services, but accounting support's actual scope is not detailed beyond a general description.",
+        "fr": "Couvre les services annoncés de création d'entreprise et de changements juridiques en cours de vie, mais le périmètre réel de l'accompagnement comptable n'est pas détaillé au-delà d'une description générale.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers multiple legal structures, ongoing compliance and administrative changes in one platform, a broad scope for a French legaltech.",
+        "fr": "Couvre plusieurs formes juridiques, la conformité continue et les changements administratifs sur une seule plateforme, un périmètre large pour une legaltech française.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data or document portability if a company leaves LegalPlace was not covered by the collected sources.",
+        "fr": "Note neutre : la portabilité des données ou des documents en cas de départ de LegalPlace ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "French company formation",
+      "fr": "Création d'entreprise"
+    },
+    "shortDescription": {
+      "en": "French legaltech for online company formation and ongoing legal and accounting admin, with a 0 EUR formation service fee plus mandatory registry costs.",
+      "fr": "Legaltech française pour la création d'entreprise en ligne et l'administratif juridique courant, frais de service à 0 EUR, plus frais de greffe obligatoires."
+    },
+    "longDescription": {
+      "en": "LegalPlace forms a French company online, SAS, SARL, SASU, EURL, SCI, auto-entreprise or association, generating the required documents and e-signatures automatically. It also offers a dedicated accountant for VAT and annual accounts, business address domiciliation in Paris, and filings for later changes like a director swap or dissolution.\n\nThe formation service fee itself starts at 0 EUR, but mandatory registry fees apply on top and vary by legal structure, and most services beyond the 8.25 EUR/month invoicing software are quote-based. It suits a French founder who wants formation and ongoing admin handled in one place rather than through a lawyer.",
+      "fr": "LegalPlace constitue une entreprise française en ligne, SAS, SARL, SASU, EURL, SCI, auto-entreprise ou association, en générant automatiquement les documents requis et les signatures électroniques. Le service propose aussi un comptable dédié pour la TVA et les comptes annuels, une domiciliation à Paris, et des formalités pour les changements ultérieurs comme un changement de dirigeant ou une dissolution.\n\nLes frais de création démarrent à 0 EUR, mais les frais de greffe obligatoires s'ajoutent selon la forme juridique, et la plupart des services au-delà du logiciel de facturation à 8,25 EUR par mois sont sur devis. Convient à qui veut gérer création et administratif courant au même endroit plutôt que via un avocat."
+    },
+    "pros": [
+      {
+        "en": "0 EUR service fee for company formation, only the mandatory registry fees apply.",
+        "fr": "Frais de service à 0 EUR pour la création d'entreprise, seuls les frais de greffe obligatoires s'appliquent."
+      },
+      {
+        "en": "Covers formation, ongoing legal changes and accounting support in one platform instead of separate providers.",
+        "fr": "Couvre la création, les changements juridiques courants et l'accompagnement comptable sur une seule plateforme plutôt que chez plusieurs prestataires."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Most services beyond the invoicing software are priced on request, making the real total cost hard to estimate in advance.",
+        "fr": "La plupart des services, au-delà du logiciel de facturation, sont tarifés sur devis, ce qui rend le coût total réel difficile à estimer à l'avance."
+      },
+      {
+        "en": "Only covers French company law, unusable for a business formed outside France.",
+        "fr": "Ne couvre que le droit des sociétés français, inutilisable pour une entreprise constituée hors de France."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep if you're forming a French company and want formation, legal changes and accounting admin in one place without hiring a lawyer for each step.",
+        "fr": "À garder si tu crées une entreprise française et veux gérer la création, les changements juridiques et l'administratif comptable au même endroit sans engager un avocat à chaque étape."
+      },
+      "avoidIf": {
+        "en": "Avoid if your company isn't under French law, or if you need a fixed, fully public price before committing, since most add-on services are quote-based.",
+        "fr": "À éviter si ton entreprise n'est pas sous droit français, ou si tu as besoin d'un prix fixe et public avant de t'engager, car la plupart des services complémentaires sont sur devis."
+      },
+      "threshold": {
+        "en": "Decision threshold: budget the mandatory registry fees for your legal structure plus a quote for accounting, since the 0 EUR formation fee doesn't cover either.",
+        "fr": "Seuil de décision : prévois les frais de greffe obligatoires pour ta forme juridique ainsi qu'un devis pour la comptabilité, car les frais de création à 0 EUR ne couvrent ni l'un ni l'autre."
+      }
+    }
+  },
+  "reviewNotes": [
+    "pricing.model is set to \"usage\" but the actual pricing described is a one-time company-formation fee (0 EUR plus variable registry costs) plus a flat per-seat invoicing subscription (8.25 EUR/month) plus quote-based services; this doesn't match the \"usage\" (consumption-based) definition in the brief and should be re-checked against the official pricing page.",
+    "comparePlanKey is set to \"invoicing\" (the 8.25 EUR/month software), but LegalPlace's main advertised function is company formation, not invoicing software; verify on legalplace.fr whether the comparison plan should instead reflect the formation service or stay as is because formation has no non-zero service fee to compare."
+  ],
   "unknowns": [
     "Full pricing grid for company-formation service fees by legal structure was not shown on the homepage.",
     "Accounting service pricing was not disclosed publicly."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "hold": "pricing model usage and compare plan invoicing do not match the core company-formation offer"
 }

@@ -3,7 +3,7 @@
   "slug": "freshbooks",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "FreshBooks",
     "vendor": "FreshBooks",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.freshbooks.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "FreshBooks pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.freshbooks.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "FreshBooks pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,81 +30,299 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 30,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "lite",
         "name": "Lite",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 23, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 23,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Up to 5 billable clients; basic invoicing, expense tracking, estimates, payment acceptance.", "fr": null }
+          {
+            "en": "Up to 5 billable clients; basic invoicing, expense tracking, estimates, payment acceptance.",
+            "fr": "Jusqu'à 5 clients facturables ; facturation de base, suivi des dépenses, devis, acceptation de paiement."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "plus",
         "name": "Plus",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 43, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 43,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Up to 50 billable clients; proposals, client retainers, financial reports, receipt scanning, accountant access.", "fr": null }
+          {
+            "en": "Up to 50 billable clients; proposals, client retainers, financial reports, receipt scanning, accountant access.",
+            "fr": "Jusqu'à 50 clients facturables ; propositions, retainers clients, rapports financiers, scan de reçus, accès comptable."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "premium",
         "name": "Premium",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": 70, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 70,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Unlimited billable clients; project profitability, custom email templates, line-item receipt capture.", "fr": null }
+          {
+            "en": "Unlimited billable clients; project profitability, custom email templates, line-item receipt capture.",
+            "fr": "Clients facturables illimités ; rentabilité par projet, modèles d'email personnalisés, capture ligne à ligne des reçus."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "select",
         "name": "Select",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Unlimited billable clients; lower transaction fees, dedicated support, 2 included team members, guided data migration, advanced permissions.", "fr": null }
+          {
+            "en": "Unlimited billable clients; lower transaction fees, dedicated support, 2 included team members, guided data migration, advanced permissions.",
+            "fr": "Clients facturables illimités ; frais de transaction réduits, support dédié, 2 membres d'équipe inclus, migration de données accompagnée, permissions avancées."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "lite",
     "addOns": [],
     "cautions": [
-      { "en": "The pricing page displays heavily discounted promotional rates (Lite from $1/mo, Plus/Premium up to 80% off) that apply only for a limited introductory period; regular list prices ($23 / $43 / $70) were used here and should be reconfirmed at merge time in case they change.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "The pricing page displays heavily discounted promotional rates (Lite from $1/mo, Plus/Premium up to 80% off) that apply only for a limited introductory period; regular list prices ($23 / $43 / $70) were used here and should be reconfirmed at merge time in case they change.",
+        "fr": "La page tarifs affiche des tarifs promotionnels très réduits (Lite à partir de 1 $/mois, jusqu'à -80 % sur Plus/Premium) valables seulement pour une période d'introduction limitée ; les prix catalogue (23 $ / 43 $ / 70 $) ont été retenus ici et doivent être reconfirmés au moment de la fusion en cas de changement.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Invoicing, expense tracking, estimates and online payment acceptance for freelancers and small businesses.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Unlimited time tracking, automated bank imports, tax reports and a mobile app on all plans.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Invoicing, expense tracking, estimates and online payment acceptance for freelancers and small businesses.",
+        "fr": "Facturation, suivi des dépenses, devis et acceptation de paiement en ligne pour freelances et petites entreprises.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Unlimited time tracking, automated bank imports, tax reports and a mobile app on all plans.",
+        "fr": "Suivi du temps illimité, imports bancaires automatisés, rapports fiscaux et application mobile sur toutes les formules.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No permanent free plan; only a 30-day trial before a paid subscription is required.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Entry-level Lite plan caps billable clients at 5, forcing an upgrade as a freelancer's client base grows.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No permanent free plan; only a 30-day trial before a paid subscription is required.",
+        "fr": "Aucun plan gratuit permanent : seulement un essai de 30 jours avant un abonnement payant obligatoire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Entry-level Lite plan caps billable clients at 5, forcing an upgrade as a freelancer's client base grows.",
+        "fr": "La formule d'entrée Lite plafonne les clients facturables à 5, ce qui force une mise à niveau quand la base de clients d'un freelance grandit.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
-  "alternatives": [],
+  "alternatives": [
+    {
+      "slug": "quickbooks-online",
+      "reason": {
+        "en": "Widely used accounting and invoicing competitor aimed at the same freelancer/small-business segment.",
+        "fr": "Concurrent très utilisé en comptabilité et facturation, visant le même segment freelances/petites entreprises."
+      }
+    },
+    {
+      "slug": "xero",
+      "reason": {
+        "en": "Cloud accounting competitor with similar invoicing, expense tracking and reporting features.",
+        "fr": "Concurrent de comptabilité cloud avec des fonctionnalités similaires de facturation, suivi des dépenses et reporting."
+      }
+    },
+    {
+      "slug": "pennylane",
+      "reason": {
+        "en": "Accounting platform for freelancers and small businesses, a direct alternative in the same category.",
+        "fr": "Plateforme de comptabilité pour freelances et petites entreprises, alternative directe dans la même catégorie."
+      }
+    }
+  ],
   "missingAlternatives": [],
   "unknowns": [
-    "Full integrations list and exact team-member limits per plan were not confirmed on an official page in this session.",
-    "No alternativeCandidates were provided in the seed for this slug; alternatives left empty rather than guessed."
+    "Full integrations list and exact team-member limits per plan were not confirmed on an official page in this session."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "There is no permanent free plan and the entry plan caps billable clients at 5, and the sources give no comparative cost-benefit data.",
+        "fr": "Il n'y a pas de plan gratuit permanent et la formule d'entrée plafonne les clients facturables à 5, et les sources ne donnent pas de données comparatives de coût/bénéfice.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time for a freelancer's first invoice is not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main pour la première facture d'un freelance ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Invoicing, expense tracking, time tracking and tax reports are documented as delivered on every plan, matching the stated promise.",
+        "fr": "Facturation, suivi des dépenses, suivi du temps et rapports fiscaux sont documentés comme livrés sur chaque formule, conformément à la promesse annoncée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Features are standard invoicing/accounting tools for freelancers; the sources give no evidence of a category-reference-level ceiling.",
+        "fr": "Les fonctionnalités sont des outils standards de facturation/comptabilité pour freelances ; les sources ne donnent aucune preuve d'un plafond de référence dans la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export formats for accounting records are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export des données comptables ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": {
+      "en": "Freelancers and small businesses handling their own invoicing and bookkeeping.",
+      "fr": "Freelances et petites entreprises qui gèrent eux-mêmes leur facturation et leur comptabilité."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Client invoicing: send branded invoices and accept online payment without a separate payment processor setup.",
+      "fr": "Facturation client : envoyer des factures à son image et accepter le paiement en ligne sans configurer un processeur de paiement séparé."
+    },
+    {
+      "en": "Tax prep: pull expense and time-tracking reports at year-end instead of reconstructing records from receipts.",
+      "fr": "Préparation fiscale : extraire les rapports de dépenses et de temps en fin d'année plutôt que de reconstituer les données à partir des reçus."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Invoicing for freelancers",
+      "fr": "Facturation pour freelances"
+    },
+    "shortDescription": {
+      "en": "Invoicing and accounting software for freelancers and small businesses, with no free plan and a client-count cap on the entry tier.",
+      "fr": "Logiciel de facturation et comptabilité pour freelances et petites entreprises, sans plan gratuit et avec un plafond de clients sur la formule d'entrée."
+    },
+    "longDescription": {
+      "en": "FreshBooks handles invoicing, expense tracking, estimates and online payment acceptance for freelancers and small businesses, with unlimited time tracking, automated bank imports and tax reports on every plan.\n\nThe entry plan, Lite, costs $23/month but caps billable clients at 5, which forces an upgrade to Plus ($43/month, 50 clients) or Premium ($70/month, unlimited clients) as a freelancer's client base grows. There is no permanent free plan, only a 30-day trial before a paid subscription becomes mandatory.",
+      "fr": "FreshBooks gère la facturation, le suivi des dépenses, les devis et l'acceptation de paiement en ligne pour freelances et petites entreprises, avec suivi du temps illimité, imports bancaires automatisés et rapports fiscaux sur chaque formule.\n\nLa formule d'entrée, Lite, coûte 23 $/mois mais plafonne les clients facturables à 5, ce qui force une mise à niveau vers Plus (43 $/mois, 50 clients) ou Premium (70 $/mois, clients illimités) quand la base de clients d'un freelance grandit. Il n'y a pas de plan gratuit permanent, seulement un essai de 30 jours avant qu'un abonnement payant ne devienne obligatoire."
+    },
+    "pros": [
+      {
+        "en": "Unlimited time tracking and automated bank imports are included on every plan, not just the top tier.",
+        "fr": "Le suivi du temps illimité et les imports bancaires automatisés sont inclus sur chaque formule, pas seulement la plus haute."
+      },
+      {
+        "en": "Mobile app and tax reports are available from the entry plan.",
+        "fr": "L'application mobile et les rapports fiscaux sont disponibles dès la formule d'entrée."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No permanent free plan; only a 30-day trial before payment is required.",
+        "fr": "Aucun plan gratuit permanent : seulement un essai de 30 jours avant le paiement obligatoire."
+      },
+      {
+        "en": "Entry plan caps billable clients at 5, forcing an early upgrade for a growing freelance business.",
+        "fr": "La formule d'entrée plafonne les clients facturables à 5, ce qui force une mise à niveau rapide pour un freelance en croissance."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're a freelancer or small business that wants invoicing, expenses and time tracking in one tool from day one.",
+        "fr": "Tu es freelance ou une petite entreprise qui veut facturation, dépenses et suivi du temps dans un seul outil dès le départ."
+      },
+      "avoidIf": {
+        "en": "You already have more than 5 billable clients and want to avoid an upgrade right after onboarding.",
+        "fr": "Tu as déjà plus de 5 clients facturables et tu veux éviter une mise à niveau juste après ton inscription."
+      },
+      "threshold": {
+        "en": "Worth it from the Lite plan ($23/month, $276/year) once you need recurring invoicing rather than one-off documents.",
+        "fr": "Rentable dès le plan Lite (23 $/mois, 276 $/an) dès que tu as besoin d'une facturation récurrente plutôt que de documents ponctuels."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "pricing.plans: the official pricing page shows heavily discounted introductory rates (Lite from $1/month; up to 80% off Plus/Premium) alongside the list prices used here ($23/$43/$70); reconfirm the current list prices on freshbooks.com/pricing before merge in case the promotion or the underlying list price has changed."
+  ]
 }

@@ -3,7 +3,7 @@
   "slug": "sap-s4hana",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "SAP S/4HANA",
     "vendor": "SAP SE",
@@ -44,7 +44,7 @@
     "cautions": [
       {
         "en": "No public pricing; deployment (cloud vs on-premise), licensing model and implementation scope are negotiated per customer, so total cost of ownership varies widely and typically includes large implementation/consulting fees.",
-        "fr": null,
+        "fr": "Aucun prix public : le déploiement (cloud ou sur site), le modèle de licence et le périmètre d'implémentation sont négociés au cas par cas, donc le coût total varie fortement et inclut généralement des frais d'implémentation et de conseil importants.",
         "sourceIds": [
           "s1"
         ]
@@ -55,21 +55,21 @@
     "capabilities": [
       {
         "en": "Next-generation enterprise ERP suite covering finance, supply chain, manufacturing and procurement with an in-memory (HANA) database for real-time analytics.",
-        "fr": null,
+        "fr": "Suite ERP de nouvelle génération couvrant finance, supply chain, production et achats, avec une base de données en mémoire (HANA) pour l'analytique en temps réel.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Embedded AI features for process automation and decision support across ERP modules.",
-        "fr": null,
+        "fr": "Fonctionnalités IA intégrées pour l'automatisation des processus et l'aide à la décision dans les modules ERP.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Available in cloud (public/private) and on-premise deployment options.",
-        "fr": null,
+        "fr": "Disponible en déploiement cloud (public/privé) et sur site.",
         "sourceIds": [
           "s1"
         ]
@@ -78,14 +78,14 @@
     "limitations": [
       {
         "en": "No self-serve pricing or sign-up; requires a sales engagement and implementation project before go-live.",
-        "fr": null,
+        "fr": "Aucune tarification ni inscription en libre-service : un engagement commercial puis un projet d'implémentation sont nécessaires avant la mise en production.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Designed for large organizations replacing legacy ERP systems, not for solo freelancers or very small teams.",
-        "fr": null,
+        "fr": "Conçu pour de grandes organisations qui remplacent un ERP historique, pas pour des freelances solos ou de très petites équipes.",
         "sourceIds": [
           "s1"
         ]
@@ -101,21 +101,21 @@
       "slug": "netsuite",
       "reason": {
         "en": "Cloud ERP competitor targeting mid-market to large organizations.",
-        "fr": null
+        "fr": "Concurrent ERP cloud visant les organisations de taille moyenne à grande."
       }
     },
     {
       "slug": "microsoft-dynamics-365-finance-operations",
       "reason": {
         "en": "Direct enterprise ERP/finance competitor from Microsoft.",
-        "fr": null
+        "fr": "Concurrent direct en ERP/finance d'entreprise, proposé par Microsoft."
       }
     },
     {
       "slug": "oracle-fusion-cloud",
       "reason": {
         "en": "Major cloud ERP suite competing for the same large-enterprise segment.",
-        "fr": null
+        "fr": "Grande suite ERP cloud qui vise le même segment de grandes entreprises."
       }
     }
   ],
@@ -123,5 +123,119 @@
   "unknowns": [
     "No indicative pricing figures exist publicly; cost depends entirely on a custom quote and implementation scope."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 1,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "No public pricing is available, so the sources give no way to weigh cost against benefit.",
+        "fr": "Aucun prix public n'est disponible, donc les sources ne permettent pas de peser le coût face au bénéfice.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "The sources explicitly state that a sales engagement and an implementation project are required before go-live, with no self-serve path at all.",
+        "fr": "Les sources indiquent explicitement qu'un engagement commercial puis un projet d'implémentation sont nécessaires avant la mise en production, sans aucun chemin en libre-service.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Neutral score: whether the suite delivers its stated finance/supply-chain/manufacturing functions without workarounds is not detailed in the collected sources.",
+        "fr": "Note neutre : la capacité de la suite à tenir ses promesses en finance, supply chain et production sans contournement n'est pas détaillée dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Described as covering finance, supply chain, manufacturing and procurement together with an in-memory database and embedded AI, a broad enterprise-grade scope.",
+        "fr": "Décrit comme couvrant ensemble finance, supply chain, production et achats, avec une base en mémoire et de l'IA intégrée, un périmètre large de niveau entreprise.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and migration-out options are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export des données et de migration en sortie ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "Large organizations replacing a legacy ERP system, not solo freelancers or small teams.",
+      "fr": "Grandes organisations qui remplacent un ERP historique, pas des freelances solos ou de petites équipes."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "ERP replacement: migrate finance, supply chain and manufacturing processes off a legacy system onto one in-memory platform.",
+      "fr": "Remplacement d'ERP : migrer les processus finance, supply chain et production d'un système historique vers une plateforme unique en mémoire."
+    },
+    {
+      "en": "Real-time reporting: run analytics directly on live operational data instead of waiting for overnight batch reports.",
+      "fr": "Reporting en temps réel : faire tourner des analyses directement sur les données opérationnelles en direct plutôt que d'attendre des rapports en batch de nuit."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Enterprise ERP suite",
+      "fr": "Suite ERP d'entreprise"
+    },
+    "shortDescription": {
+      "en": "Enterprise ERP suite for finance, supply chain and manufacturing, with no public pricing and a sales-led implementation project.",
+      "fr": "Suite ERP d'entreprise pour finance, supply chain et production, sans prix public et avec un projet d'implémentation mené par les ventes."
+    },
+    "longDescription": {
+      "en": "SAP S/4HANA is a next-generation ERP suite covering finance, supply chain, manufacturing and procurement, built on an in-memory (HANA) database for real-time analytics, with embedded AI for process automation. It is available in cloud (public or private) or on-premise deployment.\n\nThere is no public pricing or self-serve sign-up: every deployment goes through a sales engagement and an implementation project, with licensing and scope negotiated per customer. This makes it fit for large organizations replacing a legacy ERP, not for solo freelancers or small teams who need to start using a tool the same week.",
+      "fr": "SAP S/4HANA est une suite ERP de nouvelle génération couvrant finance, supply chain, production et achats, construite sur une base de données en mémoire (HANA) pour l'analytique en temps réel, avec de l'IA intégrée pour l'automatisation des processus. Elle est disponible en déploiement cloud (public ou privé) ou sur site.\n\nAucun prix public ni inscription en libre-service : chaque déploiement passe par un engagement commercial puis un projet d'implémentation, avec licence et périmètre négociés au cas par cas. Cela convient à de grandes organisations qui remplacent un ERP historique, pas à des freelances solos ou de petites équipes qui doivent utiliser un outil dès la même semaine."
+    },
+    "pros": [
+      {
+        "en": "Covers finance, supply chain, manufacturing and procurement in one suite rather than separate systems.",
+        "fr": "Couvre finance, supply chain, production et achats dans une seule suite plutôt que dans des systèmes séparés."
+      },
+      {
+        "en": "In-memory database enables real-time analytics on live operational data.",
+        "fr": "La base de données en mémoire permet une analytique en temps réel sur les données opérationnelles en direct."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No self-serve pricing or sign-up; every deployment requires a sales engagement and implementation project.",
+        "fr": "Aucune tarification ni inscription en libre-service : chaque déploiement nécessite un engagement commercial et un projet d'implémentation."
+      },
+      {
+        "en": "Not designed for solo freelancers or very small teams.",
+        "fr": "Pas conçu pour des freelances solos ou de très petites équipes."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're a large organization replacing a legacy ERP and can commit to a sales-led implementation project.",
+        "fr": "Tu es une grande organisation qui remplace un ERP historique et tu peux t'engager dans un projet d'implémentation mené par les ventes."
+      },
+      "avoidIf": {
+        "en": "You're a freelancer or small team that needs to start working with a tool this week without a sales process.",
+        "fr": "Tu es freelance ou une petite équipe qui doit commencer à travailler avec un outil cette semaine, sans processus commercial."
+      },
+      "threshold": {
+        "en": "No public price exists; cost depends entirely on a vendor quote and implementation scope, so there is no fixed threshold to compare against.",
+        "fr": "Aucun prix public n'existe : le coût dépend entièrement d'un devis éditeur et du périmètre d'implémentation, donc il n'y a pas de seuil fixe à comparer."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

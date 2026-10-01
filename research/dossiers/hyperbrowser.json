@@ -3,7 +3,7 @@
   "slug": "hyperbrowser",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Hyperbrowser",
     "vendor": "Hyperbrowser",
@@ -41,7 +41,7 @@
       "exists": true,
       "limits": {
         "en": "1,000 credits, 1 concurrent browser, no credit card required.",
-        "fr": null
+        "fr": "1 000 crédits, 1 navigateur simultané, aucune carte bancaire requise."
       },
       "sourceIds": [
         "s1"
@@ -63,7 +63,7 @@
         "keyLimits": [
           {
             "en": "30,000 credits included, 25 concurrent browsers, 30-day data retention, CAPTCHA solving, basic stealth, residential proxies; extra usage billed separately.",
-            "fr": null
+            "fr": "30 000 crédits inclus, 25 navigateurs simultanés, 30 jours de conservation des données, résolution de CAPTCHA, furtivité de base, proxies résidentiels ; l'usage supplémentaire est facturé séparément."
           }
         ],
         "sourceIds": [
@@ -84,7 +84,7 @@
         "keyLimits": [
           {
             "en": "100,000 credits included, 100 concurrent browsers, advanced stealth; extra usage billed separately.",
-            "fr": null
+            "fr": "100 000 crédits inclus, 100 navigateurs simultanés, furtivité avancée ; l'usage supplémentaire est facturé séparément."
           }
         ],
         "sourceIds": [
@@ -97,7 +97,7 @@
     "cautions": [
       {
         "en": "Credit-based usage model (1 credit = $0.001): a browser-hour costs 100 credits, a scraped page costs 1 credit; plan credits can run out and trigger overage billing before the month renews.",
-        "fr": null,
+        "fr": "Modèle d'usage par crédits (1 crédit = 0,001 $) : une heure de navigateur coûte 100 crédits, une page scrapée coûte 1 crédit ; les crédits du plan peuvent s'épuiser et déclencher une facturation en dépassement avant le renouvellement du mois.",
         "sourceIds": [
           "s1"
         ]
@@ -108,14 +108,14 @@
     "capabilities": [
       {
         "en": "Cloud browser infrastructure for running headless/agentic browser sessions at scale, positioned as \"web infra for AI agents\".",
-        "fr": null,
+        "fr": "Infrastructure de navigateurs cloud pour exécuter des sessions de navigation headless/agentiques à grande échelle, positionnée comme une « infra web pour agents IA ».",
         "sourceIds": [
           "s2"
         ]
       },
       {
         "en": "Provides CAPTCHA solving, stealth/anti-bot evasion and residential proxies on paid plans for large-scale scraping.",
-        "fr": null,
+        "fr": "Résolution de CAPTCHA, furtivité anti-bot et proxies résidentiels sur les formules payantes pour le scraping à grande échelle.",
         "sourceIds": [
           "s1"
         ]
@@ -124,14 +124,14 @@
     "limitations": [
       {
         "en": "Free plan is limited to 1 concurrent browser and a one-time 1,000-credit allotment, unsuitable for production workloads.",
-        "fr": null,
+        "fr": "Le plan gratuit est limité à 1 navigateur simultané et une dotation unique de 1 000 crédits, insuffisant pour une charge de production.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Pricing is usage-metered on top of a plan base, so cost is variable and depends on scraping volume rather than a flat monthly fee.",
-        "fr": null,
+        "fr": "La tarification est mesurée à l'usage en plus d'une base forfaitaire, donc le coût varie selon le volume de scraping plutôt que d'être un tarif mensuel fixe.",
         "sourceIds": [
           "s1"
         ]
@@ -147,7 +147,7 @@
       "slug": "firecrawl",
       "reason": {
         "en": "Competing scraping-as-a-service platform aimed at feeding data to AI agents.",
-        "fr": null
+        "fr": "Plateforme concurrente de scraping-as-a-service visant à alimenter des agents IA en données."
       }
     }
   ],
@@ -166,5 +166,123 @@
   "unknowns": [
     "Full feature list and integrations could not be extracted from the homepage in this session; the SDK/language support list was not confirmed on an official page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Pricing is usage-metered on top of a plan base, so total cost varies with scraping volume and the sources give no fixed cost-benefit comparison.",
+        "fr": "La tarification est mesurée à l'usage en plus d'une base forfaitaire, donc le coût total varie selon le volume de scraping, et les sources ne donnent pas de comparaison coût/bénéfice fixe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and SDK/setup complexity are not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main et la complexité de mise en place du SDK ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "CAPTCHA solving, stealth evasion and residential proxies are documented as delivered on paid plans, matching the stated agentic-browser-infra promise.",
+        "fr": "La résolution de CAPTCHA, la furtivité anti-bot et les proxies résidentiels sont documentés comme livrés sur les formules payantes, conformément à la promesse d'infra de navigateur agentique annoncée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Concurrency scales from 25 to 100 browsers between the two paid plans, but the sources give no reference-level comparison within the category.",
+        "fr": "La concurrence évolue de 25 à 100 navigateurs entre les deux formules payantes, mais les sources ne donnent pas de comparaison de référence dans la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or migration options for collected sessions/data are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ou de migration des données et sessions collectées ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers running AI agents or scraping pipelines that need managed browser infrastructure.",
+      "fr": "Développeurs qui font tourner des agents IA ou des pipelines de scraping et ont besoin d'une infrastructure de navigateur gérée."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Agent data collection: run headless browser sessions at scale to feed an AI agent with live web data.",
+      "fr": "Collecte de données pour agent : exécuter des sessions de navigateur headless à grande échelle pour alimenter un agent IA en données web en direct."
+    },
+    {
+      "en": "Protected-site scraping: use CAPTCHA solving and residential proxies to scrape sites that block simple bots.",
+      "fr": "Scraping de sites protégés : utiliser la résolution de CAPTCHA et des proxies résidentiels pour scraper des sites qui bloquent les bots simples."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Cloud browser infra",
+      "fr": "Infra de navigateur cloud"
+    },
+    "shortDescription": {
+      "en": "Usage-priced cloud browser infrastructure for AI agents and large-scale scraping, with CAPTCHA solving and residential proxies on paid plans.",
+      "fr": "Infrastructure de navigateur cloud facturée à l'usage pour agents IA, avec CAPTCHA et proxies résidentiels sur les formules payantes."
+    },
+    "longDescription": {
+      "en": "Hyperbrowser runs headless, agentic browser sessions in the cloud so an AI agent or scraping pipeline does not need to manage its own browser infrastructure. Paid plans add CAPTCHA solving, stealth evasion and residential proxies for sites that block simple bots.\n\nPricing starts at $30/month (Startup) for 30,000 credits and 25 concurrent browsers, scaling to $100/month (Scale) for 100,000 credits and 100 concurrent browsers. Credits meter actual usage (a browser-hour costs 100 credits, a scraped page costs 1), so cost rises with volume rather than staying flat, and the free plan's single 1,000-credit allotment is only enough to test the product, not run production workloads.",
+      "fr": "Hyperbrowser exécute des sessions de navigateur headless et agentiques dans le cloud, pour qu'un agent IA ou un pipeline de scraping n'ait pas à gérer sa propre infrastructure. Les formules payantes ajoutent la résolution de CAPTCHA, la furtivité anti-bot et des proxies résidentiels pour les sites qui bloquent les bots simples.\n\nLa tarification démarre à 30 $/mois (Startup) pour 30 000 crédits et 25 navigateurs simultanés, et monte à 100 $/mois (Scale) pour 100 000 crédits et 100 navigateurs simultanés. Les crédits mesurent l'usage réel, donc le coût augmente avec le volume plutôt que de rester fixe, et la dotation unique de 1 000 crédits du plan gratuit suffit seulement à tester le produit."
+    },
+    "pros": [
+      {
+        "en": "CAPTCHA solving, stealth evasion and residential proxies are included on paid plans, not sold as separate add-ons.",
+        "fr": "Résolution de CAPTCHA, furtivité anti-bot et proxies résidentiels sont inclus dans les formules payantes, pas vendus en option séparée."
+      },
+      {
+        "en": "Concurrency scales from 25 to 100 simultaneous browsers between the two paid plans.",
+        "fr": "La concurrence évolue de 25 à 100 navigateurs simultanés entre les deux formules payantes."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Usage-metered credits mean cost varies with scraping volume rather than staying flat each month.",
+        "fr": "Les crédits mesurés à l'usage font varier le coût selon le volume de scraping plutôt que de rester fixe chaque mois."
+      },
+      {
+        "en": "The free plan's one-time 1,000-credit allotment and single browser are only enough to test the product.",
+        "fr": "La dotation unique de 1 000 crédits et le navigateur unique du plan gratuit suffisent seulement à tester le produit."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You're building an AI agent or scraper that needs managed, anti-bot-resistant browser infrastructure without running your own.",
+        "fr": "Tu construis un agent IA ou un scraper qui a besoin d'une infrastructure de navigateur gérée et résistante à l'anti-bot, sans la gérer toi-même."
+      },
+      "avoidIf": {
+        "en": "Your scraping volume is unpredictable and you need a flat monthly cost rather than metered credits.",
+        "fr": "Ton volume de scraping est imprévisible et tu as besoin d'un coût mensuel fixe plutôt que de crédits mesurés à l'usage."
+      },
+      "threshold": {
+        "en": "Worth the Startup plan ($30/month, 30,000 credits) once a project needs more than 1 concurrent browser or CAPTCHA solving.",
+        "fr": "Le plan Startup (30 $/mois, 30 000 crédits) devient rentable dès qu'un projet a besoin de plus d'1 navigateur simultané ou de résolution de CAPTCHA."
+      },
+      "billingTraps": {
+        "en": "Plan credits can run out mid-month and trigger separate overage billing before the next renewal.",
+        "fr": "Les crédits du plan peuvent s'épuiser en cours de mois et déclencher une facturation en dépassement séparée avant le renouvellement suivant."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

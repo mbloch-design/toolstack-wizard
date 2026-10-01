@@ -3,7 +3,7 @@
   "slug": "esko-studio",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Esko Studio",
     "vendor": "Esko (Veralto)",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.esko.com/en/products/studio", "tier": 1, "accessedOn": "2026-09-25", "title": "Esko Studio product page" }
+    {
+      "id": "s1",
+      "url": "https://www.esko.com/en/products/studio",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Esko Studio product page"
+    }
   ],
   "pricing": {
     "model": "quote",
@@ -24,38 +30,219 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "No public pricing tiers are disclosed on the official product page; only a free trial and a 'Buy Now' contact path are offered.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No public pricing tiers are disclosed on the official product page; only a free trial and a 'Buy Now' contact path are offered.",
+        "fr": "Aucun palier de prix public n'est divulgué sur la page produit officielle ; seuls un essai gratuit et un parcours de contact 'Acheter maintenant' sont proposés.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "3D packaging design and visualization: creates 3D content, movies, virtual packshots and virtual shopping-shelf renders.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Print modeling technology that syncs 3D models with actual production assets for accurate packaging previews.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Dedicated shrink sleeve simulation and ray-traced photorealistic rendering, with material experimentation across substrates, inks, varnishes, foils and holograms.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "3D packaging design and visualization: creates 3D content, movies, virtual packshots and virtual shopping-shelf renders.",
+        "fr": "Conception et visualisation 3D de packaging : crée du contenu 3D, des films, des packshots virtuels et des rendus de rayons de vente virtuels.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Print modeling technology that syncs 3D models with actual production assets for accurate packaging previews.",
+        "fr": "Technologie de modélisation d'impression qui synchronise les modèles 3D avec les véritables éléments de production pour des aperçus de packaging fidèles.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Dedicated shrink sleeve simulation and ray-traced photorealistic rendering, with material experimentation across substrates, inks, varnishes, foils and holograms.",
+        "fr": "Simulation dédiée de manchons rétractables et rendu photoréaliste par ray-tracing, avec expérimentation de matériaux sur substrats, encres, vernis, feuilles et hologrammes.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No public pricing or self-serve purchase path; access requires a sales contact or trial request.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Requires Adobe Illustrator as the design environment (plugin-based), so it is not a standalone application.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No public pricing or self-serve purchase path; access requires a sales contact or trial request.",
+        "fr": "Aucune tarification publique ni parcours d'achat en libre-service ; l'accès nécessite un contact commercial ou une demande d'essai.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Requires Adobe Illustrator as the design environment (plugin-based), so it is not a standalone application.",
+        "fr": "Nécessite Adobe Illustrator comme environnement de conception (plugin), ce n'est donc pas une application autonome.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Adobe Illustrator", "slug": "adobe-illustrator", "sourceIds": ["s1"] }
+      {
+        "name": "Adobe Illustrator",
+        "slug": "adobe-illustrator",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["desktop"]
+    "platforms": [
+      "desktop"
+    ]
   },
-  "audience": null,
-  "useCases": [],
-  "alternatives": [],
-  "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "Packaging designers who need photorealistic 3D visualization of packaging synced to real production assets before print.",
+      "fr": "Designers packaging qui ont besoin d'une visualisation 3D photoréaliste du packaging synchronisée aux éléments de production réels avant impression."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Packaging designer: render a photorealistic virtual packshot of a new product before committing to a physical print run.",
+      "fr": "Designer packaging : réaliser un packshot virtuel photoréaliste d'un nouveau produit avant de s'engager sur un tirage physique."
+    },
+    {
+      "en": "Brand team: simulate a shrink sleeve across different substrates and foils to compare options before approving production.",
+      "fr": "Équipe marque : simuler un manchon rétractable sur différents substrats et feuilles pour comparer les options avant d'approuver la production."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "keyshot",
+      "reason": {
+        "en": "3D rendering and visualization tool covering a similar photorealistic product-visualization need, though not packaging-specific.",
+        "fr": "Outil de rendu et de visualisation 3D couvrant un besoin similaire de visualisation photoréaliste de produit, bien que non spécifique au packaging."
+      }
+    }
+  ],
+  "missingAlternatives": [
+    {
+      "name": "Hybrid Software PACKZ",
+      "officialUrl": "https://www.hybridsoftware.com/packz/",
+      "reason": "Direct packaging prepress and structural design competitor, absent from the catalogue."
+    },
+    {
+      "name": "Kongsberg PrecisionCut (packaging design suite)",
+      "officialUrl": "https://www.kongsberg-ps.com/",
+      "reason": "Packaging and structural design competitor used alongside Esko workflows, not present in the catalogue."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: with no public pricing, the cost-to-benefit ratio for a packaging team could not be judged from the collected sources.",
+        "fr": "Note neutre : sans tarification publique, le rapport coût/bénéfice pour une équipe packaging n'a pas pu être jugé à partir des sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Requires Adobe Illustrator as the design environment and is positioned as a specialist plugin, implying a learning curve beyond a first-hour result.",
+        "fr": "Nécessite Adobe Illustrator comme environnement de conception et se positionne comme un plugin spécialisé, ce qui suppose une courbe d'apprentissage au-delà d'un résultat en une heure.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers 3D packaging visualization, virtual packshots and shelf renders synced to real production assets as described, without a stated workaround.",
+        "fr": "Livre la visualisation 3D de packaging, les packshots virtuels et les rendus de rayons synchronisés aux éléments de production réels, comme décrit, sans contournement mentionné.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Dedicated shrink-sleeve simulation, ray-traced rendering and material experimentation across substrates, inks and foils cover specialist packaging-visualization needs.",
+        "fr": "Simulation dédiée de manchons rétractables, rendu par ray-tracing et expérimentation de matériaux sur substrats, encres et feuilles couvrent des besoins spécialisés de visualisation packaging.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and portability of Esko Studio projects were not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des projets Esko Studio ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "3D packaging visualization",
+      "fr": "Visualisation 3D de packaging"
+    },
+    "shortDescription": {
+      "en": "Esko Studio is an Adobe Illustrator plugin for 3D packaging design and photorealistic visualization, with pricing available only on request.",
+      "fr": "Esko Studio est un plugin Adobe Illustrator pour la conception packaging 3D et la visualisation photoréaliste, avec une tarification disponible uniquement sur demande."
+    },
+    "longDescription": {
+      "en": "Esko Studio is a 3D packaging design and visualization plugin for Adobe Illustrator, producing 3D content, virtual packshots and shelf renders synced to real production assets through its print modeling technology. It adds dedicated shrink-sleeve simulation and ray-traced photorealistic rendering across substrates, inks, varnishes, foils and holograms.\n\nNo public pricing exists: access runs through a sales contact or a trial request, and the plugin requires Adobe Illustrator as its design environment rather than running standalone. It suits packaging designers and brand teams who need accurate, photorealistic previews before committing to a physical print run.",
+      "fr": "Esko Studio est un plugin de conception et de visualisation packaging 3D pour Adobe Illustrator, produisant du contenu 3D, des packshots virtuels et des rendus de rayons synchronisés aux éléments de production réels grâce à sa technologie de modélisation d'impression. Il ajoute une simulation dédiée de manchons rétractables et un rendu photoréaliste par ray-tracing sur substrats, encres, vernis, feuilles et hologrammes.\n\nAucune tarification publique n'existe : l'accès passe par un contact commercial ou une demande d'essai, et le plugin nécessite Adobe Illustrator comme environnement de conception plutôt que de fonctionner de façon autonome. Il convient aux designers packaging et équipes marque qui ont besoin d'aperçus précis et photoréalistes avant de s'engager sur un tirage physique."
+    },
+    "pros": [
+      {
+        "en": "Print modeling technology syncs 3D previews with real production assets rather than a generic render.",
+        "fr": "La technologie de modélisation d'impression synchronise les aperçus 3D avec de véritables éléments de production plutôt qu'un rendu générique."
+      },
+      {
+        "en": "Dedicated shrink-sleeve simulation and material experimentation go beyond what a generic 3D tool covers.",
+        "fr": "La simulation dédiée de manchons rétractables et l'expérimentation de matériaux vont au-delà de ce qu'un outil 3D générique couvre."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No public pricing, so budgeting requires a sales conversation before any commitment.",
+        "fr": "Aucune tarification publique, donc budgéter nécessite un échange commercial avant tout engagement."
+      },
+      {
+        "en": "Not a standalone app: it runs as a plugin inside Adobe Illustrator, adding a licensing dependency.",
+        "fr": "Pas une application autonome : il fonctionne comme un plugin dans Adobe Illustrator, ajoutant une dépendance de licence."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Your team designs physical packaging and needs photorealistic previews synced to real production assets before print.",
+        "fr": "Ton équipe conçoit du packaging physique et a besoin d'aperçus photoréalistes synchronisés aux éléments de production réels avant impression."
+      },
+      "avoidIf": {
+        "en": "You need a general-purpose 3D visualization tool and don't already work inside Adobe Illustrator for packaging.",
+        "fr": "Tu as besoin d'un outil de visualisation 3D généraliste et tu ne travailles pas déjà dans Adobe Illustrator pour le packaging."
+      },
+      "threshold": {
+        "en": "No public price is available; request a quote and compare it against the Illustrator license you already need to run the plugin.",
+        "fr": "Aucun prix public n'est disponible ; demande un devis et compare-le à la licence Illustrator déjà nécessaire pour faire fonctionner le plugin."
+      }
+    }
+  },
   "unknowns": [
     "No pricing figures disclosed publicly; not covered within the 8-page research budget for this batch.",
     "Supported operating systems (Windows/macOS) not explicitly stated on the product page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "Esko Studio has no published pricing tiers at all; comparePlanKey is null per the brief's rule for quote-only tools, confirm this stays appropriate when merged."
+  ]
 }

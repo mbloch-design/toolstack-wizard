@@ -3,7 +3,8 @@
   "slug": "dbt",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "dbt (dbt Cloud)",
     "vendor": "dbt Labs, Inc.",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "1 seat, 3,000 models/month, 1 project (dbt Core/Developer plan).", "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "1 seat, 3,000 models/month, 1 project (dbt Core/Developer plan).", "fr": "1 siège, 3 000 modèles/mois, 1 projet (offre dbt Core/Developer)." }, "sourceIds": ["s1"] },
     "trial": { "days": 14, "sourceIds": ["s1"] },
     "plans": [
       {
@@ -35,7 +36,7 @@
         "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "1 seat, 3,000 models run/month, 1 project.", "sourceIds": ["s1"] }
+          { "en": "1 seat, 3,000 models run/month, 1 project.", "fr": "1 siège, 3 000 modèles exécutés/mois, 1 projet." }
         ],
         "sourceIds": ["s1"]
       },
@@ -47,7 +48,7 @@
         "price": { "monthly": 100, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "5 seats included, 15,000 models/month, 5,000 queried metrics/month, 1 project. Billed monthly by credit card.", "sourceIds": ["s1"] }
+          { "en": "5 seats included, 15,000 models/month, 5,000 queried metrics/month, 1 project. Billed monthly by credit card.", "fr": "5 sièges inclus, 15 000 modèles/mois, 5 000 métriques interrogées/mois, 1 projet. Facturé au mois par carte bancaire." }
         ],
         "sourceIds": ["s1"]
       },
@@ -59,7 +60,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "100,000 models/month, 20,000 metrics/month, up to 30 projects, SSO and role-based access control.", "sourceIds": ["s1"] }
+          { "en": "100,000 models/month, 20,000 metrics/month, up to 30 projects, SSO and role-based access control.", "fr": "100 000 modèles/mois, 20 000 métriques/mois, jusqu'à 30 projets, SSO et contrôle d'accès par rôle." }
         ],
         "sourceIds": ["s1"]
       },
@@ -71,7 +72,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "Unlimited projects, column-level lineage, multi-project dbt Mesh, PrivateLink and IP restrictions.", "sourceIds": ["s1"] }
+          { "en": "Unlimited projects, column-level lineage, multi-project dbt Mesh, PrivateLink and IP restrictions.", "fr": "Projets illimités, lignage au niveau des colonnes, dbt Mesh multi-projets, PrivateLink et restrictions d'IP." }
         ],
         "sourceIds": ["s1"]
       }
@@ -79,20 +80,20 @@
     "comparePlanKey": "starter",
     "addOns": [],
     "cautions": [
-      { "en": "Usage caps (models run/month, metrics queried/month) can force an upgrade even for a single small team if pipelines run frequently.", "sourceIds": ["s1"] }
+      { "en": "Usage caps (models run/month, metrics queried/month) can force an upgrade even for a single small team if pipelines run frequently.", "fr": "Les plafonds d'usage (modèles exécutés/mois, métriques interrogées/mois) peuvent forcer une mise à niveau même pour une seule petite équipe si les pipelines tournent souvent.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "SQL-based data transformation with version-controlled, testable data models.", "sourceIds": ["s1"] },
-      { "en": "Browser-based IDE with git safeguards, job scheduling, and monitoring.", "sourceIds": ["s1"] },
-      { "en": "dbt Semantic Layer for querying shared business metrics (Starter and above).", "sourceIds": ["s1"] },
-      { "en": "GitHub/GitLab CI integration for automated pipeline testing.", "sourceIds": ["s1"] }
+      { "en": "SQL-based data transformation with version-controlled, testable data models.", "fr": "Transformation de données en SQL avec des modèles versionnés et testables.", "sourceIds": ["s1"] },
+      { "en": "Browser-based IDE with git safeguards, job scheduling, and monitoring.", "fr": "IDE dans le navigateur avec garde-fous git, planification des jobs et supervision.", "sourceIds": ["s1"] },
+      { "en": "dbt Semantic Layer for querying shared business metrics (Starter and above).", "fr": "dbt Semantic Layer pour interroger des métriques métier partagées (à partir de Starter).", "sourceIds": ["s1"] },
+      { "en": "GitHub/GitLab CI integration for automated pipeline testing.", "fr": "Intégration CI GitHub/GitLab pour tester automatiquement les pipelines.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Free Developer plan is capped at 1 seat and 3,000 model runs/month, unsuitable for a team.", "sourceIds": ["s1"] },
-      { "en": "Column-level lineage and multi-project architecture (dbt Mesh) require Enterprise+.", "sourceIds": ["s1"] },
-      { "en": "SSO and role-based access control are Enterprise-tier only, not available on Starter.", "sourceIds": ["s1"] }
+      { "en": "Free Developer plan is capped at 1 seat and 3,000 model runs/month, unsuitable for a team.", "fr": "L'offre Developer gratuite est plafonnée à 1 siège et 3 000 exécutions de modèles/mois, inadaptée à une équipe.", "sourceIds": ["s1"] },
+      { "en": "Column-level lineage and multi-project architecture (dbt Mesh) require Enterprise+.", "fr": "Le lignage au niveau des colonnes et l'architecture multi-projets (dbt Mesh) demandent Enterprise+.", "sourceIds": ["s1"] },
+      { "en": "SSO and role-based access control are Enterprise-tier only, not available on Starter.", "fr": "Le SSO et le contrôle d'accès par rôle sont réservés à l'offre Enterprise, non disponibles sur Starter.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "GitHub", "slug": "github", "sourceIds": ["s1"] },
@@ -100,13 +101,62 @@
     ],
     "platforms": ["web"]
   },
-  "alternatives": [
-    { "slug": "bigquery", "reason": { "en": "Often paired with or substituted by warehouse-native transformation, overlapping on the analytics-pipeline job." } },
-    { "slug": "airbyte", "reason": { "en": "Adjacent data-pipeline tool sometimes used to replace parts of a dbt-based workflow." } }
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "A data or software developer who writes SQL transformations and wants version-controlled, testable data models rather than ad hoc warehouse queries.", "fr": "Un développeur data ou logiciel qui écrit des transformations SQL et veut des modèles de données versionnés et testables plutôt que des requêtes ad hoc sur l'entrepôt." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Build: write and test SQL data models with version control on the free Developer plan for a solo project under 3,000 model runs/month.", "fr": "Construire : écrire et tester des modèles de données SQL versionnés avec l'offre Developer gratuite pour un projet solo sous 3 000 exécutions/mois." },
+    { "en": "Scale a team: move to Starter for 5 seats and shared business metrics through the Semantic Layer once a solo project becomes a team pipeline.", "fr": "Faire grandir l'équipe : passer à Starter pour 5 sièges et des métriques métier partagées via le Semantic Layer quand un projet solo devient un pipeline d'équipe." }
   ],
-  "missingAlternatives": [],
+  "alternatives": [
+    { "slug": "bigquery", "reason": { "en": "Often paired with or substituted by warehouse-native transformation, overlapping on the analytics-pipeline job.", "fr": "Souvent associé à dbt ou substitué par une transformation native à l'entrepôt, en recoupement sur la tâche de pipeline analytique." } },
+    { "slug": "airbyte", "reason": { "en": "Adjacent data-pipeline tool sometimes used to replace parts of a dbt-based workflow.", "fr": "Outil de pipeline de données adjacent, parfois utilisé pour remplacer une partie d'un flux basé sur dbt." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Dataform", "officialUrl": "https://cloud.google.com/dataform", "reason": "SQL-based transformation tool directly comparable to dbt, integrated into Google Cloud, not confirmed in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The free Developer plan covers a solo project at no cost, but usage caps (models/metrics per month) can force an upgrade to Starter at $100/month even for a small team running pipelines frequently.", "fr": "L'offre Developer gratuite couvre un projet solo sans coût, mais les plafonds d'usage (modèles/métriques par mois) peuvent forcer un passage à Starter à 100 $/mois même pour une petite équipe qui fait tourner ses pipelines souvent.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "A browser-based IDE with git safeguards gets a first SQL model tested and scheduled without a separate CI setup.", "fr": "Un IDE dans le navigateur avec garde-fous git permet de tester et planifier un premier modèle SQL sans configuration CI séparée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers version-controlled, testable SQL data models, job scheduling and monitoring as promised, with GitHub/GitLab CI integration.", "fr": "Assure des modèles de données SQL versionnés et testables, la planification des jobs et la supervision comme promis, avec intégration CI GitHub/GitLab.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers SQL transformation, testing, scheduling and a Semantic Layer for shared metrics; column-level lineage and multi-project dbt Mesh push the ceiling further on Enterprise+.", "fr": "Couvre la transformation SQL, les tests, la planification et un Semantic Layer pour des métriques partagées ; le lignage au niveau des colonnes et dbt Mesh multi-projets repoussent encore le plafond sur Enterprise+.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability out of dbt are not covered by the collected sources.", "fr": "Note neutre : le format d'export et la portabilité des données hors de dbt ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "SQL data transformation", "fr": "Transformation SQL" },
+    "shortDescription": { "en": "dbt turns SQL into version-controlled, testable data models with a free solo plan and a browser-based IDE.", "fr": "dbt transforme le SQL en modèles de données versionnés et testables, avec une offre solo gratuite et un IDE dans le navigateur." },
+    "longDescription": {
+      "en": "dbt turns SQL queries into version-controlled, testable data models, built and scheduled from a browser-based IDE with git safeguards and GitHub/GitLab CI integration. The Semantic Layer lets a team query shared business metrics once past the free tier.\n\nThe free Developer plan covers 1 seat and 3,000 model runs/month at no cost; Starter adds 5 seats and 15,000 model runs for $100/month, billed by credit card, while Enterprise and Enterprise+ are quote-based with SSO, column-level lineage and multi-project dbt Mesh. It fits a data or software developer who wants tested, versioned SQL models, more than someone running occasional ad hoc queries.",
+      "fr": "dbt transforme des requêtes SQL en modèles de données versionnés et testables, construits et planifiés depuis un IDE dans le navigateur avec garde-fous git et intégration CI GitHub/GitLab. Le Semantic Layer permet à une équipe d'interroger des métriques métier partagées une fois l'offre gratuite dépassée.\n\nL'offre Developer gratuite couvre 1 siège et 3 000 exécutions de modèles/mois sans coût ; Starter ajoute 5 sièges et 15 000 exécutions pour 100 $/mois, facturé par carte bancaire, tandis qu'Enterprise et Enterprise+ sont sur devis avec SSO, lignage au niveau des colonnes et dbt Mesh multi-projets. Convient à un développeur data ou logiciel qui veut des modèles SQL testés et versionnés, plus qu'à qui fait des requêtes ad hoc occasionnelles."
+    },
+    "pros": [
+      { "en": "Free Developer plan covers a full solo project (1 seat, 3,000 model runs/month) at no cost.", "fr": "L'offre Developer gratuite couvre un projet solo complet (1 siège, 3 000 exécutions/mois) sans coût." },
+      { "en": "Version control, testing and CI integration are built into the core workflow, not bolted on.", "fr": "Le contrôle de version, les tests et l'intégration CI font partie du flux de travail de base, pas ajoutés après coup." }
+    ],
+    "cons": [
+      { "en": "Usage caps on models and metrics per month can force an upgrade even for a small team running frequent pipelines.", "fr": "Les plafonds d'usage sur les modèles et métriques par mois peuvent forcer une mise à niveau même pour une petite équipe aux pipelines fréquents." },
+      { "en": "SSO, role-based access control and column-level lineage are locked behind the quote-based Enterprise tiers.", "fr": "Le SSO, le contrôle d'accès par rôle et le lignage au niveau des colonnes sont réservés aux offres Enterprise sur devis." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You write SQL transformations and want version-controlled, testable models, starting free for a solo project.", "fr": "Tu écris des transformations SQL et tu veux des modèles versionnés et testables, en commençant gratuitement pour un projet solo." },
+      "avoidIf": { "en": "Your pipelines run often enough to blow past the free tier's 3,000 model runs/month, and you're not ready to pay $100/month for Starter.", "fr": "Tes pipelines tournent assez souvent pour dépasser les 3 000 exécutions/mois de l'offre gratuite, et tu n'es pas prêt à payer 100 $/mois pour Starter." },
+      "threshold": { "en": "Starter costs $1,200/year for 5 seats and 15,000 model runs/month; budget for that once the free Developer plan's 3,000 runs/month is exceeded.", "fr": "Starter coûte 1 200 $/an pour 5 sièges et 15 000 exécutions/mois ; prévois ce budget une fois les 3 000 exécutions/mois de l'offre Developer gratuite dépassées." }
+    }
+  },
   "unknowns": [
     "Whether the free Developer/dbt Core plan is offered as hosted (dbt Cloud) or only as the open-source dbt Core CLI is not fully disentangled from the pricing page alone."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

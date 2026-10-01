@@ -3,7 +3,8 @@
   "slug": "didomi",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Didomi",
     "vendor": "Didomi",
@@ -33,7 +34,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Basic multi-regulation compliance features; priced on quote, no public rate" }],
+        "keyLimits": [{ "en": "Basic multi-regulation compliance features; priced on quote, no public rate", "fr": "Fonctions de conformité multi-réglementations de base ; tarif sur devis, aucun prix public" }],
         "sourceIds": ["s1"]
       },
       {
@@ -43,7 +44,7 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Adds compliance auditing and monitoring on top of Essential" }],
+        "keyLimits": [{ "en": "Adds compliance auditing and monitoring on top of Essential", "fr": "Ajoute l'audit et le suivi de conformité par rapport à Essential" }],
         "sourceIds": ["s1"]
       },
       {
@@ -53,31 +54,31 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "Adds preference management, advanced customization and priority support" }],
+        "keyLimits": [{ "en": "Adds preference management, advanced customization and priority support", "fr": "Ajoute la gestion des préférences, une personnalisation avancée et un support prioritaire" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": null,
     "addOns": [
-      { "en": "Advanced Compliance Monitoring, priced by scan volume and frequency", "sourceIds": ["s1"] },
-      { "en": "Preference Management Platform, priced by user database size and API calls", "sourceIds": ["s1"] },
-      { "en": "Server-Side Tagging is a separate product from the CMP: free up to 100k requests/month, pay-as-you-go tier up to 2M requests/month, custom Enterprise volume", "sourceIds": ["s1"] },
-      { "en": "Connected TV CMP, separate quote-based product", "sourceIds": ["s1"] }
+      { "en": "Advanced Compliance Monitoring, priced by scan volume and frequency", "fr": "Advanced Compliance Monitoring, facturé selon le volume et la fréquence des scans", "sourceIds": ["s1"] },
+      { "en": "Preference Management Platform, priced by user database size and API calls", "fr": "Preference Management Platform, facturé selon la taille de la base d'utilisateurs et le nombre d'appels API", "sourceIds": ["s1"] },
+      { "en": "Server-Side Tagging is a separate product from the CMP: free up to 100k requests/month, pay-as-you-go tier up to 2M requests/month, custom Enterprise volume", "fr": "Server-Side Tagging est un produit distinct de la CMP : gratuit jusqu'à 100 000 requêtes par mois, palier à l'usage jusqu'à 2 millions de requêtes par mois, volume Enterprise sur mesure", "sourceIds": ["s1"] },
+      { "en": "Connected TV CMP, separate quote-based product", "fr": "Connected TV CMP, produit distinct tarifé sur devis", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Every core CMP tier (Essential/Advanced/Premium) is quote-only; the only public numeric pricing is the Server-Side Tagging add-on's free and pay-as-you-go request tiers, which is a different product.", "sourceIds": ["s1"] }
+      { "en": "Every core CMP tier (Essential/Advanced/Premium) is quote-only; the only public numeric pricing is the Server-Side Tagging add-on's free and pay-as-you-go request tiers, which is a different product.", "fr": "Chaque plan de base de la CMP (Essential/Advanced/Premium) est uniquement sur devis ; le seul prix public chiffré est celui des paliers gratuits et à l'usage du module Server-Side Tagging, qui est un produit différent.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Consent Management Platform (CMP) with multi-regulation compliance support (GDPR and others) and cross-domain/cross-device consent synchronization.", "sourceIds": ["s1"] },
-      { "en": "Customizable branded consent banners and preference center.", "sourceIds": ["s1"] },
-      { "en": "Native integrations with CRM/marketing tools (Salesforce, HubSpot, Mailchimp and others) via the Preference Management Platform.", "sourceIds": ["s1"] },
-      { "en": "Automated compliance monitoring with scheduled scans and multi-scenario detection.", "sourceIds": ["s1"] }
+      { "en": "Consent Management Platform (CMP) with multi-regulation compliance support (GDPR and others) and cross-domain/cross-device consent synchronization.", "fr": "Plateforme de gestion du consentement (CMP) avec prise en charge de la conformité multi-réglementations (RGPD et autres) et synchronisation du consentement entre domaines et appareils.", "sourceIds": ["s1"] },
+      { "en": "Customizable branded consent banners and preference center.", "fr": "Bandeaux de consentement personnalisables à l'image de la marque et centre de préférences.", "sourceIds": ["s1"] },
+      { "en": "Native integrations with CRM/marketing tools (Salesforce, HubSpot, Mailchimp and others) via the Preference Management Platform.", "fr": "Intégrations natives avec des outils CRM et marketing (Salesforce, HubSpot, Mailchimp et autres) via la Preference Management Platform.", "sourceIds": ["s1"] },
+      { "en": "Automated compliance monitoring with scheduled scans and multi-scenario detection.", "fr": "Suivi de conformité automatisé avec scans planifiés et détection multi-scénarios.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No public pricing for the core consent management product; every buyer must go through a sales quote.", "sourceIds": ["s1"] },
-      { "en": "Product is split into several separately priced modules (CMP, Advanced Compliance Monitoring, Preference Management, Server-Side Tagging, Connected TV CMP), adding procurement complexity.", "sourceIds": ["s1"] }
+      { "en": "No public pricing for the core consent management product; every buyer must go through a sales quote.", "fr": "Aucun prix public pour le produit central de gestion du consentement ; chaque acheteur doit passer par un devis commercial.", "sourceIds": ["s1"] },
+      { "en": "Product is split into several separately priced modules (CMP, Advanced Compliance Monitoring, Preference Management, Server-Side Tagging, Connected TV CMP), adding procurement complexity.", "fr": "Le produit est découpé en plusieurs modules facturés séparément (CMP, Advanced Compliance Monitoring, Preference Management, Server-Side Tagging, Connected TV CMP), ce qui complique les achats.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Salesforce", "slug": null, "sourceIds": ["s1"] },
@@ -86,17 +87,65 @@
     ],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "Someone responsible for privacy/compliance operations at a company that needs a GDPR-grade consent banner and preference center.", "fr": "Une personne responsable de la conformité ou de la protection des données dans une entreprise qui a besoin d'un bandeau de consentement et d'un centre de préférences conformes au RGPD." },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Comply: deploy a branded consent banner synchronized across domains and devices to meet GDPR and other regulations.", "fr": "Conformité : déployer un bandeau de consentement à l'image de la marque, synchronisé entre domaines et appareils, pour respecter le RGPD et d'autres réglementations." },
+    { "en": "Monitor: schedule automated compliance scans to detect when a site's consent setup drifts out of line with the rules.", "fr": "Suivi : planifier des scans de conformité automatisés pour détecter quand la configuration du consentement d'un site ne respecte plus les règles." }
+  ],
   "alternatives": [
-    { "slug": "axeptio", "reason": { "en": "Direct CMP/consent-banner competitor targeting a similar European compliance market." } }
+    { "slug": "axeptio", "reason": { "en": "Direct CMP/consent-banner competitor targeting a similar European compliance market.", "fr": "Concurrent direct sur les bandeaux de consentement et la CMP, visant un marché de conformité européen similaire." } },
+    { "slug": "onetrust", "reason": { "en": "Major enterprise consent/privacy management competitor covering the same core need at a larger scale.", "fr": "Grand concurrent de la gestion du consentement et de la confidentialité en entreprise, qui couvre le même besoin à plus grande échelle." } }
   ],
   "missingAlternatives": [
-    { "name": "OneTrust", "officialUrl": "https://www.onetrust.com", "reason": "Major enterprise consent/privacy management competitor, not linked as an alternative in the catalogue for Didomi." },
     { "name": "Cookiebot", "officialUrl": "https://www.cookiebot.com", "reason": "Widely used CMP with public self-service pricing, useful as a budget contrast, not in the catalogue." }
   ],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Neutral score: with no public price for any CMP tier, value for money against the quoted cost can't be judged from the collected sources.", "fr": "Note neutre : sans prix public pour aucun des plans de la CMP, le rapport qualité-prix face au devis ne peut pas être jugé à partir des sources relevées.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Every core tier requires a sales quote before a buyer can even see pricing, and the product is split across several separately priced modules, adding friction before first use.", "fr": "Chaque plan de base demande un devis commercial avant même de voir un prix, et le produit est découpé en plusieurs modules facturés séparément, ce qui ajoute de la friction avant la première utilisation.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the stated consent banner, synchronization and compliance monitoring, but the collected sources don't detail how automated detection performs in practice.", "fr": "Fournit le bandeau de consentement, la synchronisation et le suivi de conformité annoncés, mais les sources relevées ne détaillent pas la performance réelle de la détection automatisée.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers multi-regulation compliance, cross-device sync, CRM integrations and automated monitoring across several products, a broad ceiling for the CMP category.", "fr": "Couvre la conformité multi-réglementations, la synchronisation entre appareils, les intégrations CRM et le suivi automatisé sur plusieurs produits, un plafond large pour la catégorie des CMP.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export or migration options if a company leaves Didomi were not covered by the collected sources.", "fr": "Note neutre : les options d'export ou de migration des données en cas de départ de Didomi ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Consent management platform", "fr": "Gestion du consentement" },
+    "shortDescription": {
+      "en": "Consent Management Platform with GDPR-grade banners, cross-device sync and compliance monitoring, priced entirely on quote across several modules.",
+      "fr": "Plateforme de gestion du consentement avec bandeaux conformes au RGPD, synchronisation entre appareils et suivi de conformité, entièrement tarifée sur devis sur plusieurs modules."
+    },
+    "longDescription": {
+      "en": "Didomi is a Consent Management Platform: branded, customizable consent banners synchronized across domains and devices, multi-regulation compliance (GDPR and others), automated compliance scans, and native integrations with CRM tools like Salesforce and HubSpot. Advanced Compliance Monitoring and a Preference Management Platform are sold as separate modules.\n\nEvery core CMP tier, Essential, Advanced, Premium, is quote-only, with no public price. The only published numbers are for the unrelated Server-Side Tagging product (free up to 100k requests/month). It fits a company that needs enterprise-grade, multi-regulation consent management and is ready to go through a sales process to get pricing.",
+      "fr": "Didomi est une plateforme de gestion du consentement (CMP) : bandeaux personnalisables à l'image de la marque, synchronisés entre domaines et appareils, conformité multi-réglementations (RGPD et autres), scans automatisés, et intégrations natives avec des outils CRM comme Salesforce et HubSpot. Advanced Compliance Monitoring et une Preference Management Platform sont vendus comme des modules séparés.\n\nChaque plan de base de la CMP, Essential, Advanced, Premium, est uniquement sur devis, sans prix public. Les seuls chiffres publiés concernent le produit distinct Server-Side Tagging (gratuit jusqu'à 100 000 requêtes par mois). Convient à une entreprise qui a besoin d'une gestion du consentement multi-réglementations de niveau entreprise et accepte un processus commercial pour obtenir un tarif."
+    },
+    "pros": [
+      { "en": "Multi-regulation compliance and cross-device consent sync in one platform instead of a patchwork of scripts.", "fr": "Conformité multi-réglementations et synchronisation du consentement entre appareils sur une seule plateforme, au lieu d'un assemblage de scripts." },
+      { "en": "Native CRM integrations (Salesforce, HubSpot, Mailchimp) connect consent data directly to marketing tools.", "fr": "Intégrations CRM natives (Salesforce, HubSpot, Mailchimp) qui relient directement les données de consentement aux outils marketing." }
+    ],
+    "cons": [
+      { "en": "No public price on any core CMP tier; every buyer must request a quote before knowing the cost.", "fr": "Aucun prix public sur un seul des plans de base de la CMP ; chaque acheteur doit demander un devis avant de connaître le coût." },
+      { "en": "The product is split into several separately priced modules, adding procurement steps compared to a single flat plan.", "fr": "Le produit est découpé en plusieurs modules facturés séparément, ce qui ajoute des étapes d'achat par rapport à un plan unique à prix fixe." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Keep if you need enterprise-grade, multi-regulation consent management with CRM integrations and are willing to go through a sales quote process.", "fr": "À garder si tu as besoin d'une gestion du consentement multi-réglementations de niveau entreprise avec intégrations CRM, et acceptes de passer par un devis commercial." },
+      "avoidIf": { "en": "Avoid if you want a self-service CMP with public pricing, since no core tier publishes a rate.", "fr": "À éviter si tu veux une CMP en libre-service avec un prix public, car aucun plan de base n'affiche de tarif." },
+      "threshold": { "en": "No numeric decision threshold can be set: every core CMP tier is quote-only, with no published price in the dossier to compare against.", "fr": "Aucun seuil de décision chiffré ne peut être fixé : chaque plan de base de la CMP est sur devis, sans prix publié dans le dossier pour servir de comparaison." }
+    }
+  },
+  "reviewNotes": [
+    "OneTrust was listed in missingAlternatives as \"not in the catalogue\", but it is actually present (slug: onetrust); moved to alternatives."
+  ],
   "unknowns": [
     "No indicative price range was published for the Essential/Advanced/Premium CMP tiers; only sales quotes are available.",
     "Currency for quotes was not stated on the page (USD assumed from site locale, not confirmed)."

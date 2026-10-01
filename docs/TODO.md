@@ -34,6 +34,10 @@ Budget : test 10 $ max, production 70 $ max, marge 20 $ intouchable.
 - [ ] Prix à vérifier : D5 Render (unité Teams), Indy (prix auto-entrepreneur seulement), Doola (mensuel non publié), Descript (annuel), Superlist (annuel recalculé), Ignition (aucun prix au dossier)
 - [ ] Doublon catalogue : `descript` et `descript-ai`
 - [x] Fragments du catalogue client répartis par hachage du slug (48 fichiers, 0,3 Mo max) au lieu de la première lettre (le « u » dépassait 1 Mo à cause des 106 `universal-*`)
+- [x] Lot local Y à AB (01/10/2026) : 28 fiches fusionnées sur 40 (255 en tout). Retenues (prix sans source officielle) : procreate, prezi, midjourney, ownr ; `hold` : tradingview, bloom-crm, legalplace, dext, format, aloware, wolters-kluwer, bots-discord.
+- [ ] Bots Discord : domaine qui ne répond plus, produit sans source **[décision]** (à joindre aux produits arrêtés)
+- [ ] Wolters Kluwer : holding à plusieurs produits traitée comme un outil unique **[décision]** : découper ou retirer la fiche
+- [ ] Prix à vérifier : Unity Pro (annuel divisé par 12), NetSuite (estimations tierces seulement)
 - [ ] Afficher le champ `tagline` des fiches dans le catalogue (aujourd'hui `toolTaglines.ts`) et un badge « produit arrêté / racheté » depuis `lifecycle`
 - [ ] Compléter en local chaque dossier « faits » : note sur 5 axes, cible, textes EN puis FR (hors crédit)
 - [ ] Outils au-delà du top 100 : recherche en local, lot par lot, dans l'ordre de `batches`

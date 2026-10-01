@@ -3,7 +3,8 @@
   "slug": "kelio",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Kelio",
     "vendor": "Bodet Software",
@@ -30,28 +31,80 @@
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "No public pricing grid; cost depends on activated modules, employee headcount, and any hardware (clocking terminals, badges).", "sourceIds": ["s2"] }
+      { "en": "No public pricing grid; cost depends on activated modules, employee headcount, and any hardware (clocking terminals, badges).", "fr": "Pas de grille tarifaire publique ; le coût dépend des modules activés, de l'effectif et d'éventuel matériel (terminaux de pointage, badges).", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Time and attendance tracking with clocking terminals and remote-work supervision.", "sourceIds": ["s1"] },
-      { "en": "Staff scheduling, leave and absence management.", "sourceIds": ["s1"] },
-      { "en": "HR portal with electronic signatures, expense forms, and internal communications.", "sourceIds": ["s1"] },
-      { "en": "Physical access control: building access, visitor management, room booking, video surveillance.", "sourceIds": ["s1"] }
+      { "en": "Time and attendance tracking with clocking terminals and remote-work supervision.", "fr": "Gestion des temps et présences avec terminaux de pointage et suivi du travail à distance.", "sourceIds": ["s1"] },
+      { "en": "Staff scheduling, leave and absence management.", "fr": "Planification du personnel, gestion des congés et absences.", "sourceIds": ["s1"] },
+      { "en": "HR portal with electronic signatures, expense forms, and internal communications.", "fr": "Portail RH avec signatures électroniques, notes de frais et communications internes.", "sourceIds": ["s1"] },
+      { "en": "Physical access control: building access, visitor management, room booking, video surveillance.", "fr": "Contrôle d'accès physique : accès aux bâtiments, gestion des visiteurs, réservation de salles, vidéosurveillance.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No public pricing; requires a custom quote before purchase.", "sourceIds": ["s2"] },
-      { "en": "Full value requires proprietary hardware (badges, clocking terminals, access readers).", "sourceIds": ["s1"] }
+      { "en": "No public pricing; requires a custom quote before purchase.", "fr": "Pas de tarif public ; un devis sur mesure est nécessaire avant tout achat.", "sourceIds": ["s2"] },
+      { "en": "Full value requires proprietary hardware (badges, clocking terminals, access readers).", "fr": "La pleine valeur demande du matériel propriétaire (badges, terminaux de pointage, lecteurs d'accès).", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
-  "alternatives": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "An ops or HR lead at a small team who needs time, attendance and leave tracking, with physical access control as an option.", "fr": "Une responsable ops ou RH d'une petite équipe qui a besoin de suivre temps, présence et congés, avec le contrôle d'accès physique en option." },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Track: clock employee time and manage leave requests from the HR portal instead of a spreadsheet.", "fr": "Suivre : pointer le temps des salariés et gérer les demandes de congés depuis le portail RH au lieu d'un tableau." },
+    { "en": "Secure premises: add badge-based building access and visitor management alongside the time-tracking modules.", "fr": "Sécuriser les locaux : ajouter l'accès aux bâtiments par badge et la gestion des visiteurs en plus des modules de suivi du temps." }
+  ],
+  "alternatives": [
+    { "slug": "factorial", "reason": { "en": "HR and time-tracking competitor covering scheduling, leave and attendance for small teams.", "fr": "Concurrent RH et suivi du temps couvrant planification, congés et présences pour les petites équipes." } },
+    { "slug": "lucca", "reason": { "en": "French HR suite covering time, leave and absence management for the same small-team buyer.", "fr": "Suite RH française couvrant la gestion des temps, congés et absences pour le même profil d'acheteur petite équipe." } },
+    { "slug": "payfit", "reason": { "en": "French payroll and HR platform with time and leave tracking, a common alternative for the same buyer.", "fr": "Plateforme française de paie et RH avec suivi des temps et congés, une alternative courante pour le même acheteur." } },
+    { "slug": "deputy", "reason": { "en": "Staff scheduling and time-tracking competitor, without Kelio's physical access control module.", "fr": "Concurrent sur la planification du personnel et le suivi du temps, sans le module de contrôle d'accès physique de Kelio." } }
+  ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Neutral score: with no public pricing, the cost-versus-benefit for a given team size and module set cannot be judged from the collected sources.", "fr": "Note neutre : sans tarif public, le rapport coût-bénéfice pour une taille d'équipe et un ensemble de modules donnés ne peut pas être jugé à partir des sources relevées.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "Neutral score: time to a first useful result depends on module configuration and hardware setup not detailed in the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier résultat utile dépend de la configuration des modules et du matériel, non détaillée dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Covers time and attendance, scheduling, leave management and an HR portal as described on the official site.", "fr": "Couvre le suivi des temps et présences, la planification, la gestion des congés et un portail RH comme décrit sur le site officiel.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines time and attendance, HR portal and physical access control (badges, visitor management, video surveillance) in one suite, broader than a pure time-tracking tool.", "fr": "Combine suivi des temps, portail RH et contrôle d'accès physique (badges, gestion des visiteurs, vidéosurveillance) dans une seule suite, plus large qu'un simple outil de pointage.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability are not covered by the collected sources.", "fr": "Note neutre : le format d'export et la portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Time and access control", "fr": "Temps et contrôle d'accès" },
+    "shortDescription": { "en": "Kelio tracks employee time, attendance and leave, and can add badge-based building access control on quote-based pricing.", "fr": "Kelio suit le temps, la présence et les congés des salariés, avec un contrôle d'accès aux bâtiments par badge possible, sur devis." },
+    "longDescription": {
+      "en": "Kelio combines time and attendance tracking, remote-work supervision, staff scheduling, and leave management with an HR portal for electronic signatures and expense forms. A separate module adds physical access control: building access, visitor management, room booking and video surveillance, typically tied to proprietary clocking terminals and badges.\n\nThere is no public price list: cost depends on the modules activated, headcount, and any hardware ordered, and requires a custom quote from Bodet Software. It fits an ops or HR lead at a small team who wants time, attendance and leave tracking, with physical access control as an option, rather than someone who wants to compare a published price upfront.",
+      "fr": "Kelio combine suivi des temps et présences, supervision du travail à distance, planification du personnel et gestion des congés, avec un portail RH pour les signatures électroniques et les notes de frais. Un module séparé ajoute le contrôle d'accès physique : bâtiments, visiteurs, salles et vidéosurveillance, lié à des terminaux de pointage et badges propriétaires.\n\nPas de grille tarifaire publique : le coût dépend des modules activés, de l'effectif et du matériel commandé, et nécessite un devis auprès de Bodet Software. Convient à une responsable ops ou RH d'une petite équipe qui veut suivre temps, présence et congés, avec le contrôle d'accès en option, plus qu'à qui veut comparer un prix publié d'emblée."
+    },
+    "pros": [
+      { "en": "Combines time tracking, HR portal and physical access control in one suite instead of three separate tools.", "fr": "Combine suivi du temps, portail RH et contrôle d'accès physique dans une seule suite plutôt que trois outils séparés." },
+      { "en": "Remote-work supervision is built into the time and attendance module.", "fr": "La supervision du travail à distance est intégrée au module de suivi des temps et présences." }
+    ],
+    "cons": [
+      { "en": "No public pricing; every quote requires a sales conversation before purchase.", "fr": "Pas de tarif public ; chaque devis nécessite un échange commercial avant achat." },
+      { "en": "Full value depends on proprietary hardware (clocking terminals, badges, access readers).", "fr": "La pleine valeur dépend de matériel propriétaire (terminaux de pointage, badges, lecteurs d'accès)." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need time, attendance and leave tracking together with physical building access control in one vendor.", "fr": "Tu as besoin de suivre temps, présences et congés avec le contrôle d'accès physique aux bâtiments chez un seul fournisseur." },
+      "avoidIf": { "en": "You want a published price to compare before talking to sales, or don't need the physical access control module.", "fr": "Tu veux un prix publié à comparer avant de parler au commercial, ou tu n'as pas besoin du module de contrôle d'accès physique." },
+      "threshold": { "en": "No public price exists to set a numeric threshold; get a quote based on headcount and modules before comparing to alternatives.", "fr": "Aucun prix public ne permet de fixer un seuil chiffré ; demande un devis selon l'effectif et les modules avant de comparer aux alternatives." }
+    }
+  },
   "unknowns": [
     "No pricing figures published anywhere on the official site; third-party sources confirm quote-only pricing but give no indicative range.",
     "Specific integration partners (payroll, ERP) are referenced generically as 'interoperable via API' without named partners."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

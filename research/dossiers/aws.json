@@ -3,7 +3,8 @@
   "slug": "aws",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Amazon Web Services (AWS)",
     "vendor": "Amazon.com, Inc.",
@@ -25,7 +26,8 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Free Tier spans three types: always-free resources within limits, 12-months-free resources for new accounts (e.g. 750 hours/month of EC2 t3.micro), and time-limited free trials of specific services.", "sourceIds": ["s2"] },
+    "regularPriceUnknown": true,
+    "freePlan": { "exists": true, "limits": { "en": "Free Tier spans three types: always-free resources within limits, 12-months-free resources for new accounts (e.g. 750 hours/month of EC2 t3.micro), and time-limited free trials of specific services.", "fr": "Le Free Tier couvre trois types d'offres : des ressources toujours gratuites dans certaines limites, des ressources gratuites 12 mois pour les nouveaux comptes (ex. 750 heures/mois d'EC2 t3.micro), et des essais gratuits limités dans le temps sur certains services." }, "sourceIds": ["s2"] },
     "plans": [
       {
         "key": "pay-as-you-go",
@@ -34,43 +36,88 @@
         "minSeats": null,
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
-        "keyLimits": [{ "en": "No fixed price: billed per-service, per-unit of consumption (compute hours, storage GB, requests, etc.) across hundreds of independently priced services.", "fr": null }],
+        "keyLimits": [{ "en": "No fixed price: billed per-service, per-unit of consumption (compute hours, storage GB, requests, etc.) across hundreds of independently priced services.", "fr": "Pas de prix fixe : facturation par service et par unité de consommation (heures de calcul, Go de stockage, requêtes, etc.) sur des centaines de services au tarif indépendant." }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": null,
-    "regularPriceUnknown": true,
     "addOns": [],
     "cautions": [
-      { "en": "AWS is a pay-as-you-go usage platform across hundreds of services (compute, storage, database, networking, AI, etc.); there is no single account-level plan or seat price, so cost depends entirely on which services and how much of each are consumed.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Beyond on-demand pay-as-you-go pricing, AWS offers commitment-based discounts: Savings Plans and Reserved Instances can cut costs up to 72-75% for 1-3 year commitments, and Spot Instances up to 90% for interruptible workloads, per AWS documentation and third-party analysis.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "AWS is a pay-as-you-go usage platform across hundreds of services (compute, storage, database, networking, AI, etc.); there is no single account-level plan or seat price, so cost depends entirely on which services and how much of each are consumed.", "fr": "AWS est une plateforme à l'usage sur des centaines de services (calcul, stockage, base de données, réseau, IA, etc.) ; il n'y a pas de plan de compte unique ni de prix par siège, le coût dépend entièrement des services utilisés et de leur volume de consommation.", "sourceIds": ["s1"] },
+      { "en": "Beyond on-demand pay-as-you-go pricing, AWS offers commitment-based discounts: Savings Plans and Reserved Instances can cut costs up to 72-75% for 1-3 year commitments, and Spot Instances up to 90% for interruptible workloads, per AWS documentation and third-party analysis.", "fr": "Au-delà du tarif à l'usage, AWS propose des remises sur engagement : les Savings Plans et les Reserved Instances réduisent la facture jusqu'à 72-75 % sur un engagement de 1 à 3 ans, et les Spot Instances jusqu'à 90 % pour des charges interruptibles, selon la documentation AWS et des analyses tierces.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Broad cloud platform covering compute (EC2, Lambda), storage (S3), databases, networking, AI/ML services and hundreds of other managed services.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Multiple pricing models beyond on-demand: Reserved Instances, Savings Plans and Spot Instances for cost optimization at scale.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Broad cloud platform covering compute (EC2, Lambda), storage (S3), databases, networking, AI/ML services and hundreds of other managed services.", "fr": "Plateforme cloud large couvrant le calcul (EC2, Lambda), le stockage (S3), les bases de données, le réseau, les services d'IA/ML et des centaines d'autres services managés.", "sourceIds": ["s1"] },
+      { "en": "Multiple pricing models beyond on-demand: Reserved Instances, Savings Plans and Spot Instances for cost optimization at scale.", "fr": "Plusieurs modèles tarifaires au-delà du prix à l'usage : Reserved Instances, Savings Plans et Spot Instances pour optimiser les coûts à grande échelle.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No flat, predictable pricing: costs vary continuously with usage across many billable dimensions, making budgeting difficult without dedicated cost-management tooling.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Breadth of services and configuration options creates a steep learning curve compared to single-purpose hosting platforms.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "No flat, predictable pricing: costs vary continuously with usage across many billable dimensions, making budgeting difficult without dedicated cost-management tooling.", "fr": "Pas de tarif fixe et prévisible : le coût varie en continu selon de nombreuses dimensions facturables, ce qui complique le budget sans outil dédié de gestion des coûts.", "sourceIds": ["s1"] },
+      { "en": "Breadth of services and configuration options creates a steep learning curve compared to single-purpose hosting platforms.", "fr": "Le grand nombre de services et d'options de configuration crée un temps d'apprentissage important par rapport à des plateformes d'hébergement à usage unique.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "A developer or technical solo operator who deploys and runs infrastructure directly, rather than a non-technical operator who needs a flat, predictable price.", "fr": "Un développeur ou un indépendant technique qui déploie et exploite directement son infrastructure, plutôt qu'un profil non technique qui a besoin d'un prix fixe et prévisible." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Deploy: run a web app's compute, storage and database on pay-as-you-go pricing without committing to a fixed plan.", "fr": "Déployer : faire tourner le calcul, le stockage et la base de données d'une appli web en paiement à l'usage, sans s'engager sur un plan fixe." },
+    { "en": "Save: commit to a 1 to 3-year Reserved Instance or Savings Plan on stable workloads to cut the on-demand rate.", "fr": "Économiser : s'engager sur une Reserved Instance ou un Savings Plan de 1 à 3 ans sur des charges stables pour réduire le tarif à l'usage." }
+  ],
   "alternatives": [
-    { "slug": "gcp", "reason": { "en": "Comparable full-scale cloud platform (Google Cloud) covering the same breadth of compute, storage and managed services.", "fr": null } },
-    { "slug": "digitalocean", "reason": { "en": "Simpler, more predictably priced cloud hosting platform for teams that do not need AWS's full service breadth.", "fr": null } },
-    { "slug": "heroku", "reason": { "en": "Higher-level platform-as-a-service alternative for deploying apps without managing AWS-style infrastructure directly.", "fr": null } },
-    { "slug": "vercel", "reason": { "en": "Frontend/full-stack hosting platform, a simpler alternative for web app deployment compared to raw AWS services.", "fr": null } }
+    { "slug": "gcp", "reason": { "en": "Comparable full-scale cloud platform (Google Cloud) covering the same breadth of compute, storage and managed services.", "fr": "Plateforme cloud de même envergure (Google Cloud) couvrant la même largeur de services de calcul, stockage et services managés." } },
+    { "slug": "digitalocean", "reason": { "en": "Simpler, more predictably priced cloud hosting platform for teams that do not need AWS's full service breadth.", "fr": "Plateforme d'hébergement cloud plus simple et au prix plus prévisible, pour les équipes qui n'ont pas besoin de toute la largeur de services d'AWS." } },
+    { "slug": "heroku", "reason": { "en": "Higher-level platform-as-a-service alternative for deploying apps without managing AWS-style infrastructure directly.", "fr": "Alternative de type plateforme-service (PaaS) de plus haut niveau pour déployer des applis sans gérer directement une infrastructure façon AWS." } },
+    { "slug": "vercel", "reason": { "en": "Frontend/full-stack hosting platform, a simpler alternative for web app deployment compared to raw AWS services.", "fr": "Plateforme d'hébergement frontend/full-stack, une alternative plus simple au déploiement d'applis web que les services AWS bruts." } }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Commitment discounts (Savings Plans, Reserved Instances) can cut costs up to 72-75% and Spot Instances up to 90%, but the on-demand entry rate is hard to justify without cost-management discipline.", "fr": "Les remises sur engagement (Savings Plans, Reserved Instances) réduisent la facture jusqu'à 72-75 % et les Spot Instances jusqu'à 90 %, mais le tarif d'entrée à l'usage est difficile à justifier sans discipline de gestion des coûts.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The breadth of services and configuration options creates a steep learning curve compared to single-purpose hosting platforms.", "fr": "Le grand nombre de services et d'options de configuration crée un temps d'apprentissage important par rapport à des plateformes d'hébergement à usage unique.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Covers compute, storage, database, networking and AI/ML as promised, across hundreds of independently working managed services.", "fr": "Couvre le calcul, le stockage, la base de données, le réseau et l'IA/ML comme promis, à travers des centaines de services managés qui fonctionnent de façon autonome.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Breadth across hundreds of managed services (compute, storage, database, networking, AI/ML) makes it a category reference for scale.", "fr": "La largeur de centaines de services managés (calcul, stockage, base de données, réseau, IA/ML) en fait une référence de catégorie pour la montée en échelle.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and migration-out procedures per service are not covered by the collected sources.", "fr": "Note neutre : les procédures d'export et de migration hors AWS par service ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Cloud infrastructure", "fr": "Infrastructure cloud" },
+    "shortDescription": { "en": "AWS is a pay-as-you-go cloud platform for compute, storage, databases, networking and AI across hundreds of services.", "fr": "AWS est une plateforme cloud à l'usage pour le calcul, le stockage, les bases de données, le réseau et l'IA." },
+    "longDescription": {
+      "en": "AWS covers compute (EC2, Lambda), storage (S3), databases, networking and AI/ML through hundreds of independently priced, managed services rather than one bundled product. There is no flat plan: every service bills by actual consumption, which gives flexibility but makes budgeting harder without dedicated cost tooling.\n\nA Free Tier combines always-free limits, 12 months of free resources for new accounts, and time-limited trials on specific services; beyond that, cost is entirely usage-based, with Reserved Instances, Savings Plans or Spot Instances cutting the on-demand rate for stable or interruptible workloads. It fits a developer or technical team running infrastructure directly, more than someone who wants one predictable monthly price.",
+      "fr": "AWS couvre le calcul (EC2, Lambda), le stockage (S3), les bases de données, le réseau et l'IA/ML via des centaines de services managés facturés indépendamment, plutôt qu'un seul produit groupé. Pas de plan fixe : chaque service facture la consommation réelle, flexible mais plus dur à budgétiser sans outil dédié.\n\nUn Free Tier combine ressources toujours gratuites, 12 mois gratuits pour les nouveaux comptes, et des essais limités sur certains services ; au-delà, le coût est entièrement à l'usage, avec Reserved Instances, Savings Plans ou Spot Instances pour réduire le tarif sur des charges stables ou interruptibles. Convient à un développeur ou une équipe technique qui exploite directement son infrastructure, plus qu'à qui veut un prix fixe."
+    },
+    "pros": [
+      { "en": "Breadth of managed services covers compute, storage, database, networking and AI/ML in one account.", "fr": "La largeur des services managés couvre calcul, stockage, base de données, réseau et IA/ML dans un seul compte." },
+      { "en": "Commitment-based discounts (Reserved Instances, Savings Plans, Spot Instances) cut the on-demand rate significantly.", "fr": "Les remises sur engagement (Reserved Instances, Savings Plans, Spot Instances) réduisent nettement le tarif à l'usage." },
+      { "en": "Free Tier gives 12 months of free resources plus always-free limits for new accounts.", "fr": "Le Free Tier offre 12 mois de ressources gratuites en plus de limites toujours gratuites pour les nouveaux comptes." }
+    ],
+    "cons": [
+      { "en": "No flat, predictable price: cost varies continuously with usage across many billable dimensions.", "fr": "Pas de prix fixe et prévisible : le coût varie en continu selon de nombreuses dimensions facturables." },
+      { "en": "Breadth of services creates a steep learning curve compared to single-purpose hosting platforms.", "fr": "La largeur des services crée un temps d'apprentissage important par rapport à des plateformes d'hébergement à usage unique." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You or your team deploy and run infrastructure directly and need the breadth of services AWS covers.", "fr": "Toi ou ton équipe déployez et exploitez directement une infrastructure et avez besoin de la largeur de services que couvre AWS." },
+      "avoidIf": { "en": "You want one flat monthly price or don't have the time to manage usage-based billing across services.", "fr": "Tu veux un prix mensuel fixe ou tu n'as pas le temps de suivre une facturation à l'usage répartie sur plusieurs services." },
+      "threshold": { "en": "There is no fixed comparison price: budget per service and consumption, and track the 12-month Free Tier limits before they expire.", "fr": "Il n'y a pas de prix de comparaison fixe : prévois un budget par service et par consommation, et surveille les limites du Free Tier de 12 mois avant leur expiration." }
+    }
+  },
   "unknowns": [
     "AWS's catalogue entry as a single 'tool' is unusual: it groups hundreds of independently priced services, so a single comparePlanKey or plan list is not meaningful and was intentionally left empty."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "pricing.comparePlanKey is left null because AWS has no fixed per-account or per-seat plan: it is a pay-as-you-go platform across hundreds of independently priced services, so the catalogue's usual 'cheapest plan a solo buyer can use' comparison does not apply as published."
+  ]
 }

@@ -3,7 +3,7 @@
   "slug": "clickup",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "ClickUp",
     "vendor": "ClickUp",
@@ -34,7 +34,7 @@
       "exists": true,
       "limits": {
         "en": "60 MB storage, unlimited tasks, up to 2 teams/spaces, 1 form, basic views, 100 automation executions/month.",
-        "fr": null
+        "fr": "60 Mo de stockage, tâches illimitées, jusqu'à 2 équipes/espaces, 1 formulaire, vues de base, 100 exécutions d'automatisation par mois."
       },
       "sourceIds": [
         "s1"
@@ -56,7 +56,7 @@
         "keyLimits": [
           {
             "en": "Unlimited storage, all integrations, native time tracking, up to 3 teams/spaces.",
-            "fr": null
+            "fr": "Stockage illimité, toutes les intégrations, suivi du temps natif, jusqu'à 3 équipes/espaces."
           }
         ],
         "sourceIds": [
@@ -77,7 +77,7 @@
         "keyLimits": [
           {
             "en": "Unlimited dashboards, 5,000 automation executions/month, mind mapping, up to 10 teams/spaces.",
-            "fr": null
+            "fr": "Tableaux de bord illimités, 5 000 exécutions d'automatisation par mois, cartes mentales, jusqu'à 10 équipes/espaces."
           }
         ],
         "sourceIds": [
@@ -98,7 +98,7 @@
         "keyLimits": [
           {
             "en": "250,000 automation executions/month, custom roles, SAML SSO, dedicated support.",
-            "fr": null
+            "fr": "250 000 exécutions d'automatisation par mois, rôles personnalisés, SSO SAML, support dédié."
           }
         ],
         "sourceIds": [
@@ -110,7 +110,7 @@
     "addOns": [
       {
         "en": "Brain AI add-on: $9/mo (~$7.20 annualized) for unlimited assistant and 1,500 AI Super Credits; Everything AI at $28/mo for the full agentic suite and 5,000 AI Super Credits.",
-        "fr": null,
+        "fr": "Module IA Brain : 9 $/mois (environ 7,20 $ en annuel) pour l'assistant illimité et 1 500 crédits IA Super ; Everything AI à 28 $/mois pour la suite agentique complète et 5 000 crédits IA Super.",
         "sourceIds": [
           "s1"
         ]
@@ -119,7 +119,7 @@
     "cautions": [
       {
         "en": "Automation execution caps (100 free / 5,000 Business / 250,000 Enterprise) can force an upgrade for heavy automation users even if seat count stays low.",
-        "fr": null,
+        "fr": "Les plafonds d'exécutions d'automatisation (100 gratuit / 5 000 Business / 250 000 Enterprise) peuvent forcer une mise à niveau pour les gros utilisateurs d'automatisation même avec peu de sièges.",
         "sourceIds": [
           "s1"
         ]
@@ -130,21 +130,21 @@
     "capabilities": [
       {
         "en": "All-in-one work management: tasks, docs, dashboards, chat, whiteboards and goal tracking in one workspace.",
-        "fr": null,
+        "fr": "Gestion de travail tout-en-un : tâches, documents, tableaux de bord, chat, tableaux blancs et suivi d'objectifs dans un même espace de travail.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Built-in native time tracking and automations, configurable per space/folder/list.",
-        "fr": null,
+        "fr": "Suivi du temps natif et automatisations intégrées, configurables par espace, dossier ou liste.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Optional \"Brain\" AI layer (assistant, agents, image generation) sold as a per-seat add-on on top of the core plan.",
-        "fr": null,
+        "fr": "Couche IA optionnelle « Brain » (assistant, agents, génération d'images) vendue en option par siège en plus de la formule de base.",
         "sourceIds": [
           "s1"
         ]
@@ -153,14 +153,14 @@
     "limitations": [
       {
         "en": "Free plan storage is capped at only 60 MB, far below most competitors' free tiers.",
-        "fr": null,
+        "fr": "Le stockage du plan gratuit est plafonné à seulement 60 Mo, bien en dessous des plans gratuits de la plupart des concurrents.",
         "sourceIds": [
           "s1"
         ]
       },
       {
         "en": "Full AI feature set is a separate paid add-on rather than bundled into the paid plans.",
-        "fr": null,
+        "fr": "L'ensemble complet des fonctionnalités IA est une option payante séparée plutôt qu'inclus dans les formules payantes.",
         "sourceIds": [
           "s1"
         ]
@@ -176,21 +176,21 @@
       "slug": "asana",
       "reason": {
         "en": "Widely used project management competitor with similar task/workflow focus.",
-        "fr": null
+        "fr": "Concurrent très utilisé en gestion de projet, avec un positionnement tâches/workflows similaire."
       }
     },
     {
       "slug": "monday",
       "reason": {
         "en": "Direct competitor in the all-in-one work OS category.",
-        "fr": null
+        "fr": "Concurrent direct dans la catégorie des OS de travail tout-en-un."
       }
     },
     {
       "slug": "trello",
       "reason": {
         "en": "Simpler board-based alternative often compared to ClickUp for smaller teams.",
-        "fr": null
+        "fr": "Alternative plus simple, basée sur des tableaux, souvent comparée à ClickUp pour les petites équipes."
       }
     }
   ],
@@ -198,5 +198,123 @@
   "unknowns": [
     "Exact list of native integrations and mobile platform availability (iOS/Android) was not re-verified on an official page in this session."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free plan's 60 MB storage cap and the separately priced AI layer temper the value of the core plans, and the sources give no comparative ROI data.",
+        "fr": "Le plafond de 60 Mo du plan gratuit et la couche IA facturée séparément tempèrent la valeur des formules de base, et les sources ne donnent pas de données comparatives de retour sur investissement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time for a workspace this customizable is not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main d'un espace de travail aussi personnalisable ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Tasks, docs, dashboards, chat, whiteboards and native time tracking are documented as delivered across plans, matching the all-in-one promise.",
+        "fr": "Tâches, documents, tableaux de bord, chat, tableaux blancs et suivi du temps natif sont documentés comme livrés selon les formules, conformément à la promesse tout-en-un.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Automation execution caps scale up to 250,000/month on Enterprise, with mind mapping and unlimited dashboards on Business, a broad capability ceiling.",
+        "fr": "Les plafonds d'exécution d'automatisation montent jusqu'à 250 000 par mois sur Enterprise, avec cartes mentales et tableaux de bord illimités sur Business, un plafond de capacité large.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export formats and API access for migrating out of ClickUp are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export des données et l'accès API pour quitter ClickUp ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small teams that need tasks, docs and dashboards unified in one customizable workspace.",
+      "fr": "Petites équipes qui ont besoin d'unifier tâches, documents et tableaux de bord dans un espace de travail personnalisable."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Team task tracking: organize tasks, docs and dashboards for a small team in one workspace instead of several separate tools.",
+      "fr": "Suivi des tâches d'équipe : organiser tâches, documents et tableaux de bord d'une petite équipe dans un seul espace plutôt que dans plusieurs outils séparés."
+    },
+    {
+      "en": "Process automation: set up automations (up to 5,000/month on Business) to move tasks between stages without manual updates.",
+      "fr": "Automatisation des processus : configurer des automatisations (jusqu'à 5 000 par mois sur Business) pour faire avancer les tâches sans mise à jour manuelle."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "All-in-one work OS",
+      "fr": "OS de travail tout-en-un"
+    },
+    "shortDescription": {
+      "en": "All-in-one work management tool combining tasks, docs, dashboards and chat, with a 60 MB free plan and per-seat paid tiers.",
+      "fr": "Outil de gestion de travail tout-en-un : tâches, documents, tableaux de bord et chat, plan gratuit limité, formules payantes par siège."
+    },
+    "longDescription": {
+      "en": "ClickUp combines tasks, docs, dashboards, chat and whiteboards in one customizable workspace, with native time tracking and configurable automations built in. The free plan covers unlimited tasks but caps storage at just 60 MB and automation runs at 100/month.\n\nThe entry paid plan, Unlimited, costs $10/month ($7 billed annually) and removes the storage cap. Business ($19/month, $12 annually) raises automation runs to 5,000/month and adds dashboards and mind mapping. A separate AI add-on (from $9/month) covers the assistant and agent features, which are not bundled into the base plans.",
+      "fr": "ClickUp réunit tâches, documents, tableaux de bord, chat et tableaux blancs dans un espace de travail personnalisable, avec suivi du temps natif et automatisations configurables intégrées. Le plan gratuit couvre des tâches illimitées mais plafonne le stockage à seulement 60 Mo et les automatisations à 100 par mois.\n\nLa formule payante d'entrée, Unlimited, coûte 10 $/mois (7 $ en annuel) et retire le plafond de stockage. Business (19 $/mois, 12 $ en annuel) monte les automatisations à 5 000 par mois et ajoute tableaux de bord et cartes mentales. Un module IA séparé (à partir de 9 $/mois) couvre l'assistant et les agents, non inclus dans les formules de base."
+    },
+    "pros": [
+      {
+        "en": "Tasks, docs, dashboards and chat are unified in one workspace instead of several separate tools.",
+        "fr": "Tâches, documents, tableaux de bord et chat sont réunis dans un seul espace plutôt que dans plusieurs outils."
+      },
+      {
+        "en": "Native time tracking and automations are built into every paid plan, not sold as a separate module.",
+        "fr": "Le suivi du temps natif et les automatisations sont intégrés à chaque formule payante, sans module séparé."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Free plan storage is capped at only 60 MB.",
+        "fr": "Le stockage du plan gratuit est plafonné à seulement 60 Mo."
+      },
+      {
+        "en": "Full AI features require a separate paid add-on on top of the plan price.",
+        "fr": "Les fonctionnalités IA complètes nécessitent un module payant séparé en plus du prix de la formule."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Your team needs tasks, docs and dashboards unified in one tool and is willing to configure a customizable workspace.",
+        "fr": "Ton équipe a besoin de réunir tâches, documents et tableaux de bord dans un seul outil et tu es prêt à configurer un espace personnalisable."
+      },
+      "avoidIf": {
+        "en": "You want a simple board-based tool without a configuration phase, or need AI features bundled into the base price.",
+        "fr": "Tu veux un outil simple basé sur des tableaux sans phase de configuration, ou tu as besoin de fonctionnalités IA incluses dans le prix de base."
+      },
+      "threshold": {
+        "en": "Worth the Unlimited plan ($10/month, $84/year per seat) once the free plan's 60 MB storage cap becomes limiting.",
+        "fr": "Le plan Unlimited (10 $/mois, 84 $/an par siège) devient rentable dès que le plafond de 60 Mo du plan gratuit devient limitant."
+      },
+      "billingTraps": {
+        "en": "Automation execution caps can force an upgrade to a pricier plan even when the team's seat count stays small.",
+        "fr": "Les plafonds d'exécution d'automatisation peuvent forcer une mise à niveau vers une formule plus chère même si le nombre de sièges de l'équipe reste faible."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

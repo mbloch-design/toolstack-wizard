@@ -3,7 +3,8 @@
   "slug": "ownr",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Ownr",
     "vendor": "Ownr Inc. (RBC Ventures)",
@@ -33,9 +34,7 @@
     "freePlan": {
       "exists": false,
       "limits": null,
-      "sourceIds": [
-        "s1"
-      ]
+      "sourceIds": ["s1"]
     },
     "trial": null,
     "plans": [
@@ -44,107 +43,108 @@
         "name": "Sole Proprietorship Registration",
         "unit": "one_time",
         "minSeats": null,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": 49
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 49 },
         "onQuote": false,
         "keyLimits": [
-          {
-            "en": "Includes government filing fees; available in BC, Alberta, Ontario and Quebec.",
-            "fr": null
-          }
+          { "en": "Includes government filing fees; available in BC, Alberta, Ontario and Quebec.", "fr": "Comprend les frais de dépôt gouvernementaux ; disponible en Colombie-Britannique, en Alberta, en Ontario et au Québec." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       },
       {
         "key": "incorporation",
         "name": "Business Incorporation",
         "unit": "one_time",
         "minSeats": null,
-        "price": {
-          "monthly": null,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          {
-            "en": "Ranges roughly CAD 499-699 depending on province; includes corporate formation documents (director/shareholder resolutions, bylaws, share register) per third-party reporting, not independently confirmed on ownr.co in this session.",
-            "fr": null
-          }
+          { "en": "Ranges roughly CAD 499-699 depending on province; includes corporate formation documents (director/shareholder resolutions, bylaws, share register) per third-party reporting, not independently confirmed on ownr.co in this session.", "fr": "Varie environ entre 499 et 699 CAD selon la province ; comprend les documents de constitution (résolutions des administrateurs et actionnaires, règlements, registre des actions) selon des sources tierces, non confirmé directement sur ownr.co lors de cette session." }
         ],
-        "sourceIds": [
-          "s1"
-        ]
+        "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "sole-proprietorship",
     "addOns": [
-      {
-        "en": "Ongoing compliance add-ons reported: an annual \"Online Minute Book\" plan and a \"Managed Corporation\" plan, priced in the low hundreds of CAD per year; exact current prices not independently confirmed on the official site in this session.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Ongoing compliance add-ons reported: an annual \"Online Minute Book\" plan and a \"Managed Corporation\" plan, priced in the low hundreds of CAD per year; exact current prices not independently confirmed on the official site in this session.", "fr": "Modules de conformité continue rapportés : un plan annuel « Online Minute Book » et un plan « Managed Corporation », facturés dans les basses centaines de CAD par an ; prix actuels exacts non confirmés directement sur le site officiel lors de cette session.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      {
-        "en": "Pricing for incorporation and annual compliance plans could not be directly confirmed on ownr.co's own pricing page in this session; only the sole-proprietorship fee ($49 CAD) was confirmed via an official Ownr blog post.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Pricing for incorporation and annual compliance plans could not be directly confirmed on ownr.co's own pricing page in this session; only the sole-proprietorship fee ($49 CAD) was confirmed via an official Ownr blog post.", "fr": "Les prix de l'incorporation et des plans de conformité annuels n'ont pas pu être confirmés directement sur la page de tarifs d'ownr.co lors de cette session ; seuls les frais d'entreprise individuelle (49 $ CAD) ont été confirmés via un billet de blog officiel d'Ownr.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      {
-        "en": "Online business registration and incorporation for Canadian entrepreneurs (sole proprietorship, partnership, corporation).",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Generates corporate formation documents (director/shareholder resolutions, bylaws) as part of incorporation.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Online business registration and incorporation for Canadian entrepreneurs (sole proprietorship, partnership, corporation).", "fr": "Enregistrement d'entreprise et incorporation en ligne pour les entrepreneurs canadiens (entreprise individuelle, société de personnes, société par actions).", "sourceIds": ["s1"] },
+      { "en": "Generates corporate formation documents (director/shareholder resolutions, bylaws) as part of incorporation.", "fr": "Génère les documents de constitution de l'entreprise (résolutions des administrateurs et actionnaires, règlements) dans le cadre de l'incorporation.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      {
-        "en": "Service coverage is limited to specific Canadian provinces (confirmed: BC, Alberta, Ontario, Quebec for sole proprietorship).",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      },
-      {
-        "en": "Only serves Canadian business registration; not usable for businesses outside Canada.",
-        "fr": null,
-        "sourceIds": [
-          "s1"
-        ]
-      }
+      { "en": "Service coverage is limited to specific Canadian provinces (confirmed: BC, Alberta, Ontario, Quebec for sole proprietorship).", "fr": "La couverture du service se limite à certaines provinces canadiennes (confirmé pour l'entreprise individuelle : Colombie-Britannique, Alberta, Ontario, Québec).", "sourceIds": ["s1"] },
+      { "en": "Only serves Canadian business registration; not usable for businesses outside Canada.", "fr": "Ne sert que l'enregistrement d'entreprises canadiennes ; inutilisable pour des entreprises hors du Canada.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
-    "platforms": [
-      "web"
-    ]
+    "platforms": ["web"]
   },
-  "alternatives": [],
-  "missingAlternatives": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "A Canadian solo founder or small business owner handling the administrative task of registering or incorporating their business.", "fr": "Une fondatrice ou un fondateur solo canadien, ou une petite équipe, qui gère la tâche administrative d'enregistrer ou d'incorporer son entreprise." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Register: file a sole proprietorship in Ontario, Quebec, Alberta or BC for CAD 49 including government filing fees.", "fr": "Enregistrement : déposer une entreprise individuelle en Ontario, au Québec, en Alberta ou en Colombie-Britannique pour 49 CAD, frais de dépôt gouvernementaux inclus." },
+    { "en": "Incorporate: move from a sole proprietorship to a registered corporation and get the formation documents (bylaws, resolutions) generated automatically.", "fr": "Incorporation : passer d'une entreprise individuelle à une société par actions enregistrée et obtenir automatiquement les documents de constitution (règlements, résolutions)." }
+  ],
+  "alternatives": [
+    { "slug": "rocket-lawyer", "reason": { "en": "Similar guided online business-formation and legal-document service, though not Canada-specific like Ownr.", "fr": "Service en ligne similaire de formation d'entreprise et de documents juridiques guidé, mais pas spécifique au Canada comme Ownr." } },
+    { "slug": "legalplace", "reason": { "en": "Comparable online company-formation platform for the same type of buyer, but built for French company law rather than Canadian.", "fr": "Plateforme comparable de création d'entreprise en ligne pour le même type d'utilisateur, mais conçue pour le droit français plutôt que canadien." } }
+  ],
+  "missingAlternatives": [
+    { "name": "LegalZoom", "officialUrl": "https://www.legalzoom.com", "reason": "Well-known online business-formation competitor, not in the catalogue and not Canada-specific." }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "CAD 49 for a sole-proprietorship registration including government filing fees is a low, confirmed cost for a one-time administrative task.", "fr": "49 CAD pour enregistrer une entreprise individuelle, frais de dépôt gouvernementaux inclus, est un coût confirmé et faible pour une démarche administrative ponctuelle.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "An online form-based registration for a one-time administrative task is a quick, low-skill process by nature.", "fr": "Un enregistrement en ligne par formulaire, pour une démarche administrative ponctuelle, est par nature un processus rapide et accessible sans compétence particulière.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The confirmed sole-proprietorship registration does what it says; incorporation pricing and scope could not be fully confirmed on the official site in this session.", "fr": "L'enregistrement d'entreprise individuelle confirmé fait ce qu'il annonce ; le prix et le périmètre exacts de l'incorporation n'ont pas pu être pleinement confirmés sur le site officiel lors de cette session.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers registration, incorporation and formation documents, but only within specific Canadian provinces, a narrower scope than a multi-country legal platform.", "fr": "Couvre l'enregistrement, l'incorporation et les documents de constitution, mais seulement dans certaines provinces canadiennes, un périmètre plus restreint qu'une plateforme juridique multi-pays.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export or document portability after registration was not covered by the collected sources.", "fr": "Note neutre : l'export des données ou la portabilité des documents après l'enregistrement ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Business registration", "fr": "Enregistrement d'entreprise" },
+    "shortDescription": {
+      "en": "Online registration and incorporation service for Canadian entrepreneurs, covering sole proprietorships, partnerships and corporations in select provinces.",
+      "fr": "Service en ligne d'enregistrement et d'incorporation pour les entrepreneurs canadiens, couvrant entreprises individuelles, sociétés de personnes et sociétés par actions dans certaines provinces."
+    },
+    "longDescription": {
+      "en": "Ownr handles the Canadian paperwork of starting a business online: registering a sole proprietorship for CAD 49, including government filing fees, or incorporating and getting the formation documents (bylaws, resolutions, share register) generated automatically. Coverage is confirmed for BC, Alberta, Ontario and Quebec.\n\nThe sole-proprietorship price is clear and low; incorporation and ongoing compliance plans are reported at higher, less firmly confirmed prices. It suits a Canadian solo founder or small team who wants to register or incorporate online rather than through a lawyer or accountant, but it's not usable outside Canada.",
+      "fr": "Ownr gère en ligne les démarches canadiennes de création d'entreprise : enregistrer une entreprise individuelle pour 49 CAD, frais de dépôt gouvernementaux inclus, ou s'incorporer en obtenant automatiquement les documents de constitution (règlements, résolutions, registre des actions). La couverture est confirmée en Colombie-Britannique, en Alberta, en Ontario et au Québec.\n\nLe prix de l'entreprise individuelle est clair et bas ; les plans d'incorporation et de conformité continue sont rapportés à des prix plus élevés et moins fermement confirmés. Le service convient à une fondatrice ou un fondateur solo canadien, ou une petite équipe, qui veut s'enregistrer ou s'incorporer en ligne plutôt que via un avocat ou un comptable, mais il n'est pas utilisable hors du Canada."
+    },
+    "pros": [
+      { "en": "Clear, low, confirmed price (CAD 49) for sole-proprietorship registration including government fees.", "fr": "Prix clair, bas et confirmé (49 CAD) pour l'enregistrement d'une entreprise individuelle, frais gouvernementaux inclus." },
+      { "en": "Generates incorporation documents (bylaws, resolutions, share register) automatically as part of the process.", "fr": "Génère automatiquement les documents d'incorporation (règlements, résolutions, registre des actions) dans le cadre du processus." }
+    ],
+    "cons": [
+      { "en": "Incorporation and ongoing compliance-plan prices are not confirmed on the official pricing page, only reported by third parties.", "fr": "Les prix de l'incorporation et des plans de conformité continue ne sont pas confirmés sur la page de tarifs officielle, seulement rapportés par des tiers." },
+      { "en": "Only usable in a handful of Canadian provinces, not a national or international option.", "fr": "Utilisable seulement dans une poignée de provinces canadiennes, pas une option nationale ou internationale." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Keep if you're a Canadian founder in a covered province who wants to register a sole proprietorship or incorporate online without a lawyer.", "fr": "À garder si tu es une fondatrice ou un fondateur canadien dans une province couverte et veux enregistrer une entreprise individuelle ou t'incorporer en ligne sans avocat." },
+      "avoidIf": { "en": "Avoid if your business is outside Canada, or outside the confirmed provinces (BC, Alberta, Ontario, Quebec).", "fr": "À éviter si ton entreprise est hors du Canada, ou hors des provinces confirmées (Colombie-Britannique, Alberta, Ontario, Québec)." },
+      "threshold": { "en": "Decision threshold: CAD 49 for sole-proprietorship registration is confirmed; verify the incorporation price directly on ownr.co before comparing it to a lawyer's quote.", "fr": "Seuil de décision : les 49 CAD pour l'entreprise individuelle sont confirmés ; vérifie le prix de l'incorporation directement sur ownr.co avant de le comparer au devis d'un avocat." }
+    }
+  },
+  "reviewNotes": [
+    "Incorporation pricing (reported roughly CAD 499-699) and the annual compliance add-ons (Online Minute Book, Managed Corporation) come from third-party reporting, not ownr.co's own pricing page; confirm both directly on the official site before merging."
+  ],
   "unknowns": [
     "Could not load ownr.co's own pricing page directly in this session (content returned empty); current incorporation and compliance-plan prices come from third-party review sites and need re-verification against the official pricing page.",
-    "No relevant business-registration alternativeCandidates were present in the seed's list; alternatives left empty."
+    "No relevant business-registration alternativeCandidates were present in the seed's list; rocket-lawyer and legalplace were added despite not being Canada-specific."
   ],
   "conflicts": []
 }

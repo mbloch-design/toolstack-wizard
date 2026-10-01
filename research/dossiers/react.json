@@ -3,7 +3,7 @@
   "slug": "react",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "React",
     "vendor": "React Foundation (Linux Foundation); originally created by Meta",
@@ -15,10 +15,34 @@
     "statusNote": "In February 2026 Meta transferred React's governance to the independent React Foundation, hosted by the Linux Foundation. Source: The Register."
   },
   "sources": [
-    { "id": "s1", "url": "https://github.com/facebook/react/blob/main/LICENSE", "tier": 1, "accessedOn": "2026-09-25", "title": "React LICENSE (MIT)" },
-    { "id": "s2", "url": "https://www.theregister.com/software/2026/02/25/meta-frees-react-to-live-in-its-own-foundation/4094718", "tier": 2, "accessedOn": "2026-09-25", "title": "Meta frees React to live in its own foundation" },
-    { "id": "s3", "url": "https://en.wikipedia.org/wiki/React_(software)", "tier": 2, "accessedOn": "2026-09-25", "title": "React (software) - Wikipedia" },
-    { "id": "s4", "url": "https://opensource.fb.com/projects/react/", "tier": 1, "accessedOn": "2026-09-25", "title": "Meta Open Source - React project page" }
+    {
+      "id": "s1",
+      "url": "https://github.com/facebook/react/blob/main/LICENSE",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "React LICENSE (MIT)"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.theregister.com/software/2026/02/25/meta-frees-react-to-live-in-its-own-foundation/4094718",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "Meta frees React to live in its own foundation"
+    },
+    {
+      "id": "s3",
+      "url": "https://en.wikipedia.org/wiki/React_(software)",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "React (software) - Wikipedia"
+    },
+    {
+      "id": "s4",
+      "url": "https://opensource.fb.com/projects/react/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Meta Open Source - React project page"
+    }
   ],
   "pricing": {
     "model": "open_source",
@@ -27,7 +51,13 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [],
     "comparePlanKey": null,
     "addOns": [],
@@ -35,31 +65,198 @@
   },
   "product": {
     "capabilities": [
-      { "en": "Component-based JavaScript library for building user interfaces, with a declarative model and virtual DOM diffing for efficient updates.", "fr": null, "sourceIds": ["s3"] },
-      { "en": "Backed by an ecosystem of official tooling and community frameworks (Next.js, Remix, React Router) for routing, data fetching and server rendering.", "fr": null, "sourceIds": ["s3"] },
-      { "en": "Extends to native mobile apps via React Native, sharing the same component model across web and mobile.", "fr": null, "sourceIds": ["s3"] }
+      {
+        "en": "Component-based JavaScript library for building user interfaces, with a declarative model and virtual DOM diffing for efficient updates.",
+        "fr": "Bibliothèque JavaScript basée sur des composants pour construire des interfaces utilisateur, avec un modèle déclaratif et un DOM virtuel pour des mises à jour efficaces.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "Backed by an ecosystem of official tooling and community frameworks (Next.js, Remix, React Router) for routing, data fetching and server rendering.",
+        "fr": "Adossée à un écosystème d'outils officiels et de frameworks communautaires (Next.js, Remix, React Router) pour le routage, la récupération de données et le rendu serveur.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "Extends to native mobile apps via React Native, sharing the same component model across web and mobile.",
+        "fr": "S'étend aux applications mobiles natives via React Native, en partageant le même modèle de composants entre web et mobile.",
+        "sourceIds": [
+          "s3"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Only a view library, not a full framework: routing, state management and data fetching require separate third-party libraries or a meta-framework.", "fr": null, "sourceIds": ["s3"] },
-      { "en": "No official long-term support channel of its own; production apps typically depend on a framework layer (e.g. Next.js) for build tooling and deployment.", "fr": null, "sourceIds": ["s3"] }
+      {
+        "en": "Only a view library, not a full framework: routing, state management and data fetching require separate third-party libraries or a meta-framework.",
+        "fr": "Seulement une bibliothèque de vue, pas un framework complet : routage, gestion d'état et récupération de données nécessitent des bibliothèques tierces ou un méta-framework.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      {
+        "en": "No official long-term support channel of its own; production apps typically depend on a framework layer (e.g. Next.js) for build tooling and deployment.",
+        "fr": "Pas de canal de support à long terme officiel propre ; les applications en production dépendent généralement d'une couche framework (par ex. Next.js) pour le build et le déploiement.",
+        "sourceIds": [
+          "s3"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers building web or mobile user interfaces who need a component-based library backed by a large ecosystem and hiring pool.",
+      "fr": "Développeurs qui construisent des interfaces web ou mobiles et ont besoin d'une bibliothèque à base de composants soutenue par un large écosystème et un grand vivier de recrutement."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Solo developer: build a client's marketing site or dashboard UI with React plus a meta-framework like Next.js for routing and server rendering.",
+      "fr": "Développeur solo : construire le site ou le tableau de bord d'un client avec React et un méta-framework comme Next.js pour le routage et le rendu serveur."
+    },
+    {
+      "en": "Small team: share one component library across a web app and a React Native mobile app to avoid building the UI twice.",
+      "fr": "Petite équipe : partager une seule bibliothèque de composants entre une application web et une application mobile React Native pour éviter de construire l'interface deux fois."
+    }
+  ],
   "alternatives": [
-    { "slug": "svelte", "reason": { "en": "Compiler-based alternative with less runtime overhead and a simpler mental model for building UI components.", "fr": null } },
-    { "slug": "vue-cli", "reason": { "en": "Progressive framework often seen as gentler to learn than the React ecosystem while covering similar UI needs.", "fr": null } },
-    { "slug": "preact", "reason": { "en": "Drop-in, lighter-weight alternative implementing much of the React API with a smaller bundle size.", "fr": null } },
-    { "slug": "solid-js", "reason": { "en": "Fine-grained reactive alternative to React's virtual DOM model, aimed at similar component-based UI work.", "fr": null } }
+    {
+      "slug": "svelte",
+      "reason": {
+        "en": "Compiler-based alternative with less runtime overhead and a simpler mental model for building UI components.",
+        "fr": "Alternative basée sur un compilateur, avec moins de surcharge au runtime et un modèle mental plus simple pour construire des composants d'interface."
+      }
+    },
+    {
+      "slug": "vue-cli",
+      "reason": {
+        "en": "Progressive framework often seen as gentler to learn than the React ecosystem while covering similar UI needs.",
+        "fr": "Framework progressif souvent perçu comme plus simple à apprendre que l'écosystème React, pour des besoins d'interface similaires."
+      }
+    },
+    {
+      "slug": "preact",
+      "reason": {
+        "en": "Drop-in, lighter-weight alternative implementing much of the React API with a smaller bundle size.",
+        "fr": "Alternative plus légère et directement compatible, implémentant une grande partie de l'API React avec une taille de bundle réduite."
+      }
+    },
+    {
+      "slug": "solid-js",
+      "reason": {
+        "en": "Fine-grained reactive alternative to React's virtual DOM model, aimed at similar component-based UI work.",
+        "fr": "Alternative réactive à grain fin au modèle de DOM virtuel de React, pour un travail similaire de composants d'interface."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Free, open-source and MIT-licensed, with a deep hiring pool and ecosystem of frameworks, so adopting it costs nothing beyond engineering time.",
+        "fr": "Gratuite, open source et sous licence MIT, avec un grand vivier de recrutement et un écosystème de frameworks, donc l'adoption ne coûte que du temps d'ingénierie.",
+        "sourceIds": [
+          "s1",
+          "s4"
+        ]
+      },
+      "simplicite": {
+        "en": "Being only a view library, a first working app requires choosing and wiring a router, state management and a meta-framework, which takes more than an hour for a newcomer.",
+        "fr": "N'étant qu'une bibliothèque de vue, une première application fonctionnelle demande de choisir et d'assembler un routeur, une gestion d'état et un méta-framework, ce qui prend plus d'une heure pour un débutant.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers on its promise as a UI-building library, extended to mobile via React Native and server rendering via community frameworks, without hidden workarounds.",
+        "fr": "Tient sa promesse de bibliothèque de construction d'interface, étendue au mobile via React Native et au rendu serveur via des frameworks communautaires, sans contournement caché.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "puissance": {
+        "en": "Reference-level ecosystem depth: official tooling plus community frameworks (Next.js, Remix) and React Native cover web, server rendering and mobile from the same component model.",
+        "fr": "Profondeur d'écosystème de référence : outils officiels et frameworks communautaires (Next.js, Remix) et React Native couvrent le web, le rendu serveur et le mobile depuis le même modèle de composants.",
+        "sourceIds": [
+          "s3"
+        ]
+      },
+      "reversibilite": {
+        "en": "MIT-licensed open source with no vendor lock-in on the code itself; components can be ported to another React-compatible runtime or rewritten incrementally.",
+        "fr": "Open source sous licence MIT sans dépendance à un éditeur sur le code lui-même ; les composants peuvent être portés vers un autre runtime compatible React ou réécrits progressivement.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "UI component library",
+      "fr": "Bibliothèque de composants UI"
+    },
+    "shortDescription": {
+      "en": "React is a free, open-source JavaScript library for building component-based user interfaces, now governed by the independent React Foundation.",
+      "fr": "React est une bibliothèque JavaScript gratuite et open source pour construire des interfaces à base de composants, désormais gouvernée par la React Foundation indépendante."
+    },
+    "longDescription": {
+      "en": "React is a component-based JavaScript library for building user interfaces, using a declarative model and virtual DOM diffing for efficient updates. It is backed by an ecosystem of official tooling and community frameworks such as Next.js and Remix for routing, data fetching and server rendering, and extends to native mobile apps through React Native.\n\nReact itself is free and MIT-licensed, with no plans or pricing: the cost is the engineering time to build around it. In February 2026 Meta transferred its governance to the independent React Foundation, hosted by the Linux Foundation. It suits developers who want a widely adopted, well-documented component model, provided they pair it with a router, state management and a meta-framework for production use.",
+      "fr": "React est une bibliothèque JavaScript à base de composants pour construire des interfaces utilisateur, avec un modèle déclaratif et un DOM virtuel pour des mises à jour efficaces. Elle s'appuie sur des frameworks communautaires comme Next.js et Remix pour le routage et le rendu serveur, et s'étend au mobile via React Native.\n\nReact est gratuite et sous licence MIT, sans plan ni tarif : le coût est le temps d'ingénierie pour construire autour. En février 2026, Meta a transféré sa gouvernance à la React Foundation indépendante. Elle convient aux développeurs qui veulent un modèle de composants largement adopté."
+    },
+    "pros": [
+      {
+        "en": "Free and open source with no licensing cost, now under independent Foundation governance rather than a single company.",
+        "fr": "Gratuite et open source sans coût de licence, désormais sous une gouvernance de fondation indépendante plutôt que celle d'une seule entreprise."
+      },
+      {
+        "en": "Large hiring pool and ecosystem of meta-frameworks and libraries covering routing, data fetching and mobile.",
+        "fr": "Grand vivier de recrutement et écosystème de méta-frameworks et bibliothèques couvrant le routage, la récupération de données et le mobile."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Not a full framework on its own: routing, state management and data fetching require separate third-party choices.",
+        "fr": "Pas un framework complet à elle seule : routage, gestion d'état et récupération de données demandent des choix tiers séparés."
+      },
+      {
+        "en": "Production apps typically need a meta-framework layer like Next.js for build tooling, adding a second dependency to track.",
+        "fr": "Les applications en production ont généralement besoin d'une couche méta-framework comme Next.js pour le build, ajoutant une seconde dépendance à suivre."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want a widely adopted, free component library with deep ecosystem and hiring support for a web or mobile UI.",
+        "fr": "Tu veux une bibliothèque de composants gratuite et largement adoptée, avec un écosystème profond et un bon vivier de recrutement, pour une interface web ou mobile."
+      },
+      "avoidIf": {
+        "en": "You want a batteries-included framework out of the box without choosing a router and meta-framework separately.",
+        "fr": "Tu veux un framework tout-en-un prêt à l'emploi sans choisir séparément un routeur et un méta-framework."
+      },
+      "threshold": {
+        "en": "No license cost: React is free; budget instead for the meta-framework and hosting you pair it with.",
+        "fr": "Aucun coût de licence : React est gratuite ; prévois plutôt un budget pour le méta-framework et l'hébergement associés."
+      }
+    }
+  },
   "unknowns": [
     "Exact scope of React Foundation's authority versus Meta's continued involvement in React core development was not fully detailed in the sources found.",
     "No official pricing page exists since React is a free open-source library; this dossier records pricing.model as open_source with no plans."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

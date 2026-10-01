@@ -3,7 +3,7 @@
   "slug": "jobber",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Jobber",
     "vendor": "Jobber Software Inc.",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.getjobber.com/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Jobber pricing" },
-    { "id": "s2", "url": "https://www.getjobber.com", "tier": 1, "accessedOn": "2026-09-25", "title": "Jobber homepage" }
+    {
+      "id": "s1",
+      "url": "https://www.getjobber.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Jobber pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.getjobber.com",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Jobber homepage"
+    }
   ],
   "pricing": {
     "model": "per_seat",
@@ -25,87 +37,314 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "core",
         "name": "Core",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 49, "annualPerMonth": 21, "oneTime": null },
+        "price": {
+          "monthly": 49,
+          "annualPerMonth": 21,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "1 user included, $29/mo per extra user; online booking, quotes, invoicing, online payments, basic reporting.", "fr": null }
+          {
+            "en": "1 user included, $29/mo per extra user; online booking, quotes, invoicing, online payments, basic reporting.",
+            "fr": "1 utilisateur inclus, 29 $/mois par utilisateur supplémentaire ; réservation en ligne, devis, facturation, paiements en ligne, reporting de base."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "connect",
         "name": "Connect",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 139, "annualPerMonth": 70, "oneTime": null },
+        "price": {
+          "monthly": 139,
+          "annualPerMonth": 70,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "1 user included, $29/mo per extra user; adds automated reminders, automatic payments, checklists, QuickBooks sync, time/expense tracking.", "fr": null }
+          {
+            "en": "1 user included, $29/mo per extra user; adds automated reminders, automatic payments, checklists, QuickBooks sync, time/expense tracking.",
+            "fr": "1 utilisateur inclus, 29 $/mois par utilisateur supplémentaire ; ajoute rappels automatisés, paiements automatiques, checklists, synchro QuickBooks, suivi du temps et des dépenses."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "grow",
         "name": "Grow",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 199, "annualPerMonth": 105, "oneTime": null },
+        "price": {
+          "monthly": 199,
+          "annualPerMonth": 105,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "1 user included (tiers up to 15 users at $499/mo), $29/mo per extra user; adds rich quote customization, job costing, two-way SMS, workflow automation.", "fr": null }
+          {
+            "en": "1 user included (tiers up to 15 users at $499/mo), $29/mo per extra user; adds rich quote customization, job costing, two-way SMS, workflow automation.",
+            "fr": "1 utilisateur inclus (paliers jusqu'à 15 utilisateurs à 499 $/mois), 29 $/mois par utilisateur supplémentaire ; ajoute une personnalisation poussée des devis, le coût de revient par chantier, le SMS bidirectionnel, l'automatisation de workflow."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "plus",
         "name": "Plus",
         "unit": "seat",
         "minSeats": 5,
-        "price": { "monthly": 499, "annualPerMonth": 280, "oneTime": null },
+        "price": {
+          "monthly": 499,
+          "annualPerMonth": 280,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "5 users included (tiers up to 15 users at $699/mo), $29/mo per extra user; adds unlimited media storage, crew scheduling, custom reports, AI receptionist, dedicated support.", "fr": null }
+          {
+            "en": "5 users included (tiers up to 15 users at $699/mo), $29/mo per extra user; adds unlimited media storage, crew scheduling, custom reports, AI receptionist, dedicated support.",
+            "fr": "5 utilisateurs inclus (paliers jusqu'à 15 utilisateurs à 699 $/mois), 29 $/mois par utilisateur supplémentaire ; ajoute stockage média illimité, planification d'équipe, rapports personnalisés, standard IA, support dédié."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "core",
     "addOns": [
-      { "en": "Extra users on any plan cost $29/mo each beyond the included seats.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Extra users on any plan cost $29/mo each beyond the included seats.",
+        "fr": "Chaque utilisateur supplémentaire sur n'importe quelle formule coûte 29 $/mois au-delà des sièges inclus.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Listed monthly prices carry a promotional annual discount of up to 40% (ending September 30, 2026); the non-discounted monthly price is what's recorded here.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Per-extra-user pricing ($29/mo) means a small crew quickly multiplies the base plan cost.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Listed monthly prices carry a promotional annual discount of up to 40% (ending September 30, 2026); the non-discounted monthly price is what's recorded here.",
+        "fr": "Les prix mensuels affichés incluent une remise promotionnelle annuelle allant jusqu'à 40 % (se terminant le 30 septembre 2026) ; le prix mensuel non réduit est celui enregistré ici.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Per-extra-user pricing ($29/mo) means a small crew quickly multiplies the base plan cost.",
+        "fr": "Le tarif par utilisateur supplémentaire (29 $/mois) fait grimper rapidement le coût de base pour une petite équipe.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Field service management: quoting, scheduling, invoicing and online payments for service businesses (HVAC, plumbing, landscaping, cleaning, etc.).", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Jobber AI assists with pricing, upsell suggestions and job time estimation; higher tiers add an AI receptionist.", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Field service management: quoting, scheduling, invoicing and online payments for service businesses (HVAC, plumbing, landscaping, cleaning, etc.).",
+        "fr": "Gestion de service terrain : devis, planification, facturation et paiements en ligne pour les entreprises de service (CVC, plomberie, paysagisme, nettoyage, etc.).",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Jobber AI assists with pricing, upsell suggestions and job time estimation; higher tiers add an AI receptionist.",
+        "fr": "Jobber AI aide à la tarification, aux suggestions de vente additionnelle et à l'estimation du temps de chantier ; les formules supérieures ajoutent une réceptionniste IA.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No permanent free plan; only a 14-day trial before a paid subscription is required.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Core plan (cheapest tier) lacks QuickBooks sync and automated reminders, available only from Connect upward.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "No permanent free plan; only a 14-day trial before a paid subscription is required.",
+        "fr": "Aucun plan gratuit permanent : seulement un essai de 14 jours avant un abonnement payant obligatoire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Core plan (cheapest tier) lacks QuickBooks sync and automated reminders, available only from Connect upward.",
+        "fr": "La formule Core (la moins chère) n'a pas la synchro QuickBooks ni les rappels automatisés, disponibles seulement à partir de Connect.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "QuickBooks", "slug": "quickbooks", "sourceIds": ["s1"] }
+      {
+        "name": "QuickBooks",
+        "slug": "quickbooks",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web", "ios", "android"]
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
   },
   "alternatives": [],
-  "missingAlternatives": [],
-  "unknowns": [
-    "No alternativeCandidates for this slug's actual field-service-management competitors were present in the seed (the provided list is mostly unrelated productivity tools), so alternatives were left empty rather than guessed."
+  "missingAlternatives": [
+    {
+      "name": "Housecall Pro",
+      "officialUrl": "https://www.housecallpro.com",
+      "reason": "Direct field-service-management competitor for the same trades (HVAC, plumbing, cleaning), not currently in the catalogue."
+    },
+    {
+      "name": "ServiceTitan",
+      "officialUrl": "https://www.servicetitan.com",
+      "reason": "Larger field-service-management competitor targeting the same category, not currently in the catalogue."
+    }
   ],
+  "unknowns": [],
   "conflicts": [
     "Seed pricingText stated Core at $39/mo, but the official pricing page (accessed 2026-09-25) shows Core at $49/mo monthly / $21/mo annualized; the current official figure was used."
-  ]
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "There is no free plan and extra users cost $29/month each, which can multiply the base cost quickly; the sources give no comparative ROI data.",
+        "fr": "Il n'y a pas de plan gratuit et chaque utilisateur supplémentaire coûte 29 $/mois, ce qui peut rapidement multiplier le coût de base ; les sources ne donnent pas de données comparatives de retour sur investissement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time for a first quote or scheduled job is not covered by the collected sources.",
+        "fr": "Note neutre : le temps de prise en main pour un premier devis ou chantier planifié ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Quoting, scheduling, invoicing and online payments are documented as delivered across plans, matching the stated field-service promise.",
+        "fr": "Devis, planification, facturation et paiements en ligne sont documentés comme livrés selon les formules, conformément à la promesse de gestion de service terrain annoncée.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Feature set covers core field-service needs with tiered additions (job costing, two-way SMS, AI receptionist), but the sources give no reference-level comparison within the category.",
+        "fr": "L'ensemble de fonctionnalités couvre les besoins de base en service terrain avec des ajouts par palier (coût de revient, SMS bidirectionnel, réceptionniste IA), mais les sources ne donnent pas de comparaison de référence dans la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or migration-out options for client and job records are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ou de migration en sortie des données clients et chantiers ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Small service-business teams (HVAC, plumbing, cleaning, landscaping) managing quotes, scheduling and invoicing.",
+      "fr": "Petites équipes d'entreprises de service (CVC, plomberie, nettoyage, paysagisme) qui gèrent devis, planification et facturation."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Job scheduling: book a client online and assign the job to a technician's calendar without a phone call.",
+      "fr": "Planification de chantier : réserver un client en ligne et assigner le chantier au calendrier d'un technicien sans appel téléphonique."
+    },
+    {
+      "en": "On-site invoicing: generate and send an invoice with online payment right after finishing a job, instead of billing later from the office.",
+      "fr": "Facturation sur place : générer et envoyer une facture avec paiement en ligne juste après un chantier, plutôt que de facturer plus tard depuis le bureau."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Field service management",
+      "fr": "Gestion de service terrain"
+    },
+    "shortDescription": {
+      "en": "Field service management tool for quoting, scheduling, invoicing and payments, with no free plan and a per-extra-user fee.",
+      "fr": "Outil de gestion de service terrain pour devis, planification, facturation et paiements, sans plan gratuit et avec un tarif par utilisateur supplémentaire."
+    },
+    "longDescription": {
+      "en": "Jobber handles quoting, scheduling, invoicing and online payments for field-service businesses like HVAC, plumbing, landscaping and cleaning. Jobber AI assists with pricing and job time estimation, and higher tiers add an AI receptionist.\n\nThe entry plan, Core, costs $49/month for 1 user ($21/month billed annually), but lacks QuickBooks sync and automated reminders, which only arrive from Connect ($139/month) upward. Every plan charges $29/month per extra user beyond the included seats, so a small crew's cost rises quickly past the base price. There's no permanent free plan, only a 14-day trial.",
+      "fr": "Jobber gère devis, planification, facturation et paiements en ligne pour les entreprises de service terrain comme le CVC, la plomberie, le paysagisme et le nettoyage. Jobber AI aide à la tarification et à l'estimation du temps de chantier, et les formules supérieures ajoutent une réceptionniste IA.\n\nLa formule d'entrée, Core, coûte 49 $/mois pour 1 utilisateur (21 $/mois en engagement annuel), mais n'a pas la synchro QuickBooks ni les rappels automatisés, disponibles seulement à partir de Connect (139 $/mois). Chaque formule facture 29 $/mois par utilisateur supplémentaire au-delà des sièges inclus, donc le coût d'une petite équipe grimpe vite au-delà du prix de base. Il n'y a pas de plan gratuit permanent, seulement un essai de 14 jours."
+    },
+    "pros": [
+      {
+        "en": "Quoting, scheduling, invoicing and online payments are included from the entry plan.",
+        "fr": "Devis, planification, facturation et paiements en ligne sont inclus dès la formule d'entrée."
+      },
+      {
+        "en": "Jobber AI assists with pricing and job time estimation across the product.",
+        "fr": "Jobber AI aide à la tarification et à l'estimation du temps de chantier sur l'ensemble du produit."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No permanent free plan; only a 14-day trial before payment is required.",
+        "fr": "Aucun plan gratuit permanent : seulement un essai de 14 jours avant le paiement obligatoire."
+      },
+      {
+        "en": "QuickBooks sync and automated reminders are missing from the cheapest plan, Core.",
+        "fr": "La synchro QuickBooks et les rappels automatisés manquent sur la formule la moins chère, Core."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You run a field-service business and need quoting, scheduling and invoicing in one tool for a small crew.",
+        "fr": "Tu gères une entreprise de service terrain et tu as besoin de devis, planification et facturation dans un seul outil pour une petite équipe."
+      },
+      "avoidIf": {
+        "en": "Your team needs QuickBooks sync from day one; that requires the Connect plan, not the cheaper Core.",
+        "fr": "Ton équipe a besoin de la synchro QuickBooks dès le départ : cela nécessite le plan Connect, pas Core qui est moins cher."
+      },
+      "threshold": {
+        "en": "Worth it from the Core plan ($49/month, $252/year billed annually for 1 user) if quoting and scheduling by hand is already costing you jobs.",
+        "fr": "Rentable dès le plan Core (49 $/mois, 252 $/an en engagement annuel pour 1 utilisateur) si gérer devis et planification à la main te fait déjà perdre des chantiers."
+      },
+      "billingTraps": {
+        "en": "Each extra user costs $29/month on every plan, so a 3-person crew on Core effectively costs $49 + 2x$29 = $107/month, well above the headline price.",
+        "fr": "Chaque utilisateur supplémentaire coûte 29 $/mois sur chaque formule, donc une équipe de 3 personnes sur Core coûte en réalité 49 $ + 2x29 $ = 107 $/mois, bien au-dessus du prix affiché."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

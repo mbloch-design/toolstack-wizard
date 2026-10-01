@@ -3,7 +3,8 @@
   "slug": "bloom-crm",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Bloom",
     "vendor": "Bloom",
@@ -15,7 +16,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://bloom.io/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Bloom pricing" }
+    {
+      "id": "s1",
+      "url": "https://bloom.io/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Bloom pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,77 +31,317 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 7,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "starter",
         "name": "Starter (Side Jobs)",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 14, "annualPerMonth": 7, "oneTime": null },
+        "price": {
+          "monthly": 14,
+          "annualPerMonth": 7,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "3 active projects, 1 workflow, 1 package template, 1 automation, 100GB storage, 1.5% payment processing fee on cards/ACH" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "3 active projects, 1 workflow, 1 package template, 1 automation, 100GB storage, 1.5% payment processing fee on cards/ACH",
+            "fr": "3 projets actifs, 1 workflow, 1 modèle de forfait, 1 automatisation, 100 Go de stockage, 1,5 % de frais de traitement des paiements par carte ou ACH"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "standard",
         "name": "Standard (Solo Business)",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 34, "annualPerMonth": 17, "oneTime": null },
+        "price": {
+          "monthly": 34,
+          "annualPerMonth": 17,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Unlimited projects, workflows, packages and automations, 500GB storage, no payment processing fee" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Unlimited projects, workflows, packages and automations, 500GB storage, no payment processing fee",
+            "fr": "Projets, workflows, forfaits et automatisations illimités, 500 Go de stockage, aucun frais de traitement des paiements"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "plus",
         "name": "Plus (Small Teams)",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 66, "annualPerMonth": 33, "oneTime": null },
+        "price": {
+          "monthly": 66,
+          "annualPerMonth": 33,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "All Standard features plus team member management and removal of Bloom branding, 1TB storage" }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "All Standard features plus team member management and removal of Bloom branding, 1TB storage",
+            "fr": "Toutes les fonctions de Standard, plus la gestion des membres d'équipe et le retrait de la marque Bloom, 1 To de stockage"
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [
-      { "en": "Custom client-facing website: $17 each, available on all plans", "sourceIds": ["s1"] },
-      { "en": "Extra storage: $10/month per additional 1TB", "sourceIds": ["s1"] }
+      {
+        "en": "Custom client-facing website: $17 each, available on all plans",
+        "fr": "Site web personnalisé orienté client : 17 $ l'unité, disponible sur tous les plans",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Extra storage: $10/month per additional 1TB",
+        "fr": "Stockage supplémentaire : 10 $ par mois par To additionnel",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "The $7/$17/$33 monthly figures shown at signup are a promotional 50%-off rate for the first 12 months on annual billing, not the standing annual price.", "sourceIds": ["s1"] },
-      { "en": "Starter plan charges an extra 1.5% payment processing fee on card/ACH transactions that higher tiers don't.", "sourceIds": ["s1"] }
+      {
+        "en": "The $7/$17/$33 monthly figures shown at signup are a promotional 50%-off rate for the first 12 months on annual billing, not the standing annual price.",
+        "fr": "Les montants de 7 $, 17 $ et 33 $ par mois affichés à l'inscription correspondent à un tarif promotionnel à -50 % pour les 12 premiers mois en facturation annuelle, pas au prix annuel standard.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Starter plan charges an extra 1.5% payment processing fee on card/ACH transactions that higher tiers don't.",
+        "fr": "Le plan Starter facture des frais de traitement des paiements supplémentaires de 1,5 % sur les transactions par carte ou ACH, contrairement aux plans supérieurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "CRM and client portal built for creative freelancers and small studios (photographers, designers) covering leads, invoicing, contracts and scheduling in one workflow.", "sourceIds": ["s1"] },
-      { "en": "Built-in client galleries and package/pricing templates for delivering creative work.", "sourceIds": ["s1"] },
-      { "en": "Automations and multi-step workflows to move clients from lead to booked project.", "sourceIds": ["s1"] },
-      { "en": "Built-in messenger for client communication inside the portal.", "sourceIds": ["s1"] }
+      {
+        "en": "CRM and client portal built for creative freelancers and small studios (photographers, designers) covering leads, invoicing, contracts and scheduling in one workflow.",
+        "fr": "CRM et portail client conçus pour les freelances créatifs et les petits studios (photographes, designers), couvrant prospects, facturation, contrats et planification dans un seul flux de travail.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in client galleries and package/pricing templates for delivering creative work.",
+        "fr": "Galeries clients intégrées et modèles de forfaits et de tarifs pour livrer le travail créatif.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Automations and multi-step workflows to move clients from lead to booked project.",
+        "fr": "Automatisations et workflows multi-étapes pour faire passer les clients du statut de prospect à celui de projet réservé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in messenger for client communication inside the portal.",
+        "fr": "Messagerie intégrée pour communiquer avec les clients directement dans le portail.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Starter tier caps active projects at 3 and limits workflows, packages and automations to 1 each, making it unsuitable beyond very light side-job use.", "sourceIds": ["s1"] },
-      { "en": "Team member management only becomes available on the top (Plus) tier.", "sourceIds": ["s1"] },
-      { "en": "No permanent free plan; only a 7-day trial is offered before billing starts.", "sourceIds": ["s1"] }
+      {
+        "en": "Starter tier caps active projects at 3 and limits workflows, packages and automations to 1 each, making it unsuitable beyond very light side-job use.",
+        "fr": "Le plan Starter plafonne les projets actifs à 3 et limite workflows, forfaits et automatisations à 1 chacun, ce qui le rend inadapté au-delà d'une activité très légère à côté.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Team member management only becomes available on the top (Plus) tier.",
+        "fr": "La gestion des membres d'équipe n'est disponible que sur le plan le plus élevé (Plus).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No permanent free plan; only a 7-day trial is offered before billing starts.",
+        "fr": "Pas de plan gratuit permanent ; seul un essai de 7 jours est proposé avant le début de la facturation.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "SOFIA",
+    "description": {
+      "en": "A creative freelancer, photographer or designer who needs leads, contracts, invoicing and client communication in one place instead of separate tools.",
+      "fr": "Une freelance créative ou un freelance créatif, photographe ou designer, qui a besoin de gérer prospects, contrats, facturation et communication client au même endroit plutôt qu'avec des outils séparés."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Book: move a lead through a multi-step automated workflow to a booked, invoiced project without re-entering their details in separate tools.",
+      "fr": "Réservation : faire avancer un prospect à travers un workflow automatisé multi-étapes jusqu'à un projet réservé et facturé, sans ressaisir ses informations dans des outils séparés."
+    },
+    {
+      "en": "Deliver: send a client their finished work through a branded gallery and package template instead of email attachments.",
+      "fr": "Livraison : envoyer au client son travail terminé via une galerie et un modèle de forfait à l'image de la marque, plutôt que par pièces jointes email."
+    }
+  ],
   "alternatives": [
-    { "slug": "honeybook", "reason": { "en": "Closest direct competitor: CRM and client management built for the same creative-freelancer audience." } },
-    { "slug": "dubsado", "reason": { "en": "Similar all-in-one client management, invoicing and workflow tool for solo creative businesses." } }
+    {
+      "slug": "honeybook",
+      "reason": {
+        "en": "Closest direct competitor: CRM and client management built for the same creative-freelancer audience.",
+        "fr": "Concurrent direct le plus proche : CRM et gestion client conçus pour le même public de freelances créatifs."
+      }
+    },
+    {
+      "slug": "dubsado",
+      "reason": {
+        "en": "Similar all-in-one client management, invoicing and workflow tool for solo creative businesses.",
+        "fr": "Outil similaire tout-en-un de gestion client, facturation et workflow pour les entreprises créatives solo."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Replacing separate lead, invoicing and scheduling tools with one subscription has real value, but the entry price shown at signup is a first-year promo, so standing value can't be judged with confidence (see reviewNotes).",
+        "fr": "Remplacer des outils séparés de prospection, facturation et planification par un seul abonnement a une vraie valeur, mais le prix d'entrée affiché à l'inscription est une promotion de première année, donc la valeur standard ne peut pas être jugée avec certitude (voir reviewNotes).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A built-in workflow that moves a lead to a booked, invoiced project in one portal is a fast first result for a freelancer without separate tools to connect.",
+        "fr": "Un workflow intégré qui fait passer un prospect à un projet réservé et facturé dans un seul portail donne un premier résultat rapide pour une freelance, sans outils séparés à connecter.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers the stated lead-to-invoice workflow and client galleries, but the Starter tier's caps (3 projects, 1 workflow) limit how far that holds beyond light use.",
+        "fr": "Fournit le workflow prospect-vers-facture et les galeries clients annoncés, mais les plafonds du plan Starter (3 projets, 1 workflow) limitent la portée au-delà d'un usage léger.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers leads, contracts, invoicing, scheduling and client galleries in one tool, a solid but not exceptional ceiling next to dedicated creative-CRM competitors.",
+        "fr": "Couvre prospects, contrats, facturation, planification et galeries clients dans un seul outil, un plafond solide mais pas exceptionnel face aux concurrents dédiés aux CRM créatifs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export or migration options if a freelancer leaves Bloom were not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ou de migration des données en cas de départ de Bloom ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Creative freelancer CRM",
+      "fr": "CRM freelance créatif"
+    },
+    "shortDescription": {
+      "en": "CRM and client portal for creative freelancers, combining leads, contracts, invoicing, scheduling and client galleries in one workflow.",
+      "fr": "CRM et portail client pour freelances créatifs, qui réunit prospects, contrats, facturation, planification et galeries clients dans un seul flux de travail."
+    },
+    "longDescription": {
+      "en": "Bloom is a CRM and client portal built for photographers, designers and other creative freelancers: leads, contracts, invoicing, scheduling, client galleries and a built-in messenger in one workflow, with automations to move a lead to a booked project.\n\nStarter lists at $14/month and Standard at $34/month, though the lower promotional rates shown at signup apply only to the first 12 months of annual billing. Starter caps projects, workflows and automations at a very light level; Standard removes those caps, and Plus adds team management. It fits a solo creative freelancer who wants client management, invoicing and delivery in one place.",
+      "fr": "Bloom est un CRM et un portail client pour photographes, designers et autres freelances créatifs : prospects, contrats, facturation, planification, galeries clients et messagerie intégrée dans un seul flux, avec des automatisations pour faire passer un prospect à un projet réservé.\n\nStarter est à 14 $/mois et Standard à 34 $/mois, même si les tarifs promotionnels montrés à l'inscription ne s'appliquent qu'aux 12 premiers mois en facturation annuelle. Starter plafonne projets, workflows et automatisations à un niveau très léger ; Standard retire ces plafonds, et Plus ajoute la gestion d'équipe. Convient à une freelance créative solo qui veut gérer clients, facturation et livraison au même endroit."
+    },
+    "pros": [
+      {
+        "en": "Combines leads, contracts, invoicing and client galleries in one portal instead of several separate tools.",
+        "fr": "Réunit prospects, contrats, facturation et galeries clients dans un seul portail, au lieu de plusieurs outils séparés."
+      },
+      {
+        "en": "Standard tier removes the payment processing fee that Starter charges on card/ACH transactions.",
+        "fr": "Le plan Standard retire les frais de traitement des paiements que Starter facture sur les transactions par carte ou ACH."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Starter tier's caps (3 projects, 1 workflow, 1 automation) are tight enough to only suit very light side-job use.",
+        "fr": "Les plafonds du plan Starter (3 projets, 1 workflow, 1 automatisation) sont assez serrés pour ne convenir qu'à une activité très légère à côté."
+      },
+      {
+        "en": "No permanent free plan, only a 7-day trial before billing starts.",
+        "fr": "Pas de plan gratuit permanent, seulement un essai de 7 jours avant le début de la facturation."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Keep if you're a solo creative freelancer who wants leads, contracts, invoicing and delivery in one portal instead of stitching together separate tools.",
+        "fr": "À garder si tu es une freelance créative solo qui veut gérer prospects, contrats, facturation et livraison dans un seul portail plutôt que d'assembler des outils séparés."
+      },
+      "avoidIf": {
+        "en": "Avoid if you need more than 3 active projects or more than 1 workflow on a budget, since Starter's caps push you to Standard quickly.",
+        "fr": "À éviter si tu as besoin de plus de 3 projets actifs ou de plus d'1 workflow avec un petit budget, car les plafonds de Starter poussent vite vers Standard."
+      },
+      "threshold": {
+        "en": "Decision threshold: Starter's listed $14/month is the entry point, but confirm the standing annual rate beyond the first-year promo before budgeting (see reviewNotes).",
+        "fr": "Seuil de décision : le tarif Starter affiché à 14 $/mois est le point d'entrée, mais vérifie le tarif annuel standard au-delà de la promotion de première année avant de budgétiser (voir reviewNotes)."
+      },
+      "billingTraps": {
+        "en": "The $7/$17/$33 monthly rates shown at signup are a 50%-off first-year promo on annual billing, not the standing price; and Starter adds a 1.5% payment processing fee that higher tiers don't charge.",
+        "fr": "Les tarifs de 7 $, 17 $ et 33 $ par mois montrés à l'inscription sont une promotion à -50 % la première année en facturation annuelle, pas le prix standard ; et Starter ajoute des frais de traitement des paiements de 1,5 % que les plans supérieurs ne facturent pas."
+      }
+    }
+  },
+  "reviewNotes": [
+    "pricing.plans[*].price.annualPerMonth (7/17/33) are flagged in the dossier's own caution as a 50%-off first-year promotional rate, not the standing annual price; per the brief's rule on promotional pricing, these values likely belong in a promoPrice field rather than price.annualPerMonth. Re-verify the real standing annual rate on bloom.io/pricing before merge; comparePlanKey (\"starter\") uses the non-promotional monthly price ($14) so the compare amount itself should still be correct."
+  ],
   "unknowns": [
     "Standing (non-promotional) annual price per plan after the first 12 months was not shown explicitly on the pricing page.",
     "Whether the Plus plan has a per-seat minimum or a flat team price beyond the base seat was not fully detailed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "hold": "annualPerMonth values are a first-year 50% promo per the dossier caution; move to promoPrice"
 }

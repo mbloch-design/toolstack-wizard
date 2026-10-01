@@ -3,7 +3,8 @@
   "slug": "woocommerce",
   "tier": "B",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "WooCommerce",
     "vendor": "Automattic Inc.",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": { "en": "The core WooCommerce plugin is free to add to an existing WordPress site; scales from 1 to 100,000+ orders/day.", "fr": null }, "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "The core WooCommerce plugin is free to add to an existing WordPress site; scales from 1 to 100,000+ orders/day.", "fr": "Le plugin WooCommerce de base est gratuit sur un site WordPress existant et s'adapte de 1 à plus de 100 000 commandes par jour." }, "sourceIds": ["s1"] },
     "trial": null,
     "plans": [
       {
@@ -35,28 +36,28 @@
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Free to install on a WordPress site; scales from 1 to 100,000+ orders/day. Requires separate WordPress hosting and, for most production stores, paid extensions.", "fr": null }
+          { "en": "Free to install on a WordPress site; scales from 1 to 100,000+ orders/day. Requires separate WordPress hosting and, for most production stores, paid extensions.", "fr": "Installation gratuite sur un site WordPress, de 1 à plus de 100 000 commandes par jour. Nécessite un hébergement WordPress séparé et, pour la plupart des boutiques en production, des extensions payantes." }
         ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "core-plugin",
     "addOns": [
-      { "en": "Hundreds of paid extensions available on the Woo Marketplace (shipping, subscriptions, memberships, etc.) sold separately from the free core plugin.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Hundreds of paid extensions available on the Woo Marketplace (shipping, subscriptions, memberships, etc.) sold separately from the free core plugin.", "fr": "Des centaines d'extensions payantes sur le Woo Marketplace (livraison, abonnements, adhésions, etc.), vendues séparément du plugin gratuit de base.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "The plugin itself is free but requires WordPress hosting plus paid extensions/payment-gateway fees for a full production store, so total cost is not visible on a single pricing page.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "The plugin itself is free but requires WordPress hosting plus paid extensions/payment-gateway fees for a full production store, so total cost is not visible on a single pricing page.", "fr": "Le plugin est gratuit, mais une boutique en production complète nécessite un hébergement WordPress et des extensions ou frais de passerelle de paiement payants : le coût total n'apparaît sur aucune page de tarifs unique.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Open-source e-commerce plugin turning a WordPress site into an online store, selling physical products, digital content, subscriptions, memberships and bookings.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "140+ region-specific payment gateways including WooPayments, Stripe, PayPal, Square and Amazon Pay, plus automated tax calculation and live shipping rates.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "REST API and hundreds of free/paid extensions for custom integrations via the Woo Marketplace.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Open-source e-commerce plugin turning a WordPress site into an online store, selling physical products, digital content, subscriptions, memberships and bookings.", "fr": "Plugin e-commerce open source qui transforme un site WordPress en boutique en ligne, pour vendre des produits physiques, du contenu numérique, des abonnements, des adhésions et des réservations.", "sourceIds": ["s1"] },
+      { "en": "140+ region-specific payment gateways including WooPayments, Stripe, PayPal, Square and Amazon Pay, plus automated tax calculation and live shipping rates.", "fr": "Plus de 140 passerelles de paiement régionales, dont WooPayments, Stripe, PayPal, Square et Amazon Pay, avec calcul automatique des taxes et tarifs de livraison en temps réel.", "sourceIds": ["s1"] },
+      { "en": "REST API and hundreds of free/paid extensions for custom integrations via the Woo Marketplace.", "fr": "API REST et des centaines d'extensions gratuites ou payantes pour des intégrations personnalisées via le Woo Marketplace.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "Not a standalone product: requires a WordPress installation and its own hosting to run.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Many features that come built-in with hosted competitors (advanced shipping, subscriptions) require separately purchased extensions.", "fr": null, "sourceIds": ["s1"] }
+      { "en": "Not a standalone product: requires a WordPress installation and its own hosting to run.", "fr": "Ce n'est pas un produit autonome : il faut une installation WordPress et son propre hébergement pour le faire fonctionner.", "sourceIds": ["s1"] },
+      { "en": "Many features that come built-in with hosted competitors (advanced shipping, subscriptions) require separately purchased extensions.", "fr": "De nombreuses fonctions intégrées chez des concurrents hébergés (livraison avancée, abonnements) demandent ici des extensions achetées séparément.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "WordPress", "slug": "wordpress", "sourceIds": ["s1"] },
@@ -64,10 +65,64 @@
     ],
     "platforms": ["web", "ios", "android"]
   },
-  "alternatives": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "Someone running day-to-day operations for a small store who already has, or is willing to set up, a WordPress site.", "fr": "Une personne qui gère le quotidien d'une petite boutique et qui dispose déjà d'un site WordPress, ou est prête à en installer un." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Setup: install WooCommerce on an existing WordPress site to sell physical products with Stripe or PayPal as the payment gateway.", "fr": "Mise en place : installer WooCommerce sur un site WordPress existant pour vendre des produits physiques avec Stripe ou PayPal comme passerelle de paiement." },
+    { "en": "Scale-up: add a paid Woo Marketplace extension (subscriptions, advanced shipping) once a store outgrows the default plugin features.", "fr": "Montée en charge : ajouter une extension payante du Woo Marketplace (abonnements, livraison avancée) quand une boutique dépasse les fonctions par défaut du plugin." }
+  ],
+  "alternatives": [
+    { "slug": "shopify", "reason": { "en": "Hosted e-commerce platform covering the same core need, running an online store, without requiring separate WordPress hosting.", "fr": "Plateforme e-commerce hébergée qui couvre le même besoin, faire tourner une boutique en ligne, sans hébergement WordPress séparé." } },
+    { "slug": "wix", "reason": { "en": "All-in-one website builder with built-in online store features for teams that don't want to manage WordPress hosting themselves.", "fr": "Créateur de site tout-en-un avec des fonctions de boutique intégrées, pour les équipes qui ne veulent pas gérer leur propre hébergement WordPress." } },
+    { "slug": "webflow", "reason": { "en": "Visual website and e-commerce builder covering the same need for teams that want design control without WordPress.", "fr": "Créateur de site et de boutique en ligne visuel qui couvre le même besoin pour les équipes qui veulent du contrôle de design sans WordPress." } }
+  ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The core plugin is free, but the real cost of a production store (hosting, gateway fees, extensions) is not visible on a single page, so value for money can't be judged cleanly.", "fr": "Le plugin de base est gratuit, mais le coût réel d'une boutique en production (hébergement, frais de passerelle, extensions) n'apparaît sur aucune page unique, ce qui empêche de juger clairement le rapport qualité-prix.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Needs a working WordPress installation and separate hosting before the plugin even runs, more setup than a hosted store builder.", "fr": "Il faut une installation WordPress fonctionnelle et un hébergement séparé avant même que le plugin ne fonctionne, ce qui demande plus de mise en place qu'un créateur de boutique hébergé.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the promised e-commerce functions as described, from products and cart to 140+ payment gateways, scaling to 100,000+ orders a day.", "fr": "Remplit les fonctions e-commerce annoncées, des fiches produits au panier, avec plus de 140 passerelles de paiement, en montant jusqu'à plus de 100 000 commandes par jour.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers physical products, digital content, subscriptions, memberships and bookings with a REST API and hundreds of extensions, a wide ceiling for the category.", "fr": "Couvre les produits physiques, le contenu numérique, les abonnements, les adhésions et les réservations avec une API REST et des centaines d'extensions, un plafond large pour la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and migration options were not covered by the collected sources.", "fr": "Note neutre : les options d'export et de migration ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Online store builder", "fr": "Boutique en ligne" },
+    "shortDescription": {
+      "en": "Open-source WordPress plugin that turns a site into an online store, with payment gateways, tax calculation and hundreds of paid extensions.",
+      "fr": "Plugin WordPress open source qui transforme un site en boutique en ligne, avec passerelles de paiement, calcul des taxes et centaines d'extensions payantes."
+    },
+    "longDescription": {
+      "en": "WooCommerce adds a full online store to an existing WordPress site: products, cart, checkout, over 140 regional payment gateways, automated tax and live shipping rates. It scales from a single-product side project to stores doing 100,000 or more orders a day, through the same free core plugin.\n\nThe plugin itself costs nothing, but a production store still needs separate WordPress hosting, a payment gateway, and usually one or more paid extensions from the Woo Marketplace for things like subscriptions or advanced shipping. It suits anyone already comfortable running a WordPress site who wants to own the store instead of renting one on a hosted platform.",
+      "fr": "WooCommerce ajoute une boutique complète à un site WordPress existant : fiches produits, panier, paiement, plus de 140 passerelles de paiement régionales, calcul automatique des taxes et tarifs de livraison en temps réel. Le même plugin gratuit convient aussi bien à un petit projet qu'à une boutique qui traite plus de 100 000 commandes par jour.\n\nLe plugin ne coûte rien, mais une boutique en production a quand même besoin d'un hébergement WordPress séparé, d'une passerelle de paiement et, le plus souvent, d'une ou plusieurs extensions payantes du Woo Marketplace pour les abonnements ou la livraison avancée. Il convient à qui gère déjà un site WordPress et préfère posséder sa boutique plutôt que la louer sur une plateforme hébergée."
+    },
+    "pros": [
+      { "en": "Free core plugin with no revenue-based fee, unlike many hosted store platforms.", "fr": "Plugin de base gratuit, sans commission sur le chiffre d'affaires, contrairement à de nombreuses plateformes hébergées." },
+      { "en": "140+ region-specific payment gateways built in, covering most markets without a third-party add-on.", "fr": "Plus de 140 passerelles de paiement régionales intégrées, de quoi couvrir la plupart des marchés sans module tiers." }
+    ],
+    "cons": [
+      { "en": "Total cost only appears once hosting and extensions are added; no single page shows the real monthly budget.", "fr": "Le coût total n'apparaît qu'une fois l'hébergement et les extensions ajoutés : aucune page ne montre le budget mensuel réel." },
+      { "en": "Requires a working WordPress site first: not usable as a standalone product.", "fr": "Nécessite d'abord un site WordPress fonctionnel : ce n'est pas un produit autonome." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Keep if you already run, or are comfortable setting up, a WordPress site and want to own your store's data and extensions instead of renting a hosted platform.", "fr": "À garder si tu gères déjà, ou es à l'aise pour installer, un site WordPress et veux posséder les données et extensions de ta boutique plutôt que louer une plateforme hébergée." },
+      "avoidIf": { "en": "Avoid if you want a store running today without managing hosting, or need every feature included at one flat price.", "fr": "À éviter si tu veux une boutique prête aujourd'hui sans gérer d'hébergement, ou si tu as besoin que tout soit inclus dans un seul prix fixe." },
+      "threshold": { "en": "Decision threshold: budget for WordPress hosting plus at least one paid Woo Marketplace extension on top of the free plugin before comparing to a hosted platform's monthly fee.", "fr": "Seuil de décision : prévois le budget d'hébergement WordPress plus au moins une extension payante du Woo Marketplace en plus du plugin gratuit avant de comparer au tarif mensuel d'une plateforme hébergée." }
+    }
+  },
+  "reviewNotes": [],
   "unknowns": [
-    "No relevant e-commerce alternativeCandidates were present in the seed's list (mostly unrelated dev/nocode tools), so alternatives were left empty rather than guessed."
+    "No relevant e-commerce alternativeCandidates were present in the seed's list (mostly unrelated dev/nocode tools); shopify, wix and webflow were added from the general catalogue instead."
   ],
   "conflicts": []
 }

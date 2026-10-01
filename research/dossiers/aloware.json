@@ -3,7 +3,7 @@
   "slug": "aloware",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Aloware",
     "vendor": "Aloware Inc.",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://aloware.com/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Aloware pricing" }
+    {
+      "id": "s1",
+      "url": "https://aloware.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Aloware pricing"
+    }
   ],
   "pricing": {
     "model": "per_seat",
@@ -24,78 +30,325 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 7,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "ipro-ai",
         "name": "iPro + AI",
         "unit": "seat",
         "minSeats": 10,
-        "price": { "monthly": 40, "annualPerMonth": 30, "oneTime": null },
+        "price": {
+          "monthly": 40,
+          "annualPerMonth": 30,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Minimum 10 users. Core calling and texting, HubSpot/Pipedrive/Zoho integration, 1,000 AloAi voice analytics minutes, IVRs, call recording, bulk SMS/MMS.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Minimum 10 users. Core calling and texting, HubSpot/Pipedrive/Zoho integration, 1,000 AloAi voice analytics minutes, IVRs, call recording, bulk SMS/MMS.",
+            "fr": "Minimum 10 utilisateurs. Appels et SMS de base, intégration HubSpot/Pipedrive/Zoho, 1 000 minutes d'analyse vocale AloAi, SVI, enregistrement des appels, SMS/MMS en masse."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "upro-ai",
         "name": "uPro + AI",
         "unit": "seat",
         "minSeats": 5,
-        "price": { "monthly": 70, "annualPerMonth": 60, "oneTime": null },
+        "price": {
+          "monthly": 70,
+          "annualPerMonth": 60,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Minimum 5 users. Adds HubSpot workflows, 5,000 AloAi minutes, Power Dialer, AI transcriptions/summaries/sentiment analysis, dedicated success manager, call coaching.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Minimum 5 users. Adds HubSpot workflows, 5,000 AloAi minutes, Power Dialer, AI transcriptions/summaries/sentiment analysis, dedicated success manager, call coaching.",
+            "fr": "Minimum 5 utilisateurs. Ajoute les workflows HubSpot, 5 000 minutes AloAi, Power Dialer, transcriptions/résumés/analyse de sentiment par IA, chargé de succès dédié, coaching d'appels."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "xpro-ai",
         "name": "xPro + AI",
         "unit": "seat",
         "minSeats": 5,
-        "price": { "monthly": 100, "annualPerMonth": 85, "oneTime": null },
+        "price": {
+          "monthly": 100,
+          "annualPerMonth": 85,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Minimum 5 users. Adds Salesforce integration, unlimited AloAi minutes, keyword detection, trending topics, white-glove onboarding, 99.99% SLA, managed 10DLC compliance.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Minimum 5 users. Adds Salesforce integration, unlimited AloAi minutes, keyword detection, trending topics, white-glove onboarding, 99.99% SLA, managed 10DLC compliance.",
+            "fr": "Minimum 5 utilisateurs. Ajoute l'intégration Salesforce, minutes AloAi illimitées, détection de mots-clés, sujets tendance, onboarding white-glove, SLA 99,99 %, conformité 10DLC gérée."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "ipro-ai",
     "addOns": [
-      { "en": "AloAi Voice Agent (AI voice calling), starting at 10 cents/minute.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Local Presence add-on, $300/month; local and toll-free numbers, $4-6/month each; branded Caller ID, $0.09-0.12/call.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "AloAi Voice Agent (AI voice calling), starting at 10 cents/minute.",
+        "fr": "Agent vocal IA AloAi (appels vocaux IA), à partir de 10 cents/minute.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Local Presence add-on, $300/month; local and toll-free numbers, $4-6/month each; branded Caller ID, $0.09-0.12/call.",
+        "fr": "Module complémentaire Présence Locale, 300 $/mois ; numéros locaux et gratuits, 4 à 6 $/mois chacun ; identifiant d'appelant de marque, 0,09 à 0,12 $/appel.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "Every plan carries a minimum seat count (5 or 10 users), which raises the effective entry cost well above the headline per-seat price; the source page listed monthly and annual figures in a way that read as annual costing more than monthly, but the stated '15% savings' only reconciles if annual billing ($30/$60/$85 per user) is cheaper than monthly billing ($40/$70/$100 per user), so this dossier applies that correction and it should be reverified on the official page.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Every plan carries a minimum seat count (5 or 10 users), which raises the effective entry cost well above the headline per-seat price; the source page listed monthly and annual figures in a way that read as annual costing more than monthly, but the stated '15% savings' only reconciles if annual billing ($30/$60/$85 per user) is cheaper than monthly billing ($40/$70/$100 per user), so this dossier applies that correction and it should be reverified on the official page.",
+        "fr": "Chaque plan impose un nombre minimum de sièges (5 ou 10 utilisateurs), ce qui relève sensiblement le coût d'entrée réel au-delà du prix par siège affiché ; la page source présentait les montants mensuels et annuels d'une façon qui laissait penser que l'annuel coûtait plus que le mensuel, mais l'économie de « 15 % » annoncée ne se vérifie que si la facturation annuelle (30 $/60 $/85 $ par utilisateur) est moins chère que la mensuelle (40 $/70 $/100 $ par utilisateur) ; ce dossier applique cette correction et elle doit être revérifiée sur la page officielle.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Cloud call center with automated power dialer, SMS/MMS bulk messaging and IVR, aimed at sales and support teams.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "AloAi voice AI features: call transcription, summaries, sentiment analysis, keyword and trending-topic detection on higher plans.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Native integrations with HubSpot, Pipedrive, Zoho and Salesforce (Salesforce on the top xPro plan only).", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Cloud call center with automated power dialer, SMS/MMS bulk messaging and IVR, aimed at sales and support teams.",
+        "fr": "Centre d'appels cloud avec composeur automatique, messagerie SMS/MMS en masse et SVI, destiné aux équipes de vente et de support.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AloAi voice AI features: call transcription, summaries, sentiment analysis, keyword and trending-topic detection on higher plans.",
+        "fr": "Fonctionnalités d'IA vocale AloAi : transcription d'appels, résumés, analyse de sentiment, détection de mots-clés et de sujets tendance sur les plans supérieurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Native integrations with HubSpot, Pipedrive, Zoho and Salesforce (Salesforce on the top xPro plan only).",
+        "fr": "Intégrations natives avec HubSpot, Pipedrive, Zoho et Salesforce (Salesforce uniquement sur le plan xPro supérieur).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Every plan enforces a minimum seat count (5 or 10 users), making it unsuitable for solo users or very small teams.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Salesforce integration and unlimited AloAi minutes are reserved for the top xPro + AI plan.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Every plan enforces a minimum seat count (5 or 10 users), making it unsuitable for solo users or very small teams.",
+        "fr": "Chaque plan impose un nombre minimum de sièges (5 ou 10 utilisateurs), ce qui le rend inadapté aux utilisateurs solo ou aux très petites équipes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Salesforce integration and unlimited AloAi minutes are reserved for the top xPro + AI plan.",
+        "fr": "L'intégration Salesforce et les minutes AloAi illimitées sont réservées au plan xPro + AI le plus élevé.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "HubSpot", "slug": "hubspot", "sourceIds": ["s1"] },
-      { "name": "Salesforce", "slug": "salesforce", "sourceIds": ["s1"] }
+      {
+        "name": "HubSpot",
+        "slug": "hubspot",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Salesforce",
+        "slug": "salesforce",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Sales and support team leads who need a cloud call center with AI analytics and CRM integration for a team of 5 or more.",
+      "fr": "Responsables d'équipes de vente ou de support qui ont besoin d'un centre d'appels cloud avec analyse IA et intégration CRM pour une équipe de 5 personnes ou plus."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Sales team: run outbound campaigns with the Power Dialer and bulk SMS, then review AI call summaries and sentiment on uPro + AI.",
+      "fr": "Équipe commerciale : lancer des campagnes sortantes avec le Power Dialer et les SMS en masse, puis consulter les résumés et l'analyse de sentiment IA sur uPro + AI."
+    },
+    {
+      "en": "Support team: use IVR and call recording on iPro + AI to route and log customer calls alongside an existing HubSpot or Zoho CRM.",
+      "fr": "Équipe support : utiliser le SVI et l'enregistrement des appels sur iPro + AI pour router et journaliser les appels clients avec un CRM HubSpot ou Zoho existant."
+    }
+  ],
   "alternatives": [
-    { "slug": "aircall", "reason": { "en": "Cloud call center competitor with similar CRM integrations and per-seat pricing, without Aloware's minimum-seat requirement.", "fr": null } },
-    { "slug": "kixie", "reason": { "en": "Sales dialer and calling platform targeting the same outbound sales use case.", "fr": null } },
-    { "slug": "openphone", "reason": { "en": "Simpler cloud phone system alternative, better suited to solo users and very small teams that Aloware's seat minimums exclude.", "fr": null } },
-    { "slug": "callhippo", "reason": { "en": "Virtual call center platform competing on similar dialer and CRM-integration features.", "fr": null } }
+    {
+      "slug": "aircall",
+      "reason": {
+        "en": "Cloud call center competitor with similar CRM integrations and per-seat pricing, without Aloware's minimum-seat requirement.",
+        "fr": "Concurrent de centre d'appels cloud avec des intégrations CRM similaires et une tarification par siège, sans l'exigence de sièges minimum d'Aloware."
+      }
+    },
+    {
+      "slug": "kixie",
+      "reason": {
+        "en": "Sales dialer and calling platform targeting the same outbound sales use case.",
+        "fr": "Plateforme de composeur de vente et d'appels visant le même usage de vente sortante."
+      }
+    },
+    {
+      "slug": "openphone",
+      "reason": {
+        "en": "Simpler cloud phone system alternative, better suited to solo users and very small teams that Aloware's seat minimums exclude.",
+        "fr": "Alternative plus simple de téléphonie cloud, mieux adaptée aux utilisateurs solo et très petites équipes qu'exclut le minimum de sièges d'Aloware."
+      }
+    },
+    {
+      "slug": "callhippo",
+      "reason": {
+        "en": "Virtual call center platform competing on similar dialer and CRM-integration features.",
+        "fr": "Plateforme de centre d'appels virtuel concurrente sur des fonctionnalités similaires de composeur et d'intégration CRM."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The 5-10 user minimum on every plan means a small team pays for seats it may not need, even though the AI call analytics add real value on top of basic dialing.",
+        "fr": "Le minimum de 5 à 10 utilisateurs sur chaque plan fait qu'une petite équipe paie des sièges dont elle n'a pas forcément besoin, même si l'analyse d'appels par IA apporte une vraie valeur au-delà du simple appel.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: time to a first working call center setup was not covered by the collected sources.",
+        "fr": "Note neutre : le temps nécessaire pour une première configuration fonctionnelle du centre d'appels ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers power dialing, bulk SMS/MMS and IVR plus AI transcription and sentiment analysis on higher plans, matching its stated promise for sales teams.",
+        "fr": "Livre composeur automatique, SMS/MMS en masse et SVI, plus transcription et analyse de sentiment par IA sur les plans supérieurs, conforme à sa promesse pour les équipes de vente.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Unlimited AloAi minutes, keyword and trending-topic detection and a 99.99% SLA at the top tier cover advanced call-center and sales-coaching needs.",
+        "fr": "Minutes AloAi illimitées, détection de mots-clés et de sujets tendance et un SLA de 99,99 % au palier supérieur couvrent des besoins avancés de centre d'appels et de coaching commercial.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: call and contact data export options out of Aloware were not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export des données d'appels et de contacts hors d'Aloware ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Cloud call center",
+      "fr": "Centre d'appels cloud"
+    },
+    "shortDescription": {
+      "en": "Aloware is a cloud call center with AI call analytics and CRM integrations, priced per seat with a minimum of 5 to 10 users.",
+      "fr": "Aloware est un centre d'appels cloud avec analyse d'appels par IA et intégrations CRM, facturé par siège avec un minimum de 5 à 10 utilisateurs."
+    },
+    "longDescription": {
+      "en": "Aloware is a cloud call center built around a power dialer, bulk SMS/MMS and IVR for sales and support teams, with AloAi voice AI adding call transcription, summaries, sentiment analysis and keyword detection on higher plans. It integrates natively with HubSpot, Pipedrive and Zoho, with Salesforce reserved for the top xPro + AI plan.\n\nEvery plan enforces a seat minimum, from $40/user/month (10-user minimum) on iPro + AI to $100/user/month (5-user minimum) on xPro + AI, so the real entry cost is several times the headline per-seat price. It suits sales and support teams of 5 or more who want AI call analytics built into their dialer, and is a poor fit for solo users or very small teams.",
+      "fr": "Aloware est un centre d'appels cloud construit autour d'un composeur automatique, de SMS/MMS en masse et d'un SVI pour les équipes de vente et de support, avec l'IA AloAi qui ajoute transcription, résumés et analyse de sentiment sur les plans supérieurs. Il s'intègre à HubSpot, Pipedrive et Zoho, Salesforce étant réservé au plan le plus élevé.\n\nChaque plan impose un minimum de sièges, de 40 $/utilisateur/mois (10 utilisateurs minimum) à 100 $/utilisateur/mois (5 utilisateurs minimum), donc le coût d'entrée réel dépasse largement le prix par siège affiché. Il convient aux équipes de 5 personnes ou plus, et mal aux utilisateurs solo."
+    },
+    "pros": [
+      {
+        "en": "AI call transcription, summaries and sentiment analysis are built into the dialer rather than a separate tool.",
+        "fr": "Transcription, résumés et analyse de sentiment par IA sont intégrés au composeur plutôt que dans un outil séparé."
+      },
+      {
+        "en": "Native integrations with HubSpot, Pipedrive, Zoho and Salesforce keep call data inside the existing CRM.",
+        "fr": "Les intégrations natives avec HubSpot, Pipedrive, Zoho et Salesforce gardent les données d'appel dans le CRM existant."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Every plan enforces a 5 or 10-seat minimum, ruling it out for solo users or very small teams.",
+        "fr": "Chaque plan impose un minimum de 5 ou 10 sièges, ce qui l'exclut pour les utilisateurs solo ou les très petites équipes."
+      },
+      {
+        "en": "Salesforce integration and unlimited AloAi minutes are reserved for the most expensive xPro + AI plan.",
+        "fr": "L'intégration Salesforce et les minutes AloAi illimitées sont réservées au plan xPro + AI, le plus cher."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You lead a sales or support team of 5 or more and want AI call analytics built into a per-seat cloud dialer.",
+        "fr": "Tu diriges une équipe de vente ou de support de 5 personnes ou plus et veux une analyse d'appels par IA intégrée à un composeur cloud par siège."
+      },
+      "avoidIf": {
+        "en": "You are a solo user or a team under 5, where the seat minimum forces you to pay for capacity you don't need.",
+        "fr": "Tu es un utilisateur solo ou une équipe de moins de 5 personnes, où le minimum de sièges te force à payer une capacité dont tu n'as pas besoin."
+      },
+      "threshold": {
+        "en": "Budget at least $400/month for the 10-seat minimum on iPro + AI ($40/user), the cheapest entry point.",
+        "fr": "Prévois au moins 400 $/mois pour le minimum de 10 sièges sur iPro + AI (40 $/utilisateur), le point d'entrée le moins cher."
+      },
+      "billingTraps": {
+        "en": "Every plan requires a minimum seat count (5 or 10 users) regardless of actual team size, and add-ons like Local Presence ($300/month) and per-call branded Caller ID bill separately.",
+        "fr": "Chaque plan exige un nombre minimum de sièges (5 ou 10 utilisateurs) quelle que soit la taille réelle de l'équipe, et des modules comme Présence Locale (300 $/mois) et l'identifiant d'appelant de marque se facturent séparément, par appel."
+      }
+    }
+  },
   "unknowns": [
     "The pricing page's monthly vs. annual labeling was ambiguous (fetched text implied annual billing costs more per user than monthly, which contradicts its own '15% savings' claim); this dossier reassigned monthly=$40/$70/$100 and annual=$30/$60/$85 per user to match the stated discount, and it should be reverified directly against aloware.com/pricing."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "aloware.com/pricing's monthly-vs-annual labeling was ambiguous (text implied annual costs more per seat than monthly, contradicting the stated 15% annual savings); this dossier reassigned monthly=$40/$70/$100 and annual=$30/$60/$85 per user to match the discount claim. Reverify directly on the pricing page before publishing."
+  ],
+  "hold": "monthly and annualPerMonth were reassigned to match the advertised 15% saving; confirm on the page"
 }

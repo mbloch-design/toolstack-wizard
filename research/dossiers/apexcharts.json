@@ -3,7 +3,8 @@
   "slug": "apexcharts",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "ApexCharts",
     "vendor": "ApexCharts.js",
@@ -24,7 +25,7 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": [{ "en": "Core ApexCharts library is free and open source (MIT-licensed charting library)" }], "sourceIds": ["s1"] },
+    "freePlan": { "exists": true, "limits": { "en": "Core ApexCharts library is free and open source (MIT-licensed charting library)", "fr": "La bibliothèque ApexCharts de base est gratuite et open source (sous licence MIT)" }, "sourceIds": ["s1"] },
     "plans": [
       {
         "key": "core",
@@ -33,42 +34,90 @@
         "minSeats": null,
         "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "Free, open-source charting library; no usage cap for the core library" }],
+        "keyLimits": [{ "en": "Free, open-source charting library; no usage cap for the core library", "fr": "Bibliothèque de graphiques gratuite et open source ; aucune limite d'usage sur la bibliothèque de base" }],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "core",
     "addOns": [
-      { "en": "Companion commercial products in the same family (ApexGrid data grid, ApexGantt, ApexTree org charts, ApexSankey, ApexMaps, ApexStock) with separate, unverified pricing", "sourceIds": ["s1"] }
+      { "en": "Companion commercial products in the same family (ApexGrid data grid, ApexGantt, ApexTree org charts, ApexSankey, ApexMaps, ApexStock) with separate, unverified pricing", "fr": "Produits commerciaux complémentaires de la même famille (grille de données ApexGrid, ApexGantt, organigrammes ApexTree, ApexSankey, ApexMaps, ApexStock) avec un tarif séparé, non vérifié", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "The core charting library is free/open source; commercial licensing terms for the companion products (grid, gantt, etc.) were not shown on the homepage and were not verified.", "sourceIds": ["s1"] }
+      { "en": "The core charting library is free/open source; commercial licensing terms for the companion products (grid, gantt, etc.) were not shown on the homepage and were not verified.", "fr": "La bibliothèque de graphiques de base est gratuite et open source ; les conditions de licence commerciale des produits complémentaires (grille, gantt, etc.) n'étaient pas affichées sur la page d'accueil et n'ont pas été vérifiées.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "20+ interactive SVG chart types (line, area, candlestick, heatmap, treemap, pie, radar, gauge, funnel) for React, Vue, Angular and vanilla JS.", "sourceIds": ["s1"] },
-      { "en": "Renders large datasets fast, claimed 100k-point line chart in 29ms.", "sourceIds": ["s1"] },
-      { "en": "Part of a broader data-visualization suite (data grids, Gantt charts, org charts, flow diagrams, geospatial maps, financial charts) under the same family of products.", "sourceIds": ["s1"] },
-      { "en": "Ships an MCP server and AI skill files for use with Claude, Cursor and ChatGPT.", "sourceIds": ["s1"] }
+      { "en": "20+ interactive SVG chart types (line, area, candlestick, heatmap, treemap, pie, radar, gauge, funnel) for React, Vue, Angular and vanilla JS.", "fr": "Plus de 20 types de graphiques SVG interactifs (lignes, aires, chandeliers, heatmap, treemap, camembert, radar, jauge, entonnoir) pour React, Vue, Angular et JavaScript natif.", "sourceIds": ["s1"] },
+      { "en": "Renders large datasets fast, claimed 100k-point line chart in 29ms.", "fr": "Affiche rapidement de grands jeux de données, avec un graphique en ligne de 100 000 points annoncé en 29 ms.", "sourceIds": ["s1"] },
+      { "en": "Part of a broader data-visualization suite (data grids, Gantt charts, org charts, flow diagrams, geospatial maps, financial charts) under the same family of products.", "fr": "Fait partie d'une suite de visualisation de données plus large (grilles de données, diagrammes de Gantt, organigrammes, diagrammes de flux, cartes géospatiales, graphiques financiers) dans la même famille de produits.", "sourceIds": ["s1"] },
+      { "en": "Ships an MCP server and AI skill files for use with Claude, Cursor and ChatGPT.", "fr": "Fournit un serveur MCP et des fichiers de compétences IA utilisables avec Claude, Cursor et ChatGPT.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "The core library covers charting only; companion features (data grid, Gantt, org charts) are separate products, not bundled in.", "sourceIds": ["s1"] },
-      { "en": "No hosted/SaaS offering: it is an embeddable JS library, so teams must integrate and maintain it themselves within their own app.", "sourceIds": ["s1"] }
+      { "en": "The core library covers charting only; companion features (data grid, Gantt, org charts) are separate products, not bundled in.", "fr": "La bibliothèque de base ne couvre que les graphiques ; les fonctions complémentaires (grille de données, Gantt, organigrammes) sont des produits séparés, non inclus.", "sourceIds": ["s1"] },
+      { "en": "No hosted/SaaS offering: it is an embeddable JS library, so teams must integrate and maintain it themselves within their own app.", "fr": "Pas d'offre hébergée ou SaaS : c'est une bibliothèque JS à intégrer, donc les équipes doivent l'intégrer et la maintenir elles-mêmes dans leur propre application.", "sourceIds": ["s1"] }
     ],
     "integrations": [],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "A developer who needs to embed interactive charts in a web app and wants a free library instead of a hosted analytics product.", "fr": "Une développeuse ou un développeur qui doit intégrer des graphiques interactifs dans une application web et préfère une bibliothèque gratuite à un produit d'analyse hébergé." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Embed: add an interactive line or candlestick chart to a React or Vue dashboard using the free core library.", "fr": "Intégration : ajouter un graphique en ligne ou en chandeliers interactif à un tableau de bord React ou Vue avec la bibliothèque de base gratuite." },
+    { "en": "Scale: render a large dataset (tens of thousands of points) in a browser chart without switching to a heavier visualization stack.", "fr": "Montée en charge : afficher un grand jeu de données (des dizaines de milliers de points) dans un graphique navigateur sans passer à une solution de visualisation plus lourde." }
+  ],
   "alternatives": [
-    { "slug": "chartjs", "reason": { "en": "Comparable free, embeddable charting library for web apps with a similar chart-type range." } },
-    { "slug": "recharts", "reason": { "en": "React-focused charting library covering the same use case for React developers." } },
-    { "slug": "d3js", "reason": { "en": "Lower-level alternative for teams that need full custom control over chart rendering." } }
+    { "slug": "chartjs", "reason": { "en": "Comparable free, embeddable charting library for web apps with a similar chart-type range.", "fr": "Bibliothèque de graphiques gratuite et intégrable comparable, pour applications web, avec une gamme de types de graphiques similaire." } },
+    { "slug": "recharts", "reason": { "en": "React-focused charting library covering the same use case for React developers.", "fr": "Bibliothèque de graphiques centrée sur React, qui couvre le même usage pour les développeurs React." } },
+    { "slug": "highcharts", "reason": { "en": "Widely used charting library covering the same core need, with a commercial license for production use.", "fr": "Bibliothèque de graphiques très utilisée, qui couvre le même besoin, avec une licence commerciale pour un usage en production." } },
+    { "slug": "echarts", "reason": { "en": "Free, open-source charting library with a broad chart-type range covering the same core need.", "fr": "Bibliothèque de graphiques gratuite et open source, avec une large gamme de types de graphiques, qui couvre le même besoin." } },
+    { "slug": "d3js", "reason": { "en": "Lower-level alternative for teams that need full custom control over chart rendering.", "fr": "Alternative de plus bas niveau pour les équipes qui ont besoin d'un contrôle total et personnalisé sur le rendu des graphiques." } }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A free, MIT-licensed library covering 20+ chart types removes the cost of a hosted charting product for most web apps.", "fr": "Une bibliothèque gratuite sous licence MIT couvrant plus de 20 types de graphiques supprime le coût d'un produit de graphiques hébergé pour la plupart des applications web.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "An embeddable JS library with framework support for React, Vue and Angular gets a chart on screen quickly for a developer already working in one of those stacks.", "fr": "Une bibliothèque JS à intégrer, compatible React, Vue et Angular, permet d'afficher un graphique rapidement pour un développeur déjà sur l'une de ces piles techniques.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the stated chart types and performance claim (100k points in 29ms) as described for an embeddable library.", "fr": "Fournit les types de graphiques et la performance annoncée (100 000 points en 29 ms) tels que décrits pour une bibliothèque à intégrer.", "sourceIds": ["s1"] },
+      "puissance": { "en": "20+ chart types, large-dataset performance and a broader product family (grids, Gantt, maps) place it at the upper end of free charting libraries.", "fr": "Plus de 20 types de graphiques, des performances sur grands jeux de données et une famille de produits plus large (grilles, Gantt, cartes) le placent parmi les meilleures bibliothèques de graphiques gratuites.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "As an MIT-licensed open-source library with no hosted lock-in, switching away mainly means rewriting chart configuration, but the collected sources don't detail an export or migration path.", "fr": "En tant que bibliothèque open source sous licence MIT sans verrouillage hébergé, en changer revient surtout à réécrire la configuration des graphiques, mais les sources relevées ne détaillent pas de parcours d'export ou de migration.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Charting library", "fr": "Bibliothèque de graphiques" },
+    "shortDescription": {
+      "en": "Free, open-source JavaScript charting library with 20+ SVG chart types for React, Vue, Angular and vanilla JS, built for fast rendering.",
+      "fr": "Bibliothèque JavaScript de graphiques gratuite et open source, avec plus de 20 types de graphiques SVG pour React, Vue, Angular et JavaScript natif."
+    },
+    "longDescription": {
+      "en": "ApexCharts is an MIT-licensed JavaScript charting library with 20+ interactive SVG chart types, line, area, candlestick, heatmap, treemap and more, for React, Vue, Angular or vanilla JS. It's built for speed, with a claimed 100,000-point line chart rendering in 29ms, and it's part of a wider family that also covers data grids, Gantt charts and maps as separate products.\n\nThe core library costs nothing and has no usage cap, but it's an embeddable component, not a hosted product: a team integrates and maintains it inside their own app. It fits a developer who wants interactive charts without paying for a hosted analytics or charting SaaS.",
+      "fr": "ApexCharts est une bibliothèque JavaScript de graphiques sous licence MIT, avec plus de 20 types de graphiques SVG interactifs, lignes, aires, chandeliers, heatmap, treemap, pour React, Vue, Angular ou JavaScript natif. Conçue pour la rapidité, avec un graphique de 100 000 points annoncé en 29 ms, elle appartient à une famille plus large qui couvre aussi grilles de données, Gantt et cartes, en produits séparés.\n\nLa bibliothèque de base ne coûte rien et n'a pas de limite d'usage, mais c'est un composant à intégrer, pas un produit hébergé : une équipe doit l'intégrer et la maintenir elle-même. Convient à un développeur qui veut des graphiques interactifs sans payer pour un SaaS hébergé."
+    },
+    "pros": [
+      { "en": "Free and open source under MIT, with no usage cap on the core library.", "fr": "Gratuite et open source sous licence MIT, sans limite d'usage sur la bibliothèque de base." },
+      { "en": "Covers 20+ chart types across the three major frameworks plus vanilla JS in one library.", "fr": "Couvre plus de 20 types de graphiques sur les trois principaux frameworks, plus le JavaScript natif, dans une seule bibliothèque." }
+    ],
+    "cons": [
+      { "en": "No hosted option: a team has to integrate and keep it updated inside their own app.", "fr": "Pas d'option hébergée : une équipe doit l'intégrer et la maintenir à jour dans sa propre application." },
+      { "en": "Companion products (data grid, Gantt, org charts) are separate, unverified-pricing products, not included in the free core library.", "fr": "Les produits complémentaires (grille de données, Gantt, organigrammes) sont des produits séparés, au tarif non vérifié, non inclus dans la bibliothèque de base gratuite." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Keep if you're embedding charts in a web app built with React, Vue, Angular or vanilla JS and want a free library instead of a hosted charting product.", "fr": "À garder si tu intègres des graphiques dans une application web en React, Vue, Angular ou JavaScript natif et préfères une bibliothèque gratuite à un produit de graphiques hébergé." },
+      "avoidIf": { "en": "Avoid if you need a hosted, maintenance-free charting product rather than a library to integrate and maintain yourself.", "fr": "À éviter si tu as besoin d'un produit de graphiques hébergé sans maintenance plutôt que d'une bibliothèque à intégrer et à maintenir toi-même." },
+      "threshold": { "en": "No numeric decision threshold applies: the core library is free with no usage cap, so the comparison is against the engineering time to integrate it, not a price.", "fr": "Aucun seuil de décision chiffré ne s'applique : la bibliothèque de base est gratuite et sans limite d'usage, donc la comparaison porte sur le temps d'ingénierie pour l'intégrer, pas sur un prix." }
+    }
+  },
+  "reviewNotes": [],
   "unknowns": [
     "Exact license terms (MIT vs. other) and pricing of the companion commercial products (ApexGrid, ApexGantt, etc.) were not verified on the homepage.",
     "TypeScript/Blazor support was mentioned but not detailed further."

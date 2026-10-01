@@ -3,7 +3,8 @@
   "slug": "ashby",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Ashby",
     "vendor": "Ashby HQ, Inc.",
@@ -34,7 +35,7 @@
         "price": { "monthly": 400, "annualPerMonth": 360, "oneTime": null },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Flat price covering up to 100 employees; 10% discount available with annual commitment.", "sourceIds": ["s1"] }
+          { "en": "Flat price covering up to 100 employees; 10% discount available with annual commitment.", "fr": "Prix fixe couvrant jusqu'à 100 salariés ; remise de 10 % possible avec un engagement annuel." }
         ],
         "sourceIds": ["s1"]
       },
@@ -46,7 +47,7 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "For companies with 101 to 1,000 employees; price based on company size, usage, and commitment length.", "sourceIds": ["s1"] }
+          { "en": "For companies with 101 to 1,000 employees; price based on company size, usage, and commitment length.", "fr": "Pour les entreprises de 101 à 1 000 salariés ; prix selon la taille de l'entreprise, l'usage et la durée d'engagement." }
         ],
         "sourceIds": ["s1"]
       },
@@ -58,31 +59,31 @@
         "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
         "onQuote": true,
         "keyLimits": [
-          { "en": "For companies over 1,000 employees.", "sourceIds": ["s1"] }
+          { "en": "For companies over 1,000 employees.", "fr": "Pour les entreprises de plus de 1 000 salariés." }
         ],
         "sourceIds": ["s1"]
       }
     ],
     "comparePlanKey": "foundations",
     "addOns": [
-      { "en": "Ashby Analytics: usage-based add-on for advanced reporting, for companies over 100 employees, on top of any ATS plan.", "sourceIds": ["s1"] },
-      { "en": "Advanced Scheduling Automation (AI auto-scheduler) and AI Notetaker: paid add-ons.", "sourceIds": ["s1"] }
+      { "en": "Ashby Analytics: usage-based add-on for advanced reporting, for companies over 100 employees, on top of any ATS plan.", "fr": "Ashby Analytics : option à l'usage pour le reporting avancé, pour les entreprises de plus de 100 salariés, en complément de toute offre ATS.", "sourceIds": ["s1"] },
+      { "en": "Advanced Scheduling Automation (AI auto-scheduler) and AI Notetaker: paid add-ons.", "fr": "Advanced Scheduling Automation (planificateur automatique IA) et AI Notetaker : options payantes.", "sourceIds": ["s1"] }
     ],
     "cautions": [
-      { "en": "Foundations pricing is flat per company (up to 100 employees), not per seat: a small team pays the same $400/month as one near the 100-employee ceiling.", "sourceIds": ["s1"] }
+      { "en": "Foundations pricing is flat per company (up to 100 employees), not per seat: a small team pays the same $400/month as one near the 100-employee ceiling.", "fr": "Le prix de Foundations est fixe par entreprise (jusqu'à 100 salariés), pas par siège : une petite équipe paie les mêmes 400 $/mois qu'une entreprise proche du plafond de 100 salariés.", "sourceIds": ["s1"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Full applicant tracking system with sourcing, CRM, structured interview scheduling, and offer/approval workflows.", "sourceIds": ["s1"] },
-      { "en": "AI-assisted candidate search, AI interview interpretation, and diversity analytics in reporting dashboards.", "sourceIds": ["s1"] },
-      { "en": "250+ marketplace integrations plus native Slack, Google Workspace, and Office 365 sync.", "sourceIds": ["s1"] },
-      { "en": "eSignature-backed offer templates and approval workflows.", "sourceIds": ["s1"] }
+      { "en": "Full applicant tracking system with sourcing, CRM, structured interview scheduling, and offer/approval workflows.", "fr": "Système de suivi des candidatures complet avec sourcing, CRM, planification d'entretiens structurés et circuits d'offre/validation.", "sourceIds": ["s1"] },
+      { "en": "AI-assisted candidate search, AI interview interpretation, and diversity analytics in reporting dashboards.", "fr": "Recherche de candidats assistée par IA, interprétation d'entretiens par IA et analyses de diversité dans les tableaux de bord.", "sourceIds": ["s1"] },
+      { "en": "250+ marketplace integrations plus native Slack, Google Workspace, and Office 365 sync.", "fr": "Plus de 250 intégrations sur la marketplace, plus une synchronisation native avec Slack, Google Workspace et Office 365.", "sourceIds": ["s1"] },
+      { "en": "eSignature-backed offer templates and approval workflows.", "fr": "Modèles d'offres avec signature électronique et circuits de validation.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No free plan or published free trial; the entry point is a $400/month flat subscription.", "sourceIds": ["s1"] },
-      { "en": "AI Notetaker and advanced scheduling automation are separate paid add-ons, not included by default.", "sourceIds": ["s1"] },
-      { "en": "Pricing beyond 100 employees is entirely custom-quoted, with no published rate card.", "sourceIds": ["s1"] }
+      { "en": "No free plan or published free trial; the entry point is a $400/month flat subscription.", "fr": "Pas d'offre gratuite ni d'essai gratuit publié ; le point d'entrée est un abonnement fixe à 400 $/mois.", "sourceIds": ["s1"] },
+      { "en": "AI Notetaker and advanced scheduling automation are separate paid add-ons, not included by default.", "fr": "AI Notetaker et l'automatisation avancée de planification sont des options payantes séparées, non incluses par défaut.", "sourceIds": ["s1"] },
+      { "en": "Pricing beyond 100 employees is entirely custom-quoted, with no published rate card.", "fr": "Au-delà de 100 salariés, le tarif est entièrement sur devis, sans grille publiée.", "sourceIds": ["s1"] }
     ],
     "integrations": [
       { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] },
@@ -90,13 +91,63 @@
     ],
     "platforms": ["web"]
   },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "A startup or scale-up ops/HR lead running hiring for a company of up to 100 employees who wants a full ATS in one flat-priced plan.", "fr": "Une responsable ops/RH d'une startup ou scale-up qui pilote le recrutement pour une entreprise de jusqu'à 100 salariés et veut un ATS complet à prix fixe." },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Hire: run sourcing, structured interviews and offer approval for the whole company on the flat-priced Foundations plan.", "fr": "Recruter : gérer sourcing, entretiens structurés et validation des offres pour toute l'entreprise avec l'offre Foundations à prix fixe." },
+    { "en": "Report: add Ashby Analytics once past 100 employees to get advanced, usage-based reporting beyond the included dashboards.", "fr": "Reporter : ajouter Ashby Analytics au-delà de 100 salariés pour un reporting avancé à l'usage, au-delà des tableaux de bord inclus." }
+  ],
   "alternatives": [
-    { "slug": "greenhouse", "reason": { "en": "Leading ATS competitor for structured hiring and interview processes." } },
-    { "slug": "linkedin-recruiter", "reason": { "en": "Overlaps on sourcing and candidate outreach for the same hiring workflow." } }
+    { "slug": "greenhouse", "reason": { "en": "Leading ATS competitor for structured hiring and interview processes.", "fr": "Concurrent ATS de référence pour le recrutement structuré et les processus d'entretien." } },
+    { "slug": "linkedin-recruiter", "reason": { "en": "Overlaps on sourcing and candidate outreach for the same hiring workflow.", "fr": "Recoupe le sourcing et la prise de contact candidats pour le même flux de recrutement." } },
+    { "slug": "lever", "reason": { "en": "Direct ATS competitor covering sourcing, structured interviews and hiring pipelines.", "fr": "Concurrent ATS direct couvrant sourcing, entretiens structurés et pipelines de recrutement." } },
+    { "slug": "workable", "reason": { "en": "ATS competitor aimed at the same startup/scale-up hiring team size.", "fr": "Concurrent ATS visant la même taille d'équipe de recrutement en startup ou scale-up." } }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "A flat $400/month covers a full ATS for up to 100 employees, but a small team near the start of that range pays the same rate as one close to the 100-employee ceiling.", "fr": "Un tarif fixe de 400 $/mois couvre un ATS complet jusqu'à 100 salariés, mais une petite équipe en début de fourchette paie le même tarif qu'une entreprise proche du plafond de 100 salariés.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "A full ATS with sourcing, CRM, scheduling and offers in one flat-priced plan avoids piecing together separate hiring tools.", "fr": "Un ATS complet avec sourcing, CRM, planification et offres dans une seule offre à prix fixe évite d'assembler plusieurs outils de recrutement séparés.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers sourcing, structured interview scheduling, offer/approval workflows and AI-assisted candidate search as promised.", "fr": "Assure sourcing, planification d'entretiens structurés, circuits d'offre/validation et recherche de candidats assistée par IA comme promis.", "sourceIds": ["s1"] },
+      "puissance": { "en": "250+ marketplace integrations plus AI-assisted search, interview interpretation and diversity analytics put it at the high end of ATS capability.", "fr": "Plus de 250 intégrations marketplace et la recherche, l'interprétation d'entretiens et les analyses de diversité assistées par IA la placent dans le haut de gamme des ATS.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability out of Ashby are not covered by the collected sources.", "fr": "Note neutre : le format d'export et la portabilité des données hors d'Ashby ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Applicant tracking system", "fr": "Suivi des candidatures" },
+    "shortDescription": { "en": "Ashby is a full applicant tracking system with sourcing, scheduling and AI-assisted hiring, flat-priced for companies up to 100 employees.", "fr": "Ashby est un système de suivi des candidatures complet avec sourcing, planification et recrutement assisté par IA, à prix fixe jusqu'à 100 salariés." },
+    "longDescription": {
+      "en": "Ashby runs the full hiring workflow: sourcing, CRM, structured interview scheduling, and offer/approval, with AI-assisted candidate search, interview interpretation and diversity analytics in reporting. It syncs natively with Slack, Google Workspace and Office 365, plus 250+ marketplace integrations.\n\nThere's no free plan: Foundations costs $400/month flat for up to 100 employees ($360/month with an annual commitment), regardless of how small the team is within that range. Beyond 100 employees, Plus and Enterprise are custom-quoted. It fits a startup or scale-up ops/HR lead who wants a full ATS in one plan, more than a solo recruiter hiring occasionally.",
+      "fr": "Ashby gère tout le flux de recrutement : sourcing, CRM, planification d'entretiens structurés et circuits d'offre/validation, avec recherche de candidats assistée par IA, interprétation d'entretiens et analyses de diversité dans le reporting. La synchronisation est native avec Slack, Google Workspace et Office 365, en plus de plus de 250 intégrations marketplace.\n\nPas d'offre gratuite : Foundations coûte 400 $/mois à prix fixe jusqu'à 100 salariés (360 $/mois avec engagement annuel), quelle que soit la taille de l'équipe dans cette fourchette. Au-delà de 100 salariés, Plus et Enterprise sont sur devis. Convient à une responsable ops/RH de startup ou scale-up qui veut un ATS complet en une offre, plus qu'à un recruteur solo occasionnel."
+    },
+    "pros": [
+      { "en": "One flat price covers the full ATS for up to 100 employees, no per-seat billing to track.", "fr": "Un prix fixe couvre l'ATS complet jusqu'à 100 salariés, sans facturation par siège à suivre." },
+      { "en": "AI-assisted sourcing, interview interpretation and diversity analytics come built into reporting.", "fr": "Sourcing assisté par IA, interprétation d'entretiens et analyses de diversité sont intégrés au reporting." }
+    ],
+    "cons": [
+      { "en": "No free plan or published trial; the entry point is a $400/month flat subscription.", "fr": "Pas d'offre gratuite ni d'essai publié ; le point d'entrée est un abonnement fixe à 400 $/mois." },
+      { "en": "AI Notetaker and advanced scheduling automation cost extra on top of the flat plan.", "fr": "AI Notetaker et l'automatisation avancée de planification coûtent en plus de l'offre fixe." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're hiring for a company of up to 100 employees and want a full ATS in one flat-priced plan.", "fr": "Tu recrutes pour une entreprise de jusqu'à 100 salariés et tu veux un ATS complet en une offre à prix fixe." },
+      "avoidIf": { "en": "You're a solo recruiter hiring occasionally, where a $400/month flat price doesn't pay for itself.", "fr": "Tu es un recruteur solo qui embauche occasionnellement, où un prix fixe de 400 $/mois ne se rentabilise pas." },
+      "threshold": { "en": "Foundations costs $4,800/year at the full monthly rate, or $4,320/year with the 10% annual discount, for up to 100 employees.", "fr": "Foundations coûte 4 800 $/an au tarif mensuel plein, ou 4 320 $/an avec la remise annuelle de 10 %, pour jusqu'à 100 salariés." },
+      "billingTraps": { "en": "Foundations is flat per company, not per seat: a 5-person hiring team pays the same $400/month as one approaching the 100-employee ceiling.", "fr": "Foundations est fixe par entreprise, pas par siège : une équipe de recrutement de 5 personnes paie les mêmes 400 $/mois qu'une entreprise proche du plafond de 100 salariés." }
+    }
+  },
   "unknowns": [
     "No explicit free-trial length is published on the pricing page."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": []
 }

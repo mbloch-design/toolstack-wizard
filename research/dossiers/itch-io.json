@@ -3,7 +3,7 @@
   "slug": "itch-io",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "itch.io",
     "vendor": "itch.io (Leaf Corcoran)",
@@ -15,7 +15,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://itch.io/docs/general/about", "tier": 1, "accessedOn": "2026-09-25", "title": "About itch.io" }
+    {
+      "id": "s1",
+      "url": "https://itch.io/docs/general/about",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "About itch.io"
+    }
   ],
   "pricing": {
     "model": "free",
@@ -24,47 +30,238 @@
     "verifiedOn": "2026-09-25",
     "region": null,
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "Free to browse, buy, and publish; itch.io takes a creator-chosen revenue share (0% to 30%) on paid sales instead of charging a subscription.", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free to browse, buy, and publish; itch.io takes a creator-chosen revenue share (0% to 30%) on paid sales instead of charging a subscription.",
+        "fr": "Gratuit pour parcourir, acheter et publier ; itch.io prélève une commission choisie par le créateur (0 à 30 %) sur les ventes payantes au lieu d'un abonnement."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "free",
         "name": "Free (platform access)",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "No subscription; itch.io instead takes a creator-chosen revenue share (0-30%, default around 10%) on paid sales.", "sourceIds": ["s1"] }
+          {
+            "en": "No subscription; itch.io instead takes a creator-chosen revenue share (0-30%, default around 10%) on paid sales.",
+            "sourceIds": [
+              "s1"
+            ],
+            "fr": "Pas d'abonnement : itch.io prélève une commission choisie par le créateur (0 à 30 %, environ 10 % par défaut) sur les ventes payantes."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": null,
     "addOns": [],
     "cautions": [
-      { "en": "Not a subscription product: creators set their own price (including pay-what-you-want) and choose itch.io's cut themselves, from 0% to 30%.", "sourceIds": ["s1"] }
+      {
+        "en": "Not a subscription product: creators set their own price (including pay-what-you-want) and choose itch.io's cut themselves, from 0% to 30%.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Ce n'est pas un produit par abonnement : les créateurs fixent eux-mêmes leur prix (y compris en paiement libre) et choisissent la commission d'itch.io, de 0 % à 30 %."
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Open marketplace for distributing independent games, prototypes, assets, and comics without an approval process.", "sourceIds": ["s1"] },
-      { "en": "Pay-what-you-want pricing with a creator-controlled revenue share (0-30%) instead of a fixed platform cut.", "sourceIds": ["s1"] },
-      { "en": "Analytics dashboard covering discovery, downloads, and engagement per project.", "sourceIds": ["s1"] },
-      { "en": "Support for pre-orders, early access, bundling, and crowdfunding campaigns.", "sourceIds": ["s1"] }
+      {
+        "en": "Open marketplace for distributing independent games, prototypes, assets, and comics without an approval process.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Marketplace ouvert pour distribuer des jeux indépendants, des prototypes, des assets et des comics, sans processus de validation."
+      },
+      {
+        "en": "Pay-what-you-want pricing with a creator-controlled revenue share (0-30%) instead of a fixed platform cut.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Prix libre (pay-what-you-want) avec une commission contrôlée par le créateur (0 à 30 %) au lieu d'une commission fixe imposée par la plateforme."
+      },
+      {
+        "en": "Analytics dashboard covering discovery, downloads, and engagement per project.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Tableau de bord d'analyse couvrant la découverte, les téléchargements et l'engagement par projet."
+      },
+      {
+        "en": "Support for pre-orders, early access, bundling, and crowdfunding campaigns.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Prise en charge des précommandes, de l'accès anticipé, des bundles et des campagnes de financement participatif."
+      }
     ],
     "limitations": [
-      { "en": "No paid 'pro' tier with extra features; monetization depends entirely on direct sales, not platform-provided premium tools.", "sourceIds": ["s1"] },
-      { "en": "Discovery is not algorithmically curated in the way larger storefronts are, so visibility depends on the creator's own audience.", "sourceIds": ["s1"] }
+      {
+        "en": "No paid 'pro' tier with extra features; monetization depends entirely on direct sales, not platform-provided premium tools.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Aucune offre payante « pro » avec des fonctionnalités en plus : la monétisation dépend entièrement des ventes directes, pas d'outils premium fournis par la plateforme."
+      },
+      {
+        "en": "Discovery is not algorithmically curated in the way larger storefronts are, so visibility depends on the creator's own audience.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "La découverte n'est pas curatée par un algorithme comme sur les grandes boutiques : la visibilité dépend surtout de l'audience propre du créateur."
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "alternatives": [],
+  "alternatives": [
+    {
+      "slug": "steamworks",
+      "reason": {
+        "en": "Main competing distribution platform for indie games; itch.io is the open, no-approval alternative.",
+        "fr": "Principale plateforme concurrente de distribution de jeux indés ; itch.io est l'alternative ouverte, sans validation préalable."
+      }
+    }
+  ],
   "missingAlternatives": [
-    { "name": "Steam / Steamworks", "officialUrl": "https://partner.steamgames.com", "reason": "Main competing distribution platform for indie games, already in the catalogue as steamworks." }
+    {
+      "name": "Game Jolt",
+      "officialUrl": "https://gamejolt.com",
+      "reason": "Another open indie-game hosting and distribution site, not currently in the catalogue."
+    }
   ],
   "unknowns": [
     "No page-count breakdown for platform fees on payment processing (Stripe/PayPal) separate from itch.io's own revenue share was found within budget."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Creators can publish for free and choose a revenue share as low as 0%, so the platform can cost nothing while still allowing full commercial sales.",
+        "fr": "Les créateurs peuvent publier gratuitement et choisir une commission allant jusqu'à 0 %, ce qui permet d'utiliser la plateforme sans aucun coût tout en vendant commercialement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Publishing has no approval process, so a creator can list and sell a project immediately.",
+        "fr": "La publication ne passe par aucun processus de validation : un créateur peut mettre un projet en vente immédiatement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Discovery, downloads, pre-orders, early access and crowdfunding are documented as delivered features, matching the platform's distribution promise.",
+        "fr": "La découverte, les téléchargements, les précommandes, l'accès anticipé et le financement participatif sont des fonctionnalités documentées qui tiennent la promesse de distribution de la plateforme.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "No paid tier adds extra tools, and discovery is explicitly not algorithmically curated, which caps visibility compared to larger storefronts.",
+        "fr": "Aucune offre payante n'ajoute d'outils supplémentaires, et la découverte n'est explicitement pas curatée par un algorithme, ce qui limite la visibilité face à de plus grandes boutiques.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export or data-portability options for a creator's page and sales history are not covered by the collected sources.",
+        "fr": "Note neutre : les options d'export ou de portabilité des données de la page et des ventes d'un créateur ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "Independent creators distributing and selling games, prototypes or creative assets.",
+      "fr": "Créateurs et créatrices indépendants qui distribuent et vendent des jeux, prototypes ou assets créatifs."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Game launch: publish a finished or prototype game instantly, with no review process, and set your own price or pay-what-you-want.",
+      "fr": "Sortie de jeu : publier un jeu fini ou un prototype instantanément, sans validation, en fixant son propre prix ou un prix libre."
+    },
+    {
+      "en": "Early funding: open pre-orders or a crowdfunding-style campaign on a project page before development is finished.",
+      "fr": "Financement anticipé : ouvrir des précommandes ou une campagne de financement participatif sur une page projet avant la fin du développement."
+    }
+  ],
+  "editorial": {
+    "tagline": {
+      "en": "Indie game marketplace",
+      "fr": "Marketplace de jeux indés"
+    },
+    "shortDescription": {
+      "en": "Open marketplace for distributing indie games, prototypes and creative assets, with no approval process and a creator-set revenue share.",
+      "fr": "Marketplace ouvert pour distribuer jeux indés, prototypes et assets créatifs, sans validation et avec une commission fixée par le créateur."
+    },
+    "longDescription": {
+      "en": "itch.io is an open storefront for independent games, prototypes, game-jam entries and creative assets. There is no approval process: a creator publishes and sells immediately, with pay-what-you-want pricing and a self-chosen revenue share from 0% to 30% instead of a flat platform fee. Pre-orders, early access, bundling and crowdfunding campaigns are built in.\n\nThere is no paid subscription or premium tier: the whole product is free to use, and itch.io's only revenue comes from the share each creator agrees to on paid sales. The tradeoff is discovery: without algorithmic curation, visibility depends mostly on the creator's own audience rather than the platform surfacing new work.",
+      "fr": "itch.io est une boutique ouverte pour les jeux indépendants, les prototypes, les projets de game jam et les assets créatifs. Aucune validation n'est requise : un créateur publie et vend immédiatement, avec un prix libre et une commission choisie entre 0 % et 30 % au lieu d'un tarif fixe imposé par la plateforme. Précommandes, accès anticipé, bundles et financement participatif sont intégrés.\n\nIl n'existe ni abonnement ni offre premium : l'outil est entièrement gratuit à utiliser, et le seul revenu d'itch.io vient de la commission acceptée par chaque créateur sur ses ventes. La contrepartie se joue sur la découverte : sans curation algorithmique, la visibilité dépend surtout de l'audience propre du créateur plutôt que d'une mise en avant par la plateforme."
+    },
+    "pros": [
+      {
+        "en": "No approval process; publishing and selling happen immediately.",
+        "fr": "Aucune validation requise : publication et vente immédiates."
+      },
+      {
+        "en": "Creator chooses the revenue share, down to 0%, instead of a fixed platform cut.",
+        "fr": "Le créateur choisit la commission, jusqu'à 0 %, au lieu d'un taux imposé par la plateforme."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No algorithmic discovery, so visibility depends mostly on the creator's existing audience.",
+        "fr": "Pas de découverte algorithmique : la visibilité dépend surtout de l'audience déjà existante du créateur."
+      },
+      {
+        "en": "No premium tier with extra tools; all monetization comes from direct sales only.",
+        "fr": "Aucune offre premium avec des outils en plus : toute la monétisation vient uniquement des ventes directes."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want to publish and sell creative work immediately without a review process or platform fee commitment.",
+        "fr": "Tu veux publier et vendre un projet créatif immédiatement, sans validation ni engagement sur une commission fixe."
+      },
+      "avoidIf": {
+        "en": "You need algorithmic discovery or a built-in audience to reach beyond your own following.",
+        "fr": "Tu as besoin d'une découverte algorithmique ou d'une audience intégrée pour dépasser ton propre public."
+      },
+      "threshold": {
+        "en": "Free to use regardless of volume; the only cost is the revenue share you choose on paid sales, from 0% to 30%.",
+        "fr": "Gratuit quel que soit le volume : le seul coût est la commission que tu choisis sur les ventes payantes, de 0 % à 30 %."
+      }
+    }
+  },
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

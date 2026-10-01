@@ -3,7 +3,8 @@
   "slug": "format",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Format",
     "vendor": "Format.com",
@@ -15,7 +16,13 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.format.com/pricing-portfolio", "tier": 1, "accessedOn": "2026-09-25", "title": "Format pricing" }
+    {
+      "id": "s1",
+      "url": "https://www.format.com/pricing-portfolio",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Format pricing"
+    }
   ],
   "pricing": {
     "model": "subscription",
@@ -24,75 +31,298 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
-    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "trial": {
+      "days": 14,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "basic",
         "name": "Basic",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 14, "annualPerMonth": 10, "oneTime": null },
+        "price": {
+          "monthly": 14,
+          "annualPerMonth": 10,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "10 website pages, 70 high-resolution images, no image storage add-on, 10 client galleries.", "sourceIds": ["s1"] }
+          {
+            "en": "10 website pages, 70 high-resolution images, no image storage add-on, 10 client galleries.",
+            "fr": "10 pages de site, 70 images haute résolution, pas d'extension de stockage d'images, 10 galeries clients."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 24, "annualPerMonth": 12, "oneTime": null },
+        "price": {
+          "monthly": 24,
+          "annualPerMonth": 12,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Unlimited pages, 1,500 high-resolution images, 100GB image storage, 15 hosted video minutes, 50 client galleries.", "sourceIds": ["s1"] }
+          {
+            "en": "Unlimited pages, 1,500 high-resolution images, 100GB image storage, 15 hosted video minutes, 50 client galleries.",
+            "fr": "Pages illimitées, 1 500 images haute résolution, 100 Go de stockage d'images, 15 minutes de vidéo hébergée, 50 galeries clients."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "pro-plus",
         "name": "Pro Plus",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 36, "annualPerMonth": 15, "oneTime": null },
+        "price": {
+          "monthly": 36,
+          "annualPerMonth": 15,
+          "oneTime": null
+        },
         "onQuote": false,
         "keyLimits": [
-          { "en": "Unlimited pages and images, 1TB image storage, 120 hosted video minutes, 250 client galleries, CRM Light, client contracts.", "sourceIds": ["s1"] }
+          {
+            "en": "Unlimited pages and images, 1TB image storage, 120 hosted video minutes, 250 client galleries, CRM Light, client contracts.",
+            "fr": "Pages et images illimitées, 1 To de stockage d'images, 120 minutes de vidéo hébergée, 250 galeries clients, CRM Light, contrats clients."
+          }
         ],
-        "sourceIds": ["s1"]
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "The pricing page shows a promotional annual discount (up to 50%, time-limited); regular monthly prices are the ones recorded here.", "sourceIds": ["s1"] }
+      {
+        "en": "The pricing page shows a promotional annual discount (up to 50%, time-limited); regular monthly prices are the ones recorded here.",
+        "fr": "La page tarifaire affiche une remise annuelle promotionnelle (jusqu'à 50 %, limitée dans le temps) ; les prix mensuels réguliers sont ceux retenus ici.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Mobile-optimized portfolio website builder with award-winning templates.", "sourceIds": ["s1"] },
-      { "en": "Built-in client galleries with proofing, download, and password protection.", "sourceIds": ["s1"] },
-      { "en": "Online store for selling prints and digital products (Pro and above).", "sourceIds": ["s1"] },
-      { "en": "Lightroom plugin for direct publishing from Adobe Lightroom.", "sourceIds": ["s1"] }
+      {
+        "en": "Mobile-optimized portfolio website builder with award-winning templates.",
+        "fr": "Constructeur de site portfolio optimisé mobile avec des modèles primés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in client galleries with proofing, download, and password protection.",
+        "fr": "Galeries clients intégrées avec validation d'épreuves, téléchargement et protection par mot de passe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Online store for selling prints and digital products (Pro and above).",
+        "fr": "Boutique en ligne pour vendre tirages et produits numériques (à partir de Pro).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Lightroom plugin for direct publishing from Adobe Lightroom.",
+        "fr": "Plugin Lightroom pour publier directement depuis Adobe Lightroom.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No free plan; only a 14-day trial before a paid subscription is required.", "sourceIds": ["s1"] },
-      { "en": "Custom code editor and custom fonts are unavailable on the entry Basic plan.", "sourceIds": ["s1"] },
-      { "en": "Client galleries, storage, and hosted video minutes are capped even on paid plans.", "sourceIds": ["s1"] }
+      {
+        "en": "No free plan; only a 14-day trial before a paid subscription is required.",
+        "fr": "Pas d'offre gratuite ; seulement un essai de 14 jours avant que l'abonnement payant ne devienne obligatoire.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Custom code editor and custom fonts are unavailable on the entry Basic plan.",
+        "fr": "L'éditeur de code personnalisé et les polices personnalisées ne sont pas disponibles sur l'offre d'entrée Basic.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Client galleries, storage, and hosted video minutes are capped even on paid plans.",
+        "fr": "Les galeries clients, le stockage et les minutes de vidéo hébergée restent plafonnés même sur les offres payantes.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [
-      { "name": "Adobe Lightroom", "slug": null, "sourceIds": ["s1"] }
+      {
+        "name": "Adobe Lightroom",
+        "slug": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
+  "audience": {
+    "persona": "ALIX",
+    "description": {
+      "en": "A photographer or visual creator who needs a portfolio site with client galleries and proofing, more than a general-purpose website builder.",
+      "fr": "Un photographe ou créateur visuel qui a besoin d'un site portfolio avec galeries clients et validation d'épreuves, plus qu'un constructeur de site généraliste."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Deliver: share a password-protected client gallery for proofing and download once a shoot is finished, on the Basic plan.",
+      "fr": "Livrer : partager une galerie client protégée par mot de passe pour validation et téléchargement une fois le shooting terminé, avec l'offre Basic."
+    },
+    {
+      "en": "Sell: open an online store for prints and digital products on the Pro plan once a portfolio site alone is not enough.",
+      "fr": "Vendre : ouvrir une boutique en ligne pour tirages et produits numériques avec l'offre Pro quand un simple site portfolio ne suffit plus."
+    }
+  ],
   "alternatives": [
-    { "slug": "pixieset", "reason": { "en": "Direct competitor: portfolio and client-gallery builder for photographers." } }
+    {
+      "slug": "pixieset",
+      "reason": {
+        "en": "Direct competitor: portfolio and client-gallery builder for photographers.",
+        "fr": "Concurrent direct : constructeur de portfolio et de galeries clients pour photographes."
+      }
+    },
+    {
+      "slug": "squarespace",
+      "reason": {
+        "en": "General-purpose website builder commonly used by photographers for a portfolio site, without Format's built-in client galleries.",
+        "fr": "Constructeur de site généraliste souvent utilisé par les photographes pour un site portfolio, sans les galeries clients intégrées de Format."
+      }
+    }
   ],
   "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Bundles a portfolio site, client galleries and a print/digital store for a monthly price, but every plan including the cheapest requires payment with no free tier.",
+        "fr": "Regroupe site portfolio, galeries clients et boutique de tirages/produits numériques pour un prix mensuel, mais chaque offre, y compris la moins chère, est payante dès le départ.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Template-based site building and built-in client galleries work without a specialist, beyond the custom code editor reserved for higher plans.",
+        "fr": "La création de site par modèles et les galeries clients intégrées fonctionnent sans spécialiste, au-delà de l'éditeur de code personnalisé réservé aux offres supérieures.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers the promised portfolio site, client galleries with proofing/download, and a store on Pro and above.",
+        "fr": "Assure le site portfolio promis, les galeries clients avec validation/téléchargement, et une boutique à partir de Pro.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers photographer-specific needs (galleries, proofing, Lightroom plugin) well, but storage, video minutes and galleries stay capped even on paid plans.",
+        "fr": "Couvre bien les besoins spécifiques des photographes (galeries, validation, plugin Lightroom), mais stockage, minutes de vidéo et galeries restent plafonnés même sur les offres payantes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export format and data portability out of Format are not covered by the collected sources.",
+        "fr": "Note neutre : le format d'export et la portabilité des données hors de Format ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Photo portfolio sites",
+      "fr": "Sites portfolio photo"
+    },
+    "shortDescription": {
+      "en": "Format builds portfolio websites for photographers with client galleries, proofing, and an online store on higher plans.",
+      "fr": "Format construit des sites portfolio pour photographes avec galeries clients, validation d'épreuves et boutique en ligne sur les offres supérieures."
+    },
+    "longDescription": {
+      "en": "Format builds a mobile-optimized portfolio website from templates, with client galleries for proofing, download and password protection, plus a Lightroom plugin for direct publishing. An online store for prints and digital products opens up from the Pro plan.\n\nThere's no free plan: Basic starts at $14/month ($10/month billed annually) for 10 pages and 70 images, Pro at $24/month for unlimited pages and more storage, and Pro Plus at $36/month adds CRM Light and client contracts. It fits a photographer who needs a portfolio with client delivery built in, more than a general-purpose site builder.",
+      "fr": "Format construit un site portfolio optimisé mobile à partir de modèles, avec galeries clients pour validation, téléchargement et protection par mot de passe, plus un plugin Lightroom pour publier directement. Une boutique en ligne pour tirages et produits numériques s'ouvre à partir de l'offre Pro.\n\nPas d'offre gratuite : Basic démarre à 14 $/mois (10 $/mois en facturation annuelle) pour 10 pages et 70 images, Pro à 24 $/mois pour des pages illimitées et plus de stockage, et Pro Plus à 36 $/mois ajoute CRM Light et les contrats clients. Convient à un photographe qui a besoin d'un portfolio avec livraison client intégrée, plus qu'un constructeur de site généraliste."
+    },
+    "pros": [
+      {
+        "en": "Client galleries with proofing, download and password protection are built in from the entry plan.",
+        "fr": "Les galeries clients avec validation, téléchargement et protection par mot de passe sont intégrées dès l'offre d'entrée."
+      },
+      {
+        "en": "Lightroom plugin publishes directly from Adobe Lightroom without a separate export step.",
+        "fr": "Le plugin Lightroom publie directement depuis Adobe Lightroom sans étape d'export séparée."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No free plan; every tier requires a paid subscription after the 14-day trial.",
+        "fr": "Pas d'offre gratuite ; chaque palier demande un abonnement payant après l'essai de 14 jours."
+      },
+      {
+        "en": "Image storage, hosted video minutes and client galleries stay capped even on paid plans.",
+        "fr": "Le stockage d'images, les minutes de vidéo hébergée et les galeries clients restent plafonnés même sur les offres payantes."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a photographer-specific portfolio site with client galleries, proofing and a Lightroom publishing workflow.",
+        "fr": "Tu as besoin d'un site portfolio pensé photographe avec galeries clients, validation d'épreuves et publication depuis Lightroom."
+      },
+      "avoidIf": {
+        "en": "You want a free tier to start, or need unlimited image storage and video hosting without an upgrade.",
+        "fr": "Tu veux une offre gratuite pour démarrer, ou un stockage d'images et une vidéo hébergée illimités sans monter de palier."
+      },
+      "threshold": {
+        "en": "The comparison plan, Pro, costs $288/year on annual billing ($24/month equivalent before the current promotion); budget against the regular monthly rate, not the promotional one.",
+        "fr": "L'offre de comparaison, Pro, coûte 288 $/an en facturation annuelle (équivalent 24 $/mois avant la promotion en cours) ; prévois ce budget sur le tarif mensuel régulier, pas sur le tarif promotionnel."
+      }
+    }
+  },
   "unknowns": [
     "No annual list price shown independent of the current promotional discount; regular annual pricing could not be confirmed beyond the monthly rate."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "reviewNotes": [
+    "The dossier's own caution notes a time-limited promotional annual discount (up to 50%) on the pricing page; the annualPerMonth figures recorded (Basic $10, Pro $12, Pro Plus $15) may be the promotional rate rather than the regular annual rate. Re-verify the non-promotional annual price on format.com before publishing."
+  ],
+  "hold": "annualPerMonth may be the promotional price rather than the regular annual price"
 }

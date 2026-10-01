@@ -3,7 +3,7 @@
   "slug": "bolt-new",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "Bolt.new",
     "vendor": "StackBlitz Inc.",
@@ -15,8 +15,20 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://bolt.new/pricing", "tier": 1, "accessedOn": "2026-09-25", "title": "Bolt pricing" },
-    { "id": "s2", "url": "https://bolt.new", "tier": 1, "accessedOn": "2026-09-25", "title": "Bolt.new homepage" }
+    {
+      "id": "s1",
+      "url": "https://bolt.new/pricing",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Bolt pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://bolt.new",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "Bolt.new homepage"
+    }
   ],
   "pricing": {
     "model": "freemium",
@@ -25,71 +37,286 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": true, "limits": "300K tokens/day, 1M tokens/month, public/private projects, 10MB file uploads, website hosting with Bolt branding.", "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "300K tokens/day, 1M tokens/month, public/private projects, 10MB file uploads, website hosting with Bolt branding.",
+        "fr": "300 000 jetons/jour, 1 M de jetons/mois, projets publics/privés, uploads de fichiers de 10 Mo, hébergement de site avec la marque Bolt."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "pro",
         "name": "Pro",
         "unit": "account",
         "minSeats": 1,
-        "price": { "monthly": 25, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 25,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "No daily token limit; 10M tokens/month included, unused tokens roll over one additional month; removes Bolt branding, custom domains, SEO tools, 100MB file uploads.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "No daily token limit; 10M tokens/month included, unused tokens roll over one additional month; removes Bolt branding, custom domains, SEO tools, 100MB file uploads.",
+            "fr": "Aucune limite quotidienne de jetons ; 10 M de jetons/mois inclus, les jetons non utilisés se reportent un mois supplémentaire ; retire la marque Bolt, domaines personnalisés, outils SEO, uploads de 100 Mo."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "teams",
         "name": "Teams",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": 30, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": 30,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": false,
-        "keyLimits": [{ "en": "Everything in Pro plus team collaboration, centralized billing and admin controls, private NPM registry support.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "Everything in Pro plus team collaboration, centralized billing and admin controls, private NPM registry support.",
+            "fr": "Tout ce qui est inclus dans Pro plus la collaboration d'équipe, la facturation centralisée et les contrôles d'administration, prise en charge d'un registre NPM privé."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       },
       {
         "key": "enterprise",
         "name": "Enterprise",
         "unit": "account",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "SSO, audit logs, dedicated account manager, 24/7 priority support, custom SLAs.", "fr": null }],
-        "sourceIds": ["s1"]
+        "keyLimits": [
+          {
+            "en": "SSO, audit logs, dedicated account manager, 24/7 priority support, custom SLAs.",
+            "fr": "SSO, journaux d'audit, chargé de compte dédié, support prioritaire 24/7, SLA personnalisés."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
       }
     ],
     "comparePlanKey": "pro",
     "addOns": [],
     "cautions": [
-      { "en": "Usage is metered in tokens rather than a flat seat price; most token consumption comes from syncing the project's file system to the AI, so token needs scale with project size, not just feature use.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Usage is metered in tokens rather than a flat seat price; most token consumption comes from syncing the project's file system to the AI, so token needs scale with project size, not just feature use.",
+        "fr": "L'usage est mesuré en jetons plutôt que par un prix fixe par siège ; la majeure partie de la consommation de jetons vient de la synchronisation du système de fichiers du projet avec l'IA, donc le besoin en jetons évolue avec la taille du projet, pas seulement avec l'usage des fonctionnalités.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "AI-powered full-stack web app generator: describes an app in natural language and generates executable, deployable code (React frontend, Node.js backend) directly in the browser.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Includes hosting, custom domains, SEO tooling and analytics, plus unlimited databases and enterprise-grade backend infrastructure with authentication and user management.", "fr": null, "sourceIds": ["s2"] },
-      { "en": "Requires no local development environment setup; runs entirely in-browser via StackBlitz's WebContainers technology.", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "AI-powered full-stack web app generator: describes an app in natural language and generates executable, deployable code (React frontend, Node.js backend) directly in the browser.",
+        "fr": "Générateur d'applications web full-stack par IA : décris une application en langage naturel et génère du code exécutable et déployable (frontend React, backend Node.js) directement dans le navigateur.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Includes hosting, custom domains, SEO tooling and analytics, plus unlimited databases and enterprise-grade backend infrastructure with authentication and user management.",
+        "fr": "Inclut l'hébergement, les domaines personnalisés, des outils SEO et des analyses, plus des bases de données illimitées et une infrastructure backend de niveau entreprise avec authentification et gestion des utilisateurs.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Requires no local development environment setup; runs entirely in-browser via StackBlitz's WebContainers technology.",
+        "fr": "Ne nécessite aucune configuration d'environnement de développement local ; fonctionne entièrement dans le navigateur grâce à la technologie WebContainers de StackBlitz.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "Free plan is capped at 300K tokens/day and 1M tokens/month, and displays Bolt branding on published sites.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "File upload size is capped at 10MB on the free plan and 100MB on Pro, limiting large-asset projects.", "fr": null, "sourceIds": ["s1"] }
+      {
+        "en": "Free plan is capped at 300K tokens/day and 1M tokens/month, and displays Bolt branding on published sites.",
+        "fr": "Le plan gratuit est plafonné à 300 000 jetons/jour et 1 M de jetons/mois, et affiche la marque Bolt sur les sites publiés.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "File upload size is capped at 10MB on the free plan and 100MB on Pro, limiting large-asset projects.",
+        "fr": "La taille des uploads de fichiers est plafonnée à 10 Mo sur le plan gratuit et 100 Mo sur Pro, limitant les projets avec des ressources volumineuses.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "Developers who want to generate a deployable full-stack app from a natural-language prompt without setting up a local environment.",
+      "fr": "Développeurs qui veulent générer une application full-stack déployable à partir d'un prompt en langage naturel sans configurer d'environnement local."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Solo developer: describe an app in natural language and get a deployable React/Node.js prototype in the browser, with no local setup.",
+      "fr": "Développeur solo : décrire une application en langage naturel et obtenir un prototype React/Node.js déployable dans le navigateur, sans configuration locale."
+    },
+    {
+      "en": "Small team: use the Teams plan to collaborate on a generated app with centralized billing and a private NPM registry.",
+      "fr": "Petite équipe : utiliser le plan Teams pour collaborer sur une application générée avec facturation centralisée et un registre NPM privé."
+    }
+  ],
   "alternatives": [
-    { "slug": "lovable", "reason": { "en": "Direct AI app-generation competitor building full-stack web apps from natural-language prompts.", "fr": null } },
-    { "slug": "cursor", "reason": { "en": "AI-assisted coding tool for building apps, though oriented more toward an IDE workflow than in-browser generation.", "fr": null } },
-    { "slug": "base44", "reason": { "en": "AI app builder targeting the same no-setup, prompt-to-app workflow.", "fr": null } },
-    { "slug": "emergent", "reason": { "en": "AI full-stack app generator competing for the same rapid-prototyping use case.", "fr": null } }
+    {
+      "slug": "lovable",
+      "reason": {
+        "en": "Direct AI app-generation competitor building full-stack web apps from natural-language prompts.",
+        "fr": "Concurrent direct de génération d'applications IA, construisant des applications web full-stack à partir de prompts en langage naturel."
+      }
+    },
+    {
+      "slug": "cursor",
+      "reason": {
+        "en": "AI-assisted coding tool for building apps, though oriented more toward an IDE workflow than in-browser generation.",
+        "fr": "Outil de code assisté par IA pour construire des applications, bien que davantage orienté vers un flux de travail IDE que la génération dans le navigateur."
+      }
+    },
+    {
+      "slug": "base44",
+      "reason": {
+        "en": "AI app builder targeting the same no-setup, prompt-to-app workflow.",
+        "fr": "Constructeur d'applications IA visant le même flux de travail prompt-vers-application sans configuration."
+      }
+    },
+    {
+      "slug": "emergent",
+      "reason": {
+        "en": "AI full-stack app generator competing for the same rapid-prototyping use case.",
+        "fr": "Générateur d'applications full-stack par IA concurrent pour le même usage de prototypage rapide."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 5,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "A $25/month Pro plan replaces local dev setup, hosting, SEO tooling and a database with 10M tokens/month, a strong value case for a solo builder prototyping an app.",
+        "fr": "Le plan Pro à 25 $/mois remplace la configuration de dev locale, l'hébergement, les outils SEO et une base de données avec 10 M de jetons/mois, un bon rapport valeur pour un créateur solo qui prototype une application.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Generates a working, deployable app from a natural-language description with no local environment setup, running entirely in-browser via WebContainers.",
+        "fr": "Génère une application fonctionnelle et déployable à partir d'une description en langage naturel sans configuration d'environnement local, le tout dans le navigateur grâce à WebContainers.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers a deployable full-stack app with hosting, database and auth as promised, though usage is metered in tokens rather than a flat feature set.",
+        "fr": "Livre une application full-stack déployable avec hébergement, base de données et authentification comme promis, même si l'usage est mesuré en jetons plutôt qu'un ensemble de fonctionnalités fixe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers enterprise-grade backend infrastructure, unlimited databases and custom domains on Pro, a strong ceiling for a prompt-to-app tool, though still bounded by its token metering.",
+        "fr": "Couvre une infrastructure backend de niveau entreprise, des bases de données illimitées et des domaines personnalisés sur Pro, un plafond élevé pour un outil prompt-vers-application, mais toujours borné par sa mesure en jetons.",
+        "sourceIds": [
+          "s1",
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: whether generated code and projects can be exported or self-hosted outside Bolt's WebContainers runtime was not covered by the collected sources.",
+        "fr": "Note neutre : la possibilité d'exporter ou d'auto-héberger le code et les projets générés hors du runtime WebContainers de Bolt ne figure pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "AI app generator",
+      "fr": "Générateur d'applications IA"
+    },
+    "shortDescription": {
+      "en": "Bolt.new is an AI tool that generates deployable full-stack web apps from natural-language prompts, running entirely in the browser.",
+      "fr": "Bolt.new est un outil IA qui génère des applications web full-stack déployables à partir de prompts en langage naturel, entièrement dans le navigateur."
+    },
+    "longDescription": {
+      "en": "Bolt.new generates a deployable full-stack web app, React frontend and Node.js backend, from a natural-language description, running entirely in the browser via StackBlitz's WebContainers with no local setup. It includes hosting, custom domains, SEO tooling and unlimited databases with authentication and user management.\n\nThe free plan caps usage at 300K tokens a day and 1M a month with Bolt branding on published sites; Pro removes the daily cap and branding for $25/month with 10M tokens included. It suits developers prototyping an app quickly, since usage is metered by tokens tied to project size rather than a flat feature list.",
+      "fr": "Bolt.new génère une application web full-stack déployable, frontend React et backend Node.js, à partir d'une description en langage naturel, entièrement dans le navigateur via WebContainers de StackBlitz, sans configuration locale. Il inclut hébergement, domaines personnalisés, outils SEO et bases de données illimitées avec authentification.\n\nLe plan gratuit plafonne l'usage à 300 000 jetons par jour et 1 M par mois avec la marque Bolt sur les sites publiés ; Pro retire ce plafond et la marque pour 25 $/mois avec 10 M de jetons inclus. Il convient aux développeurs qui prototypent rapidement une application."
+    },
+    "pros": [
+      {
+        "en": "Generates a deployable full-stack app with hosting and a database in one step, with no local environment to configure.",
+        "fr": "Génère une application full-stack déployable avec hébergement et base de données en une étape, sans environnement local à configurer."
+      },
+      {
+        "en": "Unused tokens roll over one additional month on Pro, softening month-to-month usage spikes.",
+        "fr": "Les jetons non utilisés se reportent un mois supplémentaire sur Pro, ce qui atténue les pics d'usage d'un mois à l'autre."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Token consumption scales with project file size, not just feature use, making cost harder to predict for larger projects.",
+        "fr": "La consommation de jetons évolue avec la taille des fichiers du projet, pas seulement l'usage des fonctionnalités, ce qui rend le coût plus difficile à prévoir pour de gros projets."
+      },
+      {
+        "en": "The free plan displays Bolt branding on published sites and caps file uploads at 10MB.",
+        "fr": "Le plan gratuit affiche la marque Bolt sur les sites publiés et plafonne les uploads de fichiers à 10 Mo."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want to turn a natural-language app idea into a deployable prototype without setting up a local dev environment.",
+        "fr": "Tu veux transformer une idée d'application en langage naturel en prototype déployable sans configurer d'environnement de développement local."
+      },
+      "avoidIf": {
+        "en": "You need fine-grained control over a large, complex codebase, where token-metered generation becomes costly to predict.",
+        "fr": "Tu as besoin d'un contrôle fin sur une base de code large et complexe, où la génération mesurée en jetons devient difficile à prévoir côté coût."
+      },
+      "threshold": {
+        "en": "Budget $25/month (Pro) once the free plan's 300K tokens/day cap and Bolt branding become limiting.",
+        "fr": "Prévois 25 $/mois (Pro) une fois que le plafond de 300 000 jetons/jour et la marque Bolt du plan gratuit deviennent limitants."
+      }
+    }
+  },
   "unknowns": [
     "Whether Pro and Teams plans offer an annual discount (annualPerMonth) was not shown on the pricing page; only monthly prices were listed."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": []
 }

@@ -3,7 +3,7 @@
   "slug": "netsuite",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
   "identity": {
     "officialName": "NetSuite",
     "vendor": "Oracle Corporation",
@@ -15,10 +15,34 @@
     "statusNote": null
   },
   "sources": [
-    { "id": "s1", "url": "https://www.netsuite.com", "tier": 1, "accessedOn": "2026-09-25", "title": "NetSuite official site" },
-    { "id": "s2", "url": "https://epiqinfo.com/netsuite-pricing/", "tier": 2, "accessedOn": "2026-09-25", "title": "NetSuite Pricing 2026: Cost Per User, Modules & TCO" },
-    { "id": "s3", "url": "https://epiqinfo.com/netsuite-license-cost/", "tier": 2, "accessedOn": "2026-09-25", "title": "NetSuite License Cost 2026: User Seats Explained" },
-    { "id": "s4", "url": "https://www.erpresearch.com/pricing/oracle-netsuite", "tier": 2, "accessedOn": "2026-09-25", "title": "NetSuite Pricing 2026: $999 to $25K/mo" }
+    {
+      "id": "s1",
+      "url": "https://www.netsuite.com",
+      "tier": 1,
+      "accessedOn": "2026-09-25",
+      "title": "NetSuite official site"
+    },
+    {
+      "id": "s2",
+      "url": "https://epiqinfo.com/netsuite-pricing/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "NetSuite Pricing 2026: Cost Per User, Modules & TCO"
+    },
+    {
+      "id": "s3",
+      "url": "https://epiqinfo.com/netsuite-license-cost/",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "NetSuite License Cost 2026: User Seats Explained"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.erpresearch.com/pricing/oracle-netsuite",
+      "tier": 2,
+      "accessedOn": "2026-09-25",
+      "title": "NetSuite Pricing 2026: $999 to $25K/mo"
+    }
   ],
   "pricing": {
     "model": "quote",
@@ -27,53 +51,250 @@
     "verifiedOn": "2026-09-25",
     "region": "US",
     "taxIncluded": null,
-    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "freePlan": {
+      "exists": false,
+      "limits": null,
+      "sourceIds": [
+        "s1"
+      ]
+    },
     "plans": [
       {
         "key": "base",
         "name": "Base platform license",
         "unit": "site",
         "minSeats": null,
-        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
         "onQuote": true,
-        "keyLimits": [{ "en": "Third-party estimates put the base platform license around $999-$5,000/month depending on edition and tier, plus $129-$199/month per full user license and $10-$25/month per self-service user; NetSuite publishes no official list price.", "fr": null }],
-        "sourceIds": ["s2", "s3", "s4"]
+        "keyLimits": [
+          {
+            "en": "Third-party estimates put the base platform license around $999-$5,000/month depending on edition and tier, plus $129-$199/month per full user license and $10-$25/month per self-service user; NetSuite publishes no official list price.",
+            "fr": "Des estimations tierces situent la licence de la plateforme de base autour de 999 à 5 000 $/mois selon l'édition et le palier, plus 129 à 199 $/mois par licence utilisateur complète et 10 à 25 $/mois par utilisateur en libre-service ; NetSuite ne publie aucun prix de liste officiel."
+          }
+        ],
+        "sourceIds": [
+          "s2",
+          "s3",
+          "s4"
+        ]
       }
     ],
     "comparePlanKey": null,
     "addOns": [
-      { "en": "Self-service / limited-access user licenses billed separately from full user licenses, per third-party estimates.", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Self-service / limited-access user licenses billed separately from full user licenses, per third-party estimates.",
+        "fr": "Licences utilisateur en libre-service / accès limité facturées séparément des licences utilisateur complètes, selon des estimations tierces.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "cautions": [
-      { "en": "NetSuite prices by named user: every person who logs in needs a license, whether used daily or monthly. No public price list exists; each contract is negotiated and bundles a base edition, user licenses and add-on modules. One-time implementation costs can add $25,000 to $750,000 depending on scope, per third-party estimates.", "fr": null, "sourceIds": ["s2", "s3"] }
+      {
+        "en": "NetSuite prices by named user: every person who logs in needs a license, whether used daily or monthly. No public price list exists; each contract is negotiated and bundles a base edition, user licenses and add-on modules. One-time implementation costs can add $25,000 to $750,000 depending on scope, per third-party estimates.",
+        "fr": "NetSuite facture par utilisateur nommé : toute personne qui se connecte doit disposer d'une licence, qu'elle l'utilise quotidiennement ou mensuellement. Aucune liste de prix publique n'existe ; chaque contrat se négocie et regroupe une édition de base, des licences utilisateur et des modules complémentaires. Les coûts d'implémentation ponctuels peuvent ajouter de 25 000 $ à 750 000 $ selon le périmètre, selon des estimations tierces.",
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Cloud ERP suite covering financial management, order management, inventory, procurement and revenue recognition in a single system.", "fr": null, "sourceIds": ["s1"] },
-      { "en": "Modular architecture with optional editions (Starter, Mid-Market, Enterprise) and add-on modules such as CRM, e-commerce (SuiteCommerce), and warehouse/inventory management, per third-party pricing research.", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "Cloud ERP suite covering financial management, order management, inventory, procurement and revenue recognition in a single system.",
+        "fr": "Suite ERP cloud couvrant la gestion financière, la gestion des commandes, les stocks, les achats et la reconnaissance des revenus dans un système unique.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Modular architecture with optional editions (Starter, Mid-Market, Enterprise) and add-on modules such as CRM, e-commerce (SuiteCommerce), and warehouse/inventory management, per third-party pricing research.",
+        "fr": "Architecture modulaire avec des éditions au choix (Starter, Mid-Market, Enterprise) et des modules complémentaires comme le CRM, l'e-commerce (SuiteCommerce) et la gestion d'entrepôt/stocks, selon des recherches tarifaires tierces.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "limitations": [
-      { "en": "No self-serve pricing or sign-up: every deployment requires a sales negotiation and implementation partner, per third-party pricing research.", "fr": null, "sourceIds": ["s2", "s4"] },
-      { "en": "Per-named-user licensing means costs scale directly with headcount, including occasional/self-service users, per third-party pricing research.", "fr": null, "sourceIds": ["s2"] }
+      {
+        "en": "No self-serve pricing or sign-up: every deployment requires a sales negotiation and implementation partner, per third-party pricing research.",
+        "fr": "Pas de tarification en libre-service ni d'inscription directe : chaque déploiement nécessite une négociation commerciale et un partenaire d'implémentation, selon des recherches tarifaires tierces.",
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      },
+      {
+        "en": "Per-named-user licensing means costs scale directly with headcount, including occasional/self-service users, per third-party pricing research.",
+        "fr": "La facturation par utilisateur nommé fait que les coûts évoluent directement avec l'effectif, y compris les utilisateurs occasionnels ou en libre-service, selon des recherches tarifaires tierces.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
     ],
     "integrations": [],
-    "platforms": ["web"]
+    "platforms": [
+      "web"
+    ]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "Operations and finance leaders at growing companies who need a single cloud ERP for finance, inventory and order management.",
+      "fr": "Responsables opérations et finance d'entreprises en croissance qui ont besoin d'un ERP cloud unique pour la finance, les stocks et la gestion des commandes."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Growing company: replace spreadsheets and disconnected tools with one system for financials, inventory and order management as headcount scales.",
+      "fr": "Entreprise en croissance : remplacer les tableurs et outils déconnectés par un système unique pour la finance, les stocks et la gestion des commandes à mesure que l'effectif grandit."
+    },
+    {
+      "en": "Finance team: use built-in revenue recognition and procurement modules to close the books without exporting data between separate systems.",
+      "fr": "Équipe finance : utiliser les modules intégrés de reconnaissance des revenus et d'achats pour clôturer les comptes sans exporter les données entre systèmes séparés."
+    }
+  ],
   "alternatives": [
-    { "slug": "sap-business-one", "reason": { "en": "Comparable mid-market ERP suite covering finance, inventory and operations for growing companies.", "fr": null } },
-    { "slug": "sage-intacct", "reason": { "en": "Cloud financial management platform competing for the same mid-market ERP budget.", "fr": null } },
-    { "slug": "microsoft-dynamics-business-central", "reason": { "en": "Microsoft's cloud ERP aimed at the same small-to-mid-market segment as NetSuite.", "fr": null } },
-    { "slug": "sap-business-bydesign", "reason": { "en": "SAP's cloud ERP for mid-market companies, a direct alternative to NetSuite's positioning.", "fr": null } }
+    {
+      "slug": "sap-business-one",
+      "reason": {
+        "en": "Comparable mid-market ERP suite covering finance, inventory and operations for growing companies.",
+        "fr": "Suite ERP de milieu de marché comparable, couvrant finance, stocks et opérations pour les entreprises en croissance."
+      }
+    },
+    {
+      "slug": "sage-intacct",
+      "reason": {
+        "en": "Cloud financial management platform competing for the same mid-market ERP budget.",
+        "fr": "Plateforme de gestion financière cloud qui vise le même budget ERP de milieu de marché."
+      }
+    },
+    {
+      "slug": "microsoft-dynamics-business-central",
+      "reason": {
+        "en": "Microsoft's cloud ERP aimed at the same small-to-mid-market segment as NetSuite.",
+        "fr": "ERP cloud de Microsoft visant le même segment petites et moyennes entreprises que NetSuite."
+      }
+    },
+    {
+      "slug": "sap-business-bydesign",
+      "reason": {
+        "en": "SAP's cloud ERP for mid-market companies, a direct alternative to NetSuite's positioning.",
+        "fr": "ERP cloud de SAP pour les entreprises de milieu de marché, une alternative directe au positionnement de NetSuite."
+      }
+    }
   ],
   "missingAlternatives": [],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Consolidates finance, inventory, procurement and order management into one system, but third-party estimates put total cost of ownership from $25,000 to $750,000 in implementation alone, making value hard to judge without a quote.",
+        "fr": "Consolide finance, stocks, achats et gestion des commandes dans un seul système, mais des estimations tierces situent le coût total d'implémentation seul entre 25 000 $ et 750 000 $, rendant la valeur difficile à juger sans devis.",
+        "sourceIds": [
+          "s2",
+          "s3"
+        ]
+      },
+      "simplicite": {
+        "en": "No self-serve sign-up exists; every deployment requires a sales negotiation and an implementation partner before a first usable result, per third-party pricing research.",
+        "fr": "Aucune inscription en libre-service n'existe ; chaque déploiement nécessite une négociation commerciale et un partenaire d'implémentation avant un premier résultat utilisable, selon des recherches tarifaires tierces.",
+        "sourceIds": [
+          "s2",
+          "s4"
+        ]
+      },
+      "utilisation": {
+        "en": "Covers financial management, order management, inventory, procurement and revenue recognition as an integrated suite, matching its positioning as a full ERP.",
+        "fr": "Couvre la gestion financière, la gestion des commandes, les stocks, les achats et la reconnaissance des revenus comme une suite intégrée, conforme à son positionnement d'ERP complet.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Modular editions plus add-on modules (CRM, SuiteCommerce, warehouse management) scale from mid-market to large multi-entity companies, a reference-level ERP feature set.",
+        "fr": "Des éditions modulaires et des modules complémentaires (CRM, SuiteCommerce, gestion d'entrepôt) s'étendent du milieu de marché aux grandes entreprises multi-entités, un ensemble de fonctionnalités ERP de référence.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Per-named-user licensing and a negotiated, non-public contract structure make it hard to anticipate exit costs or data portability without an implementation partner.",
+        "fr": "La licence par utilisateur nommé et une structure contractuelle négociée et non publique rendent difficile d'anticiper les coûts de sortie ou la portabilité des données sans partenaire d'implémentation.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Cloud ERP suite",
+      "fr": "Suite ERP cloud"
+    },
+    "shortDescription": {
+      "en": "NetSuite is a cloud ERP suite covering finance, inventory, procurement and order management, priced per named user on a negotiated, quote-only contract.",
+      "fr": "NetSuite est une suite ERP cloud couvrant finance, stocks, achats et gestion des commandes, facturée par utilisateur nommé sur un contrat négocié et sur devis."
+    },
+    "longDescription": {
+      "en": "NetSuite is a cloud ERP suite that consolidates financial management, order management, inventory, procurement and revenue recognition in a single system. A modular architecture adds optional editions and add-on modules such as CRM and e-commerce (SuiteCommerce) as a company grows.\n\nOracle publishes no price list: every contract is negotiated and billed per named user, bundling a base edition, user licenses and add-on modules, with third-party estimates citing a base platform around $999 to $5,000 a month plus $129 to $199 per full user. It suits operations and finance leaders at growing companies ready for a sales negotiation and an implementation partner rather than a self-serve setup.",
+      "fr": "NetSuite est une suite ERP cloud qui consolide la gestion financière, la gestion des commandes, les stocks, les achats et la reconnaissance des revenus dans un système unique. Une architecture modulaire ajoute des éditions et des modules complémentaires comme le CRM et l'e-commerce (SuiteCommerce) à mesure que l'entreprise grandit.\n\nOracle ne publie aucune liste de prix : chaque contrat se négocie et se facture par utilisateur nommé, des estimations tierces situant une plateforme de base autour de 999 à 5 000 $ par mois plus 129 à 199 $ par utilisateur complet. Elle convient aux responsables opérations et finance d'entreprises en croissance prêts pour une négociation commerciale."
+    },
+    "pros": [
+      {
+        "en": "Consolidates finance, inventory, procurement and order management in one integrated system instead of several disconnected tools.",
+        "fr": "Consolide finance, stocks, achats et gestion des commandes dans un système intégré unique au lieu de plusieurs outils déconnectés."
+      },
+      {
+        "en": "Modular editions and add-on modules let the system grow with the company rather than requiring a full re-platform.",
+        "fr": "Des éditions modulaires et des modules complémentaires permettent au système de grandir avec l'entreprise sans nécessiter un changement complet de plateforme."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No public pricing or self-serve sign-up: every deployment starts with a sales negotiation.",
+        "fr": "Aucune tarification publique ni inscription en libre-service : chaque déploiement commence par une négociation commerciale."
+      },
+      {
+        "en": "Per-named-user licensing means cost scales with headcount, including occasional or self-service users.",
+        "fr": "La licence par utilisateur nommé fait que le coût évolue avec l'effectif, y compris les utilisateurs occasionnels ou en libre-service."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Your company has outgrown spreadsheets and separate tools and needs one ERP for finance, inventory and orders.",
+        "fr": "Ton entreprise a dépassé les tableurs et les outils séparés, et a besoin d'un ERP unique pour la finance, les stocks et les commandes."
+      },
+      "avoidIf": {
+        "en": "You are a solo operator or very small team that doesn't need multi-module ERP and would rather avoid a sales negotiation.",
+        "fr": "Tu es un opérateur solo ou une très petite équipe qui n'a pas besoin d'un ERP multi-modules et préfère éviter une négociation commerciale."
+      },
+      "threshold": {
+        "en": "Third-party estimates put a base platform license around $999 to $5,000/month plus $129 to $199/month per full user; get a direct quote to confirm.",
+        "fr": "Des estimations tierces situent une licence de plateforme de base autour de 999 à 5 000 $/mois plus 129 à 199 $/mois par utilisateur complet ; demande un devis direct pour confirmer."
+      }
+    }
+  },
   "unknowns": [
     "No official published price list; all monetary figures come from third-party pricing research firms, not Oracle/NetSuite directly.",
     "Exact current base license and per-user rates could not be confirmed on an Oracle-owned page within this session's page budget."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-01",
+  "reviewNotes": [
+    "All pricing figures come from third-party pricing research firms (epiqinfo.com, erpresearch.com), not an Oracle/NetSuite-owned page; confirm with an official NetSuite sales quote before publishing any amount."
+  ]
 }

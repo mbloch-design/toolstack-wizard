@@ -3,7 +3,8 @@
   "slug": "maced-ai",
   "tier": "A",
   "researchedOn": "2026-09-25",
-  "status": "facts_collected",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-01",
   "identity": {
     "officialName": "Maced AI",
     "vendor": "Maced AI",
@@ -34,7 +35,7 @@
         "minSeats": 1,
         "price": { "monthly": 249, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "1 pentest per month included, additional pentests billed at $199 each" }],
+        "keyLimits": [{ "en": "1 pentest per month included, additional pentests billed at $199 each", "fr": "1 test d'intrusion par mois inclus, tests supplémentaires facturés 199 $ chacun" }],
         "sourceIds": ["s2"]
       },
       {
@@ -44,29 +45,29 @@
         "minSeats": 1,
         "price": { "monthly": 799, "annualPerMonth": null, "oneTime": null },
         "onQuote": false,
-        "keyLimits": [{ "en": "5 pentests per month included, additional pentests billed at $149 each, priority support" }],
+        "keyLimits": [{ "en": "5 pentests per month included, additional pentests billed at $149 each, priority support", "fr": "5 tests d'intrusion par mois inclus, tests supplémentaires facturés 149 $ chacun, support prioritaire" }],
         "sourceIds": ["s2"]
       }
     ],
     "comparePlanKey": "starter",
     "addOns": [
-      { "en": "Extra pentests beyond the monthly allocation, billed per pentest ($199 on Starter, $149 on Professional)", "sourceIds": ["s2"] }
+      { "en": "Extra pentests beyond the monthly allocation, billed per pentest ($199 on Starter, $149 on Professional)", "fr": "Tests d'intrusion supplémentaires au-delà du quota mensuel, facturés à l'unité (199 $ sur Starter, 149 $ sur Professional)", "sourceIds": ["s2"] }
     ],
     "cautions": [
-      { "en": "No free plan; a free 5-minute scan is offered as a lead-gen demo, separate from the paid tiers.", "sourceIds": ["s1"] },
-      { "en": "Cancel anytime, no lock-in contract stated on the pricing page.", "sourceIds": ["s2"] }
+      { "en": "No free plan; a free 5-minute scan is offered as a lead-gen demo, separate from the paid tiers.", "fr": "Pas de plan gratuit ; un scan gratuit de 5 minutes est proposé comme démo de prospection, séparé des plans payants.", "sourceIds": ["s1"] },
+      { "en": "Cancel anytime, no lock-in contract stated on the pricing page.", "fr": "Annulation possible à tout moment, aucun engagement contractuel mentionné sur la page de tarifs.", "sourceIds": ["s2"] }
     ]
   },
   "product": {
     "capabilities": [
-      { "en": "Autonomous AI-driven penetration testing across web apps, APIs, source code, infrastructure and cloud environments.", "sourceIds": ["s1"] },
-      { "en": "Produces audit-ready reports with proof-of-exploit evidence, CVSS severity ratings and remediation guidance, compatible with SOC 2 and ISO 27001 needs.", "sourceIds": ["s1"] },
-      { "en": "Auto-generates merge-ready pull requests to fix found vulnerabilities, with automatic retesting.", "sourceIds": ["s1"] },
-      { "en": "Continuous/scheduled scanning with CVE coverage and attack-path graph visualization.", "sourceIds": ["s1"] }
+      { "en": "Autonomous AI-driven penetration testing across web apps, APIs, source code, infrastructure and cloud environments.", "fr": "Tests d'intrusion autonomes pilotés par IA sur les applications web, les API, le code source, l'infrastructure et les environnements cloud.", "sourceIds": ["s1"] },
+      { "en": "Produces audit-ready reports with proof-of-exploit evidence, CVSS severity ratings and remediation guidance, compatible with SOC 2 and ISO 27001 needs.", "fr": "Produit des rapports prêts pour l'audit avec preuves d'exploitation, notes de sévérité CVSS et conseils de correction, compatibles avec les besoins SOC 2 et ISO 27001.", "sourceIds": ["s1"] },
+      { "en": "Auto-generates merge-ready pull requests to fix found vulnerabilities, with automatic retesting.", "fr": "Génère automatiquement des pull requests prêtes à fusionner pour corriger les vulnérabilités trouvées, avec un nouveau test automatique.", "sourceIds": ["s1"] },
+      { "en": "Continuous/scheduled scanning with CVE coverage and attack-path graph visualization.", "fr": "Scan continu ou planifié avec couverture des CVE et visualisation graphique des chemins d'attaque.", "sourceIds": ["s1"] }
     ],
     "limitations": [
-      { "en": "No self-service free tier beyond a one-off 5-minute scan; ongoing use requires a paid monthly plan.", "sourceIds": ["s1", "s2"] },
-      { "en": "Pentest volume is capped per month on both plans (1 on Starter, 5 on Professional); more testing requires paid overage.", "sourceIds": ["s2"] }
+      { "en": "No self-service free tier beyond a one-off 5-minute scan; ongoing use requires a paid monthly plan.", "fr": "Pas de plan gratuit en libre-service au-delà d'un scan ponctuel de 5 minutes ; un usage continu demande un plan payant mensuel.", "sourceIds": ["s1", "s2"] },
+      { "en": "Pentest volume is capped per month on both plans (1 on Starter, 5 on Professional); more testing requires paid overage.", "fr": "Le volume de tests d'intrusion est plafonné par mois sur les deux plans (1 sur Starter, 5 sur Professional) ; plus de tests nécessite un dépassement payant.", "sourceIds": ["s2"] }
     ],
     "integrations": [
       { "name": "Jira", "slug": null, "sourceIds": ["s1"] },
@@ -75,18 +76,65 @@
     ],
     "platforms": ["web"]
   },
-  "audience": null,
-  "useCases": [],
+  "audience": {
+    "persona": "THEO",
+    "description": { "en": "A developer or small engineering team that needs recurring security testing without hiring a dedicated pentest firm for every release.", "fr": "Une développeuse, un développeur ou une petite équipe d'ingénierie qui a besoin de tests de sécurité récurrents sans engager une société de pentest dédiée à chaque sortie." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Scope: run an automated pentest on a web app or API before a release, and get a report with CVSS ratings and remediation steps.", "fr": "Cadrage : lancer un test d'intrusion automatisé sur une application web ou une API avant une sortie, et obtenir un rapport avec notes CVSS et étapes de correction." },
+    { "en": "Fix: merge the auto-generated pull request for a found vulnerability and let Maced AI retest automatically to confirm the fix.", "fr": "Correction : fusionner la pull request générée automatiquement pour une vulnérabilité trouvée et laisser Maced AI retester automatiquement pour confirmer la correction." }
+  ],
   "alternatives": [
-    { "slug": "snyk", "reason": { "en": "Automated security testing for code and dependencies aimed at the same engineering-team buyer." } },
-    { "slug": "owasp-zap", "reason": { "en": "Free/open web app security scanner covering overlapping ground for teams evaluating budget alternatives." } }
+    { "slug": "snyk", "reason": { "en": "Automated security testing for code and dependencies aimed at the same engineering-team buyer.", "fr": "Tests de sécurité automatisés pour le code et les dépendances, destinés au même profil d'équipe d'ingénierie." } },
+    { "slug": "semgrep", "reason": { "en": "Automated code-level security scanning for the same engineering-team buyer, with a free tier before any paid plan.", "fr": "Scan de sécurité automatisé au niveau du code, pour le même profil d'équipe d'ingénierie, avec un plan gratuit avant tout plan payant." } },
+    { "slug": "owasp-zap", "reason": { "en": "Free/open web app security scanner covering overlapping ground for teams evaluating budget alternatives.", "fr": "Scanner de sécurité d'application web gratuit et open source, qui couvre un périmètre proche pour les équipes qui évaluent des alternatives économiques." } }
   ],
   "missingAlternatives": [
     { "name": "Pentera", "officialUrl": "https://pentera.io", "reason": "Direct automated/autonomous penetration testing competitor, not in the catalogue." },
     { "name": "HackerOne", "officialUrl": "https://www.hackerone.com", "reason": "Widely used bug-bounty/pentest-as-a-service alternative, not in the catalogue." }
   ],
-  "rating": null,
-  "editorial": null,
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "$249/month for recurring automated pentests plus auto-generated fixes is cheap next to hiring a human pentest firm for the same recurring scope.", "fr": "249 $ par mois pour des tests d'intrusion automatisés récurrents et des corrections générées automatiquement coûte peu face à l'engagement d'une société de pentest humaine pour le même périmètre récurrent.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "A free 5-minute demo scan suggests a quick first result, but setting up continuous scanning across web apps, APIs, infra and cloud likely needs more than an hour of configuration; not detailed in the sources.", "fr": "Un scan de démo gratuit de 5 minutes suggère un premier résultat rapide, mais configurer un scan continu sur les applications web, API, infrastructure et cloud demande probablement plus d'une heure ; ce n'est pas détaillé dans les sources.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the stated pentest-to-report-to-fix pipeline, but monthly pentest volume is capped, so continuous full coverage may need paid overage.", "fr": "Fournit le parcours annoncé test d'intrusion puis rapport puis correction, mais le volume mensuel de tests est plafonné, donc une couverture continue complète peut nécessiter un dépassement payant.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Covers web apps, APIs, source code, infrastructure and cloud with CVE coverage and attack-path graphs, a wide scope for an automated pentest tool.", "fr": "Couvre les applications web, les API, le code source, l'infrastructure et le cloud avec couverture CVE et graphes de chemins d'attaque, un périmètre large pour un outil de pentest automatisé.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: whether reports and findings can be exported in an open format if the team leaves Maced AI was not covered by the collected sources.", "fr": "Note neutre : la possibilité d'exporter les rapports et constats dans un format ouvert en cas de départ de Maced AI ne figure pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI penetration testing", "fr": "Test d'intrusion par IA" },
+    "shortDescription": {
+      "en": "Autonomous AI pentesting for web apps, APIs, code, infrastructure and cloud, with audit-ready reports and auto-generated fix pull requests.",
+      "fr": "Test d'intrusion autonome par IA pour applications web, API, code, infrastructure et cloud, avec rapports prêts pour l'audit et pull requests de correction générées automatiquement."
+    },
+    "longDescription": {
+      "en": "Maced AI runs autonomous penetration tests across web apps, APIs, source code, infrastructure and cloud environments, producing audit-ready reports with proof-of-exploit evidence and CVSS ratings. It also generates merge-ready pull requests to fix what it finds and retests automatically to confirm the fix.\n\nThere's no permanent free tier, only a 5-minute demo scan: Starter is $249/month for 1 pentest, Professional $799/month for 5, with extra pentests billed per use. It fits a developer or small engineering team that wants recurring, automated security testing without hiring a dedicated pentest firm for every release.",
+      "fr": "Maced AI effectue des tests d'intrusion autonomes sur les applications web, les API, le code source, l'infrastructure et le cloud, avec des rapports prêts pour l'audit, preuves d'exploitation et notes CVSS. L'outil génère aussi des pull requests prêtes à fusionner pour corriger ce qu'il trouve, puis reteste automatiquement.\n\nPas de plan gratuit permanent, seulement un scan de démo de 5 minutes : Starter coûte 249 $/mois pour 1 test, Professional 799 $/mois pour 5, le reste facturé à l'usage. Convient à une équipe d'ingénierie qui veut des tests de sécurité récurrents sans société de pentest dédiée à chaque sortie."
+    },
+    "pros": [
+      { "en": "Auto-generates merge-ready fix pull requests and retests automatically, not just a vulnerability list.", "fr": "Génère automatiquement des pull requests de correction prêtes à fusionner et reteste automatiquement, pas seulement une liste de vulnérabilités." },
+      { "en": "Covers web apps, APIs, code, infrastructure and cloud in one subscription instead of separate tools per surface.", "fr": "Couvre les applications web, les API, le code, l'infrastructure et le cloud dans un seul abonnement, au lieu d'un outil séparé par surface." }
+    ],
+    "cons": [
+      { "en": "No permanent free tier; the only free option is a one-off 5-minute demo scan.", "fr": "Pas de plan gratuit permanent ; la seule option gratuite est un scan de démo ponctuel de 5 minutes." },
+      { "en": "Monthly pentest volume is capped on both plans, so frequent testing can trigger paid overage charges.", "fr": "Le volume mensuel de tests d'intrusion est plafonné sur les deux plans, donc des tests fréquents peuvent déclencher des frais de dépassement payants." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Keep if your team ships often enough to need recurring automated pentests and wants auto-generated fixes instead of a findings list alone.", "fr": "À garder si ton équipe livre assez souvent pour avoir besoin de tests d'intrusion automatisés récurrents et veut des corrections générées automatiquement plutôt qu'une simple liste de constats." },
+      "avoidIf": { "en": "Avoid if you need more than 1 (Starter) or 5 (Professional) pentests a month without paying per-test overage, or if a one-off audit is all you need.", "fr": "À éviter si tu as besoin de plus de 1 (Starter) ou 5 (Professional) tests d'intrusion par mois sans payer de dépassement à l'unité, ou si un audit ponctuel te suffit." },
+      "threshold": { "en": "Decision threshold: at $199 (Starter) to $149 (Professional) per extra pentest, more than a couple of overage tests a month makes the next plan up cheaper.", "fr": "Seuil de décision : à 199 $ (Starter) ou 149 $ (Professional) par test supplémentaire, plus de deux dépassements par mois rend le plan supérieur plus économique." }
+    }
+  },
+  "reviewNotes": [],
   "unknowns": [
     "Exact CI/CD integrations beyond a generic mention were not itemized on pages read.",
     "Whether an annual billing discount exists was not stated on the pricing page."
