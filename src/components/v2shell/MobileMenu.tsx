@@ -152,7 +152,8 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
                   </div>
                 </div>
                 <button type="button" className="asv2-mm-pref" onClick={toggleTheme} aria-pressed={theme === "dark"}>
-                  {theme === "dark" ? <Sun aria-hidden /> : <Moon aria-hidden />}
+                  {/* L'icône montre l'état affiché à droite, pas l'action. */}
+                  {theme === "dark" ? <Moon aria-hidden /> : <Sun aria-hidden />}
                   <span>{L("Thème", "Theme")}</span>
                   <strong>{theme === "dark" ? L("Sombre", "Dark") : L("Clair", "Light")}</strong>
                 </button>

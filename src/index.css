@@ -34047,3 +34047,9 @@ img[data-logo-loading] {
 @media (prefers-reduced-motion: reduce) {
   .asv2-logo, .asv2-sidebar-resizer { transition: none !important; }
 }
+/* « Ma stack » passe en icône seule dès 560 px : avec le bouton Menu, son
+   libellé ne laissait que « Recherc… » au champ de recherche vers 450 px. */
+@media (max-width: 560px) {
+  .asv2-topbar-cta { width: 42px; height: 42px; padding: 0; justify-content: center; }
+  .asv2-topbar-cta > span:not(.asv2-topbar-cta-icon) { display: none; }
+}
