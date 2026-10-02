@@ -10,7 +10,12 @@
  * Rules:
  *   - a dossier is merged only if it validates at stage "full";
  *   - prices stay in the vendor's currency on each plan; only the comparison
- *     price is converted to EUR, at the site rate (src/lib/currencyRates.ts);
+ *     price is converted to EUR, at the site rate (src/lib/currencyRates.ts),
+ *     for sorting and stack budgets, never for display;
+ *   - a vendor that publishes both USD and EUR keeps both: pricing.currency
+ *     (USD first) plus pricing.secondaryPrices (the other grid, same plan
+ *     keys). The English record gets the USD grid, the French one the EUR
+ *     grid; a vendor with one currency shows it on both pages.
  *   - the comparison price is derived from comparePlanKey, never typed;
  *   - fields the dossier does not cover are left untouched (categories,
  *     prescription, clusters, covers, functional_needs…).
@@ -129,37 +134,49 @@ function applyDossier(tool, d) {
   const cautions = (lang) => (p.cautions || []).map((c) => L(c, lang)).filter(Boolean);
   const isFreePlan = (plan) => !plan.onQuote && [plan.price.monthly, plan.price.annualPerMonth, plan.price.oneTime].some((v) => v === 0);
 
+  // Which published grid each language shows: USD on English pages, EUR on
+  // French ones, when the vendor publishes it; otherwise its only currency.
+  const sec = p.secondaryPrices || null;
+  const grid = (lang) => {
+    const wanted = lang === "fr" ? "EUR" : "USD";
+    if (p.currency !== wanted && sec?.currency === wanted) {
+      return { currency: sec.currency, price: (plan) => ({ monthly: null, annualPerMonth: null, oneTime: null, ...(sec.plans?.[plan.key] || {}) }), verifiedOn: sec.verifiedOn || p.verifiedOn, url: sec.pricingUrl || p.pricingUrl };
+    }
+    return { currency: p.currency, price: (plan) => plan.price, verifiedOn: p.verifiedOn, url: p.pricingUrl };
+  };
+
   const planSummary = (plan, lang) => {
     const fr = lang === "fr";
-    const pr = plan.price;
+    const g = grid(lang);
+    const pr = g.price(plan);
     const parts = [];
     const promo = plan.promoPrice ? (plan.promoPrice.annualPerMonth ?? plan.promoPrice.monthly ?? null) : null;
-    if (promo != null) parts.push(fr ? `Offre de lancement à ${money(promo, p.currency, lang)}/mois sur la première période ; prix de renouvellement non publié.` : `Introductory offer at ${money(promo, p.currency, lang)}/mo for the first term; renewal price not published.`);
+    if (promo != null && g.currency === p.currency) parts.push(fr ? `Offre de lancement à ${money(promo, p.currency, lang)}/mois sur la première période ; prix de renouvellement non publié.` : `Introductory offer at ${money(promo, p.currency, lang)}/mo for the first term; renewal price not published.`);
     if (plan.onQuote) parts.push(fr ? "Sur devis." : "Custom quote.");
     else if (pr.oneTime != null && pr.oneTime > 0) parts.push(fr ? "Licence à vie, paiement unique." : "Lifetime license, one-time payment.");
     // The card already says "annual subscription paid upfront": only the
     // monthly alternative is worth adding.
-    else if (pr.annualPerMonth != null && pr.annualPerMonth > 0 && pr.monthly != null) parts.push(fr ? `${money(pr.monthly, p.currency, lang)}/mois sans engagement.` : `${money(pr.monthly, p.currency, lang)}/mo billed monthly.`);
+    else if (pr.annualPerMonth != null && pr.annualPerMonth > 0 && pr.monthly != null) parts.push(fr ? `${money(pr.monthly, g.currency, lang)}/mois sans engagement.` : `${money(pr.monthly, g.currency, lang)}/mo billed monthly.`);
     if (plan.unit === "seat" && !isFreePlan(plan)) parts.push(fr ? `Par utilisateur${plan.minSeats > 1 ? `, ${plan.minSeats} minimum` : ""}.` : `Per user${plan.minSeats > 1 ? `, ${plan.minSeats} minimum` : ""}.`);
     return parts.join(" ") || null;
   };
 
-  const buildV5 = (lang) => ({
+  const buildV5 = (lang) => { const g = grid(lang); return {
     ...(lang === "fr" ? tool.pricing_v5 || {} : tool.pricing_v5En || {}),
     compare_price_monthly_eur: compareNative != null && p.model !== "one_time" ? toEur(compareNative, p.currency) : 0,
     compare_plan_name: p.model === "quote" || p.regularPriceUnknown ? "Prix non public" : compare?.name || null,
     compare_plan_kind: kind,
     price_reliability: "high",
     verification_status: "official_explicit",
-    verified_on: p.verifiedOn,
-    official_source_url: p.pricingUrl || null,
-    source_domain: p.pricingUrl ? new URL(p.pricingUrl).hostname.replace(/^www\./, "") : null,
+    verified_on: g.verifiedOn,
+    official_source_url: g.url || null,
+    source_domain: g.url ? new URL(g.url).hostname.replace(/^www\./, "") : null,
     usage_sensitive: p.model === "usage" || p.plans.some((plan) => plan.unit === "usage"),
     cautions: cautions(lang),
     ...(lang === "fr" ? { cautionsEn: cautions("en") } : {}),
     ...(compare?.minSeats > 1 ? { minSeats: compare.minSeats } : {}),
     plans: p.plans.map((plan) => {
-      const pr = plan.price;
+      const pr = g.price(plan);
       const amount = plan.onQuote ? null : (pr.annualPerMonth ?? pr.monthly ?? pr.oneTime ?? null);
       return {
         planKey: plan.key,
@@ -171,16 +188,16 @@ function applyDossier(tool, d) {
         isFree: isFreePlan(plan),
         isComparePlan: plan.key === p.comparePlanKey,
         nativeAmount: amount,
-        nativeCurrency: p.currency,
+        nativeCurrency: g.currency,
         billingPeriod: pr.oneTime != null && pr.monthly == null && pr.annualPerMonth == null ? null : "monthly",
         billingCommitment: pr.annualPerMonth != null ? "annual_prepaid" : pr.monthly != null ? "monthly" : null,
         taxInclusion: p.taxIncluded === true ? "ttc" : p.taxIncluded === false ? "ht" : "unknown",
         observedMarket: p.region || null,
-        observedOn: p.verifiedOn,
-        lastConfirmedOn: p.verifiedOn,
+        observedOn: g.verifiedOn,
+        lastConfirmedOn: g.verifiedOn,
       };
     }),
-  });
+  }; };
   tool.pricing_v5 = buildV5("fr");
   tool.pricing_v5En = buildV5("en");
   tool.defaultMonthlyPrice = tool.pricing_v5.compare_price_monthly_eur;
@@ -198,11 +215,13 @@ function applyDossier(tool, d) {
     if (p.regularPriceUnknown) return fr ? "Plans payants affichés à prix promotionnel ; prix hors promotion non publié." : "Paid plans shown at promotional prices; regular price not published.";
     if (p.model === "free" || p.model === "open_source") return fr ? "Pas d'offre payante obligatoire." : "No paid plan required.";
     if (!compare) return "";
-    const amount = compare.price.oneTime ?? compare.price.annualPerMonth ?? compare.price.monthly;
+    const g = grid(lang);
+    const cp = g.price(compare);
+    const amount = cp.oneTime ?? cp.annualPerMonth ?? cp.monthly;
     // A compared plan on quote carries no amount.
     if (amount == null) return fr ? `Plan ${compare.name} sur devis.` : `${compare.name} plan on quote.`;
-    const per = compare.price.oneTime != null ? (fr ? " (licence à vie)" : " (lifetime license)") : fr ? "/mois" : "/mo";
-    return fr ? `Dès ${money(amount, p.currency, "fr")}${per}, plan ${compare.name}.` : `From ${money(amount, p.currency, "en")}${per}, ${compare.name} plan.`;
+    const per = cp.oneTime != null ? (fr ? " (licence à vie)" : " (lifetime license)") : fr ? "/mois" : "/mo";
+    return fr ? `Dès ${money(amount, g.currency, "fr")}${per}, plan ${compare.name}.` : `From ${money(amount, g.currency, "en")}${per}, ${compare.name} plan.`;
   };
   tool.pricing = { free: freeText("fr"), paid: paidText("fr") };
   tool.pricingEn = { free: freeText("en"), paid: paidText("en") };

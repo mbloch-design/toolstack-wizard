@@ -91,6 +91,8 @@ Budget : test 10 $ max, production 70 $ max, marge 20 $ intouchable.
 
 ## Technique
 
+- [ ] Test `alternativesCoverage.spec.ts` en échec depuis `47989ad4` (fiches Maxon) : 317 fiches sans voisin dérivable pour un plafond de 175. Les fiches Maxon n'ont ni `substitution_cluster_v2` ni `functional_needs` exploitables ; les classer
+
 - [ ] 4 erreurs TypeScript préexistantes dans `ToolDetailPage.tsx` (ToolSummary contre Tool, `category` possiblement indéfini)
 - [ ] 7 erreurs TypeScript préexistantes dans `HomePageV2.tsx`
 - [ ] Budget de fichiers du build à 12 900 : les variantes de CSS critique des pages catégorie en consomment une vingtaine

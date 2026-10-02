@@ -27,6 +27,25 @@ pas possible.
    introuvable, produit arrêté) : garde ou écris un `hold` précis, sans
    inventer de montant.
 
+## Devise (règle de Michael, 02/10/2026)
+
+Jamais de conversion. Le dollar d'abord :
+
+- l'éditeur publie en dollars : `pricing.currency` = USD, même si la page
+  s'est d'abord affichée en euros par géolocalisation. Cherche la grille US :
+  sélecteur de devise ou de pays, URL `/en-us/` ou `?currency=USD`,
+  `?country=US`, page d'aide officielle des tarifs ;
+- l'éditeur publie **aussi** des euros : garde la grille euros dans
+  `pricing.secondaryPrices` = `{ currency: "EUR", pricingUrl, verifiedOn,
+  sourceIds, plans: { <clé du plan>: { monthly, annualPerMonth, oneTime } } }`,
+  mêmes clés de plan que `pricing.plans`, montants lus sur la page ;
+- l'éditeur ne publie qu'en euros : `pricing.currency` = EUR.
+
+La page anglaise affichera les dollars, la page française les euros quand ils
+existent, sinon la seule devise de l'éditeur. Les textes (editorial, verdict,
+rating) citent les montants de `pricing.plans` (dollars) en anglais ; en
+français, ils citent les euros de `secondaryPrices` s'il y en a.
+
 ## Règles
 
 - Seul un montant lu sur une page officielle ce jour entre dans le dossier.

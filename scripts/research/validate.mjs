@@ -165,6 +165,20 @@ function validate(d, errors, warnings) {
   }
   if (p.comparePlanKey != null && !planKeys.has(p.comparePlanKey)) errors.push(`pricing.comparePlanKey "${p.comparePlanKey}" is not a plan key`);
   if (p.comparePlanKey == null && !["free", "open_source", "quote"].includes(p.model) && p.regularPriceUnknown !== true) errors.push("pricing.comparePlanKey required (see the comparison rule in the brief), or regularPriceUnknown: true when only promotional prices are published");
+  // Second published grid (vendor shows both USD and EUR): same plan keys,
+  // a real price read on the vendor's page, never a conversion.
+  if (p.secondaryPrices != null) {
+    const s2 = p.secondaryPrices;
+    if (!["USD", "EUR", "GBP"].includes(s2.currency) || s2.currency === p.currency) errors.push("pricing.secondaryPrices.currency must be USD, EUR or GBP and differ from pricing.currency");
+    if (!isDate(s2.verifiedOn)) errors.push("pricing.secondaryPrices.verifiedOn must be YYYY-MM-DD");
+    if (!isUrl(s2.pricingUrl)) errors.push("pricing.secondaryPrices.pricingUrl missing");
+    cite(s2.sourceIds, "pricing.secondaryPrices");
+    for (const [key, pr] of Object.entries(s2.plans || {})) {
+      if (!planKeys.has(key)) errors.push(`pricing.secondaryPrices.plans.${key}: not a plan key`);
+      for (const [k, v] of Object.entries(pr || {})) if (!["monthly", "annualPerMonth", "oneTime"].includes(k) || (v != null && (typeof v !== "number" || v < 0))) errors.push(`pricing.secondaryPrices.plans.${key}.${k}: invalid`);
+    }
+    if (p.comparePlanKey && !plans.find((x) => x.key === p.comparePlanKey)?.onQuote && !s2.plans?.[p.comparePlanKey]) errors.push("pricing.secondaryPrices must price the compared plan");
+  }
   for (const [i, a] of (p.addOns || []).entries()) cite(a.sourceIds, `pricing.addOns[${i}]`);
   for (const [i, c] of (p.cautions || []).entries()) { bi(c, `pricing.cautions[${i}]`); cite(c.sourceIds, `pricing.cautions[${i}]`); }
 

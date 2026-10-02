@@ -7944,11 +7944,11 @@
     "website": "https://lottiefiles.com",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 20€/mois environ"
+      "free": "Plan gratuit : Le format d'animation Lottie et ses bibliothèques d'exécution sont open source et gratuits ; la plateforme LottieFiles propose aussi un palier gratuit limité pour parcourir et héberger des animations.",
+      "paid": "Dès 19,99 $/mois, plan Individual."
     },
-    "description_fr": "Plateforme pour importer, prévisualiser et livrer des animations Lottie légères.",
-    "description_en": "Platform to import, preview, and ship lightweight Lottie animations."
+    "description_fr": "LottieFiles héberge, édite et exporte des animations vectorielles Lottie légères pour le web, iOS et Android, avec un palier gratuit et des plans payants pour le stockage.",
+    "description_en": "LottieFiles hosts, edits and exports lightweight Lottie vector animations for web, iOS and Android, with a free tier and paid plans for storage and teams."
   },
   {
     "name": "Lovable",
@@ -8147,14 +8147,14 @@
     "slug": "magnific",
     "url_fr": "https://tooltrim.com/fr/tool/magnific",
     "url_en": "https://tooltrim.com/en/tool/magnific",
-    "website": "https://magnific.com",
+    "website": "https://www.magnific.com",
     "category": "creation",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 20 $/mois, plan Premium."
     },
-    "description_fr": "Upscaler et enhancer d'images par IA : agrandit jusqu'à 16× en inventant du détail réaliste absent de l'original, avec un curseur « Creativity » qui règle la quantité de détail ajouté. Racheté par Freepik (2024), regroupé sous la marque Magnific en 2026.",
-    "description_en": "AI image upscaler and enhancer that enlarges up to 16x while inventing realistic detail, with a Creativity slider. Now part of Freepik."
+    "description_fr": "Magnific agrandit et améliore les images par IA de façon créative, intégré à la suite plus large image, vidéo et audio de Freepik.",
+    "description_en": "Magnific upscales and creatively enhances images with AI, bundled into Freepik's broader image, video and audio suite."
   },
   {
     "name": "Magnific AI",
@@ -8721,11 +8721,11 @@
     "website": "https://dynamics.microsoft.com/finance",
     "category": "erp",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 210 $/mois, plan Finance (single app)."
     },
-    "description_fr": "Microsoft Dynamics 365 Finance and Operations est un système ERP ou finance à connecter prudemment au reste de la stack.",
-    "description_en": "Cloud-based financial and operations management suite for large enterprises, integrating accounting, cash management, supply chain, and regulatory compliance with AI and automation."
+    "description_fr": "Module ERP cloud pour la comptabilité, la trésorerie et la conformité des grandes entreprises, à partir de 210 dollars par utilisateur et par mois.",
+    "description_en": "Cloud ERP module for enterprise accounting, cash management, and compliance, priced per user from $210 a month."
   },
   {
     "name": "Microsoft Dynamics Business Central",
@@ -9313,6 +9313,20 @@
     },
     "description_fr": "Newton 3 (et son successeur Newton 4) est un moteur de simulation physique 2D pour After Effects qui fait se comporter les calques comme des objets solides avec gravité, collision, friction et ressorts. Permite d'appliquer des forces réalistes (rebonds, oscillations) à du texte, formes et éléments sans keyframing manuel.",
     "description_en": "Newton 3 (and successor Newton 4) is a 2D physics simulation engine for After Effects that makes layers behave like solid objects with gravity, collisions, friction, and springs. Applies realistic forces (bounces, oscillations) to text, shapes, and elements without manual keyframing."
+  },
+  {
+    "name": "Newton 4",
+    "slug": "ae-newton4",
+    "url_fr": "https://tooltrim.com/fr/tool/ae-newton4",
+    "url_en": "https://tooltrim.com/en/tool/ae-newton4",
+    "website": "https://aescripts.com/newton",
+    "category": "design-tools",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 249,99 $ (licence à vie), plan Newton 4 (current version)."
+    },
+    "description_fr": "Newton 4 est un plugin After Effects qui donne aux calques une physique 2D réaliste (gravité, collisions, ressorts) sans animation manuelle, en licence à vie.",
+    "description_en": "Newton 4 is an After Effects plugin that gives layers realistic 2D physics (gravity, collisions, springs) without manual keyframing, sold as a one-time license."
   },
   {
     "name": "Next.js",
@@ -14844,9 +14858,12 @@
     "url_en": "https://tooltrim.com/en/tool/tubebuddy",
     "website": "https://tubebuddy.com",
     "category": "analytics",
-    "pricing": "Plan gratuit limité ; plans payants à partir de ~4,5$/mois.",
-    "description_fr": "Extension d'optimisation SEO pour YouTube : mots-clés, vignettes, A/B testing.",
-    "description_en": "YouTube SEO optimization extension: keywords, thumbnails, A/B testing."
+    "pricing": {
+      "free": "Plan gratuit : Outils de base pour vidéos et miniatures, avec un accès limité à des fonctions comme Next Video Ideas.",
+      "paid": "Dès 3,99 $/mois, plan Pro."
+    },
+    "description_fr": "Une boîte à outils YouTube qui aide les créateurs à optimiser titres, tags et miniatures, suivre les statistiques de chaîne et planifier le contenu.",
+    "description_en": "A YouTube toolkit that helps creators optimize titles, tags and thumbnails, track channel analytics and plan content to grow views and subscribers."
   },
   {
     "name": "TubeBuddy",
@@ -15785,11 +15802,11 @@
     "website": "https://www.wolterskluwer.com",
     "category": "legal-contracts",
     "pricing": {
-      "free": "Aucun plan gratuit",
-      "paid": "À partir de 49€/mois"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "description_fr": "Solutions de conformité et veille juridique.",
-    "description_en": "Compliance and legal monitoring solutions."
+    "description_fr": "Wolters Kluwer vend un portefeuille de produits juridiques et de conformité distincts, dont une veille réglementaire assistée par IA, uniquement sur devis.",
+    "description_en": "Wolters Kluwer sells a portfolio of separate legal and compliance products, including AI-powered regulatory monitoring, on a quote-only basis."
   },
   {
     "name": "WooCommerce",

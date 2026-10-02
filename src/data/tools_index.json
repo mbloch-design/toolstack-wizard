@@ -18845,13 +18845,14 @@
     "slug": "lottiefiles",
     "name": "LottieFiles",
     "categoryId": "design-tools",
-    "shortDescription": "Plateforme pour importer, prévisualiser et livrer des animations Lottie légères.",
-    "shortDescriptionEn": "Platform to import, preview, and ship lightweight Lottie animations.",
+    "shortDescription": "LottieFiles héberge, édite et exporte des animations vectorielles Lottie légères pour le web, iOS et Android, avec un palier gratuit et des plans payants pour le stockage.",
+    "shortDescriptionEn": "LottieFiles hosts, edits and exports lightweight Lottie vector animations for web, iOS and Android, with a free tier and paid plans for storage and teams.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 20€/mois environ"
+      "free": "Plan gratuit : Le format d'animation Lottie et ses bibliothèques d'exécution sont open source et gratuits ; la plateforme LottieFiles propose aussi un palier gratuit limité pour parcourir et héberger des animations.",
+      "paid": "Dès 19,99 $/mois, plan Individual."
     },
-    "compareMonthlyPrice": 0,
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
     "websiteUrl": "https://lottiefiles.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lottiefiles.jpg",
     "substitution_cluster_v2": "animation-library",
@@ -18872,7 +18873,7 @@
     ],
     "prescription_quality": "contextual",
     "personas": [
-      "designer"
+      "SOFIA"
     ]
   },
   {
@@ -19354,15 +19355,15 @@
     "slug": "magnific",
     "name": "Magnific",
     "categoryId": "creation",
-    "shortDescription": "Upscaler et enhancer d'images par IA : agrandit jusqu'à 16× en inventant du détail réaliste absent de l'original, avec un curseur « Creativity » qui règle la quantité de détail ajouté. Racheté par Freepik (2024), regroupé sous la marque Magnific en 2026.",
-    "shortDescriptionEn": "AI image upscaler and enhancer that enlarges up to 16x while inventing realistic detail, with a Creativity slider. Now part of Freepik.",
+    "shortDescription": "Magnific agrandit et améliore les images par IA de façon créative, intégré à la suite plus large image, vidéo et audio de Freepik.",
+    "shortDescriptionEn": "Magnific upscales and creatively enhances images with AI, bundled into Freepik's broader image, video and audio suite.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 20 $/mois, plan Premium."
     },
-    "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
-    "affiliateLink": "https://magnific.com",
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
+    "affiliateLink": "https://www.magnific.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/magnific.jpg",
     "logo": "https://logo.clearbit.com/magnific.com",
     "tool_type": "specialise",
@@ -19380,7 +19381,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "lina"
+      "SOFIA"
     ]
   },
   {
@@ -20699,14 +20700,14 @@
     "slug": "microsoft-dynamics-365-finance-operations",
     "name": "Microsoft Dynamics 365 Finance and Operations",
     "categoryId": "erp",
-    "shortDescription": "Microsoft Dynamics 365 Finance and Operations est un système ERP ou finance à connecter prudemment au reste de la stack.",
-    "shortDescriptionEn": "Cloud-based financial and operations management suite for large enterprises, integrating accounting, cash management, supply chain, and regulatory compliance with AI and automation.",
+    "shortDescription": "Module ERP cloud pour la comptabilité, la trésorerie et la conformité des grandes entreprises, à partir de 210 dollars par utilisateur et par mois.",
+    "shortDescriptionEn": "Cloud ERP module for enterprise accounting, cash management, and compliance, priced per user from $210 a month.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 210 $/mois, plan Finance (single app)."
     },
-    "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
+    "defaultMonthlyPrice": 180.33,
+    "compareMonthlyPrice": 180.33,
     "affiliateLink": "https://dynamics.microsoft.com/finance",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-dynamics-365-finance-operations.jpg",
     "tool_type": "metier",
@@ -20725,7 +20726,10 @@
       "Directeurs financiers",
       "Contrôleurs de gestion"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "microsoft-dynamics-business-central",
@@ -22124,6 +22128,42 @@
     "personas": [
       "sofia",
       "alix"
+    ],
+    "substitutable": false
+  },
+  {
+    "id": "ae-newton4",
+    "slug": "ae-newton4",
+    "name": "Newton 4",
+    "categoryId": "design-tools",
+    "shortDescription": "Newton 4 est un plugin After Effects qui donne aux calques une physique 2D réaliste (gravité, collisions, ressorts) sans animation manuelle, en licence à vie.",
+    "shortDescriptionEn": "Newton 4 is an After Effects plugin that gives layers realistic 2D physics (gravity, collisions, springs) without manual keyframing, sold as a one-time license.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 249,99 $ (licence à vie), plan Newton 4 (current version)."
+    },
+    "compareMonthlyPrice": 0,
+    "affiliateLink": "https://aescripts.com/newton",
+    "ogImageUrl": "/og-screenshots/ae-newton3.jpg",
+    "tool_type": "plugin",
+    "host_app": "adobe-after-effects",
+    "substitution_cluster_v2": "plugin-after-effects",
+    "functional_needs": [
+      "animation-2d-3d",
+      "effets-visuels",
+      "motion-design"
+    ],
+    "verticals": [
+      "motion-video"
+    ],
+    "relevantFor": [
+      "Motion designers avancés",
+      "Animateurs After Effects",
+      "VFX artists"
+    ],
+    "prescription_quality": "question",
+    "personas": [
+      "SOFIA"
     ],
     "substitutable": false
   },
@@ -35271,11 +35311,14 @@
     "slug": "tubebuddy",
     "name": "Tubebuddy",
     "categoryId": "analytics",
-    "shortDescription": "Extension d'optimisation SEO pour YouTube : mots-clés, vignettes, A/B testing.",
-    "shortDescriptionEn": "YouTube SEO optimization extension: keywords, thumbnails, A/B testing.",
-    "pricing": "Plan gratuit limité ; plans payants à partir de ~4,5$/mois.",
-    "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
+    "shortDescription": "Une boîte à outils YouTube qui aide les créateurs à optimiser titres, tags et miniatures, suivre les statistiques de chaîne et planifier le contenu.",
+    "shortDescriptionEn": "A YouTube toolkit that helps creators optimize titles, tags and thumbnails, track channel analytics and plan content to grow views and subscribers.",
+    "pricing": {
+      "free": "Plan gratuit : Outils de base pour vidéos et miniatures, avec un accès limité à des fonctions comme Next Video Ideas.",
+      "paid": "Dès 3,99 $/mois, plan Pro."
+    },
+    "defaultMonthlyPrice": 3.43,
+    "compareMonthlyPrice": 3.43,
     "affiliateLink": "https://tubebuddy.com",
     "ogImageUrl": "https://www.tubebuddy.com/wp-content/uploads/2025/08/215763354_4101728486607776_7902735743944989465_n.jpg",
     "logo": "https://logo.clearbit.com/tubebuddy.com",
@@ -35294,7 +35337,7 @@
     ],
     "prescription_quality": "medium",
     "personas": [
-      "lina"
+      "ALIX"
     ]
   },
   {
@@ -37512,13 +37555,14 @@
     "slug": "wolters-kluwer",
     "name": "Wolters Kluwer",
     "categoryId": "legal-contracts",
-    "shortDescription": "Solutions de conformité et veille juridique.",
-    "shortDescriptionEn": "Compliance and legal monitoring solutions.",
+    "shortDescription": "Wolters Kluwer vend un portefeuille de produits juridiques et de conformité distincts, dont une veille réglementaire assistée par IA, uniquement sur devis.",
+    "shortDescriptionEn": "Wolters Kluwer sells a portfolio of separate legal and compliance products, including AI-powered regulatory monitoring, on a quote-only basis.",
     "pricing": {
-      "free": "Aucun plan gratuit",
-      "paid": "À partir de 49€/mois"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "defaultMonthlyPrice": 49,
+    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "websiteUrl": "https://www.wolterskluwer.com",
     "tool_type": "gestion",
     "substitution_cluster_v2": "legal-contracts",

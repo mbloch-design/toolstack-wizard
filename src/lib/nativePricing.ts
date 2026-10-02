@@ -77,7 +77,10 @@ const pricingTruth = (() => {
  * catalogue, convertie et signalee comme telle par le drapeau `converted`.
  */
 export function getNativeComparePrice(tool: Tool, preferredCurrency?: Currency): NativePrice | null {
-  const candidates = (tool.pricing_v5?.plans || []).filter(
+  // The English record can carry the vendor's USD grid while the French one
+  // carries its EUR grid (vendors that publish both): look at both, then let
+  // the requested currency pick. Never a conversion.
+  const candidates = [...(tool.pricing_v5?.plans || []), ...(tool.pricing_v5En?.plans || [])].filter(
     (item) => item.isComparePlan && !item.isFree && item.nativeAmount != null
     && (item.nativeCurrency === "EUR" || item.nativeCurrency === "USD" || item.nativeCurrency === "GBP"),
   );

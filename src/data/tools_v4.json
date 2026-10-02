@@ -116107,49 +116107,38 @@
     "slug": "lottiefiles",
     "name": "LottieFiles",
     "categoryId": "creation",
-    "shortDescription": "Plateforme pour importer, prévisualiser et livrer des animations Lottie légères.",
-    "shortDescriptionEn": "Platform to import, preview, and ship lightweight Lottie animations.",
+    "shortDescription": "LottieFiles héberge, édite et exporte des animations vectorielles Lottie légères pour le web, iOS et Android, avec un palier gratuit et des plans payants pour le stockage.",
+    "shortDescriptionEn": "LottieFiles hosts, edits and exports lightweight Lottie vector animations for web, iOS and Android, with a free tier and paid plans for storage and teams.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 20€/mois environ"
+      "free": "Plan gratuit : Le format d'animation Lottie et ses bibliothèques d'exécution sont open source et gratuits ; la plateforme LottieFiles propose aussi un palier gratuit limité pour parcourir et héberger des animations.",
+      "paid": "Dès 19,99 $/mois, plan Individual."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 17.17,
     "affiliateLink": "",
     "websiteUrl": "https://lottiefiles.com",
     "logo": "",
     "category": "design-tools",
-    "longDescription": "Plateforme pour importer, prévisualiser et livrer des animations Lottie légères.",
+    "longDescription": "LottieFiles est la plateforme construite autour du format Lottie, un format ouvert basé sur JSON pour des animations vectorielles redimensionnables, affichées nativement sur le web, iOS et Android. Elle héberge une bibliothèque de plus de 250 000 animations, avec un plugin Figma pour l'export direct et des outils d'édition.\n\nLe format Lottie reste gratuit, et le palier gratuit de LottieFiles couvre l'hébergement de base. Le plan payant Individual démarre à 19,99 $ par mois et par utilisateur (facturé à l'année), et le plan Team à 24,99 $ ajoute l'historique des versions et les permissions partagées. Il convient aux designers et développeurs front-end qui ajoutent des micro-interactions animées sans les coder à la main.",
     "verdict": {
       "keepIf": [
-        "Vous utilisez régulièrement des animations Lottie dans vos projets web/mobile.",
-        "Vous cherchez une source centralisée d'animations préfaites de qualité.",
-        "Vous travaillez avec Figma, Framer ou d'autres outils intégrés."
+        "Tu as besoin d'animations légères et redimensionnables, exportées directement depuis un outil de design vers une application web ou mobile."
       ],
       "avoidIf": [
-        "Vous créez très rarement des animations interactives.",
-        "Vous préférez des outils d'animation traditionnels (After Effects, Blender).",
-        "Vous avez besoin d'une solution entièrement gratuite sans restrictions."
+        "Tu as besoin d'animations avancées avec timeline ou physique, au-delà de la lecture vectorielle standard."
       ],
-      "threshold": "LottieFiles s'impose pour les développeurs et designers qui intègrent régulièrement des animations JSON ; pour une utilisation ponctuelle ou d'autres types d'animation, d'autres outils conviennent mieux."
+      "threshold": "Le format reste gratuit ; prévois 19,99 $ par mois et par utilisateur (facturé à l'année) dès que tu as besoin de plus de stockage ou d'hébergement CDN sur LottieFiles."
     },
     "pros": [
-      "Bibliothèque massive d'animations prêtes à l'emploi.",
-      "Éditeur intégré pour la personnalisation rapide.",
-      "Intégrations directes avec outils de design populaires.",
-      "Format Lottie optimisé pour web et mobile.",
-      "Accès gratuit basique sans limite de temps."
+      "Le format d'animation et les bibliothèques d'exécution restent gratuits et open source.",
+      "L'export direct depuis Figma évite de coder les animations à la main pour un premier résultat."
     ],
     "cons": [
-      "Interface peut être chargée pour les débutants.",
-      "Plans payants nécessaires pour accès complet à la bibliothèque premium.",
-      "Courbe d'apprentissage pour créer des animations complexes.",
-      "Dépend de la qualité des animations de la communauté."
+      "Les plans payants de LottieFiles sont facturés uniquement à l'année, sans option mensuelle trouvée.",
+      "Les fonctions de collaboration d'équipe (historique des versions, rôles, commentaires) demandent le plan Team, indisponibles sur Individual."
     ],
     "useCases": [
-      "Intégrer des animations Lottie dans une application React/Vue.",
-      "Trouver des animations préfaites pour des microinteractions.",
-      "Éditer et personnaliser des animations pour votre marque.",
-      "Créer des animations pour iOS et Android à partir d'une source unique."
+      "Micro-interactions d'application : exporter une animation de chargement ou d'onboarding depuis Figma en fichier Lottie et l'afficher nativement dans une application mobile.",
+      "Bibliothèque d'animations d'équipe : une petite équipe de design souscrit au plan Team pour partager, versionner et commenter un ensemble de fichiers Lottie."
     ],
     "covers": [
       "animation-web",
@@ -116164,11 +116153,14 @@
       "Équipes front-end"
     ],
     "personas": [
-      "designer"
+      "SOFIA"
     ],
-    "soloRelevance": "Utile si le livrable associé revient souvent.",
-    "teamRelevance": "Intéressant en studio quand il standardise la production.",
-    "alternatives": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "alternatives": [
+      "rive",
+      "greensock"
+    ],
     "articles": [],
     "freeAlternative": null,
     "tool_type": "satellite",
@@ -116195,10 +116187,11 @@
     "substitution_cluster_v2": "animation-library",
     "pricing_v5": {
       "cautions": [
-        "Vérifier si un espace équipe ou une librairie privée est utilisée."
+        "Un montant de 119,99 $ par utilisateur et par mois apparaissait pour Enterprise dans une source, à côté d'une mention « contacter les ventes » ; comme Enterprise n'a pas de prix public fixe, ce plan est noté sur devis plutôt que d'utiliser ce chiffre.",
+        "Tous les plans payants sont facturés uniquement à l'année ; aucune option de facturation mensuelle n'a été trouvée pour Individual ou Team."
       ],
       "currency": "EUR",
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-10-02",
       "billing_model": "free",
       "source_domain": "lottiefiles.com",
       "price_original": 0,
@@ -116223,54 +116216,229 @@
         }
       ],
       "usage_sensitive": false,
-      "compare_plan_kind": "free",
-      "compare_plan_name": "Free",
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Individual",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://lottiefiles.com/pricing",
       "verification_status": "official_explicit",
       "price_original_currency": "EUR",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 17.17,
+      "cautionsEn": [
+        "A figure of $119.99/user/month appeared for Enterprise in one source alongside a 'contact sales' note; since Enterprise has no fixed public price, it is recorded as onQuote true rather than using that figure.",
+        "All paid plans bill annually only; no monthly billing option was found for Individual or Team."
+      ],
+      "plans": [
+        {
+          "planKey": "individual",
+          "displayName": "Individual",
+          "summary": "Par utilisateur.",
+          "featureHighlights": [
+            "2 Go de stockage, 10 Go d'hébergement CDN par mois, accès illimité aux animations Lottie premium (plus de 250 000), facturé à l'année par utilisateur."
+          ],
+          "detailsSourceUrl": "https://lottiefiles.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        },
+        {
+          "planKey": "team",
+          "displayName": "Team",
+          "summary": "Par utilisateur.",
+          "featureHighlights": [
+            "5 Go de stockage, 50 Go d'hébergement CDN par mois, fichiers d'équipe illimités, historique des versions, commentaires, rôles et permissions, administration et facturation unifiées, 600 crédits IA par mois (contre 300 sur Individual)."
+          ],
+          "detailsSourceUrl": "https://lottiefiles.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 24.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "Sur devis. Par utilisateur.",
+          "featureHighlights": [
+            "Stockage et hébergement CDN sur mesure ; pensé pour les grandes équipes qui ont besoin de plus de contrôle, de sécurité, de visibilité et d'accompagnement au démarrage."
+          ],
+          "detailsSourceUrl": "https://lottiefiles.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        }
+      ]
     },
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lottiefiles.jpg",
     "description": "Plateforme pour importer, prévisualiser et livrer des animations Lottie légères.",
-    "longDescriptionEn": "Centralized platform for creating, editing, and sharing Lottie JSON animations for web, iOS, and Android, with a library of over 400,000 reusable animations.",
-    "pricingEn": null,
-    "seo": null,
+    "longDescriptionEn": "LottieFiles is the platform built around the open, JSON-based Lottie format for scalable vector animations that render natively on web, iOS, and Android through open-source runtime libraries. It hosts a library of over 250,000 animations, a Figma plugin and other design-tool integrations for direct export, and editing tools.\n\nThe Lottie format and runtime stay free, and LottieFiles' own free tier covers basic hosting. The paid Individual plan starts at $19.99 a month per user (billed annually) once storage or CDN hosting needs grow, and the Team plan at $24.99 adds version history and shared permissions. It fits designers and front-end developers adding animated micro-interactions without hand-coding them.",
+    "pricingEn": {
+      "free": "Free plan: The Lottie animation format and runtime libraries are open source and free; LottieFiles the platform also offers a limited free tier for browsing/hosting animations.",
+      "paid": "From $19.99/mo, Individual plan."
+    },
+    "seo": {
+      "idealForFr": "Un ou une designer ou développeur front-end qui a besoin d'animations légères et redimensionnables, exportées directement depuis les outils de design vers une application web ou mobile.",
+      "idealForEn": "A designer or front-end developer who needs lightweight, scalable animations exported straight from design tools into a web or mobile app."
+    },
     "verdictEn": {
       "keepIf": [
-        "You regularly use Lottie animations in web/mobile projects.",
-        "You're looking for a central source of quality pre-made animations.",
-        "You work with Figma, Framer, or other integrated tools."
+        "You need lightweight, scalable animations exported straight from a design tool into a web or mobile app."
       ],
       "avoidIf": [
-        "You rarely create interactive animations.",
-        "You prefer traditional animation tools (After Effects, Blender).",
-        "You need a fully free solution without restrictions."
+        "You need advanced timeline or physics-based animation beyond standard vector playback."
       ],
-      "threshold": "LottieFiles makes sense for developers and designers regularly embedding JSON animations; for occasional use or other animation types, other tools fit better."
+      "threshold": "The format stays free; budget $19.99 a month per user (annual) once you need more storage or CDN hosting on LottieFiles."
     },
     "prosEn": [
-      "Massive library of ready-to-use animations.",
-      "Built-in editor for quick customization.",
-      "Direct integrations with popular design tools.",
-      "Lottie format optimized for web and mobile.",
-      "Free basic access with no time limits."
+      "The core animation format and runtime libraries are free and open source.",
+      "Direct Figma export removes the need to hand-code animations for a first result."
     ],
     "consEn": [
-      "Interface can feel cluttered for beginners.",
-      "Paid plans needed for full premium library access.",
-      "Learning curve for complex custom animations.",
-      "Depends on quality of community animations."
+      "Paid LottieFiles plans bill annually only, with no monthly option found.",
+      "Team collaboration features (version history, roles, comments) require the Team plan, unavailable on Individual."
     ],
     "useCasesEn": [
-      "Embed Lottie animations in a React/Vue app.",
-      "Find pre-made animations for microinteractions.",
-      "Edit and customize animations for your brand.",
-      "Create animations for iOS and Android from one source."
+      "App micro-interactions: export a loading spinner or onboarding animation from Figma as a Lottie file and render it natively in a mobile app.",
+      "Team animation library: a small design team subscribes to the Team plan to share, version, and comment on a shared set of Lottie files."
     ],
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 17.17,
+      "compare_plan_name": "Individual",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-02",
+      "official_source_url": "https://lottiefiles.com/pricing",
+      "source_domain": "lottiefiles.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "A figure of $119.99/user/month appeared for Enterprise in one source alongside a 'contact sales' note; since Enterprise has no fixed public price, it is recorded as onQuote true rather than using that figure.",
+        "All paid plans bill annually only; no monthly billing option was found for Individual or Team."
+      ],
+      "plans": [
+        {
+          "planKey": "individual",
+          "displayName": "Individual",
+          "summary": "Per user.",
+          "featureHighlights": [
+            "2 GB storage, 10 GB CDN hosting/month, unlimited access to premium Lottie animations (250,000+), billed annually per user."
+          ],
+          "detailsSourceUrl": "https://lottiefiles.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        },
+        {
+          "planKey": "team",
+          "displayName": "Team",
+          "summary": "Per user.",
+          "featureHighlights": [
+            "5 GB storage, 50 GB CDN hosting/month, unlimited team files, version history, feedback/comments, roles & permissions, unified admin/billing, 600 AI credits/month (vs 300 on Individual)."
+          ],
+          "detailsSourceUrl": "https://lottiefiles.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 24.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "Custom quote. Per user.",
+          "featureHighlights": [
+            "Custom storage and CDN hosting; built for larger teams needing more control, security, visibility and onboarding support."
+          ],
+          "detailsSourceUrl": "https://lottiefiles.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Le format Lottie reste gratuit et open source ; le plan LottieFiles payant (19,99 $ par utilisateur et par mois) n'est nécessaire que quand le stockage, l'hébergement ou la collaboration d'équipe augmentent.",
+        "simplicite": "Un plugin Figma exporte directement les animations en fichiers Lottie, et les bibliothèques d'exécution les affichent sans code d'animation personnalisé.",
+        "utilisation": "Diffuse bien des animations vectorielles légères et redimensionnables sur le web, iOS et Android comme annoncé, via des bibliothèques d'exécution open source.",
+        "puissance": "Couvre bien les besoins d'animation courants, mais les sources relevées ne décrivent pas de fonctions avancées de timeline ou de physique au-delà de la lecture vectorielle standard.",
+        "reversibilite": "Note neutre : le format JSON Lottie est ouvert, mais les options d'export ou de migration propres à la plateforme LottieFiles ne figurent pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The core Lottie format is free and open source, with the paid LottieFiles plan ($19.99/user/month) only needed once storage, hosting, or team collaboration scales up.",
+        "simplicite": "A Figma plugin exports animations directly as Lottie files, and the runtime libraries render them with no custom animation code needed.",
+        "utilisation": "Delivers lightweight, scalable vector animations across web, iOS, and Android as advertised, via open-source runtime libraries.",
+        "puissance": "Covers common animation needs well, but the collected sources describe no advanced timeline or physics features beyond standard vector playback.",
+        "reversibilite": "Neutral score: the Lottie JSON format itself is open, but export/migration options from the LottieFiles platform specifically are not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Plateforme d'animations Lottie",
+      "en": "Lottie animation platform"
+    },
+    "research": {
+      "dossier": "research/dossiers/lottiefiles.json",
+      "researchedOn": "2026-09-25",
+      "sources": 1
+    }
   },
   {
     "id": "lovable",
@@ -119285,70 +119453,134 @@
     "slug": "magnific",
     "name": "Magnific",
     "category": "creation",
-    "shortDescription": "Upscaler et enhancer d'images par IA : agrandit jusqu'à 16× en inventant du détail réaliste absent de l'original, avec un curseur « Creativity » qui règle la quantité de détail ajouté. Racheté par Freepik (2024), regroupé sous la marque Magnific en 2026.",
-    "shortDescriptionEn": "AI image upscaler and enhancer that enlarges up to 16x while inventing realistic detail, with a Creativity slider. Now part of Freepik.",
+    "shortDescription": "Magnific agrandit et améliore les images par IA de façon créative, intégré à la suite plus large image, vidéo et audio de Freepik.",
+    "shortDescriptionEn": "Magnific upscales and creatively enhances images with AI, bundled into Freepik's broader image, video and audio suite.",
     "description": "Upscaler et enhancer d'images par IA : agrandit jusqu'à 16× en inventant du détail réaliste absent de l'original, avec un curseur « Creativity » qui règle la quantité de détail ajouté. Racheté par Freepik (2024), regroupé sous la marque Magnific en 2026.",
-    "longDescription": "Upscaler et enhancer d'images par IA : agrandit jusqu'à 16× en inventant du détail réaliste absent de l'original, avec un curseur « Creativity » qui règle la quantité de détail ajouté. Racheté par Freepik (2024), regroupé sous la marque Magnific en 2026.",
-    "longDescriptionEn": "AI image upscaler and enhancer that enlarges up to 16x while inventing realistic detail, with a Creativity slider. Now part of Freepik.",
+    "longDescription": "Magnific (anciennement Magnific AI) agrandit et réinterprète les images de façon créative, avec des réglages ajustables de créativité, ressemblance et HDR. Ce n'est plus un upscaler autonome : il est intégré à la plateforme créative unifiée de Freepik, donc l'abonnement donne aussi accès aux modèles de génération d'image, vidéo et audio, plus une bibliothèque de plus de 250 millions de médias.\n\nLes plans démarrent à 20 $/mois pour Premium (240 000 crédits/an, partagés entre tous les outils IA de Freepik), jusqu'à 110 $/mois pour Pro Starter, niveau agence. Pas de plan gratuit. Convient à une designer qui a besoin d'images agrandies prêtes pour le client et accepte de partager un pool de crédits avec d'autres usages IA.",
+    "longDescriptionEn": "Magnific (formerly Magnific AI) upscales and creatively reimagines images with adjustable creativity, resemblance and HDR controls. It is no longer a standalone upscaler: it was folded into Freepik's unified creative platform, so a subscription also grants access to image, video and audio generation models plus a stock library of over 250 million assets.\n\nPlans start at $20/month for Premium (240,000 credits/year, shared across all Freepik AI tools), up to $110/month for Pro Starter aimed at agency-level output. There is no free plan. It fits a designer who needs client-ready upscaled images and is fine sharing a credit pool with other AI generation needs.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 20 $/mois, plan Premium."
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "No free plan.",
+      "paid": "From $20/mo, Premium plan."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 17.17,
     "pricing_v5": {
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Les prix affichés excluent la TVA et les taxes locales ; un tarif promotionnel à -50 % est affiché à côté du prix normal pour la facturation annuelle, et les prix mensuels normaux s'appliquent sans engagement.",
+        "Les crédits sont mutualisés sur l'année entre les outils image, vidéo et audio de Freepik plutôt que réservés à l'upscaler, donc la capacité réelle d'upscaling par plan varie selon les autres usages."
       ],
-      "verified_on": "2026-05-11",
+      "verified_on": "2026-09-25",
       "source_domain": "magnific.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Premium",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://magnific.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://www.magnific.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 17.17,
+      "cautionsEn": [
+        "Displayed prices exclude VAT and local taxes; a 50%-off promotional rate is shown alongside the regular price for annual billing, and regular monthly prices apply without commitment.",
+        "Credits are pooled annually across Freepik's image, video and audio tools rather than dedicated solely to the upscaler, so real upscaling capacity per plan varies with other usage."
+      ],
+      "plans": [
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "summary": "Offre de lancement à 7,25 $/mois sur la première période ; prix de renouvellement non publié.",
+          "featureHighlights": [
+            "240 000 crédits/an (environ 3 200 images), accès aux modèles de génération d'image, vidéo et audio, plus plus de 250 millions de médias libres de droits."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 20,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": null,
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "premium-plus",
+          "displayName": "Premium+",
+          "summary": "Offre de lancement à 33,75 $/mois sur la première période ; prix de renouvellement non publié.",
+          "featureHighlights": [
+            "600 000 crédits/an (environ 8 000 images), licence commerciale, accès illimité au modèle Nano Banana 2."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 45,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": null,
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "pro-starter",
+          "displayName": "Pro Starter",
+          "summary": "Offre de lancement à 82,50 $/mois sur la première période ; prix de renouvellement non publié.",
+          "featureHighlights": [
+            "1,5 million de crédits/an, destiné à une production de contenu de niveau professionnel/agence."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 110,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": null,
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
     },
-    "affiliateLink": "https://magnific.com",
-    "websiteUrl": "https://magnific.com",
+    "affiliateLink": "https://www.magnific.com",
+    "websiteUrl": "https://www.magnific.com",
     "logo": "https://logo.clearbit.com/magnific.com",
-    "seo": {},
+    "seo": {
+      "idealForFr": "Une designer qui doit agrandir et améliorer des images générées par IA ou en basse résolution pour un rendu livrable au client.",
+      "idealForEn": "A designer who needs to upscale and enhance AI-generated or low-resolution images for client-ready output."
+    },
     "pros": [
-      "Upscaling très poussé (jusqu'à 16×).",
-      "Détail réaliste ajouté par IA.",
-      "Contrôle via le curseur Creativity.",
-      "Intégré à l'écosystème Freepik."
+      "Regroupe l'upscaling avec une large suite de génération IA et une grande bibliothèque de médias sur un seul abonnement.",
+      "Réglages fins de créativité, ressemblance et HDR pour ajuster le résultat de l'amélioration.",
+      "Premium+ inclut une licence commerciale et un accès illimité à un modèle phare."
     ],
     "prosEn": [
-      "Very advanced upscaling (up to 16×).",
-      "Realistic AI-added detail.",
-      "Control via the Creativity slider.",
-      "Integrated into the Freepik ecosystem."
+      "Bundles upscaling with a broad AI generation suite and large stock library on one subscription.",
+      "Fine-grained creativity, resemblance and HDR controls for tuning the enhancement result.",
+      "Premium+ includes a commercial license and unlimited access to a flagship model."
     ],
     "cons": [
-      "Fonctionnement à crédits.",
-      "Le détail inventé peut s'écarter de l'original.",
-      "Pas de palier gratuit permanent."
+      "Pas de plan gratuit ; tester l'outil nécessite un abonnement payant.",
+      "Les crédits sont partagés entre génération d'image, vidéo et audio, donc un usage intensif d'upscaling entre en concurrence avec les autres usages."
     ],
     "consEn": [
-      "Credit-based system.",
-      "Invented detail can diverge from the original.",
-      "No permanent free tier."
+      "No free plan; testing requires a paid subscription.",
+      "Credits are shared across image, video and audio generation, so heavy upscaling use competes with other usage."
     ],
     "useCases": [
-      "Agrandir un visuel pour l'impression ou le web.",
-      "Réhausser le détail d'une image générée.",
-      "Préparer des rendus haute résolution."
+      "Agrandir : transformer une image générée par IA en basse résolution en fichier prêt à imprimer grâce aux réglages de créativité et HDR.",
+      "Améliorer : réinterpréter une photo client avec des réglages de ressemblance ajustables, sur un seul abonnement incluant les autres outils IA de Freepik."
     ],
     "useCasesEn": [
-      "Upscale a visual for print or web.",
-      "Boost the detail of a generated image.",
-      "Prepare high-resolution renders."
+      "Upscale: turn a low-resolution AI-generated image into a print-ready file using creativity and HDR controls.",
+      "Enhance: reimagine a client photo with adjustable resemblance settings while staying on a single subscription with Freepik's other AI tools."
     ],
     "covers": [
       "creator-workflow"
@@ -119359,40 +119591,49 @@
       "Studios visuels"
     ],
     "personas": [
-      "lina"
+      "SOFIA"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "krea-ai",
+      "figma-weave",
+      "leonardo-ai",
+      "firefly"
+    ],
     "verdict": {
       "keepIf": [
-        "Vous voulez agrandir des images en gardant/inventant du détail.",
-        "Vous travaillez des visuels haute résolution.",
-        "Vous voulez contrôler la quantité de détail ajouté."
+        "Tu veux de l'upscaling d'image par IA regroupé avec des outils de génération image, vidéo et audio plus larges sur un seul abonnement."
       ],
       "avoidIf": [
-        "Un upscaler basique gratuit vous suffit.",
-        "Vous voulez une fidélité stricte à l'original (sans détail inventé).",
-        "Vous n'agrandissez que rarement des images."
+        "Tu as seulement besoin d'upscaling dédié et tu ne veux pas payer pour un pool de crédits partagé avec d'autres outils IA."
       ],
-      "threshold": "Magnific s'impose pour de l'upscaling créatif haut de gamme ; pour un agrandissement fidèle et occasionnel, un upscaler plus simple suffit."
+      "threshold": "Premium coûte 240 $/an au tarif mensuel normal ; compare ce coût au nombre d'images à agrandir réellement chaque mois.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le prix annuel affiché (par exemple 7,25 $/mois pour Premium) est un tarif promotionnel à -50 % ; le prix mensuel normal sans engagement est plus élevé (20 $/mois), donc vérifie quel tarif s'applique avant de t'abonner."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
-        "You want to upscale images while keeping/inventing detail.",
-        "You work with high-resolution visuals.",
-        "You want to control how much detail is added."
+        "You want AI image upscaling bundled with broader image, video and audio generation tools on one subscription."
       ],
       "avoidIf": [
-        "A basic free upscaler is enough.",
-        "You want strict fidelity to the original (no invented detail).",
-        "You rarely upscale images."
+        "You only need dedicated upscaling and don't want to pay for a shared credit pool covering other AI tools."
       ],
-      "threshold": "Magnific makes sense for high-end creative upscaling; for faithful, occasional enlargement, a simpler upscaler suffices."
+      "threshold": "Premium costs $240/year at the regular monthly rate; compare that to how many images per month you actually need upscaled.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The annual price shown (e.g. $7.25/month for Premium) is a 50%-off promotional rate; the regular monthly price without commitment is higher ($20/month), so check which rate applies before subscribing."
+        }
+      ]
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "soloRelevance": "high",
+    "teamRelevance": "low",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
@@ -119414,7 +119655,124 @@
     "substitution_cluster_v2": "ai-image-enhancement",
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/magnific.jpg",
-    "force_silence": false
+    "force_silence": false,
+    "lifecycle": {
+      "status": "renamed",
+      "note": {
+        "en": "Magnific AI's standalone upscaler was folded into a unified Freepik/Magnific creative platform (single credit-based subscription) as of 2026; magnific.ai now redirects to magnific.com.",
+        "fr": "L'upscaler autonome de Magnific AI a été intégré dans une plateforme créative unifiée Freepik/Magnific (abonnement unique à crédits) depuis 2026 ; magnific.ai redirige désormais vers magnific.com."
+      },
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 17.17,
+      "compare_plan_name": "Premium",
+      "compare_plan_kind": "account",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.magnific.com/pricing",
+      "source_domain": "magnific.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "Displayed prices exclude VAT and local taxes; a 50%-off promotional rate is shown alongside the regular price for annual billing, and regular monthly prices apply without commitment.",
+        "Credits are pooled annually across Freepik's image, video and audio tools rather than dedicated solely to the upscaler, so real upscaling capacity per plan varies with other usage."
+      ],
+      "plans": [
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "summary": "Introductory offer at $7.25/mo for the first term; renewal price not published.",
+          "featureHighlights": [
+            "240,000 credits/year (~3,200 images), access to image, video and audio generation models plus 250M+ stock assets."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 20,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": null,
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "premium-plus",
+          "displayName": "Premium+",
+          "summary": "Introductory offer at $33.75/mo for the first term; renewal price not published.",
+          "featureHighlights": [
+            "600,000 credits/year (~8,000 images), commercial license, unlimited access to the Nano Banana 2 model."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 45,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": null,
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "pro-starter",
+          "displayName": "Pro Starter",
+          "summary": "Introductory offer at $82.50/mo for the first term; renewal price not published.",
+          "featureHighlights": [
+            "1.5M credits/year, aimed at professional/agency-level content production."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 110,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": null,
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Le plan d'entrée Premium regroupe l'upscaling avec une large suite IA et une bibliothèque de médias, mais à 20 $/mois avec des crédits partagés entre les outils, un usage intensif d'upscaling peut épuiser le pool rapidement.",
+        "simplicite": "Les réglages de créativité, ressemblance et HDR donnent un résultat utilisable rapidement sans formation spécialisée.",
+        "utilisation": "Assure l'agrandissement d'image et la réinterprétation créative comme annoncé, avec les modèles de génération de Freepik en plus.",
+        "puissance": "Premium+ débloque une licence commerciale et un accès illimité à un modèle phare, ce qui en fait une option solide pour un usage professionnel.",
+        "reversibilite": "Note neutre : les formats d'export et la portabilité des données ne figurent pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The entry Premium plan bundles upscaling with a broad AI suite and stock library, but at $20/month with credits shared across tools, heavy upscaling users may exhaust their pool quickly.",
+        "simplicite": "Creativity, resemblance and HDR controls give a usable result quickly without specialist training.",
+        "utilisation": "Delivers image upscaling and creative reimagining as advertised, bundled with Freepik's generation models.",
+        "puissance": "Premium+ unlocks a commercial license and unlimited access to a flagship model, positioning it as a strong option for professional output.",
+        "reversibilite": "Neutral score: export formats and data portability are not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Agrandisseur d'image par IA",
+      "en": "AI image upscaler"
+    },
+    "research": {
+      "dossier": "research/dossiers/magnific.json",
+      "researchedOn": "2026-09-25",
+      "sources": 1
+    }
   },
   {
     "id": "magnific-ai",
@@ -126664,44 +127022,93 @@
     "slug": "microsoft-dynamics-365-finance-operations",
     "name": "Microsoft Dynamics 365 Finance and Operations",
     "category": "erp",
-    "shortDescription": "Microsoft Dynamics 365 Finance and Operations est un système ERP ou finance à connecter prudemment au reste de la stack.",
-    "shortDescriptionEn": "Cloud-based financial and operations management suite for large enterprises, integrating accounting, cash management, supply chain, and regulatory compliance with AI and automation.",
+    "shortDescription": "Module ERP cloud pour la comptabilité, la trésorerie et la conformité des grandes entreprises, à partir de 210 dollars par utilisateur et par mois.",
+    "shortDescriptionEn": "Cloud ERP module for enterprise accounting, cash management, and compliance, priced per user from $210 a month.",
     "description": "Microsoft Dynamics 365 Finance and Operations sert de référentiel finance, achats ou opérations. Dans ToolTrim, on le traite comme une brique structurante : utile quand les données fournisseurs, factures, bons de commande ou centres de coûts doivent rester alignés, mais trop lourd si le besoin est seulement de suivre quelques dépenses.",
-    "longDescription": "Microsoft Dynamics 365 Finance and Operations sert de référentiel finance, achats ou opérations. Dans ToolTrim, on le traite comme une brique structurante : utile quand les données fournisseurs, factures, bons de commande ou centres de coûts doivent rester alignés, mais trop lourd si le besoin est seulement de suivre quelques dépenses.",
-    "longDescriptionEn": "Cloud-based financial and operations management suite for large enterprises, integrating accounting, cash management, supply chain, and regulatory compliance with AI and automation.",
+    "longDescription": "Dynamics 365 Finance est le module ERP cloud de Microsoft pour la comptabilité, la trésorerie et la conformité réglementaire. Ajouter Supply Chain Management ou une autre application demande une licence séparée, pas une mise à niveau groupée. Le palier Premium ajoute des crédits Copilot.\n\nLes licences complètes démarrent à 210 $ par mois, ou 300 $ par mois pour Premium. D'autres types de licences et des modules complémentaires existent, mais leurs prix ne sont pas publiés sur la page officielle. Depuis janvier 2026, Microsoft applique strictement la conformité des licences : une mauvaise affectation peut couper l'accès. Cette offre vise les grandes organisations avec une équipe finance dédiée, pas les indépendants ou petites équipes.",
+    "longDescriptionEn": "Dynamics 365 Finance is Microsoft's cloud ERP module for core accounting, cash management, and regulatory compliance. Each license covers one function: adding Supply Chain Management or another app means a separate add-on license, not a bundled upgrade. The Premium tier adds Copilot AI credits.\n\nFull licenses start at $210 a month, or $300 a month for Premium. Other license types and per-app add-ons exist, but their prices are not published on the official page. Since January 2026, Microsoft strictly enforces license compliance, so a misassigned seat can lose access. This targets large organizations with a dedicated finance team, not freelancers or small teams.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 210 $/mois, plan Finance (single app)."
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom pricing / no public baseline"
+      "free": "No free plan.",
+      "paid": "From $210/mo, Finance (single app) plan."
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 180.33,
     "pricingTiers": {
       "free": "Non communiqué",
       "paid": "Sur devis / prix non public"
     },
     "pricing_v5": {
-      "compare_price_monthly_eur": 0,
-      "compare_plan_name": "Prix non public",
-      "compare_plan_kind": "custom",
-      "price_reliability": "official_context_required",
-      "usage_sensitive": true,
+      "compare_price_monthly_eur": 180.33,
+      "compare_plan_name": "Finance (single app)",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "usage_sensitive": false,
       "location_sensitive": false,
       "cautions": [
-        "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
+        "Depuis le 15 janvier 2026, Microsoft applique la conformité des licences : les utilisateurs sans la bonne licence perdent l'accès aux applications Dynamics 365 Finance & Operations.",
+        "Les prix de la page officielle sont donnés à titre indicatif et peuvent différer du prix de liste réel selon la devise, le pays et des facteurs régionaux ; le prix réel apparaît au moment du paiement."
       ],
-      "source_domain": "dynamics.microsoft.com",
-      "verified_on": "2026-05-02",
-      "official_source_url": "https://dynamics.microsoft.com/finance",
-      "verification_status": "needs_official_quote"
+      "source_domain": "microsoft.com",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.microsoft.com/en-us/dynamics-365/products/finance/pricing",
+      "verification_status": "official_explicit",
+      "cautionsEn": [
+        "As of January 15, 2026, Microsoft began enforcing license compliance: users without the correct license lose access to Dynamics 365 Finance & Operations applications.",
+        "Prices on the official page are for informational purposes only and may not reflect the actual list price due to currency, country and regional factors; the real price appears at checkout."
+      ],
+      "plans": [
+        {
+          "planKey": "finance-single-app",
+          "displayName": "Finance (single app)",
+          "summary": "Par utilisateur.",
+          "featureHighlights": [
+            "210 $ par utilisateur et par mois, facturé à l'année, confirmé sur la page tarifs officielle de Microsoft. Microsoft propose aussi d'autres types de licences et des modules complémentaires par application (par exemple Supply Chain Management en plus de Finance), mais leurs prix ne sont pas publiés sur cette page tarifs officielle de Finance."
+          ],
+          "detailsSourceUrl": "https://www.microsoft.com/en-us/dynamics-365/products/finance/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 210,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "finance-premium",
+          "displayName": "Finance Premium",
+          "summary": "Par utilisateur.",
+          "featureHighlights": [
+            "300 $ par utilisateur et par mois, facturé à l'année, confirmé sur la page tarifs officielle de Microsoft. Inclut 1 000 crédits Copilot par utilisateur et par mois (non inclus sur le plan Finance de base)."
+          ],
+          "detailsSourceUrl": "https://www.microsoft.com/en-us/dynamics-365/products/finance/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 300,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
     },
     "affiliateLink": "https://dynamics.microsoft.com/finance",
     "websiteUrl": "https://dynamics.microsoft.com/finance",
     "logo": "",
     "seo": {
-      "metaDescription": "Microsoft Dynamics 365 Finance and Operations : fiche ToolTrim avec usage, limites, alternatives et points de vigilance pour décider si l'outil mérite sa place dans votre stack."
+      "metaDescription": "Microsoft Dynamics 365 Finance and Operations : fiche ToolTrim avec usage, limites, alternatives et points de vigilance pour décider si l'outil mérite sa place dans votre stack.",
+      "idealForFr": "Un ou une responsable finance ou ops dans une organisation déjà équipée Microsoft et qui a besoin d'une licence ERP multi-module, pas un indépendant ou une petite équipe.",
+      "idealForEn": "A finance or ops lead inside a larger organization that already runs on Microsoft's stack and needs multi-module ERP licensing, not a freelancer or small team."
     },
     "articles": [],
     "covers": [
@@ -126710,7 +127117,7 @@
     ],
     "freeAlternative": null,
     "soloRelevance": "low",
-    "teamRelevance": "high",
+    "teamRelevance": "low",
     "bestFor": [
       "finance",
       "ops",
@@ -126723,68 +127130,65 @@
       "Directeurs financiers",
       "Contrôleurs de gestion"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "netsuite",
+      "sap-s4hana",
+      "sage-intacct",
+      "oracle-fusion-cloud"
+    ],
     "verdict": {
       "keepIf": [
-        "Votre groupe a une comptabilité complexe et multi-entités.",
-        "Vous avez besoin d'une intégration complète Finance-Supply Chain.",
-        "La conformité réglementaire et la traçabilité sont critiques."
+        "Ton organisation utilise déjà l'écosystème Microsoft et dispose d'une équipe finance dédiée pour gérer une licence ERP multi-module."
       ],
       "avoidIf": [
-        "Vous êtes une PME cherchant une solution légère.",
-        "Votre budget d'implémentation est limité.",
-        "Vous avez une structure financière simple et centralisée."
+        "Tu es indépendant ou en petite équipe et tu cherches un simple logiciel de comptabilité."
       ],
-      "threshold": "D365 Finance est un choix d'entreprise pour les organisations complexes ; une PME sans besoins multi-juridiques trouvera mieux ailleurs."
+      "threshold": "Prévois au moins 210 $ par utilisateur et par mois pour une licence Finance complète, ou 300 $ par utilisateur et par mois pour Finance Premium ; chaque application supplémentaire est une licence complémentaire séparée, dont le prix n'est pas publié sur la page officielle.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Ajouter une deuxième application Dynamics 365 est une licence complémentaire séparée par utilisateur, non incluse dans la licence de base et dont le prix n'est pas publié sur la page officielle ; une mauvaise affectation de licence peut couper l'accès complètement depuis janvier 2026."
+        }
+      ]
     },
     "verdictEn": {
       "keepIf": [
-        "Your group has complex, multi-entity accounting.",
-        "You need full Finance-Supply Chain integration.",
-        "Regulatory compliance and audit trails are critical."
+        "Your organization already runs on Microsoft's stack and has a dedicated finance team to manage multi-module ERP licensing."
       ],
       "avoidIf": [
-        "You are an SME looking for a lightweight solution.",
-        "Your implementation budget is limited.",
-        "You have a simple, centralized financial structure."
+        "You are a freelancer or a small team looking for simple accounting software."
       ],
-      "threshold": "D365 Finance is an enterprise choice for complex organisations; an SME without multi-jurisdictional needs will find better options elsewhere."
+      "threshold": "Budget at least $210 per user per month for one full Finance license, or $300 per user per month for Finance Premium; each additional app is a separate add-on license at a price not published on the official page.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Adding a second Dynamics 365 app is a separate per-user add-on license, not included in the base license and not priced on the official page; a misassigned license can cut off access entirely since January 2026."
+        }
+      ]
     },
     "pros": [
-      "Écosystème Microsoft intégré (Teams, Excel, Power BI).",
-      "Scalabilité sans limite pour les grands groupes.",
-      "Conformité et audit natifs (multi-pays, multi-devise).",
-      "IA et bots pour l'automatisation comptable."
+      "Couvre comptabilité, trésorerie et conformité dans un seul module sous licence.",
+      "Le palier Premium intègre directement des crédits d'IA Copilot dans le flux de travail finance."
     ],
     "prosEn": [
-      "Integrated Microsoft ecosystem (Teams, Excel, Power BI).",
-      "Limitless scalability for large enterprises.",
-      "Native compliance and audit (multi-country, multi-currency).",
-      "AI and bots for accounting automation."
+      "Covers accounting, cash management, and compliance in one licensed module.",
+      "The Premium tier bundles AI (Copilot) credits directly into the finance workflow."
     ],
     "cons": [
-      "Coût de licence élevé pour les petites équipes.",
-      "Implémentation longue et coûteuse (200k–500k+).",
-      "Courbe d'apprentissage importante.",
-      "Coûts de maintenance et support élevés."
+      "Les licences utilisateur complètes démarrent à 210 $ par mois, avant tout module supplémentaire.",
+      "L'application stricte des licences depuis janvier 2026 peut couper l'accès en cas de mauvaise affectation."
     ],
     "consEn": [
-      "High license costs for small teams.",
-      "Long and expensive implementation (200k–500k+).",
-      "Steep learning curve.",
-      "High maintenance and support costs."
+      "Full user licenses start at $210 a month, before adding any second app.",
+      "Strict license enforcement since January 2026 can cut access for misassigned seats."
     ],
     "useCases": [
-      "Consolider la comptabilité de plusieurs filiales.",
-      "Automatiser les rapprochements bancaires et les écritures comptables.",
-      "Gérer la conformité fiscale et sociale multi-pays.",
-      "Piloter la trésorerie et les liquidités en temps réel."
+      "Comptabilité générale : centraliser la comptabilité, la trésorerie et le reporting réglementaire d'une entité sur le plan Finance (single app).",
+      "Ajout chaîne d'approvisionnement : étendre Finance avec le module Supply Chain Management pour couvrir achats et stocks ; son prix est un module complémentaire par application, non publié sur la page tarifs officielle de Finance."
     ],
     "useCasesEn": [
-      "Consolidate accounting across multiple subsidiaries.",
-      "Automate bank reconciliation and journal entries.",
-      "Manage multi-country tax and regulatory compliance.",
-      "Drive cash flow and liquidity management in real time."
+      "Core accounting: centralize accounting, cash management, and regulatory reporting for one legal entity on the Finance (single app) plan.",
+      "Supply chain add-on: extend Finance with the Supply Chain Management module to cover purchasing and inventory; its price is a separate per-app add-on not published on the official Finance pricing page."
     ],
     "tool_type": "metier",
     "substitutable": true,
@@ -126825,9 +127229,105 @@
       "default_decision_lane": "question"
     },
     "pivot_integration_source": true,
-    "personas": [],
+    "personas": [
+      "CLAIRE"
+    ],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-dynamics-365-finance-operations.jpg"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-dynamics-365-finance-operations.jpg",
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 180.33,
+      "compare_plan_name": "Finance (single app)",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.microsoft.com/en-us/dynamics-365/products/finance/pricing",
+      "source_domain": "microsoft.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "As of January 15, 2026, Microsoft began enforcing license compliance: users without the correct license lose access to Dynamics 365 Finance & Operations applications.",
+        "Prices on the official page are for informational purposes only and may not reflect the actual list price due to currency, country and regional factors; the real price appears at checkout."
+      ],
+      "plans": [
+        {
+          "planKey": "finance-single-app",
+          "displayName": "Finance (single app)",
+          "summary": "Per user.",
+          "featureHighlights": [
+            "$210/user/month, paid yearly, confirmed on the official Microsoft pricing page. Microsoft also sells other license types and per-app add-on modules (e.g. Supply Chain Management alongside Finance), but their prices are not published on this official Finance pricing page."
+          ],
+          "detailsSourceUrl": "https://www.microsoft.com/en-us/dynamics-365/products/finance/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 210,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        },
+        {
+          "planKey": "finance-premium",
+          "displayName": "Finance Premium",
+          "summary": "Per user.",
+          "featureHighlights": [
+            "$300/user/month, paid yearly, confirmed on the official Microsoft pricing page. Includes 1,000 Copilot credits per user per month (not included on the base Finance plan)."
+          ],
+          "detailsSourceUrl": "https://www.microsoft.com/en-us/dynamics-365/products/finance/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 300,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-09-25",
+          "lastConfirmedOn": "2026-09-25"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 2,
+      "simplicite": 2,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Les licences complètes démarrent à 210 $ par utilisateur et par mois, et chaque application supplémentaire est une licence complémentaire par utilisateur : difficile à justifier pour un indépendant ou une petite équipe face à des outils de comptabilité moins chers.",
+        "simplicite": "Le modèle de licence combine plusieurs types de siège (utilisateur complet, plus d'autres types de licences et des modules par application) avec une application stricte depuis janvier 2026, ce qui demande une configuration soignée.",
+        "utilisation": "Assure les fonctions annoncées de comptabilité, trésorerie et conformité dans le module sous licence, comme décrit sur la page tarifs.",
+        "puissance": "ERP de niveau entreprise avec un module optionnel Supply Chain Management et des crédits d'IA Copilot sur le palier Premium, pensé pour les grandes organisations.",
+        "reversibilite": "Note neutre : les options d'export et de portabilité des données ne figurent pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Full user licenses start at $210/user/month, and each additional app is a separate per-user add-on license: hard to justify for a solo user or small team against cheaper accounting tools.",
+        "simplicite": "The licensing model spans multiple seat types (full user plus other license types and per-app add-ons) and strict compliance enforcement since January 2026, which takes real setup care to get right.",
+        "utilisation": "Delivers the advertised core accounting, cash management, and compliance functions within the licensed module, as described on the pricing page.",
+        "puissance": "Enterprise-grade ERP with an optional Supply Chain Management module and Copilot AI credits on the Premium tier, built for large organizations.",
+        "reversibilite": "Neutral score: data export and portability options are not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "ERP financier d'entreprise",
+      "en": "Enterprise finance ERP"
+    },
+    "research": {
+      "dossier": "research/dossiers/microsoft-dynamics-365-finance-operations.json",
+      "researchedOn": "2026-09-25",
+      "sources": 2
+    }
   },
   {
     "id": "microsoft-dynamics-business-central",
@@ -134911,6 +135411,291 @@
     "description": "Newton 3 (et son successeur Newton 4) est un moteur de simulation physique 2D pour After Effects qui fait se comporter les calques comme des objets solides avec gravité, collision, friction et ressorts. Permite d'appliquer des forces réalistes (rebonds, oscillations) à du texte, formes et éléments sans keyframing manuel.\n\nFonctions clés : Simulation physique 2D (gravité, collision, friction) ; 6 types d'objets (statique, dynamique, cinématique, AEmatic, dormant, dead) ; 6 types de joints (distance, pivot, piston, ressort, roue, blob) ; Animation automatique des keyframes (conversion en keyframes AE standard) ; Contrôle des propriétés physiques (rebond, amortissement, masse) ; Export et animation de résultats sans recalcul.\n\nNewton 3 justifie son investissement pour animations physiques fréquentes ; pour un usage occasionnel, les effets natifs After Effects suffisent.",
     "ogImageUrl": "/og-screenshots/ae-newton3.jpg",
     "galleryImages": []
+  },
+  {
+    "id": "ae-newton4",
+    "name": "Newton 4",
+    "slug": "ae-newton4",
+    "category": "design-tools",
+    "shortDescription": "Newton 4 est un plugin After Effects qui donne aux calques une physique 2D réaliste (gravité, collisions, ressorts) sans animation manuelle, en licence à vie.",
+    "longDescription": "Newton 4 est un plugin de simulation physique 2D pour After Effects : il fait se comporter le texte, les formes et les autres calques comme des objets solides, avec gravité, collisions, friction et ressorts, sans animation manuelle par images clés. C'est la version actuelle, qui succède à Newton 3.\n\nNewton 4 est un achat unique à 249,99 $, avec une mise à niveau fidélité à 99,99 $ pour les propriétaires de Newton 3 ; un essai gratuit est disponible, avec des exports limités à 25 images. Il convient à un motion designer qui anime dans After Effects et veut un mouvement piloté par la physique, sans valeur hors de ce logiciel.",
+    "affiliateLink": "https://aescripts.com/newton",
+    "websiteUrl": "https://aescripts.com/newton",
+    "defaultMonthlyPrice": 0,
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 249,99 $ (licence à vie), plan Newton 4 (current version)."
+    },
+    "logo": "",
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "verdict": {
+      "keepIf": [
+        "Tu animes dans After Effects et tu as régulièrement besoin d'un mouvement réaliste piloté par la physique, comme des rebonds, collisions ou ressorts."
+      ],
+      "avoidIf": [
+        "Tu n'utilises pas After Effects, ou tu n'as besoin de ce type de mouvement qu'occasionnellement et peux l'animer à la main."
+      ],
+      "threshold": "À 249,99 $ en achat unique (ou 99,99 $ pour la mise à niveau depuis Newton 3), ça devient rentable dès que l'animation pilotée par la physique revient régulièrement dans ton travail de motion design."
+    },
+    "pros": [
+      "Remplace l'animation manuelle par images clés pour les rebonds, collisions et ressorts par une simulation physique.",
+      "Licence à vie, sans abonnement récurrent, avec une mise à niveau à prix réduit pour les propriétaires de Newton 3."
+    ],
+    "cons": [
+      "Les exports de l'essai gratuit sont limités à 25 images, trop court pour valider un plan complet avant d'acheter.",
+      "Fonctionne uniquement dans After Effects, sans usage autonome."
+    ],
+    "useCases": [
+      "Cas d'usage : faire rebondir et entrer en collision de manière réaliste du texte ou des formes animées pour une intro de motion design, sans animer chaque rebond à la main.",
+      "Cas d'usage : ajouter une oscillation type ressort à un élément d'interface ou à une révélation de logo dans un projet After Effects existant."
+    ],
+    "covers": [
+      "animation-2d-3d",
+      "motion-design",
+      "simulation"
+    ],
+    "relevantFor": [
+      "Motion designers avancés",
+      "Animateurs After Effects",
+      "VFX artists"
+    ],
+    "alternatives": [],
+    "seo": {
+      "metaDescription": "Newton 3 en 2026 : le moteur de physique 2D pour After Effects, prix (achat unique) et à qui ça sert. Le verdict ToolTrim.",
+      "idealForFr": "Motion designers qui travaillent dans After Effects et ont besoin d'un mouvement réaliste piloté par la physique (rebonds, collisions, ressorts) sans animation manuelle par images clés.",
+      "idealForEn": "Motion designers working in After Effects who need realistic physics-driven motion (bounces, collisions, springs) without manual keyframing."
+    },
+    "articles": [],
+    "timeGainedHoursPerMonth": 4,
+    "freeAlternative": null,
+    "personas": [
+      "SOFIA"
+    ],
+    "tool_type": "plugin",
+    "substitutable": false,
+    "host_app": "adobe-after-effects",
+    "bundle_parent": null,
+    "verticals": [
+      "motion-video"
+    ],
+    "functional_needs": [
+      "animation-2d-3d",
+      "effets-visuels",
+      "motion-design"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [
+      "pas-de-remplacement-valide",
+      "auto-replace-bloqué",
+      "non-substituable"
+    ],
+    "prescription_context_questions": [
+      "brand_assets_needed",
+      "team_requirement",
+      "presentation_requirement"
+    ],
+    "substitution_cluster_v2": "plugin-after-effects",
+    "pricing_v5": {
+      "cautions": [
+        "Newton 3 n'est plus la version en vente actuelle ; la page officielle vend désormais Newton 4 à 249,99 $ en achat unique, avec un prix de mise à niveau fidélité à 99,99 $ pour les propriétaires de Newton 3 (150,00 $ depuis Newton 2). Aucun prix public pour Newton 3 seul ne figure sur la page en ligne.",
+        "Un essai gratuit pleinement fonctionnel est disponible pour Newton 4, avec des exports limités à 25 images ; c'est un essai limité en fonctionnalités, pas dans le temps, donc il n'est pas enregistré dans pricing.trial."
+      ],
+      "verified_on": "2026-10-02",
+      "source_domain": "aescripts.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Newton 4 (current version)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://aescripts.com/newton/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0,
+      "cautionsEn": [
+        "Newton 3 is no longer the current sale version; the official page now sells Newton 4 at 249.99 USD one-time, with a 99.99 USD loyalty upgrade price for Newton 3 owners (150.00 USD from Newton 2). No public price for standalone Newton 3 remains on the live page.",
+        "A fully functional free trial is available for Newton 4, with exports limited to 25 frames; this is a feature-limited trial, not a time-limited one, so it is not recorded in pricing.trial."
+      ],
+      "plans": [
+        {
+          "planKey": "newton4",
+          "displayName": "Newton 4 (current version)",
+          "summary": "Licence à vie, paiement unique.",
+          "featureHighlights": [
+            "Perpetual license, no subscription; fully functional free trial available (export limited to 25 frames); 50% student/faculty discount with valid ID."
+          ],
+          "detailsSourceUrl": "https://aescripts.com/newton/",
+          "pricingUnit": "one_time",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 249.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        },
+        {
+          "planKey": "newton3-to-4-upgrade",
+          "displayName": "Newton 3 to 4 upgrade",
+          "summary": "Licence à vie, paiement unique.",
+          "featureHighlights": [
+            "Discounted loyalty upgrade price for existing Newton 3 license owners (upgrade from Newton 2 is 150.00 USD)."
+          ],
+          "detailsSourceUrl": "https://aescripts.com/newton/",
+          "pricingUnit": "one_time",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        }
+      ]
+    },
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": "Couche non substituable par défaut.",
+      "requires_context_questions": true
+    },
+    "shortDescriptionEn": "Newton 4 is an After Effects plugin that gives layers realistic 2D physics (gravity, collisions, springs) without manual keyframing, sold as a one-time license.",
+    "longDescriptionEn": "Newton 4 is a 2D physics simulation plugin for After Effects: it makes text, shape and other layers behave like solid objects, with gravity, collisions, friction and springs, applying realistic bounces and oscillations without manual keyframing. It is the current version, succeeding Newton 3.\n\nNewton 4 is a one-time purchase at 249.99 USD, with a 99.99 USD discounted loyalty upgrade for existing Newton 3 owners (150.00 USD from Newton 2); a fully functional free trial is available, with exports capped at 25 frames. It suits a motion designer who animates directly in After Effects and wants physics-driven motion, and adds no value outside that software.",
+    "prosEn": [
+      "Replaces manual keyframing for bounces, collisions and springs with a physics simulation.",
+      "One-time license with no recurring subscription fee, and a discounted upgrade path for Newton 3 owners."
+    ],
+    "consEn": [
+      "The free trial exports are capped at 25 frames, too short to validate a full shot before buying.",
+      "Works only inside After Effects, with no standalone use."
+    ],
+    "useCasesEn": [
+      "Use case: make animated text or shape layers bounce and collide realistically for a motion graphics intro, without hand-keyframing each bounce.",
+      "Use case: add spring-like oscillation to a UI element or logo reveal inside an existing After Effects project."
+    ],
+    "verdictEn": {
+      "keepIf": [
+        "You animate in After Effects and regularly need realistic physics-driven motion like bounces, collisions or springs."
+      ],
+      "avoidIf": [
+        "You don't use After Effects, or you only need this kind of motion occasionally and can hand-keyframe it."
+      ],
+      "threshold": "At 249.99 USD one-time (or 99.99 USD to upgrade from Newton 3), it pays off once physics-driven animation becomes a recurring part of your motion design work."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $249.99 (lifetime license), Newton 4 (current version) plan."
+    },
+    "force_silence": false,
+    "description": "Newton 3 (et son successeur Newton 4) est un moteur de simulation physique 2D pour After Effects qui fait se comporter les calques comme des objets solides avec gravité, collision, friction et ressorts. Permite d'appliquer des forces réalistes (rebonds, oscillations) à du texte, formes et éléments sans keyframing manuel.\n\nFonctions clés : Simulation physique 2D (gravité, collision, friction) ; 6 types d'objets (statique, dynamique, cinématique, AEmatic, dormant, dead) ; 6 types de joints (distance, pivot, piston, ressort, roue, blob) ; Animation automatique des keyframes (conversion en keyframes AE standard) ; Contrôle des propriétés physiques (rebond, amortissement, masse) ; Export et animation de résultats sans recalcul.\n\nNewton 3 justifie son investissement pour animations physiques fréquentes ; pour un usage occasionnel, les effets natifs After Effects suffisent.",
+    "ogImageUrl": "/og-screenshots/ae-newton3.jpg",
+    "galleryImages": [],
+    "lifecycle": {
+      "status": "active",
+      "note": "Newton 4 is the current version sold on the official page, succeeding Newton 3; Newton 3 owners get a discounted loyalty upgrade path to Newton 4.",
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Newton 4 (current version)",
+      "compare_plan_kind": "one_time",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-02",
+      "official_source_url": "https://aescripts.com/newton/",
+      "source_domain": "aescripts.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "Newton 3 is no longer the current sale version; the official page now sells Newton 4 at 249.99 USD one-time, with a 99.99 USD loyalty upgrade price for Newton 3 owners (150.00 USD from Newton 2). No public price for standalone Newton 3 remains on the live page.",
+        "A fully functional free trial is available for Newton 4, with exports limited to 25 frames; this is a feature-limited trial, not a time-limited one, so it is not recorded in pricing.trial."
+      ],
+      "plans": [
+        {
+          "planKey": "newton4",
+          "displayName": "Newton 4 (current version)",
+          "summary": "Lifetime license, one-time payment.",
+          "featureHighlights": [
+            "Perpetual license, no subscription; fully functional free trial available (export limited to 25 frames); 50% student/faculty discount with valid ID."
+          ],
+          "detailsSourceUrl": "https://aescripts.com/newton/",
+          "pricingUnit": "one_time",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 249.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        },
+        {
+          "planKey": "newton3-to-4-upgrade",
+          "displayName": "Newton 3 to 4 upgrade",
+          "summary": "Lifetime license, one-time payment.",
+          "featureHighlights": [
+            "Discounted loyalty upgrade price for existing Newton 3 license owners (upgrade from Newton 2 is 150.00 USD)."
+          ],
+          "detailsSourceUrl": "https://aescripts.com/newton/",
+          "pricingUnit": "one_time",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Une licence à vie à 249,99 $ pour Newton 4 (ou une mise à niveau à 99,99 $ pour les propriétaires de Newton 3) remplace des heures d'animation manuelle par images clés pour un mouvement physique, et un essai gratuit limité en fonctionnalités permet de vérifier l'adéquation avant d'acheter.",
+        "simplicite": "Note neutre : le temps et la compétence nécessaires pour un premier résultat utile ne figurent pas dans les sources relevées.",
+        "utilisation": "Applique des forces physiques (gravité, collisions, friction, ressorts, rebonds, oscillations) aux calques comme décrit, sans nécessiter un outil physique séparé hors After Effects.",
+        "puissance": "Couvre la physique 2D de base (gravité, collisions, friction, ressorts) pour les calques After Effects, une capacité ciblée mais réelle plutôt qu'une suite de simulation généraliste.",
+        "reversibilite": "Note neutre : la portabilité du projet ou l'export en cas d'arrêt du plugin ne figure pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "A one-time 249.99 USD license for Newton 4 (or 99.99 USD upgrade for existing Newton 3 owners) replaces hours of manual keyframing for physics-like motion, and a feature-limited free trial lets buyers confirm fit before paying.",
+        "simplicite": "Neutral score: time and skill needed to get a first useful result are not covered by the collected sources.",
+        "utilisation": "Applies physics forces (gravity, collisions, friction, springs, bounces, oscillations) to layers as described, without needing a separate physics tool outside After Effects.",
+        "puissance": "Covers core 2D rigid-body physics (gravity, collisions, friction, springs) for After Effects layers, a focused but real capability rather than a general-purpose simulation suite.",
+        "reversibilite": "Neutral score: project portability or export when stopping use of the plugin is not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Plugin physique pour AE",
+      "en": "AE physics plugin"
+    },
+    "research": {
+      "dossier": "research/dossiers/ae-newton4.json",
+      "researchedOn": "2026-09-25",
+      "sources": 2
+    }
   },
   {
     "id": "next-js",
@@ -212153,28 +212938,101 @@
     "slug": "tubebuddy",
     "name": "Tubebuddy",
     "category": "analytics",
-    "shortDescription": "Extension d'optimisation SEO pour YouTube : mots-clés, vignettes, A/B testing.",
-    "shortDescriptionEn": "YouTube SEO optimization extension: keywords, thumbnails, A/B testing.",
+    "shortDescription": "Une boîte à outils YouTube qui aide les créateurs à optimiser titres, tags et miniatures, suivre les statistiques de chaîne et planifier le contenu.",
+    "shortDescriptionEn": "A YouTube toolkit that helps creators optimize titles, tags and thumbnails, track channel analytics and plan content to grow views and subscribers.",
     "description": "TubeBuddy est une extension de navigateur qui s'intègre directement dans le studio YouTube pour optimiser le référencement des vidéos : recherche de mots-clés avec volume de recherche estimé, A/B testing de vignettes, analyse de la concurrence sur un mot-clé, et automatisation de tâches répétitives (ajout de cartes, fins d'écran).\n\nPour un créateur YouTube qui veut croître plus méthodiquement, c'est un moyen de prendre des décisions basées sur des données plutôt que sur l'intuition pour les titres, vignettes et mots-clés.",
-    "longDescription": "TubeBuddy est une extension de navigateur qui s'intègre directement dans le studio YouTube pour optimiser le référencement des vidéos : recherche de mots-clés avec volume de recherche estimé, A/B testing de vignettes, analyse de la concurrence sur un mot-clé, et automatisation de tâches répétitives (ajout de cartes, fins d'écran).\n\nPour un créateur YouTube qui veut croître plus méthodiquement, c'est un moyen de prendre des décisions basées sur des données plutôt que sur l'intuition pour les titres, vignettes et mots-clés.",
-    "longDescriptionEn": "TubeBuddy is a browser extension that integrates directly into YouTube Studio to optimize video SEO: keyword research with estimated search volume, thumbnail A/B testing, competitor analysis on a keyword, and automation of repetitive tasks (adding cards, end screens).\n\nFor a YouTube creator who wants to grow more methodically, it's a way to make data-driven decisions rather than intuition-based ones for titles, thumbnails, and keywords.",
-    "pricing": "Plan gratuit limité ; plans payants à partir de ~4,5$/mois.",
-    "pricingEn": "Limited free plan; paid plans from ~$4.5/month.",
-    "defaultMonthlyPrice": 0,
+    "longDescription": "TubeBuddy est une boîte à outils YouTube pour la recherche de tags, le test de titres et de miniatures, et l'analyse de chaîne, liée à une seule chaîne par licence. La version gratuite donne les outils de base ; Pro et Legend débloquent un SEO plus poussé, l'édition en masse et la stratégie de contenu.\n\nPro coûte 4,99 $ par mois (3,99 $ en facturation annuelle), et Legend, qui inclut 2 sièges utilisateur, coûte 31,50 $ par mois (25,20 $ en facturation annuelle). L'outil convient à un créateur solo qui veut des outils SEO basés sur la donnée sans agence.",
+    "longDescriptionEn": "TubeBuddy is a YouTube-focused toolkit for tag research, title and thumbnail testing, and channel analytics, tied to a single YouTube channel per license. Free users get basic tools; Pro and Legend unlock deeper SEO, bulk editing and content-strategy features such as Next Video Ideas.\n\nPro costs 4.99 USD a month (3.99 USD billed annually), and Legend, which includes 2 user seats, costs 31.50 USD a month (25.20 USD billed annually). It fits a solo creator who wants data-driven SEO tools without hiring an agency.",
+    "pricing": {
+      "free": "Plan gratuit : Outils de base pour vidéos et miniatures, avec un accès limité à des fonctions comme Next Video Ideas.",
+      "paid": "Dès 3,99 $/mois, plan Pro."
+    },
+    "pricingEn": {
+      "free": "Free plan: Basic video and thumbnail tools with limited access to features like Next Video Ideas.",
+      "paid": "From $3.99/mo, Pro plan."
+    },
+    "defaultMonthlyPrice": 3.43,
     "pricing_v5": {
       "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
+        "Les prix indiqués sont les prix officiels en dollars US de la page tarifaire ; TubeBuddy affiche aussi une conversion approximative en euros, mais précise que la facturation réelle se fait toujours en dollars et que le taux de change peut varier.",
+        "Politique de remboursement sous 30 jours disponible via le support TubeBuddy ; aucun engagement long terme, résiliable à tout moment."
       ],
-      "verified_on": "2026-05-11",
+      "verified_on": "2026-10-02",
       "source_domain": "tubebuddy.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Pro",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://tubebuddy.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "official_source_url": "https://tubebuddy.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 3.43,
+      "cautionsEn": [
+        "Prices shown are the US dollar prices on the official pricing page; TubeBuddy also displays an approximate EUR conversion, but states actual billing is always in USD and the conversion rate can vary.",
+        "30-day refund policy available through TubeBuddy Support; no long-term contract, cancel anytime."
+      ],
+      "plans": [
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "4,99 $/mois sans engagement. Par utilisateur.",
+          "featureHighlights": [
+            "Outils intelligents pour les nouveaux créateurs : outils de base pour vidéos/miniatures, optimisation de base des titres et tags, Next Video Ideas limité. Lié à une seule chaîne YouTube, un utilisateur par licence."
+          ],
+          "detailsSourceUrl": "https://tubebuddy.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 3.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        },
+        {
+          "planKey": "legend",
+          "displayName": "Legend",
+          "summary": "31,50 $/mois sans engagement. Par utilisateur.",
+          "featureHighlights": [
+            "Toutes les fonctions Pro plus des outils de stratégie de contenu, des rapports avancés, un accès SEO/recherche complet, le traitement en masse, des outils d'audience, le lien avec YouTube Shorts et l'analyse thématique. Inclut 2 sièges utilisateur."
+          ],
+          "detailsSourceUrl": "https://tubebuddy.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 25.2,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "Sur devis. Par utilisateur.",
+          "featureHighlights": [
+            "Next Video Ideas illimité, formation individuelle, support dédié, revues de chaîne automatisées, analytique IA avancée, sièges utilisateur illimités."
+          ],
+          "detailsSourceUrl": "https://tubebuddy.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        }
+      ]
     },
     "affiliateLink": "https://tubebuddy.com",
     "websiteUrl": "https://tubebuddy.com",
@@ -212187,41 +213045,33 @@
         "augmentFr": "TubeBuddy a ajouté l'IA pour suggérer des titres et mots-clés YouTube, mais reste une extension d'optimisation SEO basée sur des données réelles de recherche et de concurrence YouTube.",
         "replaceEn": "Replace TubeBuddy with an AI? No: knowing a YouTube keyword's real search volume requires real platform data, not just generation. AI helps write titles, it doesn't replace data analysis. Verdict: AI augments writing, real data remains the key infrastructure.",
         "replaceFr": "Remplacer TubeBuddy par une IA ? Non : connaître le volume de recherche réel d'un mot-clé YouTube nécessite des données réelles de la plateforme, pas seulement de la génération. L'IA aide à rédiger des titres, elle ne remplace pas l'analyse de données. Verdict : l'IA augmente la rédaction, les données réelles restent l'infrastructure clé."
-      }
+      },
+      "idealForFr": "Créateurs YouTube indépendants qui veulent des outils SEO basés sur la donnée pour développer une seule chaîne.",
+      "idealForEn": "Independent YouTube creators who want data-driven SEO tools to grow a single channel."
     },
     "pros": [
-      "Plan gratuit utile avec Keyword Explorer limité.",
-      "Optimisation SEO très détaillée pour YouTube.",
-      "A/B Testing des thumbnails inclus.",
-      "Analyses compétitives pour benchmarking."
+      "Des outils SEO YouTube dédiés (tags, titres, miniatures) au-delà de ce que propose nativement YouTube Studio.",
+      "Remboursement possible sous 30 jours et facturation mensuelle, sans engagement long terme."
     ],
     "prosEn": [
-      "Useful free plan with limited Keyword Explorer.",
-      "Detailed YouTube SEO optimization.",
-      "Thumbnail A/B testing included.",
-      "Competitive analysis for benchmarking."
+      "Dedicated YouTube SEO tools (tags, titles, thumbnails) beyond what YouTube Studio offers natively.",
+      "30-day refund policy and month-to-month billing, no long-term contract."
     ],
     "cons": [
-      "Fonctionnalités basiques sur plan gratuit.",
-      "Plans payants montrent leur valeur surtout à partir de Star.",
-      "Coût annuel s'additionne pour les créateurs multiples."
+      "La facturation annuelle est nécessaire pour obtenir le tarif mensuel le plus bas ; la facturation au mois coûte plus cher.",
+      "Les licences Free et Pro sont limitées à une seule chaîne et un seul utilisateur."
     ],
     "consEn": [
-      "Limited features on free plan.",
-      "Paid plans show value starting at Star tier.",
-      "Annual cost adds up for multiple channels."
+      "Annual billing is required to get the lower per-month rate; month-to-month billing costs more.",
+      "Free and Pro licenses are locked to a single channel and a single user."
     ],
     "useCases": [
-      "Trouver les mots-clés trending sur YouTube.",
-      "Optimiser les titles et descriptions pour le classement.",
-      "Analyser les performances de la chaîne et concurrents.",
-      "Tester et optimiser les thumbnails pour le CTR."
+      "Optimisation vidéo : utiliser les suggestions de tags et de titres avant publication pour améliorer les chances d'être trouvé dans la recherche.",
+      "Audit de chaîne : utiliser le traitement en masse et les rapports de l'offre Legend pour revoir et mettre à jour d'anciennes vidéos à grande échelle."
     ],
     "useCasesEn": [
-      "Find trending keywords on YouTube.",
-      "Optimize titles and descriptions for rankings.",
-      "Analyze channel and competitor performance.",
-      "Test and optimize thumbnails for CTR."
+      "Video optimization: run tag and title suggestions before publishing to improve a video's chance of being found in search.",
+      "Channel audit: use bulk processing and reporting on the Legend plan to review and update older videos at scale."
     ],
     "covers": [
       "creator-workflow"
@@ -212232,40 +213082,34 @@
       "YouTubers fulltime"
     ],
     "personas": [
-      "lina"
+      "ALIX"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "vidiq"
+    ],
     "verdict": {
       "keepIf": [
-        "Vous êtes créateur YouTube actif cherchant à croître.",
-        "Vous voulez optimiser le SEO de vos vidéos.",
-        "Vous analysez les performances de votre chaîne."
+        "Tu gères une seule chaîne YouTube en solo et tu veux des outils dédiés pour optimiser tags, titres et miniatures."
       ],
       "avoidIf": [
-        "Vous n'avez qu'une chaîne YouTube très jeune.",
-        "Vous uploadez très rarement.",
-        "Vous disposez déjà d'une équipe d'analystes."
+        "Tu gères plusieurs chaînes ou une équipe : l'accès multi-sièges ne commence qu'à partir de l'offre Legend."
       ],
-      "threshold": "TubeBuddy s'impose pour les créateurs YouTube cherchant à croître via l'optimisation SEO et l'analyse ; pour un créateur occasionnel ou débutant, le plan gratuit suffit."
+      "threshold": "Pro coûte 4,99 $ par mois (3,99 $ en facturation annuelle) ; ça devient rentable dès que l'optimisation des tags et des titres te fait gagner un vrai trafic de recherche."
     },
     "verdictEn": {
       "keepIf": [
-        "You're an active YouTube creator looking to grow.",
-        "You want to optimize video SEO.",
-        "You analyze your channel performance."
+        "You run one YouTube channel solo and want dedicated tag, title and thumbnail optimization tools."
       ],
       "avoidIf": [
-        "Your YouTube channel is very new.",
-        "You upload very rarely.",
-        "You already have an analytics team."
+        "You manage multiple channels or a team, since multi-seat access only starts at the Legend tier."
       ],
-      "threshold": "TubeBuddy works for YouTube creators seeking growth via SEO optimization and analytics; for occasional or new creators, the free plan suffices."
+      "threshold": "Pro costs 4.99 USD a month (3.99 USD billed annually); it pays off once tag and title optimization starts saving you real search traffic."
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
     "freeAlternative": null,
-    "soloRelevance": "medium",
-    "teamRelevance": "medium",
+    "soloRelevance": "high",
+    "teamRelevance": "low",
     "tool_type": "specialise",
     "substitutable": true,
     "host_app": null,
@@ -212287,7 +213131,121 @@
     "substitution_cluster_v2": "seo-tools",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.tubebuddy.com/wp-content/uploads/2025/08/215763354_4101728486607776_7902735743944989465_n.jpg",
-    "force_silence": false
+    "force_silence": false,
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 3.43,
+      "compare_plan_name": "Pro",
+      "compare_plan_kind": "seat",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-02",
+      "official_source_url": "https://tubebuddy.com/pricing",
+      "source_domain": "tubebuddy.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "Prices shown are the US dollar prices on the official pricing page; TubeBuddy also displays an approximate EUR conversion, but states actual billing is always in USD and the conversion rate can vary.",
+        "30-day refund policy available through TubeBuddy Support; no long-term contract, cancel anytime."
+      ],
+      "plans": [
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "$4.99/mo billed monthly. Per user.",
+          "featureHighlights": [
+            "Smart tools for new creators: basic video/thumbnail tools, basic title and tag optimization, limited Next Video Ideas. Tied to a single YouTube channel, one user per license."
+          ],
+          "detailsSourceUrl": "https://tubebuddy.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 3.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        },
+        {
+          "planKey": "legend",
+          "displayName": "Legend",
+          "summary": "$31.50/mo billed monthly. Per user.",
+          "featureHighlights": [
+            "All Pro features plus content strategy tools, advanced reporting, full search/SEO access, bulk processing, audience tools, YouTube Shorts linking, topical analysis. Includes 2 user seats."
+          ],
+          "detailsSourceUrl": "https://tubebuddy.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 25.2,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        },
+        {
+          "planKey": "enterprise",
+          "displayName": "Enterprise",
+          "summary": "Custom quote. Per user.",
+          "featureHighlights": [
+            "Unlimited Next Video Ideas, 1:1 training, dedicated support, automated channel reviews, advanced AI analytics, unlimited user seats."
+          ],
+          "detailsSourceUrl": "https://tubebuddy.com/pricing",
+          "pricingUnit": "seat",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "À 4,99 $ par mois (3,99 $ en facturation annuelle) pour Pro, les outils dédiés de SEO et d'optimisation restent peu chers par rapport au temps qu'ils peuvent faire gagner sur une seule chaîne.",
+        "simplicite": "Note neutre : le temps de prise en main et la rapidité du premier résultat ne figurent pas dans les sources relevées.",
+        "utilisation": "L'outil tient sa promesse de SEO et de stratégie de contenu directement via les outils de tags, titres et miniatures.",
+        "puissance": "Au-delà du SEO de base, il couvre le traitement en masse, les outils d'audience et l'analyse thématique sur les offres supérieures, ce qui est large pour la catégorie.",
+        "reversibilite": "Note neutre : l'export ou la portabilité des données hors de TubeBuddy ne figurent pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "At 4.99 USD a month (3.99 USD billed annually) for Pro, dedicated SEO and optimization tools are cheap relative to the time they can save on a single channel.",
+        "simplicite": "Neutral score: onboarding time and first-result speed are not detailed in the collected sources.",
+        "utilisation": "The tool delivers its stated SEO optimization and content strategy promise directly through tag, title and thumbnail tools.",
+        "puissance": "Beyond basic SEO, it covers bulk processing, audience tools and topical analysis on higher tiers, broad for the category.",
+        "reversibilite": "Neutral score: data export or portability out of TubeBuddy is not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Outils SEO YouTube",
+      "en": "YouTube SEO toolkit"
+    },
+    "research": {
+      "dossier": "research/dossiers/tubebuddy.json",
+      "researchedOn": "2026-09-25",
+      "sources": 1
+    }
   },
   {
     "id": "tubebody",
@@ -224217,92 +225175,102 @@
     "slug": "wolters-kluwer",
     "name": "Wolters Kluwer",
     "category": "legal-contracts",
-    "shortDescription": "Solutions de conformité et veille juridique.",
-    "shortDescriptionEn": "Compliance and legal monitoring solutions.",
+    "shortDescription": "Wolters Kluwer vend un portefeuille de produits juridiques et de conformité distincts, dont une veille réglementaire assistée par IA, uniquement sur devis.",
+    "shortDescriptionEn": "Wolters Kluwer sells a portfolio of separate legal and compliance products, including AI-powered regulatory monitoring, on a quote-only basis.",
     "description": "Wolters Kluwer, c'est solutions de conformité et veille juridique. À partir de 49€/mois.\n\nBases documentaires très complètes. analyses et commentaires d'experts, outils de conformité réglementaire. Mise à jour continue. Concrètement : veille fiscale et sociale. Ou encore : conformité RGPD et réglementaire.\n\nÀ garder si : gestion de conformité réglementaire ou cabinet comptable ou juridique. À éviter si : freelance sans obligation réglementaire complexe ou budget limité. Limite principale : prix élevé (abonnement professionnel). Justifié pour les professionnels avec des obligations réglementaires continues.",
-    "longDescription": "Wolters Kluwer, c'est solutions de conformité et veille juridique. À partir de 49€/mois.\n\nBases documentaires très complètes. analyses et commentaires d'experts, outils de conformité réglementaire. Mise à jour continue. Concrètement : veille fiscale et sociale. Ou encore : conformité RGPD et réglementaire.\n\nÀ garder si : gestion de conformité réglementaire ou cabinet comptable ou juridique. À éviter si : freelance sans obligation réglementaire complexe ou budget limité. Limite principale : prix élevé (abonnement professionnel). Justifié pour les professionnels avec des obligations réglementaires continues.",
-    "longDescriptionEn": "Wolters Kluwer is compliance and legal monitoring solutions. Starting at €49/month.",
+    "longDescription": "Wolters Kluwer est une holding au-dessus d'un portefeuille de produits juridiques et réglementaires distincts, plutôt qu'un seul outil. Compliance Intelligence utilise l'IA pour surveiller les organismes réglementaires mondiaux et résumer changements proposés, recommandations et mesures coercitives avec un suivi des modifications ; d'autres produits (VitalLaw, Legisway, Kleos, TyMetrix 360, ELM Solutions) couvrent séparément recherche juridique, contrats et dossiers juridiques.\n\nPas de grille tarifaire publique ni d'essai en libre-service : toute prise de contact passe par les commerciaux grands comptes, et l'acheteur doit d'abord choisir le produit qui correspond avant d'évaluer prix ou périmètre. Convient à une responsable conformité ou legal ops d'une entreprise régulée, plus qu'à qui cherche un produit avec un prix publié.",
+    "longDescriptionEn": "Wolters Kluwer is a corporate umbrella over a portfolio of separate legal and regulatory products rather than a single tool. Compliance Intelligence uses AI to monitor global regulatory bodies and summarize proposed changes, guidance and enforcement actions with red-lined updates; other named products (VitalLaw, Legisway, Kleos, TyMetrix 360, ELM Solutions) cover legal research, contract and legal-matter management separately.\n\nThere is no public price list and no self-serve trial: every engagement goes through enterprise sales, and a buyer must first pick the specific product that fits before pricing or scope can be evaluated. It fits a compliance or legal ops lead at a regulated business, more than someone looking for one product with a published price.",
     "pricing": {
-      "free": "Aucun plan gratuit",
-      "paid": "À partir de 49€/mois"
+      "free": "Pas de plan gratuit.",
+      "paid": "Prix non public, sur devis."
     },
-    "pricingEn": null,
-    "defaultMonthlyPrice": 49,
-    "pricing_v5": null,
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "Price not public, custom quote."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "quote",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.wolterskluwer.com/en/solutions/compliance-intelligence",
+      "source_domain": "wolterskluwer.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "Aucune grille tarifaire publique trouvée pour les produits de conformité/juridique Wolters Kluwer ; la vente se fait uniquement sur devis auprès des commerciaux grands comptes."
+      ],
+      "cautionsEn": [
+        "No public price list found for any Wolters Kluwer compliance/legal product; enterprise sales is quote-only."
+      ],
+      "plans": []
+    },
     "affiliateLink": "",
     "websiteUrl": "https://www.wolterskluwer.com",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "idealForFr": "Une responsable conformité ou legal ops d'une entreprise régulée qui a besoin d'un outil de veille réglementaire et qui peut passer par un devis grands comptes.",
+      "idealForEn": "A compliance or legal ops lead at a regulated business who needs regulatory monitoring software and can go through an enterprise sales quote."
+    },
     "articles": [],
     "covers": [
       "documentation"
     ],
     "freeAlternative": null,
-    "soloRelevance": null,
-    "teamRelevance": null,
+    "soloRelevance": "low",
+    "teamRelevance": "medium",
     "relevantFor": [
       "Directions juridiques",
       "Cabinets d'avocats",
       "Responsables conformité"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "docusign",
+      "onetrust"
+    ],
     "verdict": {
       "keepIf": [
-        "Vous dirigez un service juridique ou un cabinet structuré.",
-        "Vous devez piloter des dépenses juridiques et de la conformité.",
-        "Vous avez besoin de bases documentaires juridiques fiables."
+        "Tu as besoin d'une veille réglementaire assistée par IA ou d'un autre produit nommé Wolters Kluwer et tu peux passer par un devis grands comptes."
       ],
       "avoidIf": [
-        "Vous êtes indépendant ou TPE avec des besoins juridiques simples.",
-        "Vous voulez une tarification transparente et immédiate.",
-        "Une legaltech en ligne couvre déjà vos formalités courantes."
+        "Tu veux un seul produit avec un prix publié et un essai en libre-service avant de parler au commercial."
       ],
-      "threshold": "Wolters Kluwer s'impose pour une direction juridique ou un cabinet qui industrialise sa pratique ; pour des besoins ponctuels, une legaltech en libre-service suffit largement."
+      "threshold": "Aucun prix public ne permet de fixer un seuil chiffré ; demande un devis grands comptes pour le produit précis (ex. Compliance Intelligence) avant de comparer aux alternatives."
     },
     "verdictEn": {
       "keepIf": [
-        "You run an in-house legal team or an established firm.",
-        "You need to manage legal spend and compliance.",
-        "You need reliable legal research databases."
+        "You need AI-powered regulatory monitoring or another named Wolters Kluwer product and can go through an enterprise sales quote."
       ],
       "avoidIf": [
-        "You're a freelancer or micro-business with simple legal needs.",
-        "You want transparent, immediate pricing.",
-        "An online legaltech already covers your everyday filings."
+        "You want a single product with a published price and a self-serve trial before talking to sales."
       ],
-      "threshold": "Wolters Kluwer makes sense for a legal department or firm industrialising its practice; for occasional needs, a self-service legaltech is plenty."
+      "threshold": "No public price exists to set a numeric threshold; get an enterprise quote for the specific product (e.g. Compliance Intelligence) before comparing to alternatives."
     },
     "pros": [
-      "Portefeuille très complet pour les professionnels du droit.",
-      "Bases documentaires juridiques de référence.",
-      "Pilotage des dépenses et de la conformité.",
-      "Acteur mondial installé de longue date."
+      "Compliance Intelligence résume par IA les changements réglementaires et les mesures coercitives avec un suivi des modifications.",
+      "Un large portefeuille couvre la veille réglementaire, la recherche juridique et la gestion des contrats chez un seul fournisseur."
     ],
     "prosEn": [
-      "Very complete portfolio for legal professionals.",
-      "Reference-grade legal research databases.",
-      "Legal spend and compliance management.",
-      "Long-established global player."
+      "Compliance Intelligence's AI summarizes regulatory changes and enforcement actions with red-lined updates.",
+      "A broad portfolio covers regulatory monitoring, legal research and contract management under one vendor."
     ],
     "cons": [
-      "Tarification non publique, sur devis uniquement.",
-      "Surdimensionné hors structure juridique constituée.",
-      "Portefeuille éclaté en de nombreux produits distincts."
+      "Pas de tarif public ni d'essai en libre-service pour aucun produit du portefeuille.",
+      "L'entrée catalogue « Wolters Kluwer » regroupe plusieurs produits distincts ; l'acheteur doit d'abord identifier le bon."
     ],
     "consEn": [
-      "Non-public, quote-only pricing.",
-      "Oversized outside an established legal function.",
-      "Portfolio split across many separate products."
+      "No public pricing or self-serve trial for any product in the portfolio.",
+      "The 'Wolters Kluwer' catalogue entry conflates several separate products, so buyers must first identify the right one."
     ],
     "useCases": [
-      "Équiper une direction juridique en recherche documentaire.",
-      "Piloter et contrôler les dépenses juridiques externes.",
-      "Gérer contrats et dossiers d'un cabinet."
+      "Surveiller : suivre les changements réglementaires proposés et les mesures coercitives dans plusieurs juridictions avec les résumés IA de Compliance Intelligence.",
+      "Gérer les contrats : choisir un produit précis du portefeuille comme Legisway pour la gestion des contrats et des dossiers juridiques, plutôt que la marque générique Wolters Kluwer."
     ],
     "useCasesEn": [
-      "Equip a legal department with research tools.",
-      "Track and control outside legal spend.",
-      "Manage a firm's contracts and matters."
+      "Monitor: track proposed regulatory changes and enforcement actions across jurisdictions with Compliance Intelligence's AI summaries.",
+      "Manage contracts: pick a specific portfolio product like Legisway for contract and legal-matter management instead of the generic Wolters Kluwer brand."
     ],
     "personas": [
       "CLAIRE"
@@ -224328,7 +225296,59 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": "legal-contracts",
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "lifecycle": {
+      "status": "active",
+      "note": "Corporate homepage returned HTTP 403 to automated fetch; content confirmed via search instead.",
+      "checkedOn": "2026-09-25"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Prix non public",
+      "compare_plan_kind": "quote",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-09-25",
+      "official_source_url": "https://www.wolterskluwer.com/en/solutions/compliance-intelligence",
+      "source_domain": "wolterskluwer.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "No public price list found for any Wolters Kluwer compliance/legal product; enterprise sales is quote-only."
+      ],
+      "plans": []
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 2,
+      "utilisation": 3,
+      "puissance": 4,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Note neutre : sans tarif public pour aucun produit du portefeuille, le rapport coût-bénéfice ne peut pas être jugé à partir des sources relevées.",
+        "simplicite": "Un acheteur doit d'abord identifier quel produit précis (Compliance Intelligence, Legisway, VitalLaw...) correspond à son besoin avant de pouvoir évaluer ou acheter quoi que ce soit, une étape que la plupart des outils mono-produit n'imposent pas.",
+        "utilisation": "Compliance Intelligence assure la veille réglementaire assistée par IA avec suivi des modifications, comme décrit sur la page officielle de la solution.",
+        "puissance": "Le portefeuille couvre la veille réglementaire, la gestion des contrats et la gestion des dossiers juridiques à travers plusieurs produits nommés, plus large qu'un outil de conformité mono-fonction.",
+        "reversibilite": "Note neutre : le format d'export et la portabilité des données ne figurent pas dans les sources relevées."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Neutral score: with no public pricing for any product in the portfolio, the cost-versus-benefit cannot be judged from the collected sources.",
+        "simplicite": "A buyer must first identify which specific product (Compliance Intelligence, Legisway, VitalLaw...) fits their need before evaluating or buying anything, adding a step most single-product tools don't require.",
+        "utilisation": "Compliance Intelligence delivers AI-powered regulatory monitoring with red-lined updates as described on the official solution page.",
+        "puissance": "The portfolio spans regulatory monitoring, contract management and legal-matter management across several named products, broader than a single-purpose compliance tool.",
+        "reversibilite": "Neutral score: export format and data portability are not covered by the collected sources."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-25"
+    },
+    "tagline": {
+      "fr": "Suite conformité réglementaire",
+      "en": "Regulatory compliance suite"
+    },
+    "research": {
+      "dossier": "research/dossiers/wolters-kluwer.json",
+      "researchedOn": "2026-09-25",
+      "sources": 2
+    }
   },
   {
     "id": "woocommerce",

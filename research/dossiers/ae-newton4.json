@@ -1,26 +1,26 @@
 {
   "schemaVersion": 2,
-  "slug": "ae-newton3",
+  "slug": "ae-newton4",
   "tier": "A",
   "researchedOn": "2026-09-25",
   "status": "needs_review",
   "identity": {
-    "officialName": "Newton",
+    "officialName": "Newton 4",
     "vendor": "Motion Boutique / aescripts + aeplugins",
     "officialUrl": "https://aescripts.com/newton/",
     "docsUrl": "https://aescripts.com/faq/article/view/faq/newton-frequently-asked-questions/",
     "changelogUrl": null,
     "urlStatus": "ok",
-    "productStatus": "renamed",
-    "statusNote": "Newton 3 has been superseded by Newton 4, the current version sold on the official page; Newton 3 owners get a discounted upgrade path."
+    "productStatus": "active",
+    "statusNote": "Newton 4 is the current version sold on the official page, succeeding Newton 3; Newton 3 owners get a discounted loyalty upgrade path to Newton 4."
   },
   "sources": [
     {
       "id": "s1",
       "url": "https://aescripts.com/newton/",
       "tier": 1,
-      "accessedOn": "2026-09-25",
-      "title": "Newton product/pricing page (aescripts)"
+      "accessedOn": "2026-10-02",
+      "title": "Newton 4 product/pricing page (aescripts)"
     },
     {
       "id": "s2",
@@ -34,7 +34,7 @@
     "model": "one_time",
     "currency": "USD",
     "pricingUrl": "https://aescripts.com/newton/",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -58,7 +58,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Perpetual license, no subscription; 50% student/faculty discount with valid ID."
+            "en": "Perpetual license, no subscription; fully functional free trial available (export limited to 25 frames); 50% student/faculty discount with valid ID."
           }
         ],
         "sourceIds": [
@@ -78,7 +78,7 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "Discounted upgrade price for existing Newton 3 license owners."
+            "en": "Discounted loyalty upgrade price for existing Newton 3 license owners (upgrade from Newton 2 is 150.00 USD)."
           }
         ],
         "sourceIds": [
@@ -90,11 +90,18 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "Newton 3 (the slug's originally researched product) is no longer the current sale version; the official page now sells Newton 4 at 249.99 USD, with a 99.99 USD upgrade price for Newton 3 owners. No public price for standalone Newton 3 remains on the live page.",
+        "en": "Newton 3 is no longer the current sale version; the official page now sells Newton 4 at 249.99 USD one-time, with a 99.99 USD loyalty upgrade price for Newton 3 owners (150.00 USD from Newton 2). No public price for standalone Newton 3 remains on the live page.",
         "sourceIds": [
           "s1"
         ],
-        "fr": "Newton 3 (le produit initialement recherché pour ce slug) n'est plus la version en vente actuelle ; la page officielle vend désormais Newton 4 à 249,99 $, avec un prix de mise à niveau à 99,99 $ pour les propriétaires de Newton 3. Aucun prix public pour Newton 3 seul ne figure sur la page en ligne."
+        "fr": "Newton 3 n'est plus la version en vente actuelle ; la page officielle vend désormais Newton 4 à 249,99 $ en achat unique, avec un prix de mise à niveau fidélité à 99,99 $ pour les propriétaires de Newton 3 (150,00 $ depuis Newton 2). Aucun prix public pour Newton 3 seul ne figure sur la page en ligne."
+      },
+      {
+        "en": "A fully functional free trial is available for Newton 4, with exports limited to 25 frames; this is a feature-limited trial, not a time-limited one, so it is not recorded in pricing.trial.",
+        "sourceIds": [
+          "s1"
+        ],
+        "fr": "Un essai gratuit pleinement fonctionnel est disponible pour Newton 4, avec des exports limités à 25 images ; c'est un essai limité en fonctionnalités, pas dans le temps, donc il n'est pas enregistré dans pricing.trial."
       }
     ]
   },
@@ -117,11 +124,11 @@
     ],
     "limitations": [
       {
-        "en": "One-time purchase with no free trial mentioned; buyers cannot test before purchasing.",
+        "en": "The free trial exports are capped at 25 frames, too short to validate a full shot before buying.",
         "sourceIds": [
           "s1"
         ],
-        "fr": "Achat unique sans essai gratuit mentionné ; impossible de tester avant d'acheter."
+        "fr": "Les exports de l'essai gratuit sont limités à 25 images, trop court pour valider un plan complet avant d'acheter."
       },
       {
         "en": "Plugin-only tool, works exclusively inside After Effects and adds no value without it.",
@@ -166,8 +173,8 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "A one-time 249.99 USD license (or 99.99 USD upgrade for existing Newton 3 owners) replaces hours of manual keyframing for physics-like motion, but there is no trial to confirm fit before paying.",
-        "fr": "Une licence à vie à 249,99 $ (ou une mise à niveau à 99,99 $ pour les propriétaires de Newton 3) remplace des heures d'animation manuelle par images clés pour un mouvement physique, mais aucun essai ne permet de vérifier l'adéquation avant d'acheter.",
+        "en": "A one-time 249.99 USD license for Newton 4 (or 99.99 USD upgrade for existing Newton 3 owners) replaces hours of manual keyframing for physics-like motion, and a feature-limited free trial lets buyers confirm fit before paying.",
+        "fr": "Une licence à vie à 249,99 $ pour Newton 4 (ou une mise à niveau à 99,99 $ pour les propriétaires de Newton 3) remplace des heures d'animation manuelle par images clés pour un mouvement physique, et un essai gratuit limité en fonctionnalités permet de vérifier l'adéquation avant d'acheter.",
         "sourceIds": [
           "s1"
         ]
@@ -209,12 +216,12 @@
       "fr": "Plugin physique pour AE"
     },
     "shortDescription": {
-      "en": "Newton is an After Effects plugin that gives layers realistic 2D physics (gravity, collisions, springs) without manual keyframing, sold as a one-time license.",
-      "fr": "Newton est un plugin After Effects qui donne aux calques une physique 2D réaliste (gravité, collisions, ressorts) sans animation manuelle, vendu en licence à vie."
+      "en": "Newton 4 is an After Effects plugin that gives layers realistic 2D physics (gravity, collisions, springs) without manual keyframing, sold as a one-time license.",
+      "fr": "Newton 4 est un plugin After Effects qui donne aux calques une physique 2D réaliste (gravité, collisions, ressorts) sans animation manuelle, en licence à vie."
     },
     "longDescription": {
-      "en": "Newton is a 2D physics simulation plugin for After Effects: it makes text, shape and other layers behave like solid objects, with gravity, collisions, friction and springs, applying realistic bounces and oscillations without manual keyframing.\n\nThe current version, Newton 4, is a one-time purchase at 249.99 USD, with a 99.99 USD discounted upgrade for existing Newton 3 owners; there is no free trial. It suits a motion designer who animates directly in After Effects and wants physics-driven motion, and adds no value outside that software.",
-      "fr": "Newton est un plugin de simulation physique 2D pour After Effects : il fait se comporter le texte, les formes et les autres calques comme des objets solides, avec gravité, collisions, friction et ressorts, en appliquant des rebonds et oscillations réalistes sans animation manuelle par images clés.\n\nLa version actuelle, Newton 4, est un achat unique à 249,99 $, avec une mise à niveau à prix réduit à 99,99 $ pour les propriétaires de Newton 3 ; il n'y a pas d'essai gratuit. L'outil convient à un motion designer qui anime directement dans After Effects et veut un mouvement piloté par la physique, et n'apporte aucune valeur hors de ce logiciel."
+      "en": "Newton 4 is a 2D physics simulation plugin for After Effects: it makes text, shape and other layers behave like solid objects, with gravity, collisions, friction and springs, applying realistic bounces and oscillations without manual keyframing. It is the current version, succeeding Newton 3.\n\nNewton 4 is a one-time purchase at 249.99 USD, with a 99.99 USD discounted loyalty upgrade for existing Newton 3 owners (150.00 USD from Newton 2); a fully functional free trial is available, with exports capped at 25 frames. It suits a motion designer who animates directly in After Effects and wants physics-driven motion, and adds no value outside that software.",
+      "fr": "Newton 4 est un plugin de simulation physique 2D pour After Effects : il fait se comporter le texte, les formes et les autres calques comme des objets solides, avec gravité, collisions, friction et ressorts, sans animation manuelle par images clés. C'est la version actuelle, qui succède à Newton 3.\n\nNewton 4 est un achat unique à 249,99 $, avec une mise à niveau fidélité à 99,99 $ pour les propriétaires de Newton 3 ; un essai gratuit est disponible, avec des exports limités à 25 images. Il convient à un motion designer qui anime dans After Effects et veut un mouvement piloté par la physique, sans valeur hors de ce logiciel."
     },
     "pros": [
       {
@@ -222,14 +229,14 @@
         "fr": "Remplace l'animation manuelle par images clés pour les rebonds, collisions et ressorts par une simulation physique."
       },
       {
-        "en": "One-time license with no recurring subscription fee.",
-        "fr": "Licence à vie, sans abonnement récurrent."
+        "en": "One-time license with no recurring subscription fee, and a discounted upgrade path for Newton 3 owners.",
+        "fr": "Licence à vie, sans abonnement récurrent, avec une mise à niveau à prix réduit pour les propriétaires de Newton 3."
       }
     ],
     "cons": [
       {
-        "en": "No free trial to test the plugin before buying.",
-        "fr": "Aucun essai gratuit pour tester le plugin avant d'acheter."
+        "en": "The free trial exports are capped at 25 frames, too short to validate a full shot before buying.",
+        "fr": "Les exports de l'essai gratuit sont limités à 25 images, trop court pour valider un plan complet avant d'acheter."
       },
       {
         "en": "Works only inside After Effects, with no standalone use.",
@@ -251,17 +258,11 @@
       }
     }
   },
-  "unknowns": [
-    "No free trial availability could be confirmed; the FAQ page was not fully accessible for a definitive answer.",
-    "Whether Newton 3 (the base slug's named version) is still purchasable standalone, or only via the Newton 4 upgrade path, was not fully clarified from the pages reached."
-  ],
+  "unknowns": [],
   "conflicts": [
-    "The seed data (queue) describes this slug as 'Newton 3' with a 249.99 USD price and a separate 99.99 USD Newton 4 upgrade, but the live official page now sells Newton 4 itself at 249.99 USD with the 99.99 USD price being the Newton-3-owner upgrade discount, not a Newton 4 standalone upgrade fee from a different base. This should be reconciled at fusion time."
+    "The seed data (queue) described this slug as 'Newton 3' with a 249.99 USD price and a separate 99.99 USD Newton 4 upgrade; the live official page now sells Newton 4 itself at 249.99 USD, with the 99.99 USD price being the Newton-3-owner loyalty upgrade discount. This dossier was renamed to Newton 4 and reconciled on this basis."
   ],
   "completedLocallyOn": "2026-10-01",
-  "reviewNotes": [
-    "No catalogue competitor matches Newton's specific 2D physics-simulation niche for After Effects (ae-duik and ae-rubberhose are rigging/bones tools, a different need); alternatives left empty rather than listing an unrelated plugin as a substitute.",
-    "The seed data described this slug as 'Newton 3' at 249.99 USD with a separate 99.99 USD Newton 4 upgrade; the live page now sells Newton 4 itself at 249.99 USD, with 99.99 USD being the upgrade price for Newton 3 owners specifically. Identity/pricing fields in this dossier reflect the current Newton 4 sale; verify the catalogue entry name matches before merge."
-  ],
-  "hold": "Produit renomme : Newton 3 n'existe plus en vente, la page officielle (aescripts.com/newton) ne vend que Newton 4 a 249,99 $ avec upgrade a 99,99 $ pour les proprietaires de Newton 3 (reconfirme en direct le 2026-10-02, aucun changement). Hold maintenu : decision catalogue sur le nom/slug en attente, aucun travail de prix effectue sur ce point."
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-02"
 }

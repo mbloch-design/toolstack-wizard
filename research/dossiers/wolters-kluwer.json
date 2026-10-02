@@ -239,6 +239,5 @@
   "reviewNotes": [
     "The catalogue models 'Wolters Kluwer' as a single tool, but it is a multi-brand conglomerate (Compliance Intelligence, VitalLaw, Legisway, Kleos, TyMetrix 360, ELM Solutions). This fiche describes Compliance Intelligence as the lead product since it had the clearest official source, but the catalogue entry itself may need to be split or renamed; flag for an editorial decision rather than correcting here.",
     "Seed data claimed a public price 'À partir de 49€/mois', but no official page confirms any public monthly price for any Wolters Kluwer product; this figure appears to be invented or mis-sourced and should not be published."
-  ],
-  "hold": "holding company with several products; editorial decision on how to split the listing"
+  ]
 }

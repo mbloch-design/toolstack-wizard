@@ -89,7 +89,9 @@ export type NativePrice = { amount: number; currency: Currency };
  * convertie et signalée comme telle.
  */
 export function nativePriceFromTool(tool: any, preferredCurrency?: Currency): NativePrice | null {
-  const candidates = (tool?.pricing_v5?.plans || []).filter(
+  // Both records, see getNativeComparePrice: a vendor publishing USD and EUR
+  // has its USD grid on pricing_v5En and its EUR grid on pricing_v5.
+  const candidates = [...(tool?.pricing_v5?.plans || []), ...(tool?.pricing_v5En?.plans || [])].filter(
     (item: any) => item?.isComparePlan && !item?.isFree && item?.nativeAmount != null && isCurrency(item?.nativeCurrency),
   );
   // Meme logique que getNativeComparePrice (nativePricing.ts) : un outil peut

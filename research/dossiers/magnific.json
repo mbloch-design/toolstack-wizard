@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "slug": "magnific-ai",
+  "slug": "magnific",
   "tier": "A",
   "researchedOn": "2026-09-25",
   "status": "needs_review",
@@ -180,13 +180,22 @@
   },
   "audience": {
     "persona": "SOFIA",
-    "description": { "en": "A designer who needs to upscale and enhance AI-generated or low-resolution images for client-ready output.", "fr": "Une designer qui doit agrandir et améliorer des images générées par IA ou en basse résolution pour un rendu livrable au client." },
+    "description": {
+      "en": "A designer who needs to upscale and enhance AI-generated or low-resolution images for client-ready output.",
+      "fr": "Une designer qui doit agrandir et améliorer des images générées par IA ou en basse résolution pour un rendu livrable au client."
+    },
     "soloRelevance": "high",
     "teamRelevance": "low"
   },
   "useCases": [
-    { "en": "Upscale: turn a low-resolution AI-generated image into a print-ready file using creativity and HDR controls.", "fr": "Agrandir : transformer une image générée par IA en basse résolution en fichier prêt à imprimer grâce aux réglages de créativité et HDR." },
-    { "en": "Enhance: reimagine a client photo with adjustable resemblance settings while staying on a single subscription with Freepik's other AI tools.", "fr": "Améliorer : réinterpréter une photo client avec des réglages de ressemblance ajustables, sur un seul abonnement incluant les autres outils IA de Freepik." }
+    {
+      "en": "Upscale: turn a low-resolution AI-generated image into a print-ready file using creativity and HDR controls.",
+      "fr": "Agrandir : transformer une image générée par IA en basse résolution en fichier prêt à imprimer grâce aux réglages de créativité et HDR."
+    },
+    {
+      "en": "Enhance: reimagine a client photo with adjustable resemblance settings while staying on a single subscription with Freepik's other AI tools.",
+      "fr": "Améliorer : réinterpréter une photo client avec des réglages de ressemblance ajustables, sur un seul abonnement incluant les autres outils IA de Freepik."
+    }
   ],
   "alternatives": [
     {
@@ -206,10 +215,17 @@
     {
       "slug": "leonardo-ai",
       "reason": {
-        "en": "AI image generation and enhancement platform competing for the same creative image workflows.", "fr": "Plateforme de génération et d'amélioration d'image par IA en concurrence sur les mêmes flux créatifs." } },
+        "en": "AI image generation and enhancement platform competing for the same creative image workflows.",
+        "fr": "Plateforme de génération et d'amélioration d'image par IA en concurrence sur les mêmes flux créatifs."
+      }
+    },
     {
       "slug": "firefly",
-      "reason": { "en": "Adobe's AI image generation and editing suite, a direct competitor for AI-assisted image enhancement.", "fr": "La suite Adobe de génération et d'édition d'image par IA, concurrente directe pour l'amélioration d'image assistée par IA." } }
+      "reason": {
+        "en": "Adobe's AI image generation and editing suite, a direct competitor for AI-assisted image enhancement.",
+        "fr": "La suite Adobe de génération et d'édition d'image par IA, concurrente directe pour l'amélioration d'image assistée par IA."
+      }
+    }
   ],
   "missingAlternatives": [
     {
@@ -225,35 +241,98 @@
     "puissance": 4,
     "reversibilite": 3,
     "evidence": {
-      "valeurAjoutee": { "en": "The entry Premium plan bundles upscaling with a broad AI suite and stock library, but at $20/month with credits shared across tools, heavy upscaling users may exhaust their pool quickly.", "fr": "Le plan d'entrée Premium regroupe l'upscaling avec une large suite IA et une bibliothèque de médias, mais à 20 $/mois avec des crédits partagés entre les outils, un usage intensif d'upscaling peut épuiser le pool rapidement.", "sourceIds": ["s1"] },
-      "simplicite": { "en": "Creativity, resemblance and HDR controls give a usable result quickly without specialist training.", "fr": "Les réglages de créativité, ressemblance et HDR donnent un résultat utilisable rapidement sans formation spécialisée.", "sourceIds": ["s1"] },
-      "utilisation": { "en": "Delivers image upscaling and creative reimagining as advertised, bundled with Freepik's generation models.", "fr": "Assure l'agrandissement d'image et la réinterprétation créative comme annoncé, avec les modèles de génération de Freepik en plus.", "sourceIds": ["s1"] },
-      "puissance": { "en": "Premium+ unlocks a commercial license and unlimited access to a flagship model, positioning it as a strong option for professional output.", "fr": "Premium+ débloque une licence commerciale et un accès illimité à un modèle phare, ce qui en fait une option solide pour un usage professionnel.", "sourceIds": ["s1"] },
-      "reversibilite": { "en": "Neutral score: export formats and data portability are not covered by the collected sources.", "fr": "Note neutre : les formats d'export et la portabilité des données ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+      "valeurAjoutee": {
+        "en": "The entry Premium plan bundles upscaling with a broad AI suite and stock library, but at $20/month with credits shared across tools, heavy upscaling users may exhaust their pool quickly.",
+        "fr": "Le plan d'entrée Premium regroupe l'upscaling avec une large suite IA et une bibliothèque de médias, mais à 20 $/mois avec des crédits partagés entre les outils, un usage intensif d'upscaling peut épuiser le pool rapidement.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Creativity, resemblance and HDR controls give a usable result quickly without specialist training.",
+        "fr": "Les réglages de créativité, ressemblance et HDR donnent un résultat utilisable rapidement sans formation spécialisée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Delivers image upscaling and creative reimagining as advertised, bundled with Freepik's generation models.",
+        "fr": "Assure l'agrandissement d'image et la réinterprétation créative comme annoncé, avec les modèles de génération de Freepik en plus.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Premium+ unlocks a commercial license and unlimited access to a flagship model, positioning it as a strong option for professional output.",
+        "fr": "Premium+ débloque une licence commerciale et un accès illimité à un modèle phare, ce qui en fait une option solide pour un usage professionnel.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability are not covered by the collected sources.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données ne figurent pas dans les sources relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
     },
     "lastActivityVerifiedOn": null
   },
   "editorial": {
-    "tagline": { "en": "AI image upscaler", "fr": "Agrandisseur d'image par IA" },
-    "shortDescription": { "en": "Magnific upscales and creatively enhances images with AI, bundled into Freepik's broader image, video and audio suite.", "fr": "Magnific agrandit et améliore les images par IA de façon créative, intégré à la suite plus large image, vidéo et audio de Freepik." },
+    "tagline": {
+      "en": "AI image upscaler",
+      "fr": "Agrandisseur d'image par IA"
+    },
+    "shortDescription": {
+      "en": "Magnific upscales and creatively enhances images with AI, bundled into Freepik's broader image, video and audio suite.",
+      "fr": "Magnific agrandit et améliore les images par IA de façon créative, intégré à la suite plus large image, vidéo et audio de Freepik."
+    },
     "longDescription": {
       "en": "Magnific (formerly Magnific AI) upscales and creatively reimagines images with adjustable creativity, resemblance and HDR controls. It is no longer a standalone upscaler: it was folded into Freepik's unified creative platform, so a subscription also grants access to image, video and audio generation models plus a stock library of over 250 million assets.\n\nPlans start at $20/month for Premium (240,000 credits/year, shared across all Freepik AI tools), up to $110/month for Pro Starter aimed at agency-level output. There is no free plan. It fits a designer who needs client-ready upscaled images and is fine sharing a credit pool with other AI generation needs.",
       "fr": "Magnific (anciennement Magnific AI) agrandit et réinterprète les images de façon créative, avec des réglages ajustables de créativité, ressemblance et HDR. Ce n'est plus un upscaler autonome : il est intégré à la plateforme créative unifiée de Freepik, donc l'abonnement donne aussi accès aux modèles de génération d'image, vidéo et audio, plus une bibliothèque de plus de 250 millions de médias.\n\nLes plans démarrent à 20 $/mois pour Premium (240 000 crédits/an, partagés entre tous les outils IA de Freepik), jusqu'à 110 $/mois pour Pro Starter, niveau agence. Pas de plan gratuit. Convient à une designer qui a besoin d'images agrandies prêtes pour le client et accepte de partager un pool de crédits avec d'autres usages IA."
     },
     "pros": [
-      { "en": "Bundles upscaling with a broad AI generation suite and large stock library on one subscription.", "fr": "Regroupe l'upscaling avec une large suite de génération IA et une grande bibliothèque de médias sur un seul abonnement." },
-      { "en": "Fine-grained creativity, resemblance and HDR controls for tuning the enhancement result.", "fr": "Réglages fins de créativité, ressemblance et HDR pour ajuster le résultat de l'amélioration." },
-      { "en": "Premium+ includes a commercial license and unlimited access to a flagship model.", "fr": "Premium+ inclut une licence commerciale et un accès illimité à un modèle phare." }
+      {
+        "en": "Bundles upscaling with a broad AI generation suite and large stock library on one subscription.",
+        "fr": "Regroupe l'upscaling avec une large suite de génération IA et une grande bibliothèque de médias sur un seul abonnement."
+      },
+      {
+        "en": "Fine-grained creativity, resemblance and HDR controls for tuning the enhancement result.",
+        "fr": "Réglages fins de créativité, ressemblance et HDR pour ajuster le résultat de l'amélioration."
+      },
+      {
+        "en": "Premium+ includes a commercial license and unlimited access to a flagship model.",
+        "fr": "Premium+ inclut une licence commerciale et un accès illimité à un modèle phare."
+      }
     ],
     "cons": [
-      { "en": "No free plan; testing requires a paid subscription.", "fr": "Pas de plan gratuit ; tester l'outil nécessite un abonnement payant." },
-      { "en": "Credits are shared across image, video and audio generation, so heavy upscaling use competes with other usage.", "fr": "Les crédits sont partagés entre génération d'image, vidéo et audio, donc un usage intensif d'upscaling entre en concurrence avec les autres usages." }
+      {
+        "en": "No free plan; testing requires a paid subscription.",
+        "fr": "Pas de plan gratuit ; tester l'outil nécessite un abonnement payant."
+      },
+      {
+        "en": "Credits are shared across image, video and audio generation, so heavy upscaling use competes with other usage.",
+        "fr": "Les crédits sont partagés entre génération d'image, vidéo et audio, donc un usage intensif d'upscaling entre en concurrence avec les autres usages."
+      }
     ],
     "verdict": {
-      "keepIf": { "en": "You want AI image upscaling bundled with broader image, video and audio generation tools on one subscription.", "fr": "Tu veux de l'upscaling d'image par IA regroupé avec des outils de génération image, vidéo et audio plus larges sur un seul abonnement." },
-      "avoidIf": { "en": "You only need dedicated upscaling and don't want to pay for a shared credit pool covering other AI tools.", "fr": "Tu as seulement besoin d'upscaling dédié et tu ne veux pas payer pour un pool de crédits partagé avec d'autres outils IA." },
-      "threshold": { "en": "Premium costs $240/year at the regular monthly rate; compare that to how many images per month you actually need upscaled.", "fr": "Premium coûte 240 $/an au tarif mensuel normal ; compare ce coût au nombre d'images à agrandir réellement chaque mois." },
-      "billingTraps": { "en": "The annual price shown (e.g. $7.25/month for Premium) is a 50%-off promotional rate; the regular monthly price without commitment is higher ($20/month), so check which rate applies before subscribing.", "fr": "Le prix annuel affiché (par exemple 7,25 $/mois pour Premium) est un tarif promotionnel à -50 % ; le prix mensuel normal sans engagement est plus élevé (20 $/mois), donc vérifie quel tarif s'applique avant de t'abonner." }
+      "keepIf": {
+        "en": "You want AI image upscaling bundled with broader image, video and audio generation tools on one subscription.",
+        "fr": "Tu veux de l'upscaling d'image par IA regroupé avec des outils de génération image, vidéo et audio plus larges sur un seul abonnement."
+      },
+      "avoidIf": {
+        "en": "You only need dedicated upscaling and don't want to pay for a shared credit pool covering other AI tools.",
+        "fr": "Tu as seulement besoin d'upscaling dédié et tu ne veux pas payer pour un pool de crédits partagé avec d'autres outils IA."
+      },
+      "threshold": {
+        "en": "Premium costs $240/year at the regular monthly rate; compare that to how many images per month you actually need upscaled.",
+        "fr": "Premium coûte 240 $/an au tarif mensuel normal ; compare ce coût au nombre d'images à agrandir réellement chaque mois."
+      },
+      "billingTraps": {
+        "en": "The annual price shown (e.g. $7.25/month for Premium) is a 50%-off promotional rate; the regular monthly price without commitment is higher ($20/month), so check which rate applies before subscribing.",
+        "fr": "Le prix annuel affiché (par exemple 7,25 $/mois pour Premium) est un tarif promotionnel à -50 % ; le prix mensuel normal sans engagement est plus élevé (20 $/mois), donc vérifie quel tarif s'applique avant de t'abonner."
+      }
     }
   },
   "unknowns": [

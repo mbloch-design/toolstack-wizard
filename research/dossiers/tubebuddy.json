@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "slug": "tubebody",
+  "slug": "tubebuddy",
   "tier": "B",
   "researchedOn": "2026-09-25",
   "status": "needs_review",
@@ -19,7 +19,7 @@
       "id": "s1",
       "url": "https://tubebuddy.com/pricing",
       "tier": 1,
-      "accessedOn": "2026-09-25",
+      "accessedOn": "2026-10-02",
       "title": "TubeBuddy pricing"
     }
   ],
@@ -27,7 +27,7 @@
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://tubebuddy.com/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -47,15 +47,15 @@
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": null,
-          "annualPerMonth": null,
+          "monthly": 4.99,
+          "annualPerMonth": 3.99,
           "oneTime": null
         },
-        "onQuote": true,
+        "onQuote": false,
         "keyLimits": [
           {
-            "en": "Smart tools for new creators: basic video/thumbnail tools, basic title and tag optimization, limited Next Video Ideas. Tied to a single YouTube channel, one user per license. Exact dollar price not confirmed on the official pricing page in this session (renders dynamically by region); third-party trackers cite figures ranging roughly $15-49/month depending on region and billing cycle.",
-            "fr": "Outils intelligents pour les nouveaux créateurs : outils de base pour vidéos/miniatures, optimisation de base des titres et tags, Next Video Ideas limité. Lié à une seule chaîne YouTube, un utilisateur par licence. Le prix exact n'est pas confirmé sur la page tarifaire officielle lors de cette session (affichage dynamique selon la région) ; des trackers tiers citent des chiffres allant d'environ 15 à 49 $/mois selon la région et la facturation."
+            "en": "Smart tools for new creators: basic video/thumbnail tools, basic title and tag optimization, limited Next Video Ideas. Tied to a single YouTube channel, one user per license.",
+            "fr": "Outils intelligents pour les nouveaux créateurs : outils de base pour vidéos/miniatures, optimisation de base des titres et tags, Next Video Ideas limité. Lié à une seule chaîne YouTube, un utilisateur par licence."
           }
         ],
         "sourceIds": [
@@ -68,15 +68,15 @@
         "unit": "seat",
         "minSeats": 1,
         "price": {
-          "monthly": null,
-          "annualPerMonth": null,
+          "monthly": 31.5,
+          "annualPerMonth": 25.2,
           "oneTime": null
         },
-        "onQuote": true,
+        "onQuote": false,
         "keyLimits": [
           {
-            "en": "All Pro features plus content strategy tools, advanced reporting, full search/SEO access, bulk processing, audience tools, YouTube Shorts linking, topical analysis. Includes 2 user seats. Exact dollar price not confirmed on the official pricing page in this session (renders dynamically by region).",
-            "fr": "Toutes les fonctions Pro plus des outils de stratégie de contenu, des rapports avancés, un accès SEO/recherche complet, le traitement en masse, des outils d'audience, le lien avec YouTube Shorts et l'analyse thématique. Inclut 2 sièges utilisateur. Le prix exact n'est pas confirmé sur la page tarifaire officielle lors de cette session (affichage dynamique selon la région)."
+            "en": "All Pro features plus content strategy tools, advanced reporting, full search/SEO access, bulk processing, audience tools, YouTube Shorts linking, topical analysis. Includes 2 user seats.",
+            "fr": "Toutes les fonctions Pro plus des outils de stratégie de contenu, des rapports avancés, un accès SEO/recherche complet, le traitement en masse, des outils d'audience, le lien avec YouTube Shorts et l'analyse thématique. Inclut 2 sièges utilisateur."
           }
         ],
         "sourceIds": [
@@ -109,8 +109,8 @@
     "addOns": [],
     "cautions": [
       {
-        "en": "TubeBuddy localizes displayed prices by region and offers both monthly and annual billing; exact dollar figures for Pro and Legend were not readable from the official pricing page content fetched in this session, so no price is stated as fact here (see unknowns).",
-        "fr": "TubeBuddy adapte les prix affichés par région et propose une facturation mensuelle ou annuelle ; les montants exacts pour Pro et Legend n'étaient pas lisibles sur le contenu de la page tarifaire officielle récupéré lors de cette session, donc aucun prix n'est présenté comme un fait ici (voir unknowns).",
+        "en": "Prices shown are the US dollar prices on the official pricing page; TubeBuddy also displays an approximate EUR conversion, but states actual billing is always in USD and the conversion rate can vary.",
+        "fr": "Les prix indiqués sont les prix officiels en dollars US de la page tarifaire ; TubeBuddy affiche aussi une conversion approximative en euros, mais précise que la facturation réelle se fait toujours en dollars et que le taux de change peut varier.",
         "sourceIds": [
           "s1"
         ]
@@ -179,9 +179,7 @@
     }
   ],
   "missingAlternatives": [],
-  "unknowns": [
-    "Exact monthly/annual dollar prices for the Pro and Legend plans could not be confirmed from the official pricing page content fetched in this session; the page renders prices dynamically by region."
-  ],
+  "unknowns": [],
   "conflicts": [],
   "completedLocallyOn": "2026-10-01",
   "rating": {
@@ -192,8 +190,8 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Plan prices are not published as fixed public figures and vary by region, making the real cost-to-value ratio hard to judge from the sources alone.",
-        "fr": "Les prix des offres ne sont pas publiés sous forme de chiffres fixes et varient par région, ce qui rend difficile de juger le vrai rapport coût/valeur à partir des seules sources.",
+        "en": "At 4.99 USD a month (3.99 USD billed annually) for Pro, dedicated SEO and optimization tools are cheap relative to the time they can save on a single channel.",
+        "fr": "À 4,99 $ par mois (3,99 $ en facturation annuelle) pour Pro, les outils dédiés de SEO et d'optimisation restent peu chers par rapport au temps qu'ils peuvent faire gagner sur une seule chaîne.",
         "sourceIds": [
           "s1"
         ]
@@ -258,8 +256,8 @@
       "fr": "Une boîte à outils YouTube qui aide les créateurs à optimiser titres, tags et miniatures, suivre les statistiques de chaîne et planifier le contenu."
     },
     "longDescription": {
-      "en": "TubeBuddy is a YouTube-focused toolkit for tag research, title and thumbnail testing, and channel analytics, tied to a single YouTube channel per license. Free users get basic tools; Pro and Legend unlock deeper SEO, bulk editing and content-strategy features such as Next Video Ideas.\n\nExact prices were not readable on the official pricing page during this review, as TubeBuddy localizes them by region; third-party trackers cite Pro at roughly $15 to $49 per month depending on region and billing cycle, and Legend costs more for 2 seats. It fits a solo creator who wants data-driven SEO tools without hiring an agency.",
-      "fr": "TubeBuddy est une boîte à outils YouTube pour la recherche de tags, le test de titres et de miniatures, et l'analyse de chaîne, liée à une seule chaîne par licence. La version gratuite donne les outils de base ; Pro et Legend débloquent un SEO plus poussé, l'édition en masse et la stratégie de contenu.\n\nLes prix exacts n'étaient pas lisibles sur la page officielle, TubeBuddy les adaptant par région ; des trackers tiers citent Pro autour de 15 à 49 $ par mois, et Legend coûte plus cher pour 2 sièges. L'outil convient à un créateur solo qui veut des outils SEO basés sur la donnée sans agence."
+      "en": "TubeBuddy is a YouTube-focused toolkit for tag research, title and thumbnail testing, and channel analytics, tied to a single YouTube channel per license. Free users get basic tools; Pro and Legend unlock deeper SEO, bulk editing and content-strategy features such as Next Video Ideas.\n\nPro costs 4.99 USD a month (3.99 USD billed annually), and Legend, which includes 2 user seats, costs 31.50 USD a month (25.20 USD billed annually). It fits a solo creator who wants data-driven SEO tools without hiring an agency.",
+      "fr": "TubeBuddy est une boîte à outils YouTube pour la recherche de tags, le test de titres et de miniatures, et l'analyse de chaîne, liée à une seule chaîne par licence. La version gratuite donne les outils de base ; Pro et Legend débloquent un SEO plus poussé, l'édition en masse et la stratégie de contenu.\n\nPro coûte 4,99 $ par mois (3,99 $ en facturation annuelle), et Legend, qui inclut 2 sièges utilisateur, coûte 31,50 $ par mois (25,20 $ en facturation annuelle). L'outil convient à un créateur solo qui veut des outils SEO basés sur la donnée sans agence."
     },
     "pros": [
       {
@@ -273,8 +271,8 @@
     ],
     "cons": [
       {
-        "en": "Exact plan prices are not published in a fixed, region-independent way.",
-        "fr": "Les prix des offres ne sont pas publiés de façon fixe, indépendamment de la région."
+        "en": "Annual billing is required to get the lower per-month rate; month-to-month billing costs more.",
+        "fr": "La facturation annuelle est nécessaire pour obtenir le tarif mensuel le plus bas ; la facturation au mois coûte plus cher."
       },
       {
         "en": "Free and Pro licenses are locked to a single channel and a single user.",
@@ -291,13 +289,11 @@
         "fr": "Tu gères plusieurs chaînes ou une équipe : l'accès multi-sièges ne commence qu'à partir de l'offre Legend."
       },
       "threshold": {
-        "en": "Expect to pay roughly $15 to $49 per month for Pro depending on your region, the only figures publicly tracked for this plan.",
-        "fr": "Compte environ 15 à 49 $ par mois pour Pro selon ta région, seules données publiques trouvées pour cette offre."
+        "en": "Pro costs 4.99 USD a month (3.99 USD billed annually); it pays off once tag and title optimization starts saving you real search traffic.",
+        "fr": "Pro coûte 4,99 $ par mois (3,99 $ en facturation annuelle) ; ça devient rentable dès que l'optimisation des tags et des titres te fait gagner un vrai trafic de recherche."
       }
     }
   },
-  "reviewNotes": [
-    "Pro and Legend plan prices are not confirmed as fixed figures on the official pricing page (it renders dynamically by region); the $15-49/month range cited for Pro comes from third-party trackers, not tubebuddy.com directly, and should be re-checked before publishing a comparePlanKey amount."
-  ],
-  "hold": "Pro/Legend prices unconfirmed on the official page; compared plan resolves to 0. Also duplicate of slug tubebuddy"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-02"
 }

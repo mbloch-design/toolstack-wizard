@@ -1,15 +1,15 @@
 {
   "schemaVersion": 2,
-  "slug": "lottie",
+  "slug": "lottiefiles",
   "tier": "B",
   "researchedOn": "2026-09-25",
   "status": "needs_review",
   "completedLocallyOn": "2026-10-01",
   "identity": {
-    "officialName": "Lottie",
+    "officialName": "LottieFiles",
     "vendor": "LottieFiles (Design Barn Inc.)",
     "officialUrl": "https://lottiefiles.com",
-    "docsUrl": "https://airbnb.io/lottie/",
+    "docsUrl": null,
     "changelogUrl": null,
     "urlStatus": "ok",
     "productStatus": "active",
@@ -20,7 +20,7 @@
       "id": "s1",
       "url": "https://lottiefiles.com/pricing",
       "tier": 1,
-      "accessedOn": "2026-09-25",
+      "accessedOn": "2026-10-02",
       "title": "LottieFiles pricing page"
     }
   ],
@@ -28,7 +28,7 @@
     "model": "freemium",
     "currency": "USD",
     "pricingUrl": "https://lottiefiles.com/pricing",
-    "verifiedOn": "2026-09-25",
+    "verifiedOn": "2026-10-02",
     "region": "US",
     "taxIncluded": null,
     "freePlan": {
@@ -264,16 +264,16 @@
   },
   "editorial": {
     "tagline": {
-      "en": "Vector animation format",
-      "fr": "Format d'animation vectorielle"
+      "en": "Lottie animation platform",
+      "fr": "Plateforme d'animations Lottie"
     },
     "shortDescription": {
-      "en": "Open JSON-based format and platform for lightweight vector animations across web, iOS, and Android, free to use and open source.",
-      "fr": "Format JSON ouvert et plateforme pour des animations vectorielles légères sur le web, iOS et Android, gratuit et open source."
+      "en": "LottieFiles hosts, edits and exports lightweight Lottie vector animations for web, iOS and Android, with a free tier and paid plans for storage and teams.",
+      "fr": "LottieFiles héberge, édite et exporte des animations vectorielles Lottie légères pour le web, iOS et Android, avec un palier gratuit et des plans payants pour le stockage."
     },
     "longDescription": {
-      "en": "Lottie is an open, JSON-based format for scalable vector animations that render natively on web, iOS, and Android through open-source runtime libraries. The LottieFiles platform built around it hosts a library of over 250,000 animations, a Figma plugin for direct export, and basic editing tools.\n\nThe format and runtime stay free. LottieFiles' own paid tier starts at $19.99 a month per user (billed annually) once storage or CDN hosting needs grow, and the Team plan at $24.99 adds version history and shared permissions. It fits designers and front-end developers adding animated micro-interactions without hand-coding them.",
-      "fr": "Lottie est un format ouvert basé sur JSON pour des animations vectorielles redimensionnables, affichées nativement sur le web, iOS et Android grâce à des bibliothèques d'exécution open source. La plateforme LottieFiles héberge une bibliothèque de plus de 250 000 animations, avec un plugin Figma pour l'export direct et des outils d'édition.\n\nLe format et le moteur d'exécution restent gratuits. Le palier payant de LottieFiles démarre à 19,99 $ par mois et par utilisateur (facturé à l'année) une fois que les besoins de stockage ou d'hébergement CDN augmentent, et le plan Team à 24,99 $ ajoute l'historique des versions et les permissions partagées. Il convient aux designers et développeurs front-end qui ajoutent des micro-interactions animées sans les coder à la main."
+      "en": "LottieFiles is the platform built around the open, JSON-based Lottie format for scalable vector animations that render natively on web, iOS, and Android through open-source runtime libraries. It hosts a library of over 250,000 animations, a Figma plugin and other design-tool integrations for direct export, and editing tools.\n\nThe Lottie format and runtime stay free, and LottieFiles' own free tier covers basic hosting. The paid Individual plan starts at $19.99 a month per user (billed annually) once storage or CDN hosting needs grow, and the Team plan at $24.99 adds version history and shared permissions. It fits designers and front-end developers adding animated micro-interactions without hand-coding them.",
+      "fr": "LottieFiles est la plateforme construite autour du format Lottie, un format ouvert basé sur JSON pour des animations vectorielles redimensionnables, affichées nativement sur le web, iOS et Android. Elle héberge une bibliothèque de plus de 250 000 animations, avec un plugin Figma pour l'export direct et des outils d'édition.\n\nLe format Lottie reste gratuit, et le palier gratuit de LottieFiles couvre l'hébergement de base. Le plan payant Individual démarre à 19,99 $ par mois et par utilisateur (facturé à l'année), et le plan Team à 24,99 $ ajoute l'historique des versions et les permissions partagées. Il convient aux designers et développeurs front-end qui ajoutent des micro-interactions animées sans les coder à la main."
     },
     "pros": [
       {
@@ -315,8 +315,6 @@
     "Exact AI credit usage mechanics (what consumes a credit) not detailed in the source excerpt."
   ],
   "conflicts": [],
-  "reviewNotes": [
-    "Le dossier mélange deux entités du catalogue : « lottie » (le format ouvert) et « lottiefiles » (la plateforme éditeur, fiche séparée). Toute la grille tarifaire relevée ici (Individual, Team, Enterprise) décrit en réalité l'offre LottieFiles, pas le format Lottie lui-même qui est gratuit. lottiefiles a été retiré des alternatives car c'est l'éditeur du format, pas un concurrent ; à vérifier si les deux fiches ne devraient pas être fusionnées ou clairement distinguées côté contenu."
-  ],
-  "hold": "doublon de lottiefiles : ce dossier decrit la plateforme LottieFiles, pas le format Lottie ; pas de travail de prix ici, voir le slug lottiefiles"
+  "reviewNotes": [],
+  "priceCheckedOn": "2026-10-02"
 }

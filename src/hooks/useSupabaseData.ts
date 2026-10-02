@@ -242,6 +242,10 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "webxr", "topaz-video",
   "relume-ai", "pageai", "liquid-web-partner-program", "are-na", "invision", "specify", "dovetail-ai", "shield-app", "seo-mode", "ga4", "sql", "wunderlist",
   "openai", "anthropic", "motion-app", "anchor-spotify", "descript", "flux", "kling-ai", "magnific-ai", "otter", "figma-weave", "elgato-stream-deck", "around", "monday", "fig-terminal", "reclaim-ai", "legifrance-pro", "captaindoc", "sendinblue", "clearbit", "quickbooks-online", "lemonsqueezy",
+  // 02/10/2026 (décision Michael) : doublons consolidés (tubebody→tubebuddy, lottie→lottiefiles,
+  // apollo→apollo-io), produits arrêtés retirés (avocode, twitch-studio, pluraleyes, premiere-rush),
+  // Newton 3 renommé en Newton 4 (ae-newton3→ae-newton4). 301 dans vercel.json.
+  "tubebody", "lottie", "apollo", "avocode", "twitch-studio", "pluraleyes", "premiere-rush", "ae-newton3",
 ]);
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({

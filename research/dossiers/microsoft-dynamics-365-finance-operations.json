@@ -59,8 +59,8 @@
         "onQuote": false,
         "keyLimits": [
           {
-            "en": "$210/user/month, paid yearly, confirmed on the official Microsoft pricing page. Adding a second app (e.g. Supply Chain Management) reportedly costs an additional $30/user/month per third-party partner guides, not shown on this official page.",
-            "fr": "210 $ par utilisateur et par mois, facturé à l'année, confirmé sur la page tarifs officielle de Microsoft. Ajouter une deuxième application (par exemple Supply Chain Management) coûterait 30 $ par utilisateur et par mois en plus selon des guides de partenaires tiers, non confirmé sur cette page officielle."
+            "en": "$210/user/month, paid yearly, confirmed on the official Microsoft pricing page. Microsoft also sells other license types and per-app add-on modules (e.g. Supply Chain Management alongside Finance), but their prices are not published on this official Finance pricing page.",
+            "fr": "210 $ par utilisateur et par mois, facturé à l'année, confirmé sur la page tarifs officielle de Microsoft. Microsoft propose aussi d'autres types de licences et des modules complémentaires par application (par exemple Supply Chain Management en plus de Finance), mais leurs prix ne sont pas publiés sur cette page tarifs officielle de Finance."
           }
         ],
         "sourceIds": [
@@ -87,39 +87,9 @@
         "sourceIds": [
           "s2"
         ]
-      },
-      {
-        "key": "team-member",
-        "name": "Team Member",
-        "unit": "seat",
-        "minSeats": 1,
-        "price": {
-          "monthly": 8,
-          "annualPerMonth": null,
-          "oneTime": null
-        },
-        "onQuote": false,
-        "keyLimits": [
-          {
-            "en": "Read-only access and basic data entry; same rate reported for Activity User licenses. Not shown on the official Dynamics 365 Finance pricing page as of 2026-10-02; figure comes from third-party partner pricing guides only.",
-            "fr": "Accès en lecture seule et saisie de données basique ; même tarif rapporté pour les licences Activity User. Absent de la page tarifs officielle Dynamics 365 Finance au 2026-10-02 ; ce chiffre vient uniquement de guides de partenaires tiers."
-          }
-        ],
-        "sourceIds": [
-          "s1"
-        ]
       }
     ],
     "comparePlanKey": "finance-single-app",
-    "addOns": [
-      {
-        "en": "Second app add-on (e.g. Supply Chain Management alongside Finance): reportedly +$30/user/month per third-party partner guides; not confirmed on the official Dynamics 365 Finance pricing page.",
-        "fr": "Module complémentaire pour une deuxième application (par exemple Supply Chain Management en plus de Finance) : rapporté à +30 $ par utilisateur et par mois selon des guides de partenaires tiers ; non confirmé sur la page tarifs officielle Dynamics 365 Finance.",
-        "sourceIds": [
-          "s1"
-        ]
-      }
-    ],
     "cautions": [
       {
         "en": "As of January 15, 2026, Microsoft began enforcing license compliance: users without the correct license lose access to Dynamics 365 Finance & Operations applications.",
@@ -197,8 +167,8 @@
       "fr": "Comptabilité générale : centraliser la comptabilité, la trésorerie et le reporting réglementaire d'une entité sur le plan Finance (single app)."
     },
     {
-      "en": "Supply chain add-on: extend Finance with Supply Chain Management for an extra $30 per user per month to cover purchasing and inventory.",
-      "fr": "Ajout chaîne d'approvisionnement : étendre Finance avec Supply Chain Management pour 30 $ par utilisateur et par mois en plus pour couvrir achats et stocks."
+      "en": "Supply chain add-on: extend Finance with the Supply Chain Management module to cover purchasing and inventory; its price is a separate per-app add-on not published on the official Finance pricing page.",
+      "fr": "Ajout chaîne d'approvisionnement : étendre Finance avec le module Supply Chain Management pour couvrir achats et stocks ; son prix est un module complémentaire par application, non publié sur la page tarifs officielle de Finance."
     }
   ],
   "alternatives": [
@@ -240,13 +210,13 @@
     "reversibilite": 3,
     "evidence": {
       "valeurAjoutee": {
-        "en": "Full user licenses start at $210/user/month and a second app adds $30/user/month on top: hard to justify for a solo user or small team against cheaper accounting tools.",
-        "fr": "Les licences complètes démarrent à 210 $ par utilisateur et par mois, et une deuxième application ajoute 30 $ de plus : difficile à justifier pour un indépendant ou une petite équipe face à des outils de comptabilité moins chers.",
-        "sourceIds": ["s1"]
+        "en": "Full user licenses start at $210/user/month, and each additional app is a separate per-user add-on license: hard to justify for a solo user or small team against cheaper accounting tools.",
+        "fr": "Les licences complètes démarrent à 210 $ par utilisateur et par mois, et chaque application supplémentaire est une licence complémentaire par utilisateur : difficile à justifier pour un indépendant ou une petite équipe face à des outils de comptabilité moins chers.",
+        "sourceIds": ["s2"]
       },
       "simplicite": {
-        "en": "The licensing model spans multiple seat types (full user, Team Member, per-app add-ons) and strict compliance enforcement since January 2026, which takes real setup care to get right.",
-        "fr": "Le modèle de licence combine plusieurs types de siège (utilisateur complet, Team Member, modules par application) avec une application stricte depuis janvier 2026, ce qui demande une configuration soignée.",
+        "en": "The licensing model spans multiple seat types (full user plus other license types and per-app add-ons) and strict compliance enforcement since January 2026, which takes real setup care to get right.",
+        "fr": "Le modèle de licence combine plusieurs types de siège (utilisateur complet, plus d'autres types de licences et des modules par application) avec une application stricte depuis janvier 2026, ce qui demande une configuration soignée.",
         "sourceIds": ["s1"]
       },
       "utilisation": {
@@ -277,8 +247,8 @@
       "fr": "Module ERP cloud pour la comptabilité, la trésorerie et la conformité des grandes entreprises, à partir de 210 dollars par utilisateur et par mois."
     },
     "longDescription": {
-      "en": "Dynamics 365 Finance is Microsoft's cloud ERP module for core accounting, cash management, and regulatory compliance. Each license covers one function: adding Supply Chain Management or another Dynamics 365 app means a separate add-on license, not a bundled upgrade. The Premium tier adds Copilot AI credits inside the finance workflow.\n\nFull user licenses start at $210 a month, with a cheaper $8 a month Team Member tier for read-only or data-entry access. Since January 2026, Microsoft enforces license compliance strictly, so a misassigned seat can lose access. This pricing and modular structure target large organizations with a dedicated finance team, not freelancers or small teams.",
-      "fr": "Dynamics 365 Finance est le module ERP cloud de Microsoft pour la comptabilité, la trésorerie et la conformité réglementaire. Chaque licence couvre une seule fonction : ajouter Supply Chain Management ou une autre application Dynamics 365 demande une licence séparée, pas une mise à niveau groupée. Le palier Premium ajoute des crédits Copilot au flux de travail finance.\n\nLes licences complètes démarrent à 210 $ par mois, avec un palier Team Member à 8 $ par mois pour un accès en lecture ou en saisie simple. Depuis janvier 2026, Microsoft applique strictement la conformité des licences : une mauvaise affectation peut couper l'accès. Cette tarification vise les grandes organisations avec une équipe finance dédiée, pas les indépendants ou petites équipes."
+      "en": "Dynamics 365 Finance is Microsoft's cloud ERP module for core accounting, cash management, and regulatory compliance. Each license covers one function: adding Supply Chain Management or another app means a separate add-on license, not a bundled upgrade. The Premium tier adds Copilot AI credits.\n\nFull licenses start at $210 a month, or $300 a month for Premium. Other license types and per-app add-ons exist, but their prices are not published on the official page. Since January 2026, Microsoft strictly enforces license compliance, so a misassigned seat can lose access. This targets large organizations with a dedicated finance team, not freelancers or small teams.",
+      "fr": "Dynamics 365 Finance est le module ERP cloud de Microsoft pour la comptabilité, la trésorerie et la conformité réglementaire. Ajouter Supply Chain Management ou une autre application demande une licence séparée, pas une mise à niveau groupée. Le palier Premium ajoute des crédits Copilot.\n\nLes licences complètes démarrent à 210 $ par mois, ou 300 $ par mois pour Premium. D'autres types de licences et des modules complémentaires existent, mais leurs prix ne sont pas publiés sur la page officielle. Depuis janvier 2026, Microsoft applique strictement la conformité des licences : une mauvaise affectation peut couper l'accès. Cette offre vise les grandes organisations avec une équipe finance dédiée, pas les indépendants ou petites équipes."
     },
     "pros": [
       {
@@ -310,21 +280,21 @@
         "fr": "Tu es indépendant ou en petite équipe et tu cherches un simple logiciel de comptabilité."
       },
       "threshold": {
-        "en": "Budget at least $210 per user per month for one full Finance license, plus $30 per user per month for each additional app.",
-        "fr": "Prévois au moins 210 $ par utilisateur et par mois pour une licence Finance complète, plus 30 $ par utilisateur et par mois pour chaque application supplémentaire."
+        "en": "Budget at least $210 per user per month for one full Finance license, or $300 per user per month for Finance Premium; each additional app is a separate add-on license at a price not published on the official page.",
+        "fr": "Prévois au moins 210 $ par utilisateur et par mois pour une licence Finance complète, ou 300 $ par utilisateur et par mois pour Finance Premium ; chaque application supplémentaire est une licence complémentaire séparée, dont le prix n'est pas publié sur la page officielle."
       },
       "billingTraps": {
-        "en": "Adding a second Dynamics 365 app is a separate per-user add-on at $30/month, not included in the base license; a misassigned license can cut off access entirely since January 2026.",
-        "fr": "Ajouter une deuxième application Dynamics 365 est un supplément séparé de 30 $ par utilisateur et par mois, non inclus dans la licence de base ; une mauvaise affectation de licence peut couper l'accès complètement depuis janvier 2026."
+        "en": "Adding a second Dynamics 365 app is a separate per-user add-on license, not included in the base license and not priced on the official page; a misassigned license can cut off access entirely since January 2026.",
+        "fr": "Ajouter une deuxième application Dynamics 365 est une licence complémentaire séparée par utilisateur, non incluse dans la licence de base et dont le prix n'est pas publié sur la page officielle ; une mauvaise affectation de licence peut couper l'accès complètement depuis janvier 2026."
       }
     }
   },
   "unknowns": [
     "Regional/currency variations (outside US) not covered.",
-    "No free trial length is advertised on the official pricing page."
+    "No free trial length is advertised on the official pricing page.",
+    "Prices for other license types (e.g. read-only or data-entry access) and per-app add-on modules (e.g. Supply Chain Management alongside Finance) are not published on the official Finance pricing page."
   ],
   "conflicts": [],
   "reviewNotes": [],
-  "hold": "Team Member ($8/user/month) et l'add-on seconde application (+$30/user/month) viennent de guides de partenaires tiers, non confirmes sur la page tarifs officielle Microsoft au 2026-10-02 (qui ne liste que Finance a 210 $ et Finance Premium a 300 $, toutes deux confirmees aujourd'hui) ; comparePlanKey (finance-single-app, 210 $) reste fiable.",
   "priceCheckedOn": "2026-10-02"
 }
