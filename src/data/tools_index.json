@@ -26113,8 +26113,8 @@
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://producthunt.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/product-hunt.jpg",
-    "logo": "https://logo.clearbit.com/producthunt.com",
+    "ogImageUrl": "/og-images/product-hunt-review.png",
+    "logo": "/tool-media/logos/product-hunt.png",
     "tool_type": "specialise",
     "substitution_cluster_v2": "product-discovery-platform",
     "functional_needs": [

@@ -21,6 +21,20 @@
       "tier": 1,
       "accessedOn": "2026-09-25",
       "title": "Product Hunt about page"
+    },
+    {
+      "id": "s2",
+      "url": "https://ph-static.imgix.net/ph-favicon-brand-500.svg",
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "title": "Official Product Hunt brand favicon"
+    },
+    {
+      "id": "s3",
+      "url": "https://ph-static.imgix.net/ph-logo-1.png?auto=format",
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "title": "Official Product Hunt social brand image"
     }
   ],
   "pricing": {
@@ -253,5 +267,16 @@
         "fr": "Aucun seuil de prix pour l'usage de base : parcourir, voter et lancer sont gratuits ; seules la publicité ou le sponsoring payants demandent de contacter l'équipe pour un devis."
       }
     }
+  },
+  "media": {
+    "logo": {
+      "localPath": "/tool-media/logos/product-hunt.png",
+      "sourceId": "s2"
+    },
+    "ogImage": {
+      "localPath": "/og-images/product-hunt-review.png",
+      "sourceId": "s3"
+    },
+    "gallery": []
   }
 }

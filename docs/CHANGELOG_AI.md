@@ -2,6 +2,11 @@
 
 - Ajout de la balise `msvalidate.01` dans le document HTML racine afin que la page d’accueil soit vérifiable par Bing.
 
+## 2026-10-02 — Correction des visuels Product Hunt
+
+- Remplacement du logo Clearbit devenu inaccessible par le favicon de marque officiel Product Hunt, stocké localement.
+- Suppression de la capture erronée de vérification anti-bot et remplacement par l’image de marque officielle publiée dans les métadonnées Product Hunt.
+
 ## 2026-10-02 — Nouvelle fiche Nick Launches
 
 - Ajout de la fiche FR/EN Nick Launches comme plateforme de lancement et annuaire de produits indépendants, avec référencement gratuit assorti d’un badge.

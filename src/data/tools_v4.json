@@ -157757,7 +157757,7 @@
     },
     "affiliateLink": "https://producthunt.com",
     "websiteUrl": "https://producthunt.com",
-    "logo": "https://logo.clearbit.com/producthunt.com",
+    "logo": "/tool-media/logos/product-hunt.png",
     "seo": {
       "idealForFr": "Consultants indépendants et fondateurs qui lancent leur propre produit ou service et veulent un pic de visibilité gratuit, le temps d'une journée, auprès des early adopters.",
       "idealForEn": "Independent consultants and founders launching their own product or service who want a free, one-day spike of visibility among early adopters."
@@ -157843,7 +157843,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": "product-discovery-platform",
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/product-hunt.jpg",
+    "ogImageUrl": "/og-images/product-hunt-review.png",
     "force_silence": false,
     "lifecycle": {
       "status": "active",
@@ -157917,7 +157917,8 @@
       "dossier": "research/dossiers/product-hunt.json",
       "researchedOn": "2026-09-25",
       "sources": 1
-    }
+    },
+    "galleryImages": []
   },
   {
     "id": "productboard",
