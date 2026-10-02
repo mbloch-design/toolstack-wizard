@@ -120,25 +120,17 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&display=swap" media="print" onload="this.media='all'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&display=swap" /></noscript>
 
+    <!-- Google Consent Mode v2: denied until the visitor explicitly accepts.
+         GA4 itself is injected by React only after that consent. -->
     <script>
-      // Defer GTM loading to after first paint
-      window.addEventListener('load', function() {
-        // Never pollute the production property with localhost, previews or
-        // unrelated hostnames. Production is the only measured environment.
-        if (window.location.hostname !== 'tooltrim.com' && window.location.hostname !== 'www.tooltrim.com') return;
-        var s = document.createElement('script');
-        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-DL5MJKQ3JE';
-        s.async = true;
-        document.head.appendChild(s);
-        s.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          window.gtag = gtag;
-          gtag('js', new Date());
-          // React owns every page_view, including the initial one. Disabling
-          // the automatic hit avoids double-counting the first route.
-          gtag('config', 'G-DL5MJKQ3JE', { send_page_view: false, anonymize_ip: true });
-        };
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+      window.gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
       });
     </script>
   </head>

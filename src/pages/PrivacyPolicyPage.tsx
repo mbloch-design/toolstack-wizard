@@ -40,7 +40,7 @@ const PrivacyPolicyPage = () => {
               <li>{t("Prénom (optionnel)", "First name (optional)")}</li>
               <li>{t("Outils sélectionnés dans le diagnostic", "Tools selected in the diagnostic")}</li>
               <li>{t("Profil utilisateur (type d'activité, maturité tech)", "User profile (activity type, tech maturity)")}</li>
-              <li>{t("Données de navigation anonymisées (via Google Analytics)", "Anonymized browsing data (via Google Analytics)")}</li>
+              <li>{t("Données de navigation anonymisées, uniquement après consentement (via Google Analytics)", "Anonymized browsing data, only after consent (via Google Analytics)")}</li>
             </ul>
           </section>
 
@@ -62,7 +62,7 @@ const PrivacyPolicyPage = () => {
             )}</p>
             <ul className="mt-2 space-y-1 pl-4 list-disc">
               <li><strong>Supabase</strong> — {t("hébergement de la base de données (UE)", "database hosting (EU)")}</li>
-              <li><strong>Google Analytics</strong> — {t("analyse du trafic (anonymisé)", "traffic analysis (anonymized)")}</li>
+              <li><strong>Google Analytics</strong> — {t("analyse du trafic (anonymisée), activée uniquement après votre consentement", "traffic analysis (anonymized), activated only after your consent")}</li>
             </ul>
           </section>
 
@@ -96,8 +96,8 @@ const PrivacyPolicyPage = () => {
           <section>
             <h2 className="mb-3 font-heading text-lg font-semibold text-foreground">Cookies</h2>
             <p>{t(
-              "ToolTrim utilise Google Analytics avec anonymisation des IP. Aucun cookie publicitaire n'est déposé. Les cookies techniques nécessaires au fonctionnement du site ne requièrent pas de consentement.",
-              "ToolTrim uses Google Analytics with IP anonymization. No advertising cookies are placed. Technical cookies necessary for site operation do not require consent."
+              "ToolTrim utilise Google Analytics avec anonymisation des IP uniquement après consentement. Aucun cookie analytics ou publicitaire n'est déposé avant votre choix. Les cookies techniques nécessaires au fonctionnement du site ne requièrent pas de consentement.",
+              "ToolTrim uses Google Analytics with IP anonymization only after consent. No analytics or advertising cookies are placed before you choose. Technical cookies necessary for site operation do not require consent."
             )}</p>
           </section>
         </div>

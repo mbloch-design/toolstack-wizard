@@ -4895,3 +4895,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - 2026-09-30 : note « Utilisation » de Drone Ops Mission relevée de 3/5 à 4/5 ; le justificatif explicite le parcours en trois étapes et le briefing Pro.
 - 2026-09-30 : note « Réversibilité » relevée de 3/5 à 4/5 ; le critère tient compte des exports CSV/PDF sans exiger un export complet du compte pour cet outil.
 - 2026-09-30 : fichiers publics `llms-full.txt` et index dérivés régénérés depuis le catalogue courant après synchronisation de `main`.
+## 2026-10-02 — Consentement Google Analytics
+
+- Suppression du chargement automatique de GA4 au chargement de la page.
+- Ajout d’un consentement analytics refusé par défaut : aucun cookie `_ga` avant acceptation explicite.
+- Ajout du Google Consent Mode v2 (analytics/ad storage denied par défaut) et chargement dynamique de GA4 après acceptation.
+- Mise à jour de la politique de confidentialité et validation par `npm run build`.

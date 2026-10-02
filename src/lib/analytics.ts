@@ -8,13 +8,14 @@
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    __tooltrimAnalyticsConsent?: boolean;
   }
 }
 
 let lastPageView: { path: string; sentAt: number } | null = null;
 
 export function trackEvent(name: string, params: Record<string, unknown> = {}): void {
-  if (typeof window === "undefined" || typeof window.gtag !== "function") return;
+  if (typeof window === "undefined" || !window.__tooltrimAnalyticsConsent || typeof window.gtag !== "function") return;
   window.gtag("event", name, params);
 }
 

@@ -14,6 +14,7 @@ import AppShellV2 from "@/components/v2shell/AppShellV2";
 import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import AnalyticsPageView from "@/components/AnalyticsPageView";
+import AnalyticsConsent from "@/components/AnalyticsConsent";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -265,6 +266,7 @@ const App = () => (
         <ScrollToTop />
         <DynamicCanonical />
         <AnalyticsPageView />
+        <AnalyticsConsent />
         <Analytics />
         <ErrorBoundary>
         <Suspense fallback={<LazyFallback />}>
