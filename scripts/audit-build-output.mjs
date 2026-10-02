@@ -44,9 +44,12 @@ const budgets = {
   // 34.5 MiB CSS.
   // Rail redesign (same story): measured 1,042.4 MiB total, 931.5 MiB HTML;
   // the rail rules are written twice (manual and forced rail), see TODO.
-  totalBytes: 1_060 * MiB,
+  // 2026-10-02: the two brand logos were inlined as data URIs (Vite's 4 KB
+  // limit) five times per page; served as files instead: measured 837.0 MiB
+  // total, 726.1 MiB HTML (-205 MiB). Budgets lowered to keep the gain.
+  totalBytes: 860 * MiB,
   // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
-  htmlBytes: 950 * MiB,
+  htmlBytes: 745 * MiB,
   javascriptBytes: 15 * MiB,
   // 32 MiB (2026-09-30): each researched fiche adds pricing-card critical CSS
   // variants (+0.2 MiB per 25 fiches, 30.7 MiB at 146); sized for the ~200

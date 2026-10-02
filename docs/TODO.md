@@ -54,7 +54,7 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 ## Catalogue et interface
 
 - [x] US-NAV-01 navigation (02/10/2026) : barre du haut qui se replie au scroll, recherche toujours accessible et ⌘K branché, menu mobile à niveaux (préférences et « Soumettre » enfin accessibles en mobile), colonne réduite avec libellés, dépliable par-dessus le contenu de 641 à 1 180 px, « déplier » au survol (visible en tactile), pictos revus (grille, paquets, colonnes, ampoule, symbole de devise), infobulle qui passait sous le contenu corrigée
-- [ ] US-NAV-01, reste : fil d'Ariane compact en mobile ; vérifier le mode sombre de la nouvelle navigation ; navigation locale des fiches qui prend le relais quand la barre du haut se replie
+- [x] US-NAV-01 suite (02/10/2026) : « ‹ Parent » à la place du logo en mobile sur les pages profondes, onglets de fiche collants en mobile, barre du haut mobile réduite à deux zones (repère, trois actions identiques), mode sombre vérifié
 - [ ] Accroches de 2 ou 3 mots : 92 outils sur 1 177 (le champ `editorial.tagline` de la recherche les apportera)
 - [ ] Besoins « IA » et « Admin & Finance » ajoutés au catalogue sans validation explicite **[décision]** : les garder ?
 - [ ] Pages catégorie d'un besoin à une seule catégorie (Content Creation, Automation, Analytics, AI) : la rangée de pilules est vide, seul le bouton Filtres reste
@@ -62,7 +62,7 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 
 ## Technique
 
-- [ ] Poids du build : la CSS de la colonne réduite (US-NAV-01) est écrite deux fois (réduction manuelle et plage imposée 641-1 180 px) et recopiée en CSS critique dans ~13 100 pages (+24 Mo de HTML). La factoriser (une classe posée au rendu serveur) pour revenir sous 925 Mo de HTML
+- [x] Poids du build (02/10/2026) : les deux logos étaient recopiés en data URI cinq fois par page (limite d'intégration de Vite) ; servis en fichiers : HTML 931 → 726 Mo, build 1 042 → 837 Mo. Le CSS du shell, lui, était déjà mutualisé
 - [x] Test `alternativesCoverage.spec.ts` réparé le 02/10/2026 : 138 effets Maxon (Universe, Red Giant) classés par famille avec alternatives entre eux (`scripts/classify-maxon-effects.mjs`), 317 → 175 fiches sans voisin
 
 - [ ] 4 erreurs TypeScript préexistantes dans `ToolDetailPage.tsx` (ToolSummary contre Tool, `category` possiblement indéfini)

@@ -2519,6 +2519,12 @@ export default defineConfig(({ mode, isSsrBuild }) => {
     !isSsrBuild && staticPrerenderPlugin(useCatalogProjectionForFiche),
   ].filter(Boolean),
   build: {
+    // Les deux logos de marque (4 Ko et 1,5 Ko) passaient sous la limite
+    // d'intégration de Vite : ils étaient recopiés en data URI dans le HTML,
+    // quatre fois par page dans le shell plus le footer, soit ~12 Ko sur
+    // chacune des ~13 100 pages prérendues. Servis comme fichiers, le
+    // navigateur les met en cache une fois.
+    assetsInlineLimit: (filePath: string) => (/(logo-tooltrim|picto-logo)\.svg$/.test(filePath) ? false : undefined),
     // Every prerendered page shares one index.html/entry graph, so Vite's
     // default modulePreload can't tell "home" from "tool page" apart — it
     // preloads every data-*.json chunk below on every route, including ones

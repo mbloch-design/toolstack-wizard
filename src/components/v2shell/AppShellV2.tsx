@@ -3,6 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } fro
 import {
   Home,
   Lightbulb,
+  ChevronLeft,
   Search,
   Bookmark,
   Languages,
@@ -182,6 +183,11 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     requestAnimationFrame(() => menuButtonRef.current?.focus());
   }, []);
   const breadcrumbCtx = useMemo(() => ({ setBreadcrumb }), []);
+  // Niveau supérieur de la page courante : avant-dernier maillon du fil
+  // d'Ariane qui porte un lien, hors accueil (l'onglet du bas y mène déjà).
+  const mobileParent = breadcrumb && breadcrumb.length >= 3
+    ? [...breadcrumb.slice(1, -1)].reverse().find((item) => item.href) || null
+    : null;
 
   // Path relative to the /:lang prefix, e.g. "/tool/notion" or "" for the homepage.
   const relPath = location.pathname.startsWith(prefix)
@@ -417,7 +423,18 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           ref={topbarRef}
           className="asv2-topbar"
           data-topbar-mode={isHome ? "home" : breadcrumb ? "breadcrumb" : showsSearchByDefault ? "search" : "pending"}
+          data-has-parent={mobileParent ? "true" : undefined}
         >
+          {/* Mobile, page profonde : le lien vers le niveau supérieur prend la
+              place du logo, dans la même hauteur (pas de saut de page, le fil
+              d'Ariane n'existant qu'après chargement). L'accueil reste dans la
+              barre d'onglets du bas. */}
+          {mobileParent && (
+            <Link to={mobileParent.href!} className="asv2-mobile-back" aria-label={t(`Retour à ${mobileParent.label}`, `Back to ${mobileParent.label}`)}>
+              <ChevronLeft aria-hidden />
+              <span>{mobileParent.label}</span>
+            </Link>
+          )}
           <Link to={prefix} className="asv2-mobile-logo" aria-label="ToolTrim">
             <img className="asv2-mobile-logo-full" src={logoToolTrim} alt="" width={127} height={28} />
             {/* Sous 360 px, le logo complet ne laisse plus de place aux actions. */}
