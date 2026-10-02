@@ -53,6 +53,14 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 
 ## Catalogue et interface
 
+- [x] Fiche outil responsive (02/10/2026) : deux colonnes dès 1 181 px quand la barre latérale est réduite, vide de 134 px sous « Tarifs » en mobile supprimé, accord « 1 outil », icônes de la section IA alignées, FAQ avec repère + / −, cartes « Pour qui » adoucies
+- [ ] Fiche mobile très longue (~11 300 px) : replier les sections secondaires (« Ce que comprend », « Résumé »), masquer « Les outils de X » quand il n'y a qu'un élément
+- [ ] Fiche mobile : flèches ‹ › du carrousel d'alternatives inutiles au doigt (garder points et glissement)
+- [ ] Fiche entre 1 181 et 1 350 px, barre dépliée : une colonne de ~970 px, limiter la largeur de lecture
+- [x] Page Outils responsive (02/10/2026) : étiquettes techniques retirées des filtres, « À la une » et « Les plus recherchés » en 3 colonnes dès 860 px sinon carrousel, titre contextuel (« Création · 341 outils ») sans doublon, « Voir N outils » dans le panneau de filtres, fond de la barre collée réparé en mobile, cibles tactiles 40-44 px
+- [ ] Page Outils : libellés d'usage encore en anglais dans l'interface française (« Creator Workflow », « Video Creation ») : traduire la taxonomie des tags fonctionnels
+- [ ] Page Outils mobile : le catalogue complet n'arrive qu'après six étagères (~3 200 px) ; ajouter un raccourci « Tout le catalogue » sous les pastilles
+- [ ] Page Outils mobile : la deuxième colonne des étagères coupe les noms en plein mot ; colonnes plus larges ou une seule colonne
 - [x] US-NAV-01 navigation (02/10/2026) : barre du haut qui se replie au scroll, recherche toujours accessible et ⌘K branché, menu mobile à niveaux (préférences et « Soumettre » enfin accessibles en mobile), colonne réduite avec libellés, dépliable par-dessus le contenu de 641 à 1 180 px, « déplier » au survol (visible en tactile), pictos revus (grille, paquets, colonnes, ampoule, symbole de devise), infobulle qui passait sous le contenu corrigée
 - [x] US-NAV-01 suite (02/10/2026) : « ‹ Parent » à la place du logo en mobile sur les pages profondes, onglets de fiche collants en mobile, barre du haut mobile réduite à deux zones (repère, trois actions identiques), mode sombre vérifié
 - [ ] Accroches de 2 ou 3 mots : 92 outils sur 1 177 (le champ `editorial.tagline` de la recherche les apportera)

@@ -115,10 +115,10 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
         </h2>
         <p className="td-bundle-sub">
           {isViewingParent
-            ? t(`Cette suite regroupe ${members.length} outils, inclus dans l'abonnement.`,
-                `This suite bundles ${members.length} tools, included in the subscription.`)
-            : t(`${tool.name} fait partie de ${parentName}. ${members.length} outils sont répertoriés dans la suite.`,
-                `${tool.name} is part of ${parentName}. ${members.length} tools are listed in the suite.`)}
+            ? t(`Cette suite regroupe ${members.length} outil${members.length > 1 ? "s" : ""}, inclus dans l'abonnement.`,
+                `This suite bundles ${members.length} tool${members.length > 1 ? "s" : ""}, included in the subscription.`)
+            : t(`${tool.name} fait partie de ${parentName}. ${members.length > 1 ? `${members.length} outils sont répertoriés` : "1 outil est répertorié"} dans la suite.`,
+                `${tool.name} is part of ${parentName}. ${members.length > 1 ? `${members.length} tools are listed` : "1 tool is listed"} in the suite.`)}
         </p>
       </header>
 

@@ -361,6 +361,14 @@ const ToolsPage = () => {
     );
   }
 
+  // Besoin ou catégorie ouverts : ils deviennent le titre de la page.
+  const contextTitle = activeNeed
+    ? ((lang === "en" ? activeNeed.en : activeNeed.fr) as string)
+    : browsedCategory
+      ? (getCatLabel(browsedCategory) as string)
+      : null;
+  const titleInHeader = !!contextTitle && !search;
+
   return (
     <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#10DDD6" } as React.CSSProperties}>
 
@@ -377,7 +385,14 @@ const ToolsPage = () => {
                 ? [{ label: t("Outils", "Tools") as string, href: `${prefix}/tools` }, { label: getCatLabel(browsedCategory) as string }]
                 : [{ label: t("Outils", "Tools") as string }]}
           />
-          <h1 className="tt-catalog-compact-title">{t("Outils", "Tools")}</h1>
+          {/* Le titre suit le contexte : « Création » plutôt que « Outils »
+              suivi d'un second titre « Création » plus bas. */}
+          <h1 className="tt-catalog-compact-title">{contextTitle || t("Outils", "Tools")}</h1>
+          {contextTitle && !search && (
+            <p className="tt-catalog-context-count">
+              {t(`${filtered.length} outil${filtered.length > 1 ? "s" : ""}`, `${filtered.length} tool${filtered.length > 1 ? "s" : ""}`)}
+            </p>
+          )}
         </div>
 
         <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
@@ -543,6 +558,15 @@ const ToolsPage = () => {
                   )}
                 </section>
                 </div>
+                {/* Ce que les réglages produisent, sans fermer le panneau pour
+                    le découvrir : le compte suit chaque choix. */}
+                <div className="tt-filter-panel-foot">
+                  <button type="button" className="tt-filter-panel-apply" onClick={() => setPanelOpen(false)}>
+                    {filtered.length === 0
+                      ? t("Aucun outil", "No tools")
+                      : t(`Voir ${filtered.length} outil${filtered.length > 1 ? "s" : ""}`, `Show ${filtered.length} tool${filtered.length > 1 ? "s" : ""}`)}
+                  </button>
+                </div>
               </PopoverContent>
             </Popover>
           </div>
@@ -621,12 +645,12 @@ const ToolsPage = () => {
                 {/* Filtered: the header names what is shown and how many, and
                     every refinement from the panel is visible and removable
                     here, not only behind the Filters button. */}
-                <p className="tt-catalog-results-kicker">
+                {!titleInHeader && <p className="tt-catalog-results-kicker">
                   {isFiltering || sort !== "popular"
                     ? t(`${filtered.length} outil${filtered.length > 1 ? "s" : ""}`, `${filtered.length} tool${filtered.length > 1 ? "s" : ""}`)
                     : t("Catalogue complet", "Full catalogue")}
-                </p>
-                <h2 id="catalogue-results-title" className="tt-catalog-results-title">
+                </p>}
+                <h2 id="catalogue-results-title" className={titleInHeader ? "sr-only" : "tt-catalog-results-title"}>
                   {search
                     ? t(`Résultats pour «\u00a0${search}\u00a0»`, `Results for “${search}”`)
                     : activeNeed

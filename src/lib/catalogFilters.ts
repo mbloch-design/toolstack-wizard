@@ -50,6 +50,7 @@ export function getToolSearchText(tool: ToolSummary, categoryLabel = "") {
 }
 
 const FACET_LABELS_FR: Record<string, string> = {
+  "after-effects-plugin": "Plugin After Effects",
   "ai-assistant": "Assistant IA",
   "ai-generation": "Génération IA",
   animation: "Animation",
@@ -84,6 +85,7 @@ const FACET_LABELS_FR: Record<string, string> = {
  * « Tests Utilisateurs » au milieu de libellés anglais.
  */
 const FACET_LABELS_EN: Record<string, string> = {
+  "after-effects-plugin": "After Effects plugin",
   analyse: "Analysis",
   "analytics-produit": "Product analytics",
   "animation-2d-3d": "2D & 3D animation",
@@ -203,6 +205,10 @@ export function formatFacetLabel(value: string, lang: string) {
 /** Use facets of a tool, normalised (functional needs and covered uses). */
 export function toolFacets(tool: ToolSummary): Set<string> {
   return new Set([...(tool.functional_needs || []), ...(tool.covers || [])]
+    // « préfixe:valeur » (universe-effect:transitions, maxon-effect:glow…) sert
+    // au classement interne des alternatives, pas de filtre lisible : ces tags
+    // s'affichaient tels quels dans le panneau « Usages ».
+    .filter((tag) => !String(tag).includes(":"))
     .map((tag) => normalizeToolText(tag).trim())
     .filter(Boolean));
 }

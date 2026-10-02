@@ -34195,3 +34195,104 @@ img[data-logo-loading] {
 }
 .asv2-mm-segment > .is-selected { background: var(--color-surface); color: var(--color-text-strong); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
 .asv2-mm-segment > a:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: -2px; }
+
+/* ══ Page Outils : blocs éditoriaux (« À la une », « Les plus recherchés ») ══
+   Règle unique, qui remplace les couches précédentes (2 colonnes sous 1 100 px
+   avec une 3e carte orpheline, 1 colonne sous 900 px qui empilait trois
+   grandes cartes sur près de deux écrans) :
+   - trois cartes côte à côte dès que la place le permet (≥ 860 px) ;
+   - en dessous, un carrousel horizontal dont la carte suivante dépasse :
+     une seule hauteur de carte, comme les étagères. */
+@media (min-width: 860px) {
+  .tt-catalog-page .tt-pepites,
+  .tt-catalog-page .tt-spotlight .tt-pepites { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 859px) {
+  .tt-catalog-page .tt-pepites,
+  .tt-catalog-page .tt-spotlight .tt-pepites {
+    display: grid;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: min(46%, 340px);
+    gap: 16px;
+    margin-inline: -20px;
+    padding: 0 20px 4px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 20px;
+    scrollbar-width: none;
+  }
+  .tt-catalog-page .tt-pepites::-webkit-scrollbar { display: none; }
+  .tt-catalog-page .tt-pepite { scroll-snap-align: start; }
+}
+@media (max-width: 640px) {
+  .tt-catalog-page .tt-pepites,
+  .tt-catalog-page .tt-spotlight .tt-pepites { grid-auto-columns: 82%; gap: 12px; }
+  .tt-catalog-page .tt-pepite-title { font-size: 19px; }
+}
+/* Compte sous le titre contextuel de la page Outils (« Création » · 341 outils). */
+.tt-catalog-context-count { margin: 6px 0 0; color: var(--color-muted); font-family: var(--font-ui); font-size: 15px; }
+/* Pied du panneau de filtres : le résultat des réglages, toujours visible. */
+.tt-filter-panel-foot {
+  flex: 0 0 auto;
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--color-border-soft);
+  background: var(--color-surface);
+}
+.tt-filter-panel-apply {
+  display: flex; align-items: center; justify-content: center; width: 100%; height: 46px;
+  border: 0; border-radius: var(--radius-pill); background: var(--color-text-strong); color: var(--color-bg);
+  font-family: var(--font-ui); font-size: 15px; font-weight: 600; cursor: pointer;
+}
+.tt-filter-panel-apply:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
+@media (min-width: 641px) {
+  .tt-filter-panel-foot { padding-bottom: 12px; }
+  .tt-filter-panel-apply { height: 40px; font-size: 14px; }
+}
+
+/* Page Outils, tactile : cibles confortables au doigt. Les boutons
+   « enregistrer » gardent leur dessin (36 px) mais leur zone de toucher
+   s'étend à 44 px ; pastilles et bouton Filtres passent à 40 px. */
+@media (max-width: 640px) {
+  .tt-catalog-page .pin-tool-button--compact { position: relative; }
+  .tt-catalog-page .pin-tool-button--compact::before { content: ""; position: absolute; inset: -4px; }
+  .tt-catalog-page .tt-pillrow .tt-pill,
+  .tt-catalog-page .tt-pill--more { min-height: 40px; height: 40px; }
+  .tt-catalog-page .tt-pill--more { min-width: 40px; }
+}
+
+/* Barre de filtres à rangée de pastilles : seule la rangée défile. La barre
+   gardait un ancien overflow-x: auto (sous 900 px) qui rognait son fond
+   « verre » une fois collée : le contenu passait au travers sur les bords. */
+@media (max-width: 900px) {
+  .tt-catalog-page .tt-catalog-toolbar:has(> .tt-pillrow) { overflow: visible; }
+}
+
+/* Fiche, mobile : l'infobulle de source dans un titre (« Tarifs ⓘ ») passe
+   dans le flux pour rester lisible, mais fermée elle gardait sa place
+   invisible : 134 px de vide sous le titre. Fermée, elle ne prend plus de place. */
+@media (max-width: 640px) {
+  .td-title--with-info .td-evidence-info:not(.is-open):not(:focus-within) .td-evidence-info-panel { display: none; }
+}
+
+/* ══ Fiche outil : comportement responsive ═════════════════════════════════ */
+/* Deux colonnes dès que la place réelle le permet. Le passage se faisait à
+   1 350 px de fenêtre quelle que soit la barre latérale : réduite (76 px au
+   lieu de 228), il reste la place pour la colonne de décision dès 1 181 px,
+   au lieu d'une colonne unique de 970 px qui perdait « Outils similaires ». */
+@media (min-width: 1181px) and (max-width: 1350px) {
+  .asv2-root:not(.asv2-root--sidebar-expanded) .td-body-grid { grid-template-columns: minmax(0, 1fr) 300px; gap: 36px; }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .td-sidebar-desktop { display: block; position: sticky; }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .td-sidebar-mobile { display: none; }
+}
+/* Section IA : l'icône sur la ligne de son libellé, pas au-dessus. */
+.td-ai-point .td-subhead { display: flex; align-items: center; gap: 8px; }
+.td-ai-point .td-subhead svg { flex: none; width: 16px; height: 16px; }
+/* FAQ : repère + / − à droite plutôt que le triangle natif. */
+.td-tool-page details > summary { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; list-style: none; cursor: pointer; }
+.td-tool-page details > summary::-webkit-details-marker { display: none; }
+.td-tool-page details > summary::after { content: "+"; flex: none; color: var(--color-muted); font-family: var(--font-ui); font-size: 20px; font-weight: 400; line-height: 1; }
+.td-tool-page details[open] > summary::after { content: "−"; }
+/* « Pour qui » : la cible recommandée se distingue sans bordure noire épaisse. */
+.td-relevance-item--on { border-color: var(--color-border-strong) !important; background: var(--color-surface-soft); }
