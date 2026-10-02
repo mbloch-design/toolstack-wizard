@@ -5,7 +5,7 @@ import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import { localizePlanName } from "@/lib/planNames";
 import { useCurrency } from "@/hooks/useCurrency";
 import { formatCurrencyAmount } from "@/lib/currency";
-import { resolveDisplayPrice } from "@/lib/nativePricing";
+import { formatToolPrice } from "@/lib/currencyRates";
 
 // Slug de bundle -> nom lisible (ex. "adobe-creative-cloud" -> "Adobe Creative Cloud").
 const humanizeSlug = (s: string) =>
@@ -66,7 +66,10 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
   const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public");
   const affiliateUrl = safeExternalUrl(tool.affiliateLink);
   const isOneTime = pv5?.compare_plan_kind === "one_time";
-  const displayPaidPrice = resolveDisplayPrice(tool, displayPrice, currency);
+  // Même calcul que le titre et la description (toolSeo.ts) : le montant
+  // publié par l'éditeur dans sa devise, sans conversion. Le bloc convertissait
+  // (resolveDisplayPrice) : « $149 » dans les tarifs sous un titre « €149 ».
+  const paidPrice = formatToolPrice(tool, displayPrice, lang === "en" ? "USD" : "EUR", lang || "fr");
 
   // Toujours le montant publié par l'éditeur, dans sa devise réelle : jamais
   // de conversion, cf. resolveDisplayPrice/formatToolPrice.
@@ -144,7 +147,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
           key: "paid",
           name: isOneTime ? t("Licence à vie", "Lifetime license") : localizePlanName(pv5?.compare_plan_name, lang || "fr") || t("Plan payant", "Paid plan"),
           price: displayPrice > 0
-            ? `${pv5?.usage_sensitive ? t("dès ", "from ") : ""}${displayPaidPrice.converted ? "≈ " : ""}${formatCurrencyAmount(displayPaidPrice.amount, displayPaidPrice.nativePrice ? displayPaidPrice.currency : currency, lang || "fr")}`
+            ? `${pv5?.usage_sensitive ? t("dès ", "from ") : ""}${paidPrice.text}`
             : null,
           unit: displayPrice > 0 ? (isOneTime ? t("achat unique", "one-time") : t("/mois", "/mo")) : null,
           condition: hasPaid ? pricing?.paid || null : null, features: [], reference: false, free: false, soon: false,
