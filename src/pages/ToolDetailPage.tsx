@@ -34,6 +34,8 @@ import { getGuidesForTool } from "@/lib/toolGuides";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
+import { toolPriceLine } from "@/lib/toolPriceLine";
+import ToolExplorePanel from "@/components/tool/ToolExplorePanel";
 import TapstitchDecision from "@/components/tool/TapstitchDecision";
 import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import { splitRatingEvidence, collectRatingSources } from "@/lib/ratingEvidence";
@@ -74,7 +76,12 @@ const ToolDetailPage = () => {
   const { categories } = useCategories();
   const heroRef = useRef<HTMLDivElement | null>(null);
   const scrollBodyRef = useRef<HTMLDivElement | null>(null);
-  const [showCompactHeader, setShowCompactHeader] = useState(false);
+  // Compact bars: armed once the hero actions have scrolled out of view.
+  // Desktop shows a slim sticky bar (identity + the two actions) on top of a
+  // hero that never changes size, so nothing jumps. Mobile shows its bottom
+  // bar only while the shell chrome is hidden (reading), in place of the
+  // bottom tabs, which come back on scroll up.
+  const [actionBarArmed, setActionBarArmed] = useState(false);
 
   // Normalize trailing slashes so prerendered URLs and client-side routing
   // resolve to the same intent page (`/prix` and `/prix/`, for example).
@@ -121,47 +128,20 @@ const ToolDetailPage = () => {
      (Rules of Hooks — sinon React error #300/#310 en concurrent mode)        */
 
 
+  // Re-run once loading ends: while the tool loads, the page renders a
+  // spinner and the hero does not exist yet, so the observer would never
+  // attach and the bars would never show.
   useEffect(() => {
-    const hero = heroRef.current;
-    if (!hero || !tool) return;
+    setActionBarArmed(false);
+    const strip = heroRef.current?.querySelector(".td-hero-actions");
+    if (!strip || typeof IntersectionObserver === "undefined") return;
+    const observer = new IntersectionObserver(([entry]) => {
+      setActionBarArmed(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+    });
+    observer.observe(strip);
+    return () => observer.disconnect();
+  }, [tool?.slug, lang, loading, subPage]);
 
-    const scrollRoot = hero.closest(".asv2-content");
-    if (!(scrollRoot instanceof HTMLElement)) return;
-
-    let frame = 0;
-    let compactAt = 0;
-    const measure = () => {
-      const rootTop = scrollRoot.getBoundingClientRect().top;
-      // Compact exactly when the hero reaches its sticky position. Using its
-      // bottom delayed the state change by the full expanded height, allowing
-      // following content to slide underneath a still-expanded card.
-      compactAt = scrollRoot.scrollTop + hero.getBoundingClientRect().top - rootTop;
-      const heroMedia = hero.querySelector<HTMLElement>(".td-hero-media");
-      if (heroMedia) hero.style.setProperty("--td-hero-media-h", `${heroMedia.scrollHeight}px`);
-    };
-    const updateCompactHeader = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        setShowCompactHeader(scrollRoot.scrollTop >= compactAt);
-
-      });
-    };
-    const handleResize = () => {
-      if (!hero.classList.contains("is-compact")) measure();
-      updateCompactHeader();
-    };
-
-    measure();
-    updateCompactHeader();
-    scrollRoot.addEventListener("scroll", updateCompactHeader, { passive: true });
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      cancelAnimationFrame(frame);
-      scrollRoot.removeEventListener("scroll", updateCompactHeader);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [tool, subPage]);
 
   /* ── Loading / not found ── */
   if (loading) {
@@ -376,6 +356,7 @@ const ToolDetailPage = () => {
   const showFaq = isPresentation || subPage === "faq";
   const relatedGuides = getGuidesForTool(tool.slug || tool.id, lang);
   const baseToolPath = `${prefix}/tool/${tool.slug || tool.id}`;
+  const mobileBarPrice = toolPriceLine(tool, lang, t).priceLine;
   const subpageLinks = [
     { key: "presentation", label: t("Vue d’ensemble", "Overview"), to: baseToolPath },
     { key: "prix", label: t("Prix", "Pricing"), to: `${baseToolPath}/${lang === "en" ? "pricing" : "prix"}` },
@@ -398,7 +379,7 @@ const ToolDetailPage = () => {
     : null;
 
   return (
-    <article className={`min-h-screen td-tool-page${showCompactHeader ? " td-tool-page--compact" : ""}`} itemScope itemType="https://schema.org/WebPage">
+    <article className="min-h-screen td-tool-page" itemScope itemType="https://schema.org/WebPage">
       <ToolJsonLd
         tool={tool} category={category} displayPrice={displayPrice}
         verifiedOn={verifiedOn} alternatives={alternatives} lang={lang}
@@ -414,6 +395,58 @@ const ToolDetailPage = () => {
       {/* ══════════════════════════════════════════════════════════
           HERO — tool identity & positioning
       ══════════════════════════════════════════════════════════ */}
+      {/* Local nav, modelled on apple.com (measured 2 Oct 2026). It slides in
+          once the hero actions scroll out of view (no duplicate at the top of
+          the page), frosted glass, hairline. Logo and name (links back to the
+          overview) on the left; page links, "Add to my stack" as a link and
+          one small button on the right. The current page is marked in ToolTrim
+          blue to help find your way. */}
+      {primaryCtaUrl && (
+        <>
+          <div className="td-localnav-anchor">
+          <nav
+            className={`td-localnav${actionBarArmed ? " is-visible" : ""}`}
+            aria-label={t(`Fiche ${tool.name}`, `${tool.name} page`)}
+            {...(actionBarArmed ? {} : { inert: "" } as Record<string, string>)}
+          >
+            <div className="td-container td-localnav-inner">
+              <Link to={baseToolPath} className="td-localnav-title">
+                <span className="td-localnav-logo"><ToolLogo tool={tool} size={28} /></span>
+                <span>{tool.name}</span>
+              </Link>
+              <ul className="td-localnav-links">
+                {subpageLinks.map((item) => (
+                  <li key={item.key}>
+                    <Link to={item.to} aria-current={subPage === item.key ? "page" : undefined}>{item.label}</Link>
+                  </li>
+                ))}
+                <li className="td-localnav-pin">
+                  <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" />
+                </li>
+              </ul>
+              <a
+                href={primaryCtaUrl}
+                target="_blank"
+                rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
+                className="td-localnav-cta"
+                onClick={() => trackEvent("outbound_tool_click", {
+                  tool_slug: tool.slug || tool.id,
+                  tool_name: tool.name,
+                  cta_location: "tool_local_nav",
+                  cta_label: primaryCtaLabel,
+                  destination_domain: getDomainFromUrl(primaryCtaUrl),
+                  language: lang,
+                  is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
+                })}
+              >
+                {t("Visiter", "Visit")}
+              </a>
+            </div>
+          </nav>
+          </div>
+        </>
+      )}
+
       <div className="td-container">
         <div className="td-page-breadcrumb">
           <Breadcrumb items={[
@@ -436,7 +469,7 @@ const ToolDetailPage = () => {
             {/* Hero identity — editorial identity first, supporting OG visual
                 below. The product logo remains associated with its name in
                 both the expanded and compact sticky states. */}
-            <div ref={heroRef} className={`td-hero${showCompactHeader ? " is-compact" : ""}`}>
+            <div ref={heroRef} className="td-hero">
             {(() => {
               // Keep the hero factual. The verdict belongs to the decision
               // card and to the analysis below, so repeating it here made the
@@ -488,7 +521,7 @@ const ToolDetailPage = () => {
                           {primaryCtaLabel}
                           <ExternalLink aria-hidden />
                         </a>}
-                        <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" />
+                        <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" />
                         </div>
                       </div>
 
@@ -642,17 +675,10 @@ const ToolDetailPage = () => {
               </section>
             )}
 
-            {/* ════════════════════════════════
-                SECTION: Analyse / Présentation
-            ════════════════════════════════ */}
+            {/* Pros and cons, right after "About": an opinion on the tool before
+                looking at its cost and at other tools. */}
             {showAnalysis && (
-              <div id="analyse" className="td-subpage-content">
-
-                {/* 0 · Vue d'ensemble — même bloc que l'inspecteur de Ma stack.
-                    Classes .stack-tool-inspector-* réutilisées telles quelles,
-                    pas recopiées : les deux fiches doivent rester identiques
-                    sans que personne ait à y penser. Seule différence assumée,
-                    la fiche ne tronque aucune liste — c'est la référence. */}
+              <div className="td-subpage-content">
                 {(() => {
                   const ov = resolveToolOverview(tool, lang);
                   if (!ov.pros.length && !ov.cons.length && !ov.useCases.length) return null;
@@ -710,7 +736,13 @@ const ToolDetailPage = () => {
                     </>
                   );
                 })()}
+              </div>
+            )}
 
+            {/* Then when it makes sense, price, alternatives, our verdict,
+                and the background. */}
+            {showAnalysis && (
+              <div id="analyse" className="td-subpage-content">
                 <section className="td-decision-flow">
                 {/* 1 · Décision rapide — 3 blocs éditoriaux */}
                 {(() => {
@@ -743,7 +775,6 @@ const ToolDetailPage = () => {
                 })()}
 
                 </section>
-
               </div>
             )}
 
@@ -757,24 +788,8 @@ const ToolDetailPage = () => {
             {showPricing && (
               <div id="prix" className="td-subpage-content">
                 <div className="td-section">
-                  <h2 className="td-title td-title--with-info">
-                    <span>{t("Tarifs.", "Pricing.")} <span className="tt-title-muted">{t(`Quel budget pour ${tool.name}\u00a0?`, `What does ${tool.name} cost\u00a0?`)}</span></span>
-                    {(tool.pricing_v5?.verified_on || tool.pricing_v5?.official_source_url) && (
-                      <EvidenceInfo label={t("Voir la source et la date du tarif", "View pricing source and verification date")}>
-                        <span className="td-evidence-panel-title">{t("Source tarifaire", "Pricing source")}</span>
-                        {tool.pricing_v5?.official_source_url && safeExternalUrl(tool.pricing_v5.official_source_url) ? (
-                          <a href={tool.pricing_v5.official_source_url} target="_blank" rel={relPourLienOutil(tool.pricing_v5.official_source_url, tool.affiliateLink, tool.websiteUrl)}>
-                            {t("Source tarifaire officielle", "Official pricing source")}
-                          </a>
-                        ) : t("Tarif vérifié par ToolTrim", "Pricing verified by ToolTrim")}
-                        {tool.pricing_v5?.verified_on && (
-                          <span className="td-evidence-date">
-                            <span>{t("Vérifié le", "Verified on")}</span>
-                            <time dateTime={tool.pricing_v5.verified_on}>{tool.pricing_v5.verified_on}</time>
-                          </span>
-                        )}
-                      </EvidenceInfo>
-                    )}
+                  <h2 className="td-title">
+                    {t("Tarifs.", "Pricing.")} <span className="tt-title-muted">{t(`Quel budget pour ${tool.name}\u00a0?`, `What does ${tool.name} cost\u00a0?`)}</span>
                   </h2>
                   <ToolPricingSection
                     tool={tool} displayPrice={displayPrice}
@@ -916,31 +931,6 @@ const ToolDetailPage = () => {
             )}
 
             {/* ════════════════════════════════
-                SECTION: Analyse (continued) — audience, pros/cons,
-                features, use cases, long-form analysis, plugins, AI angle.
-                Background context now that price/alternatives are answered.
-            ════════════════════════════════ */}
-            {showDeepDive && (
-              <div id="approfondir" className="td-subpage-content">
-                {/* 9 · Intégrations / Plugins — the block owns its own
-                     td-section wrapper and returns null when there's
-                     nothing to show, so no empty divider renders. */}
-                <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
-
-                {/* 10 · L'angle IA : augmenter ou remplacer ? — same. */}
-                <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
-
-                {/* Quiet structured recap for search and extraction. Keeping
-                    it at the end of the deep dive avoids interrupting the
-                    human decision path near the top of the page. */}
-                <ToolSummaryBlock
-                  tool={tool} category={category} alternatives={alternatives}
-                  displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
-                />
-
-              </div>
-            )}
-            {/* ════════════════════════════════
                 SECTION: Avis
             ════════════════════════════════ */}
             {showReview && (
@@ -1058,6 +1048,33 @@ const ToolDetailPage = () => {
               </div>
             )}
 
+
+            {/* ════════════════════════════════
+                SECTION: Analyse (continued) — audience, pros/cons,
+                features, use cases, long-form analysis, plugins, AI angle.
+                Background context now that price/alternatives are answered.
+            ════════════════════════════════ */}
+            {showDeepDive && (
+              <div id="approfondir" className="td-subpage-content">
+                {/* 9 · Intégrations / Plugins — the block owns its own
+                     td-section wrapper and returns null when there's
+                     nothing to show, so no empty divider renders. */}
+                <ToolPluginsBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
+
+                {/* 10 · L'angle IA : augmenter ou remplacer ? — same. */}
+                <ToolAiBlock tool={tool} allTools={tools} prefix={prefix} lang={lang} t={t} />
+
+                {/* Quiet structured recap for search and extraction. Keeping
+                    it at the end of the deep dive avoids interrupting the
+                    human decision path near the top of the page. */}
+                <ToolSummaryBlock
+                  tool={tool} category={category} alternatives={alternatives}
+                  displayPrice={displayPrice} lang={lang} prefix={prefix} t={t}
+                />
+
+              </div>
+            )}
+
             {/* ════════════════════════════════
                 SECTION: FAQ
             ════════════════════════════════ */}
@@ -1105,6 +1122,35 @@ const ToolDetailPage = () => {
 
             </div>
 
+            {primaryCtaUrl && (
+              <div className={`td-mobile-actionbar${actionBarArmed ? " is-armed" : ""}`} {...(actionBarArmed ? {} : { inert: "" } as Record<string, string>)}>
+                <ToolLogo tool={tool} size={32} className="td-mobile-actionbar-logo" />
+                <div className="td-mobile-actionbar-id">
+                  <strong>{tool.name}</strong>
+                  {mobileBarPrice && <span>{mobileBarPrice}</span>}
+                </div>
+                <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" />
+                <a
+                  href={primaryCtaUrl}
+                  target="_blank"
+                  rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
+                  className="td-mobile-actionbar-cta"
+                  onClick={() => trackEvent("outbound_tool_click", {
+                    tool_slug: tool.slug || tool.id,
+                    tool_name: tool.name,
+                    cta_location: "tool_mobile_bar",
+                    cta_label: primaryCtaLabel,
+                    destination_domain: getDomainFromUrl(primaryCtaUrl),
+                    language: lang,
+                    is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
+                  })}
+                >
+                  {t("Visiter", "Visit")}
+                  <ExternalLink aria-hidden />
+                </a>
+              </div>
+            )}
+
             <div className="td-sidebar-mobile td-reading-actions">
               <h2>{t("Et maintenant ?", "What’s next?")}</h2>
               <StickyDecisionCard {...cardProps} section="actions" />
@@ -1113,8 +1159,18 @@ const ToolDetailPage = () => {
           {/* end main content */}
 
           {/* ── RIGHT SIDEBAR — StickyDecisionCard ── */}
+          {/* Sidebar: the rating card first, then exploration (rebound to
+              other fields). Choosing before buying lives in the content. */}
           <aside className="td-sidebar-desktop">
-              <StickyDecisionCard {...cardProps} />
+              <StickyDecisionCard {...cardProps} section="verdict" />
+              <ToolExplorePanel
+                slug={tool.slug || tool.id}
+                name={tool.name}
+                prefix={prefix}
+                t={t}
+                tools={tools as any}
+              />
+              <StickyDecisionCard {...cardProps} section="share" />
           </aside>
 
         </div>

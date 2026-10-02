@@ -34181,7 +34181,7 @@ img[data-logo-loading] {
    place au contenu, et revient avec la barre du haut dès qu'on remonte. */
 @media (max-width: 640px) {
   .asv2-bottomnav { transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .asv2-root[data-chrome="hidden"] .asv2-bottomnav { transform: translateY(100%); }
+  .asv2-root[data-chrome="hidden"] .asv2-bottomnav { transform: translateY(calc(100% + 8px)); }
 }
 @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
   .asv2-bottomnav { transition: none; }
@@ -34293,10 +34293,13 @@ img[data-logo-loading] {
    1 350 px de fenêtre quelle que soit la barre latérale : réduite (76 px au
    lieu de 228), il reste la place pour la colonne de décision dès 1 181 px,
    au lieu d'une colonne unique de 970 px qui perdait « Outils similaires ». */
-@media (min-width: 1181px) and (max-width: 1350px) {
-  .asv2-root:not(.asv2-root--sidebar-expanded) .td-body-grid { grid-template-columns: minmax(0, 1fr) 300px; gap: 36px; }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .td-sidebar-desktop { display: block; position: sticky; }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .td-sidebar-mobile { display: none; }
+/* Étendu dès 1 024 px (2 oct.) : avec la barre de gauche en rail (forcée
+   jusqu'à 1 180 px) ou ouverte au-delà, la colonne de lecture garde ~560 px
+   à côté d'une sidebar de 264 px. En dessous, la carte passe dans le flux. */
+@media (min-width: 1024px) and (max-width: 1350px) {
+  .td-body-grid { grid-template-columns: minmax(0, 1fr) 264px; gap: 28px; }
+  .td-sidebar-desktop { display: block; position: sticky; }
+  .td-sidebar-mobile { display: none; }
 }
 /* Section IA : l'icône sur la ligne de son libellé, pas au-dessus. */
 .td-ai-point .td-subhead { display: flex; align-items: center; gap: 8px; }
@@ -34308,3 +34311,264 @@ img[data-logo-loading] {
 .td-tool-page details[open] > summary::after { content: "−"; }
 /* « Pour qui » : la cible recommandée se distingue sans bordure noire épaisse. */
 .td-relevance-item--on { border-color: var(--color-border-strong) !important; background: var(--color-surface-soft); }
+/* En-tête de la fiche : deux actions lisibles d'un coup d'œil, « Visiter le
+   site » (plein) et « Ajouter à ma stack » (bordé, libellé en toutes
+   lettres, même picto que « Ma stack » en haut de page). */
+.td-hero-actions .pin-tool-button.pin-tool-button--full {
+  flex: 0 0 auto; width: auto; height: 48px; gap: 8px; padding: 0 20px;
+  border: 1px solid var(--color-border); border-radius: var(--radius-pill);
+  background: var(--color-surface); color: var(--color-text); font: 600 15px/20px var(--font-ui);
+}
+.td-hero-actions .pin-tool-button.pin-tool-button--full:hover { border-color: color-mix(in srgb, var(--color-text) 35%, var(--color-border)); }
+.td-hero-actions .pin-tool-button.pin-tool-button--full.pin-tool-button--active { border-color: var(--color-text); }
+.td-hero.is-compact .td-hero-actions .pin-tool-button.pin-tool-button--full { height: 40px; min-height: 40px; padding: 0 16px; font-size: 14px; }
+@media (max-width: 640px) {
+  /* Une action par ligne : les deux libellés restent entiers. */
+  .td-hero-actions .td-hero-site-link,
+  .td-hero-actions .pin-tool-button.pin-tool-button--full { flex: 1 1 100%; }
+}
+/* Barre d'action mobile de la fiche : en lecture (chrome masqué), elle prend
+   la place des onglets du bas ; on remonte, les onglets reviennent. */
+.td-mobile-actionbar { display: none; }
+@media (max-width: 640px) {
+  .td-mobile-actionbar {
+    display: flex; align-items: center; gap: 10px;
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 210;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: var(--color-surface);
+    box-shadow: 0 -1px 0 var(--color-border-soft), 0 -4px 16px rgba(0, 0, 0, 0.05);
+    transform: translateY(110%);
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .asv2-root[data-chrome="hidden"] .td-mobile-actionbar.is-armed { transform: none; }
+  .td-mobile-actionbar-logo { flex: none; border-radius: 8px; }
+  .td-mobile-actionbar-id { display: flex; flex: 1; flex-direction: column; min-width: 0; }
+  .td-mobile-actionbar-id strong { overflow: hidden; color: var(--color-text); font: 650 15px/1.25 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+  .td-mobile-actionbar-id span { overflow: hidden; color: var(--color-muted); font: 400 13px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+  .td-mobile-actionbar .pin-tool-button { position: static; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border: 1px solid var(--color-border); border-radius: 50%; background: var(--color-surface); color: var(--color-text); display: inline-flex; align-items: center; justify-content: center; }
+  .td-mobile-actionbar-cta { display: inline-flex; flex: none; align-items: center; gap: 6px; min-height: 44px; padding: 0 18px; border-radius: var(--radius-pill); background: var(--color-text); color: var(--color-surface); font: 600 15px/20px var(--font-ui); text-decoration: none; }
+  .td-mobile-actionbar-cta svg { width: 14px; height: 14px; }
+}
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+  .td-mobile-actionbar { transition: none; }
+}
+/* Sidebar desktop de la fiche (2 oct.) : encart de notation, puis
+   l'exploration (rebondir vers d'autres domaines), puis partage et
+   signalement en pied, discrets. Le choix avant achat vit dans le contenu. */
+.td-sidebar-desktop { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-content: start; min-width: 0; padding: 4px 0 0 24px; border-left: 1px solid var(--color-border-soft); }
+.td-sidebar-desktop .td-decision-card { gap: 0; padding: 0; border-left: 0; }
+
+.td-explore { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; min-width: 0; }
+.td-explore-map {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 46px; padding: 0 18px; border-radius: var(--radius-pill);
+  background: var(--color-text); color: var(--color-surface);
+  font: 600 14px/1.2 var(--font-ui); white-space: nowrap; text-decoration: none;
+  transition: background-color 140ms ease-out;
+}
+.td-explore-map:hover { background: color-mix(in srgb, var(--color-text) 85%, var(--color-surface)); }
+.td-explore-map:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; }
+.td-explore-map svg { width: 18px; height: 18px; }
+.td-explore-group { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; }
+.td-explore-group h3 { margin: 0; color: var(--color-muted); font: 500 12px/1.3 var(--font-ui); }
+.td-explore-tools { display: grid; grid-template-columns: minmax(0, 1fr); margin: 0; padding: 0; list-style: none; }
+.td-explore-tools a {
+  display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 4px 6px; margin: 0 -6px;
+  border-radius: 8px; color: var(--color-text); text-decoration: none;
+}
+.td-explore-tools a:hover { background: var(--color-surface-soft); }
+.td-explore-logo { display: grid; flex: none; place-items: center; width: 24px; height: 24px; }
+.td-explore-tool-text { overflow: hidden; font: 600 14px/1.25 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+
+/* Pied de sidebar : partage et signalement, sur une ligne, discrets. */
+.td-decision-utility-actions.td-decision-utility-actions--compact {
+  display: flex; flex-wrap: wrap; gap: 4px 14px; padding-top: 8px; border-top: 1px solid var(--color-border);
+}
+.td-decision-card .td-decision-utility-actions--compact > a,
+.td-decision-card .td-decision-utility-actions--compact > button {
+  display: inline-flex; width: auto; min-height: 32px; height: auto; margin: 0; padding: 0;
+  gap: 6px; border: 0; background: transparent; color: var(--color-muted); font: 500 12px/1.2 var(--font-ui);
+}
+.td-decision-card .td-decision-utility-actions--compact > :is(a, button):hover { background: transparent; color: var(--color-text); }
+.td-decision-utility-actions--compact svg { width: 15px; height: 15px; }
+/* ── Fiche outil : comportement au défilement (2 oct.) ──
+   L'en-tête complet ne change plus de taille (il se repliait en barre
+   compacte, perdait 180 px d'un coup : saut de page, blanc avant les
+   onglets, barre posée en deux temps). Une barre séparée, de hauteur nulle
+   dans le flux, apparaît en fondu quand les boutons de l'en-tête sortent de
+   l'écran. Rien ne bouge dans la page. */
+@media (min-width: 769px) {
+  .td-page-grid .td-hero { position: static; transition: none; }
+  .td-hero + .td-scroll-body { padding-top: 0; }
+}
+/* ── Navigation locale de la fiche, calée sur apple.com (relevé du 2 oct.
+   2026, page MacBook Air à 1 440 px) ──
+   Apparaît en glissant quand les boutons de l'en-tête sortent de l'écran
+   (pas de doublon en haut de page). Verre dépoli rgba(…, .8) saturate(1.8)
+   blur(20px), un filet 1 px à 16 %, pas d'ombre. Proportions agrandies à
+   la demande de Michael (barre 60 px, logo 28, nom 20 / 650, liens 14 / 500,
+   bouton 14 / 600 sur 34 px) : les 12 px d'Apple étaient trop petits ici.
+   Logo et nom cliquables vers la présentation ; page courante en bleu
+   ToolTrim avec un trait sur le filet. Un seul bouton, noir (pas de bouton
+   bleu sur les pages outils). */
+.td-localnav-anchor { display: none; }
+@media (min-width: 769px) {
+  .td-localnav-anchor { display: block; position: sticky; top: 0; z-index: 45; height: 0; }
+  .td-localnav {
+    position: absolute; top: 0; left: 0; right: 0;
+    background: color-mix(in srgb, var(--color-bg) 80%, transparent);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    transform: translateY(calc(-100% - 2px)); visibility: hidden;
+    transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 240ms;
+  }
+  .td-localnav.is-visible { transform: none; visibility: visible; transition: transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .td-localnav::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 1px;
+    background: rgba(0, 0, 0, .16);
+  }
+  .dark .td-localnav::after { background: rgba(255, 255, 255, .16); }
+  .td-localnav-inner.td-container { display: flex; align-items: center; gap: 26px; height: 60px; padding-top: 0; padding-bottom: 0; }
+  .td-localnav-title {
+    display: flex; flex: 1; align-items: center; gap: 10px; min-width: 0; color: var(--color-text); text-decoration: none;
+  }
+  .td-localnav-title > span:last-child {
+    overflow: hidden; font: 650 20px/1.15 var(--font-ui); letter-spacing: -.01em; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .td-localnav-title:hover > span:last-child { color: hsl(var(--primary)); }
+  .td-localnav-logo { display: grid; flex: none; place-items: center; width: 28px; height: 28px; }
+  .td-localnav-links { display: flex; align-items: center; gap: 26px; height: 100%; margin: 0; padding: 0; list-style: none; }
+  .td-localnav-links li { position: relative; display: flex; align-items: center; height: 100%; }
+  .td-localnav-links a,
+  .td-localnav .pin-tool-button {
+    color: var(--color-text); opacity: .82; font: 500 14px/22px var(--font-ui); letter-spacing: -.005em; text-decoration: none;
+    transition: color 140ms ease-out, opacity 140ms ease-out;
+  }
+  .td-localnav-links a:hover,
+  .td-localnav .pin-tool-button:hover { color: hsl(var(--primary)); opacity: 1; }
+  .td-localnav-links a[aria-current="page"] { color: hsl(var(--primary)); opacity: 1; cursor: default; }
+  .td-localnav-links a[aria-current="page"]::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; height: 2px;
+    border-radius: 2px 2px 0 0; background: hsl(var(--primary));
+  }
+  .td-localnav .pin-tool-button {
+    position: static; display: inline-flex; align-items: center; gap: 6px; width: auto; height: 22px; min-height: 0; padding: 0;
+    border: 0; border-radius: 0; background: transparent; white-space: nowrap;
+  }
+  .td-localnav .pin-tool-button svg { width: 15px; height: 15px; }
+  .td-localnav .pin-tool-button--active { color: hsl(var(--primary)); opacity: 1; }
+  .td-localnav-cta {
+    display: inline-flex; flex: none; align-items: center; height: 34px; padding: 0 18px;
+    border-radius: 980px; background: var(--color-text); color: var(--color-surface);
+    font: 600 14px/1 var(--font-ui); letter-spacing: -.005em; text-decoration: none; white-space: nowrap;
+  }
+  .td-localnav-cta:hover { background: color-mix(in srgb, var(--color-text) 85%, var(--color-surface)); }
+  .td-localnav :is(a, button):focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; opacity: 1; }
+}
+/* Sous 1 100 px, les liens n'y tiennent pas : logo, nom, « Ajouter » et
+   bouton seulement. */
+@media (min-width: 769px) and (max-width: 1100px) {
+  .td-localnav-links li:not(.td-localnav-pin) { display: none; }
+}
+@media (min-width: 769px) and (prefers-reduced-motion: reduce) {
+  .td-localnav, .td-localnav.is-visible, .td-localnav-links a { transition: none; }
+}
+/* La colonne de droite colle sous la navigation locale (60 px + 16). */
+@media (min-width: 1024px) {
+  .td-tool-page .td-sidebar-desktop { top: 76px; max-height: calc(100vh - 92px); }
+}
+
+/* Séparateurs (2 oct.) : retrait de ceux qui ne structurent rien. La colonne
+   de droite se distingue par sa carte et ses blancs ; le pied Partager /
+   Signaler n'a pas besoin d'un trait ; « À propos » est une section comme
+   les autres, sans cadre haut et bas. */
+.td-tool-page .td-sidebar-desktop { border-left: 0; padding-left: 0; }
+.td-decision-utility-actions.td-decision-utility-actions--compact { border-top: 0; padding-top: 0; }
+.td-tool-page .td-editorial-overview { border-top: 0; border-bottom: 0; }
+/* ── Fiche outil : tarifs en colonnes (2 oct.) ──
+   Les plans côte à côte, colonnes égales, sans case vide : nom, prix et sa
+   condition sur une ligne grise, puis ce que le plan apporte. Le plan qui
+   fixe le « Dès … » de la fiche est repéré. Un seul lien officiel et la date
+   de vérification en pied. Sur mobile, les colonnes défilent. */
+/* Grille réglée sur la largeur de la section, pas de la fenêtre : la
+   colonne de lecture varie beaucoup selon la barre latérale et la colonne
+   de droite. Colonnes d'au moins 220 px ; lignes équilibrées (4 plans à
+   l'étroit : 2 × 2 ; 5 plans : 3 + 2) et la dernière ligne s'élargit, donc
+   jamais de case vide. Sous 452 px de section (mobile), une seule rangée
+   qui défile, la carte suivante dépassant. */
+.td-pricing { container: td-pricing / inline-size; }
+.td-plans {
+  --cols: 1;
+  display: flex; flex-wrap: wrap; gap: 12px; margin: 0; padding-top: 10px;
+}
+.td-plans > .td-plan { flex: 1 1 calc((100% - (var(--cols) - 1) * 12px) / var(--cols)); }
+@container td-pricing (max-width: 451px) {
+  .td-plans { flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: -16px; padding-inline: 16px; scroll-padding-inline: 16px; }
+  .td-plans::-webkit-scrollbar { display: none; }
+  .td-plans > .td-plan { flex: 0 0 82%; }
+  .td-plans[data-plans="1"] > .td-plan { flex-basis: 100%; }
+}
+@container td-pricing (min-width: 452px) {
+  .td-plans[data-plans="1"] { --cols: 1; }
+  .td-plans[data-plans="2"] { --cols: 2; }
+  .td-plans[data-plans="3"] { --cols: 2; }
+  .td-plans[data-plans="4"] { --cols: 2; }
+  .td-plans[data-plans="5"] { --cols: 2; }
+  .td-plans[data-plans="6"] { --cols: 2; }
+  .td-plans[data-plans="7"] { --cols: 2; }
+  .td-plans[data-plans="8"] { --cols: 2; }
+}
+@container td-pricing (min-width: 684px) {
+  .td-plans[data-plans="1"] { --cols: 1; }
+  .td-plans[data-plans="2"] { --cols: 2; }
+  .td-plans[data-plans="3"] { --cols: 3; }
+  .td-plans[data-plans="4"] { --cols: 2; }
+  .td-plans[data-plans="5"] { --cols: 3; }
+  .td-plans[data-plans="6"] { --cols: 3; }
+  .td-plans[data-plans="7"] { --cols: 3; }
+  .td-plans[data-plans="8"] { --cols: 3; }
+}
+@container td-pricing (min-width: 916px) {
+  .td-plans[data-plans="1"] { --cols: 1; }
+  .td-plans[data-plans="2"] { --cols: 2; }
+  .td-plans[data-plans="3"] { --cols: 3; }
+  .td-plans[data-plans="4"] { --cols: 4; }
+  .td-plans[data-plans="5"] { --cols: 3; }
+  .td-plans[data-plans="6"] { --cols: 3; }
+  .td-plans[data-plans="7"] { --cols: 4; }
+  .td-plans[data-plans="8"] { --cols: 4; }
+}
+.td-plan {
+  position: relative;
+  display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 22px 18px 20px;
+  border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-surface);
+  scroll-snap-align: start;
+}
+.td-plan--reference { border-color: var(--color-text); }
+.td-plan--soon { opacity: .7; }
+.td-plan-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; min-height: 22px; }
+.td-plan-name { margin: 0; color: var(--color-text); font: 600 15px/1.25 var(--font-ui); }
+/* Repère posé sur le bord haut : il n'abaisse pas le prix de sa colonne. */
+.td-plan-badge {
+  position: absolute; top: -10px; left: 16px;
+  display: inline-flex; align-items: center; height: 20px; padding: 0 8px; border-radius: var(--radius-pill);
+  background: var(--color-text); color: var(--color-surface); font: 600 11px/1 var(--font-ui); white-space: nowrap;
+}
+.td-plan-price { display: flex; align-items: baseline; gap: 3px; margin: 0; white-space: nowrap; }
+.td-plan-price strong { color: var(--color-text); font: 650 26px/1.1 var(--font-ui); letter-spacing: -.02em; }
+.td-plan-price span { color: var(--color-muted); font: 500 14px/1.2 var(--font-ui); }
+.td-plan-condition { margin: 0; color: var(--color-muted); font: 400 13px/1.45 var(--font-ui); }
+.td-plan-features { display: grid; gap: 6px; margin: 4px 0 0; padding: 12px 0 0; border-top: 1px solid var(--color-border); list-style: none; }
+.td-plan-features li { color: var(--color-text); font: 400 14px/1.5 var(--font-ui); }
+.td-plans-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; margin: 14px 0 0; color: var(--color-muted); font: 400 13px/1.4 var(--font-ui); }
+.td-plans-foot a { display: inline-flex; align-items: center; gap: 5px; color: var(--color-text); font-weight: 600; text-decoration: none; }
+.td-plans-foot a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.td-plans-foot svg { width: 13px; height: 13px; }
+.td-plans-empty { display: grid; gap: 6px; margin: 0; padding: 20px; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-surface); color: var(--color-text); font: 400 15px/1.55 var(--font-ui); }
+.td-plans-empty strong { font-weight: 600; }
+@media (max-width: 640px) {
+  .td-plan-price strong { font-size: 24px; }
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .td-localnav { background: var(--color-bg); }
+}

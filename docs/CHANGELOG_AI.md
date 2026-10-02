@@ -1,3 +1,11 @@
+## 2026-10-02 : Fiche outil, refonte UX
+
+- Le contenu sert à choisir avant l'achat, la colonne de droite à explorer. Ordre : médias, À propos, avantages et inconvénients, quand ça a du sens, tarifs, alternatives, notre avis, pour aller plus loin, FAQ, guides.
+- En-tête à deux actions (« Visiter le site », « Ajouter à ma stack »). Il ne se replie plus au défilement (saut de page, blanc avant les onglets) : une navigation locale calée sur apple.com glisse depuis le haut quand ses boutons sortent de l'écran (verre dépoli, filet, logo et nom cliquables, page courante en bleu, un seul bouton). Barre d'action mobile en lecture à la place des onglets du bas.
+- Colonne de droite dès 1 024 px : carte de notation, « Explorer les outils liés », trois outils d'autres domaines souvent utilisés avec celui-ci (`npm run gen:tool-explore`, src/data/toolExplore chargé à la demande), partage et signalement en pied.
+- Tarifs en colonnes réglées sur la largeur réelle (requêtes de conteneur, colonnes de 220 px minimum, lignes équilibrées, défilement en mobile), repère « Prix retenu par ToolTrim », un seul lien officiel et la date de vérification en pied.
+- Séparateurs inutiles retirés. Build production PASS ; HTML à 739,3 Mio pour un plafond de 745.
+
 ## 2026-10-01 — Validation Bing Webmaster Tools
 
 - Ajout de la balise `msvalidate.01` dans le document HTML racine afin que la page d’accueil soit vérifiable par Bing.

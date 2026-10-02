@@ -14,7 +14,7 @@ interface Props {
   prefix: string;
   t: (fr: string, en: string) => string;
   alternatives: Tool[];
-  section?: "all" | "verdict" | "actions";
+  section?: "all" | "verdict" | "actions" | "share";
 }
 
 export default function StickyDecisionCard({ tool, prefix, t, alternatives, section = "all" }: Props) {
@@ -22,6 +22,9 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
   const [shareOpen, setShareOpen] = useState(false);
   const slug = tool.slug || tool.id;
   const similar = alternatives.slice(0, 4);
+  // Desktop sidebar foot: share and report only, the exploration panel
+  // above already carries "Explore around this tool".
+  const compactUtilities = section === "share";
   const toolTrimScore = computeToolTrimScore(tool);
   const conclusion = (prefix === "/en" ? tool.verdictEn : tool.verdict)?.threshold?.trim();
   const verdictLevel = toolTrimScore.score >= 4 ? "high" : toolTrimScore.score >= 3.5 ? "mid" : "low";
@@ -102,7 +105,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
 
   return (
     <div className="td-decision-card td-decision-card--utility">
-      {section !== "actions" && (slug === "tapstitch" ? <TapstitchDecision t={t} compact /> : <div className="td-decision-verdict">
+      {(section === "all" || section === "verdict") && (slug === "tapstitch" ? <TapstitchDecision t={t} compact /> : <div className="td-decision-verdict">
         <span className="td-decision-verdict-label">
           {t("L’avis ToolTrim", "ToolTrim verdict")}
           <Link
@@ -135,15 +138,37 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
         {conclusion && <p className="td-decision-conclusion">{conclusion}</p>}
       </div>)}
 
-      {section !== "verdict" && <nav className="td-decision-utility-actions" aria-label={t("Actions sur l’outil", "Tool actions")}>
-        <Link
+
+      {section === "all" && similar.length > 0 && (
+        <section className="td-decision-similar">
+          <div className="td-decision-similar-head">
+            <h2>{t("Outils similaires", "Similar tools")}</h2>
+            <Link to={`${prefix}/tool/${slug}/alternatives`}>
+              <span>{t("Voir tout", "View all")}</span>
+              <ArrowRight aria-hidden />
+            </Link>
+          </div>
+          <div className="td-decision-tool-list">
+            {similar.map((item) => (
+              <Link key={item.id} to={`${prefix}/tool/${item.slug || item.id}`}>
+                <span className="td-decision-tool-logo"><ToolLogo tool={item as any} size={19} /></span>
+                <span>{item.name}</span>
+                <ArrowRight aria-hidden />
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {section !== "verdict" && <nav className={`td-decision-utility-actions${compactUtilities ? " td-decision-utility-actions--compact" : ""}`} aria-label={t("Actions sur l’outil", "Tool actions")}>
+        {!compactUtilities && <Link
           to={getExplorerHref(prefix, { type: "outil", slug })}
           className="td-decision-explore"
           onClick={() => trackEvent("explore_tool", { tool_slug: slug, source: "tool_decision_card" })}
         >
           <Compass aria-hidden />
           <span>{t("Explorer autour de cet outil", "Explore around this tool")}</span>
-        </Link>
+        </Link>}
         <Popover open={shareOpen} onOpenChange={setShareOpen}>
           <PopoverTrigger asChild>
             <button type="button" className="td-decision-share" aria-expanded={shareOpen}>
@@ -182,27 +207,6 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
           <span>{t("Signaler un problème", "Report a problem")}</span>
         </a>
       </nav>}
-
-      {section === "all" && similar.length > 0 && (
-        <section className="td-decision-similar">
-          <div className="td-decision-similar-head">
-            <h2>{t("Outils similaires", "Similar tools")}</h2>
-            <Link to={`${prefix}/tool/${slug}/alternatives`}>
-              <span>{t("Voir tout", "View all")}</span>
-              <ArrowRight aria-hidden />
-            </Link>
-          </div>
-          <div className="td-decision-tool-list">
-            {similar.map((item) => (
-              <Link key={item.id} to={`${prefix}/tool/${item.slug || item.id}`}>
-                <span className="td-decision-tool-logo"><ToolLogo tool={item as any} size={19} /></span>
-                <span>{item.name}</span>
-                <ArrowRight aria-hidden />
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
     </div>
   );
 }
