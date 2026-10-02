@@ -741,9 +741,8 @@ const ToolDetailPage = () => {
                         <div className="td-section td-tool-overview td-tool-overview--decision">
                           <header className="td-overview-decision-head">
                             <h2 className="td-overview-title">
-                              {t("Avantages et inconvénients", "Pros and cons")}
+                              {t("Avantages et limites.", "Pros and cons.")} <span className="tt-title-muted">{t(`Ce que ${tool.name} fait bien, ce qu’il faut anticiper.`, `What ${tool.name} does well, and what to expect.`)}</span>
                             </h2>
-                            <p>{t(`Ce que ${tool.name} fait particulièrement bien et les limites à anticiper.`, `What ${tool.name} does especially well and the limits to anticipate.`)}</p>
                           </header>
                           <div className="td-overview-grid">
                             {ov.pros.length > 0 && (
@@ -759,7 +758,7 @@ const ToolDetailPage = () => {
                               <section className="td-overview-group td-overview-group--limits">
                                 <h3 className="td-overview-group-title">
                                   <CircleMinus aria-hidden />
-                                  {t("Inconvénients", "Cons")}
+                                  {t("Limites", "Cons")}
                                 </h3>
                                 <ul>{ov.cons.map((c: string) => <li key={c}>{c}</li>)}</ul>
                               </section>
@@ -795,9 +794,7 @@ const ToolDetailPage = () => {
                   return (
                     <div className="td-section td-decision-flow-intro">
                       <h2 className="td-title">
-                        {lang === "fr"
-                          ? `${tool.name} : quand ça a du sens.`
-                          : `${tool.name}: when it makes sense.`}
+                        {t("Quand ça a du sens.", "When it makes sense.")} <span className="tt-title-muted">{t(`Garder ${tool.name}, ou le challenger ?`, `Keep ${tool.name}, or challenge it?`)}</span>
                       </h2>
 
                       <ToolProfitabilityBlock

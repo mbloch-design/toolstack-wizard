@@ -1,3 +1,9 @@
+## 2026-10-02 : Fiche outil, rythme éditorial
+
+- Titres de section harmonisés « Sujet. Question en gris » (« Avantages et limites. », « Quand ça a du sens. Garder X, ou le challenger ? »), 38 px au plus, toujours sous le nom de l'outil ; 108 px entre chapitres sur ordinateur, mobile inchangé.
+- « Ajouter à ma stack » : le signet se coche avec un petit rebond (rien en mouvement réduit).
+- Build PASS : CSS 35,1 Mio sur 36, HTML 733,4 Mio sur 745.
+
 ## 2026-10-02 : Fiche outil, fraîcheur
 
 - Apparitions douces au défilement (sections, jauge de note qui se remplit), posées seulement après le montage : le HTML servi reste visible, rien en mouvement réduit.

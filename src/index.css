@@ -34611,3 +34611,14 @@ img[data-logo-loading] {
 .td-tool-page .td-eyebrow { color: var(--tool-accent-ink, var(--color-muted)); }
 .td-tool-page .td-plan--reference { border-color: var(--tool-accent-ink, var(--color-text)); }
 .td-tool-page .td-plan-badge { background: var(--tool-accent-ink, var(--color-text)); }
+/* ── Fiche outil : rythme éditorial (2 oct.) ──
+   Chapitres plus aérés et titres un peu plus présents, toujours sous le nom
+   de l'outil (40-56 px). Tous les titres suivent la même grammaire :
+   « Sujet. Question en gris ». */
+.td-tool-page { --tt-size-section-h: clamp(26px, 2.7vw, 38px); }
+@media (min-width: 769px) { .td-tool-page .td-main { --td-chapter-gap: clamp(72px, 7.5vw, 112px); } }
+/* « Ajouter à ma stack » : le signet se coche avec un petit rebond. */
+@media (prefers-reduced-motion: no-preference) {
+  .pin-tool-button--active svg { animation: tt-pin-pop 420ms cubic-bezier(0.3, 1.6, 0.5, 1); }
+}
+@keyframes tt-pin-pop { 0% { transform: scale(.6); } 60% { transform: scale(1.18); } 100% { transform: none; } }
