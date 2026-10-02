@@ -11,6 +11,7 @@ import { fitBrandedTitle } from "@/lib/seoTitle";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Search, X } from "@/lib/icons";
 import { getGuidePosts } from "@/lib/guideCatalog";
+import bestOfGuides from "@/data/bestOfGuides.json";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    GuidesPage — editorial redesign v2
@@ -188,6 +189,19 @@ const GuidesPage = () => {
             />
             <h1 className="tt-catalog-compact-title">{t("Guides", "Guides")}</h1>
           </div>
+
+          {/* Comparatifs « meilleurs outils » par intention : liens explorables
+              depuis l'index, sans quoi ces pages ne seraient atteintes que par le sitemap. */}
+          {activeFilter === "all" && (
+            <nav className="gi-bestof" aria-label={t("Comparatifs par besoin", "Comparisons by need") as string}>
+              <p className="gi-bestof-title">{t("Comparatifs par besoin", "Comparisons by need")}</p>
+              <ul className="gi-bestof-list">
+                {bestOfGuides.guides.map((g) => (
+                  <li key={g.id}><Link to={`${prefix}/guide/${g.slug[lang === "en" ? "en" : "fr"]}`}>{g.h1[lang === "en" ? "en" : "fr"]}</Link></li>
+                ))}
+              </ul>
+            </nav>
+          )}
 
           <div className="gi-simple-controls">
             <div className="gi-simple-search">

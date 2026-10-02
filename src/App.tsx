@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import bestOfGuides from "@/data/bestOfGuides.json";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, Navigate, useParams, useLocation, Outlet } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -44,6 +45,7 @@ const ComparesIndexPage = lazy(() => import("@/pages/ComparesIndexPage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const PersonaPillarPage = lazy(() => import("@/pages/PersonaPillarPage"));
+const BestOfGuidePage = lazy(() => import("@/pages/BestOfGuidePage"));
 const ArticleFacturation = lazy(() => import("@/pages/ArticleFacturation"));
 const BackOfficePage = lazy(() => import("@/pages/BackOfficePage"));
 
@@ -227,6 +229,10 @@ export const AppRoutes = () => (
       <Route path="guide/best-tools-freelance-content-creator" element={<PersonaPillarPage persona="ALIX" lang="en" />} />
       <Route path="guide/meilleurs-outils-ops-manager-freelance" element={<PersonaPillarPage persona="CLAIRE" lang="fr" />} />
       <Route path="guide/best-tools-freelance-ops-manager" element={<PersonaPillarPage persona="CLAIRE" lang="en" />} />
+      {/* « Meilleurs outils » par intention (src/data/bestOfGuides.json), aussi avant guide/:slug */}
+      {bestOfGuides.guides.flatMap((g) => (["en", "fr"] as const).map((l) => (
+        <Route key={`${g.id}-${l}`} path={`guide/${g.slug[l]}`} element={<BestOfGuidePage guideId={g.id} lang={l} />} />
+      )))}
       <Route path="guide/:slug" element={<LocalizedGuidePage />} />
       <Route path="story/:slug" element={<RedirectArticleToGuide />} />
       <Route path="article/:slug" element={<RedirectArticleToGuide />} />

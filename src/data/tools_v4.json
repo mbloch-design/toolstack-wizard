@@ -50530,11 +50530,11 @@
     "shortDescription": "D5 Render est un outil de rendu ray-traced temps réel pour architectes et designers, avec génération IA de matériaux et un forfait gratuit non commercial.",
     "shortDescriptionEn": "D5 Render is a real-time ray-traced rendering tool for architects and designers, with AI material generation and a free non-commercial tier.",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Usage non commercial uniquement, crédits IA limités, stockage plafonné",
       "paid": "Dès 30 $/mois, plan Pro."
     },
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: Non-commercial use only, limited AI credits, capped storage",
       "paid": "From $30/mo, Pro plan."
     },
     "defaultMonthlyPrice": 25.76,
@@ -62476,7 +62476,7 @@
     "description": "Elfsight propose une bibliothèque de plus de 90 widgets (flux sociaux, avis clients, formulaires, chat, e-commerce) qui s'intègrent sans code sur WordPress, Shopify, Wix, Squarespace ou tout autre site, avec une mise en place réputée très simple.\n\nLa tarification est jugée l'une des plus complexes de la catégorie : un plan Enterprise à 42$/mois pour une seule app contre 336$/mois pour l'accès à toutes les apps, avec des limites de vues qui frustrent certains utilisateurs sans option pay-as-you-go.",
     "category": "email-productivity",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : 200 vues de widget par mois, un seul widget, sites web illimités, marque Elfsight conservée",
       "paid": "Dès 5 $/mois, plan Basic (single app)."
     },
     "website": " formulaires…).",
@@ -62543,7 +62543,7 @@
     "longDescription": "Elfsight propose une bibliothèque de plus de 90 widgets sans code, couvrant avis, flux sociaux, formulaires, galeries et popups, qui s'installent sur plus de 112 plateformes de sites dont Shopify, WordPress, Wix et Webflow, sans écrire de code.\n\nLe forfait gratuit couvre un widget avec 200 vues par mois et la marque Elfsight conservée. Une application payante démarre à 5 $/mois en engagement annuel sur Basic, qui retire publicités et marque, tandis qu'un bundle de 96 applications démarre à 15 $/mois pour les sites qui ont besoin de plusieurs types de widgets à la fois. Il convient à un site qui ajoute une ou deux fonctions rapidement, plutôt qu'à qui veut un prix de plateforme unique tout-en-un.",
     "longDescriptionEn": "Elfsight offers a library of over 90 no-code widgets, covering reviews, social feeds, forms, galleries and popups, that install on 112+ website platforms including Shopify, WordPress, Wix and Webflow without writing code.\n\nThe free plan covers one widget at 200 monthly views with Elfsight branding kept. A single paid widget app starts at $5/month billed annually on Basic, removing ads and branding, while a 96-app bundle starts at $15/month for sites needing several widget types at once. It suits a site owner adding one or two features quickly rather than someone wanting a single all-in-one platform price.",
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: 200 monthly widget views, single widget, unlimited websites, Elfsight branding",
       "paid": "From $5/mo, Basic (single app) plan."
     },
     "pricing_v5": {
@@ -75974,11 +75974,11 @@
     "shortDescription": "Fredo6 Bundle regroupe plus de 40 extensions de modélisation gratuites pour SketchUp (FredoScale, Curviloft, etc.), avec quelques-unes vendues séparément.",
     "shortDescriptionEn": "Fredo6 Bundle is a collection of over 40 free SketchUp modeling plugins (FredoScale, Curviloft and others), with a couple sold separately.",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : La plupart des extensions Fredo6 (FredoScale, FredoCorner, FredoBend, Curviloft, etc.) sont gratuites ; seules quelques-unes (FredoPortrait, FredoSpline) sont payantes sous licence",
       "paid": "Dès 0 $ (licence à vie), plan Free plugins."
     },
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: Most Fredo6 plugins (FredoScale, FredoCorner, FredoBend, Curviloft, etc.) are free; only a few (FredoPortrait, FredoSpline) are marked licensed/paid",
       "paid": "From $0 (lifetime license), Free plugins plan."
     },
     "defaultMonthlyPrice": 0,
@@ -96321,7 +96321,7 @@
       "threshold": "Rentable dès que la déclaration fiscale obligatoire devient nécessaire : Premium démarre à 15 €/mois (180 €/an) pour les auto-entrepreneurs, facturé annuellement."
     },
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Facturation électronique illimitée (plateforme agréée DGFiP), devis et factures illimités, comptabilité automatisée ; les déclarations fiscales obligatoires sont exclues",
       "paid": "Dès 9 €/mois, plan Plus."
     },
     "affiliateLink": "https://indy.fr",
@@ -96405,7 +96405,7 @@
     "description": "Indy, c'est compta et facturation automatisées pour indépendants. À partir de 20€/mois. Pensé pour les consultants B2B et les graphistes.\n\nTout-en-un : facturation, compta, CRM, compte pro. conformité légale française (mentions, TVA, déclarations), interface simple et rapide. Compte pro intégré (IBAN français). Concrètement : facturation : créer et envoyer des factures conformes en 2 minutes. Ou encore : devis : générer des devis professionnels avec signature électronique. Gain de temps estimé : 2h/mois.\n\nÀ garder si : vous êtes en micro-entreprise ou société solo ou vous détestez la paperasse. À éviter si : vous avez un expert-comptable qui gère tout ou très peu de factures (<5/an). Limite principale : version gratuite limitée à 3 clients. Dès que vous passez plus de 2h/mois sur votre admin/compta.",
     "longDescriptionEn": "Indy is built for French freelancers and auto-entrepreneurs who want electronic invoicing, quotes and automated bookkeeping in one place. The free Essentiel plan already covers unlimited invoicing through a DGFiP-approved platform plus automated bookkeeping, with no mandatory tax declarations included.\n\nPaid plans start at 9 EUR/month billed annually on Plus, which adds e-signature and late-payment reminders. Premium, from 15 EUR/month for auto-entrepreneurs, adds automated mandatory tax declarations and one-click filings, though the price rises for other legal structures, up to 49 EUR/month for companies. It suits a solo freelancer handling their own admin, since the structure centers on one account.",
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: Unlimited electronic invoicing (DGFiP-approved platform), unlimited quotes and invoices, automated bookkeeping; excludes mandatory tax declarations",
       "paid": "From €9/mo, Plus plan."
     },
     "pricing_v5": {
@@ -116676,7 +116676,7 @@
     "shortDescription": "Lovable construit une application web à partir d'un prompt, hébergement Cloud inclus, facturé par un système de crédits dès 25 $/mois.",
     "defaultMonthlyPrice": 21.47,
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : 5 crédits de build par jour (jusqu'à 30/mois), 20 crédits Cloud par mois, 4 crédits de fonctionnalités IA",
       "paid": "Dès 25 $/mois, plan Pro."
     },
     "covers": [
@@ -116766,7 +116766,7 @@
     "description": "AI web app builder : chat naturel → code React/Supabase generé en temps réel. Preview live, GitHub sync, one-click deployment. Crédits system (message complexity). Students : -50 % first year.\n\nFonctions clés : Chat naturel → code React ; Preview live temps réel ; Supabase backend auto-généré ; GitHub sync bidirectionnel ; One-click deployment.\n\nLovable shines pour prototypage fast et solopreneur ; pour apps complexes, écrivez code directement.",
     "longDescriptionEn": "Lovable acts as an AI software engineer: describe an app in chat and it builds and deploys a working version, with Cloud hosting bundled in and GitHub or Supabase connections available for a real codebase and database.\n\nThe free plan gives about 30 build credits a month to try it. Pro, at $25/month, adds a larger credit balance covering builds, hosting and AI features together, though cost per task varies with complexity and unused credits expire after 2 months. Business, at $50/month, adds team credit caps per member. It suits a developer or technical builder who wants a working app fast, more than someone who needs a fixed, predictable monthly bill.",
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: 5 daily build credits (up to 30/month), 20 monthly Cloud credits, 4 AI feature credits",
       "paid": "From $25/mo, Pro plan."
     },
     "pricing_v5": {
@@ -170603,11 +170603,11 @@
     "shortDescription": "RenderMan, moteur de rendu de production de Pixar, offre le rendu par lots, gratuit en non commercial ou 595 $ en licence commerciale unique.",
     "shortDescriptionEn": "RenderMan is Pixar's production renderer with batch rendering and render-farm management, free for non-commercial use or $595 one-time for a commercial license.",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Gratuit pour un usage non commercial, les étudiants et les enseignants, mais limité à la dernière version",
       "paid": "Dès 595 $ (licence à vie), plan Commercial license."
     },
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: Free for non-commercial use, students and educators, but limited to the latest version",
       "paid": "From $595 (lifetime license), Commercial license plan."
     },
     "defaultMonthlyPrice": 0,
@@ -172396,7 +172396,7 @@
     "description": "Restream, c'est service de diffusion en direct multi-plateformes. À partir de 20€/mois. Pensé pour les graphistes et les community managers.\n\nSpécialisé en live streaming, et interface professionnelle. Gain de temps estimé : 5h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
     "category": "creation",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Diffuse sur 2 chaînes simultanément, inclut la marque Restream",
       "paid": "Dès 19 $/mois, plan Standard."
     },
     "website": "https://restream.io",
@@ -172472,7 +172472,7 @@
     "longDescription": "Restream envoie un flux en direct vers plusieurs plateformes sociales et vidéo en même temps, avec un studio pour accueillir des invités et des habillages personnalisés. Les forfaits supérieurs ajoutent l'enregistrement 4K et la diffusion en formats horizontal et vertical sur le forfait Professional, utile pour réutiliser un live en extraits courts ensuite.\n\nLe forfait gratuit couvre 2 chaînes simultanées avec la marque Restream ; Standard à 19 $ par mois retire la marque et ajoute une troisième chaîne, tandis que Business à 239 $ par mois inclut 2 postes d'équipe, 8 chaînes et un lecteur pour site web. Les extraits et les webinaires sont des options payantes séparées, non inclus par défaut.",
     "longDescriptionEn": "Restream sends one live stream to several social and video platforms at once, with a studio for co-hosting guests and branded overlays. Higher tiers add 4K recording and dual horizontal and vertical format streaming on the Professional plan, useful for repurposing a live show into short clips afterward.\n\nThe free plan covers 2 simultaneous channels with Restream branding; Standard at 19 USD a month removes the branding and adds a third channel, while Business at 239 USD a month includes 2 team seats, 8 channels and a website player. Clips and webinars are separate paid add-ons, not included by default.",
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: Stream to 2 channels simultaneously, includes Restream branding",
       "paid": "From $19/mo, Standard plan."
     },
     "pricing_v5": {
@@ -187479,11 +187479,11 @@
     "longDescription": "SignRequest gère les demandes de signature électronique avec une piste d'audit sécurisée valant preuve légale, en 17 langues et avec stockage cloud des documents. Le forfait gratuit couvre 10 documents par utilisateur et par mois ; Professional ajoute des documents illimités sous une politique d'usage raisonnable, une marque personnalisée et jusqu'à 5 utilisateurs, tandis que Business supprime la limite d'équipe et ajoute les intégrations Slack, Zapier et Salesforce plus le SSO.\n\nProfessional démarre à 9 € par mois et Business à 15 €, mais l'engagement annuel impose un an alors que les forfaits mensuels se résilient à tout moment, et l'accès API ou l'envoi en masse restent payants en plus, même sur Business.",
     "longDescriptionEn": "SignRequest handles electronic signature requests with a secure audit trail accepted as legal proof, in 17 languages and with cloud document storage. The free plan covers 10 documents per user a month; Professional adds unlimited documents under a fair-use policy, custom branding and up to 5 users, while Business removes the team-size limit and adds Slack, Zapier and Salesforce integrations plus SSO.\n\nProfessional starts at 9 EUR a month and Business at 15 EUR, but yearly billing requires a one-year commitment while monthly plans can be cancelled any time, and API access or bulk sending cost extra even on Business.",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : 10 documents signés par utilisateur et par mois, fonctions de signature de base",
       "paid": "Dès 9 €/mois, plan Professional."
     },
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: 10 documents signed per user per month, basic signing features",
       "paid": "From €9/mo, Professional plan."
     },
     "defaultMonthlyPrice": 9,
@@ -207769,11 +207769,11 @@
     "longDescription": "TikTok Studio est l'outil bureau propre à TikTok pour gérer une chaîne : analytics sur les vues, la croissance des abonnés et l'engagement par vidéo, un gestionnaire de commentaires, et la planification de publications jusqu'à 10 jours à l'avance pour les comptes professionnels ou créateurs.\n\nIl est gratuit, sans forfait payant, puisqu'il s'agit d'une extension propre à TikTok d'un compte existant plutôt qu'un produit autonome. Le principal piège est qu'une publication planifiée ne peut pas être modifiée une fois programmée, seulement supprimée et repostée, et la planification elle-même demande un compte professionnel ou créateur plutôt qu'un compte personnel. Il convient à un créateur qui gère sa chaîne depuis un ordinateur, plutôt qu'à une équipe gérant plusieurs comptes de marque.",
     "longDescriptionEn": "TikTok Studio is TikTok's own desktop tool for managing a channel: analytics on views, follower growth and per-video engagement, a comments manager, and post scheduling up to 10 days in advance for business or creator accounts.\n\nIt's free, with no paid tier, since it's a first-party extension of a TikTok account rather than a standalone product. The main catch is that scheduled posts can't be edited once set, only deleted and re-uploaded, and scheduling itself requires a business or creator account rather than a personal one. It suits a creator managing their own channel from a desktop rather than a team running multiple brand accounts.",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Gestion complète de la chaîne, analytics, gestion des commentaires et planification incluses sans coût",
       "paid": "Pas d'offre payante obligatoire."
     },
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: Full channel management, analytics, comment management and scheduling included at no cost",
       "paid": "No paid plan required."
     },
     "defaultMonthlyPrice": 0,
@@ -214611,7 +214611,7 @@
     "description": "Typeform, c'est outil en ligne de création de formulaires et enquêtes interactifs. À partir de 15€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en form builder, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
     "category": "email-productivity",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Jusqu'à 100 réponses par mois, 1 utilisateur, formulaires et questions illimités avec une personnalisation de base",
       "paid": "Dès 28 $/mois, plan Basic."
     },
     "website": "https://typeform.com",
@@ -214693,7 +214693,7 @@
     "longDescription": "Typeform construit des formulaires et enquêtes interactifs et conversationnels, une question à la fois, avec logique conditionnelle et création assistée par IA. L'offre gratuite couvre jusqu'à 100 réponses par mois pour un utilisateur, suffisant pour tester un formulaire avant de payer.\n\nL'offre Basic d'entrée coûte 39 $ par mois (28 $ en facturation annuelle) et relève le plafond à 750 réponses, mais retirer la marque et obtenir un sous-domaine personnalisé n'arrivent qu'avec Plus. Business ajoute les statistiques d'abandon et de conversion, tandis qu'une offre Growth Flow séparée, au-dessus de l'échelle standard, ajoute l'enrichissement de leads et l'intégration Salesforce pour les équipes commerciales.",
     "longDescriptionEn": "Typeform builds interactive, conversational forms and surveys, one question at a time, with conditional logic and AI-assisted creation. The free plan covers up to 100 responses a month for a single user, enough to test a form before deciding to pay.\n\nThe entry Basic plan costs 39 USD a month (28 USD on annual billing) and raises the cap to 750 responses, but branding removal and a custom subdomain only arrive on Plus. Business adds drop-off and conversion analytics, while a separate Growth Flow plan above the standard ladder adds lead enrichment and Salesforce integration for sales-driven teams.",
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: Up to 100 responses per month, 1 user, unlimited forms and questions with basic customization",
       "paid": "From $28/mo, Basic plan."
     },
     "pricing_v5": {
@@ -230707,11 +230707,11 @@
     "longDescription": "Zed est un éditeur de code écrit en Rust pour la vitesse et la faible latence, avec une édition multijoueur en temps réel et des prédictions d'édition IA intégrées. Il permet d'utiliser ses propres clés d'API auprès de nombreux fournisseurs de LLM externes, dont Anthropic, OpenAI et Google AI, plutôt que d'enfermer un développeur dans un seul assistant.\n\nL'offre gratuite Personal inclut 2 000 prédictions d'édition IA par mois, suffisant pour un usage solo régulier. L'offre Pro, à 10 $ par poste, ajoute des prédictions illimitées avec 5 $ de jetons IA inclus avant une facturation à l'usage, tandis que Business ajoute des contrôles IA et une visibilité des dépenses à l'échelle de l'organisation pour les petites équipes.",
     "longDescriptionEn": "Zed is a code editor written in Rust for speed and low latency, with real-time multiplayer editing and AI edit predictions built in. It supports bringing API keys from many external LLM providers, including Anthropic, OpenAI and Google AI, instead of locking a developer into one assistant.\n\nThe free Personal plan includes 2,000 AI edit predictions per month, enough for regular solo use. The Pro plan, at 10 USD per seat, adds unlimited predictions with 5 USD of included AI tokens before usage-based charges apply, while Business adds organization-wide AI controls and spend visibility for small teams.",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : 2 000 prédictions d'édition acceptées incluses ; usage illimité de l'IA possible avec ses propres clés d'API externes",
       "paid": "Dès 10 $/mois, plan Pro."
     },
     "pricingEn": {
-      "free": "Free plan: [object Object]",
+      "free": "Free plan: 2,000 accepted edit predictions included; unlimited AI use possible with a user's own external API keys",
       "paid": "From $10/mo, Pro plan."
     },
     "defaultMonthlyPrice": 8.59,

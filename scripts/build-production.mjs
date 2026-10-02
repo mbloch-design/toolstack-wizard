@@ -103,6 +103,7 @@ function run(label, command, args) {
 console.log("Tooltrim — build production reproductible");
 run("Index léger des outils", "node", ["scripts/gen-tools-index.mjs"]);
 run("Prix natifs attestés", "node", ["scripts/gen-native-prices.mjs"]);
+run("Données des pages « meilleurs outils »", "node", ["scripts/gen-best-of-guides-data.mjs"]);
 run(
   "Index catalogue stacks",
   process.platform === "win32" ? "node_modules\\.bin\\tsx.cmd" : "node_modules/.bin/tsx",

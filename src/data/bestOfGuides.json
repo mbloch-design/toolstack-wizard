@@ -1,0 +1,229 @@
+{
+  "_doc": "Pages « meilleurs outils pour une intention » (/:lang/guide/<slug>). Source unique lue par le prérendu (vite.config.ts), le générateur de données (scripts/gen-best-of-guides-data.mjs) et la page (src/pages/BestOfGuidePage.tsx). Les outils listés doivent exister au catalogue ; le classement est calculé depuis leurs données (note ToolTrim, prix vérifiés), jamais écrit à la main. Textes : anglais d'abord, pas de tiret cadratin, aucun chiffre qui ne vienne des fiches.",
+  "guides": [
+    {
+      "id": "after-effects-plugins",
+      "slug": {
+        "en": "best-after-effects-plugins",
+        "fr": "meilleurs-plugins-after-effects"
+      },
+      "title": {
+        "en": "Best After Effects plugins in 2026: prices and verdicts",
+        "fr": "Meilleurs plugins After Effects en 2026 : prix et avis"
+      },
+      "description": {
+        "en": "The After Effects plugins and script packs worth paying for in 2026, ranked on ToolTrim's five-axis score, with verified prices and lifetime-licence traps.",
+        "fr": "Les plugins et scripts After Effects qui valent leur prix en 2026, classés sur la note ToolTrim à cinq axes, avec prix vérifiés et pièges des licences à vie."
+      },
+      "h1": {
+        "en": "The best After Effects plugins in 2026",
+        "fr": "Les meilleurs plugins After Effects en 2026"
+      },
+      "intro": {
+        "en": "Most After Effects plugins are sold as one-time licences, a few as subscriptions, and several are free with paid packs on top. That makes them hard to compare at a glance. This list ranks the plugins we researched on the same grid and states the entry price as the vendor publishes it.",
+        "fr": "La plupart des plugins After Effects se vendent en licence à vie, quelques-uns en abonnement, et plusieurs sont gratuits avec des packs payants par-dessus. Difficile de les comparer d'un coup d'œil. Cette liste classe les plugins étudiés sur la même grille et donne le prix d'entrée tel que l'éditeur l'affiche."
+      },
+      "audience": {
+        "en": "for motion designers and video editors",
+        "fr": "pour motion designers et monteurs"
+      },
+      "tools": [
+        "motion-bro",
+        "ae-animation-composer",
+        "ae-gifgun",
+        "ae-bodymovin",
+        "ae-overlord",
+        "aescripts-flow",
+        "ae-bao-boa",
+        "ae-duik",
+        "ae-newton4",
+        "magic-bullet",
+        "ae-red-giant"
+      ],
+      "angle": {
+        "en": "The double spend to watch: Magic Bullet, Trapcode and Universe are all part of the Red Giant line sold by Maxon, so buying one suite on its own and later subscribing to Red Giant means paying twice for the same plugins. On the other side, Motion Bro's plugin is free and only its asset packs are paid: check which packs you would actually use before buying a bundle.",
+        "fr": "Le double paiement à surveiller : Magic Bullet, Trapcode et Universe font tous partie de la gamme Red Giant vendue par Maxon. Acheter une suite seule puis s'abonner à Red Giant, c'est payer deux fois les mêmes plugins. À l'inverse, le plugin Motion Bro est gratuit et seuls ses packs sont payants : vérifie quels packs tu utiliserais vraiment avant d'acheter un bundle."
+      }
+    },
+    {
+      "id": "project-management-freelancers",
+      "slug": {
+        "en": "best-project-management-software-freelancers",
+        "fr": "meilleurs-logiciels-gestion-projet-freelance"
+      },
+      "title": {
+        "en": "Best project management software for freelancers (2026)",
+        "fr": "Meilleurs logiciels de gestion de projet pour freelance (2026)"
+      },
+      "description": {
+        "en": "Trello, Asana, ClickUp, Notion and more, compared for a freelancer: entry price, free plan limits and the per-seat traps once a client joins.",
+        "fr": "Trello, Asana, ClickUp, Notion et d'autres, comparés pour un freelance : prix d'entrée, limites du plan gratuit et pièges du prix par siège dès qu'un client rejoint."
+      },
+      "h1": {
+        "en": "The best project management software for freelancers",
+        "fr": "Les meilleurs logiciels de gestion de projet pour freelance"
+      },
+      "intro": {
+        "en": "A freelancer rarely needs what project management tools sell to teams: workload views, portfolios, admin controls. What matters is a free plan that holds up for one person, and what the bill becomes when a client or subcontractor needs access. Each tool below is ranked on the same grid, with its entry price as published.",
+        "fr": "Un freelance a rarement besoin de ce que les outils de gestion de projet vendent aux équipes : vues de charge, portefeuilles, contrôles d'administration. Ce qui compte, c'est un plan gratuit qui tient pour une personne, et ce que devient la facture quand un client ou un sous-traitant doit y accéder. Chaque outil ci-dessous est classé sur la même grille, avec son prix d'entrée tel que publié."
+      },
+      "audience": {
+        "en": "for freelancers and small studios",
+        "fr": "pour freelances et petits studios"
+      },
+      "tools": [
+        "trello",
+        "asana",
+        "clickup",
+        "notion",
+        "airtable",
+        "basecamp",
+        "plutio",
+        "productive-io"
+      ],
+      "angle": {
+        "en": "The double spend to watch: a project tool on top of an all-in-one workspace. Notion already covers task boards for one person, so paying for Trello or ClickUp alongside it often duplicates the same job. And most of these tools bill per seat: a client or subcontractor invited as a full member can double the bill, while Notion's free plan already allows 10 external guests.",
+        "fr": "Le double paiement à surveiller : un outil de gestion de projet en plus d'un espace de travail tout-en-un. Notion couvre déjà les tableaux de tâches d'une personne, donc payer Trello ou ClickUp à côté fait souvent double emploi. Et la plupart de ces outils facturent par siège : un client ou un sous-traitant invité comme membre à part entière peut doubler la facture, alors que le plan gratuit de Notion accepte déjà 10 invités externes."
+      }
+    },
+    {
+      "id": "second-brain-apps",
+      "slug": {
+        "en": "best-second-brain-apps",
+        "fr": "meilleures-applications-second-cerveau"
+      },
+      "title": {
+        "en": "Best second brain apps in 2026: Obsidian, Notion, Logseq and more",
+        "fr": "Meilleures applications de second cerveau en 2026 : Obsidian, Notion, Logseq"
+      },
+      "description": {
+        "en": "Linked-notes and knowledge apps compared: where your notes live, what sync costs, and how easily you can leave. Ranked on ToolTrim's five-axis score.",
+        "fr": "Applications de notes liées et de base de connaissances comparées : où vivent tes notes, ce que coûte la synchronisation, et la facilité pour partir. Classées sur la note ToolTrim à cinq axes."
+      },
+      "h1": {
+        "en": "The best second brain apps in 2026",
+        "fr": "Les meilleures applications de second cerveau en 2026"
+      },
+      "intro": {
+        "en": "A second brain app holds years of notes, so the price matters less than two other questions: where the files live, and how hard it is to leave. Some store plain Markdown on your disk, others keep everything in their cloud. The ranking below weighs that reversibility alongside value, ease of use and depth.",
+        "fr": "Une application de second cerveau garde des années de notes : le prix compte moins que deux autres questions. Où vivent les fichiers, et à quel point il est difficile de partir. Certaines stockent du Markdown sur ton disque, d'autres gardent tout dans leur cloud. Le classement ci-dessous pèse cette réversibilité à côté de la valeur, de la simplicité et de la profondeur."
+      },
+      "audience": {
+        "en": "for freelancers who think in notes",
+        "fr": "pour freelances qui pensent en notes"
+      },
+      "tools": [
+        "obsidian",
+        "logseq",
+        "notion",
+        "heptabase",
+        "reflect-notes",
+        "roam-research"
+      ],
+      "angle": {
+        "en": "The double spend to watch: a second brain app and a separate workspace holding the same notes. Pick where your notes live and keep one. If you only work on one device, Obsidian's paid Sync is an option you may not need at all.",
+        "fr": "Le double paiement à surveiller : une application de second cerveau et un espace de travail séparé qui contiennent les mêmes notes. Choisis où vivent tes notes et garde un seul outil. Si tu travailles sur un seul appareil, la synchronisation payante d'Obsidian est une option dont tu n'as peut-être pas besoin."
+      }
+    },
+    {
+      "id": "3d-render-engines",
+      "slug": {
+        "en": "best-3d-render-engines",
+        "fr": "meilleurs-moteurs-rendu-3d"
+      },
+      "title": {
+        "en": "Best 3D render engines in 2026: Octane, Redshift, Corona and more",
+        "fr": "Meilleurs moteurs de rendu 3D en 2026 : Octane, Redshift, Corona"
+      },
+      "description": {
+        "en": "Production render engines compared for a freelance 3D artist: GPU or CPU, subscription or licence, AI denoising and credits, and the engine you may already pay for.",
+        "fr": "Moteurs de rendu de production comparés pour un artiste 3D freelance : GPU ou CPU, abonnement ou licence, débruitage et crédits IA, et le moteur que tu paies peut-être déjà."
+      },
+      "h1": {
+        "en": "The best 3D render engines in 2026",
+        "fr": "Les meilleurs moteurs de rendu 3D en 2026"
+      },
+      "intro": {
+        "en": "Choosing a render engine is mostly choosing a hardware path and a host application. GPU engines reward a strong graphics card, CPU engines scale with cores, and each one supports a different set of 3D packages. This list covers final-frame production renderers; real-time visualisation tools for architecture are a different need.",
+        "fr": "Choisir un moteur de rendu, c'est surtout choisir une voie matérielle et un logiciel hôte. Les moteurs GPU récompensent une carte graphique puissante, les moteurs CPU suivent le nombre de cœurs, et chacun prend en charge des logiciels 3D différents. Cette liste couvre les moteurs de rendu final ; la visualisation temps réel pour l'architecture est un autre besoin."
+      },
+      "audience": {
+        "en": "for freelance 3D artists",
+        "fr": "pour artistes 3D freelances"
+      },
+      "tools": [
+        "octane-render",
+        "redshift",
+        "corona-renderer",
+        "renderman",
+        "blender"
+      ],
+      "angle": {
+        "en": "Before adding a render engine, check what you already pay for. Redshift comes at no extra cost with every Cinema 4D subscription and with Maxon One, and Blender ships the Cycles engine for free. Buying a second engine for the same host application is the most common way to pay twice for the same frame.",
+        "fr": "Avant d'ajouter un moteur de rendu, vérifie ce que tu paies déjà. Redshift est inclus sans surcoût dans tout abonnement Cinema 4D et dans Maxon One, et Blender embarque gratuitement le moteur Cycles. Acheter un second moteur pour le même logiciel hôte, c'est la façon la plus courante de payer deux fois la même image."
+      },
+      "ai": {
+        "title": {
+          "en": "What AI actually does in these engines",
+          "fr": "Ce que l'IA fait vraiment dans ces moteurs"
+        },
+        "intro": {
+          "en": "In render engines, AI mostly means denoising (cleaner images from fewer samples, so shorter renders) and, more recently, credits for generative features. Here is what each vendor's own pages state, and nothing more.",
+          "fr": "Dans un moteur de rendu, l'IA sert surtout au débruitage (une image propre avec moins d'échantillons, donc des rendus plus courts) et, plus récemment, à des crédits pour des fonctions génératives. Voici ce que disent les pages de chaque éditeur, et rien de plus."
+        },
+        "notes": {
+          "octane-render": {
+            "en": "An AI denoiser and an AI Light system are built in, both included in the Studio+ subscription.",
+            "fr": "Un débruiteur IA et un système AI Light sont intégrés, tous deux inclus dans l'abonnement Studio+."
+          },
+          "corona-renderer": {
+            "en": "Corona Solo includes 100 Chaos AI credits a month; Premium includes five times as many.",
+            "fr": "Corona Solo inclut 100 crédits Chaos AI par mois ; Premium en inclut cinq fois plus."
+          }
+        },
+        "none": {
+          "en": "No AI feature stated in the sources we checked.",
+          "fr": "Aucune fonction IA mentionnée dans les sources vérifiées."
+        }
+      }
+    },
+    {
+      "id": "cloud-hosting-developers",
+      "slug": {
+        "en": "best-cloud-hosting-developers",
+        "fr": "meilleurs-hebergeurs-cloud-developpeurs"
+      },
+      "title": {
+        "en": "Best cloud hosting for developers in 2026: Vercel, Netlify, Heroku",
+        "fr": "Meilleurs hébergeurs cloud pour développeurs en 2026 : Vercel, Netlify, Heroku"
+      },
+      "description": {
+        "en": "Cloud hosting platforms compared for a freelance developer: free tiers, what the first paid plan costs, and where usage billing can surprise you.",
+        "fr": "Plateformes d'hébergement cloud comparées pour un développeur freelance : offres gratuites, coût du premier plan payant, et où la facturation à l'usage peut surprendre."
+      },
+      "h1": {
+        "en": "The best cloud hosting platforms for developers",
+        "fr": "Les meilleurs hébergeurs cloud pour développeurs"
+      },
+      "intro": {
+        "en": "For a freelance developer, hosting splits into two families: platforms that deploy straight from a Git repository, and virtual machines you configure yourself. The first are faster to ship on, the second cheaper at steady load. Most bill part of their usage on top of the plan, so the entry price is only a starting point.",
+        "fr": "Pour un développeur freelance, l'hébergement se partage en deux familles : les plateformes qui déploient directement depuis un dépôt Git, et les machines virtuelles que tu configures toi-même. Les premières font gagner du temps, les secondes coûtent moins cher à charge stable. La plupart facturent une partie de l'usage en plus du plan : le prix d'entrée n'est qu'un point de départ."
+      },
+      "audience": {
+        "en": "for freelance developers",
+        "fr": "pour développeurs freelances"
+      },
+      "tools": [
+        "vercel",
+        "netlify",
+        "digitalocean",
+        "heroku",
+        "fly-io"
+      ],
+      "angle": {
+        "en": "The bill to watch is not the plan, it is the usage on top of it. Vercel's Pro plan includes a monthly usage credit then charges per request and per gigabyte beyond its allowances, and Netlify meters usage in credits. Before paying for a second platform, check that the first one is not simply sized wrong.",
+        "fr": "La facture à surveiller, ce n'est pas le plan, c'est l'usage par-dessus. Le plan Pro de Vercel inclut un crédit d'usage mensuel puis facture à la requête et au gigaoctet au-delà des quotas, et Netlify mesure l'usage en crédits. Avant de payer une deuxième plateforme, vérifie que la première n'est pas simplement mal dimensionnée."
+      }
+    }
+  ]
+}

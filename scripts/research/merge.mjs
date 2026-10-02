@@ -205,7 +205,12 @@ function applyDossier(tool, d) {
   // Short free/paid texts: read by the free-plan detection and fallbacks.
   const freeText = (lang) => {
     const fr = lang === "fr";
-    if (p.freePlan.exists) return `${fr ? "Plan gratuit" : "Free plan"}${p.freePlan.limits ? ` : ${L(p.freePlan.limits, lang) || p.freePlan.limits}` : "."}`.replace(" : ", fr ? " : " : ": ");
+    // limits is either one { en, fr } text or a list of them (11 dossiers):
+    // a list used to print "[object Object]" on the page.
+    const limits = Array.isArray(p.freePlan.limits)
+      ? p.freePlan.limits.map((item) => L(item, lang)).filter(Boolean).join(fr ? " ; " : "; ")
+      : p.freePlan.limits ? L(p.freePlan.limits, lang) || (typeof p.freePlan.limits === "string" ? p.freePlan.limits : "") : "";
+    if (p.freePlan.exists) return `${fr ? "Plan gratuit" : "Free plan"}${limits ? ` : ${limits}` : "."}`.replace(" : ", fr ? " : " : ": ");
     if (p.trial) return fr ? `Pas de plan gratuit permanent, essai de ${p.trial.days} jours.` : `No permanent free plan, ${p.trial.days}-day trial.`;
     return fr ? "Pas de plan gratuit." : "No free plan.";
   };

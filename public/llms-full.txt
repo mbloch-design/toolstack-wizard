@@ -3391,7 +3391,7 @@
     "website": "https://www.d5render.com",
     "category": "design-tools",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Usage non commercial uniquement, crédits IA limités, stockage plafonné",
       "paid": "Dès 30 $/mois, plan Pro."
     },
     "description_fr": "D5 Render est un outil de rendu ray-traced temps réel pour architectes et designers, avec génération IA de matériaux et un forfait gratuit non commercial.",
@@ -4116,7 +4116,7 @@
     "website": " formulaires…).",
     "category": "email-productivity",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : 200 vues de widget par mois, un seul widget, sites web illimités, marque Elfsight conservée",
       "paid": "Dès 5 $/mois, plan Basic (single app)."
     },
     "description_fr": "Elfsight est une bibliothèque de plus de 90 widgets sans code (avis, flux sociaux, popups) qui s'installent sur la plupart des sites, facturés par application.",
@@ -5086,7 +5086,7 @@
     "website": "https://sketchucation.com/pluginstore?pauthor=fredo6",
     "category": "design-tools",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : La plupart des extensions Fredo6 (FredoScale, FredoCorner, FredoBend, Curviloft, etc.) sont gratuites ; seules quelques-unes (FredoPortrait, FredoSpline) sont payantes sous licence",
       "paid": "Dès 0 $ (licence à vie), plan Free plugins."
     },
     "description_fr": "Fredo6 Bundle regroupe plus de 40 extensions de modélisation gratuites pour SketchUp (FredoScale, Curviloft, etc.), avec quelques-unes vendues séparément.",
@@ -6479,7 +6479,7 @@
     "website": "https://indy.fr",
     "category": "finance",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Facturation électronique illimitée (plateforme agréée DGFiP), devis et factures illimités, comptabilité automatisée ; les déclarations fiscales obligatoires sont exclues",
       "paid": "Dès 9 €/mois, plan Plus."
     },
     "description_fr": "Indy gère la facturation, les devis et la comptabilité des freelances français, avec les déclarations fiscales obligatoires incluses sur le forfait Premium.",
@@ -7958,7 +7958,7 @@
     "website": "https://lovable.dev",
     "category": "ai-general",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : 5 crédits de build par jour (jusqu'à 30/mois), 20 crédits Cloud par mois, 4 crédits de fonctionnalités IA",
       "paid": "Dès 25 $/mois, plan Pro."
     },
     "description_fr": "Lovable construit une application web à partir d'un prompt, hébergement Cloud inclus, facturé par un système de crédits dès 25 $/mois.",
@@ -11905,7 +11905,7 @@
     "website": "https://renderman.pixar.com",
     "category": "design-tools",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Gratuit pour un usage non commercial, les étudiants et les enseignants, mais limité à la dernière version",
       "paid": "Dès 595 $ (licence à vie), plan Commercial license."
     },
     "description_fr": "RenderMan, moteur de rendu de production de Pixar, offre le rendu par lots, gratuit en non commercial ou 595 $ en licence commerciale unique.",
@@ -12031,7 +12031,7 @@
     "website": "https://restream.io",
     "category": "creation",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Diffuse sur 2 chaînes simultanément, inclut la marque Restream",
       "paid": "Dès 19 $/mois, plan Standard."
     },
     "description_fr": "Restream diffuse en direct vers plusieurs plateformes à la fois, gratuit pour 2 chaînes avec la marque Restream visible.",
@@ -13032,7 +13032,7 @@
     "website": "https://signrequest.com",
     "category": "legal-contracts",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : 10 documents signés par utilisateur et par mois, fonctions de signature de base",
       "paid": "Dès 9 €/mois, plan Professional."
     },
     "description_fr": "SignRequest est un outil de signature électronique, gratuit jusqu'à 10 documents par mois, avec des forfaits payants pour les équipes, la marque et les intégrations.",
@@ -14517,7 +14517,7 @@
     "website": "https://tiktok.com/tiktok-studio",
     "category": "communication",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Gestion complète de la chaîne, analytics, gestion des commentaires et planification incluses sans coût",
       "paid": "Pas d'offre payante obligatoire."
     },
     "description_fr": "TikTok Studio est l'outil bureau gratuit de TikTok pour les analytics de chaîne, la gestion des commentaires et la planification sur comptes pro ou créateur.",
@@ -14963,7 +14963,7 @@
     "website": "https://typeform.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : Jusqu'à 100 réponses par mois, 1 utilisateur, formulaires et questions illimités avec une personnalisation de base",
       "paid": "Dès 28 $/mois, plan Basic."
     },
     "description_fr": "Créateur de formulaires et d'enquêtes interactifs et conversationnels avec logique conditionnelle, gratuit jusqu'à 100 réponses par mois.",
@@ -16169,7 +16169,7 @@
     "website": "https://zed.dev/",
     "category": "ai-general",
     "pricing": {
-      "free": "Plan gratuit : [object Object]",
+      "free": "Plan gratuit : 2 000 prédictions d'édition acceptées incluses ; usage illimité de l'IA possible avec ses propres clés d'API externes",
       "paid": "Dès 10 $/mois, plan Pro."
     },
     "description_fr": "Éditeur de code rapide écrit en Rust, avec collaboration en temps réel et prédictions d'édition IA intégrées, gratuit avec une offre Pro payante en option.",

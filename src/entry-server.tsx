@@ -29,6 +29,7 @@ import ContactPage from "@/pages/ContactPage";
 import SubmitToolPage from "@/pages/SubmitToolPage";
 import ExplorerPage from "@/pages/ExplorerPage";
 import PersonaPillarPage from "@/pages/PersonaPillarPage";
+import BestOfGuidePage from "@/pages/BestOfGuidePage";
 
 export interface RenderedToolPage {
   html: string;
@@ -580,6 +581,35 @@ export async function renderPersonaPillarPage(
                 <Routes>
                   <Route path="/:lang" element={<LangLayout />}>
                     <Route path="guide/*" element={<PersonaPillarPage persona={persona} lang={lang} />} />
+                  </Route>
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+/** Pages « meilleurs outils » par intention (src/data/bestOfGuides.json). */
+export async function renderBestOfGuidePage(path: string, guideId: string, lang: "fr" | "en"): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="guide/*" element={<BestOfGuidePage guideId={guideId} lang={lang} />} />
                   </Route>
                 </Routes>
               </Suspense>

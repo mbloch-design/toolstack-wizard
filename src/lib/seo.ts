@@ -1,3 +1,4 @@
+import bestOfGuides from "../data/bestOfGuides.json";
 /**
  * SEO utility: set meta tags, canonical, and JSON-LD dynamically.
  */
@@ -13,6 +14,8 @@ export function hasNonCanonicalSearchParams(params: URLSearchParams): boolean {
 }
 
 export const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
+  // Pages « meilleurs outils » par intention (src/data/bestOfGuides.json).
+  ...Object.fromEntries(bestOfGuides.guides.map((g) => [g.slug.fr, g.slug.en])),
   "loom-prix-alternatives": "loom-pricing-alternatives",
   "conseils-ia-freelances-2026": "ai-tips-freelancers-2026",
   "notion-gratuit-ou-payant": "notion-free-or-paid",

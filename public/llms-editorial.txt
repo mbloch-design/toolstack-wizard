@@ -1,6 +1,6 @@
 # ToolTrim editorial index
 # Generated from dist/sitemap.xml and its canonical prerendered pages.
-# Records: 250 (84 guides, 166 comparisons, localized FR/EN pages)
+# Records: 260 (94 guides, 166 comparisons, localized FR/EN pages)
 # Titles and available source summaries only. A missing summary is not inferred. Consult each canonical URL for full content and current offers.
 
 [
@@ -2001,5 +2001,85 @@
     "url": "https://tooltrim.com/en/guide/best-tools-freelance-ops-manager",
     "title": "Best tools for freelance ops managers in 2026",
     "summary": "Freelance ops stack: accounting, business banking, e-signature, project management. The most fragmented stack, so the one where duplicates hide best."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-plugins-after-effects",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-plugins-after-effects",
+    "title": "Meilleurs plugins After Effects en 2026 : prix et avis",
+    "summary": "Les plugins et scripts After Effects qui valent leur prix en 2026, classés sur la note ToolTrim à cinq axes, avec prix vérifiés et pièges des licences à vie."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-after-effects-plugins",
+    "url": "https://tooltrim.com/en/guide/best-after-effects-plugins",
+    "title": "Best After Effects plugins in 2026: prices and verdicts",
+    "summary": "The After Effects plugins and script packs worth paying for in 2026, ranked on ToolTrim's five-axis score, with verified prices and lifetime-licence traps."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-logiciels-gestion-projet-freelance",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-logiciels-gestion-projet-freelance",
+    "title": "Meilleurs logiciels de gestion de projet pour freelance (2026)",
+    "summary": "Trello, Asana, ClickUp, Notion et d'autres, comparés pour un freelance : prix d'entrée, limites du plan gratuit et pièges du prix par siège dès qu'un client rejoint."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-project-management-software-freelancers",
+    "url": "https://tooltrim.com/en/guide/best-project-management-software-freelancers",
+    "title": "Best project management software for freelancers (2026)",
+    "summary": "Trello, Asana, ClickUp, Notion and more, compared for a freelancer: entry price, free plan limits and the per-seat traps once a client joins."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleures-applications-second-cerveau",
+    "url": "https://tooltrim.com/fr/guide/meilleures-applications-second-cerveau",
+    "title": "Meilleures applications de second cerveau en 2026 : Obsidian, Notion, Logseq",
+    "summary": "Applications de notes liées et de base de connaissances comparées : où vivent tes notes, ce que coûte la synchronisation, et la facilité pour partir. Classées sur la note ToolTrim à cinq axes."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-second-brain-apps",
+    "url": "https://tooltrim.com/en/guide/best-second-brain-apps",
+    "title": "Best second brain apps in 2026: Obsidian, Notion, Logseq and more",
+    "summary": "Linked-notes and knowledge apps compared: where your notes live, what sync costs, and how easily you can leave. Ranked on ToolTrim's five-axis score."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-moteurs-rendu-3d",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-moteurs-rendu-3d",
+    "title": "Meilleurs moteurs de rendu 3D en 2026 : Octane, Redshift, Corona",
+    "summary": "Moteurs de rendu de production comparés pour un artiste 3D freelance : GPU ou CPU, abonnement ou licence, débruitage et crédits IA, et le moteur que tu paies peut-être déjà."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-3d-render-engines",
+    "url": "https://tooltrim.com/en/guide/best-3d-render-engines",
+    "title": "Best 3D render engines in 2026: Octane, Redshift, Corona and more",
+    "summary": "Production render engines compared for a freelance 3D artist: GPU or CPU, subscription or licence, AI denoising and credits, and the engine you may already pay for."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-hebergeurs-cloud-developpeurs",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-hebergeurs-cloud-developpeurs",
+    "title": "Meilleurs hébergeurs cloud pour développeurs en 2026 : Vercel, Netlify, Heroku",
+    "summary": "Plateformes d'hébergement cloud comparées pour un développeur freelance : offres gratuites, coût du premier plan payant, et où la facturation à l'usage peut surprendre."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-cloud-hosting-developers",
+    "url": "https://tooltrim.com/en/guide/best-cloud-hosting-developers",
+    "title": "Best cloud hosting for developers in 2026: Vercel, Netlify, Heroku",
+    "summary": "Cloud hosting platforms compared for a freelance developer: free tiers, what the first paid plan costs, and where usage billing can surprise you."
   }
 ]

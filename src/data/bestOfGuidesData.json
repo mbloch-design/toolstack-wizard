@@ -1,0 +1,3916 @@
+{
+  "motion-bro": {
+    "id": "motion-bro",
+    "slug": "motion-bro",
+    "name": "Motion Bro",
+    "logo": null,
+    "websiteUrl": "https://motionbro.com",
+    "tagline": {
+      "fr": "Transitions AE/Premiere",
+      "en": "AE/Premiere transitions"
+    },
+    "shortDescription": "Plugin gratuit pour After Effects et Premiere Pro donnant accès en un clic à des packs de transitions et presets payants.",
+    "shortDescriptionEn": "Free plugin for After Effects and Premiere Pro giving one-click access to paid transition and preset packs.",
+    "pricing": {
+      "free": "Plan gratuit : Le plugin Motion Bro en lui-même est gratuit, sans offre payante ; seuls les packs d'assets individuels et les bundles sont payants",
+      "paid": "Dès 0 $ (licence à vie), plan Motion Bro plugin."
+    },
+    "pricingEn": {
+      "free": "Free plan: Motion Bro plugin itself is free with no paid tier; only individual asset packs and bundles are paid",
+      "paid": "From $0 (lifetime license), Motion Bro plugin plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Motion Bro plugin",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "plugin-free",
+          "displayName": "Motion Bro plugin",
+          "isComparePlan": true,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Motion Bro plugin",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "plugin-free",
+          "displayName": "Motion Bro plugin",
+          "isComparePlan": true,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 5,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 2,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu montes déjà dans After Effects ou Premiere Pro et tu veux des transitions prêtes à l'emploi sans abonnement."
+      ],
+      "avoidIf": [
+        "Tu montes en dehors de l'écosystème Adobe, ou tu as besoin d'un rendu totalement sur-mesure plutôt que de transitions à base de presets."
+      ],
+      "threshold": "Prévois la licence commerciale (100 $ pour le bundle Essential) dès qu'une sortie sera vendue ou monétisée.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Acheter la licence personnelle et l'utiliser commercialement viole les conditions de licence ; la mise à niveau commerciale coûte environ le double."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You already edit in After Effects or Premiere Pro and want ready-made transitions without a subscription."
+      ],
+      "avoidIf": [
+        "You edit outside the Adobe ecosystem, or need a fully custom look rather than preset-based transitions."
+      ],
+      "threshold": "Budget the commercial license ($100 for the Essential bundle) as soon as any output will be sold or monetized.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Buying the personal license and using the output commercially violates the license terms; the commercial upgrade is roughly double the price."
+        }
+      ]
+    },
+    "pros": [
+      "Le plugin de base est gratuit pour toujours, aucun abonnement requis pour démarrer.",
+      "Achats uniques plutôt qu'un abonnement récurrent pour les packs d'assets."
+    ],
+    "prosEn": [
+      "Core plugin is free forever, no subscription required to start.",
+      "One-time purchases instead of a recurring subscription for asset packs."
+    ],
+    "cons": [
+      "La licence commerciale double à peu près le prix de tout pack utilisé pour un travail client.",
+      "Verrouillé à Adobe After Effects et Premiere Pro ; aucun support autonome ou pour une autre suite de montage."
+    ],
+    "consEn": [
+      "Commercial license roughly doubles the price of any pack used for client work.",
+      "Locked to Adobe After Effects and Premiere Pro; no standalone or other NLE support."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 5687
+  },
+  "ae-animation-composer": {
+    "id": "ae-animation-composer",
+    "slug": "ae-animation-composer",
+    "name": "Animation Composer 3",
+    "logo": null,
+    "websiteUrl": "https://misterhorse.com/animation-composer",
+    "tagline": {
+      "fr": "Presets d'animation AE",
+      "en": "AE animation presets"
+    },
+    "shortDescription": "Animation Composer est un plugin Mister Horse pour After Effects et Premiere Pro qui fournit une bibliothèque d'animations prêtes à l'emploi, gratuite avec plus de 1 000 assets ou à 16,50 $/mois (annuel) pour plus de 6 000.",
+    "shortDescriptionEn": "Animation Composer is a Mister Horse plugin for After Effects and Premiere Pro that provides a browsable library of animation presets, free with 1,000+ assets or $16.50/month (annual) for 6,000+.",
+    "pricing": {
+      "free": "Plan gratuit : L'offre gratuite comprend plus de 1 000 assets et les 4 outils de gain de temps, contre plus de 6 000 assets sur l'abonnement payant ; le brief mentionne aussi une limite de bibliothèque allant jusqu'à 500 éléments sur l'offre gratuite selon les données sources.",
+      "paid": "Dès 16,50 $/mois, plan Mister Horse Subscription (annual)."
+    },
+    "pricingEn": {
+      "free": "Free plan: Free plan includes over 1,000 assets and the 4 time-saving tools, versus 6,000+ assets on the paid subscription; brief also notes a library limit of up to 500 items on the free tier per the seed data.",
+      "paid": "From $16.50/mo, Mister Horse Subscription (annual) plan."
+    },
+    "defaultMonthlyPrice": 14.17,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Mister Horse Subscription (annual)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "subscription-annual",
+          "displayName": "Mister Horse Subscription (annual)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 16.5,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Mister Horse Subscription (annual)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "subscription-annual",
+          "displayName": "Mister Horse Subscription (annual)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 16.5,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu travailles déjà dans After Effects ou Premiere Pro et tu veux une large bibliothèque de presets d'animation prête à l'emploi plutôt que de faire les keyframes courants à la main."
+      ],
+      "avoidIf": [
+        "Tu n'utilises ni After Effects ni Premiere Pro, car Animation Composer ne fonctionne qu'en plugin dans ces deux applications."
+      ],
+      "threshold": "L'abonnement annuel à 16,50 $/mois (environ 198 $/an) vaut le coût dès que la bibliothèque plus large de 6 000+ assets et les 4 outils gain de temps font gagner plus de temps de montage que ce que couvre déjà le palier gratuit avec 1 000+ assets.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Ajouter des membres d'équipe est facturé au prorata plutôt qu'à un tarif fixe par siège, et les anciens possesseurs de licence perpétuelle peuvent voir un tarif de mise à niveau différent, visible seulement après connexion, non affiché sur la page tarifs publique."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You already work in After Effects or Premiere Pro and want a large, ready-made animation preset library instead of keyframing common motions by hand."
+      ],
+      "avoidIf": [
+        "You do not use After Effects or Premiere Pro, since Animation Composer only works as a plugin inside those two apps."
+      ],
+      "threshold": "Worth the $16.50/month annual subscription (about $198/year) once the larger 6,000+ asset library and the 4 time-saving tools save more editing time than the free tier's 1,000+ assets already cover.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Adding team members is prorated rather than billed at a flat per-seat fee, and prior perpetual-license owners may see different upgrade pricing only visible after logging in, not shown on the public pricing page."
+        }
+      ]
+    },
+    "pros": [
+      "Fonctionne à la fois dans After Effects et Premiere Pro avec un seul abonnement, au lieu d'acheter des plugins séparés pour chacun.",
+      "Le palier gratuit inclut déjà plus de 1 000 assets, assez pour tester le workflow avant de payer."
+    ],
+    "prosEn": [
+      "Works across both After Effects and Premiere Pro under one subscription instead of buying separate plugins for each.",
+      "The free tier already includes over 1,000 assets, enough to try the workflow before paying."
+    ],
+    "cons": [
+      "C'est un plugin, pas un outil autonome, donc il s'ajoute au coût d'un abonnement Adobe Creative Cloud existant plutôt que de le remplacer.",
+      "Ajouter un membre d'équipe est facturé au prorata plutôt qu'à un tarif fixe par siège, donc le coût d'équipe n'est pas un simple multiple du prix individuel."
+    ],
+    "consEn": [
+      "It is a plugin, not a standalone tool, so it adds to an existing Adobe Creative Cloud subscription cost rather than replacing it.",
+      "Adding a team member is billed pro-rata rather than at a flat per-seat rate, so team cost is not a simple multiple of the individual price."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 1526
+  },
+  "ae-gifgun": {
+    "id": "ae-gifgun",
+    "slug": "ae-gifgun",
+    "name": "GifGun",
+    "logo": null,
+    "websiteUrl": "https://aescripts.com/gifgun",
+    "tagline": {
+      "fr": "Export GIF pour AE",
+      "en": "AE GIF exporter"
+    },
+    "shortDescription": "Plugin After Effects, application de bureau et application web en achat unique pour exporter des fichiers GIF, WEBP, WEBM et MP4 compressés.",
+    "shortDescriptionEn": "One-time-purchase After Effects plugin, desktop app and web app for exporting compressed GIF, WEBP, WEBM and MP4 files.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 39,99 $ (licence à vie), plan Single User License."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $39.99 (lifetime license), Single User License plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Single User License",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "single-user-license",
+          "displayName": "Single User License",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 39.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Single User License",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "single-user-license",
+          "displayName": "Single User License",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 39.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 5,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 2,
+      "lastActivityVerifiedOn": "2026-04-08"
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu exportes régulièrement des clips courts en boucle depuis After Effects et veux un flux rapide avec contrôle de taille."
+      ],
+      "avoidIf": [
+        "Tu n'utilises pas After Effects, ou n'as besoin d'exporter en GIF qu'occasionnellement, un outil d'export déjà intégré peut suffire."
+      ],
+      "threshold": "Si exporter des GIF/vidéos en boucle prend plus de quelques minutes de réglage manuel de compression par fichier, le coût unique de 39,99 $ se rentabilise vite.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Aucun piège trouvé au-delà de la restriction standard de licence mono-utilisateur ; c'est un achat unique sans frais récurrent."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly export short looped clips from After Effects and want a fast, size-controlled workflow."
+      ],
+      "avoidIf": [
+        "You do not use After Effects, or only need GIF export occasionally, since a built-in export tool may already suffice."
+      ],
+      "threshold": "If exporting looped GIFs/video takes more than a few minutes of manual compression tuning per file, the $39.99 one-time cost pays for itself quickly.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "None found beyond the standard single-user license restriction; it is a one-time purchase with no recurring charge."
+        }
+      ]
+    },
+    "pros": [
+      "Coût unique faible, sans abonnement récurrent.",
+      "Target File Size supprime les essais-erreurs sur les réglages de compression."
+    ],
+    "prosEn": [
+      "Low one-time cost with no recurring subscription.",
+      "Target File Size removes trial-and-error on compression settings."
+    ],
+    "cons": [
+      "Nécessite une licence After Effects existante pour le workflow plugin ; ne remplace pas After Effects.",
+      "La licence Single User restreint l'usage à un utilisateur sur un ordinateur à la fois."
+    ],
+    "consEn": [
+      "Requires an existing After Effects license for the plugin workflow; it does not replace After Effects.",
+      "Single User License restricts use to one user on one computer at a time."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 1566
+  },
+  "ae-bodymovin": {
+    "id": "ae-bodymovin",
+    "slug": "ae-bodymovin",
+    "name": "Bodymovin / Lottie",
+    "logo": null,
+    "websiteUrl": "https://aescripts.com/bodymovin/",
+    "tagline": {
+      "fr": "After Effects vers Lottie",
+      "en": "After Effects to Lottie"
+    },
+    "shortDescription": "Plugin After Effects qui exporte les animations par shape layers vers le format ouvert JSON Lottie pour le web et mobile.",
+    "shortDescriptionEn": "After Effects plugin that exports shape-layer animations to the open Lottie JSON format for web and mobile.",
+    "pricing": {
+      "free": "Plan gratuit : Les particuliers peuvent fixer eux-mêmes le prix, y compris 0$, pour télécharger le plugin complet.",
+      "paid": "Dès 0 $ (licence à vie), plan Name Your Own Price."
+    },
+    "pricingEn": {
+      "free": "Free plan: Individual users can set their own price, including $0, to download the full plugin.",
+      "paid": "From $0 (lifetime license), Name Your Own Price plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Name Your Own Price",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "name-your-own-price",
+          "displayName": "Name Your Own Price",
+          "isComparePlan": true,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Name Your Own Price",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "name-your-own-price",
+          "displayName": "Name Your Own Price",
+          "isComparePlan": true,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 5,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu animes déjà dans After Effects avec des shape layers et dois livrer cette animation nativement sur le web ou mobile."
+      ],
+      "avoidIf": [
+        "Tes animations reposent beaucoup sur des effets ou des expressions qui ne se traduisent pas en JSON Lottie."
+      ],
+      "threshold": "Le plugin lui-même coûte aussi peu que 0$ pour les particuliers ; le vrai coût est l'abonnement After Effects sous-jacent nécessaire pour créer l'animation.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You already animate in After Effects with shape layers and need to ship that animation natively on web or mobile."
+      ],
+      "avoidIf": [
+        "Your animations rely heavily on effects or expressions that don't translate to Lottie JSON."
+      ],
+      "threshold": "The plugin itself costs as little as $0 for individuals; the real cost is the underlying After Effects subscription needed to create the animation.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Pratiquement gratuit pour un usage individuel, sans restriction technique sur le prix payé.",
+      "Exporte vers un format ouvert utilisable sur web, iOS et Android à partir du même fichier."
+    ],
+    "prosEn": [
+      "Effectively free for individual use, with no technical restriction on the price paid.",
+      "Exports to an open format usable across web, iOS and Android from the same file."
+    ],
+    "cons": [
+      "Nécessite un abonnement After Effects payant rien que pour créer l'animation source.",
+      "Tous les effets et expressions d'After Effects ne se convertissent pas en JSON Lottie, ce qui peut forcer un retravail manuel."
+    ],
+    "consEn": [
+      "Requires a paid After Effects subscription just to create the source animation.",
+      "Not all After Effects effects and expressions convert to Lottie JSON, which can force manual rework."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 807
+  },
+  "ae-overlord": {
+    "id": "ae-overlord",
+    "slug": "ae-overlord",
+    "name": "Overlord",
+    "logo": null,
+    "websiteUrl": "https://battleaxe.co/overlord",
+    "tagline": {
+      "fr": "Passerelle design vers motion",
+      "en": "Design-to-motion bridge"
+    },
+    "shortDescription": "Overlord transfère les designs en calques de Figma, Photoshop et Illustrator vers After Effects, en gardant masques, texte et styles éditables.",
+    "shortDescriptionEn": "Overlord transfers layered designs from Figma, Photoshop and Illustrator into After Effects, keeping masks, text and styles editable.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 75 $ (licence à vie), plan Single User."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $75 (lifetime license), Single User plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Single User",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "single-user",
+          "displayName": "Single User",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 75,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Single User",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "single-user",
+          "displayName": "Single User",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 75,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu fais régulièrement passer des fichiers Figma, Photoshop ou Illustrator vers After Effects et tu en as assez de reconstruire les calques à la main."
+      ],
+      "avoidIf": [
+        "Tu animes seulement de temps en temps, ou tes versions d'applications n'atteignent pas les prérequis minimums."
+      ],
+      "threshold": "Rentable dès que la licence à 75 $ coûte moins cher que le temps passé à reconstruire les calques à la main sur quelques projets.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Les mises à jour de fonctionnalités ne sont garanties qu'un an ; suivre les nouvelles versions ensuite nécessite de renouveler la licence."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly move Figma, Photoshop or Illustrator files into After Effects and are tired of rebuilding layers by hand."
+      ],
+      "avoidIf": [
+        "You animate only occasionally, or your app versions don't meet the minimum requirements."
+      ],
+      "threshold": "Worth it once the $75 one-time license costs less than the time spent manually rebuilding layers on a couple of projects.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Feature updates are guaranteed for one year only; keeping up with new releases after that requires renewing the license."
+        }
+      ]
+    },
+    "pros": [
+      "Achat unique, pas d'abonnement récurrent à maintenir.",
+      "Préserve le style de texte éditable et les masques au lieu d'aplatir le visuel."
+    ],
+    "prosEn": [
+      "One-time purchase, no recurring subscription to maintain access.",
+      "Preserves editable text styling and masks instead of flattening artwork."
+    ],
+    "cons": [
+      "Pas d'essai gratuit, donc évaluer le plugin suppose de l'acheter d'abord.",
+      "Les dégradés libres et en maillage doivent être rasterisés au lieu de se transférer en formes éditables."
+    ],
+    "consEn": [
+      "No free trial, so evaluating the plugin requires paying for it first.",
+      "Freeform and mesh gradients must be rasterized instead of transferring as editable shapes."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 797
+  },
+  "aescripts-flow": {
+    "id": "aescripts-flow",
+    "slug": "aescripts-flow",
+    "name": "Flow (aescripts)",
+    "logo": null,
+    "websiteUrl": "https://aescripts.com/flow/",
+    "tagline": {
+      "fr": "Éditeur d'easing After Effects",
+      "en": "After Effects easing editor"
+    },
+    "shortDescription": "Flow est une extension After Effects qui remplace le Graph Editor natif par un éditeur de courbes d'easing moderne et une bibliothèque de presets réutilisables.",
+    "shortDescriptionEn": "Flow is an After Effects extension that replaces the native Graph Editor with a modern easing-curve editor and a reusable preset library.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 35 $ (licence à vie), plan Flow (Single User License)."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $35 (lifetime license), Flow (Single User License) plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Flow (Single User License)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "flow",
+          "displayName": "Flow (Single User License)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 35,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Flow (Single User License)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "flow",
+          "displayName": "Flow (Single User License)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 35,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Garde-le si tu animes régulièrement dans After Effects et que le Graph Editor natif ralentit ton travail d'easing."
+      ],
+      "avoidIf": [
+        "Évite-le si tu n'utilises pas After Effects, ou si un outil déjà en pack comme Animation Composer couvre déjà tes besoins d'easing."
+      ],
+      "threshold": "La licence mono-utilisateur coûte 35 $ en achat unique, confirmé directement sur aescripts.com ; essaie d'abord l'essai gratuit puisque sa durée n'est pas précisée.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Keep it if you animate regularly in After Effects and the native Graph Editor slows down your easing work."
+      ],
+      "avoidIf": [
+        "Avoid it if you don't use After Effects, or if a bundled tool like Animation Composer already covers your easing needs."
+      ],
+      "threshold": "The Single User License is a $35 one-time cost, confirmed directly on aescripts.com; try the free trial first since its duration isn't stated.",
+      "billingTraps": []
+    },
+    "pros": [
+      "L'export CSS cubic-bezier fait le lien entre le motion design et le développement front-end.",
+      "Une bibliothèque de presets réutilisable et partageable évite de reconstruire la même courbe d'easing projet après projet."
+    ],
+    "prosEn": [
+      "CSS cubic-bezier export bridges the gap between motion design and front-end development.",
+      "A reusable, shareable preset library avoids rebuilding the same easing curve project after project."
+    ],
+    "cons": [
+      "La durée de l'essai gratuit n'est indiquée nulle part sur la page produit.",
+      "Il ne fonctionne que comme plugin dans After Effects, donc il n'apporte rien sans un abonnement Adobe existant."
+    ],
+    "consEn": [
+      "The free trial's duration isn't stated anywhere on the product page.",
+      "It only works as a plugin inside After Effects, so it adds no value without an existing Adobe subscription."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 1077
+  },
+  "ae-bao-boa": {
+    "id": "ae-bao-boa",
+    "slug": "ae-bao-boa",
+    "name": "BAO Boa",
+    "logo": null,
+    "websiteUrl": "https://aescripts.com/boa",
+    "tagline": {
+      "fr": "Distorsion par masque AE",
+      "en": "AE mask distortion"
+    },
+    "shortDescription": "BAO Boa est un plugin After Effects qui distord les calques précisément le long de tracés de masque, pour des distorsions animées fluides et organiques.",
+    "shortDescriptionEn": "BAO Boa is an After Effects plugin that distorts layers precisely along mask paths for organic, smooth animated distortions.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 69,99 $ (licence à vie), plan Single User License."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $69.99 (lifetime license), Single User License plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Single User License",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "single-user",
+          "displayName": "Single User License",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 69.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Single User License",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "single-user",
+          "displayName": "Single User License",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 69.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Vous créez régulièrement du texte ou des formes courbes et ondulantes.",
+        "Vous avez besoin de distorsions organiques qui suivent des courbes précises."
+      ],
+      "avoidIf": [
+        "Vous êtes débutant et voulez tester avant d'acheter (pas de démo gratuite).",
+        "Vous faites peu d'animations complexes."
+      ],
+      "threshold": "BAO Boa s'impose pour les animateurs spécialisés dans le texte courbe et les déformations organiques ; pour un usage occasionnel, After Effects natif suffit.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly create curved or wavy text and shapes.",
+        "You need organic distortions that follow precise curves."
+      ],
+      "avoidIf": [
+        "You're new to After Effects and want to test first (no free demo).",
+        "You do little complex animation."
+      ],
+      "threshold": "BAO Boa is essential for animators doing curved text and organic deformations; for occasional use, After Effects built-in effects are enough.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Déformations fluides et contrôlables avec grande précision.",
+      "Licence perpétuelle (pas d'abonnement)."
+    ],
+    "prosEn": [
+      "Smooth, precise distortions along mask paths.",
+      "Perpetual license (no subscription)."
+    ],
+    "cons": [
+      "Pas de version d'essai gratuite.",
+      "Prix fixe unique sans réduction étudiants visible."
+    ],
+    "consEn": [
+      "No free trial version.",
+      "Fixed price with no visible student discount."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 355
+  },
+  "ae-duik": {
+    "id": "ae-duik",
+    "slug": "ae-duik",
+    "name": "Duik Ángela",
+    "logo": null,
+    "websiteUrl": "https://rxlaboratorio.org/rx-tool/duik/",
+    "tagline": {
+      "fr": "Rigging de personnages",
+      "en": "Character rigging"
+    },
+    "shortDescription": "Boîte à outils gratuite et open source de rigging de personnages et d'accessoires pour After Effects, avec wiggle, rebond et cycles de marche automatisés.",
+    "shortDescriptionEn": "Free, open-source character and prop rigging toolkit for After Effects, with built-in wiggle, bounce and walk-cycle automation.",
+    "pricing": {
+      "free": "Plan gratuit : Entièrement gratuit et open source (GNU GPL-v3), sans restriction de fonctionnalités.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "pricingEn": {
+      "free": "Free plan: Fully free and open-source (GNU GPL-v3), no feature restrictions.",
+      "paid": "No paid plan required."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": null,
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": null,
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 2,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Garde-le si tu animes des personnages ou des accessoires dans After Effects et veux automatiser le rigging sans keyframing manuel."
+      ],
+      "avoidIf": [
+        "Évite-le si tu n'utilises pas After Effects, ou si tu cherches une application de rigging autonome."
+      ],
+      "threshold": "Gratuit à l'usage ; prévois 39 EUR seulement si tu veux le guide utilisateur officiel.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Keep it if you animate characters or props in After Effects and want rigging automation without manual keyframing."
+      ],
+      "avoidIf": [
+        "Avoid it if you don't use After Effects, or want a standalone rigging application."
+      ],
+      "threshold": "Free to use; budget 39 EUR only if you want the official user guide.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Entièrement gratuit et open source, sans fonctionnalité principale payante.",
+      "Couvre un large éventail d'automatisations d'animation (wiggle, rebond, cycles de marche) qui demanderaient sinon un keyframing manuel."
+    ],
+    "prosEn": [
+      "Completely free and open-source, with no paywalled core features.",
+      "Covers a wide range of animation automation (wiggle, bounce, walk cycles) that would otherwise require manual keyframing."
+    ],
+    "cons": [
+      "Fonctionne uniquement dans After Effects, sans aucune utilité sans ce logiciel.",
+      "Le flux de travail spécifique au rigging a une vraie courbe d'apprentissage ; un guide et des cours vidéo payants existent pour la couvrir."
+    ],
+    "consEn": [
+      "Works only inside After Effects, adding no value without it.",
+      "The rigging-specific workflow has a real learning curve; an official paid guide and video courses exist to cover it."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 82
+  },
+  "ae-newton4": {
+    "id": "ae-newton4",
+    "slug": "ae-newton4",
+    "name": "Newton 4",
+    "logo": null,
+    "websiteUrl": "https://aescripts.com/newton",
+    "tagline": {
+      "fr": "Plugin physique pour AE",
+      "en": "AE physics plugin"
+    },
+    "shortDescription": "Newton 4 est un plugin After Effects qui donne aux calques une physique 2D réaliste (gravité, collisions, ressorts) sans animation manuelle, en licence à vie.",
+    "shortDescriptionEn": "Newton 4 is an After Effects plugin that gives layers realistic 2D physics (gravity, collisions, springs) without manual keyframing, sold as a one-time license.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 249,99 $ (licence à vie), plan Newton 4 (current version)."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $249.99 (lifetime license), Newton 4 (current version) plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-10-02",
+      "compare_plan_name": "Newton 4 (current version)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "newton4",
+          "displayName": "Newton 4 (current version)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 249.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-02",
+      "compare_plan_name": "Newton 4 (current version)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "newton4",
+          "displayName": "Newton 4 (current version)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 249.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu animes dans After Effects et tu as régulièrement besoin d'un mouvement réaliste piloté par la physique, comme des rebonds, collisions ou ressorts."
+      ],
+      "avoidIf": [
+        "Tu n'utilises pas After Effects, ou tu n'as besoin de ce type de mouvement qu'occasionnellement et peux l'animer à la main."
+      ],
+      "threshold": "À 249,99 $ en achat unique (ou 99,99 $ pour la mise à niveau depuis Newton 3), ça devient rentable dès que l'animation pilotée par la physique revient régulièrement dans ton travail de motion design.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You animate in After Effects and regularly need realistic physics-driven motion like bounces, collisions or springs."
+      ],
+      "avoidIf": [
+        "You don't use After Effects, or you only need this kind of motion occasionally and can hand-keyframe it."
+      ],
+      "threshold": "At 249.99 USD one-time (or 99.99 USD to upgrade from Newton 3), it pays off once physics-driven animation becomes a recurring part of your motion design work.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Remplace l'animation manuelle par images clés pour les rebonds, collisions et ressorts par une simulation physique.",
+      "Licence à vie, sans abonnement récurrent, avec une mise à niveau à prix réduit pour les propriétaires de Newton 3."
+    ],
+    "prosEn": [
+      "Replaces manual keyframing for bounces, collisions and springs with a physics simulation.",
+      "One-time license with no recurring subscription fee, and a discounted upgrade path for Newton 3 owners."
+    ],
+    "cons": [
+      "Les exports de l'essai gratuit sont limités à 25 images, trop court pour valider un plan complet avant d'acheter.",
+      "Fonctionne uniquement dans After Effects, sans usage autonome."
+    ],
+    "consEn": [
+      "The free trial exports are capped at 25 frames, too short to validate a full shot before buying.",
+      "Works only inside After Effects, with no standalone use."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 0
+  },
+  "magic-bullet": {
+    "id": "magic-bullet",
+    "slug": "magic-bullet",
+    "name": "Magic Bullet",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+    "websiteUrl": "https://www.maxon.net/en/product-detail/red-giant/color/magicbullet-looks",
+    "tagline": {
+      "fr": "Plugin d'étalonnage",
+      "en": "Color grading plugin"
+    },
+    "shortDescription": "Un plugin d'étalonnage et d'émulation film pour monteurs vidéo, inclus dans l'abonnement Red Giant Complete à un prix non publié.",
+    "shortDescriptionEn": "A color grading and film emulation plugin for video editors, bundled inside the Red Giant Complete subscription at an unpublished price.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "Paid plans shown at promotional prices; regular price not published."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-07-24",
+      "compare_plan_name": "Prix non public",
+      "usage_sensitive": false,
+      "plans": []
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-07-24",
+      "compare_plan_name": "Prix non public",
+      "usage_sensitive": false,
+      "plans": []
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 2,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu montes déjà dans un logiciel hôte compatible et veux des préréglages d'étalonnage cinématographique sans changer d'outil."
+      ],
+      "avoidIf": [
+        "Tu veux uniquement l'étalonnage, sans payer pour le reste du bundle Red Giant et ses 100+ outils."
+      ],
+      "threshold": "Le prix de Red Giant Complete n'étant pas publié, compare-le aux outils d'étalonnage intégrés et gratuits de DaVinci Resolve avant de t'engager sur le bundle.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You already edit in a supported host app and want cinematic color presets without switching tools."
+      ],
+      "avoidIf": [
+        "You want color grading only, without paying for the rest of the 100+ tool Red Giant bundle."
+      ],
+      "threshold": "Since the Red Giant Complete price isn't published, compare it against DaVinci Resolve's built-in, free color grading tools before committing to the bundle.",
+      "billingTraps": []
+    },
+    "pros": [
+      "S'installe directement dans les principaux logiciels hôtes (Premiere Pro, After Effects, DaVinci Resolve, et plus) sans application séparée à apprendre.",
+      "Accès groupé à la boîte à outils Red Giant plus large (100+ outils), pas seulement l'étalonnage, dans le même abonnement."
+    ],
+    "prosEn": [
+      "Installs directly inside major host editors (Premiere Pro, After Effects, DaVinci Resolve, and more) without a separate app to learn.",
+      "Bundled access to the wider 100+ tool Red Giant toolkit, not just color grading, inside the same subscription."
+    ],
+    "cons": [
+      "Ne peut pas être acheté seul ; le prix n'est publié que dans le cadre du bundle Red Giant Complete complet.",
+      "Nécessite un logiciel de montage hôte compatible pour fonctionner ; ce n'est pas une application autonome."
+    ],
+    "consEn": [
+      "Cannot be bought standalone; the price is only published as part of the full Red Giant Complete bundle.",
+      "Requires a supported host video editor to run at all; it isn't a standalone application."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 431
+  },
+  "ae-red-giant": {
+    "id": "ae-red-giant",
+    "slug": "ae-red-giant",
+    "name": "Red Giant",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
+    "websiteUrl": "https://www.maxon.net/en/red-giant",
+    "tagline": {
+      "fr": "Suite VFX complète",
+      "en": "VFX plugin powerhouse"
+    },
+    "shortDescription": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates).",
+    "shortDescriptionEn": "Red Giant is a professional suite of 50+ VFX and motion design plugins created by Maxon for After Effects, Premiere Pro, and video apps. Includes Trapcode (particles, lens flares, lights), Universe (transitions, effects), color tools, and specialized toolsets. Ships with monthly updates and Maxon Studio (templates).",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 53 $/mois, plan Red Giant (complet, avec Universe)."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 14-day trial.",
+      "paid": "From $53/mo, Red Giant (complet, avec Universe) plan."
+    },
+    "defaultMonthlyPrice": 45.51,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Red Giant (complet, avec Universe)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "red-giant-universe",
+          "displayName": "Red Giant (complet, avec Universe)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 53,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Red Giant (complet, avec Universe)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "red-giant-universe",
+          "displayName": "Red Giant (complet, avec Universe)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 53,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 2,
+      "lastActivityVerifiedOn": "2026-09-25"
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu travailles déjà quotidiennement dans After Effects ou Premiere Pro et utilises régulièrement des effets d'au moins deux ou trois des quatre suites (particules, transitions, couleur, VFX)."
+      ],
+      "avoidIf": [
+        "Tu n'as besoin que d'un seul type d'effet précis (par ex. juste des transitions, ou juste l'étalonnage) ou tu n'utilises pas déjà une application Adobe hôte compatible."
+      ],
+      "threshold": "Si tu utilises moins de deux des quatre suites incluses sur une base régulière, un plugin plus ciblé (par ex. Universe seul, ou un seul outil Trapcode) est généralement plus rentable.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "La facturation mensuelle à 85 USD/mois coûte près de 60% de plus par mois que le tarif effectif de 53 USD/mois en facturation annuelle ; vérifie si l'annulation en cours de cycle conserve l'accès jusqu'à la fin de la période avant de t'engager."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You already work daily in After Effects or Premiere Pro and regularly use effects from at least two or three of the four suites (particles, transitions, color, VFX)."
+      ],
+      "avoidIf": [
+        "You only need one specific effect type (e.g. just transitions, or just color grading) or don't already use a compatible Adobe host app."
+      ],
+      "threshold": "If you're using fewer than two of the four bundled suites on a regular basis, a narrower plugin (e.g. Universe alone, or a single Trapcode tool) is usually more cost-effective.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Monthly billing at $85/month is nearly 60% more expensive per month than the $53/month effective rate on annual billing; check whether canceling mid-cycle keeps access until the period ends before committing."
+        }
+      ]
+    },
+    "pros": [
+      "Couverture très large des besoins VFX/motion design (particules, transitions, couleur, incrustation) dans un seul pack.",
+      "Intégration profonde et native dans le panneau d'effets d'After Effects et Premiere Pro."
+    ],
+    "prosEn": [
+      "Very wide coverage of VFX/motion design needs (particles, transitions, color, keying) in one bundle.",
+      "Deep, native-feeling integration inside After Effects and Premiere Pro's own effects panel."
+    ],
+    "cons": [
+      "Tarification uniquement par abonnement, sans option de licence perpétuelle, contrairement à certains concurrents.",
+      "Nécessite une application hôte compatible pour fonctionner ; inutilisable en tant que logiciel autonome."
+    ],
+    "consEn": [
+      "Subscription-only pricing with no perpetual license option, unlike some competitors.",
+      "Requires a compatible host app to function at all; it is not usable as standalone software."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 2997
+  },
+  "trello": {
+    "id": "trello",
+    "slug": "trello",
+    "name": "Trello",
+    "logo": null,
+    "websiteUrl": "https://trello.com",
+    "tagline": {
+      "fr": "Tableaux Kanban visuels",
+      "en": "Visual Kanban boards"
+    },
+    "shortDescription": "Outil de tableaux Kanban visuels avec cartes, listes, Power-Ups et automatisation intégrée pour un suivi de projet léger.",
+    "shortDescriptionEn": "Visual Kanban board tool with cards, lists, Power-Ups and built-in automation for lightweight project tracking.",
+    "pricing": {
+      "free": "Plan gratuit : Jusqu'à 10 collaborateurs et 10 tableaux par Workspace, cartes illimitées, 250 exécutions de commandes Workspace par mois, 10 Mo par fichier.",
+      "paid": "Dès 5 $/mois, plan Standard."
+    },
+    "pricingEn": {
+      "free": "Free plan: Up to 10 collaborators and 10 boards per Workspace, unlimited cards, 250 Workspace command runs/month, 10 MB/file storage.",
+      "paid": "From $5/mo, Standard plan."
+    },
+    "defaultMonthlyPrice": 4.29,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Standard",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 5,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Standard",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 5,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 5,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "À garder si l'équipe a besoin d'un tableau visuel simple pour ses tâches et se contente d'un modèle de cartes et de listes."
+      ],
+      "avoidIf": [
+        "À éviter si l'équipe a besoin de vues avancées ou d'automatisation illimitée sans payer Premium, ou d'une structure de gestion de projet plus lourde."
+      ],
+      "threshold": "Le plan payant d'entrée, Standard, coûte 5 $ par siège et par mois en engagement annuel (60 $/siège/an) pour lever les plafonds de tableaux et d'automatisation du plan gratuit.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "La facturation mensuelle coûte plus cher par siège que l'annuelle sur tous les plans payants (ex. Standard à 6 $ par mois contre 5 $/mois en engagement annuel)."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Keep it if the team needs a simple visual board for tasks and is fine staying in a card-and-list model."
+      ],
+      "avoidIf": [
+        "Avoid it if the team needs advanced views or unlimited automation without paying for Premium, or a heavier project-management structure."
+      ],
+      "threshold": "The entry paid plan, Standard, costs $5 per seat a month billed annually ($60/seat/year) to remove the free plan's board and automation caps.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Monthly billing costs more per seat than annual on every paid tier (e.g. Standard $6 monthly vs $5/month billed annually)."
+        }
+      ]
+    },
+    "pros": [
+      "Interface Kanban immédiatement utilisable, sans courbe d'apprentissage.",
+      "L'automatisation Butler intégrée évite un outil d'automatisation séparé pour des workflows simples."
+    ],
+    "prosEn": [
+      "Immediately usable Kanban interface with no learning curve.",
+      "Built-in Butler automation removes the need for a separate automation tool on simple workflows."
+    ],
+    "cons": [
+      "Les vues avancées et l'automatisation illimitée sont réservées au plan Premium, pas au plan payant d'entrée.",
+      "Reste un modèle de cartes et de listes, moins structuré qu'un outil de gestion de projet dédié pour des workflows complexes."
+    ],
+    "consEn": [
+      "Advanced views and unlimited automation are locked behind the Premium tier, not the entry paid plan.",
+      "Stays a card-and-list model, less structured than a dedicated project-management tool for complex workflows."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 280
+  },
+  "asana": {
+    "id": "asana",
+    "slug": "asana",
+    "name": "Asana",
+    "logo": null,
+    "websiteUrl": "https://asana.com",
+    "tagline": {
+      "fr": "Gestion de projets d'équipe",
+      "en": "Team project management"
+    },
+    "shortDescription": "Asana est un outil de gestion de projets et de tâches avec tableaux, frise, calendrier, automatisation des flux et reporting multi-projets pour les équipes.",
+    "shortDescriptionEn": "Asana is a project and task management tool with boards, timelines, calendars, workflow automation and cross-project reporting for teams.",
+    "pricing": {
+      "free": "Plan gratuit : Gestion de base des tâches et des projets pour les particuliers et petites équipes jusqu'à 10 membres.",
+      "paid": "Dès 9,63 $/mois, plan Starter."
+    },
+    "pricingEn": {
+      "free": "Free plan: Basic project and task management for individuals and small teams up to 10 members.",
+      "paid": "From $9.63/mo, Starter plan."
+    },
+    "defaultMonthlyPrice": 8.27,
+    "pricing_v5": {
+      "verified_on": "2026-06-24",
+      "compare_plan_name": "Starter",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 9.63,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-06-24",
+      "compare_plan_name": "Starter",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 9.63,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu gères une équipe de 2 personnes ou plus et as besoin de frises partagées, d'automatisation et de reporting au-delà d'une simple liste de tâches."
+      ],
+      "avoidIf": [
+        "Tu travailles seul et n'as besoin que d'un suivi de tâches basique : le plan gratuit suffit déjà, sans passer à l'offre payante."
+      ],
+      "threshold": "Starter coûte environ 9,63 $ par utilisateur et par mois en engagement annuel ; Advanced impose l'achat d'au moins 2 sièges à 24,99 $/mois chacun pour débloquer portefeuilles et objectifs.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Advanced impose un minimum de 2 sièges à l'achat, ce qui double de fait le coût d'entrée pour qui veut ses fonctions seul."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You manage a team of 2 or more and need shared timelines, automation and reporting beyond a simple task list."
+      ],
+      "avoidIf": [
+        "You work alone and only need basic task tracking: the Free plan already covers that without upgrading."
+      ],
+      "threshold": "Starter costs about $9.63 per seat monthly on annual billing; Advanced requires buying at least 2 seats at $24.99/month each to unlock portfolios and goals.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Advanced enforces a 2-seat minimum purchase, effectively doubling the entry cost for anyone wanting its features alone."
+        }
+      ]
+    },
+    "pros": [
+      "Le plan gratuit est pleinement utilisable pour les petites équipes jusqu'à 10 membres, pas juste un essai limité.",
+      "L'automatisation et le reporting sont accessibles dès la première offre payante, pas réservés à une offre entreprise."
+    ],
+    "prosEn": [
+      "The Free plan is fully usable for small teams up to 10 members, not just a limited trial.",
+      "Workflow automation and reporting are available from the entry paid tier, not locked to an enterprise plan."
+    ],
+    "cons": [
+      "L'offre Advanced, qui débloque portefeuilles et objectifs, impose un minimum de 2 sièges : impossible d'y accéder seul.",
+      "Le tarif Enterprise est sur devis, donc budgétiser au-delà d'Advanced demande de contacter les ventes."
+    ],
+    "consEn": [
+      "The Advanced tier, which unlocks portfolios and goals, has a 2-seat purchase minimum, so a true solo user cannot access it alone.",
+      "Enterprise pricing is quote-only, so budgeting beyond Advanced requires contacting sales."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 376
+  },
+  "clickup": {
+    "id": "clickup",
+    "slug": "clickup",
+    "name": "ClickUp",
+    "logo": "/tool-media/logos/clickup.png",
+    "websiteUrl": "https://clickup.com",
+    "tagline": {
+      "fr": "OS de travail tout-en-un",
+      "en": "All-in-one work OS"
+    },
+    "shortDescription": "Outil de gestion de travail tout-en-un : tâches, documents, tableaux de bord et chat, plan gratuit limité, formules payantes par siège.",
+    "shortDescriptionEn": "All-in-one work management tool combining tasks, docs, dashboards and chat, with a 60 MB free plan and per-seat paid tiers.",
+    "pricing": {
+      "free": "Plan gratuit : 60 Mo de stockage, tâches illimitées, jusqu'à 2 équipes/espaces, 1 formulaire, vues de base, 100 exécutions d'automatisation par mois.",
+      "paid": "Dès 7 $/mois, plan Unlimited."
+    },
+    "pricingEn": {
+      "free": "Free plan: 60 MB storage, unlimited tasks, up to 2 teams/spaces, 1 form, basic views, 100 automation executions/month.",
+      "paid": "From $7/mo, Unlimited plan."
+    },
+    "defaultMonthlyPrice": 6.01,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Unlimited",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "unlimited",
+          "displayName": "Unlimited",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 7,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Unlimited",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "unlimited",
+          "displayName": "Unlimited",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 7,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Ton équipe a besoin de réunir tâches, documents et tableaux de bord dans un seul outil et tu es prêt à configurer un espace personnalisable."
+      ],
+      "avoidIf": [
+        "Tu veux un outil simple basé sur des tableaux sans phase de configuration, ou tu as besoin de fonctionnalités IA incluses dans le prix de base."
+      ],
+      "threshold": "Le plan Unlimited (10 $/mois, 84 $/an par siège) devient rentable dès que le plafond de 60 Mo du plan gratuit devient limitant.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Les plafonds d'exécution d'automatisation peuvent forcer une mise à niveau vers une formule plus chère même si le nombre de sièges de l'équipe reste faible."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Your team needs tasks, docs and dashboards unified in one tool and is willing to configure a customizable workspace."
+      ],
+      "avoidIf": [
+        "You want a simple board-based tool without a configuration phase, or need AI features bundled into the base price."
+      ],
+      "threshold": "Worth the Unlimited plan ($10/month, $84/year per seat) once the free plan's 60 MB storage cap becomes limiting.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Automation execution caps can force an upgrade to a pricier plan even when the team's seat count stays small."
+        }
+      ]
+    },
+    "pros": [
+      "Tâches, documents, tableaux de bord et chat sont réunis dans un seul espace plutôt que dans plusieurs outils.",
+      "Le suivi du temps natif et les automatisations sont intégrés à chaque formule payante, sans module séparé."
+    ],
+    "prosEn": [
+      "Tasks, docs, dashboards and chat are unified in one workspace instead of several separate tools.",
+      "Native time tracking and automations are built into every paid plan, not sold as a separate module."
+    ],
+    "cons": [
+      "Le stockage du plan gratuit est plafonné à seulement 60 Mo.",
+      "Les fonctionnalités IA complètes nécessitent un module payant séparé en plus du prix de la formule."
+    ],
+    "consEn": [
+      "Free plan storage is capped at only 60 MB.",
+      "Full AI features require a separate paid add-on on top of the plan price."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 116
+  },
+  "notion": {
+    "id": "notion",
+    "slug": "notion",
+    "name": "Notion",
+    "logo": null,
+    "websiteUrl": "https://notion.so",
+    "tagline": {
+      "fr": "Espace de travail connecté",
+      "en": "Connected workspace"
+    },
+    "shortDescription": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+    "shortDescriptionEn": "All-in-one workspace for notes, docs, wikis and databases, with a generous free plan and per-seat paid tiers.",
+    "pricing": {
+      "free": "Plan gratuit : Pages/blocs illimités pour un usage individuel (limité à partir de 2 membres), fichiers de 5 Mo maximum, historique des pages sur 7 jours, 10 invités",
+      "paid": "Dès 9,50 €/mois, plan Plus."
+    },
+    "pricingEn": {
+      "free": "Free plan: Unlimited pages/blocks for individuals (limited for 2+ members), 5MB file uploads, 7-day page history, 10 guests",
+      "paid": "From €9.50/mo, Plus plan."
+    },
+    "defaultMonthlyPrice": 9.5,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Plus",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 9.5,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Plus",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 9.5,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu es seul, ou en petite équipe et as besoin de documents partagés, de bases de données et d'automatisation légère au même endroit."
+      ],
+      "avoidIf": [
+        "Tu as besoin d'un outil dédié de gestion de projet ou de BI lourd à grande échelle."
+      ],
+      "threshold": "Dès qu'un espace de travail dépasse 1 membre, prévois au moins Plus (9,50 €/siège/mois en annuel) pour éviter les limites de pages du plan gratuit.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Les tâches des agents IA consomment des crédits Notion facturés séparément (10 $ pour 1 000/mois), faciles à oublier en budgétant le coût des sièges."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You are a solo user, or a small team that needs shared docs, databases and light automation in one place."
+      ],
+      "avoidIf": [
+        "You need a dedicated heavy-duty project-management or BI tool at real scale."
+      ],
+      "threshold": "Once a workspace passes 1 member, budget at least Plus (9.50 EUR/seat/month annual) to avoid the Free plan's page limits.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "AI agent tasks consume separately billed Notion credits ($10 per 1,000/month) that are easy to overlook when budgeting seat costs."
+        }
+      ]
+    },
+    "pros": [
+      "Le plan gratuit est vraiment utilisable durablement pour une personne seule, pas un essai limité.",
+      "Export complet de l'espace de travail vers des formats ouverts (HTML, Markdown, CSV) sur tous les plans."
+    ],
+    "prosEn": [
+      "Free plan is genuinely usable long-term for a solo individual, not a crippled trial.",
+      "Full workspace export to open formats (HTML, Markdown, CSV) on every plan."
+    ],
+    "cons": [
+      "Les limites de pages du plan gratuit s'appliquent dès qu'un espace de travail compte plus d'un membre.",
+      "L'usage des agents IA se facture séparément en crédits, ajoutant un coût variable en plus du prix du siège."
+    ],
+    "consEn": [
+      "Page limits on Free kick in as soon as a workspace has more than one member.",
+      "AI agent usage bills separately as credits, adding a variable cost on top of the seat price."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 113
+  },
+  "airtable": {
+    "id": "airtable",
+    "slug": "airtable",
+    "name": "Airtable",
+    "logo": null,
+    "websiteUrl": "https://airtable.com",
+    "tagline": {
+      "fr": "Base de données flexible",
+      "en": "Flexible team database"
+    },
+    "shortDescription": "Airtable est une base de données relationnelle façon tableur avec vues et automatisations, gratuite pour les petites équipes et facturée par siège d'édition au-delà.",
+    "shortDescriptionEn": "Airtable is a spreadsheet-style relational database with views and automations, free for small teams and billed per edit seat beyond that.",
+    "pricing": {
+      "free": "Plan gratuit : Gratuit pour les équipes ; les collaborateurs en lecture seule, les soumissions de formulaire et les liens de partage ne comptent pas dans les sièges.",
+      "paid": "Dès 20 $/mois, plan Team."
+    },
+    "pricingEn": {
+      "free": "Free plan: Free for teams; read-only collaborators, form submissions and share links do not count toward seats.",
+      "paid": "From $20/mo, Team plan."
+    },
+    "defaultMonthlyPrice": 17.17,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Team",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        },
+        {
+          "planKey": "team",
+          "displayName": "Team",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 20,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Team",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        },
+        {
+          "planKey": "team",
+          "displayName": "Team",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 20,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Garde Airtable si une petite équipe a besoin d'une base flexible à enregistrements liés avec automatisations et ne veut pas en construire une de zéro."
+      ],
+      "avoidIf": [
+        "Évite de payer des sièges d'édition en trop, car les collaborateurs en lecture seule et les soumissions de formulaire restent déjà gratuits."
+      ],
+      "threshold": "Le plan Team à 240 dollars par an et par siège (20 dollars x 12) se justifie dès que les plafonds d'enregistrements ou d'automatisations du plan gratuit commencent à bloquer le travail réel.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Keep Airtable if a small team needs a flexible, linked-record database with automations and doesn't want to build one from scratch."
+      ],
+      "avoidIf": [
+        "Avoid paying for extra edit seats you don't need, since read-only collaborators and form submissions already stay free."
+      ],
+      "threshold": "Team at 240 dollars a year per seat (20 dollars x 12) is worth it once the free plan's record or automation caps start blocking real work.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Un plan gratuit capable couvre de vrais besoins de base de données et d'automatisation avant toute facturation de siège.",
+      "Airtable indique ne jamais supprimer de données au-delà des limites du plan, seulement inciter à une mise à niveau, ce qui réduit le risque de perdre du travail."
+    ],
+    "prosEn": [
+      "A capable free plan covers real database and automation needs before any seat is billed.",
+      "Airtable states it never deletes data past plan limits, only prompts an upgrade, reducing the risk of losing work."
+    ],
+    "cons": [
+      "Enregistrements, pièces jointes et automatisations sont strictement plafonnés par plan, la mise à niveau étant le seul moyen de dépasser le plafond.",
+      "Le tarif mensuel (hors engagement annuel) des plans Team et Business n'était pas publié sur la page tarifs consultée, seulement le tarif facturé à l'année."
+    ],
+    "consEn": [
+      "Records, attachments and automations are hard-capped by plan, with upgrade as the only way past the ceiling.",
+      "The monthly (non-annual) rate for Team and Business wasn't published on the pricing page checked, only the annual-billed figure."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 212
+  },
+  "basecamp": {
+    "id": "basecamp",
+    "slug": "basecamp",
+    "name": "Basecamp",
+    "logo": null,
+    "websiteUrl": "https://basecamp.com",
+    "tagline": {
+      "fr": "Gestion de projet simple",
+      "en": "Simple, flat-rate PM"
+    },
+    "shortDescription": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
+    "shortDescriptionEn": "Project management and team collaboration software.",
+    "pricing": {
+      "free": "Plan gratuit : 1 projet actif, jusqu'à 20 personnes, 1 Go de stockage, sans limite de durée",
+      "paid": "Dès 15 $/mois, plan Basecamp Plus."
+    },
+    "pricingEn": {
+      "free": "Free plan: 1 active project, up to 20 people, 1 GB storage, no time limit",
+      "paid": "From $15/mo, Basecamp Plus plan."
+    },
+    "defaultMonthlyPrice": 12.88,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Basecamp Plus",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Basecamp Plus",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Basecamp Plus",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Basecamp Plus",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": "2026-09-25"
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu diriges une petite équipe ou une activité freelance orientée client et tu veux un seul outil simple, sans fioritures, pour les tâches, fichiers et discussions."
+      ],
+      "avoidIf": [
+        "Tu as besoin de diagrammes de Gantt, de suivi du temps natif, de planification de ressources ou de reporting poussé pour des portefeuilles de projets complexes."
+      ],
+      "threshold": "Une fois ton équipe au-dessus d'une vingtaine d'utilisateurs payants, compare le tarif fixe de Pro Unlimited au coût par utilisateur de Plus avant de renouveler.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le prix affiché de 299 $/mois pour Pro Unlimited ne s'applique qu'en facturation annuelle ; en mensuel, c'est 349 $/mois, soit 17% plus cher."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You run a small team or client-facing freelance business and want one simple, no-frills tool for tasks, files, and discussion."
+      ],
+      "avoidIf": [
+        "You need Gantt charts, native time tracking, resource planning, or deep reporting for complex project portfolios."
+      ],
+      "threshold": "Once your team crosses roughly 20 paid users, compare Pro Unlimited's flat fee against Plus's per-seat cost before renewing.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The advertised $299/mo Pro Unlimited price only applies with annual billing; monthly billing is $349/mo, a 17% premium."
+        }
+      ]
+    },
+    "pros": [
+      "Interface volontairement simple, exploitable de manière productive en moins d'une heure sans formation.",
+      "Le plan Pro Unlimited à tarif fixe supprime l'angoisse du coût par utilisateur une fois l'équipe assez grande."
+    ],
+    "prosEn": [
+      "Deliberately simple interface, usable productively within an hour with no training.",
+      "Flat-rate Pro Unlimited plan removes per-seat cost anxiety once a team is large enough."
+    ],
+    "cons": [
+      "Pas de diagrammes de Gantt, de suivi du temps natif ni de reporting avancé comparé à ClickUp ou Asana.",
+      "La limite d'un seul projet sur le plan gratuit en fait davantage un essai qu'un vrai forfait gratuit utilisable durablement."
+    ],
+    "consEn": [
+      "No Gantt charts, native time tracking, or advanced reporting compared to ClickUp or Asana.",
+      "Free plan's single-project cap makes it a trial more than a usable long-term free tier."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 3968
+  },
+  "plutio": {
+    "id": "plutio",
+    "slug": "plutio",
+    "name": "Plutio",
+    "logo": null,
+    "websiteUrl": " finances).",
+    "tagline": {
+      "fr": "Hub travail client",
+      "en": "Client work hub"
+    },
+    "shortDescription": "Plutio est une plateforme tout-en-un pour indépendants et petites agences, combinant projets, facturation, propositions et portail client.",
+    "shortDescriptionEn": "Plutio is an all-in-one platform for freelancers and small agencies, combining projects, invoicing, proposals and a client portal.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 15 $/mois, plan Core."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 7-day trial.",
+      "paid": "From $15/mo, Core plan."
+    },
+    "defaultMonthlyPrice": 12.88,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Core",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "core",
+          "displayName": "Core",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Core",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "core",
+          "displayName": "Core",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Garde Plutio si tu gères une activité d'indépendant ou une petite agence et veux projets, facturation, propositions et portail client dans un seul abonnement."
+      ],
+      "avoidIf": [
+        "Évite Plutio si tu as besoin d'ajouter des collaborateurs d'équipe dès le départ, car le plan d'entrée Core n'en inclut aucun."
+      ],
+      "threshold": "Core coûte 180 $/an en facturation annuelle (15 $/mois) ; compare ce montant au coût combiné d'outils séparés de projet, de facturation et de proposition avant de changer.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You run a freelance practice or small agency and want projects, invoicing, proposals and a client portal in one subscription."
+      ],
+      "avoidIf": [
+        "You need to add team contributors from day one, since the entry Core plan does not include any."
+      ],
+      "threshold": "Core costs $180/year billed annually ($15/month); compare that against the combined cost of separate project, invoicing and proposal tools before switching.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Combine projets, facturation, propositions et portail client dans un seul abonnement plutôt que plusieurs outils.",
+      "L'assistant IA aide à rédiger propositions, contrats et plans de projet directement dans la plateforme."
+    ],
+    "prosEn": [
+      "Combines projects, invoicing, proposals and a client portal in one subscription instead of several tools.",
+      "AI assistant helps draft proposals, contracts and project plans directly inside the platform."
+    ],
+    "cons": [
+      "Le plan d'entrée Core n'a aucun collaborateur d'équipe, il ne fonctionne donc que pour un indépendant seul.",
+      "Les clients actifs sont plafonnés à 9 sur Core, ce qui force une montée vers Pro quand la base de clients grandit."
+    ],
+    "consEn": [
+      "The entry Core plan has no team contributors, so it only works for a solo freelancer.",
+      "Active clients are capped at 9 on Core, forcing an upgrade to Pro as a client base grows."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 154
+  },
+  "productive-io": {
+    "id": "productive-io",
+    "slug": "productive-io",
+    "name": "Productive Io",
+    "logo": "https://logo.clearbit.com/productive.io",
+    "websiteUrl": "https://productive.io",
+    "tagline": {
+      "fr": "Gestion d'agence",
+      "en": "Agency management"
+    },
+    "shortDescription": "Productive regroupe gestion de projet, planification des ressources, budgets et facturation pour agences et équipes conseil dans une seule plateforme.",
+    "shortDescriptionEn": "Productive bundles project management, resource planning, budgeting and invoicing for agencies and consulting teams in one platform.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 25 $/mois, plan Professional."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 14-day trial.",
+      "paid": "From $25/mo, Professional plan."
+    },
+    "defaultMonthlyPrice": 21.47,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Professional",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "professional",
+          "displayName": "Professional",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 25,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Professional",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "professional",
+          "displayName": "Professional",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 25,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Ton agence ou équipe conseil veut suivre projet, ressources, budget et facturation ensemble sans outils séparés."
+      ],
+      "avoidIf": [
+        "Tu es un indépendant seul qui n'a pas besoin de planification des ressources ni de suivi commercial multi-pipeline."
+      ],
+      "threshold": "L'offre de comparaison, Professional, coûte 300 $/an par siège au tarif de 25 $/mois ; prévois ce budget par siège avant d'ajouter des membres.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Your agency or consulting team wants project, resource, budget and invoicing tracking together without separate tools."
+      ],
+      "avoidIf": [
+        "You're a solo freelancer who doesn't need resource planning or multi-pipeline sales tracking."
+      ],
+      "threshold": "The comparison plan, Professional, costs $300/year per seat at the $25/month rate; budget per seat before adding team members.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Gestion de projet, planification des ressources, budgets et facturation tournent dans une seule plateforme plutôt que dans plusieurs outils.",
+      "L'intégration Slack native et l'accès API sont inclus dès l'offre d'entrée Essential."
+    ],
+    "prosEn": [
+      "Project management, resource planning, budgeting and invoicing run in one platform instead of several tools.",
+      "Native Slack integration and API access are included from the entry Essential plan."
+    ],
+    "cons": [
+      "La sécurité avancée (SSO, 2FA obligatoire, SCIM) et l'intégration HubSpot demandent l'offre Ultimate sur devis.",
+      "Pas d'offre gratuite ; le tarif est par siège, ce qui s'accumule pour une équipe en croissance."
+    ],
+    "consEn": [
+      "Advanced security (SSO, 2FA enforcement, SCIM) and HubSpot integration require the quote-based Ultimate tier.",
+      "No free plan; pricing is per seat, which adds up for a growing team."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 122
+  },
+  "obsidian": {
+    "id": "obsidian",
+    "slug": "obsidian",
+    "name": "Obsidian",
+    "logo": null,
+    "websiteUrl": "https://obsidian.md",
+    "tagline": {
+      "fr": "Prise de notes Markdown",
+      "en": "Markdown note-taking"
+    },
+    "shortDescription": "Obsidian est une application gratuite de prise de notes en Markdown, locale par défaut, avec liens bidirectionnels et un écosystème de plugins.",
+    "shortDescriptionEn": "Obsidian is a free, local-first Markdown note-taking app with bidirectional linking, a plugin ecosystem, and optional paid sync and publish services.",
+    "pricing": {
+      "free": "Plan gratuit : L'application principale (bureau/mobile) est gratuite sans restriction de fonctionnalités ; l'usage commercial est autorisé sans paiement",
+      "paid": "Dès 4 $/mois, plan Sync."
+    },
+    "pricingEn": {
+      "free": "Free plan: Core desktop/mobile app is free with no feature restrictions; commercial use is allowed without payment",
+      "paid": "From $4/mo, Sync plan."
+    },
+    "defaultMonthlyPrice": 3.43,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Sync",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "core",
+          "displayName": "Core (free)",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "sync",
+          "displayName": "Sync",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 4,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Sync",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "core",
+          "displayName": "Core (free)",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "sync",
+          "displayName": "Sync",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 4,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 5,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux des notes en fichiers Markdown simples et portables, avec des liens et un écosystème de plugins, et tu es à l'aise pour organiser ta propre synchronisation si tu évites l'option payante."
+      ],
+      "avoidIf": [
+        "Ton équipe a besoin de coédition en temps réel intégrée ; Obsidian n'a aucune fonction de collaboration en direct, quel que soit le prix."
+      ],
+      "threshold": "L'application gratuite suffit à un usage solo sans coût ; ajoute Sync à 5 $/mois (4 $/mois en engagement annuel) seulement quand tu as vraiment besoin d'un accès chiffré entre appareils.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want your notes as plain, portable Markdown files with linking and a plugin ecosystem, and you're comfortable setting up your own sync if you skip the paid option."
+      ],
+      "avoidIf": [
+        "Your team needs built-in real-time co-editing; Obsidian has no live collaboration feature at any price."
+      ],
+      "threshold": "The free core app covers a solo user with no cost; add Sync at $5/month ($4/month billed annually) only once you actually need encrypted cross-device access.",
+      "billingTraps": []
+    },
+    "pros": [
+      "L'application principale est gratuite même en usage commercial, sans limite de fonctionnalités ni inscription requise.",
+      "Les notes restent des fichiers Markdown locaux, donc elles demeurent lisibles et portables même sans Obsidian."
+    ],
+    "prosEn": [
+      "Core app is free even for commercial use, with no feature limits and no sign-up required.",
+      "Notes stay as local Markdown files, so they remain readable and portable even without Obsidian."
+    ],
+    "cons": [
+      "Aucune collaboration en temps réel intégrée ; les coffres partagés et coédités dépendent du service payant Sync.",
+      "La synchronisation entre appareils ne fait pas partie de l'application gratuite et nécessite l'option payante Sync ou une solution tierce manuelle."
+    ],
+    "consEn": [
+      "No built-in real-time collaboration; shared, co-edited vaults depend on the paid Sync service.",
+      "Cross-device syncing is not part of the free app and requires either the paid Sync add-on or a manual/third-party setup."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 1409
+  },
+  "logseq": {
+    "id": "logseq",
+    "slug": "logseq",
+    "name": "Logseq",
+    "logo": null,
+    "websiteUrl": "https://logseq.com/",
+    "tagline": {
+      "fr": "Graphe de connaissances local",
+      "en": "Local knowledge graph"
+    },
+    "shortDescription": "Logseq est une application de graphe de connaissances gratuite, open source et locale, avec un outliner et une synchronisation cloud optionnelle.",
+    "shortDescriptionEn": "Logseq is a free, open-source local-first knowledge graph app with an outliner and optional cloud sync.",
+    "pricing": {
+      "free": "Plan gratuit : L'application locale principale est gratuite et open source ; Sync (synchronisation/sauvegarde cloud) n'est accessible que via une contribution récurrente Open Collective pendant sa phase bêta.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "pricingEn": {
+      "free": "Free plan: The core local-first app is free and open source; Sync (cloud sync/backup) is only available via a recurring Open Collective contribution during its beta phase.",
+      "paid": "No paid plan required."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": null,
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free (local app)",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "open_source"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": null,
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free (local app)",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "open_source"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 5,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux un graphe de connaissances gratuit et local, entièrement à toi, avec une synchronisation payante optionnelle pour le multi-appareils."
+      ],
+      "avoidIf": [
+        "Tu as besoin dès aujourd'hui d'une synchronisation cloud stable et commerciale plutôt que d'un modèle de contribution en bêta."
+      ],
+      "threshold": "L'application principale ne coûte rien ; prévois 5 à 15 $/mois seulement si Sync multi-appareils ou les Whiteboards t'intéressent.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le tarif de Sync est actuellement un don récurrent pendant la bêta et devrait changer pour un abonnement standard une fois Sync lancé publiquement."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a free, local-first knowledge graph you fully own, with optional paid sync for multi-device access."
+      ],
+      "avoidIf": [
+        "You need a stable, fully commercial cloud sync today rather than a beta contribution model."
+      ],
+      "threshold": "The core app costs nothing; budget $5 to $15/month only if multi-device Sync or Whiteboards matter to you.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Sync pricing is currently a recurring donation during beta and is expected to change to a standard subscription once Sync launches publicly."
+        }
+      ]
+    },
+    "pros": [
+      "L'application principale est entièrement gratuite, open source et locale, sans dépendance imposée.",
+      "Notes stockées en fichiers markdown simples, ce qui simplifie l'export et la sauvegarde."
+    ],
+    "prosEn": [
+      "Core app is completely free, open source and local-first, with no lock-in.",
+      "Notes stored as plain markdown files, making export and backup straightforward."
+    ],
+    "cons": [
+      "Sync reste en bêta et est facturé comme une contribution Open Collective, pas un plan commercial stable.",
+      "Les Whiteboards sont réservés au palier Sponsor supérieur, et Smart Merge pour l'édition multi-appareils reste expérimental."
+    ],
+    "consEn": [
+      "Sync is still in beta and priced as an Open Collective contribution, not a stable commercial plan.",
+      "Whiteboards are locked behind the higher Sponsor tier, and Smart Merge for multi-device editing is experimental."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 753
+  },
+  "heptabase": {
+    "id": "heptabase",
+    "slug": "heptabase",
+    "name": "Heptabase",
+    "logo": null,
+    "websiteUrl": "https://heptabase.com",
+    "tagline": {
+      "fr": "Prise de notes visuelle",
+      "en": "Visual note-taking"
+    },
+    "shortDescription": "Heptabase est un outil de prise de notes visuelles à canevas infini avec IA intégrée, vendu en abonnement après un essai de 7 jours.",
+    "shortDescriptionEn": "Heptabase is visual note-taking software with infinite-canvas whiteboards and a built-in AI agent, sold only as a paid subscription after a 7-day trial.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 8,99 $/mois, plan Pro."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 7-day trial.",
+      "paid": "From $8.99/mo, Pro plan."
+    },
+    "defaultMonthlyPrice": 7.72,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 8.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 8.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Garde Heptabase si tu construis une base de connaissances visuelle sur la durée et que tu es prêt à payer dès le départ."
+      ],
+      "avoidIf": [
+        "Évite Heptabase si tu cherches un outil de prise de notes gratuit ou un usage IA intensif à petit prix : les crédits du forfait d'entrée s'épuisent vite."
+      ],
+      "threshold": "Le tarif d'entrée est de 8,99 $ par mois en facturation annuelle (environ 108 $ par an) pour le forfait Pro avec 100 crédits IA par mois.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Premium+ mentionne des crédits IA supplémentaires à prix réduit, ce qui laisse penser qu'on peut aussi acheter des crédits en plus du quota mensuel du forfait."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Keep it if you build a long-term, visual knowledge base and are willing to pay from day one."
+      ],
+      "avoidIf": [
+        "Avoid it if you want a free note-taking tool or heavy AI usage on a budget: credits run out fast on the entry plan."
+      ],
+      "threshold": "Entry cost is 8.99 USD a month billed annually (about 108 USD a year) for the Pro plan with 100 AI credits a month.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Premium+ mentions discounted extra AI credits, implying add-on credits can also be purchased beyond the plan's monthly quota."
+        }
+      ]
+    },
+    "pros": [
+      "Les tableaux blancs à canevas infini facilitent la connexion visuelle des notes plutôt qu'une structure linéaire.",
+      "Notes, tableaux blancs et tags illimités sont inclus dès le forfait Pro d'entrée."
+    ],
+    "prosEn": [
+      "Infinite-canvas whiteboards make it easy to visually connect notes instead of relying on a linear structure.",
+      "Unlimited notes, whiteboards and tags are included even on the entry Pro plan."
+    ],
+    "cons": [
+      "Pas de forfait gratuit permanent : seulement un essai de 7 jours avant de devoir payer.",
+      "L'usage de l'IA est plafonné par un système de crédits qui varie fortement selon le forfait, de 100 à 8 100 crédits par mois."
+    ],
+    "consEn": [
+      "No permanent free plan: only a 7-day trial before a paid subscription is required.",
+      "AI usage is capped by a credit system that varies sharply between plans, from 100 to 8,100 credits a month."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 232
+  },
+  "reflect-notes": {
+    "id": "reflect-notes",
+    "slug": "reflect-notes",
+    "name": "Reflect",
+    "logo": null,
+    "websiteUrl": "https://reflect.app",
+    "tagline": {
+      "fr": "Notes en réseau",
+      "en": "Networked notes"
+    },
+    "shortDescription": "Reflect est une appli de notes en réseau avec liens retour, IA d'écriture et transcription vocale, à 12 $ par mois sans plan gratuit.",
+    "shortDescriptionEn": "Reflect is a networked note-taking app with backlinks, AI writing help and voice transcription, priced at one $12 monthly plan with no free tier.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 10 $/mois, plan Pro."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 14-day trial.",
+      "paid": "From $10/mo, Pro plan."
+    },
+    "defaultMonthlyPrice": 8.59,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 10,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 10,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux une seule appli de notes assistée par IA avec liens retour sur tous tes appareils, et tu acceptes de payer un tarif fixe dès le 15e jour."
+      ],
+      "avoidIf": [
+        "Tu veux un palier gratuit pour tester sur la durée avant de payer, ou un palier moins cher pour un usage occasionnel."
+      ],
+      "threshold": "Rentable dès que les 12 $/mois (ou 120 $/an en facturation annuelle à 10 $/mois) remplacent une appli de notes séparée, un outil de transcription vocale et un workflow de notes de réunion.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want one AI-assisted, backlink-based notes app across devices and are fine paying a flat monthly fee from day 15."
+      ],
+      "avoidIf": [
+        "You want a free tier to test long-term before paying, or need a lower-cost tier for occasional, light use."
+      ],
+      "threshold": "Worth it once the $12/month (or $120/year billed annually at $10/month) replaces a separate notes app, a voice-transcription tool and a meeting-notes workflow.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Un seul prix fixe couvre l'écriture par IA, la transcription vocale et les notes de réunion liées au calendrier, sans frais d'option supplémentaires.",
+      "Se connecte à Zapier, Google Calendar, Outlook et Readwise plutôt que de rester isolé des autres outils."
+    ],
+    "prosEn": [
+      "One flat price covers AI writing, voice transcription and calendar-linked meeting notes without separate add-on fees.",
+      "Connects to Zapier, Google Calendar, Outlook and Readwise instead of staying siloed from other tools."
+    ],
+    "cons": [
+      "Pas de plan gratuit : la facturation démarre dès la fin de l'essai de 14 jours.",
+      "Un seul plan à un seul prix, donc un usage léger paie autant qu'un usage intensif."
+    ],
+    "consEn": [
+      "No free plan: billing starts right after the 14-day trial ends.",
+      "Only one plan and one price, so a lighter user pays the same as a heavy one."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 178
+  },
+  "roam-research": {
+    "id": "roam-research",
+    "slug": "roam-research",
+    "name": "Roam Research",
+    "logo": null,
+    "websiteUrl": "https://roamresearch.com",
+    "tagline": {
+      "fr": "Notes en réseau",
+      "en": "Networked note-taking"
+    },
+    "shortDescription": "Roam Research est une application de prise de notes en réseau basée sur les liens bidirectionnels, les notes quotidiennes et les références de blocs.",
+    "shortDescriptionEn": "Roam Research is a networked note-taking app built on bidirectional links, daily notes and block references.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 31 jours.",
+      "paid": "Dès 13,75 $/mois, plan Pro."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 31-day trial.",
+      "paid": "From $13.75/mo, Pro plan."
+    },
+    "defaultMonthlyPrice": 11.81,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 13.75,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 13.75,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 2,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu penses en notes en réseau et veux des références de blocs et une personnalisation roam/js pour tes propres workflows."
+      ],
+      "avoidIf": [
+        "Tu veux un outil de notes en réseau gratuit ou moins cher : Logseq propose le même modèle en blocs sans frais."
+      ],
+      "threshold": "Pro coûte 13,75 $/mois en engagement annuel (165 $/an) ; le plan Believer à paiement unique est de 500 $ pour 5 ans, soit environ 8,33 $/mois en équivalent.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You think in networked notes and want block references and roam/js customization for your own workflows."
+      ],
+      "avoidIf": [
+        "You want a free or cheaper networked-notes tool: Logseq offers the same block-based model at no cost."
+      ],
+      "threshold": "Pro costs $13.75/month billed annually ($165/year); the one-time Believer plan is $500 for 5 years, about $8.33/month equivalent.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Liens bidirectionnels et références de blocs rendent la connexion d'idées entre notes rapide et native à l'outil",
+      "Le plan Believer à paiement unique réduit le coût long terme par rapport à un abonnement mensuel indéfini"
+    ],
+    "prosEn": [
+      "Bidirectional links and block references make connecting ideas across notes fast and native to the tool",
+      "One-time Believer plan lowers long-term cost compared to paying monthly indefinitely"
+    ],
+    "cons": [
+      "Aucun plan gratuit : seulement un essai de 31 jours avant un engagement payant",
+      "Le prix n'a pas changé depuis 2020, désormais plus élevé que des outils de notes en réseau plus récents et comparables"
+    ],
+    "consEn": [
+      "No free plan: only a 31-day trial before a paid commitment is required",
+      "Price has not changed since 2020, now higher than comparable newer networked note-taking tools"
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 87
+  },
+  "octane-render": {
+    "id": "octane-render",
+    "slug": "octane-render",
+    "name": "Octane Render",
+    "logo": null,
+    "websiteUrl": "https://home.otoy.com/render/octane-render/",
+    "tagline": {
+      "fr": "Rendu GPU",
+      "en": "GPU rendering"
+    },
+    "shortDescription": "OctaneRender est un moteur de rendu GPU spectral avec support RTX, en abonnement Studio+ dès 23,95 €/mois, essai de 30 jours, sans plan gratuit.",
+    "shortDescriptionEn": "OctaneRender is a GPU-accelerated spectral renderer with RTX support, sold as one Studio+ subscription from €23.95/month, with a 30-day trial and no free plan.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 19,99 €/mois, plan Octane Studio+."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 30-day trial.",
+      "paid": "From €19.99/mo, Octane Studio+ plan."
+    },
+    "defaultMonthlyPrice": 19.99,
+    "pricing_v5": {
+      "verified_on": "2026-10-02",
+      "compare_plan_name": "Octane Studio+",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "studio-plus",
+          "displayName": "Octane Studio+",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 19.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-02",
+      "compare_plan_name": "Octane Studio+",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "studio-plus",
+          "displayName": "Octane Studio+",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 19.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu rends déjà sur des GPU NVIDIA et tu veux un seul abonnement couvrant le rendu spectral, le débruitage par IA et le rendu réseau illimité."
+      ],
+      "avoidIf": [
+        "Tu rends principalement sur du matériel non NVIDIA, car les gains d'accélération RTX ne s'appliqueront pas."
+      ],
+      "threshold": "Rentable dès que les 23,95 €/mois (ou 19,99 €/mois en facturation annuelle) remplacent une licence de rendu par nœud pour un studio avec 10 nœuds de rendu ou plus.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You already render on NVIDIA GPUs and want one subscription covering spectral rendering, AI denoising and unlimited network rendering."
+      ],
+      "avoidIf": [
+        "You render mainly on non-NVIDIA hardware, since the RTX-accelerated speedups will not apply."
+      ],
+      "threshold": "Worth it once the €23.95/month (or €19.99/month billed annually) replaces a per-node rendering license for a studio with 10 or more render nodes.",
+      "billingTraps": []
+    },
+    "pros": [
+      "L'accélération RTX offre un gain mesuré de 2 à 5x sur les GPU NVIDIA, plutôt qu'une promesse de performance vague.",
+      "Un seul abonnement Studio+ inclut le rendu réseau illimité sur 10+ nœuds, au lieu d'une licence par nœud."
+    ],
+    "prosEn": [
+      "RTX acceleration gives a measured 2-5x speedup on NVIDIA GPUs instead of a vague performance claim.",
+      "One Studio+ subscription includes unlimited network rendering across 10+ nodes instead of per-node licensing."
+    ],
+    "cons": [
+      "Les gains de vitesse RTX dépendent de posséder des GPU NVIDIA ; le moteur est moins avantageux sur un autre matériel.",
+      "Les pages marketing ne détaillent pas les applications hôtes prises en charge (3ds Max, Cinema 4D, Blender), donc la compatibilité des plugins doit être vérifiée séparément."
+    ],
+    "consEn": [
+      "RTX speed gains depend on owning NVIDIA GPUs; the renderer is less advantageous on other hardware.",
+      "The marketing pages do not detail which host applications (3ds Max, Cinema 4D, Blender) are supported, so plugin compatibility needs checking separately."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 177
+  },
+  "redshift": {
+    "id": "redshift",
+    "slug": "redshift",
+    "name": "Redshift",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift_icon.svg",
+    "websiteUrl": "https://www.maxon.net/en/redshift",
+    "tagline": {
+      "fr": "Moteur de rendu GPU",
+      "en": "GPU render engine"
+    },
+    "shortDescription": "Redshift est un moteur de rendu GPU qui se connecte à Houdini, Maya, 3ds Max, Blender et d'autres applications 3D pour un rendu rapide.",
+    "shortDescriptionEn": "Redshift is a GPU-accelerated renderer that plugs into Houdini, Maya, 3ds Max, Blender and other 3D applications for fast photorealistic rendering.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 24,08 $/mois, plan Redshift standalone (annual billing)."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $24.08/mo, Redshift standalone (annual billing) plan."
+    },
+    "defaultMonthlyPrice": 20.68,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Redshift standalone (annual billing)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "redshift-annual",
+          "displayName": "Redshift standalone (annual billing)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 24.08,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Redshift standalone (annual billing)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "redshift-annual",
+          "displayName": "Redshift standalone (annual billing)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 24.08,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu utilises déjà Houdini, Maya, 3ds Max ou Blender et as besoin d'un rendu GPU rapide sans passer à Cinema 4D."
+      ],
+      "avoidIf": [
+        "Tu as déjà un abonnement Cinema 4D ou Maxon One, puisque Redshift est déjà inclus sans coût supplémentaire."
+      ],
+      "threshold": "Prévois environ 49 $/mois en autonome (environ 24 $/mois sur un plan annuel selon un revendeur) avant de l'acheter hors d'un pack Maxon.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You already use Houdini, Maya, 3ds Max or Blender and need fast GPU rendering without switching to Cinema 4D."
+      ],
+      "avoidIf": [
+        "You already have a Cinema 4D or Maxon One subscription, since Redshift is already included at no extra cost."
+      ],
+      "threshold": "Budget around $49/month standalone (about $24/month on an annual plan per a reseller listing) before buying it outside a Maxon bundle.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Se connecte à la plupart des grandes applications 3D (Houdini, Maya, 3ds Max, Blender), donc un studio n'a pas besoin de changer de logiciel principal pour obtenir le rendu GPU.",
+      "Déjà inclus gratuitement avec Cinema 4D et Maxon One, donc les clients Maxon existants l'obtiennent sans abonnement supplémentaire."
+    ],
+    "prosEn": [
+      "Plugs into most major 3D applications (Houdini, Maya, 3ds Max, Blender), so a studio does not need to switch its main software to get GPU rendering.",
+      "Already included free with Cinema 4D and Maxon One, so existing Maxon customers get it without an extra subscription."
+    ],
+    "cons": [
+      "Aucun palier gratuit pour une utilisation autonome, contrairement à certaines alternatives open source.",
+      "Seul, il ne sert à rien sans une application 3D hôte compatible et un GPU, donc il s'ajoute à une facture logicielle existante plutôt que d'en remplacer une."
+    ],
+    "consEn": [
+      "No free tier at all for standalone use, unlike some open-source alternatives.",
+      "On its own it does nothing without a compatible host 3D application and a GPU, so it adds to an existing software bill rather than replacing one."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 96
+  },
+  "corona-renderer": {
+    "id": "corona-renderer",
+    "slug": "corona-renderer",
+    "name": "Corona Renderer",
+    "logo": null,
+    "websiteUrl": "https://www.chaos.com/corona",
+    "tagline": {
+      "fr": "Rendu 3D archviz",
+      "en": "Archviz render engine"
+    },
+    "shortDescription": "Un moteur de rendu photoréaliste pour 3ds Max et Cinema 4D, réputé plus facile à prendre en main pour la visualisation architecturale.",
+    "shortDescriptionEn": "A photorealistic render engine for 3ds Max and Cinema 4D, known for being easier to use in architectural visualization work.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 34,50 $/mois, plan Corona Solo."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $34.50/mo, Corona Solo plan."
+    },
+    "defaultMonthlyPrice": 29.63,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Corona Solo",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "solo",
+          "displayName": "Corona Solo",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 34.5,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Corona Solo",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "solo",
+          "displayName": "Corona Solo",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 34.5,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu fais du rendu archviz dans 3ds Max ou Cinema 4D et veux une prise en main plus facile que V-Ray ou Octane."
+      ],
+      "avoidIf": [
+        "Tu veux une licence à achat unique plutôt qu'un abonnement récurrent, ou dois partager un même siège entre une équipe qui tourne."
+      ],
+      "threshold": "Corona Solo coûte 34,50 $/mois (414 $/an) ; c'est le vrai coût d'entrée puisqu'il n'existe ni licence perpétuelle ni version gratuite.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Les abonnements annuels se renouvellent automatiquement ; il faut résilier toi-même pour stopper le renouvellement."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do archviz rendering in 3ds Max or Cinema 4D and want an easier learning curve than V-Ray or Octane."
+      ],
+      "avoidIf": [
+        "You want a one-time license instead of a recurring subscription, or need to share one seat across a rotating team."
+      ],
+      "threshold": "Corona Solo costs $34.50/month ($414/year); that's the real entry cost since there's no perpetual license or free tier.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Annual subscriptions auto-renew; you need to cancel manually to stop the renewal."
+        }
+      ]
+    },
+    "pros": [
+      "Une bibliothèque de plus de 15 000 ressources et matériaux 3D incluse fait gagner le temps de les chercher ailleurs.",
+      "Réputé spécifiquement plus facile à prendre en main que d'autres moteurs de rendu de production du même segment archviz."
+    ],
+    "prosEn": [
+      "A bundled library of 15,000+ 3D assets and materials saves sourcing time compared to a bare renderer.",
+      "Known specifically for being easier to pick up than other production renderers in the same archviz space."
+    ],
+    "cons": [
+      "Aucune option de licence perpétuelle ; le rendu s'arrête dès que l'abonnement expire.",
+      "Le palier Solo d'entrée est limité à un seul appareil nommé, contrairement aux licences flottantes Premium/Collection."
+    ],
+    "consEn": [
+      "No perpetual license option; rendering stops working the moment the subscription lapses.",
+      "The entry Solo tier is locked to a single named device, unlike the floating Premium/Collection licenses."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 507
+  },
+  "renderman": {
+    "id": "renderman",
+    "slug": "renderman",
+    "name": "RenderMan",
+    "logo": null,
+    "websiteUrl": "https://renderman.pixar.com",
+    "tagline": {
+      "fr": "Rendu de production",
+      "en": "Production rendering"
+    },
+    "shortDescription": "RenderMan, moteur de rendu de production de Pixar, offre le rendu par lots, gratuit en non commercial ou 595 $ en licence commerciale unique.",
+    "shortDescriptionEn": "RenderMan is Pixar's production renderer with batch rendering and render-farm management, free for non-commercial use or $595 one-time for a commercial license.",
+    "pricing": {
+      "free": "Plan gratuit : Gratuit pour un usage non commercial, les étudiants et les enseignants, mais limité à la dernière version",
+      "paid": "Dès 595 $ (licence à vie), plan Commercial license."
+    },
+    "pricingEn": {
+      "free": "Free plan: Free for non-commercial use, students and educators, but limited to the latest version",
+      "paid": "From $595 (lifetime license), Commercial license plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Commercial license",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "non-commercial",
+          "displayName": "Non-Commercial",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "commercial",
+          "displayName": "Commercial license",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 595,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Commercial license",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "non-commercial",
+          "displayName": "Non-Commercial",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "commercial",
+          "displayName": "Commercial license",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 595,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu fais tourner un pipeline de rendu de production et tu veux une licence commerciale à paiement unique avec un gestionnaire de ferme de rendu inclus, plutôt qu'un abonnement par poste."
+      ],
+      "avoidIf": [
+        "Tu n'as besoin de rendu qu'occasionnellement et tu ne veux pas payer 250 $/an de maintenance juste pour rester sur la version en cours."
+      ],
+      "threshold": "Rentable avec les 595 $ d'achat unique plus 250 $/an de maintenance dès que cela remplace un abonnement de moteur de rendu par poste pour un pipeline de studio.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le prix de 595 $ est unique, mais rester à jour exige un renouvellement de maintenance séparé à 250 $/an ; une maintenance expirée laisse la version existante fonctionner mais bloque les mises à jour."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You run a production rendering pipeline and want a one-time commercial license with a bundled render-farm manager instead of a per-seat subscription."
+      ],
+      "avoidIf": [
+        "You only need occasional rendering and do not want to pay $250/year in maintenance just to stay on the current version."
+      ],
+      "threshold": "Worth the $595 one-time purchase plus $250/year maintenance once it replaces a recurring per-seat renderer subscription for a studio pipeline.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The $595 price is one-time, but staying current requires a separate $250/year maintenance renewal; lapsed maintenance keeps the existing version working but blocks upgrades."
+        }
+      ]
+    },
+    "pros": [
+      "La licence commerciale est un achat unique, pas un abonnement récurrent, et inclut déjà une licence Tractor de ferme de rendu.",
+      "Une version non commerciale réellement gratuite existe pour les étudiants, les enseignants et les projets personnels, pas seulement un essai limité dans le temps."
+    ],
+    "prosEn": [
+      "The commercial license is a one-time purchase, not a recurring subscription, and already includes a Tractor render-farm license.",
+      "A genuinely free non-commercial version exists for students, educators and personal projects, not just a time-limited trial."
+    ],
+    "cons": [
+      "Garder la licence commerciale sur la dernière version coûte 250 $/an de maintenance, en plus des 595 $ d'achat.",
+      "La version gratuite est limitée à la dernière version uniquement, donc elle ne peut pas servir à un pipeline de production plus ancien."
+    ],
+    "consEn": [
+      "Keeping the commercial license on the latest version costs $250/year in maintenance, on top of the $595 purchase.",
+      "The free version is locked to the newest release only, so it cannot be used to support an older production pipeline."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 178
+  },
+  "blender": {
+    "id": "blender",
+    "slug": "blender",
+    "name": "Blender",
+    "logo": null,
+    "websiteUrl": "https://blender.org",
+    "tagline": {
+      "fr": "Suite 3D gratuite",
+      "en": "Free 3D suite"
+    },
+    "shortDescription": "Une suite 3D gratuite et open source qui couvre modélisation, animation, rendu et compositing, utilisable commercialement sans inscription.",
+    "shortDescriptionEn": "A free, open-source 3D suite covering modeling, animation, rendering and compositing, usable commercially without registration.",
+    "pricing": {
+      "free": "Plan gratuit : Entièrement gratuit, aucune offre payante pour les fonctionnalités de base.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "pricingEn": {
+      "free": "Free plan: Entirely free, no paid tier for core functionality.",
+      "paid": "No paid plan required."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": null,
+      "usage_sensitive": false,
+      "plans": []
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": null,
+      "usage_sensitive": false,
+      "plans": []
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 5,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu as besoin d'un pipeline 3D complet sans dépense et tu es à l'aise avec un support communautaire."
+      ],
+      "avoidIf": [
+        "Tu as besoin d'une garantie de service ou d'un contrat de support éditeur pour une production critique."
+      ],
+      "threshold": "Aucun seuil de coût : la suite est entièrement gratuite, le seul coût récurrent est un don volontaire si tu veux soutenir le développement.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You need a complete 3D pipeline at no cost and are comfortable relying on community support."
+      ],
+      "avoidIf": [
+        "You need a guaranteed SLA or a vendor support contract for mission-critical production work."
+      ],
+      "threshold": "No cost threshold: the suite is entirely free, so the only ongoing cost is a voluntary donation if you want to support development.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Entièrement gratuit pour un usage personnel et commercial, y compris pour vendre le travail réalisé avec.",
+      "Couvre tout le pipeline 3D (de la modélisation au compositing) dans une seule suite."
+    ],
+    "prosEn": [
+      "Entirely free for personal and commercial use, including selling work made with it.",
+      "Covers the full 3D pipeline (modeling to compositing) in one suite."
+    ],
+    "cons": [
+      "Aucune offre de support payant officielle ni de garantie de service côté éditeur.",
+      "S'appuie sur le soutien communautaire plutôt que sur un délai de réponse garanti pour les problèmes."
+    ],
+    "consEn": [
+      "No official paid support tier or vendor SLA.",
+      "Relies on community support rather than a guaranteed response time for issues."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 202
+  },
+  "vercel": {
+    "id": "vercel",
+    "slug": "vercel",
+    "name": "Vercel",
+    "logo": null,
+    "websiteUrl": "https://vercel.com",
+    "tagline": {
+      "fr": "Déploiement front-end",
+      "en": "Frontend deploy platform"
+    },
+    "shortDescription": "Une plateforme de déploiement basée sur git pour les apps frontend et serverless, avec environnements de prévisualisation, réseau en périphérie et une offre Hobby gratuite.",
+    "shortDescriptionEn": "A git-based deployment platform for frontend and serverless apps, with preview environments, an edge network and a free Hobby tier.",
+    "pricing": {
+      "free": "Plan gratuit : 1 M d'invocations de fonctions par mois, 1 M de requêtes edge par mois, 100 Go de transfert de données par mois.",
+      "paid": "Dès 20 $/mois, plan Pro."
+    },
+    "pricingEn": {
+      "free": "Free plan: 1M function invocations/month, 1M edge requests/month, 100 GB data transfer/month.",
+      "paid": "From $20/mo, Pro plan."
+    },
+    "defaultMonthlyPrice": 17.17,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "hobby",
+          "displayName": "Hobby",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 20,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "hobby",
+          "displayName": "Hobby",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 20,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu déploies une app front-end ou serverless depuis git et tu veux des branches de prévisualisation avec de la marge pour absorber une vraie croissance de trafic."
+      ],
+      "avoidIf": [
+        "Tu fais tourner une application backend complète au-delà du front-end/serverless, ou tu veux un prix fixe prévisible sans dépassement."
+      ],
+      "threshold": "Compte 20 $ par siège et par mois pour Pro, plus tout dépassement au-delà du crédit inclus et des plafonds de 1 To / 10 M de requêtes.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le dépassement au-delà du crédit de 20 $ est facturé à l'unité (environ 2 $ par million de requêtes edge supplémentaires, 0,15 $/Go au-delà d'1 To), un pic de trafic peut donc faire grimper la facture au-delà des 20 $ fixes."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You deploy a frontend or serverless app from git and want preview branches plus room to pay for real traffic growth."
+      ],
+      "avoidIf": [
+        "You run a full backend app needing more than frontend/serverless functions, or want flat, predictable pricing with no overage."
+      ],
+      "threshold": "Budget $20 per seat per month for Pro plus any overage past the included credit and the 1TB/10M-request caps.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Overage beyond the $20 usage credit is billed per unit (about $2 per extra 1M edge requests, $0.15/GB past 1TB transfer), so a traffic spike can raise the bill beyond the flat $20."
+        }
+      ]
+    },
+    "pros": [
+      "Offre Hobby généreuse et gratuite avec des environnements de prévisualisation sur chaque branche git.",
+      "L'offre Pro inclut un crédit d'usage de 20 $ et une tarification de dépassement transparente à l'unité."
+    ],
+    "prosEn": [
+      "Generous free Hobby tier with preview environments on every git branch.",
+      "Pro plan includes a $20 usage credit and transparent per-unit overage pricing."
+    ],
+    "cons": [
+      "L'offre Hobby ne permet pas d'acheter plus d'usage une fois ses plafonds fixes dépassés.",
+      "Le dépassement à l'usage sur Pro peut devenir imprévisible en cas de pic de trafic."
+    ],
+    "consEn": [
+      "Hobby plan cannot buy extra usage once its fixed caps are exceeded.",
+      "Usage-based overage on Pro can become unpredictable during a traffic spike."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 203
+  },
+  "netlify": {
+    "id": "netlify",
+    "slug": "netlify",
+    "name": "Netlify",
+    "logo": null,
+    "websiteUrl": "https://netlify.com",
+    "tagline": {
+      "fr": "Hébergement web",
+      "en": "Web hosting platform"
+    },
+    "shortDescription": "Netlify héberge des applications web modernes avec déploiements Git, fonctions serverless, accès à des modèles IA et stockage, facturés via un forfait de crédits mensuels.",
+    "shortDescriptionEn": "Netlify hosts modern web apps with Git-based deploys, serverless functions, AI model access and storage, billed through a monthly credit allowance.",
+    "pricing": {
+      "free": "Plan gratuit : 300 monthly credits, deploys via Git/AI/API, unlimited deploy previews, custom domains with SSL, functions, AI models, database and blob storage, basic firewall/rate limiting, global CDN",
+      "paid": "Dès 9 $/mois, plan Personal."
+    },
+    "pricingEn": {
+      "free": "Free plan: 300 monthly credits, deploys via Git/AI/API, unlimited deploy previews, custom domains with SSL, functions, AI models, database and blob storage, basic firewall/rate limiting, global CDN",
+      "paid": "From $9/mo, Personal plan."
+    },
+    "defaultMonthlyPrice": 7.73,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Personal",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "seat"
+        },
+        {
+          "planKey": "personal",
+          "displayName": "Personal",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 9,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Personal",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "seat"
+        },
+        {
+          "planKey": "personal",
+          "displayName": "Personal",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 9,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Un développeur ou une petite équipe veut un hébergement moderne avec fonctions et stockage inclus, et le trafic reste dans le forfait de crédits."
+      ],
+      "avoidIf": [
+        "Le trafic ou l'usage d'inférence IA est élevé et imprévisible, où la facturation au crédit pourrait dépasser un hébergement à tarif fixe."
+      ],
+      "threshold": "Prévoir au moins 9 $/mois pour le plan Personal, ou 20 $/mois pour Pro si l'équipe a besoin de membres illimités et plus de crédits.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Déploiements de production, bande passante, calcul et requêtes consomment tous des crédits au-delà du forfait mensuel, facturés à l'unité en plus du prix de base."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "A developer or small team wants modern hosting with functions and storage included, and traffic stays within the plan's credit allowance."
+      ],
+      "avoidIf": [
+        "Traffic or AI inference usage is high and unpredictable, where per-credit billing could exceed a flat-fee hosting plan."
+      ],
+      "threshold": "Budget at least $9/month for the Personal plan, or $20/month for Pro if the team needs unlimited members and more credits.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Production deploys, bandwidth, compute and requests all consume credits beyond the plan's monthly allowance, at per-unit rates on top of the base price."
+        }
+      ]
+    },
+    "pros": [
+      "Le plan gratuit généreux inclut déjà fonctions, accès IA et stockage, pas seulement un hébergement statique.",
+      "Les aperçus de déploiement illimités sur tous les plans facilitent la relecture des changements avant mise en ligne."
+    ],
+    "prosEn": [
+      "Generous free tier already includes functions, AI model access and storage, not just static hosting.",
+      "Unlimited deploy previews on every plan make it easy to review changes before they go live."
+    ],
+    "cons": [
+      "Les crédits à l'usage pour déploiements, bande passante et calcul rendent le coût mensuel moins prévisible qu'un tarif fixe.",
+      "L'observabilité étendue, le SSO/SCIM et les exports de logs nécessitent le plan Pro ou supérieur."
+    ],
+    "consEn": [
+      "Usage-based credits for deploys, bandwidth and compute make monthly cost less predictable than a flat fee.",
+      "Extended observability, SSO/SCIM and log drains require the Pro plan or higher."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 165
+  },
+  "digitalocean": {
+    "id": "digitalocean",
+    "slug": "digitalocean",
+    "name": "DigitalOcean",
+    "logo": null,
+    "websiteUrl": "https://digitalocean.com",
+    "tagline": {
+      "fr": "Cloud développeur",
+      "en": "Developer cloud hosting"
+    },
+    "shortDescription": "Hébergement cloud à l'usage avec machines virtuelles, Kubernetes managé, PaaS et stockage d'objets, à partir de 4 dollars par mois.",
+    "shortDescriptionEn": "Usage-based cloud hosting with virtual machines, managed Kubernetes, PaaS, and object storage, starting at $4 a month.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 90 jours.",
+      "paid": "Dès 4 $/mois, plan Droplets."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 90-day trial.",
+      "paid": "From $4/mo, Droplets plan."
+    },
+    "defaultMonthlyPrice": 3.43,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Droplets",
+      "usage_sensitive": true,
+      "plans": [
+        {
+          "planKey": "droplets",
+          "displayName": "Droplets",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 4,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "usage"
+        },
+        {
+          "planKey": "app-platform",
+          "displayName": "App Platform",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "usage"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Droplets",
+      "usage_sensitive": true,
+      "plans": [
+        {
+          "planKey": "droplets",
+          "displayName": "Droplets",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 4,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "usage"
+        },
+        {
+          "planKey": "app-platform",
+          "displayName": "App Platform",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "usage"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 4,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux une tarification cloud à l'usage prévisible pour des applications, Kubernetes ou du stockage, sans la complexité d'AWS ou GCP."
+      ],
+      "avoidIf": [
+        "Tu as besoin de la plus large couverture de régions ou du catalogue de services managés le plus complet, que seuls AWS ou Google Cloud proposent."
+      ],
+      "threshold": "Le budget démarre à 4 $ par mois pour un Droplet de base ; un cluster Kubernetes managé ajoute au moins 12 $ par mois en nœuds de travail.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want predictable usage-based cloud pricing for apps, Kubernetes, or storage without AWS or GCP's complexity."
+      ],
+      "avoidIf": [
+        "You need the broadest possible region coverage or managed-service catalogue that only AWS or Google Cloud provide."
+      ],
+      "threshold": "Budget starts at $4 a month for a basic Droplet; a managed Kubernetes cluster adds at least $12 a month in worker nodes.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Facturation à la seconde prévisible, à partir de 4 $ par mois pour un Droplet.",
+      "Couvre le calcul, Kubernetes, le PaaS et le stockage d'objets dans une gamme de produits simple."
+    ],
+    "prosEn": [
+      "Predictable per-second billing starting at $4 a month for a Droplet.",
+      "Covers compute, Kubernetes, PaaS, and object storage in one simple product line."
+    ],
+    "cons": [
+      "Aucun palier de calcul gratuit permanent, seulement un crédit d'essai de 5 $ pendant 90 jours.",
+      "Moins de régions et un catalogue de services managés plus restreint qu'AWS ou Google Cloud."
+    ],
+    "consEn": [
+      "No permanent free compute tier, only a $5, 90-day trial credit.",
+      "Fewer regions and a narrower managed-service catalogue than AWS or Google Cloud."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 91
+  },
+  "heroku": {
+    "id": "heroku",
+    "slug": "heroku",
+    "name": "Heroku",
+    "logo": null,
+    "websiteUrl": "https://heroku.com",
+    "tagline": {
+      "fr": "Hébergement cloud d'apps",
+      "en": "Cloud app hosting"
+    },
+    "shortDescription": "Une plateforme qui déploie des applications backend via git push, avec bases de données gérées et mise à l'échelle automatique, sans gérer de serveurs.",
+    "shortDescriptionEn": "A platform-as-a-service that deploys and runs backend applications via git push, with managed databases and automatic scaling, without managing servers.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 7 $/mois, plan Basic Dyno."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $7/mo, Basic Dyno plan."
+    },
+    "defaultMonthlyPrice": 6.01,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Basic Dyno",
+      "usage_sensitive": true,
+      "plans": [
+        {
+          "planKey": "basic",
+          "displayName": "Basic Dyno",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 7,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "usage"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Basic Dyno",
+      "usage_sensitive": true,
+      "plans": [
+        {
+          "planKey": "basic",
+          "displayName": "Basic Dyno",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 7,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "usage"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux déployer par git push et profiter de Postgres/Redis gérés pour une petite application en production sans toucher à l'infrastructure serveur."
+      ],
+      "avoidIf": [
+        "Tu as un budget serré et as besoin d'une vraie offre gratuite, ou d'un projet perso toujours actif sans frais."
+      ],
+      "threshold": "Compte au moins 12 $ par mois pour une application toujours active (dyno Basic à 7 $ plus Postgres Essential-0 à 5 $), avant tout module Redis.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le coût s'additionne par dyno et par module : une vraie application a besoin d'un dyno web et d'au moins un module de données, ce qui pousse le plancher réel au-dessus du prix du dyno le moins cher affiché."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want git-push deploys and managed Postgres/Redis for a small production app without touching server infrastructure."
+      ],
+      "avoidIf": [
+        "You are on a tight budget and need a true free tier, or an always-on hobby project at no cost."
+      ],
+      "threshold": "Budget at least $12/month for an always-on app (Basic dyno at $7 plus Postgres Essential-0 at $5), before any Redis add-on.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Cost scales per dyno and per add-on: a real app needs a web dyno plus at least one data add-on, pushing the real floor above the cheapest advertised dyno."
+        }
+      ]
+    },
+    "pros": [
+      "Déploiement par git push et services de données gérés (Postgres, Redis, Kafka) sans aucune administration serveur.",
+      "Surveillance, alertes et mise à l'échelle automatisées incluses sans coût supplémentaire sur chaque dyno."
+    ],
+    "prosEn": [
+      "Git-push deployment and managed data services (Postgres, Redis, Kafka) without any server administration.",
+      "Automated monitoring, alerting and scaling included at no extra cost on every dyno."
+    ],
+    "cons": [
+      "Aucune offre gratuite : même le dyno Eco le moins cher coûte 5 $/mois et se met en veille après inactivité.",
+      "Un vrai projet empile plusieurs lignes payantes (dyno + base de données + cache), ce qui pousse le coût mensuel réel bien au-dessus du prix affiché."
+    ],
+    "consEn": [
+      "No free tier: even the cheapest Eco dyno costs $5/month and sleeps after inactivity.",
+      "Real projects stack multiple paid line items (dyno + database + cache), pushing the effective monthly cost well above the headline price."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 206
+  },
+  "fly-io": {
+    "id": "fly-io",
+    "slug": "fly-io",
+    "name": "Fly.io",
+    "logo": null,
+    "websiteUrl": "https://fly.io",
+    "tagline": {
+      "fr": "Hébergement d'apps mondial",
+      "en": "Global app hosting"
+    },
+    "shortDescription": "Plateforme d'hébergement d'apps conteneurisées facturée à la seconde selon l'usage, sans abonnement fixe, avec bases de données gérées et déploiement mondial.",
+    "shortDescriptionEn": "Usage-based platform for deploying containerized apps and databases across global regions, billed by the second instead of a flat subscription.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 0 $/mois, plan Pay as you go."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $0/mo, Pay as you go plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pay as you go",
+      "usage_sensitive": true,
+      "plans": [
+        {
+          "planKey": "pay-as-you-go",
+          "displayName": "Pay as you go",
+          "isComparePlan": true,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "usage"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pay as you go",
+      "usage_sensitive": true,
+      "plans": [
+        {
+          "planKey": "pay-as-you-go",
+          "displayName": "Pay as you go",
+          "isComparePlan": true,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "usage"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu es à l'aise avec une grille de prix à l'usage et tu veux payer seulement le calcul réellement consommé, sur plusieurs régions du monde."
+      ],
+      "avoidIf": [
+        "Tu as besoin d'une facture d'hébergement mensuelle fixe et prévisible sans devoir modéliser le trafic d'abord."
+      ],
+      "threshold": "Il vaut la peine de modéliser un petit projet avec les tarifs publiés à la seconde (à partir d'environ 0,00000078$/s par machine shared-CPU) avant de te lancer, faute de forfait d'entrée fixe pour comparer.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Les coûts sont facturés à la seconde de fonctionnement des Machines plus le stockage et l'egress ; une Machine arrêtée continue de facturer le stockage rootfs, et supprimer une app ne supprime pas sa base Managed Postgres liée, qui continue donc à être facturée."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're comfortable reading a usage-based rate card and want to pay only for compute you actually run, across global regions."
+      ],
+      "avoidIf": [
+        "You need a fixed, predictable monthly hosting bill without modeling traffic first."
+      ],
+      "threshold": "Modeling a small workload against Fly's published per-second rates (from about $0.00000078/s per shared-CPU machine) before committing is worth it since there is no flat entry plan to compare against.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Costs are billed per second of Machine runtime plus storage and egress; stopped Machines still incur rootfs storage charges, and deleting an app doesn't delete its linked Managed Postgres database, so orphaned resources keep billing."
+        }
+      ]
+    },
+    "pros": [
+      "Pas de frais d'abonnement de base ; les coûts descendent près de zéro pour de petits projets ou un usage intermittent.",
+      "Inclut Postgres géré, des volumes persistants, et une couche Kubernetes gérée en option, au-delà du simple hébergement de conteneurs."
+    ],
+    "prosEn": [
+      "No base subscription fee; costs scale down to near zero for small or intermittent workloads.",
+      "Includes managed Postgres, persistent volumes, and an optional managed Kubernetes layer beyond plain container hosting."
+    ],
+    "cons": [
+      "Le coût mensuel total est difficile à prévoir sans modéliser le trafic et le stockage réels.",
+      "Supprimer une app ne supprime pas automatiquement sa base Managed Postgres associée, une source fréquente de coût imprévu."
+    ],
+    "consEn": [
+      "Total monthly cost is hard to predict without modeling actual traffic and storage use.",
+      "Deleting an app does not automatically delete its associated Managed Postgres database, a common source of surprise cost."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 944
+  }
+}

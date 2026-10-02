@@ -31,7 +31,8 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 - [ ] Pages alternatives vides ou hors sujet : 814 outils sans `alternatives` (Freshservice n'en cite aucune, ESLint renvoie vers ACF ou Appsmith). Couvert en partie par la recherche cloud.
 - [ ] Pages prix minces : un bloc de tarifs puis « Et maintenant ? ». À enrichir avec la grille complète issue de la recherche.
 - [ ] 689 `seo.metaDescription` rédigées mais jamais utilisées (français seulement, qualité inégale) **[décision]** : les brancher, les réécrire ou les supprimer
-- [ ] Pages par intention (« meilleurs logiciels de montage vidéo pour freelances »), construites sur les usages des filtres : seul moyen de viser les requêtes génériques
+- [x] Pilote des pages par intention (02/10/2026) : 5 comparatifs sous /guide/ (plugins After Effects, gestion de projet freelance, second cerveau, moteurs de rendu 3D avec angle IA, hébergement cloud), classés sur la note ToolTrim, prix réels sans conversion, encadré « L'avis ToolTrim ». Config `src/data/bestOfGuides.json`
+- [ ] Pages par intention : mesurer les impressions 3 à 4 semaines après la mise en ligne, puis élargir à 20-30 pages (temps réel pour l'architecture, facturation à rattacher au guide existant, notes avec Evernote/OneNote une fois au catalogue)
 - [ ] Slugs français dans les URL anglaises des catégories (`/en/category/gestion-projet`), à traiter avec les pages par intention (301)
 - [ ] `x-default` des pages piliers persona pointe vers le français, contraire à « anglais d'abord »
 - [ ] Maillage vers les sous-pages prix et alternatives depuis fiches, comparatifs et catégories

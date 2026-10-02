@@ -1,4 +1,5 @@
 import { defineConfig, loadEnv, type Plugin } from "vite";
+import bestOfGuidesConfig from "./src/data/bestOfGuides.json";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
@@ -76,7 +77,11 @@ const PERSONA_PILLAR_PAIRS: { fr: string; en: string; priority: string }[] = [
   { fr: "/fr/guide/meilleurs-outils-ops-manager-freelance",    en: "/en/guide/best-tools-freelance-ops-manager",    priority: "0.8" },
 ];
 
+// Pages « meilleurs outils » par intention : même gabarit, slugs FR/EN distincts.
+const BEST_OF_GUIDES = (bestOfGuidesConfig as { guides: { id: string; slug: { fr: string; en: string }; title: { fr: string; en: string }; description: { fr: string; en: string }; intro: { fr: string; en: string } }[] }).guides;
+
 const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
+  ...Object.fromEntries(BEST_OF_GUIDES.map((g) => [g.slug.fr, g.slug.en])),
   "loom-prix-alternatives": "loom-pricing-alternatives",
   "conseils-ia-freelances-2026": "ai-tips-freelancers-2026",
   "notion-gratuit-ou-payant": "notion-free-or-paid",
@@ -801,6 +806,11 @@ function sitemapPlugin(): Plugin {
           addPair(`${BASE}${pp.fr}`, `${BASE}${pp.en}`, "monthly", pp.priority);
         }
 
+        // ── Pages « meilleurs outils » par intention ─────────────────────────
+        for (const g of BEST_OF_GUIDES) {
+          addPair(`${BASE}/fr/guide/${g.slug.fr}`, `${BASE}/en/guide/${g.slug.en}`, "monthly", "0.8");
+        }
+
         // Deduplicate — tool slugs in data may have duplicates (flux, framer, perplexity …)
         const seenLocs = new Set<string>();
         const deduped = urls.filter((entry) => {
@@ -914,6 +924,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let renderExplorerLandingPage: ((path: string) => Promise<string>) | null = null;
         let renderExplorerAroundPage: ((path: string) => Promise<string>) | null = null;
         let renderPersonaPillarPage: ((path: string, persona: string, lang: string) => Promise<string>) | null = null;
+        let renderBestOfGuidePage: ((path: string, guideId: string, lang: string) => Promise<string>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
         if (fs.existsSync(ssrEntryPath)) {
           try {
@@ -936,6 +947,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             renderExplorerLandingPage = ssrModule.renderExplorerLandingPage;
             renderExplorerAroundPage = ssrModule.renderExplorerAroundPage;
             renderPersonaPillarPage = ssrModule.renderPersonaPillarPage;
+            renderBestOfGuidePage = ssrModule.renderBestOfGuidePage;
           } catch (e) {
             console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
           }
@@ -1508,6 +1520,15 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             bodyText: "In 2026, a freelancer needs one general-purpose AI subscription, ChatGPT Plus or Claude Pro, plus at most one role-specific tool. Stacking ChatGPT, Claude, Perplexity and Copilot means paying several times over for the same writing capability. The test that settles it: over the last seven days, which one did you actually open?",
           },
         ];
+        for (const g of BEST_OF_GUIDES) {
+          for (const l of ["en", "fr"] as const) {
+            SEO_PAGES.push({ path: `/${l}/guide/${g.slug[l]}`, title: g.title[l], description: g.description[l], bodyText: g.intro[l] });
+          }
+        }
+        const BEST_OF_BY_PATH: Record<string, string> = Object.fromEntries(
+          BEST_OF_GUIDES.flatMap((g) => [[`/en/guide/${g.slug.en}`, g.id], [`/fr/guide/${g.slug.fr}`, g.id]]),
+        );
+        let bestOfSsrd = 0;
 
         // Chemin de page pilier vers son code persona, pour le rendu serveur.
         // Les memes couples sont declares dans App.tsx (routes) et dans
@@ -1577,6 +1598,23 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               pillarsSsrd++;
             } catch (e) {
               console.warn(`⚠️ Persona pillar SSR failed for ${sp.path}, falling back to meta-only prerender:`, e);
+            }
+          }
+
+          const bestOfId = BEST_OF_BY_PATH[sp.path];
+          if (bestOfId && renderBestOfGuidePage) {
+            try {
+              const markup = await renderBestOfGuidePage(sp.path, bestOfId, spLang);
+              html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+              if (compiledCssPath) {
+                const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
+                if (utilityCss) {
+                  html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                }
+              }
+              bestOfSsrd++;
+            } catch (e) {
+              console.warn(`⚠️ Best-of guide SSR failed for ${sp.path}, falling back to meta-only prerender:`, e);
             }
           }
 
@@ -2197,7 +2235,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
         const subPageCount = tools.length * 2 * 3; // 3 sub-pages (prix, alternatives, avis) × 2 langs
         const guidesCount = allPostsData.length;
-        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + ${STACKS.length * 2} stack pages (${stacksRendered} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages (${pillarsSsrd} SSR'd) + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (${guidesSsrd} SSR'd, Article + FAQPage) + ${explorerAroundRendered} explorer/around pages + 404.html`);
+        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + ${STACKS.length * 2} stack pages (${stacksRendered} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages (${pillarsSsrd} pillars + ${bestOfSsrd} best-of SSR'd) + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (${guidesSsrd} SSR'd, Article + FAQPage) + ${explorerAroundRendered} explorer/around pages + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }
