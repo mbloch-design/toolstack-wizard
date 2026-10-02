@@ -276,7 +276,8 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     query.addEventListener("change", sync);
     return () => query.removeEventListener("change", sync);
   }, []);
-  useEffect(() => { setRailOpen(false); }, [location.pathname]);
+  const closedByNavigation = useRef(false);
+  useEffect(() => { closedByNavigation.current = true; setRailOpen(false); }, [location.pathname]);
   useEffect(() => {
     if (!railOpen) return;
     const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") setRailOpen(false); };
@@ -284,6 +285,20 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("keydown", onKey);
   }, [railOpen]);
   const railIsOpen = forcedRail && railOpen;
+  // Focus : il entre dans la barre dépliée sur sa première entrée et revient
+  // sur le bouton « déplier » quand elle se referme (Échap, clic à côté).
+  const sidebarRef = useRef<HTMLElement>(null);
+  const resizerRef = useRef<HTMLButtonElement>(null);
+  const railWasOpen = useRef(false);
+  useEffect(() => {
+    if (railIsOpen) {
+      requestAnimationFrame(() => sidebarRef.current?.querySelector<HTMLElement>(".asv2-nav-item")?.focus());
+    } else if (railWasOpen.current && !closedByNavigation.current) {
+      requestAnimationFrame(() => resizerRef.current?.focus());
+    }
+    closedByNavigation.current = false;
+    railWasOpen.current = railIsOpen;
+  }, [railIsOpen]);
   // Ce que l'utilisateur voit : dépliée ou non, quelle que soit la largeur.
   const shownExpanded = forcedRail ? railIsOpen : sidebarExpanded;
   const onSidebarToggle = () => (forcedRail ? setRailOpen((open) => !open) : toggleSidebar());
@@ -300,7 +315,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     <TopbarBreadcrumbContext.Provider value={breadcrumbCtx}>
     <div className={`asv2-root${sidebarExpanded || railIsOpen ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"}>
       {railIsOpen && <button type="button" className="asv2-rail-backdrop" tabIndex={-1} aria-label={t("Réduire la barre latérale", "Collapse sidebar")} onClick={() => setRailOpen(false)} />}
-      <aside className="asv2-sidebar" data-expanded={shownExpanded}>
+      <aside ref={sidebarRef} className="asv2-sidebar" data-expanded={shownExpanded}>
         <div className="asv2-sidebar-top">
           <Link to={prefix} className="asv2-logo" aria-label="ToolTrim">
             <img className="asv2-logo-mark" src={pictoToolTrim} alt="" width={24} height={24} aria-hidden />
@@ -321,6 +336,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             <button
               type="button"
               className="asv2-sidebar-resizer"
+              ref={resizerRef}
               onClick={onSidebarToggle}
               aria-expanded={shownExpanded}
               aria-label={shownExpanded

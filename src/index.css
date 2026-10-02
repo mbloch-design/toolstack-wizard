@@ -34141,3 +34141,36 @@ img[data-logo-loading] {
 @media (max-width: 359px) {
   .asv2-root .asv2-workspace .asv2-topbar .asv2-mobile-back { max-width: 120px; }
 }
+
+
+/* Barre réduite au-delà de 1 180 px (réduction manuelle) : mêmes libellés,
+   pas d'ancien trait d'entrée active collé au bord, réglages à 18 px et
+   symbole de devise centré, comme dans la plage imposée. */
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item .asv2-nav-label { width: auto; opacity: 1; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active::before { display: none; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item > svg { box-sizing: content-box; width: 18px; height: 18px; padding: 7px; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item .asv2-currency-glyph { justify-self: center; margin: 7px; }
+@media (min-width: 641px) and (max-width: 1180px) {
+.asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item .asv2-nav-label { width: auto; opacity: 1; }
+.asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item--active::before { display: none; }
+.asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item > svg { box-sizing: content-box; width: 18px; height: 18px; padding: 7px; }
+.asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item .asv2-currency-glyph { justify-self: center; margin: 7px; }
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-label { width: auto; opacity: 1; }
+@media (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-label { width: auto; opacity: 1; }
+}
+/* Fermeture du menu mobile : même mouvement qu'à l'ouverture, en sens inverse. */
+.asv2-mm.is-closing .asv2-mm-backdrop { animation: asv2-mm-fade 160ms ease-in reverse both; }
+.asv2-mm.is-closing .asv2-mm-panel { animation: asv2-mm-slide-out 160ms ease-in both; pointer-events: none; }
+@keyframes asv2-mm-slide-out { from { transform: none; opacity: 1; } to { transform: translateX(24px); opacity: 0; } }
+
+/* US-NAV-01 : au scroll vers le bas, la barre d'onglets du bas cède aussi la
+   place au contenu, et revient avec la barre du haut dès qu'on remonte. */
+@media (max-width: 640px) {
+  .asv2-bottomnav { transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .asv2-root[data-chrome="hidden"] .asv2-bottomnav { transform: translateY(100%); }
+}
+@media (max-width: 640px) and (prefers-reduced-motion: reduce) {
+  .asv2-bottomnav { transition: none; }
+}

@@ -4,6 +4,8 @@ import {
   ArrowRight,
   BookOpen,
   Bot,
+  Columns2,
+  Lightbulb,
   Boxes,
   BriefcaseBusiness,
   Camera,
@@ -30,7 +32,11 @@ import ToolLogo from "@/components/ToolLogo";
 import { trackEvent } from "@/lib/analytics";
 
 type SearchSection = "trending" | "categories" | "platforms" | "works" | "collections" | "articles";
-type SearchResult = { id: string; label: string; meta: string; to: string; tool?: ToolSummary; kind: "tool" | "category" | "guide" };
+type SearchResult = { id: string; label: string; meta: string; to: string; tool?: ToolSummary; kind: "tool" | "category" | "guide" | "comparison" | "stack" | "bestof" };
+type PageEntry = { k: "comparison" | "stack" | "bestof"; fr: string; en: string; p: { fr: string; en: string }; kw: string[] };
+
+/** Minuscules sans accents, pour comparer « gestion de projet » et « Gestion de Projet ». */
+const fold = (value: string) => value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
 const NAV_ITEMS: Array<{ id: SearchSection; fr: string; en: string }> = [
   { id: "trending", fr: "Tendances", en: "Trending" },
@@ -55,6 +61,15 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState("");
   const [section, setSection] = useState<SearchSection>("trending");
   const [activeIndex, setActiveIndex] = useState(-1);
+  // Comparatifs, stacks et pages « meilleurs outils » (US-NAV-01 : la recherche
+  // doit retrouver toutes les familles de pages). Chargé à l'ouverture
+  // seulement, pour ne pas alourdir le bundle principal.
+  const [pages, setPages] = useState<PageEntry[]>([]);
+  useEffect(() => {
+    let alive = true;
+    import("@/data/searchPagesIndex.json").then((module) => { if (alive) setPages(module.default as PageEntry[]); }).catch(() => {});
+    return () => { alive = false; };
+  }, []);
   const inputRef = useRef<HTMLInputElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
@@ -109,7 +124,26 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
     limit: 17,
   });
 
-  const results = useMemo<SearchResult[]>(() => {
+  const pageResults = useMemo<SearchResult[]>(() => {
+    const tokens = fold(query.trim()).split(/\s+/).filter((token) => token.length >= 2 && token !== "vs");
+    if (!tokens.length) return [];
+    const metaOf = { comparison: t("Comparatif", "Comparison"), stack: t("Stack", "Stack"), bestof: t("Comparatif par besoin", "Comparison by need") };
+    return pages
+      .map((page) => {
+        const label = lang === "en" ? page.en : page.fr;
+        const haystack = fold([label, ...page.kw].join(" "));
+        if (!tokens.every((token) => haystack.includes(token))) return null;
+        // Un titre qui commence par la recherche passe devant.
+        const score = (fold(label).startsWith(tokens[0]) ? 2 : 0) + (page.k === "bestof" ? 1 : 0);
+        return { score, result: { id: `page-${page.k}-${page.p.en}`, label, meta: metaOf[page.k], to: `${prefix}${lang === "en" ? page.p.en : page.p.fr}`, kind: page.k } as SearchResult };
+      })
+      .filter((item): item is { score: number; result: SearchResult } => !!item)
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 5)
+      .map((item) => item.result);
+  }, [lang, pages, prefix, query, t]);
+
+  const baseResults = useMemo<SearchResult[]>(() => {
     if (!intelligentHits) return fallbackResults;
     return intelligentHits.flatMap((hit): SearchResult[] => {
       if (hit.kind === "tool") {
@@ -127,6 +161,13 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
       return [{ id: hit.id, label: hit.label, meta: hit.meta, to: `${prefix}/guide/${hit.slug}`, kind: "guide" }];
     });
   }, [categoryById, fallbackResults, intelligentHits, postById, prefix, toolById, toolBySlug]);
+
+  // Les pages se glissent après les premiers outils : visibles sans masquer
+  // l'outil exact qu'on cherchait.
+  const results = useMemo<SearchResult[]>(
+    () => [...baseResults.slice(0, 4), ...pageResults, ...baseResults.slice(4)],
+    [baseResults, pageResults],
+  );
 
   useEffect(() => setActiveIndex(-1), [results]);
 
@@ -219,7 +260,7 @@ function ArticleGrid({ posts, prefix, onGo, t, compact = false }: { posts: Post[
 }
 
 function SearchResults({ results, activeIndex, query, isLoading, onHover, onSelect, onViewAll, t }: { results: SearchResult[]; activeIndex: number; query: string; isLoading: boolean; onHover: (index: number) => void; onSelect: (to: string) => void; onViewAll: () => void; t: (fr: string, en: string) => string }) {
-  return <div className="gs-results" role="listbox" aria-busy={isLoading}>{results.length ? <>{results.map((result, index) => <button key={result.id} className={activeIndex === index ? "gs-result is-active" : "gs-result"} onMouseEnter={() => onHover(index)} onClick={() => onSelect(result.to)} role="option" aria-selected={activeIndex === index}>{result.tool ? <ToolLogo tool={result.tool} size={42} /> : <span className="gs-result-icon">{result.kind === "guide" ? <BookOpen /> : <LayoutGrid />}</span>}<span><strong>{result.label}</strong><small>{result.meta}</small></span><ArrowRight aria-hidden /></button>)}<button className="gs-view-all" onClick={onViewAll}>{t("Voir tous les résultats pour", "See all results for")} « {query} » <ArrowRight /></button></> : <div className="gs-empty"><Search /><strong>{isLoading ? t("Recherche en cours…", "Searching…") : t("Aucun résultat", "No results")}</strong><span>{isLoading ? t("Analyse du catalogue", "Analysing the catalog") : t("Essayez un autre terme", "Try another term")}</span></div>}</div>;
+  return <div className="gs-results" role="listbox" aria-busy={isLoading}>{results.length ? <>{results.map((result, index) => <button key={result.id} className={activeIndex === index ? "gs-result is-active" : "gs-result"} onMouseEnter={() => onHover(index)} onClick={() => onSelect(result.to)} role="option" aria-selected={activeIndex === index}>{result.tool ? <ToolLogo tool={result.tool} size={42} /> : <span className="gs-result-icon">{result.kind === "guide" ? <BookOpen /> : result.kind === "comparison" ? <Columns2 /> : result.kind === "stack" ? <Boxes /> : result.kind === "bestof" ? <Lightbulb /> : <LayoutGrid />}</span>}<span><strong>{result.label}</strong><small>{result.meta}</small></span><ArrowRight aria-hidden /></button>)}<button className="gs-view-all" onClick={onViewAll}>{t("Voir tous les résultats pour", "See all results for")} « {query} » <ArrowRight /></button></> : <div className="gs-empty"><Search /><strong>{isLoading ? t("Recherche en cours…", "Searching…") : t("Aucun résultat", "No results")}</strong><span>{isLoading ? t("Analyse du catalogue", "Analysing the catalog") : t("Essayez un autre terme", "Try another term")}</span></div>}</div>;
 }
 
 function categoryName(categories: any[], categoryId: string, lang: string) {

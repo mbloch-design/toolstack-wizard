@@ -43,6 +43,20 @@ const CURRENCIES: Currency[] = ["EUR", "USD", "GBP"];
 
 export default function MobileMenu({ open, onClose, prefix, lang, t, items, activeId, languageHref, currency, setCurrency, theme, toggleTheme }: Props) {
   const [level, setLevel] = useState<Level>("root");
+  // Reste monté le temps de l'animation de fermeture : le panneau glisse et
+  // s'efface au lieu de disparaître d'un coup.
+  const [mounted, setMounted] = useState(open);
+  const [closing, setClosing] = useState(false);
+  useEffect(() => {
+    if (open) { setMounted(true); setClosing(false); return; }
+    if (!mounted) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) { setMounted(false); return; }
+    setClosing(true);
+    const timer = window.setTimeout(() => { setMounted(false); setClosing(false); }, 160);
+    return () => window.clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
   const panelRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
 
@@ -83,14 +97,14 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
     };
   }, [open, level, onClose]);
 
-  if (!open) return null;
+  if (!mounted) return null;
 
   const L = (fr: string, en: string) => t(fr, en);
   const titles: Record<Level, string> = { root: L("Menu", "Menu"), tools: L("Outils", "Tools"), guides: L("Guides", "Guides") };
   const hasLevel = (id: string): Level | null => (id === "tools" ? "tools" : id === "guides" ? "guides" : null);
 
   return (
-    <div className="asv2-mm" role="presentation">
+    <div className={`asv2-mm${closing ? " is-closing" : ""}`} role="presentation">
       <button type="button" className="asv2-mm-backdrop" aria-label={L("Fermer le menu", "Close menu")} tabIndex={-1} onClick={onClose} />
       <div ref={panelRef} className="asv2-mm-panel" role="dialog" aria-modal="true" aria-labelledby="asv2-mm-title">
         <div className="asv2-mm-head">
