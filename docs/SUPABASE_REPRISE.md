@@ -124,18 +124,39 @@ virgule et sa fin atterrissait dans les champs d'URL. A reinjecter :
 champs d'URL seuls pour `dubsado` et `honeybook`. Les URL officielles ont ete
 verifiees (HTTP 200) le 25/09/2026.
 
-## 2 quater. Fiches issues des dossiers de recherche (25/09/2026)
+## 2 quater. Fiches issues des dossiers de recherche (25/09 au 02/10/2026)
 
 Fusionnees par `scripts/research/merge.mjs` depuis `research/dossiers/<slug>.json`.
 A reinjecter pour chaque slug : `pricing_v5`, `pricing_v5_en`, `pricing`,
 `pricing_en`, `default_monthly_price`, `alternatives`, `tool_trim_rating`,
 `short_description(_en)`, `long_description(_en)`, `pros(_en)`, `cons(_en)`,
 `use_cases(_en)`, `verdict(_en)`, `personas`, `solo_relevance`,
-`team_relevance`, `seo`. Trois champs nouveaux n'existent pas encore dans la
-table (`tagline`, `lifecycle`, `research`) : a ajouter au schema ou a laisser
-dans le JSON.
+`team_relevance`, `seo`, et `website`/`affiliate_link` quand l'URL officielle a
+change. Trois champs nouveaux n'existent pas encore dans la table (`tagline`,
+`lifecycle`, `research`) : a ajouter au schema ou a laisser dans le JSON.
 
-`adobe-after-effects`, `adobe-lightroom`, `adobe-photoshop`, `adobe-premiere-pro`, `adobe-podcast-ai`, `cargo-site`, `coupler-io`, `eventbrite`, `jira`, `ae-gifgun`, `ae-red-giant`, `basecamp`, `capture-one`, `clerk`, `dependabot`, `freshservice`, `google-drive`, `hotjar`, `mongodb-atlas`, `motion-bro`, `nordpass`, `notion`, `remix`, `similarweb`, `topaz-video-ai`, `wetransfer`.
+**Attention aux deux grilles de prix** (regle du 02/10/2026) : pour un editeur
+qui publie dollars et euros, `pricing_v5_en` porte la grille en dollars et
+`pricing_v5` la grille en euros. Les reinjecter separement, sans recopier l'une
+dans l'autre.
+
+La liste a jour se regenere ainsi (elle grandit a chaque fusion) :
+
+```bash
+node -e 'console.log(require("./src/data/tools_v4.json").filter(t=>t.research).map(t=>t.slug).join(" "))'
+```
+
+Etat au 02/10/2026, 355 fiches : `1password`, `ableton-live`, `acast`, `adobe`, `adobe-acrobat`, `adobe-after-effects`, `adobe-cc`, `adobe-fresco`, `adobe-illustrator`, `adobe-lightroom`, `adobe-photoshop`, `adobe-podcast-ai`, `adobe-premiere-pro`, `adobe-substance-3d`, `ae-animation-composer`, `ae-bao-boa`, `ae-bodymovin`, `ae-duik`, `ae-gifgun`, `ae-newton4`, `ae-overlord`, `ae-red-giant`, `aescripts-flow`, `affinity-photo`, `ahrefs`, `aircall`, `airtable`, `aloware`, `anaplan`, `angular-material`, `ant-design`, `apexcharts`, `apollo-io`, `archicad`, `artlist`, `artstation`, `asana`, `ashby`, `astute-graphics`, `audacity`, `auto-rig-pro`, `autocad-lt`, `aws`, `basecamp`, `better-proposals`, `bigquery`, `blender`, `bloom-crm`, `bolt-business`, `bolt-new`, `box`, `brand24`, `browzwear`, `bubble`, `budibase`, `buffer`, `bullmq`, `buzzsprout`, `callrail`, `calltrackingmetrics`, `canva`, `canva-ai`, `canva-pro`, `capture-one`, `cargo-site`, `chakra-ui`, `chartjs`, `chatgpt`, `cinema-4d`, `circle`, `cleanup3`, `clerk`, `clickup`, `clip-studio-paint`, `clo-3d`, `clockify`, `cloudinary`, `codemagic`, `confluence`, `contra`, `corona-renderer`, `coupler-io`, `crayo-ai`, `creditsafe`, `cursor`, `d5-render`, `darktable`, `dashlane`, `datadog`, `davinci-resolve`, `dbt`, `deel`, `dependabot`, `deputy`, `descript-ai`, `dext`, `didomi`, `digitalocean`, `discord`, `doola`, `dovetail`, `drata`, `dropbox`, `dxo-photolab`, `eagle`, `eas-build`, `echarts`, `elevenlabs`, `elfsight`, `elgato-stream-deck`, `embergen`, `enscape`, `envato-elements`, `esko-studio`, `eslint`, `eventbrite`, `excalidraw`, `expo`, `fathom-analytics`, `feedly`, `fellow`, `figma`, `figma-anima`, `figma-tokens`, `firebase`, `firecrawl`, `firefly`, `flask`, `fly-io`, `format`, `frame-io`, `framer`, `fredo6-bundle`, `freshbooks`, `freshservice`, `fusion-360`, `gaea`, `gcp`, `gelato`, `getida`, `gitlens`, `gmail`, `google-ai-studio`, `google-docs`, `google-drive`, `google-earth-studio`, `google-play-console`, `google-search-console`, `grammarly`, `gusto`, `helpscout`, `heptabase`, `heroku`, `highcharts`, `honeybook`, `hostfully`, `hotjar`, `houdini`, `hugeicons`, `hyperbrowser`, `ignition`, `indesign`, `indy`, `infisical`, `intercom`, `itch-io`, `jira`, `jobber`, `jotform`, `kajabi`, `kelio`, `klaviyo`, `knockout`, `krea-ai`, `kubernetes`, `la-growth-machine`, `later`, `legalplace`, `lemlist`, `leonardo-ai`, `lightroom-mobile`, `linear`, `linkedin-recruiter`, `linktree`, `localwp`, `logseq`, `looker-studio`, `loopio`, `lottiefiles`, `lovable`, `luminar-neo`, `maced-ai`, `madmapper`, `magic-bullet`, `magnific`, `magnific-ai`, `mailchimp`, `mapbox`, `material-ui`, `maxon-one`, `maze`, `memberstack`, `metabase`, `microsoft-defender`, `microsoft-dynamics-365-finance-operations`, `midjourney`, `milanote`, `mixpanel`, `mongodb-atlas`, `motion-array`, `motion-bro`, `move-ai`, `namecheap`, `neon`, `nestjs`, `netlify`, `netsuite`, `nick-launches`, `nik-collection`, `nomad-sculpt`, `nordpass`, `notion`, `obsidian`, `octane-render`, `onetrust`, `openphone`, `opus-clip`, `oracle-fusion-cloud`, `ovh`, `pagerduty`, `pagespeed-insights`, `payhawk`, `payoneer`, `pennylane`, `personio`, `photopea`, `php`, `pika-labs`, `pixieset`, `plasticity`, `plausible`, `plutio`, `podbean`, `posthog`, `postman`, `prezi`, `printify`, `procreate`, `product-hunt`, `productioncrate`, `productive-io`, `profile-builder-3`, `prometheus`, `proposify`, `python`, `qonto`, `quarkxpress`, `quickbooks`, `quickbooks-online`, `quixel-megascans`, `react`, `react-router`, `reaper`, `recharts`, `redshift`, `reflect-notes`, `remix`, `renderman`, `resend`, `restream`, `revenuecat`, `revit`, `rive`, `riverside`, `roam-research`, `rocket-lawyer`, `rocketlink`, `runway`, `rydoo`, `safetyculture`, `samcart`, `sap-s4hana`, `scribe`, `securityscorecard`, `sellfy`, `semrush`, `sendible`, `sentry`, `shadcn-ui`, `shine`, `shipstation`, `shopify-payments`, `signrequest`, `silae`, `similarweb`, `simpletexting`, `simvoly`, `sketchup-pro`, `smartsuite`, `snapseed`, `socialbee`, `softr`, `soldo`, `solid-inspector2`, `spendesk`, `spline`, `spotify-for-podcasters`, `sprout-social`, `steamworks`, `storyblocks`, `storybook`, `substance-3d-designer`, `substance-3d-painter`, `suno`, `supabase`, `superlist`, `sysaid`, `tally`, `thinkific`, `tiktok-studio`, `toggl`, `topaz-gigapixel`, `topaz-photo-ai`, `topaz-video-ai`, `touchdesigner`, `tradingview`, `trainerize`, `trello`, `tubebuddy`, `twinmotion`, `typeform`, `udio`, `unbounce`, `unity`, `vault`, `vectorworks`, `vercel`, `vidiq`, `wetransfer`, `wix`, `wolters-kluwer`, `woocommerce`, `wordpress`, `wordpress-com`, `workable`, `xero`, `yousign`, `youtube-studio`, `zbrush`, `zed`, `zendesk`, `zoho`, `zoom`, `zoom-pro`, `zotero`.
+
+## 2 quinquies. Fiches retirees et renommees (02/10/2026, `5107c24b`)
+
+Retirees du site (liste `DEPRECATED_TOOL_SLUGS` + 301 dans `vercel.json`), a
+archiver dans la table (pas a supprimer) : `tubebody`, `lottie`, `apollo`,
+`avocode`, `twitch-studio`, `pluraleyes`, `premiere-rush`, `ae-newton3`.
+Deja retirees avant, sans 301 jusque-la : `invision`, `bots-discord`.
+
+Nouvelle fiche a creer dans la table : `ae-newton4` (Newton 4, successeur de
+Newton 3).
 
 ## 3. Verification apres reinjection
 
