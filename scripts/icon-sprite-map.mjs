@@ -31,6 +31,7 @@ export const ICON_SOURCES = {
   BookmarkCheck: "FavouriteBook",
   Bot: "BrainElectricity",
   Boxes: "Packages",
+  Columns2: "ViewColumns2",
   Brain: "Brain",
   Briefcase: "Suitcase",
   BriefcaseBusiness: "Suitcase",

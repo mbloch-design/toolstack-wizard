@@ -99,6 +99,8 @@ export const CircleDollarSign = adaptIcon("tt-circle-dollar-sign");
 export const CircleDot = adaptIcon("tt-circle-dot");
 export const CircleMinus = adaptIcon("tt-circle-minus");
 export const CirclePlus = adaptIcon("tt-circle-plus");
+/** Deux colonnes côte à côte : la métaphore d'un comparatif (navigation). */
+export const Columns2 = adaptIcon("tt-columns2");
 export const ClipboardCheck = adaptIcon("tt-clipboard-check");
 export const Clock = adaptIcon("tt-clock");
 export const Clock3 = adaptIcon("tt-clock3");

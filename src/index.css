@@ -21881,7 +21881,7 @@ section[id]:not(.cp-guide-section) {
 @media (max-width: 560px) {
   .tt-catalog-page .gi-catalog-toolbar.tt-sticky-toolbar,
   .tt-catalog-page .gi-catalog-toolbar.tt-sticky-toolbar--stuck {
-    top: 56px;
+    top: var(--asv2-chrome-h, 56px); transition: top 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
     z-index: 19;
   }
   .gi-catalog-toolbar .tt-catalog-toolbar-tail {
@@ -25890,6 +25890,10 @@ section[id]:not(.cp-guide-section) {
 
 .asv2-sidebar {
   position: relative;
+  /* Au-dessus de l'espace de travail : les infobulles de la colonne réduite
+     débordent sur le contenu, et passaient sous ses cartes positionnées (il
+     n'en restait qu'un liseré au bord de la colonne). */
+  z-index: 30;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -26389,27 +26393,26 @@ section[id]:not(.cp-guide-section) {
 /* Preserve content width on compact laptop layouts. The control still keeps
    the user's preference, which becomes visible again at the next breakpoint. */
 @media (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded .asv2-sidebar { width: 76px; }
-  .asv2-root--sidebar-expanded .asv2-sidebar-top { justify-content: center; padding-inline: 0; }
-  .asv2-root--sidebar-expanded .asv2-sidebar-search-btn { display: none; }
-  .asv2-root--sidebar-expanded .asv2-logo-mark { display: block; }
-  .asv2-root--sidebar-expanded .asv2-logo-full { display: none !important; }
-  .asv2-root--sidebar-expanded .asv2-nav-label,
-  .asv2-root--sidebar-expanded .asv2-utility-text,
-  .asv2-root--sidebar-expanded .asv2-utility-value,
-  .asv2-root--sidebar-expanded .asv2-utility-heading { display: none; }
-  .asv2-root--sidebar-expanded .asv2-utility-item { padding-right: 5px; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar { width: 76px; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top { justify-content: center; padding-inline: 0; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-search-btn { display: none; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo-mark { display: block; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo-full { display: none !important; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-label,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-text,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-value,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-heading { display: none; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item { padding-right: 5px; }
   /* This range is a forced compact rail: expose the same destination pills,
      and hide the resize affordance because changing the stored desktop
      preference would have no visible effect here. */
-  .asv2-sidebar-resizer { display: none; }
-  .asv2-root--sidebar-expanded .asv2-nav-item:hover,
-  .asv2-root--sidebar-expanded .asv2-nav-item:focus-visible,
-  .asv2-root--sidebar-expanded .asv2-nav-item--active {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:hover,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:focus-visible,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item--active {
     background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
   }
-  .asv2-root--sidebar-expanded .asv2-nav-item .asv2-nav-icon { background: transparent; }
-  .asv2-root--sidebar-expanded .asv2-nav-item::after {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item .asv2-nav-icon { background: transparent; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item::after {
     position: absolute;
     left: calc(100% + 10px);
     top: 50%;
@@ -26429,8 +26432,8 @@ section[id]:not(.cp-guide-section) {
     transition: opacity 120ms ease-out, transform 120ms ease-out;
     white-space: nowrap;
   }
-  .asv2-root--sidebar-expanded .asv2-nav-item:hover::after,
-  .asv2-root--sidebar-expanded .asv2-nav-item:focus-visible::after {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:hover::after,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:focus-visible::after {
     opacity: 1;
     transform: translate(0, -50%);
   }
@@ -33320,7 +33323,7 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
   /* The page scrolls as a whole here and .asv2-topbar sticks at the top:
      a catalogue bar stuck at 0 slid underneath it and vanished. */
   .tt-catalog-page .tt-sticky-toolbar,
-  .tt-catalog-page .tt-sticky-toolbar--stuck { top: 56px; z-index: 19; }
+  .tt-catalog-page .tt-sticky-toolbar--stuck { top: var(--asv2-chrome-h, 56px); transition: top 220ms cubic-bezier(0.2, 0.8, 0.2, 1); z-index: 19; }
   .tt-catalog-page [data-toolbar] { gap: 8px; }
   .tt-catalog-page [data-toolbar] .tt-pill {
     height: 36px;
@@ -33705,4 +33708,342 @@ img[data-logo-loading] {
   .gi-bestof-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
   .gi-bestof-list a { display: inline-flex; padding: 6px 12px; border: 1px solid var(--color-border); border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-text-strong); font-family: var(--font-ui); font-size: 14px; text-decoration: none; }
   .gi-bestof-list a:hover { border-color: var(--color-border-strong); }
+}
+
+
+/* ══ US-NAV-01 : barre du haut qui réagit au scroll ═══════════════════════
+   AppShellV2 pose data-chrome="hidden" quand on descend, "shown" quand on
+   remonte ou en haut de page. Ordinateur : la barre se replie dans le sens
+   du scroll (marge négative), le contenu et ses barres collantes suivent sans
+   changer leur propre calage. Mobile : la page défile, la barre glisse hors
+   de l'écran et les barres collantes de page prennent sa place via
+   --asv2-chrome-h. */
+.asv2-root { --asv2-chrome-h: 56px; }
+.asv2-root[data-chrome="hidden"] { --asv2-chrome-h: 0px; }
+
+@media (min-width: 641px) {
+  .asv2-topbar { transition: margin-top 220ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 160ms ease-out; }
+  .asv2-root[data-chrome="hidden"] .asv2-topbar { margin-top: -56px; opacity: 0; }
+}
+@media (max-width: 640px) {
+  .asv2-topbar { transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .asv2-root[data-chrome="hidden"] .asv2-topbar { transform: translateY(-100%); }
+}
+
+/* Recherche compacte dans la barre du haut (ordinateur et tablette) : visible
+   quand le fil d'Ariane ou les raccourcis occupent la place du grand champ. */
+.asv2-topbar-search { display: none; }
+@media (min-width: 641px) {
+  .asv2-topbar:not([data-topbar-mode="search"]) .asv2-topbar-search {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    height: 34px;
+    padding: 0 8px 0 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    cursor: pointer;
+    transition: border-color 140ms ease-out, color 140ms ease-out;
+  }
+  .asv2-topbar-search:hover,
+  .asv2-topbar-search:focus-visible { border-color: var(--color-border-strong); color: var(--color-text); }
+  .asv2-topbar-search:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
+  .asv2-topbar-search .asv2-kbd { display: inline-flex; }
+}
+@media (min-width: 641px) and (max-width: 1080px) {
+  .asv2-topbar-search-label, .asv2-topbar-search .asv2-kbd { display: none !important; }
+  .asv2-topbar-search { padding: 0; width: 34px; justify-content: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .asv2-topbar,
+  .tt-catalog-page .tt-sticky-toolbar,
+  .tt-catalog-page .tt-sticky-toolbar--stuck { transition: none !important; }
+}
+
+/* ══ US-NAV-01 : menu mobile (MobileMenu.tsx) ══════════════════════════════
+   Bouton visible sous 641 px seulement. Panneau plein écran à droite, un
+   niveau à la fois, animation courte, désactivée si l'utilisateur réduit
+   les animations. */
+.asv2-topbar-menu { display: none; }
+@media (max-width: 640px) {
+  .asv2-topbar-menu {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    flex: none;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    color: var(--color-text-strong);
+    cursor: pointer;
+  }
+  .asv2-topbar-menu:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
+}
+
+.asv2-mm { position: fixed; inset: 0; z-index: 400; }
+.asv2-mm-backdrop {
+  position: absolute; inset: 0; border: 0; padding: 0;
+  background: color-mix(in srgb, #0F0F0F 32%, transparent);
+  animation: asv2-mm-fade 160ms ease-out both;
+}
+.asv2-mm-panel {
+  position: absolute; top: 0; right: 0; bottom: 0;
+  display: flex; flex-direction: column;
+  width: min(100%, 420px);
+  background: var(--color-surface);
+  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
+  animation: asv2-mm-slide 200ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.asv2-mm-head {
+  display: grid; grid-template-columns: 44px 1fr 44px; align-items: center;
+  height: 60px; padding: 0 8px; border-bottom: 1px solid var(--color-border-soft);
+}
+.asv2-mm-title { margin: 0; text-align: center; font-family: var(--font-ui); font-size: 17px; font-weight: 600; color: var(--color-text-strong); outline: none; }
+.asv2-mm-icon-btn, .asv2-mm-icon-spacer { width: 44px; height: 44px; }
+.asv2-mm-icon-btn {
+  display: grid; place-items: center; padding: 0; border: 0; border-radius: var(--radius-pill);
+  background: transparent; color: var(--color-text-strong); cursor: pointer;
+}
+.asv2-mm-icon-btn svg { width: 20px; height: 20px; }
+.asv2-mm-icon-btn:focus-visible, .asv2-mm-link:focus-visible, .asv2-mm-drill:focus-visible,
+.asv2-mm-pref:focus-visible, .asv2-mm-submit:focus-visible, .asv2-mm-segment button:focus-visible {
+  outline: 2px solid var(--color-text-strong); outline-offset: -2px;
+}
+.asv2-mm-body {
+  flex: 1; overflow-y: auto; overscroll-behavior: contain;
+  padding: 8px 16px calc(24px + env(safe-area-inset-bottom));
+  animation: asv2-mm-level 160ms ease-out both;
+}
+.asv2-mm-list { margin: 0; padding: 0; list-style: none; }
+.asv2-mm-row { display: flex; align-items: stretch; border-bottom: 1px solid var(--color-border-soft); }
+.asv2-mm-link {
+  flex: 1; display: flex; align-items: center; min-height: 52px;
+  font-family: var(--font-ui); font-size: 17px; font-weight: 500;
+  color: var(--color-text-strong); text-decoration: none;
+}
+.asv2-mm-link.is-active { font-weight: 700; }
+.asv2-mm-link.is-active::before { content: ""; width: 4px; height: 20px; margin-right: 10px; border-radius: 2px; background: var(--color-text-strong); }
+.asv2-mm-drill {
+  display: grid; place-items: center; width: 52px; padding: 0; border: 0;
+  border-left: 1px solid var(--color-border-soft); background: transparent; color: var(--color-muted); cursor: pointer;
+}
+.asv2-mm-drill svg { width: 20px; height: 20px; }
+.asv2-mm-subtitle { margin: 24px 0 4px; color: var(--color-muted); font-family: var(--font-ui); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .05em; }
+.asv2-mm-prefs { margin-top: 8px; }
+.asv2-mm-pref {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 52px; padding: 0;
+  border: 0; border-bottom: 1px solid var(--color-border-soft); background: transparent;
+  color: var(--color-text); font-family: var(--font-ui); font-size: 16px; text-align: left; text-decoration: none; cursor: pointer;
+}
+.asv2-mm-pref svg { width: 18px; height: 18px; color: var(--color-muted); }
+.asv2-mm-pref > span { flex: 1; }
+.asv2-mm-pref strong { font-weight: 500; color: var(--color-muted); }
+.asv2-mm-pref--static { cursor: default; }
+.asv2-mm-pref-label { flex: 1; }
+.asv2-mm-segment { display: inline-flex; padding: 3px; border-radius: var(--radius-pill); background: var(--color-surface-soft); }
+.asv2-mm-segment button {
+  min-width: 52px; height: 34px; padding: 0 10px; border: 0; border-radius: var(--radius-pill);
+  background: transparent; color: var(--color-muted); font-family: var(--font-ui); font-size: 14px; font-weight: 500; cursor: pointer;
+}
+.asv2-mm-segment button.is-selected { background: var(--color-surface); color: var(--color-text-strong); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
+.asv2-mm-submit {
+  display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; margin-top: 24px;
+  border: 1px solid var(--color-border); border-radius: var(--radius-pill);
+  color: var(--color-text-strong); font-family: var(--font-ui); font-size: 15px; font-weight: 500; text-decoration: none;
+}
+.asv2-mm-submit svg { width: 18px; height: 18px; }
+@keyframes asv2-mm-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes asv2-mm-slide { from { transform: translateX(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+@keyframes asv2-mm-level { from { opacity: 0; transform: translateX(8px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .asv2-mm-backdrop, .asv2-mm-panel, .asv2-mm-body { animation: none; }
+}
+
+/* Devise : le symbole choisi tient la place du picto, à la taille d'une icône. */
+.asv2-currency-glyph {
+  display: grid; place-items: center; flex: none;
+  width: 18px; height: 18px; border: 1.5px solid currentColor; border-radius: 50%;
+  font-family: var(--font-ui); font-size: 10.5px; font-weight: 700; line-height: 1;
+}
+
+/* ══ US-NAV-01 : colonne réduite lisible sans survol ═══════════════════════
+   La colonne d'icônes (réduite à la main, ou imposée de 641 à 1 180 px)
+   n'était compréhensible qu'au survol, par infobulle. Chaque entrée porte
+   maintenant son libellé sous l'icône, comme la barre d'onglets mobile ;
+   l'infobulle des entrées principales devient inutile. */
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item {
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  min-height: 54px;
+  padding: 6px 2px;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item .asv2-nav-label {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  font-family: var(--font-ui);
+  font-size: 10.5px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item::after { display: none; }
+@media (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item {
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    min-height: 54px;
+    padding: 6px 2px;
+  }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item .asv2-nav-label {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+    font-family: var(--font-ui);
+    font-size: 10.5px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item::after { display: none; }
+}
+
+/* Recherche mobile : le texte d'appel ne passe jamais sur deux lignes. */
+.asv2-search > span:not(.asv2-search-action) {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 64 px par entrée dans la colonne : « Comparatifs » tient sans être tronqué. */
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar { padding-inline: 6px; }
+@media (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar { padding-inline: 6px; }
+}
+/* De 901 à 1 180 px, la barre « dépliée » est forcée en colonne étroite :
+   les trois réglages alignés en ligne débordaient (le thème sortait de la
+   colonne). On les empile comme dans la colonne réduite. */
+@media (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-actions { flex-direction: column; align-items: center; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item { width: 36px; grid-template-columns: 1fr; justify-items: center; }
+}
+/* Texte d'appel de la recherche : court quand la place manque, jamais coupé
+   au milieu d'un mot ni sur deux lignes. */
+.asv2-search-short { display: none; }
+@media (max-width: 640px) {
+  .asv2-search-long { display: none; }
+  .asv2-search-short { display: inline; }
+}
+.asv2-mobile-logo .asv2-mobile-logo-mark { display: none; width: 28px; height: 28px; filter: grayscale(1) contrast(1.6); }
+@media (max-width: 359px) {
+  .asv2-mobile-logo .asv2-mobile-logo-full { display: none; }
+  .asv2-mobile-logo .asv2-mobile-logo-mark { display: block; }
+}
+
+
+/* ══ US-NAV-01 : colonne réduite, structure unique ═════════════════════════
+   Même rendu que la colonne soit réduite à la main ou imposée (641 à
+   1 180 px) : logo centré sur l'axe des icônes, bouton « déplier » visible
+   sous le logo (il n'apparaissait qu'au survol d'une bande invisible, ou
+   pas du tout dans la plage imposée), réglages en 18 px comme la
+   navigation, « Soumettre » traité comme une entrée de navigation sous un
+   filet au lieu d'une boîte bordée décentrée. */
+.asv2-submit-short { display: none; }
+.asv2-currency-glyph { font-size: 10px; font-weight: 600; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top { position: relative; justify-content: center; height: 56px; margin-bottom: 44px; padding-inline: 0; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { position: absolute; top: 56px; left: 50%; transform: translateX(-50%); }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-search-btn { display: none; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer { position: relative; top: auto; right: auto; width: 36px; height: 32px; border-radius: var(--radius-md); background: transparent; color: var(--color-muted); cursor: pointer; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > span { position: static; width: auto; height: auto; opacity: 1; transform: none; box-shadow: none; background: transparent; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:hover, .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible { background: var(--color-surface-soft); color: var(--color-text); }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item svg { width: 18px; height: 18px; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit { flex-direction: column; justify-content: center; gap: 3px; width: 100%; min-height: 54px; margin-top: 14px; padding: 6px 2px; border: 0; border-radius: var(--radius-md); background: transparent; box-shadow: none; color: color-mix(in srgb, var(--color-text) 78%, var(--color-muted)); }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit::before { content: ""; position: absolute; top: -8px; left: 10px; right: 10px; height: 1px; background: var(--color-border-soft); }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit::after { display: none; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover, .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:focus-visible { background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface)); }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-icon { width: auto; height: auto; border: 0; background: transparent; box-shadow: none; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-label { display: block; font-family: var(--font-ui); font-size: 10.5px; font-weight: 500; line-height: 1.1; text-align: center; white-space: nowrap; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-submit-long { display: none; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-submit-short { display: inline; }
+@media (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top { position: relative; justify-content: center; height: 56px; margin-bottom: 44px; padding-inline: 0; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { position: absolute; top: 56px; left: 50%; transform: translateX(-50%); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-search-btn { display: none; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer { position: relative; top: auto; right: auto; width: 36px; height: 32px; border-radius: var(--radius-md); background: transparent; color: var(--color-muted); cursor: pointer; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer > span { position: static; width: auto; height: auto; opacity: 1; transform: none; box-shadow: none; background: transparent; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:hover, .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:focus-visible { background: var(--color-surface-soft); color: var(--color-text); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item svg { width: 18px; height: 18px; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit { flex-direction: column; justify-content: center; gap: 3px; width: 100%; min-height: 54px; margin-top: 14px; padding: 6px 2px; border: 0; border-radius: var(--radius-md); background: transparent; box-shadow: none; color: color-mix(in srgb, var(--color-text) 78%, var(--color-muted)); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit::before { content: ""; position: absolute; top: -8px; left: 10px; right: 10px; height: 1px; background: var(--color-border-soft); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit::after { display: none; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit:hover, .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit:focus-visible { background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface)); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-icon { width: auto; height: auto; border: 0; background: transparent; box-shadow: none; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-label { display: block; font-family: var(--font-ui); font-size: 10.5px; font-weight: 500; line-height: 1.1; text-align: center; white-space: nowrap; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-submit-long { display: none; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-submit-short { display: inline; }
+
+  /* Dépliée par-dessus le contenu, qui garde sa place (pas de saut). */
+  .asv2-root--rail-open { padding-left: 76px; }
+  .asv2-root--rail-open .asv2-sidebar {
+    position: absolute; top: 0; bottom: 0; left: 0; z-index: 300; width: 228px;
+    box-shadow: 12px 0 40px color-mix(in srgb, #0F0F0F 14%, transparent);
+    animation: asv2-rail-in 180ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+  .asv2-rail-backdrop {
+    position: fixed; inset: 0; z-index: 290; padding: 0; border: 0;
+    background: color-mix(in srgb, #0F0F0F 10%, transparent);
+  }
+}
+.asv2-rail-backdrop { display: none; }
+@media (min-width: 641px) and (max-width: 1180px) { .asv2-rail-backdrop { display: block; } }
+@keyframes asv2-rail-in { from { transform: translateX(-12px); opacity: 0.7; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .asv2-root--rail-open .asv2-sidebar { animation: none; } }
+/* Barre dépliée : le symbole de devise prend la taille et l'axe des icônes voisines. */
+.asv2-root--sidebar-expanded .asv2-utility-item .asv2-currency-glyph { width: 16px; height: 16px; justify-self: center; font-size: 9px; }
+
+
+/* ══ US-NAV-01 : « déplier » au survol seulement (demande de Michael) ══════
+   Colonne réduite : le bouton prend la place du logo au survol de la
+   colonne, ou quand il reçoit le focus clavier. Sur un écran tactile, sans
+   survol, il reste visible sous le logo : sinon la barre ne pourrait plus
+   se déplier sur tablette. */
+@media (hover: hover) {
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top { margin-bottom: 10px; }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { top: 50%; z-index: 2; transform: translate(-50%, -50%); }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-logo { transition: opacity 120ms ease-out; }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer { background: var(--color-surface); opacity: 0; transition: opacity 120ms ease-out; }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:hover .asv2-sidebar-resizer,
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible { opacity: 1; }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:hover .asv2-logo,
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:has(.asv2-sidebar-resizer:focus-visible) .asv2-logo { opacity: 0; }
+}
+@media (hover: hover) and (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top { margin-bottom: 10px; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { top: 50%; z-index: 2; transform: translate(-50%, -50%); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo { transition: opacity 120ms ease-out; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer { background: var(--color-surface); opacity: 0; transition: opacity 120ms ease-out; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:hover .asv2-sidebar-resizer,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:focus-visible { opacity: 1; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:hover .asv2-logo,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:has(.asv2-sidebar-resizer:focus-visible) .asv2-logo { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .asv2-logo, .asv2-sidebar-resizer { transition: none !important; }
 }

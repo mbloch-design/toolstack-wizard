@@ -38,16 +38,24 @@ const budgets = {
   // 880.1 MiB HTML, 32.5 MiB CSS. Sized for the ~120 dossiers still to merge.
   files: 15_050,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
-  totalBytes: 1_010 * MiB,
+  // 2026-10-02 (US-NAV-01): search and menu buttons in the shared topbar add
+  // about 2 KB of markup and critical CSS to each of the ~13,100 pages, plus
+  // ten best-of guide pages: measured 1,018.2 MiB total, 907.9 MiB HTML,
+  // 34.5 MiB CSS.
+  // Rail redesign (same story): measured 1,042.4 MiB total, 931.5 MiB HTML;
+  // the rail rules are written twice (manual and forced rail), see TODO.
+  totalBytes: 1_060 * MiB,
   // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
-  htmlBytes: 900 * MiB,
+  htmlBytes: 950 * MiB,
   javascriptBytes: 15 * MiB,
   // 32 MiB (2026-09-30): each researched fiche adds pricing-card critical CSS
   // variants (+0.2 MiB per 25 fiches, 30.7 MiB at 146); sized for the ~200
   // remaining fiches instead of a bump per batch.
   // 2026-10-02: Nick Launches adds two localized routes; measured 34.021 MiB.
   // Keep 80 KiB of headroom for the generated critical-CSS variants.
-  cssBytes: 34.1 * MiB,
+  // 2026-10-02 (US-NAV-01): shell search and menu buttons on every page,
+  // measured 34.5 MiB.
+  cssBytes: 36 * MiB,
   duplicateBytes: 3 * MiB,
 };
 

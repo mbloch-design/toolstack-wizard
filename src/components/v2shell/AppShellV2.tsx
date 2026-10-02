@@ -1,11 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   Home,
-  Wrench,
-  Layers,
-  Scale,
-  BookOpen,
+  Lightbulb,
   Search,
   Bookmark,
   Languages,
@@ -13,10 +10,14 @@ import {
   PanelLeftClose,
   PanelLeftOpen,
   Sun,
-  CircleDollarSign,
   Check,
-  Rocket,
+  Menu,
+  LayoutGrid,
+  Boxes,
+  Columns2,
+  CirclePlus,
 } from "@/lib/icons";
+import MobileMenu from "@/components/v2shell/MobileMenu";
 import { useLang } from "@/hooks/useLang";
 import { useCurrency, type Currency } from "@/hooks/useCurrency";
 import { useTheme } from "@/hooks/useTheme";
@@ -42,10 +43,16 @@ type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
   { id: "home",       labelFr: "Accueil",     labelEn: "Home",       Icon: Home,     to: "",             match: [""] },
-  { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: Wrench,   to: "/tools",       match: ["/tools", "/tool/"] },
-  { id: "stacks",     labelFr: "Stacks",      labelEn: "Stacks",     Icon: Layers,   to: "/stacks",      match: ["/stacks"] },
-  { id: "compare",    labelFr: "Comparatifs", labelEn: "Compare",    Icon: Scale,    to: "/comparatifs", match: ["/comparatifs", "/comparatif/"] },
-  { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: BookOpen, to: "/guides",      match: ["/guides", "/guide/"] },
+  // Pictos choisis pour l'affordance (US-NAV-01) : une grille pour un
+  // catalogue (la clé à molette évoquait des réglages), des paquets pour une
+  // stack d'outils (l'ancien glyphe montrait une pile de documents), deux
+  // colonnes côte à côte pour un comparatif (« Scale » rendait un poids).
+  { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: LayoutGrid, to: "/tools",       match: ["/tools", "/tool/"] },
+  { id: "stacks",     labelFr: "Stacks",      labelEn: "Stacks",     Icon: Boxes,      to: "/stacks",      match: ["/stacks"] },
+  { id: "compare",    labelFr: "Comparatifs", labelEn: "Compare",    Icon: Columns2,   to: "/comparatifs", match: ["/comparatifs", "/comparatif/"] },
+  // Une ampoule pour des guides de conseil : le livre ouvert avait la même
+  // silhouette que les deux colonnes des comparatifs.
+  { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: Lightbulb, to: "/guides",      match: ["/guides", "/guide/"] },
 ];
 
 type HomeTab = {
@@ -104,7 +111,8 @@ function CurrencyPicker({
             </>
           ) : (
             <>
-              <CircleDollarSign />
+              {/* Le symbole de la devise choisie, pas un « $ » fixe. */}
+              <span className="asv2-currency-glyph" aria-hidden>{selected.symbol}</span>
               <span className="asv2-utility-text">{t("Devise", "Currency")}</span>
               <span className="asv2-utility-value">{selected.code}</span>
             </>
@@ -162,6 +170,17 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const otherLang = lang === "fr" ? "en" : "fr";
   const languageHref = `${getLanguageSwitchPath(location.pathname, otherLang)}${location.search}${location.hash}`;
   const [breadcrumb, setBreadcrumb] = useState<TopbarBreadcrumbItem[] | null>(null);
+  // US-NAV-01 : la barre du haut cède la place au contenu quand on descend,
+  // revient dès qu'on remonte, et reprend son état complet en haut de page.
+  const [chromeHidden, setChromeHidden] = useState(false);
+  const topbarRef = useRef<HTMLElement>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+  const closeMenu = useCallback(() => {
+    setMenuOpen(false);
+    // La fermeture rend la main exactement là où on l'avait prise.
+    requestAnimationFrame(() => menuButtonRef.current?.focus());
+  }, []);
   const breadcrumbCtx = useMemo(() => ({ setBreadcrumb }), []);
 
   // Path relative to the /:lang prefix, e.g. "/tool/notion" or "" for the homepage.
@@ -183,10 +202,85 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     if (contentRef.current) contentRef.current.scrollLeft = 0;
   }, [location.pathname, location.search]);
 
+  // Le défilement vit dans .asv2-content sur ordinateur et sur la fenêtre en
+  // mobile (voir index.css, max-width: 640px) : on écoute le bon conteneur.
+  useEffect(() => {
+    setChromeHidden(false);
+    const mobile = window.matchMedia("(max-width: 640px)");
+    let lastY = 0;
+    let frame = 0;
+    const scroller = () => (mobile.matches ? null : contentRef.current);
+    const readY = () => scroller()?.scrollTop ?? window.scrollY;
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const y = readY();
+        const delta = y - lastY;
+        // Le clavier dans la barre du haut ou la recherche ouverte la gardent visible.
+        const focusInTopbar = !!topbarRef.current?.contains(document.activeElement);
+        if (y < 64 || focusInTopbar) setChromeHidden(false);
+        else if (delta > 6 && y > 120) setChromeHidden(true);
+        else if (delta < -6) setChromeHidden(false);
+        if (Math.abs(delta) > 6 || y < 64) lastY = y;
+      });
+    };
+    lastY = readY();
+    const content = contentRef.current;
+    content?.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      content?.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (searchOpen || menuOpen) setChromeHidden(false);
+  }, [searchOpen, menuOpen]);
+
+  // ⌘K / Ctrl+K ouvre la recherche depuis n'importe quelle page : le raccourci
+  // était affiché dans la barre sans être branché.
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setSearchOpen(true);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   useEffect(() => {
     const storedPreference = localStorage.getItem("tooltrim:sidebar-expanded");
     setSidebarExpanded(storedPreference === null ? true : storedPreference === "true");
   }, []);
+
+  // De 641 à 1 180 px, la barre est une colonne imposée pour laisser la place
+  // au contenu. Elle peut quand même se déplier : par-dessus le contenu, sans
+  // le décaler, et sans toucher à la préférence enregistrée (US-NAV-01).
+  const [forcedRail, setForcedRail] = useState(false);
+  const [railOpen, setRailOpen] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia("(min-width: 641px) and (max-width: 1180px)");
+    const sync = () => { setForcedRail(query.matches); if (!query.matches) setRailOpen(false); };
+    sync();
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
+  useEffect(() => { setRailOpen(false); }, [location.pathname]);
+  useEffect(() => {
+    if (!railOpen) return;
+    const onKey = (event: KeyboardEvent) => { if (event.key === "Escape") setRailOpen(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [railOpen]);
+  const railIsOpen = forcedRail && railOpen;
+  // Ce que l'utilisateur voit : dépliée ou non, quelle que soit la largeur.
+  const shownExpanded = forcedRail ? railIsOpen : sidebarExpanded;
+  const onSidebarToggle = () => (forcedRail ? setRailOpen((open) => !open) : toggleSidebar());
 
   const toggleSidebar = () => {
     setSidebarExpanded((current) => {
@@ -198,8 +292,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
   return (
     <TopbarBreadcrumbContext.Provider value={breadcrumbCtx}>
-    <div className={`asv2-root${sidebarExpanded ? " asv2-root--sidebar-expanded" : ""}`}>
-      <aside className="asv2-sidebar" data-expanded={sidebarExpanded}>
+    <div className={`asv2-root${sidebarExpanded || railIsOpen ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"}>
+      {railIsOpen && <button type="button" className="asv2-rail-backdrop" tabIndex={-1} aria-label={t("Réduire la barre latérale", "Collapse sidebar")} onClick={() => setRailOpen(false)} />}
+      <aside className="asv2-sidebar" data-expanded={shownExpanded}>
         <div className="asv2-sidebar-top">
           <Link to={prefix} className="asv2-logo" aria-label="ToolTrim">
             <img className="asv2-logo-mark" src={pictoToolTrim} alt="" width={24} height={24} aria-hidden />
@@ -220,16 +315,16 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             <button
               type="button"
               className="asv2-sidebar-resizer"
-              onClick={toggleSidebar}
-              aria-expanded={sidebarExpanded}
-              aria-label={sidebarExpanded
+              onClick={onSidebarToggle}
+              aria-expanded={shownExpanded}
+              aria-label={shownExpanded
                 ? t("Réduire la barre latérale", "Collapse sidebar")
                 : t("Déployer la barre latérale", "Expand sidebar")}
             >
               <span aria-hidden>
-                {sidebarExpanded ? <PanelLeftClose style={{ width: 16, height: 16 }} /> : <PanelLeftOpen style={{ width: 16, height: 16 }} />}
+                {shownExpanded ? <PanelLeftClose style={{ width: 16, height: 16 }} /> : <PanelLeftOpen style={{ width: 16, height: 16 }} />}
               </span>
-              <b aria-hidden>{sidebarExpanded ? t("Réduire la barre", "Close sidebar") : t("Ouvrir la barre", "Open sidebar")}</b>
+              <b aria-hidden>{shownExpanded ? t("Réduire la barre", "Close sidebar") : t("Ouvrir la barre", "Open sidebar")}</b>
             </button>
           </div>
         </div>
@@ -307,20 +402,26 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           data-tooltip={t("Soumettre un outil", "Submit a tool")}
         >
           <span className="asv2-nav-icon">
-            <Rocket style={{ width: 18, height: 18 }} />
+            <CirclePlus style={{ width: 18, height: 18 }} />
           </span>
-          <span className="asv2-nav-label">{t("Soumettre un outil", "Submit a tool")}</span>
+          <span className="asv2-nav-label">
+            <span className="asv2-submit-long">{t("Soumettre un outil", "Submit a tool")}</span>
+            <span className="asv2-submit-short">{t("Soumettre", "Submit")}</span>
+          </span>
         </Link>
 
       </aside>
 
       <div className="asv2-workspace">
         <header
+          ref={topbarRef}
           className="asv2-topbar"
           data-topbar-mode={isHome ? "home" : breadcrumb ? "breadcrumb" : showsSearchByDefault ? "search" : "pending"}
         >
-          <Link to={prefix} className="asv2-mobile-logo">
-            <img src={logoToolTrim} alt="ToolTrim" width={127} height={28} />
+          <Link to={prefix} className="asv2-mobile-logo" aria-label="ToolTrim">
+            <img className="asv2-mobile-logo-full" src={logoToolTrim} alt="" width={127} height={28} />
+            {/* Sous 360 px, le logo complet ne laisse plus de place aux actions. */}
+            <img className="asv2-mobile-logo-mark" src={pictoToolTrim} alt="" width={28} height={28} />
           </Link>
 
           {/* Desktop/tablet: exactly one of these three is visible, picked by
@@ -362,7 +463,10 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             onClick={() => setSearchOpen(true)}
             aria-label={t("Rechercher un outil", "Search for a tool")}
           >
-            <span>{t("Rechercher un outil...", "Search a tool...")}</span>
+            <span className="asv2-search-text">
+              <span className="asv2-search-long">{t("Rechercher un outil…", "Search a tool…")}</span>
+              <span className="asv2-search-short">{t("Rechercher", "Search")}</span>
+            </span>
             <kbd className="asv2-kbd">⌘K</kbd>
             <span className="asv2-search-action" aria-hidden>
               <Search style={{ width: 15, height: 15 }} aria-hidden />
@@ -370,6 +474,18 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </button>
 
           <div className="asv2-topbar-right">
+            {/* Recherche toujours atteignable depuis la barre du haut, même
+                quand le fil d'Ariane occupe la place du champ. */}
+            <button
+              type="button"
+              className="asv2-topbar-search"
+              onClick={() => setSearchOpen(true)}
+              aria-label={t("Rechercher (⌘K)", "Search (⌘K)")}
+            >
+              <Search style={{ width: 15, height: 15 }} aria-hidden />
+              <span className="asv2-topbar-search-label">{t("Rechercher", "Search")}</span>
+              <kbd className="asv2-kbd">⌘K</kbd>
+            </button>
             <Link
               to={`${prefix}/ma-stack`}
               className="asv2-topbar-cta"
@@ -385,6 +501,17 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               </span>
               <span>{cartLabel}</span>
             </Link>
+            <button
+              ref={menuButtonRef}
+              type="button"
+              className="asv2-topbar-menu"
+              onClick={() => setMenuOpen(true)}
+              aria-haspopup="dialog"
+              aria-expanded={menuOpen}
+              aria-label={t("Ouvrir le menu", "Open menu")}
+            >
+              <Menu style={{ width: 18, height: 18 }} aria-hidden />
+            </button>
           </div>
         </header>
 
@@ -418,6 +545,20 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
       </nav>
 
       {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
+      <MobileMenu
+        open={menuOpen}
+        onClose={closeMenu}
+        prefix={prefix}
+        lang={lang === "en" ? "en" : "fr"}
+        t={t}
+        items={NAV_ITEMS}
+        activeId={NAV_ITEMS.find((item) => (item.id === "home" ? relPath === "" : item.match.some((m) => relPath === m || relPath.startsWith(m))))?.id ?? null}
+        languageHref={languageHref}
+        currency={currency}
+        setCurrency={setCurrency}
+        theme={theme}
+        toggleTheme={toggleTheme}
+      />
     </div>
     </TopbarBreadcrumbContext.Provider>
   );
