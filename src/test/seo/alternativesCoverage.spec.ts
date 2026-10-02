@@ -59,6 +59,8 @@ describe("couverture des pages /alternatives", () => {
   it("garde le nombre de fiches sans voisin dérivable sous le niveau constaté", () => {
     // 175 fiches n'ont aucun voisin dérivable des seules données du catalogue,
     // mesuré le 13/09/2026.
+    // Repassé à 317 avec les 138 fiches d'effets Maxon (`47989ad4`), ramené à 175
+    // le 02/10/2026 par `scripts/classify-maxon-effects.mjs` et quelques tags.
     //
     // Ce chiffre est volontairement plus élevé que les 105 pages réellement
     // vides sur le prérendu : la cascade ci-dessus ignore les alternatives

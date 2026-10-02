@@ -18,13 +18,14 @@
   "sources": [
     { "id": "s1", "url": "https://home.otoy.com/render/octane-render/", "tier": 1, "accessedOn": "2026-09-25", "title": "OctaneRender homepage" },
     { "id": "s2", "url": "https://www.cgchannel.com/2022/11/otoy-launches-octanerender-studio-subscriptions/", "tier": 2, "accessedOn": "2026-09-25", "title": "Otoy launches OctaneRender Studio+ subscriptions" },
-    { "id": "s3", "url": "https://home.otoy.com/render/octane-render/purchase/", "tier": 1, "accessedOn": "2026-10-01", "checkedOn": "2026-10-01", "title": "OctaneRender purchase page" }
+    { "id": "s3", "url": "https://home.otoy.com/render/octane-render/purchase/", "tier": 1, "accessedOn": "2026-10-01", "checkedOn": "2026-10-01", "title": "OctaneRender purchase page" },
+    { "id": "s4", "url": "https://home.otoy.com/render/octane-render/purchase/", "tier": 1, "accessedOn": "2026-10-02", "checkedOn": "2026-10-02", "title": "OctaneRender purchase page re-checked for a USD grid (live browser, full page including footer): no currency/country selector, only an AliPay note; page served in EUR only." }
   ],
   "pricing": {
     "model": "subscription",
     "currency": "EUR",
     "pricingUrl": "https://home.otoy.com/render/octane-render/purchase/",
-    "verifiedOn": "2026-10-01",
+    "verifiedOn": "2026-10-02",
     "region": "EU",
     "taxIncluded": null,
     "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
@@ -119,5 +120,5 @@
   "unknowns": ["Exact list of supported host applications (3ds Max, Cinema 4D, Blender, Maya, etc.) not confirmed from a primary source on this pass", "Whether taxes are included in the listed EUR price is not stated"],
   "conflicts": [],
   "reviewNotes": [],
-  "priceCheckedOn": "2026-10-01"
+  "priceCheckedOn": "2026-10-02"
 }

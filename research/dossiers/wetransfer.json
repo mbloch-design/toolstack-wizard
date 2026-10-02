@@ -19,7 +19,8 @@
     { "id": "s2", "url": "https://brault.app/blog/file-transfer-and-sharing/wetransfer-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "WeTransfer pricing 2026: plans, real cost, alternatives (verified 2026-09-17)" },
     { "id": "s3", "url": "https://www.medianama.com/2025/07/223-wetransfer-terms-of-service-backlash-ai-training/", "tier": 2, "accessedOn": "2026-09-25", "title": "WeTransfer Clarifies Terms Of Service Amid AI Training Backlash" },
     { "id": "s4", "url": "https://wetransfer.com/explore/legal/terms", "tier": 1, "accessedOn": "2026-09-25", "title": "WeTransfer Terms of Service (official, JS-blocked at fetch time; last publicly noted update August 2026)" },
-    { "id": "s5", "url": "https://wetransfer.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "WeTransfer Plans et tarifs (live browser render, monthly and annual views): Free 0, Starter 8/7, Ultimate 23/19, Teams 19/16.58 per seat (min 2), all EUR via page geolocation" }
+    { "id": "s5", "url": "https://wetransfer.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "WeTransfer Plans et tarifs (live browser render, monthly and annual views): Free 0, Starter 8/7, Ultimate 23/19, Teams 19/16.58 per seat (min 2), all EUR via page geolocation" },
+    { "id": "s6", "url": "https://wetransfer.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "checkedOn": "2026-10-02", "title": "WeTransfer pricing re-checked for a USD grid (live browser): only a language selector exists (no country/currency option); switching the UI language to English and trying /en-us/pricing did not change the currency, page kept serving EUR by geolocation." }
   ],
   "pricing": {
     "model": "freemium",

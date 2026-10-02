@@ -21,13 +21,21 @@
       "tier": 1,
       "accessedOn": "2026-10-01",
       "title": "TradingView pricing"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.tradingview.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "checkedOn": "2026-10-02",
+      "title": "TradingView pricing re-checked for a USD grid: no currency or country selector on the page; ?currency=USD and ?country=US query params tested, page still served in EUR by geolocation. Confirms EUR-only access from this session."
     }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "EUR",
     "pricingUrl": "https://www.tradingview.com/pricing/",
-    "verifiedOn": "2026-10-01",
+    "verifiedOn": "2026-10-02",
     "region": "EU (page shown in EUR; TradingView prices by visitor region)",
     "taxIncluded": null,
     "freePlan": {
@@ -243,7 +251,8 @@
     }
   ],
   "unknowns": [
-    "Whether sales tax is included in the displayed USD prices is not stated ('sales tax may apply by location')."
+    "Whether sales tax is included in the displayed EUR prices is not stated ('sales tax may apply by location').",
+    "No USD grid was reachable: the pricing page has no currency/country selector and ?currency=USD, ?country=US had no effect (checked 2026-10-02); TradingView prices purely by visitor geolocation."
   ],
   "conflicts": [],
   "rating": {
@@ -360,5 +369,5 @@
   },
   "completedLocallyOn": "2026-10-01",
   "reviewNotes": [],
-  "priceCheckedOn": "2026-10-01"
+  "priceCheckedOn": "2026-10-02"
 }

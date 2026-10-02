@@ -22,13 +22,21 @@
       "tier": 1,
       "accessedOn": "2026-10-01",
       "title": "vidIQ Pricing & Plans (official, EUR/EU pricing as geo-detected)"
+    },
+    {
+      "id": "s2",
+      "url": "https://vidiq.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "checkedOn": "2026-10-02",
+      "title": "vidIQ pricing re-checked for a USD grid (live browser): no currency/country selector found; Free/Boost/Max confirmed at EUR 0 / 16.58 / 31 per month (annual billing). No separate US endpoint reachable from this session."
     }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "EUR",
     "pricingUrl": "https://vidiq.com/pricing/",
-    "verifiedOn": "2026-10-01",
+    "verifiedOn": "2026-10-02",
     "region": "EU (geo-detected; no manual region/currency selector found on vidiq.com)",
     "taxIncluded": null,
     "freePlan": {
@@ -328,9 +336,9 @@
     }
   },
   "unknowns": [
-    "Exact currency/price shown to US visitors (USD) could not be confirmed this session; vidiq.com geo-detects region with no manual override, and the US endpoint was blocked (HTTP 429) on every attempt."
+    "Exact currency/price shown to US visitors (USD) still could not be confirmed as of 2026-10-02: vidiq.com geo-detects region with no manual currency/country selector, and no US endpoint is reachable from this session."
   ],
   "conflicts": [],
   "reviewNotes": [],
-  "priceCheckedOn": "2026-10-01"
+  "priceCheckedOn": "2026-10-02"
 }

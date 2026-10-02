@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1347
+# Records: 1348
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -309,11 +309,11 @@
     "website": "https://www.adobe.com/creativecloud/plans.html",
     "category": "design-tools",
     "pricing": {
-      "free": "Essai gratuit limité ; pas de version gratuite permanente. Les prix varient selon les régions et les promotions.",
-      "paid": "Single App (ex. Photoshop): 22,99 $ USD/mois (facturation mensuelle) ; Photography: 19,99 $ USD/mois (Photoshop + Lightroom) ; Creative Cloud Standard: 54,99 $ USD/mois (tous les apps, limites web/mobile, 25 crédits Firefly/mois) ; Creative Cloud Pro: 69,99 $ USD/mois (tous les apps, accès complet, plus de crédits Firefly) ; Teams Plans: 84,99 $ USD+/mois (gestion admin, cloud storage augmenté)"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 78,65 €/mois, plan Creative Cloud Pro (individual)."
     },
-    "description_fr": "Suite complète d'applications logicielles pour la création numérique : Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, et plus de 20 autres applications. Disponible par abonnement mensuel ou annuel.",
-    "description_en": "Complete suite of digital creation applications: Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, and 20+ additional apps. Available by monthly or annual subscription."
+    "description_fr": "Un abonnement groupé à plus de 20 applications créatives Adobe (bureau et web), avec crédits IA générative, dès 78,65 €/mois en engagement annuel.",
+    "description_en": "A bundled subscription to 20+ Adobe creative desktop and web apps plus generative AI credits, from 78.65 euros a month with an annual commitment."
   },
   {
     "name": "Adobe Enhance Speech",

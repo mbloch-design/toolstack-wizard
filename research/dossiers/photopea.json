@@ -225,7 +225,8 @@
   ],
   "missingAlternatives": [],
   "unknowns": [
-    "Official USD pricing was not observed directly; the app showed EUR prices on this session's connection, and currency may vary by region."
+    "Official USD pricing was not observed directly; the app showed EUR prices on this session's connection, and currency may vary by region.",
+    "Re-check attempted on 2026-10-02 for a USD grid: photopea.com was unreachable from this session (navigation blocked / no response), so the currency could not be re-verified today; EUR prices from the prior same-day check (2026-10-02) stand."
   ],
   "conflicts": [],
   "rating": {

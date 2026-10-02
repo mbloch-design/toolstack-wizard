@@ -59,7 +59,7 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 
 ## Technique
 
-- [ ] Test `alternativesCoverage.spec.ts` en échec depuis `47989ad4` (fiches Maxon) : 317 fiches sans voisin dérivable pour un plafond de 175. Les fiches Maxon n'ont ni `substitution_cluster_v2` ni `functional_needs` exploitables ; les classer
+- [x] Test `alternativesCoverage.spec.ts` réparé le 02/10/2026 : 138 effets Maxon (Universe, Red Giant) classés par famille avec alternatives entre eux (`scripts/classify-maxon-effects.mjs`), 317 → 175 fiches sans voisin
 
 - [ ] 4 erreurs TypeScript préexistantes dans `ToolDetailPage.tsx` (ToolSummary contre Tool, `category` possiblement indéfini)
 - [ ] 7 erreurs TypeScript préexistantes dans `HomePageV2.tsx`

@@ -684,14 +684,14 @@
     "slug": "adobe-creative-cloud",
     "name": "Adobe Creative Cloud All Apps",
     "categoryId": "design-tools",
-    "shortDescription": "Suite complète d'applications logicielles pour la création numérique : Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, et plus de 20 autres applications. Disponible par abonnement mensuel ou annuel.",
-    "shortDescriptionEn": "Complete suite of digital creation applications: Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, and 20+ additional apps. Available by monthly or annual subscription.",
+    "shortDescription": "Un abonnement groupé à plus de 20 applications créatives Adobe (bureau et web), avec crédits IA générative, dès 78,65 €/mois en engagement annuel.",
+    "shortDescriptionEn": "A bundled subscription to 20+ Adobe creative desktop and web apps plus generative AI credits, from 78.65 euros a month with an annual commitment.",
     "pricing": {
-      "free": "Essai gratuit limité ; pas de version gratuite permanente. Les prix varient selon les régions et les promotions.",
-      "paid": "Single App (ex. Photoshop): 22,99 $ USD/mois (facturation mensuelle) ; Photography: 19,99 $ USD/mois (Photoshop + Lightroom) ; Creative Cloud Standard: 54,99 $ USD/mois (tous les apps, limites web/mobile, 25 crédits Firefly/mois) ; Creative Cloud Pro: 69,99 $ USD/mois (tous les apps, accès complet, plus de crédits Firefly) ; Teams Plans: 84,99 $ USD+/mois (gestion admin, cloud storage augmenté)"
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 78,65 €/mois, plan Creative Cloud Pro (individual)."
     },
-    "defaultMonthlyPrice": 64.9,
-    "compareMonthlyPrice": 64.9,
+    "defaultMonthlyPrice": 78.65,
+    "compareMonthlyPrice": 78.65,
     "affiliateLink": "https://adobecreativecloud.com",
     "websiteUrl": "https://www.adobe.com/creativecloud/plans.html",
     "ogImageUrl": "https://www.adobe.com/cc-shared/assets/img/product-icons/jpg/default.jpg?width=1200&format=pjpg&optimize=medium",
@@ -717,7 +717,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "marc"
+      "SOFIA"
     ]
   },
   {
@@ -2402,8 +2402,8 @@
       "free": "Pas de plan gratuit permanent, essai de 30 jours.",
       "paid": "Dès 203 €/mois, plan Archicad Studio."
     },
-    "defaultMonthlyPrice": 203,
-    "compareMonthlyPrice": 203,
+    "defaultMonthlyPrice": 172.61,
+    "compareMonthlyPrice": 172.61,
     "affiliateLink": "https://graphisoft.com/solutions/archicad",
     "ogImageUrl": "https://www.graphisoft.com/content/uploads/2025/11/archicad-conceptualize-confidently.png",
     "tool_type": "metier",
@@ -12022,7 +12022,8 @@
     "ogImageUrl": "https://api.motion.dev/site/og/page/home.png?title=Motion&amp;description=The+production-grade+animation+library+for+React%2C+JavaScript+and+Vue.",
     "substitution_cluster_v2": "ui-components",
     "functional_needs": [
-      "ui-components"
+      "ui-components",
+      "animation-web"
     ],
     "verticals": [
       "dev-freelance"
@@ -12179,8 +12180,8 @@
       "free": "Pas de plan gratuit permanent, essai de 14 jours.",
       "paid": "Dès 15 €/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 16.32,
+    "compareMonthlyPrice": 16.32,
     "affiliateLink": "https://freshworks.com/freshservice",
     "ogImageUrl": "https://dam.freshworks.com/asset/aac3abf3-7dca-4397-b868-c29415ecebaa/ex-lp-og-image.webp",
     "logo": "https://logo.clearbit.com/freshworks.com",
@@ -13451,7 +13452,8 @@
     "bundle_parent": "google-workspace",
     "substitution_cluster_v2": "team-communication",
     "functional_needs": [
-      "operations-workflow"
+      "operations-workflow",
+      "video-calls"
     ],
     "verticals": [
       "operations"
@@ -13970,7 +13972,8 @@
     "ogImageUrl": "https://gsap.com/GSAP-share-image.png",
     "substitution_cluster_v2": "animation-library",
     "functional_needs": [
-      "animation"
+      "animation",
+      "animation-web"
     ],
     "verticals": [
       "dev-freelance",
@@ -35325,10 +35328,14 @@
     "tool_type": "specialise",
     "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
-      "creator-workflow"
+      "creator-workflow",
+      "analytics-contenu",
+      "idees-contenus",
+      "seo-video"
     ],
     "verticals": [
-      "creator-economy"
+      "creator-economy",
+      "createur-contenu"
     ],
     "relevantFor": [
       "Créateurs YouTube",
@@ -36461,14 +36468,16 @@
     "compareMonthlyPrice": 16.58,
     "affiliateLink": "https://vidiq.com",
     "ogImageUrl": "https://cdn.sanity.io/images/7g6d2cj1/production/7c8f9a95d01c8c4043af4f3c39940ba3870bb1a9-512x512.png?w=1200&amp;q=70&amp;auto=format",
-    "substitution_cluster_v2": "content-creation",
+    "substitution_cluster_v2": "seo-tools",
     "functional_needs": [
       "analytics-contenu",
       "idees-contenus",
-      "seo-video"
+      "seo-video",
+      "creator-workflow"
     ],
     "verticals": [
-      "createur-contenu"
+      "createur-contenu",
+      "creator-economy"
     ],
     "relevantFor": [
       "YouTubeurs",
@@ -38379,7 +38388,8 @@
     "bundle_parent": "maxon-one",
     "substitution_cluster_v2": "3d-software",
     "functional_needs": [
-      "motion-design"
+      "motion-design",
+      "sculpture-3d"
     ],
     "verticals": [
       "motion-video",
@@ -38626,7 +38636,8 @@
     "bundle_parent": "zoom-pro",
     "substitution_cluster_v2": "team-communication",
     "functional_needs": [
-      "collaboration"
+      "collaboration",
+      "video-calls"
     ],
     "verticals": [
       "business-ops",
@@ -39789,8 +39800,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-3d-particles",
     "functional_needs": [
-      "maxon-effect:3d-stroke"
+      "maxon-effect:3d-stroke",
+      "red-giant-effect:3d-particles",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -39812,8 +39826,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Analog_6.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-retro-glitch",
     "functional_needs": [
-      "maxon-effect:analog"
+      "maxon-effect:analog",
+      "universe-effect:retro-glitch",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -39835,8 +39852,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Array_Gun.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:array-gun"
+      "maxon-effect:array-gun",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -39858,8 +39878,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_AV_Club.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-retro-glitch",
     "functional_needs": [
-      "maxon-effect:av-club"
+      "maxon-effect:av-club",
+      "universe-effect:retro-glitch",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -39882,8 +39905,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-compositing",
     "functional_needs": [
-      "maxon-effect:bang"
+      "maxon-effect:bang",
+      "red-giant-effect:compositing",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -39905,8 +39931,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Bokeh_2024_01.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:bokeh"
+      "maxon-effect:bokeh",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -39928,8 +39957,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Carousel.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-utilities",
     "functional_needs": [
-      "maxon-effect:carousel"
+      "maxon-effect:carousel",
+      "universe-effect:utilities",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -39951,8 +39983,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Chromatic_Aberration.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-retro-glitch",
     "functional_needs": [
-      "maxon-effect:chromatic-aberration"
+      "maxon-effect:chromatic-aberration",
+      "universe-effect:retro-glitch",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -39975,8 +40010,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-compositing",
     "functional_needs": [
-      "maxon-effect:chromatic-displacement"
+      "maxon-effect:chromatic-displacement",
+      "red-giant-effect:compositing",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -39998,8 +40036,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_6_Chromatown_Hero.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-retro-glitch",
     "functional_needs": [
-      "maxon-effect:chromatown-tool"
+      "maxon-effect:chromatown-tool",
+      "universe-effect:retro-glitch",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40022,8 +40063,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-color",
     "functional_needs": [
-      "maxon-effect:colorista"
+      "maxon-effect:colorista",
+      "red-giant-effect:color",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40046,8 +40090,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-color",
     "functional_needs": [
-      "maxon-effect:cosmo"
+      "maxon-effect:cosmo",
+      "red-giant-effect:color",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40070,8 +40117,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-color",
     "functional_needs": [
-      "maxon-effect:denoiser"
+      "maxon-effect:denoiser",
+      "red-giant-effect:color",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40094,8 +40144,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-compositing",
     "functional_needs": [
-      "maxon-effect:depth-generator"
+      "maxon-effect:depth-generator",
+      "red-giant-effect:compositing",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40117,8 +40170,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Ecto.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:ecto"
+      "maxon-effect:ecto",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40140,8 +40196,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Electrify_4.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:electrify"
+      "maxon-effect:electrify",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40164,8 +40223,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-color",
     "functional_needs": [
-      "maxon-effect:film"
+      "maxon-effect:film",
+      "red-giant-effect:color",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40187,8 +40249,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Finisher.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:finisher"
+      "maxon-effect:finisher",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40211,8 +40276,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-3d-particles",
     "functional_needs": [
-      "maxon-effect:form"
+      "maxon-effect:form",
+      "red-giant-effect:3d-particles",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40235,8 +40303,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-3d-particles",
     "functional_needs": [
-      "maxon-effect:geo"
+      "maxon-effect:geo",
+      "red-giant-effect:3d-particles",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40258,8 +40329,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glimmer.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:glimmer"
+      "maxon-effect:glimmer",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40281,8 +40355,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glitch_Hero.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-retro-glitch",
     "functional_needs": [
-      "maxon-effect:glitch"
+      "maxon-effect:glitch",
+      "universe-effect:retro-glitch",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40304,8 +40381,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Glow.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:glow"
+      "maxon-effect:glow",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40327,8 +40407,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Grain16.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-retro-glitch",
     "functional_needs": [
-      "maxon-effect:grain16"
+      "maxon-effect:grain16",
+      "universe-effect:retro-glitch",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40350,8 +40433,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Hacker_Text_Hero.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-text",
     "functional_needs": [
-      "maxon-effect:hacker-text"
+      "maxon-effect:hacker-text",
+      "universe-effect:text",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40373,8 +40459,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Halflight_Customizable.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:halflight"
+      "maxon-effect:halflight",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40396,8 +40485,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Heatwave.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:heatwave"
+      "maxon-effect:heatwave",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40419,8 +40511,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Holomatrix.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:holomatrix"
+      "maxon-effect:holomatrix",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40442,8 +40537,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_HUD.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:hud-components"
+      "maxon-effect:hud-components",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40466,8 +40564,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-compositing",
     "functional_needs": [
-      "maxon-effect:king-pin-tracker"
+      "maxon-effect:king-pin-tracker",
+      "red-giant-effect:compositing",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40489,8 +40590,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Knoll_Light_Factory_EZ_Hero.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:knoll-light-factory-ez"
+      "maxon-effect:knoll-light-factory-ez",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40513,8 +40617,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-compositing",
     "functional_needs": [
-      "maxon-effect:lens-distortion-matcher"
+      "maxon-effect:lens-distortion-matcher",
+      "red-giant-effect:compositing",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40536,8 +40643,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Line.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:line"
+      "maxon-effect:line",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40559,8 +40669,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Luster.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:luster"
+      "maxon-effect:luster",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40583,8 +40696,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-color",
     "functional_needs": [
-      "maxon-effect:magicbullet-looks"
+      "maxon-effect:magicbullet-looks",
+      "red-giant-effect:color",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40607,8 +40723,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-3d-particles",
     "functional_needs": [
-      "maxon-effect:mir"
+      "maxon-effect:mir",
+      "red-giant-effect:3d-particles",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40630,8 +40749,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Modes.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:modes"
+      "maxon-effect:modes",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40654,8 +40776,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-color",
     "functional_needs": [
-      "maxon-effect:mojo"
+      "maxon-effect:mojo",
+      "red-giant-effect:color",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40677,8 +40802,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Numbers_Currencies.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-text",
     "functional_needs": [
-      "maxon-effect:numbers"
+      "maxon-effect:numbers",
+      "universe-effect:text",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40701,8 +40829,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-light",
     "functional_needs": [
-      "maxon-effect:optical-glow"
+      "maxon-effect:optical-glow",
+      "red-giant-effect:light",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40724,8 +40855,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Overlight.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:overlight"
+      "maxon-effect:overlight",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40748,8 +40882,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-color",
     "functional_needs": [
-      "maxon-effect:parametric-curve"
+      "maxon-effect:parametric-curve",
+      "red-giant-effect:color",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40771,8 +40908,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe-Pixel_art_Hero-Image-dark.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-dither",
     "functional_needs": [
-      "maxon-effect:pixel-dither"
+      "maxon-effect:pixel-dither",
+      "universe-effect:dither",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40795,8 +40935,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-compositing",
     "functional_needs": [
-      "maxon-effect:primatte-keyer"
+      "maxon-effect:primatte-keyer",
+      "red-giant-effect:compositing",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40818,8 +40961,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Progresso_Animate.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-utilities",
     "functional_needs": [
-      "maxon-effect:progresso"
+      "maxon-effect:progresso",
+      "universe-effect:utilities",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40841,8 +40987,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Quantum_HUD.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:quantum"
+      "maxon-effect:quantum",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40865,8 +41014,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-light",
     "functional_needs": [
-      "maxon-effect:real-lens-flares"
+      "maxon-effect:real-lens-flares",
+      "red-giant-effect:light",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40889,8 +41041,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-compositing",
     "functional_needs": [
-      "maxon-effect:reflection"
+      "maxon-effect:reflection",
+      "red-giant-effect:compositing",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40912,8 +41067,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Reframe_Hero.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-utilities",
     "functional_needs": [
-      "maxon-effect:reframe"
+      "maxon-effect:reframe",
+      "universe-effect:utilities",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40936,8 +41094,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-color",
     "functional_needs": [
-      "maxon-effect:renoiser"
+      "maxon-effect:renoiser",
+      "red-giant-effect:color",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40959,8 +41120,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Retrograde.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-retro-glitch",
     "functional_needs": [
-      "maxon-effect:retrograde"
+      "maxon-effect:retrograde",
+      "universe-effect:retro-glitch",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -40982,8 +41146,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Screen_Text_Code_Warrior.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-text",
     "functional_needs": [
-      "maxon-effect:screen-text"
+      "maxon-effect:screen-text",
+      "universe-effect:text",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41006,8 +41173,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-compositing",
     "functional_needs": [
-      "maxon-effect:shadow"
+      "maxon-effect:shadow",
+      "red-giant-effect:compositing",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41030,8 +41200,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-light",
     "functional_needs": [
-      "maxon-effect:shine"
+      "maxon-effect:shine",
+      "red-giant-effect:light",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41053,8 +41226,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Shrinkray_Hero.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-utilities",
     "functional_needs": [
-      "maxon-effect:shrinkray"
+      "maxon-effect:shrinkray",
+      "universe-effect:utilities",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41076,8 +41252,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_6_Sketchify_Hero.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:sketchify-tool"
+      "maxon-effect:sketchify-tool",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41100,8 +41279,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-3d-particles",
     "functional_needs": [
-      "maxon-effect:sound-keys"
+      "maxon-effect:sound-keys",
+      "red-giant-effect:3d-particles",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41124,8 +41306,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-compositing",
     "functional_needs": [
-      "maxon-effect:spot-clone-tracker"
+      "maxon-effect:spot-clone-tracker",
+      "red-giant-effect:compositing",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41148,8 +41333,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-light",
     "functional_needs": [
-      "maxon-effect:starglow"
+      "maxon-effect:starglow",
+      "red-giant-effect:light",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41172,8 +41360,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-compositing",
     "functional_needs": [
-      "maxon-effect:supercomp"
+      "maxon-effect:supercomp",
+      "red-giant-effect:compositing",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41195,8 +41386,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Symbol_Mapper_Hero.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-text",
     "functional_needs": [
-      "maxon-effect:symbol-mapper-tool"
+      "maxon-effect:symbol-mapper-tool",
+      "universe-effect:text",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41219,8 +41413,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-3d-particles",
     "functional_needs": [
-      "maxon-effect:tao"
+      "maxon-effect:tao",
+      "red-giant-effect:3d-particles",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41242,8 +41439,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Text_Tile.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-text",
     "functional_needs": [
-      "maxon-effect:text-tile"
+      "maxon-effect:text-tile",
+      "universe-effect:text",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41265,8 +41465,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Texturize.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:texturize"
+      "maxon-effect:texturize",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41288,8 +41491,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_4_Texturize_Motion_2.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:texturize-motion"
+      "maxon-effect:texturize-motion",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41311,8 +41517,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Title_Motion_Instant.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-text",
     "functional_needs": [
-      "maxon-effect:title-motion"
+      "maxon-effect:title-motion",
+      "universe-effect:text",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41335,8 +41544,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-3d-particles",
     "functional_needs": [
-      "maxon-effect:trapcode-particular"
+      "maxon-effect:trapcode-particular",
+      "red-giant-effect:3d-particles",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41358,8 +41570,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_Cast_Hero.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-text",
     "functional_needs": [
-      "maxon-effect:type-cast"
+      "maxon-effect:type-cast",
+      "universe-effect:text",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41381,8 +41596,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Type_On_Customization.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-text",
     "functional_needs": [
-      "maxon-effect:type-on"
+      "maxon-effect:type-on",
+      "universe-effect:text",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41404,8 +41622,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Typographic_Social.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-text",
     "functional_needs": [
-      "maxon-effect:typographic"
+      "maxon-effect:typographic",
+      "universe-effect:text",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41427,8 +41648,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_VHS_Presets2.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-retro-glitch",
     "functional_needs": [
-      "maxon-effect:vhs"
+      "maxon-effect:vhs",
+      "universe-effect:retro-glitch",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41450,8 +41674,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Blur_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:blur"
+      "maxon-effect:blur",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41473,8 +41700,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Chromatic_Glow_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:chromatic-glow"
+      "maxon-effect:chromatic-glow",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41496,8 +41726,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Compound_Blur_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:compound-blur"
+      "maxon-effect:compound-blur",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41519,8 +41752,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Edge_Glow_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:edge-glow"
+      "maxon-effect:edge-glow",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41542,8 +41778,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Glo-Fi2_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:glo-fi-ii"
+      "maxon-effect:glo-fi-ii",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41565,8 +41804,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Glow_GloFi_hero.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:glo-fi"
+      "maxon-effect:glo-fi",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41588,8 +41830,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Point_Zoom_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:point-zoom"
+      "maxon-effect:point-zoom",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41611,8 +41856,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Spot_Blur_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-blur-glow",
     "functional_needs": [
-      "maxon-effect:spot-blur"
+      "maxon-effect:spot-blur",
+      "universe-effect:blur-glow",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41634,8 +41882,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Generator_FractalBackground_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-backgrounds",
     "functional_needs": [
-      "maxon-effect:fractal-background"
+      "maxon-effect:fractal-background",
+      "universe-effect:backgrounds",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41657,8 +41908,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Gradient_Ramp2_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-backgrounds",
     "functional_needs": [
-      "maxon-effect:gradient-ramp"
+      "maxon-effect:gradient-ramp",
+      "universe-effect:backgrounds",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41680,8 +41934,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Soft_Gradient_BG_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-backgrounds",
     "functional_needs": [
-      "maxon-effect:soft-gradient-background"
+      "maxon-effect:soft-gradient-background",
+      "universe-effect:backgrounds",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41703,8 +41960,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Spectralicious_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-backgrounds",
     "functional_needs": [
-      "maxon-effect:spectralicious"
+      "maxon-effect:spectralicious",
+      "universe-effect:backgrounds",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41726,8 +41986,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Turbulence_Noise_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-backgrounds",
     "functional_needs": [
-      "maxon-effect:turbulence-noise"
+      "maxon-effect:turbulence-noise",
+      "universe-effect:backgrounds",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41749,8 +42012,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Blinds_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:blinds"
+      "maxon-effect:blinds",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41772,8 +42038,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Blur_BokehTransition_hero2.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:bokeh-transition"
+      "maxon-effect:bokeh-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41795,8 +42064,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CamShakeTrans_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:camera-shake-transition"
+      "maxon-effect:camera-shake-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41818,8 +42090,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CarouselTrans_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:carousel-transition"
+      "maxon-effect:carousel-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41841,8 +42116,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ChannelBlur_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:channel-blur"
+      "maxon-effect:channel-blur",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41864,8 +42142,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ChannelBlur_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:channel-surf"
+      "maxon-effect:channel-surf",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41887,8 +42168,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ClockWipe_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:clock-wipe"
+      "maxon-effect:clock-wipe",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41910,8 +42194,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_CarouselTrans_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:color-mosaic"
+      "maxon-effect:color-mosaic",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41933,8 +42220,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ColorStripe_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:color-stripe"
+      "maxon-effect:color-stripe",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41956,8 +42246,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Cube_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:cube"
+      "maxon-effect:cube",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -41979,8 +42272,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_DiamondWave_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:diamond-wave"
+      "maxon-effect:diamond-wave",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42002,8 +42298,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_DollyFade_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:dolly-fade"
+      "maxon-effect:dolly-fade",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42025,8 +42324,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ExposureBlur_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:exposure-blur-transition"
+      "maxon-effect:exposure-blur-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42048,8 +42350,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FilmTransition_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:film-transition"
+      "maxon-effect:film-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42071,8 +42376,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_FlickerCut_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:flicker-cut"
+      "maxon-effect:flicker-cut",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42094,8 +42402,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Fold_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:fold"
+      "maxon-effect:fold",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42117,8 +42428,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_GlitchTransition_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:glitch-transition"
+      "maxon-effect:glitch-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42140,8 +42454,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_InsideCube_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:inside-cube"
+      "maxon-effect:inside-cube",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42163,8 +42480,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_KnollTrans_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:knoll-light-transition"
+      "maxon-effect:knoll-light-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42186,8 +42506,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_LinearWipe_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:linear-wipe"
+      "maxon-effect:linear-wipe",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42209,8 +42532,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RetroTrans_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:retrograde-transition"
+      "maxon-effect:retrograde-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42232,8 +42558,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_RubixCube_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:rubix-cube"
+      "maxon-effect:rubix-cube",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42255,8 +42584,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_ShapeWipe_Presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:shape-wipe"
+      "maxon-effect:shape-wipe",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42278,8 +42610,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Slide_Presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:slide"
+      "maxon-effect:slide",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42301,8 +42636,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SoftEdgeWipe_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:soft-edge-wipe"
+      "maxon-effect:soft-edge-wipe",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42324,8 +42662,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SpectraTrans_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:spectralicious-transition"
+      "maxon-effect:spectralicious-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42347,8 +42688,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_stretch.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:stretch-transition-tool"
+      "maxon-effect:stretch-transition-tool",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42370,8 +42714,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_SwishPan_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:swish-pan"
+      "maxon-effect:swish-pan",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42393,8 +42740,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TriangleWave_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:triangle-wave"
+      "maxon-effect:triangle-wave",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42416,8 +42766,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_TurbulenceTransition_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:turbulence-transition"
+      "maxon-effect:turbulence-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42439,8 +42792,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Unfold_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:unfold"
+      "maxon-effect:unfold",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42462,8 +42818,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_VHSTransition_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:vhs-transition"
+      "maxon-effect:vhs-transition",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42485,8 +42844,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Transitions_Warp_presets.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-transitions",
     "functional_needs": [
-      "maxon-effect:warp"
+      "maxon-effect:warp",
+      "universe-effect:transitions",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42508,8 +42870,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Camera_Shake_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-utilities",
     "functional_needs": [
-      "maxon-effect:camera-shake"
+      "maxon-effect:camera-shake",
+      "universe-effect:utilities",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42531,8 +42896,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_CP_Fisheye_Fixer_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-utilities",
     "functional_needs": [
-      "maxon-effect:fisheye-fixer"
+      "maxon-effect:fisheye-fixer",
+      "universe-effect:utilities",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42554,8 +42922,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Picture_In_Picture_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-utilities",
     "functional_needs": [
-      "maxon-effect:picture-in-picture"
+      "maxon-effect:picture-in-picture",
+      "universe-effect:utilities",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42577,8 +42948,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/socialize_universe.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-utilities",
     "functional_needs": [
-      "maxon-effect:socialize"
+      "maxon-effect:socialize",
+      "universe-effect:utilities",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42600,8 +42974,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Unmult_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-utilities",
     "functional_needs": [
-      "maxon-effect:unmult"
+      "maxon-effect:unmult",
+      "universe-effect:utilities",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42623,8 +43000,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/mulitone_universe.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-dither",
     "functional_needs": [
-      "maxon-effect:multitone"
+      "maxon-effect:multitone",
+      "universe-effect:dither",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42646,8 +43026,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Long-Shadow_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:long-shadow"
+      "maxon-effect:long-shadow",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42669,8 +43052,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Misfire_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-retro-glitch",
     "functional_needs": [
-      "maxon-effect:misfire"
+      "maxon-effect:misfire",
+      "universe-effect:retro-glitch",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42692,8 +43078,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Noir_Moderne_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:noir-moderne"
+      "maxon-effect:noir-moderne",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42740,8 +43129,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-3d-particles",
     "functional_needs": [
-      "maxon-effect:echospace"
+      "maxon-effect:echospace",
+      "red-giant-effect:3d-particles",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42764,8 +43156,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-3d-particles",
     "functional_needs": [
-      "maxon-effect:horizon"
+      "maxon-effect:horizon",
+      "red-giant-effect:3d-particles",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42787,8 +43182,11 @@
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Universe_Logo_Motion.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-text",
     "functional_needs": [
-      "maxon-effect:logo-motion"
+      "maxon-effect:logo-motion",
+      "universe-effect:text",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42811,8 +43209,11 @@
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "bundle_parent": "ae-red-giant",
+    "substitution_cluster_v2": "red-giant-light",
     "functional_needs": [
-      "maxon-effect:lux"
+      "maxon-effect:lux",
+      "red-giant-effect:light",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42834,8 +43235,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-dither",
     "functional_needs": [
-      "maxon-effect:halftone-dither"
+      "maxon-effect:halftone-dither",
+      "universe-effect:dither",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42857,8 +43261,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-dither",
     "functional_needs": [
-      "maxon-effect:ordered-dither"
+      "maxon-effect:ordered-dither",
+      "universe-effect:dither",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42880,8 +43287,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-dither",
     "functional_needs": [
-      "maxon-effect:threshold-dither"
+      "maxon-effect:threshold-dither",
+      "universe-effect:dither",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42903,8 +43313,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-dither",
     "functional_needs": [
-      "maxon-effect:error-diffuse-dither"
+      "maxon-effect:error-diffuse-dither",
+      "universe-effect:dither",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42926,8 +43339,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-dither",
     "functional_needs": [
-      "maxon-effect:custom-dither"
+      "maxon-effect:custom-dither",
+      "universe-effect:dither",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -42949,8 +43365,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/Uni_Stylize_CustomDither_hero.png",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-dither",
     "functional_needs": [
-      "maxon-effect:palettes"
+      "maxon-effect:palettes",
+      "universe-effect:dither",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -43068,8 +43487,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_Prism_Displacement_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-stylize",
     "functional_needs": [
-      "maxon-effect:prism-displacement"
+      "maxon-effect:prism-displacement",
+      "universe-effect:stylize",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",
@@ -43091,8 +43513,11 @@
     "ogImageUrl": "https://help.maxon.net/rg/en-us/Content/Resources/Images/U_RGB_Seperation_AR_universe.jpg",
     "tool_type": "plugin",
     "bundle_parent": "red-giant-universe",
+    "substitution_cluster_v2": "universe-retro-glitch",
     "functional_needs": [
-      "maxon-effect:rgb-separation"
+      "maxon-effect:rgb-separation",
+      "universe-effect:retro-glitch",
+      "after-effects-plugin"
     ],
     "verticals": [
       "motion-video",

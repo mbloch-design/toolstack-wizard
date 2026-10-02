@@ -16,14 +16,15 @@
   },
   "sources": [
     { "id": "s1", "url": "https://www.freshworks.com/freshservice/pricing/", "tier": 1, "accessedOn": "2026-09-25", "title": "Freshservice pricing" },
-    { "id": "s2", "url": "https://www.freshworks.com/freshservice/features/", "tier": 1, "accessedOn": "2026-09-25", "title": "Freshservice features" }
+    { "id": "s2", "url": "https://www.freshworks.com/freshservice/features/", "tier": 1, "accessedOn": "2026-09-25", "title": "Freshservice features" },
+    { "id": "s3", "url": "https://www.freshworks.com/freshservice/pricing/", "tier": 1, "accessedOn": "2026-10-02", "checkedOn": "2026-10-02", "title": "Freshservice pricing, re-confirmed live on 2026-10-02: the page serves USD by default (Starter $19, Growth $49, Pro $99/agent/month billed annually, Enterprise custom; Freddy AI Copilot $29/agent/month, E-signature $90/pack, Orchestration $250/pack, Connector app tasks $80/5000, Project Management licenses $15/user/month), with EUR shown on the same URL when accessed from an EU location (Starter 15, Growth 40, Pro 84/agent/month, Freddy AI Copilot 29/agent/month) and no visible currency or country switcher; geolocation drives which grid is served." }
   ],
   "pricing": {
     "model": "per_seat",
-    "currency": "EUR",
+    "currency": "USD",
     "pricingUrl": "https://www.freshworks.com/freshservice/pricing/",
-    "verifiedOn": "2026-09-25",
-    "region": "EU",
+    "verifiedOn": "2026-10-02",
+    "region": "US (page serves USD to US-geolocated visitors; EUR grid also published for EU visitors on the same URL, no switcher found)",
     "taxIncluded": null,
     "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
     "trial": { "days": 14, "sourceIds": ["s1"] },
@@ -33,30 +34,30 @@
         "name": "Starter",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 15, "oneTime": null },
+        "price": { "monthly": null, "annualPerMonth": 19, "oneTime": null },
         "onQuote": false,
         "keyLimits": [{ "en": "Incident management, knowledge management, task management and support portal only", "fr": "Gestion des incidents, base de connaissances, gestion des tâches et portail de support uniquement" }],
-        "sourceIds": ["s1"]
+        "sourceIds": ["s3"]
       },
       {
         "key": "growth",
         "name": "Growth",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 40, "oneTime": null },
+        "price": { "monthly": null, "annualPerMonth": 49, "oneTime": null },
         "onQuote": false,
         "keyLimits": [{ "en": "Adds service catalog, SLA management, on-call management and cloud management", "fr": "Ajoute le catalogue de services, la gestion des SLA, la gestion d'astreinte et la gestion cloud" }],
-        "sourceIds": ["s1"]
+        "sourceIds": ["s3"]
       },
       {
         "key": "pro",
         "name": "Pro",
         "unit": "seat",
         "minSeats": 1,
-        "price": { "monthly": null, "annualPerMonth": 84, "oneTime": null },
+        "price": { "monthly": null, "annualPerMonth": 99, "oneTime": null },
         "onQuote": false,
         "keyLimits": [{ "en": "Adds problem, change and major incident management, workload management, release management and employee journeys", "fr": "Ajoute la gestion des problèmes, des changements, des incidents majeurs, la gestion de charge, la gestion des releases et les parcours employés" }],
-        "sourceIds": ["s1"]
+        "sourceIds": ["s3"]
       },
       {
         "key": "enterprise",
@@ -70,14 +71,26 @@
       }
     ],
     "comparePlanKey": "starter",
+    "secondaryPrices": {
+      "currency": "EUR",
+      "pricingUrl": "https://www.freshworks.com/freshservice/pricing/",
+      "verifiedOn": "2026-10-02",
+      "sourceIds": ["s3"],
+      "plans": {
+        "starter": { "monthly": null, "annualPerMonth": 15, "oneTime": null },
+        "growth": { "monthly": null, "annualPerMonth": 40, "oneTime": null },
+        "pro": { "monthly": null, "annualPerMonth": 84, "oneTime": null }
+      }
+    },
     "addOns": [
-      { "name": "Freddy AI Copilot", "unit": "seat", "sourceIds": ["s1"] },
+      { "name": "Freddy AI Copilot", "unit": "seat", "sourceIds": ["s3"] },
       { "name": "Asset Units (IT Asset Management), sold in packs of 500", "unit": "usage", "sourceIds": ["s1"] }
     ],
     "cautions": [
       { "en": "Price is per agent per month: a 5-agent Starter desk costs five times the listed rate, not the headline number.", "fr": "Le prix est par agent et par mois : un support à 5 agents coûte cinq fois le tarif affiché, pas le montant en une.", "sourceIds": ["s1"] },
-      { "en": "Freddy AI Copilot (€29/agent/month) is a separate add-on on top of Pro and Enterprise, not bundled into the base seat price.", "fr": "Freddy AI Copilot (29 €/agent/mois) est un add-on séparé sur Pro et Enterprise, non inclus dans le prix de base du siège.", "sourceIds": ["s1"] },
-      { "en": "Exact monthly (no annual commitment) per-agent price could not be confirmed; the pricing page defaulted to annual billing.", "fr": "Le tarif mensuel exact sans engagement annuel n'a pas pu être confirmé ; la page de tarifs affichait par défaut la facturation annuelle.", "sourceIds": ["s1"] }
+      { "en": "Freddy AI Copilot ($29/agent/month) is a separate add-on on top of Pro and Enterprise, not bundled into the base seat price.", "fr": "Freddy AI Copilot (29 €/agent/mois) est un add-on séparé sur Pro et Enterprise, non inclus dans le prix de base du siège.", "sourceIds": ["s3"] },
+      { "en": "Exact monthly (no annual commitment) per-agent price could not be confirmed; the pricing page defaulted to annual billing.", "fr": "Le tarif mensuel exact sans engagement annuel n'a pas pu être confirmé ; la page de tarifs affichait par défaut la facturation annuelle.", "sourceIds": ["s1"] },
+      { "en": "The page serves USD or EUR depending on the visitor's location, with no visible currency or country switcher; US pricing (Starter $19, Growth $49, Pro $99) and EU pricing (Starter 15, Growth 40, Pro 84) were both confirmed live on the same URL on 2026-10-02.", "fr": "La page affiche des dollars ou des euros selon la localisation du visiteur, sans sélecteur de devise ou de pays visible ; le tarif US (Starter 19$, Growth 49$, Pro 99$) et le tarif EU (Starter 15, Growth 40, Pro 84) ont tous deux été confirmés en direct sur la même URL le 2026-10-02.", "sourceIds": ["s3"] }
     ]
   },
   "product": {
@@ -88,7 +101,7 @@
     ],
     "limitations": [
       { "en": "Problem, change and major incident management require Pro or above; Starter and Growth only cover basic incident/knowledge/task management.", "fr": "La gestion des problèmes, des changements et des incidents majeurs nécessite Pro ou plus ; Starter et Growth ne couvrent que la gestion basique des incidents/connaissances/tâches.", "sourceIds": ["s1"] },
-      { "en": "Freddy AI Copilot is a paid add-on on every tier except Enterprise, where it is still a separate line item at €29/agent/month.", "fr": "Freddy AI Copilot est un add-on payant sur tous les paliers sauf Enterprise, où il reste une ligne séparée à 29 €/agent/mois.", "sourceIds": ["s1"] }
+      { "en": "Freddy AI Copilot is a paid add-on on every tier except Enterprise, where it is still a separate line item at $29/agent/month.", "fr": "Freddy AI Copilot est un add-on payant sur tous les paliers sauf Enterprise, où il reste une ligne séparée à 29 €/agent/mois.", "sourceIds": ["s3"] }
     ],
     "integrations": [
       { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] },
@@ -121,7 +134,7 @@
     "puissance": 4,
     "reversibilite": 3,
     "evidence": {
-      "valeurAjoutee": { "en": "Starter at €15/agent/month covers basic ticketing cheaply, but the features a growing team actually needs sit behind Growth and Pro, raising the real cost per agent.", "fr": "Starter à 15 €/agent/mois couvre le ticketing basique à bas coût, mais les fonctionnalités dont une équipe en croissance a réellement besoin sont derrière Growth et Pro, ce qui augmente le coût réel par agent.", "sourceIds": ["s1"] },
+      "valeurAjoutee": { "en": "Starter at $19/agent/month covers basic ticketing cheaply, but the features a growing team actually needs sit behind Growth and Pro, raising the real cost per agent.", "fr": "Starter à 15 €/agent/mois couvre le ticketing basique à bas coût, mais les fonctionnalités dont une équipe en croissance a réellement besoin sont derrière Growth et Pro, ce qui augmente le coût réel par agent.", "sourceIds": ["s3"] },
       "simplicite": { "en": "Ticketing and the self-service portal are usable quickly, but ITAM discovery and workflow automation need real configuration time.", "fr": "Le ticketing et le portail libre-service sont utilisables rapidement, mais la découverte ITAM et l'automatisation de workflows demandent un vrai temps de configuration.", "sourceIds": ["s2"] },
       "utilisation": { "en": "Delivers incident, asset and service management as advertised without needing third-party tools for the core ITSM workflow.", "fr": "Fournit la gestion des incidents, des actifs et des services comme annoncé, sans outil tiers pour le flux ITSM principal.", "sourceIds": ["s2"] },
       "puissance": { "en": "Covers ITSM, ITAM, ITOM and enterprise service management in one platform, a broad feature set among helpdesk tools.", "fr": "Couvre ITSM, ITAM, ITOM et la gestion de service d'entreprise dans une seule plateforme, un périmètre large parmi les outils de helpdesk.", "sourceIds": ["s2"] },
@@ -133,7 +146,7 @@
     "tagline": { "en": "IT helpdesk", "fr": "Helpdesk IT" },
     "shortDescription": { "en": "IT service and asset management platform with a per-agent pricing ladder from basic ticketing to enterprise ITSM.", "fr": "Plateforme de gestion de service et d'actifs IT avec une grille de prix par agent, du ticketing basique à l'ITSM d'entreprise." },
     "longDescription": {
-      "en": "Freshservice covers the standard ITSM stack: incident, problem and change management, an asset CMDB, and a self-service portal, sold per agent per month. Starter at €15/agent/month is genuinely cheap for basic ticketing, but the tools that make an ITSM platform worth adopting, service catalog, SLA management, change management, only appear from Growth (€40) and Pro (€84) up.\n\nFreddy AI Copilot is priced and sold separately (€29/agent/month) on every tier except Enterprise, where it comes bundled. For a small IT team, the real monthly cost is the agent count times the tier price, plus any AI add-on, not the headline Starter number.\n\nEnterprise service management extends the same ticketing engine to HR, Legal and Finance, which is useful once a company outgrows a single-department helpdesk but adds complexity a very small team may not need yet.",
+      "en": "Freshservice covers the standard ITSM stack: incident, problem and change management, an asset CMDB, and a self-service portal, sold per agent per month. Starter at $19/agent/month is genuinely cheap for basic ticketing, but the tools that make an ITSM platform worth adopting, service catalog, SLA management, change management, only appear from Growth ($49) and Pro ($99) up.\n\nFreddy AI Copilot is priced and sold separately ($29/agent/month) on every tier except Enterprise, where it comes bundled. For a small IT team, the real monthly cost is the agent count times the tier price, plus any AI add-on, not the headline Starter number.\n\nEnterprise service management extends the same ticketing engine to HR, Legal and Finance, which is useful once a company outgrows a single-department helpdesk but adds complexity a very small team may not need yet.",
       "fr": "Freshservice couvre la pile ITSM standard : gestion des incidents, des problèmes et des changements, une CMDB d'actifs, et un portail libre-service, vendus par agent et par mois. Starter à 15 €/agent/mois est vraiment peu cher pour du ticketing basique, mais les outils qui justifient d'adopter une plateforme ITSM, catalogue de services, gestion des SLA, gestion des changements, n'apparaissent qu'à partir de Growth (40 €) et Pro (84 €).\n\nFreddy AI Copilot est tarifé et vendu séparément (29 €/agent/mois) sur tous les paliers sauf Enterprise, où il est inclus. Pour une petite équipe IT, le coût mensuel réel est le nombre d'agents multiplié par le prix du palier, plus l'add-on IA éventuel, pas le chiffre Starter en une.\n\nLa gestion de service d'entreprise étend le même moteur de ticketing aux RH, au Juridique et à la Finance, utile une fois qu'une entreprise dépasse un helpdesk mono-département, mais ajoute une complexité dont une très petite équipe n'a pas forcément besoin tout de suite."
     },
     "pros": [
@@ -154,7 +167,8 @@
   },
   "unknowns": [
     "Exact monthly (no annual commitment) per-agent price for each tier was not confirmed; the pricing page defaulted to annual billing.",
-    "Whether displayed EUR prices apply globally or vary by region/country was not confirmed."
+    "Whether USD or EUR is shown for other regions (UK, APAC, etc.) was not confirmed; only the US and EU grids were checked."
   ],
-  "conflicts": []
+  "conflicts": [],
+  "priceCheckedOn": "2026-10-02"
 }

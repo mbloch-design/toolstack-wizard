@@ -18,13 +18,14 @@
   "sources": [
     { "id": "s1", "url": "https://www.presentations.ai/blog/prezi-pricing", "tier": 2, "accessedOn": "2026-09-25", "title": "Prezi Pricing 2026: Plans, Cost, Better Alternatives" },
     { "id": "s2", "url": "https://costbench.com/software/ai-presentations/prezi/", "tier": 2, "accessedOn": "2026-09-25", "title": "Prezi Pricing 2026: 5 Plans from Free to $39/user/month" },
-    { "id": "s3", "url": "https://prezi.com/pricing/", "tier": 1, "accessedOn": "2026-10-01", "title": "Prezi official pricing (Individual and Business tabs, full plan comparison table)" }
+    { "id": "s3", "url": "https://prezi.com/pricing/", "tier": 1, "accessedOn": "2026-10-01", "title": "Prezi official pricing (Individual and Business tabs, full plan comparison table)" },
+    { "id": "s4", "url": "https://prezi.com/pricing/", "tier": 1, "accessedOn": "2026-10-02", "checkedOn": "2026-10-02", "title": "Prezi pricing re-checked for a USD grid (live browser): only a language selector exists (no country/currency option); ?country=US&currency=USD query params had no effect. Standard/Plus/Premium confirmed at EUR 5/15/25 per month (billed annually)." }
   ],
   "pricing": {
     "model": "freemium",
     "currency": "EUR",
     "pricingUrl": "https://prezi.com/pricing/",
-    "verifiedOn": "2026-10-01",
+    "verifiedOn": "2026-10-02",
     "region": "EU (page served in EUR from a France-based session, in both French and English UI; a US-region USD price was not reachable)",
     "taxIncluded": null,
     "freePlan": { "exists": true, "limits": { "en": "Basic plan, confirmed as one of the official tabs (Basic / Individual / Students & Educators / Business); public presentations only, per third-party pricing research for the exact storage limit.", "fr": "Offre Basic, confirmée comme l'un des onglets officiels (Basic / Individuel / Étudiants et enseignants / Entreprises) ; présentations publiques uniquement, limite de stockage exacte selon une étude tarifaire tierce." }, "sourceIds": ["s3", "s2"] },

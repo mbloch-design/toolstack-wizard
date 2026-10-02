@@ -30,7 +30,7 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 
 ## Catalogue
 
-- 1347 canonical tool records are included in the generated catalogue.
+- 1348 canonical tool records are included in the generated catalogue.
 - [Machine-readable catalogue](https://tooltrim.com/llms-full.txt)
 - [Editorial index: guide and comparison summaries](https://tooltrim.com/llms-editorial.txt)
 - 84 localized guide pages and 166 localized comparison pages are included in the editorial index, generated from the same build as the sitemap.
