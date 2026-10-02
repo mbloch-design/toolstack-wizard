@@ -34572,3 +34572,42 @@ img[data-logo-loading] {
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .td-localnav { background: var(--color-bg); }
 }
+/* ── Fiche outil : apparitions douces au défilement (2 oct.) ──
+   Les sections montent de 16 px en apparaissant. La classe .td-reveal n'est
+   posée qu'après le montage (le HTML servi reste visible) ; rien en
+   mouvement réduit. La note de la carte se remplit à l'arrivée. */
+@media (prefers-reduced-motion: no-preference) {
+  .td-reveal { opacity: 0; transform: translateY(16px); }
+  .td-reveal.is-revealed {
+    opacity: 1; transform: none;
+    transition: opacity 600ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .td-decision-verdict-gauge-fill { animation: td-gauge-fill 1100ms cubic-bezier(0.2, 0.8, 0.2, 1) 200ms both; }
+  .td-decision-verdict-score strong { animation: td-rise 600ms cubic-bezier(0.2, 0.8, 0.2, 1) 150ms both; display: inline-block; }
+}
+@keyframes td-gauge-fill { from { stroke-dashoffset: 87.96px; } }
+@keyframes td-rise { from { opacity: 0; transform: translateY(6px); } }
+/* ── Fiche outil : couleur d'accent tirée du logo (2 oct.) ──
+   --tool-accent est posé en style sur la fiche (src/data/toolAccents.json,
+   gen-tool-accents.mjs). Pas de classe dédiée : une classe présente sur une
+   partie des fiches seulement doublait les variantes de CSS critique (budget
+   du build dépassé). Les dérivées ci-dessous deviennent invalides sans
+   accent, et chaque règle retombe alors sur sa couleur d'origine (repli de
+   var()). Teintes unies seulement, pas de dégradé. */
+.td-tool-page {
+  --tool-accent-ink: color-mix(in oklab, var(--tool-accent) 68%, #000);
+  --tool-accent-soft: color-mix(in srgb, var(--tool-accent) 9%, var(--color-surface));
+  --tool-accent-line: color-mix(in srgb, var(--tool-accent) 32%, var(--color-border));
+}
+.dark .td-tool-page { --tool-accent-ink: color-mix(in oklab, var(--tool-accent) 70%, #fff); }
+.td-tool-page .td-hero-logo { background: var(--tool-accent-soft, var(--color-surface)); border-color: var(--tool-accent-line, var(--color-border)); }
+.td-tool-page .td-tool-subnav a[aria-current="page"] { color: var(--tool-accent-ink, var(--color-text)); }
+.td-tool-page .td-localnav-links a[aria-current="page"],
+.td-tool-page .td-localnav-links a:hover,
+.td-tool-page .td-localnav .pin-tool-button:hover,
+.td-tool-page .td-localnav-title:hover > span:last-child { color: var(--tool-accent-ink, hsl(var(--primary))); }
+.td-tool-page .td-localnav-links a[aria-current="page"]::after { background: var(--tool-accent-ink, hsl(var(--primary))); }
+.td-tool-page .td-localnav-logo { border-radius: 8px; background: var(--tool-accent-soft, transparent); box-shadow: inset 0 0 0 1px var(--tool-accent-line, transparent); }
+.td-tool-page .td-eyebrow { color: var(--tool-accent-ink, var(--color-muted)); }
+.td-tool-page .td-plan--reference { border-color: var(--tool-accent-ink, var(--color-text)); }
+.td-tool-page .td-plan-badge { background: var(--tool-accent-ink, var(--color-text)); }

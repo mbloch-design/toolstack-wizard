@@ -1,3 +1,9 @@
+## 2026-10-02 : Fiche outil, fraîcheur
+
+- Apparitions douces au défilement (sections, jauge de note qui se remplit), posées seulement après le montage : le HTML servi reste visible, rien en mouvement réduit.
+- Couleur d'accent tirée du logo de chaque outil (`npm run gen:tool-accents`, 946 outils sur 1 348 ; logos noirs ou gris neutres) sur le cadre du logo, les onglets actifs, les intitulés et le plan de référence.
+- Piège évité : une classe d'accent présente sur une partie des fiches doublait les variantes de CSS critique (15 059 fichiers, CSS 41 Mio, budgets dépassés). L'accent passe par une variable avec repli, sans classe. Build PASS : 14 894 fichiers, CSS 35,0 Mio sur 36, HTML 733,0 Mio sur 745.
+
 ## 2026-10-02 : Fiche outil, refonte UX
 
 - Le contenu sert à choisir avant l'achat, la colonne de droite à explorer. Ordre : médias, À propos, avantages et inconvénients, quand ça a du sens, tarifs, alternatives, notre avis, pour aller plus loin, FAQ, guides.

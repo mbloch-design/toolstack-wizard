@@ -36,6 +36,7 @@ import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import { toolPriceLine } from "@/lib/toolPriceLine";
 import ToolExplorePanel from "@/components/tool/ToolExplorePanel";
+import toolAccents from "@/data/toolAccents.json";
 import TapstitchDecision from "@/components/tool/TapstitchDecision";
 import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import { splitRatingEvidence, collectRatingSources } from "@/lib/ratingEvidence";
@@ -127,6 +128,31 @@ const ToolDetailPage = () => {
   /* ── Tous les hooks doivent être déclarés AVANT les returns conditionnels ──
      (Rules of Hooks — sinon React error #300/#310 en concurrent mode)        */
 
+
+  // Soft reveal on scroll: sections rise a few pixels as they come into
+  // view. Content stays visible without JS (crawlers, prerender): the page
+  // only opts in once mounted, and reduced-motion users get no animation.
+  useEffect(() => {
+    const body = scrollBodyRef.current;
+    if (!body || typeof IntersectionObserver === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const targets = Array.from(body.children) as HTMLElement[];
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-revealed");
+        observer.unobserve(entry.target);
+      }
+    }, { rootMargin: "0px 0px -8% 0px" });
+    targets.forEach((target) => {
+      target.classList.add("td-reveal");
+      observer.observe(target);
+    });
+    return () => {
+      observer.disconnect();
+      targets.forEach((target) => target.classList.remove("td-reveal", "is-revealed"));
+    };
+  }, [tool?.slug, lang, loading, subPage]);
 
   // Re-run once loading ends: while the tool loads, the page renders a
   // spinner and the hero does not exist yet, so the observer would never
@@ -357,6 +383,9 @@ const ToolDetailPage = () => {
   const relatedGuides = getGuidesForTool(tool.slug || tool.id, lang);
   const baseToolPath = `${prefix}/tool/${tool.slug || tool.id}`;
   const mobileBarPrice = toolPriceLine(tool, lang, t).priceLine;
+  // Accent colour drawn from the tool's logo (scripts/gen-tool-accents.mjs);
+  // a black, white or grey logo has none and the page stays neutral.
+  const toolAccent = (toolAccents as Record<string, string>)[tool.slug || tool.id] || null;
   const subpageLinks = [
     { key: "presentation", label: t("Vue d’ensemble", "Overview"), to: baseToolPath },
     { key: "prix", label: t("Prix", "Pricing"), to: `${baseToolPath}/${lang === "en" ? "pricing" : "prix"}` },
@@ -379,7 +408,12 @@ const ToolDetailPage = () => {
     : null;
 
   return (
-    <article className="min-h-screen td-tool-page" itemScope itemType="https://schema.org/WebPage">
+    <article
+      className="min-h-screen td-tool-page"
+      style={toolAccent ? ({ "--tool-accent": toolAccent } as React.CSSProperties) : undefined}
+      itemScope
+      itemType="https://schema.org/WebPage"
+    >
       <ToolJsonLd
         tool={tool} category={category} displayPrice={displayPrice}
         verifiedOn={verifiedOn} alternatives={alternatives} lang={lang}
