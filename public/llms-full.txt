@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1346
+# Records: 1347
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -18856,5 +18856,19 @@
     },
     "description_fr": "Créez des applications de vision par ordinateur à partir d'une consigne, d'une vidéo ou de flux caméra.",
     "description_en": "Build computer vision applications from a prompt, video, or camera feed."
+  },
+  {
+    "name": "Nick Launches",
+    "slug": "nick-launches",
+    "url_fr": "https://tooltrim.com/fr/tool/nick-launches",
+    "url_en": "https://tooltrim.com/en/tool/nick-launches",
+    "website": "https://nicklaunches.com/",
+    "category": "communication",
+    "pricing": {
+      "free": "Référencement gratuit avec badge.",
+      "paid": "Aucune offre payante publique relevée pour le référencement de base."
+    },
+    "description_fr": "Une plateforme de lancement et un annuaire pour faire découvrir des produits indépendants.",
+    "description_en": "A launch platform and directory for discovering indie products."
   }
 ]

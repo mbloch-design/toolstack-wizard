@@ -67,6 +67,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.drone-ops-mission.fr",
   "viso.ai",
   "www.viso.ai",
+  "nicklaunches.com",
+  "www.nicklaunches.com",
 ]);
 
 /** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait

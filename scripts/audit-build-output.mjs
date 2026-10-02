@@ -45,7 +45,9 @@ const budgets = {
   // 32 MiB (2026-09-30): each researched fiche adds pricing-card critical CSS
   // variants (+0.2 MiB per 25 fiches, 30.7 MiB at 146); sized for the ~200
   // remaining fiches instead of a bump per batch.
-  cssBytes: 34 * MiB,
+  // 2026-10-02: Nick Launches adds two localized routes; measured 34.021 MiB.
+  // Keep 80 KiB of headroom for the generated critical-CSS variants.
+  cssBytes: 34.1 * MiB,
   duplicateBytes: 3 * MiB,
 };
 

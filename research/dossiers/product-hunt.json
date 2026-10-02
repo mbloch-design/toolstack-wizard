@@ -121,7 +121,9 @@
       "web"
     ]
   },
-  "alternatives": [],
+  "alternatives": [
+    "nick-launches"
+  ],
   "missingAlternatives": [
     {
       "name": "BetaList",

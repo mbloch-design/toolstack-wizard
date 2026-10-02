@@ -34,4 +34,11 @@ describe("relPourLienOutil", () => {
     expect(relPourLienOutil("https://viso.ai/", "", "https://viso.ai/"))
       .toBe("noopener noreferrer");
   });
+
+  it.each(["https://nicklaunches.com/", "https://www.nicklaunches.com/"])(
+    "keeps the Nick Launches official link dofollow: %s",
+    (url) => {
+      expect(relPourLienOutil(url, "", url)).toBe("noopener noreferrer");
+    },
+  );
 });

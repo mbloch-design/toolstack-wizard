@@ -157797,7 +157797,9 @@
     "personas": [
       "MARC"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "nick-launches"
+    ],
     "verdict": {
       "keepIf": [
         "Tu lances un produit et tu veux un pic de visibilité gratuit, le temps d'une journée, auprès des early adopters."
@@ -264722,6 +264724,240 @@
       },
       "lastActivityVerifiedOn": null,
       "notedOn": "2026-09-30"
+    }
+  },
+  {
+    "id": "nick-launches",
+    "slug": "nick-launches",
+    "name": "Nick Launches",
+    "category": "communication",
+    "shortDescription": "Une plateforme de lancement et un annuaire pour faire découvrir des produits indépendants.",
+    "shortDescriptionEn": "A launch platform and directory for discovering indie products.",
+    "description": "Nick Launches permet aux créateurs indépendants de soumettre un produit à un annuaire de lancements régulièrement renouvelé. La fiche reste accessible après le lancement et peut être accompagnée d’un badge à afficher sur le site du produit.",
+    "longDescription": "Nick Launches est une plateforme de lancement destinée aux créateurs de produits indépendants. Elle présente les nouveautés dans un classement régulièrement renouvelé et conserve une fiche permanente pour chaque produit publié. Le service se positionne comme une alternative aux grands sites de lancement pour obtenir une première visibilité auprès d’autres builders.\n\nLe référencement de base est gratuit et passe par l’ajout d’un badge. La plateforme peut compléter un lancement sur Product Hunt ou servir d’annuaire autonome, mais elle ne garantit ni volume de trafic ni acquisition client. Aucun logo n’a été intégré à la fiche : il reste à fournir par l’éditeur.",
+    "longDescriptionEn": "Nick Launches is a launch platform for indie product builders. It features new products in a regularly refreshed leaderboard and keeps a permanent page for each published product. The service positions itself as an alternative to larger launch sites for gaining initial visibility among other builders.\n\nThe basic listing is free and uses a badge. The platform can complement a Product Hunt launch or work as a standalone directory, but it does not guarantee traffic or customer acquisition. No logo has been added to this listing; it remains available from the publisher on request.",
+    "pricing": {
+      "free": "Référencement gratuit avec badge.",
+      "paid": "Aucune offre payante publique relevée pour le référencement de base."
+    },
+    "pricingEn": {
+      "free": "Free listing with a badge.",
+      "paid": "No public paid price found for the basic listing."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "cautions": [
+        "Le référencement gratuit prévoit un badge ; vérifiez les conditions affichées au moment de la soumission.",
+        "Aucun volume de trafic ou résultat commercial n’est garanti."
+      ],
+      "cautionsEn": [
+        "The free listing includes a badge; check the displayed requirements when submitting.",
+        "No traffic volume or commercial outcome is guaranteed."
+      ],
+      "verified_on": "2026-10-02",
+      "source_domain": "nicklaunches.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Référencement gratuit",
+      "price_reliability": "owner_provided",
+      "location_sensitive": false,
+      "official_source_url": "https://nicklaunches.com/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0,
+      "free_plan_card": "Référencement permanent gratuit avec badge.",
+      "free_plan_cardEn": "Free permanent listing with a badge.",
+      "plans": [
+        {
+          "planKey": "free-listing",
+          "displayName": "Free listing",
+          "summary": "Fiche permanente et présence dans les lancements avec ajout d’un badge.",
+          "featureHighlights": [
+            "Soumission gratuite",
+            "Fiche produit permanente",
+            "Badge à afficher"
+          ],
+          "detailsSourceUrl": "https://nicklaunches.com/",
+          "pricingUnit": "listing",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedMarket": "Global",
+          "observedLocale": "en",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "cautions": [
+        "The free listing includes a badge; check the displayed requirements when submitting.",
+        "No traffic volume or commercial outcome is guaranteed."
+      ],
+      "verified_on": "2026-10-02",
+      "source_domain": "nicklaunches.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free listing",
+      "price_reliability": "owner_provided",
+      "location_sensitive": false,
+      "official_source_url": "https://nicklaunches.com/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0,
+      "free_plan_card": "Free permanent listing with a badge.",
+      "plans": [
+        {
+          "planKey": "free-listing",
+          "displayName": "Free listing",
+          "summary": "Permanent product page and launch visibility with a badge.",
+          "featureHighlights": [
+            "Free submission",
+            "Permanent product page",
+            "Badge to display"
+          ],
+          "detailsSourceUrl": "https://nicklaunches.com/",
+          "pricingUnit": "listing",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedMarket": "Global",
+          "observedLocale": "en",
+          "observedOn": "2026-10-02",
+          "lastConfirmedOn": "2026-10-02"
+        }
+      ]
+    },
+    "affiliateLink": "",
+    "websiteUrl": "https://nicklaunches.com/",
+    "logo": "",
+    "galleryImages": [],
+    "pros": [
+      "Référencement gratuit pour un produit indépendant.",
+      "Fiche permanente au-delà du jour de lancement.",
+      "Nouveaux produits mis en avant régulièrement."
+    ],
+    "prosEn": [
+      "Free listing for an indie product.",
+      "Permanent product page beyond launch day.",
+      "New products featured regularly."
+    ],
+    "cons": [
+      "Le badge fait partie du parcours de référencement gratuit.",
+      "La visibilité dépend du rythme des lancements et ne garantit pas de trafic.",
+      "Aucune donnée publique ne permet de mesurer les conversions obtenues."
+    ],
+    "consEn": [
+      "A badge is part of the free listing flow.",
+      "Visibility depends on launch activity and does not guarantee traffic.",
+      "No public data measures the conversions generated."
+    ],
+    "useCases": [
+      "Publier un produit indépendant dans un annuaire de lancements.",
+      "Compléter un lancement Product Hunt avec une fiche permanente.",
+      "Découvrir les nouveaux produits publiés par d’autres créateurs."
+    ],
+    "useCasesEn": [
+      "Publish an indie product in a launch directory.",
+      "Complement a Product Hunt launch with a permanent listing.",
+      "Discover new products published by other builders."
+    ],
+    "covers": [
+      "creator-workflow"
+    ],
+    "relevantFor": [
+      "Fondateurs indépendants",
+      "Créateurs de SaaS",
+      "Petites startups"
+    ],
+    "personas": [
+      "MARC"
+    ],
+    "alternatives": [
+      "product-hunt"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu lances un produit indépendant et tu veux ajouter un canal de découverte gratuit.",
+        "Tu acceptes d’afficher le badge demandé pour conserver la fiche."
+      ],
+      "avoidIf": [
+        "Tu cherches un canal d’acquisition prévisible ou des conversions garanties.",
+        "Tu ne veux pas ajouter de badge sur ton site."
+      ],
+      "threshold": "Publie la fiche si le badge et le temps de préparation restent acceptables, puis mesure séparément les visites et inscriptions réellement obtenues."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You are launching an indie product and want another free discovery channel.",
+        "You are comfortable displaying the requested badge to keep the listing."
+      ],
+      "avoidIf": [
+        "You need predictable acquisition or guaranteed conversions.",
+        "You do not want to add a badge to your website."
+      ],
+      "threshold": "Publish if the badge and setup effort are acceptable, then measure the visits and sign-ups it actually generates."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "timeGainedHoursPerMonth": null,
+    "seo": {
+      "presentationTitleFr": "Nick Launches : annuaire de lancement pour produits indie | ToolTrim",
+      "presentationTitleEn": "Nick Launches review: indie product launch directory | ToolTrim",
+      "presentationMetaDescriptionFr": "Découvrez Nick Launches, son référencement gratuit avec badge, sa fiche permanente et ses limites comme alternative à Product Hunt.",
+      "presentationMetaDescriptionEn": "Review Nick Launches, its free badge-based listing, permanent product page and limits as a Product Hunt alternative.",
+      "idealForFr": "Fondateurs indépendants qui veulent référencer gratuitement un produit dans un annuaire de lancements.",
+      "idealForEn": "Indie founders who want to list a product for free in a launch directory."
+    },
+    "tool_type": "specialise",
+    "substitutable": true,
+    "verticals": [
+      "creator-economy"
+    ],
+    "functional_needs": [
+      "creator-workflow"
+    ],
+    "substitution_cluster_v2": "product-discovery-platform",
+    "prescription_quality": "medium",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-10-02"
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 3,
+      "notedOn": "2026-10-02",
+      "lastActivityVerifiedOn": "2026-10-02",
+      "evidence": {
+        "valeurAjoutee": "Une fiche permanente et un espace de lancement ajoutent un canal de découverte, sans preuve publique du trafic obtenu. Source : nicklaunches.com, 2 octobre 2026.",
+        "simplicite": "La page d’accueil propose un champ direct pour lancer un produit et présente le badge associé au référencement. Source : nicklaunches.com, 2 octobre 2026.",
+        "utilisation": "Le site affiche une liste active de produits lancés et un classement hebdomadaire, ce qui confirme son usage comme annuaire de lancement. Source : nicklaunches.com, 2 octobre 2026.",
+        "puissance": "La proposition couvre la publication, la découverte et le badge ; aucune analytique de conversion n’est documentée sur la page consultée. Source : nicklaunches.com, 2 octobre 2026.",
+        "reversibilite": "Aucune fonction d’export ou de portabilité n’est documentée sur la page consultée ; note neutre. Source : nicklaunches.com, 2 octobre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "A permanent listing and launch area add a discovery channel, with no public evidence of the traffic generated. Source: nicklaunches.com, October 2, 2026.",
+        "simplicite": "The homepage provides a direct product launch field and presents the badge tied to the listing. Source: nicklaunches.com, October 2, 2026.",
+        "utilisation": "The site displays an active launch list and weekly leaderboard, confirming its use as a launch directory. Source: nicklaunches.com, October 2, 2026.",
+        "puissance": "The proposition covers publishing, discovery and the badge; no conversion analytics are documented on the reviewed page. Source: nicklaunches.com, October 2, 2026.",
+        "reversibilite": "No export or portability feature is documented on the reviewed page; neutral score. Source: nicklaunches.com, October 2, 2026."
+      }
+    },
+    "tagline": {
+      "fr": "Lancement de produits indie",
+      "en": "Indie product launch platform"
+    },
+    "research": {
+      "dossier": "research/dossiers/nick-launches.json",
+      "researchedOn": "2026-10-02",
+      "sources": 1
     }
   }
 ]

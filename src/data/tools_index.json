@@ -43197,5 +43197,36 @@
       "Équipes techniques qui prototypent des applications de vision"
     ],
     "prescription_quality": "question"
+  },
+  {
+    "id": "nick-launches",
+    "slug": "nick-launches",
+    "name": "Nick Launches",
+    "categoryId": "communication",
+    "shortDescription": "Une plateforme de lancement et un annuaire pour faire découvrir des produits indépendants.",
+    "shortDescriptionEn": "A launch platform and directory for discovering indie products.",
+    "pricing": {
+      "free": "Référencement gratuit avec badge.",
+      "paid": "Aucune offre payante publique relevée pour le référencement de base."
+    },
+    "compareMonthlyPrice": 0,
+    "websiteUrl": "https://nicklaunches.com/",
+    "tool_type": "specialise",
+    "substitution_cluster_v2": "product-discovery-platform",
+    "functional_needs": [
+      "creator-workflow"
+    ],
+    "verticals": [
+      "creator-economy"
+    ],
+    "relevantFor": [
+      "Fondateurs indépendants",
+      "Créateurs de SaaS",
+      "Petites startups"
+    ],
+    "prescription_quality": "medium",
+    "personas": [
+      "MARC"
+    ]
   }
 ]

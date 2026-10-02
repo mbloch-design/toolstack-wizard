@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 2,
+  "slug": "nick-launches",
+  "tier": "B",
+  "researchedOn": "2026-10-02",
+  "status": "owner_provided_reviewed",
+  "identity": {
+    "officialName": "Nick Launches",
+    "vendor": "Nick Launches",
+    "officialUrl": "https://nicklaunches.com/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "Active launch directory observed on October 2, 2026. Logo intentionally omitted; available from the publisher on request."
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://nicklaunches.com/",
+      "tier": 1,
+      "accessedOn": "2026-10-02",
+      "title": "Nick Launches homepage and current launch directory"
+    }
+  ],
+  "pricing": {
+    "model": "free_listing",
+    "currency": "USD",
+    "pricingUrl": "https://nicklaunches.com/",
+    "verifiedOn": "2026-10-02",
+    "region": "Global",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free permanent listing with a badge, according to the information supplied for this listing.",
+        "fr": "Référencement permanent gratuit avec badge, selon les informations fournies pour cette fiche."
+      },
+      "sourceIds": ["s1"]
+    },
+    "plans": [],
+    "comparePlanKey": "free-listing",
+    "regularPriceUnknown": false,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Check the badge and submission requirements shown when submitting. Traffic and conversions are not guaranteed.",
+        "fr": "Vérifiez les conditions de badge et de soumission affichées au moment de publier. Le trafic et les conversions ne sont pas garantis.",
+        "sourceIds": ["s1"]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Permanent product listing and recurring launch discovery for indie products.",
+        "fr": "Fiche produit permanente et découverte récurrente de lancements indépendants.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "Badge associated with the product listing.",
+        "fr": "Badge associé au référencement du produit.",
+        "sourceIds": ["s1"]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No public traffic or conversion guarantee was found.",
+        "fr": "Aucune garantie publique de trafic ou de conversion n’a été trouvée.",
+        "sourceIds": ["s1"]
+      },
+      {
+        "en": "No public export or portability feature was documented on the reviewed page.",
+        "fr": "Aucune fonction publique d’export ou de portabilité n’était documentée sur la page consultée.",
+        "sourceIds": ["s1"]
+      }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "alternatives": ["product-hunt"],
+  "unknowns": [
+    "No public paid plan or detailed moderation policy was established.",
+    "Logo intentionally omitted pending a publisher-provided asset."
+  ],
+  "conflicts": [],
+  "completedLocallyOn": "2026-10-02"
+}

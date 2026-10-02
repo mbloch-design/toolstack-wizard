@@ -2,6 +2,14 @@
 
 - Ajout de la balise `msvalidate.01` dans le document HTML racine afin que la page d’accueil soit vérifiable par Bing.
 
+## 2026-10-02 — Nouvelle fiche Nick Launches
+
+- Ajout de la fiche FR/EN Nick Launches comme plateforme de lancement et annuaire de produits indépendants, avec référencement gratuit assorti d’un badge.
+- Le lien officiel `nicklaunches.com` est explicitement autorisé en do-follow. Aucun lien affilié n’est déclaré et aucun logo n’est intégré, conformément aux informations fournies.
+- Positionnement, limites et verdict restent centrés sur la découverte : aucune promesse de trafic ou de conversion n’est ajoutée.
+- Relation d’alternative rendue bidirectionnelle : Nick Launches apparaît aussi sur la fiche Product Hunt en FR/EN.
+- Plafond CSS de l’artefact ajusté de 34 à 34,1 Mio pour 34,021 Mio mesurés après génération des deux routes localisées ; les autres budgets restent inchangés.
+
 ## 2026-09-30 — Nouvelle fiche Viso AI
 
 - Ajoute une fiche FR/EN qui distingue Viso Now de Viso Suite, les usages annoncés, les limites de crédits et les publics adaptés.
