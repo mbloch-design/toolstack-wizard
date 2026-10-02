@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "slug": "maya",
+  "tier": "A",
+  "researchedOn": "2026-10-02",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-02",
+  "identity": {
+    "officialName": "Autodesk Maya",
+    "vendor": "Autodesk, Inc.",
+    "officialUrl": "https://www.autodesk.com/products/maya/overview",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.autodesk.com/products/maya/overview", "tier": 1, "accessedOn": "2026-10-02", "title": "Maya overview (features, starting price, 30-day free trial)" },
+    { "id": "s2", "url": "https://www.autodesk.com/products/maya/buy", "tier": 1, "accessedOn": "2026-10-02", "title": "Buy Maya: annual/monthly subscription and Flex token pricing" },
+    { "id": "s3", "url": "https://www.autodesk.com/campaigns/me-indie/maya-indie", "tier": 1, "accessedOn": "2026-10-02", "title": "Maya Indie eligibility page" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.autodesk.com/products/maya/buy",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s2"] },
+    "trial": { "days": 30, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "annual",
+        "name": "Annual subscription",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 168, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Best-value subscription, billed annually at $2,010/year for 1 user; 30-day money-back guarantee.", "fr": "Abonnement le plus avantageux, facturé 2 010 $/an pour 1 utilisateur ; garantie de remboursement de 30 jours." }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "monthly",
+        "name": "Monthly subscription",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 255, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "No annual commitment; 15-day money-back guarantee instead of 30 days for annual/multi-year.", "fr": "Pas d'engagement annuel ; garantie de remboursement de 15 jours au lieu de 30 pour l'annuel/pluriannuel." }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "flex",
+        "name": "Flex (tokens)",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 99 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Minimum purchase of 33 tokens for $99; using Maya consumes 6 tokens per day of active use, so the pack covers roughly 5-6 days of use before another purchase is needed.", "fr": "Achat minimum de 33 tokens pour 99 $ ; utiliser Maya consomme 6 tokens par jour d'utilisation active, donc le pack couvre environ 5 à 6 jours d'usage avant un nouvel achat." }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "indie",
+        "name": "Maya Indie",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Reserved for freelancers, hobbyists and recent graduates whose annual gross revenue from creative work is under $100,000, and who are not using the license on a project valued over $100,000; available only in listed countries. The discounted price is shown only after starting the eligibility-gated checkout, which requires sign-in.", "fr": "Réservé aux freelances, amateurs et jeunes diplômés dont le chiffre d'affaires annuel issu du travail créatif est inférieur à 100 000 $, et qui ne l'utilisent pas sur un projet d'une valeur de plus de 100 000 $ ; disponible uniquement dans les pays listés. Le tarif réduit ne s'affiche qu'après avoir démarré le parcours d'achat soumis à condition d'éligibilité, qui nécessite une connexion." }
+        ],
+        "sourceIds": ["s3"]
+      }
+    ],
+    "comparePlanKey": "annual",
+    "addOns": [],
+    "cautions": [
+      { "en": "The Flex token plan can cost more than the monthly subscription for daily users: at 6 tokens/day, a 33-token pack ($99) lasts only about 5-6 days of active use.", "fr": "Le plan Flex à tokens peut coûter plus cher que l'abonnement mensuel pour un usage quotidien : à 6 tokens par jour, un pack de 33 tokens (99 $) ne couvre qu'environ 5 à 6 jours d'usage actif.", "sourceIds": ["s2"] },
+      { "en": "Maya Indie's exact subscription price is not published on the public marketing page; it only appears after starting a sign-in-gated checkout flow, which this session could not access.", "fr": "Le prix exact de l'abonnement Maya Indie n'est pas publié sur la page marketing publique ; il n'apparaît qu'après avoir démarré un parcours d'achat nécessitant une connexion, inaccessible lors de cette session.", "sourceIds": ["s3"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Full 3D content pipeline: modeling, rigging and character animation, with best-in-class toolsets referenced by major studios.", "fr": "Pipeline 3D complet : modélisation, rigging et animation de personnages, avec des outils de référence utilisés par de grands studios.", "sourceIds": ["s1"] },
+      { "en": "Procedural effects and simulation via Bifrost (explosions, ocean surfaces, cloth) with a library of pre-built graphs.", "fr": "Effets et simulations procéduraux via Bifrost (explosions, surfaces océaniques, tissus) avec une bibliothèque de graphes prêts à l'emploi.", "sourceIds": ["s1"] },
+      { "en": "AI-assisted animation (MotionMaker) that generates pre-viz, hero or background motion for humans, dogs and horses, reducing manual walk-cycle work.", "fr": "Animation assistée par IA (MotionMaker) qui génère des mouvements de pré-visualisation, de personnages principaux ou d'arrière-plan pour humains, chiens et chevaux, réduisant le travail manuel sur les cycles de marche.", "sourceIds": ["s1"] },
+      { "en": "Customizable via APIs and scripting (MEL and Python), and supports open standards like OpenUSD for pipeline interoperability.", "fr": "Personnalisable via API et scripts (MEL et Python), et prend en charge des standards ouverts comme OpenUSD pour l'interopérabilité du pipeline.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Full professional license is expensive for a solo artist: $168/month billed annually ($2,010/year), or $255/month without commitment.", "fr": "La licence professionnelle complète est coûteuse pour un artiste solo : 168 $/mois facturé à l'année (2 010 $/an), ou 255 $/mois sans engagement.", "sourceIds": ["s2"] },
+      { "en": "The discounted Maya Indie tier is restricted by revenue (under $100,000/year), by per-project value (under $100,000), and is only available in a specific list of countries.", "fr": "Le palier réduit Maya Indie est limité par le chiffre d'affaires (moins de 100 000 $/an), par la valeur du projet (moins de 100 000 $), et n'est disponible que dans une liste de pays précise.", "sourceIds": ["s3"] }
+    ],
+    "integrations": [],
+    "platforms": ["desktop"]
+  },
+  "audience": {
+    "persona": "OTHER",
+    "description": { "en": "A 3D animator, rigger or VFX artist working on film, TV or game production, solo or inside a studio pipeline.", "fr": "Une animatrice, riggeuse ou artiste VFX 3D travaillant pour le cinéma, la télévision ou le jeu vidéo, seule ou dans le pipeline d'un studio." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Animate: rig a character and generate pre-viz motion with MotionMaker instead of hand-keying a full walk cycle.", "fr": "Animer : rigger un personnage et générer un mouvement de pré-visualisation avec MotionMaker plutôt que d'animer une marche complète image par image." },
+    { "en": "Simulate: build a procedural effect such as an explosion or cloth simulation in Bifrost using a pre-built graph instead of hand animation.", "fr": "Simuler : construire un effet procédural comme une explosion ou une simulation de tissu dans Bifrost à partir d'un graphe prêt à l'emploi plutôt qu'à la main." }
+  ],
+  "alternatives": [
+    { "slug": "blender", "reason": { "en": "Free, open-source 3D suite covering modeling, rigging, animation and rendering, a common alternative for solo artists on a budget.", "fr": "Suite 3D gratuite et open source couvrant modélisation, rigging, animation et rendu, alternative courante pour les artistes solos à petit budget." } },
+    { "slug": "cinema-4d", "reason": { "en": "Competing 3D animation tool, often preferred for motion design and easier onboarding.", "fr": "Outil d'animation 3D concurrent, souvent préféré pour le motion design et une prise en main plus facile." } },
+    { "slug": "3ds-max", "reason": { "en": "Another Autodesk 3D suite, positioned for modeling and design visualization rather than character animation.", "fr": "Une autre suite 3D Autodesk, positionnée sur la modélisation et la visualisation de design plutôt que l'animation de personnages." } },
+    { "slug": "houdini", "reason": { "en": "Competing tool focused on procedural VFX and simulation, overlapping with Maya's Bifrost workflows.", "fr": "Outil concurrent centré sur les VFX et simulations procédurales, qui recoupe les workflows Bifrost de Maya." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": { "en": "At $168-255/month, the cost is justified for a studio pipeline but heavy for a solo artist unless eligible for the Indie tier (its price could not be read on the official page).", "fr": "À 168-255 $/mois, le coût se justifie pour un pipeline de studio mais reste lourd pour un artiste solo, sauf éligibilité au palier Indie (dont le prix n’a pas pu être relevé sur la page officielle).", "sourceIds": ["s2"] },
+      "simplicite": { "en": "A full modeling, rigging, animation, effects and rendering pipeline requires significant training before a first useful result, unlike a single-purpose tool.", "fr": "Un pipeline complet de modélisation, rigging, animation, effets et rendu demande une formation importante avant un premier résultat utile, contrairement à un outil mono-usage.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Case quotes from Disney, Framestore and SEGA describe Maya delivering production environments, flight sequences and customizable animation pipelines as promised.", "fr": "Des témoignages de Disney, Framestore et SEGA décrivent Maya livrant des environnements de production, des séquences de vol et des pipelines d'animation personnalisables comme promis.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Used by major studios (Disney, Framestore, SEGA, Fortiche) across modeling, rigging, effects, look development and rendering, with procedural (Bifrost) and AI-assisted (MotionMaker) tooling beyond the category basics.", "fr": "Utilisé par de grands studios (Disney, Framestore, SEGA, Fortiche) pour la modélisation, le rigging, les effets, le look development et le rendu, avec des outils procéduraux (Bifrost) et assistés par IA (MotionMaker) qui dépassent les bases de la catégorie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Supports open standards (OpenUSD) explicitly for pipeline interoperability and scripting via MEL/Python, reducing lock-in to Maya-only workflows.", "fr": "Prend en charge explicitement les standards ouverts (OpenUSD) pour l'interopérabilité du pipeline et le scripting via MEL/Python, réduisant la dépendance à des workflows propres à Maya.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "3D animation & VFX", "fr": "Animation et VFX 3D" },
+    "shortDescription": { "en": "Autodesk Maya is a professional 3D suite for modeling, rigging, character animation, effects and rendering used by major studios.", "fr": "Autodesk Maya est une suite 3D professionnelle de modélisation, rigging, animation de personnages, effets et rendu, utilisée par de grands studios." },
+    "longDescription": {
+      "en": "Maya covers the full 3D pipeline: modeling, rigging and character animation, procedural effects via Bifrost, look development and rendering, with scripting in MEL/Python and OpenUSD support for pipeline interoperability. MotionMaker adds AI-assisted motion generation for humans, dogs and horses.\n\nThe annual subscription costs $168/month ($2,010/year), or $255/month without commitment; a token-based Flex option exists ($99 for 33 tokens, 6 tokens/day). A discounted Maya Indie tier exists for creators earning under $100,000/year, but its price could not be read on the official page. A 30-day free trial is available. It fits a 3D animator or small studio doing professional character, effects or rendering work.",
+      "fr": "Maya couvre tout le pipeline 3D : modélisation, rigging et animation de personnages, effets procéduraux via Bifrost, look development et rendu, avec du scripting MEL/Python et le support d'OpenUSD pour l'interopérabilité. MotionMaker ajoute une génération de mouvement assistée par IA pour humains, chiens et chevaux.\n\nL'abonnement annuel coûte 168 $/mois (2 010 $/an), ou 255 $/mois sans engagement ; une option Flex à tokens existe (99 $ pour 33 tokens, 6 tokens/jour). Un palier Indie réduit existe sous 100 000 $/an de revenus, dont le prix n’a pas pu être relevé sur la page officielle. Essai gratuit de 30 jours. Convient à une animatrice 3D ou un petit studio faisant de l'animation ou du rendu professionnel."
+    },
+    "pros": [
+      { "en": "Covers the full professional pipeline (modeling, rigging, effects, rendering) in one tool, referenced by major studios.", "fr": "Couvre tout le pipeline professionnel (modélisation, rigging, effets, rendu) en un seul outil, utilisé par de grands studios." },
+      { "en": "Open standards support (OpenUSD) and MEL/Python scripting reduce lock-in to a closed pipeline.", "fr": "Le support des standards ouverts (OpenUSD) et le scripting MEL/Python réduisent la dépendance à un pipeline fermé." }
+    ],
+    "cons": [
+      { "en": "Steep learning curve: a first useful result requires real training, unlike a single-purpose tool.", "fr": "Courbe d'apprentissage raide : un premier résultat utile demande une vraie formation, contrairement à un outil mono-usage." },
+      { "en": "Full-price subscription ($168-255/month) is expensive for a solo artist not eligible for the Indie tier.", "fr": "L'abonnement plein tarif (168-255 $/mois) reste cher pour un artiste solo non éligible au palier Indie." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need a full professional 3D pipeline (modeling, rigging, animation, effects, rendering) inside a studio workflow.", "fr": "Tu as besoin d'un pipeline 3D professionnel complet (modélisation, rigging, animation, effets, rendu) dans un workflow de studio." },
+      "avoidIf": { "en": "You're a hobbyist or solo learner on a tight budget and don't qualify for (or can't get a price on) Maya Indie.", "fr": "Tu es amateur ou en apprentissage solo avec un petit budget et tu n'es pas éligible à Maya Indie, ou tu ne peux pas en obtenir le prix." },
+      "threshold": { "en": "The annual subscription costs $2,010/year ($168/month), the entry point for the full professional toolset without the monthly plan's higher rate.", "fr": "L'abonnement annuel coûte 2 010 $/an (168 $/mois), le point d'entrée pour l'outillage professionnel complet sans le tarif plus élevé du plan mensuel." },
+      "billingTraps": { "en": "The money-back guarantee is shorter for monthly subscriptions (15 days) than for annual or multi-year ones (30 days), and the Flex token pack (33 tokens for $99) can run out in under a week at 6 tokens/day of use.", "fr": "La garantie de remboursement est plus courte pour l'abonnement mensuel (15 jours) que pour l'annuel ou le pluriannuel (30 jours), et le pack de tokens Flex (33 tokens pour 99 $) peut s'épuiser en moins d'une semaine à raison de 6 tokens par jour d'usage." }
+    }
+  },
+  "unknowns": [
+    "Maya Indie's exact subscription price was not shown on the public marketing page; the checkout link requires sign-in before displaying the discounted rate, which this session could not access.",
+    "Whether Maya's pricing page shows a different currency/grid for non-US visitors (geolocation-based) was not tested in this session; the $ figures were read directly without a region toggle."
+  ],
+  "conflicts": []
+}

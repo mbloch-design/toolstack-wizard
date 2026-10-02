@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "slug": "nuke",
+  "tier": "B",
+  "researchedOn": "2026-10-02",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-02",
+  "identity": {
+    "officialName": "Nuke",
+    "vendor": "Foundry (The Foundry Visionmongers Ltd.)",
+    "officialUrl": "https://www.foundry.com/products/nuke-family",
+    "docsUrl": "https://learn.foundry.com/nuke/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.foundry.com/products/nuke-indie", "tier": 1, "accessedOn": "2026-10-02", "title": "Nuke Indie pricing and eligibility" },
+    { "id": "s2", "url": "https://www.foundry.com/products/nuke-family", "tier": 1, "accessedOn": "2026-10-02", "title": "Nuke family overview" },
+    { "id": "s3", "url": "https://www.cgchannel.com/2020/07/foundry-releases-nuke-indie/", "tier": 2, "accessedOn": "2026-10-02", "title": "Foundry releases Nuke Indie (CG Channel)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.foundry.com/products/nuke-indie",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Nuke Non-commercial exists as a free version for learning; its exact feature and output restrictions were not detailed on the official pages checked in this session.", "fr": "Nuke Non-commercial existe comme version gratuite pour apprendre ; ses restrictions exactes de fonctionnalités et d'export ne sont pas détaillées sur les pages officielles consultées cette session." }, "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "non-commercial",
+        "name": "Nuke Non-commercial",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Free version for learning; its exact feature and output restrictions were not detailed on the official pages checked in this session.", "fr": "Version gratuite destinée à l'apprentissage ; ses restrictions exactes de fonctionnalités et d'export ne sont pas détaillées sur les pages officielles consultées cette session." }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "indie",
+        "name": "Nuke Indie",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 41.58, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Only available to an artist or studio with annual gross revenue under $100,000 (or local equivalent); one license per person or organisation, and it cannot be mixed with other Nuke commercial or Indie licenses in the same pipeline.", "fr": "Réservé à une artiste ou un studio dont le chiffre d'affaires annuel brut est inférieur à 100 000 $ (ou équivalent local) ; une licence par personne ou organisation, et elle ne peut pas être mélangée avec d'autres licences Nuke commerciales ou Indie dans le même pipeline." }
+        ],
+        "sourceIds": ["s1", "s3"]
+      },
+      {
+        "key": "commercial",
+        "name": "Nuke / NukeX / Nuke Studio (commercial)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Commercial Nuke, NukeX and Nuke Studio pricing requires contacting Foundry sales or a reseller; no public list price was found on the pages checked in this session.", "fr": "Le prix commercial de Nuke, NukeX et Nuke Studio nécessite de contacter le service commercial de Foundry ou un revendeur ; aucun tarif public n'a été trouvé sur les pages consultées cette session." }
+        ],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "indie",
+    "addOns": [],
+    "cautions": [
+      { "en": "Nuke Indie is capped at $100,000 (or local equivalent) in annual gross revenue and limited to one license per person; going over that cap, or mixing it with a commercial Nuke license in the same pipeline, isn't allowed.", "fr": "Nuke Indie est plafonné à 100 000 $ (ou équivalent local) de chiffre d'affaires annuel brut et limité à une licence par personne ; dépasser ce plafond, ou la mélanger avec une licence Nuke commerciale dans le même pipeline, n'est pas autorisé.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Node-based compositing toolkit with over 200 nodes, deep compositing, an integrated 3D environment and camera projection workflows.", "fr": "Outil de compositing basé sur les nodes avec plus de 200 nodes, le deep compositing, un environnement 3D intégré et des workflows de projection caméra.", "sourceIds": ["s2"] },
+      { "en": "NukeX and Nuke Studio add 3D camera tracking, cleanup tools, machine-learning nodes (CopyCat, Inference) and a built-in editorial/review workflow (Hiero).", "fr": "NukeX et Nuke Studio ajoutent le tracking caméra 3D, des outils de nettoyage, des nodes de machine learning (CopyCat, Inference) et un workflow d'editorial/review intégré (Hiero).", "sourceIds": ["s2"] },
+      { "en": "Scriptable through a Python API for building custom tools and pipelines.", "fr": "Scriptable via une API Python pour construire des outils et pipelines personnalisés.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Nuke Indie restricts users to under $100,000/year in gross revenue and one license per person, so it stops being usable once a solo business grows past that threshold.", "fr": "Nuke Indie restreint les utilisatrices à moins de 100 000 $/an de chiffre d'affaires brut et une licence par personne ; il devient donc inutilisable une fois ce seuil dépassé.", "sourceIds": ["s1"] },
+      { "en": "No public list price for commercial Nuke, NukeX or Nuke Studio seats is published; a quote from Foundry or a reseller is required.", "fr": "Aucun tarif public pour les postes Nuke, NukeX ou Nuke Studio commerciaux n'est publié ; un devis auprès de Foundry ou d'un revendeur est nécessaire.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["windows", "macos", "linux"]
+  },
+  "audience": {
+    "persona": "OTHER",
+    "description": { "en": "A freelance VFX compositor or small studio artist working on film, TV or commercial visual effects.", "fr": "Une compositrice VFX freelance ou une artiste de petit studio travaillant sur des effets visuels pour le cinéma, la télévision ou la publicité." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use: composite VFX shots with deep compositing and an integrated 3D environment for a film or commercial, under a solo Indie license.", "fr": "Usage : compositer des plans VFX avec le deep compositing et un environnement 3D intégré pour un film ou une pub, sous une licence Indie solo." },
+    { "en": "Use: script a repeatable compositing pipeline step with the Python API instead of repeating manual node setups shot after shot.", "fr": "Usage : scripter une étape de pipeline de compositing répétable avec l'API Python plutôt que de refaire les mêmes nodes à la main plan après plan." }
+  ],
+  "alternatives": [
+    { "slug": "adobe-after-effects", "reason": { "en": "A layer-based compositing tool often compared to Nuke for motion graphics and lighter VFX work.", "fr": "Un outil de compositing par calques souvent comparé à Nuke pour le motion design et les VFX plus légers." } },
+    { "slug": "davinci-resolve", "reason": { "en": "Includes Fusion's node-based compositing alongside editing and color, a direct lower-cost alternative for some pipelines.", "fr": "Inclut le compositing par nodes de Fusion en plus du montage et de l'étalonnage, une alternative directe moins chère pour certains pipelines." } },
+    { "slug": "fusion", "reason": { "en": "Blackmagic's standalone node-based compositor, the closest direct competitor to Nuke's workflow.", "fr": "Le compositeur par nodes autonome de Blackmagic, le concurrent le plus direct du workflow de Nuke." } },
+    { "slug": "houdini", "reason": { "en": "A node-based tool for 3D and FX simulation that overlaps with Nuke on complex VFX pipelines.", "fr": "Un outil par nodes pour la 3D et la simulation FX qui recoupe Nuke sur des pipelines VFX complexes." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 4,
+    "puissance": 5,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "Nuke Indie, at roughly $499/year, gives a solo artist the same Nuke Studio feature set that commercial seats require a quote for, as long as they stay under the $100k revenue cap.", "fr": "Nuke Indie, à environ 499 $/an, donne à une artiste solo le même ensemble de fonctionnalités que Nuke Studio, pour lequel les postes commerciaux exigent un devis, tant qu'elle reste sous le plafond de 100 000 $.", "sourceIds": ["s1", "s3"] },
+      "simplicite": { "en": "Node-based compositing with 200+ nodes and a Python API targets trained VFX artists; it is not a tool where a first-timer gets a useful result in under an hour.", "fr": "Le compositing par nodes avec plus de 200 nodes et une API Python cible des artistes VFX formées ; ce n'est pas un outil où une débutante obtient un résultat utile en moins d'une heure.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers node-based compositing, deep compositing and an integrated 3D environment as described, with NukeX and Nuke Studio adding tracking, cleanup and editorial review.", "fr": "Assure le compositing par nodes, le deep compositing et un environnement 3D intégré comme décrit, NukeX et Nuke Studio ajoutant le tracking, le nettoyage et la relecture editorial.", "sourceIds": ["s2"] },
+      "puissance": { "en": "An industry-standard compositing toolkit with deep compositing, integrated 3D, camera tracking and machine-learning nodes used throughout film and TV VFX pipelines.", "fr": "Un outil de compositing de référence du secteur, avec deep compositing, 3D intégrée, tracking caméra et nodes de machine learning utilisés dans les pipelines VFX du cinéma et de la télévision.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Project scripts are saved in Nuke's own .nk format; the official pages checked don't mention a universal interchange export beyond standard image formats.", "fr": "Les scripts de projet sont enregistrés dans le format .nk propre à Nuke ; les pages officielles consultées ne mentionnent pas d'export d'échange universel au-delà des formats d'image standards.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "VFX compositing", "fr": "Compositing VFX" },
+    "shortDescription": { "en": "Nuke is Foundry's node-based compositing toolkit for film and TV VFX, with an Indie tier for solo artists under a revenue cap.", "fr": "Nuke est l'outil de compositing par nodes de Foundry pour les VFX, avec une offre Indie pour artistes solo sous plafond de revenus." },
+    "longDescription": {
+      "en": "Nuke composites VFX shots through a node-based toolkit with deep compositing, an integrated 3D environment and camera projection. NukeX and Nuke Studio add 3D tracking, cleanup tools, machine-learning nodes and an editorial/review workflow, all scriptable through a Python API.\n\nNuke Indie costs about $499/year for a solo artist or studio under $100,000/year in gross revenue, one license per person. Standard commercial Nuke, NukeX and Nuke Studio seats require a quote from Foundry or a reseller. It fits a freelance VFX compositor working within the revenue cap; studios above it need a commercial quote.", "fr": "Nuke compose les plans VFX grâce à un outil par nodes avec deep compositing, un environnement 3D intégré et de la projection caméra. NukeX et Nuke Studio ajoutent le tracking 3D, des outils de nettoyage, des nodes de machine learning et un workflow d'editorial/review, tout cela scriptable via une API Python.\n\nNuke Indie coûte environ 499 $/an pour une artiste ou un studio solo sous les 100 000 $/an de chiffre d'affaires brut, une licence par personne. Les postes Nuke, NukeX et Nuke Studio commerciaux standards exigent un devis auprès de Foundry ou d'un revendeur. Convient à une compositrice VFX freelance qui reste sous le plafond de revenus ; les studios au-dessus doivent passer par un devis commercial." },
+    "pros": [
+      { "en": "Nuke Indie gives a solo artist the full Nuke Studio feature set for about $499/year instead of a commercial quote.", "fr": "Nuke Indie donne à une artiste solo l'ensemble des fonctionnalités de Nuke Studio pour environ 499 $/an au lieu d'un devis commercial." },
+      { "en": "A Python API and 200+ compositing nodes cover deep, 3D and machine-learning-assisted workflows in one toolkit.", "fr": "Une API Python et plus de 200 nodes de compositing couvrent les workflows deep, 3D et assistés par machine learning dans un seul outil." }
+    ],
+    "cons": [
+      { "en": "The Indie tier is locked to a $100,000/year revenue cap and one license per person, so it stops scaling with a growing solo business.", "fr": "L'offre Indie est verrouillée à un plafond de 100 000 $/an et une licence par personne ; elle arrête de suivre la croissance d'une activité solo qui se développe." },
+      { "en": "Commercial seat prices are not public, making it hard to budget a move beyond Indie without contacting sales.", "fr": "Les tarifs des postes commerciaux ne sont pas publics, ce qui complique le budget d'un passage au-delà d'Indie sans contacter le service commercial." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You composite VFX professionally as a solo artist or small studio under the $100,000/year revenue cap.", "fr": "Tu compose des VFX à titre professionnel en solo ou en petit studio sous le plafond de 100 000 $/an de chiffre d'affaires." },
+      "avoidIf": { "en": "You need a first useful result without VFX training, or your studio already exceeds the Indie revenue cap.", "fr": "Tu as besoin d'un premier résultat utile sans formation VFX, ou ton studio dépasse déjà le plafond de revenus d'Indie." },
+      "threshold": { "en": "Nuke Indie costs about $499/year (roughly $41.58/month); once annual gross revenue nears $100,000, budget for a commercial quote instead.", "fr": "Nuke Indie coûte environ 499 $/an (environ 41,58 $/mois) ; une fois le chiffre d'affaires annuel brut proche de 100 000 $, prévois plutôt un devis commercial." },
+      "billingTraps": { "en": "Exceeding the $100,000/year revenue cap, holding more than one Indie license, or mixing an Indie license with a commercial one in the same pipeline all breach the licence terms.", "fr": "Dépasser le plafond de 100 000 $/an de chiffre d'affaires, détenir plus d'une licence Indie, ou mélanger une licence Indie avec une licence commerciale dans le même pipeline enfreignent toutes les conditions de licence." }
+    }
+  },
+  "unknowns": [
+    "Nuke Non-commercial's exact feature and output restrictions are not detailed on the pages checked.",
+    "No public list price was found for standard commercial Nuke, NukeX or Nuke Studio seats; a quote is required.",
+    "Tax treatment ('subject to applicable taxes') is not broken down by region on the Nuke Indie page."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,175 @@
+{
+  "schemaVersion": 2,
+  "slug": "readymag",
+  "tier": "A",
+  "researchedOn": "2026-10-02",
+  "completedLocallyOn": "2026-10-02",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Readymag",
+    "vendor": "Readymag Inc.",
+    "officialUrl": "https://readymag.com",
+    "docsUrl": "https://help.readymag.com/hc",
+    "changelogUrl": "https://readymag.website/product-updates",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://readymag.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "Readymag pricing and plans" },
+    { "id": "s2", "url": "https://help.readymag.com/hc", "tier": 1, "accessedOn": "2026-10-02", "title": "Readymag Help Center" },
+    { "id": "s3", "url": "https://readymag.website/product-updates", "tier": 1, "accessedOn": "2026-10-02", "title": "Readymag product updates" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://readymag.com/pricing",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": { "en": "One site on a Readymag subdomain, up to 10 pages.", "fr": "Un site sur un sous-domaine Readymag, jusqu'à 10 pages." },
+      "sourceIds": ["s1"]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 website with up to 10 pages on a Readymag domain, 1 collaborator.", "fr": "1 site de 10 pages maximum sur un domaine Readymag, 1 collaborateur.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "personal",
+        "name": "Personal",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 19, "annualPerMonth": 14, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 published site with a custom domain, up to 10,000 views a month, 1 collaborator, forms/Lottie/custom code move from preview-only to usable.", "fr": "1 site publié avec domaine personnalisé, jusqu'à 10 000 vues par mois, 1 collaborateur, les formulaires/Lottie/code personnalisé passent d'aperçu seul à utilisables.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "freelancer",
+        "name": "Freelancer",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 38, "annualPerMonth": 29, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 3 sites with a custom domain, up to 5 published sites, 25,000 views a month, up to 2 collaborators.", "fr": "Jusqu'à 3 sites avec domaine personnalisé, jusqu'à 5 sites publiés, 25 000 vues par mois, jusqu'à 2 collaborateurs.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 65, "annualPerMonth": 58.5, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited published sites, up to 10 sites with a custom domain, 75,000 views a month, up to 10 collaborators, code export and iframe embedding.", "fr": "Sites publiés illimités, jusqu'à 10 sites avec domaine personnalisé, 75 000 vues par mois, jusqu'à 10 collaborateurs, export de code et intégration en iframe.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "extra",
+        "name": "Extra",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Custom number of sites, views and collaborators, SSO, security assessment, SLA and a dedicated manager.", "fr": "Nombre de sites, de vues et de collaborateurs sur mesure, SSO, évaluation de sécurité, SLA et chargé de compte dédié.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "personal",
+    "addOns": [],
+    "cautions": [
+      { "en": "The page displays euros by default outside the US; the dollar grid is the vendor's base currency, read from the page's underlying price data rather than a geo-switched view.", "fr": "La page affiche des euros par défaut hors des Etats-Unis ; la grille en dollars est la devise d'origine de l'éditeur, lue dans les données de prix sous-jacentes de la page plutôt que sur une vue géolocalisée.", "sourceIds": ["s1"] }
+    ],
+    "secondaryPrices": {
+      "currency": "EUR",
+      "pricingUrl": "https://readymag.com/pricing",
+      "verifiedOn": "2026-10-02",
+      "sourceIds": ["s1"],
+      "plans": {
+        "personal": { "monthly": 18, "annualPerMonth": 13 },
+        "freelancer": { "monthly": 36, "annualPerMonth": 27 },
+        "advanced": { "monthly": 57, "annualPerMonth": 51 }
+      }
+    }
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Visual website builder focused on editorial and portfolio sites, with animation widgets (Lottie, Shots) and custom font upload.", "fr": "Créateur de sites visuel orienté sites éditoriaux et portfolios, avec des widgets d'animation (Lottie, Shots) et l'import de polices personnalisées.", "sourceIds": ["s1"] },
+      { "en": "Code export and iframe embedding are available from the Advanced plan up, for projects that need to leave Readymag hosting.", "fr": "L'export de code et l'intégration en iframe sont disponibles à partir du plan Advanced, pour les projets qui doivent sortir de l'hébergement Readymag.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Forms, Shots, Lottie and custom code are preview-only on the Free plan; publishing them requires a paid plan.", "fr": "Les formulaires, Shots, Lottie et le code personnalisé sont en aperçu seulement sur le plan gratuit ; les publier exige un plan payant.", "sourceIds": ["s1"] },
+      { "en": "Monthly page views are capped by plan (10,000 on Personal, 25,000 on Freelancer, 75,000 on Advanced); traffic above the cap needs a plan upgrade.", "fr": "Les vues mensuelles sont plafonnées par plan (10 000 sur Personal, 25 000 sur Freelancer, 75 000 sur Advanced) ; un trafic supérieur exige un plan supérieur.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "Solo designers and small studios building animated portfolio or editorial sites who want motion and typography control without hand-coding.", "fr": "Designers solos et petits studios qui construisent des portfolios ou sites éditoriaux animés et veulent du contrôle sur l'animation et la typographie sans coder à la main." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use case: a freelance designer builds an animated portfolio with custom fonts and connects their own domain on the Personal plan.", "fr": "Cas d'usage : un designer freelance construit un portfolio animé avec des polices personnalisées et connecte son propre domaine sur le plan Personal." },
+    { "en": "Use case: a small studio runs several client microsites under one Advanced account and exports the code when a client needs to host elsewhere.", "fr": "Cas d'usage : un petit studio fait tourner plusieurs microsites clients sous un compte Advanced et exporte le code quand un client doit héberger ailleurs." }
+  ],
+  "alternatives": [
+    { "slug": "wix", "reason": { "en": "A much broader website builder covering the same self-publish, custom-domain use case with a bigger template and app ecosystem.", "fr": "Un créateur de site bien plus large qui couvre le même besoin d'auto-publication avec domaine personnalisé, avec un écosystème de modèles et d'apps plus vaste." } },
+    { "slug": "wordpress-com", "reason": { "en": "Hosted website builder with its own free tier and custom-domain paid plans, a common alternative for portfolios and editorial content.", "fr": "Créateur de site hébergé avec son propre plan gratuit et des plans payants pour le domaine personnalisé, une alternative courante pour portfolios et contenus éditoriaux." } },
+    { "slug": "cargo-site", "reason": { "en": "Closer direct competitor for designers building portfolio and editorial sites, with a similar creative-first positioning.", "fr": "Concurrent plus direct pour les designers qui construisent des portfolios et sites éditoriaux, avec un positionnement créatif similaire." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Webflow", "officialUrl": "https://webflow.com", "reason": "Main direct competitor for high-end visual web design with code export, not in the catalogue" }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Pricing sits in the middle of the website-builder market ($14 to $58.50/month billed yearly); nothing in the sources checked shows it beats alternatives on cost for the same output.", "fr": "Le prix se situe au milieu du marché des créateurs de sites (14 $ à 58,50 $/mois facturé à l'année) ; rien dans les sources consultées ne montre qu'il bat les alternatives pour un résultat équivalent.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "It is a visual, no-code editor, but several signature widgets are preview-only below Personal, which adds a learning step to reach a publishable result.", "fr": "C'est un éditeur visuel sans code, mais plusieurs widgets phares sont en aperçu seulement en dessous de Personal, ce qui ajoute une étape avant d'obtenir un résultat publiable.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the promised editorial/animation experience on paid plans, but the Free plan cannot publish forms, Lottie or custom code, so the promise is partly gated.", "fr": "Tient la promesse d'édition et d'animation sur les plans payants, mais le plan gratuit ne peut pas publier formulaires, Lottie ou code personnalisé, donc la promesse est en partie conditionnée.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Unlimited pages and code export at the Advanced tier give a real ceiling, but the tool stays scoped to editorial/portfolio sites rather than a general CMS or store.", "fr": "Pages illimitées et export de code au niveau Advanced donnent un vrai plafond, mais l'outil reste cantonné aux sites éditoriaux et portfolios plutôt qu'à un CMS ou une boutique générale.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Code export and iframe embedding exist, which support leaving the platform, but only from the Advanced plan up; the entry paid plan has no such option.", "fr": "L'export de code et l'intégration en iframe existent et permettent de quitter la plateforme, mais seulement à partir du plan Advanced ; le plan payant d'entrée n'a pas cette option.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Editorial web design", "fr": "Design web éditorial" },
+    "shortDescription": { "en": "A visual website builder for animated, editorial-style sites and portfolios, with custom domains and code export on higher plans.", "fr": "Un créateur de site visuel pour des sites éditoriaux animés et des portfolios, avec domaines personnalisés et export de code sur les plans supérieurs." },
+    "longDescription": {
+      "en": "Readymag is a browser-based tool for building animated, editorial-style websites: portfolios, presentations and online magazines, with widgets for scroll animation, forms and embedded video rather than a general page-building grid.\n\nThe Free plan hosts one 10-page site on a Readymag subdomain. Paid plans start at Personal for a single custom-domain site, scaling to Advanced for agencies running several client sites with code export. It suits solo designers and small studios more than teams needing a full CMS or e-commerce.",
+      "fr": "Readymag est un outil dans le navigateur pour construire des sites animés et éditoriaux : portfolios, présentations et magazines en ligne, avec des widgets d'animation au scroll, de formulaires et de vidéo intégrée plutôt qu'une grille de pages générale.\n\nLe plan gratuit héberge un site de 10 pages sur un sous-domaine Readymag. Les plans payants démarrent avec Personal pour un site avec domaine personnalisé, jusqu'à Advanced pour des agences qui gèrent plusieurs sites clients avec export de code. Il convient mieux à des designers solos et petits studios qu'à des équipes qui ont besoin d'un CMS complet ou d'e-commerce."
+    },
+    "pros": [
+      { "en": "A genuine free tier lets you publish a real 10-page site before paying anything.", "fr": "Un vrai plan gratuit permet de publier un site de 10 pages avant de payer quoi que ce soit." },
+      { "en": "Code export and iframe embedding exist for projects that need to leave Readymag hosting later.", "fr": "L'export de code et l'intégration en iframe existent pour les projets qui doivent un jour quitter l'hébergement Readymag." }
+    ],
+    "cons": [
+      { "en": "Several signature widgets (forms, Lottie, custom code) only render in preview on the Free plan.", "fr": "Plusieurs widgets phares (formulaires, Lottie, code personnalisé) ne s'affichent qu'en aperçu sur le plan gratuit." },
+      { "en": "Monthly view caps on every plan below Advanced mean a popular site can force an upgrade.", "fr": "Les plafonds de vues mensuelles sur tous les plans sous Advanced peuvent forcer une mise à niveau si un site devient populaire." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You design portfolio or editorial sites and want animation widgets without hand-coding.", "fr": "Tu conçois des portfolios ou sites éditoriaux et veux des widgets d'animation sans coder à la main." },
+      "avoidIf": { "en": "You need a full CMS, e-commerce, or a site with more than a handful of pages on the entry plan.", "fr": "Tu as besoin d'un CMS complet, d'e-commerce, ou d'un site de plus de quelques pages sur le plan d'entrée." },
+      "threshold": { "en": "The entry paid plan (Personal) costs $168 a year ($14/month) billed yearly, or $19 billed monthly, for one custom-domain site.", "fr": "Le plan payant d'entrée (Personal) coûte 168 $ par an (14 $/mois) facturé à l'année, ou 19 $ facturé au mois, pour un site avec domaine personnalisé." }
+    }
+  },
+  "unknowns": [
+    "Whether taxes are included in the displayed prices is not stated on the pricing page.",
+    "The EUR grid shown by geolocation was read from the page's underlying price data rather than from a direct French-region browser view."
+  ],
+  "conflicts": []
+}

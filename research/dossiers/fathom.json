@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 2,
+  "slug": "fathom",
+  "tier": "B",
+  "researchedOn": "2026-10-02",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-02",
+  "identity": {
+    "officialName": "Fathom",
+    "vendor": "Superhuman, Inc. (Fathom)",
+    "officialUrl": "https://www.fathom.ai",
+    "docsUrl": "https://developers.fathom.ai/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "acquired",
+    "statusNote": "Acquired by Superhuman, announced 14 September 2026; Fathom keeps operating as its own product while being woven into Superhuman's suite."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.fathom.ai/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "Fathom pricing" },
+    { "id": "s2", "url": "https://www.fathom.ai/", "tier": 1, "accessedOn": "2026-10-02", "title": "Fathom homepage" },
+    { "id": "s3", "url": "https://finance.yahoo.com/technology/ai/articles/superhuman-acquires-fathom-ai-notetaker-150000621.html", "tier": 2, "accessedOn": "2026-10-02", "title": "Superhuman Acquires Fathom, AI Notetaker" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.fathom.ai/pricing",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Unlimited recordings and transcriptions with instant AI summaries, clips and playlists, on a single account.", "fr": "Enregistrements et transcriptions illimités avec résumés IA instantanés, extraits et playlists, sur un seul compte." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited recordings and transcriptions, instant AI summaries, clips and playlists on a single account.", "fr": "Enregistrements et transcriptions illimités, résumés IA instantanés, extraits et playlists sur un seul compte." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 20, "annualPerMonth": 16, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Adds advanced AI summaries, AI action items and a conversational meeting assistant with a custom bot, for a single user.", "fr": "Ajoute des résumés IA avancés, des actions à suivre générées par IA et un assistant conversationnel de réunion avec bot personnalisé, pour un seul utilisateur." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "seat",
+        "minSeats": 2,
+        "price": { "monthly": 19, "annualPerMonth": 15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Minimum 2 seats; adds global search, team playlists, shared comments, folders and alerts across the team.", "fr": "Minimum 2 postes ; ajoute la recherche globale, les playlists d'équipe, les commentaires partagés, les dossiers et les alertes pour toute l'équipe." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 2,
+        "price": { "monthly": 34, "annualPerMonth": 25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Minimum 2 seats; adds CRM sync, deal view, AI coaching scorecards and custom summary templates.", "fr": "Minimum 2 postes ; ajoute la synchronisation CRM, la vue des opportunités, les grilles de coaching par IA et des modèles de résumé personnalisés." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 2,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Custom pricing; adds a guided onboarding program, SSO/SCIM and a dedicated success manager.", "fr": "Tarif sur mesure ; ajoute un programme d'onboarding accompagné, le SSO/SCIM et une responsable de compte dédiée." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "premium",
+    "addOns": [],
+    "cautions": [
+      { "en": "Team and Business both require a minimum of 2 seats, so a true solo buyer can only reach the full feature ladder through Premium, not the cheaper per-seat team rates.", "fr": "Team et Business exigent toutes les deux un minimum de 2 postes ; une acheteuse vraiment seule ne peut donc accéder à la gamme complète que via Premium, pas aux tarifs d'équipe moins chers par poste.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Records and transcribes Zoom, Google Meet and Microsoft Teams calls automatically, with instant AI summaries and action items.", "fr": "Enregistre et transcrit automatiquement les appels Zoom, Google Meet et Microsoft Teams, avec résumés IA instantanés et actions à suivre.", "sourceIds": ["s2"] },
+      { "en": "Ask Fathom lets a user search across past conversations, and meeting data syncs to CRM and workflow tools.", "fr": "Ask Fathom permet de rechercher dans les conversations passées, et les données de réunion se synchronisent avec les outils CRM et de travail.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Team and Business plans both require a minimum of 2 seats, so neither is available to a single buyer at its advertised per-seat rate.", "fr": "Les forfaits Team et Business exigent chacun un minimum de 2 postes ; aucun des deux n'est donc accessible à une acheteuse seule au tarif par poste affiché.", "sourceIds": ["s1"] },
+      { "en": "The exact AI-summary allowance on the Free plan is not stated on the pricing page; only 'unlimited recordings and transcriptions' is specified.", "fr": "Le quota exact de résumés IA sur le forfait Free n'est pas précisé sur la page tarifaire ; seuls des « enregistrements et transcriptions illimités » sont indiqués.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Zoom", "slug": "zoom", "sourceIds": ["s2"] },
+      { "name": "Google Meet", "slug": "google-meet", "sourceIds": ["s2"] },
+      { "name": "Microsoft Teams", "slug": "microsoft-teams", "sourceIds": ["s2"] },
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] },
+      { "name": "Salesforce", "slug": "salesforce", "sourceIds": ["s2"] },
+      { "name": "HubSpot", "slug": "hubspot", "sourceIds": ["s2"] },
+      { "name": "Notion", "slug": "notion", "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "A solo consultant who sits in back-to-back client calls and wants an automatic, searchable record of what was discussed and agreed, without taking notes by hand.", "fr": "Une consultante solo qui enchaîne les appels clients et veut une trace automatique et consultable de ce qui a été dit et décidé, sans prendre de notes à la main." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use: record a client call in Zoom or Meet and get an AI summary with action items instead of taking notes by hand.", "fr": "Usage : enregistrer un appel client dans Zoom ou Meet et obtenir un résumé IA avec les actions à suivre, sans prise de notes manuelle." },
+    { "en": "Use: search past meetings with Ask Fathom to find a decision or commitment made several weeks earlier.", "fr": "Usage : rechercher dans les réunions passées avec Ask Fathom pour retrouver une décision ou un engagement pris plusieurs semaines auparavant." }
+  ],
+  "alternatives": [
+    { "slug": "otter-ai", "reason": { "en": "A direct competitor in AI meeting transcription and notes.", "fr": "Un concurrent direct sur la transcription et les notes de réunion par IA." } },
+    { "slug": "granola", "reason": { "en": "Another AI meeting-notes tool aimed at the same back-to-back-calls use case.", "fr": "Un autre outil de notes de réunion par IA visant le même usage d'appels enchaînés." } }
+  ],
+  "missingAlternatives": [
+    { "name": "tl;dv", "officialUrl": "https://tldv.io/", "reason": "Direct AI meeting-recording and notes competitor, not yet in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The free plan already includes unlimited recordings, transcriptions and AI summaries with no seat; Premium adds the rest for $16 to $20/month for a single user.", "fr": "Le forfait gratuit inclut déjà enregistrements, transcriptions et résumés IA illimités sans poste ; Premium ajoute le reste pour 16 à 20 $/mois pour une seule utilisatrice.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Works inside Zoom, Google Meet and Microsoft Teams without a separate setup step beyond connecting the account.", "fr": "Fonctionne directement dans Zoom, Google Meet et Microsoft Teams sans étape de configuration distincte au-delà de la connexion du compte.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers recording, transcription, AI summaries and searchable history as advertised.", "fr": "Assure l'enregistrement, la transcription, les résumés IA et l'historique consultable comme annoncé.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Covers meeting capture, search and CRM sync, but Enterprise features (SSO/SCIM, dedicated onboarding) are quote-only and not detailed.", "fr": "Couvre la capture de réunion, la recherche et la synchronisation CRM, mais les fonctions Enterprise (SSO/SCIM, onboarding dédié) sont sur devis et non détaillées.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability if a team leaves Fathom are not covered by the sources checked.", "fr": "Note neutre : le format d'export et la portabilité des données en cas de départ de Fathom ne figurent pas dans les sources consultées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI meeting notes", "fr": "Notes de réunion IA" },
+    "shortDescription": { "en": "Fathom records and transcribes Zoom, Meet and Teams calls, producing AI summaries, action items and searchable meeting history.", "fr": "Fathom enregistre et transcrit les appels Zoom, Meet et Teams, en produisant des résumés IA, des actions à suivre et un historique consultable." },
+    "longDescription": {
+      "en": "Fathom captures Zoom, Google Meet and Microsoft Teams calls automatically, turning them into transcripts, AI summaries and action items, and lets a user search across past meetings with Ask Fathom. Team and Business tiers add shared playlists, CRM sync and coaching scorecards.\n\nThe Free plan already covers unlimited recording and transcription with no seat; Premium adds advanced summaries and a custom bot for $20/month ($16/month annual) for one person. Team and Business need at least 2 seats, so a true solo buyer tops out at Premium. Fathom was acquired by Superhuman in September 2026.", "fr": "Fathom capture automatiquement les appels Zoom, Google Meet et Microsoft Teams, en les transformant en transcriptions, résumés IA et actions à suivre, et permet de rechercher dans les réunions passées avec Ask Fathom. Les forfaits Team et Business ajoutent des playlists partagées, la synchronisation CRM et des grilles de coaching.\n\nLe forfait Free couvre déjà l'enregistrement et la transcription illimités sans poste ; Premium ajoute des résumés avancés et un bot personnalisé pour 20 $/mois (16 $/mois en annuel) pour une personne. Team et Business exigent au moins 2 postes, donc une acheteuse vraiment seule plafonne à Premium. Fathom a été racheté par Superhuman en septembre 2026." },
+    "pros": [
+      { "en": "The free plan covers unlimited recording, transcription and AI summaries with no seat required.", "fr": "Le forfait gratuit couvre l'enregistrement, la transcription et les résumés IA illimités sans poste requis." },
+      { "en": "Works directly inside Zoom, Google Meet and Microsoft Teams without a separate app to manage.", "fr": "Fonctionne directement dans Zoom, Google Meet et Microsoft Teams sans application séparée à gérer." }
+    ],
+    "cons": [
+      { "en": "Team and Business plans both need at least 2 seats, closing off their per-seat rate to a single buyer.", "fr": "Les forfaits Team et Business exigent chacun au moins 2 postes, ce qui ferme leur tarif par poste à une acheteuse seule." },
+      { "en": "Now owned by Superhuman, which adds uncertainty about long-term pricing and roadmap as the two products integrate.", "fr": "Désormais propriété de Superhuman, ce qui ajoute une incertitude sur le prix et la feuille de route à long terme pendant l'intégration des deux produits." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You attend many calls solo and want automatic transcripts and summaries without a team collaboration need.", "fr": "Tu enchaînes de nombreux appels en solo et veux des transcriptions et résumés automatiques sans besoin de collaboration d'équipe." },
+      "avoidIf": { "en": "You need team playlists or CRM sync for exactly one or two people, since those tiers start at a 2-seat minimum.", "fr": "Tu as besoin des playlists d'équipe ou de la synchronisation CRM pour une ou deux personnes seulement, car ces forfaits démarrent à un minimum de 2 postes." },
+      "threshold": { "en": "Premium costs $192/year billed annually ($16/month) for one person; budget $228/year ($19/month) per seat once a second person needs Team.", "fr": "Premium coûte 192 $/an en facturation annuelle (16 $/mois) pour une personne ; prévois 228 $/an (19 $/mois) par poste dès qu'une deuxième personne a besoin de Team." },
+      "billingTraps": { "en": "Team and Business are billed per seat with a 2-seat minimum, so adding one teammate to either tier doubles the bill rather than adding a single incremental seat.", "fr": "Team et Business sont facturés par poste avec un minimum de 2 postes, donc ajouter une seule coéquipière sur l'un de ces forfaits double la facture plutôt que d'ajouter un simple poste supplémentaire." }
+    }
+  },
+  "unknowns": [
+    "Exact AI-summary allowance on the Free plan is not stated on the pricing page.",
+    "Trial length in days for paid plans is not specified on the pricing page.",
+    "How pricing or the product roadmap will change following the September 2026 Superhuman acquisition is not stated on Fathom's own pages."
+  ],
+  "conflicts": []
+}

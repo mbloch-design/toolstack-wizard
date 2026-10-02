@@ -1,0 +1,173 @@
+{
+  "schemaVersion": 2,
+  "slug": "lottie",
+  "tier": "A",
+  "researchedOn": "2026-10-02",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-02",
+  "identity": {
+    "officialName": "LottieFiles",
+    "vendor": "LottieFiles",
+    "officialUrl": "https://lottiefiles.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://lottiefiles.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "LottieFiles plans & pricing (Individual, Team, Team+, Enterprise)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://lottiefiles.com/pricing",
+    "verifiedOn": "2026-10-02",
+    "region": "global",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Unlimited preview, testing and sharing; access to the free animation library with basic edits; no mention of private hosting or CDN on this tier.", "fr": "Aperçu, test et partage illimités ; accès à la bibliothèque d'animations gratuites avec modifications basiques ; aucune mention d'hébergement privé ni de CDN sur ce palier." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited preview, testing and sharing; access to the free animation library with basic edits; no private hosting or CDN.", "fr": "Aperçu, test et partage illimités ; accès à la bibliothèque d'animations gratuites avec modifications basiques ; pas d'hébergement privé ni de CDN." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "individual",
+        "name": "Individual",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 19.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "For solo designers and freelancers: unlimited file uploads, 10 GB CDN, 2 GB DAM storage, 300 AI credits/month, access to the premium asset library.", "fr": "Pour designers et freelances solos : uploads de fichiers illimités, 10 Go de CDN, 2 Go de stockage DAM, 300 crédits IA par mois, accès à la bibliothèque d'assets premium." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 24.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "For teams on commercial projects: unlimited team files, version history, team comments, custom brand palette and Figma/AEP source file hosting.", "fr": "Pour équipes sur projets commerciaux : fichiers d'équipe illimités, historique des versions, commentaires d'équipe, palette de marque personnalisée et hébergement des fichiers sources Figma/AEP." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "team-plus",
+        "name": "Team+",
+        "unit": "seat",
+        "minSeats": 5,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Suited for teams of 5-50 editors and developers: everything in Team plus Motion System + templates, 50 GB DAM storage, 500 GB CDN, onboarding, training and priority support; tailored to seats and usage.", "fr": "Adapté aux équipes de 5 à 50 éditeurs et développeurs : tout Team, plus un Motion System avec modèles, 50 Go de stockage DAM, 500 Go de CDN, onboarding, formation et support prioritaire ; adapté aux postes et à l'usage." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Adds dedicated CSM, invoicing/net terms, legal review, SSO (SAML) + SCIM, audit logs + API and enterprise support/governance.", "fr": "Ajoute un CSM dédié, facturation/conditions de paiement, revue juridique, SSO (SAML) + SCIM, logs d'audit + API, et support/gouvernance niveau entreprise." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "individual",
+    "addOns": [],
+    "cautions": [
+      { "en": "LottieFiles currently only offers annual billing for Individual, Team, Team+ and Enterprise; there is no monthly payment option.", "fr": "LottieFiles ne propose actuellement que la facturation annuelle pour Individual, Team, Team+ et Enterprise ; aucune option de paiement mensuel n'existe.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Hosts and optimizes Lottie animation files (dotLottie and JSON), reportedly reducing file size by up to 80%, with CDN delivery.", "fr": "Héberge et optimise les fichiers d'animation Lottie (dotLottie et JSON), avec une réduction de taille de fichier annoncée jusqu'à 80 %, livrés via CDN.", "sourceIds": ["s1"] },
+      { "en": "Embeds animations in third-party tools and sites (Notion, Medium, Ghost, Reddit, WordPress) and integrates with design/dev tools (Figma, Adobe After Effects, Webflow, Canva).", "fr": "Permet d'intégrer des animations dans des outils et sites tiers (Notion, Medium, Ghost, Reddit, WordPress) et s'intègre aux outils de design/dev (Figma, Adobe After Effects, Webflow, Canva).", "sourceIds": ["s1"] },
+      { "en": "Premium library of 600,000+ ready-to-use Lottie animations, plus export to GIF, MP4, transparent WebM and MOV.", "fr": "Bibliothèque premium de plus de 600 000 animations Lottie prêtes à l'emploi, avec export vers GIF, MP4, WebM transparent et MOV.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No monthly billing: every plan (Individual, Team, Team+, Enterprise) is billed annually only.", "fr": "Pas de facturation mensuelle : tous les plans (Individual, Team, Team+, Enterprise) sont facturés uniquement à l'année.", "sourceIds": ["s1"] },
+      { "en": "Team+ and Enterprise have no public price; both require contacting sales, with Team+ tailored to seats and usage.", "fr": "Team+ et Enterprise n'ont pas de prix public ; les deux nécessitent de contacter le service commercial, Team+ étant adapté aux postes et à l'usage.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Figma", "slug": "figma", "sourceIds": ["s1"] },
+      { "name": "Adobe After Effects", "slug": "adobe-after-effects", "sourceIds": ["s1"] },
+      { "name": "Canva", "slug": "canva", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "A product or motion designer who needs to export, host and hand off lightweight vector animations to developers.", "fr": "Une designer produit ou motion qui doit exporter, héberger et transmettre des animations vectorielles légères aux développeurs." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Ship: export a Lottie animation from After Effects, host it on LottieFiles' CDN, and embed it in a product with one line of code.", "fr": "Livrer : exporter une animation Lottie depuis After Effects, l'héberger sur le CDN de LottieFiles, et l'intégrer dans un produit en une ligne de code." },
+    { "en": "Collaborate: a design team shares animation files with version history and comments on the Team plan instead of emailing exports back and forth.", "fr": "Collaborer : une équipe design partage ses fichiers d'animation avec historique des versions et commentaires sur le plan Team, au lieu de s'échanger des exports par e-mail." }
+  ],
+  "alternatives": [
+    { "slug": "rive", "reason": { "en": "Direct competitor for interactive vector animations shipped into apps and products.", "fr": "Concurrent direct pour les animations vectorielles interactives livrées dans des applications et produits." } },
+    { "slug": "gsap", "reason": { "en": "Alternative way to ship lightweight, code-driven animations on the web without a Lottie/After Effects pipeline.", "fr": "Autre façon de livrer des animations web légères pilotées par code, sans passer par un pipeline Lottie/After Effects." } },
+    { "slug": "origami", "reason": { "en": "Overlapping use case for designers prototyping and handing off motion to engineering.", "fr": "Usage proche pour les designers qui prototypent du motion et le transmettent à l'ingénierie." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": { "en": "$19.99/month covers CDN hosting, optimization and a 600,000+ animation library, replacing manual file hosting and conversion work for a solo designer.", "fr": "19,99 $/mois couvre l'hébergement CDN, l'optimisation et une bibliothèque de plus de 600 000 animations, remplaçant l'hébergement et la conversion manuels de fichiers pour une designer solo.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Plugins for Figma, After Effects and Canva let a designer export and embed a working animation without custom tooling.", "fr": "Les plugins Figma, After Effects et Canva permettent d'exporter et d'intégrer une animation fonctionnelle sans outillage sur mesure.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "File optimization, CDN hosting and multi-format export are documented features delivered as advertised on the pricing/compare page.", "fr": "L'optimisation de fichiers, l'hébergement CDN et l'export multi-format sont des fonctionnalités documentées et livrées comme annoncé sur la page tarifaire/comparative.", "sourceIds": ["s1"] },
+      "puissance": { "en": "16 million users and 600,000+ premium animations position it as the largest motion ecosystem referenced in the collected source.", "fr": "16 millions d'utilisateurs et plus de 600 000 animations premium en font le plus grand écosystème motion mentionné dans la source collectée.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Supports export to GIF, MP4, transparent WebM and MOV in addition to the open Lottie JSON/dotLottie format, limiting lock-in.", "fr": "Permet l'export vers GIF, MP4, WebM transparent et MOV en plus du format ouvert Lottie JSON/dotLottie, limitant la dépendance.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Lottie animation hosting", "fr": "Hébergement d'animations Lottie" },
+    "shortDescription": { "en": "LottieFiles hosts, optimizes and embeds Lottie vector animations, with plugins for Figma, After Effects and Canva.", "fr": "LottieFiles héberge, optimise et intègre des animations vectorielles Lottie, avec des plugins pour Figma, After Effects et Canva." },
+    "longDescription": {
+      "en": "LottieFiles optimizes Lottie (dotLottie/JSON) animation files, hosts them on a CDN, and lets teams embed them anywhere from Notion to a production app, with plugins for Figma, After Effects, Webflow and Canva. A 600,000+ animation library and multi-format export (GIF, MP4, WebM, MOV) round out the toolkit.\n\nThe free tier covers preview, testing and basic library edits; Individual starts at $19.99/month billed annually (no monthly option), Team at $24.99/user/month, and Team+/Enterprise are quote-only. It fits a solo designer or small design team shipping motion into a shared product.",
+      "fr": "LottieFiles optimise les fichiers d'animation Lottie (dotLottie/JSON), les héberge sur un CDN, et permet de les intégrer partout, de Notion à une application en production, avec des plugins pour Figma, After Effects, Webflow et Canva. Une bibliothèque de plus de 600 000 animations et l'export multi-format (GIF, MP4, WebM, MOV) complètent l'outil.\n\nLe palier gratuit couvre l'aperçu, le test et des modifications basiques de la bibliothèque ; Individual démarre à 19,99 $/mois facturé à l'année (pas d'option mensuelle), Team à 24,99 $/utilisateur/mois, et Team+/Enterprise sont sur devis. Convient à une designer solo ou une petite équipe design qui livre du motion dans un produit partagé."
+    },
+    "pros": [
+      { "en": "Plugins for Figma, After Effects and Canva make export and embedding straightforward.", "fr": "Les plugins Figma, After Effects et Canva rendent l'export et l'intégration simples." },
+      { "en": "Large premium animation library reduces time spent building animations from scratch.", "fr": "La grande bibliothèque d'animations premium réduit le temps passé à créer des animations à partir de zéro." }
+    ],
+    "cons": [
+      { "en": "No monthly billing option; every plan requires an annual commitment.", "fr": "Pas d'option de facturation mensuelle ; chaque plan impose un engagement annuel." },
+      { "en": "Team+ and Enterprise pricing is hidden behind a sales conversation.", "fr": "Les tarifs Team+ et Enterprise restent cachés derrière un échange commercial." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need to ship optimized, hosted Lottie animations into a product and want ready-made plugins for your design tools.", "fr": "Tu dois livrer des animations Lottie optimisées et hébergées dans un produit et tu veux des plugins prêts à l'emploi pour tes outils de design." },
+      "avoidIf": { "en": "You want to pay month-to-month or need pricing transparency at team scale without a sales call.", "fr": "Tu veux payer au mois ou as besoin d'une tarification transparente à l'échelle d'une équipe sans appel commercial." },
+      "threshold": { "en": "Individual costs $239.88/year ($19.99/month billed annually), the entry point for CDN hosting and the premium library.", "fr": "Individual coûte 239,88 $/an (19,99 $/mois facturé annuellement), le point d'entrée pour l'hébergement CDN et la bibliothèque premium." },
+      "billingTraps": { "en": "There is no monthly plan: committing means paying the full year upfront even to try Individual or Team beyond the free tier.", "fr": "Il n'existe pas de plan mensuel : s'engager signifie payer l'année complète d'avance, même pour tester Individual ou Team au-delà du palier gratuit." }
+    }
+  },
+  "unknowns": [
+    "The catalogue slug 'lottie' points to lottiefiles.com, the commercial platform built around the open Lottie animation format created by Airbnb; this dossier describes LottieFiles' own product and pricing, not a separate open-source Lottie entry.",
+    "Exact visit/traffic or storage caps for the free tier were not stated beyond 'unlimited preview, testing and sharing'."
+  ],
+  "conflicts": []
+}

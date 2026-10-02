@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "slug": "squarespace",
+  "tier": "B",
+  "researchedOn": "2026-10-02",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-02",
+  "hold": "Devise a verifier : Squarespace, Inc. est une societe americaine (NYSE : SQSP) qui facture tres probablement en dollars a ses clients americains, mais seule la grille EUR a pu etre consultee dans cette session. Chaque tentative (page par defaut, URL /en-us, parametres currency/country, en-tetes CF-IPCountry/X-Forwarded-For, centre d'aide, fiche App Store) a renvoye la meme page EUR ou une erreur 404 : l'acces reseau de cette session est geolocalise en UE. Ne pas fusionner sans confirmer la grille USD depuis un acces navigateur situe aux Etats-Unis.",
+  "identity": {
+    "officialName": "Squarespace",
+    "vendor": "Squarespace, Inc.",
+    "officialUrl": "https://www.squarespace.com",
+    "docsUrl": "https://support.squarespace.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.squarespace.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "Squarespace pricing (served as the EUR grid in this session)" },
+    { "id": "s2", "url": "https://www.squarespace.com/", "tier": 1, "accessedOn": "2026-10-02", "title": "Squarespace homepage" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "EUR",
+    "pricingUrl": "https://www.squarespace.com/pricing",
+    "verifiedOn": "2026-10-02",
+    "region": "EU (session geolocated; see hold)",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "basic",
+        "name": "Basic",
+        "unit": "site",
+        "minSeats": null,
+        "price": { "monthly": 17, "annualPerMonth": 12, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Custom domain, built-in AI tools, up to 2 contributors; 2% transaction fee on online store sales and 7% on digital content/memberships.", "fr": "Nom de domaine personnalisé, outils d'IA intégrés, jusqu'à 2 contributeurs ; 2 % de frais de transaction sur les ventes en boutique en ligne et 7 % sur le contenu numérique et les adhésions." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "core",
+        "name": "Core",
+        "unit": "site",
+        "minSeats": null,
+        "price": { "monthly": 24, "annualPerMonth": 18, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Vendor-recommended plan: unlimited contributors, advanced analytics, full CSS/JS customization; 0% store transaction fee, 5% digital-content fee.", "fr": "Forfait recommandé par l'éditeur : contributeurs illimités, analyses avancées, personnalisation CSS/JS complète ; 0 % de frais sur les ventes en boutique, 5 % sur le contenu numérique." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "site",
+        "minSeats": null,
+        "price": { "monthly": 42, "annualPerMonth": 32, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Lower payment processing fees than Core; 1% digital-content fee and advanced inventory/release-selling tools.", "fr": "Frais de traitement des paiements plus bas que Core ; 1 % de frais sur le contenu numérique et des outils avancés de vente par sorties limitées." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "advanced",
+        "name": "Advanced",
+        "unit": "site",
+        "minSeats": null,
+        "price": { "monthly": 79, "annualPerMonth": 69, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Lowest payment processing fees, 0% digital-content fee, advanced commerce APIs and priority support.", "fr": "Frais de traitement des paiements les plus bas, 0 % de frais sur le contenu numérique, API commerce avancées et support prioritaire." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "basic",
+    "addOns": [],
+    "cautions": [
+      { "en": "Prices shown in this session came from an EU-geolocated connection (EUR). Squarespace is a US company and very likely bills a separate USD grid to US visitors that could not be reached in this research session; do not treat the EUR figures above as the editor's home currency without re-checking from a US vantage point.", "fr": "Les prix affichés dans cette session proviennent d'une connexion géolocalisée en UE (EUR). Squarespace est une société américaine et facture très probablement une grille distincte en dollars à ses visiteurs américains, qui n'a pas pu être consultée dans cette session ; ne pas considérer les montants EUR ci-dessus comme la devise d'origine de l'éditeur sans revérifier depuis un accès américain.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Provides a drag-and-drop visual editor with built-in AI design tools, professional templates and integrated hosting.", "fr": "Propose un éditeur visuel par glisser-déposer avec des outils d'IA intégrés, des modèles professionnels et un hébergement intégré.", "sourceIds": ["s1"] },
+      { "en": "Includes integrated commerce (products, digital content, memberships, free invoicing) with payment processing fees that fall as plans scale up.", "fr": "Inclut le commerce intégré (produits, contenu numérique, adhésions, facturation gratuite) avec des frais de traitement des paiements qui baissent en montant en gamme.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan: every site needs a paid plan once the 14-day trial ends.", "fr": "Pas de forfait gratuit permanent : chaque site doit passer sur un forfait payant une fois l'essai de 14 jours terminé.", "sourceIds": ["s1"] },
+      { "en": "The entry Basic plan carries a 2% transaction fee on online store sales and 7% on digital content/memberships, both of which only drop on higher plans.", "fr": "Le forfait d'entrée Basic porte des frais de transaction de 2 % sur les ventes en boutique et 7 % sur le contenu numérique/les adhésions, qui ne baissent que sur les forfaits supérieurs.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A content creator or small-business owner who wants to launch a portfolio, blog or store site without hiring a developer.", "fr": "Une créatrice de contenu ou une petite entrepreneuse qui veut lancer un portfolio, un blog ou une boutique sans embaucher de développeur." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use: launch a portfolio or showcase site with a customizable template and a free domain for the first year on annual billing.", "fr": "Usage : lancer un site portfolio ou vitrine avec un modèle personnalisable et un nom de domaine gratuit la première année en facturation annuelle." },
+    { "en": "Use: sell products or digital content with transaction fees that drop as the business moves up from Basic to Plus or Advanced.", "fr": "Usage : vendre des produits ou du contenu numérique avec des frais de transaction qui baissent en montant de Basic vers Plus ou Advanced." }
+  ],
+  "alternatives": [
+    { "slug": "wix", "reason": { "en": "The closest direct competitor among hosted, template-based website builders.", "fr": "Le concurrent direct le plus proche parmi les créateurs de sites hébergés à base de modèles." } },
+    { "slug": "wordpress", "reason": { "en": "A much more flexible but self-managed alternative for building the same kind of site.", "fr": "Une alternative bien plus flexible mais auto-gérée pour construire le même type de site." } },
+    { "slug": "webflow", "reason": { "en": "A design-first website builder aimed at a similar audience with more visual control.", "fr": "Un créateur de sites orienté design visant un public similaire avec plus de contrôle visuel." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Neutral-leaning score: the entry plan's real home-currency price is unconfirmed this session (see hold), so value for money can't be judged with confidence yet.", "fr": "Note prudente : le prix réel du forfait d'entrée dans la devise d'origine n'est pas confirmé cette session (voir le hold), donc le rapport qualité-prix ne peut pas encore être jugé avec confiance.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "A drag-and-drop editor with templates and built-in AI tools is built for a non-technical user to get a usable site quickly.", "fr": "Un éditeur par glisser-déposer avec modèles et outils d'IA intégrés est conçu pour qu'une utilisatrice non technique obtienne rapidement un site utilisable.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers hosting, templates, commerce and SEO tools as advertised across every plan.", "fr": "Assure l'hébergement, les modèles, le commerce et les outils SEO comme annoncé sur chaque forfait.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers small-to-medium sites and commerce well, but full CSS/JS customization and commerce APIs are reserved for the Core plan and above.", "fr": "Couvre bien les sites petits et moyens et le commerce, mais la personnalisation CSS/JS complète et les API commerce sont réservées au forfait Core et au-dessus.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: content export options and portability to another platform are not covered by the sources checked.", "fr": "Note neutre : les options d'export du contenu et la portabilité vers une autre plateforme ne figurent pas dans les sources consultées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Website builder", "fr": "Créateur de sites" },
+    "shortDescription": { "en": "Squarespace is a hosted website builder with templates, built-in AI design tools and integrated commerce, sold on four site plans.", "fr": "Squarespace est un créateur de sites hébergé avec modèles, outils d'IA intégrés et commerce intégré, vendu sur quatre forfaits." },
+    "longDescription": {
+      "en": "Squarespace builds and hosts a website through a drag-and-drop editor, professional templates and built-in AI design tools, with integrated commerce (products, digital content, memberships, free invoicing) whose transaction fees fall as plans scale up.\n\nThere is no free plan, only a 14-day trial. The pricing grid confirmed this session (EUR: Basic at 17 euros/month, 12 euros/month billed annually) likely isn't Squarespace's home-currency price for US visitors; see the hold note before using any amount here to decide. It otherwise fits a solo creator or small business launching a portfolio, blog or store without a developer.", "fr": "Squarespace construit et héberge un site via un éditeur par glisser-déposer, des modèles professionnels et des outils d'IA intégrés, avec un commerce intégré (produits, contenu numérique, adhésions, facturation gratuite) dont les frais de transaction baissent en montant en gamme.\n\nIl n'y a pas de forfait gratuit, seulement un essai de 14 jours. La grille confirmée cette session (EUR : Basic à 17 euros/mois, 12 euros/mois en facturation annuelle) n'est probablement pas le prix dans la devise d'origine de Squarespace pour les visiteurs américains ; voir la note de hold avant d'utiliser un montant d'ici pour décider. Il convient sinon à une créatrice solo ou une petite entreprise qui lance un portfolio, un blog ou une boutique sans développeur." },
+    "pros": [
+      { "en": "A drag-and-drop editor with built-in AI tools and templates gets a usable site live quickly.", "fr": "Un éditeur par glisser-déposer avec outils d'IA intégrés et modèles permet de mettre un site utilisable en ligne rapidement." },
+      { "en": "Commerce transaction fees drop from 2% to 0% as plans scale from Basic to Advanced.", "fr": "Les frais de transaction commerce baissent de 2 % à 0 % en montant de Basic à Advanced." }
+    ],
+    "cons": [
+      { "en": "No free plan: every site is paid once the 14-day trial ends.", "fr": "Aucun forfait gratuit : chaque site devient payant une fois l'essai de 14 jours terminé." },
+      { "en": "Full CSS/JS customization and commerce APIs only start at the Core plan, not the entry Basic plan.", "fr": "La personnalisation CSS/JS complète et les API commerce ne démarrent qu'au forfait Core, pas au forfait d'entrée Basic." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want a hosted, template-based site with built-in commerce and don't need deep code-level customization on the entry plan.", "fr": "Tu veux un site hébergé à base de modèles avec commerce intégré et tu n'as pas besoin d'une personnalisation poussée au niveau du code sur le forfait d'entrée." },
+      "avoidIf": { "en": "You need full CSS/JS control or commerce APIs on the cheapest plan, or a permanently free option.", "fr": "Tu as besoin d'un contrôle CSS/JS complet ou des API commerce sur le forfait le moins cher, ou d'une option gratuite permanente." },
+      "threshold": { "en": "Pending confirmation of the home-currency price (see hold); the EUR grid seen this session put Basic at 144 euros/year billed annually (12 euros/month).", "fr": "En attente de confirmation du prix dans la devise d'origine (voir le hold) ; la grille EUR vue cette session place Basic à 144 euros/an en facturation annuelle (12 euros/mois)." },
+      "billingTraps": { "en": "The free domain only applies for one year on annual billing, and Basic's 2%/7% transaction fees apply until upgrading to Core or above.", "fr": "Le domaine gratuit ne s'applique que la première année en facturation annuelle, et les frais de transaction de 2 %/7 % de Basic s'appliquent jusqu'au passage à Core ou au-dessus." }
+    }
+  },
+  "unknowns": [
+    "The USD (home-currency) pricing grid could not be reached in this session; every attempt (default page, /en-us path, currency/country query parameters, CF-IPCountry and X-Forwarded-For headers, Squarespace help center, App Store listing) returned the same EUR page or a 404, consistent with this session's network being geolocated to the EU.",
+    "The Google Workspace email add-on's price is not stated on the pricing page checked."
+  ],
+  "conflicts": [],
+  "reviewNotes": [
+    "Confirm the USD pricing grid from a US-based browsing session before merging; do not convert the EUR amounts above to dollars."
+  ]
+}

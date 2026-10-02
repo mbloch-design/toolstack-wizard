@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 2,
+  "slug": "balsamiq",
+  "tier": "A",
+  "researchedOn": "2026-10-02",
+  "completedLocallyOn": "2026-10-02",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Balsamiq",
+    "vendor": "Balsamiq",
+    "officialUrl": "https://balsamiq.com",
+    "docsUrl": "https://balsamiq.com/learn/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "Balsamiq for Desktop (the downloadable Mac/Windows app) is in maintenance mode and will only be sold until December 31, 2026; Balsamiq Cloud continues as the main product."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://balsamiq.com/pricing/", "tier": 1, "accessedOn": "2026-10-02", "title": "Balsamiq Cloud pricing" },
+    { "id": "s2", "url": "https://balsamiq.com/product/desktop/license/", "tier": 1, "accessedOn": "2026-10-02", "title": "Balsamiq Desktop license purchase" },
+    { "id": "s3", "url": "https://balsamiq.com/learn/", "tier": 1, "accessedOn": "2026-10-02", "title": "Balsamiq Learn / documentation" }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "USD",
+    "pricingUrl": "https://balsamiq.com/pricing/",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": { "exists": false, "limits": null },
+    "trial": { "days": 14, "sourceIds": ["s1", "s2"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 23, "annualPerMonth": 16, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 10 projects, 500 monthly AI credits per editor, unlimited reviewers at no extra cost.", "fr": "Jusqu'à 10 projets, 500 crédits IA mensuels par éditeur, relecteurs illimités sans coût supplémentaire.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "teams",
+        "name": "Teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 34, "annualPerMonth": 24, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 100 projects, 1,000 monthly AI credits per editor, billing admin role, priority support.", "fr": "Jusqu'à 100 projets, 1 000 crédits IA mensuels par éditeur, rôle d'administrateur de facturation, support prioritaire.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 35, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Up to 400 projects, 2,500 monthly AI credits per editor, SSO with SAML, US or EU data storage; sold on annual billing only.", "fr": "Jusqu'à 400 projets, 2 500 crédits IA mensuels par éditeur, SSO avec SAML, stockage des données aux Etats-Unis ou en UE ; vendu uniquement en facturation annuelle.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "desktop",
+        "name": "Balsamiq for Desktop (per user)",
+        "unit": "one_time",
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 149 },
+        "onQuote": false,
+        "keyLimits": [{ "en": "One-time, version-based license tied to one user; sold only until December 31, 2026; free minor updates but no major feature upgrades.", "fr": "Licence unique liée à une personne, basée sur la version ; vendue seulement jusqu'au 31 décembre 2026 ; mises à jour mineures gratuites mais pas de nouvelles fonctionnalités majeures.", "sourceIds": ["s2"] }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      { "en": "On-demand AI credit top-up (500 credits)", "fr": "Recharge de crédits IA à la demande (500 crédits)", "unit": "usage", "price": 15, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Billed monthly, Starter and Teams cost 30% more per editor per month than the annual rate ($23 vs $16, $34 vs $24).", "fr": "Facturé au mois, Starter et Teams coûtent 30 % de plus par éditeur et par mois que le tarif annuel (23 $ contre 16 $, 34 $ contre 24 $).", "sourceIds": ["s1"] },
+      { "en": "Balsamiq for Desktop is being phased out: sold only until December 31, 2026 and will not receive new features.", "fr": "Balsamiq for Desktop est en voie de retrait : vendu seulement jusqu'au 31 décembre 2026 et ne recevra plus de nouvelles fonctionnalités.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Low-fidelity wireframing with a deliberately sketchy visual style, reusable custom UI components, and unlimited reviewer seats on every Cloud plan.", "fr": "Wireframing basse fidélité avec un style visuel volontairement esquissé, des composants d'interface personnalisés réutilisables, et des relecteurs illimités sur tous les plans Cloud.", "sourceIds": ["s1"] },
+      { "en": "A perpetual one-time license (Balsamiq for Desktop) still exists alongside the Cloud subscription, through the end of 2026.", "fr": "Une licence perpétuelle à l'achat (Balsamiq for Desktop) existe encore à côté de l'abonnement Cloud, jusqu'à fin 2026.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "Project counts are capped by plan (10 on Starter, 100 on Teams, 400 on Enterprise); more projects require a higher tier.", "fr": "Le nombre de projets est plafonné par plan (10 sur Starter, 100 sur Teams, 400 sur Enterprise) ; plus de projets exigent un plan supérieur.", "sourceIds": ["s1"] },
+      { "en": "Balsamiq for Desktop will not receive new features after 2026 and is sold only until the end of that year.", "fr": "Balsamiq for Desktop ne recevra plus de nouvelles fonctionnalités après 2026 et n'est vendu que jusqu'à la fin de cette année.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "macos", "windows"]
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "Product designers and small teams who need fast, low-fidelity wireframes to align on a flow before investing in high-fidelity design.", "fr": "Designers produit et petites équipes qui ont besoin de wireframes rapides et basse fidélité pour s'aligner sur un parcours avant d'investir dans le design haute fidélité." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Use case: a product designer sketches a multi-screen flow as a Balsamiq project and shares it with unlimited reviewers for feedback.", "fr": "Cas d'usage : un designer produit esquisse un parcours multi-écrans dans un projet Balsamiq et le partage avec des relecteurs illimités pour recueillir des retours." },
+    { "en": "Use case: a small product team keeps 100 project wireframes organized on the Teams plan, with a billing admin managing seats.", "fr": "Cas d'usage : une petite équipe produit garde 100 wireframes de projets organisés sur le plan Teams, avec un administrateur de facturation qui gère les sièges." }
+  ],
+  "alternatives": [
+    { "slug": "whimsical", "reason": { "en": "Covers the same fast, collaborative wireframing and flowchart use case at a similar entry price.", "fr": "Couvre le même besoin de wireframing rapide et collaboratif et de schémas de flux, à un prix d'entrée similaire." } },
+    { "slug": "visily", "reason": { "en": "A more recent, AI-assisted wireframing tool aimed at the same quick-mockup use case.", "fr": "Un outil de wireframing plus récent, assisté par IA, visant le même besoin de maquette rapide." } },
+    { "slug": "figjam", "reason": { "en": "Whiteboard tool commonly used for the same early-stage flow sketching, inside the Figma ecosystem.", "fr": "Outil de tableau blanc souvent utilisé pour le même type d'esquisse de parcours en phase amont, dans l'écosystème Figma." } },
+    { "slug": "excalidraw", "reason": { "en": "Shares the same intentionally hand-drawn aesthetic for quick, low-fidelity sketches.", "fr": "Partage la même esthétique volontairement dessinée à la main pour des esquisses rapides et basse fidélité." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 2,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "Starter costs $16/editor/month billed yearly for a tool with a long track record in the category, cheap relative to full-fidelity design tools.", "fr": "Starter coûte 16 $/éditeur/mois facturé à l'année pour un outil à la longévité reconnue dans la catégorie, bon marché face aux outils de design haute fidélité.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The product is positioned around an intentionally rough, low-fidelity style meant to produce a usable wireframe quickly rather than a polished mockup.", "fr": "Le produit est positionné autour d'un style volontairement brouillon et basse fidélité, pensé pour produire un wireframe utilisable rapidement plutôt qu'une maquette léchée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers on its stated promise of fast wireframing rather than full prototyping; unlimited reviewers and reusable components are present on every Cloud plan.", "fr": "Tient sa promesse annoncée de wireframing rapide plutôt que de prototypage complet ; relecteurs illimités et composants réutilisables sont présents sur tous les plans Cloud.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Within the broader prototyping category, Balsamiq's fidelity ceiling is intentionally low: no interactive prototyping or design-token system is described, unlike higher-fidelity tools.", "fr": "Dans la catégorie plus large du prototypage, le plafond de fidélité de Balsamiq est volontairement bas : aucun prototypage interactif ni système de tokens de design n'est décrit, contrairement aux outils plus haute fidélité.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Export is limited to PDF or image on the plans reviewed; no mention of exporting projects to an open, editable format or an API.", "fr": "L'export se limite au PDF ou à l'image sur les plans consultés ; aucune mention d'export des projets vers un format ouvert et modifiable, ni d'API.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Wireframing tool", "fr": "Outil de wireframing" },
+    "shortDescription": { "en": "A fast, intentionally low-fidelity wireframing tool for sketching app and website flows before full-fidelity design.", "fr": "Un outil de wireframing rapide et volontairement basse fidélité pour esquisser des parcours d'applications ou de sites avant le design haute fidélité." },
+    "longDescription": {
+      "en": "Balsamiq is built around a deliberately sketchy, low-fidelity look meant to keep conversations focused on structure and flow rather than visual polish. Cloud plans bill per editor, with unlimited reviewers included at every tier.\n\nStarter costs $16/editor/month billed yearly (or $23 billed monthly) for up to 10 projects; Teams and Enterprise raise the project cap and add admin and SSO features. A one-time Desktop license ($149/user) still exists in parallel but is being phased out by the end of 2026.",
+      "fr": "Balsamiq est construit autour d'un rendu volontairement brouillon et basse fidélité, pensé pour garder les discussions centrées sur la structure et le parcours plutôt que sur la finition visuelle. Les plans Cloud facturent par éditeur, avec des relecteurs illimités inclus à chaque niveau.\n\nStarter coûte 16 $/éditeur/mois facturé à l'année (ou 23 $ au mois) pour 10 projets ; Teams et Enterprise augmentent le plafond de projets et ajoutent des fonctions d'administration et de SSO. Une licence Desktop à achat unique (149 $/personne) existe encore en parallèle mais est en voie de retrait d'ici fin 2026."
+    },
+    "pros": [
+      { "en": "Every Cloud plan, even Starter, includes unlimited reviewer seats at no extra cost.", "fr": "Chaque plan Cloud, même Starter, inclut des relecteurs illimités sans coût supplémentaire." },
+      { "en": "The deliberately rough visual style keeps early design discussions about structure, not pixel detail.", "fr": "Le style visuel volontairement brouillon garde les discussions de design précoce centrées sur la structure, pas les détails de pixels." }
+    ],
+    "cons": [
+      { "en": "Project counts are hard-capped by plan (10/100/400), unlike tools that charge only per seat.", "fr": "Le nombre de projets est strictement plafonné par plan (10/100/400), contrairement aux outils qui facturent uniquement au siège." },
+      { "en": "Balsamiq for Desktop, the one-time-purchase option, stops being sold at the end of 2026.", "fr": "Balsamiq for Desktop, l'option à achat unique, cessera d'être vendu fin 2026." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want fast, low-fidelity wireframes to align a team on structure before any visual design work.", "fr": "Tu veux des wireframes rapides et basse fidélité pour aligner une équipe sur la structure avant tout travail visuel." },
+      "avoidIf": { "en": "You need interactive, high-fidelity prototypes or a long-term one-time license, since Desktop is being discontinued.", "fr": "Tu as besoin de prototypes interactifs haute fidélité ou d'une licence à achat unique durable, car Desktop est en voie de retrait." },
+      "threshold": { "en": "The entry Cloud plan (Starter) costs $192 a year per editor ($16/month) billed yearly, or $23 billed monthly.", "fr": "Le plan Cloud d'entrée (Starter) coûte 192 $ par an et par éditeur (16 $/mois) facturé à l'année, ou 23 $ facturé au mois." },
+      "billingTraps": { "en": "Monthly billing costs 30% more per editor than the annual rate on Starter and Teams.", "fr": "La facturation mensuelle coûte 30 % de plus par éditeur que le tarif annuel sur Starter et Teams." }
+    }
+  },
+  "unknowns": [
+    "The exact legal entity behind Balsamiq was not confirmed on the pages checked today; the Terms of Service page returned an access error (403).",
+    "No permanently free plan exists, only a 14-day trial on both Cloud and Desktop; no long-term free tier was found."
+  ],
+  "conflicts": []
+}

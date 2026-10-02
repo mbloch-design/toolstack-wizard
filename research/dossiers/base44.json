@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "slug": "base44",
+  "tier": "A",
+  "researchedOn": "2026-10-02",
+  "completedLocallyOn": "2026-10-02",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Base44",
+    "vendor": "Wix.com Ltd.",
+    "officialUrl": "https://base44.com",
+    "docsUrl": "https://docs.base44.com",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "acquired",
+    "statusNote": "Acquired by Wix.com Ltd.; the pricing page footer carries the Wix.com Ltd. copyright, and the product still operates under the Base44 brand."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://base44.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "Base44 pricing" },
+    { "id": "s2", "url": "https://docs.base44.com", "tier": 1, "accessedOn": "2026-10-02", "title": "Base44 documentation" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://base44.com/pricing",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": { "en": "25 AI message credits and 100 integration credits per month, up to 5 apps, with authentication and database included.", "fr": "25 crédits de messages IA et 100 crédits d'intégration par mois, jusqu'à 5 apps, avec authentification et base de données incluses." },
+      "sourceIds": ["s1"]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "25 AI messages and 100 integration credits a month, up to 5 apps.", "fr": "25 messages IA et 100 crédits d'intégration par mois, jusqu'à 5 apps.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 16, "annualPerMonth": 12.8, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "100 AI messages and 2,000 integration credits a month, unlimited apps, in-app code edits, GitHub connection.", "fr": "100 messages IA et 2 000 crédits d'intégration par mois, apps illimitées, édition de code dans l'app, connexion GitHub.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "builder",
+        "name": "Builder",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 40, "annualPerMonth": 32, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "250 AI messages and 10,000 integration credits a month, everything in Starter plus beta feature access.", "fr": "250 messages IA et 10 000 crédits d'intégration par mois, tout Starter plus l'accès aux fonctionnalités bêta.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 80, "annualPerMonth": 64, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "500 AI messages and 20,000 integration credits a month, everything in Builder plus premium support.", "fr": "500 messages IA et 20 000 crédits d'intégration par mois, tout Builder plus le support premium.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "elite",
+        "name": "Elite",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 160, "annualPerMonth": 128, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1,200 AI messages and 50,000 integration credits a month, everything in Pro.", "fr": "1 200 messages IA et 50 000 crédits d'intégration par mois, tout Pro.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Annual billing is charged as one upfront yearly payment at the discounted monthly rate, not as separate lower monthly invoices.", "fr": "La facturation annuelle est prélevée en un seul paiement annuel au tarif mensuel réduit, pas sous forme de mensualités distinctes plus basses.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Generates a complete app (including authentication and a database) from a prompt, without writing code, even on the free plan.", "fr": "Génère une application complète (authentification et base de données incluses) à partir d'un prompt, sans écrire de code, même sur le plan gratuit.", "sourceIds": ["s1"] },
+      { "en": "Paid plans unlock in-app code editing and a GitHub connection, so the generated app's code can be inspected and moved.", "fr": "Les plans payants débloquent l'édition du code dans l'app et une connexion GitHub, ce qui permet d'inspecter et de déplacer le code généré.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The free plan caps usage at 25 AI message credits and 100 integration credits a month, and 5 apps total.", "fr": "Le plan gratuit plafonne l'usage à 25 crédits de messages IA et 100 crédits d'intégration par mois, et 5 apps au total.", "sourceIds": ["s1"] },
+      { "en": "In-app code edits and the GitHub integration are reserved for paid plans; the free plan does not include them.", "fr": "L'édition de code dans l'app et l'intégration GitHub sont réservées aux plans payants ; le plan gratuit ne les inclut pas.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "GitHub", "slug": "github", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "OTHER",
+    "description": { "en": "Non-technical founders and small teams who want a working internal tool or MVP without hiring a developer.", "fr": "Fondateurs non techniques et petites équipes qui veulent un outil interne ou un MVP fonctionnel sans embaucher de développeur." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use case: a solo founder describes an internal tool in a prompt and gets a working app with login and a database on the free plan.", "fr": "Cas d'usage : un fondateur solo décrit un outil interne dans un prompt et obtient une app fonctionnelle avec connexion et base de données sur le plan gratuit." },
+    { "en": "Use case: a small team on the Starter plan connects the generated app's code to GitHub to keep editing it beyond the AI builder.", "fr": "Cas d'usage : une petite équipe sur le plan Starter connecte le code de l'app générée à GitHub pour continuer à l'éditer au-delà du générateur IA." }
+  ],
+  "alternatives": [
+    { "slug": "lovable", "reason": { "en": "Direct competitor for building a complete app from a prompt without code, at a similar credit-based pricing model.", "fr": "Concurrent direct pour construire une app complète à partir d'un prompt sans code, avec un modèle de prix similaire basé sur des crédits." } },
+    { "slug": "bolt-new", "reason": { "en": "Another AI app builder targeting the same no-code, prompt-to-app use case.", "fr": "Un autre générateur d'apps IA qui vise le même besoin de passer d'un prompt à une app sans code." } },
+    { "slug": "replit", "reason": { "en": "Broader AI-assisted app-building platform covering the same build-and-deploy use case, with a code-first option for teams that need it.", "fr": "Plateforme de création d'apps assistée par IA plus large, qui couvre le même besoin de construction et déploiement, avec une option orientée code pour les équipes qui en ont besoin." } },
+    { "slug": "v0-vercel", "reason": { "en": "Vercel's AI app/UI generator, a direct competitor for prompt-based app scaffolding.", "fr": "Le générateur d'apps et d'interfaces IA de Vercel, un concurrent direct pour la création d'apps à partir d'un prompt." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": { "en": "Starter costs $12.80/month billed yearly for 100 AI messages and unlimited apps; nothing in the sources checked shows this undercuts comparable AI app builders.", "fr": "Starter coûte 12,80 $/mois facturé à l'année pour 100 messages IA et des apps illimitées ; rien dans les sources consultées ne montre que c'est moins cher que des générateurs d'apps IA comparables.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Building an app from a prompt without coding is the core promise, and the free plan lets you try this before paying, which supports a quick first result.", "fr": "Construire une app à partir d'un prompt sans coder est la promesse centrale, et le plan gratuit permet de l'essayer avant de payer, ce qui facilite un premier résultat rapide.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Authentication and a database are included from the free plan, matching the \"complete apps\" promise; the sources checked say nothing about the reliability of generated apps at scale.", "fr": "L'authentification et la base de données sont incluses dès le plan gratuit, conforme à la promesse d'\"apps complètes\" ; les sources consultées ne disent rien sur la fiabilité des apps générées à grande échelle.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Usage scales from 100 to 1,200 AI messages a month across paid tiers; no category benchmark is available from the sources checked to place it above or below competitors.", "fr": "L'usage passe de 100 à 1 200 messages IA par mois selon les plans payants ; aucun repère de catégorie n'est disponible dans les sources consultées pour le situer au-dessus ou en dessous des concurrents.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Paid plans include in-app code editing and a GitHub connection, so the generated app's code can leave the platform.", "fr": "Les plans payants incluent l'édition de code dans l'app et une connexion GitHub, ce qui permet au code de l'app générée de sortir de la plateforme.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI app builder", "fr": "Générateur d'apps IA" },
+    "shortDescription": { "en": "An AI tool that builds complete apps, including login and a database, from a prompt, without writing code.", "fr": "Un outil IA qui construit des applications complètes, connexion et base de données incluses, à partir d'un prompt, sans écrire de code." },
+    "longDescription": {
+      "en": "Base44, now owned by Wix, generates working apps from a text prompt, bundling user authentication and a database so the result is usable right away rather than just a visual mockup.\n\nThe free plan allows 25 AI messages and 5 apps a month, enough to try the tool. Starter opens up unlimited apps and in-app code edits at $12.80/month billed yearly ($16 billed monthly), rising to Elite at $128/month for teams running many AI-generated apps at once.",
+      "fr": "Base44, désormais détenu par Wix, génère des applications fonctionnelles à partir d'un prompt texte, en incluant authentification et base de données pour que le résultat soit utilisable immédiatement plutôt qu'une simple maquette visuelle.\n\nLe plan gratuit permet 25 messages IA et 5 apps par mois, de quoi essayer l'outil. Starter débloque les apps illimitées et l'édition de code dans l'app à 12,80 $/mois facturé à l'année (16 $ au mois), jusqu'à Elite à 128 $/mois pour les équipes qui font tourner de nombreuses apps générées par IA à la fois."
+    },
+    "pros": [
+      { "en": "Authentication and a database are included by default, not sold as separate add-ons.", "fr": "L'authentification et la base de données sont incluses par défaut, pas vendues comme options séparées." },
+      { "en": "In-app code editing and a GitHub connection on paid plans let you take the generated code elsewhere.", "fr": "L'édition de code dans l'app et la connexion GitHub sur les plans payants permettent de récupérer le code généré ailleurs." }
+    ],
+    "cons": [
+      { "en": "The free plan's 25 monthly AI messages run out quickly once you iterate on an app.", "fr": "Les 25 messages IA mensuels du plan gratuit s'épuisent vite dès qu'on itère sur une app." },
+      { "en": "Now owned by Wix, which changes who controls the product's roadmap and pricing long-term.", "fr": "Désormais détenu par Wix, ce qui change qui contrôle la feuille de route et les prix du produit à long terme." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want a working app with login and a database from a prompt, without hiring a developer.", "fr": "Tu veux une app fonctionnelle avec connexion et base de données à partir d'un prompt, sans embaucher de développeur." },
+      "avoidIf": { "en": "You need more than 25 AI messages a month without paying, or you want to avoid a Wix-owned platform.", "fr": "Tu as besoin de plus de 25 messages IA par mois sans payer, ou tu veux éviter une plateforme détenue par Wix." },
+      "threshold": { "en": "The entry paid plan (Starter) costs $153.60 a year ($12.80/month) billed yearly, or $16 billed monthly, for 100 AI messages a month.", "fr": "Le plan payant d'entrée (Starter) coûte 153,60 $ par an (12,80 $/mois) facturé à l'année, ou 16 $ facturé au mois, pour 100 messages IA par mois." }
+    }
+  },
+  "unknowns": [
+    "No information was found on these pages about long-term code or data portability beyond the GitHub connection on paid plans.",
+    "The exact date of the Wix acquisition was not stated on the pricing page; only the current copyright holder was confirmed."
+  ],
+  "conflicts": []
+}

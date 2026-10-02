@@ -1,0 +1,149 @@
+{
+  "schemaVersion": 2,
+  "slug": "17hats",
+  "tier": "A",
+  "researchedOn": "2026-10-02",
+  "completedLocallyOn": "2026-10-02",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "17hats",
+    "vendor": "Isomnio, Inc. (dba 17hats)",
+    "officialUrl": "https://www.17hats.com",
+    "docsUrl": "https://support.17hats.com/portal/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.17hats.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "17hats pricing" },
+    { "id": "s2", "url": "https://www.17hats.com/terms-conditions", "tier": 1, "accessedOn": "2026-10-02", "title": "17hats Terms of Service" },
+    { "id": "s3", "url": "https://support.17hats.com/portal/", "tier": 1, "accessedOn": "2026-10-02", "title": "17hats support portal" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.17hats.com/pricing",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": false,
+    "freePlan": {
+      "exists": true,
+      "limits": { "en": "Unlimited contacts and projects, 4 invoices per quarter, sales tax report, email templates.", "fr": "Contacts et projets illimités, 4 factures par trimestre, rapport de taxe de vente, modèles d'e-mails." },
+      "sourceIds": ["s1"]
+    },
+    "trial": { "days": 7, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free CRM",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited contacts and projects, capped at 4 invoices per quarter.", "fr": "Contacts et projets illimités, plafonné à 4 factures par trimestre.", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "all-inclusive",
+        "name": "17hats",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": 60, "annualPerMonth": 50, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited invoices, contracts and questionnaires, online scheduling, lead auto-response, 2 brands included (a 3rd brand costs extra).", "fr": "Factures, contrats et questionnaires illimités, planification en ligne, réponse automatique aux prospects, 2 marques incluses (une 3e marque coûte un supplément).", "sourceIds": ["s1"] }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "all-inclusive",
+    "addOns": [
+      { "en": "Bank account connection", "fr": "Connexion bancaire", "unit": "account", "price": 5, "sourceIds": ["s1"] },
+      { "en": "Time tracking module", "fr": "Module de suivi du temps", "unit": "account", "price": 5, "sourceIds": ["s1"] },
+      { "en": "Advanced online scheduling with Zoom", "fr": "Planification en ligne avancée avec Zoom", "unit": "account", "price": 10, "sourceIds": ["s1"] },
+      { "en": "Recurring billing", "fr": "Facturation récurrente", "unit": "account", "price": 10, "sourceIds": ["s1"] },
+      { "en": "Additional user login", "fr": "Identifiant utilisateur supplémentaire", "unit": "seat", "price": 5, "sourceIds": ["s1"] },
+      { "en": "Additional brand (3rd and beyond)", "fr": "Marque supplémentaire (à partir de la 3e)", "unit": "account", "price": 10, "sourceIds": ["s1"] },
+      { "en": "QuickBooks Online connection", "fr": "Connexion QuickBooks Online", "unit": "account", "price": 5, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "A 50%-off first-year promotion ($300/year or $400/2 years) is advertised; the regular price used here is $600/year ($50/month).", "fr": "Une promotion de 50 % la première année (300 $/an ou 400 $/2 ans) est affichée ; le prix normal retenu ici est 600 $/an (50 $/mois).", "sourceIds": ["s1"] },
+      { "en": "Several features (bank sync, time tracking, recurring billing, a 3rd brand) are paid add-ons on top of the single plan price.", "fr": "Plusieurs fonctions (synchronisation bancaire, suivi du temps, facturation récurrente, une 3e marque) sont des options payantes en plus du prix du plan unique.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "One flat plan covers CRM, invoicing, contracts, online scheduling and lead auto-response, aimed at creative-service freelancers.", "fr": "Un plan unique couvre CRM, facturation, contrats, planification en ligne et réponse automatique aux prospects, pensé pour les freelances de services créatifs.", "sourceIds": ["s1"] },
+      { "en": "A native mobile app is included for managing projects and invoices on the go.", "fr": "Une application mobile native est incluse pour gérer projets et factures en déplacement.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Zapier integration, advanced workflows and the client portal are listed as part of the paid plan, not the free CRM plan.", "fr": "L'intégration Zapier, les workflows avancés et le portail client font partie du plan payant, pas du plan CRM gratuit.", "sourceIds": ["s1"] },
+      { "en": "Bank account sync, time tracking and recurring billing are not included in the base price; each is a separate paid module.", "fr": "La synchronisation bancaire, le suivi du temps et la facturation récurrente ne sont pas inclus dans le prix de base ; chacun est un module payant séparé.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Zapier", "slug": "zapier", "sourceIds": ["s1"] },
+      { "name": "QuickBooks Online", "slug": "quickbooks-online", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "Solo creative-service providers (photographers, event planners, consultants) who want one tool for contacts, invoicing and scheduling instead of several.", "fr": "Prestataires créatifs indépendants (photographes, organisateurs d'événements, consultants) qui veulent un seul outil pour contacts, facturation et planification au lieu de plusieurs." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use case: a wedding photographer sends a contract and invoice from the same lead record after a client inquiry comes in.", "fr": "Cas d'usage : un photographe de mariage envoie contrat et facture depuis la même fiche prospect après une demande client." },
+    { "en": "Use case: an event planner lets clients book a consultation through online scheduling while 17hats auto-responds to new leads.", "fr": "Cas d'usage : un organisateur d'événements laisse les clients réserver un rendez-vous via la planification en ligne pendant que 17hats répond automatiquement aux nouveaux prospects." }
+  ],
+  "alternatives": [
+    { "slug": "suitedash", "reason": { "en": "All-in-one client management platform covering the same CRM-plus-invoicing-plus-portal need for service businesses.", "fr": "Plateforme tout-en-un de gestion client qui couvre le même besoin de CRM, facturation et portail pour les prestataires de services." } },
+    { "slug": "plutio", "reason": { "en": "All-in-one business management tool for freelancers, the closest direct competitor by scope and target.", "fr": "Outil de gestion tout-en-un pour freelances, le concurrent direct le plus proche par la portée et la cible." } },
+    { "slug": "jobber", "reason": { "en": "Client and job management CRM with invoicing and scheduling, a common alternative for solo service providers.", "fr": "CRM de gestion de clients et de chantiers avec facturation et planification, une alternative courante pour les prestataires solos." } }
+  ],
+  "missingAlternatives": [
+    { "name": "HoneyBook", "officialUrl": "https://www.honeybook.com", "reason": "Main direct competitor for creative-freelancer CRM and invoicing, not in the catalogue" },
+    { "name": "Dubsado", "officialUrl": "https://www.dubsado.com", "reason": "Main direct competitor for creative-freelancer CRM and client workflow, not in the catalogue" }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 2,
+    "evidence": {
+      "valeurAjoutee": { "en": "One $60/month ($50/month billed yearly) plan replaces separate invoicing, scheduling and CRM subscriptions for a solo freelancer, though several common needs (bank sync, time tracking) cost extra.", "fr": "Un seul plan à 60 $/mois (50 $/mois facturé à l'année) remplace des abonnements séparés de facturation, planification et CRM pour un freelance solo, même si plusieurs besoins courants (synchro bancaire, suivi du temps) coûtent un supplément.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The tool bundles many modules (questionnaires, contracts, scheduling, invoicing); several of these need a separate paid add-on to match common workflows, which points to real setup effort.", "fr": "L'outil regroupe de nombreux modules (questionnaires, contrats, planification, facturation) ; plusieurs exigent une option payante séparée pour couvrir des usages courants, ce qui suppose une vraie mise en place.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The core promise (CRM plus invoicing plus scheduling in one place) is delivered on the paid plan, but Zapier and advanced scheduling sit behind that single paid tier rather than the free one.", "fr": "La promesse centrale (CRM, facturation et planification réunis) est tenue sur le plan payant, mais Zapier et la planification avancée restent réservés au plan payant et absents du plan gratuit.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers the core of a creative-freelancer back office, but separate add-ons for time tracking, recurring billing and bank sync show the base plan alone does not cover deeper accounting needs.", "fr": "Couvre le cœur du back-office d'un freelance créatif, mais des modules séparés pour le suivi du temps, la facturation récurrente et la synchro bancaire montrent que le plan de base seul ne couvre pas des besoins comptables plus poussés.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "No data export or open API is mentioned on the pricing or terms pages reviewed; Zapier is the only named integration, and only on the paid plan.", "fr": "Aucun export de données ni API ouverte n'est mentionné sur les pages tarifs ou conditions consultées ; Zapier est la seule intégration citée, et seulement sur le plan payant.", "sourceIds": ["s1", "s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Freelancer CRM", "fr": "CRM freelance" },
+    "shortDescription": { "en": "An all-in-one CRM for creative freelancers, bundling contacts, invoicing, contracts and scheduling into one flat-rate plan.", "fr": "Un CRM tout-en-un pour freelances créatifs, qui réunit contacts, facturation, contrats et planification dans un seul plan à tarif fixe." },
+    "longDescription": {
+      "en": "17hats bundles client relationship management, invoicing, contracts, questionnaires and scheduling into a single plan aimed at solo creative-service providers like photographers, planners and consultants.\n\nA free CRM plan covers unlimited contacts and projects but only 4 invoices per quarter. The one paid plan costs $50/month billed yearly ($60/month billed monthly) and lifts that cap, adding a second brand and lead auto-response. Deeper needs (bank sync, time tracking, recurring billing, a 3rd brand) cost extra each month as separate add-ons.",
+      "fr": "17hats regroupe la gestion des contacts clients, la facturation, les contrats, les questionnaires et la planification dans un seul plan pensé pour les prestataires créatifs indépendants comme les photographes, organisateurs et consultants.\n\nUn plan CRM gratuit couvre contacts et projets illimités mais seulement 4 factures par trimestre. L'unique plan payant coûte 50 $/mois facturé à l'année (60 $/mois au mois) et lève ce plafond, en ajoutant une deuxième marque et la réponse automatique aux prospects. Les besoins plus poussés (synchro bancaire, suivi du temps, facturation récurrente, 3e marque) coûtent un supplément mensuel en options séparées."
+    },
+    "pros": [
+      { "en": "One subscription replaces several point tools (invoicing, scheduling, contracts) for a solo creative business.", "fr": "Un seul abonnement remplace plusieurs outils séparés (facturation, planification, contrats) pour une activité créative solo." },
+      { "en": "The free CRM plan is permanent, not a trial, so contacts and projects stay usable at no cost.", "fr": "Le plan CRM gratuit est permanent, pas un essai, donc contacts et projets restent utilisables sans payer." }
+    ],
+    "cons": [
+      { "en": "Common needs like bank sync, time tracking and a 3rd brand are each a separate paid add-on.", "fr": "Des besoins courants comme la synchro bancaire, le suivi du temps et une 3e marque sont chacun une option payante séparée." },
+      { "en": "No data export or API is advertised, so leaving the tool likely means re-entering client data elsewhere.", "fr": "Aucun export de données ni API n'est annoncé, donc quitter l'outil implique probablement de ressaisir les données clients ailleurs." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run a solo creative-service business and want contacts, invoicing and scheduling in one flat-rate plan.", "fr": "Tu gères une activité créative solo et veux contacts, facturation et planification dans un seul plan à tarif fixe." },
+      "avoidIf": { "en": "You need more than 4 invoices a quarter without paying, or a documented API to connect other tools.", "fr": "Tu as besoin de plus de 4 factures par trimestre sans payer, ou d'une API documentée pour connecter d'autres outils." },
+      "threshold": { "en": "The paid plan costs $600 a year ($50/month) billed yearly, or $60 billed monthly, before any add-on module.", "fr": "Le plan payant coûte 600 $ par an (50 $/mois) facturé à l'année, ou 60 $ facturé au mois, avant toute option." },
+      "billingTraps": { "en": "A 50%-off first-year promotion drops the yearly price to $300, so the renewal price effectively doubles in year two.", "fr": "Une promotion de 50 % la première année ramène le prix annuel à 300 $, donc le prix double en pratique au renouvellement de la 2e année." }
+    }
+  },
+  "unknowns": [
+    "The number of user logins included before the \"Additional Users\" add-on applies is not clearly stated on the current pricing page, which mixes legacy tier names with a single current plan.",
+    "Whether sales tax is included in the displayed USD prices is not fully stated beyond the Terms of Service excluding only US taxes from the quoted fee."
+  ],
+  "conflicts": []
+}

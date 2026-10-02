@@ -1,0 +1,164 @@
+{
+  "schemaVersion": 2,
+  "slug": "blueink-esignatures",
+  "tier": "B",
+  "researchedOn": "2026-10-02",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-02",
+  "identity": {
+    "officialName": "Blueink",
+    "vendor": "Blueink",
+    "officialUrl": "https://www.blueink.com",
+    "docsUrl": "https://developer.blueink.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.blueink.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "Blueink pricing" },
+    { "id": "s2", "url": "https://www.blueink.com/", "tier": 1, "accessedOn": "2026-10-02", "title": "Blueink homepage" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.blueink.com/pricing",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 22.5, "annualPerMonth": 15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "10 envelopes per user per month on monthly billing, or 120 envelopes per user per year on annual billing.", "fr": "10 enveloppes par utilisateur et par mois en facturation mensuelle, ou 120 enveloppes par utilisateur et par an en facturation annuelle." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business-pro",
+        "name": "Business Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 45, "annualPerMonth": 30, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "150 envelopes per user per month on monthly billing, or 1,800 envelopes per user per year on annual billing.", "fr": "150 enveloppes par utilisateur et par mois en facturation mensuelle, ou 1 800 enveloppes par utilisateur et par an en facturation annuelle." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "unlimited",
+        "name": "Blueink Unlimited",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 55, "annualPerMonth": 40, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited envelopes per user, on either monthly or annual billing.", "fr": "Enveloppes illimitées par utilisateur, en facturation mensuelle comme annuelle." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Unlimited users, a per-envelope pricing model, bulk send, API access, custom reporting and HIPAA compliance; the per-envelope rate is not published.", "fr": "Utilisateurs illimités, tarification à l'enveloppe, envoi en masse, accès API, rapports personnalisés et conformité HIPAA ; le tarif par enveloppe n'est pas publié." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [],
+    "cautions": [
+      { "en": "Pricing is per user per month; each plan caps envelopes per user, and the limit resets monthly or yearly depending on the billing cycle. No overage penalty is charged, but extra capacity must be purchased.", "fr": "Le tarif est par utilisateur et par mois ; chaque forfait plafonne le nombre d'enveloppes par utilisateur, et la limite se renouvelle au mois ou à l'année selon le cycle de facturation. Aucune pénalité de dépassement n'est facturée, mais une capacité supplémentaire doit être achetée.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Sends signature requests by SMS as well as email, which the vendor says increases signer response rates.", "fr": "Envoie les demandes de signature par SMS en plus de l'email, ce que l'éditeur présente comme un moyen d'augmenter le taux de réponse des signataires.", "sourceIds": ["s2"] },
+      { "en": "Provides bulk send, reusable templates, in-person signing and self-service SmartLink forms for repeat signing workflows.", "fr": "Propose l'envoi en masse, des modèles réutilisables, la signature en personne et des formulaires SmartLink en libre-service pour les flux de signature répétés.", "sourceIds": ["s2"] },
+      { "en": "Ships with a REST API and SDKs for embedding e-signature into another product, plus a real-time tracking dashboard and a Certificate of Evidence per signed document.", "fr": "Fournit une API REST et des SDK pour intégrer la signature électronique dans un autre produit, ainsi qu'un tableau de suivi en temps réel et un certificat de preuve par document signé.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "No permanent free plan: every account becomes paid once the 14-day trial ends.", "fr": "Pas de forfait gratuit permanent : chaque compte devient payant une fois l'essai de 14 jours terminé.", "sourceIds": ["s1"] },
+      { "en": "The Enterprise per-envelope rate is not published; it requires contacting sales.", "fr": "Le tarif par enveloppe de l'offre Enterprise n'est pas publié ; il faut contacter le service commercial.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Airtable", "slug": "airtable", "sourceIds": ["s2"] },
+      { "name": "ClickUp", "slug": "clickup", "sourceIds": ["s2"] },
+      { "name": "Google Drive", "slug": "google-drive", "sourceIds": ["s2"] },
+      { "name": "Salesforce", "slug": "salesforce", "sourceIds": ["s2"] },
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "An ops-minded solo operator or small team lead who needs to send and track signed documents without paying DocuSign-level per-seat prices.", "fr": "Une responsable ops solo ou d'une petite équipe qui doit envoyer et suivre des documents signés sans payer le tarif par poste d'un DocuSign." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Use: send a contract by SMS as well as email so a signer without easy email access on their phone can still sign the same day.", "fr": "Usage : envoyer un contrat par SMS en plus de l'email pour qu'un signataire sans accès facile à ses emails sur mobile puisse signer le jour même." },
+    { "en": "Use: bulk-send the same template to a batch of new hires or clients and track who has signed from the real-time dashboard.", "fr": "Usage : envoyer en masse le même modèle à un lot de nouveaux clients ou employés et suivre qui a signé depuis le tableau de suivi en temps réel." }
+  ],
+  "alternatives": [
+    { "slug": "docusign", "reason": { "en": "The market-leading e-signature tool Blueink positions itself against on price.", "fr": "L'outil de signature électronique leader du marché auquel Blueink se compare sur le prix." } },
+    { "slug": "yousign", "reason": { "en": "A European e-signature competitor covering the same core signing workflow.", "fr": "Un concurrent européen de la signature électronique qui couvre le même besoin de signature." } },
+    { "slug": "signrequest", "reason": { "en": "Another e-signature tool aimed at small teams and freelancers.", "fr": "Un autre outil de signature électronique destiné aux petites équipes et indépendants." } },
+    { "slug": "adobe-acrobat-sign", "reason": { "en": "Adobe's e-signature product, a direct enterprise-grade competitor.", "fr": "Le produit de signature électronique d'Adobe, un concurrent direct haut de gamme." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The vendor positions Standard and Business Pro below typical DocuSign per-seat prices, but the comparison is the vendor's own claim and wasn't independently checked against a DocuSign quote this session.", "fr": "L'éditeur positionne Standard et Business Pro sous les tarifs habituels par poste de DocuSign, mais la comparaison vient de l'éditeur lui-même et n'a pas été vérifiée face à un devis DocuSign cette session.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "Templates, bulk send and auto-detected signature fields point to a quick setup, though no onboarding time is stated on the pages checked.", "fr": "Les modèles, l'envoi en masse et la détection automatique des champs de signature suggèrent une mise en place rapide, mais aucune durée d'onboarding n'est indiquée sur les pages consultées.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers SMS and email signature requests, templates and in-person signing as advertised.", "fr": "Assure l'envoi de demandes de signature par SMS et email, les modèles et la signature en personne comme annoncé.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Covers bulk send, API access and custom branding, but envelope caps on every paid tier below Enterprise limit volume for a growing team.", "fr": "Couvre l'envoi en masse, l'accès API et la marque personnalisée, mais les plafonds d'enveloppes sur chaque forfait sous Enterprise limitent le volume pour une équipe en croissance.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability on account cancellation are not covered by the sources checked.", "fr": "Note neutre : le format d'export et la portabilité des données en cas d'annulation du compte ne figurent pas dans les sources consultées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "E-signature with SMS", "fr": "Signature avec SMS" },
+    "shortDescription": { "en": "Blueink sends e-signature requests by SMS and email, with bulk send, templates and an API, priced per user with a monthly envelope cap.", "fr": "Blueink envoie des demandes de signature par SMS et email, avec envoi en masse, modèles et API, facturé par utilisateur avec un plafond d'enveloppes mensuel." },
+    "longDescription": {
+      "en": "Blueink handles e-signature requests over SMS as well as email, with bulk send, reusable templates, in-person signing, SmartLink self-service forms and a Certificate of Evidence per document. A REST API and SDKs let it sit inside another product.\n\nThere is no free plan: Standard starts at $22.50/user/month ($15/month billed annually) for 10 envelopes/user/month, up to Business Pro and Unlimited, with Enterprise on a custom per-envelope quote. It fits a small team or solo operator who sends routine contracts and wants SMS delivery without a DocuSign-sized bill.", "fr": "Blueink envoie des demandes de signature par SMS en plus de l'email, avec envoi en masse, modèles réutilisables, signature en personne, formulaires SmartLink en libre-service et un certificat de preuve par document. Une API REST et des SDK permettent de l'intégrer dans un autre produit.\n\nPas de forfait gratuit : Standard démarre à 22,50 $/utilisateur/mois (15 $/mois en facturation annuelle) pour 10 enveloppes/utilisateur/mois, jusqu'à Business Pro et Unlimited, Enterprise étant sur devis au tarif par enveloppe. Convient à une petite équipe ou une indépendante qui envoie des contrats courants et veut le SMS sans la facture d'un DocuSign." },
+    "pros": [
+      { "en": "SMS delivery alongside email, useful for signers who are easier to reach by phone.", "fr": "Envoi par SMS en plus de l'email, utile pour les signataires plus faciles à joindre par téléphone." },
+      { "en": "14-day trial with no payment information required upfront.", "fr": "Essai de 14 jours sans information de paiement demandée au départ." },
+      { "en": "No overage penalty when an envelope cap is exceeded; extra capacity can be purchased instead.", "fr": "Aucune pénalité de dépassement quand le plafond d'enveloppes est dépassé ; une capacité supplémentaire peut être achetée à la place." }
+    ],
+    "cons": [
+      { "en": "No free plan, and every paid tier below Enterprise caps envelopes per user.", "fr": "Aucun forfait gratuit, et chaque palier payant sous Enterprise plafonne les enveloppes par utilisateur." },
+      { "en": "Enterprise's per-envelope rate is not public; it requires a sales conversation.", "fr": "Le tarif par enveloppe d'Enterprise n'est pas public ; il faut passer par le service commercial." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You send a moderate, predictable volume of contracts per user and want SMS delivery without DocuSign-level per-seat pricing.", "fr": "Tu envoies un volume modéré et prévisible de contrats par utilisateur et tu veux le SMS sans le tarif par poste d'un DocuSign." },
+      "avoidIf": { "en": "You need a permanently free plan or unpredictable, high-volume envelope sending without planning the tier in advance.", "fr": "Tu as besoin d'un forfait gratuit permanent ou d'un envoi d'enveloppes à fort volume imprévisible sans anticiper le palier." },
+      "threshold": { "en": "Standard costs $180/year per user billed annually ($15/month) for 120 envelopes/user/year; budget for Business Pro at $360/year/user once volume exceeds that.", "fr": "Standard coûte 180 $/an par utilisateur en facturation annuelle (15 $/mois) pour 120 enveloppes/utilisateur/an ; prévois Business Pro à 360 $/an/utilisateur une fois ce volume dépassé." },
+      "billingTraps": { "en": "Each plan's envelope allowance is fixed per user and per billing period; exceeding it means buying extra capacity rather than a flat overage fee, so the real monthly cost can grow with usage.", "fr": "Le quota d'enveloppes de chaque forfait est fixe par utilisateur et par période de facturation ; le dépasser oblige à acheter une capacité supplémentaire plutôt qu'une pénalité fixe, donc le coût mensuel réel peut grimper avec l'usage." }
+    }
+  },
+  "unknowns": [
+    "Enterprise's per-envelope price is not published on the official pricing page.",
+    "The vendor's SMS response-rate claim ('45% increase') is marketing copy, not independently verified."
+  ],
+  "conflicts": []
+}

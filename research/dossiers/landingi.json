@@ -1,0 +1,184 @@
+{
+  "schemaVersion": 2,
+  "slug": "landingi",
+  "tier": "A",
+  "researchedOn": "2026-10-02",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-02",
+  "identity": {
+    "officialName": "Landingi",
+    "vendor": "Landingi",
+    "officialUrl": "https://landingi.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://landingi.com/pricing/", "tier": 1, "accessedOn": "2026-10-02", "title": "Landingi pricing, EUR plan cards (Pay monthly / Pay yearly toggle, browser session geolocated to the EU)" },
+    { "id": "s2", "url": "https://landingi.com/pricing/", "tier": 1, "accessedOn": "2026-10-02", "title": "Landingi pricing FAQ text citing USD annual-per-month rates (Build $24, Optimize $119, Scale from $229, Enterprise from $1,199)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://landingi.com/pricing/",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "build",
+        "name": "Build",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": 24, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "For startups, small businesses and solopreneurs: 10 active landing pages, 2,000 visits/month, 1 custom domain, 2,500 credits/month, 5 users.", "fr": "Pour startups, petites entreprises et solopreneurs : 10 pages actives, 2 000 visites/mois, 1 domaine personnalisé, 2 500 crédits/mois, 5 utilisateurs." }
+        ],
+        "sourceIds": ["s1", "s2"]
+      },
+      {
+        "key": "optimize",
+        "name": "Optimize",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": 119, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "For freelancers and professional marketers: 100 active landing pages, 30,000 visits/month, 3 custom domains, 10,000 credits/month, 10 users; adds server-side A/B testing and an e-commerce hub.", "fr": "Pour freelances et marketeurs professionnels : 100 pages actives, 30 000 visites/mois, 3 domaines personnalisés, 10 000 crédits/mois, 10 utilisateurs ; ajoute l'A/B testing server-side et un hub e-commerce." }
+        ],
+        "sourceIds": ["s1", "s2"]
+      },
+      {
+        "key": "scale",
+        "name": "Scale",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": 229, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "For marketing teams and agencies, starting price: unlimited active landing pages, 100,000-500,000 visits/month depending on the sub-tier, 10 custom domains, 20,000 credits/month, unlimited users; adds client sub-accounts and agency branding.", "fr": "Pour équipes marketing et agences, prix de départ : pages actives illimitées, 100 000 à 500 000 visites/mois selon le palier, 10 domaines personnalisés, 20 000 crédits/mois, utilisateurs illimités ; ajoute les sous-comptes clients et le branding agence." }
+        ],
+        "sourceIds": ["s1", "s2"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": 1199, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "For high-scale marketing operations, starting price: unlimited active landing pages, 1M+ visits/month, 100 custom domains, 60,000 credits/month, Enterprise SSO and a dedicated account manager.", "fr": "Pour des opérations marketing à grande échelle, prix de départ : pages actives illimitées, plus d'1 million de visites/mois, 100 domaines personnalisés, 60 000 crédits/mois, SSO Enterprise et un gestionnaire de compte dédié." }
+        ],
+        "sourceIds": ["s1", "s2"]
+      }
+    ],
+    "comparePlanKey": "build",
+    "addOns": [
+      { "name": "Extra domain", "unit": "usage", "price": { "monthly": 5 }, "sourceIds": ["s1"] },
+      { "name": "5,000 extra credits (pay-as-you-go)", "unit": "usage", "price": { "oneTime": 15 }, "sourceIds": ["s1"] },
+      { "name": "10,000 extra credits (pay-as-you-go)", "unit": "usage", "price": { "oneTime": 25 }, "sourceIds": ["s1"] },
+      { "name": "20,000 extra credits (pay-as-you-go)", "unit": "usage", "price": { "oneTime": 40 }, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Landingi's pricing page shows different numbers depending on visitor geolocation: a EUR grid for EU visitors (Build 29€/month, 24€/month billed annually) and a USD grid referenced in the page's own FAQ text (Build $24/month billed annually). This dossier takes the USD annual-per-month figures as the primary price and keeps the EUR grid as secondaryPrices, per the no-conversion rule.", "fr": "La page tarifaire de Landingi affiche des montants différents selon la géolocalisation du visiteur : une grille en euros pour les visiteurs européens (Build 29 €/mois, 24 €/mois facturé à l'année) et une grille en dollars citée dans le texte de FAQ de la page elle-même (Build 24 $/mois facturé à l'année). Ce dossier retient les montants annuels en dollars comme prix principal et garde la grille euro en secondaryPrices, conformément à la règle de non-conversion.", "sourceIds": ["s1", "s2"] },
+      { "en": "The exact monthly (non-annual) USD price could not be confirmed in this session: the pricing page's monthly/annual toggle is a client-side component that renders in the visitor's local currency (EUR in this session), and the FAQ text only states the annual-per-month USD figures.", "fr": "Le prix mensuel (hors annuel) exact en dollars n'a pas pu être confirmé lors de cette session : le bouton mensuel/annuel de la page est un composant côté client qui s'affiche dans la devise locale du visiteur (euros dans cette session), et le texte de FAQ ne donne que les montants annuels en dollars.", "sourceIds": ["s2"] },
+      { "en": "Scale and Enterprise are published as \"starting at\" prices; the visible rate corresponds to the lowest visit-volume sub-tier and increases with usage.", "fr": "Scale et Enterprise sont publiés comme des prix « à partir de » ; le tarif affiché correspond au palier de volume de visites le plus bas et augmente avec l'usage.", "sourceIds": ["s1"] }
+    ],
+    "secondaryPrices": {
+      "currency": "EUR",
+      "pricingUrl": "https://landingi.com/pricing/",
+      "verifiedOn": "2026-10-02",
+      "sourceIds": ["s1"],
+      "plans": {
+        "build": { "monthly": 29, "annualPerMonth": 24 },
+        "optimize": { "monthly": 139, "annualPerMonth": 109 },
+        "scale": { "monthly": 269, "annualPerMonth": 209 },
+        "enterprise": { "monthly": 1350, "annualPerMonth": 1050 }
+      }
+    }
+  },
+  "product": {
+    "capabilities": [
+      { "en": "No-code landing page builder with an AI page generator (\"Lunar\"), 400+ templates and pre-designed sections.", "fr": "Créateur de landing pages no-code avec un générateur IA (« Lunar »), plus de 400 modèles et des sections pré-conçues.", "sourceIds": ["s1"] },
+      { "en": "Server-side A/B testing, dynamic text replacement and an AI insights tool (\"Solis\") on Optimize and above.", "fr": "A/B testing server-side, remplacement dynamique de texte et un outil d'analyse IA (« Solis ») sur Optimize et au-dessus.", "sourceIds": ["s1"] },
+      { "en": "Agency features on Scale and Enterprise: client sub-accounts, agency branding, programmatic landing pages and audit log records.", "fr": "Fonctions agence sur Scale et Enterprise : sous-comptes clients, branding agence, pages programmatiques et logs d'audit.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The entry Build plan caps active pages at 10 and visits at 2,000/month, which a small campaign can exceed quickly.", "fr": "Le plan d'entrée Build limite à 10 pages actives et 2 000 visites/mois, un plafond qu'une petite campagne peut dépasser rapidement.", "sourceIds": ["s1"] },
+      { "en": "Server-side A/B testing and the e-commerce hub are not available on the entry Build plan; they require Optimize or above.", "fr": "L'A/B testing server-side et le hub e-commerce ne sont pas disponibles sur le plan Build ; ils nécessitent Optimize ou un plan supérieur.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Zapier", "slug": null, "sourceIds": ["s1"] },
+      { "name": "WordPress", "slug": "wordpress", "sourceIds": ["s1"] },
+      { "name": "Google Tag Manager", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "A freelance marketer or consultant who needs to launch and A/B test client landing pages without writing code.", "fr": "Un consultant ou marketeur freelance qui doit lancer et tester des landing pages clients sans écrire de code." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Launch: build a campaign landing page from a template with the AI generator and publish it on a custom domain within the Build plan's limits.", "fr": "Lancer : construire une landing page de campagne à partir d'un modèle avec le générateur IA et la publier sur un domaine personnalisé dans les limites du plan Build." },
+    { "en": "Optimize: run a server-side A/B test on a high-traffic page with the Optimize plan to improve conversion rate without exposing the test to ad blockers.", "fr": "Optimiser : lancer un test A/B server-side sur une page à fort trafic avec le plan Optimize pour améliorer le taux de conversion sans que le test soit bloqué par les bloqueurs de pub." }
+  ],
+  "alternatives": [
+    { "slug": "unbounce", "reason": { "en": "Direct competitor: a landing page builder with A/B testing aimed at marketers and agencies.", "fr": "Concurrent direct : un créateur de landing pages avec A/B testing destiné aux marketeurs et agences." } },
+    { "slug": "wix", "reason": { "en": "Broader website builder that also covers standalone landing pages for small businesses.", "fr": "Créateur de sites plus généraliste qui couvre aussi les landing pages autonomes pour petites entreprises." } },
+    { "slug": "wordpress", "reason": { "en": "Common alternative route to build landing pages via page-builder plugins on a self-hosted or managed CMS.", "fr": "Alternative courante pour construire des landing pages via des plugins de création de page sur un CMS auto-hébergé ou géré." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Webflow", "officialUrl": "https://webflow.com", "reason": "Direct competitor for building and hosting marketing/landing pages visually, not in the catalogue." },
+    { "name": "Instapage", "officialUrl": "https://instapage.com", "reason": "Direct landing-page-builder competitor focused on agencies and ad campaigns, not in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Build covers a solo campaign for $24/month annually, but the jump to Optimize ($119/month) for A/B testing and the e-commerce hub is steep for a small operator.", "fr": "Build couvre une campagne solo pour 24 $/mois en annuel, mais le saut vers Optimize (119 $/mois) pour l'A/B testing et le hub e-commerce est important pour une petite structure.", "sourceIds": ["s1", "s2"] },
+      "simplicite": { "en": "An AI page generator plus 400+ templates and pre-designed sections let a first page go live without custom code.", "fr": "Un générateur de page IA et plus de 400 modèles et sections pré-conçues permettent de publier une première page sans code.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The plan comparison table confirms page building, A/B testing and agency features are shipped as advertised at their respective tiers.", "fr": "Le tableau comparatif des plans confirme que la création de pages, l'A/B testing et les fonctions agence sont livrés comme annoncé à leurs paliers respectifs.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers page building, server-side testing and agency sub-accounts, but the entry tier's 2,000 visits/month cap is modest next to the higher tiers' six-figure visit allowances.", "fr": "Couvre la création de pages, le testing server-side et les sous-comptes agence, mais le plafond de 2 000 visites/mois du palier d'entrée reste modeste face aux volumes à six chiffres des paliers supérieurs.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability if leaving Landingi are not covered by the collected sources.", "fr": "Note neutre : le format d'export et la portabilité des données en cas de départ de Landingi ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "No-code landing pages", "fr": "Landing pages no-code" },
+    "shortDescription": { "en": "Landingi is a no-code landing page builder with an AI generator, templates, and server-side A/B testing on higher plans.", "fr": "Landingi est un créateur de landing pages no-code avec générateur IA, modèles et A/B testing server-side sur les plans supérieurs." },
+    "longDescription": {
+      "en": "Landingi builds landing pages without code, using an AI generator (Lunar), 400+ templates and pre-designed sections. Optimize and above add server-side A/B testing, an AI insights tool and an e-commerce hub, while Scale and Enterprise add agency features like client sub-accounts and branding.\n\nBuild starts at $24/month billed annually (10 pages, 2,000 visits/month); Optimize jumps to $119/month for A/B testing and higher limits; Scale and Enterprise start from $229 and $1,199/month. A 14-day free trial is available, capped at 200 trial visits. It fits a freelance marketer launching and testing campaign pages for clients.",
+      "fr": "Landingi construit des landing pages sans code, avec un générateur IA (Lunar), plus de 400 modèles et des sections pré-conçues. Optimize et au-dessus ajoutent l'A/B testing server-side, un outil d'analyse IA et un hub e-commerce, tandis que Scale et Enterprise ajoutent des fonctions agence comme les sous-comptes clients et le branding.\n\nBuild démarre à 24 $/mois facturé à l'année (10 pages, 2 000 visites/mois) ; Optimize grimpe à 119 $/mois pour l'A/B testing et des limites plus hautes ; Scale et Enterprise démarrent à 229 $ et 1 199 $/mois. Un essai gratuit de 14 jours est disponible, limité à 200 visites d'essai. Convient à un marketeur freelance qui lance et teste des pages de campagne pour ses clients."
+    },
+    "pros": [
+      { "en": "AI page generator and large template library speed up launching a first campaign page.", "fr": "Le générateur de page IA et la grande bibliothèque de modèles accélèrent le lancement d'une première page de campagne." },
+      { "en": "Agency-oriented features (client sub-accounts, branding) are built in on the higher tiers rather than bolted on.", "fr": "Les fonctions orientées agence (sous-comptes clients, branding) sont natives sur les paliers supérieurs plutôt que rajoutées." }
+    ],
+    "cons": [
+      { "en": "Pricing jumps sharply from Build ($24/month) to Optimize ($119/month) to unlock A/B testing.", "fr": "Le tarif grimpe fortement de Build (24 $/mois) à Optimize (119 $/mois) pour débloquer l'A/B testing." },
+      { "en": "The free trial caps traffic at 200 visits, which limits realistic testing of a real campaign before paying.", "fr": "L'essai gratuit limite le trafic à 200 visites, ce qui restreint un test réaliste d'une vraie campagne avant de payer." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You need to launch no-code campaign landing pages quickly and can live with the Build plan's 2,000 visits/month cap.", "fr": "Tu dois lancer rapidement des landing pages de campagne no-code et le plafond de 2 000 visites/mois de Build te convient." },
+      "avoidIf": { "en": "You need server-side A/B testing on a tight budget: the required Optimize plan costs five times the Build plan.", "fr": "Tu as besoin d'A/B testing server-side avec un budget serré : le plan Optimize nécessaire coûte cinq fois le prix de Build." },
+      "threshold": { "en": "Build costs $288/year at the annual rate ($24/month), the entry point before any A/B testing is available.", "fr": "Build coûte 288 $/an au tarif annuel (24 $/mois), le point d'entrée avant tout accès à l'A/B testing." },
+      "billingTraps": { "en": "Scale and Enterprise are published as \"starting at\" prices that rise with the visits-per-month sub-tier actually needed, so the advertised rate may not be the final one.", "fr": "Scale et Enterprise sont publiés comme des prix « à partir de » qui augmentent selon le palier de visites par mois réellement nécessaire ; le tarif annoncé n'est donc pas forcément le tarif final." }
+    }
+  },
+  "unknowns": [
+    "The exact monthly (non-annual) USD price for each plan could not be independently confirmed in this session; only the annual-per-month USD figures (from the page's own FAQ text) and the full EUR grid (monthly and annual, read directly in the browser) were verified.",
+    "Whether add-on prices ($5-$40, shown in USD even on the EUR-geolocated page) vary by region was not confirmed."
+  ],
+  "conflicts": []
+}

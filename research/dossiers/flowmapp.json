@@ -1,0 +1,157 @@
+{
+  "schemaVersion": 2,
+  "slug": "flowmapp",
+  "tier": "B",
+  "researchedOn": "2026-10-02",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-02",
+  "identity": {
+    "officialName": "FlowMapp",
+    "vendor": "FlowMapp",
+    "officialUrl": "https://www.flowmapp.com",
+    "docsUrl": "https://help.flowmapp.com/",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.flowmapp.com/pricing", "tier": 1, "accessedOn": "2026-10-02", "title": "FlowMapp pricing" },
+    { "id": "s2", "url": "https://www.flowmapp.com/", "tier": 1, "accessedOn": "2026-10-02", "title": "FlowMapp homepage" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.flowmapp.com/pricing",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "1 active project and 20 pages, forever free, no credit card required.", "fr": "1 projet actif et 20 pages, gratuit à vie, sans carte bancaire." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "1 active project and 20 pages, forever free.", "fr": "1 projet actif et 20 pages, gratuit à vie." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 15, "annualPerMonth": 8.25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "15 active projects, unlimited pages and unlimited editors; positioned for a standalone designer selling UX/UI services.", "fr": "15 projets actifs, pages et éditeurs illimités ; pensé pour une designer indépendante qui vend des prestations UX/UI." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "workspace",
+        "minSeats": null,
+        "price": { "monthly": 35, "annualPerMonth": 19.25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited projects and pages, 1 workspace with up to 25 members; positioned for studios building Webflow, Framer or WordPress sites.", "fr": "Projets et pages illimités, 1 espace de travail jusqu'à 25 membres ; pensé pour des studios qui construisent des sites Webflow, Framer ou WordPress." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "agency",
+        "name": "Agency",
+        "unit": "workspace",
+        "minSeats": null,
+        "price": { "monthly": 99, "annualPerMonth": 54.45, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited projects, pages and workspaces; positioned for agencies scaling revenue across several clients.", "fr": "Projets, pages et espaces de travail illimités ; pensé pour des agences qui développent leur chiffre d'affaires sur plusieurs clients." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "Annual billing runs about 45% cheaper per month than monthly billing on every paid plan, a steeper gap than most SaaS tools; budget for the monthly rate if cancelling before a year is possible.", "fr": "La facturation annuelle revient à environ 45 % moins cher par mois que la facturation mensuelle sur chaque forfait payant, un écart plus marqué que la plupart des logiciels SaaS ; prévois le tarif mensuel si une annulation avant un an est possible.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Builds collaborative sitemaps, with an AI generator, user-flow diagrams and wireframes for desktop and mobile.", "fr": "Construit des sitemaps collaboratifs, avec un générateur par IA, des user flows et des wireframes pour desktop et mobile.", "sourceIds": ["s2"] },
+      { "en": "Exports deliverables as PDF, PNG, XML, CSV or a web format, and supports sticky notes and comments for team review.", "fr": "Exporte les livrables en PDF, PNG, XML, CSV ou format web, et prend en charge les notes autocollantes et les commentaires pour la relecture en équipe.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "The free plan is capped at 1 active project and 20 pages, too small for a real client project beyond a quick sketch.", "fr": "Le forfait gratuit est plafonné à 1 projet actif et 20 pages, trop limité pour un vrai projet client au-delà d'une esquisse rapide.", "sourceIds": ["s1"] },
+      { "en": "Team collaboration lives in a single workspace of up to 25 members; a second workspace requires the Agency plan.", "fr": "La collaboration d'équipe se fait dans un seul espace de travail jusqu'à 25 membres ; un second espace de travail exige le forfait Agency.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Figma", "slug": "figma", "sourceIds": ["s2"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "SOFIA",
+    "description": { "en": "A designer who needs to plan a site's structure and flows with a client before moving into high-fidelity design.", "fr": "Une designer qui doit planifier la structure et les flux d'un site avec un client avant de passer au design haute-fidélité." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Use: map a new client site's structure with a collaborative sitemap before moving to wireframes.", "fr": "Usage : cartographier la structure d'un nouveau site client avec un sitemap collaboratif avant de passer au wireframe." },
+    { "en": "Use: present a user flow and a low-fidelity wireframe to a client to validate the structure before final design.", "fr": "Usage : présenter un user flow et un wireframe basse fidélité à un client pour valider la structure avant le design final." }
+  ],
+  "alternatives": [
+    { "slug": "figma", "reason": { "en": "Covers wireframing and flow diagrams within a broader design tool.", "fr": "Couvre le wireframing et les diagrammes de flux dans un outil de design plus large." } },
+    { "slug": "miro", "reason": { "en": "A general whiteboard tool often used for the same sitemap and flow-planning work.", "fr": "Un outil de tableau blanc généraliste souvent utilisé pour le même travail de sitemap et de planification de flux." } },
+    { "slug": "whimsical", "reason": { "en": "A direct competitor for flowcharts, wireframes and sitemaps.", "fr": "Un concurrent direct pour les flowcharts, wireframes et sitemaps." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": { "en": "Pro costs $8.25/month billed annually with a durable free tier, cheap next to running a general design tool for the same planning step.", "fr": "Pro coûte 8,25 $/mois en facturation annuelle avec un forfait gratuit durable, peu cher comparé à utiliser un outil de design généraliste pour cette seule étape de planification.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Sitemaps, flows and wireframes are built from templates and an AI generator rather than from a blank canvas.", "fr": "Les sitemaps, flows et wireframes se construisent à partir de modèles et d'un générateur par IA plutôt que d'une page blanche.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers sitemaps, user flows, wireframes and exportable deliverables as advertised.", "fr": "Assure sitemaps, user flows, wireframes et livrables exportables comme annoncé.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Covers UX planning well but stops short of high-fidelity design and prototyping handled by broader tools like Figma.", "fr": "Couvre bien la planification UX mais ne va pas jusqu'au design haute-fidélité et au prototypage que gèrent des outils plus larges comme Figma.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Deliverables export as PDF, PNG, XML, CSV or web format, giving several ways to take project data out of the tool.", "fr": "Les livrables s'exportent en PDF, PNG, XML, CSV ou format web, ce qui offre plusieurs façons de récupérer les données du projet hors de l'outil.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "UX planning tool", "fr": "Outil de planification UX" },
+    "shortDescription": { "en": "FlowMapp builds collaborative sitemaps, user flows and wireframes for planning a website before high-fidelity design.", "fr": "FlowMapp construit des sitemaps, user flows et wireframes collaboratifs pour planifier un site avant le design haute-fidélité." },
+    "longDescription": {
+      "en": "FlowMapp plans a website's structure through collaborative sitemaps (with an AI generator), user-flow diagrams and wireframes for desktop and mobile, with sticky notes and comments for client review. Deliverables export as PDF, PNG, XML, CSV or web format.\n\nA free plan covers 1 project and 20 pages forever. Pro starts at $15/month ($8.25/month billed annually) with 15 projects and unlimited pages, scaling to Team ($35/month, 25-member workspace) and Agency ($99/month, unlimited workspaces). It fits a solo designer or studio that plans site structure before moving into Figma or a page builder.", "fr": "FlowMapp planifie la structure d'un site via des sitemaps collaboratifs (avec générateur par IA), des user flows et des wireframes pour desktop et mobile, avec notes autocollantes et commentaires pour la relecture client. Les livrables s'exportent en PDF, PNG, XML, CSV ou format web.\n\nUn forfait gratuit couvre 1 projet et 20 pages à vie. Pro démarre à 15 $/mois (8,25 $/mois en facturation annuelle) avec 15 projets et des pages illimitées, jusqu'à Team (35 $/mois, espace de travail de 25 membres) et Agency (99 $/mois, espaces illimités). Convient à une designer solo ou un studio qui planifie la structure d'un site avant de passer à Figma ou à un page builder." },
+    "pros": [
+      { "en": "A durable free plan (1 project, 20 pages) with no credit card needed to try the core workflow.", "fr": "Un forfait gratuit durable (1 projet, 20 pages) sans carte bancaire pour essayer le flux de travail principal." },
+      { "en": "Exports to several open formats (PDF, PNG, XML, CSV) rather than locking deliverables inside the app.", "fr": "Exporte vers plusieurs formats ouverts (PDF, PNG, XML, CSV) plutôt que d'enfermer les livrables dans l'application." }
+    ],
+    "cons": [
+      { "en": "The free plan's 20-page cap is too small for most real client sites.", "fr": "Le plafond de 20 pages du forfait gratuit est trop limité pour la plupart des vrais sites clients." },
+      { "en": "Only Figma is named as a direct integration; most other tools (Webflow, Framer, WordPress) are destinations to design for, not live integrations.", "fr": "Seul Figma est cité comme intégration directe ; les autres outils cités (Webflow, Framer, WordPress) sont des destinations à concevoir pour, pas des intégrations actives." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You plan site structure and flows with clients before high-fidelity design and want a dedicated, cheap tool for that step.", "fr": "Tu planifies la structure et les flux d'un site avec des clients avant le design haute-fidélité et tu veux un outil dédié et peu cher pour cette étape." },
+      "avoidIf": { "en": "You already do sitemapping and flows inside a broader tool like Figma or Miro and don't want a separate subscription.", "fr": "Tu fais déjà le sitemapping et les flows dans un outil plus large comme Figma ou Miro et tu ne veux pas d'abonnement séparé." },
+      "threshold": { "en": "Pro costs $99/year billed annually ($8.25/month) for 15 projects; budget $420/year ($35/month) for Team once a studio needs a shared 25-member workspace.", "fr": "Pro coûte 99 $/an en facturation annuelle (8,25 $/mois) pour 15 projets ; prévois 420 $/an (35 $/mois) pour Team dès qu'un studio a besoin d'un espace partagé de 25 membres." },
+      "billingTraps": { "en": "The annual rate is roughly 45% cheaper per month than monthly billing, so cancelling an annual plan early costs more per month than expected relative to the advertised price.", "fr": "Le tarif annuel est environ 45 % moins cher par mois que la facturation mensuelle ; annuler un forfait annuel avant terme revient donc plus cher par mois que prévu par rapport au prix affiché." }
+    }
+  },
+  "unknowns": [
+    "Exact trial length in days for paid plans is not stated on the pricing page.",
+    "FlowMapp's legal company name beyond the product brand is not stated on the pages checked."
+  ],
+  "conflicts": []
+}

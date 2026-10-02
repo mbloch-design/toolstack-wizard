@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 2,
+  "slug": "tubebody",
+  "tier": "A",
+  "researchedOn": "2026-10-02",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-02",
+  "identity": {
+    "officialName": "TubeBuddy",
+    "vendor": "TubeBuddy",
+    "officialUrl": "https://www.tubebuddy.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.tubebuddy.com/pricing/", "tier": 1, "accessedOn": "2026-10-02", "title": "TubeBuddy pricing (Pro / Legend / Enterprise, monthly and annual toggle)" },
+    { "id": "s2", "url": "https://www.tubebuddy.com/", "tier": 1, "accessedOn": "2026-10-02", "title": "TubeBuddy homepage (free-to-start messaging)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.tubebuddy.com/pricing/",
+    "verifiedOn": "2026-10-02",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Free browser extension install with basic video/thumbnail tools and basic title and tag optimization; no credit card required to start.", "fr": "Extension installable gratuitement avec outils vidéo/miniature de base et optimisation basique des titres et tags, sans carte bancaire requise." }, "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Browser extension with basic video/thumbnail tools and basic title and tag optimization only; no Content Strategy or Audience Understanding tools.", "fr": "Extension avec outils vidéo/miniature de base et optimisation basique des titres et tags uniquement ; pas d'outils de stratégie de contenu ni de compréhension de l'audience." }
+        ],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 4.99, "annualPerMonth": 3.99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Limited access to Next Video Ideas, basic video/thumbnail tools and basic title and tag optimization only; no Content Strategy or Audience Understanding tools.", "fr": "Accès limité à Next Video Ideas, outils vidéo/miniature et optimisation de titres et tags basiques uniquement ; pas d'outils de stratégie de contenu ni de compréhension de l'audience." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "legend",
+        "name": "Legend",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 31.50, "annualPerMonth": 25.20, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Everything in Pro plus full Content Strategy tools, advanced reporting and analytics, full search and SEO access, bulk processing/editing tools and A/B testing.", "fr": "Tout Pro, plus les outils complets de stratégie de contenu, des rapports et analyses avancés, l'accès complet à la recherche et au SEO, les outils de traitement en masse et l'A/B testing." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "All tools across SEO Studio, Content Strategy, Video + Thumbnail and Productivity; required for businesses with multiple channels, 50k+ subscribers, 3+ channel managers or 50+ employees (Pro/Legend are reserved for individual creators).", "fr": "Tous les outils (SEO Studio, stratégie de contenu, vidéo + miniature, productivité) ; requis pour les entreprises avec plusieurs chaînes, plus de 50 000 abonnés, 3 gestionnaires de chaîne ou plus, ou 50 employés ou plus (Pro/Legend sont réservés aux créateurs individuels)." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "Pro, Star and Legend \"Creator License\" tiers are restricted to individual creators; a channel is reclassified as a business (and pushed to Enterprise, quote-only) once it has multiple YouTube channels on TubeBuddy, 50k+ subscribers, 3+ channel managers, or 50+ employees.", "fr": "Les paliers « Creator License » Pro, Star et Legend sont réservés aux créateurs individuels ; une chaîne bascule vers une classification « entreprise » (et donc vers Enterprise, sur devis) dès qu'elle gère plusieurs chaînes YouTube sur TubeBuddy, dépasse 50 000 abonnés, compte 3 gestionnaires de chaîne ou plus, ou 50 employés ou plus.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "SEO Studio: keyword and tag research, tag rankings, search position tracking and best-practice audits for video titles and descriptions.", "fr": "SEO Studio : recherche de mots-clés et de tags, classement des tags, suivi des positions de recherche et audits de bonnes pratiques pour titres et descriptions.", "sourceIds": ["s1"] },
+      { "en": "Content strategy tools: best time to publish, channelytics, demonetization audit, video topic planner and A/B testing on titles/thumbnails (Legend).", "fr": "Outils de stratégie de contenu : meilleur moment de publication, channelytics, audit de démonétisation, planificateur de sujets vidéo et A/B testing sur titres/miniatures (Legend).", "sourceIds": ["s1"] },
+      { "en": "Bulk productivity tools: bulk end-screen/card editing, bulk find-replace-append, scheduled publishing and canned comment responses.", "fr": "Outils de productivité en masse : édition en masse des écrans de fin et cartes, recherche-remplacement en masse, publication planifiée et réponses-types aux commentaires.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Pro, Star and Legend plans are reserved for individual creators; channels above TubeBuddy's business thresholds must move to the quote-only Enterprise tier.", "fr": "Les plans Pro, Star et Legend sont réservés aux créateurs individuels ; au-delà des seuils « entreprise » de TubeBuddy, il faut passer sur le palier Enterprise, uniquement sur devis.", "sourceIds": ["s1"] },
+      { "en": "Several tools (search rank tracking, auto translator, bulk end-screen/card editing, competitor scorecard) are marked \"Limited\" even on paid plans rather than fully unlocked.", "fr": "Plusieurs outils (suivi des positions, traducteur automatique, édition en masse des écrans de fin/cartes, tableau de bord concurrents) restent marqués « Limited » même sur les plans payants, au lieu d'être pleinement débloqués.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A YouTube content creator who wants data-driven keyword, thumbnail and publishing decisions without hiring a dedicated analyst.", "fr": "Une créatrice de contenu YouTube qui veut des décisions de mots-clés, miniatures et publication fondées sur la donnée sans embaucher d'analyste dédié." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Optimize: research ranking tags and keywords with SEO Studio before publishing, and improve a video's discoverability.", "fr": "Optimiser : rechercher les tags et mots-clés les mieux classés avec SEO Studio avant de publier, pour améliorer la visibilité d'une vidéo." },
+    { "en": "Test: run A/B tests on titles and thumbnails on the Legend plan to find which version earns more clicks.", "fr": "Tester : lancer des tests A/B sur les titres et miniatures avec le plan Legend pour savoir quelle version attire le plus de clics." }
+  ],
+  "alternatives": [
+    { "slug": "vidiq", "reason": { "en": "Direct competitor covering the same core need: YouTube keyword research, analytics and channel growth tools.", "fr": "Concurrent direct sur le même besoin : recherche de mots-clés YouTube, analytics et outils de croissance de chaîne." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Social Blade", "officialUrl": "https://socialblade.com", "reason": "Well-known YouTube channel analytics and ranking tracker, not in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Pro starts at $3.99-4.99/month and already unlocks keyword, tag and basic thumbnail tools, cheap relative to hiring help for channel SEO.", "fr": "Pro démarre à 3,99-4,99 $/mois et débloque déjà les outils de mots-clés, tags et miniatures basiques, peu cher comparé à l'embauche d'aide pour le SEO de chaîne.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The tool is a browser extension that plugs directly into YouTube Studio, so basic tag and title optimization is usable immediately after install.", "fr": "L'outil est une extension de navigateur qui s'intègre directement à YouTube Studio : l'optimisation basique des tags et titres est utilisable dès l'installation.", "sourceIds": ["s1", "s2"] },
+      "utilisation": { "en": "The plan comparison table confirms SEO, content strategy, video/thumbnail and productivity tools are shipped and gated cleanly by plan, matching what each tier advertises.", "fr": "Le tableau comparatif des plans confirme que les outils SEO, stratégie de contenu, vidéo/miniature et productivité sont bien livrés et répartis clairement par plan, conformément à ce qu'annonce chaque palier.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers the full breadth of YouTube-specific optimization (SEO Studio, content strategy, video/thumbnail, productivity) referenced nowhere else as a single toolkit in the collected sources.", "fr": "Couvre toute l'étendue de l'optimisation spécifique à YouTube (SEO Studio, stratégie de contenu, vidéo/miniature, productivité) en un seul outil, ce qu'aucune autre source collectée ne propose de façon aussi large.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability outside TubeBuddy are not covered by the collected sources.", "fr": "Note neutre : l'export des données et la portabilité hors TubeBuddy ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "YouTube growth toolkit", "fr": "Outils de croissance YouTube" },
+    "shortDescription": { "en": "TubeBuddy is a browser extension for YouTube creators that handles keyword research, tag optimization and A/B testing of titles and thumbnails.", "fr": "TubeBuddy est une extension de navigateur pour créateurs YouTube qui gère la recherche de mots-clés, l'optimisation des tags et l'A/B testing des titres et miniatures." },
+    "longDescription": {
+      "en": "TubeBuddy installs as a browser extension inside YouTube Studio and adds keyword research, tag rankings and best-practice audits (SEO Studio), plus content strategy tools like best-time-to-publish and demonetization audits. Legend adds A/B testing on titles and thumbnails, advanced reporting and bulk editing.\n\nPro starts at $3.99-4.99/month, Legend at $25.20-31.50/month; both are reserved for individual creators, and channels past TubeBuddy's business thresholds (multiple channels, 50k+ subscribers) move to the quote-only Enterprise tier. It fits a solo YouTuber who wants data behind publishing decisions without hiring an analyst.",
+      "fr": "TubeBuddy s'installe comme extension de navigateur dans YouTube Studio et ajoute la recherche de mots-clés, le classement des tags et des audits de bonnes pratiques (SEO Studio), ainsi que des outils de stratégie de contenu comme le meilleur moment de publication ou l'audit de démonétisation. Legend ajoute l'A/B testing sur titres et miniatures, des rapports avancés et l'édition en masse.\n\nPro démarre à 3,99-4,99 $/mois, Legend à 25,20-31,50 $/mois ; les deux sont réservés aux créateurs individuels, et une chaîne qui dépasse les seuils « entreprise » de TubeBuddy (plusieurs chaînes, plus de 50 000 abonnés) bascule vers Enterprise, sur devis. Convient à une créatrice solo qui veut des décisions de publication appuyées sur la donnée sans embaucher d'analyste."
+    },
+    "pros": [
+      { "en": "Installs directly into YouTube Studio, no separate dashboard to learn.", "fr": "S'installe directement dans YouTube Studio, pas de tableau de bord séparé à apprendre." },
+      { "en": "Entry plan is inexpensive relative to the breadth of SEO and content-strategy tools unlocked.", "fr": "Le plan d'entrée reste peu cher au vu de l'étendue des outils SEO et de stratégie de contenu débloqués." }
+    ],
+    "cons": [
+      { "en": "Several tools stay \"Limited\" even on paid plans instead of being fully unlocked.", "fr": "Plusieurs outils restent « Limited » même sur les plans payants au lieu d'être pleinement débloqués." },
+      { "en": "Growing past TubeBuddy's own business thresholds forces a move to a quote-only Enterprise plan with no public price.", "fr": "Dépasser les seuils « entreprise » définis par TubeBuddy force le passage à un plan Enterprise sur devis, sans prix public." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're an individual YouTube creator who wants keyword, tag and thumbnail decisions backed by data inside YouTube Studio.", "fr": "Tu es une créatrice YouTube individuelle qui veut des décisions de mots-clés, tags et miniatures appuyées sur la donnée, directement dans YouTube Studio." },
+      "avoidIf": { "en": "You run multiple channels or a channel with 50k+ subscribers and several channel managers, since you'll be pushed to the quote-only Enterprise tier.", "fr": "Tu gères plusieurs chaînes ou une chaîne de plus de 50 000 abonnés avec plusieurs gestionnaires, car tu seras orientée vers le palier Enterprise, sur devis uniquement." },
+      "threshold": { "en": "Legend costs $302.40/year at the annual rate ($25.20/month), the entry point for A/B testing and advanced reporting.", "fr": "Legend coûte 302,40 $/an au tarif annuel (25,20 $/mois), le point d'entrée pour l'A/B testing et les rapports avancés." },
+      "billingTraps": { "en": "Pro, Star and Legend are explicitly \"Creator License\" packages: TubeBuddy can reclassify an account as a business based on subscriber count, channel count or team size, forcing a move to Enterprise.", "fr": "Pro, Star et Legend sont explicitement des forfaits « Creator License » : TubeBuddy peut reclasser un compte en « entreprise » selon le nombre d'abonnés, de chaînes ou la taille de l'équipe, ce qui force le passage à Enterprise." }
+    }
+  },
+  "unknowns": [
+    "TubeBuddy's parent company/legal entity was not confirmed on the pages visited in this session.",
+    "No stated trial period for Pro/Legend beyond the free extension; whether a time-limited trial of paid features exists was not found."
+  ],
+  "conflicts": []
+}

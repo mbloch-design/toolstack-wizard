@@ -108,14 +108,14 @@
     "slug": "17hats",
     "name": "17hats",
     "categoryId": "organization",
-    "shortDescription": "CRM all-in-one pour freelances créatifs.",
-    "shortDescriptionEn": "All-in-one CRM for creative freelancers.",
+    "shortDescription": "Un CRM tout-en-un pour freelances créatifs, qui réunit contacts, facturation, contrats et planification dans un seul plan à tarif fixe.",
+    "shortDescriptionEn": "An all-in-one CRM for creative freelancers, bundling contacts, invoicing, contracts and scheduling into one flat-rate plan.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai de 7 jours.",
-      "paid": "Un seul plan à 60$/mois (600$/an, 800$/2 ans), incluant 3 utilisateurs et 2 marques. Modules en plus à 5-10$/mois chacun (utilisateurs sup., sync bancaire, suivi du temps, marque sup.)."
+      "free": "Plan gratuit : Contacts et projets illimités, 4 factures par trimestre, rapport de taxe de vente, modèles d'e-mails.",
+      "paid": "Dès 50 $/mois, plan 17hats."
     },
-    "defaultMonthlyPrice": 60,
-    "compareMonthlyPrice": 55,
+    "defaultMonthlyPrice": 42.94,
+    "compareMonthlyPrice": 42.94,
     "websiteUrl": "https://17hats.com",
     "substitution_cluster_v2": "freelance-crm-suite",
     "functional_needs": [
@@ -134,7 +134,7 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "SOFIA"
+      "MARC"
     ]
   },
   {
@@ -3488,13 +3488,14 @@
     "slug": "balsamiq",
     "name": "Balsamiq",
     "categoryId": "prototyping",
-    "shortDescription": "Outil de wireframing rapide avec un rendu intentionnellement \"brouillon\".",
-    "shortDescriptionEn": "Fast wireframing tool with an intentionally rough sketch look.",
+    "shortDescription": "Un outil de wireframing rapide et volontairement basse fidélité pour esquisser des parcours d'applications ou de sites avant le design haute fidélité.",
+    "shortDescriptionEn": "A fast, intentionally low-fidelity wireframing tool for sketching app and website flows before full-fidelity design.",
     "pricing": {
-      "free": "Essai gratuit 30 jours",
-      "paid": "Cloud à partir de 9$/mois, Desktop à 99$ une fois"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 16 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 9,
+    "defaultMonthlyPrice": 13.74,
+    "compareMonthlyPrice": 13.74,
     "websiteUrl": "https://balsamiq.com",
     "ogImageUrl": "https://thumbs.balsamiq.com/t.png",
     "substitution_cluster_v2": "design-prototyping",
@@ -3591,14 +3592,14 @@
     "slug": "base44",
     "name": "Base44",
     "categoryId": "automation",
-    "shortDescription": "Créez des apps complètes avec l'IA, sans coder.",
-    "shortDescriptionEn": "Build complete apps with AI, without coding.",
+    "shortDescription": "Un outil IA qui construit des applications complètes, connexion et base de données incluses, à partir d'un prompt, sans écrire de code.",
+    "shortDescriptionEn": "An AI tool that builds complete apps, including login and a database, from a prompt, without writing code.",
     "pricing": {
-      "free": "25 messages IA/mois + 100 crédits d'intégration (auth, database inclus)",
-      "paid": "20$/mois (Starter) pour 100 messages + 2000 intégrations"
+      "free": "Plan gratuit : 25 crédits de messages IA et 100 crédits d'intégration par mois, jusqu'à 5 apps, avec authentification et base de données incluses.",
+      "paid": "Dès 12,80 $/mois, plan Starter."
     },
-    "defaultMonthlyPrice": 17.32,
-    "compareMonthlyPrice": 17.32,
+    "defaultMonthlyPrice": 10.99,
+    "compareMonthlyPrice": 10.99,
     "affiliateLink": "https://base44.pxf.io/c/6936943/2049275/25619?trafcat=base",
     "ogImageUrl": "https://static.wixstatic.com/media/dea07e_6bf81d81d64d41219a8c60df2766db1a%7Emv2.png/v1/fit/w_2500,h_1330,al_c/dea07e_6bf81d81d64d41219a8c60df2766db1a%7Emv2.png",
     "substitution_cluster_v2": "ai-app-builder",
@@ -4088,14 +4089,14 @@
     "slug": "blueink-esignatures",
     "name": "Blueink eSignatures",
     "categoryId": "organization",
-    "shortDescription": "Signature électronique avec SMS, à moitié du prix de DocuSign.",
-    "shortDescriptionEn": "E-signature with SMS delivery, at half the price of DocuSign.",
+    "shortDescription": "Blueink envoie des demandes de signature par SMS et email, avec envoi en masse, modèles et API, facturé par utilisateur avec un plafond d'enveloppes mensuel.",
+    "shortDescriptionEn": "Blueink sends e-signature requests by SMS and email, with bulk send, templates and an API, priced per user with a monthly envelope cap.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai disponible.",
-      "paid": "Standard 15$/utilisateur/mois ; Business Pro 30$ ; Unlimited 40$ ; Enterprise sur devis (à partir de 2,95$/enveloppe)."
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 15 $/mois, plan Standard."
     },
-    "defaultMonthlyPrice": 13.14,
-    "compareMonthlyPrice": 15,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
     "affiliateLink": "https://blueink.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/blueink-esignatures.jpg",
     "substitution_cluster_v2": "workspace-ops",
@@ -4112,7 +4113,10 @@
       "Secteur santé",
       "Services juridiques"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "boast",
@@ -10485,14 +10489,14 @@
     "slug": "fathom",
     "name": "Fathom",
     "categoryId": "ai-general",
-    "shortDescription": "Assistant IA de prise de notes pour tes réunions Zoom, Meet et Teams.",
-    "shortDescriptionEn": "AI meeting notes assistant for your Zoom, Meet and Teams calls.",
+    "shortDescription": "Fathom enregistre et transcrit les appels Zoom, Meet et Teams, en produisant des résumés IA, des actions à suivre et un historique consultable.",
+    "shortDescriptionEn": "Fathom records and transcribes Zoom, Meet and Teams calls, producing AI summaries, action items and searchable meeting history.",
     "pricing": {
-      "free": "Gratuit avec enregistrement illimité (5 résumés IA/mois)",
-      "paid": "Premium 19$/mois · Team 15$/utilisateur/mois · Business 25$/utilisateur"
+      "free": "Plan gratuit : Enregistrements et transcriptions illimités avec résumés IA instantanés, extraits et playlists, sur un seul compte.",
+      "paid": "Dès 16 $/mois, plan Premium."
     },
-    "defaultMonthlyPrice": 17.48,
-    "compareMonthlyPrice": 17.48,
+    "defaultMonthlyPrice": 13.74,
+    "compareMonthlyPrice": 13.74,
     "websiteUrl": "https://www.fathom.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/6899da9beccbdbe92be49b5d/68f20f5cd1c6d0de365b8849_Fathom-Visual_Identity_Concepts-Stage_07-Website_Thumbnail-01.jpg",
     "substitution_cluster_v2": "ai-note-taking",
@@ -10510,7 +10514,10 @@
       "Support client",
       "Account managers"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "personas": [
+      "MARC"
+    ]
   },
   {
     "id": "fathom-analytics",
@@ -11519,14 +11526,14 @@
     "slug": "flowmapp",
     "name": "FlowMapp",
     "categoryId": "design-tools",
-    "shortDescription": "Outil de planification UX : sitemaps, user flows et wireframes collaboratifs.",
-    "shortDescriptionEn": "UX planning tool: collaborative sitemaps, user flows and wireframes.",
+    "shortDescription": "FlowMapp construit des sitemaps, user flows et wireframes collaboratifs pour planifier un site avant le design haute-fidélité.",
+    "shortDescriptionEn": "FlowMapp builds collaborative sitemaps, user flows and wireframes for planning a website before high-fidelity design.",
     "pricing": {
-      "free": "Gratuit avec 1 projet actif",
-      "paid": "Pro 15$/mois · Team 35$/mois · Agency 99$/mois"
+      "free": "Plan gratuit : 1 projet actif et 20 pages, gratuit à vie, sans carte bancaire.",
+      "paid": "Dès 8,25 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 13.8,
-    "compareMonthlyPrice": 13.8,
+    "defaultMonthlyPrice": 7.08,
+    "compareMonthlyPrice": 7.08,
     "websiteUrl": "https://www.flowmapp.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/65fe17942989eb1e1145dbea_Open%20Graph.webp",
     "substitution_cluster_v2": "design-prototyping",
@@ -11543,7 +11550,10 @@
       "Agencies",
       "Freelancers"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "personas": [
+      "SOFIA"
+    ]
   },
   {
     "id": "flutter",
@@ -17183,14 +17193,14 @@
     "slug": "landingi",
     "name": "Landingi",
     "categoryId": "nocode-web",
-    "shortDescription": "Création de landing pages no-code avec A/B testing.",
-    "shortDescriptionEn": "No-code landing page creation with A/B testing.",
+    "shortDescription": "Landingi est un créateur de landing pages no-code avec générateur IA, modèles et A/B testing server-side sur les plans supérieurs.",
+    "shortDescriptionEn": "Landingi is a no-code landing page builder with an AI generator, templates, and server-side A/B testing on higher plans.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 29$/mois (Core) - 69$/mois (Create) - 109$/mois (Automate)"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 24 €/mois, plan Build."
     },
-    "defaultMonthlyPrice": 25.11,
-    "compareMonthlyPrice": 25.11,
+    "defaultMonthlyPrice": 20.61,
+    "compareMonthlyPrice": 20.61,
     "affiliateLink": "https://try.landingi.com/8he4kr5kasjb",
     "ogImageUrl": "https://images.assets-landingi.com/images/og-images/og-en.jpeg",
     "substitution_cluster_v2": "website-app-builder",
@@ -17211,6 +17221,9 @@
       "Consultants indépendants"
     ],
     "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ],
     "freeAlternative": "carrd"
   },
   {
@@ -18816,13 +18829,14 @@
     "slug": "lottie",
     "name": "Lottie",
     "categoryId": "prototyping",
-    "shortDescription": "Format ouvert d'animations vectorielles interactives pour le web, les applications mobiles et les interfaces produit.",
-    "shortDescriptionEn": "Open format for interactive vector animations across web, mobile apps, and product interfaces.",
+    "shortDescription": "LottieFiles héberge, optimise et intègre des animations vectorielles Lottie, avec des plugins pour Figma, After Effects et Canva.",
+    "shortDescriptionEn": "LottieFiles hosts, optimizes and embeds Lottie vector animations, with plugins for Figma, After Effects and Canva.",
     "pricing": {
-      "free": "Format et runtimes Lottie open source · LottieFiles gratuit limité",
-      "paid": "LottieFiles Individual 19,99 $/mois · Team 24,99 $/utilisateur/mois, facturation annuelle"
+      "free": "Plan gratuit : Aperçu, test et partage illimités ; accès à la bibliothèque d'animations gratuites avec modifications basiques ; aucune mention d'hébergement privé ni de CDN sur ce palier.",
+      "paid": "Dès 19,99 $/mois, plan Individual."
     },
-    "compareMonthlyPrice": 17,
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
     "websiteUrl": "https://lottiefiles.com",
     "ogImageUrl": "https://creator.lottiefiles.com/creator.png",
     "substitution_cluster_v2": "animation-library",
@@ -20027,14 +20041,14 @@
     "slug": "maya",
     "name": "Maya",
     "categoryId": "creation",
-    "shortDescription": "Le standard 3D du cinéma et du jeu vidéo : animation, rigging, personnages (Autodesk).",
-    "shortDescriptionEn": "The 3D standard for film and games: animation, rigging, characters (Autodesk).",
+    "shortDescription": "Autodesk Maya est une suite 3D professionnelle de modélisation, rigging, animation de personnages, effets et rendu, utilisée par de grands studios.",
+    "shortDescriptionEn": "Autodesk Maya is a professional 3D suite for modeling, rigging, character animation, effects and rendering used by major studios.",
     "pricing": {
-      "free": "Essai gratuit ; Maya Indie pour <100k$ de CA",
-      "paid": "1 785$/an (~149$/mois) ou 225$/mois. Collection M&E avec 3ds Max ~2 600$/an."
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 168 $/mois, plan Annual subscription."
     },
-    "defaultMonthlyPrice": 149,
-    "compareMonthlyPrice": 149,
+    "defaultMonthlyPrice": 144.27,
+    "compareMonthlyPrice": 144.27,
     "websiteUrl": "https://www.autodesk.com/products/maya/overview",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/maya.jpg",
     "tool_type": "metier",
@@ -20053,9 +20067,6 @@
       "Studios cinéma/jeu"
     ],
     "prescription_quality": "oui",
-    "personas": [
-      "designer"
-    ],
     "freeAlternative": "blender"
   },
   {
@@ -27619,13 +27630,14 @@
     "slug": "readymag",
     "name": "Readymag",
     "categoryId": "nocode-web",
-    "shortDescription": "Design éditorial web avec animations avancées.",
-    "shortDescriptionEn": "Editorial web design with advanced animations.",
+    "shortDescription": "Un créateur de site visuel pour des sites éditoriaux animés et des portfolios, avec domaines personnalisés et export de code sur les plans supérieurs.",
+    "shortDescriptionEn": "A visual website builder for animated, editorial-style sites and portfolios, with custom domains and code export on higher plans.",
     "pricing": {
-      "free": "Plan gratuit (1 projet)",
-      "paid": "À partir de 16$/mois"
+      "free": "Plan gratuit : Un site sur un sous-domaine Readymag, jusqu'à 10 pages.",
+      "paid": "Dès 13 €/mois, plan Personal."
     },
-    "defaultMonthlyPrice": 16,
+    "defaultMonthlyPrice": 12.02,
+    "compareMonthlyPrice": 12.02,
     "websiteUrl": "https://readymag.com",
     "substitution_cluster_v2": "website-builder",
     "functional_needs": [
@@ -35352,14 +35364,14 @@
     "slug": "tubebody",
     "name": "TubeBuddy",
     "categoryId": "creation",
-    "shortDescription": "Extension YouTube pour optimiser le SEO, les tags et la performance de vos vidéos.",
-    "shortDescriptionEn": "YouTube extension to optimise SEO, tags, and video performance.",
+    "shortDescription": "TubeBuddy est une extension de navigateur pour créateurs YouTube qui gère la recherche de mots-clés, l'optimisation des tags et l'A/B testing des titres et miniatures.",
+    "shortDescriptionEn": "TubeBuddy is a browser extension for YouTube creators that handles keyword research, tag optimization and A/B testing of titles and thumbnails.",
     "pricing": {
-      "free": "Fonctions basiques",
-      "paid": "5$/mois (Pro)"
+      "free": "Plan gratuit : Extension installable gratuitement avec outils vidéo/miniature de base et optimisation basique des titres et tags, sans carte bancaire requise.",
+      "paid": "Dès 3,99 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 4.33,
-    "compareMonthlyPrice": 4.33,
+    "defaultMonthlyPrice": 3.43,
+    "compareMonthlyPrice": 3.43,
     "affiliateLink": "https://tubebuddy.com",
     "ogImageUrl": "https://www.tubebuddy.com/wp-content/uploads/2025/08/215763354_4101728486607776_7902735743944989465_n.jpg",
     "substitution_cluster_v2": "content-creation",
@@ -35377,8 +35389,7 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "theo"
+      "ALIX"
     ]
   },
   {
@@ -38162,13 +38173,14 @@
     "slug": "youform",
     "name": "Youform",
     "categoryId": "nocode-web",
-    "shortDescription": "Créateur de formulaires avec logique conditionnelle, alternative à Typeform.",
-    "shortDescriptionEn": "Form builder with conditional logic, Typeform alternative.",
+    "shortDescription": "Un créateur de formulaires façon Typeform avec logique conditionnelle, signatures électroniques et paiements Stripe, avec un vrai plan gratuit à réponses illimitées.",
+    "shortDescriptionEn": "A Typeform-style form builder with conditional logic, e-signatures and Stripe payments, with a genuinely free unlimited-response plan.",
     "pricing": {
-      "free": "100 soumissions/mois gratuites",
-      "paid": "Pro 29$/mois"
+      "free": "Plan gratuit : Formulaires et réponses illimités pour un utilisateur, sous réserve d'une politique d'usage raisonnable ; téléversements plafonnés à 10 Mo.",
+      "paid": "Dès 20 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 25,
+    "defaultMonthlyPrice": 17.17,
+    "compareMonthlyPrice": 17.17,
     "affiliateLink": "https://youform.com",
     "ogImageUrl": "https://youform.com/assets/images/youform-builder.png",
     "substitution_cluster_v2": "form-builders",
@@ -38188,8 +38200,7 @@
     ],
     "prescription_quality": "ferme",
     "personas": [
-      "dev",
-      "marketer"
+      "CLAIRE"
     ],
     "freeAlternative": "Tally"
   },
