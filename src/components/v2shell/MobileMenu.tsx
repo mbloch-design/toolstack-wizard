@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ChevronRight, CirclePlus, Languages, Moon, Sun, X } from "@/lib/icons";
+import { ArrowLeft, ChevronRight, CirclePlus, X } from "@/lib/icons";
 import { CATALOG_NEEDS } from "@/data/catalogNeeds";
 import bestOfGuides from "@/data/bestOfGuides.json";
 import type { Currency } from "@/hooks/useCurrency";
@@ -150,11 +150,18 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
 
               <section className="asv2-mm-prefs" aria-labelledby="asv2-mm-prefs">
                 <h3 id="asv2-mm-prefs" className="asv2-mm-subtitle">{L("Préférences", "Preferences")}</h3>
-                <a href={languageHref} className="asv2-mm-pref" onClick={onClose}>
-                  <Languages aria-hidden />
-                  <span>{L("Langue", "Language")}</span>
-                  <strong>{lang === "fr" ? "English" : "Français"}</strong>
-                </a>
+                {/* Deux choix visibles, l'actif marqué : plus explicite qu'un
+                    lien vers « l'autre » langue. */}
+                <div className="asv2-mm-pref asv2-mm-pref--static">
+                  <span className="asv2-mm-pref-label" id="asv2-mm-lang">{L("Langue", "Language")}</span>
+                  <div className="asv2-mm-segment" role="group" aria-labelledby="asv2-mm-lang">
+                    {(["fr", "en"] as const).map((code) => (
+                      code === lang
+                        ? <span key={code} className="is-selected" aria-current="true" lang={code}>{code === "fr" ? "Français" : "English"}</span>
+                        : <a key={code} href={languageHref} lang={code} onClick={onClose}>{code === "fr" ? "Français" : "English"}</a>
+                    ))}
+                  </div>
+                </div>
                 <div className="asv2-mm-pref asv2-mm-pref--static">
                   <span className="asv2-mm-pref-label" id="asv2-mm-currency">{L("Devise", "Currency")}</span>
                   <div className="asv2-mm-segment" role="radiogroup" aria-labelledby="asv2-mm-currency">
@@ -165,12 +172,16 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
                     ))}
                   </div>
                 </div>
-                <button type="button" className="asv2-mm-pref" onClick={toggleTheme} aria-pressed={theme === "dark"}>
-                  {/* L'icône montre l'état affiché à droite, pas l'action. */}
-                  {theme === "dark" ? <Moon aria-hidden /> : <Sun aria-hidden />}
-                  <span>{L("Thème", "Theme")}</span>
-                  <strong>{theme === "dark" ? L("Sombre", "Dark") : L("Clair", "Light")}</strong>
-                </button>
+                <div className="asv2-mm-pref asv2-mm-pref--static">
+                  <span className="asv2-mm-pref-label" id="asv2-mm-theme">{L("Thème", "Theme")}</span>
+                  <div className="asv2-mm-segment" role="radiogroup" aria-labelledby="asv2-mm-theme">
+                    {(["light", "dark"] as const).map((mode) => (
+                      <button key={mode} type="button" role="radio" aria-checked={theme === mode} className={theme === mode ? "is-selected" : ""} onClick={() => { if (theme !== mode) toggleTheme(); }}>
+                        {mode === "light" ? L("Clair", "Light") : L("Sombre", "Dark")}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               </section>
 
               <Link to={`${prefix}/submit`} onClick={onClose} className="asv2-mm-submit">

@@ -6,7 +6,6 @@ import {
   ChevronLeft,
   Search,
   Bookmark,
-  Languages,
   Moon,
   PanelLeftClose,
   PanelLeftOpen,
@@ -379,14 +378,15 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           <a
             href={languageHref}
             className="asv2-utility-item"
-            aria-label={t("Passer le site en anglais", "Switch the site to French")}
-            title={!sidebarExpanded ? t("Changer de langue", "Change language") : undefined}
-            data-tooltip={t("Langue", "Language")}
+            aria-label={t("Site en français. Passer en anglais", "Site in English. Switch to French")}
+            title={!sidebarExpanded ? t("Passer en English", "Passer en français") : undefined}
+            data-tooltip={t("Passer en English", "Passer en français")}
           >
-            <Languages />
-            <span className="asv2-utility-text">
-              {t("English", "Français")}
-            </span>
+            {/* Les réglages montrent leur état actuel (comme le « € ») ;
+                l'infobulle décrit l'action. Le code de langue est plus
+                explicite que le picto de traduction. */}
+            <span className="asv2-lang-glyph" aria-hidden>{lang.toUpperCase()}</span>
+            <span className="asv2-utility-text">{t("Français", "English")}</span>
             <span className="asv2-utility-value">{otherLang.toUpperCase()}</span>
           </a>
 
@@ -406,11 +406,12 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               ? t("Passer en mode clair", "Switch to light mode")
               : t("Passer en mode sombre", "Switch to dark mode")}
             title={!sidebarExpanded ? t("Changer de thème", "Change theme") : undefined}
-            data-tooltip={t("Thème", "Theme")}
+            data-tooltip={theme === "dark" ? t("Passer en clair", "Switch to light") : t("Passer en sombre", "Switch to dark")}
           >
-            {theme === "dark" ? <Sun /> : <Moon />}
+            {/* État actuel, comme la langue et la devise : soleil en clair, lune en sombre. */}
+            {theme === "dark" ? <Moon /> : <Sun />}
             <span className="asv2-utility-text">
-              {theme === "dark" ? t("Mode clair", "Light mode") : t("Mode sombre", "Dark mode")}
+              {theme === "dark" ? t("Mode sombre", "Dark mode") : t("Mode clair", "Light mode")}
             </span>
             <span className="asv2-utility-value">{theme === "dark" ? t("Clair", "Light") : t("Sombre", "Dark")}</span>
           </button>

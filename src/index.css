@@ -34174,3 +34174,24 @@ img[data-logo-loading] {
 @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
   .asv2-bottomnav { transition: none; }
 }
+
+/* Langue : le code de la langue affichée, dans un cadre, comme le « € » de la devise. */
+.asv2-lang-glyph {
+  display: grid; place-items: center; flex: none; justify-self: center;
+  min-width: 22px; height: 18px; padding: 0 3px;
+  border: 1.5px solid currentColor; border-radius: 5px;
+  font-family: var(--font-ui); font-size: 9.5px; font-weight: 600; line-height: 1; letter-spacing: 0.02em;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item .asv2-lang-glyph { margin: 7px 5px; }
+@media (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-utility-item .asv2-lang-glyph { margin: 7px 5px; }
+}
+.asv2-root--sidebar-expanded .asv2-utility-item .asv2-lang-glyph { min-width: 20px; height: 16px; font-size: 8.5px; }
+/* Sélecteur de langue du menu mobile : mêmes pastilles que la devise. */
+.asv2-mm-segment > span, .asv2-mm-segment > a {
+  display: inline-grid; place-items: center; min-width: 52px; height: 34px; padding: 0 12px;
+  border-radius: var(--radius-pill); color: var(--color-muted);
+  font-family: var(--font-ui); font-size: 14px; font-weight: 500; text-decoration: none;
+}
+.asv2-mm-segment > .is-selected { background: var(--color-surface); color: var(--color-text-strong); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); }
+.asv2-mm-segment > a:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: -2px; }
