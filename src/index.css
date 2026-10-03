@@ -378,7 +378,7 @@
 
 /* Story article layout: documentary grid inspired by the shared reference. */
 @layer components {
-  .analytics-consent { position: fixed; z-index: 100; right: 20px; bottom: 20px; width: min(440px, calc(100vw - 32px)); display: flex; gap: 20px; align-items: end; padding: 20px; border: 1px solid #DADAD4; border-radius: 14px; background: #FFFFFF; box-shadow: 0 12px 40px rgba(34,34,34,.14); color: #222222; }
+  .analytics-consent { position: fixed; z-index: 1000; right: 20px; bottom: 20px; width: min(440px, calc(100vw - 32px)); display: flex; gap: 20px; align-items: end; padding: 20px; border: 1px solid #DADAD4; border-radius: 14px; background: #FFFFFF; box-shadow: 0 12px 40px rgba(34,34,34,.14); color: #222222; }
   .analytics-consent__copy { flex: 1; }
   .analytics-consent__copy strong { display: block; margin-bottom: 6px; font: 600 16px/1.2 var(--font-ui); }
   .analytics-consent__copy p { margin: 0 0 8px; font: 400 13px/1.45 var(--font-ui); color: #6F6F68; }
