@@ -32,7 +32,14 @@ function readToolCartState(): { state: ToolCartState; status: StackPersistenceSt
       status: { state: "ok", source: "default" },
     };
   }
-  return loadToolCartStateWithStatus(window.localStorage);
+  try {
+    return loadToolCartStateWithStatus(window.localStorage);
+  } catch {
+    return {
+      state: currentToolCartState ?? createDefaultToolCartState(),
+      status: { state: "degraded", source: "memory", issue: "storage-read-failed" },
+    };
+  }
 }
 
 let currentToolCartState: ToolCartState | null = null;
@@ -65,9 +72,13 @@ function publishToolCartState() {
 function commitToolCartState(nextState: ToolCartState) {
   currentToolCartState = normalizeToolCartState(nextState);
   if (typeof window !== "undefined") {
-    const saved = saveToolCartStateWithStatus(window.localStorage, currentToolCartState);
-    currentToolCartState = saved.state;
-    currentPersistenceStatus = saved.status;
+    try {
+      const saved = saveToolCartStateWithStatus(window.localStorage, currentToolCartState);
+      currentToolCartState = saved.state;
+      currentPersistenceStatus = saved.status;
+    } catch {
+      currentPersistenceStatus = { state: "degraded", source: "memory", issue: "storage-write-failed" };
+    }
   } else {
     currentPersistenceStatus = { state: "ok", source: "memory" };
   }
@@ -89,7 +100,7 @@ export function useStackPins() {
     setPersistenceStatus(getCurrentPersistenceStatus());
 
     function handleStorage(event: StorageEvent) {
-      if (event.key !== STACK_PINS_STORAGE_KEY) return;
+      if (event.key !== STACK_PINS_STORAGE_KEY && event.key !== null) return;
       const loaded = readToolCartState();
       currentToolCartState = loaded.state;
       currentPersistenceStatus = loaded.status;
@@ -122,6 +133,15 @@ export function useStackPins() {
 
   const unpinTool = useCallback((slug: string) => {
     updateToolCartState((current) => unpinToolInState(current, slug));
+  }, []);
+
+  const restoreTool = useCallback((entry: ToolCartState["toolEntries"][number], index: number) => {
+    updateToolCartState((current) => {
+      if (current.toolEntries.some((item) => item.toolSlug === entry.toolSlug)) return current;
+      const toolEntries = [...current.toolEntries];
+      toolEntries.splice(Math.min(index, toolEntries.length), 0, entry);
+      return { ...current, toolEntries, pinnedToolSlugs: toolEntries.map((item) => item.toolSlug) };
+    });
   }, []);
 
   const saveToolSelection = useCallback((slug: string, needIds: string[], intent: StackToolIntent) => {
@@ -199,6 +219,7 @@ export function useStackPins() {
     pinTool,
     pinToolAutomatically,
     unpinTool,
+    restoreTool,
     saveToolSelection,
     assignToolNeeds,
     assignToolNeedsBatch,

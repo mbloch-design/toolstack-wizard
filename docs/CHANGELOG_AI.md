@@ -1,3 +1,15 @@
+## 2026-10-05 — Mon Stack V1 : voir, comprendre, explorer
+
+- Audit préalable et écarts documentés dans `docs/MON_STACK_V1.md`. Conservation des routes personnelles, du hook partagé et du stockage v3/backup/migrations. Les anciennes sélections et affectations restent stockées.
+- Fiches/cartes : ajout immédiat en un clic, sans formulaire ; l’état « Dans mon stack » ouvre le contexte dans la page existante.
+- `CartPage` : regroupement par catégorie principale, Stack/Map (mode local mémorisé), recherche intégrée sans suggestions, inspection sous le territoire sélectionné, retrait et annulation ciblée. Suppression des branches de dashboard/objectifs manuels/wishlist ; aucun coût global, score ou compte dans cette vue.
+- `StackToolInspector` : usages catalogue, tarifs natifs/plans connus, alternatives déjà présentes, accès à la fiche complète. Aucune recommandation externe ni diagnostic de doublon.
+- Tarifs anglais ajoutés à l’index léger et lectures catalogue actualisées ; aucune conversion monétaire. Prix absents/ambigus masqués.
+- Stockage inaccessible : repli mémoire protégé, y compris thème/devise/navigation/consentement et initialisation du client Supabase. Aucune écriture serveur pour la sélection personnelle.
+- Validation : build production complet et budgets PASS ; 63 tests ciblés PASS ; 15 parcours Chromium PASS (FR/EN, 390/820/1440 px, stack de 60 références à 320 px, clavier, ajout fiche/recherche, retrait/undo, refresh/réouverture, Map, alternatives, ID invalide, stockage corrompu/backup/bloqué, actualisation tarifaire).
+- Captures inspectées : Map desktop/tablette/mobile et contexte intégré. Correction de la classe dynamique Map éliminée par Tailwind, puis assertion du nombre réel de colonnes.
+- Limites : vérificateur TypeScript strict et cliquet design-tokens restent en échec hors périmètre ; aucune erreur stricte dans les fichiers modifiés. Comparaison CSS avec HEAD : mêmes nombres de couleurs hex et rayons littéraux. Dark mode détaillé différé dans ROADMAP.
+
 ## 2026-10-02 : Fiche outil, rythme éditorial
 
 - Titres de section harmonisés « Sujet. Question en gris » (« Avantages et limites. », « Quand ça a du sens. Garder X, ou le challenger ? »), 38 px au plus, toujours sous le nom de l'outil ; 108 px entre chapitres sur ordinateur, mobile inchangé.

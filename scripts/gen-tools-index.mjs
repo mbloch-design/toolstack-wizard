@@ -41,6 +41,7 @@ const summaries = tools.map((tool, index) => {
       ? { shortDescriptionEn: tool.shortDescriptionEn }
       : {}),
     ...((typeof pricing === "string" && pricing) || pricing.free || pricing.paid ? { pricing } : {}),
+    ...(tool.pricingEn ? { pricingEn: tool.pricingEn } : {}),
     ...(tool.defaultMonthlyPrice ? { defaultMonthlyPrice: tool.defaultMonthlyPrice } : {}),
     ...(tool.pricing_v5?.compare_price_monthly_eur != null
       ? { compareMonthlyPrice: tool.pricing_v5.compare_price_monthly_eur }

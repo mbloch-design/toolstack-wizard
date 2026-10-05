@@ -35,7 +35,8 @@ export default function AnalyticsConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = window.localStorage.getItem(CONSENT_KEY);
+    let consent: string | null = null;
+    try { consent = window.localStorage.getItem(CONSENT_KEY); } catch { /* Consent remains a session choice. */ }
     if (consent === "accepted") loadGoogleAnalytics();
     else if (!consent) setVisible(true);
   }, []);
@@ -43,13 +44,13 @@ export default function AnalyticsConsent() {
   if (!visible) return null;
 
   const accept = () => {
-    window.localStorage.setItem(CONSENT_KEY, "accepted");
+    try { window.localStorage.setItem(CONSENT_KEY, "accepted"); } catch { /* Consent only applies to this session. */ }
     loadGoogleAnalytics();
     setVisible(false);
   };
 
   const refuse = () => {
-    window.localStorage.setItem(CONSENT_KEY, "refused");
+    try { window.localStorage.setItem(CONSENT_KEY, "refused"); } catch { /* Analytics stays disabled. */ }
     setVisible(false);
   };
 

@@ -33,13 +33,14 @@ export function CurrencyProvider({ children, lang }: { children: ReactNode; lang
 
   useEffect(() => {
     // An explicit user choice always wins over the language default.
-    const saved = localStorage.getItem(STORAGE_KEY);
+    let saved: string | null = null;
+    try { saved = localStorage.getItem(STORAGE_KEY); } catch { /* Use the route default. */ }
     if (isCurrency(saved)) setCurrencyState(saved);
   }, []);
 
   const setCurrency = (next: Currency) => {
     setCurrencyState(next);
-    localStorage.setItem(STORAGE_KEY, next);
+    try { localStorage.setItem(STORAGE_KEY, next); } catch { /* Keep the session choice. */ }
     document.documentElement.dataset.currency = next;
   };
 

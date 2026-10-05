@@ -287,3 +287,10 @@
 - Mobile menu : skeleton ou état de chargement dans panel-content (données Supabase tardives)
 - Submit tool flow : vérifier le flux complet
 - Ajouter `llms.txt` pour GEO readiness
+
+
+## 5 octobre 2026 — Mon Stack V1
+
+- Expérience personnelle locale : Stack/Map, recherche directe, inspection contextuelle et retrait annulable. Voir `docs/MON_STACK_V1.md`.
+- Dette dark mode : les nouvelles classes ms-* utilisent les tokens du thème ; validation visuelle sombre détaillée différée.
+- Dette transverse : vérificateur TypeScript strict et baseline design-tokens déjà en échec hors périmètre. Aucun nouveau rayon littéral ni couleur hex dans ce chantier.

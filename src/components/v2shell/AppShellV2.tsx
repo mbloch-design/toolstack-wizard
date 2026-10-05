@@ -259,7 +259,8 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   }, []);
 
   useEffect(() => {
-    const storedPreference = localStorage.getItem("tooltrim:sidebar-expanded");
+    let storedPreference: string | null = null;
+    try { storedPreference = localStorage.getItem("tooltrim:sidebar-expanded"); } catch { /* Use default navigation. */ }
     setSidebarExpanded(storedPreference === null ? true : storedPreference === "true");
   }, []);
 
@@ -305,7 +306,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const toggleSidebar = () => {
     setSidebarExpanded((current) => {
       const next = !current;
-      localStorage.setItem("tooltrim:sidebar-expanded", String(next));
+      try { localStorage.setItem("tooltrim:sidebar-expanded", String(next)); } catch { /* Keep session navigation. */ }
       return next;
     });
   };

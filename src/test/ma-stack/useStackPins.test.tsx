@@ -75,3 +75,17 @@ describe("useStackPins persistence", () => {
     expect(result.current.persistenceStatus).toMatchObject({ state: "ok", source: "current" });
   });
 });
+
+it("survives a blocked localStorage getter and restores only the removed entry", () => {
+  Object.defineProperty(window, "localStorage", { configurable: true, get() { throw new DOMException("Blocked", "SecurityError"); } });
+  const { result } = renderHook(() => useStackPins());
+  act(() => result.current.pinTool("blocked-browser"));
+  const index = result.current.state.toolEntries.findIndex((entry) => entry.toolSlug === "blocked-browser");
+  const entry = result.current.state.toolEntries[index];
+  act(() => result.current.unpinTool("blocked-browser"));
+  act(() => result.current.pinTool("added-after-removal"));
+  act(() => result.current.restoreTool(entry, index));
+  expect(result.current.state.pinnedToolSlugs).toContain("blocked-browser");
+  expect(result.current.state.pinnedToolSlugs).toContain("added-after-removal");
+  expect(result.current.persistenceStatus.state).toBe("degraded");
+});

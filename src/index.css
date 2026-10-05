@@ -34641,3 +34641,84 @@ img[data-logo-loading] {
   .pin-tool-button--active svg { animation: tt-pin-pop 420ms cubic-bezier(0.3, 1.6, 0.5, 1); }
 }
 @keyframes tt-pin-pop { 0% { transform: scale(.6); } 60% { transform: scale(1.18); } 100% { transform: none; } }
+
+/* Mon Stack V1 — one workspace, two readings of the same catalogue territories. */
+@layer components {
+  .ms-page { max-width: 1440px; margin: 0 auto; padding: var(--space-2xl) var(--space-2xl) var(--space-3xl); color: hsl(var(--foreground)); font-family: var(--font-ui); }
+  .ms-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); margin-bottom: var(--space-xl); }
+  .ms-header h1 { font-family: var(--font-brand); font-size: var(--tt-size-page-title); line-height: 1.1; letter-spacing: -0.04em; margin: 0 0 var(--space-sm); }
+  .ms-header p, .ms-empty-copy { font-size: var(--tt-size-body-large); line-height: 1.5; }
+  .ms-empty-copy { max-width: 620px; margin: var(--space-2xl) 0 var(--space-lg); }
+  .ms-add { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); padding: var(--space-sm) var(--space-md); border-radius: var(--tt-surface-radius-info, 12px); background: hsl(var(--foreground)); color: hsl(var(--background)); font-weight: 600; white-space: nowrap; min-height: 44px; }
+  .ms-search { max-width: 680px; margin: 0 0 var(--space-xl); }
+  .ms-search-input { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-xs) var(--space-md); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info, 12px); background: hsl(var(--card)); }
+  .ms-search-input input { flex: 1; min-width: 0; padding: var(--space-xs) 0; background: transparent; outline: none; font-size: var(--tt-size-body); }
+  .ms-search-input:focus-within { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
+  .ms-search-status { padding: var(--space-sm) var(--space-md) var(--space-xs); font-size: 13px; }
+  .ms-results { list-style: none; padding: 0; }
+  .ms-results li { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-xs) var(--space-md); border-bottom: 1px solid hsl(var(--border)); }
+  .ms-results a { flex: 1; padding: var(--space-xs) 0; font-weight: 600; }
+  .ms-results button, .ms-icon-action { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: var(--radius); flex-shrink: 0; }
+  .ms-results button:hover:not(:disabled), .ms-icon-action:hover { background: hsl(var(--secondary)); }
+  .ms-results button:disabled { opacity: 0.55; }
+  .ms-view-switch { display: flex; gap: var(--space-2xs); width: fit-content; margin-bottom: var(--space-xl); padding: var(--space-2xs); border-radius: var(--radius); background: hsl(var(--secondary)); }
+  .ms-view-switch button { min-width: 80px; min-height: 44px; padding: var(--space-xs) var(--space-md); border-radius: var(--radius); }
+  .ms-view-switch button[aria-pressed="true"] { background: hsl(var(--card)); font-weight: 600; }
+  .ms-territories { display: grid; gap: var(--space-xl); }
+  .ms-territory { min-width: 0; }
+  .ms-territory h2, .ms-unavailable h2 { font-family: var(--font-brand); font-size: var(--tt-size-section-intro); font-weight: 600; margin: 0 0 var(--space-md); }
+  .ms-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-xs) var(--space-lg); }
+  .ms-tool { display: flex; align-items: center; text-align: left; gap: var(--space-sm); min-width: 0; width: 100%; padding: var(--space-md) var(--space-sm); border-radius: var(--radius); background: transparent; transition: background 160ms ease; }
+  .ms-tool:hover, .ms-tool--selected { background: hsl(var(--secondary)); }
+  .ms-tool--selected { outline: 1px solid hsl(var(--border)); }
+  .ms-tool-copy { display: flex; flex-direction: column; gap: var(--space-2xs); min-width: 0; }
+  .ms-tool-copy strong { font-size: var(--tt-size-body); font-weight: 600; }
+  .ms-tool-copy > span { font-size: 13px; line-height: 1.4; overflow-wrap: anywhere; }
+  .ms-territories--map { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: var(--space-lg); }
+  .ms-territories--map .ms-territory { background: hsl(var(--secondary)); border-radius: var(--tt-surface-radius-panel, 24px); padding: var(--space-lg); }
+  .ms-territories--map .ms-tools { grid-template-columns: 1fr; gap: var(--space-xs); }
+  .ms-territories--map .ms-territory--wide { grid-column: span 2; }
+  .ms-territories--map .ms-territory--wide .ms-tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ms-territories--map .ms-tool:hover, .ms-territories--map .ms-tool--selected { background: hsl(var(--card)); }
+  .ms-territories--map .ms-territory:has(.ms-inspector) { grid-column: 1 / -1; }
+  .ms-territories--map .ms-territory:has(.ms-inspector) .ms-tools { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .ms-inspector { margin-top: var(--space-lg); padding: var(--space-lg) 0 0; border-top: 1px solid hsl(var(--border)); }
+  .ms-inspector-heading { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+  .ms-inspector-heading > div { flex: 1; }
+  .ms-inspector-heading p { font-size: 13px; margin-bottom: var(--space-2xs); }
+  .ms-inspector-heading h3 { font-size: var(--tt-size-body-large); font-family: var(--font-brand); font-weight: 600; }
+  .ms-inspector-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: var(--space-xl); }
+  .ms-inspector-content h4 { font-weight: 600; margin-bottom: var(--space-sm); }
+  .ms-inspector-content p, .ms-usages { font-size: 14px; line-height: 1.6; }
+  .ms-usages { padding-left: var(--space-md); list-style: disc; margin-top: var(--space-sm); }
+  .ms-coverage { margin-top: var(--space-md); }
+  .ms-plans { margin-top: var(--space-sm); font-size: 14px; }
+  .ms-plans > div { padding: var(--space-xs) 0; border-bottom: 1px solid hsl(var(--border)); }
+  .ms-plans dt { font-weight: 600; }
+  .ms-plans dd { margin-top: var(--space-2xs); line-height: 1.5; }
+  .ms-nearby { display: flex; flex-wrap: wrap; gap: var(--space-sm); margin-top: var(--space-sm); }
+  .ms-nearby button { display: flex; align-items: center; gap: var(--space-xs); padding: var(--space-xs) 0; min-height: 44px; font-weight: 600; }
+  .ms-inspector-actions { display: flex; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; margin-top: var(--space-lg); }
+  .ms-inspector-actions a, .ms-inspector-actions button { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; font-size: 14px; }
+  .ms-inspector-actions a { font-weight: 600; }
+  .ms-storage-notice { font-size: 14px; line-height: 1.5; margin-bottom: var(--space-lg); }
+  .ms-unavailable { margin-top: var(--space-xl); }
+  .ms-unavailable > p { font-size: 14px; margin-bottom: var(--space-md); }
+  .ms-unavailable > div { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-xs) 0; border-bottom: 1px solid hsl(var(--border)); overflow-wrap: anywhere; }
+  .ms-unavailable button { min-height: 44px; flex-shrink: 0; font-size: 14px; }
+  .ms-page button:focus-visible, .ms-page a:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 3px; }
+  @media (max-width: 1023px) { .ms-territories--map { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 639px) {
+    .ms-page { padding: var(--space-lg) var(--space-md) var(--space-2xl); }
+    .ms-header { align-items: flex-start; flex-direction: column; }
+    .ms-header p, .ms-empty-copy { font-size: var(--tt-size-body); }
+    .ms-empty-copy { margin-top: var(--space-lg); }
+    .ms-territories--map { grid-template-columns: 1fr; }
+    .ms-territories--map .ms-territory { padding: var(--space-md); }
+    .ms-territories--map .ms-territory--wide { grid-column: auto; }
+    .ms-territories--map .ms-territory--wide .ms-tools, .ms-tools, .ms-territories--map .ms-territory:has(.ms-inspector) .ms-tools { grid-template-columns: 1fr; }
+    .ms-inspector-content { grid-template-columns: 1fr; gap: var(--space-lg); }
+    .ms-inspector-actions { flex-direction: column; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ms-tool { transition: none; } }
+}

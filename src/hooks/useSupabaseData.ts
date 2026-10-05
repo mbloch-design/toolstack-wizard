@@ -181,6 +181,7 @@ export type ToolSummary = Pick<
   | "shortDescription"
   | "shortDescriptionEn"
   | "pricing"
+  | "pricingEn"
   | "defaultMonthlyPrice"
   | "affiliateLink"
   | "websiteUrl"
@@ -256,6 +257,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   shortDescription: asLocalizedText(t.shortDescription || t.short_description, "", "fr"),
   shortDescriptionEn: asLocalizedText(t.shortDescriptionEn || t.short_description_en || t.shortDescription || t.short_description, "", "en"),
   pricing: t.pricing || { free: "", paid: "" },
+  pricingEn: t.pricingEn || t.pricing_en || null,
   defaultMonthlyPrice: Number(t.defaultMonthlyPrice ?? t.default_monthly_price ?? 0) || 0,
   affiliateLink: asLocalizedText(t.affiliateLink || t.affiliate_link, ""),
   websiteUrl: asLocalizedText(t.websiteUrl || t.website_url || t.affiliateLink || t.affiliate_link, ""),
@@ -278,7 +280,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   betterAlternative: t.betterAlternative || t.better_alternative || null,
   compareMonthlyPrice: Number(t.compareMonthlyPrice ?? t.pricing_v5?.compare_price_monthly_eur) || null,
   priceUndisclosed: Boolean(t.priceUndisclosed || /non public/i.test(t.pricing_v5?.compare_plan_name || "")),
-})).filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug));
+})).filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug || t.id));
 
 function mapSupabaseCat(c: any): Category {
   const localFallback = staticCategories.find((category) => category.id === c.id);
@@ -502,7 +504,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
     (async () => {
       const { data, error } = await supabase
         .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality, relevant_for, personas, free_alternative, substitutable, better_alternative, published_at, works_with, form_factor")
+        .select("id, slug, name, category, short_description, short_description_en, pricing, pricing_en, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality, relevant_for, personas, free_alternative, substitutable, better_alternative, published_at, works_with, form_factor")
         .limit(5000);
 
       if (!error && data && data.length > 0) {
@@ -523,6 +525,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
             shortDescription: asLocalizedText(t.short_description, "", "fr"),
             shortDescriptionEn: asLocalizedText(t.short_description_en || t.short_description, "", "en"),
             pricing: t.pricing || { free: "", paid: "" },
+            pricingEn: t.pricing_en || (JSON.stringify(t.pricing) === JSON.stringify(localFallback?.pricing) ? localFallback?.pricingEn : null),
             defaultMonthlyPrice: t.default_monthly_price || 0,
             affiliateLink: asLocalizedText(t.affiliate_link, "") || localFallback?.affiliateLink || "",
             ogImageUrl: asLocalizedText(t.og_image_url, "") || localFallback?.ogImageUrl || "",
@@ -552,7 +555,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
           };
         });
         const merged = mergeById(staticToolSummaries, remoteTools)
-          .filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug));
+          .filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug || t.id));
         _toolSummariesCache = merged;
         setTools(merged);
       }

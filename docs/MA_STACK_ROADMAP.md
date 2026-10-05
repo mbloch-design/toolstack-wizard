@@ -1,3 +1,11 @@
+# Mon Stack V1 — cap actif, 5 octobre 2026
+
+Le brief V1 remplace les objectifs manuels et le dashboard décrits dans le checkpoint historique ci-dessous. Le cap devient **voir → comprendre → explorer** : une sélection locale, regroupée par catégorie catalogue, deux vues Stack/Map, ajout immédiat, inspection intégrée, retrait avec annulation. Aucun compte, coût global ou score.
+
+Audit, écarts et intervention : [MON_STACK_V1.md](MON_STACK_V1.md). Les formats de stockage et anciennes sélections sont conservés. Explorer continue à fonctionner ; ses anciennes destinations d’objectifs restent compatibles au niveau des données mais ne pilotent plus la représentation V1.
+
+---
+
 # Tooltrim — Roadmap active Ma stack + Explorer
 
 > Mise à jour : 16 juillet 2026

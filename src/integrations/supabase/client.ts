@@ -16,10 +16,13 @@ const SUPABASE_PUBLISHABLE_KEY =
 // versions ship an incompatible experimental global `localStorage` — auth
 // session persistence is meaningless there anyway, so disable it instead
 // of crashing.
-const isBrowser = typeof window !== "undefined";
+let browserAuthStorage: Storage | undefined;
+if (typeof window !== "undefined") {
+  try { browserAuthStorage = window.localStorage; } catch { /* Browser storage may be disabled. */ }
+}
 
 export const supabase = createClient<Database>(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
-  auth: isBrowser
-    ? { storage: localStorage, persistSession: true, autoRefreshToken: true }
+  auth: browserAuthStorage
+    ? { storage: browserAuthStorage, persistSession: true, autoRefreshToken: true }
     : { persistSession: false, autoRefreshToken: false },
 });
