@@ -11,16 +11,16 @@ test.beforeEach(async ({ page }) => {
 
 test("empty → search → add → inspect → remove → undo → persist", async ({ page }) => {
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.getByRole("heading", { name: "Mon Stack", exact: true })).toBeVisible();
-  await expect(page.locator(".ms-territory")).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Mes outils", exact: true })).toBeVisible();
+  await expect(page.locator(".ms-card-grid")).toHaveCount(0);
   await page.getByRole("searchbox", { name: "Rechercher un outil", exact: true }).fill("figma");
   await page.getByRole("button", { name: "Ajouter Figma", exact: true }).click();
   await expect(page).toHaveURL(/ma-stack$/);
-  await expect(page.getByRole("button", { name: "Stack", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await expect(page.getByRole("button", { name: "Cartes", exact: true })).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await page.locator(".ms-tool").click();
   await expect(page.locator(".ms-inspector")).toBeVisible();
-  await page.getByRole("button", { name: "Retirer du stack", exact: true }).click();
+  await page.getByRole("button", { name: "Retirer de mes outils", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(0);
   await page.getByRole("button", { name: "Annuler", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(1);
@@ -44,7 +44,7 @@ test("tool profile adds with one click and its saved CTA opens stack context", a
   await cta.click();
   await expect(page).toHaveURL(/ma-stack\?outil=figma/);
   await expect(page.locator(".ms-inspector h3")).toHaveText("Figma");
-  await page.getByRole("link", { name: "Voir la fiche ToolTrim", exact: true }).click();
+  await page.getByRole("link", { name: "Voir la fiche complète", exact: true }).click();
   await expect(page).toHaveURL(/\/fr\/tool\/figma$/);
 });
 
@@ -54,31 +54,33 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.addInitScript(({ key, state }) => localStorage.setItem(key, JSON.stringify(state)), { key, state: seed() });
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
     await expect(page.locator(".ms-tool")).toHaveCount(slugs.length);
-    await expect(page.locator(".ms-territory")).not.toHaveCount(0);
-    await expect(page.getByRole("button", { name: "Stack", exact: true })).toHaveAttribute("aria-pressed", "true");
-    await page.getByRole("button", { name: "Map", exact: true }).click();
-    await expect(page.locator(".ms-territories--map")).toBeVisible();
-    const columns = await page.locator(".ms-territories--map").evaluate((el) => getComputedStyle(el).gridTemplateColumns.split(" ").length);
-    expect(columns).toBe(width >= 1024 ? 3 : width >= 640 ? 2 : 1);
-    await expect(page.locator(".ms-tool")).toHaveCount(slugs.length);
-    await page.locator(".ms-tool").first().focus();
+    await expect(page.locator(".ms-card-grid")).not.toHaveCount(0);
+    await expect(page.getByRole("button", { name: lang === "fr" ? "Cartes" : "Cards", exact: true })).toHaveAttribute("aria-pressed", "true");
+    await page.getByRole("button", { name: lang === "fr" ? "Par usage" : "By use", exact: true }).click();
+    await expect(page.locator(".ms-usage-explorer")).toBeVisible();
+    await expect(page.locator(".ms-usage-bubble")).not.toHaveCount(0);
+    await page.locator(".ms-usage-tree > li > button").filter({ hasText: lang === "fr" ? "Créer" : "Create" }).click();
+    await page.locator(".ms-usage-tree-groups > li > button").filter({ hasText: lang === "fr" ? "Interfaces et prototypes" : "Interfaces & Prototyping" }).click();
+    await expect(page.locator(".ms-usage-tree-tool").first()).toBeVisible();
+    await expect(page.locator(".ms-usage-tree-tool").first()).toBeEnabled();
+    await page.locator(".ms-usage-tree-tool").first().focus();
     await page.keyboard.press("Enter");
     await expect(page.locator(".ms-inspector")).toBeVisible();
     await expect(page.locator(".ms-inspector h3")).toBeFocused();
     await page.keyboard.press("Escape");
     await expect(page.locator(".ms-inspector")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-    const screenshotDir = "/private/tmp/tooltrim-mon-stack-v1";
+    const screenshotDir = "/private/tmp/tooltrim-mon-stack-v2";
     fs.mkdirSync(screenshotDir, { recursive: true });
     await page.locator(".ms-header h1").click();
     await page.screenshot({ path: `${screenshotDir}/${lang}-${width}-map.png`, fullPage: true });
-    await page.getByRole("button", { name: "Stack", exact: true }).click();
+    await page.getByRole("button", { name: lang === "fr" ? "Cartes" : "Cards", exact: true }).click();
     await page.screenshot({ path: `${screenshotDir}/${lang}-${width}-stack.png`, fullPage: true });
-    await page.getByRole("button", { name: "Map", exact: true }).click();
+    await page.getByRole("button", { name: lang === "fr" ? "Par usage" : "By use", exact: true }).click();
     // Clear the init script by opening a new page: only local mode survives.
     const next = await page.context().newPage();
     await next.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
-    await expect(next.getByRole("button", { name: "Map", exact: true })).toHaveAttribute("aria-pressed", "true");
+    await expect(next.getByRole("button", { name: lang === "fr" ? "Par usage" : "By use", exact: true })).toHaveAttribute("aria-pressed", "true");
     await next.close();
   });
 }
@@ -146,12 +148,12 @@ test("corrupt main snapshot recovers its backup", async ({ page }) => {
 test("known alternatives stay contextual and selection stays in the workspace", async ({ page }) => {
   await page.addInitScript(({ key, state }) => localStorage.setItem(key, JSON.stringify(state)), { key, state: seed(["chatgpt", "claude", "figma"]) });
   await page.goto("/fr/ma-stack?outil=chatgpt", { waitUntil: "domcontentloaded" });
-  await expect(page.locator(".ms-nearby")).toContainText("Claude");
-  await expect(page.locator(".ms-nearby")).not.toContainText("Figma");
-  await page.locator(".ms-nearby button").filter({ hasText: "Claude" }).click();
+  await expect(page.locator(".ms-inspector")).toContainText("Claude");
+  await expect(page.locator(".ms-inspector")).not.toContainText("Figma");
+  await page.locator(".ms-overlap-tool").filter({ hasText: "Claude" }).first().click();
   await expect(page.locator(".ms-inspector h3")).toHaveText("Claude");
   await expect(page).toHaveURL(/ma-stack\?outil=claude/);
-  await page.screenshot({ path: "/private/tmp/tooltrim-mon-stack-v1/fr-1440-context.png", fullPage: true });
+  await page.screenshot({ path: "/private/tmp/tooltrim-mon-stack-v2/fr-1440-context.png", fullPage: true });
 });
 
 test("a substantial stack stays readable at 320px", async ({ page }) => {
@@ -161,6 +163,6 @@ test("a substantial stack stays readable at 320px", async ({ page }) => {
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-tool").first()).toBeVisible();
   expect(await page.locator(".ms-tool").count() + await page.locator(".ms-unavailable > div").count()).toBe(60);
-  await page.getByRole("button", { name: "Map", exact: true }).click();
+  await page.getByRole("button", { name: "Par usage", exact: true }).click();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });

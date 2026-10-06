@@ -1,3 +1,12 @@
+## 2026-10-05 — Mon Stack V2 : territoires d’usage et Focus contextuel
+
+- Audit des composants et des métadonnées réellement disponibles consigné dans `docs/MON_STACK_V2.md` ; conservation de CartPage, StackToolInspector, routes, ajout, hook et stockage V1.
+- Map : territoires et sous-territoires déterministes issus des clusters spécifiques et besoins fonctionnels. La catégorie reste un repli neutre ; chaque outil conserve une seule position. Composition ouverte, frontières fines, logo/nom sans tarif ; lecture verticale mobile.
+- Stack : inventaire catalogue conservé, rythme plus dense et prix courts fiables (Gratuit, Freemium, montant natif ou Sur devis). Essais, consommation, zéro, approximation et formats ambigus masqués ; les offres publiques ne deviennent pas Sur devis parce qu’un plan Entreprise existe.
+- Focus : position sémantique, usages libellés FR/EN, voisins présents avec relation explicite ou territoire partagé ; au plus trois plans, sans répétition du prix brut, avec unités/conditions natives conservées. Tags inconnus et longues descriptions retirés.
+- Query de sélection sans remise à zéro du scroll ; fermeture avec restauration instantanée de la position et du focus, indépendante du scroll fluide global. Aucune nouvelle dépendance ou écriture Supabase.
+- Validation finale détaillée dans MON_STACK_V2.md. Les sélections personnelles de l’origine 127.0.0.1 restent intactes ; les essais d’ajout sont sur localhost, dans un stockage distinct.
+
 ## 2026-10-05 — Mon Stack V1 : voir, comprendre, explorer
 
 - Audit préalable et écarts documentés dans `docs/MON_STACK_V1.md`. Conservation des routes personnelles, du hook partagé et du stockage v3/backup/migrations. Les anciennes sélections et affectations restent stockées.
@@ -4933,3 +4942,209 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Ajout d’un consentement analytics refusé par défaut : aucun cookie `_ga` avant acceptation explicite.
 - Ajout du Google Consent Mode v2 (analytics/ad storage denied par défaut) et chargement dynamique de GA4 après acceptation.
 - Mise à jour de la politique de confidentialité et validation par `npm run build`.
+
+
+## 2026-10-05 — Focus Mon Stack, passe MVP
+
+- Relations avec les outils sélectionnés placées avant les informations générales. Les identifiants d’usages connus communs sont affichés, y compris entre territoires ; les proximités de classement restent générales et les tags inconnus ne génèrent pas de relation.
+- Une référence d’alternative reste distinguée d’un usage partagé. Aucun verdict de doublon ou d’équivalence ajouté.
+- Usages identifiés comme informations catalogue ; tarifs réduits au repère court existant, détails accessibles par la fiche. Routes, sélection, actions et stockage conservés.
+- Vérifications de cette passe consignées dans MON_STACK_V2.md.
+
+
+## 2026-10-06 — Mon Stack : Focus ancré et barre de domaines
+
+- Filtres de domaines peuplés avec compteurs et pictogrammes Stack/Map à droite, d’après les références utilisateur ; même filtre dans les deux vues.
+- Focus rattaché à la rangée sélectionnée ; lecture des correspondances par usage, distinction des voisins généraux et des alternatives référencées ; liens précis repérables dans la Map.
+- 29 tests ciblés et build production PASS ; validation navigateur desktop. Vérification mobile finale limitée par les timeouts de viewport. Bilan et limites dans MON_STACK_V2.md. Non publié.
+
+
+### 6 octobre 2026 — Liste, Carte et Focus contextualisé
+
+Liste en lignes (outil, usage, tarif), Carte en blocs de domaines et usages ; libellés visibles à côté des pictogrammes. Focus structuré en identité, message sur la place dans la stack, outils associés en lignes et actions séparées. Les proximités générales ne suggèrent pas une substitution. Aucun enrichissement catalogue. Validation : 74 tests Ma Stack réussis ; contrôle desktop Liste/Carte et Focus Red Giant, capture /private/tmp/stack-product-focus.png. Mobile final non vérifié. Changements locaux, sans publication.
+
+
+### Composition de la sélection — 6 octobre 2026
+
+Carte desktop : Focus dans un grid item latéral sticky, indépendant des groupes. Sélection sombre, liens précis/références soulignés et outils sans lien atténués. Groupes de hauteur naturelle. Liste desktop en colonnes nom/usage/tarif. Focus sans phrase générique ni compteur de groupe ; Audacity se limite aux usages et actions. Sous 900 px, le panneau revient dans le flux avant la carte. 74 tests PASS et compilation SSR PASS ; contrôle visuel desktop Audacity réalisé. Mobile non validé visuellement. Aucun enrichissement catalogue ni publication.
+
+Validation finale de la composition : build production complet PASS (/private/tmp/stack-composition-final-build.log), 74 tests PASS ; vues globale/sélection et Figma/Miro contrôlées en desktop. Capture finale /private/tmp/stack-composition-audacity.png.
+
+
+### Mes outils — hiérarchie et vocabulaire (6 octobre 2026)
+
+Titre Mes outils, vues Liste / Par usage. Les deux vues partagent les domaines fonctionnels ; la Liste expose les colonnes Outil, Usage, Tarif catalogue. Colonne de détail réservée sur desktop pour conserver les positions à l’ouverture/fermeture ; panneau identique dans les deux vues. Suppression de l’atténuation générale et des bordures décoratives de groupes. Actions Voir la fiche complète / Retirer de mes outils. 74 tests PASS. Contrôle desktop : position du premier groupe inchangée à la fermeture (x 124, largeur 281.5 px). Mobile et suite e2e complète non exécutés. Aucun enrichissement ni publication.
+
+Validation finale Mes outils : build production PASS, puis compilation cliente finale PASS après correction des colonnes et des libellés d’affichage. 74 tests ciblés PASS ; e2e non exécutés. Captures desktop /private/tmp/mes-outils-liste.png et /private/tmp/mes-outils-make.png. Les usages déjà exprimés dans le sous-titre ne sont plus répétés dans le panneau. Mobile non validé.
+
+### Correction design system — 6 octobre 2026
+
+Relecture DESIGN_SYSTEM.md : remplacement des tailles typographiques et espacements locaux par tokens, boutons tt-button-primary / tt-button-secondary, sélection sur surface douce, suppression de l’ombre du switch et du fond contrasté du détail. Audit ciblé du bloc Ma Stack : zéro font-size px, spacing px ou couleur hex. Compilation cliente PASS et contrôle desktop Audacity effectué (/private/tmp/mes-outils-design-system.png). Le validateur global échoue sur les régressions de couleurs/rayons de la feuille globale ; baseline inchangée. Mobile non validé. Aucun déploiement.
+
+### Vues distinctes et titres communs — 6 octobre 2026
+
+Liste : inventaire continu alphabétique, sans sections par domaine, colonnes Outil/Usage/Tarif catalogue. Par usage : regroupements de domaines et sous-usages. Tous les H2 réutilisent tt-section-title ; suppression des styles locaux de titres (capitales, tracking, couleur). Compilation cliente PASS ; navigateur desktop : 1 section et 25 outils dans Liste, 16 groupes par usage, même classe de titre dans les deux vues. Captures /private/tmp/stack-liste-distincte.png et /private/tmp/stack-usages-distincts.png. Aucun déploiement.
+
+
+### Fiche de contexte : fonction et chevauchements — 6 octobre 2026
+
+La description précède les relations : première phrase complète de longDescription si <=400 caractères, sinon shortDescription, avec fallback explicite. Développement de VFX et rigging à l’affichage. Un seul bloc Chevauchements possibles : une ligne par outil, raison (usage précis commun ou alternative catalogue), limite locale. Les simples voisins de domaine ne sont pas présentés comme chevauchements. Suppression de la liste de tags et de la mise en garde isolée ; tarif compact après les relations. Tokens et CTA global secondaire conservés. Compilation cliente PASS ; navigateur desktop Houdini vérifié (Cinema 4D / alternative, After Effects / effets visuels), navigation vers Cinema 4D vérifiée. Capture /private/tmp/fiche-houdini-clarifiee.png. Mobile et e2e complets non exécutés ; aucune publication ni enrichissement catalogue.
+
+### Allègement du panneau sticky — 6 octobre 2026
+
+Description courte prioritaire si complète, <=240 caractères et sans montant monétaire ; repli conservé vers la description longue. Rapprochements en lignes logo/nom/raison, suppression des cartes imbriquées et réserves répétitives. Actions sur une rangée : CTA global secondaire et retrait par icône avec aria-label/title. Hauteur du panneau limitée au viewport desktop avec défilement interne si nécessaire. Tokens existants réutilisés. Compilation cliente et diff-check PASS ; rendu Figma desktop : hauteur 457 px, bas à 780 dans viewport 844, toutes les actions visibles. Capture /private/tmp/figma-sticky-allege.png. Mobile non contrôlé dans cette passe ; aucune publication.
+
+### En-tête de fiche — 6 octobre 2026
+
+Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre sans marges héritées avec écart space-2xs (4 px), fermeture circulaire discrète et cible 44 px. Compilation cliente PASS, diff-check PASS, rendu Figma vérifié à la largeur courante du navigateur. Capture /private/tmp/entete-figma.png. Aucune publication.
+
+### En-tête Ma Stack — logo 52 px (6 octobre 2026)
+
+- Logo du panneau porté de 40 à 52 px avec la taille existante ToolLogo ; colonne adaptée, écart surtitre/titre conservé à 4 px.
+- Validation : compilation client Vite réussie, contrôle visuel Figma et dimensions rendues (52 / 166 / 44 px). Capture : `/private/tmp/figma-header-logo52.png`.
+
+### Relations Ma Stack — 6 octobre 2026
+
+- Lignes de chevauchement : padding intérieur sur les quatre côtés, détails secondaires avec token kicker, flèche centrée et discrète.
+- Survol avec surface secondaire à 50 %, transition de couleur, focus clavier explicite.
+- Compilation client Vite réussie. Rendu au repos vérifié sur Figma ; survol non capturé. Capture : `/private/tmp/figma-overlaps-refined.png`.
+
+### Tarif du panneau Ma Stack — 6 octobre 2026
+
+- Tarif remonté sous l’identité, avant la description, libellé « Tarif public ». Métadonnée et montant séparés visuellement, retour à la ligne possible.
+- Suppression des anciennes règles de placement du tarif en bas de panneau.
+- Compilation client Vite réussie ; rendu vérifié sur Figma et Adobe Acrobat Pro. Capture : `/private/tmp/acrobat-price-header.png`.
+
+### Cartes et vue télescopique Ma Stack — 6 octobre 2026
+
+- Vue Cartes : cartes d’outils, usage principal et prix court ; suppression du tableau.
+- Vue Par usage : navigation à gauche, bulles proportionnelles aux effectifs à droite, exploration usage → outils → panneau existant. Géométrie déterministe, sélection clavier et retour aux usages.
+- Composant StackUsageExplorer ; filtres et données de classification existants, aucun enrichissement.
+- 74 tests Ma Stack réussis, compilation client réussie, contrôle navigateur sur les 25 outils et parcours 3D → Houdini. Suite e2e adaptée mais non exécutée ; rendu mobile non vérifié.
+- Build production complet (prerender et budgets) PASS : `/private/tmp/stack-cards-full-build.log`. Les 16 bulles du stack de contrôle sont circulaires et sans collision graphique. Contrôle TypeScript sans diagnostic remonté par la commande `tsc --noEmit`.
+- Dernière correction CSS : identité des cartes alignée en haut même sans prix. Compilation client finale PASS (`/private/tmp/stack-cards-final-client.log`). Captures finales : `/private/tmp/stack-cards.png`, `/private/tmp/stack-telescope-usages.png`.
+
+### Navigation par usage compacte — 6 octobre 2026
+
+- Navigation hiérarchique : domaines → usages du domaine → outils de l’usage. La colonne n’empile plus tous les groupes du stack.
+- Fil d’Ariane cliquable ; sélection d’un outil synchronisée avec son domaine et son usage, remontée de niveau ferme le panneau.
+- Lignes de navigation resserrées (environ 36 px hors retours à la ligne), compteurs alignés, titre et total de la visualisation sur une seule ligne.
+- 74 tests Ma Stack PASS, compilation client PASS. Contrôle navigateur Créer → 3D → Créer → Tous les usages et Calendly. Capture : `/private/tmp/stack-navigation-compacte.png`. Suite e2e adaptée à la profondeur supplémentaire ; non exécutée.
+- Build production complet PASS (`/private/tmp/stack-navigation-full-build.log`). Mesure navigateur : six lignes de domaines à 36 px, colonne totale 253 px.
+
+### Télescope — fil d’Ariane intégré, 6 octobre 2026
+
+- Chemin déplacé dans la barre supérieure du télescope, sur une ligne avec défilement horizontal pour les chemins longs. Suppression du titre de niveau répété.
+- Format paysage : zone de bulles 4/3, champ intérieur carré pour conserver des cercles. Mesure desktop : module 732 × 595 px (ratio 1,23, proche de la référence), barre 46 px.
+- Compilation client Vite PASS et contrôle visuel Créer. Capture : `/private/tmp/telescope-fil-ariane-integre.png`. Pas de publication.
+
+## 2026-10-06 — Télescope : logos et micro mouvements
+
+- Bulles de domaines et d’usages : aperçu de trois logos maximum issus des outils du groupe, nom et nombre total conservés ; logo 40 px pour un outil seul, composant ToolLogo partagé.
+- Flottement discret de 2 px, cycles de 9 à 13 secondes décalés ; pause du télescope au survol et au focus, animation désactivée avec prefers-reduced-motion.
+- Correction de l’état sélectionné qui était appliqué aux groupes sans outil sélectionné. Proportions et fil d’Ariane intégrés conservés.
+- Validation : compilation client Vite PASS, diff sans erreur ; contrôle local des domaines, usages et outils, transformations animées observées dans le navigateur. Capture : /private/tmp/telescope-logos-organique.png. Aucun déploiement.
+
+## 2026-10-06 — Télescope : entrer et ressortir des bulles
+
+- Navigation domaine → usage → outils avec zoom centré sur la bulle choisie ; retour par flèche et fil d’Ariane, dézoom vers la position du parent.
+- Cercle parent visible aux niveaux internes ; placement contenu dans ce cercle et dimensions du module constantes. Logos et micro mouvements conservés.
+- Vélocité ajustée : sortie 160 ms, révélation 230 ms avec arrivée souple ; flottement sur 7 à 10 secondes. Navigation immédiate en mouvement réduit ; clics concurrents bloqués pendant la transition.
+- Validation : build production complet PASS avant les derniers ajustements de placement/vélocité, compilation client finale PASS ; 74 tests Ma Stack PASS ; entrées et retours vérifiés dans le navigateur local. Capture : /private/tmp/telescope-zoom.png. Aucun déploiement.
+
+## 2026-10-06 — Télescope : volume radial des bulles
+
+- À la demande explicite de l’utilisateur et d’après sa référence : dégradé radial diffus neutre, éclairage intérieur et contour fin. Exception au fond sans dégradé limitée aux bulles du télescope.
+- Contour très légèrement organique, associé au flottement existant ; pause au survol/focus, mouvement réduit respecté. Le hover conserve le dégradé.
+- Petites bulles : logo compact et compteur conservé dans la navigation et le libellé accessible pour éviter un débordement du contenu.
+- Validation : compilation client Vite PASS et contrôle visuel local ; capture /private/tmp/telescope-volume-radial.png. Aucun déploiement.
+
+## 2026-10-06 — Télescope : contenu centré dans les bulles
+
+- Logos, nom et compteur rassemblés dans un bloc central avec marges intérieures ; suppression des décalages verticaux individuels des logos.
+- Adaptation au diamètre réel par container queries : logos 28/22 px, libellés compacts sous 110 px, compteurs des petites bulles disponibles dans la liste et le nom accessible ; un logo aperçu sous 90 px.
+- Validation : compilation client Vite PASS, diff sans erreur ; contrôle visuel et mesure des sept bulles racines (76–252 px), aucun logo ou texte hors de leur boîte. Capture : /private/tmp/telescope-contenu-centre.png. Aucun déploiement.
+
+## 2026-10-06 — Télescope : supprimer les étapes sans choix
+
+- Un domaine comportant un seul usage ouvre directement ses outils ; le fil d’Ariane conserve le contexte sans proposer ce niveau intermédiaire. La flèche revient directement aux domaines.
+- Une bulle contenant un seul outil ouvre directement son contexte. Les niveaux comportant plusieurs usages conservent leur navigation.
+- Validation : compilation client Vite PASS, diff sans erreur ; parcours IA → ChatGPT/Claude et retour direct vérifiés, puis ouverture directe de Coupler Io depuis Autres usages. Capture : /private/tmp/telescope-acces-direct.png. Aucun déploiement.
+
+## 2026-10-06 — Télescope : barre de navigation fonctionnelle
+
+- Bouton Retour explicite avec chevron et surface neutre ; état désactivé au niveau général et pendant les transitions.
+- Chemin central navigable, niveau courant distingué, compteur séparé à droite. Barre compacte intégrée au module.
+- Retour depuis une fiche : ferme son contexte en conservant le niveau ; retour suivant : remonte au dernier niveau utile, y compris les domaines à usage unique.
+- Validation : compilation client Vite PASS, diff sans erreur ; parcours IA → Claude → Retour aux outils → Retour général vérifié localement. Capture : /private/tmp/telescope-barre-navigation.png. Aucun déploiement.
+
+## 2026-10-06 — Télescope : arbre de navigation contextuel
+
+- Colonne gauche persistante : vue générale, domaines, usages du domaine ouvert, outils de l’usage ouvert. Les autres domaines restent accessibles directement.
+- Hiérarchie par indentation, filets et chevrons ; parents ouverts en gras et position actuelle marquée par une surface neutre et aria-current. Comptages et logos partagés conservés.
+- Branche active seule dépliée pour limiter la hauteur ; accès directs aux groupes uniques conservés. Actions désactivées pendant le zoom.
+- Validation : compilation client Vite PASS, diff sans erreur ; parcours Créer → 3D, outils visibles, changement direct vers IA et retour général vérifiés dans l’aperçu local. Capture : /private/tmp/telescope-navigation-arbre.png. Aucun déploiement.
+
+## 2026-10-06 — Télescope : tarifs publics contextuels
+
+- Compteur de la barre remplacé par Tarifs publics : panneau compact utilisant le Popover partagé, regroupé par domaine à la racine et limité aux outils du niveau exploré.
+- Logo, nom, gratuit/freemium/tarif et conditions natives connues ; Non renseigné en l’absence de tarif exploitable. Aucune conversion ou somme ; données catalogue existantes uniquement.
+- Les lignes ouvrent le contexte outil ; fermeture sur changement de niveau et avec Échap. Le bouton disparaît pendant la consultation d’un outil, dont le tarif est déjà dans la fiche.
+- Validation : compilation client Vite PASS, diff sans erreur ; aperçu racine, tarifs Make/Zapier au niveau Automatisation, fermeture clavier et ouverture de Make depuis le panneau vérifiés localement. Capture : /private/tmp/telescope-tarifs-publics.png. Aucun déploiement.
+
+## 2026-10-06 — Télescope : titre du niveau hors des bulles
+
+- Cercle englobant supprimé ; titre du domaine ou de l’usage visible dans la zone d’exploration, sous la navigation.
+- Espace réservé au titre dans la surface existante ; proportions du module et bulles des outils conservées.
+- Validation : compilation client Vite PASS, diff sans erreur ; contrôle visuel Assistants généralistes avec ChatGPT/Claude, capture /private/tmp/telescope-titre-visible.png. Aucun déploiement.
+
+## 2026-10-06 — Télescope : onglets de domaines reliés au parcours
+
+- Les onglets supérieurs ouvrent le même niveau que les bulles : domaines à plusieurs usages, accès direct aux outils pour un usage unique, fiche directe pour un outil unique.
+- Arbre complet conservé ; Retour et fil d’Ariane permettent de retrouver tous les usages. L’onglet actif suit aussi la navigation interne. Un nouveau clic sur le même domaine remonte depuis son usage.
+- Demandes mises en attente pendant le zoom ; vue Cartes toujours filtrée et domaine conservé lors du passage au télescope.
+- Validation : compilation client Vite PASS, 74 tests Ma Stack PASS, diff sans erreur. Identité du contenu Automatiser par onglet/bulle vérifiée, retour général, Créer → 3D → onglet Créer et filtre Cartes vérifiés localement. Aucun déploiement.
+
+## 2026-10-06 — Télescope : liens du fil d’Ariane explicites
+
+- Tous les niveaux parents sont des boutons navigables, y compris les domaines à usage unique ; seul le niveau courant reste du texte.
+- Soulignement discret et curseur pointeur rendent l’action visible. Navigation temporairement désactivée pendant le zoom.
+- Validation : compilation client Vite PASS et parcours 3D → Créer par le fil d’Ariane vérifié localement. Aucun déploiement.
+
+## 2026-10-06 — Télescope : estimation du budget dans les bulles
+
+- Montants mensuels estimés directement dans les bulles des domaines, usages et outils ; total du niveau dans la barre du télescope. Aucune section supplémentaire sur la page.
+- Détail dans le panneau existant : équivalent annuel, sous-totaux, tarifs natifs et couverture. Astérisque pour les totaux partiels ; tiret pour un tarif inexploitable. Montants des offres payantes d’entrée, chaque outil compté une seule fois.
+- Devises sources séparées ; aucun champ de prix converti utilisé. Tarifs sur devis, à la consommation, ambigus ou sans période exclus. Un niveau gratuit ne rend pas une offre freemium gratuite dans l’estimation.
+- Validation : compilation client Vite PASS, TypeScript PASS, 78 tests Ma Stack PASS. Estimation globale et navigation par catégorie vérifiées dans l’aperçu local ; aucune publication.
+- Affichage simplifié après retour visuel : une devise par ligne dans les bulles, sans addition ni retour à la ligne au milieu d’un montant. Contrôle visuel global et panneau du budget vérifiés ; capture /private/tmp/telescope-budget-simple.png.
+
+## 2026-10-06 — Télescope : un total approximatif par bulle
+
+- À la demande explicite de l’utilisateur, conversion indicative dans la devise sélectionnée du site et affichage d’un total unique arrondi, précédé de ≈. Le total global et l’équivalent annuel utilisent le même calcul.
+- Réutilisation des taux datés du site (2026-08-27), sans modification globale des taux ; hypothèse $ = USD explicitée dans le panneau. Tarifs originaux conservés dans le détail, prix inconnus exclus et total partiel marqué.
+- Validation : compilation client Vite et TypeScript PASS, 79 tests Ma Stack PASS. Totaux globaux et par domaine contrôlés dans l’aperçu local. Capture /private/tmp/telescope-budget-total.png. Aucun déploiement.
+
+## 2026-10-06 — Télescope : retrait de la légende sous les bulles
+
+- Suppression de la ligne de légende et de son style dédié à la demande de l’utilisateur. Conditions et couverture restent dans le panneau Budget estimé.
+- Validation : compilation client Vite PASS et contrôle local de l’absence de la légende. Aucun déploiement.
+
+## 2026-10-06 — Télescope : aperçu et accès direct aux outils
+
+- Pile compacte sur les bulles : logo partagé, nom et description catalogue limitée à deux lignes ; liste défilante pour les domaines comprenant plusieurs outils.
+- Survol avec délai de 180 ms et délai de fermeture permettant de rejoindre la pile ; clic sur une ligne ouvre directement le contexte outil. Clic sur la bulle conserve le zoom et action Explorer disponible dans la pile.
+- Flèche bas ouvre la pile et place le focus ; Échap ferme. Le toucher ouvre la pile pour rendre l’accès disponible sans survol.
+- Validation : compilation client Vite et TypeScript PASS, diff sans erreur. Parcours clavier vue générale → aperçu Automate → Zapier vérifié dans le navigateur en anglais, avec focus dans la fiche. Capture /private/tmp/telescope-pile-outils.png. Comportement tactile non vérifié sur appareil. Aucun déploiement.
+
+## 2026-10-06 — Ma Stack : cartes compactes alignées sur ToolTrim
+
+- Reprise de la hiérarchie des cartes compactes : logo, nom et usage regroupés ; tarif placé sous le texte et aligné à gauche, suppression de l’espace vide et du tarif flottant à droite.
+- Surface fonctionnelle douce, typographie et espacements du design system, flèche discrète et survol neutre. Sélection et focus conservés.
+- Validation : compilation client Vite PASS, diff sans erreur et grille anglaise contrôlée dans l’aperçu local. Capture /private/tmp/stack-cards-compactes.png. Aucun déploiement.
+
+## 2026-10-06 — Publication Ma Stack / télescope
+
+- Périmètre : cartes compactes, fiche intégrée, navigation hiérarchique du télescope, aperçus des outils et budgets indicatifs par groupe. Les fichiers de migration catalogue et les copies de travail sont exclus.
+- Validation finale : build production complet PASS, TypeScript PASS, 79 tests Ma Stack PASS et 15 tests navigateur Chromium PASS (FR/EN, 390/820/1440 px, stack de 60 outils à 320 px, ajout/retrait/annulation et persistance).
+- Tests navigateur adaptés au parcours actuel et à la fin des transitions avant activation clavier.

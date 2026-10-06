@@ -1,3 +1,9 @@
+# Mon Stack V2 — correction active, 5 octobre 2026
+
+Stack conserve l’inventaire catalogue. Map devient une lecture des usages structurés, avec outils uniques et sous-territoires. Le Focus intégré explique la position, les usages et les relations avec la sélection personnelle ; les tarifs sont simplifiés et sans répétition. Audit et règles : [MON_STACK_V2.md](MON_STACK_V2.md). Aucun changement du stockage ou dépendance serveur supplémentaire.
+
+---
+
 # Mon Stack V1 — cap actif, 5 octobre 2026
 
 Le brief V1 remplace les objectifs manuels et le dashboard décrits dans le checkpoint historique ci-dessous. Le cap devient **voir → comprendre → explorer** : une sélection locale, regroupée par catégorie catalogue, deux vues Stack/Map, ajout immédiat, inspection intégrée, retrait avec annulation. Aucun compte, coût global ou score.
@@ -236,3 +242,27 @@ Le MVP Ma stack + Explorer est prêt lorsque :
 - Les données catalogue sont encore chargées dans des bundles trop importants.
 - La CI couvre désormais les tests unitaires Ma stack et exploration, mais pas encore le parcours E2E navigateur ni la suite globale tant que GO14 reste rouge.
 - L’historique Git récent contient des changements Explorer mêlés à un commit nommé pour la page outil ; le checkpoint doit restaurer une lecture claire de l’état courant.
+
+
+### 6 octobre 2026 — Passe Focus et navigation
+
+Barre de filtres de domaines et pictogrammes Stack/Map appliqués ; Focus ancré et relations organisées par usages. Voir MON_STACK_V2.md pour la validation et les limites. À terminer : vérification visuelle mobile quand le contrôle de viewport répond ; observation utilisateur de la valeur des rapprochements. Aucune extension catalogue prévue pour ce MVP.
+
+
+### 6 octobre 2026 — Liste, Carte et Focus contextualisé
+
+Liste en lignes (outil, usage, tarif), Carte en blocs de domaines et usages ; libellés visibles à côté des pictogrammes. Focus structuré en identité, message sur la place dans la stack, outils associés en lignes et actions séparées. Les proximités générales ne suggèrent pas une substitution. Aucun enrichissement catalogue. Validation : 74 tests Ma Stack réussis ; contrôle desktop Liste/Carte et Focus Red Giant, capture /private/tmp/stack-product-focus.png. Mobile final non vérifié. Changements locaux, sans publication.
+
+
+### Composition de la sélection — 6 octobre 2026
+
+Carte desktop : Focus dans un grid item latéral sticky, indépendant des groupes. Sélection sombre, liens précis/références soulignés et outils sans lien atténués. Groupes de hauteur naturelle. Liste desktop en colonnes nom/usage/tarif. Focus sans phrase générique ni compteur de groupe ; Audacity se limite aux usages et actions. Sous 900 px, le panneau revient dans le flux avant la carte. 74 tests PASS et compilation SSR PASS ; contrôle visuel desktop Audacity réalisé. Mobile non validé visuellement. Aucun enrichissement catalogue ni publication.
+
+
+### Mes outils — hiérarchie et vocabulaire (6 octobre 2026)
+
+Titre Mes outils, vues Liste / Par usage. Les deux vues partagent les domaines fonctionnels ; la Liste expose les colonnes Outil, Usage, Tarif catalogue. Colonne de détail réservée sur desktop pour conserver les positions à l’ouverture/fermeture ; panneau identique dans les deux vues. Suppression de l’atténuation générale et des bordures décoratives de groupes. Actions Voir la fiche complète / Retirer de mes outils. 74 tests PASS. Contrôle desktop : position du premier groupe inchangée à la fermeture (x 124, largeur 281.5 px). Mobile et suite e2e complète non exécutés. Aucun enrichissement ni publication.
+
+### 6 octobre 2026 — deux lectures du stack
+
+Cartes pour parcourir les outils ; Par usage avec navigation latérale, bulles par effectif et exploration jusqu’à l’outil. MVP fondé sur les groupes existants, sans nouvelle collecte de données. Validation utilisateur à poursuivre, notamment lisibilité des nombreux usages et intérêt de la représentation en bulles.
