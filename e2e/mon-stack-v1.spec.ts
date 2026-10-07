@@ -16,7 +16,6 @@ test("empty → search → add → inspect → remove → undo → persist", asy
   await page.getByRole("searchbox", { name: "Rechercher un outil", exact: true }).fill("figma");
   await page.getByRole("button", { name: "Ajouter Figma", exact: true }).click();
   await expect(page).toHaveURL(/ma-stack$/);
-  await expect(page.getByRole("button", { name: "Cartes", exact: true })).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await page.locator(".ms-tool").click();
   await expect(page.locator(".ms-inspector")).toBeVisible();
@@ -55,15 +54,18 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
     await expect(page.locator(".ms-tool")).toHaveCount(slugs.length);
     await expect(page.locator(".ms-card-grid")).not.toHaveCount(0);
-    await expect(page.getByRole("button", { name: lang === "fr" ? "Cartes" : "Cards", exact: true })).toHaveAttribute("aria-pressed", "true");
-    await page.getByRole("button", { name: lang === "fr" ? "Par usage" : "By use", exact: true }).click();
-    // By use: telescope. Area bubbles, then a zoom into a readable area card.
-    await expect(page.locator(".ms-telescope-bubble")).not.toHaveCount(0);
-    await page.locator(".ms-telescope-bubble").first().click();
-    await expect(page.locator(".ms-telescope-detail .ms-area")).toBeVisible();
-    await expect(page.locator(".ms-area-tool").first()).toBeVisible();
-    await expect(page.locator(".ms-area-tool").first()).toBeEnabled();
-    await page.locator(".ms-area-tool").first().focus();
+    // Dashboard: an area bubble filters the budget, overlaps and tool tiles;
+    // a second click goes back to the whole stack.
+    await expect(page.locator(".ms-map-field .ms-telescope-bubble")).not.toHaveCount(0);
+    const bubble = page.locator(".ms-map-field .ms-telescope-bubble").first();
+    await bubble.click({ force: true });
+    await expect(bubble).toHaveAttribute("aria-pressed", "true");
+    await expect(page.locator(".ms-scope-chip")).toBeVisible();
+    expect(await page.locator(".ms-tool").count()).toBeLessThanOrEqual(slugs.length);
+    await bubble.click({ force: true });
+    await expect(page.locator(".ms-scope-chip")).toHaveCount(0);
+    await expect(page.locator(".ms-tool")).toHaveCount(slugs.length);
+    await page.locator(".ms-tool").first().focus();
     await page.keyboard.press("Enter");
     await expect(page.locator(".ms-inspector")).toBeVisible();
     await expect(page.locator(".ms-inspector h3")).toBeFocused();
@@ -73,15 +75,7 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     const screenshotDir = "/private/tmp/tooltrim-mon-stack-v2";
     fs.mkdirSync(screenshotDir, { recursive: true });
     await page.locator(".ms-hero h1").click();
-    await page.screenshot({ path: `${screenshotDir}/${lang}-${width}-map.png`, fullPage: true });
-    await page.getByRole("button", { name: lang === "fr" ? "Cartes" : "Cards", exact: true }).click();
-    await page.screenshot({ path: `${screenshotDir}/${lang}-${width}-stack.png`, fullPage: true });
-    await page.getByRole("button", { name: lang === "fr" ? "Par usage" : "By use", exact: true }).click();
-    // Clear the init script by opening a new page: only local mode survives.
-    const next = await page.context().newPage();
-    await next.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
-    await expect(next.getByRole("button", { name: lang === "fr" ? "Par usage" : "By use", exact: true })).toHaveAttribute("aria-pressed", "true");
-    await next.close();
+    await page.screenshot({ path: `${screenshotDir}/${lang}-${width}-dashboard.png`, fullPage: true });
   });
 }
 
@@ -163,6 +157,5 @@ test("a substantial stack stays readable at 320px", async ({ page }) => {
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-tool").first()).toBeVisible();
   expect(await page.locator(".ms-tool").count() + await page.locator(".ms-unavailable > div").count()).toBe(60);
-  await page.getByRole("button", { name: "Par usage", exact: true }).click();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });

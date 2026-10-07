@@ -35369,3 +35369,123 @@ img[data-logo-loading] {
 .ms-page .ms-stat-link { color: color-mix(in srgb, #E8590C 82%, #000); font: 600 12px/1.3 var(--font-ui); text-decoration: none; }
 .ms-page .ms-stat-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 .ms-page #ms-overlaps { scroll-margin-top: 24px; }
+
+/* My stack as a dashboard (7 Oct 2026): the hero keeps the whole-stack view
+   (four figures, logo cluster), then the usage map as the scope picker, then budget, overlaps and the
+   tools of the picked scope. */
+.ms-page .ms-scope { display: flex; align-items: center; gap: 8px; min-height: 32px; margin: 0 0 12px; color: hsl(var(--muted-foreground)); font: 500 13px/1.3 var(--font-ui); }
+.ms-page .ms-scope-chip { --area-color: #6F6F68; display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px 0 12px; border-radius: var(--radius-pill); background: color-mix(in srgb, var(--area-color) 14%, hsl(var(--card))); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--area-color) 40%, transparent); color: color-mix(in srgb, var(--area-color) 70%, #000); font: 600 13px/1 var(--font-ui); }
+.ms-page .ms-scope-chip:hover { background: color-mix(in srgb, var(--area-color) 22%, hsl(var(--card))); }
+.ms-page .ms-dash-main { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+.ms-page .ms-dash-side { display: grid; gap: 16px; min-width: 0; }
+.ms-page .ms-tile { min-width: 0; padding: 20px; border-radius: 24px; background: hsl(var(--card)); box-shadow: inset 0 0 0 1px hsl(var(--border)); }
+.ms-page .ms-tile-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 8px 16px; margin-bottom: 12px; }
+.ms-page .ms-tile-head h2 { margin: 0; font: 650 18px/1.25 var(--font-ui); letter-spacing: -.01em; }
+.ms-page .ms-tile-head p { max-width: 52ch; margin: 4px 0 0; color: hsl(var(--muted-foreground)); font: 400 13px/1.45 var(--font-ui); }
+.ms-page .ms-tile-note { margin: 16px 0 0; color: hsl(var(--muted-foreground)); font: 400 12px/1.5 var(--font-ui); }
+.ms-page .ms-tile-more { margin-top: 12px; padding: 0; color: hsl(var(--foreground)); font: 600 13px/1.3 var(--font-ui); text-decoration: underline; text-underline-offset: 3px; }
+/* Usage map: fills its tile; the picked area stays, the others step back. */
+.ms-page .ms-map-tile .ms-telescope-canvas { width: 100%; aspect-ratio: 1 / 1; max-height: 620px; margin: 0 auto; }
+.ms-page .ms-map-tile .ms-telescope-field { inset: 0; }
+.ms-page .ms-map-field .ms-telescope-bubble { transition: scale 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease, border-color 200ms ease, background-color 200ms ease, opacity 240ms ease, filter 240ms ease; }
+.ms-page .ms-map-field[data-filtered] .ms-telescope-bubble[aria-pressed="false"] { opacity: .42; filter: saturate(.4); }
+.ms-page .ms-map-field[data-filtered] .ms-telescope-bubble[aria-pressed="false"]:hover { opacity: .8; filter: none; }
+.ms-page .ms-map-field .ms-telescope-bubble[aria-pressed="true"] { border-width: 2.5px; border-color: var(--bubble-color); background: color-mix(in srgb, var(--bubble-color) 18%, hsl(var(--card))); box-shadow: 0 18px 40px color-mix(in srgb, var(--bubble-color) 24%, transparent); }
+/* Budget tile: smaller ring, one-column legend. */
+.ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 150px minmax(0, 1fr); gap: 20px; margin-top: 4px; }
+.ms-page .ms-budget-tile .sg-donut { width: 150px; height: 150px; }
+.ms-page .ms-budget-tile .sg-storage-legend { grid-template-columns: 1fr; gap: 8px; }
+.ms-page .ms-budget-tile .sg-budget-name, .ms-page .ms-budget-tile .sg-budget-value { font-size: 13.5px; }
+.ms-page .ms-budget-rest .sg-budget-name, .ms-page .ms-budget-rest .sg-budget-value { color: hsl(var(--muted-foreground)); font-weight: 500; }
+.ms-page .ms-declare { --area-color: #0E9F6E; margin-top: 16px; border-top: 1px solid hsl(var(--border)); }
+.ms-page .ms-declare summary { display: flex; align-items: center; gap: 8px; padding: 14px 0 2px; color: hsl(var(--foreground)); font: 600 13.5px/1.4 var(--font-ui); cursor: pointer; list-style: none; }
+.ms-page .ms-declare summary::-webkit-details-marker { display: none; }
+.ms-page .ms-declare summary::after { content: ""; width: 7px; height: 7px; margin-left: auto; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform 200ms ease; }
+.ms-page .ms-declare[open] summary::after { transform: rotate(-135deg) translateY(-2px); }
+.ms-page .ms-declare ul { display: grid; gap: 6px; margin: 10px 0 0; padding: 0; list-style: none; }
+.ms-page .ms-declare li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: center; gap: 10px; font: 500 13.5px/1.3 var(--font-ui); }
+.ms-page .ms-declare li > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Overlaps tile: pairs one per row. */
+.ms-page .ms-overlaps-tile .ms-pairs { grid-template-columns: 1fr; gap: 10px; }
+.ms-page .ms-overlaps-tile .ms-pair { padding: 12px; border-radius: 16px; }
+.ms-page .ms-pair-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.ms-page .ms-pair-foot .ms-pair-why { min-width: 0; }
+.ms-page .ms-pair-foot .ms-pair-compare { flex-shrink: 0; }
+.ms-page #ms-budget { scroll-margin-top: 24px; }
+/* Tools tile. */
+.ms-page .ms-tools-tile { margin-top: 16px; }
+.ms-page .ms-tools-tile .ms-domain-filters { margin: -4px 0 16px; border-bottom: 1px solid hsl(var(--border)); }
+.ms-page .ms-tools-tile .ms-domain-filters button { min-height: 44px; }
+@media (max-width: 1080px) {
+  .ms-page .ms-dash-main { grid-template-columns: 1fr; }
+  .ms-page .ms-map-tile .ms-telescope-canvas { max-width: 560px; }
+}
+@media (max-width: 640px) {
+  .ms-page .ms-tile { padding: 14px; border-radius: 20px; }
+  .ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 1fr; justify-items: center; }
+  .ms-page .ms-budget-tile .sg-storage-legend { width: 100%; }
+}
+.ms-page .ms-hero-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 640px; }
+.ms-page .ms-hero-stats dd { white-space: nowrap; }
+@media (max-width: 640px) {
+  .ms-page .ms-hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 18px; }
+  .ms-page .ms-hero-stats > div:nth-child(3) { padding-left: 0; border-left: 0; }
+}
+/* Design pass (7 Oct 2026): back to the stack pages' language. Editorial
+   section headings, no frame around the map or the tools, budget and
+   overlaps as soft Apple-style widgets (no hairline, no box in a box). */
+.ms-page .ms-overview-section, .ms-page .ms-tools-section { margin-top: 64px; }
+.ms-page .ms-section-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; margin-bottom: 28px; }
+.ms-page .ms-section-row .sg-section-heading { margin: 0; }
+.ms-page .ms-scope-chip { height: 36px; padding: 0 12px 0 16px; font-size: 14px; box-shadow: none; animation: ms-chip-in 320ms cubic-bezier(.34, 1.56, .64, 1); }
+@keyframes ms-chip-in { from { scale: .8; opacity: 0; } }
+.ms-page .ms-dash-main { gap: 32px; }
+.ms-page .ms-map-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 4px; }
+.ms-page .ms-map-head p { max-width: 46ch; margin: 0; color: hsl(var(--muted-foreground)); font: 400 14px/1.5 var(--font-ui); }
+.ms-page .ms-map .ms-telescope-canvas { width: 100%; aspect-ratio: 1 / 1; max-height: 640px; margin: 0 auto; }
+.ms-page .ms-map .ms-telescope-field { inset: 0; }
+.ms-page .ms-map-field .ms-telescope-bubble[aria-pressed="true"] { scale: 1.03; }
+.ms-page .ms-tile { padding: 28px; border-radius: 28px; background: var(--color-surface-soft); box-shadow: none; }
+.ms-page .ms-tile-head { margin-bottom: 20px; }
+.ms-page .ms-tile-head h2 { color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-page .ms-tile-head p { margin-top: 6px; color: hsl(var(--foreground)); font: 600 19px/1.3 var(--font-brand); letter-spacing: -.015em; }
+.ms-page .ms-tile .ms-size-switch { background: hsl(var(--card)); }
+.ms-page .ms-tile .ms-size-switch button[aria-pressed="true"] { background: hsl(var(--foreground)); color: hsl(var(--background)); box-shadow: none; }
+.ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 160px minmax(0, 1fr); gap: 24px; }
+.ms-page .ms-budget-tile .sg-donut { width: 160px; height: 160px; }
+.ms-page .ms-declare { border-top: 0; margin-top: 20px; }
+.ms-page .ms-declare summary { padding: 14px 16px; border-radius: 16px; background: hsl(var(--card)); }
+.ms-page .ms-declare ul { padding: 4px 16px 8px; }
+/* Overlaps: an inset grouped list, one white row per pair. */
+.ms-page .ms-overlaps-tile .ms-pairs { gap: 8px; }
+.ms-page .ms-overlaps-tile .ms-pair { gap: 8px; padding: 14px 16px; border: 0; border-radius: 18px; background: hsl(var(--card)); transition: transform 220ms cubic-bezier(.2, .8, .2, 1); }
+.ms-page .ms-overlaps-tile .ms-pair:hover { transform: translateY(-2px); }
+.ms-page .ms-overlaps-tile .ms-pair-tool { padding: 0; background: none; }
+.ms-page .ms-overlaps-tile .ms-pair-tool:hover { background: none; }
+.ms-page .ms-overlaps-tile .ms-pair-tool:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.ms-page .ms-overlaps-tile .ms-pair-sign { right: -4px; box-shadow: none; background: color-mix(in srgb, #E8590C 12%, hsl(var(--card))); }
+.ms-page .ms-overlaps-tile .ms-pair-tool:last-child { padding-left: 16px; }
+.ms-page .ms-overlaps-tile .ms-pair-compare { height: 30px; padding: 0 12px; background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
+.ms-page .ms-overlaps-tile .ms-pair-compare:hover { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+.ms-page .ms-tile-more { margin-top: 14px; text-decoration: none; }
+.ms-page .ms-tile-more::after { content: " →"; }
+/* Tools: plain section, the cards are the only boxes. */
+.ms-page .ms-tools-section .ms-domain-filters { margin: -8px 0 20px; }
+@media (max-width: 640px) {
+  .ms-page .ms-overview-section, .ms-page .ms-tools-section { margin-top: 48px; }
+  .ms-page .ms-tile { padding: 18px; border-radius: 24px; }
+  .ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .ms-page .ms-scope-chip { animation: none; } }
+/* Usage map as a strip: bubbles in a row, area proportional to weight, so the
+   overview takes a band instead of a page. Budget and overlaps side by side. */
+.ms-page .ms-map-strip { --k: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 20px; min-height: calc(232px * var(--k)); padding: 16px 0 8px; }
+.ms-page .ms-map-strip .ms-telescope-bubble { position: relative; flex: none; width: calc(var(--d) * 1px * var(--k)); height: calc(var(--d) * 1px * var(--k)); }
+.ms-page .ms-map-strip[data-filtered] .ms-telescope-bubble[aria-pressed="false"] { opacity: .42; filter: saturate(.4); }
+.ms-page .ms-map-strip[data-filtered] .ms-telescope-bubble[aria-pressed="false"]:hover { opacity: .8; filter: none; }
+.ms-page .ms-map-strip .ms-telescope-bubble[aria-pressed="true"] { scale: 1.04; border-width: 2.5px; border-color: var(--bubble-color); background: color-mix(in srgb, var(--bubble-color) 18%, hsl(var(--card))); box-shadow: 0 18px 40px color-mix(in srgb, var(--bubble-color) 24%, transparent); }
+.ms-page .ms-map-strip .ms-telescope-bubble { transition: scale 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease, border-color 200ms ease, background-color 200ms ease, opacity 240ms ease, filter 240ms ease; }
+.ms-page .ms-overview-section .ms-dash-main { grid-template-columns: 1fr; gap: 24px; }
+.ms-page .ms-overview-section .ms-dash-side { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+@media (max-width: 1080px) { .ms-page .ms-overview-section .ms-dash-side { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .ms-page .ms-map-strip { --k: .62; gap: 8px 10px; } }

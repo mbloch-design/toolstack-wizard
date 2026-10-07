@@ -88,3 +88,9 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 - 25/09/2026 `9b3f179f` : titres et descriptions des fiches unifiés (`toolSeo.ts`), titres des pages prix qui répondent, H1 des sous-pages
 - 25/09/2026 `82b0ee6c` : pages catégorie alignées sur /tools, index A à Z, noindex des catégories minces, 57 couvertures bloquées
 - 25/09/2026 `511c528b` : catalogue /tools (besoins, filtres, sponsoring), barres de filtres sur une ligne, 7 recatégorisations, 5 URL réparées
+
+## Ma stack en tableau de bord (7 oct. 2026)
+- Composition : hero vue d'ensemble (4 chiffres + nuage de logos), puis « Vue d'ensemble » (bandeau de bulles par usage = filtre de la page, budget et recoupements en widgets doux), puis « Mes outils ». Commits locaux non poussés.
+- E2E `catalogue refresh updates the same saved selection` échoue : il attend le prix Supabase sur la carte, or la carte lit désormais `nativePrices` attestés. Réécrire le test (constat, pas encore fait).
+- Composants devenus inutilisés : `StackTelescope`, `StackUsageExplorer` (sauf `pack`), défaut de `StackAreaBoard`, `src/lib/stackBudget.ts`. À supprimer après validation du tableau de bord.
+- CHANGELOG_AI à compléter pour toute la série Ma stack avant le push.

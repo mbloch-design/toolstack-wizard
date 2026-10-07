@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ToolLogo from "@/components/ToolLogo";
 import type { Category } from "@/data/types";
@@ -14,6 +15,8 @@ import { toolKey } from "@/lib/stackView";
  * alternative explicite ou usages communs du catalogue), ce qu'ils partagent,
  * ce que chacun coûte, et la comparaison. Aucune injonction de retirer :
  * garder les deux peut être un choix ; la personne décide.
+ * Tuile du tableau de bord : filtrée par le domaine choisi dans la carte des
+ * usages (paires dont au moins un outil est dans le domaine).
  */
 
 interface Props {
@@ -24,10 +27,14 @@ interface Props {
   prefix: string;
   lang: "fr" | "en";
   onSelect: (slug: string) => void;
+  /** Tool ids of the area picked on the usage map; all tools when absent. */
+  scopeIds?: Set<string>;
 }
+const SHOWN = 3;
 
-export default function StackOverlapPairs({ tools, categories, isPaid, currency, prefix, lang, onSelect }: Props) {
+export default function StackOverlapPairs({ tools, categories, isPaid, currency, prefix, lang, onSelect, scopeIds }: Props) {
   const en = lang === "en";
+  const [all, setAll] = useState(false);
   const pairs: { a: ToolSummary; b: ToolSummary; shared: string[]; explicit: boolean }[] = [];
   const seen = new Set<string>();
   for (const a of tools) {
@@ -36,10 +43,10 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
       const key = [a.id, relation.tool.id].sort().join("|");
       if (seen.has(key)) continue;
       seen.add(key);
+      if (scopeIds && !scopeIds.has(a.id) && !scopeIds.has(relation.tool.id)) continue;
       pairs.push({ a, b: relation.tool, shared: relation.commonUses, explicit: relation.explicit });
     }
   }
-  if (!pairs.length) return null;
 
   const costLabel = (tool: ToolSummary) => {
     const cost = toolMonthlyCost(tool, isPaid, lang);
@@ -50,33 +57,40 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
   };
 
   return (
-    <section id="ms-overlaps" className="sg-section ms-section" aria-labelledby="ms-overlaps-section-title">
-      <div className="sg-section-heading">
-        <span className="sg-eyebrow">03 / {en ? "Overlaps" : "Recoupements"}</span>
-        <h2 id="ms-overlaps-section-title">{en ? "What may be doing the same job?" : "Qu’est-ce qui fait peut-être doublon ?"}</h2>
-      </div>
-      <p className="ms-section-lead">{en
-        ? `${pairs.length} pair${pairs.length > 1 ? "s" : ""} of tools share uses or are catalogue alternatives. Keeping both can be the right call; compare before deciding.`
-        : `${pairs.length} paire${pairs.length > 1 ? "s" : ""} d’outils partage${pairs.length > 1 ? "nt" : ""} des usages ou sont des alternatives du catalogue. Garder les deux peut être le bon choix : comparez avant de décider.`}</p>
-      <ul className="ms-pairs">
-        {pairs.map(({ a, b, shared, explicit }) => (
+    <section id="ms-overlaps" className="ms-tile ms-overlaps-tile" aria-labelledby="ms-overlaps-section-title">
+      <header className="ms-tile-head">
+        <div>
+          <h2 id="ms-overlaps-section-title">{en ? "Overlaps" : "Recoupements"}</h2>
+          <p>{pairs.length === 0
+            ? (en ? "No known overlap here." : "Aucun recoupement connu ici.")
+            : en ? `${pairs.length} pair${pairs.length > 1 ? "s" : ""} may do the same job` : `${pairs.length} paire${pairs.length > 1 ? "s" : ""} ${pairs.length > 1 ? "font" : "fait"} peut-être doublon`}</p>
+        </div>
+      </header>
+      {pairs.length > 0 && <ul className="ms-pairs">
+        {(all ? pairs : pairs.slice(0, SHOWN)).map(({ a, b, shared, explicit }) => (
           <li key={`${a.id}|${b.id}`} className="ms-pair">
             <div className="ms-pair-tools">
               {[a, b].map((tool, i) => (
                 <button key={tool.id} type="button" className="ms-pair-tool" onClick={() => onSelect(toolKey(tool))}>
-                  <ToolLogo tool={tool} size={40} />
+                  <ToolLogo tool={tool} size={32} />
                   <span><strong>{tool.name}</strong><small>{costLabel(tool)}</small></span>
                   {i === 0 && <span className="ms-pair-sign" aria-hidden="true">⇄</span>}
                 </button>
               ))}
             </div>
-            <p className="ms-pair-why">{shared.length > 0
-              ? (en ? `Shared: ${shared.slice(0, 3).join(", ")}` : `En commun : ${shared.slice(0, 3).map((use) => stackDisplayLabel(use, lang)).join(", ")}`)
-              : explicit ? (en ? "Listed as alternatives in the catalogue" : "Alternatives l’une de l’autre au catalogue") : ""}</p>
-            <Link className="ms-pair-compare" to={comparisonPath(prefix, toolKey(a), toolKey(b))}>{en ? "Compare" : "Comparer"}</Link>
+            <div className="ms-pair-foot">
+              <p className="ms-pair-why">{shared.length > 0
+                ? (en ? `Shared: ${shared.slice(0, 3).join(", ")}` : `En commun : ${shared.slice(0, 3).map((use) => stackDisplayLabel(use, lang)).join(", ")}`)
+                : explicit ? (en ? "Listed as alternatives in the catalogue" : "Alternatives l’une de l’autre au catalogue") : ""}</p>
+              <Link className="ms-pair-compare" to={comparisonPath(prefix, toolKey(a), toolKey(b))}>{en ? "Compare" : "Comparer"}</Link>
+            </div>
           </li>
         ))}
-      </ul>
+      </ul>}
+      {pairs.length > 0 && <p className="ms-tile-note">{en ? "Keeping both can be the right call: compare before deciding." : "Garder les deux peut être le bon choix : comparez avant de décider."}</p>}
+      {pairs.length > SHOWN && <button type="button" className="ms-tile-more" aria-expanded={all} onClick={() => setAll((v) => !v)}>
+        {all ? (en ? "Show fewer" : "Afficher moins") : (en ? `Show all ${pairs.length}` : `Voir les ${pairs.length}`)}
+      </button>}
     </section>
   );
 }
