@@ -35406,8 +35406,8 @@ img[data-logo-loading] {
 .ms-page .ms-declare li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: center; gap: 10px; font: 500 13.5px/1.3 var(--font-ui); }
 .ms-page .ms-declare li > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 /* Overlaps tile: pairs one per row. */
-.ms-page .ms-overlaps-tile .ms-pairs { grid-template-columns: 1fr; gap: 10px; }
-.ms-page .ms-overlaps-tile .ms-pair { padding: 12px; border-radius: 16px; }
+.ms-page .ms-pairs-panel .ms-pairs { grid-template-columns: 1fr; gap: 10px; }
+.ms-page .ms-pairs-panel .ms-pair { padding: 12px; border-radius: 16px; }
 .ms-page .ms-pair-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .ms-page .ms-pair-foot .ms-pair-why { min-width: 0; }
 .ms-page .ms-pair-foot .ms-pair-compare { flex-shrink: 0; }
@@ -35457,16 +35457,16 @@ img[data-logo-loading] {
 .ms-page .ms-declare summary { padding: 14px 16px; border-radius: 16px; background: hsl(var(--card)); }
 .ms-page .ms-declare ul { padding: 4px 16px 8px; }
 /* Overlaps: an inset grouped list, one white row per pair. */
-.ms-page .ms-overlaps-tile .ms-pairs { gap: 8px; }
-.ms-page .ms-overlaps-tile .ms-pair { gap: 8px; padding: 14px 16px; border: 0; border-radius: 18px; background: hsl(var(--card)); transition: transform 220ms cubic-bezier(.2, .8, .2, 1); }
-.ms-page .ms-overlaps-tile .ms-pair:hover { transform: translateY(-2px); }
-.ms-page .ms-overlaps-tile .ms-pair-tool { padding: 0; background: none; }
-.ms-page .ms-overlaps-tile .ms-pair-tool:hover { background: none; }
-.ms-page .ms-overlaps-tile .ms-pair-tool:hover strong { text-decoration: underline; text-underline-offset: 3px; }
-.ms-page .ms-overlaps-tile .ms-pair-sign { right: -4px; box-shadow: none; background: color-mix(in srgb, #E8590C 12%, hsl(var(--card))); }
-.ms-page .ms-overlaps-tile .ms-pair-tool:last-child { padding-left: 16px; }
-.ms-page .ms-overlaps-tile .ms-pair-compare { height: 30px; padding: 0 12px; background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
-.ms-page .ms-overlaps-tile .ms-pair-compare:hover { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+.ms-page .ms-pairs-panel .ms-pairs { gap: 8px; }
+.ms-page .ms-pairs-panel .ms-pair { gap: 8px; padding: 14px 16px; border: 0; border-radius: 18px; background: hsl(var(--card)); transition: transform 220ms cubic-bezier(.2, .8, .2, 1); }
+.ms-page .ms-pairs-panel .ms-pair:hover { transform: translateY(-2px); }
+.ms-page .ms-pairs-panel .ms-pair-tool { padding: 0; background: none; }
+.ms-page .ms-pairs-panel .ms-pair-tool:hover { background: none; }
+.ms-page .ms-pairs-panel .ms-pair-tool:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.ms-page .ms-pairs-panel .ms-pair-sign { right: -4px; box-shadow: none; background: color-mix(in srgb, #E8590C 12%, hsl(var(--card))); }
+.ms-page .ms-pairs-panel .ms-pair-tool:last-child { padding-left: 16px; }
+.ms-page .ms-pairs-panel .ms-pair-compare { height: 30px; padding: 0 12px; background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
+.ms-page .ms-pairs-panel .ms-pair-compare:hover { background: hsl(var(--foreground)); color: hsl(var(--background)); }
 .ms-page .ms-tile-more { margin-top: 14px; text-decoration: none; }
 .ms-page .ms-tile-more::after { content: " →"; }
 /* Tools: plain section, the cards are the only boxes. */
@@ -35524,3 +35524,19 @@ img[data-logo-loading] {
 .ms-page .ms-budget-freemium:hover span { text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 640px) { .ms-page .ms-freemium-count { text-align: left; } }
 @media (prefers-reduced-motion: reduce) { .ms-page .ms-switch-track > span { transition: none; } }
+/* Visit order (7 Oct 2026): overlaps, then budget with freemium beside it,
+   then the tools. */
+.ms-page .ms-overlaps-section, .ms-page .ms-budget-section { margin-top: 64px; }
+.ms-page .ms-pairs-panel { padding: 12px; border-radius: 28px; background: var(--color-surface-soft); }
+.ms-page .ms-pairs-panel .ms-pairs { grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 8px; }
+.ms-page .ms-pairs-panel .ms-tile-more { margin: 12px 8px 4px; }
+.ms-page .ms-budget-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.ms-page .ms-budget-grid .ms-freemium-tile { grid-column: auto; }
+.ms-page .ms-budget-grid .ms-freemium-list { grid-template-columns: 1fr; }
+.ms-page .ms-zoom-back { display: inline-flex; align-items: center; gap: 4px; height: 32px; padding: 0 12px 0 8px; border-radius: var(--radius-pill); background: hsl(var(--card)); color: hsl(var(--foreground)); font: 600 13px/1 var(--font-ui); }
+.ms-page .ms-zoom-back:hover { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+@media (max-width: 1080px) { .ms-page .ms-budget-grid { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .ms-page .ms-overlaps-section, .ms-page .ms-budget-section { margin-top: 48px; } .ms-page .ms-pairs-panel { padding: 8px; border-radius: 24px; } }
+/* The ring stays in view while freemium switches are flipped beside it
+   (sticky on the grid item itself). */
+@media (min-width: 1081px) { .ms-page .ms-budget-grid > .ms-budget-tile { position: sticky; top: 24px; } }

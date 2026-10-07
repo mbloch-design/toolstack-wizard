@@ -74,10 +74,8 @@ export default function CartPage() {
   }, [selectedTools, plans.paid, currency, lang]);
   const heroApps = heroOrder.length > HERO_CLUSTER_SLOTS.length ? heroOrder.slice(0, HERO_CLUSTER_SLOTS.length - 1) : heroOrder;
   const heroOverflow = heroOrder.length - heroApps.length;
-  // Dashboard: an area picked in the budget ring (or the tool tabs) sets the
-  // scope, and budget, overlaps and tools follow it. Area colours stay those of the whole stack.
+  // Area colours of the budget ring, stable across the whole stack. Area colours stay those of the whole stack.
   const colorOf = (id: string) => AREA_COLORS[Math.max(0, mapTerritories.findIndex((territory) => territory.id === id)) % AREA_COLORS.length];
-  const scopeLabel = activeFilter === "all" ? null : visibleMap[0]?.label;
   const toCheck = stackCost.freemiumFree + stackCost.unknown;
   const overlapPairs = useMemo(() => {
     const pairs = new Set<string>();
@@ -268,24 +266,22 @@ export default function CartPage() {
     </ol>}
 
     {!empty && <>
-      {/* Overview: budget by tool or by area (an area filters the page), then overlaps. */}
-      <section className="sg-section ms-section ms-overview-section" aria-labelledby="ms-overview-title">
-      <div className="ms-section-row">
-        <div className="sg-section-heading"><span className="sg-eyebrow">{t("Vue d’ensemble", "Overview")}</span><h2 id="ms-overview-title">{scopeLabel ? t(`Zoom sur ${scopeLabel}`, `Focus on ${scopeLabel}`) : t("Quel usage pèse le plus ?", "Which use weighs most?")}</h2></div>
-        {scopeLabel && <button type="button" className="ms-scope-chip" style={{ ["--area-color" as string]: colorOf(activeFilter) }} onClick={() => chooseDomain("all")} aria-label={t(`Retirer le filtre ${scopeLabel}`, `Clear the ${scopeLabel} filter`)}>{scopeLabel}<X size={14} aria-hidden /></button>}
-      </div>
+      {/* Order follows the visit (Michael, 7 Oct 2026): after the hero, what I
+          can simplify (overlaps), then what it really costs (budget, with the
+          freemium plans to declare beside it so the total corrects itself),
+          then the inventory. */}
+      <StackOverlapPairs tools={selectedTools} categories={categories} isPaid={plans.isPaid} currency={currency} prefix={prefix} lang={lang} onSelect={selectTool} />
 
-      <div className="ms-dash-main">
-        <div className="ms-dash-side">
-          <StackBudgetBreakdown territories={visibleMap} colorOf={colorOf} onChooseArea={chooseDomain} paid={plans} currency={currency} lang={lang} onSelect={selectTool} onFreemium={() => jumpTo("ms-freemium")} />
-          <StackOverlapPairs tools={selectedTools} categories={categories} isPaid={plans.isPaid} currency={currency} prefix={prefix} lang={lang} onSelect={selectTool} scopeIds={activeFilter === "all" ? undefined : visibleIds} />
-          <StackFreemiumPlans tools={listTools} paid={plans} currency={currency} lang={lang} onSelect={selectTool} />
+      <section className="sg-section ms-section ms-budget-section" aria-labelledby="ms-budget-section-title">
+        <div className="sg-section-heading"><span className="sg-eyebrow">{t("Budget", "Budget")}</span><h2 id="ms-budget-section-title">{t("Combien coûte ma stack ?", "What does my stack cost?")}</h2></div>
+        <div className="ms-budget-grid">
+          <StackBudgetBreakdown territories={mapTerritories} colorOf={colorOf} paid={plans} currency={currency} lang={lang} onSelect={selectTool} onFreemium={() => jumpTo("ms-freemium")} />
+          <StackFreemiumPlans tools={selectedTools} paid={plans} currency={currency} lang={lang} onSelect={selectTool} />
         </div>
-      </div>
       </section>
 
       <section className="sg-section ms-section ms-tools-section" aria-labelledby="ms-list-title">
-        <div className="sg-section-heading"><span className="sg-eyebrow">{scopeLabel ? t(`Mes outils · ${scopeLabel}`, `My tools · ${scopeLabel}`) : t("Mes outils", "My tools")}</span><h2 id="ms-list-title">{t("Quel outil pour quoi ?", "Which tool does what?")}</h2></div>
+        <div className="sg-section-heading"><span className="sg-eyebrow">{t("Mes outils", "My tools")}</span><h2 id="ms-list-title">{t("Quel outil pour quoi ?", "Which tool does what?")}</h2></div>
         <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")}>
           <button type="button" aria-pressed={activeFilter === "all"} onClick={() => chooseDomain("all")}>{t("Tous", "All")}<span>{selectedTools.length}</span></button>
           {mapTerritories.map((territory) => <button key={territory.id} type="button" aria-pressed={activeFilter === territory.id} onClick={() => chooseDomain(territory.id)}>

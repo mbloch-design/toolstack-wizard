@@ -15,8 +15,8 @@ import { toolKey } from "@/lib/stackView";
  * alternative explicite ou usages communs du catalogue), ce qu'ils partagent,
  * ce que chacun coûte, et la comparaison. Aucune injonction de retirer :
  * garder les deux peut être un choix ; la personne décide.
- * Tuile du tableau de bord : filtrée par le domaine choisi dans la carte des
- * usages (paires dont au moins un outil est dans le domaine).
+ * Première section après le hero : c'est ce que la personne peut simplifier,
+ * la promesse de ToolTrim. Masquée sans recoupement.
  */
 
 interface Props {
@@ -27,12 +27,10 @@ interface Props {
   prefix: string;
   lang: "fr" | "en";
   onSelect: (slug: string) => void;
-  /** Tool ids of the area picked on the usage map; all tools when absent. */
-  scopeIds?: Set<string>;
 }
-const SHOWN = 3;
+const SHOWN = 4;
 
-export default function StackOverlapPairs({ tools, categories, isPaid, currency, prefix, lang, onSelect, scopeIds }: Props) {
+export default function StackOverlapPairs({ tools, categories, isPaid, currency, prefix, lang, onSelect }: Props) {
   const en = lang === "en";
   const [all, setAll] = useState(false);
   const pairs: { a: ToolSummary; b: ToolSummary; shared: string[]; explicit: boolean }[] = [];
@@ -43,7 +41,6 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
       const key = [a.id, relation.tool.id].sort().join("|");
       if (seen.has(key)) continue;
       seen.add(key);
-      if (scopeIds && !scopeIds.has(a.id) && !scopeIds.has(relation.tool.id)) continue;
       pairs.push({ a, b: relation.tool, shared: relation.commonUses, explicit: relation.explicit });
     }
   }
@@ -56,17 +53,19 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
     return en ? "Price not checked" : "Prix non relevé";
   };
 
+  if (!pairs.length) return null;
+
   return (
-    <section id="ms-overlaps" className="ms-tile ms-overlaps-tile" aria-labelledby="ms-overlaps-section-title">
-      <header className="ms-tile-head">
-        <div>
-          <h2 id="ms-overlaps-section-title">{en ? "Overlaps" : "Recoupements"}</h2>
-          <p>{pairs.length === 0
-            ? (en ? "No known overlap here." : "Aucun recoupement connu ici.")
-            : en ? `${pairs.length} pair${pairs.length > 1 ? "s" : ""} may do the same job` : `${pairs.length} paire${pairs.length > 1 ? "s" : ""} ${pairs.length > 1 ? "font" : "fait"} peut-être doublon`}</p>
-        </div>
-      </header>
-      {pairs.length > 0 && <ul className="ms-pairs">
+    <section id="ms-overlaps" className="sg-section ms-section ms-overlaps-section" aria-labelledby="ms-overlaps-section-title">
+      <div className="sg-section-heading">
+        <span className="sg-eyebrow">{en ? "Overlaps" : "Recoupements"}</span>
+        <h2 id="ms-overlaps-section-title">{en ? "What may be doing the same job?" : "Qu’est-ce qui fait peut-être doublon ?"}</h2>
+      </div>
+      <p className="ms-section-lead">{en
+        ? `${pairs.length} pair${pairs.length > 1 ? "s" : ""} of tools share uses or are catalogue alternatives. Keeping both can be the right call: compare before deciding.`
+        : `${pairs.length} paire${pairs.length > 1 ? "s" : ""} d’outils partage${pairs.length > 1 ? "nt" : ""} des usages ou sont des alternatives du catalogue. Garder les deux peut être le bon choix : comparez avant de décider.`}</p>
+      <div className="ms-pairs-panel">
+      <ul className="ms-pairs">
         {(all ? pairs : pairs.slice(0, SHOWN)).map(({ a, b, shared, explicit }) => (
           <li key={`${a.id}|${b.id}`} className="ms-pair">
             <div className="ms-pair-tools">
@@ -86,11 +85,11 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
             </div>
           </li>
         ))}
-      </ul>}
-      {pairs.length > 0 && <p className="ms-tile-note">{en ? "Keeping both can be the right call: compare before deciding." : "Garder les deux peut être le bon choix : comparez avant de décider."}</p>}
+      </ul>
       {pairs.length > SHOWN && <button type="button" className="ms-tile-more" aria-expanded={all} onClick={() => setAll((v) => !v)}>
         {all ? (en ? "Show fewer" : "Afficher moins") : (en ? `Show all ${pairs.length}` : `Voir les ${pairs.length}`)}
       </button>}
+      </div>
     </section>
   );
 }

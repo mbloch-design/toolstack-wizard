@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
+import { ChevronLeft } from "@/lib/icons";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { convertAmount, CURRENCY_RATE_DATE, formatAmount, type Currency } from "@/lib/currencyRates";
 import { toolMonthlyCost } from "@/lib/stackCost";
@@ -8,9 +9,9 @@ import { AREA_COLORS, type Territory } from "@/components/stack/StackAreaBoard";
 
 /**
  * Tuile Budget du tableau de bord Ma stack : l'anneau de répartition des pages
- * Stack (sg-donut, sg-storage-legend). Par outil, ou par domaine ; un clic sur
- * un domaine filtre toute la page (budget, recoupements, outils), et l'anneau
- * passe alors à ce domaine, par outil. Les outils freemium se déclarent dans
+ * Stack (sg-donut, sg-storage-legend). Par domaine ou par outil ; un clic sur
+ * un domaine zoome l'anneau sur ses outils (zoom local : il ne filtre pas le
+ * reste de la page, qui le précède en partie). Les outils freemium se déclarent dans
  * le widget Freemium, vers lequel le budget renvoie. Mêmes règles que le
  * reste de la page : offres d'entrée attestées, freemium à 0 sauf « Je paie », total
  * converti au taux daté et affiché comme converti (Michael, 7 oct. 2026).
@@ -20,7 +21,6 @@ interface Props {
   territories: Territory[];
   /** Colour index of each area in the whole stack, so a filtered area keeps its colour. */
   colorOf: (id: string) => string;
-  onChooseArea: (id: string) => void;
   paid: { isPaid: (slug: string) => boolean; setPaid: (slug: string, value: boolean) => void };
   currency: Currency;
   lang: "fr" | "en";
@@ -32,11 +32,15 @@ interface Props {
 type Line = { id: string; label: string; amount: number; tool?: ToolSummary; color?: string };
 const LEGEND_MAX = 6;
 
-export default function StackBudgetBreakdown({ territories, colorOf, onChooseArea, paid, currency, lang, onSelect, onFreemium }: Props) {
+export default function StackBudgetBreakdown({ territories: all, colorOf, paid, currency, lang, onSelect, onFreemium }: Props) {
   const en = lang === "en";
   const rateDate = new Intl.DateTimeFormat(en ? "en-US" : "fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${CURRENCY_RATE_DATE}T00:00:00`));
   const [view, setView] = useState<"tool" | "area">("area");
   const [focus, setFocus] = useState<string | null>(null);
+  const [zoom, setZoom] = useState<string | null>(null);
+  const zoomed = all.find((t) => t.id === zoom) || null;
+  const territories = zoomed ? [zoomed] : all;
+  const onChooseArea = (id: string) => { setZoom(id); setFocus(null); };
   const money = (amount: number) => formatAmount(Math.round(amount), currency, lang);
 
   const tools = [...new Map(territories.flatMap((t) => t.tools).map((tool) => [tool.id, tool])).values()];
@@ -64,16 +68,18 @@ export default function StackBudgetBreakdown({ territories, colorOf, onChooseAre
     <section id="ms-budget" className="ms-tile ms-budget-tile" aria-labelledby="ms-budget-title">
       <header className="ms-tile-head">
         <div>
-          <h2 id="ms-budget-title">{en ? "Budget" : "Budget"}</h2>
-          <p>{total > 0
-            ? (en ? `Where the money goes, ${toolLines.length} paid tool${toolLines.length > 1 ? "s" : ""}` : `Où part l’argent, ${toolLines.length} outil${toolLines.length > 1 ? "s" : ""} payant${toolLines.length > 1 ? "s" : ""}`)
-            : (en ? "Nothing paid here" : "Rien de payant ici")}</p>
+          <h2 id="ms-budget-title">{en ? "Where the money goes" : "Où part l’argent"}</h2>
+          <p>{zoomed ? zoomed.label : total > 0
+            ? (en ? `${toolLines.length} paid tool${toolLines.length > 1 ? "s" : ""}` : `${toolLines.length} outil${toolLines.length > 1 ? "s" : ""} payant${toolLines.length > 1 ? "s" : ""}`)
+            : (en ? "Nothing paid yet" : "Rien de payant pour l’instant")}</p>
         </div>
-        {total > 0 && territories.length > 1 && <div className="ms-size-switch" role="group" aria-label={en ? "Breakdown" : "Répartition"}>
-          {([["tool", en ? "Tools" : "Outils"], ["area", en ? "Areas" : "Domaines"]] as const).map(([key, label]) => (
-            <button key={key} type="button" aria-pressed={view === key} onClick={() => { setView(key); setFocus(null); }}>{label}</button>
-          ))}
-        </div>}
+        {zoomed
+          ? <button type="button" className="ms-zoom-back" onClick={() => { setZoom(null); setFocus(null); }}><ChevronLeft size={16} aria-hidden />{en ? "All areas" : "Tous les domaines"}</button>
+          : total > 0 && territories.length > 1 && <div className="ms-size-switch" role="group" aria-label={en ? "Breakdown" : "Répartition"}>
+            {([["area", en ? "Areas" : "Domaines"], ["tool", en ? "Tools" : "Outils"]] as const).map(([key, label]) => (
+              <button key={key} type="button" aria-pressed={view === key} onClick={() => { setView(key); setFocus(null); }}>{label}</button>
+            ))}
+          </div>}
       </header>
       {total > 0 && <div className="sg-budget-viz sg-budget-viz--share" onMouseLeave={() => setFocus(null)}>
         <svg className="sg-donut" viewBox="0 0 200 200" role="img" aria-label={en ? `Monthly cost breakdown: about ${money(total)}` : `Répartition du coût mensuel : environ ${money(total)}`}>
@@ -108,7 +114,7 @@ export default function StackBudgetBreakdown({ territories, colorOf, onChooseAre
       </div>}
       {undeclared > 0 && <a className="ms-budget-freemium" href="#ms-freemium" onClick={(event) => { event.preventDefault(); onFreemium(); }}>
         <strong>{en ? `${undeclared} freemium counted as free` : `${undeclared} freemium compté${undeclared > 1 ? "s" : ""} gratuit${undeclared > 1 ? "s" : ""}`}</strong>
-        <span>{en ? "Do you pay for some? Tell us below" : "Vous en payez ? Dites-le plus bas"} ↓</span>
+        <span>{en ? "Which ones do you pay for?" : "Lesquels payez-vous ?"}</span>
       </a>}
       <p className="ms-tile-note">
         {en
