@@ -35257,3 +35257,6 @@ img[data-logo-loading] {
 @media (max-width: 640px) { .ms-page .ms-area-tool { flex-wrap: wrap; } .ms-page .ms-area-tool-overlap { order: 3; margin-left: 38px; max-width: calc(100% - 38px); } }
 .ms-page .ms-area-tool { gap: 8px; overflow: hidden; }
 .ms-page .ms-area-tool-overlap { max-width: 36%; }
+/* Plus de somme de prix : le décompte par type de prix devient l'information. */
+.ms-page .ms-board-total span { color: hsl(var(--foreground)); font: 600 15px/1.4 var(--font-ui); }
+.ms-page .ms-area-head { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "dot name" "dot count"; }

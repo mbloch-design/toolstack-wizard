@@ -1,6 +1,5 @@
 import ToolLogo from "@/components/ToolLogo";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
-import { estimateStackBudget, formatApproximateBudget } from "@/lib/stackBudget";
 import { stackDisplayLabel } from "@/lib/stackUsage";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
 
@@ -9,7 +8,7 @@ import { stackCatalogPrice, toolKey } from "@/lib/stackView";
  * de bulles. Les bulles montraient des proportions mais se lisaient mal dès
  * qu'on descendait d'un niveau (quelques bulles serrées, libellés qui
  * débordent, outil caché derrière le nom de son usage). Ici tout se lit d'un
- * coup : une carte par domaine (couleur, nombre d'outils, budget d'entrée),
+ * coup : une carte par domaine (couleur, nombre d'outils), sans somme de prix,
  * ses usages, et sous chacun ses outils. Un clic sur un outil ouvre le même
  * panneau que la vue Cartes.
  */
@@ -30,37 +29,40 @@ interface Props {
 export default function StackAreaBoard({ territories, lang, selectedId, onSelect, overlaps }: Props) {
   const en = lang === "en";
   const all = territories.flatMap((territory) => territory.tools);
-  const total = estimateStackBudget(all, undefined, lang);
-  const budgetText = (tools: ToolSummary[]) => {
-    const budget = estimateStackBudget(tools, undefined, lang);
-    if (!budget.included) return null;
-    if (!budget.totals.length) return en ? "Free" : "Gratuit";
-    return `${formatApproximateBudget(budget, lang)}${en ? "/mo" : "/mois"}`;
-  };
+  // No sums. A catalogue entry price is not what the person pays (a freemium
+  // tool used for free would be counted at its first paid plan), and seat,
+  // monthly and annual prices do not add up. V1 rule: "catalogue information,
+  // not the user's spend; no conversion, no sum". Only a count by price type.
+  const kinds = { free: 0, freemium: 0, paid: 0, unknown: 0 };
+  for (const tool of all) {
+    const price = stackCatalogPrice(tool, lang);
+    if (price === "Free" || price === "Gratuit") kinds.free++;
+    else if (price === "Freemium") kinds.freemium++;
+    else if (price) kinds.paid++;
+    else kinds.unknown++;
+  }
+  const kindParts = [
+    kinds.free && (en ? `${kinds.free} free` : `${kinds.free} gratuit${kinds.free > 1 ? "s" : ""}`),
+    kinds.freemium && `${kinds.freemium} freemium`,
+    kinds.paid && (en ? `${kinds.paid} paid` : `${kinds.paid} payant${kinds.paid > 1 ? "s" : ""}`),
+    kinds.unknown && (en ? `${kinds.unknown} without a checked price` : `${kinds.unknown} sans prix relevé`),
+  ].filter(Boolean);
 
   return (
     <section className="ms-board" aria-label={en ? "My tools by use" : "Mes outils par usage"}>
-      {total.included > 0 && (
-        <p className="ms-board-total">
-          <span>{en ? "Estimated entry budget" : "Budget d’entrée estimé"}</span>
-          <strong>{budgetText(all)}</strong>
-          <small>
-            {en ? "Catalogue entry plans, per currency, never converted." : "Offres d’entrée du catalogue, par devise, jamais converties."}
-            {total.excluded > 0 && (en ? ` ${total.excluded} of ${total.total} tools without a checked price.` : ` ${total.excluded} outil${total.excluded > 1 ? "s" : ""} sur ${total.total} sans prix relevé.`)}
-          </small>
-        </p>
-      )}
+      <p className="ms-board-total">
+        <span>{kindParts.join(" · ")}</span>
+        <small>{en ? "Catalogue prices, not what you pay: a freemium tool may be used for free." : "Prix du catalogue, pas vos dépenses : un outil freemium peut être utilisé gratuitement."}</small>
+      </p>
       <div className="ms-board-grid">
         {territories.map((territory, index) => {
           const color = AREA_COLORS[index % AREA_COLORS.length];
-          const areaBudget = budgetText(territory.tools);
           return (
             <article key={territory.id} className="ms-area" style={{ ["--area-color" as string]: color, ["--area-delay" as string]: `${index * 60}ms` }}>
               <header className="ms-area-head">
                 <span className="ms-area-dot" aria-hidden="true" />
                 <h3>{territory.label}</h3>
                 <span className="ms-area-count">{en ? `${territory.tools.length} ${territory.tools.length === 1 ? "tool" : "tools"}` : `${territory.tools.length} outil${territory.tools.length > 1 ? "s" : ""}`}</span>
-                {areaBudget && <span className="ms-area-budget">{areaBudget}</span>}
               </header>
               {territory.groups.map((group) => (
                 <section key={group.id} className="ms-area-group">
