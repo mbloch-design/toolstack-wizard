@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 2,
+  "slug": "shield-app",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "hold": "Shield (shieldapp.ai) appears to have shut down in May 2026; the official site is currently inaccessible ('Deployment Paused' / HTTP 402) and no price could be confirmed on an official page, so pricing.regularPriceUnknown is set and no amount is used. The catalogue already has a second entry 'shield' pointing to the same URL (https://shieldapp.ai); likely a duplicate to resolve before merging either one.",
+  "identity": {
+    "officialName": "Shield",
+    "vendor": "Shield Analytics (co-founded by Andreas Jonsson)",
+    "officialUrl": "https://www.shieldapp.ai",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "dead",
+    "productStatus": "discontinued",
+    "statusNote": "Co-founder Andreas Jonsson announced on 18 May 2026 that Shield was winding down after LinkedIn and Google restricted how the tool could keep operating; users had a 30-day window to export data before account access closed. The official site is now fully inaccessible (HTTP 402 / 'Deployment Paused') as of 2026-10-07."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.shieldapp.ai", "tier": 1, "accessedOn": "2026-10-07", "title": "Shield official site, currently shows 'Deployment Paused' / returns HTTP 402" },
+    { "id": "s2", "url": "https://authoredup.com/blog/shield-analytics-winding-down", "tier": 2, "accessedOn": "2026-10-07", "title": "Report on Shield's features, May 2026 wind-down and co-founder statement" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://www.shieldapp.ai",
+    "verifiedOn": "2026-10-07",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": [] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "legacy",
+        "name": "Subscription (service discontinued)",
+        "unit": "account",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Shield announced it was winding down on 18 May 2026; the official site is now inaccessible and no current price can be confirmed.", "fr": "Shield a annoncé son arrêt le 18 mai 2026 ; le site officiel est aujourd'hui inaccessible et aucun prix actuel ne peut être confirmé." }],
+        "sourceIds": ["s2"]
+      }
+    ],
+    "comparePlanKey": null,
+    "regularPriceUnknown": true,
+    "addOns": [],
+    "cautions": [
+      { "en": "Third-party sources report past prices ranging from about $8 to $25/month, but none is an official source and the product has since shut down; no figure is used here.", "fr": "Des sources tierces évoquent d'anciens prix allant d'environ 8 $ à 25 $/mois, mais aucune n'est une source officielle et le produit a depuis fermé ; aucun montant n'est retenu ici.", "sourceIds": ["s2"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Tracked LinkedIn post performance (impressions, engagement-rate trends week over week) and follower-growth curves for individual creators.", "fr": "Suivait la performance des posts LinkedIn (impressions, taux d'engagement semaine après semaine) et les courbes de croissance d'abonnés pour des créateurs individuels.", "sourceIds": ["s2"] },
+      { "en": "Supported multi-account client reporting for agencies and marketing teams managing several LinkedIn profiles.", "fr": "Prenait en charge le reporting multi-comptes pour les agences et équipes marketing gérant plusieurs profils LinkedIn.", "sourceIds": ["s2"] },
+      { "en": "Included an AI chat feature to query a user's own analytics data directly.", "fr": "Incluait une fonction de chat IA pour interroger directement ses propres données analytics.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "The product is discontinued: Shield announced its shutdown in May 2026 and the official site is now inaccessible, so it cannot be bought or used today.", "fr": "Le produit est arrêté : Shield a annoncé sa fermeture en mai 2026 et le site officiel est aujourd'hui inaccessible, il ne peut donc plus être acheté ni utilisé.", "sourceIds": ["s2"] },
+      { "en": "Users had only a 30-day window to export their data before account access closed permanently, with no long-term data portability afterward.", "fr": "Les utilisateurs n'ont eu qu'une fenêtre de 30 jours pour exporter leurs données avant la fermeture définitive des comptes, sans portabilité des données au-delà.", "sourceIds": ["s2"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A LinkedIn creator, agency or marketing team that wanted to track post performance and audience growth (product no longer available).", "fr": "Un(e) créateur/créatrice LinkedIn, une agence ou une équipe marketing qui voulait suivre la performance de ses posts et la croissance de son audience (produit aujourd'hui indisponible)." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Track growth: monitor weekly impressions and engagement-rate trends for every LinkedIn post from one dashboard.", "fr": "Suivre sa croissance : surveiller les tendances hebdomadaires d'impressions et de taux d'engagement de chaque post LinkedIn depuis un même tableau de bord." },
+    { "en": "Report to clients: pull multi-account analytics for an agency managing several clients' LinkedIn profiles.", "fr": "Reporter aux clients : extraire les analytics multi-comptes pour une agence qui gère les profils LinkedIn de plusieurs clients." }
+  ],
+  "alternatives": [
+    { "slug": "taplio", "reason": { "en": "Active LinkedIn content and analytics suite covering writing, scheduling and performance tracking in one tool.", "fr": "Suite active d'écriture, de planification et d'analytics LinkedIn réunies dans un seul outil." } },
+    { "slug": "authoredup", "reason": { "en": "Active LinkedIn writing and analytics tool, and the source that reported Shield's shutdown.", "fr": "Outil actif d'écriture et d'analytics LinkedIn, et la source qui a rapporté la fermeture de Shield." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Favikon", "officialUrl": "https://favikon.com", "reason": "LinkedIn/social creator analytics competitor not in the catalogue, a direct substitute now that Shield is discontinued." }
+  ],
+  "rating": {
+    "valeurAjoutee": 1,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 2,
+    "reversibilite": 1,
+    "evidence": {
+      "valeurAjoutee": { "en": "The product is discontinued and cannot be purchased or used today, so it delivers no value going forward.", "fr": "Le produit est arrêté et ne peut plus être acheté ni utilisé aujourd'hui, il n'apporte donc plus aucune valeur.", "sourceIds": ["s2"] },
+      "simplicite": { "en": "Neutral score: onboarding time and ease of first use are not covered by the collected sources.", "fr": "Note neutre : la prise en main et la facilité d'un premier usage ne figurent pas dans les sources relevées.", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Feature claims (post performance and growth tracking) come from a secondary source describing the product while it operated, not independently verified by this session.", "fr": "Les fonctions annoncées (suivi de performance et de croissance) proviennent d'une source secondaire décrivant le produit pendant son fonctionnement, non vérifiées de façon indépendante par cette session.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Covered post and audience analytics plus an AI query feature for one platform (LinkedIn) only, a narrower scope than a general analytics suite.", "fr": "Couvrait l'analytics de posts et d'audience plus une fonction IA de requête, mais uniquement pour LinkedIn, un périmètre plus étroit qu'une suite analytics généraliste.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Users had only a 30-day window to export data before permanent shutdown, and no export is possible today since the site is down.", "fr": "Les utilisateurs n'ont eu qu'une fenêtre de 30 jours pour exporter leurs données avant l'arrêt définitif, et aucun export n'est possible aujourd'hui puisque le site est hors ligne.", "sourceIds": ["s2"] }
+    },
+    "lastActivityVerifiedOn": "2026-05-18"
+  },
+  "editorial": {
+    "tagline": { "en": "LinkedIn analytics (shut down)", "fr": "Analytics LinkedIn (arrêté)" },
+    "shortDescription": { "en": "Shield was a LinkedIn analytics dashboard for creators and agencies; the company announced it was shutting down in May 2026.", "fr": "Shield était un tableau de bord analytics LinkedIn pour créateurs et agences ; l'entreprise a annoncé sa fermeture en mai 2026." },
+    "longDescription": {
+      "en": "Shield tracked LinkedIn post performance, engagement-rate trends and follower growth for individual creators, and supported multi-account reporting for agencies and marketing teams. An AI chat feature let users query their own analytics data directly.\n\nCo-founder Andreas Jonsson announced in May 2026 that Shield was winding down after LinkedIn and Google restricted how the tool could keep operating. Users had a 30-day window to export their data before accounts closed; the official site is now inaccessible. No working version under this name exists today, so anyone looking for it should pick an active LinkedIn analytics tool instead.",
+      "fr": "Shield suivait la performance des posts LinkedIn, les tendances de taux d'engagement et la croissance des abonnés pour des créateurs individuels, et proposait un reporting multi-comptes pour les agences et équipes marketing. Une fonction de chat IA permettait d'interroger directement ses propres données analytics.\n\nLe cofondateur Andreas Jonsson a annoncé en mai 2026 que Shield s'arrêtait après que LinkedIn et Google ont restreint la façon dont l'outil pouvait continuer à fonctionner. Les utilisateurs ont eu une fenêtre de 30 jours pour exporter leurs données avant la fermeture des comptes ; le site officiel est aujourd'hui inaccessible. Aucune version fonctionnelle sous ce nom n'existe plus, mieux vaut donc choisir un outil d'analytics LinkedIn actif."
+    },
+    "pros": [
+      { "en": "Covered both individual creator analytics and agency-style multi-account reporting in one dashboard, while it operated.", "fr": "Couvrait à la fois l'analytics créateur individuel et le reporting multi-comptes façon agence dans un même tableau de bord, tant qu'il fonctionnait." },
+      { "en": "Included an AI chat feature to query analytics data directly, ahead of many LinkedIn analytics competitors at the time.", "fr": "Incluait une fonction de chat IA pour interroger directement les données analytics, en avance sur beaucoup de concurrents LinkedIn analytics de l'époque." }
+    ],
+    "cons": [
+      { "en": "The product is shut down: the official site is inaccessible and no new signups or logins are possible.", "fr": "Le produit est fermé : le site officiel est inaccessible et aucune inscription ni connexion n'est possible." },
+      { "en": "Data export was only available for 30 days after the shutdown announcement, with no long-term portability afterward.", "fr": "L'export des données n'a été possible que pendant 30 jours après l'annonce de la fermeture, sans portabilité à long terme ensuite." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "Never: the product no longer exists and cannot be subscribed to.", "fr": "Jamais : le produit n'existe plus et ne peut plus être souscrit." },
+      "avoidIf": { "en": "Always, for now: pick an active LinkedIn analytics tool such as Taplio or AuthoredUp instead.", "fr": "Toujours, pour l'instant : choisis plutôt un outil d'analytics LinkedIn actif comme Taplio ou AuthoredUp." },
+      "threshold": { "en": "Not applicable: no price is purchasable today.", "fr": "Non applicable : aucun prix n'est achetable aujourd'hui." }
+    }
+  },
+  "unknowns": [
+    "Exact last operating date beyond 'May 2026' (18 May per a co-founder announcement) not independently re-verified on an archived page.",
+    "Historical pricing figures (about $8 to $25/month reported across secondary sources) could not be confirmed on an official page and are not used.",
+    "The catalogue already contains a second, separate entry for this product under the slug 'shield' (https://shieldapp.ai) alongside this 'shield-app' entry pointing to the same URL; likely a duplicate worth resolving at merge time."
+  ],
+  "conflicts": []
+}

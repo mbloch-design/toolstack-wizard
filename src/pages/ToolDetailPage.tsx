@@ -36,6 +36,7 @@ import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import { toolPriceLine } from "@/lib/toolPriceLine";
 import ToolExplorePanel from "@/components/tool/ToolExplorePanel";
+import ToolStackOverlapNote from "@/components/tool/ToolStackOverlapNote";
 import toolAccents from "@/data/toolAccents.json";
 import TapstitchDecision from "@/components/tool/TapstitchDecision";
 import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
@@ -557,6 +558,7 @@ const ToolDetailPage = () => {
                         </a>}
                         <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" />
                         </div>
+                        <ToolStackOverlapNote tool={tool} prefix={prefix} lang={lang} t={t} />
                       </div>
 
                     </div>

@@ -35070,3 +35070,112 @@ img[data-logo-loading] {
   }
   @media (prefers-reduced-motion: reduce) { .ms-usage-bubble { transition: none; animation: none; } }
 }
+/* ── Ma stack : repasse design (7 oct.) ──
+   Même ton que la fiche outil : surfaces plates, filets fins, pilules,
+   sélecteur segmenté discret. Aucun dégradé (charte), aucun relief simulé.
+   Logique et structure de la V2 inchangées : seulement l'apparence. */
+/* Action principale en pilule, comme « Visiter le site ». */
+.ms-page .ms-header .tt-button-primary { min-height: 40px; padding: 0 18px; border-radius: var(--radius-pill); font-size: 14px; }
+/* Onglets de domaines : compteurs en simple chiffre gris, pas en pastille. */
+.ms-page .ms-domain-filters button { min-height: 48px; font-size: 14px; }
+.ms-page .ms-domain-filters button > span { min-width: 0; height: auto; padding: 0; background: transparent; color: hsl(var(--muted-foreground)); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.ms-page .ms-domain-filters button[aria-pressed="true"] > span { color: hsl(var(--foreground)); }
+/* Sélecteur Cartes / Par usage : segmenté fin, façon Apple. */
+.ms-page .ms-view-switch { gap: 2px; padding: 2px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); align-self: center; }
+.ms-page .ms-view-switch button { height: 32px; padding: 0 14px; gap: 6px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 500; }
+.ms-page .ms-view-switch button svg { width: 15px; height: 15px; }
+.ms-page .ms-view-switch button[aria-pressed="true"] { box-shadow: 0 1px 2px rgba(15, 15, 15, .08), 0 0 0 .5px rgba(15, 15, 15, .06); font-weight: 600; }
+/* Le titre répète l'onglet actif : gardé pour les lecteurs d'écran seulement. */
+.ms-page .ms-list-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* Cartes d'outils : blanches, filet fin, élévation au survol (comme le catalogue). */
+.ms-page .ms-tool.ms-tool-card {
+  background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 16px;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.ms-page .ms-tool.ms-tool-card:hover { background: hsl(var(--card)); border-color: hsl(var(--muted-foreground) / .35); box-shadow: 0 8px 24px rgba(15, 15, 15, .06); transform: translateY(-2px); }
+.ms-page .ms-tool.ms-tool-card.ms-tool--selected { border-color: hsl(var(--foreground)); outline: 0; }
+/* Vue Par usage : bulles plates, sans dégradé ni ombre interne. */
+.ms-page .ms-usage-stage { background: hsl(var(--secondary) / .45); }
+.ms-page .ms-usage-bubble { background: hsl(var(--card)); box-shadow: 0 1px 2px rgba(15, 15, 15, .04); border-color: hsl(var(--border)); }
+.ms-page .ms-usage-bubble:hover { border-color: hsl(var(--muted-foreground) / .4); box-shadow: 0 10px 28px rgba(15, 15, 15, .07); }
+.ms-page .ms-usage-bubble--selected { border-color: hsl(var(--foreground)); box-shadow: 0 10px 28px rgba(15, 15, 15, .07); }
+@media (prefers-reduced-motion: reduce) { .ms-page .ms-tool.ms-tool-card:hover { transform: none; } }
+
+/* Ma stack, lecture d'ensemble (7 oct.) : une ligne factuelle sous le titre,
+   et sur chaque carte le recoupement possible, même règle que le panneau. */
+/* Ligne de synthèse + sélecteur de vue : même place dans les deux vues. */
+.ms-page .ms-overview-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin: -8px 0 24px; }
+.ms-page .ms-overview-bar .ms-view-switch { margin-left: auto; }
+.ms-page .ms-view-switch button:focus:not(:focus-visible) { outline: none; }
+.ms-page .ms-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0; margin: 0; color: hsl(var(--muted-foreground)); font: 500 15px/1.4 var(--font-ui); }
+.ms-page .ms-summary > span + span::before { content: "·"; margin: 0 10px; color: hsl(var(--border)); }
+.ms-page .ms-summary-overlaps { color: hsl(var(--foreground)); font-weight: 600; }
+.ms-page .ms-inspector-actions .tt-button-secondary { border-radius: var(--radius-pill); }
+/* Panneau Ma stack : chaque recoupement mène à la comparaison des deux outils. */
+.ms-page .ms-overlap-row { display: flex; align-items: center; gap: 8px; }
+.ms-page .ms-overlap-row .ms-overlap-tool { flex: 1; min-width: 0; }
+.ms-page .ms-overlap-compare {
+  flex: none; display: inline-flex; align-items: center; height: 30px; padding: 0 12px;
+  border: 1px solid hsl(var(--border)); border-radius: var(--radius-pill);
+  color: hsl(var(--foreground)); font: 600 12.5px/1 var(--font-ui); text-decoration: none;
+}
+.ms-page .ms-overlap-compare:hover { border-color: hsl(var(--foreground)); }
+.ms-page .ms-overlap-compare:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+/* Fiche outil : rappel discret de ce que la stack contient déjà. */
+.td-stack-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; color: hsl(var(--muted-foreground)); font: 400 14px/1.45 var(--font-ui); }
+.td-tool-page .td-hero:not(.is-compact) .td-stack-note { grid-column: 2; }
+.td-stack-note a { color: var(--tool-accent-ink, var(--color-text)); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+@media (max-width: 640px) { .td-tool-page .td-hero:not(.is-compact) .td-stack-note { grid-column: 1 / -1; } }
+/* Ma stack, vue Par usage sur mobile : la scène gardait le format 4:3 du
+   bureau (238 px de haut à 390 px) et coupait les bulles. Format carré,
+   marges réduites. */
+@media (max-width: 640px) {
+  .ms-page .ms-bubble-canvas { aspect-ratio: 1 / 1; width: calc(100% - 16px); margin: 8px; }
+  /* La zone des bulles (75 % de large en 4:3, donc carrée) prend toute la
+     largeur de la scène carrée : toujours carrée, bulles rondes et plus grandes. */
+  .ms-page .ms-bubble-field { left: 0; width: 100%; }
+  .ms-page .ms-bubble-canvas--inside .ms-bubble-field { left: 20px; width: calc(100% - 40px); }
+}
+/* Stack vide : trois étapes, numérotées, sans suggestion d'outils. */
+.ms-page .ms-howto { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 980px; margin: 40px 0 0; padding: 0; list-style: none; counter-reset: ms-howto; }
+.ms-page .ms-howto li { display: grid; gap: 6px; padding: 20px; border: 1px solid hsl(var(--border)); border-radius: 16px; background: hsl(var(--card)); counter-increment: ms-howto; }
+.ms-page .ms-howto li::before { content: counter(ms-howto); display: grid; place-items: center; width: 28px; height: 28px; margin-bottom: 6px; border-radius: 50%; background: hsl(var(--foreground)); color: hsl(var(--background)); font: 600 13px/1 var(--font-ui); }
+.ms-page .ms-howto strong { font: 600 16px/1.3 var(--font-ui); color: hsl(var(--foreground)); }
+.ms-page .ms-howto span { font: 400 14px/1.5 var(--font-ui); color: hsl(var(--muted-foreground)); }
+@media (max-width: 760px) { .ms-page .ms-howto { grid-template-columns: 1fr; margin-top: 28px; } .ms-page .ms-howto li { grid-template-columns: 28px 1fr; column-gap: 12px; padding: 16px; } .ms-page .ms-howto li::before { grid-row: 1 / 3; margin: 0; } }
+/* ── Ma stack, cartes (7 oct.) ──
+   Deux zones fixes : l'identité en haut (logo dans un cadre teinté de la
+   couleur de l'outil, nom, catégorie), puis un pied posé sur un filet, aligné
+   d'une carte à l'autre (prix à gauche, recoupement à droite sur une ligne). */
+.ms-page .ms-card-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; align-items: stretch; }
+.ms-page .ms-tool.ms-tool-card {
+  display: flex; flex-direction: column; align-items: stretch; gap: 0; height: 100%; padding: 0; text-align: left;
+}
+.ms-page .ms-card-top { display: flex; align-items: center; gap: 14px; padding: 18px 18px 16px; min-width: 0; }
+.ms-page .ms-card-logo {
+  display: grid; flex: none; place-items: center; width: 52px; height: 52px; border-radius: 14px;
+  background: color-mix(in srgb, var(--tool-accent, hsl(var(--secondary))) 12%, hsl(var(--card)));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tool-accent, hsl(var(--border))) 28%, hsl(var(--border)));
+}
+.ms-page .ms-card-id { display: grid; gap: 3px; min-width: 0; }
+.ms-page .ms-card-id strong { overflow: hidden; color: hsl(var(--foreground)); font: 650 17px/1.25 var(--font-ui); letter-spacing: -.01em; text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-card-id span { overflow: hidden; color: hsl(var(--muted-foreground)); font: 400 13.5px/1.35 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-card-foot {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 48px; margin-top: auto;
+  padding: 0 18px; border-top: 1px solid hsl(var(--border));
+}
+.ms-page .ms-card-price { overflow: hidden; color: hsl(var(--foreground)); font: 600 13.5px/1.2 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ms-page .ms-card-price--none { color: hsl(var(--muted-foreground)); font-weight: 400; }
+.ms-page .ms-card-overlap {
+  display: inline-flex; align-items: center; gap: 4px; flex: 0 1 auto; min-width: 0; max-width: 60%; height: 26px; padding: 0 10px;
+  border-radius: var(--radius-pill); background: color-mix(in srgb, var(--tool-accent, hsl(var(--foreground))) 10%, hsl(var(--card)));
+  color: hsl(var(--foreground)); font: 600 12px/1 var(--font-ui); white-space: nowrap;
+}
+.ms-page .ms-card-overlap::before { content: "⇄"; flex: none; font-weight: 400; color: hsl(var(--muted-foreground)); }
+.ms-page .ms-card-overlap-name { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.ms-page .ms-tool.ms-tool-card.ms-tool--selected .ms-card-foot { border-top-color: hsl(var(--foreground) / .25); }
+@media (max-width: 640px) {
+  .ms-page .ms-card-grid { grid-template-columns: 1fr; gap: 10px; }
+  .ms-page .ms-card-top { padding: 14px 14px 12px; }
+  .ms-page .ms-card-foot { padding: 0 14px; min-height: 44px; }
+}

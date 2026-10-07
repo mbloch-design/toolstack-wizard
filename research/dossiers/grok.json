@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 2,
+  "slug": "grok",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "identity": {
+    "officialName": "Grok",
+    "vendor": "xAI Corp. (SpaceXAI / X Corp.)",
+    "officialUrl": "https://grok.com",
+    "docsUrl": "https://docs.x.ai",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://grok.com/plans", "tier": 1, "accessedOn": "2026-10-07", "title": "Grok individual plans pricing (Lite/SuperGrok/Plus/Heavy, monthly and annual)" },
+    { "id": "s2", "url": "https://x.ai", "tier": 1, "accessedOn": "2026-10-07", "title": "Grok product/features overview (x.ai homepage)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://grok.com/plans",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Free to use on web, iOS and Android with reduced usage limits; exact query caps are not published on the official pricing page.", "fr": "Utilisable gratuitement sur le web, iOS et Android avec des limites d'usage réduites ; les plafonds exacts de requêtes ne sont pas publiés sur la page tarifs officielle." }, "sourceIds": ["s2"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Usable on web, iOS and Android with reduced usage limits; exact caps not published.", "fr": "Utilisable sur web, iOS et Android avec des limites d'usage réduites ; plafonds exacts non publiés." }],
+        "sourceIds": ["s2"]
+      },
+      {
+        "key": "lite",
+        "name": "SuperGrok Lite",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 10, "annualPerMonth": 8.33, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "2x longer chat conversations, Expert mode, access to the latest model, basic app-building from a prompt.", "fr": "Conversations de chat 2x plus longues, mode Expert, accès au dernier modèle, création d'applications basique à partir d'un prompt." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "supergrok",
+        "name": "SuperGrok",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 30, "annualPerMonth": 25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Exclusive access to Grok Bot, 5x longer conversations, higher model limits, HD 720p/30-second AI video generation, extended voice mode.", "fr": "Accès exclusif à Grok Bot, conversations 5x plus longues, limites de modèle plus élevées, génération vidéo IA HD 720p/30 secondes, mode vocal prolongé." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "SuperGrok Plus",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 100, "annualPerMonth": 83.33, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1080p video generation, significantly higher usage across Chat/Imagine/Voice/Build, priority access during peak hours.", "fr": "Génération vidéo en 1080p, usage nettement plus élevé sur Chat/Imagine/Voix/Build, accès prioritaire aux heures de pointe." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "heavy",
+        "name": "SuperGrok Heavy",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 300, "annualPerMonth": 250, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Highest usage at the fastest speed, multi-agent team mode for the most complex problems, X Premium+ included when an X account is linked.", "fr": "Usage le plus élevé à la vitesse la plus rapide, mode multi-agents pour les problèmes les plus complexes, X Premium+ inclus avec un compte X lié." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "supergrok",
+    "addOns": [],
+    "cautions": [
+      { "en": "Annual billing is shown as a yearly lump sum (e.g. $300/year for SuperGrok) that works out to a lower effective monthly rate (Lite $8.33, SuperGrok $25, Plus $83.33, Heavy $250) versus paying month to month.", "fr": "La facturation annuelle est affichée comme un montant annuel global (ex. 300 $/an pour SuperGrok) qui revient à un tarif mensuel effectif plus bas (Lite 8,33 $, SuperGrok 25 $, Plus 83,33 $, Heavy 250 $) par rapport au paiement mensuel.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Real-time web and X (Twitter) search integrated into answers, with live citations rather than relying only on training data.", "fr": "Recherche web et X (Twitter) en temps réel intégrée aux réponses, avec citations en direct plutôt qu'une simple dépendance aux données d'entraînement.", "sourceIds": ["s2"] },
+      { "en": "Multi-agent mode where several agents work in parallel on sub-problems and merge into one cited answer.", "fr": "Mode multi-agents où plusieurs agents travaillent en parallèle sur des sous-problèmes et fusionnent en une seule réponse citée.", "sourceIds": ["s2"] },
+      { "en": "Built-in image and video generation (Grok Imagine), up to 2K resolution and 15-second videos, plus voice conversation and code generation.", "fr": "Génération d'images et de vidéos intégrée (Grok Imagine), jusqu'en 2K et 15 secondes de vidéo, ainsi que conversation vocale et génération de code.", "sourceIds": ["s2"] }
+    ],
+    "limitations": [
+      { "en": "The free tier's exact usage limits (query count, time window) are not published on the official pricing or product page.", "fr": "Les limites d'usage exactes du palier gratuit (nombre de requêtes, fenêtre de temps) ne sont pas publiées sur la page tarifs ou produit officielle.", "sourceIds": ["s1", "s2"] },
+      { "en": "The higher tiers (SuperGrok Plus at $100/month, Heavy at $300/month) are priced well above mainstream AI chatbot subscriptions, mainly justified by multi-agent and higher-usage access.", "fr": "Les paliers supérieurs (SuperGrok Plus à 100 $/mois, Heavy à 300 $/mois) sont nettement plus chers que les abonnements grand public d'assistants IA, surtout justifiés par le multi-agents et un usage plus élevé.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A content creator or power user who wants fast image/video generation and real-time trend awareness from X and the web in one assistant.", "fr": "Un(e) créateur/créatrice de contenu ou power user qui veut une génération rapide d'images/vidéos et une connaissance des tendances en temps réel depuis X et le web, dans un seul assistant." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Research a live topic: ask Grok to search X and the web for what's happening right now, with citations, instead of relying on stale training data.", "fr": "Rechercher un sujet d'actualité : demander à Grok de chercher sur X et le web ce qui se passe en ce moment, avec citations, plutôt que de se fier à des données d'entraînement périmées." },
+    { "en": "Generate content assets: create a short AI image or video from a text prompt for a post, directly inside the chat.", "fr": "Générer des visuels : créer une image ou une courte vidéo IA à partir d'un prompt texte pour un post, directement dans le chat." }
+  ],
+  "alternatives": [
+    { "slug": "chatgpt", "reason": { "en": "The largest mainstream AI assistant competitor, without Grok's live X integration.", "fr": "Le plus grand concurrent IA assistant grand public, sans l'intégration X en direct de Grok." } },
+    { "slug": "claude", "reason": { "en": "Competing AI assistant generally positioned on reasoning and longer document work rather than real-time social search.", "fr": "Assistant IA concurrent plutôt positionné sur le raisonnement et le travail sur de longs documents que sur la recherche sociale en temps réel." } },
+    { "slug": "gemini", "reason": { "en": "Google's AI assistant, with deep integration into Google Search and Workspace instead of X.", "fr": "L'assistant IA de Google, profondément intégré à la recherche Google et à Workspace plutôt qu'à X." } },
+    { "slug": "perplexity", "reason": { "en": "AI answer engine focused specifically on cited web search rather than a general chat/image/video assistant.", "fr": "Moteur de réponse IA centré spécifiquement sur la recherche web citée, plutôt qu'un assistant généraliste chat/image/vidéo." } },
+    { "slug": "deepseek", "reason": { "en": "Lower-cost AI chatbot competitor with open-weight models.", "fr": "Concurrent chatbot IA à coût réduit, avec des modèles à poids ouverts." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "SuperGrok at $30/month ($25 annual) sits above mainstream AI-assistant pricing; the main differentiator (live X search, multi-agent) is real but a niche need rather than universal.", "fr": "SuperGrok à 30 $/mois (25 $ en annuel) se situe au-dessus du tarif grand public type ; le principal différenciateur (recherche X en direct, multi-agents) est réel mais reste une niche plutôt qu'un besoin universel.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Free to start on web, iOS or Android with no setup beyond signing in, per the homepage's 3-step 'Open Grok / Sign in / Start chatting'.", "fr": "Gratuit pour démarrer sur web, iOS ou Android sans configuration au-delà de la connexion, selon les 3 étapes de la page d'accueil « Ouvrir Grok / Se connecter / Discuter ».", "sourceIds": ["s2"] },
+      "utilisation": { "en": "Delivers the advertised real-time search, multi-agent reasoning and image/video generation directly in the product, per the official feature list.", "fr": "Livre la recherche en temps réel annoncée, le raisonnement multi-agents et la génération d'images/vidéos directement dans le produit, selon la liste de fonctions officielle.", "sourceIds": ["s2"] },
+      "puissance": { "en": "Combines live web/X search, multi-agent reasoning, code generation and image/video generation in one assistant, a broader scope than a single-purpose chatbot.", "fr": "Combine recherche web/X en direct, raisonnement multi-agents, génération de code et d'images/vidéos dans un seul assistant, un périmètre plus large qu'un chatbot mono-usage.", "sourceIds": ["s2"] },
+      "reversibilite": { "en": "Neutral score: conversation export and data portability on cancellation are not described on the pricing or product pages collected.", "fr": "Note neutre : l'export des conversations et la portabilité des données en cas d'annulation ne sont pas décrits sur les pages tarifs ou produit relevées.", "sourceIds": ["s1", "s2"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Real-time AI assistant", "fr": "Assistant IA temps réel" },
+    "shortDescription": { "en": "Grok is xAI's AI assistant with real-time web and X search, multi-agent reasoning, and built-in image and video generation.", "fr": "Grok est l'assistant IA d'xAI avec recherche web et X en temps réel, raisonnement multi-agents et génération d'images et de vidéos intégrée." },
+    "longDescription": {
+      "en": "Grok combines a chat assistant with live web and X search (with citations), multi-agent reasoning for complex questions, code generation, and image/video generation (Grok Imagine, up to 2K and 15-second clips) in one product, available on web, iOS and Android.\n\nIt's free to start, with limits not detailed publicly; SuperGrok Lite costs $10/month ($8.33 annual), SuperGrok $30/month ($25 annual) adds Grok Bot access and higher limits, and SuperGrok Plus ($100/month) and Heavy ($300/month) scale usage and multi-agent power further. It fits a content creator or power user who wants fast visual generation and real-time awareness of what's trending.",
+      "fr": "Grok combine un assistant de chat avec recherche web et X en direct (avec citations), un raisonnement multi-agents pour les questions complexes, de la génération de code et d'images/vidéos (Grok Imagine, jusqu'en 2K et 15 secondes) dans un seul produit, sur web, iOS et Android.\n\nGratuit pour démarrer, limites non détaillées publiquement ; SuperGrok Lite coûte 10 $/mois (8,33 $ en annuel), SuperGrok à 30 $/mois (25 $ en annuel) ajoute Grok Bot et des limites plus élevées, et Plus (100 $/mois) et Heavy (300 $/mois) augmentent encore l'usage et la puissance multi-agents. Convient à un(e) créateur/créatrice de contenu qui veut une génération visuelle rapide et les tendances en temps réel."
+    },
+    "pros": [
+      { "en": "Real-time X and web search with citations is a genuine differentiator versus assistants limited to their training data.", "fr": "La recherche X et web en temps réel avec citations est un vrai différenciateur face aux assistants limités à leurs données d'entraînement." },
+      { "en": "Image and video generation is built into the same chat thread, without switching to a separate tool.", "fr": "La génération d'images et de vidéos est intégrée au même fil de discussion, sans basculer vers un outil séparé." }
+    ],
+    "cons": [
+      { "en": "The free tier's usage limits aren't published, making it hard to know in advance when an upgrade becomes necessary.", "fr": "Les limites d'usage du palier gratuit ne sont pas publiées, ce qui rend difficile de savoir à l'avance quand une mise à niveau devient nécessaire." },
+      { "en": "The top tiers (Plus at $100/month, Heavy at $300/month) cost far more than a typical AI chatbot subscription.", "fr": "Les paliers supérieurs (Plus à 100 $/mois, Heavy à 300 $/mois) coûtent bien plus cher qu'un abonnement IA grand public classique." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want an AI assistant with live awareness of X/web trends and built-in image or video generation in the same chat.", "fr": "Tu veux un assistant IA avec une connaissance en direct des tendances X/web et une génération d'images ou de vidéos intégrée au même chat." },
+      "avoidIf": { "en": "You mainly need long-document reasoning or coding assistance without the real-time social angle: a cheaper, more specialized assistant may fit better.", "fr": "Tu as surtout besoin de raisonnement sur de longs documents ou d'aide au code sans l'angle social temps réel : un assistant moins cher et plus spécialisé peut mieux convenir." },
+      "threshold": { "en": "SuperGrok costs $300/year billed annually ($25/month); worth it once the free tier's limits are hit regularly for real-time search or image/video generation.", "fr": "SuperGrok coûte 300 $/an en facturation annuelle (25 $/mois) ; ça se justifie dès que les limites du palier gratuit sont atteintes régulièrement pour la recherche temps réel ou la génération d'images/vidéos." },
+      "billingTraps": { "en": "Annual plans are billed as one yearly charge ($100 to $3,000 depending on tier) rather than spread monthly, so cancelling mid-year does not refund the unused months.", "fr": "Les plans annuels sont facturés en une fois (de 100 $ à 3 000 $ selon le palier) plutôt que mensuellement, donc annuler en cours d'année ne rembourse pas les mois non utilisés." }
+    }
+  },
+  "unknowns": [
+    "Exact free-tier query limits (previously noted as '10 requests/2h' in the catalogue) were not reconfirmed on an official page this session.",
+    "Business-tier pricing (the 'Business' tab on grok.com/plans) was not captured, only Individual plans."
+  ],
+  "conflicts": []
+}

@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 2,
+  "slug": "superwhisper",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "identity": {
+    "officialName": "Superwhisper",
+    "vendor": "Superwhisper",
+    "officialUrl": "https://superwhisper.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://superwhisper.com",
+      "tier": 1,
+      "accessedOn": "2026-10-07",
+      "title": "Superwhisper pricing (Free, Pro monthly/yearly/lifetime, Enterprise) and product overview"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://superwhisper.com",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Voice-to-text in any app, meeting recording/transcription, 100+ languages, unlimited use of Whisper models, custom prompt control and email support, forever.",
+        "fr": "Dictée vocale dans n'importe quelle app, enregistrement/transcription de réunions, plus de 100 langues, usage illimité des modèles Whisper, contrôle de prompt personnalisé et support email, pour toujours."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Includes meeting recording/transcription, 100+ languages and unlimited Whisper model use; available on Mac, Windows, iOS and Android.",
+            "fr": "Inclut l'enregistrement/transcription de réunions, plus de 100 langues et un usage illimité des modèles Whisper ; disponible sur Mac, Windows, iOS et Android."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro-monthly",
+        "name": "Pro (monthly)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 8.49,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds your own AI API keys, unlimited cloud and local AI model use, translation to English, audio/video file transcription and priority support; 30-day refund.",
+            "fr": "Ajoute tes propres clés API IA, un usage illimité des modèles IA cloud et locaux, la traduction vers l'anglais, la transcription de fichiers audio/vidéo et le support prioritaire ; remboursement sous 30 jours."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro-yearly",
+        "name": "Pro (yearly)",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": 7.08,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Same Pro features as monthly, billed at $84.99/year (about $7.08/month), roughly 2 months cheaper than paying monthly.",
+            "fr": "Mêmes fonctionnalités Pro qu'en mensuel, facturé 84,99 $/an (environ 7,08 $/mois), soit environ 2 mois d'économie par rapport au mensuel."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro-lifetime",
+        "name": "Pro (lifetime)",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 249.99
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "One-time payment for lifetime access to all current Pro features, with the same 30-day refund window as subscriptions.",
+            "fr": "Paiement unique pour un accès à vie à toutes les fonctionnalités Pro actuelles, avec la même fenêtre de remboursement de 30 jours que les abonnements."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Adds SOC 2 Type II certification, centralized billing and authentication, model access control, Enterprise-hosted models and volume discounts.",
+            "fr": "Ajoute la certification SOC 2 Type II, la facturation et l'authentification centralisées, le contrôle d'accès aux modèles, des modèles hébergés Enterprise et des remises au volume."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "pro-yearly",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Pro features can be tried free for 3,000 words of usage before falling back to the Free tier permanently; this is a usage-based trial, not a fixed number of days.",
+        "fr": "Les fonctionnalités Pro peuvent être testées gratuitement pendant 3 000 mots d'usage avant de repasser définitivement à l'offre Free ; il s'agit d'un essai basé sur l'usage, pas sur un nombre de jours fixe.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Intel Macs are told to use cloud models; offline (on-device) models are described as only running well on Apple Silicon Macs.",
+        "fr": "Les Mac Intel sont orientés vers les modèles cloud ; les modèles hors ligne (sur l'appareil) ne sont décrits comme fonctionnant bien que sur les Mac Apple Silicon.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Works offline for voice-to-text, and supports 100+ languages and dialects with translation to English.",
+        "fr": "Fonctionne hors ligne pour la dictée vocale, et prend en charge plus de 100 langues et dialectes avec traduction vers l'anglais.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Custom Mode lets a user define formatting rules, structure and model choice (GPT, Claude, Llama and others) per task, saved as reusable modes.",
+        "fr": "Custom Mode permet de définir des règles de formatage, une structure et un choix de modèle (GPT, Claude, Llama et autres) par tâche, enregistrés comme modes réutilisables.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Integrates system-wide (Slack, Cursor, Notion, agentic coding tools like Claude Code) by pasting dictated and AI-formatted text directly into the active app.",
+        "fr": "S'intègre dans tout le système (Slack, Cursor, Notion, outils de code agentique comme Claude Code) en collant le texte dicté et formaté par IA directement dans l'app active.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Meeting recording and automatic note-taking, plus file transcription for uploaded audio and video.",
+        "fr": "Enregistrement de réunions et prise de notes automatique, plus transcription de fichiers audio et vidéo téléversés.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Using your own AI API keys, unlimited cloud/local model use and audio/video file transcription require the paid Pro tier; the Free tier doesn't include them.",
+        "fr": "L'usage de tes propres clés API IA, l'usage illimité des modèles cloud/locaux et la transcription de fichiers audio/vidéo nécessitent l'offre payante Pro ; l'offre Free ne les inclut pas.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Offline transcription models are described as only running well on Apple Silicon Macs, not Intel Macs.",
+        "fr": "Les modèles de transcription hors ligne ne sont décrits comme fonctionnant bien que sur les Mac Apple Silicon, pas sur les Mac Intel.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Slack",
+        "slug": "slack",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Notion",
+        "slug": "notion",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Cursor",
+        "slug": "cursor",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "desktop",
+      "ios",
+      "android"
+    ]
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer who wants to dictate messages and talk to AI coding agents (Claude Code, Cursor) instead of typing.",
+      "fr": "Une développeuse qui veut dicter ses messages et parler à des agents de code IA (Claude Code, Cursor) plutôt que de taper."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Dictate: speak a Slack message or email in a chosen tone (formal, casual) and have Superwhisper format and paste the final text automatically.",
+      "fr": "Dicter : parler un message Slack ou un email dans un ton choisi (formel, familier) et laisser Superwhisper formater et coller le texte final automatiquement."
+    },
+    {
+      "en": "Code by voice: describe a change to an AI coding agent (e.g. Claude Code, Cursor) by speaking instead of typing the prompt.",
+      "fr": "Coder à la voix : décrire un changement à un agent de code IA (ex. Claude Code, Cursor) en parlant plutôt qu'en tapant le prompt."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "voicetypr",
+      "reason": {
+        "en": "Direct voice-dictation competitor with a similar system-wide approach.",
+        "fr": "Concurrent direct de dictée vocale avec une approche système similaire."
+      }
+    },
+    {
+      "slug": "wispr-flow",
+      "reason": {
+        "en": "Direct voice-dictation competitor aimed at the same developer/professional dictation use case.",
+        "fr": "Concurrent direct de dictée vocale visant le même usage développeur/professionnel."
+      }
+    },
+    {
+      "slug": "otter-ai",
+      "reason": {
+        "en": "Overlaps on meeting recording and transcription, a core Superwhisper feature.",
+        "fr": "Recoupe l'enregistrement et la transcription de réunions, une fonctionnalité clé de Superwhisper."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Pro costs $7.08-8.49/month; no direct price comparison against named competitors (e.g. Wispr Flow, VoiceTypr) was verified in this dossier.",
+        "fr": "Pro coûte 7,08 à 8,49 $/mois ; aucune comparaison de prix directe avec des concurrents nommés (ex. Wispr Flow, VoiceTypr) n'a été vérifiée dans ce dossier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "A 3,000-word free trial of Pro gives a quick first result without payment, but full onboarding time wasn't documented on the page read.",
+        "fr": "Un essai gratuit de 3 000 mots pour Pro donne un premier résultat rapide sans paiement, mais le temps d'onboarding complet n'est pas documenté dans la page relevée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "Named testimonials on the official page (independent developers and founders) describe day-to-day use with coding agents, but these are curated endorsements, not an independent benchmark.",
+        "fr": "Des témoignages nommés sur la page officielle (développeurs et fondateurs indépendants) décrivent un usage quotidien avec des agents de code, mais ce sont des témoignages choisis, pas un benchmark indépendant.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers dictation, meeting notes, file transcription, translation and custom per-task AI model selection; no category benchmark against competitors was verified.",
+        "fr": "Couvre la dictée, les notes de réunion, la transcription de fichiers, la traduction et le choix de modèle IA personnalisé par tâche ; aucun benchmark de catégorie face aux concurrents n'a été vérifié.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and account portability were not documented on the page read for this dossier.",
+        "fr": "Note neutre : l'export de données et la portabilité du compte ne figurent pas dans la page relevée pour ce dossier.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Voice to text",
+      "fr": "Dictée vocale"
+    },
+    "shortDescription": {
+      "en": "Superwhisper is AI voice dictation that works offline in any app on Mac, Windows, iOS and Android.",
+      "fr": "Superwhisper est une dictée vocale IA qui fonctionne hors ligne dans n'importe quelle application, sur Mac, Windows, iOS et Android."
+    },
+    "longDescription": {
+      "en": "Superwhisper turns speech into formatted text in any app: Slack messages, emails, meeting notes or AI coding-agent prompts, with offline transcription, 100+ language support and translation to English. Custom Modes let you pick the AI model and formatting rules per task, and it integrates system-wide with tools like Slack, Notion and Claude Code.\n\nThe Free tier covers unlimited Whisper-model dictation forever. Pro costs $8.49/month, $84.99/year (about $7.08/month) or a $249.99 one-time lifetime license, and adds your own API keys, unlimited cloud/local models, file transcription and priority support. It suits a developer who wants to talk to apps and AI agents instead of typing.",
+      "fr": "Superwhisper transforme la parole en texte formaté dans n'importe quelle app : messages Slack, emails, notes de réunion ou prompts d'agents de code IA, avec transcription hors ligne, plus de 100 langues et traduction vers l'anglais. Les Custom Modes permettent de choisir le modèle IA et le formatage par tâche, et l'outil s'intègre partout avec Slack, Notion ou Claude Code.\n\nL'offre Free couvre une dictée illimitée avec les modèles Whisper, pour toujours. Pro coûte 8,49 $/mois, 84,99 $/an (environ 7,08 $/mois) ou une licence à vie à 249,99 $, et ajoute tes propres clés API, des modèles illimités et la transcription de fichiers. Convient à une développeuse qui veut parler à ses apps et agents IA plutôt que taper."
+    },
+    "pros": [
+      {
+        "en": "Works offline, and the Free tier includes unlimited use of the Whisper transcription models forever.",
+        "fr": "Fonctionne hors ligne, et l'offre Free inclut un usage illimité des modèles de transcription Whisper pour toujours."
+      },
+      {
+        "en": "A one-time lifetime license ($249.99) is offered as an alternative to a recurring subscription.",
+        "fr": "Une licence à vie à l'achat unique (249,99 $) est proposée comme alternative à un abonnement récurrent."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Audio/video file transcription and unlimited cloud/local AI models require the paid Pro tier.",
+        "fr": "La transcription de fichiers audio/vidéo et les modèles IA cloud/locaux illimités nécessitent l'offre payante Pro."
+      },
+      {
+        "en": "Offline models are described as only running well on Apple Silicon Macs, not Intel Macs.",
+        "fr": "Les modèles hors ligne ne sont décrits comme fonctionnant bien que sur les Mac Apple Silicon, pas sur les Mac Intel."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want voice dictation that works across every app, including AI coding agents, with an offline option on Apple Silicon.",
+        "fr": "Tu veux une dictée vocale qui fonctionne dans toutes les apps, y compris les agents de code IA, avec une option hors ligne sur Apple Silicon."
+      },
+      "avoidIf": {
+        "en": "You're on an Intel Mac and need reliable offline transcription; cloud models are recommended instead.",
+        "fr": "Tu es sur un Mac Intel et as besoin d'une transcription hors ligne fiable ; les modèles cloud sont recommandés à la place."
+      },
+      "threshold": {
+        "en": "Pro costs $84.99/year (about $7.08/month) billed annually, versus $8.49/month billed monthly, a saving of about 17% over a year.",
+        "fr": "Pro coûte 84,99 $/an (environ 7,08 $/mois) en facturation annuelle, contre 8,49 $/mois en mensuel, soit environ 17 % d'économie sur l'année."
+      },
+      "billingTraps": {
+        "en": "The free Pro trial is capped at 3,000 words of usage rather than a fixed number of days, so heavy dictation can exhaust it quickly.",
+        "fr": "L'essai gratuit de Pro est plafonné à 3 000 mots d'usage plutôt qu'un nombre de jours fixe, donc une dictée intensive peut l'épuiser rapidement."
+      }
+    }
+  },
+  "unknowns": [
+    "docsUrl and changelogUrl weren't confirmed to exact paths in this session (nav links exist but weren't opened).",
+    "Whether unused Pro trial words roll over or reset, and exact refund terms beyond the stated '30-day refund', weren't read in detail."
+  ],
+  "conflicts": []
+}

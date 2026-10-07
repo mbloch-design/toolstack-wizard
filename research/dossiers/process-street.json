@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "slug": "process-street",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "hold": "pricing.model set to quote because the official pricing page (process.st/pricing) published no dollar amount for any plan on 2026-10-07; prior catalogue pricing (about $100 to $1,500/month, verified 2026-06-25) could not be reconfirmed and may be stale. Re-check on the official page before assigning a comparePlanKey or a numeric price.",
+  "identity": {
+    "officialName": "Process Street",
+    "vendor": "Process Street, Inc.",
+    "officialUrl": "https://www.process.st",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.process.st/pricing/", "tier": 1, "accessedOn": "2026-10-07", "title": "Process Street pricing (Startup/Pro/Enterprise, all 'Contact sales', no published dollar amount)" }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.process.st/pricing/",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": [] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      { "en": "The official pricing page no longer publishes any dollar amount for Startup, Pro or Enterprise: all three say 'Contact sales'. This differs from previously recorded catalogue pricing (about $100 to $1,500/month); that earlier pricing could not be reconfirmed today and should be treated as stale.", "fr": "La page tarifs officielle ne publie plus aucun montant pour Startup, Pro ou Enterprise : les trois affichent « Contact sales ». Cela diffère du prix précédemment enregistré dans le catalogue (environ 100 à 1 500 $/mois), qui n'a pas pu être reconfirmé aujourd'hui et doit être considéré comme périmé.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Builds workflows with forms, conditional logic, approvals and enforced task order, with unlimited workflows, tasks, forms and pages on every plan.", "fr": "Construit des workflows avec formulaires, logique conditionnelle, approbations et ordre de tâches imposé, avec workflows, tâches, formulaires et pages illimités sur chaque plan.", "sourceIds": ["s1"] },
+      { "en": "Automation and integrations: Zapier, Microsoft Power Automate, Tray.io and Make connectors, plus a public API and Slack/Microsoft Teams apps.", "fr": "Automatisation et intégrations : connecteurs Zapier, Microsoft Power Automate, Tray.io et Make, plus une API publique et des apps Slack/Microsoft Teams.", "sourceIds": ["s1"] },
+      { "en": "Security and compliance options (SOC 2 Type 2, HIPAA, SAML SSO, SCIM provisioning) available across plans.", "fr": "Options de sécurité et conformité (SOC 2 Type 2, HIPAA, SSO SAML, provisioning SCIM) disponibles sur les plans.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No price is published anywhere on the official pricing page; every plan, including the entry-level Startup plan, requires contacting sales to learn the cost.", "fr": "Aucun prix n'est publié sur la page tarifs officielle ; chaque plan, y compris le plan d'entrée Startup, nécessite de contacter les ventes pour en connaître le coût.", "sourceIds": ["s1"] },
+      { "en": "The Startup plan caps Data Set records at 5,000, automation to 10 apps and 100 actions/month, and the public API to 50 calls/month.", "fr": "Le plan Startup limite les enregistrements Data Set à 5 000, l'automatisation à 10 apps et 100 actions/mois, et l'API publique à 50 appels/mois.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Zapier", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Microsoft Power Automate", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Slack", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Microsoft Teams", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "An ops or compliance lead at a small team standardizing recurring workflows (onboarding, approvals, audits) into trackable checklists.", "fr": "Une personne ops ou conformité dans une petite équipe qui standardise des workflows récurrents (onboarding, approbations, audits) en checklists suivables." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Standardize onboarding: turn a recurring new-hire or new-client checklist into a workflow with enforced task order and approvals.", "fr": "Standardiser l'onboarding : transformer une checklist récurrente de nouvelle recrue ou de nouveau client en workflow avec ordre de tâches imposé et approbations." },
+    { "en": "Automate handoffs: trigger a workflow run from an incoming email or a Zapier/Make connector instead of manually starting each process.", "fr": "Automatiser les transmissions : déclencher un workflow depuis un e-mail entrant ou un connecteur Zapier/Make plutôt que de démarrer chaque process manuellement." }
+  ],
+  "alternatives": [
+    { "slug": "trainual", "reason": { "en": "Focused on turning processes into SOP documentation and training, a narrower but overlapping need.", "fr": "Centré sur la transformation des process en documentation SOP et formation, un besoin voisin mais plus étroit." } },
+    { "slug": "smartsuite", "reason": { "en": "Broader no-code work management platform that also covers workflow and process automation.", "fr": "Plateforme de gestion du travail no-code plus large qui couvre aussi le workflow et l'automatisation de process." } },
+    { "slug": "airslate", "reason": { "en": "Workflow automation platform centered on forms, e-signatures and document-driven processes.", "fr": "Plateforme d'automatisation de workflow centrée sur les formulaires, la signature électronique et les process documentaires." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Tallyfy", "officialUrl": "https://tallyfy.com", "reason": "Direct workflow/checklist competitor to Process Street, not in the catalogue." },
+    { "name": "Pipefy", "officialUrl": "https://www.pipefy.com", "reason": "Process and workflow management competitor, not in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 2,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "No price is published at all, even for the entry Startup plan, making it hard for a small team to judge value before a sales conversation.", "fr": "Aucun prix n'est publié, même pour le plan d'entrée Startup, ce qui rend difficile de juger la valeur avant un échange commercial.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: onboarding time to a first useful workflow is not detailed on the pricing page, though the 14-day Pro trial needs no credit card.", "fr": "Note neutre : le délai de prise en main jusqu'à un premier workflow utile n'est pas détaillé sur la page tarifs, même si l'essai Pro de 14 jours ne demande pas de carte bancaire.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The feature list (conditional logic, approvals, enforced task order, automations) matches what a workflow/checklist tool promises, per the pricing page's plan comparison.", "fr": "La liste de fonctions (logique conditionnelle, approbations, ordre de tâches imposé, automatisations) correspond à la promesse d'un outil de workflow/checklist, selon le comparatif de plans de la page tarifs.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers forms, automation connectors and compliance certifications at the higher tiers, but the entry Startup plan caps automation actions at 100/month and API calls at 50/month.", "fr": "Couvre formulaires, connecteurs d'automatisation et certifications de conformité sur les paliers supérieurs, mais le plan Startup d'entrée limite les actions d'automatisation à 100/mois et les appels API à 50/mois.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats and data portability on exit are not described on the pricing page.", "fr": "Note neutre : les formats d'export et la portabilité des données en cas de départ ne sont pas décrits sur la page tarifs.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Workflow checklists", "fr": "Checklists de workflow" },
+    "shortDescription": { "en": "Process Street turns recurring processes into trackable workflow checklists with forms, approvals and automation, priced on request.", "fr": "Process Street transforme des process récurrents en checklists de workflow suivables, avec formulaires, approbations et automatisation, sur devis." },
+    "longDescription": {
+      "en": "Process Street turns a recurring process (onboarding, approvals, audits) into a workflow checklist with conditional logic, enforced task order, approvals and automation connectors (Zapier, Make, Power Automate). Security options include SOC 2 Type 2, HIPAA and SAML SSO.\n\nThe official pricing page no longer lists any dollar amount: Startup, Pro and Enterprise all require contacting sales, though a 14-day trial of Pro needs no credit card. It fits an ops or compliance lead on a small team standardizing repeat workflows, once pricing is confirmed directly with Process Street.",
+      "fr": "Process Street transforme un process récurrent (onboarding, approbations, audits) en checklist de workflow avec logique conditionnelle, ordre de tâches imposé, approbations et connecteurs d'automatisation (Zapier, Make, Power Automate). Les options de sécurité incluent SOC 2 Type 2, HIPAA et SSO SAML.\n\nLa page tarifs officielle n'affiche plus aucun montant : Startup, Pro et Enterprise nécessitent tous de contacter les ventes, même si l'essai Pro de 14 jours ne demande pas de carte bancaire. Il convient à une personne ops ou conformité dans une petite équipe qui standardise des workflows répétitifs, une fois le prix confirmé directement auprès de Process Street."
+    },
+    "pros": [
+      { "en": "Covers forms, conditional logic, approvals and task order in one workflow builder, without a separate automation tool for the basics.", "fr": "Réunit formulaires, logique conditionnelle, approbations et ordre des tâches dans un seul générateur de workflow, sans outil d'automatisation séparé pour l'essentiel." },
+      { "en": "The 14-day Pro trial requires no credit card, so a team can test a real workflow before any sales conversation.", "fr": "L'essai Pro de 14 jours ne demande pas de carte bancaire, ce qui permet de tester un vrai workflow avant tout échange commercial." }
+    ],
+    "cons": [
+      { "en": "No price is published anywhere, even for the entry plan, so budgeting requires a sales call before signing up.", "fr": "Aucun prix n'est publié nulle part, même pour le plan d'entrée, donc budgéter nécessite un appel commercial avant de s'inscrire." },
+      { "en": "The Startup plan's automation and API limits (100 actions/month, 50 API calls/month) are tight for a team that wants to automate heavily from day one.", "fr": "Les limites d'automatisation et d'API du plan Startup (100 actions/mois, 50 appels API/mois) sont serrées pour une équipe qui veut automatiser fort dès le départ." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run the same multi-step process often enough (onboarding, compliance checks) that a trackable checklist with approvals pays for itself.", "fr": "Tu exécutes assez souvent le même process en plusieurs étapes (onboarding, contrôles de conformité) pour qu'une checklist suivable avec approbations se justifie." },
+      "avoidIf": { "en": "You need to know the exact cost before talking to anyone: no plan publishes a price.", "fr": "Tu as besoin de connaître le coût exact avant de parler à qui que ce soit : aucun plan n'affiche de prix." },
+      "threshold": { "en": "Cannot be computed: no plan publishes a price, so compare the cost quoted by sales against the time currently spent re-explaining the same process by hand.", "fr": "Impossible à calculer : aucun plan n'affiche de prix, donc compare le tarif annoncé par les ventes au temps actuellement passé à ré-expliquer le même process à la main." },
+      "billingTraps": { "en": "The Startup plan is explicitly a simplified Pro plan: check with sales whether growing past its automation/API caps forces an upgrade mid-contract.", "fr": "Le plan Startup est explicitement un plan Pro simplifié : vérifie auprès des ventes si le dépasser en automatisation/API force une mise à niveau en cours de contrat." }
+    }
+  },
+  "unknowns": [
+    "No dollar price is published anywhere on the current official pricing page; prior catalogue figures (about $100-$1,500/month) could not be reconfirmed and are not used.",
+    "Startup plan eligibility restrictions (previously under 15 employees / under $2M revenue) are no longer stated on the current page; unclear if the restriction still applies."
+  ],
+  "conflicts": []
+}

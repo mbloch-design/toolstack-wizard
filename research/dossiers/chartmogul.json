@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "slug": "chartmogul",
+  "tier": "B",
+  "researchedOn": "2026-10-07",
+  "completedLocallyOn": "2026-10-07",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "ChartMogul",
+    "vendor": "ChartMogul",
+    "officialUrl": "https://chartmogul.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://chartmogul.com/pricing/", "tier": 1, "accessedOn": "2026-10-07", "title": "ChartMogul pricing (Free, Starter, Pro, Enterprise)" }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://chartmogul.com/pricing/",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Up to $10K MRR tracked, 1 billing source, unlimited custom/third-party sources, 2 standard destinations.", "fr": "Jusqu'à 10 000 $ de MRR suivi, 1 source de facturation, sources personnalisées/tierces illimitées, 2 destinations standard." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Up to $10K MRR, 1 billing source, 2 standard destinations; core SaaS metrics and customer segmentation included.", "fr": "Jusqu'à 10 000 $ de MRR, 1 source de facturation, 2 destinations standard ; métriques SaaS de base et segmentation client incluses." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 69, "annualPerMonth": 57, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Entry price at the lowest tracked-ARR tier; scales up as ARR grows. 3 team members, 1 billing system plus 2 custom sources, 2 standard destinations, CRM sync and Slack integration.", "fr": "Prix d'entrée au palier d'ARR suivi le plus bas ; augmente avec la croissance de l'ARR. 3 membres d'équipe, 1 système de facturation plus 2 sources personnalisées, 2 destinations standard, synchronisation CRM et intégration Slack." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": 119, "annualPerMonth": 99, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Entry price at the lowest tracked-ARR tier; scales up as ARR grows. Unlimited team members, 5 billing systems, unlimited custom sources, 2 advanced destinations, data warehouse push and two-way CRM sync.", "fr": "Prix d'entrée au palier d'ARR suivi le plus bas ; augmente avec la croissance de l'ARR. Membres d'équipe illimités, 5 systèmes de facturation, sources personnalisées illimitées, 2 destinations avancées, envoi vers un data warehouse et synchronisation CRM bidirectionnelle." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "usage",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": 1658.33, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Floor price from $19,900/year for $10M+ ARR; final price is custom above that floor. Adds dedicated expert support and BI/analytics workflows.", "fr": "Prix plancher à partir de 19 900 $/an pour un ARR de 10 M$ ou plus ; le prix final est sur mesure au-delà de ce plancher. Ajoute un support expert dédié et des workflows BI/analytics." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Starter and Pro prices scale with tracked ARR; $69/$119 monthly (or $57/$99 billed annually) are the lowest-ARR entry prices, not a flat rate, and the bill rises as ARR grows past each tier's slider.", "fr": "Les prix de Starter et Pro évoluent avec l'ARR suivi ; 69 $/119 $ au mois (ou 57 $/99 $ facturé à l'année) sont les prix d'entrée au palier d'ARR le plus bas, pas un tarif fixe, et la facture augmente avec la croissance de l'ARR au-delà de chaque palier du curseur.", "sourceIds": ["s1"] },
+      { "en": "The Enterprise floor price ($19,900/year) requires $10M+ ARR; the final price is custom above that floor, not a fixed catalogue price.", "fr": "Le prix plancher d'Enterprise (19 900 $/an) exige un ARR de 10 M$ ou plus ; le prix final est sur mesure au-delà de ce plancher, pas un tarif de catalogue fixe.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Core SaaS and subscription metrics (MRR, churn, customer segmentation) built from connected billing-system data, usable free up to $10K MRR.", "fr": "Métriques SaaS et d'abonnement de base (MRR, churn, segmentation client) construites à partir des données du système de facturation connecté, utilisables gratuitement jusqu'à 10 000 $ de MRR.", "sourceIds": ["s1"] },
+      { "en": "Starter and Pro add CRM sync (one-way, then two-way on Pro), Slack integration and, on Pro, a data warehouse push for unlimited team members.", "fr": "Starter et Pro ajoutent la synchronisation CRM (à sens unique, puis bidirectionnelle sur Pro), l'intégration Slack et, sur Pro, un envoi vers un data warehouse pour un nombre illimité de membres d'équipe.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The free plan caps out at $10K MRR and 1 billing source; most growing SaaS businesses outgrow it and move to a paid, ARR-scaled tier.", "fr": "Le plan gratuit plafonne à 10 000 $ de MRR et 1 source de facturation ; la plupart des entreprises SaaS en croissance le dépassent et passent à un palier payant indexé sur l'ARR.", "sourceIds": ["s1"] },
+      { "en": "Team members are capped at 3 on Starter; unlimited team members require Pro, at $99/month billed annually at the entry ARR tier.", "fr": "Le nombre de membres d'équipe est plafonné à 3 sur Starter ; les membres illimités exigent Pro, à 99 $/mois facturé à l'année au palier d'ARR d'entrée.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "An ops lead or founder at a small SaaS company who wants a single dashboard for MRR, churn and customer segmentation instead of building it from billing exports.", "fr": "Une responsable ops ou une fondatrice d'une petite entreprise SaaS qui veut un tableau de bord unique pour le MRR, le churn et la segmentation client, plutôt que de le construire à partir d'exports de facturation." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Use: connect a billing source such as Stripe for free up to $10K MRR to track MRR movements and churn from one dashboard.", "fr": "Usage : connecter une source de facturation comme Stripe gratuitement jusqu'à 10 000 $ de MRR pour suivre les mouvements de MRR et le churn depuis un tableau de bord unique." },
+    { "en": "Use: sync subscription data two-way with a CRM on Pro so a sales team sees real-time MRR per account.", "fr": "Usage : synchroniser les données d'abonnement de façon bidirectionnelle avec un CRM sur Pro pour qu'une équipe commerciale voie le MRR en temps réel par compte." }
+  ],
+  "alternatives": [
+    { "slug": "profitwell", "reason": { "en": "A direct subscription-analytics competitor tracking the same MRR, churn and retention metrics.", "fr": "Un concurrent direct d'analytics d'abonnement qui suit les mêmes métriques de MRR, churn et rétention." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Baremetrics", "officialUrl": "https://baremetrics.com", "reason": "Direct subscription/MRR analytics competitor, not yet in the catalogue." },
+    { "name": "Putler", "officialUrl": "https://putler.com", "reason": "Another subscription and e-commerce analytics competitor, not yet in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Free covers real SaaS metrics up to $10K MRR at no cost, and Starter at $57/month (annual) is cheap relative to the recurring revenue it tracks.", "fr": "Free couvre de vraies métriques SaaS jusqu'à 10 000 $ de MRR sans coût, et Starter à 57 $/mois (annuel) est bon marché face au revenu récurrent qu'il permet de suivre.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time to a first useful dashboard after connecting a billing source is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier tableau de bord utile après connexion d'une source de facturation ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the stated core SaaS metrics, segmentation and CRM sync as described on the pricing page's feature breakdown.", "fr": "Assure les métriques SaaS de base, la segmentation et la synchronisation CRM annoncées, comme décrit dans le détail des fonctionnalités de la page tarifaire.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers metrics, segmentation, CRM sync and a data warehouse push, but advanced BI/analytics workflows are reserved for Enterprise, from $19,900/year.", "fr": "Couvre les métriques, la segmentation, la synchronisation CRM et l'envoi vers un data warehouse, mais les workflows BI/analytics avancés sont réservés à Enterprise, à partir de 19 900 $/an.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability if a team leaves ChartMogul are not covered by the sources checked.", "fr": "Note neutre : le format d'export et la portabilité des données en cas de départ de ChartMogul ne figurent pas dans les sources consultées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "SaaS subscription analytics", "fr": "Analytics d'abonnement SaaS" },
+    "shortDescription": { "en": "ChartMogul tracks MRR, churn and customer segmentation from billing data, free up to $10K MRR and ARR-scaled above that.", "fr": "ChartMogul suit MRR, churn et segmentation client depuis les données de facturation, gratuit sous 10 000 $ de MRR puis indexé sur l'ARR." },
+    "longDescription": {
+      "en": "ChartMogul turns connected billing data into core SaaS metrics (MRR, churn, segmentation), with pricing that scales by tracked ARR rather than a flat per-seat fee. Starter and Pro add CRM sync, Slack notifications and, on Pro, a data warehouse push.\n\nThe Free plan covers real metrics up to $10K MRR at no cost. Starter starts at $57/month billed annually at the lowest ARR tier, rising as revenue grows; Pro starts at $99/month for unlimited team members. Enterprise starts from $19,900/year for $10M+ ARR. It fits a SaaS founder or ops lead who wants one dashboard for recurring-revenue metrics.",
+      "fr": "ChartMogul transforme les données de facturation en métriques SaaS de base (MRR, churn, segmentation), avec une tarification indexée sur l'ARR suivi plutôt qu'un tarif fixe par siège. Starter et Pro ajoutent la synchronisation CRM, Slack et, sur Pro, un envoi vers un data warehouse.\n\nFree couvre de vraies métriques jusqu'à 10 000 $ de MRR sans coût. Starter démarre à 57 $/mois à l'année au palier d'ARR le plus bas, et augmente avec le revenu ; Pro démarre à 99 $/mois pour des membres illimités. Enterprise démarre à 19 900 $/an pour un ARR de 10 M$ ou plus. Convient à une fondatrice SaaS qui veut un tableau de bord unique pour le revenu récurrent."
+    },
+    "pros": [
+      { "en": "The free plan already delivers real SaaS metrics up to $10K MRR, not a crippled demo.", "fr": "Le plan gratuit délivre déjà de vraies métriques SaaS jusqu'à 10 000 $ de MRR, pas une démo bridée." },
+      { "en": "Pricing scales with tracked ARR rather than seats, so a lean team isn't penalized for headcount.", "fr": "La tarification évolue avec l'ARR suivi plutôt qu'avec les sièges, ce qui n'pénalise pas une petite équipe pour son effectif." }
+    ],
+    "cons": [
+      { "en": "The bill rises automatically as tracked ARR grows past each tier's threshold, which can surprise a fast-growing team.", "fr": "La facture augmente automatiquement quand l'ARR suivi dépasse le seuil de chaque palier, ce qui peut surprendre une équipe en forte croissance." },
+      { "en": "Advanced BI/analytics workflows and dedicated support are reserved for Enterprise, starting at $19,900/year.", "fr": "Les workflows BI/analytics avancés et le support dédié sont réservés à Enterprise, à partir de 19 900 $/an." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run a SaaS business past $10K MRR and want MRR, churn and segmentation metrics without building them from billing exports.", "fr": "Tu gères une activité SaaS au-delà de 10 000 $ de MRR et tu veux des métriques de MRR, churn et segmentation sans les construire à partir d'exports de facturation." },
+      "avoidIf": { "en": "You're under $10K MRR and the free plan already covers your need, or you need BI workflows only Enterprise offers.", "fr": "Tu es sous les 10 000 $ de MRR et le plan gratuit couvre déjà ton besoin, ou tu as besoin de workflows BI que seul Enterprise propose." },
+      "threshold": { "en": "Starter costs $684/year ($57/month) billed annually at the entry ARR tier, the first paid step once Free's $10K MRR cap is outgrown.", "fr": "Starter coûte 684 $/an (57 $/mois) facturé à l'année au palier d'ARR d'entrée, la première étape payante une fois le plafond de 10 000 $ de MRR de Free dépassé." },
+      "billingTraps": { "en": "Starter and Pro prices are tied to a tracked-ARR slider, so the bill increases automatically as the business grows past each threshold.", "fr": "Les prix de Starter et Pro sont liés à un curseur d'ARR suivi, donc la facture augmente automatiquement quand l'activité dépasse chaque seuil." }
+    }
+  },
+  "unknowns": [
+    "The exact ARR thresholds and corresponding price steps between the lowest and highest tiers on the pricing slider were not individually recorded, only the entry-tier price."
+  ],
+  "conflicts": []
+}

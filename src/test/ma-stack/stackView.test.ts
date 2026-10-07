@@ -20,14 +20,19 @@ describe("Mon Stack catalogue representation", () => {
     expect(stackCatalogPrice(tool("x"), "fr")).toBeNull();
     expect(stackCatalogPrice(tool("x", "design", { pricing: { free: "Essai gratuit 14 jours", paid: "" } }), "fr")).toBeNull();
     expect(stackCatalogPrice(tool("x", "design", { priceUndisclosed: true, pricing: { free: "Gratuit", paid: "" } }), "fr")).toBeNull();
-    expect(stackCatalogPrice(tool("x", "design", { pricing: { free: "", paid: "$12/mo, billed annually" }, pricingEn: { free: "", paid: "$12/mo, billed annually" } }), "en")).toBe("From 12 $/month");
+    expect(stackCatalogPrice(tool("x", "design", { pricing: { free: "", paid: "$12/mo, billed annually" } }), "en")).toBeNull();
+    expect(stackCatalogPrice(tool("x", "design", { nativePrices: [{ amount: 12, currency: "USD", period: "monthly" }] }), "en")).toBe("From $12/mo");
+    // A vendor publishing both currencies: dollars on the English page, euros on the French one.
+    const both = tool("x", "design", { nativePrices: [{ amount: 11, currency: "EUR", period: "monthly" }, { amount: 12, currency: "USD", period: "monthly" }] });
+    expect(stackCatalogPrice(both, "en")).toBe("From $12/mo");
+    expect(stackCatalogPrice(both, "fr")).toBe("Dès 11\u00a0€/mois");
   });
   it("shows updated catalogue data rather than a stored price", () => {
     const selection = ["figma"];
-    const before = [tool("figma", "design", { pricing: { free: "", paid: "12 €/mois" } })];
-    const after = [tool("figma", "design", { pricing: { free: "", paid: "15 €/mois" } })];
-    expect(stackCatalogPrice(before.find((item) => selection.includes(item.id))!, "fr")).toBe("Dès 12 €/mois");
-    expect(stackCatalogPrice(after.find((item) => selection.includes(item.id))!, "fr")).toBe("Dès 15 €/mois");
+    const before = [tool("figma", "design", { nativePrices: [{ amount: 12, currency: "EUR", period: "monthly" }] })];
+    const after = [tool("figma", "design", { nativePrices: [{ amount: 15, currency: "EUR", period: "monthly" }] })];
+    expect(stackCatalogPrice(before.find((item) => selection.includes(item.id))!, "fr")).toBe("Dès 12\u00a0€/mois");
+    expect(stackCatalogPrice(after.find((item) => selection.includes(item.id))!, "fr")).toBe("Dès 15\u00a0€/mois");
   });
   it("preserves annual native amounts, unit, tax and billing commitment", () => {
     const plan = { nativeAmount: 120, nativeCurrency: "USD", billingPeriod: "annual", billingCommitment: "annual_prepaid", pricingUnit: "per seat", taxInclusion: "ht" } as ToolPricingPlan;

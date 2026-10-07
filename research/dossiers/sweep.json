@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 2,
+  "slug": "sweep",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "hold": "No public pricing page exists on sweep.net; pricing is quote-only via a sales demo. The catalogue's previous ~$250/month figure traced to a third-party AWS Marketplace listing, which this dossier does not treat as an official vendor pricing source (a marketplace/reseller listing is not the editor's own official page). No price is entered without inventing or using a non-official source.",
+  "identity": {
+    "officialName": "Sweep",
+    "vendor": "Sweep",
+    "officialUrl": "https://www.sweep.net",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.sweep.net",
+      "tier": 1,
+      "accessedOn": "2026-10-07",
+      "title": "Sweep homepage: sustainability/ESG platform overview, no public pricing page, demo-only sales"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.sweep.net/platform",
+      "tier": 1,
+      "accessedOn": "2026-10-07",
+      "title": "Sweep platform capabilities: carbon accounting, ESG disclosure, value chain, audit, business intelligence"
+    }
+  ],
+  "pricing": {
+    "model": "quote",
+    "currency": "USD",
+    "pricingUrl": "https://www.sweep.net",
+    "verifiedOn": "2026-10-07",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null
+    },
+    "plans": [],
+    "comparePlanKey": null,
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Sweep's official site has no public pricing page; every plan is sold through a sales demo ('Book a demo'), so no price could be read from an official source.",
+        "fr": "Le site officiel de Sweep n'a pas de page tarifs publique ; chaque offre se vend via une démo commerciale (« Book a demo »), donc aucun prix n'a pu être relevé sur une source officielle.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Centralizes Scope 1, 2 and 3 emissions data under the GHG Protocol, covering corporate carbon footprints, product-level emissions and financed emissions.",
+        "fr": "Centralise les données d'émissions Scope 1, 2 et 3 selon le GHG Protocol, couvrant les bilans carbone d'entreprise, les émissions au niveau produit et les émissions financées.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Feeds one trusted dataset into multiple ESG reporting frameworks (CSRD, ISSB, GRI, CDP) instead of rebuilding a report per framework.",
+        "fr": "Alimente un seul jeu de données fiable pour plusieurs référentiels de reporting ESG (CSRD, ISSB, GRI, CDP) plutôt que de reconstruire un rapport par référentiel.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Sweepy, a built-in AI assistant, performs actions on platform data directly (mapping purchase data, drafting a disclosure, building a dashboard) rather than only answering chat questions.",
+        "fr": "Sweepy, un assistant IA intégré, agit directement sur les données de la plateforme (mapper des données d'achat, rédiger une déclaration, construire un tableau de bord) plutôt que de seulement répondre à des questions en chat.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Provides supplier engagement and automated data collection tools for Scope 3 value-chain emissions tracking.",
+        "fr": "Fournit des outils d'engagement fournisseurs et de collecte automatisée de données pour le suivi des émissions Scope 3 de la chaîne de valeur.",
+        "sourceIds": [
+          "s2"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No price is published on the official site; every plan requires booking a sales demo before pricing is disclosed.",
+        "fr": "Aucun prix n'est publié sur le site officiel ; chaque offre nécessite de réserver une démo commerciale avant la divulgation du tarif.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "No free plan or trial is offered or mentioned on the official pages read.",
+        "fr": "Aucune offre gratuite ni essai n'est proposé ou mentionné sur les pages officielles relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "AWS",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Snowflake",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web"
+    ]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops or finance person in a larger or multi-entity organization centralizing carbon and ESG data across teams; Sweep's own positioning (finance teams, complex organizations) targets mid-market and enterprise buyers rather than a very small team.",
+      "fr": "Une personne ops ou finance dans une organisation plus grande ou multi-entités qui centralise les données carbone et ESG entre équipes ; le positionnement de Sweep (équipes finance, organisations complexes) vise des acheteurs mid-market et grands comptes plutôt qu'une toute petite équipe."
+    },
+    "soloRelevance": "low",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Report: centralize emissions and ESG data once, then generate CSRD, GRI or CDP-ready disclosures from the same dataset instead of rebuilding each report.",
+      "fr": "Rapporter : centraliser les données d'émissions et ESG une fois, puis générer des déclarations prêtes pour CSRD, GRI ou CDP à partir du même jeu de données plutôt que reconstruire chaque rapport."
+    },
+    {
+      "en": "Ask Sweepy: request a draft disclosure, a mapped purchase dataset or a dashboard in plain language instead of building it manually in the platform.",
+      "fr": "Demander à Sweepy : demander une déclaration en brouillon, un jeu de données d'achats mappé ou un tableau de bord en langage naturel plutôt que de le construire à la main dans la plateforme."
+    }
+  ],
+  "alternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Watershed",
+      "officialUrl": "https://watershed.com",
+      "reason": "Direct carbon accounting and climate platform competitor, missing from the current catalogue."
+    },
+    {
+      "name": "Persefoni",
+      "officialUrl": "https://www.persefoni.com",
+      "reason": "Carbon management and disclosure platform competing in the same enterprise ESG category."
+    },
+    {
+      "name": "Normative",
+      "officialUrl": "https://normative.io",
+      "reason": "Carbon accounting and ESG reporting platform targeting a similar mid-market/enterprise segment."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Neutral score: no public price exists to weigh against the value delivered; this dossier can't assess cost-to-value without a quote.",
+        "fr": "Note neutre : aucun prix public n'existe pour le comparer à la valeur apportée ; ce dossier ne peut pas évaluer le rapport coût/valeur sans devis.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: onboarding time and first-use difficulty aren't documented without a live demo or trial.",
+        "fr": "Note neutre : le temps d'onboarding et la difficulté de prise en main ne sont pas documentés sans démo ou essai en direct.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The platform page documents Scope 1-3 carbon accounting and multi-framework reporting matching its stated purpose, but no independent customer outcome beyond named case-study links was verified in this dossier.",
+        "fr": "La page plateforme documente la comptabilité carbone Scope 1-3 et le reporting multi-référentiels conforme à son objectif annoncé, mais aucun résultat client indépendant au-delà des liens d'études de cas nommées n'a été vérifié dans ce dossier.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Covers carbon accounting, ESG disclosure, value-chain engagement, audit/assurance and business intelligence in one platform per the official capability list, but no benchmark against category leaders was verified.",
+        "fr": "Couvre la comptabilité carbone, la déclaration ESG, l'engagement de la chaîne de valeur, l'audit/assurance et la business intelligence dans une seule plateforme selon la liste de capacités officielle, mais aucun benchmark face aux leaders de la catégorie n'a été vérifié.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability weren't documented on the pages read.",
+        "fr": "Note neutre : l'export et la portabilité des données ne figurent pas dans les pages relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Carbon & ESG platform",
+      "fr": "Plateforme carbone et ESG"
+    },
+    "shortDescription": {
+      "en": "Sweep centralizes carbon and ESG data into one dataset for CSRD, GRI and CDP reporting, sold only through a sales demo with no public price.",
+      "fr": "Sweep centralise les données carbone et ESG en un jeu unique pour le reporting CSRD, GRI et CDP, vendu sur démo, sans prix public."
+    },
+    "longDescription": {
+      "en": "Sweep centralizes emissions and ESG data (Scope 1, 2 and 3, under the GHG Protocol) into one audit-ready dataset that feeds CSRD, ISSB, GRI and CDP reporting, instead of rebuilding a report per framework. Sweepy, a built-in AI assistant, acts directly on platform data: mapping purchases, drafting disclosures or building dashboards.\n\nNo price is published on the official site: every plan is sold through a sales demo, with no free plan or trial offered. It targets finance and sustainability teams inside larger or multi-entity organizations tracking supply-chain emissions, rather than a solo operator or a very small team.",
+      "fr": "Sweep centralise les données d'émissions et ESG (Scope 1, 2 et 3, selon le GHG Protocol) dans un jeu de données unique prêt pour l'audit, qui alimente le reporting CSRD, ISSB, GRI et CDP, plutôt que de reconstruire un rapport par référentiel. Sweepy, un assistant IA intégré, agit directement sur les données de la plateforme : mapper des achats, rédiger des déclarations ou construire des tableaux de bord.\n\nAucun prix n'est publié sur le site officiel : chaque offre se vend via une démo commerciale, sans offre gratuite ni essai. Convient aux équipes finance et durabilité d'organisations plus grandes ou multi-entités qui suivent les émissions de leur chaîne d'approvisionnement, plutôt qu'à une personne seule ou une toute petite équipe."
+    },
+    "pros": [
+      {
+        "en": "One dataset feeds multiple ESG reporting frameworks instead of rebuilding data collection per regulation.",
+        "fr": "Un seul jeu de données alimente plusieurs référentiels de reporting ESG plutôt que de reconstruire la collecte par réglementation."
+      },
+      {
+        "en": "Sweepy acts on platform data directly (mapping, drafting, dashboards) rather than only answering questions in a chat window.",
+        "fr": "Sweepy agit directement sur les données de la plateforme (mapping, rédaction, tableaux de bord) plutôt que de seulement répondre à des questions dans une fenêtre de chat."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No price is published anywhere on the official site; every plan requires a sales demo before pricing is disclosed.",
+        "fr": "Aucun prix n'est publié où que ce soit sur le site officiel ; chaque offre nécessite une démo commerciale avant la divulgation du tarif."
+      },
+      {
+        "en": "No free plan or trial exists, so there's no way to test the product without going through sales.",
+        "fr": "Aucune offre gratuite ni essai n'existe, donc il n'y a aucun moyen de tester le produit sans passer par les équipes commerciales."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Your organization has multi-entity or supply-chain emissions data to centralize across several ESG reporting frameworks (CSRD, GRI, CDP).",
+        "fr": "Ton organisation a des données d'émissions multi-entités ou de chaîne d'approvisionnement à centraliser pour plusieurs référentiels de reporting ESG (CSRD, GRI, CDP)."
+      },
+      "avoidIf": {
+        "en": "You're a solo operator or very small team; Sweep's own positioning (finance teams, complex organizations) and demo-only pricing point at mid-market and enterprise buyers.",
+        "fr": "Tu es seul·e ou dans une toute petite équipe ; le positionnement de Sweep (équipes finance, organisations complexes) et son tarif sur démo seulement visent des acheteurs mid-market et grands comptes."
+      },
+      "threshold": {
+        "en": "No threshold can be given: the official site publishes no price, and the only way to see one is through a sales demo.",
+        "fr": "Aucun seuil ne peut être donné : le site officiel ne publie aucun prix, et la seule façon d'en voir un est de passer par une démo commerciale."
+      }
+    }
+  },
+  "unknowns": [
+    "No price is published anywhere on sweep.net; a prior catalogue entry (~$250/month) came from an AWS Marketplace listing, which this dossier does not treat as an official vendor source.",
+    "Vendor's exact legal entity name wasn't confirmed on the pages read."
+  ],
+  "conflicts": []
+}

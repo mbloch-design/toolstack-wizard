@@ -128,7 +128,7 @@ export default function StackUsageExplorer({ territories, lang, selectedId, navi
   const title = active ? stackDisplayLabel(active.label, lang) : domain?.label ?? (en ? "Your uses" : "Vos usages");
   const priceGroups = active ? [{ id: active.id, label: title, tools: active.tools }]
     : domain ? [{ id: domain.id, label: domain.label, tools: domain.tools }] : territories;
-  const budget = estimateStackBudget(priceGroups.flatMap(group => group.tools), currency);
+  const budget = estimateStackBudget(priceGroups.flatMap(group => group.tools), currency, lang);
   const backToDomain = Boolean(active && domain && domain.groups.length > 1);
   function open(item: Bubble) {
     if (locked.current) return;
@@ -194,7 +194,7 @@ export default function StackUsageExplorer({ territories, lang, selectedId, navi
             <p className="ms-telescope-prices-note">{budget.included}/{budget.total} {en ? "tools included. Entry paid plans, per tool." : "outils pris en compte. Offres payantes d’entrée, par outil."}{budget.excluded > 0 && (en ? " Partial total." : " Total partiel.")}</p>
             <p className="ms-telescope-prices-note">{en ? "Indicative conversion, site rates dated " : "Conversion indicative, taux du site datés du "}{CURRENCY_RATE_DATE}{en ? ". $ treated as USD." : ". $ assimilé à USD."}</p>
             <div className="ms-telescope-prices-list">{priceGroups.map(group => <section key={group.id}>
-              <h4 className="ms-budget-group-heading"><span>{group.label}</span><span>{formatApproximateBudget(estimateStackBudget(group.tools, currency), lang, currency)}</span></h4>
+              <h4 className="ms-budget-group-heading"><span>{group.label}</span><span>{formatApproximateBudget(estimateStackBudget(group.tools, currency, lang), lang, currency)}</span></h4>
               {group.tools.map(tool => {
                 const price = stackCatalogPrice(tool, lang);
                 const nativePaid = price && !tool.priceUndisclosed ? (en ? tool.pricingEn?.paid || tool.pricing?.paid : tool.pricing?.paid)?.trim() : undefined;
@@ -202,7 +202,7 @@ export default function StackUsageExplorer({ territories, lang, selectedId, navi
                 return <button type="button" key={tool.id} className="ms-telescope-price-row" onClick={() => { setPricesOpen(false); onSelect(toolKey(tool)); }}>
                   <ToolLogo tool={tool} size={28} /><span className="ms-telescope-price-copy"><strong>{tool.name}</strong><span>{mainPrice || (en ? "Not available" : "Non renseigné")}</span>
                     {price === "Freemium" && nativePaid && <span>{nativePaid}</span>}
-                    {!budgetEntry(tool) && <span>{en ? "Excluded from the estimate" : "Non inclus dans l’estimation"}</span>}
+                    {!budgetEntry(tool, lang) && <span>{en ? "Excluded from the estimate" : "Non inclus dans l’estimation"}</span>}
                   </span><ChevronRight size={14} aria-hidden />
                 </button>;
               })}
@@ -213,7 +213,7 @@ export default function StackUsageExplorer({ territories, lang, selectedId, navi
       <div className={`ms-bubble-canvas${domain ? " ms-bubble-canvas--inside" : ""}`}>
         {domain && <h3 className="ms-telescope-level-title">{title}</h3>}
         <div className="ms-bubble-field" ref={fieldRef} key={`${domainId}/${usageId}`}>{bubbles.map(b => {
-          const bubbleBudget = estimateStackBudget(b.item.tool ? [b.item.tool] : b.item.tools || [], currency);
+          const bubbleBudget = estimateStackBudget(b.item.tool ? [b.item.tool] : b.item.tools || [], currency, lang);
           const bubblePrice = bubbleBudget.included > 0 ? `${formatApproximateBudget(bubbleBudget, lang, currency)}${en ? "/mo" : "/mois"}${bubbleBudget.excluded > 0 ? "*" : ""}` : "—";
           return <StackBubblePeek key={b.item.id} tools={b.item.tool ? [b.item.tool] : b.item.tools || []} label={b.item.label} lang={lang} disabled={moving} group={!b.item.tool} onExplore={() => open(b.item)} onSelect={onSelect}><button type="button" disabled={moving}
           className={`ms-usage-bubble${b.item.tool && b.item.tool.id === selectedId ? " ms-usage-bubble--selected" : ""}`}

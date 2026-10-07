@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 2,
+  "slug": "typefully",
+  "tier": "B",
+  "researchedOn": "2026-10-07",
+  "completedLocallyOn": "2026-10-07",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Typefully",
+    "vendor": "Typefully Inc.",
+    "officialUrl": "https://typefully.com",
+    "docsUrl": null,
+    "changelogUrl": "https://typefully.com/changelog",
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://typefully.com/pricing", "tier": 1, "accessedOn": "2026-10-07", "title": "Typefully pricing and feature comparison" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://typefully.com/pricing",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "10 posts per month, 1 social set, 1 user, limited media uploads.", "fr": "10 publications par mois, 1 social set, 1 utilisateur, uploads de médias limités." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "10 posts/month, 1 social set, 1 user, advanced scheduling and limited media uploads.", "fr": "10 publications par mois, 1 social set, 1 utilisateur, planification avancée et uploads de médias limités." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "creator",
+        "name": "Creator",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 8.25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "$99/year, annual billing only; adds X analytics, AI writing features and unlimited media uploads for 1 user and 1 social set.", "fr": "99 $/an, facturation annuelle uniquement ; ajoute les analytics X, les fonctions d'écriture IA et les uploads de médias illimités pour 1 utilisateur et 1 social set." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "workspace",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": 18, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "$18/month per social set, billed yearly; adds collaborative writing, comments, Slack notifications, teams/roles/permissions and up to 50 social sets with unlimited users.", "fr": "18 $/mois par social set, facturé à l'année ; ajoute l'écriture collaborative, les commentaires, les notifications Slack, la gestion d'équipes/rôles/permissions, jusqu'à 50 social sets et un nombre illimité d'utilisateurs." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Custom limits, priority support and an enterprise security review; price available on request.", "fr": "Limites personnalisées, support prioritaire et revue de sécurité entreprise ; prix sur demande." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "creator",
+    "addOns": [],
+    "cautions": [
+      { "en": "Creator is billed annually only ($99/year); no monthly price is shown on the pricing page for that plan.", "fr": "Creator est facturé uniquement à l'année (99 $/an) ; aucun prix mensuel n'est affiché sur la page tarifaire pour ce plan.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Cross-posts to X/Twitter, LinkedIn, Bluesky, Threads, Mastodon and Substack from one focused, high-fidelity editor with scheduling.", "fr": "Publie en croisé sur X/Twitter, LinkedIn, Bluesky, Threads, Mastodon et Substack depuis un éditeur unique, soigné et sans distraction, avec planification.", "sourceIds": ["s1"] },
+      { "en": "Built-in collaboration (shared drafts, comments, Slack notifications) and an AI writing assistant that rewrites, improves drafts and generates image descriptions.", "fr": "Collaboration intégrée (brouillons partagés, commentaires, notifications Slack) et assistant d'écriture IA qui réécrit, améliore les brouillons et génère des descriptions d'images.", "sourceIds": ["s1"] },
+      { "en": "Exposes an API, an MCP server and native AI agent skills (Claude, ChatGPT) so agents can queue drafts and manage the posting calendar.", "fr": "Expose une API, un serveur MCP et des compétences natives pour agents IA (Claude, ChatGPT), qui peuvent ainsi mettre des brouillons en file et gérer le calendrier de publication.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The Free plan caps publishing at 10 posts/month and 1 social set/1 user; Creator removes the post cap but keeps the 1 social set, 1 user limit.", "fr": "Le plan Free plafonne la publication à 10 posts par mois pour 1 social set et 1 utilisateur ; Creator supprime le plafond de posts mais garde la limite à 1 social set et 1 utilisateur.", "sourceIds": ["s1"] },
+      { "en": "Detailed analytics (metrics, profile conversion rate, tweeting streaks, CSV export) are described only for X, not for the other supported platforms.", "fr": "Les analytics détaillées (métriques, taux de conversion de profil, séries de publication, export CSV) ne sont décrites que pour X, pas pour les autres plateformes prises en charge.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Slack", "slug": "slack", "sourceIds": ["s1"] },
+      { "name": "Notion", "slug": "notion", "sourceIds": ["s1"] },
+      { "name": "Zapier", "slug": "zapier", "sourceIds": ["s1"] },
+      { "name": "Raycast", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "macos"]
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A solo content creator or writer who posts regularly on X and LinkedIn and wants a distraction-free editor, scheduling and basic analytics in one place.", "fr": "Une créatrice de contenu ou une autrice solo qui publie régulièrement sur X et LinkedIn et veut un éditeur sans distraction, une planification et des analytics de base au même endroit." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use: draft an X or LinkedIn thread in Typefully's editor, apply an AI rewrite suggestion, then schedule it to publish automatically.", "fr": "Usage : rédiger un thread X ou LinkedIn dans l'éditeur Typefully, appliquer une suggestion de réécriture IA, puis le planifier pour publication automatique." },
+    { "en": "Use: check X analytics (engagement, profile conversion rate) after a week of posts to decide which thread format to repeat.", "fr": "Usage : consulter les analytics X (engagement, taux de conversion de profil) après une semaine de publications pour décider quel format de thread répéter." }
+  ],
+  "alternatives": [
+    { "slug": "buffer", "reason": { "en": "A direct cross-platform scheduling competitor covering the same multi-network publishing need.", "fr": "Un concurrent direct de planification multi-réseaux qui couvre le même besoin de publication croisée." } },
+    { "slug": "hootsuite", "reason": { "en": "A broader social scheduling suite covering the same core publishing and calendar workflow.", "fr": "Une suite de planification sociale plus large qui couvre le même workflow de publication et de calendrier." } },
+    { "slug": "publer", "reason": { "en": "A cheaper cross-platform scheduler aimed at the same solo-creator publishing workflow.", "fr": "Un planificateur multi-plateformes moins cher visant le même workflow de publication pour créateur solo." } },
+    { "slug": "taplio", "reason": { "en": "A LinkedIn-focused writing and scheduling tool overlapping directly with Typefully's LinkedIn use case.", "fr": "Un outil de rédaction et de planification centré sur LinkedIn, qui recoupe directement le cas d'usage LinkedIn de Typefully." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Hypefury", "officialUrl": "https://hypefury.com", "reason": "X/Twitter-focused scheduling and growth tool, a direct competitor not yet in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The Free plan already covers the core cross-posting workflow at 10 posts/month; Creator unlocks AI and analytics for $99/year ($8.25/month), cheap next to other social schedulers.", "fr": "Le plan Free couvre déjà le workflow de publication croisée de base à 10 posts par mois ; Creator débloque l'IA et les analytics pour 99 $/an (8,25 $/mois), un prix bas face aux autres planificateurs sociaux.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The product is built around a single, distraction-free editor meant to get a post written and scheduled quickly, without a separate setup step.", "fr": "Le produit est construit autour d'un éditeur unique et sans distraction, pensé pour écrire et planifier un post rapidement, sans étape de configuration séparée.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers cross-posting to the six listed networks, scheduling, shared drafts and AI rewriting as advertised on the pricing and feature comparison page.", "fr": "Assure la publication croisée sur les six réseaux listés, la planification, les brouillons partagés et la réécriture IA comme annoncé sur la page de tarification et de comparaison des fonctionnalités.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers scheduling, AI writing, collaboration and API/MCP agent integration, but detailed analytics are described only for X, not the other networks it publishes to.", "fr": "Couvre la planification, l'écriture IA, la collaboration et l'intégration API/MCP pour agents, mais les analytics détaillées ne sont décrites que pour X, pas les autres réseaux sur lesquels l'outil publie.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "A free API and CSV export of X analytics exist, but no general export of drafts or posting history is mentioned on the pricing page.", "fr": "Une API gratuite et un export CSV des analytics X existent, mais aucun export général des brouillons ou de l'historique de publication n'est mentionné sur la page tarifaire.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Social writing & scheduling", "fr": "Rédaction et planification sociale" },
+    "shortDescription": { "en": "Typefully is a distraction-free editor for writing, scheduling and cross-posting X, LinkedIn and other social content.", "fr": "Typefully est un éditeur sans distraction pour rédiger, planifier et publier en croisé du contenu X, LinkedIn et d'autres réseaux sociaux." },
+    "longDescription": {
+      "en": "Typefully centers on a single, focused editor for writing posts and threads, then scheduling them across X, LinkedIn, Bluesky, Threads, Mastodon and Substack. An AI assistant rewrites and improves drafts, and shared drafts with comments support small teams.\n\nThe Free plan covers 10 posts/month for one person; Creator ($99/year, annual only) adds AI and X analytics for a solo creator. Business ($18/month per social set, billed yearly) adds collaboration and up to 50 social sets. It fits a solo creator or small content team publishing regularly on X and LinkedIn.",
+      "fr": "Typefully s'organise autour d'un éditeur unique et sans distraction pour écrire des posts et des threads, puis les planifier sur X, LinkedIn, Bluesky, Threads, Mastodon et Substack. Un assistant IA réécrit et améliore les brouillons, et les brouillons partagés avec commentaires conviennent aux petites équipes.\n\nLe plan Free couvre 10 posts par mois pour une personne ; Creator (99 $/an, facturation annuelle uniquement) ajoute l'IA et les analytics X pour une créatrice solo. Business (18 $/mois par social set, facturé à l'année) ajoute la collaboration et jusqu'à 50 social sets. Convient à une créatrice solo ou une petite équipe de contenu qui publie régulièrement sur X et LinkedIn."
+    },
+    "pros": [
+      { "en": "The permanent free plan already covers real cross-posting to several networks, not just a time-limited trial.", "fr": "Le plan gratuit permanent couvre déjà une vraie publication croisée sur plusieurs réseaux, pas seulement un essai limité dans le temps." },
+      { "en": "Native API, MCP server and AI agent skills let Claude or ChatGPT queue drafts directly, unusual for a social scheduler at this price.", "fr": "L'API native, le serveur MCP et les compétences pour agents IA permettent à Claude ou ChatGPT de mettre des brouillons en file directement, ce qui est rare pour un planificateur social à ce prix." }
+    ],
+    "cons": [
+      { "en": "Creator, the entry paid plan, only bills annually, with no monthly option shown.", "fr": "Creator, le plan payant d'entrée, ne se facture qu'à l'année, sans option mensuelle affichée." },
+      { "en": "Detailed analytics are built for X specifically; the other five supported networks get cross-posting but not the same depth of metrics.", "fr": "Les analytics détaillées sont construites spécifiquement pour X ; les cinq autres réseaux pris en charge bénéficient de la publication croisée mais pas de la même profondeur de métriques." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You post regularly on X or LinkedIn and want one focused editor with AI rewriting and scheduling across networks.", "fr": "Tu publies régulièrement sur X ou LinkedIn et tu veux un éditeur unique avec réécriture IA et planification multi-réseaux." },
+      "avoidIf": { "en": "You need deep analytics on LinkedIn or another non-X network, since detailed metrics are described only for X.", "fr": "Tu as besoin d'analytics poussées sur LinkedIn ou un autre réseau que X, car les métriques détaillées ne concernent que X." },
+      "threshold": { "en": "Creator costs $99/year ($8.25/month) for one person; Business starts at $18/month per social set, billed yearly, once a team needs to collaborate.", "fr": "Creator coûte 99 $/an (8,25 $/mois) pour une personne ; Business démarre à 18 $/mois par social set, facturé à l'année, dès qu'une équipe doit collaborer." },
+      "billingTraps": { "en": "Creator is annual-billing-only, so there is no way to pay month to month before committing to a full year.", "fr": "Creator se facture uniquement à l'année, donc il n'existe aucun moyen de payer au mois avant de s'engager sur une année complète." }
+    }
+  },
+  "unknowns": [
+    "Whether Business offers a monthly billing option in addition to the yearly toggle shown could not be confirmed; the page's toggle interaction was not fully observable in this session.",
+    "Whether a region or currency selector exists for non-US visitors was not tested; only the default $ grid was read."
+  ],
+  "conflicts": []
+}

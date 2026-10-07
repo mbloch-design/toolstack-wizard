@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Plus, Search, Check, X, CircleDot, LayoutGrid, ArrowRight } from "@/lib/icons";
+import { Plus, Search, Check, X, CircleDot, LayoutGrid } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import StackUsageExplorer from "@/components/stack/StackUsageExplorer";
@@ -11,6 +11,7 @@ import { useCategories, useToolSummaries, useToolBySlug, type ToolSummary } from
 import { readStackView, STACK_VIEW_KEY, stackCatalogPrice, toolKey, type StackViewMode } from "@/lib/stackView";
 import { stackDisplayLabel, stackPlacement, stackMapTerritories, stackRelations } from "@/lib/stackUsage";
 import { getScrollTop, scrollToY } from "@/lib/scroll";
+import toolAccents from "@/data/toolAccents.json";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 
@@ -46,6 +47,18 @@ export default function CartPage() {
   // The hook can retain the preceding detail while a new selection loads.
   const resolved = selected && detail?.id === selected.id ? detail : selected;
   const relations = useMemo(() => resolved ? stackRelations(resolved, selectedTools, categories, lang) : [], [resolved, selectedTools, categories, lang]);
+  // Potential overlaps per tool, with the same rule as the Focus panel
+  // (explicit catalogue alternative or shared catalogue uses), so the cards,
+  // the summary and the panel always say the same thing. No score, no advice
+  // to remove: the person decides.
+  const overlapsById = useMemo(() => new Map(selectedTools.map((tool) => [tool.id,
+    stackRelations(tool, selectedTools, categories, lang).filter((relation) => relation.explicit || relation.commonUses.length > 0).map((relation) => relation.tool),
+  ])), [selectedTools, categories, lang]);
+  const overlapPairs = useMemo(() => {
+    const pairs = new Set<string>();
+    overlapsById.forEach((others, id) => others.forEach((other) => pairs.add([id, other.id].sort().join("|"))));
+    return pairs.size;
+  }, [overlapsById]);
   const empty = state.pinnedToolSlugs.length === 0;
   const showSearch = empty || searchOpen;
   const existingIds = new Set(selectedTools.map((tool) => tool.id));
@@ -97,7 +110,7 @@ export default function CartPage() {
     unpinTool(slug);
     closeInspector();
     requestAnimationFrame(() => addRef.current?.focus({ preventScroll: true }));
-    toast(t(`${name} retiré du stack.`, `${name} removed from your stack.`), {
+    toast(t(`${name} retiré de ma stack.`, `${name} removed from your stack.`), {
       duration: 6000,
       action: { label: t("Annuler", "Undo"), onClick: () => restoreTool(entry, index) },
     });
@@ -129,17 +142,30 @@ export default function CartPage() {
   function renderTool(tool: ToolSummary) {
     const active = selected?.id === tool.id;
     const price = mode === "stack" ? stackCatalogPrice(tool, lang) : null;
+    const overlaps = overlapsById.get(tool.id) || [];
+    const accent = (toolAccents as Record<string, string>)[toolKey(tool)];
+    // Two fixed zones: identity on top, then a footer on a hairline (price
+    // left, overlap right) aligned across every card of a row.
     return <button
       key={tool.id}
       type="button"
       data-tool-id={tool.id}
       className={`ms-tool ms-tool-card${active ? " ms-tool--selected" : ""}`}
+      style={accent ? ({ "--tool-accent": accent } as React.CSSProperties) : undefined}
       aria-expanded={active}
       aria-controls={active ? "ms-tool-context" : undefined}
       onClick={(event) => { lastToolButton.current = event.currentTarget; active ? closeInspector() : selectTool(toolKey(tool)); }}
     >
-      <ToolLogo tool={tool} size={40} />
-      <span className="ms-tool-copy"><strong>{tool.name}</strong>{mode === "stack" && <span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>}</span>{price && <span className="ms-list-price">{price}</span>}<ArrowRight className="ms-card-arrow" size={16} aria-hidden />
+      <span className="ms-card-top">
+        <span className="ms-card-logo"><ToolLogo tool={tool} size={34} /></span>
+        <span className="ms-card-id"><strong>{tool.name}</strong>{mode === "stack" && <span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>}</span>
+      </span>
+      {mode === "stack" && <span className="ms-card-foot">
+        <span className={`ms-card-price${price ? "" : " ms-card-price--none"}`}>{price || t("Tarif non relevé", "Price not checked")}</span>
+        {overlaps.length > 0 && <span className="ms-card-overlap" title={t(`Recoupe ${overlaps.map((o) => o.name).join(", ")}`, `Overlaps with ${overlaps.map((o) => o.name).join(", ")}`)}>
+          <span className="ms-card-overlap-name">{overlaps[0].name}</span>{overlaps.length > 1 && <span>+{overlaps.length - 1}</span>}
+        </span>}
+      </span>}
     </button>;
   }
 
@@ -155,9 +181,24 @@ export default function CartPage() {
       {!empty && <button className="tt-button-primary" ref={addRef} onClick={() => setSearchOpen((open) => !open)} aria-expanded={searchOpen} aria-controls="ms-search"><Plus size={18} aria-hidden />{t("Ajouter un outil", "Add a tool")}</button>}
     </header>
 
+    {/* One factual line to read the whole stack at a glance, with the view
+        switch on the same row: it stays in place in both views. */}
+    {!empty && <div className="ms-overview-bar">
+      <p className="ms-summary">
+        <span>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}</span>
+      <span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span>
+      <span className={overlapPairs > 0 ? "ms-summary-overlaps" : undefined}>{overlapPairs > 0
+        ? t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""} possible${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} potential overlap${overlapPairs > 1 ? "s" : ""}`)
+        : t("Aucun recoupement connu", "No known overlap")}</span>
+    </p>
+      <div className="ms-view-switch" role="group" aria-label={t("Affichage de la stack", "Stack view")}>
+        <button type="button" aria-label={t("Cartes", "Cards")} title={t("Cartes", "Cards")} aria-pressed={mode === "stack"} onClick={() => chooseMode("stack")}><LayoutGrid size={21} aria-hidden /><span>{t("Cartes", "Cards")}</span></button>
+        <button type="button" aria-label={t("Par usage", "By use")} title={t("Par usage", "By use")} aria-pressed={mode === "map"} onClick={() => chooseMode("map")}><CircleDot size={21} aria-hidden /><span>{t("Par usage", "By use")}</span></button>
+      </div>
+    </div>}
     {empty && <p className="ms-empty-copy">{t("Ajoutez les outils que vous utilisez. ToolTrim organise automatiquement votre environnement.", "Add the tools you use. ToolTrim automatically organizes your environment.")}</p>}
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
-      ? t("La sauvegarde locale est illisible. Vous pouvez constituer un nouveau stack.", "The local snapshot cannot be read. You can build a new stack.")
+      ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
       : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
     {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupéré depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
 
@@ -179,29 +220,34 @@ export default function CartPage() {
             type="button"
             disabled={present}
             aria-label={present ? t(`${tool.name} est dans votre stack`, `${tool.name} is in your stack`) : t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}
-            onClick={() => { pinTool(toolKey(tool)); toast.success(t(`${tool.name} ajouté au stack.`, `${tool.name} added to your stack.`)); }}
+            onClick={() => { pinTool(toolKey(tool)); toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); }}
           >{present ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}</button></li>;
         })}</ul>
       </>}
     </section>}
 
+    {/* Empty stack: what the page does, in three real steps. No suggested
+        tools (suggestions before typing were ruled out in V1). */}
+    {empty && <ol className="ms-howto" aria-label={t("Comment ça marche", "How it works")}>
+      <li><strong>{t("Ajoutez vos outils", "Add your tools")}</strong><span>{t("Cherchez-les par leur nom : ils se rangent seuls par domaine.", "Search them by name: they sort themselves by area.")}</span></li>
+      <li><strong>{t("Repérez les recoupements", "Spot the overlaps")}</strong><span>{t("ToolTrim signale les outils de votre stack qui font le même travail.", "ToolTrim flags the tools in your stack that do the same job.")}</span></li>
+      <li><strong>{t("Comparez avant d’ajouter", "Compare before adding")}</strong><span>{t("Sur chaque fiche, voyez ce qu’un nouvel outil recoupe dans votre stack.", "On every tool page, see what a new tool overlaps in your stack.")}</span></li>
+    </ol>}
+
     {!empty && <>
-      <div className="ms-toolbar">
+      {/* Area tabs in Cards only: By use has its own area navigation. */}
+      {mode !== "map" && <div className="ms-toolbar">
         <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")}>
           <button type="button" aria-pressed={activeFilter === "all"} onClick={() => chooseDomain("all")}>{t("Tous les outils", "All tools")}<span>{selectedTools.length}</span></button>
           {mapTerritories.map((territory) => <button key={territory.id} type="button" aria-pressed={activeFilter === territory.id} onClick={() => chooseDomain(territory.id)}>
             {territory.id === "assist" ? t("IA", "AI") : territory.label}<span>{territory.tools.length}</span>
           </button>)}
         </div>
-        <div className="ms-view-switch" role="group" aria-label={t("Affichage du stack", "Stack view")}>
-          <button type="button" aria-label={t("Cartes", "Cards")} title={t("Cartes", "Cards")} aria-pressed={mode === "stack"} onClick={() => chooseMode("stack")}><LayoutGrid size={21} aria-hidden /><span>{t("Cartes", "Cards")}</span></button>
-          <button type="button" aria-label={t("Par usage", "By use")} title={t("Par usage", "By use")} aria-pressed={mode === "map"} onClick={() => chooseMode("map")}><CircleDot size={21} aria-hidden /><span>{t("Par usage", "By use")}</span></button>
-        </div>
-      </div>
+      </div>}
       <div className={`ms-workspace${selected ? " ms-workspace--focused" : ""}`}>
         <div className="ms-overview">
           {mode === "map" ? <StackUsageExplorer territories={mapTerritories} navigationRequest={telescopeRequest} onDomainChange={setDomainFilter} lang={lang} selectedId={selected?.id} onNavigate={() => { if (selected) closeInspector(); }} onSelect={(slug) => selected && toolKey(selected) === slug ? closeInspector() : selectTool(slug)} /> : <section aria-labelledby="ms-list-title">
-            <h2 className="tt-section-title" id="ms-list-title">{activeFilter === "all" ? t("Tous les outils", "All tools") : visibleMap[0]?.label}</h2>
+            <h2 className="tt-section-title ms-list-title" id="ms-list-title">{activeFilter === "all" ? t("Tous les outils", "All tools") : visibleMap[0]?.label}</h2>
             <div className="ms-card-grid">{listTools.map(renderTool)}</div>
           </section>}
         </div>
@@ -209,7 +255,7 @@ export default function CartPage() {
       </div>
       {missing.length > 0 && <section className="ms-unavailable"><h2>{t("Outils indisponibles", "Unavailable tools")}</h2>
         <p>{t("Ces références ne sont plus disponibles dans le catalogue actuel. Votre sélection est conservée.", "These references are unavailable in the current catalogue. Your selection is retained.")}</p>
-        {missing.map((slug) => <div key={slug}><span>{slug}</span><button onClick={() => removeTool(slug, slug)}>{t("Retirer du stack", "Remove from stack")}</button></div>)}
+        {missing.map((slug) => <div key={slug}><span>{slug}</span><button onClick={() => removeTool(slug, slug)}>{t("Retirer de ma stack", "Remove from stack")}</button></div>)}
         {loading && <p role="status">{t("Actualisation du catalogue…", "Refreshing catalogue…")}</p>}
       </section>}
     </>}

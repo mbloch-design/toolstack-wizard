@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 2,
+  "slug": "superhuman",
+  "tier": "B",
+  "researchedOn": "2026-10-07",
+  "completedLocallyOn": "2026-10-07",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Superhuman Mail",
+    "vendor": "Superhuman, Inc.",
+    "officialUrl": "https://superhuman.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": "In September 2026, Superhuman acquired Fathom, an AI meeting notetaker; Fathom keeps operating as its own product and this does not change Superhuman Mail's own plans or pricing (official announcement, September 14, 2026)."
+  },
+  "sources": [
+    { "id": "s1", "url": "https://superhuman.com/pricing", "tier": 1, "accessedOn": "2026-10-07", "title": "Superhuman Mail pricing (Starter, Business, Enterprise)" },
+    { "id": "s2", "url": "https://blog.superhuman.com/superhuman-acquires-fathom/", "tier": 1, "accessedOn": "2026-10-07", "title": "Superhuman Acquires Fathom (official announcement, Sept 14, 2026)" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://superhuman.com/pricing",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 30, "annualPerMonth": 25, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Email productivity, Superhuman AI, team collaboration, calendar and scheduling, unified admin and billing.", "fr": "Productivité e-mail, IA Superhuman, collaboration d'équipe, calendrier et planification, administration et facturation unifiées." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 40, "annualPerMonth": 33, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Everything in Starter plus the most advanced AI, auto drafts, Ask AI, Superhuman Mail MCP, custom auto labels and CRM integrations. The $33/month annual price is captioned as a discount for teams of 5 or more accounts.", "fr": "Tout ce qui est dans Starter, plus l'IA la plus avancée, les brouillons automatiques, Ask AI, le MCP Superhuman Mail, les étiquettes automatiques personnalisées et les intégrations CRM. Le prix de 33 $/mois en facturation annuelle est présenté comme une remise pour les équipes de 5 comptes ou plus." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [
+          { "en": "Everything in Business plus admin security and controls, single sign-on, a dedicated Customer Success Manager, team analytics and priority support.", "fr": "Tout ce qui est dans Business, plus les contrôles de sécurité admin, le SSO, une responsable de succès client dédiée, les analytics d'équipe et le support prioritaire." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      { "en": "Business plan's $33/month annual price is captioned 'Discount for 5+ accounts'; it is unclear whether a solo buyer or a smaller team pays a different, higher per-seat rate below 5 seats.", "fr": "Le prix de 33 $/mois en facturation annuelle du plan Business est accompagné de la mention « Discount for 5+ accounts » ; on ne sait pas si une acheteuse seule ou une équipe plus petite que 5 postes paie un tarif différent, plus élevé.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "An AI-assisted email client covering email productivity, calendar/scheduling and team collaboration, with unified admin and billing on every plan.", "fr": "Un client e-mail assisté par IA couvrant la productivité e-mail, le calendrier/planification et la collaboration d'équipe, avec administration et facturation unifiées sur chaque plan.", "sourceIds": ["s1"] },
+      { "en": "The Business plan adds auto drafts, Ask AI, custom auto labels, CRM integrations and a Superhuman Mail MCP server so AI agents can act on an inbox.", "fr": "Le plan Business ajoute les brouillons automatiques, Ask AI, les étiquettes automatiques personnalisées, les intégrations CRM et un serveur MCP Superhuman Mail permettant aux agents IA d'agir sur une boîte mail.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "No free trial length is published on the official pricing page checked in this session.", "fr": "Aucune durée d'essai gratuit n'est publiée sur la page tarifaire officielle consultée lors de cette session.", "sourceIds": ["s1"] },
+      { "en": "The lower Business per-seat price is explicitly tied to team size ('5+ accounts'); smaller teams may not get the advertised $33/month rate.", "fr": "Le tarif par poste réduit de Business est explicitement lié à la taille de l'équipe (« 5+ comptes ») ; les équipes plus petites pourraient ne pas obtenir le tarif annoncé de 33 $/mois.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "A consultant or founder who lives in their inbox and wants AI-assisted drafting, triage and scheduling to cut time spent on email.", "fr": "Un consultant ou une fondatrice qui vit dans sa boîte mail et veut une rédaction, un tri et une planification assistés par IA pour réduire le temps passé sur les e-mails." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use: let Superhuman's AI draft replies and sort incoming email into custom auto labels on the Business plan, instead of manually triaging a full inbox.", "fr": "Usage : laisser l'IA de Superhuman rédiger des réponses et trier les e-mails entrants dans des étiquettes automatiques personnalisées sur le plan Business, plutôt que de trier manuellement une boîte mail pleine." },
+    { "en": "Use: connect Superhuman Mail's MCP server so an AI agent can read and act on email context alongside other tools.", "fr": "Usage : connecter le serveur MCP de Superhuman Mail pour qu'un agent IA puisse lire et agir sur le contexte des e-mails aux côtés d'autres outils." }
+  ],
+  "alternatives": [
+    { "slug": "gmail", "reason": { "en": "The default email client Superhuman layers AI productivity features on top of, and a free baseline alternative.", "fr": "Le client e-mail par défaut sur lequel Superhuman superpose des fonctionnalités de productivité IA, et une alternative gratuite de base." } },
+    { "slug": "front", "reason": { "en": "A shared-inbox and email collaboration platform competing for the same team email-productivity budget.", "fr": "Une plateforme de boîte mail partagée et de collaboration e-mail qui vise le même budget de productivité e-mail en équipe." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Spark Mail", "officialUrl": "https://sparkmailapp.com", "reason": "AI-assisted email client competitor, not yet in the catalogue." },
+    { "name": "Shortwave", "officialUrl": "https://www.shortwave.com", "reason": "AI-assisted email client competitor with a similar positioning to Superhuman, not yet in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Starter costs $25/month billed annually for AI-assisted email productivity; whether that is worth it over a free client like Gmail depends on email volume, which the pricing page does not quantify.", "fr": "Starter coûte 25 $/mois facturé à l'année pour une productivité e-mail assistée par IA ; la question de savoir si cela vaut le coup face à un client gratuit comme Gmail dépend du volume d'e-mails, que la page tarifaire ne chiffre pas.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time to a first useful result and onboarding effort are not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire à un premier résultat utile et l'effort de prise en main ne figurent pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The feature list on the pricing page (AI drafts, Ask AI, auto labels, CRM integrations) matches what each tier claims to deliver.", "fr": "La liste de fonctionnalités de la page tarifaire (brouillons IA, Ask AI, étiquettes automatiques, intégrations CRM) correspond à ce que chaque palier annonce.", "sourceIds": ["s1"] },
+      "puissance": { "en": "An AI-first email client with MCP support for agents goes beyond a standard inbox, though it stays scoped to email and calendar rather than a full productivity suite.", "fr": "Un client e-mail pensé IA d'abord avec un support MCP pour les agents va au-delà d'une boîte mail standard, tout en restant centré sur l'e-mail et le calendrier plutôt qu'une suite de productivité complète.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: data export and portability if a user leaves Superhuman are not covered by the sources checked.", "fr": "Note neutre : l'export et la portabilité des données en cas de départ de Superhuman ne figurent pas dans les sources consultées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI email client", "fr": "Client e-mail IA" },
+    "shortDescription": { "en": "Superhuman is an AI-assisted email client that adds auto drafts, triage and CRM integrations on top of a connected inbox.", "fr": "Superhuman est un client e-mail assisté par IA qui ajoute brouillons automatiques, tri et intégrations CRM par-dessus une boîte mail connectée." },
+    "longDescription": {
+      "en": "Superhuman layers AI productivity on a connected inbox: email triage, calendar scheduling and team collaboration on Starter, with auto drafts, Ask AI, custom auto labels, CRM integrations and an MCP server for AI agents on Business.\n\nStarter costs $25/month billed annually ($30/month otherwise); Business costs $33/month annually, a rate captioned as a discount for teams of 5 or more. Enterprise adds SSO and a dedicated success manager on request. No free trial length is published. Superhuman acquired the AI meeting notetaker Fathom in September 2026, which continues as its own product. It fits a consultant or founder who wants AI help triaging a heavy inbox.",
+      "fr": "Superhuman superpose une productivité IA à une boîte mail connectée : tri des e-mails, calendrier et collaboration d'équipe sur Starter, avec brouillons automatiques, Ask AI, étiquettes personnalisées, intégrations CRM et un serveur MCP pour agents IA sur Business.\n\nStarter coûte 25 $/mois à l'année (30 $/mois sinon) ; Business coûte 33 $/mois à l'année, un tarif présenté comme une remise pour les équipes de 5 postes ou plus. Enterprise ajoute le SSO et une responsable dédiée sur demande. Aucune durée d'essai n'est publiée. Superhuman a racheté l'outil de notes de réunion IA Fathom en septembre 2026, qui reste un produit à part. Convient à un consultant qui veut une aide IA pour trier une boîte mail chargée."
+    },
+    "pros": [
+      { "en": "Business includes a Superhuman Mail MCP server, letting AI agents act directly on email, unusual among mainstream email clients.", "fr": "Business inclut un serveur MCP Superhuman Mail, qui permet aux agents IA d'agir directement sur les e-mails, chose rare parmi les clients e-mail grand public." },
+      { "en": "Unified admin and billing is included even on the entry Starter plan, not reserved for a higher tier.", "fr": "L'administration et la facturation unifiées sont incluses dès le plan d'entrée Starter, et non réservées à un palier supérieur." }
+    ],
+    "cons": [
+      { "en": "No free trial length is stated on the pricing page, unlike many SaaS competitors.", "fr": "Aucune durée d'essai gratuit n'est indiquée sur la page tarifaire, contrairement à de nombreux concurrents SaaS." },
+      { "en": "Business's advertised $33/month rate is tied to a 5+ account team size, with the solo or small-team rate left unclear.", "fr": "Le tarif annoncé de 33 $/mois pour Business est lié à une équipe de 5 comptes ou plus, le tarif pour une personne seule ou une petite équipe restant flou." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You process a high volume of email and want AI-assisted drafting and triage integrated into your inbox.", "fr": "Tu traites un volume élevé d'e-mails et tu veux une rédaction et un tri assistés par IA intégrés à ta boîte mail." },
+      "avoidIf": { "en": "You have light email volume where a free client like Gmail already covers your needs.", "fr": "Tu as un faible volume d'e-mails et un client gratuit comme Gmail couvre déjà tes besoins." },
+      "threshold": { "en": "Starter costs $300/year ($25/month) billed annually, the entry point for Superhuman's AI email features.", "fr": "Starter coûte 300 $/an (25 $/mois) facturé à l'année, le point d'entrée pour les fonctionnalités e-mail IA de Superhuman." },
+      "billingTraps": { "en": "Business's lower annual per-seat rate ($33/month) is captioned as a discount for 5+ accounts, so a smaller team should confirm its actual per-seat price before committing.", "fr": "Le tarif annuel par poste réduit de Business (33 $/mois) est présenté comme une remise pour 5 comptes ou plus ; une équipe plus petite devrait confirmer son tarif réel par poste avant de s'engager." }
+    }
+  },
+  "unknowns": [
+    "No free trial length is published on the pricing page checked this session.",
+    "Whether Superhuman ships native desktop or mobile apps in addition to the web product was not confirmed on the pages checked this session.",
+    "Whether a team under 5 accounts pays a different per-seat rate on Business than the advertised $33/month was not confirmed."
+  ],
+  "conflicts": []
+}

@@ -11,6 +11,19 @@ if (!Array.isArray(tools)) {
   throw new Error(`${sourcePath} doit contenir un tableau d’outils.`);
 }
 
+// Compare plan amounts as published, one per real currency, never converted.
+// period: "monthly" | "annual" | "once".
+function nativePricesOf(tool) {
+  const out = [];
+  for (const plan of [...(tool.pricing_v5?.plans || []), ...(tool.pricing_v5En?.plans || [])]) {
+    if (!plan?.isComparePlan || plan.isFree || !(plan.nativeAmount > 0) || !plan.nativeCurrency) continue;
+    if (out.some((entry) => entry.currency === plan.nativeCurrency)) continue;
+    const period = plan.billingPeriod === "monthly" ? "monthly" : plan.billingPeriod === "annual" ? "annual" : "once";
+    out.push({ amount: plan.nativeAmount, currency: plan.nativeCurrency, period });
+  }
+  return out;
+}
+
 const seen = new Set();
 const summaries = tools.map((tool, index) => {
   const id = String(tool.id || tool.slug || "").trim();
@@ -46,6 +59,10 @@ const summaries = tools.map((tool, index) => {
     ...(tool.pricing_v5?.compare_price_monthly_eur != null
       ? { compareMonthlyPrice: tool.pricing_v5.compare_price_monthly_eur }
       : {}),
+    // Attested entry price in the vendor's own currency (compare plan of
+    // pricing_v5 / pricing_v5En): what light views (catalogue cards, My stack)
+    // may show without reading prices out of editorial text or converting.
+    ...(nativePricesOf(tool).length ? { nativePrices: nativePricesOf(tool) } : {}),
     // "Prix non public" sentinel: a 0 that means unknown, not free.
     ...(/non public/i.test(tool.pricing_v5?.compare_plan_name || "") ? { priceUndisclosed: true } : {}),
     ...(affiliateLink ? { affiliateLink } : {}),
@@ -64,6 +81,11 @@ const summaries = tools.map((tool, index) => {
     // Les pages piliers persona filtrent sur ce champ. Sans lui dans l'index,
     // le filtre tourne a vide cote application, meme si tools_v4.json le porte.
     ...(tool.personas?.length ? { personas: tool.personas } : {}),
+    // Explicit catalogue alternatives (slugs): My stack shows the same
+    // potential overlaps on its cards as in its Focus panel.
+    ...(Array.isArray(tool.alternatives) && tool.alternatives.length
+      ? { alternatives: tool.alternatives.map((alt) => (typeof alt === "string" ? alt : alt?.slug || alt?.id || alt?.tool)).filter(Boolean) }
+      : {}),
     ...(tool.freeAlternative ? { freeAlternative: tool.freeAlternative } : {}),
     ...(tool.substitutable === false ? { substitutable: false } : {}),
     ...(tool.betterAlternative ? { betterAlternative: tool.betterAlternative } : {}),
