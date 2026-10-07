@@ -7,7 +7,10 @@ import { stackDisplayLabel, stackMapTerritories } from "@/lib/stackUsage";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
 import { budgetEntry, estimateStackBudget, formatApproximateBudget } from "@/lib/stackBudget";
 import { useCurrency } from "@/hooks/useCurrency";
-import { CURRENCY_RATE_DATE } from "@/lib/currencyRates";
+
+// One colour per area, for presence and to tell areas apart at a glance.
+// Muted, solid tints only (the charter rules out gradients).
+const BUBBLE_COLORS = ["#2F6FED", "#7C3AED", "#0E9F6E", "#E8590C", "#D6336C", "#0C8599", "#B08800", "#5F3DC4"];
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 
 type Territory = ReturnType<typeof stackMapTerritories>[number];
@@ -186,13 +189,13 @@ export default function StackUsageExplorer({ territories, lang, selectedId, navi
       </ol>
     </nav>
         {!selectedTool && <Popover open={pricesOpen} onOpenChange={setPricesOpen}>
-          <PopoverTrigger asChild><button type="button" className="ms-telescope-prices-button" disabled={moving}>{en ? "Estimated budget" : "Budget estimé"}{budget.included > 0 && <span>{formatApproximateBudget(budget, lang, currency)}{en ? "/month" : "/mois"}{budget.excluded > 0 ? "*" : ""}</span>}</button></PopoverTrigger>
+          <PopoverTrigger asChild><button type="button" className="ms-telescope-prices-button" disabled={moving}>{en ? "Estimated budget" : "Budget estimé"}{budget.included > 0 && <span>{formatApproximateBudget(budget, lang, currency)}{en ? "/month" : "/mois"}</span>}</button></PopoverTrigger>
           <PopoverContent className="ms-telescope-prices" align="end" sideOffset={8}>
             <h3>{en ? "Estimated budget" : "Budget estimé"}</h3>
             <p className="ms-budget-panel-total">{formatApproximateBudget(budget, lang, currency)}{budget.included > 0 && <small>{en ? " /month" : " /mois"}</small>}</p>
             {budget.included > 0 && <p className="ms-telescope-prices-note">{en ? "Annual equivalent: " : "Équivalent annuel : "}{formatApproximateBudget(budget, lang, currency, true)}</p>}
             <p className="ms-telescope-prices-note">{budget.included}/{budget.total} {en ? "tools included. Entry paid plans, per tool." : "outils pris en compte. Offres payantes d’entrée, par outil."}{budget.excluded > 0 && (en ? " Partial total." : " Total partiel.")}</p>
-            <p className="ms-telescope-prices-note">{en ? "Indicative conversion, site rates dated " : "Conversion indicative, taux du site datés du "}{CURRENCY_RATE_DATE}{en ? ". $ treated as USD." : ". $ assimilé à USD."}</p>
+            <p className="ms-telescope-prices-note">{en ? "Catalogue entry prices in each vendor's own currency, never converted: totals stay per currency." : "Prix d’entrée du catalogue, dans la devise de chaque éditeur, jamais convertis : les totaux restent par devise."}</p>
             <div className="ms-telescope-prices-list">{priceGroups.map(group => <section key={group.id}>
               <h4 className="ms-budget-group-heading"><span>{group.label}</span><span>{formatApproximateBudget(estimateStackBudget(group.tools, currency, lang), lang, currency)}</span></h4>
               {group.tools.map(tool => {
@@ -210,14 +213,19 @@ export default function StackUsageExplorer({ territories, lang, selectedId, navi
           </PopoverContent>
         </Popover>}
       </header>
+      <p className="ms-usage-legend">{en ? "Bubble size: number of tools. Prices: catalogue entry plans, per currency." : "Taille des bulles : nombre d’outils. Prix : offres d’entrée du catalogue, par devise."}{budget.excluded > 0 && (en ? ` ${budget.excluded} of ${budget.total} tools have no checked price.` : ` ${budget.excluded} outil${budget.excluded > 1 ? "s" : ""} sur ${budget.total} sans prix relevé.`)}</p>
       <div className={`ms-bubble-canvas${domain ? " ms-bubble-canvas--inside" : ""}`}>
         {domain && <h3 className="ms-telescope-level-title">{title}</h3>}
-        <div className="ms-bubble-field" ref={fieldRef} key={`${domainId}/${usageId}`}>{bubbles.map(b => {
+        <div className="ms-bubble-field" ref={fieldRef} key={`${domainId}/${usageId}`}>{bubbles.map((b, index) => {
           const bubbleBudget = estimateStackBudget(b.item.tool ? [b.item.tool] : b.item.tools || [], currency, lang);
-          const bubblePrice = bubbleBudget.included > 0 ? `${formatApproximateBudget(bubbleBudget, lang, currency)}${en ? "/mo" : "/mois"}${bubbleBudget.excluded > 0 ? "*" : ""}` : "—";
+          // Free-only areas read "Free", not "$0/mo"; partial totals are explained
+          // once in the legend instead of an unexplained asterisk.
+          const freeOnly = bubbleBudget.included > 0 && bubbleBudget.totals.length === 0;
+          const bubblePrice = bubbleBudget.included > 0 ? (freeOnly ? (en ? "Free" : "Gratuit") : `${formatApproximateBudget(bubbleBudget, lang, currency)}${en ? "/mo" : "/mois"}`) : "—";
+          const color = BUBBLE_COLORS[(domain ? index + 3 : index) % BUBBLE_COLORS.length];
           return <StackBubblePeek key={b.item.id} tools={b.item.tool ? [b.item.tool] : b.item.tools || []} label={b.item.label} lang={lang} disabled={moving} group={!b.item.tool} onExplore={() => open(b.item)} onSelect={onSelect}><button type="button" disabled={moving}
           className={`ms-usage-bubble${b.item.tool && b.item.tool.id === selectedId ? " ms-usage-bubble--selected" : ""}`}
-          style={{ left: `${b.left}%`, top: `${b.top}%`, width: `${b.diameter}%`, height: `${b.diameter}%` }}
+          style={{ left: `${b.left}%`, top: `${b.top}%`, width: `${b.diameter}%`, height: `${b.diameter}%`, ["--bubble-color" as string]: color, ["--bubble-delay" as string]: `${index * 45}ms` }}
           data-tool-id={b.item.tool?.id}
           title={`${b.item.label} · ${bubbleBudget.included}/${bubbleBudget.total} ${en ? "tools included" : "outils pris en compte"} · ${bubbleBudget.included ? bubblePrice : en ? "Price unavailable" : "Tarif non renseigné"}`}
           aria-label={b.item.tool ? b.item.label : `${b.item.label}, ${b.item.weight} ${en ? b.item.weight === 1 ? "tool" : "tools" : b.item.weight === 1 ? "outil" : "outils"}`}
@@ -228,7 +236,8 @@ export default function StackUsageExplorer({ territories, lang, selectedId, navi
             {b.item.tools?.slice(0, 3).map(tool => <ToolLogo key={tool.id} tool={tool} size={b.item.weight === 1 && b.diameter >= 18 ? 40 : 28} />)}
           </span>}
           <strong>{b.item.label}</strong>
-          <span className="ms-bubble-budget">{bubbleBudget.included > 0 ? <span>{formatApproximateBudget(bubbleBudget, lang, currency)}<small>{en ? "/mo" : "/mois"}</small>{bubbleBudget.excluded > 0 ? "*" : ""}</span> : "—"}</span>
+          {!b.item.tool && <span className="ms-bubble-count">{en ? `${b.item.weight} ${b.item.weight === 1 ? "tool" : "tools"}` : `${b.item.weight} outil${b.item.weight > 1 ? "s" : ""}`}</span>}
+          <span className="ms-bubble-budget">{bubblePrice}</span>
           </span>
         </button></StackBubblePeek>;
         })}</div>

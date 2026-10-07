@@ -35094,11 +35094,7 @@ img[data-logo-loading] {
 }
 .ms-page .ms-tool.ms-tool-card:hover { background: hsl(var(--card)); border-color: hsl(var(--muted-foreground) / .35); box-shadow: 0 8px 24px rgba(15, 15, 15, .06); transform: translateY(-2px); }
 .ms-page .ms-tool.ms-tool-card.ms-tool--selected { border-color: hsl(var(--foreground)); outline: 0; }
-/* Vue Par usage : bulles plates, sans dégradé ni ombre interne. */
-.ms-page .ms-usage-stage { background: hsl(var(--secondary) / .45); }
-.ms-page .ms-usage-bubble { background: hsl(var(--card)); box-shadow: 0 1px 2px rgba(15, 15, 15, .04); border-color: hsl(var(--border)); }
-.ms-page .ms-usage-bubble:hover { border-color: hsl(var(--muted-foreground) / .4); box-shadow: 0 10px 28px rgba(15, 15, 15, .07); }
-.ms-page .ms-usage-bubble--selected { border-color: hsl(var(--foreground)); box-shadow: 0 10px 28px rgba(15, 15, 15, .07); }
+
 @media (prefers-reduced-motion: reduce) { .ms-page .ms-tool.ms-tool-card:hover { transform: none; } }
 
 /* Ma stack, lecture d'ensemble (7 oct.) : une ligne factuelle sous le titre,
@@ -35179,3 +35175,39 @@ img[data-logo-loading] {
   .ms-page .ms-card-top { padding: 14px 14px 12px; }
   .ms-page .ms-card-foot { padding: 0 14px; min-height: 44px; }
 }
+/* ── Ma stack, vue Par usage (7 oct.) ──
+   Présence : une couleur par domaine (teinte unie, pas de dégradé), logos plus
+   grands en pile. Compréhension : nom, nombre d'outils (ce que mesure la
+   taille), prix ; légende d'une ligne. Fluidité : entrée en cascade à chaque
+   niveau, léger agrandissement au survol. */
+.ms-page .ms-usage-stage { background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
+.ms-page .ms-usage-stage-heading { border-bottom: 0; padding-bottom: 4px; }
+.ms-page .ms-usage-legend { margin: 0; padding: 0 var(--space-md); color: hsl(var(--muted-foreground)); font: 400 12.5px/1.45 var(--font-ui); }
+.ms-page .ms-usage-bubble {
+  --bubble-color: #6F6F68;
+  background: color-mix(in srgb, var(--bubble-color) 9%, hsl(var(--card)));
+  border: 1.5px solid color-mix(in srgb, var(--bubble-color) 30%, hsl(var(--card)));
+  box-shadow: none;
+  transition: scale 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease, border-color 200ms ease, background-color 200ms ease;
+}
+.ms-page .ms-usage-bubble:hover, .ms-page .ms-usage-bubble:focus-visible {
+  border-color: color-mix(in srgb, var(--bubble-color) 65%, hsl(var(--card)));
+  background: color-mix(in srgb, var(--bubble-color) 14%, hsl(var(--card)));
+  box-shadow: 0 14px 32px color-mix(in srgb, var(--bubble-color) 18%, transparent);
+}
+.ms-page .ms-usage-bubble--selected { border-color: var(--bubble-color); box-shadow: 0 0 0 3px color-mix(in srgb, var(--bubble-color) 20%, transparent); }
+.ms-page .ms-usage-bubble strong { color: hsl(var(--foreground)); font-weight: 700; letter-spacing: -.01em; }
+.ms-page .ms-usage-bubble .ms-bubble-count { color: color-mix(in srgb, var(--bubble-color) 75%, #000); font-weight: 600; }
+.ms-page .ms-usage-bubble .ms-bubble-budget { color: hsl(var(--muted-foreground)); font-weight: 500; }
+.ms-page .ms-bubble-logos > * { border-radius: 10px; box-shadow: 0 0 0 2px hsl(var(--card)); background: hsl(var(--card)); }
+.ms-page .ms-bubble-logos > * + * { margin-left: -6px; }
+@container (min-width: 170px) {
+  .ms-page .ms-usage-bubble strong { font-size: 18px; }
+  .ms-page .ms-bubble-logos > * { width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ms-page .ms-usage-bubble { animation: ms-bubble-enter 520ms cubic-bezier(0.2, 0.8, 0.2, 1) var(--bubble-delay, 0ms) backwards, ms-bubble-drift 8s ease-in-out calc(var(--bubble-delay, 0ms) + 520ms) infinite; }
+  /* "scale", not "transform": the drift animation owns transform. */
+  .ms-page .ms-usage-bubble:hover { scale: 1.035; }
+}
+@keyframes ms-bubble-enter { from { opacity: 0; scale: .82; } }
