@@ -251,10 +251,12 @@ export default function CartPage() {
             <div className={overlapScore.doubleTotal > 0 ? "ms-stat--overlaps" : undefined}><dt><Copy size={15} aria-hidden />{t("Payé en double", "Paid twice")}</dt><dd>{overlapScore.doubleTotal > 0 ? amount(overlapScore.doubleTotal) : (overlapPairs > 0 ? formatAmount(0, currency, lang) : t("Rien", "None"))}</dd>
               {(() => {
                 const share = stackCost.total > 0 ? Math.min(1, overlapScore.doubleTotal / stackCost.total) : 0;
-                return <span className="ms-stat-bar ms-stat-bar--share" aria-label={t(`${Math.round(share * 100)} % du coût mensuel`, `${Math.round(share * 100)}% of the monthly cost`)}>{share > 0 && <i style={{ flexGrow: share }} data-tip={t(`≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)} payés en double`, `≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)} paid twice`)} />}<i style={{ flexGrow: 1 - share }} data-tip={t(`≈ ${formatAmount(Math.round(stackCost.total - overlapScore.doubleTotal), currency, lang)} sans doublon`, `≈ ${formatAmount(Math.round(stackCost.total - overlapScore.doubleTotal), currency, lang)} with no overlap`)} /><em>{t(`${Math.round(share * 100)} % du coût`, `${Math.round(share * 100)}% of cost`)}</em></span>;
-              })()}{overlapPairs > 0
+                return <span className="ms-stat-bar ms-stat-bar--share" aria-label={t(`${Math.round(share * 100)} % du coût mensuel`, `${Math.round(share * 100)}% of the monthly cost`)}>{share > 0 && <i style={{ flexGrow: share }} data-tip={t(`≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)} payés en double`, `≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)} paid twice`)} />}<i style={{ flexGrow: 1 - share }} data-tip={t(`≈ ${formatAmount(Math.round(stackCost.total - overlapScore.doubleTotal), currency, lang)} sans doublon`, `≈ ${formatAmount(Math.round(stackCost.total - overlapScore.doubleTotal), currency, lang)} with no overlap`)} /></span>;
+              })()}
+              {/* Fourth row, like the other columns: share of the cost, then the way to the overlaps. */}
+              <span className="ms-stat-note">{stackCost.total > 0 && <>{t(`${Math.round(Math.min(1, overlapScore.doubleTotal / stackCost.total) * 100)} % du coût`, `${Math.round(Math.min(1, overlapScore.doubleTotal / stackCost.total) * 100)}% of cost`)}<br /></>}{overlapPairs > 0
               ? <a className="ms-stat-link" href="#ms-overlaps" onClick={(event) => { event.preventDefault(); jumpTo("ms-overlaps"); }}>{t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} overlap${overlapPairs > 1 ? "s" : ""}`)} ↓</a>
-              : <span>{t("aucun recoupement connu", "no known overlap")}</span>}</div>
+              : t("aucun recoupement connu", "no known overlap")}</span></div>
           </dl>
         </>}
       </div>

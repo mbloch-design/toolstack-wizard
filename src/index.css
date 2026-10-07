@@ -35170,3 +35170,20 @@ img[data-logo-loading] {
   .ms-page .ms-pair-actions { justify-content: flex-end; padding-top: 0; }
 }
 @media (max-width: 640px) { .ms-page .ms-pairs-panel .ms-pair { height: auto; } .ms-page .ms-pair-foot { flex: none; align-content: start; } }
+/* Hero figures line up across columns (7 Oct 2026): labels stay on one line,
+   and label, figure, bar and note share rows through a subgrid. */
+@media (min-width: 641px) {
+  .ms-page .ms-hero-stats { grid-template-rows: auto auto auto auto; row-gap: 0; }
+  .ms-page .ms-hero-stats > div { display: grid; grid-row: span 4; grid-template-rows: subgrid; align-content: start; }
+  .ms-page .ms-hero-stats dt { white-space: nowrap; letter-spacing: .06em; }
+  .ms-page .ms-hero-stats dd { margin-top: 6px; }
+  .ms-page .ms-hero-stats .ms-stat-bar { align-self: center; }
+  .ms-page .ms-hero-stats > div > :last-child { align-self: start; }
+}
+@media (min-width: 641px) {
+  .ms-page .ms-hero-stats .ms-stat-bar { align-self: start; }
+  .ms-page .ms-hero-stats .ms-stat-bar--share { padding-top: 4px; }
+}
+/* The share bar no longer holds its caption: same box as the other bars. */
+.ms-page .ms-hero-stats .ms-stat-bar--share { height: 14px; padding-top: 0; flex-wrap: nowrap; }
+.ms-page .ms-hero-stats .ms-stat-note { line-height: 1.5; }
