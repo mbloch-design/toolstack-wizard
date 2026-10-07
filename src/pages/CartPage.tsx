@@ -11,6 +11,7 @@ import { useCategories, useToolSummaries, useToolBySlug, type ToolSummary } from
 import { readStackView, STACK_VIEW_KEY, stackCatalogPrice, toolKey, type StackViewMode } from "@/lib/stackView";
 import { stackDisplayLabel, stackPlacement, stackMapTerritories, stackRelations } from "@/lib/stackUsage";
 import { getScrollTop, scrollToY } from "@/lib/scroll";
+import toolAccents from "@/data/toolAccents.json";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 
@@ -142,19 +143,28 @@ export default function CartPage() {
     const active = selected?.id === tool.id;
     const price = mode === "stack" ? stackCatalogPrice(tool, lang) : null;
     const overlaps = overlapsById.get(tool.id) || [];
+    const accent = (toolAccents as Record<string, string>)[toolKey(tool)];
+    // Two fixed zones: identity on top, then a footer on a hairline (price
+    // left, overlap right) aligned across every card of a row.
     return <button
       key={tool.id}
       type="button"
       data-tool-id={tool.id}
       className={`ms-tool ms-tool-card${active ? " ms-tool--selected" : ""}`}
+      style={accent ? ({ "--tool-accent": accent } as React.CSSProperties) : undefined}
       aria-expanded={active}
       aria-controls={active ? "ms-tool-context" : undefined}
       onClick={(event) => { lastToolButton.current = event.currentTarget; active ? closeInspector() : selectTool(toolKey(tool)); }}
     >
-      <ToolLogo tool={tool} size={40} />
-      <span className="ms-tool-copy"><strong>{tool.name}</strong>{mode === "stack" && <span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>}</span>{price && <span className="ms-list-price">{price}</span>}
-      {mode === "stack" && overlaps.length > 0 && <span className="ms-card-overlap">
-        {t(`Recoupe ${overlaps[0].name}`, `Overlaps with ${overlaps[0].name}`)}{overlaps.length > 1 ? ` +${overlaps.length - 1}` : ""}
+      <span className="ms-card-top">
+        <span className="ms-card-logo"><ToolLogo tool={tool} size={34} /></span>
+        <span className="ms-card-id"><strong>{tool.name}</strong>{mode === "stack" && <span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>}</span>
+      </span>
+      {mode === "stack" && <span className="ms-card-foot">
+        <span className={`ms-card-price${price ? "" : " ms-card-price--none"}`}>{price || t("Tarif non relevé", "Price not checked")}</span>
+        {overlaps.length > 0 && <span className="ms-card-overlap" title={t(`Recoupe ${overlaps.map((o) => o.name).join(", ")}`, `Overlaps with ${overlaps.map((o) => o.name).join(", ")}`)}>
+          <span className="ms-card-overlap-name">{overlaps[0].name}</span>{overlaps.length > 1 && <span>+{overlaps.length - 1}</span>}
+        </span>}
       </span>}
     </button>;
   }

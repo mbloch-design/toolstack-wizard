@@ -35110,12 +35110,6 @@ img[data-logo-loading] {
 .ms-page .ms-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0; margin: 0; color: hsl(var(--muted-foreground)); font: 500 15px/1.4 var(--font-ui); }
 .ms-page .ms-summary > span + span::before { content: "·"; margin: 0 10px; color: hsl(var(--border)); }
 .ms-page .ms-summary-overlaps { color: hsl(var(--foreground)); font-weight: 600; }
-.ms-page .ms-card-overlap {
-  grid-column: 2 / -1; justify-self: start; display: inline-flex; align-items: center; gap: 6px;
-  margin-top: 2px; padding: 3px 9px; border-radius: var(--radius-pill);
-  background: hsl(var(--secondary)); color: hsl(var(--foreground)); font: 500 12px/1.3 var(--font-ui);
-}
-.ms-page .ms-card-overlap::before { content: ""; width: 10px; height: 10px; border-radius: 50%; box-shadow: 4px 0 0 -1px hsl(var(--background)), 4px 0 0 0 currentColor; border: 1px solid currentColor; flex: none; }
 .ms-page .ms-inspector-actions .tt-button-secondary { border-radius: var(--radius-pill); }
 /* Panneau Ma stack : chaque recoupement mène à la comparaison des deux outils. */
 .ms-page .ms-overlap-row { display: flex; align-items: center; gap: 8px; }
@@ -35149,3 +35143,39 @@ img[data-logo-loading] {
 .ms-page .ms-howto strong { font: 600 16px/1.3 var(--font-ui); color: hsl(var(--foreground)); }
 .ms-page .ms-howto span { font: 400 14px/1.5 var(--font-ui); color: hsl(var(--muted-foreground)); }
 @media (max-width: 760px) { .ms-page .ms-howto { grid-template-columns: 1fr; margin-top: 28px; } .ms-page .ms-howto li { grid-template-columns: 28px 1fr; column-gap: 12px; padding: 16px; } .ms-page .ms-howto li::before { grid-row: 1 / 3; margin: 0; } }
+/* ── Ma stack, cartes (7 oct.) ──
+   Deux zones fixes : l'identité en haut (logo dans un cadre teinté de la
+   couleur de l'outil, nom, catégorie), puis un pied posé sur un filet, aligné
+   d'une carte à l'autre (prix à gauche, recoupement à droite sur une ligne). */
+.ms-page .ms-card-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; align-items: stretch; }
+.ms-page .ms-tool.ms-tool-card {
+  display: flex; flex-direction: column; align-items: stretch; gap: 0; height: 100%; padding: 0; text-align: left;
+}
+.ms-page .ms-card-top { display: flex; align-items: center; gap: 14px; padding: 18px 18px 16px; min-width: 0; }
+.ms-page .ms-card-logo {
+  display: grid; flex: none; place-items: center; width: 52px; height: 52px; border-radius: 14px;
+  background: color-mix(in srgb, var(--tool-accent, hsl(var(--secondary))) 12%, hsl(var(--card)));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--tool-accent, hsl(var(--border))) 28%, hsl(var(--border)));
+}
+.ms-page .ms-card-id { display: grid; gap: 3px; min-width: 0; }
+.ms-page .ms-card-id strong { overflow: hidden; color: hsl(var(--foreground)); font: 650 17px/1.25 var(--font-ui); letter-spacing: -.01em; text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-card-id span { overflow: hidden; color: hsl(var(--muted-foreground)); font: 400 13.5px/1.35 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-card-foot {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 48px; margin-top: auto;
+  padding: 0 18px; border-top: 1px solid hsl(var(--border));
+}
+.ms-page .ms-card-price { overflow: hidden; color: hsl(var(--foreground)); font: 600 13.5px/1.2 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ms-page .ms-card-price--none { color: hsl(var(--muted-foreground)); font-weight: 400; }
+.ms-page .ms-card-overlap {
+  display: inline-flex; align-items: center; gap: 4px; flex: 0 1 auto; min-width: 0; max-width: 60%; height: 26px; padding: 0 10px;
+  border-radius: var(--radius-pill); background: color-mix(in srgb, var(--tool-accent, hsl(var(--foreground))) 10%, hsl(var(--card)));
+  color: hsl(var(--foreground)); font: 600 12px/1 var(--font-ui); white-space: nowrap;
+}
+.ms-page .ms-card-overlap::before { content: "⇄"; flex: none; font-weight: 400; color: hsl(var(--muted-foreground)); }
+.ms-page .ms-card-overlap-name { overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.ms-page .ms-tool.ms-tool-card.ms-tool--selected .ms-card-foot { border-top-color: hsl(var(--foreground) / .25); }
+@media (max-width: 640px) {
+  .ms-page .ms-card-grid { grid-template-columns: 1fr; gap: 10px; }
+  .ms-page .ms-card-top { padding: 14px 14px 12px; }
+  .ms-page .ms-card-foot { padding: 0 14px; min-height: 44px; }
+}

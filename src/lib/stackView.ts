@@ -38,7 +38,9 @@ export function pickNativePrice(tool: PricedTool, lang: string): NativePrice | n
 }
 
 export function formatNativePrice(price: NativePrice, lang: string): string {
-  const value = new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", { maximumFractionDigits: 2 }).format(price.amount);
+  // Cents shown in full when there are any: "$35.90", not "$35.9".
+  const cents = !Number.isInteger(price.amount);
+  const value = new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", { minimumFractionDigits: cents ? 2 : 0, maximumFractionDigits: 2 }).format(price.amount);
   const symbol = { USD: "$", EUR: "€", GBP: "£" }[price.currency] || price.currency;
   // "$22.99" in English, "22,99 $" in French, as on the tool page.
   const money = lang === "en" && symbol.length === 1 ? `${symbol}${value}` : `${value}\u00a0${symbol}`;
