@@ -8,11 +8,11 @@ import { AREA_COLORS, type Territory } from "@/components/stack/StackAreaBoard";
 
 /**
  * Tuile Budget du tableau de bord Ma stack : l'anneau de répartition des pages
- * Stack (sg-donut, sg-storage-legend), sur le périmètre choisi dans la carte
- * des usages (toute la stack ou un domaine). Par outil, ou par domaine quand
- * plusieurs domaines sont visibles. Les outils freemium se déclarent ici
- * (« Je paie ») : c'est un réglage du budget. Mêmes règles que le reste de la
- * page : offres d'entrée attestées, freemium à 0 sauf « Je paie », total
+ * Stack (sg-donut, sg-storage-legend). Par outil, ou par domaine ; un clic sur
+ * un domaine filtre toute la page (budget, recoupements, outils), et l'anneau
+ * passe alors à ce domaine, par outil. Les outils freemium se déclarent dans
+ * le widget Freemium, vers lequel le budget renvoie. Mêmes règles que le
+ * reste de la page : offres d'entrée attestées, freemium à 0 sauf « Je paie », total
  * converti au taux daté et affiché comme converti (Michael, 7 oct. 2026).
  */
 
@@ -20,21 +20,22 @@ interface Props {
   territories: Territory[];
   /** Colour index of each area in the whole stack, so a filtered area keeps its colour. */
   colorOf: (id: string) => string;
+  onChooseArea: (id: string) => void;
   paid: { isPaid: (slug: string) => boolean; setPaid: (slug: string, value: boolean) => void };
   currency: Currency;
   lang: "fr" | "en";
   onSelect: (slug: string) => void;
-  declareOpen: boolean;
-  onDeclareOpen: (open: boolean) => void;
+  /** Leads to the freemium widget, where plans are declared. */
+  onFreemium: () => void;
 }
 
 type Line = { id: string; label: string; amount: number; tool?: ToolSummary; color?: string };
 const LEGEND_MAX = 6;
 
-export default function StackBudgetBreakdown({ territories, colorOf, paid, currency, lang, onSelect, declareOpen, onDeclareOpen }: Props) {
+export default function StackBudgetBreakdown({ territories, colorOf, onChooseArea, paid, currency, lang, onSelect, onFreemium }: Props) {
   const en = lang === "en";
   const rateDate = new Intl.DateTimeFormat(en ? "en-US" : "fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${CURRENCY_RATE_DATE}T00:00:00`));
-  const [view, setView] = useState<"tool" | "area">("tool");
+  const [view, setView] = useState<"tool" | "area">("area");
   const [focus, setFocus] = useState<string | null>(null);
   const money = (amount: number) => formatAmount(Math.round(amount), currency, lang);
 
@@ -50,10 +51,6 @@ export default function StackBudgetBreakdown({ territories, colorOf, paid, curre
   const byArea = view === "area" && territories.length > 1;
   const lines = byArea ? areaLines : toolLines;
   const total = toolLines.reduce((sum, line) => sum + line.amount, 0);
-  const freemium = tools.filter((tool) => {
-    const kind = toolMonthlyCost(tool, paid.isPaid, lang).kind;
-    return kind === "freemium-free" || (kind === "paid" && paid.isPaid(toolKey(tool)));
-  }).sort((a, b) => a.name.localeCompare(b.name, lang));
   const undeclared = tools.filter((tool) => toolMonthlyCost(tool, paid.isPaid, lang).kind === "freemium-free").length;
   const unknown = tools.filter((tool) => toolMonthlyCost(tool, paid.isPaid, lang).kind === "unknown").length;
   const shade = (i: number) => (lines.length > 1 ? 1 - (i / (lines.length - 1)) * 0.72 : 1);
@@ -87,7 +84,7 @@ export default function StackBudgetBreakdown({ territories, colorOf, paid, curre
                 className={`sg-donut-seg${focus && focus !== line.id ? " is-dim" : ""}${focus === line.id ? " is-focus" : ""}`}
                 style={line.color ? { stroke: line.color } : { opacity: shade(i) }}
                 strokeDasharray={`${Math.max(0.5, len - gap)} ${c}`} strokeDashoffset={-offset}
-                onMouseEnter={() => setFocus(line.id)}><title>{`${line.label} · ≈ ${money(line.amount)} (${Math.round((line.amount / total) * 100)} %)`}</title></circle>;
+                onMouseEnter={() => setFocus(line.id)} onClick={byArea ? () => onChooseArea(line.id) : undefined}><title>{`${line.label} · ≈ ${money(line.amount)} (${Math.round((line.amount / total) * 100)} %)`}</title></circle>;
               offset += len;
               return seg;
             })}
@@ -97,37 +94,22 @@ export default function StackBudgetBreakdown({ territories, colorOf, paid, curre
         </svg>
         <ul className="sg-storage-legend">
           {shown.map((line, i) => (
-            <li key={line.id} className={[focus === line.id ? "is-focus" : "", focus && focus !== line.id ? "is-dim" : ""].filter(Boolean).join(" ") || undefined} onMouseEnter={() => setFocus(line.id)}>
+            <li key={line.id} className={[line.tool ? "" : "ms-budget-area", focus === line.id ? "is-focus" : "", focus && focus !== line.id ? "is-dim" : ""].filter(Boolean).join(" ") || undefined} onMouseEnter={() => setFocus(line.id)}>
               <span className="sg-storage-dot" style={line.color ? { background: line.color } : { opacity: shade(i) }} aria-hidden />
-              {line.tool ? <ToolLogo tool={line.tool} size={24} className="sg-budget-logo" /> : <span aria-hidden />}
+              {line.tool && <ToolLogo tool={line.tool} size={24} className="sg-budget-logo" />}
               {line.tool
                 ? <button type="button" className="sg-budget-name ms-budget-link" onClick={() => onSelect(toolKey(line.tool!))}>{line.label}</button>
-                : <span className="sg-budget-name">{line.label}</span>}
+                : <button type="button" className="sg-budget-name ms-budget-link" onClick={() => onChooseArea(line.id)} aria-label={en ? `Focus on ${line.label}` : `Zoomer sur ${line.label}`}>{line.label}</button>}
               <span className="sg-budget-value">≈ {money(line.amount)}</span>
             </li>
           ))}
           {rest.length > 0 && <li className="ms-budget-rest"><span aria-hidden /><span aria-hidden /><span className="sg-budget-name">{en ? `${rest.length} more` : `${rest.length} autre${rest.length > 1 ? "s" : ""}`}</span><span className="sg-budget-value">≈ {money(rest.reduce((sum, line) => sum + line.amount, 0))}</span></li>}
         </ul>
       </div>}
-      {freemium.length > 0 && <details className="ms-declare" open={declareOpen} onToggle={(event) => onDeclareOpen((event.currentTarget as HTMLDetailsElement).open)}>
-        <summary>{undeclared > 0
-          ? (en ? `${undeclared} freemium counted as free. Do you pay for one?` : `${undeclared} freemium compté${undeclared > 1 ? "s" : ""} gratuit${undeclared > 1 ? "s" : ""}. Vous en payez un ?`)
-          : (en ? "Freemium plans you declared" : "Les freemium que vous avez déclarés")}</summary>
-        <ul>
-          {freemium.map((tool) => {
-            const on = paid.isPaid(toolKey(tool));
-            return <li key={tool.id}>
-              <ToolLogo tool={tool} size={22} />
-              <span>{tool.name}</span>
-              <button type="button" className={`ms-plan-switch${on ? " is-paid" : ""}`} aria-pressed={on}
-                title={on ? (en ? "Counted at its entry paid plan" : "Compté à son offre payante d’entrée") : (en ? "Counted as free" : "Compté comme gratuit")}
-                onClick={() => paid.setPaid(toolKey(tool), !on)}>
-                {on ? (en ? "I pay" : "Je paie") : (en ? "Free use" : "Usage gratuit")}
-              </button>
-            </li>;
-          })}
-        </ul>
-      </details>}
+      {undeclared > 0 && <a className="ms-budget-freemium" href="#ms-freemium" onClick={(event) => { event.preventDefault(); onFreemium(); }}>
+        <strong>{en ? `${undeclared} freemium counted as free` : `${undeclared} freemium compté${undeclared > 1 ? "s" : ""} gratuit${undeclared > 1 ? "s" : ""}`}</strong>
+        <span>{en ? "Do you pay for some? Tell us below" : "Vous en payez ? Dites-le plus bas"} ↓</span>
+      </a>}
       <p className="ms-tile-note">
         {en
           ? `Catalogue entry plans, not your invoices. Converted to ${currency} at the site's rate of ${rateDate}.${unknown > 0 ? ` ${unknown} without a checked price.` : ""}`

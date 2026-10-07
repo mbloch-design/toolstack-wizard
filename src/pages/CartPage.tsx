@@ -4,10 +4,10 @@ import { Plus, Search, Check, X } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import StackUsageMap from "@/components/stack/StackUsageMap";
 import { AREA_COLORS } from "@/components/stack/StackAreaBoard";
 import StackBudgetBreakdown from "@/components/stack/StackBudgetBreakdown";
 import StackOverlapPairs from "@/components/stack/StackOverlapPairs";
+import StackFreemiumPlans from "@/components/stack/StackFreemiumPlans";
 import StackToolInspector from "@/components/stack/StackToolInspector";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
@@ -31,7 +31,6 @@ export default function CartPage() {
   const { state, persistenceStatus, pinTool, unpinTool, restoreTool } = useStackPins();
   const [params, setParams] = useSearchParams();
   const [domainFilter, setDomainFilter] = useState("all");
-  const [declareOpen, setDeclareOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
@@ -75,9 +74,8 @@ export default function CartPage() {
   }, [selectedTools, plans.paid, currency, lang]);
   const heroApps = heroOrder.length > HERO_CLUSTER_SLOTS.length ? heroOrder.slice(0, HERO_CLUSTER_SLOTS.length - 1) : heroOrder;
   const heroOverflow = heroOrder.length - heroApps.length;
-  // Dashboard: the usage map picks the scope (whole stack or one area) and
-  // every tile follows it. Area colours stay those of the whole stack.
-  const areaCosts = useMemo(() => new Map(mapTerritories.map((territory) => [territory.id, stackMonthlyCost(territory.tools, plans.isPaid, currency, lang).total])), [mapTerritories, plans.paid, currency, lang]);
+  // Dashboard: an area picked in the budget ring (or the tool tabs) sets the
+  // scope, and budget, overlaps and tools follow it. Area colours stay those of the whole stack.
   const colorOf = (id: string) => AREA_COLORS[Math.max(0, mapTerritories.findIndex((territory) => territory.id === id)) % AREA_COLORS.length];
   const scopeLabel = activeFilter === "all" ? null : visibleMap[0]?.label;
   const toCheck = stackCost.freemiumFree + stackCost.unknown;
@@ -213,7 +211,7 @@ export default function CartPage() {
               ? <a className="ms-stat-link" href="#ms-overlaps" onClick={(event) => { event.preventDefault(); jumpTo("ms-overlaps"); }}>{t("à examiner", "to review")} ↓</a>
               : <span>{t("aucun connu", "none known")}</span>}</div>
             <div className={toCheck > 0 ? "ms-stat--overlaps" : undefined}><dt>{t("À vérifier", "To check")}</dt><dd>{toCheck}</dd>{stackCost.freemiumFree > 0
-              ? <a className="ms-stat-link" href="#ms-budget" onClick={(event) => { event.preventDefault(); setDeclareOpen(true); jumpTo("ms-budget"); }}>{t(`${stackCost.freemiumFree} freemium à déclarer`, `${stackCost.freemiumFree} freemium to declare`)} ↓</a>
+              ? <a className="ms-stat-link" href="#ms-freemium" onClick={(event) => { event.preventDefault(); jumpTo("ms-freemium"); }}>{t(`${stackCost.freemiumFree} freemium à déclarer`, `${stackCost.freemiumFree} freemium to declare`)} ↓</a>
               : <span>{toCheck > 0 ? t("prix non relevés", "prices not checked") : t("tout est relevé", "all checked")}</span>}</div>
           </dl>
         </>}
@@ -270,7 +268,7 @@ export default function CartPage() {
     </ol>}
 
     {!empty && <>
-      {/* Overview: the usage map picks the scope, budget and overlaps follow. */}
+      {/* Overview: budget by tool or by area (an area filters the page), then overlaps. */}
       <section className="sg-section ms-section ms-overview-section" aria-labelledby="ms-overview-title">
       <div className="ms-section-row">
         <div className="sg-section-heading"><span className="sg-eyebrow">{t("Vue d’ensemble", "Overview")}</span><h2 id="ms-overview-title">{scopeLabel ? t(`Zoom sur ${scopeLabel}`, `Focus on ${scopeLabel}`) : t("Quel usage pèse le plus ?", "Which use weighs most?")}</h2></div>
@@ -278,10 +276,10 @@ export default function CartPage() {
       </div>
 
       <div className="ms-dash-main">
-        <StackUsageMap territories={mapTerritories} areaCosts={areaCosts} activeId={activeFilter} onChoose={chooseDomain} currency={currency} lang={lang} />
         <div className="ms-dash-side">
-          <StackBudgetBreakdown territories={visibleMap} colorOf={colorOf} paid={plans} currency={currency} lang={lang} onSelect={selectTool} declareOpen={declareOpen} onDeclareOpen={setDeclareOpen} />
+          <StackBudgetBreakdown territories={visibleMap} colorOf={colorOf} onChooseArea={chooseDomain} paid={plans} currency={currency} lang={lang} onSelect={selectTool} onFreemium={() => jumpTo("ms-freemium")} />
           <StackOverlapPairs tools={selectedTools} categories={categories} isPaid={plans.isPaid} currency={currency} prefix={prefix} lang={lang} onSelect={selectTool} scopeIds={activeFilter === "all" ? undefined : visibleIds} />
+          <StackFreemiumPlans tools={listTools} paid={plans} currency={currency} lang={lang} onSelect={selectTool} />
         </div>
       </div>
       </section>

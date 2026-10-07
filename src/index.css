@@ -35489,3 +35489,38 @@ img[data-logo-loading] {
 .ms-page .ms-overview-section .ms-dash-side { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
 @media (max-width: 1080px) { .ms-page .ms-overview-section .ms-dash-side { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .ms-page .ms-map-strip { --k: .62; gap: 8px 10px; } }
+/* Budget by area: no logo column, and an area is a way into the page filter. */
+.ms-page .ms-budget-tile .sg-storage-legend li.ms-budget-area { grid-template-columns: 8px minmax(0, 1fr) auto; }
+.ms-page .ms-budget-tile .sg-storage-legend li.ms-budget-area .sg-storage-dot { width: 10px; height: 10px; }
+.ms-page .ms-budget-tile .sg-donut-seg { cursor: pointer; }
+/* Freemium widget: full width under budget and overlaps, an iOS-style list of
+   switches, with what the declarations add to the budget. */
+.ms-page .ms-freemium-tile { grid-column: 1 / -1; }
+.ms-page .ms-freemium-count { margin: 0; color: hsl(var(--muted-foreground)); font: 500 14px/1.4 var(--font-ui); text-align: right; }
+.ms-page .ms-freemium-count strong { color: hsl(var(--foreground)); font: 650 28px/1 var(--font-brand); letter-spacing: -.03em; }
+.ms-page .ms-freemium-count span { display: block; margin-top: 4px; color: color-mix(in srgb, #0E9F6E 80%, #000); font-weight: 600; }
+.ms-page .ms-freemium-lead { max-width: 70ch; margin: -8px 0 20px; color: hsl(var(--muted-foreground)); font: 400 14px/1.5 var(--font-ui); }
+.ms-page .ms-freemium-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.ms-page .ms-freemium-list li { display: flex; align-items: center; gap: 12px; padding: 10px 12px 10px 14px; border-radius: 18px; background: hsl(var(--card)); transition: box-shadow 220ms ease; }
+.ms-page .ms-freemium-list li.is-on { box-shadow: inset 0 0 0 1.5px color-mix(in srgb, #0E9F6E 45%, transparent); }
+.ms-page .ms-freemium-tool { display: flex; flex: 1; align-items: center; gap: 12px; min-width: 0; padding: 0; text-align: left; }
+.ms-page .ms-freemium-tool > span { display: grid; min-width: 0; }
+.ms-page .ms-freemium-tool strong { overflow: hidden; font: 650 14.5px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-freemium-tool small { overflow: hidden; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.35 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ms-page .ms-freemium-tool:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.ms-page .ms-switch { display: inline-flex; flex-shrink: 0; align-items: center; gap: 8px; padding: 4px 0; color: hsl(var(--muted-foreground)); font: 600 12.5px/1 var(--font-ui); }
+.ms-page .ms-switch[aria-checked="true"] { color: color-mix(in srgb, #0E9F6E 80%, #000); }
+.ms-page .ms-switch-track { position: relative; width: 42px; height: 26px; border-radius: 13px; background: hsl(var(--muted-foreground) / .28); transition: background-color 220ms ease; }
+.ms-page .ms-switch-track > span { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(15, 15, 15, .2); transition: transform 260ms cubic-bezier(.34, 1.56, .64, 1); }
+.ms-page .ms-switch[aria-checked="true"] .ms-switch-track { background: #0E9F6E; }
+.ms-page .ms-switch[aria-checked="true"] .ms-switch-track > span { transform: translateX(16px); }
+.ms-page .ms-switch:focus-visible { outline: none; }
+.ms-page .ms-switch:focus-visible .ms-switch-track { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+.ms-page #ms-freemium { scroll-margin-top: 24px; }
+/* Budget: the freemium count is a way to the widget, not a fold. */
+.ms-page .ms-budget-freemium { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin-top: 20px; padding: 14px 16px; border-radius: 16px; background: hsl(var(--card)); color: hsl(var(--foreground)); text-decoration: none; font: 400 13.5px/1.4 var(--font-ui); }
+.ms-page .ms-budget-freemium strong { font-weight: 600; }
+.ms-page .ms-budget-freemium span { color: color-mix(in srgb, #0E9F6E 80%, #000); font-weight: 600; }
+.ms-page .ms-budget-freemium:hover span { text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) { .ms-page .ms-freemium-count { text-align: left; } }
+@media (prefers-reduced-motion: reduce) { .ms-page .ms-switch-track > span { transition: none; } }
