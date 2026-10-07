@@ -88,3 +88,22 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 - 25/09/2026 `9b3f179f` : titres et descriptions des fiches unifiés (`toolSeo.ts`), titres des pages prix qui répondent, H1 des sous-pages
 - 25/09/2026 `82b0ee6c` : pages catégorie alignées sur /tools, index A à Z, noindex des catégories minces, 57 couvertures bloquées
 - 25/09/2026 `511c528b` : catalogue /tools (besoins, filtres, sponsoring), barres de filtres sur une ligne, 7 recatégorisations, 5 URL réparées
+
+## Ma stack en tableau de bord (7 oct. 2026)
+- Ordre validé (parcours) : hero inchangé, puis Recoupements (ce que je peux simplifier), puis Budget (anneau par domaine ou par outil, zoom local par domaine) puis Mes outils. Fil conducteur : combien je paie, et combien je paie en double. La question freemium se pose une fois (bandeau après le hero, fenêtre « Lesquels payez-vous ? », mémorisée par outil) ; les recoupements sont chiffrés (« ≈ X €/mois en double ») et triés par montant. Bandeau de bulles retiré. Commits locaux non poussés.
+- E2E `catalogue refresh updates the same saved selection` échoue : il attend le prix Supabase sur la carte, or la carte lit désormais `nativePrices` attestés. Réécrire le test (constat, pas encore fait).
+- Fait (7 oct.) : composants morts supprimés (`StackToolInspector`, `StackTelescope`, `StackUsageExplorer`, `StackBubblePeek`, `StackAreaBoard`, `StackAccountDialog`, `StackNeedsManagerDialog`, `StackSaveMenu`, `lib/stackBudget.ts` et son test) ; `AREA_COLORS` et `Territory` dans `lib/stackAreas.ts` ; 386 règles CSS `ms-` mortes retirées. Reste à voir : `useStackAccount` n'a peut-être plus d'appelant.
+- CHANGELOG_AI à compléter pour toute la série Ma stack avant le push.
+
+## Ma stack, recul produit (7 oct. 2026)
+Constats :
+- Seul `add_to_stack` est mesuré : on ne sait pas si la page est vue, si la feuille outil s'ouvre, si « Comparer » est cliqué, si la question freemium reçoit une réponse.
+- Prix attestés (`nativePrices`) sur 375 outils sur 1 348 (28 %) : beaucoup de « Tarif non relevé », donc coût et « payé en double » partiels.
+- Le coût suppose l'offre d'entrée, une place : faux pour une équipe ou un plan supérieur ; « payé en double » est un plafond.
+- La boucle s'arrête à « Comparer » : rien pour dire « je remplace X par Y » ni voir l'économie.
+- Stack seulement dans le navigateur : perdue en changeant d'appareil, impossible à partager (`useStackAccount` sans appelant).
+Prochaines étapes proposées, dans l'ordre :
+1. Mesurer (page vue, feuille ouverte, comparer, freemium répondu, retrait, remplacement) ; décider ensuite sur données.
+2. Rendre le chiffre juste : choisir son plan réel et le nombre de places dans la feuille outil ; priorité de recherche prix sur les outils les plus ajoutés.
+3. Fait (7 oct.) : boucle fermée. « Décider » sur chaque paire (menu : garder l'un, garder les deux) et bandeau « Ma stack » sur les comparatifs (garder l'un, remplacer, garder). Annulable, « Déjà ≈ X €/mois en moins », paires gardées sorties du payé en double (« Revoir »). Événements : stack_tool_open, stack_compare_click, stack_profile_click, stack_decision, stack_decision_undo, stack_remove, stack_freemium_open, stack_freemium_answer. À relire dans GA4 vers le 21/10.
+4. Garder et partager : lien de partage lecture seule (boucle d'acquisition), puis synchronisation par compte.

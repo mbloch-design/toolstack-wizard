@@ -3,14 +3,7 @@ import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { getCategoryLabel } from "@/lib/categoryLabel";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 
-export const STACK_VIEW_KEY = "tooltrim:stack-view";
-export type StackViewMode = "stack" | "map";
 export const toolKey = (tool: Pick<Tool, "slug" | "id">) => tool.slug || tool.id;
-
-export function readStackView(): StackViewMode {
-  try { return window.localStorage.getItem(STACK_VIEW_KEY) === "map" ? "map" : "stack"; }
-  catch { return "stack"; }
-}
 
 export function stackTerritories(tools: ToolSummary[], categories: Category[], lang: string) {
   const grouped = new Map<string, ToolSummary[]>();

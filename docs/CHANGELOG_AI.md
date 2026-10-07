@@ -5,6 +5,25 @@
 - Liens internes vers GeoRankers et le guide sur la tarification IA ; média produit officiel GeoRankers, capacités attribuées à l’éditeur, sans promesse de visibilité ou résultat commercial.
 - Sources officielles intégrées à l’article. Validation FR/EN, liens internes, SEO, prérendu et budgets PASS ; inclus dans la publication main du 7 octobre 2026.
 
+## 2026-10-07 : Ma stack, de « Comparer » à la décision
+
+- Chaque recoupement a « Décider » : menu ancré (garder l'un, l'autre quitte la stack ; garder les deux), sans décalage de mise en page. Cartes à structure fixe (outils, raison, pied avec le payé en double et les actions).
+- Comparatifs : bandeau « Ma stack » après le verdict quand un outil est dans la stack (garder l'un, remplacer, garder), avec l'effet sur le budget ; rendu après montage, HTML prérendu inchangé.
+- Suivi : décisions mémorisées (`useStackDecisions`), annulables ; « Déjà ≈ X €/mois en moins » ; paires gardées exclues du payé en double et des étiquettes, « Revoir » pour les rouvrir.
+- Mesure des CTA et décisions (8 événements GA4, sans donnée personnelle, soumis au consentement).
+
+## 2026-10-07 : Ma stack, ce que je paie et ce que je paie en double
+
+- Fil conducteur de la page : combien je paie, et combien je paie en double. Ordre suivant la visite : hero, recoupements, budget, mes outils.
+- Hero des pages Stack (pastille, titre, nuage de logos, coût le plus lourd au centre) avec trois chiffres : outils, coût mensuel, payé en double. Micro-barres façon Temps d'écran (outils et coût par domaine, part du coût en double), pastille au survol, pictos Iconoir.
+- Budget (décisions du 7 oct.) : total converti en devise d'affichage au taux daté et affiché comme converti, exception limitée à Ma stack ; freemium à 0 sauf « Je paie ». Anneau par domaine ou par outil, zoom local par domaine, par outil d'office si un seul domaine est payant.
+- Question freemium posée une fois : bandeau après le hero (« Aucun » ou « Indiquer lesquels »), fenêtre à interrupteurs, mémorisée par outil, rouverte depuis la note du budget.
+- Recoupements chiffrés : quand les deux outils d'une paire sont payants, le moins cher est « payé en double » ; paires triées par ce montant, total sans double compte. Calcul partagé entre hero et section.
+- Outil ouvert dans une feuille (droite sur ordinateur, bas sur mobile) : coût et interrupteur freemium sur place, usages, recoupements, fiche complète, retrait annulable.
+- Mes outils : « Ajouter » et « Modifier » discrets ; mode Modifier façon écran d'accueil iOS (cartes qui frétillent, badge moins, Annuler). Sur mobile, liste compacte (page 25 % plus courte).
+- Retirés : vue Cartes / Par usage, télescope, bandeau de bulles, widget freemium permanent, bouton d'ajout du hero. Composants inutilisés listés dans TODO.
+- Tests : 191 vitest PASS ; E2E Ma stack 14/15 (l'échec restant attend un prix Supabase sur la carte, qui lit désormais les prix attestés ; noté dans TODO).
+
 ## 2026-10-07 — GeoRankers : contextualiser les référencements
 
 - Ajout à la fiche FR/EN des annuaires cités sur la page officielle Recognition : Startup Fame, Dang AI, Fazier, Tool Pilot, Findly.tools, LaunchNest, Tools Cafe, Lifto, Launchstag et Product Hunt.

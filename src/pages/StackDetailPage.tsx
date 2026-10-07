@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import { HERO_CLUSTER_SLOTS } from "@/lib/heroCluster";
 import { fitBrandedTitle } from "@/lib/seoTitle";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { AlertTriangle, ChevronDown, ChevronRight, CircleAlert, Target } from "@/lib/icons";
@@ -594,19 +595,7 @@ function splitBudget(s: string): { main: string; unit: string } | null {
 /* ─── Hero cluster layout ───────────────────────────────────────────────── */
 // Hand-placed on a 440×380 canvas (centre points, icon size, tilt) so the
 // cluster never overlaps and reads the same for every stack.
-const HERO_CLUSTER_SLOTS = [
-  { x: 220, y: 190, s: 124, r: -6 },
-  { x: 92, y: 92, s: 84, r: 8 },
-  { x: 350, y: 84, s: 88, r: -9 },
-  { x: 72, y: 272, s: 76, r: -7 },
-  { x: 368, y: 290, s: 84, r: 6 },
-  { x: 226, y: 42, s: 62, r: 5 },
-  { x: 222, y: 338, s: 66, r: -4 },
-  { x: 398, y: 186, s: 58, r: 10 },
-  { x: 44, y: 180, s: 54, r: -10 },
-  { x: 136, y: 344, s: 50, r: 7 },
-  { x: 306, y: 350, s: 50, r: -8 },
-];
+
 
 /* ─── Main component ─────────────────────────────────────────────────────── */
 const StackDetailPage = () => {

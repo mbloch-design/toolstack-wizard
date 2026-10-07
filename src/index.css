@@ -34647,11 +34647,7 @@ img[data-logo-loading] {
 
   .ms-page { max-width: 1440px; margin: 0 auto; padding: var(--space-2xl) var(--space-2xl) var(--space-3xl); color: hsl(var(--foreground)); font-family: var(--font-ui); }
 
-  .ms-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); margin-bottom: var(--space-xl); }
-
-  .ms-header h1 { font-family: var(--font-brand); font-size: var(--tt-size-page-title); line-height: 1.1; letter-spacing: -0.04em; margin: 0 0 var(--space-sm); }
-
-  .ms-header p, .ms-empty-copy { font-size: var(--tt-size-body-large); line-height: 1.5; }
+  .ms-empty-copy { font-size: var(--tt-size-body-large); line-height: 1.5; }
 
   .ms-empty-copy { max-width: 620px; margin: var(--space-2xl) 0 var(--space-lg); }
 
@@ -34677,8 +34673,6 @@ img[data-logo-loading] {
 
   .ms-results button:disabled { opacity: 0.55; }
 
-  .ms-toolbar { display: flex; align-items: center; gap: var(--space-lg); margin-bottom: var(--space-xl); border-bottom: 1px solid hsl(var(--border)); }
-
   .ms-domain-filters { display: flex; flex: 1; min-width: 0; gap: var(--space-lg); overflow-x: auto; scrollbar-width: thin; }
 
   .ms-domain-filters button { display: inline-flex; align-items: center; flex-shrink: 0; gap: var(--space-xs); min-height: 60px; padding: var(--space-sm) 0; border-bottom: 2px solid transparent; white-space: nowrap; color: hsl(var(--muted-foreground)); font-size: var(--tt-size-card-body); font-weight: 500; }
@@ -34687,209 +34681,11 @@ img[data-logo-loading] {
 
   .ms-domain-filters button > span { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 24px; padding: 0 var(--space-2xs); border-radius: var(--radius-pill); background: hsl(var(--secondary)); font-size: var(--tt-size-kicker); color: hsl(var(--foreground)); }
 
-  .ms-view-switch { display: flex; flex-shrink: 0; gap: var(--space-2xs); padding: var(--space-2xs); border-radius: var(--tt-surface-radius-info); background: hsl(var(--secondary)); }
-
-  .ms-view-switch button { display: inline-flex; align-items: center; justify-content: center; width: auto; height: 44px; border-radius: var(--tt-surface-radius-info); color: hsl(var(--muted-foreground)); padding: 0 var(--space-sm); gap: var(--space-xs); font-size: var(--tt-size-card-body); font-weight: 600; }
-
-  .ms-view-switch button[aria-pressed="true"] { background: hsl(var(--card)); color: hsl(var(--foreground)); box-shadow: none; }
-
-  .ms-territories { display: grid; gap: var(--space-lg); }
-
-  .ms-territory { min-width: 0; }
-
-  .ms-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-xs) var(--space-lg); }
-
   .ms-tool { display: flex; align-items: center; text-align: left; gap: var(--space-sm); min-width: 0; width: 100%; padding: var(--space-xs) var(--space-sm); border-radius: var(--tt-surface-radius-info); background: transparent; transition: background 160ms ease; }
 
   .ms-tool:hover, .ms-tool--selected { background: hsl(var(--secondary)); }
 
   .ms-tool--selected { outline: 1px solid hsl(var(--border)); }
-
-  .ms-tool-copy { display: flex; flex-direction: column; gap: var(--space-2xs); min-width: 0; }
-
-  .ms-tool-copy strong { font-size: var(--tt-size-body); font-weight: 600; overflow-wrap: anywhere; }
-
-  .ms-tool-copy > span { font-size: var(--tt-size-card-body); line-height: 1.4; overflow-wrap: anywhere; }
-
-  .ms-territories--map { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--space-2xl) var(--space-xl); }
-
-  .ms-territories--map .ms-territory { flex: 1 1 260px; padding: 0; }
-
-  .ms-territories--map .ms-territory--wide { flex-basis: calc(66.666% - var(--space-xl)); }
-
-  .ms-map-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: var(--space-lg); align-items: start; }
-
-  .ms-map-group { min-width: 0; padding-left: var(--space-sm); border-left: 1px solid hsl(var(--border)); }
-
-  .ms-map-group > h3 { font-family: var(--font-brand); font-size: var(--tt-size-section-intro); font-weight: 600; margin: 0 0 var(--space-sm); }
-
-  .ms-territories--map .ms-tools { grid-template-columns: 1fr; gap: var(--space-2xs); }
-
-  .ms-territories--map .ms-tool { padding: var(--space-xs); width: fit-content; max-width: 100%; min-height: 56px; }
-
-  .ms-context-slot { grid-column: 1 / -1; min-width: 0; }
-
-  .ms-inspector { margin: var(--space-sm) 0 var(--space-md); padding: 0; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); max-width: none; overflow: hidden; border-color: hsl(var(--border)); }
-
-  .ms-inspector-heading { display: grid; grid-template-columns: 52px minmax(0, 1fr) 44px; align-items: center; gap: var(--space-sm); padding: var(--space-md) var(--space-md) 0; margin: 0; }
-
-  .ms-inspector-identity { display: grid; gap: var(--space-2xs); min-width: 0; }
-
-  .ms-inspector-heading h3 { font-size: var(--tt-size-section-h); font-family: var(--font-brand); font-weight: 600; line-height: 1.08; margin: 0; }
-
-  .ms-inspector-heading h3:focus { outline: none; }
-
-  .ms-focus-eyebrow { font-size: var(--tt-size-kicker); color: hsl(var(--muted-foreground)); line-height: 1.3; margin: 0; }
-  .ms-inspector-close { align-self: start; color: hsl(var(--muted-foreground)); border-radius: var(--radius-pill); }
-  .ms-inspector-close svg { width: 28px; height: 28px; padding: var(--space-2xs); background: hsl(var(--secondary)); border-radius: var(--radius-pill); }
-  .ms-inspector-close:hover { color: hsl(var(--foreground)); }
-
-
-
-  .ms-inspector h4 { font-size: var(--tt-size-card-body); font-weight: 600; margin-bottom: var(--space-sm); }
-
-  .ms-usage-relations > div { display: grid; grid-template-columns: minmax(140px, 1fr) 2fr; align-items: center; gap: var(--space-md); padding: var(--space-sm) 0; border-top: 1px solid hsl(var(--border)); }
-
-  .ms-usage-relations dt { font-size: var(--tt-size-card-body); font-weight: 600; }
-
-  .ms-usage-relations dd, .ms-focus-neighbours > div { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-md); }
-
-  .ms-context-tool { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; padding: var(--space-2xs) var(--space-xs); text-align: left; border-radius: var(--tt-surface-radius-info); font-size: var(--tt-size-card-body); }
-
-  .ms-context-tool:hover { background: hsl(var(--background)); }
-
-  .ms-context-tool > span { overflow-wrap: anywhere; }
-
-  .ms-focus-note { font-size: var(--tt-size-kicker); line-height: 1.5; color: hsl(var(--muted-foreground)); margin-top: var(--space-sm); max-width: 66ch; }
-
-  .ms-focus-uses, .ms-focus-neighbours { margin-top: var(--space-md); }
-
-  .ms-focus-uses ul { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-md); list-style: none; font-size: var(--tt-size-card-body); line-height: 1.6; }
-
-  .ms-focus-uses li { padding-left: var(--space-sm); border-left: 1px solid hsl(var(--border)); }
-
-  .ms-map-group--selected { border-left-color: hsl(var(--foreground)); }
-
-  .ms-tool--related { box-shadow: inset 0 0 0 1px hsl(var(--foreground) / .25); }
-
-  .ms-tool-copy .ms-related-label { font-size: var(--tt-size-kicker); color: hsl(var(--muted-foreground)); }
-
-  .ms-inspector-actions { display: flex; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; margin-top: var(--space-lg); margin: 0; padding: var(--space-sm) var(--space-lg); border-top: 1px solid hsl(var(--border)); align-items: center; }
-
-  .ms-inspector-actions button { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; font-size: var(--tt-size-card-body); }
-
-  .ms-inspector-actions a { font-weight: 600; }
-
-
-  .ms-territories--stack .ms-tools { grid-template-columns: 1fr; gap: 0; }
-
-  .ms-territories--stack .ms-tool { border-radius: 0; border-bottom: 1px solid hsl(var(--border)); padding: var(--space-md) var(--space-sm); }
-
-  .ms-territories--stack .ms-tool-copy { flex: 1; display: grid; grid-template-columns: minmax(160px, 1fr) minmax(120px, 1fr); align-items: center; gap: var(--space-md); }
-
-  .ms-list-price { margin-left: auto; font-size: var(--tt-size-card-body); text-align: right; }
-
-  .ms-territories--map .ms-map-group { background: hsl(var(--secondary) / .5); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); padding: var(--space-md); }
-
-  .ms-territories--map .ms-map-group--selected { border-color: hsl(var(--foreground)); }
-
-
-
-  .ms-focus-body { padding: var(--space-lg); background: hsl(var(--card)); }
-
-  .ms-focus-kicker { font-size: var(--tt-size-kicker); text-transform: uppercase; letter-spacing: .06em; color: hsl(var(--muted-foreground)); margin-bottom: var(--space-xs); }
-
-  .ms-inspector .ms-focus-message { font-size: var(--tt-size-body); line-height: 1.4; margin-bottom: var(--space-md); max-width: 55ch; }
-
-  .ms-focus-tool-list { display: grid; gap: 0; }
-
-  .ms-focus-tool-list .ms-context-tool { width: 100%; border: 1px solid hsl(var(--border)); border-radius: 0; background: hsl(var(--card)); padding: var(--space-xs) var(--space-sm); }
-
-  .ms-context-tool > svg:last-child { margin-left: auto; }
-
-  .ms-focus-uses { padding-top: var(--space-md); border-top: 1px solid hsl(var(--border)); }
-
-
-  .ms-inspector-actions button { color: hsl(var(--muted-foreground)); font-size: var(--tt-size-kicker); }
-
-
-
-  .ms-territories--stack .ms-list-price { flex-basis: 160px; }
-  @media (max-width: 639px) {
-  .ms-territories--stack .ms-tool-copy { display: flex; align-items: flex-start; gap: var(--space-2xs); } .ms-territories--stack .ms-list-price { flex-basis: 95px; } }
-
-  .ms-workspace { min-width: 0; }
-
-  .ms-workspace--focused { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--space-lg); align-items: start; }
-
-  .ms-focus-rail { position: sticky; top: calc(var(--navbar-h) + var(--space-lg)); min-width: 0; }
-
-  .ms-focus-rail .ms-inspector { margin: 0; }
-
-
-
-
-
-  .ms-focus-rail .ms-focus-body { padding: var(--space-md); }
-
-  .ms-inspector .ms-focus-message { font-size: var(--tt-size-card-body); margin-bottom: var(--space-xs); }
-
-  .ms-focus-rail .ms-usage-relations > div { grid-template-columns: 1fr; gap: var(--space-2xs); }
-
-  .ms-focus-rail .ms-inspector-actions { padding: var(--space-md); flex-direction: row; flex-wrap: nowrap; align-items: center; gap: var(--space-xs); }
-
-  .ms-focus-rail .ms-inspector-actions a { justify-content: center; flex: 1; min-width: 0; }
-
-  .ms-focus-rail .ms-inspector-actions button { justify-content: center; }
-
-  .ms-territories--map.ms-has-selection .ms-tool:not(.ms-tool--selected):not(.ms-tool--related) { opacity: .55; }
-
-  .ms-territories--map .ms-tool--selected { background: hsl(var(--secondary)); color: hsl(var(--foreground)); outline: none; font-weight: 600; }
-
-  .ms-territories--map .ms-tool--related { background: hsl(var(--card)); box-shadow: inset 3px 0 hsl(var(--foreground)); }
-
-  .ms-focus-uses:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
-  @media (max-width: 900px) {
-  .ms-workspace--focused { grid-template-columns: 1fr; } .ms-focus-rail { position: static; grid-row: 1; } }
-
-  .ms-territories--map.ms-has-selection .ms-tool:not(.ms-tool--selected):not(.ms-tool--related) { opacity: 1; }
-
-  .ms-territories--map .ms-map-group { background: transparent; border: 0; padding: 0; }
-
-  .ms-territories--map .ms-map-group > h3 { padding-bottom: var(--space-xs); border-bottom: 1px solid hsl(var(--border)); font-size: var(--tt-size-card-body); }
-
-  .ms-map-groups { gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); }
-
-  .ms-list-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 120px; gap: var(--space-md); padding: 0 var(--space-sm) var(--space-xs) var(--space-3xl); font-size: var(--tt-size-kicker); color: hsl(var(--muted-foreground)); border-bottom: 1px solid hsl(var(--border)); }
-
-  .ms-list-head > span:last-child { text-align: right; }
-
-  .ms-territories--stack .ms-list-price { flex-basis: 120px; }
-
-  .ms-territories--stack .ms-tool-copy { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-
-  .ms-territories--stack .ms-tool-copy > span { color: hsl(var(--muted-foreground)); }
-
-  .ms-tool-copy:empty { display: none; }
-  @media (max-width: 900px) { }
-  @media (max-width: 639px) {
-  .ms-list-head { display: none; } }
-
-  .ms-focus-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-xs); margin: var(--space-sm) var(--space-md) 0; font-size: var(--tt-size-card-body); line-height: 1.4; }
-  .ms-focus-price > span { color: hsl(var(--muted-foreground)); }
-  .ms-focus-price > strong { font-weight: 500; }
-  .ms-focus-summary { font-size: var(--tt-size-card-body); line-height: 1.5; margin: 0; }
-  .ms-focus-overlaps { margin-top: var(--space-lg); }
-  .ms-focus-overlaps > div { display: grid; gap: var(--space-2xs); }
-  .ms-overlap-tool { display: flex; align-items: center; gap: var(--space-sm); width: 100%; padding: var(--space-sm); text-align: left; background: transparent; border-radius: var(--tt-surface-radius-info); transition: background-color 150ms ease; }
-  .ms-overlap-tool:hover { background: hsl(var(--secondary) / 0.5); }
-  .ms-overlap-tool:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 2px; background: hsl(var(--secondary) / 0.5); }
-  .ms-overlap-tool > span { display: grid; gap: var(--space-2xs); flex: 1; min-width: 0; font-size: var(--tt-size-card-body); line-height: 1.4; }
-  .ms-overlap-tool strong { font-weight: 600; }
-  .ms-overlap-tool > span > span { color: hsl(var(--muted-foreground)); font-size: var(--tt-size-kicker); }
-  .ms-overlap-tool > svg { flex-shrink: 0; color: hsl(var(--muted-foreground)); }
-  .ms-overlap-tool:hover > svg { color: hsl(var(--foreground)); }
-  @media (min-width: 901px) { .ms-focus-rail .ms-inspector { max-height: calc(100dvh - var(--navbar-h) - var(--space-2xl)); overflow-y: auto; scrollbar-width: thin; } }
   .ms-storage-notice { font-size: var(--tt-size-card-body); line-height: 1.5; margin-bottom: var(--space-lg); }
 
   .ms-unavailable { margin-top: var(--space-xl); }
@@ -34901,190 +34697,38 @@ img[data-logo-loading] {
   .ms-unavailable button { min-height: 44px; flex-shrink: 0; font-size: var(--tt-size-card-body); }
 
   .ms-page button:focus-visible, .ms-page a:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 3px; }
-  @media (max-width: 1023px) {
-  .ms-territories--map .ms-territory--wide { flex-basis: 100%; } }
   @media (max-width: 639px) {
   .ms-page { padding: var(--space-lg) var(--space-md) var(--space-2xl); }
 
-  .ms-toolbar { gap: var(--space-sm); }
-
   .ms-domain-filters { gap: var(--space-md); }
 
-  .ms-header { align-items: flex-start; flex-direction: column; }
-
-  .ms-header p, .ms-empty-copy { font-size: var(--tt-size-body); }
+  .ms-empty-copy { font-size: var(--tt-size-body); }
 
   .ms-empty-copy { margin-top: var(--space-lg); }
-
-  .ms-territories--map { display: grid; }
-
-  .ms-map-groups, .ms-tools { grid-template-columns: 1fr; }
-
-  .ms-territories--map .ms-territory { padding: 0; }
-
-  .ms-inspector { padding: 0; }
-
-  .ms-inspector-heading { flex-wrap: wrap; }
-
-
-
-  .ms-usage-relations > div { grid-template-columns: 1fr; gap: var(--space-2xs); }
-
-  .ms-inspector-actions { flex-direction: column; }
   }
   @media (prefers-reduced-motion: reduce) {
   .ms-tool { transition: none; } }
 }
 
 @layer components {
-  .ms-overview { min-width: 0; }
   .ms-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-md); margin-top: var(--space-md); }
   .ms-tool.ms-tool-card { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; column-gap: var(--space-sm); row-gap: var(--space-xs); padding: var(--space-md); background: hsl(var(--secondary) / .4); border: 1px solid transparent; border-radius: var(--tt-surface-radius-info); align-items: start; align-content: start; transition: background 160ms ease, border-color 160ms ease; }
   .ms-tool-card > :first-child { grid-column: 1; grid-row: 1 / 3; }
-  .ms-tool-card .ms-tool-copy { display: grid; gap: var(--space-2xs); min-width: 0; }
-  .ms-tool-card .ms-tool-copy strong { font-size: var(--tt-size-card-body); line-height: 1.3; overflow-wrap: normal; }
-  .ms-tool-card .ms-tool-copy > span { font-size: var(--tt-size-card-body); line-height: 1.4; color: hsl(var(--muted-foreground)); }
-  .ms-tool.ms-tool-card .ms-list-price { grid-column: 2; text-align: left; font-size: var(--tt-size-kicker); color: hsl(var(--muted-foreground)); margin: 0; }
-  .ms-card-arrow { grid-column: 3; grid-row: 1 / 3; align-self: center; color: hsl(var(--muted-foreground)); opacity: .5; transition: opacity 160ms ease; }
   .ms-tool.ms-tool-card:hover { background: hsl(var(--secondary)); }
-  .ms-tool-card:hover .ms-card-arrow, .ms-tool-card:focus-visible .ms-card-arrow { opacity: 1; color: hsl(var(--foreground)); }
   .ms-tool.ms-tool-card.ms-tool--selected { background: hsl(var(--secondary)); border-color: hsl(var(--foreground)); }
-  .ms-usage-explorer { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: var(--space-sm) var(--space-lg); align-items: start; }
-  .ms-usage-nav { position: sticky; top: calc(var(--navbar-h) + var(--space-lg)); }
-  .ms-usage-nav button { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); width: 100%; padding: var(--space-xs) var(--space-sm); text-align: left; font-size: var(--tt-size-card-body); line-height: 1.4; border-radius: var(--tt-surface-radius-info); }
-  .ms-usage-nav .ms-usage-tree-count { color: hsl(var(--muted-foreground)); font-variant-numeric: tabular-nums; }
-  .ms-usage-nav button:hover { background: hsl(var(--secondary) / 0.5); }
-  .ms-usage-nav button[aria-current] { background: hsl(var(--secondary)); font-weight: 600; }
-  .ms-usage-nav button:disabled { cursor: default; }
-  .ms-usage-tree, .ms-usage-tree-groups, .ms-usage-tree-tools { list-style: none; padding: 0; margin: 0; }
-  .ms-usage-tree-root { margin-bottom: var(--space-xs); font-weight: 600; }
-  .ms-usage-tree-ancestor { font-weight: 600; }
-  .ms-usage-tree-groups, .ms-usage-tree-tools { margin-left: var(--space-sm); padding-left: var(--space-xs); border-left: 1px solid hsl(var(--border)); }
-  .ms-usage-nav .ms-usage-tree-tool { gap: var(--space-xs); }
-  .ms-usage-tree-tool .ms-usage-row-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .ms-usage-nav .ms-usage-tree-chevron--open { transform: rotate(90deg); }
-  .ms-usage-tree-count { flex-shrink: 0; }
-  .ms-usage-nav h3 { margin: 0 0 var(--space-xs); padding: var(--space-xs) var(--space-sm); font-size: var(--tt-size-card-body); font-weight: 600; color: hsl(var(--muted-foreground)); }
-  .ms-usage-row-label { flex: 1; min-width: 0; }
-  .ms-usage-nav button > svg { flex-shrink: 0; color: hsl(var(--muted-foreground)); }
-  .ms-usage-breadcrumb { min-width: 0; flex: 1; overflow-x: auto; scrollbar-width: thin; }
-  .ms-usage-breadcrumb ol { display: flex; flex-wrap: nowrap; gap: var(--space-xs); align-items: center; list-style: none; padding: 0; margin: 0; }
-  .ms-usage-breadcrumb li { flex-shrink: 0; white-space: nowrap; display: flex; align-items: center; gap: var(--space-xs); font-size: var(--tt-size-card-body); line-height: 1.4; }
-  .ms-usage-breadcrumb button { color: hsl(var(--muted-foreground)); cursor: pointer; text-decoration: underline; text-decoration-color: hsl(var(--border)); text-underline-offset: var(--space-2xs); }
-  .ms-usage-breadcrumb button:hover:not(:disabled) { color: hsl(var(--foreground)); text-decoration-color: currentColor; }
-  .ms-usage-breadcrumb button:disabled { cursor: default; }
-  .ms-usage-breadcrumb [aria-current] { font-weight: 600; }
-  .ms-usage-breadcrumb svg { color: hsl(var(--muted-foreground)); flex-shrink: 0; }
-  .ms-usage-stage { min-width: 0; overflow: hidden; background: hsl(var(--secondary) / 0.35); border-radius: var(--tt-surface-radius-panel); }
-  .ms-usage-stage-heading { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); border-bottom: 1px solid hsl(var(--border)); }
-  .ms-usage-stage-heading > span { flex-shrink: 0; color: hsl(var(--muted-foreground)); font-size: var(--tt-size-card-body); }
-  .ms-telescope-back { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2xs); min-height: 32px; padding: var(--space-2xs) var(--space-xs); flex-shrink: 0; border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); background: hsl(var(--card)); font-size: var(--tt-size-card-body); font-weight: 500; line-height: 1.4; }
-  .ms-telescope-back:hover:not(:disabled) { background: hsl(var(--secondary)); border-color: hsl(var(--muted-foreground)); }
-  .ms-telescope-back:disabled { opacity: .4; cursor: default; }
-  .ms-telescope-prices-button { flex-shrink: 0; min-height: 32px; padding: var(--space-2xs) var(--space-xs); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); background: hsl(var(--card)); font-size: var(--tt-size-card-body); font-weight: 500; white-space: nowrap; }
-  .ms-telescope-prices-button:hover { background: hsl(var(--secondary)); }
-  .ms-bubble-peek { z-index: 600; width: 320px; max-width: calc(100vw - 32px); padding: 8px; border-radius: var(--tt-surface-radius-info); }
-  .ms-bubble-peek header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px; font-size: var(--tt-size-card-body); }
-  .ms-bubble-peek header > span { color: hsl(var(--muted-foreground)); font-size: var(--tt-size-kicker); }
-  .ms-bubble-peek-list { max-height: 280px; overflow-y: auto; overscroll-behavior: contain; }
-  .ms-bubble-peek-list button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 8px; text-align: left; border-radius: var(--tt-surface-radius-info); }
-  .ms-bubble-peek-list button:hover, .ms-bubble-peek-list button:focus-visible { background: hsl(var(--secondary)); }
-  .ms-bubble-peek-list button > span { display: grid; gap: 3px; flex: 1; min-width: 0; }
-  .ms-bubble-peek-list strong { font-size: var(--tt-size-card-body); font-weight: 600; }
-  .ms-bubble-peek-list button > span > span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: var(--tt-size-kicker); line-height: 1.4; color: hsl(var(--muted-foreground)); }
-  .ms-bubble-peek-list svg { flex-shrink: 0; }
-  .ms-bubble-peek-explore { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin-top: 4px; padding: 10px 8px; border-top: 1px solid hsl(var(--border)); font-size: var(--tt-size-card-body); font-weight: 500; }
-  .ms-bubble-peek-explore:hover { background: hsl(var(--secondary)); }
-  .ms-telescope-prices-button { display: inline-flex; align-items: center; gap: var(--space-xs); }
-  .ms-telescope-prices-button > span { color: hsl(var(--muted-foreground)); }
-  .ms-budget-panel-total small { font-size: var(--tt-size-card-body); font-weight: 400; color: hsl(var(--muted-foreground)); }
-  .ms-budget-panel-total { margin: var(--space-xs) 0 0; font-family: var(--font-brand); font-size: var(--tt-size-fact); font-weight: 600; }
-  .ms-budget-group-heading { display: flex; justify-content: space-between; gap: var(--space-sm); }
-  .ms-budget-group-heading > span:last-child { color: hsl(var(--muted-foreground)); font-weight: 400; text-align: right; }
-  .ms-telescope-prices-button:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 3px; }
-  .ms-telescope-prices { z-index: 600; display: flex; flex-direction: column; width: 360px; max-width: calc(100vw - var(--space-md) * 2); max-height: min(480px, var(--radix-popover-content-available-height, 480px)); padding: var(--space-md); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); background: hsl(var(--card)); color: hsl(var(--foreground)); }
-  .ms-telescope-prices h3 { font-size: var(--tt-size-card-title); font-weight: 600; margin: 0; }
-  .ms-telescope-prices-note { margin: var(--space-2xs) 0 var(--space-sm); font-size: var(--tt-size-card-body); color: hsl(var(--muted-foreground)); }
-  .ms-telescope-prices-list { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
-  .ms-telescope-prices-list h4 { margin: var(--space-sm) 0 var(--space-2xs); font-size: var(--tt-size-card-body); font-weight: 600; }
-  .ms-telescope-prices-list section:first-child h4 { margin-top: 0; }
-  .ms-telescope-price-row { display: flex; align-items: center; gap: var(--space-sm); width: 100%; padding: var(--space-xs); text-align: left; border-radius: var(--tt-surface-radius-info); }
-  .ms-telescope-price-row:hover, .ms-telescope-price-row:focus-visible { background: hsl(var(--secondary)); }
-  .ms-telescope-price-copy { display: grid; gap: var(--space-2xs); flex: 1; min-width: 0; font-size: var(--tt-size-card-body); line-height: 1.4; }
-  .ms-telescope-price-copy strong { font-weight: 600; }
-  .ms-telescope-price-copy > span { color: hsl(var(--muted-foreground)); overflow-wrap: anywhere; }
-  .ms-telescope-price-row > svg { flex-shrink: 0; }
-  .ms-telescope-back:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 3px; }
-  .ms-bubble-canvas { position: relative; width: calc(100% - var(--space-md) * 2); aspect-ratio: 4 / 3; margin: var(--space-xs) var(--space-md) var(--space-md); }
-  .ms-bubble-field { position: absolute; left: 12.5%; top: 0; width: 75%; height: 100%; }
-  .ms-telescope-level-title { position: absolute; top: var(--space-xs); left: 0; margin: 0; max-width: 100%; font-family: var(--font-brand); font-size: var(--tt-size-fact); font-weight: 600; line-height: 1.25; }
-  .ms-bubble-canvas--inside .ms-bubble-field { top: 40px; left: calc(12.5% + 20px); width: calc(75% - 40px); height: calc(100% - 40px); }
-  .ms-usage-stage--moving .ms-usage-bubble { animation-play-state: paused; pointer-events: none; }
-  .ms-usage-bubble { container-type: size; position: absolute; aspect-ratio: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: var(--space-2xs); padding: var(--space-2xs); border: 1px solid hsl(var(--border)); border-radius: var(--radius-pill); background: radial-gradient(ellipse at 50% 22%, hsl(var(--card)) 0%, hsl(var(--card) / .65) 38%, hsl(var(--secondary) / .8) 72%, hsl(var(--border) / .85) 100%), hsl(var(--secondary)); box-shadow: inset 0 1px 8px hsl(var(--card) / .95), inset 0 -8px 20px hsl(var(--border) / .5); text-align: center; transition: box-shadow 180ms ease, border-color 180ms ease; }
-  .ms-bubble-content { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2xs); width: 76%; height: 76%; min-height: 0; }
-  .ms-bubble-content > * { flex-shrink: 0; }
-  .ms-usage-bubble strong { max-width: 100%; font-size: var(--tt-size-card-body); font-weight: 600; line-height: 1.2; overflow-wrap: normal; }
-  .ms-bubble-logos { display: flex; align-items: center; justify-content: center; padding-block: 0; }
-  .ms-bubble-logos > * { flex-shrink: 0; }
-  .ms-bubble-logos > * + * { margin-left: calc(var(--space-2xs) * -1); }
-  .ms-bubble-budget { display: grid; gap: 2px; color: hsl(var(--muted-foreground)); font-size: var(--tt-size-kicker); line-height: 1.2; max-width: 100%; }
-  .ms-bubble-budget > span { white-space: nowrap; }
-  .ms-bubble-budget small { font-size: .85em; margin-left: 2px; }
-  .ms-bubble-count { color: hsl(var(--muted-foreground)); font-size: var(--tt-size-card-body); line-height: 1.2; }
-  @container (max-width: 140px) {
-    .ms-bubble-content .ms-bubble-count { display: none; }
-    .ms-bubble-content .ms-bubble-tool-logo, .ms-bubble-logos > * { width: 28px !important; height: 28px !important; min-width: 28px !important; min-height: 28px !important; }
-  }
-  @container (max-width: 110px) {
-    .ms-bubble-content { width: 84%; height: 84%; gap: 2px; }
-    .ms-bubble-budget { font-size: 10px; }
-    .ms-bubble-content strong { font-size: var(--tt-size-kicker); line-height: 1.2; }
-    .ms-bubble-content .ms-bubble-tool-logo, .ms-bubble-logos > * { width: 22px !important; height: 22px !important; min-width: 22px !important; min-height: 22px !important; padding: 2px !important; }
-  }
-  @container (max-width: 90px) {
-    .ms-bubble-logos > :nth-child(n + 2) { display: none; }
-  }
-  .ms-usage-bubble { animation: ms-bubble-drift 7s ease-in-out infinite; }
-  .ms-usage-bubble:nth-child(3n + 1) { animation-duration: 9s; animation-delay: -4s; }
-  .ms-usage-bubble:nth-child(3n + 2) { animation-duration: 10s; animation-delay: -8s; animation-direction: reverse; }
-  .ms-usage-bubble:nth-child(3n) { animation-delay: -2s; }
-  .ms-bubble-canvas:hover .ms-usage-bubble, .ms-bubble-canvas:focus-within .ms-usage-bubble { animation-play-state: paused; }
-  @keyframes ms-bubble-drift {
-    0%, 100% { transform: translate(-1px, 1px); border-radius: 50% 49.5% 50% 50.5%; }
-    35% { transform: translate(2px, -2px); border-radius: 49.5% 50.5% 49.5% 50.5%; }
-    70% { transform: translate(-2px, -1px); border-radius: 50.5% 50% 49.5% 50%; }
-  }
-  .ms-usage-bubble:hover { border-color: hsl(var(--muted-foreground) / .6); box-shadow: inset 0 1px 12px hsl(var(--card)), inset 0 -8px 24px hsl(var(--border) / .7); }
-  .ms-usage-bubble--selected { border-color: hsl(var(--foreground)); box-shadow: inset 0 1px 12px hsl(var(--card)), inset 0 -8px 24px hsl(var(--border) / .7); }
-  .ms-usage-bubble:focus-visible, .ms-usage-nav button:focus-visible, .ms-usage-breadcrumb button:focus-visible, .ms-tool-card:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 3px; }
-  .ms-workspace--focused .ms-usage-explorer { grid-template-columns: 150px minmax(0, 1fr); gap: var(--space-sm); }
-  @media (max-width: 1400px) {
-    .ms-workspace--focused:has(.ms-usage-explorer) { grid-template-columns: 1fr; }
-    .ms-workspace--focused:has(.ms-usage-explorer) .ms-focus-rail { position: static; grid-row: auto; }
-    .ms-workspace--focused .ms-usage-explorer { grid-template-columns: 240px minmax(0, 1fr); gap: var(--space-lg); }
-  }
+  .ms-tool-card:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 3px; }
   @media (max-width: 639px) {
-    .ms-usage-explorer, .ms-workspace--focused .ms-usage-explorer { grid-template-columns: 1fr; gap: var(--space-md); }
-    .ms-usage-nav { position: static; max-height: 220px; overflow-y: auto; }
     .ms-card-grid { grid-template-columns: 1fr; }
   }
-  @media (prefers-reduced-motion: reduce) { .ms-usage-bubble { transition: none; animation: none; } }
 }
 /* ── Ma stack : repasse design (7 oct.) ──
    Même ton que la fiche outil : surfaces plates, filets fins, pilules,
    sélecteur segmenté discret. Aucun dégradé (charte), aucun relief simulé.
    Logique et structure de la V2 inchangées : seulement l'apparence. */
-/* Action principale en pilule, comme « Visiter le site ». */
-.ms-page .ms-header .tt-button-primary { min-height: 40px; padding: 0 18px; border-radius: var(--radius-pill); font-size: 14px; }
 /* Onglets de domaines : compteurs en simple chiffre gris, pas en pastille. */
 .ms-page .ms-domain-filters button { min-height: 48px; font-size: 14px; }
 .ms-page .ms-domain-filters button > span { min-width: 0; height: auto; padding: 0; background: transparent; color: hsl(var(--muted-foreground)); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; }
 .ms-page .ms-domain-filters button[aria-pressed="true"] > span { color: hsl(var(--foreground)); }
-/* Sélecteur Cartes / Par usage : segmenté fin, façon Apple. */
-.ms-page .ms-view-switch { gap: 2px; padding: 2px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); align-self: center; }
-.ms-page .ms-view-switch button { height: 32px; padding: 0 14px; gap: 6px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 500; }
-.ms-page .ms-view-switch button svg { width: 15px; height: 15px; }
-.ms-page .ms-view-switch button[aria-pressed="true"] { box-shadow: 0 1px 2px rgba(15, 15, 15, .08), 0 0 0 .5px rgba(15, 15, 15, .06); font-weight: 600; }
 /* Le titre répète l'onglet actif : gardé pour les lecteurs d'écran seulement. */
 .ms-page .ms-list-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 /* Cartes d'outils : blanches, filet fin, élévation au survol (comme le catalogue). */
@@ -35094,48 +34738,16 @@ img[data-logo-loading] {
 }
 .ms-page .ms-tool.ms-tool-card:hover { background: hsl(var(--card)); border-color: hsl(var(--muted-foreground) / .35); box-shadow: 0 8px 24px rgba(15, 15, 15, .06); transform: translateY(-2px); }
 .ms-page .ms-tool.ms-tool-card.ms-tool--selected { border-color: hsl(var(--foreground)); outline: 0; }
-/* Vue Par usage : bulles plates, sans dégradé ni ombre interne. */
-.ms-page .ms-usage-stage { background: hsl(var(--secondary) / .45); }
-.ms-page .ms-usage-bubble { background: hsl(var(--card)); box-shadow: 0 1px 2px rgba(15, 15, 15, .04); border-color: hsl(var(--border)); }
-.ms-page .ms-usage-bubble:hover { border-color: hsl(var(--muted-foreground) / .4); box-shadow: 0 10px 28px rgba(15, 15, 15, .07); }
-.ms-page .ms-usage-bubble--selected { border-color: hsl(var(--foreground)); box-shadow: 0 10px 28px rgba(15, 15, 15, .07); }
+
 @media (prefers-reduced-motion: reduce) { .ms-page .ms-tool.ms-tool-card:hover { transform: none; } }
 
 /* Ma stack, lecture d'ensemble (7 oct.) : une ligne factuelle sous le titre,
    et sur chaque carte le recoupement possible, même règle que le panneau. */
-/* Ligne de synthèse + sélecteur de vue : même place dans les deux vues. */
-.ms-page .ms-overview-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin: -8px 0 24px; }
-.ms-page .ms-overview-bar .ms-view-switch { margin-left: auto; }
-.ms-page .ms-view-switch button:focus:not(:focus-visible) { outline: none; }
-.ms-page .ms-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0; margin: 0; color: hsl(var(--muted-foreground)); font: 500 15px/1.4 var(--font-ui); }
-.ms-page .ms-summary > span + span::before { content: "·"; margin: 0 10px; color: hsl(var(--border)); }
-.ms-page .ms-summary-overlaps { color: hsl(var(--foreground)); font-weight: 600; }
-.ms-page .ms-inspector-actions .tt-button-secondary { border-radius: var(--radius-pill); }
-/* Panneau Ma stack : chaque recoupement mène à la comparaison des deux outils. */
-.ms-page .ms-overlap-row { display: flex; align-items: center; gap: 8px; }
-.ms-page .ms-overlap-row .ms-overlap-tool { flex: 1; min-width: 0; }
-.ms-page .ms-overlap-compare {
-  flex: none; display: inline-flex; align-items: center; height: 30px; padding: 0 12px;
-  border: 1px solid hsl(var(--border)); border-radius: var(--radius-pill);
-  color: hsl(var(--foreground)); font: 600 12.5px/1 var(--font-ui); text-decoration: none;
-}
-.ms-page .ms-overlap-compare:hover { border-color: hsl(var(--foreground)); }
-.ms-page .ms-overlap-compare:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
 /* Fiche outil : rappel discret de ce que la stack contient déjà. */
 .td-stack-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; color: hsl(var(--muted-foreground)); font: 400 14px/1.45 var(--font-ui); }
 .td-tool-page .td-hero:not(.is-compact) .td-stack-note { grid-column: 2; }
 .td-stack-note a { color: var(--tool-accent-ink, var(--color-text)); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 @media (max-width: 640px) { .td-tool-page .td-hero:not(.is-compact) .td-stack-note { grid-column: 1 / -1; } }
-/* Ma stack, vue Par usage sur mobile : la scène gardait le format 4:3 du
-   bureau (238 px de haut à 390 px) et coupait les bulles. Format carré,
-   marges réduites. */
-@media (max-width: 640px) {
-  .ms-page .ms-bubble-canvas { aspect-ratio: 1 / 1; width: calc(100% - 16px); margin: 8px; }
-  /* La zone des bulles (75 % de large en 4:3, donc carrée) prend toute la
-     largeur de la scène carrée : toujours carrée, bulles rondes et plus grandes. */
-  .ms-page .ms-bubble-field { left: 0; width: 100%; }
-  .ms-page .ms-bubble-canvas--inside .ms-bubble-field { left: 20px; width: calc(100% - 40px); }
-}
 /* Stack vide : trois étapes, numérotées, sans suggestion d'outils. */
 .ms-page .ms-howto { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 980px; margin: 40px 0 0; padding: 0; list-style: none; counter-reset: ms-howto; }
 .ms-page .ms-howto li { display: grid; gap: 6px; padding: 20px; border: 1px solid hsl(var(--border)); border-radius: 16px; background: hsl(var(--card)); counter-increment: ms-howto; }
@@ -35179,3 +34791,399 @@ img[data-logo-loading] {
   .ms-page .ms-card-top { padding: 14px 14px 12px; }
   .ms-page .ms-card-foot { padding: 0 14px; min-height: 44px; }
 }
+/* ── Ma stack, vue Par usage (7 oct.) ──
+   Présence : une couleur par domaine (teinte unie, pas de dégradé), logos plus
+   grands en pile. Compréhension : nom, nombre d'outils (ce que mesure la
+   taille), prix ; légende d'une ligne. Fluidité : entrée en cascade à chaque
+   niveau, léger agrandissement au survol. */
+/* ── Ma stack, vue Par usage en tableau de domaines (7 oct.) ──
+   Une carte par domaine : pastille de couleur, nom, nombre d'outils, budget
+   d'entrée ; puis ses usages et leurs outils (logo, nom, prix). Couleurs en
+   aplats légers, pas de dégradé. Entrée en cascade, survol discret. */
+/* Ma stack, coût (7 oct.) : total converti en tête, sélecteur Coût / Outils,
+   interrupteur « Je paie » sur les outils freemium. */
+.ms-page .ms-size-switch { display: inline-flex; gap: 2px; padding: 2px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); }
+.ms-page .ms-size-switch button { height: 28px; padding: 0 12px; border-radius: var(--radius-pill); color: hsl(var(--muted-foreground)); font: 500 12.5px/1 var(--font-ui); }
+.ms-page .ms-size-switch button[aria-pressed="true"] { background: hsl(var(--card)); color: hsl(var(--foreground)); font-weight: 600; box-shadow: 0 1px 2px rgba(15, 15, 15, .08); }
+.ms-page .ms-size-switch button:focus:not(:focus-visible) { outline: none; }
+/* Ma stack, indicateurs (7 oct.) : quatre chiffres lisibles d'un coup d'œil. */
+.ms-page .ms-stat--overlaps { border-color: color-mix(in srgb, #E8590C 35%, hsl(var(--border))); background: color-mix(in srgb, #E8590C 6%, hsl(var(--card))); }
+.ms-page .ms-stat--overlaps dd { color: color-mix(in srgb, #E8590C 80%, #000); }
+/* Ma stack, en-tête façon page Stack (7 oct.) : bandeau, bande de chiffres,
+   bouton d'ajout, collage de mes logos (le plus cher au centre). */
+.ms-page .ms-hero { margin-bottom: 28px; }
+.ms-page .ms-hero h1 { margin-top: 18px; }
+.ms-page .ms-hero-stats { margin-top: 28px; }
+.ms-page .ms-hero-stats .ms-stat--overlaps dd { color: color-mix(in srgb, #E8590C 82%, #000); }
+.ms-page .ms-hero button.sg-cluster-app { padding: 0; border: 0; background: none; cursor: pointer; }
+.ms-page .ms-hero--empty { grid-template-columns: minmax(0, 1fr); }
+.ms-page .ms-hero-stats .ms-stat--overlaps { padding: 0 16px; border: 0; border-left: 1px solid var(--color-border); border-radius: 0; background: none; }
+/* Ma stack, sections numérotées comme les pages Stack (7 oct.). */
+.ms-page .ms-section { margin-top: 72px; }
+.ms-page .ms-section-lead { max-width: 70ch; margin: -12px 0 20px; color: hsl(var(--muted-foreground)); font: 400 15px/1.55 var(--font-ui); }
+.ms-page .ms-budget-link { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.ms-page .ms-budget-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ms-page .ms-pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.ms-page .ms-pair { display: grid; gap: 10px; padding: 16px; border: 1px solid hsl(var(--border)); border-radius: 18px; background: hsl(var(--card)); }
+.ms-page .ms-pair-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ms-page .ms-pair-tool { position: relative; display: flex; align-items: center; gap: 10px; min-width: 0; padding: 10px; border-radius: 12px; background: hsl(var(--secondary) / .5); text-align: left; }
+.ms-page .ms-pair-tool:hover { background: hsl(var(--secondary)); }
+.ms-page .ms-pair-tool > span:not(.ms-pair-sign) { display: grid; min-width: 0; }
+.ms-page .ms-pair-tool strong { overflow: hidden; font: 650 14.5px/1.25 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-pair-tool small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1.3 var(--font-ui); }
+.ms-page .ms-pair-sign { position: absolute; top: 50%; right: -16px; z-index: 1; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: hsl(var(--card)); box-shadow: 0 0 0 1px hsl(var(--border)); color: color-mix(in srgb, #E8590C 80%, #000); font: 600 13px/1 var(--font-ui); transform: translateY(-50%); }
+.ms-page .ms-pair-why { margin: 0; color: hsl(var(--muted-foreground)); font: 400 13px/1.45 var(--font-ui); }
+.ms-page .ms-pair-compare { justify-self: start; display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: var(--radius-pill); background: hsl(var(--foreground)); color: hsl(var(--background)); font: 600 13px/1 var(--font-ui); text-decoration: none; }
+.ms-page .ms-pair-compare:hover { background: hsl(var(--foreground) / .85); }
+@media (max-width: 640px) { .ms-page .ms-section { margin-top: 48px; } .ms-page .ms-pair { padding: 12px; } .ms-page .ms-pair-tool { flex-direction: column; align-items: flex-start; gap: 6px; padding: 10px; } .ms-page .ms-pair-sign { right: -16px; } }
+.ms-page .ms-stat-link { color: color-mix(in srgb, #E8590C 82%, #000); font: 600 12px/1.3 var(--font-ui); text-decoration: none; }
+.ms-page .ms-stat-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ms-page #ms-overlaps { scroll-margin-top: 24px; }
+
+/* My stack as a dashboard (7 Oct 2026): the hero keeps the whole-stack view
+   (four figures, logo cluster), then the usage map as the scope picker, then budget, overlaps and the
+   tools of the picked scope. */
+.ms-page .ms-tile { min-width: 0; padding: 20px; border-radius: 24px; background: hsl(var(--card)); box-shadow: inset 0 0 0 1px hsl(var(--border)); }
+.ms-page .ms-tile-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 8px 16px; margin-bottom: 12px; }
+.ms-page .ms-tile-head h2 { margin: 0; font: 650 18px/1.25 var(--font-ui); letter-spacing: -.01em; }
+.ms-page .ms-tile-head p { max-width: 52ch; margin: 4px 0 0; color: hsl(var(--muted-foreground)); font: 400 13px/1.45 var(--font-ui); }
+.ms-page .ms-tile-note { margin: 16px 0 0; color: hsl(var(--muted-foreground)); font: 400 12px/1.5 var(--font-ui); }
+.ms-page .ms-tile-more { margin-top: 12px; padding: 0; color: hsl(var(--foreground)); font: 600 13px/1.3 var(--font-ui); text-decoration: underline; text-underline-offset: 3px; }
+/* Budget tile: smaller ring, one-column legend. */
+.ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 150px minmax(0, 1fr); gap: 20px; margin-top: 4px; }
+.ms-page .ms-budget-tile .sg-donut { width: 150px; height: 150px; }
+.ms-page .ms-budget-tile .sg-storage-legend { grid-template-columns: 1fr; gap: 8px; }
+.ms-page .ms-budget-tile .sg-budget-name, .ms-page .ms-budget-tile .sg-budget-value { font-size: 13.5px; }
+.ms-page .ms-budget-rest .sg-budget-name, .ms-page .ms-budget-rest .sg-budget-value { color: hsl(var(--muted-foreground)); font-weight: 500; }
+/* Overlaps tile: pairs one per row. */
+.ms-page .ms-pairs-panel .ms-pairs { grid-template-columns: 1fr; gap: 10px; }
+.ms-page .ms-pairs-panel .ms-pair { padding: 12px; border-radius: 16px; }
+.ms-page .ms-pair-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.ms-page .ms-pair-foot .ms-pair-why { min-width: 0; }
+.ms-page .ms-pair-foot .ms-pair-compare { flex-shrink: 0; }
+.ms-page #ms-budget { scroll-margin-top: 24px; }
+/* Tools tile. */
+@media (max-width: 640px) {
+  .ms-page .ms-tile { padding: 14px; border-radius: 20px; }
+  .ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 1fr; justify-items: center; }
+  .ms-page .ms-budget-tile .sg-storage-legend { width: 100%; }
+}
+/* Design pass (7 Oct 2026): back to the stack pages' language. Editorial
+   section headings, no frame around the map or the tools, budget and
+   overlaps as soft Apple-style widgets (no hairline, no box in a box). */
+.ms-page .ms-tools-section { margin-top: 64px; }
+.ms-page .ms-section-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; margin-bottom: 28px; }
+.ms-page .ms-section-row .sg-section-heading { margin: 0; }
+.ms-page .ms-tile { padding: 28px; border-radius: 28px; background: var(--color-surface-soft); box-shadow: none; }
+.ms-page .ms-tile-head { margin-bottom: 20px; }
+.ms-page .ms-tile-head h2 { color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-page .ms-tile-head p { margin-top: 6px; color: hsl(var(--foreground)); font: 600 19px/1.3 var(--font-brand); letter-spacing: -.015em; }
+.ms-page .ms-tile .ms-size-switch { background: hsl(var(--card)); }
+.ms-page .ms-tile .ms-size-switch button[aria-pressed="true"] { background: hsl(var(--foreground)); color: hsl(var(--background)); box-shadow: none; }
+.ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 160px minmax(0, 1fr); gap: 24px; }
+.ms-page .ms-budget-tile .sg-donut { width: 160px; height: 160px; }
+/* Overlaps: an inset grouped list, one white row per pair. */
+.ms-page .ms-pairs-panel .ms-pairs { gap: 8px; }
+.ms-page .ms-pairs-panel .ms-pair { gap: 8px; padding: 14px 16px; border: 0; border-radius: 18px; background: hsl(var(--card)); transition: transform 220ms cubic-bezier(.2, .8, .2, 1); }
+.ms-page .ms-pairs-panel .ms-pair:hover { transform: translateY(-2px); }
+.ms-page .ms-pairs-panel .ms-pair-tool { padding: 0; background: none; }
+.ms-page .ms-pairs-panel .ms-pair-tool:hover { background: none; }
+.ms-page .ms-pairs-panel .ms-pair-tool:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.ms-page .ms-pairs-panel .ms-pair-sign { right: -4px; box-shadow: none; background: color-mix(in srgb, #E8590C 12%, hsl(var(--card))); }
+.ms-page .ms-pairs-panel .ms-pair-tool:last-child { padding-left: 16px; }
+.ms-page .ms-pairs-panel .ms-pair-compare { height: 30px; padding: 0 12px; background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
+.ms-page .ms-pairs-panel .ms-pair-compare:hover { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+.ms-page .ms-tile-more { margin-top: 14px; text-decoration: none; }
+.ms-page .ms-tile-more::after { content: " →"; }
+/* Tools: plain section, the cards are the only boxes. */
+.ms-page .ms-tools-section .ms-domain-filters { margin: -8px 0 20px; }
+@media (max-width: 640px) {
+  .ms-page .ms-tools-section { margin-top: 48px; }
+  .ms-page .ms-tile { padding: 18px; border-radius: 24px; }
+  .ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 1fr; }
+}
+/* Budget by area: no logo column, and an area is a way into the page filter. */
+.ms-page .ms-budget-tile .sg-storage-legend li.ms-budget-area { grid-template-columns: 8px minmax(0, 1fr) auto; }
+.ms-page .ms-budget-tile .sg-storage-legend li.ms-budget-area .sg-storage-dot { width: 10px; height: 10px; }
+.ms-page .ms-budget-tile .sg-donut-seg { cursor: pointer; }
+/* Freemium widget: full width under budget and overlaps, an iOS-style list of
+   switches, with what the declarations add to the budget. */
+.ms-freemium-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.ms-freemium-list li { display: flex; align-items: center; gap: 12px; padding: 10px 12px 10px 14px; border-radius: 18px; background: hsl(var(--card)); transition: box-shadow 220ms ease; }
+.ms-freemium-list li.is-on { box-shadow: inset 0 0 0 1.5px color-mix(in srgb, #0E9F6E 45%, transparent); }
+.ms-freemium-tool { display: flex; flex: 1; align-items: center; gap: 12px; min-width: 0; padding: 0; text-align: left; }
+.ms-freemium-tool > span { display: grid; min-width: 0; }
+.ms-freemium-tool strong { overflow: hidden; font: 650 14.5px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+.ms-freemium-tool small { overflow: hidden; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.35 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ms-switch { display: inline-flex; flex-shrink: 0; align-items: center; gap: 8px; padding: 4px 0; color: hsl(var(--muted-foreground)); font: 600 12.5px/1 var(--font-ui); }
+.ms-switch[aria-checked="true"] { color: color-mix(in srgb, #0E9F6E 80%, #000); }
+.ms-switch-track { position: relative; width: 42px; height: 26px; border-radius: 13px; background: hsl(var(--muted-foreground) / .28); transition: background-color 220ms ease; }
+.ms-switch-track > span { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(15, 15, 15, .2); transition: transform 260ms cubic-bezier(.34, 1.56, .64, 1); }
+.ms-switch[aria-checked="true"] .ms-switch-track { background: #0E9F6E; }
+.ms-switch[aria-checked="true"] .ms-switch-track > span { transform: translateX(16px); }
+.ms-switch:focus-visible { outline: none; }
+.ms-switch:focus-visible .ms-switch-track { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+/* Budget: the freemium count is a way to the widget, not a fold. */
+@media (prefers-reduced-motion: reduce) { .ms-switch-track > span { transition: none; } }
+/* Visit order (7 Oct 2026): overlaps, then budget with freemium beside it,
+   then the tools. */
+.ms-page .ms-overlaps-section, .ms-page .ms-budget-section { margin-top: 64px; }
+.ms-page .ms-pairs-panel { padding: 12px; border-radius: 28px; background: var(--color-surface-soft); }
+.ms-page .ms-pairs-panel .ms-pairs { grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 8px; }
+.ms-page .ms-pairs-panel .ms-tile-more { margin: 12px 8px 4px; }
+.ms-page .ms-zoom-back { display: inline-flex; align-items: center; gap: 4px; height: 32px; padding: 0 12px 0 8px; border-radius: var(--radius-pill); background: hsl(var(--card)); color: hsl(var(--foreground)); font: 600 13px/1 var(--font-ui); }
+.ms-page .ms-zoom-back:hover { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+@media (max-width: 640px) { .ms-page .ms-overlaps-section, .ms-page .ms-budget-section { margin-top: 48px; } .ms-page .ms-pairs-panel { padding: 8px; border-radius: 24px; } }
+/* The ring stays in view while freemium switches are flipped beside it
+   (sticky on the grid item itself). */
+/* Freemium question (7 Oct 2026): asked once in a bar after the hero, answered
+   in a dialog; the budget note reopens it. */
+.ms-page .ms-calibrate { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 32px 0 0; padding: 16px 16px 16px 20px; border-radius: 24px; background: color-mix(in srgb, #0E9F6E 8%, var(--color-surface-soft)); animation: ms-calibrate-in 420ms cubic-bezier(.2, .8, .2, 1) both; }
+@keyframes ms-calibrate-in { from { opacity: 0; transform: translateY(8px); } }
+.ms-page .ms-calibrate-logos { display: flex; }
+.ms-page .ms-calibrate-logos > * { border-radius: 9px; background: hsl(var(--card)); box-shadow: 0 0 0 2px hsl(var(--card)); }
+.ms-page .ms-calibrate-logos > * + * { margin-left: -8px; }
+.ms-page .ms-calibrate p { flex: 1 1 320px; margin: 0; color: hsl(var(--muted-foreground)); font: 400 14.5px/1.5 var(--font-ui); }
+.ms-page .ms-calibrate p strong { color: hsl(var(--foreground)); font-weight: 600; }
+.ms-page .ms-calibrate-actions { display: flex; gap: 8px; margin-left: auto; }
+.ms-page .ms-calibrate-skip { height: 40px; padding: 0 16px; border-radius: var(--radius-pill); background: hsl(var(--card)); color: hsl(var(--foreground)); font: 600 14px/1 var(--font-ui); }
+.ms-page .ms-calibrate-skip:hover { background: hsl(var(--secondary)); }
+.ms-page .ms-calibrate-go { min-height: 40px; padding: 0 18px; border-radius: var(--radius-pill); }
+.ms-page button.ms-stat-link { padding: 0; text-align: left; }
+.ms-page .ms-inline-link { padding: 0; color: hsl(var(--foreground)); font: inherit; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.ms-sheet { max-width: 520px; max-height: min(720px, calc(100dvh - 32px)); display: flex; flex-direction: column; gap: 16px; padding: 24px; border: 0; border-radius: 28px; background: var(--color-surface-soft); }
+.ms-sheet-head h2 { margin: 0 32px 6px 0; font: 650 22px/1.2 var(--font-brand); letter-spacing: -.02em; }
+.ms-sheet-head p { margin: 0; color: hsl(var(--muted-foreground)); font: 400 14px/1.5 var(--font-ui); }
+.ms-sheet .ms-freemium-list { grid-template-columns: 1fr; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.ms-sheet-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+.ms-sheet-foot p { margin: 0; color: color-mix(in srgb, #0E9F6E 80%, #000); font: 600 14px/1.4 var(--font-ui); }
+.ms-sheet-done { min-height: 44px; padding: 0 22px; border-radius: var(--radius-pill); }
+/* Overlaps: what is paid twice, led by the amount. */
+/* Budget alone in its section: the full ring. */
+.ms-page .ms-budget-section .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 220px minmax(0, 1fr); gap: 40px; }
+.ms-page .ms-budget-section .ms-budget-tile .sg-donut { width: 220px; height: 220px; }
+.ms-page .ms-budget-section .ms-budget-tile .sg-storage-legend { grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 10px 32px; }
+@media (max-width: 640px) {
+  .ms-page .ms-calibrate { padding: 16px; }
+  .ms-page .ms-calibrate-actions { width: 100%; }
+  .ms-page .ms-calibrate-actions > * { flex: 1; justify-content: center; }
+  .ms-page .ms-budget-section .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 1fr; gap: 24px; }
+  .ms-sheet { padding: 20px; border-radius: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .ms-page .ms-calibrate { animation: none; } }
+
+/* Overlaps lead: one sentence, the amount paid twice in bold accent. */
+.ms-page .ms-section-lead .ms-double { color: color-mix(in srgb, #E8590C 82%, #000); font-weight: 650; white-space: nowrap; }
+.ms-pair-double { justify-self: start; display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: var(--radius-pill); background: color-mix(in srgb, #E8590C 12%, hsl(var(--card))); color: color-mix(in srgb, #E8590C 82%, #000); font: 600 12.5px/1 var(--font-ui); font-variant-numeric: tabular-nums; }
+/* My tools: quiet Add and Edit actions instead of a hero CTA. */
+.ms-page .ms-tools-actions { display: flex; gap: 8px; }
+.ms-page .ms-quiet-button { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: var(--radius-pill); background: var(--color-surface-soft); color: hsl(var(--foreground)); font: 600 14px/1 var(--font-ui); transition: background-color 160ms ease; }
+.ms-page .ms-quiet-button:hover { background: hsl(var(--secondary)); }
+.ms-page .ms-quiet-button[aria-pressed="true"] { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+.ms-page .ms-tools-section .ms-search { margin: 0 0 20px; }
+/* Edit mode, iOS home screen: cards wiggle, a minus badge removes. */
+.ms-page .ms-card-wrap { position: relative; display: grid; min-width: 0; }
+.ms-page .ms-card-remove { position: absolute; top: -8px; left: -8px; z-index: 2; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: #1d1d1f; color: #fff; box-shadow: 0 2px 6px rgba(15, 15, 15, .25); animation: ms-badge-in 260ms cubic-bezier(.34, 1.56, .64, 1) both; }
+.ms-page .ms-card-remove:hover { background: #d70015; }
+.ms-page .ms-card-remove:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+@keyframes ms-badge-in { from { scale: 0; } }
+.ms-page .ms-card-grid[data-editing] .ms-tool-card { cursor: default; }
+@media (prefers-reduced-motion: no-preference) {
+  .ms-page .ms-card-grid[data-editing] .ms-card-wrap { animation: ms-wiggle 280ms ease-in-out infinite alternate; }
+  .ms-page .ms-card-grid[data-editing] .ms-card-wrap:nth-child(2n) { animation-delay: -140ms; animation-duration: 300ms; }
+}
+@keyframes ms-wiggle { from { rotate: -.6deg; } to { rotate: .6deg; } }
+/* Tool sheet: what this tool does in my stack. Rendered in a portal, so
+   classes are not scoped to .ms-page. */
+.ms-tool-sheet.ms-tool-sheet { display: flex; flex-direction: column; gap: 20px; width: min(440px, 100vw); max-width: none; padding: 28px 24px 24px; overflow-y: auto; border: 0; background: var(--color-surface-soft); }
+.ms-tool-sheet[data-side="bottom"], .ms-tool-sheet.ms-tool-sheet:where([class*="bottom-0"]) { width: 100%; max-height: 88dvh; border-radius: 28px 28px 0 0; padding: 24px 18px 20px; }
+.ms-ts-head { display: flex; align-items: center; gap: 14px; padding-right: 32px; }
+.ms-ts-head > :first-child { flex-shrink: 0; border-radius: 14px; box-shadow: 0 6px 18px rgba(15, 15, 15, .1); }
+.ms-ts-eyebrow { margin: 0 0 2px; color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-ts-title { margin: 0; font: 650 26px/1.1 var(--font-brand); letter-spacing: -.025em; }
+.ms-ts-lead { margin: -6px 0 0; color: hsl(var(--muted-foreground)); font: 400 14.5px/1.55 var(--font-ui); }
+.ms-ts-group, .ms-ts-section { display: grid; gap: 8px; }
+.ms-ts-group h3, .ms-ts-section h3 { margin: 0 0 2px 4px; color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-ts-group { gap: 0; overflow: hidden; border-radius: 18px; background: hsl(var(--card)); }
+.ms-ts-group h3 { padding: 14px 16px 4px; margin: 0; }
+.ms-ts-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 52px; padding: 10px 16px; font: 500 14.5px/1.35 var(--font-ui); }
+.ms-ts-row + .ms-ts-row { box-shadow: inset 0 1px 0 hsl(var(--border) / .8); }
+.ms-ts-row > span { display: grid; gap: 2px; }
+.ms-ts-row small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1.3 var(--font-ui); }
+.ms-ts-row strong { font: 650 17px/1.2 var(--font-ui); font-variant-numeric: tabular-nums; }
+.ms-ts-row--quiet { color: hsl(var(--muted-foreground)); font-size: 13.5px; min-height: 44px; }
+.ms-ts-uses { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.ms-ts-uses li { padding: 6px 12px; border-radius: var(--radius-pill); background: hsl(var(--card)); font: 500 13px/1.2 var(--font-ui); }
+.ms-ts-empty { margin: 0 4px; color: hsl(var(--muted-foreground)); font: 400 14px/1.5 var(--font-ui); }
+.ms-ts-pairs { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.ms-ts-pairs li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px 12px; padding: 12px 14px; border-radius: 18px; background: hsl(var(--card)); }
+.ms-ts-pairs .ms-pair-double { grid-column: 1 / -1; grid-row: 1; }
+.ms-ts-other { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 0; text-align: left; }
+.ms-ts-other > span { display: grid; min-width: 0; }
+.ms-ts-other strong { font: 650 14.5px/1.3 var(--font-ui); }
+.ms-ts-other small { overflow: hidden; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.35 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+.ms-ts-other:hover strong { text-decoration: underline; text-underline-offset: 3px; }
+.ms-ts-compare { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); color: hsl(var(--foreground)); font: 600 13px/1 var(--font-ui); text-decoration: none; }
+.ms-ts-compare:hover { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+.ms-ts-foot { display: grid; gap: 8px; margin-top: auto; padding-top: 4px; }
+.ms-ts-profile { justify-content: center; min-height: 46px; border-radius: var(--radius-pill); }
+.ms-ts-remove { height: 44px; border-radius: var(--radius-pill); color: #d70015; font: 600 14px/1 var(--font-ui); }
+.ms-ts-remove:hover { background: color-mix(in srgb, #d70015 8%, transparent); }
+/* Hero figures: one line each ("≈" smaller, never wrapping), and a Screen
+   Time style micro-bar under each, in the budget ring's area colours. */
+.ms-page .ms-hero-stats dd { white-space: nowrap; }
+.ms-page .ms-approx { margin-right: .12em; font-size: .62em; vertical-align: .18em; opacity: .7; }
+.ms-page .ms-stat-bar { display: flex; gap: 2px; width: 100%; max-width: 132px; height: 6px; margin: 8px 0 6px; overflow: hidden; border-radius: 3px; }
+.ms-page .ms-stat-bar i { min-width: 3px; height: 100%; border-radius: 2px; background: hsl(var(--muted-foreground) / .25); transform-origin: left; animation: ms-bar-in 700ms cubic-bezier(.2, .8, .2, 1) both; }
+.ms-page .ms-stat-bar--share { position: relative; height: auto; flex-wrap: wrap; overflow: visible; row-gap: 6px; }
+.ms-page .ms-stat-bar--share i { height: 6px; }
+.ms-page .ms-stat-bar--share i:first-child:not(:last-of-type) { background: color-mix(in srgb, #E8590C 85%, #000); }
+.ms-page .ms-stat-bar--share em { flex-basis: 100%; color: hsl(var(--muted-foreground)); font: 500 12px/1.2 var(--font-ui); font-style: normal; }
+@keyframes ms-bar-in { from { transform: scaleX(0); } }
+@media (prefers-reduced-motion: reduce) { .ms-page .ms-stat-bar i { animation: none; } }
+/* Hero labels with a pictogram; bar segments explain themselves in a pill on
+   hover (Screen Time style). */
+.ms-page .ms-hero-stats dt { display: inline-flex; align-items: center; gap: 6px; }
+.ms-page .ms-hero-stats dt svg { flex-shrink: 0; opacity: .75; }
+.ms-page .ms-hero-stats .ms-stat--overlaps dt svg { color: color-mix(in srgb, #E8590C 82%, #000); opacity: 1; }
+.ms-page .ms-stat-bar { overflow: visible; height: 14px; align-items: center; margin: 4px 0 2px; }
+.ms-page .ms-stat-bar i { position: relative; height: 6px; cursor: default; transition: height 160ms ease, opacity 160ms ease; }
+.ms-page .ms-stat-bar:hover i { opacity: .45; }
+.ms-page .ms-stat-bar i:hover { height: 10px; opacity: 1; }
+.ms-page .ms-stat-bar i[data-tip]::after {
+  content: attr(data-tip); position: absolute; bottom: calc(100% + 8px); left: 50%; z-index: 5;
+  padding: 6px 10px; border-radius: var(--radius-pill); background: #1d1d1f; color: #fff;
+  font: 600 12px/1 var(--font-ui); font-style: normal; white-space: nowrap; pointer-events: none;
+  opacity: 0; transform: translate(-50%, 4px); transition: opacity 140ms ease, transform 180ms cubic-bezier(.2, .8, .2, 1);
+}
+.ms-page .ms-stat-bar i[data-tip]:hover::after { opacity: 1; transform: translate(-50%, 0); }
+.ms-page .ms-stat-bar--share { height: auto; }
+.ms-page .ms-stat-bar--share i { height: 6px; }
+.ms-page .ms-stat-bar--share i:hover { height: 10px; }
+/* Responsive pass (7 Oct 2026), phones: the same story in half the height.
+   Hero figures become rows, the logo cluster shrinks, pairs and tools become
+   compact rows (the tool sheet carries the details). */
+@media (max-width: 640px) {
+  .ms-page .ms-hero .sg-cluster { max-width: 260px; margin-top: 4px; }
+  .ms-page .ms-hero-stats { grid-template-columns: 1fr; max-width: none; margin-top: 24px; padding-top: 0; border-top: 0; }
+  .ms-page .ms-hero-stats > div {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "label value" "bar bar" "sub sub";
+    align-items: center; column-gap: 12px; padding: 14px 0; border-left: 0; border-top: 1px solid var(--color-border);
+  }
+  .ms-page .ms-hero-stats > div:first-child { padding-left: 0; }
+  .ms-page .ms-hero-stats > div:last-child { border-bottom: 1px solid var(--color-border); }
+  .ms-page .ms-hero-stats dt { grid-area: label; }
+  .ms-page .ms-hero-stats dd { grid-area: value; margin: 0; font-size: 26px; }
+  .ms-page .ms-hero-stats .ms-stat-bar { grid-area: bar; max-width: none; margin: 8px 0 4px; }
+  .ms-page .ms-hero-stats > div > span:not(.ms-stat-bar), .ms-page .ms-hero-stats .ms-stat-link { grid-column: 1 / -1; }
+  .ms-page .ms-hero-stats .ms-stat-bar--share em { display: none; }
+  .ms-page .ms-hero-stats .ms-stat-link { justify-self: start; }
+
+  /* Pairs: one compact row of tools, the reason on one line. */
+  .ms-page .ms-pairs-panel .ms-pair { gap: 8px; padding: 12px; }
+  .ms-page .ms-pairs-panel .ms-pair-tool { flex-direction: row; align-items: center; gap: 8px; }
+  .ms-page .ms-pairs-panel .ms-pair-tool:last-child { padding-left: 14px; }
+  .ms-page .ms-pairs-panel .ms-pair-tool strong { font-size: 14px; }
+  .ms-page .ms-pairs-panel .ms-pair-sign { right: -8px; width: 20px; height: 20px; font-size: 11px; }
+  .ms-page .ms-pair-foot .ms-pair-why { overflow: hidden; font-size: 12.5px; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* My tools: an iOS list. Logo, name and area, price on the right. */
+  .ms-page .ms-card-grid { gap: 6px; }
+  .ms-page .ms-tool.ms-tool-card { flex-direction: row; align-items: center; min-height: 64px; border-radius: 16px; }
+  .ms-page .ms-card-top { flex: 1; min-width: 0; padding: 10px 0 10px 12px; gap: 12px; }
+  .ms-page .ms-card-logo { width: 40px; height: 40px; border-radius: 11px; }
+  .ms-page .ms-card-logo img, .ms-page .ms-card-logo > * { max-width: 26px; max-height: 26px; }
+  .ms-page .ms-card-id strong { font-size: 15px; }
+  .ms-page .ms-card-id span { font-size: 12.5px; }
+  .ms-page .ms-card-foot { flex: none; min-height: 0; margin: 0; padding: 0 14px 0 8px; border-top: 0; }
+  .ms-page .ms-card-overlap { display: none; }
+  .ms-page .ms-card-price { max-width: 110px; font-size: 13px; text-align: right; }
+  .ms-page .ms-card-remove { top: -6px; left: -6px; }
+
+  .ms-page .ms-tools-section .ms-section-row { align-items: flex-start; }
+  .ms-page .sg-section-heading h2 { font-size: 26px; }
+}
+/* Pairs never push past the screen: columns can shrink, text ellipsises. */
+.ms-page .ms-pair { grid-template-columns: minmax(0, 1fr); }
+.ms-page .ms-pair-tools { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.ms-page .ms-pair-tool > span:not(.ms-pair-sign) { min-width: 0; }
+.ms-page .ms-pair-tool small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-pair-foot { min-width: 0; }
+.ms-page .ms-pair-foot .ms-pair-why { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Overlap cards (7 Oct 2026): one fixed structure so cards of a row line up.
+   Tools, the reason on one line, then a foot pinned to the bottom: what is
+   paid twice on the left, Compare and Decide on the right. Deciding opens a
+   menu anchored to its button, so nothing around the card moves. */
+.ms-page .ms-pairs-panel .ms-pairs { align-items: stretch; }
+.ms-page .ms-pairs-panel .ms-pair { display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 16px; }
+.ms-page .ms-pair-foot {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "why why" "badge actions";
+  align-items: center; gap: 10px 12px; flex: 1; align-content: space-between; min-width: 0;
+}
+.ms-page .ms-pair-foot .ms-pair-why { grid-area: why; margin: 0; }
+.ms-page .ms-pair-foot .ms-pair-double { grid-area: badge; justify-self: start; }
+.ms-page .ms-pair-actions { grid-area: actions; display: flex; gap: 6px; padding-top: 10px; }
+.ms-page .ms-pair-foot .ms-pair-double { margin-top: 10px; }
+.ms-page .ms-pair-actions .ms-pair-compare, .ms-page .ms-pair-decide {
+  display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: var(--radius-pill);
+  font: 600 13px/1 var(--font-ui); text-decoration: none; white-space: nowrap; transition: background-color 160ms ease, color 160ms ease;
+}
+.ms-page .ms-pair-actions .ms-pair-compare { background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
+.ms-page .ms-pair-actions .ms-pair-compare:hover { background: hsl(var(--secondary) / .7); }
+.ms-page .ms-pair-decide { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+.ms-page .ms-pair-decide:hover, .ms-page .ms-pair-decide[data-state="open"] { background: hsl(var(--foreground) / .82); }
+.ms-page .ms-pair-decide:focus-visible, .ms-page .ms-pair-actions .ms-pair-compare:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+/* The pair's top line separates tools from the foot. */
+.ms-page .ms-pairs-panel .ms-pair-tools { padding-bottom: 12px; border-bottom: 1px solid hsl(var(--border) / .7); }
+
+/* Decision menu (portal, so not scoped to .ms-page). */
+.ms-decide-menu.ms-decide-menu { display: grid; gap: 2px; width: 300px; padding: 8px; border: 0; border-radius: 18px; background: hsl(var(--card)); box-shadow: 0 12px 40px rgba(15, 15, 15, .16), 0 0 0 1px hsl(var(--border)); }
+.ms-decide-title { margin: 4px 8px 6px; color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-decide-menu button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px; border-radius: 12px; text-align: left; transition: background-color 140ms ease; }
+.ms-decide-menu button:hover, .ms-decide-menu button:focus-visible { background: hsl(var(--secondary)); outline: none; }
+.ms-decide-menu button > span:last-child { display: grid; gap: 2px; min-width: 0; }
+.ms-decide-menu strong { font: 600 14px/1.25 var(--font-ui); }
+.ms-decide-menu small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1.3 var(--font-ui); }
+.ms-decide-both { display: grid; flex: none; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: color-mix(in srgb, #E8590C 12%, hsl(var(--card))); color: color-mix(in srgb, #E8590C 82%, #000); font: 600 13px/1 var(--font-ui); }
+
+/* Follow-up of decisions, under the overlaps lead. */
+.ms-page .ms-decided { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: -8px 0 20px; color: hsl(var(--muted-foreground)); font: 500 14px/1.4 var(--font-ui); }
+.ms-page .ms-decided-saved { display: inline-flex; align-items: center; height: 28px; padding: 0 12px; border-radius: var(--radius-pill); background: color-mix(in srgb, #0E9F6E 12%, hsl(var(--card))); color: color-mix(in srgb, #0E9F6E 80%, #000); font-weight: 650; }
+
+/* Compare page: decision for my stack, after the verdict. */
+.ms-compare-decision { display: grid; gap: 12px; margin: 32px 0 56px; padding: 20px; border-radius: 24px; background: var(--color-surface-soft); }
+.ms-cd-eyebrow { margin: 0; color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-cd-lead, .ms-cd-status { margin: 0; color: hsl(var(--muted-foreground)); font: 400 15px/1.5 var(--font-ui); }
+.ms-cd-lead strong, .ms-cd-status strong { color: hsl(var(--foreground)); font-weight: 600; }
+.ms-cd-choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 8px; }
+.ms-cd-choices button { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 16px; background: hsl(var(--card)); text-align: left; transition: box-shadow 160ms ease, transform 160ms ease; }
+.ms-cd-choices button:hover { box-shadow: 0 0 0 1.5px hsl(var(--foreground)); }
+.ms-cd-choices button:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+.ms-cd-choices button > span { display: grid; gap: 2px; min-width: 0; }
+.ms-cd-choices strong { font: 600 14.5px/1.25 var(--font-ui); }
+.ms-cd-choices small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1.3 var(--font-ui); }
+.ms-cd-link { margin-left: 4px; color: hsl(var(--foreground)); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) {
+  .ms-page .ms-pairs-panel .ms-pair { padding: 12px; }
+  .ms-page .ms-pair-foot { grid-template-areas: "why why" "badge badge" "actions actions"; }
+  .ms-page .ms-pair-foot .ms-pair-double:empty { display: none; }
+  .ms-page .ms-pair-actions { justify-content: flex-end; padding-top: 0; }
+}
+@media (max-width: 640px) { .ms-page .ms-pairs-panel .ms-pair { height: auto; } .ms-page .ms-pair-foot { flex: none; align-content: start; } }
+/* Hero figures line up across columns (7 Oct 2026): labels stay on one line,
+   and label, figure, bar and note share rows through a subgrid. */
+@media (min-width: 641px) {
+  .ms-page .ms-hero-stats { grid-template-rows: auto auto auto auto; row-gap: 0; }
+  .ms-page .ms-hero-stats > div { display: grid; grid-row: span 4; grid-template-rows: subgrid; align-content: start; }
+  .ms-page .ms-hero-stats dt { white-space: nowrap; letter-spacing: .06em; }
+  .ms-page .ms-hero-stats dd { margin-top: 6px; }
+  .ms-page .ms-hero-stats .ms-stat-bar { align-self: center; }
+  .ms-page .ms-hero-stats > div > :last-child { align-self: start; }
+}
+@media (min-width: 641px) {
+  .ms-page .ms-hero-stats .ms-stat-bar { align-self: start; }
+  .ms-page .ms-hero-stats .ms-stat-bar--share { padding-top: 4px; }
+}
+/* The share bar no longer holds its caption: same box as the other bars. */
+.ms-page .ms-hero-stats .ms-stat-bar--share { height: 14px; padding-top: 0; flex-wrap: nowrap; }
+.ms-page .ms-hero-stats .ms-stat-note { line-height: 1.5; }
