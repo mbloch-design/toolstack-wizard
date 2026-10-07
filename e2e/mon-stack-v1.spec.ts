@@ -72,7 +72,7 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     const screenshotDir = "/private/tmp/tooltrim-mon-stack-v2";
     fs.mkdirSync(screenshotDir, { recursive: true });
-    await page.locator(".ms-header h1").click();
+    await page.locator(".ms-hero h1").click();
     await page.screenshot({ path: `${screenshotDir}/${lang}-${width}-map.png`, fullPage: true });
     await page.getByRole("button", { name: lang === "fr" ? "Cartes" : "Cards", exact: true }).click();
     await page.screenshot({ path: `${screenshotDir}/${lang}-${width}-stack.png`, fullPage: true });

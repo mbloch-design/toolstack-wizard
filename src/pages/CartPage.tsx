@@ -12,6 +12,11 @@ import { readStackView, STACK_VIEW_KEY, stackCatalogPrice, toolKey, type StackVi
 import { stackDisplayLabel, stackPlacement, stackMapTerritories, stackRelations } from "@/lib/stackUsage";
 import { getScrollTop, scrollToY } from "@/lib/scroll";
 import toolAccents from "@/data/toolAccents.json";
+import { useCurrency } from "@/hooks/useCurrency";
+import { useStackPaidPlans } from "@/hooks/useStackPaidPlans";
+import { stackMonthlyCost, toolMonthlyCost } from "@/lib/stackCost";
+import { HERO_CLUSTER_SLOTS } from "@/lib/heroCluster";
+import { convertAmount, formatAmount } from "@/lib/currencyRates";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 
@@ -54,6 +59,19 @@ export default function CartPage() {
   const overlapsById = useMemo(() => new Map(selectedTools.map((tool) => [tool.id,
     stackRelations(tool, selectedTools, categories, lang).filter((relation) => relation.explicit || relation.commonUses.length > 0).map((relation) => relation.tool),
   ])), [selectedTools, categories, lang]);
+  // Monthly cost with the same rules as By use: freemium at 0 unless declared
+  // paid, total converted at the site's dated rate (Michael, 7 Oct 2026).
+  const { currency } = useCurrency();
+  const plans = useStackPaidPlans();
+  const stackCost = stackMonthlyCost(selectedTools, plans.isPaid, currency, lang);
+  // Hero cluster: costliest tools first, so the one that weighs most on the
+  // budget sits in the middle.
+  const heroOrder = useMemo(() => {
+    const monthly = (tool: ToolSummary) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0; };
+    return [...selectedTools].sort((a, b) => monthly(b) - monthly(a) || a.name.localeCompare(b.name));
+  }, [selectedTools, plans.paid, currency, lang]);
+  const heroApps = heroOrder.length > HERO_CLUSTER_SLOTS.length ? heroOrder.slice(0, HERO_CLUSTER_SLOTS.length - 1) : heroOrder;
+  const heroOverflow = heroOrder.length - heroApps.length;
   const overlapPairs = useMemo(() => {
     const pairs = new Set<string>();
     overlapsById.forEach((others, id) => others.forEach((other) => pairs.add([id, other.id].sort().join("|"))));
@@ -176,21 +194,36 @@ export default function CartPage() {
   }
 
   return <main className="ms-page">
-    <header className="ms-header">
-      <div><h1>{t("Mes outils", "My tools")}</h1><p>{t("Retrouvez vos outils et les usages qu’ils couvrent.", "See your tools and the uses they cover.")}</p></div>
-      {!empty && <button className="tt-button-primary" ref={addRef} onClick={() => setSearchOpen((open) => !open)} aria-expanded={searchOpen} aria-controls="ms-search"><Plus size={18} aria-hidden />{t("Ajouter un outil", "Add a tool")}</button>}
+    {/* Hero like the editorial stack pages (sg-hero--cluster): title, an App
+        Store info strip, the add action, and my tools as an icon cluster with
+        the costliest one in the middle. */}
+    <header className={`sg-hero sg-hero--cluster ms-hero${empty ? " ms-hero--empty" : ""}`}>
+      <div className="sg-hero-copy">
+        <span className="sg-hero-pill">{t("Ma stack", "My stack")}</span>
+        <h1>{t("Mes outils", "My tools")}</h1>
+        <p className="sg-lead">{t("Retrouvez vos outils, les usages qu’ils couvrent et ce qu’ils coûtent.", "See your tools, the uses they cover and what they cost.")}</p>
+        {!empty && <dl className="sg-stats ms-hero-stats">
+          <div><dt>{t("Outils", "Tools")}</dt><dd>{selectedTools.length}</dd><span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span></div>
+          <div><dt>{t("Coût mensuel", "Monthly cost")}</dt><dd>{stackCost.paid > 0 ? `≈ ${formatAmount(Math.round(stackCost.total), currency, lang)}` : t("Gratuit", "Free")}</dd><span>{stackCost.paid > 0 ? t(`${stackCost.paid} outil${stackCost.paid > 1 ? "s" : ""} payant${stackCost.paid > 1 ? "s" : ""}`, `${stackCost.paid} paid tool${stackCost.paid > 1 ? "s" : ""}`) : t("rien de payant", "nothing paid")}</span></div>
+          <div className={overlapPairs > 0 ? "ms-stat--overlaps" : undefined}><dt>{t("Recoupements", "Overlaps")}</dt><dd>{overlapPairs}</dd><span>{overlapPairs > 0 ? t("à examiner", "to review") : t("aucun connu", "none known")}</span></div>
+        </dl>}
+        {!empty && <button className="tt-button-primary ms-hero-add" ref={addRef} onClick={() => setSearchOpen((open) => !open)} aria-expanded={searchOpen} aria-controls="ms-search"><Plus size={18} aria-hidden />{t("Ajouter un outil", "Add a tool")}</button>}
+      </div>
+      {!empty && <div className="sg-cluster" aria-label={t("Mes outils", "My tools")}>
+        {heroApps.map((tool, i) => {
+          const pos = HERO_CLUSTER_SLOTS[i];
+          return <button key={tool.id} type="button" className="sg-cluster-app" title={tool.name} onClick={() => selectTool(toolKey(tool))}
+            style={{ left: `${(pos.x / 440) * 100}%`, top: `${(pos.y / 380) * 100}%`, width: `${(pos.s / 440) * 100}%`, aspectRatio: "1", ["--r" as string]: `${pos.r}deg`, animationDelay: `${-i * 0.7}s` }}>
+            <ToolLogo tool={tool} size={pos.s} className="sg-cluster-icon" /><span className="sr-only">{tool.name}</span>
+          </button>;
+        })}
+        {heroOverflow > 0 && <span className="sg-cluster-more" style={{ left: `${(HERO_CLUSTER_SLOTS[heroApps.length].x / 440) * 100}%`, top: `${(HERO_CLUSTER_SLOTS[heroApps.length].y / 380) * 100}%` }}>+{heroOverflow}</span>}
+      </div>}
     </header>
 
     {/* One factual line to read the whole stack at a glance, with the view
         switch on the same row: it stays in place in both views. */}
     {!empty && <div className="ms-overview-bar">
-      <p className="ms-summary">
-        <span>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}</span>
-      <span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span>
-      <span className={overlapPairs > 0 ? "ms-summary-overlaps" : undefined}>{overlapPairs > 0
-        ? t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""} possible${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} potential overlap${overlapPairs > 1 ? "s" : ""}`)
-        : t("Aucun recoupement connu", "No known overlap")}</span>
-    </p>
       <div className="ms-view-switch" role="group" aria-label={t("Affichage de la stack", "Stack view")}>
         <button type="button" aria-label={t("Cartes", "Cards")} title={t("Cartes", "Cards")} aria-pressed={mode === "stack"} onClick={() => chooseMode("stack")}><LayoutGrid size={21} aria-hidden /><span>{t("Cartes", "Cards")}</span></button>
         <button type="button" aria-label={t("Par usage", "By use")} title={t("Par usage", "By use")} aria-pressed={mode === "map"} onClick={() => chooseMode("map")}><CircleDot size={21} aria-hidden /><span>{t("Par usage", "By use")}</span></button>

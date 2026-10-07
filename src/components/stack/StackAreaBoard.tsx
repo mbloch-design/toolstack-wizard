@@ -57,9 +57,13 @@ export function PriceKinds({ tools, lang }: { tools: ToolSummary[]; lang: "fr" |
 }
 
 /** One area: coloured head, then its uses and their tools. */
-export function AreaCard({ territory, color, delay = 0, lang, selectedId, onSelect, overlaps }: {
+export function AreaCard({ territory, color, delay = 0, lang, selectedId, onSelect, overlaps, paid, extra }: {
   territory: Territory; color: string; delay?: number; lang: "fr" | "en"; selectedId?: string;
   onSelect: (slug: string) => void; overlaps?: Map<string, ToolSummary[]>;
+  /** Freemium plan declared by the person ("I pay"); counts 0 otherwise. */
+  paid?: { isPaid: (slug: string) => boolean; setPaid: (slug: string, value: boolean) => void };
+  /** Extra line under the area name (e.g. its monthly cost). */
+  extra?: string | null;
 }) {
   const en = lang === "en";
   return (
@@ -68,6 +72,7 @@ export function AreaCard({ territory, color, delay = 0, lang, selectedId, onSele
         <span className="ms-area-dot" aria-hidden="true" />
         <h3>{territory.label}</h3>
         <span className="ms-area-count">{en ? `${territory.tools.length} ${territory.tools.length === 1 ? "tool" : "tools"}` : `${territory.tools.length} outil${territory.tools.length > 1 ? "s" : ""}`}</span>
+        {extra && <span className="ms-area-budget">{extra}</span>}
       </header>
       {territory.groups.map((group) => (
         <section key={group.id} className="ms-area-group">
@@ -77,13 +82,23 @@ export function AreaCard({ territory, color, delay = 0, lang, selectedId, onSele
               const price = stackCatalogPrice(tool, lang);
               const others = overlaps?.get(tool.id) || [];
               return (
-                <li key={tool.id}>
+                <li key={tool.id} className="ms-area-row">
                   <button type="button" className="ms-area-tool" aria-pressed={tool.id === selectedId} onClick={() => onSelect(toolKey(tool))}>
                     <ToolLogo tool={tool} size={28} />
                     <span className="ms-area-tool-name">{tool.name}</span>
                     {others.length > 0 && <span className="ms-area-tool-overlap" title={en ? `Overlaps with ${others.map((o) => o.name).join(", ")}` : `Recoupe ${others.map((o) => o.name).join(", ")}`}>⇄ {others[0].name}{others.length > 1 ? ` +${others.length - 1}` : ""}</span>}
                     {price && <span className="ms-area-tool-price">{price}</span>}
                   </button>
+                  {paid && price === "Freemium" && (() => {
+                    const on = paid.isPaid(toolKey(tool));
+                    return (
+                      <button type="button" className={`ms-plan-switch${on ? " is-paid" : ""}`} aria-pressed={on}
+                        title={on ? (en ? "Counted at its entry paid plan" : "Compté à son offre payante d’entrée") : (en ? "Counted as free" : "Compté comme gratuit")}
+                        onClick={() => paid.setPaid(toolKey(tool), !on)}>
+                        {on ? (en ? "I pay" : "Je paie") : (en ? "Free use" : "Usage gratuit")}
+                      </button>
+                    );
+                  })()}
                 </li>
               );
             })}
