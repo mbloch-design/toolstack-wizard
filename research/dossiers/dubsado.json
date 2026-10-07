@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "slug": "dubsado",
+  "tier": "B",
+  "researchedOn": "2026-10-07",
+  "completedLocallyOn": "2026-10-07",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Dubsado",
+    "vendor": "Dubsado",
+    "officialUrl": "https://www.dubsado.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.dubsado.com/pricing", "tier": 1, "accessedOn": "2026-10-07", "title": "Dubsado pricing (Starter, Premier)" }
+  ],
+  "pricing": {
+    "model": "per_seat",
+    "currency": "USD",
+    "pricingUrl": "https://www.dubsado.com/pricing",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 21, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 27.92, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "$335/year, billed annually only; 1 active lead capture form; no bookkeeping integration, scheduling, automated workflows, public proposals or Zapier. Includes up to 3 team users.", "fr": "335 $/an, facturé uniquement à l'année ; 1 formulaire de capture de prospects actif ; pas d'intégration comptable, de planification, de workflows automatisés, de propositions publiques ni de Zapier. Inclut jusqu'à 3 membres d'équipe." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "premier",
+        "name": "Premier",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": 43.75, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "$525/year, billed annually only; unlimited lead capture forms, bookkeeping integration, scheduling, automated conditional workflows, public proposals and Zapier integration. Includes up to 3 team users.", "fr": "525 $/an, facturé uniquement à l'année ; formulaires de capture de prospects illimités, intégration comptable, planification, workflows conditionnels automatisés, propositions publiques et intégration Zapier. Inclut jusqu'à 3 membres d'équipe." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "premier",
+    "addOns": [
+      { "en": "Additional brand: $10/month per extra brand.", "fr": "Marque supplémentaire : 10 $/mois par marque additionnelle.", "unit": "usage", "price": 10, "sourceIds": ["s1"] },
+      { "en": "Extra team users beyond the 3 included: $25/month for 4-10 users, $45/month for 11-20, $60/month for 21-30.", "fr": "Membres d'équipe au-delà des 3 inclus : 25 $/mois pour 4 à 10 utilisateurs, 45 $/mois pour 11 à 20, 60 $/mois pour 21 à 30.", "unit": "usage", "price": 25, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "Both plans bill annually only; no monthly billing option appears on the pricing page ($335/year for Starter, $525/year for Premier).", "fr": "Les deux plans se facturent uniquement à l'année ; aucune option de facturation mensuelle n'apparaît sur la page tarifaire (335 $/an pour Starter, 525 $/an pour Premier).", "sourceIds": ["s1"] },
+      { "en": "Starter excludes automated workflows, Dubsado's headline feature per the catalogue description, so the comparison plan here is Premier (the cheapest plan that includes workflows), not Starter despite its lower price.", "fr": "Starter exclut les workflows automatisés, la fonctionnalité phare de Dubsado selon la description du catalogue ; le plan de comparaison retenu ici est donc Premier (le plan le moins cher qui inclut les workflows), pas Starter malgré son prix plus bas.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "A CRM with conditional, automated client workflows (Premier only), public proposals, scheduling and a bookkeeping integration.", "fr": "Un CRM avec des workflows client conditionnels et automatisés (Premier uniquement), des propositions publiques, la planification et une intégration comptable.", "sourceIds": ["s1"] },
+      { "en": "Unlimited projects and clients, a client portal, reusable templates and calendar sync on both plans.", "fr": "Projets et clients illimités, un portail client, des modèles réutilisables et la synchronisation de calendrier sur les deux plans.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Starter, the cheaper plan, removes bookkeeping integration, scheduling, automated workflows, public proposals and Zapier, Dubsado's main differentiators.", "fr": "Starter, le plan le moins cher, retire l'intégration comptable, la planification, les workflows automatisés, les propositions publiques et Zapier, les principaux atouts de Dubsado.", "sourceIds": ["s1"] },
+      { "en": "Both plans bill only annually, and adding a 4th team member jumps straight to a $25/month block rather than a single extra seat.", "fr": "Les deux plans ne se facturent qu'à l'année, et ajouter un 4e membre d'équipe fait sauter directement à un palier de 25 $/mois plutôt qu'un simple siège supplémentaire.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Zapier", "slug": "zapier", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "A solo consultant or creative freelancer who wants to automate client admin (proposals, contracts, invoices, scheduling) with conditional workflows instead of doing it by hand.", "fr": "Un consultant ou un freelance créatif solo qui veut automatiser l'administratif client (propositions, contrats, factures, planification) avec des workflows conditionnels plutôt qu'à la main." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use: set up an automated workflow on Premier that sends a contract, invoice and welcome email the moment a lead books a call, without manual follow-up.", "fr": "Usage : configurer un workflow automatisé sur Premier qui envoie un contrat, une facture et un e-mail de bienvenue dès qu'un prospect réserve un appel, sans suivi manuel." },
+    { "en": "Use: run the 21-day trial with full Premier access to test conditional workflows before deciding between Starter and Premier.", "fr": "Usage : utiliser l'essai de 21 jours avec accès complet à Premier pour tester les workflows conditionnels avant de choisir entre Starter et Premier." }
+  ],
+  "alternatives": [
+    { "slug": "honeybook", "reason": { "en": "A client-management and workflow-automation platform covering the same freelancer admin need.", "fr": "Une plateforme de gestion client et d'automatisation de workflows qui couvre le même besoin administratif pour freelances." } },
+    { "slug": "suitedash", "reason": { "en": "A broader white-labeled client-portal suite competing for the same freelancer and small-agency audience.", "fr": "Une suite de portail client en marque blanche plus large, qui vise le même public de freelances et petites agences." } },
+    { "slug": "17hats", "reason": { "en": "A client-management suite with contracts, invoicing and workflows aimed at the same solo-freelancer use case.", "fr": "Une suite de gestion client avec contrats, facturation et workflows visant le même usage de freelance solo." } },
+    { "slug": "plutio", "reason": { "en": "An all-in-one client and project management platform competing on the same positioning.", "fr": "Une plateforme tout-en-un de gestion client et de projets qui se positionne de façon similaire." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Premier costs $43.75/month billed annually for conditional workflows that automate client admin, but Starter at $27.92/month strips out that exact feature.", "fr": "Premier coûte 43,75 $/mois facturé à l'année pour des workflows conditionnels qui automatisent l'administratif client, mais Starter à 27,92 $/mois retire exactement cette fonctionnalité.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time to a first useful workflow is not covered by the collected sources.", "fr": "Note neutre : le temps nécessaire pour un premier workflow utile ne figure pas dans les sources relevées.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The plan comparison on the pricing page states exactly what each tier does and doesn't include, so the product is transparent about its stated promises.", "fr": "Le comparatif de plans sur la page tarifaire indique précisément ce que chaque palier inclut ou non, ce qui rend le produit transparent sur ses promesses annoncées.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers CRM, conditional workflows, invoicing, scheduling, proposals and Zapier on Premier, a fairly complete freelancer back-office in one tool.", "fr": "Couvre le CRM, les workflows conditionnels, la facturation, la planification, les propositions et Zapier sur Premier, un back-office de freelance assez complet dans un seul outil.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability if a user leaves Dubsado are not covered by the sources checked.", "fr": "Note neutre : le format d'export et la portabilité des données en cas de départ de Dubsado ne figurent pas dans les sources consultées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "CRM & client workflows", "fr": "CRM et workflows client" },
+    "shortDescription": { "en": "Dubsado is a CRM for freelancers that automates client admin, invoicing and proposals with conditional workflows on its Premier plan.", "fr": "Dubsado est un CRM pour freelances qui automatise l'administratif client, la facturation et les propositions grâce à des workflows conditionnels sur son plan Premier." },
+    "longDescription": {
+      "en": "Dubsado is a CRM built around client admin: lead capture forms, contracts, invoicing, scheduling and public proposals, with conditional automated workflows as its signature feature on the Premier plan. Both plans include a client portal and unlimited projects and clients.\n\nStarter costs $27.92/month billed annually ($335/year) but excludes workflows, bookkeeping integration, scheduling, proposals and Zapier. Premier costs $43.75/month ($525/year) and includes all of it. A 21-day trial gives full Premier access. It fits a solo consultant or creative freelancer who wants client admin to run itself.",
+      "fr": "Dubsado est un CRM construit autour de l'administratif client : formulaires de capture de prospects, contrats, facturation, planification et propositions publiques, avec des workflows automatisés conditionnels comme fonctionnalité phare du plan Premier. Les deux plans incluent un portail client et des projets et clients illimités.\n\nStarter coûte 27,92 $/mois facturé à l'année (335 $/an) mais exclut les workflows, l'intégration comptable, la planification, les propositions et Zapier. Premier coûte 43,75 $/mois (525 $/an) et inclut tout cela. Un essai de 21 jours donne un accès complet à Premier. Convient à un consultant ou un freelance créatif solo qui veut que l'administratif client tourne tout seul."
+    },
+    "pros": [
+      { "en": "Both plans include unlimited projects and clients, not capped by project count like some competitors.", "fr": "Les deux plans incluent des projets et clients illimités, sans plafond par nombre de projets contrairement à certains concurrents." },
+      { "en": "The 21-day trial grants full Premier access, so a buyer can test the automated workflows before paying for them.", "fr": "L'essai de 21 jours donne un accès complet à Premier, ce qui permet de tester les workflows automatisés avant de payer pour eux." }
+    ],
+    "cons": [
+      { "en": "Starter, the cheaper plan, strips out the automated workflows that are Dubsado's main selling point.", "fr": "Starter, le plan le moins cher, retire les workflows automatisés qui sont le principal argument de vente de Dubsado." },
+      { "en": "No monthly billing option exists; both plans are annual-only commitments.", "fr": "Aucune option de facturation mensuelle n'existe ; les deux plans sont des engagements annuels uniquement." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want conditional workflows to automate contracts, invoices and follow-ups for freelance clients.", "fr": "Tu veux des workflows conditionnels pour automatiser contrats, factures et relances pour tes clients en freelance." },
+      "avoidIf": { "en": "You only need basic lead capture and invoicing, since Starter excludes the workflow automation that justifies Premier's price.", "fr": "Tu as seulement besoin de capture de prospects et de facturation basiques, car Starter exclut l'automatisation de workflows qui justifie le prix de Premier." },
+      "threshold": { "en": "Premier costs $525/year ($43.75/month) billed annually, the entry point for Dubsado's automated client workflows.", "fr": "Premier coûte 525 $/an (43,75 $/mois) facturé à l'année, le point d'entrée pour les workflows client automatisés de Dubsado." },
+      "billingTraps": { "en": "Both plans are billed annually only, and a 4th team member costs a flat $25/month block rather than a single added seat.", "fr": "Les deux plans se facturent uniquement à l'année, et un 4e membre d'équipe coûte un palier fixe de 25 $/mois plutôt qu'un simple siège ajouté." }
+    }
+  },
+  "unknowns": [
+    "Whether a monthly billing option exists behind a toggle not reached in this session could not be fully ruled out; the page as read showed annual pricing only."
+  ],
+  "conflicts": []
+}

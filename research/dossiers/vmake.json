@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 2,
+  "slug": "vmake",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "identity": {
+    "officialName": "Vmake",
+    "vendor": "Vmake Labs",
+    "officialUrl": "https://vmake.ai",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://vmake.ai/pricing", "tier": 1, "accessedOn": "2026-10-07", "title": "Vmake Labs pricing (Free/Plus/Pro, monthly, credits per plan)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://vmake.ai/pricing",
+    "verifiedOn": "2026-10-07",
+    "region": null,
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "20 credits per day (valid 1 day), export up to 720p, 1 AI thumbnail/day with limited styles, no commercial use.", "fr": "20 crédits par jour (valables 1 jour), export jusqu'en 720p, 1 miniature IA par jour avec styles limités, pas d'usage commercial." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "20 credits/day (valid 1 day), 720p export, 1 AI thumbnail/day, no commercial use.", "fr": "20 crédits/jour (valables 1 jour), export 720p, 1 miniature IA/jour, pas d'usage commercial." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "plus",
+        "name": "Plus",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 9.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1,000 credits/month, 1080p export, commercial use included; roughly 6 Seedance 2.5 videos or 34 Nano Banana Pro images per month at full price.", "fr": "1 000 crédits/mois, export en 1080p, usage commercial inclus ; environ 6 vidéos Seedance 2.5 ou 34 images Nano Banana Pro par mois au tarif plein." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 29.99, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "4,500 credits/month (selectable up to 20,000), 1080p/2K export, 5x daily limits on Enhancer/Remover, batch up to 30 files, commercial use included.", "fr": "4 500 crédits/mois (jusqu'à 20 000 au choix), export 1080p/2K, limites quotidiennes x5 sur Enhancer/Remover, traitement par lot jusqu'à 30 fichiers, usage commercial inclus." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "plus",
+    "addOns": [],
+    "cautions": [
+      { "en": "Pro's credit allowance is adjustable (4,500 / 10,000 / 20,000 credits/month via a slider), but only the base $29.99/month price for 4,500 credits was confirmed; higher credit tiers likely cost more and were not captured.", "fr": "L'allocation de crédits Pro est ajustable (4 500 / 10 000 / 20 000 crédits/mois via un curseur), mais seul le prix de base de 29,99 $/mois pour 4 500 crédits a été confirmé ; les paliers de crédits supérieurs coûtent probablement plus cher et n'ont pas été relevés.", "sourceIds": ["s1"] },
+      { "en": "An annual billing option advertises 'up to 42% off' but the exact annual per-month price was not captured this session.", "fr": "Une option de facturation annuelle annonce « jusqu'à 42 % de réduction », mais le prix mensuel équivalent exact n'a pas été relevé lors de cette session.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "AI video and image enhancement in the browser: upscaling, quality enhancer, watermark/object remover, no software install.", "fr": "Amélioration vidéo et image par IA dans le navigateur : upscale, amélioration de qualité, suppression d'objets/filigranes, sans logiciel à installer.", "sourceIds": ["s1"] },
+      { "en": "Access to multiple third-party generation models (Seedance, Wan, Kling, Nano Banana, Minimax) through one credit-based interface.", "fr": "Accès à plusieurs modèles de génération tiers (Seedance, Wan, Kling, Nano Banana, Minimax) via une seule interface à crédits.", "sourceIds": ["s1"] },
+      { "en": "API access for usage-based automation, available from the Plus plan up.", "fr": "Accès API pour automatiser l'usage, disponible à partir du plan Plus.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The free plan's credits expire daily (20 credits valid 1 day) rather than accumulating, and caps export at 720p with no commercial use.", "fr": "Les crédits du plan gratuit expirent chaque jour (20 crédits valables 1 jour) au lieu de s'accumuler, et l'export est limité à 720p sans usage commercial.", "sourceIds": ["s1"] },
+      { "en": "Credit cost varies by model (a Seedance 2.5 video costs far more credits than a Nano Banana Pro image), so the advertised credit count does not translate to a fixed number of outputs.", "fr": "Le coût en crédits varie selon le modèle (une vidéo Seedance 2.5 coûte bien plus de crédits qu'une image Nano Banana Pro), donc le nombre de crédits annoncé ne correspond pas à un nombre fixe de résultats.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "ALIX",
+    "description": { "en": "A content creator who needs quick AI video/image upscaling and enhancement without installing editing software.", "fr": "Un(e) créateur/créatrice de contenu qui a besoin d'upscale et d'amélioration vidéo/image par IA rapides, sans installer de logiciel de montage." },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    { "en": "Clean up a clip: upscale and enhance a shaky or low-res video to 1080p/2K before posting it, directly in the browser.", "fr": "Nettoyer un clip : upscaler et améliorer une vidéo tremblante ou basse résolution en 1080p/2K avant publication, directement dans le navigateur." },
+    { "en": "Remove distractions: use the watermark or object remover on a video or image instead of re-shooting it.", "fr": "Supprimer les distractions : utiliser le retrait de filigrane ou d'objet sur une vidéo ou une image plutôt que de refaire la prise." }
+  ],
+  "alternatives": [
+    { "slug": "topaz-video-ai", "reason": { "en": "Dedicated AI video upscaling tool, generally regarded as a quality benchmark, but installed desktop software rather than browser-based.", "fr": "Outil dédié d'upscale vidéo par IA, considéré comme une référence de qualité, mais en logiciel de bureau installé plutôt que dans le navigateur." } },
+    { "slug": "capcut", "reason": { "en": "Broader video editor with AI enhancement features bundled into a full editing suite.", "fr": "Éditeur vidéo plus large avec des fonctions d'amélioration IA intégrées à une suite de montage complète." } },
+    { "slug": "descript", "reason": { "en": "AI-first video/audio editor focused on transcript-based editing rather than pure upscale/enhance.", "fr": "Éditeur vidéo/audio IA centré sur le montage par transcription plutôt que sur le pur upscale/amélioration." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Plus costs $9.99/month for 1,000 credits (about 6 Seedance videos or 34 images); reasonable for light solo use, but credit costs vary a lot by model, making the real per-output cost hard to predict upfront.", "fr": "Plus coûte 9,99 $/mois pour 1 000 crédits (environ 6 vidéos Seedance ou 34 images) ; raisonnable pour un usage solo léger, mais le coût en crédits varie beaucoup selon le modèle, rendant le coût réel par résultat difficile à anticiper.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Browser-based with no install; the free plan gives an immediate first result (upscale/enhance) within daily credit limits.", "fr": "Fonctionne dans le navigateur sans installation ; le plan gratuit donne un premier résultat immédiat (upscale/amélioration) dans la limite des crédits quotidiens.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the advertised enhancement/upscale/remove features per the pricing page, but output quality itself is not verified by this session's sources.", "fr": "Livre les fonctions d'amélioration/upscale/suppression annoncées sur la page tarifs, mais la qualité réelle des résultats n'est pas vérifiée par les sources de cette session.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Aggregates several third-party generation models in one interface, but as a credit-metered aggregator it depends on those models rather than offering a proprietary engine comparable to a dedicated upscaler.", "fr": "Agrège plusieurs modèles de génération tiers dans une seule interface, mais en tant qu'agrégateur à crédits il dépend de ces modèles plutôt que d'offrir un moteur propriétaire comparable à un upscaler dédié.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats and bulk data portability on cancellation are not described on the pricing page.", "fr": "Note neutre : les formats d'export et la portabilité des données en masse en cas d'annulation ne sont pas décrits sur la page tarifs.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "AI video upscaling", "fr": "Upscale vidéo par IA" },
+    "shortDescription": { "en": "Vmake is a browser-based AI tool for upscaling, enhancing and cleaning up video and images, billed through monthly credits.", "fr": "Vmake est un outil IA dans le navigateur pour upscaler, améliorer et nettoyer vidéos et images, facturé en crédits mensuels." },
+    "longDescription": {
+      "en": "Vmake upscales and enhances video and images in the browser: quality enhancement, watermark and object removal, and access to several third-party generation models (Seedance, Wan, Kling, Nano Banana) through one credit-based interface, with API access from the Plus plan.\n\nThe free plan gives 20 credits/day (720p export, no commercial use); Plus costs $9.99/month for 1,000 credits/month at 1080p with commercial use, and Pro costs $29.99/month for 4,500 credits at 1080p/2K with 5x higher daily tool limits. It fits a content creator who wants a quick fix on a clip without installing editing software.",
+      "fr": "Vmake upscale et améliore vidéos et images dans le navigateur : amélioration de qualité, suppression de filigrane et d'objets, et accès à plusieurs modèles de génération tiers (Seedance, Wan, Kling, Nano Banana) via une seule interface à crédits, avec accès API dès le plan Plus.\n\nLe plan gratuit donne 20 crédits/jour (export 720p, pas d'usage commercial) ; Plus coûte 9,99 $/mois pour 1 000 crédits/mois en 1080p avec usage commercial, et Pro coûte 29,99 $/mois pour 4 500 crédits en 1080p/2K avec des limites quotidiennes x5. Il convient à un(e) créateur/créatrice de contenu qui veut corriger rapidement un clip sans installer de logiciel de montage."
+    },
+    "pros": [
+      { "en": "No install: works entirely in the browser, with a free daily credit allowance to try it before paying.", "fr": "Aucune installation : fonctionne entièrement dans le navigateur, avec une allocation de crédits gratuite quotidienne pour tester avant de payer." },
+      { "en": "Bundles several third-party generation models behind one subscription instead of paying for each separately.", "fr": "Regroupe plusieurs modèles de génération tiers derrière un seul abonnement plutôt que de payer chacun séparément." }
+    ],
+    "cons": [
+      { "en": "Credit cost per output varies by model, so the advertised monthly credit count doesn't map to a predictable number of videos or images.", "fr": "Le coût en crédits par résultat varie selon le modèle, donc le nombre de crédits mensuel annoncé ne correspond pas à un nombre prévisible de vidéos ou d'images." },
+      { "en": "Commercial use and 1080p export are locked behind the paid Plus plan; the free plan caps out at 720p.", "fr": "L'usage commercial et l'export 1080p restent réservés au plan payant Plus ; le plan gratuit se limite à 720p." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You occasionally need to upscale or clean up a video or image and don't want to install dedicated editing software.", "fr": "Tu as occasionnellement besoin d'upscaler ou de nettoyer une vidéo ou une image sans installer de logiciel de montage dédié." },
+      "avoidIf": { "en": "You process video heavily every month: check the real credit cost per model first, since it can outpace the advertised monthly allowance fast.", "fr": "Tu traites beaucoup de vidéo chaque mois : vérifie d'abord le coût réel en crédits par modèle, qui peut dépasser vite l'allocation mensuelle annoncée." },
+      "threshold": { "en": "Plus costs $119.88/year ($9.99/month); worth it once the free plan's daily 20-credit cap and 720p export become a real constraint.", "fr": "Plus coûte 119,88 $/an (9,99 $/mois) ; ça se justifie dès que le plafond quotidien de 20 crédits et l'export 720p du plan gratuit deviennent une vraie contrainte." },
+      "billingTraps": { "en": "Plans 'automatically renew... upon expiration': credits do not appear to roll over, so unused monthly credits are likely lost at renewal.", "fr": "Les plans « se renouvellent automatiquement... à expiration » : les crédits ne semblent pas se reporter, donc les crédits mensuels non utilisés sont probablement perdus au renouvellement." }
+    }
+  },
+  "unknowns": [
+    "Exact annual-billed price (advertised 'up to 42% off') not captured this session.",
+    "Pricing for the higher Pro credit tiers (10,000 and 20,000 credits/month) not captured.",
+    "Per-model credit cost table (how many credits each generation model consumes) not fully captured beyond the example counts shown for Seedance/Nano Banana."
+  ],
+  "conflicts": []
+}

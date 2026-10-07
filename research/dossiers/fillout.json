@@ -1,0 +1,354 @@
+{
+  "schemaVersion": 2,
+  "slug": "fillout",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "identity": {
+    "officialName": "Fillout",
+    "vendor": "Restly, Inc.",
+    "officialUrl": "https://fillout.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://fillout.com/pricing",
+      "tier": 1,
+      "accessedOn": "2026-10-07",
+      "title": "Fillout pricing (Free, Starter, Pro, Business, Enterprise)"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://fillout.com/pricing",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "1,000 responses per month, unlimited forms and unlimited seats.",
+        "fr": "1 000 réponses par mois, formulaires et sièges illimités."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "1,000 responses/month, unlimited seats and unlimited forms, with multi-page forms, conditional logic, payments and PDF generation included.",
+            "fr": "1 000 réponses/mois, sièges et formulaires illimités, avec formulaires multi-pages, logique conditionnelle, paiements et génération de PDF inclus."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 19,
+          "annualPerMonth": 15,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "2,000 responses/month; unlocks all question types, custom endings, login forms and redirect on completion.",
+            "fr": "2 000 réponses/mois ; débloque tous les types de questions, les fins personnalisées, les formulaires de connexion et la redirection en fin de parcours."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 49,
+          "annualPerMonth": 40,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "5,000 responses/month; removes all Fillout branding, adds custom share links, custom fonts, favicon and CSS.",
+            "fr": "5 000 réponses/mois ; retire toute la marque Fillout, ajoute des liens de partage personnalisés, polices, favicon et CSS personnalisés."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 89,
+          "annualPerMonth": 75,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited responses; adds form analytics, custom domain, custom code, partial submissions, pre-fetch data and priority support.",
+            "fr": "Réponses illimitées ; ajoute l'analyse de formulaires, un domaine personnalisé, du code personnalisé, les soumissions partielles, le pré-chargement de données et le support prioritaire."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "1,000,000+ records, SSO, audit logs, dedicated support and unlimited revision history.",
+            "fr": "1 000 000+ d'enregistrements, SSO, journaux d'audit, support dédié et historique des révisions illimité."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Fillout prices per flat account (unlimited seats on every plan), not per user; the listed price is the standard monthly rate, and the discounted figure shown is the per-month equivalent when billed annually (e.g. $180/year for Starter, equal to $15/month).",
+        "fr": "Fillout facture un forfait par compte (sièges illimités sur chaque offre), pas par utilisateur ; le prix affiché est le tarif mensuel standard, et le montant réduit correspond à l'équivalent mensuel facturé annuellement (ex. 180 $/an pour Starter, soit 15 $/mois).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "All plans, including the free tier, include unlimited forms, conditional logic, multi-page forms, payment collection and PDF generation.",
+        "fr": "Toutes les offres, y compris gratuite, incluent formulaires illimités, logique conditionnelle, formulaires multi-pages, collecte de paiements et génération de PDF.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "AI-assisted tools are built into the product (AI Form Builder, AI Quiz Maker, AI Survey Maker) plus Google Forms import.",
+        "fr": "Des outils assistés par IA sont intégrés au produit (AI Form Builder, AI Quiz Maker, AI Survey Maker) ainsi que l'import de Google Forms.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Every plan has unlimited seats; Fillout prices by monthly response volume instead of per user, so inviting a whole team costs nothing extra.",
+        "fr": "Chaque offre a des sièges illimités ; Fillout facture au volume de réponses mensuelles plutôt que par utilisateur, donc inviter toute une équipe ne coûte rien de plus.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "The Free and Starter plans cap monthly responses at 1,000 and 2,000; higher-volume teams must upgrade to Pro (5,000/month) or Business (unlimited).",
+        "fr": "Les offres Free et Starter plafonnent les réponses mensuelles à 1 000 et 2 000 ; les équipes à plus fort volume doivent passer à Pro (5 000/mois) ou Business (illimité).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Removing Fillout's own branding, a custom domain and custom code require the Pro or Business plan; they are not available on Free or Starter.",
+        "fr": "Retirer la marque Fillout, un domaine personnalisé et le code personnalisé nécessitent l'offre Pro ou Business ; non disponibles sur Free ou Starter.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An operations person or small team building intake forms, applications or internal workflows, such as the election-management use case documented on Fillout's own page.",
+      "fr": "Une personne ops ou une petite équipe qui construit des formulaires d'intake, de candidature ou des workflows internes, comme le cas d'usage de gestion électorale documenté sur la page de Fillout."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Build: create a multi-page intake or application form with conditional logic and payment collection, without writing code.",
+      "fr": "Créer : construire un formulaire d'intake ou de candidature multi-pages avec logique conditionnelle et collecte de paiements, sans écrire de code."
+    },
+    {
+      "en": "Collect: gather up to 2,000 responses a month on the Starter plan with unlimited team seats to review submissions together.",
+      "fr": "Collecter : recueillir jusqu'à 2 000 réponses par mois sur l'offre Starter, avec des sièges d'équipe illimités pour relire les réponses ensemble."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "typeform",
+      "reason": {
+        "en": "Established form builder with a similar conversational-form approach; Fillout positions itself as a lighter, cheaper alternative.",
+        "fr": "Générateur de formulaires établi avec une approche conversationnelle similaire ; Fillout se positionne comme une alternative plus légère et moins chère."
+      }
+    },
+    {
+      "slug": "tally",
+      "reason": {
+        "en": "Free-first form builder targeting a similar solo/small-team budget segment.",
+        "fr": "Générateur de formulaires gratuit en priorité, visant un segment budgétaire solo/petite équipe similaire."
+      }
+    },
+    {
+      "slug": "jotform",
+      "reason": {
+        "en": "Long-established form builder with a comparable feature set (payments, conditional logic, PDF generation).",
+        "fr": "Générateur de formulaires bien établi avec un ensemble de fonctionnalités comparable (paiements, logique conditionnelle, génération de PDF)."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Starter costs $15-19/month for conditional logic, payments and unlimited seats; this dossier did not independently verify whether this beats named alternatives' pricing.",
+        "fr": "Starter coûte 15 à 19 $/mois pour la logique conditionnelle, les paiements et les sièges illimités ; ce dossier n'a pas vérifié de façon indépendante si c'est plus avantageux que les alternatives citées.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: first-use difficulty and onboarding time are not documented on the page read for this dossier.",
+        "fr": "Note neutre : la difficulté de prise en main et le temps d'onboarding ne figurent pas dans la page relevée pour ce dossier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "An official case study (Fairfax County election management) describes using Fillout in production and switching from other form builders, as published on the pricing page.",
+        "fr": "Une étude de cas officielle (gestion électorale du comté de Fairfax) décrit un usage de Fillout en production après un changement d'autre générateur de formulaires, publiée sur la page tarifs.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers conditional logic, multi-page flows, payments, PDF generation and AI-assisted builders, plus an Enterprise tier scaling to 1,000,000+ records; no independent benchmark against category leaders was found.",
+        "fr": "Couvre la logique conditionnelle, les parcours multi-pages, les paiements, la génération de PDF et des générateurs assistés par IA, plus une offre Enterprise montant à 1 000 000+ d'enregistrements ; aucun benchmark indépendant face aux leaders de la catégorie n'a été trouvé.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export formats, API access and account portability were not documented on the page read for this dossier.",
+        "fr": "Note neutre : les formats d'export de données, l'accès API et la portabilité du compte ne figurent pas dans la page relevée pour ce dossier.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Smart forms",
+      "fr": "Formulaires intelligents"
+    },
+    "shortDescription": {
+      "en": "Fillout is a form builder with conditional logic, payments and PDF generation, priced by monthly responses rather than per seat.",
+      "fr": "Fillout est un créateur de formulaires avec logique conditionnelle, paiements et génération de PDF, facturé au volume de réponses mensuelles plutôt qu'au nombre de sièges."
+    },
+    "longDescription": {
+      "en": "Fillout covers the full form-building workflow: conditional logic, multi-page flows, payment collection, PDF generation and AI-assisted form, quiz and survey builders. Every plan, including the free tier, allows unlimited seats, so a whole team can collaborate without extra cost.\n\nThe free plan covers 1,000 responses a month; Starter raises that to 2,000 for $19/month ($15/month billed annually). Pro and Business add branding removal, custom domains and analytics, scaling up to unlimited responses at $89/month ($75/month billed annually). It fits a small team or solo operator building intake forms, applications or surveys without a developer.",
+      "fr": "Fillout couvre tout le parcours de création de formulaires : logique conditionnelle, parcours multi-pages, collecte de paiements, génération de PDF et générateurs de formulaires, quiz et sondages assistés par IA. Chaque offre, y compris gratuite, autorise des sièges illimités, donc toute une équipe peut collaborer sans coût supplémentaire.\n\nL'offre gratuite couvre 1 000 réponses par mois ; Starter monte à 2 000 pour 19 $/mois (15 $/mois en facturation annuelle). Pro et Business ajoutent le retrait de la marque, un domaine personnalisé et l'analyse, jusqu'à des réponses illimitées à 89 $/mois (75 $/mois en annuel). Convient à une petite équipe ou une personne seule qui construit des formulaires d'intake, de candidature ou des sondages sans développeur."
+    },
+    "pros": [
+      {
+        "en": "Flat pricing per response volume, not per seat, so adding teammates costs nothing extra.",
+        "fr": "Tarification au volume de réponses, pas par siège, donc ajouter des coéquipiers ne coûte rien de plus."
+      },
+      {
+        "en": "Conditional logic, payment collection and PDF generation are available even on the free plan.",
+        "fr": "Logique conditionnelle, collecte de paiements et génération de PDF disponibles même sur l'offre gratuite."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Removing Fillout's own branding requires the Pro plan ($49/month, or $40/month billed annually).",
+        "fr": "Retirer la marque Fillout nécessite l'offre Pro (49 $/mois, ou 40 $/mois en facturation annuelle)."
+      },
+      {
+        "en": "Response volume is capped by plan; a growing team can hit the Starter plan's 2,000/month ceiling quickly.",
+        "fr": "Le volume de réponses est plafonné par offre ; une équipe en croissance peut vite atteindre le plafond de 2 000/mois de Starter."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need multi-page forms with conditional logic and payments, and want unlimited team seats without per-user fees.",
+        "fr": "Tu as besoin de formulaires multi-pages avec logique conditionnelle et paiements, et veux des sièges d'équipe illimités sans frais par utilisateur."
+      },
+      "avoidIf": {
+        "en": "You need very high response volumes on a tight budget; the cheapest unlimited-response plan (Business) costs $75-89/month.",
+        "fr": "Tu as besoin de très gros volumes de réponses avec un petit budget ; l'offre la moins chère en réponses illimitées (Business) coûte 75 à 89 $/mois."
+      },
+      "threshold": {
+        "en": "The cheapest paid plan, Starter, costs $228/year at the monthly rate or $180/year billed annually ($15/month), for 2,000 responses/month.",
+        "fr": "L'offre payante la moins chère, Starter, coûte 228 $/an au tarif mensuel ou 180 $/an en facturation annuelle (15 $/mois), pour 2 000 réponses/mois."
+      },
+      "billingTraps": {
+        "en": "Switching from annual to monthly billing raises the price by about 18-27% depending on the plan (e.g. Starter: $15 to $19/month).",
+        "fr": "Passer d'une facturation annuelle à mensuelle augmente le prix d'environ 18 à 27 % selon l'offre (ex. Starter : de 15 à 19 $/mois)."
+      }
+    }
+  },
+  "unknowns": [
+    "Fillout's docs/changelog URL and release cadence were not checked in this session.",
+    "Export formats, data portability and API access were not confirmed on the page read.",
+    "Named third-party integrations (Slack, Zapier, etc.) were not verified; Fillout's dedicated Integrations page was not opened in this session."
+  ],
+  "conflicts": []
+}

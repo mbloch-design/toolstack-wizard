@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "slug": "notionlytics",
+  "tier": "B",
+  "researchedOn": "2026-10-07",
+  "completedLocallyOn": "2026-10-07",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Notionlytics",
+    "vendor": "Notionlytics",
+    "officialUrl": "https://notionlytics.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://notionlytics.com/#pricing", "tier": 1, "accessedOn": "2026-10-07", "title": "Notionlytics pricing (Pro, Team, Business)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://notionlytics.com/#pricing",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "pro",
+        "name": "Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 10, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Up to 100 pages, reaction widgets, tracking widget customization, watermark removal.", "fr": "Jusqu'à 100 pages, widgets de réaction, personnalisation du widget de suivi, suppression du filigrane." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 30, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited pages, up to 5 team members, priority customer support.", "fr": "Pages illimitées, jusqu'à 5 membres d'équipe, support client prioritaire." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 90, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited pages, up to 100 team members, priority customer support.", "fr": "Pages illimitées, jusqu'à 100 membres d'équipe, support client prioritaire." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "pro",
+    "addOns": [],
+    "cautions": [
+      { "en": "An 'Annually' toggle advertises 'Save 17%' on all three plans, but the exact annual per-month price could not be read on the official page in this session.", "fr": "Un bouton « Annually » annonce « Save 17% » sur les trois plans, mais le prix annuel exact par mois n'a pas pu être relevé sur la page officielle lors de cette session.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Tracks page views and usage metrics for shared or public Notion pages in real time from one dashboard.", "fr": "Suit les vues de page et les métriques d'usage des pages Notion partagées ou publiques en temps réel depuis un tableau de bord unique.", "sourceIds": ["s1"] },
+      { "en": "Embeds interactive feedback widgets (reactions) directly into a Notion page so readers can react anonymously.", "fr": "Intègre des widgets de feedback interactifs (réactions) directement dans une page Notion pour que les lecteurs puissent réagir anonymement.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The Pro plan caps usage at 100 pages; unlimited pages require Team ($30/month) or Business ($90/month).", "fr": "Le plan Pro plafonne l'usage à 100 pages ; les pages illimitées exigent le plan Team (30 $/mois) ou Business (90 $/mois).", "sourceIds": ["s1"] },
+      { "en": "Team members are capped by plan (5 on Team, 100 on Business), and no free plan was found on the official pricing section in this session.", "fr": "Le nombre de membres d'équipe est plafonné par plan (5 sur Team, 100 sur Business), et aucun plan gratuit n'a été trouvé sur la section tarifaire officielle lors de cette session.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Notion", "slug": "notion", "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "An ops or content lead who maintains a Notion-based wiki or knowledge base and wants to see which pages actually get read and collect quick feedback.", "fr": "Une responsable ops ou contenu qui gère un wiki ou une base de connaissances sur Notion et veut voir quelles pages sont réellement lues, avec un feedback rapide." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Use: embed a reaction widget on a Notion wiki page to see, in real time, which sections readers mark as unhelpful.", "fr": "Usage : intégrer un widget de réaction sur une page de wiki Notion pour voir, en temps réel, quelles sections les lecteurs jugent peu utiles." },
+    { "en": "Use: check page-view counts across up to 100 Notion pages on the Pro plan to prune content that nobody reads.", "fr": "Usage : vérifier le nombre de vues sur jusqu'à 100 pages Notion avec le plan Pro pour élaguer le contenu que personne ne lit." }
+  ],
+  "alternatives": [
+    { "slug": "fathom-analytics", "reason": { "en": "A privacy-first, lightweight analytics tool that can be embedded on any page, covering a similar simple page-analytics need.", "fr": "Un outil d'analytics léger et respectueux de la vie privée, intégrable sur n'importe quelle page, qui couvre un besoin similaire d'analytics de page simple." } },
+      { "slug": "plausible", "reason": { "en": "Another lightweight, privacy-friendly pageview analytics tool used for the same kind of simple content tracking.", "fr": "Un autre outil d'analytics de pages léger et respectueux de la vie privée, utilisé pour le même type de suivi de contenu simple." } },
+    { "slug": "simple-analytics", "reason": { "en": "A minimal pageview analytics tool aimed at the same need for quick, privacy-friendly content metrics.", "fr": "Un outil d'analytics de pages minimaliste qui répond au même besoin de métriques de contenu rapides et respectueuses de la vie privée." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Suzu", "officialUrl": "https://www.suzu.im", "reason": "Analytics tool built specifically for Notion pages, a direct competitor not yet in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 2,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Pro costs $10/month for basic page analytics, but no free tier exists for a tool whose job is to measure a single Notion wiki.", "fr": "Pro coûte 10 $/mois pour des analytics de page de base, mais aucun plan gratuit n'existe pour un outil dont le travail est de mesurer un seul wiki Notion.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "The FAQ states setup needs no coding or special skills and widgets embed into Notion content in seconds.", "fr": "La FAQ indique que la configuration ne nécessite ni code ni compétence particulière, et que les widgets s'intègrent au contenu Notion en quelques secondes.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers real-time page analytics and anonymous reaction widgets as described on the pricing and feature list.", "fr": "Assure des analytics de page en temps réel et des widgets de réaction anonymes comme décrit sur la liste de tarifs et de fonctionnalités.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Scope is narrow by design: page views and reactions on Notion pages only, capped at 100 pages on the entry plan, no mention of funnels or segments.", "fr": "Le périmètre est volontairement étroit : vues de page et réactions sur des pages Notion seulement, plafonnées à 100 pages sur le plan d'entrée, aucune mention de funnels ou de segments.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability if a team leaves Notionlytics are not covered by the sources checked.", "fr": "Note neutre : le format d'export et la portabilité des données en cas de départ de Notionlytics ne figurent pas dans les sources consultées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Notion page analytics", "fr": "Analytics pour pages Notion" },
+    "shortDescription": { "en": "Notionlytics adds page-view analytics and feedback widgets to shared or public Notion pages, wikis and knowledge bases.", "fr": "Notionlytics ajoute des analytics de vues de page et des widgets de feedback aux pages Notion partagées ou publiques, wikis et bases de connaissances." },
+    "longDescription": {
+      "en": "Notionlytics tracks page views and usage metrics for any shared or public Notion page, and adds embeddable reaction widgets so an audience can give anonymous feedback without leaving the page. It works alongside any Notion plan and needs no coding to set up.\n\nPro costs $10/month for up to 100 pages; Team ($30/month) and Business ($90/month) remove the page cap and add more team seats. No permanently free plan was found on the official pricing page. It fits an ops or content lead maintaining a Notion wiki who wants to know which pages are actually read.",
+      "fr": "Notionlytics suit les vues de page et les métriques d'usage de toute page Notion partagée ou publique, et ajoute des widgets de réaction intégrables pour que l'audience donne un feedback anonyme sans quitter la page. L'outil fonctionne avec n'importe quel plan Notion et ne demande aucun code à configurer.\n\nPro coûte 10 $/mois pour jusqu'à 100 pages ; Team (30 $/mois) et Business (90 $/mois) suppriment le plafond de pages et ajoutent des membres d'équipe. Aucun plan gratuit permanent n'a été trouvé sur la page tarifaire officielle. Convient à une responsable ops ou contenu qui gère un wiki Notion et veut savoir quelles pages sont vraiment lues."
+    },
+    "pros": [
+      { "en": "Setup is described as codeless and takes seconds, embedding directly into existing Notion pages.", "fr": "La mise en place est décrite comme sans code et rapide, en s'intégrant directement aux pages Notion existantes." },
+      { "en": "Feedback widgets give direct, anonymous reader input on top of plain page-view counts.", "fr": "Les widgets de feedback donnent un retour direct et anonyme des lecteurs, en plus des simples compteurs de vues de page." }
+    ],
+    "cons": [
+      { "en": "No free plan was found, only paid tiers starting at $10/month.", "fr": "Aucun plan gratuit n'a été trouvé, seulement des paliers payants à partir de 10 $/mois." },
+      { "en": "The page cap (100 on Pro) and team-member cap (5 on Team) push a growing wiki toward the $90/month Business tier.", "fr": "Le plafond de pages (100 sur Pro) et le plafond de membres d'équipe (5 sur Team) poussent un wiki qui grandit vers le palier Business à 90 $/mois." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run a Notion wiki or knowledge base and want to know which pages are read and collect quick reader feedback.", "fr": "Tu gères un wiki ou une base de connaissances Notion et tu veux savoir quelles pages sont lues et récolter un feedback rapide." },
+      "avoidIf": { "en": "You need analytics across tools beyond Notion, or a permanently free tier to test the product first.", "fr": "Tu as besoin d'analytics au-delà de Notion, ou d'un palier gratuit permanent pour tester l'outil d'abord." },
+      "threshold": { "en": "Pro costs $120/year ($10/month) for up to 100 pages, the entry point before Team's unlimited pages at $30/month.", "fr": "Pro coûte 120 $/an (10 $/mois) pour jusqu'à 100 pages, le point d'entrée avant les pages illimitées de Team à 30 $/mois." }
+    }
+  },
+  "unknowns": [
+    "The exact annual (per-month) price for Pro, Team and Business was not confirmed; the page shows 'Save 17%' when 'Annually' is selected but the digit itself could not be captured in this session.",
+    "No free plan or free trial is stated on the official pricing section; an older catalogue entry mentioning a free plan could not be confirmed on the page checked today."
+  ],
+  "conflicts": []
+}

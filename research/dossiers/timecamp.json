@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 2,
+  "slug": "timecamp",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "identity": {
+    "officialName": "TimeCamp",
+    "vendor": "TimeCamp Inc.",
+    "officialUrl": "https://www.timecamp.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.timecamp.com/pricing/",
+      "tier": 1,
+      "accessedOn": "2026-10-07",
+      "title": "TimeCamp pricing: Free, Starter, Premium, Ultimate, Enterprise and full feature comparison"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://www.timecamp.com/pricing/",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Unlimited users and unlimited projects, timesheets, web/desktop/mobile apps and two-factor authentication, free forever; the AI Time Tracker is billed separately by token usage.",
+        "fr": "Utilisateurs et projets illimités, feuilles de temps, apps web/bureau/mobile et authentification à deux facteurs, gratuit pour toujours ; l'AI Time Tracker est facturé séparément à l'usage de tokens."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Unlimited users and projects, timesheets, web/desktop/mobile apps and 2FA, free forever.",
+            "fr": "Utilisateurs et projets illimités, feuilles de temps, apps web/bureau/mobile et 2FA, gratuit pour toujours."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "starter",
+        "name": "Starter",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 5.49,
+          "annualPerMonth": 3.99,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds invoicing, attendance calendar, time-off, overtime tracking, unlimited tasks and Excel reports export, plus the token-billed AI Time Tracker.",
+            "fr": "Ajoute la facturation, le calendrier d'assiduité, les congés, le suivi des heures supplémentaires, les tâches illimitées et l'export de rapports Excel, plus l'AI Time Tracker facturé en tokens."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "premium",
+        "name": "Premium",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 9.99,
+          "annualPerMonth": 6.99,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds Resource Planner, billable time, budgets and estimates, apps/websites tracking, one integration and scheduled email reports.",
+            "fr": "Ajoute le Resource Planner, le temps facturable, les budgets et estimations, le suivi des apps/sites, une intégration et les rapports planifiés par email."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "ultimate",
+        "name": "Ultimate",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 13.99,
+          "annualPerMonth": 9.99,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Adds data export, custom fields, timesheet approvals, screenshots, unlimited integrations, SSO login and labor costs.",
+            "fr": "Ajoute l'export de données, les champs personnalisés, l'approbation des feuilles de temps, les captures d'écran, les intégrations illimitées, le SSO et les coûts de main-d'œuvre."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Adds self-hosted or private cloud deployment, custom integrations, data warehouse access and an enterprise SLA.",
+            "fr": "Ajoute le déploiement self-hosted ou cloud privé, les intégrations personnalisées, l'accès à l'entrepôt de données et un SLA entreprise."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "starter",
+    "addOns": [
+      {
+        "en": "AI Time Tracker, billed by token usage on top of every plan including Free",
+        "fr": "AI Time Tracker, facturé à l'usage de tokens en plus de chaque offre, y compris Free",
+        "unit": "usage",
+        "price": null,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Every plan, including Free, lists the AI Time Tracker as 'billed by token usage,' but the pricing page doesn't show the per-token rate.",
+        "fr": "Chaque offre, y compris Free, mentionne l'AI Time Tracker comme « facturé à l'usage de tokens », mais la page tarifs n'indique pas le tarif par token.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Billing annually gives roughly 27-38% lower per-user prices than paying month-to-month (e.g. Starter: $3.99 vs $5.49, Ultimate: $9.99 vs $13.99).",
+        "fr": "La facturation annuelle donne des prix par utilisateur environ 27 à 38 % plus bas que le paiement mensuel (ex. Starter : 3,99 $ contre 5,49 $, Ultimate : 9,99 $ contre 13,99 $).",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Automatic and manual time tracking across web, desktop and mobile apps, plus a browser plugin that tracks time in 80+ popular tools.",
+        "fr": "Suivi du temps automatique et manuel sur les apps web, bureau et mobile, plus une extension navigateur qui suit le temps dans plus de 80 outils populaires.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Attendance, time-off and overtime tracking are built in from the Starter plan up, alongside billing and invoicing with QuickBooks/Xero export.",
+        "fr": "Le suivi d'assiduité, des congés et des heures supplémentaires est intégré dès l'offre Starter, avec la facturation et l'export vers QuickBooks/Xero.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Unlimited integrations and an API are available from the Ultimate plan, with synchronized projects and tasks from 26 external tools.",
+        "fr": "Les intégrations illimitées et une API sont disponibles dès l'offre Ultimate, avec synchronisation des projets et tâches depuis 26 outils externes.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "Only one integration is included on Premium; unlimited integrations require the Ultimate plan ($9.99/month billed annually).",
+        "fr": "Une seule intégration est incluse sur Premium ; les intégrations illimitées nécessitent l'offre Ultimate (9,99 $/mois en facturation annuelle).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Screenshots, timesheet approvals and SSO login are Ultimate-only, not available on Starter or Premium.",
+        "fr": "Les captures d'écran, l'approbation des feuilles de temps et le SSO sont réservés à Ultimate, non disponibles sur Starter ou Premium.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "QuickBooks",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Xero",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Trello",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web",
+      "desktop",
+      "ios",
+      "android"
+    ]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops person on a small team who needs time tracking plus attendance, time-off and invoicing in one tool.",
+      "fr": "Une personne ops dans une petite équipe qui a besoin du suivi du temps avec l'assiduité, les congés et la facturation dans un seul outil."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Track: log billable hours automatically across web, desktop and mobile, then export an invoice to QuickBooks or Xero.",
+      "fr": "Suivre : enregistrer automatiquement les heures facturables sur web, bureau et mobile, puis exporter une facture vers QuickBooks ou Xero."
+    },
+    {
+      "en": "Manage: approve team timesheets and monitor overtime and time-off from one dashboard instead of spreadsheets.",
+      "fr": "Gérer : approuver les feuilles de temps de l'équipe et suivre les heures supplémentaires et les congés depuis un seul tableau de bord plutôt que des tableurs."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "clockify",
+      "reason": {
+        "en": "Direct time-tracking competitor with a similarly generous free tier.",
+        "fr": "Concurrent direct de suivi du temps avec une offre gratuite tout aussi généreuse."
+      }
+    },
+    {
+      "slug": "deputy",
+      "reason": {
+        "en": "Competing attendance and workforce time-tracking tool, overlapping with TimeCamp's attendance features.",
+        "fr": "Outil concurrent de gestion d'assiduité et de temps de travail, qui recoupe les fonctionnalités d'assiduité de TimeCamp."
+      }
+    },
+    {
+      "slug": "plutio",
+      "reason": {
+        "en": "Freelancer-focused business management tool that includes time tracking and invoicing, overlapping on the billing side.",
+        "fr": "Outil de gestion pour freelances qui inclut suivi du temps et facturation, se recoupant sur le volet facturation."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "The free plan has no user or project cap, and the cheapest paid tier costs $3.99/user/month billed annually for invoicing and attendance beyond basic tracking.",
+        "fr": "L'offre gratuite n'a pas de limite d'utilisateurs ou de projets, et l'offre payante la moins chère coûte 3,99 $/utilisateur/mois en facturation annuelle pour la facturation et l'assiduité au-delà du suivi basique.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: first-use difficulty and onboarding time aren't documented on the page read.",
+        "fr": "Note neutre : la difficulté de prise en main et le temps d'onboarding ne figurent pas dans la page relevée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The pricing/feature page documents time tracking, invoicing, attendance and reporting matching the product's stated purpose, without an independent usage benchmark in this dossier.",
+        "fr": "La page tarifs/fonctionnalités documente le suivi du temps, la facturation, l'assiduité et le reporting conformes à l'objectif annoncé du produit, sans benchmark d'usage indépendant dans ce dossier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Covers time tracking, attendance, invoicing, budgeting, reporting and up to 26-tool project sync plus an API on the top plan, without a verified comparison to category leaders.",
+        "fr": "Couvre le suivi du temps, l'assiduité, la facturation, le budget, le reporting et la synchronisation de projets avec jusqu'à 26 outils plus une API sur l'offre la plus haute, sans comparaison vérifiée avec les leaders de la catégorie.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Data export, API access and BigQuery/Power BI pipelines exist but only from the Ultimate plan ($9.99-13.99/user/month); lower tiers have no documented export path.",
+        "fr": "L'export de données, l'accès API et les pipelines BigQuery/Power BI existent mais seulement à partir de l'offre Ultimate (9,99 à 13,99 $/utilisateur/mois) ; les offres inférieures n'ont pas de chemin d'export documenté.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Time tracking",
+      "fr": "Suivi du temps"
+    },
+    "shortDescription": {
+      "en": "TimeCamp is time-tracking software with a free plan for unlimited users and projects, and paid plans from $3.99/user/month for billing and attendance.",
+      "fr": "TimeCamp est un logiciel de suivi du temps gratuit et illimité en utilisateurs et projets, avec des offres payantes dès 3,99 $/utilisateur/mois."
+    },
+    "longDescription": {
+      "en": "TimeCamp tracks time automatically and manually across web, desktop and mobile apps, with a browser plugin covering 80+ tools. The free plan allows unlimited users and projects forever; paid plans add attendance, time-off, overtime tracking, invoicing with QuickBooks/Xero export, and progressively more integrations.\n\nStarter costs $3.99/user/month billed annually ($5.49 month-to-month) and adds invoicing and attendance. Premium ($6.99/$9.99) adds budgets, billable time and one integration. Ultimate ($9.99/$13.99) adds unlimited integrations, SSO and screenshots. An AI Time Tracker is billed separately by token usage on every plan, including Free. It fits a small team that needs attendance and invoicing beyond basic time logging.",
+      "fr": "TimeCamp suit le temps automatiquement et manuellement sur les apps web, bureau et mobile, avec une extension navigateur couvrant plus de 80 outils. L'offre gratuite autorise des utilisateurs et projets illimités pour toujours ; les offres payantes ajoutent assiduité, congés, heures supplémentaires, facturation avec export QuickBooks/Xero, et de plus en plus d'intégrations.\n\nStarter coûte 3,99 $/utilisateur/mois en annuel (5,49 $ en mensuel). Premium (6,99 $/9,99 $) ajoute budgets, temps facturable et une intégration. Ultimate (9,99 $/13,99 $) ajoute intégrations illimitées, SSO et captures d'écran. L'AI Time Tracker est facturé séparément en tokens sur chaque offre. Convient à une petite équipe qui a besoin d'assiduité et de facturation au-delà du simple suivi."
+    },
+    "pros": [
+      {
+        "en": "The free plan has no user or project cap, unlike many time trackers that limit free seats.",
+        "fr": "L'offre gratuite n'a pas de limite d'utilisateurs ou de projets, contrairement à de nombreux outils de suivi du temps qui plafonnent les sièges gratuits."
+      },
+      {
+        "en": "Invoicing with QuickBooks and Xero export is available from the cheapest paid plan (Starter).",
+        "fr": "La facturation avec export QuickBooks et Xero est disponible dès l'offre payante la moins chère (Starter)."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Unlimited integrations and SSO require the top Ultimate plan ($9.99-13.99/user/month).",
+        "fr": "Les intégrations illimitées et le SSO nécessitent l'offre la plus haute, Ultimate (9,99 à 13,99 $/utilisateur/mois)."
+      },
+      {
+        "en": "The AI Time Tracker's per-token price isn't shown on the pricing page for any plan.",
+        "fr": "Le tarif par token de l'AI Time Tracker n'est affiché sur la page tarifs pour aucune offre."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You want unlimited free users and projects, with attendance and invoicing available on a low-cost paid tier.",
+        "fr": "Tu veux des utilisateurs et projets gratuits illimités, avec assiduité et facturation disponibles sur une offre payante peu chère."
+      },
+      "avoidIf": {
+        "en": "You need SSO, screenshots or unlimited integrations from day one; that requires the top Ultimate plan.",
+        "fr": "Tu as besoin de SSO, de captures d'écran ou d'intégrations illimitées dès le départ ; cela nécessite l'offre la plus haute, Ultimate."
+      },
+      "threshold": {
+        "en": "Starter costs $3.99/user/month billed annually ($47.88/user/year), the entry point for invoicing and attendance tracking beyond the free plan.",
+        "fr": "Starter coûte 3,99 $/utilisateur/mois en facturation annuelle (47,88 $/utilisateur/an), le point d'entrée pour la facturation et l'assiduité au-delà de l'offre gratuite."
+      },
+      "billingTraps": {
+        "en": "Monthly billing costs 27-38% more per user than annual billing on every paid plan (e.g. Starter: $5.49 vs $3.99), and the AI Time Tracker adds token-based usage charges on top of the per-seat price.",
+        "fr": "La facturation mensuelle coûte 27 à 38 % de plus par utilisateur que la facturation annuelle sur chaque offre payante (ex. Starter : 5,49 $ contre 3,99 $), et l'AI Time Tracker ajoute des frais d'usage en tokens en plus du prix par siège."
+      }
+    }
+  },
+  "unknowns": [
+    "The exact duration of the 'Start your free trial' offer wasn't stated on the pricing page.",
+    "The AI Time Tracker's per-token price wasn't shown; it's described only as 'billed by token usage.'",
+    "docsUrl and changelogUrl exist in the site navigation but their exact paths weren't confirmed in this session."
+  ],
+  "conflicts": []
+}

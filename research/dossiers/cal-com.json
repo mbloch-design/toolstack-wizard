@@ -1,0 +1,152 @@
+{
+  "schemaVersion": 2,
+  "slug": "cal-com",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "identity": {
+    "officialName": "Cal.com",
+    "vendor": "Cal.com, Inc.",
+    "officialUrl": "https://cal.com",
+    "docsUrl": "https://cal.com/docs",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://cal.com/pricing", "tier": 1, "accessedOn": "2026-10-07", "title": "Cal.com pricing (Free/Teams/Organizations/Enterprise, monthly and annual toggle)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://cal.com/pricing",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "1 user, unlimited event types and calendars, 100+ app integrations, forever free.", "fr": "1 utilisateur, types d'événements et calendriers illimités, plus de 100 intégrations, gratuit à vie." }, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "1 user; unlimited event types, calendars and 100+ integrations; no team scheduling.", "fr": "1 utilisateur ; types d'événements, calendriers et plus de 100 intégrations illimités ; pas de planification d'équipe." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "teams",
+        "name": "Teams",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 16, "annualPerMonth": 12, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Round-robin and collective scheduling across one team, custom branding removal, booking analytics; 14-day free trial.", "fr": "Planification en tourniquet et collective pour une équipe, suppression de la marque, analytics de réservation ; essai gratuit de 14 jours." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "organizations",
+        "name": "Organizations",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 37, "annualPerMonth": 28, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited sub-teams, company subdomain, SAML SSO/SCIM, SOC 2/HIPAA/ISO 27001 compliance.", "fr": "Sous-équipes illimitées, sous-domaine d'entreprise, SSO SAML/SCIM, conformité SOC 2/HIPAA/ISO 27001." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Dedicated onboarding and engineering support, SLA, dedicated database; no public price.", "fr": "Accompagnement dédié à l'intégration et à l'ingénierie, SLA, base de données dédiée ; aucun prix public." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "teams",
+    "addOns": [],
+    "cautions": [
+      { "en": "Prices shown are per user/month; Teams and Organizations list an annual-billed rate (25% cheaper) alongside the standard monthly rate ($16 to $12, $37 to $28).", "fr": "Les prix affichés sont par utilisateur et par mois ; Teams et Organizations affichent un tarif annuel (25 % moins cher) à côté du tarif mensuel standard (16 $ à 12 $, 37 $ à 28 $).", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Open-source scheduling tool: unlimited event types and calendars, 100+ app integrations and Stripe/PayPal payment collection even on the free plan.", "fr": "Outil de planification open source : types d'événements et calendriers illimités, plus de 100 intégrations et encaissement Stripe/PayPal dès le plan gratuit.", "sourceIds": ["s1"] },
+      { "en": "Two-way sync with Salesforce and HubSpot, and a one-click import of existing Calendly events.", "fr": "Synchronisation bidirectionnelle avec Salesforce et HubSpot, et import en un clic des événements Calendly existants.", "sourceIds": ["s1"] },
+      { "en": "Team features (round-robin and collective scheduling, company subdomain, SAML SSO/SCIM) from the Teams and Organizations plans up.", "fr": "Fonctions d'équipe (planification en tourniquet et collective, sous-domaine d'entreprise, SSO SAML/SCIM) à partir des plans Teams et Organizations.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The free plan is limited to 1 user: any team scheduling (round-robin, shared availability) requires the $16/month Teams plan ($12 annual).", "fr": "Le plan gratuit se limite à 1 utilisateur : toute planification d'équipe (tourniquet, disponibilité partagée) nécessite le plan Teams à 16 $/mois (12 $ en annuel).", "sourceIds": ["s1"] },
+      { "en": "Advanced compliance features (SOC 2, HIPAA, ISO 27001, SAML SSO) only start at the Organizations plan, $37/month per user.", "fr": "Les fonctions de conformité avancées (SOC 2, HIPAA, ISO 27001, SSO SAML) ne démarrent qu'au plan Organizations, à 37 $/mois par utilisateur.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [
+      { "name": "Salesforce", "slug": null, "sourceIds": ["s1"] },
+      { "name": "HubSpot", "slug": null, "sourceIds": ["s1"] },
+      { "name": "Stripe", "slug": null, "sourceIds": ["s1"] },
+      { "name": "PayPal", "slug": null, "sourceIds": ["s1"] }
+    ],
+    "platforms": ["web", "ios", "android"]
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "A freelancer or consultant who needs a booking link for client calls, with the option to add team scheduling later.", "fr": "Un(e) freelance ou consultant(e) qui a besoin d'un lien de réservation pour ses appels clients, avec la possibilité d'ajouter la planification d'équipe plus tard." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Book client calls: share a booking link that syncs with your calendar so clients pick a free slot without back-and-forth emails.", "fr": "Réserver des appels clients : partager un lien de réservation synchronisé avec son agenda pour que les clients choisissent un créneau libre sans échange d'e-mails." },
+    { "en": "Route team meetings: use round-robin scheduling on the Teams plan so inbound booking requests are distributed across the team automatically.", "fr": "Router les réunions d'équipe : utiliser la planification en tourniquet du plan Teams pour répartir automatiquement les demandes de réservation entrantes." }
+  ],
+  "alternatives": [
+    { "slug": "calendly", "reason": { "en": "The market-leading scheduling tool Cal.com positions itself against, closed-source and without as deep a free plan.", "fr": "L'outil de planification leader du marché face auquel Cal.com se positionne, à code fermé et sans plan gratuit aussi complet." } },
+    { "slug": "zcal", "reason": { "en": "Lighter, design-focused scheduling tool aimed at solo creators and consultants.", "fr": "Outil de planification plus léger et soigné visuellement, pensé pour les créateurs et consultants solos." } }
+  ],
+  "missingAlternatives": [
+    { "name": "SavvyCal", "officialUrl": "https://savvycal.com", "reason": "Scheduling tool competitor with collaborative availability features, not in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 4,
+    "utilisation": 4,
+    "puissance": 3,
+    "reversibilite": 4,
+    "evidence": {
+      "valeurAjoutee": { "en": "The free plan alone covers a solo consultant's full scheduling need (unlimited event types, 100+ integrations, payments) at no cost, and Teams adds collaboration for $16/user/month.", "fr": "Le plan gratuit seul couvre tout le besoin de planification d'un consultant solo (types d'événements illimités, plus de 100 intégrations, paiements) sans frais, et Teams ajoute la collaboration pour 16 $/utilisateur/mois.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Sign up and get a working booking link immediately on the free plan, with no setup beyond connecting a calendar.", "fr": "L'inscription donne immédiatement un lien de réservation fonctionnel sur le plan gratuit, sans configuration au-delà de la connexion d'un agenda.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers core scheduling, payment collection and two-way CRM sync as advertised on the pricing page without needing third-party add-ons.", "fr": "Livre la planification de base, l'encaissement et la synchronisation CRM bidirectionnelle comme annoncé sur la page tarifs, sans module tiers nécessaire.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers standard scheduling and team routing well, but advanced compliance (SSO, SCIM, SOC 2/HIPAA) is reserved for Organizations/Enterprise, a notch below category leaders built for large orgs from the start.", "fr": "Couvre bien la planification standard et le routage d'équipe, mais la conformité avancée (SSO, SCIM, SOC2/HIPAA) reste réservée à Organizations/Enterprise, un cran sous les références pensées pour les grandes organisations dès le départ.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Open-source with 100+ integrations and a one-click Calendly import mentioned on the pricing page, suggesting lower lock-in than a closed-source competitor.", "fr": "Open source avec plus de 100 intégrations et un import Calendly en un clic mentionné sur la page tarifs, ce qui suggère un enfermement plus faible qu'un concurrent à code fermé.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Scheduling links", "fr": "Liens de planification" },
+    "shortDescription": { "en": "Cal.com is an open-source scheduling tool: a free plan for individuals, paid plans adding team routing and compliance.", "fr": "Cal.com est un outil de planification open source : un plan gratuit pour les individus, des plans payants ajoutant routage d'équipe et conformité." },
+    "longDescription": {
+      "en": "Cal.com is an open-source alternative to Calendly: unlimited event types, calendar sync and 100+ app integrations, including Stripe/PayPal payments and two-way Salesforce/HubSpot sync, all on the free plan for a single user. A one-click importer migrates existing Calendly events.\n\nThe Teams plan ($16/user/month, $12 annual) adds round-robin and collective scheduling for small teams; Organizations ($37/user/month, $28 annual) adds company subdomains, SAML SSO/SCIM and SOC 2/HIPAA/ISO 27001 compliance. It fits a freelancer or consultant who wants a booking link today and may add team scheduling later.",
+      "fr": "Cal.com est une alternative open source à Calendly : types d'événements illimités, synchro d'agenda et plus de 100 intégrations, dont les paiements Stripe/PayPal et la synchro bidirectionnelle Salesforce/HubSpot, le tout dès le plan gratuit pour un utilisateur. Un import en un clic reprend les événements Calendly existants.\n\nLe plan Teams (16 $/utilisateur/mois, 12 $ en annuel) ajoute la planification en tourniquet et collective pour les petites équipes ; Organizations (37 $/utilisateur/mois, 28 $ en annuel) ajoute sous-domaines d'entreprise, SSO SAML/SCIM et conformité SOC 2/HIPAA/ISO 27001. Il convient à un(e) freelance ou consultant(e) qui veut un lien de réservation dès aujourd'hui et pourra ajouter la planification d'équipe plus tard."
+    },
+    "pros": [
+      { "en": "The free plan already includes payment collection and CRM two-way sync, features some competitors reserve for paid tiers.", "fr": "Le plan gratuit inclut déjà l'encaissement de paiements et la synchronisation CRM bidirectionnelle, des fonctions que certains concurrents réservent aux plans payants." },
+      { "en": "Open-source codebase and a one-click Calendly importer lower the switching cost in both directions.", "fr": "Le code open source et l'import Calendly en un clic réduisent le coût de changement dans les deux sens." }
+    ],
+    "cons": [
+      { "en": "Team scheduling (round-robin, shared team availability) is locked behind the $16/month Teams plan, not available solo.", "fr": "La planification d'équipe (tourniquet, disponibilité partagée) reste réservée au plan Teams à 16 $/mois, indisponible en solo." },
+      { "en": "Compliance certifications (SOC 2, HIPAA, ISO 27001) only appear at the Organizations tier, $37/user/month.", "fr": "Les certifications de conformité (SOC 2, HIPAA, ISO 27001) n'apparaissent qu'au palier Organizations, à 37 $/utilisateur/mois." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're a solo consultant or freelancer who needs a reliable booking link with calendar sync and payment collection, for free.", "fr": "Tu es consultant(e) ou freelance solo et as besoin d'un lien de réservation fiable avec synchro d'agenda et encaissement, gratuitement." },
+      "avoidIf": { "en": "You need enterprise compliance (SSO, SOC 2, HIPAA) from day one: that only starts at $37/user/month.", "fr": "Tu as besoin de conformité entreprise (SSO, SOC 2, HIPAA) dès le départ : cela ne démarre qu'à 37 $/utilisateur/mois." },
+      "threshold": { "en": "Teams costs $144/year per user when billed annually ($12/month); worth it as soon as a second person needs shared availability or round-robin routing.", "fr": "Teams coûte 144 $/an par utilisateur en facturation annuelle (12 $/mois) ; ça se justifie dès qu'une deuxième personne a besoin de disponibilité partagée ou de routage en tourniquet." },
+      "billingTraps": { "en": "Teams and Organizations are billed per user: the displayed $12 and $28 rates apply only when paying annually, versus $16 and $37 month-to-month.", "fr": "Teams et Organizations sont facturés par utilisateur : les tarifs de 12 $ et 28 $ affichés ne s'appliquent qu'en paiement annuel, contre 16 $ et 37 $ au mois le mois." }
+    }
+  },
+  "unknowns": [],
+  "conflicts": []
+}

@@ -1,0 +1,396 @@
+{
+  "schemaVersion": 2,
+  "slug": "manifest-ai",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "identity": {
+    "officialName": "Manifest AI",
+    "vendor": "Manifest AI",
+    "officialUrl": "https://manifestai.io",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://manifestai.io/pricing",
+      "tier": 1,
+      "accessedOn": "2026-10-07",
+      "title": "Manifest AI pricing: subscriptions, credit packs and managed layouts"
+    },
+    {
+      "id": "s2",
+      "url": "https://manifestai.io",
+      "tier": 1,
+      "accessedOn": "2026-10-07",
+      "title": "Manifest AI product overview: freight document extraction workflow"
+    }
+  ],
+  "pricing": {
+    "model": "usage",
+    "currency": "USD",
+    "pricingUrl": "https://manifestai.io/pricing",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "One complete PDF document up to 5 pages, once per workspace, no credit card required; uses local PDF/OCR tools without external AI services.",
+        "fr": "Un document PDF complet jusqu'à 5 pages, une fois par espace de travail, sans carte bancaire ; utilise des outils PDF/OCR locaux sans services IA externes."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free-validation",
+        "name": "Free Validation",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "One complete PDF up to 5 pages, once per workspace, no credit card required; local PDF/OCR tools without external AI services.",
+            "fr": "Un PDF complet jusqu'à 5 pages, une fois par espace de travail, sans carte bancaire ; outils PDF/OCR locaux sans services IA externes."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 149,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "250 page credits/month and 25 saved layout profiles; targeted quality checks and repair; secure portal workflow only, no API access.",
+            "fr": "250 crédits page/mois et 25 profils de mise en page enregistrés ; contrôles qualité ciblés et réparation ; workflow portail sécurisé uniquement, sans accès API."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "scale",
+        "name": "Scale",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": 299,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "750 page credits/month and 100 saved layout profiles; adds a developer API and signed webhooks for higher-volume operations.",
+            "fr": "750 crédits page/mois et 100 profils de mise en page enregistrés ; ajoute une API développeur et des webhooks signés pour les opérations à plus fort volume."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "custom",
+        "name": "Custom",
+        "unit": "usage",
+        "minSeats": null,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": true,
+        "keyLimits": [
+          {
+            "en": "Custom page-credit volume, unlimited saved layout profiles, custom API limits, onboarding, integrations and deployment support.",
+            "fr": "Volume de crédits page personnalisé, profils de mise en page illimités, limites API personnalisées, onboarding, intégrations et support au déploiement."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "professional",
+    "addOns": [
+      {
+        "en": "Starter top-up: +25 page credits",
+        "fr": "Recharge Starter : +25 crédits page",
+        "unit": "usage",
+        "price": 19,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Operations top-up: +100 page credits",
+        "fr": "Recharge Operations : +100 crédits page",
+        "unit": "usage",
+        "price": 59,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Volume top-up: +300 page credits",
+        "fr": "Recharge Volume : +300 crédits page",
+        "unit": "usage",
+        "price": 149,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Managed layout setup: +1 managed layout",
+        "fr": "Configuration de mise en page gérée : +1 mise en page",
+        "unit": "one_time",
+        "price": 49,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "5 managed layouts pack",
+        "fr": "Pack de 5 mises en page gérées",
+        "unit": "one_time",
+        "price": 199,
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "15 managed layouts pack",
+        "fr": "Pack de 15 mises en page gérées",
+        "unit": "one_time",
+        "price": 499,
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "cautions": [
+      {
+        "en": "Credit packs only add capacity to an active paid subscription; they are not a standalone AI plan.",
+        "fr": "Les packs de crédits ajoutent seulement de la capacité à un abonnement payant actif ; ce ne sont pas un plan IA autonome.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Assisted onboarding (vendor and import-schema setup) costs $500-1,500 one-time, separate from the recurring page-credit subscription.",
+        "fr": "L'onboarding assisté (configuration fournisseur et schéma d'import) coûte 500 à 1 500 $ en une fois, séparément de l'abonnement récurrent aux crédits.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Converts freight commercial invoices and packing lists into reviewable Excel or CSV rows mapped to the customer's own import columns, with saved layout profiles per supplier format.",
+        "fr": "Convertit les factures commerciales et listes de colisage fret en lignes Excel ou CSV relisibles, mappées sur les colonnes d'import du client, avec des profils de mise en page enregistrés par format fournisseur.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "Flags uncertain values against source-page evidence and reconciles line-item totals before export, instead of a black-box extraction.",
+        "fr": "Signale les valeurs incertaines en les confrontant à la page source et réconcilie les totaux de lignes avant export, plutôt qu'une extraction boîte noire.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      {
+        "en": "The Scale and Custom plans add a developer API with signed webhooks for direct integration into a TMS or ERP import workflow.",
+        "fr": "Les offres Scale et Custom ajoutent une API développeur avec webhooks signés pour une intégration directe dans un workflow d'import TMS ou ERP.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "API access and webhooks are not included below the Scale plan ($299/month); Professional ($149/month) is limited to the manual portal workflow.",
+        "fr": "L'accès API et les webhooks ne sont pas inclus en dessous de l'offre Scale (299 $/mois) ; Professional (149 $/mois) est limité au workflow portail manuel.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The free validation only covers one 5-page PDF per workspace; there is no ongoing free tier for recurring extraction.",
+        "fr": "La validation gratuite ne couvre qu'un seul PDF de 5 pages par espace de travail ; il n'y a pas d'offre gratuite continue pour l'extraction récurrente.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "web"
+    ]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": {
+      "en": "An ops person at a freight forwarder, customs brokerage or import team still retyping invoice and packing-list line items by hand.",
+      "fr": "Une personne ops dans un transitaire, un courtier en douane ou une équipe import qui ressaisit encore à la main les lignes de factures et de listes de colisage."
+    },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    {
+      "en": "Extract: upload a multi-page commercial invoice PDF and export reviewed line items to Excel formatted for your import template.",
+      "fr": "Extraire : téléverser une facture commerciale PDF multi-pages et exporter les lignes relues vers Excel au format du modèle d'import."
+    },
+    {
+      "en": "Reconcile: save a layout profile for a recurring supplier format so future invoices map to the same columns automatically.",
+      "fr": "Réconcilier : enregistrer un profil de mise en page pour un format fournisseur récurrent afin que les futures factures se mappent automatiquement sur les mêmes colonnes."
+    }
+  ],
+  "alternatives": [],
+  "missingAlternatives": [
+    {
+      "name": "Rossum",
+      "officialUrl": "https://rossum.ai",
+      "reason": "Document AI platform used for invoice and trade-document data extraction, a closer category match than the generic AI tools currently in the catalogue."
+    },
+    {
+      "name": "Docsumo",
+      "officialUrl": "https://docsumo.com",
+      "reason": "Document data extraction platform focused on invoices and logistics paperwork."
+    },
+    {
+      "name": "Nanonets",
+      "officialUrl": "https://nanonets.com",
+      "reason": "OCR/AI document extraction platform with freight and logistics use cases, a direct competitor."
+    }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 3,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Professional costs $149/month for 250 page credits (about $0.60/page); the vendor publishes a built-in cost estimator, but this dossier does not adopt its savings figures as independently verified.",
+        "fr": "Professional coûte 149 $/mois pour 250 crédits page (environ 0,60 $/page) ; l'éditeur publie un calculateur de coût intégré, mais ce dossier n'adopte pas ses chiffres d'économie comme vérifiés de façon indépendante.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "One 5-page PDF can be tried free with no card, giving a first result without commitment; full onboarding time for a saved layout profile was not documented.",
+        "fr": "Un PDF de 5 pages peut être testé gratuitement sans carte, pour un premier résultat sans engagement ; le temps d'onboarding complet pour un profil de mise en page n'est pas documenté.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The product page documents a complete invoice-to-Excel/CSV workflow with source-page evidence checks and total reconciliation, matching its stated purpose; no independent accuracy benchmark was found.",
+        "fr": "La page produit documente un workflow complet facture vers Excel/CSV avec vérification par preuve de page source et réconciliation des totaux, conforme à son objectif annoncé ; aucun benchmark de précision indépendant n'a été trouvé.",
+        "sourceIds": [
+          "s2"
+        ]
+      },
+      "puissance": {
+        "en": "Covers OCR/AI extraction, quality checks and repair, saved layouts, and (on Scale and above) an API with webhooks for ERP/TMS integration; no comparison to document-AI-specific competitors was verified.",
+        "fr": "Couvre l'extraction OCR/IA, les contrôles qualité et la réparation, les mises en page enregistrées, et (sur Scale et au-dessus) une API avec webhooks pour l'intégration ERP/TMS ; aucune comparaison avec des concurrents spécialisés en IA documentaire n'a été vérifiée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export formats are Excel/CSV, but broader data portability and account export were not documented on the pages read.",
+        "fr": "Note neutre : les formats d'export de données sont Excel/CSV, mais la portabilité des données au sens large et l'export de compte ne figurent pas dans les pages relevées.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Freight document AI",
+      "fr": "IA documents fret"
+    },
+    "shortDescription": {
+      "en": "Manifest AI extracts freight commercial invoices and packing lists into reviewable Excel or CSV rows, priced by monthly page credits.",
+      "fr": "Manifest AI extrait les factures commerciales et listes de colisage fret vers des lignes Excel ou CSV à relire, facturé au crédit de page mensuel."
+    },
+    "longDescription": {
+      "en": "Manifest AI turns freight commercial invoices and packing lists into reviewable Excel or CSV rows mapped to a customer's own import columns, flagging uncertain values against source-page evidence and reconciling totals before export. Saved layout profiles handle recurring supplier formats.\n\nA one-time 5-page PDF is free to try. Professional costs $149/month for 250 page credits and 25 saved layouts through a manual portal; Scale costs $299/month for 750 credits, 100 layouts and API access with webhooks. Extra page credits and managed layout setups are sold separately. It fits a freight-forwarder or customs-brokerage ops team still retyping invoice line items by hand.",
+      "fr": "Manifest AI transforme les factures commerciales et listes de colisage fret en lignes Excel ou CSV à relire, mappées sur les colonnes d'import du client, en signalant les valeurs incertaines par rapport à la page source et en réconciliant les totaux avant export.\n\nUn PDF de 5 pages est gratuit à l'essai, une fois. Professional coûte 149 $/mois pour 250 crédits page et 25 mises en page via un portail manuel ; Scale coûte 299 $/mois pour 750 crédits, 100 mises en page et un accès API avec webhooks. Crédits et configurations supplémentaires se vendent séparément. Convient à une équipe ops de transitaire ou de courtage en douane qui ressaisit encore les factures à la main."
+    },
+    "pros": [
+      {
+        "en": "Flags uncertain values against the source page instead of returning silent extraction errors.",
+        "fr": "Signale les valeurs incertaines par rapport à la page source plutôt que de renvoyer des erreurs d'extraction silencieuses."
+      },
+      {
+        "en": "Saved layout profiles mean a recurring supplier format only needs to be mapped once.",
+        "fr": "Les profils de mise en page enregistrés font qu'un format fournisseur récurrent n'a besoin d'être mappé qu'une seule fois."
+      }
+    ],
+    "cons": [
+      {
+        "en": "API access and webhooks require the Scale plan ($299/month); Professional is portal-only.",
+        "fr": "L'accès API et les webhooks nécessitent l'offre Scale (299 $/mois) ; Professional reste limité au portail."
+      },
+      {
+        "en": "Extra volume is billed separately as page-credit top-ups ($19-149 per pack) on top of the monthly subscription.",
+        "fr": "Le volume supplémentaire est facturé séparément en recharges de crédits page (19 à 149 $ le pack) en plus de l'abonnement mensuel."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "Your team processes recurring freight invoices or packing lists by hand and wants a repeatable per-supplier extraction layout.",
+        "fr": "Ton équipe traite des factures ou listes de colisage fret récurrentes à la main et veut une mise en page d'extraction répétable par fournisseur."
+      },
+      "avoidIf": {
+        "en": "You need API or ERP integration from day one on a small budget; that requires the $299/month Scale plan, not the $149/month Professional plan.",
+        "fr": "Tu as besoin d'une intégration API ou ERP dès le départ avec un petit budget ; cela nécessite l'offre Scale à 299 $/mois, pas Professional à 149 $/mois."
+      },
+      "threshold": {
+        "en": "Professional costs $149/month for 250 page credits (about $0.60/page before any top-up), the entry point for ongoing extraction beyond the one free document.",
+        "fr": "Professional coûte 149 $/mois pour 250 crédits page (environ 0,60 $/page avant recharge), le point d'entrée pour une extraction continue au-delà du document gratuit unique."
+      },
+      "billingTraps": {
+        "en": "Each paid plan still requires buying extra page-credit packs ($19-149) when the monthly allowance (250 or 750 page credits) runs out; top-ups only work on top of an active subscription, not standalone.",
+        "fr": "Chaque offre payante nécessite d'acheter des packs de crédits page supplémentaires (19 à 149 $) une fois l'allocation mensuelle (250 ou 750 crédits) épuisée ; les recharges ne fonctionnent qu'en plus d'un abonnement actif, pas seules."
+      }
+    }
+  },
+  "unknowns": [
+    "No catalogue tool directly competes on freight-document data extraction; the entries in missingAlternatives are real competitors absent from the catalogue rather than ones found among alternativeCandidates.",
+    "Whether unused page credits or top-up credits expire monthly was not confirmed (the page's FAQ lists the question but this session did not open the answer).",
+    "Named third-party integrations (specific TMS/ERP/accounting products) were not confirmed; only generic API and webhook access on Scale and Custom plans was documented."
+  ],
+  "conflicts": []
+}

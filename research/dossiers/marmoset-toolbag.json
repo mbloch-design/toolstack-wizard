@@ -1,0 +1,304 @@
+{
+  "schemaVersion": 2,
+  "slug": "marmoset-toolbag",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "identity": {
+    "officialName": "Marmoset Toolbag",
+    "vendor": "Marmoset",
+    "officialUrl": "https://marmoset.co/toolbag/",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://marmoset.co/toolbag/",
+      "tier": 1,
+      "accessedOn": "2026-10-07",
+      "title": "Marmoset Toolbag pricing and overview (Individual subscription, perpetual license, 30-day trial)"
+    }
+  ],
+  "pricing": {
+    "model": "subscription_and_perpetual",
+    "currency": "USD",
+    "pricingUrl": "https://marmoset.co/toolbag/",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": false,
+      "limits": null
+    },
+    "trial": {
+      "days": 30,
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "individual-subscription",
+        "name": "Individual Subscription",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": {
+          "monthly": 18.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Personal single-user license (hobbyist, freelancer, student); includes all upgrades while the subscription is active and access to 2,000+ Toolbag Library assets. The page states a 12% discount for yearly renewal but does not show the resulting annual dollar amount.",
+            "fr": "Licence personnelle mono-utilisateur (amateur, freelance, étudiant) ; inclut toutes les mises à jour tant que l'abonnement est actif et l'accès à plus de 2 000 assets de la Library Toolbag. La page indique une réduction de 12 % pour le renouvellement annuel mais n'affiche pas le montant annuel qui en résulte."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "individual-perpetual",
+        "name": "Individual Perpetual License",
+        "unit": "one_time",
+        "minSeats": 1,
+        "price": {
+          "monthly": null,
+          "annualPerMonth": null,
+          "oneTime": 399
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "One-time personal single-user license; only Toolbag 5.x updates are included (no free major-version upgrade), with the same 2,000+ Library asset access and lifetime email support.",
+            "fr": "Licence personnelle mono-utilisateur à l'achat unique ; seules les mises à jour de la version 5.x sont incluses (pas de montée de version majeure gratuite), avec le même accès à la Library de 2 000+ assets et le support email à vie."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "individual-subscription",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "The subscription page states \"Save 12% with Yearly Renewal\" but does not show the resulting annual dollar amount before checkout; this dossier does not calculate it to avoid publishing a figure not shown on the page.",
+        "fr": "La page d'abonnement indique « Économisez 12 % avec le renouvellement annuel » mais n'affiche pas le montant annuel qui en résulte avant le passage en caisse ; ce dossier ne le calcule pas pour éviter de publier un chiffre absent de la page.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Texture baking, real-time PBR rendering and texturing/painting tools in one application, covering the bake-texture-render workflow for a finished 3D asset.",
+        "fr": "Baking de textures, rendu PBR temps réel et outils de texturing/peinture dans une seule application, couvrant le workflow bake-texture-rendu pour un asset 3D fini.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Ray-traced and raster rendering engines, used to produce final presentation renders for games, film and product visualization.",
+        "fr": "Moteurs de rendu ray-tracé et raster, utilisés pour produire des rendus de présentation finaux pour le jeu, le cinéma et la visualisation produit.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Built-in Library with 2,000+ free materials, textures and brushes included with either license.",
+        "fr": "Library intégrée avec plus de 2 000 matériaux, textures et brushes gratuits inclus avec les deux licences.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Marmoset Viewer exports interactive WebGL scenes so finished work can be shared and viewed in a browser.",
+        "fr": "Marmoset Viewer exporte des scènes WebGL interactives pour partager et visualiser le travail fini dans un navigateur.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "No free tier: the only free option is the 30-day trial; ongoing use requires either the subscription ($18.99/month) or the $399 one-time perpetual license.",
+        "fr": "Pas d'offre gratuite : la seule option gratuite est l'essai de 30 jours ; un usage continu nécessite l'abonnement (18,99 $/mois) ou la licence perpétuelle à 399 $.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "The perpetual license only includes updates within the 5.x version line; a future major version would require a new purchase, unlike the active subscription.",
+        "fr": "La licence perpétuelle n'inclut que les mises à jour de la branche 5.x ; une future version majeure nécessiterait un nouvel achat, contrairement à l'abonnement actif.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [],
+    "platforms": [
+      "desktop"
+    ]
+  },
+  "audience": {
+    "persona": "OTHER",
+    "description": {
+      "en": "A freelance or hobbyist 3D artist baking, texturing and rendering game, film or product-visualization assets.",
+      "fr": "Une artiste 3D freelance ou amateur qui bake, texture et rend des assets pour le jeu, le cinéma ou la visualisation produit."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "low"
+  },
+  "useCases": [
+    {
+      "en": "Bake: generate normal, AO and other maps from a high-poly sculpt using Toolbag's real-time baking engine before bringing the asset into a game engine.",
+      "fr": "Baker : générer des maps normal, AO et autres à partir d'un sculpt high-poly avec le moteur de baking temps réel de Toolbag avant d'importer l'asset dans un moteur de jeu."
+    },
+    {
+      "en": "Render: light and render a finished character or prop for a portfolio piece using Toolbag's ray-traced renderer instead of setting up a full game-engine scene.",
+      "fr": "Rendre : éclairer et rendre un personnage ou un prop fini pour un portfolio avec le moteur de rendu ray-tracé de Toolbag plutôt que de monter une scène complète dans un moteur de jeu."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "blender",
+      "reason": {
+        "en": "Free, open-source 3D suite that also covers baking, texturing and rendering, a common budget alternative for solo artists.",
+        "fr": "Suite 3D gratuite et open source qui couvre aussi le baking, le texturing et le rendu, alternative budget courante pour les artistes solos."
+      }
+    },
+    {
+      "slug": "substance-3d-painter",
+      "reason": {
+        "en": "Competing texturing and painting tool, overlapping with Toolbag's texture step of the pipeline.",
+        "fr": "Outil de texturing et peinture concurrent, qui recoupe l'étape de texturing du pipeline de Toolbag."
+      }
+    },
+    {
+      "slug": "corona-renderer",
+      "reason": {
+        "en": "Competing rendering engine for finished presentation renders.",
+        "fr": "Moteur de rendu concurrent pour les rendus de présentation finaux."
+      }
+    },
+    {
+      "slug": "octane-render",
+      "reason": {
+        "en": "Competing GPU rendering engine used for the same final-presentation rendering step.",
+        "fr": "Moteur de rendu GPU concurrent utilisé pour la même étape de rendu de présentation finale."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "At $18.99/month or a $399 one-time license, the cost is reasonable for a dedicated baking/rendering step, but no direct price comparison against alternatives was verified in this dossier.",
+        "fr": "À 18,99 $/mois ou 399 $ en licence unique, le coût reste raisonnable pour une étape dédiée au baking/rendu, mais aucune comparaison de prix directe avec les alternatives n'a été vérifiée dans ce dossier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: first-use difficulty and onboarding time are not documented on the page read for this dossier.",
+        "fr": "Note neutre : la difficulté de prise en main et le temps d'onboarding ne figurent pas dans la page relevée pour ce dossier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The product page documents a complete bake/texture/render workflow matching its stated purpose, with named-artist case quotes describing production use, without independent third-party verification in this dossier.",
+        "fr": "La page produit documente un workflow complet bake/texture/rendu conforme à son objectif annoncé, avec des témoignages d'artistes nommés décrivant un usage en production, sans vérification indépendante dans ce dossier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Combines real-time baking, PBR texturing/painting and both ray-traced and raster rendering in one tool, used across character, hard-surface, environment and film/TV art per the vendor's page.",
+        "fr": "Combine baking temps réel, texturing/peinture PBR et rendu ray-tracé et raster dans un seul outil, utilisé pour l'art de personnages, hard-surface, environnement et film/TV selon la page éditeur.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: export formats and data portability outside Toolbag's own project files were not documented on the page read.",
+        "fr": "Note neutre : les formats d'export et la portabilité des données hors des fichiers de projet propres à Toolbag ne figurent pas dans la page relevée.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "Baking & rendering",
+      "fr": "Bake et rendu"
+    },
+    "shortDescription": {
+      "en": "Marmoset Toolbag bakes, textures and renders 3D assets for games, film and product visualization, sold as an $18.99/month subscription or a $399 one-time license.",
+      "fr": "Marmoset Toolbag bake, texture et rend des assets 3D de jeu vidéo, en abonnement à 18,99 $/mois ou licence unique à 399 $."
+    },
+    "longDescription": {
+      "en": "Toolbag covers the full presentation pipeline for a finished 3D asset: texture baking, physically-based texturing and painting, and ray-traced or raster rendering, plus a built-in library of 2,000+ materials, textures and brushes and WebGL export via Marmoset Viewer.\n\nAn Individual subscription costs $18.99/month, with a 12% discount for yearly renewal (exact annual amount not published before checkout). A one-time Individual perpetual license costs $399 but only includes updates within the 5.x line. A 30-day free trial is available. It fits a freelance or hobbyist 3D artist presenting game, film or product-visualization work outside a full game-engine setup.",
+      "fr": "Toolbag couvre tout le pipeline de présentation d'un asset 3D fini : baking de textures, texturing et peinture réalistes, et rendu ray-tracé ou raster, avec une bibliothèque intégrée de plus de 2 000 matériaux, textures et brushes et un export WebGL via Marmoset Viewer.\n\nUn abonnement Individual coûte 18,99 $/mois, avec une réduction de 12 % au renouvellement annuel (montant exact non publié avant le passage en caisse). La licence perpétuelle à l'achat unique coûte 399 $ mais n'inclut que les mises à jour de la branche 5.x. Essai gratuit de 30 jours disponible. Convient à une artiste 3D freelance ou amateur qui présente un travail de jeu, cinéma ou visualisation produit hors d'un moteur de jeu complet."
+    },
+    "pros": [
+      {
+        "en": "Covers baking, texturing and rendering in one application instead of three separate tools.",
+        "fr": "Couvre le baking, le texturing et le rendu dans une seule application plutôt que trois outils séparés."
+      },
+      {
+        "en": "A one-time perpetual license ($399) is available for artists who prefer not to subscribe.",
+        "fr": "Une licence perpétuelle à l'achat unique (399 $) existe pour les artistes qui préfèrent ne pas s'abonner."
+      }
+    ],
+    "cons": [
+      {
+        "en": "No ongoing free tier; only a 30-day trial is offered before a paid license is required.",
+        "fr": "Pas d'offre gratuite continue ; seul un essai de 30 jours est proposé avant qu'une licence payante soit requise."
+      },
+      {
+        "en": "The perpetual license's included updates stop at the next major version, unlike the subscription.",
+        "fr": "Les mises à jour incluses dans la licence perpétuelle s'arrêtent à la prochaine version majeure, contrairement à l'abonnement."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You need a dedicated baking, texturing and rendering step between a modeling app and a game engine, and want one license for that step alone.",
+        "fr": "Tu as besoin d'une étape dédiée de baking, texturing et rendu entre un logiciel de modélisation et un moteur de jeu, et veux une seule licence pour cette étape."
+      },
+      "avoidIf": {
+        "en": "You need ongoing free access or a tool that also handles modeling and rigging; Toolbag is a presentation-stage tool only.",
+        "fr": "Tu as besoin d'un accès gratuit continu ou d'un outil qui gère aussi la modélisation et le rigging ; Toolbag ne couvre que l'étape de présentation."
+      },
+      "threshold": {
+        "en": "The Individual subscription costs $18.99/month ($227.88/year at the monthly rate); the perpetual license is a $399 one-time alternative.",
+        "fr": "L'abonnement Individual coûte 18,99 $/mois (227,88 $/an au tarif mensuel) ; la licence perpétuelle est une alternative à l'achat unique de 399 $."
+      },
+      "billingTraps": {
+        "en": "The subscription's 12% 'yearly renewal' discount doesn't show its resulting dollar price on the pricing page before checkout.",
+        "fr": "La réduction de 12 % « renouvellement annuel » de l'abonnement n'affiche pas son montant en dollars sur la page tarifs avant le passage en caisse."
+      }
+    }
+  },
+  "unknowns": [
+    "Studio and Academic license pricing (separate tabs on the purchase page) were not read in this session; only Individual pricing is documented here.",
+    "The exact annual subscription price (after the stated 12% yearly-renewal discount) is not published on the page before checkout."
+  ],
+  "conflicts": []
+}

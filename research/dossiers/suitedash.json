@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 2,
+  "slug": "suitedash",
+  "tier": "B",
+  "researchedOn": "2026-10-07",
+  "completedLocallyOn": "2026-10-07",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "SuiteDash",
+    "vendor": "SuiteDash",
+    "officialUrl": "https://suitedash.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://suitedash.com/pricing/", "tier": 1, "accessedOn": "2026-10-07", "title": "SuiteDash pricing (Start, Thrive, Pinnacle, Century)" }
+  ],
+  "pricing": {
+    "model": "subscription",
+    "currency": "USD",
+    "pricingUrl": "https://suitedash.com/pricing/",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": false, "limits": null, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "start",
+        "name": "Start",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 19, "annualPerMonth": 15, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "100GB storage; unlimited CRM contacts, staff and client portals on every plan, plus extreme white labeling and a custom-branded mobile app.", "fr": "100 Go de stockage ; contacts CRM, membres de l'équipe et portails clients illimités sur chaque plan, plus un white labeling poussé et une application mobile à marque personnalisée." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "thrive",
+        "name": "Thrive",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 49, "annualPerMonth": 40, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "500GB storage; adds autoresponder, proposals, deal pipelines, live chat and one free consultation.", "fr": "500 Go de stockage ; ajoute l'autorépondeur, les propositions, les pipelines de deals, le chat en direct et une consultation gratuite." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "pinnacle",
+        "name": "Pinnacle",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 99, "annualPerMonth": 80, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "2TB storage; adds automation, an LMS, support tickets, task dependencies and customer journeys. The 14-day free trial runs on this plan's full feature set.", "fr": "2 To de stockage ; ajoute l'automatisation, un LMS, les tickets de support, les dépendances de tâches et les parcours client. L'essai gratuit de 14 jours tourne sur l'ensemble des fonctionnalités de ce plan." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "century-start",
+        "name": "Start Century (lifetime)",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 2240 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "One-time payment for the Start feature set, described by SuiteDash as covering '100 years' of use instead of a recurring subscription.", "fr": "Paiement unique pour les fonctionnalités du plan Start, décrit par SuiteDash comme couvrant « 100 ans » d'usage au lieu d'un abonnement récurrent." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "start",
+    "addOns": [
+      { "en": "Extra storage: $5/month per additional 250GB ($60/year).", "fr": "Stockage supplémentaire : 5 $/mois par tranche de 250 Go ($60/an).", "unit": "usage", "price": 5, "sourceIds": ["s1"] }
+    ],
+    "cautions": [
+      { "en": "The one-time 'Century' lifetime option also exists for Thrive ($3,940) and Pinnacle ($6,840), at those plans' feature levels, instead of paying monthly or yearly.", "fr": "L'option à achat unique « Century » existe aussi pour Thrive (3 940 $) et Pinnacle (6 840 $), aux niveaux de fonctionnalités de ces plans, au lieu d'un paiement mensuel ou annuel.", "sourceIds": ["s1"] },
+      { "en": "Storage is capped by plan (100GB on Start) and overages are billed at $5/month per 250GB.", "fr": "Le stockage est plafonné par plan (100 Go sur Start) et les dépassements sont facturés 5 $/mois par 250 Go.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "A white-labeled client portal with unlimited CRM contacts, staff and client portals on every plan, plus a custom-branded mobile app.", "fr": "Un portail client en marque blanche avec contacts CRM, membres de l'équipe et portails clients illimités sur chaque plan, plus une application mobile à marque personnalisée.", "sourceIds": ["s1"] },
+      { "en": "Higher tiers add proposals, deal pipelines, live chat, automation, an LMS and support tickets, covering agency operations beyond a basic client portal.", "fr": "Les plans supérieurs ajoutent les propositions, les pipelines de deals, le chat en direct, l'automatisation, un LMS et les tickets de support, au-delà d'un simple portail client.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "Storage is capped by plan (100GB on Start, 500GB on Thrive, 2TB on Pinnacle) with paid overages.", "fr": "Le stockage est plafonné par plan (100 Go sur Start, 500 Go sur Thrive, 2 To sur Pinnacle) avec des dépassements payants.", "sourceIds": ["s1"] },
+      { "en": "Automation, the LMS and support tickets are reserved for the top Pinnacle tier ($99/month, or $80/month billed annually).", "fr": "L'automatisation, le LMS et les tickets de support sont réservés au plan Pinnacle, le plus haut ($99/mois, ou 80 $/mois facturé à l'année).", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web", "ios", "android"]
+  },
+  "audience": {
+    "persona": "MARC",
+    "description": { "en": "A solo consultant or small agency that wants one white-labeled portal for CRM, invoicing, proposals and client communication instead of combining separate tools.", "fr": "Un consultant solo ou une petite agence qui veut un portail unique en marque blanche pour le CRM, la facturation, les propositions et la communication client, plutôt que de combiner plusieurs outils." },
+    "soloRelevance": "high",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Use: give each client a single branded portal login that bundles their invoices, files and proposals, instead of juggling separate tools.", "fr": "Usage : donner à chaque client un identifiant unique vers un portail à sa marque qui regroupe ses factures, fichiers et propositions, plutôt que de jongler entre plusieurs outils." },
+    { "en": "Use: run the 14-day free trial on the full Pinnacle plan to test automation and the LMS before choosing a paid tier.", "fr": "Usage : lancer l'essai gratuit de 14 jours sur le plan Pinnacle complet pour tester l'automatisation et le LMS avant de choisir un palier payant." }
+  ],
+  "alternatives": [
+    { "slug": "honeybook", "reason": { "en": "A client-management and portal platform covering the same freelancer/agency admin need.", "fr": "Une plateforme de gestion client et de portail qui couvre le même besoin administratif pour freelances et agences." } },
+    { "slug": "dubsado", "reason": { "en": "Another CRM and client-portal tool aimed at the same freelancer and small-agency audience.", "fr": "Un autre outil de CRM et de portail client visant le même public de freelances et petites agences." } },
+    { "slug": "17hats", "reason": { "en": "A client-management suite with invoicing and proposals covering a similar all-in-one need.", "fr": "Une suite de gestion client avec facturation et propositions qui couvre un besoin tout-en-un similaire." } },
+    { "slug": "plutio", "reason": { "en": "An all-in-one client, project and invoicing platform competing on the same positioning.", "fr": "Une plateforme tout-en-un pour la gestion client, projets et facturation qui se positionne de façon similaire." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 2,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Start costs $15/month billed annually and already includes unlimited staff, contacts and portals, cheap for a white-labeled client-portal suite.", "fr": "Start coûte 15 $/mois facturé à l'année et inclut déjà staff, contacts et portails illimités, un prix bas pour une suite de portail client en marque blanche.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "A combined CRM, portal, white-labeling and branded-app suite likely needs real setup time before a first client-ready portal, unlike a single-purpose tool.", "fr": "Une suite combinant CRM, portail, marque blanche et application personnalisée demande vraisemblablement un vrai temps de configuration avant un premier portail prêt pour un client, contrairement à un outil mono-usage.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "The feature list (unlimited portals, white labeling, branded app) matches what is promised on every plan, but higher-value features like automation and the LMS are reserved for the top tier.", "fr": "La liste de fonctionnalités (portails illimités, marque blanche, application personnalisée) correspond à ce qui est promis sur chaque plan, mais les fonctions à plus forte valeur comme l'automatisation et le LMS sont réservées au plan le plus haut.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers CRM, client portals, proposals, deal pipelines, automation, an LMS and support tickets at the top tier, a broad feature set for the client-portal category.", "fr": "Couvre le CRM, les portails clients, les propositions, les pipelines de deals, l'automatisation, un LMS et les tickets de support au plan le plus haut, un ensemble de fonctionnalités large pour la catégorie des portails clients.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export format and data portability if a team leaves SuiteDash are not covered by the sources checked.", "fr": "Note neutre : le format d'export et la portabilité des données en cas de départ de SuiteDash ne figurent pas dans les sources consultées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "All-in-one client portal", "fr": "Portail client tout-en-un" },
+    "shortDescription": { "en": "SuiteDash bundles a white-labeled client portal, CRM, invoicing and proposals for agencies and freelancers in one subscription.", "fr": "SuiteDash regroupe un portail client en marque blanche, un CRM, la facturation et les propositions pour agences et freelances dans un seul abonnement." },
+    "longDescription": {
+      "en": "SuiteDash bundles a white-labeled client portal, CRM, invoicing, proposals and a custom-branded mobile app in one subscription, with unlimited staff, contacts and portals on every plan. Higher tiers add deal pipelines, live chat, automation, an LMS and support tickets.\n\nStart costs $15/month billed annually ($19/month) with 100GB storage; Thrive and Pinnacle raise storage and unlock automation and the LMS up to $80/month (annual). A one-time 'Century' license also exists from $2,240. A 14-day free trial runs on the full Pinnacle feature set. It fits a solo consultant or small agency replacing several separate client-facing tools.",
+      "fr": "SuiteDash regroupe un portail client en marque blanche, un CRM, la facturation, les propositions et une application mobile personnalisée dans un seul abonnement, avec staff, contacts et portails illimités sur chaque plan. Les plans supérieurs ajoutent pipelines de deals, chat en direct, automatisation, LMS et tickets de support.\n\nStart coûte 15 $/mois à l'année (19 $/mois sinon) avec 100 Go de stockage ; Thrive et Pinnacle augmentent le stockage et débloquent automatisation et LMS jusqu'à 80 $/mois en annuel. Une licence « Century » à achat unique existe à partir de 2 240 $. Un essai de 14 jours tourne sur Pinnacle complet. Convient à un consultant solo qui remplace plusieurs outils client séparés."
+    },
+    "pros": [
+      { "en": "Unlimited staff, CRM contacts and client portals are included even on the cheapest plan, unlike tools that charge per seat.", "fr": "Staff, contacts CRM et portails clients illimités sont inclus même sur le plan le moins cher, contrairement aux outils qui facturent par siège." },
+      { "en": "A one-time 'Century' license exists for teams that prefer paying once over a recurring subscription.", "fr": "Une licence « Century » à achat unique existe pour les équipes qui préfèrent payer une fois plutôt qu'un abonnement récurrent." }
+    ],
+    "cons": [
+      { "en": "Automation, the LMS and support tickets require the top Pinnacle tier, not available on Start or Thrive.", "fr": "L'automatisation, le LMS et les tickets de support exigent le plan Pinnacle, le plus haut, non disponibles sur Start ou Thrive." },
+      { "en": "A combined CRM, portal and white-labeling suite likely takes real setup time before a first client-ready portal.", "fr": "Une suite combinant CRM, portail et marque blanche demande probablement un vrai temps de configuration avant un premier portail prêt pour un client." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You want one white-labeled portal to replace separate CRM, invoicing and proposal tools for your clients.", "fr": "Tu veux un portail unique en marque blanche pour remplacer des outils séparés de CRM, facturation et propositions pour tes clients." },
+      "avoidIf": { "en": "You only need a simple client portal and don't want to pay for automation or an LMS you won't use.", "fr": "Tu as seulement besoin d'un portail client simple et tu ne veux pas payer pour une automatisation ou un LMS que tu n'utiliseras pas." },
+      "threshold": { "en": "Start costs $180/year ($15/month) billed annually, the entry point for the unlimited-staff, unlimited-portal feature set.", "fr": "Start coûte 180 $/an (15 $/mois) facturé à l'année, le point d'entrée pour le staff et les portails illimités." },
+      "billingTraps": { "en": "Extra storage beyond each plan's cap (100GB/500GB/2TB) is billed separately at $5/month per 250GB.", "fr": "Le stockage supplémentaire au-delà du plafond de chaque plan (100 Go/500 Go/2 To) est facturé séparément 5 $/mois par 250 Go." }
+    }
+  },
+  "unknowns": [
+    "The exact legal entity behind SuiteDash and any named integrations (e.g. Zapier, Slack) were not confirmed on the pricing page checked this session."
+  ],
+  "conflicts": []
+}

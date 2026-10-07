@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "slug": "hex",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "identity": {
+    "officialName": "Hex",
+    "vendor": "Hex Technologies, Inc.",
+    "officialUrl": "https://hex.tech",
+    "docsUrl": "https://learn.hex.tech",
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://hex.tech/pricing/", "tier": 1, "accessedOn": "2026-10-07", "title": "Hex pricing (Community/Professional/Team/Enterprise)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://hex.tech/pricing/",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "Hex agent trial, small compute, connect any data source, all cell types, for hobbyists on small projects.", "fr": "Essai de l'agent Hex, compute réduit, connexion à toute source de données, tous les types de cellules, pour des projets personnels." }, "sourceIds": ["s1"] },
+    "trial": { "days": 14, "sourceIds": ["s1"] },
+    "plans": [
+      {
+        "key": "community",
+        "name": "Community",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Hex agent trial, small compute, connect any data source, all cell types.", "fr": "Essai de l'agent Hex, compute réduit, connexion à toute source de données, tous les types de cellules." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "professional",
+        "name": "Professional",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 36, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Hex agent with standard credits, up to 5 published apps, 30-day version history, medium compute.", "fr": "Agent Hex avec crédits standards, jusqu'à 5 apps publiées, historique de versions de 30 jours, compute medium." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "team",
+        "name": "Team",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": 75, "annualPerMonth": null, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [{ "en": "Unlimited published apps and version history, scheduled runs and alerts, unlimited shared collections and components; 14-day free trial.", "fr": "Apps publiées et historique de versions illimités, exécutions planifiées et alertes, collections et composants partagés illimités ; essai gratuit de 14 jours." }],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "enterprise",
+        "name": "Enterprise",
+        "unit": "seat",
+        "minSeats": 1,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": null },
+        "onQuote": true,
+        "keyLimits": [{ "en": "Explorer seat add-on, OAuth/OIDC SSO, audit logging, HIPAA add-on, single-tenant option; no public price.", "fr": "Add-on siège Explorer, SSO OAuth/OIDC, journalisation d'audit, add-on HIPAA, option mono-tenant ; aucun prix public." }],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "professional",
+    "addOns": [],
+    "cautions": [
+      { "en": "No annual-billed discount is shown on the pricing page; $36 and $75 appear to be flat per-Editor monthly rates with no visible annual toggle.", "fr": "Aucune remise en facturation annuelle n'apparaît sur la page tarifs ; 36 $ et 75 $ semblent être des tarifs mensuels fixes par Éditeur, sans bascule annuelle visible.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Collaborative notebooks (SQL, Python, no-code cells) that publish directly into interactive apps and dashboards.", "fr": "Notebooks collaboratifs (cellules SQL, Python, no-code) qui se publient directement en apps et dashboards interactifs.", "sourceIds": ["s1"] },
+      { "en": "Connects to any data source with compute profiles that scale from small (Community) to advanced add-ons (Enterprise).", "fr": "Se connecte à toute source de données avec des profils de compute évolutifs, du petit volume (Community) aux add-ons avancés (Enterprise).", "sourceIds": ["s1"] },
+      { "en": "Built-in Hex agent (AI) with credit-based usage that scales from standard (Professional) to extended and premium credits (Team/Enterprise).", "fr": "Agent Hex (IA) intégré avec un usage à crédits qui va de standard (Professional) à étendu puis premium (Team/Enterprise).", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The free Community plan offers far shorter version history and fewer published apps than the paid tiers (30-day/unlimited history).", "fr": "Le plan gratuit Community offre un historique de versions bien plus court et moins d'apps publiées que les paliers payants (historique de 30 jours ou illimité).", "sourceIds": ["s1"] },
+      { "en": "Scheduled runs, alerts and unlimited shared collections only start at the Team plan, $75 per Editor/month.", "fr": "Les exécutions planifiées, alertes et collections partagées illimitées ne démarrent qu'au plan Team, à 75 $ par Éditeur/mois.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "OTHER",
+    "description": { "en": "A data analyst or data scientist building interactive notebooks and apps who needs more than a spreadsheet but less overhead than a full BI platform.", "fr": "Un(e) data analyst ou data scientist qui construit des notebooks et apps interactifs, avec un besoin au-delà du tableur mais moins lourd qu'une plateforme BI complète." },
+    "soloRelevance": "medium",
+    "teamRelevance": "high"
+  },
+  "useCases": [
+    { "en": "Turn an analysis into an app: build a notebook with SQL and Python, then publish it as an interactive app stakeholders can use without touching code.", "fr": "Transformer une analyse en app : construire un notebook en SQL et Python, puis le publier en app interactive utilisable par les parties prenantes sans toucher au code." },
+    { "en": "Automate a recurring report: schedule a notebook to run and alert the team on the Team plan instead of re-running it by hand each time.", "fr": "Automatiser un rapport récurrent : planifier l'exécution d'un notebook avec alerte pour l'équipe sur le plan Team plutôt que de le relancer à la main à chaque fois." }
+  ],
+  "alternatives": [
+    { "slug": "jupyter", "reason": { "en": "The open-source notebook standard Hex builds on top of, without built-in collaboration, app publishing or hosting.", "fr": "Le standard open source de notebooks sur lequel Hex s'appuie, sans collaboration intégrée, publication d'apps ni hébergement." } },
+    { "slug": "metabase", "reason": { "en": "Open-source BI dashboard tool, more accessible to non-technical users but less code-centric than Hex's notebooks.", "fr": "Outil de BI et dashboards open source, plus accessible aux non-techniques mais moins centré code que les notebooks de Hex." } },
+    { "slug": "looker-studio", "reason": { "en": "Free Google dashboarding tool, simpler to start but without Hex's SQL/Python notebook flexibility.", "fr": "Outil de dashboards gratuit de Google, plus simple à démarrer mais sans la flexibilité des notebooks SQL/Python de Hex." } }
+  ],
+  "missingAlternatives": [
+    { "name": "Deepnote", "officialUrl": "https://deepnote.com", "reason": "Direct collaborative data-notebook competitor to Hex, not in the catalogue." }
+  ],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "Professional costs $36/Editor/month for standard agent credits and 5 published apps; reasonable for a solo analyst but the jump to Team ($75) for scheduled runs and unlimited apps is steep.", "fr": "Professional coûte 36 $/Éditeur/mois pour des crédits agent standards et 5 apps publiées ; raisonnable pour un(e) analyste solo, mais le saut vers Team (75 $) pour les exécutions planifiées et les apps illimitées est important.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Requires comfort with SQL, Python or no-code cells to get a first useful notebook; not a no-training tool for a non-technical user.", "fr": "Demande une aisance avec SQL, Python ou les cellules no-code pour obtenir un premier notebook utile ; pas un outil sans formation pour un profil non technique.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers the advertised notebook-to-app publishing and data-source connectivity across every plan, per the pricing page's feature comparison.", "fr": "Livre la publication notebook vers app et la connectivité aux sources de données annoncées sur chaque plan, selon le comparatif de fonctions de la page tarifs.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Combines SQL/Python notebooks, an AI agent, scheduled automation and interactive app publishing in one tool, a broader scope than a single-purpose BI dashboard.", "fr": "Combine notebooks SQL/Python, agent IA, automatisation planifiée et publication d'apps interactives dans un seul outil, un périmètre plus large qu'un dashboard BI mono-usage.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export formats and project portability out of Hex are not described on the pricing page.", "fr": "Note neutre : les formats d'export et la portabilité des projets hors de Hex ne sont pas décrits sur la page tarifs.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "Collaborative data notebooks", "fr": "Notebooks data collaboratifs" },
+    "shortDescription": { "en": "Hex is a collaborative notebook tool for SQL and Python analysis that publishes directly into interactive apps and dashboards.", "fr": "Hex est un outil de notebooks collaboratifs pour l'analyse SQL et Python, qui publie directement en apps et dashboards interactifs." },
+    "longDescription": {
+      "en": "Hex lets a data team write SQL, Python or no-code cells in a shared notebook, then publish the result as an interactive app or dashboard without rebuilding it in a separate tool. A built-in AI agent, scheduled runs and alerts, and shared components scale from solo analysis to team automation.\n\nThe Community plan is free for small personal projects; Professional costs $36/Editor/month for standard agent credits and up to 5 published apps, and Team costs $75/Editor/month for unlimited apps, scheduled runs and shared collections, with a 14-day free trial. It fits a data analyst or scientist who needs more than a spreadsheet but less overhead than a full BI platform.",
+      "fr": "Hex permet à une équipe data d'écrire des cellules SQL, Python ou no-code dans un notebook partagé, puis de publier le résultat en app ou dashboard interactif sans tout reconstruire ailleurs. Un agent IA intégré, des exécutions planifiées avec alertes et des composants partagés font passer d'une analyse solo à l'automatisation en équipe.\n\nCommunity est gratuit pour de petits projets personnels ; Professional coûte 36 $/Éditeur/mois pour des crédits agent standards et jusqu'à 5 apps publiées, et Team coûte 75 $/Éditeur/mois pour des apps illimitées, des exécutions planifiées et des collections partagées, avec un essai gratuit de 14 jours. Convient à un(e) data analyst qui a besoin de plus qu'un tableur mais de moins qu'une plateforme BI complète."
+    },
+    "pros": [
+      { "en": "Notebooks publish directly into interactive apps without switching tools or rebuilding the analysis for stakeholders.", "fr": "Les notebooks se publient directement en apps interactives sans changer d'outil ni reconstruire l'analyse pour les parties prenantes." },
+      { "en": "Scales from a free solo plan to team automation (scheduled runs, shared components) without migrating to a different product.", "fr": "Évolue d'un plan solo gratuit vers l'automatisation d'équipe (exécutions planifiées, composants partagés) sans migrer vers un autre produit." }
+    ],
+    "cons": [
+      { "en": "Requires SQL, Python or no-code cell literacy; not aimed at a fully non-technical user.", "fr": "Demande une maîtrise de SQL, Python ou des cellules no-code ; pas pensé pour un profil totalement non technique." },
+      { "en": "Scheduled runs, alerts and unlimited published apps only unlock at the Team plan, more than double the Professional price.", "fr": "Les exécutions planifiées, alertes et apps publiées illimitées ne se débloquent qu'au plan Team, plus de deux fois le prix de Professional." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You're a data analyst or scientist who wants to turn SQL/Python analysis into a shareable interactive app without a separate BI tool.", "fr": "Tu es data analyst ou data scientist et veux transformer une analyse SQL/Python en app interactive partageable sans outil BI séparé." },
+      "avoidIf": { "en": "Your team is non-technical and just needs a simple dashboard: a point-and-click BI tool will have a gentler learning curve.", "fr": "Ton équipe n'est pas technique et a juste besoin d'un dashboard simple : un outil BI pointer-cliquer aura une courbe d'apprentissage plus douce." },
+      "threshold": { "en": "Professional costs $432/year per Editor ($36/month); worth it once a solo analyst needs more than 5 published apps or 30 days of version history.", "fr": "Professional coûte 432 $/an par Éditeur (36 $/mois) ; ça se justifie dès qu'un(e) analyste solo a besoin de plus de 5 apps publiées ou de plus de 30 jours d'historique de versions." },
+      "billingTraps": { "en": "Pricing is per Editor seat: adding a second Editor on Professional or Team multiplies the $36 or $75 monthly price.", "fr": "La tarification est par siège Éditeur : ajouter un(e) deuxième Éditeur sur Professional ou Team multiplie le prix mensuel de 36 $ ou 75 $." }
+    }
+  },
+  "unknowns": [
+    "No annual-billing discount was visible on the pricing page; unclear whether one exists behind a toggle not found this session.",
+    "The catalogue previously recorded a lower comparison price (about $24/month, verified 2026-03-13); the current official page shows $36/month for Professional, a price increase since then."
+  ],
+  "conflicts": []
+}

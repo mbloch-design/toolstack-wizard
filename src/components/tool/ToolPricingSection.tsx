@@ -114,7 +114,8 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
         price: plan.isFree && plan.pricingUnit === "trial"
           ? plan.displayName
           : plan.isFree
-            ? formatCurrencyAmount(0, currency, lang || "fr")
+            // Free plan in the vendor's own currency: "0 $US" next to "15 $US".
+            ? formatCurrencyAmount(0, (canonicalPlans.find((p) => !p.isFree && p.nativeCurrency)?.nativeCurrency as typeof currency) || currency, lang || "fr")
             : plan.nativeAmount != null ? formatNativeAmount(plan.nativeAmount, plan.nativeCurrency) : null,
         unit: plan.isFree
           ? (plan.pricingUnit === "open_source" ? t("licence", "license") : null)

@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 2,
+  "slug": "pabbly-connect",
+  "tier": "B",
+  "researchedOn": "2026-10-07",
+  "completedLocallyOn": "2026-10-07",
+  "status": "needs_review",
+  "identity": {
+    "officialName": "Pabbly Connect",
+    "vendor": "Pabbly",
+    "officialUrl": "https://www.pabbly.com/connect",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    { "id": "s1", "url": "https://www.pabbly.com/connect/pricing/", "tier": 1, "accessedOn": "2026-10-07", "title": "Pabbly Connect pricing (Free, Standard, Unlimited, lifetime plans)" }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "INR",
+    "pricingUrl": "https://www.pabbly.com/connect/pricing/",
+    "verifiedOn": "2026-10-07",
+    "region": "IN",
+    "taxIncluded": null,
+    "freePlan": { "exists": true, "limits": { "en": "100 tasks/month, unlimited workflows capped at 2 steps each, limited team members, no credit card required.", "fr": "100 tâches par mois, workflows illimités mais plafonnés à 2 étapes chacun, membres d'équipe limités, aucune carte bancaire requise." }, "sourceIds": ["s1"] },
+    "trial": null,
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 0, "annualPerMonth": 0, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "100 tasks/month, workflows capped at 2 steps, limited team members.", "fr": "100 tâches par mois, workflows plafonnés à 2 étapes, membres d'équipe limités." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard",
+        "name": "Standard",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 1799, "annualPerMonth": 1138, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "10,000 tasks/month, multi-step workflows, routers, formatters, scheduling, iterator/filter.", "fr": "10 000 tâches par mois, workflows multi-étapes, routeurs, formateurs, planification, itérateur/filtre." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "unlimited",
+        "name": "Unlimited",
+        "unit": "account",
+        "minSeats": null,
+        "price": { "monthly": 7499, "annualPerMonth": 4999, "oneTime": null },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "Unlimited tasks/month, unlimited team members, every feature unlocked, access to 2,000+ app integrations.", "fr": "Tâches illimitées par mois, membres d'équipe illimités, toutes les fonctionnalités débloquées, accès à plus de 2 000 intégrations d'applications." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "standard-lifetime",
+        "name": "Standard Lifetime",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 32799 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "3,000 tasks/month, pay once, no recurring fee.", "fr": "3 000 tâches par mois, paiement unique, aucun frais récurrent." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "ultimate-lifetime",
+        "name": "Ultimate Lifetime",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 74999 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "10,000 tasks/month, pay once, no recurring fee.", "fr": "10 000 tâches par mois, paiement unique, aucun frais récurrent." }
+        ],
+        "sourceIds": ["s1"]
+      },
+      {
+        "key": "ultimate-plus-lifetime",
+        "name": "Ultimate Plus Lifetime",
+        "unit": "one_time",
+        "minSeats": null,
+        "price": { "monthly": null, "annualPerMonth": null, "oneTime": 121999 },
+        "onQuote": false,
+        "keyLimits": [
+          { "en": "20,000 tasks/month, pay once, no recurring fee.", "fr": "20 000 tâches par mois, paiement unique, aucun frais récurrent." }
+        ],
+        "sourceIds": ["s1"]
+      }
+    ],
+    "comparePlanKey": "standard",
+    "addOns": [],
+    "cautions": [
+      { "en": "Only action steps consume the monthly task quota; triggers and built-in tools (formatters, routers, filters) do not count against it.", "fr": "Seules les étapes d'action consomment le quota de tâches mensuel ; les déclencheurs et les outils intégrés (formateurs, routeurs, filtres) n'en consomment pas.", "sourceIds": ["s1"] },
+      { "en": "The Free plan caps workflows at 2 steps, which blocks real multi-step automation, so the comparison plan here is Standard rather than Free despite the $0 price.", "fr": "Le plan Free plafonne les workflows à 2 étapes, ce qui bloque une vraie automatisation multi-étapes ; le plan de comparaison retenu ici est donc Standard plutôt que Free malgré son prix nul.", "sourceIds": ["s1"] }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      { "en": "Connects 2,000+ apps with multi-step workflows (routers, filters, schedulers, delays, an email parser) and an AI assistant.", "fr": "Connecte plus de 2 000 applications avec des workflows multi-étapes (routeurs, filtres, planificateurs, délais, un analyseur d'e-mails) et un assistant IA.", "sourceIds": ["s1"] },
+      { "en": "Offers one-time lifetime-access plans as an alternative to a recurring subscription, alongside the usual monthly/yearly tiers.", "fr": "Propose des plans à accès à vie en paiement unique, en alternative à un abonnement récurrent, en plus des paliers mensuels/annuels habituels.", "sourceIds": ["s1"] }
+    ],
+    "limitations": [
+      { "en": "The permanent free plan is capped at 100 tasks/month and workflows of only 2 steps, well short of the Standard plan's 10,000 tasks and multi-step workflows.", "fr": "Le plan gratuit permanent est plafonné à 100 tâches par mois et des workflows de seulement 2 étapes, bien en dessous des 10 000 tâches et des workflows multi-étapes du plan Standard.", "sourceIds": ["s1"] },
+      { "en": "Pricing is published only in Indian Rupees on the official page, with no USD or regional currency toggle found in this session.", "fr": "Les tarifs ne sont publiés qu'en roupies indiennes sur la page officielle, sans sélecteur de devise USD ou régional trouvé lors de cette session.", "sourceIds": ["s1"] }
+    ],
+    "integrations": [],
+    "platforms": ["web"]
+  },
+  "audience": {
+    "persona": "CLAIRE",
+    "description": { "en": "An ops-minded freelancer or small team automating routine multi-app tasks without coding and without paying a per-task premium.", "fr": "Une indépendante orientée ops ou une petite équipe qui automatise des tâches multi-applications courantes sans coder et sans payer une prime au nombre de tâches." },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    { "en": "Use: build a multi-step workflow with a router and a filter to send new form submissions to different tools, with no coding.", "fr": "Usage : construire un workflow multi-étapes avec un routeur et un filtre pour envoyer les nouvelles soumissions de formulaire vers différents outils, sans coder." },
+    { "en": "Use: move an existing automation from a per-task competitor to Pabbly's Unlimited plan to pay a flat monthly fee once volume grows.", "fr": "Usage : migrer une automatisation existante d'un concurrent facturé à la tâche vers le plan Unlimited de Pabbly pour payer un forfait mensuel fixe une fois le volume en hausse." }
+  ],
+  "alternatives": [
+    { "slug": "zapier", "reason": { "en": "The category benchmark for no-code app automation, covering the same multi-step workflow need.", "fr": "La référence de la catégorie pour l'automatisation d'applications sans code, qui couvre le même besoin de workflows multi-étapes." } },
+    { "slug": "make", "reason": { "en": "A visual workflow automation tool covering the same multi-app automation need.", "fr": "Un outil d'automatisation de workflows visuel qui couvre le même besoin d'automatisation multi-applications." } },
+    { "slug": "n8n", "reason": { "en": "A workflow automation tool with a similar flat-pricing pitch against per-task competitors.", "fr": "Un outil d'automatisation de workflows avec un argumentaire de prix fixe similaire face aux concurrents facturés à la tâche." } },
+    { "slug": "activepieces", "reason": { "en": "A newer no-code automation tool competing on the same multi-step workflow use case.", "fr": "Un outil d'automatisation sans code plus récent qui vise le même cas d'usage de workflows multi-étapes." } },
+    { "slug": "albato", "reason": { "en": "A lower-cost app automation competitor aimed at the same budget-conscious audience.", "fr": "Un concurrent d'automatisation d'applications moins cher, visant le même public soucieux de son budget." } }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 4,
+    "simplicite": 3,
+    "utilisation": 4,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": { "en": "The Unlimited plan costs 4,999 rupees/month (annual) for unlimited tasks and team members, a flat fee that beats per-task competitors once volume grows.", "fr": "Le plan Unlimited coûte 4 999 roupies/mois (annuel) pour des tâches et des membres d'équipe illimités, un forfait fixe qui bat les concurrents facturés à la tâche une fois le volume en hausse.", "sourceIds": ["s1"] },
+      "simplicite": { "en": "Neutral score: time to a first useful automation is not covered by the collected sources, beyond a general visual workflow builder claim.", "fr": "Note neutre : le temps nécessaire pour une première automatisation utile ne figure pas dans les sources relevées, au-delà d'une mention générale de constructeur de workflow visuel.", "sourceIds": ["s1"] },
+      "utilisation": { "en": "Delivers multi-step, multi-app automation as advertised, with the task-counting mechanic clearly documented on the pricing page.", "fr": "Assure une automatisation multi-étapes et multi-applications comme annoncé, avec le mécanisme de comptage des tâches clairement documenté sur la page tarifaire.", "sourceIds": ["s1"] },
+      "puissance": { "en": "Covers 2,000+ app integrations, an AI assistant, human-in-the-loop approvals and SOC2/ISO compliance, broad for the no-code automation category.", "fr": "Couvre plus de 2 000 intégrations d'applications, un assistant IA, des approbations avec intervention humaine et une conformité SOC2/ISO, un périmètre large pour la catégorie de l'automatisation sans code.", "sourceIds": ["s1"] },
+      "reversibilite": { "en": "Neutral score: export or workflow-portability options if a user leaves Pabbly Connect are not covered by the sources checked.", "fr": "Note neutre : les options d'export ou de portabilité des workflows en cas de départ de Pabbly Connect ne figurent pas dans les sources consultées.", "sourceIds": ["s1"] }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": { "en": "No-code app automation", "fr": "Automatisation d'applications sans code" },
+    "shortDescription": { "en": "Pabbly Connect automates workflows across 2,000+ apps with a flat monthly task quota instead of per-task pricing.", "fr": "Pabbly Connect automatise des workflows sur plus de 2 000 applications avec un quota de tâches mensuel fixe plutôt qu'une tarification à la tâche." },
+    "longDescription": {
+      "en": "Pabbly Connect links 2,000+ apps into multi-step workflows with routers, filters, schedulers and an email parser, plus an AI assistant. It bills by a monthly task quota rather than a per-automation fee, and also offers one-time lifetime plans.\n\nThe free plan allows 100 tasks/month but caps workflows at 2 steps. Standard (1,138 rupees/month billed annually) unlocks 10,000 tasks and multi-step workflows; Unlimited (4,999 rupees/month annually) removes the task cap. Pricing is published in Indian Rupees only. It fits a freelancer or small team automating routine multi-app tasks on a budget.",
+      "fr": "Pabbly Connect relie plus de 2 000 applications dans des workflows multi-étapes avec routeurs, filtres, planificateurs et un analyseur d'e-mails, plus un assistant IA. L'outil facture un quota de tâches mensuel plutôt qu'un tarif par automatisation, et propose aussi des plans à vie en paiement unique.\n\nLe plan gratuit autorise 100 tâches par mois mais plafonne les workflows à 2 étapes. Standard (1 138 roupies/mois facturé à l'année) débloque 10 000 tâches et les workflows multi-étapes ; Unlimited (4 999 roupies/mois à l'année) supprime le plafond de tâches. Les tarifs ne sont publiés qu'en roupies indiennes. Convient à une indépendante ou une petite équipe qui automatise des tâches multi-applications courantes avec un budget serré."
+    },
+    "pros": [
+      { "en": "A flat monthly task quota, rather than per-task billing, can cost less than competitors once automation volume grows.", "fr": "Un quota de tâches mensuel fixe, plutôt qu'une facturation à la tâche, peut coûter moins cher que les concurrents une fois le volume d'automatisation en hausse." },
+      { "en": "One-time lifetime plans exist for teams that prefer paying once over a recurring subscription.", "fr": "Des plans à vie en paiement unique existent pour les équipes qui préfèrent payer une fois plutôt qu'un abonnement récurrent." }
+    ],
+    "cons": [
+      { "en": "The free plan's 2-step workflow cap blocks any real multi-step automation, unlike some competitors' more usable free tiers.", "fr": "Le plafond de 2 étapes du plan gratuit bloque toute vraie automatisation multi-étapes, contrairement aux plans gratuits plus utilisables de certains concurrents." },
+      { "en": "Prices are shown only in Indian Rupees, with no USD or regional pricing found on the official page.", "fr": "Les prix ne sont affichés qu'en roupies indiennes, sans tarification en USD ou régionale trouvée sur la page officielle." }
+    ],
+    "verdict": {
+      "keepIf": { "en": "You run enough automation volume that a flat monthly task quota beats a per-task competitor's bill.", "fr": "Tu fais tourner assez d'automatisations pour qu'un quota de tâches mensuel fixe batte la facture d'un concurrent facturé à la tâche." },
+      "avoidIf": { "en": "You need a usable free tier for real multi-step automation, since Pabbly's free plan caps workflows at 2 steps.", "fr": "Tu as besoin d'un plan gratuit utilisable pour une vraie automatisation multi-étapes, car le plan gratuit de Pabbly plafonne les workflows à 2 étapes." },
+      "threshold": { "en": "Standard costs 13,656 rupees/year (1,138 rupees/month) billed annually, the entry point for multi-step workflows and 10,000 tasks/month.", "fr": "Standard coûte 13 656 roupies/an (1 138 roupies/mois) facturé à l'année, le point d'entrée pour les workflows multi-étapes et 10 000 tâches par mois." },
+      "billingTraps": { "en": "Only action steps count against the task quota, so a workflow with many triggers or filters can look cheaper on paper than it runs.", "fr": "Seules les étapes d'action comptent dans le quota de tâches, donc un workflow avec beaucoup de déclencheurs ou de filtres peut sembler moins cher sur le papier qu'il ne l'est à l'usage." }
+    }
+  },
+  "unknowns": [
+    "Whether Pabbly offers USD or another regional currency through a selector not reached in this session was not confirmed; only the default INR grid was read.",
+    "No free trial beyond the permanent free plan was found on the official pricing page."
+  ],
+  "conflicts": []
+}

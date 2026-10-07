@@ -6321,18 +6321,25 @@
     "slug": "cal-com",
     "name": "Cal.com",
     "categoryId": "communication",
-    "shortDescription": "L'alternative Open Source et flexible à Calendly.",
-    "shortDescriptionEn": "The open-source and flexible alternative to Calendly.",
+    "shortDescription": "Cal.com est un outil de planification open source : un plan gratuit pour les individus, des plans payants ajoutant routage d'équipe et conformité.",
+    "shortDescriptionEn": "Cal.com is an open-source scheduling tool: a free plan for individuals, paid plans adding team routing and compliance.",
     "pricing": {
-      "free": "Illimité pour les individus",
-      "paid": "15$/mois pour les équipes"
+      "free": "Plan gratuit : 1 utilisateur, types d'événements et calendriers illimités, plus de 100 intégrations, gratuit à vie.",
+      "paid": "Dès 12 $/mois, plan Teams."
     },
     "pricingEn": {
-      "free": "Unlimited for individuals",
-      "paid": "$15/month for teams"
+      "free": "Free plan: 1 user, unlimited event types and calendars, 100+ app integrations, forever free.",
+      "paid": "From $12/mo, Teams plan."
     },
-    "defaultMonthlyPrice": 10.39,
-    "compareMonthlyPrice": 10.39,
+    "defaultMonthlyPrice": 10.3,
+    "compareMonthlyPrice": 10.3,
+    "nativePrices": [
+      {
+        "amount": 12,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://cal.com",
     "ogImageUrl": "https://framerusercontent.com/images/pPSh5HDe1qaySb4R7xBgMHudhU.png",
     "tool_type": "gestion",
@@ -6353,6 +6360,13 @@
       "Développeurs/startups"
     ],
     "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ],
+    "alternatives": [
+      "calendly",
+      "zcal"
+    ],
     "freeAlternative": "cal-com"
   },
   {
@@ -7503,18 +7517,25 @@
     "slug": "chartmogul",
     "name": "Chartmogul",
     "categoryId": "analytics",
-    "shortDescription": "Analytics de revenus SaaS (MRR, churn, cohortes) avec CRM intégré.",
-    "shortDescriptionEn": "SaaS revenue analytics (MRR, churn, cohorts) with built-in CRM.",
+    "shortDescription": "ChartMogul suit MRR, churn et segmentation client depuis les données de facturation, gratuit sous 10 000 $ de MRR puis indexé sur l'ARR.",
+    "shortDescriptionEn": "ChartMogul tracks MRR, churn and customer segmentation from billing data, free up to $10K MRR and ARR-scaled above that.",
     "pricing": {
-      "free": "Gratuit sous 10K$ MRR / 120K$ ARR",
-      "paid": "À partir de 100$/mois (Scale) pour 10K$ de MRR"
+      "free": "Plan gratuit : Jusqu'à 10 000 $ de MRR suivi, 1 source de facturation, sources personnalisées/tierces illimitées, 2 destinations standard.",
+      "paid": "Dès 57 $/mois, plan Starter."
     },
     "pricingEn": {
-      "free": "Free under $10K MRR / $120K ARR",
-      "paid": "From $100/mo (Scale) for $10K MRR"
+      "free": "Free plan: Up to $10K MRR tracked, 1 billing source, unlimited custom/third-party sources, 2 standard destinations.",
+      "paid": "From $57/mo, Starter plan."
     },
-    "defaultMonthlyPrice": 88,
-    "compareMonthlyPrice": 88,
+    "defaultMonthlyPrice": 48.95,
+    "compareMonthlyPrice": 48.95,
+    "nativePrices": [
+      {
+        "amount": 57,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://chartmogul.com",
     "ogImageUrl": "https://chartmogul.com/-/layouts/base/share-image.png",
     "logo": "https://logo.clearbit.com/chartmogul.com",
@@ -7533,7 +7554,10 @@
     ],
     "prescription_quality": "oui",
     "personas": [
-      "marc"
+      "CLAIRE"
+    ],
+    "alternatives": [
+      "profitwell"
     ]
   },
   {
@@ -11670,18 +11694,25 @@
     "slug": "dubsado",
     "name": "Dubsado",
     "categoryId": "crm",
-    "shortDescription": "CRM et automatisation administrative pour freelances avec workflows conditionnels poussés.",
-    "shortDescriptionEn": "CRM and administrative automation for freelancers with advanced conditional workflows.",
+    "shortDescription": "Dubsado est un CRM pour freelances qui automatise l'administratif client, la facturation et les propositions grâce à des workflows conditionnels sur son plan Premier.",
+    "shortDescriptionEn": "Dubsado is a CRM for freelancers that automates client admin, invoicing and proposals with conditional workflows on its Premier plan.",
     "pricing": {
-      "free": "Essai gratuit illimité dans le temps, limité à 3 clients (fonctionnalités Premier complètes)",
-      "paid": "Starter à 20$/mois (sans les workflows automatisés) ; Premier à 40$/mois (avec workflows). 3 membres d'équipe inclus, puis paliers : 4-10 à +25$/mois, 11-20 à +45$/mois, 21-30 à +60$/mois."
+      "free": "Pas de plan gratuit permanent, essai de 21 jours.",
+      "paid": "Dès 43,75 $/mois, plan Premier."
     },
     "pricingEn": {
-      "free": "Time-unlimited free trial, capped at 3 clients (full Premier features)",
-      "paid": "Starter at $20/month (no automated workflows); Premier at $40/month (with workflows). 3 team members included, then tiers: 4-10 at +$25/month, 11-20 at +$45/month, 21-30 at +$60/month."
+      "free": "No permanent free plan, 21-day trial.",
+      "paid": "From $43.75/mo, Premier plan."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "defaultMonthlyPrice": 37.57,
+    "compareMonthlyPrice": 37.57,
+    "nativePrices": [
+      {
+        "amount": 43.75,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.dubsado.com",
     "substitution_cluster_v2": "workspace-ops",
     "functional_needs": [
@@ -11697,7 +11728,16 @@
       "Développeurs freelance",
       "Petites agences"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "MARC"
+    ],
+    "alternatives": [
+      "honeybook",
+      "suitedash",
+      "17hats",
+      "plutio"
+    ]
   },
   {
     "id": "ae-duik",
@@ -13842,18 +13882,25 @@
     "slug": "fillout",
     "name": "Fillout",
     "categoryId": "nocode-web",
-    "shortDescription": "Formulaires intelligents avec logique conditionnelle, paiements et IA.",
-    "shortDescriptionEn": "Smart forms with conditional logic, payments and AI.",
+    "shortDescription": "Fillout est un créateur de formulaires avec logique conditionnelle, paiements et génération de PDF, facturé au volume de réponses mensuelles plutôt qu'au nombre de sièges.",
+    "shortDescriptionEn": "Fillout is a form builder with conditional logic, payments and PDF generation, priced by monthly responses rather than per seat.",
     "pricing": {
-      "free": "Gratuit — 1 000 réponses/mois, formulaires illimités",
-      "paid": "Starter 15$/mois · Pro 40$ · Business 75$"
+      "free": "Plan gratuit : 1 000 réponses par mois, formulaires et sièges illimités.",
+      "paid": "Dès 15 $/mois, plan Starter."
     },
     "pricingEn": {
-      "free": "Free with 1,000 responses/month",
-      "paid": "Starter $15/mo · Pro $40/mo · Business $75/mo"
+      "free": "Free plan: 1,000 responses per month, unlimited forms and unlimited seats.",
+      "paid": "From $15/mo, Starter plan."
     },
-    "defaultMonthlyPrice": 13.8,
-    "compareMonthlyPrice": 13.8,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://fillout.com",
     "ogImageUrl": "https://static.fillout.com/fillout-og-image.png",
     "substitution_cluster_v2": "form-builder",
@@ -13874,8 +13921,13 @@
       "Éducateurs"
     ],
     "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ],
     "alternatives": [
-      "typeform"
+      "typeform",
+      "tally",
+      "jotform"
     ],
     "freeAlternative": "google-forms"
   },
@@ -15534,18 +15586,25 @@
     "slug": "gemini",
     "name": "Gemini",
     "categoryId": "ai-general",
-    "shortDescription": "Assistant IA grand public et API développeur de Google : modèles Gemini 2.5, Gemini 3.7 Flash avec long contexte, accès web temps réel, et intégration Google Workspace.",
-    "shortDescriptionEn": "Google's consumer AI assistant and developer API: Gemini 2.5, Gemini 3.7 Flash models with long context, real-time web access, and Google Workspace integration.",
+    "shortDescription": "Gemini est l'assistant IA de Google, associé au stockage cloud Google One ; les offres payantes vont de 4,99 $ à plus de 99,99 $/mois.",
+    "shortDescriptionEn": "Gemini is Google's AI assistant, bundled with Google One cloud storage; paid plans range from $4.99 to $99.99+/month for expanded usage limits.",
     "pricing": {
-      "free": "Gratuit : accès Gemini classique, Google AI Studio pour dev (avec limites rate).",
-      "paid": "Free: 0 $ (avec limites) ; AI Plus: 4,99 $/mois (ancien 7,99 $) ; AI Pro: 19,99 $/mois ; AI Ultra: 99,99 $/mois (5x Pro) ou 199,99 $ (20x Pro) ; API: 0,10-2,00 $/M tokens selon modèle"
+      "free": "Plan gratuit : Accès gratuit à l'app Gemini et aux fonctionnalités IA de Google Search avec des limites d'usage de base, sans offre de stockage cloud Google One associée.",
+      "paid": "Dès 4,99 $/mois, plan Google AI Plus."
     },
     "pricingEn": {
-      "free": "Gratuit : accès Gemini classique, Google AI Studio pour dev (avec limites rate).",
-      "paid": "Free: 0 $ (avec limites) ; AI Plus: 4,99 $/mois (ancien 7,99 $) ; AI Pro: 19,99 $/mois ; AI Ultra: 99,99 $/mois (5x Pro) ou 199,99 $ (20x Pro) ; API: 0,10-2,00 $/M tokens selon modèle"
+      "free": "Free plan: Free access to the Gemini app and Google Search AI features at base usage limits, with no Google One cloud-storage plan attached.",
+      "paid": "From $4.99/mo, Google AI Plus plan."
     },
-    "defaultMonthlyPrice": 17.51,
-    "compareMonthlyPrice": 20,
+    "defaultMonthlyPrice": 4.29,
+    "compareMonthlyPrice": 4.29,
+    "nativePrices": [
+      {
+        "amount": 4.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://gemini.google.com",
     "ogImageUrl": "https://www.gstatic.com/lamda/images/gemini_aurora_thumbnail_4g_e74822ff0ca4259beb718.png",
     "tool_type": "ia",
@@ -15567,9 +15626,14 @@
       "Développeurs Google"
     ],
     "prescription_quality": "ferme",
+    "personas": [
+      "THEO"
+    ],
     "alternatives": [
       "chatgpt",
-      "claude"
+      "claude",
+      "grok",
+      "deepseek"
     ],
     "freeAlternative": "gemini"
   },
@@ -17361,18 +17425,25 @@
     "slug": "grok",
     "name": "Grok",
     "categoryId": "ai-general",
-    "shortDescription": "L'assistant IA d'xAI (Elon Musk) avec accès temps réel à X/Twitter.",
-    "shortDescriptionEn": "xAI's (Elon Musk) AI assistant with real-time access to X/Twitter.",
+    "shortDescription": "Grok est l'assistant IA d'xAI avec recherche web et X en temps réel, raisonnement multi-agents et génération d'images et de vidéos intégrée.",
+    "shortDescriptionEn": "Grok is xAI's AI assistant with real-time web and X search, multi-agent reasoning, and built-in image and video generation.",
     "pricing": {
-      "free": "Gratuit avec 10 requêtes/2h",
-      "paid": "SuperGrok Lite 10$/mois · SuperGrok 30$/mois · SuperGrok Heavy 300$/mois"
+      "free": "Plan gratuit : Utilisable gratuitement sur le web, iOS et Android avec des limites d'usage réduites ; les plafonds exacts de requêtes ne sont pas publiés sur la page tarifs officielle.",
+      "paid": "Dès 25 $/mois, plan SuperGrok."
     },
     "pricingEn": {
-      "free": "Free with 10 requests per 2 hours",
-      "paid": "SuperGrok $30/mo or included in X Premium+ ($40/mo)"
+      "free": "Free plan: Free to use on web, iOS and Android with reduced usage limits; exact query caps are not published on the official pricing page.",
+      "paid": "From $25/mo, SuperGrok plan."
     },
-    "defaultMonthlyPrice": 27.6,
-    "compareMonthlyPrice": 27.6,
+    "defaultMonthlyPrice": 21.47,
+    "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://grok.com",
     "ogImageUrl": "https://grok.com/icon-512x512.png",
     "substitution_cluster_v2": "ai-generalist",
@@ -17391,8 +17462,15 @@
       "Traders sentiment"
     ],
     "prescription_quality": "silence",
+    "personas": [
+      "ALIX"
+    ],
     "alternatives": [
-      "chatgpt"
+      "chatgpt",
+      "claude",
+      "gemini",
+      "perplexity",
+      "deepseek"
     ]
   },
   {
@@ -18072,18 +18150,25 @@
     "slug": "hex",
     "name": "Hex",
     "categoryId": "analytics",
-    "shortDescription": "Notebooks data collaboratifs avec publication en apps interactives.",
-    "shortDescriptionEn": "Collaborative data notebooks with interactive app publishing.",
+    "shortDescription": "Hex est un outil de notebooks collaboratifs pour l'analyse SQL et Python, qui publie directement en apps et dashboards interactifs.",
+    "shortDescriptionEn": "Hex is a collaborative notebook tool for SQL and Python analysis that publishes directly into interactive apps and dashboards.",
     "pricing": {
-      "free": "5 projets publics",
-      "paid": "24$/mois (Starter)"
+      "free": "Plan gratuit : Essai de l'agent Hex, compute réduit, connexion à toute source de données, tous les types de cellules, pour des projets personnels.",
+      "paid": "Dès 36 $/mois, plan Professional."
     },
     "pricingEn": {
-      "free": "5 public projects",
-      "paid": "$24/month (Starter)"
+      "free": "Free plan: Hex agent trial, small compute, connect any data source, all cell types, for hobbyists on small projects.",
+      "paid": "From $36/mo, Professional plan."
     },
-    "defaultMonthlyPrice": 20.78,
-    "compareMonthlyPrice": 20.78,
+    "defaultMonthlyPrice": 30.91,
+    "compareMonthlyPrice": 30.91,
+    "nativePrices": [
+      {
+        "amount": 36,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://hex.tech",
     "ogImageUrl": "https://cdn.sanity.io/images/e92memrj/production/57eeccd836f0d6188862a55186ab48521fe1034b-1200x630.png",
     "tool_type": "metier",
@@ -18103,9 +18188,10 @@
       "Product managers (data-heavy teams)"
     ],
     "prescription_quality": "silence",
-    "personas": [
-      "theo",
-      "marc"
+    "alternatives": [
+      "jupyter",
+      "metabase",
+      "looker-studio"
     ],
     "substitutable": false
   },
@@ -23080,18 +23166,25 @@
     "slug": "loom",
     "name": "Loom",
     "categoryId": "communication",
-    "shortDescription": "Loom enregistre l'écran, la caméra et la voix puis publie immédiatement une vidéo partageable avec transcription, commentaires et fonctions IA.",
-    "shortDescriptionEn": "Loom records screen, camera, and voice, then instantly publishes a shareable video with transcription, comments, and AI features.",
+    "shortDescription": "Loom enregistre l'écran, la caméra et la voix, puis partage un lien vidéo immédiatement lisible avec transcription et commentaires.",
+    "shortDescriptionEn": "Loom records screen, camera and voice, then shares an instantly playable video link with transcription and comments.",
     "pricing": {
-      "free": "Starter gratuit avec jusqu'à 25 vidéos par personne et cinq minutes par enregistrement.",
-      "paid": "Starter: 0 USD ; Business + AI: 24 USD par utilisateur et par mois ; Enterprise: Sur devis"
+      "free": "Plan gratuit : Jusqu'à 50 membres d'espace de travail, 25 vidéos par personne, enregistrements d'écran limités à 5 minutes.",
+      "paid": "Dès 15 $/mois, plan Business."
     },
     "pricingEn": {
-      "free": "Starter gratuit avec jusqu'à 25 vidéos par personne et cinq minutes par enregistrement.",
-      "paid": "Starter: 0 USD ; Business + AI: 24 USD par utilisateur et par mois ; Enterprise: Sur devis"
+      "free": "Free plan: Up to 50 workspace members, 25 videos per person, 5-minute screen recordings.",
+      "paid": "From $15/mo, Business plan."
     },
-    "defaultMonthlyPrice": 13.14,
-    "compareMonthlyPrice": 18,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://loom.com",
     "ogImageUrl": "https://www.loom.com/favicon.ico",
     "tool_type": "gestion",
@@ -23113,6 +23206,9 @@
       "Vente et produit"
     ],
     "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ],
     "alternatives": [
       "screen-studio",
       "vidyard",
@@ -24268,18 +24364,25 @@
     "slug": "manifest-ai",
     "name": "Manifest AI",
     "categoryId": "ai-general",
-    "shortDescription": "Platform document intelligence : automatise extraction factures/emballages freight en données structurées. OCR+IA, quality control, intégration ERP (Sage, TMS). Processing pages avec crédit system.",
-    "shortDescriptionEn": "Document intelligence platform: automates freight invoice/packing list extraction to structured data. OCR+AI, quality control, ERP integration (Sage, TMS). Page-based credits.",
+    "shortDescription": "Manifest AI extrait les factures commerciales et listes de colisage fret vers des lignes Excel ou CSV à relire, facturé au crédit de page mensuel.",
+    "shortDescriptionEn": "Manifest AI extracts freight commercial invoices and packing lists into reviewable Excel or CSV rows, priced by monthly page credits.",
     "pricing": {
-      "free": "Trial gratuit : 1 document jusqu'à 20 pages sans CB avant committing à plan payant.",
-      "paid": "Free Trial: 0 $ (1 doc, 20 pages max) ; Starter: 299 $/mois (1K pages/mois) ; Scale: Montants sur page officielle (higher volumes)"
+      "free": "Plan gratuit : Un document PDF complet jusqu'à 5 pages, une fois par espace de travail, sans carte bancaire ; utilise des outils PDF/OCR locaux sans services IA externes.",
+      "paid": "Dès 149 $/mois, plan Professional."
     },
     "pricingEn": {
-      "free": "Trial gratuit : 1 document jusqu'à 20 pages sans CB avant committing à plan payant.",
-      "paid": "Free Trial: 0 $ (1 doc, 20 pages max) ; Starter: 299 $/mois (1K pages/mois) ; Scale: Montants sur page officielle (higher volumes)"
+      "free": "Free plan: One complete PDF document up to 5 pages, once per workspace, no credit card required; uses local PDF/OCR tools without external AI services.",
+      "paid": "From $149/mo, Professional plan."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "defaultMonthlyPrice": 127.95,
+    "compareMonthlyPrice": 127.95,
+    "nativePrices": [
+      {
+        "amount": 149,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://manifestai.io",
     "ogImageUrl": "/og-screenshots/manifest-ai.jpg",
     "tool_type": "ia",
@@ -24296,7 +24399,10 @@
       "Customs brokers",
       "Finance teams"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ]
   },
   {
     "id": "mantine",
@@ -24470,17 +24576,25 @@
     "slug": "marmoset-toolbag",
     "name": "Marmoset Toolbag",
     "categoryId": "creation",
-    "shortDescription": "Outil de baking, rendu temps réel et présentation d'assets 3D (jeu, portfolio).",
-    "shortDescriptionEn": "Baking, real-time rendering and 3D asset presentation tool (games, portfolio).",
+    "shortDescription": "Marmoset Toolbag bake, texture et rend des assets 3D de jeu vidéo, en abonnement à 18,99 $/mois ou licence unique à 399 $.",
+    "shortDescriptionEn": "Marmoset Toolbag bakes, textures and renders 3D assets for games, film and product visualization, sold as an $18.99/month subscription or a $399 one-time license.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Abonnement 14,99$/mois, ou achat unique 299$."
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 18,99 $/mois, plan Individual Subscription."
     },
     "pricingEn": {
-      "free": "Free trial",
-      "paid": "Subscription $14.99/month, or one-time $299."
+      "free": "No permanent free plan, 30-day trial.",
+      "paid": "From $18.99/mo, Individual Subscription plan."
     },
-    "defaultMonthlyPrice": 15,
+    "defaultMonthlyPrice": 16.31,
+    "compareMonthlyPrice": 16.31,
+    "nativePrices": [
+      {
+        "amount": 18.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://marmoset.co/toolbag/",
     "ogImageUrl": "https://marmoset.co/wp-content/uploads/2024/09/Texture-thumbnail-02.jpg",
     "tool_type": "metier",
@@ -24497,12 +24611,11 @@
       "Studios de jeux vidéo"
     ],
     "prescription_quality": "oui",
-    "personas": [
-      "designer"
-    ],
     "alternatives": [
+      "blender",
       "substance-3d-painter",
-      "blender"
+      "corona-renderer",
+      "octane-render"
     ],
     "freeAlternative": "blender"
   },
@@ -27742,13 +27855,25 @@
     "slug": "notionlytics",
     "name": "Notionlytics",
     "categoryId": "analytics",
-    "shortDescription": "Analytics pour pages Notion partagées.",
-    "shortDescriptionEn": "Analytics for shared Notion pages.",
+    "shortDescription": "Notionlytics ajoute des analytics de vues de page et des widgets de feedback aux pages Notion partagées ou publiques, wikis et bases de connaissances.",
+    "shortDescriptionEn": "Notionlytics adds page-view analytics and feedback widgets to shared or public Notion pages, wikis and knowledge bases.",
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "À partir de 5$/mois"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 10 $/mois, plan Pro."
     },
-    "defaultMonthlyPrice": 5,
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $10/mo, Pro plan."
+    },
+    "defaultMonthlyPrice": 8.59,
+    "compareMonthlyPrice": 8.59,
+    "nativePrices": [
+      {
+        "amount": 10,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://notionlytics.com",
     "substitution_cluster_v2": "analytics",
     "functional_needs": [
@@ -27765,7 +27890,12 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "ALIX"
+      "CLAIRE"
+    ],
+    "alternatives": [
+      "fathom-analytics",
+      "plausible",
+      "simple-analytics"
     ]
   },
   {
@@ -40423,18 +40553,25 @@
     "slug": "suitedash",
     "name": "SuiteDash",
     "categoryId": "organization",
-    "shortDescription": "Portail client tout-en-un pour agences et freelances.",
-    "shortDescriptionEn": "All-in-one client portal for agencies and freelancers.",
+    "shortDescription": "SuiteDash regroupe un portail client en marque blanche, un CRM, la facturation et les propositions pour agences et freelances dans un seul abonnement.",
+    "shortDescriptionEn": "SuiteDash bundles a white-labeled client portal, CRM, invoicing and proposals for agencies and freelancers in one subscription.",
     "pricing": {
-      "free": "Essai gratuit 14 jours",
-      "paid": "À partir de 19$/mois (pas par utilisateur)"
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Dès 15 $/mois, plan Start."
     },
     "pricingEn": {
-      "free": "14-day free trial",
-      "paid": "From $19/month (not per user)"
+      "free": "No permanent free plan, 14-day trial.",
+      "paid": "From $15/mo, Start plan."
     },
-    "defaultMonthlyPrice": 19,
-    "compareMonthlyPrice": 19,
+    "defaultMonthlyPrice": 12.88,
+    "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://suitedash.com",
     "substitution_cluster_v2": "freelance-crm-suite",
     "functional_needs": [
@@ -40453,8 +40590,13 @@
     ],
     "prescription_quality": "silence",
     "personas": [
-      "MARC",
-      "CLAIRE"
+      "MARC"
+    ],
+    "alternatives": [
+      "honeybook",
+      "dubsado",
+      "17hats",
+      "plutio"
     ]
   },
   {
@@ -40616,18 +40758,25 @@
     "slug": "superhuman",
     "name": "Superhuman",
     "categoryId": "communication",
-    "shortDescription": "L'expérience email la plus rapide au monde.",
-    "shortDescriptionEn": "The fastest email experience in the world.",
+    "shortDescription": "Superhuman est un client e-mail assisté par IA qui ajoute brouillons automatiques, tri et intégrations CRM par-dessus une boîte mail connectée.",
+    "shortDescriptionEn": "Superhuman is an AI-assisted email client that adds auto drafts, triage and CRM integrations on top of a connected inbox.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent",
-      "paid": "Starter 30$/mois ou 300$/an; Business 40$/mois ou 396$/an"
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 25 $/mois, plan Starter."
     },
     "pricingEn": {
-      "free": "No permanent free plan",
-      "paid": "Starter $30/month or $300/year; Business $40/month or $396/year"
+      "free": "No free plan.",
+      "paid": "From $25/mo, Starter plan."
     },
-    "defaultMonthlyPrice": 25.98,
-    "compareMonthlyPrice": 21.65,
+    "defaultMonthlyPrice": 21.47,
+    "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://superhuman.com",
     "ogImageUrl": "https://superhumanstatic.com/super-funnel/main/public/images/v3/social-share.png",
     "tool_type": "gestion",
@@ -40649,6 +40798,13 @@
       "Customer success"
     ],
     "prescription_quality": "silence",
+    "personas": [
+      "MARC"
+    ],
+    "alternatives": [
+      "gmail",
+      "front"
+    ],
     "freeAlternative": "superhuman"
   },
   {
@@ -40745,18 +40901,25 @@
     "slug": "superwhisper",
     "name": "Superwhisper",
     "categoryId": "productivity-tracking",
-    "shortDescription": "Dictée vocale IA dans toutes tes apps — macOS uniquement.",
-    "shortDescriptionEn": "AI voice dictation in every app — macOS only.",
+    "shortDescription": "Superwhisper est une dictée vocale IA qui fonctionne hors ligne dans n'importe quelle application, sur Mac, Windows, iOS et Android.",
+    "shortDescriptionEn": "Superwhisper is AI voice dictation that works offline in any app on Mac, Windows, iOS and Android.",
     "pricing": {
-      "free": "Plan gratuit avec modèles IA légers",
-      "paid": "Pro 8,49$/mois ou 79$/an, Lifetime 249$"
+      "free": "Plan gratuit : Dictée vocale dans n'importe quelle app, enregistrement/transcription de réunions, plus de 100 langues, usage illimité des modèles Whisper, contrôle de prompt personnalisé et support email, pour toujours.",
+      "paid": "Dès 7,08 $/mois, plan Pro (yearly)."
     },
     "pricingEn": {
-      "free": "Free with small AI models",
-      "paid": "Pro $8.49/mo · Annual $79/yr · Lifetime $249"
+      "free": "Free plan: Voice-to-text in any app, meeting recording/transcription, 100+ languages, unlimited use of Whisper models, custom prompt control and email support, forever.",
+      "paid": "From $7.08/mo, Pro (yearly) plan."
     },
-    "defaultMonthlyPrice": 7.82,
-    "compareMonthlyPrice": 7.82,
+    "defaultMonthlyPrice": 6.08,
+    "compareMonthlyPrice": 6.08,
+    "nativePrices": [
+      {
+        "amount": 7.08,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://superwhisper.com",
     "ogImageUrl": "https://superwhisper.com/api/og",
     "substitution_cluster_v2": "voice-dictation",
@@ -40774,7 +40937,12 @@
       "Développeurs multilingues"
     ],
     "prescription_quality": "ferme",
+    "personas": [
+      "THEO"
+    ],
     "alternatives": [
+      "voicetypr",
+      "wispr-flow",
       "otter-ai"
     ]
   },
@@ -42436,18 +42604,25 @@
     "slug": "timecamp",
     "name": "TimeCamp",
     "categoryId": "organization",
-    "shortDescription": "Suivi du temps gratuit et illimité en utilisateurs, limité à 1 projet actif sur le plan gratuit.",
-    "shortDescriptionEn": "Free, unlimited-user time tracking, capped at 1 active project on the free plan.",
+    "shortDescription": "TimeCamp est un logiciel de suivi du temps gratuit et illimité en utilisateurs et projets, avec des offres payantes dès 3,99 $/utilisateur/mois.",
+    "shortDescriptionEn": "TimeCamp is time-tracking software with a free plan for unlimited users and projects, and paid plans from $3.99/user/month for billing and attendance.",
     "pricing": {
-      "free": "Plan gratuit avec utilisateurs illimités, mais limité à 1 projet actif",
-      "paid": "Starter à 3,99$/mois/utilisateur (annuel) ; Premium à 6,99$ ; Ultimate à 9,99$."
+      "free": "Plan gratuit : Utilisateurs et projets illimités, feuilles de temps, apps web/bureau/mobile et authentification à deux facteurs, gratuit pour toujours ; l'AI Time Tracker est facturé séparément à l'usage de tokens.",
+      "paid": "Dès 3,99 $/mois, plan Starter."
     },
     "pricingEn": {
-      "free": "Free plan with unlimited users, but capped at 1 active project",
-      "paid": "Starter at $3.99/month/user (annual); Premium at $6.99; Ultimate at $9.99."
+      "free": "Free plan: Unlimited users and unlimited projects, timesheets, web/desktop/mobile apps and two-factor authentication, free forever; the AI Time Tracker is billed separately by token usage.",
+      "paid": "From $3.99/mo, Starter plan."
     },
-    "defaultMonthlyPrice": 3.99,
-    "compareMonthlyPrice": 3.99,
+    "defaultMonthlyPrice": 3.43,
+    "compareMonthlyPrice": 3.43,
+    "nativePrices": [
+      {
+        "amount": 3.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://timecamp.com",
     "ogImageUrl": "https://cdn-y.timecamp.com/img/timecamp-time-tracking-software.jpg",
     "substitution_cluster_v2": "workspace-ops",
@@ -42463,7 +42638,15 @@
       "Freelancers consultants",
       "Petites équipes projets"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ],
+    "alternatives": [
+      "clockify",
+      "deputy",
+      "plutio"
+    ]
   },
   {
     "id": "todoist",
@@ -43685,14 +43868,25 @@
     "slug": "typefully",
     "name": "Typefully",
     "categoryId": "creation",
-    "shortDescription": "Rédaction et planification de threads Twitter/X et posts LinkedIn sans distraction.",
-    "shortDescriptionEn": "Distraction-free Twitter/X threads and LinkedIn post writing and scheduling.",
+    "shortDescription": "Typefully est un éditeur sans distraction pour rédiger, planifier et publier en croisé du contenu X, LinkedIn et d'autres réseaux sociaux.",
+    "shortDescriptionEn": "Typefully is a distraction-free editor for writing, scheduling and cross-posting X, LinkedIn and other social content.",
     "pricing": {
-      "free": "Twitter/X gratuit",
-      "paid": "12$/mois (Creator, LinkedIn inclus)"
+      "free": "Plan gratuit : 10 publications par mois, 1 social set, 1 utilisateur, uploads de médias limités.",
+      "paid": "Dès 8,25 $/mois, plan Creator."
     },
-    "defaultMonthlyPrice": 10.39,
-    "compareMonthlyPrice": 10.39,
+    "pricingEn": {
+      "free": "Free plan: 10 posts per month, 1 social set, 1 user, limited media uploads.",
+      "paid": "From $8.25/mo, Creator plan."
+    },
+    "defaultMonthlyPrice": 7.08,
+    "compareMonthlyPrice": 7.08,
+    "nativePrices": [
+      {
+        "amount": 8.25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://typefully.com",
     "ogImageUrl": "https://typefully.com/cards/card.png",
     "substitution_cluster_v2": "content-creation",
@@ -43713,8 +43907,13 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "sofia",
-      "theo"
+      "ALIX"
+    ],
+    "alternatives": [
+      "buffer",
+      "hootsuite",
+      "publer",
+      "taplio"
     ]
   },
   {
@@ -44980,17 +45179,25 @@
     "slug": "vmake",
     "name": "Vmake",
     "categoryId": "creation",
-    "shortDescription": "Amélioration et upscale vidéo par IA en ligne, sans logiciel à installer.",
-    "shortDescriptionEn": "AI video enhancement and upscaling online, no software to install.",
+    "shortDescription": "Vmake est un outil IA dans le navigateur pour upscaler, améliorer et nettoyer vidéos et images, facturé en crédits mensuels.",
+    "shortDescriptionEn": "Vmake is a browser-based AI tool for upscaling, enhancing and cleaning up video and images, billed through monthly credits.",
     "pricing": {
-      "free": "Crédits gratuits limités",
-      "paid": "Basic 28$/mois"
+      "free": "Plan gratuit : 20 crédits par jour (valables 1 jour), export jusqu'en 720p, 1 miniature IA par jour avec styles limités, pas d'usage commercial.",
+      "paid": "Dès 9,99 $/mois, plan Plus."
     },
     "pricingEn": {
-      "free": "Limited free credits",
-      "paid": "Basic $28/mo"
+      "free": "Free plan: 20 credits per day (valid 1 day), export up to 720p, 1 AI thumbnail/day with limited styles, no commercial use.",
+      "paid": "From $9.99/mo, Plus plan."
     },
-    "defaultMonthlyPrice": 25,
+    "defaultMonthlyPrice": 8.58,
+    "compareMonthlyPrice": 8.58,
+    "nativePrices": [
+      {
+        "amount": 9.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://vmake.ai",
     "ogImageUrl": "https://static-assets.vmake.ai/vmake-ai/_next/static/media/vmake-logo-icon.cbfe0eab.png",
     "substitution_cluster_v2": "video-enhancement",
@@ -45008,13 +45215,12 @@
     ],
     "prescription_quality": "question",
     "personas": [
-      "creator",
-      "marketer"
+      "ALIX"
     ],
     "alternatives": [
+      "topaz-video-ai",
       "capcut",
-      "descript",
-      "topaz-video-ai"
+      "descript"
     ],
     "freeAlternative": "CapCut",
     "betterAlternative": "capcut"

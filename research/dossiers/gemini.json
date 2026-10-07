@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 2,
+  "slug": "gemini",
+  "tier": "A",
+  "researchedOn": "2026-10-07",
+  "status": "needs_review",
+  "completedLocallyOn": "2026-10-07",
+  "identity": {
+    "officialName": "Gemini",
+    "vendor": "Google LLC",
+    "officialUrl": "https://gemini.google.com",
+    "docsUrl": null,
+    "changelogUrl": null,
+    "urlStatus": "ok",
+    "productStatus": "active",
+    "statusNote": null
+  },
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://one.google.com/intl/en_us/about/google-ai-plans/",
+      "tier": 1,
+      "accessedOn": "2026-10-07",
+      "title": "Google AI plans (Plus, Pro, Ultra) with Cloud Storage, United States pricing in USD"
+    }
+  ],
+  "pricing": {
+    "model": "freemium",
+    "currency": "USD",
+    "pricingUrl": "https://one.google.com/intl/en_us/about/google-ai-plans/",
+    "verifiedOn": "2026-10-07",
+    "region": "US",
+    "taxIncluded": null,
+    "freePlan": {
+      "exists": true,
+      "limits": {
+        "en": "Free access to the Gemini app and Google Search AI features at base usage limits, with no Google One cloud-storage plan attached.",
+        "fr": "Accès gratuit à l'app Gemini et aux fonctionnalités IA de Google Search avec des limites d'usage de base, sans offre de stockage cloud Google One associée."
+      },
+      "sourceIds": [
+        "s1"
+      ]
+    },
+    "plans": [
+      {
+        "key": "free",
+        "name": "Free",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 0,
+          "annualPerMonth": 0,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Base usage limits for Gemini in the Gemini app and Google Search; no Google One storage included.",
+            "fr": "Limites d'usage de base pour Gemini dans l'app Gemini et Google Search ; aucun stockage Google One inclus."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "plus",
+        "name": "Google AI Plus",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 4.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "400 GB of cloud storage plus about 2x the free tier's usage limits for Gemini 3.1 Pro, Deep Research and image/music/video generation in Gemini and Search.",
+            "fr": "400 Go de stockage cloud plus environ 2x les limites d'usage de l'offre gratuite pour Gemini 3.1 Pro, Deep Research et la génération d'images/musique/vidéo dans Gemini et Search."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "pro",
+        "name": "Google AI Pro",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 19.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "5 TB of storage and about 4x the free tier's Gemini access, plus Gemini in Gmail/Docs/Sheets, expanded AI Studio and Android Studio limits, and $10/month in Google Cloud credits.",
+            "fr": "5 To de stockage et environ 4x l'accès Gemini de l'offre gratuite, plus Gemini dans Gmail/Docs/Sheets, des limites étendues dans AI Studio et Android Studio, et 10 $/mois de crédits Google Cloud."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "key": "ultra",
+        "name": "Google AI Ultra",
+        "unit": "account",
+        "minSeats": null,
+        "price": {
+          "monthly": 99.99,
+          "annualPerMonth": null,
+          "oneTime": null
+        },
+        "onQuote": false,
+        "keyLimits": [
+          {
+            "en": "Starting at 20 TB of storage and up to 20x the free tier's Gemini access, plus the Gemini Agent and Deep Think reasoning mode (US only), and $40/month in Google Cloud credits. Listed as 'From $99.99/mo'.",
+            "fr": "À partir de 20 To de stockage et jusqu'à 20x l'accès Gemini de l'offre gratuite, plus le Gemini Agent et le mode de raisonnement Deep Think (États-Unis uniquement), et 40 $/mois de crédits Google Cloud. Affiché « à partir de 99,99 $/mois »."
+          }
+        ],
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "comparePlanKey": "plus",
+    "addOns": [],
+    "cautions": [
+      {
+        "en": "Google AI Ultra is priced 'From $99.99/mo': a higher-storage variant (above the 20 TB starting point) may cost more than the published starting price.",
+        "fr": "Google AI Ultra est affiché « à partir de 99,99 $/mois » : une variante avec plus de stockage (au-delà des 20 To de départ) peut coûter plus cher que le prix de départ publié.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "These plans bundle Gemini access with Google One cloud storage (Gmail/Drive/Photos) and other Google product perks; the price isn't for Gemini access alone.",
+        "fr": "Ces offres associent l'accès à Gemini au stockage cloud Google One (Gmail/Drive/Photos) et à d'autres avantages Google ; le prix ne correspond pas à l'accès à Gemini seul.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ]
+  },
+  "product": {
+    "capabilities": [
+      {
+        "en": "Gemini 3.1 Pro and Deep Research are available in the Gemini app, with image, music and video generation models accessible from Gemini and Google Search.",
+        "fr": "Gemini 3.1 Pro et Deep Research sont disponibles dans l'app Gemini, avec des modèles de génération d'images, musique et vidéo accessibles depuis Gemini et Google Search.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Gemini is built into Gmail, Docs and Sheets (proofreading, AI Overviews in Gmail, smarter editing) on paid plans.",
+        "fr": "Gemini est intégré à Gmail, Docs et Sheets (relecture, AI Overviews dans Gmail, édition assistée) sur les offres payantes.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Paid plans extend usage limits in Google AI Studio, Google Antigravity, Jules and Android Studio's agentic AI assistance for developers.",
+        "fr": "Les offres payantes étendent les limites d'usage dans Google AI Studio, Google Antigravity, Jules et l'assistance IA agentique d'Android Studio pour les développeurs.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "limitations": [
+      {
+        "en": "The free tier has the lowest usage limits; Plus only doubles it, so heavy daily use likely requires Pro (4x) or Ultra (up to 20x).",
+        "fr": "L'offre gratuite a les limites d'usage les plus basses ; Plus ne fait que les doubler, donc un usage quotidien intensif nécessite probablement Pro (4x) ou Ultra (jusqu'à 20x).",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "en": "Several Pro/Ultra features are explicitly US-only (Gemini Agent, AI-powered local-business calls, Gmail AI Overview, extra Google Photos Remix generations), so non-US subscribers get a reduced feature set at the same plan.",
+        "fr": "Plusieurs fonctionnalités Pro/Ultra sont explicitement réservées aux États-Unis (Gemini Agent, appels IA vers des commerces locaux, AI Overview dans Gmail, générations Remix supplémentaires dans Google Photos), donc les abonnés hors États-Unis ont un périmètre réduit pour la même offre.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "integrations": [
+      {
+        "name": "Gmail",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Google Docs",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Google Sheets",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      {
+        "name": "Android Studio",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    ],
+    "platforms": [
+      "web",
+      "ios",
+      "android"
+    ]
+  },
+  "audience": {
+    "persona": "THEO",
+    "description": {
+      "en": "A developer or technical professional using Gemini for coding assistance (AI Studio, Android Studio, Antigravity, Jules) alongside everyday research and writing in Gmail, Docs and Search.",
+      "fr": "Une développeuse ou professionnelle technique qui utilise Gemini pour l'assistance au code (AI Studio, Android Studio, Antigravity, Jules), ainsi que pour la recherche et la rédaction au quotidien dans Gmail, Docs et Search."
+    },
+    "soloRelevance": "high",
+    "teamRelevance": "medium"
+  },
+  "useCases": [
+    {
+      "en": "Research: run Deep Research in Gemini to produce a multi-page report instead of manually compiling search results.",
+      "fr": "Rechercher : lancer Deep Research dans Gemini pour produire un rapport multi-pages plutôt que de compiler des résultats de recherche à la main."
+    },
+    {
+      "en": "Code: use expanded Gemini limits in AI Studio, Antigravity or Android Studio for agentic coding assistance instead of a separate paid coding-AI subscription.",
+      "fr": "Coder : utiliser les limites Gemini étendues dans AI Studio, Antigravity ou Android Studio pour l'assistance au code agentique plutôt qu'un abonnement IA de code séparé."
+    }
+  ],
+  "alternatives": [
+    {
+      "slug": "chatgpt",
+      "reason": {
+        "en": "Direct consumer AI assistant competitor with a comparable free/paid tier structure.",
+        "fr": "Concurrent direct en tant qu'assistant IA grand public, avec une structure d'offres gratuite/payante comparable."
+      }
+    },
+    {
+      "slug": "claude",
+      "reason": {
+        "en": "Direct AI assistant competitor, also used heavily for coding assistance.",
+        "fr": "Concurrent direct en tant qu'assistant IA, également très utilisé pour l'assistance au code."
+      }
+    },
+    {
+      "slug": "grok",
+      "reason": {
+        "en": "Competing consumer AI assistant with real-time web access.",
+        "fr": "Assistant IA grand public concurrent avec accès web en temps réel."
+      }
+    },
+    {
+      "slug": "deepseek",
+      "reason": {
+        "en": "Competing AI assistant and API, often compared on price and reasoning performance.",
+        "fr": "Assistant et API IA concurrents, souvent comparés sur le prix et la performance de raisonnement."
+      }
+    }
+  ],
+  "missingAlternatives": [],
+  "rating": {
+    "valeurAjoutee": 3,
+    "simplicite": 3,
+    "utilisation": 3,
+    "puissance": 4,
+    "reversibilite": 3,
+    "evidence": {
+      "valeurAjoutee": {
+        "en": "Plus costs $4.99/month, bundling storage with AI access; no direct price comparison against standalone AI assistants (e.g. ChatGPT, Claude) was verified in this dossier.",
+        "fr": "Plus coûte 4,99 $/mois, en associant stockage et accès IA ; aucune comparaison de prix directe avec des assistants IA autonomes (ex. ChatGPT, Claude) n'a été vérifiée dans ce dossier.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "simplicite": {
+        "en": "Neutral score: first-use and onboarding time for Gemini itself weren't documented on the page read.",
+        "fr": "Note neutre : le temps de prise en main de Gemini lui-même ne figure pas dans la page relevée.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "utilisation": {
+        "en": "The page documents concrete feature access per tier (Deep Research, AI Studio limits, Gmail integration) matching its stated purpose, without an independent usage benchmark.",
+        "fr": "La page documente un accès concret aux fonctionnalités par offre (Deep Research, limites AI Studio, intégration Gmail) conforme à son objectif annoncé, sans benchmark d'usage indépendant.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "puissance": {
+        "en": "Spans consumer chat/image/video generation, Google Workspace integration and developer tooling (AI Studio, Antigravity, Jules, Android Studio) in one subscription, a broader surface than a single-purpose assistant.",
+        "fr": "Couvre le chat/génération d'images/vidéo grand public, l'intégration Google Workspace et l'outillage développeur (AI Studio, Antigravity, Jules, Android Studio) dans un seul abonnement, un périmètre plus large qu'un assistant mono-usage.",
+        "sourceIds": [
+          "s1"
+        ]
+      },
+      "reversibilite": {
+        "en": "Neutral score: data export and portability outside Google's own products weren't documented on the page read.",
+        "fr": "Note neutre : l'export et la portabilité des données hors des produits Google ne figurent pas dans la page relevée.",
+        "sourceIds": [
+          "s1"
+        ]
+      }
+    },
+    "lastActivityVerifiedOn": null
+  },
+  "editorial": {
+    "tagline": {
+      "en": "AI assistant",
+      "fr": "Assistant IA"
+    },
+    "shortDescription": {
+      "en": "Gemini is Google's AI assistant, bundled with Google One cloud storage; paid plans range from $4.99 to $99.99+/month for expanded usage limits.",
+      "fr": "Gemini est l'assistant IA de Google, associé au stockage cloud Google One ; les offres payantes vont de 4,99 $ à plus de 99,99 $/mois."
+    },
+    "longDescription": {
+      "en": "Gemini is Google's AI assistant for chat, research, image/video generation and coding help, built into Gmail, Docs, Sheets, Search, AI Studio and Android Studio. A free tier gives baseline access; paid tiers multiply usage limits for Gemini's models and features.\n\nGoogle AI Plus costs $4.99/month for 400 GB of storage and about 2x access. Pro costs $19.99/month for 5 TB and 4x access, plus Gmail/Docs integration and $10/month in Cloud credits. Ultra starts at $99.99/month for 20 TB+ and up to 20x access, plus a Gemini Agent (US only). Each tier bundles Gemini with Google One storage rather than selling AI access alone.",
+      "fr": "Gemini est l'assistant IA de Google pour le chat, la recherche, la génération d'images/vidéo et l'aide au code, intégré à Gmail, Docs, Sheets, Search, AI Studio et Android Studio. Une offre gratuite donne un accès de base ; les offres payantes multiplient les limites d'usage des modèles et fonctionnalités Gemini.\n\nGoogle AI Plus coûte 4,99 $/mois pour 400 Go de stockage et environ 2x l'accès. Pro coûte 19,99 $/mois pour 5 To et 4x l'accès, plus l'intégration Gmail/Docs et 10 $/mois de crédits Cloud. Ultra démarre à 99,99 $/mois pour 20 To+ et jusqu'à 20x l'accès, plus un Gemini Agent (États-Unis uniquement). Chaque offre associe Gemini au stockage Google One plutôt que de vendre l'accès IA seul."
+    },
+    "pros": [
+      {
+        "en": "One subscription bundles expanded Gemini access with Google One cloud storage (Gmail, Drive, Photos).",
+        "fr": "Un seul abonnement associe un accès Gemini étendu au stockage cloud Google One (Gmail, Drive, Photos)."
+      },
+      {
+        "en": "Developer-facing limits (AI Studio, Android Studio, Antigravity, Jules) scale up on the same paid tiers as the consumer assistant.",
+        "fr": "Les limites côté développeur (AI Studio, Android Studio, Antigravity, Jules) augmentent sur les mêmes offres payantes que l'assistant grand public."
+      }
+    ],
+    "cons": [
+      {
+        "en": "Several headline Pro/Ultra features (Gemini Agent, Gmail AI Overview, extra Photos Remix generations) are US-only.",
+        "fr": "Plusieurs fonctionnalités phares de Pro/Ultra (Gemini Agent, AI Overview dans Gmail, générations Remix supplémentaires) sont réservées aux États-Unis."
+      },
+      {
+        "en": "Ultra's price is listed as 'From $99.99/mo', so the full-storage tier may cost more than the advertised starting price.",
+        "fr": "Le prix d'Ultra est affiché « à partir de 99,99 $/mois », donc l'offre avec le stockage maximal peut coûter plus cher que le prix de départ annoncé."
+      }
+    ],
+    "verdict": {
+      "keepIf": {
+        "en": "You already use Gmail, Docs and Drive and want expanded Gemini access bundled with more Google One storage.",
+        "fr": "Tu utilises déjà Gmail, Docs et Drive et veux un accès Gemini étendu associé à plus de stockage Google One."
+      },
+      "avoidIf": {
+        "en": "You want AI access without paying for extra cloud storage, or you're outside the US and need the US-only features.",
+        "fr": "Tu veux un accès IA sans payer de stockage cloud supplémentaire, ou tu es hors des États-Unis et as besoin des fonctionnalités réservées aux États-Unis."
+      },
+      "threshold": {
+        "en": "Google AI Plus, the cheapest paid tier, costs $4.99/month ($59.88/year) for 400 GB of storage and roughly double the free tier's Gemini usage limits.",
+        "fr": "Google AI Plus, l'offre payante la moins chère, coûte 4,99 $/mois (59,88 $/an) pour 400 Go de stockage et environ le double des limites d'usage Gemini de l'offre gratuite."
+      },
+      "billingTraps": {
+        "en": "Ultra's starting price ($99.99/mo) is not the full price for every storage tier; a higher-storage Ultra option costs more, per the page's own 'From' wording.",
+        "fr": "Le prix de départ d'Ultra (99,99 $/mois) n'est pas le prix complet pour tous les paliers de stockage ; une option Ultra avec plus de stockage coûte plus cher, selon la mention « à partir de » de la page elle-même."
+      }
+    }
+  },
+  "unknowns": [
+    "Gemini API / pay-as-you-go developer pricing (billed per token) is a separate Google AI Studio / Vertex AI pricing page not covered by this consumer-plan dossier.",
+    "The exact storage and price for Ultra's higher tier (above the 20 TB starting point) wasn't read."
+  ],
+  "conflicts": []
+}
