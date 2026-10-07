@@ -1,3 +1,13 @@
+## 2026-10-07 — Revue technique Superpowers et corrections locales
+
+- Audit architecture, sécurité/backend, livraison/SEO/recherche et dépendances : rapport REVUE_TECHNIQUE_2026-10-07.md, preuves sous output/tooltrim-technical-review-2026-10-07.
+- Comparatifs : prix natifs et périodes exactes, essai/devis/inconnu séparés de gratuit, descriptions et sections ChatGPT/Claude alignées sur le guide web existant.
+- Ma stack : budgets inconnus/partiels explicites, devise des économies persistée, anciennes décisions conservées sans montant deviné ; aucune économie de remplacement avec prix inconnu.
+- useToolPair : restauration SSR et garde d’identité lors de navigation, réponse tardive ignorée.
+- Deux fonctions de maintenance Supabase : POST et clé serveur requis avant accès privilégié. Correction locale, déploiement non réalisé.
+- Validation : 218/218 tests unitaires, 9/9 régressions Chrome FR/EN, build production isolé PASS ; 2 478 fiches HTML avec un H1 et aucun root vide. TypeScript explicite : 38 diagnostics préexistants identiques ; lint ciblé zéro erreur/cinq warnings existants. Risques paiement, CI/SEO, données et dépendances conservés dans le rapport.
+- Travaux préexistants CategoriesIndexPage et catalogue non suivis préservés ; aucune publication ni mutation DB.
+
 ## 2026-10-07 — Mesurer sa visibilité dans les réponses IA
 
 - Nouveau guide FR/EN : méthode par panel de prompts, protocole répétable, distinction entre mentions, citations, impressions et conversions, avec limites explicites des scores GEO.

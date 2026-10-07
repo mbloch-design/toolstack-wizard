@@ -437,7 +437,12 @@ export function useToolPair(slugA: string | undefined | null, slugB: string | un
 
   useEffect(() => {
     if (!slugA || !slugB) { setLoading(false); return; }
-    if (ssrMatches) return;
+    if (ssrMatches) {
+      setToolA(ssrPair!.toolA);
+      setToolB(ssrPair!.toolB);
+      setLoading(false);
+      return;
+    }
     let cancelled = false;
     setLoading(true);
 
@@ -482,9 +487,18 @@ export function useToolPair(slugA: string | undefined | null, slugB: string | un
     })();
 
     return () => { cancelled = true; };
-  }, [slugA, slugB]);
+  }, [slugA, slugB, ssrMatches, ssrPair]);
 
-  return { toolA, toolB, loading };
+  // A route change must never expose the previous comparison's tools, even
+  // before its loading effect runs: the page also offers stack mutations.
+  const matchesRoute = !!toolA && !!toolB &&
+    (toolA.slug === slugA || toolA.id === slugA) &&
+    (toolB.slug === slugB || toolB.id === slugB);
+  return {
+    toolA: ssrMatches ? ssrPair!.toolA : matchesRoute ? toolA : undefined,
+    toolB: ssrMatches ? ssrPair!.toolB : matchesRoute ? toolB : undefined,
+    loading: ssrMatches ? false : loading,
+  };
 }
 
 // useTools() a ete retire avec ResultsPage.tsx, son seul consommateur : le

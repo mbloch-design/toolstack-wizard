@@ -60,7 +60,7 @@ export default function CartPage() {
   // to remove: the person decides.
   // Pairs kept on purpose (a decision) are no longer flagged anywhere.
   const { currency } = useCurrency();
-  const { decisions, decide, reopen } = useStackDecisions(t, (amount) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${t("/mois", "/mo")}`);
+  const { decisions, decide, reopen } = useStackDecisions(t, (amount) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${t("/mois", "/mo")}`, currency);
   const overlapsById = useMemo(() => new Map(selectedTools.map((tool) => [tool.id,
     stackRelations(tool, selectedTools, categories, lang)
       .filter((relation) => (relation.explicit || relation.commonUses.length > 0) && decisions[pairKey(toolKey(tool), toolKey(relation.tool))]?.kind !== "keep-both")
@@ -183,7 +183,7 @@ export default function CartPage() {
       style={accent ? ({ "--tool-accent": accent } as React.CSSProperties) : undefined}
       aria-haspopup="dialog"
       tabIndex={editing ? -1 : undefined}
-      onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; active ? closeInspector() : selectTool(toolKey(tool)); }}
+      onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; if (active) closeInspector(); else selectTool(toolKey(tool)); }}
     >
       <span className="ms-card-top">
         <span className="ms-card-logo"><ToolLogo tool={tool} size={34} /></span>
@@ -245,8 +245,8 @@ export default function CartPage() {
           <dl className="sg-stats ms-hero-stats">
             <div><dt><LayoutGrid size={15} aria-hidden />{t("Outils", "Tools")}</dt><dd>{selectedTools.length}</dd>
               <span className="ms-stat-bar" aria-hidden="true">{areaCosts.map((area) => <i key={area.id} style={{ flexGrow: area.tools, background: colorOf(area.id) }} data-tip={`${area.label} · ${t(`${area.tools} outil${area.tools > 1 ? "s" : ""}`, `${area.tools} tool${area.tools > 1 ? "s" : ""}`)}`} />)}</span><span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span></div>
-            <div><dt><Wallet size={15} aria-hidden />{t("Coût mensuel", "Monthly cost")}</dt><dd>{stackCost.paid > 0 ? amount(stackCost.total) : t("Gratuit", "Free")}</dd>
-              <span className="ms-stat-bar" aria-hidden="true">{stackCost.total > 0 ? areaCosts.filter((area) => area.cost > 0).map((area) => <i key={area.id} style={{ flexGrow: area.cost, background: colorOf(area.id) }} data-tip={`${area.label} · ≈ ${formatAmount(Math.round(area.cost), currency, lang)}${t("/mois", "/mo")}`} />) : <i style={{ flexGrow: 1 }} />}</span><span>{stackCost.paid > 0 ? t(`${stackCost.paid} outil${stackCost.paid > 1 ? "s" : ""} payant${stackCost.paid > 1 ? "s" : ""}`, `${stackCost.paid} paid tool${stackCost.paid > 1 ? "s" : ""}`) : t("rien de payant", "nothing paid")}</span></div>
+            <div><dt><Wallet size={15} aria-hidden />{stackCost.unknown > 0 && stackCost.paid > 0 ? t("Total partiel", "Partial total") : t("Coût mensuel", "Monthly cost")}</dt><dd>{stackCost.paid > 0 ? amount(stackCost.total) : stackCost.unknown > 0 ? t("Coût non renseigné", "Cost unknown") : t("Gratuit", "Free")}</dd>
+              <span className="ms-stat-bar" aria-hidden="true">{stackCost.total > 0 ? areaCosts.filter((area) => area.cost > 0).map((area) => <i key={area.id} style={{ flexGrow: area.cost, background: colorOf(area.id) }} data-tip={`${area.label} · ≈ ${formatAmount(Math.round(area.cost), currency, lang)}${t("/mois", "/mo")}`} />) : <i style={{ flexGrow: 1 }} />}</span><span>{stackCost.paid > 0 ? t(`${stackCost.paid} outil${stackCost.paid > 1 ? "s" : ""} payant${stackCost.paid > 1 ? "s" : ""}`, `${stackCost.paid} paid tool${stackCost.paid > 1 ? "s" : ""}`) : stackCost.unknown > 0 ? t("Coût non renseigné", "Cost unknown") : t("rien de payant", "nothing paid")}</span></div>
             {/* The thread of the page: what I pay, and what I pay twice. */}
             <div className={overlapScore.doubleTotal > 0 ? "ms-stat--overlaps" : undefined}><dt><Copy size={15} aria-hidden />{t("Payé en double", "Paid twice")}</dt><dd>{overlapScore.doubleTotal > 0 ? amount(overlapScore.doubleTotal) : (overlapPairs > 0 ? formatAmount(0, currency, lang) : t("Rien", "None"))}</dd>
               {(() => {

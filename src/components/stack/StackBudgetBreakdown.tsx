@@ -72,8 +72,8 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
         <div>
           <h2 id="ms-budget-title">{en ? "Where the money goes" : "Où part l’argent"}</h2>
           <p>{zoomed ? zoomed.label : total > 0
-            ? (en ? `${toolLines.length} paid tool${toolLines.length > 1 ? "s" : ""}` : `${toolLines.length} outil${toolLines.length > 1 ? "s" : ""} payant${toolLines.length > 1 ? "s" : ""}`)
-            : (en ? "Nothing paid yet" : "Rien de payant pour l’instant")}</p>
+            ? (en ? `${unknown > 0 ? "Partial total · " : ""}${toolLines.length} paid tool${toolLines.length > 1 ? "s" : ""}` : `${unknown > 0 ? "Total partiel · " : ""}${toolLines.length} outil${toolLines.length > 1 ? "s" : ""} payant${toolLines.length > 1 ? "s" : ""}`)
+            : unknown > 0 ? (en ? "Cost unknown" : "Coût non renseigné") : (en ? "Nothing paid yet" : "Rien de payant pour l’instant")}</p>
         </div>
         {zoomed
           ? <button type="button" className="ms-zoom-back" onClick={() => { setZoom(null); setFocus(null); }}><ChevronLeft size={16} aria-hidden />{en ? "All areas" : "Tous les domaines"}</button>
