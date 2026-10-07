@@ -1,3 +1,10 @@
+## 2026-10-07 — Mesurer sa visibilité dans les réponses IA
+
+- Nouveau guide FR/EN : méthode par panel de prompts, protocole répétable, distinction entre mentions, citations, impressions et conversions, avec limites explicites des scores GEO.
+- Actualité vérifiée auprès de Google : rapports Search Console AI Search annoncés mondialement au 31 août 2026 ; rappel qu’aucun fichier spécial ni balisage dédié n’est nécessaire pour les fonctionnalités génératives Google.
+- Liens internes vers GeoRankers et le guide sur la tarification IA ; média produit officiel GeoRankers, capacités attribuées à l’éditeur, sans promesse de visibilité ou résultat commercial.
+- Sources officielles intégrées à l’article. Validation FR/EN, liens internes, SEO, prérendu et budgets PASS ; inclus dans la publication main du 7 octobre 2026.
+
 ## 2026-10-07 — GeoRankers : contextualiser les référencements
 
 - Ajout à la fiche FR/EN des annuaires cités sur la page officielle Recognition : Startup Fame, Dang AI, Fazier, Tool Pilot, Findly.tools, LaunchNest, Tools Cafe, Lifto, Launchstag et Product Hunt.

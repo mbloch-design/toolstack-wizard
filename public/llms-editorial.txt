@@ -1,9 +1,25 @@
 # ToolTrim editorial index
 # Generated from dist/sitemap.xml and its canonical prerendered pages.
-# Records: 260 (94 guides, 166 comparisons, localized FR/EN pages)
+# Records: 262 (96 guides, 166 comparisons, localized FR/EN pages)
 # Titles and available source summaries only. A missing summary is not inferred. Consult each canonical URL for full content and current offers.
 
 [
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "mesurer-visibilite-ia-geo-2026",
+    "url": "https://tooltrim.com/fr/guide/mesurer-visibilite-ia-geo-2026",
+    "title": "Visibilité dans les IA : mesurer son GEO en 2026",
+    "summary": "Mesurez votre visibilité dans ChatGPT, Perplexity et Google AI Search : panel de prompts, données Search Console, limites des scores GEO et outils."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "mesurer-visibilite-ia-geo-2026",
+    "url": "https://tooltrim.com/en/guide/mesurer-visibilite-ia-geo-2026",
+    "title": "How to Measure AI Search Visibility in 2026",
+    "summary": "Track visibility in ChatGPT, Perplexity and Google AI Search with a prompt set, Search Console data and a clear view of GEO score limitations."
+  },
   {
     "type": "guide",
     "language": "fr",

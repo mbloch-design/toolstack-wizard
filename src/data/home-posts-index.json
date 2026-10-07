@@ -1,6 +1,21 @@
 {
   "fr": [
     {
+      "slug": "mesurer-visibilite-ia-geo-2026",
+      "title": "Visibilité dans les IA : mesurer son GEO en 2026 sans se fier à un score",
+      "date": "2026-10-07",
+      "tags": [
+        "visibilité IA",
+        "GEO",
+        "référencement IA",
+        "ChatGPT",
+        "Google AI Search",
+        "Perplexity",
+        "2026"
+      ],
+      "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp"
+    },
+    {
       "slug": "creer-video-produit-sans-montage",
       "title": "Créer une vidéo produit sans savoir monter : une méthode simple",
       "date": "2026-09-27",
@@ -176,23 +191,24 @@
         "workflow"
       ],
       "thumbnail": "/editorial/stories/anna-morel/hero.jpg"
-    },
-    {
-      "slug": "pourquoi-visualiser-stack-saas",
-      "title": "Pourquoi visualiser votre stack SaaS plutôt que la gérer dans Excel",
-      "date": "2026-07-28",
-      "tags": [
-        "stack saas",
-        "organisation",
-        "productivité",
-        "workflow",
-        "freelance",
-        "outils"
-      ],
-      "thumbnail": "/editorial/stack-visuale/hero-stack-visuelle.jpg"
     }
   ],
   "en": [
+    {
+      "slug": "mesurer-visibilite-ia-geo-2026",
+      "title": "How to measure AI search visibility in 2026 without trusting a score",
+      "date": "2026-10-07",
+      "tags": [
+        "AI visibility",
+        "GEO",
+        "AI search",
+        "ChatGPT",
+        "Google AI Search",
+        "Perplexity",
+        "2026"
+      ],
+      "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp"
+    },
     {
       "slug": "creer-video-produit-sans-montage",
       "title": "Create a product video without editing experience: a practical method",
@@ -377,20 +393,6 @@
         "organization"
       ],
       "thumbnail": "/editorial/stack-visuale/franken-stack-photo.jpg"
-    },
-    {
-      "slug": "anna-morel-designer-studio-augmente",
-      "title": "Designing like a studio when you work alone",
-      "date": "2026-07-28",
-      "tags": [
-        "stories",
-        "freelance designer",
-        "artificial intelligence",
-        "creative stack",
-        "future of work",
-        "workflow"
-      ],
-      "thumbnail": "/editorial/stories/anna-morel/hero.jpg"
     }
   ]
 }

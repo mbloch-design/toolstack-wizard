@@ -1,5 +1,23 @@
 {
   "byTool": {
+    "georankers": {
+      "fr": [
+        {
+          "slug": "mesurer-visibilite-ia-geo-2026",
+          "title": "Visibilité dans les IA : mesurer son GEO en 2026 sans se fier à un score",
+          "date": "2026-10-07",
+          "category": "Guides pratiques"
+        }
+      ],
+      "en": [
+        {
+          "slug": "mesurer-visibilite-ia-geo-2026",
+          "title": "How to measure AI search visibility in 2026 without trusting a score",
+          "date": "2026-10-07",
+          "category": "Guides pratiques"
+        }
+      ]
+    },
     "flexclip": {
       "fr": [
         {
@@ -446,6 +464,11 @@
     }
   },
   "byGuide": {
+    "fr:mesurer-visibilite-ia-geo-2026": {
+      "slug": "georankers",
+      "name": "GeoRankers",
+      "hasPricing": true
+    },
     "fr:creer-video-produit-sans-montage": {
       "slug": "flexclip",
       "name": "FlexClip",
@@ -569,6 +592,11 @@
     "fr:notion-canva-ai-tax-pricing-2026": {
       "slug": "notion",
       "name": "Notion",
+      "hasPricing": true
+    },
+    "en:mesurer-visibilite-ia-geo-2026": {
+      "slug": "georankers",
+      "name": "GeoRankers",
       "hasPricing": true
     },
     "en:creer-video-produit-sans-montage": {
@@ -733,6 +761,65 @@
     }
   },
   "guideExtras": {
+    "fr:mesurer-visibilite-ia-geo-2026": {
+      "tools": [
+        {
+          "slug": "georankers",
+          "name": "GeoRankers",
+          "hasPricing": true,
+          "logo": "https://georankers.ai/georankers-logo.svg",
+          "websiteUrl": "https://georankers.ai/"
+        },
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
+        },
+        {
+          "slug": "perplexity",
+          "name": "Perplexity",
+          "hasPricing": true,
+          "websiteUrl": "https://perplexity.ai"
+        }
+      ],
+      "related": [
+        {
+          "slug": "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+          "title": "Tu cherches l'IA la plus rentable pour tes tâches : ChatGPT, Claude ou DeepSeek ?",
+          "readTime": "15 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "claude",
+            "name": "Claude",
+            "hasPricing": true,
+            "websiteUrl": "https://claude.com/"
+          }
+        },
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Meilleurs outils IA pour freelances 2026 : Le guide complet pour choisir (et ne pas gaspiller)",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
+          }
+        },
+        {
+          "slug": "perplexity-vs-chatgpt-recherche",
+          "title": "Perplexity AI : vaut-il mieux que ChatGPT pour la recherche ?",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "perplexity",
+            "name": "Perplexity",
+            "hasPricing": true,
+            "websiteUrl": "https://perplexity.ai"
+          }
+        }
+      ]
+    },
     "fr:creer-video-produit-sans-montage": {
       "tools": [
         {
@@ -1246,23 +1333,18 @@
           }
         },
         {
+          "slug": "mesurer-visibilite-ia-geo-2026",
+          "title": "Visibilité dans les IA : mesurer son GEO en 2026 sans se fier à un score",
+          "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp",
+          "readTime": "8 min",
+          "category": "Guides pratiques"
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
           "readTime": "7 min",
           "category": "Comparatifs"
-        },
-        {
-          "slug": "alternatives-freshservice-2026",
-          "title": "Alternatives à Freshservice : que choisir selon ce qui te bloque",
-          "readTime": "9 min",
-          "category": "Comparatifs",
-          "tool": {
-            "slug": "freshservice",
-            "name": "Freshservice",
-            "hasPricing": true,
-            "websiteUrl": "https://freshworks.com/freshservice"
-          }
         }
       ]
     },
@@ -2321,6 +2403,67 @@
         }
       ]
     },
+    "en:mesurer-visibilite-ia-geo-2026": {
+      "tools": [
+        {
+          "slug": "georankers",
+          "name": "GeoRankers",
+          "hasPricing": true,
+          "logo": "https://georankers.ai/georankers-logo.svg",
+          "websiteUrl": "https://georankers.ai/"
+        },
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT",
+          "hasPricing": true,
+          "websiteUrl": "https://chat.openai.com"
+        },
+        {
+          "slug": "perplexity",
+          "name": "Perplexity",
+          "hasPricing": true,
+          "websiteUrl": "https://perplexity.ai"
+        }
+      ],
+      "related": [
+        {
+          "slug": "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
+          "title": "Claude Sonnet 4.6 vs ChatGPT vs DeepSeek vs Gemini: Which AI Assistant to Choose in February 2026?",
+          "readTime": "15 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "claude",
+            "name": "Claude",
+            "hasPricing": true,
+            "websiteUrl": "https://claude.com/"
+          }
+        },
+        {
+          "slug": "meilleurs-outils-ia-freelances-2026",
+          "title": "Best AI Tools for Freelancers 2026: The Complete Guide to Choosing (and Not Wasting Money)",
+          "readTime": "20 min",
+          "category": "Guides",
+          "tool": {
+            "slug": "chatgpt",
+            "name": "ChatGPT",
+            "hasPricing": true,
+            "websiteUrl": "https://chat.openai.com"
+          }
+        },
+        {
+          "slug": "perplexity-vs-chatgpt-recherche",
+          "title": "Perplexity AI: Is it better than ChatGPT for research?",
+          "readTime": "6 min",
+          "category": "IA Généraliste",
+          "tool": {
+            "slug": "perplexity",
+            "name": "Perplexity",
+            "hasPricing": true,
+            "websiteUrl": "https://perplexity.ai"
+          }
+        }
+      ]
+    },
     "en:creer-video-produit-sans-montage": {
       "tools": [
         {
@@ -3056,23 +3199,18 @@
           }
         },
         {
+          "slug": "mesurer-visibilite-ia-geo-2026",
+          "title": "How to measure AI search visibility in 2026 without trusting a score",
+          "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp",
+          "readTime": "8 min",
+          "category": "Guides pratiques"
+        },
+        {
           "slug": "notion-canva-ai-tax-pricing-2026",
           "title": "The Hidden AI Tax: How Notion and Canva Made \"AI Included\" Mean \"Pay More\"",
           "thumbnail": "/guides/ai-tax-hero.jpg",
           "readTime": "7 min",
           "category": "Comparatifs"
-        },
-        {
-          "slug": "ai-agents-freelancers-2026",
-          "title": "AI agents for freelancers in 2026: which ones earn a place",
-          "readTime": "8 min",
-          "category": "Comparatifs",
-          "tool": {
-            "slug": "zapier",
-            "name": "Zapier",
-            "hasPricing": true,
-            "websiteUrl": "https://zapier.com"
-          }
         }
       ]
     },
