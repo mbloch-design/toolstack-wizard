@@ -35187,3 +35187,31 @@ img[data-logo-loading] {
 /* The share bar no longer holds its caption: same box as the other bars. */
 .ms-page .ms-hero-stats .ms-stat-bar--share { height: 14px; padding-top: 0; flex-wrap: nowrap; }
 .ms-page .ms-hero-stats .ms-stat-note { line-height: 1.5; }
+/* Tool cards, App Store feel (7 Oct 2026): the icon alone, larger, with a
+   soft shadow in its own colour; a flat tint of that colour behind it; no
+   border, a soft lift on hover; the amount carries the price line. */
+.ms-page .ms-tool.ms-tool-card {
+  overflow: hidden; border: 0; border-radius: 22px; background: hsl(var(--card));
+  box-shadow: 0 0 0 1px hsl(var(--border) / .7), 0 1px 2px rgba(15, 15, 15, .04);
+  transition: transform 260ms cubic-bezier(.2, .8, .2, 1), box-shadow 260ms ease;
+}
+.ms-page .ms-tool.ms-tool-card:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px hsl(var(--border) / .5), 0 16px 32px rgba(15, 15, 15, .09); }
+.ms-page .ms-tool.ms-tool-card:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; }
+.ms-page .ms-card-top { gap: 16px; padding: 20px 20px 18px; background: color-mix(in srgb, var(--tool-accent, #8E8E93) 7%, hsl(var(--card))); }
+.ms-page .ms-card-logo { width: auto; height: auto; border-radius: 0; background: none; box-shadow: none; }
+.ms-page .ms-card-logo > * { border-radius: 13px !important; box-shadow: 0 6px 16px color-mix(in srgb, var(--tool-accent, #000) 22%, transparent), 0 0 0 1px rgba(15, 15, 15, .05) !important; }
+.ms-page .ms-card-id strong { font-size: 17.5px; }
+.ms-page .ms-card-foot { min-height: 54px; padding: 0 20px; border-top: 0; }
+.ms-page .ms-card-price small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1 var(--font-ui); }
+.ms-page .ms-card-price strong { font: 650 16px/1 var(--font-ui); letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.ms-page .ms-tool.ms-tool-card.ms-tool--selected { box-shadow: 0 0 0 2px hsl(var(--foreground)), 0 16px 32px rgba(15, 15, 15, .09); }
+@media (prefers-reduced-motion: reduce) { .ms-page .ms-tool.ms-tool-card:hover { transform: none; } }
+@media (max-width: 640px) {
+  .ms-page .ms-tool.ms-tool-card { border-radius: 18px; }
+  .ms-page .ms-card-top { padding: 10px 0 10px 12px; background: none; }
+  .ms-page .ms-card-logo > * { width: 40px !important; height: 40px !important; min-width: 40px !important; min-height: 40px !important; border-radius: 11px !important; }
+  .ms-page .ms-card-foot { min-height: 0; padding: 0 14px 0 8px; }
+  .ms-page .ms-card-price { display: grid; justify-items: end; gap: 2px; }
+  .ms-page .ms-card-price strong { font-size: 14px; }
+  .ms-page .ms-card-price small { font-size: 11px; }
+}

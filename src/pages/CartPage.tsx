@@ -186,11 +186,15 @@ export default function CartPage() {
       onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; active ? closeInspector() : selectTool(toolKey(tool)); }}
     >
       <span className="ms-card-top">
-        <span className="ms-card-logo"><ToolLogo tool={tool} size={34} /></span>
+        <span className="ms-card-logo"><ToolLogo tool={tool} size={48} /></span>
         <span className="ms-card-id"><strong>{tool.name}</strong>{<span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>}</span>
       </span>
       {<span className="ms-card-foot">
-        <span className={`ms-card-price${price ? "" : " ms-card-price--none"}`}>{price || t("Tarif non relevé", "Price not checked")}</span>
+        <span className={`ms-card-price${price ? "" : " ms-card-price--none"}`}>{(() => {
+          // "From $22.99/mo": the word small, the amount carries the line.
+          const match = price?.match(/^(Dès|From) (.+)$/);
+          return match ? <><small>{match[1]}</small> <strong>{match[2]}</strong></> : price || t("Tarif non relevé", "Price not checked");
+        })()}</span>
         {overlaps.length > 0 && <span className="ms-card-overlap" title={t(`Recoupe ${overlaps.map((o) => o.name).join(", ")}`, `Overlaps with ${overlaps.map((o) => o.name).join(", ")}`)}>
           <span className="ms-card-overlap-name">{overlaps[0].name}</span>{overlaps.length > 1 && <span>+{overlaps.length - 1}</span>}
         </span>}
