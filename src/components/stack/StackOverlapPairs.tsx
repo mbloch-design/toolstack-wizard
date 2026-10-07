@@ -17,6 +17,9 @@ import { toolKey } from "@/lib/stackView";
  * garder les deux peut être un choix ; la personne décide.
  * Première section après le hero : c'est ce que la personne peut simplifier,
  * la promesse de ToolTrim. Masquée sans recoupement.
+ * Chiffrée : quand les deux outils d'une paire sont payants, le moins cher
+ * des deux est payé « en double » (même travail, deux abonnements). Les paires
+ * se trient par ce montant ; le total ne compte chaque outil qu'une fois.
  */
 
 interface Props {
@@ -55,19 +58,37 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
 
   if (!pairs.length) return null;
 
+  const monthly = (tool: ToolSummary) => {
+    const cost = toolMonthlyCost(tool, isPaid, lang);
+    return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0;
+  };
+  const scored = pairs.map((pair) => {
+    const [ca, cb] = [monthly(pair.a), monthly(pair.b)];
+    return { ...pair, double: ca > 0 && cb > 0 ? Math.min(ca, cb) : 0, cheaper: ca <= cb ? pair.a : pair.b };
+  }).sort((x, y) => y.double - x.double || Number(y.explicit) - Number(x.explicit));
+  const counted = new Set<string>();
+  const doubleTotal = scored.reduce((sum, pair) => {
+    if (!pair.double || counted.has(pair.cheaper.id)) return sum;
+    counted.add(pair.cheaper.id);
+    return sum + pair.double;
+  }, 0);
+  const money = (amount: number) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${en ? "/mo" : "/mois"}`;
+
   return (
     <section id="ms-overlaps" className="sg-section ms-section ms-overlaps-section" aria-labelledby="ms-overlaps-section-title">
       <div className="sg-section-heading">
         <span className="sg-eyebrow">{en ? "Overlaps" : "Recoupements"}</span>
         <h2 id="ms-overlaps-section-title">{en ? "What may be doing the same job?" : "Qu’est-ce qui fait peut-être doublon ?"}</h2>
       </div>
+      {doubleTotal > 0 && <p className="ms-double-total"><strong>{money(doubleTotal)}</strong><span>{en ? "paid twice for the same job, on catalogue entry plans" : "payés en double pour le même travail, sur les offres d’entrée du catalogue"}</span></p>}
       <p className="ms-section-lead">{en
         ? `${pairs.length} pair${pairs.length > 1 ? "s" : ""} of tools share uses or are catalogue alternatives. Keeping both can be the right call: compare before deciding.`
         : `${pairs.length} paire${pairs.length > 1 ? "s" : ""} d’outils partage${pairs.length > 1 ? "nt" : ""} des usages ou sont des alternatives du catalogue. Garder les deux peut être le bon choix : comparez avant de décider.`}</p>
       <div className="ms-pairs-panel">
       <ul className="ms-pairs">
-        {(all ? pairs : pairs.slice(0, SHOWN)).map(({ a, b, shared, explicit }) => (
+        {(all ? scored : scored.slice(0, SHOWN)).map(({ a, b, shared, explicit, double }) => (
           <li key={`${a.id}|${b.id}`} className="ms-pair">
+            {double > 0 && <span className="ms-pair-double">{en ? `${money(double)} paid twice` : `${money(double)} en double`}</span>}
             <div className="ms-pair-tools">
               {[a, b].map((tool, i) => (
                 <button key={tool.id} type="button" className="ms-pair-tool" onClick={() => onSelect(toolKey(tool))}>

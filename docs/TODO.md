@@ -90,7 +90,7 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 - 25/09/2026 `511c528b` : catalogue /tools (besoins, filtres, sponsoring), barres de filtres sur une ligne, 7 recatégorisations, 5 URL réparées
 
 ## Ma stack en tableau de bord (7 oct. 2026)
-- Ordre validé (parcours) : hero inchangé, puis Recoupements (ce que je peux simplifier), puis Budget (anneau par domaine ou par outil, zoom local par domaine) avec le widget Freemium à côté (le total se corrige en direct), puis Mes outils. Bandeau de bulles retiré. Commits locaux non poussés.
+- Ordre validé (parcours) : hero inchangé, puis Recoupements (ce que je peux simplifier), puis Budget (anneau par domaine ou par outil, zoom local par domaine) puis Mes outils. Fil conducteur : combien je paie, et combien je paie en double. La question freemium se pose une fois (bandeau après le hero, fenêtre « Lesquels payez-vous ? », mémorisée par outil) ; les recoupements sont chiffrés (« ≈ X €/mois en double ») et triés par montant. Bandeau de bulles retiré. Commits locaux non poussés.
 - E2E `catalogue refresh updates the same saved selection` échoue : il attend le prix Supabase sur la carte, or la carte lit désormais `nativePrices` attestés. Réécrire le test (constat, pas encore fait).
 - Composants devenus inutilisés : `StackTelescope`, `AreaCard` / `ms-plan-switch` (remplacés par le widget Freemium), `StackUsageExplorer` (sauf `pack`), défaut de `StackAreaBoard`, `src/lib/stackBudget.ts`. À supprimer après validation du tableau de bord.
 - CHANGELOG_AI à compléter pour toute la série Ma stack avant le push.

@@ -76,7 +76,16 @@ export default function CartPage() {
   const heroOverflow = heroOrder.length - heroApps.length;
   // Area colours of the budget ring, stable across the whole stack. Area colours stay those of the whole stack.
   const colorOf = (id: string) => AREA_COLORS[Math.max(0, mapTerritories.findIndex((territory) => territory.id === id)) % AREA_COLORS.length];
-  const toCheck = stackCost.freemiumFree + stackCost.unknown;
+  // Freemium question (Michael, 7 Oct 2026): asked once per tool, at the start
+  // of the story, because it sets both the budget and what is paid twice.
+  const freemiumTools = selectedTools.filter((tool) => stackCatalogPrice(tool, lang) === "Freemium");
+  const unreviewed = freemiumTools.filter((tool) => !plans.isReviewed(toolKey(tool)));
+  const [freemiumOpen, setFreemiumOpen] = useState(false);
+  function setFreemiumSheet(open: boolean) {
+    setFreemiumOpen(open);
+    if (!open) plans.markReviewed(freemiumTools.map(toolKey));
+  }
+  const toCheck = unreviewed.length + stackCost.unknown;
   const overlapPairs = useMemo(() => {
     const pairs = new Set<string>();
     overlapsById.forEach((others, id) => others.forEach((other) => pairs.add([id, other.id].sort().join("|"))));
@@ -208,8 +217,8 @@ export default function CartPage() {
             <div className={overlapPairs > 0 ? "ms-stat--overlaps" : undefined}><dt>{t("Recoupements", "Overlaps")}</dt><dd>{overlapPairs}</dd>{overlapPairs > 0
               ? <a className="ms-stat-link" href="#ms-overlaps" onClick={(event) => { event.preventDefault(); jumpTo("ms-overlaps"); }}>{t("à examiner", "to review")} ↓</a>
               : <span>{t("aucun connu", "none known")}</span>}</div>
-            <div className={toCheck > 0 ? "ms-stat--overlaps" : undefined}><dt>{t("À vérifier", "To check")}</dt><dd>{toCheck}</dd>{stackCost.freemiumFree > 0
-              ? <a className="ms-stat-link" href="#ms-freemium" onClick={(event) => { event.preventDefault(); jumpTo("ms-freemium"); }}>{t(`${stackCost.freemiumFree} freemium à déclarer`, `${stackCost.freemiumFree} freemium to declare`)} ↓</a>
+            <div className={toCheck > 0 ? "ms-stat--overlaps" : undefined}><dt>{t("À vérifier", "To check")}</dt><dd>{toCheck}</dd>{unreviewed.length > 0
+              ? <button type="button" className="ms-stat-link" onClick={() => setFreemiumSheet(true)}>{t(`${unreviewed.length} freemium à déclarer`, `${unreviewed.length} freemium to declare`)}</button>
               : <span>{toCheck > 0 ? t("prix non relevés", "prices not checked") : t("tout est relevé", "all checked")}</span>}</div>
           </dl>
         </>}
@@ -270,15 +279,25 @@ export default function CartPage() {
           can simplify (overlaps), then what it really costs (budget, with the
           freemium plans to declare beside it so the total corrects itself),
           then the inventory. */}
+      {/* One question, once: the freemium plans set the true cost, so they are
+          asked before the figures that depend on them. Gone once answered. */}
+      {unreviewed.length > 0 && <aside className="ms-calibrate" aria-label={t("Freemium à déclarer", "Freemium to declare")}>
+        <span className="ms-calibrate-logos" aria-hidden="true">{unreviewed.slice(0, 4).map((tool) => <ToolLogo key={tool.id} tool={tool} size={28} />)}</span>
+        <p><strong>{t(`${unreviewed.length} outil${unreviewed.length > 1 ? "s" : ""} freemium compte${unreviewed.length > 1 ? "nt" : ""} 0 €.`, `${unreviewed.length} freemium tool${unreviewed.length > 1 ? "s count" : " counts"} as free.`)}</strong> {t("Vous en payez certains ? Votre coût et vos doublons en dépendent.", "Do you pay for some? Your cost and duplicates depend on it.")}</p>
+        <div className="ms-calibrate-actions">
+          <button type="button" className="ms-calibrate-skip" onClick={() => plans.markReviewed(freemiumTools.map(toolKey))}>{t("Aucun", "None")}</button>
+          <button type="button" className="tt-button-primary ms-calibrate-go" onClick={() => setFreemiumSheet(true)}>{t("Indiquer lesquels", "Pick them")}</button>
+        </div>
+      </aside>}
+
       <StackOverlapPairs tools={selectedTools} categories={categories} isPaid={plans.isPaid} currency={currency} prefix={prefix} lang={lang} onSelect={selectTool} />
 
       <section className="sg-section ms-section ms-budget-section" aria-labelledby="ms-budget-section-title">
         <div className="sg-section-heading"><span className="sg-eyebrow">{t("Budget", "Budget")}</span><h2 id="ms-budget-section-title">{t("Combien coûte ma stack ?", "What does my stack cost?")}</h2></div>
-        <div className="ms-budget-grid">
-          <StackBudgetBreakdown territories={mapTerritories} colorOf={colorOf} paid={plans} currency={currency} lang={lang} onSelect={selectTool} onFreemium={() => jumpTo("ms-freemium")} />
-          <StackFreemiumPlans tools={selectedTools} paid={plans} currency={currency} lang={lang} onSelect={selectTool} />
-        </div>
+        <StackBudgetBreakdown territories={mapTerritories} colorOf={colorOf} paid={plans} currency={currency} lang={lang} onSelect={selectTool} onFreemium={() => setFreemiumSheet(true)} />
       </section>
+
+      <StackFreemiumPlans open={freemiumOpen} onOpenChange={setFreemiumSheet} freemium={freemiumTools} paid={plans} currency={currency} lang={lang} />
 
       <section className="sg-section ms-section ms-tools-section" aria-labelledby="ms-list-title">
         <div className="sg-section-heading"><span className="sg-eyebrow">{t("Mes outils", "My tools")}</span><h2 id="ms-list-title">{t("Quel outil pour quoi ?", "Which tool does what?")}</h2></div>

@@ -4,7 +4,7 @@ import { ChevronLeft } from "@/lib/icons";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { convertAmount, CURRENCY_RATE_DATE, formatAmount, type Currency } from "@/lib/currencyRates";
 import { toolMonthlyCost } from "@/lib/stackCost";
-import { toolKey } from "@/lib/stackView";
+import { stackCatalogPrice, toolKey } from "@/lib/stackView";
 import { AREA_COLORS, type Territory } from "@/components/stack/StackAreaBoard";
 
 /**
@@ -12,7 +12,7 @@ import { AREA_COLORS, type Territory } from "@/components/stack/StackAreaBoard";
  * Stack (sg-donut, sg-storage-legend). Par domaine ou par outil ; un clic sur
  * un domaine zoome l'anneau sur ses outils (zoom local : il ne filtre pas le
  * reste de la page, qui le précède en partie). Les outils freemium se déclarent dans
- * le widget Freemium, vers lequel le budget renvoie. Mêmes règles que le
+ * la fenêtre Freemium, que la note du budget rouvre (« Modifier »). Mêmes règles que le
  * reste de la page : offres d'entrée attestées, freemium à 0 sauf « Je paie », total
  * converti au taux daté et affiché comme converti (Michael, 7 oct. 2026).
  */
@@ -25,7 +25,7 @@ interface Props {
   currency: Currency;
   lang: "fr" | "en";
   onSelect: (slug: string) => void;
-  /** Leads to the freemium widget, where plans are declared. */
+  /** Opens the freemium question, where plans are declared. */
   onFreemium: () => void;
 }
 
@@ -55,6 +55,7 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
   const byArea = view === "area" && territories.length > 1;
   const lines = byArea ? areaLines : toolLines;
   const total = toolLines.reduce((sum, line) => sum + line.amount, 0);
+  const freemiumCount = tools.filter((tool) => stackCatalogPrice(tool, lang) === "Freemium").length;
   const undeclared = tools.filter((tool) => toolMonthlyCost(tool, paid.isPaid, lang).kind === "freemium-free").length;
   const unknown = tools.filter((tool) => toolMonthlyCost(tool, paid.isPaid, lang).kind === "unknown").length;
   const shade = (i: number) => (lines.length > 1 ? 1 - (i / (lines.length - 1)) * 0.72 : 1);
@@ -112,14 +113,11 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
           {rest.length > 0 && <li className="ms-budget-rest"><span aria-hidden /><span aria-hidden /><span className="sg-budget-name">{en ? `${rest.length} more` : `${rest.length} autre${rest.length > 1 ? "s" : ""}`}</span><span className="sg-budget-value">≈ {money(rest.reduce((sum, line) => sum + line.amount, 0))}</span></li>}
         </ul>
       </div>}
-      {undeclared > 0 && <a className="ms-budget-freemium" href="#ms-freemium" onClick={(event) => { event.preventDefault(); onFreemium(); }}>
-        <strong>{en ? `${undeclared} freemium counted as free` : `${undeclared} freemium compté${undeclared > 1 ? "s" : ""} gratuit${undeclared > 1 ? "s" : ""}`}</strong>
-        <span>{en ? "Which ones do you pay for?" : "Lesquels payez-vous ?"}</span>
-      </a>}
       <p className="ms-tile-note">
         {en
           ? `Catalogue entry plans, not your invoices. Converted to ${currency} at the site's rate of ${rateDate}.${unknown > 0 ? ` ${unknown} without a checked price.` : ""}`
           : `Offres d’entrée du catalogue, pas vos factures. Converti en ${currency} au taux du ${rateDate}.${unknown > 0 ? ` ${unknown} sans prix relevé.` : ""}`}
+        {freemiumCount > 0 && <> {en ? `${undeclared} of ${freemiumCount} freemium counted as free.` : `${undeclared} freemium sur ${freemiumCount} comptés gratuits.`} <button type="button" className="ms-inline-link" onClick={onFreemium}>{en ? "Edit" : "Modifier"}</button></>}
       </p>
     </section>
   );
