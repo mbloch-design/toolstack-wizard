@@ -94,3 +94,16 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 - E2E `catalogue refresh updates the same saved selection` échoue : il attend le prix Supabase sur la carte, or la carte lit désormais `nativePrices` attestés. Réécrire le test (constat, pas encore fait).
 - Fait (7 oct.) : composants morts supprimés (`StackToolInspector`, `StackTelescope`, `StackUsageExplorer`, `StackBubblePeek`, `StackAreaBoard`, `StackAccountDialog`, `StackNeedsManagerDialog`, `StackSaveMenu`, `lib/stackBudget.ts` et son test) ; `AREA_COLORS` et `Territory` dans `lib/stackAreas.ts` ; 386 règles CSS `ms-` mortes retirées. Reste à voir : `useStackAccount` n'a peut-être plus d'appelant.
 - CHANGELOG_AI à compléter pour toute la série Ma stack avant le push.
+
+## Ma stack, recul produit (7 oct. 2026)
+Constats :
+- Seul `add_to_stack` est mesuré : on ne sait pas si la page est vue, si la feuille outil s'ouvre, si « Comparer » est cliqué, si la question freemium reçoit une réponse.
+- Prix attestés (`nativePrices`) sur 375 outils sur 1 348 (28 %) : beaucoup de « Tarif non relevé », donc coût et « payé en double » partiels.
+- Le coût suppose l'offre d'entrée, une place : faux pour une équipe ou un plan supérieur ; « payé en double » est un plafond.
+- La boucle s'arrête à « Comparer » : rien pour dire « je remplace X par Y » ni voir l'économie.
+- Stack seulement dans le navigateur : perdue en changeant d'appareil, impossible à partager (`useStackAccount` sans appelant).
+Prochaines étapes proposées, dans l'ordre :
+1. Mesurer (page vue, feuille ouverte, comparer, freemium répondu, retrait, remplacement) ; décider ensuite sur données.
+2. Rendre le chiffre juste : choisir son plan réel et le nombre de places dans la feuille outil ; priorité de recherche prix sur les outils les plus ajoutés.
+3. Fermer la boucle : depuis une paire ou un comparatif, « Remplacer X par Y » dans la stack, économie affichée, annulable.
+4. Garder et partager : lien de partage lecture seule (boucle d'acquisition), puis synchronisation par compte.
