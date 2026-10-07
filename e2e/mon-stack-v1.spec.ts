@@ -57,13 +57,12 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await expect(page.locator(".ms-card-grid")).not.toHaveCount(0);
     await expect(page.getByRole("button", { name: lang === "fr" ? "Cartes" : "Cards", exact: true })).toHaveAttribute("aria-pressed", "true");
     await page.getByRole("button", { name: lang === "fr" ? "Par usage" : "By use", exact: true }).click();
-    await expect(page.locator(".ms-usage-explorer")).toBeVisible();
-    await expect(page.locator(".ms-usage-bubble")).not.toHaveCount(0);
-    await page.locator(".ms-usage-tree > li > button").filter({ hasText: lang === "fr" ? "Créer" : "Create" }).click();
-    await page.locator(".ms-usage-tree-groups > li > button").filter({ hasText: lang === "fr" ? "Interfaces et prototypes" : "Interfaces & Prototyping" }).click();
-    await expect(page.locator(".ms-usage-tree-tool").first()).toBeVisible();
-    await expect(page.locator(".ms-usage-tree-tool").first()).toBeEnabled();
-    await page.locator(".ms-usage-tree-tool").first().focus();
+    // By use: a board of areas, each listing its uses and tools.
+    await expect(page.locator(".ms-board")).toBeVisible();
+    await expect(page.locator(".ms-area")).not.toHaveCount(0);
+    await expect(page.locator(".ms-area-tool").first()).toBeVisible();
+    await expect(page.locator(".ms-area-tool").first()).toBeEnabled();
+    await page.locator(".ms-area-tool").first().focus();
     await page.keyboard.press("Enter");
     await expect(page.locator(".ms-inspector")).toBeVisible();
     await expect(page.locator(".ms-inspector h3")).toBeFocused();
