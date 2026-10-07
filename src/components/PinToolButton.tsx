@@ -20,8 +20,8 @@ export function PinToolButton({ slug, label, t, compact = false, inline = false,
   const pinned = state.pinnedToolSlugs.includes(slug);
   const mode = labelMode ?? (compact ? "icon" : "full");
   const buttonLabel = pinned
-    ? t("Dans mon stack", "In my stack")
-    : mode === "full" ? t("Ajouter à mon stack", "Add to my stack") : t("Ajouter", "Add");
+    ? t("Dans ma stack", "In my stack")
+    : mode === "full" ? t("Ajouter à ma stack", "Add to my stack") : t("Ajouter", "Add");
 
   return (
     <button
@@ -34,10 +34,10 @@ export function PinToolButton({ slug, label, t, compact = false, inline = false,
           navigate(`${prefix}/ma-stack?outil=${encodeURIComponent(slug)}`);
         } else {
           pinTool(slug);
-          toast.success(t(`${label} ajouté au stack.`, `${label} added to your stack.`));
+          toast.success(t(`${label} ajouté à ma stack.`, `${label} added to your stack.`));
         }
       }}
-      aria-label={pinned ? t(`Voir ${label} dans mon stack`, `View ${label} in my stack`) : t(`Ajouter ${label} à mon stack`, `Add ${label} to my stack`)}
+      aria-label={pinned ? t(`Voir ${label} dans ma stack`, `View ${label} in my stack`) : t(`Ajouter ${label} à ma stack`, `Add ${label} to my stack`)}
       title={buttonLabel}
     >
       {pinned ? <BookmarkCheck size={compact ? 14 : 16} aria-hidden /> : <Bookmark size={compact ? 14 : 16} aria-hidden />}

@@ -5,6 +5,7 @@ import ToolLogo from "@/components/ToolLogo";
 import type { Category, Tool } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
+import { comparisonPath } from "@/lib/comparisonLinks";
 import { stackDisplayLabel, stackPlacement, stackRelations, stackUsageLabels } from "@/lib/stackUsage";
 import { getScrollTop, scrollToY } from "@/lib/scroll";
 
@@ -55,14 +56,20 @@ export default function StackToolInspector({ tool, relations, categories, prefix
       <p className="ms-focus-summary">{description || (uses.length > 0 ? uses.map((use) => stackDisplayLabel(use, lang)).join(" · ") : t("La description de cet outil n’est pas renseignée.", "A description is not available for this tool."))}</p>
       {overlaps.length > 0 && <section className="ms-focus-overlaps" aria-labelledby="ms-overlaps-title">
         <h4 id="ms-overlaps-title">{t("Chevauchements possibles", "Potential overlaps")}</h4>
-        <div>{overlaps.map((relation) => <button key={relation.tool.id} type="button" className="ms-overlap-tool" onClick={() => onSelect(toolKey(relation.tool))}>
-          <ToolLogo tool={relation.tool} size={28} />
-          <span><strong>{relation.tool.name}</strong>
-            <span>{relation.commonUses.length > 0
-              ? t(`${relation.commonUses.slice(0, 2).map((use) => stackDisplayLabel(use, lang)).join(", ")} en commun`, `Shared: ${relation.commonUses.slice(0, 2).join(", ")}`)
-              : t("Alternative du catalogue", "Catalogue alternative")}</span>
-          </span><ArrowRight size={14} aria-hidden />
-        </button>)}</div>
+        <div>{overlaps.map((relation) => <div key={relation.tool.id} className="ms-overlap-row">
+          <button type="button" className="ms-overlap-tool" onClick={() => onSelect(toolKey(relation.tool))}>
+            <ToolLogo tool={relation.tool} size={28} />
+            <span><strong>{relation.tool.name}</strong>
+              <span>{relation.commonUses.length > 0
+                ? t(`${relation.commonUses.slice(0, 2).map((use) => stackDisplayLabel(use, lang)).join(", ")} en commun`, `Shared: ${relation.commonUses.slice(0, 2).join(", ")}`)
+                : t("Alternative du catalogue", "Catalogue alternative")}</span>
+            </span>
+          </button>
+          {/* From an overlap to a decision: the comparison of the two tools. */}
+          <Link className="ms-overlap-compare" to={comparisonPath(prefix, toolKey(tool), toolKey(relation.tool))}>
+            {t("Comparer", "Compare")}
+          </Link>
+        </div>)}</div>
       </section>}
     </div>
     <footer className="ms-inspector-actions">

@@ -109,7 +109,7 @@ export default function CartPage() {
     unpinTool(slug);
     closeInspector();
     requestAnimationFrame(() => addRef.current?.focus({ preventScroll: true }));
-    toast(t(`${name} retiré du stack.`, `${name} removed from your stack.`), {
+    toast(t(`${name} retiré de ma stack.`, `${name} removed from your stack.`), {
       duration: 6000,
       action: { label: t("Annuler", "Undo"), onClick: () => restoreTool(entry, index) },
     });
@@ -181,7 +181,7 @@ export default function CartPage() {
     </p>}
     {empty && <p className="ms-empty-copy">{t("Ajoutez les outils que vous utilisez. ToolTrim organise automatiquement votre environnement.", "Add the tools you use. ToolTrim automatically organizes your environment.")}</p>}
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
-      ? t("La sauvegarde locale est illisible. Vous pouvez constituer un nouveau stack.", "The local snapshot cannot be read. You can build a new stack.")
+      ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
       : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
     {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupéré depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
 
@@ -203,7 +203,7 @@ export default function CartPage() {
             type="button"
             disabled={present}
             aria-label={present ? t(`${tool.name} est dans votre stack`, `${tool.name} is in your stack`) : t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}
-            onClick={() => { pinTool(toolKey(tool)); toast.success(t(`${tool.name} ajouté au stack.`, `${tool.name} added to your stack.`)); }}
+            onClick={() => { pinTool(toolKey(tool)); toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); }}
           >{present ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}</button></li>;
         })}</ul>
       </>}
@@ -218,7 +218,7 @@ export default function CartPage() {
             {territory.id === "assist" ? t("IA", "AI") : territory.label}<span>{territory.tools.length}</span>
           </button>)}
         </div>}
-        <div className="ms-view-switch" role="group" aria-label={t("Affichage du stack", "Stack view")}>
+        <div className="ms-view-switch" role="group" aria-label={t("Affichage de la stack", "Stack view")}>
           <button type="button" aria-label={t("Cartes", "Cards")} title={t("Cartes", "Cards")} aria-pressed={mode === "stack"} onClick={() => chooseMode("stack")}><LayoutGrid size={21} aria-hidden /><span>{t("Cartes", "Cards")}</span></button>
           <button type="button" aria-label={t("Par usage", "By use")} title={t("Par usage", "By use")} aria-pressed={mode === "map"} onClick={() => chooseMode("map")}><CircleDot size={21} aria-hidden /><span>{t("Par usage", "By use")}</span></button>
         </div>
@@ -234,7 +234,7 @@ export default function CartPage() {
       </div>
       {missing.length > 0 && <section className="ms-unavailable"><h2>{t("Outils indisponibles", "Unavailable tools")}</h2>
         <p>{t("Ces références ne sont plus disponibles dans le catalogue actuel. Votre sélection est conservée.", "These references are unavailable in the current catalogue. Your selection is retained.")}</p>
-        {missing.map((slug) => <div key={slug}><span>{slug}</span><button onClick={() => removeTool(slug, slug)}>{t("Retirer du stack", "Remove from stack")}</button></div>)}
+        {missing.map((slug) => <div key={slug}><span>{slug}</span><button onClick={() => removeTool(slug, slug)}>{t("Retirer de ma stack", "Remove from stack")}</button></div>)}
         {loading && <p role="status">{t("Actualisation du catalogue…", "Refreshing catalogue…")}</p>}
       </section>}
     </>}

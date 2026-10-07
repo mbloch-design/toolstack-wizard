@@ -40,7 +40,7 @@ test("tool profile adds with one click and its saved CTA opens stack context", a
   const cta = page.locator(".td-hero-actions .pin-tool-button--full");
   await cta.click();
   await expect(page).toHaveURL(/\/fr\/tool\/figma$/);
-  await expect(cta).toContainText("Dans mon stack");
+  await expect(cta).toContainText("Dans ma stack");
   await cta.click();
   await expect(page).toHaveURL(/ma-stack\?outil=figma/);
   await expect(page.locator(".ms-inspector h3")).toHaveText("Figma");

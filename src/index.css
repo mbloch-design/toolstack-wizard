@@ -35119,3 +35119,18 @@ img[data-logo-loading] {
 }
 .ms-page .ms-card-overlap::before { content: ""; width: 10px; height: 10px; border-radius: 50%; box-shadow: 4px 0 0 -1px hsl(var(--background)), 4px 0 0 0 currentColor; border: 1px solid currentColor; flex: none; }
 .ms-page .ms-inspector-actions .tt-button-secondary { border-radius: var(--radius-pill); }
+/* Panneau Ma stack : chaque recoupement mène à la comparaison des deux outils. */
+.ms-page .ms-overlap-row { display: flex; align-items: center; gap: 8px; }
+.ms-page .ms-overlap-row .ms-overlap-tool { flex: 1; min-width: 0; }
+.ms-page .ms-overlap-compare {
+  flex: none; display: inline-flex; align-items: center; height: 30px; padding: 0 12px;
+  border: 1px solid hsl(var(--border)); border-radius: var(--radius-pill);
+  color: hsl(var(--foreground)); font: 600 12.5px/1 var(--font-ui); text-decoration: none;
+}
+.ms-page .ms-overlap-compare:hover { border-color: hsl(var(--foreground)); }
+.ms-page .ms-overlap-compare:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+/* Fiche outil : rappel discret de ce que la stack contient déjà. */
+.td-stack-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; color: hsl(var(--muted-foreground)); font: 400 14px/1.45 var(--font-ui); }
+.td-tool-page .td-hero:not(.is-compact) .td-stack-note { grid-column: 2; }
+.td-stack-note a { color: var(--tool-accent-ink, var(--color-text)); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+@media (max-width: 640px) { .td-tool-page .td-hero:not(.is-compact) .td-stack-note { grid-column: 1 / -1; } }
