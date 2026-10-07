@@ -35100,16 +35100,14 @@ img[data-logo-loading] {
 .ms-page .ms-usage-bubble:hover { border-color: hsl(var(--muted-foreground) / .4); box-shadow: 0 10px 28px rgba(15, 15, 15, .07); }
 .ms-page .ms-usage-bubble--selected { border-color: hsl(var(--foreground)); box-shadow: 0 10px 28px rgba(15, 15, 15, .07); }
 @media (prefers-reduced-motion: reduce) { .ms-page .ms-tool.ms-tool-card:hover { transform: none; } }
-/* Mobile : le sélecteur passe sous les onglets au lieu de les écraser. */
-@media (max-width: 640px) {
-  .ms-page .ms-toolbar { flex-wrap: wrap; row-gap: 0; }
-  .ms-page .ms-domain-filters { flex: 1 1 100%; order: 2; }
-  .ms-page .ms-view-switch { order: 1; margin: 0 0 4px auto; }
-}
-.ms-page .ms-view-switch { margin-left: auto; }
+
 /* Ma stack, lecture d'ensemble (7 oct.) : une ligne factuelle sous le titre,
    et sur chaque carte le recoupement possible, même règle que le panneau. */
-.ms-page .ms-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0; margin: -8px 0 28px; color: hsl(var(--muted-foreground)); font: 500 15px/1.4 var(--font-ui); }
+/* Ligne de synthèse + sélecteur de vue : même place dans les deux vues. */
+.ms-page .ms-overview-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin: -8px 0 24px; }
+.ms-page .ms-overview-bar .ms-view-switch { margin-left: auto; }
+.ms-page .ms-view-switch button:focus:not(:focus-visible) { outline: none; }
+.ms-page .ms-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0; margin: 0; color: hsl(var(--muted-foreground)); font: 500 15px/1.4 var(--font-ui); }
 .ms-page .ms-summary > span + span::before { content: "·"; margin: 0 10px; color: hsl(var(--border)); }
 .ms-page .ms-summary-overlaps { color: hsl(var(--foreground)); font-weight: 600; }
 .ms-page .ms-card-overlap {
@@ -35134,3 +35132,20 @@ img[data-logo-loading] {
 .td-tool-page .td-hero:not(.is-compact) .td-stack-note { grid-column: 2; }
 .td-stack-note a { color: var(--tool-accent-ink, var(--color-text)); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 @media (max-width: 640px) { .td-tool-page .td-hero:not(.is-compact) .td-stack-note { grid-column: 1 / -1; } }
+/* Ma stack, vue Par usage sur mobile : la scène gardait le format 4:3 du
+   bureau (238 px de haut à 390 px) et coupait les bulles. Format carré,
+   marges réduites. */
+@media (max-width: 640px) {
+  .ms-page .ms-bubble-canvas { aspect-ratio: 1 / 1; width: calc(100% - 16px); margin: 8px; }
+  /* La zone des bulles (75 % de large en 4:3, donc carrée) prend toute la
+     largeur de la scène carrée : toujours carrée, bulles rondes et plus grandes. */
+  .ms-page .ms-bubble-field { left: 0; width: 100%; }
+  .ms-page .ms-bubble-canvas--inside .ms-bubble-field { left: 20px; width: calc(100% - 40px); }
+}
+/* Stack vide : trois étapes, numérotées, sans suggestion d'outils. */
+.ms-page .ms-howto { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 980px; margin: 40px 0 0; padding: 0; list-style: none; counter-reset: ms-howto; }
+.ms-page .ms-howto li { display: grid; gap: 6px; padding: 20px; border: 1px solid hsl(var(--border)); border-radius: 16px; background: hsl(var(--card)); counter-increment: ms-howto; }
+.ms-page .ms-howto li::before { content: counter(ms-howto); display: grid; place-items: center; width: 28px; height: 28px; margin-bottom: 6px; border-radius: 50%; background: hsl(var(--foreground)); color: hsl(var(--background)); font: 600 13px/1 var(--font-ui); }
+.ms-page .ms-howto strong { font: 600 16px/1.3 var(--font-ui); color: hsl(var(--foreground)); }
+.ms-page .ms-howto span { font: 400 14px/1.5 var(--font-ui); color: hsl(var(--muted-foreground)); }
+@media (max-width: 760px) { .ms-page .ms-howto { grid-template-columns: 1fr; margin-top: 28px; } .ms-page .ms-howto li { grid-template-columns: 28px 1fr; column-gap: 12px; padding: 16px; } .ms-page .ms-howto li::before { grid-row: 1 / 3; margin: 0; } }

@@ -171,14 +171,21 @@ export default function CartPage() {
       {!empty && <button className="tt-button-primary" ref={addRef} onClick={() => setSearchOpen((open) => !open)} aria-expanded={searchOpen} aria-controls="ms-search"><Plus size={18} aria-hidden />{t("Ajouter un outil", "Add a tool")}</button>}
     </header>
 
-    {/* One factual line to read the whole stack at a glance. */}
-    {!empty && <p className="ms-summary">
-      <span>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}</span>
+    {/* One factual line to read the whole stack at a glance, with the view
+        switch on the same row: it stays in place in both views. */}
+    {!empty && <div className="ms-overview-bar">
+      <p className="ms-summary">
+        <span>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}</span>
       <span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span>
       <span className={overlapPairs > 0 ? "ms-summary-overlaps" : undefined}>{overlapPairs > 0
         ? t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""} possible${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} potential overlap${overlapPairs > 1 ? "s" : ""}`)
         : t("Aucun recoupement connu", "No known overlap")}</span>
-    </p>}
+    </p>
+      <div className="ms-view-switch" role="group" aria-label={t("Affichage de la stack", "Stack view")}>
+        <button type="button" aria-label={t("Cartes", "Cards")} title={t("Cartes", "Cards")} aria-pressed={mode === "stack"} onClick={() => chooseMode("stack")}><LayoutGrid size={21} aria-hidden /><span>{t("Cartes", "Cards")}</span></button>
+        <button type="button" aria-label={t("Par usage", "By use")} title={t("Par usage", "By use")} aria-pressed={mode === "map"} onClick={() => chooseMode("map")}><CircleDot size={21} aria-hidden /><span>{t("Par usage", "By use")}</span></button>
+      </div>
+    </div>}
     {empty && <p className="ms-empty-copy">{t("Ajoutez les outils que vous utilisez. ToolTrim organise automatiquement votre environnement.", "Add the tools you use. ToolTrim automatically organizes your environment.")}</p>}
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
       ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
@@ -209,20 +216,24 @@ export default function CartPage() {
       </>}
     </section>}
 
+    {/* Empty stack: what the page does, in three real steps. No suggested
+        tools (suggestions before typing were ruled out in V1). */}
+    {empty && <ol className="ms-howto" aria-label={t("Comment ça marche", "How it works")}>
+      <li><strong>{t("Ajoutez vos outils", "Add your tools")}</strong><span>{t("Cherchez-les par leur nom : ils se rangent seuls par domaine.", "Search them by name: they sort themselves by area.")}</span></li>
+      <li><strong>{t("Repérez les recoupements", "Spot the overlaps")}</strong><span>{t("ToolTrim signale les outils de votre stack qui font le même travail.", "ToolTrim flags the tools in your stack that do the same job.")}</span></li>
+      <li><strong>{t("Comparez avant d’ajouter", "Compare before adding")}</strong><span>{t("Sur chaque fiche, voyez ce qu’un nouvel outil recoupe dans votre stack.", "On every tool page, see what a new tool overlaps in your stack.")}</span></li>
+    </ol>}
+
     {!empty && <>
-      <div className="ms-toolbar">
-        {/* By use: the explorer's own navigation already filters by area. */}
-        {mode !== "map" && <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")}>
+      {/* Area tabs in Cards only: By use has its own area navigation. */}
+      {mode !== "map" && <div className="ms-toolbar">
+        <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")}>
           <button type="button" aria-pressed={activeFilter === "all"} onClick={() => chooseDomain("all")}>{t("Tous les outils", "All tools")}<span>{selectedTools.length}</span></button>
           {mapTerritories.map((territory) => <button key={territory.id} type="button" aria-pressed={activeFilter === territory.id} onClick={() => chooseDomain(territory.id)}>
             {territory.id === "assist" ? t("IA", "AI") : territory.label}<span>{territory.tools.length}</span>
           </button>)}
-        </div>}
-        <div className="ms-view-switch" role="group" aria-label={t("Affichage de la stack", "Stack view")}>
-          <button type="button" aria-label={t("Cartes", "Cards")} title={t("Cartes", "Cards")} aria-pressed={mode === "stack"} onClick={() => chooseMode("stack")}><LayoutGrid size={21} aria-hidden /><span>{t("Cartes", "Cards")}</span></button>
-          <button type="button" aria-label={t("Par usage", "By use")} title={t("Par usage", "By use")} aria-pressed={mode === "map"} onClick={() => chooseMode("map")}><CircleDot size={21} aria-hidden /><span>{t("Par usage", "By use")}</span></button>
         </div>
-      </div>
+      </div>}
       <div className={`ms-workspace${selected ? " ms-workspace--focused" : ""}`}>
         <div className="ms-overview">
           {mode === "map" ? <StackUsageExplorer territories={mapTerritories} navigationRequest={telescopeRequest} onDomainChange={setDomainFilter} lang={lang} selectedId={selected?.id} onNavigate={() => { if (selected) closeInspector(); }} onSelect={(slug) => selected && toolKey(selected) === slug ? closeInspector() : selectTool(slug)} /> : <section aria-labelledby="ms-list-title">
