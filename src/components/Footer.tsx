@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, Rocket } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
@@ -15,6 +15,8 @@ import logoToolTrim from "@/assets/logo-tooltrim.svg";
 const Footer = () => {
   const { t, prefix } = useLang();
   const year = new Date().getFullYear();
+  // On Ma stack itself, "Build my stack" would link to the page being read.
+  const onMyStack = /\/(ma-stack|my-stack)(\/|$)/.test(useLocation().pathname);
 
   return (
     <footer className="tt-footer" role="contentinfo">
@@ -35,10 +37,10 @@ const Footer = () => {
               </p>
             </div>
             <div className="tt-footer-actions" aria-label={t("Continuer avec ToolTrim", "Continue with ToolTrim")}>
-              <Link className="tt-footer-action tt-footer-action--primary" to={`${prefix}/ma-stack`}>
+              {!onMyStack && <Link className="tt-footer-action tt-footer-action--primary" to={`${prefix}/ma-stack`}>
                 <span>{t("Composer ma stack", "Build my stack")}</span>
                 <ArrowRight aria-hidden="true" />
-              </Link>
+              </Link>}
               <Link className="tt-footer-action tt-footer-action--secondary" to={`${prefix}/tools`}>
                 <span>{t("Explorer les outils", "Explore tools")}</span>
                 <ArrowRight aria-hidden="true" />

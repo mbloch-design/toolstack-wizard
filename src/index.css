@@ -35070,3 +35070,39 @@ img[data-logo-loading] {
   }
   @media (prefers-reduced-motion: reduce) { .ms-usage-bubble { transition: none; animation: none; } }
 }
+/* ── Ma stack : repasse design (7 oct.) ──
+   Même ton que la fiche outil : surfaces plates, filets fins, pilules,
+   sélecteur segmenté discret. Aucun dégradé (charte), aucun relief simulé.
+   Logique et structure de la V2 inchangées : seulement l'apparence. */
+/* Action principale en pilule, comme « Visiter le site ». */
+.ms-page .ms-header .tt-button-primary { min-height: 40px; padding: 0 18px; border-radius: var(--radius-pill); font-size: 14px; }
+/* Onglets de domaines : compteurs en simple chiffre gris, pas en pastille. */
+.ms-page .ms-domain-filters button { min-height: 48px; font-size: 14px; }
+.ms-page .ms-domain-filters button > span { min-width: 0; height: auto; padding: 0; background: transparent; color: hsl(var(--muted-foreground)); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; }
+.ms-page .ms-domain-filters button[aria-pressed="true"] > span { color: hsl(var(--foreground)); }
+/* Sélecteur Cartes / Par usage : segmenté fin, façon Apple. */
+.ms-page .ms-view-switch { gap: 2px; padding: 2px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); align-self: center; }
+.ms-page .ms-view-switch button { height: 32px; padding: 0 14px; gap: 6px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 500; }
+.ms-page .ms-view-switch button svg { width: 15px; height: 15px; }
+.ms-page .ms-view-switch button[aria-pressed="true"] { box-shadow: 0 1px 2px rgba(15, 15, 15, .08), 0 0 0 .5px rgba(15, 15, 15, .06); font-weight: 600; }
+/* Le titre répète l'onglet actif : gardé pour les lecteurs d'écran seulement. */
+.ms-page .ms-list-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* Cartes d'outils : blanches, filet fin, élévation au survol (comme le catalogue). */
+.ms-page .ms-tool.ms-tool-card {
+  background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 16px;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.ms-page .ms-tool.ms-tool-card:hover { background: hsl(var(--card)); border-color: hsl(var(--muted-foreground) / .35); box-shadow: 0 8px 24px rgba(15, 15, 15, .06); transform: translateY(-2px); }
+.ms-page .ms-tool.ms-tool-card.ms-tool--selected { border-color: hsl(var(--foreground)); outline: 0; }
+/* Vue Par usage : bulles plates, sans dégradé ni ombre interne. */
+.ms-page .ms-usage-stage { background: hsl(var(--secondary) / .45); }
+.ms-page .ms-usage-bubble { background: hsl(var(--card)); box-shadow: 0 1px 2px rgba(15, 15, 15, .04); border-color: hsl(var(--border)); }
+.ms-page .ms-usage-bubble:hover { border-color: hsl(var(--muted-foreground) / .4); box-shadow: 0 10px 28px rgba(15, 15, 15, .07); }
+.ms-page .ms-usage-bubble--selected { border-color: hsl(var(--foreground)); box-shadow: 0 10px 28px rgba(15, 15, 15, .07); }
+@media (prefers-reduced-motion: reduce) { .ms-page .ms-tool.ms-tool-card:hover { transform: none; } }
+/* Mobile : le sélecteur passe sous les onglets au lieu de les écraser. */
+@media (max-width: 640px) {
+  .ms-page .ms-toolbar { flex-wrap: wrap; row-gap: 0; }
+  .ms-page .ms-domain-filters { flex: 1 1 100%; order: 2; }
+  .ms-page .ms-view-switch { order: 1; margin: 0 0 4px auto; }
+}

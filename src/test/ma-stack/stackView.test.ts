@@ -20,7 +20,7 @@ describe("Mon Stack catalogue representation", () => {
     expect(stackCatalogPrice(tool("x"), "fr")).toBeNull();
     expect(stackCatalogPrice(tool("x", "design", { pricing: { free: "Essai gratuit 14 jours", paid: "" } }), "fr")).toBeNull();
     expect(stackCatalogPrice(tool("x", "design", { priceUndisclosed: true, pricing: { free: "Gratuit", paid: "" } }), "fr")).toBeNull();
-    expect(stackCatalogPrice(tool("x", "design", { pricing: { free: "", paid: "$12/mo, billed annually" }, pricingEn: { free: "", paid: "$12/mo, billed annually" } }), "en")).toBe("From 12 $/month");
+    expect(stackCatalogPrice(tool("x", "design", { pricing: { free: "", paid: "$12/mo, billed annually" }, pricingEn: { free: "", paid: "$12/mo, billed annually" } }), "en")).toBe("From $12/mo");
   });
   it("shows updated catalogue data rather than a stored price", () => {
     const selection = ["figma"];

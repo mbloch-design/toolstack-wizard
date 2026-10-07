@@ -201,7 +201,7 @@ export default function CartPage() {
       <div className={`ms-workspace${selected ? " ms-workspace--focused" : ""}`}>
         <div className="ms-overview">
           {mode === "map" ? <StackUsageExplorer territories={mapTerritories} navigationRequest={telescopeRequest} onDomainChange={setDomainFilter} lang={lang} selectedId={selected?.id} onNavigate={() => { if (selected) closeInspector(); }} onSelect={(slug) => selected && toolKey(selected) === slug ? closeInspector() : selectTool(slug)} /> : <section aria-labelledby="ms-list-title">
-            <h2 className="tt-section-title" id="ms-list-title">{activeFilter === "all" ? t("Tous les outils", "All tools") : visibleMap[0]?.label}</h2>
+            <h2 className="tt-section-title ms-list-title" id="ms-list-title">{activeFilter === "all" ? t("Tous les outils", "All tools") : visibleMap[0]?.label}</h2>
             <div className="ms-card-grid">{listTools.map(renderTool)}</div>
           </section>}
         </div>

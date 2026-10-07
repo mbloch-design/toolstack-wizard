@@ -45,8 +45,12 @@ export function stackCatalogPrice(tool: Pick<Tool, "pricing" | "pricingEn"> & { 
   const value = new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", { maximumFractionDigits: 2 }).format(Number((amount[2] || amount[3]).replace(",", ".")));
   const currency = amount[1] || amount[4];
   const unit = amount[5]?.toLowerCase();
-  const period = unit ? (/^(mo|month)/.test(unit) ? (lang === "en" ? "/month" : "/mois") : (lang === "en" ? "/year" : "/an")) : "";
-  return `${lang === "en" ? "From" : "Dès"} ${value} ${currency}${period}`;
+  const period = unit ? (/^(mo|month)/.test(unit) ? (lang === "en" ? "/mo" : "/mois") : (lang === "en" ? "/yr" : "/an")) : "";
+  // Same typography as the tool page: "$22.99/mo" in English, "22,99 $/mois"
+  // in French. Multi-letter codes (USD, $US…) stay after the amount.
+  const symbol = { USD: "$", EUR: "€", GBP: "£" }[currency.toUpperCase()] || currency;
+  const leading = lang === "en" && /^[$€£]$/.test(symbol);
+  return `${lang === "en" ? "From" : "Dès"} ${leading ? `${symbol}${value}` : `${value} ${symbol}`}${period}`;
 }
 
 export function knownStackAlternatives(source: ToolSummary | Tool, selected: ToolSummary[]) {
