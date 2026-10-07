@@ -2,7 +2,7 @@
 
 - Ajout à la fiche FR/EN des annuaires cités sur la page officielle Recognition : Startup Fame, Dang AI, Fazier, Tool Pilot, Findly.tools, LaunchNest, Tools Cafe, Lifto, Launchstag et Product Hunt.
 - Mention explicite que la liste est publiée par GeoRankers et ne vaut ni récompense ni évaluation indépendante du produit.
-- Source consignée dans `research/georankers-2026-09-28.md`. Build et prérendu à valider. Non publié.
+- Source consignée dans `research/georankers-2026-09-28.md`. Build de production et prérendu PASS ; inclus dans la publication main du 7 octobre 2026.
 
 ## 2026-10-07 — Seam UI : actualiser le positionnement et les preuves
 
@@ -10,7 +10,7 @@
 - Détail des connexions directes et de l'agrégateur Kie.ai, avec clés et facturation des modèles séparées de la licence à vie. Prix Indie 99 USD, Business 199 USD, Scale 249 USD recontrôlés ; essai de sept jours sans carte.
 - Ajout de l'estimation éditeur (600 images/mois, 13 h contre 3 h) avec ses hypothèses et exclusions. Elle est explicitement signalée comme simulation commerciale, non mesurée indépendamment par ToolTrim.
 - Scores inchangés ; leurs preuves FR/EN ont été actualisées. Aucun lien affilié fourni, lien et média officiel existants conservés.
-- Sources : `research/seamui-2026-10-07.md`. Build de production, prérendu FR/EN, SEO et budgets PASS. Non publié.
+- Sources : `research/seamui-2026-10-07.md`. Build de production, prérendu FR/EN, SEO et budgets PASS ; inclus dans la publication main du 7 octobre 2026.
 
 ## 2026-10-07 — My Best Resume : clarifier l'analyse et les options payantes
 
@@ -18,6 +18,7 @@
 - Distinction explicite entre le rapport des points forts gratuit et la génération/export du CV complet payants ; retrait de la formulation qui assimilait à tort ce rapport à un contrôle ATS.
 - Précision : informations professionnelles non vérifiées indépendamment, aucun score ATS universel ni garantie d'embauche.
 - Tarif officiel conservé : premier CV complet à 1,99 USD en achat unique, options complémentaires et abonnement facultatif distincts.
+- Build de production, SEO et budgets PASS ; inclus dans la publication main du 7 octobre 2026.
 
 ## 2026-10-05 — Mon Stack V2 : territoires d’usage et Focus contextuel
 
