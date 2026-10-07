@@ -35215,3 +35215,7 @@ img[data-logo-loading] {
   .ms-page .ms-card-price strong { font-size: 14px; }
   .ms-page .ms-card-price small { font-size: 11px; }
 }
+/* Colour code (7 Oct 2026): brand colour is identity only (icon shadow and
+   tint behind it). Meaning-carrying colour is kept for areas (hero, budget)
+   and orange for what is paid twice, so the overlap chip stays neutral. */
+.ms-page .ms-card-overlap { background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
