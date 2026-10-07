@@ -37,6 +37,7 @@ interface Props {
 
 export default function StackTelescope({ territories, lang, selectedId, onSelect, overlaps }: Props) {
   const en = lang === "en";
+  const rateDate = new Intl.DateTimeFormat(en ? "en-US" : "fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${CURRENCY_RATE_DATE}T00:00:00`));
   const [openId, setOpenId] = useState<string | null>(null);
   const [sizeBy, setSizeBy] = useState<"cost" | "tools">("cost");
   const { currency } = useCurrency();
@@ -107,7 +108,7 @@ export default function StackTelescope({ territories, lang, selectedId, onSelect
       <div className="ms-cost-summary">
         <p className="ms-cost-note">
           {[
-            totalCost.paid > 0 && (en ? `Entry plans of ${totalCost.paid} paid tool${totalCost.paid > 1 ? "s" : ""}, converted to ${currency} at the site's ${CURRENCY_RATE_DATE} rate.` : `Offres d’entrée de ${totalCost.paid} outil${totalCost.paid > 1 ? "s" : ""} payant${totalCost.paid > 1 ? "s" : ""}, converties en ${currency} au taux du ${CURRENCY_RATE_DATE}.`),
+            totalCost.paid > 0 && (en ? `Entry plans of ${totalCost.paid} paid tool${totalCost.paid > 1 ? "s" : ""}, converted to ${currency} at the site's rate of ${rateDate}.` : `Offres d’entrée de ${totalCost.paid} outil${totalCost.paid > 1 ? "s" : ""} payant${totalCost.paid > 1 ? "s" : ""}, converties en ${currency} au taux du ${rateDate}.`),
             totalCost.freemiumFree > 0 && (en ? `${totalCost.freemiumFree} freemium counted as free: open an area to mark the ones you pay.` : `${totalCost.freemiumFree} freemium comptés gratuits : ouvrez un domaine pour indiquer ceux que vous payez.`),
             totalCost.unknown > 0 && (en ? `${totalCost.unknown} without a checked price.` : `${totalCost.unknown} sans prix relevé.`),
           ].filter(Boolean).join(" ")}

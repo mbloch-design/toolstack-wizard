@@ -50,7 +50,7 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
   };
 
   return (
-    <section className="sg-section ms-section" aria-labelledby="ms-overlaps-section-title">
+    <section id="ms-overlaps" className="sg-section ms-section" aria-labelledby="ms-overlaps-section-title">
       <div className="sg-section-heading">
         <span className="sg-eyebrow">03 / {en ? "Overlaps" : "Recoupements"}</span>
         <h2 id="ms-overlaps-section-title">{en ? "What may be doing the same job?" : "Qu’est-ce qui fait peut-être doublon ?"}</h2>

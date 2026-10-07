@@ -27,6 +27,7 @@ type Line = { id: string; label: string; amount: number; tool?: ToolSummary; col
 
 export default function StackBudgetBreakdown({ territories, isPaid, currency, lang, onSelect }: Props) {
   const en = lang === "en";
+  const rateDate = new Intl.DateTimeFormat(en ? "en-US" : "fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${CURRENCY_RATE_DATE}T00:00:00`));
   const [view, setView] = useState<"tool" | "area">("tool");
   const [focus, setFocus] = useState<string | null>(null);
   const money = (amount: number) => formatAmount(Math.round(amount), currency, lang);
@@ -105,8 +106,8 @@ export default function StackBudgetBreakdown({ territories, isPaid, currency, la
         </div>
         <p className="sg-budget-note">
           {en
-            ? `Entry plans from the catalogue, not your invoices. Converted to ${currency} at the site's ${CURRENCY_RATE_DATE} rate. ${notCounted.length} tool${notCounted.length > 1 ? "s" : ""} not counted${freemiumFree > 0 ? `, including ${freemiumFree} freemium counted as free (mark the ones you pay in By use)` : ""}.`
-            : `Offres d’entrée du catalogue, pas vos factures. Converti en ${currency} au taux du ${CURRENCY_RATE_DATE}. ${notCounted.length} outil${notCounted.length > 1 ? "s" : ""} non compté${notCounted.length > 1 ? "s" : ""}${freemiumFree > 0 ? `, dont ${freemiumFree} freemium comptés gratuits (indiquez ceux que vous payez dans Par usage)` : ""}.`}
+            ? `Entry plans from the catalogue, not your invoices. Converted to ${currency} at the site's rate of ${rateDate}. ${notCounted.length} tool${notCounted.length > 1 ? "s" : ""} not counted${freemiumFree > 0 ? `, including ${freemiumFree} freemium counted as free (mark the ones you pay in By use)` : ""}.`
+            : `Offres d’entrée du catalogue, pas vos factures. Converti en ${currency} au taux du ${rateDate}. ${notCounted.length} outil${notCounted.length > 1 ? "s" : ""} non compté${notCounted.length > 1 ? "s" : ""}${freemiumFree > 0 ? `, dont ${freemiumFree} freemium comptés gratuits (indiquez ceux que vous payez dans Par usage)` : ""}.`}
         </p>
       </div>
     </section>
