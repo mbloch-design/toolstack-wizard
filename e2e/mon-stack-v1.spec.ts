@@ -18,8 +18,8 @@ test("empty → search → add → inspect → remove → undo → persist", asy
   await expect(page).toHaveURL(/ma-stack$/);
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await page.locator(".ms-tool").click();
-  await expect(page.locator(".ms-inspector")).toBeVisible();
-  await page.getByRole("button", { name: "Retirer de mes outils", exact: true }).click();
+  await expect(page.locator(".ms-tool-sheet")).toBeVisible();
+  await page.getByRole("button", { name: "Retirer de ma stack", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(0);
   await page.getByRole("button", { name: "Annuler", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(1);
@@ -42,7 +42,7 @@ test("tool profile adds with one click and its saved CTA opens stack context", a
   await expect(cta).toContainText("Dans ma stack");
   await cta.click();
   await expect(page).toHaveURL(/ma-stack\?outil=figma/);
-  await expect(page.locator(".ms-inspector h3")).toHaveText("Figma");
+  await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
   await page.getByRole("link", { name: "Voir la fiche complète", exact: true }).click();
   await expect(page).toHaveURL(/\/fr\/tool\/figma$/);
 });
@@ -54,23 +54,27 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
     await expect(page.locator(".ms-tool")).toHaveCount(slugs.length);
     await expect(page.locator(".ms-card-grid")).not.toHaveCount(0);
-    // Dashboard: an area bubble filters the budget, overlaps and tool tiles;
-    // a second click goes back to the whole stack.
-    await expect(page.locator(".ms-map-field .ms-telescope-bubble")).not.toHaveCount(0);
-    const bubble = page.locator(".ms-map-field .ms-telescope-bubble").first();
-    await bubble.click({ force: true });
-    await expect(bubble).toHaveAttribute("aria-pressed", "true");
-    await expect(page.locator(".ms-scope-chip")).toBeVisible();
+    // Area tabs filter My tools; All brings every tool back.
+    const tab = page.locator(".ms-domain-filters button").nth(1);
+    await tab.click();
+    await expect(tab).toHaveAttribute("aria-pressed", "true");
     expect(await page.locator(".ms-tool").count()).toBeLessThanOrEqual(slugs.length);
-    await bubble.click({ force: true });
-    await expect(page.locator(".ms-scope-chip")).toHaveCount(0);
+    await page.locator(".ms-domain-filters button").first().click();
     await expect(page.locator(".ms-tool")).toHaveCount(slugs.length);
+    // Edit mode: a minus badge removes a tool, Undo restores it.
+    await page.locator(".ms-tools-actions").getByRole("button", { name: lang === "fr" ? "Modifier" : "Edit" }).click();
+    await page.locator(".ms-card-remove").first().dispatchEvent("click"); // cards wiggle in edit mode
+    await expect(page.locator(".ms-tool")).toHaveCount(slugs.length - 1);
+    await page.getByRole("button", { name: lang === "fr" ? "Annuler" : "Undo", exact: true }).click();
+    await expect(page.locator(".ms-tool")).toHaveCount(slugs.length);
+    await page.locator(".ms-tools-actions").getByRole("button", { name: lang === "fr" ? "Terminé" : "Done" }).click();
     await page.locator(".ms-tool").first().focus();
     await page.keyboard.press("Enter");
-    await expect(page.locator(".ms-inspector")).toBeVisible();
-    await expect(page.locator(".ms-inspector h3")).toBeFocused();
+    await expect(page.locator(".ms-tool-sheet")).toBeVisible();
+    // The sheet is a dialog: focus moves inside it.
+    expect(await page.evaluate(() => !!document.activeElement?.closest(".ms-tool-sheet"))).toBe(true);
     await page.keyboard.press("Escape");
-    await expect(page.locator(".ms-inspector")).toHaveCount(0);
+    await expect(page.locator(".ms-tool-sheet")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
     const screenshotDir = "/private/tmp/tooltrim-mon-stack-v2";
     fs.mkdirSync(screenshotDir, { recursive: true });
@@ -142,10 +146,10 @@ test("corrupt main snapshot recovers its backup", async ({ page }) => {
 test("known alternatives stay contextual and selection stays in the workspace", async ({ page }) => {
   await page.addInitScript(({ key, state }) => localStorage.setItem(key, JSON.stringify(state)), { key, state: seed(["chatgpt", "claude", "figma"]) });
   await page.goto("/fr/ma-stack?outil=chatgpt", { waitUntil: "domcontentloaded" });
-  await expect(page.locator(".ms-inspector")).toContainText("Claude");
-  await expect(page.locator(".ms-inspector")).not.toContainText("Figma");
-  await page.locator(".ms-overlap-tool").filter({ hasText: "Claude" }).first().click();
-  await expect(page.locator(".ms-inspector h3")).toHaveText("Claude");
+  await expect(page.locator(".ms-tool-sheet")).toContainText("Claude");
+  await expect(page.locator(".ms-tool-sheet")).not.toContainText("Figma");
+  await page.locator(".ms-ts-other").filter({ hasText: "Claude" }).first().click();
+  await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Claude");
   await expect(page).toHaveURL(/ma-stack\?outil=claude/);
   await page.screenshot({ path: "/private/tmp/tooltrim-mon-stack-v2/fr-1440-context.png", fullPage: true });
 });

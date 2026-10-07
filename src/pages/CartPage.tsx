@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Plus, Search, Check, X } from "@/lib/icons";
+import { Plus, Search, Check, X, Minus, Pencil } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -8,13 +8,12 @@ import { AREA_COLORS } from "@/components/stack/StackAreaBoard";
 import StackBudgetBreakdown from "@/components/stack/StackBudgetBreakdown";
 import StackOverlapPairs, { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
 import StackFreemiumPlans from "@/components/stack/StackFreemiumPlans";
-import StackToolInspector from "@/components/stack/StackToolInspector";
+import StackToolSheet from "@/components/stack/StackToolSheet";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useCategories, useToolSummaries, useToolBySlug, type ToolSummary } from "@/hooks/useSupabaseData";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
 import { stackDisplayLabel, stackPlacement, stackMapTerritories, stackRelations } from "@/lib/stackUsage";
-import { getScrollTop, scrollToY } from "@/lib/scroll";
 import toolAccents from "@/data/toolAccents.json";
 import { useCurrency } from "@/hooks/useCurrency";
 import { useStackPaidPlans } from "@/hooks/useStackPaidPlans";
@@ -36,7 +35,7 @@ export default function CartPage() {
   const searchRef = useRef<HTMLInputElement>(null);
   const addRef = useRef<HTMLButtonElement>(null);
   const lastToolButton = useRef<HTMLButtonElement | null>(null);
-  const contextScroll = useRef<number | null>(null);
+  const [editing, setEditing] = useState(false);
   const selectedSlug = params.get("outil");
   const lookup = useMemo(() => new Map(tools.flatMap((tool) => [[tool.id, tool], [toolKey(tool), tool]] as [string, ToolSummary][])), [tools]);
   const selectedTools = useMemo(() => Array.from(new Map(state.pinnedToolSlugs.flatMap((slug) => {
@@ -53,7 +52,6 @@ export default function CartPage() {
   const { tool: detail } = useToolBySlug(selected ? toolKey(selected) : undefined);
   // The hook can retain the preceding detail while a new selection loads.
   const resolved = selected && detail?.id === selected.id ? detail : selected;
-  const relations = useMemo(() => resolved ? stackRelations(resolved, selectedTools, categories, lang) : [], [resolved, selectedTools, categories, lang]);
   // Potential overlaps per tool, with the same rule as the Focus panel
   // (explicit catalogue alternative or shared catalogue uses), so the cards,
   // the summary and the panel always say the same thing. No score, no advice
@@ -76,6 +74,10 @@ export default function CartPage() {
   const heroOverflow = heroOrder.length - heroApps.length;
   // Area colours of the budget ring, stable across the whole stack. Area colours stay those of the whole stack.
   const colorOf = (id: string) => AREA_COLORS[Math.max(0, mapTerritories.findIndex((territory) => territory.id === id)) % AREA_COLORS.length];
+  // Hero micro-bars (Screen Time style): tools and cost split by area, in the
+  // budget ring's colours, and the share of the cost that is paid twice.
+  const areaCosts = useMemo(() => mapTerritories.map((territory) => ({ id: territory.id, label: territory.label, tools: territory.tools.length, cost: stackMonthlyCost(territory.tools, plans.isPaid, currency, lang).total })), [mapTerritories, plans.paid, currency, lang]);
+  const amount = (value: number) => <><span className="ms-approx" aria-hidden="true">≈</span><span className="sr-only">≈ </span>{formatAmount(Math.round(value), currency, lang)}</>;
   // Freemium question (Michael, 7 Oct 2026): asked once per tool, at the start
   // of the story, because it sets both the budget and what is paid twice.
   const freemiumTools = selectedTools.filter((tool) => stackCatalogPrice(tool, lang) === "Freemium");
@@ -113,7 +115,6 @@ export default function CartPage() {
   function selectTool(slug: string) {
     const target = lookup.get(slug);
     if (target && !visibleIds.has(target.id)) setDomainFilter("all");
-    if (!selected) contextScroll.current = getScrollTop();
     const next = new URLSearchParams(params);
     next.set("outil", slug);
     setParams(next, { state: { skipScrollReset: true }, preventScrollReset: true });
@@ -123,13 +124,10 @@ export default function CartPage() {
     const next = new URLSearchParams(params);
     next.delete("outil");
     setParams(next, { replace: true, state: { skipScrollReset: true }, preventScrollReset: true });
-    const previous = contextScroll.current;
-    contextScroll.current = null;
     requestAnimationFrame(() => {
       const button = lastToolButton.current?.isConnected ? lastToolButton.current
         : selectedId ? document.querySelector<HTMLButtonElement>(`[data-tool-id="${CSS.escape(selectedId)}"]`) : null;
       button?.focus({ preventScroll: true });
-      if (previous !== null) scrollToY(previous, "instant");
     });
   }
   function removeTool(slug: string, name: string) {
@@ -151,7 +149,6 @@ export default function CartPage() {
       const next = new URLSearchParams(params);
       next.delete("outil");
       setParams(next, { replace: true, state: { skipScrollReset: true }, preventScrollReset: true });
-      contextScroll.current = null;
       lastToolButton.current = null;
     }
   }
@@ -165,15 +162,16 @@ export default function CartPage() {
     const accent = (toolAccents as Record<string, string>)[toolKey(tool)];
     // Two fixed zones: identity on top, then a footer on a hairline (price
     // left, overlap right) aligned across every card of a row.
-    return <button
-      key={tool.id}
+    const slug = state.pinnedToolSlugs.find((pinned) => lookup.get(pinned)?.id === tool.id) || toolKey(tool);
+    return <div key={tool.id} className="ms-card-wrap">
+    <button
       type="button"
       data-tool-id={tool.id}
       className={`ms-tool ms-tool-card${active ? " ms-tool--selected" : ""}`}
       style={accent ? ({ "--tool-accent": accent } as React.CSSProperties) : undefined}
-      aria-expanded={active}
-      aria-controls={active ? "ms-tool-context" : undefined}
-      onClick={(event) => { lastToolButton.current = event.currentTarget; active ? closeInspector() : selectTool(toolKey(tool)); }}
+      aria-haspopup="dialog"
+      tabIndex={editing ? -1 : undefined}
+      onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; active ? closeInspector() : selectTool(toolKey(tool)); }}
     >
       <span className="ms-card-top">
         <span className="ms-card-logo"><ToolLogo tool={tool} size={34} /></span>
@@ -185,59 +183,16 @@ export default function CartPage() {
           <span className="ms-card-overlap-name">{overlaps[0].name}</span>{overlaps.length > 1 && <span>+{overlaps.length - 1}</span>}
         </span>}
       </span>}
-    </button>;
-  }
-
-  function renderInspector(members: ToolSummary[]) {
-    return selected && members.some((tool) => tool.id === selected.id) && <div id="ms-tool-context" className="ms-context-slot">
-      <StackToolInspector key={selected.id} tool={resolved || selected} relations={relations} categories={categories} prefix={prefix} lang={lang} t={t} onClose={closeInspector} onSelect={selectTool} onRemove={() => removeTool(state.pinnedToolSlugs.find((slug) => lookup.get(slug)?.id === selected.id) || toolKey(selected), selected.name)} />
+    </button>
+    {/* Edit mode (iOS home screen): a minus badge removes the tool, with undo. */}
+    {editing && <button type="button" className="ms-card-remove" onClick={() => removeTool(slug, tool.name)} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}><Minus size={14} aria-hidden /></button>}
     </div>;
   }
 
-  return <main className="ms-page">
-    {/* Topbar breadcrumb like every other page ("Home / My stack"); a personal
-        page, so no structured data. */}
-    <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
-    {/* Hero, the whole stack at a glance: title, the four figures (each one
-        leads to the tile that explains it), the add action, and my tools as an
-        icon cluster with the costliest one in the middle. The dashboard below
-        breaks it down. */}
-    <header className={`sg-hero sg-hero--cluster ms-hero${empty ? " ms-hero--empty" : ""}`}>
-      <div className="sg-hero-copy">
-        <span className="sg-hero-pill">{t("Ma stack", "My stack")}</span>
-        <h1>{t("Mes outils", "My tools")}</h1>
-        <p className="sg-lead">{t("Retrouvez vos outils, les usages qu’ils couvrent et ce qu’ils coûtent.", "See your tools, the uses they cover and what they cost.")}</p>
-        {!empty && <>
-          <dl className="sg-stats ms-hero-stats">
-            <div><dt>{t("Outils", "Tools")}</dt><dd>{selectedTools.length}</dd><span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span></div>
-            <div><dt>{t("Coût mensuel", "Monthly cost")}</dt><dd>{stackCost.paid > 0 ? `≈ ${formatAmount(Math.round(stackCost.total), currency, lang)}` : t("Gratuit", "Free")}</dd><span>{stackCost.paid > 0 ? t(`${stackCost.paid} outil${stackCost.paid > 1 ? "s" : ""} payant${stackCost.paid > 1 ? "s" : ""}`, `${stackCost.paid} paid tool${stackCost.paid > 1 ? "s" : ""}`) : t("rien de payant", "nothing paid")}</span></div>
-            {/* The thread of the page: what I pay, and what I pay twice. */}
-            <div className={overlapScore.doubleTotal > 0 ? "ms-stat--overlaps" : undefined}><dt>{t("Payé en double", "Paid twice")}</dt><dd>{overlapScore.doubleTotal > 0 ? `≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)}` : (overlapPairs > 0 ? formatAmount(0, currency, lang) : t("Rien", "None"))}</dd>{overlapPairs > 0
-              ? <a className="ms-stat-link" href="#ms-overlaps" onClick={(event) => { event.preventDefault(); jumpTo("ms-overlaps"); }}>{t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} overlap${overlapPairs > 1 ? "s" : ""}`)} ↓</a>
-              : <span>{t("aucun recoupement connu", "no known overlap")}</span>}</div>
-          </dl>
-        </>}
-        {!empty && <button className="tt-button-primary ms-hero-add" ref={addRef} onClick={() => setSearchOpen((open) => !open)} aria-expanded={searchOpen} aria-controls="ms-search"><Plus size={18} aria-hidden />{t("Ajouter un outil", "Add a tool")}</button>}
-      </div>
-      {!empty && <div className="sg-cluster" aria-label={t("Mes outils", "My tools")}>
-        {heroApps.map((tool, i) => {
-          const pos = HERO_CLUSTER_SLOTS[i];
-          return <button key={tool.id} type="button" className="sg-cluster-app" title={tool.name} onClick={() => selectTool(toolKey(tool))}
-            style={{ left: `${(pos.x / 440) * 100}%`, top: `${(pos.y / 380) * 100}%`, width: `${(pos.s / 440) * 100}%`, aspectRatio: "1", ["--r" as string]: `${pos.r}deg`, animationDelay: `${-i * 0.7}s` }}>
-            <ToolLogo tool={tool} size={pos.s} className="sg-cluster-icon" /><span className="sr-only">{tool.name}</span>
-          </button>;
-        })}
-        {heroOverflow > 0 && <span className="sg-cluster-more" style={{ left: `${(HERO_CLUSTER_SLOTS[heroApps.length].x / 440) * 100}%`, top: `${(HERO_CLUSTER_SLOTS[heroApps.length].y / 380) * 100}%` }}>+{heroOverflow}</span>}
-      </div>}
-    </header>
 
-    {empty && <p className="ms-empty-copy">{t("Ajoutez les outils que vous utilisez. ToolTrim organise automatiquement votre environnement.", "Add the tools you use. ToolTrim automatically organizes your environment.")}</p>}
-    {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
-      ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
-      : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
-    {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupéré depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
-
-    {showSearch && <section className="ms-search" id="ms-search" aria-label={t("Ajouter un outil", "Add a tool")}>
+  // Add search: on top for an empty stack, in My tools otherwise (the add
+  // action is a quiet button there, not a hero CTA).
+  const searchPanel = showSearch && <section className="ms-search" id="ms-search" aria-label={t("Ajouter un outil", "Add a tool")}>
       <div className="ms-search-input"><Search size={20} aria-hidden /><input
         ref={searchRef}
         type="search"
@@ -259,7 +214,57 @@ export default function CartPage() {
           >{present ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}</button></li>;
         })}</ul>
       </>}
-    </section>}
+    </section>;
+
+  return <main className="ms-page">
+    {/* Topbar breadcrumb like every other page ("Home / My stack"); a personal
+        page, so no structured data. */}
+    <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
+    {/* Hero, the whole stack at a glance: title, the figures (each one leads
+        to the section that explains it), and my tools as an
+        icon cluster with the costliest one in the middle. The dashboard below
+        breaks it down. */}
+    <header className={`sg-hero sg-hero--cluster ms-hero${empty ? " ms-hero--empty" : ""}`}>
+      <div className="sg-hero-copy">
+        <span className="sg-hero-pill">{t("Ma stack", "My stack")}</span>
+        <h1>{t("Mes outils", "My tools")}</h1>
+        <p className="sg-lead">{t("Retrouvez vos outils, les usages qu’ils couvrent et ce qu’ils coûtent.", "See your tools, the uses they cover and what they cost.")}</p>
+        {!empty && <>
+          <dl className="sg-stats ms-hero-stats">
+            <div><dt>{t("Outils", "Tools")}</dt><dd>{selectedTools.length}</dd>
+              <span className="ms-stat-bar" aria-hidden="true">{areaCosts.map((area) => <i key={area.id} style={{ flexGrow: area.tools, background: colorOf(area.id) }} title={`${area.label} · ${area.tools}`} />)}</span><span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span></div>
+            <div><dt>{t("Coût mensuel", "Monthly cost")}</dt><dd>{stackCost.paid > 0 ? amount(stackCost.total) : t("Gratuit", "Free")}</dd>
+              <span className="ms-stat-bar" aria-hidden="true">{stackCost.total > 0 ? areaCosts.filter((area) => area.cost > 0).map((area) => <i key={area.id} style={{ flexGrow: area.cost, background: colorOf(area.id) }} title={`${area.label} · ${formatAmount(Math.round(area.cost), currency, lang)}`} />) : <i style={{ flexGrow: 1 }} />}</span><span>{stackCost.paid > 0 ? t(`${stackCost.paid} outil${stackCost.paid > 1 ? "s" : ""} payant${stackCost.paid > 1 ? "s" : ""}`, `${stackCost.paid} paid tool${stackCost.paid > 1 ? "s" : ""}`) : t("rien de payant", "nothing paid")}</span></div>
+            {/* The thread of the page: what I pay, and what I pay twice. */}
+            <div className={overlapScore.doubleTotal > 0 ? "ms-stat--overlaps" : undefined}><dt>{t("Payé en double", "Paid twice")}</dt><dd>{overlapScore.doubleTotal > 0 ? amount(overlapScore.doubleTotal) : (overlapPairs > 0 ? formatAmount(0, currency, lang) : t("Rien", "None"))}</dd>
+              {(() => {
+                const share = stackCost.total > 0 ? Math.min(1, overlapScore.doubleTotal / stackCost.total) : 0;
+                return <span className="ms-stat-bar ms-stat-bar--share" title={t(`${Math.round(share * 100)} % du coût mensuel`, `${Math.round(share * 100)}% of the monthly cost`)}>{share > 0 && <i style={{ flexGrow: share }} />}<i style={{ flexGrow: 1 - share }} /><em>{t(`${Math.round(share * 100)} % du coût`, `${Math.round(share * 100)}% of cost`)}</em></span>;
+              })()}{overlapPairs > 0
+              ? <a className="ms-stat-link" href="#ms-overlaps" onClick={(event) => { event.preventDefault(); jumpTo("ms-overlaps"); }}>{t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} overlap${overlapPairs > 1 ? "s" : ""}`)} ↓</a>
+              : <span>{t("aucun recoupement connu", "no known overlap")}</span>}</div>
+          </dl>
+        </>}
+      </div>
+      {!empty && <div className="sg-cluster" aria-label={t("Mes outils", "My tools")}>
+        {heroApps.map((tool, i) => {
+          const pos = HERO_CLUSTER_SLOTS[i];
+          return <button key={tool.id} type="button" className="sg-cluster-app" title={tool.name} onClick={() => selectTool(toolKey(tool))}
+            style={{ left: `${(pos.x / 440) * 100}%`, top: `${(pos.y / 380) * 100}%`, width: `${(pos.s / 440) * 100}%`, aspectRatio: "1", ["--r" as string]: `${pos.r}deg`, animationDelay: `${-i * 0.7}s` }}>
+            <ToolLogo tool={tool} size={pos.s} className="sg-cluster-icon" /><span className="sr-only">{tool.name}</span>
+          </button>;
+        })}
+        {heroOverflow > 0 && <span className="sg-cluster-more" style={{ left: `${(HERO_CLUSTER_SLOTS[heroApps.length].x / 440) * 100}%`, top: `${(HERO_CLUSTER_SLOTS[heroApps.length].y / 380) * 100}%` }}>+{heroOverflow}</span>}
+      </div>}
+    </header>
+
+    {empty && <p className="ms-empty-copy">{t("Ajoutez les outils que vous utilisez. ToolTrim organise automatiquement votre environnement.", "Add the tools you use. ToolTrim automatically organizes your environment.")}</p>}
+    {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
+      ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
+      : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
+    {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupéré depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
+
+    {empty && searchPanel}
 
     {/* Empty stack: what the page does, in three real steps. No suggested
         tools (suggestions before typing were ruled out in V1). */}
@@ -295,18 +300,26 @@ export default function CartPage() {
       <StackFreemiumPlans open={freemiumOpen} onOpenChange={setFreemiumSheet} freemium={freemiumTools} paid={plans} currency={currency} lang={lang} />
 
       <section className="sg-section ms-section ms-tools-section" aria-labelledby="ms-list-title">
-        <div className="sg-section-heading"><span className="sg-eyebrow">{t("Mes outils", "My tools")}</span><h2 id="ms-list-title">{t("Quel outil pour quoi ?", "Which tool does what?")}</h2></div>
+        <div className="ms-section-row">
+          <div className="sg-section-heading"><span className="sg-eyebrow">{t("Mes outils", "My tools")}</span><h2 id="ms-list-title">{t("Quel outil pour quoi ?", "Which tool does what?")}</h2></div>
+          <div className="ms-tools-actions">
+            <button type="button" className="ms-quiet-button" ref={addRef} onClick={() => { setEditing(false); setSearchOpen((open) => !open); }} aria-expanded={searchOpen} aria-controls="ms-search"><Plus size={16} aria-hidden />{t("Ajouter", "Add")}</button>
+            <button type="button" className="ms-quiet-button" aria-pressed={editing} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? <Check size={16} aria-hidden /> : <Pencil size={16} aria-hidden />}{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</button>
+          </div>
+        </div>
+        {searchPanel}
         <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")}>
           <button type="button" aria-pressed={activeFilter === "all"} onClick={() => chooseDomain("all")}>{t("Tous", "All")}<span>{selectedTools.length}</span></button>
           {mapTerritories.map((territory) => <button key={territory.id} type="button" aria-pressed={activeFilter === territory.id} onClick={() => chooseDomain(territory.id)}>
             {territory.id === "assist" ? t("IA", "AI") : territory.label}<span>{territory.tools.length}</span>
           </button>)}
         </div>
-        <div className={`ms-workspace${selected ? " ms-workspace--focused" : ""}`}>
-          <div className="ms-overview"><div className="ms-card-grid">{listTools.map(renderTool)}</div></div>
-          {selected && <aside className="ms-focus-rail">{renderInspector(selectedTools)}</aside>}
-        </div>
+        <div className="ms-card-grid" data-editing={editing || undefined}>{listTools.map(renderTool)}</div>
       </section>
+
+      <StackToolSheet tool={selected || null} detail={resolved} pairs={overlapScore.pairs} categories={categories} paid={plans} currency={currency} prefix={prefix} lang={lang}
+        onClose={closeInspector} onSelect={selectTool}
+        onRemove={() => selected && removeTool(state.pinnedToolSlugs.find((slug) => lookup.get(slug)?.id === selected.id) || toolKey(selected), selected.name)} />
       {missing.length > 0 && <section className="ms-unavailable"><h2>{t("Outils indisponibles", "Unavailable tools")}</h2>
         <p>{t("Ces références ne sont plus disponibles dans le catalogue actuel. Votre sélection est conservée.", "These references are unavailable in the current catalogue. Your selection is retained.")}</p>
         {missing.map((slug) => <div key={slug}><span>{slug}</span><button onClick={() => removeTool(slug, slug)}>{t("Retirer de ma stack", "Remove from stack")}</button></div>)}
