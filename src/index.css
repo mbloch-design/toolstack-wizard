@@ -34647,11 +34647,7 @@ img[data-logo-loading] {
 
   .ms-page { max-width: 1440px; margin: 0 auto; padding: var(--space-2xl) var(--space-2xl) var(--space-3xl); color: hsl(var(--foreground)); font-family: var(--font-ui); }
 
-  .ms-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-lg); margin-bottom: var(--space-xl); }
-
-  .ms-header h1 { font-family: var(--font-brand); font-size: var(--tt-size-page-title); line-height: 1.1; letter-spacing: -0.04em; margin: 0 0 var(--space-sm); }
-
-  .ms-header p, .ms-empty-copy { font-size: var(--tt-size-body-large); line-height: 1.5; }
+  .ms-empty-copy { font-size: var(--tt-size-body-large); line-height: 1.5; }
 
   .ms-empty-copy { max-width: 620px; margin: var(--space-2xl) 0 var(--space-lg); }
 
@@ -34677,8 +34673,6 @@ img[data-logo-loading] {
 
   .ms-results button:disabled { opacity: 0.55; }
 
-  .ms-toolbar { display: flex; align-items: center; gap: var(--space-lg); margin-bottom: var(--space-xl); border-bottom: 1px solid hsl(var(--border)); }
-
   .ms-domain-filters { display: flex; flex: 1; min-width: 0; gap: var(--space-lg); overflow-x: auto; scrollbar-width: thin; }
 
   .ms-domain-filters button { display: inline-flex; align-items: center; flex-shrink: 0; gap: var(--space-xs); min-height: 60px; padding: var(--space-sm) 0; border-bottom: 2px solid transparent; white-space: nowrap; color: hsl(var(--muted-foreground)); font-size: var(--tt-size-card-body); font-weight: 500; }
@@ -34687,209 +34681,11 @@ img[data-logo-loading] {
 
   .ms-domain-filters button > span { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 24px; padding: 0 var(--space-2xs); border-radius: var(--radius-pill); background: hsl(var(--secondary)); font-size: var(--tt-size-kicker); color: hsl(var(--foreground)); }
 
-  .ms-view-switch { display: flex; flex-shrink: 0; gap: var(--space-2xs); padding: var(--space-2xs); border-radius: var(--tt-surface-radius-info); background: hsl(var(--secondary)); }
-
-  .ms-view-switch button { display: inline-flex; align-items: center; justify-content: center; width: auto; height: 44px; border-radius: var(--tt-surface-radius-info); color: hsl(var(--muted-foreground)); padding: 0 var(--space-sm); gap: var(--space-xs); font-size: var(--tt-size-card-body); font-weight: 600; }
-
-  .ms-view-switch button[aria-pressed="true"] { background: hsl(var(--card)); color: hsl(var(--foreground)); box-shadow: none; }
-
-  .ms-territories { display: grid; gap: var(--space-lg); }
-
-  .ms-territory { min-width: 0; }
-
-  .ms-tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-xs) var(--space-lg); }
-
   .ms-tool { display: flex; align-items: center; text-align: left; gap: var(--space-sm); min-width: 0; width: 100%; padding: var(--space-xs) var(--space-sm); border-radius: var(--tt-surface-radius-info); background: transparent; transition: background 160ms ease; }
 
   .ms-tool:hover, .ms-tool--selected { background: hsl(var(--secondary)); }
 
   .ms-tool--selected { outline: 1px solid hsl(var(--border)); }
-
-  .ms-tool-copy { display: flex; flex-direction: column; gap: var(--space-2xs); min-width: 0; }
-
-  .ms-tool-copy strong { font-size: var(--tt-size-body); font-weight: 600; overflow-wrap: anywhere; }
-
-  .ms-tool-copy > span { font-size: var(--tt-size-card-body); line-height: 1.4; overflow-wrap: anywhere; }
-
-  .ms-territories--map { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--space-2xl) var(--space-xl); }
-
-  .ms-territories--map .ms-territory { flex: 1 1 260px; padding: 0; }
-
-  .ms-territories--map .ms-territory--wide { flex-basis: calc(66.666% - var(--space-xl)); }
-
-  .ms-map-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: var(--space-lg); align-items: start; }
-
-  .ms-map-group { min-width: 0; padding-left: var(--space-sm); border-left: 1px solid hsl(var(--border)); }
-
-  .ms-map-group > h3 { font-family: var(--font-brand); font-size: var(--tt-size-section-intro); font-weight: 600; margin: 0 0 var(--space-sm); }
-
-  .ms-territories--map .ms-tools { grid-template-columns: 1fr; gap: var(--space-2xs); }
-
-  .ms-territories--map .ms-tool { padding: var(--space-xs); width: fit-content; max-width: 100%; min-height: 56px; }
-
-  .ms-context-slot { grid-column: 1 / -1; min-width: 0; }
-
-  .ms-inspector { margin: var(--space-sm) 0 var(--space-md); padding: 0; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); max-width: none; overflow: hidden; border-color: hsl(var(--border)); }
-
-  .ms-inspector-heading { display: grid; grid-template-columns: 52px minmax(0, 1fr) 44px; align-items: center; gap: var(--space-sm); padding: var(--space-md) var(--space-md) 0; margin: 0; }
-
-  .ms-inspector-identity { display: grid; gap: var(--space-2xs); min-width: 0; }
-
-  .ms-inspector-heading h3 { font-size: var(--tt-size-section-h); font-family: var(--font-brand); font-weight: 600; line-height: 1.08; margin: 0; }
-
-  .ms-inspector-heading h3:focus { outline: none; }
-
-  .ms-focus-eyebrow { font-size: var(--tt-size-kicker); color: hsl(var(--muted-foreground)); line-height: 1.3; margin: 0; }
-  .ms-inspector-close { align-self: start; color: hsl(var(--muted-foreground)); border-radius: var(--radius-pill); }
-  .ms-inspector-close svg { width: 28px; height: 28px; padding: var(--space-2xs); background: hsl(var(--secondary)); border-radius: var(--radius-pill); }
-  .ms-inspector-close:hover { color: hsl(var(--foreground)); }
-
-
-
-  .ms-inspector h4 { font-size: var(--tt-size-card-body); font-weight: 600; margin-bottom: var(--space-sm); }
-
-  .ms-usage-relations > div { display: grid; grid-template-columns: minmax(140px, 1fr) 2fr; align-items: center; gap: var(--space-md); padding: var(--space-sm) 0; border-top: 1px solid hsl(var(--border)); }
-
-  .ms-usage-relations dt { font-size: var(--tt-size-card-body); font-weight: 600; }
-
-  .ms-usage-relations dd, .ms-focus-neighbours > div { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-md); }
-
-  .ms-context-tool { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; padding: var(--space-2xs) var(--space-xs); text-align: left; border-radius: var(--tt-surface-radius-info); font-size: var(--tt-size-card-body); }
-
-  .ms-context-tool:hover { background: hsl(var(--background)); }
-
-  .ms-context-tool > span { overflow-wrap: anywhere; }
-
-  .ms-focus-note { font-size: var(--tt-size-kicker); line-height: 1.5; color: hsl(var(--muted-foreground)); margin-top: var(--space-sm); max-width: 66ch; }
-
-  .ms-focus-uses, .ms-focus-neighbours { margin-top: var(--space-md); }
-
-  .ms-focus-uses ul { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-md); list-style: none; font-size: var(--tt-size-card-body); line-height: 1.6; }
-
-  .ms-focus-uses li { padding-left: var(--space-sm); border-left: 1px solid hsl(var(--border)); }
-
-  .ms-map-group--selected { border-left-color: hsl(var(--foreground)); }
-
-  .ms-tool--related { box-shadow: inset 0 0 0 1px hsl(var(--foreground) / .25); }
-
-  .ms-tool-copy .ms-related-label { font-size: var(--tt-size-kicker); color: hsl(var(--muted-foreground)); }
-
-  .ms-inspector-actions { display: flex; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; margin-top: var(--space-lg); margin: 0; padding: var(--space-sm) var(--space-lg); border-top: 1px solid hsl(var(--border)); align-items: center; }
-
-  .ms-inspector-actions button { display: inline-flex; align-items: center; gap: var(--space-xs); min-height: 44px; font-size: var(--tt-size-card-body); }
-
-  .ms-inspector-actions a { font-weight: 600; }
-
-
-  .ms-territories--stack .ms-tools { grid-template-columns: 1fr; gap: 0; }
-
-  .ms-territories--stack .ms-tool { border-radius: 0; border-bottom: 1px solid hsl(var(--border)); padding: var(--space-md) var(--space-sm); }
-
-  .ms-territories--stack .ms-tool-copy { flex: 1; display: grid; grid-template-columns: minmax(160px, 1fr) minmax(120px, 1fr); align-items: center; gap: var(--space-md); }
-
-  .ms-list-price { margin-left: auto; font-size: var(--tt-size-card-body); text-align: right; }
-
-  .ms-territories--map .ms-map-group { background: hsl(var(--secondary) / .5); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); padding: var(--space-md); }
-
-  .ms-territories--map .ms-map-group--selected { border-color: hsl(var(--foreground)); }
-
-
-
-  .ms-focus-body { padding: var(--space-lg); background: hsl(var(--card)); }
-
-  .ms-focus-kicker { font-size: var(--tt-size-kicker); text-transform: uppercase; letter-spacing: .06em; color: hsl(var(--muted-foreground)); margin-bottom: var(--space-xs); }
-
-  .ms-inspector .ms-focus-message { font-size: var(--tt-size-body); line-height: 1.4; margin-bottom: var(--space-md); max-width: 55ch; }
-
-  .ms-focus-tool-list { display: grid; gap: 0; }
-
-  .ms-focus-tool-list .ms-context-tool { width: 100%; border: 1px solid hsl(var(--border)); border-radius: 0; background: hsl(var(--card)); padding: var(--space-xs) var(--space-sm); }
-
-  .ms-context-tool > svg:last-child { margin-left: auto; }
-
-  .ms-focus-uses { padding-top: var(--space-md); border-top: 1px solid hsl(var(--border)); }
-
-
-  .ms-inspector-actions button { color: hsl(var(--muted-foreground)); font-size: var(--tt-size-kicker); }
-
-
-
-  .ms-territories--stack .ms-list-price { flex-basis: 160px; }
-  @media (max-width: 639px) {
-  .ms-territories--stack .ms-tool-copy { display: flex; align-items: flex-start; gap: var(--space-2xs); } .ms-territories--stack .ms-list-price { flex-basis: 95px; } }
-
-  .ms-workspace { min-width: 0; }
-
-  .ms-workspace--focused { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: var(--space-lg); align-items: start; }
-
-  .ms-focus-rail { position: sticky; top: calc(var(--navbar-h) + var(--space-lg)); min-width: 0; }
-
-  .ms-focus-rail .ms-inspector { margin: 0; }
-
-
-
-
-
-  .ms-focus-rail .ms-focus-body { padding: var(--space-md); }
-
-  .ms-inspector .ms-focus-message { font-size: var(--tt-size-card-body); margin-bottom: var(--space-xs); }
-
-  .ms-focus-rail .ms-usage-relations > div { grid-template-columns: 1fr; gap: var(--space-2xs); }
-
-  .ms-focus-rail .ms-inspector-actions { padding: var(--space-md); flex-direction: row; flex-wrap: nowrap; align-items: center; gap: var(--space-xs); }
-
-  .ms-focus-rail .ms-inspector-actions a { justify-content: center; flex: 1; min-width: 0; }
-
-  .ms-focus-rail .ms-inspector-actions button { justify-content: center; }
-
-  .ms-territories--map.ms-has-selection .ms-tool:not(.ms-tool--selected):not(.ms-tool--related) { opacity: .55; }
-
-  .ms-territories--map .ms-tool--selected { background: hsl(var(--secondary)); color: hsl(var(--foreground)); outline: none; font-weight: 600; }
-
-  .ms-territories--map .ms-tool--related { background: hsl(var(--card)); box-shadow: inset 3px 0 hsl(var(--foreground)); }
-
-  .ms-focus-uses:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
-  @media (max-width: 900px) {
-  .ms-workspace--focused { grid-template-columns: 1fr; } .ms-focus-rail { position: static; grid-row: 1; } }
-
-  .ms-territories--map.ms-has-selection .ms-tool:not(.ms-tool--selected):not(.ms-tool--related) { opacity: 1; }
-
-  .ms-territories--map .ms-map-group { background: transparent; border: 0; padding: 0; }
-
-  .ms-territories--map .ms-map-group > h3 { padding-bottom: var(--space-xs); border-bottom: 1px solid hsl(var(--border)); font-size: var(--tt-size-card-body); }
-
-  .ms-map-groups { gap: var(--space-lg); grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); }
-
-  .ms-list-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 120px; gap: var(--space-md); padding: 0 var(--space-sm) var(--space-xs) var(--space-3xl); font-size: var(--tt-size-kicker); color: hsl(var(--muted-foreground)); border-bottom: 1px solid hsl(var(--border)); }
-
-  .ms-list-head > span:last-child { text-align: right; }
-
-  .ms-territories--stack .ms-list-price { flex-basis: 120px; }
-
-  .ms-territories--stack .ms-tool-copy { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
-
-  .ms-territories--stack .ms-tool-copy > span { color: hsl(var(--muted-foreground)); }
-
-  .ms-tool-copy:empty { display: none; }
-  @media (max-width: 900px) { }
-  @media (max-width: 639px) {
-  .ms-list-head { display: none; } }
-
-  .ms-focus-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-xs); margin: var(--space-sm) var(--space-md) 0; font-size: var(--tt-size-card-body); line-height: 1.4; }
-  .ms-focus-price > span { color: hsl(var(--muted-foreground)); }
-  .ms-focus-price > strong { font-weight: 500; }
-  .ms-focus-summary { font-size: var(--tt-size-card-body); line-height: 1.5; margin: 0; }
-  .ms-focus-overlaps { margin-top: var(--space-lg); }
-  .ms-focus-overlaps > div { display: grid; gap: var(--space-2xs); }
-  .ms-overlap-tool { display: flex; align-items: center; gap: var(--space-sm); width: 100%; padding: var(--space-sm); text-align: left; background: transparent; border-radius: var(--tt-surface-radius-info); transition: background-color 150ms ease; }
-  .ms-overlap-tool:hover { background: hsl(var(--secondary) / 0.5); }
-  .ms-overlap-tool:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 2px; background: hsl(var(--secondary) / 0.5); }
-  .ms-overlap-tool > span { display: grid; gap: var(--space-2xs); flex: 1; min-width: 0; font-size: var(--tt-size-card-body); line-height: 1.4; }
-  .ms-overlap-tool strong { font-weight: 600; }
-  .ms-overlap-tool > span > span { color: hsl(var(--muted-foreground)); font-size: var(--tt-size-kicker); }
-  .ms-overlap-tool > svg { flex-shrink: 0; color: hsl(var(--muted-foreground)); }
-  .ms-overlap-tool:hover > svg { color: hsl(var(--foreground)); }
-  @media (min-width: 901px) { .ms-focus-rail .ms-inspector { max-height: calc(100dvh - var(--navbar-h) - var(--space-2xl)); overflow-y: auto; scrollbar-width: thin; } }
   .ms-storage-notice { font-size: var(--tt-size-card-body); line-height: 1.5; margin-bottom: var(--space-lg); }
 
   .ms-unavailable { margin-top: var(--space-xl); }
@@ -34901,190 +34697,38 @@ img[data-logo-loading] {
   .ms-unavailable button { min-height: 44px; flex-shrink: 0; font-size: var(--tt-size-card-body); }
 
   .ms-page button:focus-visible, .ms-page a:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 3px; }
-  @media (max-width: 1023px) {
-  .ms-territories--map .ms-territory--wide { flex-basis: 100%; } }
   @media (max-width: 639px) {
   .ms-page { padding: var(--space-lg) var(--space-md) var(--space-2xl); }
 
-  .ms-toolbar { gap: var(--space-sm); }
-
   .ms-domain-filters { gap: var(--space-md); }
 
-  .ms-header { align-items: flex-start; flex-direction: column; }
-
-  .ms-header p, .ms-empty-copy { font-size: var(--tt-size-body); }
+  .ms-empty-copy { font-size: var(--tt-size-body); }
 
   .ms-empty-copy { margin-top: var(--space-lg); }
-
-  .ms-territories--map { display: grid; }
-
-  .ms-map-groups, .ms-tools { grid-template-columns: 1fr; }
-
-  .ms-territories--map .ms-territory { padding: 0; }
-
-  .ms-inspector { padding: 0; }
-
-  .ms-inspector-heading { flex-wrap: wrap; }
-
-
-
-  .ms-usage-relations > div { grid-template-columns: 1fr; gap: var(--space-2xs); }
-
-  .ms-inspector-actions { flex-direction: column; }
   }
   @media (prefers-reduced-motion: reduce) {
   .ms-tool { transition: none; } }
 }
 
 @layer components {
-  .ms-overview { min-width: 0; }
   .ms-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-md); margin-top: var(--space-md); }
   .ms-tool.ms-tool-card { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; column-gap: var(--space-sm); row-gap: var(--space-xs); padding: var(--space-md); background: hsl(var(--secondary) / .4); border: 1px solid transparent; border-radius: var(--tt-surface-radius-info); align-items: start; align-content: start; transition: background 160ms ease, border-color 160ms ease; }
   .ms-tool-card > :first-child { grid-column: 1; grid-row: 1 / 3; }
-  .ms-tool-card .ms-tool-copy { display: grid; gap: var(--space-2xs); min-width: 0; }
-  .ms-tool-card .ms-tool-copy strong { font-size: var(--tt-size-card-body); line-height: 1.3; overflow-wrap: normal; }
-  .ms-tool-card .ms-tool-copy > span { font-size: var(--tt-size-card-body); line-height: 1.4; color: hsl(var(--muted-foreground)); }
-  .ms-tool.ms-tool-card .ms-list-price { grid-column: 2; text-align: left; font-size: var(--tt-size-kicker); color: hsl(var(--muted-foreground)); margin: 0; }
-  .ms-card-arrow { grid-column: 3; grid-row: 1 / 3; align-self: center; color: hsl(var(--muted-foreground)); opacity: .5; transition: opacity 160ms ease; }
   .ms-tool.ms-tool-card:hover { background: hsl(var(--secondary)); }
-  .ms-tool-card:hover .ms-card-arrow, .ms-tool-card:focus-visible .ms-card-arrow { opacity: 1; color: hsl(var(--foreground)); }
   .ms-tool.ms-tool-card.ms-tool--selected { background: hsl(var(--secondary)); border-color: hsl(var(--foreground)); }
-  .ms-usage-explorer { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: var(--space-sm) var(--space-lg); align-items: start; }
-  .ms-usage-nav { position: sticky; top: calc(var(--navbar-h) + var(--space-lg)); }
-  .ms-usage-nav button { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); width: 100%; padding: var(--space-xs) var(--space-sm); text-align: left; font-size: var(--tt-size-card-body); line-height: 1.4; border-radius: var(--tt-surface-radius-info); }
-  .ms-usage-nav .ms-usage-tree-count { color: hsl(var(--muted-foreground)); font-variant-numeric: tabular-nums; }
-  .ms-usage-nav button:hover { background: hsl(var(--secondary) / 0.5); }
-  .ms-usage-nav button[aria-current] { background: hsl(var(--secondary)); font-weight: 600; }
-  .ms-usage-nav button:disabled { cursor: default; }
-  .ms-usage-tree, .ms-usage-tree-groups, .ms-usage-tree-tools { list-style: none; padding: 0; margin: 0; }
-  .ms-usage-tree-root { margin-bottom: var(--space-xs); font-weight: 600; }
-  .ms-usage-tree-ancestor { font-weight: 600; }
-  .ms-usage-tree-groups, .ms-usage-tree-tools { margin-left: var(--space-sm); padding-left: var(--space-xs); border-left: 1px solid hsl(var(--border)); }
-  .ms-usage-nav .ms-usage-tree-tool { gap: var(--space-xs); }
-  .ms-usage-tree-tool .ms-usage-row-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .ms-usage-nav .ms-usage-tree-chevron--open { transform: rotate(90deg); }
-  .ms-usage-tree-count { flex-shrink: 0; }
-  .ms-usage-nav h3 { margin: 0 0 var(--space-xs); padding: var(--space-xs) var(--space-sm); font-size: var(--tt-size-card-body); font-weight: 600; color: hsl(var(--muted-foreground)); }
-  .ms-usage-row-label { flex: 1; min-width: 0; }
-  .ms-usage-nav button > svg { flex-shrink: 0; color: hsl(var(--muted-foreground)); }
-  .ms-usage-breadcrumb { min-width: 0; flex: 1; overflow-x: auto; scrollbar-width: thin; }
-  .ms-usage-breadcrumb ol { display: flex; flex-wrap: nowrap; gap: var(--space-xs); align-items: center; list-style: none; padding: 0; margin: 0; }
-  .ms-usage-breadcrumb li { flex-shrink: 0; white-space: nowrap; display: flex; align-items: center; gap: var(--space-xs); font-size: var(--tt-size-card-body); line-height: 1.4; }
-  .ms-usage-breadcrumb button { color: hsl(var(--muted-foreground)); cursor: pointer; text-decoration: underline; text-decoration-color: hsl(var(--border)); text-underline-offset: var(--space-2xs); }
-  .ms-usage-breadcrumb button:hover:not(:disabled) { color: hsl(var(--foreground)); text-decoration-color: currentColor; }
-  .ms-usage-breadcrumb button:disabled { cursor: default; }
-  .ms-usage-breadcrumb [aria-current] { font-weight: 600; }
-  .ms-usage-breadcrumb svg { color: hsl(var(--muted-foreground)); flex-shrink: 0; }
-  .ms-usage-stage { min-width: 0; overflow: hidden; background: hsl(var(--secondary) / 0.35); border-radius: var(--tt-surface-radius-panel); }
-  .ms-usage-stage-heading { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); padding: var(--space-sm) var(--space-md); border-bottom: 1px solid hsl(var(--border)); }
-  .ms-usage-stage-heading > span { flex-shrink: 0; color: hsl(var(--muted-foreground)); font-size: var(--tt-size-card-body); }
-  .ms-telescope-back { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2xs); min-height: 32px; padding: var(--space-2xs) var(--space-xs); flex-shrink: 0; border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); background: hsl(var(--card)); font-size: var(--tt-size-card-body); font-weight: 500; line-height: 1.4; }
-  .ms-telescope-back:hover:not(:disabled) { background: hsl(var(--secondary)); border-color: hsl(var(--muted-foreground)); }
-  .ms-telescope-back:disabled { opacity: .4; cursor: default; }
-  .ms-telescope-prices-button { flex-shrink: 0; min-height: 32px; padding: var(--space-2xs) var(--space-xs); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); background: hsl(var(--card)); font-size: var(--tt-size-card-body); font-weight: 500; white-space: nowrap; }
-  .ms-telescope-prices-button:hover { background: hsl(var(--secondary)); }
-  .ms-bubble-peek { z-index: 600; width: 320px; max-width: calc(100vw - 32px); padding: 8px; border-radius: var(--tt-surface-radius-info); }
-  .ms-bubble-peek header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px; font-size: var(--tt-size-card-body); }
-  .ms-bubble-peek header > span { color: hsl(var(--muted-foreground)); font-size: var(--tt-size-kicker); }
-  .ms-bubble-peek-list { max-height: 280px; overflow-y: auto; overscroll-behavior: contain; }
-  .ms-bubble-peek-list button { display: flex; align-items: center; gap: 12px; width: 100%; padding: 10px 8px; text-align: left; border-radius: var(--tt-surface-radius-info); }
-  .ms-bubble-peek-list button:hover, .ms-bubble-peek-list button:focus-visible { background: hsl(var(--secondary)); }
-  .ms-bubble-peek-list button > span { display: grid; gap: 3px; flex: 1; min-width: 0; }
-  .ms-bubble-peek-list strong { font-size: var(--tt-size-card-body); font-weight: 600; }
-  .ms-bubble-peek-list button > span > span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: var(--tt-size-kicker); line-height: 1.4; color: hsl(var(--muted-foreground)); }
-  .ms-bubble-peek-list svg { flex-shrink: 0; }
-  .ms-bubble-peek-explore { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; margin-top: 4px; padding: 10px 8px; border-top: 1px solid hsl(var(--border)); font-size: var(--tt-size-card-body); font-weight: 500; }
-  .ms-bubble-peek-explore:hover { background: hsl(var(--secondary)); }
-  .ms-telescope-prices-button { display: inline-flex; align-items: center; gap: var(--space-xs); }
-  .ms-telescope-prices-button > span { color: hsl(var(--muted-foreground)); }
-  .ms-budget-panel-total small { font-size: var(--tt-size-card-body); font-weight: 400; color: hsl(var(--muted-foreground)); }
-  .ms-budget-panel-total { margin: var(--space-xs) 0 0; font-family: var(--font-brand); font-size: var(--tt-size-fact); font-weight: 600; }
-  .ms-budget-group-heading { display: flex; justify-content: space-between; gap: var(--space-sm); }
-  .ms-budget-group-heading > span:last-child { color: hsl(var(--muted-foreground)); font-weight: 400; text-align: right; }
-  .ms-telescope-prices-button:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 3px; }
-  .ms-telescope-prices { z-index: 600; display: flex; flex-direction: column; width: 360px; max-width: calc(100vw - var(--space-md) * 2); max-height: min(480px, var(--radix-popover-content-available-height, 480px)); padding: var(--space-md); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); background: hsl(var(--card)); color: hsl(var(--foreground)); }
-  .ms-telescope-prices h3 { font-size: var(--tt-size-card-title); font-weight: 600; margin: 0; }
-  .ms-telescope-prices-note { margin: var(--space-2xs) 0 var(--space-sm); font-size: var(--tt-size-card-body); color: hsl(var(--muted-foreground)); }
-  .ms-telescope-prices-list { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
-  .ms-telescope-prices-list h4 { margin: var(--space-sm) 0 var(--space-2xs); font-size: var(--tt-size-card-body); font-weight: 600; }
-  .ms-telescope-prices-list section:first-child h4 { margin-top: 0; }
-  .ms-telescope-price-row { display: flex; align-items: center; gap: var(--space-sm); width: 100%; padding: var(--space-xs); text-align: left; border-radius: var(--tt-surface-radius-info); }
-  .ms-telescope-price-row:hover, .ms-telescope-price-row:focus-visible { background: hsl(var(--secondary)); }
-  .ms-telescope-price-copy { display: grid; gap: var(--space-2xs); flex: 1; min-width: 0; font-size: var(--tt-size-card-body); line-height: 1.4; }
-  .ms-telescope-price-copy strong { font-weight: 600; }
-  .ms-telescope-price-copy > span { color: hsl(var(--muted-foreground)); overflow-wrap: anywhere; }
-  .ms-telescope-price-row > svg { flex-shrink: 0; }
-  .ms-telescope-back:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 3px; }
-  .ms-bubble-canvas { position: relative; width: calc(100% - var(--space-md) * 2); aspect-ratio: 4 / 3; margin: var(--space-xs) var(--space-md) var(--space-md); }
-  .ms-bubble-field { position: absolute; left: 12.5%; top: 0; width: 75%; height: 100%; }
-  .ms-telescope-level-title { position: absolute; top: var(--space-xs); left: 0; margin: 0; max-width: 100%; font-family: var(--font-brand); font-size: var(--tt-size-fact); font-weight: 600; line-height: 1.25; }
-  .ms-bubble-canvas--inside .ms-bubble-field { top: 40px; left: calc(12.5% + 20px); width: calc(75% - 40px); height: calc(100% - 40px); }
-  .ms-usage-stage--moving .ms-usage-bubble { animation-play-state: paused; pointer-events: none; }
-  .ms-usage-bubble { container-type: size; position: absolute; aspect-ratio: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: var(--space-2xs); padding: var(--space-2xs); border: 1px solid hsl(var(--border)); border-radius: var(--radius-pill); background: radial-gradient(ellipse at 50% 22%, hsl(var(--card)) 0%, hsl(var(--card) / .65) 38%, hsl(var(--secondary) / .8) 72%, hsl(var(--border) / .85) 100%), hsl(var(--secondary)); box-shadow: inset 0 1px 8px hsl(var(--card) / .95), inset 0 -8px 20px hsl(var(--border) / .5); text-align: center; transition: box-shadow 180ms ease, border-color 180ms ease; }
-  .ms-bubble-content { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2xs); width: 76%; height: 76%; min-height: 0; }
-  .ms-bubble-content > * { flex-shrink: 0; }
-  .ms-usage-bubble strong { max-width: 100%; font-size: var(--tt-size-card-body); font-weight: 600; line-height: 1.2; overflow-wrap: normal; }
-  .ms-bubble-logos { display: flex; align-items: center; justify-content: center; padding-block: 0; }
-  .ms-bubble-logos > * { flex-shrink: 0; }
-  .ms-bubble-logos > * + * { margin-left: calc(var(--space-2xs) * -1); }
-  .ms-bubble-budget { display: grid; gap: 2px; color: hsl(var(--muted-foreground)); font-size: var(--tt-size-kicker); line-height: 1.2; max-width: 100%; }
-  .ms-bubble-budget > span { white-space: nowrap; }
-  .ms-bubble-budget small { font-size: .85em; margin-left: 2px; }
-  .ms-bubble-count { color: hsl(var(--muted-foreground)); font-size: var(--tt-size-card-body); line-height: 1.2; }
-  @container (max-width: 140px) {
-    .ms-bubble-content .ms-bubble-count { display: none; }
-    .ms-bubble-content .ms-bubble-tool-logo, .ms-bubble-logos > * { width: 28px !important; height: 28px !important; min-width: 28px !important; min-height: 28px !important; }
-  }
-  @container (max-width: 110px) {
-    .ms-bubble-content { width: 84%; height: 84%; gap: 2px; }
-    .ms-bubble-budget { font-size: 10px; }
-    .ms-bubble-content strong { font-size: var(--tt-size-kicker); line-height: 1.2; }
-    .ms-bubble-content .ms-bubble-tool-logo, .ms-bubble-logos > * { width: 22px !important; height: 22px !important; min-width: 22px !important; min-height: 22px !important; padding: 2px !important; }
-  }
-  @container (max-width: 90px) {
-    .ms-bubble-logos > :nth-child(n + 2) { display: none; }
-  }
-  .ms-usage-bubble { animation: ms-bubble-drift 7s ease-in-out infinite; }
-  .ms-usage-bubble:nth-child(3n + 1) { animation-duration: 9s; animation-delay: -4s; }
-  .ms-usage-bubble:nth-child(3n + 2) { animation-duration: 10s; animation-delay: -8s; animation-direction: reverse; }
-  .ms-usage-bubble:nth-child(3n) { animation-delay: -2s; }
-  .ms-bubble-canvas:hover .ms-usage-bubble, .ms-bubble-canvas:focus-within .ms-usage-bubble { animation-play-state: paused; }
-  @keyframes ms-bubble-drift {
-    0%, 100% { transform: translate(-1px, 1px); border-radius: 50% 49.5% 50% 50.5%; }
-    35% { transform: translate(2px, -2px); border-radius: 49.5% 50.5% 49.5% 50.5%; }
-    70% { transform: translate(-2px, -1px); border-radius: 50.5% 50% 49.5% 50%; }
-  }
-  .ms-usage-bubble:hover { border-color: hsl(var(--muted-foreground) / .6); box-shadow: inset 0 1px 12px hsl(var(--card)), inset 0 -8px 24px hsl(var(--border) / .7); }
-  .ms-usage-bubble--selected { border-color: hsl(var(--foreground)); box-shadow: inset 0 1px 12px hsl(var(--card)), inset 0 -8px 24px hsl(var(--border) / .7); }
-  .ms-usage-bubble:focus-visible, .ms-usage-nav button:focus-visible, .ms-usage-breadcrumb button:focus-visible, .ms-tool-card:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 3px; }
-  .ms-workspace--focused .ms-usage-explorer { grid-template-columns: 150px minmax(0, 1fr); gap: var(--space-sm); }
-  @media (max-width: 1400px) {
-    .ms-workspace--focused:has(.ms-usage-explorer) { grid-template-columns: 1fr; }
-    .ms-workspace--focused:has(.ms-usage-explorer) .ms-focus-rail { position: static; grid-row: auto; }
-    .ms-workspace--focused .ms-usage-explorer { grid-template-columns: 240px minmax(0, 1fr); gap: var(--space-lg); }
-  }
+  .ms-tool-card:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 3px; }
   @media (max-width: 639px) {
-    .ms-usage-explorer, .ms-workspace--focused .ms-usage-explorer { grid-template-columns: 1fr; gap: var(--space-md); }
-    .ms-usage-nav { position: static; max-height: 220px; overflow-y: auto; }
     .ms-card-grid { grid-template-columns: 1fr; }
   }
-  @media (prefers-reduced-motion: reduce) { .ms-usage-bubble { transition: none; animation: none; } }
 }
 /* ── Ma stack : repasse design (7 oct.) ──
    Même ton que la fiche outil : surfaces plates, filets fins, pilules,
    sélecteur segmenté discret. Aucun dégradé (charte), aucun relief simulé.
    Logique et structure de la V2 inchangées : seulement l'apparence. */
-/* Action principale en pilule, comme « Visiter le site ». */
-.ms-page .ms-header .tt-button-primary { min-height: 40px; padding: 0 18px; border-radius: var(--radius-pill); font-size: 14px; }
 /* Onglets de domaines : compteurs en simple chiffre gris, pas en pastille. */
 .ms-page .ms-domain-filters button { min-height: 48px; font-size: 14px; }
 .ms-page .ms-domain-filters button > span { min-width: 0; height: auto; padding: 0; background: transparent; color: hsl(var(--muted-foreground)); font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; }
 .ms-page .ms-domain-filters button[aria-pressed="true"] > span { color: hsl(var(--foreground)); }
-/* Sélecteur Cartes / Par usage : segmenté fin, façon Apple. */
-.ms-page .ms-view-switch { gap: 2px; padding: 2px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); align-self: center; }
-.ms-page .ms-view-switch button { height: 32px; padding: 0 14px; gap: 6px; border-radius: var(--radius-pill); font-size: 13px; font-weight: 500; }
-.ms-page .ms-view-switch button svg { width: 15px; height: 15px; }
-.ms-page .ms-view-switch button[aria-pressed="true"] { box-shadow: 0 1px 2px rgba(15, 15, 15, .08), 0 0 0 .5px rgba(15, 15, 15, .06); font-weight: 600; }
 /* Le titre répète l'onglet actif : gardé pour les lecteurs d'écran seulement. */
 .ms-page .ms-list-title { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 /* Cartes d'outils : blanches, filet fin, élévation au survol (comme le catalogue). */
@@ -35099,39 +34743,11 @@ img[data-logo-loading] {
 
 /* Ma stack, lecture d'ensemble (7 oct.) : une ligne factuelle sous le titre,
    et sur chaque carte le recoupement possible, même règle que le panneau. */
-/* Ligne de synthèse + sélecteur de vue : même place dans les deux vues. */
-.ms-page .ms-overview-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; margin: -8px 0 24px; }
-.ms-page .ms-overview-bar .ms-view-switch { margin-left: auto; }
-.ms-page .ms-view-switch button:focus:not(:focus-visible) { outline: none; }
-.ms-page .ms-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0; margin: 0; color: hsl(var(--muted-foreground)); font: 500 15px/1.4 var(--font-ui); }
-.ms-page .ms-summary > span + span::before { content: "·"; margin: 0 10px; color: hsl(var(--border)); }
-.ms-page .ms-summary-overlaps { color: hsl(var(--foreground)); font-weight: 600; }
-.ms-page .ms-inspector-actions .tt-button-secondary { border-radius: var(--radius-pill); }
-/* Panneau Ma stack : chaque recoupement mène à la comparaison des deux outils. */
-.ms-page .ms-overlap-row { display: flex; align-items: center; gap: 8px; }
-.ms-page .ms-overlap-row .ms-overlap-tool { flex: 1; min-width: 0; }
-.ms-page .ms-overlap-compare {
-  flex: none; display: inline-flex; align-items: center; height: 30px; padding: 0 12px;
-  border: 1px solid hsl(var(--border)); border-radius: var(--radius-pill);
-  color: hsl(var(--foreground)); font: 600 12.5px/1 var(--font-ui); text-decoration: none;
-}
-.ms-page .ms-overlap-compare:hover { border-color: hsl(var(--foreground)); }
-.ms-page .ms-overlap-compare:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
 /* Fiche outil : rappel discret de ce que la stack contient déjà. */
 .td-stack-note { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; margin: 0; color: hsl(var(--muted-foreground)); font: 400 14px/1.45 var(--font-ui); }
 .td-tool-page .td-hero:not(.is-compact) .td-stack-note { grid-column: 2; }
 .td-stack-note a { color: var(--tool-accent-ink, var(--color-text)); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 @media (max-width: 640px) { .td-tool-page .td-hero:not(.is-compact) .td-stack-note { grid-column: 1 / -1; } }
-/* Ma stack, vue Par usage sur mobile : la scène gardait le format 4:3 du
-   bureau (238 px de haut à 390 px) et coupait les bulles. Format carré,
-   marges réduites. */
-@media (max-width: 640px) {
-  .ms-page .ms-bubble-canvas { aspect-ratio: 1 / 1; width: calc(100% - 16px); margin: 8px; }
-  /* La zone des bulles (75 % de large en 4:3, donc carrée) prend toute la
-     largeur de la scène carrée : toujours carrée, bulles rondes et plus grandes. */
-  .ms-page .ms-bubble-field { left: 0; width: 100%; }
-  .ms-page .ms-bubble-canvas--inside .ms-bubble-field { left: 20px; width: calc(100% - 40px); }
-}
 /* Stack vide : trois étapes, numérotées, sans suggestion d'outils. */
 .ms-page .ms-howto { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; max-width: 980px; margin: 40px 0 0; padding: 0; list-style: none; counter-reset: ms-howto; }
 .ms-page .ms-howto li { display: grid; gap: 6px; padding: 20px; border: 1px solid hsl(var(--border)); border-radius: 16px; background: hsl(var(--card)); counter-increment: ms-howto; }
@@ -35180,175 +34796,29 @@ img[data-logo-loading] {
    grands en pile. Compréhension : nom, nombre d'outils (ce que mesure la
    taille), prix ; légende d'une ligne. Fluidité : entrée en cascade à chaque
    niveau, léger agrandissement au survol. */
-.ms-page .ms-usage-stage { background: hsl(var(--card)); border: 1px solid hsl(var(--border)); }
-.ms-page .ms-usage-stage-heading { border-bottom: 0; padding-bottom: 4px; }
-.ms-page .ms-usage-legend { margin: 0; padding: 0 var(--space-md); color: hsl(var(--muted-foreground)); font: 400 12.5px/1.45 var(--font-ui); }
-.ms-page .ms-usage-bubble {
-  --bubble-color: #6F6F68;
-  background: color-mix(in srgb, var(--bubble-color) 9%, hsl(var(--card)));
-  border: 1.5px solid color-mix(in srgb, var(--bubble-color) 30%, hsl(var(--card)));
-  box-shadow: none;
-  transition: scale 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease, border-color 200ms ease, background-color 200ms ease;
-}
-.ms-page .ms-usage-bubble:hover, .ms-page .ms-usage-bubble:focus-visible {
-  border-color: color-mix(in srgb, var(--bubble-color) 65%, hsl(var(--card)));
-  background: color-mix(in srgb, var(--bubble-color) 14%, hsl(var(--card)));
-  box-shadow: 0 14px 32px color-mix(in srgb, var(--bubble-color) 18%, transparent);
-}
-.ms-page .ms-usage-bubble--selected { border-color: var(--bubble-color); box-shadow: 0 0 0 3px color-mix(in srgb, var(--bubble-color) 20%, transparent); }
-.ms-page .ms-usage-bubble strong { color: hsl(var(--foreground)); font-weight: 700; letter-spacing: -.01em; }
-.ms-page .ms-usage-bubble .ms-bubble-count { color: color-mix(in srgb, var(--bubble-color) 75%, #000); font-weight: 600; }
-.ms-page .ms-usage-bubble .ms-bubble-budget { color: hsl(var(--muted-foreground)); font-weight: 500; }
-.ms-page .ms-bubble-logos > * { border-radius: 10px; box-shadow: 0 0 0 2px hsl(var(--card)); background: hsl(var(--card)); }
-.ms-page .ms-bubble-logos > * + * { margin-left: -6px; }
-@container (min-width: 170px) {
-  .ms-page .ms-usage-bubble strong { font-size: 18px; }
-  .ms-page .ms-bubble-logos > * { width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .ms-page .ms-usage-bubble { animation: ms-bubble-enter 520ms cubic-bezier(0.2, 0.8, 0.2, 1) var(--bubble-delay, 0ms) backwards, ms-bubble-drift 8s ease-in-out calc(var(--bubble-delay, 0ms) + 520ms) infinite; }
-  /* "scale", not "transform": the drift animation owns transform. */
-  .ms-page .ms-usage-bubble:hover { scale: 1.035; }
-}
-@keyframes ms-bubble-enter { from { opacity: 0; scale: .82; } }
 /* ── Ma stack, vue Par usage en tableau de domaines (7 oct.) ──
    Une carte par domaine : pastille de couleur, nom, nombre d'outils, budget
    d'entrée ; puis ses usages et leurs outils (logo, nom, prix). Couleurs en
    aplats légers, pas de dégradé. Entrée en cascade, survol discret. */
-.ms-page .ms-board { display: grid; gap: 18px; }
-.ms-page .ms-board-total { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 0; }
-.ms-page .ms-board-total span { color: hsl(var(--muted-foreground)); font: 500 14px/1.4 var(--font-ui); }
-.ms-page .ms-board-total strong { color: hsl(var(--foreground)); font: 650 20px/1.2 var(--font-ui); letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
-.ms-page .ms-board-total small { flex-basis: 100%; color: hsl(var(--muted-foreground)); font: 400 12.5px/1.45 var(--font-ui); }
-.ms-page .ms-board-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; align-items: start; }
-.ms-page .ms-area {
-  --area-color: #6F6F68;
-  overflow: hidden; border: 1px solid hsl(var(--border)); border-radius: 18px; background: hsl(var(--card));
-}
-.ms-page .ms-area-head {
-  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "dot name budget" "dot count budget";
-  align-items: center; column-gap: 12px; row-gap: 1px; padding: 16px 18px;
-  background: color-mix(in srgb, var(--area-color) 8%, hsl(var(--card)));
-  border-bottom: 1px solid color-mix(in srgb, var(--area-color) 20%, hsl(var(--border)));
-}
-.ms-page .ms-area-dot { grid-area: dot; width: 12px; height: 12px; border-radius: 50%; background: var(--area-color); box-shadow: 0 0 0 4px color-mix(in srgb, var(--area-color) 18%, transparent); }
-.ms-page .ms-area-head h3 { grid-area: name; margin: 0; overflow: hidden; color: hsl(var(--foreground)); font: 700 17px/1.2 var(--font-ui); letter-spacing: -.01em; text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .ms-area-count { grid-area: count; color: color-mix(in srgb, var(--area-color) 72%, #000); font: 600 12.5px/1.3 var(--font-ui); }
-.ms-page .ms-area-budget { grid-area: budget; color: hsl(var(--foreground)); font: 600 13px/1.2 var(--font-ui); white-space: nowrap; font-variant-numeric: tabular-nums; }
-.ms-page .ms-area-group { padding: 10px 10px 4px; }
-.ms-page .ms-area-group + .ms-area-group { border-top: 1px solid hsl(var(--border) / .7); }
-.ms-page .ms-area-group h4 { margin: 2px 8px 6px; color: hsl(var(--muted-foreground)); font: 600 12px/1.3 var(--font-ui); }
-.ms-page .ms-area-group ul { display: grid; gap: 2px; margin: 0 0 6px; padding: 0; list-style: none; }
-.ms-page .ms-area-tool {
-  display: flex; align-items: center; gap: 10px; width: 100%; min-height: 44px; padding: 6px 8px; border-radius: 10px;
-  background: transparent; color: hsl(var(--foreground)); text-align: left; transition: background-color 160ms ease;
-}
-.ms-page .ms-area-tool:hover { background: color-mix(in srgb, var(--area-color) 7%, hsl(var(--card))); }
-.ms-page .ms-area-tool[aria-pressed="true"] { background: color-mix(in srgb, var(--area-color) 12%, hsl(var(--card))); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--area-color) 40%, transparent); }
-.ms-page .ms-area-tool:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 1px; }
-.ms-page .ms-area-tool-name { flex: 1; min-width: 0; overflow: hidden; font: 600 14px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .ms-area-tool-price { flex: none; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.2 var(--font-ui); white-space: nowrap; font-variant-numeric: tabular-nums; }
-@media (prefers-reduced-motion: no-preference) {
-  .ms-page .ms-area { animation: ms-area-enter 480ms cubic-bezier(0.2, 0.8, 0.2, 1) var(--area-delay, 0ms) backwards; }
-}
-@keyframes ms-area-enter { from { opacity: 0; transform: translateY(10px); } }
-@media (max-width: 640px) { .ms-page .ms-board-grid { grid-template-columns: 1fr; } }
-.ms-page .ms-area-tool-overlap { flex: 0 1 auto; min-width: 0; max-width: 45%; overflow: hidden; padding: 3px 8px; border-radius: var(--radius-pill); background: color-mix(in srgb, var(--area-color) 10%, hsl(var(--card))); color: hsl(var(--foreground)); font: 600 11.5px/1.2 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
-@media (max-width: 640px) { .ms-page .ms-area-tool { flex-wrap: wrap; } .ms-page .ms-area-tool-overlap { order: 3; margin-left: 38px; max-width: calc(100% - 38px); } }
-.ms-page .ms-area-tool { gap: 8px; overflow: hidden; }
-.ms-page .ms-area-tool-overlap { max-width: 36%; }
-/* Plus de somme de prix : le décompte par type de prix devient l'information. */
-.ms-page .ms-board-total span { color: hsl(var(--foreground)); font: 600 15px/1.4 var(--font-ui); }
-.ms-page .ms-area-head { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "dot name" "dot count"; }
-/* ── Ma stack, télescope (7 oct.) ──
-   Niveau 1 : bulles des domaines (couleur, logos, nom, nombre d'outils).
-   Niveau 2 : zoom vers la carte du domaine. Sans somme de prix. */
-.ms-page .ms-telescope { display: grid; gap: 16px; }
-.ms-page .ms-telescope-stage { overflow: hidden; border: 1px solid hsl(var(--border)); border-radius: 20px; background: hsl(var(--card)); }
-.ms-page .ms-telescope-head { display: flex; align-items: center; min-height: 52px; padding: 8px 16px; border-bottom: 1px solid hsl(var(--border) / .7); }
-.ms-page .ms-telescope-hint { margin: 0; color: hsl(var(--muted-foreground)); font: 400 13px/1.45 var(--font-ui); }
-.ms-page .ms-telescope-backlink { display: inline-flex; align-items: center; gap: 4px; height: 34px; padding: 0 12px 0 8px; border: 1px solid hsl(var(--border)); border-radius: var(--radius-pill); background: hsl(var(--card)); color: hsl(var(--foreground)); font: 600 13.5px/1 var(--font-ui); }
-.ms-page .ms-telescope-backlink:hover { border-color: hsl(var(--foreground) / .4); }
-.ms-page .ms-telescope-canvas { position: relative; width: min(100%, 760px); aspect-ratio: 4 / 3; margin: 8px auto 16px; }
-.ms-page .ms-telescope-field { position: absolute; inset: 0 12.5%; }
-.ms-page .ms-telescope-bubble {
-  --bubble-color: #6F6F68;
-  container-type: size; position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 6px;
-  border-radius: 50%; text-align: center;
-  background: color-mix(in srgb, var(--bubble-color) 10%, hsl(var(--card)));
-  border: 1.5px solid color-mix(in srgb, var(--bubble-color) 32%, hsl(var(--card)));
-  transition: scale 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease, border-color 200ms ease, background-color 200ms ease;
-}
-.ms-page .ms-telescope-bubble:hover, .ms-page .ms-telescope-bubble:focus-visible {
-  scale: 1.04; border-color: color-mix(in srgb, var(--bubble-color) 70%, hsl(var(--card)));
-  background: color-mix(in srgb, var(--bubble-color) 15%, hsl(var(--card)));
-  box-shadow: 0 16px 36px color-mix(in srgb, var(--bubble-color) 20%, transparent); outline: none;
-}
-.ms-page .ms-telescope-logos { display: flex; justify-content: center; }
-.ms-page .ms-telescope-logos > * { border-radius: 9px; background: hsl(var(--card)); box-shadow: 0 0 0 2px hsl(var(--card)); }
-.ms-page .ms-telescope-logos > * + * { margin-left: -6px; }
-.ms-page .ms-telescope-bubble strong { max-width: 90%; color: hsl(var(--foreground)); font: 700 clamp(13px, 11cqw, 20px)/1.15 var(--font-ui); letter-spacing: -.01em; }
-.ms-page .ms-telescope-count { color: color-mix(in srgb, var(--bubble-color) 75%, #000); font: 600 clamp(11px, 8cqw, 14px)/1.2 var(--font-ui); }
-@container (max-width: 96px) { .ms-page .ms-telescope-logos > *:nth-child(n+2) { display: none; } }
-.ms-page .ms-telescope-detail { padding: 16px; }
-.ms-page .ms-telescope-detail .ms-area { max-width: 720px; margin: 0 auto; animation: none; }
-@media (prefers-reduced-motion: no-preference) {
-  .ms-page .ms-telescope-bubble { animation: ms-bubble-enter 520ms cubic-bezier(0.2, 0.8, 0.2, 1) var(--bubble-delay, 0ms) backwards, ms-bubble-drift 9s ease-in-out calc(var(--bubble-delay, 0ms) + 520ms) infinite; }
-}
-@media (max-width: 640px) {
-  .ms-page .ms-telescope-canvas { aspect-ratio: 1 / 1; margin: 4px auto 8px; }
-  .ms-page .ms-telescope-field { inset: 0; }
-  .ms-page .ms-telescope-detail { padding: 10px; }
-}
 /* Ma stack, coût (7 oct.) : total converti en tête, sélecteur Coût / Outils,
    interrupteur « Je paie » sur les outils freemium. */
-.ms-page .ms-cost-summary { display: grid; gap: 4px; }
-.ms-page .ms-cost-total { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin: 0; }
-.ms-page .ms-cost-total span { color: hsl(var(--muted-foreground)); font: 500 14px/1.4 var(--font-ui); }
-.ms-page .ms-cost-total strong { color: hsl(var(--foreground)); font: 700 26px/1.15 var(--font-ui); letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
-.ms-page .ms-cost-note { margin: 0; color: hsl(var(--muted-foreground)); font: 400 12.5px/1.5 var(--font-ui); max-width: 80ch; }
-.ms-page .ms-telescope-head { justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .ms-page .ms-size-switch { display: inline-flex; gap: 2px; padding: 2px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); }
 .ms-page .ms-size-switch button { height: 28px; padding: 0 12px; border-radius: var(--radius-pill); color: hsl(var(--muted-foreground)); font: 500 12.5px/1 var(--font-ui); }
 .ms-page .ms-size-switch button[aria-pressed="true"] { background: hsl(var(--card)); color: hsl(var(--foreground)); font-weight: 600; box-shadow: 0 1px 2px rgba(15, 15, 15, .08); }
 .ms-page .ms-size-switch button:focus:not(:focus-visible) { outline: none; }
-.ms-page .ms-telescope-sub { color: hsl(var(--muted-foreground)); font: 500 clamp(10px, 7cqw, 12.5px)/1.2 var(--font-ui); }
-.ms-page .ms-telescope-count { font-variant-numeric: tabular-nums; }
-@container (max-width: 110px) { .ms-page .ms-telescope-sub { display: none; } }
-.ms-page .ms-area-row { display: flex; align-items: center; gap: 6px; }
-.ms-page .ms-area-row .ms-area-tool { flex: 1; min-width: 0; }
-.ms-page .ms-plan-switch {
-  flex: none; height: 28px; padding: 0 10px; border: 1px solid hsl(var(--border)); border-radius: var(--radius-pill);
-  background: hsl(var(--card)); color: hsl(var(--muted-foreground)); font: 600 11.5px/1 var(--font-ui); white-space: nowrap;
-}
-.ms-page .ms-plan-switch.is-paid { border-color: var(--area-color); background: color-mix(in srgb, var(--area-color) 12%, hsl(var(--card))); color: hsl(var(--foreground)); }
-.ms-page .ms-plan-switch:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
 /* Ma stack, indicateurs (7 oct.) : quatre chiffres lisibles d'un coup d'œil. */
-.ms-page .ms-overview-bar { align-items: flex-end; }
-.ms-page .ms-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; flex: 1 1 640px; margin: 0; }
-.ms-page .ms-stats > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 6px; min-width: 0; padding: 16px 18px; border: 1px solid hsl(var(--border)); border-radius: 16px; background: hsl(var(--card)); }
-.ms-page .ms-stats dt { color: hsl(var(--muted-foreground)); font: 500 13px/1.3 var(--font-ui); }
-.ms-page .ms-stats dd { margin: 0; overflow: hidden; color: hsl(var(--foreground)); font: 700 30px/1.05 var(--font-ui); letter-spacing: -.025em; text-overflow: ellipsis; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.ms-page .ms-stats dd small { margin-left: 3px; color: hsl(var(--muted-foreground)); font: 500 14px/1 var(--font-ui); letter-spacing: 0; }
 .ms-page .ms-stat--overlaps { border-color: color-mix(in srgb, #E8590C 35%, hsl(var(--border))); background: color-mix(in srgb, #E8590C 6%, hsl(var(--card))); }
 .ms-page .ms-stat--overlaps dd { color: color-mix(in srgb, #E8590C 80%, #000); }
-@media (max-width: 760px) { .ms-page .ms-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ms-page .ms-stats dd { font-size: 24px; } }
-/* Carte de domaine : le coût revient à droite du nom. */
-.ms-page .ms-area-head { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "dot name budget" "dot count budget"; }
 /* Ma stack, en-tête façon page Stack (7 oct.) : bandeau, bande de chiffres,
    bouton d'ajout, collage de mes logos (le plus cher au centre). */
 .ms-page .ms-hero { margin-bottom: 28px; }
 .ms-page .ms-hero h1 { margin-top: 18px; }
 .ms-page .ms-hero-stats { margin-top: 28px; }
 .ms-page .ms-hero-stats .ms-stat--overlaps dd { color: color-mix(in srgb, #E8590C 82%, #000); }
-.ms-page .ms-hero-add { margin-top: 28px; min-height: 44px; padding: 0 20px; border-radius: var(--radius-pill); }
 .ms-page .ms-hero button.sg-cluster-app { padding: 0; border: 0; background: none; cursor: pointer; }
 .ms-page .ms-hero--empty { grid-template-columns: minmax(0, 1fr); }
-.ms-page .ms-overview-bar { justify-content: flex-end; margin: 0 0 8px; }
 .ms-page .ms-hero-stats .ms-stat--overlaps { padding: 0 16px; border: 0; border-left: 1px solid var(--color-border); border-radius: 0; background: none; }
 /* Ma stack, sections numérotées comme les pages Stack (7 oct.). */
-.ms-page .ms-overview-bar { align-items: flex-end; justify-content: space-between; margin: 8px 0 20px; }
-.ms-page .ms-overview-heading { margin: 0; }
 .ms-page .ms-section { margin-top: 72px; }
 .ms-page .ms-section-lead { max-width: 70ch; margin: -12px 0 20px; color: hsl(var(--muted-foreground)); font: 400 15px/1.55 var(--font-ui); }
 .ms-page .ms-budget-link { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
@@ -35373,38 +34843,18 @@ img[data-logo-loading] {
 /* My stack as a dashboard (7 Oct 2026): the hero keeps the whole-stack view
    (four figures, logo cluster), then the usage map as the scope picker, then budget, overlaps and the
    tools of the picked scope. */
-.ms-page .ms-scope { display: flex; align-items: center; gap: 8px; min-height: 32px; margin: 0 0 12px; color: hsl(var(--muted-foreground)); font: 500 13px/1.3 var(--font-ui); }
-.ms-page .ms-scope-chip { --area-color: #6F6F68; display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 10px 0 12px; border-radius: var(--radius-pill); background: color-mix(in srgb, var(--area-color) 14%, hsl(var(--card))); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--area-color) 40%, transparent); color: color-mix(in srgb, var(--area-color) 70%, #000); font: 600 13px/1 var(--font-ui); }
-.ms-page .ms-scope-chip:hover { background: color-mix(in srgb, var(--area-color) 22%, hsl(var(--card))); }
-.ms-page .ms-dash-main { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 16px; align-items: start; }
-.ms-page .ms-dash-side { display: grid; gap: 16px; min-width: 0; }
 .ms-page .ms-tile { min-width: 0; padding: 20px; border-radius: 24px; background: hsl(var(--card)); box-shadow: inset 0 0 0 1px hsl(var(--border)); }
 .ms-page .ms-tile-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 8px 16px; margin-bottom: 12px; }
 .ms-page .ms-tile-head h2 { margin: 0; font: 650 18px/1.25 var(--font-ui); letter-spacing: -.01em; }
 .ms-page .ms-tile-head p { max-width: 52ch; margin: 4px 0 0; color: hsl(var(--muted-foreground)); font: 400 13px/1.45 var(--font-ui); }
 .ms-page .ms-tile-note { margin: 16px 0 0; color: hsl(var(--muted-foreground)); font: 400 12px/1.5 var(--font-ui); }
 .ms-page .ms-tile-more { margin-top: 12px; padding: 0; color: hsl(var(--foreground)); font: 600 13px/1.3 var(--font-ui); text-decoration: underline; text-underline-offset: 3px; }
-/* Usage map: fills its tile; the picked area stays, the others step back. */
-.ms-page .ms-map-tile .ms-telescope-canvas { width: 100%; aspect-ratio: 1 / 1; max-height: 620px; margin: 0 auto; }
-.ms-page .ms-map-tile .ms-telescope-field { inset: 0; }
-.ms-page .ms-map-field .ms-telescope-bubble { transition: scale 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease, border-color 200ms ease, background-color 200ms ease, opacity 240ms ease, filter 240ms ease; }
-.ms-page .ms-map-field[data-filtered] .ms-telescope-bubble[aria-pressed="false"] { opacity: .42; filter: saturate(.4); }
-.ms-page .ms-map-field[data-filtered] .ms-telescope-bubble[aria-pressed="false"]:hover { opacity: .8; filter: none; }
-.ms-page .ms-map-field .ms-telescope-bubble[aria-pressed="true"] { border-width: 2.5px; border-color: var(--bubble-color); background: color-mix(in srgb, var(--bubble-color) 18%, hsl(var(--card))); box-shadow: 0 18px 40px color-mix(in srgb, var(--bubble-color) 24%, transparent); }
 /* Budget tile: smaller ring, one-column legend. */
 .ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 150px minmax(0, 1fr); gap: 20px; margin-top: 4px; }
 .ms-page .ms-budget-tile .sg-donut { width: 150px; height: 150px; }
 .ms-page .ms-budget-tile .sg-storage-legend { grid-template-columns: 1fr; gap: 8px; }
 .ms-page .ms-budget-tile .sg-budget-name, .ms-page .ms-budget-tile .sg-budget-value { font-size: 13.5px; }
 .ms-page .ms-budget-rest .sg-budget-name, .ms-page .ms-budget-rest .sg-budget-value { color: hsl(var(--muted-foreground)); font-weight: 500; }
-.ms-page .ms-declare { --area-color: #0E9F6E; margin-top: 16px; border-top: 1px solid hsl(var(--border)); }
-.ms-page .ms-declare summary { display: flex; align-items: center; gap: 8px; padding: 14px 0 2px; color: hsl(var(--foreground)); font: 600 13.5px/1.4 var(--font-ui); cursor: pointer; list-style: none; }
-.ms-page .ms-declare summary::-webkit-details-marker { display: none; }
-.ms-page .ms-declare summary::after { content: ""; width: 7px; height: 7px; margin-left: auto; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform 200ms ease; }
-.ms-page .ms-declare[open] summary::after { transform: rotate(-135deg) translateY(-2px); }
-.ms-page .ms-declare ul { display: grid; gap: 6px; margin: 10px 0 0; padding: 0; list-style: none; }
-.ms-page .ms-declare li { display: grid; grid-template-columns: 22px minmax(0, 1fr) auto; align-items: center; gap: 10px; font: 500 13.5px/1.3 var(--font-ui); }
-.ms-page .ms-declare li > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 /* Overlaps tile: pairs one per row. */
 .ms-page .ms-pairs-panel .ms-pairs { grid-template-columns: 1fr; gap: 10px; }
 .ms-page .ms-pairs-panel .ms-pair { padding: 12px; border-radius: 16px; }
@@ -35413,13 +34863,6 @@ img[data-logo-loading] {
 .ms-page .ms-pair-foot .ms-pair-compare { flex-shrink: 0; }
 .ms-page #ms-budget { scroll-margin-top: 24px; }
 /* Tools tile. */
-.ms-page .ms-tools-tile { margin-top: 16px; }
-.ms-page .ms-tools-tile .ms-domain-filters { margin: -4px 0 16px; border-bottom: 1px solid hsl(var(--border)); }
-.ms-page .ms-tools-tile .ms-domain-filters button { min-height: 44px; }
-@media (max-width: 1080px) {
-  .ms-page .ms-dash-main { grid-template-columns: 1fr; }
-  .ms-page .ms-map-tile .ms-telescope-canvas { max-width: 560px; }
-}
 @media (max-width: 640px) {
   .ms-page .ms-tile { padding: 14px; border-radius: 20px; }
   .ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 1fr; justify-items: center; }
@@ -35428,17 +34871,9 @@ img[data-logo-loading] {
 /* Design pass (7 Oct 2026): back to the stack pages' language. Editorial
    section headings, no frame around the map or the tools, budget and
    overlaps as soft Apple-style widgets (no hairline, no box in a box). */
-.ms-page .ms-overview-section, .ms-page .ms-tools-section { margin-top: 64px; }
+.ms-page .ms-tools-section { margin-top: 64px; }
 .ms-page .ms-section-row { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; margin-bottom: 28px; }
 .ms-page .ms-section-row .sg-section-heading { margin: 0; }
-.ms-page .ms-scope-chip { height: 36px; padding: 0 12px 0 16px; font-size: 14px; box-shadow: none; animation: ms-chip-in 320ms cubic-bezier(.34, 1.56, .64, 1); }
-@keyframes ms-chip-in { from { scale: .8; opacity: 0; } }
-.ms-page .ms-dash-main { gap: 32px; }
-.ms-page .ms-map-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; margin-bottom: 4px; }
-.ms-page .ms-map-head p { max-width: 46ch; margin: 0; color: hsl(var(--muted-foreground)); font: 400 14px/1.5 var(--font-ui); }
-.ms-page .ms-map .ms-telescope-canvas { width: 100%; aspect-ratio: 1 / 1; max-height: 640px; margin: 0 auto; }
-.ms-page .ms-map .ms-telescope-field { inset: 0; }
-.ms-page .ms-map-field .ms-telescope-bubble[aria-pressed="true"] { scale: 1.03; }
 .ms-page .ms-tile { padding: 28px; border-radius: 28px; background: var(--color-surface-soft); box-shadow: none; }
 .ms-page .ms-tile-head { margin-bottom: 20px; }
 .ms-page .ms-tile-head h2 { color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
@@ -35447,9 +34882,6 @@ img[data-logo-loading] {
 .ms-page .ms-tile .ms-size-switch button[aria-pressed="true"] { background: hsl(var(--foreground)); color: hsl(var(--background)); box-shadow: none; }
 .ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 160px minmax(0, 1fr); gap: 24px; }
 .ms-page .ms-budget-tile .sg-donut { width: 160px; height: 160px; }
-.ms-page .ms-declare { border-top: 0; margin-top: 20px; }
-.ms-page .ms-declare summary { padding: 14px 16px; border-radius: 16px; background: hsl(var(--card)); }
-.ms-page .ms-declare ul { padding: 4px 16px 8px; }
 /* Overlaps: an inset grouped list, one white row per pair. */
 .ms-page .ms-pairs-panel .ms-pairs { gap: 8px; }
 .ms-page .ms-pairs-panel .ms-pair { gap: 8px; padding: 14px 16px; border: 0; border-radius: 18px; background: hsl(var(--card)); transition: transform 220ms cubic-bezier(.2, .8, .2, 1); }
@@ -35466,23 +34898,10 @@ img[data-logo-loading] {
 /* Tools: plain section, the cards are the only boxes. */
 .ms-page .ms-tools-section .ms-domain-filters { margin: -8px 0 20px; }
 @media (max-width: 640px) {
-  .ms-page .ms-overview-section, .ms-page .ms-tools-section { margin-top: 48px; }
+  .ms-page .ms-tools-section { margin-top: 48px; }
   .ms-page .ms-tile { padding: 18px; border-radius: 24px; }
   .ms-page .ms-budget-tile .sg-budget-viz--share { grid-template-columns: 1fr; }
 }
-@media (prefers-reduced-motion: reduce) { .ms-page .ms-scope-chip { animation: none; } }
-/* Usage map as a strip: bubbles in a row, area proportional to weight, so the
-   overview takes a band instead of a page. Budget and overlaps side by side. */
-.ms-page .ms-map-strip { --k: 1; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px 20px; min-height: calc(232px * var(--k)); padding: 16px 0 8px; }
-.ms-page .ms-map-strip .ms-telescope-bubble { position: relative; flex: none; width: calc(var(--d) * 1px * var(--k)); height: calc(var(--d) * 1px * var(--k)); }
-.ms-page .ms-map-strip[data-filtered] .ms-telescope-bubble[aria-pressed="false"] { opacity: .42; filter: saturate(.4); }
-.ms-page .ms-map-strip[data-filtered] .ms-telescope-bubble[aria-pressed="false"]:hover { opacity: .8; filter: none; }
-.ms-page .ms-map-strip .ms-telescope-bubble[aria-pressed="true"] { scale: 1.04; border-width: 2.5px; border-color: var(--bubble-color); background: color-mix(in srgb, var(--bubble-color) 18%, hsl(var(--card))); box-shadow: 0 18px 40px color-mix(in srgb, var(--bubble-color) 24%, transparent); }
-.ms-page .ms-map-strip .ms-telescope-bubble { transition: scale 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease, border-color 200ms ease, background-color 200ms ease, opacity 240ms ease, filter 240ms ease; }
-.ms-page .ms-overview-section .ms-dash-main { grid-template-columns: 1fr; gap: 24px; }
-.ms-page .ms-overview-section .ms-dash-side { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
-@media (max-width: 1080px) { .ms-page .ms-overview-section .ms-dash-side { grid-template-columns: 1fr; } }
-@media (max-width: 640px) { .ms-page .ms-map-strip { --k: .62; gap: 8px 10px; } }
 /* Budget by area: no logo column, and an area is a way into the page filter. */
 .ms-page .ms-budget-tile .sg-storage-legend li.ms-budget-area { grid-template-columns: 8px minmax(0, 1fr) auto; }
 .ms-page .ms-budget-tile .sg-storage-legend li.ms-budget-area .sg-storage-dot { width: 10px; height: 10px; }

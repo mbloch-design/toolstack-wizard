@@ -4,7 +4,7 @@ import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy } from 
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { AREA_COLORS } from "@/components/stack/StackAreaBoard";
+import { AREA_COLORS } from "@/lib/stackAreas";
 import StackBudgetBreakdown from "@/components/stack/StackBudgetBreakdown";
 import StackOverlapPairs, { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
 import StackFreemiumPlans from "@/components/stack/StackFreemiumPlans";

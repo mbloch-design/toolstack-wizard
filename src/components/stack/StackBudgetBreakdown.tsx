@@ -5,7 +5,7 @@ import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { convertAmount, CURRENCY_RATE_DATE, formatAmount, type Currency } from "@/lib/currencyRates";
 import { toolMonthlyCost } from "@/lib/stackCost";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
-import { AREA_COLORS, type Territory } from "@/components/stack/StackAreaBoard";
+import { AREA_COLORS, type Territory } from "@/lib/stackAreas";
 
 /**
  * Tuile Budget du tableau de bord Ma stack : l'anneau de répartition des pages
