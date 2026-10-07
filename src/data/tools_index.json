@@ -48192,14 +48192,14 @@
     "slug": "mybestresume-ai",
     "name": "My Best Resume",
     "categoryId": "organization",
-    "shortDescription": "Analyse le parcours professionnel et aide à créer un CV ciblé pour une offre d'emploi.",
-    "shortDescriptionEn": "Analyzes career experience and helps create a resume tailored to a target role.",
+    "shortDescription": "Analyse un CV ou les informations fournies, relève les manques et aide à préparer un brouillon pour un poste ciblé.",
+    "shortDescriptionEn": "Analyzes a resume or user-provided details, highlights gaps, and helps tailor a draft to a target role.",
     "pricing": {
-      "free": "Aperçu gratuit avant achat, aucun CV complet gratuit.",
+      "free": "Rapport des points forts gratuit ; CV complet et exports payants.",
       "paid": "Premier CV ciblé : 1,99 USD en achat unique ; CV supplémentaire : 4,99 USD. Career Momentum : 8,88 USD/mois, facultatif."
     },
     "pricingEn": {
-      "free": "Free strengths preview before purchase; no free complete resume.",
+      "free": "Free strengths report; complete resume and exports are paid.",
       "paid": "First targeted resume: USD 1.99 one-time; additional resume: USD 4.99. Career Momentum: USD 8.88/month, optional."
     },
     "websiteUrl": "https://mybestresume.ai/",
@@ -48219,8 +48219,8 @@
     "slug": "seamui",
     "name": "Seam UI",
     "categoryId": "creation",
-    "shortDescription": "Espace de travail pour produire des images et vidéos IA en lots avec ses propres clés API.",
-    "shortDescriptionEn": "Workspace for batch AI image and video production using your own API keys.",
+    "shortDescription": "Espace de travail pour générer des images et vidéos IA en lots, avec ses propres clés API.",
+    "shortDescriptionEn": "Workspace for batch AI image and video generation with your own API keys.",
     "pricing": {
       "free": "Essai de 7 jours sans carte, pas de forfait gratuit permanent annoncé.",
       "paid": "Licence à vie : Indie 99 USD, Business 199 USD, Scale 249 USD en achat unique. Générations facturées séparément par les fournisseurs sur tes clés API."

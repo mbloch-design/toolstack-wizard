@@ -8,6 +8,7 @@ Consulté le 28 septembre 2026. Analyse documentaire uniquement, sans connexion 
 - Fonctions : https://georankers.ai/features
 - Prix et limites des plans : https://georankers.ai/pricing
 - Limites de mesure et conditions : https://georankers.ai/terms
+- Référencements déclarés par l'éditeur : https://georankers.ai/recognition
 
 ## Faits et limites retenus
 
@@ -16,6 +17,7 @@ Consulté le 28 septembre 2026. Analyse documentaire uniquement, sans connexion 
 - Volumes annoncés : Launch 450+ réponses IA, cinq concurrents, un siège ; Grow 1 100+ réponses, dix concurrents, trois sièges. Enterprise sur devis. Les volumes ne sont pas des résultats vérifiés en usage.
 - Alertes Slack et connexions Google Analytics / Search Console signalées comme « Roadmap » sur la page tarifaire. Ne pas les présenter comme disponibles.
 - Il existe une tension dans la FAQ entre relance manuelle « une fois toutes les 24 heures » et limites des plans à une ou trois relances à la demande par mois. La fiche reprend les limites du tableau tarifaire, sans promettre une relance quotidienne incluse.
+- La page Recognition liste des profils sur Startup Fame, Dang AI, Fazier, Tool Pilot, Findly.tools, LaunchNest, Tools Cafe, Lifto, Launchstag et Product Hunt. C'est un inventaire publié par GeoRankers, pas une récompense ni une évaluation indépendante ; la fiche le présente avec cette réserve.
 
 ## Visuels officiels
 
