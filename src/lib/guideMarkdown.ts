@@ -1,3 +1,5 @@
+import { estLienEditorialDofollow } from "@/lib/externalLink";
+
 export interface GuideTocItem {
   id: string;
   level: 2 | 3;
@@ -62,9 +64,13 @@ export function renderGuideMarkdown(
 
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, text: string, href: string) => {
     const isInternal = href.startsWith("/") || href.startsWith("#") || /^https?:\/\/(www\.)?tooltrim\.com/i.test(href);
-    return isInternal
-      ? `<a href="${href}">${text}</a>`
-      : `<a href="${href}" target="_blank" rel="nofollow noopener noreferrer">${text}</a>`;
+    if (isInternal) return `<a href="${href}">${text}</a>`;
+    // Un lien externe d'article reste nofollow par defaut, sauf pour un
+    // partenaire editorial declare dans la meme allowlist que le CTA des
+    // fiches outil (externalLink.ts) : un domaine n'a qu'un seul statut
+    // dofollow/nofollow a travers tout le site, jamais decide ici au cas par cas.
+    const rel = estLienEditorialDofollow(href) ? "noopener noreferrer" : "nofollow noopener noreferrer";
+    return `<a href="${href}" target="_blank" rel="${rel}">${text}</a>`;
   });
 
   html = html.replace(/^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)+)/gm, (_match, header, _separator, body) => {

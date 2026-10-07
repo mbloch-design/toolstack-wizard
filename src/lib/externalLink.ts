@@ -69,6 +69,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.viso.ai",
   "nicklaunches.com",
   "www.nicklaunches.com",
+  "atelier-atypique.fr",
+  "www.atelier-atypique.fr",
 ]);
 
 /** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait
@@ -84,7 +86,12 @@ export function safeExternalUrl(url: string | null | undefined): string | undefi
   }
 }
 
-function estLienEditorialDofollow(url: string): boolean {
+/** Seul point d'appel externe de la table d'allowlist : utilisé à la fois pour
+ * le CTA principal d'une fiche (relPourLienOutil) et pour les liens sortants
+ * placés dans le corps d'un article (voir guideMarkdown.ts), pour qu'un
+ * partenaire déclaré ici le reste partout où ToolTrim le cite, sans dupliquer
+ * la liste. */
+export function estLienEditorialDofollow(url: string): boolean {
   try {
     return DOMAINES_EDITORIAUX_DOFOLLOW.has(new URL(url).hostname.toLowerCase());
   } catch {

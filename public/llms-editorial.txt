@@ -1,9 +1,17 @@
 # ToolTrim editorial index
 # Generated from dist/sitemap.xml and its canonical prerendered pages.
-# Records: 262 (96 guides, 166 comparisons, localized FR/EN pages)
+# Records: 263 (97 guides, 166 comparisons, localized FR/EN pages)
 # Titles and available source summaries only. A missing summary is not inferred. Consult each canonical URL for full content and current offers.
 
 [
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "plateforme-ecommerce-solo-petite-equipe-produits-physiques",
+    "url": "https://tooltrim.com/fr/guide/plateforme-ecommerce-solo-petite-equipe-produits-physiques",
+    "title": "Quelle plateforme e-commerce choisir en solo ou petite équipe ?",
+    "summary": "Shopify, WooCommerce, Wix ou Squarespace : quatre critères pour choisir selon ta situation, prix vérifiés et un exemple réel de boutique Shopify."
+  },
   {
     "type": "guide",
     "language": "fr",
