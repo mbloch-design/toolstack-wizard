@@ -280,7 +280,7 @@ export default function CartPage() {
       <div className="ms-dash-main">
         <StackUsageMap territories={mapTerritories} areaCosts={areaCosts} activeId={activeFilter} onChoose={chooseDomain} currency={currency} lang={lang} />
         <div className="ms-dash-side">
-          <StackBudgetBreakdown territories={visibleMap} paid={plans} currency={currency} lang={lang} onSelect={selectTool} declareOpen={declareOpen} onDeclareOpen={setDeclareOpen} />
+          <StackBudgetBreakdown territories={visibleMap} colorOf={colorOf} paid={plans} currency={currency} lang={lang} onSelect={selectTool} declareOpen={declareOpen} onDeclareOpen={setDeclareOpen} />
           <StackOverlapPairs tools={selectedTools} categories={categories} isPaid={plans.isPaid} currency={currency} prefix={prefix} lang={lang} onSelect={selectTool} scopeIds={activeFilter === "all" ? undefined : visibleIds} />
         </div>
       </div>

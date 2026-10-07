@@ -4,14 +4,13 @@ import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { convertAmount, CURRENCY_RATE_DATE, formatAmount, type Currency } from "@/lib/currencyRates";
 import { toolMonthlyCost } from "@/lib/stackCost";
 import { toolKey } from "@/lib/stackView";
-import type { Territory } from "@/components/stack/StackAreaBoard";
+import { AREA_COLORS, type Territory } from "@/components/stack/StackAreaBoard";
 
 /**
  * Tuile Budget du tableau de bord Ma stack : l'anneau de répartition des pages
  * Stack (sg-donut, sg-storage-legend), sur le périmètre choisi dans la carte
- * des usages (toute la stack ou un domaine), toujours par outil : le poids
- * par domaine, ce sont les bulles (taille = coût), pas une deuxième vue de
- * l'anneau. Les outils freemium se déclarent ici
+ * des usages (toute la stack ou un domaine). Par outil, ou par domaine quand
+ * plusieurs domaines sont visibles. Les outils freemium se déclarent ici
  * (« Je paie ») : c'est un réglage du budget. Mêmes règles que le reste de la
  * page : offres d'entrée attestées, freemium à 0 sauf « Je paie », total
  * converti au taux daté et affiché comme converti (Michael, 7 oct. 2026).
@@ -19,6 +18,8 @@ import type { Territory } from "@/components/stack/StackAreaBoard";
 
 interface Props {
   territories: Territory[];
+  /** Colour index of each area in the whole stack, so a filtered area keeps its colour. */
+  colorOf: (id: string) => string;
   paid: { isPaid: (slug: string) => boolean; setPaid: (slug: string, value: boolean) => void };
   currency: Currency;
   lang: "fr" | "en";
@@ -27,12 +28,13 @@ interface Props {
   onDeclareOpen: (open: boolean) => void;
 }
 
-type Line = { id: string; label: string; amount: number; tool: ToolSummary };
+type Line = { id: string; label: string; amount: number; tool?: ToolSummary; color?: string };
 const LEGEND_MAX = 6;
 
-export default function StackBudgetBreakdown({ territories, paid, currency, lang, onSelect, declareOpen, onDeclareOpen }: Props) {
+export default function StackBudgetBreakdown({ territories, colorOf, paid, currency, lang, onSelect, declareOpen, onDeclareOpen }: Props) {
   const en = lang === "en";
   const rateDate = new Intl.DateTimeFormat(en ? "en-US" : "fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${CURRENCY_RATE_DATE}T00:00:00`));
+  const [view, setView] = useState<"tool" | "area">("tool");
   const [focus, setFocus] = useState<string | null>(null);
   const money = (amount: number) => formatAmount(Math.round(amount), currency, lang);
 
@@ -43,7 +45,10 @@ export default function StackBudgetBreakdown({ territories, paid, currency, lang
   };
   const toolLines: Line[] = tools.map((tool) => ({ id: tool.id, label: tool.name, amount: monthly(tool), tool }))
     .filter((line) => line.amount > 0).sort((a, b) => b.amount - a.amount);
-  const lines = toolLines;
+  const areaLines: Line[] = territories.map((t) => ({ id: t.id, label: t.label, amount: t.tools.reduce((sum, tool) => sum + monthly(tool), 0), color: colorOf(t.id) }))
+    .filter((line) => line.amount > 0).sort((a, b) => b.amount - a.amount);
+  const byArea = view === "area" && territories.length > 1;
+  const lines = byArea ? areaLines : toolLines;
   const total = toolLines.reduce((sum, line) => sum + line.amount, 0);
   const freemium = tools.filter((tool) => {
     const kind = toolMonthlyCost(tool, paid.isPaid, lang).kind;
@@ -67,6 +72,11 @@ export default function StackBudgetBreakdown({ territories, paid, currency, lang
             ? (en ? `Where the money goes, ${toolLines.length} paid tool${toolLines.length > 1 ? "s" : ""}` : `Où part l’argent, ${toolLines.length} outil${toolLines.length > 1 ? "s" : ""} payant${toolLines.length > 1 ? "s" : ""}`)
             : (en ? "Nothing paid here" : "Rien de payant ici")}</p>
         </div>
+        {total > 0 && territories.length > 1 && <div className="ms-size-switch" role="group" aria-label={en ? "Breakdown" : "Répartition"}>
+          {([["tool", en ? "Tools" : "Outils"], ["area", en ? "Areas" : "Domaines"]] as const).map(([key, label]) => (
+            <button key={key} type="button" aria-pressed={view === key} onClick={() => { setView(key); setFocus(null); }}>{label}</button>
+          ))}
+        </div>}
       </header>
       {total > 0 && <div className="sg-budget-viz sg-budget-viz--share" onMouseLeave={() => setFocus(null)}>
         <svg className="sg-donut" viewBox="0 0 200 200" role="img" aria-label={en ? `Monthly cost breakdown: about ${money(total)}` : `Répartition du coût mensuel : environ ${money(total)}`}>
@@ -75,7 +85,7 @@ export default function StackBudgetBreakdown({ territories, paid, currency, lang
               const len = (line.amount / total) * c;
               const seg = <circle key={line.id} cx="100" cy="100" r={r} fill="none" strokeWidth="26"
                 className={`sg-donut-seg${focus && focus !== line.id ? " is-dim" : ""}${focus === line.id ? " is-focus" : ""}`}
-                style={{ opacity: shade(i) }}
+                style={line.color ? { stroke: line.color } : { opacity: shade(i) }}
                 strokeDasharray={`${Math.max(0.5, len - gap)} ${c}`} strokeDashoffset={-offset}
                 onMouseEnter={() => setFocus(line.id)}><title>{`${line.label} · ≈ ${money(line.amount)} (${Math.round((line.amount / total) * 100)} %)`}</title></circle>;
               offset += len;
@@ -88,9 +98,11 @@ export default function StackBudgetBreakdown({ territories, paid, currency, lang
         <ul className="sg-storage-legend">
           {shown.map((line, i) => (
             <li key={line.id} className={[focus === line.id ? "is-focus" : "", focus && focus !== line.id ? "is-dim" : ""].filter(Boolean).join(" ") || undefined} onMouseEnter={() => setFocus(line.id)}>
-              <span className="sg-storage-dot" style={{ opacity: shade(i) }} aria-hidden />
-              <ToolLogo tool={line.tool} size={24} className="sg-budget-logo" />
-              <button type="button" className="sg-budget-name ms-budget-link" onClick={() => onSelect(toolKey(line.tool))}>{line.label}</button>
+              <span className="sg-storage-dot" style={line.color ? { background: line.color } : { opacity: shade(i) }} aria-hidden />
+              {line.tool ? <ToolLogo tool={line.tool} size={24} className="sg-budget-logo" /> : <span aria-hidden />}
+              {line.tool
+                ? <button type="button" className="sg-budget-name ms-budget-link" onClick={() => onSelect(toolKey(line.tool!))}>{line.label}</button>
+                : <span className="sg-budget-name">{line.label}</span>}
               <span className="sg-budget-value">≈ {money(line.amount)}</span>
             </li>
           ))}
