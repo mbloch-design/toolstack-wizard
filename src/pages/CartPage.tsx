@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Plus, Search, Check, X, CircleDot, LayoutGrid, ArrowRight } from "@/lib/icons";
+import { Plus, Search, Check, X, CircleDot, LayoutGrid } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import StackUsageExplorer from "@/components/stack/StackUsageExplorer";
@@ -46,6 +46,18 @@ export default function CartPage() {
   // The hook can retain the preceding detail while a new selection loads.
   const resolved = selected && detail?.id === selected.id ? detail : selected;
   const relations = useMemo(() => resolved ? stackRelations(resolved, selectedTools, categories, lang) : [], [resolved, selectedTools, categories, lang]);
+  // Potential overlaps per tool, with the same rule as the Focus panel
+  // (explicit catalogue alternative or shared catalogue uses), so the cards,
+  // the summary and the panel always say the same thing. No score, no advice
+  // to remove: the person decides.
+  const overlapsById = useMemo(() => new Map(selectedTools.map((tool) => [tool.id,
+    stackRelations(tool, selectedTools, categories, lang).filter((relation) => relation.explicit || relation.commonUses.length > 0).map((relation) => relation.tool),
+  ])), [selectedTools, categories, lang]);
+  const overlapPairs = useMemo(() => {
+    const pairs = new Set<string>();
+    overlapsById.forEach((others, id) => others.forEach((other) => pairs.add([id, other.id].sort().join("|"))));
+    return pairs.size;
+  }, [overlapsById]);
   const empty = state.pinnedToolSlugs.length === 0;
   const showSearch = empty || searchOpen;
   const existingIds = new Set(selectedTools.map((tool) => tool.id));
@@ -129,6 +141,7 @@ export default function CartPage() {
   function renderTool(tool: ToolSummary) {
     const active = selected?.id === tool.id;
     const price = mode === "stack" ? stackCatalogPrice(tool, lang) : null;
+    const overlaps = overlapsById.get(tool.id) || [];
     return <button
       key={tool.id}
       type="button"
@@ -139,7 +152,10 @@ export default function CartPage() {
       onClick={(event) => { lastToolButton.current = event.currentTarget; active ? closeInspector() : selectTool(toolKey(tool)); }}
     >
       <ToolLogo tool={tool} size={40} />
-      <span className="ms-tool-copy"><strong>{tool.name}</strong>{mode === "stack" && <span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>}</span>{price && <span className="ms-list-price">{price}</span>}<ArrowRight className="ms-card-arrow" size={16} aria-hidden />
+      <span className="ms-tool-copy"><strong>{tool.name}</strong>{mode === "stack" && <span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>}</span>{price && <span className="ms-list-price">{price}</span>}
+      {mode === "stack" && overlaps.length > 0 && <span className="ms-card-overlap">
+        {t(`Recoupe ${overlaps[0].name}`, `Overlaps with ${overlaps[0].name}`)}{overlaps.length > 1 ? ` +${overlaps.length - 1}` : ""}
+      </span>}
     </button>;
   }
 
@@ -155,6 +171,14 @@ export default function CartPage() {
       {!empty && <button className="tt-button-primary" ref={addRef} onClick={() => setSearchOpen((open) => !open)} aria-expanded={searchOpen} aria-controls="ms-search"><Plus size={18} aria-hidden />{t("Ajouter un outil", "Add a tool")}</button>}
     </header>
 
+    {/* One factual line to read the whole stack at a glance. */}
+    {!empty && <p className="ms-summary">
+      <span>{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}</span>
+      <span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span>
+      <span className={overlapPairs > 0 ? "ms-summary-overlaps" : undefined}>{overlapPairs > 0
+        ? t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""} possible${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} potential overlap${overlapPairs > 1 ? "s" : ""}`)
+        : t("Aucun recoupement connu", "No known overlap")}</span>
+    </p>}
     {empty && <p className="ms-empty-copy">{t("Ajoutez les outils que vous utilisez. ToolTrim organise automatiquement votre environnement.", "Add the tools you use. ToolTrim automatically organizes your environment.")}</p>}
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
       ? t("La sauvegarde locale est illisible. Vous pouvez constituer un nouveau stack.", "The local snapshot cannot be read. You can build a new stack.")

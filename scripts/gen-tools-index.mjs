@@ -81,6 +81,11 @@ const summaries = tools.map((tool, index) => {
     // Les pages piliers persona filtrent sur ce champ. Sans lui dans l'index,
     // le filtre tourne a vide cote application, meme si tools_v4.json le porte.
     ...(tool.personas?.length ? { personas: tool.personas } : {}),
+    // Explicit catalogue alternatives (slugs): My stack shows the same
+    // potential overlaps on its cards as in its Focus panel.
+    ...(Array.isArray(tool.alternatives) && tool.alternatives.length
+      ? { alternatives: tool.alternatives.map((alt) => (typeof alt === "string" ? alt : alt?.slug || alt?.id || alt?.tool)).filter(Boolean) }
+      : {}),
     ...(tool.freeAlternative ? { freeAlternative: tool.freeAlternative } : {}),
     ...(tool.substitutable === false ? { substitutable: false } : {}),
     ...(tool.betterAlternative ? { betterAlternative: tool.betterAlternative } : {}),

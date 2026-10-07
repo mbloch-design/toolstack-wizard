@@ -208,6 +208,8 @@ export type ToolSummary = Pick<
   priceUndisclosed?: boolean;
   /** Attested compare-plan price in the vendor's currency (gen-tools-index.mjs). */
   nativePrices?: { amount: number; currency: string; period: "monthly" | "annual" | "once" }[];
+  /** Explicit catalogue alternatives (slugs), from the light index. */
+  alternatives?: string[];
   // Date de publication, utilisée pour trier la section Nouveautés de l'accueil.
   // Absente des fiches statiques du bundle : optionnelle, les fiches sans date
   // sont reléguées en fin de tri plutôt que remontées par hasard.
@@ -283,6 +285,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   compareMonthlyPrice: Number(t.compareMonthlyPrice ?? t.pricing_v5?.compare_price_monthly_eur) || null,
   priceUndisclosed: Boolean(t.priceUndisclosed || /non public/i.test(t.pricing_v5?.compare_plan_name || "")),
   ...(t.nativePrices ? { nativePrices: t.nativePrices } : {}),
+  ...(t.alternatives ? { alternatives: t.alternatives } : {}),
 })).filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug || t.id));
 
 function mapSupabaseCat(c: any): Category {
@@ -554,6 +557,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
               || Boolean(localFallback?.priceUndisclosed),
             // Supabase has no native price column: keep the attested one.
             ...(localFallback?.nativePrices ? { nativePrices: localFallback.nativePrices } : {}),
+            ...(localFallback?.alternatives ? { alternatives: localFallback.alternatives } : {}),
             publishedAt: t.published_at || null,
             worksWith: Array.isArray(t.works_with) ? t.works_with : [],
             formFactor: t.form_factor || null,

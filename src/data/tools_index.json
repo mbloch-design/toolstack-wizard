@@ -25,6 +25,10 @@
     "verticals": [
       "graphiste-da",
       "createur-contenu"
+    ],
+    "alternatives": [
+      "printify",
+      "gelato"
     ]
   },
   {
@@ -62,6 +66,11 @@
       "motion-video",
       "photographe",
       "createur-contenu"
+    ],
+    "alternatives": [
+      "frame-io",
+      "dropbox",
+      "eagle"
     ]
   },
   {
@@ -97,6 +106,11 @@
     "verticals": [
       "createur-contenu",
       "consultant-b2b"
+    ],
+    "alternatives": [
+      "brevo",
+      "mailchimp",
+      "kit"
     ]
   },
   {
@@ -172,6 +186,11 @@
     "prescription_quality": "silence",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "suitedash",
+      "plutio",
+      "jobber"
     ]
   },
   {
@@ -221,6 +240,11 @@
     "personas": [
       "CLAIRE"
     ],
+    "alternatives": [
+      "bitwarden",
+      "dashlane",
+      "nordpass"
+    ],
     "freeAlternative": "bitwarden"
   },
   {
@@ -261,6 +285,11 @@
     "prescription_quality": "oui",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "blender",
+      "maya",
+      "cinema-4d"
     ],
     "freeAlternative": "blender"
   },
@@ -344,6 +373,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "reaper",
+      "davinci-resolve"
     ]
   },
   {
@@ -395,6 +428,11 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "podbean",
+      "spotify-for-podcasters",
+      "buzzsprout"
     ]
   },
   {
@@ -446,6 +484,11 @@
       "MARC",
       "ALIX",
       "CLAIRE"
+    ],
+    "alternatives": [
+      "brevo",
+      "hubspot",
+      "mailchimp"
     ]
   },
   {
@@ -524,6 +567,10 @@
     "personas": [
       "lina"
     ],
+    "alternatives": [
+      "canva",
+      "figma"
+    ],
     "freeAlternative": "canva"
   },
   {
@@ -563,6 +610,7 @@
       "other"
     ],
     "prescription_quality": "question",
+    "alternatives": [],
     "freeAlternative": "canva"
   },
   {
@@ -605,6 +653,9 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "canva"
     ]
   },
   {
@@ -652,6 +703,9 @@
     "prescription_quality": "contextual",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "pdf-agile"
     ]
   },
   {
@@ -736,6 +790,10 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "davinci-resolve",
+      "rive"
     ],
     "freeAlternative": "DaVinci Resolve",
     "substitutable": false
@@ -829,6 +887,12 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "affinity-designer",
+      "affinity-photo",
+      "canva-pro",
+      "davinci-resolve"
+    ],
     "substitutable": false
   },
   {
@@ -881,6 +945,12 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "affinity-designer",
+      "affinity-photo",
+      "canva-pro",
+      "davinci-resolve"
     ]
   },
   {
@@ -1008,6 +1078,12 @@
     "prescription_quality": "oui",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "midjourney",
+      "ideogram",
+      "leonardo-ai",
+      "canva"
     ]
   },
   {
@@ -1049,6 +1125,11 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "procreate",
+      "clip-studio-paint",
+      "krita"
     ]
   },
   {
@@ -1098,6 +1179,11 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "figma",
+      "canva",
+      "sketch"
     ],
     "freeAlternative": "Affinity Designer",
     "substitutable": false
@@ -1149,6 +1235,9 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "canva"
+    ],
     "freeAlternative": "Affinity Publisher"
   },
   {
@@ -1197,6 +1286,10 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "capture-one",
+      "adobe-photoshop"
     ],
     "substitutable": false,
     "betterAlternative": {
@@ -1255,6 +1348,12 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "affinity-photo",
+      "pixelmator-pro",
+      "photopea",
+      "canva"
+    ],
     "freeAlternative": "Affinity Photo",
     "substitutable": false
   },
@@ -1304,6 +1403,12 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "descript",
+      "auphonic",
+      "cleanvoice",
+      "elevenlabs"
     ]
   },
   {
@@ -1353,6 +1458,11 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "davinci-resolve",
+      "final-cut-pro",
+      "capcut"
+    ],
     "freeAlternative": "DaVinci Resolve",
     "substitutable": false
   },
@@ -1396,6 +1506,12 @@
     "prescription_quality": "question",
     "personas": [
       "graphiste-da"
+    ],
+    "alternatives": [
+      "envato-elements",
+      "motion-array",
+      "icons8",
+      "noun-project"
     ]
   },
   {
@@ -1443,6 +1559,18 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "zbrush",
+      "houdini",
+      "maxon-one",
+      "octane-render",
+      "marmoset-toolbag",
+      "marmoset-toolbag",
+      "marmoset-toolbag",
+      "marmoset-toolbag",
+      "marmoset-toolbag",
+      "marmoset-toolbag"
     ]
   },
   {
@@ -1655,6 +1783,11 @@
     "prescription_quality": "question",
     "personas": [
       "graphiste-da"
+    ],
+    "alternatives": [
+      "adobe-illustrator",
+      "coreldraw",
+      "figma"
     ]
   },
   {
@@ -1694,6 +1827,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "adobe-photoshop",
+      "adobe-lightroom",
+      "capture-one"
     ]
   },
   {
@@ -1729,6 +1867,11 @@
     "prescription_quality": "question",
     "personas": [
       "graphiste-da"
+    ],
+    "alternatives": [
+      "indesign",
+      "quarkxpress",
+      "canva"
     ]
   },
   {
@@ -1810,6 +1953,10 @@
     "prescription_quality": "ferme",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "semrush",
+      "google-search-console"
     ],
     "freeAlternative": "Ahrefs Webmaster Tools"
   },
@@ -1896,6 +2043,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "openphone",
+      "kixie",
+      "aloware",
+      "callhippo"
     ]
   },
   {
@@ -1982,6 +2135,11 @@
     "personas": [
       "CLAIRE"
     ],
+    "alternatives": [
+      "smartsheet",
+      "notion",
+      "monday-com"
+    ],
     "freeAlternative": "notion"
   },
   {
@@ -2020,7 +2178,12 @@
       "Opérations",
       "Petites entreprises"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "zapier",
+      "make",
+      "n8n"
+    ]
   },
   {
     "id": "algolia",
@@ -2125,6 +2288,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "aircall",
+      "kixie",
+      "openphone",
+      "callhippo"
     ]
   },
   {
@@ -2160,6 +2329,10 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "jquery",
+      "stimulus"
     ]
   },
   {
@@ -2207,6 +2380,13 @@
     "prescription_quality": "oui",
     "personas": [
       "marc"
+    ],
+    "alternatives": [
+      "apollo-io",
+      "lemlist",
+      "outreach",
+      "salesloft",
+      "instantly"
     ]
   },
   {
@@ -2284,7 +2464,10 @@
       "Groupes multinationaux",
       "Organisations avec cycles planification complexes"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "pigment"
+    ]
   },
   {
     "id": "angular-material",
@@ -2319,6 +2502,11 @@
     "prescription_quality": "strong",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "material-ui",
+      "tailwind-css",
+      "radix-ui"
     ],
     "substitutable": false
   },
@@ -2356,6 +2544,9 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react"
     ],
     "substitutable": false
   },
@@ -2406,6 +2597,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "figma",
+      "figma-tokens",
+      "framer"
+    ],
     "substitutable": false
   },
   {
@@ -2453,6 +2649,10 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "motion-bro",
+      "ae-red-giant"
+    ],
     "substitutable": false
   },
   {
@@ -2491,6 +2691,10 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "material-ui",
+      "shadcn-ui"
     ],
     "freeAlternative": "shadcn-ui"
   },
@@ -2532,6 +2736,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "openai-api",
+      "google-ai-studio"
     ],
     "freeAlternative": "google-ai-studio",
     "substitutable": false
@@ -2602,6 +2810,13 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "chartjs",
+      "recharts",
+      "highcharts",
+      "echarts",
+      "d3js"
     ]
   },
   {
@@ -2688,7 +2903,13 @@
       "Agences de prospection",
       "Startups SaaS"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "hubspot",
+      "pipedrive",
+      "lemlist",
+      "la-growth-machine"
+    ]
   },
   {
     "id": "app-store-connect",
@@ -2875,7 +3096,12 @@
       "Designers AEC",
       "Équipes pluridisciplinaires"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "sketchup-pro",
+      "revit",
+      "vectorworks"
+    ]
   },
   {
     "id": "archive-tools",
@@ -2982,6 +3208,11 @@
     "personas": [
       "designer"
     ],
+    "alternatives": [
+      "v-ray",
+      "redshift",
+      "octane-render"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -3019,6 +3250,10 @@
     "prescription_quality": "medium",
     "personas": [
       "marc"
+    ],
+    "alternatives": [
+      "zoom-pro",
+      "google-meet"
     ]
   },
   {
@@ -3131,6 +3366,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "storyblocks",
+      "envato-elements",
+      "epidemic-sound"
     ]
   },
   {
@@ -3176,6 +3416,9 @@
     "prescription_quality": "contextual",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "canva"
     ]
   },
   {
@@ -3223,6 +3466,12 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "clickup",
+      "monday",
+      "trello",
+      "notion"
     ],
     "betterAlternative": {
       "tool": "clickup",
@@ -3276,6 +3525,12 @@
     "prescription_quality": "medium",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "greenhouse",
+      "linkedin-recruiter",
+      "lever",
+      "workable"
     ]
   },
   {
@@ -3321,6 +3576,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "adobe-illustrator",
+      "affinity-photo",
+      "figma"
     ]
   },
   {
@@ -3411,6 +3671,10 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "descript",
+      "adobe-podcast-ai"
+    ],
     "substitutable": false,
     "betterAlternative": {
       "tool": "descript",
@@ -3451,7 +3715,11 @@
       "createur-contenu",
       "etudiant"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "otter",
+      "granola"
+    ]
   },
   {
     "id": "auphonic",
@@ -3492,6 +3760,12 @@
     "prescription_quality": "question",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "adobe-podcast-ai",
+      "cleanvoice",
+      "descript",
+      "riverside"
     ]
   },
   {
@@ -3732,6 +4006,9 @@
     "prescription_quality": "silence",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "sketchup-pro"
     ]
   },
   {
@@ -3770,6 +4047,10 @@
     "prescription_quality": "oui",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "move-ai",
+      "blender"
     ]
   },
   {
@@ -3894,6 +4175,9 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "invision"
+    ],
     "freeAlternative": "figma",
     "betterAlternative": "figma"
   },
@@ -3959,6 +4243,12 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "gcp",
+      "digitalocean",
+      "heroku",
+      "vercel"
     ],
     "substitutable": false
   },
@@ -4153,6 +4443,12 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "whimsical",
+      "visily",
+      "figjam",
+      "excalidraw"
     ]
   },
   {
@@ -4245,6 +4541,11 @@
       "sofia",
       "alix"
     ],
+    "alternatives": [
+      "ae-red-giant",
+      "ae-overlord",
+      "ae-animation-composer"
+    ],
     "substitutable": false
   },
   {
@@ -4290,6 +4591,12 @@
       "Non-developers"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "lovable",
+      "bolt-new",
+      "replit",
+      "v0-vercel"
+    ],
     "freeAlternative": "make"
   },
   {
@@ -4337,6 +4644,13 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "asana",
+      "trello",
+      "notion",
+      "clickup",
+      "airtable"
     ]
   },
   {
@@ -4512,6 +4826,12 @@
     "prescription_quality": "silence",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "proposify",
+      "plutio",
+      "suitedash",
+      "pandadoc"
     ]
   },
   {
@@ -4584,6 +4904,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "snowflake",
+      "redshift"
     ],
     "substitutable": false
   },
@@ -4684,6 +5008,11 @@
     "prescription_quality": "question",
     "personas": [
       "motion-video"
+    ],
+    "alternatives": [
+      "adobe-after-effects",
+      "nuke",
+      "cavalry"
     ]
   },
   {
@@ -4726,6 +5055,11 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "cinema-4d",
+      "maya",
+      "houdini"
     ],
     "substitutable": false
   },
@@ -4808,6 +5142,10 @@
     "prescription_quality": "silence",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "honeybook",
+      "dubsado"
     ]
   },
   {
@@ -4853,6 +5191,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "docusign",
+      "yousign",
+      "signrequest",
+      "adobe-acrobat-sign"
     ]
   },
   {
@@ -4928,6 +5272,9 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "rive"
     ],
     "substitutable": false
   },
@@ -5014,6 +5361,12 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "lovable",
+      "cursor",
+      "base44",
+      "emergent"
     ]
   },
   {
@@ -5125,6 +5478,10 @@
     "prescription_quality": "ferme",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "google-drive",
+      "dropbox"
     ]
   },
   {
@@ -5212,6 +5569,10 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "similarweb",
+      "semrush"
     ]
   },
   {
@@ -5247,7 +5608,12 @@
       "Petites entreprises",
       "Freelances"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "alternatives": [
+      "canva",
+      "looka",
+      "adobe-express"
+    ]
   },
   {
     "id": "brandmark",
@@ -5285,6 +5651,11 @@
     "personas": [
       "dev",
       "marketer"
+    ],
+    "alternatives": [
+      "looka",
+      "canva",
+      "logopony"
     ],
     "freeAlternative": "Canva"
   },
@@ -5409,6 +5780,11 @@
     "personas": [
       "ALIX",
       "MARC"
+    ],
+    "alternatives": [
+      "convertkit",
+      "mailchimp",
+      "activecampaign"
     ]
   },
   {
@@ -5528,6 +5904,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "clo-3d",
+      "adobe-substance-3d",
+      "marvelous-designer"
     ]
   },
   {
@@ -5573,6 +5954,12 @@
     "prescription_quality": "medium",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "webflow",
+      "glide",
+      "softr",
+      "budibase"
     ]
   },
   {
@@ -5619,6 +6006,10 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "clockify",
+      "toggl"
     ]
   },
   {
@@ -5663,6 +6054,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "retool",
+      "appsmith",
+      "bubble"
     ],
     "substitutable": false
   },
@@ -5711,6 +6107,11 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "hootsuite",
+      "later",
+      "sprout-social"
     ]
   },
   {
@@ -5789,6 +6190,9 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "celery"
     ],
     "substitutable": false
   },
@@ -5871,6 +6275,11 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "spotify-for-podcasters",
+      "podbean",
+      "acast"
     ],
     "freeAlternative": "anchor-spotify"
   },
@@ -5984,6 +6393,9 @@
       "Recruteurs"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "cal-com"
+    ],
     "freeAlternative": "Cal.com"
   },
   {
@@ -6059,6 +6471,9 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "hotjar"
     ]
   },
   {
@@ -6102,6 +6517,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "aircall",
+      "aloware",
+      "callhippo",
+      "callrail"
     ]
   },
   {
@@ -6214,6 +6635,11 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "adobe-express",
+      "visme",
+      "figma"
     ]
   },
   {
@@ -6263,6 +6689,11 @@
     "prescription_quality": "silence",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "firefly",
+      "leonardo-ai",
+      "krea-ai"
     ]
   },
   {
@@ -6347,6 +6778,9 @@
     "prescription_quality": "silence",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "adobe-cc"
     ]
   },
   {
@@ -6695,6 +7129,10 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "adobe-lightroom",
+      "affinity-photo"
+    ],
     "substitutable": false
   },
   {
@@ -6741,6 +7179,12 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "framer",
+      "readymag",
+      "webflow",
+      "squarespace"
     ]
   },
   {
@@ -6782,6 +7226,11 @@
       "designer",
       "dev",
       "creator"
+    ],
+    "alternatives": [
+      "webflow",
+      "framer",
+      "super-so"
     ],
     "freeAlternative": "Carrd free"
   },
@@ -6965,6 +7414,11 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "shadcn-ui",
+      "material-ui",
+      "mantine"
+    ],
     "betterAlternative": "shadcn-ui"
   },
   {
@@ -7036,6 +7490,12 @@
     "prescription_quality": "strong",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "d3js",
+      "apexcharts",
+      "recharts",
+      "highcharts"
     ]
   },
   {
@@ -7111,7 +7571,12 @@
       "Startups avec ressources limitées",
       "Centres de contact à fort volume"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "intercom",
+      "crisp",
+      "voiceflow"
+    ]
   },
   {
     "id": "chatgpt",
@@ -7164,6 +7629,12 @@
     "prescription_quality": "ferme",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "claude",
+      "gemini",
+      "grok",
+      "deepseek"
     ],
     "freeAlternative": "chatgpt"
   },
@@ -7320,6 +7791,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "blender",
+      "maya",
+      "3ds-max"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -7367,6 +7843,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "thinkific",
+      "kajabi",
+      "podia"
     ]
   },
   {
@@ -7446,6 +7927,11 @@
       "Équipes ML/Data"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "chatgpt",
+      "gemini",
+      "perplexity"
+    ],
     "freeAlternative": "chatgpt"
   },
   {
@@ -7521,6 +8007,9 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "solid-inspector2"
     ]
   },
   {
@@ -7562,6 +8051,12 @@
     "prescription_quality": "silence",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "adobe-podcast-ai",
+      "auphonic",
+      "descript",
+      "podcastle"
     ]
   },
   {
@@ -7606,6 +8101,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "auth-js",
+      "okta",
+      "microsoft-entra-id"
     ],
     "substitutable": false
   },
@@ -7656,6 +8156,11 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "asana",
+      "monday",
+      "trello"
     ],
     "freeAlternative": "notion"
   },
@@ -7776,6 +8281,12 @@
     "prescription_quality": "question",
     "personas": [
       "graphiste-da"
+    ],
+    "alternatives": [
+      "procreate",
+      "krita",
+      "adobe-fresco",
+      "adobe-photoshop"
     ]
   },
   {
@@ -7814,6 +8325,11 @@
     "personas": [
       "dev",
       "marketer"
+    ],
+    "alternatives": [
+      "opus-clip",
+      "vidyo-ai",
+      "descript"
     ],
     "betterAlternative": "opus-clip"
   },
@@ -7857,7 +8373,11 @@
       "Modélistes",
       "Étudiants en mode"
     ],
-    "prescription_quality": "contextual"
+    "prescription_quality": "contextual",
+    "alternatives": [
+      "browzwear",
+      "marvelous-designer"
+    ]
   },
   {
     "id": "clockify",
@@ -7903,6 +8423,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "timecamp",
+      "deputy",
+      "plutio",
+      "asana"
     ]
   },
   {
@@ -8047,6 +8573,10 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "bynder",
+      "pics-io"
+    ],
     "substitutable": false
   },
   {
@@ -8179,6 +8709,9 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "eas-build"
     ],
     "substitutable": false
   },
@@ -8329,6 +8862,11 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "notion",
+      "obsidian",
+      "roam-research"
     ],
     "betterAlternative": {
       "tool": "notion",
@@ -8557,6 +9095,10 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "upwork",
+      "fiverr"
     ]
   },
   {
@@ -8627,6 +9169,10 @@
     "prescription_quality": "question",
     "personas": [
       "graphiste-da"
+    ],
+    "alternatives": [
+      "adobe-illustrator",
+      "affinity-designer"
     ]
   },
   {
@@ -8672,6 +9218,11 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "v-ray",
+      "octane-render",
+      "redshift"
     ],
     "freeAlternative": "blender"
   },
@@ -8737,6 +9288,11 @@
     "personas": [
       "ops",
       "marketer"
+    ],
+    "alternatives": [
+      "intercom",
+      "zendesk",
+      "freshdesk"
     ],
     "freeAlternative": "Freshdesk",
     "betterAlternative": "intercom"
@@ -8822,6 +9378,10 @@
     "prescription_quality": "medium",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "supermetrics",
+      "airbyte"
     ]
   },
   {
@@ -8885,6 +9445,11 @@
     "personas": [
       "dev"
     ],
+    "alternatives": [
+      "brightdata",
+      "scrapingbee",
+      "apify"
+    ],
     "freeAlternative": "Crawlbase free",
     "betterAlternative": "scrapingbee"
   },
@@ -8932,6 +9497,11 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "opus-clip",
+      "capcut",
+      "descript"
     ]
   },
   {
@@ -8967,6 +9537,10 @@
     "prescription_quality": "silence",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react",
+      "svelte"
     ],
     "betterAlternative": "react"
   },
@@ -9046,6 +9620,9 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "dun-bradstreet"
     ]
   },
   {
@@ -9082,6 +9659,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "intercom",
+      "zendesk",
+      "tidio"
     ],
     "substitutable": false
   },
@@ -9228,6 +9810,11 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "github-copilot",
+      "zed",
+      "windsurf"
+    ],
     "substitutable": false
   },
   {
@@ -9342,6 +9929,12 @@
     "prescription_quality": "question",
     "personas": [
       "motion-video"
+    ],
+    "alternatives": [
+      "redshift",
+      "octane-render",
+      "v-ray",
+      "arnold"
     ]
   },
   {
@@ -9414,6 +10007,11 @@
     "personas": [
       "DEV"
     ],
+    "alternatives": [
+      "chartjs",
+      "recharts",
+      "apexcharts"
+    ],
     "freeAlternative": "chartjs"
   },
   {
@@ -9461,6 +10059,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "enscape",
+      "twinmotion",
+      "lumion"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -9498,7 +10101,12 @@
       "Photographes RAW",
       "Enthusiastes open source"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "adobe-lightroom",
+      "capture-one",
+      "dxo-photolab"
+    ]
   },
   {
     "id": "dart",
@@ -9534,6 +10142,9 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "react"
     ],
     "substitutable": false
   },
@@ -9573,6 +10184,11 @@
     "prescription_quality": "question",
     "personas": [
       "freelance"
+    ],
+    "alternatives": [
+      "linear",
+      "clickup",
+      "asana"
     ]
   },
   {
@@ -9616,6 +10232,12 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "1password",
+      "bitwarden",
+      "nordpass",
+      "lastpass"
     ]
   },
   {
@@ -9664,6 +10286,12 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "sentry",
+      "prometheus",
+      "grafana",
+      "better-stack"
     ],
     "freeAlternative": "Sentry",
     "substitutable": false
@@ -9783,6 +10411,10 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "adobe-premiere-pro",
+      "final-cut-pro"
+    ],
     "substitutable": false
   },
   {
@@ -9863,6 +10495,10 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "bigquery",
+      "airbyte"
+    ],
     "substitutable": false
   },
   {
@@ -9911,6 +10547,11 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "rippling",
+      "oyster",
+      "bamboohr"
     ]
   },
   {
@@ -9949,6 +10590,10 @@
       "Développeurs solo"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "chatgpt",
+      "claude"
+    ],
     "freeAlternative": "deepseek",
     "betterAlternative": {
       "tool": "claude",
@@ -9991,6 +10636,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "snyk",
+      "github-advanced-security"
     ],
     "substitutable": false
   },
@@ -10037,6 +10686,10 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "timecamp",
+      "clockify"
     ]
   },
   {
@@ -10088,6 +10741,15 @@
       "sofia",
       "alix",
       "theo"
+    ],
+    "alternatives": [
+      "adobe-podcast-ai",
+      "auphonic",
+      "cleanvoice",
+      "riverside",
+      "podcastle",
+      "captions",
+      "adobe-premiere-pro"
     ]
   },
   {
@@ -10133,6 +10795,10 @@
     "prescription_quality": "medium",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "riverside",
+      "opus-clip"
     ]
   },
   {
@@ -10250,6 +10916,11 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "quickbooks",
+      "xero",
+      "pennylane"
     ]
   },
   {
@@ -10288,6 +10959,10 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "axeptio",
+      "onetrust"
     ]
   },
   {
@@ -10335,6 +11010,12 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "aws",
+      "gcp",
+      "vercel",
+      "fly-io"
     ]
   },
   {
@@ -10418,6 +11099,11 @@
     "prescription_quality": "silence",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "slack",
+      "microsoft-teams",
+      "circle"
     ]
   },
   {
@@ -10683,6 +11369,11 @@
       "creator",
       "dev"
     ],
+    "alternatives": [
+      "carrd",
+      "framer",
+      "webflow"
+    ],
     "freeAlternative": "Dorik free"
   },
   {
@@ -10751,6 +11442,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "lookback",
+      "hotjar"
     ]
   },
   {
@@ -10861,6 +11556,10 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "vanta",
+      "onetrust"
     ]
   },
   {
@@ -10909,6 +11608,11 @@
     "personas": [
       "CLAIRE"
     ],
+    "alternatives": [
+      "google-drive",
+      "box",
+      "onedrive"
+    ],
     "freeAlternative": "Google Drive",
     "betterAlternative": {
       "tool": "google-drive",
@@ -10954,7 +11658,12 @@
       "Affiliation managers",
       "Agences marketing"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "bitly",
+      "rebrandly",
+      "short-io"
+    ]
   },
   {
     "id": "dubsado",
@@ -11028,6 +11737,11 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "ae-rubberhose",
+      "ae-bao-boa",
+      "ae-overlord"
     ],
     "substitutable": false
   },
@@ -11114,6 +11828,11 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "adobe-lightroom",
+      "capture-one",
+      "darktable"
     ]
   },
   {
@@ -11151,7 +11870,11 @@
       "Product managers",
       "Agences marketing e-commerce"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "alternatives": [
+      "canva",
+      "placeit"
+    ]
   },
   {
     "id": "eagle",
@@ -11193,6 +11916,15 @@
     "prescription_quality": "silence",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "dropbox",
+      "box",
+      "bynder",
+      "arena",
+      "arena",
+      "arena",
+      "arena"
     ]
   },
   {
@@ -11238,6 +11970,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "codemagic",
+      "fly-io",
+      "vercel"
     ],
     "substitutable": false
   },
@@ -11310,6 +12047,11 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "chartjs",
+      "highcharts",
+      "d3js"
     ]
   },
   {
@@ -11460,6 +12202,11 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "whisper",
+      "descript",
+      "suno"
+    ],
     "freeAlternative": "elevenlabs"
   },
   {
@@ -11579,6 +12326,9 @@
     "prescription_quality": "medium",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "obs"
     ]
   },
   {
@@ -11624,6 +12374,10 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "houdini",
+      "blender"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -11661,7 +12415,12 @@
       "Consultants",
       "Startups avec peu de ressources dev"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "alternatives": [
+      "lovable",
+      "bolt",
+      "cursor"
+    ]
   },
   {
     "id": "emoji-sticker-packs",
@@ -11731,6 +12490,9 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "styled-components"
     ],
     "freeAlternative": "tailwind-css"
   },
@@ -11813,6 +12575,11 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "twinmotion",
+      "d5-render",
+      "lumion"
     ],
     "substitutable": false
   },
@@ -11900,6 +12667,11 @@
     "prescription_quality": "medium",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "storyblocks",
+      "motion-array",
+      "adobe-cc"
     ]
   },
   {
@@ -11972,6 +12744,9 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "keyshot"
     ]
   },
   {
@@ -12066,7 +12841,10 @@
       "Conférenciers et formateurs",
       "Associations et communautés"
     ],
-    "prescription_quality": "contextual"
+    "prescription_quality": "contextual",
+    "alternatives": [
+      "weezevent"
+    ]
   },
   {
     "id": "excalidraw",
@@ -12118,6 +12896,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "miro",
+      "whimsical",
+      "figma"
     ],
     "freeAlternative": "Excalidraw"
   },
@@ -12199,6 +12982,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "codemagic",
+      "firebase",
+      "vercel"
     ],
     "substitutable": false
   },
@@ -12352,6 +13140,10 @@
     "prescription_quality": "ferme",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "otter-ai",
+      "granola"
     ]
   },
   {
@@ -12399,6 +13191,11 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "plausible",
+      "simple-analytics",
+      "google-analytics"
+    ],
     "freeAlternative": "Google Analytics"
   },
   {
@@ -12444,6 +13241,9 @@
     "prescription_quality": "medium",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "readwise"
     ]
   },
   {
@@ -12490,6 +13290,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "fathom",
+      "granola",
+      "otter-ai"
     ]
   },
   {
@@ -12606,6 +13411,12 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "canva",
+      "adobe-xd",
+      "invision",
+      "framer"
+    ],
     "substitutable": false
   },
   {
@@ -12644,6 +13455,10 @@
       "Product designers",
       "Product managers",
       "Équipes innovation"
+    ],
+    "alternatives": [
+      "lovable",
+      "bolt-new"
     ]
   },
   {
@@ -12682,6 +13497,10 @@
       "Web designers",
       "Équipes marketing",
       "Studios de marque"
+    ],
+    "alternatives": [
+      "framer",
+      "webflow"
     ]
   },
   {
@@ -12721,6 +13540,9 @@
       "Brand designers",
       "Marketing teams",
       "Content teams"
+    ],
+    "alternatives": [
+      "canva"
     ]
   },
   {
@@ -12760,6 +13582,9 @@
       "Design systems",
       "Équipes produit"
     ],
+    "alternatives": [
+      "zeplin"
+    ],
     "substitutable": false
   },
   {
@@ -12797,6 +13622,9 @@
       "Designers produit",
       "Illustrateurs numériques",
       "Équipes de marque"
+    ],
+    "alternatives": [
+      "adobe-illustrator"
     ]
   },
   {
@@ -12834,6 +13662,10 @@
       "Motion designers",
       "Product designers",
       "Design systems"
+    ],
+    "alternatives": [
+      "after-effects",
+      "rive"
     ]
   },
   {
@@ -12953,6 +13785,9 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "figma"
+    ],
     "substitutable": false
   },
   {
@@ -12996,6 +13831,10 @@
     "personas": [
       "sofia",
       "alix"
+    ],
+    "alternatives": [
+      "krea-ai",
+      "magnific-ai"
     ]
   },
   {
@@ -13035,6 +13874,9 @@
       "Éducateurs"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "typeform"
+    ],
     "freeAlternative": "google-forms"
   },
   {
@@ -13175,6 +14017,9 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "supabase"
     ]
   },
   {
@@ -13222,6 +14067,10 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "crawlbase",
+      "hyperbrowser"
     ]
   },
   {
@@ -13483,6 +14332,10 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "ae-animation-composer",
+      "motion-bro"
+    ],
     "substitutable": false
   },
   {
@@ -13553,6 +14406,11 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "figma",
+      "miro",
+      "whimsical"
     ]
   },
   {
@@ -13633,6 +14491,9 @@
       "alix",
       "theo"
     ],
+    "alternatives": [
+      "react"
+    ],
     "betterAlternative": "react"
   },
   {
@@ -13676,6 +14537,13 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "midjourney",
+      "stable-diffusion",
+      "leonardo-ai",
+      "firefly",
+      "krea-ai"
     ]
   },
   {
@@ -13715,6 +14583,11 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "heroku",
+      "digitalocean",
+      "vercel"
     ]
   },
   {
@@ -13902,6 +14775,10 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "pixieset",
+      "squarespace"
     ]
   },
   {
@@ -13939,6 +14816,9 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react-hook-form"
     ],
     "betterAlternative": "react-hook-form"
   },
@@ -14079,6 +14959,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "webflow",
+      "wix",
+      "squarespace"
+    ],
     "betterAlternative": {
       "tool": "webflow",
       "reason": "Plus structurant pour les sites complexes et les CMS avancés.",
@@ -14190,6 +15075,10 @@
     "prescription_quality": "silence",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "sketchup-pro",
+      "1001bit-tools"
     ]
   },
   {
@@ -14269,6 +15158,11 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "quickbooks-online",
+      "xero",
+      "pennylane"
     ]
   },
   {
@@ -14319,6 +15213,9 @@
     "prescription_quality": "medium",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "zendesk"
     ]
   },
   {
@@ -14402,6 +15299,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "sketchup-pro",
+      "autocad-lt"
     ]
   },
   {
@@ -14444,6 +15345,10 @@
       "Développeurs de jeux"
     ],
     "prescription_quality": "oui",
+    "alternatives": [
+      "blender",
+      "houdini"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -14529,6 +15434,12 @@
       "alix",
       "claire",
       "sofia"
+    ],
+    "alternatives": [
+      "pitch",
+      "canva",
+      "beautiful-ai",
+      "google-slides"
     ]
   },
   {
@@ -14612,6 +15523,10 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "printify",
+      "shipstation"
     ]
   },
   {
@@ -14652,6 +15567,10 @@
       "Développeurs Google"
     ],
     "prescription_quality": "ferme",
+    "alternatives": [
+      "chatgpt",
+      "claude"
+    ],
     "freeAlternative": "gemini"
   },
   {
@@ -14831,6 +15750,12 @@
       "Agences marketing"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "brevo",
+      "activecampaign",
+      "kit",
+      "mailerlite"
+    ],
     "freeAlternative": "brevo"
   },
   {
@@ -14904,6 +15829,10 @@
     "prescription_quality": "oui",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "adobe-photoshop",
+      "motion-bro"
     ],
     "substitutable": false
   },
@@ -15101,6 +16030,10 @@
       "alix",
       "marc"
     ],
+    "alternatives": [
+      "cursor",
+      "windsurf"
+    ],
     "betterAlternative": {
       "tool": "cursor",
       "reason": "Cursor intègre Copilot et ajoute la compréhension du codebase entier + chat contextuel",
@@ -15224,6 +16157,9 @@
     "personas": [
       "consultant",
       "cabinet"
+    ],
+    "alternatives": [
+      "harvest"
     ]
   },
   {
@@ -15270,6 +16206,10 @@
     "prescription_quality": "medium",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "zoho",
+      "microsoft-365"
     ]
   },
   {
@@ -15456,6 +16396,11 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "chatgpt",
+      "claude",
+      "deepseek"
     ]
   },
   {
@@ -15482,7 +16427,12 @@
       "Propriétaires de sites",
       "Analystes web"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "plausible",
+      "fathom-analytics",
+      "mixpanel"
+    ]
   },
   {
     "id": "ga4",
@@ -15578,6 +16528,12 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "aws",
+      "digitalocean",
+      "vercel",
+      "supabase"
+    ],
     "substitutable": false
   },
   {
@@ -15617,6 +16573,9 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "microsoft-365"
     ]
   },
   {
@@ -15668,6 +16627,13 @@
     "personas": [
       "CLAIRE"
     ],
+    "alternatives": [
+      "dropbox",
+      "onedrive",
+      "box",
+      "sharepoint",
+      "wetransfer"
+    ],
     "freeAlternative": "google-drive"
   },
   {
@@ -15705,6 +16671,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "blender",
+      "mapbox"
     ]
   },
   {
@@ -15815,6 +16785,9 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "app-store-connect"
+    ],
     "substitutable": false
   },
   {
@@ -15853,6 +16826,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "ahrefs",
+      "plausible"
     ]
   },
   {
@@ -16177,6 +17154,10 @@
     "personas": [
       "MARC"
     ],
+    "alternatives": [
+      "chatgpt",
+      "claude"
+    ],
     "freeAlternative": "ChatGPT",
     "betterAlternative": {
       "tool": "claude",
@@ -16219,7 +17200,12 @@
       "Startups budgétées",
       "Équipes produit/dev"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "alternatives": [
+      "fathom",
+      "otter-ai",
+      "tldv"
+    ]
   },
   {
     "id": "graphql",
@@ -16365,6 +17351,9 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react"
     ]
   },
   {
@@ -16401,7 +17390,10 @@
       "Analystes social",
       "Traders sentiment"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "chatgpt"
+    ]
   },
   {
     "id": "grokipedia",
@@ -16531,6 +17523,11 @@
       "consultant",
       "creator"
     ],
+    "alternatives": [
+      "motion",
+      "reclaim-ai",
+      "todoist"
+    ],
     "freeAlternative": "Todoist",
     "betterAlternative": "motion"
   },
@@ -16568,7 +17565,12 @@
       "Équipes sales/support",
       "Départements ops"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "alternatives": [
+      "make",
+      "zapier",
+      "n8n"
+    ]
   },
   {
     "id": "gumroad",
@@ -16643,6 +17645,12 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "rippling",
+      "justworks",
+      "bamboohr",
+      "deel"
     ]
   },
   {
@@ -16681,6 +17689,10 @@
     "prescription_quality": "question",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "blender",
+      "modo"
     ]
   },
   {
@@ -16751,6 +17763,10 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "doppler",
+      "infisical"
     ]
   },
   {
@@ -16786,6 +17802,10 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "radix-primitives",
+      "shadcn-ui"
     ],
     "betterAlternative": "shadcn-ui"
   },
@@ -16936,6 +17956,12 @@
     "prescription_quality": "medium",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "intercom",
+      "crisp",
+      "zendesk",
+      "freshservice"
     ]
   },
   {
@@ -16979,7 +18005,13 @@
       "Chercheurs",
       "Écrivains"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "obsidian",
+      "notion",
+      "logseq",
+      "roam-research"
+    ]
   },
   {
     "id": "heroku",
@@ -17025,6 +18057,14 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "vercel",
+      "netlify",
+      "render",
+      "fly-io",
+      "railway",
+      "digitalocean"
     ]
   },
   {
@@ -17191,6 +18231,11 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "chartjs",
+      "d3js",
+      "apexcharts"
+    ],
     "freeAlternative": "chartjs"
   },
   {
@@ -17270,6 +18315,12 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "dubsado",
+      "plutio",
+      "bloom-crm",
+      "vcita"
     ]
   },
   {
@@ -17298,7 +18349,12 @@
       "Entreprises multi-équipes",
       "Grandes marques avec presence sociale"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "buffer",
+      "later",
+      "sprout-social"
+    ]
   },
   {
     "id": "hostfully",
@@ -17390,6 +18446,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "posthog",
+      "amplitude",
+      "dovetail"
+    ],
     "betterAlternative": {
       "tool": "microsoft-clarity",
       "reason": "Microsoft Clarity propose heatmaps et replays de sessions gratuitement, sans limite de sessions.",
@@ -17441,6 +18502,11 @@
     "prescription_quality": "oui",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "blender",
+      "cinema-4d",
+      "maya"
     ],
     "freeAlternative": "blender"
   },
@@ -17522,7 +18588,11 @@
       "Agences",
       "Petites entreprises"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "salesforce",
+      "pipedrive"
+    ]
   },
   {
     "id": "hugeicons",
@@ -17573,6 +18643,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "figma-iconify",
+      "icons8",
+      "noun-project"
     ]
   },
   {
@@ -17650,6 +18725,10 @@
       "THEO",
       "SOFIA",
       "ALIX"
+    ],
+    "alternatives": [
+      "elevenlabs",
+      "openai-whisper"
     ]
   },
   {
@@ -17732,6 +18811,9 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "firecrawl"
     ]
   },
   {
@@ -17924,6 +19006,11 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "pandadoc",
+      "proposify",
+      "dubsado"
     ]
   },
   {
@@ -17996,6 +19083,11 @@
       "marketer",
       "creator",
       "dev"
+    ],
+    "alternatives": [
+      "jasper",
+      "surfer-seo",
+      "semrush"
     ],
     "freeAlternative": "ChatGPT"
   },
@@ -18082,6 +19174,11 @@
     "personas": [
       "MARC"
     ],
+    "alternatives": [
+      "shine",
+      "qonto",
+      "freshbooks"
+    ],
     "freeAlternative": "indy"
   },
   {
@@ -18127,6 +19224,11 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "vault",
+      "doppler",
+      "dotenv-vault"
     ]
   },
   {
@@ -18333,6 +19435,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "tiktok",
+      "linkedin"
     ]
   },
   {
@@ -18491,6 +19597,12 @@
     "personas": [
       "CLAIRE"
     ],
+    "alternatives": [
+      "zendesk",
+      "helpscout",
+      "crisp",
+      "tidio"
+    ],
     "freeAlternative": "Crisp"
   },
   {
@@ -18524,6 +19636,10 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "figma",
+      "framer"
     ],
     "freeAlternative": "figma",
     "betterAlternative": "figma"
@@ -18561,6 +19677,11 @@
       "Consultants indépendants"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "indy",
+      "pennylane",
+      "facture-net"
+    ],
     "freeAlternative": "Invoicely"
   },
   {
@@ -18633,6 +19754,9 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "steamworks"
+    ],
     "substitutable": false
   },
   {
@@ -18693,7 +19817,11 @@
       "Créateurs de contenu",
       "Agences"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "chatgpt",
+      "claude"
+    ]
   },
   {
     "id": "jenni",
@@ -18727,7 +19855,11 @@
       "chercheur",
       "redacteur"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "grammarly",
+      "notebooklm"
+    ]
   },
   {
     "id": "jest",
@@ -18811,6 +19943,12 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "linear",
+      "clickup",
+      "asana",
+      "trello"
     ],
     "betterAlternative": {
       "tool": "linear",
@@ -18944,6 +20082,11 @@
     "prescription_quality": "oui",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "typeform",
+      "tally",
+      "fillout"
     ]
   },
   {
@@ -18979,6 +20122,11 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react",
+      "svelte",
+      "alpinejs"
     ],
     "betterAlternative": "react"
   },
@@ -19175,6 +20323,12 @@
     "prescription_quality": "ferme",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "thinkific",
+      "podia",
+      "learnworlds",
+      "circle"
     ]
   },
   {
@@ -19319,6 +20473,12 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "factorial",
+      "lucca",
+      "payfit",
+      "deputy"
     ]
   },
   {
@@ -19390,6 +20550,11 @@
     "prescription_quality": "oui",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "v-ray",
+      "octane-render",
+      "corona-renderer"
     ],
     "freeAlternative": "blender"
   },
@@ -19515,6 +20680,12 @@
       "ALIX",
       "MARC"
     ],
+    "alternatives": [
+      "brevo",
+      "mailerlite",
+      "beehiiv",
+      "substack"
+    ],
     "freeAlternative": "brevo"
   },
   {
@@ -19597,6 +20768,12 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "mailchimp",
+      "brevo",
+      "activecampaign",
+      "mailerlite"
     ]
   },
   {
@@ -19677,6 +20854,9 @@
       "alix",
       "theo"
     ],
+    "alternatives": [
+      "runway"
+    ],
     "betterAlternative": {
       "tool": "runway",
       "reason": "Runway a un écosystème plus complet (formation, templates, intégrations)",
@@ -19718,6 +20898,11 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "react",
+      "vue-cli",
+      "alpinejs"
     ],
     "betterAlternative": "react"
   },
@@ -19794,6 +20979,11 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "midjourney",
+      "leonardo-ai",
+      "magnific-ai"
     ]
   },
   {
@@ -19913,6 +21103,11 @@
     "personas": [
       "MARC",
       "CLAIRE"
+    ],
+    "alternatives": [
+      "aircall",
+      "openphone",
+      "callrail"
     ]
   },
   {
@@ -19948,6 +21143,11 @@
     "prescription_quality": "question",
     "personas": [
       "graphiste-da"
+    ],
+    "alternatives": [
+      "clip-studio-paint",
+      "procreate",
+      "adobe-fresco"
     ]
   },
   {
@@ -19986,6 +21186,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "fly-io",
+      "digitalocean",
+      "aws"
     ],
     "substitutable": false
   },
@@ -20032,6 +21237,10 @@
     "prescription_quality": "silence",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "waalaxy",
+      "phantombuster"
     ]
   },
   {
@@ -20119,6 +21328,11 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "unbounce",
+      "wix",
+      "wordpress"
     ],
     "freeAlternative": "carrd"
   },
@@ -20327,6 +21541,12 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "socialbee",
+      "metricool",
+      "planoly",
+      "hootsuite"
     ]
   },
   {
@@ -20476,6 +21696,11 @@
     "personas": [
       "MARC",
       "ALIX"
+    ],
+    "alternatives": [
+      "unbounce",
+      "instapage",
+      "framer"
     ]
   },
   {
@@ -20552,7 +21777,12 @@
       "Créateurs de contenu",
       "Organismes de formation"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "teachable",
+      "podia",
+      "thinkific"
+    ]
   },
   {
     "id": "legalplace",
@@ -20589,6 +21819,11 @@
     "prescription_quality": "medium",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "legalstart",
+      "captain-contrat",
+      "rocket-lawyer"
     ]
   },
   {
@@ -20689,6 +21924,13 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "apollo-io",
+      "activecampaign",
+      "instantly",
+      "la-growth-machine",
+      "replyio"
     ]
   },
   {
@@ -20823,6 +22065,12 @@
     "prescription_quality": "ferme",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "midjourney",
+      "firefly",
+      "krea-ai",
+      "flux-ai"
     ]
   },
   {
@@ -20983,6 +22231,11 @@
     "prescription_quality": "medium",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "affinity-photo",
+      "snapseed",
+      "canva"
     ]
   },
   {
@@ -21178,6 +22431,11 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "jira",
+      "notion",
+      "asana"
     ]
   },
   {
@@ -21357,6 +22615,10 @@
     "prescription_quality": "medium",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "greenhouse",
+      "ashby"
     ]
   },
   {
@@ -21616,6 +22878,7 @@
       "Entrepreneurs"
     ],
     "prescription_quality": "question",
+    "alternatives": [],
     "freeAlternative": "canva"
   },
   {
@@ -21655,6 +22918,11 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "obsidian",
+      "roam-research",
+      "notion"
     ]
   },
   {
@@ -21800,6 +23068,11 @@
     "prescription_quality": "oui",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "metabase",
+      "hex",
+      "grafana"
     ]
   },
   {
@@ -21839,7 +23112,12 @@
       "Support client",
       "Vente et produit"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "screen-studio",
+      "vidyard",
+      "scribe"
+    ]
   },
   {
     "id": "loopio",
@@ -21876,6 +23154,10 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "process-street",
+      "confluence"
     ]
   },
   {
@@ -21986,6 +23268,11 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "rive",
+      "gsap",
+      "origami"
     ]
   },
   {
@@ -22033,6 +23320,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "rive",
+      "greensock"
     ]
   },
   {
@@ -22083,6 +23374,12 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "bolt-new",
+      "base44",
+      "v0-vercel",
+      "replit"
     ]
   },
   {
@@ -22271,6 +23568,11 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "adobe-lightroom",
+      "capture-one",
+      "topaz-gigapixel"
+    ],
     "substitutable": false
   },
   {
@@ -22312,6 +23614,11 @@
     "personas": [
       "sofia",
       "marc"
+    ],
+    "alternatives": [
+      "enscape",
+      "d5-render",
+      "twinmotion"
     ],
     "freeAlternative": "blender"
   },
@@ -22384,6 +23691,11 @@
     "prescription_quality": "question",
     "personas": [
       "marc"
+    ],
+    "alternatives": [
+      "apollo-io",
+      "seamless-ai",
+      "cognism"
     ]
   },
   {
@@ -22431,6 +23743,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "snyk",
+      "semgrep",
+      "owasp-zap"
     ]
   },
   {
@@ -22476,6 +23793,9 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "touchdesigner"
     ]
   },
   {
@@ -22520,6 +23840,9 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "davinci-resolve"
+    ],
     "freeAlternative": "davinci-resolve"
   },
   {
@@ -22558,7 +23881,12 @@
       "Startups",
       "Agences digital"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "alternatives": [
+      "v0",
+      "lovable",
+      "figma"
+    ]
   },
   {
     "id": "magicbrief",
@@ -22633,6 +23961,12 @@
     "prescription_quality": "medium",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "krea-ai",
+      "figma-weave",
+      "leonardo-ai",
+      "firefly"
     ]
   },
   {
@@ -22681,6 +24015,12 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "krea-ai",
+      "figma-weave",
+      "leonardo-ai",
+      "firefly"
     ]
   },
   {
@@ -22729,6 +24069,12 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "brevo",
+      "kit",
+      "mailerlite",
+      "activecampaign"
     ],
     "freeAlternative": "Brevo"
   },
@@ -22874,6 +24220,10 @@
       "Consultants integrations"
     ],
     "prescription_quality": "silence",
+    "alternatives": [
+      "zapier",
+      "n8n"
+    ],
     "freeAlternative": "make"
   },
   {
@@ -22984,6 +24334,11 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "material-ui",
+      "shadcn-ui",
+      "chakra-ui"
     ]
   },
   {
@@ -23056,6 +24411,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "google-maps",
+      "arcgis"
     ]
   },
   {
@@ -23093,6 +24452,10 @@
     "prescription_quality": "question",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "substance-3d-painter",
+      "blender"
     ],
     "freeAlternative": "blender",
     "betterAlternative": {
@@ -23137,6 +24500,10 @@
     "personas": [
       "designer"
     ],
+    "alternatives": [
+      "substance-3d-painter",
+      "blender"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -23174,6 +24541,10 @@
     "prescription_quality": "oui",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "clo-3d",
+      "blender"
     ],
     "freeAlternative": "blender"
   },
@@ -23242,6 +24613,9 @@
     "prescription_quality": "silence",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "material-ui"
     ]
   },
   {
@@ -23290,6 +24664,11 @@
     "prescription_quality": "oui",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "shadcn-ui",
+      "ant-design",
+      "chakra-ui"
     ],
     "freeAlternative": "shadcn-ui"
   },
@@ -23370,6 +24749,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "blender",
+      "houdini",
+      "adobe"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -23414,6 +24798,12 @@
       "Studios cinéma/jeu"
     ],
     "prescription_quality": "oui",
+    "alternatives": [
+      "blender",
+      "cinema-4d",
+      "3ds-max",
+      "houdini"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -23454,6 +24844,9 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "invision"
     ]
   },
   {
@@ -23562,6 +24955,7 @@
       "Équipes RH réduites"
     ],
     "prescription_quality": "question",
+    "alternatives": [],
     "freeAlternative": "indy"
   },
   {
@@ -23733,6 +25127,9 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "memberful"
     ]
   },
   {
@@ -23807,6 +25204,10 @@
     "prescription_quality": "oui",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "tripo",
+      "blender"
     ]
   },
   {
@@ -23926,6 +25327,11 @@
     "personas": [
       "CLAIRE"
     ],
+    "alternatives": [
+      "looker-studio",
+      "grafana",
+      "hex"
+    ],
     "substitutable": false
   },
   {
@@ -24037,6 +25443,11 @@
       "ops",
       "consultant",
       "manager"
+    ],
+    "alternatives": [
+      "chatgpt",
+      "claude",
+      "google-workspace-ai"
     ],
     "freeAlternative": "ChatGPT"
   },
@@ -24155,6 +25566,10 @@
     "prescription_quality": "oui",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "crowdstrike",
+      "vanta"
     ]
   },
   {
@@ -24202,6 +25617,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "netsuite",
+      "sap-s4hana",
+      "sage-intacct",
+      "oracle-fusion-cloud"
     ]
   },
   {
@@ -24471,6 +25892,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "flux",
+      "firefly",
+      "leonardo-ai"
     ]
   },
   {
@@ -24526,6 +25952,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "notion",
+      "figma",
+      "miro"
     ]
   },
   {
@@ -24562,7 +25993,10 @@
       "Designers/UX",
       "Facilitateurs d'ateliers"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "figjam"
+    ]
   },
   {
     "id": "mixpanel",
@@ -24599,6 +26033,12 @@
     "prescription_quality": "medium",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "amplitude",
+      "google-analytics",
+      "posthog",
+      "hotjar"
     ]
   },
   {
@@ -24793,7 +26233,12 @@
       "ops",
       "other"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "notion",
+      "clickup",
+      "asana"
+    ]
   },
   {
     "id": "mongodb-atlas",
@@ -24840,6 +26285,11 @@
     "prescription_quality": "oui",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "supabase",
+      "firebase",
+      "neon"
     ]
   },
   {
@@ -25013,7 +26463,12 @@
       "Équipes ventes (suivi pipeline + calendrier)",
       "Consultants indépendants (freelances)"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "alternatives": [
+      "notion",
+      "todoist",
+      "reclaim-ai"
+    ]
   },
   {
     "id": "motion",
@@ -25094,6 +26549,11 @@
     "prescription_quality": "medium",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "envato-elements",
+      "storyblocks",
+      "productioncrate"
     ]
   },
   {
@@ -25133,6 +26593,10 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "ae-animation-composer",
+      "ae-red-giant"
+    ],
     "substitutable": false
   },
   {
@@ -25168,7 +26632,11 @@
       "Producteurs animation",
       "Équipes jeux AAA"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "alternatives": [
+      "autodesk-flow-studio",
+      "blender"
+    ]
   },
   {
     "id": "mrpeasy",
@@ -25252,6 +26720,10 @@
       "alix",
       "marc",
       "claire"
+    ],
+    "alternatives": [
+      "elevenlabs",
+      "descript"
     ]
   },
   {
@@ -25342,7 +26814,11 @@
       "dev-freelance",
       "ai-builder"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "zapier",
+      "make"
+    ]
   },
   {
     "id": "namecheap",
@@ -25386,6 +26862,10 @@
     "prescription_quality": "ferme",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "cloudflare",
+      "ovh"
     ]
   },
   {
@@ -25529,6 +27009,11 @@
     "prescription_quality": "oui",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "supabase",
+      "firebase",
+      "mongodb-atlas"
     ]
   },
   {
@@ -25565,6 +27050,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "flask",
+      "php",
+      "python"
     ],
     "substitutable": false
   },
@@ -25645,6 +27135,11 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "vercel",
+      "fly-io",
+      "digitalocean"
     ]
   },
   {
@@ -25684,6 +27179,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "sap-business-one",
+      "sage-intacct",
+      "microsoft-dynamics-business-central",
+      "sap-business-bydesign"
     ]
   },
   {
@@ -25958,6 +27459,12 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "adobe-lightroom",
+      "capture-one",
+      "luminar-neo",
+      "topaz-gigapixel"
+    ],
     "substitutable": false
   },
   {
@@ -26038,6 +27545,10 @@
     "personas": [
       "designer"
     ],
+    "alternatives": [
+      "zbrush",
+      "blender"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -26074,6 +27585,12 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "1password",
+      "bitwarden",
+      "dashlane",
+      "lastpass"
     ]
   },
   {
@@ -26161,6 +27678,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "obsidian",
+      "coda",
+      "clickup"
     ],
     "freeAlternative": "Obsidian"
   },
@@ -26318,6 +27840,10 @@
     "personas": [
       "designer"
     ],
+    "alternatives": [
+      "adobe-after-effects",
+      "davinci-resolve"
+    ],
     "freeAlternative": "davinci-resolve"
   },
   {
@@ -26472,6 +27998,13 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "notion",
+      "logseq",
+      "roam-research",
+      "reflect-notes",
+      "heptabase"
+    ],
     "freeAlternative": "obsidian"
   },
   {
@@ -26515,6 +28048,11 @@
       "Archviz"
     ],
     "prescription_quality": "oui",
+    "alternatives": [
+      "redshift",
+      "v-ray",
+      "corona-renderer"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -26729,6 +28267,10 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "vanta",
+      "drata"
     ]
   },
   {
@@ -26952,6 +28494,11 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "aircall",
+      "zoom-pro",
+      "calltrackingmetrics"
     ]
   },
   {
@@ -27040,6 +28587,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "descript",
+      "capcut",
+      "crayo-ai"
     ]
   },
   {
@@ -27115,7 +28667,12 @@
       "Supply chain executives",
       "Contrôleurs de gestion entreprise"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "netsuite",
+      "sap-s4hana",
+      "workday-financial-management"
+    ]
   },
   {
     "id": "origami",
@@ -27150,6 +28707,10 @@
     "prescription_quality": "silence",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "framer",
+      "invision"
     ],
     "betterAlternative": "framer"
   },
@@ -27231,6 +28792,10 @@
       "sofia",
       "marc",
       "theo"
+    ],
+    "alternatives": [
+      "fathom",
+      "riverside"
     ],
     "betterAlternative": {
       "tool": "descript",
@@ -27344,6 +28909,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "ae-bodymovin",
+      "figma-anima",
+      "aescripts-flow"
+    ],
     "substitutable": false
   },
   {
@@ -27389,6 +28959,11 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "digitalocean",
+      "fly-io",
+      "vercel"
     ],
     "substitutable": false
   },
@@ -27670,7 +29245,12 @@
       "App devs",
       "Éditeurs numériques"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "alternatives": [
+      "stripe",
+      "lemonsqueezy",
+      "gumroad"
+    ]
   },
   {
     "id": "pageai",
@@ -27709,6 +29289,11 @@
     "personas": [
       "marketer",
       "ops"
+    ],
+    "alternatives": [
+      "framer",
+      "webflow",
+      "unbounce"
     ],
     "freeAlternative": "Carrd"
   },
@@ -27824,6 +29409,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "better-stack",
+      "datadog",
+      "sentry"
     ]
   },
   {
@@ -27860,6 +29450,9 @@
     "prescription_quality": "contextual",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "grafana"
     ],
     "substitutable": false
   },
@@ -28116,6 +29709,11 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "spendesk",
+      "soldo",
+      "qonto"
     ]
   },
   {
@@ -28190,6 +29788,10 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "stripe",
+      "qonto"
     ]
   },
   {
@@ -28270,6 +29872,11 @@
     "prescription_quality": "silence",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "shine",
+      "qonto",
+      "freshbooks"
     ]
   },
   {
@@ -28420,6 +30027,11 @@
       "Développeurs designers"
     ],
     "prescription_quality": "oui",
+    "alternatives": [
+      "figma",
+      "sketch",
+      "adobe-xd"
+    ],
     "freeAlternative": "Penpot"
   },
   {
@@ -28526,7 +30138,12 @@
       "Journalistes",
       "Professionnels en veille"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "alternatives": [
+      "chatgpt",
+      "claude",
+      "gemini"
+    ]
   },
   {
     "id": "personio",
@@ -28567,6 +30184,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "bamboohr",
+      "hibob",
+      "factorial",
+      "deel"
     ]
   },
   {
@@ -28688,6 +30311,11 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "adobe-photoshop",
+      "affinity-photo",
+      "pixelmator-pro"
     ]
   },
   {
@@ -28725,6 +30353,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "python",
+      "node-js"
     ],
     "substitutable": false
   },
@@ -28764,6 +30396,11 @@
     "personas": [
       "dev",
       "marketer"
+    ],
+    "alternatives": [
+      "brandfolder",
+      "bynder",
+      "dropbox"
     ],
     "freeAlternative": "Google Drive"
   },
@@ -28849,6 +30486,11 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "runway",
+      "kling",
+      "leonardo-ai"
+    ],
     "betterAlternative": {
       "tool": "runway",
       "reason": "Runway est plus polyvalent : il couvre la génération vidéo mais aussi la rotoscopie, la suppression de fond et l'inpainting.",
@@ -28893,6 +30535,11 @@
     "personas": [
       "marketer",
       "creator"
+    ],
+    "alternatives": [
+      "canva",
+      "adobe-express",
+      "midjourney"
     ],
     "freeAlternative": "Canva",
     "betterAlternative": "canva"
@@ -28992,7 +30639,11 @@
       "Directeurs commerciaux",
       "Agences"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "hubspot",
+      "salesforce"
+    ]
   },
   {
     "id": "pipelinepro",
@@ -29107,6 +30758,11 @@
       "marketer",
       "creator"
     ],
+    "alternatives": [
+      "remove-bg",
+      "canva",
+      "adobe-photoshop"
+    ],
     "freeAlternative": "Remove.bg",
     "betterAlternative": "canva"
   },
@@ -29150,6 +30806,11 @@
     "prescription_quality": "question",
     "personas": [
       "photographe"
+    ],
+    "alternatives": [
+      "adobe-photoshop",
+      "affinity-photo",
+      "photopea"
     ]
   },
   {
@@ -29232,7 +30893,12 @@
       "Développeurs et producteurs",
       "Équipes cherchant l'autonomie"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "alternatives": [
+      "linear",
+      "jira",
+      "clickup"
+    ]
   },
   {
     "id": "planetscale",
@@ -29348,6 +31014,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "fusion-360",
+      "rhino",
+      "solidworks"
     ]
   },
   {
@@ -29395,6 +31066,12 @@
     "prescription_quality": "ferme",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "fathom-analytics",
+      "simple-analytics",
+      "posthog",
+      "mixpanel"
     ],
     "freeAlternative": "google-analytics"
   },
@@ -29472,6 +31149,10 @@
     "personas": [
       "designer"
     ],
+    "alternatives": [
+      "davinci-resolve",
+      "adobe-premiere-pro"
+    ],
     "freeAlternative": "davinci-resolve"
   },
   {
@@ -29515,6 +31196,11 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "suitedash",
+      "better-proposals",
+      "dubsado"
     ]
   },
   {
@@ -29560,6 +31246,19 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "buzzsprout",
+      "acast",
+      "spotify-for-podcasters",
+      "spotify-for-podcasters",
+      "spotify-for-podcasters",
+      "spotify-for-podcasters",
+      "spotify-for-podcasters",
+      "spotify-for-podcasters",
+      "spotify-for-podcasters",
+      "spotify-for-podcasters",
+      "spotify-for-podcasters"
+    ],
     "freeAlternative": "anchor-spotify"
   },
   {
@@ -29601,6 +31300,12 @@
     "personas": [
       "ALIX",
       "SOFIA"
+    ],
+    "alternatives": [
+      "adobe-podcast-ai",
+      "descript",
+      "riverside",
+      "cleanvoice"
     ]
   },
   {
@@ -29753,6 +31458,11 @@
     "prescription_quality": "question",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "mixpanel",
+      "amplitude",
+      "plausible"
     ]
   },
   {
@@ -29798,6 +31508,10 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "insomnia",
+      "thunder-client"
+    ],
     "substitutable": false
   },
   {
@@ -29834,7 +31548,12 @@
       "Petites agences",
       "Freelances social media"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "buffer",
+      "hootsuite",
+      "later"
+    ]
   },
   {
     "id": "power-bi",
@@ -29941,6 +31660,10 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react",
+      "svelte"
     ]
   },
   {
@@ -30131,6 +31854,13 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "canva",
+      "google-slides",
+      "pitch",
+      "gamma",
+      "beautiful-ai"
     ]
   },
   {
@@ -30167,6 +31897,10 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "gelato",
+      "sellfy"
     ]
   },
   {
@@ -30393,6 +32127,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "adobe-fresco",
+      "clip-studio-paint"
     ]
   },
   {
@@ -30431,6 +32169,9 @@
     "prescription_quality": "medium",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "nick-launches"
     ]
   },
   {
@@ -30511,6 +32252,10 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "storyblocks",
+      "motion-array"
     ]
   },
   {
@@ -30556,6 +32301,11 @@
     "prescription_quality": "medium",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "asana",
+      "clickup",
+      "monday-com"
     ]
   },
   {
@@ -30599,6 +32349,9 @@
     "prescription_quality": "silence",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "fredo6-bundle"
     ]
   },
   {
@@ -30701,6 +32454,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "datadog",
+      "grafana",
+      "better-stack"
     ],
     "substitutable": false
   },
@@ -30811,6 +32569,11 @@
       "dev",
       "marketer"
     ],
+    "alternatives": [
+      "asana",
+      "monday",
+      "basecamp"
+    ],
     "freeAlternative": "Trello"
   },
   {
@@ -30855,6 +32618,10 @@
     "prescription_quality": "silence",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "better-proposals",
+      "airslate"
     ]
   },
   {
@@ -31000,6 +32767,11 @@
     "prescription_quality": "silence",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "stackblitz",
+      "codesandbox",
+      "codepen"
     ],
     "freeAlternative": "balsamiq",
     "betterAlternative": "framer"
@@ -31174,6 +32946,10 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "php",
+      "nestjs"
+    ],
     "substitutable": false
   },
   {
@@ -31292,6 +33068,9 @@
     "prescription_quality": "oui",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "shine"
     ]
   },
   {
@@ -31372,6 +33151,10 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "indesign",
+      "affinity-publisher"
     ]
   },
   {
@@ -31485,6 +33268,10 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "xero",
+      "freshbooks"
     ]
   },
   {
@@ -31530,6 +33317,12 @@
     "prescription_quality": "oui",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "pennylane",
+      "indy",
+      "xero",
+      "freshbooks"
     ]
   },
   {
@@ -31591,6 +33384,9 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "adobe-substance-3d"
     ]
   },
   {
@@ -31628,6 +33424,10 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "shadcn-ui",
+      "headless-ui"
     ],
     "betterAlternative": "shadcn-ui"
   },
@@ -31882,6 +33682,12 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "svelte",
+      "vue-cli",
+      "preact",
+      "solid-js"
+    ],
     "substitutable": false
   },
   {
@@ -31919,6 +33725,9 @@
     "prescription_quality": "strong",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "formik"
     ]
   },
   {
@@ -31994,6 +33803,9 @@
     "personas": [
       "DEV"
     ],
+    "alternatives": [
+      "react"
+    ],
     "substitutable": false
   },
   {
@@ -32032,6 +33844,10 @@
     "prescription_quality": "strong",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "tanstack-router",
+      "next-js"
     ],
     "substitutable": false
   },
@@ -32128,6 +33944,11 @@
     "prescription_quality": "silence",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "wix",
+      "wordpress-com",
+      "cargo-site"
     ]
   },
   {
@@ -32176,6 +33997,13 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "pro-tools",
+      "logic-pro",
+      "ableton-live",
+      "adobe-audition",
+      "audacity"
     ]
   },
   {
@@ -32249,6 +34077,11 @@
     "prescription_quality": "oui",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "chartjs",
+      "d3js",
+      "apexcharts"
     ]
   },
   {
@@ -32369,6 +34202,10 @@
       "claire",
       "alix",
       "theo"
+    ],
+    "alternatives": [
+      "motion",
+      "calendly"
     ]
   },
   {
@@ -32419,6 +34256,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "motion-bro",
+      "magic-bullet",
+      "davinci-resolve"
+    ],
     "freeAlternative": "DaVinci Resolve"
   },
   {
@@ -32467,6 +34309,10 @@
     "prescription_quality": "question",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "motion-bro",
+      "ae-animation-composer"
     ]
   },
   {
@@ -32587,6 +34433,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "octane-render",
+      "v-ray",
+      "corona-renderer"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -32632,6 +34483,11 @@
     "prescription_quality": "silence",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "obsidian",
+      "roam-research",
+      "logseq"
     ]
   },
   {
@@ -32669,6 +34525,9 @@
     "prescription_quality": "silence",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react"
     ]
   },
   {
@@ -32821,6 +34680,12 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "vercel",
+      "netlify",
+      "firebase",
+      "supabase"
+    ],
     "substitutable": false,
     "betterAlternative": {
       "tool": "react-router",
@@ -32923,6 +34788,11 @@
       "Directeurs de photographie numériques"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "arnold",
+      "v-ray",
+      "redshift"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -33014,7 +34884,12 @@
       "Agences sales development",
       "Entreprises SaaS"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "lemlist",
+      "apollo-io",
+      "instantly"
+    ]
   },
   {
     "id": "repurpose-io",
@@ -33095,6 +34970,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "mailgun",
+      "brevo",
+      "mailerlite"
     ],
     "substitutable": false
   },
@@ -33196,7 +35076,10 @@
       "B2B SaaS avec ventes téléphoniques",
       "E-commerce avec support appels"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "switch-monster"
+    ]
   },
   {
     "id": "rest-client",
@@ -33276,6 +35159,10 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "opus-clip",
+      "streamlabs"
     ]
   },
   {
@@ -33315,6 +35202,10 @@
     "personas": [
       "theo",
       "marc"
+    ],
+    "alternatives": [
+      "appsmith",
+      "budibase"
     ],
     "substitutable": false
   },
@@ -33383,6 +35274,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "stripe",
+      "lemon-squeezy"
     ],
     "substitutable": false
   },
@@ -33465,6 +35360,10 @@
       "Bureaux d'études"
     ],
     "prescription_quality": "oui",
+    "alternatives": [
+      "archicad",
+      "sketchup-pro"
+    ],
     "substitutable": false
   },
   {
@@ -33567,6 +35466,11 @@
     "prescription_quality": "oui",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "plasticity",
+      "fusion-360",
+      "sketchup-pro"
     ],
     "freeAlternative": "blender"
   },
@@ -33692,6 +35596,11 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "ae-bodymovin",
+      "framer",
+      "figma"
+    ],
     "substitutable": false
   },
   {
@@ -33773,6 +35682,10 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "descript",
+      "podcastle"
     ]
   },
   {
@@ -33818,6 +35731,12 @@
     "prescription_quality": "silence",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "logseq",
+      "obsidian",
+      "heptabase",
+      "reflect-notes"
     ]
   },
   {
@@ -33863,6 +35782,11 @@
     "prescription_quality": "oui",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "legalstart",
+      "legalplace",
+      "docusign"
     ]
   },
   {
@@ -33907,6 +35831,9 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "pretty-links"
     ]
   },
   {
@@ -33943,7 +35870,12 @@
       "Créateurs d'applications mobiles",
       "Développeurs no-code"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "alternatives": [
+      "lovable",
+      "bolt",
+      "flutterflow"
+    ]
   },
   {
     "id": "rotato",
@@ -34096,6 +36028,10 @@
     "prescription_quality": "ferme",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "pika-labs",
+      "kling"
     ]
   },
   {
@@ -34141,6 +36077,11 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "spendesk",
+      "payhawk",
+      "soldo"
     ]
   },
   {
@@ -34186,6 +36127,9 @@
     "prescription_quality": "medium",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "process-street"
     ]
   },
   {
@@ -34395,7 +36339,11 @@
       "Entreprises en croissance",
       "Cabinets de conseil"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "hubspot",
+      "pipedrive"
+    ]
   },
   {
     "id": "samcart",
@@ -34441,6 +36389,11 @@
     "personas": [
       "dev",
       "marketer"
+    ],
+    "alternatives": [
+      "gumroad",
+      "thrivecart",
+      "kajabi"
     ],
     "freeAlternative": "Gumroad"
   },
@@ -34530,6 +36483,9 @@
       "marc",
       "alix",
       "sofia"
+    ],
+    "alternatives": [
+      "superhuman"
     ]
   },
   {
@@ -34678,7 +36634,12 @@
       "CFO",
       "CTO"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "netsuite",
+      "microsoft-dynamics-365-finance-operations",
+      "oracle-fusion-cloud"
+    ]
   },
   {
     "id": "sap-successfactors",
@@ -34857,7 +36818,12 @@
       "Équipes produit / marketing",
       "Formateurs / éducateurs"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "alternatives": [
+      "loom",
+      "descript",
+      "cleanshot-x"
+    ]
   },
   {
     "id": "screensage-pro",
@@ -34897,6 +36863,11 @@
       "dev",
       "creator",
       "consultant"
+    ],
+    "alternatives": [
+      "scribe",
+      "loom",
+      "tella"
     ],
     "freeAlternative": "Scribe free",
     "betterAlternative": "scribe"
@@ -34979,6 +36950,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "loom",
+      "notion",
+      "guideless"
     ]
   },
   {
@@ -35020,6 +36996,11 @@
     "prescription_quality": "oui",
     "personas": [
       "marc"
+    ],
+    "alternatives": [
+      "apollo-io",
+      "lusha",
+      "cognism"
     ]
   },
   {
@@ -35060,6 +37041,10 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "creditsafe",
+      "dun-bradstreet"
     ]
   },
   {
@@ -35175,6 +37160,13 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "gumroad",
+      "woocommerce",
+      "shopify-payments",
+      "podia",
+      "lemon-squeezy"
     ]
   },
   {
@@ -35295,6 +37287,11 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "similarweb",
+      "ahrefs",
+      "screaming-frog"
     ]
   },
   {
@@ -35338,6 +37335,11 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "hootsuite",
+      "socialbee",
+      "later"
     ]
   },
   {
@@ -35387,6 +37389,12 @@
     "prescription_quality": "oui",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "datadog",
+      "better-stack",
+      "grafana",
+      "posthog"
     ],
     "substitutable": false
   },
@@ -35465,6 +37473,11 @@
       "creator",
       "dev"
     ],
+    "alternatives": [
+      "ahrefs",
+      "semrush",
+      "surfer-seo"
+    ],
     "freeAlternative": "Google Search Console",
     "betterAlternative": "ahrefs"
   },
@@ -35504,6 +37517,11 @@
     "prescription_quality": "oui",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "material-ui",
+      "radix-primitives",
+      "chakra-ui"
     ]
   },
   {
@@ -35687,6 +37705,11 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "qonto",
+      "indy",
+      "pennylane"
     ]
   },
   {
@@ -35902,6 +37925,10 @@
     "personas": [
       "CLAIRE"
     ],
+    "alternatives": [
+      "stripe",
+      "razorpay"
+    ],
     "substitutable": false
   },
   {
@@ -36048,6 +38075,12 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "docusign",
+      "yousign",
+      "pandadoc",
+      "adobe-acrobat-sign"
     ]
   },
   {
@@ -36086,6 +38119,11 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "pennylane",
+      "axonaut",
+      "deel"
     ]
   },
   {
@@ -36123,6 +38161,9 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "semrush"
     ]
   },
   {
@@ -36163,6 +38204,11 @@
       "dev",
       "marketer",
       "creator"
+    ],
+    "alternatives": [
+      "plausible",
+      "fathom-analytics",
+      "google-analytics"
     ],
     "freeAlternative": "Google Analytics"
   },
@@ -36208,6 +38254,11 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "brevo",
+      "mailchimp",
+      "getresponse"
     ]
   },
   {
@@ -36252,6 +38303,11 @@
     "prescription_quality": "question",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "squarespace",
+      "wordpress-com",
+      "pagecloud"
     ]
   },
   {
@@ -36286,7 +38342,11 @@
       "Artistes de visualisation",
       "Urbanistes utilisant SketchUp"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "sketchup-pro",
+      "lumion"
+    ]
   },
   {
     "id": "sketch",
@@ -36371,6 +38431,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "blender",
+      "revit",
+      "archicad"
+    ],
     "freeAlternative": "Blender",
     "substitutable": false
   },
@@ -36445,6 +38510,9 @@
       "Organisations asynchrone-first"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "microsoft-teams"
+    ],
     "freeAlternative": "discord"
   },
   {
@@ -36563,6 +38631,11 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "notion",
+      "asana",
+      "process-street"
     ]
   },
   {
@@ -36631,6 +38704,10 @@
     "prescription_quality": "silence",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "adobe-lightroom",
+      "affinity-photo"
     ]
   },
   {
@@ -36855,6 +38932,11 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "buffer",
+      "metricool",
+      "publer"
     ]
   },
   {
@@ -36899,6 +38981,11 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "glide",
+      "draftbit",
+      "quick-base"
     ]
   },
   {
@@ -36944,6 +39031,11 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "spendesk",
+      "payhawk",
+      "qonto"
     ]
   },
   {
@@ -36980,6 +39072,9 @@
     "prescription_quality": "silence",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "cleanup3"
     ]
   },
   {
@@ -37017,6 +39112,10 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react",
+      "svelte"
     ]
   },
   {
@@ -37189,6 +39288,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "qonto",
+      "soldo",
+      "payhawk",
+      "pennylane"
     ]
   },
   {
@@ -37239,6 +39344,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "blender",
+      "framer",
+      "rive"
+    ],
     "freeAlternative": "Spline free"
   },
   {
@@ -37278,6 +39388,11 @@
     "prescription_quality": "contextual",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "buzzsprout",
+      "podbean",
+      "acast"
     ]
   },
   {
@@ -37363,6 +39478,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "buffer",
+      "hootsuite",
+      "later",
+      "socialbee"
     ],
     "freeAlternative": "Buffer"
   },
@@ -37665,6 +39786,9 @@
     "personas": [
       "THEO"
     ],
+    "alternatives": [
+      "itch-io"
+    ],
     "substitutable": false
   },
   {
@@ -37747,6 +39871,11 @@
     "prescription_quality": "medium",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "envato-elements",
+      "motion-array",
+      "productioncrate"
     ]
   },
   {
@@ -37896,6 +40025,10 @@
     "prescription_quality": "medium",
     "personas": [
       "lina"
+    ],
+    "alternatives": [
+      "streamlabs",
+      "obs"
     ]
   },
   {
@@ -37976,6 +40109,10 @@
     "prescription_quality": "medium",
     "personas": [
       "lina"
+    ],
+    "alternatives": [
+      "obs",
+      "streamelements"
     ]
   },
   {
@@ -38016,6 +40153,9 @@
       "Marketplaces"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "paypal"
+    ],
     "freeAlternative": "stripe"
   },
   {
@@ -38053,6 +40193,10 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "emotion",
+      "tailwind-css"
     ],
     "freeAlternative": "tailwind-css"
   },
@@ -38181,6 +40325,11 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "substance-3d-painter",
+      "blender",
+      "marmoset-toolbag"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -38226,6 +40375,11 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "substance-3d-designer",
+      "mari",
+      "blender"
     ],
     "freeAlternative": "blender"
   },
@@ -38349,6 +40503,10 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "udio",
+      "elevenlabs"
+    ],
     "betterAlternative": {
       "tool": "udio",
       "reason": "Udio produit une meilleure qualité instrumentale, Suno est meilleur pour la voix",
@@ -38401,6 +40559,11 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "firebase",
+      "neon",
+      "mongodb-atlas"
     ]
   },
   {
@@ -38439,6 +40602,11 @@
     "prescription_quality": "question",
     "personas": [
       "dev"
+    ],
+    "alternatives": [
+      "cursor",
+      "github-copilot",
+      "tabnine"
     ],
     "freeAlternative": "GitHub Copilot free",
     "betterAlternative": "cursor"
@@ -38528,6 +40696,10 @@
     "personas": [
       "CLAIRE"
     ],
+    "alternatives": [
+      "todoist",
+      "notion"
+    ],
     "freeAlternative": "Superlist"
   },
   {
@@ -38601,7 +40773,10 @@
       "Managers",
       "Développeurs multilingues"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "alternatives": [
+      "otter-ai"
+    ]
   },
   {
     "id": "surfer-ai",
@@ -38747,7 +40922,12 @@
       "Petites équipes",
       "Équipes marketing et opérations"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "tally",
+      "typeform",
+      "jotform"
+    ]
   },
   {
     "id": "svelte",
@@ -38785,6 +40965,11 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react",
+      "vue-cli",
+      "solid-js"
     ]
   },
   {
@@ -38861,6 +41046,9 @@
     "prescription_quality": "question",
     "personas": [
       "freelance"
+    ],
+    "alternatives": [
+      "responsetap"
     ]
   },
   {
@@ -38905,6 +41093,9 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "freshservice"
     ]
   },
   {
@@ -39141,6 +41332,11 @@
     "personas": [
       "MARC"
     ],
+    "alternatives": [
+      "typeform",
+      "jotform",
+      "fillout"
+    ],
     "freeAlternative": "tally"
   },
   {
@@ -39178,6 +41374,9 @@
     "prescription_quality": "question",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react-router"
     ]
   },
   {
@@ -39262,7 +41461,11 @@
       "Équipes automation-first",
       "Innovateurs produit"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "clickup",
+      "notion"
+    ]
   },
   {
     "id": "tave",
@@ -39517,6 +41720,11 @@
       "marketer",
       "consultant"
     ],
+    "alternatives": [
+      "loom",
+      "screen-studio",
+      "descript"
+    ],
     "freeAlternative": "Loom"
   },
   {
@@ -39763,6 +41971,11 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "kajabi",
+      "learnworlds",
+      "podia"
+    ],
     "betterAlternative": {
       "tool": "kajabi",
       "reason": "Kajabi inclut email et communauté — moins d'outils à gérer",
@@ -39846,6 +42059,9 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "phantombuster"
     ]
   },
   {
@@ -39992,7 +42208,12 @@
       "Équipes de support client",
       "SaaS"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "crisp",
+      "intercom",
+      "zendesk"
+    ]
   },
   {
     "id": "tiime",
@@ -40133,6 +42354,11 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "youtube-studio",
+      "buffer",
+      "later"
     ]
   },
   {
@@ -40324,6 +42550,10 @@
     "personas": [
       "MARC"
     ],
+    "alternatives": [
+      "clockify",
+      "harvest"
+    ],
     "freeAlternative": "toggl"
   },
   {
@@ -40447,6 +42677,12 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "magnific-ai",
+      "topaz-photo-ai",
+      "luminar-neo",
+      "nik-collection"
+    ],
     "substitutable": false
   },
   {
@@ -40492,7 +42728,12 @@
       "Retoucheurs d'images",
       "Archivistes numériques"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "topaz-gigapixel",
+      "luminar-neo",
+      "nik-collection"
+    ]
   },
   {
     "id": "topaz-video",
@@ -40560,6 +42801,10 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "runway",
+      "krea-ai"
     ]
   },
   {
@@ -40604,6 +42849,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "houdini",
+      "madmapper"
     ]
   },
   {
@@ -40733,6 +42982,10 @@
     "personas": [
       "CLAIRE",
       "MARC"
+    ],
+    "alternatives": [
+      "notion",
+      "loom"
     ]
   },
   {
@@ -40807,6 +43060,10 @@
     "prescription_quality": "question",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "blender",
+      "houdini"
     ]
   },
   {
@@ -40855,6 +43112,11 @@
     "prescription_quality": "oui",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "notion",
+      "asana",
+      "jira"
     ],
     "freeAlternative": "Notion"
   },
@@ -40969,6 +43231,10 @@
     "prescription_quality": "oui",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "meshy",
+      "blender"
     ]
   },
   {
@@ -41091,6 +43357,9 @@
     "prescription_quality": "medium",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "vidiq"
     ]
   },
   {
@@ -41135,6 +43404,9 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "vidiq"
     ]
   },
   {
@@ -41172,6 +43444,7 @@
       "Équipes tech qui souhaitent prototyper des automatisations assistées par IA"
     ],
     "prescription_quality": "question",
+    "alternatives": [],
     "freeAlternative": "make"
   },
   {
@@ -41220,6 +43493,11 @@
     "prescription_quality": "oui",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "enscape",
+      "lumion",
+      "d5-render"
     ]
   },
   {
@@ -41259,6 +43537,10 @@
     "prescription_quality": "medium",
     "personas": [
       "lina"
+    ],
+    "alternatives": [
+      "youtube-studio",
+      "tiktok"
     ]
   },
   {
@@ -41297,6 +43579,10 @@
     "prescription_quality": "medium",
     "personas": [
       "lina"
+    ],
+    "alternatives": [
+      "obs",
+      "streamlabs"
     ]
   },
   {
@@ -41337,6 +43623,11 @@
       "creator",
       "marketer",
       "consultant"
+    ],
+    "alternatives": [
+      "carrd",
+      "framer",
+      "notion"
     ],
     "freeAlternative": "Typedream free"
   },
@@ -41382,6 +43673,11 @@
     "prescription_quality": "ferme",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "jotform",
+      "tally",
+      "fillout"
     ]
   },
   {
@@ -41517,7 +43813,10 @@
       "Marketeurs",
       "Étudiants"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "chatgpt"
+    ]
   },
   {
     "id": "udio",
@@ -41565,6 +43864,10 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "suno",
+      "elevenlabs"
     ]
   },
   {
@@ -41650,6 +43953,12 @@
     "prescription_quality": "oui",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "leadpages",
+      "instapage",
+      "webflow",
+      "carrd"
     ]
   },
   {
@@ -41787,6 +44096,10 @@
     "prescription_quality": "contextual",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "unreal-engine",
+      "godot"
     ]
   },
   {
@@ -41825,6 +44138,10 @@
     "prescription_quality": "oui",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "twinmotion",
+      "blender"
     ]
   },
   {
@@ -42040,6 +44357,11 @@
     "personas": [
       "designer"
     ],
+    "alternatives": [
+      "corona-renderer",
+      "octane-render",
+      "redshift"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -42085,7 +44407,11 @@
       "Designers qui codent",
       "Développeurs solo"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "cursor",
+      "figma"
+    ]
   },
   {
     "id": "vanta",
@@ -42195,6 +44521,13 @@
     "prescription_quality": "contextual",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "sketchup-pro",
+      "autocad",
+      "revit",
+      "archicad",
+      "rhino"
     ]
   },
   {
@@ -42242,6 +44575,14 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "netlify",
+      "heroku",
+      "railway",
+      "render",
+      "digitalocean",
+      "cloudflare"
     ],
     "substitutable": false
   },
@@ -42355,6 +44696,10 @@
     "prescription_quality": "question",
     "personas": [
       "designer"
+    ],
+    "alternatives": [
+      "davinci-resolve",
+      "adobe-after-effects"
     ]
   },
   {
@@ -42402,6 +44747,9 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "tubebuddy"
     ]
   },
   {
@@ -42475,7 +44823,10 @@
       "Entreprises et marques",
       "Formateurs / éducateurs"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "loom"
+    ]
   },
   {
     "id": "visily",
@@ -42513,6 +44864,10 @@
     "prescription_quality": "question",
     "personas": [
       "SOFIA"
+    ],
+    "alternatives": [
+      "balsamiq",
+      "invision"
     ],
     "betterAlternative": "balsamiq"
   },
@@ -42580,7 +44935,10 @@
       "Job seekers",
       "Creatives"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "canva"
+    ]
   },
   {
     "id": "vitest",
@@ -42652,6 +45010,11 @@
     "personas": [
       "creator",
       "marketer"
+    ],
+    "alternatives": [
+      "capcut",
+      "descript",
+      "topaz-video-ai"
     ],
     "freeAlternative": "CapCut",
     "betterAlternative": "capcut"
@@ -42729,6 +45092,11 @@
       "dev",
       "creator"
     ],
+    "alternatives": [
+      "whisper",
+      "otter-ai",
+      "notta"
+    ],
     "freeAlternative": "Whisper"
   },
   {
@@ -42801,6 +45169,10 @@
     "prescription_quality": "silence",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react",
+      "svelte"
     ]
   },
   {
@@ -42837,6 +45209,9 @@
     "prescription_quality": "strong",
     "personas": [
       "DEV"
+    ],
+    "alternatives": [
+      "react-router"
     ],
     "substitutable": false
   },
@@ -42996,7 +45371,13 @@
       "Petites entreprises nord-américaines",
       "Prestataires qui veulent facturation et comptabilité dans un seul outil"
     ],
-    "prescription_quality": "prudente"
+    "prescription_quality": "prudente",
+    "alternatives": [
+      "freshbooks",
+      "quickbooks-online",
+      "xero",
+      "zoho-books"
+    ]
   },
   {
     "id": "webflow",
@@ -43034,6 +45415,10 @@
       "Équipes marketing et opérations"
     ],
     "prescription_quality": "silence",
+    "alternatives": [
+      "wix",
+      "framer"
+    ],
     "freeAlternative": "carrd"
   },
   {
@@ -43259,6 +45644,10 @@
     "personas": [
       "ALIX"
     ],
+    "alternatives": [
+      "google-drive",
+      "onedrive"
+    ],
     "freeAlternative": "Google Drive",
     "betterAlternative": {
       "tool": "google-drive",
@@ -43375,7 +45764,12 @@
       "Startups",
       "Consultants"
     ],
-    "prescription_quality": "oui"
+    "prescription_quality": "oui",
+    "alternatives": [
+      "miro",
+      "figma",
+      "flowmapp"
+    ]
   },
   {
     "id": "whisper",
@@ -43452,7 +45846,12 @@
       "Équipes tech",
       "Startups IA"
     ],
-    "prescription_quality": "ferme"
+    "prescription_quality": "ferme",
+    "alternatives": [
+      "cursor",
+      "github-copilot",
+      "tabnine"
+    ]
   },
   {
     "id": "wispr-flow",
@@ -43560,6 +45959,12 @@
     "prescription_quality": "silence",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "wordpress",
+      "wordpress-com",
+      "woocommerce",
+      "bubble"
     ]
   },
   {
@@ -43600,6 +46005,11 @@
     "personas": [
       "dev",
       "designer"
+    ],
+    "alternatives": [
+      "memberstack",
+      "jetboost",
+      "xano"
     ]
   },
   {
@@ -43637,6 +46047,10 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "docusign",
+      "onetrust"
     ]
   },
   {
@@ -43674,6 +46088,11 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "shopify",
+      "wix",
+      "webflow"
     ]
   },
   {
@@ -43757,6 +46176,11 @@
     "personas": [
       "MARC"
     ],
+    "alternatives": [
+      "squarespace",
+      "ghost",
+      "wix"
+    ],
     "substitutable": false
   },
   {
@@ -43803,6 +46227,11 @@
     "prescription_quality": "silence",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "wix",
+      "webflow",
+      "cargo-site"
     ]
   },
   {
@@ -43849,6 +46278,12 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "personio",
+      "zoho",
+      "greenhouse",
+      "lever"
     ]
   },
   {
@@ -44095,6 +46530,9 @@
       "all"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "superlist"
+    ],
     "betterAlternative": {
       "tool": "superlist",
       "reason": "Créé par les fondateurs originaux de Wunderlist, avec le même esprit visuel et simple.",
@@ -44209,6 +46647,10 @@
     "personas": [
       "designer"
     ],
+    "alternatives": [
+      "cinema-4d",
+      "houdini"
+    ],
     "substitutable": false
   },
   {
@@ -44256,6 +46698,12 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "quickbooks",
+      "quickbooks-online",
+      "freshbooks",
+      "pennylane"
     ]
   },
   {
@@ -44347,6 +46795,11 @@
     "personas": [
       "CLAIRE"
     ],
+    "alternatives": [
+      "typeform",
+      "tally",
+      "jotform"
+    ],
     "freeAlternative": "Tally"
   },
   {
@@ -44391,6 +46844,11 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "docusign",
+      "adobe-acrobat-sign",
+      "pandadoc"
     ]
   },
   {
@@ -44471,6 +46929,10 @@
     "prescription_quality": "question",
     "personas": [
       "ALIX"
+    ],
+    "alternatives": [
+      "twitch",
+      "tiktok"
     ]
   },
   {
@@ -44508,6 +46970,10 @@
       "Consultants"
     ],
     "prescription_quality": "silence",
+    "alternatives": [
+      "make",
+      "n8n"
+    ],
     "betterAlternative": {
       "tool": "make",
       "reason": "Make est 3x moins cher et gère des scénarios plus complexes visuellement",
@@ -44598,6 +47064,12 @@
     "personas": [
       "SOFIA"
     ],
+    "alternatives": [
+      "nomad-sculpt",
+      "blender",
+      "houdini",
+      "substance-3d-painter"
+    ],
     "freeAlternative": "blender"
   },
   {
@@ -44635,6 +47107,11 @@
       "Équipes distribuées"
     ],
     "prescription_quality": "ferme",
+    "alternatives": [
+      "calendly",
+      "cal-com",
+      "savvycal"
+    ],
     "freeAlternative": "zcal"
   },
   {
@@ -44685,6 +47162,11 @@
     "prescription_quality": "silence",
     "personas": [
       "THEO"
+    ],
+    "alternatives": [
+      "cursor",
+      "windsurf",
+      "github-copilot"
     ]
   },
   {
@@ -44765,6 +47247,11 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "intercom",
+      "freshservice",
+      "helpscout"
     ]
   },
   {
@@ -44855,6 +47342,11 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "netsuite",
+      "microsoft-dynamics-business-central",
+      "hive"
     ]
   },
   {
@@ -44901,6 +47393,10 @@
     "prescription_quality": "silence",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "google-meet",
+      "microsoft-teams"
     ]
   },
   {
@@ -44972,6 +47468,10 @@
     "prescription_quality": "question",
     "personas": [
       "CLAIRE"
+    ],
+    "alternatives": [
+      "google-meet",
+      "around"
     ],
     "freeAlternative": "Google Meet"
   },
@@ -45053,7 +47553,12 @@
       "Associations",
       "Propriétaires de plusieurs domaines"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "google-workspace",
+      "protonmail",
+      "fastmail"
+    ]
   },
   {
     "id": "loyzia",
@@ -45138,7 +47643,10 @@
       "Petites marques et commerces",
       "Équipes marketing"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "capcut"
+    ]
   },
   {
     "id": "inspoai",
@@ -45218,7 +47726,10 @@
       "Designers UI",
       "QA et testeurs"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "bugherd"
+    ]
   },
   {
     "id": "aoriarh",
@@ -45311,7 +47822,10 @@
       "Entreprises de nettoyage",
       "Services à la personne"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "deputy"
+    ]
   },
   {
     "id": "maniana",
@@ -45353,7 +47867,11 @@
       "Startup solo",
       "Petites équipes produit"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "lovable",
+      "base44"
+    ]
   },
   {
     "id": "happia",
@@ -45397,7 +47915,11 @@
       "Commerces, e-commerçants et SaaS",
       "Agences, consultants, indépendants et professions libérales"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "google-search-console",
+      "ahrefs"
+    ]
   },
   {
     "id": "klark",
@@ -45443,7 +47965,12 @@
       "Artisans et petits commerces physiques",
       "E-commerçants"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "shine",
+      "qonto",
+      "indy"
+    ]
   },
   {
     "id": "stellaflow",
@@ -45488,6 +48015,11 @@
       "Solo créateurs multi-réseaux"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "buffer",
+      "later",
+      "metricool"
+    ],
     "freeAlternative": "metricool"
   },
   {
@@ -45532,7 +48064,11 @@
       "Petites équipes du bâtiment",
       "PME du BTP"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "axonaut",
+      "houzz-pro"
+    ]
   },
   {
     "id": "charik",
@@ -45577,7 +48113,12 @@
       "TPE et PME françaises",
       "Équipes commerciales B2B"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "hubspot",
+      "pipedrive",
+      "sellsy"
+    ]
   },
   {
     "id": "snappack",
@@ -45707,6 +48248,11 @@
       "Petites marques avec un catalogue produit"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "remove-bg",
+      "canva",
+      "firefly"
+    ],
     "freeAlternative": "remove-bg"
   },
   {
@@ -45785,6 +48331,10 @@
       "Petites équipes qui délèguent des workflows définis à l'IA"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "lindy",
+      "relevance-ai"
+    ],
     "freeAlternative": "Lindy"
   },
   {
@@ -45833,7 +48383,12 @@
       "Commerçants et entreprises avec gestion de stock",
       "Fiduciaires et leurs clients"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "xero",
+      "quickbooks",
+      "indy"
+    ]
   },
   {
     "id": "convoscore",
@@ -45882,6 +48437,13 @@
       "Petites équipes support ou avant-vente"
     ],
     "prescription_quality": "question",
+    "alternatives": [
+      "intercom",
+      "chatbase",
+      "landbot",
+      "typeform",
+      "tally"
+    ],
     "freeAlternative": "tally"
   },
   {
@@ -45919,6 +48481,11 @@
     "verticals": [
       "consultant-b2b",
       "createur-contenu"
+    ],
+    "alternatives": [
+      "wix",
+      "squarespace",
+      "framer"
     ]
   },
   {
@@ -45955,6 +48522,11 @@
     "verticals": [
       "consultant-b2b",
       "fondateur-saas"
+    ],
+    "alternatives": [
+      "todoist",
+      "reclaim",
+      "notion"
     ]
   },
   {
@@ -45993,6 +48565,11 @@
       "consultant-b2b",
       "fondateur-saas",
       "ecommercant"
+    ],
+    "alternatives": [
+      "hubspot",
+      "brevo",
+      "activecampaign"
     ]
   },
   {
@@ -46028,6 +48605,11 @@
     ],
     "verticals": [
       "consultant-b2b"
+    ],
+    "alternatives": [
+      "adobe-acrobat",
+      "docusign",
+      "yousign"
     ]
   },
   {
@@ -46061,6 +48643,10 @@
     ],
     "verticals": [
       "consultant-b2b"
+    ],
+    "alternatives": [
+      "zoom",
+      "obs"
     ]
   },
   {
@@ -46096,6 +48682,9 @@
     ],
     "verticals": [
       "consultant-b2b"
+    ],
+    "alternatives": [
+      "adobe-acrobat"
     ]
   },
   {
@@ -46132,6 +48721,10 @@
     "verticals": [
       "consultant-b2b",
       "community-manager"
+    ],
+    "alternatives": [
+      "canva",
+      "visme"
     ]
   },
   {
@@ -46170,6 +48763,10 @@
     "verticals": [
       "consultant-b2b",
       "community-manager"
+    ],
+    "alternatives": [
+      "canva",
+      "adobe-photoshop"
     ]
   },
   {
@@ -46197,6 +48794,11 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "adobe-after-effects",
+      "davinci-resolve",
+      "blender"
     ]
   },
   {
@@ -46225,6 +48827,10 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "blender",
+      "zbrush"
     ]
   },
   {
@@ -46279,6 +48885,9 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "blender"
     ]
   },
   {
@@ -46335,6 +48944,10 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "ae-animation-composer",
+      "motion-bro"
     ]
   },
   {
@@ -46362,6 +48975,9 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "move-ai"
     ]
   },
   {
@@ -46393,6 +49009,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-tao",
+      "red-giant-geo",
+      "red-giant-mir",
+      "red-giant-echospace"
     ]
   },
   {
@@ -46423,6 +49045,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-av-club",
+      "universe-chromatic-aberration",
+      "universe-chromatown",
+      "universe-glitch"
     ]
   },
   {
@@ -46453,6 +49081,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-ecto",
+      "universe-electrify",
+      "universe-finisher",
+      "universe-heatwave"
     ]
   },
   {
@@ -46483,6 +49117,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-analog",
+      "universe-chromatic-aberration",
+      "universe-chromatown",
+      "universe-glitch"
     ]
   },
   {
@@ -46514,6 +49154,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-shadow",
+      "red-giant-reflection",
+      "red-giant-chromatic-displacement",
+      "red-giant-depth-generator"
     ]
   },
   {
@@ -46544,6 +49190,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-blur",
+      "universe-chromatic-glow",
+      "universe-compound-blur",
+      "universe-edge-glow"
     ]
   },
   {
@@ -46574,6 +49226,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-camera-shake",
+      "universe-fisheye-fixer",
+      "universe-picture-in-picture",
+      "universe-progresso"
     ]
   },
   {
@@ -46604,6 +49262,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-av-club",
+      "universe-chromatown",
+      "universe-analog",
+      "universe-glitch"
     ]
   },
   {
@@ -46635,6 +49299,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-depth-generator",
+      "red-giant-reflection",
+      "red-giant-lens-distortion-matcher",
+      "red-giant-shadow"
     ]
   },
   {
@@ -46665,6 +49335,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-chromatic-aberration",
+      "universe-glitch",
+      "universe-av-club",
+      "universe-grain16"
     ]
   },
   {
@@ -46696,6 +49372,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-magicbullet-looks",
+      "red-giant-mojo",
+      "red-giant-film",
+      "red-giant-cosmo"
     ]
   },
   {
@@ -46727,6 +49409,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-film",
+      "red-giant-denoiser",
+      "red-giant-mojo",
+      "red-giant-renoiser"
     ]
   },
   {
@@ -46758,6 +49446,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-cosmo",
+      "red-giant-renoiser",
+      "red-giant-film",
+      "red-giant-parametric-curve"
     ]
   },
   {
@@ -46789,6 +49483,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-lens-distortion-matcher",
+      "red-giant-chromatic-displacement",
+      "red-giant-spot-clone-tracker",
+      "red-giant-reflection"
     ]
   },
   {
@@ -46819,6 +49519,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-array-gun",
+      "universe-electrify",
+      "universe-finisher",
+      "universe-heatwave"
     ]
   },
   {
@@ -46849,6 +49555,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-ecto",
+      "universe-finisher",
+      "universe-array-gun",
+      "universe-heatwave"
     ]
   },
   {
@@ -46880,6 +49592,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-mojo",
+      "red-giant-cosmo",
+      "red-giant-magicbullet-looks",
+      "red-giant-denoiser"
     ]
   },
   {
@@ -46910,6 +49628,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-electrify",
+      "universe-heatwave",
+      "universe-ecto",
+      "universe-holomatrix"
     ]
   },
   {
@@ -46941,6 +49665,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-trapcode-particular",
+      "red-giant-mir",
+      "red-giant-tao",
+      "red-giant-3d-stroke"
     ]
   },
   {
@@ -46972,6 +49702,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-3d-stroke",
+      "red-giant-echospace",
+      "red-giant-tao",
+      "red-giant-horizon"
     ]
   },
   {
@@ -47002,6 +49738,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-edge-glow",
+      "universe-glo-fi",
+      "universe-compound-blur",
+      "universe-glo-fi-ii"
     ]
   },
   {
@@ -47032,6 +49774,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-chromatown",
+      "universe-grain16",
+      "universe-chromatic-aberration",
+      "universe-misfire"
     ]
   },
   {
@@ -47062,6 +49810,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-glo-fi-ii",
+      "universe-halflight",
+      "universe-glo-fi",
+      "universe-knoll-light-factory-ez"
     ]
   },
   {
@@ -47092,6 +49846,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-glitch",
+      "universe-misfire",
+      "universe-chromatown",
+      "universe-retrograde"
     ]
   },
   {
@@ -47122,6 +49882,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-logo-motion",
+      "universe-numbers",
+      "universe-screen-text",
+      "universe-symbol-mapper"
     ]
   },
   {
@@ -47152,6 +49918,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-glow",
+      "universe-knoll-light-factory-ez",
+      "universe-glo-fi-ii",
+      "universe-luster"
     ]
   },
   {
@@ -47182,6 +49954,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-finisher",
+      "universe-holomatrix",
+      "universe-electrify",
+      "universe-hud-components"
     ]
   },
   {
@@ -47212,6 +49990,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-heatwave",
+      "universe-hud-components",
+      "universe-finisher",
+      "universe-line"
     ]
   },
   {
@@ -47242,6 +50026,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-holomatrix",
+      "universe-line",
+      "universe-heatwave",
+      "universe-long-shadow"
     ]
   },
   {
@@ -47273,6 +50063,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-supercomp",
+      "red-giant-spot-clone-tracker",
+      "red-giant-primatte-keyer",
+      "red-giant-lens-distortion-matcher"
     ]
   },
   {
@@ -47303,6 +50099,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-halflight",
+      "universe-luster",
+      "universe-glow",
+      "universe-overlight"
     ]
   },
   {
@@ -47334,6 +50136,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-spot-clone-tracker",
+      "red-giant-depth-generator",
+      "red-giant-king-pin-tracker",
+      "red-giant-chromatic-displacement"
     ]
   },
   {
@@ -47364,6 +50172,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-hud-components",
+      "universe-long-shadow",
+      "universe-holomatrix",
+      "universe-modes"
     ]
   },
   {
@@ -47394,6 +50208,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-knoll-light-factory-ez",
+      "universe-overlight",
+      "universe-halflight",
+      "universe-point-zoom"
     ]
   },
   {
@@ -47425,6 +50245,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-colorista",
+      "red-giant-mojo",
+      "red-giant-film",
+      "red-giant-cosmo"
     ]
   },
   {
@@ -47456,6 +50282,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-form",
+      "red-giant-tao",
+      "red-giant-trapcode-particular",
+      "red-giant-3d-stroke"
     ]
   },
   {
@@ -47486,6 +50318,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-long-shadow",
+      "universe-noir-moderne",
+      "universe-line",
+      "universe-prism-displacement"
     ]
   },
   {
@@ -47517,6 +50355,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-magicbullet-looks",
+      "red-giant-film",
+      "red-giant-colorista",
+      "red-giant-cosmo"
     ]
   },
   {
@@ -47547,6 +50391,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-logo-motion",
+      "universe-screen-text",
+      "universe-hacker-text",
+      "universe-symbol-mapper"
     ]
   },
   {
@@ -47578,6 +50428,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-starglow",
+      "red-giant-shine",
+      "red-giant-real-lens-flares",
+      "red-giant-lux"
     ]
   },
   {
@@ -47608,6 +50464,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-luster",
+      "universe-point-zoom",
+      "universe-knoll-light-factory-ez",
+      "universe-spot-blur"
     ]
   },
   {
@@ -47639,6 +50501,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-renoiser",
+      "red-giant-denoiser",
+      "red-giant-cosmo",
+      "red-giant-film"
     ]
   },
   {
@@ -47669,6 +50537,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-palettes",
+      "universe-threshold-dither",
+      "universe-ordered-dither",
+      "universe-multitone"
     ]
   },
   {
@@ -47700,6 +50574,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-supercomp",
+      "red-giant-king-pin-tracker",
+      "red-giant-spot-clone-tracker",
+      "red-giant-lens-distortion-matcher"
     ]
   },
   {
@@ -47730,6 +50610,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-picture-in-picture",
+      "universe-reframe",
+      "universe-fisheye-fixer",
+      "universe-shrinkray"
     ]
   },
   {
@@ -47760,6 +50646,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-prism-displacement",
+      "universe-sketchify",
+      "universe-noir-moderne",
+      "universe-texturize"
     ]
   },
   {
@@ -47791,6 +50683,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-shine",
+      "red-giant-lux",
+      "red-giant-starglow",
+      "red-giant-optical-glow"
     ]
   },
   {
@@ -47822,6 +50720,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-chromatic-displacement",
+      "red-giant-shadow",
+      "red-giant-depth-generator",
+      "red-giant-bang"
     ]
   },
   {
@@ -47852,6 +50756,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-progresso",
+      "universe-shrinkray",
+      "universe-picture-in-picture",
+      "universe-socialize"
     ]
   },
   {
@@ -47883,6 +50793,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-denoiser",
+      "red-giant-parametric-curve",
+      "red-giant-cosmo",
+      "red-giant-film"
     ]
   },
   {
@@ -47913,6 +50829,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-misfire",
+      "universe-rgb-separation",
+      "universe-grain16",
+      "universe-vhs"
     ]
   },
   {
@@ -47943,6 +50865,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-numbers",
+      "universe-symbol-mapper",
+      "universe-logo-motion",
+      "universe-text-tile"
     ]
   },
   {
@@ -47974,6 +50902,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-reflection",
+      "red-giant-bang",
+      "red-giant-chromatic-displacement",
+      "red-giant-depth-generator"
     ]
   },
   {
@@ -48005,6 +50939,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-starglow",
+      "red-giant-real-lens-flares",
+      "red-giant-optical-glow",
+      "red-giant-lux"
     ]
   },
   {
@@ -48035,6 +50975,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-reframe",
+      "universe-socialize",
+      "universe-progresso",
+      "universe-unmult"
     ]
   },
   {
@@ -48065,6 +51011,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-quantum",
+      "universe-texturize",
+      "universe-prism-displacement",
+      "universe-texturize-motion"
     ]
   },
   {
@@ -48096,6 +51048,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-horizon",
+      "red-giant-echospace",
+      "red-giant-geo",
+      "red-giant-3d-stroke"
     ]
   },
   {
@@ -48127,6 +51085,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-king-pin-tracker",
+      "red-giant-lens-distortion-matcher",
+      "red-giant-supercomp",
+      "red-giant-depth-generator"
     ]
   },
   {
@@ -48158,6 +51122,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-optical-glow",
+      "red-giant-shine",
+      "red-giant-real-lens-flares",
+      "red-giant-lux"
     ]
   },
   {
@@ -48189,6 +51159,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-primatte-keyer",
+      "red-giant-king-pin-tracker",
+      "red-giant-spot-clone-tracker",
+      "red-giant-lens-distortion-matcher"
     ]
   },
   {
@@ -48219,6 +51195,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-screen-text",
+      "universe-text-tile",
+      "universe-numbers",
+      "universe-title-motion"
     ]
   },
   {
@@ -48250,6 +51232,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-mir",
+      "red-giant-3d-stroke",
+      "red-giant-form",
+      "red-giant-geo"
     ]
   },
   {
@@ -48280,6 +51268,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-symbol-mapper",
+      "universe-title-motion",
+      "universe-screen-text",
+      "universe-type-cast"
     ]
   },
   {
@@ -48310,6 +51304,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-sketchify",
+      "universe-texturize-motion",
+      "universe-quantum",
+      "universe-prism-displacement"
     ]
   },
   {
@@ -48340,6 +51340,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-texturize",
+      "universe-sketchify",
+      "universe-quantum",
+      "universe-prism-displacement"
     ]
   },
   {
@@ -48370,6 +51376,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-text-tile",
+      "universe-type-cast",
+      "universe-symbol-mapper",
+      "universe-type-on"
     ]
   },
   {
@@ -48401,6 +51413,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-form",
+      "red-giant-mir",
+      "red-giant-tao",
+      "red-giant-3d-stroke"
     ]
   },
   {
@@ -48431,6 +51449,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-title-motion",
+      "universe-type-on",
+      "universe-text-tile",
+      "universe-typographic"
     ]
   },
   {
@@ -48461,6 +51485,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-type-cast",
+      "universe-typographic",
+      "universe-title-motion",
+      "universe-text-tile"
     ]
   },
   {
@@ -48491,6 +51521,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-type-on",
+      "universe-type-cast",
+      "universe-title-motion",
+      "universe-text-tile"
     ]
   },
   {
@@ -48521,6 +51557,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-rgb-separation",
+      "universe-retrograde",
+      "universe-misfire",
+      "universe-grain16"
     ]
   },
   {
@@ -48551,6 +51593,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-bokeh",
+      "universe-chromatic-glow",
+      "universe-compound-blur",
+      "universe-edge-glow"
     ]
   },
   {
@@ -48581,6 +51629,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-bokeh",
+      "universe-compound-blur",
+      "universe-blur",
+      "universe-edge-glow"
     ]
   },
   {
@@ -48611,6 +51665,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-chromatic-glow",
+      "universe-edge-glow",
+      "universe-bokeh",
+      "universe-glimmer"
     ]
   },
   {
@@ -48641,6 +51701,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-compound-blur",
+      "universe-glimmer",
+      "universe-chromatic-glow",
+      "universe-glo-fi"
     ]
   },
   {
@@ -48671,6 +51737,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-glo-fi",
+      "universe-glow",
+      "universe-glimmer",
+      "universe-halflight"
     ]
   },
   {
@@ -48701,6 +51773,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-glimmer",
+      "universe-glo-fi-ii",
+      "universe-edge-glow",
+      "universe-glow"
     ]
   },
   {
@@ -48731,6 +51809,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-overlight",
+      "universe-spot-blur",
+      "universe-luster",
+      "universe-knoll-light-factory-ez"
     ]
   },
   {
@@ -48761,6 +51845,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-point-zoom",
+      "universe-overlight",
+      "universe-luster",
+      "universe-knoll-light-factory-ez"
     ]
   },
   {
@@ -48791,6 +51881,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-gradient-ramp",
+      "universe-soft-gradient-background",
+      "universe-spectralicious",
+      "universe-turbulence-noise"
     ]
   },
   {
@@ -48821,6 +51917,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-fractal-background",
+      "universe-soft-gradient-background",
+      "universe-spectralicious",
+      "universe-turbulence-noise"
     ]
   },
   {
@@ -48851,6 +51953,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-gradient-ramp",
+      "universe-spectralicious",
+      "universe-fractal-background",
+      "universe-turbulence-noise"
     ]
   },
   {
@@ -48881,6 +51989,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-soft-gradient-background",
+      "universe-turbulence-noise",
+      "universe-gradient-ramp",
+      "universe-fractal-background"
     ]
   },
   {
@@ -48911,6 +52025,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-spectralicious",
+      "universe-soft-gradient-background",
+      "universe-gradient-ramp",
+      "universe-fractal-background"
     ]
   },
   {
@@ -48941,6 +52061,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-bokeh-transition",
+      "universe-camera-shake-transition",
+      "universe-carousel-transition",
+      "universe-channel-blur"
     ]
   },
   {
@@ -48971,6 +52097,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-blinds",
+      "universe-camera-shake-transition",
+      "universe-carousel-transition",
+      "universe-channel-blur"
     ]
   },
   {
@@ -49001,6 +52133,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-bokeh-transition",
+      "universe-carousel-transition",
+      "universe-blinds",
+      "universe-channel-blur"
     ]
   },
   {
@@ -49031,6 +52169,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-camera-shake-transition",
+      "universe-channel-blur",
+      "universe-bokeh-transition",
+      "universe-channel-surf"
     ]
   },
   {
@@ -49061,6 +52205,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-carousel-transition",
+      "universe-channel-surf",
+      "universe-camera-shake-transition",
+      "universe-clock-wipe"
     ]
   },
   {
@@ -49091,6 +52241,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-channel-blur",
+      "universe-clock-wipe",
+      "universe-carousel-transition",
+      "universe-color-mosaic"
     ]
   },
   {
@@ -49121,6 +52277,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-channel-surf",
+      "universe-color-mosaic",
+      "universe-channel-blur",
+      "universe-color-stripe"
     ]
   },
   {
@@ -49151,6 +52313,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-clock-wipe",
+      "universe-color-stripe",
+      "universe-channel-surf",
+      "universe-cube"
     ]
   },
   {
@@ -49181,6 +52349,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-color-mosaic",
+      "universe-cube",
+      "universe-clock-wipe",
+      "universe-diamond-wave"
     ]
   },
   {
@@ -49211,6 +52385,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-color-stripe",
+      "universe-diamond-wave",
+      "universe-color-mosaic",
+      "universe-dolly-fade"
     ]
   },
   {
@@ -49241,6 +52421,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-cube",
+      "universe-dolly-fade",
+      "universe-color-stripe",
+      "universe-exposure-blur-transition"
     ]
   },
   {
@@ -49271,6 +52457,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-diamond-wave",
+      "universe-exposure-blur-transition",
+      "universe-cube",
+      "universe-film-transition"
     ]
   },
   {
@@ -49301,6 +52493,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-dolly-fade",
+      "universe-film-transition",
+      "universe-diamond-wave",
+      "universe-flicker-cut"
     ]
   },
   {
@@ -49331,6 +52529,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-exposure-blur-transition",
+      "universe-flicker-cut",
+      "universe-dolly-fade",
+      "universe-fold"
     ]
   },
   {
@@ -49361,6 +52565,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-film-transition",
+      "universe-fold",
+      "universe-exposure-blur-transition",
+      "universe-glitch-transition"
     ]
   },
   {
@@ -49391,6 +52601,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-flicker-cut",
+      "universe-glitch-transition",
+      "universe-film-transition",
+      "universe-inside-cube"
     ]
   },
   {
@@ -49421,6 +52637,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-fold",
+      "universe-inside-cube",
+      "universe-flicker-cut",
+      "universe-knoll-light-transition"
     ]
   },
   {
@@ -49451,6 +52673,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-glitch-transition",
+      "universe-knoll-light-transition",
+      "universe-fold",
+      "universe-linear-wipe"
     ]
   },
   {
@@ -49481,6 +52709,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-inside-cube",
+      "universe-linear-wipe",
+      "universe-glitch-transition",
+      "universe-retrograde-transition"
     ]
   },
   {
@@ -49511,6 +52745,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-knoll-light-transition",
+      "universe-retrograde-transition",
+      "universe-inside-cube",
+      "universe-rubix-cube"
     ]
   },
   {
@@ -49541,6 +52781,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-linear-wipe",
+      "universe-rubix-cube",
+      "universe-knoll-light-transition",
+      "universe-shape-wipe"
     ]
   },
   {
@@ -49571,6 +52817,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-retrograde-transition",
+      "universe-shape-wipe",
+      "universe-linear-wipe",
+      "universe-slide"
     ]
   },
   {
@@ -49601,6 +52853,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-rubix-cube",
+      "universe-slide",
+      "universe-retrograde-transition",
+      "universe-soft-edge-wipe"
     ]
   },
   {
@@ -49631,6 +52889,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-shape-wipe",
+      "universe-soft-edge-wipe",
+      "universe-rubix-cube",
+      "universe-spectralicious-transition"
     ]
   },
   {
@@ -49661,6 +52925,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-slide",
+      "universe-spectralicious-transition",
+      "universe-shape-wipe",
+      "universe-stretch-transition"
     ]
   },
   {
@@ -49691,6 +52961,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-soft-edge-wipe",
+      "universe-stretch-transition",
+      "universe-slide",
+      "universe-swish-pan"
     ]
   },
   {
@@ -49721,6 +52997,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-spectralicious-transition",
+      "universe-swish-pan",
+      "universe-soft-edge-wipe",
+      "universe-triangle-wave"
     ]
   },
   {
@@ -49751,6 +53033,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-stretch-transition",
+      "universe-triangle-wave",
+      "universe-spectralicious-transition",
+      "universe-turbulence-transition"
     ]
   },
   {
@@ -49781,6 +53069,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-swish-pan",
+      "universe-turbulence-transition",
+      "universe-stretch-transition",
+      "universe-unfold"
     ]
   },
   {
@@ -49811,6 +53105,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-triangle-wave",
+      "universe-unfold",
+      "universe-swish-pan",
+      "universe-vhs-transition"
     ]
   },
   {
@@ -49841,6 +53141,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-turbulence-transition",
+      "universe-vhs-transition",
+      "universe-triangle-wave",
+      "universe-warp"
     ]
   },
   {
@@ -49871,6 +53177,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-unfold",
+      "universe-warp",
+      "universe-turbulence-transition",
+      "universe-triangle-wave"
     ]
   },
   {
@@ -49901,6 +53213,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-vhs-transition",
+      "universe-unfold",
+      "universe-turbulence-transition",
+      "universe-triangle-wave"
     ]
   },
   {
@@ -49931,6 +53249,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-carousel",
+      "universe-fisheye-fixer",
+      "universe-picture-in-picture",
+      "universe-progresso"
     ]
   },
   {
@@ -49961,6 +53285,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-carousel",
+      "universe-picture-in-picture",
+      "universe-camera-shake",
+      "universe-progresso"
     ]
   },
   {
@@ -49991,6 +53321,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-fisheye-fixer",
+      "universe-progresso",
+      "universe-carousel",
+      "universe-reframe"
     ]
   },
   {
@@ -50021,6 +53357,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-shrinkray",
+      "universe-unmult",
+      "universe-reframe",
+      "universe-progresso"
     ]
   },
   {
@@ -50051,6 +53393,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-socialize",
+      "universe-shrinkray",
+      "universe-reframe",
+      "universe-progresso"
     ]
   },
   {
@@ -50081,6 +53429,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-halftone-dither",
+      "universe-ordered-dither",
+      "universe-error-diffuse-dither",
+      "universe-palettes"
     ]
   },
   {
@@ -50111,6 +53465,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-line",
+      "universe-modes",
+      "universe-hud-components",
+      "universe-noir-moderne"
     ]
   },
   {
@@ -50141,6 +53501,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-grain16",
+      "universe-retrograde",
+      "universe-glitch",
+      "universe-rgb-separation"
     ]
   },
   {
@@ -50171,6 +53537,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-modes",
+      "universe-prism-displacement",
+      "universe-long-shadow",
+      "universe-quantum"
     ]
   },
   {
@@ -50199,6 +53571,10 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "cinema-4d",
+      "blender"
     ]
   },
   {
@@ -50230,6 +53606,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-geo",
+      "red-giant-horizon",
+      "red-giant-3d-stroke",
+      "red-giant-sound-keys"
     ]
   },
   {
@@ -50261,6 +53643,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-echospace",
+      "red-giant-sound-keys",
+      "red-giant-geo",
+      "red-giant-3d-stroke"
     ]
   },
   {
@@ -50291,6 +53679,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-hacker-text",
+      "universe-numbers",
+      "universe-screen-text",
+      "universe-symbol-mapper"
     ]
   },
   {
@@ -50322,6 +53716,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "red-giant-real-lens-flares",
+      "red-giant-shine",
+      "red-giant-starglow",
+      "red-giant-optical-glow"
     ]
   },
   {
@@ -50352,6 +53752,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-error-diffuse-dither",
+      "universe-multitone",
+      "universe-custom-dither",
+      "universe-ordered-dither"
     ]
   },
   {
@@ -50382,6 +53788,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-multitone",
+      "universe-palettes",
+      "universe-halftone-dither",
+      "universe-pixel-dither"
     ]
   },
   {
@@ -50412,6 +53824,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-pixel-dither",
+      "universe-palettes",
+      "universe-ordered-dither",
+      "universe-multitone"
     ]
   },
   {
@@ -50442,6 +53860,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-custom-dither",
+      "universe-halftone-dither",
+      "universe-multitone",
+      "universe-ordered-dither"
     ]
   },
   {
@@ -50472,6 +53896,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-error-diffuse-dither",
+      "universe-halftone-dither",
+      "universe-multitone",
+      "universe-ordered-dither"
     ]
   },
   {
@@ -50502,6 +53932,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-ordered-dither",
+      "universe-pixel-dither",
+      "universe-multitone",
+      "universe-threshold-dither"
     ]
   },
   {
@@ -50530,6 +53966,9 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "blender"
     ]
   },
   {
@@ -50558,6 +53997,9 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "blender"
     ]
   },
   {
@@ -50586,6 +54028,9 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "blender"
     ]
   },
   {
@@ -50614,6 +54059,10 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "enscape",
+      "twinmotion"
     ]
   },
   {
@@ -50644,6 +54093,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-noir-moderne",
+      "universe-quantum",
+      "universe-modes",
+      "universe-sketchify"
     ]
   },
   {
@@ -50674,6 +54129,12 @@
     "verticals": [
       "motion-video",
       "creative"
+    ],
+    "alternatives": [
+      "universe-retrograde",
+      "universe-vhs",
+      "universe-misfire",
+      "universe-grain16"
     ]
   },
   {
@@ -50734,6 +54195,10 @@
     "verticals": [
       "career",
       "recruitment"
+    ],
+    "alternatives": [
+      "rezi",
+      "visualcv"
     ]
   },
   {
@@ -50768,6 +54233,10 @@
     "verticals": [
       "createur-contenu",
       "graphiste-da"
+    ],
+    "alternatives": [
+      "krea-ai",
+      "runway"
     ]
   },
   {
@@ -50802,6 +54271,10 @@
     "verticals": [
       "marketing",
       "saas"
+    ],
+    "alternatives": [
+      "semrush",
+      "ahrefs"
     ]
   },
   {
@@ -50862,7 +54335,11 @@
       "Intégrateurs de systèmes vidéo",
       "Équipes techniques qui prototypent des applications de vision"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "roboflow",
+      "landing-ai"
+    ]
   },
   {
     "id": "nick-launches",
@@ -50897,6 +54374,9 @@
     "prescription_quality": "medium",
     "personas": [
       "MARC"
+    ],
+    "alternatives": [
+      "product-hunt"
     ]
   }
 ]
