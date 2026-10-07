@@ -42,6 +42,13 @@
       "free": "Trial advertised; confirm duration and terms.",
       "paid": "Growth: $29.75/seat/month equivalent with annual billing, $35 shown as the reference price. 500 GB active storage per seat, up to 15 seats. Enterprise by quote. Confirm extra storage and taxes."
     },
+    "nativePrices": [
+      {
+        "amount": 29.75,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://join.shade.inc/mqs23o4a7g72",
     "websiteUrl": "https://shade.inc/",
     "ogImageUrl": "/og-images/shade-review.webp",
@@ -72,6 +79,13 @@
       "free": "Starter: 10 designs and 6 exports per month. 15-day Business trial.",
       "paid": "Professional $30/month, Business $160/month with monthly billing. Displayed annual equivalents: $25 and $134/month. Enterprise by quote. Sending platform not included; tax treatment unconfirmed."
     },
+    "nativePrices": [
+      {
+        "amount": 30,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://partners.beefree.io/6vs5w5zechoq",
     "websiteUrl": "https://beefree.io/",
     "ogImageUrl": "/og-images/beefree-review.webp",
@@ -132,6 +146,13 @@
     },
     "defaultMonthlyPrice": 42.94,
     "compareMonthlyPrice": 42.94,
+    "nativePrices": [
+      {
+        "amount": 50,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://17hats.com",
     "substitution_cluster_v2": "freelance-crm-suite",
     "functional_needs": [
@@ -170,6 +191,13 @@
     },
     "defaultMonthlyPrice": 2.57,
     "compareMonthlyPrice": 2.57,
+    "nativePrices": [
+      {
+        "amount": 2.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://1password.com",
     "ogImageUrl": "https://images.ctfassets.net/2h488pz7kgfv/4JAm44Htcrinu0sTomaEGi/1f7be85af3138e1d38bb31fe5ad6425b/open-graph-1password-business.jpg",
     "tool_type": "gestion",
@@ -287,6 +315,13 @@
       "paid": "From $99 (lifetime license), Live Intro plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "websiteUrl": "https://www.ableton.com/live/",
     "ogImageUrl": "https://beta-ableton.imgix.net/media/y1tf4gvt/l12-beta-800x600.jpg",
     "substitution_cluster_v2": "audio-daw",
@@ -328,6 +363,13 @@
     },
     "defaultMonthlyPrice": 12.87,
     "compareMonthlyPrice": 12.87,
+    "nativePrices": [
+      {
+        "amount": 14.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://acast.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/6809ff3ab38ebd48f5709328_Acast%20OG.jpg",
     "logo": "https://logo.clearbit.com/acast.com",
@@ -372,6 +414,13 @@
     },
     "defaultMonthlyPrice": 13.15,
     "compareMonthlyPrice": 13.15,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.activecampaign.com/twe5oenri4zv-b9q17i",
     "websiteUrl": "https://www.activecampaign.com",
     "ogImageUrl": "/og-images/activecampaign.jpg",
@@ -447,6 +496,13 @@
       "free": "7-day trial with 10 advertised credits.",
       "paid": "Starter: US$39/month billed monthly, for 10 credits and 1 brand. The annual offer displays US$20/month, billed yearly. Check the total, options and renewal terms when signing up."
     },
+    "nativePrices": [
+      {
+        "amount": 39,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://free-trial.adcreative.ai/bl7nxarn1exp",
     "websiteUrl": "https://www.adcreative.ai/",
     "ogImageUrl": "/og-images/adcreative-ai.jpg",
@@ -526,6 +582,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 19.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://adobe.com",
     "ogImageUrl": "https://www.adobe.com/homepage/assets/product-icons/jpg/media_1e1d6ce6caa68dfd49689c46528c152d9fdeaad6f.jpg",
     "substitution_cluster_v2": "creative-suite",
@@ -561,6 +624,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 19.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.adobe.com/acrobat.html",
     "ogImageUrl": "https://www.adobe.com/acrobat/media_14da7a4ea109e868041eecca664e1538d41f5beb4.png?width=1200&#x26;#x26;format=pjpg&#x26;#x26;optimize=medium",
     "bundle_parent": "adobe-creative-cloud",
@@ -638,6 +708,13 @@
     },
     "defaultMonthlyPrice": 19.74,
     "compareMonthlyPrice": 19.74,
+    "nativePrices": [
+      {
+        "amount": 22.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://adobe.com/products/aftereffects",
     "ogImageUrl": "https://www.adobe.com/cc-shared/fragments/products/after-effects/media_16c76e52536bb6390f3efd8c5d09ebd0dd95d28ed.jpg?format=jpg&optimize=medium&width=750",
     "tool_type": "metier",
@@ -718,6 +795,13 @@
     },
     "defaultMonthlyPrice": 78.65,
     "compareMonthlyPrice": 78.65,
+    "nativePrices": [
+      {
+        "amount": 78.65,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://adobe.com/creativecloud",
     "ogImageUrl": "https://www.adobe.com/cc-shared/assets/img/product-icons/svg/creative-cloud.svg",
     "tool_type": "metier",
@@ -764,6 +848,13 @@
     },
     "defaultMonthlyPrice": 78.65,
     "compareMonthlyPrice": 78.65,
+    "nativePrices": [
+      {
+        "amount": 78.65,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://adobecreativecloud.com",
     "websiteUrl": "https://www.adobe.com/creativecloud/plans.html",
     "ogImageUrl": "https://www.adobe.com/cc-shared/assets/img/product-icons/jpg/default.jpg?width=1200&format=pjpg&optimize=medium",
@@ -889,6 +980,13 @@
     },
     "defaultMonthlyPrice": 8.58,
     "compareMonthlyPrice": 8.58,
+    "nativePrices": [
+      {
+        "amount": 9.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://firefly.adobe.com",
     "ogImageUrl": "/og-screenshots/firefly.jpg",
     "tool_type": "ia",
@@ -970,6 +1068,13 @@
     },
     "defaultMonthlyPrice": 19.74,
     "compareMonthlyPrice": 19.74,
+    "nativePrices": [
+      {
+        "amount": 22.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://adobe.com/products/illustrator",
     "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&format=pjpg&optimize=medium",
     "tool_type": "metier",
@@ -1014,6 +1119,13 @@
     },
     "defaultMonthlyPrice": 19.74,
     "compareMonthlyPrice": 19.74,
+    "nativePrices": [
+      {
+        "amount": 22.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://adobe.com/products/indesign",
     "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "tool_type": "metier",
@@ -1056,6 +1168,13 @@
     },
     "defaultMonthlyPrice": 10.3,
     "compareMonthlyPrice": 10.3,
+    "nativePrices": [
+      {
+        "amount": 11.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://adobe.com/products/lightroom",
     "ogImageUrl": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&format=pjpg&optimize=medium",
     "tool_type": "metier",
@@ -1104,6 +1223,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 19.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://adobe.com/products/photoshop",
     "ogImageUrl": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&format=pjpg&optimize=medium",
     "tool_type": "metier",
@@ -1149,6 +1275,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 19.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://podcast.adobe.com",
     "ogImageUrl": "/tool-media/adobe-podcast/enhance-speech.webp",
     "tool_type": "ia",
@@ -1190,6 +1323,13 @@
     },
     "defaultMonthlyPrice": 19.74,
     "compareMonthlyPrice": 19.74,
+    "nativePrices": [
+      {
+        "amount": 22.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://adobe.com/products/premiere",
     "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
     "tool_type": "metier",
@@ -1275,6 +1415,13 @@
     },
     "defaultMonthlyPrice": 51.52,
     "compareMonthlyPrice": 51.52,
+    "nativePrices": [
+      {
+        "amount": 59.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.adobe.com/products/substance3d.html",
     "ogImageUrl": "https://www.adobe.com/products/media_1493006c2adba238de471ed68a47f1663e254966c.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "bundle_parent": "adobe-creative-cloud",
@@ -1637,6 +1784,13 @@
     },
     "defaultMonthlyPrice": 92.74,
     "compareMonthlyPrice": 92.74,
+    "nativePrices": [
+      {
+        "amount": 108,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://ahrefs.com",
     "ogImageUrl": "https://static.ahrefs.com/assets/img/og/ahrefs.png?v=2",
     "substitution_cluster_v2": "seo-tools",
@@ -1712,6 +1866,13 @@
     },
     "defaultMonthlyPrice": 19.32,
     "compareMonthlyPrice": 19.32,
+    "nativePrices": [
+      {
+        "amount": 22.5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.aircall.io/inlxr1yjycil",
     "websiteUrl": "https://aircall.io",
     "ogImageUrl": "/og-images/aircall.jpg",
@@ -1789,6 +1950,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://airtable.com",
     "ogImageUrl": "https://cdn.sanity.io/images/hlcyrtq5/production/00c20d5108d1335f5a243ddcd70ea4a2d6d9a844-1200x630.webp",
     "substitution_cluster_v2": "project-management-general",
@@ -1932,6 +2100,13 @@
     },
     "defaultMonthlyPrice": 25.76,
     "compareMonthlyPrice": 25.76,
+    "nativePrices": [
+      {
+        "amount": 30,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://aloware.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/aloware.jpg",
     "substitution_cluster_v2": "communication-ops",
@@ -2002,6 +2177,13 @@
       "free": "Free trial advertised on all plans; confirm duration and conditions.",
       "paid": "Startup: $600/month with an annual term, including 2 users. Growth and Elite: custom pricing, including 4 and 10 users respectively. Additional users cost extra."
     },
+    "nativePrices": [
+      {
+        "amount": 600,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://grow.amplemarket.com/e261f8d417a0-affiliate",
     "websiteUrl": "https://www.amplemarket.com",
     "ogImageUrl": "/og-images/amplemarket.jpg",
@@ -2194,6 +2376,13 @@
     },
     "defaultMonthlyPrice": 20,
     "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://animaapp.com",
     "ogImageUrl": "https://a.storyblok.com/f/89137/2124x816/9f4d3b6474/frameworks-tools.png",
     "tool_type": "plugin",
@@ -2236,6 +2425,13 @@
     },
     "defaultMonthlyPrice": 14.17,
     "compareMonthlyPrice": 14.17,
+    "nativePrices": [
+      {
+        "amount": 16.5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://misterhorse.com/animation-composer",
     "ogImageUrl": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/20260609/ac.png",
     "tool_type": "plugin",
@@ -2464,6 +2660,13 @@
     },
     "defaultMonthlyPrice": 42.08,
     "compareMonthlyPrice": 42.08,
+    "nativePrices": [
+      {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.apollo.io/i3ymfre21zro",
     "websiteUrl": "https://www.apollo.io",
     "ogImageUrl": "/og-images/apollo-io.jpg",
@@ -2641,6 +2844,18 @@
     },
     "defaultMonthlyPrice": 172.61,
     "compareMonthlyPrice": 172.61,
+    "nativePrices": [
+      {
+        "amount": 203,
+        "currency": "EUR",
+        "period": "monthly"
+      },
+      {
+        "amount": 201,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://graphisoft.com/solutions/archicad",
     "ogImageUrl": "https://www.graphisoft.com/content/uploads/2025/11/archicad-conceptualize-confidently.png",
     "tool_type": "metier",
@@ -2889,6 +3104,13 @@
     },
     "defaultMonthlyPrice": 24.92,
     "compareMonthlyPrice": 24.92,
+    "nativePrices": [
+      {
+        "amount": 24.92,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://artlist.io",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/artlist.jpg",
     "substitution_cluster_v2": "creative-assets",
@@ -2928,6 +3150,13 @@
     },
     "defaultMonthlyPrice": 8.54,
     "compareMonthlyPrice": 8.54,
+    "nativePrices": [
+      {
+        "amount": 9.95,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.artstation.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/artstation.jpg",
     "substitution_cluster_v2": "design-inspiration-search",
@@ -2966,6 +3195,13 @@
     },
     "defaultMonthlyPrice": 8.27,
     "compareMonthlyPrice": 8.27,
+    "nativePrices": [
+      {
+        "amount": 9.63,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://asana.com",
     "ogImageUrl": "https://assets.asana.biz/m/4aecf2c7c66aa51b/original/asana-meta-coral-1x.png",
     "substitution_cluster_v2": "project-management-general",
@@ -3014,6 +3250,13 @@
     },
     "defaultMonthlyPrice": 309.15,
     "compareMonthlyPrice": 309.15,
+    "nativePrices": [
+      {
+        "amount": 360,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://ashbyhq.com",
     "ogImageUrl": "https://www.ashbyhq.com/og/default.png?v5",
     "logo": "https://logo.clearbit.com/ashbyhq.com",
@@ -3052,6 +3295,13 @@
     },
     "defaultMonthlyPrice": 10.67,
     "compareMonthlyPrice": 10.67,
+    "nativePrices": [
+      {
+        "amount": 12.42,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://astutegraphics.com",
     "ogImageUrl": "https://astute-graphics.imgix.net/plugins/astutebuddy-media/astutebuddy-image.png?ixlib=php-3.3.1&w=660",
     "host_app": "adobe-illustrator",
@@ -3090,6 +3340,18 @@
     },
     "defaultMonthlyPrice": 39,
     "compareMonthlyPrice": 39,
+    "nativePrices": [
+      {
+        "amount": 44,
+        "currency": "USD",
+        "period": "monthly"
+      },
+      {
+        "amount": 39,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://attio.com",
     "ogImageUrl": "https://a.storyblok.com/f/234930/1900x1000/c2028529da/og-default.jpeg",
     "logo": "https://logo.clearbit.com/attio.com",
@@ -3314,6 +3576,13 @@
     "pricingEn": "Limited free plan; Pro from ~$9/month.",
     "defaultMonthlyPrice": 17.13,
     "compareMonthlyPrice": 17.13,
+    "nativePrices": [
+      {
+        "amount": 19.95,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://authoredup.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6526c17b5fa3bc01030d024f/657b752236bb1b5c792e57b3_OpenGraphimg.png",
     "logo": "https://logo.clearbit.com/authoredup.com",
@@ -3351,6 +3620,13 @@
       "paid": "From $50 (lifetime license), Auto-Rig Pro Full plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 50,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://superhivemarket.com/products/auto-rig-pro",
     "ogImageUrl": "https://assets.superhivemarket.com/store/product/126738/image/xlarge-8c2f231da5b8fcd134fee5a937fc0824.jpg",
     "tool_type": "plugin",
@@ -3428,6 +3704,13 @@
     },
     "defaultMonthlyPrice": 38.64,
     "compareMonthlyPrice": 38.64,
+    "nativePrices": [
+      {
+        "amount": 45,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.autodesk.com/products/autocad-lt/overview",
     "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/5JQTMWprZssXEdZRW6a1rI/49a52243189ea79c924d805260d44934/autocad-lt-dcn-hero-banner-1920x1080.jpg",
     "tool_type": "metier",
@@ -3844,6 +4127,13 @@
     },
     "defaultMonthlyPrice": 13.74,
     "compareMonthlyPrice": 13.74,
+    "nativePrices": [
+      {
+        "amount": 16,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://balsamiq.com",
     "ogImageUrl": "https://thumbs.balsamiq.com/t.png",
     "substitution_cluster_v2": "design-prototyping",
@@ -3882,6 +4172,13 @@
     },
     "defaultMonthlyPrice": 214.68,
     "compareMonthlyPrice": 214.68,
+    "nativePrices": [
+      {
+        "amount": 250,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.bamboohr.com",
     "websiteUrl": "https://bamboohr.com",
     "ogImageUrl": "https://www.bamboohr.com/media_115e701ac04beaf329bff3e3855a6c76267d2b007.png?width=1200&format=pjpg&optimize=medium",
@@ -3919,6 +4216,13 @@
       "paid": "From $69.99 (lifetime license), Single User License plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 69.99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://aescripts.com/boa",
     "ogImageUrl": "/og-screenshots/ae-bao-boa.jpg",
     "tool_type": "plugin",
@@ -3960,6 +4264,13 @@
     },
     "defaultMonthlyPrice": 10.99,
     "compareMonthlyPrice": 10.99,
+    "nativePrices": [
+      {
+        "amount": 12.8,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://base44.pxf.io/c/6936943/2049275/25619?trafcat=base",
     "ogImageUrl": "https://static.wixstatic.com/media/dea07e_6bf81d81d64d41219a8c60df2766db1a%7Emv2.png/v1/fit/w_2500,h_1330,al_c/dea07e_6bf81d81d64d41219a8c60df2766db1a%7Emv2.png",
     "substitution_cluster_v2": "ai-app-builder",
@@ -3998,6 +4309,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://basecamp.com",
     "ogImageUrl": "https://basecamp.com/assets/images/opengraph/basecamp.png?v=1.3.12",
     "substitution_cluster_v2": "project-management-general",
@@ -4169,6 +4487,13 @@
     },
     "defaultMonthlyPrice": 11.16,
     "compareMonthlyPrice": 11.16,
+    "nativePrices": [
+      {
+        "amount": 13,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://betterproposals.io",
     "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
@@ -4457,6 +4782,13 @@
     },
     "defaultMonthlyPrice": 12.02,
     "compareMonthlyPrice": 12.02,
+    "nativePrices": [
+      {
+        "amount": 14,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://bloom.io",
     "substitution_cluster_v2": "crm-prospection",
     "functional_needs": [
@@ -4495,6 +4827,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://blueink.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/blueink-esignatures.jpg",
     "substitution_cluster_v2": "workspace-ops",
@@ -4645,6 +4984,13 @@
     },
     "defaultMonthlyPrice": 21.47,
     "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://bolt.new",
     "ogImageUrl": "https://bolt.new/static/marketing/homepage/value/build-without-breaking.png",
     "tool_type": "ia",
@@ -4754,6 +5100,13 @@
     },
     "defaultMonthlyPrice": 6.01,
     "compareMonthlyPrice": 6.01,
+    "nativePrices": [
+      {
+        "amount": 7,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://box.com",
     "ogImageUrl": "https://assets.box.com/sites/default/files/box_default_og_sharing_image/box-social.jpg",
     "substitution_cluster_v2": "cloud-storage",
@@ -4829,6 +5182,13 @@
     },
     "defaultMonthlyPrice": 170.89,
     "compareMonthlyPrice": 170.89,
+    "nativePrices": [
+      {
+        "amount": 199,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.brand24.com/2jbwm4slry45",
     "websiteUrl": "https://brand24.com",
     "ogImageUrl": "/og-images/brand24.jpg",
@@ -5017,6 +5377,13 @@
     },
     "defaultMonthlyPrice": 7,
     "compareMonthlyPrice": 7,
+    "nativePrices": [
+      {
+        "amount": 7,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.brevo.com/k11w0iqmh2r0-m7y3c",
     "websiteUrl": "https://www.brevo.com",
     "ogImageUrl": "/og-images/brevo.jpg",
@@ -5135,6 +5502,13 @@
     },
     "defaultMonthlyPrice": 53.67,
     "compareMonthlyPrice": 53.67,
+    "nativePrices": [
+      {
+        "amount": 62.5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://browzwear.com",
     "ogImageUrl": "https://browzwear.com/hubfs/home_featured.jpg",
     "substitution_cluster_v2": "3d-fashion-simulation",
@@ -5173,6 +5547,13 @@
     },
     "defaultMonthlyPrice": 50.67,
     "compareMonthlyPrice": 50.67,
+    "nativePrices": [
+      {
+        "amount": 59,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://bubble.io",
     "ogImageUrl": "https://meta-q.cdn.bubble.io/cdn-cgi/image/w=,h=,f=auto,dpr=1,fit=contain/f1762463484754x595287411041153000/Bubbleio%20opengraph.png",
     "logo": "https://logo.clearbit.com/bubble.io",
@@ -5209,6 +5590,13 @@
       "free": "14-day trial without a credit card; no permanent free plan.",
       "paid": "Monthly billing: Starter $5.99, Pro $7.99, Advanced $13.99 per user/month, plus $19/month per account. Annual rates: $4.99 / $6.99 / $12.99 per user/month, plus the base fee. Example: Starter for 10 users on monthly billing costs $78.90/month before add-ons."
     },
+    "nativePrices": [
+      {
+        "amount": 24.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.buddypunch.com/6oeemql0j0q3",
     "websiteUrl": "https://buddypunch.com",
     "ogImageUrl": "/og-images/buddy-punch.jpg",
@@ -5250,6 +5638,13 @@
     },
     "defaultMonthlyPrice": 16.32,
     "compareMonthlyPrice": 16.32,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://budibase.com",
     "ogImageUrl": "https://budibase.com/og.png",
     "tool_type": "metier",
@@ -5288,6 +5683,13 @@
     },
     "defaultMonthlyPrice": 4.29,
     "compareMonthlyPrice": 4.29,
+    "nativePrices": [
+      {
+        "amount": 5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://buffer.com",
     "ogImageUrl": "https://buffer.com/ogImages/homepage-og.png",
     "substitution_cluster_v2": "content-creation",
@@ -5362,6 +5764,13 @@
     },
     "defaultMonthlyPrice": 99.83,
     "compareMonthlyPrice": 99.83,
+    "nativePrices": [
+      {
+        "amount": 116.25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://bullmq.io",
     "ogImageUrl": "https://bullmq.io/images/cover.jpg",
     "tool_type": "metier",
@@ -5436,6 +5845,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://buzzsprout.com",
     "ogImageUrl": "https://assets.buzzsprout.com/assets/home/og/buzzsprout-e8311a2f1a10386551c9310dc921205062cbee429d5bc5640ec94a4b6303e934.png",
     "substitution_cluster_v2": "content-creation",
@@ -5615,6 +6031,13 @@
     },
     "defaultMonthlyPrice": 42.94,
     "compareMonthlyPrice": 42.94,
+    "nativePrices": [
+      {
+        "amount": 50,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://partners.callrail.com/80aos1quxy64",
     "websiteUrl": "https://www.callrail.com",
     "ogImageUrl": "/og-images/callrail.jpg",
@@ -5655,6 +6078,13 @@
     },
     "defaultMonthlyPrice": 55.82,
     "compareMonthlyPrice": 55.82,
+    "nativePrices": [
+      {
+        "amount": 65,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.ctm.com",
     "ogImageUrl": "https://www.ctm.com/wp-content/uploads/2026/01/social-general-2026_768x402.jpg",
     "substitution_cluster_v2": "communication-ops",
@@ -5753,6 +6183,13 @@
     },
     "defaultMonthlyPrice": 9.17,
     "compareMonthlyPrice": 9.17,
+    "nativePrices": [
+      {
+        "amount": 9.17,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://canva.com",
     "ogImageUrl": "https://content-management-files.canva.com/c37135f6-6d9a-4920-b659-4f5e12698b8d/og-image-global-1200x630.jpg",
     "tool_type": "metier",
@@ -5796,6 +6233,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.canva.com/ai/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-ai.jpg",
     "tool_type": "ia",
@@ -5873,6 +6317,13 @@
     },
     "defaultMonthlyPrice": 9.17,
     "compareMonthlyPrice": 9.17,
+    "nativePrices": [
+      {
+        "amount": 9.17,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.canva.com/pro/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-pro.jpg",
     "tool_type": "core",
@@ -6171,6 +6622,13 @@
     "pricingEn": "Limited free plan; Pro from ~$10/month.",
     "defaultMonthlyPrice": 21.46,
     "compareMonthlyPrice": 21.46,
+    "nativePrices": [
+      {
+        "amount": 24.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://captions.ai",
     "ogImageUrl": "https://captions.ai/mrkt-static/captions-og-image.png",
     "logo": "https://logo.clearbit.com/captions.ai",
@@ -6209,6 +6667,13 @@
     },
     "defaultMonthlyPrice": 20.5,
     "compareMonthlyPrice": 20.5,
+    "nativePrices": [
+      {
+        "amount": 20.5,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://captureone.com",
     "ogImageUrl": "https://cdn.captureone.com/images/fpl48n9r/production/e3a4a775b5052c37ae8630062ba2485fe520d80d-1456x970.jpg?auto=format",
     "tool_type": "metier",
@@ -6249,6 +6714,13 @@
     },
     "defaultMonthlyPrice": 12.02,
     "compareMonthlyPrice": 12.02,
+    "nativePrices": [
+      {
+        "amount": 14,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://cargo.site/",
     "ogImageUrl": "/tool-media/cargo-site/cargo-overview.jpg",
     "substitution_cluster_v2": "website-builder",
@@ -6658,6 +7130,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://chat.openai.com",
     "ogImageUrl": "/og-screenshots/chatgpt.jpg",
     "tool_type": "ia",
@@ -6812,6 +7291,13 @@
     },
     "defaultMonthlyPrice": 60.04,
     "compareMonthlyPrice": 60.04,
+    "nativePrices": [
+      {
+        "amount": 69.92,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.maxon.net/en/cinema-4d",
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/Hero_banner-1.jpg",
     "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/C4D_icon.svg",
@@ -6853,6 +7339,13 @@
     },
     "defaultMonthlyPrice": 76.43,
     "compareMonthlyPrice": 76.43,
+    "nativePrices": [
+      {
+        "amount": 89,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://circle.so",
     "ogImageUrl": "https://cdn.builder.io/api/v1/image/assets%2Fd5e2d72a033944e1a916c5c34902a1ff%2Fc62a43f7c8824fc3a43967e1044a13b4",
     "substitution_cluster_v2": "learning-platform",
@@ -6966,6 +7459,13 @@
     "pricingEn": "From ~$149/month depending on enrichment credit volume.",
     "defaultMonthlyPrice": 158.87,
     "compareMonthlyPrice": 158.87,
+    "nativePrices": [
+      {
+        "amount": 185,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://clay.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/61477f2c24a826836f969afe/6a3ab15061812432ead96f56_Clay_Homepage_og-image%201000.png",
     "logo": "https://logo.clearbit.com/clay.com",
@@ -7081,6 +7581,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://clerk.com",
     "ogImageUrl": "https://clerk.com/opengraph-image.jpg?opengraph-image.0goco-shezoln.jpg?dpl=dpl_ajEdGFdpAStkW6FsrkyGKbGcMsxE",
     "tool_type": "metier",
@@ -7119,6 +7626,13 @@
     },
     "defaultMonthlyPrice": 6.01,
     "compareMonthlyPrice": 6.01,
+    "nativePrices": [
+      {
+        "amount": 7,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.web.clickup.com/setp3llooogk",
     "websiteUrl": "https://clickup.com",
     "ogImageUrl": "/og-images/clickup.jpg",
@@ -7233,6 +7747,13 @@
       "paid": "From $63 (lifetime license), PRO (perpetual license, Ver. 5.0) plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 63,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://www.clipstudio.net/",
     "ogImageUrl": "https://www.clipstudio.net/view/img/common/logo/ogp/ogp_ja_202603.jpg?0005",
     "tool_type": "metier",
@@ -7313,6 +7834,13 @@
     },
     "defaultMonthlyPrice": 32.2,
     "compareMonthlyPrice": 32.2,
+    "nativePrices": [
+      {
+        "amount": 37.5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.clo3d.com",
     "ogImageUrl": "https://cdn.clo3d.com/resource/images/meta/open-graph-clo3d.jpg",
     "substitution_cluster_v2": "3d-fashion-simulation",
@@ -7348,6 +7876,13 @@
     },
     "defaultMonthlyPrice": 3.43,
     "compareMonthlyPrice": 3.43,
+    "nativePrices": [
+      {
+        "amount": 3.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://clockify.com",
     "websiteUrl": "https://clockify.me",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/clockify.jpg",
@@ -7487,6 +8022,13 @@
     },
     "defaultMonthlyPrice": 76.43,
     "compareMonthlyPrice": 76.43,
+    "nativePrices": [
+      {
+        "amount": 89,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://cloudinary.com",
     "ogImageUrl": "https://res.cloudinary.com/cloudinary-marketing/images/c_scale,w_auto,dpr_auto/f_auto,q_auto/v1781274585/2026_Homepage_OG_1200x630_updated/2026_Homepage_OG_1200x630_updated.jpg?_i=AA",
     "substitution_cluster_v2": "storage",
@@ -7759,6 +8301,13 @@
     },
     "defaultMonthlyPrice": 4.65,
     "compareMonthlyPrice": 4.65,
+    "nativePrices": [
+      {
+        "amount": 5.42,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://atlassian.com/software/confluence",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/confluence.jpg",
     "substitution_cluster_v2": "workspace-ops",
@@ -7979,6 +8528,13 @@
     },
     "defaultMonthlyPrice": 14.24,
     "compareMonthlyPrice": 14.24,
+    "nativePrices": [
+      {
+        "amount": 16.58,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://contra.com",
     "ogImageUrl": "https://contra.com/static/opengraph-assets/v2/fallbacks/contra-fallback-open-graph-image.png",
     "substitution_cluster_v2": "freelance-marketplace",
@@ -8090,6 +8646,13 @@
     },
     "defaultMonthlyPrice": 29.63,
     "compareMonthlyPrice": 29.63,
+    "nativePrices": [
+      {
+        "amount": 34.5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.chaos.com/corona",
     "ogImageUrl": "/tool-media/corona-renderer/overview.png",
     "tool_type": "metier",
@@ -8233,6 +8796,13 @@
     },
     "defaultMonthlyPrice": 20.61,
     "compareMonthlyPrice": 20.61,
+    "nativePrices": [
+      {
+        "amount": 24,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://coupler.io",
     "ogImageUrl": "https://www.coupler.io/assets/og-image-9ea172df3bf2d3071ac41c04b5ea552e2c433819388f052ace787b3db09c2f7d.png",
     "logo": "https://logo.clearbit.com/coupler.io",
@@ -8335,6 +8905,13 @@
     },
     "defaultMonthlyPrice": 11.16,
     "compareMonthlyPrice": 11.16,
+    "nativePrices": [
+      {
+        "amount": 13,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://crayo.ai",
     "ogImageUrl": "https://crayo.ai/og-image.png",
     "substitution_cluster_v2": "ai-video-generation",
@@ -8621,6 +9198,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://cursor.com",
     "ogImageUrl": "https://cursor.com/marketing-static/_next/image?url=https%3A%2F%2Fptht05hbb1ssoooe.public.blob.vercel-storage.com%2Fassets%2Fmisc%2Fasset-cc24ca462279ca23250c.jpg&w=3840&q=70",
     "tool_type": "metier",
@@ -8849,6 +9433,13 @@
     },
     "defaultMonthlyPrice": 25.76,
     "compareMonthlyPrice": 25.76,
+    "nativePrices": [
+      {
+        "amount": 30,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.d5render.com",
     "ogImageUrl": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/2354345346.webp",
     "tool_type": "metier",
@@ -9001,6 +9592,13 @@
     },
     "defaultMonthlyPrice": 4,
     "compareMonthlyPrice": 4,
+    "nativePrices": [
+      {
+        "amount": 4,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://dashlane.com",
     "ogImageUrl": "https://www.dashlane.com/uploads/2025/07/dashlane_omnix_hero-1-scaled.webp",
     "substitution_cluster_v2": "password-manager",
@@ -9037,6 +9635,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://datadoghq.com",
     "ogImageUrl": "https://corp.dd-static.net/img/og/og-image-10-25.png?fit=crop&w=1200&h=630",
     "tool_type": "metier",
@@ -9147,6 +9752,13 @@
       "paid": "From $295 (lifetime license), DaVinci Resolve Studio plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 295,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://blackmagicdesign.com/products/davinciresolve",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/davinci-resolve.jpg",
     "tool_type": "metier",
@@ -9226,6 +9838,13 @@
     },
     "defaultMonthlyPrice": 85.87,
     "compareMonthlyPrice": 85.87,
+    "nativePrices": [
+      {
+        "amount": 100,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.getdbt.com",
     "ogImageUrl": "https://www.getdbt.com/img/site-meta/facebook.png",
     "substitution_cluster_v2": "analytics",
@@ -9263,6 +9882,13 @@
     },
     "defaultMonthlyPrice": 42.08,
     "compareMonthlyPrice": 42.08,
+    "nativePrices": [
+      {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.deel.com/hftlk37l5raa",
     "websiteUrl": "https://www.deel.com/",
     "ogImageUrl": "/og-images/deel.jpg",
@@ -9385,6 +10011,13 @@
     },
     "defaultMonthlyPrice": 4.29,
     "compareMonthlyPrice": 4.29,
+    "nativePrices": [
+      {
+        "amount": 5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://deputy.com",
     "ogImageUrl": "https://www.deputy.com/g-assets/deputy-social-image.png",
     "substitution_cluster_v2": "workspace-ops",
@@ -9421,6 +10054,13 @@
       "free": "Free: 1 media hour/month and 100 one-time AI credits.",
       "paid": "Per person: Hobbyist $24/month or $16 billed annually; Creator $35 or $24 annually; Business $65 or $50 annually. Enterprise is custom priced. Media hours and AI credits are capped."
     },
+    "nativePrices": [
+      {
+        "amount": 16,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.descript.com/nvex67sqobyv",
     "websiteUrl": "https://www.descript.com/",
     "ogImageUrl": "/og-images/descript.jpg",
@@ -9467,6 +10107,13 @@
     },
     "defaultMonthlyPrice": 13.74,
     "compareMonthlyPrice": 13.74,
+    "nativePrices": [
+      {
+        "amount": 16,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.descript.com/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/descript-ai.jpg",
     "logo": "https://logo.clearbit.com/descriptai.com",
@@ -9574,6 +10221,13 @@
     },
     "defaultMonthlyPrice": 21.65,
     "compareMonthlyPrice": 21.65,
+    "nativePrices": [
+      {
+        "amount": 25.21,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://join.dext.com/n2kppk0g4xq5",
     "websiteUrl": "https://dext.com",
     "ogImageUrl": "/og-images/dext.jpg",
@@ -9653,6 +10307,13 @@
     },
     "defaultMonthlyPrice": 3.43,
     "compareMonthlyPrice": 3.43,
+    "nativePrices": [
+      {
+        "amount": 4,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://digitalocean.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/digitalocean.jpg",
     "substitution_cluster_v2": "cloud-hosting-paas",
@@ -9730,6 +10391,13 @@
     },
     "defaultMonthlyPrice": 2.57,
     "compareMonthlyPrice": 2.57,
+    "nativePrices": [
+      {
+        "amount": 2.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://discord.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/665643dd8c7ac752237b5cef_Discord-OG-1200x630.jpg",
     "substitution_cluster_v2": "team-chat",
@@ -9843,6 +10511,13 @@
     },
     "defaultMonthlyPrice": 8.59,
     "compareMonthlyPrice": 8.59,
+    "nativePrices": [
+      {
+        "amount": 10,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.docusign.com",
     "ogImageUrl": "https://images.ctfassets.net/0jnmtsdzg6p5/4GSPcvcpIZpsXsZ7F0EXTW/e83c17556674508addba7639c46fa6dd/ds-iam-og-image.png",
     "tool_type": "metier",
@@ -9908,6 +10583,13 @@
     },
     "defaultMonthlyPrice": 16.96,
     "compareMonthlyPrice": 16.96,
+    "nativePrices": [
+      {
+        "amount": 19.75,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://doola.com",
     "ogImageUrl": "https://x3a7k7p5.delivery.rocketcdn.me/wp-content/uploads/2025/04/doola-is-for-dooers.png",
     "tool_type": "gestion",
@@ -10198,6 +10880,13 @@
     },
     "defaultMonthlyPrice": 8.58,
     "compareMonthlyPrice": 8.58,
+    "nativePrices": [
+      {
+        "amount": 9.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://dropbox.com",
     "ogImageUrl": "https://cfl.dropboxstatic.com/static/metaserver/static/images/logo_catalog/dropbox_opengraph_image%402x.png",
     "substitution_cluster_v2": "cloud-storage",
@@ -10395,6 +11084,13 @@
       "paid": "From $159.99 (lifetime license), Essential plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 159.99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://www.dxo.com/dxo-photolab/",
     "ogImageUrl": "https://prod-www-cdn.dxo.com/wp-content/uploads/2024/06/newhero-en@2x-1-1024x725.jpg",
     "tool_type": "metier",
@@ -10473,6 +11169,13 @@
       "paid": "From $34.95 (lifetime license), Eagle license plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 34.95,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://eagle.cool",
     "ogImageUrl": "https://r2-web.eagle.cool/media/home-feature-eagle.png",
     "substitution_cluster_v2": "dam",
@@ -10509,6 +11212,13 @@
     },
     "defaultMonthlyPrice": 170.89,
     "compareMonthlyPrice": 170.89,
+    "nativePrices": [
+      {
+        "amount": 199,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://expo.dev/eas",
     "ogImageUrl": "https://static.expo.dev/static/images/services/og-image.png",
     "tool_type": "metier",
@@ -10719,6 +11429,13 @@
     },
     "defaultMonthlyPrice": 4.29,
     "compareMonthlyPrice": 4.29,
+    "nativePrices": [
+      {
+        "amount": 5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://elevenlabs.io",
     "ogImageUrl": "https://elevenlabs.io/_next/image?url=https%3A%2F%2Feleven-public-cdn.elevenlabs.io%2Fmarketing_website%2F_next%2Fstatic%2Fmedia%2Feleven-creative.f5fbfcf5.png&w=3840&q=80",
     "tool_type": "ia",
@@ -10762,6 +11479,13 @@
     },
     "defaultMonthlyPrice": 4.29,
     "compareMonthlyPrice": 4.29,
+    "nativePrices": [
+      {
+        "amount": 5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": " formulaires…).",
     "substitution_cluster_v2": "email-outreach",
     "functional_needs": [
@@ -10829,6 +11553,13 @@
       "paid": "From $149.99 (lifetime license), Stream Deck MK.2 plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 149.99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://elgatostreamdeck.com",
     "ogImageUrl": "https://images.ctfassets.net/h50kqpe25yx1/7Cwo01eNtXbhr1fsum2248/28c5f862966fa0c48353d3a80ff33c99/Stream-Deck-Social-Graph.jpg",
     "logo": "https://logo.clearbit.com/elgatostreamdeck.com",
@@ -10866,6 +11597,13 @@
       "paid": "From $300 (lifetime license), Indie plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 300,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://jangafx.com/software/embergen",
     "ogImageUrl": "https://jangafx.com/opengraph-image.png?opengraph-image.2xwmfd9hv7l5u.png",
     "tool_type": "metier",
@@ -11046,6 +11784,13 @@
     },
     "defaultMonthlyPrice": 44.9,
     "compareMonthlyPrice": 44.9,
+    "nativePrices": [
+      {
+        "amount": 44.9,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://enscape3d.com",
     "ogImageUrl": "https://static.chaos.com/images/assets/000/023/805/original/industry-solutions-studio-bazzini-thumb-1920x1080-v2.jpg",
     "tool_type": "plugin",
@@ -11123,6 +11868,13 @@
     },
     "defaultMonthlyPrice": 14.17,
     "compareMonthlyPrice": 14.17,
+    "nativePrices": [
+      {
+        "amount": 16.5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://elements.envato.com",
     "ogImageUrl": "https://assets.elements.envato.com/apps/storefront/audio.compressed-11d9cee9c59e9605c2cf.avif",
     "logo": "https://logo.clearbit.com/elements.envato.com",
@@ -11333,6 +12085,13 @@
     },
     "defaultMonthlyPrice": 5.15,
     "compareMonthlyPrice": 5.15,
+    "nativePrices": [
+      {
+        "amount": 6,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://excalidraw.com",
     "ogImageUrl": "https://excalidraw.com/og-image-3.png",
     "substitution_cluster_v2": "design-prototyping",
@@ -11414,6 +12173,13 @@
     },
     "defaultMonthlyPrice": 16.32,
     "compareMonthlyPrice": 16.32,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://expo.dev",
     "ogImageUrl": "https://static.expo.dev/static/home/9-2025/og-image.png",
     "tool_type": "metier",
@@ -11559,6 +12325,13 @@
     },
     "defaultMonthlyPrice": 13.74,
     "compareMonthlyPrice": 13.74,
+    "nativePrices": [
+      {
+        "amount": 16,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.fathom.ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/6899da9beccbdbe92be49b5d/68f20f5cd1c6d0de365b8849_Fathom-Visual_Identity_Concepts-Stage_07-Website_Thumbnail-01.jpg",
     "substitution_cluster_v2": "ai-note-taking",
@@ -11598,6 +12371,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://usefathom.com",
     "ogImageUrl": "https://usefathom.com/assets/src/share-usefathom.com.jpg",
     "substitution_cluster_v2": "privacy-analytics",
@@ -11638,6 +12418,13 @@
     },
     "defaultMonthlyPrice": 6.99,
     "compareMonthlyPrice": 6.99,
+    "nativePrices": [
+      {
+        "amount": 6.99,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://feedly.com",
     "ogImageUrl": "https://s1.feedly.com/images/fx/og/threat-intelligence-5-26.png",
     "logo": "https://logo.clearbit.com/feedly.com",
@@ -11676,6 +12463,13 @@
     },
     "defaultMonthlyPrice": 6.01,
     "compareMonthlyPrice": 6.01,
+    "nativePrices": [
+      {
+        "amount": 7,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://fellow.ai",
     "ogImageUrl": "https://framerusercontent.com/assets/J0X2qL3rwf819TDwjCc8iG9UjUk.png",
     "substitution_cluster_v2": "ai-note-taking",
@@ -11780,6 +12574,13 @@
     },
     "defaultMonthlyPrice": 13.74,
     "compareMonthlyPrice": 13.74,
+    "nativePrices": [
+      {
+        "amount": 16,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://figma.com",
     "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
     "tool_type": "metier",
@@ -12122,6 +12923,13 @@
     },
     "defaultMonthlyPrice": 17,
     "compareMonthlyPrice": 17,
+    "nativePrices": [
+      {
+        "amount": 17,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tokens.studio",
     "ogImageUrl": "https://framerusercontent.com/images/dKla9Z5N984BrKpKzDUgzZldm7s.png?scale-down-to=512&width=1332&height=1706",
     "tool_type": "plugin",
@@ -12386,6 +13194,13 @@
     },
     "defaultMonthlyPrice": 13.74,
     "compareMonthlyPrice": 13.74,
+    "nativePrices": [
+      {
+        "amount": 16,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://firecrawl.dev",
     "ogImageUrl": "https://www.firecrawl.dev/og.png",
     "substitution_cluster_v2": "web-scraping",
@@ -12640,6 +13455,13 @@
       "paid": "From $35 (lifetime license), Flow (Single User License) plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 35,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://aescripts.com/flow/",
     "ogImageUrl": "/og-screenshots/aescripts-flow.jpg",
     "tool_type": "plugin",
@@ -12705,6 +13527,13 @@
     },
     "defaultMonthlyPrice": 7.08,
     "compareMonthlyPrice": 7.08,
+    "nativePrices": [
+      {
+        "amount": 8.25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.flowmapp.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/649ae86ac1a4be707b656519/65fe17942989eb1e1145dbea_Open%20Graph.webp",
     "substitution_cluster_v2": "design-prototyping",
@@ -13047,6 +13876,13 @@
     },
     "defaultMonthlyPrice": 20.61,
     "compareMonthlyPrice": 20.61,
+    "nativePrices": [
+      {
+        "amount": 24,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "priceUndisclosed": true,
     "affiliateLink": "https://format.com",
     "ogImageUrl": "https://www.format.com/wp-content/uploads/The-Portfolio-builder-for-creatives-with-vision.png",
@@ -13157,6 +13993,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://frame.io",
     "ogImageUrl": "https://cdn.sanity.io/images/s6lu43cv/production-v4/c9bc38aba1856b5c2664f207a2436851730e6a0d-1200x630.png?w=1200&amp;h=630&amp;fm=jpg&amp;q=60",
     "bundle_parent": "adobe-creative-cloud",
@@ -13203,6 +14046,13 @@
     },
     "defaultMonthlyPrice": 8.59,
     "compareMonthlyPrice": 8.59,
+    "nativePrices": [
+      {
+        "amount": 10,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://framer.com",
     "ogImageUrl": "https://framerusercontent.com/images/qAuYmOzzj4F8wIEJiqfcOgjFdiY.png",
     "tool_type": "metier",
@@ -13392,6 +14242,13 @@
     },
     "defaultMonthlyPrice": 19.75,
     "compareMonthlyPrice": 19.75,
+    "nativePrices": [
+      {
+        "amount": 23,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://freshbooks.com",
     "ogImageUrl": "https://www.freshbooks.com/media/2024/10/fb-logo-share-link.png",
     "tool_type": "gestion",
@@ -13431,6 +14288,18 @@
     },
     "defaultMonthlyPrice": 16.32,
     "compareMonthlyPrice": 16.32,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "EUR",
+        "period": "monthly"
+      },
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://freshworks.com/freshservice",
     "ogImageUrl": "https://dam.freshworks.com/asset/aac3abf3-7dca-4397-b868-c29415ecebaa/ex-lp-og-image.webp",
     "logo": "https://logo.clearbit.com/freshworks.com",
@@ -13504,6 +14373,13 @@
     },
     "defaultMonthlyPrice": 48.95,
     "compareMonthlyPrice": 48.95,
+    "nativePrices": [
+      {
+        "amount": 57,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.autodesk.com/products/fusion-360/overview",
     "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/7cubXgLsTdlFLouyd2X4Vs/c12e1a3fa9a58107fb5bf41835183909/fusion-2027-banner-1920x1080-v4.jpg",
     "substitution_cluster_v2": "3d-software",
@@ -13544,6 +14420,13 @@
       "paid": "From $99 (lifetime license), Indie plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://quadspinner.com",
     "ogImageUrl": "https://cdn.gaea.app/web2025/img/StillFinalShot3.webp",
     "tool_type": "metier",
@@ -13613,6 +14496,13 @@
       "paid": "Observed EUR pricing: Plus €10/user/month, Pro €24, Ultra €86 monthly. Annual billing: Plus €96/year (€8/month), Pro €216/year (€18/month), Ultra €928/year. Taxes depend on location."
     },
     "compareMonthlyPrice": 10,
+    "nativePrices": [
+      {
+        "amount": 10,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.gamma.app/bu5hfvmiagd8",
     "websiteUrl": "https://gamma.app",
     "ogImageUrl": "/og-images/gamma.jpg",
@@ -13696,6 +14586,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 19.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://gelato.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gelato.jpg",
     "substitution_cluster_v2": "website-app-builder",
@@ -13793,6 +14690,13 @@
     "pricingEn": "Limited free plan; paid plans from ~$29/month.",
     "defaultMonthlyPrice": 24.9,
     "compareMonthlyPrice": 24.9,
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://gempages.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gempages.jpg",
     "logo": "https://logo.clearbit.com/gempages.com",
@@ -13899,6 +14803,13 @@
       "free": "Up to 500 contacts and 2,500 messages/month. 14-day premium trial without a credit card.",
       "paid": "For 1,000 subscribers: Starter US$19/month, Marketer $59, Creator $69 billed monthly, excluding taxes. Annual billing equivalents: $15.58, $48.38 and $56.58/month. Enterprise is custom-priced."
     },
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.getresponsetoday.com/k3g20w6hpboy",
     "websiteUrl": "https://www.getresponse.com",
     "ogImageUrl": "/og-images/getresponse.jpg",
@@ -13965,6 +14876,13 @@
       "paid": "From $39.99 (lifetime license), Single User License plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 39.99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://aescripts.com/gifgun",
     "ogImageUrl": "/og-screenshots/ae-gifgun.png",
     "tool_type": "plugin",
@@ -14207,6 +15125,13 @@
     },
     "defaultMonthlyPrice": 8,
     "compareMonthlyPrice": 8,
+    "nativePrices": [
+      {
+        "amount": 8,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.gitkraken.com/gitlens",
     "ogImageUrl": "https://www.gitkraken.com/wp-content/uploads/2023/03/GlOg.png",
     "tool_type": "metier",
@@ -14318,6 +15243,13 @@
     },
     "defaultMonthlyPrice": 6.8,
     "compareMonthlyPrice": 6.8,
+    "nativePrices": [
+      {
+        "amount": 6.8,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://gmail.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gmail.jpg",
     "logo": "https://logo.clearbit.com/gmail.com",
@@ -14704,6 +15636,13 @@
     },
     "defaultMonthlyPrice": 1.43,
     "compareMonthlyPrice": 1.43,
+    "nativePrices": [
+      {
+        "amount": 1.67,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://google.com/drive",
     "ogImageUrl": "https://lh3.googleusercontent.com/_HSqqBvJJpopAd2znZ8-VHWZ2-470iy7MSjVhdcJfXMF3-caNsWDwJrHQkBxbdGVg_tfsiAWOTpIzVJjARBVeHSlwXWxhQPULyP4=w1200-e365",
     "bundle_parent": "google-workspace",
@@ -15034,6 +15973,13 @@
     },
     "defaultMonthlyPrice": 8.1,
     "compareMonthlyPrice": 8.1,
+    "nativePrices": [
+      {
+        "amount": 8.1,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://workspace.google.com",
     "ogImageUrl": "https://workspace.google.com/favicon.ico",
     "tool_type": "metier",
@@ -15201,6 +16147,13 @@
     },
     "defaultMonthlyPrice": 10.3,
     "compareMonthlyPrice": 10.3,
+    "nativePrices": [
+      {
+        "amount": 12,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://grammarly.com",
     "ogImageUrl": "https://static-web.grammarly.com/1e6ajr2k4140/1kGiUxfxoLhCPH7wGcvknN/c218a7bbcdfc24301fbbfb6ae9892ec6/default_social_share.png",
     "tool_type": "ia",
@@ -15662,6 +16615,13 @@
     },
     "defaultMonthlyPrice": 47.23,
     "compareMonthlyPrice": 47.23,
+    "nativePrices": [
+      {
+        "amount": 55,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://gusto.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/gusto.jpg",
     "substitution_cluster_v2": "hris-sync",
@@ -15840,6 +16800,13 @@
     "pricingEn": "Limited free plan; paid plans from ~$8/month.",
     "defaultMonthlyPrice": 8.58,
     "compareMonthlyPrice": 8.58,
+    "nativePrices": [
+      {
+        "amount": 9.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://headliner.app",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/headliner.jpg",
     "logo": "https://logo.clearbit.com/headliner.app",
@@ -15942,6 +16909,13 @@
     },
     "defaultMonthlyPrice": 21.47,
     "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://helpscout.com",
     "ogImageUrl": "https://hs-marketing-contentful.imgix.net/https%3A%2F%2Fimages.ctfassets.net%2Fp15sglj92v6o%2F4Rbim8xrCA6BCte94E1xnZ%2F6085a0847d360320af712ff86a342307%2Fhome--meta.jpg?ixlib=gatsbySourceUrl-2.1.3&amp;auto=format%2C%20compress&amp;q=75&amp;s=0aba9a73fb57c247551a2df98f436358",
     "logo": "https://logo.clearbit.com/helpscout.com",
@@ -15981,6 +16955,13 @@
     },
     "defaultMonthlyPrice": 7.72,
     "compareMonthlyPrice": 7.72,
+    "nativePrices": [
+      {
+        "amount": 8.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://heptabase.com",
     "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
@@ -16017,6 +16998,13 @@
     },
     "defaultMonthlyPrice": 6.01,
     "compareMonthlyPrice": 6.01,
+    "nativePrices": [
+      {
+        "amount": 7,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://heroku.com",
     "ogImageUrl": "https://www.heroku.com/wp-content/uploads/2025/08/heroku-card-dark.png",
     "substitution_cluster_v2": "cloud-hosting-paas",
@@ -16176,6 +17164,13 @@
     },
     "defaultMonthlyPrice": 26.19,
     "compareMonthlyPrice": 26.19,
+    "nativePrices": [
+      {
+        "amount": 30.5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.highcharts.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/highcharts.jpg",
     "substitution_cluster_v2": "charting-library",
@@ -16249,6 +17244,13 @@
     },
     "defaultMonthlyPrice": 24.9,
     "compareMonthlyPrice": 24.9,
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.honeybook.com",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
@@ -16315,6 +17317,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://hostfully.com",
     "ogImageUrl": "https://www.hostfully.com/wp-content/uploads/2025/12/hostfully.png",
     "substitution_cluster_v2": "website-app-builder",
@@ -16352,6 +17361,13 @@
     },
     "defaultMonthlyPrice": 33.49,
     "compareMonthlyPrice": 33.49,
+    "nativePrices": [
+      {
+        "amount": 39,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://contentsquare.com/hotjar/",
     "ogImageUrl": "https://images.ctfassets.net/lh3zuq09vnm2/zsJe5ujXWMeNJScarO5jX/92ee747a96ef4a5998f9a1b10b2bb737/hotjar_og_image_Jul22.png",
     "substitution_cluster_v2": "analytics",
@@ -16398,6 +17414,13 @@
     },
     "defaultMonthlyPrice": 21.4,
     "compareMonthlyPrice": 21.4,
+    "nativePrices": [
+      {
+        "amount": 24.92,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.sidefx.com",
     "ogImageUrl": "https://static.sidefx.com/images/apple-touch-icon.png",
     "tool_type": "metier",
@@ -16471,6 +17494,13 @@
     },
     "defaultMonthlyPrice": 8.59,
     "compareMonthlyPrice": 8.59,
+    "nativePrices": [
+      {
+        "amount": 10,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.hubspot.com",
     "websiteUrl": "https://hubspot.com",
     "ogImageUrl": "https://www.hubspot.com/hubfs/assets/hubspot.com/homepage/hero-backgrounds-2025/HS_Full_Bleed_1.jpg",
@@ -16511,6 +17541,13 @@
     },
     "defaultMonthlyPrice": 7.08,
     "compareMonthlyPrice": 7.08,
+    "nativePrices": [
+      {
+        "amount": 8.25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://hugeicons.com",
     "ogImageUrl": "https://hugeicons.com/og_preview.png",
     "substitution_cluster_v2": "creative-assets",
@@ -16668,6 +17705,13 @@
     },
     "defaultMonthlyPrice": 25.76,
     "compareMonthlyPrice": 25.76,
+    "nativePrices": [
+      {
+        "amount": 30,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.hyperbrowser.ai",
     "ogImageUrl": "https://www.hyperbrowser.ai/og-image.png",
     "substitution_cluster_v2": "web-scraping",
@@ -16738,6 +17782,13 @@
     "pricingEn": "Free with attribution; Premium from ~$9/month for attribution-free use.",
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://icons8.com",
     "ogImageUrl": "https://icons8.com/vue-static/landings/primary-landings/preview_icons8.png",
     "logo": "https://logo.clearbit.com/icons8.com",
@@ -16999,6 +18050,13 @@
     },
     "defaultMonthlyPrice": 9,
     "compareMonthlyPrice": 9,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://indy.fr",
     "ogImageUrl": "https://www.indy.fr/wp-content/uploads/img-indy-www.jpg",
     "tool_type": "gestion",
@@ -17043,6 +18101,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://infisical.com",
     "tool_type": "core",
     "substitution_cluster_v2": "secrets-management",
@@ -17287,6 +18352,13 @@
     },
     "defaultMonthlyPrice": 40.36,
     "compareMonthlyPrice": 40.36,
+    "nativePrices": [
+      {
+        "amount": 47,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://instantly.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/63860c8c65e7bef4a1eeebeb/69bbbe355f4fdb68458b987d_Banner%20(1)%20(1).webp",
     "logo": "https://logo.clearbit.com/instantly.com",
@@ -17392,6 +18464,13 @@
     },
     "defaultMonthlyPrice": 24.9,
     "compareMonthlyPrice": 24.9,
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://intercom.com",
     "ogImageUrl": "https://www.intercom.com/intercom-marketing-site/img/social/default.jpg",
     "substitution_cluster_v2": "communication-ops",
@@ -17704,6 +18783,13 @@
     },
     "defaultMonthlyPrice": 6.79,
     "compareMonthlyPrice": 6.79,
+    "nativePrices": [
+      {
+        "amount": 7.91,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://atlassian.com/software/jira",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/jira.jpg",
     "substitution_cluster_v2": "dev-issue-tracker",
@@ -17750,6 +18836,13 @@
     },
     "defaultMonthlyPrice": 18.03,
     "compareMonthlyPrice": 18.03,
+    "nativePrices": [
+      {
+        "amount": 21,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://getjobber.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/jobber.jpg",
     "substitution_cluster_v2": "workspace-ops",
@@ -17822,6 +18915,13 @@
     },
     "defaultMonthlyPrice": 29.2,
     "compareMonthlyPrice": 29.2,
+    "nativePrices": [
+      {
+        "amount": 34,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.jotform.com",
     "ogImageUrl": "https://cdn.jotfor.ms/assets/img/landing/opengraph.png",
     "substitution_cluster_v2": "form-builder",
@@ -17893,6 +18993,13 @@
     "pricingEn": "Free plan available (limited); Pro from ~$15/month.",
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://judgeme.com",
     "ogImageUrl": "https://framerusercontent.com/assets/3nUMjfjekVFLnxccSGqCnKJY8.png",
     "logo": "https://logo.clearbit.com/judgeme.com",
@@ -18039,6 +19146,13 @@
     },
     "defaultMonthlyPrice": 122.8,
     "compareMonthlyPrice": 122.8,
+    "nativePrices": [
+      {
+        "amount": 143,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://kajabi.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/693317e747432cd054b3bdc6/6945afe48a3d5c04269841e5_LOGO.png",
     "substitution_cluster_v2": "learning-platform",
@@ -18368,6 +19482,13 @@
     },
     "defaultMonthlyPrice": 29.03,
     "compareMonthlyPrice": 29.03,
+    "nativePrices": [
+      {
+        "amount": 390,
+        "currency": "USD",
+        "period": "annual"
+      }
+    ],
     "affiliateLink": "https://partners.kit.com/u037oht6r48p",
     "websiteUrl": "https://kit.com",
     "ogImageUrl": "/og-images/kit.jpg",
@@ -18448,6 +19569,13 @@
     },
     "defaultMonthlyPrice": 51.52,
     "compareMonthlyPrice": 51.52,
+    "nativePrices": [
+      {
+        "amount": 60,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.klaviyo.com/",
     "ogImageUrl": "https://www.klaviyo.com/static/klaviyo-social-share-image.jpg",
     "tool_type": "metier",
@@ -18635,6 +19763,13 @@
     },
     "defaultMonthlyPrice": 4.29,
     "compareMonthlyPrice": 4.29,
+    "nativePrices": [
+      {
+        "amount": 5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://krea.ai",
     "ogImageUrl": "https://s.krea.ai/KreaOpenGraph2.webp",
     "tool_type": "ia",
@@ -18749,6 +19884,13 @@
       "free": "No free plan identified. Subscription refund within 14 days subject to terms, not a free trial.",
       "paid": "USD per user: Starter $15/month, Advance $40, Max $60 billed monthly; $12, $32, $48/month billed annually. Enterprise is custom-priced. Overage, numbers and add-ons cost extra; tax treatment to confirm."
     },
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.krispcall.com/t1akmbaetinc",
     "websiteUrl": "https://krispcall.com/",
     "ogImageUrl": "/og-images/krispcall.png",
@@ -18864,6 +20006,13 @@
     },
     "defaultMonthlyPrice": 60,
     "compareMonthlyPrice": 60,
+    "nativePrices": [
+      {
+        "amount": 60,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.lagrowthmachine.com",
     "substitution_cluster_v2": "linkedin-automation",
     "functional_needs": [
@@ -18936,6 +20085,18 @@
     },
     "defaultMonthlyPrice": 20.61,
     "compareMonthlyPrice": 20.61,
+    "nativePrices": [
+      {
+        "amount": 24,
+        "currency": "EUR",
+        "period": "monthly"
+      },
+      {
+        "amount": 24,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.landingi.com/8he4kr5kasjb",
     "ogImageUrl": "https://images.assets-landingi.com/images/og-images/og-en.jpeg",
     "substitution_cluster_v2": "website-app-builder",
@@ -19141,6 +20302,13 @@
     },
     "defaultMonthlyPrice": 16.1,
     "compareMonthlyPrice": 16.1,
+    "nativePrices": [
+      {
+        "amount": 18.75,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://later.com",
     "ogImageUrl": "https://images.ctfassets.net/nfpsrlop6sws/4huePv7JX8n0dtdtSC1bsO/80e2b8336635bcee33675bb901c93804/later-meta-image.jpg",
     "substitution_cluster_v2": "email-outreach",
@@ -19277,6 +20445,13 @@
     },
     "defaultMonthlyPrice": 115,
     "compareMonthlyPrice": 115,
+    "nativePrices": [
+      {
+        "amount": 115,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.leadpages.com/dzadrshoyk4d",
     "websiteUrl": "https://leadpages.com/",
     "ogImageUrl": "/og-images/leadpages.jpg",
@@ -19353,6 +20528,13 @@
       "free": "30-day trial without a payment card.",
       "paid": "Starter $29/month plus $5 per paid enrollment. Pro Trainer $99/month, Learning Center $299/month, excluding VAT. Monthly billing, excluding promotions. Corporate by quote."
     },
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.learnworlds.com/7gzw9pjf9sz6",
     "ogImageUrl": "/og-images/learnworlds-review.webp",
     "logo": "/tool-media/logos/learnworlds.png",
@@ -19480,6 +20662,13 @@
     },
     "defaultMonthlyPrice": 47.23,
     "compareMonthlyPrice": 47.23,
+    "nativePrices": [
+      {
+        "amount": 55,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.lemlist.com/iqofb24egwan",
     "websiteUrl": "https://www.lemlist.com",
     "ogImageUrl": "https://web-assets.lemlist.com/lemlist/Home - Graph URL.png",
@@ -19606,6 +20795,13 @@
     },
     "defaultMonthlyPrice": 8.24,
     "compareMonthlyPrice": 8.24,
+    "nativePrices": [
+      {
+        "amount": 9.6,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://leonardo.ai",
     "ogImageUrl": "/og-screenshots/leonardo-ai.jpg",
     "tool_type": "ia",
@@ -19759,6 +20955,13 @@
     },
     "defaultMonthlyPrice": 10.3,
     "compareMonthlyPrice": 10.3,
+    "nativePrices": [
+      {
+        "amount": 11.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://lightroommobile.com",
     "ogImageUrl": "https://www.lightroompresets.com/cdn/shop/files/1200x628ppa_1200x.jpg?v=1588801656",
     "logo": "https://logo.clearbit.com/lightroommobile.com",
@@ -19944,6 +21147,13 @@
     },
     "defaultMonthlyPrice": 8.59,
     "compareMonthlyPrice": 8.59,
+    "nativePrices": [
+      {
+        "amount": 10,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://linear.app",
     "ogImageUrl": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/6600ca96-e49b-4fd9-c03a-7979faddad00/f=auto,fit=scale-down,metadata=none,width=2560",
     "substitution_cluster_v2": "dev-issue-tracker",
@@ -20166,6 +21376,13 @@
     },
     "defaultMonthlyPrice": 6,
     "compareMonthlyPrice": 6,
+    "nativePrices": [
+      {
+        "amount": 6,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://linktr.ee",
     "ogImageUrl": "https://linktr.ee/_marketing/og/linktree-default.jpg",
     "logo": "https://logo.clearbit.com/linktr.ee",
@@ -20553,6 +21770,13 @@
     },
     "defaultMonthlyPrice": 7.73,
     "compareMonthlyPrice": 7.73,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://lookerstudio.google.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/looker-studio.jpg",
     "substitution_cluster_v2": "analytics",
@@ -20737,6 +21961,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 19.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://lottiefiles.com",
     "ogImageUrl": "https://creator.lottiefiles.com/creator.png",
     "substitution_cluster_v2": "animation-library",
@@ -20774,6 +22005,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 19.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://lottiefiles.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lottiefiles.jpg",
     "substitution_cluster_v2": "animation-library",
@@ -20814,6 +22052,13 @@
     },
     "defaultMonthlyPrice": 21.47,
     "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://lovable.dev",
     "ogImageUrl": "https://lovable.dev/img/opengraph-image.png",
     "tool_type": "ia",
@@ -20997,6 +22242,13 @@
       "paid": "From €129 (lifetime license), Desktop Only License plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 129,
+        "currency": "EUR",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://skylum.com/luminar-neo",
     "ogImageUrl": "https://media.macphun.com/img/uploads/uploads/skylum/l/sum-26-devices.png",
     "tool_type": "plugin",
@@ -21102,6 +22354,13 @@
       "free": "Free: 40 credits per month, one seat.",
       "paid": "Monthly equivalents billed annually: Starter $37.45, Pro $52.45, Premium $299.95. Displayed volumes: 4,800, 7,200 and 40,800 credits/year. Scale by quote. Tax treatment unconfirmed."
     },
+    "nativePrices": [
+      {
+        "amount": 37.45,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://partnerstack.lusha.com/sghwggbyjyc2-omvn4r",
     "websiteUrl": "https://www.lusha.com",
     "ogImageUrl": "/og-images/lusha-review.webp",
@@ -21144,6 +22403,13 @@
     },
     "defaultMonthlyPrice": 213.83,
     "compareMonthlyPrice": 213.83,
+    "nativePrices": [
+      {
+        "amount": 249,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://maced.ai",
     "ogImageUrl": "https://www.maced.ai/og.png",
     "substitution_cluster_v2": "cybersecurity",
@@ -21184,6 +22450,13 @@
     },
     "defaultMonthlyPrice": 44,
     "compareMonthlyPrice": 44,
+    "nativePrices": [
+      {
+        "amount": 44,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://madmapper.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/madmapper.jpg",
     "substitution_cluster_v2": "motion-compositing",
@@ -21334,6 +22607,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.magnific.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/magnific.jpg",
     "logo": "https://logo.clearbit.com/magnific.com",
@@ -21372,6 +22652,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.magnific.com",
     "ogImageUrl": "https://magnific.ai/favicon.ico",
     "tool_type": "ia",
@@ -21413,6 +22700,13 @@
     },
     "defaultMonthlyPrice": 11.16,
     "compareMonthlyPrice": 11.16,
+    "nativePrices": [
+      {
+        "amount": 13,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://mailchimp.com",
     "ogImageUrl": "https://mailchimp.com/ctf/images/yzco4xsimv0y/1SB1jCYU95Dh5YDdrucTh0/add18363e44ff00d54254592c7c0860c/Intuit_Mailchimp_-_Wordmark_2023_-_Recirculation_.png",
     "substitution_cluster_v2": "newsletter-platform",
@@ -21449,6 +22743,13 @@
     "pricingEn": "Free up to 1,000 contacts; paid plans from ~$10/month beyond that.",
     "defaultMonthlyPrice": 10.3,
     "compareMonthlyPrice": 10.3,
+    "nativePrices": [
+      {
+        "amount": 12,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://mailerlite.com",
     "ogImageUrl": "https://www.mailerlite.com/img/containers/assets/SEO/homepage-meta.jpg/a271969696ccb718c1a26ea27c86ef53.jpg",
     "logo": "https://logo.clearbit.com/mailerlite.com",
@@ -21960,6 +23261,13 @@
     },
     "defaultMonthlyPrice": 21.4,
     "compareMonthlyPrice": 21.4,
+    "nativePrices": [
+      {
+        "amount": 24.92,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://mui.com",
     "ogImageUrl": "https://mui.com/static/social-previews/home-preview.jpg",
     "host_app": "react",
@@ -22034,6 +23342,13 @@
     },
     "defaultMonthlyPrice": 90.53,
     "compareMonthlyPrice": 90.53,
+    "nativePrices": [
+      {
+        "amount": 105.42,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.maxon.net/en/maxon-one",
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/Hero_Banner-Netflix_-Super_Very_More-gradient.jpg",
     "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Maxon-One/MaxonOne-icon_100_px.png",
@@ -22074,6 +23389,13 @@
     },
     "defaultMonthlyPrice": 144.27,
     "compareMonthlyPrice": 144.27,
+    "nativePrices": [
+      {
+        "amount": 168,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.autodesk.com/products/maya/overview",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/maya.jpg",
     "tool_type": "metier",
@@ -22340,6 +23662,13 @@
     "pricingEn": "Free up to a certain volume; 4.9% to 10% commission depending on the plan beyond that.",
     "defaultMonthlyPrice": 42.08,
     "compareMonthlyPrice": 42.08,
+    "nativePrices": [
+      {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://memberful.com",
     "ogImageUrl": "https://sanity-assets.memberful.com/images/dvnoujul/production/da7e702ea14237c984060bd203186f101bc4d8b4-2400x1260.jpg?w=1200&amp;h=630&amp;fit=crop&amp;auto=format",
     "logo": "https://logo.clearbit.com/memberful.com",
@@ -22378,6 +23707,13 @@
     },
     "defaultMonthlyPrice": 21.47,
     "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.memberstack.com",
     "ogImageUrl": "https://www.memberstack.com/images/og/home.png",
     "substitution_cluster_v2": "membership-platform",
@@ -22558,6 +23894,13 @@
     },
     "defaultMonthlyPrice": 77.29,
     "compareMonthlyPrice": 77.29,
+    "nativePrices": [
+      {
+        "amount": 90,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://metabase.com",
     "ogImageUrl": "https://www.metabase.com/images/opengraph/home-og.png",
     "tool_type": "metier",
@@ -22628,6 +23971,13 @@
     },
     "defaultMonthlyPrice": 10,
     "compareMonthlyPrice": 10,
+    "nativePrices": [
+      {
+        "amount": 10,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.microsoft.com/microsoft-365",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-365.jpg",
     "tool_type": "core",
@@ -22780,6 +24130,13 @@
     },
     "defaultMonthlyPrice": 2.58,
     "compareMonthlyPrice": 2.58,
+    "nativePrices": [
+      {
+        "amount": 3,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://microsoft.com/security/business/microsoft-defender",
     "logo": "https://logo.clearbit.com/microsoft.com",
     "tool_type": "specialise",
@@ -22817,6 +24174,13 @@
     },
     "defaultMonthlyPrice": 180.33,
     "compareMonthlyPrice": 180.33,
+    "nativePrices": [
+      {
+        "amount": 210,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://dynamics.microsoft.com/finance",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-dynamics-365-finance-operations.jpg",
     "tool_type": "metier",
@@ -22894,6 +24258,13 @@
     },
     "defaultMonthlyPrice": 6.01,
     "compareMonthlyPrice": 6.01,
+    "nativePrices": [
+      {
+        "amount": 7,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.microsoft.com/security/business/identity-access/microsoft-entra-id",
     "ogImageUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/425625-Hero-Background-1600x616?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=4000&hei=1540&qlt=99&fit=constrain",
     "tool_type": "metier",
@@ -23069,6 +24440,13 @@
     },
     "defaultMonthlyPrice": 6.87,
     "compareMonthlyPrice": 6.87,
+    "nativePrices": [
+      {
+        "amount": 8,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://midjourney.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/midjourney.jpg",
     "tool_type": "ia",
@@ -23112,6 +24490,13 @@
     },
     "defaultMonthlyPrice": 8.58,
     "compareMonthlyPrice": 8.58,
+    "nativePrices": [
+      {
+        "amount": 9.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://milanote.com",
     "ogImageUrl": "https://images.milanote.com/milanote%2Feb461c66-1c77-4e5c-9372-5ac7bb556ee7_milanote-share-preview.png?auto=format,compress",
     "substitution_cluster_v2": "design-prototyping",
@@ -23427,6 +24812,13 @@
     },
     "defaultMonthlyPrice": 6.87,
     "compareMonthlyPrice": 6.87,
+    "nativePrices": [
+      {
+        "amount": 8,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://mongodb.com/atlas",
     "ogImageUrl": "https://s3.amazonaws.com/info-mongodb-com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png",
     "tool_type": "metier",
@@ -23672,6 +25064,13 @@
     },
     "defaultMonthlyPrice": 24.99,
     "compareMonthlyPrice": 24.99,
+    "nativePrices": [
+      {
+        "amount": 24.99,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://motionarray.com/pricing/",
     "websiteUrl": "https://motionarray.com/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/motion-array.jpg",
@@ -23821,6 +25220,13 @@
       "free": "10 minutes of generation, without downloads or commercial rights.",
       "paid": "Murf Studio: Creator $228/year ($19/month equivalent), Business $792/year ($66/month equivalent). One editor, 24 and 96 generation hours/year respectively. Enterprise by quote. API and dubbing are separate; tax treatment unconfirmed."
     },
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.murf.ai/bo0qgxuctslr",
     "websiteUrl": "https://murf.ai",
     "ogImageUrl": "/og-images/murf-review.webp",
@@ -23954,6 +25360,13 @@
       "paid": "From $14.98 (lifetime license), .com domain (first year) plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 14.98,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "websiteUrl": "https://www.namecheap.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/namecheap.jpg",
     "substitution_cluster_v2": "domain-registrar",
@@ -24205,6 +25618,13 @@
     },
     "defaultMonthlyPrice": 7.73,
     "compareMonthlyPrice": 7.73,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://netlify.com",
     "ogImageUrl": "https://www.netlify.com/images/og-image-default.png",
     "substitution_cluster_v2": "cloud-hosting-paas",
@@ -24393,6 +25813,13 @@
       "paid": "From $249.99 (lifetime license), Newton 4 (current version) plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 249.99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://aescripts.com/newton",
     "ogImageUrl": "/og-screenshots/ae-newton3.jpg",
     "tool_type": "plugin",
@@ -24502,6 +25929,13 @@
       "paid": "From $179.99 (lifetime license), New customer license plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 179.99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://nikcollection.dxo.com",
     "ogImageUrl": "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-7.webp",
     "tool_type": "plugin",
@@ -24579,6 +26013,13 @@
       "paid": "From $15 (lifetime license), Mobile license (iPad/iPhone/Android, per platform) plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://nomadsculpt.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/nomad-sculpt.jpg",
     "substitution_cluster_v2": "3d-software",
@@ -24686,6 +26127,13 @@
     },
     "defaultMonthlyPrice": 9.5,
     "compareMonthlyPrice": 9.5,
+    "nativePrices": [
+      {
+        "amount": 9.5,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://notion.so",
     "ogImageUrl": "https://www.notion.com/front-static/meta/teams-and-agents.jpg",
     "substitution_cluster_v2": "knowledge-workspace",
@@ -24995,6 +26443,13 @@
     },
     "defaultMonthlyPrice": 3.43,
     "compareMonthlyPrice": 3.43,
+    "nativePrices": [
+      {
+        "amount": 4,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://obsidian.md",
     "ogImageUrl": "https://obsidian.md/images/banner.png",
     "substitution_cluster_v2": "knowledge-workspace",
@@ -25036,6 +26491,13 @@
     },
     "defaultMonthlyPrice": 19.99,
     "compareMonthlyPrice": 19.99,
+    "nativePrices": [
+      {
+        "amount": 19.99,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://home.otoy.com/render/octane-render/",
     "ogImageUrl": "https://home.otoy.com/wp-content/uploads/2025/11/BF26SocialHerocard.png",
     "tool_type": "metier",
@@ -25096,6 +26558,13 @@
     },
     "defaultMonthlyPrice": 5.15,
     "compareMonthlyPrice": 5.15,
+    "nativePrices": [
+      {
+        "amount": 6,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.okta.com",
     "ogImageUrl": "https://www.okta.com/content/dam/okta---digital/en_us/images/graphics/okta-homepage-thumbnail.jpg",
     "tool_type": "metier",
@@ -25458,6 +26927,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.quo.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6899ec2c2b29c1edf8c20f15/690d0a9bad3f5225ab9fc359_7c18f9d49ac0d507597d6c00b78e10b4_OG%20image.png",
     "substitution_cluster_v2": "communication-ops",
@@ -25533,6 +27009,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.opus.pro",
     "ogImageUrl": "https://cdn.prod.website-files.com/6388604483b03a9ecb34d695/6893fad68d6058a917d7f3c6_mainpage_thumbnail.jpg",
     "tool_type": "ia",
@@ -25570,6 +27053,13 @@
     "pricingEn": "Limited free plan; paid plans from ~$15/month depending on processed minutes volume.",
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://opus.pro",
     "ogImageUrl": "https://cdn.prod.website-files.com/6388604483b03a9ecb34d695/6893fad68d6058a917d7f3c6_mainpage_thumbnail.jpg",
     "logo": "https://logo.clearbit.com/opus.pro",
@@ -25674,6 +27164,13 @@
     "pricingEn": "Limited free plan (minutes/month); paid plans from ~$10/month.",
     "defaultMonthlyPrice": 11.67,
     "compareMonthlyPrice": 11.67,
+    "nativePrices": [
+      {
+        "amount": 13.59,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://otter.com",
     "ogImageUrl": "https://img1.wsimg.com/isteam/getty/1353151862",
     "logo": "https://logo.clearbit.com/otter.com",
@@ -25818,6 +27315,13 @@
       "paid": "From $75 (lifetime license), Single User plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 75,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://battleaxe.co/overlord",
     "ogImageUrl": "https://i.ytimg.com/vi_webp/lGYe8Kctdm0/sddefault.webp",
     "tool_type": "plugin",
@@ -25859,6 +27363,13 @@
     },
     "defaultMonthlyPrice": 1.62,
     "compareMonthlyPrice": 1.62,
+    "nativePrices": [
+      {
+        "amount": 1.89,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.ovhcloud.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ovh.jpg",
     "tool_type": "metier",
@@ -26284,6 +27795,13 @@
     },
     "defaultMonthlyPrice": 18.03,
     "compareMonthlyPrice": 18.03,
+    "nativePrices": [
+      {
+        "amount": 21,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "priceUndisclosed": true,
     "affiliateLink": "https://pagerduty.com",
     "ogImageUrl": "https://cdn.pagerduty.com/wp-content/uploads/2025/12/pagerduty-green-bg.png",
@@ -26356,6 +27874,13 @@
     "pricingEn": "From ~$19/month per user (Essentials plan with e-signature).",
     "defaultMonthlyPrice": 16.32,
     "compareMonthlyPrice": 16.32,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://pandadoc.com",
     "ogImageUrl": "https://images.ctfassets.net/a4zep9yar86b/6y6NJJSllr8cJIZsgfVTN/a02b34f7f5e91eaa89c8594d10c25a69/Color7-11.png",
     "logo": "https://logo.clearbit.com/pandadoc.com",
@@ -26564,6 +28089,13 @@
     },
     "defaultMonthlyPrice": 173.78,
     "compareMonthlyPrice": 173.78,
+    "nativePrices": [
+      {
+        "amount": 149,
+        "currency": "GBP",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://payhawk.com",
     "tool_type": "gestion",
     "substitution_cluster_v2": "expense-management",
@@ -26710,6 +28242,13 @@
     },
     "defaultMonthlyPrice": 7,
     "compareMonthlyPrice": 7,
+    "nativePrices": [
+      {
+        "amount": 7,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.pennylane.com",
     "websiteUrl": "https://pennylane.com",
     "ogImageUrl": "https://images.ctfassets.net/b76knntgaaiu/5f6bEcEKJxLvdKvuwbax05/e292cd12828391facec2a2aa77eecee3/Image_Meta.jpg",
@@ -27118,6 +28657,13 @@
       "paid": "From €8 (lifetime license), Premium, Single user, 30 days plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 8,
+        "currency": "EUR",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://www.photopea.com/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/photopea.jpg",
     "tool_type": "metier",
@@ -27274,6 +28820,13 @@
     },
     "defaultMonthlyPrice": 6.87,
     "compareMonthlyPrice": 6.87,
+    "nativePrices": [
+      {
+        "amount": 8,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://pika.art",
     "ogImageUrl": "https://pika.art/_next/image?url=%2Fimages%2Flanding%2Fapi-club-banner-bg.webp&w=3840&q=75",
     "tool_type": "ia",
@@ -27616,6 +29169,13 @@
     },
     "defaultMonthlyPrice": 6.87,
     "compareMonthlyPrice": 6.87,
+    "nativePrices": [
+      {
+        "amount": 8,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://pixieset.com",
     "ogImageUrl": "https://ss-assets.pixieset.com/7h0dkYcB4fjFGJZnT39KE2/GENERAL-SEO-Metatag-Common-MetaOGImage_050626.webp",
     "substitution_cluster_v2": "content-creation",
@@ -27757,6 +29317,13 @@
       "paid": "From $175 (lifetime license), Indie plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 175,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "websiteUrl": "https://www.plasticity.xyz",
     "ogImageUrl": "https://plasticity.xyz/og-image.jpg",
     "substitution_cluster_v2": "3d-software",
@@ -27800,6 +29367,13 @@
     },
     "defaultMonthlyPrice": 7.73,
     "compareMonthlyPrice": 7.73,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://plausible.io",
     "ogImageUrl": "https://plausible.io/assets/images/plausible_promo.jpg",
     "substitution_cluster_v2": "analytics",
@@ -27917,6 +29491,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": " finances).",
     "substitution_cluster_v2": "workspace-ops",
     "functional_needs": [
@@ -27953,6 +29534,13 @@
     },
     "defaultMonthlyPrice": 10.3,
     "compareMonthlyPrice": 10.3,
+    "nativePrices": [
+      {
+        "amount": 12,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://podbean.com",
     "ogImageUrl": "https://pbcdn1.podbean.com/fs1/site/images/podbean_og.png",
     "substitution_cluster_v2": "content-creation",
@@ -28184,6 +29772,13 @@
     },
     "defaultMonthlyPrice": 7.73,
     "compareMonthlyPrice": 7.73,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.postman.com",
     "ogImageUrl": "https://voyager.postman.com/social-preview/postman-v12-social-preview-homepage.jpg",
     "tool_type": "metier",
@@ -28463,6 +30058,13 @@
     "pricingEn": "Free version available; Pro from ~$99/year for advanced tracking.",
     "defaultMonthlyPrice": 17.82,
     "compareMonthlyPrice": 17.82,
+    "nativePrices": [
+      {
+        "amount": 20.75,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://prettylinks.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pretty-links.jpg",
     "logo": "https://logo.clearbit.com/prettylinks.com",
@@ -28501,6 +30103,13 @@
     },
     "defaultMonthlyPrice": 5,
     "compareMonthlyPrice": 5,
+    "nativePrices": [
+      {
+        "amount": 5,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.prezi.com/6op8bpbxu641",
     "ogImageUrl": "/og-images/prezi-review.webp",
     "logo": "/tool-media/logos/prezi.png",
@@ -28754,6 +30363,13 @@
       "paid": "From $12.99 (lifetime license), Procreate (iPad) plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 12.99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "websiteUrl": "https://procreate.com",
     "ogImageUrl": "https://procreate-assets-cdn.procreate.com/_nuxt/default_en.rxoU7ubg.jpg",
     "tool_type": "metier",
@@ -28914,6 +30530,13 @@
     },
     "defaultMonthlyPrice": 21.47,
     "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://productive.io",
     "ogImageUrl": "https://cdn.prod.website-files.com/69273e1d1bd1fcfcff2fe0d4/69724044686ecf3c6b20e7c1_og-productive-product-2.png",
     "logo": "https://logo.clearbit.com/productive.io",
@@ -28951,6 +30574,13 @@
       "paid": "From $119 (lifetime license), Pro License plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 119,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://profilebuilder4sketchup.com",
     "ogImageUrl": "https://i.ytimg.com/vi/8dBg3jJzccs/maxresdefault.jpg",
     "tool_type": "metier",
@@ -29200,6 +30830,13 @@
     },
     "defaultMonthlyPrice": 16.32,
     "compareMonthlyPrice": 16.32,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://proposify.com",
     "substitution_cluster_v2": "proposal-software",
     "functional_needs": [
@@ -29624,6 +31261,13 @@
     },
     "defaultMonthlyPrice": 9,
     "compareMonthlyPrice": 9,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://lb.affilae.com/r/?p=69a078113f38abd84385e0d9&af=2648&lp=https%3A%2F%2Fqonto.com%2Ffr%3Futm_source%3Dinfluence",
     "websiteUrl": "https://qonto.com/fr",
     "ogImageUrl": "https://qonto.com/blog/images/asset/32776/image/52a051963b267b2b99a01ea505524633.avif",
@@ -29701,6 +31345,13 @@
     },
     "defaultMonthlyPrice": 19.97,
     "compareMonthlyPrice": 19.97,
+    "nativePrices": [
+      {
+        "amount": 23.25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.quark.com/products/quarkxpress",
     "ogImageUrl": "https://www.quark.com/favicon.ico",
     "tool_type": "metier",
@@ -29808,6 +31459,13 @@
     },
     "defaultMonthlyPrice": 32.63,
     "compareMonthlyPrice": 32.63,
+    "nativePrices": [
+      {
+        "amount": 38,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://quickbooks.intuit.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/quickbooks.jpg",
     "tool_type": "gestion",
@@ -29846,6 +31504,13 @@
     },
     "defaultMonthlyPrice": 32.63,
     "compareMonthlyPrice": 32.63,
+    "nativePrices": [
+      {
+        "amount": 38,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://quickbooks.intuit.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/quickbooks-online.jpg",
     "substitution_cluster_v2": "accounting-ops",
@@ -30078,6 +31743,13 @@
     "pricingEn": "Generous free version (multi-keyword tracking included); Pro from ~$59/year.",
     "defaultMonthlyPrice": 8.99,
     "compareMonthlyPrice": 8.99,
+    "nativePrices": [
+      {
+        "amount": 8.99,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://rankmath.com",
     "ogImageUrl": "https://rankmath.com/wp-content/uploads/2021/12/Rank-Math.png",
     "logo": "https://logo.clearbit.com/rankmath.com",
@@ -30380,6 +32052,13 @@
     },
     "defaultMonthlyPrice": 4.8,
     "compareMonthlyPrice": 4.8,
+    "nativePrices": [
+      {
+        "amount": 5.59,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://readwise.com",
     "ogImageUrl": "https://d34adp677peecb.cloudfront.net/static/images/readwisecard.058019f9f4b1.jpg",
     "logo": "https://logo.clearbit.com/readwise.com",
@@ -30418,6 +32097,18 @@
     },
     "defaultMonthlyPrice": 12.02,
     "compareMonthlyPrice": 12.02,
+    "nativePrices": [
+      {
+        "amount": 13,
+        "currency": "EUR",
+        "period": "monthly"
+      },
+      {
+        "amount": 14,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://readymag.com",
     "substitution_cluster_v2": "website-builder",
     "functional_needs": [
@@ -30455,6 +32146,13 @@
       "paid": "From $60 (lifetime license), Discounted / Personal License plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 60,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://www.reaper.fm/",
     "ogImageUrl": "https://www.reaper.fm/v7img/ss_persp_v7.jpg",
     "tool_type": "metier",
@@ -30638,6 +32336,13 @@
       "free": "Free Lite for one user, with a one-week scheduling range.",
       "paid": "Starter $12/seat/month, Business $18 with monthly billing. Displayed annual equivalents: $10 and $15; Enterprise $22/seat/month billed annually. Tax treatment unconfirmed, excluding promotions."
     },
+    "nativePrices": [
+      {
+        "amount": 12,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://go.reclaim.ai/vl7x78i6mn0n",
     "websiteUrl": "https://reclaim.ai",
     "ogImageUrl": "/og-images/reclaim-review.webp",
@@ -30683,6 +32388,13 @@
     },
     "defaultMonthlyPrice": 45.51,
     "compareMonthlyPrice": 45.51,
+    "nativePrices": [
+      {
+        "amount": 53,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.maxon.net/en/red-giant",
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/Red-Giant-Hero_banner-AUV_Creative_darker.jpg",
     "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/RedGiant_icon.svg",
@@ -30726,6 +32438,13 @@
     },
     "defaultMonthlyPrice": 19.900000000000002,
     "compareMonthlyPrice": 19.900000000000002,
+    "nativePrices": [
+      {
+        "amount": 238.8,
+        "currency": "EUR",
+        "period": "annual"
+      }
+    ],
     "websiteUrl": "https://www.maxon.net/en/red-giant/universe",
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_GSA_HERO.jpg",
     "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/Universe_icon.svg",
@@ -30839,6 +32558,13 @@
     },
     "defaultMonthlyPrice": 20.68,
     "compareMonthlyPrice": 20.68,
+    "nativePrices": [
+      {
+        "amount": 24.08,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.maxon.net/en/redshift",
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift-Hero-banner-gradient-new.jpg",
     "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift_icon.svg",
@@ -30880,6 +32606,13 @@
     },
     "defaultMonthlyPrice": 8.59,
     "compareMonthlyPrice": 8.59,
+    "nativePrices": [
+      {
+        "amount": 10,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://reflect.app",
     "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
@@ -31166,6 +32899,13 @@
       "paid": "From $595 (lifetime license), Commercial license plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 595,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://renderman.pixar.com",
     "ogImageUrl": "https://assets.renderman.pixar.com/images-pixar/hoppers-bkg-homepage.webp",
     "tool_type": "metier",
@@ -31248,6 +32988,13 @@
       "free": "14-day trial.",
       "paid": "From $49/month for Email Volume and $89/user/month for Multichannel, billed annually. Jason AI SDR from $500/month. Add-ons and higher volumes cost extra; tax treatment unconfirmed."
     },
+    "nativePrices": [
+      {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.reply.io/9plo7y6f8ypu",
     "websiteUrl": "https://reply.io/",
     "ogImageUrl": "/og-images/replyio-review.webp",
@@ -31280,6 +33027,13 @@
     "pricingEn": "From ~$15/month depending on the number of automations.",
     "defaultMonthlyPrice": 30.06,
     "compareMonthlyPrice": 30.06,
+    "nativePrices": [
+      {
+        "amount": 35,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://repurposeio.com",
     "logo": "https://logo.clearbit.com/repurposeio.com",
     "tool_type": "specialise",
@@ -31317,6 +33071,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://resend.com",
     "ogImageUrl": "https://resend.com/static/cover.png",
     "substitution_cluster_v2": "email-productivity",
@@ -31490,6 +33251,13 @@
     },
     "defaultMonthlyPrice": 16.32,
     "compareMonthlyPrice": 16.32,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://restream.io",
     "ogImageUrl": "https://restream.io/images/home-page-open-graph-image.png",
     "substitution_cluster_v2": "content-creation",
@@ -31670,6 +33438,13 @@
     },
     "defaultMonthlyPrice": 40.08,
     "compareMonthlyPrice": 40.08,
+    "nativePrices": [
+      {
+        "amount": 46.67,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://autodesk.com/products/revit",
     "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/USDuwSeAOZpDfwimuqRiN/190b88f9077d7fa38fdb74eb0888e351/see-whats-new-autodesk-revit-2025-thumb-788x444.avif",
     "tool_type": "metier",
@@ -31703,6 +33478,13 @@
     "pricingEn": "From ~$49/month depending on tracked revenue volume.",
     "defaultMonthlyPrice": 42.08,
     "compareMonthlyPrice": 42.08,
+    "nativePrices": [
+      {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://rewardful.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6041705a8ccb775007a2e651/6499638ac5eecec5b374a7d2_Rewardful-home-page.png",
     "logo": "https://logo.clearbit.com/rewardful.com",
@@ -31879,6 +33661,13 @@
     },
     "defaultMonthlyPrice": 7.73,
     "compareMonthlyPrice": 7.73,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://rive.app",
     "ogImageUrl": "https://framerusercontent.com/images/aTosqj5HowH9kNricIFp8yEKBc.png?width=3432&height=940",
     "tool_type": "metier",
@@ -31958,6 +33747,13 @@
     },
     "defaultMonthlyPrice": 20.61,
     "compareMonthlyPrice": 20.61,
+    "nativePrices": [
+      {
+        "amount": 24,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://riverside.fm",
     "ogImageUrl": "https://cdn.prod.website-files.com/5f996b22b00afe35a55e6f79/67f92c5268b90dfee63e3719_social-share.png",
     "substitution_cluster_v2": "communication-ops",
@@ -31996,6 +33792,13 @@
     },
     "defaultMonthlyPrice": 11.81,
     "compareMonthlyPrice": 11.81,
+    "nativePrices": [
+      {
+        "amount": 13.75,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://roamresearch.com",
     "substitution_cluster_v2": "knowledge-workspace",
     "functional_needs": [
@@ -32034,6 +33837,13 @@
     },
     "defaultMonthlyPrice": 10.66,
     "compareMonthlyPrice": 10.66,
+    "nativePrices": [
+      {
+        "amount": 12.41,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.rocketlawyer.com",
     "ogImageUrl": "https://cdn.sanity.io/images/yt2k9xak/production/3d12a2805eacd01772bbffff26c0f4af49b8e67a-1164x1164.png?w=1164&h=1164&fm=webp&q=75&fit=crop",
     "substitution_cluster_v2": "legal-contracts",
@@ -32072,6 +33882,13 @@
     },
     "defaultMonthlyPrice": 16.32,
     "compareMonthlyPrice": 16.32,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://rocketlink.io",
     "ogImageUrl": "https://rocketlink.io/wp-content/uploads/2020/08/fb-og-wymiary-1200x630-px.png",
     "substitution_cluster_v2": "email-outreach",
@@ -32251,6 +34068,13 @@
     },
     "defaultMonthlyPrice": 10.3,
     "compareMonthlyPrice": 10.3,
+    "nativePrices": [
+      {
+        "amount": 12,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://runway.com",
     "ogImageUrl": "https://image.mux.com/JFHOwdZ8ujlrDDSLujoSv9su9PQb5001CiRiNdMgIjnk/thumbnail.webp?time=0&width=480",
     "tool_type": "ia",
@@ -32291,6 +34115,13 @@
     },
     "defaultMonthlyPrice": 8,
     "compareMonthlyPrice": 8,
+    "nativePrices": [
+      {
+        "amount": 8,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.rydoo.com",
     "tool_type": "gestion",
     "substitution_cluster_v2": "expense-management",
@@ -32329,6 +34160,13 @@
     },
     "defaultMonthlyPrice": 20.61,
     "compareMonthlyPrice": 20.61,
+    "nativePrices": [
+      {
+        "amount": 24,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://mitti.com",
     "ogImageUrl": "https://safetyculture.com/shared/safetyculture-og-image.jpg",
     "logo": "https://logo.clearbit.com/safetyculture.com",
@@ -32576,6 +34414,13 @@
     },
     "defaultMonthlyPrice": 61.19,
     "compareMonthlyPrice": 61.19,
+    "nativePrices": [
+      {
+        "amount": 71.25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.samcart.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/samcart.jpg",
     "substitution_cluster_v2": "checkout-platforms",
@@ -32652,6 +34497,13 @@
       "free": "7-day trial.",
       "paid": "Monthly billing: Snack $9.49, Lunch $15.99, Dinner $42.99. Respectively 1, 2 and 4 email accounts; 2, 6 or all optional features. Annual/two-year discounts are separate; tax treatment unconfirmed."
     },
+    "nativePrices": [
+      {
+        "amount": 9.49,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://try.sanebox.com/rk8ios56srwj",
     "websiteUrl": "https://www.sanebox.com",
     "ogImageUrl": "/og-images/sanebox-review.webp",
@@ -33101,6 +34953,13 @@
     },
     "defaultMonthlyPrice": 21.47,
     "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://scribe.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/6a0c94b351f88b926e7c69db/6a31950a9cec0ea91a93a396_Homepage.png",
     "substitution_cluster_v2": "documentation-tools",
@@ -33290,6 +35149,13 @@
     },
     "defaultMonthlyPrice": 18.89,
     "compareMonthlyPrice": 18.89,
+    "nativePrices": [
+      {
+        "amount": 22,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://sellfy.com",
     "ogImageUrl": "https://wf-assets.sellfy.com/6849a70cf522bf852d943fa2_sellfy-og-min.png",
     "substitution_cluster_v2": "website-app-builder",
@@ -33404,6 +35270,13 @@
     },
     "defaultMonthlyPrice": 100.76,
     "compareMonthlyPrice": 100.76,
+    "nativePrices": [
+      {
+        "amount": 117.33,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://semrush.com",
     "ogImageUrl": "https://www.semrush.com/__static__/semrush-logo-700.43215feb8faa.jpg",
     "substitution_cluster_v2": "email-outreach",
@@ -33441,6 +35314,13 @@
     },
     "defaultMonthlyPrice": 24.9,
     "compareMonthlyPrice": 24.9,
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.sendible.com",
     "substitution_cluster_v2": "email-outreach",
     "functional_needs": [
@@ -33477,6 +35357,13 @@
     },
     "defaultMonthlyPrice": 22.33,
     "compareMonthlyPrice": 22.33,
+    "nativePrices": [
+      {
+        "amount": 26,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://sentry.io",
     "ogImageUrl": "https://sentry.io/_astro/home-hero-meta.DJDejDMD.webp",
     "tool_type": "metier",
@@ -33768,6 +35655,13 @@
     },
     "defaultMonthlyPrice": 9,
     "compareMonthlyPrice": 9,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.shine.fr/lp/outil-facturation-gratuit/?utm_source=affilae&utm_medium=affiliation&utm_campaign=tooltrim&ae=1734",
     "websiteUrl": "https://www.shine.fr",
     "ogImageUrl": "https://www.shine.fr/images/meta-thumbnail-v2.png",
@@ -33812,6 +35706,13 @@
     },
     "defaultMonthlyPrice": 12.87,
     "compareMonthlyPrice": 12.87,
+    "nativePrices": [
+      {
+        "amount": 14.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.shipstation.com",
     "ogImageUrl": "https://www.shipstation.com/wp-content/uploads/2016/12/gear_green.png",
     "substitution_cluster_v2": "ecommerce",
@@ -34123,6 +36024,13 @@
     },
     "defaultMonthlyPrice": 9,
     "compareMonthlyPrice": 9,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://signrequest.com",
     "substitution_cluster_v2": "esignature",
     "functional_needs": [
@@ -34275,6 +36183,13 @@
     },
     "defaultMonthlyPrice": 19.92,
     "compareMonthlyPrice": 19.92,
+    "nativePrices": [
+      {
+        "amount": 23.2,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://simpletexting.com",
     "ogImageUrl": "https://simpletexting.com/wp-content/uploads/2023/10/SimpleTexting-Meta-Image.png",
     "substitution_cluster_v2": "email-outreach",
@@ -34312,6 +36227,13 @@
     },
     "defaultMonthlyPrice": 10.3,
     "compareMonthlyPrice": 10.3,
+    "nativePrices": [
+      {
+        "amount": 12,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://simvoly.com",
     "ogImageUrl": "https://content.app-sources.com/s/24444282803329/uploads/A-Home/simvoly-share-0311267.png",
     "substitution_cluster_v2": "automation-orchestration",
@@ -34419,6 +36341,13 @@
     },
     "defaultMonthlyPrice": 28.55,
     "compareMonthlyPrice": 28.55,
+    "nativePrices": [
+      {
+        "amount": 33.25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://sketchup.com",
     "ogImageUrl": "https://images.ctfassets.net/5qimfmsew7zl/1M12I2Eyw59Y4U4SJqCGin/a46834b0caf27f29ea566755506da7f2/SU2025-Website-NavigationPromo-WhySketchUp.jpg?w=400&h=300&fm=webp",
     "tool_type": "metier",
@@ -34608,6 +36537,13 @@
     },
     "defaultMonthlyPrice": 12.88,
     "compareMonthlyPrice": 12.88,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://smartsuite.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/60c1fb51c4706f216cc5b134/61b1e97f2e923565ed87e025_SmartSuite-OG.jpg",
     "substitution_cluster_v2": "workspace-ops",
@@ -34890,6 +36826,13 @@
     },
     "defaultMonthlyPrice": 20.76,
     "compareMonthlyPrice": 20.76,
+    "nativePrices": [
+      {
+        "amount": 24.17,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.socialbee.io/ezo1u6nhi8ow",
     "websiteUrl": "https://socialbee.com",
     "ogImageUrl": "/og-images/socialbee-review.webp",
@@ -34931,6 +36874,13 @@
     },
     "defaultMonthlyPrice": 16.32,
     "compareMonthlyPrice": 16.32,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://softr.io",
     "ogImageUrl": "https://cdn.prod.website-files.com/6772e8855f7859bc8df95c78/69cb9d33b244d44a7d3d428c_AI%20Launch%20Image.jpg",
     "substitution_cluster_v2": "automation-orchestration",
@@ -34968,6 +36918,13 @@
     },
     "defaultMonthlyPrice": 31.49,
     "compareMonthlyPrice": 31.49,
+    "nativePrices": [
+      {
+        "amount": 27,
+        "currency": "GBP",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.soldo.com",
     "tool_type": "gestion",
     "substitution_cluster_v2": "expense-management",
@@ -35251,6 +37208,13 @@
     },
     "defaultMonthlyPrice": 10.3,
     "compareMonthlyPrice": 10.3,
+    "nativePrices": [
+      {
+        "amount": 12,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://spline.design",
     "ogImageUrl": "https://spline.design/_next/image?q=100&url=%2F_next%2Fstatic%2Fimmutable%2Fmedia%2FdesignImg.2gbezukrw1o7o.webp&w=3840",
     "substitution_cluster_v2": "3d-design",
@@ -35372,6 +37336,13 @@
     },
     "defaultMonthlyPrice": 67.84,
     "compareMonthlyPrice": 67.84,
+    "nativePrices": [
+      {
+        "amount": 79,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://sproutsocial.com",
     "ogImageUrl": "https://brandfolder.sproutsocial.com/VXTUTVL1/at/xzptwj9cwpvmpnh6wpxgnx/og_general.png?auto=webp",
     "substitution_cluster_v2": "content-creation",
@@ -35551,6 +37522,13 @@
     "pricingEn": "From ~$29/month (no permanent free plan, trial available).",
     "defaultMonthlyPrice": 24.9,
     "compareMonthlyPrice": 24.9,
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://stan.store",
     "ogImageUrl": "https://assets.stanwith.me/graphics/stan-url-preview.jpg",
     "logo": "https://logo.clearbit.com/stan.store",
@@ -35741,6 +37719,13 @@
     },
     "defaultMonthlyPrice": 18.03,
     "compareMonthlyPrice": 18.03,
+    "nativePrices": [
+      {
+        "amount": 21,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://storyblocks.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/storyblocks.jpg",
     "logo": "https://logo.clearbit.com/storyblocks.com",
@@ -35964,6 +37949,13 @@
     },
     "defaultMonthlyPrice": 23.19,
     "compareMonthlyPrice": 23.19,
+    "nativePrices": [
+      {
+        "amount": 27,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://streamlabs.com",
     "ogImageUrl": "https://cdn.streamlabs.com/static/imgs/marketing-pages/home.png",
     "logo": "https://logo.clearbit.com/streamlabs.com",
@@ -36075,6 +38067,13 @@
     "pricingEn": "From ~$18/month depending on the volume of minutes processed.",
     "defaultMonthlyPrice": 16.32,
     "compareMonthlyPrice": 16.32,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://submagic.co",
     "ogImageUrl": "https://cdn.prod.website-files.com/6469e2294ac68c3d5caea327/67582fde54b44b92ce325aa3_Submagic%20-%20Link%20Thumbnail%402x.png",
     "logo": "https://logo.clearbit.com/submagic.co",
@@ -36155,6 +38154,13 @@
     },
     "defaultMonthlyPrice": 51.52,
     "compareMonthlyPrice": 51.52,
+    "nativePrices": [
+      {
+        "amount": 59.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.adobe.com/products/substance3d/apps/designer.html",
     "ogImageUrl": "https://www.adobe.com/products/substance3d/apps/media_177ef57e7e289d46cd12c007456ddd808c960e34a.png?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "tool_type": "metier",
@@ -36194,6 +38200,13 @@
     },
     "defaultMonthlyPrice": 51.52,
     "compareMonthlyPrice": 51.52,
+    "nativePrices": [
+      {
+        "amount": 59.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.adobe.com/products/substance3d-painter.html",
     "ogImageUrl": "https://www.adobe.com/products/substance3d/apps/media_183d4d1c0a6b3a13fe026090e990b96157c3a3ee7.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
     "tool_type": "metier",
@@ -36307,6 +38320,13 @@
     },
     "defaultMonthlyPrice": 5.5,
     "compareMonthlyPrice": 5.5,
+    "nativePrices": [
+      {
+        "amount": 6.4,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://suno.com",
     "ogImageUrl": "https://cdn-o.suno.com/Aura-1-Hero-Web.jpg",
     "tool_type": "ia",
@@ -36353,6 +38373,13 @@
     },
     "defaultMonthlyPrice": 21.47,
     "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://supabase.com",
     "ogImageUrl": "https://supabase.com/images/og/supabase-og.png",
     "tool_type": "metier",
@@ -36473,6 +38500,13 @@
     },
     "defaultMonthlyPrice": 4.22,
     "compareMonthlyPrice": 4.22,
+    "nativePrices": [
+      {
+        "amount": 4.92,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.superlist.com",
     "ogImageUrl": "https://framerusercontent.com/assets/xlouachsGTVuJaHXsYmxxI66e2s.png",
     "substitution_cluster_v2": "personal-task-manager",
@@ -36686,6 +38720,13 @@
     },
     "defaultMonthlyPrice": 30,
     "compareMonthlyPrice": 30,
+    "nativePrices": [
+      {
+        "amount": 30,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://get.surveymonkey.com/f33fice6dgg1-yspnvs",
     "websiteUrl": "https://www.surveymonkey.com/",
     "ogImageUrl": "/og-images/surveymonkey-review.webp",
@@ -36839,6 +38880,13 @@
     },
     "defaultMonthlyPrice": 76.43,
     "compareMonthlyPrice": 76.43,
+    "nativePrices": [
+      {
+        "amount": 89,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://sysaid.com",
     "ogImageUrl": "https://cdn.sysaid.com/wp-content/uploads/sysaid-logo-blogs.png",
     "substitution_cluster_v2": "itsm-helpdesk",
@@ -36870,6 +38918,13 @@
     "pricingEn": "Free plan available (limited); paid plans from ~€27/month.",
     "defaultMonthlyPrice": 14.6,
     "compareMonthlyPrice": 14.6,
+    "nativePrices": [
+      {
+        "amount": 17,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://systeme.io",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/systeme-io.jpg",
     "logo": "https://logo.clearbit.com/systeme.io",
@@ -37056,6 +39111,13 @@
     },
     "defaultMonthlyPrice": 20.61,
     "compareMonthlyPrice": 20.61,
+    "nativePrices": [
+      {
+        "amount": 24,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tally.so",
     "ogImageUrl": "https://tally.so/images/og.jpg",
     "substitution_cluster_v2": "form-builder",
@@ -37129,6 +39191,13 @@
     "pricingEn": "From ~$39/month depending on features.",
     "defaultMonthlyPrice": 33.49,
     "compareMonthlyPrice": 33.49,
+    "nativePrices": [
+      {
+        "amount": 39,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://taplio.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/taplio.jpg",
     "logo": "https://logo.clearbit.com/taplio.com",
@@ -37667,6 +39736,13 @@
     },
     "defaultMonthlyPrice": 34.35,
     "compareMonthlyPrice": 34.35,
+    "nativePrices": [
+      {
+        "amount": 40,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://thinkific.com",
     "ogImageUrl": "https://www.thinkific.com/wp-content/uploads/2025/07/Jacques-wong.webp",
     "substitution_cluster_v2": "learning-platform",
@@ -37705,6 +39781,13 @@
     "pricingEn": "Free version available; Pro from ~$49/year for advanced tracking.",
     "defaultMonthlyPrice": 17.82,
     "compareMonthlyPrice": 17.82,
+    "nativePrices": [
+      {
+        "amount": 20.75,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://thirstyaffiliates.com",
     "ogImageUrl": "https://thirstyaffiliates.com/wp-content/uploads/2018/08/ta-logo.png",
     "logo": "https://logo.clearbit.com/thirstyaffiliates.com",
@@ -37885,6 +39968,13 @@
     },
     "defaultMonthlyPrice": 29,
     "compareMonthlyPrice": 29,
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://affiliate.tidio.com/1w3jegq6qug4",
     "websiteUrl": "https://tidio.com",
     "ogImageUrl": "/og-images/tidio-review.webp",
@@ -38204,6 +40294,13 @@
     },
     "defaultMonthlyPrice": 5.15,
     "compareMonthlyPrice": 5.15,
+    "nativePrices": [
+      {
+        "amount": 6,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://toggl.com",
     "ogImageUrl": "https://public-assets.toggl.com/b/static/toggl-track-main-86a903eba7e603cda581878765469d51.jpg",
     "tool_type": "gestion",
@@ -38320,6 +40417,13 @@
     },
     "defaultMonthlyPrice": 10.67,
     "compareMonthlyPrice": 10.67,
+    "nativePrices": [
+      {
+        "amount": 12.42,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://topazlabs.com/gigapixel",
     "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e96723281d501d14889_june-giga-home-before.webp",
     "tool_type": "plugin",
@@ -38362,6 +40466,13 @@
     },
     "defaultMonthlyPrice": 14.24,
     "compareMonthlyPrice": 14.24,
+    "nativePrices": [
+      {
+        "amount": 16.58,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.topazlabs.com/topaz-photo-ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca910440ce4d4c77b6e595_opengraph-topaz-photo.webp",
     "tool_type": "ia",
@@ -38423,6 +40534,13 @@
     },
     "defaultMonthlyPrice": 21.47,
     "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.topazlabs.com/topaz-video-ai",
     "ogImageUrl": "/tool-media/topaz-video-ai/interface.webp",
     "substitution_cluster_v2": "ai-video-enhancement",
@@ -38460,6 +40578,13 @@
       "paid": "From $600 (lifetime license), Commercial plan."
     },
     "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 600,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "websiteUrl": "https://derivative.ca",
     "ogImageUrl": "https://derivative-devforum-backups.s3.us-east-2.amazonaws.com/static/manifest512.png",
     "substitution_cluster_v2": "motion-compositing",
@@ -38498,6 +40623,13 @@
     },
     "defaultMonthlyPrice": 12.95,
     "compareMonthlyPrice": 12.95,
+    "nativePrices": [
+      {
+        "amount": 12.95,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tradingview.com",
     "ogImageUrl": "https://s.tradingview.com/static/images/illustrations/main-page.jpg",
     "logo": "https://logo.clearbit.com/tradingview.com",
@@ -38533,6 +40665,13 @@
     },
     "defaultMonthlyPrice": 7.73,
     "compareMonthlyPrice": 7.73,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://trainerize.com",
     "ogImageUrl": "https://file.trainerize.com/assets/tz/common-assets/images/abc-trainerize-social-image.jpg",
     "logo": "https://logo.clearbit.com/trainerize.com",
@@ -38687,6 +40826,13 @@
     },
     "defaultMonthlyPrice": 4.29,
     "compareMonthlyPrice": 4.29,
+    "nativePrices": [
+      {
+        "amount": 5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://trello.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/trello.jpg",
     "substitution_cluster_v2": "project-management-general",
@@ -38836,6 +40982,13 @@
     "pricingEn": "From ~$5/month per active client, depending on the plan.",
     "defaultMonthlyPrice": 22.62,
     "compareMonthlyPrice": 22.62,
+    "nativePrices": [
+      {
+        "amount": 26.34,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://truecoach.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/truecoach.jpg",
     "logo": "https://logo.clearbit.com/truecoach.com",
@@ -38908,6 +41061,13 @@
     },
     "defaultMonthlyPrice": 3.43,
     "compareMonthlyPrice": 3.43,
+    "nativePrices": [
+      {
+        "amount": 3.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tubebuddy.com",
     "ogImageUrl": "https://www.tubebuddy.com/wp-content/uploads/2025/08/215763354_4101728486607776_7902735743944989465_n.jpg",
     "logo": "https://logo.clearbit.com/tubebuddy.com",
@@ -38950,6 +41110,13 @@
     },
     "defaultMonthlyPrice": 3.43,
     "compareMonthlyPrice": 3.43,
+    "nativePrices": [
+      {
+        "amount": 3.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tubebuddy.com",
     "ogImageUrl": "https://www.tubebuddy.com/wp-content/uploads/2025/08/215763354_4101728486607776_7902735743944989465_n.jpg",
     "substitution_cluster_v2": "content-creation",
@@ -39024,6 +41191,13 @@
     },
     "defaultMonthlyPrice": 31.77,
     "compareMonthlyPrice": 31.77,
+    "nativePrices": [
+      {
+        "amount": 37,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.twinmotion.com",
     "ogImageUrl": "/og-screenshots/twinmotion.jpg",
     "tool_type": "metier",
@@ -39183,6 +41357,13 @@
     },
     "defaultMonthlyPrice": 24.04,
     "compareMonthlyPrice": 24.04,
+    "nativePrices": [
+      {
+        "amount": 28,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://typeform.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/66ffe2174aa8e8d5661c2708/6889ccfec828e151ddd96537_ogimage.png",
     "substitution_cluster_v2": "form-builder",
@@ -39355,6 +41536,13 @@
     },
     "defaultMonthlyPrice": 6.87,
     "compareMonthlyPrice": 6.87,
+    "nativePrices": [
+      {
+        "amount": 8,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://udio.com",
     "ogImageUrl": "https://imagedelivery.net/C9yUr1FL21Q6JwfYYh2ozQ/1647e9a2-47d6-4d95-5ae0-02bae7a44000/public",
     "tool_type": "ia",
@@ -39432,6 +41620,13 @@
     },
     "defaultMonthlyPrice": 63.55,
     "compareMonthlyPrice": 63.55,
+    "nativePrices": [
+      {
+        "amount": 74,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://unbounce.partnerlinks.io/qkwrva723hqq",
     "websiteUrl": "https://unbounce.com",
     "ogImageUrl": "/og-images/unbounce-review.webp",
@@ -39566,6 +41761,13 @@
     },
     "defaultMonthlyPrice": 165.31,
     "compareMonthlyPrice": 165.31,
+    "nativePrices": [
+      {
+        "amount": 192.5,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://unity.com",
     "ogImageUrl": "https://cdn.sanity.io/images/fuvbjjlp/production/9a58ef0b0a39424aaf70dd4c30539b477ae54697-1200x630.png",
     "substitution_cluster_v2": "real-time-3d",
@@ -40012,6 +42214,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://vercel.com",
     "ogImageUrl": "https://lishhsx6kmthaacj.public.blob.vercel-storage.com/og-home-not-x.png",
     "tool_type": "metier",
@@ -40165,6 +42374,13 @@
     },
     "defaultMonthlyPrice": 16.58,
     "compareMonthlyPrice": 16.58,
+    "nativePrices": [
+      {
+        "amount": 16.58,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://vidiq.com",
     "ogImageUrl": "https://cdn.sanity.io/images/7g6d2cj1/production/7c8f9a95d01c8c4043af4f3c39940ba3870bb1a9-512x512.png?w=1200&amp;q=70&amp;auto=format",
     "substitution_cluster_v2": "seo-tools",
@@ -40199,6 +42415,13 @@
     "pricingEn": "Limited free plan; paid plans from ~$15/month per user.",
     "defaultMonthlyPrice": 50.67,
     "compareMonthlyPrice": 50.67,
+    "nativePrices": [
+      {
+        "amount": 59,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://vidyard.com",
     "ogImageUrl": "https://www.vidyard.com/wp-content/uploads/Website-Sharing-3-1-1.jpg",
     "logo": "https://logo.clearbit.com/vidyard.com",
@@ -41009,6 +43232,13 @@
     },
     "defaultMonthlyPrice": 7,
     "compareMonthlyPrice": 7,
+    "nativePrices": [
+      {
+        "amount": 7,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://wetransfer.com",
     "ogImageUrl": "/wt-facebook.png",
     "substitution_cluster_v2": "file-transfer",
@@ -41259,6 +43489,13 @@
     "pricingEn": "Limited free plan; paid plans from ~$19/month depending on number of videos.",
     "defaultMonthlyPrice": 67.84,
     "compareMonthlyPrice": 67.84,
+    "nativePrices": [
+      {
+        "amount": 79,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://wistia.com",
     "ogImageUrl": "https://images.ctfassets.net/buksmp4dkugj/iE7tNEpx71bpM630sHTxD/17d9755ecd7bbd53a99e9c606877e22b/Home-MetaImage.jpg?w=1200&amp;h=630&amp;fit=fill&amp;fl=progressive",
     "logo": "https://logo.clearbit.com/wistia.com",
@@ -41297,6 +43534,13 @@
     },
     "defaultMonthlyPrice": 15.26,
     "compareMonthlyPrice": 15.26,
+    "nativePrices": [
+      {
+        "amount": 17.77,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://wix.com",
     "ogImageUrl": "https://static.wixstatic.com/media/343a2a_383f6393fabd4a0fa7f4732b1dd7cdb4~mv2.jpg/v1/fill/w_1200,h_630,al_c/343a2a_383f6393fabd4a0fa7f4732b1dd7cdb4~mv2.jpg",
     "substitution_cluster_v2": "website-builder",
@@ -41485,6 +43729,13 @@
     },
     "defaultMonthlyPrice": 3.43,
     "compareMonthlyPrice": 3.43,
+    "nativePrices": [
+      {
+        "amount": 4,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://wordpress.org",
     "ogImageUrl": "https://wordpress.org/files/2024/04/wordpress-homepage-ogimage-202404.png",
     "tool_type": "metier",
@@ -41525,6 +43776,13 @@
     },
     "defaultMonthlyPrice": 3.43,
     "compareMonthlyPrice": 3.43,
+    "nativePrices": [
+      {
+        "amount": 4,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://wordpress.com",
     "ogImageUrl": "https://s1.wp.com/i/featured/hp-2024-jul.jpg",
     "substitution_cluster_v2": "website-builder",
@@ -41564,6 +43822,13 @@
     },
     "defaultMonthlyPrice": 256.76,
     "compareMonthlyPrice": 256.76,
+    "nativePrices": [
+      {
+        "amount": 299,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://workable.com",
     "ogImageUrl": "https://www.workable.com/static/images/workable_meta_image.jpg?v=4d3bd5c24a770825c594b28ab2ab4c4e",
     "substitution_cluster_v2": "workspace-ops",
@@ -41963,6 +44228,13 @@
     },
     "defaultMonthlyPrice": 21.47,
     "compareMonthlyPrice": 21.47,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.xero.com",
     "websiteUrl": "https://xero.com",
     "ogImageUrl": "https://www.xero.com/content/dam/xero/pilot-images/opengraph/opengraph-xero.png",
@@ -41997,6 +44269,18 @@
     "pricingEn": "Very complete free version; Premium from ~$99/year for multi-keyword tracking and redirects.",
     "defaultMonthlyPrice": 9.9,
     "compareMonthlyPrice": 9.9,
+    "nativePrices": [
+      {
+        "amount": 9.9,
+        "currency": "USD",
+        "period": "monthly"
+      },
+      {
+        "amount": 9.9,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://yoast.com",
     "ogImageUrl": "https://yoast.com/app/uploads/2026/05/yoast_og_2026.png",
     "logo": "https://logo.clearbit.com/yoast.com",
@@ -42035,6 +44319,13 @@
     },
     "defaultMonthlyPrice": 17.17,
     "compareMonthlyPrice": 17.17,
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://youform.com",
     "ogImageUrl": "https://youform.com/assets/images/youform-builder.png",
     "substitution_cluster_v2": "form-builders",
@@ -42075,6 +44366,13 @@
     },
     "defaultMonthlyPrice": 9,
     "compareMonthlyPrice": 9,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://youtrust.com/",
     "ogImageUrl": "https://yousign.com/og-image-facebook-en.png",
     "tool_type": "gestion",
@@ -42270,6 +44568,13 @@
     },
     "defaultMonthlyPrice": 30.83,
     "compareMonthlyPrice": 30.83,
+    "nativePrices": [
+      {
+        "amount": 35.9,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.maxon.net/en/zbrush",
     "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_Hero_banner-1.jpg",
     "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_icon.svg",
@@ -42349,6 +44654,13 @@
     },
     "defaultMonthlyPrice": 8.59,
     "compareMonthlyPrice": 8.59,
+    "nativePrices": [
+      {
+        "amount": 10,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://zed.dev/",
     "ogImageUrl": "https://zed.dev/cdn-cgi/image/width=2048,quality=75,format=auto/img/parallel-agents/sidebar.webp",
     "logo": "/logos/zed.svg",
@@ -42428,6 +44740,13 @@
     },
     "defaultMonthlyPrice": 16.32,
     "compareMonthlyPrice": 16.32,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://zendesk.com",
     "ogImageUrl": "https://d1eipm3vz40hy0.cloudfront.net/images/logos/favicons/zendesk-image.png",
     "substitution_cluster_v2": "workspace-ops",
@@ -42511,6 +44830,13 @@
     },
     "defaultMonthlyPrice": 77.29,
     "compareMonthlyPrice": 77.29,
+    "nativePrices": [
+      {
+        "amount": 90,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://zoho.com",
     "ogImageUrl": "https://www.zohowebstatic.com/sites/zweb/images/ogimage/zoho-logo.png",
     "substitution_cluster_v2": "workspace-ops",
@@ -42548,6 +44874,13 @@
     },
     "defaultMonthlyPrice": 12.16,
     "compareMonthlyPrice": 12.16,
+    "nativePrices": [
+      {
+        "amount": 14.16,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://zoom.us",
     "ogImageUrl": "https://st1.zoom.us/homepage/20260622-1234/primary/dist/assets/images/thumb.png",
     "bundle_parent": "zoom-pro",
@@ -42613,6 +44946,13 @@
     },
     "defaultMonthlyPrice": 12.16,
     "compareMonthlyPrice": 12.16,
+    "nativePrices": [
+      {
+        "amount": 14.16,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://zoom.us/pricing",
     "ogImageUrl": "https://st1.zoom.us/static/26.6.60642/image/thumb.png",
     "tool_type": "core",
@@ -42652,6 +44992,13 @@
     },
     "defaultMonthlyPrice": 1.43,
     "compareMonthlyPrice": 1.43,
+    "nativePrices": [
+      {
+        "amount": 1.67,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://zotero.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/zotero.jpg",
     "logo": "https://logo.clearbit.com/zotero.com",
@@ -42763,6 +45110,13 @@
       "free": "Permanent Free plan: 720p export, 12 projects, videos up to 10 min",
       "paid": "Plus: USD 143.88/year (USD 11.99/month equivalent). Business: USD 239.88/year (USD 19.99/month equivalent). Separate monthly and Teams options."
     },
+    "nativePrices": [
+      {
+        "amount": 143.88,
+        "currency": "USD",
+        "period": "annual"
+      }
+    ],
     "affiliateLink": "https://tidd.ly/4hRTGb1",
     "websiteUrl": "https://www.flexclip.com/",
     "ogImageUrl": "/tool-media/flexclip/overview.webp",
@@ -42839,6 +45193,13 @@
     },
     "defaultMonthlyPrice": 6.01,
     "compareMonthlyPrice": 6.01,
+    "nativePrices": [
+      {
+        "amount": 7,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.traceo.dev/",
     "ogImageUrl": "https://www.traceo.dev/og-traceo-share.png",
     "logo": "https://logo.clearbit.com/traceo.dev",
@@ -42876,6 +45237,13 @@
     },
     "defaultMonthlyPrice": 79,
     "compareMonthlyPrice": 79,
+    "nativePrices": [
+      {
+        "amount": 79,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://aoriarh.fr/",
     "ogImageUrl": "/tool-media/aoriarh/demo.jpg",
     "logo": "https://logo.clearbit.com/aoriarh.fr",
@@ -42915,6 +45283,13 @@
     },
     "defaultMonthlyPrice": 3.6,
     "compareMonthlyPrice": 3.6,
+    "nativePrices": [
+      {
+        "amount": 3.6,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.planeezy.com/",
     "ogImageUrl": "https://www.planeezy.com/wp-content/uploads/home_screens_pc-2.png",
     "logo": "https://logo.clearbit.com/planeezy.com",
@@ -42953,6 +45328,13 @@
       "free": "Permanent Free plan: $0, core generation and collaboration features",
       "paid": "Starter $20/month, Builder $50/month, Manianaer $200/month"
     },
+    "nativePrices": [
+      {
+        "amount": 20,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tidd.ly/4hf439F",
     "websiteUrl": "https://maniana.ai/",
     "ogImageUrl": "/og-images/maniana-review.png",
@@ -42990,6 +45372,13 @@
     },
     "defaultMonthlyPrice": 79,
     "compareMonthlyPrice": 79,
+    "nativePrices": [
+      {
+        "amount": 79,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://happia.fr/",
     "ogImageUrl": "/tool-media/happia/happia-dashboard.webp",
     "logo": "https://logo.clearbit.com/happia.fr",
@@ -43027,6 +45416,13 @@
     },
     "defaultMonthlyPrice": 9.99,
     "compareMonthlyPrice": 9.99,
+    "nativePrices": [
+      {
+        "amount": 9.99,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://klark.app/",
     "ogImageUrl": "https://klark.app/mockups/Mockup_Klark_dashboard.png",
     "logo": "https://logo.clearbit.com/klark.app",
@@ -43066,6 +45462,13 @@
     },
     "defaultMonthlyPrice": 19,
     "compareMonthlyPrice": 19,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "EUR",
+        "period": "annual"
+      }
+    ],
     "websiteUrl": "https://www.stellaflow.com/",
     "logo": "https://logo.clearbit.com/stellaflow.com",
     "substitution_cluster_v2": "social-media-scheduler",
@@ -43104,6 +45507,13 @@
     },
     "defaultMonthlyPrice": 19,
     "compareMonthlyPrice": 19,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://vulko.fr/",
     "ogImageUrl": "/tool-media/vulko/dashboard.png",
     "logo": "https://logo.clearbit.com/vulko.fr",
@@ -43141,6 +45551,13 @@
     },
     "defaultMonthlyPrice": 17,
     "compareMonthlyPrice": 17,
+    "nativePrices": [
+      {
+        "amount": 17,
+        "currency": "EUR",
+        "period": "annual"
+      }
+    ],
     "websiteUrl": "https://www.charik.app/",
     "ogImageUrl": "https://i.ytimg.com/vi/E3e-_IMPl00/maxresdefault.jpg",
     "logo": "https://logo.clearbit.com/charik.app",
@@ -43179,6 +45596,13 @@
     },
     "defaultMonthlyPrice": 19,
     "compareMonthlyPrice": 19,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.snappack.io/",
     "ogImageUrl": "https://www.snappack.io/assets/img/hero-sGTGI8F.webp",
     "logo": "https://logo.clearbit.com/snappack.io",
@@ -43215,6 +45639,13 @@
     },
     "defaultMonthlyPrice": 3.44,
     "compareMonthlyPrice": 3.44,
+    "nativePrices": [
+      {
+        "amount": 2.99,
+        "currency": "GBP",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.getorlo.app/",
     "ogImageUrl": "https://www.getorlo.app/opengraph-image?0aa54a79b9b4e49e",
     "logo": "https://logo.clearbit.com/getorlo.app",
@@ -43250,6 +45681,13 @@
     },
     "defaultMonthlyPrice": 4.5,
     "compareMonthlyPrice": 4.5,
+    "nativePrices": [
+      {
+        "amount": 4.5,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://autophotos.ai/",
     "ogImageUrl": "/og-screenshots/autophotos-ai.png",
     "logo": "https://autophotos.ai/favicon.svg",
@@ -43323,6 +45761,13 @@
     },
     "defaultMonthlyPrice": 25,
     "compareMonthlyPrice": 23,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://sistava.com/",
     "ogImageUrl": "https://sistava.com/site-assets/share/sistava-share-dark-1200x630.png",
     "logo": "https://logo.clearbit.com/sistava.com",
@@ -43359,6 +45804,13 @@
     },
     "defaultMonthlyPrice": 19,
     "compareMonthlyPrice": 19,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://novadesko.com/",
     "ogImageUrl": "https://novadesko.com/images/preview-1.webp",
     "logo": "https://novadesko.com/favicon.svg",
@@ -43400,6 +45852,13 @@
     },
     "defaultMonthlyPrice": 49,
     "compareMonthlyPrice": 43.1,
+    "nativePrices": [
+      {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.convoscore.com/",
     "ogImageUrl": "https://www.convoscore.com/marketing/dashboard-team.jpg",
     "logo": "https://www.convoscore.com/icon.svg",
@@ -43440,6 +45899,13 @@
       "free": "Free plan on a B12 subdomain.",
       "paid": "Website: $24/month. Website + Client Engagement: $78/month. Monthly billing; tax treatment unconfirmed."
     },
+    "nativePrices": [
+      {
+        "amount": 24,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tidd.ly/4hRTys3",
     "websiteUrl": "https://www.b12.io/",
     "ogImageUrl": "/og-images/b12-review.webp",
@@ -43470,6 +45936,13 @@
       "free": "2 AI decisions per month, locally saved plans, no credit card required.",
       "paid": "Basic $4.99/month; Personal and Education $9.99/month each; Executive $29.99/month. Monthly billing; taxes unconfirmed."
     },
+    "nativePrices": [
+      {
+        "amount": 4.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tidd.ly/4xJtUvr",
     "websiteUrl": "https://www.mybetterdayai.com/",
     "ogImageUrl": "/og-images/betterday-ai-review.webp",
@@ -43499,6 +45972,13 @@
       "free": "All-in-One Free: 250 contacts.",
       "paid": "All-in-One, annual commitment: Basic $13.79, Growth $59.79 and Pro $110.39/user/month equivalent. Taxes unconfirmed."
     },
+    "nativePrices": [
+      {
+        "amount": 13.79,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.awin1.com/cread.php?awinmid=127075&awinaffid=2901291&clickref=tooltrim",
     "websiteUrl": "https://www.engagebay.com/",
     "ogImageUrl": "/og-images/engagebay-review.webp",
@@ -43530,6 +46010,13 @@
       "free": "Free download; ads during exports.",
       "paid": "US App Store: Premium monthly $10.99; weekly $4.99; yearly $58.99/year. Check local in-app prices."
     },
+    "nativePrices": [
+      {
+        "amount": 10.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tidd.ly/4yekYiv",
     "websiteUrl": "https://apps.apple.com/us/app/esign-sign-pdf-docx-documents/id6755193759",
     "ogImageUrl": "/og-images/esign-review.webp",
@@ -43558,6 +46045,13 @@
       "free": "Seven-day trial without a card, with watermark. No permanent free plan advertised.",
       "paid": "$19.99/month or $119.88/year paid upfront ($9.99/month equivalent). Applicable taxes extra."
     },
+    "nativePrices": [
+      {
+        "amount": 19.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tidd.ly/3TSWo7W",
     "websiteUrl": "https://faceready.ai/",
     "ogImageUrl": "/og-images/faceready-review.jpg",
@@ -43584,6 +46078,13 @@
       "free": "Free download; conversion limits apply.",
       "paid": "Lifetime licence: promotional $119 one-time payment. Annual: $59; Semi-Annual: $39. No recurring charges advertised."
     },
+    "nativePrices": [
+      {
+        "amount": 119,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "affiliateLink": "https://tidd.ly/4iWjapP",
     "websiteUrl": "https://www.pdfagile.com/",
     "ogImageUrl": "/tool-media/pdf-agile/edit.png",
@@ -43612,6 +46113,13 @@
       "free": "Free: two PNG downloads.",
       "paid": "Pro: USD 120/member/year or USD 15/month. Business: USD 204/member/year or USD 20/month."
     },
+    "nativePrices": [
+      {
+        "amount": 120,
+        "currency": "USD",
+        "period": "annual"
+      }
+    ],
     "affiliateLink": "https://tidd.ly/3V5Yxh1",
     "websiteUrl": "https://piktochart.com/",
     "ogImageUrl": "/tool-media/piktochart/overview.jpg",
@@ -43643,6 +46151,13 @@
     },
     "defaultMonthlyPrice": 2.49,
     "compareMonthlyPrice": 2.49,
+    "nativePrices": [
+      {
+        "amount": 2.49,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://tidd.ly/4xN3vg8",
     "websiteUrl": "https://pixlr.com/",
     "ogImageUrl": "/tool-media/pixlr/overview.jpg",
@@ -48202,6 +50717,13 @@
       "free": "Free strengths preview before purchase; no free complete resume.",
       "paid": "First targeted resume: USD 1.99 one-time; additional resume: USD 4.99. Career Momentum: USD 8.88/month, optional."
     },
+    "nativePrices": [
+      {
+        "amount": 1.99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "websiteUrl": "https://mybestresume.ai/",
     "ogImageUrl": "https://mybestresume.ai/opengraph-image",
     "logo": "https://mybestresume.ai/favicon.svg",
@@ -48229,6 +50751,13 @@
       "free": "Seven-day trial without a card; no permanent free plan advertised.",
       "paid": "Lifetime licence: Indie USD 99, Business USD 199, Scale USD 249 as one-time purchases. Model usage is billed separately by providers through your API keys."
     },
+    "nativePrices": [
+      {
+        "amount": 99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "websiteUrl": "https://www.seamui.com/",
     "ogImageUrl": "https://www.seamui.com/og-image.webp",
     "logo": "https://www.seamui.com/seamuilogo.webp",
@@ -48256,6 +50785,13 @@
       "free": "Seven-day trial without a credit card; no permanent free plan advertised.",
       "paid": "Launch: USD 49/month, or USD 41/month equivalent billed USD 123/quarter. Grow: USD 159/month, or USD 129/month equivalent billed USD 387/quarter. Enterprise custom-priced."
     },
+    "nativePrices": [
+      {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://georankers.ai/",
     "ogImageUrl": "https://georankers.ai/og-image.png",
     "logo": "https://georankers.ai/georankers-logo.svg",

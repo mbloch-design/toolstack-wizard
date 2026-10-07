@@ -65,17 +65,20 @@ describe("Mon Stack V2 semantic reading", () => {
   it("summarizes genuine free, freemium, paid and custom pricing without false free/zero/approximate labels", () => {
     expect(stackCatalogPrice(find("audacity"), "fr")).toBe("Gratuit");
     expect(stackCatalogPrice(find("grammarly"), "en")).toBe("Freemium");
-    expect(stackCatalogPrice(find("cinema-4d"), "fr")).toBe("Dès 69,92 $/mois");
+    expect(stackCatalogPrice(find("cinema-4d"), "fr")).toBe("Dès 69,92\u00a0$/mois");
+    expect(stackCatalogPrice(find("cinema-4d"), "en")).toBe("From $69.92/mo");
     expect(stackCatalogPrice(find("fly-io"), "fr")).toBeNull();
     expect(stackCatalogPrice(find("adobe-express"), "fr")).toBeNull();
-    const price = (paid: string, free = "") => stackCatalogPrice({ pricing: { free, paid } }, "fr");
+    const price = (paid: string, free = "", nativePrices?: { amount: number; currency: string; period: "monthly" | "annual" | "once" }[]) => stackCatalogPrice({ pricing: { free, paid }, nativePrices }, "fr");
     expect(price("Sur devis")).toBe("Sur devis");
-    expect(price("Starter 12 €/mois, Enterprise sur devis")).toBe("Dès 12 €/mois");
-    expect(price("Startup : 600 $US/mois, Growth sur devis")).toBe("Dès 600 $US/mois");
+    // Attested compare-plan prices only: an amount in editorial text is never read.
+    expect(price("Starter 12 €/mois, Enterprise sur devis")).toBe("Sur devis");
+    expect(price("Starter 12 €/mois, Enterprise sur devis", "", [{ amount: 12, currency: "EUR", period: "monthly" }])).toBe("Dès 12\u00a0€/mois");
+    expect(price("Startup : 600 $US/mois", "", [{ amount: 600, currency: "USD", period: "monthly" }])).toBe("Dès 600\u00a0$/mois");
+    expect(price("", "", [{ amount: 120, currency: "EUR", period: "annual" }])).toBe("Dès 120\u00a0€/an");
     expect(stackCatalogPrice({ pricing: { free: "", paid: "Sur devis" }, priceUndisclosed: true }, "fr")).toBe("Sur devis");
     expect(price("Prix non public", "Plan gratuit disponible")).toBeNull();
     expect(price("$1,000/month")).toBeNull();
-    expect(price("$1,000.00/month")).toBeNull();
     expect(price("$0/month")).toBeNull();
     expect(price("", "Essai gratuit 7 jours")).toBeNull();
   });

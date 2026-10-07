@@ -26,31 +26,44 @@ export function stackTerritories(tools: ToolSummary[], categories: Category[], l
   })).sort((a, b) => a.label.localeCompare(b.label, lang));
 }
 
-// Short catalogue labels, in the source currency. The overview deliberately
-// leaves plan/commitment details to Focus; approximate/usage-based/zero amounts
-// cannot establish a paid entry price. Never use normalized EUR amounts.
-export function stackCatalogPrice(tool: Pick<Tool, "pricing" | "pricingEn"> & { priceUndisclosed?: boolean }, lang: string): string | null {
+export type NativePrice = { amount: number; currency: string; period: "monthly" | "annual" | "once" };
+type PricedTool = Pick<Tool, "pricing" | "pricingEn"> & { priceUndisclosed?: boolean; nativePrices?: NativePrice[] };
+
+/** The attested entry price to show, in the page's preferred real currency
+ *  when the vendor publishes it, never converted. */
+export function pickNativePrice(tool: PricedTool, lang: string): NativePrice | null {
+  const prices = tool.nativePrices || [];
+  const preferred = lang === "en" ? "USD" : "EUR";
+  return prices.find((price) => price.currency === preferred) || prices[0] || null;
+}
+
+export function formatNativePrice(price: NativePrice, lang: string): string {
+  const value = new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", { maximumFractionDigits: 2 }).format(price.amount);
+  const symbol = { USD: "$", EUR: "€", GBP: "£" }[price.currency] || price.currency;
+  // "$22.99" in English, "22,99 $" in French, as on the tool page.
+  const money = lang === "en" && symbol.length === 1 ? `${symbol}${value}` : `${value}\u00a0${symbol}`;
+  const period = price.period === "monthly" ? (lang === "en" ? "/mo" : "/mois")
+    : price.period === "annual" ? (lang === "en" ? "/yr" : "/an")
+    : (lang === "en" ? " one-time" : " achat unique");
+  return `${money}${period}`;
+}
+
+// Short catalogue labels. The amount comes only from the attested compare plan
+// (nativePrices, in the vendor's currency): never read out of editorial text,
+// never converted (Michael's rule: "only what is attested"). No attested price,
+// no amount. Free / freemium / quote stay as categorical labels.
+export function stackCatalogPrice(tool: PricedTool, lang: string): string | null {
   const pricing = tool.pricing;
   const paid = pricing?.paid?.trim();
   const quote = /sur devis|contact.{0,12}(vente|sales)|custom pricing|quote/i.test(paid || "");
   const free = hasGenuineFreeTier(pricing?.free) && /gratuit|free|open.?source/i.test(pricing?.free || "");
-  const amount = paid?.match(/(?:(US\$|CA\$|AU\$|\$US|\$CA|\$AU|[$€£]|USD|EUR|GBP)\s*(\d[\d.,]*)|(?<![\d.,])(\d[\d.,]*)\s*(US\$|CA\$|AU\$|\$US|\$CA|\$AU|[$€£]|USD|EUR|GBP))\s*\/?\s*(mois|months?|mo\b|an\b|ans\b|years?|yr\b)?/i);
-  const rawAmount = amount && (amount[2] || amount[3]);
-  const validAmount = rawAmount && /^\d+(?:[.,]\d{1,2})?$/.test(rawAmount) && Number(rawAmount.replace(",", ".")) > 0 && !/environ|\benv\b|approx|about|~|usage|pay.as.you.go|consommation/i.test(paid || "");
-  if (tool.priceUndisclosed) return quote && !amount ? (lang === "en" ? "Custom pricing" : "Sur devis") : null;
-  if (free && (validAmount || quote)) return "Freemium";
+  const native = tool.priceUndisclosed ? null : pickNativePrice(tool, lang);
+  if (tool.priceUndisclosed) return quote ? (lang === "en" ? "Custom pricing" : "Sur devis") : null;
+  if (free && (native || quote)) return "Freemium";
   if (free && (!paid || /^(?:non|aucun|pas d[e’']|none|no paid|gratuit)/i.test(paid))) return lang === "en" ? "Free" : "Gratuit";
-  if (quote && !amount) return lang === "en" ? "Custom pricing" : "Sur devis";
-  if (!validAmount || !amount) return null;
-  const value = new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", { maximumFractionDigits: 2 }).format(Number((amount[2] || amount[3]).replace(",", ".")));
-  const currency = amount[1] || amount[4];
-  const unit = amount[5]?.toLowerCase();
-  const period = unit ? (/^(mo|month)/.test(unit) ? (lang === "en" ? "/mo" : "/mois") : (lang === "en" ? "/yr" : "/an")) : "";
-  // Same typography as the tool page: "$22.99/mo" in English, "22,99 $/mois"
-  // in French. Multi-letter codes (USD, $US…) stay after the amount.
-  const symbol = { USD: "$", EUR: "€", GBP: "£" }[currency.toUpperCase()] || currency;
-  const leading = lang === "en" && /^[$€£]$/.test(symbol);
-  return `${lang === "en" ? "From" : "Dès"} ${leading ? `${symbol}${value}` : `${value} ${symbol}`}${period}`;
+  if (native) return `${lang === "en" ? "From" : "Dès"} ${formatNativePrice(native, lang)}`;
+  if (quote) return lang === "en" ? "Custom pricing" : "Sur devis";
+  return null;
 }
 
 export function knownStackAlternatives(source: ToolSummary | Tool, selected: ToolSummary[]) {

@@ -1,56 +1,52 @@
 import type { ToolSummary } from "@/hooks/useSupabaseData";
-import { stackCatalogPrice } from "@/lib/stackView";
-import { convertAmount, type Currency } from "@/lib/currencyRates";
+import { pickNativePrice, stackCatalogPrice, type NativePrice } from "@/lib/stackView";
+import type { Currency } from "@/lib/currencyRates";
 
-type BudgetTool = Pick<ToolSummary, "id" | "pricing" | "pricingEn"> & { priceUndisclosed?: boolean };
+type BudgetTool = Pick<ToolSummary, "id" | "pricing" | "pricingEn"> & { priceUndisclosed?: boolean; nativePrices?: NativePrice[] };
 export type BudgetEstimate = { totals: { currency: string; monthly: number }[]; included: number; excluded: number; total: number };
 
-// Use only an unambiguous recurring source amount. Never use converted catalogue
-// fields or assume that a free tier is the offer the user actually uses.
-export function budgetEntry(tool: BudgetTool): { currency: string; monthly: number } | null {
+// Only the attested compare-plan price, in its own currency. Never an amount
+// read out of editorial text, never a conversion: totals stay per currency
+// ("$59/mo + 11 €/mo"). A free tool counts as 0; a one-off licence is left out
+// of a monthly budget.
+export function budgetEntry(tool: BudgetTool, lang = "fr"): { currency: string; monthly: number } | null {
   if (tool.priceUndisclosed) return null;
-  const paid = tool.pricing?.paid?.trim() || "";
-  if (stackCatalogPrice(tool, "fr") === "Gratuit") return { currency: "€", monthly: 0 };
-  if (/environ|\benv\b|approx|about|~|usage|consommation|tokens?|\bAPI\b|sur devis|custom pricing|quote|minimum|au moins|at least|\d\s*[-–]\s*\d/i.test(paid)) return null;
-  const amounts = [...paid.matchAll(/(?:(US\$|CA\$|AU\$|\$US|\$CA|\$AU|[$€£]|USD|EUR|GBP)\s*(\d[\d.,]*)|(?<![\d.,])(\d[\d.,]*)\s*(US\$|CA\$|AU\$|\$US|\$CA|\$AU|[$€£]|USD|EUR|GBP))\s*\/?\s*(mois|months?|mo\b|an\b|ans\b|years?|yr\b)?/gi)];
-  if (amounts.length !== 1) return null;
-  const match = amounts[0];
-  const raw = match[2] || match[3];
-  if (!/^\d+(?:[.,]\d{1,2})?$/.test(raw) || !match[5]) return null;
-  const amount = Number(raw.replace(",", "."));
-  if (!Number.isFinite(amount) || amount <= 0) return null;
-  const currency = match[1] || match[4];
-  // Normalize only explicit equivalents. A bare $ stays separate from USD.
-  const aliases: Record<string, string> = { EUR: "€", GBP: "£", "US$": "USD", "$US": "USD", "CA$": "CAD", "$CA": "CAD", "AU$": "AUD", "$AU": "AUD" };
-  return { currency: aliases[currency.toUpperCase()] || currency, monthly: /^(mo|month)/i.test(match[5]) ? amount : amount / 12 };
+  const label = stackCatalogPrice(tool, "fr");
+  if (label === "Gratuit") return { currency: "EUR", monthly: 0 };
+  const price = pickNativePrice(tool, lang);
+  if (!price || price.period === "once") return null;
+  return { currency: price.currency, monthly: price.period === "annual" ? price.amount / 12 : price.amount };
 }
 
-export function estimateStackBudget(tools: BudgetTool[], targetCurrency?: Currency): BudgetEstimate {
+/** `_targetCurrency` is accepted for compatibility and ignored: no conversion. */
+export function estimateStackBudget(tools: BudgetTool[], _targetCurrency?: Currency, lang = "fr"): BudgetEstimate {
   const unique = [...new Map(tools.map(tool => [tool.id, tool])).values()];
   const totals = new Map<string, number>();
   let included = 0;
   for (const tool of unique) {
-    const entry = budgetEntry(tool);
+    const entry = budgetEntry(tool, lang);
     if (!entry) continue;
-    const sourceCurrencies: Record<string, Currency> = { "$": "USD", USD: "USD", "€": "EUR", "£": "GBP" };
-    const sourceCurrency = sourceCurrencies[entry.currency];
-    if (targetCurrency && !sourceCurrency && entry.monthly > 0) continue;
     included++;
-    const currency = targetCurrency || entry.currency;
-    const monthly = targetCurrency && sourceCurrency ? convertAmount(entry.monthly, sourceCurrency, targetCurrency) : entry.monthly;
-    if (monthly > 0) totals.set(currency, (totals.get(currency) || 0) + monthly);
+    if (entry.monthly > 0) totals.set(entry.currency, (totals.get(entry.currency) || 0) + entry.monthly);
   }
   return { totals: [...totals].map(([currency, monthly]) => ({ currency, monthly })).sort((a, b) => a.currency.localeCompare(b.currency)), included, excluded: unique.length - included, total: unique.length };
 }
 
-export function formatApproximateBudget(estimate: BudgetEstimate, lang: string, currency: Currency, annual = false): string {
+const formatMoney = (amount: number, currency: string, lang: string, digits: number) => {
+  const value = new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", { maximumFractionDigits: digits }).format(amount);
+  const symbol = { USD: "$", EUR: "€", GBP: "£" }[currency] || currency;
+  return lang === "en" && symbol.length === 1 ? `${symbol}${value}` : `${value}\u00a0${symbol}`;
+};
+
+/** Per-currency totals joined with "+", rounded. `_currency` ignored (no conversion). */
+export function formatApproximateBudget(estimate: BudgetEstimate, lang: string, _currency?: Currency, annual = false): string {
   if (!estimate.included) return "—";
-  const amount = Math.round(estimate.totals.reduce((sum, entry) => sum + entry.monthly, 0) * (annual ? 12 : 1));
-  return `≈ ${new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", { style: "currency", currency, maximumFractionDigits: 0 }).format(amount)}`;
+  if (!estimate.totals.length) return formatMoney(0, lang === "en" ? "USD" : "EUR", lang, 0);
+  return estimate.totals.map(({ currency, monthly }) => formatMoney(Math.round(monthly * (annual ? 12 : 1)), currency, lang, 0)).join(" + ");
 }
 
 export function formatBudgetEstimate(estimate: BudgetEstimate, lang: string, annual = false): string {
   if (!estimate.included) return lang === "en" ? "Not available" : "Non disponible";
   if (!estimate.totals.length) return "0";
-  return estimate.totals.map(({ currency, monthly }) => `${new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", { maximumFractionDigits: 2 }).format(monthly * (annual ? 12 : 1))} ${currency}`).join(" + ");
+  return estimate.totals.map(({ currency, monthly }) => formatMoney(monthly * (annual ? 12 : 1), currency, lang, 2)).join(" + ");
 }

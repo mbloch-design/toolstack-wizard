@@ -35106,3 +35106,4 @@ img[data-logo-loading] {
   .ms-page .ms-domain-filters { flex: 1 1 100%; order: 2; }
   .ms-page .ms-view-switch { order: 1; margin: 0 0 4px auto; }
 }
+.ms-page .ms-view-switch { margin-left: auto; }

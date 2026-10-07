@@ -187,12 +187,13 @@ export default function CartPage() {
 
     {!empty && <>
       <div className="ms-toolbar">
-        <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")}>
+        {/* By use: the explorer's own navigation already filters by area. */}
+        {mode !== "map" && <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")}>
           <button type="button" aria-pressed={activeFilter === "all"} onClick={() => chooseDomain("all")}>{t("Tous les outils", "All tools")}<span>{selectedTools.length}</span></button>
           {mapTerritories.map((territory) => <button key={territory.id} type="button" aria-pressed={activeFilter === territory.id} onClick={() => chooseDomain(territory.id)}>
             {territory.id === "assist" ? t("IA", "AI") : territory.label}<span>{territory.tools.length}</span>
           </button>)}
-        </div>
+        </div>}
         <div className="ms-view-switch" role="group" aria-label={t("Affichage du stack", "Stack view")}>
           <button type="button" aria-label={t("Cartes", "Cards")} title={t("Cartes", "Cards")} aria-pressed={mode === "stack"} onClick={() => chooseMode("stack")}><LayoutGrid size={21} aria-hidden /><span>{t("Cartes", "Cards")}</span></button>
           <button type="button" aria-label={t("Par usage", "By use")} title={t("Par usage", "By use")} aria-pressed={mode === "map"} onClick={() => chooseMode("map")}><CircleDot size={21} aria-hidden /><span>{t("Par usage", "By use")}</span></button>
