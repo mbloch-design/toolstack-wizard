@@ -35260,3 +35260,43 @@ img[data-logo-loading] {
 /* Plus de somme de prix : le décompte par type de prix devient l'information. */
 .ms-page .ms-board-total span { color: hsl(var(--foreground)); font: 600 15px/1.4 var(--font-ui); }
 .ms-page .ms-area-head { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "dot name" "dot count"; }
+/* ── Ma stack, télescope (7 oct.) ──
+   Niveau 1 : bulles des domaines (couleur, logos, nom, nombre d'outils).
+   Niveau 2 : zoom vers la carte du domaine. Sans somme de prix. */
+.ms-page .ms-telescope { display: grid; gap: 16px; }
+.ms-page .ms-telescope-stage { overflow: hidden; border: 1px solid hsl(var(--border)); border-radius: 20px; background: hsl(var(--card)); }
+.ms-page .ms-telescope-head { display: flex; align-items: center; min-height: 52px; padding: 8px 16px; border-bottom: 1px solid hsl(var(--border) / .7); }
+.ms-page .ms-telescope-hint { margin: 0; color: hsl(var(--muted-foreground)); font: 400 13px/1.45 var(--font-ui); }
+.ms-page .ms-telescope-backlink { display: inline-flex; align-items: center; gap: 4px; height: 34px; padding: 0 12px 0 8px; border: 1px solid hsl(var(--border)); border-radius: var(--radius-pill); background: hsl(var(--card)); color: hsl(var(--foreground)); font: 600 13.5px/1 var(--font-ui); }
+.ms-page .ms-telescope-backlink:hover { border-color: hsl(var(--foreground) / .4); }
+.ms-page .ms-telescope-canvas { position: relative; width: min(100%, 760px); aspect-ratio: 4 / 3; margin: 8px auto 16px; }
+.ms-page .ms-telescope-field { position: absolute; inset: 0 12.5%; }
+.ms-page .ms-telescope-bubble {
+  --bubble-color: #6F6F68;
+  container-type: size; position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 6px;
+  border-radius: 50%; text-align: center;
+  background: color-mix(in srgb, var(--bubble-color) 10%, hsl(var(--card)));
+  border: 1.5px solid color-mix(in srgb, var(--bubble-color) 32%, hsl(var(--card)));
+  transition: scale 260ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 260ms ease, border-color 200ms ease, background-color 200ms ease;
+}
+.ms-page .ms-telescope-bubble:hover, .ms-page .ms-telescope-bubble:focus-visible {
+  scale: 1.04; border-color: color-mix(in srgb, var(--bubble-color) 70%, hsl(var(--card)));
+  background: color-mix(in srgb, var(--bubble-color) 15%, hsl(var(--card)));
+  box-shadow: 0 16px 36px color-mix(in srgb, var(--bubble-color) 20%, transparent); outline: none;
+}
+.ms-page .ms-telescope-logos { display: flex; justify-content: center; }
+.ms-page .ms-telescope-logos > * { border-radius: 9px; background: hsl(var(--card)); box-shadow: 0 0 0 2px hsl(var(--card)); }
+.ms-page .ms-telescope-logos > * + * { margin-left: -6px; }
+.ms-page .ms-telescope-bubble strong { max-width: 90%; color: hsl(var(--foreground)); font: 700 clamp(13px, 11cqw, 20px)/1.15 var(--font-ui); letter-spacing: -.01em; }
+.ms-page .ms-telescope-count { color: color-mix(in srgb, var(--bubble-color) 75%, #000); font: 600 clamp(11px, 8cqw, 14px)/1.2 var(--font-ui); }
+@container (max-width: 96px) { .ms-page .ms-telescope-logos > *:nth-child(n+2) { display: none; } }
+.ms-page .ms-telescope-detail { padding: 16px; }
+.ms-page .ms-telescope-detail .ms-area { max-width: 720px; margin: 0 auto; animation: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .ms-page .ms-telescope-bubble { animation: ms-bubble-enter 520ms cubic-bezier(0.2, 0.8, 0.2, 1) var(--bubble-delay, 0ms) backwards, ms-bubble-drift 9s ease-in-out calc(var(--bubble-delay, 0ms) + 520ms) infinite; }
+}
+@media (max-width: 640px) {
+  .ms-page .ms-telescope-canvas { aspect-ratio: 1 / 1; margin: 4px auto 8px; }
+  .ms-page .ms-telescope-field { inset: 0; }
+  .ms-page .ms-telescope-detail { padding: 10px; }
+}

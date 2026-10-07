@@ -57,9 +57,10 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await expect(page.locator(".ms-card-grid")).not.toHaveCount(0);
     await expect(page.getByRole("button", { name: lang === "fr" ? "Cartes" : "Cards", exact: true })).toHaveAttribute("aria-pressed", "true");
     await page.getByRole("button", { name: lang === "fr" ? "Par usage" : "By use", exact: true }).click();
-    // By use: a board of areas, each listing its uses and tools.
-    await expect(page.locator(".ms-board")).toBeVisible();
-    await expect(page.locator(".ms-area")).not.toHaveCount(0);
+    // By use: telescope. Area bubbles, then a zoom into a readable area card.
+    await expect(page.locator(".ms-telescope-bubble")).not.toHaveCount(0);
+    await page.locator(".ms-telescope-bubble").first().click();
+    await expect(page.locator(".ms-telescope-detail .ms-area")).toBeVisible();
     await expect(page.locator(".ms-area-tool").first()).toBeVisible();
     await expect(page.locator(".ms-area-tool").first()).toBeEnabled();
     await page.locator(".ms-area-tool").first().focus();

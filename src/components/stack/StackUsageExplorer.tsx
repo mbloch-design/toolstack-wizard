@@ -14,10 +14,10 @@ const BUBBLE_COLORS = ["#2F6FED", "#7C3AED", "#0E9F6E", "#E8590C", "#D6336C", "#
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 
 type Territory = ReturnType<typeof stackMapTerritories>[number];
-type Bubble = { id: string; label: string; weight: number; tool?: ToolSummary; tools?: ToolSummary[] };
+export type Bubble = { id: string; label: string; weight: number; tool?: ToolSummary; tools?: ToolSummary[] };
 
 // Deterministic packing: no moving simulation, stable positions for the same selection.
-function pack(items: Bubble[], inside: boolean) {
+export function pack(items: Bubble[], inside: boolean) {
   const placed: { item: Bubble; x: number; y: number; r: number }[] = [];
   for (const item of [...items].sort((a, b) => b.weight - a.weight || a.id.localeCompare(b.id))) {
     const r = Math.max(item.tool ? 60 : 80, 60 * Math.sqrt(item.weight));

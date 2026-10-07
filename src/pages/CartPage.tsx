@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Plus, Search, Check, X, CircleDot, LayoutGrid } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
-import StackAreaBoard from "@/components/stack/StackAreaBoard";
+import StackTelescope from "@/components/stack/StackTelescope";
 import StackToolInspector from "@/components/stack/StackToolInspector";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
@@ -246,9 +246,9 @@ export default function CartPage() {
       </div>}
       <div className={`ms-workspace${selected ? " ms-workspace--focused" : ""}`}>
         <div className="ms-overview">
-          {/* By use: a board of areas (the bubble explorer, StackUsageExplorer, read
-              poorly below the first level; kept in the codebase for now). */}
-          {mode === "map" ? <StackAreaBoard territories={mapTerritories} lang={lang} selectedId={selected?.id} overlaps={overlapsById} onSelect={(slug) => selected && toolKey(selected) === slug ? closeInspector() : selectTool(slug)} /> : <section aria-labelledby="ms-list-title">
+          {/* By use: telescope. Area bubbles first (their weight at a glance), then a
+              zoom into a readable area card (bubbles read poorly below that level). */}
+          {mode === "map" ? <StackTelescope territories={mapTerritories} lang={lang} selectedId={selected?.id} overlaps={overlapsById} onSelect={(slug) => selected && toolKey(selected) === slug ? closeInspector() : selectTool(slug)} /> : <section aria-labelledby="ms-list-title">
             <h2 className="tt-section-title ms-list-title" id="ms-list-title">{activeFilter === "all" ? t("Tous les outils", "All tools") : visibleMap[0]?.label}</h2>
             <div className="ms-card-grid">{listTools.map(renderTool)}</div>
           </section>}
