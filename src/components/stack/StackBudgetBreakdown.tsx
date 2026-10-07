@@ -52,7 +52,8 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
     .filter((line) => line.amount > 0).sort((a, b) => b.amount - a.amount);
   const areaLines: Line[] = territories.map((t) => ({ id: t.id, label: t.label, amount: t.tools.reduce((sum, tool) => sum + monthly(tool), 0), color: colorOf(t.id) }))
     .filter((line) => line.amount > 0).sort((a, b) => b.amount - a.amount);
-  const byArea = view === "area" && territories.length > 1;
+  // One paid area makes a full circle that says nothing: go by tool then.
+  const byArea = view === "area" && areaLines.length > 1;
   const lines = byArea ? areaLines : toolLines;
   const total = toolLines.reduce((sum, line) => sum + line.amount, 0);
   const freemiumCount = tools.filter((tool) => stackCatalogPrice(tool, lang) === "Freemium").length;
@@ -76,7 +77,7 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
         </div>
         {zoomed
           ? <button type="button" className="ms-zoom-back" onClick={() => { setZoom(null); setFocus(null); }}><ChevronLeft size={16} aria-hidden />{en ? "All areas" : "Tous les domaines"}</button>
-          : total > 0 && territories.length > 1 && <div className="ms-size-switch" role="group" aria-label={en ? "Breakdown" : "Répartition"}>
+          : total > 0 && areaLines.length > 1 && <div className="ms-size-switch" role="group" aria-label={en ? "Breakdown" : "Répartition"}>
             {([["area", en ? "Areas" : "Domaines"], ["tool", en ? "Tools" : "Outils"]] as const).map(([key, label]) => (
               <button key={key} type="button" aria-pressed={view === key} onClick={() => { setView(key); setFocus(null); }}>{label}</button>
             ))}

@@ -35641,3 +35641,53 @@ img[data-logo-loading] {
 .ms-page .ms-stat-bar--share { height: auto; }
 .ms-page .ms-stat-bar--share i { height: 6px; }
 .ms-page .ms-stat-bar--share i:hover { height: 10px; }
+/* Responsive pass (7 Oct 2026), phones: the same story in half the height.
+   Hero figures become rows, the logo cluster shrinks, pairs and tools become
+   compact rows (the tool sheet carries the details). */
+@media (max-width: 640px) {
+  .ms-page .ms-hero .sg-cluster { max-width: 260px; margin-top: 4px; }
+  .ms-page .ms-hero-stats { grid-template-columns: 1fr; max-width: none; margin-top: 24px; padding-top: 0; border-top: 0; }
+  .ms-page .ms-hero-stats > div {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "label value" "bar bar" "sub sub";
+    align-items: center; column-gap: 12px; padding: 14px 0; border-left: 0; border-top: 1px solid var(--color-border);
+  }
+  .ms-page .ms-hero-stats > div:first-child { padding-left: 0; }
+  .ms-page .ms-hero-stats > div:last-child { border-bottom: 1px solid var(--color-border); }
+  .ms-page .ms-hero-stats dt { grid-area: label; }
+  .ms-page .ms-hero-stats dd { grid-area: value; margin: 0; font-size: 26px; }
+  .ms-page .ms-hero-stats .ms-stat-bar { grid-area: bar; max-width: none; margin: 8px 0 4px; }
+  .ms-page .ms-hero-stats > div > span:not(.ms-stat-bar), .ms-page .ms-hero-stats .ms-stat-link { grid-column: 1 / -1; }
+  .ms-page .ms-hero-stats .ms-stat-bar--share em { display: none; }
+  .ms-page .ms-hero-stats .ms-stat-link { justify-self: start; }
+
+  /* Pairs: one compact row of tools, the reason on one line. */
+  .ms-page .ms-pairs-panel .ms-pair { gap: 8px; padding: 12px; }
+  .ms-page .ms-pairs-panel .ms-pair-tool { flex-direction: row; align-items: center; gap: 8px; }
+  .ms-page .ms-pairs-panel .ms-pair-tool:last-child { padding-left: 14px; }
+  .ms-page .ms-pairs-panel .ms-pair-tool strong { font-size: 14px; }
+  .ms-page .ms-pairs-panel .ms-pair-sign { right: -8px; width: 20px; height: 20px; font-size: 11px; }
+  .ms-page .ms-pair-foot .ms-pair-why { overflow: hidden; font-size: 12.5px; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* My tools: an iOS list. Logo, name and area, price on the right. */
+  .ms-page .ms-card-grid { gap: 6px; }
+  .ms-page .ms-tool.ms-tool-card { flex-direction: row; align-items: center; min-height: 64px; border-radius: 16px; }
+  .ms-page .ms-card-top { flex: 1; min-width: 0; padding: 10px 0 10px 12px; gap: 12px; }
+  .ms-page .ms-card-logo { width: 40px; height: 40px; border-radius: 11px; }
+  .ms-page .ms-card-logo img, .ms-page .ms-card-logo > * { max-width: 26px; max-height: 26px; }
+  .ms-page .ms-card-id strong { font-size: 15px; }
+  .ms-page .ms-card-id span { font-size: 12.5px; }
+  .ms-page .ms-card-foot { flex: none; min-height: 0; margin: 0; padding: 0 14px 0 8px; border-top: 0; }
+  .ms-page .ms-card-overlap { display: none; }
+  .ms-page .ms-card-price { max-width: 110px; font-size: 13px; text-align: right; }
+  .ms-page .ms-card-remove { top: -6px; left: -6px; }
+
+  .ms-page .ms-tools-section .ms-section-row { align-items: flex-start; }
+  .ms-page .sg-section-heading h2 { font-size: 26px; }
+}
+/* Pairs never push past the screen: columns can shrink, text ellipsises. */
+.ms-page .ms-pair { grid-template-columns: minmax(0, 1fr); }
+.ms-page .ms-pair-tools { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.ms-page .ms-pair-tool > span:not(.ms-pair-sign) { min-width: 0; }
+.ms-page .ms-pair-tool small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-pair-foot { min-width: 0; }
+.ms-page .ms-pair-foot .ms-pair-why { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
