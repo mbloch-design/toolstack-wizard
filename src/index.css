@@ -35110,3 +35110,63 @@ img[data-logo-loading] {
 .ms-page .ms-pair-tool small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ms-page .ms-pair-foot { min-width: 0; }
 .ms-page .ms-pair-foot .ms-pair-why { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* Overlap cards (7 Oct 2026): one fixed structure so cards of a row line up.
+   Tools, the reason on one line, then a foot pinned to the bottom: what is
+   paid twice on the left, Compare and Decide on the right. Deciding opens a
+   menu anchored to its button, so nothing around the card moves. */
+.ms-page .ms-pairs-panel .ms-pairs { align-items: stretch; }
+.ms-page .ms-pairs-panel .ms-pair { display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 16px; }
+.ms-page .ms-pair-foot {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "why why" "badge actions";
+  align-items: center; gap: 10px 12px; flex: 1; align-content: space-between; min-width: 0;
+}
+.ms-page .ms-pair-foot .ms-pair-why { grid-area: why; margin: 0; }
+.ms-page .ms-pair-foot .ms-pair-double { grid-area: badge; justify-self: start; }
+.ms-page .ms-pair-actions { grid-area: actions; display: flex; gap: 6px; padding-top: 10px; }
+.ms-page .ms-pair-foot .ms-pair-double { margin-top: 10px; }
+.ms-page .ms-pair-actions .ms-pair-compare, .ms-page .ms-pair-decide {
+  display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: var(--radius-pill);
+  font: 600 13px/1 var(--font-ui); text-decoration: none; white-space: nowrap; transition: background-color 160ms ease, color 160ms ease;
+}
+.ms-page .ms-pair-actions .ms-pair-compare { background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
+.ms-page .ms-pair-actions .ms-pair-compare:hover { background: hsl(var(--secondary) / .7); }
+.ms-page .ms-pair-decide { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+.ms-page .ms-pair-decide:hover, .ms-page .ms-pair-decide[data-state="open"] { background: hsl(var(--foreground) / .82); }
+.ms-page .ms-pair-decide:focus-visible, .ms-page .ms-pair-actions .ms-pair-compare:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+/* The pair's top line separates tools from the foot. */
+.ms-page .ms-pairs-panel .ms-pair-tools { padding-bottom: 12px; border-bottom: 1px solid hsl(var(--border) / .7); }
+
+/* Decision menu (portal, so not scoped to .ms-page). */
+.ms-decide-menu.ms-decide-menu { display: grid; gap: 2px; width: 300px; padding: 8px; border: 0; border-radius: 18px; background: hsl(var(--card)); box-shadow: 0 12px 40px rgba(15, 15, 15, .16), 0 0 0 1px hsl(var(--border)); }
+.ms-decide-title { margin: 4px 8px 6px; color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-decide-menu button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 8px; border-radius: 12px; text-align: left; transition: background-color 140ms ease; }
+.ms-decide-menu button:hover, .ms-decide-menu button:focus-visible { background: hsl(var(--secondary)); outline: none; }
+.ms-decide-menu button > span:last-child { display: grid; gap: 2px; min-width: 0; }
+.ms-decide-menu strong { font: 600 14px/1.25 var(--font-ui); }
+.ms-decide-menu small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1.3 var(--font-ui); }
+.ms-decide-both { display: grid; flex: none; place-items: center; width: 28px; height: 28px; border-radius: 8px; background: color-mix(in srgb, #E8590C 12%, hsl(var(--card))); color: color-mix(in srgb, #E8590C 82%, #000); font: 600 13px/1 var(--font-ui); }
+
+/* Follow-up of decisions, under the overlaps lead. */
+.ms-page .ms-decided { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin: -8px 0 20px; color: hsl(var(--muted-foreground)); font: 500 14px/1.4 var(--font-ui); }
+.ms-page .ms-decided-saved { display: inline-flex; align-items: center; height: 28px; padding: 0 12px; border-radius: var(--radius-pill); background: color-mix(in srgb, #0E9F6E 12%, hsl(var(--card))); color: color-mix(in srgb, #0E9F6E 80%, #000); font-weight: 650; }
+
+/* Compare page: decision for my stack, after the verdict. */
+.ms-compare-decision { display: grid; gap: 12px; margin: 32px 0 56px; padding: 20px; border-radius: 24px; background: var(--color-surface-soft); }
+.ms-cd-eyebrow { margin: 0; color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-cd-lead, .ms-cd-status { margin: 0; color: hsl(var(--muted-foreground)); font: 400 15px/1.5 var(--font-ui); }
+.ms-cd-lead strong, .ms-cd-status strong { color: hsl(var(--foreground)); font-weight: 600; }
+.ms-cd-choices { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 8px; }
+.ms-cd-choices button { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-radius: 16px; background: hsl(var(--card)); text-align: left; transition: box-shadow 160ms ease, transform 160ms ease; }
+.ms-cd-choices button:hover { box-shadow: 0 0 0 1.5px hsl(var(--foreground)); }
+.ms-cd-choices button:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+.ms-cd-choices button > span { display: grid; gap: 2px; min-width: 0; }
+.ms-cd-choices strong { font: 600 14.5px/1.25 var(--font-ui); }
+.ms-cd-choices small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1.3 var(--font-ui); }
+.ms-cd-link { margin-left: 4px; color: hsl(var(--foreground)); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 640px) {
+  .ms-page .ms-pairs-panel .ms-pair { padding: 12px; }
+  .ms-page .ms-pair-foot { grid-template-areas: "why why" "badge badge" "actions actions"; }
+  .ms-page .ms-pair-foot .ms-pair-double:empty { display: none; }
+  .ms-page .ms-pair-actions { justify-content: flex-end; padding-top: 0; }
+}
+@media (max-width: 640px) { .ms-page .ms-pairs-panel .ms-pair { height: auto; } .ms-page .ms-pair-foot { flex: none; align-content: start; } }

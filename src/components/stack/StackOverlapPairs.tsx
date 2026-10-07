@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import ToolLogo from "@/components/ToolLogo";
 import type { Category } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
@@ -8,6 +9,8 @@ import { convertAmount, formatAmount, type Currency } from "@/lib/currencyRates"
 import { toolMonthlyCost } from "@/lib/stackCost";
 import { stackDisplayLabel, stackRelations } from "@/lib/stackUsage";
 import { toolKey } from "@/lib/stackView";
+import { trackEvent } from "@/lib/analytics";
+import { pairKey, type StackDecision } from "@/hooks/useStackDecisions";
 
 /**
  * « 03 / Recoupements, ce qui fait doublon » de Ma stack : chaque paire
@@ -30,6 +33,10 @@ interface Props {
   prefix: string;
   lang: "fr" | "en";
   onSelect: (slug: string) => void;
+  /** Decisions already taken (keep both, keep one, replace). */
+  decisions: Record<string, StackDecision>;
+  onDecide: (kind: "keep-both" | "keep-one", kept: ToolSummary, removed: ToolSummary, saving: number) => void;
+  onReopen: (keys: string[]) => void;
 }
 const SHOWN = 4;
 
@@ -40,8 +47,9 @@ export type ScoredPair = { a: ToolSummary; b: ToolSummary; shared: string[]; exp
  * catalogue uses), each with what is paid twice: when both are paid, the
  * cheaper one. Sorted by that amount. `doubleTotal` counts each tool once.
  * Shared by the hero figure and the Overlaps section so both say the same.
+ * Pairs the person chose to keep both are left out.
  */
-export function scoreOverlapPairs(tools: ToolSummary[], categories: Category[], isPaid: (slug: string) => boolean, currency: Currency, lang: "fr" | "en") {
+export function scoreOverlapPairs(tools: ToolSummary[], categories: Category[], isPaid: (slug: string) => boolean, currency: Currency, lang: "fr" | "en", decisions: Record<string, StackDecision> = {}) {
   const monthly = (tool: ToolSummary) => {
     const cost = toolMonthlyCost(tool, isPaid, lang);
     return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0;
@@ -54,6 +62,8 @@ export function scoreOverlapPairs(tools: ToolSummary[], categories: Category[], 
       const key = [a.id, relation.tool.id].sort().join("|");
       if (seen.has(key)) continue;
       seen.add(key);
+      // A pair the person decided to keep is no longer "to review" nor paid twice.
+      if (decisions[pairKey(toolKey(a), toolKey(relation.tool))]?.kind === "keep-both") continue;
       const [ca, cb] = [monthly(a), monthly(relation.tool)];
       pairs.push({ a, b: relation.tool, shared: relation.commonUses, explicit: relation.explicit, double: ca > 0 && cb > 0 ? Math.min(ca, cb) : 0, cheaper: ca <= cb ? a : relation.tool });
     }
@@ -68,10 +78,19 @@ export function scoreOverlapPairs(tools: ToolSummary[], categories: Category[], 
   return { pairs, doubleTotal };
 }
 
-export default function StackOverlapPairs({ tools, categories, isPaid, currency, prefix, lang, onSelect }: Props) {
+export default function StackOverlapPairs({ tools, categories, isPaid, currency, prefix, lang, onSelect, decisions, onDecide, onReopen }: Props) {
   const en = lang === "en";
   const [all, setAll] = useState(false);
-  const { pairs: scored, doubleTotal } = scoreOverlapPairs(tools, categories, isPaid, currency, lang);
+  const [deciding, setDeciding] = useState<string | null>(null);
+  const { pairs: scored, doubleTotal } = scoreOverlapPairs(tools, categories, isPaid, currency, lang, decisions);
+  const monthly = (tool: ToolSummary) => {
+    const cost = toolMonthlyCost(tool, isPaid, lang);
+    return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0;
+  };
+  // Follow-up of past decisions: what is no longer paid, and pairs kept on purpose.
+  const pinned = new Set(tools.map(toolKey));
+  const keptBoth = Object.entries(decisions).filter(([key, d]) => d.kind === "keep-both" && key.split("|").every((slug) => pinned.has(slug))).map(([key]) => key);
+  const saved = Object.values(decisions).reduce((sum, d) => sum + (d.kind !== "keep-both" && d.removed && !pinned.has(d.removed) ? d.saving : 0), 0);
   const costLabel = (tool: ToolSummary) => {
     const cost = toolMonthlyCost(tool, isPaid, lang);
     if (cost.kind === "paid") return `≈ ${formatAmount(Math.round(convertAmount(cost.monthly, cost.currency, currency)), currency, lang)}${en ? "/mo" : "/mois"}`;
@@ -80,7 +99,7 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
     return en ? "Price not checked" : "Prix non relevé";
   };
 
-  if (!scored.length) return null;
+  if (!scored.length && !keptBoth.length && saved <= 0) return null;
   const money = (amount: number) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${en ? "/mo" : "/mois"}`;
 
   return (
@@ -89,14 +108,21 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
         <span className="sg-eyebrow">{en ? "Overlaps" : "Recoupements"}</span>
         <h2 id="ms-overlaps-section-title">{en ? "What may be doing the same job?" : "Qu’est-ce qui fait peut-être doublon ?"}</h2>
       </div>
-      <p className="ms-section-lead">{en
+      {scored.length === 0
+        ? <p className="ms-section-lead">{en ? "Nothing left to review: every overlap has a decision." : "Plus rien à examiner : chaque recoupement a sa décision."}</p>
+        : <p className="ms-section-lead">{en
         ? <>{scored.length} pair{scored.length > 1 ? "s" : ""} of tools may do the same job{doubleTotal > 0 && <>, <strong className="ms-double">{money(doubleTotal)} paid twice</strong> on catalogue entry plans</>}. Keeping both can be the right call: compare before deciding.</>
-        : <>{scored.length} paire{scored.length > 1 ? "s" : ""} d’outils {scored.length > 1 ? "font" : "fait"} peut-être le même travail{doubleTotal > 0 && <>, soit <strong className="ms-double">{money(doubleTotal)} payés en double</strong> sur les offres d’entrée du catalogue</>}. Garder les deux peut être le bon choix : comparez avant de décider.</>}</p>
-      <div className="ms-pairs-panel">
+        : <>{scored.length} paire{scored.length > 1 ? "s" : ""} d’outils {scored.length > 1 ? "font" : "fait"} peut-être le même travail{doubleTotal > 0 && <>, soit <strong className="ms-double">{money(doubleTotal)} payés en double</strong> sur les offres d’entrée du catalogue</>}. Garder les deux peut être le bon choix : comparez avant de décider.</>}</p>}
+      {(saved > 0 || keptBoth.length > 0) && <p className="ms-decided">
+        {saved > 0 && <span className="ms-decided-saved">{en ? `Already ${money(saved)} lighter` : `Déjà ${money(saved)} en moins`}</span>}
+        {keptBoth.length > 0 && <span>{en ? `${keptBoth.length} pair${keptBoth.length > 1 ? "s" : ""} kept on purpose.` : `${keptBoth.length} paire${keptBoth.length > 1 ? "s" : ""} gardée${keptBoth.length > 1 ? "s" : ""} volontairement.`} <button type="button" className="ms-inline-link" onClick={() => onReopen(keptBoth)}>{en ? "Review again" : "Revoir"}</button></span>}
+      </p>}
+      {scored.length > 0 && <div className="ms-pairs-panel">
       <ul className="ms-pairs">
-        {(all ? scored : scored.slice(0, SHOWN)).map(({ a, b, shared, explicit, double }) => (
-          <li key={`${a.id}|${b.id}`} className="ms-pair">
-            {double > 0 && <span className="ms-pair-double">{en ? `${money(double)} paid twice` : `${money(double)} en double`}</span>}
+        {(all ? scored : scored.slice(0, SHOWN)).map(({ a, b, shared, explicit, double }) => {
+          const key = pairKey(toolKey(a), toolKey(b));
+          const open = deciding === key;
+          return <li key={key} className="ms-pair">
             <div className="ms-pair-tools">
               {[a, b].map((tool, i) => (
                 <button key={tool.id} type="button" className="ms-pair-tool" onClick={() => onSelect(toolKey(tool))}>
@@ -107,18 +133,42 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
               ))}
             </div>
             <div className="ms-pair-foot">
+              {double > 0 && <span className="ms-pair-double">{en ? `${money(double)} paid twice` : `${money(double)} en double`}</span>}
               <p className="ms-pair-why">{shared.length > 0
                 ? (en ? `Shared: ${shared.slice(0, 3).join(", ")}` : `En commun : ${shared.slice(0, 3).map((use) => stackDisplayLabel(use, lang)).join(", ")}`)
                 : explicit ? (en ? "Listed as alternatives in the catalogue" : "Alternatives l’une de l’autre au catalogue") : ""}</p>
-              <Link className="ms-pair-compare" to={comparisonPath(prefix, toolKey(a), toolKey(b))}>{en ? "Compare" : "Comparer"}</Link>
+              <div className="ms-pair-actions">
+                <Link className="ms-pair-compare" to={comparisonPath(prefix, toolKey(a), toolKey(b))} onClick={() => trackEvent("stack_compare_click", { source: "pairs", a: toolKey(a), b: toolKey(b) })}>{en ? "Compare" : "Comparer"}</Link>
+                {/* The decision opens in a menu anchored to the button: the card
+                    keeps its size, nothing around it moves. */}
+                <Popover open={open} onOpenChange={(value) => setDeciding(value ? key : null)}>
+                  <PopoverTrigger asChild>
+                    <button type="button" className="ms-pair-decide">{en ? "Decide" : "Décider"}</button>
+                  </PopoverTrigger>
+                  <PopoverContent align="end" sideOffset={8} className="ms-decide-menu">
+                    <p className="ms-decide-title">{en ? "Your decision" : "Votre décision"}</p>
+                    {[[a, b], [b, a]].map(([keep, drop]) => {
+                      const saving = monthly(drop);
+                      return <button key={keep.id} type="button" onClick={() => { setDeciding(null); onDecide("keep-one", keep, drop, saving); }}>
+                        <ToolLogo tool={keep} size={28} />
+                        <span><strong>{en ? `Keep ${keep.name}` : `Garder ${keep.name}`}</strong><small>{saving > 0 ? (en ? `${money(saving)} less, ${drop.name} leaves` : `${money(saving)} en moins, ${drop.name} part`) : (en ? `${drop.name} leaves the stack` : `${drop.name} quitte la stack`)}</small></span>
+                      </button>;
+                    })}
+                    <button type="button" onClick={() => { setDeciding(null); onDecide("keep-both", a, b, 0); }}>
+                      <span className="ms-decide-both" aria-hidden="true">⇄</span>
+                      <span><strong>{en ? "Keep both" : "Garder les deux"}</strong><small>{en ? "They don’t do the same job" : "Ils ne font pas le même travail"}</small></span>
+                    </button>
+                  </PopoverContent>
+                </Popover>
+              </div>
             </div>
-          </li>
-        ))}
+          </li>;
+        })}
       </ul>
       {scored.length > SHOWN && <button type="button" className="ms-tile-more" aria-expanded={all} onClick={() => setAll((v) => !v)}>
         {all ? (en ? "Show fewer" : "Afficher moins") : (en ? `Show all ${scored.length}` : `Voir les ${scored.length}`)}
       </button>}
-      </div>
+      </div>}
     </section>
   );
 }

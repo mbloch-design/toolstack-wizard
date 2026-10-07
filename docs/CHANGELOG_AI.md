@@ -1,3 +1,10 @@
+## 2026-10-07 : Ma stack, de « Comparer » à la décision
+
+- Chaque recoupement a « Décider » : menu ancré (garder l'un, l'autre quitte la stack ; garder les deux), sans décalage de mise en page. Cartes à structure fixe (outils, raison, pied avec le payé en double et les actions).
+- Comparatifs : bandeau « Ma stack » après le verdict quand un outil est dans la stack (garder l'un, remplacer, garder), avec l'effet sur le budget ; rendu après montage, HTML prérendu inchangé.
+- Suivi : décisions mémorisées (`useStackDecisions`), annulables ; « Déjà ≈ X €/mois en moins » ; paires gardées exclues du payé en double et des étiquettes, « Revoir » pour les rouvrir.
+- Mesure des CTA et décisions (8 événements GA4, sans donnée personnelle, soumis au consentement).
+
 ## 2026-10-07 : Ma stack, ce que je paie et ce que je paie en double
 
 - Fil conducteur de la page : combien je paie, et combien je paie en double. Ordre suivant la visite : hero, recoupements, budget, mes outils.

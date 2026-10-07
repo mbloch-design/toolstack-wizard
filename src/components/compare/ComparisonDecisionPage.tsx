@@ -18,6 +18,7 @@ import { resolveMonthlyPrice } from '@/lib/pricing';
 import { computeToolTrimScore } from '@/lib/toolTrimScore';
 import { localizePlanName } from '@/lib/planNames';
 import brandColors from '@/data/brandColors.json';
+import StackCompareDecision from '@/components/stack/StackCompareDecision';
 
 
 interface Props { toolA: Tool; toolB: Tool; content: CompareEditorialContent; slugPair: string }
@@ -138,6 +139,9 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
       </aside>}
       {/* Spec sheet, Apple "Compare" style: criteria down the left, the two
           tools in aligned columns, so a row reads in one sweep. */}
+      {/* Personal follow-up of "Compare" from My stack: decide for my stack
+          right after the verdict. Client-only, prerendered HTML unchanged. */}
+      <StackCompareDecision toolA={toolA} toolB={toolB} prefix={prefix} lang={lang} t={t} />
       <section id="comparaison" className="cp-guide-section cp-spec" aria-labelledby="cp-differences-title">
         <h2 id="cp-differences-title">{t('Comparez selon votre usage', 'Compare by use case')}</h2>
         <div className="cp-spec-table" role="table" aria-label={t(`${toolA.name} et ${toolB.name} comparés`, `${toolA.name} and ${toolB.name} compared`)}>

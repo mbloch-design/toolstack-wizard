@@ -11,6 +11,7 @@ import { toolMonthlyCost } from "@/lib/stackCost";
 import { formatNativePrice, pickNativePrice, stackCatalogPrice, toolKey } from "@/lib/stackView";
 import { stackDisplayLabel, stackPlacement, stackUsageLabels } from "@/lib/stackUsage";
 import type { ScoredPair } from "@/components/stack/StackOverlapPairs";
+import { trackEvent } from "@/lib/analytics";
 
 /**
  * Un outil de Ma stack, ouvert depuis sa carte : une feuille (à droite sur
@@ -121,13 +122,13 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                         : (en ? "Catalogue alternative" : "Alternative du catalogue")}</small></span>
                     </button>
                     {pair.double > 0 && <span className="ms-pair-double">{en ? `${money(pair.double)} twice` : `${money(pair.double)} en double`}</span>}
-                    <Link className="ms-ts-compare" to={comparisonPath(prefix, slug, toolKey(other))}>{en ? "Compare" : "Comparer"}</Link>
+                    <Link className="ms-ts-compare" to={comparisonPath(prefix, slug, toolKey(other))} onClick={() => trackEvent("stack_compare_click", { source: "sheet", a: slug, b: toolKey(other) })}>{en ? "Compare" : "Comparer"}</Link>
                   </li>;
                 })}</ul>}
             </section>
 
             <footer className="ms-ts-foot">
-              <Link className="tt-button-primary ms-ts-profile" to={`${prefix}/tool/${slug}`}>{en ? "View full profile" : "Voir la fiche complète"}<ArrowRight size={16} aria-hidden /></Link>
+              <Link className="tt-button-primary ms-ts-profile" to={`${prefix}/tool/${slug}`} onClick={() => trackEvent("stack_profile_click", { tool_slug: slug })}>{en ? "View full profile" : "Voir la fiche complète"}<ArrowRight size={16} aria-hidden /></Link>
               <button type="button" className="ms-ts-remove" onClick={onRemove}>{en ? "Remove from my stack" : "Retirer de ma stack"}</button>
             </footer>
           </>;

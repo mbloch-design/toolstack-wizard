@@ -105,5 +105,5 @@ Constats :
 Prochaines étapes proposées, dans l'ordre :
 1. Mesurer (page vue, feuille ouverte, comparer, freemium répondu, retrait, remplacement) ; décider ensuite sur données.
 2. Rendre le chiffre juste : choisir son plan réel et le nombre de places dans la feuille outil ; priorité de recherche prix sur les outils les plus ajoutés.
-3. Fermer la boucle : depuis une paire ou un comparatif, « Remplacer X par Y » dans la stack, économie affichée, annulable.
+3. Fait (7 oct.) : boucle fermée. « Décider » sur chaque paire (menu : garder l'un, garder les deux) et bandeau « Ma stack » sur les comparatifs (garder l'un, remplacer, garder). Annulable, « Déjà ≈ X €/mois en moins », paires gardées sorties du payé en double (« Revoir »). Événements : stack_tool_open, stack_compare_click, stack_profile_click, stack_decision, stack_decision_undo, stack_remove, stack_freemium_open, stack_freemium_answer. À relire dans GA4 vers le 21/10.
 4. Garder et partager : lien de partage lecture seule (boucle d'acquisition), puis synchronisation par compte.

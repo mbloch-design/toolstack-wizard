@@ -20,6 +20,8 @@ import { useStackPaidPlans } from "@/hooks/useStackPaidPlans";
 import { stackMonthlyCost, toolMonthlyCost } from "@/lib/stackCost";
 import { convertAmount, formatAmount } from "@/lib/currencyRates";
 import { HERO_CLUSTER_SLOTS } from "@/lib/heroCluster";
+import { pairKey, useStackDecisions } from "@/hooks/useStackDecisions";
+import { trackEvent } from "@/lib/analytics";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 
@@ -56,12 +58,16 @@ export default function CartPage() {
   // (explicit catalogue alternative or shared catalogue uses), so the cards,
   // the summary and the panel always say the same thing. No score, no advice
   // to remove: the person decides.
+  // Pairs kept on purpose (a decision) are no longer flagged anywhere.
+  const { currency } = useCurrency();
+  const { decisions, decide, reopen } = useStackDecisions(t, (amount) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${t("/mois", "/mo")}`);
   const overlapsById = useMemo(() => new Map(selectedTools.map((tool) => [tool.id,
-    stackRelations(tool, selectedTools, categories, lang).filter((relation) => relation.explicit || relation.commonUses.length > 0).map((relation) => relation.tool),
-  ])), [selectedTools, categories, lang]);
+    stackRelations(tool, selectedTools, categories, lang)
+      .filter((relation) => (relation.explicit || relation.commonUses.length > 0) && decisions[pairKey(toolKey(tool), toolKey(relation.tool))]?.kind !== "keep-both")
+      .map((relation) => relation.tool),
+  ])), [selectedTools, categories, lang, decisions]);
   // Monthly cost with the same rules as By use: freemium at 0 unless declared
   // paid, total converted at the site's dated rate (Michael, 7 Oct 2026).
-  const { currency } = useCurrency();
   const plans = useStackPaidPlans();
   const stackCost = stackMonthlyCost(selectedTools, plans.isPaid, currency, lang);
   // Hero cluster: costliest tools first, so the one that weighs most on the
@@ -85,10 +91,14 @@ export default function CartPage() {
   const [freemiumOpen, setFreemiumOpen] = useState(false);
   function setFreemiumSheet(open: boolean) {
     setFreemiumOpen(open);
-    if (!open) plans.markReviewed(freemiumTools.map(toolKey));
+    if (open) trackEvent("stack_freemium_open", { count: unreviewed.length });
+    if (!open) {
+      plans.markReviewed(freemiumTools.map(toolKey));
+      trackEvent("stack_freemium_answer", { freemium: freemiumTools.length, paid: freemiumTools.filter((tool) => plans.isPaid(toolKey(tool))).length });
+    }
   }
   // Hero and Overlaps section share one computation: same pairs, same amount.
-  const overlapScore = useMemo(() => scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang), [selectedTools, categories, plans.paid, currency, lang]);
+  const overlapScore = useMemo(() => scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang, decisions), [selectedTools, categories, plans.paid, currency, lang, decisions]);
   const overlapPairs = overlapScore.pairs.length;
   const empty = state.pinnedToolSlugs.length === 0;
   const showSearch = empty || searchOpen;
@@ -118,6 +128,7 @@ export default function CartPage() {
     const next = new URLSearchParams(params);
     next.set("outil", slug);
     setParams(next, { state: { skipScrollReset: true }, preventScrollReset: true });
+    trackEvent("stack_tool_open", { tool_slug: slug });
   }
   function closeInspector() {
     const selectedId = selected?.id;
@@ -135,6 +146,7 @@ export default function CartPage() {
     const entry = state.toolEntries[index];
     if (!entry) return;
     unpinTool(slug);
+    trackEvent("stack_remove", { tool_slug: slug, source: editing ? "edit" : "sheet" });
     closeInspector();
     requestAnimationFrame(() => addRef.current?.focus({ preventScroll: true }));
     toast(t(`${name} retiré de ma stack.`, `${name} removed from your stack.`), {
@@ -285,12 +297,14 @@ export default function CartPage() {
         <span className="ms-calibrate-logos" aria-hidden="true">{unreviewed.slice(0, 4).map((tool) => <ToolLogo key={tool.id} tool={tool} size={28} />)}</span>
         <p><strong>{t(`${unreviewed.length} outil${unreviewed.length > 1 ? "s" : ""} freemium compte${unreviewed.length > 1 ? "nt" : ""} 0 €.`, `${unreviewed.length} freemium tool${unreviewed.length > 1 ? "s count" : " counts"} as free.`)}</strong> {t("Vous en payez certains ? Votre coût et vos doublons en dépendent.", "Do you pay for some? Your cost and duplicates depend on it.")}</p>
         <div className="ms-calibrate-actions">
-          <button type="button" className="ms-calibrate-skip" onClick={() => plans.markReviewed(freemiumTools.map(toolKey))}>{t("Aucun", "None")}</button>
+          <button type="button" className="ms-calibrate-skip" onClick={() => { plans.markReviewed(freemiumTools.map(toolKey)); trackEvent("stack_freemium_answer", { freemium: freemiumTools.length, paid: 0, quick: true }); }}>{t("Aucun", "None")}</button>
           <button type="button" className="tt-button-primary ms-calibrate-go" onClick={() => setFreemiumSheet(true)}>{t("Indiquer lesquels", "Pick them")}</button>
         </div>
       </aside>}
 
-      <StackOverlapPairs tools={selectedTools} categories={categories} isPaid={plans.isPaid} currency={currency} prefix={prefix} lang={lang} onSelect={selectTool} />
+      <StackOverlapPairs tools={selectedTools} categories={categories} isPaid={plans.isPaid} currency={currency} prefix={prefix} lang={lang} onSelect={selectTool}
+        decisions={decisions} onReopen={(keys) => keys.forEach((key) => { const [a, b] = key.split("|"); reopen(a, b); })}
+        onDecide={(kind, kept, removed, saving) => decide(kind, { slug: toolKey(kept), name: kept.name }, { slug: toolKey(removed), name: removed.name }, saving, "stack")} />
 
       <section className="sg-section ms-section ms-budget-section" aria-labelledby="ms-budget-section-title">
         <div className="sg-section-heading"><span className="sg-eyebrow">{t("Budget", "Budget")}</span><h2 id="ms-budget-section-title">{t("Combien coûte ma stack ?", "What does my stack cost?")}</h2></div>
