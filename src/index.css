@@ -35346,3 +35346,23 @@ img[data-logo-loading] {
 .ms-page .ms-hero--empty { grid-template-columns: minmax(0, 1fr); }
 .ms-page .ms-overview-bar { justify-content: flex-end; margin: 0 0 8px; }
 .ms-page .ms-hero-stats .ms-stat--overlaps { padding: 0 16px; border: 0; border-left: 1px solid var(--color-border); border-radius: 0; background: none; }
+/* Ma stack, sections numérotées comme les pages Stack (7 oct.). */
+.ms-page .ms-overview-bar { align-items: flex-end; justify-content: space-between; margin: 8px 0 20px; }
+.ms-page .ms-overview-heading { margin: 0; }
+.ms-page .ms-section { margin-top: 72px; }
+.ms-page .ms-section-lead { max-width: 70ch; margin: -12px 0 20px; color: hsl(var(--muted-foreground)); font: 400 15px/1.55 var(--font-ui); }
+.ms-page .ms-budget-link { padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.ms-page .ms-budget-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ms-page .ms-pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+.ms-page .ms-pair { display: grid; gap: 10px; padding: 16px; border: 1px solid hsl(var(--border)); border-radius: 18px; background: hsl(var(--card)); }
+.ms-page .ms-pair-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.ms-page .ms-pair-tool { position: relative; display: flex; align-items: center; gap: 10px; min-width: 0; padding: 10px; border-radius: 12px; background: hsl(var(--secondary) / .5); text-align: left; }
+.ms-page .ms-pair-tool:hover { background: hsl(var(--secondary)); }
+.ms-page .ms-pair-tool > span:not(.ms-pair-sign) { display: grid; min-width: 0; }
+.ms-page .ms-pair-tool strong { overflow: hidden; font: 650 14.5px/1.25 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-pair-tool small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1.3 var(--font-ui); }
+.ms-page .ms-pair-sign { position: absolute; top: 50%; right: -16px; z-index: 1; display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: hsl(var(--card)); box-shadow: 0 0 0 1px hsl(var(--border)); color: color-mix(in srgb, #E8590C 80%, #000); font: 600 13px/1 var(--font-ui); transform: translateY(-50%); }
+.ms-page .ms-pair-why { margin: 0; color: hsl(var(--muted-foreground)); font: 400 13px/1.45 var(--font-ui); }
+.ms-page .ms-pair-compare { justify-self: start; display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: var(--radius-pill); background: hsl(var(--foreground)); color: hsl(var(--background)); font: 600 13px/1 var(--font-ui); text-decoration: none; }
+.ms-page .ms-pair-compare:hover { background: hsl(var(--foreground) / .85); }
+@media (max-width: 640px) { .ms-page .ms-section { margin-top: 48px; } .ms-page .ms-pair-tools { grid-template-columns: 1fr; } .ms-page .ms-pair-sign { display: none; } }

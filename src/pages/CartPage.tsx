@@ -3,7 +3,10 @@ import { Link, useSearchParams } from "react-router-dom";
 import { Plus, Search, Check, X, CircleDot, LayoutGrid } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
+import Breadcrumb from "@/components/Breadcrumb";
 import StackTelescope from "@/components/stack/StackTelescope";
+import StackBudgetBreakdown from "@/components/stack/StackBudgetBreakdown";
+import StackOverlapPairs from "@/components/stack/StackOverlapPairs";
 import StackToolInspector from "@/components/stack/StackToolInspector";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
@@ -194,6 +197,9 @@ export default function CartPage() {
   }
 
   return <main className="ms-page">
+    {/* Topbar breadcrumb like every other page ("Home / My stack"); a personal
+        page, so no structured data. */}
+    <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
     {/* Hero like the editorial stack pages (sg-hero--cluster): title, an App
         Store info strip, the add action, and my tools as an icon cluster with
         the costliest one in the middle. */}
@@ -224,6 +230,7 @@ export default function CartPage() {
     {/* One factual line to read the whole stack at a glance, with the view
         switch on the same row: it stays in place in both views. */}
     {!empty && <div className="ms-overview-bar">
+      <div className="sg-section-heading ms-overview-heading"><span className="sg-eyebrow">01 / {t("Mes outils", "My tools")}</span><h2>{t("Quel outil pour quoi ?", "Which tool does what?")}</h2></div>
       <div className="ms-view-switch" role="group" aria-label={t("Affichage de la stack", "Stack view")}>
         <button type="button" aria-label={t("Cartes", "Cards")} title={t("Cartes", "Cards")} aria-pressed={mode === "stack"} onClick={() => chooseMode("stack")}><LayoutGrid size={21} aria-hidden /><span>{t("Cartes", "Cards")}</span></button>
         <button type="button" aria-label={t("Par usage", "By use")} title={t("Par usage", "By use")} aria-pressed={mode === "map"} onClick={() => chooseMode("map")}><CircleDot size={21} aria-hidden /><span>{t("Par usage", "By use")}</span></button>
@@ -288,6 +295,10 @@ export default function CartPage() {
         </div>
       {selected && <aside className="ms-focus-rail">{renderInspector(selectedTools)}</aside>}
       </div>
+      {/* 02 / Budget and 03 / Overlaps: where the money goes, then what may be
+          doing the same job. Same rules as the rest of the page. */}
+      <StackBudgetBreakdown territories={mapTerritories} isPaid={plans.isPaid} currency={currency} lang={lang} onSelect={selectTool} />
+      <StackOverlapPairs tools={selectedTools} categories={categories} isPaid={plans.isPaid} currency={currency} prefix={prefix} lang={lang} onSelect={selectTool} />
       {missing.length > 0 && <section className="ms-unavailable"><h2>{t("Outils indisponibles", "Unavailable tools")}</h2>
         <p>{t("Ces références ne sont plus disponibles dans le catalogue actuel. Votre sélection est conservée.", "These references are unavailable in the current catalogue. Your selection is retained.")}</p>
         {missing.map((slug) => <div key={slug}><span>{slug}</span><button onClick={() => removeTool(slug, slug)}>{t("Retirer de ma stack", "Remove from stack")}</button></div>)}
