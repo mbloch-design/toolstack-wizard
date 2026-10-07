@@ -129,7 +129,7 @@ export interface PrescriptionOutput {
 }
 
 export interface PricingV5 {
-  compare_price_monthly_eur: number;
+  compare_price_monthly_eur: number | null;
   compare_plan_name?: string;
   compare_plan_kind?: string;
   price_reliability?: string;

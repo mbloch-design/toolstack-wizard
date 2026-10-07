@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import catalog from "@/data/tools_index.json";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { buildExplorationCandidates, getExplorerHref, getObjectiveExplorationThemeId, getObjectiveExplorationThemes, parseExplorationSource } from "@/lib/toolExploration";
 
@@ -14,6 +15,19 @@ function tool(overrides: Partial<ToolSummary> & Pick<ToolSummary, "id" | "name">
 }
 
 describe("toolExploration", () => {
+  it.each([["notion", "obsidian"], ["chatgpt", "claude"], ["slack", "discord"]])("treats %s and %s as alternatives, not product extensions", (sourceSlug, candidateSlug) => {
+    const source = catalog.find((item) => item.slug === sourceSlug) as ToolSummary;
+    const candidate = catalog.find((item) => item.slug === candidateSlug) as ToolSummary;
+    const [relation] = buildExplorationCandidates({ getCategoryLabel: () => "", sourceTools: [source], tools: [source, candidate], stackEntries: [] });
+    expect(relation.direction).toBe("alternatives");
+  });
+
+  it("does not invent an ecosystem relation from a shared slug prefix", () => {
+    const drive = tool({ id: "google-drive", name: "Google Drive", categoryId: "storage" });
+    const ads = tool({ id: "google-ads", name: "Google Ads", categoryId: "advertising" });
+    expect(buildExplorationCandidates({ getCategoryLabel: () => "", sourceTools: [drive], tools: [drive, ads], stackEntries: [] })).toEqual([]);
+  });
+
   it("attribue une relation à l’outil source exact le plus fort", () => {
     const figma = tool({ id: "figma", name: "Figma", functional_needs: ["prototypage"] });
     const notion = tool({ id: "notion", name: "Notion", categoryId: "organisation", functional_needs: ["notes"] });
@@ -33,7 +47,7 @@ describe("toolExploration", () => {
   it("conserve les outils de la stack et distingue la destination", () => {
     const figma = tool({ id: "figma", name: "Figma", functional_needs: ["design"] });
     const penpot = tool({ id: "penpot", name: "Penpot", functional_needs: ["design"] });
-    const entry = { toolSlug: "penpot", needIds: ["dev"], addedAt: "2026-01-01T00:00:00.000Z", assignmentMode: "manual" as const };
+    const entry = { toolSlug: "penpot", needIds: ["dev"], addedAt: "2026-01-01T00:00:00.000Z", assignmentMode: "manual" as const, intent: "stack" as const };
     const [elsewhere] = buildExplorationCandidates({ destinationId: "design", getCategoryLabel: () => "Design", sourceTools: [figma], stackEntries: [entry], tools: [figma, penpot] });
     const [atDestination] = buildExplorationCandidates({ destinationId: "dev", getCategoryLabel: () => "Design", sourceTools: [figma], stackEntries: [entry], tools: [figma, penpot] });
 

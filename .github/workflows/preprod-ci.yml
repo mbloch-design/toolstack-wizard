@@ -33,14 +33,17 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Diagnostic gate
-        run: npm run validate:diagnostic
+      - name: Application unit tests
+        run: npm test
+
+      - name: SEO build contract fixtures
+        run: npm run test:seo-contracts
 
       - name: Design tokens gate
         run: npm run validate:design-tokens
 
       - name: Typecheck
-        run: npx tsc --noEmit
+        run: npm run typecheck
 
       - name: Ma stack unit and exploration tests
         run: npm run test:ma-stack

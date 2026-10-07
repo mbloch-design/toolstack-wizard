@@ -81,7 +81,7 @@ export function renderGuideMarkdown(
   });
   html = html.replace(/^#### (.+)$/gm, (_match, text) => `<h4>${cleanHeading(text)}</h4>`);
   html = html.replace(/^# (.+)$/gm, (_match, text) => (
-    text.trim().toLowerCase() === articleTitle.trim().toLowerCase() ? "" : `<h1>${text}</h1>`
+    text.trim().toLowerCase() === articleTitle.trim().toLowerCase() ? "" : `<h2>${cleanHeading(text)}</h2>`
   ));
   html = html.replace(/\*\*\*(.+?)\*\*\*/g, "<strong><em>$1</em></strong>");
   html = html.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");

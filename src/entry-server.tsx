@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, type ReactNode } from "react";
 import { renderToString } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { StaticRouter } from "react-router-dom/server";
@@ -26,6 +26,9 @@ import ComparesIndexPage from "@/pages/ComparesIndexPage";
 import AboutPage from "@/pages/AboutPage";
 import TransparencyPage from "@/pages/TransparencyPage";
 import ContactPage from "@/pages/ContactPage";
+import LegalNoticePage from "@/pages/LegalNoticePage";
+import TermsPage from "@/pages/TermsPage";
+import CartPage from "@/pages/CartPage";
 import SubmitToolPage from "@/pages/SubmitToolPage";
 import ExplorerPage from "@/pages/ExplorerPage";
 import PersonaPillarPage from "@/pages/PersonaPillarPage";
@@ -620,3 +623,29 @@ export async function renderBestOfGuidePage(path: string, guideId: string, lang:
     </HelmetProvider>,
   );
 }
+
+
+// These public routes are indexable even though they are not in the sitemap.
+// Render their existing components with the same providers as the other sections.
+function renderAdditionalSection(path: string, element: ReactNode): string {
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={new QueryClient()}>
+        <TooltipProvider>
+          <Toaster /><Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop /><DynamicCanonical />
+            <ErrorBoundary><Suspense fallback={null}>
+              <Routes><Route path="/:lang" element={<LangLayout />}>
+                <Route path="*" element={element} />
+              </Route></Routes>
+            </Suspense></ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+export async function renderLegalNoticePage(path: string): Promise<string> { return renderAdditionalSection(path, <LegalNoticePage />); }
+export async function renderTermsPage(path: string): Promise<string> { return renderAdditionalSection(path, <TermsPage />); }
+export async function renderCartPage(path: string): Promise<string> { return renderAdditionalSection(path, <CartPage />); }

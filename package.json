@@ -65,7 +65,7 @@
     "pilot:n8n-identity": "node scripts/n8n-identity-pilot.mjs",
     "summarize:phase4": "node scripts/summarize-phase4-wave.mjs",
     "assess:g4": "node scripts/assess-phase4-g4.mjs",
-    "verify:preprod": "npm test -- --environment node && tsc --noEmit && npm run build",
+    "verify:preprod": "npm test && npm run test:seo-contracts && npm run typecheck && npm run build",
     "validate:preprod": "node scripts/validate-preprod.mjs",
     "setup:preprod-secrets": "node scripts/setup-preprod-secrets.mjs",
     "deploy:preprod-supabase": "node scripts/deploy-preprod-supabase.mjs",
@@ -95,7 +95,11 @@
     "setup:go30-admin-auth": "node scripts/setup-go30-admin-auth.mjs",
     "rotate:go30-admin-password": "node scripts/setup-go30-admin-auth.mjs --rotate",
     "validate:go30": "node scripts/validate-go30-admin-auth.mjs",
-    "login:vercel": "npx --yes vercel login"
+    "login:vercel": "npx --yes vercel login",
+    "typecheck:app": "tsc --noEmit -p tsconfig.app.json",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
+    "typecheck": "npm run typecheck:app && npm run typecheck:node",
+    "test:seo-contracts": "vitest run --config vitest.research.config.mjs scripts/validate-generated-seo.test.mjs scripts/lib/ssr-contract.test.mjs"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

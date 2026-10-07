@@ -19,27 +19,52 @@ import { trackEvent } from "@/lib/analytics";
 
 export type { StackDecision } from "@/lib/stackDecisions";
 import type { StackDecision } from "@/lib/stackDecisions";
+import { normalizeStackDecisions } from "@/lib/stackDecisions";
 import type { Currency } from "@/lib/currencyRates";
 
 const KEY = "tooltrim-ma-stack-decisions-v1";
 const listeners = new Set<() => void>();
 let memory: Record<string, StackDecision> | null = null;
+let persistedRaw: string | null | undefined;
 const EMPTY: Record<string, StackDecision> = {};
 
 function read(): Record<string, StackDecision> {
-  if (memory) return memory;
   try {
-    const parsed = JSON.parse(window.localStorage.getItem(KEY) || "{}");
-    memory = parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+    const raw = window.localStorage.getItem(KEY);
+    if (memory && raw === persistedRaw) return memory;
+    let parsed: unknown;
+    try { parsed = JSON.parse(raw || "{}"); } catch { parsed = {}; }
+    memory = normalizeStackDecisions(parsed);
+    persistedRaw = raw;
   } catch {
-    memory = {};
+    memory ??= {};
   }
   return memory as Record<string, StackDecision>;
 }
 function write(next: Record<string, StackDecision>) {
   memory = next;
-  try { window.localStorage.setItem(KEY, JSON.stringify(next)); } catch { /* session only */ }
+  try {
+    const raw = JSON.stringify(next);
+    window.localStorage.setItem(KEY, raw);
+    persistedRaw = raw;
+  } catch { /* session only */ }
   listeners.forEach((listener) => listener());
+}
+
+function handleStorage(event: StorageEvent) {
+  if (event.key !== KEY && event.key !== null) return;
+  try { if (event.storageArea && event.storageArea !== window.localStorage) return; } catch { return; }
+  read();
+  listeners.forEach((listener) => listener());
+}
+
+function subscribe(listener: () => void) {
+  if (listeners.size === 0 && typeof window !== "undefined") window.addEventListener("storage", handleStorage);
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+    if (listeners.size === 0 && typeof window !== "undefined") window.removeEventListener("storage", handleStorage);
+  };
 }
 
 export const pairKey = (a: string, b: string) => [a, b].sort().join("|");
@@ -48,7 +73,7 @@ type Source = "stack" | "compare" | "sheet";
 
 export function useStackDecisions(t: (fr: string, en: string) => string, formatSaving: (amount: number) => string, currency: Currency) {
   const decisions = useSyncExternalStore(
-    (listener) => { listeners.add(listener); return () => { listeners.delete(listener); }; },
+    subscribe,
     () => (typeof window === "undefined" ? EMPTY : read()),
     () => EMPTY,
   );

@@ -12,6 +12,7 @@ export type ToolPresentationInput = {
   pricing_v5?: {
     compare_price_monthly_eur?: number | null;
     compare_plan_kind?: string | null;
+    compare_plan_name?: string | null;
     source_domain?: string | null;
     plans?: { isComparePlan?: boolean; billingPeriod?: string | null; nativeAmount?: number | null; nativeCurrency?: string | null }[];
   } | null;

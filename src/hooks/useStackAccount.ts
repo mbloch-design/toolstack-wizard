@@ -63,7 +63,7 @@ export function useStackAccount({ enabled = true, lang, state, replaceState }: U
     if (!user || hydratedUserRef.current === user.id) return;
     let cancelled = false;
 
-    async function hydrate() {
+    async function hydrate(user: User) {
       setStatus("syncing");
       const { data, error: loadError } = await supabase
         .from("stack_snapshots")
@@ -104,7 +104,7 @@ export function useStackAccount({ enabled = true, lang, state, replaceState }: U
       setError(null);
     }
 
-    void hydrate().catch((cause) => {
+    void hydrate(user).catch((cause) => {
       if (cancelled) return;
       setError(cause instanceof Error ? cause.message : "Synchronization failed");
       setStatus("error");

@@ -72,7 +72,7 @@ const HOME_TOOL_ASSETS: Record<string, { cover: string | null; logo?: string }> 
   grammarly: { cover: "/home-cards/grammarly.webp", logo: "/home-logos/grammarly.webp" },
 };
 
-function withHomeAssets<T extends { id: string; name: string; slug?: string; ogImageUrl?: string; logo?: string }>(tool: T): T {
+function withHomeAssets<T extends { id: string; name: string; slug?: string; ogImageUrl?: string | null; logo?: string | null }>(tool: T): T {
   const nameSlug = tool.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   const asset = [tool.slug, tool.id, nameSlug]
     .map((key) => key && HOME_TOOL_ASSETS[key])
@@ -245,7 +245,7 @@ export default function HomePageV2() {
     const map = new Map<string, typeof tools>();
     for (const tool of tools) {
       const key = tool.categoryId;
-      if (!key || TOOL_IMAGE_BLOCKLIST.has(tool.slug)) continue;
+      if (!key || TOOL_IMAGE_BLOCKLIST.has(tool.slug || tool.id)) continue;
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(tool);
     }
@@ -281,7 +281,7 @@ export default function HomePageV2() {
 
   useEffect(() => {
     if (workWithHosts.length > 0 && !workWithHosts.some(({ tool }) => tool.slug === selectedHost)) {
-      setSelectedHost(workWithHosts[0].tool.slug);
+      setSelectedHost(workWithHosts[0].tool.slug || workWithHosts[0].tool.id);
     }
   }, [selectedHost, workWithHosts]);
 
@@ -294,7 +294,7 @@ export default function HomePageV2() {
       tool.host_app === selectedHost ? 2 : (tool.worksWith || []).includes(selectedHost) ? 1 : 0;
     return tools
       .filter((tool) =>
-        !TOOL_IMAGE_BLOCKLIST.has(tool.slug)
+        !TOOL_IMAGE_BLOCKLIST.has(tool.slug || tool.id)
         && ((tool.worksWith || []).includes(selectedHost)
           || tool.host_app === selectedHost
           || tool.bundle_parent === selectedHost))
@@ -461,7 +461,7 @@ export default function HomePageV2() {
                   const index = workWithHosts.findIndex(({ tool }) => tool.slug === selectedHost);
                   const step = event.key === "ArrowRight" ? 1 : -1;
                   const next = workWithHosts[(index + step + workWithHosts.length) % workWithHosts.length];
-                  setSelectedHost(next.tool.slug);
+                  setSelectedHost(next.tool.slug || next.tool.id);
                   const buttons = event.currentTarget.querySelectorAll<HTMLButtonElement>("[role=tab]");
                   buttons[(index + step + buttons.length) % buttons.length]?.focus();
                   event.preventDefault();
@@ -477,7 +477,7 @@ export default function HomePageV2() {
                       aria-selected={selected}
                       tabIndex={selected ? 0 : -1}
                       className={`v2-ww-tab${selected ? " is-active" : ""}`}
-                      onClick={() => setSelectedHost(tool.slug)}
+                      onClick={() => setSelectedHost(tool.slug || tool.id)}
                     >
                       <ToolLogo tool={tool as any} size={20} className="v2-ww-tab-logo" />
                       <span>{tool.name}</span>

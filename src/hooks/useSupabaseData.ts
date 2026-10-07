@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import type { Tool, Category } from "@/data/types";
 import categoriesIndexJson from "@/data/categories_index.json";
@@ -29,6 +30,13 @@ export const SsrComparePairContext = createContext<{ toolA: Tool; toolB: Tool } 
 // usePostBySlug can skip its client-only fetch when the post was already
 // server-rendered for this exact slug/lang.
 export const SsrPostContext = createContext<Post | undefined>(undefined);
+
+function useIsSsrToolPage() {
+  const ssrTool = useContext(SsrToolContext);
+  const { pathname } = useLocation();
+  const routeSlug = pathname.match(/^\/(?:fr|en)\/tool\/([^/]+)(?:\/|$)/)?.[1];
+  return !!ssrTool && !!routeSlug && (ssrTool.slug === routeSlug || ssrTool.id === routeSlug);
+}
 
 // Static fallback data (synchronous — available on first render)
 const staticCategories: Category[] = (categoriesIndexJson as any[]).map((c: any) => ({
@@ -366,8 +374,11 @@ export async function loadLocalPosts(lang: string): Promise<Post[]> {
     ? import("@/data/posts-en.json")
     : import("@/data/posts-fr.json"))
     .then((module) => {
-      const posts = (module.default as any[]).map((post) => mapPost({
+      const posts = (module.default as any[]).map((post, index) => mapPost({
         ...post,
+        // Local snapshots have no DB id. Negative compatibility ids stay
+        // separate from remote numeric ids; search identity is slug + locale.
+        id: post.id ?? -(index + 1),
         lang: post.lang || lang,
       }));
       localPostsCache.set(lang, posts);
@@ -395,7 +406,7 @@ export function useCategories() {
   // as the page itself — refreshing it on mount only swaps content after
   // it's already painted, causing a visible layout shift for no real
   // freshness gain. Skip the refresh there; every other page keeps it.
-  const isSsrPage = useContext(SsrToolContext) !== undefined;
+  const isSsrPage = useIsSsrToolPage();
   const [categories, setCategories] = useState<Category[]>(_categoriesCache ?? staticCategories);
   const [loading, setLoading] = useState(!_categoriesCache && !isSsrPage);
 
@@ -410,7 +421,7 @@ export function useCategories() {
       }
       setLoading(false);
     })();
-  }, []);
+  }, [isSsrPage]);
 
   return { categories, loading };
 }
@@ -515,75 +526,80 @@ interface RefreshOptions {
 export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) {
   // Same rationale as useCategories above: don't swap the alternatives/
   // summaries list out from under an already-painted SSR'd tool page.
-  const isSsrPage = useContext(SsrToolContext) !== undefined;
+  const isSsrPage = useIsSsrToolPage();
   const [tools, setTools] = useState<ToolSummary[]>(_toolSummariesCache ?? staticToolSummaries);
   const [loading, setLoading] = useState(refreshRemote && !_toolSummariesCache && !isSsrPage);
 
   useEffect(() => {
     if (!refreshRemote || _toolSummariesCache || isSsrPage) return;
+    let cancelled = false;
+    setLoading(true);
     (async () => {
-      const { data, error } = await supabase
-        .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, pricing_en, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality, relevant_for, personas, free_alternative, substitutable, better_alternative, published_at, works_with, form_factor")
-        .limit(5000);
+      try {
+        const { data, error } = await supabase
+          .from("tools")
+          .select("id, slug, name, category, short_description, short_description_en, pricing, pricing_en, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality, relevant_for, personas, free_alternative, substitutable, better_alternative, published_at, works_with, form_factor")
+          .limit(5000);
 
-      if (!error && data && data.length > 0) {
-        // Supabase rows are frequently missing og_image_url/logo (not every
-        // tool has been re-crawled since the static catalogue was built).
-        // mergeById below replaces the static entry wholesale per id, so an
-        // empty remote value would silently overwrite a real local one —
-        // fall back to the static catalogue's value whenever Supabase's is
-        // blank, same fix as mapSupabaseCat's nameEn above.
-        const staticById = new Map(staticToolSummaries.map((t) => [t.id, t]));
-        const remoteTools = data.map((t: any) => {
-          const localFallback = staticById.get(asLocalizedText(t.id, ""));
-          return {
-            id: asLocalizedText(t.id, ""),
-            slug: asLocalizedText(t.slug || t.id, ""),
-            name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
-            categoryId: asLocalizedText(t.category, ""),
-            shortDescription: asLocalizedText(t.short_description, "", "fr"),
-            shortDescriptionEn: asLocalizedText(t.short_description_en || t.short_description, "", "en"),
-            pricing: t.pricing || { free: "", paid: "" },
-            pricingEn: t.pricing_en || (JSON.stringify(t.pricing) === JSON.stringify(localFallback?.pricing) ? localFallback?.pricingEn : null),
-            defaultMonthlyPrice: t.default_monthly_price || 0,
-            affiliateLink: asLocalizedText(t.affiliate_link, "") || localFallback?.affiliateLink || "",
-            ogImageUrl: asLocalizedText(t.og_image_url, "") || localFallback?.ogImageUrl || "",
-            covers: t.covers || [],
-            pros: t.pros || [],
-            prosEn: t.pros_en || t.pros || null,
-            tool_type: t.tool_type || "satellite",
-            host_app: t.host_app || null,
-            bundle_parent: t.bundle_parent || null,
-            websiteUrl: asLocalizedText(t.website_url || t.affiliate_link, "") || localFallback?.websiteUrl || "",
-            logo: asLocalizedText(t.logo, "") || localFallback?.logo || "",
-            substitution_cluster_v2: t.substitution_cluster_v2 || null,
-            functional_needs: t.functional_needs || [],
-            verticals: t.verticals || [],
-            prescription_quality: t.prescription_quality || null,
-            relevantFor: t.relevant_for || [],
-            personas: t.personas || [],
-            freeAlternative: t.free_alternative || null,
-            substitutable: t.substitutable ?? true,
-            betterAlternative: t.better_alternative || null,
-            compareMonthlyPrice: Number(t.pricing_v5?.compare_price_monthly_eur) || null,
-            priceUndisclosed: /non public/i.test(t.pricing_v5?.compare_plan_name || "")
-              || Boolean(localFallback?.priceUndisclosed),
-            // Supabase has no native price column: keep the attested one.
-            ...(localFallback?.nativePrices ? { nativePrices: localFallback.nativePrices } : {}),
-            ...(localFallback?.alternatives ? { alternatives: localFallback.alternatives } : {}),
-            publishedAt: t.published_at || null,
-            worksWith: Array.isArray(t.works_with) ? t.works_with : [],
-            formFactor: t.form_factor || null,
-          };
-        });
-        const merged = mergeById(staticToolSummaries, remoteTools)
-          .filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug || t.id));
-        _toolSummariesCache = merged;
-        setTools(merged);
-      }
-      setLoading(false);
+        if (!error && data && data.length > 0) {
+          // Supabase rows are frequently missing og_image_url/logo (not every
+          // tool has been re-crawled since the static catalogue was built).
+          // mergeById below replaces the static entry wholesale per id, so an
+          // empty remote value would silently overwrite a real local one —
+          // fall back to the static catalogue's value whenever Supabase's is
+          // blank, same fix as mapSupabaseCat's nameEn above.
+          const staticById = new Map(staticToolSummaries.map((t) => [t.id, t]));
+          const remoteTools = data.map((t: any) => {
+            const localFallback = staticById.get(asLocalizedText(t.id, ""));
+            return {
+              id: asLocalizedText(t.id, ""),
+              slug: asLocalizedText(t.slug || t.id, ""),
+              name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
+              categoryId: asLocalizedText(t.category, ""),
+              shortDescription: asLocalizedText(t.short_description, "", "fr"),
+              shortDescriptionEn: asLocalizedText(t.short_description_en || t.short_description, "", "en"),
+              pricing: t.pricing || { free: "", paid: "" },
+              pricingEn: t.pricing_en || (JSON.stringify(t.pricing) === JSON.stringify(localFallback?.pricing) ? localFallback?.pricingEn : null),
+              defaultMonthlyPrice: t.default_monthly_price || 0,
+              affiliateLink: asLocalizedText(t.affiliate_link, "") || localFallback?.affiliateLink || "",
+              ogImageUrl: asLocalizedText(t.og_image_url, "") || localFallback?.ogImageUrl || "",
+              covers: t.covers || [],
+              pros: t.pros || [],
+              prosEn: t.pros_en || t.pros || null,
+              tool_type: t.tool_type || "satellite",
+              host_app: t.host_app || null,
+              bundle_parent: t.bundle_parent || null,
+              websiteUrl: asLocalizedText(t.website_url || t.affiliate_link, "") || localFallback?.websiteUrl || "",
+              logo: asLocalizedText(t.logo, "") || localFallback?.logo || "",
+              substitution_cluster_v2: t.substitution_cluster_v2 || null,
+              functional_needs: t.functional_needs || [],
+              verticals: t.verticals || [],
+              prescription_quality: t.prescription_quality || null,
+              relevantFor: t.relevant_for || [],
+              personas: t.personas || [],
+              freeAlternative: t.free_alternative || null,
+              substitutable: t.substitutable ?? true,
+              betterAlternative: t.better_alternative || null,
+              compareMonthlyPrice: Number(t.pricing_v5?.compare_price_monthly_eur) || null,
+              priceUndisclosed: /non public/i.test(t.pricing_v5?.compare_plan_name || "")
+                || Boolean(localFallback?.priceUndisclosed),
+              // Supabase has no native price column: keep the attested one.
+              ...(localFallback?.nativePrices ? { nativePrices: localFallback.nativePrices } : {}),
+              ...(localFallback?.alternatives ? { alternatives: localFallback.alternatives } : {}),
+              publishedAt: t.published_at || null,
+              worksWith: Array.isArray(t.works_with) ? t.works_with : [],
+              formFactor: t.form_factor || null,
+            };
+          });
+          const merged = mergeById(staticToolSummaries, remoteTools)
+            .filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug || t.id));
+          _toolSummariesCache = merged;
+          if (!cancelled) setTools(merged);
+        }
+      } catch { /* Preserve the local catalogue when the remote request fails. */ }
+      finally { if (!cancelled) setLoading(false); }
     })();
+    return () => { cancelled = true; };
   }, [isSsrPage, refreshRemote]);
 
   return { tools, loading };
@@ -655,7 +671,7 @@ export function useToolBySlug(slug: string | undefined) {
     return () => {
       cancelled = true;
     };
-  }, [slug]);
+  }, [slug, ssrMatches, ssrTool]);
 
   // Never expose the previous route's record during the first render of a
   // slug change, before its loading effect runs.
@@ -664,19 +680,13 @@ export function useToolBySlug(slug: string | undefined) {
 }
 
 export function usePosts(lang: string, { refreshRemote = true }: RefreshOptions = {}) {
-  // On an SSR'd tool page, ToolDetailPage already has its relatedPosts
-  // pre-computed server-side (see SsrRelatedPostsContext) and never reads
-  // this hook's own `posts` value — so fetching the full posts dataset
-  // (a ~70KB chunk + a Supabase query, both sitting in the critical
-  // network chain) is pure waste there. Skip it entirely in that case.
-  const skip = useContext(SsrRelatedPostsContext) !== undefined;
   const cachedLocalPosts = localPostsCache.get(lang) ?? [];
   const cachedRemotePosts = remotePostsCache.get(lang);
   const [posts, setPosts] = useState<Post[]>(cachedRemotePosts ?? cachedLocalPosts);
-  const [loading, setLoading] = useState(!skip && !cachedRemotePosts && cachedLocalPosts.length === 0);
+  const [loading, setLoading] = useState(!cachedRemotePosts && cachedLocalPosts.length === 0);
 
   useEffect(() => {
-    if (skip || remotePostsCache.has(lang)) return;
+    if (remotePostsCache.has(lang)) return;
     let cancelled = false;
 
     (async () => {
@@ -716,7 +726,7 @@ export function usePosts(lang: string, { refreshRemote = true }: RefreshOptions 
     return () => {
       cancelled = true;
     };
-  }, [lang, refreshRemote, skip]);
+  }, [lang, refreshRemote]);
 
   return { posts, loading };
 }

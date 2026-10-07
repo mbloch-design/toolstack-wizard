@@ -16,24 +16,55 @@ import { useSyncExternalStore } from "react";
 function createStore(key: string) {
   const listeners = new Set<() => void>();
   let memory: string[] | null = null;
+  let persistedRaw: string | null | undefined;
   const read = (): string[] => {
-    if (memory) return memory;
     try {
       const raw = window.localStorage.getItem(key);
-      const parsed = raw ? JSON.parse(raw) : [];
-      memory = Array.isArray(parsed) ? parsed.filter((slug) => typeof slug === "string") : [];
+      if (memory && raw === persistedRaw) return memory;
+      let parsed: unknown;
+      try { parsed = raw ? JSON.parse(raw) : []; } catch { parsed = []; }
+      memory = Array.isArray(parsed) ? [...new Set(parsed.filter((slug) => typeof slug === "string" && slug.length > 0))] : [];
+      persistedRaw = raw;
     } catch {
-      memory = [];
+      memory ??= [];
     }
     return memory;
   };
+  const notify = () => listeners.forEach((listener) => listener());
   const write = (next: string[]) => {
     memory = next;
-    try { window.localStorage.setItem(key, JSON.stringify(next)); } catch { /* session only */ }
-    listeners.forEach((listener) => listener());
+    try {
+      const raw = JSON.stringify(next);
+      window.localStorage.setItem(key, raw);
+      persistedRaw = raw;
+    } catch { /* Keep the session snapshot when persistence is blocked. */ }
+    notify();
   };
-  const subscribe = (listener: () => void) => { listeners.add(listener); return () => { listeners.delete(listener); }; };
-  return { read, write, subscribe };
+  const update = (updater: (current: string[]) => string[]) => {
+    const previous = memory;
+    const current = read();
+    const next = updater(current);
+    if (next !== current) write(next);
+    else if (previous !== current) notify();
+  };
+  const handleStorage = (event: StorageEvent) => {
+    if (event.key !== key && event.key !== null) return;
+    try { if (event.storageArea && event.storageArea !== window.localStorage) return; } catch { return; }
+    // Reread current persistence: a queued event may describe an older write.
+    read();
+    // Another consumer may already have refreshed the shared snapshot during
+    // its render; every subscriber still needs to check the current value.
+    notify();
+  };
+  const subscribe = (listener: () => void) => {
+    if (listeners.size === 0 && typeof window !== "undefined") window.addEventListener("storage", handleStorage);
+    listeners.add(listener);
+    return () => {
+      listeners.delete(listener);
+      if (listeners.size === 0 && typeof window !== "undefined") window.removeEventListener("storage", handleStorage);
+    };
+  };
+  return { read, update, subscribe };
 }
 
 const paidStore = createStore("tooltrim-ma-stack-paid-plans-v1");
@@ -49,15 +80,15 @@ export function useStackPaidPlans() {
   const reviewed = useStore(reviewedStore);
   const isPaid = (slug: string) => paid.includes(slug);
   const setPaid = (slug: string, value: boolean) => {
-    const current = paidStore.read();
-    if (value === current.includes(slug)) return;
-    paidStore.write(value ? [...current, slug] : current.filter((item) => item !== slug));
+    paidStore.update((current) => value === current.includes(slug)
+      ? current : value ? [...current, slug] : current.filter((item) => item !== slug));
   };
   const isReviewed = (slug: string) => reviewed.includes(slug);
   const markReviewed = (slugs: string[]) => {
-    const current = reviewedStore.read();
-    const next = [...new Set([...current, ...slugs])];
-    if (next.length !== current.length) reviewedStore.write(next);
+    reviewedStore.update((current) => {
+      const next = [...new Set([...current, ...slugs])];
+      return next.length === current.length ? current : next;
+    });
   };
   return { paid, isPaid, setPaid, isReviewed, markReviewed };
 }

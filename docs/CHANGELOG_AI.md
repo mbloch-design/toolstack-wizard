@@ -1,3 +1,13 @@
+## 2026-10-07 — Points 2 et 3 de la revue technique Superpowers
+
+- CI réalignée sur les suites conservées ; typecheck explicite application/configuration Vite, diagnostics corrigés sans retirer les options strictes.
+- SSR obligatoire : renderers requis, exceptions bloquantes, contrôle du root et d'un H1 sur le sitemap et les autres HTML indexables. Mentions légales, conditions et Ma stack prérendues ; titres markdown secondaires et guide facturation corrigés.
+- Navigation depuis SSR : exemptions limitées à la fiche courante, hôtes avec fallback visible ; stacks absentes/erreurs terminent le chargement. Shards stacks revalidés comme les outils.
+- Recherche guides : clés stables langue/slug et navigation cohérente avec les résultats Orama ; catalogue guides disponible après une fiche SSR.
+- Alternatives distinguées des extensions ; plans/décisions synchronisés entre onglets et données persistées invalides filtrées individuellement.
+- Baseline design recalée sur la dette existante, sans modification CSS ; fixture négative confirmant le rejet de nouvelle dette. Port Playwright 8080 explicite et serveur réutilisé désactivé.
+- Validation du périmètre isolé : 242 tests applicatifs, 16 contrats SEO, 93 tests Ma stack, typecheck app/node et build PASS ; 15/15 régressions Chromium sur le build production local et 6/6 avec démarrage automatique de Vite. Détails et limites dans CORRECTIONS_TECHNIQUES_2026-10-07.md. Point 1 laissé au traitement manuel annoncé ; refonte CategoriesIndexPage et fichiers catalogue non suivis préservés. Aucun push ni déploiement.
+
 ## 2026-10-07 — Revue technique Superpowers et corrections locales
 
 - Audit architecture, sécurité/backend, livraison/SEO/recherche et dépendances : rapport REVUE_TECHNIQUE_2026-10-07.md, preuves sous output/tooltrim-technical-review-2026-10-07.

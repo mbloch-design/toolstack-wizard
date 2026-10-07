@@ -20,6 +20,9 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "@/routes/detailPages": [
+        "./src/routes/detailPages.client.ts"
       ]
     },
     "skipLibCheck": true,

@@ -516,7 +516,7 @@ function CategoryCard({
           </div>
           {cat.description && (
             <p className="cat-index-card-description">
-              {t(cat.description, cat.descriptionEn)}
+              {t(cat.description, cat.descriptionEn || cat.description)}
             </p>
           )}
           <div className="cat-index-card-meta">

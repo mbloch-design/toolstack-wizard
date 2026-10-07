@@ -22,7 +22,7 @@ import { Analytics } from "@vercel/analytics/react";
 // SSR build, but can remain route chunks in the browser. import.meta.env.SSR
 // is replaced at build time, so each build keeps only the relevant branch.
 import HomePageV2 from "@/pages/HomePageV2";
-import { ComparePage, GuideDetailPage, ToolDetailPage } from "@/routes/detailPages";
+import { ArticleFacturation, ComparePage, GuideDetailPage, ToolDetailPage } from "@/routes/detailPages";
 
 // Lazy-loaded pages (below the fold / secondary routes)
 const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
@@ -47,7 +47,6 @@ const NotFound = lazy(() => import("@/pages/NotFound"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const PersonaPillarPage = lazy(() => import("@/pages/PersonaPillarPage"));
 const BestOfGuidePage = lazy(() => import("@/pages/BestOfGuidePage"));
-const ArticleFacturation = lazy(() => import("@/pages/ArticleFacturation"));
 const BackOfficePage = lazy(() => import("@/pages/BackOfficePage"));
 
 const queryClient = new QueryClient({
@@ -288,7 +287,7 @@ function RedirectToolToEn() {
 function RedirectCanonicalToolSlug() {
   const { lang } = useParams();
   const location = useLocation();
-  const redirects = { "are-na": "arena", sendinblue: "brevo", clearbit: "hubspot" };
+  const redirects: Record<string, string> = { "are-na": "arena", sendinblue: "brevo", clearbit: "hubspot" };
   const legacySlug = location.pathname.split("/tool/")[1]?.split("/")[0] || "";
   const canonical = redirects[legacySlug];
   if (!canonical) return <Navigate to={`/${lang || "en"}/tools`} replace />;

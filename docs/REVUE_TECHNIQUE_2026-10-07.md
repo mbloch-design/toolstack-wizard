@@ -23,6 +23,10 @@ La correction maintenance n’est pas déployée. Les scripts appelants doivent 
 
 Le catalogue Logic Pro contient un libellé générique ambigu, sans prix attesté dans ces données. Le comparatif affiche désormais un manque de prix. La [page Apple officielle](https://www.apple.com/logic-pro/) distingue essai, abonnement Creator Studio et achat individuel : ce contrôle confirme que le placeholder ne constitue pas une preuve de gratuité. Aucune nouvelle grille tarifaire n’a été injectée.
 
+## Suivi des points 2 et 3
+
+Les défauts CI, TypeScript, SSR, navigation, recherche, cache et stockage ci-dessous sont corrigés localement dans le suivi [CORRECTIONS_TECHNIQUES_2026-10-07.md](CORRECTIONS_TECHNIQUES_2026-10-07.md). La liste suivante conserve les constats initiaux ; elle ne représente plus leur statut courant. Le point 1 a été annoncé traité manuellement par le propriétaire, sans contre-vérification dans ce suivi.
+
 ## Risques encore ouverts — ordre de traitement
 
 P1 = risque important de sécurité, de données ou de livraison ; P2 = défaut fonctionnel reproductible ou robustesse. Aucun P0 établi.
