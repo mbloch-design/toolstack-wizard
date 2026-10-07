@@ -33,10 +33,20 @@ interface Props {
 }
 const SHOWN = 4;
 
-export default function StackOverlapPairs({ tools, categories, isPaid, currency, prefix, lang, onSelect }: Props) {
-  const en = lang === "en";
-  const [all, setAll] = useState(false);
-  const pairs: { a: ToolSummary; b: ToolSummary; shared: string[]; explicit: boolean }[] = [];
+export type ScoredPair = { a: ToolSummary; b: ToolSummary; shared: string[]; explicit: boolean; double: number; cheaper: ToolSummary };
+
+/**
+ * Pairs of tools that overlap (explicit catalogue alternative or shared
+ * catalogue uses), each with what is paid twice: when both are paid, the
+ * cheaper one. Sorted by that amount. `doubleTotal` counts each tool once.
+ * Shared by the hero figure and the Overlaps section so both say the same.
+ */
+export function scoreOverlapPairs(tools: ToolSummary[], categories: Category[], isPaid: (slug: string) => boolean, currency: Currency, lang: "fr" | "en") {
+  const monthly = (tool: ToolSummary) => {
+    const cost = toolMonthlyCost(tool, isPaid, lang);
+    return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0;
+  };
+  const pairs: ScoredPair[] = [];
   const seen = new Set<string>();
   for (const a of tools) {
     for (const relation of stackRelations(a, tools, categories, lang)) {
@@ -44,10 +54,24 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
       const key = [a.id, relation.tool.id].sort().join("|");
       if (seen.has(key)) continue;
       seen.add(key);
-      pairs.push({ a, b: relation.tool, shared: relation.commonUses, explicit: relation.explicit });
+      const [ca, cb] = [monthly(a), monthly(relation.tool)];
+      pairs.push({ a, b: relation.tool, shared: relation.commonUses, explicit: relation.explicit, double: ca > 0 && cb > 0 ? Math.min(ca, cb) : 0, cheaper: ca <= cb ? a : relation.tool });
     }
   }
+  pairs.sort((x, y) => y.double - x.double || Number(y.explicit) - Number(x.explicit));
+  const counted = new Set<string>();
+  const doubleTotal = pairs.reduce((sum, pair) => {
+    if (!pair.double || counted.has(pair.cheaper.id)) return sum;
+    counted.add(pair.cheaper.id);
+    return sum + pair.double;
+  }, 0);
+  return { pairs, doubleTotal };
+}
 
+export default function StackOverlapPairs({ tools, categories, isPaid, currency, prefix, lang, onSelect }: Props) {
+  const en = lang === "en";
+  const [all, setAll] = useState(false);
+  const { pairs: scored, doubleTotal } = scoreOverlapPairs(tools, categories, isPaid, currency, lang);
   const costLabel = (tool: ToolSummary) => {
     const cost = toolMonthlyCost(tool, isPaid, lang);
     if (cost.kind === "paid") return `≈ ${formatAmount(Math.round(convertAmount(cost.monthly, cost.currency, currency)), currency, lang)}${en ? "/mo" : "/mois"}`;
@@ -56,22 +80,7 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
     return en ? "Price not checked" : "Prix non relevé";
   };
 
-  if (!pairs.length) return null;
-
-  const monthly = (tool: ToolSummary) => {
-    const cost = toolMonthlyCost(tool, isPaid, lang);
-    return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0;
-  };
-  const scored = pairs.map((pair) => {
-    const [ca, cb] = [monthly(pair.a), monthly(pair.b)];
-    return { ...pair, double: ca > 0 && cb > 0 ? Math.min(ca, cb) : 0, cheaper: ca <= cb ? pair.a : pair.b };
-  }).sort((x, y) => y.double - x.double || Number(y.explicit) - Number(x.explicit));
-  const counted = new Set<string>();
-  const doubleTotal = scored.reduce((sum, pair) => {
-    if (!pair.double || counted.has(pair.cheaper.id)) return sum;
-    counted.add(pair.cheaper.id);
-    return sum + pair.double;
-  }, 0);
+  if (!scored.length) return null;
   const money = (amount: number) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${en ? "/mo" : "/mois"}`;
 
   return (
@@ -80,10 +89,9 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
         <span className="sg-eyebrow">{en ? "Overlaps" : "Recoupements"}</span>
         <h2 id="ms-overlaps-section-title">{en ? "What may be doing the same job?" : "Qu’est-ce qui fait peut-être doublon ?"}</h2>
       </div>
-      {doubleTotal > 0 && <p className="ms-double-total"><strong>{money(doubleTotal)}</strong><span>{en ? "paid twice for the same job, on catalogue entry plans" : "payés en double pour le même travail, sur les offres d’entrée du catalogue"}</span></p>}
       <p className="ms-section-lead">{en
-        ? `${pairs.length} pair${pairs.length > 1 ? "s" : ""} of tools share uses or are catalogue alternatives. Keeping both can be the right call: compare before deciding.`
-        : `${pairs.length} paire${pairs.length > 1 ? "s" : ""} d’outils partage${pairs.length > 1 ? "nt" : ""} des usages ou sont des alternatives du catalogue. Garder les deux peut être le bon choix : comparez avant de décider.`}</p>
+        ? <>{scored.length} pair{scored.length > 1 ? "s" : ""} of tools may do the same job{doubleTotal > 0 && <>, <strong className="ms-double">{money(doubleTotal)} paid twice</strong> on catalogue entry plans</>}. Keeping both can be the right call: compare before deciding.</>
+        : <>{scored.length} paire{scored.length > 1 ? "s" : ""} d’outils {scored.length > 1 ? "font" : "fait"} peut-être le même travail{doubleTotal > 0 && <>, soit <strong className="ms-double">{money(doubleTotal)} payés en double</strong> sur les offres d’entrée du catalogue</>}. Garder les deux peut être le bon choix : comparez avant de décider.</>}</p>
       <div className="ms-pairs-panel">
       <ul className="ms-pairs">
         {(all ? scored : scored.slice(0, SHOWN)).map(({ a, b, shared, explicit, double }) => (
@@ -107,8 +115,8 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
           </li>
         ))}
       </ul>
-      {pairs.length > SHOWN && <button type="button" className="ms-tile-more" aria-expanded={all} onClick={() => setAll((v) => !v)}>
-        {all ? (en ? "Show fewer" : "Afficher moins") : (en ? `Show all ${pairs.length}` : `Voir les ${pairs.length}`)}
+      {scored.length > SHOWN && <button type="button" className="ms-tile-more" aria-expanded={all} onClick={() => setAll((v) => !v)}>
+        {all ? (en ? "Show fewer" : "Afficher moins") : (en ? `Show all ${scored.length}` : `Voir les ${scored.length}`)}
       </button>}
       </div>
     </section>

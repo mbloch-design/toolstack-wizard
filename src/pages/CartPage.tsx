@@ -6,7 +6,7 @@ import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { AREA_COLORS } from "@/components/stack/StackAreaBoard";
 import StackBudgetBreakdown from "@/components/stack/StackBudgetBreakdown";
-import StackOverlapPairs from "@/components/stack/StackOverlapPairs";
+import StackOverlapPairs, { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
 import StackFreemiumPlans from "@/components/stack/StackFreemiumPlans";
 import StackToolInspector from "@/components/stack/StackToolInspector";
 import { useLang } from "@/hooks/useLang";
@@ -85,12 +85,9 @@ export default function CartPage() {
     setFreemiumOpen(open);
     if (!open) plans.markReviewed(freemiumTools.map(toolKey));
   }
-  const toCheck = unreviewed.length + stackCost.unknown;
-  const overlapPairs = useMemo(() => {
-    const pairs = new Set<string>();
-    overlapsById.forEach((others, id) => others.forEach((other) => pairs.add([id, other.id].sort().join("|"))));
-    return pairs.size;
-  }, [overlapsById]);
+  // Hero and Overlaps section share one computation: same pairs, same amount.
+  const overlapScore = useMemo(() => scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang), [selectedTools, categories, plans.paid, currency, lang]);
+  const overlapPairs = overlapScore.pairs.length;
   const empty = state.pinnedToolSlugs.length === 0;
   const showSearch = empty || searchOpen;
   const existingIds = new Set(selectedTools.map((tool) => tool.id));
@@ -214,12 +211,10 @@ export default function CartPage() {
           <dl className="sg-stats ms-hero-stats">
             <div><dt>{t("Outils", "Tools")}</dt><dd>{selectedTools.length}</dd><span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span></div>
             <div><dt>{t("Coût mensuel", "Monthly cost")}</dt><dd>{stackCost.paid > 0 ? `≈ ${formatAmount(Math.round(stackCost.total), currency, lang)}` : t("Gratuit", "Free")}</dd><span>{stackCost.paid > 0 ? t(`${stackCost.paid} outil${stackCost.paid > 1 ? "s" : ""} payant${stackCost.paid > 1 ? "s" : ""}`, `${stackCost.paid} paid tool${stackCost.paid > 1 ? "s" : ""}`) : t("rien de payant", "nothing paid")}</span></div>
-            <div className={overlapPairs > 0 ? "ms-stat--overlaps" : undefined}><dt>{t("Recoupements", "Overlaps")}</dt><dd>{overlapPairs}</dd>{overlapPairs > 0
-              ? <a className="ms-stat-link" href="#ms-overlaps" onClick={(event) => { event.preventDefault(); jumpTo("ms-overlaps"); }}>{t("à examiner", "to review")} ↓</a>
-              : <span>{t("aucun connu", "none known")}</span>}</div>
-            <div className={toCheck > 0 ? "ms-stat--overlaps" : undefined}><dt>{t("À vérifier", "To check")}</dt><dd>{toCheck}</dd>{unreviewed.length > 0
-              ? <button type="button" className="ms-stat-link" onClick={() => setFreemiumSheet(true)}>{t(`${unreviewed.length} freemium à déclarer`, `${unreviewed.length} freemium to declare`)}</button>
-              : <span>{toCheck > 0 ? t("prix non relevés", "prices not checked") : t("tout est relevé", "all checked")}</span>}</div>
+            {/* The thread of the page: what I pay, and what I pay twice. */}
+            <div className={overlapScore.doubleTotal > 0 ? "ms-stat--overlaps" : undefined}><dt>{t("Payé en double", "Paid twice")}</dt><dd>{overlapScore.doubleTotal > 0 ? `≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)}` : (overlapPairs > 0 ? formatAmount(0, currency, lang) : t("Rien", "None"))}</dd>{overlapPairs > 0
+              ? <a className="ms-stat-link" href="#ms-overlaps" onClick={(event) => { event.preventDefault(); jumpTo("ms-overlaps"); }}>{t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} overlap${overlapPairs > 1 ? "s" : ""}`)} ↓</a>
+              : <span>{t("aucun recoupement connu", "no known overlap")}</span>}</div>
           </dl>
         </>}
         {!empty && <button className="tt-button-primary ms-hero-add" ref={addRef} onClick={() => setSearchOpen((open) => !open)} aria-expanded={searchOpen} aria-controls="ms-search"><Plus size={18} aria-hidden />{t("Ajouter un outil", "Add a tool")}</button>}
