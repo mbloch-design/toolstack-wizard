@@ -35644,3 +35644,22 @@ img[data-logo-loading] {
   .ms-page .ms-hero-stats .ms-stat-bar { align-self: stretch; }
   .ms-page .ms-stat-share { display: none; }
 }
+/* Vertical rhythm (8 Oct 2026), measured: one gap between sections (96px
+   desktop, 64px phone) instead of 92 / 136 / 56 / 88; in the phone hero,
+   tight inside a group (pill, title, lead: 12px), wider between groups
+   (icons to text 20px, text to widgets 24px). */
+.ms-page .sg-section.ms-section { padding-block: 0; }
+.ms-page .ms-overlaps-section, .ms-page .ms-budget-section, .ms-page .ms-tools-section { margin-top: 96px; }
+.ms-page .ms-calibrate { margin-top: 24px; }
+.ms-page .ms-tools-section { padding-bottom: 32px; }
+@media (max-width: 760px) {
+  .ms-page .ms-overlaps-section, .ms-page .ms-budget-section, .ms-page .ms-tools-section { margin-top: 64px; }
+  .ms-page .ms-calibrate { margin-top: 16px; }
+  .ms-page .ms-hero.sg-hero--cluster { padding-top: 20px; padding-bottom: 20px; }
+  .ms-page .ms-hero .sg-cluster { margin: 0 auto 20px; }
+  .ms-page .ms-hero .sg-hero-pill { margin: 0; }
+  .ms-page .ms-hero h1 { margin: 12px 0 0; }
+  .ms-page .ms-hero .sg-lead { margin: 12px 0 0; }
+  .ms-page .ms-hero-stats { margin-top: 24px; }
+}
+@media (max-width: 760px) { .ms-page .ms-hero .sg-cluster { margin-bottom: -8px; } }
