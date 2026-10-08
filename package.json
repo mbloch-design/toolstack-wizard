@@ -20,6 +20,7 @@
     "test": "vitest run",
     "test:ma-stack": "vitest run --config vitest.ma-stack.config.ts",
     "test:e2e:ma-stack": "playwright test e2e/mon-stack-v1.spec.ts",
+    "test:e2e:hydration": "playwright test --config playwright.hydration.config.ts",
     "test:e2e:cards": "playwright test e2e/card-system.spec.ts",
     "test:e2e:responsive": "playwright test e2e/responsive-shell.spec.ts",
     "test:e2e:navigation": "playwright test e2e/navigation-continuity.spec.ts",

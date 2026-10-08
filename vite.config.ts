@@ -150,14 +150,6 @@ const GUIDE_FR_ONLY_SLUGS = new Set([
 // Les metadonnees anglaises sont figees au prerendu et servent un public
 // international : elles sortent en dollars, pas en euros. Le prix affiche par
 // l editeur prime quand il est deja en dollars, sinon on convertit au taux date.
-// Champs du catalogue qui existent en deux langues. Le SSR embarquait l'objet
-// outil entier dans `__SSR_TOOL__`, donc une fiche anglaise expediait aussi les
-// huit champs francais et inversement : 2,2 Kio par page sur 4280 pages, pour
-// du texte que la page ne peut pas afficher.
-//
-// On ne retire la langue non servie que si la langue de la page porte deja une
-// valeur : les composants retombent volontairement sur l'autre langue quand la
-// traduction manque, et ce filet doit rester.
 // Champs editoriaux que la projection Supabase peut ne pas encore porter, et
 // qu'elle ne doit donc pas effacer. Meme liste que SSR_LOCALIZED_FIELDS, a plat.
 const PROJECTION_RESCUED_FIELDS = [
@@ -192,6 +184,11 @@ function hasValue(value: any): boolean {
 
 function stripUnservedLocale(tool: any, lang: string): any {
   const out = { ...tool };
+  // FR fields also drive presence checks, free/paid status and legacy scores
+  // on EN pages. Keep them so hydration receives the same inputs as SSR.
+  // FR pages can still omit translated EN values when the FR value exists;
+  // missing FR values retain their EN fallback.
+  if (lang === "en") return out;
   for (const [fr, en] of SSR_LOCALIZED_FIELDS) {
     const [served, other] = lang === "en" ? [en, fr] : [fr, en];
     if (hasValue(out[served])) delete out[other];

@@ -1,3 +1,10 @@
+## 2026-10-08 — Correction de la parité d'hydratation EN
+
+- Bootstrap des fiches EN : conservation des champs FR qui pilotent affichage, statut gratuit/payant et score historique ; projection FR inchangée. Notion EN ne perd plus son sous-titre à l'hydratation.
+- Régression rouge avant correction, puis 28 parcours Chromium sur HTML prérendu réel PASS ; navigation React vers un autre onglet sans rechargement du document. Configuration Playwright et serveur locaux dédiés, commande `npm run test:e2e:hydration` après build.
+- Parité déterministe de 56 routes FR/EN PASS ; contenu et SEO équivalents sur quatre pages de référence. 248 tests applicatifs, 22 contrats SEO/compactage, TypeScript et build PASS.
+- Artefact 830,4 MiB / HTML 718,8 MiB : 9,8 MiB nécessaires rétablis, budgets inchangés PASS ; compactage toujours 24,62 MiB. Rapport CORRECTIF_HYDRATATION_EN_2026-10-08.md. Aucun retrait des champs historiques candidats, aucun changement du catalogue ou des styles.
+
 ## 2026-10-08 — Recette de publication du compactage et audit d'hydratation
 
 - Intégration de 25 commits main de Ma stack avant publication ; 248 tests applicatifs, 98 tests Ma stack, 22 fixtures SEO/compactage, TypeScript et build PASS. Régression multi-onglets alignée sur les libellés d'abonnement introduits par main ; assertions de synchronisation conservées, 15/15 parcours sur HTML prérendu réel PASS.

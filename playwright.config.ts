@@ -2,6 +2,8 @@ import { defineConfig, devices } from "playwright/test";
 
 export default defineConfig({
   testDir: "./e2e",
+  // Hydration needs generated HTML; use playwright.hydration.config.ts.
+  testIgnore: "**/tool-hydration.spec.ts",
   timeout: 45_000,
   expect: { timeout: 8_000 },
   fullyParallel: false,

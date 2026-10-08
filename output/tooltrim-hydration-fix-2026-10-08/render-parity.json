@@ -1,0 +1,226 @@
+[
+  {
+    "route": "/fr/tool/notion",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/notion/prix",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/notion/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/notion/avis",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/notion",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/notion/pricing",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/notion/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/notion/reviews",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/1001bit-tools",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/1001bit-tools/prix",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/1001bit-tools/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/1001bit-tools/avis",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/1001bit-tools",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/1001bit-tools/pricing",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/1001bit-tools/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/1001bit-tools/reviews",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/17hats",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/17hats/prix",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/17hats/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/17hats/avis",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/17hats",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/17hats/pricing",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/17hats/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/17hats/reviews",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/8fig",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/8fig/prix",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/8fig/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/8fig/avis",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/8fig",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/8fig/pricing",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/8fig/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/8fig/reviews",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/adobe-acrobat-sign",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/adobe-acrobat-sign/prix",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/adobe-acrobat-sign/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/adobe-acrobat-sign/avis",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/adobe-acrobat-sign",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/adobe-acrobat-sign/pricing",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/adobe-acrobat-sign/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/adobe-acrobat-sign/reviews",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/condeco",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/condeco/prix",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/condeco/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/condeco/avis",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/condeco",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/condeco/pricing",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/condeco/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/condeco/reviews",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/viso-ai",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/viso-ai/prix",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/viso-ai/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/fr/tool/viso-ai/avis",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/viso-ai",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/viso-ai/pricing",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/viso-ai/alternatives",
+    "equivalent": true
+  },
+  {
+    "route": "/en/tool/viso-ai/reviews",
+    "equivalent": true
+  }
+]

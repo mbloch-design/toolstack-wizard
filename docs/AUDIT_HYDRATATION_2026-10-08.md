@@ -2,6 +2,8 @@
 
 Audit seulement : aucune suppression de champs ou modification de la source catalogue.
 
+Suite autorisée : la parité EN a été corrigée en conservant les champs FR nécessaires dans le bootstrap. Recette et limites dans [CORRECTIF_HYDRATATION_EN_2026-10-08.md](CORRECTIF_HYDRATATION_EN_2026-10-08.md). Les candidats ci-dessous restent sans suppression.
+
 ## Mesures
 
 Sur le build compacté, 76,62 MiB de JSON applicatif sont intégrés aux HTML, distincts des données structurées JSON-LD et du contenu rendu :
