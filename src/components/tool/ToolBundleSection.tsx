@@ -1,4 +1,5 @@
-import type { Tool, ToolSummary } from "@/data/types";
+import type { Tool } from "@/data/types";
+import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { Package } from "@/lib/icons";
 import { useContext, useEffect, useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
@@ -30,11 +31,11 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
 
   const localMembers = tools
     .filter((candidate) => candidate.bundle_parent === bundleKey && candidate.slug !== bundleKey)
-    .map((candidate) => ({ slug: candidate.slug, name: candidate.name, logo: candidate.logo, websiteUrl: candidate.websiteUrl }))
+    .map((candidate) => ({ slug: candidate.slug || candidate.id, name: candidate.name, logo: candidate.logo, websiteUrl: candidate.websiteUrl }))
     .sort((a, b) => a.name.localeCompare(b.name));
   const localParentTool = tools.find((candidate) => candidate.slug === bundleKey || candidate.id === bundleKey);
   const localParent = localParentTool
-    ? { slug: localParentTool.slug, name: localParentTool.name, logo: localParentTool.logo, websiteUrl: localParentTool.websiteUrl }
+    ? { slug: localParentTool.slug || localParentTool.id, name: localParentTool.name, logo: localParentTool.logo, websiteUrl: localParentTool.websiteUrl }
     : null;
   const [members, setMembers] = useState<Member[]>(localMembers);
   const [parent, setParent] = useState<Member | null>(localParent);

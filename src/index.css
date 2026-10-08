@@ -125,6 +125,11 @@
     --radius-2xl:  1.5rem;             /* 24px — full-bleed blocks */
     --radius-pill: 9999px;             /* pill badges / filters */
     --radius-circle: 50%;              /* avatars, dots, round buttons */
+    --radius-stack-card: 22px;
+    --radius-stack-card-mobile: 18px;
+    --radius-stack-logo: 13px;
+    --radius-stack-logo-mobile: 11px;
+    --color-stack-accent-fallback: #8E8E93;
 
     /* ── Component heights ── */
     --h-btn:   56px;                   /* primary/secondary button */
@@ -35191,15 +35196,15 @@ img[data-logo-loading] {
    soft shadow in its own colour; a flat tint of that colour behind it; no
    border, a soft lift on hover; the amount carries the price line. */
 .ms-page .ms-tool.ms-tool-card {
-  overflow: hidden; border: 0; border-radius: 22px; background: hsl(var(--card));
+  overflow: hidden; border: 0; border-radius: var(--radius-stack-card); background: hsl(var(--card));
   box-shadow: 0 0 0 1px hsl(var(--border) / .7), 0 1px 2px rgba(15, 15, 15, .04);
   transition: transform 260ms cubic-bezier(.2, .8, .2, 1), box-shadow 260ms ease;
 }
 .ms-page .ms-tool.ms-tool-card:hover { transform: translateY(-3px); box-shadow: 0 0 0 1px hsl(var(--border) / .5), 0 16px 32px rgba(15, 15, 15, .09); }
 .ms-page .ms-tool.ms-tool-card:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; }
-.ms-page .ms-card-top { gap: 16px; padding: 20px 20px 18px; background: color-mix(in srgb, var(--tool-accent, #8E8E93) 7%, hsl(var(--card))); }
+.ms-page .ms-card-top { gap: 16px; padding: 20px 20px 18px; background: color-mix(in srgb, var(--tool-accent, var(--color-stack-accent-fallback)) 7%, hsl(var(--card))); }
 .ms-page .ms-card-logo { width: auto; height: auto; border-radius: 0; background: none; box-shadow: none; }
-.ms-page .ms-card-logo > * { border-radius: 13px !important; box-shadow: 0 6px 16px color-mix(in srgb, var(--tool-accent, #000) 22%, transparent), 0 0 0 1px rgba(15, 15, 15, .05) !important; }
+.ms-page .ms-card-logo > * { border-radius: var(--radius-stack-logo) !important; box-shadow: 0 6px 16px color-mix(in srgb, var(--tool-accent, #000) 22%, transparent), 0 0 0 1px rgba(15, 15, 15, .05) !important; }
 .ms-page .ms-card-id strong { font-size: 17.5px; }
 .ms-page .ms-card-foot { min-height: 54px; padding: 0 20px; border-top: 0; }
 .ms-page .ms-card-price small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1 var(--font-ui); }
@@ -35207,9 +35212,9 @@ img[data-logo-loading] {
 .ms-page .ms-tool.ms-tool-card.ms-tool--selected { box-shadow: 0 0 0 2px hsl(var(--foreground)), 0 16px 32px rgba(15, 15, 15, .09); }
 @media (prefers-reduced-motion: reduce) { .ms-page .ms-tool.ms-tool-card:hover { transform: none; } }
 @media (max-width: 640px) {
-  .ms-page .ms-tool.ms-tool-card { border-radius: 18px; }
+  .ms-page .ms-tool.ms-tool-card { border-radius: var(--radius-stack-card-mobile); }
   .ms-page .ms-card-top { padding: 10px 0 10px 12px; background: none; }
-  .ms-page .ms-card-logo > * { width: 40px !important; height: 40px !important; min-width: 40px !important; min-height: 40px !important; border-radius: 11px !important; }
+  .ms-page .ms-card-logo > * { width: 40px !important; height: 40px !important; min-width: 40px !important; min-height: 40px !important; border-radius: var(--radius-stack-logo-mobile) !important; }
   .ms-page .ms-card-foot { min-height: 0; padding: 0 14px 0 8px; }
   .ms-page .ms-card-price { display: grid; justify-items: end; gap: 2px; }
   .ms-page .ms-card-price strong { font-size: 14px; }

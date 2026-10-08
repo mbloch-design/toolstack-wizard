@@ -674,7 +674,7 @@ const ToolDetailPage = () => {
                           ? formatPriceLabel(tool, displayPrice, t, currency, lang)
                           : t("Sur devis", "Contact sales")}</dd>
                     </div>
-                    {catName && (
+                    {catName && category && (
                       <div>
                         <dt>{t("Catégorie", "Category")}</dt>
                         <dd>
@@ -973,7 +973,7 @@ const ToolDetailPage = () => {
                   const ts = computeToolTrimScore(tool);
                   const ratingSources = collectRatingSources(
                     Object.entries(tool.toolTrimRating?.evidence ?? {}).map(([key, value]) =>
-                      (lang === "en" && tool.toolTrimRating?.evidenceEn?.[key]) || value
+                      (lang === "en" && Object.entries(tool.toolTrimRating?.evidenceEn ?? {}).find(([enKey]) => enKey === key)?.[1]) || value
                     )
                   );
                   // One synthesized sentence instead of a 6-item checklist

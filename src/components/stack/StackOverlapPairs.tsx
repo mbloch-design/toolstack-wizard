@@ -10,6 +10,7 @@ import { toolMonthlyCost } from "@/lib/stackCost";
 import { stackDisplayLabel, stackRelations } from "@/lib/stackUsage";
 import { toolKey } from "@/lib/stackView";
 import { trackEvent } from "@/lib/analytics";
+import { decisionSavingInCurrency } from "@/lib/stackDecisions";
 import { pairKey, type StackDecision } from "@/hooks/useStackDecisions";
 
 /**
@@ -90,7 +91,9 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
   // Follow-up of past decisions: what is no longer paid, and pairs kept on purpose.
   const pinned = new Set(tools.map(toolKey));
   const keptBoth = Object.entries(decisions).filter(([key, d]) => d.kind === "keep-both" && key.split("|").every((slug) => pinned.has(slug))).map(([key]) => key);
-  const saved = Object.values(decisions).reduce((sum, d) => sum + (d.kind !== "keep-both" && d.removed && !pinned.has(d.removed) ? d.saving : 0), 0);
+  const pastSavings = Object.values(decisions).filter(d => d.kind !== "keep-both" && d.removed && !pinned.has(d.removed));
+  const saved = pastSavings.reduce((sum, d) => sum + (decisionSavingInCurrency(d, currency) ?? 0), 0);
+  const unknownSavings = pastSavings.some(d => d.saving > 0 && decisionSavingInCurrency(d, currency) === null);
   const costLabel = (tool: ToolSummary) => {
     const cost = toolMonthlyCost(tool, isPaid, lang);
     if (cost.kind === "paid") return `≈ ${formatAmount(Math.round(convertAmount(cost.monthly, cost.currency, currency)), currency, lang)}${en ? "/mo" : "/mois"}`;
@@ -99,7 +102,7 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
     return en ? "Price not checked" : "Prix non relevé";
   };
 
-  if (!scored.length && !keptBoth.length && saved <= 0) return null;
+  if (!scored.length && !keptBoth.length && saved <= 0 && !unknownSavings) return null;
   const money = (amount: number) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${en ? "/mo" : "/mois"}`;
 
   return (
@@ -113,8 +116,9 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
         : <p className="ms-section-lead">{en
         ? <>{scored.length} pair{scored.length > 1 ? "s" : ""} of tools may do the same job{doubleTotal > 0 && <>, <strong className="ms-double">{money(doubleTotal)} paid twice</strong> on catalogue entry plans</>}. Keeping both can be the right call: compare before deciding.</>
         : <>{scored.length} paire{scored.length > 1 ? "s" : ""} d’outils {scored.length > 1 ? "font" : "fait"} peut-être le même travail{doubleTotal > 0 && <>, soit <strong className="ms-double">{money(doubleTotal)} payés en double</strong> sur les offres d’entrée du catalogue</>}. Garder les deux peut être le bon choix : comparez avant de décider.</>}</p>}
-      {(saved > 0 || keptBoth.length > 0) && <p className="ms-decided">
+      {(saved > 0 || keptBoth.length > 0 || unknownSavings) && <p className="ms-decided">
         {saved > 0 && <span className="ms-decided-saved">{en ? `Already ${money(saved)} lighter` : `Déjà ${money(saved)} en moins`}</span>}
+        {unknownSavings && <span>{en ? "Recorded saving: currency unknown." : "Économie enregistrée : devise inconnue."}</span>}
         {keptBoth.length > 0 && <span>{en ? `${keptBoth.length} pair${keptBoth.length > 1 ? "s" : ""} kept on purpose.` : `${keptBoth.length} paire${keptBoth.length > 1 ? "s" : ""} gardée${keptBoth.length > 1 ? "s" : ""} volontairement.`} <button type="button" className="ms-inline-link" onClick={() => onReopen(keptBoth)}>{en ? "Review again" : "Revoir"}</button></span>}
       </p>}
       {scored.length > 0 && <div className="ms-pairs-panel">

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
+import type { ToolSummary } from "@/hooks/useSupabaseData";
 import ToolLogo from "@/components/ToolLogo";
 import { Puzzle, Package, ArrowRight, Layers } from "@/lib/icons";
 import { useCurrency } from "@/hooks/useCurrency";
@@ -8,7 +9,7 @@ import { resolveDisplayPrice } from "@/lib/nativePricing";
 
 interface Props {
   tool: Tool;
-  allTools: Tool[];
+  allTools: ToolSummary[];
   prefix: string;
   lang: string;
   t: (fr: string, en: string) => string;

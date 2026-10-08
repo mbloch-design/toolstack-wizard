@@ -19,7 +19,7 @@ async function loadStack(slug: string): Promise<StackGuide | null> {
   const shardKey = getShardKey(slug);
   let pending = shardPromises.get(shardKey);
   if (!pending) {
-    pending = fetch(`/assets/stack-catalog/${shardKey}.json`, { cache: "force-cache" })
+    pending = fetch(`/assets/stack-catalog/${shardKey}.json`, { cache: "no-cache" })
       .then((response) => {
         if (!response.ok) throw new Error(`Stack catalogue shard ${shardKey}: HTTP ${response.status}`);
         return response.json() as Promise<StackGuide[]>;
@@ -42,15 +42,18 @@ export function useStackBySlug(slug: string | undefined) {
   const ssrMatches = !!ssrStack && ssrStack.slug === slug;
   const [stack, setStack] = useState<StackGuide | null>(ssrMatches ? ssrStack : null);
   const [loading, setLoading] = useState(!ssrMatches);
+  const [resolvedSlug, setResolvedSlug] = useState<string | undefined>(ssrMatches ? slug : undefined);
 
   useEffect(() => {
     if (!slug) {
       setStack(null);
+      setResolvedSlug(undefined);
       setLoading(false);
       return;
     }
     if (ssrMatches) {
       setStack(ssrStack);
+      setResolvedSlug(slug);
       setLoading(false);
       return;
     }
@@ -60,6 +63,7 @@ export function useStackBySlug(slug: string | undefined) {
     loadStack(slug).then((nextStack) => {
       if (cancelled) return;
       setStack(nextStack);
+      setResolvedSlug(slug);
       setLoading(false);
     });
 
@@ -68,7 +72,7 @@ export function useStackBySlug(slug: string | undefined) {
 
   const matchesCurrentSlug = stack?.slug === slug;
   return {
-    stack: matchesCurrentSlug ? stack : null,
-    loading: loading || (!!slug && !matchesCurrentSlug),
+    stack: ssrMatches ? ssrStack : matchesCurrentSlug ? stack : null,
+    loading: ssrMatches ? false : loading || (!!slug && resolvedSlug !== slug),
   };
 }

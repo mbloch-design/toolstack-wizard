@@ -48,7 +48,7 @@ export default function ToolGallery({ images, videos = [], toolName, lang = "fr"
       alt={lang === "en" ? `${toolName}, preview ${index + 1}` : `${toolName}, aperçu ${index + 1}`}
       className="tg-main-img"
       loading={index === 0 ? "eager" : "lazy"}
-      fetchpriority={index === 0 ? "high" : "auto"}
+      {...{ fetchpriority: index === 0 ? "high" : "auto" }}
       onError={() => {
         setFailed((current) => new Set([...current, media.key]));
         setActive(0);

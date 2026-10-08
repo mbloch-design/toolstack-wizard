@@ -1257,7 +1257,7 @@ export function buildEcosystemQuestions(selectedTools: Tool[], allTools: Tool[] 
         ["metier", "core"].includes(tool.tool_type) &&
         !isCreativeCommercialContainer(tool)
     )
-    .map((tool) => {
+    .map((tool): CreativeQuestion | null => {
       const ecosystemIds = getEcosystemToolIds(tool, allTools);
       if (ecosystemIds.length === 0) return null;
       return {

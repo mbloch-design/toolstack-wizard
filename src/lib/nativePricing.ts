@@ -2,6 +2,8 @@ import pricingTruthCsv from "@/data/pricing_truth.csv?raw";
 import type { Tool } from "@/data/types";
 import type { Currency } from "@/hooks/useCurrency";
 
+type NativePricingInput = Pick<Tool, "id" | "slug" | "pricing_v5" | "pricing_v5En">;
+
 type NativePrice = {
   amount: number;
   currency: Currency;
@@ -76,7 +78,7 @@ const pricingTruth = (() => {
  * Sans attestation, resolveDisplayPrice retombe sur la valeur normalisee du
  * catalogue, convertie et signalee comme telle par le drapeau `converted`.
  */
-export function getNativeComparePrice(tool: Tool, preferredCurrency?: Currency): NativePrice | null {
+export function getNativeComparePrice(tool: NativePricingInput, preferredCurrency?: Currency): NativePrice | null {
   // The English record can carry the vendor's USD grid while the French one
   // carries its EUR grid (vendors that publish both): look at both, then let
   // the requested currency pick. Never a conversion.
@@ -109,7 +111,7 @@ export function getNativeComparePrice(tool: Tool, preferredCurrency?: Currency):
  * sourcing, pas un taux de change à appliquer.
  */
 export function resolveDisplayPrice(
-  tool: Tool,
+  tool: NativePricingInput,
   normalizedEur: number,
   selectedCurrency: Currency,
 ): ResolvedDisplayPrice {

@@ -27,7 +27,7 @@ import {
 } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useCategories, usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
-import { useCatalogSearch } from "@/hooks/useCatalogSearch";
+import { guideSearchKey, useCatalogSearch } from "@/hooks/useCatalogSearch";
 import ToolLogo from "@/components/ToolLogo";
 import { trackEvent } from "@/lib/analytics";
 
@@ -101,7 +101,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
   const toolById = useMemo(() => new Map(tools.map((tool) => [tool.id, tool])), [tools]);
   const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
-  const postById = useMemo(() => new Map(posts.map((post) => [post.id, post])), [posts]);
+  const postBySearchKey = useMemo(() => new Map(posts.map((post) => [guideSearchKey(post, lang), post])), [posts, lang]);
   const featured = useMemo(() => FEATURED_SLUGS.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[], [toolBySlug]);
   const platforms = useMemo(() => PLATFORM_SLUGS.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[], [toolBySlug]);
   const latestPosts = useMemo(() => [...posts].sort((a, b) => Date.parse(b.date) - Date.parse(a.date)).slice(0, 6), [posts]);
@@ -111,7 +111,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
     if (normalized.length < 2) return [];
     const toolResults = tools.filter((tool) => [tool.name, tool.slug, tool.shortDescription, tool.shortDescriptionEn].some((value) => value?.toLocaleLowerCase(lang).includes(normalized))).slice(0, 8).map((tool) => ({ id: `tool-${tool.id}`, label: tool.name, meta: categoryName(categories, tool.categoryId, lang), to: `${prefix}/tool/${tool.slug || tool.id}`, tool, kind: "tool" as const }));
     const categoryResults = categories.filter((category) => [category.name, category.nameEn].some((value) => value?.toLocaleLowerCase(lang).includes(normalized))).slice(0, 4).map((category) => ({ id: `category-${category.id}`, label: cleanLabel(lang === "en" ? category.nameEn || category.name : category.name), meta: t("Catégorie", "Category"), to: `${prefix}/category/${category.slug}`, kind: "category" as const }));
-    const articleResults = posts.filter((post) => [post.title, post.excerpt, ...post.tags].some((value) => value?.toLocaleLowerCase(lang).includes(normalized))).slice(0, 5).map((post) => ({ id: `article-${post.id}`, label: post.title, meta: post.readTime, to: `${prefix}/guide/${post.slug}`, kind: "guide" as const }));
+    const articleResults = posts.filter((post) => [post.title, post.excerpt, ...post.tags].some((value) => value?.toLocaleLowerCase(lang).includes(normalized))).slice(0, 5).map((post) => ({ id: `article-${guideSearchKey(post, lang)}`, label: post.title, meta: post.readTime, to: `${prefix}/guide/${post.slug}`, kind: "guide" as const }));
     return [...toolResults, ...categoryResults, ...articleResults];
   }, [categories, lang, posts, prefix, query, t, tools]);
 
@@ -156,11 +156,11 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
         if (!category) return [];
         return [{ id: hit.id, label: hit.label, meta: hit.meta, to: `${prefix}/category/${hit.slug}`, kind: "category" }];
       }
-      const post = postById.get(hit.entityId);
+      const post = postBySearchKey.get(hit.entityId);
       if (!post) return [];
       return [{ id: hit.id, label: hit.label, meta: hit.meta, to: `${prefix}/guide/${hit.slug}`, kind: "guide" }];
     });
-  }, [categoryById, fallbackResults, intelligentHits, postById, prefix, toolById, toolBySlug]);
+  }, [categoryById, fallbackResults, intelligentHits, postBySearchKey, prefix, toolById, toolBySlug]);
 
   // Les pages se glissent après les premiers outils : visibles sans masquer
   // l'outil exact qu'on cherchait.
@@ -191,7 +191,8 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
     if (event.key === "Enter") {
       event.preventDefault();
       const result = results[activeIndex];
-      result ? goTo(result.to) : viewAllResults();
+      if (result) goTo(result.to);
+      else viewAllResults();
     }
   };
 
@@ -256,7 +257,7 @@ function CollectionGrid({ categories, tools, prefix, lang, onGo, t, compact = fa
 }
 
 function ArticleGrid({ posts, prefix, onGo, t, compact = false }: { posts: Post[]; prefix: string; onGo: (to: string) => void; t: (fr: string, en: string) => string; compact?: boolean }) {
-  return <section><SectionTitle>{t("Derniers articles", "Latest articles")}</SectionTitle><div className={compact ? "gs-article-grid is-compact" : "gs-article-grid"}>{posts.map((post) => <button key={post.id} className="gs-article-card" onClick={() => onGo(`${prefix}/guide/${post.slug}`)}><span className="gs-article-cover">{post.thumbnail ? <img src={post.thumbnail} alt="" loading="lazy" decoding="async" /> : <BookOpen aria-hidden />}</span><strong>{post.title}</strong><span className="gs-article-meta">{post.category}{post.readTime ? ` · ${post.readTime}` : ""}</span></button>)}</div></section>;
+  return <section><SectionTitle>{t("Derniers articles", "Latest articles")}</SectionTitle><div className={compact ? "gs-article-grid is-compact" : "gs-article-grid"}>{posts.map((post) => <button key={guideSearchKey(post)} className="gs-article-card" onClick={() => onGo(`${prefix}/guide/${post.slug}`)}><span className="gs-article-cover">{post.thumbnail ? <img src={post.thumbnail} alt="" loading="lazy" decoding="async" /> : <BookOpen aria-hidden />}</span><strong>{post.title}</strong><span className="gs-article-meta">{post.category}{post.readTime ? ` · ${post.readTime}` : ""}</span></button>)}</div></section>;
 }
 
 function SearchResults({ results, activeIndex, query, isLoading, onHover, onSelect, onViewAll, t }: { results: SearchResult[]; activeIndex: number; query: string; isLoading: boolean; onHover: (index: number) => void; onSelect: (to: string) => void; onViewAll: () => void; t: (fr: string, en: string) => string }) {

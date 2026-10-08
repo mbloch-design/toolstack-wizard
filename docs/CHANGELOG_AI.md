@@ -1,3 +1,42 @@
+## 2026-10-08 — Correctifs ciblés des dépendances
+
+- Audit omit-dev : 25 → 9 entrées ; audit complet : 53 → 17, trois entrées critiques → zéro. Restes et portée documentés dans DEPENDANCES_SECURITE_2026-10-08.md.
+- DOMPurify, React Router 6, Vite 6/plugins, PostCSS et dépendances indirectes corrigés ; Vitest 4.1.11 et SDK Vercel 5.10.2. React 18 et Tailwind 3 conservés.
+- tsx et parseur de routage explicités ; trois overrides de même branche pour dépendances verrouillées. Types Node explicites sans retirer les contrôles stricts.
+- Installation npm ci, 243 tests, typecheck app/node, 16 contrats SEO, 93 tests Ma stack, build isolé et 15 scénarios Chromium PASS ; 6/6 régressions avec démarrage automatique de Vite 6. Refonte catégories et données régénérées exclues.
+
+## 2026-10-08 — Correction du routage de publication
+
+- Premier déploiement rejeté par Vercel : groupe capturant imbriqué dans la règle de cache immutable. Le lookahead utilise désormais une alternative sans groupe capturant interne.
+- Régression permanente : toutes les sources headers/redirects/rewrites sont compilées par path-to-regexp, fourni par @vercel/node ; les tests de cache utilisent ce même parseur au lieu de RegExp seul. Test rouge avant correction, vert après.
+
+## 2026-10-08 — Publication des corrections de revue technique
+
+- Intégration des trois commits main distants (cartes Ma stack, indicateur neutre et guide e-commerce) avant publication des deux commits d'audit.
+- Styles distants : couleur de repli et quatre rayons de cartes extraits en tokens nommés à valeurs identiques ; baseline de dette inchangée.
+- Recette sur la version fusionnée : tests applicatifs, TypeScript app/node, contrats SEO, gate design, build production et régressions navigateur vérifiés avant push.
+- Refonte locale CategoriesIndexPage et fichiers non suivis exclus de la publication.
+
+## 2026-10-07 — Points 2 et 3 de la revue technique Superpowers
+
+- CI réalignée sur les suites conservées ; typecheck explicite application/configuration Vite, diagnostics corrigés sans retirer les options strictes.
+- SSR obligatoire : renderers requis, exceptions bloquantes, contrôle du root et d'un H1 sur le sitemap et les autres HTML indexables. Mentions légales, conditions et Ma stack prérendues ; titres markdown secondaires et guide facturation corrigés.
+- Navigation depuis SSR : exemptions limitées à la fiche courante, hôtes avec fallback visible ; stacks absentes/erreurs terminent le chargement. Shards stacks revalidés comme les outils.
+- Recherche guides : clés stables langue/slug et navigation cohérente avec les résultats Orama ; catalogue guides disponible après une fiche SSR.
+- Alternatives distinguées des extensions ; plans/décisions synchronisés entre onglets et données persistées invalides filtrées individuellement.
+- Baseline design recalée sur la dette existante, sans modification CSS ; fixture négative confirmant le rejet de nouvelle dette. Port Playwright 8080 explicite et serveur réutilisé désactivé.
+- Validation du périmètre isolé : 242 tests applicatifs, 16 contrats SEO, 93 tests Ma stack, typecheck app/node et build PASS ; 15/15 régressions Chromium sur le build production local et 6/6 avec démarrage automatique de Vite. Détails et limites dans CORRECTIONS_TECHNIQUES_2026-10-07.md. Point 1 laissé au traitement manuel annoncé ; refonte CategoriesIndexPage et fichiers catalogue non suivis préservés. Aucun push ni déploiement.
+
+## 2026-10-07 — Revue technique Superpowers et corrections locales
+
+- Audit architecture, sécurité/backend, livraison/SEO/recherche et dépendances : rapport REVUE_TECHNIQUE_2026-10-07.md, preuves sous output/tooltrim-technical-review-2026-10-07.
+- Comparatifs : prix natifs et périodes exactes, essai/devis/inconnu séparés de gratuit, descriptions et sections ChatGPT/Claude alignées sur le guide web existant.
+- Ma stack : budgets inconnus/partiels explicites, devise des économies persistée, anciennes décisions conservées sans montant deviné ; aucune économie de remplacement avec prix inconnu.
+- useToolPair : restauration SSR et garde d’identité lors de navigation, réponse tardive ignorée.
+- Deux fonctions de maintenance Supabase : POST et clé serveur requis avant accès privilégié. Correction locale, déploiement non réalisé.
+- Validation : 218/218 tests unitaires, 9/9 régressions Chrome FR/EN, build production isolé PASS ; 2 478 fiches HTML avec un H1 et aucun root vide. TypeScript explicite : 38 diagnostics préexistants identiques ; lint ciblé zéro erreur/cinq warnings existants. Risques paiement, CI/SEO, données et dépendances conservés dans le rapport.
+- Travaux préexistants CategoriesIndexPage et catalogue non suivis préservés ; aucune publication ni mutation DB.
+
 ## 2026-10-08 : Ma stack, feuille outil plus légère, « Modifier ce que je paie » en formulaire
 
 - La feuille : plus d'air, filets fins, l'icône avec un halo à sa couleur, le coût en chiffre vedette (« Me coûte ») avec sa source en légende ; focus sur la feuille à l'ouverture ; au-dessus de la barre mobile.

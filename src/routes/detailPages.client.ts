@@ -6,3 +6,5 @@ import { lazy } from "react";
 export const ToolDetailPage = lazy(() => import("@/pages/ToolDetailPage"));
 export const ComparePage = lazy(() => import("@/pages/ComparePage"));
 export const GuideDetailPage = lazy(() => import("@/pages/GuideDetailPage"));
+
+export const ArticleFacturation = lazy(() => import("@/pages/ArticleFacturation"));

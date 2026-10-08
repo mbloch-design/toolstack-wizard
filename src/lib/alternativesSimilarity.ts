@@ -86,11 +86,11 @@ export function isRelevantAlternative(
  * category, etc.) — it doesn't replace candidate generation, it stops
  * irrelevant candidates from being displayed.
  */
-export function findSimilarTools(
-  tool: Tool,
-  candidates: Tool[],
+export function findSimilarTools<T extends Pick<Tool, "id" | "functional_needs" | "verticals">>(
+  tool: Pick<Tool, "id" | "functional_needs" | "verticals">,
+  candidates: T[],
   threshold: number = SIMILARITY_THRESHOLD,
-): Tool[] {
+): T[] {
   return candidates
     .filter((c) => c.id !== tool.id)
     .map((c) => ({ tool: c, score: computeSimilarity(tool, c) }))

@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { inspectSsrContent } from "./lib/ssr-contract.mjs";
 
 const root = process.cwd();
 const sitemapPath = path.join(root, "dist", "sitemap.xml");
@@ -13,13 +14,22 @@ if (!fs.existsSync(sitemapPath)) {
 const xml = fs.readFileSync(sitemapPath, "utf8");
 const blocks = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((match) => match[1]);
 const getTag = (block, tag) => block.match(new RegExp(`<${tag}>(.*?)<\\/${tag}>`))?.[1];
-const locs = blocks.map((block) => getTag(block, "loc")).filter(Boolean);
+const entries = blocks.map((block) => getTag(block, "loc")?.trim());
+const locs = entries.filter(Boolean);
+if (!locs.length) failures.push("empty sitemap: no canonical URLs to validate");
+entries.forEach((loc, index) => {
+  if (!loc) failures.push(`sitemap entry ${index + 1}: loc is missing`);
+});
 const locSet = new Set(locs);
+const sitemapFiles = new Set(locs.flatMap(url => {
+  try { return [path.resolve(root, "dist", `.${new URL(url).pathname}`, "index.html")]; } catch { return []; }
+}));
 const htmlCache = new Map();
 
 function htmlFor(url) {
   if (htmlCache.has(url)) return htmlCache.get(url);
-  const pathname = new URL(url).pathname;
+  let pathname;
+  try { pathname = new URL(url).pathname; } catch { return null; }
   const file = path.resolve(root, "dist", `.${pathname}`, "index.html");
   const html = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : null;
   htmlCache.set(url, html);
@@ -29,9 +39,13 @@ function htmlFor(url) {
 if (locSet.size !== locs.length) failures.push(`duplicate sitemap URLs: ${locs.length - locSet.size}`);
 
 for (const [index, block] of blocks.entries()) {
-  const loc = locs[index];
+  const loc = entries[index];
   if (!loc) continue;
-  const parsed = new URL(loc);
+  let parsed;
+  try { parsed = new URL(loc); } catch {
+    failures.push(`${loc}: invalid sitemap URL`);
+    continue;
+  }
   if (parsed.protocol !== "https:" || parsed.hostname !== "tooltrim.com") failures.push(`${loc}: non-canonical host or protocol`);
   if (parsed.search || parsed.hash) failures.push(`${loc}: sitemap URL contains parameters or a fragment`);
 
@@ -40,6 +54,7 @@ for (const [index, block] of blocks.entries()) {
     failures.push(`${loc}: generated HTML missing`);
     continue;
   }
+  for (const issue of inspectSsrContent(html)) failures.push(`${loc}: ${issue}`);
   const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i)?.[1];
   if (canonical !== loc) failures.push(`${loc}: canonical is ${canonical || "missing"}`);
   if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html)) failures.push(`${loc}: sitemap page is noindex`);
@@ -55,6 +70,21 @@ for (const [index, block] of blocks.entries()) {
   }
 }
 
+// Sitemap omissions must not hide empty pages that still allow indexing.
+function checkOtherIndexablePages(directory) {
+  for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+    const file = path.join(directory, entry.name);
+    if (entry.isDirectory()) { checkOtherIndexablePages(file); continue; }
+    if (entry.name !== "index.html") continue;
+    if (sitemapFiles.has(file)) continue;
+    const html = fs.readFileSync(file, "utf8");
+    if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html)) continue;
+    const relative = path.relative(path.join(root, "dist"), file);
+    for (const issue of inspectSsrContent(html)) failures.push(`${relative}: ${issue}`);
+  }
+}
+checkOtherIndexablePages(path.join(root, "dist"));
+
 if (failures.length) {
   console.error(`SEO validation failed with ${failures.length} issue(s):`);
   failures.slice(0, 50).forEach((failure) => console.error(`- ${failure}`));
@@ -62,4 +92,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`SEO generated validation PASS: ${locs.length} unique, indexable, self-canonical URLs with valid sitemap hreflang targets.`);
+console.log(`SEO generated validation PASS: ${locs.length} unique, rendered, indexable, self-canonical URLs with valid sitemap hreflang targets.`);

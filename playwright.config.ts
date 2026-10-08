@@ -21,9 +21,9 @@ export default defineConfig({
   webServer: process.env.PLAYWRIGHT_BASE_URL
     ? undefined
     : {
-      command: "npm run dev -- --host 127.0.0.1",
+      command: "npm run dev -- --host 127.0.0.1 --port 8080 --strictPort",
       url: "http://127.0.0.1:8080",
-      reuseExistingServer: true,
+      reuseExistingServer: false,
       timeout: 120_000,
     },
 });

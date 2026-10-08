@@ -12,9 +12,7 @@ import type { Tool } from '@/data/types';
 import type { CompareEditorialContent } from '@/pages/ComparePage';
 import { activeCampaignKlaviyoGuides, chatgptClaudeGuides, type ComparisonDecisionGuide } from '@/data/comparisonDecisionGuides';
 import { useToolSummaries } from '@/hooks/useSupabaseData';
-import { useCurrency } from '@/hooks/useCurrency';
-import { formatPriceLabel } from '@/lib/toolUtils';
-import { resolveMonthlyPrice } from '@/lib/pricing';
+import { comparisonPriceDisplay, comparisonPriceText } from '@/lib/comparisonPricing';
 import { computeToolTrimScore } from '@/lib/toolTrimScore';
 import { localizePlanName } from '@/lib/planNames';
 import brandColors from '@/data/brandColors.json';
@@ -27,8 +25,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
   const { lang, t, prefix } = useLang();
   const [audience, setAudience] = useState<'solo' | 'team'>('solo');
   const { tools: toolSummaries } = useToolSummaries({ refreshRemote: false });
-  const { currency } = useCurrency();
-  const priceOf = (tool: Tool) => formatPriceLabel(tool, resolveMonthlyPrice(tool), t, currency, lang);
+  const priceOf = (tool: Tool) => comparisonPriceText(tool, lang);
   // Plan units are stored in French ("par utilisateur"); translate the known ones.
   const unitLabel = (unit?: string | null) => {
     if (!unit) return '';
@@ -47,7 +44,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
   const newGuide = affiliateComparisonGuides[slugPair]?.[lang];
   const offers = comparisonOffers[slugPair];
   const visual = comparisonVisuals[slugPair];
-  const reviewed = newGuide || (affiliateComparison ? activeCampaignKlaviyoGuides[lang] : undefined);
+  const reviewed = newGuide || (affiliateComparison ? activeCampaignKlaviyoGuides[lang] : slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined);
   const curated = reviewed || (slugPair === 'chatgpt-vs-claude' ? chatgptClaudeGuides[lang] : undefined);
   const scenarios = reviewed ? (affiliateComparison ? [reviewed.scenarios[1], reviewed.scenarios[0]] : reviewed.scenarios).map(s => ({ choice: s.choice, reason: s.reason, limits: [s.limit] })) : toolsForEditorial();
   function toolsForEditorial() {
@@ -79,7 +76,9 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
         <div className="cp-vs-duel">
           {tools.map((tool) => {
             const score = computeToolTrimScore(tool);
-            const pitch = lang === 'en' ? (tool.shortDescriptionEn || tool.shortDescription) : tool.shortDescription;
+            const pitch = slugPair === 'chatgpt-vs-claude'
+              ? t('Application d’assistance au travail : conversations, rédaction et analyse de documents.', 'Work assistant app for conversations, writing and document analysis.')
+              : lang === 'en' ? (tool.shortDescriptionEn || tool.shortDescription) : tool.shortDescription;
             // Dominant logo colour, extracted once for the tools in published
             // comparisons (src/data/brandColors.json); monochrome logos have
             // none and keep the neutral surface.
@@ -89,7 +88,10 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
               <span className="cp-vs-name">{tool.name}</span>
               {pitch && <span className="cp-vs-pitch">{pitch}</span>}
               <span className="cp-vs-meta">
-                {!newGuide && <span className="cp-vs-price">{affiliateComparison ? (tool.id === 'activecampaign' ? t('Essai de 14 jours', '14-day trial') : t('Forfait gratuit disponible', 'Free plan available')) : priceOf(tool)}</span>}
+                {!newGuide && <span className="cp-vs-price">{affiliateComparison ? (tool.id === 'activecampaign' ? t('Essai de 14 jours', '14-day trial') : t('Forfait gratuit disponible', 'Free plan available')) : slugPair === 'chatgpt-vs-claude' ? (() => {
+                  const row = curated?.prices.find(row => row.audience === 'solo' && row.featured);
+                  return tool === toolA ? row?.a : row?.b;
+                })() : priceOf(tool)}</span>}
                 {score && score.score > 0 && <span className="cp-vs-score">★ {score.score.toFixed(1)}</span>}
               </span>
             </Link>;
@@ -200,15 +202,12 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
             <div className="cp-price-cards">{tools.map(tool => {
               const pricing = (lang === 'en' ? tool.pricing_v5En : undefined) || tool.pricing_v5;
               const plan = pricing?.plans?.find(p => p.isComparePlan && !p.comingSoon);
-              const hasNative = Boolean(plan && plan.nativeAmount != null && plan.nativeCurrency);
-              const amount = hasNative
-                ? new Intl.NumberFormat(lang, { style: 'currency', currency: plan!.nativeCurrency!, maximumFractionDigits: plan!.nativeAmount! % 1 ? 2 : 0 }).format(plan!.nativeAmount!)
-                : priceOf(tool).replace(/\/(mo|mois)$/, '');
-              const isNumeric = /\d/.test(amount);
-              const period = hasNative ? (plan!.billingPeriod === 'annual' ? t('/an', '/yr') : t('/mois', '/mo')) : (isNumeric ? t('/mois', '/mo') : '');
-              const planName = hasNative ? plan!.displayName : localizePlanName(tool.pricing_v5?.compare_plan_name, lang);
-              const unit = hasNative ? unitLabel(plan!.pricingUnit) : '';
-              const commitment = hasNative && plan!.billingCommitment === 'annual_prepaid' ? t('facturé à l’année', 'billed yearly') : '';
+              const display = comparisonPriceDisplay(tool, lang);
+              const amount = display.label;
+              const period = display.period;
+              const planName = plan?.displayName || (display.kind === 'paid' ? localizePlanName(pricing?.compare_plan_name, lang) : '');
+              const unit = plan?.pricingUnit === 'one_time' ? '' : unitLabel(plan?.pricingUnit);
+              const commitment = plan?.billingCommitment === 'annual_prepaid' ? t('facturé à l’année', 'billed yearly') : '';
               return <article key={tool.id} className="cp-price-card">
                 <div className="cp-price-head"><ToolLogo tool={tool} size={32} className="cp-price-logo" /><h3>{tool.name}</h3></div>
                 <p className="cp-price-amount">{amount}{period && <span>{period}</span>}</p>

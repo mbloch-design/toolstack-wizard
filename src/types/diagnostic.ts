@@ -215,7 +215,7 @@ export interface Tool {
   tool_type: "core" | "metier" | "satellite" | "gestion" | "ia" | "plugin" | "specialise" | "bundle";
   ia_use_case?: string;
   usage: "high" | "medium" | "low" | "dormant";
-  prescription_quality: "ferme" | "question" | "oui";
+  prescription_quality: "ferme" | "question" | "oui" | "silence";
   pricing?: {
     free?: string;
     paid?: string;

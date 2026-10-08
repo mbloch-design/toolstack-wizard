@@ -154,7 +154,9 @@ function getFamilyKey(tool: ToolSummary) {
   if (key.startsWith("topaz")) return "topaz";
   if (["davinci-resolve", "fusion"].includes(key)) return "blackmagic";
   if (["cinema-4d", "redshift"].includes(key)) return "maxon";
-  return normalizeKey(tool.bundle_parent || tool.host_app || tool.substitution_cluster_v2 || key.split("-")[0] || key);
+  // A substitution cluster identifies alternatives, not an ecosystem. A
+  // shared first word in a slug likewise does not establish compatibility.
+  return normalizeKey(tool.bundle_parent || tool.host_app || key);
 }
 
 function getSignalKeys(values: string[] | undefined) {
@@ -190,11 +192,14 @@ function getRelation(candidate: ToolSummary, source: ToolSummary) {
   if (hostKey && sourceKeys.includes(hostKey)) {
     return { direction: "extensions" as const, score: 150, reasonFr: `Extension de ${source.name}`, reasonEn: `Extension for ${source.name}` };
   }
-  if (sameBundle || sameFamily) {
-    return { direction: "extensions" as const, score: sameBundle ? 132 : 84, reasonFr: `Extension de ${source.name}`, reasonEn: `Extension for ${source.name}` };
+  if (sameBundle) {
+    return { direction: "extensions" as const, score: 132, reasonFr: `Extension de ${source.name}`, reasonEn: `Extension for ${source.name}` };
   }
   if (sameCluster) {
     return { direction: "alternatives" as const, score: 118, reasonFr: `Alternative à ${source.name}`, reasonEn: `Alternative to ${source.name}` };
+  }
+  if (sameFamily) {
+    return { direction: "adjacent" as const, score: 84, reasonFr: `Même écosystème que ${source.name}`, reasonEn: `Same ecosystem as ${source.name}` };
   }
   if (sameCategory && sharedNeeds > 0) {
     return { direction: "alternatives" as const, score: 98 + Math.min(2, sharedNeeds) * 8, reasonFr: `Alternative à ${source.name}`, reasonEn: `Alternative to ${source.name}` };

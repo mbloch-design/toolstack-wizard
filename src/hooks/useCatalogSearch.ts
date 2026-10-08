@@ -18,6 +18,11 @@ type UseCatalogSearchInput = {
   limit?: number;
 };
 
+/** Stable search identity across local snapshots and remote numeric IDs. */
+export function guideSearchKey(post: Pick<Post, "slug" | "lang">, fallbackLang = "fr"): string {
+  return `${post.lang || fallbackLang}:${post.slug}`;
+}
+
 export function useCatalogSearch({
   query,
   tools,
@@ -141,9 +146,9 @@ function buildDocuments(
   }));
 
   const guideDocuments = posts.map((post): CatalogSearchDocument => ({
-    id: `guide-${post.id}`,
+    id: `guide-${guideSearchKey(post, lang)}`,
     kind: "guide",
-    entityId: post.id,
+    entityId: guideSearchKey(post, lang),
     slug: post.slug,
     label: post.title,
     meta: post.readTime || (lang === "en" ? "Guide" : "Guide"),

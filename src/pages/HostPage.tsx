@@ -92,15 +92,9 @@ const HostPage = ({ famille: familleProp }: { famille: string }) => {
 
   if (!famille) return <Navigate to={`${prefix}/tools`} replace />;
 
-  // Ne rien conclure avant que les données PORTANT LE MODÈLE soient arrivées.
-  //
-  // useToolSummaries sert d'abord le bundle statique, qui ne connaît ni
-  // worksWith ni formFactor : le filtre y trouvait zéro résultat et la
-  // redirection de repli partait avant même la requête Supabase. Tester
-  // tools.length ne suffit pas — le tableau est plein, mais d'objets dépourvus
-  // des champs qui nous intéressent.
-  const modeleCharge = tools.some((x) => x.formFactor);
-  if (loading || !modeleCharge) return null;
+  // The local catalogue may lack the attachment model. Wait for the attempt,
+  // then use the existing fiche fallback even when the remote model failed.
+  if (loading) return <p className="gi-sub" role="status">{t("Chargement des outils compatibles…", "Loading compatible tools…")}</p>;
 
   // Hôte inconnu, ou pas assez de contenu pour justifier une page dédiée.
   // On renvoie vers la fiche de l'hôte quand elle existe : le contenu reste

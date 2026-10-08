@@ -355,7 +355,7 @@ export default function DashActions({ result, allTools, t, onNavigate, dbSession
                       {/* Link to waste detail */}
                       {action.evidenceTab && (
                         <button
-                          onClick={() => onNavigate?.(action.evidenceTab)}
+                          onClick={() => action.evidenceTab && onNavigate?.(action.evidenceTab)}
                           className="p-1 rounded hover:bg-muted"
                           title={action.prescription ? t("Voir pourquoi", "See why") : t("Voir le contexte", "See context")}
                         >
@@ -446,7 +446,7 @@ function NextActionCard({ action, isDone, onToggle, onNavigate, prefix, t }: Nex
           </button>
           {action.evidenceTab && (
             <button
-              onClick={() => onNavigate?.(action.evidenceTab)}
+              onClick={() => action.evidenceTab && onNavigate?.(action.evidenceTab)}
               className="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
             >
               {action.prescription ? t("Voir la preuve", "See evidence") : t("Voir le contexte", "See context")}

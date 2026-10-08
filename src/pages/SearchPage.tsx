@@ -3,7 +3,7 @@ import { useSearchParams, useNavigate, Link } from "react-router-dom";
 import { Search, Hash, BookOpen, Wrench, ArrowRight, X } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { useCatalogSearch } from "@/hooks/useCatalogSearch";
+import { guideSearchKey, useCatalogSearch } from "@/hooks/useCatalogSearch";
 import ToolCardCompact from "@/components/tool/ToolCardCompact";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { cleanupSeo, SEO_BASE, setHreflang, setNoindex, setSeoTags } from "@/lib/seo";
@@ -112,7 +112,7 @@ const SearchPage = () => {
 
   const toolById = useMemo(() => new Map(tools.map((tool) => [tool.id, tool])), [tools]);
   const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
-  const postById = useMemo(() => new Map(posts.map((post) => [post.id, post])), [posts]);
+  const postBySearchKey = useMemo(() => new Map(posts.map((post) => [guideSearchKey(post, lang), post])), [posts, lang]);
 
   const toolResults = useMemo(() => intelligentHits
     ? intelligentHits.filter((hit) => hit.kind === "tool").flatMap((hit) => {
@@ -132,11 +132,11 @@ const SearchPage = () => {
 
   const guideResults = useMemo(() => intelligentHits
     ? intelligentHits.filter((hit) => hit.kind === "guide").flatMap((hit) => {
-        const post = postById.get(hit.entityId);
+        const post = postBySearchKey.get(hit.entityId);
         return post ? [post] : [];
       })
     : fallbackGuideResults,
-  [fallbackGuideResults, intelligentHits, postById]);
+  [fallbackGuideResults, intelligentHits, postBySearchKey]);
 
   const totalCount = toolResults.length + catResults.length + guideResults.length;
 
@@ -340,7 +340,7 @@ const SearchPage = () => {
                   />
                   <div className="sp-guide-results">
                     {(activeTab === "all" ? guideResults.slice(0, 3) : guideResults).map(post => (
-                      <GuideCard key={post.id} post={post} prefix={prefix} />
+                      <GuideCard key={guideSearchKey(post, lang)} post={post} prefix={prefix} />
                     ))}
                   </div>
                 </section>

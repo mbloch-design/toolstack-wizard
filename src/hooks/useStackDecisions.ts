@@ -17,43 +17,63 @@ import { trackEvent } from "@/lib/analytics";
  * Stockage local, comme la stack ; mesure sans donnée personnelle.
  */
 
-export type StackDecision = {
-  kind: "keep-both" | "keep-one" | "replace";
-  kept: string;
-  removed?: string;
-  /** Monthly amount no longer paid, converted like the stack total (0 when unknown). */
-  saving: number;
-  at: string;
-};
+export type { StackDecision } from "@/lib/stackDecisions";
+import type { StackDecision } from "@/lib/stackDecisions";
+import { normalizeStackDecisions } from "@/lib/stackDecisions";
+import type { Currency } from "@/lib/currencyRates";
 
 const KEY = "tooltrim-ma-stack-decisions-v1";
 const listeners = new Set<() => void>();
 let memory: Record<string, StackDecision> | null = null;
+let persistedRaw: string | null | undefined;
 const EMPTY: Record<string, StackDecision> = {};
 
 function read(): Record<string, StackDecision> {
-  if (memory) return memory;
   try {
-    const parsed = JSON.parse(window.localStorage.getItem(KEY) || "{}");
-    memory = parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed : {};
+    const raw = window.localStorage.getItem(KEY);
+    if (memory && raw === persistedRaw) return memory;
+    let parsed: unknown;
+    try { parsed = JSON.parse(raw || "{}"); } catch { parsed = {}; }
+    memory = normalizeStackDecisions(parsed);
+    persistedRaw = raw;
   } catch {
-    memory = {};
+    memory ??= {};
   }
   return memory as Record<string, StackDecision>;
 }
 function write(next: Record<string, StackDecision>) {
   memory = next;
-  try { window.localStorage.setItem(KEY, JSON.stringify(next)); } catch { /* session only */ }
+  try {
+    const raw = JSON.stringify(next);
+    window.localStorage.setItem(KEY, raw);
+    persistedRaw = raw;
+  } catch { /* session only */ }
   listeners.forEach((listener) => listener());
+}
+
+function handleStorage(event: StorageEvent) {
+  if (event.key !== KEY && event.key !== null) return;
+  try { if (event.storageArea && event.storageArea !== window.localStorage) return; } catch { return; }
+  read();
+  listeners.forEach((listener) => listener());
+}
+
+function subscribe(listener: () => void) {
+  if (listeners.size === 0 && typeof window !== "undefined") window.addEventListener("storage", handleStorage);
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+    if (listeners.size === 0 && typeof window !== "undefined") window.removeEventListener("storage", handleStorage);
+  };
 }
 
 export const pairKey = (a: string, b: string) => [a, b].sort().join("|");
 
 type Source = "stack" | "compare" | "sheet";
 
-export function useStackDecisions(t: (fr: string, en: string) => string, formatSaving: (amount: number) => string) {
+export function useStackDecisions(t: (fr: string, en: string) => string, formatSaving: (amount: number) => string, currency: Currency) {
   const decisions = useSyncExternalStore(
-    (listener) => { listeners.add(listener); return () => { listeners.delete(listener); }; },
+    subscribe,
     () => (typeof window === "undefined" ? EMPTY : read()),
     () => EMPTY,
   );
@@ -69,7 +89,7 @@ export function useStackDecisions(t: (fr: string, en: string) => string, formatS
     const keyBoth = pairKey(kept.slug, removed?.slug || "");
     trackEvent("stack_decision", { kind, source, kept: kept.slug, removed: removed?.slug, saving: Math.round(saving) });
     if (kind === "keep-both" || !removed) {
-      write({ ...read(), [keyBoth]: { kind: "keep-both", kept: kept.slug, saving: 0, at: new Date().toISOString() } });
+      write({ ...read(), [keyBoth]: { kind: "keep-both", kept: kept.slug, saving: 0, savingCurrency: currency, at: new Date().toISOString() } });
       toast(note || t("Noté : vous gardez les deux.", "Noted: you keep both."), {
         duration: 5000,
         action: { label: t("Annuler", "Undo"), onClick: () => { forget(keyBoth); trackEvent("stack_decision_undo", { kind, source }); } },
@@ -80,7 +100,7 @@ export function useStackDecisions(t: (fr: string, en: string) => string, formatS
     const entry = state.toolEntries[index];
     if (kind === "replace") pinTool(kept.slug);
     unpinTool(removed.slug);
-    write({ ...read(), [keyBoth]: { kind, kept: kept.slug, removed: removed.slug, saving, at: new Date().toISOString() } });
+    write({ ...read(), [keyBoth]: { kind, kept: kept.slug, removed: removed.slug, saving, savingCurrency: currency, at: new Date().toISOString() } });
     const message = kind === "replace"
       ? t(`${removed.name} remplacé par ${kept.name}.`, `${removed.name} replaced with ${kept.name}.`)
       : t(`${removed.name} retiré, vous gardez ${kept.name}.`, `${removed.name} removed, you keep ${kept.name}.`);

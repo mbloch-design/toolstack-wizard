@@ -4,6 +4,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
 import postcss from "postcss";
+import { assertSsrRenderers } from "./scripts/lib/ssr-contract.mjs";
 import { transformSync } from "esbuild";
 import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
@@ -837,7 +838,7 @@ function sitemapPlugin(): Plugin {
         const dupeCount = urls.length - deduped.length;
         console.log(`✅ Sitemap generated with ${deduped.length} URLs (hreflang included)${dupeCount > 0 ? ` — ${dupeCount} duplicates removed` : ""}`);
       } catch (e) {
-        console.warn("⚠️ Sitemap generation failed:", e);
+        throw new Error("Sitemap generation failed:", { cause: e });
       }
     },
   };
@@ -893,8 +894,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         };
         const indexPath = path.resolve(distDir, "index.html");
         if (!fs.existsSync(indexPath)) {
-          console.warn("⚠️ Prerender: dist/index.html not found, skipping");
-          return;
+          throw new Error("Prerender: dist/index.html not found");
         }
         const baseHtml = fs.readFileSync(indexPath, "utf-8");
         let count = 0;
@@ -920,6 +920,9 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let renderAboutPage: ((path: string) => Promise<string>) | null = null;
         let renderTransparencyPage: ((path: string) => Promise<string>) | null = null;
         let renderContactPage: ((path: string) => Promise<string>) | null = null;
+        let renderLegalNoticePage: ((path: string) => Promise<string>) | null = null;
+        let renderTermsPage: ((path: string) => Promise<string>) | null = null;
+        let renderCartPage: ((path: string) => Promise<string>) | null = null;
         let renderSubmitToolPage: ((path: string) => Promise<string>) | null = null;
         let renderExplorerLandingPage: ((path: string) => Promise<string>) | null = null;
         let renderExplorerAroundPage: ((path: string) => Promise<string>) | null = null;
@@ -929,6 +932,30 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         if (fs.existsSync(ssrEntryPath)) {
           try {
             const ssrModule = await import(`file://${ssrEntryPath}?t=${Date.now()}`);
+            assertSsrRenderers(ssrModule, [
+              "renderToolPage",
+              "renderComparePage",
+              "renderGuidePage",
+              "renderStackPage",
+              "renderHomePage",
+              "renderCategoryPage",
+              "renderToolsPage",
+              "renderStacksHubPage",
+              "renderCategoriesIndexPage",
+              "renderGuidesIndexPage",
+              "renderComparatifsIndexPage",
+              "renderAboutPage",
+              "renderTransparencyPage",
+              "renderContactPage",
+              "renderLegalNoticePage",
+              "renderTermsPage",
+              "renderCartPage",
+              "renderSubmitToolPage",
+              "renderExplorerLandingPage",
+              "renderExplorerAroundPage",
+              "renderPersonaPillarPage",
+              "renderBestOfGuidePage",
+            ]);
             renderToolPage = ssrModule.renderToolPage;
             renderComparePage = ssrModule.renderComparePage;
             renderGuidePage = ssrModule.renderGuidePage;
@@ -943,16 +970,19 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             renderAboutPage = ssrModule.renderAboutPage;
             renderTransparencyPage = ssrModule.renderTransparencyPage;
             renderContactPage = ssrModule.renderContactPage;
+            renderLegalNoticePage = ssrModule.renderLegalNoticePage;
+            renderTermsPage = ssrModule.renderTermsPage;
+            renderCartPage = ssrModule.renderCartPage;
             renderSubmitToolPage = ssrModule.renderSubmitToolPage;
             renderExplorerLandingPage = ssrModule.renderExplorerLandingPage;
             renderExplorerAroundPage = ssrModule.renderExplorerAroundPage;
             renderPersonaPillarPage = ssrModule.renderPersonaPillarPage;
             renderBestOfGuidePage = ssrModule.renderBestOfGuidePage;
           } catch (e) {
-            console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
+            throw new Error("SSR entry failed to load", { cause: e });
           }
         } else {
-          console.warn("⚠️ dist-ssr/entry-server.js not found — run `vite build --ssr` first. Falling back to meta-only prerender.");
+          throw new Error("dist-ssr/entry-server.js not found — run `vite build --ssr` first.");
         }
 
         const cssHrefMatch = baseHtml.match(/<link rel="stylesheet" crossorigin href="([^"]+\.css)"/);
@@ -1128,7 +1158,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                   `    <script id="__SSR_RELATED_POSTS__" type="application/json">${relatedPostsJson}</script>\n  </body>`
                 );
               } catch (e) {
-                console.warn(`⚠️ SSR render failed for ${lang}/tool/${slug}, falling back to meta-only:`, e);
+                throw new Error(`SSR render failed for ${lang}/tool/${slug}`, { cause: e });
               }
             }
 
@@ -1323,7 +1353,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                     `    <script id="__SSR_RELATED_POSTS__" type="application/json">${relatedPostsJson}</script>\n  </body>`
                   );
                 } catch (e) {
-                  console.warn(`⚠️ SSR render failed for ${lang}/tool/${slug}/${localizedPath}, falling back to meta-only:`, e);
+                  throw new Error(`SSR render failed for ${lang}/tool/${slug}/${localizedPath}`, { cause: e });
                 }
               }
 
@@ -1412,7 +1442,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 }
               }
             } catch (e) {
-              console.warn(`⚠️ Home SSR failed for ${lp.file}, falling back to empty root + noscript:`, e);
+              throw new Error(`Home SSR failed for ${lp.file}`, { cause: e });
             }
           }
 
@@ -1597,7 +1627,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               }
               pillarsSsrd++;
             } catch (e) {
-              console.warn(`⚠️ Persona pillar SSR failed for ${sp.path}, falling back to meta-only prerender:`, e);
+              throw new Error(`Persona pillar SSR failed for ${sp.path}`, { cause: e });
             }
           }
 
@@ -1614,7 +1644,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               }
               bestOfSsrd++;
             } catch (e) {
-              console.warn(`⚠️ Best-of guide SSR failed for ${sp.path}, falling back to meta-only prerender:`, e);
+              throw new Error(`Best-of guide SSR failed for ${sp.path}`, { cause: e });
             }
           }
 
@@ -1722,6 +1752,9 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             : sp.path.endsWith("/about") ? renderAboutPage
             : sp.path.endsWith("/transparency") ? renderTransparencyPage
             : sp.path.endsWith("/contact") ? renderContactPage
+            : sp.path.endsWith("/legal-notice") ? renderLegalNoticePage
+            : sp.path.endsWith("/terms") ? renderTermsPage
+            : /\/(?:ma-stack|my-stack)$/.test(sp.path) ? renderCartPage
             : sp.path.endsWith("/submit") ? renderSubmitToolPage
             : sp.path.endsWith("/explorer") ? renderExplorerLandingPage
             : null;
@@ -1736,7 +1769,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 }
               }
             } catch (e) {
-              console.warn(`⚠️ Section SSR failed for ${sp.path}, falling back to meta-only prerender:`, e);
+              throw new Error(`Section SSR failed for ${sp.path}`, { cause: e });
             }
           }
 
@@ -1801,7 +1834,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                   }
                 }
               } catch (e) {
-                console.warn(`⚠️ SSR failed for ${sourcePath}:`, e);
+                throw new Error(`SSR failed for ${sourcePath}:`, { cause: e });
               }
             }
 
@@ -1881,7 +1914,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 );
                 stacksRendered++;
               } catch (e) {
-                console.warn(`⚠️ SSR render failed for ${lang}/stacks/${stack.slug}, falling back to meta-only:`, e);
+                throw new Error(`SSR render failed for ${lang}/stacks/${stack.slug}`, { cause: e });
               }
             }
 
@@ -1975,7 +2008,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                   }
                 }
               } catch (e) {
-                console.warn(`⚠️ Category SSR failed for ${slug}/${lang}, falling back to ItemList + noscript only:`, e);
+                throw new Error(`Category SSR failed for ${slug}/${lang}`, { cause: e });
               }
             }
 
@@ -2061,7 +2094,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 );
                 comparisonsRendered++;
               } catch (e) {
-                console.warn(`⚠️ SSR render failed for ${lang}/comparatif/${comp.slugPair}, falling back to meta-only:`, e);
+                throw new Error(`SSR render failed for ${lang}/comparatif/${comp.slugPair}`, { cause: e });
               }
             }
 
@@ -2210,7 +2243,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               html = html.replace("</body>", `    <script id="__SSR_POST__" type="application/json">${ssrPostJson}</script>\n  </body>`);
               guidesSsrd++;
             } catch (e) {
-              console.warn(`⚠️ SSR render failed for ${lang}/${routeKind}/${slug}, falling back to meta-only:`, e);
+              throw new Error(`SSR render failed for ${lang}/${routeKind}/${slug}`, { cause: e });
             }
           }
 
@@ -2237,7 +2270,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         const guidesCount = allPostsData.length;
         console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + ${STACKS.length * 2} stack pages (${stacksRendered} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages (${pillarsSsrd} pillars + ${bestOfSsrd} best-of SSR'd) + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (${guidesSsrd} SSR'd, Article + FAQPage) + ${explorerAroundRendered} explorer/around pages + 404.html`);
       } catch (e) {
-        console.warn("⚠️ Prerender failed:", e);
+        throw new Error("Prerender failed:", { cause: e });
       }
     },
   };
@@ -2313,9 +2346,9 @@ function extractCriticalCss(): string {
     const sel = rule.selector.trim();
     if (sel === ":root" || sel === ".dark") {
       let inMediaGutter = false;
-      let p = rule.parent;
+      let p: postcss.Node["parent"] = rule.parent;
       while (p) {
-        if (p.type === "atrule" && p.name === "media" && /max-width:\s*(1023|767)px/.test(p.params)) {
+        if (p.type === "atrule" && "name" in p && p.name === "media" && "params" in p && typeof p.params === "string" && /max-width:\s*(1023|767)px/.test(p.params)) {
           inMediaGutter = true;
         }
         p = p.parent;
@@ -2557,6 +2590,8 @@ export default defineConfig(({ mode, isSsrBuild }) => {
       },
     },
   },
+  // Only scan the application entry, not archived build HTML in the checkout.
+  optimizeDeps: { entries: ["src/main.tsx"] },
   resolve: {
     alias: [
       {
