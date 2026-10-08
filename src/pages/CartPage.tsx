@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy } from "@/lib/icons";
+import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy, ChevronRight } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -183,6 +183,8 @@ export default function CartPage() {
       className={`ms-tool ms-tool-card${active ? " ms-tool--selected" : ""}`}
       style={accent ? ({ "--tool-accent": accent } as React.CSSProperties) : undefined}
       aria-haspopup="dialog"
+      // Says what opens: the card leads to the tool sheet.
+      title={editing ? undefined : t(`${tool.name} : coût, recoupements, alternatives`, `${tool.name}: cost, overlaps, alternatives`)}
       tabIndex={editing ? -1 : undefined}
       onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; active ? closeInspector() : selectTool(toolKey(tool)); }}
     >
@@ -200,6 +202,7 @@ export default function CartPage() {
           <span className="ms-card-overlap-name">{overlaps[0].name}</span>{overlaps.length > 1 && <span>+{overlaps.length - 1}</span>}
         </span>}
       </span>}
+      {!editing && <ChevronRight size={18} className="ms-card-chevron" aria-hidden />}
     </button>
     {/* Edit mode (iOS home screen): a minus badge removes the tool, with undo. */}
     {editing && <button type="button" className="ms-card-remove" onClick={() => removeTool(slug, tool.name)} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}><Minus size={14} aria-hidden /></button>}

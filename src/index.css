@@ -35449,3 +35449,21 @@ img[data-logo-loading] {
 .ms-ts-alts .ms-ts-gap { height: 22px; padding: 0 8px; font-size: 12px; }
 /* Close button: not sticky (Michael, 8 Oct 2026); top right, scrolls with the sheet. */
 .ms-ts-close { position: absolute; top: 20px; right: 20px; margin: 0; order: 0; align-self: auto; }
+/* Tool cards say they open something: a chevron, as on the Stack pages,
+   quiet at rest, darker and nudged on hover; at the row's end on phones. */
+.ms-page .ms-tool.ms-tool-card { position: relative; }
+.ms-page .ms-card-chevron { position: absolute; top: 22px; right: 16px; color: hsl(var(--muted-foreground) / .6); transition: transform 240ms cubic-bezier(.34, 1.4, .64, 1), color 160ms ease; }
+.ms-page .ms-tool.ms-tool-card:hover .ms-card-chevron, .ms-page .ms-tool.ms-tool-card:focus-visible .ms-card-chevron { color: hsl(var(--foreground)); transform: translateX(3px); }
+.ms-page .ms-card-top { padding-right: 40px; }
+@media (max-width: 640px) {
+  .ms-page .ms-card-chevron { position: static; flex: none; margin-right: 12px; }
+  .ms-page .ms-card-top { padding-right: 0; }
+  .ms-page .ms-card-foot { padding-right: 4px; }
+}
+/* Long names wrap on two lines rather than lose their end to the chevron. */
+@media (min-width: 641px) {
+  .ms-page .ms-card-chevron { top: 37px; right: 14px; }
+  .ms-page .ms-card-top { padding-right: 36px; }
+  .ms-page .ms-card-id strong { display: -webkit-box; overflow: hidden; white-space: normal; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.2; }
+}
+@media (min-width: 641px) { .ms-page .ms-card-top { flex: 1; } .ms-page .ms-card-foot { margin-top: 0; } }
