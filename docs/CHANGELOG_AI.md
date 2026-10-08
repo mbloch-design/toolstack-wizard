@@ -1,3 +1,8 @@
+## 2026-10-08 — Correction du routage de publication
+
+- Premier déploiement rejeté par Vercel : groupe capturant imbriqué dans la règle de cache immutable. Le lookahead utilise désormais une alternative sans groupe capturant interne.
+- Régression permanente : toutes les sources headers/redirects/rewrites sont compilées par path-to-regexp, fourni par @vercel/node ; les tests de cache utilisent ce même parseur au lieu de RegExp seul. Test rouge avant correction, vert après.
+
 ## 2026-10-08 — Publication des corrections de revue technique
 
 - Intégration des trois commits main distants (cartes Ma stack, indicateur neutre et guide e-commerce) avant publication des deux commits d'audit.

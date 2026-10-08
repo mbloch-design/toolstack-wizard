@@ -8,7 +8,7 @@
       ]
     },
     {
-      "source": "/assets/((?!(tool|stack)-catalog/).*)",
+      "source": "/assets/((?!tool-catalog/|stack-catalog/).*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
       ]
