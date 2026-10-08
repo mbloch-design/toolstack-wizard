@@ -210,12 +210,22 @@ export default function CartPage() {
       // Keep the active tab in view when the row scrolls (phones).
       const row = tabsRef.current!;
       if (active.offsetLeft < row.scrollLeft || active.offsetLeft + active.offsetWidth > row.scrollLeft + row.clientWidth) {
-        row.scrollTo({ left: active.offsetLeft - 16, behavior: reducedMotion() ? "auto" : "smooth" });
+        row.scrollTo({ left: Math.max(0, active.offsetLeft - 32), behavior: reducedMotion() ? "auto" : "smooth" });
       }
     };
     place();
-    window.addEventListener("resize", place);
-    return () => window.removeEventListener("resize", place);
+    // Fade the edges only where tabs are hidden, so the row says it scrolls.
+    const row = tabsRef.current;
+    const edges = () => {
+      if (!row) return;
+      row.dataset.fadeStart = row.scrollLeft > 2 ? "true" : "false";
+      row.dataset.fadeEnd = row.scrollLeft + row.clientWidth < row.scrollWidth - 2 ? "true" : "false";
+    };
+    edges();
+    row?.addEventListener("scroll", edges, { passive: true });
+    const onResize = () => { place(); edges(); };
+    window.addEventListener("resize", onResize);
+    return () => { window.removeEventListener("resize", onResize); row?.removeEventListener("scroll", edges); };
   }, [activeFilter, mapTerritories.length, lang]);
 
   function chooseDomain(id: string) {
