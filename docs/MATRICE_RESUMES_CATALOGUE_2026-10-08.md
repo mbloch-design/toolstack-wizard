@@ -81,3 +81,7 @@ Le rendu serveur doit recevoir exactement les mêmes résumés visibles qu'aujou
 Validation du correctif : génération déterministe, équivalence totale des résumés et absence de suppression source ; build/types/gates, 56 parcours d'hydratation FR/EN ; rendu de catégories/listings/Explorer/pages piliers et Ma Stack (recherche, relations, coûts, choix conservés). Comparer ensuite octets réellement transférés dans le même protocole. Une migration vers la projection API distante reste hors de ce premier correctif ; sa baseline saine est toujours inconnue dans cet environnement DNS.
 
 Le prochain point d'exécution est ce correctif de transport limité. Cette étude termine la matrice et le prototype ; elle ne déclare pas ce correctif développé ou déployé.
+
+## Suite réalisée — 8 octobre 2026
+
+Le design ci-dessus a ensuite été implémenté et vérifié localement : gain réel de 16 858 octets gzip, 56 hydratations et 20 comparaisons de rendu PASS. Les résultats du prototype restent conservés comme historique. [Rapport du correctif](PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md). Publication à réaliser.

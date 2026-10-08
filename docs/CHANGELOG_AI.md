@@ -1,3 +1,10 @@
+## 2026-10-08 — Index navigateur filtré avant transport
+
+- Règle commune de 113 exclusions ; plugin Vite limité au build navigateur retire les 109 lignes déjà invisibles. Source complète/SSR et filtre défensif du hook conservés ; tous les champs des 1 239 résumés sont identiques.
+- Gain réel : 100 976 octets décodés et 16 858 octets gzip (4,93 %). 13 162 HTML identiques hors noms hachés JS, sitemap et sources inchangés.
+- 251 tests applicatifs, 23 contrats SEO, 99 tests Ma Stack, types, gate design, build/budgets, 56 hydratations et 20 comparaisons FR/EN mobile/desktop PASS. Relecture indépendante sans blocage.
+- Rapport PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md et preuves JSON ; roadmaps actualisées. Correctif local, publication à réaliser ; catégories et travaux catalogue non suivis exclus.
+
 ## 2026-10-08 — Matrice des résumés et prototype de transport
 
 - Inventaire indépendant cartes/recherche/listings et stack/relations, complété par pages piliers/stacks éditoriales : descriptions bilingues, prix, taxonomies, médias, relations et sentinelles ont des consommateurs ; aucun champ retiré.

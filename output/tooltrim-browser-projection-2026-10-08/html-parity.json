@@ -1,0 +1,10 @@
+{
+  "htmlDocuments": 13162,
+  "htmlIdenticalExceptJsAssetHashes": true,
+  "sitemapIdentical": true,
+  "sourceHashes": {
+    "src/data/tools_index.json": "76ee5478cdb73362fff77e6a6cd29d03a94c03fb9a4a97f5167da71672e85c7c",
+    "src/data/tools_v4.json": "59685bc7f11cf4dc5e108871aa5a96fef678bea6493b4683cb42d13eacbf6dd6",
+    "src/data/categories_index.json": "8d2a84111e1deea238db4ee203223d8be724126c03b1cd7c16457dce2f35b042"
+  }
+}

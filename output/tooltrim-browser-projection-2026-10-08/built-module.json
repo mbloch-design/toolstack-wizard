@@ -1,0 +1,15 @@
+{
+  "before": {
+    "file": "data-tool-index-aPfTffg-.js",
+    "decodedBytes": 1520530,
+    "gzipBytes": 342193
+  },
+  "after": {
+    "file": "data-tool-index-aM7rTS5P.js",
+    "decodedBytes": 1419554,
+    "gzipBytes": 325335
+  },
+  "sourceRecords": 1348,
+  "browserRecords": 1239,
+  "retainedFieldsIdentical": true
+}

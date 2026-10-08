@@ -14,6 +14,8 @@ function visit(n){
  if(ts.isVariableStatement(n)&&n.declarationList.declarations.some(d=>['DEPRECATED_TOOL_SLUGS','staticToolSummaries'].includes(d.name.getText(ast)))) parts.push(n.getText(ast));
  ts.forEachChild(n,visit);
 } visit(ast);
+const visibility=ts.createSourceFile('visibility.ts',fs.readFileSync(repo+'/src/lib/toolVisibility.ts','utf8'),ts.ScriptTarget.Latest,true);
+for(const n of visibility.statements) if(ts.isVariableStatement(n)&&n.declarationList.declarations.some(d=>d.name.getText(visibility)==='DEPRECATED_TOOL_SLUGS')) parts.unshift(n.getText(visibility).replace(/^export /,''));
 assert.equal(parts.length,3);
 const js=ts.transpileModule(parts.join('\n')+'\nstaticToolSummaries;', {compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.None}}).outputText;
 const all=JSON.parse(fs.readFileSync(repo+'/src/data/tools_index.json'));
