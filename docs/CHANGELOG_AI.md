@@ -1,3 +1,10 @@
+## 2026-10-08 — Correctifs ciblés des dépendances
+
+- Audit omit-dev : 25 → 9 entrées ; audit complet : 53 → 17, trois entrées critiques → zéro. Restes et portée documentés dans DEPENDANCES_SECURITE_2026-10-08.md.
+- DOMPurify, React Router 6, Vite 6/plugins, PostCSS et dépendances indirectes corrigés ; Vitest 4.1.11 et SDK Vercel 5.10.2. React 18 et Tailwind 3 conservés.
+- tsx et parseur de routage explicités ; trois overrides de même branche pour dépendances verrouillées. Types Node explicites sans retirer les contrôles stricts.
+- Installation npm ci, 243 tests, typecheck app/node, 16 contrats SEO, 93 tests Ma stack, build isolé et 15 scénarios Chromium PASS ; 6/6 régressions avec démarrage automatique de Vite 6. Refonte catégories et données régénérées exclues.
+
 ## 2026-10-08 — Correction du routage de publication
 
 - Premier déploiement rejeté par Vercel : groupe capturant imbriqué dans la règle de cache immutable. Le lookahead utilise désormais une alternative sans groupe capturant interne.
