@@ -35497,3 +35497,12 @@ img[data-logo-loading] {
   .ms-page .ms-card-action { position: static; flex: none; }
 }
 .ms-page .ms-card-foot { gap: 10px; }
+/* Area tabs (8 Oct 2026): one ink line slides and resizes to the active tab;
+   every tab keeps the same weight so the row never shifts; color marks the
+   active one. */
+.ms-page .ms-tools-section .ms-domain-filters { position: relative; scroll-behavior: smooth; }
+.ms-page .ms-domain-filters button { border-bottom-color: transparent !important; font-weight: 500; transition: color 200ms ease; }
+.ms-page .ms-domain-filters button[aria-pressed="true"] { color: hsl(var(--foreground)); font-weight: 500; }
+.ms-page .ms-domain-filters button:hover { color: hsl(var(--foreground)); }
+.ms-page .ms-tab-ink { position: absolute; left: 0; bottom: 0; height: 2px; border-radius: 2px; background: hsl(var(--foreground)); pointer-events: none; transition: transform 420ms cubic-bezier(.34, 1.2, .64, 1), width 420ms cubic-bezier(.34, 1.2, .64, 1); }
+@media (prefers-reduced-motion: reduce) { .ms-page .ms-tab-ink { transition: none; } .ms-page .ms-tools-section .ms-domain-filters { scroll-behavior: auto; } }

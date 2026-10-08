@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy, ChevronRight } from "@/lib/icons";
 import { toast } from "sonner";
@@ -155,6 +155,69 @@ export default function CartPage() {
       action: { label: t("Annuler", "Undo"), onClick: () => restoreTool(entry, index) },
     });
   }
+  // Filter motion (FLIP): cards leaving the filter fade out first, the ones
+  // that stay glide to their new place, the ones arriving fade in, staggered.
+  // Motion explains the change instead of a jump. Off for reduced motion.
+  const gridRef = useRef<HTMLDivElement>(null);
+  const flipFrom = useRef<Map<string, DOMRect> | null>(null);
+  const filterToken = useRef(0);
+  const reducedMotion = () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function cardsById() {
+    return new Map([...(gridRef.current?.querySelectorAll<HTMLElement>("[data-flip-id]") || [])].map((el) => [el.dataset.flipId as string, el]));
+  }
+  function filterTo(id: string) {
+    // Clicking the active area again goes back to all tools.
+    const target = id !== "all" && id === activeFilter ? "all" : id;
+    if (target === activeFilter) return;
+    const token = ++filterToken.current;
+    const nextIds = new Set((target === "all" ? selectedTools : mapTerritories.find((territory) => territory.id === target)?.tools || []).map((tool) => tool.id));
+    if (reducedMotion()) { chooseDomain(target); return; }
+    const cards = cardsById();
+    const leaving = [...cards].filter(([cardId]) => !nextIds.has(cardId)).map(([, el]) => el);
+    const exits = leaving.map((el) => el.animate([{ opacity: 1, transform: "scale(1)" }, { opacity: 0, transform: "scale(.96)" }], { duration: 140, easing: "ease-in", fill: "forwards" }));
+    Promise.all(exits.map((animation) => animation.finished.catch(() => undefined))).then(() => {
+      if (token !== filterToken.current) return;
+      flipFrom.current = new Map([...cardsById()].map(([cardId, el]) => [cardId, el.getBoundingClientRect()]));
+      exits.forEach((animation) => animation.cancel());
+      chooseDomain(target);
+    });
+  }
+  useLayoutEffect(() => {
+    const from = flipFrom.current;
+    flipFrom.current = null;
+    if (!from || reducedMotion()) return;
+    let arriving = 0;
+    cardsById().forEach((el, cardId) => {
+      const before = from.get(cardId);
+      const now = el.getBoundingClientRect();
+      if (before) {
+        const dx = before.left - now.left, dy = before.top - now.top;
+        if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) el.animate([{ transform: `translate(${dx}px, ${dy}px)` }, { transform: "none" }], { duration: 420, easing: "cubic-bezier(.2, .8, .2, 1)" });
+      } else {
+        el.animate([{ opacity: 0, transform: "translateY(10px) scale(.97)" }, { opacity: 1, transform: "none" }], { duration: 320, delay: Math.min(arriving++ * 35, 280), easing: "cubic-bezier(.2, .8, .2, 1)", fill: "backwards" });
+      }
+    });
+  }, [activeFilter]);
+
+  // Tab ink: one underline that slides and resizes to the active tab.
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const [ink, setInk] = useState<{ left: number; width: number } | null>(null);
+  useLayoutEffect(() => {
+    const place = () => {
+      const active = tabsRef.current?.querySelector<HTMLElement>('button[aria-pressed="true"]');
+      if (!active) return;
+      setInk({ left: active.offsetLeft, width: active.offsetWidth });
+      // Keep the active tab in view when the row scrolls (phones).
+      const row = tabsRef.current!;
+      if (active.offsetLeft < row.scrollLeft || active.offsetLeft + active.offsetWidth > row.scrollLeft + row.clientWidth) {
+        row.scrollTo({ left: active.offsetLeft - 16, behavior: reducedMotion() ? "auto" : "smooth" });
+      }
+    };
+    place();
+    window.addEventListener("resize", place);
+    return () => window.removeEventListener("resize", place);
+  }, [activeFilter, mapTerritories.length, lang]);
+
   function chooseDomain(id: string) {
     setDomainFilter(id);
     const members = mapTerritories.find((territory) => territory.id === id)?.tools;
@@ -176,7 +239,7 @@ export default function CartPage() {
     // Two fixed zones: identity on top, then a footer on a hairline (price
     // left, overlap right) aligned across every card of a row.
     const slug = state.pinnedToolSlugs.find((pinned) => lookup.get(pinned)?.id === tool.id) || toolKey(tool);
-    return <div key={tool.id} className="ms-card-wrap">
+    return <div key={tool.id} className="ms-card-wrap" data-flip-id={tool.id}>
     <button
       type="button"
       data-tool-id={tool.id}
@@ -336,13 +399,14 @@ export default function CartPage() {
           </div>
         </div>
         {searchPanel}
-        <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")}>
-          <button type="button" aria-pressed={activeFilter === "all"} onClick={() => chooseDomain("all")}>{t("Tous", "All")}<span>{selectedTools.length}</span></button>
-          {mapTerritories.map((territory) => <button key={territory.id} type="button" aria-pressed={activeFilter === territory.id} onClick={() => chooseDomain(territory.id)}>
+        <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")} ref={tabsRef}>
+          {ink && <span className="ms-tab-ink" aria-hidden="true" style={{ transform: `translateX(${ink.left}px)`, width: ink.width }} />}
+          <button type="button" aria-pressed={activeFilter === "all"} onClick={() => filterTo("all")}>{t("Tous", "All")}<span>{selectedTools.length}</span></button>
+          {mapTerritories.map((territory) => <button key={territory.id} type="button" aria-pressed={activeFilter === territory.id} onClick={() => filterTo(territory.id)}>
             {territory.id === "assist" ? t("IA", "AI") : territory.label}<span>{territory.tools.length}</span>
           </button>)}
         </div>
-        <div className="ms-card-grid" data-editing={editing || undefined}>{listTools.map(renderTool)}</div>
+        <div className="ms-card-grid" data-editing={editing || undefined} ref={gridRef}>{listTools.map(renderTool)}</div>
       </section>
 
       <StackToolSheet tool={selected || null} detail={resolved} pairs={overlapScore.pairs} categories={categories} paid={plans} currency={currency} prefix={prefix} lang={lang}
