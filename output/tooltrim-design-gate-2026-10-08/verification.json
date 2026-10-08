@@ -1,0 +1,43 @@
+{
+  "documents": 13162,
+  "metadataIdentical": true,
+  "jsonLdIdentical": true,
+  "textIdentical": true,
+  "sitemapByteIdentical": true,
+  "gate": {
+    "before": {
+      "cssColors": 145,
+      "cssRadii": 241,
+      "inlineStyles": 127
+    },
+    "after": {
+      "cssColors": 137,
+      "cssRadii": 223,
+      "inlineStyles": 125
+    },
+    "baselineUnchanged": true,
+    "validatorUnchanged": true
+  },
+  "tests": {
+    "application": 249,
+    "seoContracts": 23,
+    "functionalBrowser": 30,
+    "typecheck": "PASS",
+    "build": "PASS"
+  },
+  "visual": {
+    "computedStyleAndGeometryIdentical": 12,
+    "pixelIdentical": 10,
+    "total": 12,
+    "desktopRasterDifferences": {
+      "fr": {
+        "pixels": 11,
+        "maxChannelDelta": 6
+      },
+      "en": {
+        "pixels": 34,
+        "maxChannelDelta": 6
+      }
+    }
+  }
+}

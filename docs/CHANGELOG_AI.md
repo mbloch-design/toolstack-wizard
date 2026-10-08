@@ -1,3 +1,16 @@
+## 2026-10-08 — Gate design rétabli sans hausse de baseline
+
+- Huit couleurs et dix-huit rayons CSS de Ma Stack passent aux tokens à valeurs conservées ; deux styles statiques GuideCardEditorial déplacés dans les classes ec. Styles d'animation dynamiques conservés.
+- Baseline et validateur inchangés : gate PASS à 137 couleurs CSS, 223 rayons et 125 styles inline. 249 tests applicatifs, 23 contrats SEO, types, build et 30 parcours navigateur PASS.
+- Douze vues FR/EN mobile/desktop : styles calculés et géométrie identiques, dix PNG identiques et écarts de 11/34 pixels sur les deux autres. Texte/métadonnées/JSON-LD de 13 162 pages et sitemap conservés.
+- Rapport GATE_DESIGN_2026-10-08.md ; roadmaps actualisées, catégories locales et exports exclus.
+
+## 2026-10-08 — Roadmaps actualisées après la revue technique
+
+- ROADMAP.md : suivi actif, lots déployés et preuves, poids actuel, priorités ordonnées et critères de sortie ; ancienne ligne de bundle monolithique corrigée.
+- MA_STACK_ROADMAP.md : checkpoint de juillet identifié comme historique, état hydratation/persistance et couverture CI remis à jour ; prochains travaux reliés au suivi transversal.
+- Suite proposée : dette du gate design, recette navigateur automatisée, cadrage du chargement catalogue ; dépendances résiduelles dans un lot séparé. Aucun changement applicatif.
+
 ## 2026-10-08 — Projection ciblée du bootstrap outil
 
 - Sept champs historiques audités retirés uniquement de __SSR_TOOL__ ; copie de l'objet, sources catalogue et données utiles FR/EN intactes.

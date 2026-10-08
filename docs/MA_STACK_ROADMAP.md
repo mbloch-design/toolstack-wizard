@@ -1,3 +1,14 @@
+## Actualisation — 8 octobre 2026
+
+Les sections datées de juillet ci-dessous sont un checkpoint historique ; le cap V1/V2 d'octobre prévaut. L'ordre du chantier transversal est maintenu dans [ROADMAP.md — suivi technique actif](ROADMAP.md#suivi-technique-actif--8-octobre-2026).
+
+- **Fait et déployé** : hydratation avec sélection enregistrée, restauration sans perte, conservation des métadonnées et synchronisation du store. Commit `cccdbc002b`, [preuve](CORRECTIF_HYDRATATION_STACK_2026-10-08.md).
+- **Fait et déployé** : bootstrap des fiches allégé sans modifier les données originales ; 56/56 parcours publics FR/EN, navigation Alternatives/Avis et reload avec sélection. Commit `90af59e551`, [preuve](PROJECTION_BOOTSTRAP_2026-10-08.md).
+- **Socle CI actualisé** : le workflow conservé exécute tests applicatifs, contrats SEO, types, tests Ma Stack et build. La recette navigateur sur HTML généré reste lancée séparément ; son automatisation est une prochaine étape, le gate design étant désormais rétabli localement et validé ([preuve](GATE_DESIGN_2026-10-08.md)).
+- **Suite produit** : conserver l'existant et cadrer le chargement catalogue sur des mesures réelles ; la validation des relations et les essais utilisateurs restent des chantiers distincts, non déclarés terminés par une recette technique.
+
+---
+
 # Mon Stack V2 — correction active, 5 octobre 2026
 
 Stack conserve l’inventaire catalogue. Map devient une lecture des usages structurés, avec outils uniques et sous-territoires. Le Focus intégré explique la position, les usages et les relations avec la sélection personnelle ; les tarifs sont simplifiés et sans répétition. Audit et règles : [MON_STACK_V2.md](MON_STACK_V2.md). Aucun changement du stockage ou dépendance serveur supplémentaire.
@@ -14,9 +25,9 @@ Audit, écarts et intervention : [MON_STACK_V1.md](MON_STACK_V1.md). Les formats
 
 # Tooltrim — Roadmap active Ma stack + Explorer
 
-> Mise à jour : 16 juillet 2026
+> Checkpoint historique : 16 juillet 2026
 >
-> Statut : **Étape 0 terminée — Étape 1 à lancer**
+> Statut au checkpoint : **Étape 0 terminée — Étape 1 à lancer** ; voir l’actualisation d’octobre en tête de document.
 >
 > Ce document pilote l’ordre des travaux sur Ma stack et Explorer. La roadmap générale conserve l’historique du site ; le diagnostic possède sa propre roadmap.
 
@@ -221,9 +232,9 @@ Décision : ne pas masquer ni abaisser le seuil GO14 dans ce chantier. Cet éche
 
 ## Prochaines actions concrètes
 
-1. Terminer le checkpoint technique et Git de l’étape 0.
-2. Construire le jeu de référence des relations avant de retoucher encore l’interface.
-3. Lancer ensuite la passe de micro-interactions télescopiques sur des résultats devenus crédibles.
+1. Suivre les priorités techniques actuelles de ROADMAP.md : gate design, recette navigateur automatisée, puis cadrage du chargement catalogue.
+2. Pour le chantier produit, établir le jeu de référence des relations avant une nouvelle passe d’interface.
+3. Valider ensuite la compréhension des parcours avec des utilisateurs ; les tests techniques ne prouvent pas cette compréhension.
 
 ## Définition de sortie MVP
 
@@ -240,7 +251,7 @@ Le MVP Ma stack + Explorer est prêt lorsque :
 
 - `CartPage.tsx` et `src/index.css` restent volumineux et devront être découpés après stabilisation du flux.
 - Les données catalogue sont encore chargées dans des bundles trop importants.
-- La CI couvre désormais les tests unitaires Ma stack et exploration, mais pas encore le parcours E2E navigateur ni la suite globale tant que GO14 reste rouge.
+- La CI couvre les suites applicatives et Ma Stack, les contrats SEO, les types et le build ; elle ne lance pas encore la recette E2E sur HTML généré. Le blocage GO14 appartient au checkpoint historique et ne pilote plus le workflow conservé.
 - L’historique Git récent contient des changements Explorer mêlés à un commit nommé pour la page outil ; le checkpoint doit restaurer une lecture claire de l’état courant.
 
 

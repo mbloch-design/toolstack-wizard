@@ -125,11 +125,16 @@
     --radius-2xl:  1.5rem;             /* 24px — full-bleed blocks */
     --radius-pill: 9999px;             /* pill badges / filters */
     --radius-circle: 50%;              /* avatars, dots, round buttons */
+    --radius-2xs: 2px;
+    --radius-stack-plan: 14px;
+    --radius-stack-pair-logo: 9px;
     --radius-stack-card: 22px;
     --radius-stack-card-mobile: 18px;
     --radius-stack-logo: 13px;
     --radius-stack-logo-mobile: 11px;
     --color-stack-accent-fallback: #8E8E93;
+    --color-stack-saving: #0E9F6E;
+    --color-stack-overlap: #E8590C;
 
     /* ── Component heights ── */
     --h-btn:   56px;                   /* primary/secondary button */
@@ -8010,6 +8015,8 @@
     margin-bottom: 18px;
     display: block;
   }
+  .ec-card .ec-title--guide { font-size: clamp(1.0625rem, 1.6vw, 1.3rem); }
+  .ec-card .ec-text--guide { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
   .ec-title {
     font-family: var(--font-brand);
     font-size: 24px;
@@ -35235,18 +35242,18 @@ img[data-logo-loading] {
 .ms-ce-block { display: grid; gap: 8px; }
 .ms-ce-label { margin: 0; color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
 .ms-ce-plans { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
-.ms-ce-plan { display: grid; gap: 2px; padding: 10px 12px; border-radius: 14px; background: hsl(var(--secondary) / .6); text-align: left; transition: box-shadow 160ms ease, background-color 160ms ease; }
+.ms-ce-plan { display: grid; gap: 2px; padding: 10px 12px; border-radius: var(--radius-stack-plan); background: hsl(var(--secondary) / .6); text-align: left; transition: box-shadow 160ms ease, background-color 160ms ease; }
 .ms-ce-plan strong { font: 600 14px/1.25 var(--font-ui); }
 .ms-ce-plan small { color: hsl(var(--muted-foreground)); font: 500 12px/1.3 var(--font-ui); }
 .ms-ce-plan:hover { background: hsl(var(--secondary)); }
 .ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: 0 0 0 2px hsl(var(--foreground)); }
 .ms-ce-seats { grid-template-columns: 1fr auto; align-items: center; }
 .ms-ce-stepper { display: inline-flex; align-items: center; gap: 4px; padding: 3px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); }
-.ms-ce-stepper button { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: hsl(var(--card)); box-shadow: 0 1px 2px rgba(15, 15, 15, .08); }
+.ms-ce-stepper button { display: grid; place-items: center; width: 32px; height: 32px; border-radius: var(--radius-circle); background: hsl(var(--card)); box-shadow: 0 1px 2px rgba(15, 15, 15, .08); }
 .ms-ce-stepper button:disabled { opacity: .4; }
 .ms-ce-stepper output { min-width: 32px; text-align: center; font: 650 16px/1 var(--font-ui); font-variant-numeric: tabular-nums; }
 .ms-ce-custom { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
-.ms-ce-input { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; border-radius: 12px; background: hsl(var(--secondary) / .6); box-shadow: inset 0 0 0 1px hsl(var(--border)); }
+.ms-ce-input { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; border-radius: var(--tt-radius-sm); background: hsl(var(--secondary) / .6); box-shadow: inset 0 0 0 1px hsl(var(--border)); }
 .ms-ce-input:focus-within { box-shadow: inset 0 0 0 2px hsl(var(--foreground)); background: hsl(var(--card)); }
 .ms-ce-input input { width: 88px; border: 0; background: none; font: 650 16px/1 var(--font-ui); font-variant-numeric: tabular-nums; outline: none; }
 .ms-ce-input span { color: hsl(var(--muted-foreground)); font: 600 15px/1 var(--font-ui); }
@@ -35258,13 +35265,13 @@ img[data-logo-loading] {
 /* Tool sheet: nothing gets squeezed (the sheet scrolls as a whole), and
    plans read as a settings list, whatever their number or name length. */
 .ms-tool-sheet.ms-tool-sheet > * { flex-shrink: 0; }
-.ms-ce-plans { grid-template-columns: 1fr; gap: 0; overflow: hidden; border-radius: 14px; background: hsl(var(--secondary) / .6); }
+.ms-ce-plans { grid-template-columns: 1fr; gap: 0; overflow: hidden; border-radius: var(--radius-stack-plan); background: hsl(var(--secondary) / .6); }
 .ms-ce-plan { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 0; background: none; }
 .ms-ce-plan + .ms-ce-plan { box-shadow: inset 0 1px 0 hsl(var(--border) / .8); }
 .ms-ce-plan strong { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; min-width: 0; }
 .ms-ce-plan small { flex: none; max-width: 48%; text-align: right; }
 .ms-ce-plan:hover { background: hsl(var(--secondary)); }
-.ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: inset 0 0 0 2px hsl(var(--foreground)); border-radius: 14px; }
+.ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: inset 0 0 0 2px hsl(var(--foreground)); border-radius: var(--radius-stack-plan); }
 .ms-ce-plan[aria-checked="true"] + .ms-ce-plan { box-shadow: none; }
 
 /* Motion without jumps (8 Oct 2026). Rule: nothing changes size or position
@@ -35313,7 +35320,7 @@ img[data-logo-loading] {
 .ms-ce-plan:hover { background: hsl(var(--secondary) / .5); }
 .ms-ce-plan strong { font-weight: 500; }
 .ms-ce-plan[aria-checked="true"] strong { font-weight: 650; }
-.ms-ce-check { color: #0E9F6E; }
+.ms-ce-check { color: var(--color-stack-saving); }
 /* ── Lightness and tactility (8 Oct 2026) ──
    Air and fine lines; micro-interactions that feel solid (a sliding thumb, a
    switch that stretches under the finger, buttons that press) with a light
@@ -35346,7 +35353,7 @@ img[data-logo-loading] {
 @keyframes tt-shake-b { 20% { transform: translateX(-4px); } 40% { transform: translateX(4px); } 60% { transform: translateX(-3px); } 80% { transform: translateX(2px); } }
 
 /* A check that draws itself. */
-.ms-ce-check { opacity: 1; transform: none; color: #0E9F6E; }
+.ms-ce-check { opacity: 1; transform: none; color: var(--color-stack-saving); }
 .ms-ce-check path { stroke-dasharray: 14; stroke-dashoffset: 14; transition: stroke-dashoffset 320ms cubic-bezier(.2, .8, .2, 1) 40ms; }
 .ms-ce-plan[aria-checked="true"] .ms-ce-check path { stroke-dashoffset: 0; }
 
@@ -35363,17 +35370,17 @@ img[data-logo-loading] {
 /* Tool sheet with air: more room, fine lines, the cost as its figure. */
 .ms-tool-sheet.ms-tool-sheet { gap: 28px; padding: 36px 28px 28px; }
 .ms-ts-head { gap: 16px; }
-.ms-ts-head > :first-child { border-radius: 16px; box-shadow: 0 14px 34px color-mix(in srgb, var(--tool-accent, #8E8E93) 30%, transparent), 0 0 0 .5px rgba(15, 15, 15, .08); }
+.ms-ts-head > :first-child { border-radius: var(--radius-lg); box-shadow: 0 14px 34px color-mix(in srgb, var(--tool-accent, var(--color-stack-accent-fallback)) 30%, transparent), 0 0 0 .5px rgba(15, 15, 15, .08); }
 .ms-ts-title { font-size: 28px; }
 .ms-ts-lead { margin-top: -10px; font-size: 15px; line-height: 1.6; }
-.ms-ts-group { border-radius: 22px; box-shadow: 0 0 0 .5px hsl(var(--border)), 0 1px 2px rgba(15, 15, 15, .03); }
+.ms-ts-group { border-radius: var(--radius-stack-card); box-shadow: 0 0 0 .5px hsl(var(--border)), 0 1px 2px rgba(15, 15, 15, .03); }
 .ms-ts-cost { display: grid; gap: 2px; padding: 20px 20px 18px; }
 .ms-ts-cost-label { color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
 .ms-ts-cost-value { margin-top: 4px; font: 650 34px/1.1 var(--font-brand); letter-spacing: -.035em; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .ms-ts-cost-source { overflow: hidden; color: hsl(var(--muted-foreground)); font: 500 13px/1.4 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
 .ms-ts-row + .ms-ts-row, .ms-ts-cost + .ms-ts-row { box-shadow: inset 0 .5px 0 hsl(var(--border)); }
 .ms-ts-adjust { box-shadow: inset 0 .5px 0 hsl(var(--border)); padding: 12px 20px; }
-.ms-ts-adjust svg { box-sizing: content-box; padding: 6px; border-radius: 50%; background: hsl(var(--secondary)); }
+.ms-ts-adjust svg { box-sizing: content-box; padding: 6px; border-radius: var(--radius-circle); background: hsl(var(--secondary)); }
 .ms-ts-row { padding: 12px 20px; }
 .ms-cost-editor { padding: 0 20px 20px; }
 .ms-ts-section h3, .ms-ts-group h3 { letter-spacing: .1em; }
@@ -35418,7 +35425,7 @@ img[data-logo-loading] {
 .ms-ts-alts li { grid-template-columns: minmax(0, 1fr) auto auto; }
 .ms-ts-alts .ms-ts-other { color: inherit; text-decoration: none; }
 .ms-ts-gap { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); color: hsl(var(--muted-foreground)); font: 600 12px/1 var(--font-ui); white-space: nowrap; font-variant-numeric: tabular-nums; }
-.ms-ts-gap.is-less { background: color-mix(in srgb, #0E9F6E 12%, hsl(var(--card))); color: color-mix(in srgb, #0E9F6E 80%, #000); }
+.ms-ts-gap.is-less { background: color-mix(in srgb, var(--color-stack-saving) 12%, hsl(var(--card))); color: color-mix(in srgb, var(--color-stack-saving) 80%, #000); }
 .ms-ts-foot-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 8px; }
 .ms-ts-open { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 46px; border-radius: var(--radius-pill); text-decoration: none; }
 .ms-ts-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 46px; border-radius: var(--radius-pill); background: hsl(var(--card)); box-shadow: inset 0 0 0 .5px hsl(var(--border)); color: hsl(var(--foreground)); font: 600 14px/1 var(--font-ui); text-decoration: none; transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1), background-color 160ms ease; }
@@ -35437,7 +35444,7 @@ img[data-logo-loading] {
 .ms-ts-close {
   position: sticky; top: 0; z-index: 3; order: -1; align-self: flex-end; flex-shrink: 0;
   display: grid; place-items: center; width: 36px; height: 36px; margin: -16px -8px -64px 0;
-  border-radius: 50%; background: hsl(var(--card)); color: hsl(var(--foreground));
+  border-radius: var(--radius-circle); background: hsl(var(--card)); color: hsl(var(--foreground));
   box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 8px rgba(15, 15, 15, .08);
   transition: background-color 160ms ease, transform 200ms cubic-bezier(.34, 1.4, .64, 1), box-shadow 160ms ease;
 }
@@ -35509,7 +35516,7 @@ img[data-logo-loading] {
 .ms-page .ms-domain-filters button { border-bottom-color: transparent !important; font-weight: 500; transition: color 200ms ease; }
 .ms-page .ms-domain-filters button[aria-pressed="true"] { color: hsl(var(--foreground)); font-weight: 500; }
 .ms-page .ms-domain-filters button:hover { color: hsl(var(--foreground)); }
-.ms-page .ms-tab-ink { position: absolute; left: 0; bottom: 0; height: 2px; border-radius: 2px; background: hsl(var(--foreground)); pointer-events: none; transition: transform 420ms cubic-bezier(.34, 1.2, .64, 1), width 420ms cubic-bezier(.34, 1.2, .64, 1); }
+.ms-page .ms-tab-ink { position: absolute; left: 0; bottom: 0; height: 2px; border-radius: var(--radius-2xs); background: hsl(var(--foreground)); pointer-events: none; transition: transform 420ms cubic-bezier(.34, 1.2, .64, 1), width 420ms cubic-bezier(.34, 1.2, .64, 1); }
 @media (prefers-reduced-motion: reduce) { .ms-page .ms-tab-ink { transition: none; } .ms-page .ms-tools-section .ms-domain-filters { scroll-behavior: auto; } }
 /* Area tabs as a pill track (8 Oct 2026): the same family as the segmented
    controls of the page. A dark thumb slides and resizes behind the active
@@ -35564,7 +35571,7 @@ img[data-logo-loading] {
    Icons overlapped, "A ⇄ B" with reason and costs under it, the amount paid
    twice, then Compare (quiet) and Decide (small dark pill). */
 .ms-page .ms-pairs-panel { padding: 0; border-radius: 0; background: none; }
-.ms-page .ms-pairs-panel .ms-pairs { display: block; overflow: hidden; border-radius: 20px; background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)), 0 1px 2px rgba(15, 15, 15, .03); }
+.ms-page .ms-pairs-panel .ms-pairs { display: block; overflow: hidden; border-radius: var(--radius-xl); background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)), 0 1px 2px rgba(15, 15, 15, .03); }
 .ms-page .ms-pairs-panel .ms-pair.ms-pair-row {
   display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 16px;
   height: auto; padding: 14px 18px; border: 0; border-radius: 0; background: none; transform: none; transition: background-color 160ms ease;
@@ -35572,13 +35579,13 @@ img[data-logo-loading] {
 .ms-page .ms-pairs-panel .ms-pair.ms-pair-row:hover { transform: none; background: hsl(var(--secondary) / .45); }
 .ms-page .ms-pairs-panel .ms-pair-row + .ms-pair-row { box-shadow: inset 0 .5px 0 hsl(var(--border)); }
 .ms-page .ms-pair-icons { display: flex; flex: none; }
-.ms-page .ms-pair-icons > * { border-radius: 9px; box-shadow: 0 0 0 2px hsl(var(--card)); }
+.ms-page .ms-pair-icons > * { border-radius: var(--radius-stack-pair-logo); box-shadow: 0 0 0 2px hsl(var(--card)); }
 .ms-page .ms-pair-icons > * + * { margin-left: -10px; }
 .ms-page .ms-pair-text { display: grid; gap: 2px; min-width: 0; }
 .ms-page .ms-pair-names { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; min-width: 0; }
 .ms-page .ms-pair-names button { padding: 0; color: hsl(var(--foreground)); font: 600 15px/1.3 var(--font-ui); text-align: left; }
 .ms-page .ms-pair-names button:hover { text-decoration: underline; text-underline-offset: 3px; }
-.ms-page .ms-pair-x { color: color-mix(in srgb, #E8590C 75%, #000); font: 500 13px/1 var(--font-ui); }
+.ms-page .ms-pair-x { color: color-mix(in srgb, var(--color-stack-overlap) 75%, #000); font: 500 13px/1 var(--font-ui); }
 .ms-page .ms-pair-text small { overflow: hidden; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.4 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
 .ms-page .ms-pair-row .ms-pair-double { margin: 0; white-space: nowrap; }
 .ms-page .ms-pair-row .ms-pair-actions { display: flex; align-items: center; gap: 4px; padding: 0; }
@@ -35595,14 +35602,14 @@ img[data-logo-loading] {
 /* Three columns only: icons, text (names, then reason and what is paid
    twice in orange), actions; names keep their room. */
 .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr) auto; }
-.ms-page .ms-pair-double-text { color: color-mix(in srgb, #E8590C 82%, #000); font-weight: 600; }
+.ms-page .ms-pair-double-text { color: color-mix(in srgb, var(--color-stack-overlap) 82%, #000); font-weight: 600; }
 @media (max-width: 640px) { .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr); } }
 /* Pair icons: two 44px app icons side by side with soft shadows, the swap
    badge sitting between them; names read as a sentence ("A et B"). */
 .ms-page .ms-pair-icons { position: relative; gap: 10px; }
-.ms-page .ms-pair-icons > :not(.ms-pair-swap) { border-radius: 12px; box-shadow: 0 4px 12px rgba(15, 15, 15, .08), 0 0 0 .5px rgba(15, 15, 15, .06); }
+.ms-page .ms-pair-icons > :not(.ms-pair-swap) { border-radius: var(--tt-radius-sm); box-shadow: 0 4px 12px rgba(15, 15, 15, .08), 0 0 0 .5px rgba(15, 15, 15, .06); }
 .ms-page .ms-pair-icons > * + * { margin-left: 0; }
-.ms-page .ms-pair-swap { position: absolute; left: 50%; top: 50%; z-index: 1; display: grid; place-items: center; width: 22px; height: 22px; margin: 0; border-radius: 50%; background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 6px rgba(15, 15, 15, .1); color: color-mix(in srgb, #E8590C 80%, #000); font: 600 11px/1 var(--font-ui); transform: translate(-50%, -50%); }
+.ms-page .ms-pair-swap { position: absolute; left: 50%; top: 50%; z-index: 1; display: grid; place-items: center; width: 22px; height: 22px; margin: 0; border-radius: var(--radius-circle); background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 6px rgba(15, 15, 15, .1); color: color-mix(in srgb, var(--color-stack-overlap) 80%, #000); font: 600 11px/1 var(--font-ui); transform: translate(-50%, -50%); }
 .ms-page .ms-pair-x { color: hsl(var(--muted-foreground)); font: 500 14px/1.3 var(--font-ui); }
 .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { gap: 18px; padding: 14px 18px; }
 @media (max-width: 640px) { .ms-page .ms-pair-icons { gap: 8px; } }
@@ -35626,7 +35633,7 @@ img[data-logo-loading] {
   .ms-page .ms-hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: none; gap: 8px; max-width: none; margin-top: 24px; padding: 0; border: 0; }
   .ms-page .ms-hero-stats > div {
     display: flex; flex-direction: column; grid-row: auto; grid-template-areas: none; min-width: 0;
-    padding: 12px 12px 14px; border: 0; border-radius: 18px; background: hsl(var(--card));
+    padding: 12px 12px 14px; border: 0; border-radius: var(--radius-stack-card-mobile); background: hsl(var(--card));
     box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 8px rgba(15, 15, 15, .04);
   }
   .ms-page .ms-hero-stats > div:last-child { border: 0; }
@@ -35672,7 +35679,7 @@ img[data-logo-loading] {
    overlaps column's square divider style) between 641 and 760px too. */
 @media (max-width: 760px) {
   .ms-page .ms-hero-stats > div, .ms-page .ms-hero-stats > div:first-child, .ms-page .ms-hero-stats > div + div, .ms-page .ms-hero-stats > div.ms-stat--overlaps {
-    padding: 12px 12px 14px; border: 0; border-radius: 18px; background: hsl(var(--card));
+    padding: 12px 12px 14px; border: 0; border-radius: var(--radius-stack-card-mobile); background: hsl(var(--card));
     box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 8px rgba(15, 15, 15, .04);
   }
 }
@@ -35680,12 +35687,12 @@ img[data-logo-loading] {
    block, rows separated by an inset hairline, no per-row card, shadow or
    tint; price on one quiet line, chevron at the end. */
 @media (max-width: 640px) {
-  .ms-page .ms-card-grid { gap: 0; overflow: hidden; border-radius: 20px; background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)); }
+  .ms-page .ms-card-grid { gap: 0; overflow: hidden; border-radius: var(--radius-xl); background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)); }
   .ms-page .ms-card-wrap { animation: none; }
   .ms-page .ms-tool.ms-tool-card, .ms-page .ms-tool.ms-tool-card:hover { min-height: 60px; border-radius: 0; background: none; box-shadow: none; transform: none; }
   .ms-page .ms-card-wrap + .ms-card-wrap .ms-tool-card::before { content: ""; position: absolute; top: 0; left: 64px; right: 0; height: .5px; background: hsl(var(--border)); }
   .ms-page .ms-card-top { padding: 10px 0 10px 14px; gap: 12px; background: none; }
-  .ms-page .ms-card-logo > * { width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important; border-radius: 9px !important; box-shadow: 0 0 0 .5px rgba(15, 15, 15, .08) !important; }
+  .ms-page .ms-card-logo > * { width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important; border-radius: var(--radius-stack-pair-logo) !important; box-shadow: 0 0 0 .5px rgba(15, 15, 15, .08) !important; }
   .ms-page .ms-card-id strong { font-size: 15px; font-weight: 600; }
   .ms-page .ms-card-id span { font-size: 12.5px; }
   .ms-page .ms-card-price { display: block; max-width: 120px; color: hsl(var(--muted-foreground)); font: 500 13px/1.3 var(--font-ui); text-align: right; }
