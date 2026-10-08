@@ -35467,3 +35467,33 @@ img[data-logo-loading] {
   .ms-page .ms-card-id strong { display: -webkit-box; overflow: hidden; white-space: normal; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.2; }
 }
 @media (min-width: 641px) { .ms-page .ms-card-top { flex: 1; } .ms-page .ms-card-foot { margin-top: 0; } }
+/* "Manage ›" instead of a bare chevron: the card names its action. */
+.ms-page .ms-card-chevron { display: none; }
+.ms-page .ms-card-action { position: absolute; top: 18px; right: 14px; display: inline-flex; align-items: center; gap: 2px; height: 26px; padding: 0 6px 0 10px; border-radius: var(--radius-pill); background: hsl(var(--card) / .7); color: hsl(var(--muted-foreground)); font: 600 12.5px/1 var(--font-ui); transition: background-color 160ms ease, color 160ms ease; }
+.ms-page .ms-card-action svg { transition: transform 240ms cubic-bezier(.34, 1.4, .64, 1); }
+.ms-page .ms-tool.ms-tool-card:hover .ms-card-action, .ms-page .ms-tool.ms-tool-card:focus-visible .ms-card-action { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+.ms-page .ms-tool.ms-tool-card:hover .ms-card-action svg { transform: translateX(2px); }
+.ms-page .ms-card-top { padding-right: 84px; }
+/* A missing price reads as the next thing to do. */
+.ms-page .ms-card-price--none { color: hsl(var(--foreground)); font-weight: 600; text-decoration: underline; text-decoration-color: hsl(var(--muted-foreground) / .5); text-underline-offset: 3px; }
+@media (max-width: 640px) {
+  .ms-page .ms-card-action { position: static; flex: none; margin-right: 10px; padding: 0; background: none; }
+  .ms-page .ms-card-action > span { display: none; }
+  .ms-page .ms-card-top { padding-right: 0; }
+  .ms-page .ms-tool.ms-tool-card:hover .ms-card-action { background: none; color: hsl(var(--foreground)); }
+}
+/* Room for "Manage": the area line keeps its words (it shrinks under the
+   action only on the first line, the name; the area wraps under). */
+@media (min-width: 641px) {
+  .ms-page .ms-card-top { padding-right: 20px; }
+  .ms-page .ms-card-id strong { padding-right: 70px; }
+}
+/* Card layout v3 (8 Oct 2026): identity on top (name in full, area, overlap
+   chip), money and the action at the bottom. */
+@media (min-width: 641px) {
+  .ms-page .ms-card-top { padding-right: 20px; align-items: flex-start; }
+  .ms-page .ms-card-id strong { padding-right: 0; }
+  .ms-page .ms-card-id .ms-card-overlap { justify-self: start; margin-top: 6px; max-width: 100%; }
+  .ms-page .ms-card-action { position: static; flex: none; }
+}
+.ms-page .ms-card-foot { gap: 10px; }

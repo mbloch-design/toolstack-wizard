@@ -184,25 +184,29 @@ export default function CartPage() {
       style={accent ? ({ "--tool-accent": accent } as React.CSSProperties) : undefined}
       aria-haspopup="dialog"
       // Says what opens: the card leads to the tool sheet.
-      title={editing ? undefined : t(`${tool.name} : coût, recoupements, alternatives`, `${tool.name}: cost, overlaps, alternatives`)}
+      title={editing ? undefined : t(`Gérer ${tool.name} : abonnement, recoupements, alternatives`, `Manage ${tool.name}: subscription, overlaps, alternatives`)}
       tabIndex={editing ? -1 : undefined}
       onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; active ? closeInspector() : selectTool(toolKey(tool)); }}
     >
+      {/* Top: identity (icon, full name, area) and what it overlaps.
+          Bottom: money and the action, "Manage ›". */}
       <span className="ms-card-top">
         <span className="ms-card-logo"><ToolLogo tool={tool} size={48} /></span>
-        <span className="ms-card-id"><strong>{tool.name}</strong>{<span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>}</span>
+        <span className="ms-card-id"><strong>{tool.name}</strong><span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>
+          {overlaps.length > 0 && <span className="ms-card-overlap" title={t(`Recoupe ${overlaps.map((o) => o.name).join(", ")}`, `Overlaps with ${overlaps.map((o) => o.name).join(", ")}`)}>
+            <span className="ms-card-overlap-name">{overlaps[0].name}</span>{overlaps.length > 1 && <span>+{overlaps.length - 1}</span>}
+          </span>}
+        </span>
       </span>
-      {<span className="ms-card-foot">
+      <span className="ms-card-foot">
         <span className={`ms-card-price${price ? "" : " ms-card-price--none"}`}>{(() => {
           // "From $22.99/mo": the word small, the amount carries the line.
           const match = price?.match(/^(Dès|From) (.+)$/);
-          return match ? <><small>{match[1]}</small> <strong>{match[2]}</strong></> : price || t("Tarif non relevé", "Price not checked");
+          return match ? <><small>{match[1]}</small> <strong>{match[2]}</strong></> : price || t("Saisir le prix", "Enter the price");
         })()}</span>
-        {overlaps.length > 0 && <span className="ms-card-overlap" title={t(`Recoupe ${overlaps.map((o) => o.name).join(", ")}`, `Overlaps with ${overlaps.map((o) => o.name).join(", ")}`)}>
-          <span className="ms-card-overlap-name">{overlaps[0].name}</span>{overlaps.length > 1 && <span>+{overlaps.length - 1}</span>}
-        </span>}
-      </span>}
-      {!editing && <ChevronRight size={18} className="ms-card-chevron" aria-hidden />}
+        {/* Names what the click does: manage this tool (subscription, overlaps, alternatives). */}
+        {!editing && <span className="ms-card-action" aria-hidden="true"><span>{t("Gérer", "Manage")}</span><ChevronRight size={16} /></span>}
+      </span>
     </button>
     {/* Edit mode (iOS home screen): a minus badge removes the tool, with undo. */}
     {editing && <button type="button" className="ms-card-remove" onClick={() => removeTool(slug, tool.name)} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}><Minus size={14} aria-hidden /></button>}
