@@ -1,3 +1,10 @@
+## 2026-10-08 — Contre-audit des dépendances restantes
+
+- Audit npm actualisé sur `4f6c857ed5` : 17 entrées complètes (11 high/6 moderate), 9 omit-dev, aucune critique. Paquets et lockfile inchangés ; pas de migration déclarée validée.
+- Avis d’injection SSR Router non applicable au mode déclaratif constaté ; avis navigation encore ouvert. Cible 7.18.4 compatible React 18/Node 20, recette splats/anciennes URL/SSR/hydratation préparée.
+- Chaînes Tailwind et SDK séparées ; SDK latest conserve undici 5.28.4. Trois imports SDK de types seulement, mais handlers API absents des typechecks explicites : contrôle API préalable requis au futur lot SDK.
+- Rapport DEPENDANCES_RESIDUELLES_2026-10-08.md, audits/métadonnées/hash conservés, roadmap actualisée. Audit documentaire local ; travaux de catégories et catalogue exclus.
+
 ## 2026-10-08 — Projection navigateur publiée et vérifiée
 
 - Commit applicatif `81f44da6e0` publié avec les deux commits de mesures/design. Vercel réussi ; SHA-256 du module public identique au build validé, 1 239 résumés.
