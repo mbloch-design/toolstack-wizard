@@ -31,14 +31,26 @@ function loadGoogleAnalytics() {
   }, { once: true });
 }
 
+const OPEN_EVENT = "tooltrim:consent-open";
+
+/** Reopens the banner (footer "Manage cookies"): withdrawing consent must be
+ * as easy as giving it (RGPD, CNIL guidance). */
+export function openConsentBanner() {
+  window.dispatchEvent(new Event(OPEN_EVENT));
+}
+
 export default function AnalyticsConsent() {
   const [visible, setVisible] = useState(false);
+  const en = typeof window !== "undefined" && window.location.pathname.startsWith("/en");
 
   useEffect(() => {
     let consent: string | null = null;
     try { consent = window.localStorage.getItem(CONSENT_KEY); } catch { /* Consent remains a session choice. */ }
     if (consent === "accepted") loadGoogleAnalytics();
     else if (!consent) setVisible(true);
+    const open = () => setVisible(true);
+    window.addEventListener(OPEN_EVENT, open);
+    return () => window.removeEventListener(OPEN_EVENT, open);
   }, []);
 
   if (!visible) return null;
@@ -51,19 +63,26 @@ export default function AnalyticsConsent() {
 
   const refuse = () => {
     try { window.localStorage.setItem(CONSENT_KEY, "refused"); } catch { /* Analytics stays disabled. */ }
+    // A withdrawal after acceptance: stop measuring from now on.
+    if (window.__tooltrimAnalyticsConsent) {
+      window.__tooltrimAnalyticsConsent = false;
+      window.gtag?.("consent", "update", { analytics_storage: "denied" });
+    }
     setVisible(false);
   };
 
   return (
-    <aside className="analytics-consent" role="dialog" aria-label="Consentement aux cookies analytics">
+    <aside className="analytics-consent" role="dialog" aria-label={en ? "Analytics cookie consent" : "Consentement aux cookies analytics"}>
       <div className="analytics-consent__copy">
-        <strong>Votre vie privée compte</strong>
-        <p>Nous utilisons Google Analytics uniquement pour comprendre l’usage du site. Aucun cookie analytics n’est déposé sans votre accord.</p>
-        <a href="/fr/privacy-policy">En savoir plus</a>
+        <strong>{en ? "Your privacy matters" : "Votre vie privée compte"}</strong>
+        <p>{en
+          ? "We use Google Analytics only to understand how the site is used. No analytics cookie is set without your consent."
+          : "Nous utilisons Google Analytics uniquement pour comprendre l’usage du site. Aucun cookie analytics n’est déposé sans votre accord."}</p>
+        <a href={en ? "/en/privacy-policy" : "/fr/privacy-policy"}>{en ? "Learn more" : "En savoir plus"}</a>
       </div>
       <div className="analytics-consent__actions">
-        <button type="button" className="analytics-consent__refuse" onClick={refuse}>Refuser</button>
-        <button type="button" className="analytics-consent__accept" onClick={accept}>Accepter</button>
+        <button type="button" className="analytics-consent__refuse" onClick={refuse}>{en ? "Decline" : "Refuser"}</button>
+        <button type="button" className="analytics-consent__accept" onClick={accept}>{en ? "Accept" : "Accepter"}</button>
       </div>
     </aside>
   );

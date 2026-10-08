@@ -1,6 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
+import { openConsentBanner } from "@/components/AnalyticsConsent";
+import { getLanguageSwitchPath } from "@/lib/seo";
+
+// Catalogue size rounded down to the hundred ("more than 1,300"): true for
+// weeks without a rebuild, and no false precision in a footer.
+const CATALOG_TOOLS = typeof __CATALOG_TOOLS__ === "number" ? Math.floor(__CATALOG_TOOLS__ / 100) * 100 : 0;
 
 /**
  * Editorial footer: restrained utility layout:
@@ -12,10 +18,13 @@ import { useLang } from "@/hooks/useLang";
  * styling). Inherits the page's editorial voice and signature set.
  */
 const Footer = () => {
-  const { t, prefix } = useLang();
+  const { t, prefix, lang } = useLang();
   const year = new Date().getFullYear();
+  const location = useLocation();
   // On Ma stack itself, "Build my stack" would link to the page being read.
-  const onMyStack = /\/(ma-stack|my-stack)(\/|$)/.test(useLocation().pathname);
+  const onMyStack = /\/(ma-stack|my-stack)(\/|$)/.test(location.pathname);
+  const otherLang = lang === "en" ? "fr" : "en";
+  const languageHref = `${getLanguageSwitchPath(location.pathname, otherLang)}${location.search}`;
 
   return (
     <footer className="tt-footer" role="contentinfo">
@@ -89,7 +98,15 @@ const Footer = () => {
               <Link to={`${prefix}/legal-notice`}>{t("Mentions légales", "Legal notice")}</Link>
               <Link to={`${prefix}/privacy-policy`}>{t("Confidentialité", "Privacy")}</Link>
               <Link to={`${prefix}/terms`}>{t("CGV", "Terms")}</Link>
+              <button type="button" className="tt-footer-linkbutton" onClick={openConsentBanner}>{t("Gérer les cookies", "Manage cookies")}</button>
+              <Link to={languageHref} hrefLang={otherLang} lang={otherLang} className="tt-footer-lang">{otherLang === "en" ? "English" : "Français"}</Link>
             </div>
+            {/* What backs the verdicts, in one quiet line (figures from the build). */}
+            <p className="tt-footer-proof">
+              {CATALOG_TOOLS > 0 && <>{t(`Plus de ${String(CATALOG_TOOLS).replace(/\B(?=(\d{3})+$)/g, "\u00a0")} outils suivis`, `More than ${String(CATALOG_TOOLS).replace(/\B(?=(\d{3})+$)/g, ",")} tools tracked`)} · </>}
+              {t("prix relevés sur les pages officielles", "prices taken from official pricing pages")} · {" "}
+              <Link to={`${prefix}/transparency`}>{t("aucun placement payant n’influence une note", "no paid placement influences a score")}</Link>
+            </p>
           </div>
 
           {/* ── 4. Partner mentions — last, quietest element on the page ── */}

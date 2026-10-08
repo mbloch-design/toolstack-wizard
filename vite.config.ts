@@ -2531,6 +2531,11 @@ export default defineConfig(({ mode, isSsrBuild }) => {
   // The SSR bundle is an intermediate renderer. Static files are copied once
   // by the client build into dist/ and are never read from dist-ssr/.
   publicDir: isSsrBuild ? false : undefined,
+  // Footer transparency line: the catalogue size, counted at build time so
+  // the figure follows the catalogue without loading it on every page.
+  define: {
+    __CATALOG_TOOLS__: JSON.stringify(JSON.parse(fs.readFileSync(path.resolve(__dirname, "src/data/tools_index.json"), "utf8")).length),
+  },
   server: {
     host: "::",
     port: process.env.PORT ? Number(process.env.PORT) : undefined,

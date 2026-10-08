@@ -35815,3 +35815,15 @@ img[data-logo-loading] {
   .tt-footer .tt-footer-badges::-webkit-scrollbar { display: none; }
   .tt-footer .tt-footer-badge { flex: none; }
 }
+/* Footer legal rail additions (8 Oct 2026): "Manage cookies" is a button that
+   reads as a link; the language switch sits last, after a hairline; one quiet
+   proof line under the rail. */
+.tt-footer .tt-footer-linkbutton { appearance: none; border: 0; background: none; padding: 0; cursor: pointer; font: inherit; color: inherit; }
+.tt-footer .tt-footer-linkbutton:hover { color: var(--tt-footer-text); }
+.tt-footer .tt-footer-linkbutton:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 2px; }
+.tt-footer .tt-footer-legal .tt-footer-lang { margin-left: auto; color: var(--tt-footer-text); }
+.tt-footer .tt-footer-proof { margin: 10px 0 0; font: 400 12px/1.5 var(--font-ui); color: var(--tt-footer-muted); }
+.tt-footer .tt-footer-proof a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 2px; }
+.tt-footer .tt-footer-proof a:hover { color: var(--tt-footer-text); }
+@media (max-width: 640px) { .tt-footer .tt-footer-legal .tt-footer-lang { margin-left: 0; } }
+.tt-footer .tt-footer-meta { display: flex; flex-direction: column; align-items: stretch; }
