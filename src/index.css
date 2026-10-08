@@ -35674,3 +35674,13 @@ img[data-logo-loading] {
   .tce-hover-actions, .tt-section-action svg, .tt-footer .tt-footer-stack, .tt-footer .tt-footer-stack-logos > *, .tt-footer .tt-footer-stack-cta svg { transition: none !important; transform: none !important; }
   .tt-footer .tt-footer-stack-gauge > span { animation: none; }
 }
+/* Search block on the stack cards' 4-column grid (Michael: "ça flotte"):
+   title over columns 1-2, the field over columns 3-4, one line, edges on
+   the cards below. Stacked on phones. */
+.home-v2 .dcv-section { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 16px; align-items: center; }
+.home-v2 .dcv-title { grid-column: 1 / span 2; margin: 0; }
+.home-v2 .dcv-search { grid-column: 3 / span 2; max-width: none; width: 100%; }
+@media (max-width: 1100px) {
+  .home-v2 .dcv-section { grid-template-columns: 1fr; row-gap: var(--v2-head-content-gap, 20px); }
+  .home-v2 .dcv-title, .home-v2 .dcv-search { grid-column: 1; }
+}
