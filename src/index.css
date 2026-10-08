@@ -35601,3 +35601,12 @@ img[data-logo-loading] {
 .ms-page .ms-pair-x { color: hsl(var(--muted-foreground)); font: 500 14px/1.3 var(--font-ui); }
 .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { gap: 18px; padding: 14px 18px; }
 @media (max-width: 640px) { .ms-page .ms-pair-icons { gap: 8px; } }
+/* Separators pass (8 Oct 2026): on My stack, space and the editorial
+   headings already separate sections, so the hairlines above them go, and
+   so does the line between the hero lead and its figures. Kept: the
+   dividers between hero figures, between list rows (overlaps, sheet group)
+   and the one that opens the form's commit area. */
+.ms-page .sg-section.ms-section { border-top: 0; }
+.ms-page .ms-overlaps-section, .ms-page .ms-budget-section, .ms-page .ms-tools-section { margin-top: 48px; }
+.ms-page .ms-hero-stats { padding-top: 0; border-top: 0; margin-top: 32px; }
+@media (max-width: 640px) { .ms-page .ms-overlaps-section, .ms-page .ms-budget-section, .ms-page .ms-tools-section { margin-top: 24px; } }
