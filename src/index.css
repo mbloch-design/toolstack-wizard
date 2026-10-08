@@ -35985,3 +35985,85 @@ img[data-logo-loading] {
 .home-v2 .v2-shelf-pick-copy,
 .home-v2 .v2-shelf-picks li .v2-shelf-pick-copy { border-bottom-color: transparent; }
 .home-v2 .v2-shelf-grid { row-gap: 56px; }
+
+/* ── Home type and rhythm system (design review, 8 Oct 2026) ──────────────
+   One scale instead of ~20 sizes, three weights (400 / 500 / 600, the hero's
+   480 display stays), three text tones, one section gap, four radii.
+     display 56 (hero) · feature 32 (lead guide) · section 28 ·
+     card title 18 · item 15 · body 15 · lead 16 · meta 13 · kicker 11
+   Tones: ink #1D1D1F (titles), text #424245 (body), meta #6F6F68.
+   Radii: 12 tiles and rows · 20 cards and media · 24 the hero band ·
+   9999 pills. Section gap: 72 desktop, 48 phone. */
+.home-v2 {
+  --h-ink: #1D1D1F;
+  --h-text: #424245;
+  --h-meta: #6F6F68;
+  --h-section: clamp(22px, 2.2vw, 28px);
+  --h-gap: 72px;
+  --h-radius-tile: 12px;
+  --h-radius-card: 20px;
+  --h-radius-hero: 24px;
+}
+@media (max-width: 640px) { .home-v2 { --h-gap: 48px; } }
+
+/* Section titles: one size, clearly above the card titles. */
+.home-v2 .v2-section-title,
+.home-v2 .dcv-title { font: 600 var(--h-section)/1.15 var(--font-ui); letter-spacing: -.025em; color: var(--h-ink); }
+/* Card and group titles: 18 / 600. */
+.home-v2 .v2-shelf-cell-name,
+.home-v2 .sgs-item-title,
+.home-v2 .tce-name,
+.home-v2 .v2-today-title { font: 600 18px/1.25 var(--font-ui); letter-spacing: -.015em; color: var(--h-ink); }
+.home-v2 .v2-today-card--feature .v2-today-title { font-size: 32px; line-height: 1.12; letter-spacing: -.03em; }
+/* Items and body. */
+.home-v2 .v2-shelf-pick-name { font: 600 15px/1.35 var(--font-ui); letter-spacing: -.01em; color: var(--h-ink); }
+.home-v2 .v2-shelf-pick-take,
+.home-v2 .sgs-item-subtitle,
+.home-v2 .sgs-lead { font: 400 15px/1.45 var(--font-ui); letter-spacing: -.005em; color: var(--h-text); }
+.home-v2 .hv2-subtitle { font-size: 16px; line-height: 1.5; }
+/* Meta: 13 / 500, grey. */
+.home-v2 .v2-shelf-cell-subs,
+.home-v2 .v2-shelf-cell-count,
+.home-v2 .v2-today-date,
+.home-v2 .tce-category { font: 500 13px/1.4 var(--font-ui); letter-spacing: 0; color: var(--h-meta); }
+.home-v2 .v2-shelf-cell-head:hover .v2-shelf-cell-count { color: var(--h-ink); }
+/* Kickers: 11 / 600, uppercase, grey. */
+.home-v2 .hv2-eyebrow,
+.home-v2 .sgs-item-objective,
+.home-v2 .v2-today-eyebrow { font: 600 11px/1.4 var(--font-ui); letter-spacing: .06em; text-transform: uppercase; color: var(--h-meta); }
+/* Actions: 14 / 600 everywhere. */
+.home-v2 .tt-section-action,
+.home-v2 .dcv-search-submit { font-size: 14px; font-weight: 600; }
+
+/* One section gap. */
+.home-v2 .hv2-root { padding-bottom: 0; }
+.home-v2 .sgs-root { padding-top: var(--h-gap); }
+.home-v2 .v2-catalog { padding-top: var(--h-gap); }
+.home-v2 .v2-catalog-section + .v2-catalog-section { margin-top: var(--h-gap); }
+.home-v2 .dcv-search { margin-bottom: 0; }
+
+/* Radii. */
+.home-v2 .hv2-band { border-radius: var(--h-radius-hero); }
+.home-v2 .sgs-item,
+.home-v2 .v2-today-media,
+.home-v2 .tc-image,
+.home-v2 .tce-primary-link { border-radius: var(--h-radius-card); }
+.home-v2 .sgs-folder { border-radius: 24px; }
+.home-v2 .v2-shelf-pick,
+.home-v2 .v2-shelf-cell-head { border-radius: var(--h-radius-tile); }
+.home-v2 .v2-shelf-pick-logo,
+.home-v2 .tce-logo,
+.home-v2 .sgs-folder-logo { border-radius: var(--h-radius-tile) !important; }
+.home-v2 .v2-ww-tab-logo { border-radius: 6px !important; }
+@media (max-width: 640px) {
+  .home-v2 .dcv-search { border-radius: var(--h-radius-card); }
+}
+
+/* Footer tagline echoes the hero face instead of a second display face. */
+.tt-footer .tt-footer-tagline { font: 480 clamp(30px, 3vw, 40px)/1.05 var(--font-ui); letter-spacing: -.045em; }
+/* Footer on the same scale: titles 13/600, links 13/400, legal 12/400,
+   language 12/600, badge label 12/500. */
+.tt-footer .tt-footer-col-label { font: 600 13px/1.3 var(--font-ui); }
+.tt-footer .tt-footer-col a { font: 400 13px/1.35 var(--font-ui); }
+.tt-footer .tt-footer-lang { font: 600 12px/1 var(--font-ui); letter-spacing: .02em; }
+.tt-footer .tt-footer-partners-label { font: 500 12px/1.3 var(--font-ui); }
