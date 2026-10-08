@@ -35940,13 +35940,9 @@ img[data-logo-loading] {
 /* "See all" links and the footer legal links: at least 24px to tap. */
 .home-v2 .v2-section-link, .tt-footer .tt-footer-legal a, .tt-footer .tt-footer-linkbutton { display: inline-flex; align-items: center; min-height: 24px; }
 @media (max-width: 640px) {
-  /* A shorter phone page: two picks per universe, the watchlist as a row
-     that scrolls sideways like Works with. */
-  .home-v2 .v2-shelf-picks > li:nth-child(n+3) { display: none; }
-  .home-v2 .v2-shelf-picks > li:nth-child(2) .v2-shelf-pick-copy { border-bottom-color: transparent; }
-  .home-v2 .dcv-tools .tc-grid { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: calc(-1 * var(--v2-grid-gutter)); padding-right: var(--v2-grid-gutter); }
-  .home-v2 .dcv-tools .tc-grid::-webkit-scrollbar { display: none; }
-  .home-v2 .dcv-tools .tc-grid > * { flex: 0 0 78%; scroll-snap-align: start; }
+  /* A shorter phone page: two picks per universe (scoped to the universes:
+     the watchlist reuses the same row markup and keeps its six tools). */
+  .home-v2 .v2-shelf-cell .v2-shelf-picks > li:nth-child(n+3) { display: none; }
 }
 @media (hover: none) { .home-v2 .v2-shelf-cell-count { transform: translateX(-17px); } }
 
