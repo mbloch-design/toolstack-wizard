@@ -4,10 +4,10 @@ import Collapse from "@/components/motion/Collapse";
 import ValueChange from "@/components/motion/ValueChange";
 import type { PlanChoice } from "@/hooks/useStackPaidPlans";
 import { Link } from "react-router-dom";
-import { ArrowRight, ArrowUpRight, ChevronDown } from "@/lib/icons";
+import { ArrowRight, ArrowUpRight, ChevronDown, X } from "@/lib/icons";
 import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import ToolLogo from "@/components/ToolLogo";
-import { Sheet, SheetContent, SheetDescription, SheetTitle } from "@/components/ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle } from "@/components/ui/sheet";
 import type { Category, Tool } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { convertAmount, formatAmount, isCurrency, type Currency } from "@/lib/currencyRates";
@@ -72,6 +72,8 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
       <SheetContent side={bottom ? "bottom" : "right"} className="ms-tool-sheet" overlayClassName="ms-sheet-overlay"
         onOpenAutoFocus={(event) => { event.preventDefault(); (event.currentTarget as HTMLElement | null)?.focus({ preventScroll: true }); }}
         style={tool && (toolAccents as Record<string, string>)[toolKey(tool)] ? ({ "--tool-accent": (toolAccents as Record<string, string>)[toolKey(tool)] } as React.CSSProperties) : undefined}>
+        {/* A close button you can see (36px), top right. */}
+        <SheetClose className="ms-ts-close" aria-label={en ? "Close" : "Fermer"}><X size={18} aria-hidden /></SheetClose>
         {tool && (() => {
           const slug = toolKey(tool);
           const price = stackCatalogPrice(tool, lang);
@@ -190,14 +192,16 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                   const altMonthly = altCost.kind === "paid" ? convertAmount(altCost.monthly, altCost.currency, currency) : null;
                   const gap = mine > 0 && altMonthly !== null ? mine - altMonthly : null;
                   const label = stackCatalogPrice(alt, lang) || (en ? "Price not checked" : "Prix non relevé");
+                  const gapText = gap !== null && Math.round(gap) !== 0
+                    ? { short: `${gap > 0 ? "−" : "+"}${formatAmount(Math.round(Math.abs(gap)), currency, lang)}${en ? "/mo" : "/mois"}`,
+                        full: gap > 0 ? (en ? `${money(gap)} less than what you pay` : `${money(gap)} de moins que ce que vous payez`) : (en ? `${money(-gap)} more than what you pay` : `${money(-gap)} de plus que ce que vous payez`) }
+                    : null;
+                  // Name on its own line; price and the gap to what I pay under it.
                   return <li key={alt.id}>
                     <Link className="ms-ts-other" to={`${prefix}/tool/${toolKey(alt)}`} onClick={() => trackEvent("stack_alternative_click", { tool_slug: slug, alternative: toolKey(alt) })}>
                       <ToolLogo tool={alt} size={32} />
-                      <span><strong>{alt.name}</strong><small>{label}</small></span>
+                      <span><strong>{alt.name}</strong><small>{label}{gapText && <span className={`ms-ts-gap${gap! > 0 ? " is-less" : ""}`} title={gapText.full}><span aria-hidden="true">{gapText.short}</span><span className="sr-only">{gapText.full}</span></span>}</small></span>
                     </Link>
-                    {gap !== null && Math.round(gap) !== 0 && <span className={`ms-ts-gap${gap > 0 ? " is-less" : ""}`}>{gap > 0
-                      ? (en ? `${money(gap)} less` : `${money(gap)} de moins`)
-                      : (en ? `${money(-gap)} more` : `${money(-gap)} de plus`)}</span>}
                     <Link className="ms-ts-compare" to={comparisonPath(prefix, slug, toolKey(alt))} onClick={() => trackEvent("stack_compare_click", { source: "alternatives", a: slug, b: toolKey(alt) })}>{en ? "Compare" : "Comparer"}</Link>
                   </li>;
                 })}</ul>

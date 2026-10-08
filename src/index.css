@@ -35426,3 +35426,26 @@ img[data-logo-loading] {
 .ms-ts-pricing svg { transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1); }
 .ms-ts-pricing:hover svg { transform: translateX(3px); }
 .ms-ts-adjust:focus:not(:focus-visible) { outline: none; }
+/* Tool sheet close: a real 36px button, sticky at the top right while the
+   sheet scrolls; the shared Sheet's faint cross is hidden here only. */
+.ms-tool-sheet > button.absolute { display: none; }
+.ms-ts-close {
+  position: sticky; top: 0; z-index: 3; order: -1; align-self: flex-end; flex-shrink: 0;
+  display: grid; place-items: center; width: 36px; height: 36px; margin: -16px -8px -64px 0;
+  border-radius: 50%; background: hsl(var(--card)); color: hsl(var(--foreground));
+  box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 8px rgba(15, 15, 15, .08);
+  transition: background-color 160ms ease, transform 200ms cubic-bezier(.34, 1.4, .64, 1), box-shadow 160ms ease;
+}
+.ms-ts-close:hover { background: hsl(var(--secondary)); }
+.ms-ts-close:active { transform: scale(.92); }
+.ms-ts-close:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+.ms-ts-head { padding-right: 44px; }
+/* A roomier sheet, and alternative rows that never squeeze a name. */
+@media (min-width: 641px) { .ms-tool-sheet.ms-tool-sheet { width: min(520px, 100vw); } }
+.ms-ts-alts li { grid-template-columns: minmax(0, 1fr) auto; }
+.ms-ts-alts .ms-ts-other > span { gap: 3px; }
+.ms-ts-alts .ms-ts-other strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-ts-alts .ms-ts-other small { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; overflow: visible; white-space: normal; }
+.ms-ts-alts .ms-ts-gap { height: 22px; padding: 0 8px; font-size: 12px; }
+/* Close button: not sticky (Michael, 8 Oct 2026); top right, scrolls with the sheet. */
+.ms-ts-close { position: absolute; top: 20px; right: 20px; margin: 0; order: 0; align-self: auto; }
