@@ -1,3 +1,10 @@
+## 2026-10-08 — Projection ciblée du bootstrap outil
+
+- Sept champs historiques audités retirés uniquement de __SSR_TOOL__ ; copie de l'objet, sources catalogue et données utiles FR/EN intactes.
+- Gain exact 5 861 952 octets (5,59 MiB) sur 9 904 documents. Artefact 824,9 MiB / HTML 713,2 MiB ; budgets abaissés de 5 MiB à 831/716 MiB, ancien HTML rejeté.
+- 13 162 HTML identiques hors payload projeté, sitemap et sources inchangés ; 249 tests applicatifs, 23 contrats SEO, types, build et 56 parcours FR/EN avec onglets secondaires PASS. Relecture indépendante sans anomalie.
+- Rapport PROJECTION_BOOTSTRAP_2026-10-08.md ; catégories locales et exports non suivis exclus.
+
 ## 2026-10-08 — Hydratation avec Ma Stack enregistrée
 
 - useSyncExternalStore remplace les initialiseurs synchrones de localStorage : snapshot serveur stable au premier rendu, puis restauration des choix locaux sans modification de format.

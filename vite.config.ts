@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
 import postcss from "postcss";
-import { assertSsrRenderers } from "./scripts/lib/ssr-contract.mjs";
+import { assertSsrRenderers, projectToolBootstrap } from "./scripts/lib/ssr-contract.mjs";
 import { transformSync } from "esbuild";
 import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
@@ -183,7 +183,7 @@ function hasValue(value: any): boolean {
 }
 
 function stripUnservedLocale(tool: any, lang: string): any {
-  const out = { ...tool };
+  const out = projectToolBootstrap(tool);
   // FR fields also drive presence checks, free/paid status and legacy scores
   // on EN pages. Keep them so hydration receives the same inputs as SSR.
   // FR pages can still omit translated EN values when the FR value exists;

@@ -27,3 +27,14 @@ export function inspectSsrContent(html) {
   if (headings.length !== 1 || !text(headings[0]?.[1] ?? "")) return ["SSR page must contain exactly one non-empty H1"];
   return [];
 }
+
+/** Copy tool data before projecting the JSON hydration payload. */
+export function projectToolBootstrap(tool) {
+  const out = { ...tool };
+  // Only legacy transport fields audited as unused by tool-page consumers.
+  // Catalogue sources and localized facts needed for SSR parity stay intact.
+  for (const key of ["description", "research", "lifecycle", "website", "verdictFr", "pivot_integration_source", "relevantForEn"]) {
+    delete out[key];
+  }
+  return out;
+}

@@ -1,0 +1,23 @@
+{
+  "htmlDocuments": 13162,
+  "toolPages": 9912,
+  "changedToolPages": 9904,
+  "bytesSaved": 5861952,
+  "MiBSaved": 5.59039306640625,
+  "htmlOutsideToolBootstrapByteIdentical": true,
+  "sitemapByteIdentical": true,
+  "catalogueSourcesUnchanged": true,
+  "localTests": {
+    "application": 249,
+    "seoContracts": 23,
+    "typecheck": "PASS",
+    "build": "PASS",
+    "hydrationBrowser": 56
+  },
+  "budgets": {
+    "totalMiB": 831,
+    "htmlMiB": 716,
+    "oldArtifact": "rejected: HTML 718.8 > 716",
+    "newArtifact": "PASS"
+  }
+}

@@ -54,6 +54,16 @@ for (const slug of ["notion", "1001bit-tools", "17hats", "8fig", "adobe-acrobat-
           await expect(page.locator(`.td-tool-subnav a[href="${target}"]`)).toHaveAttribute("aria-current", "page");
           await expect(page.locator("h1")).toBeVisible();
           expect(navigations).toEqual([]);
+          // Historical bootstrap removal must also preserve secondary tool tabs.
+          const secondaryTabs = await page.locator(".td-tool-subnav a").evaluateAll(links =>
+            links.map(link => link.getAttribute("href") || "").filter(href => /\/(alternatives|avis|reviews)$/.test(href)));
+          for (const secondary of secondaryTabs) {
+            await page.locator(`.td-tool-subnav a[href="${secondary}"]`).click();
+            await expect(page).toHaveURL(new URL(secondary, test.info().project.use.baseURL).href);
+            await expect(page.locator(`.td-tool-subnav a[href="${secondary}"]`)).toHaveAttribute("aria-current", "page");
+            await expect(page.locator("h1")).toBeVisible();
+          }
+          expect(navigations).toEqual([]);
           if (savedStack) {
             await expect(page.locator(".td-hero-actions .pin-tool-button--active")).toBeVisible();
             expect(await page.evaluate(() => localStorage.getItem("tooltrim-ma-stack-mvp-v3"))).toBe(savedState);
