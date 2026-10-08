@@ -35800,3 +35800,18 @@ img[data-logo-loading] {
 /* A single separator in the footer: the one above the legal row. */
 .tt-footer { border-top: 0; }
 .tt-footer .tt-footer-badge[data-fallback]::after { content: attr(data-fallback); display: inline-block; padding: 6px 10px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--tt-footer-border); color: var(--tt-footer-muted); font: 500 11px/1 var(--font-ui); }
+/* Directory badges, kept visible (8 Oct 2026): one tidy band. Same height
+   for every badge, grey and quiet until hovered; on phones a single row that
+   scrolls sideways with faded edges instead of five stacked rows. */
+.tt-footer .tt-footer-partners { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 10px 0 32px; }
+.tt-footer .tt-footer-partners-label { color: var(--tt-footer-muted); font: 500 11px/1.3 var(--font-ui); text-transform: none; letter-spacing: 0; }
+.tt-footer .tt-footer-badges { gap: 10px 18px; margin: 0; }
+.tt-footer .tt-footer-badge img { width: auto !important; height: 22px !important; max-width: 140px; object-fit: contain; }
+.tt-footer .tt-footer-badge { opacity: .42; filter: grayscale(1); }
+.tt-footer .tt-footer-badge:hover, .tt-footer .tt-footer-badge:focus-visible { opacity: 1; filter: none; }
+@media (max-width: 640px) {
+  .tt-footer .tt-footer-partners { align-items: stretch; }
+  .tt-footer .tt-footer-badges { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); }
+  .tt-footer .tt-footer-badges::-webkit-scrollbar { display: none; }
+  .tt-footer .tt-footer-badge { flex: none; }
+}

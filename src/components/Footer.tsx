@@ -11,8 +11,6 @@ import { useLang } from "@/hooks/useLang";
  * Uses ToolTrim design tokens only (no shadcn hsl vars, no Tailwind utility
  * styling). Inherits the page's editorial voice and signature set.
  */
-const BADGE_COUNT = 18; // links in .tt-footer-badges below; update with the list
-
 const Footer = () => {
   const { t, prefix } = useLang();
   const year = new Date().getFullYear();
@@ -61,7 +59,6 @@ const Footer = () => {
               <span className="tt-footer-col-label">{t("Décider", "Decide")}</span>
               <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
               <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
-              {/* Both labels pointed to the same page: one link. */}
               <Link to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link>
             </nav>
 
@@ -96,11 +93,11 @@ const Footer = () => {
           </div>
 
           {/* ── 4. Partner mentions — last, quietest element on the page ── */}
-          {/* Directory badges: one quiet line that opens on demand. The links
-              stay in the HTML (directories that check for them still find
-              them); they no longer weigh on every page. */}
-          <details className="tt-footer-partners">
-            <summary className="tt-footer-partners-label">{t(`Repéré sur ${BADGE_COUNT} annuaires`, `Featured on ${BADGE_COUNT} directories`)}</summary>
+          {/* Directory badges stay visible (Michael, 8 Oct 2026: they must be
+              kept); one tidy band, same height, grey until hovered, a single
+              scrolling row on phones. */}
+          <div className="tt-footer-partners">
+            <span className="tt-footer-partners-label">{t("Repéré sur", "Featured on")}</span>
             <div className="tt-footer-badges">
               <a
                 href="https://dang.ai"
@@ -493,7 +490,7 @@ const Footer = () => {
                 />
               </a>
             </div>
-          </details>
+          </div>
         </div>
       </section>
 

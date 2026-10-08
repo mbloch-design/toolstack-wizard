@@ -111,3 +111,9 @@ Prochaines étapes proposées, dans l'ordre :
 ## Tests E2E désynchronisés (constat du 8 oct. 2026)
 - `e2e/sidebar-preferences.spec.ts` (2 tests) : suppose un menu replié par défaut et cherche « Préférences » dans la barre ; le shell est déplié par défaut et « Préférences » n'est plus que dans le menu mobile. Non modifié depuis le 13 sept. À réécrire sur le comportement actuel.
 - `e2e/mon-stack-v1.spec.ts` « catalogue refresh » : attend le prix Supabase sur la carte (voir plus haut).
+
+## Footer et mentions légales (8 oct. 2026)
+- [x] Mentions légales : forme juridique SAS (et non micro-entreprise), hébergeur Vercel (et non Lovable).
+- [ ] Michael : les mentions LCEN complètes d'une SAS (dénomination, siège, capital, RCS, directeur de publication) restent à décider ; il ne veut pas les afficher pour l'instant.
+- [ ] Michael : dire quels profils sociaux existent vraiment ; `sameAs` de `OrganizationSchema.tsx` en liste 5 non vérifiés.
+- [ ] Tests lents en suite complète, proches de la limite de 5 s : `useToolBySlug.test.tsx` (restores the SSR record) et `usePosts.test.tsx` (local guide catalogue). Passent seuls.

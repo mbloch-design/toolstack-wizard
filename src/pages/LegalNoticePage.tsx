@@ -33,7 +33,7 @@ const LegalNoticePage = () => {
             <p>{t("Le site tooltrim.com est édité par :", "The website tooltrim.com is published by:")}</p>
             <ul className="mt-2 space-y-1 pl-4 list-disc">
               <li><strong>{t("Raison sociale", "Company name")} :</strong> ToolTrim</li>
-              <li><strong>{t("Forme juridique", "Legal form")} :</strong> {t("Micro-entreprise", "Sole proprietorship")}</li>
+              <li><strong>{t("Forme juridique", "Legal form")} :</strong> {t("SAS, société par actions simplifiée", "SAS (French simplified joint-stock company)")}</li>
               <li><strong>{t("Adresse", "Address")} :</strong> France</li>
               <li><strong>Email :</strong> contact@tooltrim.com</li>
             </ul>
@@ -42,8 +42,8 @@ const LegalNoticePage = () => {
           <section>
             <h2 className="mb-3 font-heading text-lg font-semibold text-foreground">{t("Hébergement", "Hosting")}</h2>
             <ul className="space-y-1 pl-4 list-disc">
-              <li><strong>{t("Hébergeur", "Host")} :</strong> Lovable (lovable.dev)</li>
-              <li><strong>{t("Infrastructure", "Infrastructure")} :</strong> Supabase (supabase.com)</li>
+              <li><strong>{t("Hébergeur", "Host")} :</strong> Vercel Inc., Covina, CA, {t("États-Unis", "USA")} (vercel.com)</li>
+              <li><strong>{t("Base de données", "Database")} :</strong> Supabase (supabase.com)</li>
             </ul>
           </section>
 
