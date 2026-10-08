@@ -142,6 +142,7 @@ run(
   ["scripts/emit-stack-catalog-shards.ts"],
 );
 run("Mutualisation du CSS critique", "node", ["scripts/externalize-critical-css.mjs"]);
+run("Compactage HTML avec contrôle d'équivalence", "node", ["scripts/compact-generated-html.mjs"]);
 run("Validation SEO du sitemap généré", "node", ["scripts/validate-generated-seo.mjs"]);
 run("Fichiers llms canoniques", "node", ["scripts/gen-llms-files.mjs"]);
 run("Audit SEO des pages Explorer", "node", ["scripts/audit-explorer-seo.mjs"]);

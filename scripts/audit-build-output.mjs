@@ -47,9 +47,12 @@ const budgets = {
   // 2026-10-02: the two brand logos were inlined as data URIs (Vite's 4 KB
   // limit) five times per page; served as files instead: measured 837.0 MiB
   // total, 726.1 MiB HTML (-205 MiB). Budgets lowered to keep the gain.
-  totalBytes: 860 * MiB,
+  // 2026-10-08: lossless head/JSON-LD compaction removes 24.62 MiB.
+  // Measured 820.6 MiB total, 709.0 MiB HTML; retain existing headroom
+  // while preventing the removed documentary/formatting bytes from returning.
+  totalBytes: 836 * MiB,
   // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
-  htmlBytes: 745 * MiB,
+  htmlBytes: 721 * MiB,
   javascriptBytes: 15 * MiB,
   // 32 MiB (2026-09-30): each researched fiche adds pricing-card critical CSS
   // variants (+0.2 MiB per 25 fiches, 30.7 MiB at 146); sized for the ~200

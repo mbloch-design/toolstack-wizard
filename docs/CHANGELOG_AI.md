@@ -1,3 +1,11 @@
+## 2026-10-08 — Compactage HTML avec équivalence SEO et hydratation
+
+- Nouvelle étape du build : retrait de neuf commentaires documentaires connus du head, compactage du JSON-LD à valeurs identiques, retrait des espaces entre enfants directs du head. Corps HTML, scripts/styles, commentaires de vérification et marqueurs React conservés.
+- Contrôle d'équivalence de l'arbre HTML avant chaque écriture : 13 162 documents PASS. Les 13 137 URL du sitemap et tous les fichiers hors HTML sont identiques au build précédent.
+- Gain mesuré : 24,62 MiB ; artefact 845,2 → 820,6 MiB, HTML 733,6 → 709,0 MiB. Budgets total/HTML abaissés de 24 MiB ; ancien artefact rejeté, nouveau accepté.
+- Parse5 7.3.0 déjà présent devient une dépendance directe du build. Six tests de compactage ajoutés au contrat SEO CI ; test rouge avant implémentation, vert après.
+- Recette : 243 tests applicatifs, 22 fixtures SEO/compactage, TypeScript, build et audit Explorer PASS ; 15/15 régressions Chromium, quatre pages sans JavaScript puis sans erreur d'hydratation. Relecture indépendante sans anomalie. Rapport COMPACTAGE_HTML_2026-10-08.md ; refonte catégories et données régénérées exclues, aucun push ni déploiement de ce lot.
+
 ## 2026-10-08 — Correctifs ciblés des dépendances
 
 - Audit omit-dev : 25 → 9 entrées ; audit complet : 53 → 17, trois entrées critiques → zéro. Restes et portée documentés dans DEPENDANCES_SECURITE_2026-10-08.md.

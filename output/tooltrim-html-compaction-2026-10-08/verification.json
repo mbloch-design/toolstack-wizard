@@ -1,0 +1,28 @@
+{
+  "baselineCommit": "00e1f48bd8819f9f79d1e955a1e1f6b2028aeacc",
+  "before": {
+    "files": 14908,
+    "totalBytes": 886236866,
+    "htmlBytes": 769241358
+  },
+  "after": {
+    "files": 14908,
+    "totalBytes": 860420347,
+    "htmlBytes": 743424839
+  },
+  "savedBytes": 25816519,
+  "sameArtifactPaths": true,
+  "sameSitemapUrls": true,
+  "unchangedNonHtmlFiles": true,
+  "checks": {
+    "equivalentHtmlDocuments": 13162,
+    "indexableSitemapUrls": 13137,
+    "applicationTestsPassed": 243,
+    "seoAndCompactionTestsPassed": 22,
+    "chromiumScenariosPassed": 15,
+    "runtimePagesWithAndWithoutJavaScript": 4,
+    "newBudgetsAcceptedAfter": true,
+    "newBudgetsRejectedBefore": true,
+    "independentReview": "no actionable findings"
+  }
+}
