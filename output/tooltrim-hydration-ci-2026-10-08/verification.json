@@ -1,0 +1,26 @@
+{
+  "local": {
+    "tests": 56,
+    "failed": 0,
+    "minutes": 4.8,
+    "htmlReportProduced": true,
+    "unitTests": 249,
+    "typecheck": "PASS"
+  },
+  "negativeProbe": {
+    "expectedFailure": true,
+    "traceCount": 3,
+    "htmlReportProduced": true,
+    "artifactRestoredByteIdentically": true
+  },
+  "workflow": {
+    "mainPushEnabled": true,
+    "jobMinutes": 30,
+    "suiteMinutes": 10,
+    "maxFailures": 5,
+    "failOnFlakyTests": true,
+    "artifactRetentionDays": 7
+  },
+  "review": "no blocking finding",
+  "remote": "verify after push"
+}

@@ -4,7 +4,7 @@ Les sections datées de juillet ci-dessous sont un checkpoint historique ; le ca
 
 - **Fait et déployé** : hydratation avec sélection enregistrée, restauration sans perte, conservation des métadonnées et synchronisation du store. Commit `cccdbc002b`, [preuve](CORRECTIF_HYDRATATION_STACK_2026-10-08.md).
 - **Fait et déployé** : bootstrap des fiches allégé sans modifier les données originales ; 56/56 parcours publics FR/EN, navigation Alternatives/Avis et reload avec sélection. Commit `90af59e551`, [preuve](PROJECTION_BOOTSTRAP_2026-10-08.md).
-- **Socle CI actualisé** : le workflow conservé exécute tests applicatifs, contrats SEO, types, tests Ma Stack et build. La recette navigateur sur HTML généré reste lancée séparément ; son automatisation est une prochaine étape, le gate design étant désormais rétabli localement et validé ([preuve](GATE_DESIGN_2026-10-08.md)).
+- **Socle CI actualisé** : le workflow conservé exécute tests applicatifs, contrats SEO, types, tests Ma Stack et build. Le gate design est déployé et la recette Chromium sur HTML généré est intégrée après le build, avec rapport/traces ; 56/56 scénarios passent localement en mode CI, première exécution Actions à contrôler ([contrat](HYDRATATION_CI_2026-10-08.md)).
 - **Suite produit** : conserver l'existant et cadrer le chargement catalogue sur des mesures réelles ; la validation des relations et les essais utilisateurs restent des chantiers distincts, non déclarés terminés par une recette technique.
 
 ---
@@ -251,7 +251,7 @@ Le MVP Ma stack + Explorer est prêt lorsque :
 
 - `CartPage.tsx` et `src/index.css` restent volumineux et devront être découpés après stabilisation du flux.
 - Les données catalogue sont encore chargées dans des bundles trop importants.
-- La CI couvre les suites applicatives et Ma Stack, les contrats SEO, les types et le build ; elle ne lance pas encore la recette E2E sur HTML généré. Le blocage GO14 appartient au checkpoint historique et ne pilote plus le workflow conservé.
+- La CI couvre les suites applicatives et Ma Stack, les contrats SEO, les types et le build ; elle inclut maintenant la recette E2E Chromium sur HTML généré, à confirmer dans la première exécution distante. Le blocage GO14 appartient au checkpoint historique et ne pilote plus le workflow conservé.
 - L’historique Git récent contient des changements Explorer mêlés à un commit nommé pour la page outil ; le checkpoint doit restaurer une lecture claire de l’état courant.
 
 

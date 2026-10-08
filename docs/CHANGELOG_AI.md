@@ -1,3 +1,10 @@
+## 2026-10-08 — Recette d'hydratation automatisée en CI
+
+- Preprod CI déclenché aussi sur main ; gates existants conservés, Chromium installé après build puis 56 scénarios sur HTML généré. Permissions contents:read.
+- Rapport HTML/traces conservés sept jours ; plafond suite 10 minutes/job 30, un worker, cinq échecs maximum et flakes bloquants malgré les retries existants.
+- reducedMotion placé dans contextOptions ; configurations Playwright ajoutées au typecheck node. Rapport et traces produits sur une vraie divergence volontaire d'une copie du HTML, ensuite restaurée.
+- 56/56 scénarios locaux CI en 4,8 minutes, 249 tests applicatifs et types PASS ; première exécution Actions à contrôler après push. Documentation HYDRATATION_CI_2026-10-08.md et roadmaps mises à jour. Aucun changement applicatif.
+
 ## 2026-10-08 — Gate design rétabli sans hausse de baseline
 
 - Huit couleurs et dix-huit rayons CSS de Ma Stack passent aux tokens à valeurs conservées ; deux styles statiques GuideCardEditorial déplacés dans les classes ec. Styles d'animation dynamiques conservés.
