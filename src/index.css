@@ -35546,3 +35546,9 @@ img[data-logo-loading] {
 .ms-page .ms-quiet-button[aria-pressed="true"] { background: hsl(var(--foreground)); color: hsl(var(--background)); box-shadow: none; }
 .ms-page .ms-quiet-button:focus { outline: none; }
 .ms-page .ms-quiet-button:focus-visible { box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring) / .6); }
+/* Lighter tabs (8 Oct 2026): no track behind them, only the sliding dark
+   pill of the active tab, Apple-store style. */
+.ms-page .ms-tools-section .ms-domain-filters { padding: 2px 0; background: none; box-shadow: none; margin-left: -12px; }
+.ms-page .ms-tab-ink { top: 2px; bottom: 2px; box-shadow: none; }
+.ms-page .ms-tools-section .ms-domain-filters button:hover:not([aria-pressed="true"]) { color: hsl(var(--foreground)); background: hsl(var(--secondary) / .6); }
+@media (max-width: 640px) { .ms-page .ms-tools-section .ms-domain-filters { margin-left: -12px; margin-right: -12px; } }
