@@ -5254,3 +5254,4 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Mentions légales : SAS, hébergeur Vercel.
 - « Gérer les cookies » (retrait du consentement), bascule FR/EN, ligne de preuve avec nombre d'outils calculé au build (`__CATALOG_TOOLS__`).
 - Footer sur grille 12 colonnes, carte « Ma stack » via `src/lib/stackSnapshot.ts` (écrit par CartPage), sélecteur de langue FR | EN.
+- Accueil, lots 2 et 3 sans ajout : échelle typo unique, rythme 72/48, rayons, recherche sous le hero, outils non répétés, libellés, accessibilité (0 violation axe), animations sur transform, 69 règles CSS mortes retirées. « La pile » retirée à la demande de Michael.
