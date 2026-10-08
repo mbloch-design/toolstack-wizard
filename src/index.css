@@ -35555,3 +35555,40 @@ img[data-logo-loading] {
 /* Overlap chip on a tinted band: translucent white with a hairline, clean on
    any tool colour (a grey fill turned muddy on warm tints). */
 .ms-page .ms-card-overlap { background: hsl(var(--card) / .78); box-shadow: inset 0 0 0 .5px hsl(var(--border)); color: hsl(var(--foreground)); }
+/* Overlaps as a compact list (8 Oct 2026): one row per pair, no grey panel.
+   Icons overlapped, "A ⇄ B" with reason and costs under it, the amount paid
+   twice, then Compare (quiet) and Decide (small dark pill). */
+.ms-page .ms-pairs-panel { padding: 0; border-radius: 0; background: none; }
+.ms-page .ms-pairs-panel .ms-pairs { display: block; overflow: hidden; border-radius: 20px; background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)), 0 1px 2px rgba(15, 15, 15, .03); }
+.ms-page .ms-pairs-panel .ms-pair.ms-pair-row {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 16px;
+  height: auto; padding: 14px 18px; border: 0; border-radius: 0; background: none; transform: none; transition: background-color 160ms ease;
+}
+.ms-page .ms-pairs-panel .ms-pair.ms-pair-row:hover { transform: none; background: hsl(var(--secondary) / .45); }
+.ms-page .ms-pairs-panel .ms-pair-row + .ms-pair-row { box-shadow: inset 0 .5px 0 hsl(var(--border)); }
+.ms-page .ms-pair-icons { display: flex; flex: none; }
+.ms-page .ms-pair-icons > * { border-radius: 9px; box-shadow: 0 0 0 2px hsl(var(--card)); }
+.ms-page .ms-pair-icons > * + * { margin-left: -10px; }
+.ms-page .ms-pair-text { display: grid; gap: 2px; min-width: 0; }
+.ms-page .ms-pair-names { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; min-width: 0; }
+.ms-page .ms-pair-names button { padding: 0; color: hsl(var(--foreground)); font: 600 15px/1.3 var(--font-ui); text-align: left; }
+.ms-page .ms-pair-names button:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ms-page .ms-pair-x { color: color-mix(in srgb, #E8590C 75%, #000); font: 500 13px/1 var(--font-ui); }
+.ms-page .ms-pair-text small { overflow: hidden; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.4 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-pair-row .ms-pair-double { margin: 0; white-space: nowrap; }
+.ms-page .ms-pair-row .ms-pair-actions { display: flex; align-items: center; gap: 4px; padding: 0; }
+.ms-page .ms-pair-row .ms-pair-actions .ms-pair-compare { height: 32px; padding: 0 12px; background: none; color: hsl(var(--foreground)); font: 600 13px/1 var(--font-ui); }
+.ms-page .ms-pair-row .ms-pair-actions .ms-pair-compare:hover { background: hsl(var(--secondary)); }
+.ms-page .ms-pair-row .ms-pair-decide { height: 32px; padding: 0 14px; font-size: 13px; }
+.ms-page .ms-pairs-panel .ms-tile-more { margin: 14px 4px 0; }
+@media (max-width: 640px) {
+  .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr); gap: 10px 12px; padding: 14px; }
+  .ms-page .ms-pair-row .ms-pair-double { grid-column: 2; justify-self: start; }
+  .ms-page .ms-pair-row .ms-pair-double:empty { display: none; }
+  .ms-page .ms-pair-actions-wrap { grid-column: 1 / -1; justify-self: end; }
+}
+/* Three columns only: icons, text (names, then reason and what is paid
+   twice in orange), actions; names keep their room. */
+.ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr) auto; }
+.ms-page .ms-pair-double-text { color: color-mix(in srgb, #E8590C 82%, #000); font-weight: 600; }
+@media (max-width: 640px) { .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr); } }

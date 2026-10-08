@@ -122,21 +122,22 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
         {(all ? scored : scored.slice(0, SHOWN)).map(({ a, b, shared, explicit, double }) => {
           const key = pairKey(toolKey(a), toolKey(b));
           const open = deciding === key;
-          return <li key={key} className="ms-pair">
-            <div className="ms-pair-tools">
-              {[a, b].map((tool, i) => (
-                <button key={tool.id} type="button" className="ms-pair-tool" onClick={() => onSelect(toolKey(tool))}>
-                  <ToolLogo tool={tool} size={32} />
-                  <span><strong>{tool.name}</strong><small>{costLabel(tool)}</small></span>
-                  {i === 0 && <span className="ms-pair-sign" aria-hidden="true">⇄</span>}
-                </button>
-              ))}
-            </div>
-            <div className="ms-pair-foot">
-              {double > 0 && <span className="ms-pair-double">{en ? `${money(double)} paid twice` : `${money(double)} en double`}</span>}
-              <p className="ms-pair-why">{shared.length > 0
-                ? (en ? `Shared: ${shared.slice(0, 3).join(", ")}` : `En commun : ${shared.slice(0, 3).map((use) => stackDisplayLabel(use, lang)).join(", ")}`)
-                : explicit ? (en ? "Listed as alternatives in the catalogue" : "Alternatives l’une de l’autre au catalogue") : ""}</p>
+          const why = shared.length > 0
+            ? (en ? `Shared: ${shared.slice(0, 2).join(", ")}` : `En commun : ${shared.slice(0, 2).map((use) => stackDisplayLabel(use, lang)).join(", ")}`)
+            : explicit ? (en ? "Catalogue alternatives" : "Alternatives au catalogue") : "";
+          // One row per pair (iOS list): both icons, "A ⇄ B" with the reason
+          // and both costs under it, what is paid twice, then the actions.
+          return <li key={key} className="ms-pair ms-pair-row">
+            <span className="ms-pair-icons" aria-hidden="true"><ToolLogo tool={a} size={32} /><ToolLogo tool={b} size={32} /></span>
+            <span className="ms-pair-text">
+              <span className="ms-pair-names">
+                <button type="button" onClick={() => onSelect(toolKey(a))}>{a.name}</button>
+                <span className="ms-pair-x" aria-label={en ? "and" : "et"}>⇄</span>
+                <button type="button" onClick={() => onSelect(toolKey(b))}>{b.name}</button>
+              </span>
+              <small>{why}{double > 0 && <><span aria-hidden="true"> · </span><span className="ms-pair-double-text">{en ? `${money(double)} paid twice` : `${money(double)} en double`}</span></>}</small>
+            </span>
+            <div className="ms-pair-actions-wrap">
               <div className="ms-pair-actions">
                 <Link className="ms-pair-compare" to={comparisonPath(prefix, toolKey(a), toolKey(b))} onClick={() => trackEvent("stack_compare_click", { source: "pairs", a: toolKey(a), b: toolKey(b) })}>{en ? "Compare" : "Comparer"}</Link>
                 {/* The decision opens in a menu anchored to the button: the card
