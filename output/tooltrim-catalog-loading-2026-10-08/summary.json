@@ -1,0 +1,765 @@
+{
+  "measured_at": "2026-10-08T13:37:19.124Z",
+  "base": "https://tooltrim.com",
+  "application_commit": "34391450cc",
+  "browser": "145.0.7632.6",
+  "captures": 34,
+  "cold_captures": 30,
+  "warm_captures": 4,
+  "remote_api_baseline": "unknown: ERR_NAME_NOT_RESOLVED, independent DNS ENOTFOUND",
+  "timing_method": "Node monotonic clock from goto through successful functional assertion; not INP or isolated handler latency",
+  "network_throttling": false,
+  "mobile_profile": "390px viewport, CPU x4 on desktop Chromium; not physical device",
+  "observation_after_action_seconds": 4,
+  "all_assertions_pass": true,
+  "application_errors": 0,
+  "incomplete_catalog_requests": 0,
+  "rows": [
+    {
+      "profile": "desktop",
+      "scenario": "category-fr",
+      "samples": 3,
+      "ready_median_ms": 1374,
+      "ready_min_ms": 1342,
+      "ready_max_ms": 2510,
+      "action_elapsed_median_ms": 239,
+      "catalog": {
+        "tool-summary-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 334657,
+          "median_observed_decoded_bytes": 1520530
+        },
+        "category-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 9086,
+          "median_observed_decoded_bytes": 20588
+        },
+        "catalog-helpers": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 10182,
+          "median_observed_decoded_bytes": 20604
+        },
+        "posts-js": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 128210,
+          "median_observed_decoded_bytes": 435300
+        },
+        "tool-shard": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "full-tools": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        }
+      },
+      "failed_remote_fetches_per_run": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "profile": "desktop",
+      "scenario": "fiche-fr",
+      "samples": 3,
+      "ready_median_ms": 2109,
+      "ready_min_ms": 2084,
+      "ready_max_ms": 2596,
+      "action_elapsed_median_ms": 1327,
+      "catalog": {
+        "tool-summary-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 334661,
+          "median_observed_decoded_bytes": 1520530
+        },
+        "category-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 9020,
+          "median_observed_decoded_bytes": 20588
+        },
+        "catalog-helpers": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 10155,
+          "median_observed_decoded_bytes": 20604
+        },
+        "posts-js": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "tool-shard": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "full-tools": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        }
+      },
+      "failed_remote_fetches_per_run": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "profile": "desktop",
+      "scenario": "listing-fr",
+      "samples": 3,
+      "ready_median_ms": 1366,
+      "ready_min_ms": 1176,
+      "ready_max_ms": 2092,
+      "action_elapsed_median_ms": 341,
+      "catalog": {
+        "tool-summary-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 334660,
+          "median_observed_decoded_bytes": 1520530
+        },
+        "category-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 9251,
+          "median_observed_decoded_bytes": 20588
+        },
+        "catalog-helpers": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 10155,
+          "median_observed_decoded_bytes": 20604
+        },
+        "posts-js": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "tool-shard": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "full-tools": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        }
+      },
+      "failed_remote_fetches_per_run": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "profile": "desktop",
+      "scenario": "stack-empty-fr",
+      "samples": 3,
+      "ready_median_ms": 1507,
+      "ready_min_ms": 826,
+      "ready_max_ms": 2205,
+      "action_elapsed_median_ms": 846,
+      "catalog": {
+        "tool-summary-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 334634,
+          "median_observed_decoded_bytes": 1520530
+        },
+        "category-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 9047,
+          "median_observed_decoded_bytes": 20588
+        },
+        "catalog-helpers": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 10155,
+          "median_observed_decoded_bytes": 20604
+        },
+        "posts-js": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "tool-shard": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "full-tools": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        }
+      },
+      "failed_remote_fetches_per_run": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "profile": "desktop",
+      "scenario": "stack-saved-fr",
+      "samples": 3,
+      "ready_median_ms": 1136,
+      "ready_min_ms": 1032,
+      "ready_max_ms": 1719,
+      "action_elapsed_median_ms": 505,
+      "catalog": {
+        "tool-summary-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 334637,
+          "median_observed_decoded_bytes": 1520530
+        },
+        "category-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 9051,
+          "median_observed_decoded_bytes": 20588
+        },
+        "catalog-helpers": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 10155,
+          "median_observed_decoded_bytes": 20604
+        },
+        "posts-js": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "tool-shard": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 58348,
+          "median_observed_decoded_bytes": 223448
+        },
+        "full-tools": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        }
+      },
+      "failed_remote_fetches_per_run": [
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "profile": "mobile-cpu4",
+      "scenario": "category-fr",
+      "samples": 3,
+      "ready_median_ms": 1861,
+      "ready_min_ms": 1789,
+      "ready_max_ms": 1996,
+      "action_elapsed_median_ms": 891,
+      "catalog": {
+        "tool-summary-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 334687,
+          "median_observed_decoded_bytes": 1520530
+        },
+        "category-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 9571,
+          "median_observed_decoded_bytes": 20588
+        },
+        "catalog-helpers": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 10155,
+          "median_observed_decoded_bytes": 20604
+        },
+        "posts-js": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 128183,
+          "median_observed_decoded_bytes": 435300
+        },
+        "tool-shard": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "full-tools": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        }
+      },
+      "failed_remote_fetches_per_run": [
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "profile": "mobile-cpu4",
+      "scenario": "fiche-fr",
+      "samples": 3,
+      "ready_median_ms": 2724,
+      "ready_min_ms": 2698,
+      "ready_max_ms": 2754,
+      "action_elapsed_median_ms": 1715,
+      "catalog": {
+        "tool-summary-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 334634,
+          "median_observed_decoded_bytes": 1520530
+        },
+        "category-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 9047,
+          "median_observed_decoded_bytes": 20588
+        },
+        "catalog-helpers": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 10209,
+          "median_observed_decoded_bytes": 20604
+        },
+        "posts-js": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "tool-shard": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "full-tools": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        }
+      },
+      "failed_remote_fetches_per_run": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "profile": "mobile-cpu4",
+      "scenario": "listing-fr",
+      "samples": 3,
+      "ready_median_ms": 2947,
+      "ready_min_ms": 2907,
+      "ready_max_ms": 3013,
+      "action_elapsed_median_ms": 1740,
+      "catalog": {
+        "tool-summary-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 334634,
+          "median_observed_decoded_bytes": 1520530
+        },
+        "category-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 9078,
+          "median_observed_decoded_bytes": 20588
+        },
+        "catalog-helpers": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 10182,
+          "median_observed_decoded_bytes": 20604
+        },
+        "posts-js": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "tool-shard": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "full-tools": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        }
+      },
+      "failed_remote_fetches_per_run": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "profile": "mobile-cpu4",
+      "scenario": "stack-empty-fr",
+      "samples": 3,
+      "ready_median_ms": 1281,
+      "ready_min_ms": 1133,
+      "ready_max_ms": 1344,
+      "action_elapsed_median_ms": 407,
+      "catalog": {
+        "tool-summary-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 334638,
+          "median_observed_decoded_bytes": 1520530
+        },
+        "category-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 8997,
+          "median_observed_decoded_bytes": 20588
+        },
+        "catalog-helpers": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 10155,
+          "median_observed_decoded_bytes": 20604
+        },
+        "posts-js": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "tool-shard": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "full-tools": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        }
+      },
+      "failed_remote_fetches_per_run": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "profile": "mobile-cpu4",
+      "scenario": "stack-saved-fr",
+      "samples": 3,
+      "ready_median_ms": 2186,
+      "ready_min_ms": 2009,
+      "ready_max_ms": 2371,
+      "action_elapsed_median_ms": 1348,
+      "catalog": {
+        "tool-summary-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 334634,
+          "median_observed_decoded_bytes": 1520530
+        },
+        "category-index": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 9020,
+          "median_observed_decoded_bytes": 20588
+        },
+        "catalog-helpers": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 10182,
+          "median_observed_decoded_bytes": 20604
+        },
+        "posts-js": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        },
+        "tool-shard": {
+          "requests_per_run": [
+            1,
+            1,
+            1
+          ],
+          "median_transferred_bytes": 57639,
+          "median_observed_decoded_bytes": 223448
+        },
+        "full-tools": {
+          "requests_per_run": [
+            0,
+            0,
+            0
+          ],
+          "median_transferred_bytes": 0,
+          "median_observed_decoded_bytes": 0
+        }
+      },
+      "failed_remote_fetches_per_run": [
+        6,
+        6,
+        6
+      ]
+    }
+  ],
+  "warm": [
+    {
+      "scenario": "fiche-fr",
+      "ready_ms": 1156,
+      "index_transferred_bytes": 0,
+      "shard_transferred_bytes": 0
+    },
+    {
+      "scenario": "listing-fr",
+      "ready_ms": 349,
+      "index_transferred_bytes": 0,
+      "shard_transferred_bytes": 0
+    },
+    {
+      "scenario": "stack-empty-fr",
+      "ready_ms": 209,
+      "index_transferred_bytes": 0,
+      "shard_transferred_bytes": 0
+    },
+    {
+      "scenario": "stack-saved-fr",
+      "ready_ms": 353,
+      "index_transferred_bytes": 0,
+      "shard_transferred_bytes": 98
+    }
+  ],
+  "source_index": {
+    "records": 1348,
+    "sha256": "76ee5478cdb73362fff77e6a6cd29d03a94c03fb9a4a97f5167da71672e85c7c",
+    "compact_json_bytes": 1520477,
+    "top_fields_serialized_bytes": {
+      "pricing": 192210,
+      "shortDescription": 178611,
+      "pricingEn": 170980,
+      "shortDescriptionEn": 161032,
+      "ogImageUrl": 108984,
+      "relevantFor": 97752,
+      "functional_needs": 73597,
+      "verticals": 55364,
+      "substitution_cluster_v2": 55088,
+      "alternatives": 42458,
+      "prescription_quality": 38054,
+      "categoryId": 34166
+    }
+  },
+  "review": "independent review: no blocking script defect; limits retained in report"
+}

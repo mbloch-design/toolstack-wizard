@@ -1,3 +1,11 @@
+## 2026-10-08 — Chargement catalogue mesuré, prochain lot cadré
+
+- 34 captures publiques Chromium : cinq parcours × desktop/mobile CPU ×4 × trois passages, plus quatre renavigations avec cache. Chronométrage monotone, une navigation document par parcours, sélections fictives conservées, aucune erreur pageerror.
+- Index de 1 348 résumés : ~335 ko transférés / 1 520 530 octets décodés sur tous les parcours froids ; zéro transfert avec cache. Aucun chunk tools_v4 chargé ; inspecteur Figma : un shard ~58 ko.
+- Appels Supabase en échec DNS dans l'environnement de mesure : performance API saine inconnue, limites documentées. Prochain lot : matrice des consommateurs, puis canary d'une projection minimale dérivée du catalogue commun, sans suppression de faits.
+- Sonde reproductible scripts/measure-catalog-loading.mjs, résumé JSON, rapport CHARGEMENT_CATALOGUE_2026-10-08.md et roadmaps actualisées. Aucun changement applicatif ni de catalogue ; travaux locaux distincts exclus.
+- Première CI du lot précédent confirmée : 56/56 en 5 min 28 s, rapport hydration-report archivé sept jours et Vercel terminé ; preuve Actions ajoutée aux roadmaps.
+
 ## 2026-10-08 — Recette d'hydratation automatisée en CI
 
 - Preprod CI déclenché aussi sur main ; gates existants conservés, Chromium installé après build puis 56 scénarios sur HTML généré. Permissions contents:read.

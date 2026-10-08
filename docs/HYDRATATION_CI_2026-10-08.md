@@ -21,7 +21,9 @@ Le workflow ne reçoit que contents:read. Les suites utilisent des sélections f
 
 Une copie temporaire du payload Notion EN a été altérée pour reproduire une divergence réelle. Le scénario existant a échoué ; rapport HTML et trois traces (essai initial et retries) ont été produits. Le HTML original a été restauré octet pour octet avant la recette complète. Cette sonde reste hors du dépôt et hors du produit.
 
-Recette locale avec CI=1 : 56/56 PASS en 4,8 minutes, rapport HTML produit. 249 tests applicatifs et typecheck app/node PASS ; les deux configurations Playwright sont désormais couvertes. Le réglage contextOptions reproduit la préférence par défaut exercée pendant cette recette. Artefact applicatif validé du lot 863e4737eb réutilisé, aucun changement produit à reconstruire localement. La relecture indépendante ne remplace pas le premier run Actions, dont le résultat et la durée seront communiqués après publication.
+Recette locale avec CI=1 : 56/56 PASS en 4,8 minutes, rapport HTML produit. 249 tests applicatifs et typecheck app/node PASS ; les deux configurations Playwright sont désormais couvertes. Le réglage contextOptions reproduit la préférence par défaut exercée pendant cette recette. Artefact applicatif validé du lot 863e4737eb réutilisé, aucun changement produit à reconstruire localement.
+
+Première exécution distante confirmée après publication de `34391450cc` : [Preprod CI sur main](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37782506339) entièrement réussie, **56/56 tests d'hydratation en 5 min 28 s** sur Linux/Node 20. Artefact hydration-report créé (276 841 octets), expiration le 15 octobre 2026 ; déploiement Vercel terminé. La relecture indépendante est ainsi complétée par une vraie exécution du workflow.
 
 Aucun code applicatif, contenu catalogue, CSS ou HTML de production modifié par ce lot. Les catégories locales sont exclues.
 
