@@ -10,6 +10,35 @@ import { readStackSnapshot, type StackSnapshot } from "@/lib/stackSnapshot";
 import FooterTrim from "@/components/FooterTrim";
 
 /**
+ * Directory badges, kept in the prerendered HTML: directories check that
+ * their badge and link are on the page. One image each (8 Oct 2026): the
+ * footer is always light, so the dark variants never showed, and they
+ * doubled the badges' weight on 13,000+ pages. `rel` is kept per badge as
+ * agreed with each directory.
+ */
+type Badge = { href: string; rel: string; label: string; src: string; alt: string; width: number; height: number; title?: string; fallback?: string };
+const BADGES: Badge[] = [
+  { href: "https://dang.ai", rel: "dofollow noopener", label: "Verified on DANG!", src: "https://assets.dang.ai/badges/dang-verified-dark.png", alt: "Verified on DANG!", width: 260, height: 94 },
+  { href: "https://neeed.directory", rel: "noopener", label: "Featured on neeed.directory", src: "https://neeed.directory/badges/neeed-badge-light.svg", alt: "Featured on neeed.directory", width: 139, height: 44 },
+  { href: "https://nicklaunches.com/products/tooltrim/?utm_source=tooltrim.com&utm_medium=badge&utm_campaign=featured", rel: "noopener", label: "ToolTrim on Nick Launches", src: "https://nicklaunches.com/badges/featured.png", alt: "ToolTrim on Nick Launches", width: 244, height: 56 },
+  { href: "https://backlinklog.com/listing/tooltrim.com?utm_source=backlinklog&utm_medium=badge", rel: "noopener", label: "Listed on BacklinkLog", src: "https://backlinklog.com/badge/tooltrim.com.svg", alt: "Listed on BacklinkLog", width: 160, height: 40 },
+  { href: "https://launchnest.io/p/tooltrim", rel: "noopener", label: "Tooltrim on LaunchNest", src: "https://launchnest.io/badge/tooltrim.svg?variant=listed&theme=light", alt: "Tooltrim on LaunchNest", width: 220, height: 56 },
+  { href: "https://vibecodinglist.com/projects/tooltrim?utm_source=vcl_badge&utm_medium=builder_site&utm_campaign=listed_badge&utm_content=tooltrim", rel: "noopener", label: "Featured on VibeCodingList", src: "https://vibecodinglist.com/assets/embed-widget/featured-on-badge-dark.png", alt: "Featured on VibeCodingList", width: 200, height: 51 },
+  { href: "https://dailypings.com/p/tooltrim", rel: "noopener", label: "Featured on DailyPings", src: "https://dailypings.com/badge.svg", alt: "Featured on DailyPings", width: 179, height: 32 },
+  { href: "https://postyourstartup.co/startup/tooltrim-1?ref=badge", rel: "noopener", label: "Featured on PostYourStartup", src: "https://postyourstartup.co/api/badge/tooltrim-1?theme=light", alt: "Featured on PostYourStartup", width: 212, height: 55 },
+  { href: "https://turbo0.com/item/tooltrim", rel: "noopener noreferrer", label: "Listed on Turbo0", src: "https://img.turbo0.com/badge-listed-light.svg", alt: "Listed on Turbo0", width: 164, height: 54 },
+  { href: "https://goodaitools.com/ai/tooltrim", rel: "noopener noreferrer", label: "ToolTrim on Good AI Tools", src: "https://goodaitools.com/assets/images/badge.png", alt: "Good AI Tools", width: 207, height: 54 },
+  { href: "https://aiagentsdirectory.com/agent/tooltrim", rel: "noopener", label: "ToolTrim on AI Agents Directory", src: "https://aiagentsdirectory.com/featured-badge.svg?v=2024", alt: "ToolTrim - Featured on AI Agents Directory", width: 200, height: 50, title: "Discover ToolTrim on AI Agents Directory" },
+  { href: "https://linksalad.me/projects/tooltrim?utm_source=badge", rel: "noopener noreferrer", label: "ToolTrim on LinkSalad", src: "https://linksalad.me/images/badges/featured-on-light.svg", alt: "Featured on LinkSalad", width: 150, height: 44 },
+  { href: "https://peerpush.com/p/tooltrim", rel: "noopener", label: "ToolTrim on PeerPush", src: "https://peerpush.com/p/tooltrim/badge.png", alt: "ToolTrim on PeerPush", width: 230, height: 65 },
+  { href: "https://startupfa.me/s/tooltrim?utm_source=tooltrim.com", rel: "noopener", label: "ToolTrim - Featured on Startup Fame", src: "https://startupfa.me/badges/featured-badge.webp", alt: "ToolTrim - Featured on Startup Fame", width: 171, height: 54, fallback: "Startup Fame" },
+  { href: "https://shipthing.com/projects/tooltrim-6645?utm_source=badge", rel: "noopener noreferrer", label: "Featured on ShipThing", src: "https://shipthing.com/shipthing/images/badges/featured-on-light.svg", alt: "Featured on ShipThing", width: 150, height: 44 },
+  { href: "https://findly.tools/tooltrim?utm_source=tooltrim", rel: "noopener noreferrer", label: "Featured on Findly.tools", src: "https://findly.tools/badges/findly-tools-badge-light.svg", alt: "Featured on Findly.tools", width: 175, height: 55 },
+  { href: "https://sellwithboost.com", rel: "noopener noreferrer", label: "Listed on Sell With boost", src: "https://sellwithboost.com/badge/listing.svg", alt: "Listed on Sell With boost", width: 160, height: 40 },
+  { href: "https://twelve.tools", rel: "noopener noreferrer", label: "Featured on Twelve Tools", src: "https://twelve.tools/badge0-white.svg", alt: "Featured on Twelve Tools", width: 148, height: 40 },
+];
+
+/**
  * Editorial footer on one 12-column grid (8 Oct 2026):
  *   1. Promise and proof (left half) | the visitor's stack, or the invitation
  *      to build one (right half, aligned on the third link column)
@@ -141,396 +170,12 @@ const Footer = () => {
         <section className="tt-footer-partners" aria-label={t("Repéré sur", "Featured on")}>
           <span className="tt-footer-partners-label">{t("Repéré sur", "Featured on")}</span>
             <div className="tt-footer-badges">
-              <a
-                href="https://dang.ai"
-                target="_blank"
-                rel="dofollow noopener"
-                className="tt-footer-badge"
-                aria-label="Verified on DANG!"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://assets.dang.ai/badges/dang-verified-dark.png"
-                  alt="Verified on DANG!"
-                  width={260}
-                  height={94}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://assets.dang.ai/badges/dang-verified-light.png"
-                  alt="Verified on DANG!"
-                  width={260}
-                  height={94}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://neeed.directory"
-                target="_blank"
-                rel="noopener"
-                className="tt-footer-badge"
-                aria-label="Featured on neeed.directory"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://neeed.directory/badges/neeed-badge-light.svg"
-                  alt="Featured on neeed.directory"
-                  width={139}
-                  height={44}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://neeed.directory/badges/neeed-badge-dark.svg"
-                  alt="Featured on neeed.directory"
-                  width={139}
-                  height={44}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://nicklaunches.com/products/tooltrim/?utm_source=tooltrim.com&utm_medium=badge&utm_campaign=featured"
-                target="_blank"
-                rel="noopener"
-                className="tt-footer-badge"
-                aria-label="ToolTrim on Nick Launches"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://nicklaunches.com/badges/featured.png"
-                  alt="ToolTrim on Nick Launches"
-                  width={244}
-                  height={56}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://nicklaunches.com/badges/featured-dark.png"
-                  alt="ToolTrim on Nick Launches"
-                  width={244}
-                  height={56}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://backlinklog.com/listing/tooltrim.com?utm_source=backlinklog&utm_medium=badge"
-                target="_blank"
-                rel="noopener"
-                className="tt-footer-badge"
-                aria-label="Listed on BacklinkLog"
-              >
-                <img
-                  src="https://backlinklog.com/badge/tooltrim.com.svg"
-                  alt="Listed on BacklinkLog"
-                  width={160}
-                  height={40}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://launchnest.io/p/tooltrim"
-                target="_blank"
-                rel="noopener"
-                className="tt-footer-badge"
-                aria-label="Tooltrim on LaunchNest"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://launchnest.io/badge/tooltrim.svg?variant=listed&theme=light"
-                  alt="Tooltrim on LaunchNest"
-                  width={220}
-                  height={56}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://launchnest.io/badge/tooltrim.svg?variant=listed"
-                  alt="Tooltrim on LaunchNest"
-                  width={220}
-                  height={56}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://vibecodinglist.com/projects/tooltrim?utm_source=vcl_badge&utm_medium=builder_site&utm_campaign=listed_badge&utm_content=tooltrim"
-                target="_blank"
-                rel="noopener"
-                className="tt-footer-badge"
-                aria-label="Featured on VibeCodingList"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://vibecodinglist.com/assets/embed-widget/featured-on-badge-dark.png"
-                  alt="Featured on VibeCodingList"
-                  width={200}
-                  height={51}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://vibecodinglist.com/assets/embed-widget/featured-on-badge-light.png"
-                  alt="Featured on VibeCodingList"
-                  width={200}
-                  height={51}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://dailypings.com/p/tooltrim"
-                target="_blank"
-                rel="noopener"
-                className="tt-footer-badge"
-                aria-label="Featured on DailyPings"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://dailypings.com/badge.svg"
-                  alt="Featured on DailyPings"
-                  width={179}
-                  height={32}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://dailypings.com/badge-light.svg"
-                  alt="Featured on DailyPings"
-                  width={179}
-                  height={32}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://postyourstartup.co/startup/tooltrim-1?ref=badge"
-                target="_blank"
-                rel="noopener"
-                className="tt-footer-badge"
-                aria-label="Featured on PostYourStartup"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://postyourstartup.co/api/badge/tooltrim-1?theme=light"
-                  alt="Featured on PostYourStartup"
-                  width={212}
-                  height={55}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://postyourstartup.co/api/badge/tooltrim-1?theme=dark"
-                  alt="Featured on PostYourStartup"
-                  width={212}
-                  height={55}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://turbo0.com/item/tooltrim"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tt-footer-badge"
-                aria-label="Listed on Turbo0"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://img.turbo0.com/badge-listed-light.svg"
-                  alt="Listed on Turbo0"
-                  width={164}
-                  height={54}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://img.turbo0.com/badge-listed-dark.svg"
-                  alt="Listed on Turbo0"
-                  width={164}
-                  height={54}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://goodaitools.com/ai/tooltrim"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tt-footer-badge"
-                aria-label="ToolTrim on Good AI Tools"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://goodaitools.com/assets/images/badge.png"
-                  alt="Good AI Tools"
-                  width={207}
-                  height={54}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://goodaitools.com/assets/images/badge-dark.png"
-                  alt="Good AI Tools"
-                  width={207}
-                  height={54}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://aiagentsdirectory.com/agent/tooltrim"
-                target="_blank"
-                rel="noopener"
-                title="Discover ToolTrim on AI Agents Directory"
-                className="tt-footer-badge"
-                aria-label="ToolTrim on AI Agents Directory"
-              >
-                <img
-                  src="https://aiagentsdirectory.com/featured-badge.svg?v=2024"
-                  alt="ToolTrim - Featured on AI Agents Directory"
-                  width={200}
-                  height={50}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://linksalad.me/projects/tooltrim?utm_source=badge"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tt-footer-badge"
-                aria-label="ToolTrim on LinkSalad"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://linksalad.me/images/badges/featured-on-light.svg"
-                  alt="Featured on LinkSalad"
-                  width={150}
-                  height={44}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://linksalad.me/images/badges/featured-on-dark.svg"
-                  alt="Featured on LinkSalad"
-                  width={150}
-                  height={44}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://peerpush.com/p/tooltrim"
-                target="_blank"
-                rel="noopener"
-                className="tt-footer-badge"
-                aria-label="ToolTrim on PeerPush"
-              >
-                <img
-                  src="https://peerpush.com/p/tooltrim/badge.png"
-                  alt="ToolTrim on PeerPush"
-                  width={230}
-                  height={65}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://startupfa.me/s/tooltrim?utm_source=tooltrim.com"
-                target="_blank"
-                rel="noopener"
-                className="tt-footer-badge"
-                aria-label="ToolTrim - Featured on Startup Fame"
-              >
-                {/* The directory's image can fail to load: fall back to its name. */}
-                <img
-                  src="https://startupfa.me/badges/featured-badge.webp"
-                  alt="ToolTrim - Featured on Startup Fame"
-                  width={171}
-                  height={54}
-                  loading="lazy"
-                  onError={(event) => { event.currentTarget.style.display = "none"; event.currentTarget.parentElement?.setAttribute("data-fallback", "Startup Fame"); }}
-                />
-              </a>
-              <a
-                href="https://shipthing.com/projects/tooltrim-6645?utm_source=badge"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tt-footer-badge"
-                aria-label="Featured on ShipThing"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://shipthing.com/shipthing/images/badges/featured-on-light.svg"
-                  alt="Featured on ShipThing"
-                  width={150}
-                  height={44}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://shipthing.com/shipthing/images/badges/featured-on-dark.svg"
-                  alt="Featured on ShipThing"
-                  width={150}
-                  height={44}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://findly.tools/tooltrim?utm_source=tooltrim"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tt-footer-badge"
-                aria-label="Featured on Findly.tools"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://findly.tools/badges/findly-tools-badge-light.svg"
-                  alt="Featured on Findly.tools"
-                  width={175}
-                  height={55}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://findly.tools/badges/findly-tools-badge-dark.svg"
-                  alt="Featured on Findly.tools"
-                  width={175}
-                  height={55}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://sellwithboost.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tt-footer-badge"
-                aria-label="Listed on Sell With boost"
-              >
-                <img
-                  className="tt-footer-badge-light"
-                  src="https://sellwithboost.com/badge/listing.svg"
-                  alt="Listed on Sell With boost"
-                  width={160}
-                  height={40}
-                  loading="lazy"
-                />
-                <img
-                  className="tt-footer-badge-dark"
-                  src="https://sellwithboost.com/badge/listing-dark.svg"
-                  alt="Listed on Sell With boost"
-                  width={160}
-                  height={40}
-                  loading="lazy"
-                />
-              </a>
-              <a
-                href="https://twelve.tools"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tt-footer-badge"
-                aria-label="Featured on Twelve Tools"
-              >
-                <img
-                  src="https://twelve.tools/badge0-white.svg"
-                  alt="Featured on Twelve Tools"
-                  width={148}
-                  height={40}
-                  loading="lazy"
-                />
-              </a>
+              {BADGES.map((badge) => (
+                <a key={badge.href} href={badge.href} target="_blank" rel={badge.rel} title={badge.title} className="tt-footer-badge" aria-label={badge.label}>
+                  <img src={badge.src} alt={badge.alt} width={badge.width} height={badge.height} loading="lazy"
+                    onError={badge.fallback ? (event) => { event.currentTarget.style.display = "none"; event.currentTarget.parentElement?.setAttribute("data-fallback", badge.fallback as string); } : undefined} />
+                </a>
+              ))}
           </div>
         </section>
 

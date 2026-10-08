@@ -19005,9 +19005,6 @@ section[id]:not(.cp-guide-section) {
   height: 18px;
   border: 0;
 }
-.tt-footer-badge img.tt-footer-badge-dark { display: none; }
-.dark .tt-footer-badge img.tt-footer-badge-light { display: none; }
-.dark .tt-footer-badge img.tt-footer-badge-dark { display: block; }
 .tt-footer-legal {
   display: flex;
   align-items: center;

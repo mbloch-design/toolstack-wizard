@@ -121,4 +121,4 @@ Prochaines étapes proposées, dans l'ordre :
 - [x] Footer : colonne Catégories (IA généraliste, Finance et facturation, Gestion de projet, Automatisation, CRM, toutes). À revoir avec les clics GSC vers le 21/10.
 - [x] Footer refait sur une grille de 12 colonnes (8 oct.) : carte « Ma stack » (outils, coût, payé en double) lue depuis un instantané écrit par Ma stack, sélecteur FR | EN, badges en cellules uniformes (2 rangées de 10).
 - [x] Revue design du footer (design-review, 8 oct.) : trois tons (#0F0F0F, #424245, #6F6F68), tokens `--tt-footer-*`, tuile neutre blanche décorative et prérendue vide (budget HTML : le footer est répété sur 13 162 pages, 12,8 Ko chacune).
-- [ ] Budget HTML proche de la limite (760 Mo avant la correction pour 745 Mo) : tout ajout au footer coûte 13 Mo par Ko. Pistes : badges (8 Ko par page) servis côté client.
+- [x] Budget HTML : badges ramenés à une image chacun (variantes sombres jamais affichées), footer 12,8 → 8,4 Ko par page, HTML 760 → 705 Mo (limite 745). Badges gardés dans le HTML prérendu, car les annuaires vérifient leur présence.
