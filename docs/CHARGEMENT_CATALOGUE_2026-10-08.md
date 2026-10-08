@@ -63,6 +63,8 @@ La proposition existante `docs/tool-catalog-migration/14-architecture-catalogue-
 
 Le gain mobile sera une mesure avant/après, pas une promesse déduite du nombre d'octets.
 
+Actualisation après inventaire : [matrice des consommateurs et prototype de transport](MATRICE_RESUMES_CATALOGUE_2026-10-08.md) terminés. Les descriptions/prix restent fonctionnels ; le premier candidat filtre uniquement les 109 lignes déjà écartées par le hook. Parité de 1 239 résumés démontrée dans une sonde de données, économie gzip simulée de 4,93 % ; le correctif applicatif et sa recette navigateur restent à réaliser.
+
 ## Reproduction et preuves
 
 ```bash

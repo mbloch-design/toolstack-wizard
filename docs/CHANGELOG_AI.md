@@ -1,3 +1,10 @@
+## 2026-10-08 — Matrice des résumés et prototype de transport
+
+- Inventaire indépendant cartes/recherche/listings et stack/relations, complété par pages piliers/stacks éditoriales : descriptions bilingues, prix, taxonomies, médias, relations et sentinelles ont des consommateurs ; aucun champ retiré.
+- Prototype de données uniquement : 109 lignes déjà exclues par le hook retirées du transport candidat, 1 239 sorties du mapper réel identiques octet pour octet. Simulation au même format : −101 057 octets décodés, gzip −16 879 (4,93 %), Brotli q5 −12 354 (4,44 %). Aucun gain CDN ou interaction encore annoncé.
+- Les listes hook/build contiennent les mêmes 113 exclusions, dont 109 présentes dans l'index actuel. Premier correctif cadré : projection navigateur dérivée, index source complet conservé pour les générateurs, filtre défensif du hook conservé.
+- Rapport MATRICE_RESUMES_CATALOGUE_2026-10-08.md, sonde jetable et preuve JSON ; roadmaps actualisées. Le module candidat reste local et n'est consommé par aucun import ; aucune recette navigateur du correctif ni déploiement déclaré.
+
 ## 2026-10-08 — Chargement catalogue mesuré, prochain lot cadré
 
 - 34 captures publiques Chromium : cinq parcours × desktop/mobile CPU ×4 × trois passages, plus quatre renavigations avec cache. Chronométrage monotone, une navigation document par parcours, sélections fictives conservées, aucune erreur pageerror.
