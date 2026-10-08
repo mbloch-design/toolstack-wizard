@@ -75,14 +75,14 @@ export default function CartPage() {
   const heroOrder = useMemo(() => {
     const monthly = (tool: ToolSummary) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0; };
     return [...selectedTools].sort((a, b) => monthly(b) - monthly(a) || a.name.localeCompare(b.name));
-  }, [selectedTools, plans.paid, currency, lang]);
+  }, [selectedTools, plans.paid, plans.choices, currency, lang]);
   const heroApps = heroOrder.length > HERO_CLUSTER_SLOTS.length ? heroOrder.slice(0, HERO_CLUSTER_SLOTS.length - 1) : heroOrder;
   const heroOverflow = heroOrder.length - heroApps.length;
   // Area colours of the budget ring, stable across the whole stack. Area colours stay those of the whole stack.
   const colorOf = (id: string) => AREA_COLORS[Math.max(0, mapTerritories.findIndex((territory) => territory.id === id)) % AREA_COLORS.length];
   // Hero micro-bars (Screen Time style): tools and cost split by area, in the
   // budget ring's colours, and the share of the cost that is paid twice.
-  const areaCosts = useMemo(() => mapTerritories.map((territory) => ({ id: territory.id, label: territory.label, tools: territory.tools.length, cost: stackMonthlyCost(territory.tools, plans.isPaid, currency, lang).total })), [mapTerritories, plans.paid, currency, lang]);
+  const areaCosts = useMemo(() => mapTerritories.map((territory) => ({ id: territory.id, label: territory.label, tools: territory.tools.length, cost: stackMonthlyCost(territory.tools, plans.isPaid, currency, lang).total })), [mapTerritories, plans.paid, plans.choices, currency, lang]);
   const amount = (value: number) => <><span className="ms-approx" aria-hidden="true">≈</span><span className="sr-only">≈ </span>{formatAmount(Math.round(value), currency, lang)}</>;
   // Freemium question (Michael, 7 Oct 2026): asked once per tool, at the start
   // of the story, because it sets both the budget and what is paid twice.
@@ -98,7 +98,7 @@ export default function CartPage() {
     }
   }
   // Hero and Overlaps section share one computation: same pairs, same amount.
-  const overlapScore = useMemo(() => scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang, decisions), [selectedTools, categories, plans.paid, currency, lang, decisions]);
+  const overlapScore = useMemo(() => scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang, decisions), [selectedTools, categories, plans.paid, plans.choices, currency, lang, decisions]);
   const overlapPairs = overlapScore.pairs.length;
   const empty = state.pinnedToolSlugs.length === 0;
   const showSearch = empty || searchOpen;

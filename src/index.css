@@ -35219,3 +35219,33 @@ img[data-logo-loading] {
    tint behind it). Meaning-carrying colour is kept for areas (hero, budget)
    and orange for what is paid twice, so the overlap chip stays neutral. */
 .ms-page .ms-card-overlap { background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
+/* Adjust my cost, in the tool sheet (portal, not scoped to .ms-page). */
+.ms-ts-adjust { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 52px; padding: 10px 16px; text-align: left; box-shadow: inset 0 1px 0 hsl(var(--border) / .8); font: 600 14.5px/1.35 var(--font-ui); }
+.ms-ts-adjust > span { display: grid; gap: 2px; }
+.ms-ts-adjust small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1.3 var(--font-ui); }
+.ms-ts-adjust svg { transition: transform 200ms ease; }
+.ms-ts-adjust[aria-expanded="true"] svg { transform: rotate(180deg); }
+.ms-ts-adjust:hover { background: hsl(var(--secondary) / .5); }
+.ms-cost-editor { display: grid; gap: 16px; padding: 4px 16px 16px; }
+.ms-ce-block { display: grid; gap: 8px; }
+.ms-ce-label { margin: 0; color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-ce-plans { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
+.ms-ce-plan { display: grid; gap: 2px; padding: 10px 12px; border-radius: 14px; background: hsl(var(--secondary) / .6); text-align: left; transition: box-shadow 160ms ease, background-color 160ms ease; }
+.ms-ce-plan strong { font: 600 14px/1.25 var(--font-ui); }
+.ms-ce-plan small { color: hsl(var(--muted-foreground)); font: 500 12px/1.3 var(--font-ui); }
+.ms-ce-plan:hover { background: hsl(var(--secondary)); }
+.ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: 0 0 0 2px hsl(var(--foreground)); }
+.ms-ce-seats { grid-template-columns: 1fr auto; align-items: center; }
+.ms-ce-stepper { display: inline-flex; align-items: center; gap: 4px; padding: 3px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); }
+.ms-ce-stepper button { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: hsl(var(--card)); box-shadow: 0 1px 2px rgba(15, 15, 15, .08); }
+.ms-ce-stepper button:disabled { opacity: .4; }
+.ms-ce-stepper output { min-width: 32px; text-align: center; font: 650 16px/1 var(--font-ui); font-variant-numeric: tabular-nums; }
+.ms-ce-custom { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ms-ce-input { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; border-radius: 12px; background: hsl(var(--secondary) / .6); box-shadow: inset 0 0 0 1px hsl(var(--border)); }
+.ms-ce-input:focus-within { box-shadow: inset 0 0 0 2px hsl(var(--foreground)); background: hsl(var(--card)); }
+.ms-ce-input input { width: 88px; border: 0; background: none; font: 650 16px/1 var(--font-ui); font-variant-numeric: tabular-nums; outline: none; }
+.ms-ce-input span { color: hsl(var(--muted-foreground)); font: 600 15px/1 var(--font-ui); }
+.ms-cost-editor .ms-size-switch { display: inline-flex; gap: 2px; padding: 2px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); }
+.ms-cost-editor .ms-size-switch button { height: 32px; padding: 0 12px; border-radius: var(--radius-pill); color: hsl(var(--muted-foreground)); font: 500 13px/1 var(--font-ui); }
+.ms-cost-editor .ms-size-switch button[aria-pressed="true"] { background: hsl(var(--card)); color: hsl(var(--foreground)); font-weight: 600; box-shadow: 0 1px 2px rgba(15, 15, 15, .08); }
+.ms-ce-reset { justify-self: start; padding: 0; color: hsl(var(--foreground)); font: 600 13px/1.3 var(--font-ui); text-decoration: underline; text-underline-offset: 3px; }

@@ -1,3 +1,10 @@
+## 2026-10-08 : Ma stack, un coût juste
+
+- Feuille outil : « Ajuster mon coût ». Plan du catalogue (montant natif), nombre de places pour un plan par utilisateur, ou montant réellement payé (mensuel ou annuel, devise affichée). Le choix prime sur l'offre d'entrée et nourrit total, anneau, payé en double ; « Revenir à l'offre d'entrée » annule. Montant saisi affiché exact.
+- Note du budget : nombre de coûts ajustés, et invitation à saisir les prix non relevés.
+- `monthlyFromChoice` testé (mensuel, annuel, places, plan forfaitaire, devise non gérée). Événements stack_cost_plan, stack_cost_custom, stack_cost_reset.
+- Liste prioritaire de recherche de prix : 257 outils des Stacks sans prix vérifié (`research/batches/prix-ma-stack-prioritaires-2026-10-08.txt`).
+
 ## 2026-10-07 — Mesurer sa visibilité dans les réponses IA
 
 - Nouveau guide FR/EN : méthode par panel de prompts, protocole répétable, distinction entre mentions, citations, impressions et conversions, avec limites explicites des scores GEO.

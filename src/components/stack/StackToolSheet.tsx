@@ -1,6 +1,8 @@
-import { useSyncExternalStore } from "react";
+import { useState, useSyncExternalStore } from "react";
+import StackCostEditor from "@/components/stack/StackCostEditor";
+import type { PlanChoice } from "@/hooks/useStackPaidPlans";
 import { Link } from "react-router-dom";
-import { ArrowRight } from "@/lib/icons";
+import { ArrowRight, ChevronDown } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from "@/components/ui/sheet";
 import type { Category, Tool } from "@/data/types";
@@ -31,7 +33,7 @@ interface Props {
   detail?: ToolSummary | Tool | null;
   pairs: ScoredPair[];
   categories: Category[];
-  paid: { isPaid: (slug: string) => boolean; setPaid: (slug: string, value: boolean) => void };
+  paid: { isPaid: (slug: string) => boolean; setPaid: (slug: string, value: boolean) => void; choiceFor: (slug: string) => PlanChoice | undefined; setChoice: (slug: string, choice: PlanChoice | null) => void };
   currency: Currency;
   prefix: string;
   lang: "fr" | "en";
@@ -52,6 +54,7 @@ function useNarrow() {
 export default function StackToolSheet({ tool, detail, pairs, categories, paid, currency, prefix, lang, onClose, onSelect, onRemove }: Props) {
   const en = lang === "en";
   const bottom = useNarrow();
+  const [editing, setEditing] = useState<string | null>(null);
   const money = (amount: number) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${en ? "/mo" : "/mois"}`;
 
   return (
@@ -79,28 +82,45 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
 
             <section className="ms-ts-group" aria-label={en ? "In my stack" : "Dans ma stack"}>
               <h3>{en ? "In my stack" : "Dans ma stack"}</h3>
-              <div className="ms-ts-row">
-                <span>{en ? "Monthly cost" : "Coût mensuel"}</span>
-                <strong>{cost.kind === "paid" ? money(convertAmount(cost.monthly, cost.currency, currency))
-                  : cost.kind === "free" ? (en ? "Free" : "Gratuit")
-                  : cost.kind === "freemium-free" ? (en ? "Free use" : "Usage gratuit")
-                  : (en ? "Price not checked" : "Prix non relevé")}</strong>
-              </div>
-              {freemium && (() => {
-                const on = paid.isPaid(slug);
-                return <div className="ms-ts-row">
-                  <span>{en ? "I pay for the paid plan" : "Je paie l’offre payante"}<small>{native && native.period !== "once"
-                    ? (en ? `From ${formatNativePrice(native, lang)}` : `Dès ${formatNativePrice(native, lang)}`)
-                    : (en ? "Paid price not checked" : "Prix payant non relevé")}</small></span>
-                  <button type="button" role="switch" aria-checked={on} className="ms-switch" aria-label={en ? `I pay for ${tool.name}` : `Je paie ${tool.name}`} onClick={() => paid.setPaid(slug, !on)}>
-                    <span className="ms-switch-track" aria-hidden="true"><span /></span>
+              {(() => {
+                const choice = paid.choiceFor(slug);
+                const on = paid.isPaid(slug) || !!choice;
+                const source = cost.kind !== "paid" ? null
+                  : cost.source === "custom" ? (en ? "Amount you entered" : "Montant que vous avez saisi")
+                  : cost.source === "plan" ? `${en ? "Plan" : "Plan"} ${choice?.label || ""}${choice?.perSeat ? ` × ${Math.max(1, choice.seats || 1)} ${en ? "seats" : "places"}` : ""}`
+                  : (en ? "Catalogue entry plan" : "Offre d’entrée du catalogue");
+                const open = editing === slug;
+                return <>
+                  <div className="ms-ts-row">
+                    <span>{en ? "Monthly cost" : "Coût mensuel"}{source && <small>{source}</small>}</span>
+                    <strong>{cost.kind === "paid" ? (cost.source === "custom" && cost.currency === currency && choice?.period === "monthly"
+                        // What the person typed, in the shown currency: exact, no "≈".
+                        ? `${new Intl.NumberFormat(en ? "en-US" : "fr-FR", { style: "currency", currency, maximumFractionDigits: 2 }).format(cost.monthly)}${en ? "/mo" : "/mois"}`
+                        : money(convertAmount(cost.monthly, cost.currency, currency)))
+                      : cost.kind === "free" ? (en ? "Free" : "Gratuit")
+                      : cost.kind === "freemium-free" ? (en ? "Free use" : "Usage gratuit")
+                      : (en ? "Price not checked" : "Prix non relevé")}</strong>
+                  </div>
+                  {freemium && <div className="ms-ts-row">
+                    <span>{en ? "I pay for a paid plan" : "Je paie une offre payante"}<small>{native && native.period !== "once"
+                      ? (en ? `From ${formatNativePrice(native, lang)}` : `Dès ${formatNativePrice(native, lang)}`)
+                      : (en ? "Paid price not checked" : "Prix payant non relevé")}</small></span>
+                    <button type="button" role="switch" aria-checked={on} className="ms-switch" aria-label={en ? `I pay for ${tool.name}` : `Je paie ${tool.name}`}
+                      onClick={() => { if (on) { paid.setChoice(slug, null); paid.setPaid(slug, false); } else paid.setPaid(slug, true); }}>
+                      <span className="ms-switch-track" aria-hidden="true"><span /></span>
+                    </button>
+                  </div>}
+                  {/* The right figure: a catalogue plan with its seats, or what
+                      the person really pays. */}
+                  <button type="button" className="ms-ts-adjust" aria-expanded={open} onClick={() => setEditing(open ? null : slug)}>
+                    <span>{en ? "Adjust my cost" : "Ajuster mon coût"}<small>{en ? "Plan, seats or the amount you pay" : "Plan, places ou montant réel"}</small></span>
+                    <ChevronDown size={16} aria-hidden />
                   </button>
-                </div>;
+                  {open && <StackCostEditor key={slug} tool={tool} detail={detail} choice={choice} currency={currency} lang={lang} freemium={freemium}
+                    onFree={() => paid.setPaid(slug, false)}
+                    onChange={(next) => { paid.setChoice(slug, next); if (next && freemium) paid.setPaid(slug, true); }} />}
+                </>;
               })()}
-              {!freemium && native && cost.kind === "paid" && <div className="ms-ts-row ms-ts-row--quiet">
-                <span>{en ? "Catalogue entry plan" : "Offre d’entrée du catalogue"}</span>
-                <span>{formatNativePrice(native, lang)}</span>
-              </div>}
             </section>
 
             {uses.length > 0 && <section className="ms-ts-section">
