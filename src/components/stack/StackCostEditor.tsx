@@ -8,7 +8,7 @@ import type { ToolSummary } from "@/hooks/useSupabaseData";
 import type { PlanChoice } from "@/hooks/useStackPaidPlans";
 import { convertAmount, formatAmount, isCurrency, type Currency } from "@/lib/currencyRates";
 import { monthlyFromChoice } from "@/lib/stackCost";
-import { stackPlanPrice, toolKey } from "@/lib/stackView";
+import { formatNativePrice, stackPlanPrice, toolKey } from "@/lib/stackView";
 import { trackEvent } from "@/lib/analytics";
 
 /**
@@ -32,6 +32,8 @@ interface Props {
   initial: CostDraft;
   /** Monthly cost of the catalogue entry plan, already formatted (or null). */
   entryLabel: string | null;
+  /** The catalogue entry price, to recognise its plan in the list. */
+  entryNative?: { amount: number; currency: string; period: string } | null;
   currency: Currency;
   lang: "fr" | "en";
   freemium: boolean;
@@ -49,7 +51,7 @@ export function usablePlans(detail: ToolSummary | Tool | null | undefined, lang:
 const sameDraft = (a: CostDraft, b: CostDraft) => JSON.stringify(a) === JSON.stringify(b);
 const CHECK = <span className="ms-ce-check" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></span>;
 
-export default function StackCostEditor({ tool, detail, initial, entryLabel, currency, lang, freemium, onSave, onCancel }: Props) {
+export default function StackCostEditor({ tool, detail, initial, entryLabel, entryNative, currency, lang, freemium, onSave, onCancel }: Props) {
   const en = lang === "en";
   const slug = toolKey(tool);
   const plans = usablePlans(detail && detail.id === tool.id ? detail : null, lang);
@@ -101,12 +103,25 @@ export default function StackCostEditor({ tool, detail, initial, entryLabel, cur
         <p className="ms-ce-label">{en ? "My plan" : "Mon plan"}</p>
         <div className="ms-ce-plans" role="radiogroup" aria-label={en ? "My plan" : "Mon plan"}>
           {freemium && <button type="button" role="radio" aria-checked={draft.kind === "free"} className="ms-ce-plan" onClick={() => { setDraft({ kind: "free" }); setAmount(""); }}>
-            <strong>{en ? "Free plan" : "Gratuit"}</strong><small>{en ? "I don’t pay" : "Je ne paie pas"}</small>{CHECK}
+            <strong>{en ? "Free plan" : "Gratuit"}</strong><b className="ms-ce-amount">{formatNativePrice({ amount: 0, currency, period: "monthly" }, lang)}</b><small>{en ? "I don’t pay" : "Je ne paie pas"}</small>{CHECK}
           </button>}
           {plans.map((plan) => {
-            const on = picked?.source === "plan" && picked.label === plan.displayName;
+            // The plan the catalogue entry price comes from: checked while the
+            // cost is still the entry plan, so the base of the figure is visible.
+            const isEntry = !!entryNative && plan.nativeAmount === entryNative.amount && plan.nativeCurrency === entryNative.currency && plan.billingPeriod === entryNative.period;
+            const on = (picked?.source === "plan" && picked.label === plan.displayName) || (draft.kind === "entry" && isEntry);
             return <button key={plan.planKey} type="button" role="radio" aria-checked={on} className="ms-ce-plan" onClick={() => pickPlan(plan)}>
-              <strong>{plan.displayName}</strong><small>{stackPlanPrice(plan, lang) || ""}</small>{CHECK}
+              {(() => {
+                // A price list: name and amount on the first line (amounts line
+                // up for comparison), conditions quieter under the name.
+                const [, ...terms] = (stackPlanPrice(plan, lang) || "").split(" · ");
+                const amount = formatNativePrice({ amount: plan.nativeAmount as number, currency: plan.nativeCurrency as string, period: plan.billingPeriod as "monthly" | "annual" }, lang);
+                return <>
+                  <strong>{plan.displayName}</strong>
+                  <b className="ms-ce-amount">{amount}</b>
+                  {(terms.length > 0 || isEntry) && <small>{[isEntry ? (en ? "entry plan" : "offre d’entrée") : null, ...terms].filter(Boolean).join(" · ")}</small>}
+                </>;
+              })()}{CHECK}
             </button>;
           })}
         </div>

@@ -35394,3 +35394,17 @@ img[data-logo-loading] {
 .ms-ce-save { min-height: 40px; padding: 0 20px; border-radius: var(--radius-pill); transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1), background-color 160ms ease; }
 .ms-ce-cancel:active, .ms-ce-save:active { transform: scale(.96); }
 .ms-ce-cancel:focus-visible, .ms-ce-save:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+/* Plan rows on two levels: the full name, then the price (amount first,
+   conditions quieter); the check stays on the right, room reserved. */
+.ms-ce-plan { grid-template-columns: minmax(0, 1fr) 16px; grid-template-areas: "name check" "price check"; row-gap: 3px; padding: 12px 14px; }
+.ms-ce-plan strong { grid-area: name; -webkit-line-clamp: 2; }
+.ms-ce-plan small { grid-area: price; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; max-width: none; text-align: left; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.35 var(--font-ui); }
+.ms-ce-plan small b { color: hsl(var(--foreground)); font-weight: 600; font-variant-numeric: tabular-nums; }
+.ms-ce-plan .ms-ce-check { grid-area: check; align-self: center; }
+/* Plan rows as a price list: name and amount on line one (amounts aligned
+   for comparison), conditions under the name, check on the far right. */
+.ms-ce-plan { grid-template-columns: minmax(0, 1fr) auto 16px; grid-template-areas: "name amount check" "terms terms check"; column-gap: 12px; row-gap: 2px; padding: 12px 14px; }
+.ms-ce-plan strong { grid-area: name; align-self: baseline; -webkit-line-clamp: 2; }
+.ms-ce-amount { grid-area: amount; align-self: baseline; color: hsl(var(--foreground)); font: 600 14px/1.25 var(--font-ui); font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
+.ms-ce-plan small { grid-area: terms; display: block; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.35 var(--font-ui); text-align: left; }
+.ms-ce-plan .ms-ce-check { grid-area: check; grid-row: 1 / -1; align-self: center; }

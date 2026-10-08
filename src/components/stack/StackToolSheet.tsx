@@ -131,6 +131,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                     <StackCostEditor key={`${slug}-${opened}`} tool={tool} detail={detail} currency={currency} lang={lang} freemium={freemium}
                       initial={choice ? { kind: "choice", choice } : freemium && !paid.isPaid(slug) ? { kind: "free" } : { kind: "entry" }}
                       entryLabel={native && native.period !== "once" ? (() => { const amount = native.period === "annual" ? native.amount / 12 : native.amount; return isCurrency(native.currency) ? money(convertAmount(amount, native.currency, currency)) : formatNativePrice(native, lang); })() : null}
+                      entryNative={native && native.period !== "once" ? native : null}
                       onCancel={() => setEditing(null)}
                       onSave={(draft) => {
                         // Saved: the stack takes it, the editor closes, the figure above updates.
