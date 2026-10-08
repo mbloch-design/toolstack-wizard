@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
 import { ChevronLeft } from "@/lib/icons";
+import Segmented from "@/components/motion/Segmented";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { convertAmount, CURRENCY_RATE_DATE, formatAmount, type Currency } from "@/lib/currencyRates";
 import { toolMonthlyCost } from "@/lib/stackCost";
@@ -79,11 +80,9 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
         </div>
         {zoomed
           ? <button type="button" className="ms-zoom-back" onClick={() => { setZoom(null); setFocus(null); }}><ChevronLeft size={16} aria-hidden />{en ? "All areas" : "Tous les domaines"}</button>
-          : total > 0 && areaLines.length > 1 && <div className="ms-size-switch" role="group" aria-label={en ? "Breakdown" : "Répartition"}>
-            {([["area", en ? "Areas" : "Domaines"], ["tool", en ? "Tools" : "Outils"]] as const).map(([key, label]) => (
-              <button key={key} type="button" aria-pressed={view === key} onClick={() => { setView(key); setFocus(null); }}>{label}</button>
-            ))}
-          </div>}
+          : total > 0 && areaLines.length > 1 && <Segmented ariaLabel={en ? "Breakdown" : "Répartition"} value={view}
+            options={[{ value: "area", label: en ? "Areas" : "Domaines" }, { value: "tool", label: en ? "Tools" : "Outils" }]}
+            onChange={(key) => { setView(key); setFocus(null); }} />}
       </header>
       {total > 0 && <div className="sg-budget-viz sg-budget-viz--share" onMouseLeave={() => setFocus(null)}>
         <svg className="sg-donut" viewBox="0 0 200 200" role="img" aria-label={en ? `Monthly cost breakdown: about ${money(total)}` : `Répartition du coût mensuel : environ ${money(total)}`}>

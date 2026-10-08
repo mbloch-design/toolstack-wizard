@@ -1,3 +1,9 @@
+## 2026-10-08 : Ma stack, feuille outil plus légère, « Modifier ce que je paie » en formulaire
+
+- La feuille : plus d'air, filets fins, l'icône avec un halo à sa couleur, le coût en chiffre vedette (« Me coûte ») avec sa source en légende ; focus sur la feuille à l'ouverture ; au-dessus de la barre mobile.
+- « Modifier ce que je paie » devient un formulaire : brouillon, aperçu « Nouveau coût », Annuler / Enregistrer ; fermer abandonne. Plans en liste façon réglages, places, montant réel avec sa devise (€, $, £) et sa période. L'interrupteur « Je paie » reste instantané.
+- Mouvement sans saut, mesuré image par image : blocs qui s'ouvrent en hauteur (`Collapse`), chiffres qui changent en fondu (`ValueChange`), sélecteurs à pastille glissante (`Segmented`, aussi dans le budget), compteur de places qui défile, « non » secoué au minimum, coche qui se dessine, interrupteur qui s'étire, boutons qui s'enfoncent.
+
 ## 2026-10-08 : Ma stack, un coût juste
 
 - Feuille outil : « Ajuster mon coût ». Plan du catalogue (montant natif), nombre de places pour un plan par utilisateur, ou montant réellement payé (mensuel ou annuel, devise affichée). Le choix prime sur l'offre d'entrée et nourrit total, anneau, payé en double ; « Revenir à l'offre d'entrée » annule. Montant saisi affiché exact.

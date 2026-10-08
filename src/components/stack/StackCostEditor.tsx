@@ -1,38 +1,42 @@
 import { useState } from "react";
-import { Check, Minus, Plus } from "@/lib/icons";
+import { Minus, Plus } from "@/lib/icons";
 import Collapse from "@/components/motion/Collapse";
+import Segmented from "@/components/motion/Segmented";
 import ValueChange from "@/components/motion/ValueChange";
 import type { Tool, ToolPricingPlan } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import type { PlanChoice } from "@/hooks/useStackPaidPlans";
-import { isCurrency, type Currency } from "@/lib/currencyRates";
+import { convertAmount, formatAmount, isCurrency, type Currency } from "@/lib/currencyRates";
+import { monthlyFromChoice } from "@/lib/stackCost";
 import { stackPlanPrice, toolKey } from "@/lib/stackView";
 import { trackEvent } from "@/lib/analytics";
 
 /**
- * « Ajuster mon coût », dans la feuille outil de Ma stack (point 1 du recul
- * produit, 8 oct. 2026) : rendre le chiffre juste. Trois façons, de la plus
- * guidée à la plus libre :
- * - un plan du catalogue (montant natif, sans conversion inventée) ;
- * - son nombre de places, quand le plan est facturé par utilisateur ;
- * - ce que la personne paie vraiment, dans la devise affichée, au mois ou à
- *   l'année. C'est la réponse quand le catalogue n'a pas le bon prix.
- * Tout s'applique tout de suite, et « Revenir à l'offre d'entrée » annule.
+ * « Modifier ce que je paie », dans la feuille outil de Ma stack : un
+ * formulaire, pas des réglages instantanés (Michael, 8 oct. 2026). Les choix
+ * forment un brouillon : plan du catalogue (montant natif), places pour un
+ * plan par utilisateur, ou montant réellement payé (devise et période). Un
+ * aperçu dit le nouveau coût ; rien ne change dans la stack avant
+ * « Enregistrer », et « Annuler » (ou fermer la feuille) abandonne.
  */
 
 const SEAT_UNITS = /seat|utilisateur|membre|collaborateur|per user/i;
 
+/** What the person will pay once saved. */
+export type CostDraft = { kind: "entry" } | { kind: "free" } | { kind: "choice"; choice: PlanChoice };
+
 interface Props {
   tool: ToolSummary;
   detail?: ToolSummary | Tool | null;
-  choice?: PlanChoice;
+  /** Saved state the draft starts from. */
+  initial: CostDraft;
+  /** Monthly cost of the catalogue entry plan, already formatted (or null). */
+  entryLabel: string | null;
   currency: Currency;
   lang: "fr" | "en";
-  onChange: (choice: PlanChoice | null) => void;
-  onFree?: () => void;
   freemium: boolean;
-  /** Freemium declared paid at its entry plan (switch on, no plan picked). */
-  paidAtEntry?: boolean;
+  onSave: (draft: CostDraft) => void;
+  onCancel: () => void;
 }
 
 export function usablePlans(detail: ToolSummary | Tool | null | undefined, lang: string): ToolPricingPlan[] {
@@ -42,43 +46,67 @@ export function usablePlans(detail: ToolSummary | Tool | null | undefined, lang:
     && !!plan.nativeCurrency && isCurrency(plan.nativeCurrency) && (plan.billingPeriod === "monthly" || plan.billingPeriod === "annual"));
 }
 
-export default function StackCostEditor({ tool, detail, choice, currency, lang, onChange, onFree, freemium, paidAtEntry }: Props) {
+const sameDraft = (a: CostDraft, b: CostDraft) => JSON.stringify(a) === JSON.stringify(b);
+const CHECK = <span className="ms-ce-check" aria-hidden="true"><svg viewBox="0 0 16 16" width="16" height="16"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></span>;
+
+export default function StackCostEditor({ tool, detail, initial, entryLabel, currency, lang, freemium, onSave, onCancel }: Props) {
   const en = lang === "en";
-  const plans = usablePlans(detail && detail.id === tool.id ? detail : null, lang);
-  const [amount, setAmount] = useState(choice?.source === "custom" ? String(choice.amount) : "");
-  const [period, setPeriod] = useState<"monthly" | "annual">(choice?.source === "custom" ? choice.period : "monthly");
-  // The invoice's own currency: what the person pays is often billed in dollars.
-  const [entryCurrency, setEntryCurrency] = useState<Currency>(choice?.source === "custom" ? choice.currency : currency);
   const slug = toolKey(tool);
+  const plans = usablePlans(detail && detail.id === tool.id ? detail : null, lang);
+  const [draft, setDraft] = useState<CostDraft>(initial);
+  const savedCustom = initial.kind === "choice" && initial.choice.source === "custom" ? initial.choice : null;
+  const [amount, setAmount] = useState(savedCustom ? String(savedCustom.amount).replace(".", en ? "." : ",") : "");
+  const [period, setPeriod] = useState<"monthly" | "annual">(savedCustom?.period || "monthly");
+  // The invoice's own currency: what the person pays is often billed in dollars.
+  const [entryCurrency, setEntryCurrency] = useState<Currency>(savedCustom?.currency || currency);
+  const picked = draft.kind === "choice" ? draft.choice : null;
+  const seats = picked?.perSeat ? Math.max(1, picked.seats || 1) : null;
+  const shownSeats = seats ?? 1;
+  // The counter rolls in the direction of the change; at one seat, "−" says no.
+  const [direction, setDirection] = useState<"up" | "down">("up");
+  const [refused, setRefused] = useState(0);
+  const dirty = !sameDraft(draft, initial);
 
   function pickPlan(plan: ToolPricingPlan) {
     const perSeat = SEAT_UNITS.test(plan.pricingUnit || "");
-    onChange({ source: "plan", label: plan.displayName, amount: plan.nativeAmount as number, currency: plan.nativeCurrency as Currency, period: plan.billingPeriod as "monthly" | "annual", perSeat, seats: perSeat ? Math.max(1, choice?.seats || 1) : undefined });
-    trackEvent("stack_cost_plan", { tool_slug: slug, plan: plan.planKey });
+    setDraft({ kind: "choice", choice: { source: "plan", label: plan.displayName, amount: plan.nativeAmount as number, currency: plan.nativeCurrency as Currency, period: plan.billingPeriod as "monthly" | "annual", perSeat, seats: perSeat ? shownSeats : undefined } });
+    setAmount("");
   }
-  function applyCustom(value: string, nextPeriod: "monthly" | "annual", nextCurrency: Currency = entryCurrency) {
+  function typeAmount(value: string, nextPeriod = period, nextCurrency = entryCurrency) {
+    setAmount(value);
     const parsed = Number(value.replace(",", "."));
-    if (!Number.isFinite(parsed) || parsed <= 0) return;
-    onChange({ source: "custom", amount: Math.round(parsed * 100) / 100, currency: nextCurrency, period: nextPeriod });
-    trackEvent("stack_cost_custom", { tool_slug: slug, period: nextPeriod, currency: nextCurrency });
+    if (Number.isFinite(parsed) && parsed > 0) setDraft({ kind: "choice", choice: { source: "custom", amount: Math.round(parsed * 100) / 100, currency: nextCurrency, period: nextPeriod } });
+    else if (picked?.source === "custom") setDraft({ kind: "entry" });
   }
-  const seats = choice?.perSeat ? Math.max(1, choice.seats || 1) : null;
-  const shownSeats = seats ?? 1;
+  function changeSeats(delta: 1 | -1) {
+    if (!picked) return;
+    if (shownSeats + delta < 1) { setRefused((n) => n + 1); return; }
+    setDirection(delta > 0 ? "up" : "down");
+    setDraft({ kind: "choice", choice: { ...picked, seats: shownSeats + delta } });
+  }
+  function save() {
+    if (dirty) trackEvent("stack_cost_save", { tool_slug: slug, kind: draft.kind, source: draft.kind === "choice" ? draft.choice.source : undefined });
+    onSave(draft);
+  }
+
+  // What saving would change, before saving.
+  const preview = draft.kind === "free" ? (en ? "Free" : "Gratuit")
+    : draft.kind === "entry" ? entryLabel || (en ? "Price not checked" : "Prix non relevé")
+    : (() => { const monthly = monthlyFromChoice(draft.choice); return monthly === null ? "" : `≈ ${formatAmount(Math.round(convertAmount(monthly, draft.choice.currency, currency)), currency, lang)}${en ? "/mo" : "/mois"}`; })();
+  const symbol = (code: Currency) => code === "EUR" ? "€" : code === "GBP" ? "£" : "$";
 
   return (
     <div className="ms-cost-editor">
       {(plans.length > 0 || freemium) && <div className="ms-ce-block">
         <p className="ms-ce-label">{en ? "My plan" : "Mon plan"}</p>
         <div className="ms-ce-plans" role="radiogroup" aria-label={en ? "My plan" : "Mon plan"}>
-          {freemium && onFree && <button type="button" role="radio" aria-checked={!choice && !paidAtEntry} className="ms-ce-plan" onClick={() => { onChange(null); onFree(); }}>
-            <strong>{en ? "Free plan" : "Gratuit"}</strong><small>{en ? "I don’t pay" : "Je ne paie pas"}</small>
-            <span className="ms-ce-check" aria-hidden="true"><Check size={16} /></span>
+          {freemium && <button type="button" role="radio" aria-checked={draft.kind === "free"} className="ms-ce-plan" onClick={() => { setDraft({ kind: "free" }); setAmount(""); }}>
+            <strong>{en ? "Free plan" : "Gratuit"}</strong><small>{en ? "I don’t pay" : "Je ne paie pas"}</small>{CHECK}
           </button>}
           {plans.map((plan) => {
-            const on = choice?.source === "plan" && choice.label === plan.displayName;
+            const on = picked?.source === "plan" && picked.label === plan.displayName;
             return <button key={plan.planKey} type="button" role="radio" aria-checked={on} className="ms-ce-plan" onClick={() => pickPlan(plan)}>
-              <strong>{plan.displayName}</strong><small>{stackPlanPrice(plan, lang) || ""}</small>
-              <span className="ms-ce-check" aria-hidden="true"><Check size={16} /></span>
+              <strong>{plan.displayName}</strong><small>{stackPlanPrice(plan, lang) || ""}</small>{CHECK}
             </button>;
           })}
         </div>
@@ -88,46 +116,50 @@ export default function StackCostEditor({ tool, detail, choice, currency, lang, 
       <Collapse open={seats !== null}>
         <div className="ms-ce-block ms-ce-seats">
           <p className="ms-ce-label">{en ? "Seats" : "Places"}</p>
-          <div className="ms-ce-stepper">
-            <button type="button" aria-label={en ? "One seat less" : "Une place de moins"} disabled={shownSeats <= 1} onClick={() => choice && onChange({ ...choice, seats: shownSeats - 1 })}><Minus size={16} aria-hidden /></button>
-            <output aria-live="polite"><ValueChange value={shownSeats}>{shownSeats}</ValueChange></output>
-            <button type="button" aria-label={en ? "One seat more" : "Une place de plus"} onClick={() => choice && onChange({ ...choice, seats: shownSeats + 1 })}><Plus size={16} aria-hidden /></button>
+          {/* Two alternating names replay the "no" shake without remounting
+              the stepper, so keyboard focus stays on the button. */}
+          <div className="ms-ce-stepper" data-refused={refused === 0 ? undefined : refused % 2 ? "a" : "b"}>
+            <button type="button" aria-label={en ? "One seat less" : "Une place de moins"} aria-disabled={shownSeats <= 1} onClick={() => changeSeats(-1)}><Minus size={16} aria-hidden /></button>
+            <output aria-live="polite"><ValueChange value={shownSeats} direction={direction}>{shownSeats}</ValueChange></output>
+            <button type="button" aria-label={en ? "One seat more" : "Une place de plus"} onClick={() => changeSeats(1)}><Plus size={16} aria-hidden /></button>
           </div>
         </div>
       </Collapse>
 
       <div className="ms-ce-block">
-        <label className="ms-ce-label" htmlFor={`ms-ce-amount-${slug}`}>{en ? "Or what I really pay" : "Ou ce que je paie vraiment"}</label>
+        <label className="ms-ce-label" htmlFor={`ms-ce-amount-${slug}`}>{plans.length > 0 || freemium ? (en ? "Or what I really pay" : "Ou ce que je paie vraiment") : (en ? "What I really pay" : "Ce que je paie vraiment")}</label>
         <div className="ms-ce-custom">
           <span className="ms-ce-input">
             <input id={`ms-ce-amount-${slug}`} type="text" inputMode="decimal" placeholder="12" value={amount}
-              onChange={(event) => setAmount(event.target.value)}
-              onBlur={() => applyCustom(amount, period)}
-              onKeyDown={(event) => { if (event.key === "Enter") applyCustom(amount, period); }} />
+              onChange={(event) => typeAmount(event.target.value)}
+              onKeyDown={(event) => { if (event.key === "Enter") save(); }} />
           </span>
-          <div className="ms-size-switch ms-ce-currency" role="group" aria-label={en ? "Currency" : "Devise"}>
-            {(["EUR", "USD", "GBP"] as const).map((code) => (
-              <button key={code} type="button" aria-pressed={entryCurrency === code} aria-label={code}
-                onClick={() => { setEntryCurrency(code); if (amount) applyCustom(amount, period, code); }}>
-                {code === "EUR" ? "€" : code === "GBP" ? "£" : "$"}
-              </button>
-            ))}
-          </div>
-          <div className="ms-size-switch" role="group" aria-label={en ? "Billing period" : "Période"}>
-            {(["monthly", "annual"] as const).map((value) => (
-              <button key={value} type="button" aria-pressed={period === value} onClick={() => { setPeriod(value); if (amount) applyCustom(amount, value); }}>
-                {value === "monthly" ? (en ? "per month" : "par mois") : (en ? "per year" : "par an")}
-              </button>
-            ))}
-          </div>
+          <Segmented className="ms-ce-currency" ariaLabel={en ? "Currency" : "Devise"} value={entryCurrency}
+            options={(["EUR", "USD", "GBP"] as const).map((code) => ({ value: code, ariaLabel: code, label: symbol(code) }))}
+            onChange={(code) => { setEntryCurrency(code); if (amount) typeAmount(amount, period, code); }} />
+          <Segmented ariaLabel={en ? "Billing period" : "Période"} value={period}
+            options={[{ value: "monthly", label: en ? "per month" : "par mois" }, { value: "annual", label: en ? "per year" : "par an" }]}
+            onChange={(value) => { setPeriod(value); if (amount) typeAmount(amount, value); }} />
         </div>
       </div>
 
-      <Collapse open={!!choice}>
-        <button type="button" className="ms-ce-reset" onClick={() => { onChange(null); setAmount(""); trackEvent("stack_cost_reset", { tool_slug: slug }); }}>
-          {en ? "Back to the catalogue entry plan" : "Revenir à l’offre d’entrée du catalogue"}
+      <Collapse open={draft.kind !== "entry"}>
+        <button type="button" className="ms-ce-reset" onClick={() => { setDraft({ kind: "entry" }); setAmount(""); }}>
+          {entryLabel ? (en ? "Use the catalogue entry plan" : "Utiliser l’offre d’entrée du catalogue") : (en ? "Clear the amount" : "Effacer le montant")}
         </button>
       </Collapse>
+
+      {/* The commit: a preview of the new cost, then Cancel or Save. */}
+      <div className="ms-ce-foot">
+        <p className="ms-ce-preview" aria-live="polite">
+          <span>{dirty ? (en ? "New cost" : "Nouveau coût") : (en ? "Current cost" : "Coût actuel")}</span>
+          <strong><ValueChange value={preview}>{preview}</ValueChange></strong>
+        </p>
+        <div className="ms-ce-actions">
+          <button type="button" className="ms-ce-cancel" onClick={onCancel}>{en ? "Cancel" : "Annuler"}</button>
+          <button type="button" className="tt-button-primary ms-ce-save" onClick={save}>{en ? "Save" : "Enregistrer"}</button>
+        </div>
+      </div>
     </div>
   );
 }

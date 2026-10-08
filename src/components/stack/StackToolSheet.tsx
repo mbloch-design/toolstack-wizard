@@ -9,13 +9,14 @@ import ToolLogo from "@/components/ToolLogo";
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from "@/components/ui/sheet";
 import type { Category, Tool } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
-import { convertAmount, formatAmount, type Currency } from "@/lib/currencyRates";
+import { convertAmount, formatAmount, isCurrency, type Currency } from "@/lib/currencyRates";
 import { comparisonPath } from "@/lib/comparisonLinks";
 import { toolMonthlyCost } from "@/lib/stackCost";
 import { formatNativePrice, pickNativePrice, stackCatalogPrice, toolKey } from "@/lib/stackView";
 import { stackDisplayLabel, stackPlacement, stackUsageLabels } from "@/lib/stackUsage";
 import type { ScoredPair } from "@/components/stack/StackOverlapPairs";
 import { trackEvent } from "@/lib/analytics";
+import toolAccents from "@/data/toolAccents.json";
 
 /**
  * Un outil de Ma stack, ouvert depuis sa carte : une feuille (à droite sur
@@ -57,11 +58,16 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
   const en = lang === "en";
   const bottom = useNarrow();
   const [editing, setEditing] = useState<string | null>(null);
+  // Each opening starts a fresh draft from what is saved.
+  const [opened, setOpened] = useState(0);
   const money = (amount: number) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${en ? "/mo" : "/mois"}`;
 
   return (
     <Sheet open={!!tool} onOpenChange={(open) => { if (!open) onClose(); }}>
-      <SheetContent side={bottom ? "bottom" : "right"} className="ms-tool-sheet">
+      {/* Focus lands on the sheet itself, not on its first control: no stray ring. */}
+      <SheetContent side={bottom ? "bottom" : "right"} className="ms-tool-sheet" overlayClassName="ms-sheet-overlay"
+        onOpenAutoFocus={(event) => { event.preventDefault(); (event.currentTarget as HTMLElement | null)?.focus({ preventScroll: true }); }}
+        style={tool && (toolAccents as Record<string, string>)[toolKey(tool)] ? ({ "--tool-accent": (toolAccents as Record<string, string>)[toolKey(tool)] } as React.CSSProperties) : undefined}>
         {tool && (() => {
           const slug = toolKey(tool);
           const price = stackCatalogPrice(tool, lang);
@@ -83,25 +89,27 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
             {short && <SheetDescription className="ms-ts-lead">{short}</SheetDescription>}
 
             <section className="ms-ts-group" aria-label={en ? "In my stack" : "Dans ma stack"}>
-              <h3>{en ? "In my stack" : "Dans ma stack"}</h3>
               {(() => {
                 const choice = paid.choiceFor(slug);
                 const on = paid.isPaid(slug) || !!choice;
                 const source = cost.kind !== "paid" ? null
-                  : cost.source === "custom" && choice ? `${en ? "You entered" : "Vous avez saisi"} ${new Intl.NumberFormat(en ? "en-US" : "fr-FR", { style: "currency", currency: choice.currency, maximumFractionDigits: 2 }).format(choice.amount)}${choice.period === "annual" ? (en ? "/yr" : "/an") : (en ? "/mo" : "/mois")}`
+                  : cost.source === "custom" && choice ? `${en ? "You entered" : "Vous avez saisi"} ${formatNativePrice({ amount: choice.amount, currency: choice.currency, period: choice.period }, lang)}`
                   : cost.source === "plan" ? `${en ? "Plan" : "Plan"} ${choice?.label || ""}${choice?.perSeat ? ` × ${Math.max(1, choice.seats || 1)} ${en ? "seats" : "places"}` : ""}`
                   : (en ? "Catalogue entry plan" : "Offre d’entrée du catalogue");
                 const open = editing === slug;
                 return <>
-                  <div className="ms-ts-row">
-                    <span>{en ? "Monthly cost" : "Coût mensuel"}{source && <small>{source}</small>}</span>
-                    <strong><ValueChange value={cost.kind === "paid" ? `${cost.currency}${Math.round(cost.monthly * 100)}` : cost.kind}>{cost.kind === "paid" ? (cost.source === "custom" && cost.currency === currency && choice?.period === "monthly"
+                  {/* The figure of the sheet: what this tool costs me, large,
+                      with where the number comes from. */}
+                  <div className="ms-ts-cost">
+                    <span className="ms-ts-cost-label">{en ? "Costs me" : "Me coûte"}</span>
+                    <strong className="ms-ts-cost-value"><ValueChange value={cost.kind === "paid" ? `${cost.currency}${Math.round(cost.monthly * 100)}` : cost.kind}>{cost.kind === "paid" ? (cost.source === "custom" && cost.currency === currency && choice?.period === "monthly"
                         // What the person typed, in the shown currency: exact, no "≈".
                         ? `${new Intl.NumberFormat(en ? "en-US" : "fr-FR", { style: "currency", currency, maximumFractionDigits: 2 }).format(cost.monthly)}${en ? "/mo" : "/mois"}`
                         : money(convertAmount(cost.monthly, cost.currency, currency)))
                       : cost.kind === "free" ? (en ? "Free" : "Gratuit")
                       : cost.kind === "freemium-free" ? (en ? "Free use" : "Usage gratuit")
                       : (en ? "Price not checked" : "Prix non relevé")}</ValueChange></strong>
+                    {source && <small className="ms-ts-cost-source">{source}</small>}
                   </div>
                   {freemium && <div className="ms-ts-row">
                     <span>{en ? "I pay for a paid plan" : "Je paie une offre payante"}<small>{native && native.period !== "once"
@@ -114,15 +122,22 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                   </div>}
                   {/* The right figure: a catalogue plan with its seats, or what
                       the person really pays. */}
-                  <button type="button" className="ms-ts-adjust" aria-expanded={open} onClick={() => setEditing(open ? null : slug)}>
-                    <span>{en ? "Adjust my cost" : "Ajuster mon coût"}<small>{en ? "Plan, seats or the amount you pay" : "Plan, places ou montant réel"}</small></span>
+                  <button type="button" className="ms-ts-adjust" aria-expanded={open} onClick={() => { if (!open) setOpened((n) => n + 1); setEditing(open ? null : slug); }}>
+                    <span>{en ? "Change what I pay" : "Modifier ce que je paie"}<small>{en ? "Plan, seats or the real amount" : "Plan, places ou montant réel"}</small></span>
                     <ChevronDown size={16} aria-hidden />
                   </button>
                   {/* Always mounted, opens in height: the content below glides. */}
                   <Collapse open={open}>
-                    <StackCostEditor key={slug} tool={tool} detail={detail} choice={choice} currency={currency} lang={lang} freemium={freemium} paidAtEntry={paid.isPaid(slug) && !choice}
-                      onFree={() => paid.setPaid(slug, false)}
-                      onChange={(next) => { paid.setChoice(slug, next); if (next && freemium) paid.setPaid(slug, true); }} />
+                    <StackCostEditor key={`${slug}-${opened}`} tool={tool} detail={detail} currency={currency} lang={lang} freemium={freemium}
+                      initial={choice ? { kind: "choice", choice } : freemium && !paid.isPaid(slug) ? { kind: "free" } : { kind: "entry" }}
+                      entryLabel={native && native.period !== "once" ? (() => { const amount = native.period === "annual" ? native.amount / 12 : native.amount; return isCurrency(native.currency) ? money(convertAmount(amount, native.currency, currency)) : formatNativePrice(native, lang); })() : null}
+                      onCancel={() => setEditing(null)}
+                      onSave={(draft) => {
+                        // Saved: the stack takes it, the editor closes, the figure above updates.
+                        if (draft.kind === "choice") { paid.setChoice(slug, draft.choice); if (freemium) paid.setPaid(slug, true); }
+                        else { paid.setChoice(slug, null); if (freemium) paid.setPaid(slug, draft.kind === "entry"); }
+                        setEditing(null);
+                      }} />
                   </Collapse>
                 </>;
               })()}
