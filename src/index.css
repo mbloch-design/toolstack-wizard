@@ -35750,11 +35750,23 @@ img[data-logo-loading] {
   .ms-page .ms-stat-share { display: none; }
 }
 @media (min-width: 641px) and (max-width: 1180px) { .asv2-root.asv2-root--rail-open { padding-left: 0; } }
-/* Sidebar tooltips (8 Oct 2026): a compact opaque dark pill above everything
-   (the top bar included), like the page's other tooltips, so it never blends
-   into the breadcrumb next to it. */
-.asv2-sidebar-resizer > b, .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item::after {
-  z-index: 400; padding: 7px 11px; border-radius: var(--radius-pill);
-  background: #1d1d1f; color: #fff; box-shadow: 0 6px 18px rgba(15, 15, 15, .22);
-  font: 600 12px/1 var(--font-ui); white-space: nowrap;
+/* Sidebar toggle (8 Oct 2026): no visual tooltip (it could only land on the
+   top bar's breadcrumb; the icon speaks, the label stays for screen
+   readers), the icon centred in every state, and the button sized to the
+   logo it replaces so it never pokes above the window. */
+.asv2-sidebar-resizer > b { display: none !important; }
+.asv2-root .asv2-sidebar-resizer { display: grid; place-items: center; }
+.asv2-root .asv2-sidebar-resizer > span { display: grid; place-items: center; width: 100%; height: 100%; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions .asv2-sidebar-resizer,
+.asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions .asv2-sidebar-resizer { height: 28px; }
+/* The old hover rule translated the icon by -50%/-50% for an absolute
+   layout that no longer exists: it threw the icon into the corner. */
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > span,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:hover > span,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible > span { position: static; width: 100%; height: 100%; transform: none; }
+@media (hover: hover) {
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { top: 0; transform: translateX(-50%); }
+}
+@media (hover: hover) and (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { top: 0; transform: translateX(-50%); }
 }
