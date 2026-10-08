@@ -4,7 +4,8 @@ import Collapse from "@/components/motion/Collapse";
 import ValueChange from "@/components/motion/ValueChange";
 import type { PlanChoice } from "@/hooks/useStackPaidPlans";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown } from "@/lib/icons";
+import { ArrowRight, ArrowUpRight, ChevronDown } from "@/lib/icons";
+import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import ToolLogo from "@/components/ToolLogo";
 import { Sheet, SheetContent, SheetDescription, SheetTitle } from "@/components/ui/sheet";
 import type { Category, Tool } from "@/data/types";
@@ -43,6 +44,9 @@ interface Props {
   onClose: () => void;
   onSelect: (slug: string) => void;
   onRemove: () => void;
+  /** Whole catalogue (light index) and the ids in my stack: for alternatives to consider. */
+  catalog: ToolSummary[];
+  stackIds: Set<string>;
 }
 
 const narrow = "(max-width: 640px)";
@@ -54,7 +58,7 @@ function useNarrow() {
   );
 }
 
-export default function StackToolSheet({ tool, detail, pairs, categories, paid, currency, prefix, lang, onClose, onSelect, onRemove }: Props) {
+export default function StackToolSheet({ tool, detail, pairs, categories, paid, currency, prefix, lang, onClose, onSelect, onRemove, catalog, stackIds }: Props) {
   const en = lang === "en";
   const bottom = useNarrow();
   const [editing, setEditing] = useState<string | null>(null);
@@ -93,29 +97,30 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                 const choice = paid.choiceFor(slug);
                 const on = paid.isPaid(slug) || !!choice;
                 const source = cost.kind !== "paid" ? null
-                  : cost.source === "custom" && choice ? `${en ? "You entered" : "Vous avez saisi"} ${formatNativePrice({ amount: choice.amount, currency: choice.currency, period: choice.period }, lang)}`
-                  : cost.source === "plan" ? `${en ? "Plan" : "Plan"} ${choice?.label || ""}${choice?.perSeat ? ` × ${Math.max(1, choice.seats || 1)} ${en ? "seats" : "places"}` : ""}`
-                  : (en ? "Catalogue entry plan" : "Offre d’entrée du catalogue");
+                  : cost.source === "custom" && choice ? `${en ? "Billed amount" : "Montant facturé"} ${formatNativePrice({ amount: choice.amount, currency: choice.currency, period: choice.period }, lang)}`
+                  : cost.source === "plan" ? (() => { const users = Math.max(1, choice?.seats || 1); return `${choice?.label || ""}${choice?.perSeat ? ` · ${users} ${en ? (users > 1 ? "users" : "user") : (users > 1 ? "utilisateurs" : "utilisateur")}` : ""}`; })()
+                  : (en ? "Catalogue entry level" : "Entrée de gamme du catalogue");
                 const open = editing === slug;
                 return <>
                   {/* The figure of the sheet: what this tool costs me, large,
                       with where the number comes from. */}
                   <div className="ms-ts-cost">
-                    <span className="ms-ts-cost-label">{en ? "Costs me" : "Me coûte"}</span>
+                    <span className="ms-ts-cost-label">{en ? "Monthly cost" : "Coût mensuel"}</span>
                     <strong className="ms-ts-cost-value"><ValueChange value={cost.kind === "paid" ? `${cost.currency}${Math.round(cost.monthly * 100)}` : cost.kind}>{cost.kind === "paid" ? (cost.source === "custom" && cost.currency === currency && choice?.period === "monthly"
                         // What the person typed, in the shown currency: exact, no "≈".
                         ? `${new Intl.NumberFormat(en ? "en-US" : "fr-FR", { style: "currency", currency, maximumFractionDigits: 2 }).format(cost.monthly)}${en ? "/mo" : "/mois"}`
                         : money(convertAmount(cost.monthly, cost.currency, currency)))
                       : cost.kind === "free" ? (en ? "Free" : "Gratuit")
-                      : cost.kind === "freemium-free" ? (en ? "Free use" : "Usage gratuit")
+                      : cost.kind === "freemium-free" ? (en ? "Free version" : "Version gratuite")
                       : (en ? "Price not checked" : "Prix non relevé")}</ValueChange></strong>
                     {source && <small className="ms-ts-cost-source">{source}</small>}
+                    <Link className="ms-ts-pricing" to={`${prefix}/tool/${slug}/${en ? "pricing" : "prix"}`} onClick={() => trackEvent("stack_pricing_click", { tool_slug: slug })}>{en ? "Official pricing" : "Tarifs officiels"}<ArrowRight size={14} aria-hidden /></Link>
                   </div>
                   {freemium && <div className="ms-ts-row">
-                    <span>{en ? "I pay for a paid plan" : "Je paie une offre payante"}<small>{native && native.period !== "once"
-                      ? (en ? `From ${formatNativePrice(native, lang)}` : `Dès ${formatNativePrice(native, lang)}`)
+                    <span>{en ? "Paid subscription" : "Abonnement payant"}<small>{native && native.period !== "once"
+                      ? (en ? `From ${formatNativePrice(native, lang)}` : `À partir de ${formatNativePrice(native, lang)}`)
                       : (en ? "Paid price not checked" : "Prix payant non relevé")}</small></span>
-                    <button type="button" role="switch" aria-checked={on} className="ms-switch" aria-label={en ? `I pay for ${tool.name}` : `Je paie ${tool.name}`}
+                    <button type="button" role="switch" aria-checked={on} className="ms-switch" aria-label={en ? `Paid subscription for ${tool.name}` : `Abonnement payant pour ${tool.name}`}
                       onClick={() => { if (on) { paid.setChoice(slug, null); paid.setPaid(slug, false); } else paid.setPaid(slug, true); }}>
                       <span className="ms-switch-track" aria-hidden="true"><span /></span>
                     </button>
@@ -123,7 +128,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                   {/* The right figure: a catalogue plan with its seats, or what
                       the person really pays. */}
                   <button type="button" className="ms-ts-adjust" aria-expanded={open} onClick={() => { if (!open) setOpened((n) => n + 1); setEditing(open ? null : slug); }}>
-                    <span>{en ? "Change what I pay" : "Modifier ce que je paie"}<small>{en ? "Plan, seats or the real amount" : "Plan, places ou montant réel"}</small></span>
+                    <span>{en ? "Edit my subscription" : "Modifier mon abonnement"}<small>{en ? "Plan, users or billed amount" : "Offre, utilisateurs ou montant facturé"}</small></span>
                     <ChevronDown size={16} aria-hidden />
                   </button>
                   {/* Always mounted, opens in height: the content below glides. */}
@@ -168,8 +173,47 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                 })}</ul>}
             </section>
 
+            {/* Already in my stack, so the questions are: is there better or
+                cheaper, and take me to it. Alternatives from the catalogue that
+                are not in my stack, with the gap to what I pay. */}
+            {(() => {
+              const mine = cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0;
+              const alternatives = (tool.alternatives || [])
+                .map((ref) => catalog.find((item) => toolKey(item) === ref || item.id === ref))
+                .filter((item): item is ToolSummary => !!item && !stackIds.has(item.id))
+                .slice(0, 3);
+              if (!alternatives.length) return null;
+              return <section className="ms-ts-section">
+                <h3>{en ? "Worth considering" : "À envisager"}</h3>
+                <ul className="ms-ts-pairs ms-ts-alts">{alternatives.map((alt) => {
+                  const altCost = toolMonthlyCost(alt, () => true, lang);
+                  const altMonthly = altCost.kind === "paid" ? convertAmount(altCost.monthly, altCost.currency, currency) : null;
+                  const gap = mine > 0 && altMonthly !== null ? mine - altMonthly : null;
+                  const label = stackCatalogPrice(alt, lang) || (en ? "Price not checked" : "Prix non relevé");
+                  return <li key={alt.id}>
+                    <Link className="ms-ts-other" to={`${prefix}/tool/${toolKey(alt)}`} onClick={() => trackEvent("stack_alternative_click", { tool_slug: slug, alternative: toolKey(alt) })}>
+                      <ToolLogo tool={alt} size={32} />
+                      <span><strong>{alt.name}</strong><small>{label}</small></span>
+                    </Link>
+                    {gap !== null && Math.round(gap) !== 0 && <span className={`ms-ts-gap${gap > 0 ? " is-less" : ""}`}>{gap > 0
+                      ? (en ? `${money(gap)} less` : `${money(gap)} de moins`)
+                      : (en ? `${money(-gap)} more` : `${money(-gap)} de plus`)}</span>}
+                    <Link className="ms-ts-compare" to={comparisonPath(prefix, slug, toolKey(alt))} onClick={() => trackEvent("stack_compare_click", { source: "alternatives", a: slug, b: toolKey(alt) })}>{en ? "Compare" : "Comparer"}</Link>
+                  </li>;
+                })}</ul>
+              </section>;
+            })()}
+
+            {/* Actions for a tool I use: open it, read its profile, or let it go. */}
             <footer className="ms-ts-foot">
-              <Link className="tt-button-primary ms-ts-profile" to={`${prefix}/tool/${slug}`} onClick={() => trackEvent("stack_profile_click", { tool_slug: slug })}>{en ? "View full profile" : "Voir la fiche complète"}<ArrowRight size={16} aria-hidden /></Link>
+              {(() => {
+                const href = safeExternalUrl(tool.affiliateLink || tool.websiteUrl);
+                return <div className="ms-ts-foot-row">
+                  {href && <a className="tt-button-primary ms-ts-open" href={href} target="_blank" rel={relPourLienOutil(href, tool.affiliateLink, tool.websiteUrl)}
+                    onClick={() => trackEvent("stack_visit_click", { tool_slug: slug })}>{en ? `Open ${tool.name}` : `Ouvrir ${tool.name}`}<ArrowUpRight size={16} aria-hidden /></a>}
+                  <Link className={href ? "ms-ts-secondary" : "tt-button-primary ms-ts-open"} to={`${prefix}/tool/${slug}`} onClick={() => trackEvent("stack_profile_click", { tool_slug: slug })}>{en ? "Full profile" : "Fiche complète"}{!href && <ArrowRight size={16} aria-hidden />}</Link>
+                </div>;
+              })()}
               <button type="button" className="ms-ts-remove" onClick={onRemove}>{en ? "Remove from my stack" : "Retirer de ma stack"}</button>
             </footer>
           </>;

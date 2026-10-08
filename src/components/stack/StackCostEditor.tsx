@@ -92,7 +92,7 @@ export default function StackCostEditor({ tool, detail, initial, entryLabel, ent
   }
 
   // What saving would change, before saving.
-  const preview = draft.kind === "free" ? (en ? "Free" : "Gratuit")
+  const preview = draft.kind === "free" ? (en ? "Free version" : "Version gratuite")
     : draft.kind === "entry" ? entryLabel || (en ? "Price not checked" : "Prix non relevé")
     : (() => { const monthly = monthlyFromChoice(draft.choice); return monthly === null ? "" : `≈ ${formatAmount(Math.round(convertAmount(monthly, draft.choice.currency, currency)), currency, lang)}${en ? "/mo" : "/mois"}`; })();
   const symbol = (code: Currency) => code === "EUR" ? "€" : code === "GBP" ? "£" : "$";
@@ -100,10 +100,10 @@ export default function StackCostEditor({ tool, detail, initial, entryLabel, ent
   return (
     <div className="ms-cost-editor">
       {(plans.length > 0 || freemium) && <div className="ms-ce-block">
-        <p className="ms-ce-label">{en ? "My plan" : "Mon plan"}</p>
-        <div className="ms-ce-plans" role="radiogroup" aria-label={en ? "My plan" : "Mon plan"}>
+        <p className="ms-ce-label">{en ? "Plan" : "Offre"}</p>
+        <div className="ms-ce-plans" role="radiogroup" aria-label={en ? "Plan" : "Offre"}>
           {freemium && <button type="button" role="radio" aria-checked={draft.kind === "free"} className="ms-ce-plan" onClick={() => { setDraft({ kind: "free" }); setAmount(""); }}>
-            <strong>{en ? "Free plan" : "Gratuit"}</strong><b className="ms-ce-amount">{formatNativePrice({ amount: 0, currency, period: "monthly" }, lang)}</b><small>{en ? "I don’t pay" : "Je ne paie pas"}</small>{CHECK}
+            <strong>{en ? "Free version" : "Version gratuite"}</strong><b className="ms-ce-amount">{formatNativePrice({ amount: 0, currency, period: "monthly" }, lang)}</b><small>{en ? "No subscription" : "Aucun abonnement"}</small>{CHECK}
           </button>}
           {plans.map((plan) => {
             // The plan the catalogue entry price comes from: checked while the
@@ -119,7 +119,7 @@ export default function StackCostEditor({ tool, detail, initial, entryLabel, ent
                 return <>
                   <strong>{plan.displayName}</strong>
                   <b className="ms-ce-amount">{amount}</b>
-                  {(terms.length > 0 || isEntry) && <small>{[isEntry ? (en ? "entry plan" : "offre d’entrée") : null, ...terms].filter(Boolean).join(" · ")}</small>}
+                  {(terms.length > 0 || isEntry) && <small>{[isEntry ? (en ? "entry level" : "entrée de gamme") : null, ...terms].filter(Boolean).join(" · ")}</small>}
                 </>;
               })()}{CHECK}
             </button>;
@@ -130,19 +130,19 @@ export default function StackCostEditor({ tool, detail, initial, entryLabel, ent
       {/* Seats open in height when a per-user plan is picked: nothing jumps. */}
       <Collapse open={seats !== null}>
         <div className="ms-ce-block ms-ce-seats">
-          <p className="ms-ce-label">{en ? "Seats" : "Places"}</p>
+          <p className="ms-ce-label">{en ? "Users" : "Utilisateurs"}</p>
           {/* Two alternating names replay the "no" shake without remounting
               the stepper, so keyboard focus stays on the button. */}
           <div className="ms-ce-stepper" data-refused={refused === 0 ? undefined : refused % 2 ? "a" : "b"}>
-            <button type="button" aria-label={en ? "One seat less" : "Une place de moins"} aria-disabled={shownSeats <= 1} onClick={() => changeSeats(-1)}><Minus size={16} aria-hidden /></button>
+            <button type="button" aria-label={en ? "One user less" : "Un utilisateur de moins"} aria-disabled={shownSeats <= 1} onClick={() => changeSeats(-1)}><Minus size={16} aria-hidden /></button>
             <output aria-live="polite"><ValueChange value={shownSeats} direction={direction}>{shownSeats}</ValueChange></output>
-            <button type="button" aria-label={en ? "One seat more" : "Une place de plus"} onClick={() => changeSeats(1)}><Plus size={16} aria-hidden /></button>
+            <button type="button" aria-label={en ? "One user more" : "Un utilisateur de plus"} onClick={() => changeSeats(1)}><Plus size={16} aria-hidden /></button>
           </div>
         </div>
       </Collapse>
 
       <div className="ms-ce-block">
-        <label className="ms-ce-label" htmlFor={`ms-ce-amount-${slug}`}>{plans.length > 0 || freemium ? (en ? "Or what I really pay" : "Ou ce que je paie vraiment") : (en ? "What I really pay" : "Ce que je paie vraiment")}</label>
+        <label className="ms-ce-label" htmlFor={`ms-ce-amount-${slug}`}>{plans.length > 0 || freemium ? (en ? "Or the billed amount" : "Ou le montant facturé") : (en ? "Billed amount" : "Montant facturé")}</label>
         <div className="ms-ce-custom">
           <span className="ms-ce-input">
             <input id={`ms-ce-amount-${slug}`} type="text" inputMode="decimal" placeholder="12" value={amount}
@@ -152,22 +152,22 @@ export default function StackCostEditor({ tool, detail, initial, entryLabel, ent
           <Segmented className="ms-ce-currency" ariaLabel={en ? "Currency" : "Devise"} value={entryCurrency}
             options={(["EUR", "USD", "GBP"] as const).map((code) => ({ value: code, ariaLabel: code, label: symbol(code) }))}
             onChange={(code) => { setEntryCurrency(code); if (amount) typeAmount(amount, period, code); }} />
-          <Segmented ariaLabel={en ? "Billing period" : "Période"} value={period}
-            options={[{ value: "monthly", label: en ? "per month" : "par mois" }, { value: "annual", label: en ? "per year" : "par an" }]}
+          <Segmented ariaLabel={en ? "Billing" : "Facturation"} value={period}
+            options={[{ value: "monthly", label: en ? "Monthly" : "Mensuel" }, { value: "annual", label: en ? "Yearly" : "Annuel" }]}
             onChange={(value) => { setPeriod(value); if (amount) typeAmount(amount, value); }} />
         </div>
       </div>
 
       <Collapse open={draft.kind !== "entry"}>
         <button type="button" className="ms-ce-reset" onClick={() => { setDraft({ kind: "entry" }); setAmount(""); }}>
-          {entryLabel ? (en ? "Use the catalogue entry plan" : "Utiliser l’offre d’entrée du catalogue") : (en ? "Clear the amount" : "Effacer le montant")}
+          {entryLabel ? (en ? "Back to the catalogue entry level" : "Revenir à l’entrée de gamme du catalogue") : (en ? "Clear the amount" : "Effacer le montant")}
         </button>
       </Collapse>
 
       {/* The commit: a preview of the new cost, then Cancel or Save. */}
       <div className="ms-ce-foot">
         <p className="ms-ce-preview" aria-live="polite">
-          <span>{dirty ? (en ? "New cost" : "Nouveau coût") : (en ? "Current cost" : "Coût actuel")}</span>
+          <span>{dirty ? (en ? "New monthly cost" : "Nouveau coût mensuel") : (en ? "Monthly cost" : "Coût mensuel")}</span>
           <strong><ValueChange value={preview}>{preview}</ValueChange></strong>
         </p>
         <div className="ms-ce-actions">

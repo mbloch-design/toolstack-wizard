@@ -95,7 +95,7 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
     const cost = toolMonthlyCost(tool, isPaid, lang);
     if (cost.kind === "paid") return `≈ ${formatAmount(Math.round(convertAmount(cost.monthly, cost.currency, currency)), currency, lang)}${en ? "/mo" : "/mois"}`;
     if (cost.kind === "free") return en ? "Free" : "Gratuit";
-    if (cost.kind === "freemium-free") return en ? "Free use" : "Usage gratuit";
+    if (cost.kind === "freemium-free") return en ? "Free version" : "Version gratuite";
     return en ? "Price not checked" : "Prix non relevé";
   };
 

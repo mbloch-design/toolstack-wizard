@@ -117,8 +117,8 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
       </div>}
       <p className="ms-tile-note">
         {en
-          ? `${adjusted > 0 ? `${adjusted} cost${adjusted > 1 ? "s" : ""} set by you, the rest from` : "From"} catalogue entry plans, not your invoices. Converted to ${currency} at the site's rate of ${rateDate}.${unknown > 0 ? ` ${unknown} without a checked price: open a tool to enter what you pay.` : ""}`
-          : `${adjusted > 0 ? `${adjusted} coût${adjusted > 1 ? "s" : ""} ajusté${adjusted > 1 ? "s" : ""} par vous, le reste d’après les` : "D’après les"} offres d’entrée du catalogue, pas vos factures. Converti en ${currency} au taux du ${rateDate}.${unknown > 0 ? ` ${unknown} sans prix relevé : ouvrez un outil pour saisir ce que vous payez.` : ""}`}
+          ? `${adjusted > 0 ? `${adjusted} cost${adjusted > 1 ? "s" : ""} set by you, the rest from` : "From"} catalogue entry-level plans, not your invoices. Converted to ${currency} at the site's rate of ${rateDate}.${unknown > 0 ? ` ${unknown} without a checked price: open a tool to enter what you pay.` : ""}`
+          : `${adjusted > 0 ? `${adjusted} coût${adjusted > 1 ? "s" : ""} ajusté${adjusted > 1 ? "s" : ""} par vous, le reste d’après les` : "D’après les"} offres d’entrée de gamme du catalogue, pas vos factures. Converti en ${currency} au taux du ${rateDate}.${unknown > 0 ? ` ${unknown} sans prix relevé : ouvrez un outil pour saisir ce que vous payez.` : ""}`}
         {freemiumCount > 0 && <> {en ? `${undeclared} of ${freemiumCount} freemium counted as free.` : `${undeclared} freemium sur ${freemiumCount} comptés gratuits.`} <button type="button" className="ms-inline-link" onClick={onFreemium}>{en ? "Edit" : "Modifier"}</button></>}
       </p>
     </section>
