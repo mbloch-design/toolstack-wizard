@@ -116,7 +116,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                     <span>{en ? "Adjust my cost" : "Ajuster mon coût"}<small>{en ? "Plan, seats or the amount you pay" : "Plan, places ou montant réel"}</small></span>
                     <ChevronDown size={16} aria-hidden />
                   </button>
-                  {open && <StackCostEditor key={slug} tool={tool} detail={detail} choice={choice} currency={currency} lang={lang} freemium={freemium}
+                  {open && <StackCostEditor key={slug} tool={tool} detail={detail} choice={choice} currency={currency} lang={lang} freemium={freemium} paidAtEntry={paid.isPaid(slug) && !choice}
                     onFree={() => paid.setPaid(slug, false)}
                     onChange={(next) => { paid.setChoice(slug, next); if (next && freemium) paid.setPaid(slug, true); }} />}
                 </>;

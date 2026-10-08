@@ -29,6 +29,8 @@ interface Props {
   onChange: (choice: PlanChoice | null) => void;
   onFree?: () => void;
   freemium: boolean;
+  /** Freemium declared paid at its entry plan (switch on, no plan picked). */
+  paidAtEntry?: boolean;
 }
 
 export function usablePlans(detail: ToolSummary | Tool | null | undefined, lang: string): ToolPricingPlan[] {
@@ -38,7 +40,7 @@ export function usablePlans(detail: ToolSummary | Tool | null | undefined, lang:
     && !!plan.nativeCurrency && isCurrency(plan.nativeCurrency) && (plan.billingPeriod === "monthly" || plan.billingPeriod === "annual"));
 }
 
-export default function StackCostEditor({ tool, detail, choice, currency, lang, onChange, onFree, freemium }: Props) {
+export default function StackCostEditor({ tool, detail, choice, currency, lang, onChange, onFree, freemium, paidAtEntry }: Props) {
   const en = lang === "en";
   const plans = usablePlans(detail && detail.id === tool.id ? detail : null, lang);
   const [amount, setAmount] = useState(choice?.source === "custom" ? String(choice.amount) : "");
@@ -63,7 +65,7 @@ export default function StackCostEditor({ tool, detail, choice, currency, lang, 
       {(plans.length > 0 || freemium) && <div className="ms-ce-block">
         <p className="ms-ce-label">{en ? "My plan" : "Mon plan"}</p>
         <div className="ms-ce-plans" role="radiogroup" aria-label={en ? "My plan" : "Mon plan"}>
-          {freemium && onFree && <button type="button" role="radio" aria-checked={!choice} className="ms-ce-plan" onClick={() => { onChange(null); onFree(); }}>
+          {freemium && onFree && <button type="button" role="radio" aria-checked={!choice && !paidAtEntry} className="ms-ce-plan" onClick={() => { onChange(null); onFree(); }}>
             <strong>{en ? "Free plan" : "Gratuit"}</strong><small>{en ? "I don’t pay" : "Je ne paie pas"}</small>
           </button>}
           {plans.map((plan) => {
