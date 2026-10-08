@@ -118,4 +118,4 @@ Prochaines étapes proposées, dans l'ordre :
 - [ ] Michael : dire quels profils sociaux existent vraiment ; `sameAs` de `OrganizationSchema.tsx` en liste 5 non vérifiés.
 - [ ] Tests lents en suite complète, proches de la limite de 5 s : `useToolBySlug.test.tsx` (restores the SSR record) et `usePosts.test.tsx` (local guide catalogue). Passent seuls.
 - [x] Footer : « Gérer les cookies » rouvre le bandeau (retrait du consentement coupe la mesure GA4), bascule FR/EN, ligne de preuve (nombre d'outils calculé au build, arrondi à la centaine). Bandeau cookies traduit en anglais.
-- [ ] Footer : liens vers les catégories phares (choix Michael ou export GSC).
+- [x] Footer : colonne Catégories (IA généraliste, Finance et facturation, Gestion de projet, Automatisation, CRM, toutes). À revoir avec les clics GSC vers le 21/10.

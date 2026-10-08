@@ -75,6 +75,17 @@ const Footer = () => {
               <span className="tt-footer-col-label">{t("Explorer", "Explore")}</span>
               <Link to={`${prefix}/tools`}>{t("Catalogue des outils", "Tool catalog")}</Link>
               <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
+            </nav>
+
+            {/* The categories closest to a freelancer's budget, all indexable
+                (10 tools or more), then the full list. */}
+            <nav aria-label={t("Catégories", "Categories")} className="tt-footer-col">
+              <span className="tt-footer-col-label">{t("Catégories", "Categories")}</span>
+              <Link to={`${prefix}/category/ia-generaliste`}>{t("IA généraliste", "AI tools")}</Link>
+              <Link to={`${prefix}/category/finance-facturation`}>{t("Finance et facturation", "Finance and invoicing")}</Link>
+              <Link to={`${prefix}/category/gestion-projet`}>{t("Gestion de projet", "Project management")}</Link>
+              <Link to={`${prefix}/category/automatisation`}>{t("Automatisation", "Automation")}</Link>
+              <Link to={`${prefix}/category/crm`}>CRM</Link>
               <Link to={`${prefix}/category`}>{t("Toutes les catégories", "All categories")}</Link>
             </nav>
 

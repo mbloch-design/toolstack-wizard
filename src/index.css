@@ -35827,3 +35827,6 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-proof a:hover { color: var(--tt-footer-text); }
 @media (max-width: 640px) { .tt-footer .tt-footer-legal .tt-footer-lang { margin-left: 0; } }
 .tt-footer .tt-footer-meta { display: flex; flex-direction: column; align-items: stretch; }
+/* Four link columns since the categories column (8 Oct 2026). */
+.tt-footer .tt-footer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 960px; }
+@media (max-width: 900px) { .tt-footer .tt-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; } }
