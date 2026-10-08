@@ -35261,3 +35261,16 @@ img[data-logo-loading] {
 .ms-ce-plan:hover { background: hsl(var(--secondary)); }
 .ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: inset 0 0 0 2px hsl(var(--foreground)); border-radius: 14px; }
 .ms-ce-plan[aria-checked="true"] + .ms-ce-plan { box-shadow: none; }
+/* Micro-animations (8 Oct 2026): a figure that changes pops once, the cost
+   editor slides in, a picked plan clicks into place. Off for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .ms-pop { display: inline-block; animation: ms-pop 420ms cubic-bezier(.34, 1.56, .64, 1); }
+  .ms-hero-stats dd.ms-pop { display: block; transform-origin: left center; }
+  .ms-cost-editor { animation: ms-rise 280ms cubic-bezier(.2, .8, .2, 1); }
+  .ms-ce-plan[aria-checked="true"] { animation: ms-select 300ms cubic-bezier(.34, 1.56, .64, 1); }
+  .ms-ce-plan, .ms-ce-stepper button, .ms-cost-editor .ms-size-switch button { transition: background-color 160ms ease, box-shadow 200ms ease, transform 160ms ease; }
+  .ms-ce-plan:active, .ms-ce-stepper button:active, .ms-cost-editor .ms-size-switch button:active { transform: scale(.97); }
+}
+@keyframes ms-pop { 0% { transform: scale(1); } 35% { transform: scale(1.08); } 100% { transform: scale(1); } }
+@keyframes ms-rise { from { opacity: 0; transform: translateY(-6px); } }
+@keyframes ms-select { 0% { transform: scale(.98); } 60% { transform: scale(1.01); } 100% { transform: scale(1); } }

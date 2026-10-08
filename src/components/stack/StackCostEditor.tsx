@@ -83,7 +83,7 @@ export default function StackCostEditor({ tool, detail, choice, currency, lang, 
         <p className="ms-ce-label">{en ? "Seats" : "Places"}</p>
         <div className="ms-ce-stepper">
           <button type="button" aria-label={en ? "One seat less" : "Une place de moins"} disabled={seats <= 1} onClick={() => choice && onChange({ ...choice, seats: seats - 1 })}><Minus size={16} aria-hidden /></button>
-          <output aria-live="polite">{seats}</output>
+          <output aria-live="polite" className="ms-pop" key={seats}>{seats}</output>
           <button type="button" aria-label={en ? "One seat more" : "Une place de plus"} onClick={() => choice && onChange({ ...choice, seats: seats + 1 })}><Plus size={16} aria-hidden /></button>
         </div>
       </div>}

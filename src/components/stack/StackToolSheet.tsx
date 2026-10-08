@@ -93,7 +93,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                 return <>
                   <div className="ms-ts-row">
                     <span>{en ? "Monthly cost" : "Coût mensuel"}{source && <small>{source}</small>}</span>
-                    <strong>{cost.kind === "paid" ? (cost.source === "custom" && cost.currency === currency && choice?.period === "monthly"
+                    <strong className="ms-pop" key={cost.kind === "paid" ? `${cost.currency}${Math.round(cost.monthly * 100)}` : cost.kind}>{cost.kind === "paid" ? (cost.source === "custom" && cost.currency === currency && choice?.period === "monthly"
                         // What the person typed, in the shown currency: exact, no "≈".
                         ? `${new Intl.NumberFormat(en ? "en-US" : "fr-FR", { style: "currency", currency, maximumFractionDigits: 2 }).format(cost.monthly)}${en ? "/mo" : "/mois"}`
                         : money(convertAmount(cost.monthly, cost.currency, currency)))
