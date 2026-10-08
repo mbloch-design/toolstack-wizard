@@ -120,3 +120,5 @@ Prochaines étapes proposées, dans l'ordre :
 - [x] Footer : « Gérer les cookies » rouvre le bandeau (retrait du consentement coupe la mesure GA4), bascule FR/EN, ligne de preuve (nombre d'outils calculé au build, arrondi à la centaine). Bandeau cookies traduit en anglais.
 - [x] Footer : colonne Catégories (IA généraliste, Finance et facturation, Gestion de projet, Automatisation, CRM, toutes). À revoir avec les clics GSC vers le 21/10.
 - [x] Footer refait sur une grille de 12 colonnes (8 oct.) : carte « Ma stack » (outils, coût, payé en double) lue depuis un instantané écrit par Ma stack, sélecteur FR | EN, badges en cellules uniformes (2 rangées de 10).
+- [x] Revue design du footer (design-review, 8 oct.) : trois tons (#0F0F0F, #424245, #6F6F68), tokens `--tt-footer-*`, tuile neutre blanche décorative et prérendue vide (budget HTML : le footer est répété sur 13 162 pages, 12,8 Ko chacune).
+- [ ] Budget HTML proche de la limite (760 Mo avant la correction pour 745 Mo) : tout ajout au footer coûte 13 Mo par Ko. Pistes : badges (8 Ko par page) servis côté client.

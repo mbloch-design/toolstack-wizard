@@ -30,6 +30,7 @@ const Footer = () => {
   const onMyStack = /\/(ma-stack|my-stack)(\/|$)/.test(location.pathname);
   const [snapshot, setSnapshot] = useState<StackSnapshot | null>(null);
   useEffect(() => { setSnapshot(readStackSnapshot()); }, [location.pathname]);
+  const tagline = t("Choisir, pas empiler.", "Choose, don't stack.");
   const languagePath = (target: "fr" | "en") => `${getLanguageSwitchPath(location.pathname, target)}${location.search}`;
   const money = (amount: number) => snapshot ? formatAmount(amount, snapshot.currency, lang) : "";
 
@@ -40,10 +41,8 @@ const Footer = () => {
         {/* 1. Promise and the visitor's stack */}
         <section className="tt-footer-top">
           <div className="tt-footer-promise">
-            <div className="tt-footer-tagline-row">
-              <p className="tt-footer-tagline">{t("Choisir, pas empiler.", "Choose, don't stack.")}</p>
-              <FooterTrim to={`${prefix}/ma-stack`} t={t} />
-            </div>
+            {/* The pile follows the last word, even when the line wraps. */}
+            <p className="tt-footer-tagline">{tagline.slice(0, tagline.lastIndexOf(" ") + 1)}<span className="tt-footer-tagline-end">{tagline.slice(tagline.lastIndexOf(" ") + 1)}<FooterTrim /></span></p>
             <p className="tt-footer-intro">
               {t(
                 "ToolTrim aide les freelances à choisir, comparer et rationaliser leurs outils SaaS, sans empiler les abonnements.",
