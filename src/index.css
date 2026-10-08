@@ -35552,3 +35552,6 @@ img[data-logo-loading] {
 .ms-page .ms-tab-ink { top: 2px; bottom: 2px; box-shadow: none; }
 .ms-page .ms-tools-section .ms-domain-filters button:hover:not([aria-pressed="true"]) { color: hsl(var(--foreground)); background: hsl(var(--secondary) / .6); }
 @media (max-width: 640px) { .ms-page .ms-tools-section .ms-domain-filters { margin-left: -12px; margin-right: -12px; } }
+/* Overlap chip on a tinted band: translucent white with a hairline, clean on
+   any tool colour (a grey fill turned muddy on warm tints). */
+.ms-page .ms-card-overlap { background: hsl(var(--card) / .78); box-shadow: inset 0 0 0 .5px hsl(var(--border)); color: hsl(var(--foreground)); }
