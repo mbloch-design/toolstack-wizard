@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight, Rocket } from "@/lib/icons";
+import { ArrowRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
-import logoToolTrim from "@/assets/logo-tooltrim.svg";
 
 /**
  * Editorial footer: restrained utility layout:
@@ -12,6 +11,8 @@ import logoToolTrim from "@/assets/logo-tooltrim.svg";
  * Uses ToolTrim design tokens only (no shadcn hsl vars, no Tailwind utility
  * styling). Inherits the page's editorial voice and signature set.
  */
+const BADGE_COUNT = 18; // links in .tt-footer-badges below; update with the list
+
 const Footer = () => {
   const { t, prefix } = useLang();
   const year = new Date().getFullYear();
@@ -55,23 +56,13 @@ const Footer = () => {
         <div className="tt-footer-container">
           <div className="tt-footer-grid">
 
-            <div className="tt-footer-brand" aria-label="ToolTrim">
-              <img
-                src={logoToolTrim}
-                alt="ToolTrim"
-                className="tt-footer-logo"
-                width={1362}
-                height={300}
-              />
-              <p>{t("Les bons outils, sans les abonnements inutiles.", "The right tools, without unnecessary subscriptions.")}</p>
-            </div>
 
             <nav aria-label={t("Décider", "Decide")} className="tt-footer-col">
               <span className="tt-footer-col-label">{t("Décider", "Decide")}</span>
               <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
               <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
-              <Link to={`${prefix}/transparency`}>{t("Méthodologie éditoriale", "Editorial methodology")}</Link>
-              <Link to={`${prefix}/transparency`}>{t("Transparence", "Transparency")}</Link>
+              {/* Both labels pointed to the same page: one link. */}
+              <Link to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link>
             </nav>
 
             <nav aria-label={t("Explorer", "Explore")} className="tt-footer-col">
@@ -83,9 +74,9 @@ const Footer = () => {
 
             <nav aria-label="ToolTrim" className="tt-footer-col tt-footer-col--wide">
               <span className="tt-footer-col-label">ToolTrim</span>
-              <Link to={`${prefix}/about`}>{t("Qui est ToolTrim", "Who is ToolTrim")}</Link>
+              <Link to={`${prefix}/about`}>{t("À propos", "About")}</Link>
               <Link to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
-              <Link to={`${prefix}/submit`} className="tt-footer-link--submit"><Rocket size={13} />{t("Soumettre un outil", "Submit a tool")}</Link>
+              <Link to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
             </nav>
 
           </div>
@@ -105,8 +96,11 @@ const Footer = () => {
           </div>
 
           {/* ── 4. Partner mentions — last, quietest element on the page ── */}
-          <div className="tt-footer-partners">
-            <span className="tt-footer-partners-label">{t("Repéré sur", "Featured on")}</span>
+          {/* Directory badges: one quiet line that opens on demand. The links
+              stay in the HTML (directories that check for them still find
+              them); they no longer weigh on every page. */}
+          <details className="tt-footer-partners">
+            <summary className="tt-footer-partners-label">{t(`Repéré sur ${BADGE_COUNT} annuaires`, `Featured on ${BADGE_COUNT} directories`)}</summary>
             <div className="tt-footer-badges">
               <a
                 href="https://dang.ai"
@@ -401,12 +395,14 @@ const Footer = () => {
                 className="tt-footer-badge"
                 aria-label="ToolTrim - Featured on Startup Fame"
               >
+                {/* The directory's image can fail to load: fall back to its name. */}
                 <img
                   src="https://startupfa.me/badges/featured-badge.webp"
                   alt="ToolTrim - Featured on Startup Fame"
                   width={171}
                   height={54}
                   loading="lazy"
+                  onError={(event) => { event.currentTarget.style.display = "none"; event.currentTarget.parentElement?.setAttribute("data-fallback", "Startup Fame"); }}
                 />
               </a>
               <a
@@ -497,7 +493,7 @@ const Footer = () => {
                 />
               </a>
             </div>
-          </div>
+          </details>
         </div>
       </section>
 
