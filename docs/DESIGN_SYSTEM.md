@@ -64,7 +64,12 @@ Aucun `<img>` direct, aucun composant local, aucun carré vide sans fallback.
 
 **Règle bleue :** Le bleu ToolTrim ne doit pas apparaître sur des boutons CTA principaux de pages outils. Il est réservé aux états actifs (tab active, lien actif), au focus ring, et aux labels de score dans la StickyDecisionCard.
 
-**Règle de contraste :** Les textes secondaires restent en `#1D1D1F` en mode clair. Le gris `#86868B` ne remplace pas les descriptions ou métadonnées ; il souligne uniquement la seconde idée d’une accroche lorsque ce contraste sert le message.
+**Règle de contraste (révisée le 8 oct. 2026, décision Michael) :** trois tons de texte en mode clair, jamais plus.
+- `#1D1D1F` (`--color-text`) : titres, noms, chiffres, tout ce qu'on doit lire en premier.
+- `#424245` (`--color-text-secondary`) : texte courant et descriptions (9,2:1 sur #F6F5F4).
+- `#6F6F68` (`--color-text-meta`) : métadonnées seulement, surtitres, compteurs, dates, mentions légales (4,65:1 sur #F6F5F4, 5,06:1 sur #FFFFFF ; ne jamais descendre sous 4,5:1).
+
+`--color-muted` reste à `#1D1D1F` (environ 650 usages) : la migration vers ces deux tokens se fait page par page, avec contrôle visuel. Le gris `#86868B` reste réservé à la seconde idée d'une accroche (`.tt-title-muted`).
 
 ---
 

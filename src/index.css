@@ -206,6 +206,10 @@
     --color-text-strong:   #1D1D1F;
     --color-muted:         #1D1D1F;
     --color-muted-light:   #1D1D1F;
+    /* Secondary tones (Michael, 8 Oct 2026): body copy and metadata only,
+       never titles; both pass AA on #FFFFFF and #F6F5F4. */
+    --color-text-secondary: #424245;
+    --color-text-meta:      #6F6F68;
 
     --color-border:        #E6E6E6;
     --color-border-soft:   #E7E7E0;
@@ -370,6 +374,8 @@
     --color-text-strong:   #F0F0EA;
     --color-muted:         #8A8A82;
     --color-muted-light:   #5E5E58;
+    --color-text-secondary: #C9C9C1;
+    --color-text-meta:      #8A8A82;
     --color-border:        #2E2E2E;
     --color-border-soft:   #262626;
     --color-border-strong: #DEDED6;
@@ -35474,8 +35480,8 @@ img[data-logo-loading] {
      own (design review, 8 Oct 2026). #6F6F68 on #F6F5F4 = 4.7:1, AA. */
   --tt-footer-ink: #0F0F0F;
   --tt-footer-text: #1D1D1F;
-  --tt-footer-link: #424245;
-  --tt-footer-muted: #6F6F68;
+  --tt-footer-link: var(--color-text-secondary, #424245);
+  --tt-footer-muted: var(--color-text-meta, #6F6F68);
   --tt-footer-card: #FFFFFF;
   --tt-footer-track: #EDEBE9;
   --tt-footer-alert: #C2410C;
@@ -35567,8 +35573,8 @@ img[data-logo-loading] {
    9999 pills. Section gap: 72 desktop, 48 phone. */
 .home-v2 {
   --h-ink: #1D1D1F;
-  --h-text: #424245;
-  --h-meta: #6F6F68;
+  --h-text: var(--color-text-secondary, #424245);
+  --h-meta: var(--color-text-meta, #6F6F68);
   --h-section: clamp(22px, 2.2vw, 28px);
   --h-gap: 72px;
   --h-radius-tile: 12px;
