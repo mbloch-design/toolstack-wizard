@@ -35663,3 +35663,49 @@ img[data-logo-loading] {
   .ms-page .ms-hero-stats { margin-top: 24px; }
 }
 @media (max-width: 760px) { .ms-page .ms-hero .sg-cluster { margin-bottom: -8px; } }
+/* Widget tiles beat the desktop stat rules (first-child padding, the
+   overlaps column's square divider style) between 641 and 760px too. */
+@media (max-width: 760px) {
+  .ms-page .ms-hero-stats > div, .ms-page .ms-hero-stats > div:first-child, .ms-page .ms-hero-stats > div + div, .ms-page .ms-hero-stats > div.ms-stat--overlaps {
+    padding: 12px 12px 14px; border: 0; border-radius: 18px; background: hsl(var(--card));
+    box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 8px rgba(15, 15, 15, .04);
+  }
+}
+/* 1. Phone tool list as one grouped list (8 Oct 2026): one white rounded
+   block, rows separated by an inset hairline, no per-row card, shadow or
+   tint; price on one quiet line, chevron at the end. */
+@media (max-width: 640px) {
+  .ms-page .ms-card-grid { gap: 0; overflow: hidden; border-radius: 20px; background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)); }
+  .ms-page .ms-card-wrap { animation: none; }
+  .ms-page .ms-tool.ms-tool-card, .ms-page .ms-tool.ms-tool-card:hover { min-height: 60px; border-radius: 0; background: none; box-shadow: none; transform: none; }
+  .ms-page .ms-card-wrap + .ms-card-wrap .ms-tool-card::before { content: ""; position: absolute; top: 0; left: 64px; right: 0; height: .5px; background: hsl(var(--border)); }
+  .ms-page .ms-card-top { padding: 10px 0 10px 14px; gap: 12px; background: none; }
+  .ms-page .ms-card-logo > * { width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important; border-radius: 9px !important; box-shadow: 0 0 0 .5px rgba(15, 15, 15, .08) !important; }
+  .ms-page .ms-card-id strong { font-size: 15px; font-weight: 600; }
+  .ms-page .ms-card-id span { font-size: 12.5px; }
+  .ms-page .ms-card-price { display: block; max-width: 120px; color: hsl(var(--muted-foreground)); font: 500 13px/1.3 var(--font-ui); text-align: right; }
+  .ms-page .ms-card-price small { display: none; }
+  .ms-page .ms-card-price strong { color: hsl(var(--muted-foreground)); font: 500 13px/1.3 var(--font-ui); }
+  .ms-page .ms-card-price--none { color: hsl(var(--foreground)); }
+  .ms-page .ms-card-action { margin-right: 12px; color: hsl(var(--muted-foreground) / .6); }
+  .ms-page .ms-card-grid[data-editing] .ms-card-remove { top: 50%; left: auto; right: 12px; transform: translateY(-50%); }
+}
+/* 2. Overlap rows: one line down to 480px; below, actions under the text,
+   aligned with it, and smaller icons. */
+@media (max-width: 640px) {
+  .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; }
+  .ms-page .ms-pair-actions-wrap { grid-column: auto; justify-self: end; }
+}
+@media (max-width: 480px) {
+  .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr); row-gap: 8px; }
+  .ms-page .ms-pair-actions-wrap { grid-column: 2; justify-self: start; }
+  .ms-page .ms-pair-row .ms-pair-actions .ms-pair-compare { padding-left: 0; }
+  .ms-page .ms-pair-icons > :not(.ms-pair-swap) { width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important; }
+  .ms-page .ms-pair-icons { gap: 8px; }
+}
+/* 3. Hero figures in narrow desktop columns: short labels, never over a divider. */
+@media (min-width: 761px) and (max-width: 1180px) {
+  .ms-page .ms-stat-full { display: none; }
+  .ms-page .ms-stat-short { display: inline; }
+}
+@media (max-width: 640px) { .ms-page .ms-pair-text small { white-space: normal; } }
