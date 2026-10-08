@@ -1,0 +1,14 @@
+{
+  "route": "/en/tool/notion",
+  "reducedMatchesRendered": false,
+  "restoredMatchesRendered": true,
+  "restoredFields": [
+    "shortDescription",
+    "longDescription",
+    "pricing",
+    "verdict",
+    "pros",
+    "cons",
+    "useCases"
+  ]
+}

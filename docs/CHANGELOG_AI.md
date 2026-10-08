@@ -1,3 +1,11 @@
+## 2026-10-08 — Recette de publication du compactage et audit d'hydratation
+
+- Intégration de 25 commits main de Ma stack avant publication ; 248 tests applicatifs, 98 tests Ma stack, 22 fixtures SEO/compactage, TypeScript et build PASS. Régression multi-onglets alignée sur les libellés d'abonnement introduits par main ; assertions de synchronisation conservées, 15/15 parcours sur HTML prérendu réel PASS.
+- Complément de recette : Vite preview ne servait pas le HTML spécifique sur certaines URL propres. Le serveur de vérification temporaire sert les fichiers réellement générés ; documentation corrigée pour ne pas assimiler la recette SPA à une preuve d'hydratation SSR sans erreur.
+- Audit du bootstrap : 76,62 MiB au total, dont 67,82 MiB pour les outils ; sept champs historiques candidats, gain marginal 5,59 MiB, aucune lecture sur 42 routes FR/EN. Aucune suppression appliquée.
+- Défaut préexistant reproduit en production avant publication : hydratation Notion EN #418/#422 ; restauration des champs FR du bootstrap EN rétablit exactement le rendu serveur. Priorité à cette parité avant toute réduction des champs localisés. Audit détaillé dans AUDIT_HYDRATATION_2026-10-08.md.
+- Gate design toujours en échec sur la dette introduite par main (+8 couleurs CSS, +18 rayons, +2 styles inline) ; fichiers analysés identiques à main, aucune nouvelle dette du compactage et aucune hausse de baseline.
+
 ## 2026-10-08 — Compactage HTML avec équivalence SEO et hydratation
 
 - Nouvelle étape du build : retrait de neuf commentaires documentaires connus du head, compactage du JSON-LD à valeurs identiques, retrait des espaces entre enfants directs du head. Corps HTML, scripts/styles, commentaires de vérification et marqueurs React conservés.
