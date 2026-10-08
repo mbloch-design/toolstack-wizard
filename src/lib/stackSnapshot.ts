@@ -8,7 +8,7 @@ import type { Currency } from "@/lib/currencyRates";
 export interface StackSnapshot {
   tools: number; monthly: number; double: number; currency: Currency; at: string;
   /** The costliest tools, for the card's logos (slug and name only). */
-  top?: { slug: string; name: string }[];
+  top?: { slug: string; name: string; logo?: string }[];
 }
 
 const KEY = "tooltrim-ma-stack-snapshot-v1";

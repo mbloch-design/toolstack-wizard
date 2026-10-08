@@ -56,7 +56,7 @@ const Footer = () => {
             <Link className="tt-footer-stack" to={`${prefix}/ma-stack`}>
               <span className="tt-footer-stack-head">
                 {snapshot.top && snapshot.top.length > 0 && <span className="tt-footer-stack-logos" aria-hidden="true">
-                  {snapshot.top.map((tool) => <ToolLogo key={tool.slug} tool={{ id: tool.slug, slug: tool.slug, name: tool.name }} size={24} />)}
+                  {snapshot.top.map((tool) => <ToolLogo key={tool.slug} tool={{ id: tool.slug, slug: tool.slug, name: tool.name, logo: tool.logo }} size={28} allowRemoteSources={false} />)}
                 </span>}
                 <span>{t("Ma stack", "My stack")} · {snapshot.tools} {t(snapshot.tools > 1 ? "outils" : "outil", snapshot.tools > 1 ? "tools" : "tool")}</span>
               </span>
@@ -87,32 +87,33 @@ const Footer = () => {
 
         {/* 2. Links: four columns on the same grid */}
         <section className="tt-footer-nav">
+          {/* Four links per column, so no column trails a gap. */}
           <nav aria-label={t("Décider", "Decide")} className="tt-footer-col">
             <span className="tt-footer-col-label">{t("Décider", "Decide")}</span>
             <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
             <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
-            <Link to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link>
+            <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
+            <Link to={`${prefix}/ma-stack`}>{t("Ma stack", "My stack")}</Link>
           </nav>
           <nav aria-label={t("Explorer", "Explore")} className="tt-footer-col">
             <span className="tt-footer-col-label">{t("Explorer", "Explore")}</span>
             <Link to={`${prefix}/tools`}>{t("Catalogue des outils", "Tool catalog")}</Link>
-            <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
-            <Link to={`${prefix}/ma-stack`}>{t("Ma stack", "My stack")}</Link>
+            <Link to={`${prefix}/explorer`}>{t("Associer des outils", "Pair tools")}</Link>
+            <Link to={`${prefix}/search`}>{t("Rechercher un outil", "Search a tool")}</Link>
+            <Link to={`${prefix}/category`}>{t("Toutes les catégories", "All categories")}</Link>
           </nav>
-          {/* The categories closest to a freelancer's budget, all indexable
-              (10 tools or more), then the full list. */}
+          {/* The categories closest to a freelancer's budget, all indexable. */}
           <nav aria-label={t("Catégories", "Categories")} className="tt-footer-col">
             <span className="tt-footer-col-label">{t("Catégories", "Categories")}</span>
             <Link to={`${prefix}/category/ia-generaliste`}>{t("IA généraliste", "AI tools")}</Link>
             <Link to={`${prefix}/category/finance-facturation`}>{t("Finance et facturation", "Finance and invoicing")}</Link>
             <Link to={`${prefix}/category/gestion-projet`}>{t("Gestion de projet", "Project management")}</Link>
             <Link to={`${prefix}/category/automatisation`}>{t("Automatisation", "Automation")}</Link>
-            <Link to={`${prefix}/category/crm`}>CRM</Link>
-            <Link to={`${prefix}/category`}>{t("Toutes les catégories", "All categories")}</Link>
           </nav>
           <nav aria-label="ToolTrim" className="tt-footer-col">
             <span className="tt-footer-col-label">ToolTrim</span>
             <Link to={`${prefix}/about`}>{t("À propos", "About")}</Link>
+            <Link to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link>
             <Link to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
             <Link to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
           </nav>

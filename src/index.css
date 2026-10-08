@@ -35797,8 +35797,8 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-stack:focus-visible { outline: 2px solid var(--tt-footer-text); outline-offset: 3px; }
 .tt-footer .tt-footer-stack-head { grid-column: 1 / -1; display: flex; align-items: center; gap: 10px; font: 500 12px/1.3 var(--font-ui); color: var(--tt-footer-muted); }
 .tt-footer .tt-footer-stack-logos { display: inline-flex; }
-.tt-footer .tt-footer-stack-logos > * { width: 24px !important; height: 24px !important; border-radius: 7px; box-shadow: 0 0 0 2px #FFFFFF; transition: transform 240ms cubic-bezier(.34, 1.4, .64, 1); }
-.tt-footer .tt-footer-stack-logos > * + * { margin-left: -6px; }
+.tt-footer .tt-footer-stack-logos > * { width: 28px !important; height: 28px !important; border-radius: 8px; box-shadow: 0 0 0 2px #FFFFFF; transition: transform 240ms cubic-bezier(.34, 1.4, .64, 1); }
+.tt-footer .tt-footer-stack-logos > * + * { margin-left: -7px; }
 .tt-footer .tt-footer-stack:hover .tt-footer-stack-logos > *:nth-child(2) { transform: translateX(3px); }
 .tt-footer .tt-footer-stack:hover .tt-footer-stack-logos > *:nth-child(3) { transform: translateX(6px); }
 .tt-footer .tt-footer-stack-total { grid-column: 1 / -1; margin-top: 12px; font: 600 32px/1.05 var(--font-brand); letter-spacing: -.035em; font-variant-numeric: tabular-nums; }
@@ -35881,13 +35881,12 @@ img[data-logo-loading] {
   transform: translate(calc(var(--i) * 10px), calc(var(--i) * -1.5px)) rotate(var(--r));
   transition: transform 520ms var(--ease), opacity 260ms ease; transition-delay: calc(var(--i) * 30ms); z-index: var(--i); }
 .tt-trim-tile > * { width: 100% !important; height: 100% !important; border-radius: inherit; }
-.tt-trim[data-trimmed] .tt-trim-tile { transform: translate(22px, 0) rotate(0deg) scale(.86); opacity: 0; transition-delay: calc((4 - var(--i)) * 35ms); }
-.tt-trim[data-trimmed] .tt-trim-tile[data-kept] { transform: translate(22px, 0) rotate(0deg) scale(1); opacity: 1; z-index: 10; }
-.tt-trim-check { position: absolute; left: 52px; top: 0; z-index: 11; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: #0F0F0F; color: #FFFFFF; box-shadow: 0 0 0 2px var(--tt-footer-surface, #FFFFFF); transform: scale(0); transition: transform 300ms var(--ease) 0ms; }
-.tt-trim-check path { stroke-dasharray: 16; stroke-dashoffset: 16; transition: stroke-dashoffset 260ms ease 0ms; }
-.tt-trim[data-trimmed] .tt-trim-check { transform: scale(1); transition-delay: 380ms; }
-.tt-trim[data-trimmed] .tt-trim-check path { stroke-dashoffset: 0; transition-delay: 520ms; }
-
+.tt-trim[data-trimmed] .tt-trim-tile { transform: translate(22px, 0) rotate(0deg) scale(.8); opacity: 0; transition-delay: calc((4 - var(--i)) * 35ms); }
+/* The one kept: a neutral tile, never a brand. */
+.tt-trim-one { position: absolute; left: 22px; top: 6px; z-index: 10; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; background: #0F0F0F; color: #FFFFFF; box-shadow: 0 2px 8px rgba(15, 15, 15, .16); opacity: 0; transform: scale(.6) rotate(-8deg); transition: transform 460ms var(--ease), opacity 200ms ease; }
+.tt-trim-one path { stroke-dasharray: 16; stroke-dashoffset: 16; transition: stroke-dashoffset 280ms ease; }
+.tt-trim[data-trimmed] .tt-trim-one { opacity: 1; transform: none; transition-delay: 220ms; }
+.tt-trim[data-trimmed] .tt-trim-one path { stroke-dashoffset: 0; transition-delay: 460ms; }
 @media (prefers-reduced-motion: reduce) { .tt-trim *, .tt-trim *::before { transition: none !important; } }
 
 /* Apple reference (8 Oct 2026): the footer closes the page on its own soft
@@ -35899,7 +35898,6 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-legal > span:first-child { margin-right: 14px; }
 .tt-footer .tt-footer-legal > span:first-child + *::before { display: none; }
 .tt-footer .tt-footer-lang { background: rgba(255, 255, 255, .6); }
-.tt-trim-check { box-shadow: 0 0 0 2px var(--tt-footer-surface); }
 @media (max-width: 640px) {
     .tt-footer .tt-footer-legal > span:first-child { flex-basis: 100%; margin: 0 0 4px; }
   .tt-footer .tt-footer-legal > *:nth-child(2)::before { display: none; }
