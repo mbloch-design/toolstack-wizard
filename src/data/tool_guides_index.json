@@ -1,5 +1,16 @@
 {
   "byTool": {
+    "shopify": {
+      "fr": [
+        {
+          "slug": "plateforme-ecommerce-solo-petite-equipe-produits-physiques",
+          "title": "Quelle plateforme e-commerce choisir en solo ou en petite équipe, pour vendre des produits physiques ?",
+          "date": "2026-10-07",
+          "category": "Comparatifs"
+        }
+      ],
+      "en": []
+    },
     "georankers": {
       "fr": [
         {
@@ -464,6 +475,11 @@
     }
   },
   "byGuide": {
+    "fr:plateforme-ecommerce-solo-petite-equipe-produits-physiques": {
+      "slug": "shopify",
+      "name": "Shopify",
+      "hasPricing": true
+    },
     "fr:mesurer-visibilite-ia-geo-2026": {
       "slug": "georankers",
       "name": "GeoRankers",
@@ -761,6 +777,57 @@
     }
   },
   "guideExtras": {
+    "fr:plateforme-ecommerce-solo-petite-equipe-produits-physiques": {
+      "tools": [
+        {
+          "slug": "shopify",
+          "name": "Shopify",
+          "hasPricing": true,
+          "websiteUrl": "https://shopify.com"
+        },
+        {
+          "slug": "woocommerce",
+          "name": "WooCommerce",
+          "hasPricing": true,
+          "websiteUrl": "https://woocommerce.com"
+        },
+        {
+          "slug": "wix",
+          "name": "Wix",
+          "hasPricing": true,
+          "websiteUrl": "https://wix.com"
+        },
+        {
+          "slug": "squarespace",
+          "name": "Squarespace",
+          "hasPricing": true,
+          "websiteUrl": "https://squarespace.com"
+        }
+      ],
+      "related": [
+        {
+          "slug": "mesurer-visibilite-ia-geo-2026",
+          "title": "Visibilité dans les IA : mesurer son GEO en 2026 sans se fier à un score",
+          "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp",
+          "readTime": "8 min",
+          "category": "Guides pratiques"
+        },
+        {
+          "slug": "creer-video-produit-sans-montage",
+          "title": "Créer une vidéo produit sans savoir monter : une méthode simple",
+          "thumbnail": "/tool-media/flexclip/editor.webp",
+          "readTime": "6 min",
+          "category": "Guides pratiques"
+        },
+        {
+          "slug": "notion-canva-ai-tax-pricing-2026",
+          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
+          "thumbnail": "/guides/ai-tax-hero.jpg",
+          "readTime": "7 min",
+          "category": "Comparatifs"
+        }
+      ]
+    },
     "fr:mesurer-visibilite-ia-geo-2026": {
       "tools": [
         {
@@ -830,7 +897,20 @@
           "websiteUrl": "https://www.flexclip.com/"
         }
       ],
-      "related": []
+      "related": [
+        {
+          "slug": "plateforme-ecommerce-solo-petite-equipe-produits-physiques",
+          "title": "Quelle plateforme e-commerce choisir en solo ou en petite équipe, pour vendre des produits physiques ?",
+          "readTime": "7 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "shopify",
+            "name": "Shopify",
+            "hasPricing": true,
+            "websiteUrl": "https://shopify.com"
+          }
+        }
+      ]
     },
     "fr:choisir-outil-premiere-newsletter": {
       "tools": [
@@ -1333,18 +1413,23 @@
           }
         },
         {
+          "slug": "plateforme-ecommerce-solo-petite-equipe-produits-physiques",
+          "title": "Quelle plateforme e-commerce choisir en solo ou en petite équipe, pour vendre des produits physiques ?",
+          "readTime": "7 min",
+          "category": "Comparatifs",
+          "tool": {
+            "slug": "shopify",
+            "name": "Shopify",
+            "hasPricing": true,
+            "websiteUrl": "https://shopify.com"
+          }
+        },
+        {
           "slug": "mesurer-visibilite-ia-geo-2026",
           "title": "Visibilité dans les IA : mesurer son GEO en 2026 sans se fier à un score",
           "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp",
           "readTime": "8 min",
           "category": "Guides pratiques"
-        },
-        {
-          "slug": "notion-canva-ai-tax-pricing-2026",
-          "title": "La taxe IA cachée : comment Notion et Canva ont transformé \"IA incluse\" en \"payez plus\"",
-          "thumbnail": "/guides/ai-tax-hero.jpg",
-          "readTime": "7 min",
-          "category": "Comparatifs"
         }
       ]
     },

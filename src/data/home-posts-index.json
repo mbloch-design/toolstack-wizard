@@ -1,6 +1,21 @@
 {
   "fr": [
     {
+      "slug": "plateforme-ecommerce-solo-petite-equipe-produits-physiques",
+      "title": "Quelle plateforme e-commerce choisir en solo ou en petite équipe, pour vendre des produits physiques ?",
+      "date": "2026-10-07",
+      "tags": [
+        "e-commerce",
+        "shopify",
+        "woocommerce",
+        "wix",
+        "squarespace",
+        "produits physiques",
+        "2026"
+      ],
+      "thumbnail": null
+    },
+    {
       "slug": "mesurer-visibilite-ia-geo-2026",
       "title": "Visibilité dans les IA : mesurer son GEO en 2026 sans se fier à un score",
       "date": "2026-10-07",
@@ -177,20 +192,6 @@
         "organisation"
       ],
       "thumbnail": "/editorial/stack-visuale/franken-stack-photo.jpg"
-    },
-    {
-      "slug": "anna-morel-designer-studio-augmente",
-      "title": "Concevoir comme un studio quand on travaille seule",
-      "date": "2026-07-28",
-      "tags": [
-        "stories",
-        "designer freelance",
-        "intelligence artificielle",
-        "stack créative",
-        "futur du travail",
-        "workflow"
-      ],
-      "thumbnail": "/editorial/stories/anna-morel/hero.jpg"
     }
   ],
   "en": [
