@@ -424,21 +424,22 @@ export default function HomePageV2() {
                   <h2 className="v2-section-title">{t("Les outils qu'on surveille", "Tools we're watching")}</h2>
                 </div>
               </div>
-              <div className="dcv-tools">
-                <div className="tc-grid">
-                  {watchlistTools.map(({ tool, reasonFr, reasonEn }) => (
-                    <ToolCardEditorial
-                      key={tool.id}
-                      identityLogoSize={40}
-                      tool={withHomeAssets(tool) as any}
-                      prefix={prefix}
-                      t={t}
-                      categoryLabel={lang === "fr" ? reasonFr : reasonEn}
-                      lang={lang}
-                    />
-                  ))}
-                </div>
-              </div>
+              {/* Same editorial format as the universes (design review,
+                  8 Oct 2026): the vendors' share images were the noisiest
+                  block of the page, half of them in English. */}
+              <ul className="v2-shelf-picks v2-watch-list">
+                {watchlistTools.map(({ tool, reasonFr, reasonEn }) => (
+                  <li key={tool.id}>
+                    <Link to={`${prefix}/tool/${tool.slug}`} className="v2-shelf-pick">
+                      <ToolLogo tool={withHomeAssets(tool) as any} size={52} className="v2-shelf-pick-logo" />
+                      <span className="v2-shelf-pick-copy">
+                        <span className="v2-shelf-pick-name">{tool.name}</span>
+                        <span className="v2-shelf-pick-take">{lang === "fr" ? reasonFr : reasonEn}</span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 

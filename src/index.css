@@ -35949,3 +35949,41 @@ img[data-logo-loading] {
   .home-v2 .dcv-tools .tc-grid > * { flex: 0 0 78%; scroll-snap-align: start; }
 }
 @media (hover: none) { .home-v2 .v2-shelf-cell-count { transform: translateX(-17px); } }
+
+/* ── Home, chapter 1 (8 Oct 2026): the stacks become four large white cards
+   right after the hero, on the page's white (no grey band: Michael). The iOS folder
+   grows and leads each card; the copy sits under it. ── */
+.home-v2 .sgs-root { margin-top: 0; padding: 72px 0 0; background: none; }
+.home-v2 .sgs-head { align-items: baseline; margin-bottom: 32px; }
+.home-v2 .sgs-list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; column-gap: 16px; }
+.home-v2 .sgs-list > li { border-top: 0; display: flex; }
+.home-v2 .sgs-item { flex: 1; flex-direction: column; align-items: flex-start; gap: 22px; margin: 0; padding: 24px 22px 26px; border-radius: 22px; background: #FFFFFF; box-shadow: 0 0 0 1px #E6E6E6; transition: box-shadow 260ms cubic-bezier(.25, 1, .5, 1), transform 260ms cubic-bezier(.25, 1, .5, 1); }
+.home-v2 .sgs-item:hover { background: #FFFFFF; transform: translateY(-3px); box-shadow: 0 0 0 1px #E6E6E6, 0 14px 34px rgba(15, 15, 15, .08); }
+.home-v2 .sgs-item:active { transform: translateY(-1px) scale(.99); }
+.home-v2 .sgs-folder { width: 112px; height: 112px; border-radius: 30px; grid-template-columns: repeat(2, 38px); grid-template-rows: repeat(2, 38px); gap: 10px; background: #F6F5F4; box-shadow: none; }
+.home-v2 .sgs-item:hover .sgs-folder { gap: 13px; background: #EDEBE9; transform: none; }
+.home-v2 .sgs-folder-logo { width: 38px !important; height: 38px !important; min-width: 38px !important; min-height: 38px !important; border-radius: 10px !important; box-shadow: 0 1px 2px rgba(15, 15, 15, .08) !important; }
+.home-v2 .sgs-item-copy { gap: 6px; }
+.home-v2 .sgs-item-objective { color: #6F6F68; letter-spacing: .05em; }
+.home-v2 .sgs-item-title { font-size: 19px; line-height: 1.2; }
+.home-v2 .sgs-item-subtitle { -webkit-line-clamp: 3; color: #424245; }
+@media (max-width: 1100px) { .home-v2 .sgs-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .home-v2 .sgs-root { padding: 48px 0 0; }
+  .home-v2 .sgs-list { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: calc(-1 * var(--v2-grid-gutter)); padding-right: var(--v2-grid-gutter); }
+  .home-v2 .sgs-list::-webkit-scrollbar { display: none; }
+  .home-v2 .sgs-list > li { flex: 0 0 78%; scroll-snap-align: start; }
+  .home-v2 .sgs-folder { width: 96px; height: 96px; border-radius: 26px; grid-template-columns: repeat(2, 32px); grid-template-rows: repeat(2, 32px); }
+  .home-v2 .sgs-folder-logo { width: 32px !important; height: 32px !important; min-width: 32px !important; min-height: 32px !important; }
+}
+@media (prefers-reduced-motion: reduce) { .home-v2 .sgs-item, .home-v2 .sgs-item:hover { transform: none; } }
+/* Watchlist: three columns of editorial rows, no share images. */
+.home-v2 .v2-watch-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; }
+@media (max-width: 1100px) { .home-v2 .v2-watch-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .home-v2 .v2-watch-list { grid-template-columns: 1fr; } }
+/* Fewer separators (Michael, 8 Oct 2026): the home breathes through space,
+   not hairlines. No line above each universe, none between its tools. */
+.home-v2 .v2-shelf-cell { border-top: 0; padding-top: 0; }
+.home-v2 .v2-shelf-pick-copy,
+.home-v2 .v2-shelf-picks li .v2-shelf-pick-copy { border-bottom-color: transparent; }
+.home-v2 .v2-shelf-grid { row-gap: 56px; }
