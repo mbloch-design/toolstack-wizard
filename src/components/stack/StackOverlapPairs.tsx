@@ -128,11 +128,12 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
           // One row per pair (iOS list): both icons, "A ⇄ B" with the reason
           // and both costs under it, what is paid twice, then the actions.
           return <li key={key} className="ms-pair ms-pair-row">
-            <span className="ms-pair-icons" aria-hidden="true"><ToolLogo tool={a} size={32} /><ToolLogo tool={b} size={32} /></span>
+            {/* The only images of the list: two real app icons, the swap badge between them. */}
+            <span className="ms-pair-icons" aria-hidden="true"><ToolLogo tool={a} size={44} /><span className="ms-pair-swap">⇄</span><ToolLogo tool={b} size={44} /></span>
             <span className="ms-pair-text">
               <span className="ms-pair-names">
                 <button type="button" onClick={() => onSelect(toolKey(a))}>{a.name}</button>
-                <span className="ms-pair-x" aria-label={en ? "and" : "et"}>⇄</span>
+                <span className="ms-pair-x">{en ? "and" : "et"}</span>
                 <button type="button" onClick={() => onSelect(toolKey(b))}>{b.name}</button>
               </span>
               <small>{why}{double > 0 && <><span aria-hidden="true"> · </span><span className="ms-pair-double-text">{en ? `${money(double)} paid twice` : `${money(double)} en double`}</span></>}</small>
