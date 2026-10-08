@@ -36069,3 +36069,31 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-partners-label { font: 500 12px/1.3 var(--font-ui); }
 /* The search block now sits right under the hero, on its own. */
 .home-v2 .v2-catalog--lead { padding-bottom: 0; }
+
+/* ── Accessibility and motion fixes (design review, 8 Oct 2026) ── */
+/* Focus rings where the audit found none or a faint one. */
+.asv2-sidebar-resizer:focus-visible { outline: 2px solid #1D1D1F; outline-offset: 2px; }
+.home-v2 .dcv-search:focus-within { border-color: #1D1D1F; box-shadow: 0 0 0 1px #1D1D1F; }
+.pin-tool-button:focus-visible { box-shadow: 0 0 0 2px #FFFFFF, 0 0 0 4px #1D1D1F; }
+.analytics-consent__copy a { display: inline-flex; align-items: center; min-height: 24px; }
+/* Stack folder: the apps drift apart with transform, not by animating gap. */
+.home-v2 .sgs-folder { transition: background 200ms ease-out; }
+.home-v2 .sgs-item:hover .sgs-folder { gap: 10px; }
+.home-v2 .sgs-folder-app { transition: transform 260ms cubic-bezier(.2, .8, .2, 1); }
+.home-v2 .sgs-item:hover .sgs-folder-app:nth-child(1) { transform: translate(-1.5px, -1.5px); }
+.home-v2 .sgs-item:hover .sgs-folder-app:nth-child(2) { transform: translate(1.5px, -1.5px); }
+.home-v2 .sgs-item:hover .sgs-folder-app:nth-child(3) { transform: translate(-1.5px, 1.5px); }
+.home-v2 .sgs-item:hover .sgs-folder-app:nth-child(4) { transform: translate(1.5px, 1.5px); }
+/* Footer gauge: 500ms, started when the card is seen. */
+.tt-footer .tt-footer-stack-gauge > span { animation-duration: 500ms; animation-delay: 0ms; animation-play-state: paused; }
+.tt-footer .tt-footer-stack[data-seen] .tt-footer-stack-gauge > span { animation-play-state: running; }
+/* Trim: the tiles converge before they fade, so the fold reads. */
+.tt-trim-tile { transition: transform 380ms var(--ease), opacity 220ms ease 140ms; }
+.tt-trim[data-trimmed] .tt-trim-tile { transform: translate(22px, 0) rotate(0deg) scale(.6); }
+@media (prefers-reduced-motion: reduce) {
+  .home-v2 .v2-shelf-cell-count { transition: color 180ms ease-out; }
+  .home-v2 .v2-shelf-cell-head:hover .v2-shelf-cell-count, .home-v2 .v2-shelf-cell-head:focus-visible .v2-shelf-cell-count { transform: none; }
+  .home-v2 .sgs-folder-app, .home-v2 .sgs-item:hover .sgs-folder-app { transition: none; transform: none; }
+  .tce-hover-actions, .tt-section-action svg, .tt-footer .tt-footer-stack, .tt-footer .tt-footer-stack-logos > *, .tt-footer .tt-footer-stack-cta svg { transition: none !important; transform: none !important; }
+  .tt-footer .tt-footer-stack-gauge > span { animation: none; }
+}

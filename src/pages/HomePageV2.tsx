@@ -413,7 +413,7 @@ export default function HomePageV2() {
                       {picks.map(({ tool, take }) => (
                         <li key={tool.slug}>
                           <Link to={`${prefix}/tool/${tool.slug}`} className="v2-shelf-pick">
-                            <ToolLogo tool={tool as any} size={52} className="v2-shelf-pick-logo" />
+                            <ToolLogo tool={tool as any} size={52} className="v2-shelf-pick-logo" alt="" />
                             <span className="v2-shelf-pick-copy">
                               <span className="v2-shelf-pick-name">{tool.name}</span>
                               <span className="v2-shelf-pick-take">{take}</span>
@@ -470,13 +470,15 @@ export default function HomePageV2() {
                 role="tablist"
                 aria-label={t("Choisir un logiciel", "Choose software") as string}
                 onKeyDown={(event) => {
-                  if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+                  // Arrows move, Home and End jump to the ends (WAI-ARIA tabs).
+                  if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(event.key)) return;
                   const index = workWithHosts.findIndex(({ tool }) => tool.slug === selectedHost);
-                  const step = event.key === "ArrowRight" ? 1 : -1;
-                  const next = workWithHosts[(index + step + workWithHosts.length) % workWithHosts.length];
+                  const last = workWithHosts.length - 1;
+                  const target = event.key === "Home" ? 0 : event.key === "End" ? last
+                    : (index + (event.key === "ArrowRight" ? 1 : -1) + workWithHosts.length) % workWithHosts.length;
+                  const next = workWithHosts[target];
                   setSelectedHost(next.tool.slug || next.tool.id);
-                  const buttons = event.currentTarget.querySelectorAll<HTMLButtonElement>("[role=tab]");
-                  buttons[(index + step + buttons.length) % buttons.length]?.focus();
+                  event.currentTarget.querySelectorAll<HTMLButtonElement>("[role=tab]")[target]?.focus();
                   event.preventDefault();
                 }}
               >
@@ -487,6 +489,8 @@ export default function HomePageV2() {
                       key={tool.slug}
                       type="button"
                       role="tab"
+                      id={`ww-tab-${tool.slug}`}
+                      aria-controls="ww-panel"
                       aria-selected={selected}
                       tabIndex={selected ? 0 : -1}
                       className={`v2-ww-tab${selected ? " is-active" : ""}`}
@@ -498,7 +502,7 @@ export default function HomePageV2() {
                   );
                 })}
               </div>
-              <div role="tabpanel" aria-label={workWithHosts.find(({ tool }) => tool.slug === selectedHost)?.tool.name}>
+              <div role="tabpanel" id="ww-panel" aria-labelledby={`ww-tab-${selectedHost}`}>
                 <Rail
                   resetKey={selectedHost}
                   previousLabel={t("Outils précédents", "Previous tools") as string}

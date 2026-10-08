@@ -9,6 +9,8 @@ interface ToolLogoProps {
   size?: number;
   className?: string;
   allowRemoteSources?: boolean;
+  /** Empty when the tool's name is printed right next to the logo. */
+  alt?: string;
 }
 
 /**
@@ -34,7 +36,7 @@ const SOURCE_TIMEOUT_MS = 900;
  */
 const OBSERVER_GRACE_MS = 4000;
 
-const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true }: ToolLogoProps) => {
+const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true, alt }: ToolLogoProps) => {
   const sources = useMemo(() => {
     // Ask remote sources for twice the display size: a 42px logo fed a 64px
     // favicon looked soft on Retina screens.
@@ -117,7 +119,7 @@ const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true }
         ref={imgRef}
         key={src}
         src={src}
-        alt={`${tool.name} logo`}
+        alt={alt ?? `${tool.name} logo`}
         width={size}
         height={size}
         loading={eager ? "eager" : "lazy"}

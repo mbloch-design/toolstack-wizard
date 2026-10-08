@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight, ChevronRight } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
@@ -59,12 +59,22 @@ const Footer = () => {
   const onMyStack = /\/(ma-stack|my-stack)(\/|$)/.test(location.pathname);
   const [snapshot, setSnapshot] = useState<StackSnapshot | null>(null);
   useEffect(() => { setSnapshot(readStackSnapshot()); }, [location.pathname]);
+  // The paid-twice gauge fills when the card is seen, not when it mounts.
+  const stackCardRef = useRef<HTMLAnchorElement>(null);
+  const [cardSeen, setCardSeen] = useState(false);
+  useEffect(() => {
+    const node = stackCardRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setCardSeen(true); observer.disconnect(); } }, { threshold: 0.5 });
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [snapshot]);
   const tagline = t("Choisir, pas empiler.", "Choose, don't stack.");
   const languagePath = (target: "fr" | "en") => `${getLanguageSwitchPath(location.pathname, target)}${location.search}`;
   const money = (amount: number) => snapshot ? formatAmount(amount, snapshot.currency, lang) : "";
 
   return (
-    <footer className="tt-footer" role="contentinfo">
+    <footer className="tt-footer">
       <div className="tt-footer-container">
 
         {/* 1. Promise and the visitor's stack */}
@@ -81,7 +91,7 @@ const Footer = () => {
           </div>
 
           {snapshot && !onMyStack ? (
-            <Link className="tt-footer-stack" to={`${prefix}/ma-stack`}>
+            <Link ref={stackCardRef} className="tt-footer-stack" data-seen={cardSeen ? "" : undefined} to={`${prefix}/ma-stack`}>
               <span className="tt-footer-stack-head">
                 {snapshot.top && snapshot.top.length > 0 && <span className="tt-footer-stack-logos" aria-hidden="true">
                   {snapshot.top.map((tool) => <ToolLogo key={tool.slug} tool={{ id: tool.slug, slug: tool.slug, name: tool.name, logo: tool.logo }} size={28} allowRemoteSources={false} />)}

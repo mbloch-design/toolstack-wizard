@@ -72,7 +72,7 @@ export default function AnalyticsConsent() {
   };
 
   return (
-    <aside className="analytics-consent" role="dialog" aria-label={en ? "Analytics cookie consent" : "Consentement aux cookies analytics"}>
+    <div className="analytics-consent" role="region" aria-label={en ? "Analytics cookie consent" : "Consentement aux cookies analytics"}>
       <div className="analytics-consent__copy">
         <strong>{en ? "Your privacy matters" : "Votre vie privée compte"}</strong>
         <p>{en
@@ -84,6 +84,6 @@ export default function AnalyticsConsent() {
         <button type="button" className="analytics-consent__refuse" onClick={refuse}>{en ? "Decline" : "Refuser"}</button>
         <button type="button" className="analytics-consent__accept" onClick={accept}>{en ? "Accept" : "Accepter"}</button>
       </div>
-    </aside>
+    </div>
   );
 }

@@ -29,7 +29,8 @@ export default function FooterTrim() {
   const ref = useRef<HTMLSpanElement>(null);
   const [trimmed, setTrimmed] = useState(false);
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  const [still, setStill] = useState(false);
+  useEffect(() => { setMounted(true); setStill(!!window.matchMedia?.("(prefers-reduced-motion: reduce)").matches); }, []);
 
   useEffect(() => {
     const node = ref.current;
@@ -47,7 +48,7 @@ export default function FooterTrim() {
 
   return (
     <span ref={ref} className="tt-trim" data-trimmed={trimmed ? "" : undefined} aria-hidden="true"
-      onMouseEnter={() => setTrimmed(false)} onMouseLeave={() => setTrimmed(true)}>
+      onMouseEnter={still ? undefined : () => setTrimmed(false)} onMouseLeave={still ? undefined : () => setTrimmed(true)}>
       <span className="tt-trim-pile">
         {mounted && <>{PILE.map((tool, index) => (
           <span key={tool.id} className="tt-trim-tile" style={{ "--i": index, "--r": `${TILT[index]}deg` } as React.CSSProperties}>
