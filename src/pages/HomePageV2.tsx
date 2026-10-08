@@ -49,7 +49,7 @@ const WORKS_WITH_MAX = 12; // cards on the "Works with" shelf; the full list is 
    label) so even a grid of logos reads as ToolTrim's take, not a random
    sample of the catalogue. */
 const WATCHLIST = [
-  { slug: "runway", reasonFr: "Une stack IA vidéo vraiment solide.", reasonEn: "Strong, focused AI video stack." },
+  { slug: "runway", reasonFr: "Un outil IA vidéo vraiment solide.", reasonEn: "Strong, focused AI video tool." },
   { slug: "n8n", reasonFr: "Puissant, mais facile à sur-équiper.", reasonEn: "Powerful, but easy to overbuild." },
   { slug: "airtable", reasonFr: "Idéal, jusqu'à ce que ça redevienne simple.", reasonEn: "Great until your workflow gets simple." },
   { slug: "notion", reasonFr: "Flexible au point d'éviter de trancher.", reasonEn: "Flexible enough to avoid deciding anything." },
@@ -163,7 +163,7 @@ export default function HomePageV2() {
   const posts = HOME_POSTS[lang];
 
   const [discoveryQuery, setDiscoveryQuery] = useState("");
-  const [selectedHost, setSelectedHost] = useState("figma");
+  const [selectedHost, setSelectedHost] = useState("google-workspace");
 
   useEffect(() => {
     const title = lang === "fr"
@@ -212,7 +212,11 @@ export default function HomePageV2() {
      not derived. ── */
   const watchlistTools = useMemo(() => {
     const bySlug = new Map(tools.map((tool) => [tool.slug, tool]));
+    // A tool already picked in a universe is not repeated here (design
+    // review, 8 Oct 2026); below three tools the section is not shown.
+    const inUniverses = new Set(NEED_UNIVERSES.flatMap((universe) => universe.picks.map((pick) => pick.slug)));
     return WATCHLIST.flatMap(({ slug, reasonFr, reasonEn }) => {
+      if (inUniverses.has(slug)) return [];
       const tool = bySlug.get(slug);
       return tool ? [{ tool, reasonFr, reasonEn }] : [];
     });
@@ -265,7 +269,7 @@ export default function HomePageV2() {
      than a hand-authored list of recommendations. A host is only presented
      when it has at least one visible compatible tool. */
   const workWithHosts = useMemo(() => {
-    const preferred = ["figma", "adobe-after-effects", "adobe-creative-cloud", "google-workspace", "blender"];
+    const preferred = ["google-workspace", "figma", "adobe-creative-cloud", "adobe-after-effects", "blender"];
     const counts = new Map<string, number>();
     for (const tool of tools) {
       for (const host of tool.worksWith || []) counts.set(host, (counts.get(host) || 0) + 1);
@@ -337,11 +341,11 @@ export default function HomePageV2() {
   return (
     <div className="home-v2">
       <HeroSectionV2 />
-      <StackGoalsSection />
 
-      <div className="v2-catalog">
+      {/* Search right under the hero: one of the two ways in (design review,
+          8 Oct 2026), before the curated stacks. */}
+      <div className="v2-catalog v2-catalog--lead">
         <div className="v2-container">
-
           {/* ══ Discovery — one calm entry point: if you know what you're
                looking for, search. If you only know the need, the universe
                index right below takes over, then a short editorial watchlist.
@@ -368,11 +372,19 @@ export default function HomePageV2() {
             </form>
 
           </section>
+        </div>
+      </div>
+
+      <StackGoalsSection />
+
+      <div className="v2-catalog">
+        <div className="v2-container">
+
 
           {/* ══ 4. Editorial universe index — needs-based, not a card wall ══ */}
           <section className="v2-catalog-section v2-shelf-section">
             <SectionHead
-              label={t("Explorer par univers", "Explore by need")}
+              label={t("Explorer par besoin", "Explore by need")}
               to={`${prefix}/tools`}
               linkLabel={t("Tous les outils", "All tools")}
             />
@@ -417,7 +429,7 @@ export default function HomePageV2() {
           </section>
 
           {/* ══ Tools we're watching — editorial picks, after the universes ══ */}
-          {watchlistTools.length > 0 && (
+          {watchlistTools.length >= 3 && (
             <section className="v2-catalog-section">
               <div className="v2-section-head">
                 <div className="v2-section-heading-copy">
@@ -449,7 +461,7 @@ export default function HomePageV2() {
           {workWithHosts.length > 0 && compatibleTools.length > 0 && (
             <section className="v2-catalog-section v2-ww-section">
               <SectionHead
-                label={t("Travailler avec", "Works with")}
+                label={t("Compatible avec", "Works with")}
                 to={getExplorerHref(prefix, { type: "outil", slug: selectedHost })}
                 linkLabel={t("Tous les outils compatibles", "All compatible tools")}
               />

@@ -35,7 +35,7 @@ const HeroSectionV2 = () => {
 
           <div className="hv2-content">
             <span className="hv2-eyebrow">
-              {t("Pour les indépendants et petites équipes", "For freelancers and small teams")}
+              {t("Pour les freelances et petites équipes", "For freelancers and small teams")}
             </span>
 
             <h1 className="hv2-title">

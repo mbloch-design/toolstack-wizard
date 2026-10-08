@@ -24,8 +24,8 @@ export const NEED_UNIVERSES: Array<{
   },
   {
     categoryId: "creation", labelFr: "Création de contenu", labelEn: "Content Creation",
-    subsFr: ["Vidéo", "Design", "Audio", "3D"],
-    subsEn: ["Video", "Design", "Audio", "3D"],
+    subsFr: ["Vidéo", "Audio", "Visuels", "Présentations"],
+    subsEn: ["Video", "Audio", "Visuals", "Presentations"],
     picks: [
       { slug: "canva", takeFr: "La vitesse et les modèles avant le contrôle fin.", takeEn: "Speed and templates over fine control." },
       { slug: "auphonic", takeFr: "Le mastering audio de podcast, en automatique.", takeEn: "Podcast audio, mastered automatically." },
