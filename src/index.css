@@ -35893,13 +35893,7 @@ img[data-logo-loading] {
 /* Apple reference (8 Oct 2026): the footer closes the page on its own soft
    grey surface, opens with numbered fine print above a hairline, and ends on
    a legal line whose links are split by thin vertical rules. */
-.tt-footer { --tt-footer-surface: #F6F5F4; --tt-footer-border: rgba(15, 15, 15, .09); background: var(--tt-footer-surface); padding-top: 0; }
-.tt-footer .tt-footer-notes { padding: 28px 0 22px; margin-bottom: 64px; border-bottom: 1px solid var(--tt-footer-border); }
-.tt-footer .tt-footer-notes ol { counter-reset: tt-note; list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; max-width: 980px; font: 400 12px/1.5 var(--font-ui); color: var(--tt-footer-muted); }
-.tt-footer .tt-footer-notes li { counter-increment: tt-note; }
-.tt-footer .tt-footer-notes li::before { content: counter(tt-note) ". "; font-variant-numeric: tabular-nums; }
-.tt-footer .tt-footer-notes a { color: var(--tt-footer-text); text-decoration: underline; text-decoration-color: rgba(15, 15, 15, .25); text-underline-offset: 2px; white-space: nowrap; }
-.tt-footer .tt-footer-notes a:hover { text-decoration: underline; text-underline-offset: 2px; }
+.tt-footer { --tt-footer-surface: #F6F5F4; --tt-footer-border: rgba(15, 15, 15, .09); background: var(--tt-footer-surface); padding-top: clamp(64px, 6vw, 88px); }
 .tt-footer .tt-footer-legal { gap: 6px 0; }
 .tt-footer .tt-footer-legal > * + *::before { content: ""; display: inline-block; width: 1px; height: 11px; margin: 0 10px; vertical-align: -1px; background: var(--tt-footer-border); }
 .tt-footer .tt-footer-legal > span:first-child { margin-right: 14px; }
@@ -35907,8 +35901,7 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-lang { background: rgba(255, 255, 255, .6); }
 .tt-trim-check { box-shadow: 0 0 0 2px var(--tt-footer-surface); }
 @media (max-width: 640px) {
-  .tt-footer .tt-footer-notes { padding-top: 24px; margin-bottom: 48px; }
-  .tt-footer .tt-footer-legal > span:first-child { flex-basis: 100%; margin: 0 0 4px; }
+    .tt-footer .tt-footer-legal > span:first-child { flex-basis: 100%; margin: 0 0 4px; }
   .tt-footer .tt-footer-legal > *:nth-child(2)::before { display: none; }
   .tt-footer .tt-footer-stack-total { font-size: 28px; }
 }

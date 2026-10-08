@@ -9,11 +9,6 @@ import { formatAmount } from "@/lib/currencyRates";
 import { readStackSnapshot, type StackSnapshot } from "@/lib/stackSnapshot";
 import FooterTrim from "@/components/FooterTrim";
 
-// Catalogue size rounded down to the hundred ("more than 1,300"): true for
-// weeks without a rebuild, and no false precision in a footer.
-const CATALOG_TOOLS = typeof __CATALOG_TOOLS__ === "number" ? Math.floor(__CATALOG_TOOLS__ / 100) * 100 : 0;
-const groupDigits = (value: number, separator: string) => String(value).replace(/\B(?=(\d{3})+$)/g, separator);
-
 /**
  * Editorial footer on one 12-column grid (8 Oct 2026):
  *   1. Promise and proof (left half) | the visitor's stack, or the invitation
@@ -41,25 +36,6 @@ const Footer = () => {
   return (
     <footer className="tt-footer" role="contentinfo">
       <div className="tt-footer-container">
-
-        {/* 0. Fine print first, as on apple.com: what backs every figure on
-            the site, numbered, in small grey type above a hairline. */}
-        <section className="tt-footer-notes" aria-label={t("Notes", "Notes")}>
-          <ol>
-            <li>{t(
-              "Prix relevés sur les pages tarifaires des éditeurs, dans la devise qu’ils publient. Un prix annuel est ramené au mois, calcul affiché. Les totaux de Ma stack sont convertis au taux daté du site, à titre indicatif.",
-              "Prices are taken from vendors’ pricing pages, in the currency they publish. An annual price is brought back to a monthly one, with the calculation shown. My stack totals are converted at the site’s dated rate, as an indication.",
-            )}</li>
-            <li>{t(
-              "Aucun éditeur ne paie pour une note, un verdict ou un classement. Certains liens sont affiliés et signalés comme tels ; ils ne changent rien à l’analyse.",
-              "No vendor pays for a score, a verdict or a ranking. Some links are affiliate links and are labelled as such; they change nothing in the analysis.",
-            )} <Link to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link></li>
-            {CATALOG_TOOLS > 0 && <li>{t(
-              `Plus de ${groupDigits(CATALOG_TOOLS, "\u00a0")} outils suivis, chacun avec sa fiche, ses alternatives et ses prix.`,
-              `More than ${groupDigits(CATALOG_TOOLS, ",")} tools tracked, each with its page, alternatives and prices.`,
-            )}</li>}
-          </ol>
-        </section>
 
         {/* 1. Promise and the visitor's stack */}
         <section className="tt-footer-top">
