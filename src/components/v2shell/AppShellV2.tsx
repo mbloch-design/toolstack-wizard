@@ -372,6 +372,25 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               </Link>
             );
           })}
+          {/* My stack, the personal page: listed here so the sidebar shows where
+              you are on it, as for every other page (the top bar keeps its
+              shortcut; the phone tab bar stays at five entries). */}
+          {(() => {
+            const isActive = relPath === "/ma-stack" || relPath.startsWith("/ma-stack") || relPath.startsWith("/my-stack");
+            return (
+              <Link
+                to={`${prefix}/ma-stack`}
+                className={`asv2-nav-item asv2-nav-item--stack${isActive ? " asv2-nav-item--active" : ""}`}
+                aria-current={isActive ? "page" : undefined}
+                aria-label={t(`Ma stack, ${cartCount} outil${cartCount > 1 ? "s" : ""}`, `My stack, ${cartCount} tool${cartCount > 1 ? "s" : ""}`)}
+                data-tooltip={t("Ma stack", "My stack")}
+              >
+                <span className="asv2-nav-icon"><Bookmark style={{ width: 18, height: 18 }} /></span>
+                <span className="asv2-nav-label">{t("Ma stack", "My stack")}</span>
+                {cartCount > 0 && <span className="asv2-nav-count" aria-hidden="true">{cartCount}</span>}
+              </Link>
+            );
+          })()}
         </nav>
 
         <div className="asv2-sidebar-utility">
