@@ -1,5 +1,6 @@
 ## 2026-10-08 — Correction de la parité d'hydratation EN
 
+- Publication `244d7a9d52` vérifiée : quatre HTML publics identiques à l'artefact, robots/sitemap 200, 28 parcours FR/EN en production PASS après attente d'un effet de montage neutre avant les clics. Cas distinct repéré avec outil déjà épinglé dans localStorage : initialisation synchrone de useStackPins différente du SSR ; priorité suivante, non corrigée dans ce lot.
 - Bootstrap des fiches EN : conservation des champs FR qui pilotent affichage, statut gratuit/payant et score historique ; projection FR inchangée. Notion EN ne perd plus son sous-titre à l'hydratation.
 - Régression rouge avant correction, puis 28 parcours Chromium sur HTML prérendu réel PASS ; navigation React vers un autre onglet sans rechargement du document. Configuration Playwright et serveur locaux dédiés, commande `npm run test:e2e:hydration` après build.
 - Parité déterministe de 56 routes FR/EN PASS ; contenu et SEO équivalents sur quatre pages de référence. 248 tests applicatifs, 22 contrats SEO/compactage, TypeScript et build PASS.

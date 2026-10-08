@@ -16,7 +16,15 @@ Le bootstrap EN conserve désormais l'objet complet. La projection FR reste inch
 - Comparaison avec quatre pages de production avant correction : contenu rendu, métadonnées et JSON-LD équivalents ; les valeurs déjà présentes dans le bootstrap restent identiques. Seuls les champs FR manquants sont rétablis sur Notion EN.
 - Relecture indépendante : correction validée ; test renforcé pour prouver la navigation React et configuration dédiée au HTML généré.
 
-Les tests couvrent un échantillon de sept outils, pas chaque interaction de tout le catalogue. Le contrôle des tokens de design présente toujours la dette documentée dans le rapport de compactage ; aucun fichier de style ou composant n'est modifié par ce correctif.
+Les tests couvrent un échantillon de sept outils sans état Ma stack préenregistré, pas chaque interaction de tout le catalogue. Le contrôle des tokens de design présente toujours la dette documentée dans le rapport de compactage ; aucun fichier de style ou composant n'est modifié par ce correctif.
+
+## Recette publique et autre cas repéré
+
+Correctif `244d7a9d52` déployé et vérifié : quatre HTML publics correspondent exactement à l'artefact local ; robots et sitemap répondent 200. Les **28 parcours FR/EN en production passent** sans erreur d'hydratation, avec navigation React.
+
+La première recette publique échouait sur cinq navigations déclenchées immédiatement après le chargement. Le test attend désormais la classe de révélation installée par l'effet de montage de ToolDetailPage avant de cliquer ; le contenu et les erreurs restent contrôlés. La préférence de mouvement est explicite. Cette attente ne modifie pas l'état initial du produit.
+
+Une sonde distincte avec un outil déjà épinglé en localStorage révèle encore des erreurs #418/#422 sur Notion FR/EN. `useStackPins` lit cet état pendant son initialisation, alors que le SSR ne connaît pas la stack locale : le bouton et son icône diffèrent au premier rendu. Ce cas préexistant, distinct de la projection EN, reste à corriger. Il devient la prochaine priorité avant la réduction de nouveaux champs.
 
 ## Poids et recette reproductible
 
@@ -31,4 +39,4 @@ La configuration dédiée sert les fichiers `dist/**/index.html` sur les URL pro
 
 Preuves de parité et d'équivalence : `output/tooltrim-hydration-fix-2026-10-08/`.
 
-Prochain lot séparé : retrait des sept champs historiques candidats de l'audit, après vérification de leurs parcours interactifs. Aucune suppression appliquée ici.
+Prochains lots séparés : parité du rendu avec Ma stack déjà enregistrée, puis retrait des sept champs historiques candidats de l'audit après vérification de leurs parcours interactifs. Aucune suppression appliquée ici.

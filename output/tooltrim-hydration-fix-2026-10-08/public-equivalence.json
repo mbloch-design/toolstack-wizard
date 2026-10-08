@@ -1,0 +1,30 @@
+[
+  {
+    "route": "/fr/tool/notion",
+    "status": 200,
+    "matchesVerifiedArtifact": true
+  },
+  {
+    "route": "/en/tool/notion",
+    "status": 200,
+    "matchesVerifiedArtifact": true
+  },
+  {
+    "route": "/fr/guide/outils-facturation-freelance-2026",
+    "status": 200,
+    "matchesVerifiedArtifact": true
+  },
+  {
+    "route": "/fr/ma-stack",
+    "status": 200,
+    "matchesVerifiedArtifact": true
+  },
+  {
+    "route": "/robots.txt",
+    "status": 200
+  },
+  {
+    "route": "/sitemap.xml",
+    "status": 200
+  }
+]

@@ -25,6 +25,9 @@ for (const slug of ["notion", "1001bit-tools", "17hats", "8fig", "adobe-acrobat-
         const subtitle = await staticPage.locator(".td-hero-desc").allTextContents();
         await staticContext.close();
         await page.goto(route, { waitUntil: "load" });
+        // The reveal class is installed by ToolDetailPage after mount, absent in
+        // SSR. Wait for that effect before exercising React navigation.
+        await expect(page.locator(".td-tool-subnav")).toHaveClass(/td-reveal/);
         await expect(page.locator("h1")).toHaveText(heading, { useInnerText: true });
         expect(await page.locator(".td-hero-desc").allTextContents()).toEqual(subtitle);
         // A different active tab without a document request proves React handled it.
