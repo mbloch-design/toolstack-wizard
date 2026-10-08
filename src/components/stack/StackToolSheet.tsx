@@ -1,5 +1,7 @@
 import { useState, useSyncExternalStore } from "react";
 import StackCostEditor from "@/components/stack/StackCostEditor";
+import Collapse from "@/components/motion/Collapse";
+import ValueChange from "@/components/motion/ValueChange";
 import type { PlanChoice } from "@/hooks/useStackPaidPlans";
 import { Link } from "react-router-dom";
 import { ArrowRight, ChevronDown } from "@/lib/icons";
@@ -93,13 +95,13 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                 return <>
                   <div className="ms-ts-row">
                     <span>{en ? "Monthly cost" : "Coût mensuel"}{source && <small>{source}</small>}</span>
-                    <strong className="ms-pop" key={cost.kind === "paid" ? `${cost.currency}${Math.round(cost.monthly * 100)}` : cost.kind}>{cost.kind === "paid" ? (cost.source === "custom" && cost.currency === currency && choice?.period === "monthly"
+                    <strong><ValueChange value={cost.kind === "paid" ? `${cost.currency}${Math.round(cost.monthly * 100)}` : cost.kind}>{cost.kind === "paid" ? (cost.source === "custom" && cost.currency === currency && choice?.period === "monthly"
                         // What the person typed, in the shown currency: exact, no "≈".
                         ? `${new Intl.NumberFormat(en ? "en-US" : "fr-FR", { style: "currency", currency, maximumFractionDigits: 2 }).format(cost.monthly)}${en ? "/mo" : "/mois"}`
                         : money(convertAmount(cost.monthly, cost.currency, currency)))
                       : cost.kind === "free" ? (en ? "Free" : "Gratuit")
                       : cost.kind === "freemium-free" ? (en ? "Free use" : "Usage gratuit")
-                      : (en ? "Price not checked" : "Prix non relevé")}</strong>
+                      : (en ? "Price not checked" : "Prix non relevé")}</ValueChange></strong>
                   </div>
                   {freemium && <div className="ms-ts-row">
                     <span>{en ? "I pay for a paid plan" : "Je paie une offre payante"}<small>{native && native.period !== "once"
@@ -116,9 +118,12 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                     <span>{en ? "Adjust my cost" : "Ajuster mon coût"}<small>{en ? "Plan, seats or the amount you pay" : "Plan, places ou montant réel"}</small></span>
                     <ChevronDown size={16} aria-hidden />
                   </button>
-                  {open && <StackCostEditor key={slug} tool={tool} detail={detail} choice={choice} currency={currency} lang={lang} freemium={freemium} paidAtEntry={paid.isPaid(slug) && !choice}
-                    onFree={() => paid.setPaid(slug, false)}
-                    onChange={(next) => { paid.setChoice(slug, next); if (next && freemium) paid.setPaid(slug, true); }} />}
+                  {/* Always mounted, opens in height: the content below glides. */}
+                  <Collapse open={open}>
+                    <StackCostEditor key={slug} tool={tool} detail={detail} choice={choice} currency={currency} lang={lang} freemium={freemium} paidAtEntry={paid.isPaid(slug) && !choice}
+                      onFree={() => paid.setPaid(slug, false)}
+                      onChange={(next) => { paid.setChoice(slug, next); if (next && freemium) paid.setPaid(slug, true); }} />
+                  </Collapse>
                 </>;
               })()}
             </section>

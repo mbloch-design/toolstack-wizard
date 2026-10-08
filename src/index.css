@@ -35261,16 +35261,51 @@ img[data-logo-loading] {
 .ms-ce-plan:hover { background: hsl(var(--secondary)); }
 .ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: inset 0 0 0 2px hsl(var(--foreground)); border-radius: 14px; }
 .ms-ce-plan[aria-checked="true"] + .ms-ce-plan { box-shadow: none; }
-/* Micro-animations (8 Oct 2026): a figure that changes pops once, the cost
-   editor slides in, a picked plan clicks into place. Off for reduced motion. */
-@media (prefers-reduced-motion: no-preference) {
-  .ms-pop { display: inline-block; animation: ms-pop 420ms cubic-bezier(.34, 1.56, .64, 1); }
-  .ms-hero-stats dd.ms-pop { display: block; transform-origin: left center; }
-  .ms-cost-editor { animation: ms-rise 280ms cubic-bezier(.2, .8, .2, 1); }
-  .ms-ce-plan[aria-checked="true"] { animation: ms-select 300ms cubic-bezier(.34, 1.56, .64, 1); }
-  .ms-ce-plan, .ms-ce-stepper button, .ms-cost-editor .ms-size-switch button { transition: background-color 160ms ease, box-shadow 200ms ease, transform 160ms ease; }
-  .ms-ce-plan:active, .ms-ce-stepper button:active, .ms-cost-editor .ms-size-switch button:active { transform: scale(.97); }
-}
-@keyframes ms-pop { 0% { transform: scale(1); } 35% { transform: scale(1.08); } 100% { transform: scale(1); } }
-@keyframes ms-rise { from { opacity: 0; transform: translateY(-6px); } }
-@keyframes ms-select { 0% { transform: scale(.98); } 60% { transform: scale(1.01); } 100% { transform: scale(1); } }
+
+/* Motion without jumps (8 Oct 2026). Rule: nothing changes size or position
+   abruptly. Blocks that come and go open in height (tt-collapse, 0fr to 1fr),
+   a changed figure fades up once (tt-value, never on first paint), a picked
+   plan only changes its fill and shows a check whose room is reserved. */
+.tt-collapse { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 360ms cubic-bezier(.4, 0, .2, 1), opacity 240ms ease; }
+.tt-collapse[data-open] { grid-template-rows: 1fr; opacity: 1; }
+.tt-collapse-inner { min-height: 0; overflow: hidden; }
+.tt-value { display: inline-block; }
+.tt-value--changed { animation: tt-value-in 260ms cubic-bezier(.2, .8, .2, 1); }
+@keyframes tt-value-in { from { opacity: 0; transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .tt-collapse { transition: none; } .tt-value--changed { animation: none; } }
+
+/* Cost editor: spacing lives inside what collapses, so a closed block leaves no gap. */
+.ms-cost-editor { gap: 0; padding: 0 16px 16px; }
+.ms-cost-editor > * + * { margin-top: 16px; }
+.ms-cost-editor > .tt-collapse { margin-top: 0; }
+.ms-cost-editor > .tt-collapse > .tt-collapse-inner > * { margin-top: 16px; }
+.ms-cost-editor > :first-child { margin-top: 4px; }
+/* Plans: same geometry selected or not; fill and check only. */
+.ms-ce-plan { display: grid; grid-template-columns: minmax(0, 1fr) auto 16px; align-items: center; gap: 12px; border-radius: 0; animation: none; }
+.ms-ce-plan small { max-width: none; }
+.ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: none; border-radius: 0; animation: none; }
+.ms-ce-plan + .ms-ce-plan, .ms-ce-plan[aria-checked="true"] + .ms-ce-plan { box-shadow: inset 0 1px 0 hsl(var(--border) / .8); }
+.ms-ce-plan[aria-checked="true"] strong { color: hsl(var(--foreground)); }
+.ms-ce-check { display: grid; place-items: center; width: 16px; height: 16px; color: hsl(var(--foreground)); opacity: 0; transform: scale(.6); transition: opacity 160ms ease, transform 220ms cubic-bezier(.2, .8, .2, 1); }
+.ms-ce-plan[aria-checked="true"] .ms-ce-check { opacity: 1; transform: none; }
+.ms-ce-plan:active, .ms-cost-editor .ms-size-switch button:active { transform: none; }
+.ms-ce-stepper button { transition: background-color 160ms ease, transform 120ms ease; }
+.ms-ce-stepper button:active:not(:disabled) { transform: scale(.92); }
+.ms-ce-stepper output { display: grid; place-items: center; min-width: 36px; }
+/* What I really pay: a fixed layout, amount and currency on one line, period below. */
+.ms-ce-custom { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px; }
+.ms-ce-custom > .ms-size-switch:last-child { grid-column: 1 / -1; justify-self: start; }
+.ms-ce-input { width: 100%; box-sizing: border-box; }
+.ms-ce-input input { width: 100%; min-width: 0; }
+/* Sheet cost row: variable text never wraps, so the row keeps its height. */
+.ms-ts-row > span { flex: 1; min-width: 0; }
+.ms-ts-row small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-ts-row strong { flex: none; white-space: nowrap; }
+/* Plans list, iOS settings: one fill for every row; only the check (and a
+   bolder name) marks the picked plan. */
+.ms-ce-plans { background: hsl(var(--card)); box-shadow: inset 0 0 0 1px hsl(var(--border)); }
+.ms-ce-plan, .ms-ce-plan[aria-checked="true"] { background: transparent; }
+.ms-ce-plan:hover { background: hsl(var(--secondary) / .5); }
+.ms-ce-plan strong { font-weight: 500; }
+.ms-ce-plan[aria-checked="true"] strong { font-weight: 650; }
+.ms-ce-check { color: #0E9F6E; }

@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Minus, Plus } from "@/lib/icons";
+import { Check, Minus, Plus } from "@/lib/icons";
+import Collapse from "@/components/motion/Collapse";
+import ValueChange from "@/components/motion/ValueChange";
 import type { Tool, ToolPricingPlan } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import type { PlanChoice } from "@/hooks/useStackPaidPlans";
@@ -61,6 +63,7 @@ export default function StackCostEditor({ tool, detail, choice, currency, lang, 
     trackEvent("stack_cost_custom", { tool_slug: slug, period: nextPeriod, currency: nextCurrency });
   }
   const seats = choice?.perSeat ? Math.max(1, choice.seats || 1) : null;
+  const shownSeats = seats ?? 1;
 
   return (
     <div className="ms-cost-editor">
@@ -69,24 +72,29 @@ export default function StackCostEditor({ tool, detail, choice, currency, lang, 
         <div className="ms-ce-plans" role="radiogroup" aria-label={en ? "My plan" : "Mon plan"}>
           {freemium && onFree && <button type="button" role="radio" aria-checked={!choice && !paidAtEntry} className="ms-ce-plan" onClick={() => { onChange(null); onFree(); }}>
             <strong>{en ? "Free plan" : "Gratuit"}</strong><small>{en ? "I don’t pay" : "Je ne paie pas"}</small>
+            <span className="ms-ce-check" aria-hidden="true"><Check size={16} /></span>
           </button>}
           {plans.map((plan) => {
             const on = choice?.source === "plan" && choice.label === plan.displayName;
             return <button key={plan.planKey} type="button" role="radio" aria-checked={on} className="ms-ce-plan" onClick={() => pickPlan(plan)}>
               <strong>{plan.displayName}</strong><small>{stackPlanPrice(plan, lang) || ""}</small>
+              <span className="ms-ce-check" aria-hidden="true"><Check size={16} /></span>
             </button>;
           })}
         </div>
       </div>}
 
-      {seats !== null && <div className="ms-ce-block ms-ce-seats">
-        <p className="ms-ce-label">{en ? "Seats" : "Places"}</p>
-        <div className="ms-ce-stepper">
-          <button type="button" aria-label={en ? "One seat less" : "Une place de moins"} disabled={seats <= 1} onClick={() => choice && onChange({ ...choice, seats: seats - 1 })}><Minus size={16} aria-hidden /></button>
-          <output aria-live="polite" className="ms-pop" key={seats}>{seats}</output>
-          <button type="button" aria-label={en ? "One seat more" : "Une place de plus"} onClick={() => choice && onChange({ ...choice, seats: seats + 1 })}><Plus size={16} aria-hidden /></button>
+      {/* Seats open in height when a per-user plan is picked: nothing jumps. */}
+      <Collapse open={seats !== null}>
+        <div className="ms-ce-block ms-ce-seats">
+          <p className="ms-ce-label">{en ? "Seats" : "Places"}</p>
+          <div className="ms-ce-stepper">
+            <button type="button" aria-label={en ? "One seat less" : "Une place de moins"} disabled={shownSeats <= 1} onClick={() => choice && onChange({ ...choice, seats: shownSeats - 1 })}><Minus size={16} aria-hidden /></button>
+            <output aria-live="polite"><ValueChange value={shownSeats}>{shownSeats}</ValueChange></output>
+            <button type="button" aria-label={en ? "One seat more" : "Une place de plus"} onClick={() => choice && onChange({ ...choice, seats: shownSeats + 1 })}><Plus size={16} aria-hidden /></button>
+          </div>
         </div>
-      </div>}
+      </Collapse>
 
       <div className="ms-ce-block">
         <label className="ms-ce-label" htmlFor={`ms-ce-amount-${slug}`}>{en ? "Or what I really pay" : "Ou ce que je paie vraiment"}</label>
@@ -115,9 +123,11 @@ export default function StackCostEditor({ tool, detail, choice, currency, lang, 
         </div>
       </div>
 
-      {choice && <button type="button" className="ms-ce-reset" onClick={() => { onChange(null); setAmount(""); trackEvent("stack_cost_reset", { tool_slug: slug }); }}>
-        {en ? "Back to the catalogue entry plan" : "Revenir à l’offre d’entrée du catalogue"}
-      </button>}
+      <Collapse open={!!choice}>
+        <button type="button" className="ms-ce-reset" onClick={() => { onChange(null); setAmount(""); trackEvent("stack_cost_reset", { tool_slug: slug }); }}>
+          {en ? "Back to the catalogue entry plan" : "Revenir à l’offre d’entrée du catalogue"}
+        </button>
+      </Collapse>
     </div>
   );
 }

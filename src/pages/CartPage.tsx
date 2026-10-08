@@ -22,6 +22,7 @@ import { convertAmount, formatAmount } from "@/lib/currencyRates";
 import { HERO_CLUSTER_SLOTS } from "@/lib/heroCluster";
 import { pairKey, useStackDecisions } from "@/hooks/useStackDecisions";
 import { trackEvent } from "@/lib/analytics";
+import ValueChange from "@/components/motion/ValueChange";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 
@@ -249,10 +250,10 @@ export default function CartPage() {
           <dl className="sg-stats ms-hero-stats">
             <div><dt><LayoutGrid size={15} aria-hidden />{t("Outils", "Tools")}</dt><dd>{selectedTools.length}</dd>
               <span className="ms-stat-bar" aria-hidden="true">{areaCosts.map((area) => <i key={area.id} style={{ flexGrow: area.tools, background: colorOf(area.id) }} data-tip={`${area.label} · ${t(`${area.tools} outil${area.tools > 1 ? "s" : ""}`, `${area.tools} tool${area.tools > 1 ? "s" : ""}`)}`} />)}</span><span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span></div>
-            <div><dt><Wallet size={15} aria-hidden />{t("Coût mensuel", "Monthly cost")}</dt><dd className="ms-pop" key={`cost-${Math.round(stackCost.total)}`}>{stackCost.paid > 0 ? amount(stackCost.total) : t("Gratuit", "Free")}</dd>
+            <div><dt><Wallet size={15} aria-hidden />{t("Coût mensuel", "Monthly cost")}</dt><dd><ValueChange value={Math.round(stackCost.total)}>{stackCost.paid > 0 ? amount(stackCost.total) : t("Gratuit", "Free")}</ValueChange></dd>
               <span className="ms-stat-bar" aria-hidden="true">{stackCost.total > 0 ? areaCosts.filter((area) => area.cost > 0).map((area) => <i key={area.id} style={{ flexGrow: area.cost, background: colorOf(area.id) }} data-tip={`${area.label} · ≈ ${formatAmount(Math.round(area.cost), currency, lang)}${t("/mois", "/mo")}`} />) : <i style={{ flexGrow: 1 }} />}</span><span>{stackCost.paid > 0 ? t(`${stackCost.paid} outil${stackCost.paid > 1 ? "s" : ""} payant${stackCost.paid > 1 ? "s" : ""}`, `${stackCost.paid} paid tool${stackCost.paid > 1 ? "s" : ""}`) : t("rien de payant", "nothing paid")}</span></div>
             {/* The thread of the page: what I pay, and what I pay twice. */}
-            <div className={overlapScore.doubleTotal > 0 ? "ms-stat--overlaps" : undefined}><dt><Copy size={15} aria-hidden />{t("Payé en double", "Paid twice")}</dt><dd className="ms-pop" key={`double-${Math.round(overlapScore.doubleTotal)}`}>{overlapScore.doubleTotal > 0 ? amount(overlapScore.doubleTotal) : (overlapPairs > 0 ? formatAmount(0, currency, lang) : t("Rien", "None"))}</dd>
+            <div className={overlapScore.doubleTotal > 0 ? "ms-stat--overlaps" : undefined}><dt><Copy size={15} aria-hidden />{t("Payé en double", "Paid twice")}</dt><dd><ValueChange value={Math.round(overlapScore.doubleTotal)}>{overlapScore.doubleTotal > 0 ? amount(overlapScore.doubleTotal) : (overlapPairs > 0 ? formatAmount(0, currency, lang) : t("Rien", "None"))}</ValueChange></dd>
               {(() => {
                 const share = stackCost.total > 0 ? Math.min(1, overlapScore.doubleTotal / stackCost.total) : 0;
                 return <span className="ms-stat-bar ms-stat-bar--share" aria-label={t(`${Math.round(share * 100)} % du coût mensuel`, `${Math.round(share * 100)}% of the monthly cost`)}>{share > 0 && <i style={{ flexGrow: share }} data-tip={t(`≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)} payés en double`, `≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)} paid twice`)} />}<i style={{ flexGrow: 1 - share }} data-tip={t(`≈ ${formatAmount(Math.round(stackCost.total - overlapScore.doubleTotal), currency, lang)} sans doublon`, `≈ ${formatAmount(Math.round(stackCost.total - overlapScore.doubleTotal), currency, lang)} with no overlap`)} /></span>;
