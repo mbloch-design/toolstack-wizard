@@ -35750,3 +35750,11 @@ img[data-logo-loading] {
   .ms-page .ms-stat-share { display: none; }
 }
 @media (min-width: 641px) and (max-width: 1180px) { .asv2-root.asv2-root--rail-open { padding-left: 0; } }
+/* Sidebar tooltips (8 Oct 2026): a compact opaque dark pill above everything
+   (the top bar included), like the page's other tooltips, so it never blends
+   into the breadcrumb next to it. */
+.asv2-sidebar-resizer > b, .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item::after {
+  z-index: 400; padding: 7px 11px; border-radius: var(--radius-pill);
+  background: #1d1d1f; color: #fff; box-shadow: 0 6px 18px rgba(15, 15, 15, .22);
+  font: 600 12px/1 var(--font-ui); white-space: nowrap;
+}
