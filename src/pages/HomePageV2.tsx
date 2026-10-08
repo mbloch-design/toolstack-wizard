@@ -9,6 +9,7 @@ import { stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
 import StackGoalsSection from "@/components/home/StackGoalsSection";
+import StackPile from "@/components/home/StackPile";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import HOME_POSTS from "@/data/home-posts-index.json";
@@ -337,6 +338,7 @@ export default function HomePageV2() {
   return (
     <div className="home-v2">
       <HeroSectionV2 />
+      <StackPile />
       <StackGoalsSection />
 
       <div className="v2-catalog">

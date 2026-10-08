@@ -128,3 +128,8 @@ Prochaines étapes proposées, dans l'ordre :
 - [x] CTA unifié : « Construire ma stack » (hero et footer).
 - Décision Michael (8 oct.) : le hero garde son image en dégradé avec logos, par exception aux règles « pas de gradient » et « pas de grands logos ».
 - [ ] « Les outils qu'on surveille » : les visuels sont les images OG des éditeurs (texte anglais sur la page FR, collages chargés). Choisir des captures d'interface recadrées ou passer au format liste des univers.
+
+## Accueil, suite de la revue complète (8 oct. 2026)
+- [x] « La pile » sous le hero (`src/components/home/StackPile.tsx`, classes `pile-*`) : 10 outils, 5 paires d'alternatives confirmées par stackRelations, garder un ou les deux, « Continuer dans Ma stack » épingle les outils gardés. Événements GA4 `home_pile_*`.
+- [ ] Lot 2 mis de côté par Michael : recherche remontée, doublons d'outils entre univers et liste surveillée, comparatifs sur l'accueil, libellés (« par besoin », freelances vs indépendants), noms sous les dossiers de stacks, « Partir de cette stack » sur les pages stack, ligne de méthode, « comment ça marche ».
+- [ ] Lot 3 mis de côté : tokens (couleur muted = texte, 53 couleurs en dur, ~20 tailles, 13 rayons), 78 règles CSS mortes, surcharges en fin de fichier, barre du haut animée par margin-top (CLS 0,033), focus du bouton de barre latérale, focus de la recherche, footer dans main, bandeau cookies avant le lien d'évitement, gap animé du dossier, jauge du footer déclenchée trop tôt.

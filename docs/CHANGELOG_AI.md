@@ -5254,3 +5254,4 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Mentions légales : SAS, hébergeur Vercel.
 - « Gérer les cookies » (retrait du consentement), bascule FR/EN, ligne de preuve avec nombre d'outils calculé au build (`__CATALOG_TOOLS__`).
 - Footer sur grille 12 colonnes, carte « Ma stack » via `src/lib/stackSnapshot.ts` (écrit par CartPage), sélecteur de langue FR | EN.
+- Accueil : « La pile », section interactive sous le hero (choisir ses outils, trancher les doublons, continuer dans Ma stack). Revue design complète à 6 auditeurs ; lots 2 et 3 en attente dans TODO.
