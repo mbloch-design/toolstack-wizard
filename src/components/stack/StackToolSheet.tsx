@@ -210,7 +210,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                 const href = safeExternalUrl(tool.affiliateLink || tool.websiteUrl);
                 return <div className="ms-ts-foot-row">
                   {href && <a className="tt-button-primary ms-ts-open" href={href} target="_blank" rel={relPourLienOutil(href, tool.affiliateLink, tool.websiteUrl)}
-                    onClick={() => trackEvent("stack_visit_click", { tool_slug: slug })}>{en ? `Open ${tool.name}` : `Ouvrir ${tool.name}`}<ArrowUpRight size={16} aria-hidden /></a>}
+                    onClick={() => trackEvent("stack_visit_click", { tool_slug: slug })}>{en ? `Open ${tool.name}` : `Ouvrir ${tool.name}`}<ArrowUpRight size={16} aria-hidden /><span className="sr-only">{en ? " (opens in a new tab)" : " (nouvel onglet)"}</span></a>}
                   <Link className={href ? "ms-ts-secondary" : "tt-button-primary ms-ts-open"} to={`${prefix}/tool/${slug}`} onClick={() => trackEvent("stack_profile_click", { tool_slug: slug })}>{en ? "Full profile" : "Fiche complète"}{!href && <ArrowRight size={16} aria-hidden />}</Link>
                 </div>;
               })()}
