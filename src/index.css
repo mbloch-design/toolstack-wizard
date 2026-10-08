@@ -35684,3 +35684,6 @@ img[data-logo-loading] {
   .home-v2 .dcv-section { grid-template-columns: 1fr; row-gap: var(--v2-head-content-gap, 20px); }
   .home-v2 .dcv-title, .home-v2 .dcv-search { grid-column: 1; }
 }
+/* <main> inside the shell's scroll container: no focus ring when the skip
+   link sends focus to it. */
+.asv2-main { display: block; outline: none; }

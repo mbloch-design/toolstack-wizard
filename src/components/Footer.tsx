@@ -74,7 +74,7 @@ const Footer = () => {
   const money = (amount: number) => snapshot ? formatAmount(amount, snapshot.currency, lang) : "";
 
   return (
-    <footer className="tt-footer">
+    <footer className="tt-footer" role="contentinfo">
       <div className="tt-footer-container">
 
         {/* 1. Promise and the visitor's stack */}

@@ -2,7 +2,7 @@ import { expect, test, type Page } from "playwright/test";
 
 async function getActiveScrollTop(page: Page) {
   return page.evaluate(() => {
-    const main = document.getElementById("main-content");
+    const main = document.querySelector<HTMLElement>(".asv2-content") || document.getElementById("main-content");
     return main
       && ["auto", "scroll"].includes(getComputedStyle(main).overflowY)
       && main.scrollHeight > main.clientHeight + 1
@@ -13,7 +13,7 @@ async function getActiveScrollTop(page: Page) {
 
 async function scrollActiveContainer(page: Page, top: number) {
   await page.evaluate((nextTop) => {
-    const main = document.getElementById("main-content");
+    const main = document.querySelector<HTMLElement>(".asv2-content") || document.getElementById("main-content");
     if (main
       && ["auto", "scroll"].includes(getComputedStyle(main).overflowY)
       && main.scrollHeight > main.clientHeight + 1) main.scrollTo(0, nextTop);

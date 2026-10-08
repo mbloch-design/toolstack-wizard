@@ -551,10 +551,15 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </div>
         </header>
 
-        <main ref={contentRef} id="main-content" className="asv2-content">
-          {children}
+        {/* The scroll container holds the page's <main> and the footer as
+            siblings, so the footer is a real contentinfo landmark and not
+            nested in main (a11y audit, 8 Oct 2026). */}
+        <div ref={contentRef as React.RefObject<HTMLDivElement>} className="asv2-content">
+          <main id="main-content" tabIndex={-1} className="asv2-main">
+            {children}
+          </main>
           <Footer />
-        </main>
+        </div>
       </div>
 
       {/* ── Mobile bottom navigation (hidden on desktop via CSS) ── */}
