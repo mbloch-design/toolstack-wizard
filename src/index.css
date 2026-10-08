@@ -35714,13 +35714,6 @@ img[data-logo-loading] {
   .ms-page .ms-stat-short { display: inline; }
 }
 @media (max-width: 640px) { .ms-page .ms-pair-text small { white-space: normal; } }
-/* Sidebar: My stack entry, set a little apart from the catalogue pages, with
-   its tool count (a pill when expanded, a small badge on the icon when the
-   rail is collapsed). */
-.asv2-nav-item--stack { position: relative; margin-top: 12px; }
-.asv2-nav-count { margin-left: auto; min-width: 22px; height: 20px; padding: 0 6px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); color: hsl(var(--foreground)); font: 600 11.5px/20px var(--font-ui); text-align: center; font-variant-numeric: tabular-nums; }
-.asv2-nav-item--active .asv2-nav-count { background: hsl(var(--card)); }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-count { position: absolute; top: 2px; right: 2px; min-width: 16px; height: 16px; padding: 0 4px; font-size: 10px; line-height: 16px; background: hsl(var(--foreground)); color: hsl(var(--background)); }
 /* Rail opened between 641 and 1180px (Michael, 8 Oct 2026): it pushes the
    page instead of covering it, like the wide sidebar. No veil, no content
    cut under the menu; the width eases from 76 to 228px. */
