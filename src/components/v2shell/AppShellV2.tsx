@@ -265,8 +265,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   }, []);
 
   // De 641 à 1 180 px, la barre est une colonne imposée pour laisser la place
-  // au contenu. Elle peut quand même se déplier : par-dessus le contenu, sans
-  // le décaler, et sans toucher à la préférence enregistrée (US-NAV-01).
+  // au contenu. Elle peut quand même se déplier : elle pousse alors le contenu,
+  // comme sur grand écran (Michael, 8 oct. 2026 ; avant : par-dessus), sans
+  // toucher à la préférence enregistrée (US-NAV-01).
   const [forcedRail, setForcedRail] = useState(false);
   const [railOpen, setRailOpen] = useState(false);
   useEffect(() => {
