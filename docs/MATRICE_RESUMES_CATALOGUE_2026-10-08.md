@@ -84,4 +84,4 @@ Le prochain point d'exécution est ce correctif de transport limité. Cette étu
 
 ## Suite réalisée — 8 octobre 2026
 
-Le design ci-dessus a ensuite été implémenté et vérifié localement : gain réel de 16 858 octets gzip, 56 hydratations et 20 comparaisons de rendu PASS. Les résultats du prototype restent conservés comme historique. [Rapport du correctif](PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md). Publication à réaliser.
+Le design ci-dessus a ensuite été implémenté et vérifié localement : gain réel de 16 858 octets gzip, 56 hydratations et 20 comparaisons de rendu PASS. Les résultats du prototype restent conservés comme historique. [Rapport du correctif](PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md). Publication ensuite réalisée sur `81f44da6e0` : CI et recette publique 56/56, gain CDN gzip 4,99 %.

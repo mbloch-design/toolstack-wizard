@@ -1,3 +1,10 @@
+## 2026-10-08 — Projection navigateur publiée et vérifiée
+
+- Commit applicatif `81f44da6e0` publié avec les deux commits de mesures/design. Vercel réussi ; SHA-256 du module public identique au build validé, 1 239 résumés.
+- CI entièrement verte : 251 tests applicatifs, 23 contrats SEO, 99 tests Ma Stack, types/design/build et 56/56 hydratations en 5,5 min. Run 37796349909 ; rapport archivé jusqu’au 15 octobre.
+- Recette publique 56/56 en 5,7 min et 14 captures fonctionnelles mobile/desktop PASS ; sélection conservée, aucune erreur JavaScript. Gain CDN gzip au même protocole : 17 595 octets, 4,99 %. Limite DNS Supabase inchangée dans l’environnement de mesure.
+- Rapport et roadmaps actualisés, preuves machine ajoutées. Publication documentaire uniquement ; catégories et exports locaux exclus.
+
 ## 2026-10-08 — Index navigateur filtré avant transport
 
 - Règle commune de 113 exclusions ; plugin Vite limité au build navigateur retire les 109 lignes déjà invisibles. Source complète/SSR et filtre défensif du hook conservés ; tous les champs des 1 239 résumés sont identiques.

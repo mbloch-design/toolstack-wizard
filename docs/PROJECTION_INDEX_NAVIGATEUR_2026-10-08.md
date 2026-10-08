@@ -1,6 +1,6 @@
 # Projection de l’index navigateur — 8 octobre 2026
 
-Correctif développé et vérifié localement. Publication et recette de la nouvelle version en production encore à réaliser.
+Correctif publié sur `main` et vérifié en production, commit applicatif `81f44da6e0`. Les preuves locales ci-dessous sont complétées par la recette publique en fin de rapport.
 
 ## Résultat
 
@@ -41,4 +41,17 @@ Les appels Supabase sont neutralisés dans ces comparaisons pour mesurer le cata
 
 Tests pérennes : `npm test`, `npm run typecheck`, `npm run test:e2e:hydration` après `npm run build`. La fixture Vite est dans `src/lib/browserToolIndexProjection.test.ts`. La sonde d’audit reste reproductible avec `node output/tooltrim-summary-projection-2026-10-08/probe.cjs`.
 
-Prochaine étape : publier le périmètre vérifié, puis contrôler la CI et le transfert du module réellement déployé. Un découpage architectural supplémentaire, les essais utilisateurs et une migration vers la projection API distante restent des lots distincts.
+Publication et recette distante terminées. Un découpage architectural supplémentaire, les essais utilisateurs et une migration vers la projection API distante restent des lots distincts.
+
+## Publication et recette publique
+
+- `main` publié avec le correctif et ses deux commits de mesures/design ; catégories locales et exports non suivis exclus. Vercel confirme le déploiement du commit applicatif `81f44da6e0`.
+- [CI du commit applicatif](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37796349909) entièrement réussie : 251 tests applicatifs, 23 contrats SEO, 99 tests Ma Stack, types, design, build/budgets et **56/56 hydratations en 5,5 minutes**. Rapport `hydration-report` archivé jusqu’au 15 octobre 2026, 15:09 UTC.
+- **56/56 scénarios sur https://tooltrim.com en 5,7 minutes**, avec les mêmes assertions FR/EN, prix, navigation et conservation de la sélection.
+- 14 captures fonctionnelles publiques : dix froides et quatre avec cache, desktop/mobile CPU ×4. Filtres, recherche Notion et inspecteur Figma fonctionnels ; aucune erreur JavaScript ni requête catalogue inachevée ; choix sauvegardés identiques ; aucun chunk catalogue complet chargé. Les appels Supabase restent en échec DNS dans cet environnement, comme lors de la baseline.
+- Le module servi contient 1 239 lignes et son SHA-256 est exactement celui du build vérifié : `70bcd1790f9fbd00d6a572752b26306864bcabe5b2d3f5f49782203c33232a44`.
+- Comparaison CDN avec la même requête `Accept-Encoding: gzip` : **352 415 → 334 820 octets**, gain **17 595 octets / 4,99 %**. Chromium négocie Brotli et observe environ 318,5 ko transférés à froid ; transfert nul de l’index avec cache. Ces mesures ne prouvent pas un gain d’interaction.
+
+[Publication et CI](../output/tooltrim-browser-projection-2026-10-08/publication.json), [module public](../output/tooltrim-browser-projection-2026-10-08/production-module.json), [compression CDN](../output/tooltrim-browser-projection-2026-10-08/production-gzip.json), [parcours publics](../output/tooltrim-browser-projection-2026-10-08/production-parcours.json). La preuve `verification.json` conserve le statut historique de la recette locale avant publication.
+
+Prochain lot technique : réexaminer les dépendances restantes selon la roadmap, avec un audit actualisé avant toute migration.
