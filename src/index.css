@@ -24193,7 +24193,9 @@ section[id]:not(.cp-guide-section) {
   /* OpenAI-inspired spatial grid measured at a 1280px viewport:
      32px page gutters, 32px head-to-content, 24px grid gaps and
      120px between major editorial sections. */
-  --v2-grid-gutter: 32px;
+  /* Same gutter as every other page and the footer (design review,
+     8 Oct 2026): the home was the only page at 32px, 16px off the site. */
+  --v2-grid-gutter: var(--layout-gutter, 48px);
   --v2-grid-gap: 24px;
   --v2-head-content-gap: 24px;
   --v2-section-gap: 72px;
@@ -24381,7 +24383,9 @@ section[id]:not(.cp-guide-section) {
 /* Section heads */
 .v2-section-head {
   display: flex;
-  align-items: flex-end;
+  /* The "see all" link sits on the title's baseline, not under the
+     subtitle (design review, 8 Oct 2026). */
+  align-items: baseline;
   justify-content: space-between;
   gap: var(--space-lg);
   margin-bottom: var(--v2-head-content-gap);
@@ -24879,6 +24883,10 @@ section[id]:not(.cp-guide-section) {
 
 .v2-shelf-cell-arrow {
   flex-shrink: 0;
+  /* Out of flow, so the count sits flush on the column edge; on hover the
+     count slides left to make room (design review, 8 Oct 2026). */
+  position: absolute;
+  left: calc(100% + 4px);
   opacity: 0;
   transform: translateX(-4px);
   transition: opacity 180ms ease-out, transform 180ms ease-out;
@@ -25069,7 +25077,6 @@ section[id]:not(.cp-guide-section) {
 }
 @media (max-width: 640px) {
   .home-v2 {
-    --v2-grid-gutter: 20px;
     --v2-grid-gap: 16px;
     --v2-head-content-gap: 20px;
     --v2-section-gap: 48px;
@@ -25247,10 +25254,11 @@ section[id]:not(.cp-guide-section) {
    prove its size, it needs to help people use it.
    ══════════════════════════════════════════════════════════════════════ */
 .dcv-section {
+  /* Left-aligned like every other section (design review, 8 Oct 2026). */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .dcv-title {
@@ -25259,7 +25267,7 @@ section[id]:not(.cp-guide-section) {
   font-weight: 600;
   letter-spacing: -0.02em;
   color: var(--color-text-strong);
-  margin: 0 0 var(--space-lg);
+  margin: 0 0 var(--v2-head-content-gap, 24px);
   text-wrap: balance;
 }
 
@@ -35915,3 +35923,29 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-intro { color: var(--tt-footer-link); }
 @media (max-width: 640px) { .tt-footer .tt-footer-col a { display: flex; align-items: center; min-height: 24px; } .tt-footer .tt-footer-col { gap: 6px; } }
 .tt-footer .tt-footer-tagline-end { white-space: nowrap; }
+
+/* Home, design review (8 Oct 2026).
+   Works with: the same filter language as Ma stack, no track, the active
+   software as a dark pill. */
+.home-v2 .v2-ww-tabs { gap: 4px; padding: 0; background: none; box-shadow: none; border-radius: 0; }
+.home-v2 .v2-ww-tab { min-height: 36px; padding: 6px 14px 6px 8px; color: var(--color-text); }
+.home-v2 .v2-ww-tab:hover { background: rgba(15, 15, 15, .05); }
+.home-v2 .v2-ww-tab.is-active { background: #0F0F0F; color: #FFFFFF; box-shadow: none; }
+.home-v2 .v2-ww-tab.is-active .v2-ww-tab-logo { box-shadow: 0 0 0 1.5px #FFFFFF; }
+/* Card titles share one line whether or not a category follows. */
+.home-v2 .v2-rail-item .tce-identity-link { align-items: flex-start; }
+.home-v2 .v2-shelf-cell-count { position: relative; transition: transform 180ms ease-out, color 180ms ease-out; }
+.home-v2 .v2-shelf-cell-head:hover .v2-shelf-cell-count,
+.home-v2 .v2-shelf-cell-head:focus-visible .v2-shelf-cell-count { transform: translateX(-17px); }
+/* "See all" links and the footer legal links: at least 24px to tap. */
+.home-v2 .v2-section-link, .tt-footer .tt-footer-legal a, .tt-footer .tt-footer-linkbutton { display: inline-flex; align-items: center; min-height: 24px; }
+@media (max-width: 640px) {
+  /* A shorter phone page: two picks per universe, the watchlist as a row
+     that scrolls sideways like Works with. */
+  .home-v2 .v2-shelf-picks > li:nth-child(n+3) { display: none; }
+  .home-v2 .v2-shelf-picks > li:nth-child(2) .v2-shelf-pick-copy { border-bottom-color: transparent; }
+  .home-v2 .dcv-tools .tc-grid { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: calc(-1 * var(--v2-grid-gutter)); padding-right: var(--v2-grid-gutter); }
+  .home-v2 .dcv-tools .tc-grid::-webkit-scrollbar { display: none; }
+  .home-v2 .dcv-tools .tc-grid > * { flex: 0 0 78%; scroll-snap-align: start; }
+}
+@media (hover: none) { .home-v2 .v2-shelf-cell-count { transform: translateX(-17px); } }

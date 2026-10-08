@@ -102,7 +102,7 @@ const Footer = () => {
           ) : (
             <div className="tt-footer-actions" aria-label={t("Continuer avec ToolTrim", "Continue with ToolTrim")}>
               {!onMyStack && <Link className="tt-footer-action tt-footer-action--primary" to={`${prefix}/ma-stack`}>
-                <span>{t("Composer ma stack", "Build my stack")}</span>
+                <span>{t("Construire ma stack", "Build my stack")}</span>
                 <ArrowRight aria-hidden="true" />
               </Link>}
               <Link className="tt-footer-action tt-footer-action--secondary" to={`${prefix}/tools`}>

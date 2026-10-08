@@ -122,3 +122,9 @@ Prochaines étapes proposées, dans l'ordre :
 - [x] Footer refait sur une grille de 12 colonnes (8 oct.) : carte « Ma stack » (outils, coût, payé en double) lue depuis un instantané écrit par Ma stack, sélecteur FR | EN, badges en cellules uniformes (2 rangées de 10).
 - [x] Revue design du footer (design-review, 8 oct.) : trois tons (#0F0F0F, #424245, #6F6F68), tokens `--tt-footer-*`, tuile neutre blanche décorative et prérendue vide (budget HTML : le footer est répété sur 13 162 pages, 12,8 Ko chacune).
 - [x] Budget HTML : badges ramenés à une image chacun (variantes sombres jamais affichées), footer 12,8 → 8,4 Ko par page, HTML 760 → 705 Mo (limite 745). Badges gardés dans le HTML prérendu, car les annuaires vérifient leur présence.
+
+## Accueil, revue design (8 oct. 2026)
+- [x] Gouttière alignée sur le site (48px au lieu de 32), recherche alignée à gauche, liens « Tout voir » sur la ligne de base du titre, compteurs des univers au bord, onglets « Travailler avec » au style de Ma stack, titres de cartes alignés, cibles de 24px, mobile raccourci (8 482 → 6 671px).
+- [x] CTA unifié : « Construire ma stack » (hero et footer).
+- Décision Michael (8 oct.) : le hero garde son image en dégradé avec logos, par exception aux règles « pas de gradient » et « pas de grands logos ».
+- [ ] « Les outils qu'on surveille » : les visuels sont les images OG des éditeurs (texte anglais sur la page FR, collages chargés). Choisir des captures d'interface recadrées ou passer au format liste des univers.
