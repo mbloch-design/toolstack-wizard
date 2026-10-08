@@ -1,49 +1,78 @@
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { openConsentBanner } from "@/components/AnalyticsConsent";
 import { getLanguageSwitchPath } from "@/lib/seo";
+import { formatAmount } from "@/lib/currencyRates";
+import { readStackSnapshot, type StackSnapshot } from "@/lib/stackSnapshot";
 
 // Catalogue size rounded down to the hundred ("more than 1,300"): true for
 // weeks without a rebuild, and no false precision in a footer.
 const CATALOG_TOOLS = typeof __CATALOG_TOOLS__ === "number" ? Math.floor(__CATALOG_TOOLS__ / 100) * 100 : 0;
+const groupDigits = (value: number, separator: string) => String(value).replace(/\B(?=(\d{3})+$)/g, separator);
 
 /**
- * Editorial footer: restrained utility layout:
- *   1. Brand promise + two clear continuations
- *   2. Compact navigation organised by intent
- *   3. Quiet legal rail
+ * Editorial footer on one 12-column grid (8 Oct 2026):
+ *   1. Promise and proof (left half) | the visitor's stack, or the invitation
+ *      to build one (right half, aligned on the third link column)
+ *   2. Four link columns of three grid columns each
+ *   3. Legal rail: legal links left, cookies and language right
+ *   4. Directory badges in uniform cells, the label taking the first cell
  *
- * Uses ToolTrim design tokens only (no shadcn hsl vars, no Tailwind utility
- * styling). Inherits the page's editorial voice and signature set.
+ * The twist is the right half: whoever has a stack meets its figures again at
+ * the end of every page (tools, monthly cost, paid twice), read from the
+ * snapshot Ma stack writes. Rendered after mount only, so the prerendered
+ * HTML stays the same for everyone.
  */
 const Footer = () => {
   const { t, prefix, lang } = useLang();
   const year = new Date().getFullYear();
   const location = useLocation();
-  // On Ma stack itself, "Build my stack" would link to the page being read.
+  // On Ma stack itself, the stack card would repeat the page being read.
   const onMyStack = /\/(ma-stack|my-stack)(\/|$)/.test(location.pathname);
-  const otherLang = lang === "en" ? "fr" : "en";
-  const languageHref = `${getLanguageSwitchPath(location.pathname, otherLang)}${location.search}`;
+  const [snapshot, setSnapshot] = useState<StackSnapshot | null>(null);
+  useEffect(() => { setSnapshot(readStackSnapshot()); }, [location.pathname]);
+  const languagePath = (target: "fr" | "en") => `${getLanguageSwitchPath(location.pathname, target)}${location.search}`;
+  const money = (amount: number) => snapshot ? formatAmount(amount, snapshot.currency, lang) : "";
 
   return (
     <footer className="tt-footer" role="contentinfo">
+      <div className="tt-footer-container">
 
-      {/* 1. Baseline: editorial tagline + brand intro */}
-      <section className="tt-footer-baseline">
-        <div className="tt-footer-container">
-          <div className="tt-footer-baseline-grid">
-            <div className="tt-footer-baseline-copy">
-              <p className="tt-footer-tagline">
-                {t("Choisir, pas empiler.", "Choose, don't stack.")}
-              </p>
-              <p className="tt-footer-intro">
-                {t(
-                  "ToolTrim aide les freelances à choisir, comparer et rationaliser leurs outils SaaS, sans empiler les abonnements.",
-                  "ToolTrim helps freelancers choose, compare and streamline their SaaS tools without piling up subscriptions.",
-                )}
-              </p>
-            </div>
+        {/* 1. Promise, proof, and the visitor's stack */}
+        <section className="tt-footer-top">
+          <div className="tt-footer-promise">
+            <p className="tt-footer-tagline">{t("Choisir, pas empiler.", "Choose, don't stack.")}</p>
+            <p className="tt-footer-intro">
+              {t(
+                "ToolTrim aide les freelances à choisir, comparer et rationaliser leurs outils SaaS, sans empiler les abonnements.",
+                "ToolTrim helps freelancers choose, compare and streamline their SaaS tools without piling up subscriptions.",
+              )}
+            </p>
+            <p className="tt-footer-proof">
+              {CATALOG_TOOLS > 0 && <>{t(`Plus de ${groupDigits(CATALOG_TOOLS, "\u00a0")} outils suivis`, `More than ${groupDigits(CATALOG_TOOLS, ",")} tools tracked`)} · </>}
+              {t("prix relevés à la source", "prices checked at the source")} · {" "}
+              <Link to={`${prefix}/transparency`}>{t("aucune note achetée", "no score for sale")}</Link>
+            </p>
+          </div>
+
+          {snapshot && !onMyStack ? (
+            <Link className="tt-footer-stack" to={`${prefix}/ma-stack`}>
+              <span className="tt-footer-stack-label">{t("Ma stack", "My stack")}</span>
+              <span className="tt-footer-stack-figures">
+                <span><strong>{snapshot.tools}</strong>{t(snapshot.tools > 1 ? " outils" : " outil", snapshot.tools > 1 ? " tools" : " tool")}</span>
+                <span><strong>≈ {money(snapshot.monthly)}</strong>{t("/mois", "/mo")}</span>
+                {snapshot.double > 0
+                  ? <span className="tt-footer-stack-double"><strong>{money(snapshot.double)}</strong>{t(" payés en double", " paid twice")}</span>
+                  : <span>{t("aucun doublon", "no overlap")}</span>}
+              </span>
+              <span className="tt-footer-stack-cta">
+                {snapshot.double > 0 ? t("Trancher les doublons", "Settle the overlaps") : t("Reprendre ma stack", "Back to my stack")}
+                <ArrowRight aria-hidden="true" />
+              </span>
+            </Link>
+          ) : (
             <div className="tt-footer-actions" aria-label={t("Continuer avec ToolTrim", "Continue with ToolTrim")}>
               {!onMyStack && <Link className="tt-footer-action tt-footer-action--primary" to={`${prefix}/ma-stack`}>
                 <span>{t("Composer ma stack", "Build my stack")}</span>
@@ -54,78 +83,64 @@ const Footer = () => {
                 <ArrowRight aria-hidden="true" />
               </Link>
             </div>
+          )}
+        </section>
+
+        {/* 2. Links: four columns on the same grid */}
+        <section className="tt-footer-nav">
+          <nav aria-label={t("Décider", "Decide")} className="tt-footer-col">
+            <span className="tt-footer-col-label">{t("Décider", "Decide")}</span>
+            <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
+            <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
+            <Link to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link>
+          </nav>
+          <nav aria-label={t("Explorer", "Explore")} className="tt-footer-col">
+            <span className="tt-footer-col-label">{t("Explorer", "Explore")}</span>
+            <Link to={`${prefix}/tools`}>{t("Catalogue des outils", "Tool catalog")}</Link>
+            <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
+            <Link to={`${prefix}/ma-stack`}>{t("Ma stack", "My stack")}</Link>
+          </nav>
+          {/* The categories closest to a freelancer's budget, all indexable
+              (10 tools or more), then the full list. */}
+          <nav aria-label={t("Catégories", "Categories")} className="tt-footer-col">
+            <span className="tt-footer-col-label">{t("Catégories", "Categories")}</span>
+            <Link to={`${prefix}/category/ia-generaliste`}>{t("IA généraliste", "AI tools")}</Link>
+            <Link to={`${prefix}/category/finance-facturation`}>{t("Finance et facturation", "Finance and invoicing")}</Link>
+            <Link to={`${prefix}/category/gestion-projet`}>{t("Gestion de projet", "Project management")}</Link>
+            <Link to={`${prefix}/category/automatisation`}>{t("Automatisation", "Automation")}</Link>
+            <Link to={`${prefix}/category/crm`}>CRM</Link>
+            <Link to={`${prefix}/category`}>{t("Toutes les catégories", "All categories")}</Link>
+          </nav>
+          <nav aria-label="ToolTrim" className="tt-footer-col">
+            <span className="tt-footer-col-label">ToolTrim</span>
+            <Link to={`${prefix}/about`}>{t("À propos", "About")}</Link>
+            <Link to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
+            <Link to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
+          </nav>
+        </section>
+
+        {/* 3. Legal rail */}
+        <section className="tt-footer-rail">
+          <div className="tt-footer-legal">
+            <span>© {year} ToolTrim</span>
+            <Link to={`${prefix}/legal-notice`}>{t("Mentions légales", "Legal notice")}</Link>
+            <Link to={`${prefix}/privacy-policy`}>{t("Confidentialité", "Privacy")}</Link>
+            <Link to={`${prefix}/terms`}>{t("CGV", "Terms")}</Link>
+            <button type="button" className="tt-footer-linkbutton" onClick={openConsentBanner}>{t("Gérer les cookies", "Manage cookies")}</button>
           </div>
-        </div>
-      </section>
+          {/* Language: a two-option switch, the current one filled, so it
+              reads as a choice and not as one more link. */}
+          <nav className="tt-footer-lang" aria-label={t("Langue", "Language")}>
+            {(["fr", "en"] as const).map((code) => code === lang
+              ? <span key={code} aria-current="true" lang={code} title={code === "fr" ? "Français" : "English"}>{code.toUpperCase()}</span>
+              : <Link key={code} to={languagePath(code)} hrefLang={code} lang={code} title={code === "fr" ? "Lire en français" : "Read in English"} aria-label={code === "fr" ? "Français" : "English"}>{code.toUpperCase()}</Link>)}
+          </nav>
+        </section>
 
-      {/* 2. Links: three asymmetric editorial columns */}
-      <section className="tt-footer-links">
-        <div className="tt-footer-container">
-          <div className="tt-footer-grid">
-
-
-            <nav aria-label={t("Décider", "Decide")} className="tt-footer-col">
-              <span className="tt-footer-col-label">{t("Décider", "Decide")}</span>
-              <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
-              <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
-              <Link to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link>
-            </nav>
-
-            <nav aria-label={t("Explorer", "Explore")} className="tt-footer-col">
-              <span className="tt-footer-col-label">{t("Explorer", "Explore")}</span>
-              <Link to={`${prefix}/tools`}>{t("Catalogue des outils", "Tool catalog")}</Link>
-              <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
-            </nav>
-
-            {/* The categories closest to a freelancer's budget, all indexable
-                (10 tools or more), then the full list. */}
-            <nav aria-label={t("Catégories", "Categories")} className="tt-footer-col">
-              <span className="tt-footer-col-label">{t("Catégories", "Categories")}</span>
-              <Link to={`${prefix}/category/ia-generaliste`}>{t("IA généraliste", "AI tools")}</Link>
-              <Link to={`${prefix}/category/finance-facturation`}>{t("Finance et facturation", "Finance and invoicing")}</Link>
-              <Link to={`${prefix}/category/gestion-projet`}>{t("Gestion de projet", "Project management")}</Link>
-              <Link to={`${prefix}/category/automatisation`}>{t("Automatisation", "Automation")}</Link>
-              <Link to={`${prefix}/category/crm`}>CRM</Link>
-              <Link to={`${prefix}/category`}>{t("Toutes les catégories", "All categories")}</Link>
-            </nav>
-
-            <nav aria-label="ToolTrim" className="tt-footer-col tt-footer-col--wide">
-              <span className="tt-footer-col-label">ToolTrim</span>
-              <Link to={`${prefix}/about`}>{t("À propos", "About")}</Link>
-              <Link to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
-              <Link to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
-            </nav>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ── 3. Quiet legal rail ────────────────────────────────────── */}
-      <section className="tt-footer-signature">
-        <div className="tt-footer-container">
-          <div className="tt-footer-meta">
-            <div className="tt-footer-legal">
-              <span className="tt-footer-copyright">© {year} ToolTrim</span>
-              <Link to={`${prefix}/legal-notice`}>{t("Mentions légales", "Legal notice")}</Link>
-              <Link to={`${prefix}/privacy-policy`}>{t("Confidentialité", "Privacy")}</Link>
-              <Link to={`${prefix}/terms`}>{t("CGV", "Terms")}</Link>
-              <button type="button" className="tt-footer-linkbutton" onClick={openConsentBanner}>{t("Gérer les cookies", "Manage cookies")}</button>
-              <Link to={languageHref} hrefLang={otherLang} lang={otherLang} className="tt-footer-lang">{otherLang === "en" ? "English" : "Français"}</Link>
-            </div>
-            {/* What backs the verdicts, in one quiet line (figures from the build). */}
-            <p className="tt-footer-proof">
-              {CATALOG_TOOLS > 0 && <>{t(`Plus de ${String(CATALOG_TOOLS).replace(/\B(?=(\d{3})+$)/g, "\u00a0")} outils suivis`, `More than ${String(CATALOG_TOOLS).replace(/\B(?=(\d{3})+$)/g, ",")} tools tracked`)} · </>}
-              {t("prix relevés sur les pages officielles", "prices taken from official pricing pages")} · {" "}
-              <Link to={`${prefix}/transparency`}>{t("aucun placement payant n’influence une note", "no paid placement influences a score")}</Link>
-            </p>
-          </div>
-
-          {/* ── 4. Partner mentions — last, quietest element on the page ── */}
-          {/* Directory badges stay visible (Michael, 8 Oct 2026: they must be
-              kept); one tidy band, same height, grey until hovered, a single
-              scrolling row on phones. */}
-          <div className="tt-footer-partners">
-            <span className="tt-footer-partners-label">{t("Repéré sur", "Featured on")}</span>
+        {/* 4. Directory badges stay visible (Michael, 8 Oct 2026): uniform
+            cells, grey until hovered, the label in the first cell. */}
+        <section className="tt-footer-partners" aria-label={t("Repéré sur", "Featured on")}>
+          <span className="tt-footer-partners-label">{t("Repéré sur", "Featured on")}</span>
             <div className="tt-footer-badges">
               <a
                 href="https://dang.ai"
@@ -517,11 +532,10 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
+      </div>
     </footer>
   );
 };

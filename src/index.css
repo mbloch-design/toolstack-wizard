@@ -35770,63 +35770,90 @@ img[data-logo-loading] {
 @media (hover: hover) and (min-width: 641px) and (max-width: 1180px) {
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { top: 0; transform: translateX(-50%); }
 }
-/* Footer, Apple-like (8 Oct 2026): one strong closing block (tagline, two
-   actions) above, then small grey link columns (no logo, no second slogan,
-   no duplicate links), a single hairline, an inline legal row, and the
-   directory badges folded into one quiet line that opens on demand. */
-.tt-footer .tt-footer-links { padding-bottom: 48px; }
-.tt-footer .tt-footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 48px; max-width: 720px; }
-.tt-footer .tt-footer-col { gap: 10px; }
+/* ── Footer on one 12-column grid (8 Oct 2026) ─────────────────────────────
+   Two vertical lines carry everything: column 1 (promise, Décider, legal,
+   badge label) and column 7 (the stack card or the actions, Catégories).
+   Four link columns of three grid columns each; a single hairline above the
+   legal rail; badges in uniform cells, ten to a row, the label in the first
+   cell, so 1 label + 19 badges make two full rows. */
+.tt-footer { border-top: 0; padding-top: clamp(64px, 6vw, 88px); }
+.tt-footer .tt-footer-top,
+.tt-footer .tt-footer-nav { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 24px; }
+.tt-footer .tt-footer-top { align-items: end; row-gap: 32px; padding-bottom: 72px; }
+.tt-footer .tt-footer-promise { grid-column: 1 / span 6; min-width: 0; }
+.tt-footer .tt-footer-tagline { margin: 0 0 14px; }
+.tt-footer .tt-footer-intro { max-width: 46ch; }
+.tt-footer .tt-footer-proof { margin: 20px 0 0; font: 400 12px/1.5 var(--font-ui); color: var(--tt-footer-muted); }
+.tt-footer .tt-footer-proof a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 2px; }
+.tt-footer .tt-footer-proof a:hover { color: var(--tt-footer-text); }
+.tt-footer .tt-footer-actions { grid-column: 7 / -1; justify-content: flex-start; }
+
+/* The stack card: a receipt of the visitor's own stack. */
+.tt-footer .tt-footer-stack { grid-column: 7 / -1; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 6px 24px; padding: 20px 22px; border-radius: 20px; background: #FFFFFF; box-shadow: 0 0 0 1px var(--tt-footer-border), 0 1px 2px rgba(15, 15, 15, .04); color: var(--tt-footer-text); text-decoration: none; transition: box-shadow 200ms cubic-bezier(.25, 1, .5, 1), transform 200ms cubic-bezier(.25, 1, .5, 1); }
+.tt-footer .tt-footer-stack:hover { box-shadow: 0 0 0 1px var(--color-border), 0 8px 24px rgba(15, 15, 15, .07); transform: translateY(-1px); }
+.tt-footer .tt-footer-stack:active { transform: translateY(0) scale(.995); }
+.tt-footer .tt-footer-stack:focus-visible { outline: 2px solid var(--tt-footer-text); outline-offset: 3px; }
+.tt-footer .tt-footer-stack-label { grid-column: 1 / -1; font: 600 12.5px/1.3 var(--font-ui); color: var(--tt-footer-muted); }
+.tt-footer .tt-footer-stack-figures { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 18px; font: 400 13px/1.4 var(--font-ui); color: var(--tt-footer-muted); font-variant-numeric: tabular-nums; }
+.tt-footer .tt-footer-stack-figures strong { margin-right: 2px; font: 600 20px/1.2 var(--font-brand); letter-spacing: -.02em; color: var(--tt-footer-text); }
+.tt-footer .tt-footer-stack-double strong { color: #B4471F; }
+.tt-footer .tt-footer-stack-cta { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 14px; border-radius: 999px; background: var(--tt-footer-text); color: #FFFFFF; font: 600 13px/1 var(--font-ui); white-space: nowrap; }
+.tt-footer .tt-footer-stack-cta svg { width: 14px; height: 14px; transition: transform 200ms cubic-bezier(.25, 1, .5, 1); }
+.tt-footer .tt-footer-stack:hover .tt-footer-stack-cta svg { transform: translateX(2px); }
+
+/* Link columns: 3 grid columns each, so Catégories sits on column 7. */
+.tt-footer .tt-footer-nav { row-gap: 32px; padding-bottom: 56px; }
+.tt-footer .tt-footer-col { grid-column: span 3; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; min-width: 0; }
 .tt-footer .tt-footer-col-label { margin-bottom: 2px; color: var(--tt-footer-text); font: 600 12.5px/1.3 var(--font-ui); letter-spacing: 0; }
-.tt-footer .tt-footer-col a { color: var(--tt-footer-muted); font: 450 13px/1.35 var(--font-ui); }
-.tt-footer .tt-footer-col a:hover { color: var(--tt-footer-text); text-decoration-color: currentColor; }
-.tt-footer .tt-footer-meta { padding: 18px 0 8px; }
+.tt-footer .tt-footer-col a { color: var(--tt-footer-muted); font: 450 13px/1.35 var(--font-ui); text-decoration: none; }
+.tt-footer .tt-footer-col a:hover { color: var(--tt-footer-text); }
+
+/* Legal rail: one hairline, legal left, language right, one baseline. */
+.tt-footer .tt-footer-rail { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 16px 0; border-top: 1px solid var(--tt-footer-border); }
 .tt-footer .tt-footer-legal { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; font: 400 12px/1.4 var(--font-ui); color: var(--tt-footer-muted); }
-.tt-footer .tt-footer-legal a, .tt-footer .tt-footer-copyright { font: inherit; color: inherit; }
+.tt-footer .tt-footer-legal a { font: inherit; color: inherit; text-decoration: none; }
 .tt-footer .tt-footer-legal a:hover { color: var(--tt-footer-text); }
-.tt-footer .tt-footer-partners { display: block; padding: 4px 0 28px; border-top: 0; }
-.tt-footer .tt-footer-partners > summary { display: inline-flex; align-items: center; gap: 6px; padding: 4px 0; color: var(--tt-footer-muted); font: 400 12px/1.4 var(--font-ui); text-transform: none; letter-spacing: 0; cursor: pointer; list-style: none; }
-.tt-footer .tt-footer-partners > summary::-webkit-details-marker { display: none; }
-.tt-footer .tt-footer-partners > summary::after { content: ""; width: 5px; height: 5px; border-right: 1.25px solid currentColor; border-bottom: 1.25px solid currentColor; transform: rotate(45deg) translateY(-2px); transition: transform 200ms ease; }
-.tt-footer .tt-footer-partners[open] > summary::after { transform: rotate(-135deg) translateY(-1px); }
-.tt-footer .tt-footer-partners > summary:hover { color: var(--tt-footer-text); }
-.tt-footer .tt-footer-partners > summary:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; border-radius: 4px; }
-.tt-footer .tt-footer-partners[open] .tt-footer-badges { margin-top: 14px; }
-@media (max-width: 640px) {
-  .tt-footer .tt-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
-  .tt-footer .tt-footer-links { padding-bottom: 36px; }
-  .tt-footer .tt-footer-legal { flex-direction: row; gap: 6px 16px; }
-}
-/* A single separator in the footer: the one above the legal row. */
-.tt-footer { border-top: 0; }
-.tt-footer .tt-footer-badge[data-fallback]::after { content: attr(data-fallback); display: inline-block; padding: 6px 10px; border-radius: 8px; box-shadow: inset 0 0 0 1px var(--tt-footer-border); color: var(--tt-footer-muted); font: 500 11px/1 var(--font-ui); }
-/* Directory badges, kept visible (8 Oct 2026): one tidy band. Same height
-   for every badge, grey and quiet until hovered; on phones a single row that
-   scrolls sideways with faded edges instead of five stacked rows. */
-.tt-footer .tt-footer-partners { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 10px 0 32px; }
-.tt-footer .tt-footer-partners-label { color: var(--tt-footer-muted); font: 500 11px/1.3 var(--font-ui); text-transform: none; letter-spacing: 0; }
-.tt-footer .tt-footer-badges { gap: 10px 18px; margin: 0; }
-.tt-footer .tt-footer-badge img { width: auto !important; height: 22px !important; max-width: 140px; object-fit: contain; }
-.tt-footer .tt-footer-badge { opacity: .42; filter: grayscale(1); }
-.tt-footer .tt-footer-badge:hover, .tt-footer .tt-footer-badge:focus-visible { opacity: 1; filter: none; }
-@media (max-width: 640px) {
-  .tt-footer .tt-footer-partners { align-items: stretch; }
-  .tt-footer .tt-footer-badges { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); }
-  .tt-footer .tt-footer-badges::-webkit-scrollbar { display: none; }
-  .tt-footer .tt-footer-badge { flex: none; }
-}
-/* Footer legal rail additions (8 Oct 2026): "Manage cookies" is a button that
-   reads as a link; the language switch sits last, after a hairline; one quiet
-   proof line under the rail. */
 .tt-footer .tt-footer-linkbutton { appearance: none; border: 0; background: none; padding: 0; cursor: pointer; font: inherit; color: inherit; }
 .tt-footer .tt-footer-linkbutton:hover { color: var(--tt-footer-text); }
 .tt-footer .tt-footer-linkbutton:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 2px; }
-.tt-footer .tt-footer-legal .tt-footer-lang { margin-left: auto; color: var(--tt-footer-text); }
-.tt-footer .tt-footer-proof { margin: 10px 0 0; font: 400 12px/1.5 var(--font-ui); color: var(--tt-footer-muted); }
-.tt-footer .tt-footer-proof a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); text-underline-offset: 2px; }
-.tt-footer .tt-footer-proof a:hover { color: var(--tt-footer-text); }
-@media (max-width: 640px) { .tt-footer .tt-footer-legal .tt-footer-lang { margin-left: 0; } }
-.tt-footer .tt-footer-meta { display: flex; flex-direction: column; align-items: stretch; }
-/* Four link columns since the categories column (8 Oct 2026). */
-.tt-footer .tt-footer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); max-width: 960px; }
-@media (max-width: 900px) { .tt-footer .tt-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; } }
+
+/* Language: a two-option switch; the current language is filled. */
+.tt-footer .tt-footer-lang { display: inline-flex; flex: none; padding: 2px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--tt-footer-border); font: 600 11.5px/1 var(--font-ui); letter-spacing: .02em; }
+.tt-footer .tt-footer-lang > * { display: inline-flex; align-items: center; justify-content: center; min-width: 38px; height: 28px; padding: 0 10px; border-radius: 999px; color: var(--tt-footer-muted); text-decoration: none; transition: color 160ms ease, background-color 160ms ease; }
+.tt-footer .tt-footer-lang > [aria-current] { background: var(--tt-footer-text); color: #FFFFFF; }
+.tt-footer .tt-footer-lang > a:hover { color: var(--tt-footer-text); background: var(--color-surface-soft, #EDEBE9); }
+.tt-footer .tt-footer-lang > a:focus-visible { outline: 2px solid var(--tt-footer-text); outline-offset: 1px; }
+
+/* Badges: uniform cells, grey until hovered. */
+.tt-footer .tt-footer-partners { display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 10px 24px; align-items: center; padding: 8px 0 40px; border-top: 0; }
+.tt-footer .tt-footer-partners-label { color: var(--tt-footer-muted); font: 500 11px/1.3 var(--font-ui); text-transform: none; letter-spacing: 0; }
+.tt-footer .tt-footer-badges { display: contents; }
+.tt-footer .tt-footer-badge { display: flex; align-items: center; justify-content: flex-start; height: 32px; min-width: 0; opacity: .42; filter: grayscale(1); transition: opacity 160ms ease, filter 160ms ease; }
+.tt-footer .tt-footer-badge:hover, .tt-footer .tt-footer-badge:focus-visible { opacity: 1; filter: none; }
+.tt-footer .tt-footer-badge img { width: auto !important; height: 22px !important; max-width: 100%; object-fit: contain; object-position: left center; }
+.tt-footer .tt-footer-badge[data-fallback]::after { content: attr(data-fallback); font: 500 11px/1 var(--font-ui); color: var(--tt-footer-muted); }
+
+/* Tablet: the top stacks, links in two pairs, badges five to a row. */
+@media (max-width: 1100px) {
+  .tt-footer .tt-footer-promise, .tt-footer .tt-footer-actions, .tt-footer .tt-footer-stack { grid-column: 1 / -1; }
+  .tt-footer .tt-footer-stack { max-width: 560px; }
+  .tt-footer .tt-footer-col { grid-column: span 6; }
+  /* Badges: one row that scrolls sideways, edges faded. */
+  .tt-footer .tt-footer-partners { display: flex; flex-direction: column; align-items: stretch; gap: 10px; }
+  .tt-footer .tt-footer-badges { display: flex; flex-wrap: nowrap; gap: 18px; overflow-x: auto; scrollbar-width: none; -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent); }
+  .tt-footer .tt-footer-badges::-webkit-scrollbar { display: none; }
+  .tt-footer .tt-footer-badge { flex: none; }
+  .tt-footer .tt-footer-badge img { max-width: 120px; }
+}
+@media (max-width: 640px) {
+  .tt-footer .tt-footer-top { padding-bottom: 56px; }
+  .tt-footer .tt-footer-actions { flex-direction: column; align-items: stretch; }
+  .tt-footer .tt-footer-action { width: 100%; }
+  .tt-footer .tt-footer-stack { grid-template-columns: 1fr; padding: 18px; }
+  .tt-footer .tt-footer-stack-cta { justify-self: start; margin-top: 8px; }
+  .tt-footer .tt-footer-nav { column-gap: 16px; padding-bottom: 40px; }
+  .tt-footer .tt-footer-stack { max-width: none; }
+  .tt-footer .tt-footer-lang > * { min-width: 48px; height: 36px; }
+  .tt-footer .tt-footer-rail { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .tt-footer .tt-footer-legal { flex-direction: row; justify-content: flex-start; align-items: center; text-align: left; gap: 8px 16px; }
+}

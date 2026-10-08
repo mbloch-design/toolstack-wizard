@@ -23,6 +23,7 @@ import { HERO_CLUSTER_SLOTS } from "@/lib/heroCluster";
 import { pairKey, useStackDecisions } from "@/hooks/useStackDecisions";
 import { trackEvent } from "@/lib/analytics";
 import ValueChange from "@/components/motion/ValueChange";
+import { writeStackSnapshot } from "@/lib/stackSnapshot";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 
@@ -102,6 +103,12 @@ export default function CartPage() {
   const overlapScore = useMemo(() => scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang, decisions), [selectedTools, categories, plans.paid, plans.choices, currency, lang, decisions]);
   const overlapPairs = overlapScore.pairs.length;
   const empty = state.pinnedToolSlugs.length === 0;
+  // The footer's "your stack" line on every other page reads these figures.
+  useEffect(() => {
+    if (empty) { writeStackSnapshot(null); return; }
+    if (selectedTools.length === 0) return; // catalogue still loading
+    writeStackSnapshot({ tools: selectedTools.length, monthly: Math.round(stackCost.total), double: Math.round(overlapScore.doubleTotal), currency, at: new Date().toISOString() });
+  }, [empty, selectedTools.length, stackCost.total, overlapScore.doubleTotal, currency]);
   const showSearch = empty || searchOpen;
   const existingIds = new Set(selectedTools.map((tool) => tool.id));
   const searchResults = useMemo(() => {
