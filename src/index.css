@@ -35249,3 +35249,15 @@ img[data-logo-loading] {
 .ms-cost-editor .ms-size-switch button { height: 32px; padding: 0 12px; border-radius: var(--radius-pill); color: hsl(var(--muted-foreground)); font: 500 13px/1 var(--font-ui); }
 .ms-cost-editor .ms-size-switch button[aria-pressed="true"] { background: hsl(var(--card)); color: hsl(var(--foreground)); font-weight: 600; box-shadow: 0 1px 2px rgba(15, 15, 15, .08); }
 .ms-ce-reset { justify-self: start; padding: 0; color: hsl(var(--foreground)); font: 600 13px/1.3 var(--font-ui); text-decoration: underline; text-underline-offset: 3px; }
+.ms-cost-editor .ms-ce-currency button { min-width: 36px; padding: 0 10px; font-weight: 600; }
+/* Tool sheet: nothing gets squeezed (the sheet scrolls as a whole), and
+   plans read as a settings list, whatever their number or name length. */
+.ms-tool-sheet.ms-tool-sheet > * { flex-shrink: 0; }
+.ms-ce-plans { grid-template-columns: 1fr; gap: 0; overflow: hidden; border-radius: 14px; background: hsl(var(--secondary) / .6); }
+.ms-ce-plan { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 0; background: none; }
+.ms-ce-plan + .ms-ce-plan { box-shadow: inset 0 1px 0 hsl(var(--border) / .8); }
+.ms-ce-plan strong { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; min-width: 0; }
+.ms-ce-plan small { flex: none; max-width: 48%; text-align: right; }
+.ms-ce-plan:hover { background: hsl(var(--secondary)); }
+.ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: inset 0 0 0 2px hsl(var(--foreground)); border-radius: 14px; }
+.ms-ce-plan[aria-checked="true"] + .ms-ce-plan { box-shadow: none; }

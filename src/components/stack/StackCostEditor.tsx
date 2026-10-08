@@ -45,6 +45,8 @@ export default function StackCostEditor({ tool, detail, choice, currency, lang, 
   const plans = usablePlans(detail && detail.id === tool.id ? detail : null, lang);
   const [amount, setAmount] = useState(choice?.source === "custom" ? String(choice.amount) : "");
   const [period, setPeriod] = useState<"monthly" | "annual">(choice?.source === "custom" ? choice.period : "monthly");
+  // The invoice's own currency: what the person pays is often billed in dollars.
+  const [entryCurrency, setEntryCurrency] = useState<Currency>(choice?.source === "custom" ? choice.currency : currency);
   const slug = toolKey(tool);
 
   function pickPlan(plan: ToolPricingPlan) {
@@ -52,11 +54,11 @@ export default function StackCostEditor({ tool, detail, choice, currency, lang, 
     onChange({ source: "plan", label: plan.displayName, amount: plan.nativeAmount as number, currency: plan.nativeCurrency as Currency, period: plan.billingPeriod as "monthly" | "annual", perSeat, seats: perSeat ? Math.max(1, choice?.seats || 1) : undefined });
     trackEvent("stack_cost_plan", { tool_slug: slug, plan: plan.planKey });
   }
-  function applyCustom(value: string, nextPeriod: "monthly" | "annual") {
+  function applyCustom(value: string, nextPeriod: "monthly" | "annual", nextCurrency: Currency = entryCurrency) {
     const parsed = Number(value.replace(",", "."));
     if (!Number.isFinite(parsed) || parsed <= 0) return;
-    onChange({ source: "custom", amount: Math.round(parsed * 100) / 100, currency, period: nextPeriod });
-    trackEvent("stack_cost_custom", { tool_slug: slug, period: nextPeriod });
+    onChange({ source: "custom", amount: Math.round(parsed * 100) / 100, currency: nextCurrency, period: nextPeriod });
+    trackEvent("stack_cost_custom", { tool_slug: slug, period: nextPeriod, currency: nextCurrency });
   }
   const seats = choice?.perSeat ? Math.max(1, choice.seats || 1) : null;
 
@@ -94,8 +96,15 @@ export default function StackCostEditor({ tool, detail, choice, currency, lang, 
               onChange={(event) => setAmount(event.target.value)}
               onBlur={() => applyCustom(amount, period)}
               onKeyDown={(event) => { if (event.key === "Enter") applyCustom(amount, period); }} />
-            <span aria-hidden="true">{currency === "EUR" ? "€" : currency === "GBP" ? "£" : "$"}</span>
           </span>
+          <div className="ms-size-switch ms-ce-currency" role="group" aria-label={en ? "Currency" : "Devise"}>
+            {(["EUR", "USD", "GBP"] as const).map((code) => (
+              <button key={code} type="button" aria-pressed={entryCurrency === code} aria-label={code}
+                onClick={() => { setEntryCurrency(code); if (amount) applyCustom(amount, period, code); }}>
+                {code === "EUR" ? "€" : code === "GBP" ? "£" : "$"}
+              </button>
+            ))}
+          </div>
           <div className="ms-size-switch" role="group" aria-label={en ? "Billing period" : "Période"}>
             {(["monthly", "annual"] as const).map((value) => (
               <button key={value} type="button" aria-pressed={period === value} onClick={() => { setPeriod(value); if (amount) applyCustom(amount, value); }}>

@@ -86,7 +86,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                 const choice = paid.choiceFor(slug);
                 const on = paid.isPaid(slug) || !!choice;
                 const source = cost.kind !== "paid" ? null
-                  : cost.source === "custom" ? (en ? "Amount you entered" : "Montant que vous avez saisi")
+                  : cost.source === "custom" && choice ? `${en ? "You entered" : "Vous avez saisi"} ${new Intl.NumberFormat(en ? "en-US" : "fr-FR", { style: "currency", currency: choice.currency, maximumFractionDigits: 2 }).format(choice.amount)}${choice.period === "annual" ? (en ? "/yr" : "/an") : (en ? "/mo" : "/mois")}`
                   : cost.source === "plan" ? `${en ? "Plan" : "Plan"} ${choice?.label || ""}${choice?.perSeat ? ` × ${Math.max(1, choice.seats || 1)} ${en ? "seats" : "places"}` : ""}`
                   : (en ? "Catalogue entry plan" : "Offre d’entrée du catalogue");
                 const open = editing === slug;
