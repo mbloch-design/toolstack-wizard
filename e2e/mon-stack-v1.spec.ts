@@ -43,7 +43,7 @@ test("tool profile adds with one click and its saved CTA opens stack context", a
   await cta.click();
   await expect(page).toHaveURL(/ma-stack\?outil=figma/);
   await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
-  await page.getByRole("link", { name: "Voir la fiche complète", exact: true }).click();
+  await page.getByRole("link", { name: "Fiche complète", exact: true }).click();
   await expect(page).toHaveURL(/\/fr\/tool\/figma$/);
 });
 
@@ -114,23 +114,26 @@ test("blocked localStorage getter keeps selection usable in memory", async ({ pa
 
 
 test("catalogue refresh updates the same saved selection without persisting tool data", async ({ page }) => {
-  let price = "12 €/mois";
+  let name = "Figma — catalogue initial";
   await page.route("**/*supabase.co/**", async (route) => {
     expect(["GET", "OPTIONS"]).toContain(route.request().method());
     if (route.request().url().includes("/rest/v1/tools?")) {
-      await route.fulfill({ json: [{ id: "figma", slug: "figma", name: "Figma", category: "design-tools", pricing: { free: "", paid: price } }] });
+      await route.fulfill({ json: [{
+        id: "figma", slug: "figma", name, category: "design-tools",
+        pricing: { free: "", paid: "Sur devis" },
+      }] });
     } else await route.abort();
   });
   await page.addInitScript(({ key, state }) => {
     if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(state));
   }, { key, state: seed(["figma"]) });
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.locator(".ms-tool")).toContainText("12 €/mois");
-  price = "15 €/mois";
+  await expect(page.locator(".ms-tool")).toContainText("Figma — catalogue initial");
+  name = "Figma — catalogue actualisé";
   await page.reload({ waitUntil: "domcontentloaded" });
-  await expect(page.locator(".ms-tool")).toContainText("15 €/mois");
+  await expect(page.locator(".ms-tool")).toContainText("Figma — catalogue actualisé");
   const stored = await page.evaluate((key) => localStorage.getItem(key), key);
-  expect(stored).not.toMatch(/pricing|logo|description|15 €/);
+  expect(stored).not.toMatch(/pricing|logo|description|catalogue initial|catalogue actualisé/);
 });
 
 test("corrupt main snapshot recovers its backup", async ({ page }) => {

@@ -1,3 +1,10 @@
+## 2026-10-08 — Hydratation avec Ma Stack enregistrée
+
+- useSyncExternalStore remplace les initialiseurs synchrones de localStorage : snapshot serveur stable au premier rendu, puis restauration des choix locaux sans modification de format.
+- Régressions rouge/vert, 249 tests applicatifs, 99 Ma Stack, 22 contrats SEO, TypeScript et build PASS ; 56 parcours FR/EN sur HTML généré, avec choix sauvegardés, navigation et rechargement.
+- Serveur QA : fallback des routes SPA ; tests Ma Stack alignés sur le libellé actuel et le rafraîchissement effectif du catalogue. HTML équivalent sur quatre pages hors hash du bundle, sitemap identique ; budgets inchangés.
+- Rapport CORRECTIF_HYDRATATION_STACK_2026-10-08.md. Catégories locales et données non suivies exclues.
+
 ## 2026-10-08 — Correction de la parité d'hydratation EN
 
 - Publication `244d7a9d52` vérifiée : quatre HTML publics identiques à l'artefact, robots/sitemap 200, 28 parcours FR/EN en production PASS après attente d'un effet de montage neutre avant les clics. Cas distinct repéré avec outil déjà épinglé dans localStorage : initialisation synchrone de useStackPins différente du SSR ; priorité suivante, non corrigée dans ce lot.

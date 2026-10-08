@@ -1,0 +1,30 @@
+{
+  "pages": [
+    {
+      "route": "/fr/tool/notion",
+      "htmlEquivalentExceptExpectedAppBundle": true
+    },
+    {
+      "route": "/en/tool/notion",
+      "htmlEquivalentExceptExpectedAppBundle": true
+    },
+    {
+      "route": "/fr/guide/outils-facturation-freelance-2026",
+      "htmlEquivalentExceptExpectedAppBundle": true
+    },
+    {
+      "route": "/fr/ma-stack",
+      "htmlEquivalentExceptExpectedAppBundle": true
+    }
+  ],
+  "sitemapByteIdentical": true,
+  "localTests": {
+    "application": 249,
+    "maStack": 99,
+    "seoContracts": 22,
+    "hydrationBrowser": 56,
+    "regressionBrowser": 30,
+    "typecheck": "PASS",
+    "build": "PASS"
+  }
+}

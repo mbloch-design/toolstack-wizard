@@ -17,6 +17,10 @@ http.createServer((request, response) => {
       return;
     }
     if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, "index.html");
+    // Match the app's clean-URL fallback for client-only routes. Asset misses
+    // remain 404, and hydration specs still require a real __SSR_TOOL__ seed.
+    if (!fs.existsSync(file) && /^\/(fr|en)(\/|$)/.test(pathname) && !path.extname(pathname)
+      && request.headers.accept?.includes("text/html")) file = path.join(root, "index.html");
     if (!fs.existsSync(file) || !fs.statSync(file).isFile()) {
       response.writeHead(404).end();
       return;
