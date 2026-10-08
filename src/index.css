@@ -35506,3 +35506,23 @@ img[data-logo-loading] {
 .ms-page .ms-domain-filters button:hover { color: hsl(var(--foreground)); }
 .ms-page .ms-tab-ink { position: absolute; left: 0; bottom: 0; height: 2px; border-radius: 2px; background: hsl(var(--foreground)); pointer-events: none; transition: transform 420ms cubic-bezier(.34, 1.2, .64, 1), width 420ms cubic-bezier(.34, 1.2, .64, 1); }
 @media (prefers-reduced-motion: reduce) { .ms-page .ms-tab-ink { transition: none; } .ms-page .ms-tools-section .ms-domain-filters { scroll-behavior: auto; } }
+/* Area tabs as a pill track (8 Oct 2026): the same family as the segmented
+   controls of the page. A dark thumb slides and resizes behind the active
+   tab, its label turns white; counts stay readable on both. */
+.ms-page .ms-tools-section .ms-domain-filters {
+  gap: 2px; width: fit-content; max-width: 100%; margin: -8px 0 24px; padding: 4px;
+  border: 0; border-radius: var(--radius-pill); background: var(--color-surface-soft);
+  box-shadow: inset 0 0 0 .5px hsl(var(--border)); scrollbar-width: none; isolation: isolate;
+}
+.ms-page .ms-tools-section .ms-domain-filters::-webkit-scrollbar { display: none; }
+.ms-page .ms-tools-section .ms-domain-filters button {
+  position: relative; z-index: 1; min-height: 36px; padding: 0 14px; gap: 6px; border: 0; border-radius: var(--radius-pill);
+  color: hsl(var(--muted-foreground)); font: 500 14px/1 var(--font-ui); transition: color 220ms ease;
+}
+.ms-page .ms-tools-section .ms-domain-filters button:hover { color: hsl(var(--foreground)); }
+.ms-page .ms-tools-section .ms-domain-filters button[aria-pressed="true"] { color: hsl(var(--background)); }
+.ms-page .ms-tools-section .ms-domain-filters button > span { min-width: 0; height: auto; padding: 0; background: none; color: inherit; opacity: .55; font: 500 12.5px/1 var(--font-ui); font-variant-numeric: tabular-nums; }
+.ms-page .ms-tools-section .ms-domain-filters button[aria-pressed="true"] > span { color: inherit; opacity: .7; }
+.ms-page .ms-tools-section .ms-domain-filters button:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 1px; }
+.ms-page .ms-tab-ink { top: 4px; bottom: 4px; height: auto; z-index: 0; border-radius: var(--radius-pill); background: hsl(var(--foreground)); box-shadow: 0 2px 8px rgba(15, 15, 15, .14); }
+@media (max-width: 640px) { .ms-page .ms-tools-section .ms-domain-filters { width: auto; } }
