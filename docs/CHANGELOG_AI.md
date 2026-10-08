@@ -1,3 +1,10 @@
+## 2026-10-08 — Publication des corrections de revue technique
+
+- Intégration des trois commits main distants (cartes Ma stack, indicateur neutre et guide e-commerce) avant publication des deux commits d'audit.
+- Styles distants : couleur de repli et quatre rayons de cartes extraits en tokens nommés à valeurs identiques ; baseline de dette inchangée.
+- Recette sur la version fusionnée : tests applicatifs, TypeScript app/node, contrats SEO, gate design, build production et régressions navigateur vérifiés avant push.
+- Refonte locale CategoriesIndexPage et fichiers non suivis exclus de la publication.
+
 ## 2026-10-07 — Points 2 et 3 de la revue technique Superpowers
 
 - CI réalignée sur les suites conservées ; typecheck explicite application/configuration Vite, diagnostics corrigés sans retirer les options strictes.
