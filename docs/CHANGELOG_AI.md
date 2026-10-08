@@ -45,6 +45,19 @@
 - Validation : 218/218 tests unitaires, 9/9 régressions Chrome FR/EN, build production isolé PASS ; 2 478 fiches HTML avec un H1 et aucun root vide. TypeScript explicite : 38 diagnostics préexistants identiques ; lint ciblé zéro erreur/cinq warnings existants. Risques paiement, CI/SEO, données et dépendances conservés dans le rapport.
 - Travaux préexistants CategoriesIndexPage et catalogue non suivis préservés ; aucune publication ni mutation DB.
 
+## 2026-10-08 : Ma stack, feuille outil plus légère, « Modifier ce que je paie » en formulaire
+
+- La feuille : plus d'air, filets fins, l'icône avec un halo à sa couleur, le coût en chiffre vedette (« Me coûte ») avec sa source en légende ; focus sur la feuille à l'ouverture ; au-dessus de la barre mobile.
+- « Modifier ce que je paie » devient un formulaire : brouillon, aperçu « Nouveau coût », Annuler / Enregistrer ; fermer abandonne. Plans en liste façon réglages, places, montant réel avec sa devise (€, $, £) et sa période. L'interrupteur « Je paie » reste instantané.
+- Mouvement sans saut, mesuré image par image : blocs qui s'ouvrent en hauteur (`Collapse`), chiffres qui changent en fondu (`ValueChange`), sélecteurs à pastille glissante (`Segmented`, aussi dans le budget), compteur de places qui défile, « non » secoué au minimum, coche qui se dessine, interrupteur qui s'étire, boutons qui s'enfoncent.
+
+## 2026-10-08 : Ma stack, un coût juste
+
+- Feuille outil : « Ajuster mon coût ». Plan du catalogue (montant natif), nombre de places pour un plan par utilisateur, ou montant réellement payé (mensuel ou annuel, devise affichée). Le choix prime sur l'offre d'entrée et nourrit total, anneau, payé en double ; « Revenir à l'offre d'entrée » annule. Montant saisi affiché exact.
+- Note du budget : nombre de coûts ajustés, et invitation à saisir les prix non relevés.
+- `monthlyFromChoice` testé (mensuel, annuel, places, plan forfaitaire, devise non gérée). Événements stack_cost_plan, stack_cost_custom, stack_cost_reset.
+- Liste prioritaire de recherche de prix : 257 outils des Stacks sans prix vérifié (`research/batches/prix-ma-stack-prioritaires-2026-10-08.txt`).
+
 ## 2026-10-07 — Mesurer sa visibilité dans les réponses IA
 
 - Nouveau guide FR/EN : méthode par panel de prompts, protocole répétable, distinction entre mentions, citations, impressions et conversions, avec limites explicites des scores GEO.

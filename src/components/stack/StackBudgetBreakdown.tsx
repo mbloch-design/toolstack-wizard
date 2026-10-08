@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
 import { ChevronLeft } from "@/lib/icons";
+import Segmented from "@/components/motion/Segmented";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { convertAmount, CURRENCY_RATE_DATE, formatAmount, type Currency } from "@/lib/currencyRates";
 import { toolMonthlyCost } from "@/lib/stackCost";
@@ -59,6 +60,8 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
   const freemiumCount = tools.filter((tool) => stackCatalogPrice(tool, lang) === "Freemium").length;
   const undeclared = tools.filter((tool) => toolMonthlyCost(tool, paid.isPaid, lang).kind === "freemium-free").length;
   const unknown = tools.filter((tool) => toolMonthlyCost(tool, paid.isPaid, lang).kind === "unknown").length;
+  // Costs the person set themselves (a plan with seats, or the real amount).
+  const adjusted = tools.filter((tool) => { const cost = toolMonthlyCost(tool, paid.isPaid, lang); return cost.kind === "paid" && cost.source !== "catalog"; }).length;
   const shade = (i: number) => (lines.length > 1 ? 1 - (i / (lines.length - 1)) * 0.72 : 1);
   const r = 76, c = 2 * Math.PI * r, gap = 3;
   let offset = 0;
@@ -77,11 +80,9 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
         </div>
         {zoomed
           ? <button type="button" className="ms-zoom-back" onClick={() => { setZoom(null); setFocus(null); }}><ChevronLeft size={16} aria-hidden />{en ? "All areas" : "Tous les domaines"}</button>
-          : total > 0 && areaLines.length > 1 && <div className="ms-size-switch" role="group" aria-label={en ? "Breakdown" : "Répartition"}>
-            {([["area", en ? "Areas" : "Domaines"], ["tool", en ? "Tools" : "Outils"]] as const).map(([key, label]) => (
-              <button key={key} type="button" aria-pressed={view === key} onClick={() => { setView(key); setFocus(null); }}>{label}</button>
-            ))}
-          </div>}
+          : total > 0 && areaLines.length > 1 && <Segmented ariaLabel={en ? "Breakdown" : "Répartition"} value={view}
+            options={[{ value: "area", label: en ? "Areas" : "Domaines" }, { value: "tool", label: en ? "Tools" : "Outils" }]}
+            onChange={(key) => { setView(key); setFocus(null); }} />}
       </header>
       {total > 0 && <div className="sg-budget-viz sg-budget-viz--share" onMouseLeave={() => setFocus(null)}>
         <svg className="sg-donut" viewBox="0 0 200 200" role="img" aria-label={en ? `Monthly cost breakdown: about ${money(total)}` : `Répartition du coût mensuel : environ ${money(total)}`}>
@@ -116,8 +117,8 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
       </div>}
       <p className="ms-tile-note">
         {en
-          ? `Catalogue entry plans, not your invoices. Converted to ${currency} at the site's rate of ${rateDate}.${unknown > 0 ? ` ${unknown} without a checked price.` : ""}`
-          : `Offres d’entrée du catalogue, pas vos factures. Converti en ${currency} au taux du ${rateDate}.${unknown > 0 ? ` ${unknown} sans prix relevé.` : ""}`}
+          ? `${adjusted > 0 ? `${adjusted} cost${adjusted > 1 ? "s" : ""} set by you, the rest from` : "From"} catalogue entry-level plans, not your invoices. Converted to ${currency} at the site's rate of ${rateDate}.${unknown > 0 ? ` ${unknown} without a checked price: open a tool to enter what you pay.` : ""}`
+          : `${adjusted > 0 ? `${adjusted} coût${adjusted > 1 ? "s" : ""} ajusté${adjusted > 1 ? "s" : ""} par vous, le reste d’après les` : "D’après les"} offres d’entrée de gamme du catalogue, pas vos factures. Converti en ${currency} au taux du ${rateDate}.${unknown > 0 ? ` ${unknown} sans prix relevé : ouvrez un outil pour saisir ce que vous payez.` : ""}`}
         {freemiumCount > 0 && <> {en ? `${undeclared} of ${freemiumCount} freemium counted as free.` : `${undeclared} freemium sur ${freemiumCount} comptés gratuits.`} <button type="button" className="ms-inline-link" onClick={onFreemium}>{en ? "Edit" : "Modifier"}</button></>}
       </p>
     </section>

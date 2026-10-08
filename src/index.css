@@ -35224,3 +35224,493 @@ img[data-logo-loading] {
    tint behind it). Meaning-carrying colour is kept for areas (hero, budget)
    and orange for what is paid twice, so the overlap chip stays neutral. */
 .ms-page .ms-card-overlap { background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
+/* Adjust my cost, in the tool sheet (portal, not scoped to .ms-page). */
+.ms-ts-adjust { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; min-height: 52px; padding: 10px 16px; text-align: left; box-shadow: inset 0 1px 0 hsl(var(--border) / .8); font: 600 14.5px/1.35 var(--font-ui); }
+.ms-ts-adjust > span { display: grid; gap: 2px; }
+.ms-ts-adjust small { color: hsl(var(--muted-foreground)); font: 500 12.5px/1.3 var(--font-ui); }
+.ms-ts-adjust svg { transition: transform 200ms ease; }
+.ms-ts-adjust[aria-expanded="true"] svg { transform: rotate(180deg); }
+.ms-ts-adjust:hover { background: hsl(var(--secondary) / .5); }
+.ms-cost-editor { display: grid; gap: 16px; padding: 4px 16px 16px; }
+.ms-ce-block { display: grid; gap: 8px; }
+.ms-ce-label { margin: 0; color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-ce-plans { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
+.ms-ce-plan { display: grid; gap: 2px; padding: 10px 12px; border-radius: 14px; background: hsl(var(--secondary) / .6); text-align: left; transition: box-shadow 160ms ease, background-color 160ms ease; }
+.ms-ce-plan strong { font: 600 14px/1.25 var(--font-ui); }
+.ms-ce-plan small { color: hsl(var(--muted-foreground)); font: 500 12px/1.3 var(--font-ui); }
+.ms-ce-plan:hover { background: hsl(var(--secondary)); }
+.ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: 0 0 0 2px hsl(var(--foreground)); }
+.ms-ce-seats { grid-template-columns: 1fr auto; align-items: center; }
+.ms-ce-stepper { display: inline-flex; align-items: center; gap: 4px; padding: 3px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); }
+.ms-ce-stepper button { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: hsl(var(--card)); box-shadow: 0 1px 2px rgba(15, 15, 15, .08); }
+.ms-ce-stepper button:disabled { opacity: .4; }
+.ms-ce-stepper output { min-width: 32px; text-align: center; font: 650 16px/1 var(--font-ui); font-variant-numeric: tabular-nums; }
+.ms-ce-custom { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ms-ce-input { display: inline-flex; align-items: center; gap: 6px; height: 40px; padding: 0 14px; border-radius: 12px; background: hsl(var(--secondary) / .6); box-shadow: inset 0 0 0 1px hsl(var(--border)); }
+.ms-ce-input:focus-within { box-shadow: inset 0 0 0 2px hsl(var(--foreground)); background: hsl(var(--card)); }
+.ms-ce-input input { width: 88px; border: 0; background: none; font: 650 16px/1 var(--font-ui); font-variant-numeric: tabular-nums; outline: none; }
+.ms-ce-input span { color: hsl(var(--muted-foreground)); font: 600 15px/1 var(--font-ui); }
+.ms-cost-editor .ms-size-switch { display: inline-flex; gap: 2px; padding: 2px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); }
+.ms-cost-editor .ms-size-switch button { height: 32px; padding: 0 12px; border-radius: var(--radius-pill); color: hsl(var(--muted-foreground)); font: 500 13px/1 var(--font-ui); }
+.ms-cost-editor .ms-size-switch button[aria-pressed="true"] { background: hsl(var(--card)); color: hsl(var(--foreground)); font-weight: 600; box-shadow: 0 1px 2px rgba(15, 15, 15, .08); }
+.ms-ce-reset { justify-self: start; padding: 0; color: hsl(var(--foreground)); font: 600 13px/1.3 var(--font-ui); text-decoration: underline; text-underline-offset: 3px; }
+.ms-cost-editor .ms-ce-currency button { min-width: 36px; padding: 0 10px; font-weight: 600; }
+/* Tool sheet: nothing gets squeezed (the sheet scrolls as a whole), and
+   plans read as a settings list, whatever their number or name length. */
+.ms-tool-sheet.ms-tool-sheet > * { flex-shrink: 0; }
+.ms-ce-plans { grid-template-columns: 1fr; gap: 0; overflow: hidden; border-radius: 14px; background: hsl(var(--secondary) / .6); }
+.ms-ce-plan { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 14px; border-radius: 0; background: none; }
+.ms-ce-plan + .ms-ce-plan { box-shadow: inset 0 1px 0 hsl(var(--border) / .8); }
+.ms-ce-plan strong { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 2; -webkit-box-orient: vertical; min-width: 0; }
+.ms-ce-plan small { flex: none; max-width: 48%; text-align: right; }
+.ms-ce-plan:hover { background: hsl(var(--secondary)); }
+.ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: inset 0 0 0 2px hsl(var(--foreground)); border-radius: 14px; }
+.ms-ce-plan[aria-checked="true"] + .ms-ce-plan { box-shadow: none; }
+
+/* Motion without jumps (8 Oct 2026). Rule: nothing changes size or position
+   abruptly. Blocks that come and go open in height (tt-collapse, 0fr to 1fr),
+   a changed figure fades up once (tt-value, never on first paint), a picked
+   plan only changes its fill and shows a check whose room is reserved. */
+.tt-collapse { display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows 360ms cubic-bezier(.4, 0, .2, 1), opacity 240ms ease; }
+.tt-collapse[data-open] { grid-template-rows: 1fr; opacity: 1; }
+.tt-collapse-inner { min-height: 0; overflow: hidden; }
+.tt-value { display: inline-block; }
+.tt-value--changed { animation: tt-value-in 260ms cubic-bezier(.2, .8, .2, 1); }
+@keyframes tt-value-in { from { opacity: 0; transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .tt-collapse { transition: none; } .tt-value--changed { animation: none; } }
+
+/* Cost editor: spacing lives inside what collapses, so a closed block leaves no gap. */
+.ms-cost-editor { gap: 0; padding: 0 16px 16px; }
+.ms-cost-editor > * + * { margin-top: 16px; }
+.ms-cost-editor > .tt-collapse { margin-top: 0; }
+.ms-cost-editor > .tt-collapse > .tt-collapse-inner > * { margin-top: 16px; }
+.ms-cost-editor > :first-child { margin-top: 4px; }
+/* Plans: same geometry selected or not; fill and check only. */
+.ms-ce-plan { display: grid; grid-template-columns: minmax(0, 1fr) auto 16px; align-items: center; gap: 12px; border-radius: 0; animation: none; }
+.ms-ce-plan small { max-width: none; }
+.ms-ce-plan[aria-checked="true"] { background: hsl(var(--card)); box-shadow: none; border-radius: 0; animation: none; }
+.ms-ce-plan + .ms-ce-plan, .ms-ce-plan[aria-checked="true"] + .ms-ce-plan { box-shadow: inset 0 1px 0 hsl(var(--border) / .8); }
+.ms-ce-plan[aria-checked="true"] strong { color: hsl(var(--foreground)); }
+.ms-ce-check { display: grid; place-items: center; width: 16px; height: 16px; color: hsl(var(--foreground)); opacity: 0; transform: scale(.6); transition: opacity 160ms ease, transform 220ms cubic-bezier(.2, .8, .2, 1); }
+.ms-ce-plan[aria-checked="true"] .ms-ce-check { opacity: 1; transform: none; }
+.ms-ce-plan:active, .ms-cost-editor .ms-size-switch button:active { transform: none; }
+.ms-ce-stepper button { transition: background-color 160ms ease, transform 120ms ease; }
+.ms-ce-stepper button:active:not(:disabled) { transform: scale(.92); }
+.ms-ce-stepper output { display: grid; place-items: center; min-width: 36px; }
+/* What I really pay: a fixed layout, amount and currency on one line, period below. */
+.ms-ce-custom { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px; }
+.ms-ce-custom > .ms-size-switch:last-child { grid-column: 1 / -1; justify-self: start; }
+.ms-ce-input { width: 100%; box-sizing: border-box; }
+.ms-ce-input input { width: 100%; min-width: 0; }
+/* Sheet cost row: variable text never wraps, so the row keeps its height. */
+.ms-ts-row > span { flex: 1; min-width: 0; }
+.ms-ts-row small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-ts-row strong { flex: none; white-space: nowrap; }
+/* Plans list, iOS settings: one fill for every row; only the check (and a
+   bolder name) marks the picked plan. */
+.ms-ce-plans { background: hsl(var(--card)); box-shadow: inset 0 0 0 1px hsl(var(--border)); }
+.ms-ce-plan, .ms-ce-plan[aria-checked="true"] { background: transparent; }
+.ms-ce-plan:hover { background: hsl(var(--secondary) / .5); }
+.ms-ce-plan strong { font-weight: 500; }
+.ms-ce-plan[aria-checked="true"] strong { font-weight: 650; }
+.ms-ce-check { color: #0E9F6E; }
+/* ── Lightness and tactility (8 Oct 2026) ──
+   Air and fine lines; micro-interactions that feel solid (a sliding thumb, a
+   switch that stretches under the finger, buttons that press) with a light
+   playful touch (a rolling counter, a "no" shake, a check that draws). No
+   geometry ever changes: thumbs and counters move inside fixed boxes. */
+
+/* Segmented control with a sliding thumb (portal-safe, not scoped). */
+.tt-seg { position: relative; display: inline-grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); padding: 3px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); isolation: isolate; }
+.tt-seg-thumb { position: absolute; z-index: -1; top: 3px; bottom: 3px; left: 3px; width: calc((100% - 6px) / var(--n)); border-radius: var(--radius-pill); background: hsl(var(--card)); box-shadow: 0 1px 2px rgba(15, 15, 15, .08), 0 3px 10px rgba(15, 15, 15, .06); transform: translateX(calc(var(--i) * 100%)); transition: transform 420ms cubic-bezier(.34, 1.3, .64, 1); }
+.tt-seg button { height: 30px; padding: 0 14px; border-radius: var(--radius-pill); background: none; color: hsl(var(--muted-foreground)); font: 600 13px/1 var(--font-ui); white-space: nowrap; transition: color 200ms ease; }
+.tt-seg button[aria-pressed="true"] { color: hsl(var(--foreground)); }
+.tt-seg button:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 1px; }
+/* In a grey tile: white track, dark thumb, like the previous switch. */
+.ms-page .ms-tile .tt-seg { background: hsl(var(--card)); }
+.ms-page .ms-tile .tt-seg-thumb { background: hsl(var(--foreground)); box-shadow: none; }
+.ms-page .ms-tile .tt-seg button[aria-pressed="true"] { color: hsl(var(--background)); }
+
+/* Rolling counter and the "no" shake. */
+.ms-ce-stepper output { position: relative; height: 32px; overflow: hidden; }
+.ms-ce-stepper button[aria-disabled="true"] { opacity: .45; }
+@media (prefers-reduced-motion: no-preference) {
+  .tt-value--up { animation: tt-roll-up 340ms cubic-bezier(.2, .8, .2, 1); }
+  .tt-value--down { animation: tt-roll-down 340ms cubic-bezier(.2, .8, .2, 1); }
+  .ms-ce-stepper[data-refused="a"] { animation: tt-shake-a 380ms cubic-bezier(.36, .07, .19, .97); }
+  .ms-ce-stepper[data-refused="b"] { animation: tt-shake-b 380ms cubic-bezier(.36, .07, .19, .97); }
+}
+@keyframes tt-roll-up { from { opacity: 0; transform: translateY(80%); } }
+@keyframes tt-roll-down { from { opacity: 0; transform: translateY(-80%); } }
+@keyframes tt-shake-a { 20% { transform: translateX(-4px); } 40% { transform: translateX(4px); } 60% { transform: translateX(-3px); } 80% { transform: translateX(2px); } }
+@keyframes tt-shake-b { 20% { transform: translateX(-4px); } 40% { transform: translateX(4px); } 60% { transform: translateX(-3px); } 80% { transform: translateX(2px); } }
+
+/* A check that draws itself. */
+.ms-ce-check { opacity: 1; transform: none; color: #0E9F6E; }
+.ms-ce-check path { stroke-dasharray: 14; stroke-dashoffset: 14; transition: stroke-dashoffset 320ms cubic-bezier(.2, .8, .2, 1) 40ms; }
+.ms-ce-plan[aria-checked="true"] .ms-ce-check path { stroke-dashoffset: 0; }
+
+/* A switch that stretches under the finger. */
+.ms-switch-track > span { transition: transform 360ms cubic-bezier(.34, 1.3, .64, 1), width 220ms cubic-bezier(.34, 1.3, .64, 1); }
+.ms-switch:active .ms-switch-track > span { width: 26px; }
+.ms-switch[aria-checked="true"]:active .ms-switch-track > span { transform: translateX(10px); }
+
+/* Buttons that press. */
+.ms-ts-profile, .ms-ts-compare, .ms-ce-stepper button, .ms-pair-decide, .ms-pair-actions .ms-pair-compare, .ms-quiet-button, .ms-calibrate-go, .ms-calibrate-skip { transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1), background-color 160ms ease, color 160ms ease; }
+.ms-ts-profile:active, .ms-ts-compare:active, .ms-ce-stepper button:active:not([aria-disabled="true"]), .ms-pair-decide:active, .ms-pair-actions .ms-pair-compare:active, .ms-quiet-button:active, .ms-calibrate-go:active, .ms-calibrate-skip:active { transform: scale(.96); }
+@media (prefers-reduced-motion: reduce) { .tt-seg-thumb, .ms-switch-track > span, .ms-ce-check path { transition: none; } }
+
+/* Tool sheet with air: more room, fine lines, the cost as its figure. */
+.ms-tool-sheet.ms-tool-sheet { gap: 28px; padding: 36px 28px 28px; }
+.ms-ts-head { gap: 16px; }
+.ms-ts-head > :first-child { border-radius: 16px; box-shadow: 0 14px 34px color-mix(in srgb, var(--tool-accent, #8E8E93) 30%, transparent), 0 0 0 .5px rgba(15, 15, 15, .08); }
+.ms-ts-title { font-size: 28px; }
+.ms-ts-lead { margin-top: -10px; font-size: 15px; line-height: 1.6; }
+.ms-ts-group { border-radius: 22px; box-shadow: 0 0 0 .5px hsl(var(--border)), 0 1px 2px rgba(15, 15, 15, .03); }
+.ms-ts-cost { display: grid; gap: 2px; padding: 20px 20px 18px; }
+.ms-ts-cost-label { color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-ts-cost-value { margin-top: 4px; font: 650 34px/1.1 var(--font-brand); letter-spacing: -.035em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ms-ts-cost-source { overflow: hidden; color: hsl(var(--muted-foreground)); font: 500 13px/1.4 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+.ms-ts-row + .ms-ts-row, .ms-ts-cost + .ms-ts-row { box-shadow: inset 0 .5px 0 hsl(var(--border)); }
+.ms-ts-adjust { box-shadow: inset 0 .5px 0 hsl(var(--border)); padding: 12px 20px; }
+.ms-ts-adjust svg { box-sizing: content-box; padding: 6px; border-radius: 50%; background: hsl(var(--secondary)); }
+.ms-ts-row { padding: 12px 20px; }
+.ms-cost-editor { padding: 0 20px 20px; }
+.ms-ts-section h3, .ms-ts-group h3 { letter-spacing: .1em; }
+.ms-ts-uses li { background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)); }
+.ms-ts-pairs li { box-shadow: 0 0 0 .5px hsl(var(--border)); }
+.ms-ce-plans { box-shadow: inset 0 0 0 .5px hsl(var(--border)); }
+.ms-ce-plan + .ms-ce-plan, .ms-ce-plan[aria-checked="true"] + .ms-ce-plan { box-shadow: inset 0 .5px 0 hsl(var(--border)); }
+.ms-ce-input { box-shadow: inset 0 0 0 .5px hsl(var(--border)); }
+@media (max-width: 640px) { .ms-tool-sheet.ms-tool-sheet { gap: 22px; padding: 28px 18px 20px; } .ms-ts-cost-value { font-size: 30px; } }
+.ms-ce-custom > .tt-seg:last-child { grid-column: 1 / -1; justify-self: start; }
+.ms-tool-sheet:focus { outline: none; }
+/* The tool sheet and its veil sit above the app's fixed bars (mobile tab bar). */
+.ms-sheet-overlay.ms-sheet-overlay { z-index: 1200; }
+.ms-tool-sheet.ms-tool-sheet { z-index: 1201; }
+/* Change what I pay: a form with a preview and an explicit commit. */
+.ms-cost-editor > .ms-ce-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 16px; margin-top: 20px; padding-top: 16px; box-shadow: inset 0 .5px 0 hsl(var(--border)); }
+.ms-ce-preview { display: grid; gap: 2px; margin: 0; min-width: 0; }
+.ms-ce-preview > span { color: var(--color-text-muted); font: 600 11px/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; }
+.ms-ce-preview strong { font: 650 20px/1.15 var(--font-brand); letter-spacing: -.02em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ms-ce-actions { display: flex; align-items: center; gap: 6px; margin-left: auto; }
+.ms-ce-cancel { height: 40px; padding: 0 16px; border-radius: var(--radius-pill); color: hsl(var(--foreground)); font: 600 14px/1 var(--font-ui); transition: background-color 160ms ease, transform 200ms cubic-bezier(.34, 1.4, .64, 1); }
+.ms-ce-cancel:hover { background: hsl(var(--secondary)); }
+.ms-ce-save { min-height: 40px; padding: 0 20px; border-radius: var(--radius-pill); transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1), background-color 160ms ease; }
+.ms-ce-cancel:active, .ms-ce-save:active { transform: scale(.96); }
+.ms-ce-cancel:focus-visible, .ms-ce-save:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+/* Plan rows on two levels: the full name, then the price (amount first,
+   conditions quieter); the check stays on the right, room reserved. */
+.ms-ce-plan { grid-template-columns: minmax(0, 1fr) 16px; grid-template-areas: "name check" "price check"; row-gap: 3px; padding: 12px 14px; }
+.ms-ce-plan strong { grid-area: name; -webkit-line-clamp: 2; }
+.ms-ce-plan small { grid-area: price; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; max-width: none; text-align: left; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.35 var(--font-ui); }
+.ms-ce-plan small b { color: hsl(var(--foreground)); font-weight: 600; font-variant-numeric: tabular-nums; }
+.ms-ce-plan .ms-ce-check { grid-area: check; align-self: center; }
+/* Plan rows as a price list: name and amount on line one (amounts aligned
+   for comparison), conditions under the name, check on the far right. */
+.ms-ce-plan { grid-template-columns: minmax(0, 1fr) auto 16px; grid-template-areas: "name amount check" "terms terms check"; column-gap: 12px; row-gap: 2px; padding: 12px 14px; }
+.ms-ce-plan strong { grid-area: name; align-self: baseline; -webkit-line-clamp: 2; }
+.ms-ce-amount { grid-area: amount; align-self: baseline; color: hsl(var(--foreground)); font: 600 14px/1.25 var(--font-ui); font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
+.ms-ce-plan small { grid-area: terms; display: block; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.35 var(--font-ui); text-align: left; }
+.ms-ce-plan .ms-ce-check { grid-area: check; grid-row: 1 / -1; align-self: center; }
+/* Tool sheet actions for a tool already in my stack: alternatives to
+   consider (with the gap to what I pay), open it, its profile, remove. */
+.ms-ts-alts li { grid-template-columns: minmax(0, 1fr) auto auto; }
+.ms-ts-alts .ms-ts-other { color: inherit; text-decoration: none; }
+.ms-ts-gap { display: inline-flex; align-items: center; height: 24px; padding: 0 10px; border-radius: var(--radius-pill); background: hsl(var(--secondary)); color: hsl(var(--muted-foreground)); font: 600 12px/1 var(--font-ui); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ms-ts-gap.is-less { background: color-mix(in srgb, #0E9F6E 12%, hsl(var(--card))); color: color-mix(in srgb, #0E9F6E 80%, #000); }
+.ms-ts-foot-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 8px; }
+.ms-ts-open { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 46px; border-radius: var(--radius-pill); text-decoration: none; }
+.ms-ts-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 46px; border-radius: var(--radius-pill); background: hsl(var(--card)); box-shadow: inset 0 0 0 .5px hsl(var(--border)); color: hsl(var(--foreground)); font: 600 14px/1 var(--font-ui); text-decoration: none; transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1), background-color 160ms ease; }
+.ms-ts-secondary:hover { background: hsl(var(--secondary)); }
+.ms-ts-open, .ms-ts-secondary { transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1), background-color 160ms ease; }
+.ms-ts-open:active, .ms-ts-secondary:active { transform: scale(.97); }
+.ms-ts-open:focus-visible, .ms-ts-secondary:focus-visible, .ms-ts-pricing:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+.ms-ts-pricing { justify-self: start; display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; color: hsl(var(--foreground)); font: 600 13px/1.3 var(--font-ui); text-decoration: none; }
+.ms-ts-pricing:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ms-ts-pricing svg { transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1); }
+.ms-ts-pricing:hover svg { transform: translateX(3px); }
+.ms-ts-adjust:focus:not(:focus-visible) { outline: none; }
+/* Tool sheet close: a real 36px button, sticky at the top right while the
+   sheet scrolls; the shared Sheet's faint cross is hidden here only. */
+.ms-tool-sheet > button.absolute { display: none; }
+.ms-ts-close {
+  position: sticky; top: 0; z-index: 3; order: -1; align-self: flex-end; flex-shrink: 0;
+  display: grid; place-items: center; width: 36px; height: 36px; margin: -16px -8px -64px 0;
+  border-radius: 50%; background: hsl(var(--card)); color: hsl(var(--foreground));
+  box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 8px rgba(15, 15, 15, .08);
+  transition: background-color 160ms ease, transform 200ms cubic-bezier(.34, 1.4, .64, 1), box-shadow 160ms ease;
+}
+.ms-ts-close:hover { background: hsl(var(--secondary)); }
+.ms-ts-close:active { transform: scale(.92); }
+.ms-ts-close:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 2px; }
+.ms-ts-head { padding-right: 44px; }
+/* A roomier sheet, and alternative rows that never squeeze a name. */
+@media (min-width: 641px) { .ms-tool-sheet.ms-tool-sheet { width: min(520px, 100vw); } }
+.ms-ts-alts li { grid-template-columns: minmax(0, 1fr) auto; }
+.ms-ts-alts .ms-ts-other > span { gap: 3px; }
+.ms-ts-alts .ms-ts-other strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-ts-alts .ms-ts-other small { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; overflow: visible; white-space: normal; }
+.ms-ts-alts .ms-ts-gap { height: 22px; padding: 0 8px; font-size: 12px; }
+/* Close button: not sticky (Michael, 8 Oct 2026); top right, scrolls with the sheet. */
+.ms-ts-close { position: absolute; top: 20px; right: 20px; margin: 0; order: 0; align-self: auto; }
+/* Tool cards say they open something: a chevron, as on the Stack pages,
+   quiet at rest, darker and nudged on hover; at the row's end on phones. */
+.ms-page .ms-tool.ms-tool-card { position: relative; }
+.ms-page .ms-card-chevron { position: absolute; top: 22px; right: 16px; color: hsl(var(--muted-foreground) / .6); transition: transform 240ms cubic-bezier(.34, 1.4, .64, 1), color 160ms ease; }
+.ms-page .ms-tool.ms-tool-card:hover .ms-card-chevron, .ms-page .ms-tool.ms-tool-card:focus-visible .ms-card-chevron { color: hsl(var(--foreground)); transform: translateX(3px); }
+.ms-page .ms-card-top { padding-right: 40px; }
+@media (max-width: 640px) {
+  .ms-page .ms-card-chevron { position: static; flex: none; margin-right: 12px; }
+  .ms-page .ms-card-top { padding-right: 0; }
+  .ms-page .ms-card-foot { padding-right: 4px; }
+}
+/* Long names wrap on two lines rather than lose their end to the chevron. */
+@media (min-width: 641px) {
+  .ms-page .ms-card-chevron { top: 37px; right: 14px; }
+  .ms-page .ms-card-top { padding-right: 36px; }
+  .ms-page .ms-card-id strong { display: -webkit-box; overflow: hidden; white-space: normal; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-height: 1.2; }
+}
+@media (min-width: 641px) { .ms-page .ms-card-top { flex: 1; } .ms-page .ms-card-foot { margin-top: 0; } }
+/* "Manage ›" instead of a bare chevron: the card names its action. */
+.ms-page .ms-card-chevron { display: none; }
+.ms-page .ms-card-action { position: absolute; top: 18px; right: 14px; display: inline-flex; align-items: center; gap: 2px; height: 26px; padding: 0 6px 0 10px; border-radius: var(--radius-pill); background: hsl(var(--card) / .7); color: hsl(var(--muted-foreground)); font: 600 12.5px/1 var(--font-ui); transition: background-color 160ms ease, color 160ms ease; }
+.ms-page .ms-card-action svg { transition: transform 240ms cubic-bezier(.34, 1.4, .64, 1); }
+.ms-page .ms-tool.ms-tool-card:hover .ms-card-action, .ms-page .ms-tool.ms-tool-card:focus-visible .ms-card-action { background: hsl(var(--foreground)); color: hsl(var(--background)); }
+.ms-page .ms-tool.ms-tool-card:hover .ms-card-action svg { transform: translateX(2px); }
+.ms-page .ms-card-top { padding-right: 84px; }
+/* A missing price reads as the next thing to do. */
+.ms-page .ms-card-price--none { color: hsl(var(--foreground)); font-weight: 600; text-decoration: underline; text-decoration-color: hsl(var(--muted-foreground) / .5); text-underline-offset: 3px; }
+@media (max-width: 640px) {
+  .ms-page .ms-card-action { position: static; flex: none; margin-right: 10px; padding: 0; background: none; }
+  .ms-page .ms-card-action > span { display: none; }
+  .ms-page .ms-card-top { padding-right: 0; }
+  .ms-page .ms-tool.ms-tool-card:hover .ms-card-action { background: none; color: hsl(var(--foreground)); }
+}
+/* Room for "Manage": the area line keeps its words (it shrinks under the
+   action only on the first line, the name; the area wraps under). */
+@media (min-width: 641px) {
+  .ms-page .ms-card-top { padding-right: 20px; }
+  .ms-page .ms-card-id strong { padding-right: 70px; }
+}
+/* Card layout v3 (8 Oct 2026): identity on top (name in full, area, overlap
+   chip), money and the action at the bottom. */
+@media (min-width: 641px) {
+  .ms-page .ms-card-top { padding-right: 20px; align-items: flex-start; }
+  .ms-page .ms-card-id strong { padding-right: 0; }
+  .ms-page .ms-card-id .ms-card-overlap { justify-self: start; margin-top: 6px; max-width: 100%; }
+  .ms-page .ms-card-action { position: static; flex: none; }
+}
+.ms-page .ms-card-foot { gap: 10px; }
+/* Area tabs (8 Oct 2026): one ink line slides and resizes to the active tab;
+   every tab keeps the same weight so the row never shifts; color marks the
+   active one. */
+.ms-page .ms-tools-section .ms-domain-filters { position: relative; scroll-behavior: smooth; }
+.ms-page .ms-domain-filters button { border-bottom-color: transparent !important; font-weight: 500; transition: color 200ms ease; }
+.ms-page .ms-domain-filters button[aria-pressed="true"] { color: hsl(var(--foreground)); font-weight: 500; }
+.ms-page .ms-domain-filters button:hover { color: hsl(var(--foreground)); }
+.ms-page .ms-tab-ink { position: absolute; left: 0; bottom: 0; height: 2px; border-radius: 2px; background: hsl(var(--foreground)); pointer-events: none; transition: transform 420ms cubic-bezier(.34, 1.2, .64, 1), width 420ms cubic-bezier(.34, 1.2, .64, 1); }
+@media (prefers-reduced-motion: reduce) { .ms-page .ms-tab-ink { transition: none; } .ms-page .ms-tools-section .ms-domain-filters { scroll-behavior: auto; } }
+/* Area tabs as a pill track (8 Oct 2026): the same family as the segmented
+   controls of the page. A dark thumb slides and resizes behind the active
+   tab, its label turns white; counts stay readable on both. */
+.ms-page .ms-tools-section .ms-domain-filters {
+  gap: 2px; width: fit-content; max-width: 100%; margin: -8px 0 24px; padding: 4px;
+  border: 0; border-radius: var(--radius-pill); background: var(--color-surface-soft);
+  box-shadow: inset 0 0 0 .5px hsl(var(--border)); scrollbar-width: none; isolation: isolate;
+}
+.ms-page .ms-tools-section .ms-domain-filters::-webkit-scrollbar { display: none; }
+.ms-page .ms-tools-section .ms-domain-filters button {
+  position: relative; z-index: 1; min-height: 36px; padding: 0 14px; gap: 6px; border: 0; border-radius: var(--radius-pill);
+  color: hsl(var(--muted-foreground)); font: 500 14px/1 var(--font-ui); transition: color 220ms ease;
+}
+.ms-page .ms-tools-section .ms-domain-filters button:hover { color: hsl(var(--foreground)); }
+.ms-page .ms-tools-section .ms-domain-filters button[aria-pressed="true"] { color: hsl(var(--background)); }
+.ms-page .ms-tools-section .ms-domain-filters button > span { min-width: 0; height: auto; padding: 0; background: none; color: inherit; opacity: .55; font: 500 12.5px/1 var(--font-ui); font-variant-numeric: tabular-nums; }
+.ms-page .ms-tools-section .ms-domain-filters button[aria-pressed="true"] > span { color: inherit; opacity: .7; }
+.ms-page .ms-tools-section .ms-domain-filters button:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 1px; }
+.ms-page .ms-tab-ink { top: 4px; bottom: 4px; height: auto; z-index: 0; border-radius: var(--radius-pill); background: hsl(var(--foreground)); box-shadow: 0 2px 8px rgba(15, 15, 15, .14); }
+@media (max-width: 640px) { .ms-page .ms-tools-section .ms-domain-filters { width: auto; } }
+/* Tabs: compact, a quiet keyboard ring inside the pill, edges that fade
+   only where tabs are hidden (the row says it scrolls, nothing is cut). */
+.ms-page .ms-tools-section .ms-domain-filters button { padding: 0 12px; gap: 5px; }
+.ms-page .ms-tools-section .ms-domain-filters button:focus { outline: none; }
+.ms-page .ms-tools-section .ms-domain-filters button:focus-visible { outline: none; box-shadow: inset 0 0 0 2px hsl(var(--ring) / .6); }
+.ms-page .ms-tools-section .ms-domain-filters[data-fade-start="true"][data-fade-end="true"] { -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); }
+.ms-page .ms-tools-section .ms-domain-filters[data-fade-start="false"][data-fade-end="true"] { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 48px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 48px), transparent); }
+.ms-page .ms-tools-section .ms-domain-filters[data-fade-start="true"][data-fade-end="false"] { -webkit-mask-image: linear-gradient(90deg, transparent, #000 48px); mask-image: linear-gradient(90deg, transparent, #000 48px); }
+/* Actions vs filters (8 Oct 2026): the tabs are a filled grey track; the
+   actions (Add, Edit) are white outlined buttons lifted off the page, so
+   what acts never looks like what filters. */
+.ms-page .ms-quiet-button {
+  height: 38px; padding: 0 16px; gap: 7px; background: hsl(var(--card)); color: hsl(var(--foreground));
+  box-shadow: inset 0 0 0 1px hsl(var(--border)), 0 1px 2px rgba(15, 15, 15, .05);
+  transition: box-shadow 180ms ease, background-color 160ms ease, color 160ms ease, transform 200ms cubic-bezier(.34, 1.4, .64, 1);
+}
+.ms-page .ms-quiet-button:hover { background: hsl(var(--card)); box-shadow: inset 0 0 0 1px hsl(var(--foreground) / .45), 0 2px 8px rgba(15, 15, 15, .08); }
+.ms-page .ms-quiet-button[aria-pressed="true"] { background: hsl(var(--foreground)); color: hsl(var(--background)); box-shadow: none; }
+.ms-page .ms-quiet-button:focus { outline: none; }
+.ms-page .ms-quiet-button:focus-visible { box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring) / .6); }
+/* Lighter tabs (8 Oct 2026): no track behind them, only the sliding dark
+   pill of the active tab, Apple-store style. */
+.ms-page .ms-tools-section .ms-domain-filters { padding: 2px 0; background: none; box-shadow: none; margin-left: -12px; }
+.ms-page .ms-tab-ink { top: 2px; bottom: 2px; box-shadow: none; }
+.ms-page .ms-tools-section .ms-domain-filters button:hover:not([aria-pressed="true"]) { color: hsl(var(--foreground)); background: hsl(var(--secondary) / .6); }
+@media (max-width: 640px) { .ms-page .ms-tools-section .ms-domain-filters { margin-left: -12px; margin-right: -12px; } }
+/* Overlap chip on a tinted band: translucent white with a hairline, clean on
+   any tool colour (a grey fill turned muddy on warm tints). */
+.ms-page .ms-card-overlap { background: hsl(var(--card) / .78); box-shadow: inset 0 0 0 .5px hsl(var(--border)); color: hsl(var(--foreground)); }
+/* Overlaps as a compact list (8 Oct 2026): one row per pair, no grey panel.
+   Icons overlapped, "A ⇄ B" with reason and costs under it, the amount paid
+   twice, then Compare (quiet) and Decide (small dark pill). */
+.ms-page .ms-pairs-panel { padding: 0; border-radius: 0; background: none; }
+.ms-page .ms-pairs-panel .ms-pairs { display: block; overflow: hidden; border-radius: 20px; background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)), 0 1px 2px rgba(15, 15, 15, .03); }
+.ms-page .ms-pairs-panel .ms-pair.ms-pair-row {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 16px;
+  height: auto; padding: 14px 18px; border: 0; border-radius: 0; background: none; transform: none; transition: background-color 160ms ease;
+}
+.ms-page .ms-pairs-panel .ms-pair.ms-pair-row:hover { transform: none; background: hsl(var(--secondary) / .45); }
+.ms-page .ms-pairs-panel .ms-pair-row + .ms-pair-row { box-shadow: inset 0 .5px 0 hsl(var(--border)); }
+.ms-page .ms-pair-icons { display: flex; flex: none; }
+.ms-page .ms-pair-icons > * { border-radius: 9px; box-shadow: 0 0 0 2px hsl(var(--card)); }
+.ms-page .ms-pair-icons > * + * { margin-left: -10px; }
+.ms-page .ms-pair-text { display: grid; gap: 2px; min-width: 0; }
+.ms-page .ms-pair-names { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; min-width: 0; }
+.ms-page .ms-pair-names button { padding: 0; color: hsl(var(--foreground)); font: 600 15px/1.3 var(--font-ui); text-align: left; }
+.ms-page .ms-pair-names button:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ms-page .ms-pair-x { color: color-mix(in srgb, #E8590C 75%, #000); font: 500 13px/1 var(--font-ui); }
+.ms-page .ms-pair-text small { overflow: hidden; color: hsl(var(--muted-foreground)); font: 500 12.5px/1.4 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .ms-pair-row .ms-pair-double { margin: 0; white-space: nowrap; }
+.ms-page .ms-pair-row .ms-pair-actions { display: flex; align-items: center; gap: 4px; padding: 0; }
+.ms-page .ms-pair-row .ms-pair-actions .ms-pair-compare { height: 32px; padding: 0 12px; background: none; color: hsl(var(--foreground)); font: 600 13px/1 var(--font-ui); }
+.ms-page .ms-pair-row .ms-pair-actions .ms-pair-compare:hover { background: hsl(var(--secondary)); }
+.ms-page .ms-pair-row .ms-pair-decide { height: 32px; padding: 0 14px; font-size: 13px; }
+.ms-page .ms-pairs-panel .ms-tile-more { margin: 14px 4px 0; }
+@media (max-width: 640px) {
+  .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr); gap: 10px 12px; padding: 14px; }
+  .ms-page .ms-pair-row .ms-pair-double { grid-column: 2; justify-self: start; }
+  .ms-page .ms-pair-row .ms-pair-double:empty { display: none; }
+  .ms-page .ms-pair-actions-wrap { grid-column: 1 / -1; justify-self: end; }
+}
+/* Three columns only: icons, text (names, then reason and what is paid
+   twice in orange), actions; names keep their room. */
+.ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr) auto; }
+.ms-page .ms-pair-double-text { color: color-mix(in srgb, #E8590C 82%, #000); font-weight: 600; }
+@media (max-width: 640px) { .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr); } }
+/* Pair icons: two 44px app icons side by side with soft shadows, the swap
+   badge sitting between them; names read as a sentence ("A et B"). */
+.ms-page .ms-pair-icons { position: relative; gap: 10px; }
+.ms-page .ms-pair-icons > :not(.ms-pair-swap) { border-radius: 12px; box-shadow: 0 4px 12px rgba(15, 15, 15, .08), 0 0 0 .5px rgba(15, 15, 15, .06); }
+.ms-page .ms-pair-icons > * + * { margin-left: 0; }
+.ms-page .ms-pair-swap { position: absolute; left: 50%; top: 50%; z-index: 1; display: grid; place-items: center; width: 22px; height: 22px; margin: 0; border-radius: 50%; background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 6px rgba(15, 15, 15, .1); color: color-mix(in srgb, #E8590C 80%, #000); font: 600 11px/1 var(--font-ui); transform: translate(-50%, -50%); }
+.ms-page .ms-pair-x { color: hsl(var(--muted-foreground)); font: 500 14px/1.3 var(--font-ui); }
+.ms-page .ms-pairs-panel .ms-pair.ms-pair-row { gap: 18px; padding: 14px 18px; }
+@media (max-width: 640px) { .ms-page .ms-pair-icons { gap: 8px; } }
+/* Separators pass (8 Oct 2026): on My stack, space and the editorial
+   headings already separate sections, so the hairlines above them go, and
+   so does the line between the hero lead and its figures. Kept: the
+   dividers between hero figures, between list rows (overlaps, sheet group)
+   and the one that opens the form's commit area. */
+.ms-page .sg-section.ms-section { border-top: 0; }
+.ms-page .ms-overlaps-section, .ms-page .ms-budget-section, .ms-page .ms-tools-section { margin-top: 48px; }
+.ms-page .ms-hero-stats { padding-top: 0; border-top: 0; margin-top: 32px; }
+@media (max-width: 640px) { .ms-page .ms-overlaps-section, .ms-page .ms-budget-section, .ms-page .ms-tools-section { margin-top: 24px; } }
+/* Phone hero (8 Oct 2026), iOS widgets: the logo cluster first (the image
+   that says "your stack"), then title and lead, then the three figures as
+   white widget tiles side by side. */
+@media (max-width: 760px) {
+  .ms-page .ms-hero.sg-hero--cluster { display: flex; flex-direction: column; }
+  .ms-page .ms-hero .sg-cluster { order: -1; width: 100%; max-width: 300px; margin: -12px auto 4px; }
+  .ms-page .ms-hero .sg-hero-copy { display: flex; flex-direction: column; }
+  .ms-page .ms-hero h1 { margin-top: 12px; }
+  .ms-page .ms-hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: none; gap: 8px; max-width: none; margin-top: 24px; padding: 0; border: 0; }
+  .ms-page .ms-hero-stats > div {
+    display: flex; flex-direction: column; grid-row: auto; grid-template-areas: none; min-width: 0;
+    padding: 12px 12px 14px; border: 0; border-radius: 18px; background: hsl(var(--card));
+    box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 8px rgba(15, 15, 15, .04);
+  }
+  .ms-page .ms-hero-stats > div:last-child { border: 0; }
+  .ms-page .ms-hero-stats .ms-stat--overlaps { padding: 12px 12px 14px; border: 0; background: hsl(var(--card)); }
+  .ms-page .ms-hero-stats dt { gap: 4px; font-size: 9.5px; letter-spacing: .06em; white-space: normal; line-height: 1.2; }
+  .ms-page .ms-hero-stats dt svg { width: 13px; height: 13px; }
+  .ms-page .ms-hero-stats dd { margin: 8px 0 0; font-size: clamp(19px, 5.6vw, 24px); white-space: nowrap; }
+  .ms-page .ms-hero-stats .ms-stat-bar { max-width: none; margin: 8px 0 6px; }
+  .ms-page .ms-hero-stats > div > span:not(.ms-stat-bar), .ms-page .ms-hero-stats .ms-stat-note, .ms-page .ms-hero-stats .ms-stat-link { font-size: 11.5px; line-height: 1.35; }
+  .ms-page .ms-hero-add { display: none; }
+}
+.ms-page .ms-stat-short { display: none; }
+@media (max-width: 760px) {
+  .ms-page .ms-hero .sg-hero-pill { align-self: flex-start; }
+  .ms-page .ms-hero-stats > div { align-items: flex-start; text-align: left; }
+  .ms-page .ms-hero-stats dd { text-align: left; }
+  .ms-page .ms-hero-stats dt { white-space: nowrap; }
+  .ms-page .ms-stat-full { display: none; }
+  .ms-page .ms-stat-short { display: inline; }
+  .ms-page .ms-hero-stats .ms-stat-bar { align-self: stretch; }
+  .ms-page .ms-stat-share { display: none; }
+}
+/* Vertical rhythm (8 Oct 2026), measured: one gap between sections (96px
+   desktop, 64px phone) instead of 92 / 136 / 56 / 88; in the phone hero,
+   tight inside a group (pill, title, lead: 12px), wider between groups
+   (icons to text 20px, text to widgets 24px). */
+.ms-page .sg-section.ms-section { padding-block: 0; }
+.ms-page .ms-overlaps-section, .ms-page .ms-budget-section, .ms-page .ms-tools-section { margin-top: 96px; }
+.ms-page .ms-calibrate { margin-top: 24px; }
+.ms-page .ms-tools-section { padding-bottom: 32px; }
+@media (max-width: 760px) {
+  .ms-page .ms-overlaps-section, .ms-page .ms-budget-section, .ms-page .ms-tools-section { margin-top: 64px; }
+  .ms-page .ms-calibrate { margin-top: 16px; }
+  .ms-page .ms-hero.sg-hero--cluster { padding-top: 20px; padding-bottom: 20px; }
+  .ms-page .ms-hero .sg-cluster { margin: 0 auto 20px; }
+  .ms-page .ms-hero .sg-hero-pill { margin: 0; }
+  .ms-page .ms-hero h1 { margin: 12px 0 0; }
+  .ms-page .ms-hero .sg-lead { margin: 12px 0 0; }
+  .ms-page .ms-hero-stats { margin-top: 24px; }
+}
+@media (max-width: 760px) { .ms-page .ms-hero .sg-cluster { margin-bottom: -8px; } }
+/* Widget tiles beat the desktop stat rules (first-child padding, the
+   overlaps column's square divider style) between 641 and 760px too. */
+@media (max-width: 760px) {
+  .ms-page .ms-hero-stats > div, .ms-page .ms-hero-stats > div:first-child, .ms-page .ms-hero-stats > div + div, .ms-page .ms-hero-stats > div.ms-stat--overlaps {
+    padding: 12px 12px 14px; border: 0; border-radius: 18px; background: hsl(var(--card));
+    box-shadow: 0 0 0 .5px hsl(var(--border)), 0 2px 8px rgba(15, 15, 15, .04);
+  }
+}
+/* 1. Phone tool list as one grouped list (8 Oct 2026): one white rounded
+   block, rows separated by an inset hairline, no per-row card, shadow or
+   tint; price on one quiet line, chevron at the end. */
+@media (max-width: 640px) {
+  .ms-page .ms-card-grid { gap: 0; overflow: hidden; border-radius: 20px; background: hsl(var(--card)); box-shadow: 0 0 0 .5px hsl(var(--border)); }
+  .ms-page .ms-card-wrap { animation: none; }
+  .ms-page .ms-tool.ms-tool-card, .ms-page .ms-tool.ms-tool-card:hover { min-height: 60px; border-radius: 0; background: none; box-shadow: none; transform: none; }
+  .ms-page .ms-card-wrap + .ms-card-wrap .ms-tool-card::before { content: ""; position: absolute; top: 0; left: 64px; right: 0; height: .5px; background: hsl(var(--border)); }
+  .ms-page .ms-card-top { padding: 10px 0 10px 14px; gap: 12px; background: none; }
+  .ms-page .ms-card-logo > * { width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important; border-radius: 9px !important; box-shadow: 0 0 0 .5px rgba(15, 15, 15, .08) !important; }
+  .ms-page .ms-card-id strong { font-size: 15px; font-weight: 600; }
+  .ms-page .ms-card-id span { font-size: 12.5px; }
+  .ms-page .ms-card-price { display: block; max-width: 120px; color: hsl(var(--muted-foreground)); font: 500 13px/1.3 var(--font-ui); text-align: right; }
+  .ms-page .ms-card-price small { display: none; }
+  .ms-page .ms-card-price strong { color: hsl(var(--muted-foreground)); font: 500 13px/1.3 var(--font-ui); }
+  .ms-page .ms-card-price--none { color: hsl(var(--foreground)); }
+  .ms-page .ms-card-action { margin-right: 12px; color: hsl(var(--muted-foreground) / .6); }
+  .ms-page .ms-card-grid[data-editing] .ms-card-remove { top: 50%; left: auto; right: 12px; transform: translateY(-50%); }
+}
+/* 2. Overlap rows: one line down to 480px; below, actions under the text,
+   aligned with it, and smaller icons. */
+@media (max-width: 640px) {
+  .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; }
+  .ms-page .ms-pair-actions-wrap { grid-column: auto; justify-self: end; }
+}
+@media (max-width: 480px) {
+  .ms-page .ms-pairs-panel .ms-pair.ms-pair-row { grid-template-columns: auto minmax(0, 1fr); row-gap: 8px; }
+  .ms-page .ms-pair-actions-wrap { grid-column: 2; justify-self: start; }
+  .ms-page .ms-pair-row .ms-pair-actions .ms-pair-compare { padding-left: 0; }
+  .ms-page .ms-pair-icons > :not(.ms-pair-swap) { width: 36px !important; height: 36px !important; min-width: 36px !important; min-height: 36px !important; }
+  .ms-page .ms-pair-icons { gap: 8px; }
+}
+/* 3. Hero figures in narrow desktop columns: short labels, never over a divider. */
+@media (min-width: 761px) and (max-width: 1180px) {
+  .ms-page .ms-stat-full { display: none; }
+  .ms-page .ms-stat-short { display: inline; }
+}
+@media (max-width: 640px) { .ms-page .ms-pair-text small { white-space: normal; } }

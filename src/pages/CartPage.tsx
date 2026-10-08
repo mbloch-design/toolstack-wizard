@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy } from "@/lib/icons";
+import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy, ChevronRight } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -22,6 +22,7 @@ import { convertAmount, formatAmount } from "@/lib/currencyRates";
 import { HERO_CLUSTER_SLOTS } from "@/lib/heroCluster";
 import { pairKey, useStackDecisions } from "@/hooks/useStackDecisions";
 import { trackEvent } from "@/lib/analytics";
+import ValueChange from "@/components/motion/ValueChange";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 
@@ -75,14 +76,14 @@ export default function CartPage() {
   const heroOrder = useMemo(() => {
     const monthly = (tool: ToolSummary) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0; };
     return [...selectedTools].sort((a, b) => monthly(b) - monthly(a) || a.name.localeCompare(b.name));
-  }, [selectedTools, plans.paid, currency, lang]);
+  }, [selectedTools, plans.paid, plans.choices, currency, lang]);
   const heroApps = heroOrder.length > HERO_CLUSTER_SLOTS.length ? heroOrder.slice(0, HERO_CLUSTER_SLOTS.length - 1) : heroOrder;
   const heroOverflow = heroOrder.length - heroApps.length;
   // Area colours of the budget ring, stable across the whole stack. Area colours stay those of the whole stack.
   const colorOf = (id: string) => AREA_COLORS[Math.max(0, mapTerritories.findIndex((territory) => territory.id === id)) % AREA_COLORS.length];
   // Hero micro-bars (Screen Time style): tools and cost split by area, in the
   // budget ring's colours, and the share of the cost that is paid twice.
-  const areaCosts = useMemo(() => mapTerritories.map((territory) => ({ id: territory.id, label: territory.label, tools: territory.tools.length, cost: stackMonthlyCost(territory.tools, plans.isPaid, currency, lang).total })), [mapTerritories, plans.paid, currency, lang]);
+  const areaCosts = useMemo(() => mapTerritories.map((territory) => ({ id: territory.id, label: territory.label, tools: territory.tools.length, cost: stackMonthlyCost(territory.tools, plans.isPaid, currency, lang).total })), [mapTerritories, plans.paid, plans.choices, currency, lang]);
   const amount = (value: number) => <><span className="ms-approx" aria-hidden="true">≈</span><span className="sr-only">≈ </span>{formatAmount(Math.round(value), currency, lang)}</>;
   // Freemium question (Michael, 7 Oct 2026): asked once per tool, at the start
   // of the story, because it sets both the budget and what is paid twice.
@@ -98,7 +99,7 @@ export default function CartPage() {
     }
   }
   // Hero and Overlaps section share one computation: same pairs, same amount.
-  const overlapScore = useMemo(() => scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang, decisions), [selectedTools, categories, plans.paid, currency, lang, decisions]);
+  const overlapScore = useMemo(() => scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang, decisions), [selectedTools, categories, plans.paid, plans.choices, currency, lang, decisions]);
   const overlapPairs = overlapScore.pairs.length;
   const empty = state.pinnedToolSlugs.length === 0;
   const showSearch = empty || searchOpen;
@@ -154,6 +155,79 @@ export default function CartPage() {
       action: { label: t("Annuler", "Undo"), onClick: () => restoreTool(entry, index) },
     });
   }
+  // Filter motion (FLIP): cards leaving the filter fade out first, the ones
+  // that stay glide to their new place, the ones arriving fade in, staggered.
+  // Motion explains the change instead of a jump. Off for reduced motion.
+  const gridRef = useRef<HTMLDivElement>(null);
+  const flipFrom = useRef<Map<string, DOMRect> | null>(null);
+  const filterToken = useRef(0);
+  const reducedMotion = () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function cardsById() {
+    return new Map([...(gridRef.current?.querySelectorAll<HTMLElement>("[data-flip-id]") || [])].map((el) => [el.dataset.flipId as string, el]));
+  }
+  function filterTo(id: string) {
+    // Clicking the active area again goes back to all tools.
+    const target = id !== "all" && id === activeFilter ? "all" : id;
+    if (target === activeFilter) return;
+    const token = ++filterToken.current;
+    const nextIds = new Set((target === "all" ? selectedTools : mapTerritories.find((territory) => territory.id === target)?.tools || []).map((tool) => tool.id));
+    if (reducedMotion()) { chooseDomain(target); return; }
+    const cards = cardsById();
+    const leaving = [...cards].filter(([cardId]) => !nextIds.has(cardId)).map(([, el]) => el);
+    const exits = leaving.map((el) => el.animate([{ opacity: 1, transform: "scale(1)" }, { opacity: 0, transform: "scale(.96)" }], { duration: 140, easing: "ease-in", fill: "forwards" }));
+    Promise.all(exits.map((animation) => animation.finished.catch(() => undefined))).then(() => {
+      if (token !== filterToken.current) return;
+      flipFrom.current = new Map([...cardsById()].map(([cardId, el]) => [cardId, el.getBoundingClientRect()]));
+      exits.forEach((animation) => animation.cancel());
+      chooseDomain(target);
+    });
+  }
+  useLayoutEffect(() => {
+    const from = flipFrom.current;
+    flipFrom.current = null;
+    if (!from || reducedMotion()) return;
+    let arriving = 0;
+    cardsById().forEach((el, cardId) => {
+      const before = from.get(cardId);
+      const now = el.getBoundingClientRect();
+      if (before) {
+        const dx = before.left - now.left, dy = before.top - now.top;
+        if (Math.abs(dx) > 0.5 || Math.abs(dy) > 0.5) el.animate([{ transform: `translate(${dx}px, ${dy}px)` }, { transform: "none" }], { duration: 420, easing: "cubic-bezier(.2, .8, .2, 1)" });
+      } else {
+        el.animate([{ opacity: 0, transform: "translateY(10px) scale(.97)" }, { opacity: 1, transform: "none" }], { duration: 320, delay: Math.min(arriving++ * 35, 280), easing: "cubic-bezier(.2, .8, .2, 1)", fill: "backwards" });
+      }
+    });
+  }, [activeFilter]);
+
+  // Tab ink: one underline that slides and resizes to the active tab.
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const [ink, setInk] = useState<{ left: number; width: number } | null>(null);
+  useLayoutEffect(() => {
+    const place = () => {
+      const active = tabsRef.current?.querySelector<HTMLElement>('button[aria-pressed="true"]');
+      if (!active) return;
+      setInk({ left: active.offsetLeft, width: active.offsetWidth });
+      // Keep the active tab in view when the row scrolls (phones).
+      const row = tabsRef.current!;
+      if (active.offsetLeft < row.scrollLeft || active.offsetLeft + active.offsetWidth > row.scrollLeft + row.clientWidth) {
+        row.scrollTo({ left: Math.max(0, active.offsetLeft - 32), behavior: reducedMotion() ? "auto" : "smooth" });
+      }
+    };
+    place();
+    // Fade the edges only where tabs are hidden, so the row says it scrolls.
+    const row = tabsRef.current;
+    const edges = () => {
+      if (!row) return;
+      row.dataset.fadeStart = row.scrollLeft > 2 ? "true" : "false";
+      row.dataset.fadeEnd = row.scrollLeft + row.clientWidth < row.scrollWidth - 2 ? "true" : "false";
+    };
+    edges();
+    row?.addEventListener("scroll", edges, { passive: true });
+    const onResize = () => { place(); edges(); };
+    window.addEventListener("resize", onResize);
+    return () => { window.removeEventListener("resize", onResize); row?.removeEventListener("scroll", edges); };
+  }, [activeFilter, mapTerritories.length, lang]);
+
   function chooseDomain(id: string) {
     setDomainFilter(id);
     const members = mapTerritories.find((territory) => territory.id === id)?.tools;
@@ -175,30 +249,37 @@ export default function CartPage() {
     // Two fixed zones: identity on top, then a footer on a hairline (price
     // left, overlap right) aligned across every card of a row.
     const slug = state.pinnedToolSlugs.find((pinned) => lookup.get(pinned)?.id === tool.id) || toolKey(tool);
-    return <div key={tool.id} className="ms-card-wrap">
+    return <div key={tool.id} className="ms-card-wrap" data-flip-id={tool.id}>
     <button
       type="button"
       data-tool-id={tool.id}
       className={`ms-tool ms-tool-card${active ? " ms-tool--selected" : ""}`}
       style={accent ? ({ "--tool-accent": accent } as React.CSSProperties) : undefined}
       aria-haspopup="dialog"
+      // Says what opens: the card leads to the tool sheet.
+      title={editing ? undefined : t(`Gérer ${tool.name} : abonnement, recoupements, alternatives`, `Manage ${tool.name}: subscription, overlaps, alternatives`)}
       tabIndex={editing ? -1 : undefined}
       onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; if (active) closeInspector(); else selectTool(toolKey(tool)); }}
     >
+      {/* Top: identity (icon, full name, area) and what it overlaps.
+          Bottom: money and the action, "Manage ›". */}
       <span className="ms-card-top">
         <span className="ms-card-logo"><ToolLogo tool={tool} size={48} /></span>
-        <span className="ms-card-id"><strong>{tool.name}</strong>{<span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>}</span>
+        <span className="ms-card-id"><strong>{tool.name}</strong><span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>
+          {overlaps.length > 0 && <span className="ms-card-overlap" title={t(`Recoupe ${overlaps.map((o) => o.name).join(", ")}`, `Overlaps with ${overlaps.map((o) => o.name).join(", ")}`)}>
+            <span className="ms-card-overlap-name">{overlaps[0].name}</span>{overlaps.length > 1 && <span>+{overlaps.length - 1}</span>}
+          </span>}
+        </span>
       </span>
-      {<span className="ms-card-foot">
+      <span className="ms-card-foot">
         <span className={`ms-card-price${price ? "" : " ms-card-price--none"}`}>{(() => {
           // "From $22.99/mo": the word small, the amount carries the line.
           const match = price?.match(/^(Dès|From) (.+)$/);
-          return match ? <><small>{match[1]}</small> <strong>{match[2]}</strong></> : price || t("Tarif non relevé", "Price not checked");
+          return match ? <><small>{match[1]}</small> <strong>{match[2]}</strong></> : price || t("Saisir le prix", "Enter the price");
         })()}</span>
-        {overlaps.length > 0 && <span className="ms-card-overlap" title={t(`Recoupe ${overlaps.map((o) => o.name).join(", ")}`, `Overlaps with ${overlaps.map((o) => o.name).join(", ")}`)}>
-          <span className="ms-card-overlap-name">{overlaps[0].name}</span>{overlaps.length > 1 && <span>+{overlaps.length - 1}</span>}
-        </span>}
-      </span>}
+        {/* Names what the click does: manage this tool (subscription, overlaps, alternatives). */}
+        {!editing && <span className="ms-card-action" aria-hidden="true"><span>{t("Gérer", "Manage")}</span><ChevronRight size={16} /></span>}
+      </span>
     </button>
     {/* Edit mode (iOS home screen): a minus badge removes the tool, with undo. */}
     {editing && <button type="button" className="ms-card-remove" onClick={() => removeTool(slug, tool.name)} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}><Minus size={14} aria-hidden /></button>}
@@ -249,17 +330,17 @@ export default function CartPage() {
           <dl className="sg-stats ms-hero-stats">
             <div><dt><LayoutGrid size={15} aria-hidden />{t("Outils", "Tools")}</dt><dd>{selectedTools.length}</dd>
               <span className="ms-stat-bar" aria-hidden="true">{areaCosts.map((area) => <i key={area.id} style={{ flexGrow: area.tools, background: colorOf(area.id) }} data-tip={`${area.label} · ${t(`${area.tools} outil${area.tools > 1 ? "s" : ""}`, `${area.tools} tool${area.tools > 1 ? "s" : ""}`)}`} />)}</span><span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span></div>
-            <div><dt><Wallet size={15} aria-hidden />{stackCost.unknown > 0 && stackCost.paid > 0 ? t("Total partiel", "Partial total") : t("Coût mensuel", "Monthly cost")}</dt><dd>{stackCost.paid > 0 ? amount(stackCost.total) : stackCost.unknown > 0 ? t("Coût non renseigné", "Cost unknown") : t("Gratuit", "Free")}</dd>
+            <div><dt><Wallet size={15} aria-hidden /><span className="ms-stat-full">{stackCost.unknown > 0 && stackCost.paid > 0 ? t("Total partiel", "Partial total") : t("Coût mensuel", "Monthly cost")}</span><span className="ms-stat-short">{stackCost.unknown > 0 && stackCost.paid > 0 ? t("Partiel", "Partial") : t("Par mois", "Monthly")}</span></dt><dd><ValueChange value={Math.round(stackCost.total)}>{stackCost.paid > 0 ? amount(stackCost.total) : stackCost.unknown > 0 ? t("Coût non renseigné", "Cost unknown") : t("Gratuit", "Free")}</ValueChange></dd>
               <span className="ms-stat-bar" aria-hidden="true">{stackCost.total > 0 ? areaCosts.filter((area) => area.cost > 0).map((area) => <i key={area.id} style={{ flexGrow: area.cost, background: colorOf(area.id) }} data-tip={`${area.label} · ≈ ${formatAmount(Math.round(area.cost), currency, lang)}${t("/mois", "/mo")}`} />) : <i style={{ flexGrow: 1 }} />}</span><span>{stackCost.paid > 0 ? t(`${stackCost.paid} outil${stackCost.paid > 1 ? "s" : ""} payant${stackCost.paid > 1 ? "s" : ""}`, `${stackCost.paid} paid tool${stackCost.paid > 1 ? "s" : ""}`) : stackCost.unknown > 0 ? t("Coût non renseigné", "Cost unknown") : t("rien de payant", "nothing paid")}</span></div>
             {/* The thread of the page: what I pay, and what I pay twice. */}
-            <div className={overlapScore.doubleTotal > 0 ? "ms-stat--overlaps" : undefined}><dt><Copy size={15} aria-hidden />{t("Payé en double", "Paid twice")}</dt><dd>{overlapScore.doubleTotal > 0 ? amount(overlapScore.doubleTotal) : (overlapPairs > 0 ? formatAmount(0, currency, lang) : t("Rien", "None"))}</dd>
+            <div className={overlapScore.doubleTotal > 0 ? "ms-stat--overlaps" : undefined}><dt><Copy size={15} aria-hidden /><span className="ms-stat-full">{t("Payé en double", "Paid twice")}</span><span className="ms-stat-short">{t("En double", "Twice")}</span></dt><dd><ValueChange value={Math.round(overlapScore.doubleTotal)}>{overlapScore.doubleTotal > 0 ? amount(overlapScore.doubleTotal) : (overlapPairs > 0 ? formatAmount(0, currency, lang) : t("Rien", "None"))}</ValueChange></dd>
               {(() => {
                 const share = stackCost.total > 0 ? Math.min(1, overlapScore.doubleTotal / stackCost.total) : 0;
                 return <span className="ms-stat-bar ms-stat-bar--share" aria-label={t(`${Math.round(share * 100)} % du coût mensuel`, `${Math.round(share * 100)}% of the monthly cost`)}>{share > 0 && <i style={{ flexGrow: share }} data-tip={t(`≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)} payés en double`, `≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)} paid twice`)} />}<i style={{ flexGrow: 1 - share }} data-tip={t(`≈ ${formatAmount(Math.round(stackCost.total - overlapScore.doubleTotal), currency, lang)} sans doublon`, `≈ ${formatAmount(Math.round(stackCost.total - overlapScore.doubleTotal), currency, lang)} with no overlap`)} /></span>;
               })()}
               {/* Fourth row, like the other columns: share of the cost, then the way to the overlaps. */}
-              <span className="ms-stat-note">{stackCost.total > 0 && <>{t(`${Math.round(Math.min(1, overlapScore.doubleTotal / stackCost.total) * 100)} % du coût`, `${Math.round(Math.min(1, overlapScore.doubleTotal / stackCost.total) * 100)}% of cost`)}<br /></>}{overlapPairs > 0
-              ? <a className="ms-stat-link" href="#ms-overlaps" onClick={(event) => { event.preventDefault(); jumpTo("ms-overlaps"); }}>{t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} overlap${overlapPairs > 1 ? "s" : ""}`)} ↓</a>
+              <span className="ms-stat-note">{stackCost.total > 0 && <><span className="ms-stat-share">{t(`${Math.round(Math.min(1, overlapScore.doubleTotal / stackCost.total) * 100)} % du coût`, `${Math.round(Math.min(1, overlapScore.doubleTotal / stackCost.total) * 100)}% of cost`)}<br /></span></>}{overlapPairs > 0
+              ? <a className="ms-stat-link" href="#ms-overlaps" onClick={(event) => { event.preventDefault(); jumpTo("ms-overlaps"); }}><span className="ms-stat-full">{t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} overlap${overlapPairs > 1 ? "s" : ""}`)}</span><span className="ms-stat-short">{t(`${overlapPairs} paire${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} pair${overlapPairs > 1 ? "s" : ""}`)}</span> ↓</a>
               : t("aucun recoupement connu", "no known overlap")}</span></div>
           </dl>
         </>}
@@ -328,16 +409,18 @@ export default function CartPage() {
           </div>
         </div>
         {searchPanel}
-        <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")}>
-          <button type="button" aria-pressed={activeFilter === "all"} onClick={() => chooseDomain("all")}>{t("Tous", "All")}<span>{selectedTools.length}</span></button>
-          {mapTerritories.map((territory) => <button key={territory.id} type="button" aria-pressed={activeFilter === territory.id} onClick={() => chooseDomain(territory.id)}>
+        <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")} ref={tabsRef}>
+          {ink && <span className="ms-tab-ink" aria-hidden="true" style={{ transform: `translateX(${ink.left}px)`, width: ink.width }} />}
+          <button type="button" aria-pressed={activeFilter === "all"} onClick={() => filterTo("all")}>{t("Tous", "All")}<span>{selectedTools.length}</span></button>
+          {mapTerritories.map((territory) => <button key={territory.id} type="button" aria-pressed={activeFilter === territory.id} onClick={() => filterTo(territory.id)}>
             {territory.id === "assist" ? t("IA", "AI") : territory.label}<span>{territory.tools.length}</span>
           </button>)}
         </div>
-        <div className="ms-card-grid" data-editing={editing || undefined}>{listTools.map(renderTool)}</div>
+        <div className="ms-card-grid" data-editing={editing || undefined} ref={gridRef}>{listTools.map(renderTool)}</div>
       </section>
 
       <StackToolSheet tool={selected || null} detail={resolved} pairs={overlapScore.pairs} categories={categories} paid={plans} currency={currency} prefix={prefix} lang={lang}
+        catalog={tools} stackIds={existingIds}
         onClose={closeInspector} onSelect={selectTool}
         onRemove={() => selected && removeTool(state.pinnedToolSlugs.find((slug) => lookup.get(slug)?.id === selected.id) || toolKey(selected), selected.name)} />
       {missing.length > 0 && <section className="ms-unavailable"><h2>{t("Outils indisponibles", "Unavailable tools")}</h2>

@@ -57,9 +57,9 @@ export default function StackFreemiumPlans({ open, onOpenChange, freemium, paid,
                     : (en ? "Paid price not checked" : "Prix payant non relevé")}</small></span>
                 </span>
                 <button type="button" role="switch" aria-checked={on} className="ms-switch"
-                  aria-label={en ? `I pay for ${tool.name}` : `Je paie ${tool.name}`}
+                  aria-label={en ? `Paid subscription for ${tool.name}` : `Abonnement payant pour ${tool.name}`}
                   onClick={() => paid.setPaid(toolKey(tool), !on)}>
-                  <span className="ms-switch-label">{on ? (en ? "I pay" : "Je paie") : (en ? "Free" : "Gratuit")}</span>
+                  <span className="ms-switch-label">{on ? (en ? "Paid" : "Payant") : (en ? "Free" : "Gratuit")}</span>
                   <span className="ms-switch-track" aria-hidden="true"><span /></span>
                 </button>
               </li>
