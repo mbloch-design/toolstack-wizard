@@ -107,8 +107,8 @@ export default function CartPage() {
   useEffect(() => {
     if (empty) { writeStackSnapshot(null); return; }
     if (selectedTools.length === 0) return; // catalogue still loading
-    writeStackSnapshot({ tools: selectedTools.length, monthly: Math.round(stackCost.total), double: Math.round(overlapScore.doubleTotal), currency, at: new Date().toISOString() });
-  }, [empty, selectedTools.length, stackCost.total, overlapScore.doubleTotal, currency]);
+    writeStackSnapshot({ tools: selectedTools.length, monthly: Math.round(stackCost.total), double: Math.round(overlapScore.doubleTotal), currency, at: new Date().toISOString(), top: heroOrder.slice(0, 3).map((tool) => ({ slug: toolKey(tool), name: tool.name })) });
+  }, [empty, selectedTools.length, stackCost.total, overlapScore.doubleTotal, currency, heroOrder]);
   const showSearch = empty || searchOpen;
   const existingIds = new Set(selectedTools.map((tool) => tool.id));
   const searchResults = useMemo(() => {

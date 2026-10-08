@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowRight } from "@/lib/icons";
+import { ArrowRight, ChevronRight } from "@/lib/icons";
+import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
 import { openConsentBanner } from "@/components/AnalyticsConsent";
 import { getLanguageSwitchPath } from "@/lib/seo";
 import { formatAmount } from "@/lib/currencyRates";
 import { readStackSnapshot, type StackSnapshot } from "@/lib/stackSnapshot";
+import FooterTrim from "@/components/FooterTrim";
 
 // Catalogue size rounded down to the hundred ("more than 1,300"): true for
 // weeks without a rebuild, and no false precision in a footer.
@@ -40,36 +42,57 @@ const Footer = () => {
     <footer className="tt-footer" role="contentinfo">
       <div className="tt-footer-container">
 
-        {/* 1. Promise, proof, and the visitor's stack */}
+        {/* 0. Fine print first, as on apple.com: what backs every figure on
+            the site, numbered, in small grey type above a hairline. */}
+        <section className="tt-footer-notes" aria-label={t("Notes", "Notes")}>
+          <ol>
+            <li>{t(
+              "Prix relevés sur les pages tarifaires des éditeurs, dans la devise qu’ils publient. Un prix annuel est ramené au mois, calcul affiché. Les totaux de Ma stack sont convertis au taux daté du site, à titre indicatif.",
+              "Prices are taken from vendors’ pricing pages, in the currency they publish. An annual price is brought back to a monthly one, with the calculation shown. My stack totals are converted at the site’s dated rate, as an indication.",
+            )}</li>
+            <li>{t(
+              "Aucun éditeur ne paie pour une note, un verdict ou un classement. Certains liens sont affiliés et signalés comme tels ; ils ne changent rien à l’analyse.",
+              "No vendor pays for a score, a verdict or a ranking. Some links are affiliate links and are labelled as such; they change nothing in the analysis.",
+            )} <Link to={`${prefix}/transparency`}>{t("Méthodologie et transparence", "Methodology and transparency")}</Link></li>
+            {CATALOG_TOOLS > 0 && <li>{t(
+              `Plus de ${groupDigits(CATALOG_TOOLS, "\u00a0")} outils suivis, chacun avec sa fiche, ses alternatives et ses prix.`,
+              `More than ${groupDigits(CATALOG_TOOLS, ",")} tools tracked, each with its page, alternatives and prices.`,
+            )}</li>}
+          </ol>
+        </section>
+
+        {/* 1. Promise and the visitor's stack */}
         <section className="tt-footer-top">
           <div className="tt-footer-promise">
-            <p className="tt-footer-tagline">{t("Choisir, pas empiler.", "Choose, don't stack.")}</p>
+            <div className="tt-footer-tagline-row">
+              <p className="tt-footer-tagline">{t("Choisir, pas empiler.", "Choose, don't stack.")}</p>
+              <FooterTrim to={`${prefix}/ma-stack`} t={t} />
+            </div>
             <p className="tt-footer-intro">
               {t(
                 "ToolTrim aide les freelances à choisir, comparer et rationaliser leurs outils SaaS, sans empiler les abonnements.",
                 "ToolTrim helps freelancers choose, compare and streamline their SaaS tools without piling up subscriptions.",
               )}
             </p>
-            <p className="tt-footer-proof">
-              {CATALOG_TOOLS > 0 && <>{t(`Plus de ${groupDigits(CATALOG_TOOLS, "\u00a0")} outils suivis`, `More than ${groupDigits(CATALOG_TOOLS, ",")} tools tracked`)} · </>}
-              {t("prix relevés à la source", "prices checked at the source")} · {" "}
-              <Link to={`${prefix}/transparency`}>{t("aucune note achetée", "no score for sale")}</Link>
-            </p>
           </div>
 
           {snapshot && !onMyStack ? (
             <Link className="tt-footer-stack" to={`${prefix}/ma-stack`}>
-              <span className="tt-footer-stack-label">{t("Ma stack", "My stack")}</span>
-              <span className="tt-footer-stack-figures">
-                <span><strong>{snapshot.tools}</strong>{t(snapshot.tools > 1 ? " outils" : " outil", snapshot.tools > 1 ? " tools" : " tool")}</span>
-                <span><strong>≈ {money(snapshot.monthly)}</strong>{t("/mois", "/mo")}</span>
-                {snapshot.double > 0
-                  ? <span className="tt-footer-stack-double"><strong>{money(snapshot.double)}</strong>{t(" payés en double", " paid twice")}</span>
-                  : <span>{t("aucun doublon", "no overlap")}</span>}
+              <span className="tt-footer-stack-head">
+                {snapshot.top && snapshot.top.length > 0 && <span className="tt-footer-stack-logos" aria-hidden="true">
+                  {snapshot.top.map((tool) => <ToolLogo key={tool.slug} tool={{ id: tool.slug, slug: tool.slug, name: tool.name }} size={24} />)}
+                </span>}
+                <span>{t("Ma stack", "My stack")} · {snapshot.tools} {t(snapshot.tools > 1 ? "outils" : "outil", snapshot.tools > 1 ? "tools" : "tool")}</span>
               </span>
+              <span className="tt-footer-stack-total"><span className="tt-footer-stack-approx">≈</span>{money(snapshot.monthly)}<small>{t("/mois", "/mo")}</small></span>
+              {snapshot.double > 0 && snapshot.monthly > 0 ? <>
+                {/* The share paid twice, as a hairline gauge. */}
+                <span className="tt-footer-stack-gauge" aria-hidden="true"><span style={{ width: `${Math.max(3, Math.min(100, Math.round(snapshot.double / snapshot.monthly * 100)))}%` }} /></span>
+                <span className="tt-footer-stack-note">{t(`dont ${money(snapshot.double)} payés en double`, `of which ${money(snapshot.double)} paid twice`)}</span>
+              </> : <span className="tt-footer-stack-note">{t("Aucun recoupement en cours", "No overlap left")}</span>}
               <span className="tt-footer-stack-cta">
                 {snapshot.double > 0 ? t("Trancher les doublons", "Settle the overlaps") : t("Reprendre ma stack", "Back to my stack")}
-                <ArrowRight aria-hidden="true" />
+                <ChevronRight aria-hidden="true" />
               </span>
             </Link>
           ) : (
@@ -122,7 +145,7 @@ const Footer = () => {
         {/* 3. Legal rail */}
         <section className="tt-footer-rail">
           <div className="tt-footer-legal">
-            <span>© {year} ToolTrim</span>
+            <span>{t(`Copyright © ${year} ToolTrim. Tous droits réservés.`, `Copyright © ${year} ToolTrim. All rights reserved.`)}</span>
             <Link to={`${prefix}/legal-notice`}>{t("Mentions légales", "Legal notice")}</Link>
             <Link to={`${prefix}/privacy-policy`}>{t("Confidentialité", "Privacy")}</Link>
             <Link to={`${prefix}/terms`}>{t("CGV", "Terms")}</Link>
