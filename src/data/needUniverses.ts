@@ -11,11 +11,15 @@ export type UniversePick = { slug: string; takeFr: string; takeEn: string };
 export const NEED_UNIVERSES: Array<{
   categoryId: string; labelFr: string; labelEn: string;
   subsFr: string[]; subsEn: string[]; picks: UniversePick[];
+  /** Neighbouring categories shown as tags under the need's name (Michael,
+   * 9 Oct 2026): existing categories only, 10 tools or more (indexable). */
+  related: string[];
 }> = [
   {
     categoryId: "organization", labelFr: "Productivité & Travail", labelEn: "Productivity & Work",
     subsFr: ["Notes", "Gestion de projet", "Gestion de tâches", "Base de connaissances"],
     subsEn: ["Notes", "Project Management", "Task Management", "Knowledge Base"],
+    related: ["project-management", "productivity-tracking"],
     picks: [
       { slug: "notion", takeFr: "Assez flexible pour devenir presque n'importe quoi.", takeEn: "Flexible enough to become almost anything." },
       { slug: "todoist", takeFr: "Capturer vite, sans outil projet à administrer.", takeEn: "Fast capture, without a project tool to run." },
@@ -26,6 +30,7 @@ export const NEED_UNIVERSES: Array<{
     categoryId: "creation", labelFr: "Création de contenu", labelEn: "Content Creation",
     subsFr: ["Vidéo", "Audio", "Visuels", "3D et effets"],
     subsEn: ["Video", "Audio", "Visuals", "3D and VFX"],
+    related: ["design-tools", "ai-general"],
     picks: [
       { slug: "canva", takeFr: "La vitesse et les modèles avant le contrôle fin.", takeEn: "Speed and templates over fine control." },
       { slug: "auphonic", takeFr: "Le mastering audio de podcast, en automatique.", takeEn: "Podcast audio, mastered automatically." },
@@ -36,6 +41,7 @@ export const NEED_UNIVERSES: Array<{
     categoryId: "design-tools", labelFr: "Design", labelEn: "Design",
     subsFr: ["Interfaces", "Design systems", "Prototypage", "Animation"],
     subsEn: ["Interfaces", "Design Systems", "Prototyping", "Motion"],
+    related: ["creation", "ai-general"],
     picks: [
       { slug: "figma", takeFr: "Design, prototype et passage aux développeurs dans un seul fichier.", takeEn: "Design, prototype and handoff in one file." },
       { slug: "affinity-photo", takeFr: "Une alternative à Photoshop, désormais gratuite.", takeEn: "A Photoshop alternative, now free." },
@@ -46,6 +52,7 @@ export const NEED_UNIVERSES: Array<{
     categoryId: "email-productivity", labelFr: "Marketing & Ventes", labelEn: "Marketing & Sales",
     subsFr: ["Newsletter", "Prospection", "Réseaux sociaux", "Campagnes e-mail"],
     subsEn: ["Email Outreach", "Newsletter", "Prospecting", "Social Media"],
+    related: ["crm", "analytics"],
     picks: [
       { slug: "mailchimp", takeFr: "Le point de départ classique pour une petite liste.", takeEn: "The familiar start for a small email list." },
       { slug: "lemlist", takeFr: "Pensé pour la prospection à froid, pas la newsletter.", takeEn: "Built for cold outreach, not newsletters." },
@@ -56,6 +63,7 @@ export const NEED_UNIVERSES: Array<{
     categoryId: "automation", labelFr: "Automatisation", labelEn: "Automation",
     subsFr: ["Workflows", "No-code", "Agents IA", "Web scraping"],
     subsEn: ["Workflows", "No-Code", "AI Agents", "Web Scraping"],
+    related: ["ai-general", "nocode-web"],
     picks: [
       { slug: "make", takeFr: "Le juste milieu visuel.", takeEn: "The visual middle ground." },
       { slug: "n8n", takeFr: "Puissant quand vous voulez tout contrôler.", takeEn: "Powerful when you want full control." },
@@ -66,6 +74,7 @@ export const NEED_UNIVERSES: Array<{
     categoryId: "nocode-web", labelFr: "Développement & No-Code", labelEn: "Development & No-Code",
     subsFr: ["DevOps", "Créateurs de sites", "E-commerce", "Créateurs d'apps"],
     subsEn: ["DevOps", "Website Builders", "E-commerce", "App Builders"],
+    related: ["automation", "security"],
     picks: [
       { slug: "webflow", takeFr: "De vrais sites en production, construits visuellement.", takeEn: "Production sites, built visually." },
       { slug: "supabase", takeFr: "Postgres, auth et stockage sans gérer de serveur.", takeEn: "Postgres, auth and storage without a server to run." },
@@ -76,6 +85,7 @@ export const NEED_UNIVERSES: Array<{
     categoryId: "communication", labelFr: "Communication", labelEn: "Communication",
     subsFr: ["Chat d'équipe", "Téléphonie pro", "Planification", "Support client"],
     subsEn: ["Team Chat", "Business Phone", "Scheduling", "Customer Support"],
+    related: ["email-productivity", "crm"],
     picks: [
       { slug: "calendly", takeFr: "Un lien de réservation qui met fin aux allers-retours.", takeEn: "A booking link that ends the back-and-forth." },
       { slug: "loom", takeFr: "Quand une vidéo de deux minutes remplace une réunion.", takeEn: "When a two-minute video beats a meeting." },
@@ -86,6 +96,7 @@ export const NEED_UNIVERSES: Array<{
     categoryId: "analytics", labelFr: "Données & Analytics", labelEn: "Data & Analytics",
     subsFr: ["SEO", "Visualisation de données", "Tableaux de bord", "Recherche utilisateur"],
     subsEn: ["SEO", "Data Visualization", "Dashboards", "User Research"],
+    related: ["email-productivity", "nocode-web"],
     picks: [
       { slug: "google-analytics", takeFr: "La référence gratuite pour mesurer l'audience.", takeEn: "The free default for measuring traffic." },
       { slug: "microsoft-clarity", takeFr: "Cartes de chaleur et replays gratuits, sans plafond de trafic.", takeEn: "Free heatmaps and replays, no traffic cap." },

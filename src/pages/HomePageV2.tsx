@@ -7,7 +7,7 @@ import { ArrowRight, ChevronLeft, ChevronRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { stripLeadingEmoji } from "@/lib/text";
+import { categoryDisplayName, stripLeadingEmoji } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
 import StackGoalsSection from "@/components/home/StackGoalsSection";
@@ -359,17 +359,26 @@ export default function HomePageV2() {
                 });
                 return (
                   <article key={universe.categoryId} className="v2-shelf-cell">
-                    <Link to={`${prefix}/category/${category.slug}`} className="v2-shelf-cell-head">
-                      <span className="v2-shelf-cell-titlerow">
-                        {/* The category's own name, as on the page it opens (UX review, 9 Oct 2026). */}
-                        <h3 className="v2-shelf-cell-name">{stripLeadingEmoji(lang === "en" ? category.nameEn || category.name : category.name)}</h3>
-                        <span className="v2-shelf-cell-count">
-                          {t(`${count} outils`, `${count} tools`)}
-                          <ArrowRight className="v2-shelf-cell-arrow" style={{ width: 13, height: 13 }} aria-hidden />
-                        </span>
-                      </span>
-                      <span className="v2-shelf-cell-subs">{displayText((lang === "en" ? universe.subsEn : universe.subsFr).join(" · "), lang)}</span>
-                    </Link>
+                    {/* Need header: the category's own name (as on the page it opens),
+                        its tool count as a superscript, then neighbouring
+                        categories as tags (Michael, 9 Oct 2026). */}
+                    <div className="v2-shelf-cell-head">
+                      <Link to={`${prefix}/category/${category.slug}`} className="v2-shelf-cell-title">
+                        <h3 className="v2-shelf-cell-name">
+                          {categoryDisplayName(category, lang)}
+                          <sup className="v2-shelf-cell-count"><span aria-hidden="true">{count}</span><span className="sr-only">{t(`, ${count} outils`, `, ${count} tools`)}</span></sup>
+                        </h3>
+                        <ArrowRight className="v2-shelf-cell-arrow" aria-hidden />
+                      </Link>
+                      {universe.related.length > 0 && (
+                        <ul className="v2-shelf-tags" aria-label={t(`Voir aussi, près de ${categoryDisplayName(category, lang)}`, `See also, near ${categoryDisplayName(category, lang)}`)}>
+                          {universe.related.flatMap((id) => {
+                            const near = categories.find((c) => c.id === id);
+                            return near ? [<li key={id}><Link to={`${prefix}/category/${near.slug}`} className="v2-shelf-tag">{categoryDisplayName(near, lang)}</Link></li>] : [];
+                          })}
+                        </ul>
+                      )}
+                    </div>
                     <ul className="v2-shelf-picks">
                       {picks.map(({ tool, take }) => (
                         <li key={tool.slug}>

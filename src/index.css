@@ -24432,78 +24432,92 @@ section[id]:not(.cp-guide-section) {
   border-top: 1px solid var(--color-border);
 }
 
+/* Need header (9 Oct 2026): the name links to its category with the tool
+   count as a superscript; neighbouring categories follow as quiet tags. */
 .v2-shelf-cell-head {
-  display: block;
-  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.v2-shelf-cell-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: inherit;
   text-decoration: none;
+  border-radius: var(--radius);
 }
-.v2-shelf-cell-head:focus-visible {
-  outline: 2px solid var(--color-text-strong);
+.v2-shelf-cell-title:focus-visible {
+  outline: 2px solid var(--color-text);
   outline-offset: 4px;
 }
-
-.v2-shelf-cell-titlerow {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 16px;
-}
-
 .v2-shelf-cell-name {
   margin: 0;
   font-family: var(--font-ui);
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.015em;
-  color: var(--color-text-strong);
+  color: var(--color-text);
 }
-
+/* The count rides on the name like an exponent. */
 .v2-shelf-cell-count {
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  gap: 4px;
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-  color: var(--color-muted-light);
-  transition: color 180ms ease-out;
+  position: relative;
+  top: -0.7em;
+  margin-left: 3px;
+  font: 500 12px/1 var(--font-ui);
+  letter-spacing: 0;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-meta);
+  vertical-align: baseline;
 }
-
 .v2-shelf-cell-arrow {
+  width: 15px;
+  height: 15px;
   flex-shrink: 0;
-  /* Out of flow, so the count sits flush on the column edge; on hover the
-     count slides left to make room (design review, 8 Oct 2026). */
-  position: absolute;
-  left: calc(100% + 4px);
+  color: var(--color-text);
   opacity: 0;
   transform: translateX(-4px);
   transition: opacity 180ms ease-out, transform 180ms ease-out;
 }
-.v2-shelf-cell-head:hover .v2-shelf-cell-count,
-.v2-shelf-cell-head:focus-visible .v2-shelf-cell-count {
-  color: var(--color-text-strong);
-}
-.v2-shelf-cell-head:hover .v2-shelf-cell-arrow,
-.v2-shelf-cell-head:focus-visible .v2-shelf-cell-arrow {
+.v2-shelf-cell-title:hover .v2-shelf-cell-arrow,
+.v2-shelf-cell-title:focus-visible .v2-shelf-cell-arrow {
   opacity: 1;
   transform: none;
 }
-/* No hover on touch screens: keep a faint arrow so the header still reads
-   as tappable. */
 @media (hover: none) {
   .v2-shelf-cell-arrow { opacity: 0.6; transform: none; }
 }
-
-.v2-shelf-cell-subs {
-  display: block;
-  margin-top: 6px;
-  font-family: var(--font-ui);
-  font-size: 12.5px;
-  line-height: 1.4;
-  color: var(--color-muted-light);
+/* Neighbouring categories: hairline pills, quiet until hovered. */
+.v2-shelf-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.v2-shelf-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  font: 500 13px/1 var(--font-ui);
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: background-color 160ms ease-out, color 160ms ease-out, box-shadow 160ms ease-out;
+}
+.v2-shelf-tag:hover {
+  background: var(--color-surface-soft);
+  color: var(--color-text);
+  box-shadow: inset 0 0 0 1px var(--color-border-strong);
+}
+.v2-shelf-tag:active { transform: scale(.97); }
+.v2-shelf-tag:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
 }
 
 /* Negative side margin lets the hover highlight bleed past the text
@@ -35428,9 +35442,6 @@ img[data-logo-loading] {
 .home-v2 .v2-ww-tab.is-active .v2-ww-tab-logo { box-shadow: 0 0 0 1.5px #FFFFFF; }
 /* Card titles share one line whether or not a category follows. */
 .home-v2 .v2-rail-item .tce-identity-link { align-items: flex-start; }
-.home-v2 .v2-shelf-cell-count { position: relative; transition: transform 180ms ease-out, color 180ms ease-out; }
-.home-v2 .v2-shelf-cell-head:hover .v2-shelf-cell-count,
-.home-v2 .v2-shelf-cell-head:focus-visible .v2-shelf-cell-count { transform: translateX(-17px); }
 /* "See all" links and the footer legal links: at least 24px to tap. */
 .home-v2 .v2-section-link, .tt-footer .tt-footer-legal a, .tt-footer .tt-footer-linkbutton { display: inline-flex; align-items: center; min-height: 24px; }
 @media (max-width: 640px) {
@@ -35438,7 +35449,6 @@ img[data-logo-loading] {
      the watchlist reuses the same row markup and keeps its six tools). */
   .home-v2 .v2-shelf-cell .v2-shelf-picks > li:nth-child(n+3) { display: none; }
 }
-@media (hover: none) { .home-v2 .v2-shelf-cell-count { transform: translateX(-17px); } }
 
 /* ── Home, chapter 1 (8 Oct 2026): the stacks become four large white cards
    right after the hero, on the page's white (no grey band: Michael). The iOS folder
@@ -35537,11 +35547,8 @@ img[data-logo-loading] {
 .home-v2 .sgs-lead { font: 400 15px/1.45 var(--font-ui); letter-spacing: -.005em; color: var(--h-text); }
 .home-v2 .hv2-subtitle { font-size: 16px; line-height: 1.5; }
 /* Meta: 13 / 500, grey. */
-.home-v2 .v2-shelf-cell-subs,
-.home-v2 .v2-shelf-cell-count,
 .home-v2 .v2-today-date,
 .home-v2 .tce-category { font: 500 13px/1.4 var(--font-ui); letter-spacing: 0; color: var(--h-meta); }
-.home-v2 .v2-shelf-cell-head:hover .v2-shelf-cell-count { color: var(--h-ink); }
 /* Kickers: 11 / 600, uppercase, grey. */
 .home-v2 .hv2-eyebrow,
 .home-v2 .sgs-item-objective,
@@ -35563,7 +35570,6 @@ img[data-logo-loading] {
 .home-v2 .tce-primary-link { border-radius: var(--h-radius-card); }
 .home-v2 .sgs-folder { border-radius: 24px; }
 .home-v2 .v2-shelf-pick,
-.home-v2 .v2-shelf-cell-head { border-radius: var(--h-radius-tile); }
 .home-v2 .v2-shelf-pick-logo,
 .home-v2 .tce-logo,
 .home-v2 .sgs-folder-logo { border-radius: var(--h-radius-tile) !important; }
@@ -35597,8 +35603,6 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-stack[data-seen] .tt-footer-stack-gauge > span { animation-play-state: running; }
 /* Trim: the tiles converge before they fade, so the fold reads. */
 @media (prefers-reduced-motion: reduce) {
-  .home-v2 .v2-shelf-cell-count { transition: color 180ms ease-out; }
-  .home-v2 .v2-shelf-cell-head:hover .v2-shelf-cell-count, .home-v2 .v2-shelf-cell-head:focus-visible .v2-shelf-cell-count { transform: none; }
   .home-v2 .sgs-folder-app, .home-v2 .sgs-item:hover .sgs-folder-app,
   .home-v2 .sgs-item:hover .sgs-folder-app:nth-child(n) { transition: none; transform: none; }
   .home-v2 .sgs-item, .home-v2 .sgs-item:hover, .home-v2 .hv2-cta, .home-v2 .hv2-cta-secondary, .tt-footer .tt-footer-badge { transition: none; transform: none; }
