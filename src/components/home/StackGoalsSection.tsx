@@ -4,6 +4,7 @@ import { ArrowRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import ToolLogo from "@/components/ToolLogo";
+import { displayText } from "@/lib/typography";
 
 type StackTool = { slug: string; name: string; websiteUrl: string; logo?: string };
 
@@ -137,8 +138,8 @@ const StackGoalsSection = () => {
                 </span>
                 <span className="sgs-item-copy">
                   <span className="sgs-item-objective">{lang === "fr" ? stack.objectiveFr : stack.objectiveEn}</span>
-                  <span className="sgs-item-title">{lang === "fr" ? stack.titleFr : stack.titleEn}</span>
-                  <span className="sgs-item-subtitle">{lang === "fr" ? stack.subtitleFr : stack.subtitleEn}</span>
+                  <span className="sgs-item-title">{displayText(lang === "fr" ? stack.titleFr : stack.titleEn, lang)}</span>
+                  <span className="sgs-item-subtitle">{displayText(lang === "fr" ? stack.subtitleFr : stack.subtitleEn, lang)}</span>
                   <span className="sr-only">{stack.tools.map((tool) => tool.name).join(", ")}</span>
                 </span>
               </Link>

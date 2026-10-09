@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 const CONSENT_KEY = "tooltrim-analytics-consent";
 const GA_ID = "G-DL5MJKQ3JE";
@@ -53,6 +53,15 @@ export default function AnalyticsConsent() {
     return () => window.removeEventListener(OPEN_EVENT, open);
   }, []);
 
+  // Keep focused elements clear of the banner while it shows (WCAG 2.4.11).
+  const bannerRef = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    if (!visible || !bannerRef.current) { root.style.removeProperty("--consent-h"); return undefined; }
+    root.style.setProperty("--consent-h", `${Math.ceil(bannerRef.current.getBoundingClientRect().height) + 16}px`);
+    return () => { root.style.removeProperty("--consent-h"); };
+  }, [visible]);
+
   if (!visible) return null;
 
   const accept = () => {
@@ -72,7 +81,7 @@ export default function AnalyticsConsent() {
   };
 
   return (
-    <div className="analytics-consent" role="region" aria-label={en ? "Analytics cookie consent" : "Consentement aux cookies analytics"}>
+    <div ref={bannerRef} className="analytics-consent" role="region" aria-label={en ? "Analytics cookie consent" : "Consentement aux cookies analytics"}>
       <div className="analytics-consent__copy">
         <strong>{en ? "Your privacy matters" : "Votre vie privée compte"}</strong>
         <p>{en

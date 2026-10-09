@@ -36,6 +36,14 @@ const SOURCE_TIMEOUT_MS = 900;
  */
 const OBSERVER_GRACE_MS = 4000;
 
+/**
+ * Optical balance (art direction review, 9 Oct 2026): these marks cover only
+ * 7 to 20 % of their square (n8n 0.07, Datawrapper 0.15, Make, Tally and
+ * Airtable about 0.2), so with the standard 14 % inner padding they read as
+ * specks next to full-bleed icons. They get a thinner padding instead.
+ */
+const SMALL_MARKS = new Set(["n8n", "datawrapper", "make", "tally", "airtable", "calendly", "scribe", "chatgpt"]);
+
 const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true, alt }: ToolLogoProps) => {
   const sources = useMemo(() => {
     // Ask remote sources for twice the display size: a 42px logo fed a 64px
@@ -127,7 +135,8 @@ const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true, 
         // loaded otherwise shows as an empty white square.
         data-logo-loading={loaded ? undefined : ""}
         className={`shrink-0 rounded-lg bg-card object-contain ring-1 ring-border/50 ${className}`}
-        style={{ width: size, height: size, minWidth: size, minHeight: size, padding: Math.max(2, Math.round(size * 0.14)) }}
+        data-tool={tool.slug || undefined}
+        style={{ width: size, height: size, minWidth: size, minHeight: size, padding: Math.max(2, Math.round(size * (SMALL_MARKS.has(tool.slug || "") ? 0.05 : 0.14))) }}
         onLoad={() => setLoaded(true)}
         onError={() => setSourceIndex((index) => index + 1)}
       />

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { NEED_UNIVERSES } from "@/data/needUniverses";
+import { displayText } from "@/lib/typography";
 import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
@@ -321,7 +322,7 @@ export default function HomePageV2() {
         </span>
         <span className="v2-today-copy">
           {featured && <span className="v2-today-eyebrow">{t("Dernier guide", "Latest guide")}</span>}
-          <span className="v2-today-title">{post.title}</span>
+          <span className="v2-today-title">{displayText(post.title, lang)}</span>
           {dateLabel && <time className="v2-today-date" dateTime={post.date}>{dateLabel}</time>}
         </span>
       </Link>
@@ -364,7 +365,7 @@ export default function HomePageV2() {
                           <ArrowRight className="v2-shelf-cell-arrow" style={{ width: 13, height: 13 }} aria-hidden />
                         </span>
                       </span>
-                      <span className="v2-shelf-cell-subs">{(lang === "en" ? universe.subsEn : universe.subsFr).join(" · ")}</span>
+                      <span className="v2-shelf-cell-subs">{displayText((lang === "en" ? universe.subsEn : universe.subsFr).join(" · "), lang)}</span>
                     </Link>
                     <ul className="v2-shelf-picks">
                       {picks.map(({ tool, take }) => (
@@ -373,7 +374,7 @@ export default function HomePageV2() {
                             <ToolLogo tool={tool as any} size={52} className="v2-shelf-pick-logo" alt="" />
                             <span className="v2-shelf-pick-copy">
                               <span className="v2-shelf-pick-name">{tool.name}</span>
-                              <span className="v2-shelf-pick-take">{take}</span>
+                              <span className="v2-shelf-pick-take">{displayText(take, lang)}</span>
                             </span>
                           </Link>
                         </li>
@@ -453,7 +454,7 @@ export default function HomePageV2() {
                       className={`v2-ww-tab${selected ? " is-active" : ""}`}
                       onClick={() => setSelectedHost(tool.slug || tool.id)}
                     >
-                      <ToolLogo tool={tool as any} size={20} className="v2-ww-tab-logo" />
+                      <ToolLogo tool={tool as any} size={20} className="v2-ww-tab-logo" alt="" />
                       <span>{tool.name}</span>
                     </button>
                   );

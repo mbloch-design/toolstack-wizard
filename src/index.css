@@ -24114,7 +24114,7 @@ section[id]:not(.cp-guide-section) {
    at the ends and on touch screens (where swiping is the gesture). */
 .v2-rail-nav {
   position: absolute;
-  z-index: 2;
+  z-index: 5; /* above .tce-primary-link (4), which covered it on phones */
   top: 30%;
   display: flex;
   align-items: center;
@@ -24346,7 +24346,7 @@ section[id]:not(.cp-guide-section) {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .v2-today-card:hover .v2-today-media img {
   transform: scale(1.025);
@@ -24741,8 +24741,9 @@ section[id]:not(.cp-guide-section) {
   font-family: var(--font-ui);
   font-size: var(--tt-size-page-title);
   font-weight: 480;
-  letter-spacing: -0.045em;
-  line-height: 1.02;
+  /* Tight but never touching (was -0.045em: letters collided at 56px). */
+  letter-spacing: -0.03em;
+  line-height: 1.04;
   color: var(--color-text);
   max-width: 18ch;
   margin: 0 0 var(--space-md);
@@ -24781,8 +24782,10 @@ section[id]:not(.cp-guide-section) {
   transition: background 150ms ease-out, color 150ms ease-out, opacity 150ms ease-out;
 }
 .hv2-cta:hover {
-  opacity: 0.85;
+  background: var(--color-text-secondary);
+  border-color: var(--color-text-secondary);
 }
+.hv2-cta:active, .hv2-cta-secondary:active { transform: scale(.98); }
 
 .hv2-cta-secondary {
   display: inline-flex;
@@ -24790,18 +24793,19 @@ section[id]:not(.cp-guide-section) {
   gap: 8px;
   padding: 13px 26px;
   border-radius: var(--radius-pill);
-  border: 1.5px solid var(--color-border-strong);
-  background: transparent;
+  /* Same secondary as the footer: white fill, hairline, quiet hover. */
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: 600;
   color: var(--color-text-strong);
   text-decoration: none;
-  transition: background 150ms ease-out, color 150ms ease-out;
+  transition: background 150ms ease-out, border-color 150ms ease-out, transform 120ms ease-out;
 }
 .hv2-cta-secondary:hover {
-  background: var(--color-text-strong);
-  color: var(--color-bg);
+  background: var(--color-surface-soft);
+  border-color: var(--color-border-strong);
 }
 
 /* The right-anchored logo cluster is baked into the responsive hero artwork (not a
@@ -33717,6 +33721,7 @@ img[data-logo-loading] {
 @media (max-width: 640px) {
   .asv2-bottomnav { transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
   .asv2-root[data-chrome="hidden"] .asv2-bottomnav { transform: translateY(calc(100% + 8px)); }
+  .asv2-root[data-chrome="hidden"] .asv2-bottomnav:focus-within { transform: none; }
 }
 @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
   .asv2-bottomnav { transition: none; }
@@ -35384,9 +35389,9 @@ img[data-logo-loading] {
 .tt-trim-pile { position: relative; width: 84px; height: 52px; }
 .tt-trim-tile { position: absolute; left: 0; top: 6px; display: block; width: 40px; height: 40px; border-radius: 11px; background: var(--tt-footer-card); box-shadow: 0 0 0 1px rgba(15, 15, 15, .06), 0 2px 6px rgba(15, 15, 15, .08); overflow: hidden;
   transform: translate(calc(var(--i) * 10px), calc(var(--i) * -1.5px)) rotate(var(--r));
-  transition: transform 380ms var(--ease), opacity 200ms ease; transition-delay: calc(var(--i) * 25ms); z-index: var(--i); }
+  transition: transform 380ms var(--ease) calc(var(--i) * 25ms), opacity 140ms cubic-bezier(0, 0, .2, 1) calc(var(--i) * 25ms); z-index: var(--i); }
 .tt-trim-tile > * { width: 100% !important; height: 100% !important; border-radius: inherit; }
-.tt-trim[data-trimmed] .tt-trim-tile { transform: translate(22px, 0) rotate(0deg) scale(.8); opacity: 0; transition-delay: calc((4 - var(--i)) * 25ms); }
+.tt-trim[data-trimmed] .tt-trim-tile { transform: translate(22px, 0) rotate(0deg) scale(.6); opacity: 0; transition: transform 380ms var(--ease) calc((4 - var(--i)) * 25ms), opacity 220ms ease calc(140ms + (4 - var(--i)) * 25ms); }
 /* The one kept: a neutral white tile with an ink check, never a brand, and
    never a second black block next to the primary button. */
 .tt-trim-one { position: absolute; left: 22px; top: 6px; z-index: 10; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; background: var(--tt-footer-card); color: var(--tt-footer-ink); box-shadow: 0 0 0 1px rgba(15, 15, 15, .06), 0 4px 14px rgba(15, 15, 15, .10); opacity: 0; transform: scale(.7) rotate(-6deg); transition: transform 380ms var(--ease), opacity 160ms ease; }
@@ -35506,8 +35511,31 @@ img[data-logo-loading] {
   --h-radius-tile: 12px;
   --h-radius-card: 20px;
   --h-radius-hero: 24px;
+  /* One column gap for every grid on the page (stacks, rails, guides). */
+  --v2-grid-gap: 16px;
+  --v2-head-content-gap: 24px;
 }
 @media (max-width: 640px) { .home-v2 { --h-gap: 48px; } }
+
+/* Comparative review, 9 Oct 2026 (tokens only). */
+/* A rail with four items or fewer fills the row exactly, edge to edge. */
+.home-v2 .v2-rail-track:not(:has(> .v2-rail-item:nth-child(5))) > .v2-rail-item { flex-basis: calc((100% - 3 * var(--v2-grid-gap)) / 4); }
+@media (max-width: 1023px) {
+  .home-v2 .v2-rail-track:not(:has(> .v2-rail-item:nth-child(5))) > .v2-rail-item { flex-basis: calc((100% - var(--v2-grid-gap)) / 2.3); }
+}
+/* Phones: the Compatible avec tabs and rail bleed to the screen edge, like
+   the stacks rail, instead of stopping 20px short. */
+@media (max-width: 640px) {
+  .home-v2 .v2-ww-tabs, .home-v2 .v2-ww-section .v2-rail-track { margin-inline: calc(-1 * var(--v2-grid-gutter)); padding-inline: var(--v2-grid-gutter); scroll-padding-inline: var(--v2-grid-gutter); }
+}
+/* Stack cards: copy is not cut on the 4-up row. */
+@media (min-width: 1101px) { .home-v2 .sgs-item-subtitle { -webkit-line-clamp: 4; } }
+.home-v2 .sgs-item-subtitle, .home-v2 .v2-shelf-pick-take { text-wrap: pretty; }
+/* Heading to content: 24, title to lead: 8. */
+.home-v2 .sgs-head { margin-bottom: var(--v2-head-content-gap); }
+.home-v2 .sgs-lead { margin-top: 8px; }
+/* "Freemium" and price badges on covers: on the type scale. */
+.home-v2 .tce-cover-price { font: 600 11px/1 var(--font-ui); color: var(--color-text); }
 
 /* Section titles: one size, clearly above the card titles. */
 .home-v2 .v2-section-title { font: 600 var(--h-section)/1.15 var(--font-ui); letter-spacing: -.025em; color: var(--h-ink); }
@@ -35516,7 +35544,8 @@ img[data-logo-loading] {
 .home-v2 .sgs-item-title,
 .home-v2 .tce-name,
 .home-v2 .v2-today-title { font: 600 18px/1.25 var(--font-ui); letter-spacing: -.015em; color: var(--h-ink); }
-.home-v2 .v2-today-card--feature .v2-today-title { font-size: 32px; line-height: 1.12; letter-spacing: -.03em; }
+/* The lead guide title never outranks its section title. */
+.home-v2 .v2-today-card--feature .v2-today-title { font-size: clamp(22px, 2.3vw, 32px); line-height: 1.12; letter-spacing: -.02em; max-width: 24ch; }
 /* Items and body. */
 .home-v2 .v2-shelf-pick-name { font: 600 15px/1.35 var(--font-ui); letter-spacing: -.01em; color: var(--h-ink); }
 .home-v2 .v2-shelf-pick-take,
@@ -35583,12 +35612,12 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-stack-gauge > span { animation-duration: 500ms; animation-delay: 0ms; animation-play-state: paused; }
 .tt-footer .tt-footer-stack[data-seen] .tt-footer-stack-gauge > span { animation-play-state: running; }
 /* Trim: the tiles converge before they fade, so the fold reads. */
-.tt-trim-tile { transition: transform 380ms var(--ease), opacity 220ms ease 140ms; }
-.tt-trim[data-trimmed] .tt-trim-tile { transform: translate(22px, 0) rotate(0deg) scale(.6); }
 @media (prefers-reduced-motion: reduce) {
   .home-v2 .v2-shelf-cell-count { transition: color 180ms ease-out; }
   .home-v2 .v2-shelf-cell-head:hover .v2-shelf-cell-count, .home-v2 .v2-shelf-cell-head:focus-visible .v2-shelf-cell-count { transform: none; }
-  .home-v2 .sgs-folder-app, .home-v2 .sgs-item:hover .sgs-folder-app { transition: none; transform: none; }
+  .home-v2 .sgs-folder-app, .home-v2 .sgs-item:hover .sgs-folder-app,
+  .home-v2 .sgs-item:hover .sgs-folder-app:nth-child(n) { transition: none; transform: none; }
+  .home-v2 .sgs-item, .home-v2 .sgs-item:hover, .home-v2 .hv2-cta, .home-v2 .hv2-cta-secondary, .tt-footer .tt-footer-badge { transition: none; transform: none; }
   .tce-hover-actions, .tt-section-action svg, .tt-footer .tt-footer-stack, .tt-footer .tt-footer-stack-logos > *, .tt-footer .tt-footer-stack-cta svg { transition: none !important; transform: none !important; }
   .tt-footer .tt-footer-stack-gauge > span { animation: none; }
 }
@@ -35605,3 +35634,13 @@ img[data-logo-loading] {
   .tt-footer .tt-footer-partners { flex-wrap: nowrap; min-width: 0; }
   .tt-footer .tt-footer-badges { min-width: 0; max-width: 100%; }
 }
+
+/* Focus: one ring everywhere that has none of its own (zero specificity, so
+   any component ring still wins; a11y review, 9 Oct 2026). */
+:where(a, button, [role="tab"], summary):focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+/* While the cookie banner shows, scrolling to a focused element keeps it
+   above the banner (WCAG 2.4.11). */
+html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
+/* The page ends into the footer with a little more air than between sections. */
+.asv2-main:has(.home-v2) + .tt-footer { --tt-footer-margin-top: calc(var(--h-gap, 72px) * 1.5); }
+@media (max-width: 640px) { .asv2-main:has(.home-v2) + .tt-footer { --tt-footer-margin-top: 72px; } }
