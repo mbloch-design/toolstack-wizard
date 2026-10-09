@@ -29,10 +29,18 @@ L’URL réellement configurée, la présence de la clé et la propagation des m
 
 ## Limites maintenues explicites
 
-La preuve serveur ne consomme pas un checkout. Une soumission identique peut encore être répétée ; une réponse perdue après un email accepté peut conduire à un nouvel email au retry. Une protection durable et atomique contre réutilisation, concurrence et doublons reste le sous-lot R2c, à raccorder au backend réel. Le contrôle des remboursements/litiges et des notifications prestataire reste à traiter avec ce contrat durable. Le bypass du badge gratuit relevé par R2 est distinct et reste ouvert.
+La preuve serveur ne consomme pas un checkout. Une soumission identique peut encore être répétée ; une réponse perdue après un email accepté peut conduire à un nouvel email au retry. Une protection durable et atomique contre réutilisation, concurrence et doublons reste le sous-lot R2c, à raccorder au backend réel. Le contrôle des remboursements/litiges et des notifications prestataire reste à traiter avec ce contrat durable. Le bypass du badge gratuit relevé par R2 est désormais corrigé localement : toute soumission non payée impose URL, jeton signé et nouvelle présence publique du badge, quel que soit le flag client `badgeReview`.
 
 La récupération dépend du stockage local de ce navigateur ; un autre navigateur sans brouillon ou plus de 20 brouillons concurrents demande une reprise manuelle. Les brouillons distincts ne sont pas purgés automatiquement.
 
 ## Sources du contrat prestataire
 
 [Relecture d’un checkout](https://docs.creem.io/api-reference/endpoint/get-checkout), [métadonnées des liens produits](https://docs.creem.io/features/checkout/checkout-link), [checkout embarqué](https://docs.creem.io/features/checkout/embedded-checkout) et [événements de paiement](https://docs.creem.io/code/webhooks). Les paramètres réels de ce produit restent à observer avant activation.
+
+## Actualisation — badge gratuit et contrainte sans Supabase
+
+Le contrôle de la formule est maintenant dérivé côté serveur. Omettre `badgeReview` ou envoyer `false`, `null`, chaîne vide ou zéro ne contourne plus le badge. Les contacts généraux et la formule payante vérifiée conservent leur traitement. Sept cas négatifs ont reproduit le bypass avant correction ; les demandes gratuites valides passent également sans flag client.
+
+Recette actualisée : 122 tests API, types app/node/API, build production complet et cinq parcours Chromium simulés passent. La suite applicative du checkout courant passe 284 tests dans 54 fichiers ; six tests dans trois fichiers supplémentaires appartiennent aux travaux locaux hors périmètre et ne sont pas attribués à ce correctif. Relecture indépendante sans défaut relevé. Aucun email, paiement ou stockage distant modifié. [Preuves](proofs/free-badge-2026-10-09/validation.json).
+
+À la demande du propriétaire, la future consommation/déduplication des soumissions doit fonctionner **sans Supabase**. Le [contrat révisé](superpowers/specs/2026-10-09-submission-idempotency-design.md) propose un stockage Redis léger hors Supabase ; le propriétaire a choisi de préparer Upstash gratuit, en conservant son traitement par email. Aucun anti-replay durable ni nouveau service n'est encore implémenté. Le correctif reste local et non publié, dans l'attente des vérifications de configuration Creem.

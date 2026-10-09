@@ -79,6 +79,17 @@ describe("contact", () => {
     const h = httpFixture({ ...toolBody, ...patch }); await contact(h.req, h.res);
     expect(h.res.statusCode).toBe(400); expect(h.body).toEqual({ error: "Invalid tool submission" }); expect(fakes.send).not.toHaveBeenCalled();
   });
+  it.each([undefined, false, null, "", 0])("enforces the free badge when the client sends badgeReview=%j", async badgeReview => {
+    const h = httpFixture({ ...toolBody, badgeReview }); await contact(h.req, h.res);
+    expect(h.res.statusCode).toBe(400); expect(fakes.send).not.toHaveBeenCalled();
+  });
+  it.each([undefined, false])("rechecks a removed badge even without the client opt-in: %j", async badgeReview => {
+    const badgeUrl = "https://example.com/badge";
+    const v = httpFixture({ badgeUrl, toolUrl: toolBody.toolUrl }); await verifyBadge(v.req, v.res);
+    fetchPage.mockResolvedValueOnce(new Response("<html>No badge</html>", { headers: { "content-type": "text/html" } }));
+    const h = httpFixture({ ...toolBody, badgeReview, badgeUrl, verificationToken: (v.body as { token: string }).token }); await contact(h.req, h.res);
+    expect(h.res.statusCode).toBe(400); expect(fakes.send).not.toHaveBeenCalled();
+  });
   it("requires a valid URL before verifying a badge", async () => {
     const h = httpFixture({ ...toolBody, badgeReview: true, badgeUrl: "invalid" }); await contact(h.req, h.res);
     expect(h.res.statusCode).toBe(400); expect(h.body).toEqual({ error: "Invalid badge URL" }); expect(fetchPage).not.toHaveBeenCalled(); expect(fakes.send).not.toHaveBeenCalled();
@@ -91,11 +102,11 @@ describe("contact", () => {
     expect(h.body).toEqual({ error: "Badge verification required" }); expect(h.res.statusCode).toBe(400);
     expect(fetchPage).not.toHaveBeenCalled(); expect(fakes.send).not.toHaveBeenCalled();
   });
-  it("accepts a real verifier token and rechecks the badge before confirmation", async () => {
+  it.each([true, false, undefined])("accepts a verified free submission regardless of client badgeReview=%j", async badgeReview => {
     const badgeUrl = "https://example.com/badge";
     const v = httpFixture({ badgeUrl, toolUrl: toolBody.toolUrl }); await verifyBadge(v.req, v.res);
     const token = (v.body as { token: string }).token;
-    const h = httpFixture({ ...toolBody, badgeReview: true, badgeUrl, verificationToken: token }); await contact(h.req, h.res);
+    const h = httpFixture({ ...toolBody, badgeReview, badgeUrl, verificationToken: token }); await contact(h.req, h.res);
     expect(h.body).toEqual({ success: true }); expect(h.res.statusCode).toBe(200);
     expect(fetchPage).toHaveBeenCalledTimes(2); expect(fakes.send).toHaveBeenCalledTimes(2);
     expect(fakes.send.mock.calls[1][0]).toMatchObject({ to: "ada@example.com", subject: "Request registered — Sample" });
@@ -116,13 +127,17 @@ describe("contact", () => {
   it("returns 500 on delivery failure without confirming", async () => {
     vi.spyOn(console, "error").mockImplementation(() => {});
     fakes.send.mockResolvedValueOnce({ data: null, error: { message: "delivery unavailable" } });
-    const h = httpFixture(toolBody); await contact(h.req, h.res);
+    const badgeUrl = "https://example.com/badge";
+    const v = httpFixture({ badgeUrl, toolUrl: toolBody.toolUrl }); await verifyBadge(v.req, v.res);
+    const h = httpFixture({ ...toolBody, badgeUrl, verificationToken: (v.body as { token: string }).token }); await contact(h.req, h.res);
     expect(h.res.statusCode).toBe(500); expect(h.body).toEqual({ error: "delivery unavailable" }); expect(fakes.send).toHaveBeenCalledTimes(1);
   });
   it("keeps the accepted submission when confirmation delivery fails", async () => {
     vi.spyOn(console, "error").mockImplementation(() => {});
     fakes.send.mockResolvedValueOnce({ data: { id: "accepted" }, error: null }).mockResolvedValueOnce({ data: null, error: { message: "confirmation unavailable" } });
-    const h = httpFixture(toolBody); await contact(h.req, h.res);
+    const badgeUrl = "https://example.com/badge";
+    const v = httpFixture({ badgeUrl, toolUrl: toolBody.toolUrl }); await verifyBadge(v.req, v.res);
+    const h = httpFixture({ ...toolBody, badgeUrl, verificationToken: (v.body as { token: string }).token }); await contact(h.req, h.res);
     expect(h.res.statusCode).toBe(200); expect(h.body).toEqual({ success: true });
   });
 });

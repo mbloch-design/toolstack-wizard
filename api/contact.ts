@@ -149,7 +149,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const {
     name, email, subject, message, submissionType,
-    toolName, toolUrl, submitterRole, badgeReview, badgeUrl, verificationToken, paid, lang, checkoutId, paymentReference,
+    toolName, toolUrl, submitterRole, badgeUrl, verificationToken, paid, lang, checkoutId, paymentReference,
   } = req.body ?? {};
 
   if (!name || !email || !subject || !message || !isValidEmail(email)) {
@@ -165,6 +165,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: "Invalid payment flag" });
   }
   const isPaidSubmission = isToolSubmission && paid === true;
+  const requiresBadge = isToolSubmission && !isPaidSubmission;
   if (isToolSubmission && (!toolName || !isValidHttpUrl(toolUrl) || !submitterRole)) {
     return res.status(400).json({ error: "Invalid tool submission" });
   }
@@ -175,13 +176,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(failure.status).json({ error: failure.message });
     }
   }
-  if (isToolSubmission && badgeReview && !isValidHttpUrl(badgeUrl)) {
+  if (requiresBadge && !isValidHttpUrl(badgeUrl)) {
     return res.status(400).json({ error: "Invalid badge URL" });
   }
-  if (isToolSubmission && badgeReview && !hasValidBadgeToken(verificationToken, badgeUrl, toolUrl)) {
+  if (requiresBadge && !hasValidBadgeToken(verificationToken, badgeUrl, toolUrl)) {
     return res.status(400).json({ error: "Badge verification required" });
   }
-  if (isToolSubmission && badgeReview) {
+  if (requiresBadge) {
     try {
       await verifyBadgeOnPage(badgeUrl, toolUrl);
     } catch {
@@ -191,7 +192,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const submissionLang: "fr" | "en" = lang === "fr" ? "fr" : "en";
   const internalOfferLabel = isPaidSubmission ? "PAYANT 29 $" : "GRATUIT + BADGE";
-  const reviewLane = isPaidSubmission ? "Publication garantie sous 5 jours" : badgeReview ? "Sélection éditoriale standard — badge vérifié" : "Sélection éditoriale standard";
+  const reviewLane = isPaidSubmission ? "Publication garantie sous 5 jours" : requiresBadge ? "Sélection éditoriale standard — badge vérifié" : "Sélection éditoriale standard";
   const safeSubjectToolName = String(toolName ?? "").replace(/[\r\n]/g, " ");
   const toolDetails = isToolSubmission ? `
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:0 0 24px;border-collapse:separate;">
@@ -204,7 +205,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       <p><strong>Site officiel :</strong> ${escapeHtml(toolUrl)}</p>
       <p><strong>Lien avec l'outil :</strong> ${escapeHtml(submitterRole)}</p>
       <p><strong>File de revue :</strong> ${reviewLane}</p>
-      ${badgeReview ? `<p><strong>URL du badge :</strong> ${escapeHtml(badgeUrl)}</p>` : ""}
+      ${requiresBadge ? `<p><strong>URL du badge :</strong> ${escapeHtml(badgeUrl)}</p>` : ""}
       <hr />
     ` : "";
 

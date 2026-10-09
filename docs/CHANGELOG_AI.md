@@ -1,3 +1,10 @@
+## 2026-10-09 — Badge gratuit imposé côté serveur ; suite sans Supabase
+
+- `api/contact.ts` déduit l'obligation du badge de la soumission et du paiement strictement vérifié, au lieu du flag client `badgeReview`. URL, jeton et relecture du badge requis pour toute demande gratuite ; contacts généraux et demandes payantes vérifiées conservés.
+- Sept tests négatifs reproduisent le bypass avant correction. Recette : 122 API, types, build production et cinq parcours Chromium simulés PASS ; suite app actuelle 284/54 incluant six tests hors périmètre. Relecture indépendante sans point restant.
+- Contrainte explicite : cette fonctionnalité doit fonctionner sans Supabase. Contrat de consommation/déduplication révisé, proposition Redis gratuite hors Supabase, Upstash gratuit choisi pour préparation, traitement manuel par email conservé. Aucun nouveau compte, stockage, raccordement ou facturation activé.
+- Local, non publié : configuration/retour Creem encore à attester ; anti-replay durable non implémenté. Catégories et travaux catalogue/médias/Stack préservés.
+
 ## 2026-10-09 — Creem : vérification serveur et conservation du brouillon, local
 
 - Correctif autorisé, conservant produit/lien/embed Creem : métadonnées référence/URL, relecture serveur du checkout et contrôle indépendant avant emails payants. Flag `paid` seul refusé ; clé exclusivement serveur, erreurs prestataire récupérables.
