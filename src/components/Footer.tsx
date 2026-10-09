@@ -54,7 +54,7 @@ const BADGES: Badge[] = [
  *   4. Directory badges in uniform cells, the label taking the first cell
  *
  * The twist is the right half: whoever has a stack meets its figures again at
- * the end of every page (tools, monthly cost, paid twice), read from the
+ * the end of every page (tools, estimated monthly cost, cost to review), read from the
  * snapshot Ma stack writes. Rendered after mount only, so the prerendered
  * HTML stays the same for everyone.
  */
@@ -66,7 +66,7 @@ const Footer = () => {
   const onMyStack = /\/(ma-stack|my-stack)(\/|$)/.test(location.pathname);
   const [snapshot, setSnapshot] = useState<StackSnapshot | null>(null);
   useEffect(() => { setSnapshot(readStackSnapshot()); }, [location.pathname]);
-  // The paid-twice gauge fills when the card is seen, not when it mounts.
+  // The cost-to-review gauge fills when the card is seen, not when it mounts.
   const stackCardRef = useRef<HTMLAnchorElement>(null);
   const [cardSeen, setCardSeen] = useState(false);
   useEffect(() => {
@@ -107,12 +107,12 @@ const Footer = () => {
               </span>
               <span className="tt-footer-stack-total"><span className="tt-footer-stack-approx">≈</span>{money(snapshot.monthly)}<small>{t("/mois", "/mo")}</small></span>
               {snapshot.double > 0 && snapshot.monthly > 0 ? <>
-                {/* The share paid twice, as a hairline gauge. */}
+                {/* The estimated cost to review, as a hairline gauge. */}
                 <span className="tt-footer-stack-gauge" aria-hidden="true"><span style={{ width: `${Math.max(3, Math.min(100, Math.round(snapshot.double / snapshot.monthly * 100)))}%` }} /></span>
-                <span className="tt-footer-stack-note">{t(`dont ${money(snapshot.double)} payés en double`, `of which ${money(snapshot.double)} paid twice`)}</span>
-              </> : <span className="tt-footer-stack-note">{t("Aucun recoupement en cours", "No overlap left")}</span>}
+                <span className="tt-footer-stack-note">{t(`dont ${money(snapshot.double)} à examiner dans l’estimation`, `of which ${money(snapshot.double)} to review in the estimate`)}</span>
+              </> : <span className="tt-footer-stack-note">{t("Coût mensuel estimé", "Estimated monthly cost")}</span>}
               <span className="tt-footer-stack-cta">
-                {snapshot.double > 0 ? t("Trancher les doublons", "Settle the overlaps") : t("Reprendre ma stack", "Back to my stack")}
+                {snapshot.double > 0 ? t("Examiner les recoupements", "Review overlaps") : t("Reprendre ma stack", "Back to my stack")}
                 <ChevronRight aria-hidden="true" />
               </span>
             </Link>

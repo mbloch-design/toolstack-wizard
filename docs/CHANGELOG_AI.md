@@ -1,3 +1,11 @@
+## 9 octobre 2026 — R4 : coûts et recoupements Ma Stack
+
+- Audit du calcul et des sources sur la version main `c42d137826`, dans un worktree isolé.
+- FR/EN : estimation de coût, montant des recoupements à examiner et baisse estimée du budget ; aucun libellé de dépense dupliquée prouvée. Alignement hero/liste/inspecteur/comparatif/toast/footer.
+- Explication du calcul et du fait que retirer un outil ne résilie pas son abonnement. Calculs et stockage inchangés.
+- 99 tests Ma Stack, 23 contrats SEO, build production complet PASS, recette Chromium FR/EN 390/1440 px avec retrait/annulation/persistance, sans débordement ni erreur JS. Preuves : `docs/proofs/ma-stack-r4-2026-10-09/runtime.json`. Revue indépendante : deux surfaces inspecteur corrigées.
+- Compréhension utilisateur à observer ; renouvellement Redis encore à faire ; paiement réel exclu par le propriétaire.
+
 ## 2026-10-09 : navigation, revue design et corrections
 
 - Revue design-superpowers (L2) de la barre latérale, du haut de page, de la barre du bas et du menu mobile, mesurée avec Playwright à 1440, 1024 et 390 px.

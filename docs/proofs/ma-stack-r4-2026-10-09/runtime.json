@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-09T17:34:37.063Z",
+  "checks": [
+    {
+      "lang": "fr",
+      "width": 390,
+      "claims": "pass",
+      "inspector": "pass",
+      "footer": "pass",
+      "removeUndoPersistence": "pass",
+      "overflow": "none",
+      "errors": []
+    },
+    {
+      "lang": "fr",
+      "width": 1440,
+      "claims": "pass",
+      "inspector": "pass",
+      "footer": "pass",
+      "removeUndoPersistence": "pass",
+      "overflow": "none",
+      "errors": []
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "claims": "pass",
+      "inspector": "pass",
+      "footer": "pass",
+      "removeUndoPersistence": "pass",
+      "overflow": "none",
+      "errors": []
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "claims": "pass",
+      "inspector": "pass",
+      "footer": "pass",
+      "removeUndoPersistence": "pass",
+      "overflow": "none",
+      "errors": []
+    }
+  ]
+}

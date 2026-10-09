@@ -57,7 +57,7 @@ export default function StackCompareDecision({ toolA, toolB, prefix, lang, t }: 
     const keptName = decided.kept === slugA ? toolA.name : toolB.name;
     body = <p className="ms-cd-status">{decided.kind === "keep-both"
       ? t("Décidé : vous gardez les deux.", "Decided: you keep both.")
-      : t(`Décidé : vous gardez ${keptName}.`, `Decided: you keep ${keptName}.`)}{saving !== null && saving > 0 && <> <strong>{t(`${money(saving!)} en moins.`, `${money(saving!)} less.`)}</strong></>}{saving === null && decided.saving > 0 && <> {t("Économie enregistrée : devise inconnue.", "Recorded saving: currency unknown.")}</>} {stackLink}</p>;
+      : t(`Décidé : vous gardez ${keptName}.`, `Decided: you keep ${keptName}.`)}{saving !== null && saving > 0 && <> <strong>{t(`${money(saving!)} en moins dans le budget estimé.`, `${money(saving!)} less in the estimated budget.`)}</strong></>}{saving === null && decided.saving > 0 && <> {t("Baisse estimée : devise inconnue.", "Estimated reduction: currency unknown.")}</>} {stackLink}</p>;
   } else if (inA && inB) {
     body = <>
       <p className="ms-cd-lead"><strong>{t("Les deux sont dans ma stack.", "Both are in my stack.")}</strong> {t("Vous gardez lequel ?", "Which one do you keep?")}</p>
@@ -66,7 +66,7 @@ export default function StackCompareDecision({ toolA, toolB, prefix, lang, t }: 
           const saving = monthly(drop) ?? 0;
           return <button key={keep.id} type="button" onClick={() => decide("keep-one", { slug: toolKey(keep), name: keep.name }, { slug: toolKey(drop), name: drop.name }, saving, "compare")}>
             <ToolLogo tool={keep} size={28} />
-            <span><strong>{t(`Garder ${keep.name}`, `Keep ${keep.name}`)}</strong><small>{saving > 0 ? t(`${money(saving)} en moins`, `${money(saving)} less`) : t(`${drop.name} quitte ma stack`, `${drop.name} leaves my stack`)}</small></span>
+            <span><strong>{t(`Garder ${keep.name}`, `Keep ${keep.name}`)}</strong><small>{saving > 0 ? t(`${money(saving)} en moins dans l’estimation`, `${money(saving)} less in the estimate`) : t(`${drop.name} quitte ma stack`, `${drop.name} leaves my stack`)}</small></span>
           </button>;
         })}
         <button type="button" onClick={() => decide("keep-both", { slug: slugA, name: toolA.name }, { slug: slugB, name: toolB.name }, 0, "compare")}>
@@ -83,7 +83,7 @@ export default function StackCompareDecision({ toolA, toolB, prefix, lang, t }: 
       <div className="ms-cd-choices">
         <button type="button" onClick={() => decide("replace", { slug: toolKey(other), name: other.name }, { slug: toolKey(mine), name: mine.name }, Math.max(0, delta ?? 0), "compare")}>
           <ToolLogo tool={other} size={28} />
-          <span><strong>{t(`Remplacer par ${other.name}`, `Replace with ${other.name}`)}</strong><small>{delta === null ? t("Écart de coût inconnu", "Cost difference unknown") : delta > 0 ? t(`${money(delta)} en moins (offre d’entrée)`, `${money(delta)} less (entry plan)`) : delta < 0 ? t(`${money(-delta)} en plus (offre d’entrée)`, `${money(-delta)} more (entry plan)`) : t("Même coût d’entrée ou prix non relevé", "Same entry cost or price not checked")}</small></span>
+          <span><strong>{t(`Remplacer par ${other.name}`, `Replace with ${other.name}`)}</strong><small>{delta === null ? t("Écart de coût inconnu", "Cost difference unknown") : delta > 0 ? t(`${money(delta)} en moins dans l’estimation`, `${money(delta)} less in the estimate`) : delta < 0 ? t(`${money(-delta)} en plus dans l’estimation`, `${money(-delta)} more in the estimate`) : t("Même coût d’entrée ou prix non relevé", "Same entry cost or price not checked")}</small></span>
         </button>
         <button type="button" onClick={() => decide("keep-both", { slug: toolKey(mine), name: mine.name }, { slug: toolKey(other), name: other.name }, 0, "compare", t(`Noté : vous gardez ${mine.name}.`, `Noted: you keep ${mine.name}.`))}>
           <ToolLogo tool={mine} size={28} />
@@ -97,6 +97,7 @@ export default function StackCompareDecision({ toolA, toolB, prefix, lang, t }: 
     <aside className="ms-compare-decision" aria-label={t("Décision pour ma stack", "Decision for my stack")}>
       <p className="ms-cd-eyebrow">{t("Ma stack", "My stack")}</p>
       {body}
+      <p className="ms-budget-foot">{t("Prix du catalogue ou coûts déclarés. Retirer un outil ici ne résilie pas son abonnement.", "Catalogue prices or declared costs. Removing a tool here does not cancel its subscription.")}</p>
     </aside>
   );
 }

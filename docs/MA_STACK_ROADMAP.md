@@ -1,10 +1,16 @@
+## Lot R4 — 9 octobre 2026 : promesses de coût
+
+Correction préparée sur `c42d137826` : coûts présentés comme estimés ; recoupements comme montant à examiner, jamais comme dépense inutile prouvée. Le montant conserve le calcul existant (outil le moins cher de chaque paire à coût positif, compté une seule fois). Sources : offre catalogue, plan choisi ou montant déclaré. Retrait/remplacement dans la sélection = modification du budget estimé, aucune résiliation externe. Hero, liste, inspecteur, comparatif, notification et footer alignés FR/EN. Calculs, stockage et routes conservés.
+
+Validation technique : 99 tests Ma Stack, 23 contrats SEO, build production complet PASS et recette locale FR/EN à 390/1440 px (coûts déclarés, retrait, annulation, persistance, débordement et erreurs JavaScript). La compréhension par de vrais utilisateurs reste à observer ; R4 n’est donc pas une validation produit complète. Prochain lot : R5, audit borné de la qualité des relations Explorer. Le renouvellement du jeton Redis reste une action de sécurité distincte à faire ; aucun paiement réel n’a été testé.
+
 ## Actualisation — 9 octobre 2026
 
 **Suivi actuel : [état des lieux et roadmap par lots](ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md), [roadmap générale](ROADMAP.md#suivi-technique-actif).** Les checkpoints de juillet et les caps V1/V2 du 5 octobre conservés ci-dessous sont des décisions/historiques, pas un inventaire certifié de l’interface actuellement publiée.
 
 - Socle publié : navigation, recherche, revalidation, décisions/devises et stockage, hydratation avec sélection enregistrée, projection catalogue et Router 7.18.4. Dernière CI complète verte R1 : 266 tests applicatifs, 82 API, 23 SEO, 99 Ma Stack, 56 hydratations ; le blocage historique GO14 ne pilote plus le workflow conservé.
 - Contrats API : 82 tests et contrôle strict ajoutés dans `13b631bc1d`, publiés via `bb4bc7f94b`, CI complète verte. R1 `4601f877cf` retire le SDK de types avec contrat HTTP compatible et JS des handlers identique ; sa CI et sa recette publique sont réussies.
-- Point de décision produit : la page actuelle présente coût catalogue et recoupements, alors que certains caps ci-dessous annoncent l’absence de coût global. Le libellé « Payé en double » ne prouve pas une dépense inutile personnelle. Lot R4 : aligner la promesse sur les preuves avant d’ajouter des fonctions.
+- Point de décision produit : la page actuelle présente coût catalogue et recoupements, alors que certains caps ci-dessous annoncent l’absence de coût global. Le libellé « Payé en double » ne prouve pas une dépense inutile personnelle. Lot R4 : correction préparée et testée ci-dessus ; compréhension utilisateur à observer.
 - Qualité des relations, compréhension de la navigation, données éditoriales et observation utilisateur restent des lots distincts R5/R6/R9. Les tests techniques ne valident pas à eux seuls la valeur perçue.
 - Aucun compte, enrichissement de données, changement de budget ou refonte des catégories n’est lancé par cette actualisation documentaire.
 

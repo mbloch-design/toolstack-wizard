@@ -26,7 +26,7 @@ import toolAccents from "@/data/toolAccents.json";
  * (c'est la fiche) :
  * 1. ce qu'il me coûte, et pour un freemium, la question « je paie ? » sur place ;
  * 2. les usages qu'il couvre ;
- * 3. ce qu'il recoupe dans ma stack, avec ce qui est payé en double ;
+ * 3. ce qu'il recoupe dans ma stack, avec le coût estimé à examiner ;
  * 4. la fiche complète, et le retrait de ma stack (annulable).
  */
 
@@ -107,7 +107,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                   {/* The figure of the sheet: what this tool costs me, large,
                       with where the number comes from. */}
                   <div className="ms-ts-cost">
-                    <span className="ms-ts-cost-label">{en ? "Monthly cost" : "Coût mensuel"}</span>
+                    <span className="ms-ts-cost-label">{en ? "Estimated monthly cost" : "Coût mensuel estimé"}</span>
                     <strong className="ms-ts-cost-value"><ValueChange value={cost.kind === "paid" ? `${cost.currency}${Math.round(cost.monthly * 100)}` : cost.kind}>{cost.kind === "paid" ? (cost.source === "custom" && cost.currency === currency && choice?.period === "monthly"
                         // What the person typed, in the shown currency: exact, no "≈".
                         ? `${new Intl.NumberFormat(en ? "en-US" : "fr-FR", { style: "currency", currency, maximumFractionDigits: 2 }).format(cost.monthly)}${en ? "/mo" : "/mois"}`
@@ -159,7 +159,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
             <section className="ms-ts-section">
               <h3>{en ? "Overlaps in my stack" : "Recoupements dans ma stack"}</h3>
               {mine.length === 0
-                ? <p className="ms-ts-empty">{en ? "No other tool in your stack does the same job." : "Aucun autre outil de votre stack ne fait le même travail."}</p>
+                ? <p className="ms-ts-empty">{en ? "No overlap detected with the other tools in your stack." : "Aucun recoupement détecté avec les autres outils de votre stack."}</p>
                 : <ul className="ms-ts-pairs">{mine.map((pair) => {
                   const other = pair.a.id === tool.id ? pair.b : pair.a;
                   return <li key={other.id}>
@@ -169,7 +169,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                         ? (en ? `Shared: ${pair.shared.slice(0, 2).join(", ")}` : `En commun : ${pair.shared.slice(0, 2).map((use) => stackDisplayLabel(use, lang)).join(", ")}`)
                         : (en ? "Catalogue alternative" : "Alternative du catalogue")}</small></span>
                     </button>
-                    {pair.double > 0 && <span className="ms-pair-double">{en ? `${money(pair.double)} twice` : `${money(pair.double)} en double`}</span>}
+                    {pair.double > 0 && <span className="ms-pair-double">{en ? `${money(pair.double)} to review` : `${money(pair.double)} à examiner`}</span>}
                     <Link className="ms-ts-compare" to={comparisonPath(prefix, slug, toolKey(other))} onClick={() => trackEvent("stack_compare_click", { source: "sheet", a: slug, b: toolKey(other) })}>{en ? "Compare" : "Comparer"}</Link>
                   </li>;
                 })}</ul>}
@@ -194,7 +194,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                   const label = stackCatalogPrice(alt, lang) || (en ? "Price not checked" : "Prix non relevé");
                   const gapText = gap !== null && Math.round(gap) !== 0
                     ? { short: `${gap > 0 ? "−" : "+"}${formatAmount(Math.round(Math.abs(gap)), currency, lang)}${en ? "/mo" : "/mois"}`,
-                        full: gap > 0 ? (en ? `${money(gap)} less than what you pay` : `${money(gap)} de moins que ce que vous payez`) : (en ? `${money(-gap)} more than what you pay` : `${money(-gap)} de plus que ce que vous payez`) }
+                        full: gap > 0 ? (en ? `${money(gap)} less in the estimate` : `${money(gap)} de moins dans l’estimation`) : (en ? `${money(-gap)} more in the estimate` : `${money(-gap)} de plus dans l’estimation`) }
                     : null;
                   // Name on its own line; price and the gap to what I pay under it.
                   return <li key={alt.id}>

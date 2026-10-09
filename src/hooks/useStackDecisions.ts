@@ -105,7 +105,7 @@ export function useStackDecisions(t: (fr: string, en: string) => string, formatS
       ? t(`${removed.name} remplacé par ${kept.name}.`, `${removed.name} replaced with ${kept.name}.`)
       : t(`${removed.name} retiré, vous gardez ${kept.name}.`, `${removed.name} removed, you keep ${kept.name}.`);
     toast(message, {
-      description: saving > 0 ? t(`${formatSaving(saving)} en moins dans votre budget.`, `${formatSaving(saving)} less in your budget.`) : undefined,
+      description: saving > 0 ? t(`${formatSaving(saving)} en moins dans votre budget estimé. Abonnement à résilier séparément.`, `${formatSaving(saving)} less in your estimated budget. Cancel the subscription separately.`) : undefined,
       duration: 7000,
       action: {
         label: t("Annuler", "Undo"),
