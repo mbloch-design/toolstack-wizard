@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import ToolLogo from "@/components/ToolLogo";
 import type { Category } from "@/data/types";

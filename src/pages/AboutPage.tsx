@@ -1,6 +1,6 @@
 import { useLang } from "@/hooks/useLang";
 import Breadcrumb from "@/components/Breadcrumb";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useMemo, useEffect } from "react";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo } from "@/lib/seo";

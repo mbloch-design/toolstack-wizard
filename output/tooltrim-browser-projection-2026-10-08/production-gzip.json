@@ -1,0 +1,14 @@
+{
+  "old": {
+    "gzipBytes": 352415,
+    "decodedBytes": 1520530,
+    "sha256": "f7853bf7fbafa2025359641a47c3bd923d501971cebe027201e87d94a35db14d"
+  },
+  "new": {
+    "gzipBytes": 334820,
+    "decodedBytes": 1419554,
+    "sha256": "70bcd1790f9fbd00d6a572752b26306864bcabe5b2d3f5f49782203c33232a44"
+  },
+  "gainGzipBytes": 17595,
+  "gainGzipPercent": 4.99
+}

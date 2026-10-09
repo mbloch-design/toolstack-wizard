@@ -47,3 +47,5 @@ supabase/.temp/
 /.vercel/
 /reports/
 /test-results/
+
+/playwright-report/

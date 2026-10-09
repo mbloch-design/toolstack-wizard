@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useSyncExternalStore } from "react";
 import { trackEvent } from "@/lib/analytics";
 import {
   STACK_STATE_STORAGE_KEY,
@@ -46,6 +46,22 @@ let currentToolCartState: ToolCartState | null = null;
 let currentPersistenceStatus: StackPersistenceStatus | null = null;
 const subscribers = new Set<(state: ToolCartState) => void>();
 const statusSubscribers = new Set<(status: StackPersistenceStatus) => void>();
+// SSR cannot know the browser's saved stack. React uses these stable snapshots
+// for SSR and the first hydration render, then restores the live browser store.
+const serverToolCartState = createDefaultToolCartState();
+const serverPersistenceStatus: StackPersistenceStatus = { state: "ok", source: "default" };
+const getServerToolCartState = () => serverToolCartState;
+const getServerPersistenceStatus = () => serverPersistenceStatus;
+
+function subscribeToToolCartState(listener: () => void) {
+  subscribers.add(listener);
+  return () => { subscribers.delete(listener); };
+}
+
+function subscribeToPersistenceStatus(listener: () => void) {
+  statusSubscribers.add(listener);
+  return () => { statusSubscribers.delete(listener); };
+}
 
 function initializeToolCartState() {
   if (currentToolCartState && currentPersistenceStatus) return;
@@ -90,15 +106,10 @@ function updateToolCartState(updater: (current: ToolCartState) => ToolCartState)
 }
 
 export function useStackPins() {
-  const [state, setState] = useState<ToolCartState>(() => getCurrentToolCartState());
-  const [persistenceStatus, setPersistenceStatus] = useState<StackPersistenceStatus>(() => getCurrentPersistenceStatus());
+  const state = useSyncExternalStore(subscribeToToolCartState, getCurrentToolCartState, getServerToolCartState);
+  const persistenceStatus = useSyncExternalStore(subscribeToPersistenceStatus, getCurrentPersistenceStatus, getServerPersistenceStatus);
 
   useEffect(() => {
-    subscribers.add(setState);
-    statusSubscribers.add(setPersistenceStatus);
-    setState(getCurrentToolCartState());
-    setPersistenceStatus(getCurrentPersistenceStatus());
-
     function handleStorage(event: StorageEvent) {
       if (event.key !== STACK_PINS_STORAGE_KEY && event.key !== null) return;
       const loaded = readToolCartState();
@@ -112,8 +123,6 @@ export function useStackPins() {
     }
 
     return () => {
-      subscribers.delete(setState);
-      statusSubscribers.delete(setPersistenceStatus);
       if (typeof window !== "undefined") {
         window.removeEventListener("storage", handleStorage);
       }

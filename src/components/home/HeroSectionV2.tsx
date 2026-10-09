@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { Bookmark } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";

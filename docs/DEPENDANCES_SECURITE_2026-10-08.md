@@ -1,6 +1,6 @@
 # ToolTrim — correctifs des dépendances, 8 octobre 2026
 
-Statut : corrections locales, sans push ni déploiement dans ce lot.
+Statut historique de ce lot : corrections locales, ensuite publiées dans la séquence technique. Les mesures ci-dessous restent celles du premier audit ; [la contre-revue actualisée](DEPENDANCES_RESIDUELLES_2026-10-08.md) définit les prochaines migrations.
 
 ## Résultat mesuré
 

@@ -14,7 +14,7 @@ async function renderHost() {
   const { default: HostPage } = await import("./HostPage");
   const { HelmetProvider } = await import("react-helmet-async");
   await act(async () => { render(<HelmetProvider><SsrToolContext.Provider value={{ id: "figma", slug: "figma" } as Tool}>
-    <MemoryRouter initialEntries={["/fr/plugins/figma"]} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+    <MemoryRouter initialEntries={["/fr/plugins/figma"]}>
       <Routes>
         <Route path="/fr/plugins/:slug" element={<HostPage famille="plugins" />} />
         <Route path="/fr/tool/figma" element={<h1>Fiche Figma</h1>} />

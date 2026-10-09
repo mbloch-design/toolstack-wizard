@@ -33,10 +33,10 @@ test("paid choices propagate between browser tabs without losing earlier choices
   await other.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   await page.getByRole("button", { name: "Indiquer lesquels", exact: true }).click();
   await other.getByRole("button", { name: "Indiquer lesquels", exact: true }).click();
-  await page.getByRole("switch", { name: "Je paie Figma", exact: true }).click();
-  await expect(other.getByRole("switch", { name: "Je paie Figma", exact: true })).toHaveAttribute("aria-checked", "true");
-  await other.getByRole("switch", { name: "Je paie Canva", exact: true }).click();
-  await expect(page.getByRole("switch", { name: "Je paie Canva", exact: true })).toHaveAttribute("aria-checked", "true");
+  await page.getByRole("switch", { name: "Abonnement payant pour Figma", exact: true }).click();
+  await expect(other.getByRole("switch", { name: "Abonnement payant pour Figma", exact: true })).toHaveAttribute("aria-checked", "true");
+  await other.getByRole("switch", { name: "Abonnement payant pour Canva", exact: true }).click();
+  await expect(page.getByRole("switch", { name: "Abonnement payant pour Canva", exact: true })).toHaveAttribute("aria-checked", "true");
   expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key) || "[]"), paidKey)).toEqual(expect.arrayContaining(["figma", "canva"]));
   await other.close();
 });

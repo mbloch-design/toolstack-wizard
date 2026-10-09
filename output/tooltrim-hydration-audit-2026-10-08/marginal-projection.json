@@ -1,0 +1,37 @@
+{
+  "toolDocuments": 9912,
+  "groups": {
+    "legacyMetadata": [
+      "description",
+      "research",
+      "lifecycle",
+      "website",
+      "verdictFr",
+      "pivot_integration_source",
+      "relevantForEn"
+    ],
+    "adapterOnly": [
+      "decision_policy_v3",
+      "pricingTiers",
+      "prescription_context_questions",
+      "prescription_block_reasons",
+      "prescription_output",
+      "downgradePlan",
+      "migrationGuide",
+      "articles",
+      "timeGainedHoursPerMonth",
+      "affiliateDisclosureFr",
+      "affiliateDisclosureEn"
+    ]
+  },
+  "stats": {
+    "legacyMetadata": {
+      "bytes": 5861952,
+      "documents": 9904
+    },
+    "adapterOnly": {
+      "bytes": 3237304,
+      "documents": 9912
+    }
+  }
+}

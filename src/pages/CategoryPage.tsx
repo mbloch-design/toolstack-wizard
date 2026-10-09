@@ -1,4 +1,5 @@
-import { useLocation, useParams, Link } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { REDIRECTED_TOOL_SLUGS } from "@/lib/redirectedTools";
 import { useState, useEffect, useMemo, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";

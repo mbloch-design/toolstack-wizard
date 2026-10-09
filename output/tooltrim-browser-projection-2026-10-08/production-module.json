@@ -1,0 +1,12 @@
+{
+  "verifiedAt": "2026-10-08T15:04:31.645Z",
+  "base": "https://tooltrim.com",
+  "moduleUrl": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+  "sha256": "70bcd1790f9fbd00d6a572752b26306864bcabe5b2d3f5f49782203c33232a44",
+  "equalsVerifiedBuild": true,
+  "browserRecords": 1239,
+  "decodedBytes": 1419554,
+  "transferredBytes": 318564,
+  "encoding": "br",
+  "errors": []
+}

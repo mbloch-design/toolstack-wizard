@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { NEED_UNIVERSES } from "@/data/needUniverses";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { displayText } from "@/lib/typography";

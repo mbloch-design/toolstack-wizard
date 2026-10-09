@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { Compass } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { getExplorerHref } from "@/lib/toolExploration";

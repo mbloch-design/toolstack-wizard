@@ -1,10 +1,12 @@
+import { DEPRECATED_TOOL_SLUGS } from "./src/lib/toolVisibility";
+import { browserToolIndexProjection } from "./scripts/lib/browser-tool-index";
 import { defineConfig, loadEnv, type Plugin } from "vite";
 import bestOfGuidesConfig from "./src/data/bestOfGuides.json";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
 import postcss from "postcss";
-import { assertSsrRenderers } from "./scripts/lib/ssr-contract.mjs";
+import { assertSsrRenderers, projectToolBootstrap } from "./scripts/lib/ssr-contract.mjs";
 import { transformSync } from "esbuild";
 import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
@@ -31,39 +33,7 @@ const EXCLUDE_SITEMAP_PATTERNS = ["/methodology"];
 // Fiches doublons consolidées : ces slugs redirigent (301) vers leur canonique
 // dans vercel.json. On ne les prérend pas et on ne les liste pas au sitemap
 // pour éviter d'indexer des URLs redirigées. Canonique Adobe = adobe-creative-cloud.
-const DEPRECATED_TOOL_SLUGS = new Set([
-  "adobe", "adobe-cc",
-  // Alias/features/combos consolidés vers la fiche canonique du produit (301 dans vercel.json) :
-  "capcut-ai", "clickup-ai", "excel-copilot", "streamelements-widgets", "gsc", "gorgias-helpscout",
-  // Feature sans produit autonome ni parent fiché → retirée de l'index.
-  "youtube-live",
-  // Produit fermé (shieldapp.ai affiche « Shield is winding down »).
-  "shield",
-  // Recatégorisation placeholder (preuve HTTP) : URL morte ou domaine parké/générique
-  // (archivées à la source), + 4 combos/doublons redirigés 301 (krea→krea-ai,
-  // zapier-make→zapier, webflow-framer→webflow, teleprompter-apps→teleprompter).
-  "affiliate-dashboards", "affiliate-tools", "archive-tools", "bots-discord", "canva-kits", "canva-templates",
-  "capcut-templates", "caption-tools", "chart-tools", "chatgpt-pour-brouillons-non-juridiques", "comfyui-workflows", "content-credentials-tools",
-  "emoji-sticker-packs", "figma-templates", "form-apps", "frame-guides", "gaming-overlays", "krea",
-  "krea-selon-metier", "lighting-kits", "lightroom-presets", "link-in-bio", "link-in-bio-tools", "map-tools",
-  "media-kit-templates", "meme-templates", "mobile-gimbal-apps", "mockup-plugins", "music-libraries", "newsletter-referral-tools",
-  "overlays", "pennylane-ai-selon-dispo", "pennylane-ou-indy", "pennylane-qonto", "presets", "presets-lightroom",
-  "prompt-libraries", "recipe-card-templates", "review-tools", "scheduling-tools", "screen-capture-tools", "screenshot-tools",
-  "shared-cloud-folders", "social-schedulers", "stock-footage", "subtitle-tools", "teleprompter-apps", "templates",
-  "templates-ugc", "utm-builders", "webflow-framer", "webhooks", "workout-templates", "zapier-make",
-  // Doublons/parké repérés à la repasse : gamma-ai→gamma, adcreative→adcreative-ai, inbound (parké).
-  "gamma-ai", "adcreative", "inbound",
-  // Repasse creation vague 2 : magicbrief + modo (fermés), opusclip→opus-clip (doublon).
-  "magicbrief", "modo", "opusclip",
-  // Repasse creation vague 3 : webxr (standard W3C, pas un produit), topaz-video→topaz-video-ai (doublon).
-  "webxr", "topaz-video",
-  "relume-ai", "pageai", "liquid-web-partner-program", "are-na", "invision", "specify", "dovetail-ai", "shield-app", "seo-mode", "ga4", "sql", "wunderlist",
-  "openai", "anthropic", "motion-app", "anchor-spotify", "descript", "flux", "kling-ai", "magnific-ai", "otter", "figma-weave", "elgato-stream-deck", "around", "monday", "fig-terminal", "reclaim-ai", "legifrance-pro", "captaindoc", "sendinblue", "clearbit", "quickbooks-online", "lemonsqueezy",
-  // 02/10/2026 (décision Michael) : doublons consolidés (tubebody→tubebuddy, lottie→lottiefiles,
-  // apollo→apollo-io), produits arrêtés retirés (avocode, twitch-studio, pluraleyes, premiere-rush),
-  // Newton 3 renommé en Newton 4 (ae-newton3→ae-newton4). 301 dans vercel.json.
-  "tubebody", "lottie", "apollo", "avocode", "twitch-studio", "pluraleyes", "premiere-rush", "ae-newton3",
-]);
+
 
 /* CATEGORY_EN a ete supprimee : ces 16 traductions vivent desormais dans
    src/data/categories_index.json (nameEn / descriptionEn), aux cotes des 7
@@ -150,14 +120,6 @@ const GUIDE_FR_ONLY_SLUGS = new Set([
 // Les metadonnees anglaises sont figees au prerendu et servent un public
 // international : elles sortent en dollars, pas en euros. Le prix affiche par
 // l editeur prime quand il est deja en dollars, sinon on convertit au taux date.
-// Champs du catalogue qui existent en deux langues. Le SSR embarquait l'objet
-// outil entier dans `__SSR_TOOL__`, donc une fiche anglaise expediait aussi les
-// huit champs francais et inversement : 2,2 Kio par page sur 4280 pages, pour
-// du texte que la page ne peut pas afficher.
-//
-// On ne retire la langue non servie que si la langue de la page porte deja une
-// valeur : les composants retombent volontairement sur l'autre langue quand la
-// traduction manque, et ce filet doit rester.
 // Champs editoriaux que la projection Supabase peut ne pas encore porter, et
 // qu'elle ne doit donc pas effacer. Meme liste que SSR_LOCALIZED_FIELDS, a plat.
 const PROJECTION_RESCUED_FIELDS = [
@@ -191,7 +153,12 @@ function hasValue(value: any): boolean {
 }
 
 function stripUnservedLocale(tool: any, lang: string): any {
-  const out = { ...tool };
+  const out = projectToolBootstrap(tool);
+  // FR fields also drive presence checks, free/paid status and legacy scores
+  // on EN pages. Keep them so hydration receives the same inputs as SSR.
+  // FR pages can still omit translated EN values when the FR value exists;
+  // missing FR values retain their EN fallback.
+  if (lang === "en") return out;
   for (const [fr, en] of SSR_LOCALIZED_FIELDS) {
     const [served, other] = lang === "en" ? [en, fr] : [fr, en];
     if (hasValue(out[served])) delete out[other];
@@ -2542,6 +2509,7 @@ export default defineConfig(({ mode, isSsrBuild }) => {
     },
   },
   plugins: [
+    browserToolIndexProjection(),
     react(),
     mode === "development" && componentTagger(),
     // These three only make sense for the client build — they write into

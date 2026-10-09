@@ -1,5 +1,6 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy, ChevronRight } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";

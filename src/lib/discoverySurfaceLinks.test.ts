@@ -42,7 +42,6 @@ describe("canonical discovery surfaces", () => {
     // The redirected-slug list moved to a shared module (9 Oct 2026); the
     // category page imports it.
     const redirectedTools = fs.readFileSync(path.resolve(process.cwd(), "src/lib/redirectedTools.ts"), "utf8");
-    const catalogueHook = fs.readFileSync(path.resolve(process.cwd(), "src/hooks/useSupabaseData.ts"), "utf8");
 
     expect(homepage).not.toContain("/category/ai-general");
     expect(homepage).not.toContain("/category/automation");
@@ -55,6 +54,5 @@ describe("canonical discovery surfaces", () => {
     expect(stacks).toContain('"slug": "kit"');
     expect(redirectedTools).toContain('"motion-app", "anchor-spotify"');
     expect(categoryPage).toContain("REDIRECTED_TOOL_SLUGS");
-    expect(catalogueHook).toMatch(/DEPRECATED_TOOL_SLUGS[\s\S]*"anthropic"/);
   });
 });

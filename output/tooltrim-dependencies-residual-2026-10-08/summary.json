@@ -1,0 +1,26 @@
+{
+  "auditedAt": "2026-10-08T15:17:56.955617+00:00",
+  "applicationCommit": "4f6c857ed59e0f3c607a389bc05a2bd839e7afca",
+  "full": {
+    "info": 0,
+    "low": 0,
+    "moderate": 6,
+    "high": 11,
+    "critical": 0,
+    "total": 17
+  },
+  "omitDev": {
+    "info": 0,
+    "low": 0,
+    "moderate": 4,
+    "high": 5,
+    "critical": 0,
+    "total": 9
+  },
+  "packageHashes": {
+    "package.json": "dd1c361afce444a775e302e25de6f16f4fcfb59e23a8a4b8286415374e18377d",
+    "package-lock.json": "cfb93ae8cdfb279d91ff56add5cd1a3337a62f171d9dc769923fbfb3a72cea50"
+  },
+  "changes": "Documentation and audit evidence only; dependencies and application unchanged.",
+  "decision": "Next implementation: React Router 7.18.4 as a separate migration, retain React 18 and current SSR architecture."
+}

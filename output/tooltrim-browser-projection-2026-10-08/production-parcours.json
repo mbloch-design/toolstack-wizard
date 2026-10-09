@@ -1,0 +1,226 @@
+{
+  "measuredAt": "2026-10-08T15:06:13.380Z",
+  "base": "https://tooltrim.com",
+  "applicationCommit": "81f44da6e0b3be76d014042aea6f4373637f83e8",
+  "captures": 14,
+  "coldCaptures": 10,
+  "warmCaptures": 4,
+  "applicationErrors": 0,
+  "savedStateUnchanged": true,
+  "unfinishedCatalogRequests": 0,
+  "fullCatalogChunkRequests": 0,
+  "moduleUrlMatchesVerifiedBuild": true,
+  "remoteApiBaseline": "unknown: ERR_NAME_NOT_RESOLVED in measurement environment",
+  "rows": [
+    {
+      "scenario": "fiche-fr",
+      "profile": "desktop",
+      "cache": "cold",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 318527,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "fiche-fr",
+      "profile": "desktop",
+      "cache": "warm-same-context",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 0,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "listing-fr",
+      "profile": "desktop",
+      "cache": "cold",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 319209,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "listing-fr",
+      "profile": "desktop",
+      "cache": "warm-same-context",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 0,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "category-fr",
+      "profile": "desktop",
+      "cache": "cold",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 318512,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "stack-empty-fr",
+      "profile": "desktop",
+      "cache": "cold",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 318512,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "stack-empty-fr",
+      "profile": "desktop",
+      "cache": "warm-same-context",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 0,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "stack-saved-fr",
+      "profile": "desktop",
+      "cache": "cold",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 318512,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "stack-saved-fr",
+      "profile": "desktop",
+      "cache": "warm-same-context",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 0,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "fiche-fr",
+      "profile": "mobile-cpu4",
+      "cache": "cold",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 318485,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "listing-fr",
+      "profile": "mobile-cpu4",
+      "cache": "cold",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 318485,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "category-fr",
+      "profile": "mobile-cpu4",
+      "cache": "cold",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 318518,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "stack-empty-fr",
+      "profile": "mobile-cpu4",
+      "cache": "cold",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 318485,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    },
+    {
+      "scenario": "stack-saved-fr",
+      "profile": "mobile-cpu4",
+      "cache": "cold",
+      "errors": [],
+      "savedStateUnchanged": true,
+      "index": [
+        {
+          "url": "https://tooltrim.com/assets/data-tool-index-aM7rTS5P.js",
+          "transferredBytes": 318507,
+          "observedDecodedBytes": 1419554,
+          "encoding": "br"
+        }
+      ]
+    }
+  ]
+}

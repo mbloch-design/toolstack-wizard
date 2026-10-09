@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { ArrowRight, Clock } from "@/lib/icons";
 import type { Post } from "@/hooks/useSupabaseData";
 import { localizeGuideCategory } from "@/lib/guideCategory";
@@ -21,22 +21,11 @@ export function GuideCardEditorial({ post, prefix, ctaLabel = "Lire →" }: Guid
     <Link to={`${prefix}/guide/${post.slug}`} className="ec-card">
       <span className="ec-label">{localizeGuideCategory(post.category, prefix.startsWith("/en") ? "en" : "fr") || "GUIDE"}</span>
 
-      <div
-        className="ec-title"
-        style={{ fontSize: "clamp(1.0625rem, 1.6vw, 1.3rem)" }}
-      >
+      <div className="ec-title ec-title--guide">
         {post.title}
       </div>
 
-      <p
-        className="ec-text"
-        style={{
-          display: "-webkit-box",
-          WebkitLineClamp: 3,
-          WebkitBoxOrient: "vertical",
-          overflow: "hidden",
-        }}
-      >
+      <p className="ec-text ec-text--guide">
         {post.excerpt}
       </p>
 

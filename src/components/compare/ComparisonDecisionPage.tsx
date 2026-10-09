@@ -1,7 +1,7 @@
 import { translateBattleCopy } from '@/data/comparisonBattlesEn';
 import { affiliateComparisonGuides, comparisonOffers, comparisonVisuals } from '@/data/affiliateComparisonGuides';
 import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "@/lib/routerLinks";
 import { useLang } from '@/hooks/useLang';
 import ToolLogo from '@/components/ToolLogo';
 import ToolCardEditorial from '@/components/ToolCardEditorial';

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, type ToolSummary } from "@/hooks/useSupabaseData";
 import { ChevronRight, Filter, Search, X } from "@/lib/icons";

@@ -23,8 +23,6 @@ const PILE = [
   { id: "jira", slug: "jira", name: "Jira" },
   { id: "clickup", slug: "clickup", name: "ClickUp", websiteUrl: "https://clickup.com" },
 ];
-const TILT = [-7, 5, -3, 8, -5];
-
 export default function FooterTrim() {
   const ref = useRef<HTMLSpanElement>(null);
   const [trimmed, setTrimmed] = useState(false);
@@ -50,8 +48,8 @@ export default function FooterTrim() {
     <span ref={ref} className="tt-trim" data-trimmed={trimmed ? "" : undefined} aria-hidden="true"
       onMouseEnter={still ? undefined : () => setTrimmed(false)} onMouseLeave={still ? undefined : () => setTrimmed(true)}>
       <span className="tt-trim-pile">
-        {mounted && <>{PILE.map((tool, index) => (
-          <span key={tool.id} className="tt-trim-tile" style={{ "--i": index, "--r": `${TILT[index]}deg` } as React.CSSProperties}>
+        {mounted && <>{PILE.map((tool) => (
+          <span key={tool.id} className="tt-trim-tile">
             <ToolLogo tool={tool} size={40} />
           </span>
         ))}

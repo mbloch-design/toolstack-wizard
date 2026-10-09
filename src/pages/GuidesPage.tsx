@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import type { Post } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect, type CSSProperties } from "react";

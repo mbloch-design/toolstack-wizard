@@ -12,7 +12,7 @@ afterEach(cleanup);
 describe("guides available to search from SSR tool pages", () => {
   it("loads the local guide catalogue despite the retained related-posts SSR payload", async () => {
     const wrapper = ({ children }: { children: ReactNode }) => <SsrToolContext.Provider value={{ id: "notion", slug: "notion" } as Tool}>
-      <SsrRelatedPostsContext.Provider value={[]}><MemoryRouter initialEntries={["/fr/tool/notion"]} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>{children}</MemoryRouter></SsrRelatedPostsContext.Provider>
+      <SsrRelatedPostsContext.Provider value={[]}><MemoryRouter initialEntries={["/fr/tool/notion"]}>{children}</MemoryRouter></SsrRelatedPostsContext.Provider>
     </SsrToolContext.Provider>;
     const { result } = renderHook(() => usePosts("fr", { refreshRemote: false }), { wrapper });
     await waitFor(() => expect(result.current.posts.some((post) => post.slug === "notion-gratuit-vs-payant-vrai-calcul")).toBe(true));

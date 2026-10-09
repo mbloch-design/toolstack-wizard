@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { ArrowLeft, ChevronRight, CirclePlus, X } from "@/lib/icons";
 import { CATALOG_NEEDS } from "@/data/catalogNeeds";
 import bestOfGuides from "@/data/bestOfGuides.json";

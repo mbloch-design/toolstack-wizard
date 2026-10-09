@@ -3,7 +3,7 @@ import StackCostEditor from "@/components/stack/StackCostEditor";
 import Collapse from "@/components/motion/Collapse";
 import ValueChange from "@/components/motion/ValueChange";
 import type { PlanChoice } from "@/hooks/useStackPaidPlans";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { ArrowRight, ArrowUpRight, ChevronDown, X } from "@/lib/icons";
 import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import ToolLogo from "@/components/ToolLogo";

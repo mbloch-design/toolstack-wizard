@@ -4,9 +4,48 @@
 
 > Ce document conserve l’historique général du site.
 >
-> Les roadmaps actives et décisionnelles sont :
+> Le suivi technique actif et ses prochaines priorités figurent ci-dessous.
+> Les autres roadmaps actives et décisionnelles sont :
 > - [`ROADMAP_DIAGNOSTIC.md`](../ROADMAP_DIAGNOSTIC.md) pour le diagnostic adaptatif ;
 > - [`MA_STACK_ROADMAP.md`](./MA_STACK_ROADMAP.md) pour Ma stack et l’exploration contextuelle.
+
+---
+
+## Suivi technique actif — 9 octobre 2026
+
+Ce suivi remplace les statuts techniques historiques lorsqu'ils se contredisent. Les rapports d'audit conservent leurs mesures à la date de leur réalisation ; ils ne remplacent pas cette roadmap.
+
+### Lots réalisés et publiés
+
+| Lot | État | Résultat / preuve |
+|---|---|---|
+| Points 2 et 3 de la revue technique | Publiés | CI et types explicites, SSR obligatoire, navigation/cache/recherche, données persistées et synchronisation corrigés. [Corrections](CORRECTIONS_TECHNIQUES_2026-10-07.md) |
+| Dépendances compatibles | Publiées ; avis résiduels ouverts | Réduction des alertes, sans migration React Router 7/Tailwind 4. Les chiffres restent ceux du snapshot d'audit. [Rapport](DEPENDANCES_SECURITE_2026-10-08.md) |
+| Compactage HTML | Publié | 24,62 MiB de formatage retirés avec équivalence du contenu. [Rapport](COMPACTAGE_HTML_2026-10-08.md) |
+| Parité d'hydratation EN | Déployée, `244d7a9d52` | Champs FR nécessaires aux calculs conservés ; recette publique FR/EN. [Rapport](CORRECTIF_HYDRATATION_EN_2026-10-08.md) |
+| Hydratation avec Ma Stack enregistrée | Déployée, `cccdbc002b` | Restauration après le premier rendu SSR ; 56/56 parcours publics sans perte des choix. [Rapport](CORRECTIF_HYDRATATION_STACK_2026-10-08.md) |
+| Projection des sept champs historiques | Déployée, `90af59e551` | Gain 5,59 MiB, 13 162 HTML identiques hors payload autorisé, sitemap identique ; 56/56 parcours publics, onglets secondaires inclus. [Rapport](PROJECTION_BOOTSTRAP_2026-10-08.md) |
+
+Dernier artefact validé : **824,9 MiB**, dont **713,2 MiB HTML**. Budgets : 831/716 MiB. Recette du dernier lot : 249 tests applicatifs, 23 contrats SEO, types, build et 56 parcours Chromium. Ces mesures ne sont pas des Core Web Vitals ni une garantie de classement SEO.
+
+### Prochaines priorités
+
+| Ordre | Chantier | État | Critère de sortie |
+|---|---|---|---|
+| 1 | Résorber la dette actuelle du gate design | Déployé, `863e4737eb` | Gate 137/223/125 PASS, baseline et validateur inchangés ; 12 vues publiques contrôlées, 30 parcours locaux PASS. [Preuves](GATE_DESIGN_2026-10-08.md). |
+| 2 | Automatiser la recette d'hydratation sur l'artefact construit | Publié, `34391450cc` ; première CI réussie | 56/56 sur Linux en 5 min 28 s ; rapport archivé sept jours, Vercel terminé. [Actions](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37782506339). Chromium après build, main/PR couverts, suite 10 minutes/job 30 et flakes bloquants. [Contrat](HYDRATATION_CI_2026-10-08.md). |
+| 3 | Préparer l’évolution du chargement catalogue | Premier correctif publié et vérifié, `81f44da6e0` | 109 lignes déjà invisibles filtrées avant transport ; 1 239 résumés et tous leurs champs identiques. Gain CDN gzip : 17 595 octets (4,99 %). CI 56/56 en 5,5 min, recette publique 56/56 en 5,7 min et 14 captures fonctionnelles PASS. 13 162 HTML équivalents localement. [Rapport et preuves](PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md), [CI](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37796349909). Découpage supplémentaire/API distante différés ; baseline API saine inconnue (DNS). |
+| 4 | Réexaminer les alertes de dépendances restantes | Router 7.18.4 déployé et vérifié, `88d7f5d7a5` | 15 entrées npm (11 high/4 moderate), 7 omit-dev, 0 critical. React 18 et routes conservés ; 266 tests, CI 56/56 en 5,4 min, 20 comparaisons et build/budgets PASS ; 56 scénarios publics validés (collision de traces isolée puis rejouée 3/3), 12 anciennes URL PASS. 13 162 HTML et sitemap préservés. SDK : typecheck API préalable ; Tailwind séparé. [Migration et preuves](MIGRATION_REACT_ROUTER_2026-10-09.md). |
+
+Le groupe supplémentaire de champs transportés par les adaptateurs représente **3,09 MiB théoriques** dans le snapshot d'audit. Il reste **à auditer**, pas autorisé à supprimer sur cette seule mesure. Comparaisons/stack ont des bootstraps distincts. Cette piste est secondaire par rapport au chargement catalogue et aux gains visibles pour l'utilisateur.
+
+### Limites et travaux différés
+
+- Point 1 sécurité/backend : annoncé traité manuellement par le propriétaire ; configuration et déploiement distants non contre-vérifiés ici. Ne pas le déclarer certifié sur la seule base du dépôt.
+- Les protections/avis restants sont détaillés dans la revue technique et le rapport dépendances ; une amélioration des chiffres npm n'est pas une certification de l'infrastructure.
+- Audit accessibilité exhaustif, Safari/WebKit et optimisation globale CSS/données restent différés pendant l'évolution de l'architecture catalogue. Les contrôles clavier/mobile ciblés existants restent requis lors d'un changement de ces parcours.
+- Aucun changement des catégories locales ou des exports de catalogue n'a été inclus dans les publications ci-dessus.
+- Dark mode : dette historique, non prioritaire.
 
 ---
 
@@ -263,7 +302,7 @@
 
 | Item | Priorité | Notes |
 |---|---|---|
-| Bundle splitting (data-tools 3.3MB non splitté) | HAUTE | Actuellement 1 chunk |
+| Chargement catalogue : projections et shards | HAUTE | Ancienne mesure 3,3 MB obsolète ; shards outil/stack déjà générés. Mesurer les téléchargements réels avant le prochain découpage ; voir le suivi technique actif. |
 | Lazy loading des sections ToolDetail | MOYENNE | ToolVerdictBlock, ToolAlternativesSection |
 | Images WebP + srcset | MOYENNE | Logos outils |
 

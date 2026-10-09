@@ -1,7 +1,7 @@
 import { Suspense, type ReactNode } from "react";
 import { renderToString } from "react-dom/server";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { StaticRouter } from "react-router-dom/server";
+import { StaticRouter } from "react-router-dom";
 import { Route, Routes } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";

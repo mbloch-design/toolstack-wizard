@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { HERO_CLUSTER_SLOTS } from "@/lib/heroCluster";
 import { fitBrandedTitle } from "@/lib/seoTitle";
-import { Link, Navigate, useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { AlertTriangle, ChevronDown, ChevronRight, CircleAlert, Target } from "@/lib/icons";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 import ToolLogo from "@/components/ToolLogo";

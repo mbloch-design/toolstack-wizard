@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { ArrowRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries } from "@/hooks/useSupabaseData";

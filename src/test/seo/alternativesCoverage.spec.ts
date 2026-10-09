@@ -1,7 +1,7 @@
-import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import toolsIndex from "@/data/tools_index.json";
 import { findSimilarTools, functionalAffinity } from "@/lib/alternativesSimilarity";
+import { DEPRECATED_TOOL_SLUGS } from "@/lib/toolVisibility";
 
 /**
  * La page /alternatives promet « Meilleures alternatives à X » dans son titre.
@@ -24,13 +24,7 @@ type Tool = Record<string, any>;
 const raw = toolsIndex as unknown;
 const allTools = (Array.isArray(raw) ? raw : (raw as any).tools ?? Object.values(raw as any)[0]) as Tool[];
 
-const deprecated = new Set(
-  [...readFileSync("vite.config.ts", "utf8")
-    .match(/DEPRECATED_TOOL_SLUGS = new Set\(\[([\s\S]*?)\]\)/)![1]
-    .matchAll(/"([^"]+)"/g)].map((m) => m[1]),
-);
-
-const served = allTools.filter((t) => !deprecated.has(t.slug || t.id));
+const served = allTools.filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug || t.id));
 
 /** Même cascade que ToolDetailPage, sans les alternatives curées de tools_v4. */
 function neighbourCount(tool: Tool): number {

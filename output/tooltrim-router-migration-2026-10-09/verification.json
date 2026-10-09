@@ -1,0 +1,23 @@
+{
+  "status": "local_verified_not_published",
+  "routerBefore": "6.30.6",
+  "routerAfter": "7.18.4",
+  "reactMajor": 18,
+  "unitTests": 266,
+  "unitFiles": 50,
+  "seoTests": 23,
+  "maStackTests": 99,
+  "navigationBrowserTests": 15,
+  "maStackBrowserTests": 15,
+  "hydrationTests": 56,
+  "hydrationDuration": "5.0m",
+  "renderedComparisons": 20,
+  "typecheck": "PASS",
+  "productionBuild": "PASS",
+  "unchangedBuildBudgetsMiB": {
+    "total": 831,
+    "html": 716
+  },
+  "independentReview": "no_blocking_findings",
+  "sourceChanges": "57 Link/NavLink import migrations; component bodies unchanged; CategoriesIndex working refactor excluded except import"
+}

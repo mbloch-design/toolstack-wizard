@@ -1,3 +1,110 @@
+## 2026-10-09 — React Router 7 publié et vérifié
+
+- Commits audit/migration publiés, applicatif `88d7f5d7a5`, parité main confirmée. Vercel réussi et CI 37895367300 entièrement verte : 56 hydratations sans flake en 5,4 min ; rapport jusqu’au 16 octobre.
+- Deux JS publics, quatre HTML fiche/tarifs FR/EN et sitemap identiques au build validé. Douze anciennes URL PASS. Recette publique : 55 passages directs + un retry affecté par une collision locale de traces Playwright ; scénario rejoué 3/3 sans retry avec sortie isolée, aucune erreur d’hydratation détectée. Incident et exit code initial conservés dans les preuves.
+- Rapport et roadmap actualisés ; logs détaillés Vercel inaccessibles (403), statut et artefact vérifiés indépendamment. Modifications catégories/catalogue hors périmètre toujours préservées.
+
+## 2026-10-09 — React Router 7 validé localement
+
+- Version exacte 7.18.4, React 18 et mode déclaratif conservés. Avis npm Router retirés : 15 entrées complètes, 7 omit-dev ; chaînes SDK/Tailwind encore ouvertes.
+- StaticRouter importé depuis la racine, anciens flags de tests retirés, alias Vitest aligné. Adaptateurs Link/NavLink avec discover="none" et 57 changements d’import seulement : surcoût initial de 14,24 MiB supprimé, budgets inchangés.
+- 266 tests applicatifs, types, 23 contrats SEO, 99 tests Ma Stack, 30 parcours navigation/stack, 56 hydratations en 5,0 min, 20 comparaisons de rendu et build PASS. 13 162 HTML identiques hors hash JS, sitemap et données identiques ; relecture indépendante sans blocage.
+- Rapport MIGRATION_REACT_ROUTER_2026-10-09.md, preuves JSON et roadmap actualisés. Lot local non publié ; refonte des catégories préservée et exclue sauf import de lien, travaux catalogue non suivis exclus.
+
+## 2026-10-08 — Contre-audit des dépendances restantes
+
+- Audit npm actualisé sur `4f6c857ed5` : 17 entrées complètes (11 high/6 moderate), 9 omit-dev, aucune critique. Paquets et lockfile inchangés ; pas de migration déclarée validée.
+- Avis d’injection SSR Router non applicable au mode déclaratif constaté ; avis navigation encore ouvert. Cible 7.18.4 compatible React 18/Node 20, recette splats/anciennes URL/SSR/hydratation préparée.
+- Chaînes Tailwind et SDK séparées ; SDK latest conserve undici 5.28.4. Trois imports SDK de types seulement, mais handlers API absents des typechecks explicites : contrôle API préalable requis au futur lot SDK.
+- Rapport DEPENDANCES_RESIDUELLES_2026-10-08.md, audits/métadonnées/hash conservés, roadmap actualisée. Audit documentaire local ; travaux de catégories et catalogue exclus.
+
+## 2026-10-08 — Projection navigateur publiée et vérifiée
+
+- Commit applicatif `81f44da6e0` publié avec les deux commits de mesures/design. Vercel réussi ; SHA-256 du module public identique au build validé, 1 239 résumés.
+- CI entièrement verte : 251 tests applicatifs, 23 contrats SEO, 99 tests Ma Stack, types/design/build et 56/56 hydratations en 5,5 min. Run 37796349909 ; rapport archivé jusqu’au 15 octobre.
+- Recette publique 56/56 en 5,7 min et 14 captures fonctionnelles mobile/desktop PASS ; sélection conservée, aucune erreur JavaScript. Gain CDN gzip au même protocole : 17 595 octets, 4,99 %. Limite DNS Supabase inchangée dans l’environnement de mesure.
+- Rapport et roadmaps actualisés, preuves machine ajoutées. Publication documentaire uniquement ; catégories et exports locaux exclus.
+
+## 2026-10-08 — Index navigateur filtré avant transport
+
+- Règle commune de 113 exclusions ; plugin Vite limité au build navigateur retire les 109 lignes déjà invisibles. Source complète/SSR et filtre défensif du hook conservés ; tous les champs des 1 239 résumés sont identiques.
+- Gain réel : 100 976 octets décodés et 16 858 octets gzip (4,93 %). 13 162 HTML identiques hors noms hachés JS, sitemap et sources inchangés.
+- 251 tests applicatifs, 23 contrats SEO, 99 tests Ma Stack, types, gate design, build/budgets, 56 hydratations et 20 comparaisons FR/EN mobile/desktop PASS. Relecture indépendante sans blocage.
+- Rapport PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md et preuves JSON ; roadmaps actualisées. Correctif local, publication à réaliser ; catégories et travaux catalogue non suivis exclus.
+
+## 2026-10-08 — Matrice des résumés et prototype de transport
+
+- Inventaire indépendant cartes/recherche/listings et stack/relations, complété par pages piliers/stacks éditoriales : descriptions bilingues, prix, taxonomies, médias, relations et sentinelles ont des consommateurs ; aucun champ retiré.
+- Prototype de données uniquement : 109 lignes déjà exclues par le hook retirées du transport candidat, 1 239 sorties du mapper réel identiques octet pour octet. Simulation au même format : −101 057 octets décodés, gzip −16 879 (4,93 %), Brotli q5 −12 354 (4,44 %). Aucun gain CDN ou interaction encore annoncé.
+- Les listes hook/build contiennent les mêmes 113 exclusions, dont 109 présentes dans l'index actuel. Premier correctif cadré : projection navigateur dérivée, index source complet conservé pour les générateurs, filtre défensif du hook conservé.
+- Rapport MATRICE_RESUMES_CATALOGUE_2026-10-08.md, sonde jetable et preuve JSON ; roadmaps actualisées. Le module candidat reste local et n'est consommé par aucun import ; aucune recette navigateur du correctif ni déploiement déclaré.
+
+## 2026-10-08 — Chargement catalogue mesuré, prochain lot cadré
+
+- 34 captures publiques Chromium : cinq parcours × desktop/mobile CPU ×4 × trois passages, plus quatre renavigations avec cache. Chronométrage monotone, une navigation document par parcours, sélections fictives conservées, aucune erreur pageerror.
+- Index de 1 348 résumés : ~335 ko transférés / 1 520 530 octets décodés sur tous les parcours froids ; zéro transfert avec cache. Aucun chunk tools_v4 chargé ; inspecteur Figma : un shard ~58 ko.
+- Appels Supabase en échec DNS dans l'environnement de mesure : performance API saine inconnue, limites documentées. Prochain lot : matrice des consommateurs, puis canary d'une projection minimale dérivée du catalogue commun, sans suppression de faits.
+- Sonde reproductible scripts/measure-catalog-loading.mjs, résumé JSON, rapport CHARGEMENT_CATALOGUE_2026-10-08.md et roadmaps actualisées. Aucun changement applicatif ni de catalogue ; travaux locaux distincts exclus.
+- Première CI du lot précédent confirmée : 56/56 en 5 min 28 s, rapport hydration-report archivé sept jours et Vercel terminé ; preuve Actions ajoutée aux roadmaps.
+
+## 2026-10-08 — Recette d'hydratation automatisée en CI
+
+- Preprod CI déclenché aussi sur main ; gates existants conservés, Chromium installé après build puis 56 scénarios sur HTML généré. Permissions contents:read.
+- Rapport HTML/traces conservés sept jours ; plafond suite 10 minutes/job 30, un worker, cinq échecs maximum et flakes bloquants malgré les retries existants.
+- reducedMotion placé dans contextOptions ; configurations Playwright ajoutées au typecheck node. Rapport et traces produits sur une vraie divergence volontaire d'une copie du HTML, ensuite restaurée.
+- 56/56 scénarios locaux CI en 4,8 minutes, 249 tests applicatifs et types PASS ; première exécution Actions à contrôler après push. Documentation HYDRATATION_CI_2026-10-08.md et roadmaps mises à jour. Aucun changement applicatif.
+
+## 2026-10-08 — Gate design rétabli sans hausse de baseline
+
+- Huit couleurs et dix-huit rayons CSS de Ma Stack passent aux tokens à valeurs conservées ; deux styles statiques GuideCardEditorial déplacés dans les classes ec. Styles d'animation dynamiques conservés.
+- Baseline et validateur inchangés : gate PASS à 137 couleurs CSS, 223 rayons et 125 styles inline. 249 tests applicatifs, 23 contrats SEO, types, build et 30 parcours navigateur PASS.
+- Douze vues FR/EN mobile/desktop : styles calculés et géométrie identiques, dix PNG identiques et écarts de 11/34 pixels sur les deux autres. Texte/métadonnées/JSON-LD de 13 162 pages et sitemap conservés.
+- Rapport GATE_DESIGN_2026-10-08.md ; roadmaps actualisées, catégories locales et exports exclus.
+
+## 2026-10-08 — Roadmaps actualisées après la revue technique
+
+- ROADMAP.md : suivi actif, lots déployés et preuves, poids actuel, priorités ordonnées et critères de sortie ; ancienne ligne de bundle monolithique corrigée.
+- MA_STACK_ROADMAP.md : checkpoint de juillet identifié comme historique, état hydratation/persistance et couverture CI remis à jour ; prochains travaux reliés au suivi transversal.
+- Suite proposée : dette du gate design, recette navigateur automatisée, cadrage du chargement catalogue ; dépendances résiduelles dans un lot séparé. Aucun changement applicatif.
+
+## 2026-10-08 — Projection ciblée du bootstrap outil
+
+- Sept champs historiques audités retirés uniquement de __SSR_TOOL__ ; copie de l'objet, sources catalogue et données utiles FR/EN intactes.
+- Gain exact 5 861 952 octets (5,59 MiB) sur 9 904 documents. Artefact 824,9 MiB / HTML 713,2 MiB ; budgets abaissés de 5 MiB à 831/716 MiB, ancien HTML rejeté.
+- 13 162 HTML identiques hors payload projeté, sitemap et sources inchangés ; 249 tests applicatifs, 23 contrats SEO, types, build et 56 parcours FR/EN avec onglets secondaires PASS. Relecture indépendante sans anomalie.
+- Rapport PROJECTION_BOOTSTRAP_2026-10-08.md ; catégories locales et exports non suivis exclus.
+
+## 2026-10-08 — Hydratation avec Ma Stack enregistrée
+
+- useSyncExternalStore remplace les initialiseurs synchrones de localStorage : snapshot serveur stable au premier rendu, puis restauration des choix locaux sans modification de format.
+- Régressions rouge/vert, 249 tests applicatifs, 99 Ma Stack, 22 contrats SEO, TypeScript et build PASS ; 56 parcours FR/EN sur HTML généré, avec choix sauvegardés, navigation et rechargement.
+- Serveur QA : fallback des routes SPA ; tests Ma Stack alignés sur le libellé actuel et le rafraîchissement effectif du catalogue. HTML équivalent sur quatre pages hors hash du bundle, sitemap identique ; budgets inchangés.
+- Rapport CORRECTIF_HYDRATATION_STACK_2026-10-08.md. Catégories locales et données non suivies exclues.
+
+## 2026-10-08 — Correction de la parité d'hydratation EN
+
+- Publication `244d7a9d52` vérifiée : quatre HTML publics identiques à l'artefact, robots/sitemap 200, 28 parcours FR/EN en production PASS après attente d'un effet de montage neutre avant les clics. Cas distinct repéré avec outil déjà épinglé dans localStorage : initialisation synchrone de useStackPins différente du SSR ; priorité suivante, non corrigée dans ce lot.
+- Bootstrap des fiches EN : conservation des champs FR qui pilotent affichage, statut gratuit/payant et score historique ; projection FR inchangée. Notion EN ne perd plus son sous-titre à l'hydratation.
+- Régression rouge avant correction, puis 28 parcours Chromium sur HTML prérendu réel PASS ; navigation React vers un autre onglet sans rechargement du document. Configuration Playwright et serveur locaux dédiés, commande `npm run test:e2e:hydration` après build.
+- Parité déterministe de 56 routes FR/EN PASS ; contenu et SEO équivalents sur quatre pages de référence. 248 tests applicatifs, 22 contrats SEO/compactage, TypeScript et build PASS.
+- Artefact 830,4 MiB / HTML 718,8 MiB : 9,8 MiB nécessaires rétablis, budgets inchangés PASS ; compactage toujours 24,62 MiB. Rapport CORRECTIF_HYDRATATION_EN_2026-10-08.md. Aucun retrait des champs historiques candidats, aucun changement du catalogue ou des styles.
+
+## 2026-10-08 — Recette de publication du compactage et audit d'hydratation
+
+- Intégration de 25 commits main de Ma stack avant publication ; 248 tests applicatifs, 98 tests Ma stack, 22 fixtures SEO/compactage, TypeScript et build PASS. Régression multi-onglets alignée sur les libellés d'abonnement introduits par main ; assertions de synchronisation conservées, 15/15 parcours sur HTML prérendu réel PASS.
+- Complément de recette : Vite preview ne servait pas le HTML spécifique sur certaines URL propres. Le serveur de vérification temporaire sert les fichiers réellement générés ; documentation corrigée pour ne pas assimiler la recette SPA à une preuve d'hydratation SSR sans erreur.
+- Audit du bootstrap : 76,62 MiB au total, dont 67,82 MiB pour les outils ; sept champs historiques candidats, gain marginal 5,59 MiB, aucune lecture sur 42 routes FR/EN. Aucune suppression appliquée.
+- Défaut préexistant reproduit en production avant publication : hydratation Notion EN #418/#422 ; restauration des champs FR du bootstrap EN rétablit exactement le rendu serveur. Priorité à cette parité avant toute réduction des champs localisés. Audit détaillé dans AUDIT_HYDRATATION_2026-10-08.md.
+- Gate design toujours en échec sur la dette introduite par main (+8 couleurs CSS, +18 rayons, +2 styles inline) ; fichiers analysés identiques à main, aucune nouvelle dette du compactage et aucune hausse de baseline.
+
+## 2026-10-08 — Compactage HTML avec équivalence SEO et hydratation
+
+- Nouvelle étape du build : retrait de neuf commentaires documentaires connus du head, compactage du JSON-LD à valeurs identiques, retrait des espaces entre enfants directs du head. Corps HTML, scripts/styles, commentaires de vérification et marqueurs React conservés.
+- Contrôle d'équivalence de l'arbre HTML avant chaque écriture : 13 162 documents PASS. Les 13 137 URL du sitemap et tous les fichiers hors HTML sont identiques au build précédent.
+- Gain mesuré : 24,62 MiB ; artefact 845,2 → 820,6 MiB, HTML 733,6 → 709,0 MiB. Budgets total/HTML abaissés de 24 MiB ; ancien artefact rejeté, nouveau accepté.
+- Parse5 7.3.0 déjà présent devient une dépendance directe du build. Six tests de compactage ajoutés au contrat SEO CI ; test rouge avant implémentation, vert après.
+- Recette : 243 tests applicatifs, 22 fixtures SEO/compactage, TypeScript, build et audit Explorer PASS ; 15/15 régressions Chromium, quatre pages sans JavaScript puis sans erreur d'hydratation. Relecture indépendante sans anomalie. Rapport COMPACTAGE_HTML_2026-10-08.md ; refonte catégories et données régénérées exclues, aucun push ni déploiement de ce lot.
+
 ## 2026-10-08 — Correctifs ciblés des dépendances
 
 - Audit omit-dev : 25 → 9 entrées ; audit complet : 53 → 17, trois entrées critiques → zéro. Restes et portée documentés dans DEPENDANCES_SECURITE_2026-10-08.md.

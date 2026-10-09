@@ -1,0 +1,34 @@
+[
+  {
+    "route": "/fr/tool/notion",
+    "contentAndSeoEquivalent": true,
+    "existingBootstrapValuesIdentical": true,
+    "addedBootstrapFields": []
+  },
+  {
+    "route": "/en/tool/notion",
+    "contentAndSeoEquivalent": true,
+    "existingBootstrapValuesIdentical": true,
+    "addedBootstrapFields": [
+      "shortDescription",
+      "longDescription",
+      "pricing",
+      "verdict",
+      "pros",
+      "cons",
+      "useCases"
+    ]
+  },
+  {
+    "route": "/fr/guide/outils-facturation-freelance-2026",
+    "contentAndSeoEquivalent": true,
+    "existingBootstrapValuesIdentical": true,
+    "addedBootstrapFields": []
+  },
+  {
+    "route": "/fr/ma-stack",
+    "contentAndSeoEquivalent": true,
+    "existingBootstrapValuesIdentical": true,
+    "addedBootstrapFields": []
+  }
+]

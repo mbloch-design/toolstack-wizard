@@ -1,0 +1,110 @@
+[
+  {
+    "field": "decision_policy_v3",
+    "valueMiB": 0.796,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:125"
+    ]
+  },
+  {
+    "field": "research",
+    "valueMiB": 0.249,
+    "adapterReferences": []
+  },
+  {
+    "field": "lifecycle",
+    "valueMiB": 0.235,
+    "adapterReferences": []
+  },
+  {
+    "field": "pricingTiers",
+    "valueMiB": 0.227,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:75"
+    ]
+  },
+  {
+    "field": "prescription_context_questions",
+    "valueMiB": 0.194,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:121"
+    ]
+  },
+  {
+    "field": "prescription_block_reasons",
+    "valueMiB": 0.118,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:120"
+    ]
+  },
+  {
+    "field": "website",
+    "valueMiB": 0.116,
+    "adapterReferences": []
+  },
+  {
+    "field": "prescription_output",
+    "valueMiB": 0.077,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:119"
+    ]
+  },
+  {
+    "field": "downgradePlan",
+    "valueMiB": 0.059,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:117"
+    ]
+  },
+  {
+    "field": "migrationGuide",
+    "valueMiB": 0.056,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:116"
+    ]
+  },
+  {
+    "field": "verdictFr",
+    "valueMiB": 0.036,
+    "adapterReferences": []
+  },
+  {
+    "field": "articles",
+    "valueMiB": 0.028,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:105",
+      "src/lib/catalogProjection.ts:115"
+    ]
+  },
+  {
+    "field": "timeGainedHoursPerMonth",
+    "valueMiB": 0.016,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:106"
+    ]
+  },
+  {
+    "field": "affiliateDisclosureFr",
+    "valueMiB": 0.002,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:90"
+    ]
+  },
+  {
+    "field": "pivot_integration_source",
+    "valueMiB": 0.002,
+    "adapterReferences": []
+  },
+  {
+    "field": "affiliateDisclosureEn",
+    "valueMiB": 0.002,
+    "adapterReferences": [
+      "src/hooks/useSupabaseData.ts:91"
+    ]
+  },
+  {
+    "field": "relevantForEn",
+    "valueMiB": 0.001,
+    "adapterReferences": []
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "applicationCommit": "81f44da6e0b3be76d014042aea6f4373637f83e8",
+  "status": "published_and_verified",
+  "ci": {
+    "url": "https://github.com/mbloch-design/toolstack-wizard/actions/runs/37796349909",
+    "conclusion": "success",
+    "applicationTests": 251,
+    "seoContracts": 23,
+    "maStackTests": 99,
+    "hydrationScenarios": 56,
+    "hydrationDurationMinutes": 5.5,
+    "reportExpiresAt": "2026-10-15T15:09:02Z"
+  },
+  "deploymentStatus": "Vercel success",
+  "publicHydration": {
+    "scenarios": 56,
+    "failed": 0,
+    "durationMinutes": 5.7
+  },
+  "publicFunctionalCaptures": 14,
+  "decodedModuleMatchesVerifiedBuild": true,
+  "cdnGzipBytesSaved": 17595,
+  "cdnGzipPercentSaved": 4.99,
+  "scope": "Public browser contexts only; backend writes absent; unrelated local categories/catalogue exports excluded."
+}

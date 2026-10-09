@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { fitBrandedTitle } from "@/lib/seoTitle";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
 import { localizeGuideCategory } from "@/lib/guideCategory";

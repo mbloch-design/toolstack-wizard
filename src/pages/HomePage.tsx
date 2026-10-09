@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, lazy, Suspense, useRef, useState } from "react";

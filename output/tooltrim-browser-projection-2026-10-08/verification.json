@@ -1,0 +1,23 @@
+{
+  "status": "locally_verified_not_published",
+  "baselineCommit": "2cba214536",
+  "sourceRecords": 1348,
+  "browserRecords": 1239,
+  "excludedSourceRecords": 109,
+  "decodedBytesSaved": 100976,
+  "gzipBytesSaved": 16858,
+  "gzipPercentSaved": 4.93,
+  "checks": {
+    "applicationTests": 251,
+    "seoContracts": 23,
+    "maStackTests": 99,
+    "hydrationScenarios": 56,
+    "renderedComparisons": 20,
+    "htmlDocuments": 13162,
+    "typecheck": "pass",
+    "designGate": "pass_unchanged_baseline",
+    "productionBuild": "pass",
+    "artifactBudgets": "pass"
+  },
+  "measurement": "Local gzip level 9; browser transfer includes HTTP headers. No deployed CDN or healthy remote API performance claim."
+}

@@ -1,0 +1,34 @@
+// Audit-only data probe; candidate module is not used by the application.
+const fs=require('fs');
+const ts=require('typescript');
+const vm=require('vm');
+const z=require('zlib');
+const assert=require('assert/strict');
+const crypto=require('crypto');
+const repo=process.cwd();
+const text=fs.readFileSync(repo+'/src/hooks/useSupabaseData.ts','utf8');
+const ast=ts.createSourceFile('h.ts',text,ts.ScriptTarget.Latest,true);
+let parts=[];
+function visit(n){
+ if(ts.isFunctionDeclaration(n)&&n.name?.text==='asLocalizedText') parts.push(n.getText(ast));
+ if(ts.isVariableStatement(n)&&n.declarationList.declarations.some(d=>['DEPRECATED_TOOL_SLUGS','staticToolSummaries'].includes(d.name.getText(ast)))) parts.push(n.getText(ast));
+ ts.forEachChild(n,visit);
+} visit(ast);
+const visibility=ts.createSourceFile('visibility.ts',fs.readFileSync(repo+'/src/lib/toolVisibility.ts','utf8'),ts.ScriptTarget.Latest,true);
+for(const n of visibility.statements) if(ts.isVariableStatement(n)&&n.declarationList.declarations.some(d=>d.name.getText(visibility)==='DEPRECATED_TOOL_SLUGS')) parts.unshift(n.getText(visibility).replace(/^export /,''));
+assert.equal(parts.length,3);
+const js=ts.transpileModule(parts.join('\n')+'\nstaticToolSummaries;', {compilerOptions:{target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.None}}).outputText;
+const all=JSON.parse(fs.readFileSync(repo+'/src/data/tools_index.json'));
+const old=vm.runInNewContext(js,{toolsIndexJson:all});
+const visible=new Set(old.map(t=>t.slug||t.id));
+const candidate=all.filter(t=>visible.has(t.slug||t.id));
+const next=vm.runInNewContext(js,{toolsIndexJson:candidate});
+assert.equal(JSON.stringify(old),JSON.stringify(next));
+assert.equal(new Set(candidate.map(t=>t.slug||t.id)).size,candidate.length);
+const moduleOf=rows=>'const e=JSON.parse(`'+JSON.stringify(rows).replace(/\\/g,'\\\\').replace(/`/g,'\\`').replace(/\$/g,'\\$')+'`);export{e as t};\n';
+const before=moduleOf(all),after=moduleOf(candidate);
+const size=s=>({decodedBytes:Buffer.byteLength(s),gzipBytes:z.gzipSync(s,{level:9}).length,brotliQuality5Bytes:z.brotliCompressSync(s,{params:{[z.constants.BROTLI_PARAM_QUALITY]:5}}).length});
+const result={sourceRecords:all.length,candidateRecords:candidate.length,removedFromTransport:all.length-candidate.length,runtimeSummaryRecords:old.length,runtimeSummariesByteIdentical:true,runtimeSummarySha256:crypto.createHash('sha256').update(JSON.stringify(old)).digest('hex'),before:size(before),after:size(after),excludedSlugs:all.filter(t=>!visible.has(t.slug||t.id)).map(t=>t.slug||t.id),scope:'throwaway transport-only probe; all retained record fields unchanged; source files untouched'};
+fs.writeFileSync(__dirname+'/candidate-index.mjs',after);
+fs.writeFileSync(__dirname+'/projection-probe.json',JSON.stringify(result,null,2)+'\n');
+console.log(JSON.stringify(result));

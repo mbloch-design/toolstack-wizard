@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import type { Tool, Category } from "@/data/types";
 import { stripLeadingEmoji } from "@/lib/text";
 import { formatPriceLabel } from "@/lib/toolUtils";

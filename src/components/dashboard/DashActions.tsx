@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
 import { updateDiagnosticSession } from "@/lib/diagnosticPersistence";

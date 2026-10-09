@@ -8,7 +8,7 @@ React SPA · Vite + TypeScript · Tailwind CSS v3
 
 | Couche | Choix |
 |---|---|
-| Framework | React 18 + React Router v6 |
+| Framework | React 18 + React Router v7 (mode déclaratif) |
 | Build | Vite |
 | Styles | Tailwind CSS v3 + `@layer components` (classes préfixées) |
 | Data | Supabase (primaire) + JSON local (fallback) |
