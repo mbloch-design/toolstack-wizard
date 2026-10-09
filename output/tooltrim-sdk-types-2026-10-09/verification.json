@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-09",
+  "baselineCommit": "bb4bc7f94b6d9d5855ef1809b3ca6ebb7144d618",
+  "installation": "npm ci --ignore-scripts --no-audit PASS",
+  "apiTests": 82,
+  "applicationTests": 266,
+  "seoContractTests": 23,
+  "typecheckAppNodeAPI": "PASS",
+  "build": "PASS",
+  "artifactMiB": 824.8,
+  "htmlMiB": 713.2,
+  "review": "PASS no findings",
+  "sdkBidirectionalCompatibility": "PASS before removal; temporary probe removed",
+  "expectedMissingSDKImports": "RED four TS2307 errors before import replacement",
+  "runtimeDeployment": "not yet published",
+  "publicBefore": "GET405 and OPTIONS204 with localhost CORS on three API handlers",
+  "sideEffects": "no email or database write"
+}

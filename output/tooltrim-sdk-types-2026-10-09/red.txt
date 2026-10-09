@@ -1,0 +1,7 @@
+> vite_react_shadcn_ts@0.0.0 typecheck:api
+> tsc --noEmit -p tsconfig.api.json
+
+api/contact.ts(1,52): error TS2307: Cannot find module '@vercel/node' or its corresponding type declarations.
+api/submission-progress.ts(1,52): error TS2307: Cannot find module '@vercel/node' or its corresponding type declarations.
+api/verify-badge.ts(2,52): error TS2307: Cannot find module '@vercel/node' or its corresponding type declarations.
+tests/api/http.ts(3,52): error TS2307: Cannot find module '@vercel/node' or its corresponding type declarations.

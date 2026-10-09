@@ -6,8 +6,8 @@
 
 **Le socle de livraison est plus fiable, plusieurs bugs de navigation/stockage/prix sont corrigés, et le catalogue reste intact.** Le site n’a pas subi de refonte d’architecture de données pendant ces correctifs. Les améliorations de poids sont mesurées ; l’utilité produit et l’accélération ressentie restent à démontrer.
 
-- **Publié sur main :** `7ee809e146`. Dernier commit applicatif de cette séquence : `88d7f5d7a5` (React Router 7.18.4), Vercel réussi et CI verte.
-- **Local seulement :** `13b631bc1d`, contrôle TypeScript API + 82 tests. Il n’est ni publié ni validé par une CI distante. Le SDK reste installé.
+- **Publié sur main :** `bb4bc7f94b`, incluant `13b631bc1d` (contrats API). La nouvelle étape API est verte ; build/hydratation de la CI R0 complète verte. Le dernier lot applicatif entièrement recetté reste Router `88d7f5d7a5`.
+- **R1 en validation locale :** SDK de types retiré, 82 contrats et types réussis, audit complet 15 → 9. Build réussi, 13 162 HTML/80 JS/sitemap identiques ; publication encore à clôturer. [Rapport R1](REDUCTION_SDK_TYPES_2026-10-09.md).
 - **À part :** refonte locale de CategoriesIndexPage, exports/catalogue/médias et scripts non suivis. Ils sont préservés et ne sont pas revendiqués dans ces publications.
 - **Point 1 backend/sécurité/paiement :** annoncé traité manuellement par le propriétaire ; les protections réellement déployées n’ont pas été contre-vérifiées ici.
 
@@ -29,7 +29,7 @@
 | T10 — Hydratation automatisée | Publié, `34391450cc` | 56 tests sur le véritable HTML généré après build, sur main/PR ; traces et flakes bloquants | La CI protège les bugs découverts ; durée récente **5,4 minutes** pour cette phase. [Contrat](HYDRATATION_CI_2026-10-08.md) |
 | T11 — Index navigateur | Publié, `81f44da6e0` | 109 lignes déjà invisibles filtrées avant transport ; 1 239 résumés inchangés | **17 595 octets / 4,99 %** gagnés en gzip CDN ; index source complet et champs conservés. [Rapport](PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md) |
 | T12 — React Router 7 | Publié, `88d7f5d7a5` | Version corrigée 7.18.4, imports SSR et liens adaptés ; React 18 conservé | Deux entrées npm Router retirées ; routes/anciennes URL/HTML préservés. Aucun gain de vitesse revendiqué. [Rapport](MIGRATION_REACT_ROUTER_2026-10-09.md) |
-| T13 — Contrats API | **Local**, `13b631bc1d` | Typecheck strict API, 82 fixtures Node intégrées aux commandes/CI configurée ; quatre mutations détectées | Précondition de réduction du SDK ; handlers et lockfile inchangés, zéro email réel. La CI distante ne les exécute pas encore. [Rapport](CONTRATS_API_2026-10-09.md) |
+| T13 — Contrats API | **Publié**, `13b631bc1d` via `bb4bc7f94b` | Typecheck strict API, 82 fixtures Node intégrées aux commandes/CI configurée ; quatre mutations détectées | Précondition de réduction du SDK ; handlers et lockfile inchangés, zéro email réel. La nouvelle étape API passe dans la CI R0 ; CI R0 complète verte. [Rapport](CONTRATS_API_2026-10-09.md) |
 
 La présence du commit de maintenance dans l’historique ne prouve pas le déploiement de fonctions Supabase ou de leurs secrets. Les corrections de paiement, WAF, RLS et configuration distante restent dans le statut manuel non contre-vérifié.
 
@@ -39,7 +39,7 @@ La présence du commit de maintenance dans l’historique ne prouve pas le dépl
 
 Le gain principal est de détecter les défauts avant publication : TypeScript analyse réellement les fichiers ciblés, les erreurs SSR arrêtent le build, et Chromium vérifie l’égalité serveur/client avec choix enregistrés. Les correctifs de prix et devise empêchent certaines conclusions financières trompeuses. Le stockage reste local-first ; deux écritures exactement simultanées ne deviennent pas une transaction distribuée.
 
-Dernière [CI publiée](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37895367300) : **266 tests applicatifs, 23 contrats SEO, 99 tests Ma Stack**, types/design/build/budgets, puis **56 hydratations sans flake en 5,4 min**. Ces suites ont des périmètres qui se recoupent : on ne les additionne pas en un nombre de bugs corrigés. Les **82 tests API** sont un ajout local distinct.
+Dernière [CI publiée](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37895367300) : **266 tests applicatifs, 23 contrats SEO, 99 tests Ma Stack**, types/design/build/budgets, puis **56 hydratations sans flake en 5,4 min**. Ces suites ont des périmètres qui se recoupent : on ne les additionne pas en un nombre de bugs corrigés. Les **82 tests API** sont un ajout distinct publié et exécuté avec succès dans la CI R0 ; cette CI complète est encore en cours.
 
 Recette publique Router : 12 anciennes URL réussies. Pour l’hydratation, 55 passages directs et un scénario passé au retry après une collision de dossiers de traces ; ce scénario a ensuite passé trois fois sans retry avec une sortie isolée. La première commande conserve son exit code 1 dans les preuves ; elle n’est pas décrite comme un run public parfait.
 
@@ -58,9 +58,9 @@ Les deux transformations HTML retirent environ 30,21 MiB dans leurs comparaisons
 
 ### Dépendances
 
-Audit npm refait pour ce bilan, lockfile inchangé : **15 entrées complètes (11 high, 4 moderate)** et **7 omit-dev (5 high, 2 moderate)**, zéro critique. Séquence historique : complet **53 → 17 → 15**, omit-dev **25 → 9 → 7**. Cela compte des paquets et leur propagation, pas des exploits autonomes ni un pourcentage de risque éliminé.
+Audit R1 après retrait du SDK de types : **9 entrées complètes (5 high, 4 moderate)** contre 15 auparavant, et **7 omit-dev (5 high, 2 moderate)** inchangées, zéro critique. Séquence : complet **53 → 17 → 15 → 9**, omit-dev **25 → 9 → 7**. R1 est encore local tant que sa livraison n’est pas clôturée. Cela compte des paquets et leur propagation, pas des exploits autonomes ni un pourcentage de risque éliminé.
 
-Les chaînes restantes sont principalement SDK Vercel / undici / ts-morph, Tailwind / globs / parseur de sélecteurs, avec des outils associés. La vue omit-dev contient encore des outils de build : « production npm » ne signifie pas « exécuté dans le navigateur ». [Audits frais](../output/tooltrim-status-2026-10-09/audit-full.json).
+Après R1, les chaînes restantes concernent Tailwind / globs / parseur de sélecteurs et les outils associés. La vue omit-dev contient encore des outils de build : « production npm » ne signifie pas « exécuté dans le navigateur ». [Audits R1 comparés](../output/tooltrim-sdk-types-2026-10-09/audit-after.json).
 
 ### SEO et données
 
@@ -80,12 +80,12 @@ Aucun outil, prix, traduction ou relation n’a été supprimé des sources par 
 
 ## 4. Roadmap complète proposée par lots
 
-Les lots suivants sont **des propositions à arbitrer**, pas des travaux implicitement lancés. Pas de date artificielle : chaque lot se ferme sur ses preuves et non sur le temps passé. Un lot applicatif comprend préparation, test local, relecture, publication autorisée, CI et recette publique adaptée.
+**R0/R1 ont été autorisés par le propriétaire et sont suivis ci-dessous.** R2–R11 restent des propositions à arbitrer, pas des travaux implicitement lancés. Pas de date artificielle : chaque lot se ferme sur ses preuves et non sur le temps passé. Un lot applicatif comprend préparation, test local, relecture, publication autorisée, CI et recette publique adaptée.
 
 | Ordre / lot | État et dépendance | Objectif et livrable | Critère de sortie | Valeur / effort indicatif |
 |---|---|---|---|---|
-| R0 — Clôturer les contrats API | T13 local validé ; publication encore à décider | Publier le commit déjà prêt et contrôler la nouvelle étape API en CI | 82 tests API et types stricts exécutés par la CI distante ; aucun changement de handler | Fiabilité ; faible |
-| R1 — Réduire le SDK de types | Après R0 ; **pas réalisé** | Étudier un contrat HTTP minimal compatible Node/Vercel, remplacer uniquement les imports de types, retirer le SDK si inutile | Même comportement sur les 82 contrats ; types/build/lockfile/audit comparés ; runtime de déploiement vérifié ; résultat documenté même si certains avis restent | Maintenance/sécurité de l’arbre ; faible à moyen |
+| R0 — Clôturer les contrats API | Publié via `bb4bc7f94b` ; étape API verte, CI R0 complète verte | Publier le commit déjà prêt et contrôler la nouvelle étape API en CI | 82 tests API et types stricts exécutés par la CI distante ; aucun changement de handler | Fiabilité ; faible |
+| R1 — Réduire le SDK de types | Autorisé ; candidat local contrôlé, build réussi ; livraison en cours | Étudier un contrat HTTP minimal compatible Node/Vercel, remplacer uniquement les imports de types, retirer le SDK si inutile | Même comportement sur les 82 contrats ; types/build/lockfile/audit comparés ; runtime de déploiement vérifié ; résultat documenté même si certains avis restent | Maintenance/sécurité de l’arbre ; faible à moyen |
 | R2 — Contre-vérifier le backend manuel | Preuves du propriétaire / environnement requis ; peut se préparer en parallèle | Vérifier les protections déployées sans envois ni écritures réels : paiement, débit/déduplication, maintenance, permissions | État réel et couverture documentés ; écarts seulement traités dans un lot autorisé | Confiance opérationnelle ; effort inconnu tant que preuves absentes |
 | R3 — Établir une baseline API catalogue saine | Environnement avec résolution et lecture fonctionnelles | Mesurer réponse, fraîcheur, erreurs/fallback et coût du rafraîchissement ; retrouver la chaîne de publication actuelle | Lectures réelles contrôlées, paramètres/permissions attendus, mesures reproductibles ; aucun write | Prérequis aux décisions d’architecture ; moyen |
 | R4 — Aligner promesse et lecture Ma Stack | Décision produit sur l’existant ; ne dépend pas de Tailwind | Unifier le cap avec la page réellement publiée ; distinguer coût catalogue, dépense déclarée, recoupement et économie décidée | Libellés/comportements cohérents FR/EN ; aucun montant de gain sans données suffisantes ; compréhension observée | Valeur visible pour choisir ; moyen |
@@ -116,4 +116,4 @@ Avant chaque lot, présenter **le problème utilisateur, le périmètre, le gain
 
 Bilan relu indépendamment : aucune correction factuelle matérielle nécessaire. Les liens locaux et JSON ont été contrôlés ; cette relecture ne remplace pas une nouvelle recette navigateur ou une certification distante.
 
-Ce bilan et les mises à jour documentaires sont locaux. Aucune publication applicative, installation, modification de catégories ou écriture distante n’est déclenchée par la préparation de cet état des lieux.
+Le bilan initial a été publié avec R0 après autorisation. Cette actualisation suit R0/R1 ; elle ne déclenche aucun lot R2–R11, modification des catégories ni écriture catalogue distante.

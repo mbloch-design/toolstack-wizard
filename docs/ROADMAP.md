@@ -21,19 +21,19 @@
 
 | Niveau | État vérifié |
 |---|---|
-| Publié | Main `7ee809e146`, applicatif `88d7f5d7a5` : prix/navigation/stockage, gates SSR/SEO, dépendances compatibles, compactage, hydratation FR/EN, projection index et React Router 7.18.4. CI publiée verte. |
-| Local validé | `13b631bc1d` : contrôle API strict et 82 contrats ; handlers/lockfile inchangés. Pas encore publié ni exécuté par la CI distante. |
+| Publié | Main `bb4bc7f94b`, contrats API `13b631bc1d` publiés ; nouvelle étape API verte, CI complète en cours. Dernier applicatif recetté `88d7f5d7a5` : prix/navigation/stockage, gates SSR/SEO, dépendances compatibles, compactage, hydratation FR/EN, projection index et React Router 7.18.4. CI publiée verte. |
+| Local validé | R1 : contrat HTTP compatible, retrait du SDK de types ; 82 contrats/types et tests app/SEO passent. Build réussi ; livraison en cours. |
 | Hors de ces lots | Refonte locale catégories et travaux catalogue/médias non suivis, préservés. |
 | Non certifié | Backend annoncé traité manuellement ; API Supabase saine non mesurée dans notre environnement ; qualité complète des relations et valeur utilisateur. |
 
-Gains mesurés : **24,62 MiB de formatage HTML**, **5,59 MiB de bootstrap**, et **17 595 octets / 4,99 % gzip CDN** sur l’index navigateur. Ce sont des métriques distinctes, pas un gain global de vitesse. Audit npm actualisé : **15 entrées complètes / 7 omit-dev, zéro critique**. Dernier artefact local validé : **824,8 MiB**, dont **713,2 MiB HTML** (budgets 831/716). Dernière CI publiée : 266 tests applicatifs, 23 contrats SEO, 99 tests Ma Stack et 56 hydratations en 5,4 min ; les suites ne sont pas additionnées.
+Gains mesurés : **24,62 MiB de formatage HTML**, **5,59 MiB de bootstrap**, et **17 595 octets / 4,99 % gzip CDN** sur l’index navigateur. Ce sont des métriques distinctes, pas un gain global de vitesse. Audit npm actualisé : **9 entrées complètes / 7 omit-dev, zéro critique**, après retrait local du SDK dans R1. Dernier artefact local validé : **824,8 MiB**, dont **713,2 MiB HTML** (budgets 831/716). Dernière CI publiée : 266 tests applicatifs, 23 contrats SEO, 99 tests Ma Stack et 56 hydratations en 5,4 min ; les suites ne sont pas additionnées.
 
 ### Lots à venir proposés
 
 | Lot | Prochaine décision / dépendance |
 |---|---|
-| R0 — Publication des contrats API | Lot prêt localement ; publication à décider, puis contrôle des nouvelles étapes CI. |
-| R1 — Réduction SDK | Après R0, comparer un contrat HTTP minimal et les 82 fixtures ; aucun retrait déjà effectué. |
+| R0 — Publication des contrats API | Publié ; nouvelle étape API verte. CI complète et déploiement Vercel réussis. |
+| R1 — Réduction SDK | Autorisé et en validation : SDK retiré localement, audit 15 → 9 ; build réussi ; livraison à clôturer. |
 | R2 — Contre-vérification backend manuel | Obtenir preuves/configuration ; ne pas présumer le point manuel non corrigé. |
 | R3 — Baseline API catalogue saine | Lecture/DNS fonctionnels nécessaires avant décision d’architecture distante. |
 | R4 — Promesse Ma Stack | Aligner coûts, recoupements et économies avec ce qui est réellement démontré. |

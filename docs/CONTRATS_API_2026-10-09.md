@@ -1,6 +1,6 @@
 # Contrats des handlers API — 9 octobre 2026
 
-**Lot local, non publié.** La précondition du futur retrait du SDK de types est mise en place. Aucun handler, dépendance, lockfile, email ou accès distant n’a été modifié par ce lot.
+**Lot publié sur main via `bb4bc7f94b` ; nouvelle étape API verte dans la [CI R0](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37900711727), CI R0 complète verte.** La précondition du futur retrait du SDK de types est mise en place. Aucun handler, dépendance, lockfile, email ou accès distant n’a été modifié par ce lot.
 
 ## Changements
 
@@ -31,6 +31,6 @@ La relecture indépendante n’a plus de constat restant après ajout des statut
 
 Ces fixtures ne certifient pas l’adaptation HTTP déployée par Vercel, le parsing de corps, les headers JSON fournis par la plateforme, les secrets, les livraisons réelles ou la sécurité exhaustive des URL/DNS. Le type SDK de `body` reste `any` : le typecheck ne remplace pas les validations runtime. Aucun test public envoyant des emails n’est nécessaire à cette précondition.
 
-Les vulnérabilités du SDK sont **inchangées**, puisque ni les paquets ni le lockfile ne changent. La réduction du SDK reste un lot distinct, à comparer sur ces mêmes contrats avant publication. Les travaux locaux de catégories, catalogue et médias restent hors périmètre.
+Les vulnérabilités du SDK sont **inchangées**, puisque ni les paquets ni le lockfile ne changent. La réduction du SDK est maintenant un lot distinct autorisé, suivi dans [le rapport R1](REDUCTION_SDK_TYPES_2026-10-09.md). Les travaux locaux de catégories, catalogue et médias restent hors périmètre.
 
 [Preuves de vérification](../output/tooltrim-api-contracts-2026-10-09/verification.json), [détection des mutations](../output/tooltrim-api-contracts-2026-10-09/mutation-proof.json), [hash des handlers/lockfile](../output/tooltrim-api-contracts-2026-10-09/source-proof.json).

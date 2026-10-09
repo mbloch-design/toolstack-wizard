@@ -1,4 +1,4 @@
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "../types/vercel-http.js";
 import { Resend } from "resend";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { verifyBadgeOnPage } from "./_badge-verification.js";

@@ -1,0 +1,44 @@
+[
+  {
+    "endpoint": "contact",
+    "method": "GET",
+    "status": 405,
+    "cors": "http://localhost:5173",
+    "body": "{\"error\":\"Method not allowed\"}"
+  },
+  {
+    "endpoint": "contact",
+    "method": "OPTIONS",
+    "status": 204,
+    "cors": "http://localhost:5173",
+    "body": ""
+  },
+  {
+    "endpoint": "submission-progress",
+    "method": "GET",
+    "status": 405,
+    "cors": "http://localhost:5173",
+    "body": "{\"error\":\"Method not allowed\"}"
+  },
+  {
+    "endpoint": "submission-progress",
+    "method": "OPTIONS",
+    "status": 204,
+    "cors": "http://localhost:5173",
+    "body": ""
+  },
+  {
+    "endpoint": "verify-badge",
+    "method": "GET",
+    "status": 405,
+    "cors": "http://localhost:5173",
+    "body": "{\"error\":\"Method not allowed\"}"
+  },
+  {
+    "endpoint": "verify-badge",
+    "method": "OPTIONS",
+    "status": 204,
+    "cors": "http://localhost:5173",
+    "body": ""
+  }
+]

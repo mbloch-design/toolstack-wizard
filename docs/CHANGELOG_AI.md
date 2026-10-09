@@ -1,3 +1,10 @@
+## 2026-10-09 — R0 publié, R1 SDK de types en validation
+
+- R0 `13b631bc1d` et bilan/roadmap `bb4bc7f94b` publiés sur main ; nouvelle étape API verte, CI R0 complète verte.
+- R1 : quatre imports type pointent vers le contrat Node/Vercel local hors `/api`, SDK retiré du manifeste/lockfile. Compatibilité SDK dans les deux sens et JS des handlers identique ; 82 API, 266 app, 23 SEO et types réussis après installation propre.
+- 104 entrées lock retirées, aucun ajout ni changement des entrées conservées ; audit complet 15 → 9 (élevées 11 → 5), omit-dev 7 inchangé. Build et livraison en cours ; voir `REDUCTION_SDK_TYPES_2026-10-09.md`.
+- Catégories/catalogue/médias hors lot préservés ; aucun email ni write distant.
+
 ## 2026-10-09 — État des lieux consolidé et roadmap par lots
 
 - Historique technique confronté aux rapports et aux preuves : 13 lots recensés, statuts publié/local/proposé séparés. Main distant 7ee809e146, applicatif 88d7f5d7a5 ; contrats API 13b631bc1d toujours locaux.

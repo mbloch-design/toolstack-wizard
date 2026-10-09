@@ -1,6 +1,6 @@
 import { IncomingMessage, ServerResponse } from "node:http";
 import { Socket } from "node:net";
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "../../types/vercel-http";
 
 // Real Node headers/status/end semantics; only Vercel's convenience methods
 // and parsed request fields are supplied by this local fixture.
