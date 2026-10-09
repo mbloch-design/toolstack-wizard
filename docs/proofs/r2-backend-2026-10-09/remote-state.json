@@ -1,0 +1,125 @@
+{
+  "checkedAt": "2026-10-09T08:22:40.399Z",
+  "sourceCommit": "050a4c10d992b344a410718ab5d7946df428660f",
+  "project": {
+    "id": "rtfyfuwfdpnsogovkwai",
+    "name": "ToolTrim",
+    "status": "INACTIVE"
+  },
+  "functions": [
+    {
+      "slug": "seed-content",
+      "version": 41,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1776865904781
+    },
+    {
+      "slug": "sitemap",
+      "version": 34,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1776865904781
+    },
+    {
+      "slug": "seed-tools-v4",
+      "version": 24,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1776865904781
+    },
+    {
+      "slug": "translate-tools",
+      "version": 16,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1776865904781
+    },
+    {
+      "slug": "generate-report",
+      "version": 15,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1781164954205
+    },
+    {
+      "slug": "seed-diagnostic",
+      "version": 15,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1776865904781
+    },
+    {
+      "slug": "seed-tools-enrichment",
+      "version": 11,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1776865904781
+    },
+    {
+      "slug": "enrich-tools",
+      "version": 10,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1776865904781
+    },
+    {
+      "slug": "backoffice-diagnostic",
+      "version": 6,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1781164943893
+    },
+    {
+      "slug": "send-backoffice-alerts",
+      "version": 6,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1781164947022
+    },
+    {
+      "slug": "process-diagnostic-email-jobs",
+      "version": 6,
+      "status": "ACTIVE",
+      "verify_jwt": false,
+      "updated_at": 1781164949782
+    }
+  ],
+  "advisors": {
+    "result": {
+      "lints": []
+    }
+  },
+  "rls": {
+    "error": {
+      "name": "HttpException",
+      "message": "Failed to run sql query: Connection terminated due to connection timeout"
+    }
+  },
+  "remoteSourceErrors": {
+    "translate-tools": {
+      "error": {
+        "name": "ProtocolError",
+        "message": "MCP error -32603: An internal error occurred during tool execution"
+      }
+    },
+    "enrich-tools": {
+      "error": {
+        "name": "ProtocolError",
+        "message": "MCP error -32603: An internal error occurred during tool execution"
+      }
+    },
+    "seed-content": {
+      "error": {
+        "name": "ProtocolError",
+        "message": "MCP error -32603: An internal error occurred during tool execution"
+      }
+    }
+  },
+  "firewall": {
+    "status": 403,
+    "scope": "mbloch-designs-projects",
+    "access": "not authorized; CLI absent; WAF rules unverified"
+  },
+  "advisorsInterpretation": "empty list; not a security certificate with inactive project and failed SQL"
+}

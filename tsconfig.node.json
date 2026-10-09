@@ -20,5 +20,5 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["vite.config.ts", "playwright.config.ts", "playwright.hydration.config.ts"]
+  "include": ["vite.config.ts", "playwright.config.ts", "playwright.hydration.config.ts", "playwright.payment.config.ts"]
 }

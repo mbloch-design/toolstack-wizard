@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, MouseEvent, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -15,14 +15,45 @@ type ReviewPlan = "free" | "paid" | null;
 type Submission = {
   toolName: string; toolUrl: string; submitterRole: string; name: string;
   email: string; message: string; badgeUrl: string; verificationToken: string;
+  paymentReference: string; checkoutId: string;
 };
 
 const EMPTY_SUBMISSION: Submission = {
   toolName: "", toolUrl: "", submitterRole: "", name: "",
-  email: "", message: "", badgeUrl: "", verificationToken: "",
+  email: "", message: "", badgeUrl: "", verificationToken: "", paymentReference: "", checkoutId: "",
 };
 const DRAFT_KEY = "tt_submit_draft";
 const PAYMENT_URL = "https://www.creem.io/payment/prod_2LMoN4zyRhNAb53r3rWpwX";
+
+const RECEIPT_KEY = "tt_submit_payment_return";
+function parseDraft(value: string | null): Submission | null {
+  try {
+    const parsed = JSON.parse(value || "null");
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
+    const draft = { ...EMPTY_SUBMISSION, ...parsed };
+    if (Object.keys(EMPTY_SUBMISSION).some((key) => typeof draft[key] !== "string")) return null;
+    return draft;
+  } catch { return null; }
+}
+function saveDraft(draft: Submission) {
+  // Separate keys preserve overlapping tabs and non-primary-click navigation.
+  if (draft.paymentReference) window.localStorage.setItem(`${DRAFT_KEY}:${draft.paymentReference}`, JSON.stringify(draft));
+  window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+}
+function readDrafts(): Submission[] {
+  const drafts: Submission[] = [];
+  try {
+    const current = parseDraft(window.localStorage.getItem(DRAFT_KEY));
+    if (current) drafts.push(current);
+    for (let index = 0; index < window.localStorage.length; index++) {
+      const key = window.localStorage.key(index);
+      if (!key?.startsWith(`${DRAFT_KEY}:`)) continue;
+      const draft = parseDraft(window.localStorage.getItem(key));
+      if (draft && !drafts.some((other) => other.paymentReference === draft.paymentReference)) drafts.push(draft);
+    }
+  } catch { /* Existing readable drafts remain usable. */ }
+  return drafts;
+}
 
 const SubmitToolPage = () => {
   const { t, lang, prefix } = useLang();
@@ -31,32 +62,67 @@ const SubmitToolPage = () => {
   const [step, setStep] = useState<Step>(1);
   const [status, setStatus] = useState<Status>("idle");
   const [paid, setPaid] = useState(false);
+  const [paymentRecovery, setPaymentRecovery] = useState(false);
+  const [paymentRetry, setPaymentRetry] = useState(0);
   const [badgeTheme, setBadgeTheme] = useState<"light" | "dark">("light");
   const [badgeInstalled, setBadgeInstalled] = useState(false);
   const [codeCopied, setCodeCopied] = useState(false);
   const [error, setError] = useState("");
   const [submission, setSubmission] = useState<Submission>(EMPTY_SUBMISSION);
   const badgeUrlRef = useRef<HTMLInputElement>(null);
+  const submissionAcceptedRef = useRef(false);
   const sentProgressRef = useRef(new Set<string>());
 
   useEffect(() => {
-    if (searchParams.get("paid") !== "1") return;
-    let draft: Submission | null = null;
-    try {
-      const stored = window.localStorage.getItem(DRAFT_KEY);
-      if (stored) draft = JSON.parse(stored) as Submission;
-      window.localStorage.removeItem(DRAFT_KEY);
-    } catch { draft = null; }
-    if (draft?.toolName) {
-      setSubmission(draft); setPaid(true); setPlan("paid"); setStep(3);
-    } else {
+    if (submissionAcceptedRef.current) return;
+    const drafts = readDrafts();
+    let savedReceipt = "";
+    try { savedReceipt = window.localStorage.getItem(RECEIPT_KEY) || ""; } catch { /* URL recovery still works. */ }
+    const checkoutId = searchParams.get("checkout_id") || savedReceipt || drafts.find((draft) => draft.checkoutId)?.checkoutId || "";
+    if (searchParams.get("paid") !== "1" && !checkoutId) return;
+    setPaymentRecovery(true); setPaid(false); setPlan("paid"); setStatus("checking"); setError("");
+    const candidates = drafts.filter((draft) => draft.toolName && draft.paymentReference).slice(0, 20);
+    if (!candidates.length || !checkoutId) {
+      setStatus("error");
       setError(t(
-        "Paiement reçu, mais les informations de l'outil n'ont pas été retrouvées. Contacte-nous avec le reçu.",
-        "Payment received, but the tool details could not be recovered. Contact us with the receipt.",
+        "Les informations nécessaires à la vérification n’ont pas été retrouvées. Ne repaie pas : contacte contact@tooltrim.com avec ton reçu Creem.",
+        "The details needed for verification could not be recovered. Do not pay again: email contact@tooltrim.com with your Creem receipt.",
       ));
+      return;
     }
-    const next = new URLSearchParams(searchParams); next.delete("paid"); setSearchParams(next, { replace: true });
-  }, [searchParams, setSearchParams, t]);
+    try { window.localStorage.setItem(RECEIPT_KEY, checkoutId); } catch { /* Keep the receipt in the URL. */ }
+    const controller = new AbortController();
+    const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
+      ? "https://tooltrim.com/api/verify-payment" : "/api/verify-payment";
+    void (async () => {
+      try {
+        for (const candidate of candidates) {
+          const response = await fetch(endpoint, {
+            method: "POST", headers: { "Content-Type": "application/json" }, signal: controller.signal,
+            body: JSON.stringify({ checkoutId, paymentReference: candidate.paymentReference, toolUrl: candidate.toolUrl }),
+          });
+          const payload = await response.json().catch(() => ({}));
+          if (controller.signal.aborted) return;
+          if (response.status === 400) continue;
+          if (!response.ok || payload.verified !== true) throw new Error("payment_unverified");
+          const recovered = { ...candidate, checkoutId };
+          setSubmission(recovered);
+          try { saveDraft(recovered); } catch { /* Keep the receipt in the URL. */ }
+          setPaid(true); setStep(3); setStatus("idle");
+          return;
+        }
+        throw new Error("payment_unverified");
+      } catch {
+        if (controller.signal.aborted) return;
+        setStatus("error");
+        setError(t(
+          "Le paiement n’a pas encore pu être vérifié. Ton brouillon est conservé. Ne repaie pas : réessaie la vérification ou contacte contact@tooltrim.com avec ton reçu.",
+          "Payment could not yet be verified. Your draft is kept. Do not pay again: retry verification or email contact@tooltrim.com with your receipt.",
+        ));
+      }
+    })();
+    return () => controller.abort();
+  }, [searchParams, t, paymentRetry]);
 
   useEffect(() => {
     if (document.querySelector('script[src="https://www.creem.io/embed.js"]')) return;
@@ -85,7 +151,13 @@ const SubmitToolPage = () => {
   }, [lang, t]);
 
   const update = (field: keyof Submission, value: string) => {
-    setSubmission((current) => ({ ...current, [field]: value })); setError("");
+    setSubmission((current) => {
+      const next = { ...current, [field]: value };
+      if (paymentRecovery) {
+        try { saveDraft(next); } catch { /* Keep the current form usable. */ }
+      }
+      return next;
+    }); setError("");
     if (status === "error") setStatus("idle");
   };
   const urlErrorMessage = (reason: NormalizeUrlFailure) => {
@@ -115,6 +187,10 @@ const SubmitToolPage = () => {
     trackEvent("submit_plan_select", { plan: next, source });
   };
   const upgradeToPaid = () => {
+    const next = { ...submission, paymentReference: crypto.randomUUID(), checkoutId: "" };
+    try { saveDraft(next); }
+    catch { setError(t("Autorise le stockage du brouillon dans ce navigateur avant de continuer.", "Allow draft storage in this browser before continuing.")); return; }
+    setSubmission(next);
     setPlan("paid"); setPaid(false); setStep(2); setStatus("idle"); setError("");
     trackEvent("submit_plan_upgrade", { from: "free", to: "paid", source: "badge_step" });
   };
@@ -139,7 +215,12 @@ const SubmitToolPage = () => {
     if (site.changed) update("toolUrl", site.url);
     setStatus("saving"); setError("");
     try {
-      await sendProgress(1, plan === "paid", { toolUrl: site.url }); setStep(2); setStatus("idle");
+      await sendProgress(1, plan === "paid", { toolUrl: site.url });
+      if (plan === "paid") {
+        const next = { ...submission, toolUrl: site.url, paymentReference: crypto.randomUUID(), checkoutId: "" };
+        saveDraft(next); setSubmission(next);
+      }
+      setStep(2); setStatus("idle");
       document.getElementById("submit-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch { setStatus("error"); setError(t("L'enregistrement a échoué. Réessaie.", "This step could not be saved. Try again.")); }
   };
@@ -182,8 +263,17 @@ const SubmitToolPage = () => {
             : t("Badge introuvable dans le HTML public de la page.", "Badge not found in the page's public HTML."));
     }
   };
-  const beginCheckout = () => {
-    try { window.localStorage.setItem(DRAFT_KEY, JSON.stringify(submission)); } catch { /* recovery message covers this */ }
+  const checkoutUrl = new URL(PAYMENT_URL);
+  checkoutUrl.searchParams.set("metadata[tooltrim_submission_id]", submission.paymentReference);
+  const checkoutSite = normalizeSiteUrl(submission.toolUrl);
+  checkoutUrl.searchParams.set("metadata[tooltrim_tool_url]", checkoutSite.ok ? new URL(checkoutSite.url).href : "");
+  const beginCheckout = (event: MouseEvent<HTMLAnchorElement>) => {
+    try { saveDraft(submission); }
+    catch {
+      event.preventDefault(); event.stopPropagation();
+      setError(t("Autorise le stockage du brouillon dans ce navigateur avant de continuer.", "Allow draft storage in this browser before continuing."));
+      return;
+    }
     trackEvent("submit_priority_checkout", { tool_name: submission.toolName, price: 29, currency: "USD" });
     void sendProgress(2, true).catch(() => undefined);
   };
@@ -198,6 +288,15 @@ const SubmitToolPage = () => {
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(payload.error || "submission_failed");
       trackEvent("submit_tool", { tool_name: submission.toolName, submitter_role: submission.submitterRole, plan: paid ? "paid" : "free" });
+      submissionAcceptedRef.current = true;
+      try {
+        if (parseDraft(window.localStorage.getItem(DRAFT_KEY))?.paymentReference === submission.paymentReference) window.localStorage.removeItem(DRAFT_KEY);
+        if (submission.paymentReference) window.localStorage.removeItem(`${DRAFT_KEY}:${submission.paymentReference}`);
+        if (window.localStorage.getItem(RECEIPT_KEY) === submission.checkoutId) window.localStorage.removeItem(RECEIPT_KEY);
+      } catch { /* Accepted submission remains successful. */ }
+      const next = new URLSearchParams(searchParams);
+      for (const key of ["paid", "checkout_id", "order_id", "customer_id", "subscription_id", "product_id", "request_id", "signature"]) next.delete(key);
+      setSearchParams(next, { replace: true });
       setStatus("success");
     } catch (caught) {
       const reason = caught instanceof Error ? caught.message : "submission_failed";
@@ -219,8 +318,19 @@ const SubmitToolPage = () => {
     </section></div>
   );
 
+  if (paymentRecovery && !paid) return (
+    <div className="stp-page"><section className="sp-success" aria-live="polite">
+      <h1>{t("Vérification du paiement", "Payment verification")}</h1>
+      {status === "checking" ? <p>{t("Nous vérifions ton paiement auprès de Creem…", "We are verifying your payment with Creem…")}</p> : <>
+        <p className="tt-form-error" role="alert">{error}</p>
+        <button type="button" className="tt-button-primary" onClick={() => setPaymentRetry((current) => current + 1)}>{t("Réessayer la vérification", "Retry verification")}</button>
+      </>}
+      <p><a href="mailto:contact@tooltrim.com">contact@tooltrim.com</a></p>
+    </section></div>
+  );
+
   return <div className="stp-page">
-    <header className="sp-hero">
+    {!paymentRecovery && <header className="sp-hero">
       <div className="sp-hero-crumb"><Breadcrumb items={[{ label: t("Soumettre un outil", "Submit a tool") }]} /></div>
       <div className="sp-pitch">
         <div className="sp-pitch-copy">
@@ -246,10 +356,10 @@ const SubmitToolPage = () => {
         <div><strong>DR 40</strong><span>{t("Domain Rating · septembre 2026", "Domain Rating · September 2026")}</span></div>
         <div><strong>{t("Lien dofollow", "Dofollow link")}</strong><span>{t("vers le site officiel", "to the official website")}</span></div>
       </div>
-    </header>
+    </header>}
 
     <div className="sp-page-body">
-      <section className="sp-overview" aria-labelledby="submit-plans-title"><div className="sp-overview-inner">
+      {!paymentRecovery && <><section className="sp-overview" aria-labelledby="submit-plans-title"><div className="sp-overview-inner">
         <div className="sp-overview-heading"><span className="tt-page-hero-eyebrow">{t("Deux délais, une même indépendance", "Two timelines, the same independence")}</span><h2 id="submit-plans-title">{lang === "fr" ? <>Choisis ton délai. <span className="tt-title-muted">L’évaluation reste indépendante.</span></> : <>Choose your timeline. <span className="tt-title-muted">The assessment stays independent.</span></>}</h2><p>{t("Chaque fiche publiée reçoit le même traitement éditorial et une note ToolTrim expliquée. La formule à 29 $ garantit simplement le délai de publication.", "Every published listing gets the same editorial treatment and an explained ToolTrim score. The $29 option simply guarantees the publication timeline.")}</p></div>
         <div className="sp-plan-grid">
           <article className="sp-plan-card sp-plan-card--highlight">
@@ -298,6 +408,7 @@ const SubmitToolPage = () => {
         <div className="sp-editorial-rule"><Scale size={20} /><p><strong>{t("Une fiche crédible, un verdict indépendant.", "A credible listing, an independent verdict.")}</strong> {t("Le paiement couvre le service de publication. Le score, le classement et la conclusion éditoriale restent indépendants.", "Payment covers the publication service. Scores, rankings, and editorial conclusions remain independent.")} <Link to={`${prefix}/transparency`}>{t("Lire notre politique →", "Read our policy →")}</Link></p></div>
       </section>
 
+      </>}
       {plan && <section className="sp-shell" id="submit-form">
         <div className="sp-selected-plan"><span>{t("Ta formule", "Your option")} <strong>{plan === "paid" ? t(`Fiche publiée sous 5 jours · ${price}`, `Listing published within 5 days · ${price}`) : t("Avec badge · gratuit", "With a badge · free")}</strong></span><ShieldCheck size={18} /></div>
         <ol className="sp-steps" aria-label={t("Étapes de la soumission", "Submission steps")}>
@@ -325,7 +436,8 @@ const SubmitToolPage = () => {
             <div className="sp-payment-summary"><div><span>{t("PUBLICATION PRIORITAIRE", "PRIORITY PUBLICATION")}</span><strong>{submission.toolName}</strong><small>{submission.toolUrl}</small></div><strong>{price}</strong></div>
             <div className="sp-payment-promise"><ShieldCheck size={20} /><p>{t("Après la rédaction de la fiche, tu disposes d'un aller-retour avec le rédacteur avant sa publication sous cinq jours ouvrés.", "Once the listing is drafted, you get one review round with the editor before publication within five business days.")}</p></div>
             <p className="sp-payment-urgency"><Clock size={15} />{t("Tarif de rentrée disponible jusqu’au 30 septembre 2026.", "Back-to-work price available until September 30, 2026.")}</p>
-            <a href={PAYMENT_URL} data-creem-checkout className="tt-button-primary sp-payment-cta" onClick={beginCheckout}><CreditCard size={17} />{t(`Payer ${price} et lancer ma fiche`, `Pay ${price} and start my listing`)}</a>
+            <a href={checkoutUrl.href} data-creem-checkout data-creem-url={checkoutUrl.href} className="tt-button-primary sp-payment-cta" onClick={beginCheckout}><CreditCard size={17} />{t(`Payer ${price} et lancer ma fiche`, `Pay ${price} and start my listing`)}</a>
+            {error && <p className="tt-form-error" role="alert">{error}</p>}
             <p className="sp-payment-meta">{t("Paiement unique sécurisé par Creem. Aucun abonnement.", "Secure one-time payment via Creem. No subscription.")}</p>
             <div className="sp-actions"><button type="button" className="sp-button-secondary" onClick={() => setStep(1)}>{t("← Modifier les informations", "← Edit information")}</button></div>
           </section>}
@@ -359,7 +471,7 @@ const SubmitToolPage = () => {
         </div>
       </section>}
 
-      <section className="sp-faq-section" aria-labelledby="submit-faq-title">
+      {!paymentRecovery && <><section className="sp-faq-section" aria-labelledby="submit-faq-title">
         <div className="sp-section-intro"><span className="tt-page-hero-eyebrow">FAQ</span><h2 id="submit-faq-title">{lang === "fr" ? <>Tout savoir. <span className="tt-title-muted">Avant de publier ton outil.</span></> : <>Everything you need to know. <span className="tt-title-muted">Before publishing your tool.</span></>}</h2></div>
         <div className="sp-faq-list">
           <details><summary>{t("Que vais-je recevoir exactement ?", "What exactly will I receive?")}</summary><p>{t("Une fiche dédiée préparée par ToolTrim avec la présentation du produit, ses usages, ses tarifs, ses alternatives, une note expliquée par des faits, notre verdict éditorial et un lien vers ton site officiel.", "A dedicated listing prepared by ToolTrim with your product overview, use cases, pricing, alternatives, a score explained with supporting facts, our editorial verdict, and a link to your official website.")}</p></details>
@@ -380,6 +492,7 @@ const SubmitToolPage = () => {
         <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "closing")}>{t(`Publier ma fiche · ${price}`, `Publish my listing · ${price}`)}<ArrowRight size={16} /></button>
       </section>
       <p className="sp-contact-line">{t("Une question ou un projet de partenariat ?", "A question or partnership in mind?")} <Link className="sp-text-link" to={`${prefix}/contact?subject=partnership`}>{t("Parlons-en", "Let’s talk")}<ArrowRight size={15} /></Link></p>
+      </>}
     </div>
   </div>;
 };

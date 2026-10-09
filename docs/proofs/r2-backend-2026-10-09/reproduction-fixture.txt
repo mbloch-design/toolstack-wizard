@@ -1,0 +1,26 @@
+import { beforeEach, expect, it, vi } from 'vitest';
+import { httpFixture } from './http';
+const fakes=vi.hoisted(()=>({send:vi.fn()}));
+vi.mock('resend',()=>({Resend:class{emails={send:fakes.send}}}));
+import contact from '../../api/contact';
+import progress from '../../api/submission-progress';
+const base={name:'Audit fixture',email:'audit@example.invalid',subject:'Local audit',message:'No external delivery'};
+const tool={...base,submissionType:'tool',toolName:'Fixture',toolUrl:'https://example.invalid/',submitterRole:'Founder'};
+beforeEach(()=>{fakes.send.mockReset().mockResolvedValue({data:{id:'mock-only'},error:null});});
+it('characterization: paid:true without transaction proof receives paid confirmation',async()=>{
+ const h=httpFixture({...tool,paid:true,badgeReview:false});await contact(h.req,h.res);
+ expect(h.res.statusCode).toBe(200);expect(fakes.send).toHaveBeenCalledTimes(2);
+ expect(fakes.send.mock.calls[0][0].subject).toContain('PAYANT');
+});
+it('characterization: unpaid tool submission without badge is accepted',async()=>{
+ const h=httpFixture({...tool,paid:false,badgeReview:false});await contact(h.req,h.res);
+ expect(h.res.statusCode).toBe(200);expect(fakes.send).toHaveBeenCalledTimes(2);
+});
+it('characterization: repeated identical contact sends again',async()=>{
+ for(let n=0;n<2;n++){const h=httpFixture(base);await contact(h.req,h.res);expect(h.res.statusCode).toBe(200);}
+ expect(fakes.send).toHaveBeenCalledTimes(2);
+});
+it('characterization: repeated identical progress sends again',async()=>{
+ for(let n=0;n<2;n++){const h=httpFixture({toolName:'Fixture',toolUrl:'https://example.invalid/',email:base.email,progressStep:1});await progress(h.req,h.res);expect(h.res.statusCode).toBe(200);}
+ expect(fakes.send).toHaveBeenCalledTimes(2);
+});

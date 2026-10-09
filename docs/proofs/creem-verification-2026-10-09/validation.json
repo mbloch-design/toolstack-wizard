@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-09",
+  "baseCommit": "050a4c10d992b344a410718ab5d7946df428660f",
+  "status": "local_verified_not_published",
+  "tests": {
+    "api": 113,
+    "app": 278,
+    "paymentUi": 12,
+    "seoContracts": 23,
+    "generatedHtmlPaymentBrowser": 5
+  },
+  "typechecks": [
+    "app",
+    "node",
+    "api"
+  ],
+  "designTokens": "PASS, baseline debt unchanged",
+  "build": {
+    "status": "PASS",
+    "htmlFiles": 13162,
+    "sitemapUrls": 13137,
+    "totalMiB": 824.8,
+    "htmlMiB": 713.2,
+    "budgets": "PASS"
+  },
+  "independentReviews": "Runtime and CI passed after six frontend fixes",
+  "externalEffects": {
+    "realPayment": false,
+    "realEmail": false,
+    "databaseWrite": false,
+    "deployment": false
+  },
+  "activationPending": [
+    "Real product return URL includes checkout_id",
+    "CREEM_API_KEY server configuration attested",
+    "Real metadata propagation and existing-paid-client handling validated"
+  ],
+  "limitations": [
+    "No persistent checkout consumption or email idempotency",
+    "Free badge bypass remains open",
+    "Recovery uses current browser storage, at most 20 candidate drafts"
+  ],
+  "candidateSourceMatchesWorkspace": true,
+  "sourceSha256": {
+    "api/contact.ts": "1dd86d495cc98e2ae5470d36cbaaca47b5bdea5d09f58e3928b0ddc29e566e28",
+    "api/_payment-verification.ts": "1678cdad234c102427e09b43a2a15eb35e2819048275d7cd09521c68642b8bba",
+    "api/verify-payment.ts": "db422f7ed2c8c03e151f90a4d97952d81eb01ac62f3416f1b6fcfc8bcd31ac1a",
+    "src/pages/SubmitToolPage.tsx": "7d3eb418acac09697e918833806cdce8c6aa3208d52bbbfbf22ca5faa997fece",
+    "src/test/submit-payment.test.tsx": "aa77068cc657bff80fc8b3716deab2cb83286647d254fa619078edc13bbf59ad",
+    "tests/api/handlers.test.ts": "2583a7159feb8d10fb063b3ecb11c673508765fea9e3eca29dffb15f6695ae6e",
+    "tests/api/payment.test.ts": "00ceddc0d07c79cff2f4b7d685cb5240374fff9e79a77915c964e05a7bf7744e",
+    "tests/api/verify-payment.test.ts": "4ec25692a668b0b1fdbaf4d7a3e84f1e0a4489b42a65aba3dbbb380bc0af54fb",
+    "e2e/submit-payment.spec.ts": "5850d9d77f32089dbc05f530b4d0d71356ecf7a4fb0bff85fa953cc6646fcb32",
+    "playwright.payment.config.ts": "f02ddf663b80c316a9ad2b3ee8f69d4598566a9af6073cfa39038a71586427a6",
+    "package.json": "504646f3c4f364a20e82521721f59f6963cf496237ee9994bb4c655034a79df9",
+    ".github/workflows/preprod-ci.yml": "16c6c32cb289d6fc1296b263eec41e76ae5a56757dc488e3d12b0ec4605c63c7",
+    ".gitignore": "a2ae2f66f5283fab95747781ab43c39480d38c33cad09264a1ddf1c7b80d1220",
+    "tsconfig.node.json": "1c58132ae058038da01975bc036f71426ced58cb7e6324164798a23992ac43ec"
+  }
+}

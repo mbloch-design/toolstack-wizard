@@ -23,6 +23,7 @@ beforeEach(() => {
   vi.stubGlobal("fetch", fetchPage);
   vi.stubEnv("BADGE_VERIFICATION_SECRET", secret);
   vi.stubEnv("RESEND_API_KEY", "local-test-key");
+  vi.stubEnv("CREEM_API_KEY", "local-test-key");
 });
 afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); vi.restoreAllMocks(); });
 
@@ -50,6 +51,12 @@ for (const [name, handler] of [["contact", contact], ["submission-progress", pro
 }
 
 describe("contact", () => {
+  it("never sends a paid confirmation based on a client flag alone", async () => {
+    const h = httpFixture({ ...toolBody, paid: true }); await contact(h.req, h.res);
+    expect(h.res.statusCode).toBe(400);
+    expect(fakes.send).not.toHaveBeenCalled();
+  });
+
   it.each([undefined, {}, { ...contactBody, email: "invalid" }, { ...contactBody, message: "" }])("rejects missing or invalid contact fields: %j", async body => {
     const h = httpFixture(body); await contact(h.req, h.res);
     expect(h.res.statusCode).toBe(400); expect(h.body).toEqual({ error: "Missing required fields" });
@@ -101,7 +108,8 @@ describe("contact", () => {
     expect(h.res.statusCode).toBe(400); expect(h.body).toEqual({ error: "Badge must still be installed when the submission is sent" }); expect(fakes.send).not.toHaveBeenCalled();
   });
   it.each(["fr", "en"])("sends paid submission confirmation in %s", async lang => {
-    const h = httpFixture({ ...toolBody, paid: true, lang }); await contact(h.req, h.res);
+    fetchPage.mockResolvedValue(new Response(JSON.stringify({ id: "ch_local", mode: "prod", status: "completed", product: "prod_2LMoN4zyRhNAb53r3rWpwX", order:{status:"paid"}, metadata: { tooltrim_submission_id: "7ec2090a-9157-43c9-9238-f8931667420d", tooltrim_tool_url: "https://example.com/" } })));
+    const h = httpFixture({ ...toolBody, paid: true, lang, checkoutId: "ch_local", paymentReference: "7ec2090a-9157-43c9-9238-f8931667420d" }); await contact(h.req, h.res);
     expect(h.res.statusCode).toBe(200); expect(h.body).toEqual({ success: true }); expect(fakes.send).toHaveBeenCalledTimes(2);
     expect(fakes.send.mock.calls[1][0].subject).toBe(lang === "fr" ? "Création de ta fiche lancée — Sample" : "Your listing creation has started — Sample");
   });

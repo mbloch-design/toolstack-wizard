@@ -3,6 +3,8 @@ import { Resend } from "resend";
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { verifyBadgeOnPage } from "./_badge-verification.js";
 
+import { verifySubmissionPayment, PaymentVerificationError } from "./_payment-verification.js";
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const escapeHtml = (value: unknown) => String(value ?? "")
@@ -147,7 +149,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const {
     name, email, subject, message, submissionType,
-    toolName, toolUrl, submitterRole, badgeReview, badgeUrl, verificationToken, paid, lang,
+    toolName, toolUrl, submitterRole, badgeReview, badgeUrl, verificationToken, paid, lang, checkoutId, paymentReference,
   } = req.body ?? {};
 
   if (!name || !email || !subject || !message || !isValidEmail(email)) {
@@ -159,9 +161,19 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const isToolSubmission = submissionType === "tool";
-  const isPaidSubmission = isToolSubmission && Boolean(paid);
+  if (isToolSubmission && paid != null && typeof paid !== "boolean") {
+    return res.status(400).json({ error: "Invalid payment flag" });
+  }
+  const isPaidSubmission = isToolSubmission && paid === true;
   if (isToolSubmission && (!toolName || !isValidHttpUrl(toolUrl) || !submitterRole)) {
     return res.status(400).json({ error: "Invalid tool submission" });
+  }
+  if (isPaidSubmission) {
+    try { await verifySubmissionPayment({ checkoutId, paymentReference, toolUrl }); }
+    catch (error) {
+      const failure = error instanceof PaymentVerificationError ? error : new PaymentVerificationError(503, "payment_verification_unavailable");
+      return res.status(failure.status).json({ error: failure.message });
+    }
   }
   if (isToolSubmission && badgeReview && !isValidHttpUrl(badgeUrl)) {
     return res.status(400).json({ error: "Invalid badge URL" });

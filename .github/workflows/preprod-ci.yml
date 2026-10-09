@@ -61,6 +61,9 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
+      - name: Payment return and draft recovery (simulated provider)
+        run: npm run test:e2e:payment
+
       - name: Generated HTML hydration tests
         run: npm run test:e2e:hydration
 
@@ -72,6 +75,8 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            payment-report/
+            payment-test-results/
           retention-days: 7
           if-no-files-found: ignore
 

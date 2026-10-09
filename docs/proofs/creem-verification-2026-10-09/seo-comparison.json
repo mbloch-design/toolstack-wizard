@@ -1,0 +1,11 @@
+{
+  "sitemapIdentical": true,
+  "titleDescriptionRobotsCanonicalHreflangH1Identical": {
+    "fr/submit/index.html": true,
+    "en/submit/index.html": true,
+    "fr/tool/notion/index.html": true,
+    "en/tool/notion/index.html": true,
+    "fr/tools/index.html": true,
+    "en/tools/index.html": true
+  }
+}

@@ -49,3 +49,6 @@ supabase/.temp/
 /test-results/
 
 /playwright-report/
+
+/payment-report/
+/payment-test-results/

@@ -1,3 +1,17 @@
+## 2026-10-09 — Creem : vérification serveur et conservation du brouillon, local
+
+- Correctif autorisé, conservant produit/lien/embed Creem : métadonnées référence/URL, relecture serveur du checkout et contrôle indépendant avant emails payants. Flag `paid` seul refusé ; clé exclusivement serveur, erreurs prestataire récupérables.
+- Brouillons persistés avant checkout, clés par référence pour plusieurs onglets, reçu de reprise conservé, suppression seulement après soumission acceptée. Reprise sans invitation à repayer ; anciens retours sans preuve orientés vers le reçu manuel.
+- 113 API, 278 app (12 paiement), types et 23 SEO passent ; cinq scénarios Chromium simulés FR/EN sans erreur JS et sans paiement/email réel. Relecture indépendante et corrections de six points. Build/preuves dans CORRECTIF_CREEM_2026-10-09.md.
+- Non publié : clé serveur, retour réel et propagation Creem à attester avant activation. Consommation atomique/doublons, remboursements et badge gratuit restent ouverts. Catégories/catalogue/médias locaux préservés.
+
+## 2026-10-09 — R2 contre-audit backend, certification distante partielle
+
+- Rapport local `CONTRE_AUDIT_BACKEND_2026-10-09.md` et preuves, sans modification applicative ni publication. Projet Supabase du JS public déclaré INACTIVE ; requête SELECT métadonnées expirée, source de trois Edge Functions indisponible. Advisors vide non assimilé à une certification.
+- Quatre écarts reproduits avec Resend simulé : statut payé sans transaction attestée, badge évité par indicateur client, répétitions contact/progress sans déduplication des handlers. Aucun envoi réel.
+- 16 tests maintenance passent sur deux handlers locaux ; déploiement non certifié. Configuration WAF Vercel inaccessible 403 ; pas de présomption de règle absente.
+- Roadmap R2/R3 actualisée ; cible/protections manuelles à confirmer. Reprise de service et correctifs R2a–R2c non exécutés. Aucun secret lu, write DB ou appel de seed.
+
 ## 2026-10-09 — R0/R1 publiés et clôturés
 
 - Contrats API `13b631bc1d` publiés via `bb4bc7f94b`, puis retrait du SDK de types `4601f877cf` : les deux CI complètes et statuts Vercel réussissent.
