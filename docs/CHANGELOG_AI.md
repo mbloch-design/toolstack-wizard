@@ -1,3 +1,10 @@
+## 2026-10-09 — État des lieux consolidé et roadmap par lots
+
+- Historique technique confronté aux rapports et aux preuves : 13 lots recensés, statuts publié/local/proposé séparés. Main distant 7ee809e146, applicatif 88d7f5d7a5 ; contrats API 13b631bc1d toujours locaux.
+- Gains isolés de taille, réseau, fiabilité et dépendances séparés ; audit npm actualisé 15/7, zéro critique. Aucun gain de vitesse, conversion ou classement revendiqué. API saine non mesurée, DNS encore en échec dans cet environnement uniquement.
+- Roadmap proposée R0–R11 avec critères de sortie, dépendances, valeur et efforts relatifs ; backlog séparé. Contradictions du cap Ma Stack/coûts et libellé Payé en double rendues explicites.
+- Document ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md, preuves JSON, points d’entrée ROADMAP/MA_STACK_ROADMAP actualisés ; historiques conservés. Travail documentaire local, aucune publication ni modification applicative.
+
 ## 2026-10-09 — Précondition API du lot SDK
 
 - Contrôle strict de api/**/*.ts et fixtures Node, inclus dans typecheck global. 82 contrats de handlers et badge helper, intégrés à verify:preprod et Preprod CI ; tests hors api/ pour éviter leur déploiement comme endpoints.

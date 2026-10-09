@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-09",
+  "localHead": "13b631bc1deb60f31c42e747f06cfe579b1ecd9f",
+  "remoteMain": "7ee809e14697737009ef36c72060de9d3bfd4642",
+  "publishedApplication": "88d7f5d7a5bef8464d0787ee40c7511f5c25f943",
+  "unpublishedApplicationCommits": [
+    "13b631bc1d"
+  ],
+  "latestPublishedCI": {
+    "run": 37895367300,
+    "conclusion": "success",
+    "applicationTests": 266,
+    "seoTests": 23,
+    "maStackTests": 99,
+    "hydrationTests": 56,
+    "hydrationDuration": "5.4m"
+  },
+  "latestLocalAPI": {
+    "tests": 82,
+    "typecheck": "PASS",
+    "build": "PASS",
+    "runtimeAndLockfileUnchanged": true
+  },
+  "gains": {
+    "htmlFormattingBytes": 25816519,
+    "toolBootstrapBytes": 5861952,
+    "browserIndexDecodedBytes": 100976,
+    "browserIndexCdnGzipBytes": 17595,
+    "browserIndexCdnGzipPercent": 4.99
+  },
+  "artifact": {
+    "localMiB": 824.8,
+    "htmlMiB": 713.2,
+    "budgetTotalMiB": 831,
+    "budgetHtmlMiB": 716
+  },
+  "audit": {
+    "full": {
+      "info": 0,
+      "low": 0,
+      "moderate": 4,
+      "high": 11,
+      "critical": 0,
+      "total": 15
+    },
+    "omitDev": {
+      "info": 0,
+      "low": 0,
+      "moderate": 2,
+      "high": 5,
+      "critical": 0,
+      "total": 7
+    }
+  },
+  "supabaseDNSRecheck": "gaierror in this environment; healthy API unverified; not proof of universal outage",
+  "limits": [
+    "backend manually treated by owner, not independently certified",
+    "no Search Console ranking or Core Web Vitals improvement proven",
+    "product/relations real user validation outstanding",
+    "all future roadmap lots are proposals, not execution authorization"
+  ]
+}
