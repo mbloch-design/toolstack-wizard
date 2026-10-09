@@ -1,0 +1,29 @@
+{
+  "status": "local_verified_not_published",
+  "baselineCommit": "7ee809e14697737009ef36c72060de9d3bfd4642",
+  "apiContracts": {
+    "passed": 82,
+    "files": 2
+  },
+  "applicationTests": 266,
+  "seoContracts": 23,
+  "typecheck": {
+    "application": "PASS",
+    "nodeTools": "PASS",
+    "api": "PASS"
+  },
+  "productionBuild": "PASS",
+  "artifactMiB": {
+    "total": 824.8,
+    "html": 713.2
+  },
+  "unchangedBudgetsMiB": {
+    "total": 831,
+    "html": 716
+  },
+  "independentReview": "PASS; all minor findings resolved",
+  "handlersAndDependencyLockfileUnchanged": true,
+  "sdkRemoved": false,
+  "externalEmailsOrNetworkRequests": false,
+  "noFreshBrowserMatrix": "Application JS assets byte-identical; previous published router hydration proof not repeated. API handlers are byte-identical; current new tests use local fixtures only."
+}

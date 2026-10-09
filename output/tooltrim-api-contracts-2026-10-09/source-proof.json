@@ -1,0 +1,7 @@
+{
+  "api/_badge-verification.ts": "f76fa77a73d05f535eead45e18f32cec74b690cfcb30028ae441615c913f69d1",
+  "api/contact.ts": "f72b0c6e9ecae24c2e4ed4a591e739f75cd0b94230fd0304ce3924934b4d392a",
+  "api/submission-progress.ts": "ccabab16e3f528a77463ca5c9eaf199a12070cfffc4baba33f5aff7bf9f8233f",
+  "api/verify-badge.ts": "36df9cc989d13c4a3ac36421be06d21f7dabbc191b9e7ad3f23fa6c3ed06914c",
+  "package-lock.json": "92228b1f209c635a93f51427112fa494643fa5fa98abe69848f99f3c2e6e66ce"
+}

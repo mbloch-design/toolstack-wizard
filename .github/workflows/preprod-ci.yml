@@ -40,6 +40,9 @@ jobs:
       - name: Application unit tests
         run: npm test
 
+      - name: API handler contract fixtures
+        run: npm run test:api
+
       - name: SEO build contract fixtures
         run: npm run test:seo-contracts
 

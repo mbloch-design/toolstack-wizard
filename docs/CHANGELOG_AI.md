@@ -1,3 +1,9 @@
+## 2026-10-09 — Précondition API du lot SDK
+
+- Contrôle strict de api/**/*.ts et fixtures Node, inclus dans typecheck global. 82 contrats de handlers et badge helper, intégrés à verify:preprod et Preprod CI ; tests hors api/ pour éviter leur déploiement comme endpoints.
+- Resend/DNS/fetch simulés, vrai code de validation/HMAC conservé ; aucune livraison réelle. Ancien typecheck ignorant une erreur API prouvé, nouveau contrôle la détecte ; quatre mutations de comportement détectées, sources restaurées.
+- 266 tests applicatifs, 23 contrats SEO, tests API/types et build/budgets PASS ; 80 JS et sitemap identiques, 13 156 HTML identiques et six dates de génération seules actualisées. Relecture indépendante sans point restant. Rapport CONTRATS_API_2026-10-09.md et roadmap actualisés. Lot local non publié ; SDK, handlers et lockfile inchangés, travaux catégories/catalogue préservés.
+
 ## 2026-10-09 — React Router 7 publié et vérifié
 
 - Commits audit/migration publiés, applicatif `88d7f5d7a5`, parité main confirmée. Vercel réussi et CI 37895367300 entièrement verte : 56 hydratations sans flake en 5,4 min ; rapport jusqu’au 16 octobre.
