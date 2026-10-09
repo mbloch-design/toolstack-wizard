@@ -15,12 +15,12 @@ type ReviewPlan = "free" | "paid" | null;
 type Submission = {
   toolName: string; toolUrl: string; submitterRole: string; name: string;
   email: string; message: string; badgeUrl: string; verificationToken: string;
-  paymentReference: string; checkoutId: string; submissionId: string;
+  paymentReference: string; checkoutId: string; submissionId: string; attemptPayload: string;
 };
 
 const EMPTY_SUBMISSION: Submission = {
   toolName: "", toolUrl: "", submitterRole: "", name: "",
-  email: "", message: "", badgeUrl: "", verificationToken: "", paymentReference: "", checkoutId: "", submissionId: "",
+  email: "", message: "", badgeUrl: "", verificationToken: "", paymentReference: "", checkoutId: "", submissionId: "", attemptPayload: "",
 };
 const DRAFT_KEY = "tt_submit_draft";
 const PAYMENT_URL = "https://www.creem.io/payment/prod_2LMoN4zyRhNAb53r3rWpwX";
@@ -80,9 +80,25 @@ const SubmitToolPage = () => {
     let savedReceipt = "";
     try { savedReceipt = window.localStorage.getItem(RECEIPT_KEY) || ""; } catch { /* URL recovery still works. */ }
     const checkoutId = searchParams.get("checkout_id") || savedReceipt || drafts.find((draft) => draft.checkoutId)?.checkoutId || "";
-    if (searchParams.get("paid") !== "1" && !checkoutId) { if(drafts[0]) setSubmission(drafts[0]); return; }
+    if (searchParams.get("paid") !== "1" && !checkoutId) {
+      const candidate=drafts[0];if(candidate)setSubmission(candidate);
+      let attempted:Record<string,unknown>|undefined;
+      try{if(candidate?.attemptPayload)attempted=JSON.parse(candidate.attemptPayload);}catch{/* Preserve the editable draft. */}
+      if(candidate && attempted?.submissionType==='tool' && attempted.paid===false && attempted.submissionId===candidate.submissionId){
+        const controller=new AbortController();
+        const endpoint=/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)?'https://tooltrim.com/api/contact':'/api/contact';
+        void fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({...attempted,replayOnly:true})}).then(async response=>{
+          const result=await response.json().catch(()=>({}));if(controller.signal.aborted||!response.ok||result.success!==true)return;
+          submissionAcceptedRef.current=true;setPaid(false);
+          try{if(parseDraft(window.localStorage.getItem(DRAFT_KEY))?.submissionId===candidate.submissionId)window.localStorage.removeItem(DRAFT_KEY);if(candidate.paymentReference)window.localStorage.removeItem(`${DRAFT_KEY}:${candidate.paymentReference}`);}catch{/* Accepted record remains durable. */}
+          setStatus('success');
+        }).catch(()=>{/* A missing/unavailable record leaves the full draft editable. */});
+        return ()=>controller.abort();
+      }
+      return;
+    }
     setPaymentRecovery(true); setPaid(false); setPlan("paid"); setStatus("checking"); setError("");
-    const candidates = drafts.filter((draft) => draft.toolName && draft.paymentReference).slice(0, 20);
+    const candidates = drafts.filter((draft) => draft.toolName && draft.paymentReference).sort((a,b)=>(b.checkoutId===checkoutId&&b.attemptPayload?1:0)-(a.checkoutId===checkoutId&&a.attemptPayload?1:0)).slice(0, 20);
     if (!candidates.length || !checkoutId) {
       setStatus("error");
       setError(t(
@@ -98,6 +114,22 @@ const SubmitToolPage = () => {
     void (async () => {
       try {
         for (const candidate of candidates) {
+          if(candidate.attemptPayload){
+            let attempted:Record<string,unknown>|undefined;
+            try{attempted=JSON.parse(candidate.attemptPayload);}catch{/* Legacy or damaged attempt follows normal verification. */}
+            if(attempted?.submissionType==='tool' && attempted.submissionId===candidate.submissionId && attempted.checkoutId===checkoutId && attempted.paid===true){
+              const replayEndpoint=/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)?'https://tooltrim.com/api/contact':'/api/contact';
+              const replay=await fetch(replayEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({...attempted,replayOnly:true})});
+              const result=await replay.json().catch(()=>({}));
+              if(controller.signal.aborted)return;
+              if(replay.ok && result.success===true){
+                submissionAcceptedRef.current=true;setPaid(true);
+                try{if(parseDraft(window.localStorage.getItem(DRAFT_KEY))?.submissionId===candidate.submissionId)window.localStorage.removeItem(DRAFT_KEY);window.localStorage.removeItem(`${DRAFT_KEY}:${candidate.paymentReference}`);window.localStorage.removeItem(RECEIPT_KEY);}catch{/* Accepted state is durable. */}
+                const next=new URLSearchParams(searchParams);for(const key of ['paid','checkout_id','order_id','customer_id','subscription_id','product_id','request_id','signature'])next.delete(key);setSearchParams(next,{replace:true});setStatus('success');return;
+              }
+              if(replay.status!==404)throw new Error('submission_recovery_unavailable');
+            }
+          }
           const response = await fetch(endpoint, {
             method: "POST", headers: { "Content-Type": "application/json" }, signal: controller.signal,
             body: JSON.stringify({ checkoutId, paymentReference: candidate.paymentReference, toolUrl: candidate.toolUrl }),
@@ -154,7 +186,7 @@ const SubmitToolPage = () => {
   const update = (field: keyof Submission, value: string) => {
     setSubmission((current) => {
       const next = { ...current, [field]: value };
-      if (paymentRecovery) {
+      if (paymentRecovery || next.submissionId) {
         try { saveDraft(next); } catch { /* Keep the current form usable. */ }
       }
       return next;
@@ -249,7 +281,9 @@ const SubmitToolPage = () => {
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(payload.error || (response.status >= 500 ? "server_unavailable" : "badge_not_found"));
       setSubmission((current) => ({ ...current, verificationToken: payload.token || "" }));
-      await sendProgress(2, false, { badgeUrl: badgePage.url }); setStep(3); setStatus("idle");
+      const next = { ...submission, badgeUrl: badgePage.url, verificationToken: payload.token || "" };
+      try { saveDraft(next); } catch { /* Final POST requires a complete recoverable draft. */ }
+      void sendProgress(2, false, { badgeUrl: badgePage.url }).catch(() => undefined); setStep(3); setStatus("idle");
     } catch (caught) {
       const reason = caught instanceof TypeError ? "server_unavailable" : caught instanceof Error ? caught.message : "verification_failed";
       setStatus("error");
@@ -280,12 +314,15 @@ const SubmitToolPage = () => {
     event.preventDefault(); setStatus("submitting"); setError("");
     try {
       const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) ? "https://tooltrim.com/api/contact" : "/api/contact";
+      const { attemptPayload: _previousAttempt, ...fields } = submission;
+      const attempted = { ...fields, subject: t("Soumission d'un outil", "Tool submission"), submissionType: "tool", badgeReview: plan === "free", paid, lang };
+      const prepared = { ...submission, attemptPayload: JSON.stringify(attempted) };
+      saveDraft(prepared); setSubmission(prepared);
       const response = await fetch(endpoint, {
-        method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...submission, subject: t("Soumission d'un outil", "Tool submission"), submissionType: "tool", badgeReview: plan === "free", paid, lang }),
+        method: "POST", headers: { "Content-Type": "application/json" }, body: prepared.attemptPayload,
       });
       const payload = await response.json().catch(() => ({}));
-      if (!response.ok) throw new Error(payload.error || "submission_failed");
+      if (!response.ok || payload.success !== true) throw new Error(payload.error || "submission_failed");
       trackEvent("submit_tool", { tool_name: submission.toolName, submitter_role: submission.submitterRole, plan: paid ? "paid" : "free" });
       submissionAcceptedRef.current = true;
       try {

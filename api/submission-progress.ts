@@ -41,6 +41,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if ([toolName, submitterRole, name, email].some((value) => String(value ?? "").length > 300) || String(message ?? "").length > 2000) {
     return res.status(400).json({ error: "Field too long" });
   }
+  if([toolUrl,badgeUrl].some(value=>typeof value==='string'&&value.length>300)||(lang!=null&&!['fr','en'].includes(lang)))return res.status(400).json({error:'Invalid submission progress'});
   const isPaid = paid === true;
   if (progressStep === 2 && !isPaid && !validHttpsUrl(badgeUrl)) {
     return res.status(400).json({ error: "Invalid badge URL" });
@@ -83,8 +84,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }, {idempotencyKey:`tt-progress/v1/${submissionId}/${progressStep}/${fingerprint}`});
 
   if (error) {
-    console.error("[submission-progress] Resend error:", error);
-    return res.status(500).json({ error: error.message });
+    console.error("[submission-progress] Delivery unavailable");
+    return res.status(500).json({ error: "submission_progress_unavailable" });
   }
   return res.status(200).json({ success: true, progressStep });
 }

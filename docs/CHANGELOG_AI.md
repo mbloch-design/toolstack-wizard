@@ -1,3 +1,10 @@
+## 2026-10-09 — Soumissions : reçus Redis et reprises email, local
+
+- Plan Upstash autorisé exécuté dans un worktree isolé : réservation atomique du checkout, demande et jobs persistés avant email, baux et clés stables, maintenance authentifiée. Aucun Supabase pour cette fonctionnalité ; traitement manuel par email conservé.
+- Brouillons gratuits/payants complets, contenu exact tenté sauvegardé, reprise d’une acceptation après réponse perdue sans dépendre de Creem/badge disponibles. Notifications intermédiaires non bloquantes et bornées ; pas de création via la recherche seule.
+- Relecture indépendante et corrections vérifiées ; 175 API avec Redis réel, 287 app, 23 SEO, 14 Chromium, types/build/diff PASS. Sitemap et balises de six pages identiques. CI prépare désormais Redis, sans exécution GitHub revendiquée.
+- Non publié/non activé. Compte Free/éviction/quota, configuration réelle et sauvegarde distante/rétention restent à vérifier. [Bilan et décisions](BILAN_SOUMISSIONS_2026-10-09.md), [procédure](SOUMISSIONS_UPSTASH.md). Travail principal catégories/catalogue/médias/Stack préservé.
+
 ## 2026-10-09 — Plan soumissions Upstash, traitement email conservé
 
 - Après choix explicite d'Upstash gratuit et instruction « ensuite », préparation du plan détaillé en quatre tâches : réservation atomique, brouillon/acceptation, envoi/reprise, recette/configuration.

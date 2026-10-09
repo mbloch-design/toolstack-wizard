@@ -16,7 +16,7 @@ export function normalizeSubmission(raw:unknown):SubmissionInput {
  const url=(key:string)=>{const v=new URL(text(key));if(!['http:','https:'].includes(v.protocol)||v.username||v.password)throw new Error('invalid_submission');return v.href;};
  const input:SubmissionInput={submissionId,paid,name:text('name'),email:text('email'),subject:text('subject'),message:text('message',2000),toolName:text('toolName'),toolUrl:url('toolUrl'),submitterRole:text('submitterRole'),lang:b.lang==='fr'?'fr':'en'};
  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.email))throw new Error('invalid_submission');
- if(paid){input.checkoutId=text('checkoutId');input.paymentReference=text('paymentReference');if(!/^(?:ch|chk)_[A-Za-z0-9]+$/.test(input.checkoutId)||!validSubmissionId(input.paymentReference))throw new Error('invalid_submission');}
+ if(paid){input.checkoutId=text('checkoutId');input.paymentReference=text('paymentReference');if(!/^(?:ch|chk)_[A-Za-z0-9_-]{1,128}$/.test(input.checkoutId)||!validSubmissionId(input.paymentReference))throw new Error('invalid_submission');}
  else input.badgeUrl=url('badgeUrl');
  if(Buffer.byteLength(JSON.stringify(input))>16*1024)throw new Error('invalid_submission');
  return input;

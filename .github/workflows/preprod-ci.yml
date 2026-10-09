@@ -40,6 +40,14 @@ jobs:
       - name: Application unit tests
         run: npm test
 
+      - name: Prepare local Redis for submission integration tests
+        run: |
+          if ! command -v redis-server >/dev/null || ! command -v redis-cli >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y redis-server
+          fi
+          echo "SUBMISSION_TEST_REDIS_BIN=$(dirname "$(command -v redis-server)")" >> "$GITHUB_ENV"
+
       - name: API handler contract fixtures
         run: npm run test:api
 

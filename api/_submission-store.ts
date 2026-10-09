@@ -15,9 +15,16 @@ export async function redisCommand(command:(string|number)[]):Promise<unknown>{
 }
 export function parseRecord(raw:unknown):SubmissionRecord{
  try{
-  if(typeof raw!=='string')throw new Error();const r=JSON.parse(raw);
-  if(r.version!==1||!validSubmissionId(r.submissionId)||!/^\w{64}$/.test(r.fingerprint)||!['accepted','suspended'].includes(r.state)||!Number.isFinite(r.acceptedAt)||!r.jobs?.internal||!r.jobs?.confirmation)throw new Error();
-  for(const j of Object.values(r.jobs) as {state?:string;key?:string}[]){if(!['pending','sending','sent','reconcile'].includes(j.state||'')||typeof j.key!=='string')throw new Error();}
+  if(typeof raw!=='string'||Buffer.byteLength(raw)>128*1024)throw new Error();const r=JSON.parse(raw);
+  if(r.version!==1||!validSubmissionId(r.submissionId)||typeof r.fingerprint!=='string'||! /^[a-f0-9]{64}$/.test(r.fingerprint)||!['accepted','suspended'].includes(r.state)||!Number.isFinite(r.acceptedAt)||r.acceptedAt<0||!r.jobs?.internal||!r.jobs?.confirmation||Object.keys(r.jobs).length!==2)throw new Error();
+  if(r.checkoutId!=null&&(typeof r.checkoutId!=='string'||!/^(?:ch|chk)_[A-Za-z0-9_-]{1,128}$/.test(r.checkoutId)))throw new Error();
+  for(const j of Object.values(r.jobs) as MailJob[]){
+   if(!['pending','sending','sent','reconcile'].includes(j.state)||typeof j.key!=='string'||!j.key||j.key.length>256)throw new Error();
+   for(const value of [j.firstAttemptAt,j.leaseUntil,j.sentAt])if(value!=null&&(!Number.isFinite(value)||value<0))throw new Error();
+   if(j.state==='sending'&&(!j.owner||!j.leaseUntil||!j.firstAttemptAt))throw new Error();
+   if(j.payload){if([j.payload.from,j.payload.to,j.payload.subject,j.payload.html].some(v=>typeof v!=='string'||!v)||j.payload.to.length>300||j.payload.subject.length>500||j.payload.html.length>100*1024||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(j.payload.to))throw new Error();}
+   else if(r.archived!==true||j.state!=='sent')throw new Error();
+  }
   return r;
  }catch{throw new SubmissionStoreError();}
 }
@@ -113,18 +120,29 @@ export async function finishMail(id:string,kind:MailKind,owner:string,result:{pr
 }
 export async function suspendSubmission(id:string):Promise<boolean>{return (await update(id,'suspend',{}))!==null;}
 export async function archiveSubmission(id:string):Promise<boolean>{return (await update(id,'archive',{}))!==null;}
-// COUNT is a Redis hint, not a strict page limit. The offset keeps unprocessed fields on the same page.
+type ScanState={next:string;ids:string[]};
+function decodeCursor(cursor:string):ScanState{
+ if(typeof cursor!=='string'||cursor.length>1024*1024)throw new SubmissionStoreError();
+ if(/^\d{1,32}$/.test(cursor))return {next:cursor,ids:[]};
+ try{
+  const state=JSON.parse(Buffer.from(cursor,'base64url').toString('utf8'));
+  if(!state||!/^\d{1,32}$/.test(state.next)||!Array.isArray(state.ids)||!state.ids.every(validSubmissionId))throw new Error();
+  return state;
+ }catch{throw new SubmissionStoreError();}
+}
+export function validMaintenanceCursor(cursor:unknown):cursor is string{try{if(typeof cursor!=='string')return false;decodeCursor(cursor);return true;}catch{return false;}}
+// Freeze page IDs in the authenticated continuation, never positions in a repeated HSCAN page.
 export async function scanSubmissions(cursor:string,limit:number):Promise<{cursor:string;records:SubmissionRecord[]}>{
- if(!/^\d+(?::\d{1,6})?$/.test(cursor)||limit<1||limit>25)throw new SubmissionStoreError();
- const [position,offsetRaw='0']=cursor.split(':');const offset=Number(offsetRaw);
- const result=await redisCommand(['HSCAN',SUBMISSION_HASH,position,'COUNT',50]);
- if(!Array.isArray(result)||typeof result[0]!=='string'||!/^\d+$/.test(result[0])||!Array.isArray(result[1])||result[1].length%2!==0)throw new SubmissionStoreError();
- const fields=result[1];const records:SubmissionRecord[]=[];let index=offset*2;
- for(;index<fields.length;index+=2){
-  if(typeof fields[index]!=='string')throw new SubmissionStoreError();
-  if(!fields[index].startsWith('submission:'))continue;
-  const record=parseRecord(fields[index+1]);records.push(record);
-  if(records.length===limit){index+=2;break;}
+ if(limit<1||limit>25)throw new SubmissionStoreError();const state=decodeCursor(cursor);
+ if(state.ids.length===0){
+  const result=await redisCommand(['HSCAN',SUBMISSION_HASH,state.next,'COUNT',50]);
+  if(!Array.isArray(result)||typeof result[0]!=='string'||!/^\d+$/.test(result[0])||!Array.isArray(result[1])||result[1].length%2!==0)throw new SubmissionStoreError();
+  state.next=result[0];
+  for(let i=0;i<result[1].length;i+=2){const field=result[1][i];if(typeof field!=='string')throw new SubmissionStoreError();if(field.startsWith('submission:')){const id=field.slice(11);if(!validSubmissionId(id))throw new SubmissionStoreError();state.ids.push(id);}}
  }
- return {records,cursor:index<fields.length?`${position}:${index/2}`:result[0]};
+ const selected=state.ids.splice(0,limit);const records:SubmissionRecord[]=[];
+ for(const id of selected){const record=await getSubmission(id);if(record)records.push(record);}
+ const next=state.ids.length===0?state.next:Buffer.from(JSON.stringify(state)).toString('base64url');
+ if(next.length>1024*1024)throw new SubmissionStoreError();
+ return {records,cursor:next};
 }

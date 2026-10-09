@@ -171,7 +171,7 @@ describe("submission-progress", () => {
     vi.spyOn(console, "error").mockImplementation(() => {});
     fakes.send.mockResolvedValueOnce({ data: null, error: { message: "delivery unavailable" } });
     const h = httpFixture(progressBody); await progress(h.req, h.res);
-    expect(h.res.statusCode).toBe(500); expect(h.body).toEqual({ error: "delivery unavailable" });
+    expect(h.res.statusCode).toBe(500); expect(h.body).toEqual({ error: "submission_progress_unavailable" });
   });
 });
 
@@ -211,3 +211,8 @@ it('progress retries use a stable provider key without storing unverified drafts
  expect(fakes.send.mock.calls[0][1]?.idempotencyKey).toMatch(/^tt-progress\/v1\//);expect(fakes.send.mock.calls[0][1]?.idempotencyKey).toBe(fakes.send.mock.calls[1][1]?.idempotencyKey);expect(fetchPage).not.toHaveBeenCalled();
 });
 it.each(['true',1,{}])('progress rejects non-boolean option flag %j',async paid=>{const h=httpFixture({...progressBody,paid});await progress(h.req,h.res);expect(h.res.statusCode).toBe(400);expect(fakes.send).not.toHaveBeenCalled();});
+it.each([{toolUrl:'https://example.com/'+ 'x'.repeat(301)},{badgeUrl:'https://example.com/'+ 'x'.repeat(301)},{lang:{bad:true}},{lang:'x'.repeat(301)}])('progress bounds all transmitted fields %j',async patch=>{const h=httpFixture({...progressBody,...patch});await progress(h.req,h.res);expect(h.res.statusCode).toBe(400);expect(fakes.send).not.toHaveBeenCalled();});
+it('progress provider details are not logged or returned to the client',async()=>{
+ const secretDetail='private customer ada@example.com';const log=vi.spyOn(console,'error').mockImplementation(()=>{});fakes.send.mockResolvedValueOnce({data:null,error:{message:secretDetail,statusCode:500}});
+ const h=httpFixture(progressBody);await progress(h.req,h.res);expect(h.res.statusCode).toBe(500);expect(JSON.stringify(log.mock.calls)).not.toContain(secretDetail);expect(JSON.stringify(h.body)).not.toContain(secretDetail);
+});

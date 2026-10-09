@@ -84,6 +84,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (requiresBadge && !isValidHttpUrl(badgeUrl)) {
     return res.status(400).json({ error: "Invalid badge URL" });
   }
+  if(isToolSubmission && req.body?.replayOnly!=null && typeof req.body.replayOnly!=='boolean')return res.status(400).json({error:'Invalid tool submission'});
   let normalized:SubmissionInput|undefined;
   let fingerprint='';
   if(isToolSubmission){
@@ -97,6 +98,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(200).json({success:true});
       }
     }catch{return res.status(503).json({error:'submission_store_unavailable'});}
+    if(req.body?.replayOnly===true)return res.status(404).json({error:'submission_not_found'});
   }
   if (isPaidSubmission) {
     try { await verifySubmissionPayment({ checkoutId, paymentReference, toolUrl }); }

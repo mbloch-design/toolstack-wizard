@@ -12,3 +12,6 @@ describe('submission contract', () => {
  it.each([{submissionId:'bad'},{paid:'true'},{toolName:{}},{message:'x'.repeat(2001)},{toolUrl:'http://user:pass@example.com'},{email:'invalid'}])('rejects unsafe input %j',patch=>expect(()=>normalizeSubmission({...input,...patch})).toThrow());
  it('adopts the existing paid reference without replacing it',()=>expect(normalizeSubmission({...input,submissionId:undefined,paid:true,checkoutId:'ch_local',paymentReference:input.submissionId}).submissionId).toBe(input.submissionId));
 });
+it('preserves the existing payment verifier checkout identifier grammar',()=>{
+ expect(normalizeSubmission({...input,paid:true,checkoutId:'ch_supported-id_suffix',paymentReference:input.submissionId}).checkoutId).toBe('ch_supported-id_suffix');
+});

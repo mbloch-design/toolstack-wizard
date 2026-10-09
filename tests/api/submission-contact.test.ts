@@ -40,5 +40,15 @@ suite('durable contact against real Redis',()=>{
  it('quota failure has no email or accepted request',async()=>{
   storeDown=true;const h=httpFixture(paid);await contact(h.req,h.res);expect(h.res.statusCode).toBe(503);expect(external.send).not.toHaveBeenCalled();expect(await redis.command(['HLEN',SUBMISSION_HASH])).toBe(0);
  });
+ it('replay_only_never_creates_a_new_request_or_checks_creem',async()=>{
+  creemDown=true;const h=httpFixture({...paid,replayOnly:true});await contact(h.req,h.res);expect(h.res.statusCode).toBe(404);expect(await redis.command(['HLEN',SUBMISSION_HASH])).toBe(0);expect(external.send).not.toHaveBeenCalled();
+ });
+ it('reservation_response_lost_after_write_is_recovered_without_second_receipt',async()=>{
+  const transport=globalThis.fetch;let dropped=false;
+  vi.stubGlobal('fetch',async(url:unknown,init?:RequestInit)=>{const result=await transport(url as string,init);const cmd=init?.body?JSON.parse(String(init.body)):[];
+   if(!dropped&&String(url).includes('.upstash.io')&&cmd[0]==='EVAL'&&cmd.length===5){dropped=true;throw new TypeError('reservation reply lost');}return result;});
+  const first=httpFixture(paid);await contact(first.req,first.res);expect(first.res.statusCode).toBe(503);expect(external.send).not.toHaveBeenCalled();
+  const second=httpFixture(paid);await contact(second.req,second.res);expect(second.res.statusCode).toBe(200);expect(external.send).toHaveBeenCalledTimes(2);expect(await redis.command(['HLEN',SUBMISSION_HASH])).toBe(2);
+ });
  it('unpaid_badge_bypass_stays_rejected',async()=>{const h=httpFixture({...paid,paid:false,badgeReview:false,checkoutId:undefined,paymentReference:undefined});await contact(h.req,h.res);expect(h.res.statusCode).toBe(400);expect(external.send).not.toHaveBeenCalled();});
 });
