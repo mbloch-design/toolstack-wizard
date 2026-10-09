@@ -1,7 +1,7 @@
 {
   "date": "2026-10-09",
   "request": "fais la suite",
-  "status": "Redis and maintenance secrets configured in Vercel Production; Creem/badge and recipe pending",
+  "status": "Redis, maintenance and badge secrets configured; Creem API key absent and recipe pending",
   "vercel": {
     "project": "toolstack-wizard",
     "projectId": "prj_gOLJN2t7sFiFA49LbIGfadbC4P9n",
@@ -25,15 +25,15 @@
       ]
     },
     "required_names_not_present": [
-      "CREEM_API_KEY",
-      "BADGE_VERIFICATION_SECRET"
+      "CREEM_API_KEY"
     ],
     "configuration_saved": true,
     "pending_form": null,
     "saved_variables": [
       "SUBMISSION_REDIS_URL",
       "SUBMISSION_REDIS_TOKEN",
-      "SUBMISSION_MAINTENANCE_TOKEN"
+      "SUBMISSION_MAINTENANCE_TOKEN",
+      "BADGE_VERIFICATION_SECRET"
     ],
     "saved_target": "Production",
     "saved_type": "Secret",
@@ -74,5 +74,11 @@
     "ui_remasked_after_read": true,
     "maintenance_secret": "32 cryptographically random bytes; saved as Vercel Secret",
     "local_secret_backup_created": false
+  },
+  "creem": {
+    "owner_answer": "no API key yet",
+    "dashboard": "login required",
+    "current_checkout_modified": false,
+    "api_key_created": false
   }
 }

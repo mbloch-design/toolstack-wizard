@@ -1,3 +1,8 @@
+## 2026-10-09 — Secret badge enregistré ; clé Creem manquante
+
+- Création du secret de vérification badge autorisée et enregistrée Secret en Production, valeur non affichée. Le propriétaire confirme ne pas disposer encore de clé API Creem ; console ouverte pour connexion au compte du produit existant.
+- Aucun produit/checkout, clé Creem ni déploiement modifié. Activation et recette restent ouvertes ; quatre nouvelles variables serveur enregistrées.
+
 ## 2026-10-09 — Variables Redis Production enregistrées
 
 - Accès navigateur Vercel rétabli et autorisation explicite de transfert reçue. URL Redis, jeton REST lecture/écriture et secret maintenance indépendant enregistrés comme Secret en Production ; pas d’exposition des valeurs ni de connexion Preview à la base Production.
