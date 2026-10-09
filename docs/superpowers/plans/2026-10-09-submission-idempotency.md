@@ -107,7 +107,7 @@ Les opérations atomiques ont été exécutées sur Redis réel local 7.2.7 et s
 
 ### Contrôles restants avant activation
 
-- Connexion Resend puis domaine/expéditeur et clé Production à vérifier sans confondre avec la clé locale invalide.
+- Resend : connexion, domaine/SPF/DKIM/envoi et expéditeur existant vérifiés ; clé récemment utilisée limitée à Sending access. Aucun envoi du nouveau handler ni comparaison de valeur secrète Production.
 - Authentification de la clé Creem Production et propagation réelle des métadonnées/retour à certifier ; configuration LIVE/read-only observée.
 - Rétention 90 jours, accès privé au secret maintenance, destination/fréquence des sauvegardes et procédure de réconciliation à valider.
 - Autorisation de publication, puis vérification CI et artefact public.

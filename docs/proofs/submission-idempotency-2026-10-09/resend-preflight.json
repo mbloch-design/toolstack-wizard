@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-09",
+  "method": "Authenticated dashboard read only",
+  "domain": "tooltrim.com",
+  "domainStatus": "Verified",
+  "sendingEnabled": true,
+  "dkimStatus": "Verified",
+  "spfStatus": "Verified",
+  "sendingMxStatus": "Verified",
+  "region": "eu-west-1",
+  "recentlyUsedKey": {
+    "permission": "Sending access",
+    "domainScope": "All domains",
+    "lastUsedVisible": "about 20 hours ago"
+  },
+  "existingInternalEmail": {
+    "sender": "ToolTrim Contact <contact@tooltrim.com>",
+    "status": "Delivered"
+  },
+  "newEmailsSent": 0,
+  "configurationChanged": false,
+  "limitations": [
+    "No secret revealed or compared with Vercel Production value",
+    "Existing delivery evidence; not delivery of the unpublished new handler"
+  ]
+}

@@ -1,3 +1,9 @@
+## 2026-10-09 — Domaine et expéditeur Resend vérifiés
+
+- Compte connecté : domaine tooltrim.com Verified, DKIM/SPF/MX d'envoi Verified, envoi activé. Clé récente avec Sending access, aucune extension des droits.
+- Expéditeur interne contact@tooltrim.com confirmé par un email déjà Delivered. Aucun nouvel email ni modification de configuration.
+- Preuve non sensible enregistrée ; nouveau handler non déployé et vérification réelle Creem/exploitation encore ouvertes.
+
 ## 2026-10-09 — Récupération Upstash et contrôle prestataires
 
 - Export/restauration privés de reçus fictifs sur Upstash REST PASS : états, archives et réservation des checkouts préservés ; 16 appels, nettoyage complet, registre production inchangé.

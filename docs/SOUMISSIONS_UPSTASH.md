@@ -132,3 +132,9 @@ Recette REST de récupération PASS sur un hash `tt:recipe:<UUID>` seulement : e
 Creem : clé dédiée LIVE toujours présente avec `checkouts:read` seulement, confirmée dans le compte. Resend : la clé locale `.env.preprod` ne permet pas le contrôle (HTTP 400 validation_error, préfixe de clé attendu absent) ; cela ne prouve pas une panne de la clé Production Vercel. La console Resend demande une connexion du propriétaire avant vérification du domaine d'envoi. Aucun secret, DNS, produit ou clé changé.
 
 Compteurs Upstash affichés pendant ce contrôle : 302 / 500 000 commandes mensuelles, 125 KB de bande passante, 2 KB de stockage, $0.00. Cumul de plusieurs recettes et éventuel délai de mise à jour : pas de consommation par branche ni capacité mensuelle déduite. Le contrôle REST direct confirme le nettoyage malgré l'indicateur de stockage agrégé.
+
+### Resend vérifié après connexion du propriétaire
+
+Compte authentifié : `tooltrim.com` Verified, envoi activé, DKIM/SPF et MX d'envoi Verified, région eu-west-1. Clé utilisée récemment : Sending access, périmètre All domains ; aucune permission modifiée ni valeur révélée. Un email interne existant confirme l'expéditeur `ToolTrim Contact <contact@tooltrim.com>` et le statut Delivered. Aucun nouvel email envoyé. [Preuve](proofs/submission-idempotency-2026-10-09/resend-preflight.json).
+
+Le refus de la clé locale préproduction ne décrit donc pas une panne du compte d'envoi. Cette lecture ne compare pas la valeur secrète Vercel et ne certifie pas un envoi du nouveau handler non déployé. La connexion Resend et le domaine d'envoi ne sont plus des prérequis bloqués ; restent la recette réelle Creem, l'exploitation (maintenance, sauvegardes, rétention) et l'autorisation de publication.
