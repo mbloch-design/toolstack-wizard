@@ -9,7 +9,7 @@ export async function redisCommand(command:(string|number)[]):Promise<unknown>{
   const response=await fetch(url.href,{method:'POST',redirect:'error',headers:{Authorization:`Bearer ${token}`,'Content-Type':'application/json'},body:JSON.stringify(command),signal:AbortSignal.timeout(3000)});
   if(!response.ok)throw new Error();
   const body=await response.json();
-  if(!body||typeof body!=='object'||'error' in body||!Object.hasOwn(body,'result'))throw new Error();
+  if(!body||typeof body!=='object'||'error' in body||!Object.prototype.hasOwnProperty.call(body,'result'))throw new Error();
   return body.result;
  }catch{throw new SubmissionStoreError();}
 }

@@ -5487,3 +5487,8 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Footer sur grille 12 colonnes, carte « Ma stack » via `src/lib/stackSnapshot.ts` (écrit par CartPage), sélecteur de langue FR | EN.
 - Accueil, lots 2 et 3 sans ajout : échelle typo unique, rythme 72/48, rayons, recherche sous le hero, outils non répétés, libellés, accessibilité (0 violation axe), animations sur transform, 69 règles CSS mortes retirées. « La pile » retirée à la demande de Michael.
 - Accueil : recherche du site réparée (sigles courts, mots vides, accents, catégories), lot de finitions en tokens, typographie française (displayText), équilibre optique des logos, besoins avec exposant et tags de catégories voisines, « Lequel garder ? » à la place de « Compatible avec », en-têtes de section alignés à gauche, carrousels jusqu'au bord.
+
+
+### 2026-10-09 — Compatibilité du compilateur API Vercel
+
+Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le typecheck API local ES2023. Reproduction avec les bibliothèques ES2020 : même erreur. Le contrôle de propriété propre utilise désormais `Object.prototype.hasOwnProperty.call`, avec le même refus des réponses Redis sans champ propre `result`. Vérification ES2020 PASS et 178 tests API avec Redis réel PASS. Le contrôle ES2020 est ajouté à la CI pour couvrir cet écart.

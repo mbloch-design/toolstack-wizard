@@ -158,3 +158,8 @@ Après autorisation explicite, session non payée créée via le lien produit co
 L'API pending n'expose pas success_url ; le retour configuré dans le produit est confirmé par UI, mais le retour après un paiement terminé n'a pas été exercé. Les tests de paiement terminé restent simulés.
 
 Pour rendre la maintenance exploitable, une valeur privée de 32 octets aléatoires a été préparée sous `SUBMISSION_MAINTENANCE_TOKEN` dans `.env.submissions.local` (600, ignoré), afin que l'opérateur en conserve une copie. **Vercel n'a pas été modifié** : cette valeur doit remplacer le secret Production existant avant déploiement ; sinon elle n'authentifiera pas la maintenance. Ne pas archiver le worktree avant conservation durable des secrets/sauvegardes.
+
+
+### Publication et contrôle du compilateur Vercel
+
+Le propriétaire a remplacé le secret maintenance Production par la valeur conservée localement. Publication autorisée du lot complet jusqu'aux tests : `9c05265` poussé sur `main`, CI de branche intégralement PASS (56 cas d'hydratation inclus). Le build Vercel Production signale TS2550 sur `Object.hasOwn` ; correction compatible ES2020 préparée. La recette publique n'est pas exécutée avant confirmation du déploiement exact. La correspondance du secret maintenance sera prouvée par une action volontairement invalide, sans mutation.

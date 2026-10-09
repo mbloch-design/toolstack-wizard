@@ -60,6 +60,9 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: API compiler compatibility
+        run: npx tsc -p tsconfig.api.json --lib ES2020,DOM,DOM.Iterable
+
       - name: Ma stack unit and exploration tests
         run: npm run test:ma-stack
 
