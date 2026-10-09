@@ -34,7 +34,7 @@ const GOAL_STACKS: GoalStack[] = [
     tools: [
       { slug: "pipedrive", name: "Pipedrive", websiteUrl: "https://pipedrive.com" },
       { slug: "calendly", name: "Calendly", websiteUrl: "https://calendly.com" },
-      { slug: "notion", name: "Notion", websiteUrl: "https://notion.so" },
+      { slug: "docusign", name: "DocuSign", websiteUrl: "https://docusign.com" },
       { slug: "stripe", name: "Stripe", websiteUrl: "https://stripe.com" },
     ],
   },
@@ -42,14 +42,14 @@ const GOAL_STACKS: GoalStack[] = [
     objectiveFr: "Créer du contenu",
     objectiveEn: "Create content",
     slug: "createur-contenu-operateur",
-    titleFr: "Stack créateur contenu",
+    titleFr: "Stack créateur de contenu",
     titleEn: "Content creator stack",
     subtitleFr: "Publiez, recyclez vos contenus et captez les demandes sans payer trois copilotes IA.",
     subtitleEn: "Publish, repurpose, and capture requests without paying for three copilots.",
     tools: [
       // Self-hosted: Simple Icons no longer carries the OpenAI mark.
       { slug: "chatgpt", name: "ChatGPT", websiteUrl: "https://chat.openai.com", logo: "/home-logos/chatgpt.webp" },
-      { slug: "notion", name: "Notion", websiteUrl: "https://notion.so" },
+      { slug: "beehiiv", name: "Beehiiv", websiteUrl: "https://beehiiv.com" },
       { slug: "canva", name: "Canva", websiteUrl: "https://canva.com" },
       { slug: "buffer", name: "Buffer", websiteUrl: "https://buffer.com" },
     ],
@@ -58,8 +58,8 @@ const GOAL_STACKS: GoalStack[] = [
     objectiveFr: "Automatiser",
     objectiveEn: "Automate",
     slug: "automatisation-legere-freelance",
-    titleFr: "Automatisation freelance",
-    titleEn: "Freelance automation",
+    titleFr: "Stack automatisation légère",
+    titleEn: "Light automation stack",
     subtitleFr: "Quelques tâches répétitives automatisées, sans la complexité de Zapier.",
     subtitleEn: "A few recurring tasks, automated, without the complexity of Zapier.",
     tools: [
@@ -70,8 +70,8 @@ const GOAL_STACKS: GoalStack[] = [
     ],
   },
   {
-    objectiveFr: "Organiser",
-    objectiveEn: "Organize",
+    objectiveFr: "Démarrer en solo",
+    objectiveEn: "Start solo",
     slug: "freelance-solo-zero-bloat",
     titleFr: "Stack solo léger",
     titleEn: "Light solo stack",

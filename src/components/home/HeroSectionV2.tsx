@@ -46,7 +46,7 @@ const HeroSectionV2 = () => {
 
             <p className="hv2-subtitle">
               {t(
-                "Construisez votre stack et voyez où vous payez trop, où vous avez des doublons, ou où il vous manque le bon outil.",
+                "Construisez votre stack et voyez où vous payez trop, ce qui fait doublon et ce qui vous manque.",
                 "Build your stack and see where you're overspending, overlapping, or missing the right tool.",
               )}
             </p>

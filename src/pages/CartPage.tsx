@@ -24,6 +24,7 @@ import { pairKey, useStackDecisions } from "@/hooks/useStackDecisions";
 import { trackEvent } from "@/lib/analytics";
 import ValueChange from "@/components/motion/ValueChange";
 import { writeStackSnapshot } from "@/lib/stackSnapshot";
+import { SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
 import { getToolLogoSources } from "@/lib/toolLogos";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
@@ -123,6 +124,17 @@ export default function CartPage() {
       }).slice(0, 12);
   }, [query, tools, lang]);
 
+  // Same title and description as the prerendered page, also after a
+  // client-side navigation (the tab kept the previous page's title).
+  useEffect(() => {
+    setSeoTags({
+      title: t("Ma stack — ToolTrim", "My stack — ToolTrim"),
+      description: t("Composez et suivez votre stack d'outils SaaS avec ToolTrim.", "Build and track your SaaS tool stack with ToolTrim."),
+      url: `${SEO_BASE}/${lang}/ma-stack`,
+      locale: lang === "fr" ? "fr_FR" : "en_US",
+    });
+    setHreflang(`/${lang}/ma-stack`);
+  }, [lang, t]);
   useEffect(() => { if (searchOpen) searchRef.current?.focus(); }, [searchOpen]);
   useEffect(() => {
     if (selectedSlug && !selected && !missing.includes(selectedSlug)) {

@@ -129,3 +129,6 @@ Prochaines étapes proposées, dans l'ordre :
 - Décision Michael (8 oct.) : le hero garde son image en dégradé avec logos, par exception aux règles « pas de gradient » et « pas de grands logos ».
 - [ ] « Les outils qu'on surveille » : les visuels sont les images OG des éditeurs (texte anglais sur la page FR, collages chargés). Choisir des captures d'interface recadrées ou passer au format liste des univers.
 - [x] Bloc « Trouvez le bon outil » retiré de l'accueil (9 oct., Michael) : doublon de la recherche permanente (barre du haut, loupe mobile, barre latérale) ; il n'était pas mesuré dans GA4.
+- [ ] Tutoiement dans 169 lignes de src/data/stacks.ts (subtitle, q, hint, reason, avoidIf) : le site vouvoie partout ailleurs. La stack automatisation-legere-freelance est passée au vous (9 oct.). Chantier éditorial à planifier.
+- [ ] « Compatible avec » sur l'accueil : en vraies compatibilités (intégrations, plugins), le catalogue ne couvre qu'After Effects (47) et React (12). Google Workspace, Figma et Notion n'ont que des apps de leur propre suite. Décision Michael : retirer la section ou compléter worksWith dans les données.
+- [ ] Noms de catégories en anglais ou en Title Case dans les données (« Legal & Contracts », « Communication Équipe », « IA Généraliste ») : à corriger dans Supabase, pas dans le JSON.

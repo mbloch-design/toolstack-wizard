@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { NEED_UNIVERSES } from "@/data/needUniverses";
 import { displayText } from "@/lib/typography";
+import { REDIRECTED_TOOL_SLUGS } from "@/lib/redirectedTools";
 import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
@@ -248,7 +249,8 @@ export default function HomePageV2() {
     const map = new Map<string, typeof tools>();
     for (const tool of tools) {
       const key = tool.categoryId;
-      if (!key || TOOL_IMAGE_BLOCKLIST.has(tool.slug || tool.id)) continue;
+      // Counted like the category page it opens, so the two numbers match.
+      if (!key || REDIRECTED_TOOL_SLUGS.has(tool.slug || tool.id)) continue;
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(tool);
     }
@@ -359,7 +361,8 @@ export default function HomePageV2() {
                   <article key={universe.categoryId} className="v2-shelf-cell">
                     <Link to={`${prefix}/category/${category.slug}`} className="v2-shelf-cell-head">
                       <span className="v2-shelf-cell-titlerow">
-                        <h3 className="v2-shelf-cell-name">{lang === "en" ? universe.labelEn : universe.labelFr}</h3>
+                        {/* The category's own name, as on the page it opens (UX review, 9 Oct 2026). */}
+                        <h3 className="v2-shelf-cell-name">{stripLeadingEmoji(lang === "en" ? category.nameEn || category.name : category.name)}</h3>
                         <span className="v2-shelf-cell-count">
                           {t(`${count} outils`, `${count} tools`)}
                           <ArrowRight className="v2-shelf-cell-arrow" style={{ width: 13, height: 13 }} aria-hidden />
@@ -489,7 +492,7 @@ export default function HomePageV2() {
           {homeGuides.length > 0 && (
             <section className="v2-catalog-section">
               <SectionHead
-                label={t("Articles du guide", "Guide articles")}
+                label={t("Derniers guides", "Latest guides")}
                 to={`${prefix}/guides`}
                 linkLabel={t("Tous les guides", "All guides")}
               />

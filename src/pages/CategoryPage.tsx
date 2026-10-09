@@ -1,4 +1,5 @@
 import { useLocation, useParams, Link } from "react-router-dom";
+import { REDIRECTED_TOOL_SLUGS } from "@/lib/redirectedTools";
 import { useState, useEffect, useMemo, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts, type ToolSummary } from "@/hooks/useSupabaseData";
@@ -23,7 +24,6 @@ type PriceFilter = "all" | "free" | "paid";
 type TopPick = { entry?: CatalogPlacement; tool: ToolSummary };
 
 const PER_PAGE = 24;
-const REDIRECTED_TOOL_SLUGS = new Set(["anthropic", "motion-app", "anchor-spotify"]);
 
 /**
  * Category landing page, the indexable counterpart of /tools?need=…

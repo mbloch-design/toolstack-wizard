@@ -24,8 +24,8 @@ export const NEED_UNIVERSES: Array<{
   },
   {
     categoryId: "creation", labelFr: "Création de contenu", labelEn: "Content Creation",
-    subsFr: ["Vidéo", "Audio", "Visuels", "Présentations"],
-    subsEn: ["Video", "Audio", "Visuals", "Presentations"],
+    subsFr: ["Vidéo", "Audio", "Visuels", "3D et effets"],
+    subsEn: ["Video", "Audio", "Visuals", "3D and VFX"],
     picks: [
       { slug: "canva", takeFr: "La vitesse et les modèles avant le contrôle fin.", takeEn: "Speed and templates over fine control." },
       { slug: "auphonic", takeFr: "Le mastering audio de podcast, en automatique.", takeEn: "Podcast audio, mastered automatically." },
@@ -34,17 +34,17 @@ export const NEED_UNIVERSES: Array<{
   },
   {
     categoryId: "design-tools", labelFr: "Design", labelEn: "Design",
-    subsFr: ["Design systems", "Motion design", "Modélisation 3D", "Prototypage"],
-    subsEn: ["Design Systems", "Motion Design", "3D Modeling", "Prototyping"],
+    subsFr: ["Interfaces", "Design systems", "Prototypage", "Animation"],
+    subsEn: ["Interfaces", "Design Systems", "Prototyping", "Motion"],
     picks: [
-      { slug: "figma", takeFr: "Design, prototype et handoff dans un seul fichier.", takeEn: "Design, prototype and handoff in one file." },
+      { slug: "figma", takeFr: "Design, prototype et passage aux développeurs dans un seul fichier.", takeEn: "Design, prototype and handoff in one file." },
       { slug: "affinity-photo", takeFr: "Une alternative à Photoshop, désormais gratuite.", takeEn: "A Photoshop alternative, now free." },
       { slug: "spline", takeFr: "De la 3D interactive sans suite 3D complète.", takeEn: "Interactive 3D without a full 3D suite." },
     ],
   },
   {
     categoryId: "email-productivity", labelFr: "Marketing & Ventes", labelEn: "Marketing & Sales",
-    subsFr: ["Email outreach", "Newsletter", "Prospection", "Réseaux sociaux"],
+    subsFr: ["Newsletter", "Prospection", "Réseaux sociaux", "Campagnes e-mail"],
     subsEn: ["Email Outreach", "Newsletter", "Prospecting", "Social Media"],
     picks: [
       { slug: "mailchimp", takeFr: "Le point de départ classique pour une petite liste.", takeEn: "The familiar start for a small email list." },
@@ -84,11 +84,11 @@ export const NEED_UNIVERSES: Array<{
   },
   {
     categoryId: "analytics", labelFr: "Données & Analytics", labelEn: "Data & Analytics",
-    subsFr: ["SEO", "Visualisation de données", "Dashboards", "Recherche utilisateur"],
+    subsFr: ["SEO", "Visualisation de données", "Tableaux de bord", "Recherche utilisateur"],
     subsEn: ["SEO", "Data Visualization", "Dashboards", "User Research"],
     picks: [
       { slug: "google-analytics", takeFr: "La référence gratuite pour mesurer l'audience.", takeEn: "The free default for measuring traffic." },
-      { slug: "microsoft-clarity", takeFr: "Heatmaps et replays gratuits, sans plafond de trafic.", takeEn: "Free heatmaps and replays, no traffic cap." },
+      { slug: "microsoft-clarity", takeFr: "Cartes de chaleur et replays gratuits, sans plafond de trafic.", takeEn: "Free heatmaps and replays, no traffic cap." },
       { slug: "datawrapper", takeFr: "Des graphiques propres pour articles et rapports.", takeEn: "Clean charts for articles and reports." },
     ],
   },
