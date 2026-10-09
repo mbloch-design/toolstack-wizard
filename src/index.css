@@ -24028,52 +24028,6 @@ section[id]:not(.cp-guide-section) {
    The host picker is a visible iOS-style segmented control (grey track,
    active segment as a white pill) instead of a dropdown hidden in the
    title. On narrow screens the segments scroll sideways. */
-.v2-ww-tabs {
-  display: inline-flex;
-  max-width: 100%;
-  gap: 2px;
-  margin-bottom: 20px;
-  padding: 3px;
-  overflow-x: auto;
-  border-radius: var(--radius-pill);
-  background: var(--color-surface-soft);
-  box-shadow: inset 0 0 0 1px var(--color-border-soft);
-  scrollbar-width: none;
-}
-.v2-ww-tabs::-webkit-scrollbar { display: none; }
-
-.v2-ww-tab {
-  display: inline-flex;
-  flex-shrink: 0;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 14px 7px 8px;
-  border: 0;
-  border-radius: var(--radius-pill);
-  background: transparent;
-  color: var(--color-muted);
-  font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 500;
-  white-space: nowrap;
-  cursor: pointer;
-  transition: background 180ms ease-out, color 180ms ease-out, box-shadow 180ms ease-out;
-}
-.v2-ww-tab:hover {
-  color: var(--color-text-strong);
-}
-.v2-ww-tab.is-active {
-  background: var(--color-surface);
-  color: var(--color-text-strong);
-  box-shadow: 0 0 0 1px var(--color-border);
-}
-.v2-ww-tab:focus-visible {
-  outline: 2px solid var(--color-text-strong);
-  outline-offset: 1px;
-}
-.v2-ww-tab-logo {
-  border-radius: 6px !important;
-}
 
 /* Shelf: native horizontal scroll with snap. Card width leaves part of the
    next card visible so the row reads as scrollable without any dots. */
@@ -24083,6 +24037,11 @@ section[id]:not(.cp-guide-section) {
 .v2-rail-track {
   display: flex;
   gap: var(--v2-grid-gap);
+  /* Carousels slide out to the screen edges, never clipped at the page
+     margin (Michael, 9 Oct 2026); the first card still starts on the grid. */
+  margin-inline: calc(-1 * var(--v2-grid-gutter, 0px));
+  padding-inline: var(--v2-grid-gutter, 0px);
+  scroll-padding-inline: var(--v2-grid-gutter, 0px);
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
@@ -24144,12 +24103,12 @@ section[id]:not(.cp-guide-section) {
 
 /* Section heads */
 .v2-section-head {
+  /* Title, then the "see all" link right under it, on the same left edge:
+     a link pushed to the far right floated alone (Michael, 9 Oct 2026). */
   display: flex;
-  /* The "see all" link sits on the title's baseline, not under the
-     subtitle (design review, 8 Oct 2026). */
-  align-items: baseline;
-  justify-content: space-between;
-  gap: var(--space-lg);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   margin-bottom: var(--v2-head-content-gap);
 }
 .v2-section-heading-copy {
@@ -24191,13 +24150,6 @@ section[id]:not(.cp-guide-section) {
   flex: 0 0 auto;
 }
 
-@media (max-width: 639px) {
-  .v2-section-head {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 14px;
-  }
-}
 
 /* Category grid */
 
@@ -24854,12 +24806,12 @@ section[id]:not(.cp-guide-section) {
 }
 
 .sgs-head {
+  /* Same head as every home section: title, lead, link, one left edge. */
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--space-lg);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   margin-bottom: var(--v2-head-content-gap);
-  flex-wrap: wrap;
 }
 
 .sgs-lead {
@@ -24979,7 +24931,6 @@ section[id]:not(.cp-guide-section) {
 }
 
 @media (max-width: 640px) {
-  .sgs-head { flex-direction: column; align-items: flex-start; }
   .sgs-item { gap: 16px; }
   .sgs-folder {
     grid-template-columns: repeat(2, 28px);
@@ -35435,11 +35386,6 @@ img[data-logo-loading] {
 /* Home, design review (8 Oct 2026).
    Works with: the same filter language as Ma stack, no track, the active
    software as a dark pill. */
-.home-v2 .v2-ww-tabs { gap: 4px; padding: 0; background: none; box-shadow: none; border-radius: 0; }
-.home-v2 .v2-ww-tab { min-height: 36px; padding: 6px 14px 6px 8px; color: var(--color-text); }
-.home-v2 .v2-ww-tab:hover { background: rgba(15, 15, 15, .05); }
-.home-v2 .v2-ww-tab.is-active { background: #0F0F0F; color: #FFFFFF; box-shadow: none; }
-.home-v2 .v2-ww-tab.is-active .v2-ww-tab-logo { box-shadow: 0 0 0 1.5px #FFFFFF; }
 /* Card titles share one line whether or not a category follows. */
 .home-v2 .v2-rail-item .tce-identity-link { align-items: flex-start; }
 /* "See all" links and the footer legal links: at least 24px to tap. */
@@ -35454,7 +35400,6 @@ img[data-logo-loading] {
    right after the hero, on the page's white (no grey band: Michael). The iOS folder
    grows and leads each card; the copy sits under it. ── */
 .home-v2 .sgs-root { margin-top: 0; padding: 72px 0 0; background: none; }
-.home-v2 .sgs-head { align-items: baseline; }
 .home-v2 .sgs-list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; column-gap: 16px; }
 .home-v2 .sgs-list > li { border-top: 0; display: flex; }
 .home-v2 .sgs-item { flex: 1; flex-direction: column; align-items: flex-start; gap: 22px; margin: 0; padding: 24px 22px 26px; background: #FFFFFF; box-shadow: 0 0 0 1px #E6E6E6; transition: box-shadow 260ms cubic-bezier(.25, 1, .5, 1), transform 260ms cubic-bezier(.25, 1, .5, 1); }
@@ -35471,7 +35416,7 @@ img[data-logo-loading] {
   .home-v2 .sgs-root { padding: 48px 0 0; }
   /* position: relative keeps the cards' sr-only names inside the scroller;
      without it they widened the phone page to 909px (a11y audit). */
-  .home-v2 .sgs-list { position: relative; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-right: calc(-1 * var(--v2-grid-gutter)); padding-right: var(--v2-grid-gutter); }
+  .home-v2 .sgs-list { position: relative; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: calc(-1 * var(--v2-grid-gutter)); padding-inline: var(--v2-grid-gutter); scroll-padding-inline: var(--v2-grid-gutter); }
   .home-v2 .sgs-list::-webkit-scrollbar { display: none; }
   .home-v2 .sgs-list > li { flex: 0 0 78%; scroll-snap-align: start; }
   .home-v2 .sgs-folder { width: 96px; height: 96px; border-radius: 26px; grid-template-columns: repeat(2, 32px); grid-template-rows: repeat(2, 32px); }
@@ -35519,14 +35464,10 @@ img[data-logo-loading] {
 }
 /* Phones: the Compatible avec tabs and rail bleed to the screen edge, like
    the stacks rail, instead of stopping 20px short. */
-@media (max-width: 640px) {
-  .home-v2 .v2-ww-tabs, .home-v2 .v2-ww-section .v2-rail-track { margin-inline: calc(-1 * var(--v2-grid-gutter)); padding-inline: var(--v2-grid-gutter); scroll-padding-inline: var(--v2-grid-gutter); }
-}
 /* Stack cards: copy is not cut on the 4-up row. */
 @media (min-width: 1101px) { .home-v2 .sgs-item-subtitle { -webkit-line-clamp: 4; } }
 .home-v2 .sgs-item-subtitle, .home-v2 .v2-shelf-pick-take { text-wrap: pretty; }
 /* Heading to content: 24, title to lead: 8. */
-.home-v2 .sgs-head { margin-bottom: var(--v2-head-content-gap); }
 .home-v2 .sgs-lead { margin-top: 8px; }
 /* "Freemium" and price badges on covers: on the type scale. */
 .home-v2 .tce-cover-price { font: 600 11px/1 var(--font-ui); color: var(--color-text); }
@@ -35573,7 +35514,6 @@ img[data-logo-loading] {
 .home-v2 .v2-shelf-pick-logo,
 .home-v2 .tce-logo,
 .home-v2 .sgs-folder-logo { border-radius: var(--h-radius-tile) !important; }
-.home-v2 .v2-ww-tab-logo { border-radius: 6px !important; }
 
 /* Footer tagline echoes the hero face instead of a second display face. */
 .tt-footer .tt-footer-tagline { font: 480 clamp(30px, 3vw, 40px)/1.05 var(--font-ui); letter-spacing: -.045em; }
@@ -35632,3 +35572,30 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* The page ends into the footer with a little more air than between sections. */
 .asv2-main:has(.home-v2) + .tt-footer { --tt-footer-margin-top: calc(var(--h-gap, 72px) * 1.5); }
 @media (max-width: 640px) { .asv2-main:has(.home-v2) + .tt-footer { --tt-footer-margin-top: 72px; } }
+
+/* ── Lequel garder ? (home, 9 Oct 2026) ──────────────────────────────────
+   Two tools face to face on a soft stage, tilted away from each other and
+   joined by Ma stack's swap badge; on hover they straighten and close in,
+   like a duel about to be settled. Title and decision line below, on the
+   home type scale. Tokens only. */
+.hc-card { display: flex; flex-direction: column; color: inherit; text-decoration: none; border-radius: var(--h-radius-card, 20px); }
+.hc-card:focus-visible { outline: 2px solid var(--color-text); outline-offset: 4px; }
+.hc-duel { position: relative; display: grid; place-items: center; aspect-ratio: 16 / 10; border-radius: var(--h-radius-card, 20px); background: var(--color-surface-soft); overflow: hidden; }
+.hc-icon { position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; border-radius: 22%; background: var(--color-surface); box-shadow: 0 1px 2px rgba(15, 15, 15, .06), 0 10px 24px rgba(15, 15, 15, .10); overflow: hidden; transition: transform 320ms cubic-bezier(.34, 1.3, .64, 1); }
+.hc-icon > * { width: 100% !important; height: 100% !important; min-width: 0 !important; min-height: 0 !important; border-radius: inherit !important; box-shadow: none !important; }
+.hc-icon--a { transform: translateX(-64%) rotate(-7deg); }
+.hc-icon--b { transform: translateX(64%) rotate(6deg); }
+.hc-swap { position: relative; z-index: 2; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--color-text); color: var(--color-surface); font: 600 13px/1 var(--font-ui); box-shadow: 0 0 0 3px var(--color-surface-soft); transition: transform 260ms cubic-bezier(.34, 1.4, .64, 1); }
+.hc-card:hover .hc-icon--a, .hc-card:focus-visible .hc-icon--a { transform: translateX(-56%) rotate(0deg); }
+.hc-card:hover .hc-icon--b, .hc-card:focus-visible .hc-icon--b { transform: translateX(56%) rotate(0deg); }
+.hc-card:hover .hc-swap { transform: scale(1.1); }
+.hc-card:active .hc-duel { transform: scale(.99); }
+.hc-title { margin-top: 14px; font: 600 18px/1.25 var(--font-ui); letter-spacing: -.015em; color: var(--color-text); }
+.hc-summary { display: -webkit-box; margin-top: 6px; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; font: 400 15px/1.45 var(--font-ui); color: var(--color-text-secondary); text-wrap: pretty; }
+@media (max-width: 640px) { .hc-icon { width: 60px; height: 60px; margin: -30px 0 0 -30px; } }
+@media (prefers-reduced-motion: reduce) {
+  .hc-icon, .hc-swap { transition: none; }
+  .hc-card:hover .hc-icon--a, .hc-card:focus-visible .hc-icon--a { transform: translateX(-64%) rotate(-7deg); }
+  .hc-card:hover .hc-icon--b, .hc-card:focus-visible .hc-icon--b { transform: translateX(64%) rotate(6deg); }
+  .hc-card:hover .hc-swap { transform: none; }
+}
