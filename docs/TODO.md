@@ -128,3 +128,4 @@ Prochaines étapes proposées, dans l'ordre :
 - [x] CTA unifié : « Construire ma stack » (hero et footer).
 - Décision Michael (8 oct.) : le hero garde son image en dégradé avec logos, par exception aux règles « pas de gradient » et « pas de grands logos ».
 - [ ] « Les outils qu'on surveille » : les visuels sont les images OG des éditeurs (texte anglais sur la page FR, collages chargés). Choisir des captures d'interface recadrées ou passer au format liste des univers.
+- [x] Bloc « Trouvez le bon outil » retiré de l'accueil (9 oct., Michael) : doublon de la recherche permanente (barre du haut, loupe mobile, barre latérale) ; il n'était pas mesuré dans GA4.

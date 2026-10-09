@@ -1,7 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { NEED_UNIVERSES } from "@/data/needUniverses";
-import { useEffect, useMemo, useState, useCallback, useRef, type FormEvent, type ReactNode } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight, Search } from "@/lib/icons";
+import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -157,12 +157,10 @@ function SectionHead({ label, to, linkLabel }: { label: string; to: string; link
 
 export default function HomePageV2() {
   const { lang, t, prefix } = useLang();
-  const navigate = useNavigate();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const posts = HOME_POSTS[lang];
 
-  const [discoveryQuery, setDiscoveryQuery] = useState("");
   const [selectedHost, setSelectedHost] = useState("google-workspace");
 
   useEffect(() => {
@@ -256,14 +254,6 @@ export default function HomePageV2() {
     return map;
   }, [tools]);
 
-  const handleDiscoverySubmit = useCallback((event: FormEvent) => {
-    event.preventDefault();
-    const q = discoveryQuery.trim();
-    // /search runs the fuzzy catalogue-search engine (tools + categories +
-    // guides); /tools?q= only does a literal substring match, which reads
-    // as broken for a phrase like "AI video" that no tool spells out.
-    navigate(q ? `${prefix}/search?q=${encodeURIComponent(q)}` : `${prefix}/tools`);
-  }, [discoveryQuery, navigate, prefix]);
 
   /* “Travailler avec” is driven by the catalogue relationship model rather
      than a hand-authored list of recommendations. A host is only presented
@@ -341,39 +331,6 @@ export default function HomePageV2() {
   return (
     <div className="home-v2">
       <HeroSectionV2 />
-
-      {/* Search right under the hero: one of the two ways in (design review,
-          8 Oct 2026), before the curated stacks. */}
-      <div className="v2-catalog v2-catalog--lead">
-        <div className="v2-container">
-          {/* ══ Discovery — one calm entry point: if you know what you're
-               looking for, search. If you only know the need, the universe
-               index right below takes over, then a short editorial watchlist.
-               (The old category chips here duplicated the universes with an
-               older taxonomy, so they're gone.) ══ */}
-          <section className="v2-catalog-section dcv-section">
-            <h2 className="dcv-title">
-              {t("Trouvez le bon outil pour la tâche", "Find the right tool for the job")}
-            </h2>
-
-            <form className="dcv-search" role="search" onSubmit={handleDiscoverySubmit}>
-              <Search className="dcv-search-icon" aria-hidden />
-              <input
-                type="search"
-                className="dcv-search-input"
-                value={discoveryQuery}
-                onChange={(event) => setDiscoveryQuery(event.target.value)}
-                placeholder={t("Gestion de projet, IA vidéo, CRM…", "Project management, AI video, CRM…")}
-                aria-label={t("Que recherchez-vous ?", "What are you looking for?")}
-              />
-              <button type="submit" className="dcv-search-submit">
-                {t("Rechercher", "Search")}
-              </button>
-            </form>
-
-          </section>
-        </div>
-      </div>
 
       <StackGoalsSection />
 
