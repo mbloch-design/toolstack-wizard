@@ -54584,5 +54584,56 @@
     "alternatives": [
       "product-hunt"
     ]
+  },
+  {
+    "id": "newbi",
+    "slug": "newbi",
+    "name": "Newbi",
+    "categoryId": "finance",
+    "shortDescription": "Facturation, devis, CRM client, connexion bancaire et trésorerie réunis sur une seule plateforme pour freelances et TPE françaises, avec un accès comptable gratuit inclus.",
+    "shortDescriptionEn": "Invoicing, quotes, client CRM, bank connection and cash flow in one platform for French freelancers and small businesses, with free accountant access included.",
+    "pricing": {
+      "free": "Essai de 30 jours, toutes les fonctionnalités Freelance, sans carte bancaire.",
+      "paid": "Dès 17,99 € TTC/mois (16,19 € en engagement annuel), formule Freelance."
+    },
+    "pricingEn": {
+      "free": "30-day trial, full Freelance features, no credit card required.",
+      "paid": "From €17.99 incl. tax/month (€16.19 billed annually), Freelance plan."
+    },
+    "defaultMonthlyPrice": 16.19,
+    "compareMonthlyPrice": 16.19,
+    "nativePrices": [
+      {
+        "amount": 16.19,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://www.newbi.fr",
+    "ogImageUrl": "https://www.newbi.fr/images/op-newbi.png",
+    "substitution_cluster_v2": "accounting-ops",
+    "functional_needs": [
+      "facturation",
+      "comptabilite",
+      "paiements"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "artisan-commercant",
+      "expert-comptable"
+    ],
+    "relevantFor": [
+      "Freelances et indépendants",
+      "TPE et petites agences",
+      "Cabinets d'expertise comptable"
+    ],
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ],
+    "alternatives": [
+      "indy",
+      "tiime"
+    ]
   }
 ]

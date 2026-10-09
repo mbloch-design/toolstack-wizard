@@ -1,20 +1,19 @@
-import { useNavigate } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { NEED_UNIVERSES } from "@/data/needUniverses";
-import { useEffect, useMemo, useState, useCallback, useRef, type FormEvent, type ReactNode } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight, Search } from "@/lib/icons";
+import { FEATURED_COMPARISONS } from "@/data/comparisons";
+import { displayText } from "@/lib/typography";
+import { REDIRECTED_TOOL_SLUGS } from "@/lib/redirectedTools";
+import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { stripLeadingEmoji } from "@/lib/text";
+import { categoryDisplayName } from "@/lib/text";
 import ToolLogo from "@/components/ToolLogo";
 import HeroSectionV2 from "@/components/home/HeroSectionV2";
 import StackGoalsSection from "@/components/home/StackGoalsSection";
-import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import HOME_POSTS from "@/data/home-posts-index.json";
-import { getExplorerHref } from "@/lib/toolExploration";
-import { TOOL_IMAGE_BLOCKLIST } from "@/lib/toolImageBlocklist";
 
 
 
@@ -42,7 +41,11 @@ import { TOOL_IMAGE_BLOCKLIST } from "@/lib/toolImageBlocklist";
    take is grounded in the tool's own verdict data but written for this
    homepage only, so global tool descriptions stay untouched. */
 
-const WORKS_WITH_MAX = 12; // cards on the "Works with" shelf; the full list is one link away
+// "Lequel garder ?" shelf: existing comparison pages a freelancer meets first.
+const HOME_COMPARISONS = [
+  "chatgpt-vs-claude", "notion-vs-clickup", "asana-vs-trello", "notion-vs-obsidian",
+  "getresponse-vs-brevo", "engagebay-vs-hubspot", "chatgpt-vs-perplexity", "github-copilot-vs-cursor",
+];
 
 /* Tools we're watching — a hand-picked, opinionated shortlist rather than
    a "featured" flag nobody outside the team can decode. Every entry carries
@@ -50,7 +53,7 @@ const WORKS_WITH_MAX = 12; // cards on the "Works with" shelf; the full list is 
    label) so even a grid of logos reads as ToolTrim's take, not a random
    sample of the catalogue. */
 const WATCHLIST = [
-  { slug: "runway", reasonFr: "Une stack IA vidéo vraiment solide.", reasonEn: "Strong, focused AI video stack." },
+  { slug: "runway", reasonFr: "Un outil IA vidéo vraiment solide.", reasonEn: "Strong, focused AI video tool." },
   { slug: "n8n", reasonFr: "Puissant, mais facile à sur-équiper.", reasonEn: "Powerful, but easy to overbuild." },
   { slug: "airtable", reasonFr: "Idéal, jusqu'à ce que ça redevienne simple.", reasonEn: "Great until your workflow gets simple." },
   { slug: "notion", reasonFr: "Flexible au point d'éviter de trancher.", reasonEn: "Flexible enough to avoid deciding anything." },
@@ -158,13 +161,10 @@ function SectionHead({ label, to, linkLabel }: { label: string; to: string; link
 
 export default function HomePageV2() {
   const { lang, t, prefix } = useLang();
-  const navigate = useNavigate();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const posts = HOME_POSTS[lang];
 
-  const [discoveryQuery, setDiscoveryQuery] = useState("");
-  const [selectedHost, setSelectedHost] = useState("figma");
 
   useEffect(() => {
     const title = lang === "fr"
@@ -213,7 +213,11 @@ export default function HomePageV2() {
      not derived. ── */
   const watchlistTools = useMemo(() => {
     const bySlug = new Map(tools.map((tool) => [tool.slug, tool]));
+    // A tool already picked in a universe is not repeated here (design
+    // review, 8 Oct 2026); below three tools the section is not shown.
+    const inUniverses = new Set(NEED_UNIVERSES.flatMap((universe) => universe.picks.map((pick) => pick.slug)));
     return WATCHLIST.flatMap(({ slug, reasonFr, reasonEn }) => {
+      if (inUniverses.has(slug)) return [];
       const tool = bySlug.get(slug);
       return tool ? [{ tool, reasonFr, reasonEn }] : [];
     });
@@ -246,66 +250,27 @@ export default function HomePageV2() {
     const map = new Map<string, typeof tools>();
     for (const tool of tools) {
       const key = tool.categoryId;
-      if (!key || TOOL_IMAGE_BLOCKLIST.has(tool.slug || tool.id)) continue;
+      // Counted like the category page it opens, so the two numbers match.
+      if (!key || REDIRECTED_TOOL_SLUGS.has(tool.slug || tool.id)) continue;
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(tool);
     }
     return map;
   }, [tools]);
 
-  const handleDiscoverySubmit = useCallback((event: FormEvent) => {
-    event.preventDefault();
-    const q = discoveryQuery.trim();
-    // /search runs the fuzzy catalogue-search engine (tools + categories +
-    // guides); /tools?q= only does a literal substring match, which reads
-    // as broken for a phrase like "AI video" that no tool spells out.
-    navigate(q ? `${prefix}/search?q=${encodeURIComponent(q)}` : `${prefix}/tools`);
-  }, [discoveryQuery, navigate, prefix]);
 
-  /* “Travailler avec” is driven by the catalogue relationship model rather
-     than a hand-authored list of recommendations. A host is only presented
-     when it has at least one visible compatible tool. */
-  const workWithHosts = useMemo(() => {
-    const preferred = ["figma", "adobe-after-effects", "adobe-creative-cloud", "google-workspace", "blender"];
-    const counts = new Map<string, number>();
-    for (const tool of tools) {
-      for (const host of tool.worksWith || []) counts.set(host, (counts.get(host) || 0) + 1);
-      for (const host of [tool.host_app, tool.bundle_parent]) {
-        if (host) counts.set(host, (counts.get(host) || 0) + 1);
-      }
-    }
-    return preferred
-      .filter((slug) => counts.has(slug) && tools.some((tool) => tool.slug === slug))
-      .map((slug) => ({ tool: tools.find((tool) => tool.slug === slug)!, count: counts.get(slug)! }))
-      .slice(0, 5);
-  }, [tools]);
+  /* "Lequel garder ?" replaces "Compatible avec" (9 Oct 2026): the catalogue
+     only held real integrations for After Effects and React, so the shelf
+     could not keep its promise. Existing comparisons keep the shelf's relief
+     and serve the page's verb, deciding. */
+  const homeComparisons = useMemo(() => HOME_COMPARISONS.flatMap((slugPair) => {
+    const comparison = FEATURED_COMPARISONS.find((item) => item.slugPair === slugPair);
+    if (!comparison) return [];
+    const toolA = bySlug.get(comparison.toolA);
+    const toolB = bySlug.get(comparison.toolB);
+    return toolA && toolB ? [{ comparison, toolA, toolB }] : [];
+  }), [bySlug]);
 
-  useEffect(() => {
-    if (workWithHosts.length > 0 && !workWithHosts.some(({ tool }) => tool.slug === selectedHost)) {
-      setSelectedHost(workWithHosts[0].tool.slug || workWithHosts[0].tool.id);
-    }
-  }, [selectedHost, workWithHosts]);
-
-  // Ranked so the shelf opens on what actually runs inside the host
-  // (host_app: plugins, built-in features), then declared integrations,
-  // then looser bundle links; within that, ToolTrim's firm picks and tools
-  // with a real cover come first rather than whatever sorts alphabetically.
-  const allCompatibleTools = useMemo(() => {
-    const strength = (tool: (typeof tools)[number]) =>
-      tool.host_app === selectedHost ? 2 : (tool.worksWith || []).includes(selectedHost) ? 1 : 0;
-    return tools
-      .filter((tool) =>
-        !TOOL_IMAGE_BLOCKLIST.has(tool.slug || tool.id)
-        && ((tool.worksWith || []).includes(selectedHost)
-          || tool.host_app === selectedHost
-          || tool.bundle_parent === selectedHost))
-      .sort((a, b) =>
-        strength(b) - strength(a)
-        || Number(b.prescription_quality === "ferme") - Number(a.prescription_quality === "ferme")
-        || Number(Boolean(b.ogImageUrl)) - Number(Boolean(a.ogImageUrl))
-        || a.name.localeCompare(b.name));
-  }, [selectedHost, tools]);
-  const compatibleTools = allCompatibleTools.slice(0, WORKS_WITH_MAX);
 
   const renderGuide = ({ post, coverSrc, logoTool }: (typeof homeGuides)[number], featured: boolean) => {
     const dateLabel = post.date
@@ -328,7 +293,7 @@ export default function HomePageV2() {
         </span>
         <span className="v2-today-copy">
           {featured && <span className="v2-today-eyebrow">{t("Dernier guide", "Latest guide")}</span>}
-          <span className="v2-today-title">{post.title}</span>
+          <span className="v2-today-title">{displayText(post.title, lang)}</span>
           {dateLabel && <time className="v2-today-date" dateTime={post.date}>{dateLabel}</time>}
         </span>
       </Link>
@@ -338,42 +303,17 @@ export default function HomePageV2() {
   return (
     <div className="home-v2">
       <HeroSectionV2 />
+
       <StackGoalsSection />
 
       <div className="v2-catalog">
         <div className="v2-container">
 
-          {/* ══ Discovery — one calm entry point: if you know what you're
-               looking for, search. If you only know the need, the universe
-               index right below takes over, then a short editorial watchlist.
-               (The old category chips here duplicated the universes with an
-               older taxonomy, so they're gone.) ══ */}
-          <section className="v2-catalog-section dcv-section">
-            <h2 className="dcv-title">
-              {t("Trouvez le bon outil pour la tâche", "Find the right tool for the job")}
-            </h2>
-
-            <form className="dcv-search" role="search" onSubmit={handleDiscoverySubmit}>
-              <Search className="dcv-search-icon" aria-hidden />
-              <input
-                type="search"
-                className="dcv-search-input"
-                value={discoveryQuery}
-                onChange={(event) => setDiscoveryQuery(event.target.value)}
-                placeholder={t("Gestion de projet, IA vidéo, CRM…", "Project management, AI video, CRM…")}
-                aria-label={t("Que recherchez-vous ?", "What are you looking for?")}
-              />
-              <button type="submit" className="dcv-search-submit">
-                {t("Rechercher", "Search")}
-              </button>
-            </form>
-
-          </section>
 
           {/* ══ 4. Editorial universe index — needs-based, not a card wall ══ */}
           <section className="v2-catalog-section v2-shelf-section">
             <SectionHead
-              label={t("Explorer par univers", "Explore by need")}
+              label={t("Explorer par besoin", "Explore by need")}
               to={`${prefix}/tools`}
               linkLabel={t("Tous les outils", "All tools")}
             />
@@ -388,24 +328,34 @@ export default function HomePageV2() {
                 });
                 return (
                   <article key={universe.categoryId} className="v2-shelf-cell">
-                    <Link to={`${prefix}/category/${category.slug}`} className="v2-shelf-cell-head">
-                      <span className="v2-shelf-cell-titlerow">
-                        <h3 className="v2-shelf-cell-name">{lang === "en" ? universe.labelEn : universe.labelFr}</h3>
-                        <span className="v2-shelf-cell-count">
-                          {t(`${count} outils`, `${count} tools`)}
-                          <ArrowRight className="v2-shelf-cell-arrow" style={{ width: 13, height: 13 }} aria-hidden />
-                        </span>
-                      </span>
-                      <span className="v2-shelf-cell-subs">{(lang === "en" ? universe.subsEn : universe.subsFr).join(" · ")}</span>
-                    </Link>
+                    {/* Need header: the category's own name (as on the page it opens),
+                        its tool count as a superscript, then neighbouring
+                        categories as tags (Michael, 9 Oct 2026). */}
+                    <div className="v2-shelf-cell-head">
+                      <Link to={`${prefix}/category/${category.slug}`} className="v2-shelf-cell-title">
+                        <h3 className="v2-shelf-cell-name">
+                          {categoryDisplayName(category, lang)}
+                          <sup className="v2-shelf-cell-count"><span aria-hidden="true">{count}</span><span className="sr-only">{t(`, ${count} outils`, `, ${count} tools`)}</span></sup>
+                        </h3>
+                        <ArrowRight className="v2-shelf-cell-arrow" aria-hidden />
+                      </Link>
+                      {universe.related.length > 0 && (
+                        <ul className="v2-shelf-tags" aria-label={t(`Voir aussi, près de ${categoryDisplayName(category, lang)}`, `See also, near ${categoryDisplayName(category, lang)}`)}>
+                          {universe.related.flatMap((id) => {
+                            const near = categories.find((c) => c.id === id);
+                            return near ? [<li key={id}><Link to={`${prefix}/category/${near.slug}`} className="v2-shelf-tag">{categoryDisplayName(near, lang)}</Link></li>] : [];
+                          })}
+                        </ul>
+                      )}
+                    </div>
                     <ul className="v2-shelf-picks">
                       {picks.map(({ tool, take }) => (
                         <li key={tool.slug}>
                           <Link to={`${prefix}/tool/${tool.slug}`} className="v2-shelf-pick">
-                            <ToolLogo tool={tool as any} size={52} className="v2-shelf-pick-logo" />
+                            <ToolLogo tool={tool as any} size={52} className="v2-shelf-pick-logo" alt="" />
                             <span className="v2-shelf-pick-copy">
                               <span className="v2-shelf-pick-name">{tool.name}</span>
-                              <span className="v2-shelf-pick-take">{take}</span>
+                              <span className="v2-shelf-pick-take">{displayText(take, lang)}</span>
                             </span>
                           </Link>
                         </li>
@@ -418,95 +368,59 @@ export default function HomePageV2() {
           </section>
 
           {/* ══ Tools we're watching — editorial picks, after the universes ══ */}
-          {watchlistTools.length > 0 && (
+          {watchlistTools.length >= 3 && (
             <section className="v2-catalog-section">
               <div className="v2-section-head">
                 <div className="v2-section-heading-copy">
                   <h2 className="v2-section-title">{t("Les outils qu'on surveille", "Tools we're watching")}</h2>
                 </div>
               </div>
-              <div className="dcv-tools">
-                <div className="tc-grid">
-                  {watchlistTools.map(({ tool, reasonFr, reasonEn }) => (
-                    <ToolCardEditorial
-                      key={tool.id}
-                      identityLogoSize={40}
-                      tool={withHomeAssets(tool) as any}
-                      prefix={prefix}
-                      t={t}
-                      categoryLabel={lang === "fr" ? reasonFr : reasonEn}
-                      lang={lang}
-                    />
-                  ))}
-                </div>
-              </div>
+              {/* Same editorial format as the universes (design review,
+                  8 Oct 2026): the vendors' share images were the noisiest
+                  block of the page, half of them in English. */}
+              <ul className="v2-shelf-picks v2-watch-list">
+                {watchlistTools.map(({ tool, reasonFr, reasonEn }) => (
+                  <li key={tool.id}>
+                    <Link to={`${prefix}/tool/${tool.slug}`} className="v2-shelf-pick">
+                      <ToolLogo tool={withHomeAssets(tool) as any} size={52} className="v2-shelf-pick-logo" />
+                      <span className="v2-shelf-pick-copy">
+                        <span className="v2-shelf-pick-name">{tool.name}</span>
+                        <span className="v2-shelf-pick-take">{lang === "fr" ? reasonFr : reasonEn}</span>
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 
-          {/* ══ Works with — pick the software you already use (visible
-               tabs, not a menu hidden in the title), then swipe through what
-               plugs into it. ══ */}
-          {workWithHosts.length > 0 && compatibleTools.length > 0 && (
-            <section className="v2-catalog-section v2-ww-section">
+          {/* ══ Lequel garder ? Two tools face to face, joined by Ma stack's swap
+               badge; the comparison's own decision line under them. ══ */}
+          {homeComparisons.length > 0 && (
+            <section className="v2-catalog-section hc-section">
               <SectionHead
-                label={t("Travailler avec", "Works with")}
-                to={getExplorerHref(prefix, { type: "outil", slug: selectedHost })}
-                linkLabel={t("Tous les outils compatibles", "All compatible tools")}
+                label={displayText(t("Lequel garder ?", "Which one to keep?"), lang)}
+                to={`${prefix}/comparatifs`}
+                linkLabel={t("Tous les comparatifs", "All comparisons")}
               />
-              <div
-                className="v2-ww-tabs"
-                role="tablist"
-                aria-label={t("Choisir un logiciel", "Choose software") as string}
-                onKeyDown={(event) => {
-                  if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
-                  const index = workWithHosts.findIndex(({ tool }) => tool.slug === selectedHost);
-                  const step = event.key === "ArrowRight" ? 1 : -1;
-                  const next = workWithHosts[(index + step + workWithHosts.length) % workWithHosts.length];
-                  setSelectedHost(next.tool.slug || next.tool.id);
-                  const buttons = event.currentTarget.querySelectorAll<HTMLButtonElement>("[role=tab]");
-                  buttons[(index + step + buttons.length) % buttons.length]?.focus();
-                  event.preventDefault();
-                }}
+              <Rail
+                previousLabel={t("Comparatifs précédents", "Previous comparisons") as string}
+                nextLabel={t("Comparatifs suivants", "Next comparisons") as string}
               >
-                {workWithHosts.map(({ tool }) => {
-                  const selected = tool.slug === selectedHost;
-                  return (
-                    <button
-                      key={tool.slug}
-                      type="button"
-                      role="tab"
-                      aria-selected={selected}
-                      tabIndex={selected ? 0 : -1}
-                      className={`v2-ww-tab${selected ? " is-active" : ""}`}
-                      onClick={() => setSelectedHost(tool.slug || tool.id)}
-                    >
-                      <ToolLogo tool={tool as any} size={20} className="v2-ww-tab-logo" />
-                      <span>{tool.name}</span>
-                    </button>
-                  );
-                })}
-              </div>
-              <div role="tabpanel" aria-label={workWithHosts.find(({ tool }) => tool.slug === selectedHost)?.tool.name}>
-                <Rail
-                  resetKey={selectedHost}
-                  previousLabel={t("Outils précédents", "Previous tools") as string}
-                  nextLabel={t("Outils suivants", "Next tools") as string}
-                >
-                  {compatibleTools.map((tool) => {
-                    const catName = stripLeadingEmoji(
-                      lang === "en"
-                        ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
-                          || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
-                        : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
-                    );
-                    return (
-                      <div key={tool.id} className="v2-rail-item">
-                        <ToolCardEditorial tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} identityLogoSize={40} />
-                      </div>
-                    );
-                  })}
-                </Rail>
-              </div>
+                {homeComparisons.map(({ comparison, toolA, toolB }) => (
+                  <div key={comparison.slugPair} className="v2-rail-item">
+                    <Link to={`${prefix}/comparatif/${comparison.slugPair}`} className="hc-card">
+                      <span className="hc-duel" aria-hidden="true">
+                        <span className="hc-icon hc-icon--a"><ToolLogo tool={toolA as any} size={72} alt="" /></span>
+                        <span className="hc-swap">⇄</span>
+                        <span className="hc-icon hc-icon--b"><ToolLogo tool={toolB as any} size={72} alt="" /></span>
+                      </span>
+                      <span className="hc-title">{displayText(t(`${toolA.name} ou ${toolB.name} ?`, `${toolA.name} or ${toolB.name}?`), lang)}</span>
+                      <span className="hc-summary">{displayText(lang === "en" ? comparison.summaryEn || comparison.summary : comparison.summary, lang)}</span>
+                    </Link>
+                  </div>
+                ))}
+              </Rail>
             </section>
           )}
 
@@ -515,7 +429,7 @@ export default function HomePageV2() {
           {homeGuides.length > 0 && (
             <section className="v2-catalog-section">
               <SectionHead
-                label={t("Articles du guide", "Guide articles")}
+                label={t("Derniers guides", "Latest guides")}
                 to={`${prefix}/guides`}
                 linkLabel={t("Tous les guides", "All guides")}
               />

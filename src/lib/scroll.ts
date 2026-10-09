@@ -12,9 +12,16 @@
 // #main-content is the scroll container.
 let cachedScrollEl: HTMLElement | null | undefined;
 
+/** The element that may scroll: AppShellV2's .asv2-content, which holds
+ * <main id="main-content"> and the footer (8 Oct 2026), or #main-content on
+ * legacy layouts. */
+export function scrollContainerCandidate(): HTMLElement | null {
+  return document.querySelector<HTMLElement>(".asv2-content") || document.getElementById("main-content");
+}
+
 function getScrollEl(): HTMLElement | null {
   if (cachedScrollEl !== undefined) return cachedScrollEl;
-  const el = document.getElementById("main-content");
+  const el = scrollContainerCandidate();
   if (!el) return (cachedScrollEl = null);
   // On mobile #main-content is CSS-overridden back to overflow-y: visible
   // (normal document scroll, sidebar collapses into a top row) — only

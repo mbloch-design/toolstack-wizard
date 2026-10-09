@@ -5479,3 +5479,11 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Périmètre : cartes compactes, fiche intégrée, navigation hiérarchique du télescope, aperçus des outils et budgets indicatifs par groupe. Les fichiers de migration catalogue et les copies de travail sont exclus.
 - Validation finale : build production complet PASS, TypeScript PASS, 79 tests Ma Stack PASS et 15 tests navigateur Chromium PASS (FR/EN, 390/820/1440 px, stack de 60 outils à 320 px, ajout/retrait/annulation et persistance).
 - Tests navigateur adaptés au parcours actuel et à la fin des transitions avant activation clavier.
+
+## 2026-10-08 · Footer statutaire
+- Badges visibles et homogènes, un seul lien méthodologie (/methodology redirige vers /transparency).
+- Mentions légales : SAS, hébergeur Vercel.
+- « Gérer les cookies » (retrait du consentement), bascule FR/EN, ligne de preuve avec nombre d'outils calculé au build (`__CATALOG_TOOLS__`).
+- Footer sur grille 12 colonnes, carte « Ma stack » via `src/lib/stackSnapshot.ts` (écrit par CartPage), sélecteur de langue FR | EN.
+- Accueil, lots 2 et 3 sans ajout : échelle typo unique, rythme 72/48, rayons, recherche sous le hero, outils non répétés, libellés, accessibilité (0 violation axe), animations sur transform, 69 règles CSS mortes retirées. « La pile » retirée à la demande de Michael.
+- Accueil : recherche du site réparée (sigles courts, mots vides, accents, catégories), lot de finitions en tokens, typographie française (displayText), équilibre optique des logos, besoins avec exposant et tags de catégories voisines, « Lequel garder ? » à la place de « Compatible avec », en-têtes de section alignés à gauche, carrousels jusqu'au bord.

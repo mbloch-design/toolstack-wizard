@@ -10,6 +10,12 @@ export type CatalogSearchDocument = {
   label: string;
   meta: string;
   searchText: string;
+  /** Category names, needs and uses: what the tool is for, ranked above the
+   * free text so "CRM" finds CRMs before names that merely contain ".com". */
+  tags?: string;
+  /** The tool's category names alone: a short field, so a category match
+   * ("gestion de projet") is not diluted by a long list of uses. */
+  category?: string;
 };
 
 export type CatalogSearchHit = CatalogSearchDocument & { score: number };
@@ -30,28 +36,45 @@ export async function createCatalogSearchEngine(
       label: "string",
       meta: "string",
       searchText: "string",
+      tags: "string",
+      category: "string",
     },
   }) as AnyOrama;
 
-  await insertMultiple(database, documents, 250);
+  // Indexed without accents or punctuation on both sides, so "vidéo" meets
+  // "video"; hits return the original documents for display.
+  const byId = new Map(documents.map((document) => [document.id, document]));
+  await insertMultiple(database, documents.map((document) => ({
+    ...document,
+    label: normalize(document.label),
+    searchText: normalize(document.searchText),
+    tags: normalize(document.tags || ""),
+    category: normalize(document.category || ""),
+  })), 250);
 
   return {
     async search(term, limit = 24) {
       const normalizedTerm = normalize(term);
       if (!normalizedTerm) return [];
+      // Function words carry no meaning ("gestion de projet"), and a typo is
+      // only tolerated on words of 5 letters or more: on short words one edit
+      // turns "crm" into "com" and "ia" into "io" (search audit, 9 Oct 2026).
+      const words = normalizedTerm.split(" ").filter((word) => !STOP_WORDS.has(word));
+      const query = (words.length > 0 ? words : normalizedTerm.split(" ")).join(" ");
+      const tolerance = query.split(" ").every((word) => word.length >= 5) ? 1 : 0;
       const result = await search(database, {
-        term: term.trim(),
-        properties: ["label", "searchText"],
-        boost: { label: 4, searchText: 1 },
-        tolerance: 1,
+        term: query,
+        properties: ["label", "category", "tags", "searchText"],
+        boost: { label: 4, category: 3, tags: 2, searchText: 1 },
+        tolerance,
         threshold: 0,
         limit,
       });
 
-      const fuzzyHits = result.hits.map((hit) => ({
-        ...(hit.document as CatalogSearchDocument),
-        score: hit.score,
-      }));
+      const fuzzyHits = result.hits.flatMap((hit) => {
+        const document = byId.get((hit.document as CatalogSearchDocument).id);
+        return document ? [{ ...document, score: hit.score }] : [];
+      });
 
       // A short exact name can be pushed below the fuzzy-search cutoff by
       // unrelated near-matches. Put literal label/slug matches first so a
@@ -86,6 +109,11 @@ export async function createCatalogSearchEngine(
     },
   };
 }
+
+const STOP_WORDS = new Set([
+  "de", "du", "des", "la", "le", "les", "l", "d", "un", "une", "et", "ou", "pour", "en", "a", "au", "aux", "avec", "sur", "par",
+  "the", "of", "and", "or", "for", "to", "in", "on", "with", "an",
+]);
 
 function normalize(value: string): string {
   return value

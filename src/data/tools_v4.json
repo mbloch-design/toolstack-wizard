@@ -272426,18 +272426,18 @@
       "notedOn": "2026-09-28",
       "lastActivityVerifiedOn": null,
       "evidence": {
-      "valeurAjoutee": "La simulation de l'éditeur estime 10 h économisées par mois à 600 images, selon ses propres hypothèses ; ce gain n'est pas mesuré par ToolTrim. Les frais API restent en sus. Source : seamui.com, 7 octobre 2026.",
-      "simplicite": "Lots, projets et recettes limitent les tâches répétitives ; la configuration de clés API et la facturation par fournisseur ajoutent des étapes. Pas de test pratique ToolTrim. Source : seamui.com, 7 octobre 2026.",
-      "utilisation": "Conçu pour des productions récurrentes d'images et de vidéos, avec versions et fichiers organisés par projet ; fréquence réelle non mesurée. Source : seamui.com, 7 octobre 2026.",
-      "puissance": "15 modèles d'image, 16 modèles vidéo et lots jusqu'à dix images parallèles annoncés ; qualité et stabilité des sorties non testées. Source : seamui.com, 7 octobre 2026.",
-      "reversibilite": "La licence est payée une fois, mais les fichiers et recettes sont organisés dans l'espace de travail ; récupération et export à tester pendant l'essai. Source : seamui.com, 7 octobre 2026."
+        "valeurAjoutee": "La simulation de l'éditeur estime 10 h économisées par mois à 600 images, selon ses propres hypothèses ; ce gain n'est pas mesuré par ToolTrim. Les frais API restent en sus. Source : seamui.com, 7 octobre 2026.",
+        "simplicite": "Lots, projets et recettes limitent les tâches répétitives ; la configuration de clés API et la facturation par fournisseur ajoutent des étapes. Pas de test pratique ToolTrim. Source : seamui.com, 7 octobre 2026.",
+        "utilisation": "Conçu pour des productions récurrentes d'images et de vidéos, avec versions et fichiers organisés par projet ; fréquence réelle non mesurée. Source : seamui.com, 7 octobre 2026.",
+        "puissance": "15 modèles d'image, 16 modèles vidéo et lots jusqu'à dix images parallèles annoncés ; qualité et stabilité des sorties non testées. Source : seamui.com, 7 octobre 2026.",
+        "reversibilite": "La licence est payée une fois, mais les fichiers et recettes sont organisés dans l'espace de travail ; récupération et export à tester pendant l'essai. Source : seamui.com, 7 octobre 2026."
       },
       "evidenceEn": {
-      "valeurAjoutee": "The vendor's simulation estimates 10 hours saved monthly at 600 images using its own assumptions; ToolTrim has not measured this. API charges remain extra. Source: seamui.com, October 7, 2026.",
-      "simplicite": "Batches, projects and recipes reduce repetitive steps; API-key setup and provider billing add work. No hands-on ToolTrim test. Source: seamui.com, October 7, 2026.",
-      "utilisation": "Designed for recurring image and video production, with revisions and files organized by project; actual usage frequency is unmeasured. Source: seamui.com, October 7, 2026.",
-      "puissance": "15 image models, 16 video models and batches of up to ten parallel images are vendor-listed; output quality and reliability are untested. Source: seamui.com, October 7, 2026.",
-      "reversibilite": "The licence is one-time, but files and recipes are organized in the workspace; test recovery and export during the trial. Source: seamui.com, October 7, 2026."
+        "valeurAjoutee": "The vendor's simulation estimates 10 hours saved monthly at 600 images using its own assumptions; ToolTrim has not measured this. API charges remain extra. Source: seamui.com, October 7, 2026.",
+        "simplicite": "Batches, projects and recipes reduce repetitive steps; API-key setup and provider billing add work. No hands-on ToolTrim test. Source: seamui.com, October 7, 2026.",
+        "utilisation": "Designed for recurring image and video production, with revisions and files organized by project; actual usage frequency is unmeasured. Source: seamui.com, October 7, 2026.",
+        "puissance": "15 image models, 16 video models and batches of up to ten parallel images are vendor-listed; output quality and reliability are untested. Source: seamui.com, October 7, 2026.",
+        "reversibilite": "The licence is one-time, but files and recipes are organized in the workspace; test recovery and export during the trial. Source: seamui.com, October 7, 2026."
       }
     },
     "seo": {
@@ -273598,6 +273598,384 @@
     "research": {
       "dossier": "research/dossiers/nick-launches.json",
       "researchedOn": "2026-10-02",
+      "sources": 1
+    }
+  },
+  {
+    "id": "newbi",
+    "slug": "newbi",
+    "name": "Newbi",
+    "category": "finance",
+    "shortDescription": "Facturation, devis, CRM client, connexion bancaire et trésorerie réunis sur une seule plateforme pour freelances et TPE françaises, avec un accès comptable gratuit inclus.",
+    "shortDescriptionEn": "Invoicing, quotes, client CRM, bank connection and cash flow in one platform for French freelancers and small businesses, with free accountant access included.",
+    "description": "Newbi centralise devis, factures, clients, dépenses, connexion bancaire et trésorerie sur une seule plateforme. Un devis signé devient une facture directement, les paiements sont rapprochés automatiquement avec la banque connectée, et les reçus de dépenses sont lus par OCR plutôt que ressaisis à la main. L'outil est conforme à la facturation électronique, obligatoire en France depuis septembre 2026.\n\nLa plateforme regroupe aussi la gestion de projets (tableaux Kanban), les signatures de mail et le transfert de fichiers volumineux, des fonctions habituellement réparties sur plusieurs abonnements séparés. Chaque formule inclut un accès comptable gratuit : l'expert-comptable du client retrouve factures, dépenses et justificatifs directement dans l'outil, sans échange de mails ni ressaisie de son côté.\n\nNewbi s'intègre avec les outils comptables et financiers courants (Pennylane, Fulll, Indy, Abby, Qonto, Stripe) ainsi qu'avec Gmail et Outlook. L'équipe est basée en France et reste joignable directement sur WhatsApp.\n\nTrois formules : Freelance (dès 17,99 €TTC/mois, 16,19 € en engagement annuel), TPE et Entreprise, avec essai de 30 jours sans carte bancaire. ToolTrim le positionne comme un outil de gestion administrative tout-en-un pour un indépendant ou une petite structure qui veut sortir d'Excel et de plusieurs abonnements séparés, pas comme un logiciel de comptabilité complet au sens expert-comptable.",
+    "longDescription": "Newbi réunit devis, factures, CRM client, connexion bancaire, trésorerie et gestion de projet dans une seule interface, pensée pour un indépendant ou une petite équipe qui gère aujourd'hui son activité entre Excel, un outil de facturation et sa banque. Le devis signé se transforme en facture, les encaissements se rapprochent automatiquement du compte bancaire connecté, et les notes de frais se scannent par OCR.\n\nLe point distinctif est l'accès comptable gratuit inclus dans toutes les formules : le cabinet comptable du client consulte directement factures, dépenses et pièces justificatives, sans avoir à les redemander par mail. L'outil est conforme à la facturation électronique obligatoire depuis septembre 2026, sans option payante séparée pour cette conformité.\n\nTarifs à partir de 17,99 € TTC/mois (16,19 € en engagement annuel) pour la formule Freelance, avec essai gratuit de 30 jours sans carte bancaire.",
+    "longDescriptionEn": "Newbi brings quotes, invoices, client CRM, bank connection, cash flow and project management into one interface, built for a freelancer or small team currently juggling Excel, an invoicing tool and their bank. A signed quote turns into an invoice, payments reconcile automatically against the connected bank account, and expense receipts get scanned via OCR.\n\nThe standout feature is free accountant access included in every plan: the client's accounting firm can view invoices, expenses and supporting documents directly, without chasing them by email. The tool is compliant with France's e-invoicing mandate in force since September 2026, with no separate paid add-on for that compliance.\n\nPricing starts at €17.99 incl. tax/month (€16.19 with annual billing) for the Freelance plan, with a 30-day free trial and no credit card required.",
+    "pricing": {
+      "free": "Essai de 30 jours, toutes les fonctionnalités Freelance, sans carte bancaire.",
+      "paid": "Dès 17,99 € TTC/mois (16,19 € en engagement annuel), formule Freelance."
+    },
+    "pricingEn": {
+      "free": "30-day trial, full Freelance features, no credit card required.",
+      "paid": "From €17.99 incl. tax/month (€16.19 billed annually), Freelance plan."
+    },
+    "defaultMonthlyPrice": 16.19,
+    "pricing_v5": {
+      "cautions": [
+        "Le prix affiché par défaut sur le site (16,19 €/mois) correspond à l'engagement annuel ; en facturation mensuelle sans engagement, le tarif Freelance remonte à 17,99 € TTC/mois."
+      ],
+      "cautionsEn": [
+        "The price shown by default on the site (€16.19/month) is the annual-commitment rate; billed monthly without commitment, the Freelance plan is €17.99 incl. tax/month."
+      ],
+      "verified_on": "2026-10-09",
+      "source_domain": "newbi.fr",
+      "usage_sensitive": false,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Freelance",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.newbi.fr/tarifs",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 16.19,
+      "plans": [
+        {
+          "planKey": "essai",
+          "displayName": "Essai gratuit",
+          "summary": "0 € pendant 30 jours, sans carte bancaire.",
+          "featureHighlights": [
+            "Toutes les fonctionnalités Freelance, aucun prélèvement à la fin de l'essai, résiliable en deux clics, données exportables à tout moment."
+          ],
+          "detailsSourceUrl": "https://www.newbi.fr/tarifs",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "tax_included",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-09",
+          "lastConfirmedOn": "2026-10-09"
+        },
+        {
+          "planKey": "freelance",
+          "displayName": "Freelance",
+          "summary": "16,19 € TTC/mois en engagement annuel (17,99 € TTC/mois sans engagement).",
+          "featureHighlights": [
+            "1 utilisateur, 1 accès comptable gratuit, devis et factures illimités, facturation électronique incluse, connexion bancaire (1 compte), CRM client et catalogue produits, gestion de projet et de trésorerie, 50 Go de stockage."
+          ],
+          "detailsSourceUrl": "https://www.newbi.fr/tarifs",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 16.19,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "tax_included",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-09",
+          "lastConfirmedOn": "2026-10-09"
+        },
+        {
+          "planKey": "tpe",
+          "displayName": "TPE",
+          "summary": "44,09 € TTC/mois en engagement annuel.",
+          "featureHighlights": [
+            "Tout Freelance, plus jusqu'à 10 utilisateurs et 3 accès comptables, connexion bancaire (3 comptes), modèles et champs personnalisés illimités, automatisations illimitées, segments clients, support prioritaire, 200 Go de stockage."
+          ],
+          "detailsSourceUrl": "https://www.newbi.fr/tarifs",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 44.09,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "tax_included",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-09",
+          "lastConfirmedOn": "2026-10-09"
+        },
+        {
+          "planKey": "entreprise",
+          "displayName": "Entreprise",
+          "summary": "85,49 € TTC/mois en engagement annuel.",
+          "featureHighlights": [
+            "Tout TPE, plus jusqu'à 25 utilisateurs et 5 accès comptables, connexion bancaire (5 comptes), exports comptables tous formats, e-signature illimitée, calendriers connectés illimités, 500 Go de stockage."
+          ],
+          "detailsSourceUrl": "https://www.newbi.fr/tarifs",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 85.49,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "tax_included",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-09",
+          "lastConfirmedOn": "2026-10-09"
+        }
+      ]
+    },
+    "affiliateLink": null,
+    "websiteUrl": "https://www.newbi.fr",
+    "logo": "",
+    "seo": {
+      "aiAngle": {
+        "stance": "augmente",
+        "aiTools": [],
+        "augmentEn": "Newbi uses OCR to read expense receipts automatically, but invoicing, e-invoicing compliance and bank reconciliation remain the core product, not something an AI chatbot replaces.",
+        "augmentFr": "Newbi utilise l'OCR pour lire automatiquement les reçus de dépenses, mais la facturation, la conformité facturation électronique et le rapprochement bancaire restent le cœur du produit, pas quelque chose qu'un chatbot IA remplace.",
+        "replaceEn": "Replace Newbi with an AI? No: issuing compliant invoices, reconciling bank transactions and giving an accountant structured access are regulatory and data-integration needs, not a text-generation task. Verdict: AI augments data capture (OCR), it doesn't replace the invoicing and compliance layer.",
+        "replaceFr": "Remplacer Newbi par une IA ? Non : émettre des factures conformes, rapprocher les transactions bancaires et donner un accès structuré à un comptable sont des besoins réglementaires et d'intégration de données, pas une tâche de génération de texte. Verdict : l'IA augmente la capture de données (OCR), elle ne remplace pas la couche facturation et conformité."
+      },
+      "metaDescription": "Newbi sur ToolTrim : prix, fonctionnalités et avis critique pour décider si cet outil de facturation tout-en-un mérite sa place dans ta stack de freelance ou de TPE.",
+      "idealForFr": "Un indépendant ou une petite structure qui veut sortir d'Excel et centraliser devis, factures, banque et trésorerie dans un seul outil, avec un accès direct pour son comptable.",
+      "idealForEn": "A freelancer or small business that wants to leave Excel behind and centralize quotes, invoices, banking and cash flow in one tool, with direct access for their accountant."
+    },
+    "articles": [],
+    "covers": [
+      "facturation",
+      "comptabilite",
+      "paiements"
+    ],
+    "freeAlternative": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "relevantFor": [
+      "Freelances et indépendants",
+      "TPE et petites agences",
+      "Cabinets d'expertise comptable"
+    ],
+    "alternatives": [
+      "indy",
+      "tiime"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu factures en indépendant ou en petite structure et tu veux centraliser devis, factures, banque et trésorerie dans un seul outil plutôt que jongler entre Excel et plusieurs abonnements."
+      ],
+      "avoidIf": [
+        "Tu as déjà un expert-comptable équipé de son propre outil de bout en bout et aucun besoin de centraliser facturation et banque de ton côté."
+      ],
+      "threshold": "Entre 17,99 €/mois en mensuel et 16,19 €/mois en engagement annuel, l'écart reste faible : l'engagement annuel se justifie dès que tu comptes utiliser l'outil plus de quelques mois.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le prix mis en avant par défaut (16,19 €/mois) correspond à un engagement annuel ; en facturation mensuelle sans engagement, compte plutôt 17,99 € TTC/mois."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You invoice as a freelancer or small business and want to centralize quotes, invoices, banking and cash flow in one tool instead of juggling Excel and several subscriptions."
+      ],
+      "avoidIf": [
+        "You already have an accountant running their own end-to-end tool and no need to centralize invoicing and banking on your side."
+      ],
+      "threshold": "Between €17.99/month billed monthly and €16.19/month on annual commitment, the gap stays small: the annual commitment pays off as soon as you plan to use the tool for more than a few months.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The price shown by default (€16.19/month) is the annual-commitment rate; billed monthly without commitment, expect €17.99 incl. tax/month instead."
+        }
+      ]
+    },
+    "pros": [
+      "L'accès comptable gratuit inclus dans toutes les formules évite les échanges de mails et la ressaisie de documents avec le cabinet comptable.",
+      "Devis, factures, banque, trésorerie et gestion de projet réunis sur une seule plateforme, là où plusieurs abonnements séparés seraient sinon nécessaires."
+    ],
+    "prosEn": [
+      "Free accountant access included in every plan removes email back-and-forth and document re-entry with the accounting firm.",
+      "Quotes, invoices, banking, cash flow and project management combined in one platform, where several separate subscriptions would otherwise be needed."
+    ],
+    "cons": [
+      "La connexion bancaire et les accès comptables supplémentaires restent limités en nombre sur la formule Freelance (1 compte bancaire, 1 accès comptable).",
+      "Le tarif affiché par défaut suppose un engagement annuel ; sans engagement, le coût mensuel est environ 10 % plus élevé."
+    ],
+    "consEn": [
+      "Bank connections and extra accountant seats stay limited in number on the Freelance plan (1 bank account, 1 accountant access).",
+      "The default displayed price assumes an annual commitment; without it, the monthly cost runs about 10% higher."
+    ],
+    "useCases": [
+      "Transformer un devis signé en facture automatiquement et suivre les encaissements rapprochés avec la banque connectée.",
+      "Donner à son expert-comptable un accès direct aux factures et justificatifs, sans les lui envoyer par mail à chaque échéance."
+    ],
+    "useCasesEn": [
+      "Turn a signed quote into an invoice automatically and track payments reconciled against the connected bank account.",
+      "Give an accounting firm direct access to invoices and supporting documents, without emailing them at every deadline."
+    ],
+    "personas": [
+      "CLAIRE"
+    ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consultant-b2b",
+      "artisan-commercant",
+      "expert-comptable"
+    ],
+    "functional_needs": [
+      "facturation",
+      "comptabilite",
+      "paiements"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": "accounting-ops",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "question",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": "Outil de facturation et de données financières : ToolTrim doit vérifier la migration des données et le rôle comptable avant toute recommandation d'arrêt ou de remplacement.",
+      "requires_context_questions": true
+    },
+    "force_silence": false,
+    "timeGainedHoursPerMonth": null,
+    "ogImageUrl": "https://www.newbi.fr/images/op-newbi.png",
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "L'accès comptable gratuit inclus dans toutes les formules et le regroupement de facturation, banque, trésorerie et gestion de projet remplacent plusieurs abonnements séparés pour 17,99 €/mois en entrée de gamme (newbi.fr/tarifs, vérifié le 09/10/2026).",
+        "simplicite": "Le devis signé devient une facture automatiquement et les reçus de dépenses sont lus par OCR plutôt que ressaisis à la main, ce qui réduit les étapes manuelles pour un premier résultat utile (newbi.fr, vérifié le 09/10/2026).",
+        "utilisation": "Facturation électronique conforme à la réforme de septembre 2026 incluse sans supplément, connexion bancaire avec rapprochement automatique et CRM client livrés comme annoncé sur le site (newbi.fr, vérifié le 09/10/2026).",
+        "puissance": "La formule Freelance reste limitée à 1 utilisateur, 1 compte bancaire connecté et 1 accès comptable ; il faut passer sur TPE ou Entreprise pour plus de comptes et d'automatisations (newbi.fr/tarifs, vérifié le 09/10/2026).",
+        "reversibilite": "Les données restent exportables à tout moment pendant l'essai et l'abonnement est résiliable en deux clics selon le site, mais aucun format d'export détaillé n'est précisé pour les données de facturation (newbi.fr/tarifs, vérifié le 09/10/2026)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Free accountant access included in every plan, plus invoicing, banking, cash flow and project management bundled together, replace several separate subscriptions starting at €17.99/month (newbi.fr/tarifs, verified 2026-10-09).",
+        "simplicite": "A signed quote turns into an invoice automatically and expense receipts are read via OCR instead of manual re-entry, cutting manual steps to a first useful result (newbi.fr, verified 2026-10-09).",
+        "utilisation": "E-invoicing compliant with the September 2026 reform included at no extra cost, bank connection with automatic reconciliation and client CRM delivered as advertised on the site (newbi.fr, verified 2026-10-09).",
+        "puissance": "The Freelance plan stays capped at 1 user, 1 connected bank account and 1 accountant access; TPE or Entreprise is needed for more accounts and automations (newbi.fr/tarifs, verified 2026-10-09).",
+        "reversibilite": "Data stays exportable at any time during the trial and the subscription is cancellable in two clicks per the site, but no detailed export format is specified for invoicing data (newbi.fr/tarifs, verified 2026-10-09)."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-10-09"
+    },
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-10-09"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 16.19,
+      "compare_plan_name": "Freelance",
+      "compare_plan_kind": "account",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-09",
+      "official_source_url": "https://www.newbi.fr/tarifs",
+      "source_domain": "newbi.fr",
+      "usage_sensitive": false,
+      "cautions": [
+        "The price shown by default on the site (€16.19/month) is the annual-commitment rate; billed monthly without commitment, the Freelance plan is €17.99 incl. tax/month."
+      ],
+      "plans": [
+        {
+          "planKey": "essai",
+          "displayName": "Free trial",
+          "summary": "€0 for 30 days, no credit card.",
+          "featureHighlights": [
+            "Full Freelance features, no charge at trial end, cancel in two clicks, data exportable at any time."
+          ],
+          "detailsSourceUrl": "https://www.newbi.fr/tarifs",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "tax_included",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-09",
+          "lastConfirmedOn": "2026-10-09"
+        },
+        {
+          "planKey": "freelance",
+          "displayName": "Freelance",
+          "summary": "€16.19 incl. tax/month billed annually (€17.99 incl. tax/month without commitment).",
+          "featureHighlights": [
+            "1 user, 1 free accountant access, unlimited quotes and invoices, e-invoicing included, bank connection (1 account), client CRM and product catalog, project and cash flow management, 50 GB storage."
+          ],
+          "detailsSourceUrl": "https://www.newbi.fr/tarifs",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 16.19,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "tax_included",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-09",
+          "lastConfirmedOn": "2026-10-09"
+        },
+        {
+          "planKey": "tpe",
+          "displayName": "TPE",
+          "summary": "€44.09 incl. tax/month billed annually.",
+          "featureHighlights": [
+            "Everything in Freelance, plus up to 10 users and 3 accountant accesses, bank connection (3 accounts), unlimited custom templates and fields, unlimited automations, customer segments, priority support, 200 GB storage."
+          ],
+          "detailsSourceUrl": "https://www.newbi.fr/tarifs",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 44.09,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "tax_included",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-09",
+          "lastConfirmedOn": "2026-10-09"
+        },
+        {
+          "planKey": "entreprise",
+          "displayName": "Entreprise",
+          "summary": "€85.49 incl. tax/month billed annually.",
+          "featureHighlights": [
+            "Everything in TPE, plus up to 25 users and 5 accountant accesses, bank connection (5 accounts), all-format accounting exports, unlimited e-signature, unlimited connected calendars, 500 GB storage."
+          ],
+          "detailsSourceUrl": "https://www.newbi.fr/tarifs",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 85.49,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "tax_included",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-09",
+          "lastConfirmedOn": "2026-10-09"
+        }
+      ]
+    },
+    "tagline": {
+      "fr": "Facturation et gestion tout-en-un",
+      "en": "All-in-one invoicing and management"
+    },
+    "research": {
+      "dossier": null,
+      "researchedOn": "2026-10-09",
       "sources": 1
     }
   }

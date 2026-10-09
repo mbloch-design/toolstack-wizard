@@ -43,7 +43,7 @@ test("tool profile adds with one click and its saved CTA opens stack context", a
   await cta.click();
   await expect(page).toHaveURL(/ma-stack\?outil=figma/);
   await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
-  await page.getByRole("link", { name: "Fiche complète", exact: true }).click();
+  await page.locator(".ms-tool-sheet").getByRole("link", { name: "Fiche complète", exact: true }).click();
   await expect(page).toHaveURL(/\/fr\/tool\/figma$/);
 });
 

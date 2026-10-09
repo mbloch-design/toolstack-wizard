@@ -265,13 +265,15 @@ const App = () => (
         <ScrollToTop />
         <DynamicCanonical />
         <AnalyticsPageView />
-        <AnalyticsConsent />
         <Analytics />
         <ErrorBoundary>
         <Suspense fallback={<LazyFallback />}>
           <AppRoutes />
         </Suspense>
         </ErrorBoundary>
+        {/* After the page in the DOM, so the skip link is the first Tab stop
+            (a11y audit, 8 Oct 2026); the banner stays fixed on screen. */}
+        <AnalyticsConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -107,3 +107,28 @@ Prochaines étapes proposées, dans l'ordre :
 2. Chiffre juste, volet produit fait (8 oct.) : « Ajuster mon coût » dans la feuille outil (plan du catalogue, places si par utilisateur, ou montant réellement payé, mensuel ou annuel) ; prime sur l'offre d'entrée, la note du budget compte les coûts ajustés. Plans du catalogue non vérifiés en image : Supabase injoignable depuis la machine ce jour-là, à recontrôler en ligne. Volet recherche : liste prioritaire `research/batches/prix-ma-stack-prioritaires-2026-10-08.txt` (257 outils cités dans les Stacks sans prix vérifié ; n8n à exclure), lancement à décider (crédit cloud).
 3. Fait (7 oct.) : boucle fermée. « Décider » sur chaque paire (menu : garder l'un, garder les deux) et bandeau « Ma stack » sur les comparatifs (garder l'un, remplacer, garder). Annulable, « Déjà ≈ X €/mois en moins », paires gardées sorties du payé en double (« Revoir »). Événements : stack_tool_open, stack_compare_click, stack_profile_click, stack_decision, stack_decision_undo, stack_remove, stack_freemium_open, stack_freemium_answer. À relire dans GA4 vers le 21/10.
 4. Garder et partager : lien de partage lecture seule (boucle d'acquisition), puis synchronisation par compte.
+
+## Tests E2E désynchronisés (constat du 8 oct. 2026)
+- `e2e/sidebar-preferences.spec.ts` (2 tests) : suppose un menu replié par défaut et cherche « Préférences » dans la barre ; le shell est déplié par défaut et « Préférences » n'est plus que dans le menu mobile. Non modifié depuis le 13 sept. À réécrire sur le comportement actuel.
+- `e2e/mon-stack-v1.spec.ts` « catalogue refresh » : attend le prix Supabase sur la carte (voir plus haut).
+
+## Footer et mentions légales (8 oct. 2026)
+- [x] Mentions légales : forme juridique SAS (et non micro-entreprise), hébergeur Vercel (et non Lovable).
+- [ ] Michael : les mentions LCEN complètes d'une SAS (dénomination, siège, capital, RCS, directeur de publication) restent à décider ; il ne veut pas les afficher pour l'instant.
+- [ ] Michael : dire quels profils sociaux existent vraiment ; `sameAs` de `OrganizationSchema.tsx` en liste 5 non vérifiés.
+- [ ] Tests lents en suite complète, proches de la limite de 5 s : `useToolBySlug.test.tsx` (restores the SSR record) et `usePosts.test.tsx` (local guide catalogue). Passent seuls.
+- [x] Footer : « Gérer les cookies » rouvre le bandeau (retrait du consentement coupe la mesure GA4), bascule FR/EN, ligne de preuve (nombre d'outils calculé au build, arrondi à la centaine). Bandeau cookies traduit en anglais.
+- [x] Footer : colonne Catégories (IA généraliste, Finance et facturation, Gestion de projet, Automatisation, CRM, toutes). À revoir avec les clics GSC vers le 21/10.
+- [x] Footer refait sur une grille de 12 colonnes (8 oct.) : carte « Ma stack » (outils, coût, payé en double) lue depuis un instantané écrit par Ma stack, sélecteur FR | EN, badges en cellules uniformes (2 rangées de 10).
+- [x] Revue design du footer (design-review, 8 oct.) : trois tons (#0F0F0F, #424245, #6F6F68), tokens `--tt-footer-*`, tuile neutre blanche décorative et prérendue vide (budget HTML : le footer est répété sur 13 162 pages, 12,8 Ko chacune).
+- [x] Budget HTML : badges ramenés à une image chacun (variantes sombres jamais affichées), footer 12,8 → 8,4 Ko par page, HTML 760 → 705 Mo (limite 745). Badges gardés dans le HTML prérendu, car les annuaires vérifient leur présence.
+
+## Accueil, revue design (8 oct. 2026)
+- [x] Gouttière alignée sur le site (48px au lieu de 32), recherche alignée à gauche, liens « Tout voir » sur la ligne de base du titre, compteurs des univers au bord, onglets « Travailler avec » au style de Ma stack, titres de cartes alignés, cibles de 24px, mobile raccourci (8 482 → 6 671px).
+- [x] CTA unifié : « Construire ma stack » (hero et footer).
+- Décision Michael (8 oct.) : le hero garde son image en dégradé avec logos, par exception aux règles « pas de gradient » et « pas de grands logos ».
+- [ ] « Les outils qu'on surveille » : les visuels sont les images OG des éditeurs (texte anglais sur la page FR, collages chargés). Choisir des captures d'interface recadrées ou passer au format liste des univers.
+- [x] Bloc « Trouvez le bon outil » retiré de l'accueil (9 oct., Michael) : doublon de la recherche permanente (barre du haut, loupe mobile, barre latérale) ; il n'était pas mesuré dans GA4.
+- [ ] Tutoiement dans 169 lignes de src/data/stacks.ts (subtitle, q, hint, reason, avoidIf) : le site vouvoie partout ailleurs. La stack automatisation-legere-freelance est passée au vous (9 oct.). Chantier éditorial à planifier.
+- [x] « Compatible avec » retiré de l'accueil (9 oct.) : données de compatibilité insuffisantes (seuls After Effects et React). Remplacé par « Lequel garder ? », 8 comparatifs existants en rangée. Compléter worksWith dans Supabase reste utile pour les pages explorer.
+- [ ] Noms de catégories en anglais ou en Title Case dans les données (« Legal & Contracts », « Communication Équipe », « IA Généraliste ») : à corriger dans Supabase, pas dans le JSON.

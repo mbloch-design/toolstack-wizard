@@ -266,8 +266,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   }, []);
 
   // De 641 à 1 180 px, la barre est une colonne imposée pour laisser la place
-  // au contenu. Elle peut quand même se déplier : par-dessus le contenu, sans
-  // le décaler, et sans toucher à la préférence enregistrée (US-NAV-01).
+  // au contenu. Elle peut quand même se déplier : elle pousse alors le contenu,
+  // comme sur grand écran (Michael, 8 oct. 2026 ; avant : par-dessus), sans
+  // toucher à la préférence enregistrée (US-NAV-01).
   const [forcedRail, setForcedRail] = useState(false);
   const [railOpen, setRailOpen] = useState(false);
   useEffect(() => {
@@ -551,10 +552,15 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </div>
         </header>
 
-        <main ref={contentRef} id="main-content" className="asv2-content">
-          {children}
+        {/* The scroll container holds the page's <main> and the footer as
+            siblings, so the footer is a real contentinfo landmark and not
+            nested in main (a11y audit, 8 Oct 2026). */}
+        <div ref={contentRef as React.RefObject<HTMLDivElement>} className="asv2-content">
+          <main id="main-content" tabIndex={-1} className="asv2-main">
+            {children}
+          </main>
           <Footer />
-        </main>
+        </div>
       </div>
 
       {/* ── Mobile bottom navigation (hidden on desktop via CSS) ── */}

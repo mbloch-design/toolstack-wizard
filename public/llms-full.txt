@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1348
+# Records: 1349
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -18887,5 +18887,19 @@
     },
     "description_fr": "Une plateforme de lancement et un annuaire pour faire découvrir des produits indépendants.",
     "description_en": "A launch platform and directory for discovering indie products."
+  },
+  {
+    "name": "Newbi",
+    "slug": "newbi",
+    "url_fr": "https://tooltrim.com/fr/tool/newbi",
+    "url_en": "https://tooltrim.com/en/tool/newbi",
+    "website": "https://www.newbi.fr",
+    "category": "finance",
+    "pricing": {
+      "free": "Essai de 30 jours, toutes les fonctionnalités Freelance, sans carte bancaire.",
+      "paid": "Dès 17,99 € TTC/mois (16,19 € en engagement annuel), formule Freelance."
+    },
+    "description_fr": "Facturation, devis, CRM client, connexion bancaire et trésorerie réunis sur une seule plateforme pour freelances et TPE françaises, avec un accès comptable gratuit inclus.",
+    "description_en": "Invoicing, quotes, client CRM, bank connection and cash flow in one platform for French freelancers and small businesses, with free accountant access included."
   }
 ]
