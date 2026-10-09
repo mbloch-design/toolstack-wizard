@@ -9,7 +9,7 @@
 - **Code publié sur main :** `4601f877cf` (R1 SDK de types), après R0 `bb4bc7f94b` incluant `13b631bc1d` (contrats API). CI et statut Vercel réussis pour R0/R1 ; recette publique R1 conforme. Le rendu du site reste identique à Router `88d7f5d7a5`.
 - **R1 publié et clôturé :** SDK de types retiré, 82 contrats et types réussis, audit complet 15 → 9. Build réussi, 13 162 HTML/80 JS/sitemap identiques ; CI verte et API publiques conformes. [Rapport R1](REDUCTION_SDK_TYPES_2026-10-09.md).
 - **À part :** refonte locale de CategoriesIndexPage, exports/catalogue/médias et scripts non suivis. Ils sont préservés et ne sont pas revendiqués dans ces publications.
-- **Point 1 backend/sécurité/paiement :** annoncé traité manuellement par le propriétaire ; les protections réellement déployées n’ont pas été contre-vérifiées ici.
+- **R2 backend — contre-audit réalisé, certification partielle :** projet public Supabase INACTIVE ; écarts de statut payé/badge/doublons reproduits localement ; maintenance locale vérifiée sur deux handlers, RLS/code distant/WAF non certifiés. [Rapport R2](CONTRE_AUDIT_BACKEND_2026-10-09.md).
 
 [Résumé machine actualisé](proofs/sdk-types-2026-10-09/summary.json) ; le [snapshot initial](../output/tooltrim-status-2026-10-09/summary.json) reste conservé. Le statut Git distant et la dernière CI ont été relus pendant ce bilan ; les recettes historiques ne sont pas présentées comme de nouveaux tests du 9 octobre.
 
@@ -32,7 +32,7 @@
 | T13 — Contrats API | **Publié**, `13b631bc1d` via `bb4bc7f94b` | Typecheck strict API, 82 fixtures Node intégrées aux commandes/CI configurée ; quatre mutations détectées | Précondition de réduction du SDK ; handlers et lockfile inchangés, zéro email réel. Les 82 contrats passent dans la CI R0 complète verte. [Rapport](CONTRATS_API_2026-10-09.md) |
 | T14 — SDK de types API | **Publié**, `4601f877cf`, CI verte et API publiques conformes | Contrat HTTP Node/Vercel compatible, quatre imports type remplacés, SDK retiré | 104 entrées lock retirées ; audit complet 15 → 9 ; JS des handlers et 13 162 HTML/80 JS/sitemap identiques. [Rapport](REDUCTION_SDK_TYPES_2026-10-09.md) |
 
-La présence du commit de maintenance dans l’historique ne prouve pas le déploiement de fonctions Supabase ou de leurs secrets. Les corrections de paiement, WAF, RLS et configuration distante restent dans le statut manuel non contre-vérifié.
+La présence du commit de maintenance dans l’historique ne prouve pas le déploiement de fonctions Supabase ou de leurs secrets. Le contre-audit R2 révèle des écarts applicatifs et un projet INACTIVE ; WAF, RLS et contrôles maintenance distants restent non certifiés. Le contre-audit initial ne modifiait pas l’application ; le correctif de preuve paiement est maintenant validé localement, sans activation distante.
 
 ## 2. Ce que nous avons gagné — et ce que cela ne prouve pas
 
@@ -71,7 +71,7 @@ Aucun outil, prix, traduction ou relation n’a été supprimé des sources par 
 
 ## 3. Ce qui reste ouvert
 
-1. **Backend réellement déployé :** paiement, anti-abus email, accès maintenance et permissions ont besoin de preuves distantes si l’on veut les déclarer certifiés. Le point annoncé manuel n’est pas relancé comme une correction présumée manquante.
+1. **Backend réellement déployé :** R2 confirme des écarts applicatifs de confiance paiement/badge/doublons, sans email réel. API de gestion Supabase : projet public INACTIVE ; SQL/source Edge indisponibles, WAF Vercel 403. Les protections externes ne sont pas présumées absentes ; la certification reste partielle. [Détails et sous-lots R2a–R2c](CONTRE_AUDIT_BACKEND_2026-10-09.md).
 2. **API catalogue saine non mesurée :** DNS Supabase échouait le 8 octobre et échoue encore lors du contrôle de résolution hors restrictions réseau dans cet environnement le 9 ; GitHub résout correctement dans le même contrôle ([preuve DNS](../output/tooltrim-status-2026-10-09/dns-check.json)). Ce n’est pas une preuve de panne pour tous les visiteurs. Les recettes avec fallback ne certifient ni latence, ni droits, ni fraîcheur des réponses distantes.
 3. **Catalogue et relations :** normalisation, sources officielles, qualité des huit premiers résultats et confiance éditoriale restent des chantiers produit/données.
 4. **Promesse de Ma Stack :** le calcul de recoupement ne démontre pas que l’utilisateur paie réellement en double ni qu’il peut supprimer un outil. Le libellé « Payé en double » existe encore dans CartPage et mérite un arbitrage distinct.
@@ -81,13 +81,13 @@ Aucun outil, prix, traduction ou relation n’a été supprimé des sources par 
 
 ## 4. Roadmap complète proposée par lots
 
-**R0/R1 ont été autorisés par le propriétaire et sont suivis ci-dessous.** R2–R11 restent des propositions à arbitrer, pas des travaux implicitement lancés. Pas de date artificielle : chaque lot se ferme sur ses preuves et non sur le temps passé. Un lot applicatif comprend préparation, test local, relecture, publication autorisée, CI et recette publique adaptée.
+**R0/R1 ont été clôturés ; le contre-audit R2 a été autorisé et réalisé avec certification distante partielle.** La preuve paiement et la reprise de brouillon de R2b ont été autorisées et implémentées localement ; leur activation Creem reste à vérifier. La réservation des reçus et les reprises email R2c sont aussi implémentées localement ; leur activation reste ouverte. Les autres corrections R2 et R3–R11 restent proposées. Pas de date artificielle : chaque lot se ferme sur ses preuves et non sur le temps passé. Un lot applicatif comprend préparation, test local, relecture, publication autorisée, CI et recette publique adaptée.
 
 | Ordre / lot | État et dépendance | Objectif et livrable | Critère de sortie | Valeur / effort indicatif |
 |---|---|---|---|---|
 | R0 — Clôturer les contrats API | Publié via `bb4bc7f94b` ; étape API verte, CI R0 complète verte | Commit publié et nouvelle étape API vérifiée en CI | 82 tests API et types stricts exécutés par la CI distante ; aucun changement de handler | Fiabilité ; faible |
 | R1 — Réduire le SDK de types | Terminé et publié `4601f877cf` ; CI/Vercel/recette publique réussis | Contrat HTTP compatible Node/Vercel ; quatre imports de types remplacés et SDK retiré | Même comportement sur les 82 contrats ; types/build/lockfile/audit comparés ; runtime de déploiement vérifié ; résultat documenté même si certains avis restent | Maintenance/sécurité de l’arbre ; faible à moyen |
-| R2 — Contre-vérifier le backend manuel | Preuves du propriétaire / environnement requis ; peut se préparer en parallèle | Vérifier les protections déployées sans envois ni écritures réels : paiement, débit/déduplication, maintenance, permissions | État réel et couverture documentés ; écarts seulement traités dans un lot autorisé | Confiance opérationnelle ; effort inconnu tant que preuves absentes |
+| R2 — Contre-vérifier le backend manuel | Audit réalisé ; certification distante partielle, cible inactive et preuves externes à confirmer | Vérifier les protections déployées sans envois ni écritures réels : paiement, débit/déduplication, maintenance, permissions | État réel et couverture documentés ; écarts seulement traités dans un lot autorisé | Confiance opérationnelle ; effort inconnu tant que preuves absentes |
 | R3 — Établir une baseline API catalogue saine | Environnement avec résolution et lecture fonctionnelles | Mesurer réponse, fraîcheur, erreurs/fallback et coût du rafraîchissement ; retrouver la chaîne de publication actuelle | Lectures réelles contrôlées, paramètres/permissions attendus, mesures reproductibles ; aucun write | Prérequis aux décisions d’architecture ; moyen |
 | R4 — Aligner promesse et lecture Ma Stack | Décision produit sur l’existant ; ne dépend pas de Tailwind | Unifier le cap avec la page réellement publiée ; distinguer coût catalogue, dépense déclarée, recoupement et économie décidée | Libellés/comportements cohérents FR/EN ; aucun montant de gain sans données suffisantes ; compréhension observée | Valeur visible pour choisir ; moyen |
 | R5 — Qualité des relations Explorer | Cap R4 + catalogue courant | Pilote de référence : environ 30 sources, dix résultats examinés, distinction alternative/extension/complément expliquée | Cible de la roadmap produit : ≥80 % des huit premiers crédibles, aucun faux positif critique dans les quatre premiers ; critères de jugement explicités | Confiance éditoriale ; moyen |
@@ -103,7 +103,7 @@ Efforts relatifs de planification, sans estimation en jours ni engagement de dé
 ### Recommandation de pilotage
 
 1. **R0/R1 terminés** : contrats API et SDK clôturés avec CI et recette publique. [Preuves de clôture](proofs/sdk-types-2026-10-09/verification.json).
-2. Obtenir l’état backend/API réelle ; ne plus tirer de conclusion d’architecture d’une recette qui n’exerce que les fallbacks.
+2. **R2 : clarifier la cible INACTIVE et les protections manuelles externes**, puis traiter les écarts attestés dans les sous-lots R2a–R2c. R3 attend un backend joignable ; aucune baseline saine n’est revendiquée.
 3. Donner la priorité produit à la promesse Ma Stack, aux relations et à une première observation utilisateur. Ne pas attendre toutes les migrations de compilation pour faire progresser la valeur perçue.
 4. N’engager un nouveau découpage catalogue ou Tailwind qu’avec un gain attendu et une porte de sortie explicites.
 
@@ -117,4 +117,12 @@ Avant chaque lot, présenter **le problème utilisateur, le périmètre, le gain
 
 Bilan relu indépendamment : aucune correction factuelle matérielle nécessaire. Les liens locaux et JSON ont été contrôlés ; cette relecture ne remplace pas une nouvelle recette navigateur ou une certification distante.
 
-Le bilan initial a été publié avec R0 après autorisation. Cette actualisation suit R0/R1 ; elle ne déclenche aucun lot R2–R11, modification des catégories ni écriture catalogue distante.
+Le bilan initial a été publié avec R0 après autorisation. L’actualisation R2 est locale ; la preuve paiement et la reprise R2b ont ensuite été autorisées et validées localement, sans publication. Les autres sous-lots R2 et R3–R11, catégories et catalogue distant restent inchangés.
+
+### Actualisation : preuve de paiement Creem, correctif local
+
+Le [correctif Creem](CORRECTIF_CREEM_2026-10-09.md) conserve le checkout existant et vérifie le paiement côté serveur avant confirmation/envoi payant. Gain attesté localement : `paid=true` falsifié refusé et brouillon conservé pendant les erreurs/reprises. 113 API, 278 app, 23 SEO, types et cinq scénarios navigateur simulés passent. Aucun gain d’encaissement, d’anti-replay durable ou de référencement n’est revendiqué. Publication attend la configuration de retour/clé et la validation prestataire réelle. Badge gratuit maintenant imposé côté serveur et validé localement (122 API, build et cinq scénarios navigateur simulés PASS). La réutilisation du checkout et les reprises email ont ensuite été traitées localement **sans Supabase**, conformément au choix du propriétaire ; elles ne sont pas encore actives en production. [Contrat proposé](superpowers/specs/2026-10-09-submission-idempotency-design.md), Upstash gratuit choisi pour préparation, traitement par email conservé et aucun stockage distant créé.
+
+### Lot soumissions : résultat local du plan autorisé
+
+175 API avec Redis réel, 287 app, 23 SEO, 14 scénarios Chromium, types et build PASS. Gain démontré : un reçu réservé à une demande, conservation avant envoi, reprise après réponse perdue et absence de blocage par les notifications intermédiaires. Aucun gain commercial ou classement SEO revendiqué. Configuration du compte, quota, sauvegarde distante, rétention et publication restent ouverts. [Bilan complet](BILAN_SOUMISSIONS_2026-10-09.md).

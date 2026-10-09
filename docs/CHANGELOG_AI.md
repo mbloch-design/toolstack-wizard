@@ -7,6 +7,108 @@
 - Haut de page aligné sur `--layout-content` / `--layout-gutter` ; libellés sous icône en 11 px ; icônes en 16/18/20 px via `size`.
 - CSS `asv2-*` : 59 déclarations écrasées supprimées, 0 différence de style calculé sur 18 états.
 - Recherche globale refaite (`SearchModal`) : guide avant la frappe (exemples, besoins, duels, stacks par objectif, stack de l'utilisateur), résultats groupés par type, champ en `combobox`. Duels et stacks partagés avec l'accueil (`src/data/homeComparisons.ts`, `src/data/goalStacks.ts`).
+## 2026-10-09 — Métadonnées Creem réelles vérifiées sans paiement
+
+- Session non payée autorisée avec deux métadonnées fictives ; lecture API 200, produit/mode/métadonnées conformes. Vérificateur serveur réel : rejet 400 de pending.
+- Aucun paiement, email ou donnée client ; onglet fermé. Le retour après paiement terminé reste non exercé.
+- Token maintenance privé préparé pour conservation par l'opérateur ; remplacement Vercel encore nécessaire, aucun changement distant ni déploiement.
+
+## 2026-10-09 — Authentification API Creem vérifiée
+
+- Clé locale fournie par le propriétaire : lecture d'un checkout fictif absent renvoie 404, contrôle avec clé invalide 401. Aucun secret affiché ni paiement/checkout créé.
+- Recette de propagation des métadonnées en attente : création d'une session non payée refusée avant exécution par la revue automatique, autorisation explicite demandée.
+
+## 2026-10-09 — Exploitation préparée et contrôle Creem borné
+
+- Dossier privé de sauvegarde et snapshot initial du registre vide créés ; mode 700/600, ignorés par Git, aucune mutation production.
+- Consignes manuelles de reprise, archivage, sauvegarde et incident préparées ; aucun cron ni copie cloud installés.
+- Produit/encaissement/retour Creem reconfirmés sans modification. Accès API et métadonnées réelles encore non certifiés ; clé locale de lecture nécessaire.
+
+## 2026-10-09 — Domaine et expéditeur Resend vérifiés
+
+- Compte connecté : domaine tooltrim.com Verified, DKIM/SPF/MX d'envoi Verified, envoi activé. Clé récente avec Sending access, aucune extension des droits.
+- Expéditeur interne contact@tooltrim.com confirmé par un email déjà Delivered. Aucun nouvel email ni modification de configuration.
+- Preuve non sensible enregistrée ; nouveau handler non déployé et vérification réelle Creem/exploitation encore ouvertes.
+
+## 2026-10-09 — Récupération Upstash et contrôle prestataires
+
+- Export/restauration privés de reçus fictifs sur Upstash REST PASS : états, archives et réservation des checkouts préservés ; 16 appels, nettoyage complet, registre production inchangé.
+- Clé Creem LIVE `checkouts:read` confirmée ; Resend nécessite la connexion au compte. La clé locale contrôlée est refusée, sans conclusion sur la clé Production.
+- Compteur global Upstash relevé (302/500k, $0), sans extrapolation de capacité. Plan et procédure actualisés ; aucun déploiement.
+
+## 2026-10-09 — Recette Upstash REST concurrente passée
+
+- Jeton fourni directement par le propriétaire dans le fichier local privé, sans affichage ni ajout à Git.
+- Recette distante PASS : 20 réservations simultanées, 20 prises de bail simultanées et transitions testées ; 68 requêtes REST.
+- Nettoyage PASS, registre production vide et inchangé ; aucun email/paiement réel. Preuve dans `docs/proofs/submission-idempotency-2026-10-09/remote-rest-recipe.json`.
+- Validation prestataires/exploitation encore ouverte ; aucun déploiement.
+
+## 2026-10-09 — Recette Upstash isolée via CLI, REST concurrent restant
+
+- Seconde base Free refusée par le fournisseur ; adaptation préactivation explicitement autorisée par le propriétaire. Aucun changement de facturation. Recette CLI sur données fictives PASS, nettoyage vérifié, registre client vide ; aucune opération email/paiement.
+- 20 réservations distantes successives, conflits/baux/ambiguïté/suspension/archive/scan testés. Concurrence REST distante non revendiquée. Compteurs quota encore à zéro, capacité non calculée.
+- Script de recette étendu, garde d’activation atomique et isolation testées : 178 API et script complet Redis local PASS. Transfert chiffré du token via sortie connecteur refusé automatiquement, non exécuté ; alternative CLI sans extraction.
+- Fichier privé vide préparé pour permettre au propriétaire de renseigner le token hors chat ; recette REST et autres conditions de publication restent ouvertes. Aucun déploiement.
+
+## 2026-10-09 — Clé Creem limitée configurée, produit conservé
+
+- Après confirmation explicite : clé LIVE dédiée avec `checkouts:read` seulement, enregistrée Secret Production sous `CREEM_API_KEY`. Ni valeur imprimée ni ancienne clé Default modifiée.
+- ID du produit existant identique au code ; retour `/submit?paid=1` inspecté et conservé, redirect applicatif préservant la query. Aucun checkout/produit ou déploiement modifié.
+- Six variables serveur requises désormais présentes en Production ; recette distante, quota/sauvegarde/exploitation et propagation des métadonnées restent à vérifier. Configuration enregistrée sans prétendre à une activation complète.
+
+## 2026-10-09 — Secret badge enregistré ; clé Creem manquante
+
+- Création du secret de vérification badge autorisée et enregistrée Secret en Production, valeur non affichée. Le propriétaire confirme ne pas disposer encore de clé API Creem ; console ouverte pour connexion au compte du produit existant.
+- Aucun produit/checkout, clé Creem ni déploiement modifié. Activation et recette restent ouvertes ; quatre nouvelles variables serveur enregistrées.
+
+## 2026-10-09 — Variables Redis Production enregistrées
+
+- Accès navigateur Vercel rétabli et autorisation explicite de transfert reçue. URL Redis, jeton REST lecture/écriture et secret maintenance indépendant enregistrés comme Secret en Production ; pas d’exposition des valeurs ni de connexion Preview à la base Production.
+- Aucun redéploiement. Clé Creem serveur et secret badge encore manquants ; recette distante et exploitation manuelle/sauvegarde restent ouvertes. Secret maintenance irrévélable après sauvegarde : stockage opérateur/rotation à prévoir avant utilisation.
+
+## 2026-10-09 — Base Upstash Free créée, raccordement en attente
+
+- Après connexion du propriétaire : création de `tooltrim-submissions` dans Personal, Francfort, Free $0/mois, persistance et éviction désactivée vérifiées. Aucun moyen de paiement ajouté ; quota visible 500k commandes/mois, sans capacité applicative extrapolée.
+- Aucun token révélé, payload de demande enregistré, email/paiement ou déploiement. Vercel toujours refusé 403 et console non connectée ; configuration et recette distante restent ouvertes. Preuve d’accès et procédure actualisées.
+
+## 2026-10-09 — Activation soumissions : contrôle des accès
+
+- Suite demandée ; projet Vercel retrouvé, métadonnées des variables refusées 403 pour le scope du propriétaire. Consoles Upstash/Vercel non connectées ; pas de CLI disponible en repli. Aucune valeur de secret affichée.
+- Modèle serveur vide `.env.submissions.example`, checklist de mise en service et preuve d’accès ajoutés. Pas de modification applicative ; aucune recette distante, création de base, modification de variable ou publication. Activation en attente des accès du propriétaire.
+
+## 2026-10-09 — Soumissions : reçus Redis et reprises email, local
+
+- Plan Upstash autorisé exécuté dans un worktree isolé : réservation atomique du checkout, demande et jobs persistés avant email, baux et clés stables, maintenance authentifiée. Aucun Supabase pour cette fonctionnalité ; traitement manuel par email conservé.
+- Brouillons gratuits/payants complets, contenu exact tenté sauvegardé, reprise d’une acceptation après réponse perdue sans dépendre de Creem/badge disponibles. Notifications intermédiaires non bloquantes et bornées ; pas de création via la recherche seule.
+- Relecture indépendante et corrections vérifiées ; 175 API avec Redis réel, 287 app, 23 SEO, 14 Chromium, types/build/diff PASS. Sitemap et balises de six pages identiques. CI prépare désormais Redis, sans exécution GitHub revendiquée.
+- Non publié/non activé. Compte Free/éviction/quota, configuration réelle et sauvegarde distante/rétention restent à vérifier. [Bilan et décisions](BILAN_SOUMISSIONS_2026-10-09.md), [procédure](SOUMISSIONS_UPSTASH.md). Travail principal catégories/catalogue/médias/Stack préservé.
+
+## 2026-10-09 — Plan soumissions Upstash, traitement email conservé
+
+- Après choix explicite d'Upstash gratuit et instruction « ensuite », préparation du plan détaillé en quatre tâches : réservation atomique, brouillon/acceptation, envoi/reprise, recette/configuration.
+- Redis limité aux demandes/reçus ; aucun appel Supabase pour cette fonctionnalité, pas de back-office ni de polling ajouté. Rétention personnelle 90 jours proposée, preuve de consommation sans TTL ; erreurs ambiguës Resend après 24 heures traitées manuellement.
+- Plan à relire et méthode native recommandée avant implémentation. Aucun code produit, création de service, secret lu ou déploiement dans cette étape documentaire. Diff sans erreur ; aucune nouvelle recette applicative revendiquée.
+
+## 2026-10-09 — Badge gratuit imposé côté serveur ; suite sans Supabase
+
+- `api/contact.ts` déduit l'obligation du badge de la soumission et du paiement strictement vérifié, au lieu du flag client `badgeReview`. URL, jeton et relecture du badge requis pour toute demande gratuite ; contacts généraux et demandes payantes vérifiées conservés.
+- Sept tests négatifs reproduisent le bypass avant correction. Recette : 122 API, types, build production et cinq parcours Chromium simulés PASS ; suite app actuelle 284/54 incluant six tests hors périmètre. Relecture indépendante sans point restant.
+- Contrainte explicite : cette fonctionnalité doit fonctionner sans Supabase. Contrat de consommation/déduplication révisé, proposition Redis gratuite hors Supabase, Upstash gratuit choisi pour préparation, traitement manuel par email conservé. Aucun nouveau compte, stockage, raccordement ou facturation activé.
+- Local, non publié : configuration/retour Creem encore à attester ; anti-replay durable non implémenté. Catégories et travaux catalogue/médias/Stack préservés.
+
+## 2026-10-09 — Creem : vérification serveur et conservation du brouillon, local
+
+- Correctif autorisé, conservant produit/lien/embed Creem : métadonnées référence/URL, relecture serveur du checkout et contrôle indépendant avant emails payants. Flag `paid` seul refusé ; clé exclusivement serveur, erreurs prestataire récupérables.
+- Brouillons persistés avant checkout, clés par référence pour plusieurs onglets, reçu de reprise conservé, suppression seulement après soumission acceptée. Reprise sans invitation à repayer ; anciens retours sans preuve orientés vers le reçu manuel.
+- 113 API, 278 app (12 paiement), types et 23 SEO passent ; cinq scénarios Chromium simulés FR/EN sans erreur JS et sans paiement/email réel. Relecture indépendante et corrections de six points. Build/preuves dans CORRECTIF_CREEM_2026-10-09.md.
+- Non publié : clé serveur, retour réel et propagation Creem à attester avant activation. Consommation atomique/doublons, remboursements et badge gratuit restent ouverts. Catégories/catalogue/médias locaux préservés.
+
+## 2026-10-09 — R2 contre-audit backend, certification distante partielle
+
+- Rapport local `CONTRE_AUDIT_BACKEND_2026-10-09.md` et preuves, sans modification applicative ni publication. Projet Supabase du JS public déclaré INACTIVE ; requête SELECT métadonnées expirée, source de trois Edge Functions indisponible. Advisors vide non assimilé à une certification.
+- Quatre écarts reproduits avec Resend simulé : statut payé sans transaction attestée, badge évité par indicateur client, répétitions contact/progress sans déduplication des handlers. Aucun envoi réel.
+- 16 tests maintenance passent sur deux handlers locaux ; déploiement non certifié. Configuration WAF Vercel inaccessible 403 ; pas de présomption de règle absente.
+- Roadmap R2/R3 actualisée ; cible/protections manuelles à confirmer. Reprise de service et correctifs R2a–R2c non exécutés. Aucun secret lu, write DB ou appel de seed.
 
 ## 2026-10-09 — R0/R1 publiés et clôturés
 
@@ -5394,3 +5496,8 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Footer sur grille 12 colonnes, carte « Ma stack » via `src/lib/stackSnapshot.ts` (écrit par CartPage), sélecteur de langue FR | EN.
 - Accueil, lots 2 et 3 sans ajout : échelle typo unique, rythme 72/48, rayons, recherche sous le hero, outils non répétés, libellés, accessibilité (0 violation axe), animations sur transform, 69 règles CSS mortes retirées. « La pile » retirée à la demande de Michael.
 - Accueil : recherche du site réparée (sigles courts, mots vides, accents, catégories), lot de finitions en tokens, typographie française (displayText), équilibre optique des logos, besoins avec exposant et tags de catégories voisines, « Lequel garder ? » à la place de « Compatible avec », en-têtes de section alignés à gauche, carrousels jusqu'au bord.
+
+
+### 2026-10-09 — Compatibilité du compilateur API Vercel
+
+Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le typecheck API local ES2023. Reproduction avec les bibliothèques ES2020 : même erreur. Le contrôle de propriété propre utilise désormais `Object.prototype.hasOwnProperty.call`, avec le même refus des réponses Redis sans champ propre `result`. Vérification ES2020 PASS et 178 tests API avec Redis réel PASS. Le contrôle ES2020 est ajouté à la CI pour couvrir cet écart.

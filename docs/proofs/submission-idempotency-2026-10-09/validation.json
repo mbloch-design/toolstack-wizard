@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-09",
+  "scope": "local isolated submission-receipts worktree; not published or activated",
+  "base": "32d493a5c19dc147b20ba69ce12f3abb77b1be67",
+  "verification": {
+    "api": {
+      "passed": 175,
+      "files": 10,
+      "real_redis": "7.2.7 ephemeral local; actual Lua; REST transport bridged"
+    },
+    "app": {
+      "passed": 287,
+      "files": 51,
+      "payment_cases": 21
+    },
+    "seo_contracts": {
+      "passed": 23,
+      "files": 3
+    },
+    "chromium": {
+      "passed": 14,
+      "providers": "intercepted; no real payment/email"
+    },
+    "typecheck": "PASS app/node/api",
+    "production_build": {
+      "status": "PASS",
+      "html_documents": 13162,
+      "sitemap_urls": 13137,
+      "output_mib": 824.8
+    },
+    "seo_comparison": "six pages tags identical; sitemap bytes identical",
+    "bundle_configuration_name_scan": "no Redis configuration/token markers found in dist/assets JavaScript",
+    "diff_check": "PASS",
+    "workflow_yaml_parse": "PASS; modified workflow not executed on GitHub"
+  },
+  "review": {
+    "reviewer": "gpt-6.1-sol high; preferred reviewer unavailable",
+    "important_findings": 5,
+    "important_findings_fixed": 5,
+    "method": "one independent review, one correction pass with negative regression tests; no second review",
+    "reviewer_runtime_limit": "independent local Redis startup blocked in reviewer sandbox; privileged primary run passed",
+    "initial_browser_run": "10 passed, 1 failed due to English price button test label; fixture corrected; final 14 passed"
+  },
+  "unverified": [
+    "owner Upstash Free/durable account, eviction disabled and quota",
+    "real Upstash recipe and all-branch command usage",
+    "real Creem/Vercel/Resend configuration and payment return",
+    "private remote backup/export/restore recipe",
+    "operations approval of retention and manual recovery",
+    "remote CI, publication, public acceptance"
+  ],
+  "live_side_effects": {
+    "remote_database_writes": false,
+    "emails": false,
+    "payments": false,
+    "publication": false
+  }
+}

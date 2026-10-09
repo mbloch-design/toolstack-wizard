@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-09",
+  "scope": "server-enforced free-submission badge",
+  "status": "local_verified_not_published",
+  "api": {
+    "passed": 122,
+    "files": 4
+  },
+  "typescript": {
+    "app": "PASS",
+    "node": "PASS",
+    "api": "PASS"
+  },
+  "app": {
+    "passed": 284,
+    "files": 54,
+    "scope_note": "Current checkout includes six tests in three files belonging to unrelated local work."
+  },
+  "browser": {
+    "passed": 5,
+    "seconds": 5.5,
+    "config": "playwright.payment.config.ts",
+    "real_payment_or_email": false,
+    "note": "Generated HTML, mocked API responses; API unit tests cover actual badge handler."
+  },
+  "build": {
+    "verdict": "PASS",
+    "html_files": 13162,
+    "total_mib": 824.8,
+    "html_mib": 713.2,
+    "budget": "PASS",
+    "source": "/private/tmp/tooltrim-badge-build-20261009.log"
+  },
+  "regressions": {
+    "negative_cases_observed_red_before_fix": 7,
+    "client_flags_no_longer_bypass": [
+      "omitted",
+      false,
+      null,
+      "",
+      0
+    ]
+  },
+  "review": "Independent reviewer PASS, handler tests 64/64",
+  "supabase": {
+    "allowed_for_this_feature": false,
+    "writes": 0
+  },
+  "next_design": {
+    "provider_preparation_chosen": "Upstash Redis Free",
+    "existing_workflow": "manual processing via email",
+    "implementation": "not started",
+    "remote_storage_created": false
+  },
+  "files_sha256": {
+    "api/contact.ts": "1627bb75462de112a15516a66ae42234990a0c3f1969b181866b4d177e04f130",
+    "tests/api/handlers.test.ts": "941acefc7c24b955c927be60f89bf57e5cf539a109d92932a215d8758c6df7b0"
+  }
+}

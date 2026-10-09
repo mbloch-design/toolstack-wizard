@@ -1,0 +1,16 @@
+{
+  "submitAsset": "SubmitToolPage-ClD6qqwm.js",
+  "matchesPublishedBuild": true,
+  "sha256": "75b1cf382b72051aa26d4ae66a3c74191a1021a9259e23e37627e9642bdc455e",
+  "supabaseDNS": {
+    "resolved": false,
+    "error": "[Errno 8] nodename nor servname provided, or not known"
+  },
+  "publicRequests": "GET asset only; no form submission",
+  "mainAsset": "index-Bte1VsSS.js",
+  "mainAssetSha256": "5111c1cd9918d5f4bbbf521d65e922078cad9e422795941e11b546cf357ac3d3",
+  "mainAssetMatchesValidatedBuild": true,
+  "supabaseHostsInPublicMainAsset": [
+    "rtfyfuwfdpnsogovkwai.supabase.co"
+  ]
+}

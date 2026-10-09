@@ -40,6 +40,14 @@ jobs:
       - name: Application unit tests
         run: npm test
 
+      - name: Prepare local Redis for submission integration tests
+        run: |
+          if ! command -v redis-server >/dev/null || ! command -v redis-cli >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y redis-server
+          fi
+          echo "SUBMISSION_TEST_REDIS_BIN=$(dirname "$(command -v redis-server)")" >> "$GITHUB_ENV"
+
       - name: API handler contract fixtures
         run: npm run test:api
 
@@ -52,6 +60,9 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: API compiler compatibility
+        run: npx tsc -p tsconfig.api.json --lib ES2020,DOM,DOM.Iterable
+
       - name: Ma stack unit and exploration tests
         run: npm run test:ma-stack
 
@@ -60,6 +71,9 @@ jobs:
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
+
+      - name: Payment return and draft recovery (simulated provider)
+        run: npm run test:e2e:payment
 
       - name: Generated HTML hydration tests
         run: npm run test:e2e:hydration
@@ -72,6 +86,8 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            payment-report/
+            payment-test-results/
           retention-days: 7
           if-no-files-found: ignore
 
