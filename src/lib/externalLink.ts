@@ -71,6 +71,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.nicklaunches.com",
   "atelier-atypique.fr",
   "www.atelier-atypique.fr",
+  "newbi.fr",
+  "www.newbi.fr",
 ]);
 
 /** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait
