@@ -61,8 +61,8 @@ export async function createCatalogSearchEngine(
       // turns "crm" into "com" and "ia" into "io" (search audit, 9 Oct 2026).
       const words = normalizedTerm.split(" ").filter((word) => !STOP_WORDS.has(word));
       const query = (words.length > 0 ? words : normalizedTerm.split(" ")).join(" ");
-      const tolerance = query.split(" ").every((word) => word.length >= 5) ? 1 : 0;
-      const result = await search(database, {
+      const allowTypo = query.split(" ").every((word) => word.length >= 5);
+      const run = (tolerance: number) => search(database, {
         term: query,
         properties: ["label", "category", "tags", "searchText"],
         boost: { label: 4, category: 3, tags: 2, searchText: 1 },
@@ -70,8 +70,16 @@ export async function createCatalogSearchEngine(
         threshold: 0,
         limit,
       });
+      // The typo pass is a fallback, not a blend: "notion" spelled right must
+      // not pull Motion, Motion Bro and Figma Motion in after Notion (search
+      // review, 9 Oct 2026). It only runs when the exact pass finds little.
+      const exact = await run(0);
+      const fuzzy = allowTypo && exact.hits.length < 3 ? await run(1) : null;
+      const rawHits = fuzzy
+        ? [...exact.hits, ...fuzzy.hits.filter((hit) => !exact.hits.some((known) => known.id === hit.id))]
+        : exact.hits;
 
-      const fuzzyHits = result.hits.flatMap((hit) => {
+      const fuzzyHits = rawHits.flatMap((hit) => {
         const document = byId.get((hit.document as CatalogSearchDocument).id);
         return document ? [{ ...document, score: hit.score }] : [];
       });

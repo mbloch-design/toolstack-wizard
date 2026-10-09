@@ -132,3 +132,26 @@ Prochaines étapes proposées, dans l'ordre :
 - [ ] Tutoiement dans 169 lignes de src/data/stacks.ts (subtitle, q, hint, reason, avoidIf) : le site vouvoie partout ailleurs. La stack automatisation-legere-freelance est passée au vous (9 oct.). Chantier éditorial à planifier.
 - [x] « Compatible avec » retiré de l'accueil (9 oct.) : données de compatibilité insuffisantes (seuls After Effects et React). Remplacé par « Lequel garder ? », 8 comparatifs existants en rangée. Compléter worksWith dans Supabase reste utile pour les pages explorer.
 - [ ] Noms de catégories en anglais ou en Title Case dans les données (« Legal & Contracts », « Communication Équipe », « IA Généraliste ») : à corriger dans Supabase, pas dans le JSON.
+
+## Navigation, revue design (9 oct. 2026)
+Mesures Playwright à 1440, 1024 et 390 px. Tout appliqué le 9 oct. (« go sur tout »), non commité.
+- [x] P1 Bandeau cookies sous les dialogues : menu mobile et recherche à z-index 1100 (la recherche, à 200, passait aussi sous la colonne tablette ouverte) ; sur mobile le bandeau se pose au-dessus de la barre du bas
+- [x] P1 Barre repliée : page active plus marquée (pastille plus sombre, libellé en 650), survol plus léger
+- [x] P1 Onglets du haut supprimés ; filtre « Payant » devenu « Payant uniquement » (sans plan gratuit, `isPaidOnly`)
+- [x] P2 Recherche : loupe de la barre latérale retirée ; « Ctrl K » hors Mac
+- [x] P2 Haut de page aligné sur le conteneur des pages (`--layout-content`, `--layout-gutter`)
+- [x] P2 « Déplier » : déjà visible au survol de toute la barre, au focus et en permanence sur écran tactile (constat initial erroné)
+- [x] P2 Menu mobile : ne garde que Outils et Guides (sous-niveaux), préférences et « Soumettre »
+- [x] P2 « Ma stack » : bouton à contour partout
+- [x] P3 Libellés sous icône en 11 px ; icônes par zone : 16 en haut, 18 dans la barre, 20 sur mobile (prop `size`, plus de style inline)
+- [x] P3 Infobulles des réglages = l'action (« Passer en anglais », « Changer de devise ») ; plus de valeur « EN » cachée
+- [x] P3 CSS `asv2-*` : 59 déclarations écrasées supprimées, 0 différence de style calculé sur 18 états
+- [x] Barre repliée : au survol, le picto « déplier » se plaçait 16 px au-dessus du logo (`top: 0` d'une règle du 8 oct.) ; centré sur le logo, avec fondu croisé et mise à l'échelle en 160 ms (coupé si mouvement réduit)
+- [x] Accueil : le champ de recherche (36 px, contour, loupe en tête) remplace le vide laissé par les onglets, aligné sur le contenu
+- [x] Colonne imposée 641 à 1 180 px : double pastille sur l'entrée active supprimée
+- [x] Recherche globale refaite : une colonne de 720 px ; avant la frappe « Essayez », « Par besoin », « Lequel garder ? », « Partir d'une stack », « Reprendre votre stack » ; pendant la frappe, résultats groupés par type ; plus de « Plateformes », « Fonctionne avec », « Collections »
+- [x] Revue design de la recherche (9 oct.) : liste de résultats conforme ARIA (axe 0), nombre de résultats annoncé, piège de focus réparé (`[href]` attrapait les `<use href>` du sprite, aussi dans `StackSaveDialog`), « notion » ne tire plus Motion (faute tolérée seulement en second recours), tokens d'espacement et de typo, cibles de 44 px sur mobile, sortie animée
+- [ ] Recherche : « appointment scheduling » ne renvoie rien en anglais (« booking » trouve Calendly) ; « alternative à Notion » met Notionlytics en tête
+- [ ] Reste : la fiche outil a son propre conteneur (`td-hero`), décalé de 16 px du haut de page à 1440 px
+- [ ] Reste : les règles « colonne réduite » sont écrites deux fois (réduite à la main, imposée de 641 à 1 180 px) ; les fusionner demande une classe posée en JS, au prix d'un saut au premier affichage
+- [ ] Reste : `e2e/sidebar-preferences.spec.ts` déjà désynchronisé avant cette passe (textes « Préférences », « Passer le site en anglais »)

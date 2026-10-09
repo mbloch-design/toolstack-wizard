@@ -18,6 +18,7 @@ import {
   Columns2,
   CirclePlus,
 } from "@/lib/icons";
+import type { IconComponent } from "@/lib/icons";
 import MobileMenu from "@/components/v2shell/MobileMenu";
 import { useLang } from "@/hooks/useLang";
 import { useCurrency, type Currency } from "@/hooks/useCurrency";
@@ -36,7 +37,7 @@ type NavItem = {
   id: string;
   labelFr: string;
   labelEn: string;
-  Icon: React.ComponentType<{ className?: string; style?: React.CSSProperties }>;
+  Icon: IconComponent;
   to: string;
   /** Path segments (relative to /:lang) that mark this item active — covers index + detail routes. */
   match: string[];
@@ -54,23 +55,6 @@ const NAV_ITEMS: NavItem[] = [
   // Une ampoule pour des guides de conseil : le livre ouvert avait la même
   // silhouette que les deux colonnes des comparatifs.
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: Lightbulb, to: "/guides",      match: ["/guides", "/guide/"] },
-];
-
-type HomeTab = {
-  id: string;
-  labelFr: string;
-  labelEn: string;
-  path: string;
-  query?: string;
-};
-
-// Quick, tool-focused launch points shown in the topbar on the homepage only —
-// distinct from the sidebar's page-level nav, these jump straight into a
-// pre-filtered tools view.
-const HOME_TABS: HomeTab[] = [
-  { id: "all",  labelFr: "Tous les outils", labelEn: "All tools", path: "/tools" },
-  { id: "free", labelFr: "Gratuits",        labelEn: "Free",      path: "/tools", query: "pricing=free" },
-  { id: "paid", labelFr: "Payants",         labelEn: "Paid",      path: "/tools", query: "pricing=paid" },
 ];
 
 const CURRENCIES: Array<{ code: Currency; symbol: string; labelFr: string; labelEn: string }> = [
@@ -103,7 +87,7 @@ function CurrencyPicker({
           className={compact ? "asv2-topbar-currency" : "asv2-utility-item asv2-currency-toggle"}
           aria-label={t(`Choisir la devise, ${selected.labelFr} sélectionné`, `Choose currency, ${selected.labelEn} selected`)}
           title={!compact && !sidebarExpanded ? t("Changer de devise", "Change currency") : undefined}
-          data-tooltip={!compact ? t("Devise", "Currency") : undefined}
+          data-tooltip={!compact ? t("Changer de devise", "Change currency") : undefined}
         >
           {compact ? (
             <>
@@ -246,6 +230,14 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     if (searchOpen || menuOpen) setChromeHidden(false);
   }, [searchOpen, menuOpen]);
 
+  // Le raccourci affiché suit le clavier : ⌘K sur Mac, Ctrl K ailleurs. Rendu
+  // « ⌘K » au premier passage (comme le prérendu), corrigé après montage.
+  const [shortcut, setShortcut] = useState("⌘K");
+  useEffect(() => {
+    const platform = (navigator as Navigator & { userAgentData?: { platform?: string } }).userAgentData?.platform || navigator.platform || navigator.userAgent;
+    if (!/mac|iphone|ipad|ipod/i.test(platform)) setShortcut("Ctrl K");
+  }, []);
+
   // ⌘K / Ctrl+K ouvre la recherche depuis n'importe quelle page : le raccourci
   // était affiché dans la barre sans être branché.
   useEffect(() => {
@@ -327,16 +319,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           <div className="asv2-sidebar-top-actions">
             <button
               type="button"
-              className="asv2-sidebar-search-btn"
-              onClick={() => setSearchOpen(true)}
-              aria-label={t("Rechercher un outil", "Search for a tool")}
-              data-tooltip={t("Rechercher", "Search")}
-            >
-              <Search style={{ width: 16, height: 16 }} aria-hidden />
-            </button>
-
-            <button
-              type="button"
               className="asv2-sidebar-resizer"
               ref={resizerRef}
               onClick={onSidebarToggle}
@@ -346,7 +328,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
                 : t("Déployer la barre latérale", "Expand sidebar")}
             >
               <span aria-hidden>
-                {shownExpanded ? <PanelLeftClose style={{ width: 16, height: 16 }} /> : <PanelLeftOpen style={{ width: 16, height: 16 }} />}
+                {shownExpanded ? <PanelLeftClose size={16} /> : <PanelLeftOpen size={16} />}
               </span>
               <b aria-hidden>{shownExpanded ? t("Réduire la barre", "Close sidebar") : t("Ouvrir la barre", "Open sidebar")}</b>
             </button>
@@ -368,7 +350,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
                 data-tooltip={t(item.labelFr, item.labelEn)}
               >
                 <span className="asv2-nav-icon">
-                  <item.Icon style={{ width: 18, height: 18 }} />
+                  <item.Icon size={18} />
                 </span>
                 <span className="asv2-nav-label">{t(item.labelFr, item.labelEn)}</span>
               </Link>
@@ -382,15 +364,14 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             href={languageHref}
             className="asv2-utility-item"
             aria-label={t("Site en français. Passer en anglais", "Site in English. Switch to French")}
-            title={!sidebarExpanded ? t("Passer en English", "Passer en français") : undefined}
-            data-tooltip={t("Passer en English", "Passer en français")}
+            title={!sidebarExpanded ? t("Passer en anglais", "Switch to French") : undefined}
+            data-tooltip={t("Passer en anglais", "Switch to French")}
           >
             {/* Les réglages montrent leur état actuel (comme le « € ») ;
                 l'infobulle décrit l'action. Le code de langue est plus
                 explicite que le picto de traduction. */}
             <span className="asv2-lang-glyph" aria-hidden>{lang.toUpperCase()}</span>
             <span className="asv2-utility-text">{t("Français", "English")}</span>
-            <span className="asv2-utility-value">{otherLang.toUpperCase()}</span>
           </a>
 
           <CurrencyPicker
@@ -428,7 +409,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           data-tooltip={t("Soumettre un outil", "Submit a tool")}
         >
           <span className="asv2-nav-icon">
-            <CirclePlus style={{ width: 18, height: 18 }} />
+            <CirclePlus size={18} />
           </span>
           <span className="asv2-nav-label">
             <span className="asv2-submit-long">{t("Soumettre un outil", "Submit a tool")}</span>
@@ -442,7 +423,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         <header
           ref={topbarRef}
           className="asv2-topbar"
-          data-topbar-mode={isHome ? "home" : breadcrumb ? "breadcrumb" : showsSearchByDefault ? "search" : "pending"}
+          data-topbar-mode={isHome || showsSearchByDefault ? "search" : breadcrumb ? "breadcrumb" : "pending"}
           data-has-parent={mobileParent ? "true" : undefined}
         >
           {/* Mobile, page profonde : le lien vers le niveau supérieur prend la
@@ -461,26 +442,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             <img className="asv2-mobile-logo-mark" src={pictoToolTrim} alt="" width={28} height={28} />
           </Link>
 
-          {/* Desktop/tablet: exactly one of these three is visible, picked by
-              data-topbar-mode above. Mobile always forces the search bar
-              (see the max-width: 640px rules) regardless of that mode. */}
-          <nav className="asv2-topbar-tabs" aria-label={t("Raccourcis", "Shortcuts")}>
-            {HOME_TABS.map((tabItem) => {
-              const target = `${prefix}${tabItem.path}${tabItem.query ? `?${tabItem.query}` : ""}`;
-              const isActive = relPath === tabItem.path
-                && location.search.replace(/^\?/, "") === (tabItem.query || "");
-              return (
-                <Link
-                  key={tabItem.id}
-                  to={target}
-                  className={`asv2-topbar-tab${isActive ? " asv2-topbar-tab--active" : ""}`}
-                >
-                  {t(tabItem.labelFr, tabItem.labelEn)}
-                </Link>
-              );
-            })}
-          </nav>
-
+          {/* Desktop/tablet: the breadcrumb (or nothing on the homepage)
+              sits on the left; search lives at the right, in one place.
+              Mobile always shows the search bar (see max-width: 640px). */}
           {breadcrumb && (
             <nav className="asv2-topbar-breadcrumb" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
               {breadcrumb.flatMap((item, i) => {
@@ -504,9 +468,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               <span className="asv2-search-long">{t("Rechercher un outil…", "Search a tool…")}</span>
               <span className="asv2-search-short">{t("Rechercher", "Search")}</span>
             </span>
-            <kbd className="asv2-kbd">⌘K</kbd>
+            <kbd className="asv2-kbd">{shortcut}</kbd>
             <span className="asv2-search-action" aria-hidden>
-              <Search style={{ width: 15, height: 15 }} aria-hidden />
+              <Search size={16} aria-hidden />
             </span>
           </button>
 
@@ -517,11 +481,11 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               type="button"
               className="asv2-topbar-search"
               onClick={() => setSearchOpen(true)}
-              aria-label={t("Rechercher (⌘K)", "Search (⌘K)")}
+              aria-label={t(`Rechercher (${shortcut})`, `Search (${shortcut})`)}
             >
-              <Search style={{ width: 15, height: 15 }} aria-hidden />
+              <Search size={16} aria-hidden />
               <span className="asv2-topbar-search-label">{t("Rechercher", "Search")}</span>
-              <kbd className="asv2-kbd">⌘K</kbd>
+              <kbd className="asv2-kbd">{shortcut}</kbd>
             </button>
             <Link
               to={`${prefix}/ma-stack`}
@@ -529,7 +493,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               aria-label={cartCount > 0 ? `${cartLabel} · ${cartCount}` : cartLabel}
             >
               <span className="asv2-topbar-cta-icon">
-                <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
+                <Bookmark size={16} aria-hidden />
                 {cartCount > 0 && (
                   <span className="asv2-topbar-cta-badge" aria-hidden>
                     {cartCount > 99 ? "99+" : cartCount}
@@ -547,7 +511,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               aria-expanded={menuOpen}
               aria-label={t("Ouvrir le menu", "Open menu")}
             >
-              <Menu style={{ width: 18, height: 18 }} aria-hidden />
+              <Menu size={20} aria-hidden />
             </button>
           </div>
         </header>
@@ -578,7 +542,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
                 aria-current={isActive ? "page" : undefined}
               >
                 <span className="asv2-bn-indicator" aria-hidden />
-                <item.Icon style={{ width: 21, height: 21 }} />
+                <item.Icon size={20} aria-hidden />
                 <span className="asv2-bn-label">{t(item.labelFr, item.labelEn)}</span>
               </Link>
             );

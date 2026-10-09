@@ -71,6 +71,21 @@ describe("catalogSearch", () => {
     expect(hits.some((hit) => hit.id === "tool-rive")).toBe(true);
   });
 
+  it("ne tire pas les voisins à une faute près quand le mot exact trouve déjà (notion ≠ motion)", async () => {
+    const tool = (slug: string, label: string, searchText: string): CatalogSearchDocument => ({ id: `tool-${slug}`, kind: "tool", entityId: slug, slug, label, meta: "", searchText });
+    const engine = await createCatalogSearchEngine([
+      tool("notion", "Notion", "espace de travail notes"),
+      tool("notion-ai", "Notion AI", "assistant notion"),
+      tool("notionlytics", "Notionlytics", "statistiques notion"),
+      tool("motion", "Motion", "agenda automatique"),
+      tool("motion-bro", "Motion Bro", "presets motion design"),
+    ]);
+    const labels = (await engine.search("notion")).map((hit) => hit.label);
+    expect(labels).toEqual(expect.arrayContaining(["Notion", "Notion AI", "Notionlytics"]));
+    expect(labels).not.toContain("Motion");
+    expect(labels).not.toContain("Motion Bro");
+  });
+
   it("ne confond pas un sigle court avec un mot voisin (crm ≠ .com, ia ≠ .io)", async () => {
     const engine = await createCatalogSearchEngine([
       { id: "tool-monday", kind: "tool", entityId: "monday", slug: "monday", label: "Monday.com", meta: "Projet", searchText: "work management", category: "Gestion de projet" },

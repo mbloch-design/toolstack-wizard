@@ -1,6 +1,7 @@
 import { Link } from "@/lib/routerLinks";
 import { NEED_UNIVERSES } from "@/data/needUniverses";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
+import { HOME_COMPARISONS } from "@/data/homeComparisons";
 import { displayText } from "@/lib/typography";
 import { REDIRECTED_TOOL_SLUGS } from "@/lib/redirectedTools";
 import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode } from "react";
@@ -42,10 +43,6 @@ import HOME_POSTS from "@/data/home-posts-index.json";
    homepage only, so global tool descriptions stay untouched. */
 
 // "Lequel garder ?" shelf: existing comparison pages a freelancer meets first.
-const HOME_COMPARISONS = [
-  "chatgpt-vs-claude", "notion-vs-clickup", "asana-vs-trello", "notion-vs-obsidian",
-  "getresponse-vs-brevo", "engagebay-vs-hubspot", "chatgpt-vs-perplexity", "github-copilot-vs-cursor",
-];
 
 /* Tools we're watching — a hand-picked, opinionated shortlist rather than
    a "featured" flag nobody outside the team can decode. Every entry carries

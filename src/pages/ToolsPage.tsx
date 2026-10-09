@@ -4,7 +4,7 @@ import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, type ToolSummary } from "@/hooks/useSupabaseData";
 import { ChevronRight, Filter, Search, X } from "@/lib/icons";
-import { compareByDemand, formatFacetLabel, getToolSearchText, hasFreePlan, isPaid, knownPrice, normalizeToolText, toolFacets } from "@/lib/catalogFilters";
+import { compareByDemand, formatFacetLabel, getToolSearchText, hasFreePlan, isPaidOnly, knownPrice, normalizeToolText, toolFacets } from "@/lib/catalogFilters";
 import { toolTagline } from "@/data/toolTaglines";
 import { CATALOG_NEEDS } from "@/data/catalogNeeds";
 import { activePlacements, type CatalogPlacement } from "@/data/catalogPlacements";
@@ -120,7 +120,7 @@ const ToolsPage = () => {
       if (browsedCategoryId && tool.categoryId !== browsedCategoryId) return false;
       if (!inNeed(tool)) return false;
       if (priceFilter === "free" && !hasFreePlan(tool)) return false;
-      if (priceFilter === "paid" && !isPaid(tool)) return false;
+      if (priceFilter === "paid" && !isPaidOnly(tool)) return false;
       if (!search) return true;
       const category = categoryById.get(tool.categoryId);
       const categoryLabel = category
@@ -204,7 +204,7 @@ const ToolsPage = () => {
       const matchTags = selectedTags.every((tag) => toolTags.includes(tag));
       const matchPrice =
         priceFilter === "free" ? hasFreePlan(tool) :
-        priceFilter === "paid" ? isPaid(tool) :
+        priceFilter === "paid" ? isPaidOnly(tool) :
         true;
       return matchSearch && matchCat && matchTags && matchPrice;
     });
@@ -505,7 +505,7 @@ const ToolsPage = () => {
                     {([
                       { id: "all", label: t("Tous", "All") },
                       { id: "free", label: t("Plan gratuit", "Free plan") },
-                      { id: "paid", label: t("Payant", "Paid") },
+                      { id: "paid", label: t("Payant uniquement", "Paid only") },
                     ] as Array<{ id: PriceFilter; label: string }>).map((option) => (
                       <button
                         key={option.id}
@@ -664,7 +664,7 @@ const ToolsPage = () => {
                   <div className="tt-active-filters" aria-label={t("Filtres actifs", "Active filters") as string}>
                     {priceFilter !== "all" && (
                       <button type="button" className="tt-active-chip" onClick={() => applyPrice("all")}>
-                        {priceFilter === "free" ? t("Plan gratuit", "Free plan") : t("Payant", "Paid")}
+                        {priceFilter === "free" ? t("Plan gratuit", "Free plan") : t("Payant uniquement", "Paid only")}
                         <X size={14} aria-hidden />
                       </button>
                     )}

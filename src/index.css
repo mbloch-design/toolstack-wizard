@@ -411,13 +411,13 @@
   @media (max-width: 560px) {
     .analytics-consent {
       right: 0;
-      bottom: 0;
+      bottom: calc(66px + env(safe-area-inset-bottom));
       width: 100%;
       max-height: min(48vh, 360px);
       flex-direction: column;
       align-items: stretch;
       gap: 12px;
-      padding: 16px 16px calc(16px + env(safe-area-inset-bottom));
+      padding: 16px;
       border-right: 0;
       border-bottom: 0;
       border-left: 0;
@@ -427,6 +427,11 @@
     .analytics-consent__copy p { max-width: 60ch; }
     .analytics-consent__actions { flex-direction: row; }
     .analytics-consent__actions button { flex: 1; min-height: 40px; }
+  }
+  /* Barre d'onglets du bas (jusqu'à 640 px) : le bandeau se pose au-dessus
+     au lieu de la couvrir. */
+  @media (min-width: 561px) and (max-width: 640px) {
+    .analytics-consent { bottom: calc(78px + env(safe-area-inset-bottom)); }
   }
 }
 @layer components {
@@ -17221,298 +17226,312 @@
 }
 
 @layer components {
+  /* Recherche globale (refonte du 9 oct. 2026) : une colonne façon Spotlight,
+     posée vers le haut de l'écran. Avant la frappe elle guide (exemples,
+     besoins, duels, stacks), pendant la frappe elle range par type. */
   .gs-overlay {
     position: fixed;
     inset: 0;
-    z-index: 200;
-    display: grid;
-    place-items: center;
-    padding: var(--space-lg);
-    background: hsl(var(--foreground) / 0.42);
-    backdrop-filter: blur(10px);
+    z-index: 1100;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: min(12vh, 120px) var(--space-lg) var(--space-lg);
+    background: color-mix(in srgb, var(--color-text-strong) 32%, transparent);
+    backdrop-filter: blur(8px);
   }
-
+  /* Une seule surface de carte, chaude comme la palette du site (#F6F5F4,
+     survol #EDEBE9) ; en sombre, un cran au-dessus du fond du dialogue. */
   .gs-dialog {
-    width: min(920px, calc(100vw - 64px));
-    height: min(660px, calc(100vh - 64px));
+    --gs-fill: var(--color-bg-warm);
+    --gs-fill-hover: var(--color-surface-warm);
+    display: flex;
+    flex-direction: column;
+    width: min(720px, 100%);
+    max-height: min(720px, calc(100dvh - min(12vh, 120px) - var(--space-lg)));
     overflow: hidden;
-    border: 1px solid hsl(var(--border));
-    border-radius: var(--radius-lg);
-    background: hsl(var(--background));
-    box-shadow: 0 20px 64px hsl(var(--foreground) / 0.16);
-    animation: gs-enter 180ms ease-out both;
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-xl);
+    background: var(--color-surface);
+    box-shadow: 0 24px 64px color-mix(in srgb, var(--color-text-strong) 18%, transparent);
+    animation: gs-enter 180ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 
   .gs-searchbar {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    display: flex;
     align-items: center;
     gap: var(--space-sm);
-    min-height: 68px;
-    padding: 0 var(--space-lg);
-    color: hsl(var(--foreground) / 0.64);
+    flex: none;
+    min-height: 60px;
+    padding: 0 var(--space-sm) 0 var(--space-lg);
+    border-bottom: 1px solid var(--color-border-soft);
+    color: var(--color-text-meta);
   }
-
-  .gs-searchbar > svg {
-    width: 20px;
-    height: 20px;
-    stroke-width: 1.5;
-  }
-
+  .gs-searchbar > svg { flex: none; width: 20px; height: 20px; }
   .gs-searchbar input {
+    flex: 1;
     min-width: 0;
     border: 0;
     outline: 0;
     background: transparent;
-    color: hsl(var(--foreground));
+    color: var(--color-text-strong);
     font-family: var(--font-ui);
-    font-size: clamp(17px, 1.35vw, 19px);
-    font-weight: 420;
-    line-height: 1.3;
-    letter-spacing: -0.018em;
+    font-size: 18px;
+    font-weight: 450;
+    letter-spacing: -0.015em;
   }
-
-  .gs-searchbar input::placeholder { color: hsl(var(--foreground) / 0.58); }
-
-  .gs-icon-button {
-    display: grid;
-    width: 32px;
-    height: 32px;
-    place-items: center;
-    border: 0;
-    border-radius: var(--radius-pill);
-    background: transparent;
-    color: hsl(var(--foreground) / 0.64);
-    transition: background-color 140ms ease, color 140ms ease;
-  }
-
-  .gs-icon-button:hover { background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
-  .gs-icon-button svg { width: 18px; height: 18px; stroke-width: 1.5; }
-
-  .gs-explorer {
-    display: grid;
-    grid-template-columns: 168px minmax(0, 1fr);
-    height: calc(100% - 68px);
-  }
-
-  .gs-nav {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2xs);
-    padding: var(--space-lg) var(--space-md);
-  }
-
-  .gs-nav-label {
-    margin: 0 0 var(--space-sm) var(--space-sm);
-    color: hsl(var(--foreground) / 0.62);
-    font-size: 12px;
-    font-weight: 620;
-    letter-spacing: 0.075em;
-    text-transform: uppercase;
-  }
-
-  .gs-nav button {
-    min-height: 40px;
-    padding: 0 var(--space-sm);
+  .gs-searchbar input::placeholder { color: var(--color-text-meta); }
+  .gs-clear {
+    flex: none;
+    min-height: 32px;
+    padding: 0 var(--space-xs);
     border: 0;
     border-radius: var(--radius-sm);
     background: transparent;
-    color: hsl(var(--foreground) / 0.7);
-    text-align: left;
-    font-size: 15px;
-    font-weight: 450;
-    line-height: 1.35;
-    letter-spacing: -0.012em;
-    transition: background-color 140ms ease, color 140ms ease;
+    color: var(--color-text-meta);
+    font: 500 13px/1 var(--font-ui);
+    cursor: pointer;
   }
-
-  .gs-nav button:hover { color: hsl(var(--foreground)); }
-  .gs-nav button.is-active { background: hsl(var(--secondary)); color: hsl(var(--foreground)); }
-
-  .gs-content {
-    min-width: 0;
-    overflow: hidden;
-    padding: var(--space-lg) var(--space-lg) var(--space-xl);
-  }
-
-  .gs-dashboard { display: grid; gap: var(--space-lg); }
-
-  .gs-section-title {
-    margin: 0 0 var(--space-md);
-    color: hsl(var(--foreground));
-    font-family: var(--font-ui);
-    font-size: 17px;
-    font-weight: 560;
-    line-height: 1.3;
-    letter-spacing: -0.018em;
-  }
-
-  .gs-logo-grid {
+  .gs-clear:hover { color: var(--color-text-strong); }
+  .gs-icon-button {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: var(--space-xs);
+    flex: none;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--color-text-meta);
+    cursor: pointer;
+    transition: background-color 140ms ease-out, color 140ms ease-out;
+  }
+  .gs-icon-button:hover { background: var(--gs-fill); color: var(--color-text-strong); }
+  .gs-icon-button svg { width: 18px; height: 18px; }
+
+  .gs-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+
+  /* Libellé de section : le surtitre du site (--tt-size-kicker, capitales),
+     comme « PRÉFÉRENCES » dans le menu mobile. */
+  .gs-label {
+    margin: 0 0 var(--space-xs);
+    color: var(--color-text-meta);
+    font: 600 var(--tt-size-kicker)/1.2 var(--font-ui);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
 
-  .gs-logo-grid.is-compact { grid-template-columns: repeat(6, minmax(56px, 1fr)); }
-
-  .gs-tool-tile,
-  .gs-category-tile {
-    display: flex;
-    min-width: 0;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-xs);
-    min-height: 100px;
-    padding: var(--space-xs);
-    border: 1px solid transparent;
+  /* Avant la frappe : le corps passe sur le fond chaud du site et les
+     éléments deviennent des cartes blanches, légèrement surélevées. Le
+     contraste naît de la profondeur, la couleur des vrais logos ; chaque
+     section a sa forme (pastilles, tuiles, face-à-face, lignes). */
+  .gs-body:has(.gs-guide) { background: var(--gs-fill); }
+  .gs-guide { display: grid; gap: var(--space-lg); padding: var(--space-md) var(--space-lg) var(--space-lg); }
+  .gs-card {
     border-radius: var(--radius-md);
-    background: hsl(var(--secondary) / 0.58);
-    color: hsl(var(--foreground));
-    font-size: 14px;
-    font-weight: 520;
-    line-height: 1.3;
-    letter-spacing: -0.01em;
-    transition: border-color 150ms ease, background-color 150ms ease, transform 150ms ease;
+    background: var(--color-surface);
+    box-shadow: 0 0 0 1px var(--color-border-soft), 0 1px 2px color-mix(in srgb, var(--color-text-strong) 6%, transparent);
+    transition: box-shadow 160ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-
-  .gs-tool-tile { flex-direction: column; }
-  .gs-tool-tile:hover, .gs-category-tile:hover { border-color: hsl(var(--border)); background: hsl(var(--card)); }
-  .gs-logo-grid.is-compact .gs-tool-tile { min-height: 76px; padding: var(--space-2xs); font-size: 13px; }
-
-  .gs-category-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: var(--space-xs);
+  .gs-chips { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+  .gs-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2xs);
+    min-height: 32px;
+    padding: 0 var(--space-sm);
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: var(--color-surface);
+    box-shadow: 0 0 0 1px var(--color-border-soft);
+    color: var(--color-text-strong);
+    font: 500 var(--tt-size-card-body)/1 var(--font-ui);
+    text-decoration: none;
+    cursor: pointer;
+    transition: box-shadow 140ms ease-out, background-color 140ms ease-out;
   }
+  .gs-chip:hover, .gs-chip:focus-visible { box-shadow: 0 0 0 1px var(--color-muted); }
+  .gs-chip svg { width: 14px; height: 14px; color: var(--color-text-meta); }
 
-  .gs-category-tile { flex-direction: column; text-align: center; }
-  .gs-category-tile svg { width: 24px; height: 24px; color: hsl(var(--foreground) / 0.68); stroke-width: 1.5; }
-
-  .gs-collection-grid, .gs-article-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-sm);
-  }
-
-  .gs-collection-card, .gs-article-card {
+  /* Besoins : trois logos des outils les plus demandés, puis le libellé. */
+  .gs-needs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+  .gs-need {
     display: flex;
-    min-width: 0;
-    min-height: 140px;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    height: 100%;
     padding: var(--space-sm);
-    border: 1px solid transparent;
-    border-radius: var(--radius-md);
-    background: hsl(var(--secondary) / 0.4);
-    color: hsl(var(--foreground));
-    text-align: left;
-    transition: background-color 150ms ease, transform 150ms ease;
+    color: var(--color-text-strong);
+    text-decoration: none;
   }
+  .gs-need-logos { display: flex; min-height: 22px; }
+  .gs-need-logo { display: grid; border-radius: var(--radius-sm); box-shadow: 0 0 0 2px var(--color-surface); transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .gs-need-logo + .gs-need-logo { margin-left: -5px; }
+  .gs-need:is(:hover, :focus-visible) .gs-need-logo:nth-child(1) { transform: translateX(-2px) rotate(-6deg); }
+  .gs-need:is(:hover, :focus-visible) .gs-need-logo:nth-child(3) { transform: translateX(2px) rotate(6deg); }
+  .gs-need-label { font: 600 var(--tt-size-card-body)/1.2 var(--font-ui); text-wrap: balance; }
 
-  .gs-collection-card:hover, .gs-article-card:hover { border-color: hsl(var(--border)); background: hsl(var(--secondary) / 0.68); }
-  .gs-collection-card strong, .gs-article-card strong { margin-top: auto; font-size: 15px; font-weight: 550; line-height: 1.34; letter-spacing: -0.012em; }
-  .gs-collection-card > span, .gs-article-card > span { display: flex; align-items: center; gap: var(--space-2xs); margin-top: var(--space-2xs); color: hsl(var(--foreground) / 0.68); font-size: 13px; line-height: 1.4; }
-  .gs-collection-card > span svg { width: 14px; height: 14px; }
-  .gs-article-card { padding: var(--space-2xs); }
-  .gs-article-cover {
-    display: grid;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    place-items: center;
-    overflow: hidden;
-    border-radius: calc(var(--radius-md) - 4px);
-    background: hsl(var(--secondary));
-    color: hsl(var(--foreground) / 0.68);
-  }
-  .gs-article-cover img { width: 100%; height: 100%; object-fit: cover; }
-  .gs-article-cover svg { width: 22px; height: 22px; stroke-width: 1.5; }
-  .gs-article-card strong { margin-top: var(--space-xs); padding-inline: var(--space-2xs); }
-  .gs-article-card > .gs-article-meta { margin: var(--space-3xs) 0 var(--space-2xs); padding-inline: var(--space-2xs); }
-  .gs-logo-stack { display: flex; }
-  .gs-logo-stack > * + * { margin-left: -7px; }
-  .gs-collection-grid.is-compact .gs-collection-card { min-height: 116px; }
-  .gs-article-grid.is-compact .gs-article-card { min-height: 0; }
-
-  .gs-results {
-    height: calc(100% - 68px);
-    overflow-y: auto;
-    padding: var(--space-sm) var(--space-xl) var(--space-xl);
-  }
-
-  .gs-result {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    width: 100%;
+  /* Duels : le point focal. Deux grands logos en face-à-face, inclinés,
+     qui s'écartent au survol comme les cartes « Lequel garder ? ». */
+  .gs-duels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+  .gs-duel {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: var(--space-md);
-    min-height: 76px;
-    padding: 12px var(--space-sm);
+    gap: var(--space-sm);
+    padding: var(--space-md) var(--space-xs) var(--space-sm);
+    color: var(--color-text-strong);
+    text-align: center;
+    text-decoration: none;
+  }
+  .gs-duel-logos { position: relative; display: flex; align-items: center; }
+  .gs-duel-logo { display: grid; border-radius: var(--radius-md); box-shadow: 0 0 0 3px var(--color-surface), 0 4px 10px color-mix(in srgb, var(--color-text-strong) 10%, transparent); transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .gs-duel-logo--a { transform: rotate(-7deg); }
+  .gs-duel-logo--b { margin-left: -8px; transform: rotate(6deg); }
+  .gs-duel-vs {
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    z-index: 1;
+    padding: 1px 6px;
+    border-radius: var(--radius-pill);
+    background: var(--color-text-strong);
+    color: var(--color-surface);
+    font: 700 10px/1.4 var(--font-ui);
+    letter-spacing: 0.02em;
+    transform: translateX(-50%);
+    transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .gs-duel:is(:hover, :focus-visible) .gs-duel-logo--a { transform: translateX(-6px) rotate(-11deg); }
+  .gs-duel:is(:hover, :focus-visible) .gs-duel-logo--b { transform: translateX(6px) rotate(10deg); }
+  .gs-duel:is(:hover, :focus-visible) .gs-duel-vs { transform: translateX(-50%) scale(1.08); }
+  .gs-duel-name { max-width: 100%; overflow: hidden; font: 600 13px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+  .gs-duel-name span { color: var(--color-text-meta); font-weight: 400; }
+
+  /* Stacks : lignes, le dossier iOS de l'accueil en tête. */
+  .gs-stacks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+  .gs-stack, .gs-mystack {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    min-height: 56px;
+    padding: var(--space-xs) var(--space-sm);
+    color: var(--color-text-strong);
+    text-decoration: none;
+  }
+  .gs-stack-folder {
+    display: grid;
+    flex: none;
+    grid-template-columns: repeat(2, 18px);
+    gap: var(--space-2xs);
+    padding: 5px;
+    border-radius: var(--radius-md);
+    background: var(--gs-fill);
+  }
+  .gs-stack-app { display: grid; }
+
+  /* Survol commun : la carte se soulève d'un pixel, l'ombre s'allonge. */
+  .gs-card:is(:hover, :focus-visible) {
+    box-shadow: 0 0 0 1px var(--color-border-soft), 0 6px 16px color-mix(in srgb, var(--color-text-strong) 10%, transparent);
+    transform: translateY(-1px);
+  }
+
+  /* Pendant la frappe */
+  .gs-results { padding: var(--space-md) var(--space-xs) var(--space-xs); }
+  .gs-group + .gs-group { margin-top: var(--space-md); }
+  .gs-group .gs-label { margin: 0 var(--space-md) var(--space-2xs); }
+  .gs-result {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    min-height: 48px;
+    padding: var(--space-xs) var(--space-md);
     border: 0;
     border-radius: var(--radius-md);
     background: transparent;
-    color: hsl(var(--foreground));
+    color: var(--color-text-strong);
     text-align: left;
+    cursor: pointer;
   }
-
-  .gs-result:hover, .gs-result.is-active { background: hsl(var(--secondary)); }
-  .gs-result > span:not(.gs-result-icon) { display: flex; min-width: 0; flex-direction: column; gap: 4px; }
-  .gs-result strong { overflow: hidden; font-size: 15px; font-weight: 540; line-height: 1.25; letter-spacing: -0.014em; text-overflow: ellipsis; white-space: nowrap; }
-  .gs-result small { color: hsl(var(--foreground) / 0.68); font-size: 13px; line-height: 1.4; }
-  .gs-result > svg { width: 18px; height: 18px; color: hsl(var(--foreground) / 0.68); }
-  .gs-result-icon { display: grid; width: 42px; height: 42px; place-items: center; border-radius: var(--radius-md); background: hsl(var(--secondary)); }
-  .gs-result-icon svg { width: 20px; height: 20px; }
-
+  .gs-result.is-active { background: var(--gs-fill); }
+  .gs-result-icon {
+    display: grid;
+    flex: none;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    border-radius: var(--radius-sm);
+    background: var(--gs-fill);
+    color: var(--color-text-strong);
+  }
+  .gs-result.is-active .gs-result-icon { background: var(--color-surface); }
+  .gs-result-icon svg { width: 16px; height: 16px; }
+  .gs-result-text { display: grid; flex: 1; min-width: 0; gap: 2px; }
+  .gs-result-text strong { overflow: hidden; font: 600 var(--tt-size-card-body)/1.25 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+  .gs-result-text small { overflow: hidden; color: var(--color-text-meta); font: 400 12px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+  .gs-result-arrow { flex: none; width: 16px; height: 16px; color: var(--color-text-meta); opacity: 0; transition: opacity 120ms ease-out, transform 120ms ease-out; transform: translateX(-4px); }
+  /* Même règle partout : la flèche apparaît sur l'élément visé (survol,
+     focus clavier, option active), jamais en permanence. */
+  .gs-result.is-active .gs-result-arrow,
+  :is(.gs-duel, .gs-stack, .gs-mystack):is(:hover, :focus-visible) .gs-result-arrow { opacity: 1; transform: none; }
   .gs-view-all {
     display: flex;
-    width: 100%;
     align-items: center;
-    justify-content: center;
-    gap: var(--space-xs);
-    min-height: 58px;
-    margin-top: var(--space-sm);
-    border: 1px solid hsl(var(--border));
-    border-radius: var(--radius-pill);
+    gap: var(--space-2xs);
+    width: 100%;
+    min-height: 44px;
+    margin-top: var(--space-xs);
+    padding: 0 var(--space-md);
+    border: 0;
+    border-top: 1px solid var(--color-border-soft);
     background: transparent;
-    color: hsl(var(--foreground));
-    font-size: 13px;
-    font-weight: 540;
-    letter-spacing: -0.01em;
+    color: var(--color-text-secondary);
+    font: 500 13px/1.2 var(--font-ui);
+    text-align: left;
+    cursor: pointer;
   }
+  .gs-view-all:hover { color: var(--color-text-strong); }
+  .gs-view-all svg { width: 14px; height: 14px; }
 
-  .gs-view-all svg { width: 16px; height: 16px; }
-  .gs-empty { display: flex; height: 100%; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-xs); color: hsl(var(--foreground) / 0.68); }
-  .gs-empty svg { width: 32px; height: 32px; stroke-width: 1.5; }
-  .gs-empty strong { color: hsl(var(--foreground)); font-size: 20px; }
+  .gs-empty { display: grid; gap: var(--space-xs); padding: var(--space-lg); }
+  .gs-empty-title { margin: 0; color: var(--color-text-strong); font: 600 var(--tt-size-card-title)/1.3 var(--font-ui); }
+  .gs-empty-text { margin: 0 0 4px; color: var(--color-text-meta); font: 400 13px/1.4 var(--font-ui); }
+
+  .dark .gs-body:has(.gs-guide) { background: var(--color-bg); }
+  .dark .gs-dialog { --gs-fill: var(--color-surface-warm); --gs-fill-hover: color-mix(in srgb, var(--color-text-strong) 12%, var(--color-surface)); }
+
+  .gs-dialog :where(a, button, input):focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
+  .gs-searchbar input:focus-visible { outline: 0; }
 
   @keyframes gs-enter {
-    from { opacity: 0; transform: translateY(10px) scale(0.99); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+    from { opacity: 0; transform: translateY(-8px) scale(0.985); }
+    to { opacity: 1; transform: none; }
   }
-
-  @media (max-width: 980px) {
-    .gs-dialog { width: calc(100vw - 32px); height: min(680px, calc(100vh - 32px)); }
-    .gs-searchbar { min-height: 64px; padding: 0 var(--space-md); }
-    .gs-explorer { display: flex; height: calc(100% - 64px); flex-direction: column; }
-    .gs-nav { flex: 0 0 auto; flex-direction: row; overflow-x: auto; padding: var(--space-sm) var(--space-md); border-right: 0; border-bottom: 1px solid hsl(var(--border)); scrollbar-width: none; }
-    .gs-nav::-webkit-scrollbar { display: none; }
-    .gs-nav-label { display: none; }
-    .gs-nav button { min-width: max-content; min-height: 42px; padding: 0 var(--space-sm); font-size: 14px; }
-    .gs-content { padding: var(--space-md); }
-    .gs-logo-grid, .gs-category-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .gs-logo-grid.is-compact { grid-template-columns: repeat(4, minmax(86px, 1fr)); }
-    .gs-collection-grid, .gs-article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .gs-results { height: calc(100% - 64px); }
+  /* Sortie : plus courte que l'entrée, accélérée (ease-in). */
+  @keyframes gs-leave { to { opacity: 0; transform: translateY(-4px) scale(0.99); } }
+  @keyframes gs-fade-out { to { opacity: 0; } }
+  .gs-overlay.is-closing { animation: gs-fade-out 120ms ease-in both; }
+  .gs-overlay.is-closing .gs-dialog { animation: gs-leave 120ms ease-in both; }
+  @media (prefers-reduced-motion: reduce) {
+    .gs-dialog, .gs-overlay.is-closing, .gs-overlay.is-closing .gs-dialog { animation: none; }
+    .gs-result-arrow, .gs-need-icon, .gs-duel-logo { transition: none; }
   }
 
   @media (max-width: 640px) {
     .gs-overlay { padding: 0; }
-    .gs-dialog { width: 100vw; height: 100dvh; border: 0; border-radius: 0; }
-    .gs-searchbar { grid-template-columns: auto minmax(0, 1fr) auto auto; }
+    .gs-dialog { width: 100%; max-height: none; height: 100dvh; border: 0; border-radius: 0; }
+    .gs-searchbar { padding-left: var(--space-md); }
     .gs-searchbar input { font-size: 17px; }
-    .gs-logo-grid, .gs-category-grid, .gs-collection-grid, .gs-article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .gs-logo-grid.is-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .gs-tool-tile, .gs-category-tile { min-height: 112px; }
-    .gs-collection-card, .gs-article-card { min-height: 150px; padding: var(--space-md); }
+    .gs-guide { padding: var(--space-md) var(--space-md) var(--space-lg); }
+    .gs-stacks { grid-template-columns: minmax(0, 1fr); }
+    .gs-duels, .gs-needs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    /* Cibles tactiles de 44 px au doigt. */
+    .gs-icon-button, .gs-clear { min-width: 44px; min-height: 44px; }
+    .gs-icon-button { width: 44px; height: 44px; }
+    .gs-chip { min-height: 44px; padding: 0 var(--space-md); }
   }
 }
 
@@ -24996,24 +25015,9 @@ section[id]:not(.cp-guide-section) {
   margin-bottom: 10px;
   padding-inline: 7px;
 }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top {
-  position: relative;
-  justify-content: center;
-  height: 56px;
-  /* Reserves room for the search row, absolutely positioned right below
-     (see .asv2-sidebar-top-actions) so it doesn't overlap the nav list. */
-  margin-bottom: 38px;
-  padding-inline: 0;
-}
 /* Collapsed rail: the logo alone shares the topbar's 56px baseline. Search
    moves to its own row right below instead of stacking inside that same
    row — stacking pushed the logo's vertical center off the topbar's. */
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions {
-  position: absolute;
-  top: 56px;
-  left: 50%;
-  transform: translateX(-50%);
-}
 .asv2-logo {
   display: flex;
   align-items: center;
@@ -25046,24 +25050,6 @@ section[id]:not(.cp-guide-section) {
   align-items: center;
   gap: 2px;
   flex-shrink: 0;
-}
-.asv2-sidebar-search-btn {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  border: 0;
-  border-radius: var(--radius-md);
-  background: transparent;
-  color: var(--color-muted);
-  cursor: pointer;
-  transition: background 140ms ease-out, color 140ms ease-out;
-}
-.asv2-sidebar-search-btn:hover,
-.asv2-sidebar-search-btn:focus-visible {
-  background: var(--color-surface-soft);
-  color: var(--color-text);
 }
 
 .asv2-topbar {
@@ -25152,12 +25138,10 @@ section[id]:not(.cp-guide-section) {
   padding: 3px 7px;
 }
 
-/* Homepage-only quick launch tabs and the per-page breadcrumb both take
-   over the search bar's slot — but only from the tablet breakpoint up.
-   Mobile always keeps the plain search bar (see max-width: 640px below);
-   data-topbar-mode on .asv2-topbar (set in AppShellV2) picks which of the
-   three elements below is visible at desktop widths. */
-.asv2-topbar-tabs,
+/* The per-page breadcrumb takes over the search bar's slot from the tablet
+   breakpoint up; the homepage leaves it empty. Mobile always keeps the plain
+   search bar (see max-width: 640px below). data-topbar-mode on .asv2-topbar
+   (set in AppShellV2) picks what shows at desktop widths. */
 .asv2-topbar-breadcrumb {
   display: none;
 }
@@ -25171,47 +25155,14 @@ section[id]:not(.cp-guide-section) {
   .asv2-topbar[data-topbar-mode="pending"] .asv2-search {
     display: none;
   }
-  .asv2-topbar[data-topbar-mode="home"] .asv2-topbar-tabs {
-    display: flex;
-  }
   .asv2-topbar[data-topbar-mode="breadcrumb"] .asv2-topbar-breadcrumb {
     display: flex;
   }
 }
-.asv2-topbar-tabs {
-  align-items: center;
-  gap: 4px;
-  height: 100%;
-  overflow-x: auto;
-  scrollbar-width: none;
-}
-.asv2-topbar-tabs::-webkit-scrollbar { display: none; }
-.asv2-topbar-tab {
-  flex: 0 0 auto;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 4px;
-  border-bottom: 2px solid transparent;
-  color: color-mix(in srgb, var(--color-text) 62%, var(--color-muted));
-  font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 500;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: color 140ms ease-out, border-color 140ms ease-out;
-}
-.asv2-topbar-tab:hover {
-  color: var(--color-text);
-}
-.asv2-topbar-tab--active {
-  border-color: var(--color-text-strong);
-  color: var(--color-text-strong);
-}
 
 /* Non-home pages: the search bar's slot is taken over by the page's
    breadcrumb once it registers itself (src/contexts/TopbarBreadcrumbContext).
-   Full-text search stays one click away via the sidebar's search icon. */
+   Full-text search stays one click away via the topbar search button. */
 .asv2-topbar-breadcrumb {
   align-items: center;
   flex: 1 1 auto;
@@ -25343,24 +25294,31 @@ section[id]:not(.cp-guide-section) {
   justify-self: end;
 }
 
+/* « Ma stack » est une destination de navigation, pas le CTA de la page : un
+   seul style partout, au niveau des utilitaires. Le bouton plein reste à
+   l'action principale de chaque page (revue navigation, 9 oct. 2026). */
 .asv2-topbar-cta {
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
-  height: 32px;
+  height: 34px;
   gap: 8px;
   padding: 0 16px;
+  border: 1px solid var(--color-border-soft);
   border-radius: var(--radius-pill);
-  background: var(--color-text-strong);
-  color: var(--color-bg);
+  background: var(--color-surface);
+  color: var(--color-text);
   font-family: var(--font-ui);
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
-  transition: opacity 120ms ease-out;
+  transition: border-color 140ms ease-out, background-color 140ms ease-out;
   white-space: nowrap;
 }
-.asv2-topbar-cta:hover { opacity: 0.85; }
+.asv2-topbar-cta:hover {
+  border-color: var(--color-muted);
+  background: var(--color-surface-soft);
+}
 .asv2-topbar-cta-icon {
   position: relative;
   display: inline-flex;
@@ -25376,7 +25334,7 @@ section[id]:not(.cp-guide-section) {
   height: 15px;
   padding: 0 3px;
   border-radius: var(--radius-pill);
-  border: 1.5px solid var(--color-text-strong);
+  border: 1.5px solid var(--color-surface);
   background: var(--color-accent);
   color: #fff;
   font-family: var(--font-ui);
@@ -25384,25 +25342,6 @@ section[id]:not(.cp-guide-section) {
   font-weight: 700;
   line-height: 1;
 }
-.asv2-workspace:has(.td-tool-page) > .asv2-topbar .asv2-topbar-cta-badge {
-  border-color: var(--color-surface);
-}
-
-/* Sur une fiche outil, Ma stack est une destination de navigation et non le
-   CTA de conversion de la page. Le bouton plein est réservé à l'ajout dans la
-   sidebar ; l'accès global reprend donc le niveau visuel des utilitaires. */
-.asv2-workspace:has(.td-tool-page) > .asv2-topbar .asv2-topbar-cta {
-  border: 1px solid var(--color-border-soft);
-  background: var(--color-surface);
-  color: var(--color-text);
-  transition: border-color 140ms ease-out, background-color 140ms ease-out;
-}
-.asv2-workspace:has(.td-tool-page) > .asv2-topbar .asv2-topbar-cta:hover {
-  border-color: var(--color-muted);
-  background: var(--color-surface-soft);
-  opacity: 1;
-}
-
 .asv2-sidebar {
   position: relative;
   /* Au-dessus de l'espace de travail : les infobulles de la colonne réduite
@@ -25577,8 +25516,6 @@ section[id]:not(.cp-guide-section) {
   color: var(--color-text-strong);
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit {
-  justify-content: center;
-  gap: 0;
   padding-inline: 0;
   border-color: transparent;
 }
@@ -25587,7 +25524,6 @@ section[id]:not(.cp-guide-section) {
   border-color: color-mix(in srgb, var(--color-border-soft) 40%, var(--color-text));
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover {
-  background: transparent;
   border-color: transparent;
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover .asv2-nav-icon,
@@ -25702,10 +25638,6 @@ section[id]:not(.cp-guide-section) {
   justify-self: center;
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item > svg {
-  box-sizing: content-box;
-  width: 16px;
-  height: 16px;
-  padding: 8px;
   border-radius: var(--radius-md);
   transition: background 120ms ease-out, color 120ms ease-out;
 }
@@ -25798,31 +25730,13 @@ section[id]:not(.cp-guide-section) {
   opacity: 1;
   transform: translate(0, -50%);
 }
-.asv2-sidebar-resizer:focus-visible {
-  outline: none;
-}
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer {
-  position: absolute;
-  top: 0;
-  right: -10px;
-  width: 20px;
-  height: 100%;
-  border-radius: 0;
-  background: transparent;
   box-shadow: none;
-  cursor: e-resize;
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > span {
-  position: absolute;
   top: 50%;
   left: 50%;
-  width: 40px;
-  height: 40px;
   border-radius: var(--radius-md);
-  background: var(--color-surface);
-  box-shadow: 0 0 0 1px var(--color-border-soft), 0 8px 22px color-mix(in srgb, var(--color-text) 10%, transparent);
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.92);
   transition: opacity 140ms ease-out, transform 140ms ease-out;
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > b {
@@ -25831,7 +25745,6 @@ section[id]:not(.cp-guide-section) {
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:hover > span,
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible > span {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
 }
 
 @media (min-width: 901px) {
@@ -25909,8 +25822,6 @@ section[id]:not(.cp-guide-section) {
    the user's preference, which becomes visible again at the next breakpoint. */
 @media (min-width: 641px) and (max-width: 1180px) {
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar { width: 76px; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top { justify-content: center; padding-inline: 0; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-search-btn { display: none; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo-mark { display: block; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo-full { display: none !important; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-label,
@@ -33302,7 +33213,7 @@ img[data-logo-loading] {
   .asv2-topbar-menu:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
 }
 
-.asv2-mm { position: fixed; inset: 0; z-index: 400; }
+.asv2-mm { position: fixed; inset: 0; }
 .asv2-mm-backdrop {
   position: absolute; inset: 0; border: 0; padding: 0;
   background: color-mix(in srgb, #0F0F0F 32%, transparent);
@@ -33385,7 +33296,7 @@ img[data-logo-loading] {
 .asv2-currency-glyph {
   display: grid; place-items: center; flex: none;
   width: 18px; height: 18px; border: 1.5px solid currentColor; border-radius: 50%;
-  font-family: var(--font-ui); font-size: 10.5px; font-weight: 700; line-height: 1;
+  font-family: var(--font-ui); line-height: 1;
 }
 
 /* ══ US-NAV-01 : colonne réduite lisible sans survol ═══════════════════════
@@ -33405,7 +33316,6 @@ img[data-logo-loading] {
   max-width: 100%;
   overflow: hidden;
   font-family: var(--font-ui);
-  font-size: 10.5px;
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.01em;
@@ -33427,7 +33337,6 @@ img[data-logo-loading] {
     max-width: 100%;
     overflow: hidden;
     font-family: var(--font-ui);
-    font-size: 10.5px;
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.01em;
@@ -33482,9 +33391,8 @@ img[data-logo-loading] {
 .asv2-currency-glyph { font-size: 10px; font-weight: 600; }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top { position: relative; justify-content: center; height: 56px; margin-bottom: 44px; padding-inline: 0; }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { position: absolute; top: 56px; left: 50%; transform: translateX(-50%); }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-search-btn { display: none; }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer { position: relative; top: auto; right: auto; width: 36px; height: 32px; border-radius: var(--radius-md); background: transparent; color: var(--color-muted); cursor: pointer; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > span { position: static; width: auto; height: auto; opacity: 1; transform: none; box-shadow: none; background: transparent; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > span { opacity: 1; box-shadow: none; background: transparent; }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:hover, .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible { background: var(--color-surface-soft); color: var(--color-text); }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item svg { width: 18px; height: 18px; }
@@ -33493,13 +33401,12 @@ img[data-logo-loading] {
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit::after { display: none; }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover, .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:focus-visible { background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface)); }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-icon { width: auto; height: auto; border: 0; background: transparent; box-shadow: none; }
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-label { display: block; font-family: var(--font-ui); font-size: 10.5px; font-weight: 500; line-height: 1.1; text-align: center; white-space: nowrap; }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-label { display: block; font-family: var(--font-ui); font-weight: 500; line-height: 1.1; text-align: center; white-space: nowrap; }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-submit-long { display: none; }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-submit-short { display: inline; }
 @media (min-width: 641px) and (max-width: 1180px) {
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top { position: relative; justify-content: center; height: 56px; margin-bottom: 44px; padding-inline: 0; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { position: absolute; top: 56px; left: 50%; transform: translateX(-50%); }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-search-btn { display: none; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer { position: relative; top: auto; right: auto; width: 36px; height: 32px; border-radius: var(--radius-md); background: transparent; color: var(--color-muted); cursor: pointer; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer > span { position: static; width: auto; height: auto; opacity: 1; transform: none; box-shadow: none; background: transparent; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:hover, .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:focus-visible { background: var(--color-surface-soft); color: var(--color-text); }
@@ -33510,24 +33417,18 @@ img[data-logo-loading] {
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit::after { display: none; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit:hover, .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit:focus-visible { background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface)); }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-icon { width: auto; height: auto; border: 0; background: transparent; box-shadow: none; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-label { display: block; font-family: var(--font-ui); font-size: 10.5px; font-weight: 500; line-height: 1.1; text-align: center; white-space: nowrap; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-label { display: block; font-family: var(--font-ui); font-weight: 500; line-height: 1.1; text-align: center; white-space: nowrap; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-submit-long { display: none; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-submit-short { display: inline; }
 
   /* Dépliée par-dessus le contenu, qui garde sa place (pas de saut). */
   .asv2-root--rail-open { padding-left: 76px; }
-  .asv2-root--rail-open .asv2-sidebar {
-    position: absolute; top: 0; bottom: 0; left: 0; z-index: 300; width: 228px;
-    box-shadow: 12px 0 40px color-mix(in srgb, #0F0F0F 14%, transparent);
-    animation: asv2-rail-in 180ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  }
   .asv2-rail-backdrop {
     position: fixed; inset: 0; z-index: 290; padding: 0; border: 0;
     background: color-mix(in srgb, #0F0F0F 10%, transparent);
   }
 }
 .asv2-rail-backdrop { display: none; }
-@media (min-width: 641px) and (max-width: 1180px) { .asv2-rail-backdrop { display: block; } }
 @keyframes asv2-rail-in { from { transform: translateX(-12px); opacity: 0.7; } to { transform: none; opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .asv2-root--rail-open .asv2-sidebar { animation: none; } }
 /* Barre dépliée : le symbole de devise prend la taille et l'axe des icônes voisines. */
@@ -33541,7 +33442,7 @@ img[data-logo-loading] {
    se déplier sur tablette. */
 @media (hover: hover) {
   .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top { margin-bottom: 10px; }
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { top: 50%; z-index: 2; transform: translate(-50%, -50%); }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { z-index: 2; }
   .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-logo { transition: opacity 120ms ease-out; }
   .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer { background: var(--color-surface); opacity: 0; transition: opacity 120ms ease-out; }
   .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:hover .asv2-sidebar-resizer,
@@ -33551,7 +33452,7 @@ img[data-logo-loading] {
 }
 @media (hover: hover) and (min-width: 641px) and (max-width: 1180px) {
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top { margin-bottom: 10px; }
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { top: 50%; z-index: 2; transform: translate(-50%, -50%); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { z-index: 2; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo { transition: opacity 120ms ease-out; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer { background: var(--color-surface); opacity: 0; transition: opacity 120ms ease-out; }
   .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:hover .asv2-sidebar-resizer,
@@ -33678,6 +33579,115 @@ img[data-logo-loading] {
 /* Fermeture du menu mobile : même mouvement qu'à l'ouverture, en sens inverse. */
 .asv2-mm.is-closing .asv2-mm-backdrop { animation: asv2-mm-fade 160ms ease-in reverse both; }
 .asv2-mm.is-closing .asv2-mm-panel { animation: asv2-mm-slide-out 160ms ease-in both; pointer-events: none; }
+
+/* ══ Navigation, revue design du 9 oct. 2026 ═══════════════════════════════
+   Mesures Playwright à 1440, 1024 et 390 px. */
+
+/* Le haut de page suit le conteneur des pages (--layout-content et
+   --layout-gutter) : fil d'Ariane et contenu partent du même bord. */
+@media (min-width: 641px) {
+  .asv2-topbar {
+    padding-inline: max(var(--layout-gutter), calc((100% - var(--layout-content)) / 2 + var(--layout-gutter)));
+  }
+}
+
+/* Colonne réduite : la page active se distingue du survol. Avant, les deux
+   avaient la même pastille et le libellé actif restait en 500. */
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:not(.asv2-nav-item--active):hover .asv2-nav-icon,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:not(.asv2-nav-item--active):focus-visible .asv2-nav-icon {
+  background: color-mix(in srgb, var(--color-surface-soft) 56%, var(--color-surface));
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active .asv2-nav-icon {
+  background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface));
+  color: var(--color-text-strong);
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item--active .asv2-nav-label {
+  color: var(--color-text-strong);
+  font-weight: 650;
+}
+@media (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:not(.asv2-nav-item--active):hover .asv2-nav-icon,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:not(.asv2-nav-item--active):focus-visible .asv2-nav-icon {
+    background: color-mix(in srgb, var(--color-surface-soft) 56%, var(--color-surface));
+  }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item--active .asv2-nav-icon {
+    background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface));
+    color: var(--color-text-strong);
+  }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item--active .asv2-nav-label {
+    color: var(--color-text-strong);
+    font-weight: 650;
+  }
+}
+
+/* Colonne imposée (641 à 1 180 px) avec la préférence « déployée » : le fond
+   de l'entrée entière, propre à la barre large, doublait la pastille de
+   l'icône. Une seule pastille, comme dans la colonne réduite. */
+@media (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item:hover,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav-item--active {
+    background: transparent;
+    transform: none;
+  }
+}
+
+/* Libellés sous icône : 11 px partout (colonne réduite et barre du bas). */
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav .asv2-nav-item .asv2-nav-label,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit .asv2-nav-label { font-size: 11px; }
+@media (min-width: 641px) and (max-width: 1180px) {
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-nav .asv2-nav-item .asv2-nav-label,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-submit .asv2-nav-label { font-size: 11px; }
+}
+
+/* Menu mobile : il ne garde que les sous-niveaux, la ligne entière ouvre. */
+.asv2-mm-link--drill {
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.asv2-mm-link--drill svg { width: 20px; height: 20px; color: var(--color-muted); }
+.asv2-mm-link--drill > span { flex: 1; }
+
+/* Accueil : le champ de recherche occupe la place du fil d'Ariane, au bord du
+   contenu. Version de barre : hauteur et contour des boutons voisins, loupe
+   en tête, raccourci en bout ; plus de pastille de 48 px ni de rond noir. */
+@media (min-width: 641px) {
+  .asv2-topbar .asv2-search {
+    flex: 0 1 440px;
+    height: 36px;
+    min-width: 0;
+    gap: 8px;
+    padding: 0 6px 0 12px;
+    border: 1px solid var(--color-border-soft);
+    background: var(--color-surface);
+    color: var(--color-muted);
+    font-size: 14px;
+    font-weight: 500;
+    transition: border-color 140ms ease-out, background-color 140ms ease-out;
+  }
+  .asv2-topbar .asv2-search:hover {
+    border-color: var(--color-muted);
+    background: var(--color-surface-soft);
+  }
+  .asv2-topbar .asv2-search:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; box-shadow: none; }
+  .asv2-topbar .asv2-search span.asv2-search-action {
+    order: -1;
+    width: auto;
+    height: auto;
+    background: transparent;
+    color: inherit;
+  }
+  .asv2-topbar .asv2-search:hover span.asv2-search-action { background: transparent; }
+  .asv2-topbar .asv2-search .asv2-kbd { padding: 2px 6px; }
+}
+
+/* Dialogues (menu mobile, recherche) au-dessus du bandeau cookies. */
+.asv2-mm { z-index: 1100; }
 @keyframes asv2-mm-slide-out { from { transform: none; opacity: 1; } to { transform: translateX(24px); opacity: 0; } }
 
 /* US-NAV-01 : au scroll vers le bas, la barre d'onglets du bas cède aussi la
@@ -35114,6 +35124,7 @@ img[data-logo-loading] {
   .ms-page .ms-hero-stats dt { gap: 4px; font-size: 9.5px; letter-spacing: .06em; white-space: normal; line-height: 1.2; }
   .ms-page .ms-hero-stats dt svg { width: 13px; height: 13px; }
   .ms-page .ms-hero-stats dd { margin: 8px 0 0; font-size: clamp(19px, 5.6vw, 24px); white-space: nowrap; }
+  .ms-page .ms-hero-stats dd.sg-stats-word { font-size: 15px; line-height: 1.25; white-space: normal; }
   .ms-page .ms-hero-stats .ms-stat-bar { max-width: none; margin: 8px 0 6px; }
   .ms-page .ms-hero-stats > div > span:not(.ms-stat-bar), .ms-page .ms-hero-stats .ms-stat-note, .ms-page .ms-hero-stats .ms-stat-link { font-size: 11.5px; line-height: 1.35; }
   .ms-page .ms-hero-add { display: none; }
@@ -35223,6 +35234,8 @@ img[data-logo-loading] {
   .ms-page .ms-hero-stats dt { gap: 4px; font-size: 9.5px; letter-spacing: .06em; white-space: nowrap; line-height: 1.2; }
   .ms-page .ms-hero-stats dt svg { width: 13px; height: 13px; }
   .ms-page .ms-hero-stats dd { margin: 8px 0 0; font-size: clamp(19px, 5.6vw, 24px); white-space: nowrap; text-align: left; }
+  /* Valeur en mots (« Coût non renseigné », « Rien ») : plus petite et sur deux lignes au besoin, sinon elle sortait de sa carte (9 oct. 2026). */
+  .ms-page .ms-hero-stats dd.sg-stats-word { font-size: 15px; line-height: 1.25; white-space: normal; }
   .ms-page .ms-hero-stats .ms-stat-bar { align-self: stretch; max-width: none; margin: 8px 0 6px; }
   .ms-page .ms-hero-stats > div > span:not(.ms-stat-bar), .ms-page .ms-hero-stats .ms-stat-note, .ms-page .ms-hero-stats .ms-stat-link { font-size: 11.5px; line-height: 1.35; }
   .ms-page .ms-stat-full { display: none; }
@@ -35244,11 +35257,32 @@ img[data-logo-loading] {
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > span,
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:hover > span,
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible > span { position: static; width: 100%; height: 100%; transform: none; }
+/* Au survol, le picto « déplier » prend exactement la place du logo : même
+   centre (milieu de la bande de 56 px), et un fondu croisé avec une légère
+   mise à l'échelle (le logo se retire, le picto arrive). Avant, il se collait
+   en haut de la colonne, 16 px au-dessus du logo (9 oct. 2026). */
 @media (hover: hover) {
-  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { top: 0; transform: translateX(-50%); }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top-actions { top: 50%; transform: translate(-50%, -50%); }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-logo,
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer { transition: opacity 160ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer { transform: scale(0.82); }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:hover .asv2-sidebar-resizer,
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible { transform: none; }
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:hover .asv2-logo,
+  .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar:has(.asv2-sidebar-resizer:focus-visible) .asv2-logo { transform: scale(0.82); }
 }
 @media (hover: hover) and (min-width: 641px) and (max-width: 1180px) {
-  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { top: 0; transform: translateX(-50%); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-top-actions { top: 50%; transform: translate(-50%, -50%); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-logo,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer { transition: opacity 160ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer { transform: scale(0.82); }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:hover .asv2-sidebar-resizer,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar-resizer:focus-visible { transform: none; }
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:hover .asv2-logo,
+  .asv2-root--sidebar-expanded:not(.asv2-root--rail-open) .asv2-sidebar:has(.asv2-sidebar-resizer:focus-visible) .asv2-logo { transform: scale(0.82); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .asv2-root .asv2-logo, .asv2-root .asv2-sidebar-resizer { transition: none !important; transform: none !important; }
 }
 /* ── Footer on one 12-column grid (8 Oct 2026) ─────────────────────────────
    Two vertical lines carry everything: column 1 (promise, Décider, legal,

@@ -1,3 +1,13 @@
+## 2026-10-09 : navigation, revue design et corrections
+
+- Revue design-superpowers (L2) de la barre latérale, du haut de page, de la barre du bas et du menu mobile, mesurée avec Playwright à 1440, 1024 et 390 px.
+- Onglets du haut (Tous les outils, Gratuits, Payants) supprimés ; le filtre « Payant » du catalogue exclut désormais les outils avec plan gratuit (`isPaidOnly`, libellé « Payant uniquement »).
+- Recherche : une seule porte visible (en haut) plus le raccourci, « Ctrl K » hors Mac ; dialogue de recherche et menu mobile au-dessus du bandeau cookies (z-index 1100).
+- Barre repliée : page active distincte du survol. Menu mobile réduit aux sous-niveaux, préférences et « Soumettre ». « Ma stack » à contour partout.
+- Haut de page aligné sur `--layout-content` / `--layout-gutter` ; libellés sous icône en 11 px ; icônes en 16/18/20 px via `size`.
+- CSS `asv2-*` : 59 déclarations écrasées supprimées, 0 différence de style calculé sur 18 états.
+- Recherche globale refaite (`SearchModal`) : guide avant la frappe (exemples, besoins, duels, stacks par objectif, stack de l'utilisateur), résultats groupés par type, champ en `combobox`. Duels et stacks partagés avec l'accueil (`src/data/homeComparisons.ts`, `src/data/goalStacks.ts`).
+
 ## 2026-10-09 — R0/R1 publiés et clôturés
 
 - Contrats API `13b631bc1d` publiés via `bb4bc7f94b`, puis retrait du SDK de types `4601f877cf` : les deux CI complètes et statuts Vercel réussissent.

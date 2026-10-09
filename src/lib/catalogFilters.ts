@@ -28,6 +28,11 @@ export function isPaid(tool: ToolSummary): boolean {
   return (Number(tool.compareMonthlyPrice || tool.defaultMonthlyPrice) || 0) > 0
     || Boolean(pricing && typeof pricing === "object" && pricing.paid);
 }
+/** Catalogue filter "Paid": no free plan at all. With freemium included it
+ * matched 1124 tools out of 1240 and filtered nothing (9 Oct 2026). */
+export function isPaidOnly(tool: ToolSummary): boolean {
+  return isPaid(tool) && !hasFreePlan(tool);
+}
 
 export function normalizeToolText(value: unknown) {
   return String(value || "")
