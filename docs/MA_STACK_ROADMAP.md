@@ -1,3 +1,9 @@
+## Lot R5 — audit et garde-fous, 9 octobre 2026
+
+[Rapport détaillé et actions catalogue](R5_EXPLORER_AUDIT_2026-10-09.md). Pilote de 30 sources, 300 résultats avant et 236 après correction ; relecture indépendante de chaque paire disponible. Les suites ne sont plus des extensions, les signaux trop larges ne créent plus de liens et les comparaisons sans corroboration sont indiquées comme à vérifier. Les cartes affichent leurs justifications bilingues. Activation limitée aux 30 routes sources auditées ; sorties hors pilote et multi-source conservées exactement. Contrat Slack : les deux destinations auditées exigées, minimum trois destinations ailleurs.
+
+**R5 reste ouvert éditorialement** : 127 relations crédibles parmi 198 résultats du top 8, 42 places sans preuve, ambiguïtés API/app encore présentes. Cible 80 % non atteinte ; comparaisons partielles/inconnues non comptées comme réussites. Reprise bornée dans R6 : identités des fiches IA, Figma/Framer, tags et synonymes ; rejouer le pilote avant clôture. Lot préparé localement, non publié.
+
 ## Lot R4 — 9 octobre 2026 : promesses de coût
 
 Correction préparée sur `c42d137826` : coûts présentés comme estimés ; recoupements comme montant à examiner, jamais comme dépense inutile prouvée. Le montant conserve le calcul existant (outil le moins cher de chaque paire à coût positif, compté une seule fois). Sources : offre catalogue, plan choisi ou montant déclaré. Retrait/remplacement dans la sélection = modification du budget estimé, aucune résiliation externe. Hero, liste, inspecteur, comparatif, notification et footer alignés FR/EN. Calculs, stockage et routes conservés.

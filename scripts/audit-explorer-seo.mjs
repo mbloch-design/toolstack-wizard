@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { auditExplorerRelatedPaths } from "./lib/explorer-related-paths.mjs";
 
 const root = path.resolve(process.cwd(), "dist");
 const failures = [];
@@ -38,7 +39,8 @@ for (const lang of ["fr", "en"]) {
     if (canonical !== url) failures.push(`${url}: canonical mismatch`);
     if (h1Count !== 1) failures.push(`${url}: expected one H1, got ${h1Count}`);
     if (visibleText.length < 800) failures.push(`${url}: thin SSR text (${visibleText.length} characters)`);
-    if (related.size < 3) failures.push(`${url}: fewer than 3 crawlable related-tool paths`);
+    const relatedFailure = auditExplorerRelatedPaths(slug, related);
+    if (relatedFailure) failures.push(`${url}: ${relatedFailure}`);
   }
 }
 

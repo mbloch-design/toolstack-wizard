@@ -28024,6 +28024,8 @@ section[id]:not(.cp-guide-section) {
 .ex-card-identity small { color: color-mix(in srgb, var(--color-muted) 78%, var(--color-text)); font-family: var(--font-ui); font-size: .74rem; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ex-card-identity:hover strong { text-decoration: underline; text-underline-offset: 3px; }
 .ex-card-identity:focus-visible { border-radius: 4px; outline: 2px solid color-mix(in srgb, var(--color-text) 24%, transparent); outline-offset: 3px; }
+.ex-relations-note { max-width: 80ch; margin: 0 0 20px; color: var(--color-muted); font: 400 .8125rem/1.5 var(--font-ui); }
+.ex-card-relation { margin: 0; color: var(--color-muted); font: 400 .75rem/1.45 var(--font-ui); }
 .ex-card-description { color: color-mix(in srgb, var(--color-muted) 78%, var(--color-text)); display: -webkit-box; font-family: var(--font-ui); font-size: .875rem; font-weight: 400; line-height: 1.45; margin: 0; min-height: 2.9em; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .ex-card-actions {
   align-items: center;

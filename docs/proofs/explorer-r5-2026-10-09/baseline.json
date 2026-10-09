@@ -1,0 +1,3992 @@
+[
+  {
+    "slug": "figma",
+    "name": "Figma",
+    "description": "Outil de design d'interface vectoriel avec collaboration en temps réel, composants et transmission au code via Dev Mode.",
+    "signals": [
+      "design-tools",
+      "design-interface",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "figma-tokens",
+        "direction": "extensions",
+        "reason": "Extension de Figma",
+        "description": "Gère les design tokens dans Figma et les synchronise vers le code via Git, avec des branches sur les paliers payants.",
+        "signals": [
+          "design-tools",
+          "plugin-figma",
+          null,
+          "figma"
+        ]
+      },
+      {
+        "slug": "figma-anima",
+        "direction": "extensions",
+        "reason": "Extension de Figma",
+        "description": "Plugin IA qui transforme des maquettes Figma en code React, HTML, Vue ou Tailwind, avec un AI Playground pour prototyper des applications par prompt.",
+        "signals": [
+          "design-tools",
+          "plugin-figma",
+          null,
+          "figma"
+        ]
+      },
+      {
+        "slug": "penpot",
+        "direction": "alternatives",
+        "reason": "Alternative à Figma",
+        "description": "Alternative open-source et gratuite à Figma — design et prototypage collaboratif.",
+        "signals": [
+          "design-tools",
+          "design-interface",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "figma-buzz",
+        "direction": "extensions",
+        "reason": "Extension de Figma",
+        "description": "Des modèles de marque contrôlés que les équipes déclinent en masse dans Figma.",
+        "signals": [
+          "design-tools",
+          "figma-feature-suite",
+          "figma",
+          "figma"
+        ]
+      },
+      {
+        "slug": "figma-make",
+        "direction": "extensions",
+        "reason": "Extension de Figma",
+        "description": "Outil Figma piloté par prompt pour transformer une idée ou un design existant en prototype fonctionnel, interface interactive ou application web. Il combine génération, édition du code, publication et contexte de design system.",
+        "signals": [
+          "ai-code",
+          "ai-app-builder",
+          "figma",
+          "figma"
+        ]
+      },
+      {
+        "slug": "figma-sites",
+        "direction": "extensions",
+        "reason": "Extension de Figma",
+        "description": "Constructeur de sites responsive en bêta ouverte intégré à Figma. Il transforme des frames Figma Design en pages publiées avec composants, interactions, CMS, code et assistance par IA.",
+        "signals": [
+          "website-builders",
+          "figma-feature-suite",
+          "figma",
+          "figma"
+        ]
+      },
+      {
+        "slug": "figma-dev-mode",
+        "direction": "extensions",
+        "reason": "Extension de Figma",
+        "description": "Espace développeur intégré aux fichiers Figma Design pour inspecter les interfaces, relier design et code et organiser le passage en développement. Il nécessite Figma et une licence Dev ou Full sur un forfait payant.",
+        "signals": [
+          "developer-tools",
+          "figma-feature-suite",
+          "figma",
+          "figma"
+        ]
+      },
+      {
+        "slug": "figma-draw",
+        "direction": "extensions",
+        "reason": "Extension de Figma",
+        "description": "Espace d'illustration et ensemble d'outils vectoriels avancés intégrés à Figma Design. Draw fonctionne dans les fichiers Figma et ne constitue pas une application autonome.",
+        "signals": [
+          "design-tools",
+          "figma-feature-suite",
+          "figma",
+          "figma"
+        ]
+      },
+      {
+        "slug": "figma-motion",
+        "direction": "extensions",
+        "reason": "Extension de Figma",
+        "description": "Mode d'animation en bêta ouverte intégré au canvas Figma. Il ajoute une timeline, des keyframes, des systèmes de mouvement et des exports pour le design et le passage en développement.",
+        "signals": [
+          "motion-design",
+          "figma-feature-suite",
+          "figma",
+          "figma"
+        ]
+      },
+      {
+        "slug": "figma-iconify",
+        "direction": "extensions",
+        "reason": "Extension de Figma",
+        "description": "Accès à 150 000+ icônes de toutes les bibliothèques directement dans Figma.",
+        "signals": [
+          "design-tools",
+          "plugin-figma",
+          null,
+          "figma"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "adobe-photoshop",
+    "name": "Adobe Photoshop",
+    "description": "L'éditeur d'images matricielles d'Adobe pour la retouche, le montage et le remplissage génératif, sur ordinateur, web et mobile.",
+    "signals": [
+      "design-tools",
+      "design-support",
+      "adobe-creative-cloud",
+      null
+    ],
+    "top": [
+      {
+        "slug": "adobe-illustrator",
+        "direction": "extensions",
+        "reason": "Extension de Adobe Photoshop",
+        "description": "Adobe Illustrator est l'éditeur vectoriel de référence pour logos, icônes et mises en page print ou digital, vendu en abonnement.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "adobe-lightroom",
+        "direction": "extensions",
+        "reason": "Extension de Adobe Photoshop",
+        "description": "Application Adobe d'édition et d'organisation photo synchronisée dans le cloud, vendue uniquement en abonnement Creative Cloud.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "substance-3d-designer",
+        "direction": "extensions",
+        "reason": "Extension de Adobe Photoshop",
+        "description": "Substance 3D Designer est l'outil Adobe par noeuds pour créer des matériaux, motifs et filtres d'image 3D procéduraux et non destructifs.",
+        "signals": [
+          "creation",
+          "3d-software",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "adobe-premiere-pro",
+        "direction": "extensions",
+        "reason": "Extension de Adobe Photoshop",
+        "description": "Le logiciel de montage vidéo d'Adobe pour le montage, les titres, les effets et le mixage, avec validation via Frame.io.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "adobe-after-effects",
+        "direction": "extensions",
+        "reason": "Extension de Adobe Photoshop",
+        "description": "Application d'effets visuels, de motion graphics et de compositing d'Adobe (Windows, macOS).",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "firefly",
+        "direction": "extensions",
+        "reason": "Extension de Adobe Photoshop",
+        "description": "Adobe Firefly est une application web d'IA générative pour l'image, la vidéo et le son, aussi intégrée à Photoshop, Premiere Pro et InDesign.",
+        "signals": [
+          "ai-general",
+          "ai-image-generation",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "substance-3d-painter",
+        "direction": "extensions",
+        "reason": "Extension de Adobe Photoshop",
+        "description": "Substance 3D Painter est l'outil Adobe de peinture de textures PBR en temps réel pour jeu vidéo, produit et VFX, vendu dans l'abonnement Collection.",
+        "signals": [
+          "creation",
+          "3d-software",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "adobe-stock",
+        "direction": "extensions",
+        "reason": "Extension de Adobe Photoshop",
+        "description": "Banque d'assets sous licence (photos, vidéos, vecteurs, modèles) intégrée aux applications Creative Cloud.",
+        "signals": [
+          "assets",
+          "creative-assets",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "adobe-creative-cloud",
+        "direction": "extensions",
+        "reason": "Extension de Adobe Photoshop",
+        "description": "Un abonnement groupé à plus de 20 applications créatives Adobe (bureau et web), avec crédits IA générative, dès 78,65 €/mois en engagement annuel.",
+        "signals": [
+          "design-tools",
+          "creative-suite",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "adobe-fresco",
+        "direction": "extensions",
+        "reason": "Extension de Adobe Photoshop",
+        "description": "Une app de peinture gratuite pour iPad et Windows, avec des pinceaux aux médiums réalistes, l'animation image par image et la synchronisation multi-appareils.",
+        "signals": [
+          "illustration",
+          "digital-illustration",
+          "adobe-creative-cloud",
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "adobe-after-effects",
+    "name": "Adobe After Effects",
+    "description": "Application d'effets visuels, de motion graphics et de compositing d'Adobe (Windows, macOS).",
+    "signals": [
+      "design-tools",
+      "design-support",
+      "adobe-creative-cloud",
+      null
+    ],
+    "top": [
+      {
+        "slug": "ae-bodymovin",
+        "direction": "extensions",
+        "reason": "Extension de Adobe After Effects",
+        "description": "Plugin After Effects qui exporte les animations par shape layers vers le format ouvert JSON Lottie pour le web et mobile.",
+        "signals": [
+          "design-tools",
+          "plugin-after-effects",
+          null,
+          "adobe-after-effects"
+        ]
+      },
+      {
+        "slug": "ae-duik",
+        "direction": "extensions",
+        "reason": "Extension de Adobe After Effects",
+        "description": "Boîte à outils gratuite et open source de rigging de personnages et d'accessoires pour After Effects, avec wiggle, rebond et cycles de marche automatisés.",
+        "signals": [
+          "design-tools",
+          "plugin-after-effects",
+          null,
+          "adobe-after-effects"
+        ]
+      },
+      {
+        "slug": "magic-bullet",
+        "direction": "extensions",
+        "reason": "Extension de Adobe After Effects",
+        "description": "Un plugin d'étalonnage et d'émulation film pour monteurs vidéo, inclus dans l'abonnement Red Giant Complete à un prix non publié.",
+        "signals": [
+          "creation",
+          "plugin-after-effects",
+          "ae-red-giant",
+          "adobe-after-effects"
+        ]
+      },
+      {
+        "slug": "ae-gifgun",
+        "direction": "extensions",
+        "reason": "Extension de Adobe After Effects",
+        "description": "Plugin After Effects, application de bureau et application web en achat unique pour exporter des fichiers GIF, WEBP, WEBM et MP4 compressés.",
+        "signals": [
+          "design-tools",
+          "plugin-after-effects",
+          null,
+          "adobe-after-effects"
+        ]
+      },
+      {
+        "slug": "ae-overlord",
+        "direction": "extensions",
+        "reason": "Extension de Adobe After Effects",
+        "description": "Overlord transfère les designs en calques de Figma, Photoshop et Illustrator vers After Effects, en gardant masques, texte et styles éditables.",
+        "signals": [
+          "design-tools",
+          "plugin-after-effects",
+          null,
+          "adobe-after-effects"
+        ]
+      },
+      {
+        "slug": "ae-animation-composer",
+        "direction": "extensions",
+        "reason": "Extension de Adobe After Effects",
+        "description": "Animation Composer est un plugin Mister Horse pour After Effects et Premiere Pro qui fournit une bibliothèque d'animations prêtes à l'emploi, gratuite avec plus de 1 000 assets ou à 16,50 $/mois (annuel) pour plus de 6 000.",
+        "signals": [
+          "design-tools",
+          "plugin-after-effects",
+          null,
+          "adobe-after-effects"
+        ]
+      },
+      {
+        "slug": "ae-newton4",
+        "direction": "extensions",
+        "reason": "Extension de Adobe After Effects",
+        "description": "Newton 4 est un plugin After Effects qui donne aux calques une physique 2D réaliste (gravité, collisions, ressorts) sans animation manuelle, en licence à vie.",
+        "signals": [
+          "design-tools",
+          "plugin-after-effects",
+          null,
+          "adobe-after-effects"
+        ]
+      },
+      {
+        "slug": "ae-bao-boa",
+        "direction": "extensions",
+        "reason": "Extension de Adobe After Effects",
+        "description": "BAO Boa est un plugin After Effects qui distord les calques précisément le long de tracés de masque, pour des distorsions animées fluides et organiques.",
+        "signals": [
+          "design-tools",
+          "plugin-after-effects",
+          null,
+          "adobe-after-effects"
+        ]
+      },
+      {
+        "slug": "aescripts-flow",
+        "direction": "extensions",
+        "reason": "Extension de Adobe After Effects",
+        "description": "Flow est une extension After Effects qui remplace le Graph Editor natif par un éditeur de courbes d'easing moderne et une bibliothèque de presets réutilisables.",
+        "signals": [
+          "design-tools",
+          "plugin-after-effects",
+          null,
+          "adobe-after-effects"
+        ]
+      },
+      {
+        "slug": "ae-red-giant",
+        "direction": "extensions",
+        "reason": "Extension de Adobe After Effects",
+        "description": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates).",
+        "signals": [
+          "creation",
+          "plugin-after-effects",
+          "maxon-one",
+          "adobe-after-effects"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "blender",
+    "name": "Blender",
+    "description": "Une suite 3D gratuite et open source qui couvre modélisation, animation, rendu et compositing, utilisable commercialement sans inscription.",
+    "signals": [
+      "design-tools",
+      "design-support",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "cycles",
+        "direction": "extensions",
+        "reason": "Extension de Blender",
+        "description": "Moteur de rendu intégré à Blender pour rendus 3D physiquement réalistes.",
+        "signals": [
+          "3d",
+          "3d-render-engine",
+          "blender",
+          "blender"
+        ]
+      },
+      {
+        "slug": "auto-rig-pro",
+        "direction": "extensions",
+        "reason": "Extension de Blender",
+        "description": "Auto-Rig Pro place automatiquement les os sur des personnages Blender humanoïdes et exporte des rigs jeu vidéo, en achat unique de 25 à 50 $.",
+        "signals": [
+          "design-tools",
+          "plugin-blender",
+          null,
+          "blender"
+        ]
+      },
+      {
+        "slug": "adobe-photoshop",
+        "direction": "alternatives",
+        "reason": "Alternative à Blender",
+        "description": "L'éditeur d'images matricielles d'Adobe pour la retouche, le montage et le remplissage génératif, sur ordinateur, web et mobile.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "hard-ops-boxcutter",
+        "direction": "extensions",
+        "reason": "Extension de Blender",
+        "description": "Suite d'add-ons Blender pour la modélisation hard-surface non-destructive. Combine Hard Ops (gestionnaire de booléens) et Boxcutter (outil de découpe interactive). Workflow optimisé pour les designers de concept, les modeleurs d'armes/accessoires, et les artistes de design industriel.",
+        "signals": [
+          "design-tools",
+          "plugin-blender",
+          null,
+          "blender"
+        ]
+      },
+      {
+        "slug": "adobe-illustrator",
+        "direction": "alternatives",
+        "reason": "Alternative à Blender",
+        "description": "Adobe Illustrator est l'éditeur vectoriel de référence pour logos, icônes et mises en page print ou digital, vendu en abonnement.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "sketchup-pro",
+        "direction": "alternatives",
+        "reason": "Alternative à Blender",
+        "description": "SketchUp Pro est le logiciel de modélisation 3D de Trimble pour l'architecture, l'aménagement intérieur et le design produit, sur bureau, web et mobile.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "adobe-lightroom",
+        "direction": "alternatives",
+        "reason": "Alternative à Blender",
+        "description": "Application Adobe d'édition et d'organisation photo synchronisée dans le cloud, vendue uniquement en abonnement Creative Cloud.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "adobe-premiere-pro",
+        "direction": "alternatives",
+        "reason": "Alternative à Blender",
+        "description": "Le logiciel de montage vidéo d'Adobe pour le montage, les titres, les effets et le mixage, avec validation via Frame.io.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "revit",
+        "direction": "alternatives",
+        "reason": "Alternative à Blender",
+        "description": "Autodesk Revit est un logiciel BIM par abonnement pour l'architecture, la structure et le génie technique, qui coordonne une maquette paramétrique unique entre disciplines.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "adobe-after-effects",
+        "direction": "alternatives",
+        "reason": "Alternative à Blender",
+        "description": "Application d'effets visuels, de motion graphics et de compositing d'Adobe (Windows, macOS).",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "cinema-4d",
+    "name": "Cinema 4D",
+    "description": "Cinema 4D est une suite de modélisation, animation et rendu 3D pour le motion design, avec le moteur GPU Redshift inclus dans chaque abonnement.",
+    "signals": [
+      "creation",
+      "3d-software",
+      "maxon-one",
+      null
+    ],
+    "top": [
+      {
+        "slug": "x-particles",
+        "direction": "extensions",
+        "reason": "Extension de Cinema 4D",
+        "description": "Plugin avancé de particules et VFX pour Cinema 4D, basé sur un système de règles (Questions et Actions). Permet de contrôler les simulations de particules, fumée/feu, fluides, cloth et destruction. Désormais inclus dans l'abonnement Fused d'Insydium.",
+        "signals": [
+          "design-tools",
+          "plugin-cinema-4d",
+          null,
+          "cinema-4d"
+        ]
+      },
+      {
+        "slug": "zbrush",
+        "direction": "extensions",
+        "reason": "Extension de Cinema 4D",
+        "description": "ZBrush est le logiciel de sculpture numérique professionnel de Maxon pour personnages, créatures et modèles hard-surface, vendu uniquement en abonnement dès 54 $/mois ou 35,90 $/mois facturé annuellement.",
+        "signals": [
+          "creation",
+          "3d-software",
+          "maxon-one",
+          null
+        ]
+      },
+      {
+        "slug": "redshift",
+        "direction": "extensions",
+        "reason": "Extension de Cinema 4D",
+        "description": "Redshift est un moteur de rendu GPU qui se connecte à Houdini, Maya, 3ds Max, Blender et d'autres applications 3D pour un rendu rapide.",
+        "signals": [
+          "creation",
+          "render-engine",
+          "maxon-one",
+          null
+        ]
+      },
+      {
+        "slug": "maxon-one",
+        "direction": "extensions",
+        "reason": "Extension de Cinema 4D",
+        "description": "Bundle par abonnement qui réunit modélisation 3D, sculpture, rendu GPU et plugins VFX/motion design en une licence.",
+        "signals": [
+          "creation",
+          "3d-software",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "ae-red-giant",
+        "direction": "extensions",
+        "reason": "Extension de Cinema 4D",
+        "description": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates).",
+        "signals": [
+          "creation",
+          "plugin-after-effects",
+          "maxon-one",
+          "adobe-after-effects"
+        ]
+      },
+      {
+        "slug": "3ds-max",
+        "direction": "alternatives",
+        "reason": "Alternative à Cinema 4D",
+        "description": "Logiciel Autodesk de modélisation 3D et de rendu, roi de l'archviz et du jeu.",
+        "signals": [
+          "creation",
+          "3d-software",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "maxon-capsules",
+        "direction": "extensions",
+        "reason": "Extension de Cinema 4D",
+        "description": "Bibliothèque d'assets, matériaux, modèles et presets pour les applications Maxon.",
+        "signals": [
+          "creation",
+          null,
+          "maxon-one",
+          null
+        ]
+      },
+      {
+        "slug": "houdini",
+        "direction": "alternatives",
+        "reason": "Alternative à Cinema 4D",
+        "description": "Houdini est une application 3D et VFX procédurale à nœuds, gratuite en usage non commercial et à 299 $/an via l'offre Indie.",
+        "signals": [
+          "creation",
+          "3d-software",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "maya",
+        "direction": "alternatives",
+        "reason": "Alternative à Cinema 4D",
+        "description": "Autodesk Maya est une suite 3D professionnelle de modélisation, rigging, animation de personnages, effets et rendu, utilisée par de grands studios.",
+        "signals": [
+          "creation",
+          "3d-software",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "embergen",
+        "direction": "alternatives",
+        "reason": "Alternative à Cinema 4D",
+        "description": "Outil de simulation temps réel accéléré par GPU pour le feu, la fumée et les explosions, avec export vers moteurs de jeu et outils DCC.",
+        "signals": [
+          "creation",
+          "3d-software",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "davinci-resolve",
+    "name": "DaVinci Resolve",
+    "description": "Logiciel gratuit de montage, etalonnage, effets visuels et audio, avec une licence Studio a 295 $ pour une livraison professionnelle en profondeur de bits superieure.",
+    "signals": [
+      "design-tools",
+      "design-support",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "fusion",
+        "direction": "extensions",
+        "reason": "Extension de DaVinci Resolve",
+        "description": "Logiciel de compositing 2D/3D node-based professionnel, utilisé en VFX, motion graphics et post-production cinéma pour assembler et traiter des éléments visuels complexes.",
+        "signals": [
+          "video",
+          "motion-compositing",
+          "davinci-resolve",
+          "davinci-resolve"
+        ]
+      },
+      {
+        "slug": "adobe-photoshop",
+        "direction": "alternatives",
+        "reason": "Alternative à DaVinci Resolve",
+        "description": "L'éditeur d'images matricielles d'Adobe pour la retouche, le montage et le remplissage génératif, sur ordinateur, web et mobile.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "blender",
+        "direction": "alternatives",
+        "reason": "Alternative à DaVinci Resolve",
+        "description": "Une suite 3D gratuite et open source qui couvre modélisation, animation, rendu et compositing, utilisable commercialement sans inscription.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "adobe-illustrator",
+        "direction": "alternatives",
+        "reason": "Alternative à DaVinci Resolve",
+        "description": "Adobe Illustrator est l'éditeur vectoriel de référence pour logos, icônes et mises en page print ou digital, vendu en abonnement.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "sketchup-pro",
+        "direction": "alternatives",
+        "reason": "Alternative à DaVinci Resolve",
+        "description": "SketchUp Pro est le logiciel de modélisation 3D de Trimble pour l'architecture, l'aménagement intérieur et le design produit, sur bureau, web et mobile.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "adobe-lightroom",
+        "direction": "alternatives",
+        "reason": "Alternative à DaVinci Resolve",
+        "description": "Application Adobe d'édition et d'organisation photo synchronisée dans le cloud, vendue uniquement en abonnement Creative Cloud.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "adobe-premiere-pro",
+        "direction": "alternatives",
+        "reason": "Alternative à DaVinci Resolve",
+        "description": "Le logiciel de montage vidéo d'Adobe pour le montage, les titres, les effets et le mixage, avec validation via Frame.io.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "revit",
+        "direction": "alternatives",
+        "reason": "Alternative à DaVinci Resolve",
+        "description": "Autodesk Revit est un logiciel BIM par abonnement pour l'architecture, la structure et le génie technique, qui coordonne une maquette paramétrique unique entre disciplines.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "adobe-after-effects",
+        "direction": "alternatives",
+        "reason": "Alternative à DaVinci Resolve",
+        "description": "Application d'effets visuels, de motion graphics et de compositing d'Adobe (Windows, macOS).",
+        "signals": [
+          "design-tools",
+          "design-support",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "lumion",
+        "direction": "alternatives",
+        "reason": "Alternative à DaVinci Resolve",
+        "description": "Logiciel de rendu 3D temps réel spécialisé dans la visualisation architecturale, transformant rapidement les modèles CAO/BIM en images et animations photoréalistes.",
+        "signals": [
+          "design-tools",
+          "design-support",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "canva",
+    "name": "Canva",
+    "description": "Un outil de design glisser-déposer avec templates, outils IA image et vidéo, et kits de marque pour réseaux sociaux, présentations et impression.",
+    "signals": [
+      "creation",
+      "creative-suite",
+      "canva-pro",
+      null
+    ],
+    "top": [
+      {
+        "slug": "canva-ai",
+        "direction": "extensions",
+        "reason": "Extension de Canva",
+        "description": "Canva AI (Magic Studio) ajoute génération d'image par IA, suppression d'arrière-plan et écriture IA dans Canva, avec des plafonds d'usage mensuels selon le plan.",
+        "signals": [
+          "ai-general",
+          "ai-image-enhancement",
+          "canva-pro",
+          null
+        ]
+      },
+      {
+        "slug": "canva-pro",
+        "direction": "extensions",
+        "reason": "Extension de Canva",
+        "description": "Palier payant de Canva : outils IA Magic Studio, modèles premium et kit de marque, à partir de 9,17 €/mois facturé à l'année.",
+        "signals": [
+          "creation",
+          "creative-suite",
+          "canva",
+          null
+        ]
+      },
+      {
+        "slug": "adobe-creative-cloud",
+        "direction": "alternatives",
+        "reason": "Alternative à Canva",
+        "description": "Un abonnement groupé à plus de 20 applications créatives Adobe (bureau et web), avec crédits IA générative, dès 78,65 €/mois en engagement annuel.",
+        "signals": [
+          "design-tools",
+          "creative-suite",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "adobe-express",
+        "direction": "alternatives",
+        "reason": "Alternative à Canva",
+        "description": "Création rapide de supports de marque, formats sociaux et déclinaisons visuelles.",
+        "signals": [
+          "creation",
+          "creative-suite",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "gamma",
+        "direction": "alternatives",
+        "reason": "Alternative à Canva",
+        "description": "Créez des présentations, documents et pages web à partir d’un plan, avec l’aide de l’IA.",
+        "signals": [
+          "creation",
+          "presentation-software",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "ideogram",
+        "direction": "adjacent",
+        "reason": "Même usage que Canva",
+        "description": "Générateur d'images IA avec texte intégré : render texte dans images avec 90 % précision (vs 30 % Midjourney), variantes, remixing, et API pour developers. Fast generation et quality modes.",
+        "signals": [
+          "ai-general",
+          "ai-image-generation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "typefully",
+        "direction": "alternatives",
+        "reason": "Alternative à Canva",
+        "description": "Typefully est un éditeur sans distraction pour rédiger, planifier et publier en croisé du contenu X, LinkedIn et d'autres réseaux sociaux.",
+        "signals": [
+          "creation",
+          "content-creation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "prezi",
+        "direction": "alternatives",
+        "reason": "Alternative à Canva",
+        "description": "Prezi conçoit des présentations non linéaires en zoom, qui se déplacent sur une toile plutôt que d'enchaîner des diapositives statiques.",
+        "signals": [
+          "creation",
+          "content-creation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "beautiful-ai",
+        "direction": "alternatives",
+        "reason": "Alternative à Canva",
+        "description": "Création de présentations assistée par IA avec templates structurés.",
+        "signals": [
+          "creation",
+          "presentation-software",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "procreate",
+        "direction": "alternatives",
+        "reason": "Alternative à Canva",
+        "description": "Procreate est une application de peinture et d'illustration numérique pour iPad, vendue en achat unique sans abonnement.",
+        "signals": [
+          "creation",
+          "digital-illustration",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "notion",
+    "name": "Notion",
+    "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+    "signals": [
+      "organization",
+      "knowledge-workspace",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "notion-ai",
+        "direction": "extensions",
+        "reason": "Extension de Notion",
+        "description": "Suite de fonctionnalités IA intégrées à Notion, incluant génération de texte, agents personnalisés pour automatiser les tâches, recherche d'entreprise, et résumés de réunions.",
+        "signals": [
+          "ai-general",
+          "embedded-ai-addon",
+          "notion",
+          null
+        ]
+      },
+      {
+        "slug": "trello",
+        "direction": "adjacent",
+        "reason": "Même usage que Notion",
+        "description": "Outil de tableaux Kanban visuels avec cartes, listes, Power-Ups et automatisation intégrée pour un suivi de projet léger.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "superlist",
+        "direction": "alternatives",
+        "reason": "Alternative à Notion",
+        "description": "Superlist est une application de gestion de tâches avec listes partagées et fonctions IA, gratuite jusqu'à 5 listes puis dès 5 $ par mois.",
+        "signals": [
+          "organization",
+          "personal-task-manager",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "obsidian",
+        "direction": "alternatives",
+        "reason": "Alternative à Notion",
+        "description": "Obsidian est une application gratuite de prise de notes en Markdown, locale par défaut, avec liens bidirectionnels et un écosystème de plugins.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "basecamp",
+        "direction": "alternatives",
+        "reason": "Alternative à Notion",
+        "description": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
+        "signals": [
+          "organization",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "heptabase",
+        "direction": "alternatives",
+        "reason": "Alternative à Notion",
+        "description": "Heptabase est un outil de prise de notes visuelles à canevas infini avec IA intégrée, vendu en abonnement après un essai de 7 jours.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "logseq",
+        "direction": "alternatives",
+        "reason": "Alternative à Notion",
+        "description": "Logseq est une application de graphe de connaissances gratuite, open source et locale, avec un outliner et une synchronisation cloud optionnelle.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "reflect-notes",
+        "direction": "alternatives",
+        "reason": "Alternative à Notion",
+        "description": "Reflect est une appli de notes en réseau avec liens retour, IA d'écriture et transcription vocale, à 12 $ par mois sans plan gratuit.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "roam-research",
+        "direction": "alternatives",
+        "reason": "Alternative à Notion",
+        "description": "Roam Research est une application de prise de notes en réseau basée sur les liens bidirectionnels, les notes quotidiennes et les références de blocs.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "airtable",
+        "direction": "adjacent",
+        "reason": "Même usage que Notion",
+        "description": "Airtable est une base de données relationnelle façon tableur avec vues et automatisations, gratuite pour les petites équipes et facturée par siège d'édition au-delà.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "obsidian",
+    "name": "Obsidian",
+    "description": "Obsidian est une application gratuite de prise de notes en Markdown, locale par défaut, avec liens bidirectionnels et un écosystème de plugins.",
+    "signals": [
+      "organization",
+      "knowledge-workspace",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "notion",
+        "direction": "alternatives",
+        "reason": "Alternative à Obsidian",
+        "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "heptabase",
+        "direction": "alternatives",
+        "reason": "Alternative à Obsidian",
+        "description": "Heptabase est un outil de prise de notes visuelles à canevas infini avec IA intégrée, vendu en abonnement après un essai de 7 jours.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "logseq",
+        "direction": "alternatives",
+        "reason": "Alternative à Obsidian",
+        "description": "Logseq est une application de graphe de connaissances gratuite, open source et locale, avec un outliner et une synchronisation cloud optionnelle.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "reflect-notes",
+        "direction": "alternatives",
+        "reason": "Alternative à Obsidian",
+        "description": "Reflect est une appli de notes en réseau avec liens retour, IA d'écriture et transcription vocale, à 12 $ par mois sans plan gratuit.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "roam-research",
+        "direction": "alternatives",
+        "reason": "Alternative à Obsidian",
+        "description": "Roam Research est une application de prise de notes en réseau basée sur les liens bidirectionnels, les notes quotidiennes et les références de blocs.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "bear",
+        "direction": "alternatives",
+        "reason": "Alternative à Obsidian",
+        "description": "Application de prise de notes Markdown pour les appareils Apple (Mac, iPhone, iPad) mettant l'accent sur la simplicité et le design élégant. Supporte l'édition Markdown, l'organisation flexible des tags, le scan de documents et les exports multiples (TXT, PDF, HTML, DOCX, etc.).",
+        "signals": [
+          "organization",
+          "note-taking-apps",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "milanote",
+        "direction": "adjacent",
+        "reason": "Même usage que Obsidian",
+        "description": "Milanote organise notes, images, liens et fichiers sur des tableaux visuels pour des projets créatifs, avec partage de tableau en temps réel.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "octarine",
+        "direction": "alternatives",
+        "reason": "Alternative à Obsidian",
+        "description": "Application de prise de notes Markdown privée, locale-d'abord, pour la rédaction focalisée et la gestion des connaissances personnelles. Les notes sont stockées sous forme de fichiers Markdown locaux de l'utilisateur. Intégration IA optionnelle permettant à l'utilisateur de configurer un fournisseur personnel.",
+        "signals": [
+          "organization",
+          "note-taking-apps",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "audionotes",
+        "direction": "alternatives",
+        "reason": "Alternative à Obsidian",
+        "description": "Transforme notes vocales, fichiers et vidéos en notes structurées et interrogeables.",
+        "signals": [
+          "organization",
+          "ai-note-taking",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "fellow",
+        "direction": "adjacent",
+        "reason": "Même usage que Obsidian",
+        "description": "Fellow est un assistant de réunion IA avec agendas collaboratifs, notes automatisées et suivi des actions, gratuit pour un plafond à vie de 5 notes.",
+        "signals": [
+          "ai-general",
+          "ai-note-taking",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "slack",
+    "name": "Slack",
+    "description": "La messagerie pro pour échanger avec clients et partenaires.",
+    "signals": [
+      "communication-team",
+      "team-chat",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "discord",
+        "direction": "alternatives",
+        "reason": "Alternative à Slack",
+        "description": "Discord est une plateforme gratuite de chat vocal, vidéo et texte organisée en serveurs communautaires, avec Nitro en amélioration payante optionnelle.",
+        "signals": [
+          "communication",
+          "team-chat",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "notion",
+        "direction": "adjacent",
+        "reason": "Même usage que Slack",
+        "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "penpot",
+        "direction": "adjacent",
+        "reason": "Même usage que Slack",
+        "description": "Alternative open-source et gratuite à Figma — design et prototypage collaboratif.",
+        "signals": [
+          "design-tools",
+          "design-interface",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "whimsical",
+        "direction": "adjacent",
+        "reason": "Même usage que Slack",
+        "description": "Wireframes, flowcharts, mind maps et docs sur canvas infini avec IA.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "microsoft-teams",
+        "direction": "alternatives",
+        "reason": "Alternative à Slack",
+        "description": "Microsoft Teams permet aux équipes de recevoir et traiter des notifications dans leur outil de communication.",
+        "signals": [
+          "communication-team",
+          "team-communication",
+          "microsoft-365",
+          null
+        ]
+      },
+      {
+        "slug": "trello",
+        "direction": "adjacent",
+        "reason": "Même usage que Slack",
+        "description": "Outil de tableaux Kanban visuels avec cartes, listes, Power-Ups et automatisation intégrée pour un suivi de projet léger.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "basecamp",
+        "direction": "adjacent",
+        "reason": "Même usage que Slack",
+        "description": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
+        "signals": [
+          "organization",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "airtable",
+        "direction": "adjacent",
+        "reason": "Même usage que Slack",
+        "description": "Airtable est une base de données relationnelle façon tableur avec vues et automatisations, gratuite pour les petites équipes et facturée par siège d'édition au-delà.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "figjam",
+        "direction": "adjacent",
+        "reason": "Même usage que Slack",
+        "description": "Tableau blanc collaboratif par Figma pour le brainstorming, la réflexion d'équipe et la planification. Inclus gratuitement dans tous les plans Figma, sans frais supplémentaires.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          "figma",
+          null
+        ]
+      },
+      {
+        "slug": "wetransfer",
+        "direction": "adjacent",
+        "reason": "Même usage que Slack",
+        "description": "Envoi de fichiers volumineux par lien, sans compte. Offre gratuite plafonnée depuis 2024.",
+        "signals": [
+          "storage",
+          "file-transfer",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "discord",
+    "name": "Discord",
+    "description": "Discord est une plateforme gratuite de chat vocal, vidéo et texte organisée en serveurs communautaires, avec Nitro en amélioration payante optionnelle.",
+    "signals": [
+      "communication",
+      "team-chat",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "slack",
+        "direction": "alternatives",
+        "reason": "Alternative à Discord",
+        "description": "La messagerie pro pour échanger avec clients et partenaires.",
+        "signals": [
+          "communication-team",
+          "team-chat",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "notion",
+        "direction": "adjacent",
+        "reason": "Même usage que Discord",
+        "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "tiktok-studio",
+        "direction": "alternatives",
+        "reason": "Alternative à Discord",
+        "description": "TikTok Studio est l'outil bureau gratuit de TikTok pour les analytics de chaîne, la gestion des commentaires et la planification sur comptes pro ou créateur.",
+        "signals": [
+          "communication",
+          "social-network",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "pikkovia",
+        "direction": "adjacent",
+        "reason": "Même usage que Discord",
+        "description": "Pikkovia, parfois écrit à tort PikkoVia, est une place de marché web d'icônes et d'illustrations 3D destinée notamment aux designers UI. Elle propose des ressources en PNG et des fichiers 3D, dont des fichiers Blender selon les packs.",
+        "signals": [
+          "design-tools",
+          "visual-creation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "zoom-pro",
+        "direction": "alternatives",
+        "reason": "Alternative à Discord",
+        "description": "Plan payant de Zoom qui supprime la limite de 40 minutes, avec enregistrement cloud, résumés IA et clips illimités.",
+        "signals": [
+          "communication",
+          "team-communication",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "penpot",
+        "direction": "adjacent",
+        "reason": "Même usage que Discord",
+        "description": "Alternative open-source et gratuite à Figma — design et prototypage collaboratif.",
+        "signals": [
+          "design-tools",
+          "design-interface",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "whimsical",
+        "direction": "adjacent",
+        "reason": "Même usage que Discord",
+        "description": "Wireframes, flowcharts, mind maps et docs sur canvas infini avec IA.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "trello",
+        "direction": "adjacent",
+        "reason": "Même usage que Discord",
+        "description": "Outil de tableaux Kanban visuels avec cartes, listes, Power-Ups et automatisation intégrée pour un suivi de projet léger.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "zoom",
+        "direction": "alternatives",
+        "reason": "Alternative à Discord",
+        "description": "Plateforme de visioconférence avec enregistrement cloud, tableaux blancs et résumés de réunion par IA, gratuite jusqu'à 40 minutes par réunion de groupe.",
+        "signals": [
+          "communication",
+          "team-communication",
+          "zoom-pro",
+          null
+        ]
+      },
+      {
+        "slug": "instagram",
+        "direction": "alternatives",
+        "reason": "Alternative à Discord",
+        "description": "Réseau social visuel gratuit ; les coûts réels viennent de la pub et des outils tiers, pas de la plateforme.",
+        "signals": [
+          "communication",
+          "social-network",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "asana",
+    "name": "Asana",
+    "description": "Asana est un outil de gestion de projets et de tâches avec tableaux, frise, calendrier, automatisation des flux et reporting multi-projets pour les équipes.",
+    "signals": [
+      "organization",
+      "project-management-general",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "notion",
+        "direction": "alternatives",
+        "reason": "Alternative à Asana",
+        "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "trello",
+        "direction": "alternatives",
+        "reason": "Alternative à Asana",
+        "description": "Outil de tableaux Kanban visuels avec cartes, listes, Power-Ups et automatisation intégrée pour un suivi de projet léger.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "plane",
+        "direction": "alternatives",
+        "reason": "Alternative à Asana",
+        "description": "Alternative open-source à Linear — gestion de projets et issues pour équipes dev.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "superlist",
+        "direction": "alternatives",
+        "reason": "Alternative à Asana",
+        "description": "Superlist est une application de gestion de tâches avec listes partagées et fonctions IA, gratuite jusqu'à 5 listes puis dès 5 $ par mois.",
+        "signals": [
+          "organization",
+          "personal-task-manager",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "basecamp",
+        "direction": "alternatives",
+        "reason": "Alternative à Asana",
+        "description": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
+        "signals": [
+          "organization",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "taskade",
+        "direction": "alternatives",
+        "reason": "Alternative à Asana",
+        "description": "Espace de travail IA tout-en-un : tâches, agents, docs et automatisations.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "airtable",
+        "direction": "alternatives",
+        "reason": "Alternative à Asana",
+        "description": "Airtable est une base de données relationnelle façon tableur avec vues et automatisations, gratuite pour les petites équipes et facturée par siège d'édition au-delà.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "clickup",
+        "direction": "alternatives",
+        "reason": "Alternative à Asana",
+        "description": "Outil de gestion de travail tout-en-un : tâches, documents, tableaux de bord et chat, plan gratuit limité, formules payantes par siège.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "wrike",
+        "direction": "alternatives",
+        "reason": "Alternative à Asana",
+        "description": "Logiciel de gestion de projet et de travail collaboratif pour équipes et entreprises : tâches, vues multiples (Kanban, Gantt, tableaux), automatisations et reporting.",
+        "signals": [
+          "organization",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "microsoft-project",
+        "direction": "alternatives",
+        "reason": "Alternative à Asana",
+        "description": "Gestion de projet avancée Microsoft.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "trello",
+    "name": "Trello",
+    "description": "Outil de tableaux Kanban visuels avec cartes, listes, Power-Ups et automatisation intégrée pour un suivi de projet léger.",
+    "signals": [
+      "project-management",
+      "project-management-general",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "notion",
+        "direction": "adjacent",
+        "reason": "Même usage que Trello",
+        "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "plane",
+        "direction": "alternatives",
+        "reason": "Alternative à Trello",
+        "description": "Alternative open-source à Linear — gestion de projets et issues pour équipes dev.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "basecamp",
+        "direction": "alternatives",
+        "reason": "Alternative à Trello",
+        "description": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
+        "signals": [
+          "organization",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "taskade",
+        "direction": "alternatives",
+        "reason": "Alternative à Trello",
+        "description": "Espace de travail IA tout-en-un : tâches, agents, docs et automatisations.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "airtable",
+        "direction": "alternatives",
+        "reason": "Alternative à Trello",
+        "description": "Airtable est une base de données relationnelle façon tableur avec vues et automatisations, gratuite pour les petites équipes et facturée par siège d'édition au-delà.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "asana",
+        "direction": "alternatives",
+        "reason": "Alternative à Trello",
+        "description": "Asana est un outil de gestion de projets et de tâches avec tableaux, frise, calendrier, automatisation des flux et reporting multi-projets pour les équipes.",
+        "signals": [
+          "organization",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "clickup",
+        "direction": "alternatives",
+        "reason": "Alternative à Trello",
+        "description": "Outil de gestion de travail tout-en-un : tâches, documents, tableaux de bord et chat, plan gratuit limité, formules payantes par siège.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "wrike",
+        "direction": "alternatives",
+        "reason": "Alternative à Trello",
+        "description": "Logiciel de gestion de projet et de travail collaboratif pour équipes et entreprises : tâches, vues multiples (Kanban, Gantt, tableaux), automatisations et reporting.",
+        "signals": [
+          "organization",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "microsoft-project",
+        "direction": "alternatives",
+        "reason": "Alternative à Trello",
+        "description": "Gestion de projet avancée Microsoft.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "monday-com",
+        "direction": "alternatives",
+        "reason": "Alternative à Trello",
+        "description": "Gestion de projets et workflows visuels",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "clickup",
+    "name": "ClickUp",
+    "description": "Outil de gestion de travail tout-en-un : tâches, documents, tableaux de bord et chat, plan gratuit limité, formules payantes par siège.",
+    "signals": [
+      "project-management",
+      "project-management-general",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "notion",
+        "direction": "adjacent",
+        "reason": "Même usage que ClickUp",
+        "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "trello",
+        "direction": "alternatives",
+        "reason": "Alternative à ClickUp",
+        "description": "Outil de tableaux Kanban visuels avec cartes, listes, Power-Ups et automatisation intégrée pour un suivi de projet léger.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "plane",
+        "direction": "alternatives",
+        "reason": "Alternative à ClickUp",
+        "description": "Alternative open-source à Linear — gestion de projets et issues pour équipes dev.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "basecamp",
+        "direction": "alternatives",
+        "reason": "Alternative à ClickUp",
+        "description": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
+        "signals": [
+          "organization",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "taskade",
+        "direction": "alternatives",
+        "reason": "Alternative à ClickUp",
+        "description": "Espace de travail IA tout-en-un : tâches, agents, docs et automatisations.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "airtable",
+        "direction": "alternatives",
+        "reason": "Alternative à ClickUp",
+        "description": "Airtable est une base de données relationnelle façon tableur avec vues et automatisations, gratuite pour les petites équipes et facturée par siège d'édition au-delà.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "asana",
+        "direction": "alternatives",
+        "reason": "Alternative à ClickUp",
+        "description": "Asana est un outil de gestion de projets et de tâches avec tableaux, frise, calendrier, automatisation des flux et reporting multi-projets pour les équipes.",
+        "signals": [
+          "organization",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "wrike",
+        "direction": "alternatives",
+        "reason": "Alternative à ClickUp",
+        "description": "Logiciel de gestion de projet et de travail collaboratif pour équipes et entreprises : tâches, vues multiples (Kanban, Gantt, tableaux), automatisations et reporting.",
+        "signals": [
+          "organization",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "microsoft-project",
+        "direction": "alternatives",
+        "reason": "Alternative à ClickUp",
+        "description": "Gestion de projet avancée Microsoft.",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "monday-com",
+        "direction": "alternatives",
+        "reason": "Alternative à ClickUp",
+        "description": "Gestion de projets et workflows visuels",
+        "signals": [
+          "project-management",
+          "project-management-general",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "chatgpt",
+    "name": "ChatGPT",
+    "description": "Assistant IA conversationnel pour la rédaction, le code et l'analyse, gratuit sur un modèle de base ou débloqué sur les paliers payants jusqu'à une API.",
+    "signals": [
+      "ai-general",
+      "ai-text-generalist",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "gemini",
+        "direction": "alternatives",
+        "reason": "Alternative à ChatGPT",
+        "description": "Gemini est l'assistant IA de Google, associé au stockage cloud Google One ; les offres payantes vont de 4,99 $ à plus de 99,99 $/mois.",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "claude",
+        "direction": "alternatives",
+        "reason": "Alternative à ChatGPT",
+        "description": "Plateforme API pour accéder aux modèles Claude (Opus, Sonnet, Haiku, Fable), avec options de prompt caching, batch processing et web search pour intégration en production.",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "deepseek",
+        "direction": "alternatives",
+        "reason": "Alternative à ChatGPT",
+        "description": "Fournisseur d'API IA chinois : modèles V4 Flash et V4 Pro avec tarification ultra-compétitive, pricing-cache, et 5M tokens gratuits au signup (pas de CB requise).",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "excalidraw",
+        "direction": "adjacent",
+        "reason": "Même usage que ChatGPT",
+        "description": "Tableau blanc à canevas infini au style dessiné à la main, collaboration en temps réel gratuite et cœur open source.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "google-ai-studio",
+        "direction": "alternatives",
+        "reason": "Alternative à ChatGPT",
+        "description": "Google AI Studio est un bac à sable web gratuit et une console API pour construire avec les modèles Gemini de Google, facturé au token dès 0,30 $ par million de tokens en entrée sur le modèle d'entrée.",
+        "signals": [
+          "ai-general",
+          "ai-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "superlist",
+        "direction": "adjacent",
+        "reason": "Même usage que ChatGPT",
+        "description": "Superlist est une application de gestion de tâches avec listes partagées et fonctions IA, gratuite jusqu'à 5 listes puis dès 5 $ par mois.",
+        "signals": [
+          "organization",
+          "personal-task-manager",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "zoom-ai-companion",
+        "direction": "alternatives",
+        "reason": "Alternative à ChatGPT",
+        "description": "Assistant IA agentic pour Zoom Meetings rebaptisé ZoomMate (juin 2026) qui capture le contexte des réunions, génère des résumés, extraits des actions, et exécute des suivis automatisés dans les systèmes connectés (Salesforce, Jira, Slack, etc.).",
+        "signals": [
+          "ai-general",
+          "ai-note-taking",
+          "zoom-pro",
+          null
+        ]
+      },
+      {
+        "slug": "miro",
+        "direction": "adjacent",
+        "reason": "Même usage que ChatGPT",
+        "description": "Tableau blanc collaboratif en ligne",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "heptabase",
+        "direction": "adjacent",
+        "reason": "Même usage que ChatGPT",
+        "description": "Heptabase est un outil de prise de notes visuelles à canevas infini avec IA intégrée, vendu en abonnement après un essai de 7 jours.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "antidote",
+        "direction": "adjacent",
+        "reason": "Même usage que ChatGPT",
+        "description": "Suite avancée de correction et dictionnaires pour rédaction française.",
+        "signals": [
+          "productivity-tracking",
+          "grammar-correction-tools",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "claude",
+    "name": "Claude",
+    "description": "Plateforme API pour accéder aux modèles Claude (Opus, Sonnet, Haiku, Fable), avec options de prompt caching, batch processing et web search pour intégration en production.",
+    "signals": [
+      "ai-general",
+      "ai-text-generalist",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "chatgpt",
+        "direction": "alternatives",
+        "reason": "Alternative à Claude",
+        "description": "Assistant IA conversationnel pour la rédaction, le code et l'analyse, gratuit sur un modèle de base ou débloqué sur les paliers payants jusqu'à une API.",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "gemini",
+        "direction": "alternatives",
+        "reason": "Alternative à Claude",
+        "description": "Gemini est l'assistant IA de Google, associé au stockage cloud Google One ; les offres payantes vont de 4,99 $ à plus de 99,99 $/mois.",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "deepseek",
+        "direction": "alternatives",
+        "reason": "Alternative à Claude",
+        "description": "Fournisseur d'API IA chinois : modèles V4 Flash et V4 Pro avec tarification ultra-compétitive, pricing-cache, et 5M tokens gratuits au signup (pas de CB requise).",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "superlist",
+        "direction": "adjacent",
+        "reason": "Même usage que Claude",
+        "description": "Superlist est une application de gestion de tâches avec listes partagées et fonctions IA, gratuite jusqu'à 5 listes puis dès 5 $ par mois.",
+        "signals": [
+          "organization",
+          "personal-task-manager",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "zoom-ai-companion",
+        "direction": "alternatives",
+        "reason": "Alternative à Claude",
+        "description": "Assistant IA agentic pour Zoom Meetings rebaptisé ZoomMate (juin 2026) qui capture le contexte des réunions, génère des résumés, extraits des actions, et exécute des suivis automatisés dans les systèmes connectés (Salesforce, Jira, Slack, etc.).",
+        "signals": [
+          "ai-general",
+          "ai-note-taking",
+          "zoom-pro",
+          null
+        ]
+      },
+      {
+        "slug": "antidote",
+        "direction": "adjacent",
+        "reason": "Même usage que Claude",
+        "description": "Suite avancée de correction et dictionnaires pour rédaction française.",
+        "signals": [
+          "productivity-tracking",
+          "grammar-correction-tools",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "languagetool",
+        "direction": "adjacent",
+        "reason": "Même usage que Claude",
+        "description": "Correction grammaticale, style et orthographe multilingue.",
+        "signals": [
+          "productivity-tracking",
+          "grammar-correction-tools",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "midjourney",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Claude",
+        "description": "Outil IA par abonnement qui génère des images à partir de texte, facturé en heures de GPU rapide mensuelles, sans offre gratuite.",
+        "signals": [
+          "creation",
+          "ai-image-generation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "notion",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Claude",
+        "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "ideogram",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Claude",
+        "description": "Générateur d'images IA avec texte intégré : render texte dans images avec 90 % précision (vs 30 % Midjourney), variantes, remixing, et API pour developers. Fast generation et quality modes.",
+        "signals": [
+          "ai-general",
+          "ai-image-generation",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "perplexity",
+    "name": "Perplexity",
+    "description": "Moteur de recherche IA avec réponses récentes, citations numérotées et fonctionnalités avancées comme Spaces personnalisés, recherche académique, et accès à plusieurs modèles frontier.",
+    "signals": [
+      "ai-general",
+      "ai-research-answer-engine",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "notebook-lm",
+        "direction": "alternatives",
+        "reason": "Alternative à Perplexity",
+        "description": "Outil de recherche et partenaire IA Google (anciennement NotebookLM, renommé Gemini Notebook en juillet 2026). Upload jusqu'à 600 sources par notebook pour générer des résumés, des matériels d'étude et des analyses de données. La signature : Audio Overviews convertissant les documents en discussions de podcast IA.",
+        "signals": [
+          "ai-general",
+          "ai-research-answer-engine",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "grokipedia",
+        "direction": "alternatives",
+        "reason": "Alternative à Perplexity",
+        "description": "Encyclopédie générative utilisant le modèle Grok IA de xAI pour créer des articles encyclopédiques. Le corpus, entièrement généré, s'étend rapidement depuis son lancement avec des fonctionnalités d'édition communautaire, des résumés vidéo, des panneaux de connaissances et des images générées.",
+        "signals": [
+          "ai-general",
+          "ai-research-answer-engine",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "grok",
+        "direction": "alternatives",
+        "reason": "Alternative à Perplexity",
+        "description": "Grok est l'assistant IA d'xAI avec recherche web et X en temps réel, raisonnement multi-agents et génération d'images et de vidéos intégrée.",
+        "signals": [
+          "ai-general",
+          "ai-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "brand24",
+        "direction": "adjacent",
+        "reason": "Même usage que Perplexity",
+        "description": "Veille de marque et de mots-clés en temps réel sur les réseaux sociaux, la presse et les forums, avec analyse de sentiment.",
+        "signals": [
+          "analytics",
+          "brand-monitoring",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "lever",
+        "direction": "adjacent",
+        "reason": "Même usage que Perplexity",
+        "description": "ATS (Applicant Tracking System) moderne pour équipes de recrutement.",
+        "signals": [
+          "organization",
+          "workspace-ops",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "workable",
+        "direction": "adjacent",
+        "reason": "Même usage que Perplexity",
+        "description": "Workable est un logiciel de recrutement et RH qui combine sourcing, suivi des candidatures, onboarding et gestion des congés pour les petites entreprises.",
+        "signals": [
+          "organization",
+          "workspace-ops",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "chatgpt",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Perplexity",
+        "description": "Assistant IA conversationnel pour la rédaction, le code et l'analyse, gratuit sur un modèle de base ou débloqué sur les paliers payants jusqu'à une API.",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "midjourney",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Perplexity",
+        "description": "Outil IA par abonnement qui génère des images à partir de texte, facturé en heures de GPU rapide mensuelles, sans offre gratuite.",
+        "signals": [
+          "creation",
+          "ai-image-generation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "notion",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Perplexity",
+        "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "gemini",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Perplexity",
+        "description": "Gemini est l'assistant IA de Google, associé au stockage cloud Google One ; les offres payantes vont de 4,99 $ à plus de 99,99 $/mois.",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "midjourney",
+    "name": "Midjourney",
+    "description": "Outil IA par abonnement qui génère des images à partir de texte, facturé en heures de GPU rapide mensuelles, sans offre gratuite.",
+    "signals": [
+      "creation",
+      "ai-image-generation",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "ideogram",
+        "direction": "alternatives",
+        "reason": "Alternative à Midjourney",
+        "description": "Générateur d'images IA avec texte intégré : render texte dans images avec 90 % précision (vs 30 % Midjourney), variantes, remixing, et API pour developers. Fast generation et quality modes.",
+        "signals": [
+          "ai-general",
+          "ai-image-generation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "leonardo-ai",
+        "direction": "alternatives",
+        "reason": "Alternative à Midjourney",
+        "description": "Leonardo AI génère et édite des images avec des modèles IA propres et tiers, via un système de jetons/crédits sur des plans gratuits et payants.",
+        "signals": [
+          "ai-general",
+          "ai-image-generation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "firefly",
+        "direction": "alternatives",
+        "reason": "Alternative à Midjourney",
+        "description": "Adobe Firefly est une application web d'IA générative pour l'image, la vidéo et le son, aussi intégrée à Photoshop, Premiere Pro et InDesign.",
+        "signals": [
+          "ai-general",
+          "ai-image-generation",
+          "adobe-creative-cloud",
+          null
+        ]
+      },
+      {
+        "slug": "flux-ai",
+        "direction": "alternatives",
+        "reason": "Alternative à Midjourney",
+        "description": "Modèle et écosystème de génération d’images utilisé pour l’exploration visuelle et la production créative.",
+        "signals": [
+          "creation",
+          "ai-image-generation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "stable-diffusion",
+        "direction": "alternatives",
+        "reason": "Alternative à Midjourney",
+        "description": "Modèle de génération d'images IA open-source et libre d'utilisation, accessible via API cloud (Stability.ai) ou en auto-hébergement, permettant créer des images à partir de descriptions texte.",
+        "signals": [
+          "ai-general",
+          "ai-image-generation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "krea-ai",
+        "direction": "adjacent",
+        "reason": "Même usage que Midjourney",
+        "description": "Interface unifiée agrégeant plus de 60 modèles de génération d'image et vidéo par IA avec un système de crédits en unités de calcul partagé.",
+        "signals": [
+          "ai-general",
+          "ai-image-enhancement",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "procreate",
+        "direction": "alternatives",
+        "reason": "Alternative à Midjourney",
+        "description": "Procreate est une application de peinture et d'illustration numérique pour iPad, vendue en achat unique sans abonnement.",
+        "signals": [
+          "creation",
+          "digital-illustration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "canva-pro",
+        "direction": "alternatives",
+        "reason": "Alternative à Midjourney",
+        "description": "Palier payant de Canva : outils IA Magic Studio, modèles premium et kit de marque, à partir de 9,17 €/mois facturé à l'année.",
+        "signals": [
+          "creation",
+          "creative-suite",
+          "canva",
+          null
+        ]
+      },
+      {
+        "slug": "remove-bg",
+        "direction": "alternatives",
+        "reason": "Alternative à Midjourney",
+        "description": "Outil en ligne qui détoure automatiquement l'arrière-plan d'une image en quelques secondes, sans intervention manuelle. Disponible via le web, une appli de bureau, des plugins et une API.",
+        "signals": [
+          "creation",
+          "ai-image-enhancement",
+          "adobe-photoshop",
+          null
+        ]
+      },
+      {
+        "slug": "artstation",
+        "direction": "alternatives",
+        "reason": "Alternative à Midjourney",
+        "description": "ArtStation héberge des portfolios et une marketplace pour artistes concept, 3D et jeu vidéo, avec un plan gratuit avec pub et une offre Pro payante.",
+        "signals": [
+          "creation",
+          "design-inspiration-search",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "zapier",
+    "name": "Zapier",
+    "description": "Outil d’automatisation pour connecter des applications et workflows.",
+    "signals": [
+      "automation",
+      "automation-orchestration",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "gumloop",
+        "direction": "alternatives",
+        "reason": "Alternative à Zapier",
+        "description": "Automatisation no-code IA — construit des workflows intelligents par glisser-déposer.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "albato",
+        "direction": "alternatives",
+        "reason": "Alternative à Zapier",
+        "description": "Plateforme d'automatisation no-code qui relie plus de 1 000 applications, construit des scénarios multi-étapes et propose un copilote ainsi que des agents IA.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "make",
+        "direction": "alternatives",
+        "reason": "Alternative à Zapier",
+        "description": "L'automatisation visuelle sans limite.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "squarespace",
+        "direction": "alternatives",
+        "reason": "Alternative à Zapier",
+        "description": "Plateforme hébergée pour créer des sites, boutiques et espaces de contenu avec éditeur visuel, modèles, hébergement, SEO et outils commerciaux intégrés.",
+        "signals": [
+          "nocode-web",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "turbotic",
+        "direction": "alternatives",
+        "reason": "Alternative à Zapier",
+        "description": "Créez, testez et suivez des workflows automatisés à partir d'instructions en langage naturel.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "draftbit",
+        "direction": "alternatives",
+        "reason": "Alternative à Zapier",
+        "description": "Générateur d’applications natives (avec code) pour mobiles.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "easydmarc",
+        "direction": "alternatives",
+        "reason": "Alternative à Zapier",
+        "description": "SaaS pour résoudre les problèmes de sécurité et délivrabilité email.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "glide",
+        "direction": "alternatives",
+        "reason": "Alternative à Zapier",
+        "description": "Transforme un Google Sheets ou Airtable en application mobile sans coder.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "pagecloud",
+        "direction": "alternatives",
+        "reason": "Alternative à Zapier",
+        "description": "Constructeur de site web et boutique en ligne.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "quick-base",
+        "direction": "alternatives",
+        "reason": "Alternative à Zapier",
+        "description": "Plateforme de développement d’applications sans code.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "make",
+    "name": "Make",
+    "description": "L'automatisation visuelle sans limite.",
+    "signals": [
+      "automation",
+      "automation-orchestration",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "gumloop",
+        "direction": "alternatives",
+        "reason": "Alternative à Make",
+        "description": "Automatisation no-code IA — construit des workflows intelligents par glisser-déposer.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "albato",
+        "direction": "alternatives",
+        "reason": "Alternative à Make",
+        "description": "Plateforme d'automatisation no-code qui relie plus de 1 000 applications, construit des scénarios multi-étapes et propose un copilote ainsi que des agents IA.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "squarespace",
+        "direction": "alternatives",
+        "reason": "Alternative à Make",
+        "description": "Plateforme hébergée pour créer des sites, boutiques et espaces de contenu avec éditeur visuel, modèles, hébergement, SEO et outils commerciaux intégrés.",
+        "signals": [
+          "nocode-web",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "turbotic",
+        "direction": "alternatives",
+        "reason": "Alternative à Make",
+        "description": "Créez, testez et suivez des workflows automatisés à partir d'instructions en langage naturel.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "draftbit",
+        "direction": "alternatives",
+        "reason": "Alternative à Make",
+        "description": "Générateur d’applications natives (avec code) pour mobiles.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "easydmarc",
+        "direction": "alternatives",
+        "reason": "Alternative à Make",
+        "description": "SaaS pour résoudre les problèmes de sécurité et délivrabilité email.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "glide",
+        "direction": "alternatives",
+        "reason": "Alternative à Make",
+        "description": "Transforme un Google Sheets ou Airtable en application mobile sans coder.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "pagecloud",
+        "direction": "alternatives",
+        "reason": "Alternative à Make",
+        "description": "Constructeur de site web et boutique en ligne.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "quick-base",
+        "direction": "alternatives",
+        "reason": "Alternative à Make",
+        "description": "Plateforme de développement d’applications sans code.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "simvoly",
+        "direction": "alternatives",
+        "reason": "Alternative à Make",
+        "description": "Simvoly regroupe créateur de site, funnels de vente, email marketing et communauté payante dans un seul abonnement, dès 18 $ par mois.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "n8n",
+    "name": "n8n",
+    "description": "Automatisation de workflows open source",
+    "signals": [
+      "automation",
+      "automation-orchestration",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "gumloop",
+        "direction": "alternatives",
+        "reason": "Alternative à n8n",
+        "description": "Automatisation no-code IA — construit des workflows intelligents par glisser-déposer.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "albato",
+        "direction": "alternatives",
+        "reason": "Alternative à n8n",
+        "description": "Plateforme d'automatisation no-code qui relie plus de 1 000 applications, construit des scénarios multi-étapes et propose un copilote ainsi que des agents IA.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "make",
+        "direction": "alternatives",
+        "reason": "Alternative à n8n",
+        "description": "L'automatisation visuelle sans limite.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "squarespace",
+        "direction": "alternatives",
+        "reason": "Alternative à n8n",
+        "description": "Plateforme hébergée pour créer des sites, boutiques et espaces de contenu avec éditeur visuel, modèles, hébergement, SEO et outils commerciaux intégrés.",
+        "signals": [
+          "nocode-web",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "turbotic",
+        "direction": "alternatives",
+        "reason": "Alternative à n8n",
+        "description": "Créez, testez et suivez des workflows automatisés à partir d'instructions en langage naturel.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "draftbit",
+        "direction": "alternatives",
+        "reason": "Alternative à n8n",
+        "description": "Générateur d’applications natives (avec code) pour mobiles.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "easydmarc",
+        "direction": "alternatives",
+        "reason": "Alternative à n8n",
+        "description": "SaaS pour résoudre les problèmes de sécurité et délivrabilité email.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "glide",
+        "direction": "alternatives",
+        "reason": "Alternative à n8n",
+        "description": "Transforme un Google Sheets ou Airtable en application mobile sans coder.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "pagecloud",
+        "direction": "alternatives",
+        "reason": "Alternative à n8n",
+        "description": "Constructeur de site web et boutique en ligne.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "quick-base",
+        "direction": "alternatives",
+        "reason": "Alternative à n8n",
+        "description": "Plateforme de développement d’applications sans code.",
+        "signals": [
+          "automation",
+          "automation-orchestration",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "webflow",
+    "name": "Webflow",
+    "description": "Plateforme de conception et de développement web visuel combinant éditeur de mise en page, CMS, hébergement, interactions et outils de collaboration.",
+    "signals": [
+      "nocode-web",
+      "website-builder",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "wized",
+        "direction": "extensions",
+        "reason": "Extension de Webflow",
+        "description": "Couche logique applicative pour Webflow : API, authentification et données dynamiques.",
+        "signals": [
+          "nocode-web",
+          "webflow-tools",
+          null,
+          "webflow"
+        ]
+      },
+      {
+        "slug": "cargo-site",
+        "direction": "alternatives",
+        "reason": "Alternative à Webflow",
+        "description": "Un créateur de sites portfolio pour designers et artistes, avec édition collaborative et boutique intégrée.",
+        "signals": [
+          "nocode-web",
+          "website-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "unbounce",
+        "direction": "alternatives",
+        "reason": "Alternative à Webflow",
+        "description": "Unbounce est un constructeur de landing pages en glisser-déposer avec rédaction IA et tests A/B, facturé selon un plafond de visiteurs mensuels.",
+        "signals": [
+          "nocode-web",
+          "email-outreach",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "readymag",
+        "direction": "alternatives",
+        "reason": "Alternative à Webflow",
+        "description": "Un créateur de site visuel pour des sites éditoriaux animés et des portfolios, avec domaines personnalisés et export de code sur les plans supérieurs.",
+        "signals": [
+          "nocode-web",
+          "website-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "wix",
+        "direction": "alternatives",
+        "reason": "Alternative à Webflow",
+        "description": "Wix est un créateur de site hébergé combinant éditeur visuel, génération de site par IA, e-commerce intégré et outils marketing, avec des plans payants dès 17,77 $ par mois.",
+        "signals": [
+          "nocode-web",
+          "website-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "wordpress-com",
+        "direction": "alternatives",
+        "reason": "Alternative à Webflow",
+        "description": "Plateforme hébergée de blog et de site basée sur WordPress, avec un plan gratuit et des plans payants pour domaine, plugins et e-commerce.",
+        "signals": [
+          "automation",
+          "website-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "landingi",
+        "direction": "alternatives",
+        "reason": "Alternative à Webflow",
+        "description": "Landingi est un créateur de landing pages no-code avec générateur IA, modèles et A/B testing server-side sur les plans supérieurs.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "chatgpt",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Webflow",
+        "description": "Assistant IA conversationnel pour la rédaction, le code et l'analyse, gratuit sur un modèle de base ou débloqué sur les paliers payants jusqu'à une API.",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "excalidraw",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Webflow",
+        "description": "Tableau blanc à canevas infini au style dessiné à la main, collaboration en temps réel gratuite et cœur open source.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "hugeicons",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Webflow",
+        "description": "Une bibliothèque de plus de 51 000 icônes dans plusieurs styles, avec formats dev et design, gratuite pour un style et payante dès 8,25 $/mois.",
+        "signals": [
+          "design-tools",
+          "creative-assets",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "framer",
+    "name": "Framer",
+    "description": "Framer est un créateur de sites sans code avec CMS intégré, environnement de préproduction et fonctions de conception et contenu assistées par IA.",
+    "signals": [
+      "design-tools",
+      "design-prototyping",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "kompa",
+        "direction": "extensions",
+        "reason": "Extension de Framer",
+        "description": "Plugin Framer réunissant plus de mille sections et quatre cents composants d'interface prêts à poser, accessibles depuis le menu d'actions rapides de Framer. Destiné aux freelances et aux équipes qui produisent des sites en série.",
+        "signals": [
+          "design-tools",
+          "design-template-marketplace",
+          null,
+          "framer"
+        ]
+      },
+      {
+        "slug": "excalidraw",
+        "direction": "alternatives",
+        "reason": "Alternative à Framer",
+        "description": "Tableau blanc à canevas infini au style dessiné à la main, collaboration en temps réel gratuite et cœur open source.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "milanote",
+        "direction": "alternatives",
+        "reason": "Alternative à Framer",
+        "description": "Milanote organise notes, images, liens et fichiers sur des tableaux visuels pour des projets créatifs, avec partage de tableau en temps réel.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "whimsical",
+        "direction": "alternatives",
+        "reason": "Alternative à Framer",
+        "description": "Wireframes, flowcharts, mind maps et docs sur canvas infini avec IA.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "magic-patterns",
+        "direction": "alternatives",
+        "reason": "Alternative à Framer",
+        "description": "Générateur IA de composants UI et prototypes à partir d'un prompt.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "flowmapp",
+        "direction": "alternatives",
+        "reason": "Alternative à Framer",
+        "description": "FlowMapp construit des sitemaps, user flows et wireframes collaboratifs pour planifier un site avant le design haute-fidélité.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "balsamiq",
+        "direction": "alternatives",
+        "reason": "Alternative à Framer",
+        "description": "Un outil de wireframing rapide et volontairement basse fidélité pour esquisser des parcours d'applications ou de sites avant le design haute fidélité.",
+        "signals": [
+          "prototyping",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "figjam",
+        "direction": "alternatives",
+        "reason": "Alternative à Framer",
+        "description": "Tableau blanc collaboratif par Figma pour le brainstorming, la réflexion d'équipe et la planification. Inclus gratuitement dans tous les plans Figma, sans frais supplémentaires.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          "figma",
+          null
+        ]
+      },
+      {
+        "slug": "penpot",
+        "direction": "alternatives",
+        "reason": "Alternative à Framer",
+        "description": "Alternative open-source et gratuite à Figma — design et prototypage collaboratif.",
+        "signals": [
+          "design-tools",
+          "design-interface",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "pure-ref",
+        "direction": "alternatives",
+        "reason": "Alternative à Framer",
+        "description": "Planche de références ultra légère pour artistes, illustrateurs et 3D.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "wordpress",
+    "name": "WordPress",
+    "description": "Systeme de gestion de contenu open source, gratuit en auto-hebergement ou en plan heberge WordPress.com a partir de 4 $/mois facture a l'annee.",
+    "signals": [
+      "nocode-web",
+      "nocode-web",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "dart",
+        "direction": "alternatives",
+        "reason": "Alternative à WordPress",
+        "description": "Langage de programmation open source de Google, utilisé par le framework Flutter.",
+        "signals": [
+          "nocode-web",
+          "nocode-web",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "gitlens",
+        "direction": "alternatives",
+        "reason": "Alternative à WordPress",
+        "description": "GitLens est une extension VS Code qui ajoute blame en ligne, graphe de commits, historique de fichiers et outils IA au-dessus de Git.",
+        "signals": [
+          "nocode-web",
+          "nocode-web",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "remix",
+        "direction": "alternatives",
+        "reason": "Alternative à WordPress",
+        "description": "Framework React full-stack (routes, loaders, rendu serveur), aujourd'hui fusionné dans React Router v7.",
+        "signals": [
+          "nocode-web",
+          "nocode-web",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "mongodb-atlas",
+        "direction": "alternatives",
+        "reason": "Alternative à WordPress",
+        "description": "Base de données documentaire managée dans le cloud par MongoDB, avec un plan gratuit et des clusters dédiés facturés à l'usage.",
+        "signals": [
+          "nocode-web",
+          "backend-database-platform",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "neon",
+        "direction": "alternatives",
+        "reason": "Alternative à WordPress",
+        "description": "Base de données Postgres serverless avec autoscaling, branchement instantané et restauration à un instant donné, facturée à l'usage du calcul et du stockage.",
+        "signals": [
+          "nocode-web",
+          "backend-database-platform",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "acf",
+        "direction": "alternatives",
+        "reason": "Alternative à WordPress",
+        "description": "Plugin WordPress pour structurer champs, contenus et interfaces d’administration.",
+        "signals": [
+          "nocode-web",
+          "nocode-web",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "appsmith",
+        "direction": "alternatives",
+        "reason": "Alternative à WordPress",
+        "description": "Low-code open source pour outils internes et interfaces CRUD.",
+        "signals": [
+          "nocode-web",
+          "nocode-web",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "bloc",
+        "direction": "alternatives",
+        "reason": "Alternative à WordPress",
+        "description": "Pattern et librairie Flutter pour séparer logique métier et interface.",
+        "signals": [
+          "nocode-web",
+          "nocode-web",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "bricks",
+        "direction": "alternatives",
+        "reason": "Alternative à WordPress",
+        "description": "Builder WordPress apprécié pour performance, flexibilité et sites sur mesure.",
+        "signals": [
+          "nocode-web",
+          "nocode-web",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "browserstack",
+        "direction": "alternatives",
+        "reason": "Alternative à WordPress",
+        "description": "Tests cross-browser, devices réels et QA web/mobile.",
+        "signals": [
+          "nocode-web",
+          "nocode-web",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "shopify",
+    "name": "Shopify",
+    "description": "Plateforme e-commerce tout-en-un pour vendre en ligne, en boutique et sur les marketplaces.",
+    "signals": [
+      "nocode-web",
+      "commerce-platform",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "woocommerce",
+        "direction": "alternatives",
+        "reason": "Alternative à Shopify",
+        "description": "Plugin WordPress open source qui transforme un site en boutique en ligne, avec passerelles de paiement, calcul des taxes et centaines d'extensions payantes.",
+        "signals": [
+          "nocode-web",
+          "commerce-platform",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "shophero",
+        "direction": "alternatives",
+        "reason": "Alternative à Shopify",
+        "description": "Plateforme de gestion e-commerce et supply chain.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "hydrogen",
+        "direction": "alternatives",
+        "reason": "Alternative à Shopify",
+        "description": "Framework React de Shopify pour vitrines headless commerce.",
+        "signals": [
+          "nocode-web",
+          "ecommerce",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "liquid",
+        "direction": "alternatives",
+        "reason": "Alternative à Shopify",
+        "description": "Langage de template utilisé par Shopify pour thèmes et vitrines.",
+        "signals": [
+          "nocode-web",
+          "ecommerce",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "medusa",
+        "direction": "alternatives",
+        "reason": "Alternative à Shopify",
+        "description": "Framework commerce headless pour boutiques et plateformes sur mesure.",
+        "signals": [
+          "nocode-web",
+          "ecommerce",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "recharge",
+        "direction": "alternatives",
+        "reason": "Alternative à Shopify",
+        "description": "Abonnements e-commerce pour Shopify : récurrence, portail client et retention.",
+        "signals": [
+          "nocode-web",
+          "ecommerce",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "saleor",
+        "direction": "alternatives",
+        "reason": "Alternative à Shopify",
+        "description": "Plateforme commerce GraphQL headless pour projets e-commerce avancés.",
+        "signals": [
+          "nocode-web",
+          "ecommerce",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "shipstation",
+        "direction": "alternatives",
+        "reason": "Alternative à Shopify",
+        "description": "Logiciel d'expédition multi-transporteurs pour boutiques en ligne, qui génère les étiquettes et compare les tarifs, avec un prix qui évolue selon le volume mensuel d'expéditions.",
+        "signals": [
+          "nocode-web",
+          "ecommerce",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "shopify-cli",
+        "direction": "alternatives",
+        "reason": "Alternative à Shopify",
+        "description": "CLI officielle pour thèmes, apps Shopify et workflows développeur.",
+        "signals": [
+          "nocode-web",
+          "ecommerce",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "gumroad",
+        "direction": "adjacent",
+        "reason": "Même usage que Shopify",
+        "description": "Vente de produits numériques",
+        "signals": [
+          "finance",
+          "checkout-platforms",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "supabase",
+    "name": "Supabase",
+    "description": "Backend Postgres open source tout-en-un (base de données, auth, stockage, API auto-générées, temps réel), positionné comme une alternative à Firebase.",
+    "signals": [
+      "nocode-web",
+      "backend-database-platform",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "mongodb-atlas",
+        "direction": "alternatives",
+        "reason": "Alternative à Supabase",
+        "description": "Base de données documentaire managée dans le cloud par MongoDB, avec un plan gratuit et des clusters dédiés facturés à l'usage.",
+        "signals": [
+          "nocode-web",
+          "backend-database-platform",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "neon",
+        "direction": "alternatives",
+        "reason": "Alternative à Supabase",
+        "description": "Base de données Postgres serverless avec autoscaling, branchement instantané et restauration à un instant donné, facturée à l'usage du calcul et du stockage.",
+        "signals": [
+          "nocode-web",
+          "backend-database-platform",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "emergent",
+        "direction": "alternatives",
+        "reason": "Alternative à Supabase",
+        "description": "Construis des apps web et mobiles avec l'IA — MVP en heures, pas en semaines.",
+        "signals": [
+          "nocode-web",
+          "ai-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "firebase",
+        "direction": "alternatives",
+        "reason": "Alternative à Supabase",
+        "description": "Firebase est la plateforme backend gérée de Google : base de données, authentification, stockage, fonctions serverless et hébergement, facturés à l'usage.",
+        "signals": [
+          "nocode-web",
+          "backend-database-platform",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "planetscale",
+        "direction": "alternatives",
+        "reason": "Alternative à Supabase",
+        "description": "Base de données MySQL serverless avec branching de schéma, pensée pour les équipes de développement.",
+        "signals": [
+          "nocode-web",
+          "backend-database-platform",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "digitalocean",
+        "direction": "alternatives",
+        "reason": "Alternative à Supabase",
+        "description": "Hébergement cloud à l'usage avec machines virtuelles, Kubernetes managé, PaaS et stockage d'objets, à partir de 4 dollars par mois.",
+        "signals": [
+          "nocode-web",
+          "cloud-hosting-paas",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "fly-io",
+        "direction": "alternatives",
+        "reason": "Alternative à Supabase",
+        "description": "Plateforme d'hébergement d'apps conteneurisées facturée à la seconde selon l'usage, sans abonnement fixe, avec bases de données gérées et déploiement mondial.",
+        "signals": [
+          "nocode-web",
+          "cloud-hosting-paas",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "heroku",
+        "direction": "alternatives",
+        "reason": "Alternative à Supabase",
+        "description": "Une plateforme qui déploie des applications backend via git push, avec bases de données gérées et mise à l'échelle automatique, sans gérer de serveurs.",
+        "signals": [
+          "nocode-web",
+          "cloud-hosting-paas",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "netlify",
+        "direction": "alternatives",
+        "reason": "Alternative à Supabase",
+        "description": "Netlify héberge des applications web modernes avec déploiements Git, fonctions serverless, accès à des modèles IA et stockage, facturés via un forfait de crédits mensuels.",
+        "signals": [
+          "nocode-web",
+          "cloud-hosting-paas",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "railway",
+        "direction": "alternatives",
+        "reason": "Alternative à Supabase",
+        "description": "Plateforme de déploiement (PaaS) moderne, simple à utiliser pour héberger une app ou une base de données.",
+        "signals": [
+          "nocode-web",
+          "cloud-hosting-paas",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "vercel",
+    "name": "Vercel",
+    "description": "Une plateforme de déploiement basée sur git pour les apps frontend et serverless, avec environnements de prévisualisation, réseau en périphérie et une offre Hobby gratuite.",
+    "signals": [
+      "nocode-web",
+      "website-app-builder",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "landingi",
+        "direction": "alternatives",
+        "reason": "Alternative à Vercel",
+        "description": "Landingi est un créateur de landing pages no-code avec générateur IA, modèles et A/B testing server-side sur les plans supérieurs.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "finale-inventory",
+        "direction": "alternatives",
+        "reason": "Alternative à Vercel",
+        "description": "Solution de gestion des stocks pour vendeurs à gros volume.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "gelato",
+        "direction": "alternatives",
+        "reason": "Alternative à Vercel",
+        "description": "Gelato relie une boutique en ligne à un réseau mondial d'impression à la demande qui crée, imprime et expédie des produits automatiquement via Shopify, Etsy ou WooCommerce.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "getida",
+        "direction": "alternatives",
+        "reason": "Alternative à Vercel",
+        "description": "Audite les comptes Amazon FBA et dépose les demandes de remboursement pour stocks perdus ou endommagés, en facturant une commission uniquement sur les montants récupérés.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "gorgias",
+        "direction": "alternatives",
+        "reason": "Alternative à Vercel",
+        "description": "Helpdesk e-commerce avec intégration Shopify profonde et IA de résolution automatique.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "hostfully",
+        "direction": "alternatives",
+        "reason": "Alternative à Vercel",
+        "description": "Logiciel de gestion de locations courte durée pour les réservations, la distribution multicanal et les messages aux voyageurs, facturé par bien géré.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "inflow-inventory",
+        "direction": "alternatives",
+        "reason": "Alternative à Vercel",
+        "description": "Logiciel de gestion des stocks pour petites entreprises.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "katana-cloud-manufacturing",
+        "direction": "alternatives",
+        "reason": "Alternative à Vercel",
+        "description": "Logiciel cloud de gestion manufacturière intégrée au e-commerce.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "mrpeasy",
+        "direction": "alternatives",
+        "reason": "Alternative à Vercel",
+        "description": "ERP/MRP pour petites entreprises manufacturières.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "packhelp",
+        "direction": "alternatives",
+        "reason": "Alternative à Vercel",
+        "description": "Marketplace de packagings personnalisés.",
+        "signals": [
+          "nocode-web",
+          "website-app-builder",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "google-drive",
+    "name": "Google Drive",
+    "description": "Le standard du stockage cloud.",
+    "signals": [
+      "storage",
+      "cloud-storage",
+      "google-workspace",
+      null
+    ],
+    "top": [
+      {
+        "slug": "dropbox",
+        "direction": "alternatives",
+        "reason": "Alternative à Google Drive",
+        "description": "Dropbox est un service de stockage cloud et de synchronisation de fichiers avec sync automatique, partage et historique de versions, d'un plan gratuit à 2 Go jusqu'à un plan Advanced à 24 $/siège/mois.",
+        "signals": [
+          "organization",
+          "cloud-storage",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "google-chat",
+        "direction": "extensions",
+        "reason": "Extension de Google Drive",
+        "description": "Google Chat permet aux équipes de recevoir et traiter des notifications dans leur outil de communication.",
+        "signals": [
+          "communication-team",
+          "team-communication",
+          "google-workspace",
+          null
+        ]
+      },
+      {
+        "slug": "google-docs",
+        "direction": "extensions",
+        "reason": "Extension de Google Drive",
+        "description": "Traitement de texte collaboratif gratuit en temps réel, utilisable hors ligne et compatible avec les fichiers Microsoft Word.",
+        "signals": [
+          "legal-contracts",
+          "legal-contracts",
+          "google-workspace",
+          null
+        ]
+      },
+      {
+        "slug": "google-sheets",
+        "direction": "extensions",
+        "reason": "Extension de Google Drive",
+        "description": "Le tableur collaboratif de Google, gratuit et accessible partout.",
+        "signals": [
+          "organization",
+          "productivity-docs",
+          "google-workspace",
+          null
+        ]
+      },
+      {
+        "slug": "google-workspace",
+        "direction": "extensions",
+        "reason": "Extension de Google Drive",
+        "description": "Google Workspace regroupe Gmail professionnel, Drive, Docs, Sheets, Meet, Calendar et Gemini dans une suite collaborative administrée.",
+        "signals": [
+          "hris-payroll",
+          "hris-sync",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "box",
+        "direction": "alternatives",
+        "reason": "Alternative à Google Drive",
+        "description": "Stockage cloud et partage de fichiers avec permissions, signature et Box AI, gratuit en solo, par poste avec un minimum de 3 postes en équipe.",
+        "signals": [
+          "organization",
+          "cloud-storage",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "google-slides",
+        "direction": "extensions",
+        "reason": "Extension de Google Drive",
+        "description": "Présentations collaboratives Google",
+        "signals": [
+          "creation",
+          "presentation-software",
+          "google-workspace",
+          null
+        ]
+      },
+      {
+        "slug": "google-meet",
+        "direction": "extensions",
+        "reason": "Extension de Google Drive",
+        "description": "La visioconférence de Google, intégrée à Calendar et Gmail.",
+        "signals": [
+          "communication",
+          "team-communication",
+          "google-workspace",
+          null
+        ]
+      },
+      {
+        "slug": "gmail",
+        "direction": "extensions",
+        "reason": "Extension de Google Drive",
+        "description": "Un service de messagerie personnelle gratuit qui évolue vers une suite professionnelle Google Workspace avec stockage partagé, Gmail, Drive et l'IA Gemini.",
+        "signals": [
+          "communication",
+          "email-hosting",
+          "google-workspace",
+          null
+        ]
+      },
+      {
+        "slug": "chatgpt",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Google Drive",
+        "description": "Assistant IA conversationnel pour la rédaction, le code et l'analyse, gratuit sur un modèle de base ou débloqué sur les paliers payants jusqu'à une API.",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "dropbox",
+    "name": "Dropbox",
+    "description": "Dropbox est un service de stockage cloud et de synchronisation de fichiers avec sync automatique, partage et historique de versions, d'un plan gratuit à 2 Go jusqu'à un plan Advanced à 24 $/siège/mois.",
+    "signals": [
+      "organization",
+      "cloud-storage",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "box",
+        "direction": "alternatives",
+        "reason": "Alternative à Dropbox",
+        "description": "Stockage cloud et partage de fichiers avec permissions, signature et Box AI, gratuit en solo, par poste avec un minimum de 3 postes en équipe.",
+        "signals": [
+          "organization",
+          "cloud-storage",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "google-drive",
+        "direction": "alternatives",
+        "reason": "Alternative à Dropbox",
+        "description": "Le standard du stockage cloud.",
+        "signals": [
+          "storage",
+          "cloud-storage",
+          "google-workspace",
+          null
+        ]
+      },
+      {
+        "slug": "sharepoint",
+        "direction": "adjacent",
+        "reason": "Même usage que Dropbox",
+        "description": "SharePoint sert à stocker, partager ou synchroniser des fichiers dans l’organisation.",
+        "signals": [
+          "storage",
+          "file-storage",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "shade",
+        "direction": "adjacent",
+        "reason": "Même usage que Dropbox",
+        "description": "Bibliothèque de médias partagée, recherche IA et revue pour équipes créatives.",
+        "signals": [
+          "assets",
+          null,
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "chatgpt",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Dropbox",
+        "description": "Assistant IA conversationnel pour la rédaction, le code et l'analyse, gratuit sur un modèle de base ou débloqué sur les paliers payants jusqu'à une API.",
+        "signals": [
+          "ai-general",
+          "ai-text-generalist",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "excalidraw",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Dropbox",
+        "description": "Tableau blanc à canevas infini au style dessiné à la main, collaboration en temps réel gratuite et cœur open source.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "hugeicons",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Dropbox",
+        "description": "Une bibliothèque de plus de 51 000 icônes dans plusieurs styles, avec formats dev et design, gratuite pour un style et payante dès 8,25 $/mois.",
+        "signals": [
+          "design-tools",
+          "creative-assets",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "midjourney",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Dropbox",
+        "description": "Outil IA par abonnement qui génère des images à partir de texte, facturé en heures de GPU rapide mensuelles, sans offre gratuite.",
+        "signals": [
+          "creation",
+          "ai-image-generation",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "milanote",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Dropbox",
+        "description": "Milanote organise notes, images, liens et fichiers sur des tableaux visuels pour des projets créatifs, avec partage de tableau en temps réel.",
+        "signals": [
+          "design-tools",
+          "design-prototyping",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "notion",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Dropbox",
+        "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "typeform",
+    "name": "Typeform",
+    "description": "Créateur de formulaires et d'enquêtes interactifs et conversationnels avec logique conditionnelle, gratuit jusqu'à 100 réponses par mois.",
+    "signals": [
+      "email-productivity",
+      "form-builder",
+      null,
+      null
+    ],
+    "top": [
+      {
+        "slug": "jotform",
+        "direction": "alternatives",
+        "reason": "Alternative à Typeform",
+        "description": "Générateur de formulaires par glisser-déposer avec des milliers de modèles, paiement intégré et automatisations déclenchées par soumission.",
+        "signals": [
+          "nocode-web",
+          "form-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "fillout",
+        "direction": "alternatives",
+        "reason": "Alternative à Typeform",
+        "description": "Fillout est un créateur de formulaires avec logique conditionnelle, paiements et génération de PDF, facturé au volume de réponses mensuelles plutôt qu'au nombre de sièges.",
+        "signals": [
+          "nocode-web",
+          "form-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "surveymonkey",
+        "direction": "alternatives",
+        "reason": "Alternative à Typeform",
+        "description": "Questionnaires, collecte de réponses et analyse des retours.",
+        "signals": [
+          "communication",
+          "form-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "tally",
+        "direction": "alternatives",
+        "reason": "Alternative à Typeform",
+        "description": "Tally est un créateur de formulaires gratuit en priorité, avec logique conditionnelle, paiements, signatures électroniques et intégrations natives Notion, Sheets et Zapier.",
+        "signals": [
+          "communication",
+          "form-builder",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "youform",
+        "direction": "adjacent",
+        "reason": "Même usage que Typeform",
+        "description": "Un créateur de formulaires façon Typeform avec logique conditionnelle, signatures électroniques et paiements Stripe, avec un vrai plan gratuit à réponses illimitées.",
+        "signals": [
+          "nocode-web",
+          "form-builders",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "notion",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Typeform",
+        "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données, avec un plan gratuit généreux et des paliers payants par siège.",
+        "signals": [
+          "organization",
+          "knowledge-workspace",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "circle",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Typeform",
+        "description": "Circle combine espaces de discussion, cours, événements et gestion des membres dans une plateforme communautaire avec crédits IA intégrés.",
+        "signals": [
+          "formation-education",
+          "learning-platform",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "carrd",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Typeform",
+        "description": "Constructeur de pages de destination ultra-minimaliste. Création rapide de landing pages, micro-portfolios et sites d'une seule page, sans code. Cible les créateurs solo, freelances et micro-entreprises.",
+        "signals": [
+          "nocode-web",
+          "website-builders",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "dorik",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Typeform",
+        "description": "Constructeur de sites no-code avec IA intégrée et hébergement inclus à 4$/mois.",
+        "signals": [
+          "nocode-web",
+          "website-builders",
+          null,
+          null
+        ]
+      },
+      {
+        "slug": "plausible",
+        "direction": "adjacent",
+        "reason": "Usage voisin de Typeform",
+        "description": "Plausible est un outil d'analytics sans cookies et conforme RGPD, facturé selon le trafic mensuel, sans forfait gratuit permanent au-delà d'un essai de 30 jours.",
+        "signals": [
+          "analytics",
+          "analytics",
+          null,
+          null
+        ]
+      }
+    ]
+  }
+]

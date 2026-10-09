@@ -17,6 +17,7 @@ import { setSeoTags, setNoindex, removeNoindex, cleanupSeo, hasNonCanonicalSearc
 import { trackEvent } from "@/lib/analytics";
 import {
   buildExplorationCandidates,
+  usesAuditedExplorationRelations,
   getExplorerHref,
   getExplorationToolKey,
   getObjectiveExplorationThemeId,
@@ -284,13 +285,15 @@ export default function ExplorerPage() {
   const isObjectiveSource = source?.type === "objectif";
   const angleParam = searchParams.get("angle");
   const angle: ExplorationDirection = angleParam === "alternatives" || angleParam === "extensions" || angleParam === "adjacent" ? angleParam : "all";
+  const auditedRelations = source?.type === "outil" && usesAuditedExplorationRelations(sourceTools);
   const candidates = useMemo(() => buildExplorationCandidates({
+    relationPolicy: auditedRelations ? "audited" : "legacy",
     destinationId: destination?.id,
     getCategoryLabel,
     sourceTools,
     stackEntries: state.toolEntries,
     tools,
-  }), [destination?.id, getCategoryLabel, sourceTools, state.toolEntries, tools]);
+  }), [auditedRelations, destination?.id, getCategoryLabel, sourceTools, state.toolEntries, tools]);
   const objectiveThemes = useMemo(() => isObjectiveSource
     ? getObjectiveExplorationThemes(source.id, candidates)
     : [], [candidates, isObjectiveSource, source]);
@@ -487,7 +490,7 @@ export default function ExplorerPage() {
       { id: "all", label: t("Tout", "All") as string },
       { id: "alternatives", label: t("Alternatives", "Alternatives") as string },
       { id: "extensions", label: t("Extensions", "Extensions") as string },
-      { id: "adjacent", label: t("Outils complémentaires", "Complementary tools") as string },
+      { id: "adjacent", label: auditedRelations ? t("Outils liés", "Related tools") : t("Outils complémentaires", "Complementary tools") as string },
     ];
   const sourceToolSlug = sourceTool ? getExplorationToolKey(sourceTool) : null;
   const sourceStackEntry = sourceToolSlug ? state.toolEntries.find((entry) => entry.toolSlug === sourceToolSlug) : null;
@@ -581,7 +584,7 @@ export default function ExplorerPage() {
           state={candidateLinkState}
           className="ex-card-main"
           aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
-          aria-describedby={`explore-card-${slug}-description`}
+          aria-describedby={auditedRelations ? `explore-card-${slug}-relation explore-card-${slug}-description` : `explore-card-${slug}-description`}
           onClick={() => trackEvent("explorer_recenter", { tool_slug: slug })}
         >
           <span className="ex-card-media">
@@ -602,6 +605,7 @@ export default function ExplorerPage() {
               <strong>{candidate.tool.name}</strong>
             </Link>
           </div>
+          {auditedRelations && <p id={`explore-card-${slug}-relation`} className="ex-card-relation">{t(candidate.reasonFr, candidate.reasonEn)}</p>}
           <p id={`explore-card-${slug}-description`} className="ex-card-description">{description}</p>
         </div>
       </article>
@@ -719,6 +723,11 @@ export default function ExplorerPage() {
           )}</p>
         </header>
       )}
+
+      {auditedRelations && visibleCandidates.length > 0 && <p className="ex-relations-note">{t(
+        "Une alternative est une piste du catalogue à comparer pour les usages indiqués. Une extension déclare cet outil comme hôte. Une suite ou un usage commun n’indique pas une intégration.",
+        "An alternative is a catalogue option to compare for the uses shown. An extension declares this tool as its host. A shared suite or use does not establish an integration.",
+      )}</p>}
 
       {visibleCandidates.length > 0 ? (
         gridCandidates.length > 0 && <section className="ex-grid ex-grid--masonry" aria-label={t("Outils associés", "Related tools") as string}>

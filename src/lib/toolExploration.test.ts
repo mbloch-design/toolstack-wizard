@@ -45,8 +45,8 @@ describe("toolExploration", () => {
   });
 
   it("conserve les outils de la stack et distingue la destination", () => {
-    const figma = tool({ id: "figma", name: "Figma", functional_needs: ["design"] });
-    const penpot = tool({ id: "penpot", name: "Penpot", functional_needs: ["design"] });
+    const figma = tool({ id: "figma", name: "Figma", functional_needs: ["ui-design"] });
+    const penpot = tool({ id: "penpot", name: "Penpot", functional_needs: ["ui-design"] });
     const entry = { toolSlug: "penpot", needIds: ["dev"], addedAt: "2026-01-01T00:00:00.000Z", assignmentMode: "manual" as const, intent: "stack" as const };
     const [elsewhere] = buildExplorationCandidates({ destinationId: "design", getCategoryLabel: () => "Design", sourceTools: [figma], stackEntries: [entry], tools: [figma, penpot] });
     const [atDestination] = buildExplorationCandidates({ destinationId: "dev", getCategoryLabel: () => "Design", sourceTools: [figma], stackEntries: [entry], tools: [figma, penpot] });
@@ -87,4 +87,109 @@ describe("toolExploration", () => {
       "Vidéo & mouvement",
     ]);
   });
+});
+
+
+describe("Explorer R5 evidence gates", () => {
+  const candidates = (source: ToolSummary, others: ToolSummary[]) => buildExplorationCandidates({ relationPolicy: "audited", getCategoryLabel: () => "", sourceTools: [source], tools: [source, ...others], stackEntries: [] });
+  const fromCatalog = (slug: string) => catalog.find(item => item.slug === slug) as ToolSummary;
+
+  it("preserves declared comparisons without trusting a polluted substitution cluster", () => {
+    const source = fromCatalog("blender");
+    const results = candidates(source, [fromCatalog("adobe-photoshop"), fromCatalog("cinema-4d")]);
+    expect(results.map(item => item.tool.slug)).toEqual(["cinema-4d"]);
+    expect(results[0].direction).toBe("adjacent");
+    expect(results[0].reasonFr).toContain("vérifier");
+  });
+  it("does not recommend stock management around a deployment platform", () => {
+    expect(candidates(fromCatalog("vercel"), [fromCatalog("gelato"), fromCatalog("finale-inventory")])).toEqual([]);
+  });
+  it("does not assert extension compatibility between sibling suite apps", () => {
+    const [result] = candidates(fromCatalog("adobe-photoshop"), [fromCatalog("adobe-illustrator")]);
+    expect(result.direction).toBe("adjacent");
+    expect(result.reasonFr).toContain("suite");
+    expect(result.reasonEn).toContain("suite");
+  });
+  it("does not infer an alternative from generic collaboration or no-code tags", () => {
+    expect(candidates(fromCatalog("slack"), [fromCatalog("penpot")])).toEqual([]);
+    expect(candidates(fromCatalog("wordpress"), [fromCatalog("browserstack")])).toEqual([]);
+  });
+  it("labels a shared use as adjacent instead of claiming substitutability", () => {
+    const a=tool({id:"a",name:"A",functional_needs:["notes"]});
+    const b=tool({id:"b",name:"B",functional_needs:["notes"]});
+    expect(candidates(a,[b])[0].direction).toBe("adjacent");
+  });
+  it("accepts an explicit alternative across categories and aliases", () => {
+    const a=tool({id:"source-id",slug:"source",name:"Source",categoryId:"one",functional_needs:["notes"]});
+    const b=tool({id:"target-id",slug:"target",name:"Target",categoryId:"two",functional_needs:["notes"],alternatives:["source-id"]});
+    expect(candidates(a,[b])[0].direction).toBe("alternatives");
+  });
+  it("does not emit unrelated candidates from a vertical or category alone", () => {
+    const a=tool({id:"a",name:"A",verticals:["creative"]});
+    const b=tool({id:"b",name:"B",verticals:["creative"]});
+    expect(candidates(a,[b])).toEqual([]);
+  });
+  it("does not claim a plugin for another host is a replacement for its source app", () => {
+    const a=tool({id:"source",name:"Source",alternatives:["plugin"]});
+    const plugin=tool({id:"plugin",name:"Plugin",host_app:"other"});
+    expect(candidates(a,[plugin])).toEqual([]);
+  });
+});
+
+
+it("does not promote a one-way inverse link without shared functional evidence", () => {
+ const source=catalog.find(item=>item.slug==="supabase") as ToolSummary;
+ const candidate=catalog.find(item=>item.slug==="remix") as ToolSummary;
+ expect(buildExplorationCandidates({getCategoryLabel:()=>"",sourceTools:[source],tools:[source,candidate],stackEntries:[]})).toEqual([]);
+});
+it("does not mix recruitment sourcing and web research", () => {
+ const source=catalog.find(item=>item.slug==="perplexity") as ToolSummary;
+ const candidate=catalog.find(item=>item.slug==="lever") as ToolSummary;
+ expect(buildExplorationCandidates({getCategoryLabel:()=>"",sourceTools:[source],tools:[source,candidate],stackEntries:[]})).toEqual([]);
+});
+
+
+it("qualifies a forward comparison without shared use instead of claiming replacement", () => {
+ const source=catalog.find(item=>item.slug==="google-drive") as ToolSummary;
+ const candidate=catalog.find(item=>item.slug==="wetransfer") as ToolSummary;
+ const [result]=buildExplorationCandidates({getCategoryLabel:()=>"",sourceTools:[source],tools:[source,candidate],stackEntries:[]});
+ expect(result.direction).toBe("adjacent");
+ expect(result.reasonFr).toContain("vérifier");
+});
+it("does not use a generic AI-assistant tag to link an API with a task app", () => {
+ const source=catalog.find(item=>item.slug==="claude") as ToolSummary;
+ const candidate=catalog.find(item=>item.slug==="superlist") as ToolSummary;
+ expect(buildExplorationCandidates({getCategoryLabel:()=>"",sourceTools:[source],tools:[source,candidate],stackEntries:[]})).toEqual([]);
+});
+it("names the shared catalogue use in both languages", () => {
+ const source=tool({id:"a",name:"A",functional_needs:["retouche-photo"]});
+ const candidate=tool({id:"b",name:"B",functional_needs:["retouche-photo"]});
+ const [result]=buildExplorationCandidates({relationPolicy:"audited",getCategoryLabel:()=>"",sourceTools:[source],tools:[source,candidate],stackEntries:[]});
+ expect(result.reasonFr).toContain("Retouche photo");
+ expect(result.reasonEn).toContain("Photo editing");
+});
+
+
+it.each([["chatgpt", "slido"], ["make", "crayo-ai"], ["n8n", "crayo-ai"]])("does not treat broad method tags as evidence between %s and %s", (sourceSlug, candidateSlug) => {
+ const source=catalog.find(item=>item.slug===sourceSlug) as ToolSummary;
+ const candidate=catalog.find(item=>item.slug===candidateSlug) as ToolSummary;
+ expect(buildExplorationCandidates({getCategoryLabel:()=>"",sourceTools:[source],tools:[source,candidate],stackEntries:[]})).toEqual([]);
+});
+
+
+describe("R5 bounded rollout", () => {
+ it("preserves legacy relations for an unaudited source", () => {
+  const source=tool({id:"unaudited",name:"Unaudited"});
+  const target=tool({id:"other",name:"Other"});
+  const options={getCategoryLabel:()=>"",sourceTools:[source],tools:[source,target],stackEntries:[]};
+  expect(buildExplorationCandidates(options)).toEqual(buildExplorationCandidates({...options,relationPolicy:"legacy"}));
+  expect(buildExplorationCandidates(options)).toHaveLength(1);
+  expect(buildExplorationCandidates({...options,relationPolicy:"audited"})).toEqual([]);
+ });
+ it("keeps multi-source stack exploration on the existing policy", () => {
+  const source=catalog.find(item=>item.slug==="vercel") as ToolSummary;
+  const second=catalog.find(item=>item.slug==="supabase") as ToolSummary;
+  const options={getCategoryLabel:()=>"",sourceTools:[source,second],tools:catalog as ToolSummary[],stackEntries:[]};
+  expect(buildExplorationCandidates(options)).toEqual(buildExplorationCandidates({...options,relationPolicy:"legacy"}));
+ });
 });

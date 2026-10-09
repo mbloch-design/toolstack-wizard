@@ -1,3 +1,14 @@
+## 9 octobre 2026 — R5 : audit des relations Explorer
+
+- Pilote reproductible de 30 sources, catalogue visible stable ; baseline et appréciations indépendantes conservées dans `docs/proofs/explorer-r5-2026-10-09/`.
+- Activation bornée aux 30 routes sources auditées ; 1 210 sources hors pilote et multi-source identiques à la baseline. Objectifs et exploration de sélection conservent la politique antérieure.
+- Garde-fous : hôte pour extensions, suite distincte, liens déclarés corroborés, comparaisons à vérifier et refus des tags trop génériques. Aucune modification des faits catalogue.
+- Contrôle SEO : Discord et Microsoft Teams exigés autour de Slack ; trois autres destinations minimum ailleurs, autoliens exclus. Le premier build global a échoué, extension hors pilote retirée.
+- Justifications d’usage visibles FR/EN sur le pilote ; libellés de fonctionnalités existants mutualisés, routes et collections conservées.
+- Relecture indépendante et corrections testées avant/après. Recette Chromium FR/EN 390/1440 px, navigation, ajout/destination, persistance et SEO personnel.
+- Contrôles techniques : 310 tests applicatifs, 117 Ma Stack, 25 SEO, types app/Node/API et build production complet PASS.
+- Validation éditoriale non acquise : 127/198 crédibles dans le top 8 ; 42 slots manquants, cas partiels et API/app laissés ouverts. Rapport : `docs/R5_EXPLORER_AUDIT_2026-10-09.md`. Non publié.
+
 ## 9 octobre 2026 — R4 : coûts et recoupements Ma Stack
 
 - Audit du calcul et des sources sur la version main `c42d137826`, dans un worktree isolé.

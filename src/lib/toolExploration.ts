@@ -1,3 +1,4 @@
+import { getFeatureLabel } from "./featureLabels";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import type { StackToolEntry } from "@/lib/stackState";
 
@@ -29,6 +30,7 @@ export interface ExplorationCandidate {
 }
 
 interface BuildExplorationCandidatesOptions {
+  relationPolicy?: "audited" | "legacy";
   destinationId?: string | null;
   getCategoryLabel: (tool: ToolSummary) => string;
   sourceTools: ToolSummary[];
@@ -145,7 +147,88 @@ function getLookupKeys(tool: ToolSummary) {
   return [tool.id, tool.slug, getExplorationToolKey(tool)].map(normalizeKey).filter(Boolean);
 }
 
+export const R5_AUDITED_SOURCE_SLUGS = ["figma", "adobe-photoshop", "adobe-after-effects", "blender", "cinema-4d", "davinci-resolve", "canva", "notion", "obsidian", "slack", "discord", "asana", "trello", "clickup", "chatgpt", "claude", "perplexity", "midjourney", "zapier", "make", "n8n", "webflow", "framer", "wordpress", "shopify", "supabase", "vercel", "google-drive", "dropbox", "typeform"] as const;
+
+export function usesAuditedExplorationRelations(sourceTools: ToolSummary[]) {
+  return sourceTools.length === 1 && (R5_AUDITED_SOURCE_SLUGS as readonly string[]).includes(getExplorationToolKey(sourceTools[0]));
+}
+
 function getFamilyKey(tool: ToolSummary) {
+  // Only declared catalogue membership establishes a suite/host family.
+  return normalizeKey(tool.bundle_parent || tool.host_app || getExplorationToolKey(tool));
+}
+
+// Broad tags do not establish a useful relationship on their own. These
+// occur across unrelated roles/products in the audited catalogue pilot.
+const BROAD_USE_SIGNALS = new Set([
+  "collaboration", "no-code", "nocode-web", "design", "design-support",
+  "content-creation", "productivity", "ai", "ai-general", "automation",
+  "social-media", "sourcing", "assistant-generaliste", "automatisation", "brainstorming",
+]);
+
+function getSignalKeys(values: string[] | undefined) {
+  return new Set((values || []).map(normalizeKey).filter(Boolean));
+}
+
+function getQualityScore(tool: ToolSummary) {
+  const quality = tool.prescription_quality === "ferme" ? 18 : tool.prescription_quality === "oui" ? 12 : tool.prescription_quality === "question" ? 4 : 0;
+  return quality + Math.min(8, (tool.functional_needs?.length || 0) + (tool.verticals?.length || 0));
+}
+
+function getRelation(candidate: ToolSummary, source: ToolSummary) {
+  const candidateKeys = getLookupKeys(candidate);
+  const sourceKeys = getLookupKeys(source);
+  const hostKey = normalizeKey(candidate.host_app || "");
+  const sourceHost = normalizeKey(source.host_app || "");
+  const candidateBundle = normalizeKey(candidate.bundle_parent || "");
+  const sourceBundle = normalizeKey(source.bundle_parent || "");
+  const sourceNeeds = getSignalKeys(source.functional_needs);
+  const sharedNeeds = new Set((candidate.functional_needs || []).map(normalizeKey)
+    .filter(key => key && sourceNeeds.has(key) && !BROAD_USE_SIGNALS.has(key)));
+  const useNames = (lang: "fr" | "en") => [...sharedNeeds].slice(0, 2).map(key => getFeatureLabel(key, lang)).join(", ");
+  const sameChatCluster = normalizeKey(source.substitution_cluster_v2) === "team-chat" &&
+    normalizeKey(candidate.substitution_cluster_v2) === "team-chat";
+
+
+  if (hostKey && sourceKeys.includes(hostKey)) {
+    return { direction: "extensions" as const, score: 150, reasonFr: `Extension de ${source.name}`, reasonEn: `Extension for ${source.name}` };
+  }
+  if (sourceHost && candidateKeys.includes(sourceHost)) {
+    return { direction: "adjacent" as const, score: 140, reasonFr: `Outil hôte de ${source.name}`, reasonEn: `Host application for ${source.name}` };
+  }
+  const forwardAlternative = (source.alternatives || []).some(key => candidateKeys.includes(normalizeKey(key)));
+  const reverseAlternative = (candidate.alternatives || []).some(key => sourceKeys.includes(normalizeKey(key)));
+  // A reverse link can target a broader product/workflow (e.g. a framework
+  // naming its deployment platform). Require corroborating uses; team-chat
+  // is the narrow audited cluster bridging chat-equipe/social-media tags.
+  const explicitlyLinked = forwardAlternative || (reverseAlternative && (sharedNeeds.size > 0 || sameChatCluster));
+  // An extension for another app is not a standalone replacement. Same-host
+  // extensions can be compared when the catalogue explicitly relates them.
+  const compatibleRole = (!hostKey && !sourceHost) || (!!hostKey && hostKey === sourceHost);
+  if (explicitlyLinked && compatibleRole && (sharedNeeds.size > 0 || sameChatCluster)) {
+    const frUses = useNames("fr") || "Chat d’équipe";
+    const enUses = useNames("en") || "Team chat";
+    return { direction: "alternatives" as const, score: 134, reasonFr: `Alternative au catalogue à ${source.name} · ${frUses}`, reasonEn: `Catalogue alternative to ${source.name} · ${enUses}` };
+  }
+  const sameBundle = (!!candidateBundle && sourceKeys.includes(candidateBundle)) ||
+    (!!sourceBundle && candidateKeys.includes(sourceBundle)) ||
+    (!!candidateBundle && candidateBundle === sourceBundle);
+  if (sameBundle) {
+    return { direction: "adjacent" as const, score: 84, reasonFr: `Même suite que ${source.name}`, reasonEn: `Same suite as ${source.name}` };
+  }
+  if (hostKey && hostKey !== sourceHost) return null;
+  if (forwardAlternative && compatibleRole && sharedNeeds.size === 0) {
+    return { direction: "adjacent" as const, score: 76, reasonFr: `Comparaison à vérifier avec ${source.name}`, reasonEn: `Comparison to verify with ${source.name}` };
+  }
+  if (sharedNeeds.size > 0) {
+    return { direction: "adjacent" as const, score: 82 + Math.min(3, sharedNeeds.size) * 10, reasonFr: `Usage commun avec ${source.name} · ${useNames("fr")}`, reasonEn: `Shared use with ${source.name} · ${useNames("en")}` };
+  }
+  // Category, substitution cluster and profession tags are too coarse in
+  // the current catalogue. Abstain instead of padding a result list.
+  return null;
+}
+
+function getLegacyFamilyKey(tool: ToolSummary) {
   const key = normalizeKey(getExplorationToolKey(tool));
   if (key.startsWith("adobe-") || ["indesign", "firefly"].includes(key)) return "adobe";
   if (key.startsWith("figma")) return "figma";
@@ -159,20 +242,11 @@ function getFamilyKey(tool: ToolSummary) {
   return normalizeKey(tool.bundle_parent || tool.host_app || key);
 }
 
-function getSignalKeys(values: string[] | undefined) {
-  return new Set((values || []).map(normalizeKey).filter(Boolean));
-}
-
 function countShared(values: string[] | undefined, sourceKeys: Set<string>) {
   return (values || []).map(normalizeKey).filter((value) => value && sourceKeys.has(value)).length;
 }
 
-function getQualityScore(tool: ToolSummary) {
-  const quality = tool.prescription_quality === "ferme" ? 18 : tool.prescription_quality === "oui" ? 12 : tool.prescription_quality === "question" ? 4 : 0;
-  return quality + Math.min(8, (tool.functional_needs?.length || 0) + (tool.verticals?.length || 0));
-}
-
-function getRelation(candidate: ToolSummary, source: ToolSummary) {
+function getLegacyRelation(candidate: ToolSummary, source: ToolSummary) {
   const candidateKeys = getLookupKeys(candidate);
   const sourceKeys = getLookupKeys(source);
   const hostKey = normalizeKey(candidate.host_app || "");
@@ -187,7 +261,7 @@ function getRelation(candidate: ToolSummary, source: ToolSummary) {
   const sharedNeeds = countShared([...(candidate.functional_needs || []), ...(candidate.covers || [])], sourceNeeds);
   const sharedVerticals = countShared(candidate.verticals, getSignalKeys(source.verticals));
   const sameCategory = normalizeKey(candidate.categoryId) === normalizeKey(source.categoryId);
-  const sameFamily = getFamilyKey(candidate) === getFamilyKey(source);
+  const sameFamily = getLegacyFamilyKey(candidate) === getLegacyFamilyKey(source);
 
   if (hostKey && sourceKeys.includes(hostKey)) {
     return { direction: "extensions" as const, score: 150, reasonFr: `Extension de ${source.name}`, reasonEn: `Extension for ${source.name}` };
@@ -214,6 +288,7 @@ function getRelation(candidate: ToolSummary, source: ToolSummary) {
 }
 
 export function buildExplorationCandidates({
+  relationPolicy,
   destinationId,
   getCategoryLabel,
   sourceTools,
@@ -221,6 +296,9 @@ export function buildExplorationCandidates({
   tools,
 }: BuildExplorationCandidatesOptions): ExplorationCandidate[] {
   if (sourceTools.length === 0) return [];
+  const audited = relationPolicy ? relationPolicy === "audited" : usesAuditedExplorationRelations(sourceTools);
+  const relationFor = audited ? getRelation : getLegacyRelation;
+  const familyFor = audited ? getFamilyKey : getLegacyFamilyKey;
   const sourceKeys = new Set(sourceTools.map(getExplorationToolKey));
   const entryBySlug = new Map(stackEntries.map((entry) => [entry.toolSlug, entry]));
 
@@ -228,7 +306,7 @@ export function buildExplorationCandidates({
     const toolSlug = getExplorationToolKey(tool);
     if (sourceKeys.has(toolSlug)) return [];
     const relations = sourceTools.flatMap((source) => {
-      const relation = getRelation(tool, source);
+      const relation = relationFor(tool, source);
       return relation ? [{ ...relation, source }] : [];
     });
     if (relations.length === 0) return [];
@@ -257,7 +335,7 @@ export function buildExplorationCandidates({
   const tryPick = (candidate: ExplorationCandidate, relaxed = false) => {
     const slug = getExplorationToolKey(candidate.tool);
     if (picked.has(slug)) return;
-    const family = getFamilyKey(candidate.tool);
+    const family = familyFor(candidate.tool);
     const relatedSlug = getExplorationToolKey(candidate.relatedSource);
     if (!relaxed && ((familyCounts.get(family) || 0) >= 2 || (sourceCounts.get(relatedSlug) || 0) >= 3)) return;
     picked.add(slug);
