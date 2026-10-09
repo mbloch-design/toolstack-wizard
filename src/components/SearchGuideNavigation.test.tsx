@@ -17,13 +17,13 @@ function CurrentLocation() { return <output aria-label="Destination">{useLocatio
 
 describe("guide navigation from the real enriched search", () => {
   it("resolves a numeric remote guide hit to the correct search page link", async () => {
-    render(<MemoryRouter initialEntries={["/fr/search?q=projetsx"]} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}><SearchPage /></MemoryRouter>);
+    render(<MemoryRouter initialEntries={["/fr/search?q=projetsx"]}><SearchPage /></MemoryRouter>);
     const link = await screen.findByRole("link", { name: /Organiser les projets ensemble/ });
     expect(link).toHaveAttribute("href", "/fr/guide/guide-projets-distant");
   });
 
   it("opens the numeric remote guide from a fuzzy modal search", async () => {
-    render(<MemoryRouter initialEntries={["/fr"]} future={{ v7_startTransition: true, v7_relativeSplatPath: true }}><SearchModal onClose={() => {}} /><CurrentLocation /></MemoryRouter>);
+    render(<MemoryRouter initialEntries={["/fr"]}><SearchModal onClose={() => {}} /><CurrentLocation /></MemoryRouter>);
     fireEvent.change(screen.getByRole("textbox", { name: "Rechercher" }), { target: { value: "projetsx" } });
     fireEvent.click(await screen.findByRole("option", { name: /Organiser les projets ensemble/ }));
     expect(screen.getByLabelText("Destination")).toHaveTextContent("/fr/guide/guide-projets-distant");

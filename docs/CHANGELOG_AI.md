@@ -1,3 +1,10 @@
+## 2026-10-09 — React Router 7 validé localement
+
+- Version exacte 7.18.4, React 18 et mode déclaratif conservés. Avis npm Router retirés : 15 entrées complètes, 7 omit-dev ; chaînes SDK/Tailwind encore ouvertes.
+- StaticRouter importé depuis la racine, anciens flags de tests retirés, alias Vitest aligné. Adaptateurs Link/NavLink avec discover="none" et 57 changements d’import seulement : surcoût initial de 14,24 MiB supprimé, budgets inchangés.
+- 266 tests applicatifs, types, 23 contrats SEO, 99 tests Ma Stack, 30 parcours navigation/stack, 56 hydratations en 5,0 min, 20 comparaisons de rendu et build PASS. 13 162 HTML identiques hors hash JS, sitemap et données identiques ; relecture indépendante sans blocage.
+- Rapport MIGRATION_REACT_ROUTER_2026-10-09.md, preuves JSON et roadmap actualisés. Lot local non publié ; refonte des catégories préservée et exclue sauf import de lien, travaux catalogue non suivis exclus.
+
 ## 2026-10-08 — Contre-audit des dépendances restantes
 
 - Audit npm actualisé sur `4f6c857ed5` : 17 entrées complètes (11 high/6 moderate), 9 omit-dev, aucune critique. Paquets et lockfile inchangés ; pas de migration déclarée validée.

@@ -1,7 +1,8 @@
 import ComparisonDecisionPage from "@/components/compare/ComparisonDecisionPage";
 import { activeCampaignKlaviyoGuides, chatgptClaudeGuides } from "@/data/comparisonDecisionGuides";
 import { affiliateComparisonGuides } from "@/data/affiliateComparisonGuides";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import { useToolPair } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, useState } from "react";

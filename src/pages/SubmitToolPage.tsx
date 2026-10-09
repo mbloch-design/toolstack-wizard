@@ -1,5 +1,6 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";

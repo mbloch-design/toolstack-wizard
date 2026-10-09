@@ -1,4 +1,5 @@
-import { useParams, Link, Navigate } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { fitBrandedTitle } from "@/lib/seoTitle";
 import { useEffect, useMemo } from "react";
 import { useLang } from "@/hooks/useLang";

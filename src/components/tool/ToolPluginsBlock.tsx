@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import type { Tool } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import ToolLogo from "@/components/ToolLogo";

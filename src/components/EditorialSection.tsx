@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import type { ReactNode } from "react";
 import { ArrowRight } from "@/lib/icons";
 

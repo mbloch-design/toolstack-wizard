@@ -51,3 +51,7 @@ Une réduction de types ne corrige pas automatiquement le runtime géré par Ver
 Commandes exécutées : `npm audit --json`, `npm audit --omit=dev --json`, `npm explain undici/postcss-selector-parser/braces`, `npm view` des versions/prérequis ci-dessus. Les audits sortent avec le code 1 attendu lorsque des avis restent ouverts ; les fichiers JSON contiennent les résultats, sans erreur de collecte. Sources et usages locaux vérifiés en complément.
 
 Ce lot n’a pas lancé de nouvelle recette runtime : le code et les packages sont identiques au commit publié. Les résultats de la CI précédente ne sont pas présentés comme validation d’une migration non réalisée. Les travaux locaux de catégories et de catalogue restent exclus.
+
+## Suite — 9 octobre 2026
+
+La migration Router 7.18.4 est validée localement, non publiée : audits après migration à 15 entrées complètes et 7 omit-dev, zéro critique. Le snapshot initial ci-dessus reste historique. [Migration, limites et preuves](MIGRATION_REACT_ROUTER_2026-10-09.md). Les lots SDK et Tailwind restent séparés.

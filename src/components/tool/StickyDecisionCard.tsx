@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { ArrowRight, Check, Compass, Copy, Flag, Info, Linkedin, Mail, MessageCircle, Share2 } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";

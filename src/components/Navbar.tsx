@@ -1,4 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import {
   BookOpen,

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { ArrowRight, Clock } from "@/lib/icons";
 import type { Post } from "@/hooks/useSupabaseData";
 import { localizeGuideCategory } from "@/lib/guideCategory";

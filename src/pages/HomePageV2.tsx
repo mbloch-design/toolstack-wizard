@@ -1,4 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { NEED_UNIVERSES } from "@/data/needUniverses";
 import { useEffect, useMemo, useState, useCallback, useRef, type FormEvent, type ReactNode } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, Search } from "@/lib/icons";

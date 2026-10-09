@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { Link, Navigate, useSearchParams } from "react-router-dom";
+import { Navigate, useSearchParams } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";

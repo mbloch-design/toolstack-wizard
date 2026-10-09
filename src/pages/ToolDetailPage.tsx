@@ -1,4 +1,5 @@
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import { useCurrency } from "@/hooks/useCurrency";
 import { useToolBySlug, useToolSummaries, useCategories } from "@/hooks/useSupabaseData";

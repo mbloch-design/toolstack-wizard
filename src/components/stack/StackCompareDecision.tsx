@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import ToolLogo from "@/components/ToolLogo";
 import type { Tool } from "@/data/types";
 import { useStackPins } from "@/hooks/useStackPins";

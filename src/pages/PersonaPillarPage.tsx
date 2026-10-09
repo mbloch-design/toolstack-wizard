@@ -1,5 +1,5 @@
 import { useEffect, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { Helmet } from "react-helmet-async";
 import Breadcrumb from "@/components/Breadcrumb";
 import FaqBlock from "@/components/FaqBlock";

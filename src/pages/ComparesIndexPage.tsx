@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { fitBrandedTitle } from "@/lib/seoTitle";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { ArrowUpDown, Search, X } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";

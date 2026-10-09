@@ -1,5 +1,5 @@
 import { ArrowRight, Compass } from "@/lib/icons";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import ToolLogo from "@/components/ToolLogo";
 import { getToolPresentation } from "@/lib/toolPresentation";
 

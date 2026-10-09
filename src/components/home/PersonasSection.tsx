@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLang } from "@/hooks/useLang";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { Laptop2, Rocket, Bot, Calculator } from "@/lib/icons";
 
 interface Persona {

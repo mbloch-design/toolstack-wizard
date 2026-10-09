@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type MouseEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import pictoLogo from "@/assets/picto-logo.svg";
 
 export interface PillNavSection {

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type CSSProperties } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { X } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { usdFromEur } from "@/lib/currencyRates";

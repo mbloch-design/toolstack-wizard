@@ -1,7 +1,7 @@
 import ToolLogo from "@/components/ToolLogo";
 import type { Tool } from "@/data/types";
 import { ExternalLink } from "@/lib/icons";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 
 interface ToolMentionedCardProps {
   tool: Tool;

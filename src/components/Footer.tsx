@@ -1,4 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { ArrowRight, Rocket } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";

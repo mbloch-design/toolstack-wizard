@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import { computeScoreFinal } from "@/utils/scoring";
