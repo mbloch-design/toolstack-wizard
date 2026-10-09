@@ -5403,3 +5403,8 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Périmètre : cartes compactes, fiche intégrée, navigation hiérarchique du télescope, aperçus des outils et budgets indicatifs par groupe. Les fichiers de migration catalogue et les copies de travail sont exclus.
 - Validation finale : build production complet PASS, TypeScript PASS, 79 tests Ma Stack PASS et 15 tests navigateur Chromium PASS (FR/EN, 390/820/1440 px, stack de 60 outils à 320 px, ajout/retrait/annulation et persistance).
 - Tests navigateur adaptés au parcours actuel et à la fin des transitions avant activation clavier.
+## 2026-10-09 — Galerie produit sourcée pour Newbi
+
+- Ajout de trois visuels produit publiés sur le site officiel Newbi : tableau de bord, éditeur de facture et aperçu de facture.
+- Galerie affichée sur la fiche en l'absence de médias catalogue, avec textes alternatifs FR/EN et conservation du ratio complet des captures.
+- Sources vérifiées sur newbi.fr ; aucun visuel fabriqué ou capture ToolTrim ajoutée.

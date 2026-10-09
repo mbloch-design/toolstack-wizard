@@ -4,6 +4,7 @@ import type { ToolTutorial } from "@/data/toolTutorials";
 
 interface Props {
   images: string[];
+  imageAlts?: string[];
   videos?: ToolTutorial[];
   toolName: string;
   lang?: "fr" | "en";
@@ -14,7 +15,7 @@ type GalleryItem =
   | { type: "image"; key: string; src: string }
   | { type: "video"; key: string; video: ToolTutorial };
 
-export default function ToolGallery({ images, videos = [], toolName, lang = "fr", variant = "default" }: Props) {
+export default function ToolGallery({ images, imageAlts = [], videos = [], toolName, lang = "fr", variant = "default" }: Props) {
   const [active, setActive] = useState(0);
   const [failed, setFailed] = useState<Set<string>>(new Set());
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
@@ -45,7 +46,7 @@ export default function ToolGallery({ images, videos = [], toolName, lang = "fr"
     <img
       key={media.key}
       src={media.src}
-      alt={lang === "en" ? `${toolName}, preview ${index + 1}` : `${toolName}, aperçu ${index + 1}`}
+      alt={imageAlts[index] || (lang === "en" ? `${toolName}, preview ${index + 1}` : `${toolName}, aperçu ${index + 1}`)}
       className="tg-main-img"
       loading={index === 0 ? "eager" : "lazy"}
       {...{ fetchpriority: index === 0 ? "high" : "auto" }}
