@@ -1,3 +1,8 @@
+## 2026-10-09 — Variables Redis Production enregistrées
+
+- Accès navigateur Vercel rétabli et autorisation explicite de transfert reçue. URL Redis, jeton REST lecture/écriture et secret maintenance indépendant enregistrés comme Secret en Production ; pas d’exposition des valeurs ni de connexion Preview à la base Production.
+- Aucun redéploiement. Clé Creem serveur et secret badge encore manquants ; recette distante et exploitation manuelle/sauvegarde restent ouvertes. Secret maintenance irrévélable après sauvegarde : stockage opérateur/rotation à prévoir avant utilisation.
+
 ## 2026-10-09 — Base Upstash Free créée, raccordement en attente
 
 - Après connexion du propriétaire : création de `tooltrim-submissions` dans Personal, Francfort, Free $0/mois, persistance et éviction désactivée vérifiées. Aucun moyen de paiement ajouté ; quota visible 500k commandes/mois, sans capacité applicative extrapolée.

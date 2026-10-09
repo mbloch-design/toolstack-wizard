@@ -1,7 +1,7 @@
 {
   "date": "2026-10-09",
   "request": "fais la suite",
-  "status": "browser Vercel access confirmed; secret transfer approval pending",
+  "status": "Redis and maintenance secrets configured in Vercel Production; Creem/badge and recipe pending",
   "vercel": {
     "project": "toolstack-wizard",
     "projectId": "prj_gOLJN2t7sFiFA49LbIGfadbC4P9n",
@@ -25,14 +25,19 @@
       ]
     },
     "required_names_not_present": [
-      "SUBMISSION_REDIS_URL",
-      "SUBMISSION_REDIS_TOKEN",
-      "SUBMISSION_MAINTENANCE_TOKEN",
       "CREEM_API_KEY",
       "BADGE_VERIFICATION_SECRET"
     ],
-    "configuration_saved": false,
-    "pending_form": "SUBMISSION_REDIS_URL; Production; unsaved"
+    "configuration_saved": true,
+    "pending_form": null,
+    "saved_variables": [
+      "SUBMISSION_REDIS_URL",
+      "SUBMISSION_REDIS_TOKEN",
+      "SUBMISSION_MAINTENANCE_TOKEN"
+    ],
+    "saved_target": "Production",
+    "saved_type": "Secret",
+    "redeployed": false
   },
   "upstash": {
     "browser": "authenticated owner account",
@@ -57,8 +62,17 @@
     "values_printed": false
   },
   "remote_changes": [
-    "created dedicated Free Redis database; no product connection"
+    "created dedicated Free Redis database",
+    "configured three server secrets in Vercel Production"
   ],
   "recipe_run": false,
-  "publication": false
+  "publication": false,
+  "credential_handling": {
+    "user_authorized_transfer": true,
+    "values_printed": false,
+    "redis_token_copied_from_visible_rest_example": true,
+    "ui_remasked_after_read": true,
+    "maintenance_secret": "32 cryptographically random bytes; saved as Vercel Secret",
+    "local_secret_backup_created": false
+  }
 }

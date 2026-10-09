@@ -90,3 +90,9 @@ Le token n’a pas été révélé ni copié. Aucun payload ni paiement enregist
 ### Accès Vercel rétabli par le navigateur
 
 Après connexion du propriétaire, le tableau de bord du projet affiche les variables : seule `RESEND_API_KEY` est présente, ciblée Production et Preview. Les noms Redis/maintenance/Creem/badge attendus ne sont pas listés. Aucun secret existant révélé. Formulaire `SUBMISSION_REDIS_URL` préparé pour Production, non enregistré. Confirmation de transfert du jeton Upstash vers les fonctions Vercel demandée avant accès lecture/écriture aux demandes ; pas de publication à ce stade. La clé Creem serveur et le secret badge restent à renseigner/vérifier avant activation.
+
+### Redis et maintenance configurés en Production
+
+Après autorisation explicite du transfert, `SUBMISSION_REDIS_URL`, `SUBMISSION_REDIS_TOKEN` et `SUBMISSION_MAINTENANCE_TOKEN` sont enregistrés comme **Secret**, environnement **Production**, dans `toolstack-wizard`. Le jeton REST provient de la base dédiée ; affichage Upstash remasqué après lecture, aucune valeur imprimée. Secret maintenance généré avec 32 octets aléatoires cryptographiques, conservé par Vercel, sans copie locale. Les valeurs Secret ne sont pas révélables après sauvegarde : avant exploitation manuelle, l’opérateur doit prévoir son propre stockage privé du token maintenance ou le remplacer par une valeur qu’il conserve, sans partage dans le chat/Git.
+
+Aucun redéploiement effectué ; ces variables ne prouvent pas l’activation sur l’artefact existant. `CREEM_API_KEY` de Production et `BADGE_VERIFICATION_SECRET` restent absents du tableau. Le propriétaire est invité à renseigner sa clé Creem existante directement dans Vercel ; création du secret badge proposée séparément. Preview ne reçoit pas la base Production. Recette Redis dédiée, consommation réelle, sauvegarde/restauration et validation prestataires restent ouvertes.
