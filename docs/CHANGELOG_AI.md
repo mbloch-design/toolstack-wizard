@@ -1,3 +1,9 @@
+## 2026-10-09 — Clé Creem limitée configurée, produit conservé
+
+- Après confirmation explicite : clé LIVE dédiée avec `checkouts:read` seulement, enregistrée Secret Production sous `CREEM_API_KEY`. Ni valeur imprimée ni ancienne clé Default modifiée.
+- ID du produit existant identique au code ; retour `/submit?paid=1` inspecté et conservé, redirect applicatif préservant la query. Aucun checkout/produit ou déploiement modifié.
+- Six variables serveur requises désormais présentes en Production ; recette distante, quota/sauvegarde/exploitation et propagation des métadonnées restent à vérifier. Configuration enregistrée sans prétendre à une activation complète.
+
 ## 2026-10-09 — Secret badge enregistré ; clé Creem manquante
 
 - Création du secret de vérification badge autorisée et enregistrée Secret en Production, valeur non affichée. Le propriétaire confirme ne pas disposer encore de clé API Creem ; console ouverte pour connexion au compte du produit existant.

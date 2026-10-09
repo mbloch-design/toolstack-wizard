@@ -1,7 +1,7 @@
 {
   "date": "2026-10-09",
   "request": "fais la suite",
-  "status": "Redis, maintenance and badge secrets configured; Creem API key absent and recipe pending",
+  "status": "required Production variable names configured; remote runtime recipe and deployment pending",
   "vercel": {
     "project": "toolstack-wizard",
     "projectId": "prj_gOLJN2t7sFiFA49LbIGfadbC4P9n",
@@ -24,16 +24,15 @@
         "Preview"
       ]
     },
-    "required_names_not_present": [
-      "CREEM_API_KEY"
-    ],
+    "required_names_not_present": [],
     "configuration_saved": true,
     "pending_form": null,
     "saved_variables": [
       "SUBMISSION_REDIS_URL",
       "SUBMISSION_REDIS_TOKEN",
       "SUBMISSION_MAINTENANCE_TOKEN",
-      "BADGE_VERIFICATION_SECRET"
+      "BADGE_VERIFICATION_SECRET",
+      "CREEM_API_KEY"
     ],
     "saved_target": "Production",
     "saved_type": "Secret",
@@ -76,9 +75,23 @@
     "local_secret_backup_created": false
   },
   "creem": {
-    "owner_answer": "no API key yet",
-    "dashboard": "login required",
-    "current_checkout_modified": false,
-    "api_key_created": false
+    "owner_authorized_creation_and_transfer": true,
+    "key_name": "ToolTrim — vérification des reçus",
+    "permissions": [
+      "checkouts:read"
+    ],
+    "full_access": false,
+    "key_created": true,
+    "key_transferred_to_vercel": "CREEM_API_KEY Secret Production",
+    "key_value_printed": false,
+    "ui_created_key_label": "LIVE",
+    "account_test_mode_switch_checked": false,
+    "api_auth_runtime_tested": false,
+    "product_id": "prod_2LMoN4zyRhNAb53r3rWpwX",
+    "product_matches_code": true,
+    "configured_return_url": "https://tooltrim.com/submit?paid=1",
+    "return_route_preserves_query_in_source": true,
+    "product_or_return_modified": false,
+    "checkout_metadata_live_recipe": "pending"
   }
 }

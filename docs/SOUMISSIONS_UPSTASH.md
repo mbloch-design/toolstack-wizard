@@ -100,3 +100,11 @@ Aucun redéploiement effectué ; ces variables ne prouvent pas l’activation su
 ### Secret badge enregistré ; clé Creem à obtenir
 
 `BADGE_VERIFICATION_SECRET` créé après autorisation explicite, 32 octets aléatoires cryptographiques, enregistré Secret en Production et valeur non affichée. Le propriétaire indique ne pas avoir encore de clé API Creem. Le tableau de bord Creem ouvert demande une connexion ; aucun produit/lien/checkout modifié ni clé créée. La [documentation officielle Creem](https://docs.creem.io/skills/creem-api/REFERENCE) indique les clés dans Settings > API Keys et distingue clés de test/production. Le raccordement doit utiliser la clé du compte Production du produit existant. Aucun déploiement effectué.
+
+### Clé Creem dédiée configurée
+
+Après « ok » validant la confirmation de création/transfert : clé `ToolTrim — vérification des reçus` créée, permission unique `checkouts:read`, accès complet désactivé. L’interface de création indique une clé LIVE et le sélecteur Mode test est `false`. Clé enregistrée dans `CREEM_API_KEY`, type Secret, environnement Production, valeur non affichée et modal de clé fermé après transfert. L’ancienne clé Default n’a pas été touchée.
+
+Produit inspecté : `prod_2LMoN4zyRhNAb53r3rWpwX`, identique au code, Fast Track existant. Retour configuré `https://tooltrim.com/submit?paid=1` ; `RedirectSubmitReturn` préserve la query et restaure la langue depuis le brouillon. Aucun champ produit ni URL sauvegardé/modifié. La propagation effective `checkout_id`/métadonnées et l’authentification API restent à valider en recette ; la lecture de configuration ne vaut pas paiement réel vérifié.
+
+Les six noms requis sont maintenant présents en Production (Redis URL/token, maintenance, badge, Creem et Resend existant). Aucun déploiement effectué. Recette Upstash dédiée/compteurs, sauvegarde/restauration, accès opérateur maintenance, rétention et recette prestataire restent ouverts avant publication.
