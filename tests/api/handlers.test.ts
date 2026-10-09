@@ -5,13 +5,14 @@ import { httpFixture } from "./http";
 const fakes = vi.hoisted(() => ({ send: vi.fn(), lookup: vi.fn() }));
 vi.mock("resend", () => ({ Resend: class { emails = { send: fakes.send }; } }));
 vi.mock("node:dns/promises", () => ({ lookup: fakes.lookup }));
+vi.mock('../../api/_submission-store',()=>({getSubmission:vi.fn().mockResolvedValue(null),reserveSubmission:vi.fn().mockImplementation(async record=>({status:'created',record}))}));
 import contact from "../../api/contact";
 import progress from "../../api/submission-progress";
 import verifyBadge from "../../api/verify-badge";
 
 const badgeHtml = '<a href="https://tooltrim.com"><img src="https://tooltrim.com/tooltrim-badge.svg" /></a>';
 const contactBody = { name: "Ada", email: "ada@example.com", subject: "Question", message: "Hello" };
-const toolBody = { ...contactBody, submissionType: "tool", toolName: "Sample", toolUrl: "https://example.com/", submitterRole: "Founder", lang: "en" };
+const toolBody = { ...contactBody, submissionId:'7ec2090a-9157-43c9-9238-f8931667420d', submissionType: "tool", toolName: "Sample", toolUrl: "https://example.com/", submitterRole: "Founder", lang: "en" };
 const progressBody = { progressStep: 1, toolName: "Sample", toolUrl: "https://example.com/", email: "ada@example.com", lang: "fr" };
 const secret = "local-test-secret";
 const fetchPage = vi.fn<typeof fetch>();
@@ -124,13 +125,13 @@ describe("contact", () => {
     expect(h.res.statusCode).toBe(200); expect(h.body).toEqual({ success: true }); expect(fakes.send).toHaveBeenCalledTimes(2);
     expect(fakes.send.mock.calls[1][0].subject).toBe(lang === "fr" ? "Création de ta fiche lancée — Sample" : "Your listing creation has started — Sample");
   });
-  it("returns 500 on delivery failure without confirming", async () => {
+  it("keeps the persisted submission when internal delivery fails", async () => {
     vi.spyOn(console, "error").mockImplementation(() => {});
     fakes.send.mockResolvedValueOnce({ data: null, error: { message: "delivery unavailable" } });
     const badgeUrl = "https://example.com/badge";
     const v = httpFixture({ badgeUrl, toolUrl: toolBody.toolUrl }); await verifyBadge(v.req, v.res);
     const h = httpFixture({ ...toolBody, badgeUrl, verificationToken: (v.body as { token: string }).token }); await contact(h.req, h.res);
-    expect(h.res.statusCode).toBe(500); expect(h.body).toEqual({ error: "delivery unavailable" }); expect(fakes.send).toHaveBeenCalledTimes(1);
+    expect(h.res.statusCode).toBe(200); expect(h.body).toEqual({ success: true }); expect(fakes.send).toHaveBeenCalledTimes(2);
   });
   it("keeps the accepted submission when confirmation delivery fails", async () => {
     vi.spyOn(console, "error").mockImplementation(() => {});

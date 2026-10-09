@@ -15,12 +15,12 @@ type ReviewPlan = "free" | "paid" | null;
 type Submission = {
   toolName: string; toolUrl: string; submitterRole: string; name: string;
   email: string; message: string; badgeUrl: string; verificationToken: string;
-  paymentReference: string; checkoutId: string;
+  paymentReference: string; checkoutId: string; submissionId: string;
 };
 
 const EMPTY_SUBMISSION: Submission = {
   toolName: "", toolUrl: "", submitterRole: "", name: "",
-  email: "", message: "", badgeUrl: "", verificationToken: "", paymentReference: "", checkoutId: "",
+  email: "", message: "", badgeUrl: "", verificationToken: "", paymentReference: "", checkoutId: "", submissionId: "",
 };
 const DRAFT_KEY = "tt_submit_draft";
 const PAYMENT_URL = "https://www.creem.io/payment/prod_2LMoN4zyRhNAb53r3rWpwX";
@@ -32,6 +32,7 @@ function parseDraft(value: string | null): Submission | null {
     if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) return null;
     const draft = { ...EMPTY_SUBMISSION, ...parsed };
     if (Object.keys(EMPTY_SUBMISSION).some((key) => typeof draft[key] !== "string")) return null;
+    if (!draft.submissionId && /^[0-9a-f-]{36}$/i.test(draft.paymentReference)) draft.submissionId = draft.paymentReference;
     return draft;
   } catch { return null; }
 }
@@ -79,7 +80,7 @@ const SubmitToolPage = () => {
     let savedReceipt = "";
     try { savedReceipt = window.localStorage.getItem(RECEIPT_KEY) || ""; } catch { /* URL recovery still works. */ }
     const checkoutId = searchParams.get("checkout_id") || savedReceipt || drafts.find((draft) => draft.checkoutId)?.checkoutId || "";
-    if (searchParams.get("paid") !== "1" && !checkoutId) return;
+    if (searchParams.get("paid") !== "1" && !checkoutId) { if(drafts[0]) setSubmission(drafts[0]); return; }
     setPaymentRecovery(true); setPaid(false); setPlan("paid"); setStatus("checking"); setError("");
     const candidates = drafts.filter((draft) => draft.toolName && draft.paymentReference).slice(0, 20);
     if (!candidates.length || !checkoutId) {
@@ -187,7 +188,7 @@ const SubmitToolPage = () => {
     trackEvent("submit_plan_select", { plan: next, source });
   };
   const upgradeToPaid = () => {
-    const next = { ...submission, paymentReference: crypto.randomUUID(), checkoutId: "" };
+    const next = { ...submission, submissionId: submission.submissionId || crypto.randomUUID(), paymentReference: submission.paymentReference || crypto.randomUUID(), checkoutId: "" };
     try { saveDraft(next); }
     catch { setError(t("Autorise le stockage du brouillon dans ce navigateur avant de continuer.", "Allow draft storage in this browser before continuing.")); return; }
     setSubmission(next);
@@ -215,11 +216,9 @@ const SubmitToolPage = () => {
     if (site.changed) update("toolUrl", site.url);
     setStatus("saving"); setError("");
     try {
-      await sendProgress(1, plan === "paid", { toolUrl: site.url });
-      if (plan === "paid") {
-        const next = { ...submission, toolUrl: site.url, paymentReference: crypto.randomUUID(), checkoutId: "" };
-        saveDraft(next); setSubmission(next);
-      }
+      const next = { ...submission, toolUrl: site.url, submissionId: submission.submissionId || crypto.randomUUID(), ...(plan === 'paid' ? { paymentReference: submission.paymentReference || crypto.randomUUID(), checkoutId: '' } : {}) };
+      saveDraft(next); setSubmission(next);
+      await sendProgress(1, plan === "paid", next);
       setStep(2); setStatus("idle");
       document.getElementById("submit-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch { setStatus("error"); setError(t("L'enregistrement a échoué. Réessaie.", "This step could not be saved. Try again.")); }

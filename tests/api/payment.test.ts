@@ -2,6 +2,7 @@ import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { httpFixture } from "./http";
 const emails = vi.hoisted(() => vi.fn());
 vi.mock("resend", () => ({ Resend: class { emails = { send: emails }; } }));
+vi.mock('../../api/_submission-store',()=>({getSubmission:vi.fn().mockResolvedValue(null),reserveSubmission:vi.fn().mockImplementation(async record=>({status:'created',record}))}));
 import contact from "../../api/contact";
 const proof = { checkoutId: "ch_local123", paymentReference: "7ec2090a-9157-43c9-9238-f8931667420d", toolUrl: "https://example.com/" };
 const body = { ...proof, name: "Ada", email: "ada@example.com", subject: "Submission", message: "A useful tool", toolName: "Sample", submitterRole: "founder", submissionType: "tool", paid: true };

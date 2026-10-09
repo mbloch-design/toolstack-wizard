@@ -124,3 +124,23 @@ it("does not crash or trust malformed saved fields",async()=>{
  window.localStorage.setItem("tt_submit_draft",JSON.stringify({...draft,email:{invalid:true}}));
  mount();await screen.findByRole("alert");expect(request).not.toHaveBeenCalled();
 });
+
+it('legacy_paid_reference_preserved_as_stable_submission_id',async()=>{
+ request.mockImplementation(async()=>new Response(JSON.stringify({verified:true,success:true})));
+ mount();await screen.findByText('Paiement confirmé : publication prioritaire');
+ fireEvent.click(screen.getByRole('button',{name:'Envoyer pour revue →'}));await screen.findByText('Ta publication prioritaire est lancée.');
+ const sent=request.mock.calls.find(([url])=>String(url).endsWith('/api/contact'));
+ expect(JSON.parse(String(sent?.[1]?.body)).submissionId).toBe(draft.paymentReference);
+});
+it('free_draft_id_survives_reload_and_retry',async()=>{
+ window.localStorage.clear();request.mockImplementation(async()=>new Response(JSON.stringify({success:true})));
+ const page=mount('/fr/submit');fireEvent.click(screen.getAllByRole('button',{name:/Rejoindre la revue standard/})[0]);
+ fireEvent.change(screen.getByLabelText('Site officiel'),{target:{value:'example.com'}});fireEvent.change(screen.getByLabelText("Nom de l'outil"),{target:{value:'Sample'}});fireEvent.change(screen.getByLabelText('Email'),{target:{value:'ada@example.com'}});
+ fireEvent.click(screen.getByRole('button',{name:/Continuer/}));
+ await waitFor(()=>expect(JSON.parse(window.localStorage.getItem('tt_submit_draft')||'{}').submissionId).toMatch(/^[a-f0-9-]{36}$/));
+ const id=JSON.parse(window.localStorage.getItem('tt_submit_draft')!).submissionId;
+ page.unmount();mount('/fr/submit');fireEvent.click(screen.getAllByRole('button',{name:/Rejoindre la revue standard/})[0]);
+ expect(screen.getByLabelText('Email')).toHaveValue('ada@example.com');
+ fireEvent.click(screen.getByRole('button',{name:/Continuer/}));
+ await waitFor(()=>expect(JSON.parse(window.localStorage.getItem('tt_submit_draft')!).submissionId).toBe(id));
+});
