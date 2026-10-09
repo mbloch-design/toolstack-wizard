@@ -144,3 +144,9 @@ Le refus de la clé locale préproduction ne décrit donc pas une panne du compt
 [Consignes d'exploitation](EXPLOITATION_SOUMISSIONS.md) : reprise immédiate dans la fenêtre de 24 h, réconciliation des ambiguïtés, passages d'archivage à 90 jours et sauvegardes privées. Cadence manuelle proposée ; aucun cron activé. Dossier privé ignoré et snapshot préactivation du registre vide créés (700/600), aucune mutation production. L'accès opérateur au secret maintenance et la copie durable indépendante restent à établir avant activation.
 
 Contrôle Creem en lecture seule : encaissement existant Payé, bon produit à 29 USD, retour `/submit?paid=1` conservé, formulaire fermé sans sauvegarde. Le dashboard du reçu ne montre ni checkout ID ni métadonnées attendues ; pas de certification API à partir de cette vue. Les paramètres `metadata[key]` sont confirmés par la documentation officielle. Champ privé `CREEM_API_KEY` préparé sans valeur pour le contrôle serveur ; propriétaire interrogé sur la conservation de sa clé. [Précontrôle et limites](proofs/submission-idempotency-2026-10-09/creem-operations-preflight.json).
+
+### Authentification API Creem vérifiée
+
+Clé LIVE enregistrée directement par le propriétaire dans le fichier local privé. GET du endpoint checkouts avec un ID fictif inexistant : 404 ; même requête avec clé volontairement invalide : 401. L'API distingue la clé configurée du contrôle invalide ; aucun reçu client lu, checkout créé, email ou paiement. [Preuve](proofs/submission-idempotency-2026-10-09/creem-api-authentication.json).
+
+L'ouverture d'un checkout non payé avec des métadonnées fictives a été refusée par la revue automatique avant exécution : autorisation explicite de création d'une session externe nécessaire. Confirmation demandée au propriétaire ; aucun contournement. La propagation réelle des métadonnées reste donc non attestée. Cette clé locale n'a pas été comparée au secret irrévélable de Vercel.

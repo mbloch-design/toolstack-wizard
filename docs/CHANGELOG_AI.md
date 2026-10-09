@@ -1,3 +1,8 @@
+## 2026-10-09 — Authentification API Creem vérifiée
+
+- Clé locale fournie par le propriétaire : lecture d'un checkout fictif absent renvoie 404, contrôle avec clé invalide 401. Aucun secret affiché ni paiement/checkout créé.
+- Recette de propagation des métadonnées en attente : création d'une session non payée refusée avant exécution par la revue automatique, autorisation explicite demandée.
+
 ## 2026-10-09 — Exploitation préparée et contrôle Creem borné
 
 - Dossier privé de sauvegarde et snapshot initial du registre vide créés ; mode 700/600, ignorés par Git, aucune mutation production.
