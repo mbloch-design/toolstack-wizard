@@ -35320,6 +35320,13 @@ img[data-logo-loading] {
 .tt-footer .tt-footer-badge:hover, .tt-footer .tt-footer-badge:focus-visible { opacity: 1; filter: none; }
 .tt-footer .tt-footer-badge img { width: auto !important; height: 22px !important; max-width: 100%; object-fit: contain; object-position: left center; }
 .tt-footer .tt-footer-badge[data-fallback]::after { content: attr(data-fallback); font: 500 11px/1 var(--font-ui); color: var(--tt-footer-muted); }
+/* FranceSaaS's badge is an inline <svg>, not an <img>, so it doesn't match
+   the rule above — size it the same way (22px row height) without touching
+   the markup or its own inline style="width:200px" (kept verbatim in the
+   DOM for their automated backlink check; only the computed/rendered size
+   is overridden here, same mechanism already used for every other badge). */
+.tt-footer .tt-footer-badge--francesaas { width: auto !important; }
+.tt-footer .tt-footer-badge--francesaas svg { width: auto; height: 22px; max-width: 100%; display: block; }
 
 /* Tablet: the top stacks, links in two pairs, badges five to a row. */
 @media (max-width: 1100px) {

@@ -187,15 +187,14 @@ const Footer = () => {
                     onError={badge.fallback ? (event) => { event.currentTarget.style.display = "none"; event.currentTarget.parentElement?.setAttribute("data-fallback", badge.fallback as string); } : undefined} />
                 </a>
               ))}
-          </div>
-        </section>
-
-        {/* FranceSaaS.fr requires their badge embedded verbatim (unmodified
-            markup, no nofollow/display:none/visibility:hidden) for their
-            automated backlink check — kept separate from the generic
-            BADGES/.tt-footer-badge treatment (which greys badges out until
-            hover) so the supplied code and its colors stay untouched. */}
-        <a href="https://francesaas.fr/saas/tooltrim" target="_blank" rel="noopener" title="Profil du SaaS Tooltrim sur FranceSaaS.fr" style={{ display: "inline-block", width: "200px" }}>
+              {/* FranceSaaS.fr requires their badge embedded verbatim (same
+                  markup/attributes, no nofollow/display:none/visibility:hidden)
+                  for their automated backlink check, so the DOM below is kept
+                  byte-for-byte as supplied. It's sized down to the row's 22px
+                  height the same way every other badge already is — via an
+                  external CSS override (.tt-footer-badge--francesaas), never
+                  by editing the markup or its inline style. */}
+              <a href="https://francesaas.fr/saas/tooltrim" target="_blank" rel="noopener" title="Profil du SaaS Tooltrim sur FranceSaaS.fr" className="tt-footer-badge tt-footer-badge--francesaas" style={{ display: "inline-block", width: "200px" }}>
           <svg id="a" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 54">
             <rect x="1.3" y="1.3" width="167.4" height="51.4" rx="13" ry="13" fill="#fff" stroke="#2663eb" strokeWidth="2.2"/>
             <g id="b">
@@ -233,7 +232,9 @@ const Footer = () => {
             <path d="M141,38.2c0-2,1.4-3.2,4-3.4l3.2-.2v-.2c0-1.5-.9-2-2.2-2s-2.4.7-2.4,1.8h-2.3c0-2.3,1.9-3.8,4.8-3.8s4.7,1.6,4.7,4.5v6.5h-2.3l-.2-1.6c-.5,1.1-1.9,1.9-3.6,1.9s-3.7-1.3-3.7-3.3h0ZM148.2,36.9v-.6l-2.2.2c-1.7.2-2.3.7-2.3,1.6s.7,1.5,1.8,1.5,2.7-1,2.7-2.6h0Z" fill="#2663eb"/>
             <path d="M157.9,25.1c3.2,0,5.3,1.8,5.3,4.7h-2.8c0-1.4-1-2.2-2.6-2.2s-2.8.8-2.8,2.2.6,1.8,1.9,2.1l2.5.5c2.7.6,4,2,4,4.3s-2.3,4.9-5.8,4.9-5.6-1.8-5.7-4.7h2.8c0,1.3,1.1,2.2,2.9,2.2s3-.8,3-2.1-.5-1.7-1.8-2l-2.5-.6c-2.7-.6-4.1-2.1-4.1-4.6s2.3-4.7,5.7-4.7h0Z" fill="#2663eb"/>
           </svg>
-        </a>
+              </a>
+          </div>
+        </section>
 
       </div>
     </footer>
