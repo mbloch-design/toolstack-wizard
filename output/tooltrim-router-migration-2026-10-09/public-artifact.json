@@ -1,0 +1,17 @@
+{
+  "url": "https://tooltrim.com/fr/tool/notion",
+  "ssr": true,
+  "discoveryMarkers": 0,
+  "assets": [
+    {
+      "path": "/assets/index-Bte1VsSS.js",
+      "sha256": "5111c1cd9918d5f4bbbf521d65e922078cad9e422795941e11b546cf357ac3d3",
+      "matchesValidatedBuild": true
+    },
+    {
+      "path": "/assets/catalog-shared-DNmYuyKZ.js",
+      "sha256": "a6b468a225506f30da7acf9c2a1f8c2e3c218ec4c15bb42a85cfb6f9a1c6e802",
+      "matchesValidatedBuild": true
+    }
+  ]
+}

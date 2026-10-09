@@ -1,6 +1,6 @@
 # Migration React Router — 9 octobre 2026
 
-Migration **validée localement, non publiée** : React Router DOM 6.30.6 → **7.18.4**, version exacte. React 18, le mode déclaratif, les routes et Tailwind 3 sont conservés.
+Migration **publiée et vérifiée**, commit applicatif `88d7f5d7a5` : React Router DOM 6.30.6 → **7.18.4**, version exacte. React 18, le mode déclaratif, les routes et Tailwind 3 sont conservés.
 
 ## Résultat et périmètre
 
@@ -29,10 +29,20 @@ La refonte locale de CategoriesIndexPage est préservée et exclue du commit ; s
 
 **13 162 HTML identiques hors noms hachés des assets JavaScript**, zéro attribut de découverte ajouté, même volume HTML : 747 877 855 octets (713,2 MiB). Sitemap et sources catalogue identiques. Budgets conservés : total 831 MiB, HTML 716 MiB. Le transfert de l’index catalogue reste 325 599 octets dans les vingt comparaisons.
 
-Les tests ont été exécutés sur une copie isolée du périmètre committable, sans la refonte locale des catégories. Les appels Supabase étaient neutralisés dans les recettes comparatives : elles prouvent la parité locale et la navigation, pas le bon fonctionnement d’une API distante. Aucun déploiement ou test public de cette migration n’est déclaré.
+Les tests ont été exécutés sur une copie isolée du périmètre committable, sans la refonte locale des catégories. Les appels Supabase étaient neutralisés dans les recettes comparatives : elles prouvent la parité locale et la navigation, pas le bon fonctionnement d’une API distante. La recette publique ci-dessous vérifie le déploiement ; les tests backend restent hors périmètre.
 
 [Preuves JSON](../output/tooltrim-router-migration-2026-10-09/verification.json), [parité HTML](../output/tooltrim-router-migration-2026-10-09/html-parity.json), [parité rendue](../output/tooltrim-router-migration-2026-10-09/rendered-parity.json), [audit complet](../output/tooltrim-router-migration-2026-10-09/audit-full.json), [audit production](../output/tooltrim-router-migration-2026-10-09/audit-omit-dev.json).
 
+## Publication et recette publique
+
+- `88d7f5d7a5` publié sur main, parité distante confirmée ; audit documentaire préalable `d0befc1546` publié avec le lot.
+- [CI](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37895367300) entièrement réussie : 266 tests applicatifs, 23 SEO, 99 Ma Stack, types/design/build/budgets et **56 hydratations sans flake en 5,4 minutes**. Rapport disponible jusqu’au 16 octobre.
+- [Vercel](https://vercel.com/mbloch-designs-projects/toolstack-wizard/9iYYNDSEA5y5oUn3SVYAU1szoFuw) réussi. Les deux assets JS de la fiche Notion, quatre HTML fiche/tarifs FR/EN et le sitemap public sont identiques au build validé, octet pour octet.
+- Recette publique : **12 anciennes URL PASS en 2,2 minutes**. Hydratation : 55 passages directs et un scénario passé au retry en 6,4 minutes. Le premier échec provenait de deux commandes Playwright partageant leur dossier de traces (`ENOENT`), avant l’hydratation de la page ; le scénario concerné a ensuite passé **trois fois sans retry en 23,6 secondes**, avec sortie isolée. Les 56 scénarios sont ainsi validés, sans erreur d’hydratation détectée ; la première commande reste enregistrée avec son exit code 1 et son flake de recette.
+- Les logs détaillés Vercel renvoyaient 403 via le connecteur, sans CLI disponible. Le statut GitHub et l’artefact public fournissent les preuves indépendantes de déploiement.
+
+[Preuves de publication](../output/tooltrim-router-migration-2026-10-09/publication-verification.json).
+
 ## Suite
 
-Publier ce lot puis contrôler CI et déploiement public. Ensuite, ajouter le typecheck des handlers API avant de réduire la dépendance SDK ; traiter Tailwind dans un lot distinct.
+Ajouter le typecheck des handlers API avant de réduire la dépendance SDK ; traiter Tailwind dans un lot distinct.

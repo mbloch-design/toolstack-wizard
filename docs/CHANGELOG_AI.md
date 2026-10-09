@@ -1,3 +1,9 @@
+## 2026-10-09 — React Router 7 publié et vérifié
+
+- Commits audit/migration publiés, applicatif `88d7f5d7a5`, parité main confirmée. Vercel réussi et CI 37895367300 entièrement verte : 56 hydratations sans flake en 5,4 min ; rapport jusqu’au 16 octobre.
+- Deux JS publics, quatre HTML fiche/tarifs FR/EN et sitemap identiques au build validé. Douze anciennes URL PASS. Recette publique : 55 passages directs + un retry affecté par une collision locale de traces Playwright ; scénario rejoué 3/3 sans retry avec sortie isolée, aucune erreur d’hydratation détectée. Incident et exit code initial conservés dans les preuves.
+- Rapport et roadmap actualisés ; logs détaillés Vercel inaccessibles (403), statut et artefact vérifiés indépendamment. Modifications catégories/catalogue hors périmètre toujours préservées.
+
 ## 2026-10-09 — React Router 7 validé localement
 
 - Version exacte 7.18.4, React 18 et mode déclaratif conservés. Avis npm Router retirés : 15 entrées complètes, 7 omit-dev ; chaînes SDK/Tailwind encore ouvertes.

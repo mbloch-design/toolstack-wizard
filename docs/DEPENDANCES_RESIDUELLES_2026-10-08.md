@@ -54,4 +54,4 @@ Ce lot n’a pas lancé de nouvelle recette runtime : le code et les packages so
 
 ## Suite — 9 octobre 2026
 
-La migration Router 7.18.4 est validée localement, non publiée : audits après migration à 15 entrées complètes et 7 omit-dev, zéro critique. Le snapshot initial ci-dessus reste historique. [Migration, limites et preuves](MIGRATION_REACT_ROUTER_2026-10-09.md). Les lots SDK et Tailwind restent séparés.
+La migration Router 7.18.4 est publiée et vérifiée (`88d7f5d7a5`, CI et recette publique) : audits après migration à 15 entrées complètes et 7 omit-dev, zéro critique. Le snapshot initial ci-dessus reste historique. [Migration, limites et preuves](MIGRATION_REACT_ROUTER_2026-10-09.md). Les lots SDK et Tailwind restent séparés.

@@ -1,0 +1,33 @@
+{
+  "appCommit": "88d7f5d7a5bef8464d0787ee40c7511f5c25f943",
+  "ciRun": "https://github.com/mbloch-design/toolstack-wizard/actions/runs/37895367300",
+  "ciStatus": "success",
+  "ciHydration": {
+    "passed": 56,
+    "duration": "5.4m",
+    "flaky": 0
+  },
+  "deployment": "https://vercel.com/mbloch-designs-projects/toolstack-wizard/9iYYNDSEA5y5oUn3SVYAU1szoFuw",
+  "deploymentStatus": "success",
+  "publicHydrationInitial": {
+    "passed": 55,
+    "flaky": 1,
+    "exitCode": 1,
+    "duration": "6.4m",
+    "cause": "Two concurrent Playwright commands shared test-results; missing trace files (ENOENT), no application hydration failure."
+  },
+  "affectedScenarioIsolatedRerun": {
+    "scenario": "fr/notion/empty-stack",
+    "passed": 3,
+    "retries": 0,
+    "exitCode": 0,
+    "duration": "23.6s",
+    "outputDirectory": "separate"
+  },
+  "publicScenariosValidated": 56,
+  "publicLegacyNavigation": {
+    "passed": 12,
+    "duration": "2.2m"
+  },
+  "limits": "Supabase aborted in browser checks; does not certify backend health. Detailed Vercel build logs unavailable from connector (403); GitHub deployment status and public artifact independently verified."
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "route": "/fr/tool/notion",
+    "httpStatus": 200,
+    "htmlExactlyMatchesValidatedBuild": true,
+    "sha256": "fa29175d0792d47188b999c861845439b0488efc77ed8d95325b4cef41782b5a"
+  },
+  {
+    "route": "/en/tool/notion",
+    "httpStatus": 200,
+    "htmlExactlyMatchesValidatedBuild": true,
+    "sha256": "f5e4aee436e113f81cc6184f4f6a06db1275e9432fbecc1e335d5e2a6b2b5560"
+  },
+  {
+    "route": "/fr/tool/notion/prix",
+    "httpStatus": 200,
+    "htmlExactlyMatchesValidatedBuild": true,
+    "sha256": "7d042f483febcae039556256027799b0f711cffe34bef98434667b8c3046ca90"
+  },
+  {
+    "route": "/en/tool/notion/pricing",
+    "httpStatus": 200,
+    "htmlExactlyMatchesValidatedBuild": true,
+    "sha256": "1b89151eb384fa6380a47ca231e3538cec2602ceeee707d53143b9510991a89a"
+  }
+]
