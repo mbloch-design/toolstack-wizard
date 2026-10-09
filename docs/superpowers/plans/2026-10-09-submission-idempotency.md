@@ -44,7 +44,7 @@ Conserver les handlers existants et leurs tests. Le contrat partagé définit :
 
 Registre : un hash Redis `tt:submissions:v1`, champs `submission:<uuid>` et `checkout:<id>`. Le premier contient le record, le second l'ID réservé. EVAL vérifie les conflits et types avant une unique commande HSET multichamp : pas de succession d'écritures essentielles supposée avoir un rollback. Les jobs sont dans le record. La reprise scanne les records ; aucun index indispensable à la réservation.
 
-## Tâche 1 — Contrat et réservation atomique
+## Task 1 — Contrat et réservation atomique
 
 **Files:** Create `api/_submission-contract.ts`, `api/_submission-store.ts`, `tests/api/submission-store.test.ts`, `tests/api/submission-contract.test.ts`, `scripts/test-submission-redis.mjs`.
 
@@ -57,7 +57,7 @@ Registre : un hash Redis `tt:submissions:v1`, champs `submission:<uuid>` et `che
 - [ ] Tester sur Redis réel de recette : même concurrence, erreur de type/argument avant HSET et refus d'écriture. Le script de recette exige `SUBMISSION_REDIS_TEST_URL`/`SUBMISSION_REDIS_TEST_TOKEN`, utilise un hash temporaire propre, refuse l'URL de production et nettoie seulement ses clés. Pas de mock présenté comme preuve d'atomicité.
 - [ ] Relancer tests et `npm run typecheck:api` ; commit des cinq fichiers nommés.
 
-## Tâche 2 — Brouillon stable et acceptation durable
+## Task 2 — Brouillon stable et acceptation durable
 
 **Files:** Modify `src/pages/SubmitToolPage.tsx`, `api/contact.ts`, `tests/api/handlers.test.ts`, `src/test/submit-payment.test.tsx`; Create `tests/api/submission-contact.test.ts`; préparer `api/_submission-mail.ts` pour construire les deux charges sans envoi.
 
@@ -70,7 +70,7 @@ Registre : un hash Redis `tt:submissions:v1`, champs `submission:<uuid>` et `che
 - [ ] Après persistance seulement, confirmer la réception et tenter les envois via tâche 3. Ne pas effacer un brouillon lors d'un 409/503. Ne pas prétendre que les emails sont livrés si seule l'acceptation est durable.
 - [ ] Relancer `npm run test:api`, `npm test -- --run src/test/submit-payment.test.tsx`, `npm run typecheck` ; commit des fichiers nommés. Pas de publication intermédiaire tant que la tâche 3 n'est pas intégrée.
 
-## Tâche 3 — Emails, reprises et notifications intermédiaires
+## Task 3 — Emails, reprises et notifications intermédiaires
 
 **Files:** Modify `api/_submission-store.ts`, `api/_submission-mail.ts`, `api/contact.ts`, `api/submission-progress.ts`, `src/pages/SubmitToolPage.tsx`; Create `api/submission-maintenance.ts`, `tests/api/submission-mail.test.ts`, `tests/api/submission-maintenance.test.ts`; Modify `tests/api/handlers.test.ts`.
 
@@ -83,7 +83,7 @@ Registre : un hash Redis `tt:submissions:v1`, champs `submission:<uuid>` et `che
 - [ ] Les notifications d'étapes restent informatives. Ne pas écrire leurs brouillons non vérifiés dans le registre durable. Ajouter une clé Resend stable par ID/étape/empreinte pour leurs retries immédiats et borner les champs ; aucune promesse de déduplication au-delà de 24 heures. Faire progresser le formulaire même si cette notification échoue, en préservant le brouillon. Aucun flag d'étape ne prouve le paiement ni le badge. L'anti-abus général de ces notifications reste un lot distinct : ne pas revendiquer sa résolution.
 - [ ] Relancer `npm run test:api`, tests app paiement et `npm run typecheck` ; commit nommé.
 
-## Tâche 4 — Recette, configuration et publication conditionnelle
+## Task 4 — Recette, configuration et publication conditionnelle
 
 **Files:** Modify `e2e/submit-payment.spec.ts`, `docs/ROADMAP.md`, `docs/CHANGELOG_AI.md`, `docs/CORRECTIF_CREEM_2026-10-09.md`; Create `docs/SOUMISSIONS_UPSTASH.md`, `docs/proofs/submission-idempotency-2026-10-09/validation.json`.
 
