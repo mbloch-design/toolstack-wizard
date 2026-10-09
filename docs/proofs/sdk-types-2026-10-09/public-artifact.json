@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/fr/tool/notion",
+    "bytes": 93051,
+    "sha256": "fa29175d0792d47188b999c861845439b0488efc77ed8d95325b4cef41782b5a",
+    "matchesValidatedBuild": true
+  },
+  {
+    "path": "/en/tool/notion",
+    "bytes": 93100,
+    "sha256": "f5e4aee436e113f81cc6184f4f6a06db1275e9432fbecc1e335d5e2a6b2b5560",
+    "matchesValidatedBuild": true
+  },
+  {
+    "path": "/sitemap.xml",
+    "bytes": 6568504,
+    "sha256": "c050e19f412bbe7242b141f642bac531ddc4ffdbbb3cd62e15df5f458792a3db",
+    "matchesValidatedBuild": true
+  },
+  {
+    "path": "/assets/index-Bte1VsSS.js",
+    "bytes": 771124,
+    "sha256": "5111c1cd9918d5f4bbbf521d65e922078cad9e422795941e11b546cf357ac3d3",
+    "matchesValidatedBuild": true
+  }
+]

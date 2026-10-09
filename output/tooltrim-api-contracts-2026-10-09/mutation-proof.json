@@ -1,0 +1,27 @@
+{
+  "oldTypecheckWithApiErrorExitCode": 0,
+  "newApiTypecheckWithApiErrorExitCode": 2,
+  "mutations": [
+    {
+      "mutation": "http-method",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "mutation": "token-expiry",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "mutation": "private-address",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "mutation": "token-tool-url-binding",
+      "exitCode": 1,
+      "detected": true
+    }
+  ],
+  "allOriginalHandlersRestored": true
+}

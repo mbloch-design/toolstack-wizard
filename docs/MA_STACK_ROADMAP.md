@@ -1,11 +1,12 @@
-## Actualisation — 8 octobre 2026
+## Actualisation — 9 octobre 2026
 
-Les sections datées de juillet ci-dessous sont un checkpoint historique ; le cap V1/V2 d'octobre prévaut. L'ordre du chantier transversal est maintenu dans [ROADMAP.md — suivi technique actif](ROADMAP.md#suivi-technique-actif--8-octobre-2026).
+**Suivi actuel : [état des lieux et roadmap par lots](ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md), [roadmap générale](ROADMAP.md#suivi-technique-actif).** Les checkpoints de juillet et les caps V1/V2 du 5 octobre conservés ci-dessous sont des décisions/historiques, pas un inventaire certifié de l’interface actuellement publiée.
 
-- **Fait et déployé** : hydratation avec sélection enregistrée, restauration sans perte, conservation des métadonnées et synchronisation du store. Commit `cccdbc002b`, [preuve](CORRECTIF_HYDRATATION_STACK_2026-10-08.md).
-- **Fait et déployé** : bootstrap des fiches allégé sans modifier les données originales ; 56/56 parcours publics FR/EN, navigation Alternatives/Avis et reload avec sélection. Commit `90af59e551`, [preuve](PROJECTION_BOOTSTRAP_2026-10-08.md).
-- **Socle CI actualisé** : le workflow conservé exécute tests applicatifs, contrats SEO, types, tests Ma Stack et build. Gate design déployé, recette Chromium sur HTML généré après build avec rapport/traces ; première exécution Actions réussie, 56/56 en 5 min 28 s ([contrat](HYDRATATION_CI_2026-10-08.md)).
-- **Chargement mesuré, premier correctif publié** : `81f44da6e0` filtre avant transport les 109 lignes déjà exclues ; 1 239 résumés conservent tous leurs champs. Gain CDN gzip : 17 595 octets (4,99 %). CI et recette publique 56/56 chacune, 14 captures publiques mobile/desktop PASS, choix sauvegardés intacts ([preuves](PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md)). [Baseline publique](CHARGEMENT_CATALOGUE_2026-10-08.md), [matrice](MATRICE_RESUMES_CATALOGUE_2026-10-08.md). La validation des relations et les essais utilisateurs restent des chantiers distincts.
+- Socle publié : navigation, recherche, revalidation, décisions/devises et stockage, hydratation avec sélection enregistrée, projection catalogue et Router 7.18.4. Dernière CI complète verte R1 : 266 tests applicatifs, 82 API, 23 SEO, 99 Ma Stack, 56 hydratations ; le blocage historique GO14 ne pilote plus le workflow conservé.
+- Contrats API : 82 tests et contrôle strict ajoutés dans `13b631bc1d`, publiés via `bb4bc7f94b`, CI complète verte. R1 `4601f877cf` retire le SDK de types avec contrat HTTP compatible et JS des handlers identique ; sa CI et sa recette publique sont réussies.
+- Point de décision produit : la page actuelle présente coût catalogue et recoupements, alors que certains caps ci-dessous annoncent l’absence de coût global. Le libellé « Payé en double » ne prouve pas une dépense inutile personnelle. Lot R4 : aligner la promesse sur les preuves avant d’ajouter des fonctions.
+- Qualité des relations, compréhension de la navigation, données éditoriales et observation utilisateur restent des lots distincts R5/R6/R9. Les tests techniques ne valident pas à eux seuls la valeur perçue.
+- Aucun compte, enrichissement de données, changement de budget ou refonte des catégories n’est lancé par cette actualisation documentaire.
 
 ---
 

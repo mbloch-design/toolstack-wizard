@@ -1,5 +1,5 @@
 import { createHmac } from "node:crypto";
-import type { VercelRequest, VercelResponse } from "@vercel/node";
+import type { VercelRequest, VercelResponse } from "../types/vercel-http.js";
 import { verifyBadgeOnPage } from "./_badge-verification.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {

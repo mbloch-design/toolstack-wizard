@@ -11,41 +11,41 @@
 
 ---
 
+<a id="suivi-technique-actif"></a>
+
 ## Suivi technique actif — 9 octobre 2026
 
-Ce suivi remplace les statuts techniques historiques lorsqu'ils se contredisent. Les rapports d'audit conservent leurs mesures à la date de leur réalisation ; ils ne remplacent pas cette roadmap.
+**Point d’entrée du chantier : [état des lieux, gains et roadmap complète par lots](ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md).** Ce bilan remplace les anciens tableaux d’avancement. Les sections historiques ci-dessous ne sont pas des états de production actuels.
 
-### Lots réalisés et publiés
+### Situation actuelle
 
-| Lot | État | Résultat / preuve |
-|---|---|---|
-| Points 2 et 3 de la revue technique | Publiés | CI et types explicites, SSR obligatoire, navigation/cache/recherche, données persistées et synchronisation corrigés. [Corrections](CORRECTIONS_TECHNIQUES_2026-10-07.md) |
-| Dépendances compatibles | Publiées ; avis résiduels ouverts | Réduction des alertes, sans migration React Router 7/Tailwind 4. Les chiffres restent ceux du snapshot d'audit. [Rapport](DEPENDANCES_SECURITE_2026-10-08.md) |
-| Compactage HTML | Publié | 24,62 MiB de formatage retirés avec équivalence du contenu. [Rapport](COMPACTAGE_HTML_2026-10-08.md) |
-| Parité d'hydratation EN | Déployée, `244d7a9d52` | Champs FR nécessaires aux calculs conservés ; recette publique FR/EN. [Rapport](CORRECTIF_HYDRATATION_EN_2026-10-08.md) |
-| Hydratation avec Ma Stack enregistrée | Déployée, `cccdbc002b` | Restauration après le premier rendu SSR ; 56/56 parcours publics sans perte des choix. [Rapport](CORRECTIF_HYDRATATION_STACK_2026-10-08.md) |
-| Projection des sept champs historiques | Déployée, `90af59e551` | Gain 5,59 MiB, 13 162 HTML identiques hors payload autorisé, sitemap identique ; 56/56 parcours publics, onglets secondaires inclus. [Rapport](PROJECTION_BOOTSTRAP_2026-10-08.md) |
+| Niveau | État vérifié |
+|---|---|
+| Socle publié | Code `4601f877cf` (R1), après contrats API `13b631bc1d` (R0) : CI complètes et statuts Vercel réussis, recette API publique conforme. Socle frontend Router `88d7f5d7a5` conservé : prix/navigation/stockage, SSR/SEO, dépendances compatibles, compactage et hydratation FR/EN. |
+| Publié et vérifié | R1 `4601f877cf` : contrat HTTP compatible, retrait du SDK de types ; 82 contrats/types et tests app/SEO passent. Build, CI, Vercel et recette publique réussis. |
+| Hors de ces lots | Refonte locale catégories et travaux catalogue/médias non suivis, préservés. |
+| Non certifié | Backend annoncé traité manuellement ; API Supabase saine non mesurée dans notre environnement ; qualité complète des relations et valeur utilisateur. |
 
-Dernier artefact validé : **824,9 MiB**, dont **713,2 MiB HTML**. Budgets : 831/716 MiB. Recette du dernier lot : 249 tests applicatifs, 23 contrats SEO, types, build et 56 parcours Chromium. Ces mesures ne sont pas des Core Web Vitals ni une garantie de classement SEO.
+Gains mesurés : **24,62 MiB de formatage HTML**, **5,59 MiB de bootstrap**, et **17 595 octets / 4,99 % gzip CDN** sur l’index navigateur. Ce sont des métriques distinctes, pas un gain global de vitesse. Audit npm actualisé : **9 entrées complètes / 7 omit-dev, zéro critique**, après retrait du SDK dans R1. Dernier artefact local validé : **824,8 MiB**, dont **713,2 MiB HTML** (budgets 831/716). Dernière CI complète R1 : 266 tests applicatifs, 82 contrats API, 23 contrats SEO, 99 tests Ma Stack et 56 hydratations en 5,2 min ; les suites ne sont pas additionnées.
 
-### Prochaines priorités
+### Suivi des lots et propositions suivantes
 
-| Ordre | Chantier | État | Critère de sortie |
-|---|---|---|---|
-| 1 | Résorber la dette actuelle du gate design | Déployé, `863e4737eb` | Gate 137/223/125 PASS, baseline et validateur inchangés ; 12 vues publiques contrôlées, 30 parcours locaux PASS. [Preuves](GATE_DESIGN_2026-10-08.md). |
-| 2 | Automatiser la recette d'hydratation sur l'artefact construit | Publié, `34391450cc` ; première CI réussie | 56/56 sur Linux en 5 min 28 s ; rapport archivé sept jours, Vercel terminé. [Actions](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37782506339). Chromium après build, main/PR couverts, suite 10 minutes/job 30 et flakes bloquants. [Contrat](HYDRATATION_CI_2026-10-08.md). |
-| 3 | Préparer l’évolution du chargement catalogue | Premier correctif publié et vérifié, `81f44da6e0` | 109 lignes déjà invisibles filtrées avant transport ; 1 239 résumés et tous leurs champs identiques. Gain CDN gzip : 17 595 octets (4,99 %). CI 56/56 en 5,5 min, recette publique 56/56 en 5,7 min et 14 captures fonctionnelles PASS. 13 162 HTML équivalents localement. [Rapport et preuves](PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md), [CI](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37796349909). Découpage supplémentaire/API distante différés ; baseline API saine inconnue (DNS). |
-| 4 | Réexaminer les alertes de dépendances restantes | Router 7.18.4 déployé et vérifié, `88d7f5d7a5` | 15 entrées npm (11 high/4 moderate), 7 omit-dev, 0 critical. React 18 et routes conservés ; 266 tests, CI 56/56 en 5,4 min, 20 comparaisons et build/budgets PASS ; 56 scénarios publics validés (collision de traces isolée puis rejouée 3/3), 12 anciennes URL PASS. 13 162 HTML et sitemap préservés. SDK : typecheck API préalable ; Tailwind séparé. [Migration et preuves](MIGRATION_REACT_ROUTER_2026-10-09.md). |
+| Lot | Prochaine décision / dépendance |
+|---|---|
+| R0 — Publication des contrats API | Publié ; nouvelle étape API verte. CI complète et déploiement Vercel réussis. |
+| R1 — Réduction SDK | Terminé et publié `4601f877cf` : audit 15 → 9, 104 entrées lock retirées ; CI et recette publique réussies. |
+| R2 — Contre-vérification backend manuel | Obtenir preuves/configuration ; ne pas présumer le point manuel non corrigé. |
+| R3 — Baseline API catalogue saine | Lecture/DNS fonctionnels nécessaires avant décision d’architecture distante. |
+| R4 — Promesse Ma Stack | Aligner coûts, recoupements et économies avec ce qui est réellement démontré. |
+| R5 — Relations Explorer | Pilote éditorial de référence et explication des liens. |
+| R6 — Catalogue factuel / canary | Base commune existante, identités, faits sourcés, projection et rollback ; coordination requise. |
+| R7 — Chargement suivant | Mesure et canary après R3/R6 ; aucune suppression sur gain théorique seul. |
+| R8 — Accessibilité / Safari | Parcours stabilisés, focus, clavier, mobile et overlays. |
+| R9 — Mesure / utilisateurs | Observer la valeur de la boucle Explorer → ajout → retour, avec consentement respecté. |
+| R10 — Tailwind / outils de build | Lot conditionnel, isolé ; coût de migration à comparer au bénéfice réel. |
+| R11 — SEO/GEO / médias | Revalider les défauts actuels, corriger les fiches prioritaires, observer l’indexation si accès disponible. |
 
-Le groupe supplémentaire de champs transportés par les adaptateurs représente **3,09 MiB théoriques** dans le snapshot d'audit. Il reste **à auditer**, pas autorisé à supprimer sur cette seule mesure. Comparaisons/stack ont des bootstraps distincts. Cette piste est secondaire par rapport au chargement catalogue et aux gains visibles pour l'utilisateur.
-
-### Limites et travaux différés
-
-- Point 1 sécurité/backend : annoncé traité manuellement par le propriétaire ; configuration et déploiement distants non contre-vérifiés ici. Ne pas le déclarer certifié sur la seule base du dépôt.
-- Les protections/avis restants sont détaillés dans la revue technique et le rapport dépendances ; une amélioration des chiffres npm n'est pas une certification de l'infrastructure.
-- Audit accessibilité exhaustif, Safari/WebKit et optimisation globale CSS/données restent différés pendant l'évolution de l'architecture catalogue. Les contrôles clavier/mobile ciblés existants restent requis lors d'un changement de ces parcours.
-- Aucun changement des catégories locales ou des exports de catalogue n'a été inclus dans les publications ci-dessus.
-- Dark mode : dette historique, non prioritaire.
+Le [bilan complet](ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md#4-roadmap-complète-proposée-par-lots) décrit pour chaque lot son livrable, sa dépendance, son critère de sortie et l’effort relatif. Les propositions ne valent pas autorisation d’implémentation. Aucun gain Core Web Vitals ou de classement Google n’est établi. Comptes/synchronisation, personnalisation avancée, diagnostic/nouvelles verticales et dark mode restent séparés.
 
 ---
 

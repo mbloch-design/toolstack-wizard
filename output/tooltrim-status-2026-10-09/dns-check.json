@@ -1,0 +1,12 @@
+{
+  "networkControlGitHubDNS": "resolved",
+  "supabase": [
+    {
+      "service": "supabase",
+      "dns": "failed",
+      "errorType": "gaierror",
+      "errno": 8
+    }
+  ],
+  "scope": "This execution environment only; no database query or write"
+}

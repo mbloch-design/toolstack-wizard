@@ -1,0 +1,19 @@
+{
+  "htmlDocuments": 13162,
+  "htmlByteIdentical": 13156,
+  "onlyDifferences": {
+    "existingBuildDateAttribute": "2026-10-08 -> 2026-10-09",
+    "pages": [
+      "en/about/index.html",
+      "en/contact/index.html",
+      "en/transparency/index.html",
+      "fr/about/index.html",
+      "fr/contact/index.html",
+      "fr/transparency/index.html"
+    ],
+    "visibleTextUnchanged": true
+  },
+  "javascriptAssets": 80,
+  "javascriptByteIdentical": true,
+  "sitemapByteIdentical": true
+}

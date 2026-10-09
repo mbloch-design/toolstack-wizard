@@ -1,0 +1,17 @@
+[
+  {
+    "file": "api/contact.ts",
+    "identical": true,
+    "sha256": "529ed14395c0200c273546da7140dded0fe171a043fd0fbb8c83ea278d8bec24"
+  },
+  {
+    "file": "api/submission-progress.ts",
+    "identical": true,
+    "sha256": "e59500d2877763b8ee3cf69c400026b0f2fb29035a576f20c25f4fae97d31049"
+  },
+  {
+    "file": "api/verify-badge.ts",
+    "identical": true,
+    "sha256": "f78c0b81022f30febe73d52612690e64ca82e2279f21606c5572802875d2c189"
+  }
+]

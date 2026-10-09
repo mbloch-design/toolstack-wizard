@@ -1,0 +1,52 @@
+{
+  "checkedAt": "2026-10-09T08:12:07.148072+00:00",
+  "sourceCommit": "4601f877cff3615e20bc597e72607d97f2c3076c",
+  "vercelCommitStatus": "success",
+  "url": "https://tooltrim.com",
+  "identicalToBefore": true,
+  "requests": [
+    {
+      "endpoint": "contact",
+      "method": "GET",
+      "status": 405,
+      "cors": "http://localhost:5173",
+      "body": "{\"error\":\"Method not allowed\"}"
+    },
+    {
+      "endpoint": "contact",
+      "method": "OPTIONS",
+      "status": 204,
+      "cors": "http://localhost:5173",
+      "body": ""
+    },
+    {
+      "endpoint": "submission-progress",
+      "method": "GET",
+      "status": 405,
+      "cors": "http://localhost:5173",
+      "body": "{\"error\":\"Method not allowed\"}"
+    },
+    {
+      "endpoint": "submission-progress",
+      "method": "OPTIONS",
+      "status": 204,
+      "cors": "http://localhost:5173",
+      "body": ""
+    },
+    {
+      "endpoint": "verify-badge",
+      "method": "GET",
+      "status": 405,
+      "cors": "http://localhost:5173",
+      "body": "{\"error\":\"Method not allowed\"}"
+    },
+    {
+      "endpoint": "verify-badge",
+      "method": "OPTIONS",
+      "status": 204,
+      "cors": "http://localhost:5173",
+      "body": ""
+    }
+  ],
+  "sideEffects": "GET/OPTIONS only; no emails or database writes"
+}

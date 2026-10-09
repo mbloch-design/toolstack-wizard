@@ -66,7 +66,7 @@
     "pilot:n8n-identity": "node scripts/n8n-identity-pilot.mjs",
     "summarize:phase4": "node scripts/summarize-phase4-wave.mjs",
     "assess:g4": "node scripts/assess-phase4-g4.mjs",
-    "verify:preprod": "npm test && npm run test:seo-contracts && npm run typecheck && npm run build",
+    "verify:preprod": "npm test && npm run test:api && npm run test:seo-contracts && npm run typecheck && npm run build",
     "validate:preprod": "node scripts/validate-preprod.mjs",
     "setup:preprod-secrets": "node scripts/setup-preprod-secrets.mjs",
     "deploy:preprod-supabase": "node scripts/deploy-preprod-supabase.mjs",
@@ -99,8 +99,10 @@
     "login:vercel": "npx --yes vercel login",
     "typecheck:app": "tsc --noEmit -p tsconfig.app.json",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
-    "typecheck": "npm run typecheck:app && npm run typecheck:node",
-    "test:seo-contracts": "vitest run --config vitest.research.config.mjs scripts/validate-generated-seo.test.mjs scripts/lib/ssr-contract.test.mjs scripts/lib/compact-html.test.mjs"
+    "typecheck": "npm run typecheck:app && npm run typecheck:node && npm run typecheck:api",
+    "test:seo-contracts": "vitest run --config vitest.research.config.mjs scripts/validate-generated-seo.test.mjs scripts/lib/ssr-contract.test.mjs scripts/lib/compact-html.test.mjs",
+    "typecheck:api": "tsc --noEmit -p tsconfig.api.json",
+    "test:api": "vitest run --config vitest.api.config.ts"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
@@ -171,7 +173,6 @@
     "@types/node": "^22.16.5",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
-    "@vercel/node": "^5.10.2",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.32.0",
     "eslint-plugin-react-hooks": "^5.2.0",

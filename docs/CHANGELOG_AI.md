@@ -1,3 +1,24 @@
+## 2026-10-09 — R0/R1 publiés et clôturés
+
+- Contrats API `13b631bc1d` publiés via `bb4bc7f94b`, puis retrait du SDK de types `4601f877cf` : les deux CI complètes et statuts Vercel réussissent.
+- R1 : 104 entrées lock retirées, aucun ajout ni modification des versions conservées ; audit complet 15 → 9 (élevées 11 → 5), omit-dev 7 inchangé. Contrat Node/Vercel compatible, JS des trois handlers identique.
+- Installation propre, 82 API, 266 app, 23 SEO, 99 Ma Stack, types/design/build/budgets et 56 hydratations CI en 5,2 min ; 13 162 HTML/80 JS/sitemap identiques. Relecture indépendante sans défaut.
+- GET/OPTIONS publics des trois API identiques avant/après ; Notion FR/EN, sitemap et JS public identiques au build validé. Aucun email ni write catalogue. Détails internes Vercel inaccessibles (403) ; statut lié au commit et recette publique contrôlés.
+- Roadmaps/statut et preuves de clôture actualisés. Catégories/catalogue/médias locaux exclus et préservés ; R2–R11 restent proposés.
+
+## 2026-10-09 — État des lieux consolidé et roadmap par lots
+
+- Historique technique confronté aux rapports et aux preuves : 13 lots recensés, statuts publié/local/proposé séparés. Main distant 7ee809e146, applicatif 88d7f5d7a5 ; contrats API 13b631bc1d toujours locaux.
+- Gains isolés de taille, réseau, fiabilité et dépendances séparés ; audit npm actualisé 15/7, zéro critique. Aucun gain de vitesse, conversion ou classement revendiqué. API saine non mesurée, DNS encore en échec dans cet environnement uniquement.
+- Roadmap proposée R0–R11 avec critères de sortie, dépendances, valeur et efforts relatifs ; backlog séparé. Contradictions du cap Ma Stack/coûts et libellé Payé en double rendues explicites.
+- Document ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md, preuves JSON, points d’entrée ROADMAP/MA_STACK_ROADMAP actualisés ; historiques conservés. Travail documentaire local, aucune publication ni modification applicative.
+
+## 2026-10-09 — Précondition API du lot SDK
+
+- Contrôle strict de api/**/*.ts et fixtures Node, inclus dans typecheck global. 82 contrats de handlers et badge helper, intégrés à verify:preprod et Preprod CI ; tests hors api/ pour éviter leur déploiement comme endpoints.
+- Resend/DNS/fetch simulés, vrai code de validation/HMAC conservé ; aucune livraison réelle. Ancien typecheck ignorant une erreur API prouvé, nouveau contrôle la détecte ; quatre mutations de comportement détectées, sources restaurées.
+- 266 tests applicatifs, 23 contrats SEO, tests API/types et build/budgets PASS ; 80 JS et sitemap identiques, 13 156 HTML identiques et six dates de génération seules actualisées. Relecture indépendante sans point restant. Rapport CONTRATS_API_2026-10-09.md et roadmap actualisés. Lot local non publié ; SDK, handlers et lockfile inchangés, travaux catégories/catalogue préservés.
+
 ## 2026-10-09 — React Router 7 publié et vérifié
 
 - Commits audit/migration publiés, applicatif `88d7f5d7a5`, parité main confirmée. Vercel réussi et CI 37895367300 entièrement verte : 56 hydratations sans flake en 5,4 min ; rapport jusqu’au 16 octobre.
