@@ -1,3 +1,9 @@
+## 2026-10-09 — Plan soumissions Upstash, traitement email conservé
+
+- Après choix explicite d'Upstash gratuit et instruction « ensuite », préparation du plan détaillé en quatre tâches : réservation atomique, brouillon/acceptation, envoi/reprise, recette/configuration.
+- Redis limité aux demandes/reçus ; aucun appel Supabase pour cette fonctionnalité, pas de back-office ni de polling ajouté. Rétention personnelle 90 jours proposée, preuve de consommation sans TTL ; erreurs ambiguës Resend après 24 heures traitées manuellement.
+- Plan à relire et méthode native recommandée avant implémentation. Aucun code produit, création de service, secret lu ou déploiement dans cette étape documentaire. Diff sans erreur ; aucune nouvelle recette applicative revendiquée.
+
 ## 2026-10-09 — Badge gratuit imposé côté serveur ; suite sans Supabase
 
 - `api/contact.ts` déduit l'obligation du badge de la soumission et du paiement strictement vérifié, au lieu du flag client `badgeReview`. URL, jeton et relecture du badge requis pour toute demande gratuite ; contacts généraux et demandes payantes vérifiées conservés.

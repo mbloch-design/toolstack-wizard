@@ -1,6 +1,6 @@
 # Soumissions ToolTrim — déduplication durable sans Supabase
 
-**Statut : proposition révisée, non implémentée.** Le propriétaire exclut Supabase pour cette fonctionnalité, son quota gratuit étant épuisé, et choisit de préparer Upstash Redis gratuit. Il traite actuellement les demandes par email : ce traitement manuel doit être conservé. Aucun compte, stockage distant, raccordement ou abonnement n'est créé. Les emails actuels restent la voie de traitement ; Redis n'ajoute pas de back-office. La correction locale du badge gratuit est indépendante de ce contrat.
+**Statut : préparation du plan autorisée par « ensuite », non implémentée.** Le propriétaire exclut Supabase pour cette fonctionnalité, son quota gratuit étant épuisé, et choisit de préparer Upstash Redis gratuit. Il traite actuellement les demandes par email : ce traitement manuel doit être conservé. Aucun compte, stockage distant, raccordement ou abonnement n'est créé. Les emails actuels restent la voie de traitement ; Redis n'ajoute pas de back-office. La correction locale du badge gratuit est indépendante de ce contrat.
 
 ## Résultat attendu
 
@@ -21,7 +21,7 @@ Un checkout Creem vérifié ne finance qu'une soumission. Un nouvel essai identi
 | Stockage serveur déjà actif, hors Supabase | Pas de nouveau fournisseur | Aucun stockage répondant à ces exigences n'a encore été identifié |
 | Upstash Redis gratuit, dédié aux soumissions | REST adapté aux handlers serverless, données persistées, scripts serveur | Nouveau compte/configuration ; quota borné, à surveiller |
 
-**Recommandation proposée : Upstash Redis gratuit**, si aucun stockage durable déjà actif ne convient. Le propriétaire a choisi de préparer cette option ; le présent contrat écrit reste à relire avant le plan détaillé. Ce choix ne vaut pas activation de facturation. REST via `fetch`, sans importer un SDK dans le navigateur. Ni fichiers catalogue ni médias dans ce stockage.
+**Recommandation proposée : Upstash Redis gratuit**, si aucun stockage durable déjà actif ne convient. Le propriétaire a choisi de préparer cette option ; le plan détaillé est maintenant préparé et reste à relire avant le code. Ce choix ne vaut pas activation de facturation. REST via `fetch`, sans importer un SDK dans le navigateur. Ni fichiers catalogue ni médias dans ce stockage.
 
 ## Coût et conservation
 
@@ -63,3 +63,5 @@ Les notifications `submission-progress` ont leur propre déduplication par broui
 Avant implémentation : approuver ce contrat écrit, puis rédiger et relire le plan détaillé. Le choix de préparer Upstash est confirmé ; sa configuration réelle n'est pas encore attestée.
 
 Sources : [tarifs Redis](https://upstash.com/pricing/redis), [REST](https://upstash.com/docs/redis/features/restapi), [persistance](https://upstash.com/docs/redis/features/durability), [éviction](https://upstash.com/docs/redis/features/eviction), [EVAL](https://upstash.com/docs/redis/sdks/ts/commands/scripts/eval), [idempotence Resend](https://resend.com/docs/dashboard/emails/idempotency-keys).
+
+[Plan d’implémentation préparé](../plans/2026-10-09-submission-idempotency.md) : réservation, envoi/reprise et recette, méthode native recommandée. Aucun raccordement distant effectué.
