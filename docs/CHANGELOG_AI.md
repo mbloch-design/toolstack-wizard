@@ -1,3 +1,8 @@
+## 2026-10-09 — Base Upstash Free créée, raccordement en attente
+
+- Après connexion du propriétaire : création de `tooltrim-submissions` dans Personal, Francfort, Free $0/mois, persistance et éviction désactivée vérifiées. Aucun moyen de paiement ajouté ; quota visible 500k commandes/mois, sans capacité applicative extrapolée.
+- Aucun token révélé, payload de demande enregistré, email/paiement ou déploiement. Vercel toujours refusé 403 et console non connectée ; configuration et recette distante restent ouvertes. Preuve d’accès et procédure actualisées.
+
 ## 2026-10-09 — Activation soumissions : contrôle des accès
 
 - Suite demandée ; projet Vercel retrouvé, métadonnées des variables refusées 403 pour le scope du propriétaire. Consoles Upstash/Vercel non connectées ; pas de CLI disponible en repli. Aucune valeur de secret affichée.

@@ -1,7 +1,7 @@
 {
   "date": "2026-10-09",
   "request": "fais la suite",
-  "status": "waiting for authenticated owner access",
+  "status": "Upstash database created; Vercel access still required",
   "vercel": {
     "project": "toolstack-wizard",
     "projectId": "prj_gOLJN2t7sFiFA49LbIGfadbC4P9n",
@@ -13,18 +13,34 @@
       "scope": "mbloch-designs-projects"
     },
     "cli_available": false,
-    "browser": "login required"
+    "browser": "login required",
+    "latest_recheck": "403 unchanged; browser still login required"
   },
   "upstash": {
-    "browser": "login required",
-    "account_configuration": "not verified"
+    "browser": "authenticated owner account",
+    "database": "tooltrim-submissions",
+    "databaseId": "3beef924-b484-4891-b3ab-381e409635f7",
+    "console_url": "https://console.upstash.com/redis/3beef924-b484-4891-b3ab-381e409635f7/details",
+    "plan": "Free Tier",
+    "region": "eu-central-1 Frankfurt",
+    "persistence": "included in creation confirmation",
+    "eviction_aria_checked": "false",
+    "monthly_price_usd": 0,
+    "monthly_commands_visible": 500000,
+    "bandwidth_visible": "10 GB",
+    "storage_visible": "238 MB (250 MB creation label)",
+    "paid_plans": "Add a payment method required",
+    "credentials_read_or_printed": false,
+    "recipe_run": false
   },
   "local_environment": {
     "redis_maintenance_creem_badge_configuration_present": false,
     "resend_name_present_in_primary_preprod": true,
     "values_printed": false
   },
-  "remote_changes": false,
+  "remote_changes": [
+    "created dedicated Free Redis database; no product connection"
+  ],
   "recipe_run": false,
   "publication": false
 }

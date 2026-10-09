@@ -80,3 +80,9 @@ Ordre de mise en service :
 - [ ] Publication puis CI/recette publique vérifiées, lorsque les prérequis sont réunis.
 
 État actuel : **activation en attente des accès**. Aucune modification de variable distante, création de compte/base, écriture Redis distante, email ou paiement réalisé lors de ce contrôle.
+
+### Avancement après connexion Upstash
+
+Le propriétaire a connecté son compte et autorisé la suite. Base `tooltrim-submissions` créée dans son espace Personal : [console](https://console.upstash.com/redis/3beef924-b484-4891-b3ab-381e409635f7/details), Free Tier, région Francfort `eu-central-1`, persistance/TLS/REST inclus, prix affiché $0/mois. Éviction contrôlée `aria-checked=false` après création. Le compte affiche 500 000 commandes/mois, 10 GB de bande passante et 238 MB de stockage (250 MB dans le formulaire). Aucun moyen de paiement ajouté ; les offres payantes affichent « Add a payment method ». Ces limites observées ne constituent pas une capacité applicative mesurée.
+
+Le token n’a pas été révélé ni copié. Aucun payload ni paiement enregistré dans Redis et aucune recette distante exécutée. Les variables Vercel n’ont pas été modifiées : le connecteur est encore refusé 403 dans le scope du propriétaire et la console Vercel affiche une connexion requise. La création de la base ne signifie pas activation sur le site. Prochaine action : connexion Vercel du propriétaire, puis configuration serveur et recette indépendante.
