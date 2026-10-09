@@ -37,6 +37,7 @@ const BADGES: Badge[] = [
   { href: "https://findly.tools/tooltrim?utm_source=tooltrim", rel: "noopener noreferrer", label: "Featured on Findly.tools", src: "https://findly.tools/badges/findly-tools-badge-light.svg", alt: "Featured on Findly.tools", width: 175, height: 55 },
   { href: "https://sellwithboost.com", rel: "noopener noreferrer", label: "Listed on Sell With boost", src: "https://sellwithboost.com/badge/listing.svg", alt: "Listed on Sell With boost", width: 160, height: 40 },
   { href: "https://twelve.tools", rel: "noopener noreferrer", label: "Featured on Twelve Tools", src: "https://twelve.tools/badge0-white.svg", alt: "Featured on Twelve Tools", width: 148, height: 40 },
+  { href: "https://francesaas.fr/saas/tooltrim", rel: "noopener", label: "Featured on FranceSaaS.fr", src: "/badges/francesaas-badge.svg", alt: "Featured on FranceSaaS.fr", width: 170, height: 54, title: "Profil du SaaS Tooltrim sur FranceSaaS.fr" },
 ];
 
 /**
