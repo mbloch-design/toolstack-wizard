@@ -1,3 +1,9 @@
+## 2026-10-09 — Exploitation préparée et contrôle Creem borné
+
+- Dossier privé de sauvegarde et snapshot initial du registre vide créés ; mode 700/600, ignorés par Git, aucune mutation production.
+- Consignes manuelles de reprise, archivage, sauvegarde et incident préparées ; aucun cron ni copie cloud installés.
+- Produit/encaissement/retour Creem reconfirmés sans modification. Accès API et métadonnées réelles encore non certifiés ; clé locale de lecture nécessaire.
+
 ## 2026-10-09 — Domaine et expéditeur Resend vérifiés
 
 - Compte connecté : domaine tooltrim.com Verified, DKIM/SPF/MX d'envoi Verified, envoi activé. Clé récente avec Sending access, aucune extension des droits.
