@@ -35598,3 +35598,10 @@ img[data-logo-loading] {
 /* <main> inside the shell's scroll container: no focus ring when the skip
    link sends focus to it. */
 .asv2-main { display: block; outline: none; }
+/* Phone and tablet: the badge strip must scroll, not widen its column (the
+   base rule's flex-wrap made the line max-content wide, so 14 of 18 badges
+   were clipped off-screen; a11y audit, 9 Oct 2026). */
+@media (max-width: 1100px) {
+  .tt-footer .tt-footer-partners { flex-wrap: nowrap; min-width: 0; }
+  .tt-footer .tt-footer-badges { min-width: 0; max-width: 100%; }
+}
