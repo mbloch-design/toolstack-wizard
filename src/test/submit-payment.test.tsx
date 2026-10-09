@@ -144,3 +144,10 @@ it('free_draft_id_survives_reload_and_retry',async()=>{
  fireEvent.click(screen.getByRole('button',{name:/Continuer/}));
  await waitFor(()=>expect(JSON.parse(window.localStorage.getItem('tt_submit_draft')!).submissionId).toBe(id));
 });
+it('notification_failure_does_not_block_the_saved_draft_or_checkout',async()=>{
+ window.localStorage.clear();request.mockImplementation(async()=>new Response(JSON.stringify({error:'email down'}),{status:503}));
+ mount('/fr/submit');fireEvent.click(screen.getAllByRole('button',{name:'Publier ma fiche · 29 $'})[0]);
+ fireEvent.change(screen.getByLabelText('Site officiel'),{target:{value:'example.com'}});fireEvent.change(screen.getByLabelText("Nom de l'outil"),{target:{value:'Sample'}});fireEvent.change(screen.getByLabelText('Email'),{target:{value:'ada@example.com'}});
+ fireEvent.click(screen.getByRole('button',{name:'Continuer vers le paiement →'}));
+ await screen.findByRole('link',{name:'Payer 29 $ et lancer ma fiche'});expect(window.localStorage.getItem('tt_submit_draft')).not.toBeNull();
+});

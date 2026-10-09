@@ -54,3 +54,77 @@ export async function reserveSubmission(record:SubmissionRecord):Promise<Reserve
  if(r.length===2&&(r[0]==='created'||r[0]==='existing'))return {status:r[0],record:parseRecord(r[1])};
  throw new SubmissionStoreError();
 }
+
+import type { MailJob, MailKind } from './_submission-contract.js';
+export const UPDATE_SCRIPT=`
+local raw=redis.call('HGET',KEYS[1],ARGV[1])
+if not raw then return nil end
+local r=cjson.decode(raw)
+local op=ARGV[2]
+local p=cjson.decode(ARGV[3])
+local clock=redis.call('TIME')
+local now=tonumber(clock[1])*1000+math.floor(tonumber(clock[2])/1000)
+if op=='suspend' then
+ r.state='suspended'
+elseif op=='archive' then
+ if r.archived then return nil end
+ for _,kind in ipairs({'internal','confirmation'}) do
+  local j=r.jobs[kind]
+  if j.state~='sent' or not j.sentAt or now-j.sentAt<90*86400000 then return nil end
+ end
+ for _,kind in ipairs({'internal','confirmation'}) do r.jobs[kind].payload=nil end
+ r.archived=true
+else
+ if r.state~='accepted' then return nil end
+ local j=r.jobs[p.kind]
+ if not j then return nil end
+ if op=='claim' then
+  if j.state=='sent' or j.state=='reconcile' or not j.payload then return nil end
+  if j.leaseUntil and j.leaseUntil>now then return nil end
+  if j.firstAttemptAt and now-j.firstAttemptAt>=86400000 then
+   j.state='reconcile';j.owner=nil;j.leaseUntil=nil
+   redis.call('HSET',KEYS[1],ARGV[1],cjson.encode(r));return nil
+  end
+  j.firstAttemptAt=j.firstAttemptAt or now
+  j.state='sending';j.owner=p.owner;j.leaseUntil=now+60000
+ elseif op=='finish' then
+  if j.state~='sending' or j.owner~=p.owner or not j.leaseUntil or j.leaseUntil<=now then return nil end
+  if p.providerId then j.state='sent';j.providerId=p.providerId;j.sentAt=now
+  else j.state='pending' end
+  j.owner=nil;j.leaseUntil=nil
+ else return redis.error_reply('invalid operation') end
+end
+local encoded=cjson.encode(r)
+redis.call('HSET',KEYS[1],ARGV[1],encoded)
+return encoded
+`;
+async function update(id:string,operation:string,params:Record<string,unknown>):Promise<SubmissionRecord|null>{
+ if(!validSubmissionId(id))throw new SubmissionStoreError();
+ const result=await redisCommand(['EVAL',UPDATE_SCRIPT,1,SUBMISSION_HASH,`submission:${id}`,operation,JSON.stringify(params)]);
+ return result===null?null:parseRecord(result);
+}
+export async function claimMail(id:string,kind:MailKind,owner:string):Promise<MailJob|null>{
+ if(!['internal','confirmation'].includes(kind)||!owner||owner.length>64)throw new SubmissionStoreError();
+ const record=await update(id,'claim',{kind,owner});return record?.jobs[kind]??null;
+}
+export async function finishMail(id:string,kind:MailKind,owner:string,result:{providerId:string}|{uncertain:true}):Promise<boolean>{
+ if(!['internal','confirmation'].includes(kind)||!owner||owner.length>64||('providerId' in result&&(!result.providerId||result.providerId.length>300)))throw new SubmissionStoreError();
+ return (await update(id,'finish',{kind,owner,...result}))!==null;
+}
+export async function suspendSubmission(id:string):Promise<boolean>{return (await update(id,'suspend',{}))!==null;}
+export async function archiveSubmission(id:string):Promise<boolean>{return (await update(id,'archive',{}))!==null;}
+// COUNT is a Redis hint, not a strict page limit. The offset keeps unprocessed fields on the same page.
+export async function scanSubmissions(cursor:string,limit:number):Promise<{cursor:string;records:SubmissionRecord[]}>{
+ if(!/^\d+(?::\d{1,6})?$/.test(cursor)||limit<1||limit>25)throw new SubmissionStoreError();
+ const [position,offsetRaw='0']=cursor.split(':');const offset=Number(offsetRaw);
+ const result=await redisCommand(['HSCAN',SUBMISSION_HASH,position,'COUNT',50]);
+ if(!Array.isArray(result)||typeof result[0]!=='string'||!/^\d+$/.test(result[0])||!Array.isArray(result[1])||result[1].length%2!==0)throw new SubmissionStoreError();
+ const fields=result[1];const records:SubmissionRecord[]=[];let index=offset*2;
+ for(;index<fields.length;index+=2){
+  if(typeof fields[index]!=='string')throw new SubmissionStoreError();
+  if(!fields[index].startsWith('submission:'))continue;
+  const record=parseRecord(fields[index+1]);records.push(record);
+  if(records.length===limit){index+=2;break;}
+ }
+ return {records,cursor:index<fields.length?`${position}:${index/2}`:result[0]};
+}

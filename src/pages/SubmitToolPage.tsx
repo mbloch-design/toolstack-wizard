@@ -218,7 +218,7 @@ const SubmitToolPage = () => {
     try {
       const next = { ...submission, toolUrl: site.url, submissionId: submission.submissionId || crypto.randomUUID(), ...(plan === 'paid' ? { paymentReference: submission.paymentReference || crypto.randomUUID(), checkoutId: '' } : {}) };
       saveDraft(next); setSubmission(next);
-      await sendProgress(1, plan === "paid", next);
+      void sendProgress(1, plan === "paid", next).catch(() => undefined);
       setStep(2); setStatus("idle");
       document.getElementById("submit-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch { setStatus("error"); setError(t("L'enregistrement a échoué. Réessaie.", "This step could not be saved. Try again.")); }

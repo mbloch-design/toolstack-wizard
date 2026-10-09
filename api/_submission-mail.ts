@@ -1,6 +1,7 @@
 import { Resend } from 'resend';
-import type { SubmissionInput, SubmissionRecord, MailJob, MailPayload } from './_submission-contract.js';
-const resend = new Resend(process.env.RESEND_API_KEY);
+import { randomUUID } from 'node:crypto';
+import { claimMail, finishMail } from './_submission-store.js';
+import type { SubmissionInput, MailJob, MailPayload } from './_submission-contract.js';
 const escapeHtml = (value:unknown) => String(value??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
 export const submissionConfirmationHtml = ({ name, toolName, paid, lang }: { name: unknown; toolName: unknown; paid: boolean; lang: "fr" | "en" }) => {
   const safeName = escapeHtml(name);
@@ -135,7 +136,19 @@ export function buildSubmissionJobs(input:SubmissionInput):Record<'internal'|'co
  const confirmation:MailPayload={from:'ToolTrim <contact@tooltrim.com>',to:email,replyTo:'contact@tooltrim.com',subject:isPaidSubmission?(submissionLang==='fr'?`Création de ta fiche lancée — ${safeSubjectToolName}`:`Your listing creation has started — ${safeSubjectToolName}`):(submissionLang==='fr'?`Demande enregistrée — ${safeSubjectToolName}`:`Request registered — ${safeSubjectToolName}`),html:submissionConfirmationHtml({name,toolName,paid:isPaidSubmission,lang:submissionLang})};
  return {internal:{key:`tt-submit/v1/${input.submissionId}/internal`,state:'pending',payload:internal},confirmation:{key:`tt-submit/v1/${input.submissionId}/confirmation`,state:'pending',payload:confirmation}};
 }
-// Replaced by leased delivery in the next task; this intermediate commit is not deployable.
-export async function sendAcceptedSubmission(record:SubmissionRecord):Promise<void>{
- for(const kind of ['internal','confirmation'] as const){try{await resend.emails.send(record.jobs[kind].payload!);}catch{/* Persisted request remains pending. */}}
+export async function deliverSubmission(id:string):Promise<void>{
+ for(const kind of ['internal','confirmation'] as const){
+  const owner=randomUUID();
+  const job=await claimMail(id,kind,owner);
+  if(!job?.payload)continue;
+  let result:{providerId:string}|{uncertain:true}={uncertain:true};
+  let timer:ReturnType<typeof setTimeout>|undefined;
+  try{
+   const resend=new Resend(process.env.RESEND_API_KEY);
+   const sent=await Promise.race([resend.emails.send(job.payload,{idempotencyKey:job.key}),new Promise<never>((_,reject)=>{timer=setTimeout(()=>reject(new Error('email_timeout')),8000);})]);
+   if(!sent.error&&typeof sent.data?.id==='string'&&sent.data.id)result={providerId:sent.data.id};
+  }catch{/* An ambiguous outcome keeps its first attempt and provider key. */}
+  finally{if(timer)clearTimeout(timer);}
+  await finishMail(id,kind,owner,result);
+ }
 }

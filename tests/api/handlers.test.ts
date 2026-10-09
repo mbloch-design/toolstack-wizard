@@ -5,7 +5,13 @@ import { httpFixture } from "./http";
 const fakes = vi.hoisted(() => ({ send: vi.fn(), lookup: vi.fn() }));
 vi.mock("resend", () => ({ Resend: class { emails = { send: fakes.send }; } }));
 vi.mock("node:dns/promises", () => ({ lookup: fakes.lookup }));
-vi.mock('../../api/_submission-store',()=>({getSubmission:vi.fn().mockResolvedValue(null),reserveSubmission:vi.fn().mockImplementation(async record=>({status:'created',record}))}));
+const registry=vi.hoisted(()=>({record:null as import('../../api/_submission-contract').SubmissionRecord|null}));
+vi.mock('../../api/_submission-store',()=>({
+ getSubmission:vi.fn().mockResolvedValue(null),
+ reserveSubmission:vi.fn().mockImplementation(async record=>{registry.record=record;return {status:'created',record};}),
+ claimMail:vi.fn().mockImplementation(async (_id,kind:'internal'|'confirmation',owner)=>{const job=registry.record?.jobs[kind];return job?{...job,owner}:null;}),
+ finishMail:vi.fn().mockResolvedValue(true),
+}));
 import contact from "../../api/contact";
 import progress from "../../api/submission-progress";
 import verifyBadge from "../../api/verify-badge";
@@ -13,7 +19,7 @@ import verifyBadge from "../../api/verify-badge";
 const badgeHtml = '<a href="https://tooltrim.com"><img src="https://tooltrim.com/tooltrim-badge.svg" /></a>';
 const contactBody = { name: "Ada", email: "ada@example.com", subject: "Question", message: "Hello" };
 const toolBody = { ...contactBody, submissionId:'7ec2090a-9157-43c9-9238-f8931667420d', submissionType: "tool", toolName: "Sample", toolUrl: "https://example.com/", submitterRole: "Founder", lang: "en" };
-const progressBody = { progressStep: 1, toolName: "Sample", toolUrl: "https://example.com/", email: "ada@example.com", lang: "fr" };
+const progressBody = { submissionId:'7ec2090a-9157-43c9-9238-f8931667420d', progressStep: 1, toolName: "Sample", toolUrl: "https://example.com/", email: "ada@example.com", lang: "fr" };
 const secret = "local-test-secret";
 const fetchPage = vi.fn<typeof fetch>();
 
@@ -200,3 +206,8 @@ describe("verify-badge", () => {
     expect(h.res.statusCode).toBe(400); expect(h.body).toEqual({ error: "verification_failed" });
   });
 });
+it('progress retries use a stable provider key without storing unverified drafts',async()=>{
+ for(let i=0;i<2;i++){const h=httpFixture({...progressBody,submissionId:'7ec2090a-9157-43c9-9238-f8931667420d'});await progress(h.req,h.res);expect(h.res.statusCode).toBe(200);}
+ expect(fakes.send.mock.calls[0][1]?.idempotencyKey).toMatch(/^tt-progress\/v1\//);expect(fakes.send.mock.calls[0][1]?.idempotencyKey).toBe(fakes.send.mock.calls[1][1]?.idempotencyKey);expect(fetchPage).not.toHaveBeenCalled();
+});
+it.each(['true',1,{}])('progress rejects non-boolean option flag %j',async paid=>{const h=httpFixture({...progressBody,paid});await progress(h.req,h.res);expect(h.res.statusCode).toBe(400);expect(fakes.send).not.toHaveBeenCalled();});

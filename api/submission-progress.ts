@@ -1,5 +1,7 @@
 import type { VercelRequest, VercelResponse } from "../types/vercel-http.js";
 import { Resend } from "resend";
+import { createHash } from "node:crypto";
+import { validSubmissionId } from "./_submission-contract.js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -30,7 +32,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "OPTIONS") return res.status(204).end();
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-  const { progressStep, toolName, toolUrl, submitterRole, name, email, message, badgeUrl, paid, lang } = req.body ?? {};
+  const { submissionId, progressStep, toolName, toolUrl, submitterRole, name, email, message, badgeUrl, paid, lang } = req.body ?? {};
+  if(!validSubmissionId(submissionId)||(paid!=null&&typeof paid!=='boolean')||[toolName,toolUrl,email].some(value=>typeof value!=='string')||[submitterRole,name,message,badgeUrl].some(value=>value!=null&&typeof value!=='string'))return res.status(400).json({error:'Invalid submission progress'});
   // submitterRole/name/message are only collected in step 3 (contact.ts), after badge/payment — still empty here.
   if (![1, 2].includes(progressStep) || !toolName || !validEmail(email) || !validHttpsUrl(toolUrl)) {
     return res.status(400).json({ error: "Invalid submission progress" });
@@ -38,7 +41,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if ([toolName, submitterRole, name, email].some((value) => String(value ?? "").length > 300) || String(message ?? "").length > 2000) {
     return res.status(400).json({ error: "Field too long" });
   }
-  const isPaid = Boolean(paid);
+  const isPaid = paid === true;
   if (progressStep === 2 && !isPaid && !validHttpsUrl(badgeUrl)) {
     return res.status(400).json({ error: "Invalid badge URL" });
   }
@@ -46,12 +49,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Steps mirror the on-page funnel: 1 Contact, 2 Publication (badge or payment), 3 Details (contact.ts).
   const stepLabel = progressStep === 1
     ? "Coordonnées reçues"
-    : isPaid ? "Paiement lancé" : "Badge vérifié";
+    : isPaid ? "Paiement lancé" : "Installation du badge déclarée";
   const offerLabel = isPaid ? "PAYANT 29 $" : "GRATUIT + BADGE";
   const offerDetail = isPaid
     ? "Publication sous 5 jours · paiement non encore confirmé à cette étape"
     : "Sélection éditoriale standard · badge requis";
   const fallback = (value: unknown) => (value ? escapeHtml(value) : "—");
+  const fingerprint=createHash('sha256').update(JSON.stringify([submissionId,progressStep,toolName,new URL(toolUrl).href,email,submitterRole??'',name??'',message??'',badgeUrl??'',isPaid,lang==='fr'?'fr':'en'])).digest('hex');
   const { error } = await resend.emails.send({
     from: "ToolTrim Submissions <contact@tooltrim.com>",
     to: "contact@tooltrim.com",
@@ -76,7 +80,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       <h2>Description</h2>
       <p>${message ? escapeHtml(message).replace(/\n/g, "<br>") : "—"}</p>
     `,
-  });
+  }, {idempotencyKey:`tt-progress/v1/${submissionId}/${progressStep}/${fingerprint}`});
 
   if (error) {
     console.error("[submission-progress] Resend error:", error);

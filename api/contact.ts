@@ -5,7 +5,7 @@ import { verifyBadgeOnPage } from "./_badge-verification.js";
 
 import { normalizeSubmission, submissionFingerprint, type SubmissionInput } from './_submission-contract.js';
 import { getSubmission, reserveSubmission } from './_submission-store.js';
-import { buildSubmissionJobs, sendAcceptedSubmission } from './_submission-mail.js';
+import { buildSubmissionJobs, deliverSubmission } from './_submission-mail.js';
 
 import { verifySubmissionPayment, PaymentVerificationError } from "./_payment-verification.js";
 
@@ -93,6 +93,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const existing=await getSubmission(normalized.submissionId);
       if(existing){
         if(existing.fingerprint!==fingerprint||existing.state!=='accepted')return res.status(409).json({error:'submission_conflict'});
+        try{await deliverSubmission(existing.submissionId);}catch{/* Persisted acceptance is independent from delivery. */}
         return res.status(200).json({success:true});
       }
     }catch{return res.status(503).json({error:'submission_store_unavailable'});}
@@ -119,7 +120,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     try{
       const result=await reserveSubmission({version:1,submissionId:normalized.submissionId,fingerprint,checkoutId:normalized.checkoutId,state:'accepted',acceptedAt:Date.now(),jobs:buildSubmissionJobs(normalized)});
       if(result.status==='conflict')return res.status(409).json({error:'submission_conflict'});
-      if(result.status==='created')await sendAcceptedSubmission(result.record);
+      try{await deliverSubmission(result.record.submissionId);}catch{/* Accepted request remains available for maintenance. */}
       return res.status(200).json({success:true});
     }catch{return res.status(503).json({error:'submission_store_unavailable'});}
   }
