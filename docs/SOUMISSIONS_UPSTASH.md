@@ -57,3 +57,26 @@ Après perte de données ou restauration d'une sauvegarde ancienne : **désactiv
 Les tarifs/limites vérifiés lors du contrat sont sourcés dans la [spec](superpowers/specs/2026-10-09-submission-idempotency-design.md). La recette locale du moteur Redis ne certifie pas la configuration, l'offre, les limites ni la disponibilité du compte Upstash distant.
 
 [Bilan local, preuves et limites](BILAN_SOUMISSIONS_2026-10-09.md).
+
+## Passage à l’activation — contrôle du 9 octobre 2026
+
+La suite a été demandée après la recette locale. Le connecteur Vercel retrouve `toolstack-wizard` (`prj_gOLJN2t7sFiFA49LbIGfadbC4P9n`, équipe `team_7KjhctKdeGqM6ApVdG9uF55F`), mais la lecture des métadonnées des variables, sans déchiffrement, est refusée 403 : accès au scope `mbloch-designs-projects` à rétablir. Aucun CLI Vercel installé disponible en repli. Les consoles Upstash et Vercel du navigateur intégré affichent une connexion requise.
+
+Aucune des variables Redis/maintenance/Creem/badge requises n’est présente dans le processus ou les fichiers locaux contrôlés ; seule `RESEND_API_KEY` est définie dans `.env.preprod` du checkout principal. La valeur n’a pas été affichée. Cela ne prouve pas l’absence de variables distantes, qui restent inaccessibles.
+
+Le [modèle sans secrets](../.env.submissions.example) permet de préparer la configuration. Un fichier local rempli doit porter le suffixe `.local` (ignoré par Git) ; les scripts Node ne le chargent pas automatiquement. Exemple de recette avec Node compatible `--env-file`, fichier privé et base indépendante :
+
+```bash
+node --env-file=.env.submissions.local --import tsx scripts/test-submission-redis.mjs
+```
+
+Ordre de mise en service :
+
+- [ ] Connexion Upstash du propriétaire et accès Vercel au scope du projet rétablis.
+- [ ] Base durable Free, éviction désactivée et absence de bascule payante attestées dans le compte.
+- [ ] Variables de Preview propres à la recette, séparées de Production, puis variables Production attestées sans afficher les valeurs.
+- [ ] Recette Upstash dédiée passée et compteur du compte relevé sur chaque branche/reprise ; capacité évaluée seulement ensuite.
+- [ ] Retour et métadonnées Creem, expéditeur Resend, rétention 90 jours, traitement manuel des ambiguïtés et sauvegarde/restauration attestés.
+- [ ] Publication puis CI/recette publique vérifiées, lorsque les prérequis sont réunis.
+
+État actuel : **activation en attente des accès**. Aucune modification de variable distante, création de compte/base, écriture Redis distante, email ou paiement réalisé lors de ce contrôle.

@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-09",
+  "request": "fais la suite",
+  "status": "waiting for authenticated owner access",
+  "vercel": {
+    "project": "toolstack-wizard",
+    "projectId": "prj_gOLJN2t7sFiFA49LbIGfadbC4P9n",
+    "teamId": "team_7KjhctKdeGqM6ApVdG9uF55F",
+    "project_discovery": "PASS",
+    "environment_metadata_request": {
+      "decrypt": false,
+      "status": 403,
+      "scope": "mbloch-designs-projects"
+    },
+    "cli_available": false,
+    "browser": "login required"
+  },
+  "upstash": {
+    "browser": "login required",
+    "account_configuration": "not verified"
+  },
+  "local_environment": {
+    "redis_maintenance_creem_badge_configuration_present": false,
+    "resend_name_present_in_primary_preprod": true,
+    "values_printed": false
+  },
+  "remote_changes": false,
+  "recipe_run": false,
+  "publication": false
+}

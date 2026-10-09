@@ -1,3 +1,8 @@
+## 2026-10-09 — Activation soumissions : contrôle des accès
+
+- Suite demandée ; projet Vercel retrouvé, métadonnées des variables refusées 403 pour le scope du propriétaire. Consoles Upstash/Vercel non connectées ; pas de CLI disponible en repli. Aucune valeur de secret affichée.
+- Modèle serveur vide `.env.submissions.example`, checklist de mise en service et preuve d’accès ajoutés. Pas de modification applicative ; aucune recette distante, création de base, modification de variable ou publication. Activation en attente des accès du propriétaire.
+
 ## 2026-10-09 — Soumissions : reçus Redis et reprises email, local
 
 - Plan Upstash autorisé exécuté dans un worktree isolé : réservation atomique du checkout, demande et jobs persistés avant email, baux et clés stables, maintenance authentifiée. Aucun Supabase pour cette fonctionnalité ; traitement manuel par email conservé.
