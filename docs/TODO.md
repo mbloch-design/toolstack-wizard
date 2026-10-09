@@ -151,6 +151,7 @@ Mesures Playwright à 1440, 1024 et 390 px. Tout appliqué le 9 oct. (« go sur 
 - [x] Colonne imposée 641 à 1 180 px : double pastille sur l'entrée active supprimée
 - [x] Recherche globale refaite : une colonne de 720 px ; avant la frappe « Essayez », « Par besoin », « Lequel garder ? », « Partir d'une stack », « Reprendre votre stack » ; pendant la frappe, résultats groupés par type ; plus de « Plateformes », « Fonctionne avec », « Collections »
 - [x] Revue design de la recherche (9 oct.) : liste de résultats conforme ARIA (axe 0), nombre de résultats annoncé, piège de focus réparé (`[href]` attrapait les `<use href>` du sprite, aussi dans `StackSaveDialog`), « notion » ne tire plus Motion (faute tolérée seulement en second recours), tokens d'espacement et de typo, cibles de 44 px sur mobile, sortie animée
+- [x] Ma stack : valeurs en mots (« Cost unknown », « Rien ») ne débordent plus ; carte « Doublons » à zéro = « ✓ Aucun » + « Aucun outil ne fait doublon », jauges vides masquées
 - [ ] Recherche : « appointment scheduling » ne renvoie rien en anglais (« booking » trouve Calendly) ; « alternative à Notion » met Notionlytics en tête
 - [ ] Reste : la fiche outil a son propre conteneur (`td-hero`), décalé de 16 px du haut de page à 1440 px
 - [ ] Reste : les règles « colonne réduite » sont écrites deux fois (réduite à la main, imposée de 641 à 1 180 px) ; les fusionner demande une classe posée en JS, au prix d'un saut au premier affichage

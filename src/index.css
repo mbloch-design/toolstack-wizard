@@ -34539,6 +34539,11 @@ img[data-logo-loading] {
 /* Hero labels with a pictogram; bar segments explain themselves in a pill on
    hover (Screen Time style). */
 .ms-page .ms-hero-stats dt { display: inline-flex; align-items: center; gap: 6px; }
+/* Rien à mesurer : la jauge garde sa place (les colonnes restent alignées)
+   mais disparaît ; « Aucun doublon » se lit comme une bonne nouvelle. */
+.ms-page .ms-stat-bar--none { visibility: hidden; }
+.ms-page .ms-hero-stats dd.ms-stat-clear > .tt-value { display: inline-flex; align-items: center; gap: 6px; }
+.ms-page .ms-hero-stats dd.ms-stat-clear svg { flex-shrink: 0; }
 .ms-page .ms-hero-stats dt svg { flex-shrink: 0; opacity: .75; }
 .ms-page .ms-hero-stats .ms-stat--overlaps dt svg { color: color-mix(in srgb, #E8590C 82%, #000); opacity: 1; }
 .ms-page .ms-stat-bar { overflow: visible; height: 14px; align-items: center; margin: 4px 0 2px; }
