@@ -1,3 +1,10 @@
+## 2026-10-09 — Recette Upstash isolée via CLI, REST concurrent restant
+
+- Seconde base Free refusée par le fournisseur ; adaptation préactivation explicitement autorisée par le propriétaire. Aucun changement de facturation. Recette CLI sur données fictives PASS, nettoyage vérifié, registre client vide ; aucune opération email/paiement.
+- 20 réservations distantes successives, conflits/baux/ambiguïté/suspension/archive/scan testés. Concurrence REST distante non revendiquée. Compteurs quota encore à zéro, capacité non calculée.
+- Script de recette étendu, garde d’activation atomique et isolation testées : 178 API et script complet Redis local PASS. Transfert chiffré du token via sortie connecteur refusé automatiquement, non exécuté ; alternative CLI sans extraction.
+- Fichier privé vide préparé pour permettre au propriétaire de renseigner le token hors chat ; recette REST et autres conditions de publication restent ouvertes. Aucun déploiement.
+
 ## 2026-10-09 — Clé Creem limitée configurée, produit conservé
 
 - Après confirmation explicite : clé LIVE dédiée avec `checkouts:read` seulement, enregistrée Secret Production sous `CREEM_API_KEY`. Ni valeur imprimée ni ancienne clé Default modifiée.
