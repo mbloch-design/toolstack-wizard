@@ -10,7 +10,7 @@
 
 **Spec:** [Contrat écrit](../specs/2026-10-09-submission-idempotency-design.md).
 
-**Statut : implémentation et recette locales terminées après « parfait, lance le plan ». Activation distante en attente.** Aucun raccordement distant, compte, abonnement ou déploiement créé. Voir [bilan et décisions](../../BILAN_SOUMISSIONS_2026-10-09.md) et [procédure](../../SOUMISSIONS_UPSTASH.md).
+**Statut : implémentation et recette locales terminées ; configuration Production et recettes Upstash REST concurrente/récupération fictive réalisées. Activation distante en attente des contrôles prestataires et exploitation.** Aucun déploiement effectué ; base Free créée sans facturation. Voir [bilan et décisions](../../BILAN_SOUMISSIONS_2026-10-09.md) et [procédure](../../SOUMISSIONS_UPSTASH.md).
 
 ## Global Constraints
 
@@ -103,4 +103,11 @@ Recommandation : **native**, dans cette session, avec relecture indépendante fi
 
 ### Limites de clôture
 
-Les opérations atomiques ont été exécutées sur Redis réel local 7.2.7 ; la recette Upstash dédiée et son quota restent non vérifiés. La procédure privée de sauvegarde est écrite, mais aucun export/restauration du compte distant n’a été réalisé. Les cases de configuration et publication restent ouvertes. La CI inclut désormais Redis réel ; ce workflow modifié n’a pas encore tourné sur GitHub.
+Les opérations atomiques ont été exécutées sur Redis réel local 7.2.7 et sur Upstash REST. Exception explicitement autorisée : préactivation sur un namespace fictif temporaire du compte Free, registre production vide et lu seulement. Recette concurrente PASS (68 appels REST), export/restauration fictif PASS (16 appels REST), nettoyages vérifiés. Compteur global relevé ; ventilation facturée par branche et capacité restent non établies. Aucun export/restauration de données production réalisé. Les cases de configuration et publication restent ouvertes. La CI inclut désormais Redis réel ; ce workflow modifié n’a pas encore tourné sur GitHub.
+
+### Contrôles restants avant activation
+
+- Connexion Resend puis domaine/expéditeur et clé Production à vérifier sans confondre avec la clé locale invalide.
+- Authentification de la clé Creem Production et propagation réelle des métadonnées/retour à certifier ; configuration LIVE/read-only observée.
+- Rétention 90 jours, accès privé au secret maintenance, destination/fréquence des sauvegardes et procédure de réconciliation à valider.
+- Autorisation de publication, puis vérification CI et artefact public.

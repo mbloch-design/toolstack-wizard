@@ -118,3 +118,17 @@ Recette via CLI navigateur Upstash PASS : 20 réservations **successives**, conf
 La tentative de sortie d’un jeton chiffré vers le connecteur a été refusée par la revue automatique ; elle n’a pas été exécutée. La CLI Upstash a permis les tests serveur sans sortie du jeton. Cette recette n’est pas une preuve de 20 appels REST concurrents ni du handler complet. Pour cette dernière preuve, un fichier privé `.env.submissions.local` (mode 600, ignoré) est préparé dans le worktree ; le propriétaire renseigne directement `SUBMISSION_REDIS_TEST_TOKEN`, puis exécution de la commande de recette ci-dessus. Le script vérifie le registre vide, réserve 20 fois concurremment, teste les transitions/scan et vérifie le nettoyage.
 
 Contrôle local du script étendu : 178 API PASS, trois tests nouveaux de refus cible/registre non vide/isolation. Script complet exécuté sur Redis local réel : concurrence, transitions, scan et nettoyage PASS ; 68 requêtes simulant le transport REST, sans assimilations au quota Upstash facturé. Types vérifiés séparément.
+
+### Recette REST distante vérifiée
+
+Le propriétaire a enregistré le jeton directement dans le fichier privé ignoré (mode 600). Exécution réelle du script sur Upstash : PASS, 68 requêtes REST au total. Vingt réservations simultanées : un seul reçu créé, 19 relectures ; vingt prises de bail simultanées : un seul propriétaire. Conflits, reprise ambiguë, suspension, archivage et scan PASS. Clé temporaire supprimée, absence confirmée ; registre production vide et inchangé. Aucun email ni paiement réel. [Preuve](proofs/submission-idempotency-2026-10-09/remote-rest-recipe.json).
+
+Cette preuve couvre le transport REST et les transitions du stockage, pas le handler complet avec Creem/Resend. Recette prestataires, sauvegarde/restauration, accès opérateur maintenance, politique de rétention et publication restent ouverts. Aucun déploiement effectué.
+
+### Sauvegarde/restauration fictive et contrôle prestataires
+
+Recette REST de récupération PASS sur un hash `tt:recipe:<UUID>` seulement : export privé mode 600, relecture du fichier, restauration dans le même espace temporaire, comparaison de tous les champs. Les reçus suspendus restent suspendus ; les archives n'ont plus de charge personnelle ; les deux checkouts restent consommés et refusent un autre ID. Export et hash supprimés, registre production vide et inchangé, 16 requêtes REST, aucun email/paiement réel. [Preuve et limites](proofs/submission-idempotency-2026-10-09/backup-restore-recipe.json). Aucun vrai export production ni restauration ancienne n'est attesté. L'emplacement privé des sauvegardes et leur fréquence restent à établir avec l'opérateur.
+
+Creem : clé dédiée LIVE toujours présente avec `checkouts:read` seulement, confirmée dans le compte. Resend : la clé locale `.env.preprod` ne permet pas le contrôle (HTTP 400 validation_error, préfixe de clé attendu absent) ; cela ne prouve pas une panne de la clé Production Vercel. La console Resend demande une connexion du propriétaire avant vérification du domaine d'envoi. Aucun secret, DNS, produit ou clé changé.
+
+Compteurs Upstash affichés pendant ce contrôle : 302 / 500 000 commandes mensuelles, 125 KB de bande passante, 2 KB de stockage, $0.00. Cumul de plusieurs recettes et éventuel délai de mise à jour : pas de consommation par branche ni capacité mensuelle déduite. Le contrôle REST direct confirme le nettoyage malgré l'indicateur de stockage agrégé.

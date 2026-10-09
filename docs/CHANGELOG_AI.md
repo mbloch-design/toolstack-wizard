@@ -1,3 +1,16 @@
+## 2026-10-09 — Récupération Upstash et contrôle prestataires
+
+- Export/restauration privés de reçus fictifs sur Upstash REST PASS : états, archives et réservation des checkouts préservés ; 16 appels, nettoyage complet, registre production inchangé.
+- Clé Creem LIVE `checkouts:read` confirmée ; Resend nécessite la connexion au compte. La clé locale contrôlée est refusée, sans conclusion sur la clé Production.
+- Compteur global Upstash relevé (302/500k, $0), sans extrapolation de capacité. Plan et procédure actualisés ; aucun déploiement.
+
+## 2026-10-09 — Recette Upstash REST concurrente passée
+
+- Jeton fourni directement par le propriétaire dans le fichier local privé, sans affichage ni ajout à Git.
+- Recette distante PASS : 20 réservations simultanées, 20 prises de bail simultanées et transitions testées ; 68 requêtes REST.
+- Nettoyage PASS, registre production vide et inchangé ; aucun email/paiement réel. Preuve dans `docs/proofs/submission-idempotency-2026-10-09/remote-rest-recipe.json`.
+- Validation prestataires/exploitation encore ouverte ; aucun déploiement.
+
 ## 2026-10-09 — Recette Upstash isolée via CLI, REST concurrent restant
 
 - Seconde base Free refusée par le fournisseur ; adaptation préactivation explicitement autorisée par le propriétaire. Aucun changement de facturation. Recette CLI sur données fictives PASS, nettoyage vérifié, registre client vide ; aucune opération email/paiement.
