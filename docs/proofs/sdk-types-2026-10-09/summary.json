@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-09",
+  "localHead": "4601f877cff3615e20bc597e72607d97f2c3076c",
+  "remoteMain": "4601f877cff3615e20bc597e72607d97f2c3076c",
+  "publishedApplication": "88d7f5d7a5bef8464d0787ee40c7511f5c25f943",
+  "unpublishedApplicationCommits": [],
+  "latestPublishedCI": {
+    "run": 37902184529,
+    "conclusion": "success",
+    "applicationTests": 266,
+    "seoTests": 23,
+    "maStackTests": 99,
+    "hydrationTests": 56,
+    "hydrationDuration": "5.2m",
+    "apiTests": 82
+  },
+  "gains": {
+    "htmlFormattingBytes": 25816519,
+    "toolBootstrapBytes": 5861952,
+    "browserIndexDecodedBytes": 100976,
+    "browserIndexCdnGzipBytes": 17595,
+    "browserIndexCdnGzipPercent": 4.99
+  },
+  "artifact": {
+    "localMiB": 824.8,
+    "htmlMiB": 713.2,
+    "budgetTotalMiB": 831,
+    "budgetHtmlMiB": 716
+  },
+  "audit": {
+    "full": {
+      "info": 0,
+      "low": 0,
+      "moderate": 4,
+      "high": 5,
+      "critical": 0,
+      "total": 9
+    },
+    "omitDev": {
+      "info": 0,
+      "low": 0,
+      "moderate": 2,
+      "high": 5,
+      "critical": 0,
+      "total": 7
+    }
+  },
+  "supabaseDNSRecheck": "gaierror in this environment; healthy API unverified; not proof of universal outage",
+  "limits": [
+    "backend manually treated by owner, not independently certified",
+    "no Search Console ranking or Core Web Vitals improvement proven",
+    "product/relations real user validation outstanding",
+    "all future roadmap lots are proposals, not execution authorization"
+  ],
+  "publishedSourceCommit": "4601f877cff3615e20bc597e72607d97f2c3076c",
+  "apiContractsPublication": {
+    "commit": "13b631bc1d",
+    "publishedVia": "bb4bc7f94b",
+    "ci": "success"
+  },
+  "sdkReduction": {
+    "commit": "4601f877cf",
+    "status": "published; CI and Vercel commit status success; public checks PASS",
+    "lockEntriesRemoved": 104,
+    "lockEntriesAdded": 0,
+    "retainedLockEntriesChanged": 0,
+    "handlerJavaScriptIdentical": true,
+    "htmlJavaScriptSitemapIdentical": true
+  },
+  "closureEvidence": "docs/proofs/sdk-types-2026-10-09/verification.json",
+  "snapshotScope": "verified application source; subsequent documentation-only closure excluded",
+  "apiContractsLocalBaseline": {
+    "tests": 82,
+    "typecheck": "PASS",
+    "build": "PASS",
+    "runtimeAndLockfileUnchanged": true
+  }
+}

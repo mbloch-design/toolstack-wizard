@@ -1,0 +1,12 @@
+{
+  "commit": "bb4bc7f94b6d9d5855ef1809b3ca6ebb7144d618",
+  "run": 37900711727,
+  "conclusion": "success",
+  "apiTests": 82,
+  "applicationTests": 266,
+  "seoTests": 23,
+  "maStackTests": 99,
+  "hydrationTests": 56,
+  "hydrationDuration": "5.2m",
+  "vercelStatus": "success"
+}

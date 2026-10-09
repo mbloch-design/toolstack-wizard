@@ -1,6 +1,6 @@
 # R1 — Réduction du SDK utilisé pour les types API
 
-**9 octobre 2026 — candidat local validé ; publication et CI distante R1 encore attendues.** R0 est publié sur `main` via `bb4bc7f94b` : sa CI complète est verte, avec sa nouvelle étape API, dans la [CI R0](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37900711727). Le déploiement Vercel R0 est réussi.
+**9 octobre 2026 — R1 publié et clôturé : `4601f877cf`.** [CI R1 complète verte](https://github.com/mbloch-design/toolstack-wizard/actions/runs/37902184529) et statut Vercel réussi pour ce commit. R0 est également clôturé : 82 contrats API, CI complète et Vercel réussis dans `bb4bc7f94b`.
 
 ## Changement
 
@@ -22,8 +22,10 @@ Les helpers sont fournis par la plateforme, comme décrit dans la [documentation
 
 Audit complet : **15 → 9 entrées**, dont **11 → 5 élevées**, quatre modérées inchangées, zéro critique. Vue omit-dev : **7 → 7** (cinq élevées, deux modérées). Avis comptés au niveau des paquets et de leur propagation, sans assimiler leur retrait à six exploits corrigés. Les chaînes restantes concernent Tailwind/globs/parseur de sélecteurs et outils associés.
 
-Aucun gain de poids navigateur, de vitesse utilisateur ni de référencement revendiqué. Le retrait réduit les dépendances de développement ; le runtime Vercel reste géré par la plateforme. GET/OPTIONS des trois API étaient conformes avant le changement (405/204 et CORS localhost) ; aucune requête envoyant un email n’a été utilisée.
+Aucun gain de poids navigateur, de vitesse utilisateur ni de référencement revendiqué. Le retrait réduit les dépendances de développement ; le runtime Vercel reste géré par la plateforme. GET/OPTIONS des trois API sont identiques avant/après livraison (405/204, corps et CORS localhost). Les fiches Notion FR/EN, sitemap et JS principal publics correspondent octet pour octet au build validé. Aucun email ni write catalogue distant.
 
 L’accès MCP aux détails du déploiement renvoie 403 dans le scope configuré. Le contrôle de livraison utilise donc le statut Vercel associé au commit GitHub et les réponses publiques ; les logs internes du runtime ne sont pas certifiés.
 
-[Preuves du lot](../output/tooltrim-sdk-types-2026-10-09/). Les travaux locaux catégories/catalogue/médias restent exclus.
+[Preuves locales du lot](../output/tooltrim-sdk-types-2026-10-09/) (snapshot avant publication) et [preuves de clôture](proofs/sdk-types-2026-10-09/verification.json).
+
+La CI R1 confirme 266 tests app, 82 API, 23 SEO, 99 Ma Stack, types/design/build/budgets et 56 hydratations en 5,2 min, sans flake. Les suites ne sont pas additionnées en un nombre de bugs corrigés. Les travaux locaux catégories/catalogue/médias restent exclus.

@@ -1,9 +1,10 @@
-## 2026-10-09 — R0 publié, R1 SDK de types en validation
+## 2026-10-09 — R0/R1 publiés et clôturés
 
-- R0 `13b631bc1d` et bilan/roadmap `bb4bc7f94b` publiés sur main ; nouvelle étape API verte, CI R0 complète verte.
-- R1 : quatre imports type pointent vers le contrat Node/Vercel local hors `/api`, SDK retiré du manifeste/lockfile. Compatibilité SDK dans les deux sens et JS des handlers identique ; 82 API, 266 app, 23 SEO et types réussis après installation propre.
-- 104 entrées lock retirées, aucun ajout ni changement des entrées conservées ; audit complet 15 → 9 (élevées 11 → 5), omit-dev 7 inchangé. Build et livraison en cours ; voir `REDUCTION_SDK_TYPES_2026-10-09.md`.
-- Catégories/catalogue/médias hors lot préservés ; aucun email ni write distant.
+- Contrats API `13b631bc1d` publiés via `bb4bc7f94b`, puis retrait du SDK de types `4601f877cf` : les deux CI complètes et statuts Vercel réussissent.
+- R1 : 104 entrées lock retirées, aucun ajout ni modification des versions conservées ; audit complet 15 → 9 (élevées 11 → 5), omit-dev 7 inchangé. Contrat Node/Vercel compatible, JS des trois handlers identique.
+- Installation propre, 82 API, 266 app, 23 SEO, 99 Ma Stack, types/design/build/budgets et 56 hydratations CI en 5,2 min ; 13 162 HTML/80 JS/sitemap identiques. Relecture indépendante sans défaut.
+- GET/OPTIONS publics des trois API identiques avant/après ; Notion FR/EN, sitemap et JS public identiques au build validé. Aucun email ni write catalogue. Détails internes Vercel inaccessibles (403) ; statut lié au commit et recette publique contrôlés.
+- Roadmaps/statut et preuves de clôture actualisés. Catégories/catalogue/médias locaux exclus et préservés ; R2–R11 restent proposés.
 
 ## 2026-10-09 — État des lieux consolidé et roadmap par lots
 

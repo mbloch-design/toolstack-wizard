@@ -2,8 +2,8 @@
 
 **Suivi actuel : [état des lieux et roadmap par lots](ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md), [roadmap générale](ROADMAP.md#suivi-technique-actif).** Les checkpoints de juillet et les caps V1/V2 du 5 octobre conservés ci-dessous sont des décisions/historiques, pas un inventaire certifié de l’interface actuellement publiée.
 
-- Socle publié : navigation, recherche, revalidation, décisions/devises et stockage, hydratation avec sélection enregistrée, projection catalogue et Router 7.18.4. Dernière CI publiée : 266 tests applicatifs, 23 SEO, 99 Ma Stack, 56 hydratations ; le blocage historique GO14 ne pilote plus le workflow conservé.
-- Contrats API : 82 tests et contrôle strict ajoutés dans `13b631bc1d`, **local seulement**, sans changement de handler ni de SDK.
+- Socle publié : navigation, recherche, revalidation, décisions/devises et stockage, hydratation avec sélection enregistrée, projection catalogue et Router 7.18.4. Dernière CI complète verte R1 : 266 tests applicatifs, 82 API, 23 SEO, 99 Ma Stack, 56 hydratations ; le blocage historique GO14 ne pilote plus le workflow conservé.
+- Contrats API : 82 tests et contrôle strict ajoutés dans `13b631bc1d`, publiés via `bb4bc7f94b`, CI complète verte. R1 `4601f877cf` retire le SDK de types avec contrat HTTP compatible et JS des handlers identique ; sa CI et sa recette publique sont réussies.
 - Point de décision produit : la page actuelle présente coût catalogue et recoupements, alors que certains caps ci-dessous annoncent l’absence de coût global. Le libellé « Payé en double » ne prouve pas une dépense inutile personnelle. Lot R4 : aligner la promesse sur les preuves avant d’ajouter des fonctions.
 - Qualité des relations, compréhension de la navigation, données éditoriales et observation utilisateur restent des lots distincts R5/R6/R9. Les tests techniques ne valident pas à eux seuls la valeur perçue.
 - Aucun compte, enrichissement de données, changement de budget ou refonte des catégories n’est lancé par cette actualisation documentaire.
