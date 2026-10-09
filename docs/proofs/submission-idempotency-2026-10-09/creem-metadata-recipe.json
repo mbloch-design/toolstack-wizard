@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-09",
+  "status": "PASS",
+  "httpStatus": 200,
+  "mode": "prod",
+  "checkoutStatus": "pending",
+  "productMatches": true,
+  "submissionIdMetadataMatches": true,
+  "toolUrlMetadataMatches": true,
+  "successUrl": null,
+  "newPaidTransactions": 0,
+  "newEmails": 0,
+  "customerCoordinatesEntered": false,
+  "limitations": [
+    "Pending checkout only; no completed payment tested",
+    "Local key not compared with irretrievable Vercel secret",
+    "Pending API response has no success_url; post-payment redirect not exercised"
+  ],
+  "pendingRejectedByActualServerVerifier": true,
+  "authorization": "Owner explicitly authorized a non-paid session with fictional UUID and example.com metadata"
+}

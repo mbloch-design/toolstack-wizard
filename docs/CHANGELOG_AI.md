@@ -1,3 +1,9 @@
+## 2026-10-09 — Métadonnées Creem réelles vérifiées sans paiement
+
+- Session non payée autorisée avec deux métadonnées fictives ; lecture API 200, produit/mode/métadonnées conformes. Vérificateur serveur réel : rejet 400 de pending.
+- Aucun paiement, email ou donnée client ; onglet fermé. Le retour après paiement terminé reste non exercé.
+- Token maintenance privé préparé pour conservation par l'opérateur ; remplacement Vercel encore nécessaire, aucun changement distant ni déploiement.
+
 ## 2026-10-09 — Authentification API Creem vérifiée
 
 - Clé locale fournie par le propriétaire : lecture d'un checkout fictif absent renvoie 404, contrôle avec clé invalide 401. Aucun secret affiché ni paiement/checkout créé.

@@ -150,3 +150,11 @@ Contrôle Creem en lecture seule : encaissement existant Payé, bon produit à 2
 Clé LIVE enregistrée directement par le propriétaire dans le fichier local privé. GET du endpoint checkouts avec un ID fictif inexistant : 404 ; même requête avec clé volontairement invalide : 401. L'API distingue la clé configurée du contrôle invalide ; aucun reçu client lu, checkout créé, email ou paiement. [Preuve](proofs/submission-idempotency-2026-10-09/creem-api-authentication.json).
 
 L'ouverture d'un checkout non payé avec des métadonnées fictives a été refusée par la revue automatique avant exécution : autorisation explicite de création d'une session externe nécessaire. Confirmation demandée au propriétaire ; aucun contournement. La propagation réelle des métadonnées reste donc non attestée. Cette clé locale n'a pas été comparée au secret irrévélable de Vercel.
+
+### Métadonnées Creem réelles vérifiées sans paiement
+
+Après autorisation explicite, session non payée créée via le lien produit conservé, avec UUID et example.com fictifs uniquement. Relecture API HTTP 200 : mode prod, statut pending, produit identique, les deux métadonnées exactement conservées. Le vérificateur serveur réel rejette ce checkout pending avec 400. Aucune donnée client saisie, email ou transaction payée ; onglet fermé sans paiement. [Preuve](proofs/submission-idempotency-2026-10-09/creem-metadata-recipe.json). La fermeture de l'onglet ne supprime pas la session pending chez Creem.
+
+L'API pending n'expose pas success_url ; le retour configuré dans le produit est confirmé par UI, mais le retour après un paiement terminé n'a pas été exercé. Les tests de paiement terminé restent simulés.
+
+Pour rendre la maintenance exploitable, une valeur privée de 32 octets aléatoires a été préparée sous `SUBMISSION_MAINTENANCE_TOKEN` dans `.env.submissions.local` (600, ignoré), afin que l'opérateur en conserve une copie. **Vercel n'a pas été modifié** : cette valeur doit remplacer le secret Production existant avant déploiement ; sinon elle n'authentifiera pas la maintenance. Ne pas archiver le worktree avant conservation durable des secrets/sauvegardes.
