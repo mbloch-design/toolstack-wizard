@@ -49,6 +49,7 @@
     "audit:build-output": "node scripts/audit-build-output.mjs",
     "optimize:critical-css": "node scripts/externalize-critical-css.mjs",
     "audit:guide-locales": "node scripts/audit-guide-locale-parity.mjs",
+    "audit:explorer-r5": "node scripts/verify-explorer-r5.mjs",
     "audit:seo-explorer": "node scripts/audit-explorer-seo.mjs",
     "validate:seo-generated": "node scripts/validate-generated-seo.mjs",
     "validate:seo-redirects": "node scripts/validate-production-redirects.mjs",
@@ -101,7 +102,7 @@
     "typecheck:app": "tsc --noEmit -p tsconfig.app.json",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
     "typecheck": "npm run typecheck:app && npm run typecheck:node && npm run typecheck:api",
-    "test:seo-contracts": "vitest run --config vitest.research.config.mjs scripts/validate-generated-seo.test.mjs scripts/lib/ssr-contract.test.mjs scripts/lib/compact-html.test.mjs scripts/lib/explorer-related-paths.test.mjs",
+    "test:seo-contracts": "vitest run --config vitest.research.config.mjs scripts/validate-generated-seo.test.mjs scripts/lib/ssr-contract.test.mjs scripts/lib/compact-html.test.mjs scripts/lib/explorer-related-paths.test.mjs scripts/lib/explorer-r5-review.test.mjs",
     "typecheck:api": "tsc --noEmit -p tsconfig.api.json",
     "test:api": "vitest run --config vitest.api.config.ts"
   },

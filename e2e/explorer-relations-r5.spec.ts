@@ -45,3 +45,48 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
     expect(errors).toEqual([]);
   });
 }
+
+for (const lang of ['fr', 'en']) {
+  test(`R5 ${lang}: a shared relation filter is applied and can be cleared`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 1000 });
+    await page.route('**/*supabase.co/**', route => route.abort());
+    await page.goto(`/${lang}/explorer/around/vercel?destination=r5&angle=extensions&category=nocode-web`, { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('[data-tool-slug]')).toHaveCount(0);
+    await expect(page.locator('.ex-empty')).toBeVisible();
+    await page.locator('.ex-empty button').click();
+    await expect(page.locator('[data-tool-slug="netlify"]')).toBeVisible();
+    const resetURL = new URL(page.url());
+    expect(resetURL.searchParams.has('angle')).toBe(false);
+    expect(resetURL.searchParams.has('category')).toBe(false);
+    expect(resetURL.searchParams.get('destination')).toBe('r5');
+    await page.goto(`/${lang}/explorer/around/vercel?angle=alternatives`, { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('[data-tool-slug="netlify"]')).toBeVisible();
+    await expect(page.locator('.ex-card-relation').filter({ hasText: /^(Usage commun|Shared use|Comparaison|Comparison|Même suite|Same suite)/ })).toHaveCount(0);
+    await page.getByRole('button', { name: lang === 'fr' ? 'Voir toutes les relations' : 'Show all relations', exact: true }).click();
+    await expect(page.locator('.ex-card-relation').filter({ hasText: /^(Usage commun|Shared use)/ }).first()).toBeVisible();
+    expect(new URL(page.url()).searchParams.has('angle')).toBe(false);
+  });
+}
+
+for (const lang of ['fr', 'en']) {
+  test(`R5 ${lang}: host attachment and uncertain product surfaces remain distinct`, async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 1000 });
+    await page.route('**/*supabase.co/**', route => route.abort());
+    const errors: string[] = [];
+    page.on('pageerror', error => errors.push(error.message));
+    page.on('console', message => {
+      if (message.type() === 'error' && /hydration|hydrating|did not match|minified react error/i.test(message.text())) errors.push(message.text());
+    });
+    await page.goto(`/${lang}/explorer/around/figma?angle=extensions`, { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('[data-tool-slug="figma-tokens"] .ex-card-relation')).toContainText(lang === 'fr' ? 'Extension de Figma' : 'Extension for Figma');
+    await expect(page.locator('[data-tool-slug="figma-dev-mode"] .ex-card-relation')).toContainText(lang === 'fr' ? 'Rattaché à Figma' : 'Attached to Figma');
+    await expect(page.locator('[data-tool-slug="framer"]')).toHaveCount(0);
+    await page.goto(`/${lang}/explorer/around/chatgpt?angle=alternatives`, { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('[data-tool-slug="gemini"]')).toBeVisible();
+    await expect(page.locator('[data-tool-slug="claude"], [data-tool-slug="deepseek"], [data-tool-slug="google-ai-studio"]')).toHaveCount(0);
+    await page.getByRole('button', { name: lang === 'fr' ? 'Voir toutes les relations' : 'Show all relations', exact: true }).click();
+    await expect(page.locator('[data-tool-slug="claude"] .ex-card-relation')).toContainText(lang === 'fr' ? 'périmètre à vérifier' : 'Scope comparison to verify');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
+    expect(errors).toEqual([]);
+  });
+}

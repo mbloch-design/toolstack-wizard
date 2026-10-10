@@ -319,7 +319,7 @@ export default function ExplorerPage() {
   const filteredCandidates = isObjectiveSource
     ? activeThemeId ? candidates.filter((candidate) => getObjectiveExplorationThemeId(source.id, candidate.tool) === activeThemeId) : candidates
     : sourceTool
-      ? activeCategoryId ? candidates.filter((candidate) => candidate.tool.categoryId === activeCategoryId) : candidates
+      ? candidates.filter((candidate) => (!activeCategoryId || candidate.tool.categoryId === activeCategoryId) && (angle === "all" || candidate.direction === angle))
     : angle === "all" ? candidates : candidates.filter((candidate) => candidate.direction === angle);
   const visibleCandidates = filteredCandidates.slice(0, resultLimit);
   const hasMoreCandidates = visibleCandidates.length < filteredCandidates.length;
@@ -453,11 +453,17 @@ export default function ExplorerPage() {
 
   function setCategory(categoryId: string | null, shouldScroll = true) {
     const nextParams = new URLSearchParams(searchParams);
-    nextParams.delete("angle");
     if (categoryId) nextParams.set("category", categoryId);
     else nextParams.delete("category");
     setSearchParams(nextParams, { replace: true, state: { ...locationState, skipScrollReset: true } });
     if (shouldScroll) scrollToTop(window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
+  }
+
+  function clearToolFilters() {
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete("angle");
+    nextParams.delete("category");
+    setSearchParams(nextParams, { replace: true, state: { ...locationState, skipScrollReset: true } });
   }
 
   function addTool(tool: ToolSummary) {
@@ -707,6 +713,12 @@ export default function ExplorerPage() {
         </section>
       )}
 
+      {sourceTool && angle !== "all" && <div className="ex-angle-filter">
+        <span>{angle === "alternatives" ? t("Alternatives", "Alternatives")
+          : angle === "extensions" ? t("Extensions et fonctions rattachées", "Extensions and attached features")
+          : t("Outils liés", "Related tools")}</span>
+        <button type="button" onClick={() => setAngle("all", false)}>{t("Voir toutes les relations", "Show all relations")}</button>
+      </div>}
       {(isObjectiveSource || Boolean(sourceTool)) && tagFilters}
 
       {visibleCandidates.length > 0 && (
@@ -725,8 +737,8 @@ export default function ExplorerPage() {
       )}
 
       {auditedRelations && visibleCandidates.length > 0 && <p className="ex-relations-note">{t(
-        "Une alternative est une piste du catalogue à comparer pour les usages indiqués. Une extension déclare cet outil comme hôte. Une suite ou un usage commun n’indique pas une intégration.",
-        "An alternative is a catalogue option to compare for the uses shown. An extension declares this tool as its host. A shared suite or use does not establish an integration.",
+        "Une alternative est une piste du catalogue à comparer pour les usages indiqués. Un rattachement indique l’hôte déclaré ; le libellé extension est réservé aux plugins. Une suite ou un usage commun n’indique pas une intégration.",
+        "An alternative is a catalogue option to compare for the uses shown. An attachment identifies the declared host; the extension label is reserved for plugins. A shared suite or use does not establish an integration.",
       )}</p>}
 
       {visibleCandidates.length > 0 ? (
@@ -763,7 +775,7 @@ export default function ExplorerPage() {
         <section className="ex-empty">
           <Compass size={24} aria-hidden />
           <h2>{isObjectiveSource ? t("Aucun outil dans cette thématique", "No tools in this theme") : t("Aucun outil dans cet angle", "No tools in this direction")}</h2>
-          <button type="button" onClick={() => isObjectiveSource ? setTheme(null) : setAngle("all")}>{t("Voir l’ensemble", "View overview")}</button>
+          <button type="button" onClick={() => isObjectiveSource ? setTheme(null) : sourceTool ? clearToolFilters() : setAngle("all")}>{t("Voir l’ensemble", "View overview")}</button>
         </section>
       )}
     </main>

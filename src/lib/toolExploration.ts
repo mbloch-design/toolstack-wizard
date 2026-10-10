@@ -20,6 +20,7 @@ export interface ObjectiveExplorationTheme {
 
 export interface ExplorationCandidate {
   categoryLabel: string;
+  comparisonNeedsReview?: true;
   direction: Exclude<ExplorationDirection, "all">;
   reasonEn: string;
   reasonFr: string;
@@ -175,6 +176,22 @@ function getQualityScore(tool: ToolSummary) {
   return quality + Math.min(8, (tool.functional_needs?.length || 0) + (tool.verticals?.length || 0));
 }
 
+// Temporary claim restrictions from the second R5 review, not catalogue facts.
+// See docs/proofs/explorer-r5-second-2026-10-09/independent-review.json
+// (including guarded_pairs_outside_top10 for the relocated comparisons).
+// Reconcile product surfaces in the common catalogue before lifting them.
+const R5_SCOPE_RESERVATIONS = [
+  { source: "davinci-resolve", target: "adobe-creative-cloud", action: "verify" },
+  { source: "cinema-4d", target: "cinema-4d-lite", action: "verify" },
+  { source: "cinema-4d", target: "cinebench", action: "verify" },
+  { source: "figma", target: "framer", action: "verify" },
+  { source: "framer", target: "figma", action: "exclude" },
+  { source: "chatgpt", target: "claude", action: "verify" },
+  { source: "chatgpt", target: "deepseek", action: "verify" },
+  { source: "chatgpt", target: "google-ai-studio", action: "verify" },
+  { source: "claude", target: "chatgpt", action: "verify" },
+] as const;
+
 function getRelation(candidate: ToolSummary, source: ToolSummary) {
   const candidateKeys = getLookupKeys(candidate);
   const sourceKeys = getLookupKeys(source);
@@ -191,10 +208,26 @@ function getRelation(candidate: ToolSummary, source: ToolSummary) {
 
 
   if (hostKey && sourceKeys.includes(hostKey)) {
-    return { direction: "extensions" as const, score: 150, reasonFr: `Extension de ${source.name}`, reasonEn: `Extension for ${source.name}` };
+    return { direction: "extensions" as const, score: 150,
+      reasonFr: candidate.tool_type === "plugin" ? `Extension de ${source.name}` : `Rattaché à ${source.name}`,
+      reasonEn: candidate.tool_type === "plugin" ? `Extension for ${source.name}` : `Attached to ${source.name}` };
   }
   if (sourceHost && candidateKeys.includes(sourceHost)) {
     return { direction: "adjacent" as const, score: 140, reasonFr: `Outil hôte de ${source.name}`, reasonEn: `Host application for ${source.name}` };
+  }
+  const sameBundle = (!!candidateBundle && sourceKeys.includes(candidateBundle)) ||
+    (!!sourceBundle && candidateKeys.includes(sourceBundle)) ||
+    (!!candidateBundle && candidateBundle === sourceBundle);
+  if (sameBundle) {
+    return { direction: "adjacent" as const, score: 84, reasonFr: `Même suite que ${source.name}`, reasonEn: `Same suite as ${source.name}` };
+  }
+  const reservation = R5_SCOPE_RESERVATIONS.find(item =>
+    sourceKeys.includes(item.source) && candidateKeys.includes(item.target));
+  if (reservation?.action === "exclude") return null;
+  if (reservation?.action === "verify") {
+    return { direction: "adjacent" as const, score: 76, comparisonNeedsReview: true as const,
+      reasonFr: `Comparaison de périmètre à vérifier avec ${source.name}`,
+      reasonEn: `Scope comparison to verify with ${source.name}` };
   }
   const forwardAlternative = (source.alternatives || []).some(key => candidateKeys.includes(normalizeKey(key)));
   const reverseAlternative = (candidate.alternatives || []).some(key => sourceKeys.includes(normalizeKey(key)));
@@ -204,21 +237,16 @@ function getRelation(candidate: ToolSummary, source: ToolSummary) {
   const explicitlyLinked = forwardAlternative || (reverseAlternative && (sharedNeeds.size > 0 || sameChatCluster));
   // An extension for another app is not a standalone replacement. Same-host
   // extensions can be compared when the catalogue explicitly relates them.
-  const compatibleRole = (!hostKey && !sourceHost) || (!!hostKey && hostKey === sourceHost);
+  const compatibleRole = ((!hostKey && !sourceHost) || (!!hostKey && hostKey === sourceHost)) &&
+    (candidate.tool_type === "bundle") === (source.tool_type === "bundle");
   if (explicitlyLinked && compatibleRole && (sharedNeeds.size > 0 || sameChatCluster)) {
     const frUses = useNames("fr") || "Chat d’équipe";
     const enUses = useNames("en") || "Team chat";
     return { direction: "alternatives" as const, score: 134, reasonFr: `Alternative au catalogue à ${source.name} · ${frUses}`, reasonEn: `Catalogue alternative to ${source.name} · ${enUses}` };
   }
-  const sameBundle = (!!candidateBundle && sourceKeys.includes(candidateBundle)) ||
-    (!!sourceBundle && candidateKeys.includes(sourceBundle)) ||
-    (!!candidateBundle && candidateBundle === sourceBundle);
-  if (sameBundle) {
-    return { direction: "adjacent" as const, score: 84, reasonFr: `Même suite que ${source.name}`, reasonEn: `Same suite as ${source.name}` };
-  }
   if (hostKey && hostKey !== sourceHost) return null;
   if (forwardAlternative && compatibleRole && sharedNeeds.size === 0) {
-    return { direction: "adjacent" as const, score: 76, reasonFr: `Comparaison à vérifier avec ${source.name}`, reasonEn: `Comparison to verify with ${source.name}` };
+    return { direction: "adjacent" as const, score: 76, comparisonNeedsReview: true as const, reasonFr: `Comparaison à vérifier avec ${source.name}`, reasonEn: `Comparison to verify with ${source.name}` };
   }
   if (sharedNeeds.size > 0) {
     return { direction: "adjacent" as const, score: 82 + Math.min(3, sharedNeeds.size) * 10, reasonFr: `Usage commun avec ${source.name} · ${useNames("fr")}`, reasonEn: `Shared use with ${source.name} · ${useNames("en")}` };
@@ -317,6 +345,7 @@ export function buildExplorationCandidates({
       ? "in-destination"
       : entry ? "in-stack" : "new";
     return [{
+      ...("comparisonNeedsReview" in relation && relation.comparisonNeedsReview ? { comparisonNeedsReview: true as const } : {}),
       categoryLabel: getCategoryLabel(tool),
       direction: relation.direction,
       reasonEn: relation.reasonEn,
@@ -345,7 +374,12 @@ export function buildExplorationCandidates({
   };
   ranked.forEach((candidate) => tryPick(candidate));
   ranked.forEach((candidate) => tryPick(candidate, true));
-  return diversified.slice(0, 40);
+  // Family diversity must not promote an unverified comparison above the
+  // stronger declared relationships. The legacy order remains untouched.
+  const ordered = audited
+    ? [...diversified.filter(item => !item.comparisonNeedsReview), ...diversified.filter(item => item.comparisonNeedsReview)]
+    : diversified;
+  return ordered.slice(0, 40);
 }
 
 export function parseExplorationSource(params: URLSearchParams): ExplorationSource | null {

@@ -113,7 +113,8 @@ export interface DowngradePlan {
   freeTier: string | null;
 }
 
-export type ToolType = "metier" | "plugin" | "ia" | "gestion" | "satellite";
+// "bundle" is already emitted by the catalogue (suite subscriptions).
+export type ToolType = "metier" | "plugin" | "ia" | "gestion" | "satellite" | "bundle";
 export type PrescriptionQuality = "ferme" | "oui" | "question" | "silence";
 
 export interface PrescriptionOutput {

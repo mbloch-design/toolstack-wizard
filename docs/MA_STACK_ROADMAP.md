@@ -1,3 +1,9 @@
+## Contre-revue R5 — 9 octobre 2026
+
+[Rapport, défauts corrigés et preuves](R5_SECOND_PASS_2026-10-09.md). Rattachement parent/enfant prioritaire, plugins distingués des fonctions, neuf réserves de promesse, comparaisons à vérifier reléguées après les autres relations. Le filtre URL angle est maintenant appliqué avec la catégorie et réinitialisable. Les données catalogue restent intactes, moteur hors pilote conservé.
+
+**R5 reste ouvert** : top8 126 crédibles / 198 disponibles / 240 places (63,64 % disponibles, 52,50 % de la cible), 42 places manquantes. Les cinq réserves critiques de promesse top4 de la première passe sont levées, les identités inconnues ne sont pas reclassées. Seuil 80 % non atteint. Commande de vérification des preuves ajoutée ; validation technique distincte de qualité éditoriale. R6 reprend les identités/rôles/tags dans le catalogue commun, R8 observe focus/clavier après retour. Non publié.
+
 ## Lot R5 — audit et garde-fous, 9 octobre 2026
 
 [Rapport détaillé et actions catalogue](R5_EXPLORER_AUDIT_2026-10-09.md). Pilote de 30 sources, 300 résultats avant et 236 après correction ; relecture indépendante de chaque paire disponible. Les suites ne sont plus des extensions, les signaux trop larges ne créent plus de liens et les comparaisons sans corroboration sont indiquées comme à vérifier. Les cartes affichent leurs justifications bilingues. Activation limitée aux 30 routes sources auditées ; sorties hors pilote et multi-source conservées exactement. Contrat Slack : les deux destinations auditées exigées, minimum trois destinations ailleurs.

@@ -1,3 +1,12 @@
+## 9 octobre 2026 — R5 : contre-revue technique et éditoriale
+
+- Contre-revues indépendantes du code et des promesses, échecs reproduits avant correction ; rapport `docs/R5_SECOND_PASS_2026-10-09.md`.
+- Parent/enfant de suite prioritaire ; plugin distingué d’un rattachement ; bundles connus non assimilés aux apps. Neuf restrictions temporaires de promesse, sans mutation catalogue ; les comparaisons à vérifier ne sont plus promues par la diversification.
+- Angle URL combiné à la catégorie sur les routes outils, affiché et effaçable ; reset complet conservant la destination. Objectifs et moteur hors pilote conservés.
+- Type bundle aligné avec le catalogue existant ; commande d’intégrité et seuil éditorial explicite ajoutés. Jugements et ancienne preuve conservés.
+- 325 tests applicatifs, 132 Ma Stack, 29 SEO, types app/Node/API et 8 recettes dev PASS. Build production et 8/8 recettes sur preview production PASS ; clôture documentaire le 10 octobre 2026, résultats consignés dans les preuves.
+- Qualité ouverte : 126/198 crédibles top8, 42 places manquantes sur240 ; aucune réserve critique de promesse actuellement classée top4, identités API/app inconnues conservées. Non publié.
+
 ## 9 octobre 2026 — R5 : audit des relations Explorer
 
 - Pilote reproductible de 30 sources, catalogue visible stable ; baseline et appréciations indépendantes conservées dans `docs/proofs/explorer-r5-2026-10-09/`.

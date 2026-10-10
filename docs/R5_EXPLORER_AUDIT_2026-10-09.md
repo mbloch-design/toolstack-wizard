@@ -1,3 +1,5 @@
+> **Historique de la première passe.** La [contre-revue R5](R5_SECOND_PASS_2026-10-09.md) décrit les corrections et les résultats actuels. Les chiffres ci-dessous et leurs preuves sont conservés pour comparaison.
+
 # R5 — Qualité des relations Explorer, 9 octobre 2026
 
 Les garde-fous et la recette technique sont préparés localement. **La validation éditoriale R5 reste ouverte : son critère de qualité n’est pas atteint.** Aucune publication ni modification des faits catalogue dans ce lot. Base de travail : R4 local `af8db1a9bf`, issu de main `c42d137826`.
