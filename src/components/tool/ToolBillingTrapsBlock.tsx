@@ -30,7 +30,7 @@ export default function ToolBillingTrapsBlock({ tool, lang, t }: Props) {
             <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, color: "var(--color-text-strong)", marginBottom: 4 }}>
               {trap.title}
             </p>
-            <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.55, color: "var(--color-muted)" }}>
+            <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.55, color: "var(--color-text-secondary)" }}>
               {trap.text}
             </p>
           </div>
