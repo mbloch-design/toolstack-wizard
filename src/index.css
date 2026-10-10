@@ -23846,7 +23846,9 @@ section[id]:not(.cp-guide-section) {
 .tg-main-img[src*="/tool-media/pixlr/"],
 .tg-main-img[src*="/og-images/maniana-review"],
 .tg-main-img[src*="/tool-media/faceready/"],
-.tg-main-img[src*="/og-images/faceready-review"] {
+.tg-main-img[src*="/og-images/faceready-review"],
+.tg-main-img[src*="www.newbi.fr/sectionNewGov1.png"],
+.tg-main-img[src*="www.newbi.fr/lp/factures/"] {
   object-fit: contain;
   background: #F8F8F4;
 }

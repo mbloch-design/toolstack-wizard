@@ -5488,7 +5488,6 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Périmètre : cartes compactes, fiche intégrée, navigation hiérarchique du télescope, aperçus des outils et budgets indicatifs par groupe. Les fichiers de migration catalogue et les copies de travail sont exclus.
 - Validation finale : build production complet PASS, TypeScript PASS, 79 tests Ma Stack PASS et 15 tests navigateur Chromium PASS (FR/EN, 390/820/1440 px, stack de 60 outils à 320 px, ajout/retrait/annulation et persistance).
 - Tests navigateur adaptés au parcours actuel et à la fin des transitions avant activation clavier.
-
 ## 2026-10-08 · Footer statutaire
 - Badges visibles et homogènes, un seul lien méthodologie (/methodology redirige vers /transparency).
 - Mentions légales : SAS, hébergeur Vercel.
@@ -5497,7 +5496,12 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Accueil, lots 2 et 3 sans ajout : échelle typo unique, rythme 72/48, rayons, recherche sous le hero, outils non répétés, libellés, accessibilité (0 violation axe), animations sur transform, 69 règles CSS mortes retirées. « La pile » retirée à la demande de Michael.
 - Accueil : recherche du site réparée (sigles courts, mots vides, accents, catégories), lot de finitions en tokens, typographie française (displayText), équilibre optique des logos, besoins avec exposant et tags de catégories voisines, « Lequel garder ? » à la place de « Compatible avec », en-têtes de section alignés à gauche, carrousels jusqu'au bord.
 
-
 ### 2026-10-09 — Compatibilité du compilateur API Vercel
 
 Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le typecheck API local ES2023. Reproduction avec les bibliothèques ES2020 : même erreur. Le contrôle de propriété propre utilise désormais `Object.prototype.hasOwnProperty.call`, avec le même refus des réponses Redis sans champ propre `result`. Vérification ES2020 PASS et 178 tests API avec Redis réel PASS. Le contrôle ES2020 est ajouté à la CI pour couvrir cet écart.
+
+## 2026-10-09 — Galerie produit sourcée pour Newbi
+
+- Ajout de trois visuels produit publiés sur le site officiel Newbi : tableau de bord, éditeur de facture et aperçu de facture.
+- Galerie affichée sur la fiche en l'absence de médias catalogue, avec textes alternatifs FR/EN et conservation du ratio complet des captures.
+- Sources vérifiées sur newbi.fr ; aucun visuel fabriqué ou capture ToolTrim ajoutée.

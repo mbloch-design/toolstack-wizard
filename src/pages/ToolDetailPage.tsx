@@ -28,6 +28,7 @@ import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import ToolGallery from "@/components/tool/ToolGallery";
 import { getToolTutorials } from "@/data/toolTutorials";
+import { getToolMediaImages } from "@/data/toolMedia";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { findSimilarTools, functionalAffinity } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
@@ -587,12 +588,20 @@ const ToolDetailPage = () => {
             </nav>
 
             {showAnalysis && (() => {
+              const curatedMedia = getToolMediaImages(tool.slug || tool.id);
               const cover = tool.ogImageUrl ?? (tool as any).og_image_url;
-              const images = [cover, ...(tool.galleryImages ?? (tool as any).gallery_images ?? [])]
-                .filter((url): url is string => !!url);
+              const images = [...new Set([
+                cover,
+                ...(tool.galleryImages ?? (tool as any).gallery_images ?? []),
+                ...curatedMedia.map((image) => image.src),
+              ].filter((url): url is string => !!url))];
+              const imageAlts = images.map((src) => {
+                const curated = curatedMedia.find((image) => image.src === src);
+                return curated ? (lang === "en" ? curated.altEn : curated.altFr) : "";
+              });
               return images.length > 0 || tutorials.length > 0 ? (
                 <div className="td-hero-media">
-                  <ToolGallery images={images} videos={tutorials} toolName={tool.name} lang={lang} variant="hero" />
+                  <ToolGallery images={images} imageAlts={imageAlts} videos={tutorials} toolName={tool.name} lang={lang} variant="hero" />
                 </div>
               ) : null;
             })()}
