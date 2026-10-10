@@ -81,6 +81,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "zapier-vs-make-vs-n8n-2026-automatiser-stack": "zapier-vs-make-vs-n8n-pricing",
   "agents-ia-freelances-2026-lesquels-valent-le-coup": "ai-agents-freelancers-2026",
   "stack-saas-minimaliste-freelance-2026-moins-50-euros": "minimalist-saas-stack-freelancer-2026-under-50-euros",
+  "plateforme-ecommerce-solo-petite-equipe-produits-physiques": "ecommerce-platform-solo-small-team-physical-products-2026",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(

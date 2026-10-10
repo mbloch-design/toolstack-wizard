@@ -1,3 +1,11 @@
+## 2026-10-10 : audit guides FR-only et traduction manquante
+
+- Listing des guides français sans équivalent anglais : sur 11 candidats détectés par slug, 10 avaient déjà une traduction via `GUIDE_SLUG_ALTERNATES` (faux positifs). Un seul guide réellement sans traduction : `plateforme-ecommerce-solo-petite-equipe-produits-physiques`.
+- Traduction publiée (`ecommerce-platform-solo-small-team-physical-products-2026` dans `posts-en.json`), paire ajoutée dans les 3 tables hreflang (`src/App.tsx`, `src/lib/seo.ts`, `vite.config.ts`), test `guideSlugMaps.spec.ts` au vert.
+- Écart de prix repéré pendant la traduction : le catalogue donne Shopify Basic à 39 $/mois (facturation mensuelle), l'article FR affiche 27 €/mois (facturation annuelle, page Shopify localisée EU, vérifiée exacte). Les deux sont corrects mais sur des bases différentes. Prix USD annuels (29 $/79 $/299 $) recherchés et utilisés dans la version anglaise ; version française laissée en euros.
+- `scripts/audit-guide-locale-parity.mjs` corrigé : il gardait sa propre mini-table de correspondance figée (une seule paire) au lieu de lire `GUIDE_SLUG_ALTERNATES`, et signalait donc à tort des guides déjà traduits comme « français seulement ». Lit maintenant la vraie table.
+- `npm run build` validé : page EN prérendue, hreflang réciproque confirmé dans le HTML généré. 4 échecs de validation SEO préexistants et sans rapport (`explorer/around/cycles`, `gusto`, `red-giant-cosmo`, `stacks/ia-visuelle-tout-en-un`, « SSR root is unclosed ») signalés à part, pas corrigés ici.
+
 ## 2026-10-09 : navigation, revue design et corrections
 
 - Revue design-superpowers (L2) de la barre latérale, du haut de page, de la barre du bas et du menu mobile, mesurée avec Playwright à 1440, 1024 et 390 px.
