@@ -28,7 +28,7 @@ const PrivacyPolicyPage = () => {
           {t("Politique de confidentialité", "Privacy Policy")}
         </h1>
         <p className="mt-4 text-sm text-muted-foreground">
-          {t("Dernière mise à jour : 14 mars 2026", "Last updated: March 14, 2026")}
+          {t("Dernière mise à jour : 12 octobre 2026", "Last updated: October 12, 2026")}
         </p>
 
         <div className="mt-10 space-y-8 text-sm leading-relaxed text-muted-foreground">
@@ -40,7 +40,7 @@ const PrivacyPolicyPage = () => {
               <li>{t("Prénom (optionnel)", "First name (optional)")}</li>
               <li>{t("Outils sélectionnés dans le diagnostic", "Tools selected in the diagnostic")}</li>
               <li>{t("Profil utilisateur (type d'activité, maturité tech)", "User profile (activity type, tech maturity)")}</li>
-              <li>{t("Données de navigation anonymisées, uniquement après consentement (via Google Analytics)", "Anonymized browsing data, only after consent (via Google Analytics)")}</li>
+              <li>{t("Pages consultées et interactions, uniquement après consentement (via Google Analytics)", "Page views and interactions, only after consent (via Google Analytics)")}</li>
             </ul>
           </section>
 
@@ -62,7 +62,8 @@ const PrivacyPolicyPage = () => {
             )}</p>
             <ul className="mt-2 space-y-1 pl-4 list-disc">
               <li><strong>Supabase</strong> — {t("hébergement de la base de données (UE)", "database hosting (EU)")}</li>
-              <li><strong>Google Analytics</strong> — {t("analyse du trafic (anonymisée), activée uniquement après votre consentement", "traffic analysis (anonymized), activated only after your consent")}</li>
+              <li><strong>Google Analytics</strong> — {t("analyse du trafic et des interactions, activée uniquement après votre consentement", "traffic and interaction analysis, activated only after your consent")}</li>
+              <li><strong>DataFast et Vercel Web Analytics</strong> — {t("mesure d’audience sans cookies d’identification persistants, chargée indépendamment du choix Google Analytics", "audience measurement without persistent identification cookies, loaded independently of the Google Analytics choice")}</li>
             </ul>
           </section>
 
@@ -96,8 +97,8 @@ const PrivacyPolicyPage = () => {
           <section>
             <h2 className="mb-3 font-heading text-lg font-semibold text-foreground">Cookies</h2>
             <p>{t(
-              "ToolTrim utilise Google Analytics avec anonymisation des IP uniquement après consentement. Aucun cookie analytics ou publicitaire n'est déposé avant votre choix. Les cookies techniques nécessaires au fonctionnement du site ne requièrent pas de consentement.",
-              "ToolTrim uses Google Analytics with IP anonymization only after consent. No analytics or advertising cookies are placed before you choose. Technical cookies necessary for site operation do not require consent."
+              "Google Analytics est chargé uniquement après votre accord. Accepter et refuser sont proposés au même niveau. Votre choix est conservé six mois dans ce navigateur ; les anciens choix sans date sont redemandés. Vous pouvez le modifier ou retirer votre accord à tout moment via « Préférences cookies » en pied de page. Le retrait supprime les cookies Google Analytics accessibles et recharge la page pour arrêter le suivi. Si le stockage local est indisponible, votre choix s’applique à la session de page. Les mesures DataFast et Vercel restent indépendantes de ce choix et n’utilisent pas de cookies d’identification persistants.",
+              "Google Analytics loads only after you agree. Accept and refuse are offered at the same level. Your choice is stored for six months in this browser; older undated choices are requested again. You can change it or withdraw consent at any time using “Cookie preferences” in the footer. Withdrawal deletes accessible Google Analytics cookies and reloads the page to stop tracking. If local storage is unavailable, your choice applies to the page session. DataFast and Vercel measurement remains independent of this choice and does not use persistent identification cookies."
             )}</p>
           </section>
         </div>

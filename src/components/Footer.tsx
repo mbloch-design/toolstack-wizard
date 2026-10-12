@@ -4,7 +4,7 @@ import { Link } from "@/lib/routerLinks";
 import { ArrowRight, ChevronRight } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
-import { openConsentBanner } from "@/components/AnalyticsConsent";
+import { openCookiePreferences } from "@/lib/analyticsConsent";
 import { getLanguageSwitchPath } from "@/lib/seo";
 import { formatAmount } from "@/lib/currencyRates";
 import { readStackSnapshot, type StackSnapshot } from "@/lib/stackSnapshot";
@@ -171,7 +171,7 @@ const Footer = () => {
             <Link to={`${prefix}/legal-notice`}>{t("Mentions légales", "Legal notice")}</Link>
             <Link to={`${prefix}/privacy-policy`}>{t("Confidentialité", "Privacy")}</Link>
             <Link to={`${prefix}/terms`}>{t("CGV", "Terms")}</Link>
-            <button type="button" className="tt-footer-linkbutton" onClick={openConsentBanner}>{t("Gérer les cookies", "Manage cookies")}</button>
+            <button type="button" className="tt-footer-linkbutton" onClick={openCookiePreferences}>{t("Préférences cookies", "Cookie preferences")}</button>
           </div>
           {/* Language: a two-option switch, the current one filled, so it
               reads as a choice and not as one more link. */}

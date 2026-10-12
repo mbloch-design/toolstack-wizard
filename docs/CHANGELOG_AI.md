@@ -1,3 +1,11 @@
+## 2026-10-12 — GA4 : pages vues après consentement et choix modifiable
+
+- Correction de la page d’arrivée perdue après acceptation tardive et des événements antérieurs à la configuration du tag sur connexion lente ; émission après chargement, page courante et déduplication des effets initiaux. Aucune action antérieure au consentement rejouée.
+- Choix versionné/horodaté, expiration six mois, anciens choix sans date redemandés. Footer FR/EN « Préférences cookies », boutons équivalents, retrait avec suppression des cookies GA accessibles et rechargement, synchronisation multi-onglets et repli de session si stockage non inscriptible. Décision la plus récente prioritaire ; refus prioritaire à date égale.
+- Politique de confidentialité corrigée : GA4 après accord, DataFast/Vercel indépendants déjà présents ; suppression de la promesse générale d’anonymisation. Aucun passage au Consent Mode avancé ni nouvelle mesure sans consentement.
+- Session GA4 contrôlée : le site utilise G-DL5MJKQ3JE dans la propriété historique tooltrim.io, distincte de la nouvelle propriété ToolTrim / G-PQPPPH19MH. Sur le flux actif, suivi automatique de l’historique désactivé, sauvegardé après autorisation explicite et relu pour éviter les doubles pages vues.
+- Recette : 291 tests app, types et build production complets PASS ; neuf parcours Chromium sur l’artefact production, services de mesure simulés. Relecture indépendante sans point bloquant. Détails et limites : `docs/ANALYTICS_CONSENT_2026-10-12.md`. Intégration isolée sur le main actuel : 332 tests app, types/build complets et neuf parcours Chromium PASS ; nouveau footer et dégagement de scroll préservés. Publication ciblée sur main autorisée. Catégories/catalogue et autres travaux préexistants préservés.
+
 ## 12 octobre 2026 — Explorer : passe design avant push
 
 - Typographie du bloc Explorer alignée sur les tokens canoniques existants, sans échelle locale. Noms sur deux lignes, raisons lisibles et rythme de carte stable en grille ; colonne unique mobile compacte.

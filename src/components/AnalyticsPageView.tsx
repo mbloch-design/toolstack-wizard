@@ -3,8 +3,9 @@ import { useLocation } from "react-router-dom";
 import { trackPageView } from "@/lib/analytics";
 
 /**
- * index.html configures GA4 with send_page_view:false. This component owns
- * both the initial hit and every client-side route change.
+ * analytics.ts configures GA4 with send_page_view:false and reports the
+ * current page after the tag loads. This component reports route changes;
+ * analytics.ts deduplicates the overlapping initial route effect.
  */
 export default function AnalyticsPageView() {
   const location = useLocation();
