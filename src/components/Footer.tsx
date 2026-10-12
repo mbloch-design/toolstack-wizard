@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { ArrowRight, Rocket } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
+import { openCookiePreferences } from "@/lib/analyticsConsent";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 
 /**
@@ -101,6 +102,7 @@ const Footer = () => {
               <span className="tt-footer-copyright">© {year} ToolTrim</span>
               <Link to={`${prefix}/legal-notice`}>{t("Mentions légales", "Legal notice")}</Link>
               <Link to={`${prefix}/privacy-policy`}>{t("Confidentialité", "Privacy")}</Link>
+              <button type="button" className="tt-footer-cookie-preferences" onClick={openCookiePreferences}>{t("Préférences cookies", "Cookie preferences")}</button>
               <Link to={`${prefix}/terms`}>{t("CGV", "Terms")}</Link>
             </div>
           </div>
