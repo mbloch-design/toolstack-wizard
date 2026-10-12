@@ -215,6 +215,12 @@ Définis dans `:root` (`src/index.css`). **Source unique de vérité.** Toutes l
 
 ---
 
+### Explorer (`ex-*`) : typographie et actions
+
+Explorer utilise la même échelle que les autres pages : `--tt-size-page-title` pour le H1, `--tt-size-section-h` pour les résultats, `--tt-size-body` pour l’introduction, `--tt-size-card-title` pour les noms, `--tt-size-card-body` pour les descriptions, relations et contrôles, `--tt-size-kicker` pour les surtitres. Aucun override de taille local par breakpoint ; le layout s’adapte à la place disponible. En grille, les noms réservent deux lignes ; en colonne unique, leur hauteur reste naturelle.
+
+Les relations utiles sont expliquées sur chaque carte, sans paragraphe générique répété au-dessus des résultats. L’ajout reste visible et cliquable, avec une cible de 44 px et un focus contrasté sur les médias. Les boutons ne se déplacent pas au survol.
+
 ### Échelle canonique ToolTrim (`tt-*` classes)
 
 **Règle anti-exception :** Toutes les classes utilisent `var(--tt-size-*)`. Changer une variable `--tt-size-*` dans `:root` propage le changement partout. Ne jamais coder une taille en dur dans une classe `tt-*`, `cp-*`, ou `sd-*` couverte par les tokens.

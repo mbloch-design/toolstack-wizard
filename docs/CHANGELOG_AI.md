@@ -1,3 +1,11 @@
+## 12 octobre 2026 — Explorer : passe design avant push
+
+- Typographie du bloc Explorer alignée sur les tokens canoniques existants, sans échelle locale. Noms sur deux lignes, raisons lisibles et rythme de carte stable en grille ; colonne unique mobile compacte.
+- Suppression du paragraphe explicatif, du surtitre de catégorie répété et de la mention de classement. Les raisons propres à chaque carte sont conservées, sans modification du catalogue ni des scores.
+- Cibles de 44 px, focus opaques, ajout sans ombre ni déplacement au survol ; lien de fiche non comprimé sur tablette. Débordement d’objectif à 320 px reproduit FR/EN, corrigé par une largeur complète sous le retour et couvert par deux parcours.
+- Ajout de carte visible en permanence après un blocage intermittent établi lors de la recette. Build, types, intégrité et diff PASS ; 10/10 parcours de production PASS en 20,3 s, ajout testé sans survol préalable.
+- Rapport et captures : `docs/R5_DESIGN_REVIEW_2026-10-10.md`. Lot local non publié, R5 éditorial toujours ouvert.
+
 ## 9 octobre 2026 — R5 : contre-revue technique et éditoriale
 
 - Contre-revues indépendantes du code et des promesses, échecs reproduits avant correction ; rapport `docs/R5_SECOND_PASS_2026-10-09.md`.

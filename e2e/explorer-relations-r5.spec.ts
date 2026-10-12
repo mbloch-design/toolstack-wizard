@@ -18,7 +18,7 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
     await expect(netlify).toBeVisible();
     await expect(netlify.locator('.ex-card-relation')).toContainText('Vercel');
     await expect(page.locator('[data-tool-slug="gelato"], [data-tool-slug="finale-inventory"], [data-tool-slug="remix"]')).toHaveCount(0);
-    await expect(page.locator('.ex-relations-note')).toContainText(lang === 'fr' ? 'n’indique pas une intégration' : 'does not establish an integration');
+    await expect(page.locator('.ex-relations-note')).toHaveCount(0);
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://tooltrim.com/${lang}/explorer/around/vercel`);
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
     expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
@@ -30,7 +30,6 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
     await expect(netlify).toBeVisible();
     await expect(page).toHaveURL(new RegExp(`/${lang}/explorer/around/vercel\\?`));
     await netlify.evaluate(node => node.scrollIntoView({ block: "center", behavior: "instant" }));
-    await netlify.hover();
     await netlify.getByRole('button').click();
     await expect(page.getByRole('dialog')).toBeVisible();
     await page.getByRole('button', { name: lang === 'fr' ? 'Terminer' : 'Done', exact: true }).click();
@@ -88,5 +87,31 @@ for (const lang of ['fr', 'en']) {
     await expect(page.locator('[data-tool-slug="claude"] .ex-card-relation')).toContainText(lang === 'fr' ? 'périmètre à vérifier' : 'Scope comparison to verify');
     expect(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1)).toBe(false);
     expect(errors).toEqual([]);
+  });
+}
+
+for (const lang of ['fr', 'en']) {
+  test(`R5 ${lang}: a long objective heading stays readable at 320px`, async ({ page }) => {
+    await page.setViewportSize({ width: 320, height: 844 });
+    await page.route('**/*supabase.co/**', route => route.abort());
+    await page.addInitScript(() => {
+      localStorage.setItem('tooltrim-analytics-consent', 'refused');
+      localStorage.setItem('tooltrim-ma-stack-mvp-v3', JSON.stringify({
+        version: 3,
+        needs: [{ id: 'r5-design', labelFr: 'Automatiser les tâches récurrentes', labelEn: 'Develop repeatable workflows', source: 'custom', order: 10 }],
+        pinnedToolSlugs: ['figma'],
+        toolEntries: [{ toolSlug: 'figma', needIds: ['r5-design'], intent: 'stack' }],
+      }));
+    });
+    await page.goto(`/${lang}/explorer?type=objectif&source=r5-design`, { waitUntil: 'domcontentloaded' });
+    const heading = page.locator('#explorer-title');
+    await expect(heading).toContainText(lang === 'fr' ? 'automatiser' : 'develop');
+    await page.evaluate(async () => { await document.fonts.ready; });
+    expect(await heading.evaluate(node => node.scrollWidth <= node.clientWidth + 1)).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);
+    const headingBox = await heading.boundingBox();
+    const backBox = await page.locator('.ex-source-banner--objective > .ex-back').boundingBox();
+    expect(headingBox && backBox && (headingBox.y >= backBox.y + backBox.height || headingBox.x >= backBox.x + backBox.width)).toBe(true);
+    await page.screenshot({ path: `/private/tmp/r5-objective-${lang}-320.png` });
   });
 }

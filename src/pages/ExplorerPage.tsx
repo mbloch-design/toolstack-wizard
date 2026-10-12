@@ -506,7 +506,6 @@ export default function ExplorerPage() {
   const sourceIsAdding = Boolean(sourceToolSlug && addingSlug === sourceToolSlug);
   const gridCandidates = visibleCandidates;
   const activeFilterId = isObjectiveSource ? activeThemeId || "all" : sourceTool ? activeCategoryId || "all" : angle;
-  const activeFilterLabel = floatingFilterItems.find((item) => item.id === activeFilterId)?.label;
   const tagFilters = (
     <ExplorerTagFilterNav
       activeId={activeFilterId}
@@ -724,22 +723,16 @@ export default function ExplorerPage() {
       {visibleCandidates.length > 0 && (
         <header className="ex-results-heading">
           <div>
-            <span>{activeFilterLabel}</span>
             <h2>{sourceTool
               ? t(`Outils à découvrir autour de ${sourceLabel}`, `Tools to discover around ${sourceLabel}`)
               : t("Outils recommandés", "Recommended tools")}</h2>
           </div>
           <p>{t(
-            `${filteredCandidates.length} outil${filteredCandidates.length > 1 ? "s" : ""} classé${filteredCandidates.length > 1 ? "s" : ""} par pertinence`,
-            `${filteredCandidates.length} tool${filteredCandidates.length > 1 ? "s" : ""} ranked by relevance`,
+            `${filteredCandidates.length} outil${filteredCandidates.length > 1 ? "s" : ""}`,
+            `${filteredCandidates.length} tool${filteredCandidates.length > 1 ? "s" : ""}`,
           )}</p>
         </header>
       )}
-
-      {auditedRelations && visibleCandidates.length > 0 && <p className="ex-relations-note">{t(
-        "Une alternative est une piste du catalogue à comparer pour les usages indiqués. Un rattachement indique l’hôte déclaré ; le libellé extension est réservé aux plugins. Une suite ou un usage commun n’indique pas une intégration.",
-        "An alternative is a catalogue option to compare for the uses shown. An attachment identifies the declared host; the extension label is reserved for plugins. A shared suite or use does not establish an integration.",
-      )}</p>}
 
       {visibleCandidates.length > 0 ? (
         gridCandidates.length > 0 && <section className="ex-grid ex-grid--masonry" aria-label={t("Outils associés", "Related tools") as string}>

@@ -1,3 +1,7 @@
+## Passe design avant push — 12 octobre 2026
+
+[Rapport de la passe design](R5_DESIGN_REVIEW_2026-10-10.md). Explorer reprend les tokens typographiques du site ; texte explicatif et répétitions retirés, noms/relations mieux lisibles, cibles et focus harmonisés, objectifs longs corrigés à 320 px. Catalogue, classement et justifications conservés. Revue locale avant push ; la qualité éditoriale R5 reste ouverte. Après validation de ce lot, reprendre R6 sur les identités, rôles et tags puis rejouer le pilote.
+
 ## Contre-revue R5 — 9 octobre 2026
 
 [Rapport, défauts corrigés et preuves](R5_SECOND_PASS_2026-10-09.md). Rattachement parent/enfant prioritaire, plugins distingués des fonctions, neuf réserves de promesse, comparaisons à vérifier reléguées après les autres relations. Le filtre URL angle est maintenant appliqué avec la catégorie et réinitialisable. Les données catalogue restent intactes, moteur hors pilote conservé.
