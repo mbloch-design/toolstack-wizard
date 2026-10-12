@@ -156,3 +156,15 @@ Mesures Playwright à 1440, 1024 et 390 px. Tout appliqué le 9 oct. (« go sur 
 - [ ] Reste : la fiche outil a son propre conteneur (`td-hero`), décalé de 16 px du haut de page à 1440 px
 - [ ] Reste : les règles « colonne réduite » sont écrites deux fois (réduite à la main, imposée de 641 à 1 180 px) ; les fusionner demande une classe posée en JS, au prix d'un saut au premier affichage
 - [ ] Reste : `e2e/sidebar-preferences.spec.ts` déjà désynchronisé avant cette passe (textes « Préférences », « Passer le site en anglais »)
+
+## Mode sombre, revue design (10 oct. 2026)
+16 pages × 1440 et 390 px, axe + captures. Corrigé le 10 oct. : environ 400 échecs de contraste → 0 sur toutes les pages, desktop et mobile.
+- [x] P0 Footer : variante sombre de ses jetons `--tt-footer-*`
+- [x] P0 Accueil : `--h-ink` suit `--color-text-strong`
+- [x] P0 Hero : jetons clairs rétablis dans `.hv2-band` (le dégradé reste clair)
+- [x] P0 Comparatif : pastilles prix et note sur fond sombre translucide
+- [x] P0 Couvertures de guides : légende sombre fixe sur les tuiles pastel
+- [x] P1 Ma stack : valeur en mots passe à la ligne ; nouveau jeton `--color-alert` (#BE490A clair, #F0874A sombre) pour l'orange des doublons
+- [x] P1 Liens bleus de /submit éclaircis en sombre, « Trier » en `--color-text-meta`
+- [x] P2 Petits textes (conditions de prix, pièges de facturation, compteurs, langue du footer) en `--color-text-secondary`
+- [ ] Non retenu : les boutons ronds blancs au survol des cartes outils restent blancs (ils flottent sur l'image, contraste correct dans les deux thèmes)

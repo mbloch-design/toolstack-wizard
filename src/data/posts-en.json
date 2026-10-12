@@ -1824,5 +1824,44 @@
       }
     },
     "thumbnail": "/guides/ai-tax-hero.jpg"
+  },
+  {
+    "slug": "ecommerce-platform-solo-small-team-physical-products-2026",
+    "date": "2026-10-07",
+    "category": "Comparisons",
+    "toolId": "shopify",
+    "readTime": "7 min",
+    "thumbnail": null,
+    "title": "Which E-Commerce Platform Should You Pick Solo or in a Small Team, to Sell Physical Products?",
+    "excerpt": "Shopify, WooCommerce, Wix, or Squarespace: four questions to settle it based on your starting point, not a feature checklist, with a real Shopify store example.",
+    "tags": [
+      "e-commerce",
+      "shopify",
+      "woocommerce",
+      "wix",
+      "squarespace",
+      "physical products",
+      "2026"
+    ],
+    "content": "# Which E-Commerce Platform Should You Pick Solo or in a Small Team, to Sell Physical Products?\n\nYou're already invoicing as a freelancer or running a small outfit, and you want to add a real online store: a merch line, a capsule collection, an e-commerce side activity next to the service. The question isn't \"what's the best e-commerce tool\" in the abstract, it's narrower: which one fits your starting point, not a ten-person team with a dev budget.\n\n> Note: four questions are enough to decide before you even look at a feature list: are you starting from scratch or do you already have a site, how much time can you spend on the technical side, how big is your catalog likely to get, and what's your real budget ceiling once transaction fees and paid apps are added.\n\n## The four questions to ask before comparing tools\n\n1. Do you already have a site, or are you starting from zero? An existing WordPress site changes the answer.\n2. How much time do you want to spend on the technical side? None, or you're willing to tinker a bit to pay less.\n3. Will your catalog stay simple, or grow fast? Ten products don't carry the same constraints as two hundred.\n4. What's your real monthly budget ceiling, not the one displayed in large type on the homepage: transaction fees and paid apps almost always add to the base subscription.\n\n## Shopify: the default choice of the industry, not a technical bet\n\n[Shopify](/en/tool/shopify) remains the most widely used platform for launching a store without managing the infrastructure of a commerce site yourself: built-in payments, inventory management, shipping, ready-made themes. The Basic plan is $29/month billed annually, with higher tiers (Grow at $79/month, Advanced at $299/month) that climb fast if the catalog or the team grows. The real hidden cost isn't the base subscription: it's the transaction fees and the paid apps from the ecosystem that add up as soon as a native feature is missing.\n\nChoose Shopify if you're starting from zero, want an app ecosystem that covers nearly everything, and are fine paying a dedicated subscription on top of your existing site.\n\n## WooCommerce: for anyone who already runs a WordPress site\n\n[WooCommerce](/en/tool/woocommerce) turns an existing WordPress site into a full store: product pages, cart, checkout, over 140 regional payment gateways, automatic tax calculation. The plugin itself is free and serves a small project as well as a high-volume store. The real cost sits elsewhere: separate WordPress hosting, a payment gateway, and most often one or more paid extensions from the Woo Marketplace for subscriptions or advanced shipping.\n\nChoose WooCommerce if you already run a WordPress site and would rather own your store than rent it on a hosted platform, even if it means assembling the pieces yourself.\n\n## Wix: for a solo, non-technical person who wants everything in one place\n\n[Wix](/en/tool/wix) covers e-commerce, booking, basic CRM, and email marketing in a single platform, drivable through drag-and-drop or an AI generator built from a prompt. The first paid plan (Light) starts at $17.77/month, with tiers climbing up to $159.77/month (Business Elite) depending on storage and the number of collaborators. The free plan keeps a Wix subdomain and doesn't allow a custom domain name.\n\nChoose Wix if you're solo, don't want to assemble anything yourself, and the showcase site and the store need to live in the same place from day one.\n\n## Squarespace: the all-in-one hosted option, when the platform replaces several tools\n\n[Squarespace](/en/tool/squarespace) combines a visual editor, managed hosting, SEO, and product sales in a single subscription, starting at $19/month billed annually on the Basic plan, with a 14-day trial and no permanent free plan. The switch makes sense when the platform replaces several steps you currently manage separately (site, hosting, store); otherwise, a lighter solution is enough.\n\n## The real-world case: Atelier Atypique, a Shopify choice under real conditions\n\n[Atelier Atypique](https://atelier-atypique.fr/), a French brand of cigar accessories and upscale gift items, illustrates this default choice: a store built on Shopify, a catalog segmented into clear collections rather than a loose product list, and one differentiating argument pushed everywhere (free laser engraving on their leather case collection, which also opens a B2B offer for corporate gifts). None of this requires a technical team: the platform settled the infrastructure question in a single decision, which left time to polish the catalog and the differentiating argument instead of tinkering with a site.\n\n## What matters before choosing\n\nThe platform doesn't make the product. The four options above all answer the technical question correctly; what separates a store that works from one that stalls is catalog clarity and one differentiating argument pushed everywhere, not the number of features checked off in a comparison table.",
+    "seo": {
+      "metaTitle": "Which E-Commerce Platform for a Solo Seller or Small Team?",
+      "metaDescription": "Shopify, WooCommerce, Wix, or Squarespace: four criteria to choose based on your situation, verified prices, and a real Shopify store example.",
+      "keywords": "ecommerce platform, shopify, woocommerce, wix, squarespace, sell physical products, freelance ecommerce"
+    },
+    "faq": [
+      {
+        "question": "Shopify or WooCommerce to sell physical products solo?",
+        "answer": "Shopify if you're starting from zero and want a hosted platform without managing infrastructure, in exchange for a monthly subscription. WooCommerce if you already have a WordPress site and would rather own your store than rent it, at the cost of a bit more technical tinkering (separate hosting, payment gateway)."
+      },
+      {
+        "question": "What's the real budget to start an online store as a small team?",
+        "answer": "The displayed plan is only part of the cost: Shopify Basic is $29/month but transaction fees and paid apps from the ecosystem add up fast. WooCommerce is free as a plugin but needs WordPress hosting and often paid extensions. Expect a real monthly budget higher than the price shown on the homepage, whichever platform you pick."
+      },
+      {
+        "question": "Wix or Squarespace for a non-technical online store?",
+        "answer": "Both are all-in-one hosted platforms built for a solo person with no technical skills. Wix starts at $17.77/month and adds CRM and email marketing in the same interface; Squarespace starts at $19/month and is worth it when the platform replaces several tools you currently manage separately (site, hosting, store)."
+      }
+    ]
   }
 ]

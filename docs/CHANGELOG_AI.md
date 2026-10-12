@@ -34,6 +34,14 @@
 - 99 tests Ma Stack, 23 contrats SEO, build production complet PASS, recette Chromium FR/EN 390/1440 px avec retrait/annulation/persistance, sans débordement ni erreur JS. Preuves : `docs/proofs/ma-stack-r4-2026-10-09/runtime.json`. Revue indépendante : deux surfaces inspecteur corrigées.
 - Compréhension utilisateur à observer ; renouvellement Redis encore à faire ; paiement réel exclu par le propriétaire.
 
+## 2026-10-10 : audit guides FR-only et traduction manquante
+
+- Listing des guides français sans équivalent anglais : sur 11 candidats détectés par slug, 10 avaient déjà une traduction via `GUIDE_SLUG_ALTERNATES` (faux positifs). Un seul guide réellement sans traduction : `plateforme-ecommerce-solo-petite-equipe-produits-physiques`.
+- Traduction publiée (`ecommerce-platform-solo-small-team-physical-products-2026` dans `posts-en.json`), paire ajoutée dans les 3 tables hreflang (`src/App.tsx`, `src/lib/seo.ts`, `vite.config.ts`), test `guideSlugMaps.spec.ts` au vert.
+- Écart de prix repéré pendant la traduction : le catalogue donne Shopify Basic à 39 $/mois (facturation mensuelle), l'article FR affiche 27 €/mois (facturation annuelle, page Shopify localisée EU, vérifiée exacte). Les deux sont corrects mais sur des bases différentes. Prix USD annuels (29 $/79 $/299 $) recherchés et utilisés dans la version anglaise ; version française laissée en euros.
+- `scripts/audit-guide-locale-parity.mjs` corrigé : il gardait sa propre mini-table de correspondance figée (une seule paire) au lieu de lire `GUIDE_SLUG_ALTERNATES`, et signalait donc à tort des guides déjà traduits comme « français seulement ». Lit maintenant la vraie table.
+- `npm run build` validé : page EN prérendue, hreflang réciproque confirmé dans le HTML généré. 4 échecs de validation SEO préexistants et sans rapport (`explorer/around/cycles`, `gusto`, `red-giant-cosmo`, `stacks/ia-visuelle-tout-en-un`, « SSR root is unclosed ») signalés à part, pas corrigés ici.
+
 ## 2026-10-09 : navigation, revue design et corrections
 
 - Revue design-superpowers (L2) de la barre latérale, du haut de page, de la barre du bas et du menu mobile, mesurée avec Playwright à 1440, 1024 et 390 px.
@@ -5524,7 +5532,6 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Périmètre : cartes compactes, fiche intégrée, navigation hiérarchique du télescope, aperçus des outils et budgets indicatifs par groupe. Les fichiers de migration catalogue et les copies de travail sont exclus.
 - Validation finale : build production complet PASS, TypeScript PASS, 79 tests Ma Stack PASS et 15 tests navigateur Chromium PASS (FR/EN, 390/820/1440 px, stack de 60 outils à 320 px, ajout/retrait/annulation et persistance).
 - Tests navigateur adaptés au parcours actuel et à la fin des transitions avant activation clavier.
-
 ## 2026-10-08 · Footer statutaire
 - Badges visibles et homogènes, un seul lien méthodologie (/methodology redirige vers /transparency).
 - Mentions légales : SAS, hébergeur Vercel.
@@ -5533,7 +5540,12 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Accueil, lots 2 et 3 sans ajout : échelle typo unique, rythme 72/48, rayons, recherche sous le hero, outils non répétés, libellés, accessibilité (0 violation axe), animations sur transform, 69 règles CSS mortes retirées. « La pile » retirée à la demande de Michael.
 - Accueil : recherche du site réparée (sigles courts, mots vides, accents, catégories), lot de finitions en tokens, typographie française (displayText), équilibre optique des logos, besoins avec exposant et tags de catégories voisines, « Lequel garder ? » à la place de « Compatible avec », en-têtes de section alignés à gauche, carrousels jusqu'au bord.
 
-
 ### 2026-10-09 — Compatibilité du compilateur API Vercel
 
 Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le typecheck API local ES2023. Reproduction avec les bibliothèques ES2020 : même erreur. Le contrôle de propriété propre utilise désormais `Object.prototype.hasOwnProperty.call`, avec le même refus des réponses Redis sans champ propre `result`. Vérification ES2020 PASS et 178 tests API avec Redis réel PASS. Le contrôle ES2020 est ajouté à la CI pour couvrir cet écart.
+
+## 2026-10-09 — Galerie produit sourcée pour Newbi
+
+- Ajout de trois visuels produit publiés sur le site officiel Newbi : tableau de bord, éditeur de facture et aperçu de facture.
+- Galerie affichée sur la fiche en l'absence de médias catalogue, avec textes alternatifs FR/EN et conservation du ratio complet des captures.
+- Sources vérifiées sur newbi.fr ; aucun visuel fabriqué ou capture ToolTrim ajoutée.
