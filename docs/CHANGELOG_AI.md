@@ -1,3 +1,11 @@
+## 2026-10-13 — Ma Stack : tous les outils visibles dans le budget
+
+- Budget ouvert par outil ; suppression de la limite de six lignes et ajout des outils gratuits, freemium comptés gratuits et au coût inconnu. Chaque nom ouvre le détail existant pour renseigner le coût ; les inconnus restent hors du total et affichent un tiret.
+- Calcul, tarifs catalogue et persistance inchangés. Répartition par domaines conservée.
+- Recette : 102 tests Ma Stack, 294 tests applicatifs, TypeScript, build production complet et quatre parcours Chromium FR/EN à 390/1440 px PASS ; vérification visuelle des captures et ouverture des détails. Délais d’attente transitoires dans SearchGuideNavigation, useToolBySlug et HostPage pendant le build : suite complète rejouée avec un seul worker, 294/294 PASS.
+- Limite identifiée : Ma Stack lit les plans de comparaison structurés de `pricing_v5.plans`, tandis que les fiches utilisent aussi le relevé `nativePrices.ts`. Claude et Perplexity peuvent donc être non calculables dans Ma Stack malgré des tarifs présents ailleurs ; aucune modification ni reconstruction de prix dans ce correctif.
+- Correctif local, non publié ; travaux préexistants catégories/catalogue préservés.
+
 ## 13 octobre 2026 — Fil de découverte autour de toute la stack
 
 - Entrée « Explorer autour de ma stack » dans le hero, pour les outils utilisés ; activation du parcours stack existant, cartes visuelles, exploration et enregistrement dans les collections.
