@@ -44,6 +44,7 @@ function rememberExplorerResultLimit(key: string, limit: number) {
 interface ExplorerLocationState {
   explorerCanGoBack?: boolean;
   explorerReturnTo?: string;
+  explorerStackSources?: string[];
   originLabel?: string;
   previousSourceLabel?: string;
   skipScrollReset?: boolean;
@@ -242,7 +243,7 @@ export default function ExplorerPage() {
   const requestedDestinationId = searchParams.get("destination");
   const destination = state.needs.find((need) => need.id === requestedDestinationId) || null;
   const locationState = (location.state || {}) as ExplorerLocationState;
-  const toolBySlug = useMemo(() => new Map(tools.map((tool) => [getExplorationToolKey(tool), tool])), [tools]);
+  const toolBySlug = useMemo(() => new Map(tools.flatMap((tool) => [[getExplorationToolKey(tool), tool], [tool.id, tool]] as [string, ToolSummary][])), [tools]);
   const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
   const getCategoryLabel = useCallback((tool: ToolSummary) => {
     const category = categoryById.get(tool.categoryId);
@@ -269,16 +270,26 @@ export default function ExplorerPage() {
       return tool ? [tool] : [];
     }
     if (source.type === "stack") {
-      return state.toolEntries
-        .filter((entry) => entry.intent === "stack")
-        .map((entry) => toolBySlug.get(entry.toolSlug))
-        .filter(Boolean) as ToolSummary[];
+      const slugs = Array.isArray(locationState.explorerStackSources)
+        ? locationState.explorerStackSources
+        : state.toolEntries.filter((entry) => entry.intent === "stack").map((entry) => entry.toolSlug);
+      return Array.from(new Map(slugs.flatMap(slug => {
+        const tool = toolBySlug.get(slug);
+        return tool ? [[tool.id, tool] as const] : [];
+      })).values());
     }
     const slugs = objectiveSourceSnapshot.current?.id === source.id
       ? objectiveSourceSnapshot.current.slugs
       : state.toolEntries.filter((entry) => entry.needIds.includes(source.id)).map((entry) => entry.toolSlug);
     return slugs.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[];
-  }, [source, state.toolEntries, toolBySlug]);
+  }, [source, state.toolEntries, toolBySlug, locationState.explorerStackSources]);
+  // Preserve the session's seed tools in history: saving an idea updates its
+  // saved state without turning it into a new seed and reshuffling the feed.
+  useEffect(() => {
+    if (!isStackSource || Array.isArray(locationState.explorerStackSources) || sourceTools.length === 0) return;
+    navigate(`${location.pathname}${location.search}`, { replace: true, preventScrollReset: true,
+      state: { ...locationState, skipScrollReset: true, explorerStackSources: sourceTools.map(getExplorationToolKey) } });
+  }, [isStackSource, location.pathname, location.search, locationState, navigate, sourceTools]);
   const sourceLabel = isStackSource
     ? t("Ma stack", "My stack") as string
     : sourceTool?.name || (sourceNeed ? t(sourceNeed.labelFr, sourceNeed.labelEn) as string : t("Source inconnue", "Unknown source") as string);
@@ -477,9 +488,9 @@ export default function ExplorerPage() {
     return (
       <main className="ex-page ex-page--empty">
         <Compass size={28} aria-hidden />
-        <h1>{t("Cette source n’est plus disponible", "This source is no longer available")}</h1>
-        <p>{t("Revenez au catalogue pour choisir un outil à explorer.", "Return to the catalog and choose a tool to explore.")}</p>
-        <Link to={`${prefix}/tools`}>{t("Voir les outils", "View tools")}</Link>
+        <h1>{isStackSource ? t("Ajoutez un outil pour explorer", "Add a tool to start exploring") : t("Cette source n’est plus disponible", "This source is no longer available")}</h1>
+        {!isStackSource && <p>{t("Revenez au catalogue pour choisir un outil à explorer.", "Return to the catalog and choose a tool to explore.")}</p>}
+        <Link to={`${prefix}/${isStackSource ? "ma-stack" : "tools"}`}>{isStackSource ? t("Ma stack", "My stack") : t("Voir les outils", "View tools")}</Link>
       </main>
     );
   }

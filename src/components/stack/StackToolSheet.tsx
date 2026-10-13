@@ -96,6 +96,12 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
               </div>
             </header>
             {short && <SheetDescription className="ms-ts-lead">{short}</SheetDescription>}
+            <Link className="ms-ts-secondary" to={getExplorerHref(prefix, { type: "outil", slug })}
+              state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack?outil=${encodeURIComponent(slug)}`,
+                previousSourceLabel: en ? "My stack" : "Ma stack", originLabel: en ? "My stack" : "Ma stack" }}
+              onClick={() => trackEvent("stack_explorer_click", { tool_slug: slug })}>
+              <Compass size={18} aria-hidden />{en ? `Explore around ${tool.name}` : `Explorer autour de ${tool.name}`}
+            </Link>
 
             <section className="ms-ts-group" aria-label={en ? "In my stack" : "Dans ma stack"}>
               {(() => {
@@ -221,12 +227,6 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                   <Link className={href ? "ms-ts-secondary" : "tt-button-primary ms-ts-open"} to={`${prefix}/tool/${slug}`} onClick={() => trackEvent("stack_profile_click", { tool_slug: slug })}>{en ? "Full profile" : "Fiche complète"}{!href && <ArrowRight size={16} aria-hidden />}</Link>
                 </div>;
               })()}
-              <Link className="ms-ts-secondary" to={getExplorerHref(prefix, { type: "outil", slug })}
-                state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack?outil=${encodeURIComponent(slug)}`,
-                  previousSourceLabel: en ? "My stack" : "Ma stack", originLabel: en ? "My stack" : "Ma stack" }}
-                onClick={() => trackEvent("stack_explorer_click", { tool_slug: slug })}>
-                <Compass size={18} aria-hidden />{en ? `Explore around ${tool.name}` : `Explorer autour de ${tool.name}`}
-              </Link>
               <button type="button" className="ms-ts-remove" onClick={onRemove}>{en ? "Remove from my stack" : "Retirer de ma stack"}</button>
             </footer>
           </>;

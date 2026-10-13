@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy, ChevronRight } from "@/lib/icons";
+import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy, ChevronRight, Compass } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -23,6 +23,7 @@ import { convertAmount, formatAmount } from "@/lib/currencyRates";
 import { HERO_CLUSTER_SLOTS } from "@/lib/heroCluster";
 import { pairKey, useStackDecisions } from "@/hooks/useStackDecisions";
 import { trackEvent } from "@/lib/analytics";
+import { getExplorerHref } from "@/lib/toolExploration";
 import ValueChange from "@/components/motion/ValueChange";
 import { writeStackSnapshot } from "@/lib/stackSnapshot";
 import { SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
@@ -351,6 +352,13 @@ export default function CartPage() {
         <span className="sg-hero-pill">{t("Ma stack", "My stack")}</span>
         <h1>{t("Mes outils", "My tools")}</h1>
         <p className="sg-lead">{t("Retrouvez vos outils, les usages qu’ils couvrent et leur coût estimé.", "See your tools, the uses they cover and their estimated cost.")}</p>
+        {state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) && <Link
+          className="tt-button-primary ms-explore-stack" to={getExplorerHref(prefix, { type: "stack" })}
+          state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`,
+            explorerStackSources: state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; }) }}
+          onClick={() => trackEvent("stack_explorer_click", { source: "whole_stack" })}>
+          <Compass size={18} aria-hidden />{t("Explorer autour de ma stack", "Explore around my stack")}
+        </Link>}
         {!empty && <>
           <dl className="sg-stats ms-hero-stats">
             <div><dt><LayoutGrid size={15} aria-hidden />{t("Outils", "Tools")}</dt><dd>{selectedTools.length}</dd>

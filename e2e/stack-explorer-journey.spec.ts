@@ -12,7 +12,11 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   await page.goto(`/${lang}/ma-stack?outil=figma`,{waitUntil:'domcontentloaded'});
   const sheet=page.locator('.ms-tool-sheet');await expect(sheet).toBeVisible();
   const explore=sheet.getByRole('link',{name:lang==='fr'?'Explorer autour de Figma':'Explore around Figma',exact:true});
-  await expect(explore).toBeVisible();await explore.click();
+  await expect(explore).toBeVisible();
+  const bounds=await explore.boundingBox();expect(bounds).not.toBeNull();
+  expect(bounds!.y).toBeGreaterThanOrEqual(0);expect(bounds!.y+bounds!.height).toBeLessThanOrEqual(1000);
+  await page.screenshot({path:`/private/tmp/stack-explorer-opening-${lang}-${width}.png`});
+  await explore.click();
   await expect(page).toHaveURL(new RegExp(`/${lang}/explorer/around/figma`));
   const card=page.locator('[data-tool-slug]').filter({has:page.locator('button:not([disabled])')}).first();
   await expect(card).toBeVisible();

@@ -35726,3 +35726,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Ma stack : une valeur en mots passe à la ligne au lieu de déborder sur la
    colonne voisine (« Coût non renseigné » sous « 0 € »), dans les deux thèmes. */
 .ms-page .ms-hero-stats dd.sg-stats-word { white-space: normal; }
+
+@layer components {
+  .ms-explore-stack { align-self: flex-start; margin-top: var(--space-md); min-height: 44px; gap: var(--space-xs); }
+}
