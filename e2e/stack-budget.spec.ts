@@ -21,6 +21,23 @@ for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
     if (await toolsToggle.count()) await toolsToggle.click();
     await expect(budget.locator(".ms-budget-link")).toHaveCount(8);
     await expect(budget.locator(".ms-budget-status").first()).toBeVisible();
+    // The same attested fallback as the tool page must power both the
+    // free-tier question and the monthly budget after declaring a payment.
+    for (const name of ["Claude", "Perplexity"]) {
+      const row = budget.locator(".ms-budget-other-list li").filter({ has: page.getByRole("button", { name, exact: true }) });
+      await expect(row).toContainText(lang === "fr" ? "Freemium compté gratuit" : "Freemium counted as free");
+    }
+    await budget.locator(".ms-inline-link").click();
+    for (const name of ["Claude", "Perplexity"]) {
+      const control = page.getByRole("switch", { name: `${lang === "fr" ? "Abonnement payant pour" : "Paid subscription for"} ${name}`, exact: true });
+      await expect(control.locator("xpath=..")).toContainText(lang === "fr" ? "20 $" : "$20/mo");
+      await control.click();
+    }
+    await page.locator(".ms-sheet-done").click();
+    for (const name of ["Claude", "Perplexity"]) {
+      const row = budget.locator(".sg-budget-viz li").filter({ has: page.getByRole("button", { name, exact: true }) });
+      await expect(row.locator(".sg-budget-value")).toHaveText(lang === "fr" ? "≈ 17 €" : "≈ $20");
+    }
     await budget.scrollIntoViewIfNeeded();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     fs.mkdirSync("/private/tmp/tooltrim-stack-budget", { recursive: true });
@@ -32,5 +49,8 @@ for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
     await page.keyboard.press("Escape");
     await page.reload({ waitUntil: "domcontentloaded" });
     await expect(budget.locator(".ms-budget-other-list li")).not.toHaveCount(0);
+    for (const name of ["Claude", "Perplexity"]) {
+      await expect(budget.locator(".sg-budget-viz li").filter({ has: page.getByRole("button", { name, exact: true }) })).toBeVisible();
+    }
   });
 }

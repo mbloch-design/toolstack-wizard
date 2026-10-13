@@ -2,6 +2,7 @@ import type { Category, Tool, ToolPricingPlan } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { getCategoryLabel } from "@/lib/categoryLabel";
 import { hasGenuineFreeTier } from "@/lib/pricing";
+import { NATIVE_PRICES } from "@/data/nativePrices";
 
 export const toolKey = (tool: Pick<Tool, "slug" | "id">) => tool.slug || tool.id;
 
@@ -20,14 +21,25 @@ export function stackTerritories(tools: ToolSummary[], categories: Category[], l
 }
 
 export type NativePrice = { amount: number; currency: string; period: "monthly" | "annual" | "once" };
-type PricedTool = Pick<Tool, "pricing" | "pricingEn"> & { priceUndisclosed?: boolean; nativePrices?: NativePrice[] };
+type PricedTool = Pick<Tool, "pricing" | "pricingEn"> & Partial<Pick<Tool, "id" | "slug">> & { priceUndisclosed?: boolean; nativePrices?: NativePrice[] };
+
+function attestedFallback(tool: PricedTool) {
+  // An explicit canonical price (including one-time or unsupported currency)
+  // and an undisclosed/quote price must not be replaced by an older record.
+  if (tool.priceUndisclosed || tool.nativePrices?.length || /sur devis|contact.{0,12}(vente|sales)|custom pricing|quote/i.test(tool.pricing?.paid || "")) return undefined;
+  return NATIVE_PRICES[tool.slug || ""] || NATIVE_PRICES[tool.id || ""];
+}
 
 /** The attested entry price to show, in the page's preferred real currency
  *  when the vendor publishes it, never converted. */
 export function pickNativePrice(tool: PricedTool, lang: string): NativePrice | null {
+  if (tool.priceUndisclosed) return null;
   const prices = tool.nativePrices || [];
   const preferred = lang === "en" ? "USD" : "EUR";
-  return prices.find((price) => price.currency === preferred) || prices[0] || null;
+  const canonical = prices.find((price) => price.currency === preferred) || prices[0];
+  if (canonical) return canonical;
+  const fallback = attestedFallback(tool);
+  return fallback ? { amount: fallback.amount, currency: fallback.currency, period: fallback.period } : null;
 }
 
 export function formatNativePrice(price: NativePrice, lang: string): string {
@@ -44,14 +56,15 @@ export function formatNativePrice(price: NativePrice, lang: string): string {
 }
 
 // Short catalogue labels. The amount comes only from the attested compare plan
-// (nativePrices, in the vendor's currency): never read out of editorial text,
+// (nativePrices, or the dated pricing_truth fallback, in the vendor's currency): never read out of editorial text,
 // never converted (Michael's rule: "only what is attested"). No attested price,
 // no amount. Free / freemium / quote stay as categorical labels.
 export function stackCatalogPrice(tool: PricedTool, lang: string): string | null {
   const pricing = tool.pricing;
   const paid = pricing?.paid?.trim();
   const quote = /sur devis|contact.{0,12}(vente|sales)|custom pricing|quote/i.test(paid || "");
-  const free = hasGenuineFreeTier(pricing?.free) && /gratuit|free|open.?source/i.test(pricing?.free || "");
+  const free = (hasGenuineFreeTier(pricing?.free) && /gratuit|free|open.?source/i.test(pricing?.free || ""))
+    || attestedFallback(tool)?.freeCoreAvailable === true;
   const native = tool.priceUndisclosed ? null : pickNativePrice(tool, lang);
   if (tool.priceUndisclosed) return quote ? (lang === "en" ? "Custom pricing" : "Sur devis") : null;
   if (free && (native || quote)) return "Freemium";

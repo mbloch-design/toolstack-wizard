@@ -1,3 +1,11 @@
+## 2026-10-13 — Ma Stack : prix attestés des fiches réutilisés dans le budget
+
+- `pickNativePrice` conserve la priorité des plans structurés et utilise ensuite le relevé daté déjà utilisé par les fiches (`nativePrices.ts`, généré depuis `pricing_truth.csv`). Le statut d’offre gratuite de ce relevé est également conservé : Claude et Perplexity sont freemium, comptés gratuits jusqu’à déclaration payante, puis leur tarif natif alimente le budget.
+- Générateur enrichi avec période mensuelle explicite et présence d’offre gratuite. Les périodes inconnues, annuelles et achats uniques du relevé sont exclus du repli mensuel ; les plans canoniques annuels restent mensualisés par le calcul existant. Aucun montant ni source tarifaire édité, aucune extraction de prix depuis le texte ou la valeur normalisée EUR.
+- Les tarifs non publics, sur devis, canoniques à achat unique ou dans une devise non prise en charge ne sont pas remplacés par un ancien relevé. Les coûts personnels déclarés restent prioritaires.
+- Recette : 302 tests applicatifs, TypeScript, build production complet et quatre parcours Chromium FR/EN à 390/1440 px PASS, déclaration payante et persistance après rechargement incluses. Tests des données réelles Claude/Perplexity, priorité des plans, annualisation, absence de source et génération de relevés ; comparaison des 41 relevés avant/après : montants, devises et dates inchangés.
+- Correctif local, non publié ; aucune migration du catalogue ni écriture serveur. La limite de lecture des prix signalée dans l’entrée précédente est corrigée.
+
 ## 2026-10-13 — Ma Stack : tous les outils visibles dans le budget
 
 - Budget ouvert par outil ; suppression de la limite de six lignes et ajout des outils gratuits, freemium comptés gratuits et au coût inconnu. Chaque nom ouvre le détail existant pour renseigner le coût ; les inconnus restent hors du total et affichent un tiret.

@@ -1,10 +1,15 @@
 import { describe, expect, it } from "vitest";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import type { Category, ToolPricingPlan } from "@/data/types";
-import { knownStackAlternatives, stackCatalogPrice, stackPlanPrice, stackTerritories } from "@/lib/stackView";
+import { knownStackAlternatives, pickNativePrice, stackCatalogPrice, stackPlanPrice, stackTerritories } from "@/lib/stackView";
 const tool = (id: string, categoryId = "design", extra: Partial<ToolSummary> = {}): ToolSummary => ({ id, slug: id, name: id, categoryId, pricing: { free: "", paid: "" }, ...extra } as ToolSummary);
 
 describe("Mon Stack catalogue representation", () => {
+  it("uses the dated price fallback with its period and free-tier status", () => {
+    expect(pickNativePrice(tool("perplexity"), "en")).toEqual({ amount: 20, currency: "USD", period: "monthly" });
+    expect(stackCatalogPrice(tool("perplexity"), "en")).toBe("Freemium");
+    expect(stackCatalogPrice(tool("claude"), "fr")).toBe("Freemium");
+  });
   it("uses one main category per tool and never creates empty territories", () => {
     const categories = [{ id: "design", name: "Design", nameEn: "Design" }, { id: "crm", name: "CRM", nameEn: "CRM" }] as Category[];
     const groups = stackTerritories([tool("figma"), tool("canva", "design", { functional_needs: ["crm"] })], categories, "en");
