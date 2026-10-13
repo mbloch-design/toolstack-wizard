@@ -1,3 +1,10 @@
+## 2026-10-13 — GA4 : endpoint régional débloqué dans la CSP
+
+- Diagnostic en production après retour utilisateur : la balise consentie et page_view existaient, mais connect-src bloquait region1.google-analytics.com. Le correctif du 12 octobre est déployé READY et la CI est verte ; la recette simulée ne contrôlait pas cette frontière réseau réelle.
+- Seule l’autorisation connect-src Google Analytics devient https://*.google-analytics.com. Test Chromium de la vraie CSP : échec régional avant correction, trois cas PASS après (region1/www autorisés, domaine imposteur bloqué).
+- CSP candidate sur le site réel : zéro collecte avant accord, puis HTTP 204 pour les page_view des deux propriétés DL5MJKQ3JE et PQPPPH19MH. Le tag distant distribue aux deux flux ; l’écart de propriété ne suffit pas à expliquer l’absence de statistiques.
+- Publication ciblée au correctif CSP, son test et sa documentation ; autres directives de sécurité et travaux locaux préservés.
+
 ## 2026-10-12 — GA4 : pages vues après consentement et choix modifiable
 
 - Correction de la page d’arrivée perdue après acceptation tardive et des événements antérieurs à la configuration du tag sur connexion lente ; émission après chargement, page courante et déduplication des effets initiaux. Aucune action antérieure au consentement rejouée.

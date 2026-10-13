@@ -39,3 +39,11 @@ Sources :
 ## Intégration pour publication
 
 Le commit local a été isolé sur le main distant f36b511a66. Les conflits ont conservé le nouveau footer et les styles déjà publiés ; le contrôle existant de cookies ouvre désormais les préférences, et le dégagement de scroll --consent-h est maintenu avec mesure au redimensionnement. Relecture indépendante sans point bloquant. Sur cette intégration : 332 tests app, types app, build production complet et neuf parcours Chromium sur l’artefact isolé PASS. Le correctif seul est destiné au push main ; les catégories/catalogues et le commit local Newbi distinct sont exclus.
+
+## 13 octobre — collecte réelle et CSP
+
+La version 3250b7697b est déployée READY sur tooltrim.com, CI réussie. Le contrôle avec Google réel a révélé un blocage CSP : connect-src autorisait www.google-analytics.com, mais le SDK utilisait region1.google-analytics.com. Les commandes JavaScript et cookies étaient présents, sans requête de collecte. Les neuf parcours précédents simulaient Google et ne pouvaient pas attester cette frontière réseau.
+
+Correction limitée à connect-src : https://*.google-analytics.com, conformément à la documentation Google CSP ; aucune autre directive modifiée. Test navigateur de la vraie politique : region1 et www autorisés, un domaine imposteur google-analytics.com.attacker.invalid toujours bloqué. Le cas régional échouait avant correction, puis les trois cas passent. Test de la CSP candidate sur le site réel : aucune collecte avant accord, puis réponses HTTP 204 aux page_view pour G-DL5MJKQ3JE et G-PQPPPH19MH. La configuration distante du tag distribue donc aux deux identifiants malgré la seule balise explicite historique dans le code ; ne pas conclure que seule la propriété historique reçoit des événements.
+
+Source : https://developers.google.com/tag-platform/security/guides/csp
