@@ -15,7 +15,7 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   await expect(explore).toBeVisible();
   // The sheet slides in: check its settled viewport position without scrolling.
   await expect.poll(async()=>{const bounds=await explore.boundingBox();return !!bounds&&bounds.y>=0&&bounds.y+bounds.height<=1000;}).toBe(true);
-  await page.screenshot({path:`/private/tmp/stack-explorer-opening-${lang}-${width}.png`});
+  await page.screenshot({path:test.info().outputPath(`stack-explorer-opening-${lang}-${width}.png`)});
   await explore.click();
   await expect(page).toHaveURL(new RegExp(`/${lang}/explorer/around/figma`));
   const card=page.locator('[data-tool-slug]').filter({has:page.locator('button:not([disabled])')}).first();
@@ -33,7 +33,7 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   await expect.poll(()=>new URL(page.url()).pathname).toBe(`/${lang}/ma-stack`);expect(new URL(page.url()).searchParams.get('outil')).toBe('figma');
   await expect(page.locator('.ms-tool-sheet .ms-ts-title')).toHaveText('Figma');
   await page.locator('.ms-tool-sheet').getByRole('link',{name:lang==='fr'?'Explorer autour de Figma':'Explore around Figma',exact:true}).scrollIntoViewIfNeeded();
-  await page.screenshot({path:`/private/tmp/stack-explorer-inspector-${lang}-${width}.png`});
+  await page.screenshot({path:test.info().outputPath(`stack-explorer-inspector-${lang}-${width}.png`)});
   await page.keyboard.press('Escape');
   await expect(page.locator('.ms-tool-sheet')).toHaveCount(0);
   await expect(page.locator('.ms-tool[data-tool-id="figma"]')).toBeFocused();
@@ -46,6 +46,6 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   expect(stored.toolEntries.find((entry:{toolSlug:string})=>entry.toolSlug===added).needIds).toContain(collection.id);
   expect(errors).toEqual([]);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)).toBe(false);
-  await page.screenshot({path:`/private/tmp/stack-explorer-journey-${lang}-${width}.png`});
+  await page.screenshot({path:test.info().outputPath(`stack-explorer-journey-${lang}-${width}.png`)});
  });
 }

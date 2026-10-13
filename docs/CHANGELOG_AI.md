@@ -1,3 +1,8 @@
+## 13 octobre 2026 — Captures de recette portables en CI
+
+- La première CI du fil échouait sur les chemins de capture macOS `/private/tmp`, indisponibles sur Linux. Les trois suites Ma Stack utilisent désormais `test.info().outputPath()` ; captures conservées dans les artefacts Playwright, sans modifier ni affaiblir les assertions.
+- Produit inchangé ; le déploiement initial et onze parcours publics FR/EN sont réussis. Nouvelle CI déclenchée après validation des vingt-six parcours avec les chemins portables.
+
 ## 2026-10-13 — Ma Stack : prix attestés des fiches réutilisés dans le budget
 
 - `pickNativePrice` conserve la priorité des plans structurés et utilise ensuite le relevé daté déjà utilisé par les fiches (`nativePrices.ts`, généré depuis `pricing_truth.csv`). Le statut d’offre gratuite de ce relevé est également conservé : Claude et Perplexity sont freemium, comptés gratuits jusqu’à déclaration payante, puis leur tarif natif alimente le budget.

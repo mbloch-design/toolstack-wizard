@@ -17,7 +17,7 @@ for(const lang of ['fr','en'])for(const width of [390,1440]){
   await expect(page.locator('#explorer-title')).toContainText(lang==='fr'?'votre stack':'your stack');
   await expect(page.locator('[data-tool-slug]').first()).toBeVisible();
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content',/noindex/);
-  await page.screenshot({path:`/private/tmp/stack-discovery-feed-${lang}-${width}.png`});
+  await page.screenshot({path:test.info().outputPath(`stack-discovery-feed-${lang}-${width}.png`)});
   for(const slug of seeds)await expect(page.locator(`[data-tool-slug="${slug}"]`)).toHaveCount(0);
   const first=page.locator('[data-tool-slug]').first();const slug=await first.getAttribute('data-tool-slug');
   const card=page.locator(`[data-tool-slug="${slug}"]`);

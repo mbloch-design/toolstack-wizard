@@ -76,10 +76,8 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.keyboard.press("Escape");
     await expect(page.locator(".ms-tool-sheet")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-    const screenshotDir = "/private/tmp/tooltrim-mon-stack-v2";
-    fs.mkdirSync(screenshotDir, { recursive: true });
     await page.locator(".ms-hero h1").click();
-    await page.screenshot({ path: `${screenshotDir}/${lang}-${width}-dashboard.png`, fullPage: true });
+    await page.screenshot({ path: test.info().outputPath(`${lang}-${width}-dashboard.png`), fullPage: true });
   });
 }
 
@@ -154,7 +152,7 @@ test("known alternatives stay contextual and selection stays in the workspace", 
   await page.locator(".ms-ts-other").filter({ hasText: "Claude" }).first().click();
   await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Claude");
   await expect(page).toHaveURL(/ma-stack\?outil=claude/);
-  await page.screenshot({ path: "/private/tmp/tooltrim-mon-stack-v2/fr-1440-context.png", fullPage: true });
+  await page.screenshot({ path: test.info().outputPath("fr-1440-context.png"), fullPage: true });
 });
 
 test("a substantial stack stays readable at 320px", async ({ page }) => {
