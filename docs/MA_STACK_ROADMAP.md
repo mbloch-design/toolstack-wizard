@@ -1,3 +1,19 @@
+## Parcours produit — 13 octobre 2026
+
+Obstacle reproduit : l'inspecteur Ma Stack ne donnait pas accès à Explorer. Lien contextuel rétabli dans la feuille existante ; retour à la même fiche inspectée. La fermeture après retour perdait aussi le focus clavier : restauration à la carte après fermeture effective de la feuille, sans styles nouveaux. Le test complet couvre ajout, collection, retour, fermeture, focus et persistance en FR/EN à 390/1440 px. Validation finale consignée dans le changelog. R5/R6 éditoriaux restent différés.
+
+### Protocole court pour cinq essais utilisateurs
+
+Demander chaque tâche sans montrer les contrôles ni guider la personne :
+
+1. Ajouter à Ma Stack un outil qu'elle utilise réellement, depuis une sélection vide.
+2. À partir de cet outil, chercher un autre outil pertinent pour son activité.
+3. Enregistrer le nouvel outil dans sa stack et choisir ou créer une collection.
+4. Revenir à Ma Stack, retrouver les deux outils et ouvrir celui de départ.
+5. Retirer le nouvel outil, annuler le retrait, puis recharger pour vérifier sa sélection.
+
+Pour chaque tâche : noter terminé seul / terminé avec aide / abandonné, l'obstacle observé et les mots exacts de la personne. Ne pas assimiler un échec à une erreur utilisateur. Critère R9 conservé : quatre personnes sur cinq terminent le parcours sans aide. **Aucun essai utilisateur réel réalisé dans cette passe** ; les parcours automatisés ci-dessus sont une recette technique. La qualité éditoriale des suggestions reste hors de cette validation.
+
 ## Passe design avant push — 12 octobre 2026
 
 [Rapport de la passe design](R5_DESIGN_REVIEW_2026-10-10.md). Explorer reprend les tokens typographiques du site ; texte explicatif et répétitions retirés, noms/relations mieux lisibles, cibles et focus harmonisés, objectifs longs corrigés à 320 px. Catalogue, classement et justifications conservés. Revue locale avant push ; la qualité éditoriale R5 reste ouverte. Après validation de ce lot, reprendre R6 sur les identités, rôles et tags puis rejouer le pilote.

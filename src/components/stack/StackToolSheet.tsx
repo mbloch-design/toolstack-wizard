@@ -4,7 +4,7 @@ import Collapse from "@/components/motion/Collapse";
 import ValueChange from "@/components/motion/ValueChange";
 import type { PlanChoice } from "@/hooks/useStackPaidPlans";
 import { Link } from "@/lib/routerLinks";
-import { ArrowRight, ArrowUpRight, ChevronDown, X } from "@/lib/icons";
+import { ArrowRight, ArrowUpRight, ChevronDown, Compass, X } from "@/lib/icons";
 import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import ToolLogo from "@/components/ToolLogo";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetTitle } from "@/components/ui/sheet";
@@ -17,6 +17,7 @@ import { formatNativePrice, pickNativePrice, stackCatalogPrice, toolKey } from "
 import { stackDisplayLabel, stackPlacement, stackUsageLabels } from "@/lib/stackUsage";
 import type { ScoredPair } from "@/components/stack/StackOverlapPairs";
 import { trackEvent } from "@/lib/analytics";
+import { getExplorerHref } from "@/lib/toolExploration";
 import toolAccents from "@/data/toolAccents.json";
 
 /**
@@ -42,6 +43,7 @@ interface Props {
   prefix: string;
   lang: "fr" | "en";
   onClose: () => void;
+  onReturnFocus: () => void;
   onSelect: (slug: string) => void;
   onRemove: () => void;
   /** Whole catalogue (light index) and the ids in my stack: for alternatives to consider. */
@@ -58,7 +60,7 @@ function useNarrow() {
   );
 }
 
-export default function StackToolSheet({ tool, detail, pairs, categories, paid, currency, prefix, lang, onClose, onSelect, onRemove, catalog, stackIds }: Props) {
+export default function StackToolSheet({ tool, detail, pairs, categories, paid, currency, prefix, lang, onClose, onReturnFocus, onSelect, onRemove, catalog, stackIds }: Props) {
   const en = lang === "en";
   const bottom = useNarrow();
   const [editing, setEditing] = useState<string | null>(null);
@@ -70,6 +72,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
     <Sheet open={!!tool} onOpenChange={(open) => { if (!open) onClose(); }}>
       {/* Focus lands on the sheet itself, not on its first control: no stray ring. */}
       <SheetContent side={bottom ? "bottom" : "right"} className="ms-tool-sheet" overlayClassName="ms-sheet-overlay"
+        onCloseAutoFocus={(event) => { event.preventDefault(); onReturnFocus(); }}
         onOpenAutoFocus={(event) => { event.preventDefault(); (event.currentTarget as HTMLElement | null)?.focus({ preventScroll: true }); }}
         style={tool && (toolAccents as Record<string, string>)[toolKey(tool)] ? ({ "--tool-accent": (toolAccents as Record<string, string>)[toolKey(tool)] } as React.CSSProperties) : undefined}>
         {/* A close button you can see (36px), top right. */}
@@ -218,6 +221,12 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                   <Link className={href ? "ms-ts-secondary" : "tt-button-primary ms-ts-open"} to={`${prefix}/tool/${slug}`} onClick={() => trackEvent("stack_profile_click", { tool_slug: slug })}>{en ? "Full profile" : "Fiche complète"}{!href && <ArrowRight size={16} aria-hidden />}</Link>
                 </div>;
               })()}
+              <Link className="ms-ts-secondary" to={getExplorerHref(prefix, { type: "outil", slug })}
+                state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack?outil=${encodeURIComponent(slug)}`,
+                  previousSourceLabel: en ? "My stack" : "Ma stack", originLabel: en ? "My stack" : "Ma stack" }}
+                onClick={() => trackEvent("stack_explorer_click", { tool_slug: slug })}>
+                <Compass size={18} aria-hidden />{en ? `Explore around ${tool.name}` : `Explorer autour de ${tool.name}`}
+              </Link>
               <button type="button" className="ms-ts-remove" onClick={onRemove}>{en ? "Remove from my stack" : "Retirer de ma stack"}</button>
             </footer>
           </>;

@@ -1,3 +1,11 @@
+## 13 octobre 2026 — Parcours Ma Stack → Explorer → ajout → retour
+
+- Absence d'accès Explorer depuis l'inspecteur reproduite en navigateur ; lien contextuel ajouté dans StackToolSheet, avec les styles existants et l'état de retour prévu par Explorer. Aucun nouveau composant ni CSS.
+- Perte de focus après retour et fermeture reproduite FR/EN ; carte d'origine mémorisée, focus restauré après fermeture effective de la feuille. Accès fiche, site officiel et retrait conservés.
+- Quatre parcours complets FR/EN à 390/1440 px : ajout, création de collection, retour au même inspecteur, fermeture/focus et rechargement. Avec les quinze parcours Ma Stack existants : **19/19 production locale en 30,5 s**. 385 tests applicatifs, 144 Ma Stack, types et build final réussis. Contre-revue du lien sans défaut produit ; sondes corrigées pour conserver l'identité de la carte et contrôler collection/focus.
+- Captures locales : `/private/tmp/stack-explorer-inspector-fr-390.png`, `/private/tmp/stack-explorer-inspector-en-1440.png`. [Protocole de cinq essais dans la roadmap existante](MA_STACK_ROADMAP.md#protocole-court-pour-cinq-essais-utilisateurs). Aucun essai utilisateur réel revendiqué, aucune certification de pertinence éditoriale des suggestions.
+- Catalogue, tarifs source et fichiers publics inchangés ; R5/R6 éditoriaux restent différés. Correctif local pour revue, non poussé.
+
 ## 2026-10-13 — GA4 : endpoint régional débloqué dans la CSP
 
 - Diagnostic en production après retour utilisateur : la balise consentie et page_view existaient, mais connect-src bloquait region1.google-analytics.com. Le correctif du 12 octobre est déployé READY et la CI est verte ; la recette simulée ne contrôlait pas cette frontière réseau réelle.

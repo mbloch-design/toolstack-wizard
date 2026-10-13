@@ -155,6 +155,9 @@ export default function CartPage() {
   }
   function closeInspector() {
     const selectedId = selected?.id;
+    if (!lastToolButton.current?.isConnected && selectedId) {
+      lastToolButton.current = document.querySelector<HTMLButtonElement>(`[data-tool-id="${CSS.escape(selectedId)}"]`);
+    }
     const next = new URLSearchParams(params);
     next.delete("outil");
     setParams(next, { replace: true, state: { skipScrollReset: true }, preventScrollReset: true });
@@ -445,7 +448,7 @@ export default function CartPage() {
 
       <StackToolSheet tool={selected || null} detail={resolved} pairs={overlapScore.pairs} categories={categories} paid={plans} currency={currency} prefix={prefix} lang={lang}
         catalog={tools} stackIds={existingIds}
-        onClose={closeInspector} onSelect={selectTool}
+        onClose={closeInspector} onReturnFocus={() => { if (lastToolButton.current?.isConnected) lastToolButton.current.focus({ preventScroll: true }); }} onSelect={selectTool}
         onRemove={() => selected && removeTool(state.pinnedToolSlugs.find((slug) => lookup.get(slug)?.id === selected.id) || toolKey(selected), selected.name)} />
       {missing.length > 0 && <section className="ms-unavailable"><h2>{t("Outils indisponibles", "Unavailable tools")}</h2>
         <p>{t("Ces références ne sont plus disponibles dans le catalogue actuel. Votre sélection est conservée.", "These references are unavailable in the current catalogue. Your selection is retained.")}</p>
