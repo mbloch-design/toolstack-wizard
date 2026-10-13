@@ -1,3 +1,12 @@
+## 13 octobre 2026 — Premier clic fiable après hydratation et préparation R9
+
+- Obstacle reproduit deux fois sur une fiche publique : un clic sur Ajouter peut précéder le chargement du code de ToolDetailPage et ne rien enregistrer. PinToolButton reste désactivé dans le HTML prérendu et pendant le premier rendu d’hydratation ; il devient actif après montage des handlers. Aucun nouveau texte, style ou changement de catalogue.
+- Régression unitaire RED avant correction puis GREEN : même bouton conservé, aucune erreur récupérable d’hydratation, premier clic enregistré une fois. Nouvelle recette sur HTML généré : scripts bloqués, CTA visible mais inactif, activation après libération, enregistrement persistant et retour au même outil.
+- Échec CI distinct : une assertion ancienne interdisait tout `$0` sur la page, alors que le budget publié expose maintenant les outils gratuits/freemium. Test recentré sur le retrait de l’identifiant invalide, la conservation de Figma et son statut freemium. Garde undefined/null maintenue ; les tests unitaires conservent l’interdiction de zéro pour un coût inconnu. Fixture consentement Ma Stack alignée sur le JSON daté existant.
+- Validation locale : 346 tests app, 144 Ma Stack, types app/Node/API, build production et ses contrôles SEO/équivalence/budgets PASS ; 26 parcours sur dev et 26 sur HTML de production, 57 hydratations PASS (5 min). Contre-revue du correctif sans problème actionable.
+- Accessibilité ciblée : sept scénarios publics PASS. Tests de recherche alignés sur le bouton visible, le dialogue Recherche globale et sa fermeture actuelle ; consentement préalable explicitement choisi. Trois scénarios hérités de menus/filtres restent à reprendre, aucune certification de la suite exhaustive R8.
+- [Support R9 prêt](R9_RECETTE_UTILISATEURS.md) et roadmap actualisée : essais avec de vraies personnes différés à la demande du propriétaire ; aucun résultat utilisateur inventé. R5/R6 catalogue et couverture exhaustive restent différés. Nouvelle CI à contrôler après publication.
+
 ## 2026-10-13 — GA4 Consent Mode avancé
 
 Sur demande explicite, chargement GA4 en état refusé pour signaux limités sans cookies, puis cookies/événements détaillés après accord. Refus/retrait, expiration et onglets synchronisés ; URL et référents minimisés ; publicité désactivée. Texte FR/EN explicite. Aucune exemption CNIL ni éligibilité à la modélisation prétendue. Voir GA4_ADVANCED_CONSENT_2026-10-13.md. Validation : 345 tests sur main à jour, types application, 12 tests navigateur et vrai SDK Google.

@@ -1,6 +1,16 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "playwright/test";
 
+// These scenarios exercise navigation after the visitor has made a consent choice.
+// The consent dialog itself is covered by analytics-consent.spec.ts.
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("tooltrim-analytics-consent", JSON.stringify({
+      version: 1, choice: "refused", decidedAt: Date.now(), expiresAt: Date.now() + 3600000,
+    }));
+  });
+});
+
 const routes = [
   { path: "/fr/tools", landmark: "main" },
   { path: "/fr/search?q=design", landmark: "main" },
@@ -69,14 +79,15 @@ test("card motion is removed when reduced motion is requested", async ({ page })
 test("global search traps focus and returns it to its trigger", async ({ page }) => {
   await page.goto("/fr/tools");
 
-  const trigger = page.locator(".asv2-search");
+  const trigger = page.getByRole("button", { name: /^Rechercher \(/ });
+  await expect(trigger).toBeVisible();
   await trigger.focus();
   await page.keyboard.press("Enter");
 
-  const dialog = page.getByRole("dialog", { name: "Recherche" });
+  const dialog = page.getByRole("dialog", { name: "Recherche globale", exact: true });
   await expect(dialog).toBeVisible();
   await expect(dialog.getByRole("combobox")).toBeFocused();
-  await expectNoHighImpactViolations(page, ".search-modal-dialog");
+  await expectNoHighImpactViolations(page, ".gs-dialog");
   await page.keyboard.press("Escape");
   await expect(dialog).toHaveCount(0);
   await expect(trigger).toBeFocused();
@@ -86,13 +97,14 @@ test("mobile search has an explicit close action", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/fr/tools");
 
-  const trigger = page.locator(".asv2-search");
+  const trigger = page.getByRole("button", { name: /^Rechercher \(/ });
+  await expect(trigger).toBeVisible();
   await trigger.focus();
   await page.keyboard.press("Enter");
 
-  const dialog = page.getByRole("dialog", { name: "Recherche" });
+  const dialog = page.getByRole("dialog", { name: "Recherche globale", exact: true });
   await expect(dialog).toBeVisible();
-  await dialog.getByRole("button", { name: "Fermer la recherche" }).click();
+  await dialog.getByRole("button", { name: "Fermer", exact: true }).click();
   await expect(dialog).toHaveCount(0);
   await expect(trigger).toBeFocused();
 });

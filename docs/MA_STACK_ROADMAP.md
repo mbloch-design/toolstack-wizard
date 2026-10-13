@@ -1,3 +1,7 @@
+## 13 octobre 2026 — R9 préparé, essais réels différés
+
+Le propriétaire reporte les tests avec de vraies personnes. [Support prêt : tâches, grille de cinq essais et limites de mesure](R9_RECETTE_UTILISATEURS.md). Aucun participant observé ; le critère quatre sur cinq reste ouvert. Les corrections suivantes se limitent aux obstacles techniques reproduits. R5/R6 éditoriaux, couverture exhaustive R8 et migration restent différés.
+
 ## Fil autour de ma stack — 13 octobre 2026
 
 Entrée dans le hero Ma Stack : « Explorer autour de ma stack ». Le fil réutilise l'Explorer visuel existant à partir des outils utilisés (hors wishlist), permet de recentrer une idée et de l'enregistrer dans une collection. Les sources de la visite restent stables pendant l'enregistrement et le retour ; une nouvelle visite depuis Ma Stack utilise la sélection actualisée. Bouton d'exploration individuelle visible dès l'ouverture de l'inspecteur, sous la description.
