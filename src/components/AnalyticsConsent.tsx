@@ -24,6 +24,7 @@ export default function AnalyticsConsent() {
         const reload = stopGoogleAnalytics();
         if (!editingRef.current || !consent) setVisible(!consent);
         if (reload) window.location.reload();
+        else loadGoogleAnalytics(false);
       }
     };
     const open = () => {
@@ -74,6 +75,7 @@ export default function AnalyticsConsent() {
     close();
     // Removing a script does not remove its automatic tracking listeners.
     if (reload) window.location.reload();
+    else loadGoogleAnalytics(false);
   };
 
   return (
@@ -83,8 +85,8 @@ export default function AnalyticsConsent() {
       <div className="analytics-consent__copy">
         <strong id="analytics-consent-title">{t('Mesure d’audience', 'Audience measurement')}</strong>
         <p id="analytics-consent-description">{t(
-          'Avec votre accord, Google Analytics mesure les pages consultées et les interactions. Refuser ne change pas l’accès au site. Vous pouvez modifier votre choix dans « Préférences cookies » en pied de page.',
-          'With your permission, Google Analytics measures page views and interactions. Refusing does not affect access to the site. You can change your choice in “Cookie preferences” in the footer.'
+          'Google Analytics reçoit des signaux de mesure limités sans cookies, même si vous refusez. Avec votre accord, il utilise des cookies et mesure aussi les interactions. Refuser ne change pas l’accès au site. Vous pouvez modifier votre choix dans « Préférences cookies » en pied de page.',
+          'Google Analytics receives limited measurement signals without cookies, even if you refuse. With your permission, it uses cookies and also measures interactions. Refusing does not affect access to the site. You can change your choice in “Cookie preferences” in the footer.'
         )}</p>
         <a href={`${english ? '/en' : '/fr'}/privacy-policy`}>{t('En savoir plus', 'Learn more')}</a>
         {editing && <button type="button" className="analytics-consent__close" onClick={close}>{t('Fermer', 'Close')}</button>}

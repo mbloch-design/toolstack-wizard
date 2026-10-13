@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
   await page.route('https://datafa.st/**', route => route.fulfill({status:200, body:''}));
   await page.route('**/_vercel/insights/**', route => route.fulfill({status:200, body:''}));
   await page.route('https://www.googletagmanager.com/**', route => route.fulfill({
-    status:200, contentType:'application/javascript', body:'document.cookie="_ga=test; Path=/";',
+    status:200, contentType:'application/javascript', body:'',
   }));
   await page.route('https://*.google-analytics.com/**', route => route.abort());
 });
@@ -20,12 +20,14 @@ test('late acceptance, SPA navigation, reload, withdrawal and refusal', async ({
   const accept = page.getByRole('button', {name:'Accepter', exact:true});
   await accept.waitFor();
   await page.waitForTimeout(500); // Reproduce acceptance after the initial route effect.
-  expect(await views(page)).toHaveLength(0);
-  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(0);
+  expect(await views(page)).toHaveLength(1);
+  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(1);
   await accept.click();
   await expect.poll(async () => (await views(page)).length).toBe(1);
   await page.waitForTimeout(400);
   expect(await views(page)).toHaveLength(1);
+  await page.context().addCookies([{name:'_ga',value:'withdrawal-test',url:new URL('/fr',page.url()).origin}]);
+  await expect.poll(async () => (await page.context().cookies()).filter(c=>c.name.startsWith('_ga')).length).toBe(1);
   await page.getByRole('link', {name:'Mentions légales', exact:true}).click();
   await expect.poll(async () => (await views(page)).length).toBe(2);
   await page.reload();
@@ -33,9 +35,9 @@ test('late acceptance, SPA navigation, reload, withdrawal and refusal', async ({
   const prefs = page.getByRole('button', {name:'Préférences cookies', exact:true});
   await prefs.click();
   await page.getByRole('button', {name:'Refuser', exact:true}).click();
-  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(0);
+  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(1);
   await expect.poll(async () => (await page.context().cookies()).filter(c => c.name.startsWith('_ga')).length).toBe(0);
-  expect(await views(page)).toHaveLength(0);
+  await expect.poll(async () => (await views(page)).length).toBe(1);
   await page.reload();
   await expect(page.getByRole('dialog')).toHaveCount(0);
   await prefs.click();
@@ -63,14 +65,17 @@ test('refusal propagates to an already consenting tab', async ({ page, context }
   await page.goto('/fr/privacy-policy');
   await page.getByRole('button', {name:'Accepter', exact:true}).click();
   await expect.poll(async () => (await views(page)).length).toBe(1);
+  const documentStarted = await page.evaluate(() => performance.timeOrigin);
   const other = await context.newPage();
   await other.route('https://www.googletagmanager.com/**', route => route.fulfill({status:200,body:''}));
   await other.route('https://datafa.st/**', route => route.fulfill({status:200,body:''}));
   await other.goto('/fr/privacy-policy');
   await other.getByRole('button', {name:'Préférences cookies', exact:true}).click();
   await other.getByRole('button', {name:'Refuser', exact:true}).click();
-  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(0);
-  await expect(other.locator('script[data-tooltrim-ga]')).toHaveCount(0);
+  await expect.poll(() => page.evaluate(() => performance.timeOrigin).catch(() => documentStarted)).not.toBe(documentStarted);
+  await expect.poll(() => page.evaluate(() => window.__tooltrimAnalyticsConsent).catch(() => undefined)).toBe(false);
+  await expect.poll(async () => (await views(page)).length).toBe(1);
+  await expect(other.locator('script[data-tooltrim-ga]')).toHaveCount(1);
 });
 
 test('expired or legacy decisions request consent again', async ({ page }) => {
@@ -78,7 +83,7 @@ test('expired or legacy decisions request consent again', async ({ page }) => {
     await page.addInitScript(value => localStorage.setItem('tooltrim-analytics-consent', value), decision);
     await page.goto('/fr/privacy-policy');
     await expect(page.getByRole('button', {name:'Accepter', exact:true})).toBeVisible();
-    await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(0);
+    await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(1);
   }
 });
 
@@ -121,9 +126,9 @@ test('withdrawal survives reload when the stored acceptance is readable but writ
   await expect.poll(async () => (await views(page)).length).toBe(1);
   await page.getByRole('button', {name:'Préférences cookies', exact:true}).click();
   await page.getByRole('button', {name:'Refuser', exact:true}).click();
-  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(0);
+  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(1);
   await page.reload();
-  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(0);
+  await expect.poll(() => page.evaluate(() => window.__tooltrimAnalyticsConsent).catch(() => undefined)).toBe(false);
   await expect(page.getByRole('dialog')).toHaveCount(0);
 });
 
@@ -137,7 +142,7 @@ test('a newer refusal in another tab supersedes session acceptance', async ({pag
   await other.route('https://datafa.st/**', route=>route.fulfill({status:200,body:''}));
   await other.goto('/fr/privacy-policy');
   await other.getByRole('button', {name:'Refuser',exact:true}).click();
-  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(0);
+  await expect.poll(() => page.evaluate(() => window.__tooltrimAnalyticsConsent).catch(() => undefined)).toBe(false);
 });
 
 test('tab fallback expiry is enforced when storage remains blocked', async ({page}) => {
@@ -152,5 +157,5 @@ test('tab fallback expiry is enforced when storage remains blocked', async ({pag
     window.dispatchEvent(new Event('focus'));
   });
   await expect(page.getByRole('button',{name:'Accepter',exact:true})).toBeVisible();
-  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(0);
+  await expect(page.locator('script[data-tooltrim-ga]')).toHaveCount(1);
 });

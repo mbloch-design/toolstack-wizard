@@ -1,3 +1,7 @@
+## 2026-10-13 — GA4 Consent Mode avancé
+
+Sur demande explicite, chargement GA4 en état refusé pour signaux limités sans cookies, puis cookies/événements détaillés après accord. Refus/retrait, expiration et onglets synchronisés ; URL et référents minimisés ; publicité désactivée. Texte FR/EN explicite. Aucune exemption CNIL ni éligibilité à la modélisation prétendue. Voir GA4_ADVANCED_CONSENT_2026-10-13.md. Validation : 345 tests sur main à jour, types application, 12 tests navigateur et vrai SDK Google.
+
 ## 13 octobre 2026 — Captures de recette portables en CI
 
 - La première CI du fil échouait sur les chemins de capture macOS `/private/tmp`, indisponibles sur Linux. Les trois suites Ma Stack utilisent désormais `test.info().outputPath()` ; captures conservées dans les artefacts Playwright, sans modifier ni affaiblir les assertions.

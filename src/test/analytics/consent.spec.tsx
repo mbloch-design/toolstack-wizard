@@ -25,6 +25,7 @@ beforeEach(async () => {
     removeItem: (k: string) => values.delete(k), clear: () => values.clear(),
     key: (i: number) => [...values.keys()][i] ?? null, get length() { return values.size; },
   }});
+  window.history.replaceState({}, '', '/');
   vi.useFakeTimers();
   commands.length = 0;
   window.localStorage.clear();
@@ -34,6 +35,28 @@ beforeEach(async () => {
 });
 afterEach(() => { cleanup(); vi.useRealTimers(); });
 describe('GA4 consent lifecycle', () => {
+  it('starts with denied storage before config and strips URL parameters from limited page views', () => {
+    window.history.replaceState({}, '', '/?email=private@example.com#secret');
+    mount();
+    loadTag();
+    const defaults = commands.findIndex(c => c[0] === 'consent' && c[1] === 'default');
+    expect(defaults).toBeGreaterThanOrEqual(0);
+    const config = commands.findIndex(c => c[0] === 'config');
+    expect(defaults).toBeLessThan(config);
+    const safeDefaults = commands.slice(0, config).find(c => c[0] === 'set' && typeof c[1] === 'object');
+    expect(safeDefaults?.[1]).toMatchObject({page_location:'http://localhost:3000/',page_title:'/'});
+    expect(views()[0][2]).toMatchObject({page_location:'http://localhost:3000/'});
+    expect(JSON.stringify(views())).not.toContain('private@example.com');
+  });
+  it('gates detailed interactions even after the limited tag is ready', async () => {
+    mount(); loadTag();
+    const {trackEvent} = await import('@/lib/analytics');
+    trackEvent('select_tool', {tool_id:'not-consented'});
+    expect(commands.some(c => c[1] === 'select_tool')).toBe(false);
+    fireEvent.click(screen.getByRole('button', {name:'Accepter'}));
+    trackEvent('select_tool', {tool_id:'consented'});
+    expect(commands.filter(c => c[1] === 'select_tool')).toHaveLength(1);
+  });
   it('hides the initial prompt when another tab accepts', () => {
     mount();
     window.localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({version:1, choice:'accepted', expiresAt:Date.now()+86400000}));
@@ -44,7 +67,7 @@ describe('GA4 consent lifecycle', () => {
     window.localStorage.setItem('tooltrim-analytics-consent', 'accepted');
     mount();
     expect(screen.getByRole('button', {name:'Accepter'})).toBeInTheDocument();
-    expect(document.querySelector('script[data-tooltrim-ga]')).toBeNull();
+    expect(document.querySelector('script[data-tooltrim-ga]')).not.toBeNull();
   });
   it('asks again when a dated choice has expired', () => {
     window.localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({version:1, choice:'refused', expiresAt:Date.now()-1}));
@@ -61,9 +84,9 @@ describe('GA4 consent lifecycle', () => {
   it('reports the current page once when consent follows the initial route effect', () => {
     mount();
     act(() => { vi.advanceTimersByTime(1000); });
-    expect(views()).toHaveLength(0);
-    fireEvent.click(screen.getByRole('button', {name:'Accepter'}));
     loadTag();
+    expect(views()).toHaveLength(1);
+    fireEvent.click(screen.getByRole('button', {name:'Accepter'}));
     expect(views()).toHaveLength(1);
     act(() => { vi.advanceTimersByTime(1000); });
     expect(views()).toHaveLength(1);
@@ -79,11 +102,14 @@ describe('GA4 consent lifecycle', () => {
     expect(config).toBeGreaterThanOrEqual(0);
     expect(view).toBeGreaterThan(config);
   });
-  it('keeps GA4 unloaded after refusal', () => {
+  it('keeps limited page measurement available after refusal', () => {
     mount();
     fireEvent.click(screen.getByRole('button', {name:'Refuser'}));
+    loadTag();
     act(() => { vi.advanceTimersByTime(1000); });
-    expect(document.querySelector('script[data-tooltrim-ga]')).toBeNull();
-    expect(views()).toHaveLength(0);
+    expect(document.querySelector('script[data-tooltrim-ga]')).not.toBeNull();
+    expect(views()).toHaveLength(1);
+    expect(window.__tooltrimAnalyticsConsent).toBe(false);
+    expect(commands.some(c => c[0] === 'consent' && (c[2] as Record<string, string>).analytics_storage === 'granted')).toBe(false);
   });
 });

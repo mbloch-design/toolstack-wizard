@@ -1,4 +1,4 @@
-/** GA4 is configured before any events, and loaded only with consent. */
+/** GA4 is configured before any events, and loaded with denied storage until explicit consent (advanced Consent Mode). */
 export const GA_ID = 'G-DL5MJKQ3JE';
 declare global {
   interface Window {
@@ -19,33 +19,54 @@ export function trackEvent(name: string, params: Record<string, unknown> = {}): 
 }
 
 export function trackPageView(path: string, title: string): void {
-  if (!window.__tooltrimAnalyticsConsent || !ready || !window.gtag || lastPagePath === path) return;
-  trackEvent('page_view', {
-    page_path: path, page_title: title, page_location: window.location.href,
-    page_referrer: previousPageLocation ?? document.referrer,
+  if (!ready || !window.gtag || lastPagePath === path) return;
+  const granted = window.__tooltrimAnalyticsConsent;
+  const location = granted ? window.location.href : window.location.origin + window.location.pathname;
+  let referrer = previousPageLocation ?? document.referrer;
+  if (!granted && referrer) {
+    try { referrer = new URL(referrer).origin; } catch { referrer = ''; }
+  }
+  window.gtag('set', {page_location: location, page_referrer: referrer, page_title: granted ? title : window.location.pathname});
+  window.gtag('event', 'page_view', {
+    page_path: granted ? path : window.location.pathname,
+    page_title: granted ? title : window.location.pathname,
+    page_location: location, page_referrer: referrer,
   });
   lastPagePath = path;
-  previousPageLocation = window.location.href;
+  previousPageLocation = location;
 }
 
-export function loadGoogleAnalytics(): void {
-  if (document.querySelector(`script[data-tooltrim-ga="${GA_ID}"]`)) return;
-  window.__tooltrimAnalyticsConsent = true;
+export function loadGoogleAnalytics(granted = true): void {
+  const existing = document.querySelector(`script[data-tooltrim-ga="${GA_ID}"]`);
+  const changed = window.__tooltrimAnalyticsConsent !== granted;
+  window.__tooltrimAnalyticsConsent = granted;
   window[`ga-disable-${GA_ID}`] = false;
   window.dataLayer ??= [];
   window.gtag ??= (...args: unknown[]) => { window.dataLayer!.push(args); };
-  window.gtag('consent', 'update', {
-    analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  if (!existing) window.gtag('consent', 'default', {
+    analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  });
+  if (!existing || changed) window.gtag('consent', 'update', {
+    analytics_storage: granted ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+  });
+  if (existing) return;
+  window.gtag('set', 'ads_data_redaction', true);
+  window.gtag('set', 'url_passthrough', false);
+  // Also minimise fields used by Google's automatically generated denied pings.
+  window.gtag('set', {
+    page_location: window.location.origin + window.location.pathname,
+    page_title: window.location.pathname,
+    page_referrer: (() => { try { return new URL(document.referrer).origin; } catch { return ''; } })(),
   });
   // Queue configuration before loading the asynchronous tag. Events wait for load.
   window.gtag('js', new Date());
-  window.gtag('config', GA_ID, {send_page_view: false});
+  window.gtag('config', GA_ID, {send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false});
   const script = document.createElement('script');
   script.async = true;
   script.dataset.tooltrimGa = GA_ID;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
   script.addEventListener('load', () => {
-    if (!window.__tooltrimAnalyticsConsent) return;
+    if (window[`ga-disable-${GA_ID}`]) return;
     ready = true;
     // Measure the page visible now, including acceptance after the router effect.
     trackPageView(window.location.pathname + window.location.search, document.title);
@@ -60,6 +81,8 @@ export function loadGoogleAnalytics(): void {
 /** Returns whether a reload is needed to remove Google's automatic listeners. */
 export function stopGoogleAnalytics(): boolean {
   const loaded = !!document.querySelector('script[data-tooltrim-ga]');
+  const wasGranted = !!window.__tooltrimAnalyticsConsent;
+  if (!wasGranted && loaded) return false;
   window.__tooltrimAnalyticsConsent = false;
   window[`ga-disable-${GA_ID}`] = true;
   ready = false;
@@ -78,5 +101,5 @@ export function stopGoogleAnalytics(): boolean {
       document.cookie = `${name}=; Max-Age=0; Path=/; Domain=${domains.slice(i).join('.')}`;
     }
   }
-  return loaded;
+  return loaded && wasGranted;
 }
