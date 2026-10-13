@@ -1,3 +1,9 @@
+## Fil autour de ma stack — 13 octobre 2026
+
+Entrée dans le hero Ma Stack : « Explorer autour de ma stack ». Le fil réutilise l'Explorer visuel existant à partir des outils utilisés (hors wishlist), permet de recentrer une idée et de l'enregistrer dans une collection. Les sources de la visite restent stables pendant l'enregistrement et le retour ; une nouvelle visite depuis Ma Stack utilise la sélection actualisée. Bouton d'exploration individuelle visible dès l'ouverture de l'inspecteur, sous la description.
+
+**R5/R6 éditoriaux restent différés.** Ce lot active un parcours produit ; il ne certifie pas la pertinence de toutes les relations catalogue et ne publie pas les corrections locales des quatorze fiches. Prochaine priorité : essais utilisateurs du parcours, puis obstacles observés. Reprendre le catalogue après révision du processus (impact, automatisation, lots cohérents et budget convenu).
+
 ## Parcours produit — 13 octobre 2026
 
 Obstacle reproduit : l'inspecteur Ma Stack ne donnait pas accès à Explorer. Lien contextuel rétabli dans la feuille existante ; retour à la même fiche inspectée. La fermeture après retour perdait aussi le focus clavier : restauration à la carte après fermeture effective de la feuille, sans styles nouveaux. Le test complet couvre ajout, collection, retour, fermeture, focus et persistance en FR/EN à 390/1440 px. Validation finale consignée dans le changelog. R5/R6 éditoriaux restent différés.

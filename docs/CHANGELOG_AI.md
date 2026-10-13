@@ -3,13 +3,14 @@
 - Entrée « Explorer autour de ma stack » dans le hero, pour les outils utilisés ; activation du parcours stack existant, cartes visuelles, exploration et enregistrement dans les collections.
 - Sources conservées dans l'historique pendant la visite : enregistrer une idée ne la supprime plus du fil ; filtres, recentrage et retour gardent le contexte. IDs/slugs résolus et dédoublonnés ; wishlist exclue des sources.
 - Lien d'exploration d'un outil remonté sous la description de l'inspecteur, visible dès l'ouverture. Stack vide ou composée seulement d'idées à essayer : retour explicite à Ma Stack, aucun fil fictif.
-- Deux défauts reproduits avant correction (entrée absente, carte supprimée après ajout). Contre-revue favorable du changement ; validations finales et publication réalisées sur une branche issue du main distant, sans lots catalogue R6 différés.
+- Validation de la livraison issue de main : 332 tests app, 132 Ma Stack, 29 SEO, types et build réussis ; 26 parcours FR/EN sur build production local réussis. Nouveaux parcours ajoutés à la CI. Fixtures de consentement alignées sur le format déjà publié ; position du bouton vérifiée après animation d’ouverture, sans scroll.
+- Deux défauts reproduits avant correction (entrée absente, carte supprimée après ajout). Contre-revue favorable du changement ; livraison préparée sur une branche issue du main distant, sans lots catalogue R6 différés.
 
 ## 13 octobre 2026 — Parcours Ma Stack → Explorer → ajout → retour
 
 - Absence d'accès Explorer depuis l'inspecteur reproduite en navigateur ; lien contextuel ajouté dans StackToolSheet, avec les styles existants et l'état de retour prévu par Explorer. Aucun nouveau composant ni CSS.
 - Perte de focus après retour et fermeture reproduite FR/EN ; carte d'origine mémorisée, focus restauré après fermeture effective de la feuille. Accès fiche, site officiel et retrait conservés.
-- Quatre parcours complets FR/EN à 390/1440 px : ajout, création de collection, retour au même inspecteur, fermeture/focus et rechargement. Avec les quinze parcours Ma Stack existants : **19/19 production locale en 30,5 s**. 385 tests applicatifs, 144 Ma Stack, types et build final réussis. Contre-revue du lien sans défaut produit ; sondes corrigées pour conserver l'identité de la carte et contrôler collection/focus.
+- Quatre parcours complets FR/EN à 390/1440 px : ajout, création de collection, retour au même inspecteur, fermeture/focus et rechargement. Avec les quinze parcours Ma Stack existants : **19/19 production locale en 30,5 s sur la branche de travail initiale**. 385 tests applicatifs, 144 Ma Stack, types et build final réussis. Contre-revue du lien sans défaut produit ; sondes corrigées pour conserver l'identité de la carte et contrôler collection/focus.
 - Captures locales : `/private/tmp/stack-explorer-inspector-fr-390.png`, `/private/tmp/stack-explorer-inspector-en-1440.png`. [Protocole de cinq essais dans la roadmap existante](MA_STACK_ROADMAP.md#protocole-court-pour-cinq-essais-utilisateurs). Aucun essai utilisateur réel revendiqué, aucune certification de pertinence éditoriale des suggestions.
 - Catalogue, tarifs source et fichiers publics inchangés ; R5/R6 éditoriaux restent différés. Correctif local pour revue, non poussé.
 

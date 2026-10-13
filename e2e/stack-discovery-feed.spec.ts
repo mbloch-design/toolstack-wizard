@@ -4,7 +4,7 @@ const seeds=['figma','notion','slack'];
 test.beforeEach(async({page})=>{
  await page.route('**/*supabase.co/**',route=>route.abort());
  await page.addInitScript(({key,seeds})=>{
-  localStorage.setItem('tooltrim-analytics-consent','refused');
+  localStorage.setItem('tooltrim-analytics-consent',JSON.stringify({version:1,choice:'refused',decidedAt:Date.now(),expiresAt:Date.now()+3600000}));
   if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify({version:3,needs:[],pinnedToolSlugs:seeds,toolEntries:seeds.map(toolSlug=>({toolSlug,needIds:[],intent:'stack',addedAt:'2026-10-13T00:00:00Z',assignmentMode:'pending'}))}));
  },{key,seeds});
 });
@@ -22,7 +22,7 @@ for(const lang of ['fr','en'])for(const width of [390,1440]){
   const first=page.locator('[data-tool-slug]').first();const slug=await first.getAttribute('data-tool-slug');
   const card=page.locator(`[data-tool-slug="${slug}"]`);
   await card.getByRole('button').click();
-  const dialog=page.getByRole('dialog');await expect(dialog).toBeVisible();
+  const dialog=page.locator('.stack-save-dialog');await expect(dialog).toBeVisible();
   const choice=dialog.getByRole('checkbox').first();if(await choice.getAttribute('aria-checked')!=='true')await choice.click();
   await dialog.getByRole('button',{name:lang==='fr'?'Terminer':'Done',exact:true}).click();
   await expect(dialog).toHaveCount(0);await expect(card).toBeVisible();await expect(card.getByRole('button')).toBeDisabled();
@@ -41,7 +41,7 @@ test('direct stack feed keeps a newly saved idea instead of changing its source'
  await page.goto('/fr/explorer?type=stack&source=ma-stack');
  const card=page.locator('[data-tool-slug]').first();await expect(card).toBeVisible();
  const slug=await card.getAttribute('data-tool-slug');await card.getByRole('button').click();
- const dialog=page.getByRole('dialog');const choice=dialog.getByRole('checkbox').first();if(await choice.getAttribute('aria-checked')!=='true')await choice.click();
+ const dialog=page.locator('.stack-save-dialog');const choice=dialog.getByRole('checkbox').first();if(await choice.getAttribute('aria-checked')!=='true')await choice.click();
  await dialog.getByRole('button',{name:'Terminer',exact:true}).click();
  await expect(page.locator(`[data-tool-slug="${slug}"]`)).toBeVisible();
 });
@@ -51,5 +51,5 @@ for (const intent of ['empty','wishlist']) test(`${intent}: no misleading whole-
  await page.goto('/fr/ma-stack');await expect(page.getByRole('link',{name:'Explorer autour de ma stack',exact:true})).toHaveCount(0);
  await page.goto('/fr/explorer?type=stack&source=ma-stack');
  await expect(page.getByRole('heading',{name:'Ajoutez un outil pour explorer',exact:true})).toBeVisible();
- await page.getByRole('link',{name:'Ma stack',exact:true}).click();await expect(page).toHaveURL(/\/fr\/ma-stack$/);
+ await page.locator('main').getByRole('link',{name:'Ma stack',exact:true}).click();await expect(page).toHaveURL(/\/fr\/ma-stack$/);
 });

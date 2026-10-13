@@ -5,7 +5,7 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   await page.setViewportSize({width, height:1000});
   await page.route('**/*supabase.co/**', route => route.abort());
   await page.addInitScript(({key}) => {
-   localStorage.setItem('tooltrim-analytics-consent','refused');
+   localStorage.setItem('tooltrim-analytics-consent',JSON.stringify({version:1,choice:'refused',decidedAt:Date.now(),expiresAt:Date.now()+3600000}));
    if (!localStorage.getItem(key)) localStorage.setItem(key,JSON.stringify({version:3,needs:[],pinnedToolSlugs:['figma'],toolEntries:[{toolSlug:'figma',needIds:[],intent:'stack',addedAt:'2026-10-13T00:00:00Z',assignmentMode:'pending'}]}));
   },{key});
   const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
@@ -13,8 +13,8 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   const sheet=page.locator('.ms-tool-sheet');await expect(sheet).toBeVisible();
   const explore=sheet.getByRole('link',{name:lang==='fr'?'Explorer autour de Figma':'Explore around Figma',exact:true});
   await expect(explore).toBeVisible();
-  const bounds=await explore.boundingBox();expect(bounds).not.toBeNull();
-  expect(bounds!.y).toBeGreaterThanOrEqual(0);expect(bounds!.y+bounds!.height).toBeLessThanOrEqual(1000);
+  // The sheet slides in: check its settled viewport position without scrolling.
+  await expect.poll(async()=>{const bounds=await explore.boundingBox();return !!bounds&&bounds.y>=0&&bounds.y+bounds.height<=1000;}).toBe(true);
   await page.screenshot({path:`/private/tmp/stack-explorer-opening-${lang}-${width}.png`});
   await explore.click();
   await expect(page).toHaveURL(new RegExp(`/${lang}/explorer/around/figma`));
@@ -22,7 +22,7 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   await expect(card).toBeVisible();
   const added=await card.getAttribute('data-tool-slug');expect(added).toBeTruthy();
   await card.getByRole('button').click();
-  const dialog=page.getByRole('dialog');await expect(dialog).toBeVisible();
+  const dialog=page.locator('.stack-save-dialog');await expect(dialog).toBeVisible();
   await dialog.getByRole('button',{name:lang==='fr'?'Créer une nouvelle collection':'Create a new collection',exact:true}).click();
   await dialog.getByRole('textbox').fill('Client');
   await dialog.getByRole('button',{name:lang==='fr'?'Créer':'Create',exact:true}).click();
