@@ -1,5 +1,38 @@
 import { describe, expect, it } from "vitest";
-import { monthlyFromChoice } from "@/lib/stackCost";
+import { monthlyFromChoice, toolMonthlyCost } from "@/lib/stackCost";
+import type { ToolSummary } from "@/hooks/useSupabaseData";
+import toolsIndex from "@/data/tools_index.json";
+
+const tool = (slug: string, extra: Partial<ToolSummary> = {}) => ({
+  id: slug, slug, name: slug, categoryId: "ia", pricing: { free: "", paid: "" }, ...extra,
+} as ToolSummary);
+
+describe("attested prices shared with tool pages", () => {
+  it.each(["claude", "perplexity"])("keeps %s free until declared paid, then uses its attested monthly price", (slug) => {
+    const item = tool(slug);
+    expect(toolMonthlyCost(item, () => false, "en")).toEqual({ kind: "freemium-free" });
+    expect(toolMonthlyCost(item, () => true, "en")).toEqual({ kind: "paid", monthly: 20, currency: "USD", declared: true, source: "catalog" });
+  });
+  it("resolves the actual Claude and Perplexity catalogue records despite their missing plan grids", () => {
+    for (const slug of ["claude", "perplexity"]) {
+      const item = toolsIndex.find((item) => item.slug === slug) as ToolSummary;
+      expect(item).toBeTruthy();
+      expect(toolMonthlyCost(item, () => false, "en")).toEqual({ kind: "freemium-free" });
+      expect(toolMonthlyCost(item, () => true, "en")).toMatchObject({ kind: "paid", monthly: 20, currency: "USD" });
+    }
+  });
+  it("prefers the canonical annual plan over the older monthly fallback", () => {
+    const item = tool("perplexity", { pricing: { free: "Free", paid: "Pro" }, nativePrices: [{ amount: 240, currency: "EUR", period: "annual" }] });
+    expect(toolMonthlyCost(item, () => true, "fr")).toEqual({ kind: "paid", monthly: 20, currency: "EUR", declared: true, source: "catalog" });
+  });
+  it("never replaces an undisclosed price or a one-time plan with the older fallback", () => {
+    expect(toolMonthlyCost(tool("claude", { priceUndisclosed: true }), () => true, "en")).toEqual({ kind: "unknown" });
+    expect(toolMonthlyCost(tool("claude", { nativePrices: [{ amount: 100, currency: "USD", period: "once" }] }), () => true, "en")).toEqual({ kind: "unknown" });
+  });
+  it("does not infer an amount from editorial pricing or a normalized euro amount", () => {
+    expect(toolMonthlyCost(tool("not-in-attested-prices", { defaultMonthlyPrice: 20, pricing: { free: "", paid: "$20/month" } }), () => true, "en")).toEqual({ kind: "unknown" });
+  });
+});
 
 describe("monthlyFromChoice", () => {
   it("keeps a monthly amount as is", () => {
