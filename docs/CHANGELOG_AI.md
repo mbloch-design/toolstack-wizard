@@ -1,3 +1,8 @@
+## 14 octobre 2026 — Tokens du nouveau visuel de soumission
+
+- Les 12 rayons littéraux ajoutés par le hero de soumission bloquaient le contrôle des tokens. Remplacement par les variables existantes, sans modifier le seuil de dette ni le design.
+- Validation : contrôle des tokens PASS (223 rayons, stable) ; captures Chromium strictement identiques avant/après sur /fr/submit et /en/submit à 390 et 1440 px, animations désactivées pour la comparaison. Le build et la chaîne complète sont relancés par la CI de publication.
+
 ## 14 octobre 2026 — Hero /submit : promesse, visuel produit, specs
 
 - Promesse réécrite pour tous les prospects (pas seulement Product Hunt) : « Get {outil} found by people choosing their next tool. », sous-titre « We write an independent review… You don't write a word. », CTA « Get {outil} reviewed · $29 ». Le mot « review » remplace « listing ».
