@@ -1,7 +1,7 @@
 type ToolsIndexEntry = { name?: string; slug?: string; websiteUrl?: string };
 export type ProofTool = { name: string; slug: string; websiteUrl?: string };
 
-export const PROOF_TOOL_SLUGS = ["notion", "figma", "slack", "canva", "hubspot", "airtable", "zapier", "linear"];
+export const PROOF_TOOL_SLUGS = ["notion", "commutebar", "tally", "raycast", "figma", "loyzia", "posthog", "dub", "n8n", "plausible", "granola", "newbi", "supabase", "folk", "resend", "warp"];
 
 /** Keeps the curated order and silently drops any slug no longer in the catalogue. */
 export function pickProofTools(index: ToolsIndexEntry[], slugs: string[] = PROOF_TOOL_SLUGS): ProofTool[] {

@@ -1,3 +1,11 @@
+## 14 octobre 2026 — /submit : refonte complète section par section
+
+- Logos : 16 outils réels du catalogue (4 connus + 12 indépendants, logos vérifiés), défilement continu en pause au survol, figé en reduced-motion. Titre « {outil} joins 1,200+ tools compared on ToolTrim. »
+- Formules : 3 offres (Standard 0 $ avec badge, Priority 29 $ recommandée au centre, Featured dès 99 $ sur contact), structure cumulative. Featured promet des emplacements home et stacks signalés sponsorisés : à créer avant la première vente (TODO).
+- Bloc note : « 5 criteria. », carte CommuteBar (notes et citation sourcée recopiées de la fiche, 3.8 vérifié en prod), lien en nouvel onglet, bandeau bleuté pleine largeur.
+- Frise « Live in 5 days » à la place des étapes et des garanties redondantes ; FAQ réduite à 6 questions dont « What if my score is low? » ; conclusion personnalisée.
+- Formulaire : vocabulaire « Priority review » partout, récap avant paiement, autocomplétion. Parcours gratuit : comparaison et upgrade au moment du badge, étapes numérotées, placeholder et bouton désactivé lisibles, erreur sous le champ, écran de succès avec upgrade (nouvel identifiant de demande, donc deux demandes possibles pour un même outil).
+- Tests : libellés mis à jour (aucune logique modifiée). Vérifié desktop 1440, mobile 375, mode sombre, FR/EN, avec et sans paramètre ; appels API interceptés pendant les essais du tunnel. Limite connue : en local le formulaire appelle les API de prod (TODO).
 ## 14 octobre 2026 — Tokens du nouveau visuel de soumission
 
 - Les 12 rayons littéraux ajoutés par le hero de soumission bloquaient le contrôle des tokens. Remplacement par les variables existantes, sans modifier le seuil de dette ni le design.

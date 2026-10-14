@@ -1,10 +1,11 @@
+import type React from "react";
 import { FormEvent, MouseEvent, useEffect, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
-import { ArrowRight, Check, Clock, Copy, CreditCard, FileText, Gauge, Globe, Link2, Mail, PenLine, Scale, ShieldCheck, StarSolid, User } from "@/lib/icons";
+import { ArrowRight, ArrowUpRight, Check, Clock, Copy, CreditCard, FileText, Gauge, Globe, Link2, Mail, Minus, PenLine, Scale, ShieldCheck, StarSolid, User } from "@/lib/icons";
 import { cleanupSeo, SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
 import { normalizeSiteUrl, type NormalizeUrlFailure } from "@/lib/normalizeSiteUrl";
@@ -359,11 +360,20 @@ const SubmitToolPage = () => {
   if (status === "success") return (
     <div className="stp-page"><section className="sp-success">
       <span className="tt-page-hero-eyebrow">{t("Demande reçue", "Request received")}</span>
-      <h1>{paid ? t("Ta publication prioritaire est lancée.", "Your priority publication is underway.") : t("Ton outil rejoint la file éditoriale.", "Your tool is in the editorial queue.")}</h1>
+      <h1>{paid ? t("Ta fiche prioritaire est lancée.", "Your priority review is underway.") : t(`${submission.toolName || "Ton outil"} est dans la file de revue standard.`, `${submission.toolName || "Your tool"} is in the standard review queue.`)}</h1>
       <p>{paid
         ? t("Ton outil sera publié sous cinq jours ouvrés, sans badge requis. Le paiement n'influence ni le verdict ni le classement.", "Your tool will be published within five business days, with no badge required. Payment does not influence the verdict or ranking.")
-        : t("Le badge est vérifié. Nous allons évaluer l'intérêt de l'outil pour les lecteurs avant toute publication.", "The badge is verified. We'll assess the tool's value for readers before any publication.")}</p>
-      <Link to={`${prefix}/tools`} className="tt-button-primary">{t("Explorer les outils →", "Explore tools →")}</Link>
+        : t("Pas de délai fixe : nous évaluons les outils au fil de l’eau et ne publions que ceux que nous retenons. Garde le badge sur ton site tant que ta demande est en attente.", "No set timeline: we review tools as we can and publish only the ones we select. Keep the badge on your site while your request is pending.")}</p>
+      {!paid && <aside className="sp-success-upsell" aria-labelledby="submit-success-upsell">
+        <h2 id="submit-success-upsell">{t("Tu veux être en ligne sous 5 jours ouvrés ?", "Want it live within 5 business days?")}</h2>
+        <ul>
+          <li><Link2 size={16} /><strong>{t("Lien dofollow depuis un site DR 43", "Dofollow link from a DR 43 site")}</strong></li>
+          <li><Check size={16} />{t("Publication garantie, sans attente", "Publication guaranteed, no queue")}</li>
+          <li><Check size={16} />{t("Tu vérifies les faits avant publication", "You check the facts before it goes live")}</li>
+        </ul>
+        <button type="button" className="tt-button-primary" onClick={() => { setSubmission((current) => ({ ...current, submissionId: "", paymentReference: "", checkoutId: "", attemptPayload: "", verificationToken: "", badgeUrl: "" })); submissionAcceptedRef.current = false; setStatus("idle"); choosePlan("paid", "success_upsell"); }}>{t(`Passer à la fiche prioritaire · ${price}`, `Switch to the priority review · ${price}`)}<ArrowRight size={16} /></button>
+      </aside>}
+      <Link to={`${prefix}/tool/commutebar`} className="sp-success-link">{t("Voir une fiche publiée", "See a published review")}<ArrowRight size={15} /></Link>
     </section></div>
   );
 
@@ -385,8 +395,8 @@ const SubmitToolPage = () => {
         <div className="sp-pitch-copy">
           <span className="tt-page-hero-eyebrow">{inviteName ? t(`Pour l’équipe ${inviteName}`, `For the ${inviteName} team`) : t("Pour les créateurs d’outils SaaS", "For SaaS builders")}</span>
           <h1>{lang === "fr"
-            ? <>Fais découvrir {inviteName || "ton outil"} <span className="tt-title-muted">aux gens qui choisissent leur prochain outil.</span></>
-            : <>Get {inviteName || "your tool"} found <span className="tt-title-muted">by people choosing their next tool.</span></>}</h1>
+            ? <>Fais découvrir {inviteName || "ton produit"} <span className="tt-title-muted">aux gens qui choisissent leur prochain outil.</span></>
+            : <>Get {inviteName || "your product"} found <span className="tt-title-muted">by people choosing their next tool.</span></>}</h1>
           <p className="sp-pitch-lead">{t("On rédige une fiche indépendante, publiée sous 5 jours ouvrés, avec un lien vers ton site. Tu n’as rien à écrire.", "We write an independent review, publish it within 5 business days and link it to your site. You don’t write a word.")}</p>
           <div className="sp-hero-actions">
             <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "hero")}>{inviteName ? t(`Faire évaluer ${inviteName} · ${price}`, `Get ${inviteName} reviewed · ${price}`) : t(`Faire évaluer mon outil · ${price}`, `Get my tool reviewed · ${price}`)}<ArrowRight size={16} /></button>
@@ -419,66 +429,98 @@ const SubmitToolPage = () => {
         <div><span className="sp-spec-icon"><PenLine size={20} /></span><dt>{t("0 mot", "0 words")}</dt><dd>{t("À écrire de ton côté : on rédige tout", "For you to write: we draft everything")}</dd></div>
       </dl>
       <div className="sp-proof-row">
-        <p className="sp-proof-row-label">{t("Ta fiche rejoint celles de", "Your listing sits alongside")}</p>
-        <ul className="sp-proof-logos">
-          {PROOF_TOOLS.map((tool) => <li key={tool.slug}><Link to={`${prefix}/tool/${tool.slug}`} className="sp-proof-logo"><ToolLogo tool={tool} size={28} /><span>{tool.name}</span></Link></li>)}
-        </ul>
+        <p className="sp-proof-row-title">{inviteName ? t(`${inviteName} rejoint plus de 1 200 outils comparés sur ToolTrim.`, `${inviteName} joins 1,200+ tools compared on ToolTrim.`) : t("Ton outil rejoint plus de 1 200 outils comparés sur ToolTrim.", "Your tool joins 1,200+ tools compared on ToolTrim.")}</p>
+        <div className="sp-marquee">
+          {[0, 1].map((copy) => (
+            <ul key={copy} className="sp-marquee-track" aria-hidden={copy === 1 || undefined}>
+              {PROOF_TOOLS.map((tool) => <li key={tool.slug}><Link to={`${prefix}/tool/${tool.slug}`} className="sp-proof-logo" tabIndex={copy === 1 ? -1 : undefined}><ToolLogo tool={tool} size={28} /><span>{tool.name}</span></Link></li>)}
+            </ul>
+          ))}
+        </div>
       </div>
     </header>}
 
     <div className="sp-page-body">
       {!paymentRecovery && <><section className="sp-overview" aria-labelledby="submit-plans-title"><div className="sp-overview-inner">
-        <div className="sp-overview-heading"><span className="tt-page-hero-eyebrow">{t("Deux formules, une même indépendance", "Two options, the same independence")}</span><h2 id="submit-plans-title">{lang === "fr" ? <>Choisis ta formule. <span className="tt-title-muted">L’évaluation reste indépendante.</span></> : <>Choose your option. <span className="tt-title-muted">The assessment stays independent.</span></>}</h2><p>{t("Chaque fiche publiée reçoit le même traitement éditorial et une note ToolTrim expliquée. La formule à 29 $ ajoute un lien dofollow et garantit le délai de publication.", "Every published listing gets the same editorial treatment and an explained ToolTrim score. The $29 option adds a dofollow link and guarantees the publication timeline.")}</p></div>
+        <div className="sp-overview-heading"><h2 id="submit-plans-title">{lang === "fr" ? <>Choisis ton chemin. <span className="tt-title-muted">Le verdict reste indépendant.</span></> : <>Pick your path. <span className="tt-title-muted">The verdict stays independent.</span></>}</h2><p>{t("Payer t’achète la rapidité, la certitude et un lien dofollow. Jamais une meilleure note.", "Paying buys speed, certainty and a dofollow link. Never a better score.")}</p></div>
         <div className="sp-plan-grid">
-          <article className="sp-plan-card sp-plan-card--highlight">
-            <span className="sp-plan-tag"><Clock size={14} />{t("LE PLUS DIRECT", "MOST DIRECT")}</span>
-            <div className="sp-plan-card-head"><div><span className="sp-plan-price">{price}</span><span className="sp-plan-period">{t("une seule fois", "just once")}</span></div><span className="sp-plan-name">{t("Fiche publiée sous 5 jours", "Listing published within 5 days")}</span></div>
-            <p className="sp-plan-desc">{t("Le chemin court pour obtenir une fiche complète, sans rien installer sur ton site.", "The shortest path to a complete listing, with nothing to install on your website.")}</p>
-            <ul className="sp-plan-args"><li><User size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><StarSolid size={16} />{t("Note ToolTrim expliquée par des faits", "ToolTrim score explained with supporting facts")}</li><li><Link2 size={16} /><strong>{t("Lien dofollow depuis un site DR 43", "Dofollow link from a DR 43 site")}</strong></li><li><Check size={16} />{t("Un aller-retour pour vérifier les faits", "One round to check the facts")}</li><li><Clock size={16} />{t("Publication garantie sous cinq jours ouvrés", "Publication guaranteed within five business days")}</li></ul>
-            <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Obtenir la publication prioritaire · ${price} →`, `Get priority publication · ${price} →`)}</button>
+          <article className="sp-plan-card sp-plan-card--free">
+            <div className="sp-plan-card-head"><div><span className="sp-plan-price">{t("0 $", "$0")}</span><span className="sp-plan-period">{t("avec un badge", "with a badge")}</span></div><span className="sp-plan-name">{t("Revue standard", "Standard review")}</span></div>
+            <ul className="sp-plan-args sp-plan-args--limits">
+              <li><Minus size={16} />{t("Lien nofollow", "Nofollow link")}</li>
+              <li><Minus size={16} />{t("Publiée seulement si retenue", "Published only if selected")}</li>
+              <li><Minus size={16} />{t("Aucun délai garanti", "No set timeline")}</li>
+              <li><Minus size={16} />{t("Badge ToolTrim requis sur ton site", "ToolTrim badge required on your site")}</li>
+              <li><Minus size={16} />{t("Corrections factuelles après publication", "Fact fixes after publication")}</li>
+              <li><Check size={16} />{t("Rédigée par notre équipe, note expliquée", "Written by our editors, score explained")}</li>
+            </ul>
+            <button type="button" className="sp-plan-free-link" onClick={() => choosePlan("free")}>{t("Rejoindre la revue standard →", "Join the standard review →")}</button>
           </article>
-          <article className="sp-plan-card">
-            <span className="sp-plan-tag sp-plan-tag--quiet">{t("GRATUIT · AVEC BADGE", "FREE · WITH A BADGE")}</span>
-            <div className="sp-plan-card-head"><div><span className="sp-plan-price">{t("0 $", "$0")}</span><span className="sp-plan-period">{t("sans paiement", "no payment")}</span></div><span className="sp-plan-name">{t("Revue éditoriale standard", "Standard editorial review")}</span></div>
-            <p className="sp-plan-desc">{t("Pour proposer ton outil sans budget et rejoindre notre file de sélection.", "Submit your tool without a budget and join our standard selection queue.")}</p>
-            <ul className="sp-plan-args"><li><Check size={16} />{t("Badge ToolTrim requis sur ton site", "ToolTrim badge required on your website")}</li><li><Link2 size={16} />{t("Lien nofollow vers ton site", "Nofollow link to your website")}</li><li><StarSolid size={16} />{t("Fiche et note ToolTrim si l’outil est retenu", "Listing and ToolTrim score if the tool is selected")}</li><li><Check size={16} />{t("Revue dans la file standard", "Review in the standard queue")}</li><li><Check size={16} />{t("Publication selon les critères éditoriaux", "Publication based on editorial criteria")}</li></ul>
-            <button type="button" className="tt-button-secondary sp-plan-cta" onClick={() => choosePlan("free")}>{t("Rejoindre la revue standard →", "Join the standard review →")}</button>
+          <article className="sp-plan-card sp-plan-card--highlight">
+            <span className="sp-plan-badge">{t("Recommandé", "Recommended")}</span>
+            <div className="sp-plan-card-head"><div><span className="sp-plan-price">{price}</span><span className="sp-plan-period">{t("paiement unique", "one-time")}</span></div><span className="sp-plan-name">{t("Fiche prioritaire", "Priority review")}</span></div>
+            <ul className="sp-plan-args">
+              <li><Link2 size={16} /><strong>{t("Lien dofollow depuis un site DR 43", "Dofollow link from a DR 43 site")}</strong></li>
+              <li><Check size={16} />{t("Publication garantie", "Publication guaranteed")}</li>
+              <li><Check size={16} />{t("En ligne sous 5 jours ouvrés", "Live within 5 business days")}</li>
+              <li><Check size={16} />{t("Rien à installer", "Nothing to install")}</li>
+              <li><Check size={16} />{t("Tu vérifies les faits avant publication", "You check the facts before it goes live")}</li>
+              <li><Check size={16} />{t("Rédigée par notre équipe, note expliquée", "Written by our editors, score explained")}</li>
+            </ul>
+            <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Obtenir ma fiche prioritaire · ${price}`, `Get my priority review · ${price}`)}<ArrowRight size={16} /></button>
+          </article>
+          <article className="sp-plan-card sp-plan-card--featured">
+            <div className="sp-plan-card-head"><div><span className="sp-plan-from">{t("à partir de", "from")}</span><span className="sp-plan-price">{t("99 $", "$99")}</span></div><span className="sp-plan-name">{t("Mise en avant", "Featured")}</span></div>
+            <p className="sp-plan-includes">{t("Tout ce qu’inclut la fiche prioritaire, plus :", "Everything in Priority, plus:")}</p>
+            <ul className="sp-plan-args">
+              <li><Check size={16} /><strong>{t("Mise en avant sur la page d’accueil", "Featured on the homepage")}</strong></li>
+              <li><Check size={16} /><strong>{t("Présence dans les stacks pertinents", "Placement in relevant stacks")}</strong></li>
+              <li><Check size={16} />{t("Newsletter ou guide, sur demande", "Newsletter or guide mention, on request")}</li>
+              <li><Check size={16} />{t("Emplacements signalés comme sponsorisés", "Placements clearly labeled sponsored")}</li>
+            </ul>
+            <Link className="sp-plan-contact" to={`${prefix}/contact?subject=partnership`}>{t("Parlons-en", "Let’s talk")}<ArrowRight size={16} /></Link>
           </article>
         </div>
-        <aside className="sp-rating-proof" id="submit-score" aria-label={t("Présentation de la note ToolTrim", "ToolTrim score overview")}>
+        <aside className="sp-rating-proof" id="submit-score" aria-labelledby="submit-score-title">
           <div className="sp-rating-proof-copy">
-            <span className="tt-page-hero-eyebrow">{t("LE SCORE TOOLTRIM", "THE TOOLTRIM SCORE")}</span>
-            <h3>{lang === "fr" ? <>Aide ta cible à choisir ton outil. <span className="tt-title-muted">Avec une note claire et argumentée.</span></> : <>Help your audience choose your tool. <span className="tt-title-muted">With a clear, reasoned score.</span></>}</h3>
-            <p>{t("Nous évaluons ce que ton outil apporte aux freelances, indépendants et petites équipes : son utilité réelle, sa simplicité au quotidien et la liberté de changer de solution. Chaque note est expliquée. Le paiement ne change jamais le résultat.", "We assess what your tool brings to freelancers, solopreneurs, and small teams: real usefulness, everyday simplicity, and the freedom to switch. Every score is explained. Payment never changes the result.")}</p>
+            <h3 id="submit-score-title" className="sp-score-title">{t("5 critères.", "5 criteria.")}</h3>
+            <p>{t("Chacun appuyé sur des faits sourcés. Les acheteurs font confiance à une note qu’ils peuvent vérifier.", "Each backed by sourced facts. Buyers trust a score they can check.")}</p>
+            <figure className="sp-score-evidence">
+              <figcaption>{t("Pourquoi Puissance obtient 3/5", "Why Performance gets 3/5")}</figcaption>
+              <blockquote>{t("« Outil spécialisé couvrant horaires, alertes, itinéraires et trois modes de transport, mais sans navigation détaillée ni plateforme mobile. »", "“A focused utility covering schedules, alerts, routes, and three travel modes, but no turn-by-turn navigation or mobile platform.”")}</blockquote>
+              <cite>{t("Sources : commute.bar et conditions, consultées le 7 sept. 2026", "Sources: commute.bar and terms, checked Sept. 7, 2026")}</cite>
+            </figure>
           </div>
-          <div className="sp-rating-example">
-            <div className="sp-rating-example-head"><div><span>{t("EXEMPLE PUBLIÉ", "PUBLISHED EXAMPLE")}</span><strong>CommuteBar</strong></div><div className="sp-rating-total"><StarSolid size={17} /><strong>3.8</strong><span>/5 · {t("Très bon", "Great")}</span></div></div>
-            <p className="sp-rating-example-note">{t("Utile et simple pour les indépendants qui veulent rester concentrés pendant leurs appels. Sa note reste mesurée, car l’outil est spécialisé et réservé au Mac.", "Useful and simple for independent professionals who want to stay focused during calls. Its score stays measured because the product is specialized and Mac-only.")}</p>
-            <Link className="sp-rating-example-link" to={`${prefix}/tool/commutebar`}>{t("Voir les raisons de la note", "See what explains the score")}<ArrowRight size={15} /></Link>
+          <div className="sp-score-card">
+            <div className="sp-score-head">
+              <ToolLogo tool={{ name: "CommuteBar", slug: "commutebar", websiteUrl: "https://commute.bar/" }} size={44} />
+              <div><span>{t("Exemple publié", "Published example")}</span><strong>CommuteBar</strong></div>
+              <div className="sp-score-total"><strong>3.8</strong><span>/5 · {t("Très bon", "Great")}</span></div>
+            </div>
+            <ul className="sp-score-criteria">
+              {([["Valeur ajoutée", "Added value", 4], ["Simplicité", "Simplicity", 4], ["Utilisation", "Fit for purpose", 4], ["Puissance", "Performance", 3], ["Réversibilité", "Reversibility", 4]] as const).map(([fr, en, value]) => (
+                <li key={en}><span>{t(fr, en)}</span><i style={{ "--sp-score": value / 5 } as React.CSSProperties} aria-hidden="true" /><strong>{value}</strong></li>
+              ))}
+            </ul>
+            <p className="sp-score-verdict">{t("Utile et simple pour les indépendants qui veulent rester concentrés pendant leurs appels. Sa note reste mesurée, car l’outil est spécialisé et réservé au Mac.", "Useful and simple for independent professionals who want to stay focused during calls. Its score stays measured because the product is specialized and Mac-only.")}</p>
+            <Link className="sp-score-link" to={`${prefix}/tool/commutebar`} target="_blank" rel="noopener" aria-label={t("Voir la fiche complète de CommuteBar (nouvel onglet)", "See CommuteBar’s full review (opens in a new tab)")}>{t("Voir la fiche complète", "See the full review")}<ArrowUpRight size={15} /></Link>
           </div>
         </aside>
       </div></section>
 
       <section className="sp-delivery" aria-labelledby="submit-delivery-title">
-        <div className="sp-section-intro"><h2 id="submit-delivery-title">{lang === "fr" ? <>Tu nous présentes ton outil. <span className="tt-title-muted">Nous prenons le relais.</span></> : <>Tell us about your tool. <span className="tt-title-muted">We take it from there.</span></>}</h2></div>
-        <ol className="sp-delivery-grid">
-          <li><span>01</span><h3>{t("Envoie les informations", "Share the details")}</h3><p>{t("L’URL, le nom de ton outil et ton email pour commencer, puis quelques précisions sur ton produit.", "Start with your tool’s URL, name, and your email, then add a little context about your product.")}</p></li>
-          <li><span>02</span><h3>{t("Nous préparons la fiche", "We prepare the listing")}</h3><p>{t("Dans la formule à 29 $, un aller-retour avec le rédacteur te permet de vérifier les faits avant publication.", "The $29 option includes one round with the editor to check the facts before publication.")}</p></li>
-          <li><span>03</span><h3>{t("Ton outil devient découvrable", "Your tool can be discovered")}</h3><p>{t("La fiche publiée rejoint le catalogue et donne aux lecteurs un accès à ton site.", "The published listing joins the catalogue and gives readers a link to your website.")}</p></li>
+        <div className="sp-section-intro"><h2 id="submit-delivery-title">{lang === "fr" ? <>En ligne sous 5 jours. <span className="tt-title-muted">Voici comment.</span></> : <>Live in 5 days. <span className="tt-title-muted">Here’s how.</span></>}</h2></div>
+        <ol className="sp-timeline">
+          <li><span className="sp-timeline-when">{t("Aujourd’hui, quelques minutes", "Today, a few minutes")}</span><p>{t("Indique ton site et ton email, puis paie une fois. Ni badge, ni abonnement.", "Share your site and email, then pay once. No badge, no subscription.")}</p></li>
+          <li><span className="sp-timeline-when">{t("Sous 5 jours ouvrés", "Within 5 business days")}</span><p>{t("On étudie ton outil et on rédige la fiche. Tu vérifies les faits avant publication.", "We research your tool and write the review. You check the facts before it goes live.")}</p></li>
+          <li><span className="sp-timeline-when">{t("Jour de publication", "Publication day")}</span><p>{t("Ta fiche est en ligne, avec un lien dofollow vers ton site.", "Your review goes live, with a dofollow link to your site.")}</p></li>
         </ol>
-      </section>
-
-      <section className="sp-assurance" aria-labelledby="submit-guarantees-title">
-        <div className="sp-guarantees">
-          <strong id="submit-guarantees-title">{t("Ce qui est garanti", "What is guaranteed")}</strong>
-          <ul><li><Check size={15} />{t("Publication sous 5 jours ouvrés", "Publication within 5 business days")}</li><li><Check size={15} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={15} />{t("Vérification des faits avant publication", "Fact check before publication")}</li><li><Check size={15} />{t("Lien direct et aucun abonnement", "Direct link and no subscription")}</li></ul>
-        </div>
-        <div className="sp-editorial-rule"><Scale size={20} /><p><strong>{t("Une fiche crédible, un verdict indépendant.", "A credible listing, an independent verdict.")}</strong> {t("Le paiement couvre le service de publication. Le score, le classement et la conclusion éditoriale restent indépendants.", "Payment covers the publication service. Scores, rankings, and editorial conclusions remain independent.")} <Link to={`${prefix}/transparency`}>{t("Lire notre politique →", "Read our policy →")}</Link></p></div>
+        <p className="sp-timeline-policy"><Scale size={16} />{t("Le paiement couvre le travail, jamais le verdict.", "Payment covers the work, never the verdict.")} <Link to={`${prefix}/transparency`}>{t("Lire notre politique éditoriale", "Read our editorial policy")}<ArrowRight size={14} /></Link></p>
       </section>
 
       </>}
       {plan && <section className="sp-shell" id="submit-form">
-        <div className="sp-selected-plan"><span>{t("Ta formule", "Your option")} <strong>{plan === "paid" ? t(`Fiche publiée sous 5 jours · ${price}`, `Listing published within 5 days · ${price}`) : t("Avec badge · gratuit", "With a badge · free")}</strong></span><ShieldCheck size={18} /></div>
+        <div className="sp-selected-plan"><span>{t("Ta formule", "Your option")} <strong>{plan === "paid" ? t(`Fiche prioritaire · ${price}`, `Priority review · ${price}`) : t("Revue standard · gratuite", "Standard review · free")}</strong></span><ShieldCheck size={18} /></div>
         <ol className="sp-steps" aria-label={t("Étapes de la soumission", "Submission steps")}>
           {[1, 2, 3].map((number) => (
             <li key={number} className="sp-step-item">
@@ -494,43 +536,55 @@ const SubmitToolPage = () => {
           {step === 1 && <form onSubmit={continueFromContact} className="sp-form">
             <div className="sp-section-heading"><span>01</span><div><h2>{t("Commençons par ton outil.", "Let’s start with your tool.")}</h2><p>{inviteName && submission.toolName === inviteName ? t(`${inviteName} est déjà renseigné : il ne manque que ton email.`, `${inviteName} is already filled in: we only need your email.`) : t("Trois informations pour commencer. Tu pourras préciser les détails à la dernière étape.", "Three details to get started. You can add more context in the final step.")}</p></div></div>
             <div className="sp-form-grid"><div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-url">{t("Site officiel", "Official website")}</label><div className="sp-input-wrap"><Globe size={16} /><input className="tt-form-input" id="submit-tool-url" required type="text" inputMode="url" autoComplete="url" spellCheck={false} maxLength={300} value={submission.toolUrl} onChange={(event) => update("toolUrl", event.target.value)} onBlur={() => tidyUrlField("toolUrl")} placeholder={t("exemple.com", "example.com")} /></div></div><div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-name">{t("Nom de l'outil", "Tool name")}</label><div className="sp-input-wrap"><User size={16} /><input className="tt-form-input" id="submit-tool-name" required maxLength={100} value={submission.toolName} onChange={(event) => update("toolName", event.target.value)} placeholder="Acme" /></div></div></div>
-            <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-email">Email</label><div className="sp-input-wrap"><Mail size={16} /><input className="tt-form-input" id="submit-email" required type="email" maxLength={200} value={submission.email} onChange={(event) => update("email", event.target.value)} placeholder="you@example.com" /></div></div>
+            <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-email">Email</label><div className="sp-input-wrap"><Mail size={16} /><input className="tt-form-input" id="submit-email" required type="email" autoComplete="email" maxLength={200} value={submission.email} onChange={(event) => update("email", event.target.value)} placeholder="you@example.com" /></div></div>
             {error && <p className="tt-form-error" role="alert">{error}</p>}
             <div className="sp-actions sp-actions--split"><button type="button" className="sp-button-secondary" onClick={() => setPlan(null)}>{t("← Revoir les offres", "← Review options")}</button><button type="submit" className="tt-button-primary" disabled={status === "saving"}>{status === "saving" ? t("Enregistrement…", "Saving…") : plan === "paid" ? t("Continuer vers le paiement →", "Continue to payment →") : t("Continuer vers le badge →", "Continue to the badge →")}</button></div>
           </form>}
 
           {step === 2 && plan === "paid" && <section className="sp-form">
-            <div className="sp-section-heading"><span>02</span><div><h2>{t("Confirmer la publication prioritaire", "Confirm priority publication")}</h2><p>{t("Ton outil passe directement à la rédaction, sans installation sur ton site.", "Your tool goes directly to the editorial team, with nothing to install on your site.")}</p></div></div>
-            <div className="sp-payment-summary"><div><span>{t("PUBLICATION PRIORITAIRE", "PRIORITY PUBLICATION")}</span><strong>{submission.toolName}</strong><small>{submission.toolUrl}</small></div><strong>{price}</strong></div>
-            <div className="sp-payment-promise"><ShieldCheck size={20} /><p>{t("Après la rédaction de la fiche, tu disposes d'un aller-retour avec le rédacteur avant sa publication sous cinq jours ouvrés.", "Once the listing is drafted, you get one review round with the editor before publication within five business days.")}</p></div>
-                        <a href={checkoutUrl.href} data-creem-checkout data-creem-url={checkoutUrl.href} className="tt-button-primary sp-payment-cta" onClick={beginCheckout}><CreditCard size={17} />{t(`Payer ${price} et lancer ma fiche`, `Pay ${price} and start my listing`)}</a>
+            <div className="sp-section-heading"><span>02</span><div><h2>{t("Confirmer ta fiche prioritaire", "Confirm your priority review")}</h2><p>{t("Ton outil passe directement à la rédaction, sans installation sur ton site.", "Your tool goes directly to the editorial team, with nothing to install on your site.")}</p></div></div>
+            <div className="sp-payment-summary"><div><span>{t("FICHE PRIORITAIRE", "PRIORITY REVIEW")}</span><strong>{submission.toolName}</strong><small>{submission.toolUrl}</small></div><strong>{price}</strong></div>
+            <ul className="sp-payment-recap"><li><Link2 size={16} /><strong>{t("Lien dofollow depuis un site DR 43", "Dofollow link from a DR 43 site")}</strong></li><li><Check size={16} />{t("En ligne sous 5 jours ouvrés, garanti", "Live within 5 business days, guaranteed")}</li><li><Check size={16} />{t("Tu vérifies les faits avant publication", "You check the facts before it goes live")}</li></ul>
+                        <a href={checkoutUrl.href} data-creem-checkout data-creem-url={checkoutUrl.href} className="tt-button-primary sp-payment-cta" onClick={beginCheckout}><CreditCard size={17} />{t(`Payer ${price} et lancer ma fiche`, `Pay ${price} and start my review`)}</a>
             {error && <p className="tt-form-error" role="alert">{error}</p>}
             <p className="sp-payment-meta">{t("Paiement unique sécurisé par Creem. Aucun abonnement.", "Secure one-time payment via Creem. No subscription.")}</p>
             <div className="sp-actions"><button type="button" className="sp-button-secondary" onClick={() => setStep(1)}>{t("← Modifier les informations", "← Edit information")}</button></div>
           </section>}
 
           {step === 2 && plan === "free" && <section className="sp-form">
-            <div className="sp-section-heading"><span>02</span><div><h2>{t("Installer le badge ToolTrim", "Install the ToolTrim badge")}</h2><p>{t("Il débloque la file standard sans influencer notre décision.", "It unlocks the standard queue without influencing our decision.")}</p></div></div>
-            <div className="sp-verification-panel">
-              <div className="sp-badge-themes" role="group" aria-label={t("Version du badge", "Badge version")}><button type="button" className={badgeTheme === "light" ? "sp-badge-theme--active" : ""} onClick={() => setBadgeTheme("light")}>{t("Clair", "Light")}</button><button type="button" className={badgeTheme === "dark" ? "sp-badge-theme--active" : ""} onClick={() => setBadgeTheme("dark")}>{t("Sombre", "Dark")}</button></div>
-              <div className={`sp-badge-preview sp-badge-preview--${badgeTheme}`}><img src={`/${badgeAsset}`} alt={badgeAlt} width={216} height={54} /></div>
-              <p className="sp-embed-label">{t("Ajoute ce code sur ton site", "Add this code to your website")}</p><div className="sp-code-wrap"><code className="sp-code">{badgeHtml}</code><button type="button" className="sp-copy-button" onClick={copyBadge} aria-label={t("Copier le code du badge", "Copy badge code")}>{codeCopied ? <Check size={17} /> : <Copy size={17} />}</button></div>
-              <label className="sp-installed-check"><input type="checkbox" checked={badgeInstalled} onChange={(event) => setBadgeInstalled(event.target.checked)} />{t("J'ai ajouté le badge sur mon site", "I've added the badge to my website")}</label>
-              <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-badge-url">{t("URL de la page avec le badge", "URL of the page with the badge")}</label><input ref={badgeUrlRef} className="tt-form-input" id="submit-badge-url" type="text" inputMode="url" autoComplete="url" spellCheck={false} maxLength={300} value={submission.badgeUrl} onChange={(event) => update("badgeUrl", event.target.value)} onBlur={() => tidyUrlField("badgeUrl")} placeholder={`${submission.toolUrl.replace(/\/$/, "") || "https://example.com"}/partners`} /></div>
-            </div>
-            <aside className="sp-upgrade-note">
-              <div><span>{t("Pas envie d'installer le badge ?", "Do not want to install the badge?")}</span><strong>{t("Passe à la publication prioritaire.", "Switch to priority publication.")}</strong><p>{t("Ta fiche est préparée par ToolTrim, avec un aller-retour avant publication sous cinq jours ouvrés.", "ToolTrim prepares your listing, with one review round before publication within five business days.")}</p></div>
-              <button type="button" className="sp-upgrade-cta" onClick={upgradeToPaid}>{t(`Choisir la formule à ${price} →`, `Choose the ${price} option →`)}</button>
+            <div className="sp-section-heading"><span>02</span><div><h2>{t("Installer le badge ToolTrim", "Install the ToolTrim badge")}</h2><p>{t("Il débloque la revue standard sans influencer notre décision.", "It unlocks the standard review without influencing our decision.")}</p></div></div>
+            <aside className="sp-upgrade-note" aria-labelledby="submit-upgrade-title">
+              <p className="sp-upgrade-kicker">{t("La revue gratuite demande une modification de ton site.", "The free review needs a change on your site.")}</p>
+              <div className="sp-upgrade-compare">
+                <div><span>{t("Gratuit", "Free")}</span><ul><li><Minus size={14} />{t("Lien nofollow", "Nofollow link")}</li><li><Minus size={14} />{t("Aucun délai garanti", "No set timeline")}</li><li><Minus size={14} />{t("Publiée seulement si retenue", "Published only if selected")}</li></ul></div>
+                <div><span id="submit-upgrade-title">{t(`Fiche prioritaire · ${price}`, `Priority review · ${price}`)}</span><ul><li><Link2 size={14} /><strong>{t("Lien dofollow depuis un site DR 43", "Dofollow link from a DR 43 site")}</strong></li><li><Check size={14} />{t("En ligne sous 5 jours ouvrés", "Live within 5 business days")}</li><li><Check size={14} />{t("Rien à installer", "Nothing to install")}</li></ul></div>
+              </div>
+              <button type="button" className="sp-upgrade-cta" onClick={upgradeToPaid}>{t(`Passer à la fiche prioritaire · ${price}`, `Switch to the priority review · ${price}`)}<ArrowRight size={15} /></button>
             </aside>
-            {error && <p className="tt-form-error" role="alert">{error}</p>}
+            <ol className="sp-badge-steps">
+              <li>
+                <span className="sp-badge-step-title">{t("Choisis le style du badge", "Pick the badge style")}</span>
+                <div className="sp-badge-themes" role="group" aria-label={t("Version du badge", "Badge version")}><button type="button" className={badgeTheme === "light" ? "sp-badge-theme--active" : ""} onClick={() => setBadgeTheme("light")}>{t("Clair", "Light")}</button><button type="button" className={badgeTheme === "dark" ? "sp-badge-theme--active" : ""} onClick={() => setBadgeTheme("dark")}>{t("Sombre", "Dark")}</button></div>
+                <div className={`sp-badge-preview sp-badge-preview--${badgeTheme}`}><img src={`/${badgeAsset}`} alt={badgeAlt} width={216} height={54} /></div>
+              </li>
+              <li>
+                <span className="sp-badge-step-title">{t("Colle ce code sur ton site", "Paste this code on your site")}</span>
+                <div className="sp-code-wrap"><code className="sp-code">{badgeHtml}</code><button type="button" className="sp-copy-button" onClick={copyBadge} aria-label={t("Copier le code du badge", "Copy badge code")}>{codeCopied ? <Check size={17} /> : <Copy size={17} />}</button></div>
+                <label className="sp-installed-check"><input type="checkbox" checked={badgeInstalled} onChange={(event) => setBadgeInstalled(event.target.checked)} />{t("J'ai ajouté le badge sur mon site", "I've added the badge to my website")}</label>
+              </li>
+              <li>
+                <div className="tt-form-field"><label className="tt-form-label sp-badge-step-title" htmlFor="submit-badge-url">{t("URL de la page avec le badge", "URL of the page with the badge")}</label><input ref={badgeUrlRef} className="tt-form-input" id="submit-badge-url" type="text" inputMode="url" autoComplete="url" spellCheck={false} maxLength={300} value={submission.badgeUrl} onChange={(event) => update("badgeUrl", event.target.value)} onBlur={() => tidyUrlField("badgeUrl")} placeholder={`${t("ex.", "e.g.")} ${submission.toolUrl.replace(/\/$/, "") || "https://example.com"}/partners`} aria-invalid={Boolean(error) || undefined} aria-describedby={error ? "submit-badge-error" : undefined} /></div>
+                {error && <p className="tt-form-error" id="submit-badge-error" role="alert">{error}</p>}
+              </li>
+            </ol>
             <div className="sp-actions sp-actions--split"><button type="button" className="sp-button-secondary" onClick={() => setStep(1)}>{t("← Modifier", "← Edit")}</button><button type="button" className="tt-button-primary" disabled={!badgeInstalled || status === "checking"} onClick={verifyBadge}>{status === "checking" ? t("Validation…", "Validating…") : t("Valider et continuer →", "Validate and continue →")}</button></div>
           </section>}
 
           {step === 3 && <form className="sp-form" onSubmit={submit}>
             <div className="sp-section-heading"><span>03</span><div><h2>{t("Aide-nous à évaluer le produit", "Help us evaluate the product")}</h2><p>{t("Donne le contexte nécessaire à la revue éditoriale.", "Give us the context needed for the editorial review.")}</p></div></div>
-            <div className="sp-verified"><Check size={16} />{paid ? t("Paiement confirmé : publication prioritaire", "Payment confirmed: priority publication") : t("Badge vérifié : file standard", "Badge verified: standard queue")}</div>
+            <div className="sp-verified"><Check size={16} />{paid ? t("Paiement confirmé : fiche prioritaire", "Payment confirmed: priority review") : t("Badge vérifié : revue standard", "Badge verified: standard review")}</div>
             <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-role">{t("Ton lien avec l'outil", "Your relationship to the tool")}</label><select className="tt-form-input" id="submit-role" required value={submission.submitterRole} onChange={(event) => update("submitterRole", event.target.value)}><option value="" disabled>{t("Sélectionner…", "Select…")}</option><option value="founder">{t("Fondateur·rice / équipe", "Founder / team")}</option><option value="user">{t("Utilisateur·rice", "User")}</option><option value="agency">{t("Agence / partenaire", "Agency / partner")}</option><option value="other">{t("Autre", "Other")}</option></select></div>
-            <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-name">{t("Ton nom", "Your name")}</label><input className="tt-form-input" id="submit-name" required maxLength={100} value={submission.name} onChange={(event) => update("name", event.target.value)} /></div>
+            <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-name">{t("Ton nom", "Your name")}</label><input className="tt-form-input" id="submit-name" required autoComplete="name" maxLength={100} value={submission.name} onChange={(event) => update("name", event.target.value)} /></div>
             <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-description">{t("Ce que nous devons comprendre", "What we should understand")}</label><textarea className="tt-form-input tt-form-textarea" id="submit-description" required maxLength={2000} rows={6} value={submission.message} onChange={(event) => update("message", event.target.value)} placeholder={t("À qui s'adresse l'outil, quel problème résout-il et qu'est-ce qui le distingue ?", "Who is the tool for, what problem does it solve, and what makes it different?")} /></div>
             <p className="sp-publication-note">{paid ? t("La publication est prioritaire. ToolTrim conserve le dernier mot sur le verdict et le contenu éditorial.", "Publication is prioritized. ToolTrim retains final say over the verdict and editorial content.") : t("ToolTrim choisit librement de publier et conserve le dernier mot sur le verdict. Les erreurs factuelles peuvent être corrigées.", "ToolTrim independently decides whether to publish and retains final say over the verdict. Factual errors can be corrected.")}</p>
             {error && <p className="tt-form-error" role="alert">{error}</p>}<div className="sp-actions"><button type="submit" className="tt-button-primary" disabled={status === "submitting"}>{status === "submitting" ? t("Envoi…", "Submitting…") : t("Envoyer pour revue →", "Submit for review →")}</button></div>
@@ -539,26 +593,21 @@ const SubmitToolPage = () => {
       </section>}
 
       {!paymentRecovery && <><section className="sp-faq-section" aria-labelledby="submit-faq-title">
-        <div className="sp-section-intro"><span className="tt-page-hero-eyebrow">FAQ</span><h2 id="submit-faq-title">{lang === "fr" ? <>Tout savoir. <span className="tt-title-muted">Avant de publier ton outil.</span></> : <>Everything you need to know. <span className="tt-title-muted">Before publishing your tool.</span></>}</h2></div>
+        <div className="sp-section-intro"><h2 id="submit-faq-title">{t("Vos questions, nos réponses.", "Questions, answered.")}</h2></div>
         <div className="sp-faq-list">
-          <details><summary>{t("Que vais-je recevoir exactement ?", "What exactly will I receive?")}</summary><p>{t("Une fiche dédiée préparée par ToolTrim avec la présentation du produit, ses usages, ses tarifs, ses alternatives, une note expliquée par des faits, notre verdict éditorial et un lien vers ton site officiel.", "A dedicated listing prepared by ToolTrim with your product overview, use cases, pricing, alternatives, a score explained with supporting facts, our editorial verdict, and a link to your official website.")}</p></details>
-          <details><summary>{t("Dois-je rédiger ma fiche moi-même ?", "Do I need to write my own listing?")}</summary><p>{t("Non. Tu nous transmets les informations sur ton produit et ToolTrim prépare la fiche. La publication prioritaire inclut un aller-retour pour vérifier les informations factuelles avant publication.", "No. You provide information about your product and ToolTrim prepares the listing. Priority publication includes one round to check factual information before publication.")}</p></details>
-          <details><summary>{t("Dois-je fournir les textes et les visuels ?", "Do I need to provide copy and visuals?")}</summary><p>{t("Non. L’URL de ton produit et quelques informations suffisent pour commencer. ToolTrim rédige la fiche et utilise les éléments officiels disponibles ; tu peux signaler une erreur factuelle avant publication.", "No. Your product URL and a few details are enough to get started. ToolTrim writes the listing and uses available official assets; you can flag a factual error before publication.")}</p></details>
-          <details><summary>{t("Que garantit la publication prioritaire ?", "What does priority publication guarantee?")}</summary><p>{t("La mise en ligne sous cinq jours ouvrés, un lien dofollow vers ton site officiel et aucun badge à installer. Le verdict et le classement restent indépendants.", "Publication within five business days, a dofollow link to your official website, and no badge to install. The verdict and ranking remain independent.")}</p></details>
-          <details><summary>{t("Que se passe-t-il si le délai de cinq jours est dépassé ?", "What happens if the five-day deadline is missed?")}</summary><p>{t("Nous te contactons directement pour t’informer et finaliser la publication en priorité. Les conditions de remboursement applicables sont celles présentées par Creem au moment du paiement.", "We contact you directly with an update and prioritize completion of the listing. Any applicable refund terms are those shown by Creem at checkout.")}</p></details>
-          <details><summary>{t("Le paiement peut-il améliorer le verdict ?", "Can payment improve the verdict?")}</summary><p>{t("Non. Le score, le verdict, les alternatives et le classement sont indépendants du paiement.", "No. The score, verdict, alternatives, and ranking are independent of payment.")}</p></details>
-          <details><summary>{t("Le lien vers mon site est-il dofollow et permanent ?", "Is the link to my website dofollow and permanent?")}</summary><p>{t("Avec la publication prioritaire, le lien vers le site officiel est publié en dofollow ; avec la formule gratuite, il est en nofollow. Il reste présent tant que la fiche est publiée et que l’URL demeure valide ; ToolTrim peut mettre à jour ou retirer une fiche devenue obsolète ou non conforme.", "With priority publication, the official website link is published as dofollow; with the free option, it is nofollow. It remains while the listing is published and the URL stays valid; ToolTrim may update or remove a listing that becomes outdated or non-compliant.")}</p></details>
-          <details><summary>{t("Quelle différence avec la soumission gratuite ?", "What's different about the free submission?")}</summary><p>{t("La version gratuite demande un badge, rejoint la file éditoriale standard et publie un lien nofollow. La formule prioritaire ne demande aucun badge, garantit la publication sous cinq jours ouvrés et publie un lien dofollow.", "The free version requires a badge, joins the standard editorial queue, and publishes a nofollow link. Priority requires no badge, guarantees publication within five business days, and publishes a dofollow link.")}</p></details>
-          <details><summary>{t("Puis-je échanger avec le rédacteur avant publication ?", "Can I speak with the editor before publication?")}</summary><p>{t("Oui. La formule à 29 $ inclut un aller-retour pour corriger ou préciser les informations factuelles. La conclusion éditoriale reste celle de ToolTrim.", "Yes. The $29 option includes one review round to correct or clarify factual information. The editorial conclusion remains ToolTrim's.")}</p></details>
-          <details><summary>{t("Puis-je mettre ma fiche à jour après sa publication ?", "Can I update my listing after publication?")}</summary><p>{t("Oui. Écris à contact@tooltrim.com avec les informations à actualiser. ToolTrim vérifie les changements factuels avant de mettre la fiche à jour.", "Yes. Email contact@tooltrim.com with the information that needs updating. ToolTrim verifies factual changes before updating the listing.")}</p></details>
-          <details><summary>{t("La publication comprend-elle le français et l’anglais ?", "Does publication include French and English?")}</summary><p>{t("Oui. La fiche rejoint les versions française et anglaise du catalogue afin d’être accessible aux deux audiences de ToolTrim.", "Yes. The listing joins the French and English versions of the catalogue so it can reach both ToolTrim audiences.")}</p></details>
+          <details><summary>{t("Payer peut-il améliorer ma note ?", "Can paying improve my score?")}</summary><p>{t("Non. La note, le verdict, les alternatives et le classement ne dépendent jamais du paiement. C’est ce qui donne de la valeur à une bonne note.", "No. The score, verdict, alternatives and ranking never depend on payment. That’s what makes a good score worth something.")}</p></details>
+          <details><summary>{t("Et si ma note est basse ?", "What if my score is low?")}</summary><p>{t("Nous publions un verdict que nous pouvons étayer par des faits, points forts compris. Tu vérifies les faits avant publication, et tu peux demander une mise à jour quand ton produit évolue.", "We publish a verdict we can back with facts, strengths included. You check the facts before it goes live, and you can ask for an update when your product changes.")}</p></details>
+          <details><summary>{t("Le lien est-il dofollow et permanent ?", "Is the link dofollow and permanent?")}</summary><p>{t(`Avec la fiche à ${price}, ton site officiel reçoit un lien dofollow ; les soumissions gratuites sont en nofollow. Le lien reste tant que la fiche est publiée et que l’URL demeure valide. ToolTrim peut mettre à jour ou retirer une fiche devenue obsolète ou non conforme.`, `With the ${price} review, your official site gets a dofollow link; free submissions are nofollow. It stays as long as the review is published and the URL is valid. ToolTrim may update or remove an outdated or non-compliant review.`)}</p></details>
+          <details><summary>{t("Que vais-je recevoir exactement ?", "What exactly will I receive?")}</summary><p>{t("Une fiche complète rédigée par notre équipe : présentation, usages, tarifs, alternatives, note expliquée, verdict et lien vers ton site. Publiée en français et en anglais.", "A full review written by our editors: overview, use cases, pricing, alternatives, an explained score, our verdict and a link to your site. Published in French and English.")}</p></details>
+          <details><summary>{t("Et si le délai de 5 jours est dépassé ?", "What if the 5-day deadline is missed?")}</summary><p>{t("Nous te contactons directement et finalisons ta fiche en priorité. Les conditions de remboursement sont celles présentées par Creem au moment du paiement.", "We contact you directly and prioritise finishing your review. Refund terms are those shown by Creem at checkout.")}</p></details>
+          <details><summary>{t("Puis-je mettre ma fiche à jour plus tard ?", "Can I update my review later?")}</summary><p>{t("Oui. Écris à contact@tooltrim.com avec ce qui a changé. Nous vérifions les mises à jour factuelles avant de les appliquer.", "Yes. Email contact@tooltrim.com with what changed. We verify factual updates before applying them.")}</p></details>
         </div>
       </section>
       <section className="sp-closing" aria-labelledby="submit-closing-title">
-        <div><h2 id="submit-closing-title">{lang === "fr" ? <>Ta fiche peut être en ligne. <span className="tt-title-muted">Dès cette semaine.</span></> : <>Your listing can be live. <span className="tt-title-muted">As soon as this week.</span></>}</h2><p>{t("29 $, une seule fois. Lien dofollow depuis un site DR 43, sans badge ni abonnement.", "$29, once. A dofollow link from a DR 43 site, with no badge or subscription.")}</p></div>
-        <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "closing")}>{t(`Publier ma fiche · ${price}`, `Publish my listing · ${price}`)}<ArrowRight size={16} /></button>
+        <div><h2 id="submit-closing-title">{lang === "fr" ? <>{inviteName || "Ton outil"} peut être en ligne la semaine prochaine. <span className="tt-title-muted">Une note méritée, un lien dofollow, rien à écrire.</span></> : <>{inviteName || "Your tool"} could be live next week. <span className="tt-title-muted">Earned score, dofollow link, nothing to write.</span></>}</h2><p>{t(`${price}, une fois. Ni badge, ni abonnement.`, `${price}, once. No badge, no subscription.`)}</p></div>
+        <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "closing")}>{inviteName ? t(`Faire évaluer ${inviteName} · ${price}`, `Get ${inviteName} reviewed · ${price}`) : t(`Faire évaluer mon outil · ${price}`, `Get my tool reviewed · ${price}`)}<ArrowRight size={16} /></button>
       </section>
-      <p className="sp-contact-line">{t("Une question ou un projet de partenariat ?", "A question or partnership in mind?")} <Link className="sp-text-link" to={`${prefix}/contact?subject=partnership`}>{t("Parlons-en", "Let’s talk")}<ArrowRight size={15} /></Link></p>
+      <p className="sp-contact-line">{inviteName ? t("Une question ? Réponds simplement à mon email.", "Questions? Just reply to my email.") : <>{t("Une question ou un projet de partenariat ?", "A question or partnership in mind?")} <Link className="sp-text-link" to={`${prefix}/contact?subject=partnership`}>{t("Parlons-en", "Let’s talk")}<ArrowRight size={15} /></Link></>}</p>
       </>}
     </div>
   </div>;
