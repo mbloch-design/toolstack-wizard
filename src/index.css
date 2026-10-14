@@ -36181,3 +36181,20 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .stp-page .sp-plan-card-head > div { flex-wrap: wrap; row-gap: 4px; }
   .stp-page .sp-plan-period, .stp-page .sp-plan-from { white-space: nowrap; }
 }
+@layer components {
+  .stp-page :is(.sp-hero, .sp-overview-inner, .sp-delivery, .sp-shell, .sp-faq-section, .sp-closing, .sp-contact-line) { width: 100%; max-width: var(--layout-content, 1280px); margin-inline: auto; padding-left: var(--layout-gutter, 48px); padding-right: var(--layout-gutter, 48px); box-sizing: border-box; }
+  .stp-page .sp-overview { padding-inline: 0; }
+  .stp-page :is(.sp-pitch, .sp-specs, .sp-proof-row, .sp-plan-grid, .sp-faq-list, .sp-overview-heading, .sp-timeline, .sp-timeline-policy, .sp-section-intro, .sp-rating-proof) { max-width: none; margin-left: 0; margin-right: 0; }
+  .stp-page .sp-hero-crumb { align-self: stretch; }
+  .stp-page .sp-shell > :is(.sp-selected-plan, .sp-steps, .sp-card) { max-width: 760px; margin-inline: auto; }
+  .stp-page .sp-faq-section .sp-faq-list { max-width: none; }
+}
+@layer components {
+  .stp-page > header.sp-hero { max-width: var(--layout-content, 1280px); padding-left: var(--layout-gutter, 48px); padding-right: var(--layout-gutter, 48px); }
+}
+@layer components {
+  .sp-shot-identity > div { min-width: 0; }
+  .sp-shot-identity strong, .sp-shot-status { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+  .sp-shot-tabs { flex-wrap: wrap; }
+  .sp-shot-score { gap: var(--space-sm); }
+}
