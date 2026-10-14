@@ -49,7 +49,8 @@ test('a slow tag reports the current route and configures before page_view', asy
   let release!: () => void;
   const gate = new Promise<void>(resolve => { release = resolve; });
   await page.route('https://www.googletagmanager.com/**', async route => { await gate; await route.fulfill({status:200,body:''}); });
-  await page.goto('/fr/privacy-policy');
+  // The held async tag can delay load on generated HTML; the DOM is usable.
+  await page.goto('/fr/privacy-policy', {waitUntil:'domcontentloaded'});
   await page.getByRole('button', {name:'Accepter', exact:true}).click();
   await page.getByRole('link', {name:'Mentions légales', exact:true}).click();
   await page.waitForTimeout(400);

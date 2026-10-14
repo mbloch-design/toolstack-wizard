@@ -9,6 +9,7 @@ declare global {
   }
 }
 
+const ANALYTICS_READY_EVENT = 'tooltrim:analytics-ready';
 let ready = false;
 let lastPagePath: string | null = null;
 let previousPageLocation: string | null = null;
@@ -16,6 +17,22 @@ let previousPageLocation: string | null = null;
 export function trackEvent(name: string, params: Record<string, unknown> = {}): void {
   if (typeof window === 'undefined' || !window.__tooltrimAnalyticsConsent || !ready || !window.gtag) return;
   window.gtag('event', name, params);
+}
+
+/** Measure only the current visible view once both the tag and consent are ready.
+ * The caller must dispose on navigation; past clicks are never queued or replayed.
+ */
+export function whenAnalyticsReady(report: () => void): () => void {
+  if (typeof window === 'undefined') return () => {};
+  const dispose = () => window.removeEventListener(ANALYTICS_READY_EVENT, notify);
+  const notify = () => {
+    if (!ready || !window.__tooltrimAnalyticsConsent || !window.gtag) return;
+    dispose();
+    report();
+  };
+  window.addEventListener(ANALYTICS_READY_EVENT, notify);
+  notify();
+  return dispose;
 }
 
 export function trackPageView(path: string, title: string): void {
@@ -49,7 +66,10 @@ export function loadGoogleAnalytics(granted = true): void {
   if (!existing || changed) window.gtag('consent', 'update', {
     analytics_storage: granted ? 'granted' : 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
   });
-  if (existing) return;
+  if (existing) {
+    if (changed && granted && ready) window.dispatchEvent(new Event(ANALYTICS_READY_EVENT));
+    return;
+  }
   window.gtag('set', 'ads_data_redaction', true);
   window.gtag('set', 'url_passthrough', false);
   // Also minimise fields used by Google's automatically generated denied pings.
@@ -70,6 +90,7 @@ export function loadGoogleAnalytics(granted = true): void {
     ready = true;
     // Measure the page visible now, including acceptance after the router effect.
     trackPageView(window.location.pathname + window.location.search, document.title);
+    window.dispatchEvent(new Event(ANALYTICS_READY_EVENT));
   }, {once: true});
   script.addEventListener('error', () => {
     ready = false;

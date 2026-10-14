@@ -13,16 +13,33 @@
 
 <a id="suivi-technique-actif"></a>
 
+## État actif consolidé — 14 octobre 2026
+
+Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas sont des états historiques.
+
+| Chantier | État actuel et prochaine condition |
+|---|---|
+| Parcours Ma Stack → Explorer → enregistrement → retour | Publié ; contrôles techniques FR/EN mobile/ordinateur intégrés à la CI. Ils ne prouvent pas la valeur perçue des relations. |
+| R8 — Clavier et filtres | Trois scénarios obsolètes repris, deux panneaux sans nom accessible corrigés ; 21 contrôles Chromium et 42 passages publics réussis. CI du correctif tokens `b7fa441935` réussie. Couverture exhaustive, WebKit et lecteurs d’écran restent différés. |
+| R9 — Instrumentation | Complément local des événements vue/enregistrement/retour, sous consentement ; recette avec analytics simulé. Réception et exploitation GA4 réelles à vérifier après publication. [Contrat et limites](R9_RECETTE_UTILISATEURS.md#mesure-technique-du-parcours--14-octobre-2026). |
+| R9 — Utilisateurs | Protocole prêt ; essais réels reportés par le propriétaire. Aucun participant observé ni critère quatre sur cinq acquis. |
+| R5/R6 — Relations et catalogue | Différés ; travail local conservé, aucune publication des quatorze fiches. Revoir le processus et le budget avant reprise. |
+| R3/R7 — Architecture et chargement catalogue | Différés ; mesurer avant toute nouvelle migration ou optimisation. |
+| R10/R11 — Build, SEO/GEO et médias | Lots séparés ; aucune nouvelle migration ou campagne de contenu engagée dans cette passe. |
+| Soumissions et paiement | Chantier séparé. Cette passe ne recertifie pas son fonctionnement et n’effectue aucun paiement. Renouvellement du jeton Redis toujours à traiter séparément. |
+
+**Suite :** publier et vérifier la réception du complément R9 lorsqu’autorisé, puis exploiter les observations disponibles. Les tests réels restent programmables plus tard ; aucune raison technique démontrée ici d’ouvrir un nouveau chantier produit en attendant.
+
 ## Priorité révisée — 13 octobre 2026
 
 R5/R6 éditoriaux différés : le travail préparé est conservé localement, sans nouvelle campagne de fiches/tarifs. Priorité au parcours Ma Stack → Explorer → enregistrement → retour et à ses essais utilisateurs. Le fil global réutilise les routes existantes ; la migration catalogue ne bloque pas ce travail local-first. Avant reprise catalogue : tri par impact, contrôles structurels automatisés, lots cohérents, une revue/bilan consolidés et budget convenu. [Parcours et protocole](MA_STACK_ROADMAP.md).
 
 
-## Suivi technique actif — 9 octobre 2026
+## Bilan technique au 9 octobre 2026 (historique)
 
-**Point d’entrée du chantier : [état des lieux, gains et roadmap complète par lots](ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md).** Ce bilan remplace les anciens tableaux d’avancement. Les sections historiques ci-dessous ne sont pas des états de production actuels.
+**Bilan de référence : [état des lieux, gains et découpage des lots au 9 octobre](ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md).** Les mesures ci-dessous décrivent ce checkpoint historique. Pour les statuts courants, consulter le tableau consolidé en tête de document.
 
-### Situation actuelle
+### Situation vérifiée au 9 octobre 2026 (historique)
 
 | Niveau | État vérifié |
 |---|---|
@@ -33,7 +50,7 @@ R5/R6 éditoriaux différés : le travail préparé est conservé localement, sa
 
 Gains mesurés : **24,62 MiB de formatage HTML**, **5,59 MiB de bootstrap**, et **17 595 octets / 4,99 % gzip CDN** sur l’index navigateur. Ce sont des métriques distinctes, pas un gain global de vitesse. Audit npm actualisé : **9 entrées complètes / 7 omit-dev, zéro critique**, après retrait du SDK dans R1. Dernier artefact local validé : **824,8 MiB**, dont **713,2 MiB HTML** (budgets 831/716). Dernière CI complète R1 : 266 tests applicatifs, 82 contrats API, 23 contrats SEO, 99 tests Ma Stack et 56 hydratations en 5,2 min ; les suites ne sont pas additionnées.
 
-### Suivi des lots et propositions suivantes
+### Suivi des lots au 9 octobre 2026 (historique)
 
 | Lot | Prochaine décision / dépendance |
 |---|---|

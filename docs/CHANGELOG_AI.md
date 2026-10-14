@@ -1,3 +1,13 @@
+## 14 octobre 2026 — Mesure consentie du parcours Explorer (local)
+
+- Ajout de `explorer_view` (type de source), `explorer_save` (type de source et intention après confirmation) et `explorer_back` (clic de retour). Les événements existants sont conservés. Aucun nom/identifiant de collection, liste d’outils ni nouvel identifiant dans les nouveaux paramètres.
+- La vue attend le tag et le consentement ; une acceptation tardive mesure la vue encore ouverte. Nettoyage à la navigation, pas de rejeu des clics antérieurs, pas de nouvelle vue sur les filtres ou rerenders. Trois tests rouges reproduits avant implémentation ; recette navigateur rouge reproduite sur la vue manquante.
+- Validation : 356 tests applicatifs, 144 tests Ma Stack, types app/Node/API, contrôle des tokens et 30 contrôles navigateur PASS. Les sept scénarios analytics couvrent FR/EN, mobile/ordinateur, refus, retrait, accord tardif, chargement lent, intention À essayer et collection privée. Le scénario tardif attend la disparition normale du toast après déplacement du pointeur ; aucun clic forcé ni changement UI.
+- Build production complet PASS, avec prérendu, équivalence HTML, audits SEO et budgets ; 19/19 contrôles analytics/consentement réussis sur cet artefact (15,6 s). Le test historique de tag lent attend désormais DOMContentLoaded : attendre load était contradictoire avec son script volontairement retenu sur le HTML généré.
+- Recette analytics/consentement ajoutée à la CI (19 contrôles, services externes simulés), traces séparées. Contre-revue du code, des tests, de la CI et du contrat des événements sans problème actionable.
+- Roadmaps consolidées : anciens tableaux datés explicitement historiques, complément local distinct de la réception réelle. Aucun compte GA4 réel interrogé ni entonnoir distant configuré. R9 utilisateur, R5/R6, migration, WebKit et paiement réel restent différés ou hors périmètre.
+
+
 ## 14 octobre 2026 — /submit : refonte complète section par section
 
 - Logos : 16 outils réels du catalogue (4 connus + 12 indépendants, logos vérifiés), défilement continu en pause au survol, figé en reduced-motion. Titre « {outil} joins 1,200+ tools compared on ToolTrim. »
@@ -6,6 +16,7 @@
 - Frise « Live in 5 days » à la place des étapes et des garanties redondantes ; FAQ réduite à 6 questions dont « What if my score is low? » ; conclusion personnalisée.
 - Formulaire : vocabulaire « Priority review » partout, récap avant paiement, autocomplétion. Parcours gratuit : comparaison et upgrade au moment du badge, étapes numérotées, placeholder et bouton désactivé lisibles, erreur sous le champ, écran de succès avec upgrade (nouvel identifiant de demande, donc deux demandes possibles pour un même outil).
 - Tests : libellés mis à jour (aucune logique modifiée). Vérifié desktop 1440, mobile 375, mode sombre, FR/EN, avec et sans paramètre ; appels API interceptés pendant les essais du tunnel. Limite connue : en local le formulaire appelle les API de prod (TODO).
+
 ## 14 octobre 2026 — Tokens du nouveau visuel de soumission
 
 - Les 12 rayons littéraux ajoutés par le hero de soumission bloquaient le contrôle des tokens. Remplacement par les variables existantes, sans modifier le seuil de dette ni le design.

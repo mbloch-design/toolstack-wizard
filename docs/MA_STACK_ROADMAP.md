@@ -1,3 +1,9 @@
+## 14 octobre 2026 — Mesure technique R9 complétée
+
+Complément local validé (build complet et 19 contrôles sur l’artefact production) : affichage d’une source Explorer, enregistrement confirmé et clic de retour sont distingués, sous consentement, sans contenu privé des collections ni nouvel identifiant. Chargement lent et acceptation tardive couverts ; aucun rejeu des clics refusés. [Contrat des événements, recette et limites](R9_RECETTE_UTILISATEURS.md#mesure-technique-du-parcours--14-octobre-2026).
+
+Cette instrumentation ne clôture pas R9 : réception réelle et lecture de l’entonnoir restent à vérifier après publication ; cinq essais utilisateurs restent reportés. Un clic de retour ne prouve pas une arrivée et un enregistrement ne prouve pas la pertinence des suggestions. R5/R6, migration, optimisations de chargement et couverture exhaustive WebKit restent différés. La prochaine décision produit dépend d’observations, pas d’une nouvelle campagne de fiches ou de composants.
+
 ## 14 octobre 2026 — Scénarios clavier et filtres repris
 
 Les trois scénarios hérités de menus remplacés sont réécrits sur les actions actuelles : ajout direct depuis une carte, filtres outils et filtres stacks. Les panneaux ont désormais un nom accessible fondé sur leur titre existant ; deux défauts sérieux `aria-dialog-name` reproduits avant correction. Couverture Chromium FR/EN à 390/1440 px, sélection conservée après réouverture, Escape, fermeture mobile et retour de focus. Suite de 21 contrôles ajoutée à la CI avec traces séparées. La recette de publication est consignée dans CHANGELOG_AI.md.
@@ -152,7 +158,9 @@ La promesse MVP devient :
 - Conserver des transitions courtes de 150 à 220 ms et une version sans mouvement.
 - Rester local-first tant que les comptes et la synchronisation ne sont pas lancés.
 
-## Roadmap
+## Découpage initial (historique)
+
+Ce découpage ne représente plus les statuts courants. Voir l’état actif consolidé dans [ROADMAP.md](ROADMAP.md#état-actif-consolidé--14-octobre-2026) et les points datés en tête de ce document.
 
 | Étape | Objectif | Statut |
 |---|---|---|

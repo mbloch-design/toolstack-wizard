@@ -34,11 +34,31 @@ Codes : S = terminé seul ; A = terminé avec aide ; X = abandonné. Laisser les
 
 Critère R9 : quatre personnes sur cinq accomplissent le parcours sans aide. Identifier séparément les obstacles de navigation, d’enregistrement et de pertinence des suggestions. Corriger d’abord les obstacles reproduits, dans les routes et composants existants. Les réserves éditoriales R5 restent ouvertes ; ce test ne recertifie ni les prix ni le catalogue.
 
-## Mesure déjà présente et limites
+## Mesure technique du parcours — 14 octobre 2026
 
-Le code du parcours émet `stack_explorer_click` (source `whole_stack` pour le fil global), `stack_tool_open`, `explorer_recenter`, `add_to_stack` et `stack_remove` via le mécanisme analytics commun. Cette présence dans le code n’atteste ni la réception GA4 ni une audience réelle.
+Les événements existants restent conservés : `stack_explorer_click` (`source: whole_stack` pour le fil global), `stack_tool_open`, `explorer_recenter`, `add_to_stack` et `stack_remove`. Le complément R9 distingue désormais les étapes propres à Explorer :
 
-Les événements ne suffisent pas actuellement à calculer une réussite complète : pas de corrélation de visite dédiée au parcours, pas de distinction systématique entre ajout depuis Explorer et ajout depuis une autre page, pas de mesure explicite de l’aide nécessaire ou de la pertinence perçue. La grille d’observation reste nécessaire. Ne pas envoyer le nom des collections, le contenu de la stack ou des verbatims à GA4.
+| Événement | Déclenchement | Paramètres propres à l’événement |
+|---|---|---|
+| `explorer_view` | Source exploitable affichée ; attend le chargement du tag et l’accord. Une fois par source affichée, pas à chaque filtre ou rerender. | `source_type` : `stack`, `outil` ou `objectif` |
+| `explorer_save` | Confirmation du dialogue d’enregistrement, après mise à jour de la sélection locale. Une ouverture ou annulation ne compte pas. | `source_type` ; `intent` : `stack` ou `wishlist` |
+| `explorer_back` | Clic sur le bouton de retour d’Explorer, avant navigation. | `source_type` |
+
+Tous passent par le garde-fou analytics commun. Aucun événement métier sans consentement ; les clics antérieurs à l’accord ne sont pas rejoués. Une acceptation tardive peut mesurer la vue actuellement ouverte, jamais une vue déjà quittée. Aucun nouvel identifiant de visite, nom/identifiant de collection, liste d’outils ou verbatim dans ces trois charges utiles. Les événements existants peuvent inclure des slugs publics d’outils. Les vues de page consenties conservent leur fonctionnement existant, distinct de ces paramètres métier.
+
+### Lecture attendue et limites
+
+Pour les visites consenties, suivre la séquence `stack_explorer_click` → `explorer_view` → `explorer_save` → retour sur la route Ma Stack. Segmenter `explorer_view` et `explorer_save` par `source_type` et distinguer l’enregistrement `stack` de `wishlist`. `explorer_recenter` indique l’exploration d’une autre idée. Les décomptes globaux de ces événements, pris séparément, ne constituent pas un taux de conversion : une visite peut explorer plusieurs sources, enregistrer plusieurs idées ou revenir avec le bouton du navigateur.
+
+`explorer_back` mesure une intention : il ne certifie pas une arrivée dans Ma Stack. Son historique peut mener à une autre étape d’Explorer ou à une fiche outil. Une vue de Ma Stack ultérieure est nécessaire pour vérifier l’arrivée. Les retours du navigateur ne produisent pas cet événement de clic. Un enregistrement confirme la mise à jour locale de l’interface, pas une synchronisation distante ou une persistance durable lorsque le stockage du navigateur est dégradé.
+
+Aucun entonnoir GA4 configuré ni réception dans le compte réel attestée par cette recette. Les scénarios navigateur interceptent les services analytics et vérifient les commandes GA4 locales ; ils ne polluent pas l’audience réelle. La mesure des personnes refusant le suivi reste limitée aux vues minimisées du Consent Mode existant. Ne pas confondre ces signaux avec une mesure exhaustive de l’audience, de la pertinence des liens ou d’une réussite sans aide. La grille d’observation reste nécessaire.
+
+### Vérification reproductible
+
+- `npm test -- src/test/analytics/consent.spec.tsx` : cycle de consentement, chargement lent, accord tardif et annulation d’une vue quittée.
+- `npx playwright test e2e/stack-analytics.spec.ts e2e/analytics-consent.spec.ts e2e/analytics-csp.spec.ts` : parcours réel, refus/retrait, données privées absentes des nouveaux paramètres, absence de doublon sur filtre et annulation distincte de confirmation. Services externes simulés.
+- La CI exécute cette recette isolée et conserve les traces d’échec dans `analytics-test-results/`.
 
 ## Périmètre maintenu
 

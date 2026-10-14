@@ -113,3 +113,41 @@ describe('GA4 consent lifecycle', () => {
     expect(commands.some(c => c[0] === 'consent' && (c[2] as Record<string, string>).analytics_storage === 'granted')).toBe(false);
   });
 });
+
+describe('consented current-view measurement', () => {
+  it('waits for both consent and tag readiness, then reports once', async () => {
+    const {whenAnalyticsReady} = await import('@/lib/analytics');
+    mount();
+    const report = vi.fn();
+    const stop = whenAnalyticsReady(report);
+    fireEvent.click(screen.getByRole('button', {name:'Accepter'}));
+    expect(report).not.toHaveBeenCalled();
+    loadTag();
+    expect(report).toHaveBeenCalledTimes(1);
+    act(() => window.dispatchEvent(new Event('focus')));
+    expect(report).toHaveBeenCalledTimes(1);
+    stop();
+  });
+  it('reports the currently visible view after late acceptance, without replaying refused actions', async () => {
+    const {whenAnalyticsReady, trackEvent} = await import('@/lib/analytics');
+    mount(); loadTag();
+    const report = vi.fn();
+    const stop = whenAnalyticsReady(report);
+    trackEvent('explorer_save', {source_type:'stack', intent:'wishlist'});
+    expect(report).not.toHaveBeenCalled();
+    fireEvent.click(screen.getByRole('button', {name:'Accepter'}));
+    expect(report).toHaveBeenCalledTimes(1);
+    expect(commands.some(c => c[1] === 'explorer_save')).toBe(false);
+    stop();
+  });
+  it('does not report an abandoned view when the tag finishes later', async () => {
+    const {whenAnalyticsReady} = await import('@/lib/analytics');
+    mount();
+    const report = vi.fn();
+    const stop = whenAnalyticsReady(report);
+    stop();
+    fireEvent.click(screen.getByRole('button', {name:'Accepter'}));
+    loadTag();
+    expect(report).not.toHaveBeenCalled();
+  });
+});

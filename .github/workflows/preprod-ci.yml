@@ -75,6 +75,9 @@ jobs:
       - name: My stack discovery journeys
         run: npm run test:e2e:ma-stack
 
+      - name: Journey analytics and consent (isolated providers)
+        run: npx playwright test e2e/stack-analytics.spec.ts e2e/analytics-consent.spec.ts e2e/analytics-csp.spec.ts --output=analytics-test-results
+
       - name: Catalog keyboard and accessibility journeys
         run: npm run test:e2e:a11y -- --output=a11y-test-results
 
@@ -93,6 +96,7 @@ jobs:
             playwright-report/
             test-results/
             a11y-test-results/
+            analytics-test-results/
             payment-report/
             payment-test-results/
           retention-days: 7

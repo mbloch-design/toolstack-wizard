@@ -14,7 +14,7 @@ import { useStackPins } from "@/hooks/useStackPins";
 import { classifyToolForStack } from "@/lib/stackAutoClassification";
 import { scrollToTop, scrollContainerCandidate } from "@/lib/scroll";
 import { setSeoTags, setNoindex, removeNoindex, cleanupSeo, hasNonCanonicalSearchParams, SEO_BASE } from "@/lib/seo";
-import { trackEvent } from "@/lib/analytics";
+import { trackEvent, whenAnalyticsReady } from "@/lib/analytics";
 import {
   buildExplorationCandidates,
   usesAuditedExplorationRelations,
@@ -336,6 +336,18 @@ export default function ExplorerPage() {
   const hasMoreCandidates = visibleCandidates.length < filteredCandidates.length;
   const sourceKey = source?.type === "objectif" ? `objectif:${source.id}` : source?.type === "outil" ? `outil:${source.slug}` : source?.type === "stack" ? "stack:ma-stack" : "unknown";
 
+  const hasSourceTools = sourceTools.length > 0;
+  const sourceType = source?.type;
+  const lastMeasuredSource = useRef<string | null>(null);
+  useEffect(() => {
+    if (!sourceType || !hasSourceTools) return;
+    return whenAnalyticsReady(() => {
+      if (lastMeasuredSource.current === sourceKey) return;
+      lastMeasuredSource.current = sourceKey;
+      trackEvent("explorer_view", { source_type: sourceType });
+    });
+  }, [sourceKey, sourceType, hasSourceTools]);
+
   useEffect(() => {
     setResultLimit(INITIAL_RESULT_COUNT);
     loadingMoreRef.current = false;
@@ -438,6 +450,7 @@ export default function ExplorerPage() {
     : null;
 
   function handleBack() {
+    trackEvent("explorer_back", { source_type: source?.type });
     if (locationState.explorerCanGoBack) {
       navigate(-1);
       return;
@@ -797,6 +810,7 @@ export default function ExplorerPage() {
       onSave={(needIds, intent) => {
         if (!pendingTool) return;
         saveToolSelection(pendingToolSlug, needIds, intent);
+        trackEvent("explorer_save", { source_type: source?.type, intent });
         const labels = state.needs
           .filter((need) => needIds.includes(need.id))
           .map((need) => t(need.labelFr, need.labelEn));
