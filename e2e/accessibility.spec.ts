@@ -104,6 +104,12 @@ test("global search traps focus and returns it to its trigger", async ({ page })
   const dialog = page.getByRole("dialog", { name: "Recherche globale", exact: true });
   await expect(dialog).toBeVisible();
   await expect(dialog.getByRole("combobox")).toBeFocused();
+  // Audit the settled colors, not opacity blended during the staggered entrance.
+  await dialog.evaluate(async (element) => {
+    const finiteAnimations = element.getAnimations({ subtree: true })
+      .filter((animation) => animation.effect?.getComputedTiming().endTime !== Infinity);
+    await Promise.allSettled(finiteAnimations.map((animation) => animation.finished));
+  });
   await expectNoHighImpactViolations(page, ".gs-dialog");
   await page.keyboard.press("Escape");
   await expect(dialog).toHaveCount(0);
