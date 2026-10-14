@@ -1,3 +1,11 @@
+## Contre-revue R5 — 9 octobre 2026
+
+[Rapport actualisé](R5_SECOND_PASS_2026-10-09.md) : filtres URL corrigés, sémantique hôte/suite et restrictions des promesses incertaines renforcées ; preuves contrôlées automatiquement. 126/198 crédibles au top8 (52,5 % des 240 places), seuil non atteint ; R5 reste ouvert, non publié. Anciennes mesures conservées ci-dessous comme historique.
+
+## Point R5 — 9 octobre 2026
+
+[Audit des 30 sources et preuves](R5_EXPLORER_AUDIT_2026-10-09.md) réalisé localement, non publié. Garde-fous limités au pilote ; 127/198 relations crédibles dans le top 8 (cible 80 % non atteinte). R5 reste ouvert ; entrée R6 : réconcilier les identités assistant/API, Figma/Framer et les tags sans créer un catalogue parallèle.
+
 # ToolTrim — état des lieux et roadmap par lots
 
 **État vérifié le 9 octobre 2026.** Ce document remet en perspective la séquence de revue technique du 7 au 9 octobre. Il distingue le code publié, les résultats locaux, les mesures historiques et les propositions futures. Il ne certifie pas tout le produit ni la base distante.

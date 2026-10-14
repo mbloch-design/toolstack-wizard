@@ -72,6 +72,9 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
+      - name: My stack discovery journeys
+        run: npm run test:e2e:ma-stack
+
       - name: Payment return and draft recovery (simulated provider)
         run: npm run test:e2e:payment
 

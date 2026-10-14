@@ -44,6 +44,8 @@ const iAmount = col("price_original");
 const iCurrency = col("price_original_currency");
 const iVerified = col("verified_on");
 const iStatus = col("verification_status");
+const iPeriod = col("price_original_period");
+const iFree = col("free_core_available");
 
 const entries = [];
 let skipped = 0;
@@ -55,12 +57,17 @@ for (const row of rows) {
   if (!id || !Number.isFinite(amount) || amount <= 0) { skipped += 1; continue; }
   if (currency !== "EUR" && currency !== "USD" && currency !== "GBP") { skipped += 1; continue; }
   if (!verifiedOn) { skipped += 1; continue; }
-  entries.push({ id, amount, currency, verifiedOn, status: row[iStatus] || "" });
+  // This fallback is monthly. Never turn an annual/one-time/unknown amount
+  // into a monthly estimate; canonical plans retain their own billing period.
+  if (row[iPeriod] !== "monthly_public") { skipped += 1; continue; }
+  const freeFlag = row[iFree]?.toLowerCase();
+  const freeCoreAvailable = freeFlag === "true" ? true : freeFlag === "false" ? false : null;
+  entries.push({ id, amount, currency, verifiedOn, freeCoreAvailable, status: row[iStatus] || "" });
 }
 entries.sort((a, b) => a.id.localeCompare(b.id));
 
 const body = entries
-  .map((e) => `  ${JSON.stringify(e.id)}: { amount: ${e.amount}, currency: "${e.currency}", verifiedOn: "${e.verifiedOn}" },`)
+  .map((e) => `  ${JSON.stringify(e.id)}: { amount: ${e.amount}, currency: "${e.currency}", period: "monthly", freeCoreAvailable: ${e.freeCoreAvailable}, verifiedOn: "${e.verifiedOn}" },`)
   .join("\n");
 
 const out = `// Genere par scripts/gen-native-prices.mjs depuis src/data/pricing_truth.csv.
@@ -73,6 +80,8 @@ const out = `// Genere par scripts/gen-native-prices.mjs depuis src/data/pricing
 export type NativePriceRecord = {
   amount: number;
   currency: "EUR" | "USD" | "GBP";
+  period: "monthly";
+  freeCoreAvailable: boolean | null;
   verifiedOn: string;
 };
 

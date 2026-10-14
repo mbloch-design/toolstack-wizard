@@ -1,10 +1,58 @@
+## 13 octobre 2026 — R9 préparé, essais réels différés
+
+Le propriétaire reporte les tests avec de vraies personnes. [Support prêt : tâches, grille de cinq essais et limites de mesure](R9_RECETTE_UTILISATEURS.md). Aucun participant observé ; le critère quatre sur cinq reste ouvert. Les corrections suivantes se limitent aux obstacles techniques reproduits. R5/R6 éditoriaux, couverture exhaustive R8 et migration restent différés.
+
+## Fil autour de ma stack — 13 octobre 2026
+
+Entrée dans le hero Ma Stack : « Explorer autour de ma stack ». Le fil réutilise l'Explorer visuel existant à partir des outils utilisés (hors wishlist), permet de recentrer une idée et de l'enregistrer dans une collection. Les sources de la visite restent stables pendant l'enregistrement et le retour ; une nouvelle visite depuis Ma Stack utilise la sélection actualisée. Bouton d'exploration individuelle visible dès l'ouverture de l'inspecteur, sous la description.
+
+**R5/R6 éditoriaux restent différés.** Ce lot active un parcours produit ; il ne certifie pas la pertinence de toutes les relations catalogue et ne publie pas les corrections locales des quatorze fiches. Prochaine priorité : essais utilisateurs du parcours, puis obstacles observés. Reprendre le catalogue après révision du processus (impact, automatisation, lots cohérents et budget convenu).
+
+## Parcours produit — 13 octobre 2026
+
+Obstacle reproduit : l'inspecteur Ma Stack ne donnait pas accès à Explorer. Lien contextuel rétabli dans la feuille existante ; retour à la même fiche inspectée. La fermeture après retour perdait aussi le focus clavier : restauration à la carte après fermeture effective de la feuille, sans styles nouveaux. Le test complet couvre ajout, collection, retour, fermeture, focus et persistance en FR/EN à 390/1440 px. Validation finale consignée dans le changelog. R5/R6 éditoriaux restent différés.
+
+### Protocole court pour cinq essais utilisateurs
+
+Demander chaque tâche sans montrer les contrôles ni guider la personne :
+
+1. Ajouter à Ma Stack un outil qu'elle utilise réellement, depuis une sélection vide.
+2. À partir de cet outil, chercher un autre outil pertinent pour son activité.
+3. Enregistrer le nouvel outil dans sa stack et choisir ou créer une collection.
+4. Revenir à Ma Stack, retrouver les deux outils et ouvrir celui de départ.
+5. Retirer le nouvel outil, annuler le retrait, puis recharger pour vérifier sa sélection.
+
+Pour chaque tâche : noter terminé seul / terminé avec aide / abandonné, l'obstacle observé et les mots exacts de la personne. Ne pas assimiler un échec à une erreur utilisateur. Critère R9 conservé : quatre personnes sur cinq terminent le parcours sans aide. **Aucun essai utilisateur réel réalisé dans cette passe** ; les parcours automatisés ci-dessus sont une recette technique. La qualité éditoriale des suggestions reste hors de cette validation.
+
+## Passe design avant push — 12 octobre 2026
+
+[Rapport de la passe design](R5_DESIGN_REVIEW_2026-10-10.md). Explorer reprend les tokens typographiques du site ; texte explicatif et répétitions retirés, noms/relations mieux lisibles, cibles et focus harmonisés, objectifs longs corrigés à 320 px. Catalogue, classement et justifications conservés. Revue locale avant push ; la qualité éditoriale R5 reste ouverte. Après validation de ce lot, reprendre R6 sur les identités, rôles et tags puis rejouer le pilote.
+
+## Contre-revue R5 — 9 octobre 2026
+
+[Rapport, défauts corrigés et preuves](R5_SECOND_PASS_2026-10-09.md). Rattachement parent/enfant prioritaire, plugins distingués des fonctions, neuf réserves de promesse, comparaisons à vérifier reléguées après les autres relations. Le filtre URL angle est maintenant appliqué avec la catégorie et réinitialisable. Les données catalogue restent intactes, moteur hors pilote conservé.
+
+**R5 reste ouvert** : top8 126 crédibles / 198 disponibles / 240 places (63,64 % disponibles, 52,50 % de la cible), 42 places manquantes. Les cinq réserves critiques de promesse top4 de la première passe sont levées, les identités inconnues ne sont pas reclassées. Seuil 80 % non atteint. Commande de vérification des preuves ajoutée ; validation technique distincte de qualité éditoriale. R6 reprend les identités/rôles/tags dans le catalogue commun, R8 observe focus/clavier après retour. Non publié.
+
+## Lot R5 — audit et garde-fous, 9 octobre 2026
+
+[Rapport détaillé et actions catalogue](R5_EXPLORER_AUDIT_2026-10-09.md). Pilote de 30 sources, 300 résultats avant et 236 après correction ; relecture indépendante de chaque paire disponible. Les suites ne sont plus des extensions, les signaux trop larges ne créent plus de liens et les comparaisons sans corroboration sont indiquées comme à vérifier. Les cartes affichent leurs justifications bilingues. Activation limitée aux 30 routes sources auditées ; sorties hors pilote et multi-source conservées exactement. Contrat Slack : les deux destinations auditées exigées, minimum trois destinations ailleurs.
+
+**R5 reste ouvert éditorialement** : 127 relations crédibles parmi 198 résultats du top 8, 42 places sans preuve, ambiguïtés API/app encore présentes. Cible 80 % non atteinte ; comparaisons partielles/inconnues non comptées comme réussites. Reprise bornée dans R6 : identités des fiches IA, Figma/Framer, tags et synonymes ; rejouer le pilote avant clôture. Lot préparé localement, non publié.
+
+## Lot R4 — 9 octobre 2026 : promesses de coût
+
+Correction préparée sur `c42d137826` : coûts présentés comme estimés ; recoupements comme montant à examiner, jamais comme dépense inutile prouvée. Le montant conserve le calcul existant (outil le moins cher de chaque paire à coût positif, compté une seule fois). Sources : offre catalogue, plan choisi ou montant déclaré. Retrait/remplacement dans la sélection = modification du budget estimé, aucune résiliation externe. Hero, liste, inspecteur, comparatif, notification et footer alignés FR/EN. Calculs, stockage et routes conservés.
+
+Validation technique : 99 tests Ma Stack, 23 contrats SEO, build production complet PASS et recette locale FR/EN à 390/1440 px (coûts déclarés, retrait, annulation, persistance, débordement et erreurs JavaScript). La compréhension par de vrais utilisateurs reste à observer ; R4 n’est donc pas une validation produit complète. Prochain lot : R5, audit borné de la qualité des relations Explorer. Le renouvellement du jeton Redis reste une action de sécurité distincte à faire ; aucun paiement réel n’a été testé.
+
 ## Actualisation — 9 octobre 2026
 
 **Suivi actuel : [état des lieux et roadmap par lots](ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md), [roadmap générale](ROADMAP.md#suivi-technique-actif).** Les checkpoints de juillet et les caps V1/V2 du 5 octobre conservés ci-dessous sont des décisions/historiques, pas un inventaire certifié de l’interface actuellement publiée.
 
 - Socle publié : navigation, recherche, revalidation, décisions/devises et stockage, hydratation avec sélection enregistrée, projection catalogue et Router 7.18.4. Dernière CI complète verte R1 : 266 tests applicatifs, 82 API, 23 SEO, 99 Ma Stack, 56 hydratations ; le blocage historique GO14 ne pilote plus le workflow conservé.
 - Contrats API : 82 tests et contrôle strict ajoutés dans `13b631bc1d`, publiés via `bb4bc7f94b`, CI complète verte. R1 `4601f877cf` retire le SDK de types avec contrat HTTP compatible et JS des handlers identique ; sa CI et sa recette publique sont réussies.
-- Point de décision produit : la page actuelle présente coût catalogue et recoupements, alors que certains caps ci-dessous annoncent l’absence de coût global. Le libellé « Payé en double » ne prouve pas une dépense inutile personnelle. Lot R4 : aligner la promesse sur les preuves avant d’ajouter des fonctions.
+- Point de décision produit : la page actuelle présente coût catalogue et recoupements, alors que certains caps ci-dessous annoncent l’absence de coût global. Le libellé « Payé en double » ne prouve pas une dépense inutile personnelle. Lot R4 : correction préparée et testée ci-dessus ; compréhension utilisateur à observer.
 - Qualité des relations, compréhension de la navigation, données éditoriales et observation utilisateur restent des lots distincts R5/R6/R9. Les tests techniques ne valident pas à eux seuls la valeur perçue.
 - Aucun compte, enrichissement de données, changement de budget ou refonte des catégories n’est lancé par cette actualisation documentaire.
 

@@ -1,0 +1,88 @@
+{
+  "baseCommit": "7793a5e1bc",
+  "catalogueSha256": "8f2003b75a7dbce73d81c1787aac9564eedeb66c21798692f41ed31a1c2213f6",
+  "candidateSha256": "9b0deba961f91e092b62db6d80cbe589ce91901a74ce0f36c3767215fd6328e2",
+  "reviewSha256": "0aacde5139ef8bd5f7027aa8bf09fdbbb829f33795bd940f6b96331f9773a138",
+  "sourceSlugs": [
+    "figma",
+    "adobe-photoshop",
+    "adobe-after-effects",
+    "blender",
+    "cinema-4d",
+    "davinci-resolve",
+    "canva",
+    "notion",
+    "obsidian",
+    "slack",
+    "discord",
+    "asana",
+    "trello",
+    "clickup",
+    "chatgpt",
+    "claude",
+    "perplexity",
+    "midjourney",
+    "zapier",
+    "make",
+    "n8n",
+    "webflow",
+    "framer",
+    "wordpress",
+    "shopify",
+    "supabase",
+    "vercel",
+    "google-drive",
+    "dropbox",
+    "typeform"
+  ],
+  "status": "local_not_deployed",
+  "method": "Independent human editorial judgments, selected official checks. Fixed slot denominator; partial/unknown and missing are not successes. Integrity is not source authenticity.",
+  "summary": {
+    "sources": 30,
+    "metrics": {
+      "top4": {
+        "target_slots": 120,
+        "available": 114,
+        "missing": 6,
+        "by_status": {
+          "credible": 69,
+          "partial": 39,
+          "unknown": 6,
+          "reject": 0
+        },
+        "critical": 0,
+        "credible_over_available": 0.6052631578947368,
+        "credible_slots_over_target": 0.575
+      },
+      "top8": {
+        "target_slots": 240,
+        "available": 198,
+        "missing": 42,
+        "by_status": {
+          "credible": 126,
+          "partial": 65,
+          "unknown": 7,
+          "reject": 0
+        },
+        "critical": 0,
+        "credible_over_available": 0.6363636363636364,
+        "credible_slots_over_target": 0.525
+      },
+      "top10": {
+        "target_slots": 300,
+        "available": 236,
+        "missing": 64,
+        "by_status": {
+          "credible": 147,
+          "partial": 82,
+          "unknown": 7,
+          "reject": 0
+        },
+        "critical": 0,
+        "credible_over_available": 0.6228813559322034,
+        "credible_slots_over_target": 0.49
+      }
+    },
+    "quality_gate": "NOT_ATTAINED"
+  }
+}

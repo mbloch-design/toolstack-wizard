@@ -6,7 +6,7 @@ import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { convertAmount, CURRENCY_RATE_DATE, formatAmount, type Currency } from "@/lib/currencyRates";
 import { toolMonthlyCost } from "@/lib/stackCost";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
-import { AREA_COLORS, type Territory } from "@/lib/stackAreas";
+import type { Territory } from "@/lib/stackAreas";
 
 /**
  * Tuile Budget du tableau de bord Ma stack : l'anneau de répartition des pages
@@ -31,12 +31,11 @@ interface Props {
 }
 
 type Line = { id: string; label: string; amount: number; tool?: ToolSummary; color?: string };
-const LEGEND_MAX = 6;
 
 export default function StackBudgetBreakdown({ territories: all, colorOf, paid, currency, lang, onSelect, onFreemium }: Props) {
   const en = lang === "en";
   const rateDate = new Intl.DateTimeFormat(en ? "en-US" : "fr-FR", { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${CURRENCY_RATE_DATE}T00:00:00`));
-  const [view, setView] = useState<"tool" | "area">("area");
+  const [view, setView] = useState<"tool" | "area">("tool");
   const [focus, setFocus] = useState<string | null>(null);
   const [zoom, setZoom] = useState<string | null>(null);
   const zoomed = all.find((t) => t.id === zoom) || null;
@@ -51,6 +50,9 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
   };
   const toolLines: Line[] = tools.map((tool) => ({ id: tool.id, label: tool.name, amount: monthly(tool), tool }))
     .filter((line) => line.amount > 0).sort((a, b) => b.amount - a.amount);
+  const otherTools = tools.map((tool) => ({ tool, cost: toolMonthlyCost(tool, paid.isPaid, lang) }))
+    .filter(({ cost }) => cost.kind !== "paid" || cost.monthly <= 0)
+    .sort((a, b) => a.tool.name.localeCompare(b.tool.name, lang));
   const areaLines: Line[] = territories.map((t) => ({ id: t.id, label: t.label, amount: t.tools.reduce((sum, tool) => sum + monthly(tool), 0), color: colorOf(t.id) }))
     .filter((line) => line.amount > 0).sort((a, b) => b.amount - a.amount);
   // One paid area makes a full circle that says nothing: go by tool then.
@@ -66,8 +68,6 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
   const r = 76, c = 2 * Math.PI * r, gap = 3;
   let offset = 0;
   const focused = lines.find((line) => line.id === focus);
-  const shown = lines.slice(0, LEGEND_MAX);
-  const rest = lines.slice(LEGEND_MAX);
 
   return (
     <section id="ms-budget" className="ms-tile ms-budget-tile" aria-labelledby="ms-budget-title">
@@ -102,7 +102,7 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
           <text x="100" y="118" textAnchor="middle" className="sg-donut-label">{focused ? `${Math.round((focused.amount / total) * 100)} %` : (en ? "per month" : "par mois")}</text>
         </svg>
         <ul className="sg-storage-legend">
-          {shown.map((line, i) => (
+          {lines.map((line, i) => (
             <li key={line.id} className={[line.tool ? "" : "ms-budget-area", focus === line.id ? "is-focus" : "", focus && focus !== line.id ? "is-dim" : ""].filter(Boolean).join(" ") || undefined} onMouseEnter={() => setFocus(line.id)}>
               <span className="sg-storage-dot" style={line.color ? { background: line.color } : { opacity: shade(i) }} aria-hidden />
               {line.tool && <ToolLogo tool={line.tool} size={24} className="sg-budget-logo" />}
@@ -112,7 +112,23 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
               <span className="sg-budget-value">≈ {money(line.amount)}</span>
             </li>
           ))}
-          {rest.length > 0 && <li className="ms-budget-rest"><span aria-hidden /><span aria-hidden /><span className="sg-budget-name">{en ? `${rest.length} more` : `${rest.length} autre${rest.length > 1 ? "s" : ""}`}</span><span className="sg-budget-value">≈ {money(rest.reduce((sum, line) => sum + line.amount, 0))}</span></li>}
+        </ul>
+      </div>}
+      {otherTools.length > 0 && <div className="ms-budget-other">
+        <h3>{en ? "Other tools" : "Autres outils"} · {otherTools.length}</h3>
+        <ul className="sg-storage-legend ms-budget-other-list">
+          {otherTools.map(({ tool, cost }) => <li key={tool.id}>
+            <ToolLogo tool={tool} size={24} className="sg-budget-logo" />
+            <div className="ms-budget-tool-label">
+              <button type="button" className="sg-budget-name ms-budget-link" onClick={() => onSelect(toolKey(tool))}>{tool.name}</button>
+              <span className="ms-budget-status">{cost.kind === "unknown"
+                ? (en ? "Cost unknown" : "Coût non renseigné")
+                : cost.kind === "freemium-free"
+                  ? (en ? "Freemium counted as free" : "Freemium compté gratuit")
+                  : (en ? "Free" : "Gratuit")}</span>
+            </div>
+            <span className="sg-budget-value">{cost.kind === "unknown" ? "—" : money(0)}</span>
+          </li>)}
         </ul>
       </div>}
       <p className="ms-tile-note">

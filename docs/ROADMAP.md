@@ -13,6 +13,11 @@
 
 <a id="suivi-technique-actif"></a>
 
+## Priorité révisée — 13 octobre 2026
+
+R5/R6 éditoriaux différés : le travail préparé est conservé localement, sans nouvelle campagne de fiches/tarifs. Priorité au parcours Ma Stack → Explorer → enregistrement → retour et à ses essais utilisateurs. Le fil global réutilise les routes existantes ; la migration catalogue ne bloque pas ce travail local-first. Avant reprise catalogue : tri par impact, contrôles structurels automatisés, lots cohérents, une revue/bilan consolidés et budget convenu. [Parcours et protocole](MA_STACK_ROADMAP.md).
+
+
 ## Suivi technique actif — 9 octobre 2026
 
 **Point d’entrée du chantier : [état des lieux, gains et roadmap complète par lots](ETAT_DES_LIEUX_ET_ROADMAP_2026-10-09.md).** Ce bilan remplace les anciens tableaux d’avancement. Les sections historiques ci-dessous ne sont pas des états de production actuels.

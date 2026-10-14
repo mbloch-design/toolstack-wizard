@@ -121,7 +121,8 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&display=swap" /></noscript>
 
     <!-- Google Consent Mode v2: denied until the visitor explicitly accepts.
-         GA4 itself is injected by React only after that consent. -->
+         React loads GA4 with denied storage for limited cookieless page signals;
+         explicit consent enables analytics cookies and detailed interactions. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };

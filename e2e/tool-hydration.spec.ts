@@ -77,3 +77,33 @@ for (const slug of ["notion", "1001bit-tools", "17hats", "8fig", "adobe-acrobat-
     }
   }
 }
+
+// Hold every application script: the visible HTML must not offer an inert add action.
+test("prerendered stack add waits for scripts, then saves on the first click", async ({ page }) => {
+  let releaseScripts!: () => void;
+  const scriptsReady = new Promise<void>((resolve) => { releaseScripts = resolve; });
+  await page.route("**/assets/*.js", async (route) => {
+    await scriptsReady;
+    await route.continue();
+  });
+  await page.route("**/*supabase.co/**", (route) => route.abort());
+  await page.addInitScript(() => localStorage.setItem("tooltrim-analytics-consent", JSON.stringify({
+    version: 1, choice: "refused", decidedAt: Date.now(), expiresAt: Date.now() + 3600000,
+  })));
+  try {
+    await page.goto("/fr/tool/figma", { waitUntil: "commit" });
+    const cta = page.locator(".td-hero-actions .pin-tool-button--full");
+    await expect(cta).toBeVisible();
+    await expect(cta).toBeDisabled();
+    releaseScripts();
+    await expect(cta).toBeEnabled();
+    await cta.click();
+    await expect(cta).toContainText("Dans ma stack");
+    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-ma-stack-mvp-v3") || "{}").pinnedToolSlugs)).toContain("figma");
+    await cta.click();
+    await expect(page).toHaveURL(/ma-stack\?outil=figma/);
+    await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
+  } finally {
+    releaseScripts();
+  }
+});
