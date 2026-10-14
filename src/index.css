@@ -23054,6 +23054,22 @@ section[id]:not(.cp-guide-section) {
 .sp-contact-line { margin-block: var(--space-md) 0; padding-bottom: var(--space-2xl); font: 400 var(--tt-size-card-body)/1.6 var(--font-ui); color: var(--color-muted); }
 .sp-faq-section { padding-bottom: var(--space-xl); }
 #submit-plans-title { scroll-margin-top: var(--space-lg); }
+.sp-hero-cta-secondary { display: inline-flex; align-items: center; min-height: 44px; font: 500 var(--tt-size-card-body)/1.5 var(--font-ui); color: var(--color-text-meta); text-decoration: underline; text-underline-offset: 4px; }
+.sp-hero-cta-secondary:hover { color: var(--color-text); }
+.sp-proof-row { margin-top: var(--space-xl); }
+.sp-founder-note { margin: var(--space-sm) 0 0; font: 400 var(--tt-size-card-body)/1.5 var(--font-ui); color: var(--color-text-secondary); }
+.sp-proof-row-label { margin: 0 0 var(--space-sm); font: 600 12px/1.4 var(--font-ui); letter-spacing: .04em; text-transform: uppercase; color: var(--color-text-meta); }
+.sp-proof-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-sm) var(--space-lg); margin: 0; padding: 0; list-style: none; }
+.stp-page .sp-plan-card:not(.sp-plan-card--highlight) .sp-plan-args li:nth-child(2) svg { color: var(--color-text-meta); }
+.sp-proof-logo { display: inline-flex; align-items: center; gap: var(--space-xs); font: 600 var(--tt-size-card-body)/1 var(--font-ui); color: var(--color-text-secondary); text-decoration: none; }
+.sp-proof-logo:hover { color: var(--color-text); }
+.stp-page .sp-plan-card--highlight { background: var(--color-text); border-color: var(--color-text); color: var(--color-bg); }
+.stp-page .sp-plan-card--highlight :is(.sp-plan-price, .sp-plan-name, .sp-plan-desc, .sp-plan-args li, .sp-plan-args svg) { color: var(--color-bg); }
+.stp-page .sp-plan-card--highlight .sp-plan-period { color: color-mix(in srgb, var(--color-bg) 65%, transparent); }
+.stp-page .sp-plan-card--highlight .sp-plan-args { border-top-color: color-mix(in srgb, var(--color-bg) 18%, transparent); }
+.stp-page .sp-plan-card--highlight .sp-plan-tag { background: var(--color-bg); color: var(--color-text); }
+.stp-page .sp-plan-card--highlight .sp-plan-cta { background: var(--color-bg); border-color: var(--color-bg); color: var(--color-text); }
+.stp-page .sp-plan-card--highlight .sp-plan-cta:hover { background: var(--color-surface); }
 @media (max-width: 1000px) {
   .sp-pitch { gap: var(--space-lg); }
   .sp-listing-preview { padding: var(--space-lg); }

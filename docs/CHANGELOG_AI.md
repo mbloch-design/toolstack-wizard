@@ -1,3 +1,9 @@
+## 14 octobre 2026 — Refonte conversion /submit
+
+- Page pensée pour les ~150 emails de prospection quotidiens : CTA unique noir, carte payante sombre façon « Pro », DR 43 + lien dofollow remontés sous le CTA, rangée de logos réels du catalogue. Formule gratuite affichée en nofollow (dofollow fixé à la main par Michael sur les fiches payantes) ; FAQ et section formules alignées.
+- Mentions de l'offre expirée au 30 septembre retirées.
+- Lien personnalisé `/en/submit?tool=…&site=…` : hero, CTA et aperçu au nom de l'outil, formulaire prérempli, note « réponds à mon email ». Parseur borné et testé ; variable non remplie = page générique.
+- Revue design-superpowers L2 (3 P1 corrigés) et audit de conversion. Validation : 28 tests submit, types, build production avec prérendu, contrôle visuel desktop et mobile 375 px. Voir SUBMIT_REDESIGN_2026-10-14.md.
 ## 14 octobre 2026 — Accessibilité des filtres et scénarios hérités remis à jour
 
 - Trois anciens tests visaient un menu de carte, un filtre catégorie et un panneau stacks remplacés. Ils couvrent maintenant les contrôles actuels : tabulation réelle vers l’enregistrement d’une carte, ajout unique persistant, ouverture des filtres, choix au clavier, réouverture, Escape, fermeture mobile et restitution du focus. Matrice FR/EN à 390/1440 px, aucune assertion Axe abaissée ni test ignoré.

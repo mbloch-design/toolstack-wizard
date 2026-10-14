@@ -176,3 +176,5 @@ Mesures Playwright à 1440, 1024 et 390 px. Tout appliqué le 9 oct. (« go sur 
 - [x] Deux logos par ligne partout, espace de 13 px avant le libellé
 - [x] Logos en mode sombre : plaque claire sur chaque logo chargé ; 23 logos illisibles sur 400 → 0
 - [x] Recherches récentes (4, sans doublon, navigateur seulement) à la place de « Essayez » dès qu'on a cherché ; « Effacer » rend les exemples
+
+- [ ] /submit (14/10) : passer les emails de prospection sur `/en/submit?tool={{tool}}&site={{domain}}`, puis comparer `submit_priority_checkout` lien perso vs lien nu sur 2 à 3 semaines. Voir docs/SUBMIT_REDESIGN_2026-10-14.md.

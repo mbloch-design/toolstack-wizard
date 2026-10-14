@@ -89,3 +89,17 @@ Les événements `submit_plan_select`, `submit_priority_checkout` et
 `submit_tool` existants suffisent ; pas de nouvel événement nécessaire sauf
 si la rangée de logos ou le nouveau CTA hero doivent être distingués dans la
 source (`source` déjà paramétrable sur `choosePlan`).
+
+## Ajouts après revue design et audit de conversion (même jour)
+
+- Revue design-superpowers (L2) : 0 P0, 3 P1 corrigés. La section formules
+  parlait encore d'un simple délai alors que la différence porte aussi sur le
+  lien ; la FAQ était alignée ; DR 43 + dofollow sont remontés sous le CTA du hero.
+- Mentions « offre jusqu'au 30 septembre » retirées : offre expirée encore affichée.
+- Lien de prospection personnalisé : `https://tooltrim.com/en/submit?tool={{tool}}&site={{domain}}`.
+  Le hero, le CTA et l'aperçu prennent le nom de l'outil ; le formulaire est
+  prérempli (il ne reste que l'email) ; une ligne « réponds à mon email,
+  Michael » prolonge la voix de l'email. Une variable non remplie (`{{tool}}`)
+  retombe sur la page générique. `submit_plan_select` porte `personalized`.
+- Test proposé : moitié des envois en lien personnalisé, moitié en lien nu,
+  métrique `submit_priority_checkout` / visiteurs, 2 à 3 semaines complètes.
