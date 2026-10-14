@@ -1,3 +1,9 @@
+## 14 octobre 2026 — Scénarios clavier et filtres repris
+
+Les trois scénarios hérités de menus remplacés sont réécrits sur les actions actuelles : ajout direct depuis une carte, filtres outils et filtres stacks. Les panneaux ont désormais un nom accessible fondé sur leur titre existant ; deux défauts sérieux `aria-dialog-name` reproduits avant correction. Couverture Chromium FR/EN à 390/1440 px, sélection conservée après réouverture, Escape, fermeture mobile et retour de focus. Suite de 21 contrôles ajoutée à la CI avec traces séparées. La recette de publication est consignée dans CHANGELOG_AI.md.
+
+Ce lot ferme ces scénarios techniques ; il ne certifie pas l’accessibilité exhaustive, WebKit ou les lecteurs d’écran. R9 réel reste reporté à la demande du propriétaire, R5/R6 et migration restent différés.
+
 ## 13 octobre 2026 — R9 préparé, essais réels différés
 
 Le propriétaire reporte les tests avec de vraies personnes. [Support prêt : tâches, grille de cinq essais et limites de mesure](R9_RECETTE_UTILISATEURS.md). Aucun participant observé ; le critère quatre sur cinq reste ouvert. Les corrections suivantes se limitent aux obstacles techniques reproduits. R5/R6 éditoriaux, couverture exhaustive R8 et migration restent différés.

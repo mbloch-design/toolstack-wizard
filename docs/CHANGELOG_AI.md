@@ -1,3 +1,11 @@
+## 14 octobre 2026 — Accessibilité des filtres et scénarios hérités remis à jour
+
+- Trois anciens tests visaient un menu de carte, un filtre catégorie et un panneau stacks remplacés. Ils couvrent maintenant les contrôles actuels : tabulation réelle vers l’enregistrement d’une carte, ajout unique persistant, ouverture des filtres, choix au clavier, réouverture, Escape, fermeture mobile et restitution du focus. Matrice FR/EN à 390/1440 px, aucune assertion Axe abaissée ni test ignoré.
+- La recette actualisée a reproduit deux violations sérieuses `aria-dialog-name` sur les panneaux outils/stacks. Les PopoverContent reçoivent désormais un nom accessible repris du titre existant, traduit par l’appelant dans CatalogToolbar. Deux attributs ARIA ajoutés ; aucun nouveau texte visible ni CSS.
+- Suite Chromium de 21 scénarios ajoutée à la CI ; traces d’échec dans a11y-test-results, conservées par le téléversement d’artefacts existant.
+- Validation sur le lot avant intégration de la nouvelle recherche distante : 346 tests applicatifs, types app/Node/API et build production avec contrôles SEO/équivalence/budgets PASS ; 21 scénarios sur serveur dev puis 21 sur HTML produit PASS (1,1 min), dont tabulation et visibilité des actions. Contre-revue sans problème actionable. Recherche distante conservée par rebase sur b775b72905 ; recette intégrée rejouée : 21 contrôles Chromium (47 s), 346 tests app et types PASS. Le build et les vérifications de l’ensemble intégré sont rejoués par la CI de publication.
+- Roadmap et support R9 actualisés : les trois scénarios hérités sont repris. Cela ne clôture pas l’accessibilité exhaustive, WebKit ou les essais avec de vraies personnes ; R5/R6 et migration restent différés.
+
 ## 13 octobre 2026 — Premier clic fiable après hydratation et préparation R9
 
 - Obstacle reproduit deux fois sur une fiche publique : un clic sur Ajouter peut précéder le chargement du code de ToolDetailPage et ne rien enregistrer. PinToolButton reste désactivé dans le HTML prérendu et pendant le premier rendu d’hydratation ; il devient actif après montage des handlers. Aucun nouveau texte, style ou changement de catalogue.

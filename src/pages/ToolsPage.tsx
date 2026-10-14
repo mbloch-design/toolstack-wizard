@@ -452,7 +452,7 @@ const ToolsPage = () => {
                   {activeFilterCount > 0 && <span className="tt-pill-count">{activeFilterCount}</span>}
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="tt-filter-panel" align="end" sideOffset={8}>
+              <PopoverContent className="tt-filter-panel" aria-label={t("Filtres", "Filters") as string} align="end" sideOffset={8}>
                 <div className="tt-filter-panel-head">
                   <strong>{t("Filtres", "Filters")}</strong>
                   <div className="tt-filter-panel-head-actions">

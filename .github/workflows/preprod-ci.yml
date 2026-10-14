@@ -75,6 +75,9 @@ jobs:
       - name: My stack discovery journeys
         run: npm run test:e2e:ma-stack
 
+      - name: Catalog keyboard and accessibility journeys
+        run: npm run test:e2e:a11y -- --output=a11y-test-results
+
       - name: Payment return and draft recovery (simulated provider)
         run: npm run test:e2e:payment
 
@@ -89,6 +92,7 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            a11y-test-results/
             payment-report/
             payment-test-results/
           retention-days: 7
