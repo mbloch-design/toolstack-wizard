@@ -1,11 +1,17 @@
-## 14 octobre 2026 — Mesure consentie du parcours Explorer (local)
+## 14 octobre 2026 — Tokens de la nouvelle version Soumission
+
+- La publication ea04a3d373 ajoutait 17 rayons littéraux et bloquait le gate design. Substitutions par les tokens existants et deux tokens de composant strictement locaux à .stp-page pour préserver les rayons spécifiques de 28 et 40 px, sans modifier l’échelle globale ni la baseline.
+- Contrôle des tokens PASS (223 rayons, stable) ; captures intégrales strictement identiques avant/après sur /fr/submit et /en/submit à 390/1440 px, animations neutralisées pour la comparaison. Contre-revue sans anomalie.
+
+## 14 octobre 2026 — Mesure consentie du parcours Explorer
 
 - Ajout de `explorer_view` (type de source), `explorer_save` (type de source et intention après confirmation) et `explorer_back` (clic de retour). Les événements existants sont conservés. Aucun nom/identifiant de collection, liste d’outils ni nouvel identifiant dans les nouveaux paramètres.
 - La vue attend le tag et le consentement ; une acceptation tardive mesure la vue encore ouverte. Nettoyage à la navigation, pas de rejeu des clics antérieurs, pas de nouvelle vue sur les filtres ou rerenders. Trois tests rouges reproduits avant implémentation ; recette navigateur rouge reproduite sur la vue manquante.
 - Validation : 356 tests applicatifs, 144 tests Ma Stack, types app/Node/API, contrôle des tokens et 30 contrôles navigateur PASS. Les sept scénarios analytics couvrent FR/EN, mobile/ordinateur, refus, retrait, accord tardif, chargement lent, intention À essayer et collection privée. Le scénario tardif attend la disparition normale du toast après déplacement du pointeur ; aucun clic forcé ni changement UI.
 - Build production complet PASS, avec prérendu, équivalence HTML, audits SEO et budgets ; 19/19 contrôles analytics/consentement réussis sur cet artefact (15,6 s). Le test historique de tag lent attend désormais DOMContentLoaded : attendre load était contradictoire avec son script volontairement retenu sur le HTML généré.
 - Recette analytics/consentement ajoutée à la CI (19 contrôles, services externes simulés), traces séparées. Contre-revue du code, des tests, de la CI et du contrat des événements sans problème actionable.
-- Roadmaps consolidées : anciens tableaux datés explicitement historiques, complément local distinct de la réception réelle. Aucun compte GA4 réel interrogé ni entonnoir distant configuré. R9 utilisateur, R5/R6, migration, WebKit et paiement réel restent différés ou hors périmètre.
+- Intégration avant publication sur ea04a3d373 : 356 tests app, types app et 19 contrôles analytics/consentement PASS ; le build complet de l’ensemble est revalidé par la CI.
+- Roadmaps consolidées : anciens tableaux datés explicitement historiques, recette technique distincte de la réception réelle. Aucun compte GA4 réel interrogé ni entonnoir distant configuré. R9 utilisateur, R5/R6, migration, WebKit et paiement réel restent différés ou hors périmètre.
 
 
 ## 14 octobre 2026 — /submit : refonte complète section par section
