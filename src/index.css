@@ -17380,7 +17380,7 @@
   .gs-row:is(:hover, :focus-visible) { background: var(--gs-fill); }
   .gs-row-lead { display: flex; align-items: center; color: var(--color-text-meta); }
   .gs-row-lead > svg { width: 16px; height: 16px; }
-  .gs-row-logos > * { border-radius: 5px; box-shadow: 0 0 0 1.5px var(--color-surface); transition: box-shadow 120ms ease-out; }
+  .gs-row-logos > * { border-radius: var(--radius-xs); box-shadow: 0 0 0 1.5px var(--color-surface); transition: box-shadow 120ms ease-out; }
   .gs-row-logos > * + * { margin-left: -5px; }
   .gs-row:is(:hover, :focus-visible) .gs-row-logos > * { box-shadow: 0 0 0 1.5px var(--gs-fill); }
   .gs-row-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
