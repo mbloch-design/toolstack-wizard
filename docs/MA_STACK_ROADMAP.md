@@ -2,7 +2,7 @@
 
 Complément validé (build complet et 19 contrôles sur l’artefact production) : affichage d’une source Explorer, enregistrement confirmé et clic de retour sont distingués, sous consentement, sans contenu privé des collections ni nouvel identifiant. Chargement lent et acceptation tardive couverts ; aucun rejeu des clics refusés. [Contrat des événements, recette et limites](R9_RECETTE_UTILISATEURS.md#mesure-technique-du-parcours--14-octobre-2026).
 
-Cette instrumentation ne clôture pas R9 : réception réelle et lecture de l’entonnoir restent à vérifier après publication ; cinq essais utilisateurs restent reportés. Un clic de retour ne prouve pas une arrivée et un enregistrement ne prouve pas la pertinence des suggestions. R5/R6, migration, optimisations de chargement et couverture exhaustive WebKit restent différés. La prochaine décision produit dépend d’observations, pas d’une nouvelle campagne de fiches ou de composants.
+Lot publié, 19 contrôles publics réussis ; les trois événements sont acceptés par les deux flux GA4 existants (HTTP 204, avec accord). Cette instrumentation ne clôture pas R9 : visibilité dans les rapports et lecture de l’entonnoir restent à vérifier ; cinq essais utilisateurs restent reportés. Un clic de retour ne prouve pas une arrivée et un enregistrement ne prouve pas la pertinence des suggestions. R5/R6, migration, optimisations de chargement et couverture exhaustive WebKit restent différés. La prochaine décision produit dépend d’observations, pas d’une nouvelle campagne de fiches ou de composants.
 
 ## 14 octobre 2026 — Scénarios clavier et filtres repris
 

@@ -1,3 +1,10 @@
+## 14 octobre 2026 — Publication R9 et portabilité de la recette
+
+- Lot R9 publié avec le correctif tokens sur 5db09fd39d ; déploiement Vercel réussi. La correction de marges 773b57373e conserve le lot.
+- 19/19 contrôles consentement/analytics PASS sur tooltrim.com (22 s), services simulés. Une unique visite réelle distincte : zéro cookie GA avant accord ; affichage Explorer, enregistrement confirmé puis retour dans Ma Stack, sélection visible.
+- Les trois événements sont acceptés par les deux destinations existantes G-DL5MJKQ3JE et G-PQPPPH19MH (six réponses HTTP 204, consentement G101). Cette preuve réseau ne certifie pas leur affichage dans les rapports : noms non encore observés dans les aperçus temps réel lors du contrôle. Aucun réglage GA4 modifié ni entonnoir créé.
+- La première CI avec la suite consentement reproduit un chemin de capture Mac incompatible Linux (ENOENT), 18/19 autres scénarios passent. Capture déplacée vers test.info().outputPath ; scénario mobile public rejoué PASS et capture présente dans le dossier de résultats. Aucune assertion, logique métier ou protection abaissée. La nouvelle CI revalide la chaîne complète.
+
 ## 14 octobre 2026 — Tokens de la nouvelle version Soumission
 
 - La publication ea04a3d373 ajoutait 17 rayons littéraux et bloquait le gate design. Substitutions par les tokens existants et deux tokens de composant strictement locaux à .stp-page pour préserver les rayons spécifiques de 28 et 40 px, sans modifier l’échelle globale ni la baseline.

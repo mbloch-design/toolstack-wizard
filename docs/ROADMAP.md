@@ -21,14 +21,14 @@ Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas
 |---|---|
 | Parcours Ma Stack → Explorer → enregistrement → retour | Publié ; contrôles techniques FR/EN mobile/ordinateur intégrés à la CI. Ils ne prouvent pas la valeur perçue des relations. |
 | R8 — Clavier et filtres | Trois scénarios obsolètes repris, deux panneaux sans nom accessible corrigés ; 21 contrôles Chromium et 42 passages publics réussis. CI du correctif tokens `b7fa441935` réussie. Couverture exhaustive, WebKit et lecteurs d’écran restent différés. |
-| R9 — Instrumentation | Complément des événements vue/enregistrement/retour, sous consentement ; recette avec analytics simulé. Réception et exploitation GA4 réelles à vérifier après publication. [Contrat et limites](R9_RECETTE_UTILISATEURS.md#mesure-technique-du-parcours--14-octobre-2026). |
+| R9 — Instrumentation | Publié, 19 contrôles publics réussis. Les trois événements sont acceptés par les deux flux GA4 existants (HTTP 204 avec accord) ; visibilité dans les rapports et exploitation de l’entonnoir restent à vérifier. [Contrat et limites](R9_RECETTE_UTILISATEURS.md#mesure-technique-du-parcours--14-octobre-2026). |
 | R9 — Utilisateurs | Protocole prêt ; essais réels reportés par le propriétaire. Aucun participant observé ni critère quatre sur cinq acquis. |
 | R5/R6 — Relations et catalogue | Différés ; travail local conservé, aucune publication des quatorze fiches. Revoir le processus et le budget avant reprise. |
 | R3/R7 — Architecture et chargement catalogue | Différés ; mesurer avant toute nouvelle migration ou optimisation. |
 | R10/R11 — Build, SEO/GEO et médias | Lots séparés ; aucune nouvelle migration ou campagne de contenu engagée dans cette passe. |
 | Soumissions et paiement | Chantier séparé. Cette passe ne recertifie pas son fonctionnement et n’effectue aucun paiement. Renouvellement du jeton Redis toujours à traiter séparément. |
 
-**Suite :** vérifier la réception du complément R9 après déploiement, puis exploiter les observations disponibles. Les tests réels restent programmables plus tard ; aucune raison technique démontrée ici d’ouvrir un nouveau chantier produit en attendant.
+**Suite :** confirmer la visibilité des événements dans les rapports GA4, puis exploiter les observations disponibles. Les tests réels restent programmables plus tard ; aucune raison technique démontrée ici d’ouvrir un nouveau chantier produit en attendant.
 
 ## Priorité révisée — 13 octobre 2026
 

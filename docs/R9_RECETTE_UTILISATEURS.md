@@ -52,7 +52,13 @@ Pour les visites consenties, suivre la séquence `stack_explorer_click` → `exp
 
 `explorer_back` mesure une intention : il ne certifie pas une arrivée dans Ma Stack. Son historique peut mener à une autre étape d’Explorer ou à une fiche outil. Une vue de Ma Stack ultérieure est nécessaire pour vérifier l’arrivée. Les retours du navigateur ne produisent pas cet événement de clic. Un enregistrement confirme la mise à jour locale de l’interface, pas une synchronisation distante ou une persistance durable lorsque le stockage du navigateur est dégradé.
 
-Aucun entonnoir GA4 configuré ni réception dans le compte réel attestée par cette recette. Les scénarios navigateur interceptent les services analytics et vérifient les commandes GA4 locales ; ils ne polluent pas l’audience réelle. La mesure des personnes refusant le suivi reste limitée aux vues minimisées du Consent Mode existant. Ne pas confondre ces signaux avec une mesure exhaustive de l’audience, de la pertinence des liens ou d’une réussite sans aide. La grille d’observation reste nécessaire.
+Aucun entonnoir GA4 configuré ni visibilité dans les rapports réels attestée par la recette automatisée isolée. Les scénarios navigateur interceptent les services analytics et vérifient les commandes GA4 locales ; ils ne polluent pas l’audience réelle. La mesure des personnes refusant le suivi reste limitée aux vues minimisées du Consent Mode existant. Ne pas confondre ces signaux avec une mesure exhaustive de l’audience, de la pertinence des liens ou d’une réussite sans aide. La grille d’observation reste nécessaire.
+
+### Publication et recette publique du 14 octobre
+
+Code R9 publié sur 5db09fd39d, déploiement Vercel réussi ; 773b57373e conserve ce code. Les 19 contrôles analytics/consentement publics passent (22 s), services simulés. Une seule visite réelle distincte a confirmé affichage, enregistrement et retour dans Ma Stack : zéro cookie GA avant accord ; les trois événements acceptés dans chacun des deux flux existants G-DL5MJKQ3JE et G-PQPPPH19MH (six réponses HTTP 204, consentement G101).
+
+La réception réseau est attestée ; leur visibilité dans les rapports temps réel n’est pas encore attestée. Aucun réglage des propriétés n’a été changé. La CI a aussi révélé un chemin de capture Mac dans l’ancien scénario consentement mobile : remplacé par le dossier de résultats portable Playwright, scénario public rejoué avec capture créée. La chaîne distante complète doit confirmer cette correction.
 
 ### Vérification reproductible
 

@@ -96,7 +96,7 @@ test('English mobile preferences, keyboard dismissal and focus restoration', asy
   expect(box!.x).toBe(0);
   expect(box!.width).toBe(390);
   expect(box!.y + box!.height).toBeLessThanOrEqual(845);
-  await page.screenshot({path:'/private/tmp/tooltrim-consent-mobile.png'});
+  await page.screenshot({path:test.info().outputPath('consent-mobile.png')});
   await page.getByRole('button', {name:'Refuse', exact:true}).click();
   const prefs = page.getByRole('button', {name:'Cookie preferences', exact:true});
   await prefs.click();
