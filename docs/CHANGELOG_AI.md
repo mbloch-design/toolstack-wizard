@@ -1,3 +1,11 @@
+## 14 octobre 2026 — Hero /submit : promesse, visuel produit, specs
+
+- Promesse réécrite pour tous les prospects (pas seulement Product Hunt) : « Get {outil} found by people choosing their next tool. », sous-titre « We write an independent review… You don't write a word. », CTA « Get {outil} reviewed · $29 ». Le mot « review » remplace « listing ».
+- Visuel produit : fiche de l'outil invité « en cours de rédaction » dans une fenêtre en perspective, logo réel, note marquée « after review » (aucune note inventée), halo dégradé discret (exception notée dans DESIGN_SYSTEM.md). Animations coupées en prefers-reduced-motion.
+- Bandeau de specs pleine largeur sous le titre « Included in the $29 review » : DR 43, Dofollow (gratuit = nofollow, dit explicitement), 5 days, 0 words. Remplace le bandeau gris redondant.
+- Réassurance près du CTA : « You check the facts before it goes live », réponse à l'objection « et si la note est mauvaise ».
+- Validation : 28 tests submit, types, build, contrôle visuel 1280 px et 375 px. Mode sombre non vérifié visuellement.
+
 ## 14 octobre 2026 — Refonte conversion /submit
 
 - Page pensée pour les ~150 emails de prospection quotidiens : CTA unique noir, carte payante sombre façon « Pro », DR 43 + lien dofollow remontés sous le CTA, rangée de logos réels du catalogue. Formule gratuite affichée en nofollow (dofollow fixé à la main par Michael sur les fiches payantes) ; FAQ et section formules alignées.

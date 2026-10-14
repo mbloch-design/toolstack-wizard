@@ -64,6 +64,8 @@ Aucun `<img>` direct, aucun composant local, aucun carré vide sans fallback.
 
 **Règle bleue :** Le bleu ToolTrim ne doit pas apparaître sur des boutons CTA principaux de pages outils. Il est réservé aux états actifs (tab active, lien actif), au focus ring, et aux labels de score dans la StickyDecisionCard.
 
+**Exception /submit (14 oct. 2026, décision Michael) :** le visuel du hero de `/submit` est posé sur un halo flou (dégradés radiaux bleu ToolTrim, vert et violet à faible opacité, `.sp-hero-visual::before`). C'est la seule dérogation à « pas de gradient background » : pas d'encart, pas de bord, jamais derrière du texte.
+
 **Règle de contraste (révisée le 8 oct. 2026, décision Michael) :** trois tons de texte en mode clair, jamais plus.
 - `#1D1D1F` (`--color-text`) : titres, noms, chiffres, tout ce qu'on doit lire en premier.
 - `#424245` (`--color-text-secondary`) : texte courant et descriptions (9,2:1 sur #F6F5F4).

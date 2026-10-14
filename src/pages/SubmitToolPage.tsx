@@ -4,7 +4,7 @@ import { Link } from "@/lib/routerLinks";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
-import { ArrowRight, Check, Clock, Copy, CreditCard, FileText, Globe, Link2, Mail, Scale, ShieldCheck, StarSolid, User } from "@/lib/icons";
+import { ArrowRight, Check, Clock, Copy, CreditCard, FileText, Gauge, Globe, Link2, Mail, PenLine, Scale, ShieldCheck, StarSolid, User } from "@/lib/icons";
 import { cleanupSeo, SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
 import { normalizeSiteUrl, type NormalizeUrlFailure } from "@/lib/normalizeSiteUrl";
@@ -384,28 +384,40 @@ const SubmitToolPage = () => {
       <div className="sp-pitch">
         <div className="sp-pitch-copy">
           <span className="tt-page-hero-eyebrow">{inviteName ? t(`Pour l’équipe ${inviteName}`, `For the ${inviteName} team`) : t("Pour les créateurs d’outils SaaS", "For SaaS builders")}</span>
-          <h1>{inviteName ? (lang === "fr" ? <>{inviteName} a sa place sur ToolTrim. <span className="tt-title-muted">Là où les petites équipes choisissent.</span></> : <>{inviteName} belongs on ToolTrim. <span className="tt-title-muted">Where small teams choose.</span></>) : lang === "fr" ? <>Fais de ton outil un choix crédible. <span className="tt-title-muted">Auprès des freelances et petites équipes.</span></> : <>Make your tool a credible choice. <span className="tt-title-muted">For freelancers and small teams.</span></>}</h1>
-          <p className="sp-pitch-lead">{t("ToolTrim prépare et publie une fiche claire de ton produit : usages, tarifs, alternatives, note expliquée, verdict éditorial et lien direct vers ton site.", "ToolTrim prepares and publishes a clear product listing: use cases, pricing, alternatives, an explained score, an editorial verdict, and a direct link to your website.")}</p>
+          <h1>{lang === "fr"
+            ? <>Fais découvrir {inviteName || "ton outil"} <span className="tt-title-muted">aux gens qui choisissent leur prochain outil.</span></>
+            : <>Get {inviteName || "your tool"} found <span className="tt-title-muted">by people choosing their next tool.</span></>}</h1>
+          <p className="sp-pitch-lead">{t("On rédige une fiche indépendante, publiée sous 5 jours ouvrés, avec un lien vers ton site. Tu n’as rien à écrire.", "We write an independent review, publish it within 5 business days and link it to your site. You don’t write a word.")}</p>
           <div className="sp-hero-actions">
-            <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "hero")}>{inviteName ? t(`Publier ${inviteName} · ${price}`, `Publish ${inviteName} · ${price}`) : t(`Publier ma fiche · ${price}`, `Publish my listing · ${price}`)}<ArrowRight size={16} /></button>
-            <a className="sp-hero-cta-secondary" href="#submit-plans-title">{t("Ou proposer gratuitement avec un badge", "Or submit for free with a badge")}</a>
+            <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "hero")}>{inviteName ? t(`Faire évaluer ${inviteName} · ${price}`, `Get ${inviteName} reviewed · ${price}`) : t(`Faire évaluer mon outil · ${price}`, `Get my tool reviewed · ${price}`)}<ArrowRight size={16} /></button>
+            <a className="sp-hero-cta-secondary" href="#submit-plans-title">{t("Ou gratuitement, avec un badge ›", "Or submit free with a badge ›")}</a>
           </div>
-          <p className="sp-pitch-reassurance"><ShieldCheck size={15} />{t("Lien dofollow depuis un site DR 43 · paiement unique · sans badge", "Dofollow link from a DR 43 site · one-time payment · no badge")}</p>
+          <p className="sp-pitch-reassurance"><ShieldCheck size={15} />{t("Tu vérifies les faits avant publication · paiement unique · sans badge", "You check the facts before it goes live · one-time payment · no badge")}</p>
           {inviteName && <p className="sp-founder-note">{t("Une question ? Réponds simplement à mon email. Michael, fondateur de ToolTrim", "Questions? Just reply to my email. Michael, founder of ToolTrim")}</p>}
         </div>
-        <aside className="sp-listing-preview" aria-label={inviteName ? t(`Aperçu de la fiche ${inviteName}`, `${inviteName} listing preview`) : t("Exemple de fiche publiée : CommuteBar", "Published listing example: CommuteBar")}>
-          <div className="sp-preview-caption"><FileText size={16} />{t("CE QUE TU REÇOIS", "WHAT YOU GET")}</div>
-          {inviteName ? <div className="sp-preview-identity"><ToolLogo tool={{ name: inviteName, slug: inviteName.toLowerCase().replace(/[^a-z0-9]+/g, "-"), websiteUrl: inviteUrl || undefined }} size={40} /><div><strong>{inviteName}</strong><span>{t("Ta fiche ToolTrim, publiée sous 5 jours ouvrés", "Your ToolTrim listing, live within 5 business days")}</span></div></div> : <div className="sp-preview-identity"><ToolLogo tool={{ name: "CommuteBar", slug: "commutebar", websiteUrl: "https://commute.bar/" }} size={40} /><div><strong>CommuteBar</strong><span>{t("Le temps de trajet Apple Maps dans la barre des menus", "Apple Maps commute times in the Mac menu bar")}</span></div></div>}
-          {!inviteName && <p className="sp-example-description">{t("Une fiche qui confronte le gain quotidien, la licence à vie et les limites d’un outil Mac spécialisé.", "A listing that weighs the daily time saved, lifetime price, and limits of a focused Mac utility.")}</p>}
-          <ul className="sp-example-topics"><li>{t("Une note ToolTrim et les faits qui l’expliquent", "A ToolTrim score and the facts behind it")}</li><li>{t("Tarifs et alternatives", "Pricing and alternatives")}</li><li>{t("Avis éditorial ToolTrim", "ToolTrim’s editorial assessment")}</li></ul>
-          <Link className="sp-example-link" to={`${prefix}/tool/commutebar`}>{inviteName ? t("Voir un exemple publié", "See a published example") : t("Voir la fiche et son scoring", "View the listing and its score")}<ArrowRight size={17} /></Link>
-        </aside>
+        <div className="sp-hero-visual" aria-hidden="true">
+          <div className="sp-shot">
+            <div className="sp-shot-bar"><span /><span /><span /><em>tooltrim.com/tool/{(inviteName || t("ton-outil", "your-tool")).toLowerCase().replace(/[^a-z0-9]+/g, "-")}</em></div>
+            <div className="sp-shot-body">
+              <div className="sp-shot-identity">
+                <ToolLogo tool={{ name: inviteName || t("Ton outil", "Your tool"), slug: (inviteName || "your-tool").toLowerCase().replace(/[^a-z0-9]+/g, "-"), websiteUrl: inviteUrl || undefined }} size={48} />
+                <div><strong>{inviteName || t("Ton outil", "Your tool")}</strong><span className="sp-shot-status"><i />{t("Fiche en cours de rédaction", "Review in progress")}</span></div>
+              </div>
+              <div className="sp-shot-tabs"><span>{t("Aperçu", "Overview")}</span><span>{t("Tarifs", "Pricing")}</span><span>{t("Alternatives", "Alternatives")}</span></div>
+              <div className="sp-shot-lines"><span /><span /><span /></div>
+              <div className="sp-shot-score"><span>{t("Note ToolTrim", "ToolTrim score")}</span><em>{t("après évaluation", "after review")}</em></div>
+              <div className="sp-shot-cta">{t("Visiter le site", "Visit website")} ↗</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="sp-proof-line">
-        <div><strong>{t("Sous 5 jours", "Within 5 days")}</strong><span>{t("délai de publication", "publication turnaround")}</span></div>
-        <div><strong>DR 43</strong><span>{t("Domain Rating · octobre 2026", "Domain Rating · October 2026")}</span></div>
-        <div><strong>{t("Lien dofollow", "Dofollow link")}</strong><span>{t("vers ton site officiel", "to your official website")}</span></div>
-      </div>
+      <p className="sp-specs-label">{t(`Inclus dans l’offre à ${price}`, `Included in the ${price} review`)}</p>
+      <dl className="sp-specs">
+        <div><span className="sp-spec-icon"><Gauge size={20} /></span><dt>DR 43</dt><dd>{t("Domain Rating de tooltrim.com, octobre 2026", "Domain Rating of tooltrim.com, October 2026")}</dd></div>
+        <div><span className="sp-spec-icon"><Link2 size={20} /></span><dt>Dofollow</dt><dd>{t("De ta fiche vers ton site. L’offre gratuite reste en nofollow.", "From your review to your site. Free submissions stay nofollow.")}</dd></div>
+        <div><span className="sp-spec-icon"><Clock size={20} /></span><dt>{t("5 jours", "5 days")}</dt><dd>{t("Du paiement à la fiche publiée", "From payment to published review")}</dd></div>
+        <div><span className="sp-spec-icon"><PenLine size={20} /></span><dt>{t("0 mot", "0 words")}</dt><dd>{t("À écrire de ton côté : on rédige tout", "For you to write: we draft everything")}</dd></div>
+      </dl>
       <div className="sp-proof-row">
         <p className="sp-proof-row-label">{t("Ta fiche rejoint celles de", "Your listing sits alongside")}</p>
         <ul className="sp-proof-logos">
