@@ -1,11 +1,10 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { ArrowRight, BookOpen, Bookmark, Boxes, Columns2, LayoutGrid, Lightbulb, Search, X } from "@/lib/icons";
+import { ArrowRight, BookOpen, Boxes, Clock, Columns2, LayoutGrid, Lightbulb, Search, X } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useCategories, usePosts, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { guideSearchKey, useCatalogSearch } from "@/hooks/useCatalogSearch";
-import { useStackPins } from "@/hooks/useStackPins";
 import ToolLogo from "@/components/ToolLogo";
 import { trackEvent } from "@/lib/analytics";
 import { displayText } from "@/lib/typography";
@@ -17,7 +16,8 @@ import { GOAL_STACKS, type StackTool } from "@/data/goalStacks";
 /**
  * Recherche globale (refonte du 9 oct. 2026). Avant la frappe, elle guide
  * avec les entrées du site d'aujourd'hui : exemples de recherche, besoins,
- * duels, stacks par objectif et la stack de l'utilisateur. Pendant la frappe,
+ * duels et stacks par objectif. Pas de raccourci vers Ma stack : le bouton
+ * est déjà dans la barre du haut, et ce n'est pas une intention de recherche. Pendant la frappe,
  * les résultats sont rangés par type. L'ancienne version proposait encore
  * « Plateformes », « Fonctionne avec » et « Collections ».
  */
@@ -34,11 +34,11 @@ const fold = (value: string) => value.toLowerCase().normalize("NFD").replace(/[\
 const SEARCH_EXAMPLES = [
   { fr: "CRM gratuit", en: "free CRM" },
   { fr: "prise de rendez-vous", en: "project management" },
-  { fr: "ChatGPT vs Claude", en: "ChatGPT vs Claude" },
+  { fr: "newsletter", en: "newsletter" },
   { fr: "facturation", en: "invoicing" },
 ];
 
-/** Trois outils connus par besoin : on reconnaît le besoin à ses logos avant
+/** Deux outils connus par besoin (deux logos par ligne, comme les duels) : on reconnaît le besoin à ses logos avant
  * de lire son nom. Choix éditorial, pas un tri automatique (le tri par
  * demande faisait remonter des marques inconnues). */
 const NEED_SHOWCASE: Record<string, string[]> = {
@@ -53,6 +53,21 @@ const NEED_SHOWCASE: Record<string, string[]> = {
   ia: ["chatgpt", "claude", "perplexity"],
   admin: ["stripe", "qonto", "pennylane"],
 };
+
+/** Recherches récentes, comme Spotlight : enregistrées seulement quand une
+ * recherche aboutit (résultat ouvert ou « Voir tous les résultats »), dans ce
+ * navigateur uniquement. Les quatre dernières, sans doublon. */
+const RECENT_KEY = "tooltrim:recent-searches";
+const RECENT_MAX = 4;
+function readRecent(): string[] {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(RECENT_KEY) || "[]");
+    return Array.isArray(parsed) ? parsed.filter((item): item is string => typeof item === "string").slice(0, RECENT_MAX) : [];
+  } catch { return []; }
+}
+function writeRecent(list: string[]) {
+  try { localStorage.setItem(RECENT_KEY, JSON.stringify(list)); } catch { /* Session only. */ }
+}
 
 const GROUP_LIMITS = { tool: 6, compare: 4, stack: 3, category: 3, guide: 3 };
 
@@ -70,8 +85,6 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
-  const { state: stackState } = useStackPins();
-  const stackCount = stackState.pinnedToolSlugs.length;
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(-1);
   // Comparatifs, stacks et pages « meilleurs outils » (US-NAV-01 : la recherche
@@ -201,9 +214,21 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
 
   const isSearching = query.trim().length >= 2;
 
+  const [recent, setRecent] = useState<string[]>(readRecent);
+  const remember = (value: string) => {
+    const next = [value, ...readRecent().filter((item) => item.toLocaleLowerCase(lang) !== value.toLocaleLowerCase(lang))].slice(0, RECENT_MAX);
+    writeRecent(next);
+  };
+  const clearRecent = () => {
+    writeRecent([]);
+    setRecent([]);
+    inputRef.current?.focus();
+  };
+
   const goTo = useCallback((to: string) => {
     if (query.trim().length >= 2) {
       trackEvent("search_tool", { query: query.trim(), result_count: results.length });
+      remember(query.trim());
     }
     navigate(to);
     onClose();
@@ -216,7 +241,7 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
   const handleInputKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (!isSearching && event.key === "ArrowDown") {
       event.preventDefault();
-      dialogRef.current?.querySelector<HTMLElement>(".gs-guide a, .gs-guide button")?.focus();
+      dialogRef.current?.querySelector<HTMLElement>(".gs-guide .gs-row")?.focus();
       return;
     }
     if (event.key === "ArrowDown") { event.preventDefault(); setActiveIndex((index) => Math.min(index + 1, results.length - 1)); }
@@ -243,6 +268,8 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
     <div className={`gs-overlay${closing ? " is-closing" : ""}`} onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
       <div ref={dialogRef} className="gs-dialog" role="dialog" aria-modal="true" aria-label={t("Recherche globale", "Global search")}>
         <div className="gs-searchbar">
+          {/* Le champ est une surface à part entière : c'est l'action de la fenêtre. */}
+          <label className="gs-field">
           <Search aria-hidden />
           <input
             ref={inputRef}
@@ -259,6 +286,7 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
             autoComplete="off"
           />
           {query && <button type="button" className="gs-clear" onClick={() => { setQuery(""); inputRef.current?.focus(); }}>{t("Effacer", "Clear")}</button>}
+          </label>
           <button type="button" className="gs-icon-button" onClick={onClose} aria-label={t("Fermer", "Close")}><X aria-hidden /></button>
         </div>
         <p className="sr-only" role="status" aria-live="polite">{statusMessage}</p>
@@ -319,53 +347,64 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
             )
           ) : (
             <div className="gs-guide">
-              {stackCount > 0 && (
-                <Link to={`${prefix}/ma-stack`} onClick={onClose} className="gs-mystack gs-card">
-                  <span className="gs-result-icon" aria-hidden><Bookmark /></span>
-                  <span className="gs-result-text">
-                    <strong>{t("Reprendre votre stack", "Back to your stack")}</strong>
-                    <small>{lang === "fr" ? `${stackCount} outil${stackCount > 1 ? "s" : ""}` : `${stackCount} tool${stackCount > 1 ? "s" : ""}`}</small>
-                  </span>
-                  <ArrowRight className="gs-result-arrow" aria-hidden />
-                </Link>
+              {/* Une seule grille (façon apple.com) : deux colonnes, des lignes
+                  identiques, une colonne fixe pour le visuel puis le libellé ;
+                  tout part du bord du texte du champ. */}
+              {recent.length > 0 ? (
+                <section aria-labelledby="gs-try">
+                  <div className="gs-label-row">
+                    <h2 id="gs-try" className="gs-label">{t("Récentes", "Recent")}</h2>
+                    <button type="button" className="gs-label-action" onClick={clearRecent}>{t("Effacer", "Clear")}</button>
+                  </div>
+                  <ul className="gs-list">
+                    {recent.map((value) => (
+                      <li key={value}>
+                        <button type="button" className="gs-row" onClick={() => tryExample(value)}>
+                          <span className="gs-row-lead" aria-hidden><Clock /></span>
+                          <span className="gs-row-label">{value}</span>
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : (
+                <section aria-labelledby="gs-try">
+                  <h2 id="gs-try" className="gs-label">{t("Essayez", "Try")}</h2>
+                  <ul className="gs-list">
+                    {SEARCH_EXAMPLES.map((example) => {
+                      const value = lang === "en" ? example.en : example.fr;
+                      return (
+                        <li key={value}>
+                          <button type="button" className="gs-row" onClick={() => tryExample(value)}>
+                            <span className="gs-row-lead" aria-hidden><Search /></span>
+                            <span className="gs-row-label">{value}</span>
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
               )}
 
-              <section className="gs-section" aria-labelledby="gs-try">
-                <h2 id="gs-try" className="gs-label">{t("Essayez", "Try")}</h2>
-                <div className="gs-chips">
-                  {SEARCH_EXAMPLES.map((example) => {
-                    const value = lang === "en" ? example.en : example.fr;
-                    return (
-                      <button key={value} type="button" className="gs-chip gs-chip--example" onClick={() => tryExample(value)}>
-                        <Search aria-hidden />
-                        {value}
-                      </button>
-                    );
-                  })}
-                </div>
-              </section>
-
-              <section className="gs-section" aria-labelledby="gs-needs">
+              <section aria-labelledby="gs-needs">
                 <h2 id="gs-needs" className="gs-label">{t("Par besoin", "By need")}</h2>
-                <ul className="gs-needs">
+                <ul className="gs-list">
                   {CATALOG_NEEDS.map((need) => (
                     <li key={need.id}>
-                      <Link to={`${prefix}/tools?need=${need.id}`} onClick={onClose} className="gs-need gs-card">
-                        <span className="gs-need-logos" aria-hidden>
-                          {(needLogos.get(need.id) || []).map((tool) => (
-                            <span key={tool.id} className="gs-need-logo"><ToolLogo tool={tool} size={22} /></span>
-                          ))}
+                      <Link to={`${prefix}/tools?need=${need.id}`} onClick={onClose} className="gs-row">
+                        <span className="gs-row-lead gs-row-logos" aria-hidden>
+                          {(needLogos.get(need.id) || []).slice(0, 2).map((tool) => <ToolLogo key={tool.id} tool={tool} size={18} />)}
                         </span>
-                        <span className="gs-need-label">{lang === "en" ? need.en : need.fr}</span>
+                        <span className="gs-row-label">{lang === "en" ? need.en : need.fr}</span>
                       </Link>
                     </li>
                   ))}
                 </ul>
               </section>
 
-              <section className="gs-section" aria-labelledby="gs-duels">
+              <section aria-labelledby="gs-duels">
                 <h2 id="gs-duels" className="gs-label">{t("Lequel garder ?", "Which one to keep?")}</h2>
-                <ul className="gs-duels">
+                <ul className="gs-list">
                   {HOME_COMPARISONS.slice(0, 4).map((slugPair) => {
                     const comparison = FEATURED_COMPARISONS.find((item) => item.slugPair === slugPair);
                     const toolA = comparison && toolBySlug.get(comparison.toolA);
@@ -373,13 +412,12 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
                     if (!comparison || !toolA || !toolB) return null;
                     return (
                       <li key={slugPair}>
-                        <Link to={`${prefix}/comparatif/${slugPair}`} onClick={onClose} className="gs-duel gs-card">
-                          <span className="gs-duel-logos" aria-hidden>
-                            <span className="gs-duel-logo gs-duel-logo--a"><ToolLogo tool={toolA} size={40} /></span>
-                            <span className="gs-duel-vs">vs</span>
-                            <span className="gs-duel-logo gs-duel-logo--b"><ToolLogo tool={toolB} size={40} /></span>
+                        <Link to={`${prefix}/comparatif/${slugPair}`} onClick={onClose} className="gs-row">
+                          <span className="gs-row-lead gs-row-logos" aria-hidden>
+                            <ToolLogo tool={toolA} size={18} />
+                            <ToolLogo tool={toolB} size={18} />
                           </span>
-                          <span className="gs-duel-name">{toolA.name} <span>vs</span> {toolB.name}</span>
+                          <span className="gs-row-label">{toolA.name} <span className="gs-row-vs">vs</span> {toolB.name}</span>
                         </Link>
                       </li>
                     );
@@ -387,23 +425,18 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
                 </ul>
               </section>
 
-              <section className="gs-section" aria-labelledby="gs-stacks">
+              <section aria-labelledby="gs-stacks">
                 <h2 id="gs-stacks" className="gs-label">{t("Partir d’une stack", "Start from a stack")}</h2>
-                <ul className="gs-stacks">
+                <ul className="gs-list">
                   {GOAL_STACKS.map((stack) => (
                     <li key={stack.slug}>
-                      <Link to={`${prefix}/stacks/${stack.slug}`} onClick={onClose} className="gs-stack gs-card">
-                        {/* Le « dossier » de l'accueil : la stack se lit comme un lot d'apps. */}
-                        <span className="gs-stack-folder" aria-hidden>
-                          {stack.tools.slice(0, 4).map((tool) => (
-                            <span key={tool.slug} className="gs-stack-app"><ToolLogo tool={resolveStackTool(tool, toolBySlug) as ToolSummary} size={18} /></span>
+                      <Link to={`${prefix}/stacks/${stack.slug}`} onClick={onClose} className="gs-row">
+                        <span className="gs-row-lead gs-row-logos" aria-hidden>
+                          {stack.tools.slice(0, 2).map((tool) => (
+                            <ToolLogo key={tool.slug} tool={resolveStackTool(tool, toolBySlug) as ToolSummary} size={18} />
                           ))}
                         </span>
-                        <span className="gs-result-text">
-                          <strong>{lang === "fr" ? stack.objectiveFr : stack.objectiveEn}</strong>
-                          <small>{displayText(lang === "fr" ? stack.titleFr : stack.titleEn, lang)}</small>
-                        </span>
-                        <ArrowRight className="gs-result-arrow" aria-hidden />
+                        <span className="gs-row-label">{lang === "fr" ? stack.objectiveFr : stack.objectiveEn}</span>
                       </Link>
                     </li>
                   ))}
@@ -412,6 +445,11 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
             </div>
           )}
         </div>
+        <div className="gs-hints" aria-hidden="true">
+          <span><kbd>↑</kbd><kbd>↓</kbd>{t("naviguer", "navigate")}</span>
+          <span><kbd>↵</kbd>{t("ouvrir", "open")}</span>
+          <span><kbd>esc</kbd>{t("fermer", "close")}</span>
+        </div>
       </div>
     </div>
   );
@@ -419,13 +457,16 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
 
 function NeedChips({ prefix, lang, onPick }: { prefix: string; lang: string; onPick: () => void }) {
   return (
-    <div className="gs-chips">
+    <ul className="gs-list">
       {CATALOG_NEEDS.map((need) => (
-        <Link key={need.id} to={`${prefix}/tools?need=${need.id}`} onClick={onPick} className="gs-chip">
-          {lang === "en" ? need.en : need.fr}
-        </Link>
+        <li key={need.id}>
+          <Link to={`${prefix}/tools?need=${need.id}`} onClick={onPick} className="gs-row">
+            <span className="gs-row-lead" aria-hidden><LayoutGrid /></span>
+            <span className="gs-row-label">{lang === "en" ? need.en : need.fr}</span>
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

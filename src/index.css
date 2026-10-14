@@ -17246,8 +17246,9 @@
   /* Une seule surface de carte, chaude comme la palette du site (#F6F5F4,
      survol #EDEBE9) ; en sombre, un cran au-dessus du fond du dialogue. */
   .gs-dialog {
-    --gs-fill: var(--color-bg-warm);
-    --gs-fill-hover: var(--color-surface-warm);
+    /* Gris neutres (Apple #F5F5F7), pas de gris chaud dans la recherche. */
+    --gs-fill: var(--color-surface-soft);
+    --gs-fill-hover: color-mix(in srgb, var(--color-text-strong) 8%, var(--color-surface));
     display: flex;
     flex-direction: column;
     width: min(720px, 100%);
@@ -17260,30 +17261,46 @@
     animation: gs-enter 180ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
   }
 
+  /* En-tête : un champ large et rempli (gris neutre), sans anneau ; la loupe
+     tombe à x = 32 et le texte à x = 76, comme l'icône et le libellé de
+     chaque ligne en dessous. */
   .gs-searchbar {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
     flex: none;
-    min-height: 60px;
-    padding: 0 var(--space-sm) 0 var(--space-lg);
-    border-bottom: 1px solid var(--color-border-soft);
-    color: var(--color-text-meta);
+    padding: var(--space-md) var(--space-md) var(--space-xs);
   }
-  .gs-searchbar > svg { flex: none; width: 20px; height: 20px; }
-  .gs-searchbar input {
+  .gs-field {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: var(--space-lg);
+    min-width: 0;
+    height: 52px;
+    padding: 0 var(--space-xs) 0 var(--space-md);
+    border-radius: var(--radius-lg);
+    background: var(--gs-fill);
+    color: var(--color-text-meta);
+    cursor: text;
+  }
+  .gs-field > svg { flex: none; width: 20px; height: 20px; }
+  .gs-field:focus-within > svg { color: var(--color-text-strong); }
+  .gs-field input {
     flex: 1;
     min-width: 0;
+    height: 100%;
     border: 0;
     outline: 0;
     background: transparent;
     color: var(--color-text-strong);
     font-family: var(--font-ui);
-    font-size: 18px;
-    font-weight: 450;
+    font-size: 19px;
+    font-weight: 400;
     letter-spacing: -0.015em;
+    caret-color: var(--color-text-strong);
   }
-  .gs-searchbar input::placeholder { color: var(--color-text-meta); }
+  .gs-field input::placeholder { color: var(--color-text-meta); }
   .gs-clear {
     flex: none;
     min-height: 32px;
@@ -17296,21 +17313,22 @@
     cursor: pointer;
   }
   .gs-clear:hover { color: var(--color-text-strong); }
+  /* Fermer : le rond gris plein de macOS et iOS, croix fine. */
   .gs-icon-button {
     display: grid;
     flex: none;
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     place-items: center;
     border: 0;
-    border-radius: var(--radius-pill);
-    background: transparent;
-    color: var(--color-text-meta);
+    border-radius: var(--radius-circle);
+    background: var(--gs-fill);
+    color: var(--color-text-secondary);
     cursor: pointer;
     transition: background-color 140ms ease-out, color 140ms ease-out;
   }
-  .gs-icon-button:hover { background: var(--gs-fill); color: var(--color-text-strong); }
-  .gs-icon-button svg { width: 18px; height: 18px; }
+  .gs-icon-button:hover { background: var(--gs-fill-hover); color: var(--color-text-strong); }
+  .gs-icon-button svg { width: 14px; height: 14px; stroke-width: 2; }
 
   .gs-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
 
@@ -17319,126 +17337,74 @@
   .gs-label {
     margin: 0 0 var(--space-xs);
     color: var(--color-text-meta);
-    font: 600 var(--tt-size-kicker)/1.2 var(--font-ui);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font: 500 12px/1.4 var(--font-ui);
   }
 
-  /* Avant la frappe : le corps passe sur le fond chaud du site et les
-     éléments deviennent des cartes blanches, légèrement surélevées. Le
-     contraste naît de la profondeur, la couleur des vrais logos ; chaque
-     section a sa forme (pastilles, tuiles, face-à-face, lignes). */
-  .gs-body:has(.gs-guide) { background: var(--gs-fill); }
-  .gs-guide { display: grid; gap: var(--space-lg); padding: var(--space-md) var(--space-lg) var(--space-lg); }
-  .gs-card {
-    border-radius: var(--radius-md);
-    background: var(--color-surface);
-    box-shadow: 0 0 0 1px var(--color-border-soft), 0 1px 2px color-mix(in srgb, var(--color-text-strong) 6%, transparent);
-    transition: box-shadow 160ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-  .gs-chips { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
-  .gs-chip {
-    display: inline-flex;
+  /* Avant la frappe (12 oct. 2026, esprit apple.com) : une seule grille de
+     deux colonnes, des lignes identiques (40 px), colonne visuelle fixe de
+     44 px puis libellé 15 px régulier. Rien ne flotte : icônes à x = 32,
+     libellés à x = 76, titres de section sur le bord des icônes. */
+  .gs-guide { display: grid; gap: var(--space-md); padding: var(--space-xs) var(--space-md) var(--space-md); }
+  .gs-guide > * { animation: gs-rise 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .gs-guide > :nth-child(2) { animation-delay: 25ms; }
+  .gs-guide > :nth-child(3) { animation-delay: 50ms; }
+  .gs-guide > :nth-child(4) { animation-delay: 75ms; }
+  .gs-guide > :nth-child(5) { animation-delay: 100ms; }
+  @keyframes gs-rise { from { opacity: 0; transform: translateY(4px); } }
+  .gs-guide .gs-label { margin: 0 0 var(--space-2xs) var(--space-md); }
+  /* « Récentes » et son lien « Effacer », sur la même ligne de titre. */
+  .gs-label-row { display: flex; align-items: baseline; justify-content: space-between; padding-right: var(--space-sm); }
+  .gs-label-action { padding: 2px 4px; border: 0; border-radius: var(--radius-xs); background: none; color: var(--color-text-meta); font: 500 12px/1.4 var(--font-ui); cursor: pointer; }
+  .gs-label-action:hover, .gs-label-action:focus-visible { color: var(--color-text-strong); }
+
+  .gs-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+  .gs-row {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
     align-items: center;
-    gap: var(--space-2xs);
-    min-height: 32px;
-    padding: 0 var(--space-sm);
+    width: 100%;
+    min-height: 40px;
+    padding: 0 var(--space-sm) 0 var(--space-md);
     border: 0;
-    border-radius: var(--radius-pill);
-    background: var(--color-surface);
-    box-shadow: 0 0 0 1px var(--color-border-soft);
+    border-radius: var(--radius-md);
+    background: transparent;
     color: var(--color-text-strong);
-    font: 500 var(--tt-size-card-body)/1 var(--font-ui);
+    font: 400 15px/1.2 var(--font-ui);
+    text-align: left;
     text-decoration: none;
     cursor: pointer;
-    transition: box-shadow 140ms ease-out, background-color 140ms ease-out;
+    transition: background-color 120ms ease-out;
   }
-  .gs-chip:hover, .gs-chip:focus-visible { box-shadow: 0 0 0 1px var(--color-muted); }
-  .gs-chip svg { width: 14px; height: 14px; color: var(--color-text-meta); }
+  .gs-row:is(:hover, :focus-visible) { background: var(--gs-fill); }
+  .gs-row-lead { display: flex; align-items: center; color: var(--color-text-meta); }
+  .gs-row-lead > svg { width: 16px; height: 16px; }
+  .gs-row-logos > * { border-radius: 5px; box-shadow: 0 0 0 1.5px var(--color-surface); transition: box-shadow 120ms ease-out; }
+  .gs-row-logos > * + * { margin-left: -5px; }
+  .gs-row:is(:hover, :focus-visible) .gs-row-logos > * { box-shadow: 0 0 0 1.5px var(--gs-fill); }
+  .gs-row-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .gs-row-vs { color: var(--color-text-meta); }
 
-  /* Besoins : trois logos des outils les plus demandés, puis le libellé. */
-  .gs-needs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
-  .gs-need {
+  /* Rappels clavier en pied, comme les palettes de commande. */
+  .gs-hints {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: var(--space-sm);
-    height: 100%;
-    padding: var(--space-sm);
-    color: var(--color-text-strong);
-    text-decoration: none;
-  }
-  .gs-need-logos { display: flex; min-height: 22px; }
-  .gs-need-logo { display: grid; border-radius: var(--radius-sm); box-shadow: 0 0 0 2px var(--color-surface); transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .gs-need-logo + .gs-need-logo { margin-left: -5px; }
-  .gs-need:is(:hover, :focus-visible) .gs-need-logo:nth-child(1) { transform: translateX(-2px) rotate(-6deg); }
-  .gs-need:is(:hover, :focus-visible) .gs-need-logo:nth-child(3) { transform: translateX(2px) rotate(6deg); }
-  .gs-need-label { font: 600 var(--tt-size-card-body)/1.2 var(--font-ui); text-wrap: balance; }
-
-  /* Duels : le point focal. Deux grands logos en face-à-face, inclinés,
-     qui s'écartent au survol comme les cartes « Lequel garder ? ». */
-  .gs-duels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
-  .gs-duel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-md) var(--space-xs) var(--space-sm);
-    color: var(--color-text-strong);
-    text-align: center;
-    text-decoration: none;
-  }
-  .gs-duel-logos { position: relative; display: flex; align-items: center; }
-  .gs-duel-logo { display: grid; border-radius: var(--radius-md); box-shadow: 0 0 0 3px var(--color-surface), 0 4px 10px color-mix(in srgb, var(--color-text-strong) 10%, transparent); transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .gs-duel-logo--a { transform: rotate(-7deg); }
-  .gs-duel-logo--b { margin-left: -8px; transform: rotate(6deg); }
-  .gs-duel-vs {
-    position: absolute;
-    left: 50%;
-    bottom: -6px;
-    z-index: 1;
-    padding: 1px 6px;
-    border-radius: var(--radius-pill);
-    background: var(--color-text-strong);
-    color: var(--color-surface);
-    font: 700 10px/1.4 var(--font-ui);
-    letter-spacing: 0.02em;
-    transform: translateX(-50%);
-    transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
-  }
-  .gs-duel:is(:hover, :focus-visible) .gs-duel-logo--a { transform: translateX(-6px) rotate(-11deg); }
-  .gs-duel:is(:hover, :focus-visible) .gs-duel-logo--b { transform: translateX(6px) rotate(10deg); }
-  .gs-duel:is(:hover, :focus-visible) .gs-duel-vs { transform: translateX(-50%) scale(1.08); }
-  .gs-duel-name { max-width: 100%; overflow: hidden; font: 600 13px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
-  .gs-duel-name span { color: var(--color-text-meta); font-weight: 400; }
-
-  /* Stacks : lignes, le dossier iOS de l'accueil en tête. */
-  .gs-stacks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
-  .gs-stack, .gs-mystack {
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-    min-height: 56px;
-    padding: var(--space-xs) var(--space-sm);
-    color: var(--color-text-strong);
-    text-decoration: none;
-  }
-  .gs-stack-folder {
-    display: grid;
     flex: none;
-    grid-template-columns: repeat(2, 18px);
-    gap: var(--space-2xs);
-    padding: 5px;
-    border-radius: var(--radius-md);
-    background: var(--gs-fill);
+    gap: var(--space-md);
+    padding: var(--space-xs) var(--space-md);
+    border-top: 1px solid var(--color-border-soft);
+    color: var(--color-text-meta);
+    font: 400 12px/1 var(--font-ui);
   }
-  .gs-stack-app { display: grid; }
-
-  /* Survol commun : la carte se soulève d'un pixel, l'ombre s'allonge. */
-  .gs-card:is(:hover, :focus-visible) {
-    box-shadow: 0 0 0 1px var(--color-border-soft), 0 6px 16px color-mix(in srgb, var(--color-text-strong) 10%, transparent);
-    transform: translateY(-1px);
+  .gs-hints span { display: inline-flex; align-items: center; gap: 4px; }
+  .gs-hints kbd {
+    display: inline-grid;
+    min-width: 18px;
+    height: 18px;
+    place-items: center;
+    padding: 0 4px;
+    border-radius: var(--radius-xs);
+    background: var(--gs-fill);
+    color: var(--color-text-secondary);
+    font: 500 11px/1 var(--font-ui);
   }
 
   /* Pendant la frappe */
@@ -17479,7 +17445,6 @@
   /* Même règle partout : la flèche apparaît sur l'élément visé (survol,
      focus clavier, option active), jamais en permanence. */
   .gs-result.is-active .gs-result-arrow,
-  :is(.gs-duel, .gs-stack, .gs-mystack):is(:hover, :focus-visible) .gs-result-arrow { opacity: 1; transform: none; }
   .gs-view-all {
     display: flex;
     align-items: center;
@@ -17503,8 +17468,7 @@
   .gs-empty-title { margin: 0; color: var(--color-text-strong); font: 600 var(--tt-size-card-title)/1.3 var(--font-ui); }
   .gs-empty-text { margin: 0 0 4px; color: var(--color-text-meta); font: 400 13px/1.4 var(--font-ui); }
 
-  .dark .gs-body:has(.gs-guide) { background: var(--color-bg); }
-  .dark .gs-dialog { --gs-fill: var(--color-surface-warm); --gs-fill-hover: color-mix(in srgb, var(--color-text-strong) 12%, var(--color-surface)); }
+  .dark .gs-dialog { --gs-fill: color-mix(in srgb, var(--color-text-strong) 7%, var(--color-surface)); --gs-fill-hover: color-mix(in srgb, var(--color-text-strong) 11%, var(--color-surface)); }
 
   .gs-dialog :where(a, button, input):focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
   .gs-searchbar input:focus-visible { outline: 0; }
@@ -17520,21 +17484,22 @@
   .gs-overlay.is-closing .gs-dialog { animation: gs-leave 120ms ease-in both; }
   @media (prefers-reduced-motion: reduce) {
     .gs-dialog, .gs-overlay.is-closing, .gs-overlay.is-closing .gs-dialog { animation: none; }
-    .gs-result-arrow, .gs-need-icon, .gs-duel-logo { transition: none; }
+    .gs-result-arrow, .gs-row, .gs-row-logos > * { transition: none; }
+    .gs-guide > * { animation: none; }
   }
 
   @media (max-width: 640px) {
     .gs-overlay { padding: 0; }
     .gs-dialog { width: 100%; max-height: none; height: 100dvh; border: 0; border-radius: 0; }
-    .gs-searchbar { padding-left: var(--space-md); }
+    .gs-searchbar { padding: var(--space-xs) var(--space-md); }
     .gs-searchbar input { font-size: 17px; }
     .gs-guide { padding: var(--space-md) var(--space-md) var(--space-lg); }
-    .gs-stacks { grid-template-columns: minmax(0, 1fr); }
-    .gs-duels, .gs-needs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .gs-list { grid-template-columns: minmax(0, 1fr); }
+    .gs-row { min-height: 44px; }
+    .gs-hints { display: none; }
     /* Cibles tactiles de 44 px au doigt. */
-    .gs-icon-button, .gs-clear { min-width: 44px; min-height: 44px; }
-    .gs-icon-button { width: 44px; height: 44px; }
-    .gs-chip { min-height: 44px; padding: 0 var(--space-md); }
+    .gs-clear { min-width: 44px; min-height: 44px; }
+    .gs-icon-button { width: 36px; height: 36px; }
   }
 }
 
@@ -35726,3 +35691,16 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Ma stack : une valeur en mots passe à la ligne au lieu de déborder sur la
    colonne voisine (« Coût non renseigné » sous « 0 € »), dans les deux thèmes. */
 .ms-page .ms-hero-stats dd.sg-stats-word { white-space: normal; }
+
+/* Logos en mode sombre (12 oct. 2026) : une quarantaine d'emplacements
+   posaient les logos sur --color-surface, sombre en mode sombre ; les marques
+   noires (GitHub, Vercel, Squarespace) disparaissaient, tandis que celles qui
+   portent leur propre fond blanc (Notion, ChatGPT) restaient visibles. Chaque
+   logo chargé reçoit donc une plaque claire, comme une icône d'app, quel que
+   soit son emplacement ; la luminosité est un peu retenue pour ne pas
+   éblouir sur fond sombre. La tuile de chargement reste sombre. */
+.dark { --color-logo-plate: #F4F4F1; }
+.dark img[data-tool]:not([data-logo-loading]) {
+  background-color: var(--color-logo-plate) !important;
+  filter: brightness(0.94);
+}

@@ -168,3 +168,11 @@ Mesures Playwright à 1440, 1024 et 390 px. Tout appliqué le 9 oct. (« go sur 
 - [x] P1 Liens bleus de /submit éclaircis en sombre, « Trier » en `--color-text-meta`
 - [x] P2 Petits textes (conditions de prix, pièges de facturation, compteurs, langue du footer) en `--color-text-secondary`
 - [ ] Non retenu : les boutons ronds blancs au survol des cartes outils restent blancs (ils flottent sur l'image, contraste correct dans les deux thèmes)
+
+## Recherche, esprit Apple (14 oct. 2026)
+- [x] Une seule grille de deux colonnes, lignes de 40 px, icône à x = 33 et libellé à x = 77, alignés sur la loupe et le texte du champ
+- [x] Gris neutres (#F5F5F7) au lieu du gris chaud ; bouton fermer rond gris plein ; champ rempli de 52 px, texte 19 px
+- [x] Retirés : « Reprendre votre stack » (doublon du bouton Ma stack, pas une intention de recherche) et l'exemple « ChatGPT vs Claude » (doublon du duel)
+- [x] Deux logos par ligne partout, espace de 13 px avant le libellé
+- [x] Logos en mode sombre : plaque claire sur chaque logo chargé ; 23 logos illisibles sur 400 → 0
+- [x] Recherches récentes (4, sans doublon, navigateur seulement) à la place de « Essayez » dès qu'on a cherché ; « Effacer » rend les exemples
