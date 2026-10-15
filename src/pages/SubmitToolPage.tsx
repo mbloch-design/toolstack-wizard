@@ -201,11 +201,8 @@ const SubmitToolPage = () => {
 
   useEffect(() => {
     setSeoTags({
-      title: t("Faire évaluer son outil | ToolTrim", "Get your tool reviewed | ToolTrim"),
-      description: t(
-        "Fais évaluer ton outil par ToolTrim et présente-le aux freelances et petites équipes qui comparent leur prochaine solution.",
-        "Get independently reviewed by ToolTrim and reach freelancers and small teams comparing their next software choice.",
-      ),
+      title: t("Soumettre un outil SaaS : fiche indépendante en 5 jours | ToolTrim", "Submit your SaaS tool: independent review in 5 days | ToolTrim"),
+      description: t("Ta fiche rédigée par l’équipe ToolTrim, vue par les freelances et petites équipes qui choisissent leurs outils. En ligne sous 5 jours, option gratuite.", "Get your tool reviewed by ToolTrim’s editors and found by freelancers and small teams choosing software. Live in 5 business days. Free option available."),
       url: `${SEO_BASE}/${lang}/submit`,
     });
     setHreflang(`/${lang}/submit`); return () => cleanupSeo([]);
