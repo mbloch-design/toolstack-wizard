@@ -338,7 +338,7 @@ const ToolDetailPage = () => {
   const safeWebsiteUrl = safeExternalUrl(tool.websiteUrl);
   const primaryCtaUrl = safeAffiliateUrl || safeWebsiteUrl;
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
-  const primaryCtaLabel = tool.slug === "tapstitch" ? t("Créer mon premier produit", "Create my first product") : (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t("Visiter le site", "Visit website");
+  const primaryCtaLabel = tool.slug === "tapstitch" ? t("Créer mon premier produit", "Create my first product") : (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t(`Visiter ${tool.name}`, `Visit ${tool.name}`);
   const hasFreeplan   = hasGenuineFreeTier(tool.pricing?.free);
   // Was `!!(tool.pricing?.free && tool.pricing?.paid)` — pure truthiness,
   // so a free field describing the ABSENCE of a free plan ("Pas de plan
@@ -393,7 +393,7 @@ const ToolDetailPage = () => {
     { key: "presentation", label: t("Vue d’ensemble", "Overview"), to: baseToolPath },
     { key: "prix", label: t("Prix", "Pricing"), to: `${baseToolPath}/${lang === "en" ? "pricing" : "prix"}` },
     ...(hasAlternativesContent ? [{ key: "alternatives", label: t("Alternatives", "Alternatives"), to: `${baseToolPath}/alternatives` }] : []),
-    { key: "avis", label: t("Avis", "Reviews"), to: `${baseToolPath}/${lang === "en" ? "reviews" : "avis"}` },
+    { key: "avis", label: "Verdict", to: `${baseToolPath}/${lang === "en" ? "reviews" : "avis"}` },
     // /faq is a dead route (vercel.json redirects it back to the fiche to
     // avoid duplicate-content pages), and the FAQ block already renders on
     // the overview tab — link straight to its anchor instead of a URL that
@@ -476,7 +476,7 @@ const ToolDetailPage = () => {
                   is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
                 })}
               >
-                {t("Visiter", "Visit")}
+                {primaryCtaLabel}
               </a>
             </div>
           </nav>
@@ -1196,7 +1196,7 @@ const ToolDetailPage = () => {
                     is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
                   })}
                 >
-                  {t("Visiter", "Visit")}
+                  {primaryCtaLabel}
                   <ExternalLink aria-hidden />
                 </a>
               </div>
