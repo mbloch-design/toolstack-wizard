@@ -232,6 +232,14 @@ const TransparencyPage = () => {
             </dl>
             <div className="ab-prose">
               <p>
+                {t(
+                  "La mention qui accompagne la note suit une échelle fixe : Exceptionnel à partir de 4,5, Excellent à partir de 4, Très bon à partir de 3,5, Bon à partir de 3, Correct à partir de 2,5, Limité en dessous. Un outil au-dessus de la moyenne ne reçoit jamais de mention négative.",
+                  "The word next to the score follows a fixed scale: Exceptional from 4.5, Excellent from 4, Very good from 3.5, Good from 3, Fair from 2.5, Limited below. A tool above the midpoint never gets a negative label.",
+                )}
+              </p>
+            </div>
+            <div className="ab-prose">
+              <p>
                 <Link to={`${prefix}/transparency#notation`} className="ab-inline-link">
                   {t("Lire le détail de chaque critère", "Read the detail on each criterion")}
                 </Link>
