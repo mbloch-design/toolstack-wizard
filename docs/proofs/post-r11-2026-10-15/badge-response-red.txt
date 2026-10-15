@@ -1,0 +1,388 @@
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+ ❯ src/test/submit-payment.test.tsx (25 tests | 4 failed | 21 skipped) 4671ms
+   × missing local badge API never confirms a badge: <!doctype html><title>Vite</title> 1307ms
+   × missing local badge API never confirms a badge: {} 1128ms
+   × missing local badge API never confirms a badge: {"token":""} 1126ms
+   × missing local badge API never confirms a badge: {"token":7} 1107ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/test/submit-payment.test.tsx > missing local badge API never confirms a badge: <!doctype html><title>Vite</title>
+ FAIL  src/test/submit-payment.test.tsx > missing local badge API never confirms a badge: {}
+ FAIL  src/test/submit-payment.test.tsx > missing local badge API never confirms a badge: {"token":""}
+ FAIL  src/test/submit-payment.test.tsx > missing local badge API never confirms a badge: {"token":7}
+TestingLibraryElementError: Unable to find role="alert"
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="stp-page"
+    >
+      <header
+        class="sp-hero"
+      >
+        <div
+          class="sp-hero-crumb"
+        />
+        <div
+          class="sp-pitch"
+        >
+          <div
+            class="sp-pitch-copy"
+          >
+            <span
+              class="tt-page-hero-eyebrow"
+            >
+              Pour les créateurs d’outils SaaS
+            </span>
+            <h1>
+              Fais découvrir
+              ton produit
+
+              <span
+                class="tt-title-muted"
+              >
+                aux gens qui choisissent leur prochain outil.
+              </span>
+            </h1>
+            <p
+              class="sp-pitch-lead"
+            >
+              On rédige une fiche indépendante, publiée sous 5 jours ouvrés, avec un lien vers ton site. Tu n’as rien à écrire.
+            </p>
+            <div
+              class="sp-hero-actions"
+            >
+              <button
+                class="tt-button-primary"
+                type="button"
+              >
+                Faire découvrir mon outil · 29 $
+                <svg
+                  fill="none"
+                  height="16"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  width="16"
+                >
+                  <use
+                    href="/assets/icons.37ed096f.svg#tt-arrow-right"
+                  />
+                </svg>
+              </button>
+              <a
+                class="sp-hero-cta-secondary"
+                href="#submit-plans-title"
+              >
+                Ou gratuitement, avec un badge ›
+              </a>
+            </div>
+            <p
+              class="sp-pitch-reassurance"
+            >
+              <svg
+                fill="none"
+                height="15"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="15"
+              >
+                <use
+                  href="/assets/icons.37ed096f.svg#tt-shield-check"
+                />
+              </svg>
+              Tu vérifies les faits avant publication · paiement unique · sans badge
+            </p>
+          </div>
+          <div
+            aria-hidden="true"
+            class="sp-hero-visual"
+          >
+            <div
+              class="sp-shot"
+            >
+              <div
+                class="sp-shot-bar"
+              >
+                <span />
+                <span />
+                <span />
+                <em>
+                  tooltrim.com/tool/
+                  ton-outil
+                </em>
+              </div>
+              <div
+                class="sp-shot-body"
+              >
+                <div
+                  class="sp-shot-identity"
+                >
+                  <img
+                    alt="Ton outil logo"
+                    class="shrink-0 rounded-lg bg-card object-contain ring-1 ring-border/50 "
+                    data-logo-loading=""
+                    data-tool="your-tool"
+                    height="48"
+                    loading="lazy"
+                    src="https://cdn.simpleicons.org/tonoutil"
+                    style="width: 48px; height: 48px; min-width: 48px; min-height: 48px; padding: 7px;"
+                    width="48"
+                  />
+                  <div>
+                    <strong>
+                      Ton outil
+                    </strong>
+                    <span
+                      class="sp-shot-status"
+                    >
+                      <i />
+                      Fiche en cours de rédaction
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="sp-shot-tabs"
+                >
+                  <span>
+                    Aperçu
+                  </span>
+                  <span>
+                    Tarifs
+                  </span>
+                  <span>
+                    Alternatives
+                  </span>
+                </div>
+                <div
+                  class="sp-shot-lines"
+                >
+                  <span />
+                  <span />
+                  <span />
+                </div>
+                <div
+                  class="sp-shot-score"
+                >
+                  <span>
+                    Note ToolTrim
+                  </span>
+                  <em>
+                    après évaluation
+                  </em>
+                </div>
+                <div
+                  class="sp-shot-cta"
+                >
+                  Visiter le site
+                   ↗
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="sp-specs-label"
+        >
+          Inclus dans l’offre à 29 $
+        </p>
+        <dl
+          class=[3...
+
+Ignored nodes: comments, script, style
+<body>
+  <div>
+    <div
+      class="stp-page"
+    >
+      <header
+        class="sp-hero"
+      >
+        <div
+          class="sp-hero-crumb"
+        />
+        <div
+          class="sp-pitch"
+        >
+          <div
+            class="sp-pitch-copy"
+          >
+            <span
+              class="tt-page-hero-eyebrow"
+            >
+              Pour les créateurs d’outils SaaS
+            </span>
+            <h1>
+              Fais découvrir
+              ton produit
+
+              <span
+                class="tt-title-muted"
+              >
+                aux gens qui choisissent leur prochain outil.
+              </span>
+            </h1>
+            <p
+              class="sp-pitch-lead"
+            >
+              On rédige une fiche indépendante, publiée sous 5 jours ouvrés, avec un lien vers ton site. Tu n’as rien à écrire.
+            </p>
+            <div
+              class="sp-hero-actions"
+            >
+              <button
+                class="tt-button-primary"
+                type="button"
+              >
+                Faire découvrir mon outil · 29 $
+                <svg
+                  fill="none"
+                  height="16"
+                  stroke-width="1.5"
+                  viewBox="0 0 24 24"
+                  width="16"
+                >
+                  <use
+                    href="/assets/icons.37ed096f.svg#tt-arrow-right"
+                  />
+                </svg>
+              </button>
+              <a
+                class="sp-hero-cta-secondary"
+                href="#submit-plans-title"
+              >
+                Ou gratuitement, avec un badge ›
+              </a>
+            </div>
+            <p
+              class="sp-pitch-reassurance"
+            >
+              <svg
+                fill="none"
+                height="15"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="15"
+              >
+                <use
+                  href="/assets/icons.37ed096f.svg#tt-shield-check"
+                />
+              </svg>
+              Tu vérifies les faits avant publication · paiement unique · sans badge
+            </p>
+          </div>
+          <div
+            aria-hidden="true"
+            class="sp-hero-visual"
+          >
+            <div
+              class="sp-shot"
+            >
+              <div
+                class="sp-shot-bar"
+              >
+                <span />
+                <span />
+                <span />
+                <em>
+                  tooltrim.com/tool/
+                  ton-outil
+                </em>
+              </div>
+              <div
+                class="sp-shot-body"
+              >
+                <div
+                  class="sp-shot-identity"
+                >
+                  <img
+                    alt="Ton outil logo"
+                    class="shrink-0 rounded-lg bg-card object-contain ring-1 ring-border/50 "
+                    data-logo-loading=""
+                    data-tool="your-tool"
+                    height="48"
+                    loading="lazy"
+                    src="https://cdn.simpleicons.org/tonoutil"
+                    style="width: 48px; height: 48px; min-width: 48px; min-height: 48px; padding: 7px;"
+                    width="48"
+                  />
+                  <div>
+                    <strong>
+                      Ton outil
+                    </strong>
+                    <span
+                      class="sp-shot-status"
+                    >
+                      <i />
+                      Fiche en cours de rédaction
+                    </span>
+                  </div>
+                </div>
+                <div
+                  class="sp-shot-tabs"
+                >
+                  <span>
+                    Aperçu
+                  </span>
+                  <span>
+                    Tarifs
+                  </span>
+                  <span>
+                    Alternatives
+                  </span>
+                </div>
+                <div
+                  class="sp-shot-lines"
+                >
+                  <span />
+                  <span />
+                  <span />
+                </div>
+                <div
+                  class="sp-shot-score"
+                >
+                  <span>
+                    Note ToolTrim
+                  </span>
+                  <em>
+                    après évaluation
+                  </em>
+                </div>
+                <div
+                  class="sp-shot-cta"
+                >
+                  Visiter le site
+                   ↗
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p
+          class="sp-specs-label"
+        >
+          Inclus dans l’offre à 29 $
+        </p>
+        <dl
+          class=[3...
+ ❯ waitForWrapper node_modules/@testing-library/dom/dist/wait-for.js:163:27
+ ❯ node_modules/@testing-library/dom/dist/query-helpers.js:86:33
+ ❯ src/test/submit-payment.test.tsx:206:15
+    204|  request.mockImplementation(async url => new Response(String(url).ends…
+    205|  mount('/fr/submit'); await completeFreeBadge();
+    206|  await screen.findByRole('alert');
+       |               ^
+    207|  expect(screen.queryByText('Badge vérifié : revue standard')).not.toBe…
+    208|  expect(window.localStorage.getItem('tt_submit_draft')).not.toBeNull();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 21 skipped (25)
+   Start at  18:01:19
+   Duration  6.13s (transform 304ms, setup 127ms, import 451ms, tests 4.67s, environment 641ms)
+

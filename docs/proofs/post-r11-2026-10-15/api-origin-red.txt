@@ -1,0 +1,120 @@
+
+> vite_react_shadcn_ts@0.0.0 test:e2e:payment
+> playwright test --config playwright.payment.config.ts --grep verified return keeps --workers=1
+
+[WebServer] (node:16479) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:16485) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16485) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › e2e/submit-payment.spec.ts:23:3 › verified return keeps its draft until final send (fr) (525ms)
+(node:16494) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:16494) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › e2e/submit-payment.spec.ts:23:3 › verified return keeps its draft until final send (en) (558ms)
+
+
+  1) [chromium] › e2e/submit-payment.spec.ts:23:3 › verified return keeps its draft until final send (fr)
+
+    Error: Submission APIs must stay on the preview origin
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "http://127.0.0.1:8087"
+    Received: "https://tooltrim.com"
+
+      12 |     const url = new URL(route.request().url());
+      13 |     if (/^\/api\/(contact|submission-progress|verify-payment|verify-badge)$/.test(url.pathname)) {
+    > 14 |       expect(url.origin, "Submission APIs must stay on the preview origin").toBe(new URL(baseURL!).origin);
+         |                                                                             ^
+      15 |       return route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({success:true,verified:true})});
+      16 |     }
+      17 |     if (url.hostname === "127.0.0.1" || url.hostname === "localhost") return route.continue();
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/submit-payment.spec.ts:14:77
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Paiement confirmé : fiche prioritaire')
+    Expected: visible
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 8000ms
+      - waiting for getByText('Paiement confirmé : fiche prioritaire')
+
+
+      24 |     await page.addInitScript(value => localStorage.setItem("tt_submit_draft", JSON.stringify(value)), draft);
+      25 |     await page.goto(`/${lang}/submit?checkout_id=ch_local123`);
+    > 26 |     await expect(page.getByText(lang === "fr" ? "Paiement confirmé : fiche prioritaire" : "Payment confirmed: priority review")).toBeVisible();
+         |                                                                                                                                  ^
+      27 |     expect(await page.evaluate(()=>localStorage.getItem("tt_submit_draft"))).not.toBeNull();
+      28 |     await page.getByRole("button",{name:lang === "fr" ? "Envoyer pour revue →" : "Submit for review →"}).click();
+      29 |     await expect(page.getByRole("heading",{name:lang === "fr" ? "Ta fiche prioritaire est lancée." : "Your priority review is underway."})).toBeVisible();
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/submit-payment.spec.ts:26:130
+
+    Error Context: payment-test-results/submit-payment-verified-re-07877--draft-until-final-send-fr--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    payment-test-results/submit-payment-verified-re-07877--draft-until-final-send-fr--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace payment-test-results/submit-payment-verified-re-07877--draft-until-final-send-fr--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › e2e/submit-payment.spec.ts:23:3 › verified return keeps its draft until final send (en)
+
+    Error: Submission APIs must stay on the preview origin
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: "http://127.0.0.1:8087"
+    Received: "https://tooltrim.com"
+
+      12 |     const url = new URL(route.request().url());
+      13 |     if (/^\/api\/(contact|submission-progress|verify-payment|verify-badge)$/.test(url.pathname)) {
+    > 14 |       expect(url.origin, "Submission APIs must stay on the preview origin").toBe(new URL(baseURL!).origin);
+         |                                                                             ^
+      15 |       return route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({success:true,verified:true})});
+      16 |     }
+      17 |     if (url.hostname === "127.0.0.1" || url.hostname === "localhost") return route.continue();
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/submit-payment.spec.ts:14:77
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Payment confirmed: priority review')
+    Expected: visible
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 8000ms
+      - waiting for getByText('Payment confirmed: priority review')
+
+
+      24 |     await page.addInitScript(value => localStorage.setItem("tt_submit_draft", JSON.stringify(value)), draft);
+      25 |     await page.goto(`/${lang}/submit?checkout_id=ch_local123`);
+    > 26 |     await expect(page.getByText(lang === "fr" ? "Paiement confirmé : fiche prioritaire" : "Payment confirmed: priority review")).toBeVisible();
+         |                                                                                                                                  ^
+      27 |     expect(await page.evaluate(()=>localStorage.getItem("tt_submit_draft"))).not.toBeNull();
+      28 |     await page.getByRole("button",{name:lang === "fr" ? "Envoyer pour revue →" : "Submit for review →"}).click();
+      29 |     await expect(page.getByRole("heading",{name:lang === "fr" ? "Ta fiche prioritaire est lancée." : "Your priority review is underway."})).toBeVisible();
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/submit-payment.spec.ts:26:130
+
+    Error Context: payment-test-results/submit-payment-verified-re-f16bf--draft-until-final-send-en--chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    payment-test-results/submit-payment-verified-re-f16bf--draft-until-final-send-en--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace payment-test-results/submit-payment-verified-re-f16bf--draft-until-final-send-en--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › e2e/submit-payment.spec.ts:23:3 › verified return keeps its draft until final send (fr)
+    [chromium] › e2e/submit-payment.spec.ts:23:3 › verified return keeps its draft until final send (en)

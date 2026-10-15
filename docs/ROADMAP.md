@@ -15,6 +15,8 @@
 
 ## État actif consolidé — 15 octobre 2026
 
+Exécution de la suite : [bilan opérationnel](POST_R11_OPERATIONS_2026-10-15.md). R10/R11 publiés sur ffbb3f7ac7, Vercel réussi et 21 contrôles publics R11 réussis ; CI 38763760190 réussie. Correctifs de soumission locale validés localement ; livraison distincte. Sponsoring reporté explicitement jusqu’à une vente ; offre conservée. Rotation Redis requiert la bascule opérateur, elle n’est pas exécutée.
+
 Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas sont des états historiques.
 
 | Chantier | État actuel et prochaine condition |
@@ -25,8 +27,8 @@ Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas
 | R9 — Utilisateurs | Protocole prêt ; essais réels reportés par le propriétaire. Aucun participant observé ni critère quatre sur cinq acquis. |
 | R5/R6 — Relations et catalogue | Différés ; travail local conservé, aucune publication des quatorze fiches. Revoir le processus et le budget avant reprise. |
 | R3/R7 — Architecture et chargement catalogue | Différés ; mesurer avant toute nouvelle migration ou optimisation. |
-| R10 — Chaîne de build | Remédiation locale : Tailwind 4.3.3, plugins obsolètes retirés, tests alignés sur le plugin React actif et fusionneur de classes compatible. Audit npm **9 → 0** ; build Node 20 et budgets validés, cascade et tokens conservés. [Bilan et preuves](R10_R11_CLOTURE_2026-10-15.md). |
-| R11 — SEO/GEO et médias | Correctifs techniques locaux : descriptions/LLM, 62 références corrigées sur 54 outils, filtre des captures invalides, vrais 404 conservés après hydratation, sept traductions libérées des redirections obsolètes. Sitemap/routing contrôlés ensemble ; Search Console consultée. Publication et réexploration Google restent des états distincts. [Bilan](R10_R11_CLOTURE_2026-10-15.md). |
+| R10 — Chaîne de build | Remédiation publiée (`ffbb3f7ac7`, CI/Vercel et recette publique réussis) : Tailwind 4.3.3, plugins obsolètes retirés, tests alignés sur le plugin React actif et fusionneur de classes compatible. Audit npm **9 → 0** ; build Node 20 et budgets validés, cascade et tokens conservés. [Bilan et preuves](R10_R11_CLOTURE_2026-10-15.md). |
+| R11 — SEO/GEO et médias | Correctifs techniques publiés (`ffbb3f7ac7`, CI/Vercel et recette publique réussis) : descriptions/LLM, 62 références corrigées sur 54 outils, filtre des captures invalides, vrais 404 conservés après hydratation, sept traductions libérées des redirections obsolètes. Sitemap/routing contrôlés ensemble ; Search Console consultée. Publication et réexploration Google restent des états distincts. [Bilan](R10_R11_CLOTURE_2026-10-15.md). |
 | Soumissions et paiement | Chantier séparé. Cette passe ne recertifie pas son fonctionnement et n’effectue aucun paiement. Renouvellement du jeton Redis toujours à traiter séparément. |
 
 **Suite :** confirmer la visibilité des événements dans les rapports GA4, puis exploiter les observations disponibles. Les tests réels restent programmables plus tard ; aucune raison technique démontrée ici d’ouvrir un nouveau chantier produit en attendant.

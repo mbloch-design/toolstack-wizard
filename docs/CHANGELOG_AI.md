@@ -1,3 +1,10 @@
+## 15 octobre 2026 — Soumissions locales isolées et preuve badge stricte
+
+- Six appels API du formulaire/reprise restent sur l'origine courante ; retrait du routage localhost vers la production. Endpoints et payloads production conservés.
+- Un HTTP 200 sans jeton badge ne confirme plus la vérification. Quatre réponses invalides reproduites en rouge puis corrigées ; tests navigateur FR/EN ajoutés.
+- Recette réseau observe les requêtes même quand un mock spécifique prend priorité. Aucun paiement/email réel. Sponsoring reporté explicitement, offre conservée ; R5/R6 restent différés.
+- Bilan et points d'exploitation : [POST_R11_OPERATIONS_2026-10-15.md](POST_R11_OPERATIONS_2026-10-15.md). 379 tests applicatifs, types application, build complet et budgets PASS. 16 parcours simulés FR/EN sur Vite PASS ; 16 parcours sur le véritable HTML généré PASS (18,8 s). Correctif local non publié. R10/R11 précédents : CI 38763760190 et Vercel réussis, 21 contrôles publics R11 PASS et descriptions des deux guides présentes.
+
 ## 15 octobre 2026 — Clôture technique locale R10/R11
 
 - Suite explicitement demandée après le premier lot : remédier aux dépendances restantes et achever les contrôles médias/liens/indexation, sans publier implicitement ni reprendre R5/R6.

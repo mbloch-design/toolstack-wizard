@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-15",
+  "r10r11": {
+    "sha": "ffbb3f7ac7eb7702c48734cd29a5bfa3dfd08f10",
+    "ci": 38763760190,
+    "ciState": "success",
+    "vercelState": "success",
+    "publicR11": 21,
+    "writerGuideDescriptions": {
+      "fr": 132,
+      "en": 136
+    }
+  },
+  "redis": {
+    "tier": "Free",
+    "eviction": false,
+    "commands": 426,
+    "commandLimit": 500000,
+    "bandwidth": "322 KB / 10 GB",
+    "storage": "22 KB / 250 MB",
+    "costUSD": 0,
+    "rotationExecuted": false
+  },
+  "sponsorship": "deferred by owner; exact existing offer retained",
+  "appTests": 379,
+  "build": "PASS",
+  "realPayment": false,
+  "realEmail": false,
+  "artifactBrowserPassed": 16,
+  "patchPublished": false
+}

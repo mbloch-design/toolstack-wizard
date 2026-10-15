@@ -92,7 +92,7 @@ const SubmitToolPage = () => {
       try{if(candidate?.attemptPayload)attempted=JSON.parse(candidate.attemptPayload);}catch{/* Preserve the editable draft. */}
       if(candidate && attempted?.submissionType==='tool' && attempted.paid===false && attempted.submissionId===candidate.submissionId){
         const controller=new AbortController();
-        const endpoint=/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)?'https://tooltrim.com/api/contact':'/api/contact';
+        const endpoint="/api/contact";
         void fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({...attempted,replayOnly:true})}).then(async response=>{
           const result=await response.json().catch(()=>({}));if(controller.signal.aborted||!response.ok||result.success!==true)return;
           submissionAcceptedRef.current=true;setPaid(false);
@@ -115,8 +115,7 @@ const SubmitToolPage = () => {
     }
     try { window.localStorage.setItem(RECEIPT_KEY, checkoutId); } catch { /* Keep the receipt in the URL. */ }
     const controller = new AbortController();
-    const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
-      ? "https://tooltrim.com/api/verify-payment" : "/api/verify-payment";
+    const endpoint = "/api/verify-payment";
     void (async () => {
       try {
         for (const candidate of candidates) {
@@ -124,7 +123,7 @@ const SubmitToolPage = () => {
             let attempted:Record<string,unknown>|undefined;
             try{attempted=JSON.parse(candidate.attemptPayload);}catch{/* Legacy or damaged attempt follows normal verification. */}
             if(attempted?.submissionType==='tool' && attempted.submissionId===candidate.submissionId && attempted.checkoutId===checkoutId && attempted.paid===true){
-              const replayEndpoint=/^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)?'https://tooltrim.com/api/contact':'/api/contact';
+              const replayEndpoint="/api/contact";
               const replay=await fetch(replayEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},signal:controller.signal,body:JSON.stringify({...attempted,replayOnly:true})});
               const result=await replay.json().catch(()=>({}));
               if(controller.signal.aborted)return;
@@ -273,8 +272,7 @@ const SubmitToolPage = () => {
     const payload = { ...submission, ...overrides };
     const signature = `${progressStep}:${paidPath}:${JSON.stringify(payload)}`;
     if (sentProgressRef.current.has(signature)) return;
-    const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
-      ? "https://tooltrim.com/api/submission-progress" : "/api/submission-progress";
+    const endpoint = "/api/submission-progress";
     const response = await fetch(endpoint, {
       method: "POST", headers: { "Content-Type": "application/json" }, keepalive: true,
       body: JSON.stringify({ ...payload, progressStep, paid: paidPath, lang }),
@@ -317,10 +315,11 @@ const SubmitToolPage = () => {
     if (badgePage.changed) update("badgeUrl", badgePage.url);
     setStatus("checking"); setError("");
     try {
-      const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) ? "https://tooltrim.com/api/verify-badge" : "/api/verify-badge";
+      const endpoint = "/api/verify-badge";
       const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ badgeUrl: badgePage.url, toolUrl: submission.toolUrl }) });
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(payload.error || (response.status >= 500 ? "server_unavailable" : "badge_not_found"));
+      if (typeof payload.token !== "string" || !payload.token.trim()) throw new Error("verification_unavailable");
       setSubmission((current) => ({ ...current, verificationToken: payload.token || "" }));
       const next = { ...submission, badgeUrl: badgePage.url, verificationToken: payload.token || "" };
       try { saveDraft(next); } catch { /* Final POST requires a complete recoverable draft. */ }
@@ -354,7 +353,7 @@ const SubmitToolPage = () => {
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault(); setStatus("submitting"); setError("");
     try {
-      const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) ? "https://tooltrim.com/api/contact" : "/api/contact";
+      const endpoint = "/api/contact";
       const { attemptPayload: _previousAttempt, ...fields } = submission;
       const attempted = { ...fields, subject: t("Soumission d'un outil", "Tool submission"), submissionType: "tool", badgeReview: plan === "free", paid, lang };
       const prepared = { ...submission, attemptPayload: JSON.stringify(attempted) };

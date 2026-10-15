@@ -1,0 +1,38 @@
+
+> vite_react_shadcn_ts@0.0.0 test:e2e:r11
+> playwright test --config playwright.r11.config.ts --workers=2
+
+
+Running 21 tests using 2 workers
+
+(node:19111) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19110) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19111) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:19110) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › e2e/r11-routing.spec.ts:9:3 › /fr/r11-route-inexistante: unknown static documents return a real noindex 404 (2.5s)
+  ✓   2 [chromium] › e2e/r11-media-links.spec.ts:9:3 › fr: unavailable publisher links do not leave an empty local-nav CTA (2.6s)
+  ✓   4 [chromium] › e2e/r11-media-links.spec.ts:9:3 › en: unavailable publisher links do not leave an empty local-nav CTA (1.3s)
+  ✓   3 [chromium] › e2e/r11-routing.spec.ts:9:3 › /en/tool/r11-inexistant: unknown static documents return a real noindex 404 (1.5s)
+  ✓   6 [chromium] › e2e/r11-routing.spec.ts:9:3 › /fr/guide/r11-inexistant: unknown static documents return a real noindex 404 (1.1s)
+  ✓   5 [chromium] › e2e/r11-media-links.spec.ts:19:3 › openai: known blank or bot-check covers never appear in the tool hero (1.5s)
+  ✓   7 [chromium] › e2e/r11-routing.spec.ts:9:3 › /en/explorer/around/r11-inexistant: unknown static documents return a real noindex 404 (1.4s)
+  ✓   8 [chromium] › e2e/r11-media-links.spec.ts:19:3 › personio: known blank or bot-check covers never appear in the tool hero (1.6s)
+  ✓   9 [chromium] › e2e/r11-routing.spec.ts:22:3 › fr: direct search preserves its query and owns its metadata (1.4s)
+  ✓  11 [chromium] › e2e/r11-routing.spec.ts:30:3 › fr: private routes start without homepage SEO (319ms)
+  ✓  10 [chromium] › e2e/r11-media-links.spec.ts:19:3 › jquery: known blank or bot-check covers never appear in the tool hero (1.3s)
+  ✓  12 [chromium] › e2e/r11-routing.spec.ts:22:3 › en: direct search preserves its query and owns its metadata (833ms)
+  ✓  14 [chromium] › e2e/r11-routing.spec.ts:30:3 › en: private routes start without homepage SEO (196ms)
+  ✓  13 [chromium] › e2e/r11-media-links.spec.ts:26:1 › an audited local product gallery remains visible after recovering a formerly blocked cover (1.1s)
+  ✓  15 [chromium] › e2e/r11-routing.spec.ts:39:3 › meilleurs-outils-ia-freelances-2026: the published English translation is not redirected to French (245ms)
+  ✓  16 [chromium] › e2e/r11-routing.spec.ts:39:3 › claude-opus-4-6-guide-complet-freelances: the published English translation is not redirected to French (333ms)
+  ✓  17 [chromium] › e2e/r11-routing.spec.ts:39:3 › alternatives-gratuites-notion-freelance-2026: the published English translation is not redirected to French (269ms)
+  ✓  18 [chromium] › e2e/r11-routing.spec.ts:39:3 › stack-minimaliste-freelance-2026: the published English translation is not redirected to French (278ms)
+  ✓  19 [chromium] › e2e/r11-routing.spec.ts:39:3 › stripe-freelance-tarifs-alternatives: the published English translation is not redirected to French (226ms)
+  ✓  20 [chromium] › e2e/r11-routing.spec.ts:39:3 › perplexity-vs-chatgpt-recherche: the published English translation is not redirected to French (227ms)
+  ✓  21 [chromium] › e2e/r11-routing.spec.ts:39:3 › notion-gratuit-vs-payant-vrai-calcul: the published English translation is not redirected to French (223ms)
+
+  21 passed (15.0s)
