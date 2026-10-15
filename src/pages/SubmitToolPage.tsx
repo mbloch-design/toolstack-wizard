@@ -10,7 +10,7 @@ import { cleanupSeo, SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
 import { normalizeSiteUrl, type NormalizeUrlFailure } from "@/lib/normalizeSiteUrl";
 import { pickProofTools } from "@/lib/submitProofTools";
-import { parseSubmitInvite } from "@/lib/submitInvite";
+import { INVITE_PRIVATE_PARAMS, parseSubmitInvite } from "@/lib/submitInvite";
 import toolsIndex from "@/data/tools_index.json";
 
 const PROOF_TOOLS = pickProofTools(toolsIndex as { name?: string; slug?: string; websiteUrl?: string }[]);
@@ -166,10 +166,24 @@ const SubmitToolPage = () => {
   const invite = parseSubmitInvite(searchParams);
   const inviteName = invite?.toolName || "";
   const inviteUrl = invite?.toolUrl || "";
+  const inviteEmail = invite?.email || "";
+  const inviteContact = invite?.name || "";
+  useEffect(() => {
+    if (!inviteName || /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)) return;
+    const seenKey = `tt_invite_seen:${inviteName.toLowerCase()}`;
+    try { if (window.sessionStorage.getItem(seenKey)) return; window.sessionStorage.setItem(seenKey, "1"); } catch { /* The server still deduplicates. */ }
+    void fetch("/api/invite-visit", { method: "POST", headers: { "Content-Type": "application/json" }, keepalive: true, body: JSON.stringify({ tool: inviteName, site: inviteUrl, lang }) }).catch(() => undefined);
+  }, [inviteName, inviteUrl, lang]);
+
   useEffect(() => {
     if (!inviteName) return;
-    setSubmission((current) => ({ ...current, toolName: current.toolName || inviteName, toolUrl: current.toolUrl || inviteUrl }));
-  }, [inviteName, inviteUrl]);
+    setSubmission((current) => ({ ...current, toolName: current.toolName || inviteName, toolUrl: current.toolUrl || inviteUrl, email: current.email || inviteEmail, name: current.name || inviteContact }));
+    if (inviteEmail || inviteContact) {
+      const next = new URLSearchParams(searchParams);
+      INVITE_PRIVATE_PARAMS.forEach((key) => next.delete(key));
+      setSearchParams(next, { replace: true });
+    }
+  }, [inviteName, inviteUrl, inviteEmail, inviteContact]);
 
   useEffect(() => {
     if (document.querySelector('script[src="https://www.creem.io/embed.js"]')) return;
@@ -363,7 +377,7 @@ const SubmitToolPage = () => {
       <h1>{paid ? t("Ta fiche prioritaire est lancée.", "Your priority review is underway.") : t(`${submission.toolName || "Ton outil"} est dans la file de revue standard.`, `${submission.toolName || "Your tool"} is in the standard review queue.`)}</h1>
       <p>{paid
         ? t("Ton outil sera publié sous cinq jours ouvrés, sans badge requis. Le paiement n'influence ni le verdict ni le classement.", "Your tool will be published within five business days, with no badge required. Payment does not influence the verdict or ranking.")
-        : t("Pas de délai fixe : nous évaluons les outils au fil de l’eau et ne publions que ceux que nous retenons. Garde le badge sur ton site tant que ta demande est en attente.", "No set timeline: we review tools as we can and publish only the ones we select. Keep the badge on your site while your request is pending.")}</p>
+        : t("Compte environ 4 à 6 semaines : nous évaluons les outils dans l’ordre et ne publions que ceux que nous retenons. Garde le badge sur ton site tant que ta demande est en attente.", "Allow about 4 to 6 weeks: we review tools in order and publish only the ones we select. Keep the badge on your site while your request is pending.")}</p>
       {!paid && <aside className="sp-success-upsell" aria-labelledby="submit-success-upsell">
         <h2 id="submit-success-upsell">{t("Tu veux être en ligne sous 5 jours ouvrés ?", "Want it live within 5 business days?")}</h2>
         <ul>
@@ -399,7 +413,7 @@ const SubmitToolPage = () => {
             : <>Get {inviteName || "your product"} found <span className="tt-title-muted">by people choosing their next tool.</span></>}</h1>
           <p className="sp-pitch-lead">{t("On rédige une fiche indépendante, publiée sous 5 jours ouvrés, avec un lien vers ton site. Tu n’as rien à écrire.", "We write an independent review, publish it within 5 business days and link it to your site. You don’t write a word.")}</p>
           <div className="sp-hero-actions">
-            <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "hero")}>{inviteName ? t(`Faire évaluer ${inviteName} · ${price}`, `Get ${inviteName} reviewed · ${price}`) : t(`Faire évaluer mon outil · ${price}`, `Get my tool reviewed · ${price}`)}<ArrowRight size={16} /></button>
+            <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "hero")}>{inviteName ? t(`Faire découvrir ${inviteName} · ${price}`, `Get ${inviteName} found · ${price}`) : t(`Faire découvrir mon outil · ${price}`, `Get my tool found · ${price}`)}<ArrowRight size={16} /></button>
             <a className="sp-hero-cta-secondary" href="#submit-plans-title">{t("Ou gratuitement, avec un badge ›", "Or submit free with a badge ›")}</a>
           </div>
           <p className="sp-pitch-reassurance"><ShieldCheck size={15} />{t("Tu vérifies les faits avant publication · paiement unique · sans badge", "You check the facts before it goes live · one-time payment · no badge")}</p>
@@ -449,7 +463,7 @@ const SubmitToolPage = () => {
             <ul className="sp-plan-args sp-plan-args--limits">
               <li><Minus size={16} />{t("Lien nofollow", "Nofollow link")}</li>
               <li><Minus size={16} />{t("Publiée seulement si retenue", "Published only if selected")}</li>
-              <li><Minus size={16} />{t("Aucun délai garanti", "No set timeline")}</li>
+              <li><Minus size={16} />{t("En ligne en 4 à 6 semaines environ", "Live in about 4 to 6 weeks")}</li>
               <li><Minus size={16} />{t("Badge ToolTrim requis sur ton site", "ToolTrim badge required on your site")}</li>
               <li><Minus size={16} />{t("Corrections factuelles après publication", "Fact fixes after publication")}</li>
               <li><Check size={16} />{t("Rédigée par notre équipe, note expliquée", "Written by our editors, score explained")}</li>
@@ -467,7 +481,7 @@ const SubmitToolPage = () => {
               <li><Check size={16} />{t("Tu vérifies les faits avant publication", "You check the facts before it goes live")}</li>
               <li><Check size={16} />{t("Rédigée par notre équipe, note expliquée", "Written by our editors, score explained")}</li>
             </ul>
-            <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Obtenir ma fiche prioritaire · ${price}`, `Get my priority review · ${price}`)}<ArrowRight size={16} /></button>
+            <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Commencer · ${price}`, `Get started · ${price}`)}<ArrowRight size={16} /></button>
           </article>
           <article className="sp-plan-card sp-plan-card--featured">
             <div className="sp-plan-card-head"><div><span className="sp-plan-from">{t("à partir de", "from")}</span><span className="sp-plan-price">{t("99 $", "$99")}</span></div><span className="sp-plan-name">{t("Mise en avant", "Featured")}</span></div>
@@ -534,7 +548,7 @@ const SubmitToolPage = () => {
         </ol>
         <div className="sp-card">
           {step === 1 && <form onSubmit={continueFromContact} className="sp-form">
-            <div className="sp-section-heading"><span>01</span><div><h2>{t("Commençons par ton outil.", "Let’s start with your tool.")}</h2><p>{inviteName && submission.toolName === inviteName ? t(`${inviteName} est déjà renseigné : il ne manque que ton email.`, `${inviteName} is already filled in: we only need your email.`) : t("Trois informations pour commencer. Tu pourras préciser les détails à la dernière étape.", "Three details to get started. You can add more context in the final step.")}</p></div></div>
+            <div className="sp-section-heading"><span>01</span><div><h2>{t("Commençons par ton outil.", "Let’s start with your tool.")}</h2><p>{inviteName && submission.toolName === inviteName && submission.email ? t("Tout est déjà renseigné : vérifie et continue.", "Everything is filled in: just check and continue.") : inviteName && submission.toolName === inviteName ? t(`${inviteName} est déjà renseigné : il ne manque que ton email.`, `${inviteName} is already filled in: we only need your email.`) : t("Trois informations pour commencer. Tu pourras préciser les détails à la dernière étape.", "Three details to get started. You can add more context in the final step.")}</p></div></div>
             <div className="sp-form-grid"><div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-url">{t("Site officiel", "Official website")}</label><div className="sp-input-wrap"><Globe size={16} /><input className="tt-form-input" id="submit-tool-url" required type="text" inputMode="url" autoComplete="url" spellCheck={false} maxLength={300} value={submission.toolUrl} onChange={(event) => update("toolUrl", event.target.value)} onBlur={() => tidyUrlField("toolUrl")} placeholder={t("exemple.com", "example.com")} /></div></div><div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-name">{t("Nom de l'outil", "Tool name")}</label><div className="sp-input-wrap"><User size={16} /><input className="tt-form-input" id="submit-tool-name" required maxLength={100} value={submission.toolName} onChange={(event) => update("toolName", event.target.value)} placeholder="Acme" /></div></div></div>
             <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-email">Email</label><div className="sp-input-wrap"><Mail size={16} /><input className="tt-form-input" id="submit-email" required type="email" autoComplete="email" maxLength={200} value={submission.email} onChange={(event) => update("email", event.target.value)} placeholder="you@example.com" /></div></div>
             {error && <p className="tt-form-error" role="alert">{error}</p>}
@@ -556,7 +570,7 @@ const SubmitToolPage = () => {
             <aside className="sp-upgrade-note" aria-labelledby="submit-upgrade-title">
               <p className="sp-upgrade-kicker">{t("La revue gratuite demande une modification de ton site.", "The free review needs a change on your site.")}</p>
               <div className="sp-upgrade-compare">
-                <div><span>{t("Gratuit", "Free")}</span><ul><li><Minus size={14} />{t("Lien nofollow", "Nofollow link")}</li><li><Minus size={14} />{t("Aucun délai garanti", "No set timeline")}</li><li><Minus size={14} />{t("Publiée seulement si retenue", "Published only if selected")}</li></ul></div>
+                <div><span>{t("Gratuit", "Free")}</span><ul><li><Minus size={14} />{t("Lien nofollow", "Nofollow link")}</li><li><Minus size={14} />{t("En ligne en 4 à 6 semaines environ", "Live in about 4 to 6 weeks")}</li><li><Minus size={14} />{t("Publiée seulement si retenue", "Published only if selected")}</li></ul></div>
                 <div><span id="submit-upgrade-title">{t(`Fiche prioritaire · ${price}`, `Priority review · ${price}`)}</span><ul><li><Link2 size={14} /><strong>{t("Lien dofollow depuis un site DR 43", "Dofollow link from a DR 43 site")}</strong></li><li><Check size={14} />{t("En ligne sous 5 jours ouvrés", "Live within 5 business days")}</li><li><Check size={14} />{t("Rien à installer", "Nothing to install")}</li></ul></div>
               </div>
               <button type="button" className="sp-upgrade-cta" onClick={upgradeToPaid}>{t(`Passer à la fiche prioritaire · ${price}`, `Switch to the priority review · ${price}`)}<ArrowRight size={15} /></button>
@@ -605,7 +619,7 @@ const SubmitToolPage = () => {
       </section>
       <section className="sp-closing" aria-labelledby="submit-closing-title">
         <div><h2 id="submit-closing-title">{lang === "fr" ? <>{inviteName || "Ton outil"} peut être en ligne la semaine prochaine. <span className="tt-title-muted">Une note méritée, un lien dofollow, rien à écrire.</span></> : <>{inviteName || "Your tool"} could be live next week. <span className="tt-title-muted">Earned score, dofollow link, nothing to write.</span></>}</h2><p>{t(`${price}, une fois. Ni badge, ni abonnement.`, `${price}, once. No badge, no subscription.`)}</p></div>
-        <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "closing")}>{inviteName ? t(`Faire évaluer ${inviteName} · ${price}`, `Get ${inviteName} reviewed · ${price}`) : t(`Faire évaluer mon outil · ${price}`, `Get my tool reviewed · ${price}`)}<ArrowRight size={16} /></button>
+        <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "closing")}>{inviteName ? t(`Faire découvrir ${inviteName} · ${price}`, `Get ${inviteName} found · ${price}`) : t(`Faire découvrir mon outil · ${price}`, `Get my tool found · ${price}`)}<ArrowRight size={16} /></button>
       </section>
       <p className="sp-contact-line">{inviteName ? t("Une question ? Réponds simplement à mon email.", "Questions? Just reply to my email.") : <>{t("Une question ou un projet de partenariat ?", "A question or partnership in mind?")} <Link className="sp-text-link" to={`${prefix}/contact?subject=partnership`}>{t("Parlons-en", "Let’s talk")}<ArrowRight size={15} /></Link></>}</p>
       </>}

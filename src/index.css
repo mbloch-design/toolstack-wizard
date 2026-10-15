@@ -36198,3 +36198,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .sp-shot-tabs { flex-wrap: wrap; }
   .sp-shot-score { gap: var(--space-sm); }
 }
+@layer components {
+  .stp-page .sp-plan-grid :is(.sp-plan-cta, .sp-plan-free-link, .sp-plan-contact) { white-space: nowrap; }
+  .stp-page .sp-plan-grid .sp-plan-free-link { font-size: 15px; }
+}
