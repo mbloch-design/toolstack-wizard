@@ -937,6 +937,13 @@ const ToolDetailPage = () => {
                         >
                           {t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
                         </Link>
+                        {category && <Link
+                          to={`${prefix}/category/${category.slug}`}
+                          className="td-chip"
+                          onClick={() => trackAlternative(`category:${category.slug}`, "no_substitute_category")}
+                        >
+                          {t(`Voir tous les outils ${lang === "fr" ? (category.name || "") : (category.nameEn || category.name || "")}`, `Browse all ${category.nameEn || category.name || ""} tools`)}
+                        </Link>}
                       </div>
                     </div>
                   )}
