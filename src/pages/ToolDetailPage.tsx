@@ -313,7 +313,7 @@ const ToolDetailPage = () => {
         const pitch = lang === "en" ? (ct.shortDescriptionEn || ct.shortDescription) : ct.shortDescription;
         return (
           <li key={ct.id}>
-            <Link to={`${prefix}/tool/${ct.slug || ct.id}`} className="td-alt-shelf-item">
+            <Link to={`${prefix}/tool/${ct.slug || ct.id}`} className="td-alt-shelf-item" onClick={() => trackAlternative(ct.slug || ct.id, "alternatives_shelf")}>
               <ToolLogo tool={ct} size={44} className="td-alt-shelf-logo" />
               <span className="td-alt-shelf-copy">
                 <span className="td-alt-shelf-name">{ct.name}</span>
@@ -339,6 +339,16 @@ const ToolDetailPage = () => {
   const primaryCtaUrl = safeAffiliateUrl || safeWebsiteUrl;
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
   const primaryCtaLabel = tool.slug === "tapstitch" ? t("Créer mon premier produit", "Create my first product") : (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t(`Visiter ${tool.name}`, `Visit ${tool.name}`);
+  const trackOutbound = (location: string, label: string) => trackEvent("outbound_tool_click", {
+    tool_slug: tool.slug || tool.id,
+    tool_name: tool.name,
+    cta_location: location,
+    cta_label: label,
+    destination_domain: getDomainFromUrl(primaryCtaUrl),
+    language: lang,
+    is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
+  });
+  const trackAlternative = (to: string, source: string) => trackEvent("alternative_click", { tool_slug: tool.slug || tool.id, to_slug: to, source });
   const hasFreeplan   = hasGenuineFreeTier(tool.pricing?.free);
   // Was `!!(tool.pricing?.free && tool.pricing?.paid)` — pure truthiness,
   // so a free field describing the ABSENCE of a free plan ("Pas de plan
@@ -847,6 +857,11 @@ const ToolDetailPage = () => {
                     lang={lang} t={t}
                   />
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
+                  {primaryCtaUrl && <p className="td-context-cta">
+                    <a href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_pricing", "check_current_plans")}>
+                      {t(`Les prix évoluent : vérifie les offres actuelles sur le site de ${tool.name}`, `Prices change. Check the current plans on ${tool.name}’s site`)}<ExternalLink aria-hidden />
+                    </a>
+                  </p>}
                 </div>
                 <ToolBundleSection tool={tool} tools={tools} lang={lang} t={t} />
               </div>
@@ -1093,6 +1108,14 @@ const ToolDetailPage = () => {
                         </div>
                       )}
 
+                      {primaryCtaUrl && <div className="td-decision-cta">
+                        <a className="td-decision-cta-main" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_review", "decided_visit")}>
+                          {t(`Ta décision est prise ? Visiter ${tool.name}`, `Decided? Visit ${tool.name}`)}<ExternalLink aria-hidden />
+                        </a>
+                        <Link className="td-decision-cta-alt" to={`${baseToolPath}/alternatives`} onClick={() => trackAlternative("alternatives_page", "tool_review")}>
+                          {t("ou comparer les alternatives", "or compare alternatives")}<ArrowRight aria-hidden />
+                        </Link>
+                      </div>}
                     </div>
                   );
                 })()}
@@ -1203,8 +1226,16 @@ const ToolDetailPage = () => {
             )}
 
             <div className="td-sidebar-mobile td-reading-actions">
-              <h2>{t("Et maintenant ?", "What’s next?")}</h2>
-              <StickyDecisionCard {...cardProps} section="actions" />
+              <h2 className="td-title">{t("Ta prochaine étape.", "Your next step.")}</h2>
+              {primaryCtaUrl && <a className="td-next-primary" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_next_step", primaryCtaLabel)}>
+                {primaryCtaLabel}<ExternalLink aria-hidden />
+              </a>}
+              {clusterTools[0] && <Link className="td-next-alt" to={`${prefix}/tool/${clusterTools[0].slug || clusterTools[0].id}`} onClick={() => trackAlternative(clusterTools[0].slug || clusterTools[0].id, "tool_next_step")}>
+                <ToolLogo tool={clusterTools[0]} size={28} />
+                <span>{t("Alternative la plus proche :", "Closest alternative:")} <strong>{clusterTools[0].name}</strong></span>
+                <ArrowRight aria-hidden />
+              </Link>}
+              <StickyDecisionCard {...cardProps} section="share" />
             </div>
           </article>
           {/* end main content */}

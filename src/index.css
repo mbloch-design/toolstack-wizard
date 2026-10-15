@@ -36276,3 +36276,19 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .td-decision-verdict > .td-decision-fit, .td-decision-verdict > .td-decision-compare { grid-column: 1 / -1; }
   .td-decision-verdict > .td-decision-compare { justify-self: start; }
 }
+@layer components {
+  .td-context-cta { margin: var(--space-lg, 24px) 0 0; }
+  .td-context-cta a, .td-decision-cta-alt { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font: 600 15px/1.4 var(--font-ui); color: var(--color-text); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--color-border-strong, #c9c9c4); }
+  .td-context-cta a:hover, .td-decision-cta-alt:hover { text-decoration-color: currentColor; }
+  .td-context-cta svg, .td-decision-cta svg, .td-next-primary svg, .td-next-alt svg { width: 15px; height: 15px; flex: 0 0 auto; transition: transform .2s cubic-bezier(.2,.7,.2,1); }
+  .td-context-cta a:hover svg, .td-decision-cta-main:hover svg, .td-next-primary:hover svg { transform: translate(2px, -2px); }
+  .td-decision-cta-alt:hover svg, .td-next-alt:hover svg { transform: translateX(3px); }
+  .td-decision-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--color-border); }
+  .td-decision-cta-main { display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px; background: var(--color-text); font: 600 15px/1 var(--font-ui); color: var(--color-bg); text-decoration: none; }
+  .td-decision-cta-alt { font-weight: 500; color: var(--color-text-secondary); }
+  .td-reading-actions .td-next-primary { display: flex; justify-content: center; align-items: center; gap: 8px; min-height: 52px; margin-top: 16px; border-radius: 999px; background: var(--color-text); font: 600 16px/1 var(--font-ui); color: var(--color-bg); text-decoration: none; }
+  .td-reading-actions .td-next-alt { display: flex; align-items: center; gap: 12px; min-height: 56px; margin-top: 12px; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: 16px; font: 400 15px/1.35 var(--font-ui); color: var(--color-text-secondary); text-decoration: none; }
+  .td-reading-actions .td-next-alt span { flex: 1; min-width: 0; }
+  .td-reading-actions .td-next-alt strong { color: var(--color-text); font-weight: 600; }
+  @media (prefers-reduced-motion: reduce) { .td-context-cta svg, .td-decision-cta svg, .td-next-primary svg, .td-next-alt svg { transition: none; } }
+}
