@@ -501,7 +501,7 @@ const ToolDetailPage = () => {
         <div className="td-body-grid td-page-grid">
 
           {/* ── MAIN COLUMN (left): hero identity + sections ── */}
-          <main className="td-main">
+          <article className="td-main">
 
             {/* Hero identity — editorial identity first, supporting OG visual
                 below. The product logo remains associated with its name in
@@ -711,7 +711,15 @@ const ToolDetailPage = () => {
                   {primaryCtaUrl && (
                     <section className="td-editorial-fact-group">
                       <h3>{t("Lien", "Link")}</h3>
-                      <a className="td-editorial-official-link" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}>
+                      <a className="td-editorial-official-link" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackEvent("outbound_tool_click", {
+                        tool_slug: tool.slug || tool.id,
+                        tool_name: tool.name,
+                        cta_location: "tool_facts_rail",
+                        cta_label: "official_website",
+                        destination_domain: getDomainFromUrl(primaryCtaUrl),
+                        language: lang,
+                        is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
+                      })}>
                         <span>{t("Site officiel", "Official website")}</span>
                         <ExternalLink aria-hidden />
                       </a>
@@ -1057,7 +1065,7 @@ const ToolDetailPage = () => {
                                     <span className="td-score-axis-heading">
                                       <span className="td-score-axis-name">{t(labelFr, labelEn)}</span>
                                     </span>
-                                    <div className="td-score-meter" aria-label={`${value}/5`}>
+                                    <div className="td-score-meter" role="img" aria-label={lang === "en" ? `${value} out of 5` : `${value} sur 5`}>
                                       {[1, 2, 3, 4, 5].map((i) =>
                                         i <= value
                                           ? <StarSolid key={i} size={16} className="td-score-star td-score-star--filled" aria-hidden="true" />
@@ -1198,7 +1206,7 @@ const ToolDetailPage = () => {
               <h2>{t("Et maintenant ?", "What’s next?")}</h2>
               <StickyDecisionCard {...cardProps} section="actions" />
             </div>
-          </main>
+          </article>
           {/* end main content */}
 
           {/* ── RIGHT SIDEBAR — StickyDecisionCard ── */}

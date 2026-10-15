@@ -269,7 +269,21 @@ function buildToolOffersFor(tool: any, price: number | null, url: string) {
   const hasFree = toolHasFreePlan(tool);
   if (isPriceUndisclosed(tool) && !hasFree) return undefined;
   const native = nativePriceFromTool(tool);
-  return buildToolOffers(native?.amount ?? price, hasFree, native?.currency ?? "EUR", url);
+  // Only a price the vendor actually publishes may be declared. Without one, the
+  // catalogue fallback is a normalised (often converted or zero) figure: stating
+  // it would claim the wrong price or "free" on a paid tool.
+  if (native) return buildToolOffers(native.amount, hasFree, native.currency, url);
+  // No vendor-published price: keep the catalogue figure only when it is a real
+  // amount; a 0 on a paid tool would claim "free".
+  if (price != null && price > 0) return buildToolOffers(price, hasFree, "EUR", url);
+  return hasFree ? buildToolOffers(0, true, "EUR", url) : undefined;
+}
+
+function operatingSystemFor(tool: any): string | undefined {
+  const host = String(tool?.host_app || "").toLowerCase();
+  if (host === "macos") return "macOS";
+  if (host) return undefined;
+  return "Web";
 }
 
 function buildToolOffers(price: number | null, hasFree: boolean, currency: string, url: string) {
@@ -998,7 +1012,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               ...(productUrl ? { url: productUrl } : {}),
               description: description || title,
               applicationCategory: appCategoryFor(tool),
-              operatingSystem: "Web",
+              ...(operatingSystemFor(tool) ? { operatingSystem: operatingSystemFor(tool) } : {}),
             };
             // offers est requis par le rich result Software App ; AggregateOffer
             // 0→prix pour les freemium (sinon le schema annonce un prix payant
@@ -1020,7 +1034,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                   worstRating: "1",
                 },
                 ...(isFr ? { name: `Avis ToolTrim : ${ts.labelFr}` } : { name: `ToolTrim review: ${ts.labelEn}` }),
-                ...(tool.verdict?.threshold ? { reviewBody: String(tool.verdict.threshold).substring(0, 280) } : {}),
+                ...((isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold) ? { reviewBody: String(isFr ? tool.verdict.threshold : tool.verdictEn.threshold).substring(0, 280) } : {}),
               };
             }
 
@@ -1243,14 +1257,14 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               // Nœud SoftwareApplication complet (name + offers + review) émis
               // sur /avis et /prix : le rich result Google exige offers ET review
               // ensemble. offers="0" pour un outil gratuit.
-              const subVerdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
+              const subVerdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold) || "";
               const appSchema = (sub.path === "avis" || sub.path === "prix") ? {
                 "@context": "https://schema.org",
                 "@type": "SoftwareApplication",
                 name,
                 ...(subProductUrl ? { url: subProductUrl } : {}),
                 applicationCategory: appCategoryFor(tool),
-                operatingSystem: "Web",
+                ...(operatingSystemFor(tool) ? { operatingSystem: operatingSystemFor(tool) } : {}),
                 ...(buildToolOffersFor(tool, price, subProductUrl) ? { offers: buildToolOffersFor(tool, price, subProductUrl) } : {}),
                 ...(subScore && typeof subScore.score === "number" ? {
                   review: {

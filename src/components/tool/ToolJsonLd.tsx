@@ -34,7 +34,12 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       : null;
     const offerPrice = maxonAnnual?.nativeAmount ?? nativePrice?.amount ?? displayPrice;
     const offerCurrency = maxonAnnual?.nativeCurrency ?? nativePrice?.currency ?? "EUR";
-    const noVerifiedOffer = ["included", "beta", "discontinued", "unknown"].includes(tool.pricing_v5?.compare_plan_kind || "");
+    // Without a price the vendor publishes, only an honest free offer can be declared.
+    const unattested = !maxonAnnual && !nativePrice && !(displayPrice > 0);
+    const noVerifiedOffer = ["included", "beta", "discontinued", "unknown"].includes(tool.pricing_v5?.compare_plan_kind || "")
+      || (unattested && !hasGenuineFreeTier(tool.pricing?.free));
+    const host = String((tool as { host_app?: string }).host_app || "").toLowerCase();
+    const operatingSystem = host === "macos" ? "macOS" : host ? undefined : "Web";
     const canonicalUrl = pageCanonicalUrl || `${SEO_BASE}/${lang}/tool/${tool.slug || tool.id}`;
     const pageIntent = canonicalUrl.endsWith("/prix") || canonicalUrl.endsWith("/pricing")
       ? (lang === "fr" ? "Prix et tarifs" : "Pricing and plans")
@@ -81,8 +86,10 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       description: lang === "en" ? (tool.shortDescriptionEn || tool.shortDescription) : tool.shortDescription,
       url: safeExternalUrl(tool.websiteUrl) || canonicalUrl,
       applicationCategory: "BusinessApplication",
-      operatingSystem: "Web",
-      ...(noVerifiedOffer ? {} : { offers: maxonAnnual
+      ...(operatingSystem ? { operatingSystem } : {}),
+      ...(noVerifiedOffer ? {} : { offers: unattested
+        ? { "@type": "Offer", price: "0", priceCurrency: "EUR" }
+        : maxonAnnual
         ? {
             "@type": "Offer",
             price: String(offerPrice),
