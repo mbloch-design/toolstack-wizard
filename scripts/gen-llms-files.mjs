@@ -52,7 +52,8 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 - Category: \`https://tooltrim.com/{lang}/category/{slug}\`
 - Guide: \`https://tooltrim.com/{lang}/guide/{slug}\`
 - Comparison: \`https://tooltrim.com/{lang}/comparatif/{tool-a}-vs-{tool-b}\`
-- Tool alternatives: \`https://tooltrim.com/{lang}/explorer/around/{slug}\`
+- Tool alternatives: \`https://tooltrim.com/{lang}/tool/{slug}/alternatives\`
+- Tool ecosystem: \`https://tooltrim.com/{lang}/explorer/around/{slug}\`
 
 ## Catalogue
 

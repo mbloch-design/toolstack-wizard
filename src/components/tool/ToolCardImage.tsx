@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
 import type { Tool } from "@/data/types";
-import { TOOL_IMAGE_BLOCKLIST } from "@/lib/toolImageBlocklist";
+import { isToolCoverBlocked } from "@/lib/toolImageBlocklist";
 
 type ToolCardImageTool = Pick<Tool, "name"> & Partial<Pick<Tool, "id" | "slug" | "websiteUrl" | "affiliateLink" | "logo" | "ogImageUrl">>;
 
@@ -47,7 +47,7 @@ export default function ToolCardImage({ tool, logoSize = 40, className = "", ove
 }) {
   // A blocklisted cover (bot check, parked domain, blank page) falls back to
   // the logo panel on every surface, not only where lists filter it out.
-  const blocked = TOOL_IMAGE_BLOCKLIST.has(tool.slug || tool.id || "");
+  const blocked = isToolCoverBlocked(tool);
   const resolved = useMemo(() => (blocked ? null : normalizeCardImageUrl(tool.ogImageUrl)), [blocked, tool.ogImageUrl]);
   const [failed, setFailed] = useState(false);
   const [loaded, setLoaded] = useState(false);

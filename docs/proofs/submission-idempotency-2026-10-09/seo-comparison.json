@@ -1,0 +1,38 @@
+{
+  "pages": [
+    {
+      "path": "fr/submit/index.html",
+      "seo_tags_identical": true,
+      "tag_count": 8
+    },
+    {
+      "path": "en/submit/index.html",
+      "seo_tags_identical": true,
+      "tag_count": 8
+    },
+    {
+      "path": "fr/tools/index.html",
+      "seo_tags_identical": true,
+      "tag_count": 8
+    },
+    {
+      "path": "en/tools/index.html",
+      "seo_tags_identical": true,
+      "tag_count": 8
+    },
+    {
+      "path": "fr/tool/notion/index.html",
+      "seo_tags_identical": true,
+      "tag_count": 8
+    },
+    {
+      "path": "en/tool/notion/index.html",
+      "seo_tags_identical": true,
+      "tag_count": 8
+    }
+  ],
+  "sitemap": {
+    "identical": true,
+    "new_sha256": "c050e19f412bbe7242b141f642bac531ddc4ffdbbb3cd62e15df5f458792a3db"
+  }
+}

@@ -1,0 +1,12 @@
+
+> vite_react_shadcn_ts@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+
+ Test Files  61 passed (61)
+      Tests  375 passed (375)
+   Start at  17:23:52
+   Duration  13.28s (transform 10.43s, setup 8.92s, import 22.00s, tests 21.93s, environment 45.10s)

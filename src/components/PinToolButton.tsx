@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Bookmark, BookmarkCheck } from "@/lib/icons";
 import { toast } from "sonner";
@@ -14,6 +15,8 @@ interface PinToolButtonProps {
 }
 
 export function PinToolButton({ slug, label, t, compact = false, inline = false, labelMode }: PinToolButtonProps) {
+  const [interactive, setInteractive] = useState(false);
+  useEffect(() => setInteractive(true), []);
   const { prefix } = useLang();
   const navigate = useNavigate();
   const { state, pinTool } = useStackPins();
@@ -26,6 +29,7 @@ export function PinToolButton({ slug, label, t, compact = false, inline = false,
   return (
     <button
       type="button"
+      disabled={!interactive}
       className={`pin-tool-button${pinned ? " pin-tool-button--active" : ""}${compact ? " pin-tool-button--compact" : ""}${inline ? " pin-tool-button--inline" : ""}${mode === "icon" ? " pin-tool-button--icon" : ""}${mode === "full" ? " pin-tool-button--full" : ""}`}
       onClick={(event) => {
         event.preventDefault();

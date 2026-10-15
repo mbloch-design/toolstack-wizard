@@ -1,3 +1,11 @@
+## Contre-revue R5 — 9 octobre 2026
+
+[Rapport actualisé](R5_SECOND_PASS_2026-10-09.md) : filtres URL corrigés, sémantique hôte/suite et restrictions des promesses incertaines renforcées ; preuves contrôlées automatiquement. 126/198 crédibles au top8 (52,5 % des 240 places), seuil non atteint ; R5 reste ouvert, non publié. Anciennes mesures conservées ci-dessous comme historique.
+
+## Point R5 — 9 octobre 2026
+
+[Audit des 30 sources et preuves](R5_EXPLORER_AUDIT_2026-10-09.md) réalisé localement, non publié. Garde-fous limités au pilote ; 127/198 relations crédibles dans le top 8 (cible 80 % non atteinte). R5 reste ouvert ; entrée R6 : réconcilier les identités assistant/API, Figma/Framer et les tags sans créer un catalogue parallèle.
+
 # ToolTrim — état des lieux et roadmap par lots
 
 **État vérifié le 9 octobre 2026.** Ce document remet en perspective la séquence de revue technique du 7 au 9 octobre. Il distingue le code publié, les résultats locaux, les mesures historiques et les propositions futures. Il ne certifie pas tout le produit ni la base distante.
@@ -81,7 +89,7 @@ Aucun outil, prix, traduction ou relation n’a été supprimé des sources par 
 
 ## 4. Roadmap complète proposée par lots
 
-**R0/R1 ont été clôturés ; le contre-audit R2 a été autorisé et réalisé avec certification distante partielle.** La preuve paiement et la reprise de brouillon de R2b ont été autorisées et implémentées localement ; leur activation Creem reste à vérifier. Les autres corrections R2a–R2c et R3–R11 restent proposées. Pas de date artificielle : chaque lot se ferme sur ses preuves et non sur le temps passé. Un lot applicatif comprend préparation, test local, relecture, publication autorisée, CI et recette publique adaptée.
+**R0/R1 ont été clôturés ; le contre-audit R2 a été autorisé et réalisé avec certification distante partielle.** La preuve paiement et la reprise de brouillon de R2b ont été autorisées et implémentées localement ; leur activation Creem reste à vérifier. La réservation des reçus et les reprises email R2c sont aussi implémentées localement ; leur activation reste ouverte. Les autres corrections R2 et R3–R11 restent proposées. Pas de date artificielle : chaque lot se ferme sur ses preuves et non sur le temps passé. Un lot applicatif comprend préparation, test local, relecture, publication autorisée, CI et recette publique adaptée.
 
 | Ordre / lot | État et dépendance | Objectif et livrable | Critère de sortie | Valeur / effort indicatif |
 |---|---|---|---|---|
@@ -121,4 +129,8 @@ Le bilan initial a été publié avec R0 après autorisation. L’actualisation 
 
 ### Actualisation : preuve de paiement Creem, correctif local
 
-Le [correctif Creem](CORRECTIF_CREEM_2026-10-09.md) conserve le checkout existant et vérifie le paiement côté serveur avant confirmation/envoi payant. Gain attesté localement : `paid=true` falsifié refusé et brouillon conservé pendant les erreurs/reprises. 113 API, 278 app, 23 SEO, types et cinq scénarios navigateur simulés passent. Aucun gain d’encaissement, d’anti-replay durable ou de référencement n’est revendiqué. Publication attend la configuration de retour/clé et la validation prestataire réelle. Badge gratuit maintenant imposé côté serveur et validé localement (122 API, build et cinq scénarios navigateur simulés PASS). Réutilisation du checkout et emails idempotents restent à traiter **sans Supabase**, conformément au choix du propriétaire. [Contrat proposé](superpowers/specs/2026-10-09-submission-idempotency-design.md), Upstash gratuit choisi pour préparation, traitement par email conservé et aucun stockage distant créé.
+Le [correctif Creem](CORRECTIF_CREEM_2026-10-09.md) conserve le checkout existant et vérifie le paiement côté serveur avant confirmation/envoi payant. Gain attesté localement : `paid=true` falsifié refusé et brouillon conservé pendant les erreurs/reprises. 113 API, 278 app, 23 SEO, types et cinq scénarios navigateur simulés passent. Aucun gain d’encaissement, d’anti-replay durable ou de référencement n’est revendiqué. Publication attend la configuration de retour/clé et la validation prestataire réelle. Badge gratuit maintenant imposé côté serveur et validé localement (122 API, build et cinq scénarios navigateur simulés PASS). La réutilisation du checkout et les reprises email ont ensuite été traitées localement **sans Supabase**, conformément au choix du propriétaire ; elles ne sont pas encore actives en production. [Contrat proposé](superpowers/specs/2026-10-09-submission-idempotency-design.md), Upstash gratuit choisi pour préparation, traitement par email conservé et aucun stockage distant créé.
+
+### Lot soumissions : résultat local du plan autorisé
+
+175 API avec Redis réel, 287 app, 23 SEO, 14 scénarios Chromium, types et build PASS. Gain démontré : un reçu réservé à une demande, conservation avant envoi, reprise après réponse perdue et absence de blocage par les notifications intermédiaires. Aucun gain commercial ou classement SEO revendiqué. Configuration du compte, quota, sauvegarde distante, rétention et publication restent ouverts. [Bilan complet](BILAN_SOUMISSIONS_2026-10-09.md).

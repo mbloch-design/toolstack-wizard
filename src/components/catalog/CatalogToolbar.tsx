@@ -127,7 +127,7 @@ export default function CatalogToolbar({
                 {badgeCount > 0 && <span className="tt-pill-count">{badgeCount}</span>}
               </button>
             </PopoverTrigger>
-            <PopoverContent className="tt-filter-panel" align="end" sideOffset={8}>
+            <PopoverContent className="tt-filter-panel" aria-label={panelTitle} align="end" sideOffset={8}>
               <div className="tt-filter-panel-head">
                 <strong>{panelTitle}</strong>
                 <div className="tt-filter-panel-head-actions">

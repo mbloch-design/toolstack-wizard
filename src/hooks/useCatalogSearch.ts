@@ -127,6 +127,8 @@ function buildDocuments(
       label: tool.name,
       meta: categoryLabel,
       searchText: flattenText(searchableFields),
+      category: flattenText([category?.name, category?.nameEn]),
+      tags: flattenText([tool.functional_needs, tool.covers]).replaceAll("-", " "),
     };
   });
 
@@ -137,6 +139,7 @@ function buildDocuments(
     slug: category.slug,
     label: cleanText(lang === "en" ? category.nameEn || category.name : category.name),
     meta: lang === "en" ? "Category" : "Catégorie",
+    category: flattenText([category.name, category.nameEn]),
     searchText: flattenText([
       category.name,
       category.nameEn,

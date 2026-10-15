@@ -35,3 +35,15 @@ const LEADING_EMOJI = new RegExp(
 export function stripLeadingEmoji(value: unknown, fallback = ""): string {
   return asText(value, fallback).replace(LEADING_EMOJI, "").trim();
 }
+
+/**
+ * A category name for display. French category names in the catalogue are
+ * title-cased ("Gestion de Projet", "IA Généraliste"); French writes them in
+ * sentence case, keeping acronyms (IA, CRM, SIRH). English stays as stored.
+ */
+export function categoryDisplayName(category: { name: string; nameEn?: string | null }, lang: string): string {
+  const raw = stripLeadingEmoji(lang === "en" ? category.nameEn || category.name : category.name);
+  if (lang === "en") return raw;
+  const lower = (part: string) => (part.length < 2 || part === part.toLocaleUpperCase("fr") ? part : part.charAt(0).toLocaleLowerCase("fr") + part.slice(1));
+  return raw.split(" ").map((word, index) => word.split("-").map((part, partIndex) => (index === 0 && partIndex === 0 ? part : lower(part))).join("-")).join(" ");
+}

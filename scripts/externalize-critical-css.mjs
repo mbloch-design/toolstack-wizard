@@ -3,6 +3,7 @@
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
+import { splitSharedCriticalCss } from "./lib/shared-critical-css.mjs";
 
 const distDir = path.resolve("dist");
 const assetsDir = path.join(distDir, "assets");
@@ -31,21 +32,9 @@ walk(distDir);
 // recopiee dans chacun des ~780 fichiers emis. C'est ce qui a fait passer le
 // budget CSS au-dessus de 30 Mio et casser le deploiement.
 //
-// On la sort dans un fichier partage et on n'emet plus que le prefixe propre a
-// la page. L'ordre du cascade est conserve : le lien de la page vient avant
-// celui du socle, exactement comme la concatenation d'origine.
-function commonSuffix(values) {
-  if (values.length === 0) return "";
-  let suffix = values[0];
-  for (const value of values.slice(1)) {
-    const max = Math.min(suffix.length, value.length);
-    let k = 0;
-    while (k < max && suffix[suffix.length - 1 - k] === value[value.length - 1 - k]) k += 1;
-    suffix = suffix.slice(suffix.length - k);
-    if (!suffix) break;
-  }
-  return suffix;
-}
+// Le suffixe est partage dans un socle. Tailwind 4 laisse egalement un long
+// prefixe commun aux pages de contenu ; il est partage seulement sur ces pages.
+// Les trois fragments restent dans leur ordre initial : prefixe, page, socle.
 
 const documents = [];
 let alreadyExternal = 0;
@@ -64,23 +53,24 @@ for (const htmlPath of htmlFiles) {
 
 // Seuil : en dessous, le round-trip reseau supplementaire ne vaut pas l'octet
 // economise, et on garde le comportement d'origine.
-const shared = commonSuffix(documents.map((d) => d.css));
-const useShared = shared.length >= 1024;
-let sharedLink = "";
-let sharedBytes = 0;
-if (useShared) {
-  const sharedName = `critical-base-${crypto.createHash("sha256").update(shared).digest("hex").slice(0, 16)}.css`;
-  fs.writeFileSync(path.join(assetsDir, sharedName), shared, "utf8");
-  sharedLink = `<link rel="stylesheet" href="/assets/${sharedName}">`;
-  sharedBytes = Buffer.byteLength(shared);
+const split = splitSharedCriticalCss(documents.map(d => d.css));
+const shared = split.suffix;
+function emitShared(name, css) {
+  if (!css) return "";
+  const fileName = `critical-${name}-${crypto.createHash("sha256").update(css).digest("hex").slice(0, 16)}.css`;
+  fs.writeFileSync(path.join(assetsDir, fileName), css, "utf8");
+  return `<link rel="stylesheet" href="/assets/${fileName}">`;
 }
+const sharedLink = emitShared("base", shared);
+const prefixLink = emitShared("prefix", split.prefix);
+const sharedBytes = Buffer.byteLength(shared) + Buffer.byteLength(split.prefix);
 
 const emitted = new Map();
 let converted = 0;
 let inlineBytes = 0;
 
-for (const { htmlPath, html, css } of documents) {
-  const own = useShared && css.endsWith(shared) ? css.slice(0, css.length - shared.length) : css;
+for (const [index, { htmlPath, html, css }] of documents.entries()) {
+  const { own, hasPrefix } = split.parts[index];
   const hash = crypto.createHash("sha256").update(own).digest("hex").slice(0, 16);
   const fileName = `critical-${hash}.css`;
   const outputPath = path.join(assetsDir, fileName);
@@ -90,7 +80,7 @@ for (const { htmlPath, html, css } of documents) {
     emitted.set(hash, { fileName, bytes: Buffer.byteLength(own) });
   }
 
-  const link = `<link id="critical-css" rel="stylesheet" href="/assets/${fileName}">${sharedLink}`;
+  const link = `${hasPrefix ? prefixLink : ""}<link id="critical-css" rel="stylesheet" href="/assets/${fileName}">${sharedLink}`;
   fs.writeFileSync(htmlPath, html.replace(stylePattern, link), "utf8");
   converted += 1;
   inlineBytes += Buffer.byteLength(css);
@@ -104,9 +94,9 @@ console.log(
   `Critical CSS externalized: ${converted} HTML files, ${emitted.size} shared assets, ` +
   `${formatMiB(savedBytes)} removed from repeated HTML, ${standalone} standalone HTML skipped.`,
 );
-if (useShared) {
+if (sharedBytes) {
   console.log(
-    `  socle commun: ${(sharedBytes / 1024).toFixed(1)} KiB sortis de ${emitted.size} fichiers, ` +
+    `  blocs communs (préfixe/suffixe): ${(sharedBytes / 1024).toFixed(1)} KiB sortis de ${emitted.size} fichiers, ` +
     `${formatMiB(sharedBytes * (emitted.size - 1))} economises`,
   );
 }

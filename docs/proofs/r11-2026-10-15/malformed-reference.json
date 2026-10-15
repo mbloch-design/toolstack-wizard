@@ -1,0 +1,14 @@
+{
+  "slug": "stock-footage",
+  "field": "ogImageUrl",
+  "value": "assets/images/bg8.jpg",
+  "sources": [
+    "tools_index.json",
+    "tools_v4.json"
+  ],
+  "status": "invalid_relative_media_url",
+  "resolvedOfficialUrl": "https://stockfootage.com/assets/images/bg8.jpg",
+  "officialStatus": 200,
+  "officialContentType": "text/html; charset=utf-8",
+  "resolution": "removed_invalid_media_reference"
+}

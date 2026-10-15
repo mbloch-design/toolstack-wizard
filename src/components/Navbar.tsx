@@ -415,7 +415,7 @@ const Navbar = () => {
           <Link
             to={prefix}
             aria-label="ToolTrim home"
-            className="shrink-0 transition-opacity duration-150 hover:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
+            className="shrink-0 transition-opacity duration-150 hover:opacity-70 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
           >
             <img src={logoToolTrim} alt="ToolTrim" className="site-logo" width={127} height={28} style={{ height: 28, width: 127 }} />
           </Link>
@@ -481,7 +481,7 @@ const Navbar = () => {
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-foreground hover:text-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary"
               aria-label={t("Rechercher", "Search")}
             >
               <Search className="h-4 w-4" />
@@ -733,7 +733,7 @@ function LanguageToggle({ href, lang, otherLang }: { href: string; lang: string;
       hrefLang={otherLang}
       rel="alternate"
       aria-label={`Switch to ${otherLang === "en" ? "English" : "Français"}`}
-      className="flex items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      className="flex items-center rounded-full focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary"
       style={{
         height: 32,
         border: "1px solid #DADAD4",

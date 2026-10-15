@@ -1,0 +1,129 @@
+
+Running 3 tests using 1 worker
+
+(node:46308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46308) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › e2e/r11-media-links.spec.ts:14:3 › openai: known blank or bot-check covers never appear in the tool hero (9.4s)
+(node:46408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46408) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [chromium] › e2e/r11-media-links.spec.ts:14:3 › personio: known blank or bot-check covers never appear in the tool hero (9.5s)
+(node:46458) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46458) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  3 [chromium] › e2e/r11-media-links.spec.ts:14:3 › jquery: known blank or bot-check covers never appear in the tool hero (9.9s)
+
+
+  1) [chromium] › e2e/r11-media-links.spec.ts:14:3 › openai: known blank or bot-check covers never appear in the tool hero
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.td-hero-media img[src*="/og-screenshots/openai.jpg"]')
+    Expected: 0
+    Received: 1
+    Timeout:  8000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 8000ms
+      - waiting for locator('.td-hero-media img[src*="/og-screenshots/openai.jpg"]')
+        12 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      15 |     await page.goto(`/fr/tool/${slug}`);
+      16 |     await expect(page.locator('h1')).toBeVisible();
+    > 17 |     await expect(page.locator(`.td-hero-media img[src*="/og-screenshots/${slug}.jpg"]`)).toHaveCount(0);
+         |                                                                                          ^
+      18 |   });
+      19 | }
+      20 |
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/r11-media-links.spec.ts:17:90
+
+    Error Context: test-results/r11-media-links-openai-kno-118eb-ver-appear-in-the-tool-hero-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/r11-media-links-openai-kno-118eb-ver-appear-in-the-tool-hero-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/r11-media-links-openai-kno-118eb-ver-appear-in-the-tool-hero-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › e2e/r11-media-links.spec.ts:14:3 › personio: known blank or bot-check covers never appear in the tool hero
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.td-hero-media img[src*="/og-screenshots/personio.jpg"]')
+    Expected: 0
+    Received: 1
+    Timeout:  8000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 8000ms
+      - waiting for locator('.td-hero-media img[src*="/og-screenshots/personio.jpg"]')
+        11 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      15 |     await page.goto(`/fr/tool/${slug}`);
+      16 |     await expect(page.locator('h1')).toBeVisible();
+    > 17 |     await expect(page.locator(`.td-hero-media img[src*="/og-screenshots/${slug}.jpg"]`)).toHaveCount(0);
+         |                                                                                          ^
+      18 |   });
+      19 | }
+      20 |
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/r11-media-links.spec.ts:17:90
+
+    Error Context: test-results/r11-media-links-personio-k-402a8-ver-appear-in-the-tool-hero-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/r11-media-links-personio-k-402a8-ver-appear-in-the-tool-hero-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/r11-media-links-personio-k-402a8-ver-appear-in-the-tool-hero-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › e2e/r11-media-links.spec.ts:14:3 › jquery: known blank or bot-check covers never appear in the tool hero
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('.td-hero-media img[src*="/og-screenshots/jquery.jpg"]')
+    Expected: 0
+    Received: 1
+    Timeout:  8000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 8000ms
+      - waiting for locator('.td-hero-media img[src*="/og-screenshots/jquery.jpg"]')
+        12 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+      15 |     await page.goto(`/fr/tool/${slug}`);
+      16 |     await expect(page.locator('h1')).toBeVisible();
+    > 17 |     await expect(page.locator(`.td-hero-media img[src*="/og-screenshots/${slug}.jpg"]`)).toHaveCount(0);
+         |                                                                                          ^
+      18 |   });
+      19 | }
+      20 |
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/r11-media-links.spec.ts:17:90
+
+    Error Context: test-results/r11-media-links-jquery-kno-55d06-ver-appear-in-the-tool-hero-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/r11-media-links-jquery-kno-55d06-ver-appear-in-the-tool-hero-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/r11-media-links-jquery-kno-55d06-ver-appear-in-the-tool-hero-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › e2e/r11-media-links.spec.ts:14:3 › openai: known blank or bot-check covers never appear in the tool hero
+    [chromium] › e2e/r11-media-links.spec.ts:14:3 › personio: known blank or bot-check covers never appear in the tool hero
+    [chromium] › e2e/r11-media-links.spec.ts:14:3 › jquery: known blank or bot-check covers never appear in the tool hero

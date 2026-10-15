@@ -1,6 +1,6 @@
 # ToolTrim — Architecture
 
-React SPA · Vite + TypeScript · Tailwind CSS v3
+React SPA · Vite + TypeScript · Tailwind CSS v4
 
 ---
 
@@ -10,10 +10,18 @@ React SPA · Vite + TypeScript · Tailwind CSS v3
 |---|---|
 | Framework | React 18 + React Router v7 (mode déclaratif) |
 | Build | Vite |
-| Styles | Tailwind CSS v3 + `@layer components` (classes préfixées) |
+| Styles | Tailwind CSS v4 + `@layer components` (classes préfixées) |
 | Data | Supabase (primaire) + JSON local (fallback) |
 | Fonts | Uncut Sans Variable (`--font-brand`) + Inter Tight (`--font-ui`) |
 | Déploiement | Prerender statique via vite-plugin-prerender |
+
+### Compilation CSS
+
+Le compilateur utilise `@tailwindcss/postcss` 4.3.3. Les tokens restent dans `tailwind.config.ts`, chargé explicitement par `@config`. Les sources et la classe éditoriale `ga-cta-btn` sont déclarées dans `src/index.css`.
+
+`scripts/lib/legacy-css-cascade.mjs` conserve l’ordre historique base → composants → utilitaires → règles éditoriales hors couche. Les couches natives v4 changeraient sinon la priorité des composants existants. Les contrats CSS et les comparaisons en navigateur vérifient cette compatibilité. Les classes restent dans `@layer components` selon les conventions du projet.
+
+Le plugin typographique sans usage sur les pages générées et le tagger Lovable de développement ont été retirés. Les tests React utilisent `@vitejs/plugin-react`, comme le build. Tailwind 4 cible Safari 16.4+, Chrome 111+ et Firefox 128+ ; aucune compatibilité supplémentaire avec les navigateurs antérieurs n’est revendiquée.
 
 ---
 

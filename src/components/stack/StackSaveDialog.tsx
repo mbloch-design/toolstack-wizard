@@ -70,7 +70,7 @@ export function StackSaveDialog({
       }
       if (event.key !== "Tab" || !dialogRef.current) return;
       const focusable = Array.from(dialogRef.current.querySelectorAll<HTMLElement>(
-        'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
+        'button:not([disabled]), input:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])',
       )).filter((element) => !element.hasAttribute("hidden"));
       if (focusable.length === 0) return;
       const first = focusable[0];

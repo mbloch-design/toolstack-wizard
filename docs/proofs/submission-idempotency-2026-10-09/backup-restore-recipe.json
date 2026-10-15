@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-09",
+  "transport": "actual Upstash REST",
+  "results": [
+    {
+      "status": "PASS",
+      "namespace": "tt:recipe:4677e2d1-b6fa-4ed7-92f7-342ec3b1e02b",
+      "privateExportRoundTrip": true,
+      "suspendedStatePreserved": true,
+      "archivePayloadAbsent": true,
+      "consumedCheckoutsStillBlocked": true,
+      "backupBytes": 1432,
+      "realEmails": 0,
+      "realPayments": 0
+    },
+    {
+      "cleanup": "PASS",
+      "productionRegistryUnchanged": true,
+      "totalRestRequests": 16
+    }
+  ],
+  "scope": "Export private fictional hash to mode600 file, read file, replace only own temporary hash, compare every field and confirm consumed checkout conflicts, then remove hash and export",
+  "limitations": [
+    "No production backup created",
+    "No stale production restore attempted",
+    "Operator backup destination and cadence still to establish"
+  ],
+  "providerPreflight": {
+    "creemReadScope": "checkouts:read observed in live dashboard",
+    "resendLocalDomainProbe": {
+      "httpStatus": 400,
+      "errorName": "validation_error",
+      "localKeyHasExpectedPrefix": false
+    },
+    "resendAccount": "browser login required"
+  },
+  "quotaSnapshot": {
+    "commandsVisible": 302,
+    "monthlyCommandsLimit": 500000,
+    "bandwidthVisible": "125 KB",
+    "storageVisible": "2 KB",
+    "costVisible": "$0.00",
+    "perBranchBillingNotEstablished": true
+  },
+  "localProviderContractTests": {
+    "filesPassed": 4,
+    "testsPassed": 41,
+    "skipped": 0,
+    "realLocalRedis": true,
+    "providerResponses": "mocked; not a live Creem/Resend delivery test"
+  }
+}

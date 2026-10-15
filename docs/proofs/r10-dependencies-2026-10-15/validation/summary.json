@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-15",
+  "scope": "R10/R11 local completion; not published",
+  "build": {
+    "runtime": "Node 20.20.2",
+    "passed": true,
+    "files": 14944,
+    "totalMiB": 784.8,
+    "cssMiB": 27.2,
+    "budgetsRaised": false
+  },
+  "npmAuditVulnerabilities": 0,
+  "unit": {
+    "app": 375,
+    "seoCssContracts": 39,
+    "maStack": 144,
+    "apiPassed": 166,
+    "apiSkipped": 18
+  },
+  "browser": {
+    "r11": 21,
+    "stack": 26,
+    "a11y": 21,
+    "paymentSimulated": 14,
+    "hydration": 57,
+    "analyticsIsolated": 19,
+    "routingHydrated": 20,
+    "chromiumStyleComparisons": 24,
+    "webkitRendered": 24,
+    "webkit404AndReturn": 1
+  },
+  "seo": {
+    "sitemapUrls": 13148,
+    "appRouteCases": 130,
+    "jsonLdParsed": 43328,
+    "llmEditorialSummaries": 264
+  },
+  "catalogue": {
+    "toolsPerSnapshot": 1349,
+    "correctedTools": 54,
+    "exactUrlCorrections": 62,
+    "pricesOrEditorialClaimsChanged": false
+  },
+  "ci": {
+    "r11RecipeAdded": true,
+    "remoteRunPerformed": false
+  }
+}

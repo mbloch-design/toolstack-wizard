@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-09",
+  "method": "GET existing-checkout endpoint with fictional missing ID",
+  "configuredKeyStatus": 404,
+  "invalidKeyControlStatus": 401,
+  "authenticationDistinguished": true,
+  "newCheckouts": 0,
+  "newEmails": 0,
+  "newPayments": 0,
+  "metadataVerified": false,
+  "pendingMetadataRecipe": {
+    "status": "not executed",
+    "reason": "automatic approval review requires explicit non-paid session authorization"
+  }
+}

@@ -8,7 +8,6 @@ import fs from "fs";
 import postcss from "postcss";
 import { assertSsrRenderers, projectToolBootstrap } from "./scripts/lib/ssr-contract.mjs";
 import { transformSync } from "esbuild";
-import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
 import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
@@ -79,6 +78,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "zapier-vs-make-vs-n8n-2026-automatiser-stack": "zapier-vs-make-vs-n8n-pricing",
   "agents-ia-freelances-2026-lesquels-valent-le-coup": "ai-agents-freelancers-2026",
   "stack-saas-minimaliste-freelance-2026-moins-50-euros": "minimalist-saas-stack-freelancer-2026-under-50-euros",
+  "plateforme-ecommerce-solo-petite-equipe-produits-physiques": "ecommerce-platform-solo-small-team-physical-products-2026",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(
@@ -268,7 +268,21 @@ function buildToolOffersFor(tool: any, price: number | null, url: string) {
   const hasFree = toolHasFreePlan(tool);
   if (isPriceUndisclosed(tool) && !hasFree) return undefined;
   const native = nativePriceFromTool(tool);
-  return buildToolOffers(native?.amount ?? price, hasFree, native?.currency ?? "EUR", url);
+  // Only a price the vendor actually publishes may be declared. Without one, the
+  // catalogue fallback is a normalised (often converted or zero) figure: stating
+  // it would claim the wrong price or "free" on a paid tool.
+  if (native) return buildToolOffers(native.amount, hasFree, native.currency, url);
+  // No vendor-published price: keep the catalogue figure only when it is a real
+  // amount; a 0 on a paid tool would claim "free".
+  if (price != null && price > 0) return buildToolOffers(price, hasFree, "EUR", url);
+  return hasFree ? buildToolOffers(0, true, "EUR", url) : undefined;
+}
+
+function operatingSystemFor(tool: any): string | undefined {
+  const host = String(tool?.host_app || "").toLowerCase();
+  if (host === "macos") return "macOS";
+  if (host) return undefined;
+  return "Web";
 }
 
 function buildToolOffers(price: number | null, hasFree: boolean, currency: string, url: string) {
@@ -997,7 +1011,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               ...(productUrl ? { url: productUrl } : {}),
               description: description || title,
               applicationCategory: appCategoryFor(tool),
-              operatingSystem: "Web",
+              ...(operatingSystemFor(tool) ? { operatingSystem: operatingSystemFor(tool) } : {}),
             };
             // offers est requis par le rich result Software App ; AggregateOffer
             // 0→prix pour les freemium (sinon le schema annonce un prix payant
@@ -1019,7 +1033,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                   worstRating: "1",
                 },
                 ...(isFr ? { name: `Avis ToolTrim : ${ts.labelFr}` } : { name: `ToolTrim review: ${ts.labelEn}` }),
-                ...(tool.verdict?.threshold ? { reviewBody: String(tool.verdict.threshold).substring(0, 280) } : {}),
+                ...((isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold) ? { reviewBody: String(isFr ? tool.verdict.threshold : tool.verdictEn.threshold).substring(0, 280) } : {}),
               };
             }
 
@@ -1242,14 +1256,14 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               // Nœud SoftwareApplication complet (name + offers + review) émis
               // sur /avis et /prix : le rich result Google exige offers ET review
               // ensemble. offers="0" pour un outil gratuit.
-              const subVerdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
+              const subVerdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold) || "";
               const appSchema = (sub.path === "avis" || sub.path === "prix") ? {
                 "@context": "https://schema.org",
                 "@type": "SoftwareApplication",
                 name,
                 ...(subProductUrl ? { url: subProductUrl } : {}),
                 applicationCategory: appCategoryFor(tool),
-                operatingSystem: "Web",
+                ...(operatingSystemFor(tool) ? { operatingSystem: operatingSystemFor(tool) } : {}),
                 ...(buildToolOffersFor(tool, price, subProductUrl) ? { offers: buildToolOffersFor(tool, price, subProductUrl) } : {}),
                 ...(subScore && typeof subScore.score === "number" ? {
                   review: {
@@ -1640,8 +1654,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           { path: "/en/about",      lang: "en", title: "About ToolTrim | Independent SaaS auditor",               description: "ToolTrim is an independent SaaS tool comparator. Manually verified pricing, no commercial affiliation. Our mission: help you pay less." },
           { path: "/fr/contact",    lang: "fr", title: "Contactez ToolTrim | Questions et suggestions",           description: "Vous avez une question sur ToolTrim ou une suggestion d'outil ? Contactez-nous, on répond à tous les messages." },
           { path: "/en/contact",    lang: "en", title: "Contact ToolTrim | Questions and suggestions",            description: "Have a question about ToolTrim or a tool suggestion? Contact us, we reply to every message." },
-          { path: "/fr/submit",     lang: "fr", title: "Soumettre un outil à ToolTrim",                         description: "Soumettez votre outil à ToolTrim. Nous analysons son site, ses fonctionnalités et ses informations avant toute décision de publication." },
-          { path: "/en/submit",     lang: "en", title: "Submit a tool to ToolTrim",                             description: "Submit your tool to ToolTrim. We review its website, features, and information before any publication decision." },
+          { path: "/fr/submit",     lang: "fr", title: "Soumettre un outil SaaS : fiche indépendante en 5 jours | ToolTrim",                         description: "Ta fiche rédigée par l’équipe ToolTrim, vue par les freelances et petites équipes qui choisissent leurs outils. En ligne sous 5 jours, option gratuite." },
+          { path: "/en/submit",     lang: "en", title: "Submit your SaaS tool: independent review in 5 days | ToolTrim",                             description: "Get your tool reviewed by ToolTrim’s editors and found by freelancers and small teams choosing software. Live in 5 business days. Free option available." },
           { path: "/fr/transparency",lang:"fr", title: "Transparence et méthodologie | ToolTrim",                 description: "Comment ToolTrim évalue les outils SaaS : critères de sélection, fréquence de mise à jour et politique d'indépendance éditoriale." },
           { path: "/en/transparency",lang:"en", title: "Transparency and methodology | ToolTrim",                 description: "How ToolTrim evaluates SaaS tools: selection criteria, update frequency and editorial independence policy." },
           { path: "/fr/explorer",   lang: "fr", title: "Explorer les outils SaaS par besoin | ToolTrim",          description: "Parcourez le catalogue SaaS de ToolTrim par objectif, catégorie ou workflow, et composez une stack adaptée à votre façon de travailler." },
@@ -2220,13 +2234,24 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           count++;
         }
 
+        // Client-only routes must not inherit the prerendered English homepage.
+        // Keep this shell out of the sitemap; each mounted page owns its tags.
+        let clientOnlyHtml = baseHtml
+          .replace(/<link\s+rel="(?:canonical|alternate)"[^>]*\/?>/gi, "")
+          .replace(/<meta\s+name="robots"[^>]*\/?>/gi, "")
+          .replace(/<title>[^<]*<\/title>/i, "")
+          .replace(/<meta\s+name="description"[^>]*\/?>/gi, "");
+        clientOnlyHtml = clientOnlyHtml.replace("</head>", '<title>ToolTrim</title><meta name="robots" content="noindex, follow" /></head>');
+        fs.writeFileSync(path.resolve(distDir, "client-only.html"), clientOnlyHtml, "utf-8");
+
         // --- Generate 404.html for Vercel custom error page ---
         const meta404 = [
+          `<meta name="tooltrim-http-status" content="404" />`,
           `<title>Page introuvable | ToolTrim</title>`,
           `<meta name="description" content="Cette page n'existe pas. Découvrez nos avis et comparatifs d'outils SaaS sur ToolTrim." />`,
           `<meta name="robots" content="noindex, follow" />`,
         ].join("\n    ");
-        let html404 = baseHtml;
+        let html404 = baseHtml.replace(/<meta\s+name="robots"[^>]*\/?>/gi, "");
         html404 = html404.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
         html404 = html404.replace(/<title>[^<]*<\/title>/, "");
         html404 = html404.replace(/<meta\s+name="description"[^>]*\/?>/, "");
@@ -2511,7 +2536,6 @@ export default defineConfig(({ mode, isSsrBuild }) => {
   plugins: [
     browserToolIndexProjection(),
     react(),
-    mode === "development" && componentTagger(),
     // These three only make sense for the client build — they write into
     // dist/ (sitemap, prerendered HTML) or transform index.html, none of
     // which exist/apply during the separate `vite build --ssr` pass.

@@ -1,0 +1,617 @@
+{
+  "method": "Second targeted read-only editorial audit. Official pages opened directly on 2026-10-09. Does not re-certify all 236 pairs; no global new rate calculated. Original assessments retained for reproducibility; second_status critiques displayed promise, not only existence of any relation.",
+  "inputs": [
+    "docs/proofs/explorer-r5-2026-10-09/candidate.json",
+    "docs/proofs/explorer-r5-2026-10-09/independent-review.json",
+    "src/data/tools_index.json"
+  ],
+  "verdict": "R5 quality gate remains NOT_ATTAINED. All five top4 critical reservations and Framer-to-Figma reject remain unresolved by official evidence. Additional label weaknesses among previously credible Figma integrated features and Whalesync found.",
+  "results": [
+    {
+      "source": "figma",
+      "target": "framer",
+      "rank": 3,
+      "previous_status": "partial",
+      "previous_direction": "alternatives",
+      "displayed_reason": "Alternative au catalogue à Figma · Prototypage",
+      "second_status": "partial",
+      "judgment": "Figma fiche = Design interfaces/prototypes ; Framer fiche = construction/publication CMS. Un chevauchement de conception web ne valide pas une alternative de prototypage générale.",
+      "safer_phrase": "Outil lié pour passer du design au site publié",
+      "official_sources": [
+        "https://www.figma.com/design/",
+        "https://www.framer.com/solutions/cms-website-builder/"
+      ],
+      "action_layer": "R5 promise gate plus R6 identity/tags"
+    },
+    {
+      "source": "framer",
+      "target": "figma",
+      "rank": 6,
+      "previous_status": "reject",
+      "previous_direction": "alternatives",
+      "displayed_reason": "Alternative au catalogue à Framer · Prototypage",
+      "second_status": "reject",
+      "judgment": "Figma Design ne couvre pas la publication CMS promise par Framer ; Figma Sites est une fiche distincte et ne doit pas être substituée mentalement à Figma.",
+      "safer_phrase": "Ne pas présenter comme alternative de Framer",
+      "official_sources": [
+        "https://www.figma.com/design/",
+        "https://www.figma.com/sites/",
+        "https://www.framer.com/solutions/cms-website-builder/"
+      ],
+      "action_layer": "R5 promise gate plus R6 identity/tags"
+    },
+    {
+      "source": "chatgpt",
+      "target": "claude",
+      "rank": 2,
+      "previous_status": "unknown",
+      "previous_direction": "alternatives",
+      "displayed_reason": "Alternative au catalogue à ChatGPT · Génération de texte",
+      "second_status": "unknown",
+      "judgment": "Catalogue Claude pointe claude.com mais décrit exclusivement API/modèles/token. Claude officiel possède une application via claude.ai. La possibilité réelle de comparer les apps ne résout pas la fiche hybride actuelle.",
+      "safer_phrase": "Surface produit à vérifier : application ou API",
+      "official_sources": [
+        "https://claude.com/product/overview"
+      ],
+      "action_layer": "R6 identity decision; R5 must not assert substitution meanwhile"
+    },
+    {
+      "source": "claude",
+      "target": "chatgpt",
+      "rank": 1,
+      "previous_status": "unknown",
+      "previous_direction": "alternatives",
+      "displayed_reason": "Alternative au catalogue à Claude · Génération de texte",
+      "second_status": "unknown",
+      "judgment": "Catalogue Claude pointe claude.com mais décrit exclusivement API/modèles/token. Claude officiel possède une application via claude.ai. La possibilité réelle de comparer les apps ne résout pas la fiche hybride actuelle.",
+      "safer_phrase": "Surface produit à vérifier : application ou API",
+      "official_sources": [
+        "https://claude.com/product/overview"
+      ],
+      "action_layer": "R6 identity decision; R5 must not assert substitution meanwhile"
+    },
+    {
+      "source": "chatgpt",
+      "target": "deepseek",
+      "rank": 3,
+      "previous_status": "unknown",
+      "previous_direction": "alternatives",
+      "displayed_reason": "Alternative au catalogue à ChatGPT · Analyse",
+      "second_status": "unknown",
+      "judgment": "Page officielle DeepSeek expose séparément chat.deepseek.com et platform.deepseek.com. Catalogue décrit fournisseur API, prix au token, mais relation ai-text-generalist et image chat : surface hybride.",
+      "safer_phrase": "Surface produit à vérifier : application ou API",
+      "official_sources": [
+        "https://www.deepseek.com/"
+      ],
+      "action_layer": "R6 identity decision; R5 must not assert substitution meanwhile"
+    },
+    {
+      "source": "chatgpt",
+      "target": "google-ai-studio",
+      "rank": 4,
+      "previous_status": "partial",
+      "previous_direction": "alternatives",
+      "displayed_reason": "Alternative au catalogue à ChatGPT · Analyse",
+      "second_status": "partial",
+      "judgment": "AI Studio est présenté par Google comme environnement de construction/intégration Gemini et clé API. Analyse est trop générale pour en faire une alternative à assistant conversationnel quotidien.",
+      "safer_phrase": "Environnement pour tester des prompts et développer avec Gemini",
+      "official_sources": [
+        "https://ai.google.dev/aistudio"
+      ],
+      "action_layer": "R5 qualify/demote; R6 surface annotation"
+    },
+    {
+      "source": "figma",
+      "target": "figma-dev-mode",
+      "rank": 7,
+      "previous_status": "credible",
+      "previous_direction": "extensions",
+      "displayed_reason": "Extension de Figma",
+      "second_status": "partial",
+      "judgment": "Relation fonctionnelle démontrée ; le statut partial concerne la promesse Extension qui masque une fonction intégrée. Dev Mode = vue/outillage de développement ; Draw = espace illustration dans le même fichier. Ne pas retirer ces relations, préciser leur nature.",
+      "safer_phrase": "Fonction intégrée à Figma Design",
+      "official_sources": [
+        "https://www.figma.com/dev-mode/",
+        "https://www.figma.com/draw/"
+      ],
+      "action_layer": "R5 wording only; R6 relation kind if precise distinction required"
+    },
+    {
+      "source": "figma",
+      "target": "figma-draw",
+      "rank": 8,
+      "previous_status": "credible",
+      "previous_direction": "extensions",
+      "displayed_reason": "Extension de Figma",
+      "second_status": "partial",
+      "judgment": "Relation fonctionnelle démontrée ; le statut partial concerne la promesse Extension qui masque une fonction intégrée. Dev Mode = vue/outillage de développement ; Draw = espace illustration dans le même fichier. Ne pas retirer ces relations, préciser leur nature.",
+      "safer_phrase": "Fonction intégrée à Figma Design",
+      "official_sources": [
+        "https://www.figma.com/dev-mode/",
+        "https://www.figma.com/draw/"
+      ],
+      "action_layer": "R5 wording only; R6 relation kind if precise distinction required"
+    },
+    {
+      "source": "figma",
+      "target": "figma-buzz",
+      "rank": 4,
+      "previous_status": "partial",
+      "previous_direction": "extensions",
+      "displayed_reason": "Extension de Figma",
+      "second_status": "partial",
+      "judgment": "Produits Figma identifiables officiellement ; host_app et bundle_parent figurent ensemble sur les trois fiches. Même suite ne démontre pas plugin hôte et ne promet pas inclusion/prix/plan.",
+      "safer_phrase": "Produit de la suite Figma",
+      "official_sources": [
+        "https://www.figma.com/buzz/",
+        "https://www.figma.com/make/",
+        "https://www.figma.com/sites/"
+      ],
+      "action_layer": "R5 bundle-aware wording; R6 clarify host vs suite"
+    },
+    {
+      "source": "figma",
+      "target": "figma-make",
+      "rank": 5,
+      "previous_status": "partial",
+      "previous_direction": "extensions",
+      "displayed_reason": "Extension de Figma",
+      "second_status": "partial",
+      "judgment": "Produits Figma identifiables officiellement ; host_app et bundle_parent figurent ensemble sur les trois fiches. Même suite ne démontre pas plugin hôte et ne promet pas inclusion/prix/plan.",
+      "safer_phrase": "Produit de la suite Figma",
+      "official_sources": [
+        "https://www.figma.com/buzz/",
+        "https://www.figma.com/make/",
+        "https://www.figma.com/sites/"
+      ],
+      "action_layer": "R5 bundle-aware wording; R6 clarify host vs suite"
+    },
+    {
+      "source": "figma",
+      "target": "figma-sites",
+      "rank": 6,
+      "previous_status": "partial",
+      "previous_direction": "extensions",
+      "displayed_reason": "Extension de Figma",
+      "second_status": "partial",
+      "judgment": "Produits Figma identifiables officiellement ; host_app et bundle_parent figurent ensemble sur les trois fiches. Même suite ne démontre pas plugin hôte et ne promet pas inclusion/prix/plan.",
+      "safer_phrase": "Produit de la suite Figma",
+      "official_sources": [
+        "https://www.figma.com/buzz/",
+        "https://www.figma.com/make/",
+        "https://www.figma.com/sites/"
+      ],
+      "action_layer": "R5 bundle-aware wording; R6 clarify host vs suite"
+    },
+    {
+      "source": "framer",
+      "target": "kompa",
+      "rank": 4,
+      "previous_status": "credible",
+      "previous_direction": "extensions",
+      "displayed_reason": "Extension de Framer",
+      "second_status": "credible",
+      "judgment": "Le fournisseur déclare explicitement plugin ouvrable dans projet Framer et composants glissables. Relation hôte/plugin pertinente.",
+      "safer_phrase": "Plugin pour Framer",
+      "official_sources": [
+        "https://www.kompa.design/"
+      ],
+      "action_layer": "no required correction"
+    },
+    {
+      "source": "make",
+      "target": "n8n",
+      "rank": 1,
+      "previous_status": "credible",
+      "previous_direction": "alternatives",
+      "displayed_reason": "Alternative au catalogue à Make · Workflows",
+      "second_status": "credible",
+      "judgment": "Officiels montrent orchestration/automatisation inter-apps, contrairement au simple partage du tag Workflows. Alternative sur ce besoin plausible, sans équivalence connecteurs/coûts/hébergement.",
+      "safer_phrase": "À comparer pour automatiser des workflows entre applications",
+      "official_sources": [
+        "https://www.make.com/en",
+        "https://n8n.io/",
+        "https://zapier.com/"
+      ],
+      "action_layer": "R5 semantics consistent; no invented capabilities"
+    },
+    {
+      "source": "n8n",
+      "target": "make",
+      "rank": 1,
+      "previous_status": "credible",
+      "previous_direction": "alternatives",
+      "displayed_reason": "Alternative au catalogue à n8n · Workflows",
+      "second_status": "credible",
+      "judgment": "Officiels montrent orchestration/automatisation inter-apps, contrairement au simple partage du tag Workflows. Alternative sur ce besoin plausible, sans équivalence connecteurs/coûts/hébergement.",
+      "safer_phrase": "À comparer pour automatiser des workflows entre applications",
+      "official_sources": [
+        "https://www.make.com/en",
+        "https://n8n.io/",
+        "https://zapier.com/"
+      ],
+      "action_layer": "R5 semantics consistent; no invented capabilities"
+    },
+    {
+      "source": "zapier",
+      "target": "make",
+      "rank": 2,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Comparaison à vérifier avec Zapier",
+      "second_status": "credible",
+      "judgment": "Officiels montrent orchestration/automatisation inter-apps, contrairement au simple partage du tag Workflows. Alternative sur ce besoin plausible, sans équivalence connecteurs/coûts/hébergement.",
+      "safer_phrase": "À comparer pour automatiser des workflows entre applications",
+      "official_sources": [
+        "https://www.make.com/en",
+        "https://n8n.io/",
+        "https://zapier.com/"
+      ],
+      "action_layer": "R5 semantics consistent; no invented capabilities"
+    },
+    {
+      "source": "zapier",
+      "target": "n8n",
+      "rank": 3,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Comparaison à vérifier avec Zapier",
+      "second_status": "credible",
+      "judgment": "Officiels montrent orchestration/automatisation inter-apps, contrairement au simple partage du tag Workflows. Alternative sur ce besoin plausible, sans équivalence connecteurs/coûts/hébergement.",
+      "safer_phrase": "À comparer pour automatiser des workflows entre applications",
+      "official_sources": [
+        "https://www.make.com/en",
+        "https://n8n.io/",
+        "https://zapier.com/"
+      ],
+      "action_layer": "R5 semantics consistent; no invented capabilities"
+    },
+    {
+      "source": "make",
+      "target": "microsoft-365-copilot",
+      "rank": 3,
+      "previous_status": "partial",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec Make · Workflows",
+      "second_status": "partial",
+      "judgment": "Microsoft présente assistant intégré aux apps et agents ; ne pas prétendre incapable automatisation. Mais cette source ne démontre ni connexion Make/n8n ni substitution de leurs workflows. Copilot Studio est une autre surface à ne pas importer silencieusement.",
+      "safer_phrase": "Assistant dans Microsoft 365 ; relation avec ce workflow à vérifier",
+      "official_sources": [
+        "https://www.microsoft.com/en-us/copilot"
+      ],
+      "action_layer": "R5 generic-use gate; R6 surface/source annotation"
+    },
+    {
+      "source": "n8n",
+      "target": "microsoft-365-copilot",
+      "rank": 3,
+      "previous_status": "partial",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec n8n · Workflows",
+      "second_status": "partial",
+      "judgment": "Microsoft présente assistant intégré aux apps et agents ; ne pas prétendre incapable automatisation. Mais cette source ne démontre ni connexion Make/n8n ni substitution de leurs workflows. Copilot Studio est une autre surface à ne pas importer silencieusement.",
+      "safer_phrase": "Assistant dans Microsoft 365 ; relation avec ce workflow à vérifier",
+      "official_sources": [
+        "https://www.microsoft.com/en-us/copilot"
+      ],
+      "action_layer": "R5 generic-use gate; R6 surface/source annotation"
+    },
+    {
+      "source": "make",
+      "target": "whalesync",
+      "rank": 8,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec Make · Workflows",
+      "second_status": "partial",
+      "judgment": "Adjacent réel pour intégration de données, mais site Whalesync distingue explicitement synchronisation bidirectionnelle des automatismes séquentiels. Workflows générique ne dit pas ce qui reste substituable.",
+      "safer_phrase": "Autre approche pour synchroniser les données entre applications",
+      "official_sources": [
+        "https://www.whalesync.com/"
+      ],
+      "action_layer": "R5 qualify shared-use; R6 data-sync vs orchestration roles"
+    },
+    {
+      "source": "n8n",
+      "target": "whalesync",
+      "rank": 8,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec n8n · Workflows",
+      "second_status": "partial",
+      "judgment": "Adjacent réel pour intégration de données, mais site Whalesync distingue explicitement synchronisation bidirectionnelle des automatismes séquentiels. Workflows générique ne dit pas ce qui reste substituable.",
+      "safer_phrase": "Autre approche pour synchroniser les données entre applications",
+      "official_sources": [
+        "https://www.whalesync.com/"
+      ],
+      "action_layer": "R5 qualify shared-use; R6 data-sync vs orchestration roles"
+    },
+    {
+      "source": "make",
+      "target": "turbotic",
+      "rank": 4,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec Make · Workflows",
+      "second_status": "credible",
+      "judgment": "Source Automation AI décrit orchestration/agents/processus entre systèmes. Relation voisine justifiable ; aucune integration native Make/n8n certifiée.",
+      "safer_phrase": "Autre plateforme pour orchestrer des processus entre systèmes",
+      "official_sources": [
+        "https://turbotic.com/automation-ai"
+      ],
+      "action_layer": "no required correction except precise wording"
+    },
+    {
+      "source": "n8n",
+      "target": "turbotic",
+      "rank": 4,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec n8n · Workflows",
+      "second_status": "credible",
+      "judgment": "Source Automation AI décrit orchestration/agents/processus entre systèmes. Relation voisine justifiable ; aucune integration native Make/n8n certifiée.",
+      "safer_phrase": "Autre plateforme pour orchestrer des processus entre systèmes",
+      "official_sources": [
+        "https://turbotic.com/automation-ai"
+      ],
+      "action_layer": "no required correction except precise wording"
+    },
+    {
+      "source": "make",
+      "target": "activepieces",
+      "rank": 5,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec Make · Workflows",
+      "second_status": "credible",
+      "judgment": "Officiel montre constructeur de flows ou triggers/actions entre apps. Une alternative de besoin est plausible ; adjacent ne prouve pas integration réciproque.",
+      "safer_phrase": "À comparer pour automatiser des workflows entre applications",
+      "official_sources": [
+        "https://www.activepieces.com/"
+      ],
+      "action_layer": "R5 precise wording; no automatic promotion of all shared tags"
+    },
+    {
+      "source": "n8n",
+      "target": "activepieces",
+      "rank": 5,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec n8n · Workflows",
+      "second_status": "credible",
+      "judgment": "Officiel montre constructeur de flows ou triggers/actions entre apps. Une alternative de besoin est plausible ; adjacent ne prouve pas integration réciproque.",
+      "safer_phrase": "À comparer pour automatiser des workflows entre applications",
+      "official_sources": [
+        "https://www.activepieces.com/"
+      ],
+      "action_layer": "R5 precise wording; no automatic promotion of all shared tags"
+    },
+    {
+      "source": "make",
+      "target": "integrately",
+      "rank": 6,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec Make · Workflows",
+      "second_status": "credible",
+      "judgment": "Officiel montre constructeur de flows ou triggers/actions entre apps. Une alternative de besoin est plausible ; adjacent ne prouve pas integration réciproque.",
+      "safer_phrase": "À comparer pour automatiser des workflows entre applications",
+      "official_sources": [
+        "https://integrately.com/"
+      ],
+      "action_layer": "R5 precise wording; no automatic promotion of all shared tags"
+    },
+    {
+      "source": "n8n",
+      "target": "integrately",
+      "rank": 6,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec n8n · Workflows",
+      "second_status": "credible",
+      "judgment": "Officiel montre constructeur de flows ou triggers/actions entre apps. Une alternative de besoin est plausible ; adjacent ne prouve pas integration réciproque.",
+      "safer_phrase": "À comparer pour automatiser des workflows entre applications",
+      "official_sources": [
+        "https://integrately.com/"
+      ],
+      "action_layer": "R5 precise wording; no automatic promotion of all shared tags"
+    },
+    {
+      "source": "make",
+      "target": "pabbly-connect",
+      "rank": 7,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec Make · Workflows",
+      "second_status": "credible",
+      "judgment": "Officiel montre constructeur de flows ou triggers/actions entre apps. Une alternative de besoin est plausible ; adjacent ne prouve pas integration réciproque.",
+      "safer_phrase": "À comparer pour automatiser des workflows entre applications",
+      "official_sources": [
+        "https://www.pabbly.com/connect/"
+      ],
+      "action_layer": "R5 precise wording; no automatic promotion of all shared tags"
+    },
+    {
+      "source": "n8n",
+      "target": "pabbly-connect",
+      "rank": 7,
+      "previous_status": "credible",
+      "previous_direction": "adjacent",
+      "displayed_reason": "Usage commun avec n8n · Workflows",
+      "second_status": "credible",
+      "judgment": "Officiel montre constructeur de flows ou triggers/actions entre apps. Une alternative de besoin est plausible ; adjacent ne prouve pas integration réciproque.",
+      "safer_phrase": "À comparer pour automatiser des workflows entre applications",
+      "official_sources": [
+        "https://www.pabbly.com/connect/"
+      ],
+      "action_layer": "R5 precise wording; no automatic promotion of all shared tags"
+    }
+  ],
+  "minimal_engine_actions": [
+    "Gate alternative assertions when catalogue surface conflicts or only broad needs support relation; use neutral relation or suppress until identity assessed. Do not classify every shared cluster as certified substitute.",
+    "When host_app and bundle_parent both match source, use suite-neutral wording rather than treating all as plugin. Exact integrated-feature/plugin split needs data relation kind.",
+    "Normalize precise workflow-automation synonym for discovery consistently but keep generic automatisation/workflows/no-code alone insufficient. Zapier visibility imbalance is evidence of vocabulary drift, not excuse to relax gate.",
+    "Treat same-suite, plugin-host, integrated-feature and alternative as separate promises; neutral linked label is preferable when fields do not discriminate."
+  ],
+  "r6_data_actions": [
+    "Resolve Claude and DeepSeek app versus API identity with sourced decision; do not just replace API prose by assistant prose. ChatGPT description also misleadingly treats API as paid-tier progression; subscriptions and API surface need separation.",
+    "Revalidate Framer design-prototyping cluster/prototyping tag against present website CMS workflow; keep Figma Sites separate from Figma Design.",
+    "Correct host_app versus bundle_parent semantics for Figma products and document relation kind; do not infer commercial inclusion from suite membership.",
+    "Annotate sync versus workflow-orchestration and Microsoft 365 assistant versus Copilot Studio; do not fabricate connector coverage or comparative savings."
+  ],
+  "limits": [
+    "Official source is product-role evidence, not independent capabilities/pricing certification.",
+    "API docs DeepSeek and Framer home fetch failed; direct official DeepSeek home and Framer CMS page provided identity evidence instead.",
+    "No code/catalogue changes, deploy or publish."
+  ],
+  "catalogue_evidence": {
+    "figma": {
+      "shortDescription": "Outil de design d'interface vectoriel avec collaboration en temps réel, composants et transmission au code via Dev Mode.",
+      "substitution_cluster_v2": "design-interface",
+      "functional_needs": [
+        "logos",
+        "prototyping",
+        "ui-design"
+      ],
+      "host_app": null,
+      "bundle_parent": null,
+      "affiliateLink": "https://figma.com",
+      "websiteUrl": null
+    },
+    "framer": {
+      "shortDescription": "Framer est un créateur de sites sans code avec CMS intégré, environnement de préproduction et fonctions de conception et contenu assistées par IA.",
+      "substitution_cluster_v2": "design-prototyping",
+      "functional_needs": [
+        "animation",
+        "cms",
+        "hosting",
+        "landing-page",
+        "prototyping",
+        "website-builder"
+      ],
+      "host_app": null,
+      "bundle_parent": null,
+      "affiliateLink": null,
+      "websiteUrl": "https://framer.com"
+    },
+    "claude": {
+      "shortDescription": "Plateforme API pour accéder aux modèles Claude (Opus, Sonnet, Haiku, Fable), avec options de prompt caching, batch processing et web search pour intégration en production.",
+      "substitution_cluster_v2": "ai-text-generalist",
+      "functional_needs": [
+        "analyse-documents",
+        "assistant-generaliste",
+        "code",
+        "generation-texte"
+      ],
+      "host_app": null,
+      "bundle_parent": null,
+      "affiliateLink": "https://claude.com/",
+      "websiteUrl": null
+    },
+    "deepseek": {
+      "shortDescription": "Fournisseur d'API IA chinois : modèles V4 Flash et V4 Pro avec tarification ultra-compétitive, pricing-cache, et 5M tokens gratuits au signup (pas de CB requise).",
+      "substitution_cluster_v2": "ai-text-generalist",
+      "functional_needs": [
+        "analyse",
+        "coding",
+        "recherche",
+        "redaction"
+      ],
+      "host_app": null,
+      "bundle_parent": null,
+      "affiliateLink": "https://www.deepseek.com",
+      "websiteUrl": null
+    },
+    "chatgpt": {
+      "shortDescription": "Assistant IA conversationnel pour la rédaction, le code et l'analyse, gratuit sur un modèle de base ou débloqué sur les paliers payants jusqu'à une API.",
+      "substitution_cluster_v2": "ai-text-generalist",
+      "functional_needs": [
+        "analyse",
+        "assistant-generaliste",
+        "brainstorming",
+        "generation-texte"
+      ],
+      "host_app": null,
+      "bundle_parent": null,
+      "affiliateLink": "https://chat.openai.com",
+      "websiteUrl": null
+    },
+    "google-ai-studio": {
+      "shortDescription": "Google AI Studio est un bac à sable web gratuit et une console API pour construire avec les modèles Gemini de Google, facturé au token dès 0,30 $ par million de tokens en entrée sur le modèle d'entrée.",
+      "substitution_cluster_v2": "ai-generalist",
+      "functional_needs": [
+        "ai-chat",
+        "analyse",
+        "developer-tools",
+        "prototyping"
+      ],
+      "host_app": null,
+      "bundle_parent": null,
+      "affiliateLink": null,
+      "websiteUrl": "https://aistudio.google.com"
+    },
+    "zapier": {
+      "shortDescription": "Outil d’automatisation pour connecter des applications et workflows.",
+      "substitution_cluster_v2": "automation-orchestration",
+      "functional_needs": [
+        "workflow-automation"
+      ],
+      "host_app": null,
+      "bundle_parent": null,
+      "affiliateLink": "https://zapier.com",
+      "websiteUrl": null
+    },
+    "make": {
+      "shortDescription": "L'automatisation visuelle sans limite.",
+      "substitution_cluster_v2": "automation-orchestration",
+      "functional_needs": [
+        "automatisation",
+        "no-code",
+        "workflows"
+      ],
+      "host_app": null,
+      "bundle_parent": null,
+      "affiliateLink": "https://make.com",
+      "websiteUrl": null
+    },
+    "n8n": {
+      "shortDescription": "Automatisation de workflows open source",
+      "substitution_cluster_v2": "automation-orchestration",
+      "functional_needs": [
+        "automatisation",
+        "workflows",
+        "no-code"
+      ],
+      "host_app": null,
+      "bundle_parent": null,
+      "affiliateLink": null,
+      "websiteUrl": "https://n8n.io"
+    },
+    "microsoft-365-copilot": {
+      "shortDescription": "Assistant IA intégré aux applications Microsoft 365 (Word, Excel, Outlook, Teams, PowerPoint) qui génère du contenu, résume des documents, crée des présentations et facilite la collaboration.",
+      "substitution_cluster_v2": "enterprise-ai",
+      "functional_needs": [
+        "notes-reunion",
+        "workflows",
+        "writing-assistant"
+      ],
+      "host_app": null,
+      "bundle_parent": "microsoft-365",
+      "affiliateLink": "https://www.microsoft.com/microsoft-365/copilot",
+      "websiteUrl": null
+    },
+    "whalesync": {
+      "shortDescription": "Synchronisation no-code entre Webflow, Airtable, Notion et bases de données.",
+      "substitution_cluster_v2": "automation-orchestration",
+      "functional_needs": [
+        "automatisation",
+        "workflows",
+        "no-code"
+      ],
+      "host_app": null,
+      "bundle_parent": null,
+      "affiliateLink": null,
+      "websiteUrl": "https://www.whalesync.com"
+    }
+  }
+}

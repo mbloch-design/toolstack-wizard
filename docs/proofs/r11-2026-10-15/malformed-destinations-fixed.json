@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "snov-io",
+    "field": "websiteUrl",
+    "expectedUrl": " campagnes).",
+    "url": "https://snov.io/",
+    "sourceUrl": "https://snov.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Official publisher website verified; replaces text fragment misparsed as URL"
+  },
+  {
+    "slug": "snov-io",
+    "field": "affiliateLink",
+    "expectedUrl": " campagnes).",
+    "url": null,
+    "sourceUrl": "https://snov.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Invalid text fragment removed; no affiliate tracking URL invented"
+  },
+  {
+    "slug": "plutio",
+    "field": "websiteUrl",
+    "expectedUrl": " finances).",
+    "url": "https://www.plutio.com/",
+    "sourceUrl": "https://www.plutio.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Official publisher website verified; replaces text fragment misparsed as URL"
+  },
+  {
+    "slug": "plutio",
+    "field": "affiliateLink",
+    "expectedUrl": " finances).",
+    "url": null,
+    "sourceUrl": "https://www.plutio.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Invalid text fragment removed; no affiliate tracking URL invented"
+  },
+  {
+    "slug": "elfsight",
+    "field": "websiteUrl",
+    "expectedUrl": " formulaires…).",
+    "url": "https://elfsight.com/",
+    "sourceUrl": "https://elfsight.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Official publisher website verified; replaces text fragment misparsed as URL"
+  },
+  {
+    "slug": "elfsight",
+    "field": "affiliateLink",
+    "expectedUrl": " formulaires…).",
+    "url": null,
+    "sourceUrl": "https://elfsight.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Invalid text fragment removed; no affiliate tracking URL invented"
+  },
+  {
+    "slug": "vcita",
+    "field": "websiteUrl",
+    "expectedUrl": " paiements).",
+    "url": "https://www.vcita.com/",
+    "sourceUrl": "https://www.vcita.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Official publisher website verified; replaces text fragment misparsed as URL"
+  },
+  {
+    "slug": "vcita",
+    "field": "affiliateLink",
+    "expectedUrl": " paiements).",
+    "url": null,
+    "sourceUrl": "https://www.vcita.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Invalid text fragment removed; no affiliate tracking URL invented"
+  }
+]

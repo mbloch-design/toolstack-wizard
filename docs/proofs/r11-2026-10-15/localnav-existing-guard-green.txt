@@ -1,0 +1,11 @@
+
+Running 2 tests using 1 worker
+
+(node:44536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:44536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › e2e/r11-media-links.spec.ts:4:3 › fr: unavailable publisher links do not leave an empty local-nav CTA (3.3s)
+  ✓  2 [chromium] › e2e/r11-media-links.spec.ts:4:3 › en: unavailable publisher links do not leave an empty local-nav CTA (1.2s)
+
+  2 passed (6.9s)

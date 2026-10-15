@@ -64,7 +64,14 @@ Aucun `<img>` direct, aucun composant local, aucun carré vide sans fallback.
 
 **Règle bleue :** Le bleu ToolTrim ne doit pas apparaître sur des boutons CTA principaux de pages outils. Il est réservé aux états actifs (tab active, lien actif), au focus ring, et aux labels de score dans la StickyDecisionCard.
 
-**Règle de contraste :** Les textes secondaires restent en `#1D1D1F` en mode clair. Le gris `#86868B` ne remplace pas les descriptions ou métadonnées ; il souligne uniquement la seconde idée d’une accroche lorsque ce contraste sert le message.
+**Exception /submit (14 oct. 2026, décision Michael) :** le visuel du hero de `/submit` est posé sur un halo flou (dégradés radiaux bleu ToolTrim, vert et violet à faible opacité, `.sp-hero-visual::before`). C'est la seule dérogation à « pas de gradient background » : pas d'encart, pas de bord, jamais derrière du texte.
+
+**Règle de contraste (révisée le 8 oct. 2026, décision Michael) :** trois tons de texte en mode clair, jamais plus.
+- `#1D1D1F` (`--color-text`) : titres, noms, chiffres, tout ce qu'on doit lire en premier.
+- `#424245` (`--color-text-secondary`) : texte courant et descriptions (9,2:1 sur #F6F5F4).
+- `#6F6F68` (`--color-text-meta`) : métadonnées seulement, surtitres, compteurs, dates, mentions légales (4,65:1 sur #F6F5F4, 5,06:1 sur #FFFFFF ; ne jamais descendre sous 4,5:1).
+
+`--color-muted` reste à `#1D1D1F` (environ 650 usages) : la migration vers ces deux tokens se fait page par page, avec contrôle visuel. Le gris `#86868B` reste réservé à la seconde idée d'une accroche (`.tt-title-muted`).
 
 ---
 
@@ -209,6 +216,12 @@ Définis dans `:root` (`src/index.css`). **Source unique de vérité.** Toutes l
 | `--tt-radius-xl` | `32px` |
 
 ---
+
+### Explorer (`ex-*`) : typographie et actions
+
+Explorer utilise la même échelle que les autres pages : `--tt-size-page-title` pour le H1, `--tt-size-section-h` pour les résultats, `--tt-size-body` pour l’introduction, `--tt-size-card-title` pour les noms, `--tt-size-card-body` pour les descriptions, relations et contrôles, `--tt-size-kicker` pour les surtitres. Aucun override de taille local par breakpoint ; le layout s’adapte à la place disponible. En grille, les noms réservent deux lignes ; en colonne unique, leur hauteur reste naturelle.
+
+Les relations utiles sont expliquées sur chaque carte, sans paragraphe générique répété au-dessus des résultats. L’ajout reste visible et cliquable, avec une cible de 44 px et un focus contrasté sur les médias. Les boutons ne se déplacent pas au survol.
 
 ### Échelle canonique ToolTrim (`tt-*` classes)
 
@@ -1702,3 +1715,10 @@ Le pattern `Stack Map` remplace les nodes workflow interactifs quand la page doi
 - Tool grid : CSS grid `auto-fill minmax(180px, 1fr)`, gap 14px 24px.
 - Group tag : inline-flex, h 26px, padding 0 10px, 10px/700 caps, border `#DADAD4`, radius 999px.
 - Mobile : une colonne, padding réduit 28px 24px, logos 40px.
+
+
+## Compilation Tailwind 4 — 15 octobre 2026
+
+Le passage au compilateur Tailwind 4 conserve les tokens, les classes éditoriales préfixées et leurs règles `@layer components`. La configuration PostCSS rétablit la cascade historique pour préserver la priorité des styles hors couche. Les anciens utilitaires `shadow-sm`, `blur-sm` et `outline-none` sont remplacés, dans les composants actifs, par les équivalents v4 `shadow-xs`, `blur-xs` et `outline-hidden`, conformément au guide de migration. Les rayons personnalisés restent ceux du thème ToolTrim.
+
+Toute évolution du traitement des couches doit conserver les tests `scripts/lib/legacy-css-cascade.test.mjs` et vérifier les pages réelles ; un build seul ne valide pas les tailles de texte ou les espacements.

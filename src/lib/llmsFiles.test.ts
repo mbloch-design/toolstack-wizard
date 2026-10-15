@@ -36,6 +36,25 @@ describe("generated llms files", () => {
     expect(llms).not.toContain("Last full pricing audit");
   });
 
+  it("distinguishes alternatives from the broader tool ecosystem", () => {
+    expect(llms).toContain("- Tool alternatives: `https://tooltrim.com/{lang}/tool/{slug}/alternatives`");
+    expect(llms).toContain("- Tool ecosystem: `https://tooltrim.com/{lang}/explorer/around/{slug}`");
+    expect(llms).not.toContain("- Tool alternatives: `https://tooltrim.com/{lang}/explorer/around/{slug}`");
+  });
+
+  it("provides localized SEO descriptions for both freelance writer guides", () => {
+    for (const [lang, slug] of [["fr", "stack-redactrice-freelance"], ["en", "stack-freelance-writer"]]) {
+      const posts = JSON.parse(read(`src/data/posts-${lang}.json`));
+      const description = posts.find((post: { slug: string }) => post.slug === slug)?.seo?.metaDescription;
+      expect(typeof description).toBe("string");
+      expect(description.trim().length).toBeGreaterThan(30);
+      expect(description.length).toBeLessThanOrEqual(155);
+      const text = read("public/llms-editorial.txt");
+      const records = JSON.parse(text.slice(text.indexOf("[")));
+      expect(records.find((record: { language: string; slug: string }) => record.language === lang && record.slug === slug)?.summary).toBe(description);
+    }
+  });
+
   it("preserves source pricing without inferred monthly EUR amounts", () => {
     for (const tool of catalogue) {
       expect(tool).not.toHaveProperty("monthly_price_eur");

@@ -1,3 +1,105 @@
+## 15 octobre 2026 — Clôture technique locale R10/R11
+
+- Suite explicitement demandée après le premier lot : remédier aux dépendances restantes et achever les contrôles médias/liens/indexation, sans publier implicitement ni reprendre R5/R6.
+- R10 : migration Tailwind 3.4.19 → 4.3.3/PostCSS, retrait de lovable-tagger et du plugin typographique sans usage rendu. Audit npm **9 → 0**, 90 entrées de lock retirées et 31 ajoutées ; versions changées : Tailwind, jiti et tailwind-merge 3.7.0 compatible v4. Aucun avis ignoré ni paquet renommé. L’usage SWC de Vitest, omis dans le premier lot, est corrigé vers le plugin React utilisé par Vite. Modules indépendants du checkout principal, installation conservée dans le worktree.
+- Cascade v3 conservée par un traitement PostCSS testé ; utilitaires renommés vers leurs équivalents v4. La comparaison Chromium de 24 variantes FR/EN mobile/ordinateur retrouve les dimensions et styles relevés ; 24 rendus WebKit et une 404 avec retour SPA sont validés.
+- Le premier build Node 20 a dépassé le budget CSS (36,3 Mio). Mutualisation sans perte d’un préfixe critique commun, en conservant l’ordre préfixe → page → socle, avec tests rouges puis verts de reconstruction et de frontières. Aucun seuil relevé : build final **784,8 Mio**, dont **27,2 Mio CSS**, budgets PASS. Le CSS principal est plus lourd qu’en v3 ; aucun gain de vitesse ou de Core Web Vitals n’est revendiqué.
+- R11 médias/liens : **62 corrections exactes sur 54 outils**, dont quatre sites éditeur retrouvés après stockage accidentel de fins de phrase dans les champs URL. Aucun lien affilié inventé ; 46 remplacements vérifiés et 16 retraits. Règles communes projection/live/sync et snapshots ; prix, offres et textes inchangés. Filtre des captures blanches/anti-bot appliqué aux fiches, cartes et comparaisons, vraie galerie conservée. Inventaire final 3 512 URL, zéro fichier local absent ni valeur malformée ; refus de robots et pannes temporaires restent explicitement indéterminés.
+- R11 SEO : descriptions/LLM du premier lot conservées, 264 résumés complets. Vrais 404 hors routes client, shell noindex sans canonical d’accueil pour les routes dynamiques légitimes, alias préservés. Sept redirections EN→FR obsolètes retirées après confirmation des traductions anglaises existantes. Nouvelle gate croisant **13 148 URL sitemap et 130 cas App**, plus 43 328 blocs JSON-LD analysés sans erreur de syntaxe.
+- La recette a trouvé une perte du noindex des 404 à l’hydratation : marqueur de document 404 lu au démarrage, écran introuvable et absence de canonical conservés pour le chemin en erreur ; navigation vers une page valide rétablie normalement, sans script inline ni état persistant. Contrôles rouges puis verts ; quatre familles d’erreurs et retour accueil couverts.
+- Validation : **375 tests app**, **39 contrats SEO/CSS**, **144 tests Ma Stack**, types app/Node/API et compatibilité API ES2020 PASS. Contrats API : **166 PASS, 18 ignorés** faute de prérequis d’intégration locaux ; aucune attestation du backend distant. Build complet sous Node 20.20.2 PASS.
+- Recettes sur l’artefact : **21 R11, 26 Ma Stack, 21 accessibilité, 14 paiement simulé, 57 hydratation, 19 analytics/consentement** PASS. 20 contrôles supplémentaires de statut/métadonnées après hydratation PASS. Pas de paiement, email ou écriture distante de recette. R11 ajouté à la CI ; aucune exécution GitHub distante prétendue avant push.
+- Search Console consultée dans la session existante : sitemap lu avec succès le 15 octobre, deux guides rédaction et Explorer Notion inspectés comme indexés sur des crawls antérieurs. Les exclusions historiques ne sont pas déclarées disparues ; publication et réexploration Google sont distinctes des corrections locales.
+- Contre-revues indépendantes du code, de la mutualisation, des données et du bootstrap 404 : défaut initial des hôtes corrigé ; aucun problème actionnable restant à la dernière revue. [Bilan de clôture et preuves](R10_R11_CLOTURE_2026-10-15.md). R5/R6, essais utilisateurs et renouvellement Redis conservent leur chantier séparé.
+
+## 15 octobre 2026 — R10/R11 : nettoyage ciblé et références SEO
+
+- Périmètre approuvé : retrait du plugin React SWC inutilisé, décision Tailwind documentée, deux descriptions de guide et correction des références LLM. Travail validé localement ; aucune publication dans ce lot.
+- R10 : Vite utilise déjà `@vitejs/plugin-react`. Retrait de `@vitejs/plugin-react-swc` et de 14 entrées SWC du lock, sans autre version modifiée. Lock préparé dans un dossier temporaire ; `npm ci --dry-run --ignore-scripts` PASS. Les node_modules partagés restent inchangés. Audit avant/après identique : neuf entrées, cinq hautes et quatre modérées. Tailwind 3 conservé ; dépendance v3 de lovable-tagger et compatibilité du plugin typographique à traiter avant une migration. Aucun gain de sécurité ou de vitesse revendiqué.
+- R11 : descriptions SEO FR/EN ajoutées au guide rédaction freelance, sans modifier ses articles ni recertifier ses prix. Le générateur LLM distingue les alternatives (`/tool/{slug}/alternatives`) de l’écosystème (`/explorer/around/{slug}`). Exports régénérés : 264 résumés sur 264, contre deux absences avant correction.
+- Tests rouges reproduits avant correction, puis 360 tests applicatifs dans 58 fichiers PASS. Types app/Node/API, contrôle des tokens et build production complet PASS, incluant prérendu, équivalence HTML, SEO et budgets.
+- Quatre contrôles navigateur Chromium PASS sur l’artefact généré : FR/EN à 390/1440 px, descriptions initiales et hydratées, Open Graph, canonical et hreflang corrects, contenu d’article identique au public. Contre-revue indépendante sans problème actionnable.
+- Bilan et limites : [R10_R11_LOT1_2026-10-15.md](R10_R11_LOT1_2026-10-15.md). Les neuf alertes, la migration éventuelle, les médias et l’indexation restent ouverts. R5/R6 et les tests utilisateurs différés ne sont pas repris.
+
+## 14 octobre 2026 — Publication R9 et portabilité de la recette
+
+- Lot R9 publié avec le correctif tokens sur 5db09fd39d ; déploiement Vercel réussi. La correction de marges 773b57373e conserve le lot.
+- 19/19 contrôles consentement/analytics PASS sur tooltrim.com (22 s), services simulés. Une unique visite réelle distincte : zéro cookie GA avant accord ; affichage Explorer, enregistrement confirmé puis retour dans Ma Stack, sélection visible.
+- Les trois événements sont acceptés par les deux destinations existantes G-DL5MJKQ3JE et G-PQPPPH19MH (six réponses HTTP 204, consentement G101). Cette preuve réseau ne certifie pas leur affichage dans les rapports : noms non encore observés dans les aperçus temps réel lors du contrôle. Aucun réglage GA4 modifié ni entonnoir créé.
+- La première CI avec la suite consentement reproduit un chemin de capture Mac incompatible Linux (ENOENT), 18/19 autres scénarios passent. Capture déplacée vers test.info().outputPath ; scénario mobile public rejoué PASS et capture présente dans le dossier de résultats. Aucune assertion, logique métier ou protection abaissée. La nouvelle CI revalide la chaîne complète.
+
+## 14 octobre 2026 — Tokens de la nouvelle version Soumission
+
+- La publication ea04a3d373 ajoutait 17 rayons littéraux et bloquait le gate design. Substitutions par les tokens existants et deux tokens de composant strictement locaux à .stp-page pour préserver les rayons spécifiques de 28 et 40 px, sans modifier l’échelle globale ni la baseline.
+- Contrôle des tokens PASS (223 rayons, stable) ; captures intégrales strictement identiques avant/après sur /fr/submit et /en/submit à 390/1440 px, animations neutralisées pour la comparaison. Contre-revue sans anomalie.
+
+## 14 octobre 2026 — Mesure consentie du parcours Explorer
+
+- Ajout de `explorer_view` (type de source), `explorer_save` (type de source et intention après confirmation) et `explorer_back` (clic de retour). Les événements existants sont conservés. Aucun nom/identifiant de collection, liste d’outils ni nouvel identifiant dans les nouveaux paramètres.
+- La vue attend le tag et le consentement ; une acceptation tardive mesure la vue encore ouverte. Nettoyage à la navigation, pas de rejeu des clics antérieurs, pas de nouvelle vue sur les filtres ou rerenders. Trois tests rouges reproduits avant implémentation ; recette navigateur rouge reproduite sur la vue manquante.
+- Validation : 356 tests applicatifs, 144 tests Ma Stack, types app/Node/API, contrôle des tokens et 30 contrôles navigateur PASS. Les sept scénarios analytics couvrent FR/EN, mobile/ordinateur, refus, retrait, accord tardif, chargement lent, intention À essayer et collection privée. Le scénario tardif attend la disparition normale du toast après déplacement du pointeur ; aucun clic forcé ni changement UI.
+- Build production complet PASS, avec prérendu, équivalence HTML, audits SEO et budgets ; 19/19 contrôles analytics/consentement réussis sur cet artefact (15,6 s). Le test historique de tag lent attend désormais DOMContentLoaded : attendre load était contradictoire avec son script volontairement retenu sur le HTML généré.
+- Recette analytics/consentement ajoutée à la CI (19 contrôles, services externes simulés), traces séparées. Contre-revue du code, des tests, de la CI et du contrat des événements sans problème actionable.
+- Intégration avant publication sur ea04a3d373 : 356 tests app, types app et 19 contrôles analytics/consentement PASS ; le build complet de l’ensemble est revalidé par la CI.
+- Roadmaps consolidées : anciens tableaux datés explicitement historiques, recette technique distincte de la réception réelle. Aucun compte GA4 réel interrogé ni entonnoir distant configuré. R9 utilisateur, R5/R6, migration, WebKit et paiement réel restent différés ou hors périmètre.
+
+
+## 14 octobre 2026 — /submit : refonte complète section par section
+
+- Logos : 16 outils réels du catalogue (4 connus + 12 indépendants, logos vérifiés), défilement continu en pause au survol, figé en reduced-motion. Titre « {outil} joins 1,200+ tools compared on ToolTrim. »
+- Formules : 3 offres (Standard 0 $ avec badge, Priority 29 $ recommandée au centre, Featured dès 99 $ sur contact), structure cumulative. Featured promet des emplacements home et stacks signalés sponsorisés : à créer avant la première vente (TODO).
+- Bloc note : « 5 criteria. », carte CommuteBar (notes et citation sourcée recopiées de la fiche, 3.8 vérifié en prod), lien en nouvel onglet, bandeau bleuté pleine largeur.
+- Frise « Live in 5 days » à la place des étapes et des garanties redondantes ; FAQ réduite à 6 questions dont « What if my score is low? » ; conclusion personnalisée.
+- Formulaire : vocabulaire « Priority review » partout, récap avant paiement, autocomplétion. Parcours gratuit : comparaison et upgrade au moment du badge, étapes numérotées, placeholder et bouton désactivé lisibles, erreur sous le champ, écran de succès avec upgrade (nouvel identifiant de demande, donc deux demandes possibles pour un même outil).
+- Tests : libellés mis à jour (aucune logique modifiée). Vérifié desktop 1440, mobile 375, mode sombre, FR/EN, avec et sans paramètre ; appels API interceptés pendant les essais du tunnel. Limite connue : en local le formulaire appelle les API de prod (TODO).
+
+## 14 octobre 2026 — Tokens du nouveau visuel de soumission
+
+- Les 12 rayons littéraux ajoutés par le hero de soumission bloquaient le contrôle des tokens. Remplacement par les variables existantes, sans modifier le seuil de dette ni le design.
+- Validation : contrôle des tokens PASS (223 rayons, stable) ; captures Chromium strictement identiques avant/après sur /fr/submit et /en/submit à 390 et 1440 px, animations désactivées pour la comparaison. Le build et la chaîne complète sont relancés par la CI de publication.
+
+## 14 octobre 2026 — Hero /submit : promesse, visuel produit, specs
+
+- Promesse réécrite pour tous les prospects (pas seulement Product Hunt) : « Get {outil} found by people choosing their next tool. », sous-titre « We write an independent review… You don't write a word. », CTA « Get {outil} reviewed · $29 ». Le mot « review » remplace « listing ».
+- Visuel produit : fiche de l'outil invité « en cours de rédaction » dans une fenêtre en perspective, logo réel, note marquée « after review » (aucune note inventée), halo dégradé discret (exception notée dans DESIGN_SYSTEM.md). Animations coupées en prefers-reduced-motion.
+- Bandeau de specs pleine largeur sous le titre « Included in the $29 review » : DR 43, Dofollow (gratuit = nofollow, dit explicitement), 5 days, 0 words. Remplace le bandeau gris redondant.
+- Réassurance près du CTA : « You check the facts before it goes live », réponse à l'objection « et si la note est mauvaise ».
+- Validation : 28 tests submit, types, build, contrôle visuel 1280 px et 375 px. Mode sombre non vérifié visuellement.
+
+## 14 octobre 2026 — Refonte conversion /submit
+
+- Page pensée pour les ~150 emails de prospection quotidiens : CTA unique noir, carte payante sombre façon « Pro », DR 43 + lien dofollow remontés sous le CTA, rangée de logos réels du catalogue. Formule gratuite affichée en nofollow (dofollow fixé à la main par Michael sur les fiches payantes) ; FAQ et section formules alignées.
+- Mentions de l'offre expirée au 30 septembre retirées.
+- Lien personnalisé `/en/submit?tool=…&site=…` : hero, CTA et aperçu au nom de l'outil, formulaire prérempli, note « réponds à mon email ». Parseur borné et testé ; variable non remplie = page générique.
+- Revue design-superpowers L2 (3 P1 corrigés) et audit de conversion. Validation : 28 tests submit, types, build production avec prérendu, contrôle visuel desktop et mobile 375 px. Voir SUBMIT_REDESIGN_2026-10-14.md.
+## 14 octobre 2026 — Accessibilité des filtres et scénarios hérités remis à jour
+
+- Trois anciens tests visaient un menu de carte, un filtre catégorie et un panneau stacks remplacés. Ils couvrent maintenant les contrôles actuels : tabulation réelle vers l’enregistrement d’une carte, ajout unique persistant, ouverture des filtres, choix au clavier, réouverture, Escape, fermeture mobile et restitution du focus. Matrice FR/EN à 390/1440 px, aucune assertion Axe abaissée ni test ignoré.
+- La recette actualisée a reproduit deux violations sérieuses `aria-dialog-name` sur les panneaux outils/stacks. Les PopoverContent reçoivent désormais un nom accessible repris du titre existant, traduit par l’appelant dans CatalogToolbar. Deux attributs ARIA ajoutés ; aucun nouveau texte visible ni CSS.
+- Suite Chromium de 21 scénarios ajoutée à la CI ; traces d’échec dans a11y-test-results, conservées par le téléversement d’artefacts existant.
+- Validation sur le lot avant intégration de la nouvelle recherche distante : 346 tests applicatifs, types app/Node/API et build production avec contrôles SEO/équivalence/budgets PASS ; 21 scénarios sur serveur dev puis 21 sur HTML produit PASS (1,1 min), dont tabulation et visibilité des actions. Contre-revue sans problème actionable. Recherche distante conservée par rebase sur b775b72905 ; recette intégrée rejouée : 21 contrôles Chromium (47 s), 346 tests app et types PASS. Le build et les vérifications de l’ensemble intégré sont rejoués par la CI de publication.
+- Recette publique complémentaire : 21 scénarios rejoués deux fois, 42/42 PASS en 2,3 min. Une alerte ponctuelle à 4,44:1 provenait de l’opacité pendant l’entrée animée de la recherche : couleur réelle rgb(111,111,104), opacité stabilisée à 1 après 335 ms. Le test attend désormais les promesses de fin des animations finies, sans délai fixe ni assouplissement des règles Axe. Contre-épreuve en navigateur isolé : un vrai contraste insuffisant injecté reste détecté. Contre-revue de cette attente sans problème actionable.
+- La CI de l’ensemble intégré sur 4b32a465c0 (recherche et soumission conservées) et son déploiement Vercel sont réussis. La stabilisation ultérieure ne modifie que le test de recherche et ce compte rendu.
+- Roadmap et support R9 actualisés : les trois scénarios hérités sont repris. Cela ne clôture pas l’accessibilité exhaustive, WebKit ou les essais avec de vraies personnes ; R5/R6 et migration restent différés.
+
+## 13 octobre 2026 — Premier clic fiable après hydratation et préparation R9
+
+- Obstacle reproduit deux fois sur une fiche publique : un clic sur Ajouter peut précéder le chargement du code de ToolDetailPage et ne rien enregistrer. PinToolButton reste désactivé dans le HTML prérendu et pendant le premier rendu d’hydratation ; il devient actif après montage des handlers. Aucun nouveau texte, style ou changement de catalogue.
+- Régression unitaire RED avant correction puis GREEN : même bouton conservé, aucune erreur récupérable d’hydratation, premier clic enregistré une fois. Nouvelle recette sur HTML généré : scripts bloqués, CTA visible mais inactif, activation après libération, enregistrement persistant et retour au même outil.
+- Échec CI distinct : une assertion ancienne interdisait tout `$0` sur la page, alors que le budget publié expose maintenant les outils gratuits/freemium. Test recentré sur le retrait de l’identifiant invalide, la conservation de Figma et son statut freemium. Garde undefined/null maintenue ; les tests unitaires conservent l’interdiction de zéro pour un coût inconnu. Fixture consentement Ma Stack alignée sur le JSON daté existant.
+- Validation locale : 346 tests app, 144 Ma Stack, types app/Node/API, build production et ses contrôles SEO/équivalence/budgets PASS ; 26 parcours sur dev et 26 sur HTML de production, 57 hydratations PASS (5 min). Contre-revue du correctif sans problème actionable.
+- Accessibilité ciblée : sept scénarios publics PASS. Tests de recherche alignés sur le bouton visible, le dialogue Recherche globale et sa fermeture actuelle ; consentement préalable explicitement choisi. Trois scénarios hérités de menus/filtres restent à reprendre, aucune certification de la suite exhaustive R8.
+- [Support R9 prêt](R9_RECETTE_UTILISATEURS.md) et roadmap actualisée : essais avec de vraies personnes différés à la demande du propriétaire ; aucun résultat utilisateur inventé. R5/R6 catalogue et couverture exhaustive restent différés. Nouvelle CI à contrôler après publication.
+
+## 2026-10-13 — GA4 Consent Mode avancé
+
+Sur demande explicite, chargement GA4 en état refusé pour signaux limités sans cookies, puis cookies/événements détaillés après accord. Refus/retrait, expiration et onglets synchronisés ; URL et référents minimisés ; publicité désactivée. Texte FR/EN explicite. Aucune exemption CNIL ni éligibilité à la modélisation prétendue. Voir GA4_ADVANCED_CONSENT_2026-10-13.md. Validation : 345 tests sur main à jour, types application, 12 tests navigateur et vrai SDK Google.
+
+## 13 octobre 2026 — Captures de recette portables en CI
+
+- La première CI du fil échouait sur les chemins de capture macOS `/private/tmp`, indisponibles sur Linux. Les trois suites Ma Stack utilisent désormais `test.info().outputPath()` ; captures conservées dans les artefacts Playwright, sans modifier ni affaiblir les assertions.
+- Produit inchangé ; le déploiement initial et onze parcours publics FR/EN sont réussis. Nouvelle CI déclenchée après validation des vingt-six parcours avec les chemins portables.
+
 ## 2026-10-13 — Ma Stack : prix attestés des fiches réutilisés dans le budget
 
 - `pickNativePrice` conserve la priorité des plans structurés et utilise ensuite le relevé daté déjà utilisé par les fiches (`nativePrices.ts`, généré depuis `pricing_truth.csv`). Le statut d’offre gratuite de ce relevé est également conservé : Claude et Perplexity sont freemium, comptés gratuits jusqu’à déclaration payante, puis leur tarif natif alimente le budget.
@@ -14,13 +116,165 @@
 - Limite identifiée : Ma Stack lit les plans de comparaison structurés de `pricing_v5.plans`, tandis que les fiches utilisent aussi le relevé `nativePrices.ts`. Claude et Perplexity peuvent donc être non calculables dans Ma Stack malgré des tarifs présents ailleurs ; aucune modification ni reconstruction de prix dans ce correctif.
 - Correctif local, non publié ; travaux préexistants catégories/catalogue préservés.
 
+## 13 octobre 2026 — Fil de découverte autour de toute la stack
+
+- Entrée « Explorer autour de ma stack » dans le hero, pour les outils utilisés ; activation du parcours stack existant, cartes visuelles, exploration et enregistrement dans les collections.
+- Sources conservées dans l'historique pendant la visite : enregistrer une idée ne la supprime plus du fil ; filtres, recentrage et retour gardent le contexte. IDs/slugs résolus et dédoublonnés ; wishlist exclue des sources.
+- Lien d'exploration d'un outil remonté sous la description de l'inspecteur, visible dès l'ouverture. Stack vide ou composée seulement d'idées à essayer : retour explicite à Ma Stack, aucun fil fictif.
+- Validation de la livraison issue de main : 332 tests app, 132 Ma Stack, 29 SEO, types et build réussis ; 26 parcours FR/EN sur build production local réussis. Nouveaux parcours ajoutés à la CI. Fixtures de consentement alignées sur le format déjà publié ; position du bouton vérifiée après animation d’ouverture, sans scroll.
+- Deux défauts reproduits avant correction (entrée absente, carte supprimée après ajout). Contre-revue favorable du changement ; livraison préparée sur une branche issue du main distant, sans lots catalogue R6 différés.
+
+## 13 octobre 2026 — Parcours Ma Stack → Explorer → ajout → retour
+
+- Absence d'accès Explorer depuis l'inspecteur reproduite en navigateur ; lien contextuel ajouté dans StackToolSheet, avec les styles existants et l'état de retour prévu par Explorer. Aucun nouveau composant ni CSS.
+- Perte de focus après retour et fermeture reproduite FR/EN ; carte d'origine mémorisée, focus restauré après fermeture effective de la feuille. Accès fiche, site officiel et retrait conservés.
+- Quatre parcours complets FR/EN à 390/1440 px : ajout, création de collection, retour au même inspecteur, fermeture/focus et rechargement. Avec les quinze parcours Ma Stack existants : **19/19 production locale en 30,5 s sur la branche de travail initiale**. 385 tests applicatifs, 144 Ma Stack, types et build final réussis. Contre-revue du lien sans défaut produit ; sondes corrigées pour conserver l'identité de la carte et contrôler collection/focus.
+- Captures locales : `/private/tmp/stack-explorer-inspector-fr-390.png`, `/private/tmp/stack-explorer-inspector-en-1440.png`. [Protocole de cinq essais dans la roadmap existante](MA_STACK_ROADMAP.md#protocole-court-pour-cinq-essais-utilisateurs). Aucun essai utilisateur réel revendiqué, aucune certification de pertinence éditoriale des suggestions.
+- Catalogue, tarifs source et fichiers publics inchangés ; R5/R6 éditoriaux restent différés. Correctif local pour revue, non poussé.
+
+## 2026-10-13 — GA4 : endpoint régional débloqué dans la CSP
+
+- Diagnostic en production après retour utilisateur : la balise consentie et page_view existaient, mais connect-src bloquait region1.google-analytics.com. Le correctif du 12 octobre est déployé READY et la CI est verte ; la recette simulée ne contrôlait pas cette frontière réseau réelle.
+- Seule l’autorisation connect-src Google Analytics devient https://*.google-analytics.com. Test Chromium de la vraie CSP : échec régional avant correction, trois cas PASS après (region1/www autorisés, domaine imposteur bloqué).
+- CSP candidate sur le site réel : zéro collecte avant accord, puis HTTP 204 pour les page_view des deux propriétés DL5MJKQ3JE et PQPPPH19MH. Le tag distant distribue aux deux flux ; l’écart de propriété ne suffit pas à expliquer l’absence de statistiques.
+- Publication ciblée au correctif CSP, son test et sa documentation ; autres directives de sécurité et travaux locaux préservés.
+
 ## 2026-10-12 — GA4 : pages vues après consentement et choix modifiable
 
 - Correction de la page d’arrivée perdue après acceptation tardive et des événements antérieurs à la configuration du tag sur connexion lente ; émission après chargement, page courante et déduplication des effets initiaux. Aucune action antérieure au consentement rejouée.
 - Choix versionné/horodaté, expiration six mois, anciens choix sans date redemandés. Footer FR/EN « Préférences cookies », boutons équivalents, retrait avec suppression des cookies GA accessibles et rechargement, synchronisation multi-onglets et repli de session si stockage non inscriptible. Décision la plus récente prioritaire ; refus prioritaire à date égale.
 - Politique de confidentialité corrigée : GA4 après accord, DataFast/Vercel indépendants déjà présents ; suppression de la promesse générale d’anonymisation. Aucun passage au Consent Mode avancé ni nouvelle mesure sans consentement.
 - Session GA4 contrôlée : le site utilise G-DL5MJKQ3JE dans la propriété historique tooltrim.io, distincte de la nouvelle propriété ToolTrim / G-PQPPPH19MH. Sur le flux actif, suivi automatique de l’historique désactivé, sauvegardé après autorisation explicite et relu pour éviter les doubles pages vues.
-- Recette : 291 tests app, types et build production complets PASS ; neuf parcours Chromium sur l’artefact production, services de mesure simulés. Relecture indépendante sans point bloquant. Détails et limites : `docs/ANALYTICS_CONSENT_2026-10-12.md`. Code local ; publication à confirmer. Catégories/catalogue et autres travaux préexistants préservés.
+- Recette : 291 tests app, types et build production complets PASS ; neuf parcours Chromium sur l’artefact production, services de mesure simulés. Relecture indépendante sans point bloquant. Détails et limites : `docs/ANALYTICS_CONSENT_2026-10-12.md`. Intégration isolée sur le main actuel : 332 tests app, types/build complets et neuf parcours Chromium PASS ; nouveau footer et dégagement de scroll préservés. Publication ciblée sur main autorisée. Catégories/catalogue et autres travaux préexistants préservés.
+
+## 12 octobre 2026 — Explorer : passe design avant push
+
+- Typographie du bloc Explorer alignée sur les tokens canoniques existants, sans échelle locale. Noms sur deux lignes, raisons lisibles et rythme de carte stable en grille ; colonne unique mobile compacte.
+- Suppression du paragraphe explicatif, du surtitre de catégorie répété et de la mention de classement. Les raisons propres à chaque carte sont conservées, sans modification du catalogue ni des scores.
+- Cibles de 44 px, focus opaques, ajout sans ombre ni déplacement au survol ; lien de fiche non comprimé sur tablette. Débordement d’objectif à 320 px reproduit FR/EN, corrigé par une largeur complète sous le retour et couvert par deux parcours.
+- Ajout de carte visible en permanence après un blocage intermittent établi lors de la recette. Build, types, intégrité et diff PASS ; 10/10 parcours de production PASS en 20,3 s, ajout testé sans survol préalable.
+- Rapport et captures : `docs/R5_DESIGN_REVIEW_2026-10-10.md`. Lot local non publié, R5 éditorial toujours ouvert.
+
+## 9 octobre 2026 — R5 : contre-revue technique et éditoriale
+
+- Contre-revues indépendantes du code et des promesses, échecs reproduits avant correction ; rapport `docs/R5_SECOND_PASS_2026-10-09.md`.
+- Parent/enfant de suite prioritaire ; plugin distingué d’un rattachement ; bundles connus non assimilés aux apps. Neuf restrictions temporaires de promesse, sans mutation catalogue ; les comparaisons à vérifier ne sont plus promues par la diversification.
+- Angle URL combiné à la catégorie sur les routes outils, affiché et effaçable ; reset complet conservant la destination. Objectifs et moteur hors pilote conservés.
+- Type bundle aligné avec le catalogue existant ; commande d’intégrité et seuil éditorial explicite ajoutés. Jugements et ancienne preuve conservés.
+- 325 tests applicatifs, 132 Ma Stack, 29 SEO, types app/Node/API et 8 recettes dev PASS. Build production et 8/8 recettes sur preview production PASS ; clôture documentaire le 10 octobre 2026, résultats consignés dans les preuves.
+- Qualité ouverte : 126/198 crédibles top8, 42 places manquantes sur240 ; aucune réserve critique de promesse actuellement classée top4, identités API/app inconnues conservées. Non publié.
+
+## 9 octobre 2026 — R5 : audit des relations Explorer
+
+- Pilote reproductible de 30 sources, catalogue visible stable ; baseline et appréciations indépendantes conservées dans `docs/proofs/explorer-r5-2026-10-09/`.
+- Activation bornée aux 30 routes sources auditées ; 1 210 sources hors pilote et multi-source identiques à la baseline. Objectifs et exploration de sélection conservent la politique antérieure.
+- Garde-fous : hôte pour extensions, suite distincte, liens déclarés corroborés, comparaisons à vérifier et refus des tags trop génériques. Aucune modification des faits catalogue.
+- Contrôle SEO : Discord et Microsoft Teams exigés autour de Slack ; trois autres destinations minimum ailleurs, autoliens exclus. Le premier build global a échoué, extension hors pilote retirée.
+- Justifications d’usage visibles FR/EN sur le pilote ; libellés de fonctionnalités existants mutualisés, routes et collections conservées.
+- Relecture indépendante et corrections testées avant/après. Recette Chromium FR/EN 390/1440 px, navigation, ajout/destination, persistance et SEO personnel.
+- Contrôles techniques : 310 tests applicatifs, 117 Ma Stack, 25 SEO, types app/Node/API et build production complet PASS.
+- Validation éditoriale non acquise : 127/198 crédibles dans le top 8 ; 42 slots manquants, cas partiels et API/app laissés ouverts. Rapport : `docs/R5_EXPLORER_AUDIT_2026-10-09.md`. Non publié.
+
+## 9 octobre 2026 — R4 : coûts et recoupements Ma Stack
+
+- Audit du calcul et des sources sur la version main `c42d137826`, dans un worktree isolé.
+- FR/EN : estimation de coût, montant des recoupements à examiner et baisse estimée du budget ; aucun libellé de dépense dupliquée prouvée. Alignement hero/liste/inspecteur/comparatif/toast/footer.
+- Explication du calcul et du fait que retirer un outil ne résilie pas son abonnement. Calculs et stockage inchangés.
+- 99 tests Ma Stack, 23 contrats SEO, build production complet PASS, recette Chromium FR/EN 390/1440 px avec retrait/annulation/persistance, sans débordement ni erreur JS. Preuves : `docs/proofs/ma-stack-r4-2026-10-09/runtime.json`. Revue indépendante : deux surfaces inspecteur corrigées.
+- Compréhension utilisateur à observer ; renouvellement Redis encore à faire ; paiement réel exclu par le propriétaire.
+
+## 2026-10-10 : audit guides FR-only et traduction manquante
+
+- Listing des guides français sans équivalent anglais : sur 11 candidats détectés par slug, 10 avaient déjà une traduction via `GUIDE_SLUG_ALTERNATES` (faux positifs). Un seul guide réellement sans traduction : `plateforme-ecommerce-solo-petite-equipe-produits-physiques`.
+- Traduction publiée (`ecommerce-platform-solo-small-team-physical-products-2026` dans `posts-en.json`), paire ajoutée dans les 3 tables hreflang (`src/App.tsx`, `src/lib/seo.ts`, `vite.config.ts`), test `guideSlugMaps.spec.ts` au vert.
+- Écart de prix repéré pendant la traduction : le catalogue donne Shopify Basic à 39 $/mois (facturation mensuelle), l'article FR affiche 27 €/mois (facturation annuelle, page Shopify localisée EU, vérifiée exacte). Les deux sont corrects mais sur des bases différentes. Prix USD annuels (29 $/79 $/299 $) recherchés et utilisés dans la version anglaise ; version française laissée en euros.
+- `scripts/audit-guide-locale-parity.mjs` corrigé : il gardait sa propre mini-table de correspondance figée (une seule paire) au lieu de lire `GUIDE_SLUG_ALTERNATES`, et signalait donc à tort des guides déjà traduits comme « français seulement ». Lit maintenant la vraie table.
+- `npm run build` validé : page EN prérendue, hreflang réciproque confirmé dans le HTML généré. 4 échecs de validation SEO préexistants et sans rapport (`explorer/around/cycles`, `gusto`, `red-giant-cosmo`, `stacks/ia-visuelle-tout-en-un`, « SSR root is unclosed ») signalés à part, pas corrigés ici.
+
+## 2026-10-09 : navigation, revue design et corrections
+
+- Revue design-superpowers (L2) de la barre latérale, du haut de page, de la barre du bas et du menu mobile, mesurée avec Playwright à 1440, 1024 et 390 px.
+- Onglets du haut (Tous les outils, Gratuits, Payants) supprimés ; le filtre « Payant » du catalogue exclut désormais les outils avec plan gratuit (`isPaidOnly`, libellé « Payant uniquement »).
+- Recherche : une seule porte visible (en haut) plus le raccourci, « Ctrl K » hors Mac ; dialogue de recherche et menu mobile au-dessus du bandeau cookies (z-index 1100).
+- Barre repliée : page active distincte du survol. Menu mobile réduit aux sous-niveaux, préférences et « Soumettre ». « Ma stack » à contour partout.
+- Haut de page aligné sur `--layout-content` / `--layout-gutter` ; libellés sous icône en 11 px ; icônes en 16/18/20 px via `size`.
+- CSS `asv2-*` : 59 déclarations écrasées supprimées, 0 différence de style calculé sur 18 états.
+- Recherche globale refaite (`SearchModal`) : guide avant la frappe (exemples, besoins, duels, stacks par objectif, stack de l'utilisateur), résultats groupés par type, champ en `combobox`. Duels et stacks partagés avec l'accueil (`src/data/homeComparisons.ts`, `src/data/goalStacks.ts`).
+## 2026-10-09 — Métadonnées Creem réelles vérifiées sans paiement
+
+- Session non payée autorisée avec deux métadonnées fictives ; lecture API 200, produit/mode/métadonnées conformes. Vérificateur serveur réel : rejet 400 de pending.
+- Aucun paiement, email ou donnée client ; onglet fermé. Le retour après paiement terminé reste non exercé.
+- Token maintenance privé préparé pour conservation par l'opérateur ; remplacement Vercel encore nécessaire, aucun changement distant ni déploiement.
+
+## 2026-10-09 — Authentification API Creem vérifiée
+
+- Clé locale fournie par le propriétaire : lecture d'un checkout fictif absent renvoie 404, contrôle avec clé invalide 401. Aucun secret affiché ni paiement/checkout créé.
+- Recette de propagation des métadonnées en attente : création d'une session non payée refusée avant exécution par la revue automatique, autorisation explicite demandée.
+
+## 2026-10-09 — Exploitation préparée et contrôle Creem borné
+
+- Dossier privé de sauvegarde et snapshot initial du registre vide créés ; mode 700/600, ignorés par Git, aucune mutation production.
+- Consignes manuelles de reprise, archivage, sauvegarde et incident préparées ; aucun cron ni copie cloud installés.
+- Produit/encaissement/retour Creem reconfirmés sans modification. Accès API et métadonnées réelles encore non certifiés ; clé locale de lecture nécessaire.
+
+## 2026-10-09 — Domaine et expéditeur Resend vérifiés
+
+- Compte connecté : domaine tooltrim.com Verified, DKIM/SPF/MX d'envoi Verified, envoi activé. Clé récente avec Sending access, aucune extension des droits.
+- Expéditeur interne contact@tooltrim.com confirmé par un email déjà Delivered. Aucun nouvel email ni modification de configuration.
+- Preuve non sensible enregistrée ; nouveau handler non déployé et vérification réelle Creem/exploitation encore ouvertes.
+
+## 2026-10-09 — Récupération Upstash et contrôle prestataires
+
+- Export/restauration privés de reçus fictifs sur Upstash REST PASS : états, archives et réservation des checkouts préservés ; 16 appels, nettoyage complet, registre production inchangé.
+- Clé Creem LIVE `checkouts:read` confirmée ; Resend nécessite la connexion au compte. La clé locale contrôlée est refusée, sans conclusion sur la clé Production.
+- Compteur global Upstash relevé (302/500k, $0), sans extrapolation de capacité. Plan et procédure actualisés ; aucun déploiement.
+
+## 2026-10-09 — Recette Upstash REST concurrente passée
+
+- Jeton fourni directement par le propriétaire dans le fichier local privé, sans affichage ni ajout à Git.
+- Recette distante PASS : 20 réservations simultanées, 20 prises de bail simultanées et transitions testées ; 68 requêtes REST.
+- Nettoyage PASS, registre production vide et inchangé ; aucun email/paiement réel. Preuve dans `docs/proofs/submission-idempotency-2026-10-09/remote-rest-recipe.json`.
+- Validation prestataires/exploitation encore ouverte ; aucun déploiement.
+
+## 2026-10-09 — Recette Upstash isolée via CLI, REST concurrent restant
+
+- Seconde base Free refusée par le fournisseur ; adaptation préactivation explicitement autorisée par le propriétaire. Aucun changement de facturation. Recette CLI sur données fictives PASS, nettoyage vérifié, registre client vide ; aucune opération email/paiement.
+- 20 réservations distantes successives, conflits/baux/ambiguïté/suspension/archive/scan testés. Concurrence REST distante non revendiquée. Compteurs quota encore à zéro, capacité non calculée.
+- Script de recette étendu, garde d’activation atomique et isolation testées : 178 API et script complet Redis local PASS. Transfert chiffré du token via sortie connecteur refusé automatiquement, non exécuté ; alternative CLI sans extraction.
+- Fichier privé vide préparé pour permettre au propriétaire de renseigner le token hors chat ; recette REST et autres conditions de publication restent ouvertes. Aucun déploiement.
+
+## 2026-10-09 — Clé Creem limitée configurée, produit conservé
+
+- Après confirmation explicite : clé LIVE dédiée avec `checkouts:read` seulement, enregistrée Secret Production sous `CREEM_API_KEY`. Ni valeur imprimée ni ancienne clé Default modifiée.
+- ID du produit existant identique au code ; retour `/submit?paid=1` inspecté et conservé, redirect applicatif préservant la query. Aucun checkout/produit ou déploiement modifié.
+- Six variables serveur requises désormais présentes en Production ; recette distante, quota/sauvegarde/exploitation et propagation des métadonnées restent à vérifier. Configuration enregistrée sans prétendre à une activation complète.
+
+## 2026-10-09 — Secret badge enregistré ; clé Creem manquante
+
+- Création du secret de vérification badge autorisée et enregistrée Secret en Production, valeur non affichée. Le propriétaire confirme ne pas disposer encore de clé API Creem ; console ouverte pour connexion au compte du produit existant.
+- Aucun produit/checkout, clé Creem ni déploiement modifié. Activation et recette restent ouvertes ; quatre nouvelles variables serveur enregistrées.
+
+## 2026-10-09 — Variables Redis Production enregistrées
+
+- Accès navigateur Vercel rétabli et autorisation explicite de transfert reçue. URL Redis, jeton REST lecture/écriture et secret maintenance indépendant enregistrés comme Secret en Production ; pas d’exposition des valeurs ni de connexion Preview à la base Production.
+- Aucun redéploiement. Clé Creem serveur et secret badge encore manquants ; recette distante et exploitation manuelle/sauvegarde restent ouvertes. Secret maintenance irrévélable après sauvegarde : stockage opérateur/rotation à prévoir avant utilisation.
+
+## 2026-10-09 — Base Upstash Free créée, raccordement en attente
+
+- Après connexion du propriétaire : création de `tooltrim-submissions` dans Personal, Francfort, Free $0/mois, persistance et éviction désactivée vérifiées. Aucun moyen de paiement ajouté ; quota visible 500k commandes/mois, sans capacité applicative extrapolée.
+- Aucun token révélé, payload de demande enregistré, email/paiement ou déploiement. Vercel toujours refusé 403 et console non connectée ; configuration et recette distante restent ouvertes. Preuve d’accès et procédure actualisées.
+
+## 2026-10-09 — Activation soumissions : contrôle des accès
+
+- Suite demandée ; projet Vercel retrouvé, métadonnées des variables refusées 403 pour le scope du propriétaire. Consoles Upstash/Vercel non connectées ; pas de CLI disponible en repli. Aucune valeur de secret affichée.
+- Modèle serveur vide `.env.submissions.example`, checklist de mise en service et preuve d’accès ajoutés. Pas de modification applicative ; aucune recette distante, création de base, modification de variable ou publication. Activation en attente des accès du propriétaire.
+
+## 2026-10-09 — Soumissions : reçus Redis et reprises email, local
+
+- Plan Upstash autorisé exécuté dans un worktree isolé : réservation atomique du checkout, demande et jobs persistés avant email, baux et clés stables, maintenance authentifiée. Aucun Supabase pour cette fonctionnalité ; traitement manuel par email conservé.
+- Brouillons gratuits/payants complets, contenu exact tenté sauvegardé, reprise d’une acceptation après réponse perdue sans dépendre de Creem/badge disponibles. Notifications intermédiaires non bloquantes et bornées ; pas de création via la recherche seule.
+- Relecture indépendante et corrections vérifiées ; 175 API avec Redis réel, 287 app, 23 SEO, 14 Chromium, types/build/diff PASS. Sitemap et balises de six pages identiques. CI prépare désormais Redis, sans exécution GitHub revendiquée.
+- Non publié/non activé. Compte Free/éviction/quota, configuration réelle et sauvegarde distante/rétention restent à vérifier. [Bilan et décisions](BILAN_SOUMISSIONS_2026-10-09.md), [procédure](SOUMISSIONS_UPSTASH.md). Travail principal catégories/catalogue/médias/Stack préservé.
 
 ## 2026-10-09 — Plan soumissions Upstash, traitement email conservé
 
@@ -5427,6 +5681,18 @@ Passe limitée à l’identité : grille logo/texte/fermeture, surtitre et titre
 - Périmètre : cartes compactes, fiche intégrée, navigation hiérarchique du télescope, aperçus des outils et budgets indicatifs par groupe. Les fichiers de migration catalogue et les copies de travail sont exclus.
 - Validation finale : build production complet PASS, TypeScript PASS, 79 tests Ma Stack PASS et 15 tests navigateur Chromium PASS (FR/EN, 390/820/1440 px, stack de 60 outils à 320 px, ajout/retrait/annulation et persistance).
 - Tests navigateur adaptés au parcours actuel et à la fin des transitions avant activation clavier.
+## 2026-10-08 · Footer statutaire
+- Badges visibles et homogènes, un seul lien méthodologie (/methodology redirige vers /transparency).
+- Mentions légales : SAS, hébergeur Vercel.
+- « Gérer les cookies » (retrait du consentement), bascule FR/EN, ligne de preuve avec nombre d'outils calculé au build (`__CATALOG_TOOLS__`).
+- Footer sur grille 12 colonnes, carte « Ma stack » via `src/lib/stackSnapshot.ts` (écrit par CartPage), sélecteur de langue FR | EN.
+- Accueil, lots 2 et 3 sans ajout : échelle typo unique, rythme 72/48, rayons, recherche sous le hero, outils non répétés, libellés, accessibilité (0 violation axe), animations sur transform, 69 règles CSS mortes retirées. « La pile » retirée à la demande de Michael.
+- Accueil : recherche du site réparée (sigles courts, mots vides, accents, catégories), lot de finitions en tokens, typographie française (displayText), équilibre optique des logos, besoins avec exposant et tags de catégories voisines, « Lequel garder ? » à la place de « Compatible avec », en-têtes de section alignés à gauche, carrousels jusqu'au bord.
+
+### 2026-10-09 — Compatibilité du compilateur API Vercel
+
+Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le typecheck API local ES2023. Reproduction avec les bibliothèques ES2020 : même erreur. Le contrôle de propriété propre utilise désormais `Object.prototype.hasOwnProperty.call`, avec le même refus des réponses Redis sans champ propre `result`. Vérification ES2020 PASS et 178 tests API avec Redis réel PASS. Le contrôle ES2020 est ajouté à la CI pour couvrir cet écart.
+
 ## 2026-10-09 — Galerie produit sourcée pour Newbi
 
 - Ajout de trois visuels produit publiés sur le site officiel Newbi : tableau de bord, éditeur de facture et aperçu de facture.

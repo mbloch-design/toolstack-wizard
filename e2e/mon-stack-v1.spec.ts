@@ -6,7 +6,7 @@ const seed = (ids = slugs) => ({ version: 3, needs: [], pinnedToolSlugs: ids, to
 
 test.beforeEach(async ({ page }) => {
   await page.route("**/*supabase.co/**", (route) => route.abort());
-  await page.addInitScript(() => localStorage.setItem("tooltrim-analytics-consent", "refused"));
+  await page.addInitScript(() => localStorage.setItem("tooltrim-analytics-consent", JSON.stringify({ version: 1, choice: "refused", decidedAt: Date.now(), expiresAt: Date.now() + 3600000 })));
 });
 
 test("empty → search → add → inspect → remove → undo → persist", async ({ page }) => {
@@ -43,7 +43,7 @@ test("tool profile adds with one click and its saved CTA opens stack context", a
   await cta.click();
   await expect(page).toHaveURL(/ma-stack\?outil=figma/);
   await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
-  await page.getByRole("link", { name: "Fiche complète", exact: true }).click();
+  await page.locator(".ms-tool-sheet").getByRole("link", { name: "Fiche complète", exact: true }).click();
   await expect(page).toHaveURL(/\/fr\/tool\/figma$/);
 });
 
@@ -76,21 +76,21 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.keyboard.press("Escape");
     await expect(page.locator(".ms-tool-sheet")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-    const screenshotDir = "/private/tmp/tooltrim-mon-stack-v2";
-    fs.mkdirSync(screenshotDir, { recursive: true });
     await page.locator(".ms-hero h1").click();
-    await page.screenshot({ path: `${screenshotDir}/${lang}-${width}-dashboard.png`, fullPage: true });
+    await page.screenshot({ path: test.info().outputPath(`${lang}-${width}-dashboard.png`), fullPage: true });
   });
 }
 
-test("invalid catalogue ID and missing price remain usable", async ({ page }) => {
+test("invalid catalogue ID can be removed without losing valid tools", async ({ page }) => {
   await page.addInitScript(({ key, state }) => localStorage.setItem(key, JSON.stringify(state)), { key, state: seed(["no-such-tool", "figma"]) });
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-unavailable")).toContainText("no-such-tool");
   await page.locator(".ms-unavailable button").click();
   await expect(page.locator(".ms-unavailable")).toHaveCount(0);
   await expect(page.locator(".ms-tool")).toHaveCount(1);
-  await expect(page.locator(".ms-page")).not.toContainText(/undefined|null|\$0/);
+  await expect(page.locator(".ms-page")).not.toContainText(/undefined|null/);
+  await expect(page.locator(".ms-tool")).toContainText("Figma");
+  await expect(page.locator("#ms-budget")).toContainText("Freemium counted as free");
 });
 
 test("corrupt storage recovers without crashing", async ({ page }) => {
@@ -154,7 +154,7 @@ test("known alternatives stay contextual and selection stays in the workspace", 
   await page.locator(".ms-ts-other").filter({ hasText: "Claude" }).first().click();
   await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Claude");
   await expect(page).toHaveURL(/ma-stack\?outil=claude/);
-  await page.screenshot({ path: "/private/tmp/tooltrim-mon-stack-v2/fr-1440-context.png", fullPage: true });
+  await page.screenshot({ path: test.info().outputPath("fr-1440-context.png"), fullPage: true });
 });
 
 test("a substantial stack stays readable at 320px", async ({ page }) => {

@@ -1,3 +1,4 @@
+import { applyAuditedToolUrls } from "@/lib/toolUrlCorrections.mjs";
 import { DEPRECATED_TOOL_SLUGS } from "@/lib/toolVisibility";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -64,7 +65,7 @@ function asLocalizedText(value: unknown, fallback = "", locale: "fr" | "en" = "f
 }
 
 function mapToolFromJson(t: any): Tool {
-  return {
+  return applyAuditedToolUrls({
     id: asLocalizedText(t.id, ""),
     slug: asLocalizedText(t.slug || t.id, ""),
     name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
@@ -125,7 +126,7 @@ function mapToolFromJson(t: any): Tool {
     pricing_v5En: t.pricing_v5En || null,
     decision_policy_v3: t.decision_policy_v3 || null,
     toolTrimRating: t.toolTrimRating || null,
-  };
+  });
 }
 
 async function loadLocalTools(): Promise<Tool[]> {
@@ -234,7 +235,7 @@ export type ToolSummary = Pick<
 // Canonique Adobe = adobe-creative-cloud.
 
 
-const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
+const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => applyAuditedToolUrls({
   id: asLocalizedText(t.id || t.slug, ""),
   slug: asLocalizedText(t.slug || t.id, ""),
   name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
@@ -524,7 +525,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
           const staticById = new Map(staticToolSummaries.map((t) => [t.id, t]));
           const remoteTools = data.map((t: any) => {
             const localFallback = staticById.get(asLocalizedText(t.id, ""));
-            return {
+            return applyAuditedToolUrls({
               id: asLocalizedText(t.id, ""),
               slug: asLocalizedText(t.slug || t.id, ""),
               name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
@@ -562,7 +563,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
               publishedAt: t.published_at || null,
               worksWith: Array.isArray(t.works_with) ? t.works_with : [],
               formFactor: t.form_factor || null,
-            };
+            });
           });
           const merged = mergeById(staticToolSummaries, remoteTools)
             .filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug || t.id));

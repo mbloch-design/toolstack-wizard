@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { isStaticNotFoundPath } from "@/lib/staticHttpError";
 import bestOfGuides from "@/data/bestOfGuides.json";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, Navigate, useParams, useLocation, Outlet } from "react-router-dom";
@@ -81,6 +82,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "zapier-vs-make-vs-n8n-2026-automatiser-stack": "zapier-vs-make-vs-n8n-pricing",
   "agents-ia-freelances-2026-lesquels-valent-le-coup": "ai-agents-freelancers-2026",
   "stack-saas-minimaliste-freelance-2026-moins-50-euros": "minimalist-saas-stack-freelancer-2026-under-50-euros",
+  "plateforme-ecommerce-solo-petite-equipe-produits-physiques": "ecommerce-platform-solo-small-team-physical-products-2026",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(
@@ -171,7 +173,10 @@ const LazyFallback = () => (
   </div>
 );
 
-export const AppRoutes = () => (
+export const AppRoutes = () => {
+  const { pathname } = useLocation();
+  if (isStaticNotFoundPath(pathname)) return <NotFound />;
+  return (
   <Routes>
     <Route path="/" element={<Navigate to="/en" replace />} />
 
@@ -254,7 +259,8 @@ export const AppRoutes = () => (
     </Route>
     <Route path="*" element={<NotFound />} />
   </Routes>
-);
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -265,13 +271,15 @@ const App = () => (
         <ScrollToTop />
         <DynamicCanonical />
         <AnalyticsPageView />
-        <AnalyticsConsent />
         <Analytics />
         <ErrorBoundary>
         <Suspense fallback={<LazyFallback />}>
           <AppRoutes />
         </Suspense>
         </ErrorBoundary>
+        {/* After the page in the DOM, so the skip link is the first Tab stop
+            (a11y audit, 8 Oct 2026); the banner stays fixed on screen. */}
+        <AnalyticsConsent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

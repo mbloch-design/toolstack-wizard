@@ -24,7 +24,7 @@ describe("guide navigation from the real enriched search", () => {
 
   it("opens the numeric remote guide from a fuzzy modal search", async () => {
     render(<MemoryRouter initialEntries={["/fr"]}><SearchModal onClose={() => {}} /><CurrentLocation /></MemoryRouter>);
-    fireEvent.change(screen.getByRole("textbox", { name: "Rechercher" }), { target: { value: "projetsx" } });
+    fireEvent.change(screen.getByRole("combobox", { name: "Rechercher" }), { target: { value: "projetsx" } });
     fireEvent.click(await screen.findByRole("option", { name: /Organiser les projets ensemble/ }));
     expect(screen.getByLabelText("Destination")).toHaveTextContent("/fr/guide/guide-projets-distant");
   });

@@ -1,0 +1,560 @@
+[
+  {
+    "slug": "ae-gifgun",
+    "field": "ogImageUrl",
+    "expectedUrl": "/og-screenshots/ae-gifgun.png",
+    "url": "/tool-media/ae-gifgun/official-demo.jpg",
+    "sourceUrl": "https://aescripts.com/gifgun",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "audionotes",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://tooltrim.com/og-screenshots/audionotes.jpg",
+    "url": "https://www.audionotes.app/opengraph-image.png",
+    "sourceUrl": "https://www.audionotes.app/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "brandcrowd",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://dcstatic.com/images/brandcrowd/logos/brandcrowd-logo-black-bc9e817e0f.en-us.svg",
+    "url": null,
+    "sourceUrl": "https://www.brandcrowd.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Confirmed missing media; no validated image replacement"
+  },
+  {
+    "slug": "brandpad",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://brandpad.io/uploads/images/_1200x630_crop_center-center_82_none/brandpad_logo.png?mtime=1612868009",
+    "url": null,
+    "sourceUrl": "https://brandpad.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Confirmed missing media; no validated image replacement"
+  },
+  {
+    "slug": "chatbase",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.chatbase.co/og-home.png",
+    "url": "https://www.chatbase.co/og-home.jpg",
+    "sourceUrl": "https://www.chatbase.co/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "cloudtask-marketplace",
+    "field": "affiliateLink",
+    "expectedUrl": "https://cloudtask.com/marketplace",
+    "url": "https://cloudtask.com/",
+    "sourceUrl": "https://cloudtask.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Official former marketplace redirects to the publisher homepage"
+  },
+  {
+    "slug": "cloudtask-marketplace",
+    "field": "websiteUrl",
+    "expectedUrl": "https://cloudtask.com/marketplace",
+    "url": "https://cloudtask.com/",
+    "sourceUrl": "https://cloudtask.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Official former marketplace redirects to the publisher homepage"
+  },
+  {
+    "slug": "datev",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.datev.com/etc.clientlibs/datev.sites/clientlibs/clientlib-site/resources/images/logo.png",
+    "url": "https://www.datev.com/etc.clientlibs/datev.sites/clientlibs/clientlib-bottom-async/resources/images/logo.png",
+    "sourceUrl": "https://www.datev.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "docyt",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.docyt.com/wp-content/uploads/2023/07/social-image-financial-insights.jpeg",
+    "url": "https://www.docyt.com/static/img/og-default.png",
+    "sourceUrl": "https://www.docyt.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "expo",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://static.expo.dev/static/home/9-2025/og-image.png",
+    "url": "https://static.expo.dev/static/home/2026/og-image.png",
+    "sourceUrl": "https://expo.dev/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "fathom-analytics",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://usefathom.com/assets/src/share-usefathom.com.jpg",
+    "url": "https://usefathom.com/assets/src/social-share-default.png",
+    "sourceUrl": "https://usefathom.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "figma-weave",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://weave.figma.com/favicon.ico",
+    "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829db27001db19910ac428b_OG%20image%20option1.avif",
+    "sourceUrl": "https://weave.figma.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "flutter",
+    "field": "ogImageUrl",
+    "expectedUrl": "/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
+    "url": "https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
+    "sourceUrl": "https://flutter.dev/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "fly-io",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://fly.io/phx/images/preview/og-7ea9380853220ced249aaf88c2332937.jpg?vsn=d",
+    "url": "https://fly.io/phx/images/og/home-3f6c47b1e214994f1e91183548f93113.jpg?vsn=d",
+    "sourceUrl": "https://fly.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "glide",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.glideapps.com/opengraph-image-1udkml.jpg?opengraph-image.17dzzryfiu_y8.jpg",
+    "url": "https://www.glideapps.com/opengraph-image-dxwb7g.jpg?opengraph-image.003b7v4xv13y2.jpg",
+    "sourceUrl": "https://www.glideapps.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "glyphe",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://glyphe.eu/favicon.ico",
+    "url": "https://glyphe.eu/api/og",
+    "sourceUrl": "https://glyphe.eu/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "google-maps",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://maps.google.com/maps/api/staticmap?center=43.5355648%2C5.4657024&amp;zoom=14&amp;size=900x900&amp;language=en&amp;sensor=false&amp;key=AIzaSyBoYjeRtfVI0Jd8Q_9mnflo9i4sOYpShB0&amp;signature=R_TIultUYRsEt1fU1H_iRC5Yhyk",
+    "url": null,
+    "sourceUrl": "https://www.google.com/maps?ucbcb=1",
+    "observedOn": "2026-10-15",
+    "reason": "Invalid static-map URL; location illustration is unsuitable as product cover"
+  },
+  {
+    "slug": "heygen",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.heygen.com/_next/image?url=%2Fassets_2025_redesign%2F_next%2Fstatic%2Fimmutable%2Fmedia%2Fhero-left.10_gc6gwg7h-8.png&w=3840&q=75",
+    "url": "https://cdn.sanity.io/images/pdhqcmb1/production/170e1d983053e0d80a0e724303ac0787efd58551-1200x630.jpg?fit=max&fm=png",
+    "sourceUrl": "https://www.heygen.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "hibob",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://res.cloudinary.com/hibob-website-prod/images/f_auto,q_auto/v1765722016/wp-website/New-Homepage-sharing-banner/New-Homepage-sharing-banner.png?_i=AA",
+    "url": "https://new.hibob.com/app/uploads/2026/07/Hompage-OG.jpg",
+    "sourceUrl": "https://www.hibob.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "humaans",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://humaans.io/_next/static/images/humaans-cover-2025-1440@1x-63829fe01312a3c8.png",
+    "url": "https://humaans.io/_next/static/media/generated.1iqq6uerzqvin.png",
+    "sourceUrl": "https://humaans.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "intercom",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.intercom.com/intercom-marketing-site/img/social/default.jpg",
+    "url": "https://cdn.sanity.io/images/4bgok82s/monorepo-static-assets/9d9c4802c510e9279b7525a4dd289dd793725b83-2400x1260.jpg",
+    "sourceUrl": "https://www.intercom.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "itsdart",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.dartai.com/_dart/assets/default-open-graph-73d1569d.png",
+    "url": "https://www.dartai.com/_dart/assets/default-open-graph-a89003f7.png",
+    "sourceUrl": "https://www.dartai.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "jenni",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://tooltrim.com/og-screenshots/jenni.jpg",
+    "url": "https://framerusercontent.com/images/z4JrDRfRywzEnZ5jahSZEkA9dI.png",
+    "sourceUrl": "https://jenni.ai/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "klark",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://klark.app/mockups/Mockup_Klark_dashboard.png",
+    "url": "https://klark.app/icons/og-default.jpg?v=2",
+    "sourceUrl": "https://klark.app/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "krea",
+    "field": "ogImageUrl",
+    "expectedUrl": "/resources/images/System/krea-sm.png",
+    "url": "https://www.krea.com/resources/images/System/krea-sm.png",
+    "sourceUrl": "https://www.krea.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "liquid-web-partner-program",
+    "field": "affiliateLink",
+    "expectedUrl": "https://liquidweb.com/partner-program",
+    "url": null,
+    "sourceUrl": null,
+    "observedOn": "2026-10-15",
+    "reason": "Program destination is 404; former program pages redirect to generic hosting homepage, not the advertised program"
+  },
+  {
+    "slug": "liquid-web-partner-program",
+    "field": "websiteUrl",
+    "expectedUrl": "https://liquidweb.com/partner-program",
+    "url": null,
+    "sourceUrl": null,
+    "observedOn": "2026-10-15",
+    "reason": "Program destination is 404; former program pages redirect to generic hosting homepage, not the advertised program"
+  },
+  {
+    "slug": "logomeai",
+    "field": "affiliateLink",
+    "expectedUrl": "https://logomeai.partnerlinks.io/qixva38jv07p",
+    "url": null,
+    "sourceUrl": null,
+    "observedOn": "2026-10-15",
+    "reason": "Commercial destination is 404; official root is also 404; no valid replacement"
+  },
+  {
+    "slug": "logomeai",
+    "field": "websiteUrl",
+    "expectedUrl": "https://logomeai.partnerlinks.io/qixva38jv07p",
+    "url": null,
+    "sourceUrl": null,
+    "observedOn": "2026-10-15",
+    "reason": "Commercial destination is 404; official root is also 404; no valid replacement"
+  },
+  {
+    "slug": "loom",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.loom.com/favicon.ico",
+    "url": "https://cdn.sanity.io/images/pvn35iyy/production/6f62a5ee8e9e6a4a980876e632eb1f58c3125591-2400x1254.jpg",
+    "sourceUrl": "https://www.loom.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "magnific-ai",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://magnific.ai/favicon.ico",
+    "url": "https://media.magnific.com/meta-tags-social/mg-home-og.jpg?w=1200&h=675",
+    "sourceUrl": "https://www.magnific.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "mari",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.foundry.com/sites/default/files/product-images/2023-05/Mari%20Preview%20thumbnail%20-%20640x360.jpg",
+    "url": "https://www.foundry.com/sites/default/files/product-images/2021-11/Mari-5.0-Webpage-Header---1920x500.jpg",
+    "sourceUrl": "https://www.foundry.com/products/mari",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "masv",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://massive.io/wp-content/uploads/2023/09/MASV-page-thumbnail-sept23.png",
+    "url": "https://masv.io/cdn-cgi/image/format=jpeg,quality=80/https://masv.io/img-original/https%3A%2F%2Fcdn.prod.website-files.com%2F69f2bb1a3268ff2bfd7df335%2F6a46ce1e641e26e565039e3f_MASV%2520Feature%2520Image.png",
+    "sourceUrl": "https://masv.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "meta-ads",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&amp;ab_page=CMS&amp;ab_entry=797459857892055&amp;version=1782606481&amp;transcode_extension=webp",
+    "url": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=797459857892055&version=1791980160&transcode_extension=webp",
+    "sourceUrl": "https://www.facebook.com/business/ads",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "metabase",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.metabase.com/images/opengraph/home-og.png",
+    "url": "https://cdn.metabase.com/images/opengraph/home-og.webp",
+    "sourceUrl": "https://www.metabase.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "nearst",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://near.st/og-image.png",
+    "url": null,
+    "sourceUrl": "https://near.st/",
+    "observedOn": "2026-10-15",
+    "reason": "Confirmed missing media; no validated image replacement"
+  },
+  {
+    "slug": "onetrust",
+    "field": "ogImageUrl",
+    "expectedUrl": "/content/dam/onetrust/ot-thumbnail-onetrust-black.png",
+    "url": "https://www.onetrust.com/content/dam/onetrust/ot-thumbnail-onetrust-black.png",
+    "sourceUrl": "https://www.onetrust.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "pika-labs",
+    "field": "galleryImages",
+    "expectedUrl": "https://pika.art/images/og.jpeg",
+    "url": "https://pika.art/brand/opengraph.png",
+    "sourceUrl": "https://pika.art/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "pika-labs",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://pika.art/_next/image?url=%2Fimages%2Flanding%2Fapi-club-banner-bg.webp&w=3840&q=75",
+    "url": "https://pika.art/brand/opengraph.png",
+    "sourceUrl": "https://pika.art/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "pluraleyes",
+    "field": "affiliateLink",
+    "expectedUrl": "https://www.maxon.net/red-giant/pluraleyes",
+    "url": "https://www.maxon.net/en/article/pluraleyes-to-enter-limited-maintenance-mode",
+    "sourceUrl": "https://www.maxon.net/en/article/pluraleyes-to-enter-limited-maintenance-mode",
+    "observedOn": "2026-10-15",
+    "reason": "Official maintenance notice replaces removed acquisition page; no offer claimed"
+  },
+  {
+    "slug": "prisma",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://www.prisma.io/og/og-index.png",
+    "url": "https://www.prisma.io/og.png",
+    "sourceUrl": "https://www.prisma.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "react-hook-form",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://raw.githubusercontent.com/react-hook-form/documentation/master/src/images/react-hook-form-og.png",
+    "url": "https://react-hook-form.com/images/react-hook-form-og.png",
+    "sourceUrl": "https://react-hook-form.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "redis",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://redis.io/_next/static/media/open-graph.0ec72f52.png",
+    "url": "https://redis.io/_next/static/immutable/media/open-graph.2wot1rsqh2ybe.png",
+    "sourceUrl": "https://redis.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "saleor",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://saleor-qwmgqqnc9-saleorcommerce.vercel.app/opengraph-image.png",
+    "url": null,
+    "sourceUrl": "https://saleor.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Confirmed missing media; no validated image replacement"
+  },
+  {
+    "slug": "screen-studio",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://screen.studio/og-main-2.png",
+    "url": "https://screen.studio/opengraph-image?4dbb513afe306dc0",
+    "sourceUrl": "https://screen.studio/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "sellfy",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://wf-assets.sellfy.com/6849a70cf522bf852d943fa2_sellfy-og-min.png",
+    "url": "https://d369wu82uo9y4b.cloudfront.net/_astro/sellfy-og.DhZsN1Po.png",
+    "sourceUrl": "https://sellfy.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "stock-footage",
+    "field": "ogImageUrl",
+    "expectedUrl": "assets/images/bg8.jpg",
+    "url": null,
+    "sourceUrl": "https://stockfootage.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Relative URL is not a ToolTrim asset; official resolved image URL returns HTML"
+  },
+  {
+    "slug": "visualcv",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://tooltrim.com/og-screenshots/visualcv.jpg",
+    "url": null,
+    "sourceUrl": "https://www.visualcv.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Confirmed missing media; no validated image replacement"
+  },
+  {
+    "slug": "webhooks",
+    "field": "ogImageUrl",
+    "expectedUrl": "/banner.png",
+    "url": "https://webhooks.fyi/banner.png",
+    "sourceUrl": "https://webhooks.fyi/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "wetransfer",
+    "field": "ogImageUrl",
+    "expectedUrl": "/wt-facebook.png",
+    "url": null,
+    "sourceUrl": "https://wetransfer.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Missing local URL; current official OG is only 200x200, use existing logo fallback"
+  },
+  {
+    "slug": "whimsical",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://whimsical.com/_next_public/cards/default.png",
+    "url": "https://whimsical.com/_next_public/cards/default-260714.png",
+    "sourceUrl": "https://whimsical.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "wistia",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://images.ctfassets.net/buksmp4dkugj/iE7tNEpx71bpM630sHTxD/17d9755ecd7bbd53a99e9c606877e22b/Home-MetaImage.jpg?w=1200&amp;h=630&amp;fit=fill&amp;fl=progressive",
+    "url": "https://images.ctfassets.net/j7pfe8y48ry3/53S36T23ev4ndWVPxAIrJp/8eb65aedf2363c144258866331c08f25/Home-MetaImage.jpg?w=1200&h=630&fit=fill&fl=progressive",
+    "sourceUrl": "https://wistia.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "youform",
+    "field": "ogImageUrl",
+    "expectedUrl": "https://youform.com/assets/images/youform-builder.png",
+    "url": "https://youform.com/assets/images/youform-og-sunflower.png",
+    "sourceUrl": "https://youform.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Verified official current image or existing official local media"
+  },
+  {
+    "slug": "zoom-ai-companion",
+    "field": "websiteUrl",
+    "expectedUrl": "https://zoom.us/ai-assistant",
+    "url": "https://www.zoom.com/en/products/ai-assistant/",
+    "sourceUrl": "https://www.zoom.com/en/products/ai-assistant/",
+    "observedOn": "2026-10-15",
+    "reason": "Current official product destination"
+  },
+  {
+    "slug": "snov-io",
+    "field": "websiteUrl",
+    "expectedUrl": " campagnes).",
+    "url": "https://snov.io/",
+    "sourceUrl": "https://snov.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Official publisher website verified; replaces text fragment misparsed as URL"
+  },
+  {
+    "slug": "snov-io",
+    "field": "affiliateLink",
+    "expectedUrl": " campagnes).",
+    "url": null,
+    "sourceUrl": "https://snov.io/",
+    "observedOn": "2026-10-15",
+    "reason": "Invalid text fragment removed; no affiliate tracking URL invented"
+  },
+  {
+    "slug": "plutio",
+    "field": "websiteUrl",
+    "expectedUrl": " finances).",
+    "url": "https://www.plutio.com/",
+    "sourceUrl": "https://www.plutio.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Official publisher website verified; replaces text fragment misparsed as URL"
+  },
+  {
+    "slug": "plutio",
+    "field": "affiliateLink",
+    "expectedUrl": " finances).",
+    "url": null,
+    "sourceUrl": "https://www.plutio.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Invalid text fragment removed; no affiliate tracking URL invented"
+  },
+  {
+    "slug": "elfsight",
+    "field": "websiteUrl",
+    "expectedUrl": " formulaires…).",
+    "url": "https://elfsight.com/",
+    "sourceUrl": "https://elfsight.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Official publisher website verified; replaces text fragment misparsed as URL"
+  },
+  {
+    "slug": "elfsight",
+    "field": "affiliateLink",
+    "expectedUrl": " formulaires…).",
+    "url": null,
+    "sourceUrl": "https://elfsight.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Invalid text fragment removed; no affiliate tracking URL invented"
+  },
+  {
+    "slug": "vcita",
+    "field": "websiteUrl",
+    "expectedUrl": " paiements).",
+    "url": "https://www.vcita.com/",
+    "sourceUrl": "https://www.vcita.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Official publisher website verified; replaces text fragment misparsed as URL"
+  },
+  {
+    "slug": "vcita",
+    "field": "affiliateLink",
+    "expectedUrl": " paiements).",
+    "url": null,
+    "sourceUrl": "https://www.vcita.com/",
+    "observedOn": "2026-10-15",
+    "reason": "Invalid text fragment removed; no affiliate tracking URL invented"
+  }
+]

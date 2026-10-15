@@ -1,0 +1,13 @@
+
+> vite_react_shadcn_ts@0.0.0 validate:design-tokens
+> node scripts/validate-design-tokens.mjs
+
+Dette de design (le cliquet n'autorise que la baisse)
+
+   137  couleurs en dur dans index.css   → var(--color-*)   [stable]
+   223  rayons littéraux dans index.css  → var(--radius*)   [stable]
+    15  couleurs en dur dans les TSX     → var(--color-*)   [stable]
+     0  rayons littéraux dans les TSX    → var(--radius*)   [stable]
+   117  styles inline dans les TSX       → classe CSS   [mieux -8]
+
+OK — dette en baisse. Pensez à figer le gain : -- --update-baseline

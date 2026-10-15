@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-09",
+  "user_authorized_preactivation_isolated_namespace": true,
+  "databaseId": "3beef924-b484-4891-b3ab-381e409635f7",
+  "namespace": "tt:recipe:e9882854-c90b-44be-af2e-7549d3436921",
+  "transport": "Upstash browser CLI; inlined equivalent reservation/transition bodies; not complete application REST path",
+  "initial_registry_hlen": 0,
+  "initial_attempt": "CLI parser rejected escaped newlines before executing mutations; reformatted single line",
+  "result": {
+    "cleanup": true,
+    "error": "",
+    "fixtureRecordBytes": 566,
+    "parallelReservationsTested": false,
+    "productionRegistryEmpty": true,
+    "realEmails": 0,
+    "realPayments": 0,
+    "reservationsSequential": 20,
+    "status": "PASS"
+  },
+  "branches": [
+    "identical replay",
+    "content conflict",
+    "checkout conflict",
+    "exclusive lease",
+    "wrong lease owner rejected",
+    "uncertain recovery retains provider key/first attempt",
+    "sent no resend",
+    "suspended no delivery and receipt retained",
+    "24h ambiguity reconciled",
+    "90-day archive removes payload but retains checkout",
+    "HSCAN support"
+  ],
+  "quota_ui": {
+    "commands_before": 0,
+    "commands_after": 0,
+    "counts_delayed_or_unavailable": true,
+    "bandwidth_after": "115 B",
+    "storage_after": "0 B",
+    "cost_after": "$0.00"
+  },
+  "capacity_estimate": null,
+  "rest_concurrency_recipe": "pending private local credential configuration",
+  "auto_review_rejection": {
+    "action": "encrypted credential material written to connector output for transfer",
+    "reason": "no proof of direct private routing; violates no-token-in-chat/logs constraint",
+    "workaround_attempted": false,
+    "safe_alternative": "Upstash CLI, no credential extraction/transfer"
+  }
+}

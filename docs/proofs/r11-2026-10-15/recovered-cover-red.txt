@@ -1,0 +1,32 @@
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+ ❯ src/lib/toolUrlCorrections.test.ts (7 tests | 1 failed) 8ms
+     × recognizes only an exact verified replacement as eligible to recover a blocked cover 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/toolUrlCorrections.test.ts > audited catalogue URL corrections > recognizes only an exact verified replacement as eligible to recover a blocked cover
+AssertionError: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ src/lib/toolUrlCorrections.test.ts:36:91
+     34|   });
+     35|   it('recognizes only an exact verified replacement as eligible to rec…
+     36|     expect(isAuditedToolCoverUrl('ae-gifgun', '/tool-media/ae-gifgun/o…
+       |                                                                                           ^
+     37|     expect(isAuditedToolCoverUrl('ae-gifgun', '/og-screenshots/ae-gifg…
+     38|     expect(isAuditedToolCoverUrl('ae-gifgun', '/future-unknown-cover.p…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 passed (7)
+   Start at  10:46:25
+   Duration  567ms (transform 53ms, setup 98ms, import 43ms, tests 8ms, environment 220ms)

@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import typography from "@tailwindcss/typography";
 import animate from "tailwindcss-animate";
 
 export default {
@@ -17,7 +16,6 @@ export default {
   ],
   prefix: "",
   // Editorial HTML lives in posts JSON, outside the source glob.
-  safelist: ['ga-cta-btn'],
   theme: {
     container: {
       center: true,
@@ -145,5 +143,5 @@ export default {
       },
     },
   },
-  plugins: [animate, typography],
+  plugins: [animate],
 } satisfies Config;

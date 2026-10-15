@@ -1,0 +1,23 @@
+{
+  "tools_v4.json": {
+    "records": 1349,
+    "fields": 62,
+    "slugs": 54,
+    "fieldNames": [
+      "ogImageUrl",
+      "affiliateLink",
+      "websiteUrl",
+      "galleryImages"
+    ]
+  },
+  "tools_index.json": {
+    "records": 1349,
+    "fields": 58,
+    "slugs": 54,
+    "fieldNames": [
+      "ogImageUrl",
+      "affiliateLink",
+      "websiteUrl"
+    ]
+  }
+}

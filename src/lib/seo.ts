@@ -37,6 +37,7 @@ export const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "alternatives-freshservice-2026": "freshservice-alternatives-2026",
   "zapier-vs-make-vs-n8n-2026-automatiser-stack": "zapier-vs-make-vs-n8n-pricing",
   "agents-ia-freelances-2026-lesquels-valent-le-coup": "ai-agents-freelancers-2026",
+  "plateforme-ecommerce-solo-petite-equipe-produits-physiques": "ecommerce-platform-solo-small-team-physical-products-2026",
   "meilleurs-outils-developpeur-freelance": "best-tools-freelance-developer",
   "meilleurs-outils-designer-freelance": "best-tools-freelance-designer",
   "meilleurs-outils-consultant-freelance": "best-tools-freelance-consultant",

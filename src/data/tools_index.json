@@ -3699,7 +3699,7 @@
       "paid": "Annual Pro plan; Enterprise by quote."
     },
     "affiliateLink": "https://www.audionotes.app/",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/audionotes.jpg",
+    "ogImageUrl": "https://www.audionotes.app/opengraph-image.png",
     "substitution_cluster_v2": "ai-note-taking",
     "functional_needs": [
       "knowledge-management",
@@ -5593,7 +5593,6 @@
     "defaultMonthlyPrice": 8.28,
     "compareMonthlyPrice": 8.28,
     "websiteUrl": "https://www.brandcrowd.com",
-    "ogImageUrl": "https://dcstatic.com/images/brandcrowd/logos/brandcrowd-logo-black-bc9e817e0f.en-us.svg",
     "substitution_cluster_v2": "logo-generators",
     "functional_needs": [
       "branding",
@@ -5676,7 +5675,6 @@
     },
     "defaultMonthlyPrice": 30,
     "websiteUrl": "https://brandpad.io",
-    "ogImageUrl": "https://brandpad.io/uploads/images/_1200x630_crop_center-center_82_none/brandpad_logo.png?mtime=1612868009",
     "substitution_cluster_v2": "design-system-tooling",
     "functional_needs": [
       "asset-library",
@@ -7578,7 +7576,7 @@
     "defaultMonthlyPrice": 27,
     "compareMonthlyPrice": 27,
     "websiteUrl": "https://www.chatbase.co",
-    "ogImageUrl": "https://www.chatbase.co/og-home.png",
+    "ogImageUrl": "https://www.chatbase.co/og-home.jpg",
     "substitution_cluster_v2": "ai-chatbot-builder",
     "functional_needs": [
       "chatbot",
@@ -8619,7 +8617,7 @@
       "paid": "Paid version available"
     },
     "compareMonthlyPrice": 0,
-    "affiliateLink": "https://cloudtask.com/marketplace",
+    "affiliateLink": "https://cloudtask.com/",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
       "outsourcing"
@@ -10190,7 +10188,7 @@
     "defaultMonthlyPrice": 8,
     "compareMonthlyPrice": 8,
     "affiliateLink": "https://www.itsdart.com/",
-    "ogImageUrl": "https://www.dartai.com/_dart/assets/default-open-graph-73d1569d.png",
+    "ogImageUrl": "https://www.dartai.com/_dart/assets/default-open-graph-a89003f7.png",
     "tool_type": "metier",
     "substitution_cluster_v2": "project-management",
     "functional_needs": [
@@ -10370,7 +10368,7 @@
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://www.datev.com",
-    "ogImageUrl": "https://www.datev.com/etc.clientlibs/datev.sites/clientlibs/clientlib-site/resources/images/logo.png",
+    "ogImageUrl": "https://www.datev.com/etc.clientlibs/datev.sites/clientlibs/clientlib-bottom-async/resources/images/logo.png",
     "tool_type": "metier",
     "substitution_cluster_v2": "erp-sync",
     "functional_needs": [
@@ -11259,7 +11257,7 @@
     "defaultMonthlyPrice": 261.92,
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://docyt.com",
-    "ogImageUrl": "https://www.docyt.com/wp-content/uploads/2023/07/social-image-financial-insights.jpeg",
+    "ogImageUrl": "https://www.docyt.com/static/img/og-default.png",
     "tool_type": "gestion",
     "substitution_cluster_v2": "finance-ops",
     "functional_needs": [
@@ -12273,7 +12271,7 @@
         "period": "monthly"
       }
     ],
-    "affiliateLink": " formulaires…).",
+    "websiteUrl": "https://elfsight.com/",
     "substitution_cluster_v2": "email-outreach",
     "functional_needs": [
       "website-widgets"
@@ -13004,7 +13002,7 @@
       }
     ],
     "websiteUrl": "https://expo.dev",
-    "ogImageUrl": "https://static.expo.dev/static/home/9-2025/og-image.png",
+    "ogImageUrl": "https://static.expo.dev/static/home/2026/og-image.png",
     "tool_type": "metier",
     "substitution_cluster_v2": "devops",
     "functional_needs": [
@@ -13211,7 +13209,7 @@
       }
     ],
     "affiliateLink": "https://usefathom.com",
-    "ogImageUrl": "https://usefathom.com/assets/src/share-usefathom.com.jpg",
+    "ogImageUrl": "https://usefathom.com/assets/src/social-share-default.png",
     "substitution_cluster_v2": "privacy-analytics",
     "functional_needs": [
       "privacy-analytics",
@@ -13848,7 +13846,7 @@
     "defaultMonthlyPrice": 24,
     "compareMonthlyPrice": 24,
     "affiliateLink": "https://weave.figma.com",
-    "ogImageUrl": "https://weave.figma.com/favicon.ico",
+    "ogImageUrl": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829db27001db19910ac428b_OG%20image%20option1.avif",
     "logo": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829dad31872740b3fb4f912_favicon.svg",
     "tool_type": "ia",
     "bundle_parent": "figma",
@@ -14482,7 +14480,7 @@
     },
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://flutter.dev",
-    "ogImageUrl": "/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
+    "ogImageUrl": "https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
     "tool_type": "metier",
     "substitution_cluster_v2": "nocode-web",
     "functional_needs": [
@@ -14615,7 +14613,7 @@
     },
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://fly.io",
-    "ogImageUrl": "https://fly.io/phx/images/preview/og-7ea9380853220ced249aaf88c2332937.jpg?vsn=d",
+    "ogImageUrl": "https://fly.io/phx/images/og/home-3f6c47b1e214994f1e91183548f93113.jpg?vsn=d",
     "substitution_cluster_v2": "cloud-hosting-paas",
     "functional_needs": [
       "deploiement",
@@ -15873,7 +15871,7 @@
       }
     ],
     "affiliateLink": "https://aescripts.com/gifgun",
-    "ogImageUrl": "/og-screenshots/ae-gifgun.png",
+    "ogImageUrl": "/tool-media/ae-gifgun/official-demo.jpg",
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
     "substitution_cluster_v2": "plugin-after-effects",
@@ -16163,7 +16161,7 @@
     "defaultMonthlyPrice": 25,
     "compareMonthlyPrice": 15,
     "affiliateLink": "https://glideapps.com",
-    "ogImageUrl": "https://www.glideapps.com/opengraph-image-1udkml.jpg?opengraph-image.17dzzryfiu_y8.jpg",
+    "ogImageUrl": "https://www.glideapps.com/opengraph-image-dxwb7g.jpg?opengraph-image.003b7v4xv13y2.jpg",
     "substitution_cluster_v2": "automation-orchestration",
     "functional_needs": [
       "app-builder"
@@ -16197,7 +16195,7 @@
     "defaultMonthlyPrice": 79,
     "compareMonthlyPrice": 79,
     "affiliateLink": "https://glyphe.eu/",
-    "ogImageUrl": "https://glyphe.eu/favicon.ico",
+    "ogImageUrl": "https://glyphe.eu/api/og",
     "logo": "/logos/glyphe.svg",
     "tool_type": "metier",
     "substitution_cluster_v2": "finance-cgp-compliance",
@@ -16753,7 +16751,6 @@
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://googlemaps.com",
-    "ogImageUrl": "https://maps.google.com/maps/api/staticmap?center=43.5355648%2C5.4657024&amp;zoom=14&amp;size=900x900&amp;language=en&amp;sensor=false&amp;key=AIzaSyBoYjeRtfVI0Jd8Q_9mnflo9i4sOYpShB0&amp;signature=R_TIultUYRsEt1fU1H_iRC5Yhyk",
     "logo": "https://logo.clearbit.com/googlemaps.com",
     "tool_type": "specialise",
     "substitution_cluster_v2": "mapping-api",
@@ -18213,7 +18210,7 @@
     "defaultMonthlyPrice": 25.11,
     "compareMonthlyPrice": 25.11,
     "affiliateLink": "https://heygen.com",
-    "ogImageUrl": "https://www.heygen.com/_next/image?url=%2Fassets_2025_redesign%2F_next%2Fstatic%2Fimmutable%2Fmedia%2Fhero-left.10_gc6gwg7h-8.png&w=3840&q=75",
+    "ogImageUrl": "https://cdn.sanity.io/images/pdhqcmb1/production/170e1d983053e0d80a0e724303ac0787efd58551-1200x630.jpg?fit=max&fm=png",
     "tool_type": "ia",
     "substitution_cluster_v2": "ai-avatar-video",
     "functional_needs": [
@@ -18255,7 +18252,7 @@
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://www.hibob.com",
-    "ogImageUrl": "https://res.cloudinary.com/hibob-website-prod/images/f_auto,q_auto/v1765722016/wp-website/New-Homepage-sharing-banner/New-Homepage-sharing-banner.png?_i=AA",
+    "ogImageUrl": "https://new.hibob.com/app/uploads/2026/07/Hompage-OG.jpg",
     "tool_type": "metier",
     "substitution_cluster_v2": "hris-sync",
     "functional_needs": [
@@ -18754,7 +18751,7 @@
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://humaans.io",
-    "ogImageUrl": "https://humaans.io/_next/static/images/humaans-cover-2025-1440@1x-63829fe01312a3c8.png",
+    "ogImageUrl": "https://humaans.io/_next/static/media/generated.1iqq6uerzqvin.png",
     "tool_type": "metier",
     "substitution_cluster_v2": "hris-sync",
     "functional_needs": [
@@ -19664,7 +19661,7 @@
       }
     ],
     "affiliateLink": "https://intercom.com",
-    "ogImageUrl": "https://www.intercom.com/intercom-marketing-site/img/social/default.jpg",
+    "ogImageUrl": "https://cdn.sanity.io/images/4bgok82s/monorepo-static-assets/9d9c4802c510e9279b7525a4dd289dd793725b83-2400x1260.jpg",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
       "onboarding-users",
@@ -19925,7 +19922,7 @@
       "paid": "Plus and Pro plans, billed monthly or annually."
     },
     "affiliateLink": "https://jenni.ai/",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/jenni.jpg",
+    "ogImageUrl": "https://framerusercontent.com/images/z4JrDRfRywzEnZ5jahSZEkA9dI.png",
     "substitution_cluster_v2": "ai-writing-assistant",
     "functional_needs": [
       "knowledge-base",
@@ -21090,7 +21087,7 @@
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://krea.com",
-    "ogImageUrl": "/resources/images/System/krea-sm.png",
+    "ogImageUrl": "https://www.krea.com/resources/images/System/krea-sm.png",
     "logo": "https://logo.clearbit.com/krea.com",
     "tool_type": "ia",
     "bundle_parent": "krea-ai",
@@ -22804,7 +22801,6 @@
     },
     "defaultMonthlyPrice": 15,
     "compareMonthlyPrice": 15,
-    "affiliateLink": "https://liquidweb.com/partner-program",
     "substitution_cluster_v2": "website-app-builder",
     "functional_needs": [
       "web-hosting"
@@ -22944,7 +22940,6 @@
     },
     "defaultMonthlyPrice": 1.45,
     "compareMonthlyPrice": 1.45,
-    "affiliateLink": "https://logomeai.partnerlinks.io/qixva38jv07p",
     "ogImageUrl": "https://cdn.prod.website-files.com/65b8d9e0af2c51a8738e2bf7/665607f563f2220aa5f7116d_Logome%20Logo.svg",
     "tool_type": "ia",
     "substitution_cluster_v2": "design-support",
@@ -23186,7 +23181,7 @@
       }
     ],
     "affiliateLink": "https://loom.com",
-    "ogImageUrl": "https://www.loom.com/favicon.ico",
+    "ogImageUrl": "https://cdn.sanity.io/images/pvn35iyy/production/6f62a5ee8e9e6a4a980876e632eb1f58c3125591-2400x1254.jpg",
     "tool_type": "gestion",
     "substitution_cluster_v2": "async-video-messaging",
     "functional_needs": [
@@ -24090,7 +24085,7 @@
       }
     ],
     "affiliateLink": "https://www.magnific.com",
-    "ogImageUrl": "https://magnific.ai/favicon.ico",
+    "ogImageUrl": "https://media.magnific.com/meta-tags-social/mg-home-og.jpg?w=1200&h=675",
     "tool_type": "ia",
     "substitution_cluster_v2": "ai-image-enhancement",
     "functional_needs": [
@@ -24541,7 +24536,7 @@
     "defaultMonthlyPrice": 32,
     "compareMonthlyPrice": 32,
     "affiliateLink": "https://www.foundry.com/products/mari",
-    "ogImageUrl": "https://www.foundry.com/sites/default/files/product-images/2023-05/Mari%20Preview%20thumbnail%20-%20640x360.jpg",
+    "ogImageUrl": "https://www.foundry.com/sites/default/files/product-images/2021-11/Mari-5.0-Webpage-Header---1920x500.jpg",
     "tool_type": "metier",
     "substitution_cluster_v2": "3d-software",
     "functional_needs": [
@@ -24679,7 +24674,7 @@
     "defaultMonthlyPrice": 10,
     "compareMonthlyPrice": 10,
     "affiliateLink": "https://massive.io",
-    "ogImageUrl": "https://massive.io/wp-content/uploads/2023/09/MASV-page-thumbnail-sept23.png",
+    "ogImageUrl": "https://masv.io/cdn-cgi/image/format=jpeg,quality=80/https://masv.io/img-original/https%3A%2F%2Fcdn.prod.website-files.com%2F69f2bb1a3268ff2bfd7df335%2F6a46ce1e641e26e565039e3f_MASV%2520Feature%2520Image.png",
     "substitution_cluster_v2": "content-creation",
     "functional_needs": [
       "file-transfer"
@@ -25335,7 +25330,7 @@
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://facebook.com/business/ads",
-    "ogImageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&amp;ab_page=CMS&amp;ab_entry=797459857892055&amp;version=1782606481&amp;transcode_extension=webp",
+    "ogImageUrl": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=797459857892055&version=1791980160&transcode_extension=webp",
     "logo": "https://logo.clearbit.com/facebook.com",
     "tool_type": "specialise",
     "substitution_cluster_v2": "ad-platforms",
@@ -25416,7 +25411,7 @@
       }
     ],
     "affiliateLink": "https://metabase.com",
-    "ogImageUrl": "https://www.metabase.com/images/opengraph/home-og.png",
+    "ogImageUrl": "https://cdn.metabase.com/images/opengraph/home-og.webp",
     "tool_type": "metier",
     "substitution_cluster_v2": "analytics",
     "functional_needs": [
@@ -27069,7 +27064,6 @@
     "defaultMonthlyPrice": 10,
     "compareMonthlyPrice": 10,
     "affiliateLink": "https://near.st",
-    "ogImageUrl": "https://near.st/og-image.png",
     "substitution_cluster_v2": "email-outreach",
     "functional_needs": [
       "local-retail"
@@ -28377,7 +28371,7 @@
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://www.onetrust.com",
-    "ogImageUrl": "/content/dam/onetrust/ot-thumbnail-onetrust-black.png",
+    "ogImageUrl": "https://www.onetrust.com/content/dam/onetrust/ot-thumbnail-onetrust-black.png",
     "tool_type": "metier",
     "substitution_cluster_v2": "security-compliance",
     "functional_needs": [
@@ -30595,7 +30589,7 @@
       }
     ],
     "affiliateLink": "https://pika.art",
-    "ogImageUrl": "https://pika.art/_next/image?url=%2Fimages%2Flanding%2Fapi-club-banner-bg.webp&w=3840&q=75",
+    "ogImageUrl": "https://pika.art/brand/opengraph.png",
     "tool_type": "ia",
     "substitution_cluster_v2": "ai-video-generation",
     "functional_needs": [
@@ -31256,7 +31250,7 @@
       "free": "No public download for new users.",
       "paid": "Discontinued; no new licence sold."
     },
-    "affiliateLink": "https://www.maxon.net/red-giant/pluraleyes",
+    "affiliateLink": "https://www.maxon.net/en/article/pluraleyes-to-enter-limited-maintenance-mode",
     "websiteUrl": "https://support.maxon.net/hc/en-us/articles/7389361453340-PluralEyes-Limited-Maintenance-Mode",
     "ogImageUrl": "https://img.youtube.com/vi/oNwq2w2mNuA/maxresdefault.jpg",
     "tool_type": "plugin",
@@ -31309,7 +31303,7 @@
         "period": "monthly"
       }
     ],
-    "affiliateLink": " finances).",
+    "websiteUrl": "https://www.plutio.com/",
     "substitution_cluster_v2": "workspace-ops",
     "functional_needs": [
       "freelancer-tools"
@@ -32086,7 +32080,7 @@
       "paid": "Paid options may apply depending on hosting, team, or volume"
     },
     "websiteUrl": "https://www.prisma.io",
-    "ogImageUrl": "https://www.prisma.io/og/og-index.png",
+    "ogImageUrl": "https://www.prisma.io/og.png",
     "tool_type": "metier",
     "substitution_cluster_v2": "nocode-web",
     "functional_needs": [
@@ -33836,7 +33830,7 @@
       "paid": null
     },
     "websiteUrl": "https://react-hook-form.com",
-    "ogImageUrl": "https://raw.githubusercontent.com/react-hook-form/documentation/master/src/images/react-hook-form-og.png",
+    "ogImageUrl": "https://react-hook-form.com/images/react-hook-form-og.png",
     "host_app": "react",
     "substitution_cluster_v2": "react-forms",
     "functional_needs": [
@@ -34497,7 +34491,7 @@
       "paid": "Paid options may apply depending on hosting, team, or volume"
     },
     "websiteUrl": "https://redis.io",
-    "ogImageUrl": "https://redis.io/_next/static/media/open-graph.0ec72f52.png",
+    "ogImageUrl": "https://redis.io/_next/static/immutable/media/open-graph.2wot1rsqh2ybe.png",
     "tool_type": "metier",
     "substitution_cluster_v2": "devops",
     "functional_needs": [
@@ -36384,7 +36378,6 @@
       "paid": "Paid options may apply depending on hosting, team, or volume"
     },
     "websiteUrl": "https://saleor.io",
-    "ogImageUrl": "https://saleor-qwmgqqnc9-saleorcommerce.vercel.app/opengraph-image.png",
     "substitution_cluster_v2": "ecommerce",
     "functional_needs": [
       "ecommerce"
@@ -36931,7 +36924,7 @@
     "defaultMonthlyPrice": 8.28,
     "compareMonthlyPrice": 8.28,
     "websiteUrl": "https://screen.studio",
-    "ogImageUrl": "https://screen.studio/og-main-2.png",
+    "ogImageUrl": "https://screen.studio/opengraph-image?4dbb513afe306dc0",
     "substitution_cluster_v2": "screen-recording",
     "functional_needs": [
       "screen-recording",
@@ -37272,7 +37265,7 @@
       }
     ],
     "affiliateLink": "https://sellfy.com",
-    "ogImageUrl": "https://wf-assets.sellfy.com/6849a70cf522bf852d943fa2_sellfy-og-min.png",
+    "ogImageUrl": "https://d369wu82uo9y4b.cloudfront.net/_astro/sellfy-og.DhZsN1Po.png",
     "substitution_cluster_v2": "website-app-builder",
     "functional_needs": [
       "online-store-platform"
@@ -38893,7 +38886,7 @@
       "paid": "Paid version available"
     },
     "compareMonthlyPrice": 0,
-    "affiliateLink": " campagnes).",
+    "websiteUrl": "https://snov.io/",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
       "cold-email"
@@ -39939,7 +39932,6 @@
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://stockfootage.com",
-    "ogImageUrl": "assets/images/bg8.jpg",
     "logo": "https://logo.clearbit.com/stockfootage.com",
     "tool_type": "specialise",
     "functional_needs": [
@@ -44660,7 +44652,7 @@
       "paid": "Version payante disponible"
     },
     "compareMonthlyPrice": 0,
-    "affiliateLink": " paiements).",
+    "websiteUrl": "https://www.vcita.com/",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
       "client-management"
@@ -45118,7 +45110,6 @@
       "paid": "Monthly or quarterly Pro membership."
     },
     "affiliateLink": "https://www.visualcv.com/",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/visualcv.jpg",
     "substitution_cluster_v2": "resume-builder",
     "functional_needs": [
       "ats",
@@ -45681,7 +45672,7 @@
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
     "affiliateLink": "https://webhooks.fyi",
-    "ogImageUrl": "/banner.png",
+    "ogImageUrl": "https://webhooks.fyi/banner.png",
     "logo": "https://logo.clearbit.com/webhooks.fyi",
     "tool_type": "specialise",
     "functional_needs": [
@@ -45831,7 +45822,6 @@
       }
     ],
     "websiteUrl": "https://wetransfer.com",
-    "ogImageUrl": "/wt-facebook.png",
     "substitution_cluster_v2": "file-transfer",
     "functional_needs": [
       "collaboration"
@@ -45946,7 +45936,7 @@
     "defaultMonthlyPrice": 9.2,
     "compareMonthlyPrice": 9.2,
     "websiteUrl": "https://whimsical.com",
-    "ogImageUrl": "https://whimsical.com/_next_public/cards/default.png",
+    "ogImageUrl": "https://whimsical.com/_next_public/cards/default-260714.png",
     "substitution_cluster_v2": "design-prototyping",
     "functional_needs": [
       "collaboration",
@@ -46102,7 +46092,7 @@
       }
     ],
     "affiliateLink": "https://wistia.com",
-    "ogImageUrl": "https://images.ctfassets.net/buksmp4dkugj/iE7tNEpx71bpM630sHTxD/17d9755ecd7bbd53a99e9c606877e22b/Home-MetaImage.jpg?w=1200&amp;h=630&amp;fit=fill&amp;fl=progressive",
+    "ogImageUrl": "https://images.ctfassets.net/j7pfe8y48ry3/53S36T23ev4ndWVPxAIrJp/8eb65aedf2363c144258866331c08f25/Home-MetaImage.jpg?w=1200&h=630&fit=fill&fl=progressive",
     "logo": "https://logo.clearbit.com/wistia.com",
     "tool_type": "specialise",
     "substitution_cluster_v2": "business-video-hosting",
@@ -46981,7 +46971,7 @@
       }
     ],
     "affiliateLink": "https://youform.com",
-    "ogImageUrl": "https://youform.com/assets/images/youform-builder.png",
+    "ogImageUrl": "https://youform.com/assets/images/youform-og-sunflower.png",
     "substitution_cluster_v2": "form-builders",
     "functional_needs": [
       "form-builder"
@@ -47612,7 +47602,7 @@
     "categoryId": "ai-general",
     "shortDescription": "Assistant IA agentic pour Zoom Meetings rebaptisé ZoomMate (juin 2026) qui capture le contexte des réunions, génère des résumés, extraits des actions, et exécute des suivis automatisés dans les systèmes connectés (Salesforce, Jira, Slack, etc.).",
     "shortDescriptionEn": "AI assistant built into Zoom: meeting summaries, action items, smart compose.",
-    "websiteUrl": "https://zoom.us/ai-assistant",
+    "websiteUrl": "https://www.zoom.com/en/products/ai-assistant/",
     "tool_type": "ia",
     "bundle_parent": "zoom-pro",
     "substitution_cluster_v2": "ai-note-taking",
@@ -48152,7 +48142,7 @@
       }
     ],
     "websiteUrl": "https://klark.app/",
-    "ogImageUrl": "https://klark.app/mockups/Mockup_Klark_dashboard.png",
+    "ogImageUrl": "https://klark.app/icons/og-default.jpg?v=2",
     "logo": "https://logo.clearbit.com/klark.app",
     "tool_type": "gestion",
     "substitution_cluster_v2": "compte-pro",
@@ -54583,6 +54573,57 @@
     ],
     "alternatives": [
       "product-hunt"
+    ]
+  },
+  {
+    "id": "newbi",
+    "slug": "newbi",
+    "name": "Newbi",
+    "categoryId": "finance",
+    "shortDescription": "Facturation, devis, CRM client, connexion bancaire et trésorerie réunis sur une seule plateforme pour freelances et TPE françaises, avec un accès comptable gratuit inclus.",
+    "shortDescriptionEn": "Invoicing, quotes, client CRM, bank connection and cash flow in one platform for French freelancers and small businesses, with free accountant access included.",
+    "pricing": {
+      "free": "Essai de 30 jours, toutes les fonctionnalités Freelance, sans carte bancaire.",
+      "paid": "Dès 17,99 € TTC/mois (16,19 € en engagement annuel), formule Freelance."
+    },
+    "pricingEn": {
+      "free": "30-day trial, full Freelance features, no credit card required.",
+      "paid": "From €17.99 incl. tax/month (€16.19 billed annually), Freelance plan."
+    },
+    "defaultMonthlyPrice": 16.19,
+    "compareMonthlyPrice": 16.19,
+    "nativePrices": [
+      {
+        "amount": 16.19,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://www.newbi.fr",
+    "ogImageUrl": "https://www.newbi.fr/images/op-newbi.png",
+    "substitution_cluster_v2": "accounting-ops",
+    "functional_needs": [
+      "facturation",
+      "comptabilite",
+      "paiements"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "artisan-commercant",
+      "expert-comptable"
+    ],
+    "relevantFor": [
+      "Freelances et indépendants",
+      "TPE et petites agences",
+      "Cabinets d'expertise comptable"
+    ],
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
+    ],
+    "alternatives": [
+      "indy",
+      "tiime"
     ]
   }
 ]

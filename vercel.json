@@ -39,7 +39,7 @@
         { "key": "X-Frame-Options", "value": "DENY" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://datafa.st; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://rtfyfuwfdpnsogovkwai.supabase.co https://www.google-analytics.com https://www.googletagmanager.com https://cdn.simpleicons.org https://t3.gstatic.com https://icons.duckduckgo.com https://datafa.st; media-src 'self' https://piktochart.com https://resource.flexclip.com https://www.mybetterdayai.com https://assets.faceready.co https://maniana.ai; frame-src 'none'; object-src 'none'; base-uri 'self'" }
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://datafa.st; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://rtfyfuwfdpnsogovkwai.supabase.co https://*.google-analytics.com https://www.googletagmanager.com https://cdn.simpleicons.org https://t3.gstatic.com https://icons.duckduckgo.com https://datafa.st; media-src 'self' https://piktochart.com https://resource.flexclip.com https://www.mybetterdayai.com https://assets.faceready.co https://maniana.ai; frame-src 'none'; object-src 'none'; base-uri 'self'" }
       ]
     }
   ],
@@ -220,13 +220,6 @@
     { "source": "/en/guide/stack-redactrice-freelance", "destination": "/en/guide/stack-freelance-writer", "permanent": true },
     { "source": "/fr/guide/stack-freelance-writer", "destination": "/fr/guide/stack-redactrice-freelance", "permanent": true },
     { "source": "/en/guide/claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026", "destination": "/fr/guide/claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026", "permanent": true },
-    { "source": "/en/guide/meilleurs-outils-ia-freelances-2026", "destination": "/fr/guide/meilleurs-outils-ia-freelances-2026", "permanent": true },
-    { "source": "/en/guide/claude-opus-4-6-guide-complet-freelances", "destination": "/fr/guide/claude-opus-4-6-guide-complet-freelances", "permanent": true },
-    { "source": "/en/guide/alternatives-gratuites-notion-freelance-2026", "destination": "/fr/guide/alternatives-gratuites-notion-freelance-2026", "permanent": true },
-    { "source": "/en/guide/stack-minimaliste-freelance-2026", "destination": "/fr/guide/stack-minimaliste-freelance-2026", "permanent": true },
-    { "source": "/en/guide/stripe-freelance-tarifs-alternatives", "destination": "/fr/guide/stripe-freelance-tarifs-alternatives", "permanent": true },
-    { "source": "/en/guide/perplexity-vs-chatgpt-recherche", "destination": "/fr/guide/perplexity-vs-chatgpt-recherche", "permanent": true },
-    { "source": "/en/guide/notion-gratuit-vs-payant-vrai-calcul", "destination": "/fr/guide/notion-gratuit-vs-payant-vrai-calcul", "permanent": true },
     { "source": "/article/chatgpt-plus-utile", "destination": "/fr/guide/chatgpt-plus-utile-ou-inutile", "permanent": true },
     { "source": "/fr/article/chatgpt-plus-utile", "destination": "/fr/guide/chatgpt-plus-utile-ou-inutile", "permanent": true },
     { "source": "/blog/chatgpt-plus-utile", "destination": "/fr/guide/chatgpt-plus-utile-ou-inutile", "permanent": true },
@@ -259,10 +252,52 @@
     { "source": "/methodology", "destination": "/en/transparency", "permanent": true },
     { "source": "/blog/:slug", "destination": "/fr/guide/:slug", "permanent": true },
     { "source": "/blog", "destination": "/fr", "permanent": true },
-    { "source": "/guides", "destination": "/en/guides", "permanent": true }
+    { "source": "/guides", "destination": "/en/guides", "permanent": true },
+    {"source": "/:lang(fr|en)/cart", "destination": "/:lang/ma-stack", "permanent": true},
+    {"source": "/:lang(fr|en)/panier", "destination": "/:lang/ma-stack", "permanent": true},
+    {"source": "/:lang(fr|en)/v2", "destination": "/:lang", "permanent": true},
+    {"source": "/:lang(fr|en)/outils/:slug", "destination": "/:lang/tool/:slug", "permanent": true}
+,
+    {"source": "/fr/guide/chatgpt-pro-worth-it", "destination": "/fr/guide/chatgpt-plus-utile-ou-inutile", "permanent": true},
+    {"source": "/fr/guide/adobe-podcast-ai-free-limits-alternatives-2026", "destination": "/fr/guide/adobe-podcast-ai-gratuit-alternatives-2026", "permanent": true},
+    {"source": "/en/guide/adobe-podcast-ai-gratuit-alternatives-2026", "destination": "/en/guide/adobe-podcast-ai-free-limits-alternatives-2026", "permanent": true},
+    {"source": "/fr/guide/minimalist-saas-stack-freelancer-2026-under-50-euros", "destination": "/fr/guide/stack-saas-minimaliste-freelance-2026-moins-50-euros", "permanent": true},
+    {"source": "/en/guide/stack-saas-minimaliste-freelance-2026-moins-50-euros", "destination": "/en/guide/minimalist-saas-stack-freelancer-2026-under-50-euros", "permanent": true},
+    {"source": "/fr/guide/freshservice-alternatives-2026", "destination": "/fr/guide/alternatives-freshservice-2026", "permanent": true},
+    {"source": "/en/guide/alternatives-freshservice-2026", "destination": "/en/guide/freshservice-alternatives-2026", "permanent": true},
+    {"source": "/fr/guide/zapier-vs-make-vs-n8n-pricing", "destination": "/fr/guide/zapier-vs-make-vs-n8n-2026-automatiser-stack", "permanent": true},
+    {"source": "/en/guide/zapier-vs-make-vs-n8n-2026-automatiser-stack", "destination": "/en/guide/zapier-vs-make-vs-n8n-pricing", "permanent": true},
+    {"source": "/fr/guide/ai-agents-freelancers-2026", "destination": "/fr/guide/agents-ia-freelances-2026-lesquels-valent-le-coup", "permanent": true},
+    {"source": "/en/guide/agents-ia-freelances-2026-lesquels-valent-le-coup", "destination": "/en/guide/ai-agents-freelancers-2026", "permanent": true},
+    {"source": "/fr/guide/ecommerce-platform-solo-small-team-physical-products-2026", "destination": "/fr/guide/plateforme-ecommerce-solo-petite-equipe-produits-physiques", "permanent": true},
+    {"source": "/en/guide/plateforme-ecommerce-solo-petite-equipe-produits-physiques", "destination": "/en/guide/ecommerce-platform-solo-small-team-physical-products-2026", "permanent": true},
+    {"source": "/fr/guide/best-tools-freelance-developer", "destination": "/fr/guide/meilleurs-outils-developpeur-freelance", "permanent": true},
+    {"source": "/en/guide/meilleurs-outils-developpeur-freelance", "destination": "/en/guide/best-tools-freelance-developer", "permanent": true},
+    {"source": "/fr/guide/best-tools-freelance-designer", "destination": "/fr/guide/meilleurs-outils-designer-freelance", "permanent": true},
+    {"source": "/en/guide/meilleurs-outils-designer-freelance", "destination": "/en/guide/best-tools-freelance-designer", "permanent": true},
+    {"source": "/fr/guide/best-tools-freelance-consultant", "destination": "/fr/guide/meilleurs-outils-consultant-freelance", "permanent": true},
+    {"source": "/en/guide/meilleurs-outils-consultant-freelance", "destination": "/en/guide/best-tools-freelance-consultant", "permanent": true},
+    {"source": "/fr/guide/best-tools-freelance-content-creator", "destination": "/fr/guide/meilleurs-outils-createur-contenu-freelance", "permanent": true},
+    {"source": "/en/guide/meilleurs-outils-createur-contenu-freelance", "destination": "/en/guide/best-tools-freelance-content-creator", "permanent": true},
+    {"source": "/fr/guide/best-tools-freelance-ops-manager", "destination": "/fr/guide/meilleurs-outils-ops-manager-freelance", "permanent": true},
+    {"source": "/en/guide/meilleurs-outils-ops-manager-freelance", "destination": "/en/guide/best-tools-freelance-ops-manager", "permanent": true},
+    {"source": "/fr/guide/best-after-effects-plugins", "destination": "/fr/guide/meilleurs-plugins-after-effects", "permanent": true},
+    {"source": "/en/guide/meilleurs-plugins-after-effects", "destination": "/en/guide/best-after-effects-plugins", "permanent": true},
+    {"source": "/fr/guide/best-project-management-software-freelancers", "destination": "/fr/guide/meilleurs-logiciels-gestion-projet-freelance", "permanent": true},
+    {"source": "/en/guide/meilleurs-logiciels-gestion-projet-freelance", "destination": "/en/guide/best-project-management-software-freelancers", "permanent": true},
+    {"source": "/fr/guide/best-second-brain-apps", "destination": "/fr/guide/meilleures-applications-second-cerveau", "permanent": true},
+    {"source": "/en/guide/meilleures-applications-second-cerveau", "destination": "/en/guide/best-second-brain-apps", "permanent": true},
+    {"source": "/fr/guide/best-3d-render-engines", "destination": "/fr/guide/meilleurs-moteurs-rendu-3d", "permanent": true},
+    {"source": "/en/guide/meilleurs-moteurs-rendu-3d", "destination": "/en/guide/best-3d-render-engines", "permanent": true},
+    {"source": "/fr/guide/best-cloud-hosting-developers", "destination": "/fr/guide/meilleurs-hebergeurs-cloud-developpeurs", "permanent": true},
+    {"source": "/en/guide/meilleurs-hebergeurs-cloud-developpeurs", "destination": "/en/guide/best-cloud-hosting-developers", "permanent": true},
+    {"source": "/:lang(fr|en)/tool/clearbit", "destination": "/:lang/tool/hubspot", "permanent": true},
+    {"source": "/:lang(fr|en)/tool/clearbit/:path*", "destination": "/:lang/tool/hubspot/:path*", "permanent": true}
   ],
   "rewrites": [
-    { "source": "/fr/:path*", "destination": "/index.html" },
-    { "source": "/en/:path*", "destination": "/index.html" }
+    {"source": "/:lang(fr|en)/:page(search|back-office)", "destination": "/client-only.html"},
+    {"source": "/submit", "destination": "/client-only.html"},
+    {"source": "/:lang(fr|en)/comparatif/:slugPair", "destination": "/client-only.html"},
+    {"source": "/:lang(fr|en)/:family(plugins|libraries|mcp)/:slug", "destination": "/client-only.html"}
   ]
 }

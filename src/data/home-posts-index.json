@@ -211,6 +211,21 @@
       "thumbnail": "https://georankers.ai/assets/hero-dashboard--2DBfIch.webp"
     },
     {
+      "slug": "ecommerce-platform-solo-small-team-physical-products-2026",
+      "title": "Which E-Commerce Platform Should You Pick Solo or in a Small Team, to Sell Physical Products?",
+      "date": "2026-10-07",
+      "tags": [
+        "e-commerce",
+        "shopify",
+        "woocommerce",
+        "wix",
+        "squarespace",
+        "physical products",
+        "2026"
+      ],
+      "thumbnail": null
+    },
+    {
       "slug": "creer-video-produit-sans-montage",
       "title": "Create a product video without editing experience: a practical method",
       "date": "2026-09-27",
@@ -378,22 +393,6 @@
         "workflow"
       ],
       "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg"
-    },
-    {
-      "slug": "auditer-stack-saas-45-minutes",
-      "title": "Auditing Your SaaS Stack in 45 Minutes: Removing Overlaps Without Breaking Your Workflow",
-      "date": "2026-08-16",
-      "tags": [
-        "stack audit",
-        "building a stack",
-        "cost reduction",
-        "SaaS subscriptions",
-        "tool overlaps",
-        "SaaS migration",
-        "freelance",
-        "organization"
-      ],
-      "thumbnail": "/editorial/stack-visuale/franken-stack-photo.jpg"
     }
   ]
 }

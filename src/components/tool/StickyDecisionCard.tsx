@@ -26,7 +26,11 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
   // above already carries "Explore around this tool".
   const compactUtilities = section === "share";
   const toolTrimScore = computeToolTrimScore(tool);
-  const conclusion = (prefix === "/en" ? tool.verdictEn : tool.verdict)?.threshold?.trim();
+  const verdict = prefix === "/en" ? tool.verdictEn : tool.verdict;
+  const conclusion = verdict?.threshold?.trim();
+  const keepIf = verdict?.keepIf?.[0]?.trim();
+  const avoidIf = verdict?.avoidIf?.[0]?.trim();
+  const sentence = (text: string) => text.replace(/[.\s]+$/, "");
   const verdictLevel = toolTrimScore.score >= 4 ? "high" : toolTrimScore.score >= 3.5 ? "mid" : "low";
   // Circular gauge: the ring itself carries the score (arc length = score / 5),
   // replacing the old trend arrow with an actual proportional visualization.
@@ -135,7 +139,17 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
           <span>/ 5</span>
         </span>
         <span className="td-decision-verdict-copy">{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
-        {conclusion && <p className="td-decision-conclusion">{conclusion}</p>}
+        {keepIf ? <dl className="td-decision-fit">
+          <div><dt>{t("À garder si", "Keep it if")}</dt><dd>{sentence(keepIf)}.</dd></div>
+          {avoidIf && <div><dt>{t("À éviter si", "Look elsewhere if")}</dt><dd>{sentence(avoidIf)}.</dd></div>}
+        </dl> : conclusion && <p className="td-decision-conclusion">{conclusion}</p>}
+        <Link
+          to={`${prefix}/tool/${slug}/alternatives`}
+          className="td-decision-compare"
+          onClick={() => trackEvent("alternative_click", { tool_slug: slug, source: "tool_decision_card" })}
+        >
+          {t("Comparer les alternatives", "Compare alternatives")}<ArrowRight aria-hidden />
+        </Link>
       </div>)}
 
 

@@ -1,0 +1,218 @@
+{
+  "base": "http://127.0.0.1:5186",
+  "generatedAt": "2026-10-15T08:44:08.906Z",
+  "results": [
+    {
+      "lang": "fr",
+      "width": 390,
+      "slug": "audionotes",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://www.audionotes.app/opengraph-image.png",
+          "width": 7200,
+          "height": 3780,
+          "complete": true
+        }
+      ],
+      "cta": "https://www.audionotes.app/"
+    },
+    {
+      "lang": "fr",
+      "width": 390,
+      "slug": "flutter",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
+          "width": 937,
+          "height": 461,
+          "complete": true
+        }
+      ],
+      "cta": "https://flutter.dev/"
+    },
+    {
+      "lang": "fr",
+      "width": 390,
+      "slug": "logomeai",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://cdn.prod.website-files.com/65b8d9e0af2c51a8738e2bf7/665607f563f2220aa5f7116d_Logome%20Logo.svg",
+          "width": 104,
+          "height": 31,
+          "complete": true
+        }
+      ],
+      "cta": null
+    },
+    {
+      "lang": "fr",
+      "width": 390,
+      "slug": "zoom-ai-companion",
+      "pass": true,
+      "images": [],
+      "cta": "https://www.zoom.com/en/products/ai-assistant/"
+    },
+    {
+      "lang": "fr",
+      "width": 1440,
+      "slug": "audionotes",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://www.audionotes.app/opengraph-image.png",
+          "width": 7200,
+          "height": 3780,
+          "complete": true
+        }
+      ],
+      "cta": "https://www.audionotes.app/"
+    },
+    {
+      "lang": "fr",
+      "width": 1440,
+      "slug": "flutter",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
+          "width": 937,
+          "height": 461,
+          "complete": true
+        }
+      ],
+      "cta": "https://flutter.dev/"
+    },
+    {
+      "lang": "fr",
+      "width": 1440,
+      "slug": "logomeai",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://cdn.prod.website-files.com/65b8d9e0af2c51a8738e2bf7/665607f563f2220aa5f7116d_Logome%20Logo.svg",
+          "width": 104,
+          "height": 31,
+          "complete": true
+        }
+      ],
+      "cta": null
+    },
+    {
+      "lang": "fr",
+      "width": 1440,
+      "slug": "zoom-ai-companion",
+      "pass": true,
+      "images": [],
+      "cta": "https://www.zoom.com/en/products/ai-assistant/"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "slug": "audionotes",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://www.audionotes.app/opengraph-image.png",
+          "width": 7200,
+          "height": 3780,
+          "complete": true
+        }
+      ],
+      "cta": "https://www.audionotes.app/"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "slug": "flutter",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
+          "width": 937,
+          "height": 461,
+          "complete": true
+        }
+      ],
+      "cta": "https://flutter.dev/"
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "slug": "logomeai",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://cdn.prod.website-files.com/65b8d9e0af2c51a8738e2bf7/665607f563f2220aa5f7116d_Logome%20Logo.svg",
+          "width": 104,
+          "height": 31,
+          "complete": true
+        }
+      ],
+      "cta": null
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "slug": "zoom-ai-companion",
+      "pass": true,
+      "images": [],
+      "cta": "https://www.zoom.com/en/products/ai-assistant/"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "slug": "audionotes",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://www.audionotes.app/opengraph-image.png",
+          "width": 7200,
+          "height": 3780,
+          "complete": true
+        }
+      ],
+      "cta": "https://www.audionotes.app/"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "slug": "flutter",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
+          "width": 937,
+          "height": 461,
+          "complete": true
+        }
+      ],
+      "cta": "https://flutter.dev/"
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "slug": "logomeai",
+      "pass": true,
+      "images": [
+        {
+          "src": "https://cdn.prod.website-files.com/65b8d9e0af2c51a8738e2bf7/665607f563f2220aa5f7116d_Logome%20Logo.svg",
+          "width": 104,
+          "height": 31,
+          "complete": true
+        }
+      ],
+      "cta": null
+    },
+    {
+      "lang": "en",
+      "width": 1440,
+      "slug": "zoom-ai-companion",
+      "pass": true,
+      "images": [],
+      "cta": "https://www.zoom.com/en/products/ai-assistant/"
+    }
+  ]
+}

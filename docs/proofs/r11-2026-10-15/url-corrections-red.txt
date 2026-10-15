@@ -1,0 +1,61 @@
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+ ❯ src/lib/toolUrlCorrections.test.ts (4 tests | 3 failed) 9ms
+     × resolves the verified official origin of a relative legacy image 5ms
+     × removes an absent local capture without inventing a replacement 1ms
+     × repairs the verified product destination without changing unrelated fields 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/toolUrlCorrections.test.ts > audited catalogue URL corrections > resolves the verified official origin of a relative legacy image
+AssertionError: expected '/assets/flutter-logo-sharing.d7444409…' to be 'https://flutter.dev/assets/flutter-lo…' // Object.is equality
+
+Expected: "https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png"
+Received: "/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png"
+
+ ❯ src/lib/toolUrlCorrections.test.ts:6:129
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/lib/toolUrlCorrections.test.ts > audited catalogue URL corrections > removes an absent local capture without inventing a replacement
+AssertionError: expected 'https://tooltrim.com/og-screenshots/v…' to be null
+
+- Expected:
+null
+
++ Received:
+"https://tooltrim.com/og-screenshots/visualcv.jpg"
+
+ ❯ src/lib/toolUrlCorrections.test.ts:13:113
+     11|   });
+     12|   it('removes an absent local capture without inventing a replacement'…
+     13|     expect(resolveAuditedToolUrl('visualcv', 'ogImageUrl', 'https://to…
+       |                                                                                                                 ^
+     14|   });
+     15|   it('repairs the verified product destination without changing unrela…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/lib/toolUrlCorrections.test.ts > audited catalogue URL corrections > repairs the verified product destination without changing unrelated fields
+AssertionError: expected 'https://zoom.us/ai-assistant' to be 'https://www.zoom.com/en/products/ai-a…' // Object.is equality
+
+Expected: "https://www.zoom.com/en/products/ai-assistant/"
+Received: "https://zoom.us/ai-assistant"
+
+ ❯ src/lib/toolUrlCorrections.test.ts:16:102
+     14|   });
+     15|   it('repairs the verified product destination without changing unrela…
+     16|     expect(resolveAuditedToolUrl('zoom-ai-companion', 'websiteUrl', 'h…
+       |                                                                                                      ^
+     17|     expect(resolveAuditedToolUrl('zoom-ai-companion', 'affiliateLink',…
+     18|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 1 passed (4)
+   Start at  10:36:29
+   Duration  987ms (transform 50ms, setup 135ms, import 28ms, tests 9ms, environment 573ms)

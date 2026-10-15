@@ -107,3 +107,78 @@ Prochaines étapes proposées, dans l'ordre :
 2. Chiffre juste, volet produit fait (8 oct.) : « Ajuster mon coût » dans la feuille outil (plan du catalogue, places si par utilisateur, ou montant réellement payé, mensuel ou annuel) ; prime sur l'offre d'entrée, la note du budget compte les coûts ajustés. Plans du catalogue non vérifiés en image : Supabase injoignable depuis la machine ce jour-là, à recontrôler en ligne. Volet recherche : liste prioritaire `research/batches/prix-ma-stack-prioritaires-2026-10-08.txt` (257 outils cités dans les Stacks sans prix vérifié ; n8n à exclure), lancement à décider (crédit cloud).
 3. Fait (7 oct.) : boucle fermée. « Décider » sur chaque paire (menu : garder l'un, garder les deux) et bandeau « Ma stack » sur les comparatifs (garder l'un, remplacer, garder). Annulable, « Déjà ≈ X €/mois en moins », paires gardées sorties du payé en double (« Revoir »). Événements : stack_tool_open, stack_compare_click, stack_profile_click, stack_decision, stack_decision_undo, stack_remove, stack_freemium_open, stack_freemium_answer. À relire dans GA4 vers le 21/10.
 4. Garder et partager : lien de partage lecture seule (boucle d'acquisition), puis synchronisation par compte.
+
+## Tests E2E désynchronisés (constat du 8 oct. 2026)
+- `e2e/sidebar-preferences.spec.ts` (2 tests) : suppose un menu replié par défaut et cherche « Préférences » dans la barre ; le shell est déplié par défaut et « Préférences » n'est plus que dans le menu mobile. Non modifié depuis le 13 sept. À réécrire sur le comportement actuel.
+- `e2e/mon-stack-v1.spec.ts` « catalogue refresh » : attend le prix Supabase sur la carte (voir plus haut).
+
+## Footer et mentions légales (8 oct. 2026)
+- [x] Mentions légales : forme juridique SAS (et non micro-entreprise), hébergeur Vercel (et non Lovable).
+- [ ] Michael : les mentions LCEN complètes d'une SAS (dénomination, siège, capital, RCS, directeur de publication) restent à décider ; il ne veut pas les afficher pour l'instant.
+- [ ] Michael : dire quels profils sociaux existent vraiment ; `sameAs` de `OrganizationSchema.tsx` en liste 5 non vérifiés.
+- [ ] Tests lents en suite complète, proches de la limite de 5 s : `useToolBySlug.test.tsx` (restores the SSR record) et `usePosts.test.tsx` (local guide catalogue). Passent seuls.
+- [x] Footer : « Gérer les cookies » rouvre le bandeau (retrait du consentement coupe la mesure GA4), bascule FR/EN, ligne de preuve (nombre d'outils calculé au build, arrondi à la centaine). Bandeau cookies traduit en anglais.
+- [x] Footer : colonne Catégories (IA généraliste, Finance et facturation, Gestion de projet, Automatisation, CRM, toutes). À revoir avec les clics GSC vers le 21/10.
+- [x] Footer refait sur une grille de 12 colonnes (8 oct.) : carte « Ma stack » (outils, coût, payé en double) lue depuis un instantané écrit par Ma stack, sélecteur FR | EN, badges en cellules uniformes (2 rangées de 10).
+- [x] Revue design du footer (design-review, 8 oct.) : trois tons (#0F0F0F, #424245, #6F6F68), tokens `--tt-footer-*`, tuile neutre blanche décorative et prérendue vide (budget HTML : le footer est répété sur 13 162 pages, 12,8 Ko chacune).
+- [x] Budget HTML : badges ramenés à une image chacun (variantes sombres jamais affichées), footer 12,8 → 8,4 Ko par page, HTML 760 → 705 Mo (limite 745). Badges gardés dans le HTML prérendu, car les annuaires vérifient leur présence.
+
+## Accueil, revue design (8 oct. 2026)
+- [x] Gouttière alignée sur le site (48px au lieu de 32), recherche alignée à gauche, liens « Tout voir » sur la ligne de base du titre, compteurs des univers au bord, onglets « Travailler avec » au style de Ma stack, titres de cartes alignés, cibles de 24px, mobile raccourci (8 482 → 6 671px).
+- [x] CTA unifié : « Construire ma stack » (hero et footer).
+- Décision Michael (8 oct.) : le hero garde son image en dégradé avec logos, par exception aux règles « pas de gradient » et « pas de grands logos ».
+- [ ] « Les outils qu'on surveille » : les visuels sont les images OG des éditeurs (texte anglais sur la page FR, collages chargés). Choisir des captures d'interface recadrées ou passer au format liste des univers.
+- [x] Bloc « Trouvez le bon outil » retiré de l'accueil (9 oct., Michael) : doublon de la recherche permanente (barre du haut, loupe mobile, barre latérale) ; il n'était pas mesuré dans GA4.
+- [ ] Tutoiement dans 169 lignes de src/data/stacks.ts (subtitle, q, hint, reason, avoidIf) : le site vouvoie partout ailleurs. La stack automatisation-legere-freelance est passée au vous (9 oct.). Chantier éditorial à planifier.
+- [x] « Compatible avec » retiré de l'accueil (9 oct.) : données de compatibilité insuffisantes (seuls After Effects et React). Remplacé par « Lequel garder ? », 8 comparatifs existants en rangée. Compléter worksWith dans Supabase reste utile pour les pages explorer.
+- [ ] Noms de catégories en anglais ou en Title Case dans les données (« Legal & Contracts », « Communication Équipe », « IA Généraliste ») : à corriger dans Supabase, pas dans le JSON.
+
+## Navigation, revue design (9 oct. 2026)
+Mesures Playwright à 1440, 1024 et 390 px. Tout appliqué le 9 oct. (« go sur tout »), non commité.
+- [x] P1 Bandeau cookies sous les dialogues : menu mobile et recherche à z-index 1100 (la recherche, à 200, passait aussi sous la colonne tablette ouverte) ; sur mobile le bandeau se pose au-dessus de la barre du bas
+- [x] P1 Barre repliée : page active plus marquée (pastille plus sombre, libellé en 650), survol plus léger
+- [x] P1 Onglets du haut supprimés ; filtre « Payant » devenu « Payant uniquement » (sans plan gratuit, `isPaidOnly`)
+- [x] P2 Recherche : loupe de la barre latérale retirée ; « Ctrl K » hors Mac
+- [x] P2 Haut de page aligné sur le conteneur des pages (`--layout-content`, `--layout-gutter`)
+- [x] P2 « Déplier » : déjà visible au survol de toute la barre, au focus et en permanence sur écran tactile (constat initial erroné)
+- [x] P2 Menu mobile : ne garde que Outils et Guides (sous-niveaux), préférences et « Soumettre »
+- [x] P2 « Ma stack » : bouton à contour partout
+- [x] P3 Libellés sous icône en 11 px ; icônes par zone : 16 en haut, 18 dans la barre, 20 sur mobile (prop `size`, plus de style inline)
+- [x] P3 Infobulles des réglages = l'action (« Passer en anglais », « Changer de devise ») ; plus de valeur « EN » cachée
+- [x] P3 CSS `asv2-*` : 59 déclarations écrasées supprimées, 0 différence de style calculé sur 18 états
+- [x] Barre repliée : au survol, le picto « déplier » se plaçait 16 px au-dessus du logo (`top: 0` d'une règle du 8 oct.) ; centré sur le logo, avec fondu croisé et mise à l'échelle en 160 ms (coupé si mouvement réduit)
+- [x] Accueil : le champ de recherche (36 px, contour, loupe en tête) remplace le vide laissé par les onglets, aligné sur le contenu
+- [x] Colonne imposée 641 à 1 180 px : double pastille sur l'entrée active supprimée
+- [x] Recherche globale refaite : une colonne de 720 px ; avant la frappe « Essayez », « Par besoin », « Lequel garder ? », « Partir d'une stack », « Reprendre votre stack » ; pendant la frappe, résultats groupés par type ; plus de « Plateformes », « Fonctionne avec », « Collections »
+- [x] Revue design de la recherche (9 oct.) : liste de résultats conforme ARIA (axe 0), nombre de résultats annoncé, piège de focus réparé (`[href]` attrapait les `<use href>` du sprite, aussi dans `StackSaveDialog`), « notion » ne tire plus Motion (faute tolérée seulement en second recours), tokens d'espacement et de typo, cibles de 44 px sur mobile, sortie animée
+- [x] Ma stack : valeurs en mots (« Cost unknown », « Rien ») ne débordent plus ; carte « Doublons » à zéro = « ✓ Aucun » + « Aucun outil ne fait doublon », jauges vides masquées
+- [ ] Recherche : « appointment scheduling » ne renvoie rien en anglais (« booking » trouve Calendly) ; « alternative à Notion » met Notionlytics en tête
+- [ ] Reste : la fiche outil a son propre conteneur (`td-hero`), décalé de 16 px du haut de page à 1440 px
+- [ ] Reste : les règles « colonne réduite » sont écrites deux fois (réduite à la main, imposée de 641 à 1 180 px) ; les fusionner demande une classe posée en JS, au prix d'un saut au premier affichage
+- [ ] Reste : `e2e/sidebar-preferences.spec.ts` déjà désynchronisé avant cette passe (textes « Préférences », « Passer le site en anglais »)
+
+## Mode sombre, revue design (10 oct. 2026)
+16 pages × 1440 et 390 px, axe + captures. Corrigé le 10 oct. : environ 400 échecs de contraste → 0 sur toutes les pages, desktop et mobile.
+- [x] P0 Footer : variante sombre de ses jetons `--tt-footer-*`
+- [x] P0 Accueil : `--h-ink` suit `--color-text-strong`
+- [x] P0 Hero : jetons clairs rétablis dans `.hv2-band` (le dégradé reste clair)
+- [x] P0 Comparatif : pastilles prix et note sur fond sombre translucide
+- [x] P0 Couvertures de guides : légende sombre fixe sur les tuiles pastel
+- [x] P1 Ma stack : valeur en mots passe à la ligne ; nouveau jeton `--color-alert` (#BE490A clair, #F0874A sombre) pour l'orange des doublons
+- [x] P1 Liens bleus de /submit éclaircis en sombre, « Trier » en `--color-text-meta`
+- [x] P2 Petits textes (conditions de prix, pièges de facturation, compteurs, langue du footer) en `--color-text-secondary`
+- [ ] Non retenu : les boutons ronds blancs au survol des cartes outils restent blancs (ils flottent sur l'image, contraste correct dans les deux thèmes)
+
+## Recherche, esprit Apple (14 oct. 2026)
+- [x] Une seule grille de deux colonnes, lignes de 40 px, icône à x = 33 et libellé à x = 77, alignés sur la loupe et le texte du champ
+- [x] Gris neutres (#F5F5F7) au lieu du gris chaud ; bouton fermer rond gris plein ; champ rempli de 52 px, texte 19 px
+- [x] Retirés : « Reprendre votre stack » (doublon du bouton Ma stack, pas une intention de recherche) et l'exemple « ChatGPT vs Claude » (doublon du duel)
+- [x] Deux logos par ligne partout, espace de 13 px avant le libellé
+- [x] Logos en mode sombre : plaque claire sur chaque logo chargé ; 23 logos illisibles sur 400 → 0
+- [x] Recherches récentes (4, sans doublon, navigateur seulement) à la place de « Essayez » dès qu'on a cherché ; « Effacer » rend les exemples
+
+- [ ] /submit (14/10) : passer les emails de prospection sur `/en/submit?tool={{tool}}&site={{domain}}`, puis comparer `submit_priority_checkout` lien perso vs lien nu sur 2 à 3 semaines. Voir docs/SUBMIT_REDESIGN_2026-10-14.md.
+- [ ] /submit (14/10) : en local (localhost/127.0.0.1), le formulaire appelle les API de production (submission-progress, contact, verify-*). Tester l'étape 1 en local peut envoyer de vrais emails. Prévoir un mode test local (stub ou API de preview) avant de nouveaux essais du tunnel.
+- [ ] /submit (14/10) : la page vend désormais une « mise en avant home page et stacks, signalée comme sponsorisée ». Avant la première vente : prévoir un emplacement visiblement étiqueté « Sponsorisé » (home, stacks, comparatifs et articles), séparé des recommandations éditoriales, et des liens en rel="sponsored". Sinon la promesse « le classement ne dépend jamais du paiement » devient fausse.
+- [ ] Fiches outils (15/10) : 342 fiches EN ne déclarent plus de prix dans le JSON-LD (elles annonçaient « 0 € » sur des outils payants). Saisir les vrais prix publiés (pricing_v5 avec nativeAmount/nativeCurrency ou nativePrices.ts), en commençant par les 80 prix connus mal saisis ; CommuteBar = 6,99 $ licence à vie. Chaque prix saisi rend la fiche à nouveau éligible au résultat enrichi.
+- [ ] Fiches FR (15/10) : choix « tutoiement partout ». 684 fiches ont leur verdict (keepIf/avoidIf/threshold) au vouvoiement dans tools_v4.json. La carte de verdict utilise des libellés neutres (« À garder si / À éviter si ») en attendant la réécriture au tutoiement. Fiche Notion : verdict.threshold EN affiche des EUR (règle devise) et n'est pas un verdict « pour qui » : à réécrire.

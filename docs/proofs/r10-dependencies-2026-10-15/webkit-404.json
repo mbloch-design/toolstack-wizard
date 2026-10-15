@@ -1,0 +1,6 @@
+{
+  "browser": "webkit",
+  "status": 404,
+  "errorPreservedAfterHydration": true,
+  "validNavigationRestoresCanonical": true
+}

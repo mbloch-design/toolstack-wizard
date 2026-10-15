@@ -1,0 +1,1381 @@
+{
+  "measuredAt": "2026-10-15T08:33:20.903Z",
+  "rows": [
+    {
+      "url": "https://tooltrim.com/robots.txt",
+      "finalUrl": "https://tooltrim.com/robots.txt",
+      "status": 200,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "HIT",
+        "etag": "\"9707e4936e429873fe8d88319df78753\"",
+        "last-modified": "Thu, 15 Oct 2026 07:58:47 GMT"
+      },
+      "bytes": 633,
+      "sha256": "c9e024ff9d8c6f45a4d78c8fb367e3c2d66c82218410f3fce16bcb34fba7e742"
+    },
+    {
+      "url": "https://tooltrim.com/sitemap.xml",
+      "finalUrl": "https://tooltrim.com/sitemap.xml",
+      "status": 200,
+      "headers": {
+        "content-type": "application/xml",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "HIT",
+        "etag": "W/\"f3c39011bf01a380ac7dd81868a26bd1\"",
+        "last-modified": "Thu, 15 Oct 2026 08:31:17 GMT"
+      },
+      "bytes": 6574374,
+      "sha256": "23ca90e86196e87bbb6fd60eb56085a9a9bbd6e2dfa238368a5e41178d2471c6",
+      "sitemapUrls": 13148
+    },
+    {
+      "url": "https://tooltrim.com/llms.txt",
+      "finalUrl": "https://tooltrim.com/llms.txt",
+      "status": 200,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"adb9653c31243cde9291fa3ce1e47994\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 2680,
+      "sha256": "b7ab7cb1d391e1a9307e92b4f352856a5856f960d31b70a977d136dcce799ae2"
+    },
+    {
+      "url": "https://tooltrim.com/llms-full.txt",
+      "finalUrl": "https://tooltrim.com/llms-full.txt",
+      "status": 200,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"fbd4c83908c56e1371cb9b59514f3622\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 927511,
+      "sha256": "83fcc801dc70981e6073c1b81eb598283d532cc51d807ec809ed376a44233066"
+    },
+    {
+      "url": "https://tooltrim.com/en",
+      "finalUrl": "https://tooltrim.com/en",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"f769c1750938a7b74d7399b7d947935d\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 62629,
+      "sha256": "1803e894bc2588a673c9545d2ebc9ef611f3b6e61fd8779549f27aca6e59c0be",
+      "canonical": [
+        "https://tooltrim.com/en"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en"
+        }
+      ],
+      "description": "ToolTrim helps freelancers and small teams decide which software to keep, replace, or add based on their stack, budget, and real workflow.",
+      "title": "ToolTrim | Decide which software to keep, replace, or add",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr",
+      "finalUrl": "https://tooltrim.com/fr",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"1d150431461e0c2d37039e57d83a9135\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 63489,
+      "sha256": "902590dd76f331a14d88984bf94211fb6b80b90be092d205fee495e1c973ab50",
+      "canonical": [
+        "https://tooltrim.com/fr"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en"
+        }
+      ],
+      "description": "ToolTrim vous aide à décider quels logiciels garder, remplacer ou ajouter selon votre stack, votre budget et votre façon de travailler.",
+      "title": "ToolTrim | Décidez quels logiciels garder ou remplacer",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/tools",
+      "finalUrl": "https://tooltrim.com/fr/tools",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"0015c0adbfed7521d7b018305e396cf2\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 159101,
+      "sha256": "6b1e4633fb280bc4be81bbf23d990f66819018ac74b89986a9301dc95f92c85b",
+      "canonical": [
+        "https://tooltrim.com/fr/tools"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tools"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tools"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tools"
+        }
+      ],
+      "description": "Comparez plus de 1 000 outils SaaS : avis honnêtes, prix vérifiés et alternatives moins chères. Filtrez par catégorie et trouvez la meilleure stack pour votre activité.",
+      "title": "Tous les outils SaaS pour freelances | ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/en/tools",
+      "finalUrl": "https://tooltrim.com/en/tools",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"a0f884109e8a400b82ebe67b4ed5aabe\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 157197,
+      "sha256": "4b3acb087405d11644783af61e49a9ca2af2b68ecd1c74850c2b361524002b1e",
+      "canonical": [
+        "https://tooltrim.com/en/tools"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tools"
+        },
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tools"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tools"
+        }
+      ],
+      "description": "Compare 1,000+ SaaS tools: honest reviews, verified pricing and cheaper alternatives. Filter by category and find the best stack for your business.",
+      "title": "All SaaS tools for freelancers | ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/tool/notion/prix",
+      "finalUrl": "https://tooltrim.com/fr/tool/notion/prix",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"42f654297b42f56fb506c10ab44f187d\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 54425,
+      "sha256": "8a0253d36ec437d93a2aa49a01e2a097613b49d5339e89502fae3c1b9b528956",
+      "canonical": [
+        "https://tooltrim.com/fr/tool/notion/prix"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/notion/prix"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/notion/pricing"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/notion/pricing"
+        }
+      ],
+      "description": "Combien coûte Notion en 2026 ? Dès 9,50 €/mois (plan Plus), avec une offre gratuite. Espace de travail tout-en-un pour notes, documents, wikis et bases de données. Détail des plans et alternatives moins chères.",
+      "title": "Notion prix 2026 : dès 9,50 €/mois, offre gratuite",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 4,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem",
+        "WebPage",
+        "SoftwareApplication",
+        "AggregateOffer",
+        "Review",
+        "Rating"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/tool/notion",
+      "finalUrl": "https://tooltrim.com/fr/tool/notion",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"e0e1787af74606cf60de2a6943a5bb0c\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 90565,
+      "sha256": "4e49f054b84f5065532d547bcc8efe43f57dd0ee27d121463593da6ec5327d4f",
+      "canonical": [
+        "https://tooltrim.com/fr/tool/notion"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/notion"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/notion"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/notion"
+        }
+      ],
+      "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données. Prix dès 9,50 €/mois. Avis ToolTrim et alternatives moins chères.",
+      "title": "Notion : prix dès 9,50 €, avis et alternatives 2026",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 5,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "SoftwareApplication",
+        "AggregateOffer",
+        "Review",
+        "Rating",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/en/tool/notion/pricing",
+      "finalUrl": "https://tooltrim.com/en/tool/notion/pricing",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"b1b746d9653d6004a7f9dc3eaabc9644\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 55845,
+      "sha256": "d5b60c0b6bbafcc29475dc6fa707cd3c40bfce71837c43b92452862db2abe2d5",
+      "canonical": [
+        "https://tooltrim.com/en/tool/notion/pricing"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/notion/prix"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/notion/pricing"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/notion/pricing"
+        }
+      ],
+      "description": "How much does Notion cost in 2026? From €9.50/mo (Plus plan), with a free plan. All-in-one workspace for notes, docs, wikis and databases. All plans and cheaper alternatives.",
+      "title": "Notion pricing 2026: from €9.50/mo, free plan | ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 4,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem",
+        "WebPage",
+        "SoftwareApplication",
+        "AggregateOffer",
+        "Review",
+        "Rating"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/en/tool/notion",
+      "finalUrl": "https://tooltrim.com/en/tool/notion",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"3b23ac3002675cd59529a669a4486ecf\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 90586,
+      "sha256": "a990432294609c284b9ac8cdf101d8a905787584c1e7b41429ba1bdeb90b9e80",
+      "canonical": [
+        "https://tooltrim.com/en/tool/notion"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/notion"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/notion"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/notion"
+        }
+      ],
+      "description": "All-in-one workspace for notes, docs, wikis and databases. From €9.50/mo. ToolTrim review and cheaper alternatives.",
+      "title": "Notion: pricing from €9.50, review & alternatives 2026",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 5,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "SoftwareApplication",
+        "AggregateOffer",
+        "Review",
+        "Rating",
+        "WebPage",
+        "BreadcrumbList",
+        "ListItem",
+        "FAQPage",
+        "Question",
+        "Answer"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/en/explorer/around/notion",
+      "finalUrl": "https://tooltrim.com/en/explorer/around/notion",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"23ce5fb9b100737f63389d97a5c7706b\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 61355,
+      "sha256": "0c40554d943c2f012d4306b63971e3287b589db12e7c49d6e0be44e09c8bf10b",
+      "canonical": [
+        "https://tooltrim.com/en/explorer/around/notion"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/explorer/around/notion"
+        },
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/explorer/around/notion"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/explorer/around/notion"
+        }
+      ],
+      "description": "Explore the tool ecosystem around Notion: complementary and adjacent picks to build a stack, curated by ToolTrim.",
+      "title": "Tools that pair with Notion | ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/en/tool/notion/reviews",
+      "finalUrl": "https://tooltrim.com/en/tool/notion/reviews",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"c89c2a22c58da516c55fd231411dd15a\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 69378,
+      "sha256": "022b035293882906d396c9ef694794924e66d6d3b6c88fa55ef0a47f3a83538c",
+      "canonical": [
+        "https://tooltrim.com/en/tool/notion/reviews"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/notion/avis"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/notion/reviews"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/notion/reviews"
+        }
+      ],
+      "description": "All-in-one workspace for notes, docs, wikis and databases. Independent review of Notion: pros, cons, value for money and ToolTrim verdict for 2026.",
+      "title": "Notion reviews 2026: rating and feedback | ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 4,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem",
+        "WebPage",
+        "SoftwareApplication",
+        "AggregateOffer",
+        "Review",
+        "Rating"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/tool/notion/alternatives",
+      "finalUrl": "https://tooltrim.com/fr/tool/notion/alternatives",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"7f45abc5078bcde0be14fcd5081f6afc\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 58745,
+      "sha256": "6bca14d52de5174ba35005b927846ab07d68d24e2af8f134401ba75236d60498",
+      "canonical": [
+        "https://tooltrim.com/fr/tool/notion/alternatives"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/notion/alternatives"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/notion/alternatives"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/notion/alternatives"
+        }
+      ],
+      "description": "Vous payez 9,50 €/mois pour Notion ? Les meilleures alternatives moins chères ou gratuites, comparées par ToolTrim en 2026.",
+      "title": "Meilleures alternatives à Notion en 2026 | ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 3,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem",
+        "WebPage"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/tool/notion/avis",
+      "finalUrl": "https://tooltrim.com/fr/tool/notion/avis",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"38283840708604c46811de239255cbe1\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 68422,
+      "sha256": "03096acc83605aacda0f6572e6fb595a3dfa27a01561c0379ae08e2bddd39141",
+      "canonical": [
+        "https://tooltrim.com/fr/tool/notion/avis"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/notion/avis"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/notion/reviews"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/notion/reviews"
+        }
+      ],
+      "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données. Avis indépendant sur Notion : points forts, points faibles, rapport qualité-prix et verdict ToolTrim 2026.",
+      "title": "Avis Notion 2026 : note et retours | ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 4,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem",
+        "WebPage",
+        "SoftwareApplication",
+        "AggregateOffer",
+        "Review",
+        "Rating"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/en/guide/stack-freelance-writer",
+      "finalUrl": "https://tooltrim.com/en/guide/stack-freelance-writer",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "HIT",
+        "etag": "W/\"f36be1d564d2ccb44ab1273d8329ecba\"",
+        "last-modified": "Thu, 15 Oct 2026 08:14:32 GMT"
+      },
+      "bytes": 52706,
+      "sha256": "c8678252bd7e1c67f69a72fa1702c634b682100f56d3d04d5d9d2b8d352626b4",
+      "canonical": [
+        "https://tooltrim.com/en/guide/stack-freelance-writer"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/guide/stack-redactrice-freelance"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/guide/stack-freelance-writer"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/guide/stack-freelance-writer"
+        }
+      ],
+      "description": "",
+      "title": "Freelance writer: the minimal stack that suffices",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 3,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "Article",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/guide/stack-redactrice-freelance",
+      "finalUrl": "https://tooltrim.com/fr/guide/stack-redactrice-freelance",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "HIT",
+        "etag": "W/\"7d1543f1c49f84c054ba85dfec823ad9\"",
+        "last-modified": "Thu, 15 Oct 2026 08:14:31 GMT"
+      },
+      "bytes": 55570,
+      "sha256": "1f6955fb6df6a9697322b4e43a7b84183dcdb5a811f8d14429506eecd10b30cb",
+      "canonical": [
+        "https://tooltrim.com/fr/guide/stack-redactrice-freelance"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/guide/stack-redactrice-freelance"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/guide/stack-freelance-writer"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/guide/stack-freelance-writer"
+        }
+      ],
+      "description": "",
+      "title": "Rédactrice freelance : la stack qui te suffit",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 3,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "Article",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/category/gestion-projet",
+      "finalUrl": "https://tooltrim.com/fr/category/gestion-projet",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"020b00f3b37db316a89b8ae6a8985378\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 73842,
+      "sha256": "1168d7db8a896140541258b6adc76d7b4d5880ebd8c1cfca959d7a85c00545fd",
+      "canonical": [
+        "https://tooltrim.com/fr/category/gestion-projet"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/gestion-projet"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/gestion-projet"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/gestion-projet"
+        }
+      ],
+      "description": "Organiser les tâches et collaborer efficacement. Comparez les meilleurs outils de la catégorie Gestion de Projet : avis, prix vérifiés et alternatives. Recommandations ToolTrim pour freelances.",
+      "title": "Gestion de Projet : meilleurs outils SaaS pour freelances 2026",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 3,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem",
+        "ItemList"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/explorer/around/notion",
+      "finalUrl": "https://tooltrim.com/fr/explorer/around/notion",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"c9f12195df4ae4e1b1ca5e60c49a7c2f\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 62602,
+      "sha256": "c7466ce0ccd5c51fb31e384b3b68ae8e33506dc52c49d7ad2badc180c3ef4462",
+      "canonical": [
+        "https://tooltrim.com/fr/explorer/around/notion"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/explorer/around/notion"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/explorer/around/notion"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/explorer/around/notion"
+        }
+      ],
+      "description": "Explorez l'écosystème d'outils autour de Notion : outils complémentaires et satellites pour composer votre stack, sélectionnés par ToolTrim.",
+      "title": "Outils à associer à Notion | ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/en/category/gestion-projet",
+      "finalUrl": "https://tooltrim.com/en/category/gestion-projet",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"7a440017542f6be0c0fcd199c3e66ca9\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 72911,
+      "sha256": "d90143daf1000474e86f95105323d9a740861bfc0602e157a40bfd4d2d877974",
+      "canonical": [
+        "https://tooltrim.com/en/category/gestion-projet"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/gestion-projet"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/gestion-projet"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/gestion-projet"
+        }
+      ],
+      "description": "Organize tasks and collaborate efficiently. Compare the best Project Management tools: honest reviews, verified pricing and alternatives. ToolTrim recommendations for freelancers.",
+      "title": "Project Management: best SaaS tools for freelancers 2026",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 3,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem",
+        "ItemList"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/guides",
+      "finalUrl": "https://tooltrim.com/fr/guides",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"7b5b8cc82a2ec8c4b90a59d74e0f6716\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 40424,
+      "sha256": "69ed5c6ce7eaca1bc7f5c231b65b37cc4da377837f244021e95a2a152843bcaa",
+      "canonical": [
+        "https://tooltrim.com/fr/guides"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/guides"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/guides"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/guides"
+        }
+      ],
+      "description": "Nos guides pratiques pour choisir les meilleurs outils SaaS : comparatifs, analyses de prix et recommandations par profil freelance.",
+      "title": "Guides et comparatifs SaaS pour freelances | ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/ma-stack",
+      "finalUrl": "https://tooltrim.com/fr/ma-stack",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"bc8379028ac27de4233bfd9069c9ea74\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 23580,
+      "sha256": "906f563bd55a35ce5f78099c2176e36bc7c342efb1921c62a081d0146bc69e64",
+      "canonical": [
+        "https://tooltrim.com/fr/ma-stack"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/ma-stack"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/ma-stack"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/ma-stack"
+        }
+      ],
+      "description": "Composez et suivez votre stack d'outils SaaS avec ToolTrim.",
+      "title": "Ma stack — ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/en/comparatifs",
+      "finalUrl": "https://tooltrim.com/en/comparatifs",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"471e77e1a6b9e708720f63cd4d379411\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 99623,
+      "sha256": "7e34cc8a0248b0b4b7459453b94e841a69126f100a4f397b307ebab6caee8e0b",
+      "canonical": [
+        "https://tooltrim.com/en/comparatifs"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/comparatifs"
+        },
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/comparatifs"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/comparatifs"
+        }
+      ],
+      "description": "Compare the best SaaS tools head-to-head: features, real pricing and verdict for every freelance profile.",
+      "title": "SaaS tool comparisons 2026 | ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/tools?utm_source=r11-audit",
+      "finalUrl": "https://tooltrim.com/fr/tools?utm_source=r11-audit",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "HIT",
+        "etag": "W/\"0015c0adbfed7521d7b018305e396cf2\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:19 GMT"
+      },
+      "bytes": 159101,
+      "sha256": "6b1e4633fb280bc4be81bbf23d990f66819018ac74b89986a9301dc95f92c85b",
+      "canonical": [
+        "https://tooltrim.com/fr/tools"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tools"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tools"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tools"
+        }
+      ],
+      "description": "Comparez plus de 1 000 outils SaaS : avis honnêtes, prix vérifiés et alternatives moins chères. Filtrez par catégorie et trouvez la meilleure stack pour votre activité.",
+      "title": "Tous les outils SaaS pour freelances | ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/privacy-policy",
+      "finalUrl": "https://tooltrim.com/fr/privacy-policy",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"6f5d0482b0ac26fa20f0c704be005316\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 5916,
+      "sha256": "82e5e735c5785361afd0f56226e3f619b783694badb3b081ade3f7c2d8f045fa",
+      "canonical": [
+        "https://tooltrim.com/fr/privacy-policy"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/privacy-policy"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/privacy-policy"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/privacy-policy"
+        }
+      ],
+      "description": "Comment ToolTrim collecte, utilise et protège vos données personnelles.",
+      "title": "Politique de confidentialité — ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 0,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/explorer?type=outil&source=notion",
+      "finalUrl": "https://tooltrim.com/fr/explorer?type=outil&source=notion",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"c0128ce70cce8545caae59dd25b6bdd6\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 23178,
+      "sha256": "95545297ce6d59aebdf4c89a2be1010176915f143187e76c75d2a296d438bba0",
+      "canonical": [
+        "https://tooltrim.com/fr/explorer"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/explorer"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/explorer"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/explorer"
+        }
+      ],
+      "description": "Parcourez le catalogue SaaS de ToolTrim par objectif, catégorie ou workflow, et composez une stack adaptée à votre façon de travailler.",
+      "title": "Explorer les outils SaaS par besoin | ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/en/search",
+      "finalUrl": "https://tooltrim.com/en/search",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "MISS",
+        "etag": "W/\"f769c1750938a7b74d7399b7d947935d\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 62629,
+      "sha256": "1803e894bc2588a673c9545d2ebc9ef611f3b6e61fd8779549f27aca6e59c0be",
+      "canonical": [
+        "https://tooltrim.com/en"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en"
+        }
+      ],
+      "description": "ToolTrim helps freelancers and small teams decide which software to keep, replace, or add based on their stack, budget, and real workflow.",
+      "title": "ToolTrim | Decide which software to keep, replace, or add",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/r11-route-inexistante",
+      "finalUrl": "https://tooltrim.com/fr/r11-route-inexistante",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "HIT",
+        "etag": "W/\"f769c1750938a7b74d7399b7d947935d\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 62629,
+      "sha256": "1803e894bc2588a673c9545d2ebc9ef611f3b6e61fd8779549f27aca6e59c0be",
+      "canonical": [
+        "https://tooltrim.com/en"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en"
+        }
+      ],
+      "description": "ToolTrim helps freelancers and small teams decide which software to keep, replace, or add based on their stack, budget, and real workflow.",
+      "title": "ToolTrim | Decide which software to keep, replace, or add",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "url": "https://tooltrim.com/fr/tool/r11-inexistant",
+      "finalUrl": "https://tooltrim.com/fr/tool/r11-inexistant",
+      "status": 200,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "x-robots-tag": null,
+        "location": null,
+        "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+        "x-vercel-cache": "HIT",
+        "etag": "W/\"f769c1750938a7b74d7399b7d947935d\"",
+        "last-modified": "Thu, 15 Oct 2026 08:33:20 GMT"
+      },
+      "bytes": 62629,
+      "sha256": "1803e894bc2588a673c9545d2ebc9ef611f3b6e61fd8779549f27aca6e59c0be",
+      "canonical": [
+        "https://tooltrim.com/en"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en"
+        }
+      ],
+      "description": "ToolTrim helps freelancers and small teams decide which software to keep, replace, or add based on their stack, budget, and real workflow.",
+      "title": "ToolTrim | Decide which software to keep, replace, or add",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    }
+  ]
+}

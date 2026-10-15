@@ -1,0 +1,18 @@
+{
+  "baseCommit": "af8db1a9bf",
+  "catalogueSha256": "8f2003b75a7dbce73d81c1787aac9564eedeb66c21798692f41ed31a1c2213f6",
+  "sources": 30,
+  "baselineRows": 300,
+  "candidateRows": 236,
+  "status": "local_not_deployed",
+  "method": "Catalogue-based independent editorial review, selected official checks; not official certification of every relation. Partial/unknown/reject and empty slots are not successes.",
+  "activation": {
+    "scope": "single-tool routes in audited30 only",
+    "legacySourceParity": 1210,
+    "objectivesAndStack": "legacy",
+    "slackSeoRequiredPaths": [
+      "discord",
+      "microsoft-teams"
+    ]
+  }
+}

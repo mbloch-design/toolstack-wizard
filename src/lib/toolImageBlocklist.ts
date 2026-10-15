@@ -1,3 +1,5 @@
+import { isAuditedToolCoverUrl } from "./toolUrlCorrections.mjs";
+
 /* Tools whose ogImageUrl points to a real, verified-200 response but the
  * image itself renders unusably (blank, wrong crop, favicon-only, or simply
  * absent) via a real HTTP/Image() check — found while auditing the homepage
@@ -24,3 +26,9 @@ export const TOOL_IMAGE_BLOCKLIST = new Set([
   "product-hunt", "recharts", "shield", "shotdeck", "taplio", "tezza",
   "ukg-pro", "vue-cli", "webxr", "whisper", "youtube-studio",
 ]);
+
+/** Keep old bad captures blocked, but allow an exact verified replacement. */
+export function isToolCoverBlocked(tool: { slug?: string; id?: string; ogImageUrl?: string | null }): boolean {
+  const slug = tool.slug || tool.id;
+  return TOOL_IMAGE_BLOCKLIST.has(slug || "") && !isAuditedToolCoverUrl(slug, tool.ogImageUrl);
+}

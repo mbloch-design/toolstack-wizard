@@ -1,6 +1,16 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page } from "playwright/test";
 
+// These scenarios exercise navigation after the visitor has made a consent choice.
+// The consent dialog itself is covered by analytics-consent.spec.ts.
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem("tooltrim-analytics-consent", JSON.stringify({
+      version: 1, choice: "refused", decidedAt: Date.now(), expiresAt: Date.now() + 3600000,
+    }));
+  });
+});
+
 const routes = [
   { path: "/fr/tools", landmark: "main" },
   { path: "/fr/search?q=design", landmark: "main" },
@@ -45,17 +55,34 @@ test("search result filters expose their actual pressed state", async ({ page })
   await expect(nextFilter).toHaveAttribute("aria-pressed", "true");
 });
 
-test("editorial card menu closes with Escape and returns focus", async ({ page }) => {
-  await page.goto("/fr/tools");
-
-  const trigger = page.getByLabel("Actions pour Framer");
-  await trigger.focus();
+for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) {
+test(`editorial card direct save is keyboard accessible and persists ${lang}/${width}`, async ({ page }) => {
+  await page.setViewportSize({ width, height: 1000 });
+  await page.goto(`/${lang}/tools`);
+  const firstCard = page.locator(".tce-card--media").filter({ has: page.locator(".pin-tool-button") }).first();
+  const href = await firstCard.locator(".tce-primary-link").getAttribute("href");
+  expect(href).toBeTruthy();
+  const slug = href!.split("/").pop()!;
+  const card = page.locator(".tce-card--media").filter({ has: page.locator(`.tce-primary-link[href="${href}"]`) });
+  const save = card.locator(".pin-tool-button");
+  await expect(save).toBeEnabled();
+  await card.locator(".tce-primary-link").focus();
+  // Follow the card's actual tab order, including any exploration action.
+  for (let step = 0; step < 3 && !(await save.evaluate((el) => el === document.activeElement)); step++) {
+    await page.keyboard.press("Tab");
+  }
+  await expect(save).toBeVisible();
+  await expect(save).toBeFocused();
+  await expect(card.locator(".tce-hover-actions")).toHaveCSS("opacity", "1");
   await page.keyboard.press("Enter");
-  await expect(page.locator(".tce-action-menu[open]").first()).toBeVisible();
-  await page.keyboard.press("Escape");
-  await expect(page.locator(".tce-action-menu[open]")).toHaveCount(0);
-  await expect(trigger).toBeFocused();
+  await expect(save).toHaveClass(/pin-tool-button--active/);
+  await expect.poll(() => new URL(page.url()).pathname).toBe(`/${lang}/tools`);
+  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-ma-stack-mvp-v3") || "{}").pinnedToolSlugs)).toEqual([slug]);
+  await page.reload();
+  await expect(save).toHaveClass(/pin-tool-button--active/);
 });
+
+}
 
 test("card motion is removed when reduced motion is requested", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -69,14 +96,21 @@ test("card motion is removed when reduced motion is requested", async ({ page })
 test("global search traps focus and returns it to its trigger", async ({ page }) => {
   await page.goto("/fr/tools");
 
-  const trigger = page.locator(".asv2-search");
+  const trigger = page.getByRole("button", { name: /^Rechercher \(/ });
+  await expect(trigger).toBeVisible();
   await trigger.focus();
   await page.keyboard.press("Enter");
 
-  const dialog = page.getByRole("dialog", { name: "Recherche" });
+  const dialog = page.getByRole("dialog", { name: "Recherche globale", exact: true });
   await expect(dialog).toBeVisible();
   await expect(dialog.getByRole("combobox")).toBeFocused();
-  await expectNoHighImpactViolations(page, ".search-modal-dialog");
+  // Audit the settled colors, not opacity blended during the staggered entrance.
+  await dialog.evaluate(async (element) => {
+    const finiteAnimations = element.getAnimations({ subtree: true })
+      .filter((animation) => animation.effect?.getComputedTiming().endTime !== Infinity);
+    await Promise.allSettled(finiteAnimations.map((animation) => animation.finished));
+  });
+  await expectNoHighImpactViolations(page, ".gs-dialog");
   await page.keyboard.press("Escape");
   await expect(dialog).toHaveCount(0);
   await expect(trigger).toBeFocused();
@@ -86,13 +120,14 @@ test("mobile search has an explicit close action", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/fr/tools");
 
-  const trigger = page.locator(".asv2-search");
+  const trigger = page.getByRole("button", { name: /^Rechercher \(/ });
+  await expect(trigger).toBeVisible();
   await trigger.focus();
   await page.keyboard.press("Enter");
 
-  const dialog = page.getByRole("dialog", { name: "Recherche" });
+  const dialog = page.getByRole("dialog", { name: "Recherche globale", exact: true });
   await expect(dialog).toBeVisible();
-  await dialog.getByRole("button", { name: "Fermer la recherche" }).click();
+  await dialog.getByRole("button", { name: "Fermer", exact: true }).click();
   await expect(dialog).toHaveCount(0);
   await expect(trigger).toBeFocused();
 });
@@ -113,33 +148,42 @@ test("Explorer returns focus after Escape", async ({ page }) => {
   await expect(trigger).toBeFocused();
 });
 
-test("catalog filter popover restores focus after Escape", async ({ page }) => {
-  await page.goto("/fr/tools");
-
-  const trigger = page.getByRole("button", { name: "Catégorie", exact: true });
-  await trigger.focus();
-  await page.keyboard.press("Enter");
-
-  const filterDialog = page.getByRole("dialog", { name: "Catégorie" });
-  await expect(filterDialog).toBeVisible();
-  await expectNoHighImpactViolations(page, ".tf-dd-panel");
-  await page.keyboard.press("Escape");
-  await expect(filterDialog).toHaveCount(0);
-  await expect(trigger).toBeFocused();
-});
-
-test("stack filter dialog has a complete keyboard cycle", async ({ page }) => {
-  await page.goto("/fr/stacks");
-
-  const trigger = page.getByRole("button", { name: "Ouvrir les filtres" });
-  await trigger.focus();
-  await page.keyboard.press("Enter");
-
-  const dialog = page.getByRole("dialog", { name: "Filtres" });
-  await expect(dialog).toBeVisible();
-  await expect(dialog.getByRole("button", { name: "Fermer" })).toBeFocused();
-  await expectNoHighImpactViolations(page, ".sk-filters-panel");
-  await page.keyboard.press("Escape");
-  await expect(dialog).toHaveCount(0);
-  await expect(trigger).toBeFocused();
-});
+for (const lang of ["fr", "en"] as const) for (const width of [390, 1440]) for (const catalog of ["tools", "stacks"] as const) {
+  test(`${catalog} filters keep selection and restore keyboard focus ${lang}/${width}`, async ({ page }) => {
+    const en = lang === "en";
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto(`/${lang}/${catalog}`);
+    const triggerName = catalog === "tools"
+      ? (en ? "Filters and sort" : "Filtres et tri") : (en ? "Filters" : "Filtres");
+    const trigger = page.getByRole("button", { name: triggerName, exact: true });
+    await trigger.focus();
+    await page.keyboard.press("Enter");
+    await expect(trigger).toHaveAttribute("aria-expanded", "true");
+    const dialog = page.getByRole("dialog", { name: en ? "Filters" : "Filtres", exact: true });
+    await expect(dialog).toBeVisible();
+    await expect.poll(() => dialog.evaluate((el) => el.contains(document.activeElement))).toBe(true);
+    await expectNoHighImpactViolations(page, ".tt-filter-panel");
+    const choice = catalog === "tools"
+      ? dialog.getByRole("radio", { name: en ? "Free plan" : "Plan gratuit", exact: true })
+      : dialog.getByRole("radiogroup", { name: en ? "Sort by" : "Trier par", exact: true }).getByRole("radio", { name: "Budget", exact: true });
+    await choice.focus();
+    await page.keyboard.press("Space");
+    await expect(choice).toHaveAttribute("aria-checked", "true");
+    await page.keyboard.press("Escape");
+    await expect(dialog).toHaveCount(0);
+    await expect(trigger).toBeFocused();
+    await expect(trigger).toHaveAttribute("aria-expanded", "false");
+    await page.keyboard.press("Enter");
+    await expect(choice).toHaveAttribute("aria-checked", "true");
+    if (width === 390) {
+      const close = dialog.getByRole("button", { name: en ? "Close" : "Fermer", exact: true });
+      await expect(close).toBeVisible();
+      await close.focus();
+      await page.keyboard.press("Enter");
+    } else {
+      await page.keyboard.press("Escape");
+    }
+    await expect(dialog).toHaveCount(0);
+    await expect(trigger).toBeFocused();
+  });
+}

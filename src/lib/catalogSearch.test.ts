@@ -70,4 +70,43 @@ describe("catalogSearch", () => {
     const hits = await engine.search("animaton interactive");
     expect(hits.some((hit) => hit.id === "tool-rive")).toBe(true);
   });
+
+  it("ne tire pas les voisins à une faute près quand le mot exact trouve déjà (notion ≠ motion)", async () => {
+    const tool = (slug: string, label: string, searchText: string): CatalogSearchDocument => ({ id: `tool-${slug}`, kind: "tool", entityId: slug, slug, label, meta: "", searchText });
+    const engine = await createCatalogSearchEngine([
+      tool("notion", "Notion", "espace de travail notes"),
+      tool("notion-ai", "Notion AI", "assistant notion"),
+      tool("notionlytics", "Notionlytics", "statistiques notion"),
+      tool("motion", "Motion", "agenda automatique"),
+      tool("motion-bro", "Motion Bro", "presets motion design"),
+    ]);
+    const labels = (await engine.search("notion")).map((hit) => hit.label);
+    expect(labels).toEqual(expect.arrayContaining(["Notion", "Notion AI", "Notionlytics"]));
+    expect(labels).not.toContain("Motion");
+    expect(labels).not.toContain("Motion Bro");
+  });
+
+  it("ne confond pas un sigle court avec un mot voisin (crm ≠ .com, ia ≠ .io)", async () => {
+    const engine = await createCatalogSearchEngine([
+      { id: "tool-monday", kind: "tool", entityId: "monday", slug: "monday", label: "Monday.com", meta: "Projet", searchText: "work management", category: "Gestion de projet" },
+      { id: "tool-pipedrive", kind: "tool", entityId: "pipedrive", slug: "pipedrive", label: "Pipedrive", meta: "CRM", searchText: "pipeline commercial", category: "CRM" },
+      { id: "tool-reply", kind: "tool", entityId: "reply-io", slug: "reply-io", label: "Reply.io", meta: "Email", searchText: "sales engagement", category: "Email" },
+      { id: "tool-runway", kind: "tool", entityId: "runway", slug: "runway", label: "Runway", meta: "Vidéo", searchText: "génération vidéo par IA", category: "Création de contenu" },
+    ]);
+    const crm = await engine.search("CRM");
+    expect(crm[0]?.id).toBe("tool-pipedrive");
+    expect(crm.some((hit) => hit.id === "tool-monday")).toBe(false);
+    const video = await engine.search("IA vidéo");
+    expect(video[0]?.id).toBe("tool-runway");
+    expect(video.some((hit) => hit.id === "tool-reply")).toBe(false);
+  });
+
+  it("ignore les mots vides et classe la catégorie avant le texte libre", async () => {
+    const engine = await createCatalogSearchEngine([
+      { id: "tool-hr", kind: "tool", entityId: "hr", slug: "hr", label: "PayrollCo", meta: "RH", searchText: "gestion de la paie et des projets de recrutement", category: "SIRH" },
+      { id: "tool-pm", kind: "tool", entityId: "pm", slug: "pm", label: "Planify", meta: "Projet", searchText: "tableaux kanban", category: "Gestion de projet" },
+    ]);
+    const hits = await engine.search("gestion de projet");
+    expect(hits[0]?.id).toBe("tool-pm");
+  });
 });

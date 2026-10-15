@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TOOL_IMAGE_BLOCKLIST } from '@/lib/toolImageBlocklist';
+import { isToolCoverBlocked } from '@/lib/toolImageBlocklist';
 import ToolLogo from '@/components/ToolLogo';
 import { ArrowLeft, ArrowRight, Layers } from '@/lib/icons';
 import type { Tool } from '@/data/types';
@@ -8,7 +8,7 @@ import type { Tool } from '@/data/types';
 export default function ComparisonMedia({ tool, lang }: { tool: Tool; lang: 'fr' | 'en' }) {
   const [active, setActive] = useState(0);
   const [failed, setFailed] = useState<string[]>([]);
-  const candidates = [...new Set([...(tool.galleryImages ?? []), TOOL_IMAGE_BLOCKLIST.has(tool.slug || tool.id) ? undefined : tool.ogImageUrl]
+  const candidates = [...new Set([...(tool.galleryImages ?? []), isToolCoverBlocked(tool) ? undefined : tool.ogImageUrl]
     .filter((url): url is string => typeof url === 'string' && /^(https?:\/\/|\/[^/])/.test(url)))];
   const images = candidates.filter(url => !failed.includes(url));
   const index = Math.min(active, Math.max(0, images.length - 1));

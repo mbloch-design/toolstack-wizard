@@ -1,0 +1,40 @@
+# tooltrim.com — robots.txt
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Disallow: /api/
+
+# Les pages noindex et les variantes de tracking restent explorables afin que
+# les moteurs puissent lire leurs directives de consolidation.
+
+Sitemap: https://tooltrim.com/sitemap.xml
+
+# LLM Crawlers — autorisés (stratégie GEO)
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { loadGoogleAnalytics, stopGoogleAnalytics } from '@/lib/analytics';
 import { CONSENT_KEY, OPEN_COOKIE_PREFERENCES, readAnalyticsConsent, saveAnalyticsConsent } from '@/lib/analyticsConsent';
@@ -24,6 +24,7 @@ export default function AnalyticsConsent() {
         const reload = stopGoogleAnalytics();
         if (!editingRef.current || !consent) setVisible(!consent);
         if (reload) window.location.reload();
+        else loadGoogleAnalytics(false);
       }
     };
     const open = () => {
@@ -54,6 +55,17 @@ export default function AnalyticsConsent() {
     if (visible && editing) dialog.current?.focus();
   }, [visible, editing]);
 
+  // Preserve main's scroll clearance for elements focused behind the banner.
+  useLayoutEffect(() => {
+    const root = document.documentElement;
+    const measure = () => root.style.setProperty('--consent-h', `${Math.ceil(dialog.current?.getBoundingClientRect().height ?? 0) + 16}px`);
+    if (!visible || !dialog.current) { root.style.removeProperty('--consent-h'); return; }
+    measure();
+    const observer = typeof ResizeObserver === 'undefined' ? null : new ResizeObserver(measure);
+    observer?.observe(dialog.current);
+    return () => { observer?.disconnect(); root.style.removeProperty('--consent-h'); };
+  }, [visible]);
+
   if (!visible) return null;
   const close = () => { editingRef.current = false; setVisible(false); setEditing(false); returnFocus.current?.focus(); };
   const accept = () => { saveAnalyticsConsent('accepted'); loadGoogleAnalytics(); close(); };
@@ -63,6 +75,7 @@ export default function AnalyticsConsent() {
     close();
     // Removing a script does not remove its automatic tracking listeners.
     if (reload) window.location.reload();
+    else loadGoogleAnalytics(false);
   };
 
   return (
@@ -72,8 +85,8 @@ export default function AnalyticsConsent() {
       <div className="analytics-consent__copy">
         <strong id="analytics-consent-title">{t('Mesure d’audience', 'Audience measurement')}</strong>
         <p id="analytics-consent-description">{t(
-          'Avec votre accord, Google Analytics mesure les pages consultées et les interactions. Refuser ne change pas l’accès au site. Vous pouvez modifier votre choix dans « Préférences cookies » en pied de page.',
-          'With your permission, Google Analytics measures page views and interactions. Refusing does not affect access to the site. You can change your choice in “Cookie preferences” in the footer.'
+          'Google Analytics reçoit des signaux de mesure limités sans cookies, même si vous refusez. Avec votre accord, il utilise des cookies et mesure aussi les interactions. Refuser ne change pas l’accès au site. Vous pouvez modifier votre choix dans « Préférences cookies » en pied de page.',
+          'Google Analytics receives limited measurement signals without cookies, even if you refuse. With your permission, it uses cookies and also measures interactions. Refusing does not affect access to the site. You can change your choice in “Cookie preferences” in the footer.'
         )}</p>
         <a href={`${english ? '/en' : '/fr'}/privacy-policy`}>{t('En savoir plus', 'Learn more')}</a>
         {editing && <button type="button" className="analytics-consent__close" onClick={close}>{t('Fermer', 'Close')}</button>}

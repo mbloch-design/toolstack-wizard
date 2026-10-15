@@ -17,7 +17,8 @@ import type { Currency } from "@/hooks/useCurrency";
  *   revient sur le bouton Menu à la fermeture ; aucun survol nécessaire.
  *
  * La barre d'onglets du bas reste la navigation principale au pouce : ce
- * menu donne la carte complète du site, il ne la remplace pas.
+ * menu ne la répète pas, il donne ce qu'elle ne montre pas (sous-niveaux,
+ * préférences, soumettre un outil).
  */
 
 type Level = "root" | "tools" | "guides";
@@ -122,26 +123,24 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
         <div className="asv2-mm-body" key={level}>
           {level === "root" && (
             <>
-              <nav aria-label={L("Sections", "Sections")}>
+              {/* Accueil, Stacks et Comparatifs sont déjà dans la barre du bas :
+                  le menu ne garde que ce qu'elle ne montre pas, les sous-niveaux. */}
+              <nav aria-label={L("Explorer", "Explore")}>
                 <ul className="asv2-mm-list">
                   {items.map((item) => {
                     const sub = hasLevel(item.id);
+                    if (!sub) return null;
                     const label = L(item.labelFr, item.labelEn);
                     return (
                       <li key={item.id} className="asv2-mm-row">
-                        <Link
-                          to={`${prefix}${item.to}`}
-                          onClick={onClose}
-                          className={`asv2-mm-link${activeId === item.id ? " is-active" : ""}`}
-                          aria-current={activeId === item.id ? "page" : undefined}
+                        <button
+                          type="button"
+                          className={`asv2-mm-link asv2-mm-link--drill${activeId === item.id ? " is-active" : ""}`}
+                          onClick={() => setLevel(sub)}
                         >
-                          {label}
-                        </Link>
-                        {sub && (
-                          <button type="button" className="asv2-mm-drill" onClick={() => setLevel(sub)} aria-label={L(`Ouvrir ${label}`, `Open ${label}`)}>
-                            <ChevronRight aria-hidden />
-                          </button>
-                        )}
+                          <span>{label}</span>
+                          <ChevronRight aria-hidden />
+                        </button>
                       </li>
                     );
                   })}

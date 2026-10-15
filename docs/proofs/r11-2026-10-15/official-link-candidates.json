@@ -1,0 +1,50 @@
+[
+  {
+    "url": "https://shop.cloudtask.com/",
+    "status": 200,
+    "finalUrl": "https://cloudtask.com/",
+    "title": "LATAM Staffing and Staff Augmentation | CloudTask"
+  },
+  {
+    "url": "https://cloudtask.com/",
+    "status": 200,
+    "finalUrl": "https://cloudtask.com/",
+    "title": "LATAM Staffing and Staff Augmentation | CloudTask"
+  },
+  {
+    "url": "https://www.liquidweb.com/partner-programs/agency-partner-program/",
+    "status": 200,
+    "finalUrl": "https://www.liquidweb.com/",
+    "title": "Web Hosting Solutions | Managed Hosting Built for Reliability, Speed, and Scalability"
+  },
+  {
+    "url": "https://www.logome.ai/",
+    "status": 404,
+    "finalUrl": "https://www.logome.ai/",
+    "title": "404 - Page not found"
+  },
+  {
+    "url": "https://logome.ai/",
+    "status": 404,
+    "finalUrl": "https://logome.ai/",
+    "title": "404 - Page not found"
+  },
+  {
+    "url": "https://www.maxon.net/en/article/pluraleyes-to-enter-limited-maintenance-mode",
+    "status": 200,
+    "finalUrl": "https://www.maxon.net/en/article/pluraleyes-to-enter-limited-maintenance-mode",
+    "title": "Maxon"
+  },
+  {
+    "url": "https://support.maxon.net/hc/en-us/sections/360009775733-Legacy-PluralEyes-Shooter-Suites",
+    "status": 403,
+    "finalUrl": "https://support.maxon.net/hc/en-us/sections/360009775733-Legacy-PluralEyes-Shooter-Suites",
+    "title": "Just a moment..."
+  },
+  {
+    "url": "https://www.zoom.com/en/products/ai-assistant/",
+    "status": 200,
+    "finalUrl": "https://www.zoom.com/en/products/ai-assistant/?cms_guid=false",
+    "title": "Meet ZoomMate, your AI teammate | Zoom"
+  }
+]

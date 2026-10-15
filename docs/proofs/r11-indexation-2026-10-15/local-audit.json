@@ -1,0 +1,863 @@
+{
+  "measuredAt": "2026-10-15T15:28:20.691Z",
+  "sitemapUrls": 13148,
+  "sitemapSha256": "23ca90e86196e87bbb6fd60eb56085a9a9bbd6e2dfa238368a5e41178d2471c6",
+  "families": {
+    "/": 2,
+    "/tools": 2,
+    "/category": 2,
+    "/guides": 2,
+    "/stacks": 2,
+    "/about": 2,
+    "/transparency": 2,
+    "/contact": 2,
+    "/submit": 2,
+    "/explorer": 2,
+    "/tool/:slug": 2480,
+    "/tool/:slug/prix": 1240,
+    "/tool/:slug/pricing": 1240,
+    "/tool/:slug/alternatives": 2480,
+    "/tool/:slug/avis": 1240,
+    "/tool/:slug/reviews": 1240,
+    "/explorer/around/:slug": 2480,
+    "/category/:slug": 38,
+    "/guide/:slug": 98,
+    "/comparatifs": 2,
+    "/comparatif/:slug": 166,
+    "/stacks/:slug": 424
+  },
+  "failures": [],
+  "jsonLdBlocks": 43328,
+  "jsonLdTypes": {
+    "Organization": 13148,
+    "ImageObject": 13148,
+    "WebSite": 13148,
+    "SearchAction": 13148,
+    "SoftwareApplication": 7440,
+    "Review": 7440,
+    "Rating": 7440,
+    "WebPage": 9920,
+    "BreadcrumbList": 10202,
+    "ListItem": 10202,
+    "FAQPage": 2516,
+    "Question": 2516,
+    "Answer": 2516,
+    "Offer": 4950,
+    "AggregateOffer": 1788,
+    "ItemList": 24,
+    "Article": 78
+  },
+  "noindexOutsideSitemap": [
+    {
+      "path": "/en/category/budgeting-fpa",
+      "canonical": [
+        "https://tooltrim.com/en/category/budgeting-fpa"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/budgeting-fpa"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/budgeting-fpa"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/budgeting-fpa"
+        }
+      ],
+      "description": "Budgeting, forecasting, and finance reporting tools used to keep spend aligned with the plan. Compare the best Budgeting / FP&A tools: honest reviews, verified pricing and alternatives. ToolTrim recommendations for freelancers.",
+      "title": "Budgeting / FP&A: best SaaS tools for freelancers 2026",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 2,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/en/category/communication-equipe",
+      "canonical": [
+        "https://tooltrim.com/en/category/communication-equipe"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/communication-equipe"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/communication-equipe"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/communication-equipe"
+        }
+      ],
+      "description": "Collaborate and communicate with clients and partners. Compare the best Team Communication tools: honest reviews, verified pricing and alternatives. ToolTrim recommendations for freelancers.",
+      "title": "Team Communication: best SaaS tools for freelancers 2026",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 2,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/en/category/prototyping",
+      "canonical": [
+        "https://tooltrim.com/en/category/prototyping"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/prototyping"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/prototyping"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/prototyping"
+        }
+      ],
+      "description": "Tools for creating mockups, wireframes and interactive prototypes. Compare the best Prototyping tools: honest reviews, verified pricing and alternatives. ToolTrim recommendations for freelancers.",
+      "title": "Prototyping: best SaaS tools for freelancers 2026 | ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 2,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/en/category/stockage",
+      "canonical": [
+        "https://tooltrim.com/en/category/stockage"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/stockage"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/stockage"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/stockage"
+        }
+      ],
+      "description": "Keep your files safe and accessible anywhere. Compare the best Storage tools: honest reviews, verified pricing and alternatives. ToolTrim recommendations for freelancers.",
+      "title": "Storage: best SaaS tools for freelancers 2026 | ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 3,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem",
+        "ItemList"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/en/category/vendor-risk-data",
+      "canonical": [
+        "https://tooltrim.com/en/category/vendor-risk-data"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/vendor-risk-data"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/vendor-risk-data"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/vendor-risk-data"
+        }
+      ],
+      "description": "Third-party databases and scores used to qualify vendor risk, compliance, ESG, and security posture. Compare the best Vendor Risk Data tools: honest reviews, verified pricing and alternatives. ToolTrim recommendations for freelancers.",
+      "title": "Vendor Risk Data: best SaaS tools for freelancers 2026",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 2,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/en/guide/minimalist-saas-stack-freelancer-2026-under-50-euros",
+      "canonical": [
+        "https://tooltrim.com/en/guide/minimalist-saas-stack-freelancer-2026-under-50-euros"
+      ],
+      "robots": [
+        "index, follow",
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/guide/stack-saas-minimaliste-freelance-2026-moins-50-euros"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/guide/minimalist-saas-stack-freelancer-2026-under-50-euros"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/guide/minimalist-saas-stack-freelancer-2026-under-50-euros"
+        }
+      ],
+      "description": "Notion, Freebe, Make, Fathom, Proton Mail: a freelancer's complete stack for under €33/month. Verified prices and decision rules.",
+      "title": "Minimalist SaaS stack 2026: 5 tools under 50",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 3,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "Article",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/en/privacy-policy",
+      "canonical": [
+        "https://tooltrim.com/en/privacy-policy"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/privacy-policy"
+        },
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/privacy-policy"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/privacy-policy"
+        }
+      ],
+      "description": "How ToolTrim collects, uses, and protects your personal data.",
+      "title": "Privacy Policy — ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 0,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/category/budgeting-fpa",
+      "canonical": [
+        "https://tooltrim.com/fr/category/budgeting-fpa"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/budgeting-fpa"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/budgeting-fpa"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/budgeting-fpa"
+        }
+      ],
+      "description": "Outils de pilotage budgétaire, prévisionnel et reporting finance pour garder les dépenses alignées avec le plan. Comparez les meilleurs outils de la catégorie Budgeting / FP&A : avis, prix vérifiés et alternatives. Recommandations ToolTrim pour freelances.",
+      "title": "Budgeting / FP&A : meilleurs outils SaaS pour freelances 2026",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 2,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/category/communication-equipe",
+      "canonical": [
+        "https://tooltrim.com/fr/category/communication-equipe"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/communication-equipe"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/communication-equipe"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/communication-equipe"
+        }
+      ],
+      "description": "Collaborer et échanger efficacement avec clients et partenaires. Comparez les meilleurs outils de la catégorie Communication Équipe : avis, prix vérifiés et alternatives. Recommandations ToolTrim pour freelances.",
+      "title": "Communication Équipe : meilleurs outils SaaS pour freelances 2026",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 2,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/category/prototyping",
+      "canonical": [
+        "https://tooltrim.com/fr/category/prototyping"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/prototyping"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/prototyping"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/prototyping"
+        }
+      ],
+      "description": "Outils pour créer des maquettes, wireframes et prototypes interactifs. Comparez les meilleurs outils de la catégorie Prototyping : avis, prix vérifiés et alternatives. Recommandations ToolTrim pour freelances.",
+      "title": "Prototyping : meilleurs outils SaaS pour freelances 2026",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 2,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/category/stockage",
+      "canonical": [
+        "https://tooltrim.com/fr/category/stockage"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/stockage"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/stockage"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/stockage"
+        }
+      ],
+      "description": "Garder ses fichiers en sécurité et accessibles partout. Comparez les meilleurs outils de la catégorie Stockage : avis, prix vérifiés et alternatives. Recommandations ToolTrim pour freelances.",
+      "title": "Stockage : meilleurs outils SaaS pour freelances 2026",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 3,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem",
+        "ItemList"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/category/vendor-risk-data",
+      "canonical": [
+        "https://tooltrim.com/fr/category/vendor-risk-data"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/category/vendor-risk-data"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/category/vendor-risk-data"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/category/vendor-risk-data"
+        }
+      ],
+      "description": "Bases de données et scores tiers pour qualifier les risques fournisseurs, conformité, RSE et sécurité. Comparez les meilleurs outils de la catégorie Vendor Risk Data : avis, prix vérifiés et alternatives. Recommandations ToolTrim pour freelances.",
+      "title": "Vendor Risk Data : meilleurs outils SaaS pour freelances 2026",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 2,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/guide/stack-saas-minimaliste-freelance-2026-moins-50-euros",
+      "canonical": [
+        "https://tooltrim.com/fr/guide/stack-saas-minimaliste-freelance-2026-moins-50-euros"
+      ],
+      "robots": [
+        "index, follow",
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/guide/stack-saas-minimaliste-freelance-2026-moins-50-euros"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/guide/minimalist-saas-stack-freelancer-2026-under-50-euros"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/guide/minimalist-saas-stack-freelancer-2026-under-50-euros"
+        }
+      ],
+      "description": "Notion, Freebe, Make, Fathom, Proton Mail : la stack complète d'un freelance pour moins de 33€/mois. Prix vérifiés et règles d'arbitrage.",
+      "title": "Stack SaaS minimaliste 2026 : 5 outils, moins de 50",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 3,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction",
+        "Article",
+        "BreadcrumbList",
+        "ListItem"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/privacy-policy",
+      "canonical": [
+        "https://tooltrim.com/fr/privacy-policy"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/privacy-policy"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/privacy-policy"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/privacy-policy"
+        }
+      ],
+      "description": "Comment ToolTrim collecte, utilise et protège vos données personnelles.",
+      "title": "Politique de confidentialité — ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 0,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    }
+  ],
+  "indexableOutsideSitemap": [
+    {
+      "path": "/en/legal-notice",
+      "canonical": [
+        "https://tooltrim.com/en/legal-notice"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/legal-notice"
+        },
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/legal-notice"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/legal-notice"
+        }
+      ],
+      "description": "Legal notice for ToolTrim.io",
+      "title": "Legal Notice — ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/en/ma-stack",
+      "canonical": [
+        "https://tooltrim.com/en/ma-stack"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/ma-stack"
+        },
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/ma-stack"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/ma-stack"
+        }
+      ],
+      "description": "Build and track your SaaS tool stack with ToolTrim.",
+      "title": "My stack — ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/en/my-stack",
+      "canonical": [
+        "https://tooltrim.com/en/ma-stack"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [],
+      "description": "Build and track your SaaS tool stack with ToolTrim.",
+      "title": "My stack — ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/en/terms",
+      "canonical": [
+        "https://tooltrim.com/en/terms"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/terms"
+        },
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/terms"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/terms"
+        }
+      ],
+      "description": "Terms of service for ToolTrim.io",
+      "title": "Terms of Service — ToolTrim",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/legal-notice",
+      "canonical": [
+        "https://tooltrim.com/fr/legal-notice"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/legal-notice"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/legal-notice"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/legal-notice"
+        }
+      ],
+      "description": "Mentions légales du site ToolTrim.io",
+      "title": "Mentions légales — ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/ma-stack",
+      "canonical": [
+        "https://tooltrim.com/fr/ma-stack"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/ma-stack"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/ma-stack"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/ma-stack"
+        }
+      ],
+      "description": "Composez et suivez votre stack d'outils SaaS avec ToolTrim.",
+      "title": "Ma stack — ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/my-stack",
+      "canonical": [
+        "https://tooltrim.com/fr/ma-stack"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [],
+      "description": "Composez et suivez votre stack d'outils SaaS avec ToolTrim.",
+      "title": "Ma stack — ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/fr/terms",
+      "canonical": [
+        "https://tooltrim.com/fr/terms"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/terms"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/terms"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/terms"
+        }
+      ],
+      "description": "Conditions générales d'utilisation du site ToolTrim.io",
+      "title": "Conditions générales — ToolTrim",
+      "htmlLang": "fr",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    },
+    {
+      "path": "/",
+      "canonical": [
+        "https://tooltrim.com/en"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "alternates": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en"
+        }
+      ],
+      "description": "ToolTrim helps freelancers and small teams decide which software to keep, replace, or add based on their stack, budget, and real workflow.",
+      "title": "ToolTrim | Decide which software to keep, replace, or add",
+      "htmlLang": "en",
+      "h1Count": 1,
+      "jsonLdCount": 1,
+      "jsonLdTypes": [
+        "Organization",
+        "ImageObject",
+        "WebSite",
+        "SearchAction"
+      ],
+      "jsonErrors": []
+    }
+  ]
+}

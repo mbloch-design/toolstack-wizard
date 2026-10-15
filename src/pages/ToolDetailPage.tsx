@@ -1,3 +1,4 @@
+import { isToolCoverBlocked } from "@/lib/toolImageBlocklist";
 import { useParams, useLocation } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
@@ -313,7 +314,7 @@ const ToolDetailPage = () => {
         const pitch = lang === "en" ? (ct.shortDescriptionEn || ct.shortDescription) : ct.shortDescription;
         return (
           <li key={ct.id}>
-            <Link to={`${prefix}/tool/${ct.slug || ct.id}`} className="td-alt-shelf-item">
+            <Link to={`${prefix}/tool/${ct.slug || ct.id}`} className="td-alt-shelf-item" onClick={() => trackAlternative(ct.slug || ct.id, "alternatives_shelf")}>
               <ToolLogo tool={ct} size={44} className="td-alt-shelf-logo" />
               <span className="td-alt-shelf-copy">
                 <span className="td-alt-shelf-name">{ct.name}</span>
@@ -338,7 +339,17 @@ const ToolDetailPage = () => {
   const safeWebsiteUrl = safeExternalUrl(tool.websiteUrl);
   const primaryCtaUrl = safeAffiliateUrl || safeWebsiteUrl;
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
-  const primaryCtaLabel = tool.slug === "tapstitch" ? t("Créer mon premier produit", "Create my first product") : (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t("Visiter le site", "Visit website");
+  const primaryCtaLabel = tool.slug === "tapstitch" ? t("Créer mon premier produit", "Create my first product") : (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t(`Visiter ${tool.name}`, `Visit ${tool.name}`);
+  const trackOutbound = (location: string, label: string) => trackEvent("outbound_tool_click", {
+    tool_slug: tool.slug || tool.id,
+    tool_name: tool.name,
+    cta_location: location,
+    cta_label: label,
+    destination_domain: getDomainFromUrl(primaryCtaUrl),
+    language: lang,
+    is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
+  });
+  const trackAlternative = (to: string, source: string) => trackEvent("alternative_click", { tool_slug: tool.slug || tool.id, to_slug: to, source });
   const hasFreeplan   = hasGenuineFreeTier(tool.pricing?.free);
   // Was `!!(tool.pricing?.free && tool.pricing?.paid)` — pure truthiness,
   // so a free field describing the ABSENCE of a free plan ("Pas de plan
@@ -393,7 +404,7 @@ const ToolDetailPage = () => {
     { key: "presentation", label: t("Vue d’ensemble", "Overview"), to: baseToolPath },
     { key: "prix", label: t("Prix", "Pricing"), to: `${baseToolPath}/${lang === "en" ? "pricing" : "prix"}` },
     ...(hasAlternativesContent ? [{ key: "alternatives", label: t("Alternatives", "Alternatives"), to: `${baseToolPath}/alternatives` }] : []),
-    { key: "avis", label: t("Avis", "Reviews"), to: `${baseToolPath}/${lang === "en" ? "reviews" : "avis"}` },
+    { key: "avis", label: "Verdict", to: `${baseToolPath}/${lang === "en" ? "reviews" : "avis"}` },
     // /faq is a dead route (vercel.json redirects it back to the fiche to
     // avoid duplicate-content pages), and the FAQ block already renders on
     // the overview tab — link straight to its anchor instead of a URL that
@@ -476,7 +487,7 @@ const ToolDetailPage = () => {
                   is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
                 })}
               >
-                {t("Visiter", "Visit")}
+                {primaryCtaLabel}
               </a>
             </div>
           </nav>
@@ -501,7 +512,7 @@ const ToolDetailPage = () => {
         <div className="td-body-grid td-page-grid">
 
           {/* ── MAIN COLUMN (left): hero identity + sections ── */}
-          <main className="td-main">
+          <article className="td-main">
 
             {/* Hero identity — editorial identity first, supporting OG visual
                 below. The product logo remains associated with its name in
@@ -579,22 +590,15 @@ const ToolDetailPage = () => {
 
             <div ref={scrollBodyRef} className="td-scroll-body">
 
-            <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
-              {subpageLinks.map((item) => (
-                <Link key={item.key} to={item.to} aria-current={subPage === item.key ? "page" : undefined}>
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-
             {showAnalysis && (() => {
               const curatedMedia = getToolMediaImages(tool.slug || tool.id);
               const cover = tool.ogImageUrl ?? (tool as any).og_image_url;
+              const blockedCover = isToolCoverBlocked({ ...tool, ogImageUrl: cover }) ? cover : null;
               const images = [...new Set([
                 cover,
                 ...(tool.galleryImages ?? (tool as any).gallery_images ?? []),
                 ...curatedMedia.map((image) => image.src),
-              ].filter((url): url is string => !!url))];
+              ].filter((url): url is string => !!url && url !== blockedCover))];
               const imageAlts = images.map((src) => {
                 const curated = curatedMedia.find((image) => image.src === src);
                 return curated ? (lang === "en" ? curated.altEn : curated.altFr) : "";
@@ -605,6 +609,14 @@ const ToolDetailPage = () => {
                 </div>
               ) : null;
             })()}
+
+            <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
+              {subpageLinks.map((item) => (
+                <Link key={item.key} to={item.to} aria-current={subPage === item.key ? "page" : undefined}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
 
             {/* Editorial overview: the reference layout is reproduced inside
                 the content itself — analysis on the left, factual rail on the
@@ -711,7 +723,15 @@ const ToolDetailPage = () => {
                   {primaryCtaUrl && (
                     <section className="td-editorial-fact-group">
                       <h3>{t("Lien", "Link")}</h3>
-                      <a className="td-editorial-official-link" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}>
+                      <a className="td-editorial-official-link" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackEvent("outbound_tool_click", {
+                        tool_slug: tool.slug || tool.id,
+                        tool_name: tool.name,
+                        cta_location: "tool_facts_rail",
+                        cta_label: "official_website",
+                        destination_domain: getDomainFromUrl(primaryCtaUrl),
+                        language: lang,
+                        is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
+                      })}>
                         <span>{t("Site officiel", "Official website")}</span>
                         <ExternalLink aria-hidden />
                       </a>
@@ -839,6 +859,11 @@ const ToolDetailPage = () => {
                     lang={lang} t={t}
                   />
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
+                  {primaryCtaUrl && <p className="td-context-cta">
+                    <a href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_pricing", "check_current_plans")}>
+                      {t(`Les prix évoluent : vérifie les offres actuelles sur le site de ${tool.name}`, `Prices change. Check the current plans on ${tool.name}’s site`)}<ExternalLink aria-hidden />
+                    </a>
+                  </p>}
                 </div>
                 <ToolBundleSection tool={tool} tools={tools} lang={lang} t={t} />
               </div>
@@ -914,6 +939,13 @@ const ToolDetailPage = () => {
                         >
                           {t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
                         </Link>
+                        {category && <Link
+                          to={`${prefix}/category/${category.slug}`}
+                          className="td-chip"
+                          onClick={() => trackAlternative(`category:${category.slug}`, "no_substitute_category")}
+                        >
+                          {t(`Voir tous les outils ${lang === "fr" ? (category.name || "") : (category.nameEn || category.name || "")}`, `Browse all ${category.nameEn || category.name || ""} tools`)}
+                        </Link>}
                       </div>
                     </div>
                   )}
@@ -1057,7 +1089,7 @@ const ToolDetailPage = () => {
                                     <span className="td-score-axis-heading">
                                       <span className="td-score-axis-name">{t(labelFr, labelEn)}</span>
                                     </span>
-                                    <div className="td-score-meter" aria-label={`${value}/5`}>
+                                    <div className="td-score-meter" role="img" aria-label={lang === "en" ? `${value} out of 5` : `${value} sur 5`}>
                                       {[1, 2, 3, 4, 5].map((i) =>
                                         i <= value
                                           ? <StarSolid key={i} size={16} className="td-score-star td-score-star--filled" aria-hidden="true" />
@@ -1085,6 +1117,14 @@ const ToolDetailPage = () => {
                         </div>
                       )}
 
+                      {primaryCtaUrl && <div className="td-decision-cta">
+                        <a className="td-decision-cta-main" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_review", "decided_visit")}>
+                          {t(`Ta décision est prise ? Visiter ${tool.name}`, `Decided? Visit ${tool.name}`)}<ExternalLink aria-hidden />
+                        </a>
+                        <Link className="td-decision-cta-alt" to={`${baseToolPath}/alternatives`} onClick={() => trackAlternative("alternatives_page", "tool_review")}>
+                          {t("ou comparer les alternatives", "or compare alternatives")}<ArrowRight aria-hidden />
+                        </Link>
+                      </div>}
                     </div>
                   );
                 })()}
@@ -1188,17 +1228,25 @@ const ToolDetailPage = () => {
                     is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
                   })}
                 >
-                  {t("Visiter", "Visit")}
+                  {primaryCtaLabel}
                   <ExternalLink aria-hidden />
                 </a>
               </div>
             )}
 
             <div className="td-sidebar-mobile td-reading-actions">
-              <h2>{t("Et maintenant ?", "What’s next?")}</h2>
-              <StickyDecisionCard {...cardProps} section="actions" />
+              <h2 className="td-title">{t("Ta prochaine étape.", "Your next step.")}</h2>
+              {primaryCtaUrl && <a className="td-next-primary" href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_next_step", primaryCtaLabel)}>
+                {primaryCtaLabel}<ExternalLink aria-hidden />
+              </a>}
+              {clusterTools[0] && <Link className="td-next-alt" to={`${prefix}/tool/${clusterTools[0].slug || clusterTools[0].id}`} onClick={() => trackAlternative(clusterTools[0].slug || clusterTools[0].id, "tool_next_step")}>
+                <ToolLogo tool={clusterTools[0]} size={28} />
+                <span>{t("Alternative la plus proche :", "Closest alternative:")} <strong>{clusterTools[0].name}</strong></span>
+                <ArrowRight aria-hidden />
+              </Link>}
+              <StickyDecisionCard {...cardProps} section="share" />
             </div>
-          </main>
+          </article>
           {/* end main content */}
 
           {/* ── RIGHT SIDEBAR — StickyDecisionCard ── */}

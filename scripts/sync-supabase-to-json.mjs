@@ -1,3 +1,4 @@
+import { applyAuditedToolUrls } from "../src/lib/toolUrlCorrections.mjs";
 import { createClient } from "@supabase/supabase-js";
 import { readFile, writeFile } from "node:fs/promises";
 
@@ -38,7 +39,7 @@ async function fetchAll(table) {
 }
 
 function mapTool(row, local = {}) {
-  return {
+  return applyAuditedToolUrls({
     ...local,
     id: row.id,
     slug: row.slug || row.id,
@@ -96,7 +97,7 @@ function mapTool(row, local = {}) {
     substitution_cluster_v2: pick(row.substitution_cluster_v2, local.substitution_cluster_v2),
     decision_policy_v3: pick(row.decision_policy_v3, local.decision_policy_v3),
     force_silence: row.force_silence ?? local.force_silence,
-  };
+  });
 }
 
 function mapCategory(row, tools) {

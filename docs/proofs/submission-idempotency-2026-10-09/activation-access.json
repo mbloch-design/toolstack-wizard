@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-09",
+  "request": "fais la suite",
+  "status": "required Production variable names configured; remote runtime recipe and deployment pending",
+  "vercel": {
+    "project": "toolstack-wizard",
+    "projectId": "prj_gOLJN2t7sFiFA49LbIGfadbC4P9n",
+    "teamId": "team_7KjhctKdeGqM6ApVdG9uF55F",
+    "project_discovery": "PASS",
+    "environment_metadata_request": {
+      "decrypt": false,
+      "status": 403,
+      "scope": "mbloch-designs-projects"
+    },
+    "cli_available": false,
+    "browser": "authenticated owner scope; project environment variables accessible",
+    "latest_recheck": "403 unchanged; browser still login required",
+    "observed_variable_names": [
+      "RESEND_API_KEY"
+    ],
+    "observed_targets": {
+      "RESEND_API_KEY": [
+        "Production",
+        "Preview"
+      ]
+    },
+    "required_names_not_present": [],
+    "configuration_saved": true,
+    "pending_form": null,
+    "saved_variables": [
+      "SUBMISSION_REDIS_URL",
+      "SUBMISSION_REDIS_TOKEN",
+      "SUBMISSION_MAINTENANCE_TOKEN",
+      "BADGE_VERIFICATION_SECRET",
+      "CREEM_API_KEY"
+    ],
+    "saved_target": "Production",
+    "saved_type": "Secret",
+    "redeployed": false
+  },
+  "upstash": {
+    "browser": "authenticated owner account",
+    "database": "tooltrim-submissions",
+    "databaseId": "3beef924-b484-4891-b3ab-381e409635f7",
+    "console_url": "https://console.upstash.com/redis/3beef924-b484-4891-b3ab-381e409635f7/details",
+    "plan": "Free Tier",
+    "region": "eu-central-1 Frankfurt",
+    "persistence": "included in creation confirmation",
+    "eviction_aria_checked": "false",
+    "monthly_price_usd": 0,
+    "monthly_commands_visible": 500000,
+    "bandwidth_visible": "10 GB",
+    "storage_visible": "238 MB (250 MB creation label)",
+    "paid_plans": "Add a payment method required",
+    "credentials_read_or_printed": false,
+    "recipe_run": false
+  },
+  "local_environment": {
+    "redis_maintenance_creem_badge_configuration_present": false,
+    "resend_name_present_in_primary_preprod": true,
+    "values_printed": false
+  },
+  "remote_changes": [
+    "created dedicated Free Redis database",
+    "configured three server secrets in Vercel Production"
+  ],
+  "recipe_run": false,
+  "publication": false,
+  "credential_handling": {
+    "user_authorized_transfer": true,
+    "values_printed": false,
+    "redis_token_copied_from_visible_rest_example": true,
+    "ui_remasked_after_read": true,
+    "maintenance_secret": "32 cryptographically random bytes; saved as Vercel Secret",
+    "local_secret_backup_created": false
+  },
+  "creem": {
+    "owner_authorized_creation_and_transfer": true,
+    "key_name": "ToolTrim — vérification des reçus",
+    "permissions": [
+      "checkouts:read"
+    ],
+    "full_access": false,
+    "key_created": true,
+    "key_transferred_to_vercel": "CREEM_API_KEY Secret Production",
+    "key_value_printed": false,
+    "ui_created_key_label": "LIVE",
+    "account_test_mode_switch_checked": false,
+    "api_auth_runtime_tested": false,
+    "product_id": "prod_2LMoN4zyRhNAb53r3rWpwX",
+    "product_matches_code": true,
+    "configured_return_url": "https://tooltrim.com/submit?paid=1",
+    "return_route_preserves_query_in_source": true,
+    "product_or_return_modified": false,
+    "checkout_metadata_live_recipe": "pending"
+  }
+}

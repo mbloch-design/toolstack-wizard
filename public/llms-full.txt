@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1348
+# Records: 1349
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -2872,7 +2872,7 @@
     "slug": "cloudtask-marketplace",
     "url_fr": "https://tooltrim.com/fr/tool/cloudtask-marketplace",
     "url_en": "https://tooltrim.com/en/tool/cloudtask-marketplace",
-    "website": "https://cloudtask.com/marketplace",
+    "website": "https://cloudtask.com/",
     "category": "communication",
     "pricing": {
       "free": "Toutes les fonctionnalités",
@@ -4113,7 +4113,7 @@
     "slug": "elfsight",
     "url_fr": "https://tooltrim.com/fr/tool/elfsight",
     "url_en": "https://tooltrim.com/en/tool/elfsight",
-    "website": " formulaires…).",
+    "website": "https://elfsight.com/",
     "category": "email-productivity",
     "pricing": {
       "free": "Plan gratuit : 200 vues de widget par mois, un seul widget, sites web illimités, marque Elfsight conservée",
@@ -7734,7 +7734,6 @@
     "slug": "liquid-web-partner-program",
     "url_fr": "https://tooltrim.com/fr/tool/liquid-web-partner-program",
     "url_en": "https://tooltrim.com/en/tool/liquid-web-partner-program",
-    "website": "https://liquidweb.com/partner-program",
     "category": "nocode-web",
     "pricing": {
       "free": "Fonctionnalités de base",
@@ -7790,7 +7789,6 @@
     "slug": "logomeai",
     "url_fr": "https://tooltrim.com/fr/tool/logomeai",
     "url_en": "https://tooltrim.com/en/tool/logomeai",
-    "website": "https://logomeai.partnerlinks.io/qixva38jv07p",
     "category": "design-tools",
     "pricing": {
       "free": "Création de compte et génération initiale gratuites. Les exports exploitables et les kits de marque nécessitent un forfait payant.",
@@ -10663,7 +10661,7 @@
     "slug": "plutio",
     "url_fr": "https://tooltrim.com/fr/tool/plutio",
     "url_en": "https://tooltrim.com/en/tool/plutio",
-    "website": " finances).",
+    "website": "https://www.plutio.com/",
     "category": "organization",
     "pricing": {
       "free": "Pas de plan gratuit permanent, essai de 7 jours.",
@@ -13276,7 +13274,7 @@
     "slug": "snov-io",
     "url_fr": "https://tooltrim.com/fr/tool/snov-io",
     "url_en": "https://tooltrim.com/en/tool/snov-io",
-    "website": " campagnes).",
+    "website": "https://snov.io/",
     "category": "communication",
     "pricing": {
       "free": "Toutes les fonctionnalités",
@@ -15243,7 +15241,7 @@
     "slug": "vcita",
     "url_fr": "https://tooltrim.com/fr/tool/vcita",
     "url_en": "https://tooltrim.com/en/tool/vcita",
-    "website": " paiements).",
+    "website": "https://www.vcita.com/",
     "category": "communication",
     "pricing": {
       "free": "Toutes les fonctionnalités",
@@ -16250,7 +16248,7 @@
     "slug": "zoom-ai-companion",
     "url_fr": "https://tooltrim.com/fr/tool/zoom-ai-companion",
     "url_en": "https://tooltrim.com/en/tool/zoom-ai-companion",
-    "website": "https://zoom.us/ai-assistant",
+    "website": "https://www.zoom.com/en/products/ai-assistant/",
     "category": "ai-general",
     "description_fr": "Assistant IA agentic pour Zoom Meetings rebaptisé ZoomMate (juin 2026) qui capture le contexte des réunions, génère des résumés, extraits des actions, et exécute des suivis automatisés dans les systèmes connectés (Salesforce, Jira, Slack, etc.).",
     "description_en": "AI assistant built into Zoom: meeting summaries, action items, smart compose."
@@ -18887,5 +18885,19 @@
     },
     "description_fr": "Une plateforme de lancement et un annuaire pour faire découvrir des produits indépendants.",
     "description_en": "A launch platform and directory for discovering indie products."
+  },
+  {
+    "name": "Newbi",
+    "slug": "newbi",
+    "url_fr": "https://tooltrim.com/fr/tool/newbi",
+    "url_en": "https://tooltrim.com/en/tool/newbi",
+    "website": "https://www.newbi.fr",
+    "category": "finance",
+    "pricing": {
+      "free": "Essai de 30 jours, toutes les fonctionnalités Freelance, sans carte bancaire.",
+      "paid": "Dès 17,99 € TTC/mois (16,19 € en engagement annuel), formule Freelance."
+    },
+    "description_fr": "Facturation, devis, CRM client, connexion bancaire et trésorerie réunis sur une seule plateforme pour freelances et TPE françaises, avec un accès comptable gratuit inclus.",
+    "description_en": "Invoicing, quotes, client CRM, bank connection and cash flow in one platform for French freelancers and small businesses, with free accountant access included."
   }
 ]

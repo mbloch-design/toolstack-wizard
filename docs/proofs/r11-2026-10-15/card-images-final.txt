@@ -1,0 +1,40 @@
+Card image audit — 1349 tools (offline)
+┌───────────┬────────┐
+│ (index)   │ Values │
+├───────────┼────────┤
+│ review    │ 28     │
+│ ok        │ 270    │
+│ fallback  │ 129    │
+│ unchecked │ 922    │
+└───────────┴────────┘
+REVIEW   tapstitch                      dimensions_unreadable
+REVIEW   shade                          dimensions_unreadable
+REVIEW   beefree                        dimensions_unreadable
+FALLBACK 17hats                         missing_image
+FALLBACK activepieces                   missing_image
+REVIEW   adobe-podcast-ai               dimensions_unreadable
+FALLBACK affiliate-dashboards           missing_image
+FALLBACK affiliate-tools                missing_image
+FALLBACK arc-browser                    missing_image
+REVIEW   audacity                       dimensions_too_small
+FALLBACK avaaatars                      missing_image
+FALLBACK bear                           missing_image
+FALLBACK beehiiv-analytics              missing_image
+FALLBACK better-proposals               missing_image
+FALLBACK bloom-crm                      missing_image
+FALLBACK bots-discord                   missing_image
+FALLBACK brandcrowd                     missing_image
+FALLBACK brandpad                       missing_image
+FALLBACK capcut-ai                      missing_image
+FALLBACK captaindoc                     missing_image
+FALLBACK chatgpt-pour-brouillons-non-juridiques missing_image
+FALLBACK cloudtask-marketplace          missing_image
+FALLBACK coda                           missing_image
+FALLBACK connective                     missing_image
+FALLBACK content-credentials-tools      missing_image
+FALLBACK convertkit-analytics           missing_image
+FALLBACK cosmaha                        missing_image
+FALLBACK craft                          missing_image
+FALLBACK cudekai                        missing_image
+FALLBACK doppler                        missing_image
+… 127 additional actionable entries

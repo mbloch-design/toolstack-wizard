@@ -1,0 +1,43 @@
+
+> vite_react_shadcn_ts@0.0.0 test:e2e:ma-stack
+> playwright test e2e/mon-stack-v1.spec.ts e2e/stack-explorer-journey.spec.ts e2e/stack-discovery-feed.spec.ts --workers=2
+
+
+Running 26 tests using 2 workers
+
+(node:8653) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8654) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8654) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8653) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › e2e/stack-discovery-feed.spec.ts:12:2 › whole-stack discovery fr/390: stable feed, save, explore and return (2.7s)
+  ✓   3 [chromium] › e2e/stack-discovery-feed.spec.ts:12:2 › whole-stack discovery fr/1440: stable feed, save, explore and return (2.0s)
+  ✓   4 [chromium] › e2e/stack-discovery-feed.spec.ts:12:2 › whole-stack discovery en/390: stable feed, save, explore and return (3.7s)
+  ✓   2 [chromium] › e2e/mon-stack-v1.spec.ts:12:1 › empty → search → add → inspect → remove → undo → persist (10.9s)
+  ✓   5 [chromium] › e2e/stack-discovery-feed.spec.ts:12:2 › whole-stack discovery en/1440: stable feed, save, explore and return (4.2s)
+  ✓   6 [chromium] › e2e/mon-stack-v1.spec.ts:37:1 › tool profile adds with one click and its saved CTA opens stack context (2.6s)
+  ✓   7 [chromium] › e2e/stack-discovery-feed.spec.ts:40:1 › direct stack feed keeps a newly saved idea instead of changing its source (1.4s)
+  ✓   9 [chromium] › e2e/stack-discovery-feed.spec.ts:49:44 › empty: no misleading whole-stack entry (1.3s)
+  ✓   8 [chromium] › e2e/mon-stack-v1.spec.ts:51:3 › fr / 390px: territories, Map, keyboard and no overflow (3.0s)
+  ✓  10 [chromium] › e2e/stack-discovery-feed.spec.ts:49:44 › wishlist: no misleading whole-stack entry (2.3s)
+  ✓  11 [chromium] › e2e/mon-stack-v1.spec.ts:51:3 › fr / 820px: territories, Map, keyboard and no overflow (3.7s)
+  ✓  13 [chromium] › e2e/mon-stack-v1.spec.ts:51:3 › fr / 1440px: territories, Map, keyboard and no overflow (3.4s)
+  ✓  12 [chromium] › e2e/stack-explorer-journey.spec.ts:4:2 › stack → explore → add → return fr/390 (6.9s)
+  ✓  14 [chromium] › e2e/mon-stack-v1.spec.ts:51:3 › en / 390px: territories, Map, keyboard and no overflow (3.6s)
+  ✓  16 [chromium] › e2e/mon-stack-v1.spec.ts:51:3 › en / 820px: territories, Map, keyboard and no overflow (3.2s)
+  ✓  15 [chromium] › e2e/stack-explorer-journey.spec.ts:4:2 › stack → explore → add → return fr/1440 (7.4s)
+  ✓  17 [chromium] › e2e/mon-stack-v1.spec.ts:51:3 › en / 1440px: territories, Map, keyboard and no overflow (3.4s)
+  ✓  19 [chromium] › e2e/mon-stack-v1.spec.ts:84:1 › invalid catalogue ID can be removed without losing valid tools (792ms)
+  ✓  20 [chromium] › e2e/mon-stack-v1.spec.ts:96:1 › corrupt storage recovers without crashing (1.1s)
+  ✓  21 [chromium] › e2e/mon-stack-v1.spec.ts:105:1 › blocked localStorage getter keeps selection usable in memory (1.4s)
+  ✓  18 [chromium] › e2e/stack-explorer-journey.spec.ts:4:2 › stack → explore → add → return en/390 (5.9s)
+  ✓  22 [chromium] › e2e/mon-stack-v1.spec.ts:116:1 › catalogue refresh updates the same saved selection without persisting tool data (815ms)
+  ✓  24 [chromium] › e2e/mon-stack-v1.spec.ts:139:1 › corrupt main snapshot recovers its backup (1.5s)
+  ✓  25 [chromium] › e2e/mon-stack-v1.spec.ts:149:1 › known alternatives stay contextual and selection stays in the workspace (1.7s)
+  ✓  26 [chromium] › e2e/mon-stack-v1.spec.ts:160:1 › a substantial stack stays readable at 320px (1.7s)
+  ✓  23 [chromium] › e2e/stack-explorer-journey.spec.ts:4:2 › stack → explore → add → return en/1440 (6.6s)
+
+  26 passed (46.7s)

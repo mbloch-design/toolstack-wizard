@@ -40,6 +40,14 @@ jobs:
       - name: Application unit tests
         run: npm test
 
+      - name: Prepare local Redis for submission integration tests
+        run: |
+          if ! command -v redis-server >/dev/null || ! command -v redis-cli >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y redis-server
+          fi
+          echo "SUBMISSION_TEST_REDIS_BIN=$(dirname "$(command -v redis-server)")" >> "$GITHUB_ENV"
+
       - name: API handler contract fixtures
         run: npm run test:api
 
@@ -52,6 +60,9 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
+      - name: API compiler compatibility
+        run: npx tsc -p tsconfig.api.json --lib ES2020,DOM,DOM.Iterable
+
       - name: Ma stack unit and exploration tests
         run: npm run test:ma-stack
 
@@ -60,6 +71,18 @@ jobs:
 
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
+
+      - name: My stack discovery journeys
+        run: npm run test:e2e:ma-stack
+
+      - name: Journey analytics and consent (isolated providers)
+        run: npx playwright test e2e/stack-analytics.spec.ts e2e/analytics-consent.spec.ts e2e/analytics-csp.spec.ts --output=analytics-test-results
+
+      - name: Catalog keyboard and accessibility journeys
+        run: npm run test:e2e:a11y -- --output=a11y-test-results
+
+      - name: R11 media and generated routing regressions
+        run: npm run test:e2e:r11
 
       - name: Payment return and draft recovery (simulated provider)
         run: npm run test:e2e:payment
@@ -75,6 +98,9 @@ jobs:
           path: |
             playwright-report/
             test-results/
+            a11y-test-results/
+            analytics-test-results/
+            r11-test-results/
             payment-report/
             payment-test-results/
           retention-days: 7

@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-09",
+  "transport": "actual Upstash REST",
+  "results": [
+    {
+      "status": "PASS",
+      "target": "authorized preactivation isolated namespace",
+      "namespace": "tt:recipe:9ff670ca-b792-4773-83e4-5b447f570ba2",
+      "phasesRestRequests": {
+        "reservation_concurrency_and_conflicts": 23,
+        "leases_uncertain_recovery_and_completed_job": 25,
+        "suspended_receipt_not_released": 3,
+        "ambiguous_window": 3,
+        "archive_preserves_consumption": 4,
+        "maintenance_scan": 4
+      },
+      "restRequestsBeforeCleanup": 65,
+      "fixtureRecordBytes": 546,
+      "realEmails": 0,
+      "realPayments": 0
+    },
+    {
+      "cleanup": "PASS",
+      "totalRestRequests": 68,
+      "productionRegistryUnchanged": true
+    }
+  ],
+  "concurrentReservations": 20,
+  "concurrentMailClaims": 20,
+  "scope": "fictional disposable preactivation namespace; production registry read only",
+  "limitations": [
+    "Not a complete HTTP handler/provider test",
+    "No billing capacity estimate",
+    "No deployment"
+  ]
+}

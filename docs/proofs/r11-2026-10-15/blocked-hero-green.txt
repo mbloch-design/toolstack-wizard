@@ -1,0 +1,15 @@
+
+Running 6 tests using 1 worker
+
+(node:46785) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:46785) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › e2e/r11-media-links.spec.ts:4:3 › fr: unavailable publisher links do not leave an empty local-nav CTA (2.1s)
+  ✓  2 [chromium] › e2e/r11-media-links.spec.ts:4:3 › en: unavailable publisher links do not leave an empty local-nav CTA (1.1s)
+  ✓  3 [chromium] › e2e/r11-media-links.spec.ts:14:3 › openai: known blank or bot-check covers never appear in the tool hero (1.1s)
+  ✓  4 [chromium] › e2e/r11-media-links.spec.ts:14:3 › personio: known blank or bot-check covers never appear in the tool hero (1.1s)
+  ✓  5 [chromium] › e2e/r11-media-links.spec.ts:14:3 › jquery: known blank or bot-check covers never appear in the tool hero (1.1s)
+  ✓  6 [chromium] › e2e/r11-media-links.spec.ts:21:1 › an audited local product gallery remains visible after recovering a formerly blocked cover (1.2s)
+
+  6 passed (9.9s)

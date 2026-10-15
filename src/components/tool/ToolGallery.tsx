@@ -128,8 +128,8 @@ export default function ToolGallery({ images, imageAlts = [], videos = [], toolN
               key={thumb.key}
               className={`tg-dot-thumb${i === safeActive ? " tg-dot-thumb--active" : ""}`}
               onClick={() => select(i)}
-              aria-label={`Aperçu ${i + 1}`}
-              aria-current={i === safeActive}
+              aria-label={lang === "en" ? `Show media ${i + 1} of ${visible.length}` : `Afficher le média ${i + 1} sur ${visible.length}`}
+              aria-current={i === safeActive ? "true" : undefined}
             >
               <img
                 src={thumb.type === "image" ? thumb.src : thumb.video.posterUrl || `https://i.ytimg.com/vi/${thumb.video.videoId}/mqdefault.jpg`}

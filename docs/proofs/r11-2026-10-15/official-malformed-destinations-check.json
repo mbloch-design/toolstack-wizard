@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://snov.io/",
+    "status": 200,
+    "finalUrl": "https://snov.io/",
+    "type": "text/html; charset=utf-8"
+  },
+  {
+    "url": "https://www.plutio.com/",
+    "status": 200,
+    "finalUrl": "https://www.plutio.com/",
+    "type": "text/html; charset=utf-8"
+  },
+  {
+    "url": "https://elfsight.com/",
+    "status": 200,
+    "finalUrl": "https://elfsight.com/",
+    "type": "text/html; charset=UTF-8"
+  },
+  {
+    "url": "https://www.vcita.com/",
+    "status": 403,
+    "finalUrl": "https://www.vcita.com/",
+    "type": "text/html; charset=UTF-8"
+  }
+]

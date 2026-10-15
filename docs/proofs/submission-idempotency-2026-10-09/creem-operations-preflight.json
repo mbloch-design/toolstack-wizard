@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-09",
+  "creem": {
+    "modeTest": false,
+    "existingPaidReceiptObserved": true,
+    "productId": "prod_2LMoN4zyRhNAb53r3rWpwX",
+    "productPrice": "USD 29 one-time",
+    "returnUrl": "https://tooltrim.com/submit?paid=1",
+    "productChanged": false,
+    "checkoutIdVisibleInReceipt": false,
+    "tooltrimMetadataVisibleInReceipt": false,
+    "metadataBracketSyntaxDocumented": true,
+    "apiAuthenticationVerified": false
+  },
+  "operations": {
+    "privateDirectoryPrepared": ".submission-ops.local/backups",
+    "directoryMode": "0700",
+    "initialEmptySnapshotCreated": true,
+    "snapshotMode": "0600",
+    "productionMutationCount": 0,
+    "maintenanceOperatorTokenAvailable": false,
+    "automaticScheduleInstalled": false
+  },
+  "newEmails": 0,
+  "newPayments": 0,
+  "deployed": false
+}
