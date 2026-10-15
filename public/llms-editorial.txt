@@ -593,14 +593,16 @@
     "language": "fr",
     "slug": "stack-redactrice-freelance",
     "url": "https://tooltrim.com/fr/guide/stack-redactrice-freelance",
-    "title": "Rédactrice freelance : la stack qui te suffit"
+    "title": "Rédactrice freelance : la stack qui te suffit",
+    "summary": "Rédaction freelance : cinq outils pour écrire, organiser son activité et encaisser ses paiements, avec les abonnements à réexaminer."
   },
   {
     "type": "guide",
     "language": "en",
     "slug": "stack-freelance-writer",
     "url": "https://tooltrim.com/en/guide/stack-freelance-writer",
-    "title": "Freelance writer: the minimal stack that suffices"
+    "title": "Freelance writer: the minimal stack that suffices",
+    "summary": "A five-tool stack for freelance writers: writing, organization and payments, plus subscriptions to reassess before adding more software."
   },
   {
     "type": "guide",

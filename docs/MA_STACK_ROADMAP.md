@@ -160,7 +160,7 @@ La promesse MVP devient :
 
 ## Découpage initial (historique)
 
-Ce découpage ne représente plus les statuts courants. Voir l’état actif consolidé dans [ROADMAP.md](ROADMAP.md#état-actif-consolidé--14-octobre-2026) et les points datés en tête de ce document.
+Ce découpage ne représente plus les statuts courants. Voir l’état actif consolidé dans [ROADMAP.md](ROADMAP.md#suivi-technique-actif) et les points datés en tête de ce document.
 
 | Étape | Objectif | Statut |
 |---|---|---|

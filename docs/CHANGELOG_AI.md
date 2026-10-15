@@ -1,3 +1,12 @@
+## 15 octobre 2026 — R10/R11 : nettoyage ciblé et références SEO
+
+- Périmètre approuvé : retrait du plugin React SWC inutilisé, décision Tailwind documentée, deux descriptions de guide et correction des références LLM. Travail validé localement ; aucune publication dans ce lot.
+- R10 : Vite utilise déjà `@vitejs/plugin-react`. Retrait de `@vitejs/plugin-react-swc` et de 14 entrées SWC du lock, sans autre version modifiée. Lock préparé dans un dossier temporaire ; `npm ci --dry-run --ignore-scripts` PASS. Les node_modules partagés restent inchangés. Audit avant/après identique : neuf entrées, cinq hautes et quatre modérées. Tailwind 3 conservé ; dépendance v3 de lovable-tagger et compatibilité du plugin typographique à traiter avant une migration. Aucun gain de sécurité ou de vitesse revendiqué.
+- R11 : descriptions SEO FR/EN ajoutées au guide rédaction freelance, sans modifier ses articles ni recertifier ses prix. Le générateur LLM distingue les alternatives (`/tool/{slug}/alternatives`) de l’écosystème (`/explorer/around/{slug}`). Exports régénérés : 264 résumés sur 264, contre deux absences avant correction.
+- Tests rouges reproduits avant correction, puis 360 tests applicatifs dans 58 fichiers PASS. Types app/Node/API, contrôle des tokens et build production complet PASS, incluant prérendu, équivalence HTML, SEO et budgets.
+- Quatre contrôles navigateur Chromium PASS sur l’artefact généré : FR/EN à 390/1440 px, descriptions initiales et hydratées, Open Graph, canonical et hreflang corrects, contenu d’article identique au public. Contre-revue indépendante sans problème actionnable.
+- Bilan et limites : [R10_R11_LOT1_2026-10-15.md](R10_R11_LOT1_2026-10-15.md). Les neuf alertes, la migration éventuelle, les médias et l’indexation restent ouverts. R5/R6 et les tests utilisateurs différés ne sont pas repris.
+
 ## 14 octobre 2026 — Publication R9 et portabilité de la recette
 
 - Lot R9 publié avec le correctif tokens sur 5db09fd39d ; déploiement Vercel réussi. La correction de marges 773b57373e conserve le lot.
