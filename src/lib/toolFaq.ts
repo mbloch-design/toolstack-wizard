@@ -38,8 +38,17 @@ export function buildToolFaqs(
   // Sans date de verification, la reponse s'arrete au prix. Ecrire « Prix
   // verifie le 2026-03-29 » a partir d'un repli code en dur affirmait un
   // controle qui n'avait pas eu lieu, sur 644 pages.
-  const verifiedSuffixFr = verifiedOn ? ` Prix vérifié le ${verifiedOn}.` : "";
-  const verifiedSuffixEn = verifiedOn ? ` Price verified on ${verifiedOn}.` : "";
+  // Written dates, not ISO: "25 septembre 2026", "September 25, 2026".
+  // Any value that is not a valid YYYY-MM-DD date is shown as given, never thrown.
+  const writtenDate = (locale: string) => {
+    if (!verifiedOn) return "";
+    const date = new Date(`${String(verifiedOn).slice(0, 10)}T00:00:00Z`);
+    return Number.isNaN(date.getTime())
+      ? String(verifiedOn)
+      : new Intl.DateTimeFormat(locale, { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(date);
+  };
+  const verifiedSuffixFr = verifiedOn ? ` Prix vérifié le ${writtenDate("fr-FR")}.` : "";
+  const verifiedSuffixEn = verifiedOn ? ` Price verified on ${writtenDate("en-US")}.` : "";
   const hasUnconvertedNativePlans = tool.pricing_v5?.compare_price_monthly_eur == null
     && tool.pricing_v5?.plans?.some((candidate) =>
       !candidate.isFree && candidate.nativeAmount != null && candidate.nativeCurrency != null && candidate.nativeCurrency !== "EUR"

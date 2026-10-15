@@ -215,9 +215,14 @@ function buildToolFaqSchema(params: {
             // Must match the visible FAQ answer (src/lib/toolFaq.ts).
             if (isPriceUndisclosed(tool)) {
               const verifiedOn = tool.pricing_v5?.verified_on;
+              // Written date, same as the visible FAQ (src/lib/toolFaq.ts).
+              const parsed = verifiedOn ? new Date(`${String(verifiedOn).slice(0, 10)}T00:00:00Z`) : null;
+              const written = !verifiedOn ? "" : parsed && !Number.isNaN(parsed.getTime())
+                ? new Intl.DateTimeFormat(isFr ? "fr-FR" : "en-US", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(parsed)
+                : String(verifiedOn);
               return isFr
-                ? `${name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedOn ? ` Prix vérifié le ${verifiedOn}.` : ""}`
-                : `${name} doesn't publish a price list; check the official page for current pricing.${verifiedOn ? ` Price verified on ${verifiedOn}.` : ""}`;
+                ? `${name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedOn ? ` Prix vérifié le ${written}.` : ""}`
+                : `${name} doesn't publish a price list; check the official page for current pricing.${verifiedOn ? ` Price verified on ${written}.` : ""}`;
             }
             if (isFr) {
               if (priceDisplay === 0) return `${name} est gratuit. Prix vérifié par ToolTrim.`;

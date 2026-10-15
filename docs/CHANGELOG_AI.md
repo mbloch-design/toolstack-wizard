@@ -59,6 +59,18 @@
 - Quatre contrôles navigateur Chromium PASS sur l’artefact généré : FR/EN à 390/1440 px, descriptions initiales et hydratées, Open Graph, canonical et hreflang corrects, contenu d’article identique au public. Contre-revue indépendante sans problème actionnable.
 - Bilan et limites : [R10_R11_LOT1_2026-10-15.md](R10_R11_LOT1_2026-10-15.md). Les neuf alertes, la migration éventuelle, les médias et l’indexation restent ouverts. R5/R6 et les tests utilisateurs différés ne sont pas repris.
 
+## 15 octobre 2026 : fiche outil, harmonisation zone par zone
+
+- Prix (commit df4ec8a0) : 5 prix mensuels certifiés sur la page officielle (Coast, Loox, PageFly, Planoly, Docyt) ; le contrôle « pas de plan gratuit » ne se déclenche plus sur « aucun agent IA » ; un prix certifié passe avant le marqueur « non communiqué ». Pages EN sans offre JSON-LD : 342 puis 327.
+- Échelle : plancher de lisibilité à 12 px, graisses 400/500/600/700, plus de bleu sur la fiche (onglet actif, épingle, lien catégorie), pictos en 14/16/20 px.
+- Zone 1 : hero gardé en retrait ; galerie refaite en piste défilante native (glisser, trackpad, flèches chevron sous les médias, désactivées aux extrémités, mouvement réduit respecté) ; colonne droite alignée sur le bord intérieur de la carte verdict.
+- Zone 2 : la barre locale n'apparaît qu'une fois les onglets de page sortis de l'écran ; fonctionnalités en tuiles, usages en cartes texte ; « Pour qui » en fiche technique (lignes fines, lien seul sans titre « Lien »).
+- Zone 3 : « Avantages et limites » et « Quand ça a du sens » fusionnés en une feuille « Pour. / Contre. » (tokens --color-pro / --color-con, clair et sombre) ; seuil de rentabilité interactif (prix ÷ valeur horaire, curseur) ; le premier « à garder / à éviter » reste dans la seule carte verdict.
+- Zone 4 : plans en fond doux, plan retenu soulevé, lignes alignées entre cartes (subgrid), un seul filet ; contenu des offres découpé en liste à l'affichage, seulement sur de vraies énumérations (audit des 2 472 textes, 4 tests) ; pièges de facturation en alerte ; suite incluse en une ligne ; lien « Tarifs officiels » unique et mesuré.
+- Zone 5 : alternatives en cartes de décision (note, « Gratuit, puis dès X »), outil courant retiré, plus de fondu de bord, `alternative_click` source `alternatives_cards` ; comparatifs en grille légère ; substituts déjà affichés non répétés.
+- Zone 6 : détail de la note en 5 lignes avec jauge ; doublon « Ce que comprend » supprimé (et prix en monospace 11 px corrigé) ; section IA au format des autres titres ; FAQ datée en toutes lettres (aussi dans le JSON-LD prérendu), conversion de date sans exception (test ajouté) ; guides en lignes légères.
+- Validation : 363 tests, garde-fou tokens (styles inline 117 puis 100, gain figé), build complet PASS ; vérifications navigateur desktop/mobile et sombre sur Notion, Airtable, ClickUp, Figma.
+
 ## 14 octobre 2026 — Publication R9 et portabilité de la recette
 
 - Lot R9 publié avec le correctif tokens sur 5db09fd39d ; déploiement Vercel réussi. La correction de marges 773b57373e conserve le lot.

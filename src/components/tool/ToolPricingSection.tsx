@@ -16,6 +16,44 @@ interface Props {
   displayPrice: number;
   lang?: string;
   t: (fr: string, en: string) => string;
+  onOfficialClick?: () => void;
+}
+
+/** A plan's content is often one long comma list. Split it into short lines at
+ *  ";" and at commas outside parentheses and numbers ("11,50 €" stays whole). */
+export function splitPlanFeature(text: string): string[] {
+  // Split on top-level separators only: nothing inside parentheses, no decimal commas.
+  const splitTop = (input: string, isSeparator: (char: string, i: number) => boolean) => {
+    const parts: string[] = [];
+    let depth = 0;
+    let current = "";
+    for (let i = 0; i < input.length; i += 1) {
+      const char = input[i];
+      if (char === "(") depth += 1;
+      if (char === ")") depth = Math.max(0, depth - 1);
+      if (depth === 0 && isSeparator(char, i)) { parts.push(current); current = ""; continue; }
+      current += char;
+    }
+    parts.push(current);
+    return parts.map((part) => part.trim()).filter(Boolean);
+  };
+  const words = (part: string) => part.split(/\s+/).filter(Boolean).length;
+  const lines = splitTop(text, (char, i) => char === ";" || (char === "." && text[i + 1] === " " && /[A-ZÀ-Ý]/.test(text[i + 2] || "")))
+    .flatMap((segment) => {
+      const items = splitTop(segment, (char, i) => char === "," && !/\d/.test(segment[i - 1] || "") && segment[i + 1] === " ");
+      // A comma list is split only when it is a true enumeration of features:
+      // - every item has two words or more (lone names like "Illustrator" belong to "including A, B, C");
+      // - the first item does not end on a preposition + one word ("in image, video and sound");
+      // - the last item is short (a long tail carries the verb for the whole list).
+      const enumeration = items.length > 1
+        && items.every((item) => words(item) >= 2)
+        && !/\b(en|dont|de|du|des|avec|pour|comme|including|such as|like|in|of|with|for)\s+\S+$/i.test(items[0])
+        && words(items[items.length - 1]) <= 6;
+      return enumeration ? items : [segment];
+    }).map((part) => part.replace(/^(et|and)\s+/i, "").replace(/[.;,]+$/, "").trim())
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toLocaleUpperCase() + part.slice(1));
+  return lines.length > 1 ? lines : [text];
 }
 
 // Marqueurs francais sans equivalent anglais : leur presence dans un champ
@@ -32,7 +70,7 @@ function isUntranslated(en: { free?: string; paid?: string } | null | undefined,
   return en.paid === fr.paid && FRENCH_MARKERS.test(en.paid);
 }
 
-export default function ToolPricingSection({ tool, displayPrice, lang, t }: Props) {
+export default function ToolPricingSection({ tool, displayPrice, lang, t, onOfficialClick }: Props) {
   const { currency } = useCurrency();
   // `pricingEn` existe sur 837 outils, mais 169 d'entre eux en sont une copie
   // mot pour mot du francais : le texte n'a jamais ete traduit. On le detecte
@@ -190,31 +228,33 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                 {column.reference && <span className="td-plan-badge">{t("Prix retenu par ToolTrim", "ToolTrim reference price")}</span>}
                 {column.soon && <span className="td-plan-badge">{t("Bientôt", "Coming soon")}</span>}
               </header>
-              {column.price && (
+              {/* Every card keeps the same four rows (head, price, condition, features),
+                  even when one is empty, so rows line up across cards. */}
+              {column.price ? (
                 <p className="td-plan-price">
                   <strong>{column.price}</strong>
                   {column.unit && <span>{column.unit}</span>}
                 </p>
-              )}
-              {column.condition && <p className="td-plan-condition">{column.condition}</p>}
-              {column.features.length > 0 && (
+              ) : <span className="td-plan-slot" aria-hidden="true" />}
+              {column.condition ? <p className="td-plan-condition">{column.condition}</p> : <span className="td-plan-slot" aria-hidden="true" />}
+              {column.features.length > 0 ? (
                 <ul className="td-plan-features">
-                  {column.features.map((feature) => <li key={feature}>{feature}</li>)}
+                  {column.features.flatMap(splitPlanFeature).map((line) => <li key={line}>{line}</li>)}
                 </ul>
-              )}
+              ) : <span className="td-plan-slot" aria-hidden="true" />}
             </article>
           ))}
         </div>
       )}
       {(officialUrl || verifiedOn) && (
         <p className="td-plans-foot">
+          {verifiedOn && <span>{t(`Vérifiés le ${formatDay(verifiedOn)}`, `Checked on ${formatDay(verifiedOn)}`)}</span>}
           {officialUrl && (
-            <a href={officialUrl} target="_blank" rel={relPourLienOutil(officialUrl, tool.affiliateLink, tool.websiteUrl)}>
+            <a href={officialUrl} target="_blank" rel={relPourLienOutil(officialUrl, tool.affiliateLink, tool.websiteUrl)} onClick={onOfficialClick}>
               {t("Tarifs officiels", "Official pricing")}
               <ExternalLink aria-hidden />
             </a>
           )}
-          {verifiedOn && <span>{t(`Vérifiés le ${formatDay(verifiedOn)}`, `Checked on ${formatDay(verifiedOn)}`)}</span>}
         </p>
       )}
     </section>

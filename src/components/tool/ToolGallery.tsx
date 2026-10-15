@@ -1,5 +1,5 @@
-import { useState, useCallback } from "react";
-import { Play } from "@/lib/icons";
+import { useState, useCallback, useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight, Play } from "@/lib/icons";
 import type { ToolTutorial } from "@/data/toolTutorials";
 
 interface Props {
@@ -19,6 +19,8 @@ export default function ToolGallery({ images, imageAlts = [], videos = [], toolN
   const [active, setActive] = useState(0);
   const [failed, setFailed] = useState<Set<string>>(new Set());
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [edges, setEdges] = useState({ start: true, end: true });
 
   const items: GalleryItem[] = [
     ...images.map((src) => ({ type: "image" as const, key: `image:${src}`, src })),
@@ -33,14 +35,23 @@ export default function ToolGallery({ images, imageAlts = [], videos = [], toolN
   const prev = useCallback(() => select((active - 1 + visible.length) % visible.length), [active, select, visible.length]);
   const next = useCallback(() => select((active + 1) % visible.length), [active, select, visible.length]);
 
+  // Hero track: arrows follow the real scroll position, so swipe, trackpad and buttons stay in sync.
+  const updateEdges = useCallback(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const max = track.scrollWidth - track.clientWidth;
+    setEdges({ start: track.scrollLeft <= 2, end: track.scrollLeft >= max - 2 });
+  }, []);
+  useEffect(() => {
+    updateEdges();
+    window.addEventListener("resize", updateEdges);
+    return () => window.removeEventListener("resize", updateEdges);
+  }, [updateEdges, visible.length]);
+
   if (!visible.length) return null;
 
   const safeActive = Math.min(active, visible.length - 1);
   const item = visible[safeActive];
-  const heroPageStart = Math.floor(safeActive / 2) * 2;
-  const heroItems = visible.slice(heroPageStart, heroPageStart + 2);
-  const heroPageCount = Math.ceil(visible.length / 2);
-  const heroPage = Math.floor(heroPageStart / 2) + 1;
 
   const renderMedia = (media: GalleryItem, index: number) => media.type === "image" ? (
     <img
@@ -83,24 +94,39 @@ export default function ToolGallery({ images, imageAlts = [], videos = [], toolN
   );
 
   if (variant === "hero") {
-    const previousPage = () => select(heroPageStart > 0 ? heroPageStart - 2 : Math.max(0, (heroPageCount - 1) * 2));
-    const nextPage = () => select(heroPageStart + 2 < visible.length ? heroPageStart + 2 : 0);
+    const scrollPage = (direction: 1 | -1) => {
+      const track = trackRef.current;
+      if (!track) return;
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      track.scrollBy({ left: direction * track.clientWidth, behavior: reduce ? "auto" : "smooth" });
+    };
+    const scrollable = !(edges.start && edges.end);
 
     return (
-      <div className="tg-viewer tg-viewer--hero">
-        <div className={`tg-hero-grid${heroItems.length === 1 ? " tg-hero-grid--single" : ""}`}>
-          {heroItems.map((media, index) => (
+      <div className={`tg-viewer tg-viewer--hero${scrollable ? " is-scrollable" : ""}`}>
+        <div
+          ref={trackRef}
+          className={`tg-hero-grid${visible.length === 1 ? " tg-hero-grid--single" : ""}`}
+          onScroll={updateEdges}
+          tabIndex={scrollable ? 0 : undefined}
+          role="group"
+          aria-label={lang === "en" ? `${toolName} media` : `Médias ${toolName}`}
+        >
+          {visible.map((media, index) => (
             <div className="tg-hero-cell" key={media.key}>
-              {renderMedia(media, heroPageStart + index)}
+              {renderMedia(media, index)}
             </div>
           ))}
         </div>
-        {heroPageCount > 1 && (
-          <>
-            <button type="button" className="tg-nav tg-nav-prev" onClick={previousPage} aria-label={lang === "en" ? "Previous media" : "Médias précédents"} />
-            <button type="button" className="tg-nav tg-nav-next" onClick={nextPage} aria-label={lang === "en" ? "Next media" : "Médias suivants"} />
-            <span className="tg-counter">{heroPage} / {heroPageCount}</span>
-          </>
+        {scrollable && (
+          <div className="tg-hero-controls">
+            <button type="button" className="tg-hero-arrow" onClick={() => scrollPage(-1)} disabled={edges.start} aria-label={lang === "en" ? "Previous media" : "Médias précédents"}>
+              <ChevronLeft aria-hidden />
+            </button>
+            <button type="button" className="tg-hero-arrow" onClick={() => scrollPage(1)} disabled={edges.end} aria-label={lang === "en" ? "Next media" : "Médias suivants"}>
+              <ChevronRight aria-hidden />
+            </button>
+          </div>
         )}
       </div>
     );

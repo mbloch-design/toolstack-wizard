@@ -5,7 +5,7 @@ import { useLang } from "@/hooks/useLang";
 import { useCurrency } from "@/hooks/useCurrency";
 import { useToolBySlug, useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink, Lightbulb, Star, StarSolid } from "@/lib/icons";
+import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink, Lightbulb } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -163,7 +163,9 @@ const ToolDetailPage = () => {
   // attach and the bars would never show.
   useEffect(() => {
     setActionBarArmed(false);
-    const strip = heroRef.current?.querySelector(".td-hero-actions");
+    // The bars take over once the in-page tabs have left the screen, so the two
+    // tab rows are never visible together.
+    const strip = document.querySelector(".td-scroll-body > .td-tool-subnav") ?? heroRef.current?.querySelector(".td-hero-actions");
     if (!strip || typeof IntersectionObserver === "undefined") return;
     const observer = new IntersectionObserver(([entry]) => {
       setActionBarArmed(!entry.isIntersecting && entry.boundingClientRect.top < 0);
@@ -769,35 +771,6 @@ const ToolDetailPage = () => {
                           </section>
                         </div>
                       )}
-                      {(ov.pros.length > 0 || ov.cons.length > 0) && (
-                        <div className="td-section td-tool-overview td-tool-overview--decision">
-                          <header className="td-overview-decision-head">
-                            <h2 className="td-overview-title">
-                              {t("Avantages et limites.", "Pros and cons.")} <span className="tt-title-muted">{t(`Ce que ${tool.name} fait bien, ce qu’il faut anticiper.`, `What ${tool.name} does well, and what to expect.`)}</span>
-                            </h2>
-                          </header>
-                          <div className="td-overview-grid">
-                            {ov.pros.length > 0 && (
-                              <section className="td-overview-group td-overview-group--pros">
-                                <h3 className="td-overview-group-title">
-                                  <CirclePlus aria-hidden />
-                                  {t("Avantages", "Pros")}
-                                </h3>
-                                <ul>{ov.pros.map((p: string) => <li key={p}><Check size={15} aria-hidden />{p}</li>)}</ul>
-                              </section>
-                            )}
-                            {ov.cons.length > 0 && (
-                              <section className="td-overview-group td-overview-group--limits">
-                                <h3 className="td-overview-group-title">
-                                  <CircleMinus aria-hidden />
-                                  {t("Limites", "Cons")}
-                                </h3>
-                                <ul>{ov.cons.map((c: string) => <li key={c}>{c}</li>)}</ul>
-                              </section>
-                            )}
-                          </div>
-                        </div>
-                      )}
                     </>
                   );
                 })()}
@@ -813,24 +786,29 @@ const ToolDetailPage = () => {
                 {(() => {
                   const { keepItems, avoidItems } = resolveVerdict(tool, lang);
 
-                  const keepList = keepItems.slice(0, 2);
-                  const challengeList = avoidItems.slice(0, 2);
+                  // The first keep/avoid line already sits in the verdict card beside
+                  // this section: only the further reasons are shown here.
+                  const keepList = keepItems.slice(1, 3);
+                  const challengeList = avoidItems.slice(1, 3);
 
                   // Ne pas rendre une coquille vide « quand ça a du sens » pour un outil sans
                   // matière de verdict (ex. app de bundle non onboardée) : la section disparaît.
                   // The verdict sentence (threshold) already opens the page in
                   // the decision card; this section only carries the reasons.
                   // Priced tools still get the auto profitability thresholds.
-                  if (!keepList.length && !challengeList.length && !(resolveMonthlyPrice(tool) > 0)) return null;
+                  if (!keepList.length && !challengeList.length && !(resolveMonthlyPrice(tool) > 0) && !resolveToolOverview(tool, lang).pros.length && !resolveToolOverview(tool, lang).cons.length) return null;
 
+                  const ov = resolveToolOverview(tool, lang);
                   return (
                     <div className="td-section td-decision-flow-intro">
-                      <h2 className="td-title">
-                        {t("Quand ça a du sens.", "When it makes sense.")} <span className="tt-title-muted">{t(`Garder ${tool.name}, ou le challenger ?`, `Keep ${tool.name}, or challenge it?`)}</span>
+                      {/* The two display headlines carry the section; the h2 stays for outline and SEO. */}
+                      <h2 className="td-title td-visually-hidden">
+                        {t("Le pour et le contre.", "The case for and against.")} <span className="tt-title-muted">{t(`Ce que ${tool.name} fait bien, et quand il coûte trop.`, `What ${tool.name} does well, and when it costs too much.`)}</span>
                       </h2>
 
                       <ToolProfitabilityBlock
                         tool={tool} lang={lang} t={t}
+                        pros={ov.pros} cons={ov.cons}
                         keepItems={keepList} challengeItems={challengeList}
                       />
                     </div>
@@ -857,15 +835,11 @@ const ToolDetailPage = () => {
                   <ToolPricingSection
                     tool={tool} displayPrice={displayPrice}
                     lang={lang} t={t}
+                    onOfficialClick={() => trackOutbound("tool_pricing", "official_pricing")}
                   />
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
-                  {primaryCtaUrl && <p className="td-context-cta">
-                    <a href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} onClick={() => trackOutbound("tool_pricing", "check_current_plans")}>
-                      {t(`Les prix évoluent : vérifie les offres actuelles sur le site de ${tool.name}`, `Prices change. Check the current plans on ${tool.name}’s site`)}<ExternalLink aria-hidden />
-                    </a>
-                  </p>}
+                  <ToolBundleSection tool={tool} tools={tools} lang={lang} t={t} />
                 </div>
-                <ToolBundleSection tool={tool} tools={tools} lang={lang} t={t} />
               </div>
             )}
 
@@ -897,20 +871,23 @@ const ToolDetailPage = () => {
                        cluster membership generates candidates, the score
                        decides which of them are actually relevant enough
                        to show. */}
-                  {clusterTools.length > 0 && (
-                    <div className="td-subs">
-                      <p className="td-eyebrow td-eyebrow--tight">
-                        {t("Substituables directement", "Direct substitutes")}
-                      </p>
-                      {renderAltShelf(clusterTools)}
-                    </div>
-                  )}
+                  {/* Tools already shown as cards above are not listed twice. */}
+                  {(() => {
+                    const shown = new Set(alternatives.slice(0, 6).map((alt: any) => alt.id));
+                    const extra = clusterTools.filter((ct: any) => !shown.has(ct.id));
+                    return extra.length > 0 && (
+                      <div className="td-subs td-alt-more">
+                        <h3 className="td-subtitle">{t("Autres substituts directs", "Other direct substitutes")}</h3>
+                        {renderAltShelf(extra)}
+                      </div>
+                    );
+                  })()}
 
                   {sameCategoryTools.length > 0 && (
-                    <div className="td-subs">
-                      <p className="td-eyebrow td-eyebrow--tight">
+                    <div className="td-subs td-alt-more">
+                      <h3 className="td-subtitle">
                         {t("Outils de la même catégorie", "Tools in the same category")}
-                      </p>
+                      </h3>
                       <p className="td-analysis-paragraph">
                         {t(
                           `Ils couvrent les mêmes besoins que ${tool.name}, sans être encore confirmés comme remplaçants directs. À comparer selon ton usage.`,
@@ -974,30 +951,19 @@ const ToolDetailPage = () => {
                       }) as { slugPair: string; other: any }[];
                     if (!compareTools.length) return null;
                     return (
-                      <div className="td-subs">
-                        <p className="td-eyebrow td-eyebrow--tight">
-                          {t(`Comparer ${tool.name} avec`, `Compare ${tool.name} with`)}
-                        </p>
-                        {compareTools.map(({ slugPair, other }) => (
-                          <Link
-                            key={slugPair}
-                            to={`${prefix}/comparatif/${slugPair}`}
-                            className="td-alt-row"
-                          >
-                            <div className="td-alt-logo">
-                              <ToolLogo tool={other} size={24} />
-                            </div>
-                            <div>
-                              <p className="td-alt-name">
-                                {tool.name} vs {other.name}
-                              </p>
-                              <p className="td-alt-meta">
-                                {t("Voir la comparaison complète", "See full comparison")}
-                              </p>
-                            </div>
-                            <ArrowRight className="td-alt-arrow" />
-                          </Link>
-                        ))}
+                      <div className="td-subs td-vs">
+                        <h3 className="td-subtitle">{t("Comparatifs détaillés", "Detailed comparisons")}</h3>
+                        <ul className="td-vs-grid">
+                          {compareTools.map(({ slugPair, other }) => (
+                            <li key={slugPair}>
+                              <Link to={`${prefix}/comparatif/${slugPair}`} className="td-vs-link">
+                                <ToolLogo tool={other} size={24} className="td-vs-logo" />
+                                <span className="td-vs-name">{tool.name} vs {other.name}</span>
+                                <ArrowRight className="td-vs-arrow" aria-hidden />
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     );
                   })()}
@@ -1049,7 +1015,7 @@ const ToolDetailPage = () => {
                         <div className="td-review-rationale-v2">
                           <div className="td-review-verdict-header">
                             <span className="td-score-axis-heading">
-                              <span className="td-eyebrow td-eyebrow--tight">{t("Pourquoi ce verdict", "Why this verdict")}</span>
+                              <h3 className="td-subtitle">{t("Le détail de la note", "How the score breaks down")}</h3>
                               {ratingSources.length > 0 && (
                                 <EvidenceInfo label={t("Voir les sources du verdict", "View verdict sources")}>
                                   {ratingSources.map((group, index) => (
@@ -1069,7 +1035,6 @@ const ToolDetailPage = () => {
                                 </EvidenceInfo>
                               )}
                             </span>
-                            <p className="td-review-label">{t(ts.labelFr, ts.labelEn)}</p>
                           </div>
                           <div className="td-score-breakdown">
                             {([
@@ -1090,11 +1055,10 @@ const ToolDetailPage = () => {
                                       <span className="td-score-axis-name">{t(labelFr, labelEn)}</span>
                                     </span>
                                     <div className="td-score-meter" role="img" aria-label={lang === "en" ? `${value} out of 5` : `${value} sur 5`}>
-                                      {[1, 2, 3, 4, 5].map((i) =>
-                                        i <= value
-                                          ? <StarSolid key={i} size={16} className="td-score-star td-score-star--filled" aria-hidden="true" />
-                                          : <Star key={i} size={16} className="td-score-star" aria-hidden="true" />
-                                      )}
+                                      <span className="td-score-value" aria-hidden="true">{value}<span>/5</span></span>
+                                      <span className="td-score-segments" aria-hidden="true">
+                                        {[1, 2, 3, 4, 5].map((i) => <span key={i} className={i <= value ? "is-on" : undefined} />)}
+                                      </span>
                                     </div>
                                   </div>
                                   {evidence?.finding && (
@@ -1183,8 +1147,8 @@ const ToolDetailPage = () => {
               <div className="td-subpage-content">
                 <div className="td-section">
                   <section className="td-guides">
-                    <h2 className="td-guides-title">
-                      {t(`Nos guides sur ${tool.name}`, `Our guides on ${tool.name}`)}
+                    <h2 className="td-title">
+                      {t("Guides.", "Guides.")} <span className="tt-title-muted">{t(`Pour aller plus loin avec ${tool.name}.`, `To go further with ${tool.name}.`)}</span>
                     </h2>
                     <ul className="td-guides-list">
                       {relatedGuides.slice(0, 3).map((guide) => (

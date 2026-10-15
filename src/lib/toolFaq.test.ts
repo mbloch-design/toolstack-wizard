@@ -34,3 +34,14 @@ describe("buildToolFaqs native pricing", () => {
     expect(faq[1].a).not.toContain("0€ (gratuit)");
   });
 });
+
+describe("buildToolFaqs verified date", () => {
+  const tool = { id: "x", slug: "x", name: "X", defaultMonthlyPrice: 10 } as unknown as Tool;
+  it("writes an ISO date out in words", () => {
+    const fr = buildToolFaqs(tool, "fr", 10, "2026-09-25", []).map((f) => f.a).join(" ");
+    const en = buildToolFaqs(tool, "en", 10, "2026-09-25", []).map((f) => f.a).join(" ");
+    expect(fr).toContain("25 septembre 2026");
+    expect(en).toContain("September 25, 2026");
+    expect(fr).not.toContain("2026-09-25");
+  });
+});
