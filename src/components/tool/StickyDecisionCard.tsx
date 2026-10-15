@@ -30,7 +30,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
   const conclusion = verdict?.threshold?.trim();
   const keepIf = verdict?.keepIf?.[0]?.trim();
   const avoidIf = verdict?.avoidIf?.[0]?.trim();
-  const sentence = (text: string) => text.charAt(0).toLowerCase() + text.slice(1).replace(/\.$/, "");
+  const sentence = (text: string) => text.replace(/[.\s]+$/, "");
   const verdictLevel = toolTrimScore.score >= 4 ? "high" : toolTrimScore.score >= 3.5 ? "mid" : "low";
   // Circular gauge: the ring itself carries the score (arc length = score / 5),
   // replacing the old trend arrow with an actual proportional visualization.
