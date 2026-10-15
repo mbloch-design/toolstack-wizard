@@ -475,7 +475,7 @@ const SubmitToolPage = () => {
             <ul className="sp-plan-args">
               <li><Check size={16} /><strong>{t("Mise en avant sur la page d’accueil", "Featured on the homepage")}</strong></li>
               <li><Check size={16} /><strong>{t("Présence dans les stacks pertinents", "Placement in relevant stacks")}</strong></li>
-              <li><Check size={16} />{t("Newsletter ou guide, sur demande", "Newsletter or guide mention, on request")}</li>
+              <li><Check size={16} />{t("Présence dans les comparatifs et les articles", "Placement in comparisons and articles")}</li>
               <li><Check size={16} />{t("Emplacements signalés comme sponsorisés", "Placements clearly labeled sponsored")}</li>
             </ul>
             <Link className="sp-plan-contact" to={`${prefix}/contact?subject=partnership`}>{t("Parlons-en", "Let’s talk")}<ArrowRight size={16} /></Link>
