@@ -174,6 +174,34 @@ const ToolDetailPage = () => {
     return () => observer.disconnect();
   }, [tool?.slug, lang, loading, subPage]);
 
+  // On the overview every section is on the page: the tabs follow the section
+  // being read instead of staying on "Overview". Subpages keep their own tab.
+  const [sectionInView, setSectionInView] = useState("presentation");
+  useEffect(() => {
+    setSectionInView("presentation");
+    if (subPage !== "presentation" || loading) return;
+    const ids = ["prix", "alternatives", "avis", "faq"];
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const line = window.innerHeight * 0.35;
+      let current = "presentation";
+      for (const id of ids) {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top <= line) current = id;
+      }
+      setSectionInView(current);
+    };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+    // Capture: the page may scroll inside the app shell, not the window.
+    document.addEventListener("scroll", onScroll, { capture: true, passive: true });
+    update();
+    return () => {
+      document.removeEventListener("scroll", onScroll, { capture: true });
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, [tool?.slug, lang, loading, subPage]);
+
 
   /* ── Loading / not found ── */
   if (loading) {
@@ -413,6 +441,7 @@ const ToolDetailPage = () => {
     // bounces the visitor right back to where they started.
     { key: "faq", label: "FAQ", to: `${baseToolPath}#faq` },
   ];
+  const activeTab = isPresentation ? sectionInView : subPage;
   const subpageBreadcrumbLabel = subPage === "prix"
     ? t("Prix", "Pricing")
     : subPage === "alternatives"
@@ -467,7 +496,7 @@ const ToolDetailPage = () => {
               <ul className="td-localnav-links">
                 {subpageLinks.map((item) => (
                   <li key={item.key}>
-                    <Link to={item.to} aria-current={subPage === item.key ? "page" : undefined}>{item.label}</Link>
+                    <Link to={item.to} aria-current={activeTab === item.key ? (isPresentation && item.key !== "presentation" ? "location" : "page") : undefined}>{item.label}</Link>
                   </li>
                 ))}
                 <li className="td-localnav-pin">
@@ -614,7 +643,7 @@ const ToolDetailPage = () => {
 
             <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
               {subpageLinks.map((item) => (
-                <Link key={item.key} to={item.to} aria-current={subPage === item.key ? "page" : undefined}>
+                <Link key={item.key} to={item.to} aria-current={activeTab === item.key ? (isPresentation && item.key !== "presentation" ? "location" : "page") : undefined}>
                   {item.label}
                 </Link>
               ))}
