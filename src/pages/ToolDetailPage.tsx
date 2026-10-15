@@ -589,14 +589,6 @@ const ToolDetailPage = () => {
 
             <div ref={scrollBodyRef} className="td-scroll-body">
 
-            <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
-              {subpageLinks.map((item) => (
-                <Link key={item.key} to={item.to} aria-current={subPage === item.key ? "page" : undefined}>
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-
             {showAnalysis && (() => {
               const curatedMedia = getToolMediaImages(tool.slug || tool.id);
               const cover = tool.ogImageUrl ?? (tool as any).og_image_url;
@@ -615,6 +607,14 @@ const ToolDetailPage = () => {
                 </div>
               ) : null;
             })()}
+
+            <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
+              {subpageLinks.map((item) => (
+                <Link key={item.key} to={item.to} aria-current={subPage === item.key ? "page" : undefined}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
 
             {/* Editorial overview: the reference layout is reproduced inside
                 the content itself — analysis on the left, factual rail on the

@@ -34056,7 +34056,7 @@ img[data-logo-loading] {
 .td-plan {
   position: relative;
   display: flex; flex-direction: column; gap: 10px; min-width: 0; padding: 22px 18px 20px;
-  border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-surface);
+  border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface);
   scroll-snap-align: start;
 }
 .td-plan--reference { border-color: var(--color-text); }
@@ -34079,7 +34079,7 @@ img[data-logo-loading] {
 .td-plans-foot a { display: inline-flex; align-items: center; gap: 5px; color: var(--color-text); font-weight: 600; text-decoration: none; }
 .td-plans-foot a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .td-plans-foot svg { width: 13px; height: 13px; }
-.td-plans-empty { display: grid; gap: 6px; margin: 0; padding: 20px; border: 1px solid var(--color-border); border-radius: 16px; background: var(--color-surface); color: var(--color-text); font: 400 15px/1.55 var(--font-ui); }
+.td-plans-empty { display: grid; gap: 6px; margin: 0; padding: 20px; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-text); font: 400 15px/1.55 var(--font-ui); }
 .td-plans-empty strong { font-weight: 600; }
 @media (max-width: 640px) {
   .td-plan-price strong { font-size: 24px; }
@@ -36301,4 +36301,18 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .td-reading-actions .td-next-alt span { flex: 1; min-width: 0; }
   .td-reading-actions .td-next-alt strong { color: var(--color-text); font-weight: 600; }
   @media (prefers-reduced-motion: reduce) { .td-context-cta svg, .td-decision-cta svg, .td-next-primary svg, .td-next-alt svg { transition: none; } }
+}
+@layer components {
+  /* Tool pages: no blue except the focus ring (DESIGN_SYSTEM.md). */
+  .td-tool-page .td-hero .td-hero-promo { border-color: var(--color-border); background: var(--color-surface-soft); color: var(--color-text); }
+  .td-tool-page .td-hero .td-hero-promo-label { border-right-color: var(--color-border); }
+  .td-tool-page .td-tool-subnav a[aria-current="page"]::after { background: var(--color-text); }
+  .td-localnav .td-localnav-links a[aria-current="page"] { color: var(--color-text); font-weight: 600; }
+  .td-localnav .td-localnav-links a[aria-current="page"]::after { background: var(--color-text); }
+  .td-localnav .td-localnav-title:hover > span:last-child, .td-localnav .pin-tool-button:hover, .td-localnav .pin-tool-button--active { color: var(--color-text); }
+}
+
+@layer components {
+  /* Tool pages share the /submit card scale: large panels 28px, info cards 16px. */
+  .td-tool-page { --tt-surface-radius-panel: var(--radius-2xl); --tt-surface-radius-info: var(--radius-lg); }
 }
