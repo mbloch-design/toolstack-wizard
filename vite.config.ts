@@ -266,8 +266,9 @@ function toolHasFreePlan(tool: any): boolean {
 // its 0 comparison price means "unknown", and an Offer at 0 would claim free.
 function buildToolOffersFor(tool: any, price: number | null, url: string) {
   const hasFree = toolHasFreePlan(tool);
-  if (isPriceUndisclosed(tool) && !hasFree) return undefined;
   const native = nativePriceFromTool(tool);
+  // An attested official price outranks the catalogue's "undisclosed" flag.
+  if (!native && isPriceUndisclosed(tool) && !hasFree) return undefined;
   // Only a price the vendor actually publishes may be declared. Without one, the
   // catalogue fallback is a normalised (often converted or zero) figure: stating
   // it would claim the wrong price or "free" on a paid tool.
