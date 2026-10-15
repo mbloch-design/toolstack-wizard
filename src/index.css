@@ -36202,3 +36202,16 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .stp-page .sp-plan-grid :is(.sp-plan-cta, .sp-plan-free-link, .sp-plan-contact) { white-space: nowrap; }
   .stp-page .sp-plan-grid .sp-plan-free-link { font-size: 15px; }
 }
+@layer components {
+  .stp-page .sp-rating-proof .sp-rating-proof-copy { padding-left: 0; }
+  .stp-page .sp-faq-section h2 { margin: 0; font: 600 clamp(2rem, 3.6vw, 3rem)/1.05 var(--font-brand); letter-spacing: -.04em; }
+  .stp-page .sp-hero .sp-specs-label { text-align: left; }
+  .stp-page .sp-overview + .sp-delivery, .stp-page .sp-delivery { padding-top: clamp(64px, 7vw, 96px); }
+  .stp-page .sp-overview { padding-bottom: 0; }
+}
+@layer components {
+  .stp-page > header.sp-hero > .sp-specs-label { align-self: stretch; width: 100%; text-align: left; }
+}
+@layer components {
+  .stp-page > header.sp-hero > p.sp-specs-label.sp-specs-label { align-self: stretch; width: 100%; max-width: none; margin-left: 0; margin-right: 0; text-align: left; }
+}
