@@ -1,0 +1,27 @@
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+ ❯ scripts/generated-routing.test.mjs (6 tests | 1 failed) 49ms
+     × keeps every declared route family reachable on a direct request in both languages 45ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  scripts/generated-routing.test.mjs > App route coverage in the static deployment > keeps every declared route family reachable on a direct request in both languages
+AssertionError: /fr/tool/clearbit: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ scripts/generated-routing.test.mjs:33:124
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 5 passed (6)
+   Start at  10:39:21
+   Duration  271ms (transform 17ms, setup 0ms, import 27ms, tests 49ms, environment 0ms)

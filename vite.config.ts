@@ -8,7 +8,6 @@ import fs from "fs";
 import postcss from "postcss";
 import { assertSsrRenderers, projectToolBootstrap } from "./scripts/lib/ssr-contract.mjs";
 import { transformSync } from "esbuild";
-import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
 import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
@@ -2235,13 +2234,24 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           count++;
         }
 
+        // Client-only routes must not inherit the prerendered English homepage.
+        // Keep this shell out of the sitemap; each mounted page owns its tags.
+        let clientOnlyHtml = baseHtml
+          .replace(/<link\s+rel="(?:canonical|alternate)"[^>]*\/?>/gi, "")
+          .replace(/<meta\s+name="robots"[^>]*\/?>/gi, "")
+          .replace(/<title>[^<]*<\/title>/i, "")
+          .replace(/<meta\s+name="description"[^>]*\/?>/gi, "");
+        clientOnlyHtml = clientOnlyHtml.replace("</head>", '<title>ToolTrim</title><meta name="robots" content="noindex, follow" /></head>');
+        fs.writeFileSync(path.resolve(distDir, "client-only.html"), clientOnlyHtml, "utf-8");
+
         // --- Generate 404.html for Vercel custom error page ---
         const meta404 = [
+          `<meta name="tooltrim-http-status" content="404" />`,
           `<title>Page introuvable | ToolTrim</title>`,
           `<meta name="description" content="Cette page n'existe pas. Découvrez nos avis et comparatifs d'outils SaaS sur ToolTrim." />`,
           `<meta name="robots" content="noindex, follow" />`,
         ].join("\n    ");
-        let html404 = baseHtml;
+        let html404 = baseHtml.replace(/<meta\s+name="robots"[^>]*\/?>/gi, "");
         html404 = html404.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
         html404 = html404.replace(/<title>[^<]*<\/title>/, "");
         html404 = html404.replace(/<meta\s+name="description"[^>]*\/?>/, "");
@@ -2526,7 +2536,6 @@ export default defineConfig(({ mode, isSsrBuild }) => {
   plugins: [
     browserToolIndexProjection(),
     react(),
-    mode === "development" && componentTagger(),
     // These three only make sense for the client build — they write into
     // dist/ (sitemap, prerendered HTML) or transform index.html, none of
     // which exist/apply during the separate `vite build --ssr` pass.

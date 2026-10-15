@@ -1,0 +1,15 @@
+
+> vite_react_shadcn_ts@0.0.0 typecheck
+> npm run typecheck:app && npm run typecheck:node && npm run typecheck:api
+
+
+> vite_react_shadcn_ts@0.0.0 typecheck:app
+> tsc --noEmit -p tsconfig.app.json
+
+
+> vite_react_shadcn_ts@0.0.0 typecheck:node
+> tsc --noEmit -p tsconfig.node.json
+
+
+> vite_react_shadcn_ts@0.0.0 typecheck:api
+> tsc --noEmit -p tsconfig.api.json

@@ -1,0 +1,122 @@
+{
+  "fr-390-home": {
+    "before": 100,
+    "after": 100,
+    "changed": 0
+  },
+  "fr-390-_tool_notion": {
+    "before": 155,
+    "after": 155,
+    "changed": 0
+  },
+  "fr-390-_guide_stack_redactrice_freelance": {
+    "before": 143,
+    "after": 143,
+    "changed": 0
+  },
+  "fr-390-_ma_stack": {
+    "before": 50,
+    "after": 50,
+    "changed": 0
+  },
+  "fr-390-_explorer_around_figma": {
+    "before": 161,
+    "after": 161,
+    "changed": 0
+  },
+  "fr-390-_submit": {
+    "before": 73,
+    "after": 73,
+    "changed": 0
+  },
+  "fr-1440-home": {
+    "before": 108,
+    "after": 108,
+    "changed": 0
+  },
+  "fr-1440-_tool_notion": {
+    "before": 155,
+    "after": 155,
+    "changed": 0
+  },
+  "fr-1440-_guide_stack_redactrice_freelance": {
+    "before": 146,
+    "after": 146,
+    "changed": 0
+  },
+  "fr-1440-_ma_stack": {
+    "before": 51,
+    "after": 51,
+    "changed": 0
+  },
+  "fr-1440-_explorer_around_figma": {
+    "before": 162,
+    "after": 162,
+    "changed": 0
+  },
+  "fr-1440-_submit": {
+    "before": 74,
+    "after": 74,
+    "changed": 0
+  },
+  "en-390-home": {
+    "before": 100,
+    "after": 100,
+    "changed": 0
+  },
+  "en-390-_tool_notion": {
+    "before": 155,
+    "after": 155,
+    "changed": 0
+  },
+  "en-390-_guide_stack_freelance_writer": {
+    "before": 143,
+    "after": 143,
+    "changed": 0
+  },
+  "en-390-_ma_stack": {
+    "before": 50,
+    "after": 50,
+    "changed": 0
+  },
+  "en-390-_explorer_around_figma": {
+    "before": 161,
+    "after": 161,
+    "changed": 0
+  },
+  "en-390-_submit": {
+    "before": 73,
+    "after": 73,
+    "changed": 0
+  },
+  "en-1440-home": {
+    "before": 108,
+    "after": 108,
+    "changed": 0
+  },
+  "en-1440-_tool_notion": {
+    "before": 155,
+    "after": 155,
+    "changed": 0
+  },
+  "en-1440-_guide_stack_freelance_writer": {
+    "before": 146,
+    "after": 146,
+    "changed": 0
+  },
+  "en-1440-_ma_stack": {
+    "before": 51,
+    "after": 51,
+    "changed": 0
+  },
+  "en-1440-_explorer_around_figma": {
+    "before": 162,
+    "after": 162,
+    "changed": 0
+  },
+  "en-1440-_submit": {
+    "before": 74,
+    "after": 74,
+    "changed": 0
+  }
+}

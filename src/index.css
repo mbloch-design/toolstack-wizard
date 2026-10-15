@@ -1,3 +1,11 @@
+/* Tailwind 4 loads the existing ToolTrim theme explicitly. Keep the editorial
+   class safelist and exclude unreachable dashboard sources from detection. */
+@import "tailwindcss" source(none);
+@config "../tailwind.config.ts";
+@source "./";
+@source not "./components/dashboard";
+@source inline("ga-cta-btn");
+
 /* ─────────────────────────────────────────────
    FONTS
    Uncut Sans Variable — self-hosted
@@ -15,9 +23,6 @@
   font-display: optional;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 /* ─────────────────────────────────────────────
    HERO GRADIENT — light / dark variants

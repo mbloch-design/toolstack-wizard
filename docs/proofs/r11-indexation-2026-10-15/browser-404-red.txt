@@ -1,0 +1,276 @@
+
+> vite_react_shadcn_ts@0.0.0 test:e2e:r11
+> playwright test --config playwright.r11.config.ts --workers=2
+
+
+Running 21 tests using 2 workers
+
+(node:6445) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6446) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6445) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6446) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › e2e/r11-media-links.spec.ts:4:3 › fr: unavailable publisher links do not leave an empty local-nav CTA (887ms)
+  ✓   3 [chromium] › e2e/r11-media-links.spec.ts:4:3 › en: unavailable publisher links do not leave an empty local-nav CTA (739ms)
+  ✓   4 [chromium] › e2e/r11-media-links.spec.ts:14:3 › openai: known blank or bot-check covers never appear in the tool hero (958ms)
+  ✓   5 [chromium] › e2e/r11-media-links.spec.ts:14:3 › personio: known blank or bot-check covers never appear in the tool hero (769ms)
+  ✓   6 [chromium] › e2e/r11-media-links.spec.ts:14:3 › jquery: known blank or bot-check covers never appear in the tool hero (752ms)
+  ✓   7 [chromium] › e2e/r11-media-links.spec.ts:21:1 › an audited local product gallery remains visible after recovering a formerly blocked cover (859ms)
+  ✘   2 [chromium] › e2e/r11-routing.spec.ts:4:3 › /fr/r11-route-inexistante: unknown static documents return a real noindex 404 (8.5s)
+(node:6536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6536) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   8 [chromium] › e2e/r11-routing.spec.ts:4:3 › /en/tool/r11-inexistant: unknown static documents return a real noindex 404 (8.5s)
+(node:6560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6560) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   9 [chromium] › e2e/r11-routing.spec.ts:4:3 › /fr/guide/r11-inexistant: unknown static documents return a real noindex 404 (8.5s)
+(node:6641) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6641) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  10 [chromium] › e2e/r11-routing.spec.ts:4:3 › /en/explorer/around/r11-inexistant: unknown static documents return a real noindex 404 (8.5s)
+(node:6662) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6662) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  11 [chromium] › e2e/r11-routing.spec.ts:13:3 › fr: direct search preserves its query and owns its metadata (8.5s)
+(node:6715) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6715) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [chromium] › e2e/r11-routing.spec.ts:22:3 › fr: private routes start without homepage SEO (22ms)
+  ✘  13 [chromium] › e2e/r11-routing.spec.ts:13:3 › en: direct search preserves its query and owns its metadata (8.6s)
+(node:6741) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:6741) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [chromium] › e2e/r11-routing.spec.ts:22:3 › en: private routes start without homepage SEO (22ms)
+  ✓  15 [chromium] › e2e/r11-routing.spec.ts:31:3 › meilleurs-outils-ia-freelances-2026: the published English translation is not redirected to French (11ms)
+  ✓  16 [chromium] › e2e/r11-routing.spec.ts:31:3 › claude-opus-4-6-guide-complet-freelances: the published English translation is not redirected to French (5ms)
+  ✓  17 [chromium] › e2e/r11-routing.spec.ts:31:3 › alternatives-gratuites-notion-freelance-2026: the published English translation is not redirected to French (6ms)
+  ✓  18 [chromium] › e2e/r11-routing.spec.ts:31:3 › stack-minimaliste-freelance-2026: the published English translation is not redirected to French (8ms)
+  ✓  19 [chromium] › e2e/r11-routing.spec.ts:31:3 › stripe-freelance-tarifs-alternatives: the published English translation is not redirected to French (5ms)
+  ✓  20 [chromium] › e2e/r11-routing.spec.ts:31:3 › perplexity-vs-chatgpt-recherche: the published English translation is not redirected to French (6ms)
+  ✓  21 [chromium] › e2e/r11-routing.spec.ts:31:3 › notion-gratuit-vs-payant-vrai-calcul: the published English translation is not redirected to French (5ms)
+
+
+  1) [chromium] › e2e/r11-routing.spec.ts:4:3 › /fr/r11-route-inexistante: unknown static documents return a real noindex 404
+
+    Error: expect(locator).toHaveCount(expected) failed
+
+    Locator:  locator('link[rel="canonical"]')
+    Expected: 0
+    Received: 1
+    Timeout:  8000ms
+
+    Call log:
+      - Expect "toHaveCount" with timeout 8000ms
+      - waiting for locator('link[rel="canonical"]')
+        12 × locator resolved to 1 element
+           - unexpected value "1"
+
+
+       7 |     await expect(page.locator('h1')).toHaveText('404');
+       8 |     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+    >  9 |     await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+         |                                                         ^
+      10 |   });
+      11 | }
+      12 | for (const lang of ['fr', 'en']) {
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/r11-routing.spec.ts:9:57
+
+    Error Context: r11-test-results/r11-routing--fr-r11-route--f228b-s-return-a-real-noindex-404-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    r11-test-results/r11-routing--fr-r11-route--f228b-s-return-a-real-noindex-404-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace r11-test-results/r11-routing--fr-r11-route--f228b-s-return-a-real-noindex-404-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › e2e/r11-routing.spec.ts:4:3 › /en/tool/r11-inexistant: unknown static documents return a real noindex 404
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator('h1')
+    Expected: "404"
+    Received: "Listing unavailable"
+    Timeout:  8000ms
+
+    Call log:
+      - Expect "toHaveText" with timeout 8000ms
+      - waiting for locator('h1')
+        10 × locator resolved to <h1 class="td-title">Listing unavailable</h1>
+           - unexpected value "Listing unavailable"
+
+
+       5 |     const response = await page.goto(route);
+       6 |     expect(response?.status()).toBe(404);
+    >  7 |     await expect(page.locator('h1')).toHaveText('404');
+         |                                      ^
+       8 |     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+       9 |     await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+      10 |   });
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/r11-routing.spec.ts:7:38
+
+    Error Context: r11-test-results/r11-routing--en-tool-r11-i-f5a5e-s-return-a-real-noindex-404-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    r11-test-results/r11-routing--en-tool-r11-i-f5a5e-s-return-a-real-noindex-404-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace r11-test-results/r11-routing--en-tool-r11-i-f5a5e-s-return-a-real-noindex-404-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › e2e/r11-routing.spec.ts:4:3 › /fr/guide/r11-inexistant: unknown static documents return a real noindex 404
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator('h1')
+    Expected: "404"
+    Received: "Article introuvable"
+    Timeout:  8000ms
+
+    Call log:
+      - Expect "toHaveText" with timeout 8000ms
+      - waiting for locator('h1')
+        12 × locator resolved to <h1>Article introuvable</h1>
+           - unexpected value "Article introuvable"
+
+
+       5 |     const response = await page.goto(route);
+       6 |     expect(response?.status()).toBe(404);
+    >  7 |     await expect(page.locator('h1')).toHaveText('404');
+         |                                      ^
+       8 |     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+       9 |     await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+      10 |   });
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/r11-routing.spec.ts:7:38
+
+    Error Context: r11-test-results/r11-routing--fr-guide-r11--6de39-s-return-a-real-noindex-404-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    r11-test-results/r11-routing--fr-guide-r11--6de39-s-return-a-real-noindex-404-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace r11-test-results/r11-routing--fr-guide-r11--6de39-s-return-a-real-noindex-404-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › e2e/r11-routing.spec.ts:4:3 › /en/explorer/around/r11-inexistant: unknown static documents return a real noindex 404
+
+    Error: expect(locator).toHaveText(expected) failed
+
+    Locator:  locator('h1')
+    Expected: "404"
+    Received: "This source is no longer available"
+    Timeout:  8000ms
+
+    Call log:
+      - Expect "toHaveText" with timeout 8000ms
+      - waiting for locator('h1')
+        12 × locator resolved to <h1>This source is no longer available</h1>
+           - unexpected value "This source is no longer available"
+
+
+       5 |     const response = await page.goto(route);
+       6 |     expect(response?.status()).toBe(404);
+    >  7 |     await expect(page.locator('h1')).toHaveText('404');
+         |                                      ^
+       8 |     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+       9 |     await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+      10 |   });
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/r11-routing.spec.ts:7:38
+
+    Error Context: r11-test-results/r11-routing--en-explorer-a-0d6cb-s-return-a-real-noindex-404-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    r11-test-results/r11-routing--en-explorer-a-0d6cb-s-return-a-real-noindex-404-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace r11-test-results/r11-routing--en-explorer-a-0d6cb-s-return-a-real-noindex-404-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › e2e/r11-routing.spec.ts:13:3 › fr: direct search preserves its query and owns its metadata
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('h1')
+    Expected: visible
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 8000ms
+      - waiting for locator('h1')
+
+
+      15 |     const response = await page.goto(`/${lang}/search?q=notion`);
+      16 |     expect(response?.status()).toBe(200);
+    > 17 |     await expect(page.locator('h1')).toBeVisible();
+         |                                      ^
+      18 |     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://tooltrim.com/${lang}/search`);
+      19 |     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+      20 |     expect(new URL(page.url()).searchParams.get('q')).toBe('notion');
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/r11-routing.spec.ts:17:38
+
+    Error Context: r11-test-results/r11-routing-fr-direct-sear-f2de2-query-and-owns-its-metadata-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    r11-test-results/r11-routing-fr-direct-sear-f2de2-query-and-owns-its-metadata-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace r11-test-results/r11-routing-fr-direct-sear-f2de2-query-and-owns-its-metadata-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › e2e/r11-routing.spec.ts:13:3 › en: direct search preserves its query and owns its metadata
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: locator('h1')
+    Expected: visible
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" with timeout 8000ms
+      - waiting for locator('h1')
+
+
+      15 |     const response = await page.goto(`/${lang}/search?q=notion`);
+      16 |     expect(response?.status()).toBe(200);
+    > 17 |     await expect(page.locator('h1')).toBeVisible();
+         |                                      ^
+      18 |     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://tooltrim.com/${lang}/search`);
+      19 |     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /noindex/);
+      20 |     expect(new URL(page.url()).searchParams.get('q')).toBe('notion');
+        at /Users/mike/.codex/worktrees/stack-discovery-release/New project/e2e/r11-routing.spec.ts:17:38
+
+    Error Context: r11-test-results/r11-routing-en-direct-sear-1390a-query-and-owns-its-metadata-chromium/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    r11-test-results/r11-routing-en-direct-sear-1390a-query-and-owns-its-metadata-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace r11-test-results/r11-routing-en-direct-sear-1390a-query-and-owns-its-metadata-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6 failed
+    [chromium] › e2e/r11-routing.spec.ts:4:3 › /fr/r11-route-inexistante: unknown static documents return a real noindex 404
+    [chromium] › e2e/r11-routing.spec.ts:4:3 › /en/tool/r11-inexistant: unknown static documents return a real noindex 404
+    [chromium] › e2e/r11-routing.spec.ts:4:3 › /fr/guide/r11-inexistant: unknown static documents return a real noindex 404
+    [chromium] › e2e/r11-routing.spec.ts:4:3 › /en/explorer/around/r11-inexistant: unknown static documents return a real noindex 404
+    [chromium] › e2e/r11-routing.spec.ts:13:3 › fr: direct search preserves its query and owns its metadata
+    [chromium] › e2e/r11-routing.spec.ts:13:3 › en: direct search preserves its query and owns its metadata
+  15 passed (1.2m)

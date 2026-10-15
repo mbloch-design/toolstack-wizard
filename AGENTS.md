@@ -5,7 +5,7 @@ Ce fichier aide Codex à naviguer le projet ToolTrim efficacement.
 ## Projet
 
 ToolTrim est un site éditorial de comparaison d'outils SaaS pour freelances et petites équipes.
-Stack : React 18 + React Router v6 + Vite + TypeScript + Tailwind CSS v3.
+Stack : React 18 + React Router v7 (mode déclaratif) + Vite + TypeScript + Tailwind CSS v4.
 
 ## Fichiers importants
 

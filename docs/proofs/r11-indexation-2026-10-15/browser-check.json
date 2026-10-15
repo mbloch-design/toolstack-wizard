@@ -1,0 +1,520 @@
+{
+  "measuredAt": "2026-10-15T15:28:18.306Z",
+  "origin": "http://127.0.0.1:8094",
+  "kind": "local Vercel routing simulation plus real Chromium hydration",
+  "results": [
+    {
+      "route": "/fr/r11-route-inexistante",
+      "status": 404,
+      "pathname": "/fr/r11-route-inexistante",
+      "title": "Page introuvable - ToolTrim",
+      "canonical": [],
+      "robots": [
+        "noindex, nofollow"
+      ],
+      "hreflang": [],
+      "h1": "404",
+      "description": "Cette page n'existe pas. Découvrez nos avis et comparatifs d'outils SaaS sur ToolTrim.",
+      "jsonLd": 1
+    },
+    {
+      "route": "/en/tool/r11-inexistant",
+      "status": 404,
+      "pathname": "/en/tool/r11-inexistant",
+      "title": "Page introuvable - ToolTrim",
+      "canonical": [],
+      "robots": [
+        "noindex, nofollow"
+      ],
+      "hreflang": [],
+      "h1": "404",
+      "description": "Cette page n'existe pas. Découvrez nos avis et comparatifs d'outils SaaS sur ToolTrim.",
+      "jsonLd": 1
+    },
+    {
+      "route": "/fr/guide/r11-inexistant",
+      "status": 404,
+      "pathname": "/fr/guide/r11-inexistant",
+      "title": "Page introuvable - ToolTrim",
+      "canonical": [],
+      "robots": [
+        "noindex, nofollow"
+      ],
+      "hreflang": [],
+      "h1": "404",
+      "description": "Cette page n'existe pas. Découvrez nos avis et comparatifs d'outils SaaS sur ToolTrim.",
+      "jsonLd": 1
+    },
+    {
+      "route": "/en/explorer/around/r11-inexistant",
+      "status": 404,
+      "pathname": "/en/explorer/around/r11-inexistant",
+      "title": "Page introuvable - ToolTrim",
+      "canonical": [],
+      "robots": [
+        "noindex, nofollow"
+      ],
+      "hreflang": [],
+      "h1": "404",
+      "description": "Cette page n'existe pas. Découvrez nos avis et comparatifs d'outils SaaS sur ToolTrim.",
+      "jsonLd": 1
+    },
+    {
+      "route": "/fr/search?q=notion",
+      "status": 200,
+      "pathname": "/fr/search",
+      "title": "Recherche ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/fr/search"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/search"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/search"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/search"
+        }
+      ],
+      "description": "Rechercher un outil, une catégorie ou un guide dans ToolTrim.",
+      "jsonLd": 1
+    },
+    {
+      "route": "/en/search?q=notion",
+      "status": 200,
+      "pathname": "/en/search",
+      "title": "Search ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/en/search"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/search"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/search"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/search"
+        }
+      ],
+      "description": "Search for a tool, category or guide on ToolTrim.",
+      "jsonLd": 1
+    },
+    {
+      "route": "/fr/back-office",
+      "status": 200,
+      "pathname": "/fr/back-office",
+      "title": "ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/fr/back-office"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/back-office"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/back-office"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/back-office"
+        }
+      ],
+      "h1": "Back-office ToolTrim",
+      "jsonLd": 1
+    },
+    {
+      "route": "/en/back-office",
+      "status": 200,
+      "pathname": "/en/back-office",
+      "title": "ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/en/back-office"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/back-office"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/back-office"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/back-office"
+        }
+      ],
+      "h1": "ToolTrim Back Office",
+      "jsonLd": 1
+    },
+    {
+      "route": "/fr/tool/notion",
+      "status": 200,
+      "pathname": "/fr/tool/notion",
+      "title": "Notion : prix dès 9,50 €, avis et alternatives 2026",
+      "canonical": [
+        "https://tooltrim.com/fr/tool/notion"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/notion"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/notion"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/notion"
+        }
+      ],
+      "h1": "Notion",
+      "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données. Prix dès 9,50 €/mois. Avis ToolTrim et alternatives moins chères.",
+      "jsonLd": 5
+    },
+    {
+      "route": "/en/tool/notion/pricing",
+      "status": 200,
+      "pathname": "/en/tool/notion/pricing",
+      "title": "Notion pricing 2026: from €9.50/mo, free plan | ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/en/tool/notion/pricing"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/notion/prix"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/notion/pricing"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/notion/pricing"
+        }
+      ],
+      "h1": "Notion pricing",
+      "description": "How much does Notion cost in 2026? From €9.50/mo (Plus plan), with a free plan. All-in-one workspace for notes, docs, wikis and databases. All plans and cheaper alternatives.",
+      "jsonLd": 6
+    },
+    {
+      "route": "/fr/explorer/around/notion",
+      "status": 200,
+      "pathname": "/fr/explorer/around/notion",
+      "title": "Outils à associer à Notion | ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/fr/explorer/around/notion"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/explorer/around/notion"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/explorer/around/notion"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/explorer/around/notion"
+        }
+      ],
+      "h1": "Notion",
+      "description": "Explorez l'écosystème d'outils autour de Notion : outils complémentaires et satellites pour composer votre stack, sélectionnés par ToolTrim.",
+      "jsonLd": 1
+    },
+    {
+      "route": "/en/tools?utm_source=r11",
+      "status": 200,
+      "pathname": "/en/tools",
+      "title": "All SaaS tools for freelancers | ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/en/tools"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tools"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tools"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tools"
+        }
+      ],
+      "h1": "Tools",
+      "description": "1240 SaaS tools reviewed independently: verified pricing, visible alternatives, honest verdicts.",
+      "jsonLd": 3
+    },
+    {
+      "route": "/fr/guide/stack-redactrice-freelance",
+      "status": 200,
+      "pathname": "/fr/guide/stack-redactrice-freelance",
+      "title": "Rédactrice freelance : la stack qui te suffit",
+      "canonical": [
+        "https://tooltrim.com/fr/guide/stack-redactrice-freelance"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/guide/stack-redactrice-freelance"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/guide/stack-freelance-writer"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/guide/stack-freelance-writer"
+        }
+      ],
+      "h1": "Tu es rédactrice freelance : voici la stack minimaliste qui te suffit vraiment",
+      "description": "Rédaction freelance : cinq outils pour écrire, organiser son activité et encaisser ses paiements, avec les abonnements à réexaminer.",
+      "jsonLd": 4
+    },
+    {
+      "route": "/en/guide/stack-freelance-writer",
+      "status": 200,
+      "pathname": "/en/guide/stack-freelance-writer",
+      "title": "Freelance writer: the minimal stack that suffices",
+      "canonical": [
+        "https://tooltrim.com/en/guide/stack-freelance-writer"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/guide/stack-redactrice-freelance"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/guide/stack-freelance-writer"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/guide/stack-freelance-writer"
+        }
+      ],
+      "h1": "You're a freelance writer: here's the minimal stack that's actually enough for you",
+      "description": "A five-tool stack for freelance writers: writing, organization and payments, plus subscriptions to reassess before adding more software.",
+      "jsonLd": 4
+    },
+    {
+      "route": "/fr/cart",
+      "status": 200,
+      "pathname": "/fr/ma-stack",
+      "title": "Ma stack — ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/fr/ma-stack"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/ma-stack"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/ma-stack"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/ma-stack"
+        }
+      ],
+      "h1": "Mes outils",
+      "description": "Composez et suivez votre stack d'outils SaaS avec ToolTrim.",
+      "jsonLd": 1
+    },
+    {
+      "route": "/en/panier",
+      "status": 200,
+      "pathname": "/en/ma-stack",
+      "title": "My stack — ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/en/ma-stack"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/ma-stack"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/ma-stack"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/ma-stack"
+        }
+      ],
+      "h1": "My tools",
+      "description": "Build and track your SaaS tool stack with ToolTrim.",
+      "jsonLd": 1
+    },
+    {
+      "route": "/fr/outils/notion",
+      "status": 200,
+      "pathname": "/fr/tool/notion",
+      "title": "Notion : prix dès 9,50 €, avis et alternatives 2026",
+      "canonical": [
+        "https://tooltrim.com/fr/tool/notion"
+      ],
+      "robots": [
+        "index, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/notion"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/notion"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/notion"
+        }
+      ],
+      "h1": "Notion",
+      "description": "Espace de travail tout-en-un pour notes, documents, wikis et bases de données. Prix dès 9,50 €/mois. Avis ToolTrim et alternatives moins chères.",
+      "jsonLd": 5
+    },
+    {
+      "route": "/en/plugins/figma",
+      "status": 200,
+      "pathname": "/en/tool/figma",
+      "title": "Figma: pricing from $16, review & alternatives 2026",
+      "canonical": [
+        "https://tooltrim.com/en/tool/figma"
+      ],
+      "robots": [],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/tool/figma"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/tool/figma"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/tool/figma"
+        }
+      ],
+      "h1": "Figma",
+      "description": "Vector-based interface design tool with real-time collaboration. From $16/mo. ToolTrim review and cheaper alternatives.",
+      "jsonLd": 5
+    },
+    {
+      "route": "/fr/comparatif/notion-vs-figma",
+      "status": 200,
+      "pathname": "/fr/comparatif/notion-vs-figma",
+      "title": "Notion vs Figma : comparatif 2026 | ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/fr/comparatif/notion-vs-figma"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/comparatif/notion-vs-figma"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/comparatif/notion-vs-figma"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/comparatif/notion-vs-figma"
+        }
+      ],
+      "h1": "Notion vs Figma",
+      "description": "Notion vs Figma : Deux logiques différentes, un seul bon choix selon ton usage. Prix réels, verdict ToolTrim et critères de décision.",
+      "jsonLd": 2
+    },
+    {
+      "route": "/en/comparatif/canva-vs-photoshop-elements",
+      "status": 200,
+      "pathname": "/en/comparatif/canva-vs-photoshop-elements",
+      "title": "ToolTrim",
+      "canonical": [
+        "https://tooltrim.com/en/comparatif/canva-vs-photoshop-elements"
+      ],
+      "robots": [
+        "noindex, follow"
+      ],
+      "hreflang": [
+        {
+          "lang": "fr",
+          "href": "https://tooltrim.com/fr/comparatif/canva-vs-photoshop-elements"
+        },
+        {
+          "lang": "en",
+          "href": "https://tooltrim.com/en/comparatif/canva-vs-photoshop-elements"
+        },
+        {
+          "lang": "x-default",
+          "href": "https://tooltrim.com/en/comparatif/canva-vs-photoshop-elements"
+        }
+      ],
+      "h1": "This comparison doesn't exist.",
+      "jsonLd": 1
+    }
+  ]
+}

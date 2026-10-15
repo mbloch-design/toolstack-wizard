@@ -144,6 +144,7 @@ run(
 run("Mutualisation du CSS critique", "node", ["scripts/externalize-critical-css.mjs"]);
 run("Compactage HTML avec contrôle d'équivalence", "node", ["scripts/compact-generated-html.mjs"]);
 run("Validation SEO du sitemap généré", "node", ["scripts/validate-generated-seo.mjs"]);
+run("Validation des routes générées et des fallbacks client", "node", ["scripts/validate-generated-routing.mjs"]);
 run("Fichiers llms canoniques", "node", ["scripts/gen-llms-files.mjs"]);
 run("Audit SEO des pages Explorer", "node", ["scripts/audit-explorer-seo.mjs"]);
 run("Budget et doublons de l'artefact", "node", ["scripts/audit-build-output.mjs"]);

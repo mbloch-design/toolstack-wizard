@@ -1,0 +1,79 @@
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+ ❯ scripts/generated-routing.test.mjs (5 tests | 4 failed) 10ms
+     × leaves unknown localized pages and missing catalogue documents to the static 404 5ms
+     × keeps search and private client routes usable without claiming to be the homepage 2ms
+     × does not intercept prerendered routes or parameter variants 0ms
+     × keeps direct cart aliases and localized outils redirects 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  scripts/generated-routing.test.mjs > generated route fallback contract > leaves unknown localized pages and missing catalogue documents to the static 404
+AssertionError: /fr/r11-route-inexistante: expected '/index.html' to be undefined
+
+- Expected:
+undefined
+
++ Received:
+"/index.html"
+
+ ❯ scripts/generated-routing.test.mjs:8:250
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  scripts/generated-routing.test.mjs > generated route fallback contract > keeps search and private client routes usable without claiming to be the homepage
+AssertionError: /fr/search: expected '/index.html' to be '/client-only.html' // Object.is equality
+
+Expected: "/client-only.html"
+Received: "/index.html"
+
+ ❯ scripts/generated-routing.test.mjs:11:128
+      9|  });
+     10|  it('keeps search and private client routes usable without claiming to…
+     11|   for(const route of ['/fr/search','/en/search','/fr/back-office','/en…
+       |                                                                                                                                ^
+     12|  });
+     13|  it('preserves existing host pages while they remain client rendered',…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  scripts/generated-routing.test.mjs > generated route fallback contract > does not intercept prerendered routes or parameter variants
+AssertionError: /fr/tool/notion: expected '/index.html' to be undefined
+
+- Expected:
+undefined
+
++ Received:
+"/index.html"
+
+ ❯ scripts/generated-routing.test.mjs:17:218
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  scripts/generated-routing.test.mjs > generated route fallback contract > keeps direct cart aliases and localized outils redirects
+AssertionError: /:lang(fr|en)/cart: expected false to be true // Object.is equality
+
+- Expected
++ Received
+
+- true
++ false
+
+ ❯ scripts/generated-routing.test.mjs:20:176
+     18|  });
+     19|  it('keeps direct cart aliases and localized outils redirects',()=>{
+     20|   for(const source of ['/:lang(fr|en)/cart','/:lang(fr|en)/panier','/:…
+       |                                                                                                                                                                                ^
+     21|  });
+     22| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 1 passed (5)
+   Start at  10:36:04
+   Duration  234ms (transform 16ms, setup 0ms, import 28ms, tests 10ms, environment 0ms)

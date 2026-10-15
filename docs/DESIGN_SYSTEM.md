@@ -1715,3 +1715,10 @@ Le pattern `Stack Map` remplace les nodes workflow interactifs quand la page doi
 - Tool grid : CSS grid `auto-fill minmax(180px, 1fr)`, gap 14px 24px.
 - Group tag : inline-flex, h 26px, padding 0 10px, 10px/700 caps, border `#DADAD4`, radius 999px.
 - Mobile : une colonne, padding réduit 28px 24px, logos 40px.
+
+
+## Compilation Tailwind 4 — 15 octobre 2026
+
+Le passage au compilateur Tailwind 4 conserve les tokens, les classes éditoriales préfixées et leurs règles `@layer components`. La configuration PostCSS rétablit la cascade historique pour préserver la priorité des styles hors couche. Les anciens utilitaires `shadow-sm`, `blur-sm` et `outline-none` sont remplacés, dans les composants actifs, par les équivalents v4 `shadow-xs`, `blur-xs` et `outline-hidden`, conformément au guide de migration. Les rayons personnalisés restent ceux du thème ToolTrim.
+
+Toute évolution du traitement des couches doit conserver les tests `scripts/lib/legacy-css-cascade.test.mjs` et vérifier les pages réelles ; un build seul ne valide pas les tailles de texte ou les espacements.

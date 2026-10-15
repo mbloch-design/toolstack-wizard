@@ -1,0 +1,8 @@
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+
+ Test Files  2 passed (2)
+      Tests  11 passed (11)
+   Start at  10:46:53
+   Duration  446ms (transform 77ms, setup 97ms, import 57ms, tests 8ms, environment 409ms)

@@ -1,3 +1,4 @@
+import { applyAuditedToolUrls } from "./toolUrlCorrections.mjs";
 import type { Tool, ToolType, PrescriptionQuality, PricingV5, ToolPricingPlan } from "@/data/types";
 
 export type CatalogProjectionRow = Record<string, any> & {
@@ -77,7 +78,7 @@ export function catalogProjectionRowsToTool(rows: CatalogProjectionRow[]): Tool 
     .filter((item) => item.type === "gallery" && text(item.url))
     .map((item) => text(item.url));
 
-  return {
+  return applyAuditedToolUrls({
     id: text(base.id),
     slug: text(base.slug || base.id),
     name: text(base.name, text(base.id)),
@@ -138,7 +139,7 @@ export function catalogProjectionRowsToTool(rows: CatalogProjectionRow[]): Tool 
       ? canonicalGallery
       : fr?.gallery_images || en?.gallery_images || [],
     aiAngle: fr?.ai_angle || en?.ai_angle || null,
-  } as Tool;
+  } as Tool);
 }
 
 /** Read a complete public fiche from the V4 projection. */

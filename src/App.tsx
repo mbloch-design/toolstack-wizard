@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { isStaticNotFoundPath } from "@/lib/staticHttpError";
 import bestOfGuides from "@/data/bestOfGuides.json";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, Navigate, useParams, useLocation, Outlet } from "react-router-dom";
@@ -172,7 +173,10 @@ const LazyFallback = () => (
   </div>
 );
 
-export const AppRoutes = () => (
+export const AppRoutes = () => {
+  const { pathname } = useLocation();
+  if (isStaticNotFoundPath(pathname)) return <NotFound />;
+  return (
   <Routes>
     <Route path="/" element={<Navigate to="/en" replace />} />
 
@@ -255,7 +259,8 @@ export const AppRoutes = () => (
     </Route>
     <Route path="*" element={<NotFound />} />
   </Routes>
-);
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>

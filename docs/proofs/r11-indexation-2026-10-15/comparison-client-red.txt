@@ -1,0 +1,27 @@
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+ ❯ scripts/generated-routing.test.mjs (5 tests | 1 failed) 7ms
+     × keeps search and private client routes usable without claiming to be the homepage 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  scripts/generated-routing.test.mjs > generated route fallback contract > keeps search and private client routes usable without claiming to be the homepage
+AssertionError: /fr/comparatif/notion-vs-figma: expected undefined to be '/client-only.html' // Object.is equality
+
+- Expected:
+"/client-only.html"
+
++ Received:
+undefined
+
+ ❯ scripts/generated-routing.test.mjs:11:206
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 4 passed (5)
+   Start at  10:48:18
+   Duration  192ms (transform 13ms, setup 0ms, import 22ms, tests 7ms, environment 0ms)

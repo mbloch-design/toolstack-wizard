@@ -1,0 +1,12 @@
+
+> vite_react_shadcn_ts@0.0.0 test:api
+> vitest run --config vitest.api.config.ts
+
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+
+ Test Files  9 passed | 3 skipped (12)
+      Tests  166 passed | 18 skipped (184)
+   Start at  17:18:15
+   Duration  817ms (transform 988ms, setup 0ms, import 2.07s, tests 287ms, environment 1ms)

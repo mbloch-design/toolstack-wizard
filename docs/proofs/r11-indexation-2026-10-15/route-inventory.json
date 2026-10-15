@@ -1,0 +1,1623 @@
+{
+  "measuredAt": "2026-10-15T15:28:20.595Z",
+  "sitemapUrls": 13148,
+  "appRouteCases": 130,
+  "failures": [],
+  "results": [
+    {
+      "route": "/",
+      "chain": [
+        {
+          "pathname": "/",
+          "status": 308,
+          "destination": "/en"
+        },
+        {
+          "pathname": "/en",
+          "status": 200,
+          "destination": "/en"
+        }
+      ]
+    },
+    {
+      "route": "/methodology",
+      "chain": [
+        {
+          "pathname": "/methodology",
+          "status": 308,
+          "destination": "/en/transparency"
+        },
+        {
+          "pathname": "/en/transparency",
+          "status": 200,
+          "destination": "/en/transparency"
+        }
+      ]
+    },
+    {
+      "route": "/blog",
+      "chain": [
+        {
+          "pathname": "/blog",
+          "status": 308,
+          "destination": "/fr"
+        },
+        {
+          "pathname": "/fr",
+          "status": 200,
+          "destination": "/fr"
+        }
+      ]
+    },
+    {
+      "route": "/blog/stack-redactrice-freelance",
+      "chain": [
+        {
+          "pathname": "/blog/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        },
+        {
+          "pathname": "/fr/guide/stack-redactrice-freelance",
+          "status": 200,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/guides",
+      "chain": [
+        {
+          "pathname": "/guides",
+          "status": 308,
+          "destination": "/en/guides"
+        },
+        {
+          "pathname": "/en/guides",
+          "status": 200,
+          "destination": "/en/guides"
+        }
+      ]
+    },
+    {
+      "route": "/tool/notion",
+      "chain": [
+        {
+          "pathname": "/tool/notion",
+          "status": 308,
+          "destination": "/en/tool/notion"
+        },
+        {
+          "pathname": "/en/tool/notion",
+          "status": 200,
+          "destination": "/en/tool/notion"
+        }
+      ]
+    },
+    {
+      "route": "/article/stack-redactrice-freelance",
+      "chain": [
+        {
+          "pathname": "/article/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        },
+        {
+          "pathname": "/fr/guide/stack-redactrice-freelance",
+          "status": 200,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/category/gestion-projet",
+      "chain": [
+        {
+          "pathname": "/category/gestion-projet",
+          "status": 308,
+          "destination": "/en/category/gestion-projet"
+        },
+        {
+          "pathname": "/en/category/gestion-projet",
+          "status": 200,
+          "destination": "/en/category/gestion-projet"
+        }
+      ]
+    },
+    {
+      "route": "/submit",
+      "chain": [
+        {
+          "pathname": "/submit",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/fr/diagnostic",
+      "chain": [
+        {
+          "pathname": "/fr/diagnostic",
+          "status": 308,
+          "destination": "/fr/ma-stack"
+        },
+        {
+          "pathname": "/fr/ma-stack",
+          "status": 200,
+          "destination": "/fr/ma-stack"
+        }
+      ]
+    },
+    {
+      "route": "/fr/selector",
+      "chain": [
+        {
+          "pathname": "/fr/selector",
+          "status": 308,
+          "destination": "/fr/ma-stack"
+        },
+        {
+          "pathname": "/fr/ma-stack",
+          "status": 200,
+          "destination": "/fr/ma-stack"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tools",
+      "chain": [
+        {
+          "pathname": "/fr/tools",
+          "status": 200,
+          "destination": "/fr/tools"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tool/are-na",
+      "chain": [
+        {
+          "pathname": "/fr/tool/are-na",
+          "status": 308,
+          "destination": "/fr/tool/arena"
+        },
+        {
+          "pathname": "/fr/tool/arena",
+          "status": 200,
+          "destination": "/fr/tool/arena"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tool/sendinblue",
+      "chain": [
+        {
+          "pathname": "/fr/tool/sendinblue",
+          "status": 308,
+          "destination": "/fr/tool/brevo"
+        },
+        {
+          "pathname": "/fr/tool/brevo",
+          "status": 200,
+          "destination": "/fr/tool/brevo"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tool/clearbit",
+      "chain": [
+        {
+          "pathname": "/fr/tool/clearbit",
+          "status": 308,
+          "destination": "/fr/tool/hubspot"
+        },
+        {
+          "pathname": "/fr/tool/hubspot",
+          "status": 200,
+          "destination": "/fr/tool/hubspot"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tool/notion",
+      "chain": [
+        {
+          "pathname": "/fr/tool/notion",
+          "status": 200,
+          "destination": "/fr/tool/notion"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tool/notion/prix",
+      "chain": [
+        {
+          "pathname": "/fr/tool/notion/prix",
+          "status": 200,
+          "destination": "/fr/tool/notion/prix"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tool/notion/pricing",
+      "chain": [
+        {
+          "pathname": "/fr/tool/notion/pricing",
+          "status": 308,
+          "destination": "/fr/tool/notion/prix"
+        },
+        {
+          "pathname": "/fr/tool/notion/prix",
+          "status": 200,
+          "destination": "/fr/tool/notion/prix"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tool/notion/alternatives",
+      "chain": [
+        {
+          "pathname": "/fr/tool/notion/alternatives",
+          "status": 200,
+          "destination": "/fr/tool/notion/alternatives"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tool/notion/avis",
+      "chain": [
+        {
+          "pathname": "/fr/tool/notion/avis",
+          "status": 200,
+          "destination": "/fr/tool/notion/avis"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tool/notion/reviews",
+      "chain": [
+        {
+          "pathname": "/fr/tool/notion/reviews",
+          "status": 308,
+          "destination": "/fr/tool/notion/avis"
+        },
+        {
+          "pathname": "/fr/tool/notion/avis",
+          "status": 200,
+          "destination": "/fr/tool/notion/avis"
+        }
+      ]
+    },
+    {
+      "route": "/fr/tool/notion/faq",
+      "chain": [
+        {
+          "pathname": "/fr/tool/notion/faq",
+          "status": 308,
+          "destination": "/fr/tool/notion"
+        },
+        {
+          "pathname": "/fr/tool/notion",
+          "status": 200,
+          "destination": "/fr/tool/notion"
+        }
+      ]
+    },
+    {
+      "route": "/fr/outils/notion",
+      "chain": [
+        {
+          "pathname": "/fr/outils/notion",
+          "status": 308,
+          "destination": "/fr/tool/notion"
+        },
+        {
+          "pathname": "/fr/tool/notion",
+          "status": 200,
+          "destination": "/fr/tool/notion"
+        }
+      ]
+    },
+    {
+      "route": "/fr/category",
+      "chain": [
+        {
+          "pathname": "/fr/category",
+          "status": 200,
+          "destination": "/fr/category"
+        }
+      ]
+    },
+    {
+      "route": "/fr/category/gestion-projet",
+      "chain": [
+        {
+          "pathname": "/fr/category/gestion-projet",
+          "status": 200,
+          "destination": "/fr/category/gestion-projet"
+        }
+      ]
+    },
+    {
+      "route": "/fr/plugins/notion",
+      "chain": [
+        {
+          "pathname": "/fr/plugins/notion",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/fr/libraries/notion",
+      "chain": [
+        {
+          "pathname": "/fr/libraries/notion",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/fr/mcp/notion",
+      "chain": [
+        {
+          "pathname": "/fr/mcp/notion",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guides",
+      "chain": [
+        {
+          "pathname": "/fr/guides",
+          "status": 200,
+          "destination": "/fr/guides"
+        }
+      ]
+    },
+    {
+      "route": "/fr/stories",
+      "chain": [
+        {
+          "pathname": "/fr/stories",
+          "status": 308,
+          "destination": "/fr/guides"
+        },
+        {
+          "pathname": "/fr/guides",
+          "status": 200,
+          "destination": "/fr/guides"
+        }
+      ]
+    },
+    {
+      "route": "/fr/ma-stack",
+      "chain": [
+        {
+          "pathname": "/fr/ma-stack",
+          "status": 200,
+          "destination": "/fr/ma-stack"
+        }
+      ]
+    },
+    {
+      "route": "/fr/explorer",
+      "chain": [
+        {
+          "pathname": "/fr/explorer",
+          "status": 200,
+          "destination": "/fr/explorer"
+        }
+      ]
+    },
+    {
+      "route": "/fr/explorer/around/notion",
+      "chain": [
+        {
+          "pathname": "/fr/explorer/around/notion",
+          "status": 200,
+          "destination": "/fr/explorer/around/notion"
+        }
+      ]
+    },
+    {
+      "route": "/fr/my-stack",
+      "chain": [
+        {
+          "pathname": "/fr/my-stack",
+          "status": 200,
+          "destination": "/fr/my-stack"
+        }
+      ]
+    },
+    {
+      "route": "/fr/panier",
+      "chain": [
+        {
+          "pathname": "/fr/panier",
+          "status": 308,
+          "destination": "/fr/ma-stack"
+        },
+        {
+          "pathname": "/fr/ma-stack",
+          "status": 200,
+          "destination": "/fr/ma-stack"
+        }
+      ]
+    },
+    {
+      "route": "/fr/cart",
+      "chain": [
+        {
+          "pathname": "/fr/cart",
+          "status": 308,
+          "destination": "/fr/ma-stack"
+        },
+        {
+          "pathname": "/fr/ma-stack",
+          "status": 200,
+          "destination": "/fr/ma-stack"
+        }
+      ]
+    },
+    {
+      "route": "/fr/stacks",
+      "chain": [
+        {
+          "pathname": "/fr/stacks",
+          "status": 200,
+          "destination": "/fr/stacks"
+        }
+      ]
+    },
+    {
+      "route": "/fr/stacks/agence-creative-petit-studio",
+      "chain": [
+        {
+          "pathname": "/fr/stacks/agence-creative-petit-studio",
+          "status": 200,
+          "destination": "/fr/stacks/agence-creative-petit-studio"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/meilleurs-outils-developpeur-freelance",
+      "chain": [
+        {
+          "pathname": "/fr/guide/meilleurs-outils-developpeur-freelance",
+          "status": 200,
+          "destination": "/fr/guide/meilleurs-outils-developpeur-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/best-tools-freelance-developer",
+      "chain": [
+        {
+          "pathname": "/fr/guide/best-tools-freelance-developer",
+          "status": 308,
+          "destination": "/fr/guide/meilleurs-outils-developpeur-freelance"
+        },
+        {
+          "pathname": "/fr/guide/meilleurs-outils-developpeur-freelance",
+          "status": 200,
+          "destination": "/fr/guide/meilleurs-outils-developpeur-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/meilleurs-outils-designer-freelance",
+      "chain": [
+        {
+          "pathname": "/fr/guide/meilleurs-outils-designer-freelance",
+          "status": 200,
+          "destination": "/fr/guide/meilleurs-outils-designer-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/best-tools-freelance-designer",
+      "chain": [
+        {
+          "pathname": "/fr/guide/best-tools-freelance-designer",
+          "status": 308,
+          "destination": "/fr/guide/meilleurs-outils-designer-freelance"
+        },
+        {
+          "pathname": "/fr/guide/meilleurs-outils-designer-freelance",
+          "status": 200,
+          "destination": "/fr/guide/meilleurs-outils-designer-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/meilleurs-outils-consultant-freelance",
+      "chain": [
+        {
+          "pathname": "/fr/guide/meilleurs-outils-consultant-freelance",
+          "status": 200,
+          "destination": "/fr/guide/meilleurs-outils-consultant-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/best-tools-freelance-consultant",
+      "chain": [
+        {
+          "pathname": "/fr/guide/best-tools-freelance-consultant",
+          "status": 308,
+          "destination": "/fr/guide/meilleurs-outils-consultant-freelance"
+        },
+        {
+          "pathname": "/fr/guide/meilleurs-outils-consultant-freelance",
+          "status": 200,
+          "destination": "/fr/guide/meilleurs-outils-consultant-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/meilleurs-outils-createur-contenu-freelance",
+      "chain": [
+        {
+          "pathname": "/fr/guide/meilleurs-outils-createur-contenu-freelance",
+          "status": 200,
+          "destination": "/fr/guide/meilleurs-outils-createur-contenu-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/best-tools-freelance-content-creator",
+      "chain": [
+        {
+          "pathname": "/fr/guide/best-tools-freelance-content-creator",
+          "status": 308,
+          "destination": "/fr/guide/meilleurs-outils-createur-contenu-freelance"
+        },
+        {
+          "pathname": "/fr/guide/meilleurs-outils-createur-contenu-freelance",
+          "status": 200,
+          "destination": "/fr/guide/meilleurs-outils-createur-contenu-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/meilleurs-outils-ops-manager-freelance",
+      "chain": [
+        {
+          "pathname": "/fr/guide/meilleurs-outils-ops-manager-freelance",
+          "status": 200,
+          "destination": "/fr/guide/meilleurs-outils-ops-manager-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/best-tools-freelance-ops-manager",
+      "chain": [
+        {
+          "pathname": "/fr/guide/best-tools-freelance-ops-manager",
+          "status": 308,
+          "destination": "/fr/guide/meilleurs-outils-ops-manager-freelance"
+        },
+        {
+          "pathname": "/fr/guide/meilleurs-outils-ops-manager-freelance",
+          "status": 200,
+          "destination": "/fr/guide/meilleurs-outils-ops-manager-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/guide/stack-redactrice-freelance",
+      "chain": [
+        {
+          "pathname": "/fr/guide/stack-redactrice-freelance",
+          "status": 200,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/story/stack-redactrice-freelance",
+      "chain": [
+        {
+          "pathname": "/fr/story/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        },
+        {
+          "pathname": "/fr/guide/stack-redactrice-freelance",
+          "status": 200,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/article/stack-redactrice-freelance",
+      "chain": [
+        {
+          "pathname": "/fr/article/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        },
+        {
+          "pathname": "/fr/guide/stack-redactrice-freelance",
+          "status": 200,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/fr/comparatifs",
+      "chain": [
+        {
+          "pathname": "/fr/comparatifs",
+          "status": 200,
+          "destination": "/fr/comparatifs"
+        }
+      ]
+    },
+    {
+      "route": "/fr/comparatif/notion-vs-coda",
+      "chain": [
+        {
+          "pathname": "/fr/comparatif/notion-vs-coda",
+          "status": 200,
+          "destination": "/fr/comparatif/notion-vs-coda"
+        }
+      ]
+    },
+    {
+      "route": "/fr/about",
+      "chain": [
+        {
+          "pathname": "/fr/about",
+          "status": 200,
+          "destination": "/fr/about"
+        }
+      ]
+    },
+    {
+      "route": "/fr/methodology",
+      "chain": [
+        {
+          "pathname": "/fr/methodology",
+          "status": 308,
+          "destination": "/fr/transparency"
+        },
+        {
+          "pathname": "/fr/transparency",
+          "status": 200,
+          "destination": "/fr/transparency"
+        }
+      ]
+    },
+    {
+      "route": "/fr/methodologie",
+      "chain": [
+        {
+          "pathname": "/fr/methodologie",
+          "status": 308,
+          "destination": "/fr/transparency"
+        },
+        {
+          "pathname": "/fr/transparency",
+          "status": 200,
+          "destination": "/fr/transparency"
+        }
+      ]
+    },
+    {
+      "route": "/fr/transparency",
+      "chain": [
+        {
+          "pathname": "/fr/transparency",
+          "status": 200,
+          "destination": "/fr/transparency"
+        }
+      ]
+    },
+    {
+      "route": "/fr/contact",
+      "chain": [
+        {
+          "pathname": "/fr/contact",
+          "status": 200,
+          "destination": "/fr/contact"
+        }
+      ]
+    },
+    {
+      "route": "/fr/submit",
+      "chain": [
+        {
+          "pathname": "/fr/submit",
+          "status": 200,
+          "destination": "/fr/submit"
+        }
+      ]
+    },
+    {
+      "route": "/fr/legal-notice",
+      "chain": [
+        {
+          "pathname": "/fr/legal-notice",
+          "status": 200,
+          "destination": "/fr/legal-notice"
+        }
+      ]
+    },
+    {
+      "route": "/fr/privacy-policy",
+      "chain": [
+        {
+          "pathname": "/fr/privacy-policy",
+          "status": 200,
+          "destination": "/fr/privacy-policy"
+        }
+      ]
+    },
+    {
+      "route": "/fr/terms",
+      "chain": [
+        {
+          "pathname": "/fr/terms",
+          "status": 200,
+          "destination": "/fr/terms"
+        }
+      ]
+    },
+    {
+      "route": "/fr/search",
+      "chain": [
+        {
+          "pathname": "/fr/search",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/fr/back-office",
+      "chain": [
+        {
+          "pathname": "/fr/back-office",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/fr/v2",
+      "chain": [
+        {
+          "pathname": "/fr/v2",
+          "status": 308,
+          "destination": "/fr"
+        },
+        {
+          "pathname": "/fr",
+          "status": 200,
+          "destination": "/fr"
+        }
+      ]
+    },
+    {
+      "route": "/",
+      "chain": [
+        {
+          "pathname": "/",
+          "status": 308,
+          "destination": "/en"
+        },
+        {
+          "pathname": "/en",
+          "status": 200,
+          "destination": "/en"
+        }
+      ]
+    },
+    {
+      "route": "/methodology",
+      "chain": [
+        {
+          "pathname": "/methodology",
+          "status": 308,
+          "destination": "/en/transparency"
+        },
+        {
+          "pathname": "/en/transparency",
+          "status": 200,
+          "destination": "/en/transparency"
+        }
+      ]
+    },
+    {
+      "route": "/blog",
+      "chain": [
+        {
+          "pathname": "/blog",
+          "status": 308,
+          "destination": "/fr"
+        },
+        {
+          "pathname": "/fr",
+          "status": 200,
+          "destination": "/fr"
+        }
+      ]
+    },
+    {
+      "route": "/blog/stack-redactrice-freelance",
+      "chain": [
+        {
+          "pathname": "/blog/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        },
+        {
+          "pathname": "/fr/guide/stack-redactrice-freelance",
+          "status": 200,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/guides",
+      "chain": [
+        {
+          "pathname": "/guides",
+          "status": 308,
+          "destination": "/en/guides"
+        },
+        {
+          "pathname": "/en/guides",
+          "status": 200,
+          "destination": "/en/guides"
+        }
+      ]
+    },
+    {
+      "route": "/tool/notion",
+      "chain": [
+        {
+          "pathname": "/tool/notion",
+          "status": 308,
+          "destination": "/en/tool/notion"
+        },
+        {
+          "pathname": "/en/tool/notion",
+          "status": 200,
+          "destination": "/en/tool/notion"
+        }
+      ]
+    },
+    {
+      "route": "/article/stack-redactrice-freelance",
+      "chain": [
+        {
+          "pathname": "/article/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        },
+        {
+          "pathname": "/fr/guide/stack-redactrice-freelance",
+          "status": 200,
+          "destination": "/fr/guide/stack-redactrice-freelance"
+        }
+      ]
+    },
+    {
+      "route": "/category/gestion-projet",
+      "chain": [
+        {
+          "pathname": "/category/gestion-projet",
+          "status": 308,
+          "destination": "/en/category/gestion-projet"
+        },
+        {
+          "pathname": "/en/category/gestion-projet",
+          "status": 200,
+          "destination": "/en/category/gestion-projet"
+        }
+      ]
+    },
+    {
+      "route": "/submit",
+      "chain": [
+        {
+          "pathname": "/submit",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/en/diagnostic",
+      "chain": [
+        {
+          "pathname": "/en/diagnostic",
+          "status": 308,
+          "destination": "/en/ma-stack"
+        },
+        {
+          "pathname": "/en/ma-stack",
+          "status": 200,
+          "destination": "/en/ma-stack"
+        }
+      ]
+    },
+    {
+      "route": "/en/selector",
+      "chain": [
+        {
+          "pathname": "/en/selector",
+          "status": 308,
+          "destination": "/en/ma-stack"
+        },
+        {
+          "pathname": "/en/ma-stack",
+          "status": 200,
+          "destination": "/en/ma-stack"
+        }
+      ]
+    },
+    {
+      "route": "/en/tools",
+      "chain": [
+        {
+          "pathname": "/en/tools",
+          "status": 200,
+          "destination": "/en/tools"
+        }
+      ]
+    },
+    {
+      "route": "/en/tool/are-na",
+      "chain": [
+        {
+          "pathname": "/en/tool/are-na",
+          "status": 308,
+          "destination": "/en/tool/arena"
+        },
+        {
+          "pathname": "/en/tool/arena",
+          "status": 200,
+          "destination": "/en/tool/arena"
+        }
+      ]
+    },
+    {
+      "route": "/en/tool/sendinblue",
+      "chain": [
+        {
+          "pathname": "/en/tool/sendinblue",
+          "status": 308,
+          "destination": "/en/tool/brevo"
+        },
+        {
+          "pathname": "/en/tool/brevo",
+          "status": 200,
+          "destination": "/en/tool/brevo"
+        }
+      ]
+    },
+    {
+      "route": "/en/tool/clearbit",
+      "chain": [
+        {
+          "pathname": "/en/tool/clearbit",
+          "status": 308,
+          "destination": "/en/tool/hubspot"
+        },
+        {
+          "pathname": "/en/tool/hubspot",
+          "status": 200,
+          "destination": "/en/tool/hubspot"
+        }
+      ]
+    },
+    {
+      "route": "/en/tool/notion",
+      "chain": [
+        {
+          "pathname": "/en/tool/notion",
+          "status": 200,
+          "destination": "/en/tool/notion"
+        }
+      ]
+    },
+    {
+      "route": "/en/tool/notion/prix",
+      "chain": [
+        {
+          "pathname": "/en/tool/notion/prix",
+          "status": 308,
+          "destination": "/en/tool/notion/pricing"
+        },
+        {
+          "pathname": "/en/tool/notion/pricing",
+          "status": 200,
+          "destination": "/en/tool/notion/pricing"
+        }
+      ]
+    },
+    {
+      "route": "/en/tool/notion/pricing",
+      "chain": [
+        {
+          "pathname": "/en/tool/notion/pricing",
+          "status": 200,
+          "destination": "/en/tool/notion/pricing"
+        }
+      ]
+    },
+    {
+      "route": "/en/tool/notion/alternatives",
+      "chain": [
+        {
+          "pathname": "/en/tool/notion/alternatives",
+          "status": 200,
+          "destination": "/en/tool/notion/alternatives"
+        }
+      ]
+    },
+    {
+      "route": "/en/tool/notion/avis",
+      "chain": [
+        {
+          "pathname": "/en/tool/notion/avis",
+          "status": 308,
+          "destination": "/en/tool/notion/reviews"
+        },
+        {
+          "pathname": "/en/tool/notion/reviews",
+          "status": 200,
+          "destination": "/en/tool/notion/reviews"
+        }
+      ]
+    },
+    {
+      "route": "/en/tool/notion/reviews",
+      "chain": [
+        {
+          "pathname": "/en/tool/notion/reviews",
+          "status": 200,
+          "destination": "/en/tool/notion/reviews"
+        }
+      ]
+    },
+    {
+      "route": "/en/tool/notion/faq",
+      "chain": [
+        {
+          "pathname": "/en/tool/notion/faq",
+          "status": 308,
+          "destination": "/en/tool/notion"
+        },
+        {
+          "pathname": "/en/tool/notion",
+          "status": 200,
+          "destination": "/en/tool/notion"
+        }
+      ]
+    },
+    {
+      "route": "/en/outils/notion",
+      "chain": [
+        {
+          "pathname": "/en/outils/notion",
+          "status": 308,
+          "destination": "/en/tool/notion"
+        },
+        {
+          "pathname": "/en/tool/notion",
+          "status": 200,
+          "destination": "/en/tool/notion"
+        }
+      ]
+    },
+    {
+      "route": "/en/category",
+      "chain": [
+        {
+          "pathname": "/en/category",
+          "status": 200,
+          "destination": "/en/category"
+        }
+      ]
+    },
+    {
+      "route": "/en/category/gestion-projet",
+      "chain": [
+        {
+          "pathname": "/en/category/gestion-projet",
+          "status": 200,
+          "destination": "/en/category/gestion-projet"
+        }
+      ]
+    },
+    {
+      "route": "/en/plugins/notion",
+      "chain": [
+        {
+          "pathname": "/en/plugins/notion",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/en/libraries/notion",
+      "chain": [
+        {
+          "pathname": "/en/libraries/notion",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/en/mcp/notion",
+      "chain": [
+        {
+          "pathname": "/en/mcp/notion",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/en/guides",
+      "chain": [
+        {
+          "pathname": "/en/guides",
+          "status": 200,
+          "destination": "/en/guides"
+        }
+      ]
+    },
+    {
+      "route": "/en/stories",
+      "chain": [
+        {
+          "pathname": "/en/stories",
+          "status": 308,
+          "destination": "/en/guides"
+        },
+        {
+          "pathname": "/en/guides",
+          "status": 200,
+          "destination": "/en/guides"
+        }
+      ]
+    },
+    {
+      "route": "/en/ma-stack",
+      "chain": [
+        {
+          "pathname": "/en/ma-stack",
+          "status": 200,
+          "destination": "/en/ma-stack"
+        }
+      ]
+    },
+    {
+      "route": "/en/explorer",
+      "chain": [
+        {
+          "pathname": "/en/explorer",
+          "status": 200,
+          "destination": "/en/explorer"
+        }
+      ]
+    },
+    {
+      "route": "/en/explorer/around/notion",
+      "chain": [
+        {
+          "pathname": "/en/explorer/around/notion",
+          "status": 200,
+          "destination": "/en/explorer/around/notion"
+        }
+      ]
+    },
+    {
+      "route": "/en/my-stack",
+      "chain": [
+        {
+          "pathname": "/en/my-stack",
+          "status": 200,
+          "destination": "/en/my-stack"
+        }
+      ]
+    },
+    {
+      "route": "/en/panier",
+      "chain": [
+        {
+          "pathname": "/en/panier",
+          "status": 308,
+          "destination": "/en/ma-stack"
+        },
+        {
+          "pathname": "/en/ma-stack",
+          "status": 200,
+          "destination": "/en/ma-stack"
+        }
+      ]
+    },
+    {
+      "route": "/en/cart",
+      "chain": [
+        {
+          "pathname": "/en/cart",
+          "status": 308,
+          "destination": "/en/ma-stack"
+        },
+        {
+          "pathname": "/en/ma-stack",
+          "status": 200,
+          "destination": "/en/ma-stack"
+        }
+      ]
+    },
+    {
+      "route": "/en/stacks",
+      "chain": [
+        {
+          "pathname": "/en/stacks",
+          "status": 200,
+          "destination": "/en/stacks"
+        }
+      ]
+    },
+    {
+      "route": "/en/stacks/agence-creative-petit-studio",
+      "chain": [
+        {
+          "pathname": "/en/stacks/agence-creative-petit-studio",
+          "status": 200,
+          "destination": "/en/stacks/agence-creative-petit-studio"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/meilleurs-outils-developpeur-freelance",
+      "chain": [
+        {
+          "pathname": "/en/guide/meilleurs-outils-developpeur-freelance",
+          "status": 308,
+          "destination": "/en/guide/best-tools-freelance-developer"
+        },
+        {
+          "pathname": "/en/guide/best-tools-freelance-developer",
+          "status": 200,
+          "destination": "/en/guide/best-tools-freelance-developer"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/best-tools-freelance-developer",
+      "chain": [
+        {
+          "pathname": "/en/guide/best-tools-freelance-developer",
+          "status": 200,
+          "destination": "/en/guide/best-tools-freelance-developer"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/meilleurs-outils-designer-freelance",
+      "chain": [
+        {
+          "pathname": "/en/guide/meilleurs-outils-designer-freelance",
+          "status": 308,
+          "destination": "/en/guide/best-tools-freelance-designer"
+        },
+        {
+          "pathname": "/en/guide/best-tools-freelance-designer",
+          "status": 200,
+          "destination": "/en/guide/best-tools-freelance-designer"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/best-tools-freelance-designer",
+      "chain": [
+        {
+          "pathname": "/en/guide/best-tools-freelance-designer",
+          "status": 200,
+          "destination": "/en/guide/best-tools-freelance-designer"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/meilleurs-outils-consultant-freelance",
+      "chain": [
+        {
+          "pathname": "/en/guide/meilleurs-outils-consultant-freelance",
+          "status": 308,
+          "destination": "/en/guide/best-tools-freelance-consultant"
+        },
+        {
+          "pathname": "/en/guide/best-tools-freelance-consultant",
+          "status": 200,
+          "destination": "/en/guide/best-tools-freelance-consultant"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/best-tools-freelance-consultant",
+      "chain": [
+        {
+          "pathname": "/en/guide/best-tools-freelance-consultant",
+          "status": 200,
+          "destination": "/en/guide/best-tools-freelance-consultant"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/meilleurs-outils-createur-contenu-freelance",
+      "chain": [
+        {
+          "pathname": "/en/guide/meilleurs-outils-createur-contenu-freelance",
+          "status": 308,
+          "destination": "/en/guide/best-tools-freelance-content-creator"
+        },
+        {
+          "pathname": "/en/guide/best-tools-freelance-content-creator",
+          "status": 200,
+          "destination": "/en/guide/best-tools-freelance-content-creator"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/best-tools-freelance-content-creator",
+      "chain": [
+        {
+          "pathname": "/en/guide/best-tools-freelance-content-creator",
+          "status": 200,
+          "destination": "/en/guide/best-tools-freelance-content-creator"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/meilleurs-outils-ops-manager-freelance",
+      "chain": [
+        {
+          "pathname": "/en/guide/meilleurs-outils-ops-manager-freelance",
+          "status": 308,
+          "destination": "/en/guide/best-tools-freelance-ops-manager"
+        },
+        {
+          "pathname": "/en/guide/best-tools-freelance-ops-manager",
+          "status": 200,
+          "destination": "/en/guide/best-tools-freelance-ops-manager"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/best-tools-freelance-ops-manager",
+      "chain": [
+        {
+          "pathname": "/en/guide/best-tools-freelance-ops-manager",
+          "status": 200,
+          "destination": "/en/guide/best-tools-freelance-ops-manager"
+        }
+      ]
+    },
+    {
+      "route": "/en/guide/stack-redactrice-freelance",
+      "chain": [
+        {
+          "pathname": "/en/guide/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/en/guide/stack-freelance-writer"
+        },
+        {
+          "pathname": "/en/guide/stack-freelance-writer",
+          "status": 200,
+          "destination": "/en/guide/stack-freelance-writer"
+        }
+      ]
+    },
+    {
+      "route": "/en/story/stack-redactrice-freelance",
+      "chain": [
+        {
+          "pathname": "/en/story/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/en/guide/stack-redactrice-freelance"
+        },
+        {
+          "pathname": "/en/guide/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/en/guide/stack-freelance-writer"
+        },
+        {
+          "pathname": "/en/guide/stack-freelance-writer",
+          "status": 200,
+          "destination": "/en/guide/stack-freelance-writer"
+        }
+      ]
+    },
+    {
+      "route": "/en/article/stack-redactrice-freelance",
+      "chain": [
+        {
+          "pathname": "/en/article/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/en/guide/stack-redactrice-freelance"
+        },
+        {
+          "pathname": "/en/guide/stack-redactrice-freelance",
+          "status": 308,
+          "destination": "/en/guide/stack-freelance-writer"
+        },
+        {
+          "pathname": "/en/guide/stack-freelance-writer",
+          "status": 200,
+          "destination": "/en/guide/stack-freelance-writer"
+        }
+      ]
+    },
+    {
+      "route": "/en/comparatifs",
+      "chain": [
+        {
+          "pathname": "/en/comparatifs",
+          "status": 200,
+          "destination": "/en/comparatifs"
+        }
+      ]
+    },
+    {
+      "route": "/en/comparatif/notion-vs-coda",
+      "chain": [
+        {
+          "pathname": "/en/comparatif/notion-vs-coda",
+          "status": 200,
+          "destination": "/en/comparatif/notion-vs-coda"
+        }
+      ]
+    },
+    {
+      "route": "/en/about",
+      "chain": [
+        {
+          "pathname": "/en/about",
+          "status": 200,
+          "destination": "/en/about"
+        }
+      ]
+    },
+    {
+      "route": "/en/methodology",
+      "chain": [
+        {
+          "pathname": "/en/methodology",
+          "status": 308,
+          "destination": "/en/transparency"
+        },
+        {
+          "pathname": "/en/transparency",
+          "status": 200,
+          "destination": "/en/transparency"
+        }
+      ]
+    },
+    {
+      "route": "/en/methodologie",
+      "chain": [
+        {
+          "pathname": "/en/methodologie",
+          "status": 308,
+          "destination": "/en/transparency"
+        },
+        {
+          "pathname": "/en/transparency",
+          "status": 200,
+          "destination": "/en/transparency"
+        }
+      ]
+    },
+    {
+      "route": "/en/transparency",
+      "chain": [
+        {
+          "pathname": "/en/transparency",
+          "status": 200,
+          "destination": "/en/transparency"
+        }
+      ]
+    },
+    {
+      "route": "/en/contact",
+      "chain": [
+        {
+          "pathname": "/en/contact",
+          "status": 200,
+          "destination": "/en/contact"
+        }
+      ]
+    },
+    {
+      "route": "/en/submit",
+      "chain": [
+        {
+          "pathname": "/en/submit",
+          "status": 200,
+          "destination": "/en/submit"
+        }
+      ]
+    },
+    {
+      "route": "/en/legal-notice",
+      "chain": [
+        {
+          "pathname": "/en/legal-notice",
+          "status": 200,
+          "destination": "/en/legal-notice"
+        }
+      ]
+    },
+    {
+      "route": "/en/privacy-policy",
+      "chain": [
+        {
+          "pathname": "/en/privacy-policy",
+          "status": 200,
+          "destination": "/en/privacy-policy"
+        }
+      ]
+    },
+    {
+      "route": "/en/terms",
+      "chain": [
+        {
+          "pathname": "/en/terms",
+          "status": 200,
+          "destination": "/en/terms"
+        }
+      ]
+    },
+    {
+      "route": "/en/search",
+      "chain": [
+        {
+          "pathname": "/en/search",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/en/back-office",
+      "chain": [
+        {
+          "pathname": "/en/back-office",
+          "status": 200,
+          "destination": "/client-only.html"
+        }
+      ]
+    },
+    {
+      "route": "/en/v2",
+      "chain": [
+        {
+          "pathname": "/en/v2",
+          "status": 308,
+          "destination": "/en"
+        },
+        {
+          "pathname": "/en",
+          "status": 200,
+          "destination": "/en"
+        }
+      ]
+    }
+  ]
+}

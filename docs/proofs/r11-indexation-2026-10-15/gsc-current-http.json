@@ -1,0 +1,161 @@
+{
+  "measuredAt": "2026-10-15T08:49:34.962Z",
+  "rows": [
+    {
+      "url": "https://www.tooltrim.com/en/comparatif/midjourney-vs-firefly",
+      "chain": [
+        {
+          "url": "https://www.tooltrim.com/en/comparatif/midjourney-vs-firefly",
+          "status": 301,
+          "location": "https://tooltrim.com/en/comparatif/midjourney-vs-firefly",
+          "robots": []
+        },
+        {
+          "url": "https://tooltrim.com/en/comparatif/midjourney-vs-firefly",
+          "status": 200,
+          "location": null,
+          "canonical": "https://tooltrim.com/en/comparatif/midjourney-vs-firefly",
+          "robots": [
+            "index, follow"
+          ],
+          "title": "Midjourney vs Adobe Firefly: comparison 2026 | ToolTrim"
+        }
+      ]
+    },
+    {
+      "url": "https://tooltrim.com/en/selector?from=nusii",
+      "chain": [
+        {
+          "url": "https://tooltrim.com/en/selector?from=nusii",
+          "status": 308,
+          "location": "/en/ma-stack?from=nusii",
+          "robots": []
+        },
+        {
+          "url": "https://tooltrim.com/en/ma-stack?from=nusii",
+          "status": 200,
+          "location": null,
+          "canonical": "https://tooltrim.com/en/ma-stack",
+          "robots": [
+            "index, follow"
+          ],
+          "title": "My stack — ToolTrim"
+        }
+      ]
+    },
+    {
+      "url": "https://tooltrim.com/fr/selector?from=coreldraw",
+      "chain": [
+        {
+          "url": "https://tooltrim.com/fr/selector?from=coreldraw",
+          "status": 308,
+          "location": "/fr/ma-stack?from=coreldraw",
+          "robots": []
+        },
+        {
+          "url": "https://tooltrim.com/fr/ma-stack?from=coreldraw",
+          "status": 200,
+          "location": null,
+          "canonical": "https://tooltrim.com/fr/ma-stack",
+          "robots": [
+            "index, follow"
+          ],
+          "title": "Ma stack — ToolTrim"
+        }
+      ]
+    },
+    {
+      "url": "https://tooltrim.com/en/comparatif/canva-vs-photoshop-elements",
+      "chain": [
+        {
+          "url": "https://tooltrim.com/en/comparatif/canva-vs-photoshop-elements",
+          "status": 200,
+          "location": null,
+          "canonical": "https://tooltrim.com/en",
+          "robots": [
+            "index, follow"
+          ],
+          "title": "ToolTrim | Decide which software to keep, replace, or add"
+        }
+      ]
+    },
+    {
+      "url": "https://tooltrim.com/en/comparatif/midjourney-vs-firefly",
+      "chain": [
+        {
+          "url": "https://tooltrim.com/en/comparatif/midjourney-vs-firefly",
+          "status": 200,
+          "location": null,
+          "canonical": "https://tooltrim.com/en/comparatif/midjourney-vs-firefly",
+          "robots": [
+            "index, follow"
+          ],
+          "title": "Midjourney vs Adobe Firefly: comparison 2026 | ToolTrim"
+        }
+      ]
+    },
+    {
+      "url": "https://www.tooltrim.com/en/tool/ae-bodymovin/alternatives",
+      "chain": [
+        {
+          "url": "https://www.tooltrim.com/en/tool/ae-bodymovin/alternatives",
+          "status": 301,
+          "location": "https://tooltrim.com/en/tool/ae-bodymovin/alternatives",
+          "robots": []
+        },
+        {
+          "url": "https://tooltrim.com/en/tool/ae-bodymovin/alternatives",
+          "status": 200,
+          "location": null,
+          "canonical": "https://tooltrim.com/en/tool/ae-bodymovin/alternatives",
+          "robots": [
+            "index, follow"
+          ],
+          "title": "Best Bodymovin / Lottie alternatives in 2026 | ToolTrim"
+        }
+      ]
+    },
+    {
+      "url": "https://www.tooltrim.com/fr/tool/trustpilot/prix",
+      "chain": [
+        {
+          "url": "https://www.tooltrim.com/fr/tool/trustpilot/prix",
+          "status": 301,
+          "location": "https://tooltrim.com/fr/tool/trustpilot/prix",
+          "robots": []
+        },
+        {
+          "url": "https://tooltrim.com/fr/tool/trustpilot/prix",
+          "status": 200,
+          "location": null,
+          "canonical": "https://tooltrim.com/fr/tool/trustpilot/prix",
+          "robots": [
+            "index, follow"
+          ],
+          "title": "Trustpilot prix 2026 : dès 15 €/mois, offre gratuite"
+        }
+      ]
+    },
+    {
+      "url": "https://www.tooltrim.com/en/guides",
+      "chain": [
+        {
+          "url": "https://www.tooltrim.com/en/guides",
+          "status": 301,
+          "location": "https://tooltrim.com/en/guides",
+          "robots": []
+        },
+        {
+          "url": "https://tooltrim.com/en/guides",
+          "status": 200,
+          "location": null,
+          "canonical": "https://tooltrim.com/en/guides",
+          "robots": [
+            "index, follow"
+          ],
+          "title": "SaaS guides and comparisons for freelancers | ToolTrim"
+        }
+      ]
+    }
+  ]
+}

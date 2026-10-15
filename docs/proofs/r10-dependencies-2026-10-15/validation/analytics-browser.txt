@@ -1,0 +1,32 @@
+
+Running 19 tests using 2 workers
+
+(node:8844) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8845) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8844) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8845) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › e2e/analytics-csp.spec.ts:13:3 › CSP allowed: region1.google-analytics.com (488ms)
+  ✓   3 [chromium] › e2e/analytics-csp.spec.ts:13:3 › CSP allowed: www.google-analytics.com (108ms)
+  ✓   4 [chromium] › e2e/analytics-csp.spec.ts:13:3 › CSP blocked: google-analytics.com.attacker.invalid (105ms)
+  ✓   5 [chromium] › e2e/stack-analytics.spec.ts:43:3 › consented discovery funnel fr/390: confirmed save, no private collection data (2.5s)
+  ✓   6 [chromium] › e2e/stack-analytics.spec.ts:43:3 › consented discovery funnel en/1440: confirmed save, no private collection data (2.1s)
+  ✓   7 [chromium] › e2e/stack-analytics.spec.ts:70:1 › refusal keeps discovery usable without detailed journey events (1.3s)
+  ✓   2 [chromium] › e2e/analytics-consent.spec.ts:18:1 › late acceptance, SPA navigation, reload, withdrawal and refusal (11.5s)
+  ✓   8 [chromium] › e2e/stack-analytics.spec.ts:80:1 › late acceptance measures the current view without replaying earlier saves (6.2s)
+  ✓   9 [chromium] › e2e/analytics-consent.spec.ts:48:1 › a slow tag reports the current route and configures before page_view (1.4s)
+  ✓  10 [chromium] › e2e/stack-analytics.spec.ts:93:1 › direct arrival waits for a slow tag and does not duplicate the view on filters (918ms)
+  ✓  12 [chromium] › e2e/stack-analytics.spec.ts:112:1 › withdrawal stops the new journey events after the required reload (5.2s)
+  ✓  11 [chromium] › e2e/analytics-consent.spec.ts:65:1 › refusal propagates to an already consenting tab (6.5s)
+  ✓  13 [chromium] › e2e/stack-analytics.spec.ts:123:1 › private objective and try-later choice send only the source type and intent (2.5s)
+  ✓  14 [chromium] › e2e/analytics-consent.spec.ts:82:1 › expired or legacy decisions request consent again (2.0s)
+  ✓  15 [chromium] › e2e/analytics-consent.spec.ts:91:1 › English mobile preferences, keyboard dismissal and focus restoration (795ms)
+  ✓  16 [chromium] › e2e/analytics-consent.spec.ts:109:1 › blocked storage still allows a page-session choice (871ms)
+  ✓  17 [chromium] › e2e/analytics-consent.spec.ts:119:1 › withdrawal survives reload when the stored acceptance is readable but writes fail (1.3s)
+  ✓  18 [chromium] › e2e/analytics-consent.spec.ts:136:1 › a newer refusal in another tab supersedes session acceptance (977ms)
+  ✓  19 [chromium] › e2e/analytics-consent.spec.ts:149:1 › tab fallback expiry is enforced when storage remains blocked (965ms)
+
+  19 passed (31.3s)

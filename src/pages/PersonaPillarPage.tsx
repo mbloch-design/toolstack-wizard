@@ -322,7 +322,7 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
                 <Link
                   key={tool.id}
                   to={`/${lang}/tool/${slug}`}
-                  className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-sm"
+                  className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/30 hover:shadow-xs"
                 >
                   <ToolLogo tool={tool} size={40} className="rounded-lg" />
                   <div className="min-w-0 flex-1">

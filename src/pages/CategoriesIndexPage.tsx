@@ -303,7 +303,7 @@ const CategoriesIndexPage = () => {
                       className="aspect-[1.45/1] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
                       loading="lazy"
                     />
-                    <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur">
+                    <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-xs backdrop-blur">
                       <Icon className="h-3.5 w-3.5 text-primary" />
                       {isActive ? t("Sélectionné", "Selected") : t("Explorer", "Explore")}
                     </div>
@@ -368,7 +368,7 @@ const CategoriesIndexPage = () => {
                       className="aspect-[1.2/1] w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
                       loading="lazy"
                     />
-                    <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-sm backdrop-blur">
+                    <div className="absolute left-3 top-3 inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-foreground shadow-xs backdrop-blur">
                       <Boxes className="h-3.5 w-3.5 text-primary" />
                       {t(template.labelFr, template.labelEn)}
                     </div>

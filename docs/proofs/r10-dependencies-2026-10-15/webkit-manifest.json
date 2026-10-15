@@ -1,0 +1,146 @@
+[
+  {
+    "id": "fr-390-home",
+    "route": "/fr",
+    "width": 390,
+    "nodes": 100
+  },
+  {
+    "id": "fr-390-_tool_notion",
+    "route": "/fr/tool/notion",
+    "width": 390,
+    "nodes": 155
+  },
+  {
+    "id": "fr-390-_guide_stack_redactrice_freelance",
+    "route": "/fr/guide/stack-redactrice-freelance",
+    "width": 390,
+    "nodes": 143
+  },
+  {
+    "id": "fr-390-_ma_stack",
+    "route": "/fr/ma-stack",
+    "width": 390,
+    "nodes": 50
+  },
+  {
+    "id": "fr-390-_explorer_around_figma",
+    "route": "/fr/explorer/around/figma",
+    "width": 390,
+    "nodes": 161
+  },
+  {
+    "id": "fr-390-_submit",
+    "route": "/fr/submit",
+    "width": 390,
+    "nodes": 73
+  },
+  {
+    "id": "fr-1440-home",
+    "route": "/fr",
+    "width": 1440,
+    "nodes": 108
+  },
+  {
+    "id": "fr-1440-_tool_notion",
+    "route": "/fr/tool/notion",
+    "width": 1440,
+    "nodes": 155
+  },
+  {
+    "id": "fr-1440-_guide_stack_redactrice_freelance",
+    "route": "/fr/guide/stack-redactrice-freelance",
+    "width": 1440,
+    "nodes": 146
+  },
+  {
+    "id": "fr-1440-_ma_stack",
+    "route": "/fr/ma-stack",
+    "width": 1440,
+    "nodes": 51
+  },
+  {
+    "id": "fr-1440-_explorer_around_figma",
+    "route": "/fr/explorer/around/figma",
+    "width": 1440,
+    "nodes": 162
+  },
+  {
+    "id": "fr-1440-_submit",
+    "route": "/fr/submit",
+    "width": 1440,
+    "nodes": 74
+  },
+  {
+    "id": "en-390-home",
+    "route": "/en",
+    "width": 390,
+    "nodes": 100
+  },
+  {
+    "id": "en-390-_tool_notion",
+    "route": "/en/tool/notion",
+    "width": 390,
+    "nodes": 155
+  },
+  {
+    "id": "en-390-_guide_stack_freelance_writer",
+    "route": "/en/guide/stack-freelance-writer",
+    "width": 390,
+    "nodes": 143
+  },
+  {
+    "id": "en-390-_ma_stack",
+    "route": "/en/ma-stack",
+    "width": 390,
+    "nodes": 50
+  },
+  {
+    "id": "en-390-_explorer_around_figma",
+    "route": "/en/explorer/around/figma",
+    "width": 390,
+    "nodes": 161
+  },
+  {
+    "id": "en-390-_submit",
+    "route": "/en/submit",
+    "width": 390,
+    "nodes": 73
+  },
+  {
+    "id": "en-1440-home",
+    "route": "/en",
+    "width": 1440,
+    "nodes": 108
+  },
+  {
+    "id": "en-1440-_tool_notion",
+    "route": "/en/tool/notion",
+    "width": 1440,
+    "nodes": 155
+  },
+  {
+    "id": "en-1440-_guide_stack_freelance_writer",
+    "route": "/en/guide/stack-freelance-writer",
+    "width": 1440,
+    "nodes": 146
+  },
+  {
+    "id": "en-1440-_ma_stack",
+    "route": "/en/ma-stack",
+    "width": 1440,
+    "nodes": 51
+  },
+  {
+    "id": "en-1440-_explorer_around_figma",
+    "route": "/en/explorer/around/figma",
+    "width": 1440,
+    "nodes": 162
+  },
+  {
+    "id": "en-1440-_submit",
+    "route": "/en/submit",
+    "width": 1440,
+    "nodes": 74
+  }
+]

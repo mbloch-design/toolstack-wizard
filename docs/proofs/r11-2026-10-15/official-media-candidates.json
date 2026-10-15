@@ -1,0 +1,943 @@
+[
+  {
+    "slug": "ae-gifgun",
+    "url": "https://aescripts.com/gifgun",
+    "status": 403,
+    "finalUrl": "https://aescripts.com/gifgun",
+    "title": "Just a moment...",
+    "meta": [],
+    "candidates": []
+  },
+  {
+    "slug": "webhooks",
+    "url": "https://webhooks.fyi",
+    "status": 200,
+    "finalUrl": "https://webhooks.fyi/",
+    "title": "Webhooks.fyi",
+    "meta": [
+      "<meta name=\"og:image\" property=\"og:image\" content=\"/banner.png\"/>",
+      "<meta name=\"twitter:image\" content=\"https://webhooks.fyi/banner.png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://webhooks.fyi/banner.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 89848,
+        "sha256": "60a9ef160384c59d9e432fe47e2c352b7c90ef7d558a7c1a30e63c48d7512b08",
+        "width": 480,
+        "height": 270
+      }
+    ]
+  },
+  {
+    "slug": "flutter",
+    "url": "https://flutter.dev",
+    "status": 200,
+    "finalUrl": "https://flutter.dev/",
+    "title": "Flutter - Build apps for any screen",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 9625,
+        "sha256": "286ab5bd49e1644e4a9a97422a75b3f136c4d528bee56e9e1a76580b3925ffc9",
+        "width": 937,
+        "height": 461
+      }
+    ]
+  },
+  {
+    "slug": "onetrust",
+    "url": "https://www.onetrust.com",
+    "status": 200,
+    "finalUrl": "https://www.onetrust.com/",
+    "title": "Responsible AI Governance &amp; Compliance Solutions | OneTrust",
+    "meta": [
+      "<meta property=\"og:image\" content=\"/content/dam/onetrust/ot-thumbnail-onetrust-black.png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.onetrust.com/content/dam/onetrust/ot-thumbnail-onetrust-black.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 7738,
+        "sha256": "efc3979ede969e017a01cdf120957501b219718b8236eaa043604e864514e3b2",
+        "width": 750,
+        "height": 422
+      }
+    ]
+  },
+  {
+    "slug": "wetransfer",
+    "url": "https://wetransfer.com",
+    "status": 200,
+    "finalUrl": "https://wetransfer.com/",
+    "title": "WeTransfer | Send Large Files Fast",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://wetransfer.com/wt-facebook.png\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:image\" content=\"https://wetransfer.com/wt-facebook.png\" data-next-head=\"\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://wetransfer.com/wt-facebook.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 3350,
+        "sha256": "568be8def5a86a09cedeb21b8f24cb208e86515a552bd07d856c7d5dfc6a23df",
+        "width": 200,
+        "height": 200
+      }
+    ]
+  },
+  {
+    "slug": "brandpad",
+    "url": "https://brandpad.io",
+    "status": 200,
+    "finalUrl": "https://brandpad.io/",
+    "title": "The brand guidelines platform",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://brandpad.io/uploads/images/_1200x630_crop_center-center_82_none/brandpad_logo.png?mtime=1612868009\"/>",
+      "<meta name=\"twitter:image\" content=\"https://brandpad.io/uploads/images/_800x418_crop_center-center_82_none/brandpad_logo.png?mtime=1612868009\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://brandpad.io/uploads/images/_1200x630_crop_center-center_82_none/brandpad_logo.png?mtime=1612868009",
+        "http": 404,
+        "contentType": "text/html",
+        "bytes": 146,
+        "sha256": "55f7d9e99b8e2d4e0e193b2f0275501e6d9c1ebd29cadbea6a0da48a8587e3e0"
+      },
+      {
+        "url": "https://brandpad.io/uploads/images/_800x418_crop_center-center_82_none/brandpad_logo.png?mtime=1612868009",
+        "http": 404,
+        "contentType": "text/html",
+        "bytes": 146,
+        "sha256": "55f7d9e99b8e2d4e0e193b2f0275501e6d9c1ebd29cadbea6a0da48a8587e3e0"
+      }
+    ]
+  },
+  {
+    "slug": "wistia",
+    "url": "https://wistia.com",
+    "status": 200,
+    "finalUrl": "https://wistia.com/",
+    "title": "Video Hosting &amp; Marketing Platform for Business | Wistia",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://images.ctfassets.net/j7pfe8y48ry3/53S36T23ev4ndWVPxAIrJp/8eb65aedf2363c144258866331c08f25/Home-MetaImage.jpg?w=1200&amp;h=630&amp;fit=fill&amp;fl=progressive\"/>",
+      "<meta name=\"twitter:image\" content=\"https://images.ctfassets.net/j7pfe8y48ry3/53S36T23ev4ndWVPxAIrJp/8eb65aedf2363c144258866331c08f25/Home-MetaImage.jpg?w=1200&amp;h=630&amp;fit=fill&amp;fl=progressive\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://images.ctfassets.net/j7pfe8y48ry3/53S36T23ev4ndWVPxAIrJp/8eb65aedf2363c144258866331c08f25/Home-MetaImage.jpg?w=1200&h=630&fit=fill&fl=progressive",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 65660,
+        "sha256": "5f64ff2a1b531b4c51d49a4d79d324ed25eb92597fe3399d90d9f5cd22d07b0e"
+      }
+    ]
+  },
+  {
+    "slug": "glyphe",
+    "url": "https://glyphe.eu/",
+    "status": 200,
+    "finalUrl": "https://glyphe.eu/",
+    "title": "Glyphe — Conformité CGP pour ANACOFI, CNCGP, CNCEF",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://glyphe.eu/api/og\"/>",
+      "<meta name=\"twitter:image\" content=\"https://glyphe.eu/api/og\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://glyphe.eu/api/og",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 98983,
+        "sha256": "3c9afea58929074c9a65f2e37ff28b6999426b12011f90ffdc99d5b761e13a6f",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "fly-io",
+    "url": "https://fly.io",
+    "status": 200,
+    "finalUrl": "https://fly.io/",
+    "title": "Fly.io | Computers for agents",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://fly.io/phx/images/og/home-3f6c47b1e214994f1e91183548f93113.jpg?vsn=d\">",
+      "<meta name=\"twitter:image\" content=\"https://fly.io/phx/images/og/home-3f6c47b1e214994f1e91183548f93113.jpg?vsn=d\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://fly.io/phx/images/og/home-3f6c47b1e214994f1e91183548f93113.jpg?vsn=d",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 138715,
+        "sha256": "1e2c80d102ce49cafd40bea7df0866462106290154409354bc3024b987f0b70e"
+      }
+    ]
+  },
+  {
+    "slug": "klark",
+    "url": "https://klark.app/",
+    "status": 200,
+    "finalUrl": "https://klark.app/",
+    "title": "Klark — La plateforme tout-en-un pour entrepreneurs",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://klark.app/icons/og-default.jpg?v=2\"/>",
+      "<meta property=\"og:image\" content=\"https://klark.app/icons/og-default.jpg?v=2\"/>",
+      "<meta name=\"twitter:image\" content=\"https://klark.app/icons/og-default.jpg?v=2\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://klark.app/icons/og-default.jpg?v=2",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 34394,
+        "sha256": "c93ce34e9c60f536e128d4f3d5f743df23aa88a4011de39efb4b02d8dfe22d0a"
+      }
+    ]
+  },
+  {
+    "slug": "magnific-ai",
+    "url": "https://www.magnific.com",
+    "status": 200,
+    "finalUrl": "https://www.magnific.com/",
+    "title": "Magnific (formerly Freepik) | The AI Creative Platform",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://media.magnific.com/meta-tags-social/mg-home-og.jpg?w=1200&amp;h=675\" data-next-head=\"\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://media.magnific.com/meta-tags-social/mg-home-og.jpg?w=1200&h=675",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 111587,
+        "sha256": "b402ac659604f5398717be46c31f75eecf4db08ca9f8864796b04026919cd61b"
+      }
+    ]
+  },
+  {
+    "slug": "brandcrowd",
+    "url": "https://www.brandcrowd.com",
+    "status": 200,
+    "finalUrl": "https://www.brandcrowd.com/",
+    "title": "Make Logos, Business Cards, Social Designs and More | BrandCrowd",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://dcstatic.com/images/brandcrowd/logos/brandcrowd-logo-black-bc9e817e0f.en-us.svg\">",
+      "<meta name=\"twitter:image\" content=\"https://dcstatic.com/images/brandcrowd/logos/brandcrowd-logo-black-bc9e817e0f.en-us.svg\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://dcstatic.com/images/brandcrowd/logos/brandcrowd-logo-black-bc9e817e0f.en-us.svg",
+        "http": 404,
+        "contentType": "application/xml",
+        "bytes": 301,
+        "sha256": "47d1c0c58f01c9a43ccc4e7947f1727b39cf94864f9ccbbd61857ea264b08b19"
+      }
+    ]
+  },
+  {
+    "slug": "krea",
+    "url": "https://krea.com",
+    "status": 200,
+    "finalUrl": "https://www.krea.com/",
+    "title": "IT solutions -KREA",
+    "meta": [
+      "<meta property=\"og:image\" content=\"/resources/images/System/krea-sm.png\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.krea.com/resources/images/System/krea-sm.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 29713,
+        "sha256": "e77c8f982abf17ccdd7a8e45b3db7e4c3b109573ac64f3a62ceeda27b296887b",
+        "width": 1417,
+        "height": 1417
+      }
+    ]
+  },
+  {
+    "slug": "pika-labs",
+    "url": "https://pika.art",
+    "status": 200,
+    "finalUrl": "https://pika.art/",
+    "title": "Pika",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://pika.art/brand/opengraph.png\"/>",
+      "<meta name=\"twitter:image\" content=\"https://pika.art/brand/opengraph.png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://pika.art/brand/opengraph.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 1035467,
+        "sha256": "3ccabec60290e0b95a2f2fed722c16362e723db4ca2e69a81673b0119765375e",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "react-hook-form",
+    "url": "https://react-hook-form.com",
+    "status": 200,
+    "finalUrl": "https://react-hook-form.com/",
+    "title": "React Hook Form - performant, flexible and extensible form library | React Hook Form",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://react-hook-form.com/images/react-hook-form-og.png\" data-next-head=\"\"/>",
+      "<meta name=\"twitter:image\" content=\"https://react-hook-form.com/images/react-hook-form-og.png\" data-next-head=\"\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://react-hook-form.com/images/react-hook-form-og.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 20110,
+        "sha256": "c1daccc9ef6e9adf3e24e7d7aeff840296fe1d779ed2bc4b88e9870a3c67b6d9",
+        "width": 2400,
+        "height": 1260
+      }
+    ]
+  },
+  {
+    "slug": "masv",
+    "url": "https://massive.io",
+    "status": 200,
+    "finalUrl": "https://masv.io/",
+    "title": "MASV™ - The Fastest Large File Transfer Service",
+    "meta": [
+      "<meta content=\"https://masv.io/cdn-cgi/image/format=jpeg,quality=80/https://masv.io/img-original/https%3A%2F%2Fcdn.prod.website-files.com%2F69f2bb1a3268ff2bfd7df335%2F6a46ce1e641e26e565039e3f_MASV%2520Feature%2520Image.png\" property=\"og:image\" />"
+    ],
+    "candidates": [
+      {
+        "url": "https://masv.io/cdn-cgi/image/format=jpeg,quality=80/https://masv.io/img-original/https%3A%2F%2Fcdn.prod.website-files.com%2F69f2bb1a3268ff2bfd7df335%2F6a46ce1e641e26e565039e3f_MASV%2520Feature%2520Image.png",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 16486,
+        "sha256": "3c94d76c7636c2b60014a50508601fb00d33a5a790eed73dd34d7de048225855"
+      }
+    ]
+  },
+  {
+    "slug": "nearst",
+    "url": "https://near.st",
+    "status": 200,
+    "finalUrl": "https://near.st/",
+    "title": "NearSt — Connect in-store inventory to the web",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://near.st/og-image.png\" />",
+      "<meta name=\"twitter:image\" content=\"https://near.st/og-image.png\" />"
+    ],
+    "candidates": [
+      {
+        "url": "https://near.st/og-image.png",
+        "http": 404,
+        "contentType": "text/plain; charset=UTF-8",
+        "bytes": 9,
+        "sha256": "e3ebaa16dd9d9b9fc107c42183fb6cf9d22927e1af03dbbdfa0ccc38e4e4ac31"
+      }
+    ]
+  },
+  {
+    "slug": "redis",
+    "url": "https://redis.io",
+    "status": 200,
+    "finalUrl": "https://redis.io/",
+    "title": "Redis - Real-time data for agents &amp; apps",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://redis.io/_next/static/immutable/media/open-graph.2wot1rsqh2ybe.png\"/>",
+      "<meta name=\"twitter:image\" content=\"https://redis.io/_next/static/immutable/media/open-graph.2wot1rsqh2ybe.png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://redis.io/_next/static/immutable/media/open-graph.2wot1rsqh2ybe.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 7225,
+        "sha256": "cf160a3f9ef9ffc99f14d6401109afac6b54b8ac4b6b7ee3eb9e07a81af162e6",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "screen-studio",
+    "url": "https://screen.studio",
+    "status": 200,
+    "finalUrl": "https://screen.studio/",
+    "title": "Screen Studio — Professional screen recorder for macOS",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://screen.studio/opengraph-image?4dbb513afe306dc0\"/>",
+      "<meta name=\"twitter:image\" content=\"https://screen.studio/twitter-image?4dbb513afe306dc0\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://screen.studio/opengraph-image?4dbb513afe306dc0",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 238517,
+        "sha256": "f85851ac4d0193fe595513b023b0a2003131df9a99f9f97e212f22a54aaa283b",
+        "width": 1200,
+        "height": 630
+      },
+      {
+        "url": "https://screen.studio/twitter-image?4dbb513afe306dc0",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 238517,
+        "sha256": "f85851ac4d0193fe595513b023b0a2003131df9a99f9f97e212f22a54aaa283b",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "hibob",
+    "url": "https://www.hibob.com",
+    "status": 200,
+    "finalUrl": "https://www.hibob.com/",
+    "title": "All-in-one HR software for people, payroll &amp; finance | HiBob",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://new.hibob.com/app/uploads/2026/07/Hompage-OG.jpg\"/>",
+      "<meta property=\"twitter:image\" content=\"https://new.hibob.com/app/uploads/2026/07/Hompage-OG.jpg\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://new.hibob.com/app/uploads/2026/07/Hompage-OG.jpg",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 328351,
+        "sha256": "747af65945856c7aaa2a978dcac21e8f848868ae693efa7e883dc6f9ad994a8d"
+      }
+    ]
+  },
+  {
+    "slug": "expo",
+    "url": "https://expo.dev",
+    "status": 200,
+    "finalUrl": "https://expo.dev/",
+    "title": "Expo — Build native apps with React",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://static.expo.dev/static/home/2026/og-image.png\"/>",
+      "<meta name=\"twitter:image\" content=\"https://static.expo.dev/static/home/2026/og-image.png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://static.expo.dev/static/home/2026/og-image.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 80419,
+        "sha256": "f73fc3d2085ebe901161ccc397bd4c102eeba54aaf4093424803a741ce5a9a8a",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "humaans",
+    "url": "https://humaans.io",
+    "status": 200,
+    "finalUrl": "https://humaans.io/",
+    "title": "AI-Powered HRIS for Growing Teams | Humaans",
+    "meta": [
+      "<meta name=\"twitter:image\" content=\"https://humaans.io/_next/static/media/generated.1iqq6uerzqvin.png\" data-next-head=\"\"/>",
+      "<meta property=\"og:image\" content=\"https://humaans.io/_next/static/media/generated.1iqq6uerzqvin.png\" data-next-head=\"\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://humaans.io/_next/static/media/generated.1iqq6uerzqvin.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 151331,
+        "sha256": "8923353550aeb5293e45c2d7acfb63765204e2965b5268c686ab173477d696ec",
+        "width": 1440,
+        "height": 720
+      }
+    ]
+  },
+  {
+    "slug": "jenni",
+    "url": "https://jenni.ai/",
+    "status": 200,
+    "finalUrl": "https://jenni.ai/",
+    "title": "Jenni | AI Academic Writer &amp; Research Tool for Students &amp; Academics",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://framerusercontent.com/images/z4JrDRfRywzEnZ5jahSZEkA9dI.png\">",
+      "<meta name=\"twitter:image\" content=\"https://framerusercontent.com/images/z4JrDRfRywzEnZ5jahSZEkA9dI.png\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://framerusercontent.com/images/z4JrDRfRywzEnZ5jahSZEkA9dI.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 49869,
+        "sha256": "5b3808c74299b4533e20e66166409ea0642ec572a4d5f0dd29b742af26f46d47",
+        "width": 1800,
+        "height": 900
+      }
+    ]
+  },
+  {
+    "slug": "visualcv",
+    "url": "https://www.visualcv.com/",
+    "status": 429,
+    "finalUrl": "https://www.visualcv.com/",
+    "title": "Vercel Security Checkpoint",
+    "meta": [],
+    "candidates": []
+  },
+  {
+    "slug": "audionotes",
+    "url": "https://www.audionotes.app/",
+    "status": 200,
+    "finalUrl": "https://www.audionotes.app/",
+    "title": "Audionotes | AI Note Taker for Voice, Audio, Video &amp; Text",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://www.audionotes.app/opengraph-image.png\"/>",
+      "<meta name=\"twitter:image\" content=\"https://www.audionotes.app/opengraph-image.png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.audionotes.app/opengraph-image.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 604144,
+        "sha256": "36899705dc408b5567fcb1a3ee23abab2a6f73cd4e5b6cc245db8ca5391e3f5a",
+        "width": 7200,
+        "height": 3780
+      }
+    ]
+  },
+  {
+    "slug": "figma-weave",
+    "url": "https://weave.figma.com",
+    "status": 200,
+    "finalUrl": "https://weave.figma.com/",
+    "title": "Figma Weave | AI-Powered Design Workflows, Built for Creative Pros",
+    "meta": [
+      "<meta content=\"https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829db27001db19910ac428b_OG%20image%20option1.avif\" property=\"og:image\"/>",
+      "<meta content=\"https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829db27001db19910ac428b_OG%20image%20option1.avif\" name=\"twitter:image\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6829db27001db19910ac428b_OG%20image%20option1.avif",
+        "http": 200,
+        "contentType": "image/avif",
+        "bytes": 16574,
+        "sha256": "1038434209afeef61885fe8c6a6ab3bab3aa936859d397a991464ca36b0d36b6"
+      }
+    ]
+  },
+  {
+    "slug": "fathom-analytics",
+    "url": "https://usefathom.com",
+    "status": 200,
+    "finalUrl": "https://usefathom.com/",
+    "title": "Fathom Analytics: Privacy-First Google Analytics Alternative",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://usefathom.com/assets/src/social-share-default.png\">",
+      "<meta name=\"twitter:image\" content=\"https://usefathom.com/assets/src/social-share-default.png\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://usefathom.com/assets/src/social-share-default.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 38419,
+        "sha256": "c7dee8f776fb5a2d2d69d823f97d11ce2136edfc7b7ab82bdd96aab1fb152b7f",
+        "width": 1980,
+        "height": 1080
+      }
+    ]
+  },
+  {
+    "slug": "google-maps",
+    "url": "https://googlemaps.com",
+    "status": 200,
+    "finalUrl": "https://www.google.com/maps?ucbcb=1",
+    "title": " Google Maps ",
+    "meta": [
+      "<meta content=\"https://maps.google.com/maps/api/staticmap?center=49.4010368%2C2.77458675&amp;zoom=13&amp;size=900x900&amp;language=en&amp;sensor=false&amp;key=AIzaSyBoYjeRtfVI0Jd8Q_9mnflo9i4sOYpShB0&amp;signature=3pxyiyGUE7WCK_uzyn8acYz-I9E\" property=\"og:image\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://maps.google.com/maps/api/staticmap?center=49.4010368%2C2.77458675&zoom=13&size=900x900&language=en&sensor=false&key=AIzaSyBoYjeRtfVI0Jd8Q_9mnflo9i4sOYpShB0&signature=3pxyiyGUE7WCK_uzyn8acYz-I9E",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 130665,
+        "sha256": "822a91e48883cc9517b9039d938865fd6218f0d8cce58de53ae55ca92fe9bcff",
+        "width": 900,
+        "height": 900
+      }
+    ]
+  },
+  {
+    "slug": "saleor",
+    "url": "https://saleor.io",
+    "status": 200,
+    "finalUrl": "https://saleor.io/",
+    "title": "Saleor - Composable, Open Source, Headless Ecommerce Platform",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://saleor-d0e5mopil-saleorcommerce.vercel.app/opengraph-image.png\"/>",
+      "<meta name=\"twitter:image\" content=\"https://saleor-d0e5mopil-saleorcommerce.vercel.app/opengraph-image.png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://saleor-d0e5mopil-saleorcommerce.vercel.app/opengraph-image.png",
+        "http": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 334100,
+        "sha256": "27bd44ee4ef75040ea269111109b73aba26094477c8829713841f055694a8cc6"
+      }
+    ]
+  },
+  {
+    "slug": "chatbase",
+    "url": "https://www.chatbase.co",
+    "status": 200,
+    "finalUrl": "https://www.chatbase.co/",
+    "title": "AI Agents for Customer Experience &amp; Support | Chatbase",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://www.chatbase.co/og-home.jpg\"/>",
+      "<meta name=\"twitter:image\" content=\"https://www.chatbase.co/og-home.jpg\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.chatbase.co/og-home.jpg",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 439625,
+        "sha256": "32b91c280541d4112e42667b10051aa5a09849ba7cf1ac9fba8956c206abb047"
+      }
+    ]
+  },
+  {
+    "slug": "datev",
+    "url": "https://www.datev.com",
+    "status": 200,
+    "finalUrl": "https://www.datev.com/",
+    "title": "DATEV Software and Consulting",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://www.datev.com/etc.clientlibs/datev.sites/clientlibs/clientlib-bottom-async/resources/images/logo.png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.datev.com/etc.clientlibs/datev.sites/clientlibs/clientlib-bottom-async/resources/images/logo.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 7970,
+        "sha256": "8260c266138b0888be04a8cb8cf3ffa635c51a52890e7e0c42130ce98f6bbec8",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "whimsical",
+    "url": "https://whimsical.com",
+    "status": 200,
+    "finalUrl": "https://whimsical.com/",
+    "title": "Whimsical — The whiteboard for product builders",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://whimsical.com/_next_public/cards/default-260714.png\">",
+      "<meta name=\"twitter:image\" content=\"https://whimsical.com/_next_public/cards/default-260714.png\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://whimsical.com/_next_public/cards/default-260714.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 227232,
+        "sha256": "7568daaa7ba548cee8f062cd0097cde0d9cc38d8c7f687ef1dd4d2f2ac8fc76e",
+        "width": 1200,
+        "height": 628
+      }
+    ]
+  },
+  {
+    "slug": "sellfy",
+    "url": "https://sellfy.com",
+    "status": 200,
+    "finalUrl": "https://sellfy.com/",
+    "title": "Online Store Builder: Create a Free Online Store | Sellfy",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://d369wu82uo9y4b.cloudfront.net/_astro/sellfy-og.DhZsN1Po.png\">",
+      "<meta name=\"twitter:image\" content=\"https://d369wu82uo9y4b.cloudfront.net/_astro/sellfy-og.DhZsN1Po.png\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://d369wu82uo9y4b.cloudfront.net/_astro/sellfy-og.DhZsN1Po.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 65194,
+        "sha256": "8581511d95400295b1764126d853e1a277547502b29571e2e7887d6547bb85a4",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "heygen",
+    "url": "https://heygen.com",
+    "status": 200,
+    "finalUrl": "https://www.heygen.com/",
+    "title": "HeyGen: Create AI Videos with Your Personal Avatar",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://cdn.sanity.io/images/pdhqcmb1/production/170e1d983053e0d80a0e724303ac0787efd58551-1200x630.jpg?fit=max&amp;fm=png\"/>",
+      "<meta name=\"twitter:image\" content=\"https://cdn.sanity.io/images/pdhqcmb1/production/170e1d983053e0d80a0e724303ac0787efd58551-1200x630.jpg?fit=max&amp;fm=png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://cdn.sanity.io/images/pdhqcmb1/production/170e1d983053e0d80a0e724303ac0787efd58551-1200x630.jpg?fit=max&fm=png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 206099,
+        "sha256": "4e6f012ce58c7ecfe66583f5074826e4a3ea86b3a99980945a1e8c4bfae5fbc4",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "glide",
+    "url": "https://glideapps.com",
+    "status": 200,
+    "finalUrl": "https://www.glideapps.com/",
+    "title": "AI app builder for internal business apps | Glide",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://www.glideapps.com/opengraph-image-dxwb7g.jpg?opengraph-image.003b7v4xv13y2.jpg\"/>",
+      "<meta name=\"twitter:image\" content=\"https://www.glideapps.com/opengraph-image-dxwb7g.jpg?opengraph-image.003b7v4xv13y2.jpg\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.glideapps.com/opengraph-image-dxwb7g.jpg?opengraph-image.003b7v4xv13y2.jpg",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 140841,
+        "sha256": "d1249410aecad45c0477670fbbc3a8fb61200154f2bd8128875a4fdac75ebf68"
+      }
+    ]
+  },
+  {
+    "slug": "prisma",
+    "url": "https://www.prisma.io",
+    "status": 200,
+    "finalUrl": "https://www.prisma.io/",
+    "title": "Prisma | Agent Infrastructure for TypeScript",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://www.prisma.io/og.png\"/>",
+      "<meta name=\"twitter:image\" content=\"https://www.prisma.io/og.png\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.prisma.io/og.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 454422,
+        "sha256": "802782311ca9a93015d18e34844e4ae46af0b6b78f44fad08e38c072a0ef9caa",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "itsdart",
+    "url": "https://www.itsdart.com/",
+    "status": 200,
+    "finalUrl": "https://www.dartai.com/",
+    "title": "The Workplace for the Agent Era - Dart",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://www.dartai.com/_dart/assets/default-open-graph-a89003f7.png\" />",
+      "<meta name=\"twitter:image\" content=\"https://www.dartai.com/_dart/assets/default-open-graph-a89003f7.png\" />"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.dartai.com/_dart/assets/default-open-graph-a89003f7.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 311950,
+        "sha256": "22846b33274d2893041835635f2247d0239fd194080c9e49a360c3daf1e0d5d1",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "mari",
+    "url": "https://www.foundry.com/products/mari",
+    "status": 200,
+    "finalUrl": "https://www.foundry.com/products/mari",
+    "title": "Mari — 3D Painting Software &amp; Digital Tools | Foundry",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://www.foundry.com/sites/default/files/product-images/2023-05/Mari%20Preview%20thumbnail%20-%20640x360.jpg\" />",
+      "<meta name=\"twitter:image\" content=\"https://www.foundry.com/sites/default/files/product-images/2021-11/Mari-5.0-Webpage-Header---1920x500.jpg\" />"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.foundry.com/sites/default/files/product-images/2023-05/Mari%20Preview%20thumbnail%20-%20640x360.jpg",
+        "http": 404,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 268,
+        "sha256": "38fae04772fc5ac0a8ae886d20e5e0b5e9dcc6e00cacea82d63026fc4087c00f"
+      },
+      {
+        "url": "https://www.foundry.com/sites/default/files/product-images/2021-11/Mari-5.0-Webpage-Header---1920x500.jpg",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 74808,
+        "sha256": "54396c24ae8d19799bb9e110aca22b38a9227c2ffca9131a6be15b0a53b783e2"
+      }
+    ]
+  },
+  {
+    "slug": "loom",
+    "url": "https://loom.com",
+    "status": 200,
+    "finalUrl": "https://www.loom.com/",
+    "title": "Free screen recorder for Mac and PC | Loom",
+    "meta": [
+      "<meta content=\"https://cdn.sanity.io/images/pvn35iyy/production/6f62a5ee8e9e6a4a980876e632eb1f58c3125591-2400x1254.jpg\" property=\"og:image\"/>",
+      "<meta content=\"https://cdn.sanity.io/images/pvn35iyy/production/6f62a5ee8e9e6a4a980876e632eb1f58c3125591-2400x1254.jpg\" name=\"twitter:image\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://cdn.sanity.io/images/pvn35iyy/production/6f62a5ee8e9e6a4a980876e632eb1f58c3125591-2400x1254.jpg",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 129748,
+        "sha256": "423cffc3973528838b3884be8bd3d67a67d39cc177d701afd0c7f1a0335fd204"
+      }
+    ]
+  },
+  {
+    "slug": "docyt",
+    "url": "https://docyt.com",
+    "status": 200,
+    "finalUrl": "https://www.docyt.com/",
+    "title": "Docyt | AI-native ERP for Hotels, Restaurants, Retail and Franchises",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://www.docyt.com/static/img/og-default.png\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://www.docyt.com/static/img/og-default.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 112574,
+        "sha256": "1c2ef9bdf9fe276d78339ad674935b8c97ad69af54db82615dd271f843a4745a",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "metabase",
+    "url": "https://metabase.com",
+    "status": 200,
+    "finalUrl": "https://www.metabase.com/",
+    "title": "Open source AI analytics you can verify | Metabase",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://cdn.metabase.com/images/opengraph/home-og.webp\">",
+      "<meta name=\"twitter:image\" content=\"https://cdn.metabase.com/images/opengraph/home-og.webp\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://cdn.metabase.com/images/opengraph/home-og.webp",
+        "http": 200,
+        "contentType": "image/webp",
+        "bytes": 28010,
+        "sha256": "04a50e03e9c6291f5d6ff1a100bc99da77dc3fad2598bcf67feffb1f70d1012f"
+      }
+    ]
+  },
+  {
+    "slug": "youform",
+    "url": "https://youform.com",
+    "status": 200,
+    "finalUrl": "https://youform.com/",
+    "title": "Youform — Beautiful forms. Unlimited possibilities.",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://youform.com/assets/images/youform-og-sunflower.png\">",
+      "<meta name=\"twitter:image\" content=\"https://youform.com/assets/images/youform-og-sunflower.png\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://youform.com/assets/images/youform-og-sunflower.png",
+        "http": 200,
+        "contentType": "image/png",
+        "bytes": 100328,
+        "sha256": "06126d87d4fbab70609c8af6babc2c1727517466d6d04a28a652090bc476bbf2",
+        "width": 1200,
+        "height": 630
+      }
+    ]
+  },
+  {
+    "slug": "meta-ads",
+    "url": "https://facebook.com/business/ads",
+    "status": 200,
+    "finalUrl": "https://www.facebook.com/business/ads",
+    "title": "Publicités Meta : commencez à faire de la publicité sur Facebook, Instagram, Messenger et WhatsApp | Meta for Business",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&amp;ab_page=CMS&amp;ab_entry=797459857892055&amp;version=1791980160&amp;transcode_extension=webp\" />"
+    ],
+    "candidates": [
+      {
+        "url": "https://static.xx.fbcdn.net/mci_ab/public/cms/?ab_b=e&ab_page=CMS&ab_entry=797459857892055&version=1791980160&transcode_extension=webp",
+        "http": 200,
+        "contentType": "image/webp",
+        "bytes": 18960,
+        "sha256": "d8faaf45fd8710012e2e9220a87184d9fcca6ed248a871526d351e346398831a"
+      }
+    ]
+  },
+  {
+    "slug": "stock-footage",
+    "url": "https://stockfootage.com",
+    "status": 200,
+    "finalUrl": "https://stockfootage.com/",
+    "title": "Stock Footage for Commercial Use | HD & 4K Clips",
+    "meta": [
+      "<meta property=\"og:image\" content=\"assets/images/bg8.jpg\">",
+      "<meta name=\"twitter:image\" content=\"assets/images/bg8.jpg\">"
+    ],
+    "candidates": [
+      {
+        "url": "https://stockfootage.com/assets/images/bg8.jpg",
+        "http": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 25840,
+        "sha256": "e713d7de736bdec2fef05832029dd204281c9aae8fd6b5412c87302ffa6fa971"
+      }
+    ]
+  },
+  {
+    "slug": "intercom",
+    "url": "https://intercom.com",
+    "status": 200,
+    "finalUrl": "https://www.intercom.com/",
+    "title": "Intercom | A complete system for human and AI customer service",
+    "meta": [
+      "<meta property=\"og:image\" content=\"https://cdn.sanity.io/images/4bgok82s/monorepo-static-assets/9d9c4802c510e9279b7525a4dd289dd793725b83-2400x1260.jpg\"/>",
+      "<meta name=\"twitter:image\" content=\"https://cdn.sanity.io/images/4bgok82s/monorepo-static-assets/9d9c4802c510e9279b7525a4dd289dd793725b83-2400x1260.jpg\"/>"
+    ],
+    "candidates": [
+      {
+        "url": "https://cdn.sanity.io/images/4bgok82s/monorepo-static-assets/9d9c4802c510e9279b7525a4dd289dd793725b83-2400x1260.jpg",
+        "http": 200,
+        "contentType": "image/jpeg",
+        "bytes": 161935,
+        "sha256": "d9596d852eddea630bce1a8f3489be58d4eff65f59302822ff54a471e2223560"
+      }
+    ]
+  }
+]

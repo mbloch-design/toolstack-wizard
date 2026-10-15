@@ -1,3 +1,4 @@
+import { isToolCoverBlocked } from "@/lib/toolImageBlocklist";
 import { useParams, useLocation } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
@@ -592,11 +593,12 @@ const ToolDetailPage = () => {
             {showAnalysis && (() => {
               const curatedMedia = getToolMediaImages(tool.slug || tool.id);
               const cover = tool.ogImageUrl ?? (tool as any).og_image_url;
+              const blockedCover = isToolCoverBlocked({ ...tool, ogImageUrl: cover }) ? cover : null;
               const images = [...new Set([
                 cover,
                 ...(tool.galleryImages ?? (tool as any).gallery_images ?? []),
                 ...curatedMedia.map((image) => image.src),
-              ].filter((url): url is string => !!url))];
+              ].filter((url): url is string => !!url && url !== blockedCover))];
               const imageAlts = images.map((src) => {
                 const curated = curatedMedia.find((image) => image.src === src);
                 return curated ? (lang === "en" ? curated.altEn : curated.altFr) : "";

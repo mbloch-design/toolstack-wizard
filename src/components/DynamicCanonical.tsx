@@ -1,3 +1,4 @@
+import { isStaticNotFoundPath } from "@/lib/staticHttpError";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { SEO_BASE, OG_IMAGE, getAlternateLinks } from "@/lib/seo";
@@ -76,6 +77,10 @@ export default function DynamicCanonical() {
 
   useEffect(() => {
     document.documentElement.lang = isEn ? "en" : "fr";
+    if (isStaticNotFoundPath(pathname)) {
+      document.head.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang]').forEach(link => link.remove());
+      return;
+    }
 
     upsertTag<HTMLLinkElement>(
       'link[rel="canonical"]',
@@ -111,7 +116,7 @@ export default function DynamicCanonical() {
     // dans le <head> statique d'index.html, la redeclarer creait un doublon.
     upsertMeta("name", "twitter:card", "summary_large_image");
     upsertMeta("name", "twitter:image", OG_IMAGE);
-  }, [canonical, alternatesKey, isEn, locale]);
+  }, [canonical, alternatesKey, isEn, locale, pathname]);
 
   useEffect(() => {
     if (!isInternalSearch) return;

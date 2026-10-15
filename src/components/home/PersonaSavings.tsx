@@ -72,7 +72,7 @@ const PersonaSavings = () => {
               onClick={() => setActive(i)}
               className={`rounded-lg px-4 py-2 text-sm font-medium transition-all ${
                 active === i
-                  ? "bg-primary text-primary-foreground shadow-sm"
+                  ? "bg-primary text-primary-foreground shadow-xs"
                   : "bg-secondary text-muted-foreground hover:bg-secondary/80 hover:text-foreground"
               }`}
             >

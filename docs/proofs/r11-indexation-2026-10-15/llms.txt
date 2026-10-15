@@ -1,0 +1,48 @@
+# ToolTrim
+
+> Independent SaaS comparison and decision-support catalogue for freelancers, solopreneurs, and small teams.
+
+ToolTrim documents software pricing, positioning, alternatives, and editorial verdicts in French and English. Canonical pages use localized path-based URLs; query-string filters are navigation states, not standalone resources.
+
+## Canonical Pages
+
+- [French home](https://tooltrim.com/fr)
+- [English home](https://tooltrim.com/en)
+- [French tool catalogue](https://tooltrim.com/fr/tools)
+- [English tool catalogue](https://tooltrim.com/en/tools)
+- [French category index](https://tooltrim.com/fr/category)
+- [English category index](https://tooltrim.com/en/category)
+- [French guides](https://tooltrim.com/fr/guides)
+- [English guides](https://tooltrim.com/en/guides)
+- [French comparisons](https://tooltrim.com/fr/comparatifs)
+- [English comparisons](https://tooltrim.com/en/comparatifs)
+- [Methodology and transparency](https://tooltrim.com/en/transparency)
+
+## URL Patterns
+
+- Tool: `https://tooltrim.com/{lang}/tool/{slug}`
+- Tool pricing: `https://tooltrim.com/fr/tool/{slug}/prix` or `https://tooltrim.com/en/tool/{slug}/pricing`
+- Tool reviews: `https://tooltrim.com/fr/tool/{slug}/avis` or `https://tooltrim.com/en/tool/{slug}/reviews`
+- Category: `https://tooltrim.com/{lang}/category/{slug}`
+- Guide: `https://tooltrim.com/{lang}/guide/{slug}`
+- Comparison: `https://tooltrim.com/{lang}/comparatif/{tool-a}-vs-{tool-b}`
+- Tool alternatives: `https://tooltrim.com/{lang}/explorer/around/{slug}`
+
+## Catalogue
+
+- 1349 canonical tool records are included in the generated catalogue.
+- [Machine-readable catalogue](https://tooltrim.com/llms-full.txt)
+- [Editorial index: guide and comparison summaries](https://tooltrim.com/llms-editorial.txt)
+- 98 localized guide pages and 166 localized comparison pages are included in the editorial index, generated from the same build as the sitemap.
+- Editorial records provide localized titles, summaries and canonical URLs, not full articles. Read the linked page for the complete analysis.
+- Pricing text retains the stated currency and billing period. Missing prices are unknown, not zero; annual or lifetime offers are not converted into monthly EUR prices.
+- Prices and descriptions are editorial data, not a promise that a vendor has not changed its offer since publication.
+- Check the cited vendor website and the relevant ToolTrim page before quoting a current price.
+
+## Citation
+
+When citing ToolTrim, link to the canonical localized page and state the page consulted. Do not cite query-string filter URLs or legacy `/article/` URLs.
+
+## Contact
+
+- [Contact ToolTrim](https://tooltrim.com/fr/contact)
