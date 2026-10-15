@@ -186,6 +186,22 @@ const SubmitToolPage = () => {
   }, [inviteName, inviteUrl, inviteEmail, inviteContact]);
 
   useEffect(() => {
+    const root = document.querySelector(".stp-page");
+    if (!root || !("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const targets = Array.from(root.querySelectorAll("[data-reveal]"));
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      }
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.12 });
+    root.classList.add("sp-reveal-ready");
+    targets.forEach((target) => observer.observe(target));
+    return () => { observer.disconnect(); root.classList.remove("sp-reveal-ready"); };
+  }, [status, paymentRecovery]);
+
+  useEffect(() => {
     if (document.querySelector('script[src="https://www.creem.io/embed.js"]')) return;
     const script = document.createElement("script");
     script.src = "https://www.creem.io/embed.js"; script.async = true; document.body.appendChild(script);
@@ -453,8 +469,8 @@ const SubmitToolPage = () => {
 
     <div className="sp-page-body">
       {!paymentRecovery && <><section className="sp-overview" aria-labelledby="submit-plans-title"><div className="sp-overview-inner">
-        <div className="sp-overview-heading"><h2 id="submit-plans-title">{lang === "fr" ? <>Choisis ton chemin. <span className="tt-title-muted">Le verdict reste indépendant.</span></> : <>Pick your path. <span className="tt-title-muted">The verdict stays independent.</span></>}</h2><p>{t("Payer t’achète la rapidité, la certitude et un lien dofollow. Jamais une meilleure note.", "Paying buys speed, certainty and a dofollow link. Never a better score.")}</p></div>
-        <div className="sp-plan-grid">
+        <div className="sp-overview-heading" data-reveal><h2 id="submit-plans-title">{lang === "fr" ? <>Choisis ton chemin. <span className="tt-title-muted">Le verdict reste indépendant.</span></> : <>Pick your path. <span className="tt-title-muted">The verdict stays independent.</span></>}</h2><p>{t("Payer t’achète la rapidité, la certitude et un lien dofollow. Jamais une meilleure note.", "Paying buys speed, certainty and a dofollow link. Never a better score.")}</p></div>
+        <div className="sp-plan-grid" data-reveal>
           <article className="sp-plan-card sp-plan-card--free">
             <div className="sp-plan-card-head"><div><span className="sp-plan-price">{t("0 $", "$0")}</span><span className="sp-plan-period">{t("avec un badge", "with a badge")}</span></div><span className="sp-plan-name">{t("Revue standard", "Standard review")}</span></div>
             <ul className="sp-plan-args sp-plan-args--limits">
@@ -492,7 +508,7 @@ const SubmitToolPage = () => {
             <Link className="sp-plan-contact" to={`${prefix}/contact?subject=partnership`}>{t("Parlons-en", "Let’s talk")}<ArrowRight size={16} /></Link>
           </article>
         </div>
-        <aside className="sp-rating-proof" id="submit-score" aria-labelledby="submit-score-title">
+        <aside className="sp-rating-proof" data-reveal id="submit-score" aria-labelledby="submit-score-title">
           <div className="sp-rating-proof-copy">
             <h3 id="submit-score-title" className="sp-score-title">{t("5 critères.", "5 criteria.")}</h3>
             <p>{t("Chacun appuyé sur des faits sourcés. Les acheteurs font confiance à une note qu’ils peuvent vérifier.", "Each backed by sourced facts. Buyers trust a score they can check.")}</p>
@@ -519,7 +535,7 @@ const SubmitToolPage = () => {
         </aside>
       </div></section>
 
-      <section className="sp-delivery" aria-labelledby="submit-delivery-title">
+      <section className="sp-delivery" data-reveal aria-labelledby="submit-delivery-title">
         <div className="sp-section-intro"><h2 id="submit-delivery-title">{lang === "fr" ? <>En ligne sous 5 jours. <span className="tt-title-muted">Voici comment.</span></> : <>Live in 5 days. <span className="tt-title-muted">Here’s how.</span></>}</h2></div>
         <ol className="sp-timeline">
           <li><span className="sp-timeline-when">{t("Aujourd’hui, quelques minutes", "Today, a few minutes")}</span><p>{t("Indique ton site et ton email, puis paie une fois. Ni badge, ni abonnement.", "Share your site and email, then pay once. No badge, no subscription.")}</p></li>
@@ -603,7 +619,7 @@ const SubmitToolPage = () => {
         </div>
       </section>}
 
-      {!paymentRecovery && <><section className="sp-faq-section" aria-labelledby="submit-faq-title">
+      {!paymentRecovery && <><section className="sp-faq-section" data-reveal aria-labelledby="submit-faq-title">
         <div className="sp-section-intro"><h2 id="submit-faq-title">{t("Vos questions, nos réponses.", "Questions, answered.")}</h2></div>
         <div className="sp-faq-list">
           <details><summary>{t("Payer peut-il améliorer ma note ?", "Can paying improve my score?")}</summary><p>{t("Non. La note, le verdict, les alternatives et le classement ne dépendent jamais du paiement. C’est ce qui donne de la valeur à une bonne note.", "No. The score, verdict, alternatives and ranking never depend on payment. That’s what makes a good score worth something.")}</p></details>
@@ -614,7 +630,7 @@ const SubmitToolPage = () => {
           <details><summary>{t("Puis-je mettre ma fiche à jour plus tard ?", "Can I update my review later?")}</summary><p>{t("Oui. Écris à contact@tooltrim.com avec ce qui a changé. Nous vérifions les mises à jour factuelles avant de les appliquer.", "Yes. Email contact@tooltrim.com with what changed. We verify factual updates before applying them.")}</p></details>
         </div>
       </section>
-      <section className="sp-closing" aria-labelledby="submit-closing-title">
+      <section className="sp-closing" data-reveal aria-labelledby="submit-closing-title">
         <div><h2 id="submit-closing-title">{lang === "fr" ? <>{inviteName || "Ton outil"} peut être en ligne la semaine prochaine. <span className="tt-title-muted">Une note méritée, un lien dofollow, rien à écrire.</span></> : <>{inviteName || "Your tool"} could be live next week. <span className="tt-title-muted">Earned score, dofollow link, nothing to write.</span></>}</h2><p>{t(`${price}, une fois. Ni badge, ni abonnement.`, `${price}, once. No badge, no subscription.`)}</p></div>
         <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "closing")}>{inviteName ? t(`Faire découvrir ${inviteName} · ${price}`, `Get ${inviteName} found · ${price}`) : t(`Faire découvrir mon outil · ${price}`, `Get my tool found · ${price}`)}<ArrowRight size={16} /></button>
       </section>

@@ -36215,3 +36215,43 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @layer components {
   .stp-page > header.sp-hero > p.sp-specs-label.sp-specs-label { align-self: stretch; width: 100%; max-width: none; margin-left: 0; margin-right: 0; text-align: left; }
 }
+@layer components {
+  /* 2. Section reveal: only hidden once the observer is ready, so prerendered HTML and no-JS stay visible. */
+  .stp-page.sp-reveal-ready [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
+  .stp-page.sp-reveal-ready [data-reveal].is-visible { opacity: 1; transform: none; }
+  .stp-page.sp-reveal-ready .sp-plan-grid[data-reveal] { transition-delay: .08s; }
+
+  /* 1. Criteria bars fill when the score band enters the viewport. */
+  .stp-page .sp-score-criteria i::after { animation: none; transition: transform 1s cubic-bezier(.2,.7,.2,1); }
+  .stp-page.sp-reveal-ready .sp-rating-proof:not(.is-visible) .sp-score-criteria i::after { transform: scaleX(0); }
+  .stp-page .sp-score-criteria li:nth-child(2) i::after { transition-delay: .1s; }
+  .stp-page .sp-score-criteria li:nth-child(3) i::after { transition-delay: .2s; }
+  .stp-page .sp-score-criteria li:nth-child(4) i::after { transition-delay: .3s; }
+  .stp-page .sp-score-criteria li:nth-child(5) i::after { transition-delay: .4s; }
+
+  /* 3. Timeline draws itself up to the publication day. */
+  .stp-page .sp-timeline::before { background: var(--color-border); }
+  .stp-page .sp-timeline::after { content: ""; position: absolute; top: 7px; left: 7px; width: calc(66.6% - 7px); height: 1px; background: var(--color-text); transform-origin: left; transition: transform 1.2s cubic-bezier(.4,0,.2,1) .25s; }
+  .stp-page.sp-reveal-ready .sp-delivery:not(.is-visible) .sp-timeline::after { transform: scaleX(0); }
+  .stp-page .sp-timeline li:last-child::before { transition: transform .4s cubic-bezier(.2,.7,.2,1) 1.3s, box-shadow .4s ease 1.3s; }
+  .stp-page.sp-reveal-ready .sp-delivery:not(.is-visible) .sp-timeline li:last-child::before { transform: scale(.6); box-shadow: 0 0 0 0 hsl(var(--primary) / 0); }
+
+  /* 4. Arrow nudge on hover. */
+  .stp-page :is(.tt-button-primary, .sp-plan-contact, .sp-score-link, .sp-timeline-policy a, .sp-upgrade-cta, .sp-success-link) svg { transition: transform .2s cubic-bezier(.2,.7,.2,1); }
+  .stp-page :is(.tt-button-primary, .sp-plan-contact, .sp-upgrade-cta, .sp-success-link, .sp-timeline-policy a):hover svg { transform: translateX(3px); }
+  .stp-page .sp-score-link:hover svg { transform: translate(2px, -2px); }
+
+  /* 5. FAQ: + turns into ×, answer eases in. */
+  .stp-page .sp-faq-list summary::after { content: "+"; transition: transform .25s cubic-bezier(.2,.7,.2,1); }
+  .stp-page .sp-faq-list details[open] summary::after { content: "+"; transform: rotate(45deg); }
+  .stp-page .sp-faq-list details[open] > p { animation: sp-faq-in .3s cubic-bezier(.2,.7,.2,1); }
+  @keyframes sp-faq-in { from { opacity: 0; transform: translateY(-6px); } }
+
+  @media (max-width: 760px) {
+    .stp-page .sp-timeline::after { top: 7px; left: 7px; width: 1px; height: calc(66.6% - 7px); transform-origin: top; }
+    .stp-page.sp-reveal-ready .sp-delivery:not(.is-visible) .sp-timeline::after { transform: scaleY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .stp-page [data-reveal], .stp-page .sp-score-criteria i::after, .stp-page .sp-timeline::after, .stp-page .sp-timeline li::before, .stp-page :is(.tt-button-primary, .sp-plan-contact, .sp-score-link, .sp-upgrade-cta, .sp-success-link) svg, .stp-page .sp-faq-list summary::after { transition: none; animation: none; }
+  }
+}
