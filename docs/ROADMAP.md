@@ -13,7 +13,9 @@
 
 <a id="suivi-technique-actif"></a>
 
-## État actif consolidé — 15 octobre 2026
+## État actif consolidé — 16 octobre 2026
+
+[Suivi du 16 octobre](POST_R11_SUIVI_2026-10-16.md) : soumissions publiées (`0cdd87898b`), CI/Vercel et 16 parcours publics simulés PASS. Maintenance authentifiée et sauvegarde locale hors worktree vérifiées ; rotation en attente du relais opérateur. Les deux propriétés GA4 montrent explorer_view sur les 14–15 octobre ; save/back non observés, aucune conversion déduite. Recherche FR/EN corrigée et validée localement, livraison en cours.
 
 Exécution de la suite : [bilan opérationnel](POST_R11_OPERATIONS_2026-10-15.md). R10/R11 publiés sur ffbb3f7ac7, Vercel réussi et 21 contrôles publics R11 réussis ; CI 38763760190 réussie. Correctifs de soumission locale validés localement ; livraison distincte. Sponsoring reporté explicitement jusqu’à une vente ; offre conservée. Rotation Redis requiert la bascule opérateur, elle n’est pas exécutée.
 

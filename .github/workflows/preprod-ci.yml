@@ -81,6 +81,9 @@ jobs:
       - name: Catalog keyboard and accessibility journeys
         run: npm run test:e2e:a11y -- --output=a11y-test-results
 
+      - name: Search intent regressions
+        run: npx playwright test e2e/search-intent.spec.ts --output=search-test-results
+
       - name: R11 media and generated routing regressions
         run: npm run test:e2e:r11
 
@@ -101,6 +104,7 @@ jobs:
             a11y-test-results/
             analytics-test-results/
             r11-test-results/
+            search-test-results/
             payment-report/
             payment-test-results/
           retention-days: 7

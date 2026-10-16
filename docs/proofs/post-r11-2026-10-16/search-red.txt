@@ -1,0 +1,57 @@
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+ ❯ src/lib/catalogSearch.test.ts (9 tests | 3 failed) 21ms
+   × retrieves appointment scheduling from existing French appointment tags 3ms
+   × uses only explicit catalogue alternatives for alternative à Notion 4ms
+   × uses only explicit catalogue alternatives for alternatives to Notion 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/catalogSearch.test.ts > retrieves appointment scheduling from existing French appointment tags
+AssertionError: expected undefined to be 'calendly' // Object.is equality
+
+- Expected:
+"calendly"
+
++ Received:
+undefined
+
+ ❯ src/lib/catalogSearch.test.ts:119:67
+    117|   {id:'calendar',kind:'tool',entityId:'calendar',slug:'calendar',label…
+    118|  ]);
+    119|  expect((await engine.search('appointment scheduling'))[0]?.slug).toBe…
+       |                                                                   ^
+    120| });
+    121|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/lib/catalogSearch.test.ts > uses only explicit catalogue alternatives for alternative à Notion
+ FAIL  src/lib/catalogSearch.test.ts > uses only explicit catalogue alternatives for alternatives to Notion
+AssertionError: expected [ 'notionlytics' ] to deeply equal [ 'obsidian', 'coda' ]
+
+- Expected
++ Received
+
+  [
+-   "obsidian",
+-   "coda",
++   "notionlytics",
+  ]
+
+ ❯ src/lib/catalogSearch.test.ts:129:89
+    127|   {id:'coda',kind:'tool',entityId:'coda',slug:'coda',label:'Coda',meta…
+    128|  ]);
+    129|  expect((await engine.search(query)).filter(hit=>hit.kind==='tool').ma…
+       |                                                                                         ^
+    130|  expect((await engine.search('notion'))[0]?.slug).toBe('notion');
+    131| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 6 passed (9)
+   Start at  18:27:03
+   Duration  796ms (transform 46ms, setup 89ms, import 67ms, tests 21ms, environment 444ms)

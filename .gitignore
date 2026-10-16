@@ -54,3 +54,5 @@ supabase/.temp/
 /payment-test-results/
 
 /r11-test-results/
+
+/search-test-results/

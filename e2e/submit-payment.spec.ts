@@ -23,7 +23,7 @@ test.beforeEach(async ({ page, baseURL }) => {
       expect(url.origin, "Submission APIs must stay on the preview origin").toBe(new URL(baseURL!).origin);
       return route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({success:true,verified:true})});
     }
-    if (url.hostname === "127.0.0.1" || url.hostname === "localhost") return route.continue();
+    if (url.origin === new URL(baseURL!).origin) return route.continue();
     return route.abort();
   });
 });
