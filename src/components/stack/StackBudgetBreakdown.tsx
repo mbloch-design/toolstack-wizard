@@ -5,7 +5,7 @@ import Segmented from "@/components/motion/Segmented";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { convertAmount, CURRENCY_RATE_DATE, formatAmount, type Currency } from "@/lib/currencyRates";
 import { toolMonthlyCost } from "@/lib/stackCost";
-import { stackCatalogPrice, toolKey } from "@/lib/stackView";
+import { pickNativePrice, stackCatalogPrice, toolKey } from "@/lib/stackView";
 import type { Territory } from "@/lib/stackAreas";
 
 /**
@@ -53,6 +53,20 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
   const otherTools = tools.map((tool) => ({ tool, cost: toolMonthlyCost(tool, paid.isPaid, lang) }))
     .filter(({ cost }) => cost.kind !== "paid" || cost.monthly <= 0)
     .sort((a, b) => a.tool.name.localeCompare(b.tool.name, lang));
+  // Two honest groups instead of one "other" bucket: what costs nothing
+  // monthly, and what has no attested monthly price yet.
+  const freeTools = otherTools.filter(({ cost }) => cost.kind !== "unknown");
+  const checkTools = otherTools.filter(({ cost }) => cost.kind === "unknown");
+  // A one-time licence is a known price, not an unknown one: say it in its
+  // own currency, outside the monthly total (no conversion, no invention).
+  const onceLabel = (tool: ToolSummary) => {
+    const native = pickNativePrice(tool, lang);
+    return native?.period === "once" && (native.currency === "EUR" || native.currency === "USD")
+      ? (en ? `One-time licence · ${formatAmount(native.amount, native.currency, lang)}` : `Licence unique · ${formatAmount(native.amount, native.currency, lang)}`)
+      : null;
+  };
+  // Mention a conversion only when an amount was really converted.
+  const converted = tools.some((tool) => { const cost = toolMonthlyCost(tool, paid.isPaid, lang); return cost.kind === "paid" && cost.monthly > 0 && cost.currency !== currency; });
   const areaLines: Line[] = territories.map((t) => ({ id: t.id, label: t.label, amount: t.tools.reduce((sum, tool) => sum + monthly(tool), 0), color: colorOf(t.id) }))
     .filter((line) => line.amount > 0).sort((a, b) => b.amount - a.amount);
   // One paid area makes a full circle that says nothing: go by tool then.
@@ -114,27 +128,30 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
           ))}
         </ul>
       </div>}
-      {otherTools.length > 0 && <div className="ms-budget-other">
-        <h3>{en ? "Other tools" : "Autres outils"} · {otherTools.length}</h3>
+      {[
+        { key: "free", items: freeTools, title: en ? "Free or freemium" : "Gratuits ou freemium" },
+        { key: "check", items: checkTools, title: en ? "Price to check" : "Prix à vérifier" },
+      ].filter((group) => group.items.length > 0).map((group) => <div key={group.key} className="ms-budget-other">
+        <h3>{group.title} · {group.items.length}</h3>
         <ul className="sg-storage-legend ms-budget-other-list">
-          {otherTools.map(({ tool, cost }) => <li key={tool.id}>
+          {group.items.map(({ tool, cost }) => <li key={tool.id}>
             <ToolLogo tool={tool} size={24} className="sg-budget-logo" />
             <div className="ms-budget-tool-label">
               <button type="button" className="sg-budget-name ms-budget-link" onClick={() => onSelect(toolKey(tool))}>{tool.name}</button>
               <span className="ms-budget-status">{cost.kind === "unknown"
-                ? (en ? "Cost unknown" : "Coût non renseigné")
+                ? (onceLabel(tool) || (en ? "No checked monthly price" : "Pas de prix mensuel vérifié"))
                 : cost.kind === "freemium-free"
-                  ? (en ? "Freemium counted as free" : "Freemium compté gratuit")
+                  ? (en ? "Free plan" : "Plan gratuit")
                   : (en ? "Free" : "Gratuit")}</span>
             </div>
             <span className="sg-budget-value">{cost.kind === "unknown" ? "—" : money(0)}</span>
           </li>)}
         </ul>
-      </div>}
+      </div>)}
       <p className="ms-tile-note">
         {en
-          ? `${adjusted > 0 ? `${adjusted} cost${adjusted > 1 ? "s" : ""} set by you, the rest from` : "From"} catalogue entry-level plans, not your invoices. Converted to ${currency} at the site's rate of ${rateDate}.${unknown > 0 ? ` ${unknown} without a checked price: open a tool to enter what you pay.` : ""}`
-          : `${adjusted > 0 ? `${adjusted} coût${adjusted > 1 ? "s" : ""} ajusté${adjusted > 1 ? "s" : ""} par vous, le reste d’après les` : "D’après les"} offres d’entrée de gamme du catalogue, pas vos factures. Converti en ${currency} au taux du ${rateDate}.${unknown > 0 ? ` ${unknown} sans prix relevé : ouvrez un outil pour saisir ce que vous payez.` : ""}`}
+          ? `${total > 0 ? `${adjusted > 0 ? `${adjusted} cost${adjusted > 1 ? "s" : ""} set by you, the rest from` : "From"} catalogue entry-level plans, not your invoices.${converted ? ` Converted to ${currency} at the site's rate of ${rateDate}.` : ""}` : ""}${unknown > 0 ? ` ${unknown} without a checked monthly price: open a tool to enter what you pay.` : ""}`.trim()
+          : `${total > 0 ? `${adjusted > 0 ? `${adjusted} coût${adjusted > 1 ? "s" : ""} ajusté${adjusted > 1 ? "s" : ""} par vous, le reste d’après les` : "D’après les"} offres d’entrée de gamme du catalogue, pas vos factures.${converted ? ` Converti en ${currency} au taux du ${rateDate}.` : ""}` : ""}${unknown > 0 ? ` ${unknown} sans prix mensuel vérifié : ouvrez un outil pour saisir ce que vous payez.` : ""}`.trim()}
         {freemiumCount > 0 && <> {en ? `${undeclared} of ${freemiumCount} freemium counted as free.` : `${undeclared} freemium sur ${freemiumCount} comptés gratuits.`} <button type="button" className="ms-inline-link" onClick={onFreemium}>{en ? "Edit" : "Modifier"}</button></>}
       </p>
     </section>

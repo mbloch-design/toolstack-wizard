@@ -27,9 +27,9 @@ describe("stack budget tool visibility", () => {
     expect(screen.getByRole("img", { name: "Monthly cost breakdown: about $113" })).toBeTruthy();
     for (const item of tools) expect(screen.getByRole("button", { name: item.name })).toBeTruthy();
     const unknownRow = screen.getByRole("button", { name: "Claude" }).closest("li")!;
-    expect(within(unknownRow).getByText("Cost unknown")).toBeTruthy();
+    expect(within(unknownRow).getByText("No checked monthly price")).toBeTruthy();
     expect(unknownRow.textContent).not.toContain("$0");
-    expect(screen.getAllByText("Freemium counted as free")).toHaveLength(3);
+    expect(screen.getAllByText("Free plan")).toHaveLength(3);
     fireEvent.click(screen.getByRole("button", { name: "Claude" }));
     expect(onSelect).toHaveBeenCalledWith("Claude");
   });
@@ -40,7 +40,16 @@ describe("stack budget tool visibility", () => {
     expect(screen.getByRole("button", { name: "Libre" })).toBeTruthy();
     expect(screen.getByText("Gratuit")).toBeTruthy();
     expect(screen.getByRole("button", { name: "Inconnu" })).toBeTruthy();
-    expect(within(screen.getByRole("button", { name: "Inconnu" }).closest("li")!).getByText("Coût non renseigné")).toBeTruthy();
+    expect(within(screen.getByRole("button", { name: "Inconnu" }).closest("li")!).getByText("Pas de prix mensuel vérifié")).toBeTruthy();
+    // Nothing paid, nothing converted: the note must not claim a conversion.
+    expect(container.textContent).not.toContain("Converti");
+    expect(screen.getByText("Gratuits ou freemium · 1")).toBeTruthy();
+    expect(screen.getByText("Prix à vérifier · 1")).toBeTruthy();
+  });
+
+  it("shows a one-time licence in its own currency instead of an unknown cost", () => {
+    budget([tool("DxO", { nativePrices: [{ amount: 159.99, currency: "USD", period: "once" }] })], "fr");
+    expect(screen.getByText(/Licence unique · 159,99\s\$/)).toBeTruthy();
   });
 
   it("keeps the seventh paid tool accessible instead of hiding it in an aggregate", () => {
