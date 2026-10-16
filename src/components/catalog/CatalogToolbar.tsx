@@ -1,5 +1,6 @@
 import { Fragment, useState, type ReactNode } from "react";
-import { ArrowUpDown, Filter, X } from "@/lib/icons";
+import RailThumb from "@/components/motion/RailThumb";
+import { ArrowUpDown, ChevronLeft, Filter, X } from "@/lib/icons";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 export type ToolbarPill = {
@@ -7,6 +8,9 @@ export type ToolbarPill = {
   label: string;
   active?: boolean;
   onClick: () => void;
+  /** Telescope parent: the level the rail is zoomed into. Shown first with a
+      back chevron; clicking it climbs back up one level. */
+  parent?: boolean;
 };
 
 export type ToolbarSort = {
@@ -96,17 +100,20 @@ export default function CatalogToolbar({
   return (
     <>
       <div data-toolbar="catalog" className={`tt-catalog-toolbar tt-sticky-toolbar${stuck ? " tt-sticky-toolbar--stuck" : ""}${className ? ` ${className}` : ""}`}>
-        <nav className="tt-pillrow" aria-label={navLabel}>
+        <nav className="tt-pillrow tt-rail" aria-label={navLabel}>
+          <RailThumb />
           {pills.map((pill, index) => (
             <Fragment key={pill.id}>
               <button
                 type="button"
-                className={`tt-pill${pill.active ? " tt-pill--active" : ""}`}
+                className={`tt-pill${pill.active ? " tt-pill--active" : ""}${pill.parent ? " tt-pill--parent" : ""}`}
                 onClick={pill.onClick}
                 aria-pressed={!!pill.active}
               >
+                {pill.parent && <ChevronLeft size={16} aria-hidden />}
                 {pill.label}
               </button>
+              {pill.parent && <span className="tt-pillrow-divider" aria-hidden />}
               {dividerAfter === index && <span className="tt-pillrow-divider" aria-hidden />}
             </Fragment>
           ))}

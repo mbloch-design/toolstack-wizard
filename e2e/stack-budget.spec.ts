@@ -25,7 +25,7 @@ for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
     // free-tier question and the monthly budget after declaring a payment.
     for (const name of ["Claude", "Perplexity"]) {
       const row = budget.locator(".ms-budget-other-list li").filter({ has: page.getByRole("button", { name, exact: true }) });
-      await expect(row).toContainText(lang === "fr" ? "Freemium compté gratuit" : "Freemium counted as free");
+      await expect(row).toContainText(lang === "fr" ? "Plan gratuit" : "Free plan");
     }
     await budget.locator(".ms-inline-link").click();
     for (const name of ["Claude", "Perplexity"]) {
@@ -42,7 +42,7 @@ for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     fs.mkdirSync("/private/tmp/tooltrim-stack-budget", { recursive: true });
     await budget.screenshot({ path: `/private/tmp/tooltrim-stack-budget/${lang}-${width}.png` });
-    const unknown = budget.locator(".ms-budget-other-list li").filter({ hasText: lang === "fr" ? "Coût non renseigné" : "Cost unknown" }).first();
+    const unknown = budget.locator(".ms-budget-other-list li").filter({ hasText: lang === "fr" ? "Pas de prix mensuel vérifié" : "No checked monthly price" }).first();
     await expect(unknown).toBeVisible();
     await unknown.getByRole("button").click();
     await expect(page.locator(".ms-tool-sheet")).toBeVisible();

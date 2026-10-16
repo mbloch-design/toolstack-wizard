@@ -1,4 +1,5 @@
 import { useLocation, useParams } from "react-router-dom";
+import RailThumb from "@/components/motion/RailThumb";
 import { Link } from "@/lib/routerLinks";
 import { REDIRECTED_TOOL_SLUGS } from "@/lib/redirectedTools";
 import { useState, useEffect, useMemo, type CSSProperties } from "react";
@@ -263,7 +264,8 @@ const CategoryPage = () => {
 
         <div data-toolbar="catalog" className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
           {/* Real links: each sibling category is its own indexable page. */}
-          <nav className="tt-pillrow" aria-label={t(`Catégories ${needLabel}`, `${needLabel} categories`) as string}>
+          <nav className="tt-pillrow tt-rail" aria-label={t(`Catégories ${needLabel}`, `${needLabel} categories`) as string}>
+            <RailThumb />
             {siblings.length > 1 && siblings.map((sibling) => {
               const active = sibling.id === category.id;
               const name = stripLeadingEmoji(sibling.name, sibling.id);

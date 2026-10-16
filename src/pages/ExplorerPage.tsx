@@ -199,7 +199,7 @@ function ExplorerTagFilterNav({
     <nav className={`ex-tag-filter${isPinned ? " is-pinned" : ""}`} aria-label={ariaLabel}>
       <div className="ex-tag-filter-surface">
         {context}
-        <div className={`ex-tag-filter-scroll${overflow.left ? " has-left" : ""}${overflow.right ? " has-right" : ""}`} hidden={items.length <= 1}>
+        <div className={`ex-tag-filter-scroll${overflow.left ? " has-left" : ""}${overflow.right ? " has-right" : ""}`}>
           <div ref={trackRef} className="ex-tag-filter-track">
             {thumb && (
               <span
@@ -388,9 +388,9 @@ export default function ExplorerPage() {
     const sorted = [...grouped.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, lang));
     const kept = sorted.filter((category) => category.count >= MIN_CATEGORY_FILTER_COUNT);
     const otherCount = sorted.reduce((sum, category) => sum + (category.count < MIN_CATEGORY_FILTER_COUNT ? category.count : 0), 0);
-    // A lone "Others", or a single category holding everything, would just
-    // repeat "All": no filter bar then.
-    if (!kept.length || (kept.length === 1 && !otherCount)) return [];
+    // The rail always shows (page structure stays the same from one tool to
+    // the next), even when a single category holds everything.
+    if (!kept.length) return [];
     return otherCount
       ? [...kept, { id: OTHER_CATEGORY_ID, label: t("Autres", "Others") as string, count: otherCount }]
       : kept;

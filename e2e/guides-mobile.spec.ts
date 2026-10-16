@@ -44,7 +44,7 @@ test.describe("Guides — parcours mobile-first", () => {
     await expect(page.locator(".ga-content")).toContainText(
       "Andrew Huberman already had a substantial audience",
     );
-    await expect(page.locator(".ga-content p")).toHaveCount(48);
+    await expect(page.locator(".ga-content p")).toHaveCount(53);
     const sections = page.locator(".ga-article-section");
     for (const index of [0, Math.floor(await sections.count() / 2), await sections.count() - 1]) {
       await sections.nth(index).scrollIntoViewIfNeeded();
@@ -60,7 +60,8 @@ test.describe("Guides — parcours mobile-first", () => {
 
     const card = page.locator(".gi-card", { hasText: "AI Tips" }).first();
     await expect(card).toBeVisible();
-    await expect(card.locator(".gi-card-media img")).toHaveAttribute("src", "/og-screenshots/chatgpt.jpg");
+    // Guide cards now show the tools they cover as logos.
+    await expect(card.locator(".gi-card-media img").first()).toHaveAttribute("src", "/home-logos/chatgpt.webp");
     await expect(card.locator(".gi-card-cover-fallback")).toHaveCount(0);
   });
 });

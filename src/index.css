@@ -37892,3 +37892,90 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ex-tag-filter:not(.is-pinned) .ex-filter-context { display: flex; }
   .ex-tag-filter:not(.is-pinned) .ex-tag-filter-scroll { grid-column: 2; }
 }
+
+/* ── Site-wide filter rail (16/10/2026) ──────────────────────────────────
+   Every filter row (tools, category, stacks, comparisons, guides, search)
+   uses Explorer's segmented control: a soft grey rail hugging its items, one
+   white thumb that glides to the active item (RailThumb), counts in a quiet
+   tone. Pages keep their own filter logic; only the look is shared. */
+.tt-rail {
+  align-items: center;
+  background: var(--color-surface-soft);
+  border-radius: var(--radius-pill);
+  display: flex;
+  flex: 0 1 auto;
+  gap: 0;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 3px;
+  position: relative;
+  scrollbar-width: none;
+  width: fit-content;
+}
+.tt-rail::-webkit-scrollbar { display: none; }
+.tt-rail-thumb {
+  background: var(--color-surface);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 1px color-mix(in srgb, var(--color-text) 8%, transparent), 0 2px 6px color-mix(in srgb, var(--color-text) 6%, transparent);
+  height: calc(100% - 6px);
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 3px;
+  z-index: 0;
+}
+.tt-rail-thumb.is-ready { transition: transform 420ms cubic-bezier(.34,1.36,.5,1), width 420ms cubic-bezier(.34,1.36,.5,1), opacity 160ms ease; }
+.tt-rail > :not(.tt-rail-thumb) { position: relative; z-index: 1; }
+.tt-rail .tt-pill, .tt-rail .gi-filter-pill, .tt-rail .sp-tab {
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-pill);
+  box-shadow: none;
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-body);
+  font-weight: 500;
+  height: auto;
+  min-height: 36px;
+  padding: 0 14px;
+}
+.tt-rail .tt-pill:hover:not(:disabled):not(.tt-pill--active),
+.tt-rail .gi-filter-pill:hover:not(.gi-filter-pill--active),
+.tt-rail .sp-tab:hover:not(.is-active) { background: transparent; color: color-mix(in srgb, var(--color-text) 72%, transparent); }
+.tt-rail .tt-pill--active, .tt-rail .gi-filter-pill--active, .tt-rail .sp-tab.is-active { background: transparent; color: var(--color-text); font-weight: 600; }
+.tt-rail .tt-pill-count, .tt-rail .sp-tab-count { background: transparent; color: color-mix(in srgb, currentColor 70%, transparent); font-size: 12px; font-variant-numeric: tabular-nums; opacity: 1; }
+.tt-rail .tt-pillrow-divider { background: color-mix(in srgb, var(--color-text) 14%, transparent); height: 18px; }
+/* The removable browsed-category chip keeps a visible frame inside the rail. */
+.tt-rail .tt-pill--chip { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 22%, transparent); }
+.tt-catalog-toolbar .tt-rail { mask-image: none; }
+/* "Filters" sits next to the rail as a matching soft pill. */
+.tt-catalog-toolbar-tail .tt-pill--more { background: var(--color-surface-soft); border: 0; min-height: 42px; }
+@media (pointer: coarse), (max-width: 560px) { .tt-rail .tt-pill, .tt-rail .gi-filter-pill, .tt-rail .sp-tab { min-height: 44px; } }
+@media (prefers-reduced-motion: reduce) { .tt-rail-thumb.is-ready { transition: none; } }
+/* Page titles share Explorer's type: brand face, page-title size, 600,
+   tight tracking; the count under it is a quiet caption like Explorer's
+   category line. */
+.tt-catalog-compact-title,
+.tt-catalog-page .tt-catalog-compact-title,
+.tt-catalog-page .cix-hero-title,
+.gi-container .tt-catalog-compact-title {
+  font-family: var(--font-brand);
+  font-size: var(--tt-size-page-title);
+  font-weight: 600;
+  letter-spacing: -.04em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+.tt-catalog-context-count { color: color-mix(in srgb, var(--color-text) 68%, transparent); font-size: var(--tt-size-card-body); font-weight: 450; margin-top: 8px; }
+.tt-pillrow.tt-rail, .tt-pillrow.tt-rail[data-scrolled="true"] { -webkit-mask-image: none; mask-image: none; }
+/* Telescope parent segment: back chevron + the level the rail is zoomed
+   into, then a hairline before its children. Carries the thumb while no
+   child is chosen. */
+.tt-rail .tt-pill--parent { gap: 4px; padding-left: 10px; }
+.tt-rail .tt-pill--parent svg { transition: transform 200ms cubic-bezier(.22,1,.36,1); }
+.tt-rail .tt-pill--parent:hover svg { transform: translateX(-2px); }
+/* Title count in superscript, same treatment as the homepage shelves,
+   scaled to the page title. */
+.tt-title-count { color: var(--color-text-meta); font: 500 clamp(14px, 1.3vw, 18px)/1 var(--font-ui); font-variant-numeric: tabular-nums; letter-spacing: 0; margin-left: 6px; position: relative; top: -1.4em; vertical-align: baseline; }

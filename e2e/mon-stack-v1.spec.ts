@@ -21,7 +21,8 @@ test("empty → search → add → inspect → remove → undo → persist", asy
   await expect(page.locator(".ms-tool-sheet")).toBeVisible();
   await page.getByRole("button", { name: "Retirer de ma stack", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(0);
-  await page.getByRole("button", { name: "Annuler", exact: true }).click();
+  // The add confirmation pill also has an "Annuler": use the removal's undo.
+  await page.locator("button:not(.stack-toast-undo)", { hasText: /^Annuler$/ }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await page.reload({ waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-tool")).toHaveCount(1);
@@ -40,7 +41,13 @@ test("tool profile adds with one click and its saved CTA opens stack context", a
   await cta.click();
   await expect(page).toHaveURL(/\/fr\/tool\/figma$/);
   await expect(cta).toContainText("Dans ma stack");
+  // The saved button is a toggle (it asks before removing); the stack context
+  // opens from the confirmation's "Voir". Wait for the add to land first.
+  await expect(page.locator(".stack-toast")).toBeVisible();
   await cta.click();
+  await expect(page.locator(".stack-confirm")).toBeVisible();
+  await page.locator(".stack-confirm-keep").click();
+  await page.locator(".stack-toast-open").click();
   await expect(page).toHaveURL(/ma-stack\?outil=figma/);
   await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
   await page.locator(".ms-tool-sheet").getByRole("link", { name: "Fiche complète", exact: true }).click();
@@ -90,7 +97,7 @@ test("invalid catalogue ID can be removed without losing valid tools", async ({ 
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await expect(page.locator(".ms-page")).not.toContainText(/undefined|null/);
   await expect(page.locator(".ms-tool")).toContainText("Figma");
-  await expect(page.locator("#ms-budget")).toContainText("Freemium counted as free");
+  await expect(page.locator("#ms-budget")).toContainText("Free plan");
 });
 
 test("corrupt storage recovers without crashing", async ({ page }) => {

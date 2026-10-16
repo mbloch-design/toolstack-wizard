@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect, useRef } from "react";
+import RailThumb from "@/components/motion/RailThumb";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { Search, Hash, BookOpen, Wrench, ArrowRight, X } from "@/lib/icons";
@@ -239,7 +240,8 @@ const SearchPage = () => {
 
           {/* Tabs */}
           {totalCount > 0 && tabs.length > 2 && (
-            <div className="sp-tabs" role="group" aria-label={t("Filtrer les résultats par type", "Filter results by type")}>
+            <div className="sp-tabs tt-rail" role="group" aria-label={t("Filtrer les résultats par type", "Filter results by type")}>
+              <RailThumb />
               {tabs.map(tab => (
                 <button
                   key={tab.id}

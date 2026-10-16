@@ -1,4 +1,5 @@
 import { Link } from "@/lib/routerLinks";
+import RailThumb from "@/components/motion/RailThumb";
 import { useLang } from "@/hooks/useLang";
 import type { Post } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect, type CSSProperties } from "react";
@@ -223,7 +224,8 @@ const GuidesPage = () => {
               ) : null}
             </div>
 
-            <div className="gi-filter-pills" aria-label={t("Filtrer les guides par thème", "Filter guides by topic") as string}>
+            <div className="gi-filter-pills tt-rail" aria-label={t("Filtrer les guides par thème", "Filter guides by topic") as string}>
+              <RailThumb />
               {filters.map((filter) => (
                 <button
                   key={filter.id}

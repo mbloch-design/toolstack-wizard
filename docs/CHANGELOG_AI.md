@@ -1,3 +1,11 @@
+## 16 octobre 2026 : rail de filtres commun, titres harmonisés, CI réparée
+
+- Rail segmenté de l'Explorer (rail gris, curseur blanc glissant `RailThumb`, compteurs) appliqué à Outils, Catégorie, Stacks, Comparatifs, Guides et Recherche ; logique de filtre inchangée. Mode télescope (Stacks) : segment parent « ‹ objectif » qui porte le curseur et fait remonter d'un niveau.
+- Titres de page au style Explorer (police de marque, 600) ; compteur d'outils en exposant après le titre.
+- Explorer : le rail reste visible même avec une seule catégorie.
+- Tests e2e mis à jour après les changements voulus (libellés du budget, interrupteur d'ajout, logos des cartes de guides) ; suppression de StackSaveDialog, plus utilisé.
+- Validation reproduisant la CI : API, contrats SEO, tokens, types, 198 tests Ma stack, build (HTML 705,5 Mio), 70 e2e, R11 21, paiement 16, hydratation 57.
+
 ## 16 octobre 2026 : Explorer refait zone par zone, ajout à Ma stack unifié
 
 - Hero : tuile Apple (image OG jamais rognée, logo + nom + catégorie, boutons sur une ligne), élision FR (« autour d'Airtable »), catégories en casse de phrase, typographie FR (espace fine avant %).
