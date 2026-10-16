@@ -1,3 +1,12 @@
+## 2026-10-16 — Nettoyage du code, dépendances et références (local, non publié)
+
+- Graphe TypeScript des imports statiques/dynamiques et revue des chemins lus par les scripts/tests : retrait de 42 modules UI sans consommateur, de 20 composants/pages hérités de l'ancienne homepage et de la page de démarrage Index. AppRoutes utilise HomePageV2 ; HeroSectionV2 et StackGoalsSection restent actifs. Aucun changement des URL ou redirections.
+- Le test discoverySurfaceLinks couvre désormais les deux composants de la homepage active au lieu des quatre sources retirées ; ses contrôles de liens restent identiques.
+- Retrait de 35 dépendances directes inutilisées ; package-lock passe de 565 à 489 entrées. Installation npm propre réussie (386 paquets pour cette plateforme). Retrait de bun.lock et de la fixture Lovable Playwright inutilisée ; npm/package-lock reste le workflow de la CI.
+- Références design : DESIGN.md devient une entrée vers docs/DESIGN_SYSTEM.md ; critiques/profil Impeccable de mai et ancien audit SEO d'avril retirés (historique Git). Architecture et design system corrigés pour la homepage actuelle ; PRODUCT.md reconnaît l'exploration déjà disponible autour de la stack.
+- Conservation explicite : diagnostic/dashboard et leurs modules métier, migrations et scripts de validation associés, documents GO/diagnostic référencés, preuves catalogue, sauvegardes et travaux concurrents. Une route retirée de la navigation n'est pas une preuve que tout son moteur ou sa procédure de reprise peut être supprimé.
+- Contrôles après installation propre : 383 tests application, 166 API et 39 SEO PASS ; 18 tests API Redis ignorés. Types application/Node/API PASS. Build production complet, équivalence HTML, SEO/routage et budgets PASS. 23 parcours Chromium recherche/stack/responsive PASS et quatre contrôles homepage FR/EN mobile/ordinateur PASS. Relecture indépendante sans point restant. Aucun changement du catalogue, des API ou des URL publiques.
+
 ## 2026-10-16 — Nettoyage des anciens fichiers de pilotage IA (local, non publié)
 
 - Retrait du plan Lovable périmé, des trois handoffs numérotés de juin et du handoff documentaire de mai. Historique conservé dans Git ; aucun dossier d'archives ajouté.

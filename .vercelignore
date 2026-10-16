@@ -24,7 +24,6 @@ README.md
 AGENTS.md
 CLAUDE.md
 playwright.config.ts
-playwright-fixture.ts
 vitest*.config.*
 scripts/curate-alternatives*.mjs
 scripts/fill-short-descriptions.mjs
