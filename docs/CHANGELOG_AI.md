@@ -1,3 +1,39 @@
+## 2026-10-16 — Registre de relecture réaligné sur le catalogue versionné
+
+- Contrôle initial en échec : registre de 1 177 entrées pour 1 349 entrées catalogue sur main. Régénération par le moteur existant : 172 entrées ajoutées en QUEUED, aucune supprimée.
+- 71 validations PUBLISHED et une RENDER_VERIFIED deviennent STALE après changement d'empreinte. Décisions, réviseurs, dates et affectations de lots conservés ; aucune nouvelle approbation ni publication de fiche.
+- Contrôle de couverture, assertions Node du registre et régénération idempotente PASS. Catalogue, application et API inchangés. Les trois entrées supplémentaires du checkout principal non publié ne sont pas embarquées.
+
+## 16 octobre 2026 : GEO, verdict exposé aux moteurs de réponse
+
+- `llms-full.txt` : chaque outil porte `verdict_fr` / `verdict_en` (note sur 5 axes seulement si la grille est complète, 594 outils ; libellé, à garder si, à éviter si, 3 points forts et faibles) et `price_verified_on`. En-têtes `llms.txt` / `llms-full.txt` expliquant la note (jamais influencée par un paiement).
+- JSON-LD Review : `positiveNotes` / `negativeNotes` repris des avantages et limites visibles, à l'identique au prérendu (vite.config.ts) et côté client (ToolJsonLd).
+- `/{lang}/tool/{slug}.md` : fiche Markdown servie par une seule fonction (`api/tool-md.ts`, lit le `llms-full.txt` du site, cache 1 h + CDN 24 h, canonique vers la page HTML). L'option 2 698 fichiers statiques dépassait le budget de nombre de fichiers (17 607 > 15 050), abandonnée.
+- Aucune modification de mise en page. Validation : 388 tests app, 170 tests API (+4), garde-fou tokens, build PASS (HTML 713,2 Mio), 57 tests d'hydratation.
+
+## 2026-10-16 — Nettoyage du code, dépendances et références (local, non publié)
+
+- Graphe TypeScript des imports statiques/dynamiques et revue des chemins lus par les scripts/tests : retrait de 42 modules UI sans consommateur, de 20 composants/pages hérités de l'ancienne homepage et de la page de démarrage Index. AppRoutes utilise HomePageV2 ; HeroSectionV2 et StackGoalsSection restent actifs. Aucun changement des URL ou redirections.
+- Le test discoverySurfaceLinks couvre désormais les deux composants de la homepage active au lieu des quatre sources retirées ; ses contrôles de liens restent identiques.
+- Retrait de 35 dépendances directes inutilisées ; package-lock passe de 565 à 489 entrées. Installation npm propre réussie (386 paquets pour cette plateforme). Retrait de bun.lock et de la fixture Lovable Playwright inutilisée ; npm/package-lock reste le workflow de la CI.
+- Références design : DESIGN.md devient une entrée vers docs/DESIGN_SYSTEM.md ; critiques/profil Impeccable de mai et ancien audit SEO d'avril retirés (historique Git). Architecture et design system corrigés pour la homepage actuelle ; PRODUCT.md reconnaît l'exploration déjà disponible autour de la stack.
+- Conservation explicite : diagnostic/dashboard et leurs modules métier, migrations et scripts de validation associés, documents GO/diagnostic référencés, preuves catalogue, sauvegardes et travaux concurrents. Une route retirée de la navigation n'est pas une preuve que tout son moteur ou sa procédure de reprise peut être supprimé.
+- Contrôles après installation propre : 383 tests application, 166 API et 39 SEO PASS ; 18 tests API Redis ignorés. Types application/Node/API PASS. Build production complet, équivalence HTML, SEO/routage et budgets PASS. 23 parcours Chromium recherche/stack/responsive PASS et quatre contrôles homepage FR/EN mobile/ordinateur PASS. Relecture indépendante sans point restant. Aucun changement du catalogue, des API ou des URL publiques.
+
+## 2026-10-16 — Nettoyage des anciens fichiers de pilotage IA (local, non publié)
+
+- Retrait du plan Lovable périmé, des trois handoffs numérotés de juin et du handoff documentaire de mai. Historique conservé dans Git ; aucun dossier d'archives ajouté.
+- CLAUDE.md renvoie désormais au guide commun AGENTS.md plutôt que dupliquer une stack et une palette divergentes. Les entrées catalogue et diagnostic restent accessibles.
+- AI_HANDOFF.md conservé pour les validateurs du diagnostic ; son en-tête distingue cet historique du pilotage global actuel.
+- Recherches, configurations Claude/Impeccable, sauvegardes et travaux locaux hors périmètre conservés. Le chemin de .claude/launch.json est effectivement utilisé par les processus Claude actuels : aucune modification. Les artefacts .build-trash d’un build actif restent intacts.
+- Deuxième passe : retrait de six scripts/extraits ponctuels sans référence dans les fichiers suivis (`_all-published`, `_cat-summary`, `_inspect-asana`, `_tmp-push-organization-recategorization`, `_verdict-null`, `_verdict-null-proj`). Aucun script de migration catalogue actif retiré.
+- Nettoyage local du checkout principal : copies de builds `dist 2` et `dist-ssr 3`, dossiers `e2e 2` et `src/test/ma-stack 2`, copies `stackPricing 2.ts`, `validate-ma-stack-e2e 2.mjs`, `og-image 3.svg` retirés après comparaison et contrôle des références : 1 382 159 005 octets logiques supprimés. Copies de CV, recherches, sauvegardes et changements catalogue conservés.
+- README : remplacement de la liste de fonctionnalités « à venir » périmée par les commandes et liens vers les roadmaps actives, sans ajouter de document.
+- Nettoyage local additionnel : seconde installation de dépendances `node_modules 2` retirée (655 200 363 octets de fichiers réguliers), après vérification des processus actifs ; `node_modules` courant conservé.
+- Troisième passe : 91 anciens lots éditoriaux autonomes et sorties SQL longdesc retirés (13748 lignes). Chaque lot est sans référence dans les fichiers suivis ; les scripts MJS ne sont pas des modules exportés et écrivent un contenu figé dans le JSON catalogue. Les sources catalogue publiées et les preuves recherche restent inchangées.
+- Prévention : motifs gitignore réservés aux builds numérotés et règles d'hygiène communes dans AGENTS.md ; exclusions Vercel nettoyées des familles supprimées.
+- Validation finale : 383 tests application, 166 API et 39 SEO PASS ; 18 tests API Redis ignorés dans cette exécution. Types application/Node/API PASS. Build production complet, équivalence HTML, SEO/routage et budgets PASS. Références actives et diff vérifiés ; relecture indépendante sans point restant. Aucun code applicatif ni contenu catalogue modifié.
+
 ## 16 octobre 2026 — Recherche par usage et alternatives, exploitation vérifiée
 
 - Deux défauts reproduits dans la page et la fenêtre globale : appointment scheduling sans résultat, alternative à Notion mettant Notionlytics en tête. Le moteur commun fusionne le synonyme avec les résultats d’origine et utilise uniquement les alternatives explicites lorsque la source est exactement reconnue. Catalogue, prix, relations et interfaces conservés.
@@ -35,6 +71,29 @@
 - Tests rouges reproduits avant correction, puis 360 tests applicatifs dans 58 fichiers PASS. Types app/Node/API, contrôle des tokens et build production complet PASS, incluant prérendu, équivalence HTML, SEO et budgets.
 - Quatre contrôles navigateur Chromium PASS sur l’artefact généré : FR/EN à 390/1440 px, descriptions initiales et hydratées, Open Graph, canonical et hreflang corrects, contenu d’article identique au public. Contre-revue indépendante sans problème actionnable.
 - Bilan et limites : [R10_R11_LOT1_2026-10-15.md](R10_R11_LOT1_2026-10-15.md). Les neuf alertes, la migration éventuelle, les médias et l’indexation restent ouverts. R5/R6 et les tests utilisateurs différés ne sont pas repris.
+
+## 16 octobre 2026 : fiche outil, colonne de droite, guides et finitions
+
+- Box verdict : anneau d'activité dans la couleur de l'outil (se dessine puis « pop »), 5 critères en mini-barres (CSS `data-v`, quelques octets), sélecteur « Pour toi si / Pas pour toi si » (boutons à bascule, zone tactile 44 px), anneau cliquable vers le détail (`score_detail_open`), fond teinté de l'outil, pastille et bouton blancs.
+- Contrastes mesurés (clair/sombre, Asana et Notion) : anneau et barres 2,75 → 4,73:1, libellé sombre 4,47 → 9,33:1 ; aucun texte sous le seuil sur la page.
+- « Souvent utilisé avec » en liste iOS (tuile 36 px, chevron), carte d'exploration en bouton distinct ; doublon de la carte verdict supprimé en mobile ; Partager / Signaler en boutons-icônes centrés.
+- Guides en cartes (vignette ou logo de l'outil, catégorie · temps de lecture), lignes compactes en mobile ; index des guides enrichi (vignette, temps de lecture).
+- Rentabilité : « Rentable dès · 14 min gagnées par mois », phrase explicative suivant le curseur, panneaux équilibrés ; « Pour. / Contre. » ne masque plus jamais le texte prérendu (masquage seulement sous la ligne de flottaison, après JS).
+- Échelle typographique resserrée (14 tailles), cibles tactiles 44 px (onglets, info, lien officiel, curseur), passe de micro-animations (appui, signet, onglets, FAQ, curseur, cartes), mouvement réduit respecté.
+- Budget de poids : HTML 722,1 Mio (échec) → 710,7 Mio sous 716 Mio, en remplaçant 5 SVG par carte. Vérif SEO vs production (Notion FR/EN, Asana, Zelt) : titres, méta, liens internes et JSON-LD identiques ; mots −0,1 à −1,9 % (doublons retirés).
+- Validation : 363 tests, garde-fou tokens, build complet, 57 tests d'hydratation.
+
+## 15 octobre 2026 : fiche outil, harmonisation zone par zone
+
+- Prix (commit df4ec8a0) : 5 prix mensuels certifiés sur la page officielle (Coast, Loox, PageFly, Planoly, Docyt) ; le contrôle « pas de plan gratuit » ne se déclenche plus sur « aucun agent IA » ; un prix certifié passe avant le marqueur « non communiqué ». Pages EN sans offre JSON-LD : 342 puis 327.
+- Échelle : plancher de lisibilité à 12 px, graisses 400/500/600/700, plus de bleu sur la fiche (onglet actif, épingle, lien catégorie), pictos en 14/16/20 px.
+- Zone 1 : hero gardé en retrait ; galerie refaite en piste défilante native (glisser, trackpad, flèches chevron sous les médias, désactivées aux extrémités, mouvement réduit respecté) ; colonne droite alignée sur le bord intérieur de la carte verdict.
+- Zone 2 : la barre locale n'apparaît qu'une fois les onglets de page sortis de l'écran ; fonctionnalités en tuiles, usages en cartes texte ; « Pour qui » en fiche technique (lignes fines, lien seul sans titre « Lien »).
+- Zone 3 : « Avantages et limites » et « Quand ça a du sens » fusionnés en une feuille « Pour. / Contre. » (tokens --color-pro / --color-con, clair et sombre) ; seuil de rentabilité interactif (prix ÷ valeur horaire, curseur) ; le premier « à garder / à éviter » reste dans la seule carte verdict.
+- Zone 4 : plans en fond doux, plan retenu soulevé, lignes alignées entre cartes (subgrid), un seul filet ; contenu des offres découpé en liste à l'affichage, seulement sur de vraies énumérations (audit des 2 472 textes, 4 tests) ; pièges de facturation en alerte ; suite incluse en une ligne ; lien « Tarifs officiels » unique et mesuré.
+- Zone 5 : alternatives en cartes de décision (note, « Gratuit, puis dès X »), outil courant retiré, plus de fondu de bord, `alternative_click` source `alternatives_cards` ; comparatifs en grille légère ; substituts déjà affichés non répétés.
+- Zone 6 : détail de la note en 5 lignes avec jauge ; doublon « Ce que comprend » supprimé (et prix en monospace 11 px corrigé) ; section IA au format des autres titres ; FAQ datée en toutes lettres (aussi dans le JSON-LD prérendu), conversion de date sans exception (test ajouté) ; guides en lignes légères.
+- Validation : 363 tests, garde-fou tokens (styles inline 117 puis 100, gain figé), build complet PASS ; vérifications navigateur desktop/mobile et sombre sur Notion, Airtable, ClickUp, Figma.
 
 ## 14 octobre 2026 — Publication R9 et portabilité de la recette
 

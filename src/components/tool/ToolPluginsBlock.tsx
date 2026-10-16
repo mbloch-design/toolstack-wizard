@@ -2,7 +2,7 @@ import { Link } from "@/lib/routerLinks";
 import type { Tool } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import ToolLogo from "@/components/ToolLogo";
-import { Puzzle, Package, ArrowRight, Layers } from "@/lib/icons";
+import { Puzzle, ArrowRight } from "@/lib/icons";
 import { useCurrency } from "@/hooks/useCurrency";
 import { formatCurrencyAmount } from "@/lib/currency";
 import { resolveDisplayPrice } from "@/lib/nativePricing";
@@ -20,7 +20,6 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
   const toolId = (tool as any).slug || tool.id;
   const toolType = (tool as any).tool_type as string;
   const hostAppSlug = (tool as any).host_app as string | undefined;
-  const bundleParentSlug = (tool as any).bundle_parent as string | undefined;
 
   // Bidirectional slug matching: "after-effects" matches "adobe-after-effects"
   // because adobe-after-effects ends with "-after-effects"
@@ -45,74 +44,12 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
     })
     .slice(0, 8);
 
-  // ── Case 3: this tool is part of a bundle
-  const bundleParent = bundleParentSlug
-    ? allTools.find(t => (t as any).slug === bundleParentSlug || (t as any).id === bundleParentSlug)
-    : null;
-
-  // Also: sibling tools in the same bundle
-  const bundleSiblings = bundleParentSlug
-    ? allTools
-        .filter(t => (t as any).bundle_parent === bundleParentSlug && t.id !== tool.id)
-        .slice(0, 5)
-    : [];
-
-  // ── Case 4: this tool IS a bundle — list its member tools
-  const bundleMembers = allTools
-    .filter(t => {
-      const bp = (t as any).bundle_parent as string | undefined;
-      return !!bp && (bp === toolId || bp === tool.id);
-    })
-    .slice(0, 12);
-
-  const hasAnyContent = hostApp || childPlugins.length > 0 || bundleParent || bundleMembers.length > 0;
+  // Bundle parent / members are shown once, in the pricing section (ToolBundleSection).
+  const hasAnyContent = hostApp || childPlugins.length > 0;
   if (!hasAnyContent) return null;
 
   return (
     <div className="td-section td-section--sub" style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-
-      {/* ── Case 4: Bundle parent → show member tools ── */}
-      {bundleMembers.length > 0 && (
-        <div>
-          <span className="td-subhead">
-            <Layers />
-            {t("Outils inclus", "Tools included")}
-          </span>
-          <h2 className="td-subtitle">
-            {t(`Ce que comprend ${tool.name}`, `What ${tool.name} includes`)}
-          </h2>
-
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: 10 }}>
-            {bundleMembers.map(m => (
-              <Link
-                key={m.id}
-                to={`${prefix}/tool/${(m as any).slug || m.id}`}
-                className="td-tile"
-                style={{ alignItems: "flex-start" }}
-              >
-                <ToolLogo tool={m as any} size={32} className="rounded-lg shrink-0" />
-                <div className="td-tile-body">
-                  <p className="td-tile-title" style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                    {m.name}
-                  </p>
-                  <p className="td-tile-sub" style={{ whiteSpace: "normal", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical" }}>
-                    {lang === "en" && (m as any).shortDescriptionEn ? (m as any).shortDescriptionEn : m.shortDescription}
-                  </p>
-                  {(m as any).defaultMonthlyPrice === 0 ? (
-                    <span style={{ marginTop: 6, display: "inline-block", fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text-strong)" }}>
-                      {t("Gratuit", "Free")}
-                    </span>
-                  ) : (m as any).defaultMonthlyPrice > 0 ? (
-                    <span style={{ marginTop: 6, display: "inline-block", fontFamily: "var(--font-mono, ui-monospace)", fontSize: 11, color: "var(--color-muted)" }}>
-                      {(() => { const price = resolveDisplayPrice(m, (m as any).defaultMonthlyPrice, currency); return `${price.converted ? "≈ " : ""}${formatCurrencyAmount(price.amount, price.nativePrice ? price.currency : currency, lang)}`; })()}/{t("mois", "mo")}
-                    </span>
-                  ) : null}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
 
       {/* ── Case 1: Plugin → show host app ── */}
       {hostApp && (
@@ -138,41 +75,6 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
             </div>
             <ArrowRight className="td-tile-arrow" />
           </Link>
-        </div>
-      )}
-
-      {/* ── Case 3: Bundle child ── */}
-      {bundleParent && (
-        <div>
-          <span className="td-subhead">
-            <Package />
-            {t("Inclus dans", "Included in")}
-          </span>
-
-          <Link to={`${prefix}/tool/${(bundleParent as any).slug || bundleParent.id}`} className="td-tile">
-            <ToolLogo tool={bundleParent as any} size={36} className="rounded-lg shrink-0" />
-            <div className="td-tile-body">
-              <p className="td-tile-title">{bundleParent.name}</p>
-              <p className="td-tile-sub">{t("Voir le bundle complet", "View full bundle")}</p>
-            </div>
-            <ArrowRight className="td-tile-arrow" />
-          </Link>
-
-          {bundleSiblings.length > 0 && (
-            <div style={{ marginTop: 16 }}>
-              <span className="td-subhead" style={{ marginBottom: 10 }}>
-                {t("Autres outils du bundle", "Other tools in bundle")}
-              </span>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                {bundleSiblings.map(s => (
-                  <Link key={s.id} to={`${prefix}/tool/${(s as any).slug || s.id}`} className="td-chip">
-                    <ToolLogo tool={s as any} size={14} className="rounded" />
-                    {s.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       )}
 
@@ -206,11 +108,11 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
                       : p.shortDescription}
                   </p>
                   {(p as any).defaultMonthlyPrice === 0 ? (
-                    <span style={{ marginTop: 6, display: "inline-block", fontFamily: "var(--font-ui)", fontSize: 10, fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--color-text-strong)" }}>
+                    <span className="td-tile-price">
                       {t("Gratuit", "Free")}
                     </span>
                   ) : (p as any).defaultMonthlyPrice > 0 ? (
-                    <span style={{ marginTop: 6, display: "inline-block", fontFamily: "var(--font-mono, ui-monospace)", fontSize: 11, color: "var(--color-muted)" }}>
+                    <span className="td-tile-price">
                       {(() => { const price = resolveDisplayPrice(p, (p as any).defaultMonthlyPrice, currency); return `${price.converted ? "≈ " : ""}${formatCurrencyAmount(price.amount, price.nativePrice ? price.currency : currency, lang)}`; })()}/{t("mois", "mo")}
                     </span>
                   ) : null}

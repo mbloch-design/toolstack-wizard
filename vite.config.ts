@@ -215,9 +215,14 @@ function buildToolFaqSchema(params: {
             // Must match the visible FAQ answer (src/lib/toolFaq.ts).
             if (isPriceUndisclosed(tool)) {
               const verifiedOn = tool.pricing_v5?.verified_on;
+              // Written date, same as the visible FAQ (src/lib/toolFaq.ts).
+              const parsed = verifiedOn ? new Date(`${String(verifiedOn).slice(0, 10)}T00:00:00Z`) : null;
+              const written = !verifiedOn ? "" : parsed && !Number.isNaN(parsed.getTime())
+                ? new Intl.DateTimeFormat(isFr ? "fr-FR" : "en-US", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(parsed)
+                : String(verifiedOn);
               return isFr
-                ? `${name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedOn ? ` Prix vérifié le ${verifiedOn}.` : ""}`
-                : `${name} doesn't publish a price list; check the official page for current pricing.${verifiedOn ? ` Price verified on ${verifiedOn}.` : ""}`;
+                ? `${name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedOn ? ` Prix vérifié le ${written}.` : ""}`
+                : `${name} doesn't publish a price list; check the official page for current pricing.${verifiedOn ? ` Price verified on ${written}.` : ""}`;
             }
             if (isFr) {
               if (priceDisplay === 0) return `${name} est gratuit. Prix vérifié par ToolTrim.`;
@@ -266,8 +271,9 @@ function toolHasFreePlan(tool: any): boolean {
 // its 0 comparison price means "unknown", and an Offer at 0 would claim free.
 function buildToolOffersFor(tool: any, price: number | null, url: string) {
   const hasFree = toolHasFreePlan(tool);
-  if (isPriceUndisclosed(tool) && !hasFree) return undefined;
   const native = nativePriceFromTool(tool);
+  // An attested official price outranks the catalogue's "undisclosed" flag.
+  if (!native && isPriceUndisclosed(tool) && !hasFree) return undefined;
   // Only a price the vendor actually publishes may be declared. Without one, the
   // catalogue fallback is a normalised (often converted or zero) figure: stating
   // it would claim the wrong price or "free" on a paid tool.
@@ -276,6 +282,20 @@ function buildToolOffersFor(tool: any, price: number | null, url: string) {
   // amount; a 0 on a paid tool would claim "free".
   if (price != null && price > 0) return buildToolOffers(price, hasFree, "EUR", url);
   return hasFree ? buildToolOffers(0, true, "EUR", url) : undefined;
+}
+
+/** positiveNotes / negativeNotes for an editorial Review, from the visible pros and cons (max 3 each). */
+function reviewNotes(pros: unknown, cons: unknown) {
+  const notes = (values: unknown) => (Array.isArray(values) ? values : [])
+    .map((value) => (typeof value === "string" ? value.trim() : ""))
+    .filter(Boolean).slice(0, 3)
+    .map((name, index) => ({ "@type": "ListItem", position: index + 1, name }));
+  const positive = notes(pros);
+  const negative = notes(cons);
+  return {
+    ...(positive.length ? { positiveNotes: { "@type": "ItemList", itemListElement: positive } } : {}),
+    ...(negative.length ? { negativeNotes: { "@type": "ItemList", itemListElement: negative } } : {}),
+  };
 }
 
 function operatingSystemFor(tool: any): string | undefined {
@@ -1034,6 +1054,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 },
                 ...(isFr ? { name: `Avis ToolTrim : ${ts.labelFr}` } : { name: `ToolTrim review: ${ts.labelEn}` }),
                 ...((isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold) ? { reviewBody: String(isFr ? tool.verdict.threshold : tool.verdictEn.threshold).substring(0, 280) } : {}),
+                // Pros and cons shown in the For. / Against. sheet (Google's pros & cons markup).
+                ...reviewNotes(isFr ? tool.pros : tool.prosEn, isFr ? tool.cons : tool.consEn),
               };
             }
 

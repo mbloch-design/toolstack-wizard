@@ -1,6 +1,43 @@
 const BASE = "https://tooltrim.com";
 
-export function toolRecords(tools) {
+const AXES = ["valeurAjoutee", "simplicite", "utilisation", "puissance", "reversibilite"];
+const LABELS = (score, fr) => fr
+  ? (score >= 4.5 ? "Exceptionnel" : score >= 4 ? "Excellent" : score >= 3.5 ? "Très bon" : score >= 3 ? "Bon" : score >= 2.5 ? "Correct" : "Limité")
+  : (score >= 4.5 ? "Exceptional" : score >= 4 ? "Excellent" : score >= 3.5 ? "Very good" : score >= 3 ? "Good" : score >= 2.5 ? "Fair" : "Limited");
+const clean = (value) => (typeof value === "string" ? value.trim().replace(/[.\s]+$/, "") : "");
+const list = (values, max = 3) => (Array.isArray(values) ? values.map(clean).filter(Boolean).slice(0, max) : []);
+
+/**
+ * The editorial verdict exactly as published on the tool page, for answer
+ * engines. Only the evidence-based five-axis score is exported (same average
+ * as src/lib/toolTrimScore.ts, same 12-month staleness cap); a tool without a
+ * complete rating gets no number rather than a heuristic one.
+ */
+export function verdictRecord(full, lang) {
+  if (!full) return undefined;
+  const fr = lang === "fr";
+  const verdict = fr ? full.verdict : (full.verdictEn || undefined);
+  const rating = full.toolTrimRating;
+  let score;
+  if (rating && AXES.every((axis) => typeof rating[axis] === "number")) {
+    score = AXES.reduce((sum, axis) => sum + rating[axis], 0) / AXES.length;
+    if (rating.lastActivityVerifiedOn && (Date.now() - new Date(rating.lastActivityVerifiedOn).getTime()) / 86_400_000 > 365) score = Math.min(score, 3.5);
+    score = Math.round(score * 10) / 10;
+  }
+  const record = {
+    score: score === undefined ? undefined : `${score}/5`,
+    label: score === undefined ? undefined : LABELS(score, fr),
+    keep_if: clean(verdict?.keepIf?.[0]) || undefined,
+    avoid_if: clean(verdict?.avoidIf?.[0]) || undefined,
+    strengths: list(fr ? full.pros : full.prosEn),
+    weaknesses: list(fr ? full.cons : full.consEn),
+  };
+  if (!record.strengths.length) delete record.strengths;
+  if (!record.weaknesses.length) delete record.weaknesses;
+  return Object.values(record).some((value) => value !== undefined) ? record : undefined;
+}
+
+export function toolRecords(tools, fullBySlug = new Map()) {
   const slugs = new Set();
   return tools.map((tool) => {
     const slug = String(tool.slug || "").trim();
@@ -22,6 +59,9 @@ export function toolRecords(tools) {
       description_fr: tool.shortDescription || undefined,
       description_en: tool.shortDescriptionEn || undefined,
       alternatives: alternatives.length ? [...new Set(alternatives)] : undefined,
+      price_verified_on: fullBySlug.get(slug)?.pricing_v5?.verified_on || undefined,
+      verdict_fr: verdictRecord(fullBySlug.get(slug), "fr"),
+      verdict_en: verdictRecord(fullBySlug.get(slug), "en"),
     };
   });
 }

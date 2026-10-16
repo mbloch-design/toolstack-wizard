@@ -59,3 +59,12 @@ supabase/.temp/
 
 # Fiches en relecture privee, exclues des publications
 /.private-previews/
+# Copies numerotees de builds locaux : artefacts regenerables, jamais des sources.
+/dist [0-9]*/
+/dist-ssr [0-9]*/
+
+# Local agent tooling (skills, per-machine settings)
+.agents/
+.claude/skills/
+.claude/settings.json
+skills-lock.json

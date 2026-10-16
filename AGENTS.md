@@ -72,3 +72,11 @@ git log --oneline -10  # derniers commits
 4. `npm run build` pour valider
 5. Commit avec message conventionnel
 6. Mettre à jour CHANGELOG_AI.md
+
+## Hygiène du dépôt commune à Codex et Claude
+
+- Mettre à jour les références actives au lieu de créer des copies numérotées de code, de tests ou de handoffs.
+- Retirer les scripts ponctuels après usage lorsque leurs références ont été vérifiées ; Git conserve les versions suivies.
+- Ne pas confondre fichiers exclus du déploiement et fichiers inutiles : préserver les preuves catalogue et les travaux non publiés.
+- Séparer les artefacts de build reproductibles des sources ; ne pas les versionner.
+- CLAUDE.md renvoie à ce guide pour éviter deux jeux de conventions contradictoires.

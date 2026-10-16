@@ -36,7 +36,7 @@ Ne pas supprimer `tools_v4.json` ou `tools_index.json` avant d’avoir migré le
 ## Structure des pages
 
 ```
-/                      → HomePage
+/                      → redirection vers /en ; /:lang → HomePageV2
 /fr/tools              → ToolsPage (grille + diagnostic)
 /fr/category/:slug     → CategoryPage (filtres + tri)
 /fr/tool/:slug         → ToolDetailPage ← page principale
@@ -128,7 +128,6 @@ Toutes les nouvelles classes utilisent `@layer components` dans `index.css`.
 | `gi-*` | GuidesPage (index éditorial) |
 | `ga-*` | GuideDetailPage (article éditorial) |
 | `eh-*` | EditorialHero (composant réutilisable) |
-| `es-*` | EditorialSection |
 | `ec-*` | EditorialCard |
 | `nav-*` | Navbar + mega-panel |
 | `sk-*` | StacksPage (index stacks) |

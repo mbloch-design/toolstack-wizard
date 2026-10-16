@@ -106,23 +106,12 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
   };
 
   return (
-    <div className="td-section td-bundle">
-      <header className="td-bundle-head">
-        <h2 className="td-title">
-          <Package aria-hidden />
-          {isViewingParent
-            ? t(`Les outils de ${parentName}`, `Tools in ${parentName}`)
-            : t(`${parentName} : la suite complète`, `${parentName}: the full suite`)}
-        </h2>
-        <p className="td-bundle-sub">
-          {isViewingParent
-            ? t(`Cette suite regroupe ${members.length} outil${members.length > 1 ? "s" : ""}, inclus dans l'abonnement.`,
-                `This suite bundles ${members.length} tool${members.length > 1 ? "s" : ""}, included in the subscription.`)
-            : t(`${tool.name} fait partie de ${parentName}. ${members.length > 1 ? `${members.length} outils sont répertoriés` : "1 outil est répertorié"} dans la suite.`,
-                `${tool.name} is part of ${parentName}. ${members.length > 1 ? `${members.length} tools are listed` : "1 tool is listed"} in the suite.`)}
-        </p>
-      </header>
-
+    <div className="td-bundle td-bundle--inline">
+      <p className="td-bundle-label">
+        {isViewingParent
+          ? t("Inclus dans l'abonnement", "Included in the subscription")
+          : t(`Fait partie de ${parentName}`, `Part of ${parentName}`)}
+      </p>
       <ul className="td-bundle-tags">
         {!isViewingParent && parent && Tag(parent, { parent: true })}
         {visibleMembers.map((m) => Tag(m))}

@@ -10,7 +10,7 @@ Freelances et fondateurs solo (designers, devs, consultants, créateurs de conte
 
 ## Product Purpose
 
-ToolTrim aide à choisir les bons outils SaaS, pas à en découvrir de nouveaux. La valeur est dans le verdict éditorial — trancher là où les annuaires restent neutres. Succès = l'utilisateur repart avec une décision, pas avec plus de questions.
+ToolTrim aide à explorer les outils autour de sa stack et à choisir ceux qui répondent à ses usages. La valeur est dans le verdict éditorial — trancher là où les annuaires restent neutres. Succès = l'utilisateur repart avec une décision, pas avec plus de questions.
 
 ## Brand Personality
 

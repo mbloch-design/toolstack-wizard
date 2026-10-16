@@ -58,7 +58,10 @@ export function resolveMonthlyPrice(tool: {
   return typeof legacy === "number" && Number.isFinite(legacy) && legacy >= 0 ? legacy : 0;
 }
 
-const NEGATION_RE = /no free|aucun|pas de|non communiqué/i;
+// Only a negation of the free plan itself counts. "Plan gratuit : …, aucun
+// agent IA" describes a free plan; a bare /aucun|pas de/ match marked
+// Mailchimp, Zoom and Blender as having none.
+const NEGATION_RE = /^\s*(?:pas de|aucune?|no|non|sans)\b|(?:pas de|aucune?|sans)\s+(?:plan|version|offre|formule|forfait|palier|tier)\s+gratuit|no free (?:plan|tier|version)|non communiqué/i;
 const TRIAL_ONLY_RE = /essai|trial|jours? gratuit|demo gratuite|démo gratuite/i;
 // Phrases that override a trial-word match — the free text can mention
 // "essai" while describing an actually-permanent free plan (Dubsado: "essai

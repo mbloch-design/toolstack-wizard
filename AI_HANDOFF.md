@@ -2,7 +2,7 @@
 
 > Mise à jour : 1 juillet 2026 — Repasse catalogue/parcours Créatif branche par branche, validations vertes, G4 toujours non accepté.
 >
-> Mémoire de référence unique : ce fichier. `AI_HANDOFF 2.md` est une ancienne version incomplète.
+> Historique du diagnostic adaptatif : ce fichier. Pour les priorités actuelles, lire `docs/ROADMAP.md` et `docs/MA_STACK_ROADMAP.md`. Les anciennes copies numérotées ont été retirées ; leur contenu reste dans Git.
 
 ## Pilotage obligatoire
 

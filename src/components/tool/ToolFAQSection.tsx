@@ -22,8 +22,7 @@ export default function ToolFAQSection({ tool, displayPrice, verifiedOn, alterna
   return (
     <section className="td-tool-faq">
       <header className="td-faq-heading">
-        <h2 className="td-title">{t("Questions fréquentes.", "Frequently asked questions.")}</h2>
-        <p>{t(`Les réponses utiles avant de choisir ${tool.name}.`, `What to know before choosing ${tool.name}.`)}</p>
+        <h2 className="td-title">{t("Questions fréquentes.", "Frequently asked questions.")} <span className="tt-title-muted">{t(`Ce qu’on nous demande sur ${tool.name}.`, `What people ask about ${tool.name}.`)}</span></h2>
       </header>
       <div className="td-faq-list">
         {faqs.map((faq, index) => (

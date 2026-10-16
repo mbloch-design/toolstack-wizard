@@ -4,16 +4,14 @@ import { describe, expect, it } from "vitest";
 
 const SITEWIDE_LINK_SOURCES = [
   "src/components/Footer.tsx",
-  "src/components/home/FinalCTA.tsx",
-  "src/components/home/HeroSection.tsx",
-  "src/components/home/PersonaSavings.tsx",
   "src/components/Navbar.tsx",
   "src/components/tool/StickyDecisionCard.tsx",
   "src/pages/AboutPage.tsx",
   "src/pages/ComparePage.tsx",
   "src/pages/ContactPage.tsx",
   "src/pages/HomePageV2.tsx",
-  "src/pages/HomePage.tsx",
+  "src/components/home/HeroSectionV2.tsx",
+  "src/components/home/StackGoalsSection.tsx",
   "src/pages/TransparencyPage.tsx",
 ];
 

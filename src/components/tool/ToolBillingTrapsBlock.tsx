@@ -1,4 +1,5 @@
 import type { Tool } from "@/data/types";
+import { CircleAlert } from "@/lib/icons";
 
 interface Props {
   tool: Tool;
@@ -19,23 +20,18 @@ export default function ToolBillingTrapsBlock({ tool, lang, t }: Props) {
 
   if (!traps?.length) return null;
 
+  // An alert before paying, tinted like the "against" column it echoes.
   return (
-    <div style={{ marginTop: 32 }}>
-      <p style={{ fontFamily: "var(--font-brand)", fontSize: 19, fontWeight: 600, letterSpacing: "-0.02em", color: "var(--color-text)", marginBottom: 16 }}>
-        {t(`Les pièges de la facturation ${/^[aeiouyàâéèêëîïôûü]/i.test(tool.name) ? "d'" : "de "}${tool.name}`, `${tool.name}'s billing traps`)}
-      </p>
-      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+    <aside className="td-billing-alert" aria-label={t("Avant de payer", "Before you pay")}>
+      <CircleAlert aria-hidden className="td-billing-alert-icon" />
+      <div className="td-billing-alert-body">
         {traps.map((trap: { title: string; text: string }, i: number) => (
-          <div key={i} style={{ border: "1px solid var(--color-border)", borderRadius: "var(--radius-md)", padding: "14px 18px", background: "var(--color-surface-soft)" }}>
-            <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 600, color: "var(--color-text-strong)", marginBottom: 4 }}>
-              {trap.title}
-            </p>
-            <p style={{ fontFamily: "var(--font-ui)", fontSize: 14, lineHeight: 1.55, color: "var(--color-text-secondary)" }}>
-              {trap.text}
-            </p>
+          <div key={i} className="td-billing-alert-item">
+            <p className="td-billing-alert-title">{trap.title}</p>
+            <p className="td-billing-alert-text">{trap.text}</p>
           </div>
         ))}
       </div>
-    </div>
+    </aside>
   );
 }

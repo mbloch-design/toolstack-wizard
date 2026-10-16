@@ -39,12 +39,9 @@ Aucun `<img>` direct, aucun composant local, aucun carré vide sans fallback.
 - Composant local qui duplique la logique de ToolLogo
 - Carré placeholder sans initiale de fallback
 
-### Exceptions homepage (ne pas modifier)
-- `HeroSection.tsx` → `AuditToolLogo` (données pré-hardcodées, domaine uniquement)
-- `TickerBar.tsx` → override `logoOverride` pour effet visuel animé
-- `HomePage.tsx` → inline `getToolLogoSources` pour animations personnalisées
+### Homepage active
 
----
+La route d'accueil utilise `HomePageV2.tsx`, `HeroSectionV2.tsx` et `StackGoalsSection.tsx`. Les composants de l'ancienne homepage ont été retirés : ne pas réintroduire leurs exceptions de logos ou leurs styles pour un nouveau chantier. Consulter les composants actifs et les tokens dans `src/index.css`.
 
 ## Palette
 
@@ -608,13 +605,6 @@ Déclenchement Markdown : `> À retenir : texte…` (ou `Key takeaway`, `À note
 ---
 
 ## Cards / Listings — système unifié
-
-### ToolLogoPile (tlp-*) — piles de produits
-
-- Avatars circulaires de 42px (`md`) ou 34px (`sm`), avec un recouvrement constant.
-- Chaque logo conserve un fond blanc et un contour de séparation afin de rester lisible sur toute surface.
-- Le dernier avatar peut afficher `+n` pour les outils non visibles.
-- Utilisé dans les cards de stacks, les guides et les rails de homepage ; les piles interactives de l’éditeur de stack conservent leur composant dédié.
 
 ### ToolCardEditorial (tce-*) — grille outils
 Carte média éditoriale utilisée par le catalogue, les catégories et les rails de découverte.
@@ -1423,43 +1413,6 @@ Tente dans l'ordre :
 - ❌ Colonnes décisionnelles dans le hero
 
 ---
-
-## Composant Ticker (TickerBar)
-
-Barre animée sur la homepage. Signature éditoriale, pas un dashboard.
-
-**Fichier :** `src/components/home/TickerBar.tsx`
-
-**Règles :**
-- Hauteur fixe : `40px`
-- Pas de logos dans la barre (bruyant)
-- Textes courts : outil(s) + décision en 2-3 mots max
-- Séparateur : `◌` (opacité 0.35)
-- Animation : `45s linear infinite` (lente, seamless)
-- `prefers-reduced-motion` : animation désactivée
-
-**Classes CSS (`hpt-*`) :**
-
-| Classe | Rôle |
-|---|---|
-| `.hpt-track` | Conteneur flex animé |
-| `.hpt-item-group` | Groupe outil + décision + sep |
-| `.hpt-tools` | Nom(s) d'outil — 400 / #6F6F68 |
-| `.hpt-decision` | Décision courte — 600 / #222222 |
-| `.hpt-sep` | Séparateur ◌ — opacity 0.35 |
-
-**Anatomie d'un item :**
-```
-Notion + Trello   Doublon possible   ◌
-[hpt-tools]       [hpt-decision]     [hpt-sep]
-```
-
-**À ne pas faire :**
-- ❌ Logos dans la barre
-- ❌ Phrases longues (> 4 mots par fragment)
-- ❌ Couleurs rouge/bleu dans la barre
-- ❌ Hauteur > 44px
-- ❌ Animation < 35s (trop rapide)
 
 ## Homepage Decision Ticker — logo version
 
