@@ -1,3 +1,9 @@
+## 2026-10-16 : fonctionnalites presentees en tags informatifs
+
+- Tuiles remplacees par des tags compacts : texte 13 px, espacement 6 x 10 px, icone 14 px, coins 6 px, largeur naturelle et retour entre les mots.
+- Aucun lien, bouton ou focus propre aux tags. Bordure et animation au survol retirees ; curseur standard. Les fonctionnalites et la confidentialite de Sovkern restent inchangees.
+- Tests app : 395 PASS ; TypeScript app PASS. Styles calcules et rendu reel controles dans le navigateur.
+
 ## 2026-10-16 : blocs de fonctionnalites adaptatifs
 
 - Les tuiles de fonctionnalites des fiches utilisent leur largeur naturelle et passent a la ligne selon l'espace disponible, au lieu de conserver trois colonnes fixes. Césure automatique et coupure au milieu des mots desactivees.
