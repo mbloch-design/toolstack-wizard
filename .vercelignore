@@ -1,4 +1,5 @@
 .build-trash/
+.private-previews/
 .go*-apply.sh
 .go*-staging/
 .go*-work/

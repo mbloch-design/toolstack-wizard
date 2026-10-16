@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1349
+# Records: 1351
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
@@ -18899,5 +18899,33 @@
     },
     "description_fr": "Facturation, devis, CRM client, connexion bancaire et trésorerie réunis sur une seule plateforme pour freelances et TPE françaises, avec un accès comptable gratuit inclus.",
     "description_en": "Invoicing, quotes, client CRM, bank connection and cash flow in one platform for French freelancers and small businesses, with free accountant access included."
+  },
+  {
+    "name": "ViralSnap",
+    "slug": "viralsnap",
+    "url_fr": "https://tooltrim.com/fr/tool/viralsnap",
+    "url_en": "https://tooltrim.com/en/tool/viralsnap",
+    "website": "https://getviralsnap.com/",
+    "category": "creation",
+    "pricing": {
+      "free": "100 crédits à vie ; jusqu’à 5 analyses si les crédits sont consacrés uniquement à Analyze. Des outils gratuits complémentaires sont aussi proposés.",
+      "paid": "Starter : 12 $US/mois pour 1 000 crédits mensuels. Offre Teams & Agencies sur devis. Taxes et conditions de facturation à confirmer au paiement."
+    },
+    "description_fr": "Analyse des Reels Instagram publics et réécriture de scripts à partir de leurs hooks, scènes et rythmes.",
+    "description_en": "Analyze public Instagram Reels and rewrite scripts from their hooks, scenes, and pacing."
+  },
+  {
+    "name": "Sprokl",
+    "slug": "sprokl",
+    "url_fr": "https://tooltrim.com/fr/tool/sprokl",
+    "url_en": "https://tooltrim.com/en/tool/sprokl",
+    "website": "https://getsprokl.com/",
+    "category": "creation",
+    "pricing": {
+      "free": "Free : 0 $US/mois, avec 3 crédits par mois et des exports standard.",
+      "paid": "Team : 39 $US/mois pour 60 crédits ; Scale : 99 $US/mois pour 200 crédits. Crédits renouvelés chaque mois ; annulation possible à tout moment selon la page tarifaire."
+    },
+    "description_fr": "Transformez vos ressources produit en angles, scripts et variations vidéo pour tester des publicités e-commerce.",
+    "description_en": "Turn product assets into angles, scripts, and video variations for ecommerce ad testing."
   }
 ]

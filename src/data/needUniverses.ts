@@ -1,5 +1,5 @@
 /**
- * The eight needs the site is organised around (homepage "Explore by need"
+ * The needs the site is organised around (homepage "Explore by need"
  * and the tools catalogue shelves). Each carries three hand-picked tools
  * with a one-line editorial take: a reference, a ToolTrim pick and a
  * discovery. That order is an editorial rule only and is never labelled.

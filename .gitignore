@@ -56,3 +56,6 @@ supabase/.temp/
 /r11-test-results/
 
 /search-test-results/
+
+# Fiches en relecture privee, exclues des publications
+/.private-previews/

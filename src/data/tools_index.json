@@ -54625,5 +54625,87 @@
       "indy",
       "tiime"
     ]
+  },
+  {
+    "id": "viralsnap",
+    "slug": "viralsnap",
+    "name": "ViralSnap",
+    "categoryId": "creation",
+    "shortDescription": "Analyse des Reels Instagram publics et réécriture de scripts à partir de leurs hooks, scènes et rythmes.",
+    "shortDescriptionEn": "Analyze public Instagram Reels and rewrite scripts from their hooks, scenes, and pacing.",
+    "pricing": {
+      "free": "100 crédits à vie ; jusqu’à 5 analyses si les crédits sont consacrés uniquement à Analyze. Des outils gratuits complémentaires sont aussi proposés.",
+      "paid": "Starter : 12 $US/mois pour 1 000 crédits mensuels. Offre Teams & Agencies sur devis. Taxes et conditions de facturation à confirmer au paiement."
+    },
+    "pricingEn": {
+      "free": "100 lifetime credits; up to 5 analyses if credits are spent only on Analyze. Additional free tools are also available.",
+      "paid": "Starter: US$12/month for 1,000 monthly credits. Teams & Agencies is custom-priced. Confirm taxes and billing terms at checkout."
+    },
+    "nativePrices": [
+      {
+        "amount": 12,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://getviralsnap.com/",
+    "tool_type": "specialise",
+    "functional_needs": [
+      "creator-workflow",
+      "short-form-video"
+    ],
+    "verticals": [
+      "creator-economy",
+      "social-media"
+    ],
+    "relevantFor": [
+      "Créateurs UGC",
+      "Créateurs de vidéos courtes",
+      "Équipes social media"
+    ],
+    "personas": [
+      "lina"
+    ]
+  },
+  {
+    "id": "sprokl",
+    "slug": "sprokl",
+    "name": "Sprokl",
+    "categoryId": "creation",
+    "shortDescription": "Transformez vos ressources produit en angles, scripts et variations vidéo pour tester des publicités e-commerce.",
+    "shortDescriptionEn": "Turn product assets into angles, scripts, and video variations for ecommerce ad testing.",
+    "pricing": {
+      "free": "Free : 0 $US/mois, avec 3 crédits par mois et des exports standard.",
+      "paid": "Team : 39 $US/mois pour 60 crédits ; Scale : 99 $US/mois pour 200 crédits. Crédits renouvelés chaque mois ; annulation possible à tout moment selon la page tarifaire."
+    },
+    "pricingEn": {
+      "free": "Free: US$0/month, with 3 credits per month and standard exports.",
+      "paid": "Team: US$39/month for 60 credits; Scale: US$99/month for 200 credits. Credits reset monthly; cancel anytime according to the pricing page."
+    },
+    "nativePrices": [
+      {
+        "amount": 39,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://getsprokl.com/",
+    "tool_type": "ia",
+    "functional_needs": [
+      "creator-workflow"
+    ],
+    "verticals": [
+      "ecommerce",
+      "marketing",
+      "social-media"
+    ],
+    "relevantFor": [
+      "Marques e-commerce et DTC",
+      "Équipes Shopify",
+      "Annonceurs TikTok et paid social"
+    ],
+    "personas": [
+      "lina"
+    ]
   }
 ]

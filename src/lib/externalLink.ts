@@ -73,6 +73,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.atelier-atypique.fr",
   "newbi.fr",
   "www.newbi.fr",
+  "sovkern.com",
+  "www.sovkern.com",
 ]);
 
 /** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait

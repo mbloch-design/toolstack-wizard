@@ -23,7 +23,7 @@ describe("relPourLienOutil", () => {
     },
   );
 
-  it.each(["https://novadesko.com/", "https://www.convoscore.com/"])(
+  it.each(["https://novadesko.com/", "https://www.convoscore.com/", "https://getviralsnap.com/", "https://getsprokl.com/"])(
     "marks the official website link as nofollow: %s",
     (url) => {
       expect(relPourLienOutil(url, "", url)).toBe("nofollow noopener noreferrer");
@@ -37,6 +37,13 @@ describe("relPourLienOutil", () => {
 
   it.each(["https://nicklaunches.com/", "https://www.nicklaunches.com/"])(
     "keeps the Nick Launches official link dofollow: %s",
+    (url) => {
+      expect(relPourLienOutil(url, "", url)).toBe("noopener noreferrer");
+    },
+  );
+
+  it.each(["https://sovkern.com/", "https://www.sovkern.com/"])(
+    "keeps Sovkern's official link dofollow: %s",
     (url) => {
       expect(relPourLienOutil(url, "", url)).toBe("noopener noreferrer");
     },

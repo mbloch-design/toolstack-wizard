@@ -5713,3 +5713,12 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - Ajout de trois visuels produit publiés sur le site officiel Newbi : tableau de bord, éditeur de facture et aperçu de facture.
 - Galerie affichée sur la fiche en l'absence de médias catalogue, avec textes alternatifs FR/EN et conservation du ratio complet des captures.
 - Sources vérifiées sur newbi.fr ; aucun visuel fabriqué ou capture ToolTrim ajoutée.
+
+## 2026-10-16 : synchronisation GitHub et fiches locales
+
+- Synchronisation de main avec GitHub d4fd0a8ec4 : accueil actuel « Explorer par besoin », catégories voisines, comparatifs et derniers correctifs recherche/soumission.
+- Configuration du fetch corrigée pour actualiser origin/main depuis GitHub ; l’ancien réglage ne suivait qu’une branche de travail historique.
+- Réintégration des fiches FR/EN ViralSnap et Sprokl dans le catalogue récent, en nofollow.
+- Sovkern reste en relecture privée : brouillon local dans .private-previews/sovkern, exclu du catalogue, de l’accueil, des fichiers LLM et des envois Git/Vercel ordinaires. La mise en avant à l’accueil attend la validation éditoriale.
+- Les anciennes modifications locales des pages soumission, catégories et de leur CSS sont conservées dans le stash « local work before GitHub main sync 2026-10-15 » ; les versions récentes de GitHub sont utilisées.
+- Validation : TypeScript et 23 tests des liens/recherche PASS ; accueil, recherche vers Sovkern et trois fiches contrôlés dans le navigateur ; build production, sitemap, routes, fichiers LLM et budgets PASS (697,7 Mio HTML pour 716 Mio autorisés). Aucun push.
