@@ -1,3 +1,9 @@
+## 2026-10-16 : correction du garde-fou des tokens sur les tags
+
+- Le commit `78f2e72c` avait ajouté un rayon littéral de 6 px sur les tags de fonctionnalités, portant le compteur CSS à 222 pour une limite de 221 et bloquant la CI.
+- Remplacement par le token existant `var(--radius-sm)` (0,375 rem, soit 6 px à la taille racine standard). Baseline conservée.
+- Validation : `npm run validate:design-tokens` PASS (221 rayons littéraux) ; test `ToolFeaturesBlock` et build production complet PASS.
+
 ## 2026-10-16 : fonctionnalites presentees en tags informatifs
 
 - Tuiles remplacees par des tags compacts : texte 13 px, espacement 6 x 10 px, icone 14 px, coins 6 px, largeur naturelle et retour entre les mots.
