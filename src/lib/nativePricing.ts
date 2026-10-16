@@ -8,6 +8,8 @@ type NativePrice = {
   amount: number;
   currency: Currency;
   source: "canonical_plan" | "pricing_truth";
+  /** Register row read explicitly on the vendor page. */
+  official?: boolean;
 };
 
 export type ResolvedDisplayPrice = {
@@ -52,12 +54,17 @@ const pricingTruth = (() => {
   const idIndex = headers.indexOf("id");
   const amountIndex = headers.indexOf("price_original");
   const currencyIndex = headers.indexOf("price_original_currency");
+  const periodIndex = headers.indexOf("price_original_period");
+  const statusIndex = headers.indexOf("verification_status");
   const result = new Map<string, NativePrice>();
   rows.forEach((row) => {
     const currency = row[currencyIndex];
     const amount = Number(row[amountIndex]);
+    // Tool pages show a monthly compare price: only monthly rows feed it
+    // (a one-time licence must never read as "/mois").
+    if (row[periodIndex] !== "monthly_public") return;
     if (row[idIndex] && Number.isFinite(amount) && (currency === "EUR" || currency === "USD" || currency === "GBP")) {
-      result.set(row[idIndex], { amount, currency, source: "pricing_truth" });
+      result.set(row[idIndex], { amount, currency, source: "pricing_truth", official: row[statusIndex] === "official_explicit" });
     }
   });
   return result;

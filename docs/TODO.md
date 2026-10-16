@@ -194,3 +194,9 @@ Mesures Playwright à 1440, 1024 et 390 px. Tout appliqué le 9 oct. (« go sur 
 ## Catalogue : accents manquants dans les descriptions courtes (constat 16/10/2026)
 - Vues sur l'Explorer autour d'Adobe Photoshop : Affinity Photo « Editeur … developpement RAW … entierement gratuit ». Corriger dans Supabase (source de vérité), puis regénérer le JSON ; ne pas éditer le JSON à la main.
 - Ideogram : l'image OG stockée est une page « Performing security verification » (Cloudflare) et non une capture du produit. À remplacer dans le catalogue (constat 16/10/2026, Explorer autour d'Adobe Photoshop).
+
+## Registre des prix (src/data/pricing_truth.csv), constat 16/10/2026
+- Le registre du dépôt est la source des prix attestés indépendante de Supabase (fiche outil pour les lignes mensuelles, Ma stack pour toutes les périodes). Test de garde : src/test/ma-stack/pricingRegister.test.ts. Après ajout : `node scripts/gen-native-prices.mjs`.
+- Ajoutés le 16/10 : Granola (14 $/utilisateur/mois), ShotDeck (12,95 $/mois), Pixelmator Pro (49,99 $ achat unique), vcita (35 $/mois facturé annuellement, 420 $/an).
+- vcita : la fiche catalogue dit « Gratuit : toutes les fonctionnalités », la page officielle ne propose qu'un essai de 14 jours. À corriger.
+- Restent sans prix attesté : Adobe Stock (seulement des prix en euros géolocalisés, 29,99 €/mois avec engagement annuel) et Squarespace (euros géolocalisés + promotion -50 %). Relever le prix en dollars depuis une page US avant d'ajouter.

@@ -57,17 +57,19 @@ for (const row of rows) {
   if (!id || !Number.isFinite(amount) || amount <= 0) { skipped += 1; continue; }
   if (currency !== "EUR" && currency !== "USD" && currency !== "GBP") { skipped += 1; continue; }
   if (!verifiedOn) { skipped += 1; continue; }
-  // This fallback is monthly. Never turn an annual/one-time/unknown amount
-  // into a monthly estimate; canonical plans retain their own billing period.
-  if (row[iPeriod] !== "monthly_public") { skipped += 1; continue; }
+  // Keep the vendor's own billing period. An annual or one-time price is
+  // never turned into a monthly estimate here; consumers decide what to do
+  // with it (Ma stack shows a one-time licence apart from the monthly total).
+  const period = { monthly_public: "monthly", annual_public: "annual", one_time: "once", once: "once" }[row[iPeriod]];
+  if (!period) { skipped += 1; continue; }
   const freeFlag = row[iFree]?.toLowerCase();
   const freeCoreAvailable = freeFlag === "true" ? true : freeFlag === "false" ? false : null;
-  entries.push({ id, amount, currency, verifiedOn, freeCoreAvailable, status: row[iStatus] || "" });
+  entries.push({ id, amount, currency, period, verifiedOn, freeCoreAvailable, status: row[iStatus] || "" });
 }
 entries.sort((a, b) => a.id.localeCompare(b.id));
 
 const body = entries
-  .map((e) => `  ${JSON.stringify(e.id)}: { amount: ${e.amount}, currency: "${e.currency}", period: "monthly", freeCoreAvailable: ${e.freeCoreAvailable}, verifiedOn: "${e.verifiedOn}" },`)
+  .map((e) => `  ${JSON.stringify(e.id)}: { amount: ${e.amount}, currency: "${e.currency}", period: "${e.period}", freeCoreAvailable: ${e.freeCoreAvailable}, verifiedOn: "${e.verifiedOn}", official: ${e.status === "official_explicit"} },`)
   .join("\n");
 
 const out = `// Genere par scripts/gen-native-prices.mjs depuis src/data/pricing_truth.csv.
@@ -80,9 +82,11 @@ const out = `// Genere par scripts/gen-native-prices.mjs depuis src/data/pricing
 export type NativePriceRecord = {
   amount: number;
   currency: "EUR" | "USD" | "GBP";
-  period: "monthly";
+  period: "monthly" | "annual" | "once";
   freeCoreAvailable: boolean | null;
   verifiedOn: string;
+  /** Read explicitly on the vendor's official pricing page: wins over the catalogue. */
+  official: boolean;
 };
 
 export const NATIVE_PRICES: Record<string, NativePriceRecord> = {
