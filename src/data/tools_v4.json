@@ -1,5 +1,242 @@
 [
   {
+    "id": "chronokura",
+    "slug": "chronokura",
+    "name": "Chronokura",
+    "category": "productivity-tracking",
+    "shortDescription": "Suivi du temps, clients et factures sur Mac, en achat unique avec un mode local.",
+    "shortDescriptionEn": "Time tracking, clients and invoicing on Mac, with a one-time purchase and local mode.",
+    "description": "Une application Mac pour relier les heures travaillées aux factures, sans abonnement. Elle vise surtout les indépendants et les petites activités gérées par une seule personne.",
+    "longDescription": "Chronokura convient à un freelance qui veut suivre ses heures puis facturer ses clients sur son Mac, sans multiplier les abonnements. Le minuteur est accessible depuis la barre de menus ; les saisies peuvent aussi être ajoutées manuellement et rattachées à un client ou à un projet.\n\nLes heures peuvent alimenter des factures, avec modèles personnalisables, TVA et rapports PDF. L’application propose aussi des devis, des rappels et des factures récurrentes. Elle reste un outil individuel : ce n’est pas une plateforme collaborative de suivi d’équipe.\n\nLes données et sauvegardes peuvent rester locales. La synchronisation iCloud et les dossiers cloud sont des options, pas des conditions d’utilisation. HemerAI fonctionne localement via Ollama après installation du modèle ; le mode Apple Intelligence peut utiliser Private Cloud Compute pour certaines demandes. « Sans cloud » dépend donc des options choisies.\n\nL’éditeur annonce macOS 26 ou ultérieur et Apple Silicon. L’achat unique est intéressant pour une activité solo équipée d’un Mac compatible ; il ne remplace pas la vérification des formats attendus par son comptable ou ses clients.",
+    "longDescriptionEn": "Chronokura suits a freelancer who wants to turn tracked work into client invoices on a Mac without another subscription. Start the menu-bar timer or enter time manually, then assign work to clients and projects.\n\nTracked hours can feed invoices with customizable templates, VAT settings and PDF reports. Quotes, reminders and recurring invoices are also documented. This is an individual app, not a collaborative team time-tracking platform.\n\nData and backups can remain local. iCloud sync and cloud folders are optional. HemerAI runs locally through Ollama once the model is installed; Apple Intelligence may use Private Cloud Compute for some requests. Cloud-free operation therefore depends on the selected options.\n\nThe publisher specifies macOS 26 or later and Apple Silicon. The one-time purchase is appealing for a solo practice with a compatible Mac; confirm that the available output formats fit your accountant and customers.",
+    "pricing": {
+      "free": "Essai gratuit limité en nombre de clients, projets, saisies et factures. Les plafonds affichés diffèrent entre le site, la documentation et les notes de version.",
+      "paid": "Chronokura Pro : 19,99 € en achat unique, licence à vie sans abonnement selon le site officiel. Tarif final selon la boutique App Store ; mises à jour gratuites annoncées."
+    },
+    "pricingEn": {
+      "free": "Limited free trial. Customer, project, entry and invoice limits differ between the website, documentation and release notes.",
+      "paid": "Chronokura Pro: €19.99 one-time lifetime purchase according to the official website. Final price depends on the App Store storefront; free updates are advertised."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Chronokura Pro : 19,99 € en achat unique",
+      "compare_plan_kind": "one_time",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-16",
+      "official_source_url": "https://chronokura.com/",
+      "source_domain": "chronokura.com",
+      "location_sensitive": true,
+      "usage_sensitive": false,
+      "cautions": [
+        "Achat unique, pas un tarif mensuel. Le prix final dépend de la boutique App Store.",
+        "Les plafonds de l’essai diffèrent selon les pages et versions publiées.",
+        "macOS 26 et Apple Silicon annoncés ; IA locale via Ollama, cloud possible avec Apple Intelligence ou synchronisation activée."
+      ],
+      "plans": [
+        {
+          "planKey": "pro-lifetime",
+          "displayName": "Chronokura Pro : licence à vie",
+          "summary": "Achat unique, sans abonnement. Mises à jour gratuites annoncées.",
+          "featureHighlights": [
+            "Clients, projets et saisies illimités",
+            "Factures et rapports PDF",
+            "IA locale optionnelle via Ollama"
+          ],
+          "detailsSourceUrl": "https://chronokura.com/",
+          "pricingUnit": "license",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "Website EUR offer",
+          "observedLocale": "en",
+          "observedOn": "2026-10-16",
+          "lastConfirmedOn": "2026-10-16"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Chronokura Pro: €19.99 one-time",
+      "compare_plan_kind": "one_time",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-16",
+      "official_source_url": "https://chronokura.com/",
+      "source_domain": "chronokura.com",
+      "location_sensitive": true,
+      "usage_sensitive": false,
+      "cautions": [
+        "One-time purchase, not a monthly price. Final pricing depends on the App Store storefront.",
+        "Trial limits differ between published pages and release notes.",
+        "macOS 26 and Apple Silicon required. Ollama runs locally; optional sync or Apple Intelligence can involve cloud processing."
+      ],
+      "plans": [
+        {
+          "planKey": "pro-lifetime",
+          "displayName": "Chronokura Pro: lifetime license",
+          "summary": "One-time purchase, no subscription. Free updates advertised.",
+          "featureHighlights": [
+            "Unlimited clients, projects and entries",
+            "Invoices and PDF reports",
+            "Optional local AI with Ollama"
+          ],
+          "detailsSourceUrl": "https://chronokura.com/",
+          "pricingUnit": "license",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "Website EUR offer",
+          "observedLocale": "en",
+          "observedOn": "2026-10-16",
+          "lastConfirmedOn": "2026-10-16"
+        }
+      ]
+    },
+    "websiteUrl": "https://chronokura.com/",
+    "affiliateLink": "",
+    "logo": "https://chronokura.com/wp-content/uploads/2026/05/favicon-chronokura-300x300.png",
+    "ogImageUrl": "https://chronokura.com/wp-content/uploads/2026/02/Bildschirmfoto-2026-02-25-um-15.55.44.png",
+    "galleryImages": [
+      "https://chronokura.com/wp-content/uploads/2026/04/Clients-Edit-scaled.png",
+      "https://chronokura.com/wp-content/uploads/2026/04/Invoice-1-1024x662.png"
+    ],
+    "pros": [
+      "Les heures suivies alimentent les factures dans la même application.",
+      "Achat unique plutôt qu’un abonnement pour une activité individuelle.",
+      "Mode local, sauvegardes et assistant Ollama optionnel."
+    ],
+    "prosEn": [
+      "Tracked hours feed invoices in the same app.",
+      "A one-time purchase rather than another solo-business subscription.",
+      "Local mode, backups and an optional Ollama assistant."
+    ],
+    "cons": [
+      "macOS 26 et Apple Silicon sont requis selon l’éditeur.",
+      "Pas de suivi collaboratif d’une équipe ou d’accès web multiplateforme.",
+      "L’usage sans cloud dépend des options de synchronisation et d’IA choisies."
+    ],
+    "consEn": [
+      "The publisher requires macOS 26 and Apple Silicon.",
+      "No collaborative team tracking or cross-platform web access.",
+      "Cloud-free use depends on sync and AI settings."
+    ],
+    "useCases": [
+      "Facturer les heures consacrées à une mission client.",
+      "Suivre les montants ouverts, facturés et payés.",
+      "Préparer un rapport PDF des heures pour un client.",
+      "Gérer ses données sur son Mac avec des sauvegardes locales."
+    ],
+    "useCasesEn": [
+      "Invoice time spent on a client assignment.",
+      "Track open, billed and paid revenue.",
+      "Prepare a PDF time report for a customer.",
+      "Manage records on a Mac with local backups."
+    ],
+    "relevantFor": [
+      "Freelances qui facturent au temps passé",
+      "Consultants et petites activités individuelles sur Mac"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "alternatives": [
+      "toggl",
+      "harvest",
+      "clockify"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu travailles seul sur un Mac compatible et veux relier suivi du temps et facturation sans abonnement."
+      ],
+      "avoidIf": [
+        "Tu dois suivre les heures d’une équipe, travailler sur Windows ou disposer d’un accès web partagé."
+      ],
+      "threshold": "Teste le parcours heures → facture et un rapport PDF avec ton workflow réel avant l’achat unique.",
+      "billingTraps": [
+        {
+          "title": "Un achat, pas un abonnement",
+          "text": "19,99 € affichés sur le site officiel. Ne pas convertir ce prix en coût mensuel ; la boutique peut afficher un autre tarif local."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You work solo on a compatible Mac and want time tracking and invoicing without a subscription."
+      ],
+      "avoidIf": [
+        "You need shared team time tracking, Windows support or a browser-based workspace."
+      ],
+      "threshold": "Try the time-to-invoice workflow and a PDF report before the one-time purchase."
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 4,
+      "notedOn": "2026-10-16",
+      "lastActivityVerifiedOn": "2026-10-16",
+      "evidence": {
+        "valeurAjoutee": "Suivi des heures et factures réunis en achat unique : pertinent pour une activité solo sans besoin collaboratif. Source : chronokura.com, 16 octobre 2026.",
+        "simplicite": "Minuteur de barre de menus, saisie manuelle et modèles de factures ; l’installation de l’IA reste optionnelle. Source : chronokura.com/chronokura-documentation-feature-overview/, 16 octobre 2026.",
+        "utilisation": "Clients, projets, temps et factures forment un parcours cohérent pour le travail individuel. Analyse documentaire, pas un test terrain. Source : apps.apple.com, 16 octobre 2026.",
+        "puissance": "Taux horaires, forfaits, factures récurrentes, devis et assistant local couvrent les besoins décrits d’un indépendant. Source : chronokura.com/chronokura-documentation-feature-overview/, 16 octobre 2026.",
+        "reversibilite": "Rapports et factures PDF, stockage choisi et sauvegardes restaurables ; pas de promesse d’export structuré complet vers un concurrent. Source : chronokura.com/chronokura-documentation-feature-overview/, 16 octobre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Time tracking and invoicing together in a one-time purchase suit solo work without collaboration needs. Source: chronokura.com, October 16, 2026.",
+        "simplicite": "Menu-bar timer, manual entries and invoice templates; AI installation is optional. Source: chronokura.com/chronokura-documentation-feature-overview/, October 16, 2026.",
+        "utilisation": "Clients, projects, time and invoices form a coherent solo workflow. Document-based assessment, not hands-on testing. Source: apps.apple.com, October 16, 2026.",
+        "puissance": "Hourly rates, flat fees, recurring invoices, quotes and local AI cover the documented solo workflow. Source: chronokura.com/chronokura-documentation-feature-overview/, October 16, 2026.",
+        "reversibilite": "PDF reports and invoices, selectable storage and restorable backups; no claim of full structured migration exports. Source: chronokura.com/chronokura-documentation-feature-overview/, October 16, 2026."
+      }
+    },
+    "tool_type": "gestion",
+    "substitutable": true,
+    "verticals": [
+      "consulting",
+      "business-ops"
+    ],
+    "functional_needs": [
+      "time-tracking",
+      "crm",
+      "invoicing",
+      "reporting",
+      "backup",
+      "ai-assistant"
+    ],
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "operating_system",
+      "individual_or_team",
+      "invoice_workflow"
+    ],
+    "seo": {
+      "metaDescription": "Chronokura : suivi du temps et facturation sur Mac en achat unique. Prix, IA locale via Ollama, compatibilité et limites pour indépendants.",
+      "presentationTitleFr": "Chronokura : suivi du temps et facturation Mac sans abonnement | ToolTrim",
+      "presentationTitleEn": "Chronokura: Mac time tracking and invoicing without a subscription | ToolTrim",
+      "idealForFr": "Indépendant sur un Mac compatible qui facture ses missions au temps passé.",
+      "idealForEn": "A freelancer on a compatible Mac billing client work by the hour."
+    },
+    "lifecycle": {
+      "status": "active",
+      "checkedOn": "2026-10-16"
+    },
+    "research": {
+      "researchedOn": "2026-10-16",
+      "sources": 3
+    }
+  },
+  {
     "id": "tapstitch",
     "slug": "tapstitch",
     "name": "Tapstitch",

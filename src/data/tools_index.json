@@ -1,5 +1,55 @@
 [
   {
+    "id": "chronokura",
+    "slug": "chronokura",
+    "name": "Chronokura",
+    "categoryId": "productivity-tracking",
+    "shortDescription": "Suivi du temps, clients et factures sur Mac, en achat unique avec un mode local.",
+    "shortDescriptionEn": "Time tracking, clients and invoicing on Mac, with a one-time purchase and local mode.",
+    "pricing": {
+      "free": "Essai gratuit limité en nombre de clients, projets, saisies et factures. Les plafonds affichés diffèrent entre le site, la documentation et les notes de version.",
+      "paid": "Chronokura Pro : 19,99 € en achat unique, licence à vie sans abonnement selon le site officiel. Tarif final selon la boutique App Store ; mises à jour gratuites annoncées."
+    },
+    "pricingEn": {
+      "free": "Limited free trial. Customer, project, entry and invoice limits differ between the website, documentation and release notes.",
+      "paid": "Chronokura Pro: €19.99 one-time lifetime purchase according to the official website. Final price depends on the App Store storefront; free updates are advertised."
+    },
+    "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 19.99,
+        "currency": "EUR",
+        "period": "once"
+      }
+    ],
+    "websiteUrl": "https://chronokura.com/",
+    "ogImageUrl": "https://chronokura.com/wp-content/uploads/2026/02/Bildschirmfoto-2026-02-25-um-15.55.44.png",
+    "logo": "https://chronokura.com/wp-content/uploads/2026/05/favicon-chronokura-300x300.png",
+    "tool_type": "gestion",
+    "functional_needs": [
+      "time-tracking",
+      "crm",
+      "invoicing",
+      "reporting",
+      "backup",
+      "ai-assistant"
+    ],
+    "verticals": [
+      "consulting",
+      "business-ops"
+    ],
+    "relevantFor": [
+      "Freelances qui facturent au temps passé",
+      "Consultants et petites activités individuelles sur Mac"
+    ],
+    "prescription_quality": "question",
+    "alternatives": [
+      "toggl",
+      "harvest",
+      "clockify"
+    ]
+  },
+  {
     "id": "tapstitch",
     "slug": "tapstitch",
     "name": "Tapstitch",

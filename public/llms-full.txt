@@ -1,12 +1,59 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1349
+# Records: 1350
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
 
 [
+  {
+    "name": "Chronokura",
+    "slug": "chronokura",
+    "url_fr": "https://tooltrim.com/fr/tool/chronokura",
+    "url_en": "https://tooltrim.com/en/tool/chronokura",
+    "website": "https://chronokura.com/",
+    "category": "productivity-tracking",
+    "pricing": {
+      "free": "Essai gratuit limité en nombre de clients, projets, saisies et factures. Les plafonds affichés diffèrent entre le site, la documentation et les notes de version.",
+      "paid": "Chronokura Pro : 19,99 € en achat unique, licence à vie sans abonnement selon le site officiel. Tarif final selon la boutique App Store ; mises à jour gratuites annoncées."
+    },
+    "description_fr": "Suivi du temps, clients et factures sur Mac, en achat unique avec un mode local.",
+    "description_en": "Time tracking, clients and invoicing on Mac, with a one-time purchase and local mode.",
+    "price_verified_on": "2026-10-16",
+    "verdict_fr": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu travailles seul sur un Mac compatible et veux relier suivi du temps et facturation sans abonnement",
+      "avoid_if": "Tu dois suivre les heures d’une équipe, travailler sur Windows ou disposer d’un accès web partagé",
+      "strengths": [
+        "Les heures suivies alimentent les factures dans la même application",
+        "Achat unique plutôt qu’un abonnement pour une activité individuelle",
+        "Mode local, sauvegardes et assistant Ollama optionnel"
+      ],
+      "weaknesses": [
+        "macOS 26 et Apple Silicon sont requis selon l’éditeur",
+        "Pas de suivi collaboratif d’une équipe ou d’accès web multiplateforme",
+        "L’usage sans cloud dépend des options de synchronisation et d’IA choisies"
+      ]
+    },
+    "verdict_en": {
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You work solo on a compatible Mac and want time tracking and invoicing without a subscription",
+      "avoid_if": "You need shared team time tracking, Windows support or a browser-based workspace",
+      "strengths": [
+        "Tracked hours feed invoices in the same app",
+        "A one-time purchase rather than another solo-business subscription",
+        "Local mode, backups and an optional Ollama assistant"
+      ],
+      "weaknesses": [
+        "The publisher requires macOS 26 and Apple Silicon",
+        "No collaborative team tracking or cross-platform web access",
+        "Cloud-free use depends on sync and AI settings"
+      ]
+    }
+  },
   {
     "name": "Tapstitch",
     "slug": "tapstitch",

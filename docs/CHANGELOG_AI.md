@@ -5792,3 +5792,10 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - Ajout de trois visuels produit publiés sur le site officiel Newbi : tableau de bord, éditeur de facture et aperçu de facture.
 - Galerie affichée sur la fiche en l'absence de médias catalogue, avec textes alternatifs FR/EN et conservation du ratio complet des captures.
 - Sources vérifiées sur newbi.fr ; aucun visuel fabriqué ou capture ToolTrim ajoutée.
+
+## 2026-10-16 : publication de Chronokura
+
+- Publication autorisée du brouillon privé Chronokura, en français et en anglais, avec lien officiel dofollow.
+- Prix conservé en achat unique de 19,99 €, sans équivalent mensuel ; sources et visuels officiels conservés.
+- Publication limitée à Chronokura, depuis origin/main ; autres travaux locaux et Sovkern exclus.
+- Validation : 397 tests PASS, TypeScript app PASS, build complet et contrôles SEO/routage/budgets PASS ; recherche et rendu contrôlés dans le navigateur.

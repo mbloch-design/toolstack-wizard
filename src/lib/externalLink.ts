@@ -35,6 +35,8 @@ const POLITIQUE: Record<NatureLien, "dofollow" | "nofollow" | "sponsored"> = {
 
 const BASE = "noopener noreferrer";
 const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
+  "chronokura.com",
+  "www.chronokura.com",
   "franklymail.com",
   "www.franklymail.com",
   "snappack.io",
