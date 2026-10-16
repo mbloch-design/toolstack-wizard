@@ -65,6 +65,8 @@ for (const lang of LANGUAGES) {
       title: post.title,
       date: post.date || null,
       category: post.category || null,
+      ...(post.thumbnail ? { thumbnail: post.thumbnail } : {}),
+      ...(post.readTime ? { readTime: post.readTime } : {}),
     });
 
     byGuide[`${lang}:${post.slug}`] = { slug, name: tool.name, hasPricing: priced.has(slug) };

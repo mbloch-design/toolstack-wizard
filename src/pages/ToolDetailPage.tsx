@@ -1179,14 +1179,20 @@ const ToolDetailPage = () => {
                     <h2 className="td-title">
                       {t("Guides.", "Guides.")} <span className="tt-title-muted">{t(`Pour aller plus loin avec ${tool.name}.`, `To go further with ${tool.name}.`)}</span>
                     </h2>
-                    <ul className="td-guides-list">
+                    <ul className="td-guide-cards">
                       {relatedGuides.slice(0, 3).map((guide) => (
                         <li key={guide.slug}>
-                          <Link to={`${prefix}/guide/${guide.slug}`} className="td-guides-link">
-                            <span className="td-guides-link-title">{guide.title}</span>
-                            {guide.category ? (
-                              <span className="td-guides-link-meta">{guide.category}</span>
-                            ) : null}
+                          <Link to={`${prefix}/guide/${guide.slug}`} className="td-guide-card">
+                            {/* Guides without a cover get the tool's logo on a soft tile, so the three cards stay alike. */}
+                            <span className="td-guide-card-cover" aria-hidden="true">
+                              {guide.thumbnail
+                                ? <img src={guide.thumbnail} alt="" loading="lazy" decoding="async" />
+                                : <ToolLogo tool={tool} size={48} />}
+                            </span>
+                            <span className="td-guide-card-meta">
+                              {[guide.category, guide.readTime ? t(`${guide.readTime} de lecture`, `${guide.readTime} read`) : null].filter(Boolean).join(" · ")}
+                            </span>
+                            <span className="td-guide-card-title">{guide.title}</span>
                           </Link>
                         </li>
                       ))}

@@ -5,6 +5,8 @@ export interface ToolGuideRef {
   title: string;
   date: string | null;
   category: string | null;
+  thumbnail?: string;
+  readTime?: string;
 }
 
 export interface GuideToolRef {

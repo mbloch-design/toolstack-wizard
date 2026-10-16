@@ -36502,7 +36502,8 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .td-tool-page .tg-viewer--hero .tg-video-caption small { font-size: 12px; color: var(--color-text-meta); }
 
   /* Rail: everything under the verdict card shares its inner edge and a 24px rhythm. */
-  .td-tool-page .td-sidebar-desktop { display: flex; flex-direction: column; gap: 24px; }
+  /* Only where the desktop rail is shown (>= 1024px): below, it stays hidden. */
+  @media (min-width: 1024px) { .td-tool-page .td-sidebar-desktop { display: flex; flex-direction: column; gap: 24px; } }
   .td-tool-page .td-sidebar-desktop > * { margin-top: 0; margin-bottom: 0; }
   .td-tool-page .td-sidebar-desktop > .td-explore,
   .td-tool-page .td-sidebar-desktop > .td-decision-card:last-child { padding-inline: 19px; }
@@ -36618,8 +36619,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .td-procon-threshold .td-judgment-item { --i: 5; }
   .td-procon-threshold .td-judgment-item:nth-child(n+2) { --i: 6; }
   @media (prefers-reduced-motion: no-preference) {
-    .td-tool-page .td-procon .td-judgment-marker path { stroke-dasharray: 1; stroke-dashoffset: 1; }
-    .td-tool-page .td-procon .td-judgment-item .td-judgment-text { opacity: 0.001; transform: translateY(6px); }
+    /* Hidden only once JS has armed a below-the-fold sheet: prerendered text never hides. */
+    .td-tool-page .td-procon-sheet.is-armed .td-judgment-marker path { stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .td-tool-page .td-procon-sheet.is-armed .td-judgment-item .td-judgment-text { opacity: 0.001; transform: translateY(6px); }
+    .td-tool-page .td-procon-sheet.is-in .td-judgment-marker path { stroke-dasharray: 1; }
     .td-tool-page .td-procon-sheet.is-in .td-judgment-marker path {
       stroke-dashoffset: 0; transition: stroke-dashoffset 420ms cubic-bezier(0.65, 0, 0.35, 1);
       transition-delay: calc(300ms + var(--i) * 110ms);
@@ -36877,4 +36880,513 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   /* On the overview the tab of the section being read is a "location", not the
      current page: it still opens its subpage, so it keeps a pointer. */
   .td-tool-page .td-localnav-links a[aria-current="location"] { cursor: pointer; }
+}
+
+@layer components {
+  /* Guides: three cards, cover (or the tool logo on a soft tile), meta, title. */
+  .td-tool-page .td-guide-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
+  /* Phones: compact rows, small cover on the left, so three guides fit one screen. */
+  @media (max-width: 720px) {
+    .td-tool-page .td-guide-cards { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .td-tool-page .td-guide-card { display: grid; grid-template-columns: 96px minmax(0, 1fr); grid-template-rows: auto 1fr; column-gap: 14px; row-gap: 4px; align-items: start; }
+    .td-tool-page .td-guide-card-cover { grid-row: 1 / span 2; aspect-ratio: 1 / 1; border-radius: var(--radius-md); }
+    .td-tool-page .td-guide-card-cover > :not(img) { transform: scale(0.75); }
+    .td-tool-page .td-guide-card-meta { grid-column: 2; }
+    .td-tool-page .td-guide-card-title { grid-column: 2; font-size: 15px; }
+  }
+  .td-guide-card { display: flex; flex-direction: column; gap: 10px; color: var(--color-text); text-decoration: none; }
+  .td-guide-card-cover {
+    display: grid; place-items: center; aspect-ratio: 16 / 10; overflow: hidden;
+    border-radius: var(--radius-lg); background: var(--color-surface-soft);
+  }
+  .td-guide-card-cover img { width: 100%; height: 100%; object-fit: cover; transition: transform 320ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .td-guide-card:hover .td-guide-card-cover img { transform: scale(1.03); }
+  .td-guide-card-meta { font-family: var(--font-ui); font-size: 13px; line-height: 1.3; color: var(--color-text-meta); }
+  .td-guide-card-meta:empty { display: none; }
+  .td-guide-card-title {
+    display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+    font-family: var(--font-ui); font-size: 16px; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em; text-wrap: pretty;
+  }
+  .td-guide-card:hover .td-guide-card-title { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .td-guide-card:focus-visible { outline: 2px solid var(--color-text); outline-offset: 4px; border-radius: var(--radius-lg); }
+  @media (prefers-reduced-motion: reduce) { .td-guide-card-cover img { transition: none; } }
+
+  /* Right rail, concise: verdict card, then the stack as overlapping logos,
+     a quiet explore link, and two icon actions. */
+  .td-tool-page .td-sidebar-desktop .td-explore { display: grid; gap: 14px; padding-inline: 19px; }
+  .td-stack { display: grid; gap: 10px; }
+  .td-stack-label { margin: 0; font-family: var(--font-ui); font-size: 12px; font-weight: 600; line-height: 1.3; letter-spacing: 0.05em; text-transform: uppercase; color: var(--color-text-meta); }
+  .td-stack-row { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 12px; }
+  .td-stack-logos { display: inline-flex; }
+  .td-tool-page .td-stack-logos > .td-stack-logo {
+    display: grid; place-items: center; box-sizing: border-box; width: 34px; height: 34px; padding: 0; border-radius: var(--radius-md);
+    background: var(--color-surface); box-shadow: 0 0 0 2px var(--color-surface), 0 1px 4px rgb(0 0 0 / 12%);
+    transition: transform 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .td-tool-page .td-stack-logos > .td-stack-logo + .td-stack-logo { margin-left: -6px; }
+  .td-tool-page .td-stack-logo img { box-shadow: none; }
+  .td-stack-row:hover .td-stack-logos > :nth-child(1) { transform: translateX(-2px) rotate(-4deg); }
+  .td-stack-row:hover .td-stack-logos > :nth-child(3) { transform: translateX(2px) rotate(4deg); }
+  .td-stack-names { margin: 0; font-family: var(--font-ui); font-size: 14px; line-height: 1.4; color: var(--color-text-secondary); }
+  .td-stack-names a { font-weight: 500; color: var(--color-text); text-decoration: none; }
+  .td-stack-names a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .td-explore-link {
+    display: inline-flex; align-items: center; gap: 8px; width: fit-content;
+    font-family: var(--font-ui); font-size: 14px; font-weight: 500; color: var(--color-text-secondary); text-decoration: none;
+  }
+  .td-explore-link svg { width: 16px; height: 16px; }
+  .td-explore-link-arrow { transition: transform 160ms ease-out; }
+  .td-explore-link:hover { color: var(--color-text); }
+  .td-explore-link:hover .td-explore-link-arrow { transform: translateX(3px); }
+
+  .td-tool-page .td-sidebar-desktop > .td-decision-card:last-child { padding: 16px 19px 0; border-top: 1px solid var(--color-border-soft); }
+  .td-tool-page .td-sidebar-desktop .td-decision-utility-actions { display: flex; flex-direction: row; gap: 8px; }
+  .td-tool-page .td-sidebar-desktop .td-decision-utility-actions > * {
+    display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 0;
+    border: 0; border-radius: var(--radius-circle); background: var(--color-surface-soft);
+    color: var(--color-text-secondary); cursor: pointer; transition: background-color 160ms ease-out, color 160ms ease-out;
+  }
+  .td-tool-page .td-sidebar-desktop .td-decision-utility-actions > *:hover { background: color-mix(in srgb, var(--color-text) 8%, var(--color-surface-soft)); color: var(--color-text); }
+  .td-tool-page .td-sidebar-desktop .td-decision-utility-actions > *:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+  .td-tool-page .td-sidebar-desktop .td-decision-utility-actions svg { width: 16px; height: 16px; }
+  .td-tool-page .td-sidebar-desktop .td-decision-utility-actions > * > span {
+    position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+
+  /* Verdict card: neutral ring, keep/avoid marked with the for/against dots. */
+  .td-tool-page .td-decision-verdict .td-decision-verdict-gauge-fill { stroke: var(--color-text); }
+  .td-tool-page .td-decision-fit dt { display: flex; align-items: center; gap: 8px; }
+  .td-tool-page .td-decision-fit dt::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: var(--radius-circle); background: var(--color-pro); }
+  .td-tool-page .td-decision-fit > div + div dt::before { background: var(--color-con); }
+  @media (prefers-reduced-motion: reduce) {
+    .td-stack-logos > *, .td-explore-link-arrow, .td-tool-page .td-sidebar-desktop .td-decision-utility-actions > * { transition: none; }
+  }
+}
+
+@layer components {
+  /* Below the desktop split the rail drops to the end of the page. Its verdict
+     card and share/report actions are already shown above (opening verdict,
+     "Your next step"), so only the exploration links are kept there. */
+  @media (max-width: 1023px) {
+    .td-tool-page .td-sidebar-desktop > .td-decision-card { display: none; }
+    .td-tool-page .td-sidebar-desktop { padding: 0; border-left: 0; margin: 0 0 32px; }
+    .td-tool-page .td-sidebar-desktop > .td-explore { padding-inline: 0; }
+  }
+}
+
+@layer components {
+  /* Verdict card as a small dashboard (2026-10-15): one column, big score,
+     tinted label pill, five-segment meter filled to the tenth. */
+  .td-tool-page .td-decision-verdict {
+    display: flex; flex-direction: column; align-items: stretch; gap: 0;
+    padding: 20px; border: 0; border-radius: var(--radius-xl); background: var(--color-surface-soft);
+  }
+  .td-tool-page .td-decision-verdict .td-decision-verdict-label { margin: 0 0 10px; }
+  .td-verdict-score-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .td-verdict-score { display: inline-flex; align-items: baseline; gap: 4px; }
+  .td-verdict-score strong { font-family: var(--font-ui); font-size: 44px; font-weight: 600; line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; color: var(--color-text); }
+  .td-verdict-score > span { font-family: var(--font-ui); font-size: 17px; font-weight: 500; color: var(--color-text-meta); }
+  .td-tool-page .td-decision-verdict .td-verdict-pill { padding: 5px 11px; border-radius: var(--radius-pill); font-family: var(--font-ui); font-size: 13px; font-weight: 600; line-height: 1.2; white-space: nowrap; }
+  .td-tool-page .td-decision-verdict .td-verdict-pill--pro { background: var(--color-pro-soft); color: var(--color-pro); }
+  .td-tool-page .td-decision-verdict .td-verdict-pill--neutral { background: var(--color-surface); color: var(--color-text); box-shadow: inset 0 0 0 1px var(--color-border); }
+  .td-tool-page .td-decision-verdict .td-verdict-pill--con { background: var(--color-con-soft); color: var(--color-con); }
+  .td-verdict-meter { display: block; width: 100%; height: 6px; margin: 14px 0 18px; overflow: visible; }
+  .td-verdict-meter-track { fill: var(--color-border); }
+  .td-verdict-meter-fill { fill: var(--color-text); }
+  @media (prefers-reduced-motion: no-preference) {
+    .td-verdict-meter-fill { transform-box: fill-box; transform-origin: left; animation: td-verdict-fill 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+    .td-verdict-meter g:nth-child(2) .td-verdict-meter-fill { animation-delay: 80ms; }
+    .td-verdict-meter g:nth-child(3) .td-verdict-meter-fill { animation-delay: 160ms; }
+    .td-verdict-meter g:nth-child(4) .td-verdict-meter-fill { animation-delay: 240ms; }
+    .td-verdict-meter g:nth-child(5) .td-verdict-meter-fill { animation-delay: 320ms; }
+    @keyframes td-verdict-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  }
+  .td-tool-page .td-decision-verdict .td-decision-fit { margin: 0; padding-top: 16px; border-top: 1px solid var(--color-border); display: grid; gap: 12px; }
+  .td-tool-page .td-decision-verdict .td-decision-fit dd { margin: 4px 0 0; font-size: 14px; line-height: 1.5; color: var(--color-text-secondary); }
+  .td-tool-page .td-decision-verdict .td-decision-fit dt { font-size: 13px; font-weight: 600; color: var(--color-text); text-transform: none; letter-spacing: 0; }
+  .td-tool-page .td-decision-verdict .td-decision-compare { margin-top: 16px; }
+}
+
+@layer components {
+  /* Verdict card, Apple restraint: white surface on a hairline, no shadow,
+     black meter; colour only in the label pill and the two small dots. */
+  .td-tool-page .td-sidebar-desktop .td-decision-verdict,
+  .td-tool-page .td-opening-verdict .td-decision-verdict {
+    background: var(--color-surface); box-shadow: none; outline: 1px solid var(--color-border);
+  }
+}
+
+@layer components {
+  /* Verdict card v3 (2026-10-16), Apple first, Alan-like clarity: generous
+     space, one continuous progress bar, rows of tinted icon + title + text,
+     a soft full-width action. */
+  .td-tool-page .td-decision-verdict { padding: 24px; border-radius: var(--radius-surface); }
+  .td-tool-page .td-decision-verdict .td-decision-verdict-label { margin: 0 0 12px; }
+  .td-tool-page .td-verdict-score strong { font-size: 48px; }
+  .td-verdict-bar { display: block; margin: 16px 0 24px; }
+  .td-verdict-bar svg { display: block; width: 100%; height: 8px; }
+  .td-verdict-bar-track { fill: var(--color-border-soft); }
+  .td-verdict-bar-fill { fill: var(--color-text); }
+  @media (prefers-reduced-motion: no-preference) {
+    .td-verdict-bar-fill { transform-box: fill-box; transform-origin: left; animation: td-verdict-fill 800ms cubic-bezier(0.2, 0.8, 0.2, 1) 120ms both; }
+  }
+  .td-tool-page .td-decision-verdict .td-decision-fit { display: grid; gap: 20px; margin: 0; padding: 0; border: 0; }
+  .td-tool-page .td-decision-verdict .td-decision-fit > .td-fit-row {
+    display: grid; grid-template-columns: 36px minmax(0, 1fr); column-gap: 12px; row-gap: 2px;
+    padding: 0; border-radius: 0; background: transparent;
+  }
+  .td-tool-page .td-decision-verdict .td-fit-row dt { display: contents; }
+  .td-tool-page .td-decision-verdict .td-fit-row dt::before { content: none; }
+  .td-tool-page .td-decision-verdict .td-fit-row .td-fit-icon {
+    grid-row: 1 / span 2; display: grid; place-items: center; width: 36px; height: 36px; border-radius: var(--radius-circle);
+  }
+  .td-tool-page .td-decision-verdict .td-fit-row .td-fit-icon svg { width: 18px; height: 18px; }
+  .td-tool-page .td-decision-verdict .td-fit-row--pro .td-fit-icon { background: var(--color-pro-soft); color: var(--color-pro); }
+  .td-tool-page .td-decision-verdict .td-fit-row--con .td-fit-icon { background: var(--color-con-soft); color: var(--color-con); }
+  .td-tool-page .td-decision-verdict .td-fit-row dt > span:last-child { grid-column: 2; align-self: end; font-family: var(--font-ui); font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--color-text); }
+  .td-tool-page .td-decision-verdict .td-fit-row dd { grid-column: 2; margin: 0; font-family: var(--font-ui); font-size: 14px; line-height: 1.5; color: var(--color-text-secondary); }
+  .td-tool-page .td-decision-verdict .td-decision-compare {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 24px;
+    padding: 12px 14px; border-radius: var(--radius-lg); background: var(--color-surface-soft);
+    font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--color-text); text-decoration: none; white-space: nowrap;
+    transition: background-color 160ms ease-out;
+  }
+  .td-tool-page .td-decision-verdict .td-decision-compare:hover { background: color-mix(in srgb, var(--color-text) 6%, var(--color-surface-soft)); }
+  .td-tool-page .td-decision-verdict .td-decision-compare svg { width: 16px; height: 16px; }
+}
+
+@layer components {
+  /* Personality: the bar takes the tool's own colour (drawn from its logo,
+     neutral when the logo is black/white), the logo signs the card, the score
+     rises in once, the icon chips bounce on hover. Motion is skipped when
+     reduced motion is requested. */
+  .td-tool-page .td-decision-verdict .td-decision-verdict-label { display: flex; align-items: center; gap: 6px; }
+  .td-verdict-logo { margin-left: auto; display: inline-grid; place-items: center; }
+  .td-verdict-logo img { box-shadow: none; }
+  .td-tool-page .td-verdict-bar-fill { fill: var(--tool-accent, var(--color-text)); }
+  @media (prefers-reduced-motion: no-preference) {
+    .td-tool-page .td-verdict-score strong { display: inline-block; animation: td-verdict-rise 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+    @keyframes td-verdict-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    .td-tool-page .td-decision-verdict .td-fit-row .td-fit-icon { transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+    .td-tool-page .td-decision-verdict .td-fit-row:hover .td-fit-icon { transform: scale(1.12) rotate(-8deg); }
+  }
+}
+
+@layer components {
+  /* Activity ring (2026-10-16): the visible, satisfying beat of the card. A thick
+     ring in the tool's colour draws itself to the score, then gives one small
+     pop; the number sits inside. No text changes, so the prerender holds. */
+  .td-verdict-hero { display: flex; align-items: center; gap: 18px; margin: 4px 0 24px; }
+  .td-verdict-ring { position: relative; flex: none; display: grid; place-items: center; width: 88px; height: 88px; }
+  .td-verdict-ring svg { position: absolute; inset: 0; width: 100%; height: 100%; transform: rotate(-90deg); overflow: visible; }
+  .td-verdict-ring-track { fill: none; stroke: var(--tool-accent-soft, var(--color-surface-soft)); stroke-width: 10; }
+  .td-verdict-ring-fill { fill: none; stroke: var(--tool-accent, var(--color-text)); stroke-width: 10; stroke-linecap: round; }
+  .td-verdict-ring strong {
+    position: relative; font-family: var(--font-ui); font-size: 28px; font-weight: 700; line-height: 1;
+    letter-spacing: -0.04em; font-variant-numeric: tabular-nums; color: var(--color-text);
+  }
+  .td-verdict-side { display: grid; justify-items: start; gap: 6px; }
+  .td-verdict-out { font-family: var(--font-ui); font-size: 14px; color: var(--color-text-meta); }
+  .td-tool-page .td-decision-verdict .td-verdict-pill { font-size: 15px; padding: 6px 12px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .td-verdict-ring-fill { animation: td-ring-draw 1100ms cubic-bezier(0.65, 0, 0.35, 1) 150ms both; }
+    @keyframes td-ring-draw { from { stroke-dashoffset: 100; } }
+    .td-verdict-ring { animation: td-ring-pop 420ms cubic-bezier(0.34, 1.56, 0.64, 1) 1180ms both; }
+    @keyframes td-ring-pop { 0% { transform: scale(1); } 45% { transform: scale(1.07); } 100% { transform: scale(1); } }
+    .td-verdict-ring strong { animation: td-verdict-rise 520ms cubic-bezier(0.2, 0.8, 0.2, 1) 300ms both; }
+    .td-verdict-side { animation: td-verdict-rise 520ms cubic-bezier(0.2, 0.8, 0.2, 1) 450ms both; }
+  }
+}
+
+@layer components {
+  /* The box itself (2026-10-16): a whisper of the tool's colour instead of a
+     white card on a hairline; no border, softer 28px corners; the action
+     turns white so it lifts off the tint. */
+  .td-tool-page .td-sidebar-desktop .td-decision-verdict,
+  .td-tool-page .td-opening-verdict .td-decision-verdict {
+    padding: 24px; border: 0; outline: 0; box-shadow: none;
+    border-radius: var(--radius-2xl);
+    background: var(--tool-accent-soft, var(--color-surface-soft));
+  }
+  .td-tool-page .td-decision-verdict .td-verdict-ring-track { stroke: color-mix(in srgb, var(--tool-accent, var(--color-text)) 14%, var(--color-surface)); }
+  .td-tool-page .td-decision-verdict .td-decision-compare { background: var(--color-surface); }
+  .td-tool-page .td-decision-verdict .td-decision-compare:hover { background: color-mix(in srgb, var(--color-text) 4%, var(--color-surface)); }
+  .td-tool-page .td-decision-verdict .td-verdict-pill--neutral { background: var(--color-surface); }
+}
+@layer components {
+  /* On the tinted box the icon chips go white; colour stays in the glyph. */
+  .td-tool-page .td-decision-verdict .td-fit-row--pro .td-fit-icon,
+  .td-tool-page .td-decision-verdict .td-fit-row--con .td-fit-icon { background: var(--color-surface); }
+}
+
+@layer components {
+  /* Dynamic verdict box (2026-10-16): clickable ring, five rising criteria,
+     an iOS-style switch between "for you if" and "not for you if". */
+
+  /* 3 · Ring as a link to the score detail. */
+  a.td-verdict-ring { color: inherit; text-decoration: none; border-radius: var(--radius-circle); transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+  a.td-verdict-ring:hover { transform: scale(1.05); }
+  a.td-verdict-ring:focus-visible { outline: 2px solid var(--color-text); outline-offset: 4px; }
+
+  /* 2 · Five criteria as mini bars. */
+  .td-verdict-axes { display: inline-flex; align-items: flex-end; gap: 5px; height: 28px; }
+  .td-verdict-axis { position: relative; display: block; width: 8px; height: 28px; outline: none; cursor: default; }
+  .td-verdict-axis svg { display: block; width: 8px; height: 28px; }
+  .td-verdict-axis-track { fill: color-mix(in srgb, var(--tool-accent, var(--color-text)) 14%, var(--color-surface)); }
+  .td-verdict-axis-fill { fill: var(--tool-accent, var(--color-text)); }
+  .td-verdict-axis::after {
+    content: attr(data-tip); position: absolute; left: 50%; bottom: calc(100% + 8px); z-index: 5;
+    padding: 5px 9px; border-radius: var(--radius-pill); background: var(--color-text); color: var(--color-surface);
+    font-family: var(--font-ui); font-size: 12px; font-weight: 600; white-space: nowrap;
+    opacity: 0; transform: translate(-50%, 4px); pointer-events: none; transition: opacity 140ms ease-out, transform 140ms ease-out;
+  }
+  .td-verdict-axis:hover::after, .td-verdict-axis:focus-visible::after { opacity: 1; transform: translate(-50%, 0); }
+  .td-verdict-axis:focus-visible svg { outline: 2px solid var(--color-text); outline-offset: 2px; border-radius: var(--radius-pill); }
+
+  /* 1 · Switch + one panel at a time. */
+  .td-fit { display: grid; gap: 14px; }
+  .td-fit-switch {
+    position: relative; display: grid; grid-template-columns: 1fr 1fr; padding: 3px;
+    border-radius: var(--radius-pill); background: color-mix(in srgb, var(--color-text) 6%, transparent);
+  }
+  .td-fit-switch-btn {
+    position: relative; z-index: 1; padding: 7px 8px; border: 0; border-radius: var(--radius-pill); background: transparent;
+    font-family: var(--font-ui); font-size: 13px; font-weight: 600; color: var(--color-text-secondary); cursor: pointer; white-space: nowrap;
+    transition: color 200ms ease-out;
+  }
+  .td-fit-switch-btn[aria-pressed="true"] { color: var(--color-text); }
+  .td-fit-switch-btn:focus-visible { outline: 2px solid var(--color-text); outline-offset: 1px; }
+  .td-fit-switch-thumb {
+    position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px);
+    border-radius: var(--radius-pill); background: var(--color-surface); box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
+    transition: transform 320ms cubic-bezier(0.34, 1.4, 0.64, 1);
+  }
+  .td-fit-switch-thumb.is-right { transform: translateX(100%); }
+  .td-fit-panel { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 12px; align-items: start; min-height: 96px; }
+  .td-fit-panel[hidden] { display: none; }
+  .td-fit-panel .td-fit-icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: var(--radius-circle); background: var(--color-surface); }
+  .td-fit-panel .td-fit-icon svg { width: 18px; height: 18px; }
+  .td-fit-panel--pro .td-fit-icon { color: var(--color-pro); }
+  .td-fit-panel--con .td-fit-icon { color: var(--color-con); }
+  .td-fit-panel p { margin: 0; font-family: var(--font-ui); font-size: 14px; line-height: 1.55; color: var(--color-text-secondary); }
+  .td-fit-label { display: block; margin-bottom: 2px; font-size: 15px; font-weight: 600; color: var(--color-text); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .td-verdict-axis-fill { transform-box: fill-box; transform-origin: bottom; animation: td-axis-rise 560ms cubic-bezier(0.34, 1.4, 0.64, 1) both; }
+    @keyframes td-axis-rise { from { transform: scaleY(0); } }
+    .td-verdict-axis:nth-child(1) .td-verdict-axis-fill { animation-delay: 700ms; }
+    .td-verdict-axis:nth-child(2) .td-verdict-axis-fill { animation-delay: 780ms; }
+    .td-verdict-axis:nth-child(3) .td-verdict-axis-fill { animation-delay: 860ms; }
+    .td-verdict-axis:nth-child(4) .td-verdict-axis-fill { animation-delay: 940ms; }
+    .td-verdict-axis:nth-child(5) .td-verdict-axis-fill { animation-delay: 1020ms; }
+    .td-fit-panel.is-active { animation: td-fit-in 280ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+    @keyframes td-fit-in { from { opacity: 0; transform: translateY(6px); } }
+    .td-fit-panel.is-active .td-fit-icon { animation: td-fit-pop 420ms cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+    @keyframes td-fit-pop { from { transform: scale(0.6) rotate(-12deg); } }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    a.td-verdict-ring, .td-fit-switch-thumb, .td-fit-switch-btn, .td-verdict-axis::after { transition: none; }
+  }
+}
+
+@layer components {
+  /* Contrast pass (2026-10-16, measured): the tool colour is darkened just
+     enough to reach 3:1 on its own tint in light mode (Asana 2.75 -> >3);
+     the card label gets the secondary tone in dark mode (4.47 -> >4.5);
+     the switch reaches a 44px target on touch screens. */
+  .td-tool-page .td-decision-verdict .td-verdict-ring-fill { stroke: color-mix(in oklab, var(--tool-accent, var(--color-text)) 80%, #000); }
+  .td-tool-page .td-decision-verdict .td-verdict-axis-fill { fill: color-mix(in oklab, var(--tool-accent, var(--color-text)) 80%, #000); }
+  .dark .td-tool-page .td-decision-verdict .td-verdict-ring-fill { stroke: var(--tool-accent, var(--color-text)); }
+  .dark .td-tool-page .td-decision-verdict .td-verdict-axis-fill { fill: var(--tool-accent, var(--color-text)); }
+  .dark .td-tool-page .td-decision-verdict .td-decision-verdict-label { color: var(--color-text-secondary); }
+  .td-tool-page .td-fit-switch-btn { min-height: 34px; }
+  @media (pointer: coarse) { .td-tool-page .td-fit-switch-btn { min-height: 44px; } }
+}
+
+@layer components {
+  /* "Often used with" (2026-10-16): one module in the box's language, iOS list
+     rows: 36px logo tile, 15px name, chevron, soft hover; the exploration map
+     closes the list as its last row. */
+  .td-tool-page .td-sidebar-desktop .td-explore { display: grid; gap: 8px; padding-inline: 8px; }
+  .td-explore-title { margin: 0 0 4px; padding-inline: 8px; font-family: var(--font-ui); font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--color-text); }
+  .td-explore-list { display: grid; gap: 2px; margin: 0; padding: 0; list-style: none; }
+  .td-explore-row {
+    display: grid; grid-template-columns: 36px minmax(0, 1fr) 16px; align-items: center; gap: 12px;
+    min-height: 48px; padding: 6px 8px; border-radius: var(--radius-lg);
+    font-family: var(--font-ui); color: var(--color-text); text-decoration: none;
+    transition: background-color 160ms ease-out;
+  }
+  .td-explore-row:hover { background: var(--color-surface-soft); }
+  .td-explore-row:focus-visible { outline: 2px solid var(--color-text); outline-offset: 1px; }
+  .td-explore-tile {
+    display: grid; place-items: center; width: 36px; height: 36px; border-radius: var(--radius-md);
+    background: var(--color-surface); box-shadow: inset 0 0 0 1px var(--color-border);
+  }
+  .td-explore-tile img { box-shadow: none; }
+  .td-explore-row--map .td-explore-tile { background: var(--color-surface-soft); box-shadow: none; }
+  .td-explore-row--map .td-explore-tile svg { width: 18px; height: 18px; color: var(--color-text); }
+  .td-explore-name { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; font-weight: 500; line-height: 1.3; }
+  .td-explore-chevron { width: 16px; height: 16px; color: var(--color-text-meta); transition: transform 160ms ease-out; }
+  .td-explore-row:hover .td-explore-chevron { transform: translateX(2px); color: var(--color-text); }
+  @media (prefers-reduced-motion: reduce) { .td-explore-row, .td-explore-chevron { transition: none; } }
+  @media (max-width: 1023px) { .td-tool-page .td-sidebar-desktop > .td-explore { padding-inline: 0; } }
+}
+
+@layer components {
+  /* On the tinted box, colour stays with the tool: the label pill turns white
+     with the tool's dark ink (no green on a coral tint), and the compare
+     action stays white on hover, lifting instead of greying. */
+  .td-tool-page .td-decision-verdict .td-verdict-pill--pro,
+  .td-tool-page .td-decision-verdict .td-verdict-pill--neutral,
+  .td-tool-page .td-decision-verdict .td-verdict-pill--con {
+    background: var(--color-surface); color: var(--tool-accent-ink, var(--color-text)); box-shadow: none;
+  }
+  .td-tool-page .td-decision-verdict .td-decision-compare { transition: box-shadow 180ms ease-out, transform 180ms ease-out; }
+  .td-tool-page .td-decision-verdict .td-decision-compare:hover {
+    background: var(--color-surface); box-shadow: 0 2px 10px rgb(0 0 0 / 8%); transform: translateY(-1px);
+  }
+  .td-tool-page .td-decision-verdict .td-decision-compare:hover svg { transform: translateX(2px); }
+  .td-tool-page .td-decision-verdict .td-decision-compare svg { transition: transform 160ms ease-out; }
+
+  /* Explore map: a different destination, so a different shape. */
+  .td-explore-map-btn {
+    display: inline-flex; align-items: center; gap: 8px; width: fit-content; margin: 8px 8px 0;
+    padding: 8px 14px; border-radius: var(--radius-pill); box-shadow: inset 0 0 0 1px var(--color-border);
+    font-family: var(--font-ui); font-size: 14px; font-weight: 500; color: var(--color-text); text-decoration: none;
+    transition: background-color 160ms ease-out, box-shadow 160ms ease-out;
+  }
+  .td-explore-map-btn svg { width: 16px; height: 16px; }
+  .td-explore-map-btn:hover { background: var(--color-surface-soft); box-shadow: inset 0 0 0 1px var(--color-border-strong); }
+  .td-explore-map-btn:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+  @media (max-width: 1023px) { .td-tool-page .td-explore-map-btn { margin-inline: 0; } }
+  @media (prefers-reduced-motion: reduce) {
+    .td-tool-page .td-decision-verdict .td-decision-compare, .td-tool-page .td-decision-verdict .td-decision-compare svg, .td-explore-map-btn { transition: none; }
+    .td-tool-page .td-decision-verdict .td-decision-compare:hover { transform: none; }
+  }
+}
+@layer components {
+  /* Icon actions: strict centring; an older rule set a column grid that pushed
+     the glyph to the left edge of the circle. */
+  .td-tool-page .td-sidebar-desktop .td-decision-utility-actions > * {
+    display: inline-flex; align-items: center; justify-content: center; grid-template-columns: none; gap: 0;
+  }
+  .td-tool-page .td-sidebar-desktop .td-decision-utility-actions svg { flex: none; margin: 0; }
+}
+
+@layer components {
+  /* Threshold panels in balance (2026-10-16): same padding and label line on
+     both sides; the left panel fills its height with the slider pinned to the
+     bottom, so it no longer floats against a taller right panel. */
+  .td-tool-page .td-procon .td-breakeven,
+  .td-tool-page .td-procon .td-procon-threshold {
+    display: flex; flex-direction: column; gap: 14px; height: 100%; box-sizing: border-box;
+    margin-top: 12px; padding: 24px; border-radius: var(--radius-lg);
+  }
+  .td-tool-page .td-procon .td-procon-threshold-label { margin: 0; line-height: 1.3; }
+  .td-tool-page .td-procon .td-breakeven-line { font-size: 16px; line-height: 1.5; }
+  .td-tool-page .td-procon .td-breakeven-control { margin-top: auto; padding-top: 8px; }
+  .td-tool-page .td-procon .td-procon-threshold .td-judgment { gap: 12px; }
+  .td-tool-page .td-procon .td-procon-threshold .td-judgment-text { font-size: 16px; line-height: 1.5; }
+}
+@layer components {
+  /* Break-even with the answer as the hero: the number fills the panel's
+     height by itself, the sentence explains it, the slider closes. */
+  .td-tool-page .td-procon .td-breakeven-hero { margin: 4px 0 0; line-height: 1; }
+  .td-tool-page .td-procon .td-breakeven-hero .td-breakeven-value { font-size: 48px; font-weight: 700; letter-spacing: -0.045em; line-height: 1; }
+  .td-tool-page .td-procon .td-breakeven-line { margin: 0; font-size: 15px; line-height: 1.5; color: var(--color-text-secondary); }
+}
+@layer components {
+  .td-tool-page .td-procon .td-breakeven-hero { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px 10px; }
+  .td-tool-page .td-procon .td-breakeven-hero > span { font-family: var(--font-ui); font-size: 17px; font-weight: 600; color: var(--color-pro); }
+}
+
+@layer components {
+  /* Full-pass type scale (2026-10-16): near-duplicates merged.
+     Intro copy 18px (hero and About lead), subtitles 22px, the For./Against.
+     headlines on the section-title size. */
+  .td-tool-page .td-editorial-intro .td-analysis-lead { font-size: 18px; }
+  .td-tool-page .td-subtitle,
+  .td-tool-page .td-review-label { font-size: 22px; }
+  .td-tool-page .td-procon-title { font-size: var(--tt-size-section-h, 38px); }
+}
+
+@layer components {
+  /* Touch targets (full pass 2026-10-16, measured at 375px): enlarge the hit
+     area on coarse pointers without changing what is drawn. */
+  @media (pointer: coarse) {
+    .td-tool-page .td-decision-verdict-info { position: relative; }
+    .td-tool-page .td-decision-verdict-info::after { content: ""; position: absolute; inset: -15px; }
+    .td-tool-page .td-tool-subnav a { display: inline-flex; align-items: center; min-height: 44px; }
+    .td-tool-page .td-editorial-facts .td-editorial-official-link { min-height: 44px; }
+    .td-tool-page .td-breakeven-control input[type="range"] { height: 44px; }
+  }
+}
+
+@layer components {
+  /* Micro-animation pass (2026-10-16): feedback on every gesture, 100-250ms,
+     transform/opacity only, nothing under reduced motion. */
+  @media (prefers-reduced-motion: no-preference) {
+    /* 1 · Press feedback on the page's buttons. */
+    .td-tool-page :is(.td-hero-site-link, .td-hero-actions .pin-tool-button, .td-localnav-cta, .td-decision-compare, .td-decision-cta-main, .td-explore-map-btn, .tg-hero-arrow, .td-fit-switch-btn) {
+      transition-property: transform, background-color, box-shadow, color;
+      transition-duration: 160ms; transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .td-tool-page :is(.td-hero-site-link, .td-hero-actions .pin-tool-button, .td-localnav-cta, .td-decision-compare, .td-decision-cta-main, .td-explore-map-btn, .td-fit-switch-btn):active { transform: scale(0.97); }
+
+    /* 2 · Bookmark pops when the tool is added to the stack. */
+    .td-tool-page .pin-tool-button--active svg { animation: td-pin-pop 360ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+    @keyframes td-pin-pop { 0% { transform: scale(0.6); } 60% { transform: scale(1.18); } 100% { transform: scale(1); } }
+
+    /* 3 · Tab underline grows from the centre when a tab becomes active
+       (also while reading, as the overview tab follows the section). */
+    .td-tool-page :is(.td-tool-subnav, .td-localnav-links) a:is([aria-current="page"], [aria-current="location"])::after {
+      animation: td-tab-grow 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+    }
+    @keyframes td-tab-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+    /* 4 · FAQ: the answer fades in, the marker turns. */
+    .td-tool-page details > summary::after { display: inline-block; transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .td-tool-page details[open] > summary::after { transform: rotate(180deg); }
+    .td-tool-page details[open] > :not(summary) { animation: td-faq-in 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+    @keyframes td-faq-in { from { opacity: 0; transform: translateY(-4px); } }
+
+    /* 5 · Slider thumb grows while held. */
+    .td-breakeven-control input[type="range"]::-webkit-slider-thumb { transition: transform 140ms ease-out; }
+    .td-breakeven-control input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.25); }
+    .td-breakeven-control input[type="range"]::-moz-range-thumb { transition: transform 140ms ease-out; }
+    .td-breakeven-control input[type="range"]:active::-moz-range-thumb { transform: scale(1.25); }
+
+    /* 6 · Alternative cards lift on hover. */
+    .td-tool-page .td-compare .td-alt-card { transition: background-color 160ms ease-out, transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+    .td-tool-page .td-compare .td-alt-card:hover { transform: translateY(-2px); }
+  }
+}
+
+@layer components {
+  /* Light criteria bars (weight budget): an <i data-v> per criterion, track in
+     the element, fill in ::before, tooltip from aria-label. */
+  .td-verdict-axis {
+    position: relative; display: block; width: 8px; height: 28px; border-radius: var(--radius-pill);
+    background: color-mix(in srgb, var(--tool-accent, var(--color-text)) 14%, var(--color-surface)); font-style: normal;
+  }
+  .td-verdict-axis::before {
+    content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 0; border-radius: var(--radius-pill);
+    background: color-mix(in oklab, var(--tool-accent, var(--color-text)) 80%, #000);
+  }
+  .dark .td-verdict-axis::before { background: var(--tool-accent, var(--color-text)); }
+  .td-verdict-axis[data-v="1"]::before { height: 20%; }
+  .td-verdict-axis[data-v="2"]::before { height: 40%; }
+  .td-verdict-axis[data-v="3"]::before { height: 60%; }
+  .td-verdict-axis[data-v="4"]::before { height: 80%; }
+  .td-verdict-axis[data-v="5"]::before { height: 100%; }
+  .td-verdict-axis::after { content: attr(aria-label); }
+  .td-verdict-axis:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+  @media (prefers-reduced-motion: no-preference) {
+    .td-verdict-axis::before { transform-origin: bottom; animation: td-axis-rise 560ms cubic-bezier(0.34, 1.4, 0.64, 1) both; }
+    .td-verdict-axis:nth-child(1)::before { animation-delay: 700ms; }
+    .td-verdict-axis:nth-child(2)::before { animation-delay: 780ms; }
+    .td-verdict-axis:nth-child(3)::before { animation-delay: 860ms; }
+    .td-verdict-axis:nth-child(4)::before { animation-delay: 940ms; }
+    .td-verdict-axis:nth-child(5)::before { animation-delay: 1020ms; }
+  }
 }

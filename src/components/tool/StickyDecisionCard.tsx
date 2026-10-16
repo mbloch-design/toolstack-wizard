@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "@/lib/routerLinks";
-import { ArrowRight, Check, Compass, Copy, Flag, Info, Linkedin, Mail, MessageCircle, Share2 } from "@/lib/icons";
+import { ArrowRight, Check, CircleAlert, Compass, Copy, Flag, Info, Linkedin, Mail, MessageCircle, Share2 } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import type { Tool } from "@/data/types";
@@ -31,13 +31,26 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
   const keepIf = verdict?.keepIf?.[0]?.trim();
   const avoidIf = verdict?.avoidIf?.[0]?.trim();
   const sentence = (text: string) => text.replace(/[.\s]+$/, "");
-  const verdictLevel = toolTrimScore.score >= 4 ? "high" : toolTrimScore.score >= 3.5 ? "mid" : "low";
-  // Circular gauge: the ring itself carries the score (arc length = score / 5),
-  // replacing the old trend arrow with an actual proportional visualization.
-  const gaugeRadius = 14;
-  const gaugeCircumference = 2 * Math.PI * gaugeRadius;
-  const gaugeFraction = Math.max(0, Math.min(1, toolTrimScore.score / 5));
-  const gaugeOffset = gaugeCircumference * (1 - gaugeFraction);
+  const scoreTone = toolTrimScore.score >= 3.5 ? "pro" : toolTrimScore.score >= 2.5 ? "neutral" : "con";
+  const [fitTab, setFitTab] = useState<"keep" | "avoid">("keep");
+  const isEn = prefix === "/en";
+  const rating = tool.toolTrimRating;
+  const axes = rating ? ([
+    ["valeurAjoutee", "Valeur", "Value"],
+    ["simplicite", "Simplicité", "Simplicity"],
+    ["utilisation", "Utilisation", "Fit"],
+    ["puissance", "Puissance", "Power"],
+    ["reversibilite", "Réversibilité", "Reversibility"],
+  ] as const).map(([key, fr, en]) => ({ key, label: isEn ? en : fr, value: Number(rating[key] ?? 0) })) : [];
+  // The ring opens the score detail: scroll to it on the overview, else open the verdict subpage.
+  const reviewHref = `${prefix}/tool/${slug}/${isEn ? "reviews" : "avis"}`;
+  const openScoreDetail = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    const target = document.getElementById("avis");
+    if (!target || event.metaKey || event.ctrlKey || event.shiftKey || event.button !== 0) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    trackEvent("score_detail_open", { tool_slug: slug, source: "verdict_ring" });
+  };
 
   const copyUrl = async (url: string) => {
     if (navigator.clipboard?.writeText) {
@@ -120,29 +133,53 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
           >
             <Info aria-hidden />
           </Link>
+          {/* The tool's own logo gives each verdict card its identity. */}
+          <span className="td-verdict-logo" aria-hidden="true"><ToolLogo tool={tool as any} size={24} /></span>
         </span>
-        <span className={`td-decision-verdict-indicator td-decision-verdict-indicator--${verdictLevel}`} aria-hidden="true">
-          <svg className="td-decision-verdict-gauge" viewBox="0 0 34 34">
-            <circle className="td-decision-verdict-gauge-track" cx="17" cy="17" r={gaugeRadius} />
-            <circle
-              className="td-decision-verdict-gauge-fill"
-              cx="17"
-              cy="17"
-              r={gaugeRadius}
-              strokeDasharray={gaugeCircumference}
-              strokeDashoffset={gaugeOffset}
-            />
-          </svg>
+        {/* Score as an activity ring in the tool's colour: it draws itself to the
+            score once (pathLength 100 keeps the arc in attributes, no inline style). */}
+        <span className="td-verdict-hero">
+          <a className="td-verdict-ring" href={reviewHref} onClick={openScoreDetail}
+            aria-label={t(`Note ${toolTrimScore.score.toFixed(1)} sur 5 : voir le détail`, `Score ${toolTrimScore.score.toFixed(1)} out of 5: see the breakdown`)}>
+            <svg viewBox="0 0 88 88" aria-hidden="true">
+              <circle className="td-verdict-ring-track" cx="44" cy="44" r="38" pathLength={100} />
+              <circle className="td-verdict-ring-fill" cx="44" cy="44" r="38" pathLength={100}
+                strokeDasharray="100" strokeDashoffset={100 - Math.max(0, Math.min(100, (toolTrimScore.score / 5) * 100))} />
+            </svg>
+            <strong aria-hidden="true">{toolTrimScore.score.toFixed(1)}</strong>
+          </a>
+          <span className="td-verdict-side">
+            <span className={`td-verdict-pill td-verdict-pill--${scoreTone}`}>{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
+            {axes.length > 0 ? (
+              /* Five criteria as mini bars that rise one after another; name and score on hover/focus. */
+              <span className="td-verdict-axes" role="list" aria-label={t("Les 5 critères de la note", "The 5 scoring criteria")}>
+                {/* Drawn in CSS from data-v: five bars cost a few bytes per page (the card is
+                    prerendered twice on every tool page, weight matters). */}
+                {axes.map((axis) => (
+                  <i key={axis.key} className="td-verdict-axis" role="listitem" tabIndex={0}
+                    data-v={Math.max(0, Math.min(5, Math.round(axis.value)))} aria-label={`${axis.label} ${axis.value}/5`} />
+                ))}
+              </span>
+            ) : <span className="td-verdict-out">{t("sur 5", "out of 5")}</span>}
+          </span>
         </span>
-        <span className="td-decision-verdict-score">
-          <strong>{toolTrimScore.score.toFixed(1)}</strong>
-          <span>/ 5</span>
-        </span>
-        <span className="td-decision-verdict-copy">{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
-        {keepIf ? <dl className="td-decision-fit">
-          <div><dt>{t("À garder si", "Keep it if")}</dt><dd>{sentence(keepIf)}.</dd></div>
-          {avoidIf && <div><dt>{t("À éviter si", "Look elsewhere if")}</dt><dd>{sentence(avoidIf)}.</dd></div>}
-        </dl> : conclusion && <p className="td-decision-conclusion">{conclusion}</p>}
+        {keepIf ? <div className="td-fit">
+          {avoidIf && (
+            <div className="td-fit-switch" role="group" aria-label={t("Pour qui", "Who it is for")}>
+              <button type="button" aria-pressed={fitTab === "keep"} className="td-fit-switch-btn" onClick={() => setFitTab("keep")}>{t("Pour toi si", "For you if")}</button>
+              <button type="button" aria-pressed={fitTab === "avoid"} className="td-fit-switch-btn" onClick={() => setFitTab("avoid")}>{t("Pas pour toi si", "Not for you if")}</button>
+              <span className={`td-fit-switch-thumb${fitTab === "avoid" ? " is-right" : ""}`} aria-hidden="true" />
+            </div>
+          )}
+          <div className={`td-fit-panel td-fit-panel--pro${fitTab === "keep" ? " is-active" : ""}`} aria-live="polite" hidden={fitTab !== "keep"}>
+            <span className="td-fit-icon" aria-hidden="true"><Check /></span>
+            <p><span className="td-fit-label">{t("À garder si", "Keep it if")}</span> {sentence(keepIf)}.</p>
+          </div>
+          {avoidIf && <div className={`td-fit-panel td-fit-panel--con${fitTab === "avoid" ? " is-active" : ""}`} aria-live="polite" hidden={fitTab !== "avoid"}>
+            <span className="td-fit-icon" aria-hidden="true"><CircleAlert /></span>
+            <p><span className="td-fit-label">{t("À éviter si", "Look elsewhere if")}</span> {sentence(avoidIf)}.</p>
+          </div>}
+        </div> : conclusion && <p className="td-decision-conclusion">{conclusion}</p>}
         <Link
           to={`${prefix}/tool/${slug}/alternatives`}
           className="td-decision-compare"
@@ -185,7 +222,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
         </Link>}
         <Popover open={shareOpen} onOpenChange={setShareOpen}>
           <PopoverTrigger asChild>
-            <button type="button" className="td-decision-share" aria-expanded={shareOpen}>
+            <button type="button" className="td-decision-share" aria-expanded={shareOpen} title={t("Partager", "Share")}>
               {shareStatus === "shared" || shareStatus === "copied" ? <Check aria-hidden /> : <Share2 aria-hidden />}
               <span aria-live="polite">{shareLabel}</span>
             </button>
@@ -216,7 +253,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
             </div>
           </PopoverContent>
         </Popover>
-        <a href={`mailto:contact@tooltrim.com?subject=${encodeURIComponent(t(`Information à corriger sur ${tool.name}`, `Information to correct on ${tool.name}`))}`}>
+        <a title={t("Signaler un problème", "Report a problem")} href={`mailto:contact@tooltrim.com?subject=${encodeURIComponent(t(`Information à corriger sur ${tool.name}`, `Information to correct on ${tool.name}`))}`}>
           <Flag aria-hidden />
           <span>{t("Signaler un problème", "Report a problem")}</span>
         </a>

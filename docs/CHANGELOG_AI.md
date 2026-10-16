@@ -59,6 +59,17 @@
 - Quatre contrôles navigateur Chromium PASS sur l’artefact généré : FR/EN à 390/1440 px, descriptions initiales et hydratées, Open Graph, canonical et hreflang corrects, contenu d’article identique au public. Contre-revue indépendante sans problème actionnable.
 - Bilan et limites : [R10_R11_LOT1_2026-10-15.md](R10_R11_LOT1_2026-10-15.md). Les neuf alertes, la migration éventuelle, les médias et l’indexation restent ouverts. R5/R6 et les tests utilisateurs différés ne sont pas repris.
 
+## 16 octobre 2026 : fiche outil, colonne de droite, guides et finitions
+
+- Box verdict : anneau d'activité dans la couleur de l'outil (se dessine puis « pop »), 5 critères en mini-barres (CSS `data-v`, quelques octets), sélecteur « Pour toi si / Pas pour toi si » (boutons à bascule, zone tactile 44 px), anneau cliquable vers le détail (`score_detail_open`), fond teinté de l'outil, pastille et bouton blancs.
+- Contrastes mesurés (clair/sombre, Asana et Notion) : anneau et barres 2,75 → 4,73:1, libellé sombre 4,47 → 9,33:1 ; aucun texte sous le seuil sur la page.
+- « Souvent utilisé avec » en liste iOS (tuile 36 px, chevron), carte d'exploration en bouton distinct ; doublon de la carte verdict supprimé en mobile ; Partager / Signaler en boutons-icônes centrés.
+- Guides en cartes (vignette ou logo de l'outil, catégorie · temps de lecture), lignes compactes en mobile ; index des guides enrichi (vignette, temps de lecture).
+- Rentabilité : « Rentable dès · 14 min gagnées par mois », phrase explicative suivant le curseur, panneaux équilibrés ; « Pour. / Contre. » ne masque plus jamais le texte prérendu (masquage seulement sous la ligne de flottaison, après JS).
+- Échelle typographique resserrée (14 tailles), cibles tactiles 44 px (onglets, info, lien officiel, curseur), passe de micro-animations (appui, signet, onglets, FAQ, curseur, cartes), mouvement réduit respecté.
+- Budget de poids : HTML 722,1 Mio (échec) → 710,7 Mio sous 716 Mio, en remplaçant 5 SVG par carte. Vérif SEO vs production (Notion FR/EN, Asana, Zelt) : titres, méta, liens internes et JSON-LD identiques ; mots −0,1 à −1,9 % (doublons retirés).
+- Validation : 363 tests, garde-fou tokens, build complet, 57 tests d'hydratation.
+
 ## 15 octobre 2026 : fiche outil, harmonisation zone par zone
 
 - Prix (commit df4ec8a0) : 5 prix mensuels certifiés sur la page officielle (Coast, Loox, PageFly, Planoly, Docyt) ; le contrôle « pas de plan gratuit » ne se déclenche plus sur « aucun agent IA » ; un prix certifié passe avant le marqueur « non communiqué ». Pages EN sans offre JSON-LD : 342 puis 327.

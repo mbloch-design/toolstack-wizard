@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@/lib/routerLinks";
-import { Compass } from "@/lib/icons";
+import { ChevronRight, Compass } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { trackEvent } from "@/lib/analytics";
@@ -45,34 +45,35 @@ export default function ToolExplorePanel({ slug, name, prefix, t, tools }: Props
   const bySlug = new Map(tools.map((tool) => [tool.slug || tool.id, tool]));
   const together = (entry?.w || []).map((other) => bySlug.get(other)).filter((tool): tool is Summary => !!tool).slice(0, 3);
 
+  // One module, iOS-list style: a title, the tools as rows (logo tile, name,
+  // chevron), then the exploration map as the last row.
   return (
-    <section className="td-explore" aria-label={t("Explorer", "Explore")}>
+    <section className="td-explore" aria-labelledby={`explore-${slug}`}>
+      <h3 className="td-explore-title" id={`explore-${slug}`}>
+        {together.length > 0 ? t("Souvent utilisé avec", "Often used with") : t("Explorer", "Explore")}
+      </h3>
+      <ul className="td-explore-list">
+        {together.map((tool) => (
+          <li key={tool.id}>
+            <Link to={`${prefix}/tool/${tool.slug || tool.id}`} className="td-explore-row"
+              onClick={() => trackEvent("explore_tool", { tool_slug: slug, to_slug: tool.slug || tool.id, source: "tool_sidebar_together" })}>
+              <span className="td-explore-tile" aria-hidden="true"><ToolLogo tool={tool as any} size={22} /></span>
+              <span className="td-explore-name">{tool.name}</span>
+              <ChevronRight className="td-explore-chevron" aria-hidden />
+            </Link>
+          </li>
+        ))}
+      </ul>
+      {/* Another destination (the exploration map), so another shape: a pill, not a row. */}
       <Link
         to={getExplorerHref(prefix, { type: "outil", slug })}
-        className="td-explore-map"
+        className="td-explore-map-btn"
         aria-label={t(`Explorer les outils liés à ${name}`, `Explore tools related to ${name}`)}
         onClick={() => trackEvent("explore_tool", { tool_slug: slug, source: "tool_sidebar" })}
       >
         <Compass aria-hidden />
         <span>{t("Explorer les outils liés", "Explore related tools")}</span>
       </Link>
-
-      {together.length > 0 && (
-        <div className="td-explore-group">
-          <h3>{t("Souvent utilisé avec", "Often used with")}</h3>
-          <ul className="td-explore-tools">
-            {together.map((tool) => (
-              <li key={tool.id}>
-                <Link to={`${prefix}/tool/${tool.slug || tool.id}`}>
-                  <span className="td-explore-logo"><ToolLogo tool={tool as any} size={20} /></span>
-                  <span className="td-explore-tool-text">{tool.name}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
     </section>
   );
 }

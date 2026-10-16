@@ -72,15 +72,20 @@ function BreakEven({ amount, priceLabel, currencyLabel, toolName, t }: { amount:
     : `${Math.floor(minutes / 60)} h${minutes % 60 ? ` ${String(minutes % 60).padStart(2, "0")}` : ""}`;
   return (
     <div className="td-breakeven">
-      <p className="td-procon-threshold-label">{t("Rentable si", "Worth it if")}</p>
+      <p className="td-procon-threshold-label">{t("Rentable dès", "Pays off from")}</p>
+      {/* Read in thinking order: the answer, its unit, then why (both figures follow the slider). */}
+      <p className="td-breakeven-hero">
+        <strong className="td-breakeven-value" key={time}>{time}</strong>
+        <span>{t("gagnées par mois", "saved a month")}</span>
+      </p>
       <p className="td-breakeven-line">
-        {t(`À ${priceLabel}/mois, ${toolName} se rembourse s'il te fait gagner`, `At ${priceLabel}/month, ${toolName} pays for itself if it saves you`)}{" "}
-        <strong className="td-breakeven-value" key={time}>{time}</strong>{" "}{t("par mois.", "a month.")}
+        {t(`${toolName} coûte ${priceLabel}/mois. Si ton heure vaut ${rate} ${currencyLabel}, ces ${time} suffisent à le rembourser.`,
+           `${toolName} costs ${priceLabel}/month. If your hour is worth ${currencyLabel}${rate}, those ${time} cover it.`)}
       </p>
       <label className="td-breakeven-control">
-        <span>{t("Ta valeur horaire", "Your hourly value")}</span>
+        <span>{t("Ton heure vaut", "Your hour is worth")}</span>
         <input type="range" min={10} max={150} step={5} value={rate} onChange={(event) => setRate(Number(event.target.value))} />
-        <output>{rate} {currencyLabel}/h</output>
+        <output>{t(`${rate} ${currencyLabel}/h`, `${currencyLabel}${rate}/h`)}</output>
       </label>
     </div>
   );
@@ -89,18 +94,23 @@ function BreakEven({ amount, priceLabel, currencyLabel, toolName, t }: { amount:
 /** The markers trace in sequence, once, when the sheet first comes into view. */
 function ProconSheet({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [seen, setSeen] = useState(false);
+  // "static" is the prerendered state: everything visible. Only a sheet that is
+  // still below the fold gets "armed" (hidden, waiting to animate); anything
+  // already on screen, or without IntersectionObserver, stays as rendered.
+  const [phase, setPhase] = useState<"static" | "armed" | "in">("static");
   useEffect(() => {
     const node = ref.current;
-    if (!node || typeof IntersectionObserver === "undefined") { setSeen(true); return; }
+    if (!node || typeof IntersectionObserver === "undefined") return;
+    if (node.getBoundingClientRect().top < window.innerHeight) return;
+    setPhase("armed");
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { setSeen(true); observer.disconnect(); }
-    }, { threshold: 0.25 });
+      if (entry.isIntersecting) { setPhase("in"); observer.disconnect(); }
+    }, { threshold: 0, rootMargin: "0px 0px -15% 0px" });
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
   return (
-    <div ref={ref} className={`td-procon-sheet${seen ? " is-in" : ""}`}>
+    <div ref={ref} className={`td-procon-sheet${phase === "static" ? "" : ` is-${phase}`}`}>
       <div className="td-procon">{children}</div>
     </div>
   );
