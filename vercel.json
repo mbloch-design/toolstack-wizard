@@ -1,6 +1,7 @@
 {
   "ignoreCommand": "bash scripts/vercel-ignore-build.sh",
   "headers": [
+    {"source": "/:lang(fr|en)/tool/:slug([a-z0-9-]+)\\.md", "headers": [{"key": "Link", "value": "<https://tooltrim.com/:lang/tool/:slug>; rel=\"canonical\""}]},
     {
       "source": "/assets/(tool|stack)-catalog/(.*)",
       "headers": [
@@ -295,6 +296,7 @@
     {"source": "/:lang(fr|en)/tool/clearbit/:path*", "destination": "/:lang/tool/hubspot/:path*", "permanent": true}
   ],
   "rewrites": [
+    {"source": "/:lang(fr|en)/tool/:slug([a-z0-9-]+)\\.md", "destination": "/api/tool-md?lang=:lang&slug=:slug"},
     {"source": "/:lang(fr|en)/:page(search|back-office)", "destination": "/client-only.html"},
     {"source": "/submit", "destination": "/client-only.html"},
     {"source": "/:lang(fr|en)/comparatif/:slugPair", "destination": "/client-only.html"},

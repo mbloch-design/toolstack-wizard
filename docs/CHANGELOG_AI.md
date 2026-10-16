@@ -1,3 +1,10 @@
+## 16 octobre 2026 : GEO, verdict exposé aux moteurs de réponse
+
+- `llms-full.txt` : chaque outil porte `verdict_fr` / `verdict_en` (note sur 5 axes seulement si la grille est complète, 594 outils ; libellé, à garder si, à éviter si, 3 points forts et faibles) et `price_verified_on`. En-têtes `llms.txt` / `llms-full.txt` expliquant la note (jamais influencée par un paiement).
+- JSON-LD Review : `positiveNotes` / `negativeNotes` repris des avantages et limites visibles, à l'identique au prérendu (vite.config.ts) et côté client (ToolJsonLd).
+- `/{lang}/tool/{slug}.md` : fiche Markdown servie par une seule fonction (`api/tool-md.ts`, lit le `llms-full.txt` du site, cache 1 h + CDN 24 h, canonique vers la page HTML). L'option 2 698 fichiers statiques dépassait le budget de nombre de fichiers (17 607 > 15 050), abandonnée.
+- Aucune modification de mise en page. Validation : 388 tests app, 170 tests API (+4), garde-fou tokens, build PASS (HTML 713,2 Mio), 57 tests d'hydratation.
+
 ## 2026-10-16 — Nettoyage du code, dépendances et références (local, non publié)
 
 - Graphe TypeScript des imports statiques/dynamiques et revue des chemins lus par les scripts/tests : retrait de 42 modules UI sans consommateur, de 20 composants/pages hérités de l'ancienne homepage et de la page de démarrage Index. AppRoutes utilise HomePageV2 ; HeroSectionV2 et StackGoalsSection restent actifs. Aucun changement des URL ou redirections.

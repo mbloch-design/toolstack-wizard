@@ -26,6 +26,20 @@ interface Props {
  * - SoftwareApplication + Offer
  * - FAQPage when the dedicated FAQ page is rendered
  */
+/** positiveNotes / negativeNotes from the visible pros and cons (max 3 each). */
+function reviewNotes(pros: unknown, cons: unknown) {
+  const notes = (values: unknown) => (Array.isArray(values) ? values : [])
+    .map((value) => (typeof value === "string" ? value.trim() : ""))
+    .filter(Boolean).slice(0, 3)
+    .map((name, index) => ({ "@type": "ListItem", position: index + 1, name }));
+  const positive = notes(pros);
+  const negative = notes(cons);
+  return {
+    ...(positive.length ? { positiveNotes: { "@type": "ItemList", itemListElement: positive } } : {}),
+    ...(negative.length ? { negativeNotes: { "@type": "ItemList", itemListElement: negative } } : {}),
+  };
+}
+
 export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, alternatives, lang, includeFaq = false, canonicalUrl: pageCanonicalUrl }: Props) {
   useEffect(() => {
     const nativePrice = nativePriceFromTool(tool);
@@ -123,6 +137,8 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
           worstRating: "1",
         },
         reviewBody,
+        // Same pros and cons as the prerender (vite.config.ts reviewNotes).
+        ...reviewNotes(lang === "en" ? tool.prosEn : tool.pros, lang === "en" ? tool.consEn : tool.cons),
       },
     });
 

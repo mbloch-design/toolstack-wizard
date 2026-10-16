@@ -284,6 +284,20 @@ function buildToolOffersFor(tool: any, price: number | null, url: string) {
   return hasFree ? buildToolOffers(0, true, "EUR", url) : undefined;
 }
 
+/** positiveNotes / negativeNotes for an editorial Review, from the visible pros and cons (max 3 each). */
+function reviewNotes(pros: unknown, cons: unknown) {
+  const notes = (values: unknown) => (Array.isArray(values) ? values : [])
+    .map((value) => (typeof value === "string" ? value.trim() : ""))
+    .filter(Boolean).slice(0, 3)
+    .map((name, index) => ({ "@type": "ListItem", position: index + 1, name }));
+  const positive = notes(pros);
+  const negative = notes(cons);
+  return {
+    ...(positive.length ? { positiveNotes: { "@type": "ItemList", itemListElement: positive } } : {}),
+    ...(negative.length ? { negativeNotes: { "@type": "ItemList", itemListElement: negative } } : {}),
+  };
+}
+
 function operatingSystemFor(tool: any): string | undefined {
   const host = String(tool?.host_app || "").toLowerCase();
   if (host === "macos") return "macOS";
@@ -1040,6 +1054,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 },
                 ...(isFr ? { name: `Avis ToolTrim : ${ts.labelFr}` } : { name: `ToolTrim review: ${ts.labelEn}` }),
                 ...((isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold) ? { reviewBody: String(isFr ? tool.verdict.threshold : tool.verdictEn.threshold).substring(0, 280) } : {}),
+                // Pros and cons shown in the For. / Against. sheet (Google's pros & cons markup).
+                ...reviewNotes(isFr ? tool.pros : tool.prosEn, isFr ? tool.cons : tool.consEn),
               };
             }
 

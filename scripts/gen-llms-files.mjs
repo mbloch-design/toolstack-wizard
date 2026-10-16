@@ -10,7 +10,12 @@ const llmsEditorialPath = "public/llms-editorial.txt";
 const tools = JSON.parse(await readFile(toolsPath, "utf8"));
 if (!Array.isArray(tools)) throw new Error(`${toolsPath} doit contenir un tableau.`);
 
-const catalogue = toolRecords(tools);
+// Full records carry the published verdict (score, keep/avoid, pros/cons)
+// that answer engines quote; the light index above only carries listings.
+const fullRaw = JSON.parse(await readFile("src/data/tools_v4.json", "utf8"));
+const fullTools = Array.isArray(fullRaw) ? fullRaw : (fullRaw.tools || Object.values(fullRaw));
+const fullBySlug = new Map(fullTools.filter((tool) => tool?.slug).map((tool) => [tool.slug, tool]));
+const catalogue = toolRecords(tools, fullBySlug);
 // Run after prerender and SEO validation: the sitemap and generated HTML are
 // the publication authority, including translated slugs and standalone guides.
 const urls = editorialUrls(await readFile("dist/sitemap.xml", "utf8"));
@@ -47,6 +52,7 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 ## URL Patterns
 
 - Tool: \`https://tooltrim.com/{lang}/tool/{slug}\`
+- Tool as Markdown (facts and verdict, for agents): \`https://tooltrim.com/{lang}/tool/{slug}.md\`
 - Tool pricing: \`https://tooltrim.com/fr/tool/{slug}/prix\` or \`https://tooltrim.com/en/tool/{slug}/pricing\`
 - Tool reviews: \`https://tooltrim.com/fr/tool/{slug}/avis\` or \`https://tooltrim.com/en/tool/{slug}/reviews\`
 - Category: \`https://tooltrim.com/{lang}/category/{slug}\`
@@ -65,6 +71,8 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 - Pricing text retains the stated currency and billing period. Missing prices are unknown, not zero; annual or lifetime offers are not converted into monthly EUR prices.
 - Prices and descriptions are editorial data, not a promise that a vendor has not changed its offer since publication.
 - Check the cited vendor website and the relevant ToolTrim page before quoting a current price.
+- \`verdict_fr\` / \`verdict_en\` reproduce the verdict published on each tool page: ToolTrim score (average of five evidence-graded axes: added value, simplicity, fit for purpose, power, reversibility; never influenced by payment), who should keep the tool, who should look elsewhere, and its main strengths and weaknesses. Tools without a complete five-axis rating carry no score.
+- \`price_verified_on\` is the date ToolTrim last checked the vendor's pricing page.
 
 ## Citation
 
@@ -80,6 +88,7 @@ const llmsFull = `# ToolTrim canonical tool catalogue
 # Records: ${catalogue.length}
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
+# Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
 # Localized guides and comparisons: https://tooltrim.com/llms-editorial.txt
 
 ${JSON.stringify(catalogue, null, 2)}
