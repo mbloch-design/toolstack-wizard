@@ -34,7 +34,7 @@ for (const lang of ["fr", "en"]) {
     await page.getByRole("button", { name: lang === "fr" ? "Ajouter ChatGPT" : "Add ChatGPT", exact: true }).click();
     await page.evaluate(() => localStorage.setItem("tooltrim-ma-stack-paid-plans-v1", JSON.stringify(["chatgpt"])));
     await page.reload({ waitUntil: "domcontentloaded" });
-    await expect(page.locator(".ms-hero-stats")).toContainText(lang === "fr" ? "Total partiel" : "Partial total");
+    await expect(page.locator(".ms-hero-stats")).toContainText(lang === "fr" ? "Estimation partielle" : "Partial estimate");
     await expect(page.locator(".ms-tool")).toHaveCount(2);
   });
 }

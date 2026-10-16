@@ -249,14 +249,11 @@ const GuidesPage = () => {
 
           {/* Guides list */}
           {filteredPosts.length === 0 && (
-            <div style={{ paddingTop: 48, textAlign: "center" }}>
-              <p style={{ fontFamily: "var(--font-ui)", fontSize: 16, color: "var(--color-muted-light)" }}>
+            <div className="gi-empty">
+              <p>
                 {t("Aucun guide pour ce filtre.", "No guides for this filter.")}
               </p>
-              <button
-                onClick={() => setActiveFilter("all")}
-                style={{ marginTop: 16, fontFamily: "var(--font-ui)", fontSize: 14, fontWeight: 500, color: "var(--color-text)", cursor: "pointer", background: "none", border: "none", textDecoration: "underline" }}
-              >
+              <button type="button" onClick={() => setActiveFilter("all")}>
                 {t("Voir tous les guides", "See all guides")}
               </button>
             </div>
@@ -301,7 +298,7 @@ const GuidesPage = () => {
 
           {/* Load more */}
           {hasMore && (
-            <div style={{ paddingTop: 40, display: "flex", justifyContent: "center" }}>
+            <div className="gi-load-more-row">
               <button
                 className="gi-load-more"
                 onClick={() => setShowAll(true)}
