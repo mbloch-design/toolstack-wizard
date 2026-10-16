@@ -1,3 +1,9 @@
+## 2026-10-16 : Sovkern, relecture privee actualisee
+
+- Apercu isole reconstruit avec le template courant de main, sans ajout au catalogue public, au sitemap ni aux fichiers LLM.
+- Valeur ajoutee et simplicite revaluees a 4/5 selon le perimetre annonce pour les TPE/PME ; utilisation et puissance a 4/5, reversibilite a 3/5. Moyenne controlee : 3,8/5.
+- TypeScript app PASS. Rendu et navigation Verdict controles dans le navigateur ; nouveau deploiement Preview READY avec Vercel Authentication, acces anonyme redirige (302), lien temporaire de sept jours teste. Aucun push ni deploiement de production.
+
 ## 2026-10-16 — Registre de relecture réaligné sur le catalogue versionné
 
 - Contrôle initial en échec : registre de 1 177 entrées pour 1 349 entrées catalogue sur main. Régénération par le moteur existant : 172 entrées ajoutées en QUEUED, aucune supprimée.
