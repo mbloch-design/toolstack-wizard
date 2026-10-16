@@ -8,6 +8,13 @@ function slugToLabel(slug: string): string {
 
 // Override map for slugs that auto-label poorly
 const LABEL_OVERRIDES: Record<string, { fr: string; en: string }> = {
+  "security-compliance": { fr: "Conformité et sécurité", en: "Security and compliance" },
+  "compliance-dashboard": { fr: "Tableau de bord de conformité", en: "Compliance dashboard" },
+  "compliance-action-plan": { fr: "Plan d’action priorisé", en: "Prioritized action plan" },
+  "gdpr-processing-register": { fr: "Registre des traitements RGPD", en: "GDPR processing register" },
+  "privacy-impact-assessment": { fr: "Analyses d’impact", en: "Impact assessments" },
+  "compliance-risk-management": { fr: "Gestion des risques", en: "Risk management" },
+  "cross-framework-evidence": { fr: "Preuves multi-référentiels", en: "Cross-framework evidence" },
   "prototyping": { fr: "Prototypage", en: "Prototyping" },
   "generation-texte": { fr: "Génération de texte", en: "Text generation" },
   "generation-image": { fr: "Génération d’images", en: "Image generation" },

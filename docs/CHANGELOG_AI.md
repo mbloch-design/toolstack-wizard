@@ -1,3 +1,9 @@
+## 2026-10-16 : blocs de fonctionnalites adaptatifs
+
+- Les tuiles de fonctionnalites des fiches utilisent leur largeur naturelle et passent a la ligne selon l'espace disponible, au lieu de conserver trois colonnes fixes. Césure automatique et coupure au milieu des mots desactivees.
+- Libelle « Conformité et sécurité » localise en FR/EN ; libelles precis pour le tableau de bord, le plan d'action, le registre RGPD, les analyses d'impact, les risques et les preuves multi-referentiels.
+- Donnees Sovkern completees uniquement dans l'apercu prive, hors catalogue public. Tests app : 394 PASS ; TypeScript app PASS. Controle navigateur du libelle, des styles calcules et de la largeur naturelle.
+
 ## 2026-10-16 — Registre de relecture réaligné sur le catalogue versionné
 
 - Contrôle initial en échec : registre de 1 177 entrées pour 1 349 entrées catalogue sur main. Régénération par le moteur existant : 172 entrées ajoutées en QUEUED, aucune supprimée.
