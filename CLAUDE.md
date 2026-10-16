@@ -1,76 +1,18 @@
 # ToolTrim — Guide Claude
 
-Ce fichier aide Claude à naviguer le projet ToolTrim efficacement.
+Lire et appliquer [AGENTS.md](AGENTS.md), référence commune à Codex et Claude pour la stack, les conventions et le workflow. Ne pas recopier ici ces règles : elles doivent rester cohérentes entre les deux agents.
 
-## Projet
+## Reprise du travail
 
-ToolTrim est un site éditorial de comparaison d'outils SaaS pour freelances et petites équipes.
-Stack : React 18 + React Router v6 + Vite + TypeScript + Tailwind CSS v3.
+- Lire le suivi actif de [docs/ROADMAP.md](docs/ROADMAP.md), puis la roadmap du chantier concerné.
+- Ma Stack et Explorer : [docs/MA_STACK_ROADMAP.md](docs/MA_STACK_ROADMAP.md).
+- Diagnostic adaptatif : [ROADMAP_DIAGNOSTIC.md](ROADMAP_DIAGNOSTIC.md) ; `AI_HANDOFF.md` en conserve l'historique technique, sans définir les priorités globales.
+- Catalogue : consulter les briefs adaptés dans `docs/`, notamment `CLOUD_RESEARCH_BRIEF.md`, avant une recherche ou un enrichissement.
+- Consulter [docs/TODO.md](docs/TODO.md) pour les tâches transverses et [docs/CHANGELOG_AI.md](docs/CHANGELOG_AI.md) pour les livraisons passées. Vérifier les états historiques avant de les présenter comme actuels.
 
-## Fichiers importants
+## Hygiène du dépôt
 
-| Fichier | Rôle |
-|---|---|
-| `src/pages/ToolDetailPage.tsx` | Page outil — template principal |
-| `src/pages/GuidesPage.tsx` | Index guides éditorial |
-| `src/pages/GuideDetailPage.tsx` | Article guide éditorial |
-| `src/components/Navbar.tsx` | Header fixe + mega-panel Explorer |
-| `src/components/tool/StickyDecisionCard.tsx` | Sidebar sticky décision |
-| `src/index.css` | Système de design complet (@layer components) |
-| `docs/DESIGN_SYSTEM.md` | Référence palette, typographie, composants |
-| `docs/ARCHITECTURE.md` | Structure des pages et conventions techniques |
-| `docs/CHANGELOG_AI.md` | Historique des sessions Claude |
-| `docs/ROADMAP.md` | Phases de développement et dette technique |
-| `docs/TODO.md` | To-do vivante : chantiers, constats, décisions attendues. À mettre à jour à chaque session |
-| `docs/CLOUD_RESEARCH_BRIEF.md` | Brief des sessions cloud de recherche fiches (schéma v2) |
-
-## Conventions CSS
-
-Toutes les classes de design utilisent `@layer components` dans `src/index.css`.
-Préfixes : `td-*` (tool detail), `gi-*` (guides index), `ga-*` (guide article),
-`tc-*` (tool card), `tce-*` (tool card editorial), `nav-*` (navbar), `panel-*` (mega-panel).
-
-**Ne pas** utiliser Tailwind inline dans les nouveaux composants éditoriaux.
-**Ne pas** mettre `position: sticky` sur un enfant d'un grid item — toujours sur le grid item lui-même.
-
-## Variables CSS globales
-
-```css
---navbar-h: 68px        /* hauteur navbar fixe */
---header-height: var(--navbar-h)   /* alias */
---font-brand: "Uncut Sans Variable"
---font-ui: "Inter Tight"
---primary: 224 76% 50%  /* ToolTrim blue — usage très limité */
-```
-
-## Palette
-
-`#0F0F0F` texte/CTA · `#F6F5F4` backgrounds · `#EDEBE9` surfaces secondaires ·
-`#FFFFFF` cards · `#E6E6E6` borders · `#6F6F68` métadonnées · `#9A9A92` placeholders ·
-`#E0DBD7` chips/tags
-
-## Règles à respecter
-
-- Pas de bouton bleu sur les pages outils
-- Pas de gradient background
-- Pas de grands logos décoratifs
-- Pas d'emojis comme icônes (utiliser le système Iconoir centralisé dans `src/lib/icons.tsx`)
-- Pas de métadonnées répétées (hero ET sidebar)
-- Dark mode : non prioritaire, documenter la dette dans ROADMAP.md
-
-## Commandes utiles
-
-```bash
-npm run dev       # dev server
-npm run build     # build + prerender
-git log --oneline -10  # derniers commits
-```
-
-## Workflow typique
-
-1. Lire les docs concernées avant de coder
-2. Modifier CSS dans index.css (classes préfixées)
-3. Modifier le composant / la page
-4. `npm run build` pour valider
-5. Commit avec message conventionnel
-6. Mettre à jour CHANGELOG_AI.md
+- Mettre à jour le document actif plutôt que créer une copie numérotée ou un nouveau handoff de session.
+- Conserver les preuves catalogue et les travaux en cours tant que leur remplacement n'est pas vérifié.
+- Retirer les fichiers de travail obsolètes déjà versionnés lorsque leurs références ont été traitées ; Git conserve leur historique.
+- Ne jamais embarquer les modifications d'un autre chantier dans un commit de nettoyage.

@@ -4,10 +4,8 @@
 .go*-work/
 dist/
 dist-ssr/
-dist-ssr 2/
-AI_HANDOFF 2.md
-AI_HANDOFF 3.md
-AI_HANDOFF 4.md
+dist [0-9]*/
+dist-ssr [0-9]*/
 .claude/
 .impeccable/
 .lovable/
@@ -28,10 +26,5 @@ CLAUDE.md
 playwright.config.ts
 playwright-fixture.ts
 vitest*.config.*
-scripts/_*.mjs
-scripts/add-ai-angle-*.mjs
-scripts/add-content-batch-*.mjs
 scripts/curate-alternatives*.mjs
-scripts/fill-*.mjs
-scripts/fix-asana-*.mjs
-scripts/rewrite-*.mjs
+scripts/fill-short-descriptions.mjs

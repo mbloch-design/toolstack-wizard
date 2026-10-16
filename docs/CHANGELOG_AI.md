@@ -1,3 +1,17 @@
+## 2026-10-16 — Nettoyage des anciens fichiers de pilotage IA (local, non publié)
+
+- Retrait du plan Lovable périmé, des trois handoffs numérotés de juin et du handoff documentaire de mai. Historique conservé dans Git ; aucun dossier d'archives ajouté.
+- CLAUDE.md renvoie désormais au guide commun AGENTS.md plutôt que dupliquer une stack et une palette divergentes. Les entrées catalogue et diagnostic restent accessibles.
+- AI_HANDOFF.md conservé pour les validateurs du diagnostic ; son en-tête distingue cet historique du pilotage global actuel.
+- Recherches, configurations Claude/Impeccable, sauvegardes et travaux locaux hors périmètre conservés. Le chemin de .claude/launch.json est effectivement utilisé par les processus Claude actuels : aucune modification. Les artefacts .build-trash d’un build actif restent intacts.
+- Deuxième passe : retrait de six scripts/extraits ponctuels sans référence dans les fichiers suivis (`_all-published`, `_cat-summary`, `_inspect-asana`, `_tmp-push-organization-recategorization`, `_verdict-null`, `_verdict-null-proj`). Aucun script de migration catalogue actif retiré.
+- Nettoyage local du checkout principal : copies de builds `dist 2` et `dist-ssr 3`, dossiers `e2e 2` et `src/test/ma-stack 2`, copies `stackPricing 2.ts`, `validate-ma-stack-e2e 2.mjs`, `og-image 3.svg` retirés après comparaison et contrôle des références : 1 382 159 005 octets logiques supprimés. Copies de CV, recherches, sauvegardes et changements catalogue conservés.
+- README : remplacement de la liste de fonctionnalités « à venir » périmée par les commandes et liens vers les roadmaps actives, sans ajouter de document.
+- Nettoyage local additionnel : seconde installation de dépendances `node_modules 2` retirée (655 200 363 octets de fichiers réguliers), après vérification des processus actifs ; `node_modules` courant conservé.
+- Troisième passe : 91 anciens lots éditoriaux autonomes et sorties SQL longdesc retirés (13748 lignes). Chaque lot est sans référence dans les fichiers suivis ; les scripts MJS ne sont pas des modules exportés et écrivent un contenu figé dans le JSON catalogue. Les sources catalogue publiées et les preuves recherche restent inchangées.
+- Prévention : motifs gitignore réservés aux builds numérotés et règles d'hygiène communes dans AGENTS.md ; exclusions Vercel nettoyées des familles supprimées.
+- Validation finale : 383 tests application, 166 API et 39 SEO PASS ; 18 tests API Redis ignorés dans cette exécution. Types application/Node/API PASS. Build production complet, équivalence HTML, SEO/routage et budgets PASS. Références actives et diff vérifiés ; relecture indépendante sans point restant. Aucun code applicatif ni contenu catalogue modifié.
+
 ## 16 octobre 2026 — Recherche par usage et alternatives, exploitation vérifiée
 
 - Deux défauts reproduits dans la page et la fenêtre globale : appointment scheduling sans résultat, alternative à Notion mettant Notionlytics en tête. Le moteur commun fusionne le synonyme avec les résultats d’origine et utilise uniquement les alternatives explicites lorsque la source est exactement reconnue. Catalogue, prix, relations et interfaces conservés.

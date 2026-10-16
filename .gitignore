@@ -56,3 +56,7 @@ supabase/.temp/
 /r11-test-results/
 
 /search-test-results/
+
+# Copies numerotees de builds locaux : artefacts regenerables, jamais des sources.
+/dist [0-9]*/
+/dist-ssr [0-9]*/

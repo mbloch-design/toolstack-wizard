@@ -15,14 +15,15 @@
 
 ## État actif consolidé — 16 octobre 2026
 
-[Suivi du 16 octobre](POST_R11_SUIVI_2026-10-16.md) : soumissions publiées (`0cdd87898b`), CI/Vercel et 16 parcours publics simulés PASS. Maintenance authentifiée et sauvegarde locale hors worktree vérifiées ; rotation en attente du relais opérateur. Les deux propriétés GA4 montrent explorer_view sur les 14–15 octobre ; save/back non observés, aucune conversion déduite. Recherche FR/EN corrigée et validée localement, livraison en cours.
+[Suivi du 16 octobre](POST_R11_SUIVI_2026-10-16.md) : soumissions publiées (`0cdd87898b`), CI/Vercel et 16 parcours publics avec API simulée PASS. Recherche FR/EN publiée sur `d4fd0a8ec4`, CI réussie et six scénarios publics réussis. Rotation Redis effectuée par le propriétaire puis variable Production remplacée ; redéploiement Vercel `4tPsXg2QfHMKieypDsaUKWq2cq9Z` prêt. Contrôle public `replayOnly` d’un UUID fictif absent : 404 `submission_not_found` après déploiement, contre 503 avant ; lecture Redis rétablie sans création de soumission, email ni paiement. La copie privée locale de l’ancien jeton reste à actualiser.
 
-Exécution de la suite : [bilan opérationnel](POST_R11_OPERATIONS_2026-10-15.md). R10/R11 publiés sur ffbb3f7ac7, Vercel réussi et 21 contrôles publics R11 réussis ; CI 38763760190 réussie. Correctifs de soumission locale validés localement ; livraison distincte. Sponsoring reporté explicitement jusqu’à une vente ; offre conservée. Rotation Redis requiert la bascule opérateur, elle n’est pas exécutée.
+Maintenance authentifiée et sauvegarde locale hors worktree vérifiées. Les deux propriétés GA4 montrent `explorer_view` sur les 14–15 octobre ; `save/back` non observés, aucune conversion déduite. R10/R11 publiés sur `ffbb3f7ac7`, CI/Vercel et 21 contrôles publics R11 réussis. Sponsoring reporté explicitement jusqu’à une vente ; offre conservée.
 
 Ce tableau pilote la suite ; les bilans et tableaux datés du 9 octobre plus bas sont des états historiques.
 
 | Chantier | État actuel et prochaine condition |
 |---|---|
+| Hygiène du dépôt — 16 octobre | Nettoyage local validé (tests, types, build complet, relecture) : 102 anciens fichiers suivis retirés ; consignes Codex/Claude consolidées, README relié aux références actives. Environ 2,04 Go logiques de copies et dépendances locales supprimés. Preuves recherche, catalogue, migrations actives et builds Claude en cours préservés. Aucun push de ce nettoyage. |
 | Parcours Ma Stack → Explorer → enregistrement → retour | Publié ; contrôles techniques FR/EN mobile/ordinateur intégrés à la CI. Ils ne prouvent pas la valeur perçue des relations. |
 | R8 — Clavier et filtres | Trois scénarios obsolètes repris, deux panneaux sans nom accessible corrigés ; 21 contrôles Chromium et 42 passages publics réussis. CI du correctif tokens `b7fa441935` réussie. Couverture exhaustive, WebKit et lecteurs d’écran restent différés. |
 | R9 — Instrumentation | Publié, 19 contrôles publics réussis. Les trois événements sont acceptés par les deux flux GA4 existants (HTTP 204 avec accord) ; visibilité dans les rapports et exploitation de l’entonnoir restent à vérifier. [Contrat et limites](R9_RECETTE_UTILISATEURS.md#mesure-technique-du-parcours--14-octobre-2026). |

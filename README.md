@@ -71,19 +71,23 @@ Tooltrim currently focuses on:
 
 The project is still evolving, with new tools, categories and expert stacks added progressively.
 
-## Roadmap
+## Development and project references
 
-Upcoming improvements may include:
+```sh
+npm ci
+npm run dev
+npm run typecheck
+npm test
+npm run build
+```
 
-- deeper tool reviews
-- expert stack pages by profession
-- more verified pricing data
-- affiliate and partner integrations
-- tool scoring by use case
-- comparison pages
-- SaaS cost audit features
-- multilingual content
-- stronger filtering by profile, budget and workflow
+- [AGENTS.md](AGENTS.md): shared development conventions for Codex and Claude.
+- [Active technical roadmap](docs/ROADMAP.md#suivi-technique-actif).
+- [Ma Stack and Explorer roadmap](docs/MA_STACK_ROADMAP.md).
+- [Adaptive diagnostic roadmap](ROADMAP_DIAGNOSTIC.md).
+- [Design system](docs/DESIGN_SYSTEM.md) and [architecture](docs/ARCHITECTURE.md).
+
+Update these references rather than creating numbered handoff copies. Superseded files and one-off content patches remain available in Git history.
 
 ## About the founder
 
