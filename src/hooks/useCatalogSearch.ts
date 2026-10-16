@@ -127,6 +127,7 @@ function buildDocuments(
       label: tool.name,
       meta: categoryLabel,
       searchText: flattenText(searchableFields),
+      alternativeSlugs: tool.alternatives,
       category: flattenText([category?.name, category?.nameEn]),
       tags: flattenText([tool.functional_needs, tool.covers]).replaceAll("-", " "),
     };

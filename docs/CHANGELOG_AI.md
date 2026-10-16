@@ -1,3 +1,18 @@
+## 16 octobre 2026 — Recherche par usage et alternatives, exploitation vérifiée
+
+- Deux défauts reproduits dans la page et la fenêtre globale : appointment scheduling sans résultat, alternative à Notion mettant Notionlytics en tête. Le moteur commun fusionne le synonyme avec les résultats d’origine et utilise uniquement les alternatives explicites lorsque la source est exactement reconnue. Catalogue, prix, relations et interfaces conservés.
+- Trois tests rouges avant correction ; contre-revue : réécriture exclusive perdant un résultat anglais, reproduite en rouge puis corrigée par fusion/déduplication. Dix tests moteur inclus dans les 383 tests applicatifs PASS ; types app/Node/API et build complet PASS. Six parcours FR/EN sur artefact final PASS (8,1 s), ajoutés à la CI. Aucun défaut actionnable restant à la revue finale.
+- Livraison précédente 0cdd87898b : CI/Vercel réussis, 16 parcours publics de soumission avec API simulées PASS (27,3 s). Fixture réseau adaptée à l’origine choisie pour permettre cette recette sans appel API réel.
+- Redis : PING et lecture du registre PASS ; maintenance401 sans secret,400 avec secret et action invalide. Sauvegarde privée600, hors worktree temporaire et ignorée, relecture identique ; pas de copie hors poste ni de restauration production prétendue. Rotation non exécutée, relais utilisateur requis par le contrôle navigateur.
+- GA4 : deux propriétés identifiées, rapports sur 14–15 octobre ; explorer_view2 par propriété, save/back non observés. Aucune somme des propriétés, conversion ou validation utilisateur déduite. Sponsoring et R5/R6 restent différés. [Bilan](POST_R11_SUIVI_2026-10-16.md).
+
+## 15 octobre 2026 — Soumissions locales isolées et preuve badge stricte
+
+- Six appels API du formulaire/reprise restent sur l'origine courante ; retrait du routage localhost vers la production. Endpoints et payloads production conservés.
+- Un HTTP 200 sans jeton badge ne confirme plus la vérification. Quatre réponses invalides reproduites en rouge puis corrigées ; tests navigateur FR/EN ajoutés.
+- Recette réseau observe les requêtes même quand un mock spécifique prend priorité. Aucun paiement/email réel. Sponsoring reporté explicitement, offre conservée ; R5/R6 restent différés.
+- Bilan et points d'exploitation : [POST_R11_OPERATIONS_2026-10-15.md](POST_R11_OPERATIONS_2026-10-15.md). 379 tests applicatifs, types application, build complet et budgets PASS. 16 parcours simulés FR/EN sur Vite PASS ; 16 parcours sur le véritable HTML généré PASS (18,8 s). Correctif local non publié. R10/R11 précédents : CI 38763760190 et Vercel réussis, 21 contrôles publics R11 PASS et descriptions des deux guides présentes.
+
 ## 15 octobre 2026 — Clôture technique locale R10/R11
 
 - Suite explicitement demandée après le premier lot : remédier aux dépendances restantes et achever les contrôles médias/liens/indexation, sans publier implicitement ni reprendre R5/R6.

@@ -3,15 +3,27 @@ import { expect, test } from "@playwright/test";
 const draft = { toolName: "Sample", toolUrl: "https://example.com/", email: "ada@example.com", name: "Ada", submitterRole: "founder", message: "A useful tool", badgeUrl: "", verificationToken: "", paymentReference: "7ec2090a-9157-43c9-9238-f8931667420d", checkoutId: "" };
 
 const browserErrors = new WeakMap<object,string[]>();
-test.afterEach(async ({page}) => { expect(browserErrors.get(page)).toEqual([]); });
-test.beforeEach(async ({ page }) => {
+const foreignSubmissionRequests = new WeakMap<object,string[]>();
+test.afterEach(async ({page}) => {
+  expect(browserErrors.get(page)).toEqual([]);
+  expect(foreignSubmissionRequests.get(page), "Every submission API, including recovery and overridden mocks, must stay on the preview origin").toEqual([]);
+});
+test.beforeEach(async ({ page, baseURL }) => {
   const errors: string[] = []; browserErrors.set(page, errors);
+  const foreignRequests: string[] = []; foreignSubmissionRequests.set(page, foreignRequests);
+  page.on("request", request => {
+    const url = new URL(request.url());
+    if (/^\/api\/(contact|submission-progress|verify-payment|verify-badge)$/.test(url.pathname) && url.origin !== new URL(baseURL!).origin) foreignRequests.push(`${request.method()} ${url.origin}${url.pathname}`);
+  });
   page.on("pageerror", error => errors.push(error.message));
   // No payment, email, analytics or backend write can leave this browser.
   await page.route("**/*", async route => {
     const url = new URL(route.request().url());
-    if (url.pathname.startsWith("/api/")) return route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({success:true,verified:true})});
-    if (url.hostname === "127.0.0.1" || url.hostname === "localhost") return route.continue();
+    if (/^\/api\/(contact|submission-progress|verify-payment|verify-badge)$/.test(url.pathname)) {
+      expect(url.origin, "Submission APIs must stay on the preview origin").toBe(new URL(baseURL!).origin);
+      return route.fulfill({status:200,contentType:"application/json",body:JSON.stringify({success:true,verified:true})});
+    }
+    if (url.origin === new URL(baseURL!).origin) return route.continue();
     return route.abort();
   });
 });
@@ -116,3 +128,20 @@ test('free badge notification outage and lost accepted reply preserve recovery',
  const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('tt_submit_draft')!));expect(saved.message).toBe('Complete free details');
  await page.reload();await expect(page.getByRole('heading',{name:/est dans la file de revue standard\./})).toBeVisible();expect(badgeCallsAfterAcceptance).toBe(0);
 });
+
+for (const lang of ['fr', 'en'] as const) {
+ test(`local HTML fallback cannot verify a badge (${lang})`, async ({page}) => {
+  await page.route('**/api/verify-badge', route => route.fulfill({status:200,contentType:'text/html',body:'<!doctype html><title>Local preview</title>'}));
+  await page.goto(`/${lang}/submit`);
+  await page.getByRole('button',{name:lang==='fr'?'Rejoindre la revue standard →':'Join the standard review →'}).click();
+  await page.getByLabel(lang==='fr'?'Site officiel':'Official website').fill('https://example.com');
+  await page.getByLabel(lang==='fr'?"Nom de l'outil":'Tool name').fill('Sample');
+  await page.getByLabel('Email',{exact:true}).fill('ada@example.com');
+  await page.getByRole('button',{name:lang==='fr'?'Continuer vers le badge →':'Continue to the badge →'}).click();
+  await page.getByRole('checkbox').check();
+  await page.getByLabel(lang==='fr'?'URL de la page avec le badge':'URL of the page with the badge').fill('https://example.com/badge');
+  await page.getByRole('button',{name:lang==='fr'?'Valider et continuer →':'Validate and continue →'}).click();
+  await expect(page.getByRole('alert')).toBeVisible();
+  await expect(page.getByRole('button',{name:lang==='fr'?'Envoyer pour revue →':'Submit for review →'})).toHaveCount(0);
+ });
+}

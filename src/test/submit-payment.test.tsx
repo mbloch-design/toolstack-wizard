@@ -198,3 +198,13 @@ it('lost_accepted_free_reply_recovers_without_rechecking_an_unavailable_badge_pa
  request.mockClear();request.mockImplementation(async url=>new Response(JSON.stringify(String(url).endsWith('/contact')?{success:true}:{error:'page_unreachable'}),{status:String(url).endsWith('/contact')?200:503}));
  mount('/fr/submit');await screen.findByText(/est dans la file de revue standard\./);expect(JSON.parse(String(request.mock.calls[0][1]?.body)).replayOnly).toBe(true);expect(request.mock.calls.some(([url])=>String(url).endsWith('/verify-badge'))).toBe(false);
 });
+
+it.each(['<!doctype html><title>Vite</title>', '{}', '{"token":""}', '{"token":7}'])('missing local badge API never confirms a badge: %s', async body => {
+ window.localStorage.clear();
+ request.mockImplementation(async url => new Response(String(url).endsWith('/verify-badge') ? body : '{"success":true}', {status:200}));
+ mount('/fr/submit'); await completeFreeBadge();
+ await screen.findByRole('alert');
+ expect(screen.queryByText('Badge vérifié : revue standard')).not.toBeInTheDocument();
+ expect(window.localStorage.getItem('tt_submit_draft')).not.toBeNull();
+ expect(request.mock.calls.some(([url]) => String(url).endsWith('/contact'))).toBe(false);
+});

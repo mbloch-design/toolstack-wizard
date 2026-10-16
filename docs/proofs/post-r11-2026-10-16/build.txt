@@ -1,0 +1,305 @@
+
+> vite_react_shadcn_ts@0.0.0 build
+> node scripts/build-production.mjs
+
+Tooltrim — build production reproductible
+
+▶ Index léger des outils
+  node scripts/gen-tools-index.mjs
+src/data/tools_index.json écrit : 1349 outils, 0 slug dupliqué
+
+▶ Prix natifs attestés
+  node scripts/gen-native-prices.mjs
+src/data/nativePrices.ts ecrit : 41 prix attestes ({"USD":34,"EUR":7}), 2 ligne(s) ignoree(s)
+
+▶ Données des pages « meilleurs outils »
+  node scripts/gen-best-of-guides-data.mjs
+Pages « meilleurs outils » : 5 pages, 34 outils.
+
+▶ Index de recherche des pages
+  node scripts/gen-search-pages-index.mjs
+Index de recherche des pages : 83 comparatifs, 212 stacks, 5 pages « meilleurs outils ».
+
+▶ Index catalogue stacks
+  node_modules/.bin/tsx scripts/gen-stacks-catalog-index.ts
+stacks-catalog-index.json written: 212 stacks, 392 tools
+
+▶ Index léger des guides d’accueil
+  node scripts/gen-home-posts-index.mjs
+home-posts-index.json written: 12 FR + 12 EN
+
+▶ Index croisé guides ↔ outils
+  node scripts/gen-tool-guides-index.mjs
+tool_guides_index.json written: 61 guide→outil, 19 outils couverts
+
+▶ Sprite d’icônes
+  node scripts/gen-icon-sprite.mjs
+✓ Sprite : 152 icônes, 143 formes distinctes, 80.4 Ko -> public/assets/icons.37ed096f.svg
+Mise à l'écart des anciens dossiers générés : dist, dist-ssr
+  dist → .build-trash/dist-2026-10-16T07-02-26-995Z-34709
+  dist-ssr → .build-trash/dist-ssr-2026-10-16T07-02-26-995Z-34709
+  purge en arrière-plan : 2 archive(s) obsolète(s)
+
+▶ Build SSR
+  vite build --ssr src/entry-server.tsx --outDir dist-ssr --emptyOutDir false
+vite v6.4.4 building SSR bundle for production...
+transforming...
+✓ 243 modules transformed.
+rendering chunks...
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/integrations/supabase/client.ts is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/components/tool/ToolBundleSection.tsx, /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/lib/catalogProjection.ts but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/hooks/useSupabaseData.ts, /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/BackOfficePage.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/StackDetailPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/CategoryPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/ToolsPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/StacksPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/CategoriesIndexPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/data/posts-fr.json is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/hooks/useSupabaseData.ts but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/lib/guideCatalog.ts, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/data/posts-en.json is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/hooks/useSupabaseData.ts but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/lib/guideCatalog.ts, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/GuidesPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/ComparesIndexPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/AboutPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/TransparencyPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/ContactPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/LegalNoticePage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/TermsPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/CartPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/SubmitToolPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/ExplorerPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/PersonaPillarPage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+[plugin vite:reporter]
+(!) /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/pages/BestOfGuidePage.tsx is dynamically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/App.tsx but also statically imported by /Users/mike/.codex/worktrees/stack-discovery-release/New project/src/entry-server.tsx, dynamic import will not move module into another chunk.
+
+dist-ssr/assets/0-Cu8AVTmf.js                      0.12 kB
+dist-ssr/assets/x-DJdRUFcu.js                      0.13 kB
+dist-ssr/assets/j-DYPVwbhh.js                      0.14 kB
+dist-ssr/assets/q-DoHVRou-.js                      0.21 kB
+dist-ssr/assets/u-EndiW2EJ.js                      0.23 kB
+dist-ssr/assets/y-Z7gzhkrj.js                      0.30 kB
+dist-ssr/assets/e-DAGHgv66.js                      0.44 kB
+dist-ssr/assets/v-DLIaciKk.js                      0.51 kB
+dist-ssr/assets/h-BDYPLgoj.js                      0.54 kB
+dist-ssr/assets/z-BAz-JXHW.js                      0.58 kB
+dist-ssr/assets/n-H90A8XHJ.js                      0.61 kB
+dist-ssr/assets/o-Cp0wkG4d.js                      0.61 kB
+dist-ssr/assets/i-ClsdNfoe.js                      0.64 kB
+dist-ssr/assets/w-C2HRU8sm.js                      0.75 kB
+dist-ssr/assets/k-BkjyM6Nt.js                      0.82 kB
+dist-ssr/assets/b-DbobZqUE.js                      0.90 kB
+dist-ssr/assets/d-D-4q4EMs.js                      1.01 kB
+dist-ssr/assets/r-CiODBxhg.js                      1.48 kB
+dist-ssr/assets/f-4Rxl1bbd.js                      1.50 kB
+dist-ssr/assets/m-SrZjKvZf.js                      1.70 kB
+dist-ssr/assets/NotFound-Dhev2vdY.js               1.80 kB
+dist-ssr/assets/c-CuJSMkWv.js                      1.83 kB
+dist-ssr/assets/l-CeQFI5e1.js                      1.83 kB
+dist-ssr/assets/t-CJyF4irS.js                      1.83 kB
+dist-ssr/assets/p-DryDm5nm.js                      2.21 kB
+dist-ssr/assets/g-Crdv-2wl.js                      2.45 kB
+dist-ssr/assets/a-Bzr8U8Ic.js                      2.79 kB
+dist-ssr/assets/s-DQXUDGof.js                      2.90 kB
+dist-ssr/assets/catalogSearch-DpY9jPVA.js          4.47 kB
+dist-ssr/assets/HostPage-BcC1AQwx.js               5.46 kB
+dist-ssr/assets/catalogProjection-BRYvpF5-.js      8.29 kB
+dist-ssr/assets/PrivacyPolicyPage-CcxHJOVo.js     10.44 kB
+dist-ssr/assets/SearchPage-DdGVJl9t.js            17.02 kB
+dist-ssr/assets/MethodologyPage-DNdBztYA.js       25.50 kB
+dist-ssr/assets/searchPagesIndex-NHCWpUwD.js      52.75 kB
+dist-ssr/assets/BackOfficePage-F6w4pZDY.js       171.55 kB
+dist-ssr/entry-server.js                       4,986.04 kB
+✓ built in 1.78s
+
+▶ Build client
+  vite build --emptyOutDir false
+vite v6.4.4 building for production...
+transforming...
+✓ 486 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/assets/picto-logo-BSon4Orl.svg                  1.45 kB │ gzip:   0.82 kB
+dist/assets/logo-tooltrim-DA8bYbp0.svg               4.03 kB │ gzip:   1.54 kB
+dist/index.html                                     13.50 kB │ gzip:   4.53 kB
+dist/assets/index-CoxhJ4YK.css                   1,018.39 kB │ gzip: 154.80 kB
+dist/assets/x-Bzq5FVeu.js                            0.09 kB │ gzip:   0.10 kB
+dist/assets/0-CIihAlNo.js                            0.10 kB │ gzip:   0.11 kB
+dist/assets/j-DjFHTHpt.js                            0.11 kB │ gzip:   0.12 kB
+dist/assets/u-DJlCIq9S.js                            0.17 kB │ gzip:   0.14 kB
+dist/assets/q-CS_743Qo.js                            0.17 kB │ gzip:   0.15 kB
+dist/assets/y-C4zrZnuv.js                            0.24 kB │ gzip:   0.18 kB
+dist/assets/heroCluster-D9lLbMVn.js                  0.28 kB │ gzip:   0.18 kB
+dist/assets/e-BtHQhwD1.js                            0.34 kB │ gzip:   0.22 kB
+dist/assets/guideCategory-BEcWc_8x.js                0.36 kB │ gzip:   0.27 kB
+dist/assets/v-CQBMFmSv.js                            0.38 kB │ gzip:   0.25 kB
+dist/assets/h-D7RfaVd1.js                            0.40 kB │ gzip:   0.25 kB
+dist/assets/z-DvYh-H-N.js                            0.46 kB │ gzip:   0.28 kB
+dist/assets/n-C1-SqgvZ.js                            0.46 kB │ gzip:   0.26 kB
+dist/assets/o-tT3tncwQ.js                            0.47 kB │ gzip:   0.27 kB
+dist/assets/useCatalogStickyToolbar-xs-WncXb.js      0.48 kB │ gzip:   0.33 kB
+dist/assets/i-MD4o87am.js                            0.50 kB │ gzip:   0.28 kB
+dist/assets/w-Cib9Rf60.js                            0.57 kB │ gzip:   0.31 kB
+dist/assets/Breadcrumb-tNUk3yOp.js                   0.62 kB │ gzip:   0.43 kB
+dist/assets/k-Bp41L3f7.js                            0.63 kB │ gzip:   0.35 kB
+dist/assets/b-B5n6CCFF.js                            0.70 kB │ gzip:   0.39 kB
+dist/assets/d-MN8YBbqM.js                            0.78 kB │ gzip:   0.40 kB
+dist/assets/planNames-BiOsl8kw.js                    0.81 kB │ gzip:   0.46 kB
+dist/assets/GuideCover-353J6MKL.js                   0.83 kB │ gzip:   0.50 kB
+dist/assets/NotFound-D3mjDd6R.js                     1.05 kB │ gzip:   0.60 kB
+dist/assets/r-DNQRvWmw.js                            1.14 kB │ gzip:   0.58 kB
+dist/assets/f-DNNsM_SW.js                            1.17 kB │ gzip:   0.54 kB
+dist/assets/toolTrimScore-lTurjnvu.js                1.18 kB │ gzip:   0.67 kB
+dist/assets/m-B2GWT74m.js                            1.32 kB │ gzip:   0.59 kB
+dist/assets/t-HQCW9VeR.js                            1.41 kB │ gzip:   0.62 kB
+dist/assets/l-CsaiSki5.js                            1.44 kB │ gzip:   0.64 kB
+dist/assets/toolPresentation-DDzyHnIV.js             1.46 kB │ gzip:   0.80 kB
+dist/assets/c-DyNXfiP5.js                            1.46 kB │ gzip:   0.69 kB
+dist/assets/externalLink-DhTqwJNK.js                 1.59 kB │ gzip:   0.75 kB
+dist/assets/brandColors-DAZez1_g.js                  1.60 kB │ gzip:   1.01 kB
+dist/assets/p-yaAWTTdu.js                            1.71 kB │ gzip:   0.77 kB
+dist/assets/g-BIufsj2K.js                            1.96 kB │ gzip:   0.81 kB
+dist/assets/a-o1oP2bWI.js                            2.21 kB │ gzip:   0.91 kB
+dist/assets/s-Bh8l7mNr.js                            2.26 kB │ gzip:   1.02 kB
+dist/assets/FaqBlock-hNt27b3k.js                     2.30 kB │ gzip:   0.92 kB
+dist/assets/CatalogToolbar-boWVubDW.js               2.51 kB │ gzip:   0.99 kB
+dist/assets/ToolCardImage-C3oK9adk.js                2.57 kB │ gzip:   1.38 kB
+dist/assets/HostPage-C1YqWlrZ.js                     3.30 kB │ gzip:   1.49 kB
+dist/assets/stackView-BTFWz66j.js                    3.78 kB │ gzip:   1.53 kB
+dist/assets/ToolCardEditorial-B0RIPHwd.js            4.26 kB │ gzip:   1.61 kB
+dist/assets/LegalNoticePage-D7E6I8WF.js              4.56 kB │ gzip:   1.84 kB
+dist/assets/catalogProjection-CihWDxAM.js            5.09 kB │ gzip:   1.94 kB
+dist/assets/stackCost-NyqWjLZE.js                    5.92 kB │ gzip:   2.44 kB
+dist/assets/TermsPage-Csjt89xa.js                    6.81 kB │ gzip:   2.53 kB
+dist/assets/PrivacyPolicyPage-DXaUtlA3.js            7.94 kB │ gzip:   2.91 kB
+dist/assets/AboutPage-Cdungg2J.js                    8.68 kB │ gzip:   3.37 kB
+dist/assets/SearchPage-Ta9aNtQ7.js                   8.95 kB │ gzip:   2.99 kB
+dist/assets/ComparesIndexPage-CVmrK1OG.js            9.10 kB │ gzip:   3.58 kB
+dist/assets/GuidesPage-DwXfm7p5.js                   9.43 kB │ gzip:   3.58 kB
+dist/assets/TransparencyPage-CCRpD-eF.js            12.70 kB │ gzip:   4.99 kB
+dist/assets/CategoryPage-CO13siI5.js                13.11 kB │ gzip:   4.51 kB
+dist/assets/GuideDetailPage-caY1tI_x.js             14.16 kB │ gzip:   5.17 kB
+dist/assets/ContactPage-DjuRdSiJ.js                 14.44 kB │ gzip:   4.79 kB
+dist/assets/ArticleFacturation-BGeIldnt.js          15.67 kB │ gzip:   4.90 kB
+dist/assets/ToolsPage-CluAZ-HT.js                   16.10 kB │ gzip:   5.45 kB
+dist/assets/toolExploration-CcgYG9J-.js             18.13 kB │ gzip:   6.57 kB
+dist/assets/CategoriesIndexPage-BIU80WIf.js         18.44 kB │ gzip:   5.68 kB
+dist/assets/StacksPage-BYErwTVc.js                  18.48 kB │ gzip:   6.34 kB
+dist/assets/MethodologyPage-DDAFXxLb.js             19.36 kB │ gzip:   7.52 kB
+dist/assets/PersonaPillarPage-DZSD84uo.js           19.53 kB │ gzip:   7.40 kB
+dist/assets/data-category-index-SpJeW2f3.js         20.59 kB │ gzip:   8.72 kB
+dist/assets/catalog-shared-COueKIfW.js              20.64 kB │ gzip:   9.41 kB
+dist/assets/ExplorerPage-CJ1efQVr.js                31.31 kB │ gzip:  10.79 kB
+dist/assets/toolAccents-DB5mZscB.js                 37.42 kB │ gzip:  15.88 kB
+dist/assets/StackDetailPage-CaZPXUKv.js             44.17 kB │ gzip:  13.78 kB
+dist/assets/SubmitToolPage-DmVw9dDm.js              51.54 kB │ gzip:  15.50 kB
+dist/assets/searchPagesIndex-DYR1kMhA.js            52.70 kB │ gzip:   8.51 kB
+dist/assets/CartPage-BfTVJN5a.js                    62.33 kB │ gzip:  20.27 kB
+dist/assets/catalogSearch-CXPxb5wP.js               69.65 kB │ gzip:  23.46 kB
+dist/assets/toolGuides-Csryx7Zd.js                  89.89 kB │ gzip:   9.31 kB
+dist/assets/BackOfficePage-D-jOOTsT.js             100.32 kB │ gzip:  18.59 kB
+dist/assets/ToolDetailPage-DKKMOL2k.js             109.82 kB │ gzip:  34.41 kB
+dist/assets/BestOfGuidePage-D4IXzwzc.js            139.50 kB │ gzip:  37.56 kB
+dist/assets/data-posts-fr---E9cAAT.js              435.46 kB │ gzip: 125.51 kB
+dist/assets/ComparePage-Ds7TWDtS.js                438.71 kB │ gzip: 124.37 kB
+dist/assets/data-posts-en-CKY-NIST.js              443.25 kB │ gzip: 130.91 kB
+dist/assets/data-stack-index-CmK51yRT.js           515.34 kB │ gzip:  87.17 kB
+dist/assets/index-C84n9cZP.js                      816.93 kB │ gzip: 248.32 kB
+dist/assets/data-tool-index-atoAcbQU.js          1,420.24 kB │ gzip: 327.73 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 11.36s
+✅ Sitemap generated with 13148 URLs (hreflang included) — 1 duplicates removed
+✅ Prerender : 2560 tool pages + 8094 tool sub-pages (7440 SSR'd) + 424 stack pages (424 SSR'd) + 3 landings + 26 SEO/pillar pages (10 pillars + 10 best-of SSR'd) + 30 section pages + 48 category pages (ItemList) + 166 comparisons (166 SSR'd) + 80 guide pages (80 SSR'd, Article + FAQPage) + 2480 explorer/around pages + 404.html
+
+▶ Fragments ciblés du catalogue outils
+  node scripts/emit-tool-catalog-shards.mjs
+Tool catalogue shards: 48 files, 1349 tools, 11.3 MiB.
+
+▶ Fragments ciblés du catalogue stacks
+  node_modules/.bin/tsx scripts/emit-stack-catalog-shards.ts
+Stack catalogue shards: 15 files, 212 stacks, 1.7 MiB.
+
+▶ Mutualisation du CSS critique
+  node scripts/externalize-critical-css.mjs
+Critical CSS externalized: 13173 HTML files, 927 shared assets, 480.2 MiB removed from repeated HTML, 1 standalone HTML skipped.
+  blocs communs (préfixe/suffixe): 15.9 KiB sortis de 927 fichiers, 14.4 MiB economises
+
+▶ Compactage HTML avec contrôle d'équivalence
+  node scripts/compact-generated-html.mjs
+HTML compaction PASS: 13174 equivalent documents; 25.84 MiB saved.
+
+▶ Validation SEO du sitemap généré
+  node scripts/validate-generated-seo.mjs
+SEO generated validation PASS: 13148 unique, rendered, indexable, self-canonical URLs with valid sitemap hreflang targets.
+
+▶ Validation des routes générées et des fallbacks client
+  node scripts/validate-generated-routing.mjs
+Generated routing PASS: 13148 sitemap URLs, 130 App route cases, explicit noindex shells and unknown-route 404 contract.
+
+▶ Fichiers llms canoniques
+  node scripts/gen-llms-files.mjs
+Fichiers LLM écrits dans public et dist : 1349 outils, 98 guides, 166 comparatifs localisés.
+
+▶ Audit SEO des pages Explorer
+  node scripts/audit-explorer-seo.mjs
+Explorer SEO audit PASS: 2480 pages have unique titles, self-canonicals, one H1, substantial SSR text and crawlable related paths.
+
+▶ Budget et doublons de l'artefact
+  node scripts/audit-build-output.mjs
+Build output: 14941 files, 800.5 MiB
+  HTML: 13174 files, 696.0 MiB
+  JavaScript: 83 files, 5.0 MiB
+  CSS: 930 files, 28.0 MiB
+  Exact duplicates: 13 groups, 0.5 MiB redundant
+  Legacy tool FAQ files: 0
+  Inline critical CSS blocks: 0
+  ToolTrim HTML files without critical CSS: 0
+  Monolithic tool catalogue chunks: 0
+  Tool catalogue shards: 48, largest 0.4 MiB
+  Monolithic stack catalogue chunks: 0
+  Stack catalogue shards: 15, largest 0.7 MiB
+    2x 0.1 MiB: og-screenshots/brevo.jpg, og-screenshots/sendinblue.jpg
+    2x 0.1 MiB: og-screenshots/microsoft-dynamics-365-finance-operations.jpg, og-screenshots/microsoft-dynamics-business-central.jpg
+    2x 0.1 MiB: og-screenshots/ae-bao-boa.jpg, og-screenshots/ae-rubberhose.jpg
+    2x 0.1 MiB: og-screenshots/quickbooks-online.jpg, og-screenshots/quickbooks.jpg
+    2x 0.1 MiB: en/index.html, index.html
+Build output budgets PASS
+
+Verdict build production : PASS

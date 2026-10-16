@@ -1,0 +1,31 @@
+
+> vite_react_shadcn_ts@0.0.0 test:e2e:payment
+> playwright test --config playwright.payment.config.ts --workers=1
+
+[WebServer] (node:20472) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 16 tests using 1 worker
+
+(node:20473) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:20473) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › e2e/submit-payment.spec.ts:32:3 › verified return keeps its draft until final send (fr) (1.0s)
+  ✓   2 [chromium] › e2e/submit-payment.spec.ts:32:3 › verified return keeps its draft until final send (en) (689ms)
+  ✓   3 [chromium] › e2e/submit-payment.spec.ts:44:1 › unavailable verification retains draft through reload and allows retry without payment (870ms)
+  ✓   4 [chromium] › e2e/submit-payment.spec.ts:57:1 › paid hint alone stays in recovery and never confirms payment (458ms)
+  ✓   5 [chromium] › e2e/submit-payment.spec.ts:65:1 › existing checkout link has bound metadata and a draft before navigation (859ms)
+  ✓   6 [chromium] › e2e/submit-payment.spec.ts:82:2 › storage failure keeps a stable draft through retry (fr) (820ms)
+  ✓   7 [chromium] › e2e/submit-payment.spec.ts:93:2 › payment conflict preserves the draft (fr) (523ms)
+  ✓   8 [chromium] › e2e/submit-payment.spec.ts:100:2 › intermediate email outage does not block checkout (fr) (966ms)
+  ✓   9 [chromium] › e2e/submit-payment.spec.ts:82:2 › storage failure keeps a stable draft through retry (en) (953ms)
+  ✓  10 [chromium] › e2e/submit-payment.spec.ts:93:2 › payment conflict preserves the draft (en) (539ms)
+  ✓  11 [chromium] › e2e/submit-payment.spec.ts:100:2 › intermediate email outage does not block checkout (en) (842ms)
+  ✓  12 [chromium] › e2e/submit-payment.spec.ts:111:2 › accepted paid request survives a lost reply and Creem outage on reload (fr) (854ms)
+  ✓  13 [chromium] › e2e/submit-payment.spec.ts:111:2 › accepted paid request survives a lost reply and Creem outage on reload (en) (868ms)
+  ✓  14 [chromium] › e2e/submit-payment.spec.ts:120:1 › free badge notification outage and lost accepted reply preserve recovery (2.1s)
+  ✓  15 [chromium] › e2e/submit-payment.spec.ts:133:2 › local HTML fallback cannot verify a badge (fr) (1.9s)
+  ✓  16 [chromium] › e2e/submit-payment.spec.ts:133:2 › local HTML fallback cannot verify a badge (en) (2.0s)
+
+  16 passed (18.8s)

@@ -110,3 +110,30 @@ describe("catalogSearch", () => {
     expect(hits[0]?.id).toBe("tool-pm");
   });
 });
+
+it('retrieves appointment scheduling from existing French appointment tags', async () => {
+ const engine = await createCatalogSearchEngine([
+  {id:'calendly',kind:'tool',entityId:'calendly',slug:'calendly',label:'Calendly',meta:'Communication',searchText:'meeting booking',tags:'prise rendez vous synchronisation calendrier'},
+  {id:'calendar',kind:'tool',entityId:'calendar',slug:'calendar',label:'Calendar',meta:'',searchText:'calendar scheduling'}
+ ]);
+ expect((await engine.search('appointment scheduling'))[0]?.slug).toBe('calendly');
+});
+
+it.each(['alternative à Notion','alternatives to Notion'])('uses only explicit catalogue alternatives for %s', async query => {
+ const engine = await createCatalogSearchEngine([
+  {id:'notion',kind:'tool',entityId:'notion',slug:'notion',label:'Notion',meta:'',searchText:'workspace',alternativeSlugs:['obsidian','coda','missing','notion','obsidian']},
+  {id:'notionlytics',kind:'tool',entityId:'notionlytics',slug:'notionlytics',label:'Notionlytics',meta:'',searchText:'alternative notion analytics'},
+  {id:'obsidian',kind:'tool',entityId:'obsidian',slug:'obsidian',label:'Obsidian',meta:'',searchText:'notes'},
+  {id:'coda',kind:'tool',entityId:'coda',slug:'coda',label:'Coda',meta:'',searchText:'workspace'}
+ ]);
+ expect((await engine.search(query)).filter(hit=>hit.kind==='tool').map(hit=>hit.slug)).toEqual(['obsidian','coda']);
+ expect((await engine.search('notion'))[0]?.slug).toBe('notion');
+});
+
+it('retains English-only matches while extending scheduling with catalogue synonyms', async () => {
+ const engine=await createCatalogSearchEngine([
+  {id:'english',kind:'tool',entityId:'english',slug:'english',label:'English Booking',meta:'',searchText:'appointment scheduling'},
+  {id:'french',kind:'tool',entityId:'french',slug:'french',label:'French Booking',meta:'',searchText:'réservation',tags:'prise rendez vous'},
+ ]);
+ expect((await engine.search('appointment scheduling')).map(hit=>hit.id)).toEqual(['english','french']);
+});

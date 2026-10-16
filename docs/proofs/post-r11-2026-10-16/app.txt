@@ -1,0 +1,22 @@
+
+> vite_react_shadcn_ts@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /Users/mike/.codex/worktrees/stack-discovery-release/New project
+
+(node:34493) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34499) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34505) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34504) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:34516) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+ Test Files  61 passed (61)
+      Tests  383 passed (383)
+   Start at  09:01:58
+   Duration  10.48s (transform 8.14s, setup 6.02s, import 15.66s, tests 15.61s, environment 32.37s)
