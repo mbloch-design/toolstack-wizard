@@ -1,8 +1,82 @@
 # Chargement catalogue — mesures et prochain lot
 
-Mesuré le 8 octobre 2026 sur https://tooltrim.com, application publiée `34391450cc`. Aucun changement de données, de composant ou de configuration distante dans ce lot.
+Le bilan initial du 8 octobre 2026 porte sur https://tooltrim.com, application publiée `34391450cc`. La section suivante actualise le diagnostic et le canary du 16 octobre ; les résultats historiques sont conservés plus bas.
 
-## Conclusion
+## Actualisation R3/R7 — 16 octobre 2026
+
+**Décision approuvée : lecture publique locale, sans nouvelle base ni abonnement.**
+Le projet Supabase ToolTrim est déclaré INACTIVE par le connecteur ; son nom DNS
+ne résout pas depuis l'environnement de mesure. Le build lisait déjà le JSON,
+mais plusieurs hooks publics tentaient encore des rafraîchissements distants.
+Les appels sont désormais conditionnés avant même l'import du SDK, pour éviter
+aussi le rafraîchissement automatique d'une ancienne session. Les bundles
+suivent l'outil courant lors d'une navigation.
+
+La mesure publique actualisée comporte 34 captures, sans erreur applicative ni
+mutation de sélection. Elle observe **88 requêtes Fetch Supabase en échec**
+(41 outils, 47 autres lectures REST), zéro téléchargement de catalogue complet,
+et un index de résumés de **319 375 octets transférés à froid / 1 421 919 décodés**.
+L'index est servi du cache HTTP dans les quatre renavigations observées.
+Identité du module d'entrée stable : `/assets/index-zyTgQLvw.js`.
+Ces mesures remplacent les chiffres du 8 octobre pour le diagnostic courant.
+
+Le protocole refuse correctement le consentement et bloque les domaines GA ainsi
+que `/_vercel/insights/` avant navigation via CDP. Aucune requête analytique ne
+réussit. La sonde vérifie l'identité des scripts d'entrée entre passages.
+Une baseline locale du même artefact reproduit les 88 tentatives ; le serveur de
+recette ne compresse ni ne met en cache les ressources. Ses octets et durées ne
+doivent donc pas être comparés aux octets CDN comme un gain de vitesse.
+Les essais navigateur de régression ont aussi reproduit des tentatives
+`/auth/v1/token` avec une session expirée fictive, avant le correctif.
+
+Retour arrière : `VITE_CATALOG_READ_SOURCE=supabase` puis rebuild/redéploiement,
+uniquement après contrôle de disponibilité, parité et quota. Le build reste
+JSON ; les accès backoffice, migrations et soumissions sont hors de ce réglage.
+Les mises à jour publiques du catalogue passent par la publication du JSON.
+Cette décision évite d'imposer un backend actif au lecteur ; elle ne prouve pas
+l'origine de la consommation historique du quota et ne réinitialise pas ce quota.
+
+### Recette finale du canary local
+
+- **34/34 captures réussies avant et après** : 30 froides, quatre renavigations,
+  ordinateur et mobile CPU ×4. Après : **zéro requête Supabase de tout type**,
+  contre 88 Fetch et leurs 88 entrées Other/preflight avant. Aucun téléchargement
+  de `tools_v4`, aucune erreur `pageerror`, aucun appel catalogue inachevé ;
+  sélection fictive conservée dans les 34 captures. Le shard Figma `s33.json`
+  reste l'unique shard de détail observé, dans les sept ouvertures prévues.
+- Module d'entrée : `index-zyTgQLvw.js` → `index-C51452To.js`,
+  **821 334 → 639 565 octets**, soit **−22,13 % sur ce fichier seulement**.
+  Gzip Python niveau 9 comparable : 248 943 → 201 441 octets (−19,08 %).
+  Ce n'est ni le gain de tout le JavaScript ni une mesure de compression CDN.
+  L'index de résumés est inchangé.
+- Les essais locaux de ressources et d'hydratation ont partiellement tourné en
+  parallèle ; les durées locales ne fondent donc aucune annonce de vitesse.
+  Le contrôle retenu porte sur les requêtes, octets, assertions et invariants.
+- **462 tests applicatifs**, TypeScript, build complet et ses gates SEO/routage/
+  budgets passent. **80 scénarios navigateur** passent : 57 hydratations,
+  huit recherche/source locale et 15 routage. Le test de source locale couvre
+  une session expirée fictive, la navigation SPA dans le même document,
+  fiches, catégories, Ma Stack, comparatif et guides FR/EN.
+- Parité avant/après : signatures identiques sur **18 pages FR/EN** (texte,
+  métadonnées, canonical/hreflang et JSON-LD), trois fichiers catalogue et sitemap.
+  Ni données éditoriales ni services distants modifiés. Relecture indépendante
+  sans défaut bloquant. Tests synthétiques isolés de GA/Vercel analytics.
+- Reproduction : `npm run build`, servir avec
+  `PORT=8096 node scripts/serve-generated-routing.mjs`, puis lancer
+  `CATALOG_MEASURE_BASE=http://127.0.0.1:8096 node scripts/measure-catalog-loading.mjs`.
+  La sonde écrit ses mesures dans un dossier de sortie daté ; les captures et
+  logs de ce canary restent hors des sources versionnées.
+- **Statut : validé et committable localement ; non publié.** La recette de la
+  production après push reste nécessaire. Une API distante saine et la baisse
+  suivante de l'index ne sont pas certifiées par ce lot.
+
+La baseline d'une API Supabase saine reste non mesurée et n'est plus un
+prérequis pour ce mode public. La réduction suivante de l'index commun reste un
+lot distinct : préserver sa matrice de champs, mesurer et valider le canary avant
+de retirer des données.
+
+## Conclusion historique — 8 octobre
+
 
 Le coût commun observé est **l'index de résumés de 1 348 outils** : environ **334 650 octets transférés par Chromium**, pour **1 520 530 octets de corps décompressé**. Il est téléchargé sur chacun des cinq parcours froids, y compris la fiche Notion déjà prérendue. L'import statique de `tools_index.json` dans `useSupabaseData.ts`, relié au graphe d'entrée, explique ce chargement ; le chunk séparé `data-tool-index` existe déjà. Retirer un simple hint preload ne suffit pas à changer cette dépendance.
 

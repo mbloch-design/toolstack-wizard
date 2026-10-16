@@ -1,3 +1,4 @@
+import { catalogRemoteReadsEnabled } from "@/lib/catalogReadSource";
 import type { Tool } from "@/data/types";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { Package } from "@/lib/icons";
@@ -21,7 +22,8 @@ type Member = { slug: string; name: string; logo?: string | null; websiteUrl?: s
 /**
  * Section « bundle » : pour un outil appartenant à une suite (bundle_parent) OU pour la suite
  * parente elle-même, liste tous les outils liés sous forme de tags (pills) avec logo + nom.
- * Membres lus dans la projection catalog_api. Rend `null` si aucun bundle.
+ * Membres du catalogue local ; rafraîchissement catalog_api sur opt-in explicite.
+ * Rend `null` si aucun bundle.
  */
 export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) {
   const L = lang === "en" ? "en" : "fr";
@@ -37,8 +39,12 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
   const localParent = localParentTool
     ? { slug: localParentTool.slug || localParentTool.id, name: localParentTool.name, logo: localParentTool.logo, websiteUrl: localParentTool.websiteUrl }
     : null;
-  const [members, setMembers] = useState<Member[]>(localMembers);
-  const [parent, setParent] = useState<Member | null>(localParent);
+  const remoteReads = catalogRemoteReadsEnabled();
+  const snapshotKey = JSON.stringify([bundleKey, L]);
+  const [remoteBundle, setRemoteBundle] = useState<{ key: string; members: Member[]; parent: Member | null } | null>(null);
+  const currentRemote = remoteReads && remoteBundle?.key === snapshotKey ? remoteBundle : null;
+  const members = currentRemote?.members ?? localMembers;
+  const parent = currentRemote?.parent ?? localParent;
 
   // Same reasoning as useToolBySlug/useToolSummaries: on an SSR-matched tool
   // page, `tools` is the same build-time snapshot the server already rendered
@@ -50,7 +56,7 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
   const isSsrPage = useContext(SsrToolContext) !== undefined;
 
   useEffect(() => {
-    if (isSsrPage) return;
+    if (!remoteReads || isSsrPage) return;
     let cancelled = false;
     (async () => {
       try {
@@ -71,18 +77,22 @@ export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) 
           list.push({ slug, name: r.name || humanizeSlug(slug), logo: r.logo, websiteUrl: r.website_url });
         }
         list.sort((a, b) => a.name.localeCompare(b.name));
-        if (list.length > 0) setMembers(list);
+
         const { data: p } = await catalog
           .from("tool_details")
           .select("slug, name, logo, website_url").eq("tool_id", bundleKey).eq("lang", L).limit(1);
-        if (!cancelled && p?.[0]) setParent({ slug: p[0].slug || bundleKey, name: p[0].name || humanizeSlug(bundleKey), logo: p[0].logo, websiteUrl: p[0].website_url });
+        if (!cancelled) setRemoteBundle({
+          key: snapshotKey,
+          members: list.length > 0 ? list : localMembers,
+          parent: p?.[0] ? { slug: p[0].slug || bundleKey, name: p[0].name || humanizeSlug(bundleKey), logo: p[0].logo, websiteUrl: p[0].website_url } : localParent,
+        });
       } catch {
         // Keep the local catalogue fallback. It also makes the ecosystem
         // visible in prerendered pages when the remote projection is offline.
       }
     })();
     return () => { cancelled = true; };
-  }, [bundleKey, L, isSsrPage]);
+  }, [bundleKey, L, isSsrPage, remoteReads, snapshotKey]);
 
   if (!members || members.length === 0) return null;
 

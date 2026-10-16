@@ -6,7 +6,7 @@ import { performance } from 'node:perf_hooks';
 // Read-only lab measurement. No backend writes; saved selections are fictional
 // and confined to disposable contexts. Do not persist headers or response bodies.
 const base = process.env.CATALOG_MEASURE_BASE || 'https://tooltrim.com';
-const output = resolve(process.env.CATALOG_MEASURE_OUTPUT || 'output/tooltrim-catalog-loading-2026-10-08');
+const output = resolve(process.env.CATALOG_MEASURE_OUTPUT || `output/tooltrim-catalog-loading-${new Date().toISOString().slice(0, 10)}`);
 const repeats = Number(process.env.CATALOG_MEASURE_REPEATS || 3);
 if (!Number.isInteger(repeats) || repeats < 1 || repeats > 10) throw new Error('CATALOG_MEASURE_REPEATS must be an integer from 1 to 10');
 const cases = [
@@ -39,7 +39,7 @@ try {
   for (const profile of ['desktop', 'mobile-cpu4']) for (const scenario of cases) for (let sample = 0; sample < repeats; sample++) {
     const context = await browser.newContext({ viewport: { width: profile === 'desktop' ? 1440 : 390, height: 1000 } });
     await context.addInitScript(({ saved, useSaved }) => {
-      localStorage.setItem('tooltrim-analytics-consent', 'refused');
+      localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({ version: 1, choice: 'refused', decidedAt: Date.now(), expiresAt: Date.now() + 3600000 }));
       if (useSaved && !localStorage.getItem('tooltrim-ma-stack-mvp-v3')) localStorage.setItem('tooltrim-ma-stack-mvp-v3', saved);
       window.__catalogLongTasks = [];
       new PerformanceObserver(list => window.__catalogLongTasks.push(...list.getEntries().map(e => ({ start: e.startTime, duration: e.duration })))).observe({ type: 'longtask', buffered: true });
@@ -48,6 +48,8 @@ try {
     page.setDefaultTimeout(30000);
     const cdp = await context.newCDPSession(page);
     await cdp.send('Network.enable');
+    // CDP blocking preserves HTTP-cache behavior, unlike Playwright routing.
+    await cdp.send('Network.setBlockedURLs', { urls: ['*google-analytics.com/*', '*googletagmanager.com/*', '*analytics.google.com/*', '*vercel-insights.com/*', '*/_vercel/insights/*'] });
     if (profile !== 'desktop') await cdp.send('Emulation.setCPUThrottlingRate', { rate: 4 });
     let requests = new Map();
     let redirects = [];
@@ -106,7 +108,7 @@ try {
       const metrics = await page.evaluate(() => {
         const nav = performance.getEntriesByType('navigation')[0];
         return { observedUntilMs: performance.now(), domContentLoadedMs: nav.domContentLoadedEventEnd,
-          documentResponseEndMs: nav.responseEnd, longTasks: window.__catalogLongTasks,
+          documentResponseEndMs: nav.responseEnd, documentModuleScripts: [...document.querySelectorAll('script[type=module][src]')].map(e => new URL(e.src).pathname).sort(), longTasks: window.__catalogLongTasks,
           resourceTiming: performance.getEntriesByType('resource').filter(e => /tool-catalog|stack-catalog|tools_v4|useSupabaseData|data-tool-index|data-stack-index|data-category-index|catalog-shared|data-posts-|supabase.co.*rest\/v1\/tools/.test(e.name)).map(e => ({ url: new URL(e.name).origin + new URL(e.name).pathname, startTime: e.startTime, responseEnd: e.responseEnd, transferSize: e.transferSize, encodedBodySize: e.encodedBodySize, decodedBodySize: e.decodedBodySize })) };
       });
       const resources = [...redirects, ...[...requests.values()].map(r => ({ ...r, elapsedMs: r.finished ? (r.finished - r.started) * 1000 : null }))];
@@ -127,6 +129,11 @@ try {
       await capture('cold');
       if (profile === 'desktop' && sample === 0 && scenario.action !== 'category') await capture('warm-same-context');
     } finally { await context.close(); }
+  }
+  if (results.some(r => r.errors.length || !r.savedStateUnchanged)) throw new Error('Probe invariant failed: page error or saved selection changed; inspect incomplete measurements');
+  for (const route of new Set(results.map(r => r.route))) {
+    const versions = new Set(results.filter(r => r.route === route).map(r => JSON.stringify(r.documentModuleScripts)));
+    if (versions.size !== 1) throw new Error(`Deployment changed during measurement for ${route}; do not aggregate mixed versions`);
   }
   await writeFile(resolve(output, 'measurements.json'), JSON.stringify({ complete: true, measuredAt: new Date().toISOString(), base, browser: browser.version(), repeats, networkThrottling: false, results }, null, 2) + '\n');
 } finally { await browser.close(); }

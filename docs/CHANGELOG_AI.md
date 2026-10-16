@@ -5807,3 +5807,13 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - Prix conservé en achat unique de 19,99 €, sans équivalent mensuel ; sources et visuels officiels conservés.
 - Publication limitée à Chronokura, depuis origin/main ; autres travaux locaux et Sovkern exclus.
 - Validation : 397 tests PASS, TypeScript app PASS, build complet et contrôles SEO/routage/budgets PASS ; recherche et rendu contrôlés dans le navigateur.
+
+
+## 2026-10-16 — R3/R7 : catalogue public sans lecture Supabase par défaut
+
+- Décision approuvée : servir le JSON versionné sans nouvelle base payante. Gate `VITE_CATALOG_READ_SOURCE=supabase` pour un éventuel retour distant après rebuild ; SDK importé seulement derrière le gate. Build, backoffice, migrations et soumissions conservés.
+- Catégories, résumés, fiches, comparatifs et guides locaux ; bundles liés à la fiche courante lors des navigations. Source active documentée dans ARCHITECTURE et statut de la cible Supabase clarifié.
+- 34 captures avant/après : 88 Fetch Supabase → zéro requête Supabase, zéro catalogue complet, zéro erreur applicative, choix Ma Stack conservés. JS d'entrée 821 334 → 639 565 octets (−22,13 % sur ce fichier). Index et données catalogue inchangés ; aucune accélération déduite des essais concurrents.
+- Validation : 462 tests applicatifs, TypeScript, build/SEO/routage/budgets PASS ; 57 hydratations, huit recherche/source locale et 15 routages PASS. Parité de 18 pages FR/EN (texte/meta/JSON-LD), données et sitemap. Relecture indépendante sans défaut bloquant.
+- Régression navigateur ajoutée à la CI : session expirée fictive et vraie navigation SPA sans Supabase. Consentement des recettes normalisé et appels analytics bloqués.
+- Validé localement ; publication et recette production à effectuer. Aucun projet distant, clé, email ou paiement modifié.

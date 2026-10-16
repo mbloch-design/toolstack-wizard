@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import { act, cleanup, renderHook, waitFor } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { ReactNode } from "react";
 import type { Tool } from "@/data/types";
 import { supabase } from "@/integrations/supabase/client";
@@ -25,7 +25,8 @@ function remoteRequest() {
 }
 
 describe("comparison route identity", () => {
-  afterEach(() => { cleanup(); vi.clearAllMocks(); });
+  beforeEach(() => vi.stubEnv("VITE_CATALOG_READ_SOURCE", "supabase"));
+  afterEach(() => { cleanup(); vi.clearAllMocks(); vi.unstubAllEnvs(); });
 
   it("does not expose the previous pair while the next comparison loads", async () => {
     const finishRequest = remoteRequest();
