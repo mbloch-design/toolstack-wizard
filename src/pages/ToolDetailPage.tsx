@@ -500,7 +500,7 @@ const ToolDetailPage = () => {
                   </li>
                 ))}
                 <li className="td-localnav-pin">
-                  <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" />
+                  <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" flyFrom=".td-hero-logo" />
                 </li>
               </ul>
               <a
@@ -600,7 +600,7 @@ const ToolDetailPage = () => {
                           {primaryCtaLabel}
                           <ExternalLink aria-hidden />
                         </a>}
-                        <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" />
+                        <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" flyFrom=".td-hero-logo" />
                         </div>
                         <ToolStackOverlapNote tool={tool} prefix={prefix} lang={lang} t={t} />
                       </div>
@@ -1211,7 +1211,7 @@ const ToolDetailPage = () => {
                   <strong>{tool.name}</strong>
                   {mobileBarPrice && <span>{mobileBarPrice}</span>}
                 </div>
-                <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" />
+                <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" flyFrom=".td-hero-logo" />
                 <a
                   href={primaryCtaUrl}
                   target="_blank"

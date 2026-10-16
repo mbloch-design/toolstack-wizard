@@ -1,3 +1,11 @@
+## 16 octobre 2026 : Explorer refait zone par zone, ajout à Ma stack unifié
+
+- Hero : tuile Apple (image OG jamais rognée, logo + nom + catégorie, boutons sur une ligne), élision FR (« autour d'Airtable »), catégories en casse de phrase, typographie FR (espace fine avant %).
+- Filtres : contrôle segmenté centré sous le titre de section, curseur qui glisse, compteurs, catégories < 3 outils regroupées dans « Autres », transition de vue sans flash ; flèche retour visible avant défilement ; lien « Ma stack » dans la barre collée quand la barre du haut est masquée.
+- Grille : masonry Pinterest (placement colonne la plus courte), épingle = image, nom, relation courte précise (« Alternative · Retouche photo »), description 1 ligne ; 12 cartes prérendues (le reste au défilement), fin de liste, squelettes en épingles, état vide reformulé, filtre de relation en pastille.
+- Ajout à Ma stack commun au site (`useAddToStack`, `src/lib/stackAddStory.tsx`) : envol du bouton vers « Ma stack », ajout à l'atterrissage, compteur animé, pilule de confirmation Annuler/Voir ; le bouton devient un interrupteur avec confirmation de retrait. Fin de la fenêtre de collection dans l'Explorer (Mon Stack V1).
+- Menu latéral : plus de flash déplié au rechargement (index.html).
+- Validation : 392 tests app, 170 API, garde-fou tokens, build PASS (HTML 704,8 Mio), e2e Explorer/Ma Stack 26/26.
 ## 2026-10-16 : fonctionnalites presentees en tags informatifs
 
 - Tuiles remplacees par des tags compacts : texte 13 px, espacement 6 x 10 px, icone 14 px, coins 6 px, largeur naturelle et retour entre les mots.

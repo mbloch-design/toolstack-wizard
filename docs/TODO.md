@@ -187,3 +187,10 @@ Mesures Playwright à 1440, 1024 et 390 px. Tout appliqué le 9 oct. (« go sur 
 - Les cartes « Alternatives » affichent la description générique de l'outil (« Asana est un outil de gestion de projets… »), pas la raison de le choisir à la place de l'outil de la page. Écrire une phrase « pourquoi basculer » par paire (le champ `betterAlternative` n'existe que pour une paire par fiche).
 - Libellés de fonctionnalités : plusieurs fiches réutilisent la même icône pour des fonctions différentes (Figma : Logos, Prototypage, Design UI ; Notion : coche pour Collaboration). Compléter la table d'icônes.
 - Textes d'offres (`featureHighlights`) : les écrire directement en courtes listes ; le découpage automatique ne peut pas tout corriger (« Inclut A, B, C » perd son verbe).
+
+## Explorer : libellés des besoins (constat 16/10/2026)
+- Les raisons des cartes Explorer hors pilote ne s'affichent que si l'usage partagé a un libellé FR/EN validé (`LABEL_OVERRIDES`, src/lib/featureLabels.ts). Pixieset (galerie-client, livraison-client, vente-prints) n'en a aucun : 0 raison sur 32 cartes. Ajouter les libellés des besoins les plus fréquents pour rendre ces pages précises.
+
+## Catalogue : accents manquants dans les descriptions courtes (constat 16/10/2026)
+- Vues sur l'Explorer autour d'Adobe Photoshop : Affinity Photo « Editeur … developpement RAW … entierement gratuit ». Corriger dans Supabase (source de vérité), puis regénérer le JSON ; ne pas éditer le JSON à la main.
+- Ideogram : l'image OG stockée est une page « Performing security verification » (Cloudflare) et non une capture du produit. À remplacer dans le catalogue (constat 16/10/2026, Explorer autour d'Adobe Photoshop).

@@ -10,7 +10,7 @@ vi.mock("react-router-dom", () => ({ useNavigate: () => navigate }));
 vi.mock("@/hooks/useStackPins", () => ({
   useStackPins: () => ({ state: { pinnedToolSlugs: [] }, pinTool }),
 }));
-vi.mock("sonner", () => ({ toast: { success: vi.fn() } }));
+vi.mock("sonner", () => ({ toast: { success: vi.fn(), custom: vi.fn(), dismiss: vi.fn() } }));
 
 it("keeps prerendered add disabled until hydration, then handles the first click without replacing the button", async () => {
   const element = <PinToolButton slug="figma" label="Figma" t={(fr) => fr} />;

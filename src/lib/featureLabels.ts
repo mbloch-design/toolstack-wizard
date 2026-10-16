@@ -136,6 +136,12 @@ const LABEL_OVERRIDES: Record<string, { fr: string; en: string }> = {
   "presentation":        { fr: "Présentation",          en: "Presentation"        },
 };
 
+/** The curated label only, or null: for copy that must be right in both languages. */
+export function getCuratedFeatureLabel(slug: string, lang: "fr" | "en"): string | null {
+  const override = LABEL_OVERRIDES[slug];
+  return override ? (lang === "fr" ? override.fr : override.en) : null;
+}
+
 export function getFeatureLabel(slug: string, lang: "fr" | "en"): string {
   const override = LABEL_OVERRIDES[slug];
   if (override) return lang === "fr" ? override.fr : override.en;

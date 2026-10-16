@@ -495,7 +495,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               <span className="asv2-topbar-cta-icon">
                 <Bookmark size={16} aria-hidden />
                 {cartCount > 0 && (
-                  <span className="asv2-topbar-cta-badge" aria-hidden>
+                  <span key={cartCount} className="asv2-topbar-cta-badge" aria-hidden>
                     {cartCount > 99 ? "99+" : cartCount}
                   </span>
                 )}

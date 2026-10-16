@@ -1675,3 +1675,9 @@ Le pattern `Stack Map` remplace les nodes workflow interactifs quand la page doi
 Le passage au compilateur Tailwind 4 conserve les tokens, les classes éditoriales préfixées et leurs règles `@layer components`. La configuration PostCSS rétablit la cascade historique pour préserver la priorité des styles hors couche. Les anciens utilitaires `shadow-sm`, `blur-sm` et `outline-none` sont remplacés, dans les composants actifs, par les équivalents v4 `shadow-xs`, `blur-xs` et `outline-hidden`, conformément au guide de migration. Les rayons personnalisés restent ceux du thème ToolTrim.
 
 Toute évolution du traitement des couches doit conserver les tests `scripts/lib/legacy-css-cascade.test.mjs` et vérifier les pages réelles ; un build seul ne valide pas les tailles de texte ou les espacements.
+
+## Ajout à Ma stack (16/10/2026)
+
+Un seul comportement pour tout le site : `useAddToStack()` (`src/hooks/useAddToStack.ts`), utilisé par `PinToolButton` (cartes, catalogue, fiche outil), l'Explorer et la recherche de Ma stack. Récit : l'image de l'élément se rassemble en jeton, vole en arc jusqu'au « Ma stack » visible (barre collée de l'Explorer, sinon barre du haut), l'outil est ajouté à l'atterrissage (rebond + compteur qui roule), puis la pilule sombre `.stack-toast` propose Annuler / Voir. Sans animation (mouvement réduit, cible invisible) l'ajout est immédiat.
+
+Jetons : `--stack-add-token-size`, `--stack-add-gather`, `--stack-add-travel`, `--stack-add-bump` (lus par `src/lib/stackAddStory.tsx`). Classes : `.stack-fly-ghost`, `.stack-toast*`. La pilule est rendue hors du routeur : jamais de `<Link>` dedans.

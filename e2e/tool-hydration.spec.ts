@@ -100,9 +100,12 @@ test("prerendered stack add waits for scripts, then saves on the first click", a
     await cta.click();
     await expect(cta).toContainText("Dans ma stack");
     await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-ma-stack-mvp-v3") || "{}").pinnedToolSlugs)).toContain("figma");
+    // Added state is a toggle: a second click asks before removing.
     await cta.click();
-    await expect(page).toHaveURL(/ma-stack\?outil=figma/);
-    await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
+    await expect(page.locator(".stack-confirm")).toBeVisible();
+    await page.locator(".stack-confirm-keep").click();
+    await expect(page.locator(".stack-confirm")).toHaveCount(0);
+    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-ma-stack-mvp-v3") || "{}").pinnedToolSlugs)).toContain("figma");
   } finally {
     releaseScripts();
   }

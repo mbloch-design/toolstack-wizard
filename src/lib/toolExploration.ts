@@ -1,4 +1,5 @@
-import { getFeatureLabel } from "./featureLabels";
+import { getCuratedFeatureLabel, getFeatureLabel } from "./featureLabels";
+import { deName, queName } from "./frenchText";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import type { StackToolEntry } from "@/lib/stackState";
 
@@ -209,17 +210,17 @@ function getRelation(candidate: ToolSummary, source: ToolSummary) {
 
   if (hostKey && sourceKeys.includes(hostKey)) {
     return { direction: "extensions" as const, score: 150,
-      reasonFr: candidate.tool_type === "plugin" ? `Extension de ${source.name}` : `Rattaché à ${source.name}`,
+      reasonFr: candidate.tool_type === "plugin" ? `Extension ${deName(source.name)}` : `Rattaché à ${source.name}`,
       reasonEn: candidate.tool_type === "plugin" ? `Extension for ${source.name}` : `Attached to ${source.name}` };
   }
   if (sourceHost && candidateKeys.includes(sourceHost)) {
-    return { direction: "adjacent" as const, score: 140, reasonFr: `Outil hôte de ${source.name}`, reasonEn: `Host application for ${source.name}` };
+    return { direction: "adjacent" as const, score: 140, reasonFr: `Outil hôte ${deName(source.name)}`, reasonEn: `Host application for ${source.name}` };
   }
   const sameBundle = (!!candidateBundle && sourceKeys.includes(candidateBundle)) ||
     (!!sourceBundle && candidateKeys.includes(sourceBundle)) ||
     (!!candidateBundle && candidateBundle === sourceBundle);
   if (sameBundle) {
-    return { direction: "adjacent" as const, score: 84, reasonFr: `Même suite que ${source.name}`, reasonEn: `Same suite as ${source.name}` };
+    return { direction: "adjacent" as const, score: 84, reasonFr: `Même suite ${queName(source.name)}`, reasonEn: `Same suite as ${source.name}` };
   }
   const reservation = R5_SCOPE_RESERVATIONS.find(item =>
     sourceKeys.includes(item.source) && candidateKeys.includes(item.target));
@@ -274,6 +275,16 @@ function countShared(values: string[] | undefined, sourceKeys: Set<string>) {
   return (values || []).map(normalizeKey).filter((value) => value && sourceKeys.has(value)).length;
 }
 
+// A visible reason must name something precise: the shared use, by its
+// curated FR/EN label. Without one, the relation still ranks the tool but the
+// card shows no reason (decision 2026-10-16: precise or nothing).
+function namedSharedUse(candidate: ToolSummary, sourceNeeds: Set<string>) {
+  const shared = [...new Set([...(candidate.functional_needs || []), ...(candidate.covers || [])].map(normalizeKey).filter((key) => sourceNeeds.has(key)))];
+  const fr = shared.map((key) => getCuratedFeatureLabel(key, "fr")).filter(Boolean).slice(0, 2);
+  const en = shared.map((key) => getCuratedFeatureLabel(key, "en")).filter(Boolean).slice(0, 2);
+  return fr.length && fr.length === en.length ? { fr: fr.join(", "), en: en.join(", ") } : null;
+}
+
 function getLegacyRelation(candidate: ToolSummary, source: ToolSummary) {
   const candidateKeys = getLookupKeys(candidate);
   const sourceKeys = getLookupKeys(source);
@@ -292,28 +303,44 @@ function getLegacyRelation(candidate: ToolSummary, source: ToolSummary) {
   const sameFamily = getLegacyFamilyKey(candidate) === getLegacyFamilyKey(source);
 
   if (hostKey && sourceKeys.includes(hostKey)) {
-    return { direction: "extensions" as const, score: 150, reasonFr: `Extension de ${source.name}`, reasonEn: `Extension for ${source.name}` };
+    return { direction: "extensions" as const, score: 150, reasonFr: `Extension ${deName(source.name)}`, reasonEn: `Extension for ${source.name}` };
   }
   if (sameBundle) {
-    return { direction: "extensions" as const, score: 132, reasonFr: `Extension de ${source.name}`, reasonEn: `Extension for ${source.name}` };
+    return { direction: "extensions" as const, score: 132, reasonFr: `Extension ${deName(source.name)}`, reasonEn: `Extension for ${source.name}` };
   }
-  if (sameCluster) {
-    return { direction: "alternatives" as const, score: 118, reasonFr: `Alternative à ${source.name}`, reasonEn: `Alternative to ${source.name}` };
+  // A substitution cluster alone is not proof: some clusters are catch-alls
+  // ("content-creation" groups a photo gallery with an audio editor). It only
+  // confirms an alternative when the tools also share a need.
+  if (sameCluster && sharedNeeds > 0) {
+    const use = namedSharedUse(candidate, sourceNeeds);
+    return { direction: "alternatives" as const, score: 118, reasonFr: use ? `Alternative à ${source.name} · ${use.fr}` : "", reasonEn: use ? `Alternative to ${source.name} · ${use.en}` : "" };
   }
   if (sameFamily) {
-    return { direction: "adjacent" as const, score: 84, reasonFr: `Même écosystème que ${source.name}`, reasonEn: `Same ecosystem as ${source.name}` };
+    return { direction: "adjacent" as const, score: 84, reasonFr: `Même écosystème ${queName(source.name)}`, reasonEn: `Same ecosystem as ${source.name}` };
   }
   if (sameCategory && sharedNeeds > 0) {
-    return { direction: "alternatives" as const, score: 98 + Math.min(2, sharedNeeds) * 8, reasonFr: `Alternative à ${source.name}`, reasonEn: `Alternative to ${source.name}` };
+    const use = namedSharedUse(candidate, sourceNeeds);
+    return { direction: "alternatives" as const, score: 98 + Math.min(2, sharedNeeds) * 8, reasonFr: use ? `Alternative à ${source.name} · ${use.fr}` : "", reasonEn: use ? `Alternative to ${source.name} · ${use.en}` : "" };
   }
   if (sharedNeeds > 0) {
-    return { direction: "adjacent" as const, score: 82 + Math.min(3, sharedNeeds) * 10, reasonFr: `Même usage que ${source.name}`, reasonEn: `Same use as ${source.name}` };
+    const use = namedSharedUse(candidate, sourceNeeds);
+    return { direction: "adjacent" as const, score: 82 + Math.min(3, sharedNeeds) * 10, reasonFr: use ? `Même usage ${queName(source.name)} · ${use.fr}` : "", reasonEn: use ? `Same use as ${source.name} · ${use.en}` : "" };
   }
-  if (sharedVerticals > 0 || sameCategory) {
-    return { direction: "adjacent" as const, score: sharedVerticals > 0 ? 68 : 52, reasonFr: `Usage voisin de ${source.name}`, reasonEn: `Related use to ${source.name}` };
+  // A shared trade or audience ranks a tool but is too broad to justify it on
+  // screen ("for photographers" fits half the catalogue): no visible reason.
+  if (sharedVerticals > 0) {
+    return { direction: "adjacent" as const, score: 68, reasonFr: "", reasonEn: "" };
+  }
+  // Same category without any shared need or trade is only a fallback, kept
+  // separate so a thin neighbourhood can be topped up honestly (see below).
+  if (sameCategory) {
+    return { direction: "adjacent" as const, score: 52, categoryOnly: true as const, reasonFr: "", reasonEn: "" };
   }
   return null;
 }
+
+// Category-only neighbours are shown only to top up a thin list.
+const LEGACY_MIN_RELATED = 4;
 
 export function buildExplorationCandidates({
   relationPolicy,
@@ -356,6 +383,22 @@ export function buildExplorationCandidates({
       tool,
     } satisfies ExplorationCandidate];
   }).sort((a, b) => b.score - a.score || a.tool.name.localeCompare(b.tool.name));
+  // Legacy only: drop category-only neighbours when real relations suffice;
+  // otherwise top the list up to eight with them, labelled as such.
+  const categoryOnlySlugs = new Set(tools.filter((tool) => {
+    if (sourceKeys.has(getExplorationToolKey(tool))) return false;
+    const best = sourceTools.map((source) => relationFor(tool, source)).filter(Boolean) as Array<{ score: number; categoryOnly?: true }>;
+    return best.length > 0 && best.every((relation) => relation.categoryOnly);
+  }).map(getExplorationToolKey));
+  const strongCount = ranked.filter((candidate) => !categoryOnlySlugs.has(getExplorationToolKey(candidate.tool))).length;
+  const ranked2 = audited || categoryOnlySlugs.size === 0
+    ? ranked
+    : strongCount >= LEGACY_MIN_RELATED
+      ? ranked.filter((candidate) => !categoryOnlySlugs.has(getExplorationToolKey(candidate.tool)))
+      : [
+          ...ranked.filter((candidate) => !categoryOnlySlugs.has(getExplorationToolKey(candidate.tool))),
+          ...ranked.filter((candidate) => categoryOnlySlugs.has(getExplorationToolKey(candidate.tool))).slice(0, Math.max(0, 8 - strongCount)),
+        ];
 
   const diversified: ExplorationCandidate[] = [];
   const picked = new Set<string>();
@@ -372,8 +415,8 @@ export function buildExplorationCandidates({
     sourceCounts.set(relatedSlug, (sourceCounts.get(relatedSlug) || 0) + 1);
     diversified.push(candidate);
   };
-  ranked.forEach((candidate) => tryPick(candidate));
-  ranked.forEach((candidate) => tryPick(candidate, true));
+  ranked2.forEach((candidate) => tryPick(candidate));
+  ranked2.forEach((candidate) => tryPick(candidate, true));
   // Family diversity must not promote an unverified comparison above the
   // stronger declared relationships. The legacy order remains untouched.
   const ordered = audited
@@ -413,4 +456,21 @@ export function getExplorerHref(
   params.set("type", source.type);
   params.set("source", source.type === "objectif" ? source.id : "ma-stack");
   return `${prefix}/explorer?${params.toString()}`;
+}
+
+/**
+ * Card label for a single-source Explorer page: the source is already the
+ * page title, so "Alternative à Notion · Prise de notes" reads
+ * "Alternative · Prise de notes". Multi-source pages keep the full reason.
+ */
+export function shortRelationReason(reason: string, sourceName: string): string {
+  if (!reason || !sourceName) return reason;
+  const name = sourceName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const short = reason
+    .replace(/^Alternative au catalogue à /, "Alternative à ")
+    .replace(/^Catalogue alternative to /, "Alternative to ")
+    .replace(/^Usage commun avec /, "Même usage avec ")
+    .replace(/^Shared use with /, "Same use as ")
+    .replace(new RegExp(`\\s+(?:de|d'|d’|à|avec|que|qu'|qu’|to|with|for|as)\\s*${name}(?=\\s·|$)`), "");
+  return short.replace(/^(.)/, (c) => c.toUpperCase());
 }

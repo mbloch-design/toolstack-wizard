@@ -24,7 +24,7 @@ export function smartQuotes(text: string, lang: string): string {
 
 /**
  * French typography for display text (art direction review, 9 Oct 2026):
- * a narrow no-break space before ? ! ; and a no-break space before : and
+ * a narrow no-break space before ? ! ; and %, and a no-break space before : and
  * inside « », typographic apostrophes, and "e-commerce" kept on one line.
  * Applied at render time, so editorial data stays as written. No-op in
  * English.
@@ -36,6 +36,7 @@ export function frenchTypography(text: string | null | undefined, lang: string):
   if (lang !== "fr") return text;
   return text
     .replace(/\s+([?!;])/g, `${NNBSP}$1`)
+    .replace(/(\d)\s*%/g, `$1${NNBSP}%`)
     .replace(/\s+:(?!\/\/)/g, `${NBSP}:`)
     .replace(/«\s*/g, `«${NBSP}`)
     .replace(/\s*»/g, `${NBSP}»`)

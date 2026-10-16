@@ -1,17 +1,18 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from "react";
+import { flushSync } from "react-dom";
 import { fitBrandedTitle } from "@/lib/seoTitle";
-import { ArrowLeft, Check, ChevronLeft, ChevronRight, Compass, Plus } from "@/lib/icons";
+import { deName, frSentenceCase } from "@/lib/frenchText";
+import { displayText } from "@/lib/typography";
+import { ArrowLeft, Bookmark, BookmarkCheck, ChevronLeft, ChevronRight, Compass, X } from "@/lib/icons";
 import { useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolCardImage from "@/components/tool/ToolCardImage";
-import StackSaveDialog from "@/components/stack/StackSaveDialog";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
-import { classifyToolForStack } from "@/lib/stackAutoClassification";
+import { useAddToStack } from "@/hooks/useAddToStack";
 import { scrollToTop, scrollContainerCandidate } from "@/lib/scroll";
 import { setSeoTags, setNoindex, removeNoindex, cleanupSeo, hasNonCanonicalSearchParams, SEO_BASE } from "@/lib/seo";
 import { trackEvent, whenAnalyticsReady } from "@/lib/analytics";
@@ -23,12 +24,14 @@ import {
   getObjectiveExplorationThemeId,
   getObjectiveExplorationThemes,
   parseExplorationSource,
+  shortRelationReason,
   type ExplorationDirection,
 } from "@/lib/toolExploration";
 
-const INITIAL_RESULT_COUNT = 20;
+// First screenful only (3 rows on desktop): keeps each of the ~2,500
+// prerendered Explorer pages light; the rest streams in on scroll.
+const INITIAL_RESULT_COUNT = 12;
 const RESULT_BATCH = 12;
-const SKELETON_COUNT = 4;
 const LOAD_MORE_DELAY = 240;
 const explorerResultLimits = new Map<string, number>();
 const MAX_SAVED_EXPLORER_STEPS = 100;
@@ -50,15 +53,38 @@ interface ExplorerLocationState {
   skipScrollReset?: boolean;
 }
 
+/** Column count from the grid's own width: Pinterest keeps 2 columns on
+ *  phones and adds one per ~260px, up to 4. */
+function useMasonryColumns() {
+  const [node, setNode] = useState<HTMLElement | null>(null);
+  const [columns, setColumns] = useState(3);
+  useEffect(() => {
+    if (!node) return;
+    const update = () => setColumns(Math.max(2, Math.min(4, Math.floor((node.clientWidth + 20) / 260))));
+    update();
+    const observer = new ResizeObserver(update);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [node]);
+  return [setNode, columns] as const;
+}
+
 interface ExplorerFilterItem {
   id: string;
   label: string;
+  count?: number;
 }
+
+/** A category needs this many tools to earn its own filter; smaller ones
+ *  share "Others" so the bar stays a sorting tool, not a list of singletons. */
+const MIN_CATEGORY_FILTER_COUNT = 3;
+const OTHER_CATEGORY_ID = "autres";
 
 function ExplorerTagFilterNav({
   activeId,
   ariaLabel,
   context,
+  trailing,
   items,
   nextLabel,
   onSelect,
@@ -67,6 +93,7 @@ function ExplorerTagFilterNav({
   activeId: string;
   ariaLabel: string;
   context?: ReactNode;
+  trailing?: ReactNode;
   items: ExplorerFilterItem[];
   nextLabel: string;
   onSelect: (id: string) => void;
@@ -76,6 +103,7 @@ function ExplorerTagFilterNav({
   const stickySentinelRef = useRef<HTMLSpanElement>(null);
   const [overflow, setOverflow] = useState({ left: false, right: false });
   const [isPinned, setIsPinned] = useState(false);
+  const [thumb, setThumb] = useState<{ left: number; width: number } | null>(null);
 
   useEffect(() => {
     const sentinel = stickySentinelRef.current;
@@ -100,6 +128,21 @@ function ExplorerTagFilterNav({
       right: track.scrollLeft < maxScroll - 2,
     });
   }, []);
+
+  // Segmented-control thumb: one white pill that slides to the active item.
+  const updateThumb = useCallback(() => {
+    const active = trackRef.current?.querySelector<HTMLElement>(".ex-tag-filter-item.is-active");
+    setThumb(active ? { left: active.offsetLeft, width: active.offsetWidth } : null);
+  }, []);
+
+  useEffect(() => {
+    updateThumb();
+    const track = trackRef.current;
+    if (!track) return;
+    const observer = new ResizeObserver(updateThumb);
+    observer.observe(track);
+    return () => observer.disconnect();
+  }, [activeId, items, updateThumb]);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -156,8 +199,15 @@ function ExplorerTagFilterNav({
     <nav className={`ex-tag-filter${isPinned ? " is-pinned" : ""}`} aria-label={ariaLabel}>
       <div className="ex-tag-filter-surface">
         {context}
-        <div className="ex-tag-filter-scroll">
+        <div className={`ex-tag-filter-scroll${overflow.left ? " has-left" : ""}${overflow.right ? " has-right" : ""}`} hidden={items.length <= 1}>
           <div ref={trackRef} className="ex-tag-filter-track">
+            {thumb && (
+              <span
+                className="ex-tag-filter-thumb"
+                aria-hidden
+                style={{ transform: `translateX(${thumb.left}px)`, width: thumb.width }}
+              />
+            )}
             {items.map((item, index) => (
               <button
                 key={item.id}
@@ -169,6 +219,7 @@ function ExplorerTagFilterNav({
                 onKeyDown={(event) => handleKeyDown(event, index)}
               >
                 {item.label}
+                {item.count !== undefined && <span className="ex-tag-filter-count">{item.count}</span>}
               </button>
             ))}
           </div>
@@ -176,6 +227,7 @@ function ExplorerTagFilterNav({
             <button
               type="button"
               className="ex-tag-filter-control ex-tag-filter-control--left"
+              data-tip={previousLabel}
               onClick={() => scrollTags(-1)}
               aria-label={previousLabel}
             >
@@ -186,6 +238,7 @@ function ExplorerTagFilterNav({
             <button
               type="button"
               className="ex-tag-filter-control ex-tag-filter-control--right"
+              data-tip={nextLabel}
               onClick={() => scrollTags(1)}
               aria-label={nextLabel}
             >
@@ -193,6 +246,7 @@ function ExplorerTagFilterNav({
             </button>
           )}
         </div>
+        {trailing}
       </div>
     </nav>
     </>
@@ -203,22 +257,31 @@ function cleanCategoryLabel(value = "") {
   return value.replace(/^[^\p{L}\p{N}]+/u, "").trim();
 }
 
+// Catalogue names kept in English on French pages; display-only, the
+// catalogue (Supabase) stays the source of truth.
+const FR_CATEGORY_LABELS: Record<string, string> = { Assets: "Ressources graphiques" };
+
+function frenchCategoryLabel(name = "") {
+  const clean = cleanCategoryLabel(name);
+  return FR_CATEGORY_LABELS[clean] ?? frSentenceCase(clean);
+}
+
 function asSentenceContinuation(value: string) {
   return value ? `${value.charAt(0).toLocaleLowerCase()}${value.slice(1)}` : value;
 }
 
 export default function ExplorerPage() {
   const { lang, prefix, t } = useLang();
+  const [masonryRef, masonryColumnCount] = useMasonryColumns();
   const location = useLocation();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const { slug: routeSlug } = useParams<{ slug?: string }>();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
-  const { state, createNeed, saveToolSelection } = useStackPins();
+  const { state } = useStackPins();
   const [resultLimit, setResultLimit] = useState(INITIAL_RESULT_COUNT);
-  const [addingSlug, setAddingSlug] = useState<string | null>(null);
-  const [pendingTool, setPendingTool] = useState<ToolSummary | null>(null);
+  const { addToStack, flyingSlug: addingSlug } = useAddToStack();
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   // /explorer/around/:slug (indexable, one static page per tool) takes
   // priority over the legacy ?type=outil&source=X query form, which is
@@ -247,7 +310,8 @@ export default function ExplorerPage() {
   const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
   const getCategoryLabel = useCallback((tool: ToolSummary) => {
     const category = categoryById.get(tool.categoryId);
-    if (category) return cleanCategoryLabel(lang === "en" ? category.nameEn || category.name : category.name);
+    // French labels are stored in Title Case; the site writes sentence case.
+    if (category) return lang === "en" ? cleanCategoryLabel(category.nameEn || category.name) : frenchCategoryLabel(category.name);
     const fallback = cleanCategoryLabel(tool.categoryId).replace(/[-_]+/g, " ");
     return fallback ? `${fallback.charAt(0).toLocaleUpperCase(lang)}${fallback.slice(1)}` : fallback;
   }, [categoryById, lang]);
@@ -321,16 +385,35 @@ export default function ExplorerPage() {
       if (current) current.count += 1;
       else grouped.set(id, { id, label, count: 1 });
     });
-    return [...grouped.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, lang));
-  }, [candidates, lang, sourceTool]);
-  const requestedCategoryId = searchParams.get("category");
+    const sorted = [...grouped.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, lang));
+    const kept = sorted.filter((category) => category.count >= MIN_CATEGORY_FILTER_COUNT);
+    const otherCount = sorted.reduce((sum, category) => sum + (category.count < MIN_CATEGORY_FILTER_COUNT ? category.count : 0), 0);
+    // A lone "Others", or a single category holding everything, would just
+    // repeat "All": no filter bar then.
+    if (!kept.length || (kept.length === 1 && !otherCount)) return [];
+    return otherCount
+      ? [...kept, { id: OTHER_CATEGORY_ID, label: t("Autres", "Others") as string, count: otherCount }]
+      : kept;
+  }, [candidates, lang, sourceTool, t]);
+  const keptCategoryIds = useMemo(
+    () => new Set(toolCategoryFilters.filter((category) => category.id !== OTHER_CATEGORY_ID).map((category) => category.id)),
+    [toolCategoryFilters],
+  );
+  // Local mirror of ?category so a filter switch can render synchronously
+  // inside a view transition; the URL catches up right after.
+  const [categoryOverride, setCategoryOverride] = useState<string | null | undefined>(undefined);
+  useEffect(() => setCategoryOverride(undefined), [searchParams]);
+  const requestedCategoryId = categoryOverride !== undefined ? categoryOverride : searchParams.get("category");
   const activeCategoryId = sourceTool && toolCategoryFilters.some((category) => category.id === requestedCategoryId)
     ? requestedCategoryId
     : null;
   const filteredCandidates = isObjectiveSource
     ? activeThemeId ? candidates.filter((candidate) => getObjectiveExplorationThemeId(source.id, candidate.tool) === activeThemeId) : candidates
     : sourceTool
-      ? candidates.filter((candidate) => (!activeCategoryId || candidate.tool.categoryId === activeCategoryId) && (angle === "all" || candidate.direction === angle))
+      ? candidates.filter((candidate) => (
+        !activeCategoryId
+        || (activeCategoryId === OTHER_CATEGORY_ID ? !keptCategoryIds.has(candidate.tool.categoryId) : candidate.tool.categoryId === activeCategoryId)
+      ) && (angle === "all" || candidate.direction === angle))
     : angle === "all" ? candidates : candidates.filter((candidate) => candidate.direction === angle);
   const visibleCandidates = filteredCandidates.slice(0, resultLimit);
   const hasMoreCandidates = visibleCandidates.length < filteredCandidates.length;
@@ -412,7 +495,7 @@ export default function ExplorerPage() {
           : fitBrandedTitle(`Outils à associer à ${sourceLabel}`),
         description: lang === "en"
           ? `Explore the tool ecosystem around ${sourceLabel}: complementary and adjacent picks to build a stack, curated by ToolTrim.`
-          : `Explorez l'écosystème d'outils autour de ${sourceLabel} : outils complémentaires et satellites pour composer votre stack, sélectionnés par ToolTrim.`,
+          : `Explorez l'écosystème d'outils autour ${deName(sourceLabel)} : outils complémentaires et satellites pour composer votre stack, sélectionnés par ToolTrim.`,
         url: `${SEO_BASE}/${lang}/explorer/around/${encodeURIComponent(source.slug)}`,
         locale: lang === "en" ? "en_US" : "fr_FR",
       });
@@ -476,6 +559,13 @@ export default function ExplorerPage() {
   }
 
   function setCategory(categoryId: string | null, shouldScroll = true) {
+    // Cards morph to their new places (shared-element view transition)
+    // instead of the grid being swapped; plain update where unsupported.
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const doc = document as Document & { startViewTransition?: (update: () => void) => unknown };
+    if (!shouldScroll && !reduceMotion && doc.startViewTransition) {
+      doc.startViewTransition(() => flushSync(() => setCategoryOverride(categoryId)));
+    }
     const nextParams = new URLSearchParams(searchParams);
     if (categoryId) nextParams.set("category", categoryId);
     else nextParams.delete("category");
@@ -490,11 +580,18 @@ export default function ExplorerPage() {
     setSearchParams(nextParams, { replace: true, state: { ...locationState, skipScrollReset: true } });
   }
 
-  function addTool(tool: ToolSummary) {
+  // Mon Stack V1: one click adds the tool (no collection dialog); the
+  // shared story flies it to "Ma stack" and confirms with Undo/View. A
+  // destination from the URL is still honoured.
+  function addTool(tool: ToolSummary, origin?: Element | null, logoFrom?: Element | null) {
     const slug = getExplorationToolKey(tool);
     if (addingSlug === slug) return;
-    setAddingSlug(slug);
-    setPendingTool(tool);
+    addToStack(slug, tool.name, {
+      origin,
+      logoFrom,
+      needIds: destination ? [destination.id] : [],
+      onAdded: () => trackEvent("explorer_save", { source_type: source?.type, intent: "stack" }),
+    });
   }
 
   if (!source || sourceTools.length === 0) {
@@ -514,8 +611,8 @@ export default function ExplorerPage() {
       ...objectiveThemes.map((theme) => ({ id: theme.id, label: t(theme.labelFr, theme.labelEn) as string })),
     ]
     : sourceTool ? [
-      { id: "all", label: t("Tout", "All") as string },
-      ...toolCategoryFilters.map((category) => ({ id: category.id, label: category.label })),
+      { id: "all", label: t("Tout", "All") as string, count: candidates.length },
+      ...toolCategoryFilters.map((category) => ({ id: category.id, label: category.label, count: category.count })),
     ] : [
       { id: "all", label: t("Tout", "All") as string },
       { id: "alternatives", label: t("Alternatives", "Alternatives") as string },
@@ -528,7 +625,7 @@ export default function ExplorerPage() {
     ? Boolean(sourceStackEntry?.needIds.includes(destination.id))
     : Boolean(sourceStackEntry);
   const sourceIsAdding = Boolean(sourceToolSlug && addingSlug === sourceToolSlug);
-  const gridCandidates = visibleCandidates;
+  const gridCandidates = [...visibleCandidates];
   const activeFilterId = isObjectiveSource ? activeThemeId || "all" : sourceTool ? activeCategoryId || "all" : angle;
   const tagFilters = (
     <ExplorerTagFilterNav
@@ -544,21 +641,28 @@ export default function ExplorerPage() {
           <button
             type="button"
             className="ex-filter-context-back"
+            data-tip={t(`Retour à ${previousLabel}`, `Back to ${previousLabel}`) as string}
             onClick={handleBack}
             aria-label={t(`Retour à ${previousLabel}`, `Back to ${previousLabel}`) as string}
           >
             <ArrowLeft size={18} aria-hidden />
           </button>
-          <ToolLogo tool={sourceTool} size={34} />
-          <span className="ex-filter-context-copy">
-            <small>{locationState.explorerCanGoBack
-              ? t(`Depuis ${previousLabel}`, `From ${previousLabel}`)
-              : t("Explorer autour de", "Explore around")}</small>
-            <strong>{sourceLabel}</strong>
-          </span>
+          <ToolLogo tool={sourceTool} size={28} />
+          <strong className="ex-filter-context-name">{sourceLabel}</strong>
           <span className="ex-filter-context-divider" aria-hidden />
         </div>
       ) : undefined}
+      trailing={(
+        <Link to={`${prefix}/ma-stack`} className="ex-filter-stack" data-tip={t("Voir ma stack", "View my stack") as string} aria-label={`${t("Ma stack", "My stack")} · ${state.pinnedToolSlugs.length}`}>
+          <span className="ex-filter-stack-icon">
+            <Bookmark size={16} aria-hidden />
+            {state.pinnedToolSlugs.length > 0 && (
+              <span key={state.pinnedToolSlugs.length} className="ex-filter-stack-count" aria-hidden>{state.pinnedToolSlugs.length}</span>
+            )}
+          </span>
+          <span className="ex-filter-stack-label">{t("Ma stack", "My stack")}</span>
+        </Link>
+      )}
       onSelect={(id) => {
         if (isObjectiveSource) setTheme(id === "all" ? null : id, false);
         else if (sourceTool) setCategory(id === "all" ? null : id, false);
@@ -566,6 +670,20 @@ export default function ExplorerPage() {
       }}
     />
   );
+
+  // Pinterest placement: each card goes to the currently shortest column,
+  // estimated from its image ratio and text lines, so the relevance order
+  // still reads left to right while heights stagger.
+  const masonryColumns = Array.from({ length: masonryColumnCount }, () => [] as typeof gridCandidates);
+  const columnHeights = Array.from({ length: masonryColumnCount }, () => 0);
+  gridCandidates.forEach((candidate) => {
+    const hasImage = Boolean(candidate.tool.ogImageUrl || (Array.isArray(candidate.tool.covers) && typeof candidate.tool.covers[0] === "string"));
+    const descriptionLines = Math.min(1, Math.ceil(((t(candidate.tool.shortDescription, candidate.tool.shortDescriptionEn || candidate.tool.shortDescription) as string) || "").length / 45));
+    const estimate = (hasImage ? 21 / 40 : 1) * 100 + 12 + (candidate.reasonFr ? 6 : 0) + descriptionLines * 6;
+    const target = columnHeights.indexOf(Math.min(...columnHeights));
+    masonryColumns[target].push(candidate);
+    columnHeights[target] += estimate;
+  });
 
   const renderCandidateCard = (candidate: (typeof visibleCandidates)[number]) => {
     const slug = getExplorationToolKey(candidate.tool);
@@ -576,6 +694,9 @@ export default function ExplorerPage() {
       candidate.tool.shortDescription,
       candidate.tool.shortDescriptionEn || candidate.tool.shortDescription,
     ) as string;
+    const fullReason = t(candidate.reasonFr, candidate.reasonEn) as string;
+    // On a single-tool page its name is the title: drop it from the label.
+    const reason = sourceTool ? shortRelationReason(fullReason, sourceTool.name) : fullReason;
     const previewUrl = candidate.tool.ogImageUrl
       || (Array.isArray(candidate.tool.covers) && typeof candidate.tool.covers[0] === "string" ? candidate.tool.covers[0] : "");
 
@@ -594,29 +715,30 @@ export default function ExplorerPage() {
     return (
       <article key={slug} data-tool-slug={slug} className={`ex-card${inDestination || inStackWithoutDestination ? " is-present" : ""}${isAdding ? " is-adding" : ""}`}>
         <div className="ex-card-actions" aria-label={t(`Actions pour ${candidate.tool.name}`, `Actions for ${candidate.tool.name}`) as string}>
-          <button type="button" onClick={() => addTool(candidate.tool)} disabled={inDestination || inStackWithoutDestination || isAdding} aria-label={inDestination
+          <button type="button" onClick={(event) => addTool(candidate.tool, event.currentTarget, event.currentTarget.closest(".ex-card"))} disabled={inDestination || inStackWithoutDestination || isAdding} aria-label={inDestination
             ? t(`${candidate.tool.name} déjà dans ${destination?.labelFr}`, `${candidate.tool.name} already in ${destination?.labelEn}`) as string
             : inStackWithoutDestination
               ? t(`${candidate.tool.name} déjà dans Ma stack`, `${candidate.tool.name} already in My stack`) as string
               : destination && candidate.stackState === "in-stack"
                 ? t(`Ajouter ${candidate.tool.name} à ${destination.labelFr}`, `Add ${candidate.tool.name} to ${destination.labelEn}`) as string
                 : t(`Ajouter ${candidate.tool.name} à Ma stack`, `Add ${candidate.tool.name} to My stack`) as string}
-            title={inDestination || inStackWithoutDestination
-              ? t("Déjà ajouté", "Already added") as string
-              : t("Ajouter à Ma stack", "Add to My stack") as string}
+            data-tip={inDestination || inStackWithoutDestination
+              ? t("Déjà dans ma stack", "Already in my stack") as string
+              : t("Ajouter à ma stack", "Add to my stack") as string}
           >
-            {inDestination || inStackWithoutDestination ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}
+            {inDestination || inStackWithoutDestination || isAdding ? <BookmarkCheck size={16} aria-hidden /> : <Bookmark size={16} aria-hidden />}
+            <span aria-hidden>{inDestination || inStackWithoutDestination || isAdding ? t("Ajouté", "Added") : t("Ajouter", "Add")}</span>
           </button>
         </div>
         <Link
           to={candidateHref}
           state={candidateLinkState}
           className="ex-card-main"
-          aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
-          aria-describedby={auditedRelations ? `explore-card-${slug}-relation explore-card-${slug}-description` : `explore-card-${slug}-description`}
+          aria-label={t(`Explorer autour ${deName(candidate.tool.name)}`, `Explore around ${candidate.tool.name}`) as string}
+          aria-describedby={reason ? `explore-card-${slug}-relation explore-card-${slug}-description` : `explore-card-${slug}-description`}
           onClick={() => trackEvent("explorer_recenter", { tool_slug: slug })}
         >
-          <span className="ex-card-media">
+          <span className={`ex-card-media${previewUrl ? "" : " is-logo"}`}>
             {previewUrl ? (
               <img src={previewUrl} alt="" loading="lazy" />
             ) : (
@@ -630,26 +752,19 @@ export default function ExplorerPage() {
         <div className="ex-card-content">
           <div className="ex-card-header">
             <ToolLogo tool={candidate.tool} size={24} className="tce-logo ex-card-logo" />
-            <Link to={candidateHref} state={candidateLinkState} className="ex-card-identity">
+            {/* Same target as the media link: kept for mouse users, skipped by Tab. */}
+            <Link to={candidateHref} state={candidateLinkState} className="ex-card-identity" tabIndex={-1}>
               <strong>{candidate.tool.name}</strong>
             </Link>
           </div>
-          {auditedRelations && <p id={`explore-card-${slug}-relation`} className="ex-card-relation">{t(candidate.reasonFr, candidate.reasonEn)}</p>}
-          <p id={`explore-card-${slug}-description`} className="ex-card-description">{description}</p>
+          {/* A reason only when it names something precise (decision 2026-10-16):
+              audited relations, or a shared use with a curated label. */}
+          {reason && <p id={`explore-card-${slug}-relation`} className="ex-card-relation">{reason}</p>}
+          <p id={`explore-card-${slug}-description`} className="ex-card-description">{displayText(description, lang)}</p>
         </div>
       </article>
     );
   };
-
-  const pendingToolSlug = pendingTool ? getExplorationToolKey(pendingTool) : "";
-  const pendingEntry = state.toolEntries.find((entry) => entry.toolSlug === pendingToolSlug);
-  const pendingClassification = pendingTool ? classifyToolForStack(pendingTool) : null;
-  const suggestedNeedId = destination?.id
-    || pendingClassification?.needIds.find((needId) => state.needs.some((need) => need.id === needId));
-  const initialNeedIds = Array.from(new Set([
-    ...(pendingEntry?.needIds || []),
-    ...(destination ? [destination.id] : []),
-  ]));
 
   return (
     <>
@@ -685,33 +800,41 @@ export default function ExplorerPage() {
           </div>
         </header>
       ) : sourceTool && (
-        <section className="ex-tool-stage" aria-label={t(`Explorer autour de ${sourceLabel}`, `Explore around ${sourceLabel}`) as string}>
+        <section className="ex-tool-stage" aria-label={t(`Explorer autour ${deName(sourceLabel)}`, `Explore around ${sourceLabel}`) as string}>
         <header className="ex-tool-focus">
           <div className="ex-tool-focus-main">
-            <ToolCardImage tool={sourceTool} logoSize={112} className="ex-tool-focus-visual" />
+            <div className="ex-tool-focus-media">
+              <ToolCardImage tool={sourceTool} logoSize={112} className="ex-tool-focus-visual" />
+            </div>
             <div className="ex-tool-focus-content">
               <span className="ex-tool-focus-eyebrow">
-                {t(`Autour de ${sourceLabel}`, `Around ${sourceLabel}`)}
+                {displayText(t(`Explorer · Ce qui va avec ${sourceLabel}`, `Explore · What goes with ${sourceLabel}`) as string, lang)}
                 {originLabel !== sourceLabel && <> · {t(`depuis ${originLabel}`, `from ${originLabel}`)}</>}
               </span>
               <div className="ex-tool-focus-title">
-                <ToolLogo tool={sourceTool} size={54} className="ex-card-logo" />
+                <ToolLogo tool={sourceTool} size={64} className="ex-card-logo ex-tool-focus-logo" />
                 <div>
-                  <h1 id="explorer-title">{sourceLabel}</h1>
+                  <h1 id="explorer-title" className={sourceLabel.length > 12 ? "is-long" : undefined}>{sourceLabel}</h1>
                   <span>{getCategoryLabel(sourceTool)}</span>
                 </div>
               </div>
-              {sourceDescription && <p>{sourceDescription}</p>}
+              {sourceDescription && <p>{displayText(sourceDescription, lang)}</p>}
               <div className="ex-tool-focus-footer">
-                <Link className="ex-tool-focus-profile" to={`${prefix}/tool/${getExplorationToolKey(sourceTool)}`}>
-                  {t("Voir la fiche complète", "View full profile")}
+                <Link
+                  className="ex-tool-focus-profile"
+                  to={`${prefix}/tool/${getExplorationToolKey(sourceTool)}`}
+                  aria-label={t(`Voir la fiche ${sourceLabel}`, `View the ${sourceLabel} profile`) as string}
+                >
+                  {/* Short label keeps both actions on one line; the name is
+                      already the title right above. */}
+                  {t("Voir la fiche", "View profile")}
                   <span aria-hidden>→</span>
                 </Link>
                 <button
                   type="button"
                   className={`ex-destination ex-tool-focus-add${sourceAlreadyAdded ? " is-added" : ""}`}
                   disabled={sourceAlreadyAdded || sourceIsAdding}
-                  onClick={() => addTool(sourceTool)}
+                  onClick={(event) => addTool(sourceTool, event.currentTarget, event.currentTarget.closest(".ex-tool-focus"))}
                   aria-label={destination
                     ? sourceAlreadyAdded
                       ? t(`${sourceLabel} déjà dans ${destination.labelFr}`, `${sourceLabel} already in ${destination.labelEn}`) as string
@@ -720,7 +843,7 @@ export default function ExplorerPage() {
                       ? t(`${sourceLabel} déjà dans Ma stack`, `${sourceLabel} already in My stack`) as string
                       : t(`Ajouter ${sourceLabel} à Ma stack`, `Add ${sourceLabel} to My stack`) as string}
                 >
-                  {sourceAlreadyAdded ? <Check size={16} aria-hidden /> : <Plus size={16} aria-hidden />}
+                  {sourceAlreadyAdded ? <BookmarkCheck size={16} aria-hidden /> : <Bookmark size={16} aria-hidden />}
                   <span>{destination
                     ? sourceAlreadyAdded
                       ? t(`Déjà dans ${destination.labelFr}`, `Already in ${destination.labelEn}`)
@@ -736,50 +859,56 @@ export default function ExplorerPage() {
         </section>
       )}
 
-      {sourceTool && angle !== "all" && <div className="ex-angle-filter">
-        <span>{angle === "alternatives" ? t("Alternatives", "Alternatives")
-          : angle === "extensions" ? t("Extensions et fonctions rattachées", "Extensions and attached features")
-          : t("Outils liés", "Related tools")}</span>
-        <button type="button" onClick={() => setAngle("all", false)}>{t("Voir toutes les relations", "Show all relations")}</button>
-      </div>}
-      {(isObjectiveSource || Boolean(sourceTool)) && tagFilters}
-
       {visibleCandidates.length > 0 && (
         <header className="ex-results-heading">
           <div>
             <h2>{sourceTool
-              ? t(`Outils à découvrir autour de ${sourceLabel}`, `Tools to discover around ${sourceLabel}`)
+              ? t(`Outils à découvrir autour ${deName(sourceLabel)}`, `Tools to discover around ${sourceLabel}`)
               : t("Outils recommandés", "Recommended tools")}</h2>
           </div>
-          <p>{t(
+          {/* Tool sources show their counts in the filter control below. */}
+          {!sourceTool && <p>{t(
             `${filteredCandidates.length} outil${filteredCandidates.length > 1 ? "s" : ""}`,
             `${filteredCandidates.length} tool${filteredCandidates.length > 1 ? "s" : ""}`,
-          )}</p>
+          )}</p>}
         </header>
+      )}
+      {/* Section title first, then its filter: the control belongs to the
+          results it sorts instead of floating between hero and title. */}
+      {(isObjectiveSource || Boolean(sourceTool)) && tagFilters}
+      {/* Active relation filter (from a "See all" or an old link): one
+          removable pill under the filters, centred on the same axis. */}
+      {sourceTool && angle !== "all" && (
+        <div className="ex-angle-filter">
+          <button type="button" className="ex-angle-pill" onClick={() => setAngle("all", false)} aria-label={t("Voir toutes les relations", "Show all relations") as string}>
+            <span>{angle === "alternatives" ? t("Alternatives", "Alternatives")
+              : angle === "extensions" ? t("Extensions", "Extensions")
+              : t("Outils liés", "Related tools")}</span>
+            <X size={14} aria-hidden />
+          </button>
+        </div>
       )}
 
       {visibleCandidates.length > 0 ? (
-        gridCandidates.length > 0 && <section className="ex-grid ex-grid--masonry" aria-label={t("Outils associés", "Related tools") as string}>
-          {gridCandidates.map(renderCandidateCard)}
+        gridCandidates.length > 0 && <section ref={masonryRef} className="ex-grid ex-masonry" style={{ "--ex-cols": masonryColumnCount } as CSSProperties} aria-label={t("Outils associés", "Related tools") as string}>
+          <div className="ex-masonry-columns">
+            {masonryColumns.map((column, index) => (
+              <div key={index} className="ex-masonry-column">{column.map(renderCandidateCard)}</div>
+            ))}
+          </div>
           {hasMoreCandidates && (
             <>
-              {isLoadingMore && Array.from({ length: Math.min(SKELETON_COUNT, filteredCandidates.length - visibleCandidates.length) }, (_, index) => (
-                <article key={`skeleton-${index}`} className="ex-card ex-card--skeleton" aria-hidden="true">
-                  <div className="ex-card-main">
-                    <span className="ex-card-header">
-                      <span className="ex-skeleton ex-skeleton--logo" />
-                      <span className="ex-card-identity">
-                        <span className="ex-skeleton ex-skeleton--title" />
-                        <span className="ex-skeleton ex-skeleton--meta" />
-                      </span>
-                    </span>
-                    <span className="ex-skeleton ex-skeleton--description" />
-                  </div>
-                  <div className="ex-card-actions">
-                    <span className="ex-skeleton ex-skeleton--button" />
-                  </div>
-                </article>
-              ))}
+              {isLoadingMore && (
+                <div className="ex-masonry-columns ex-masonry-skeletons" aria-hidden="true">
+                  {Array.from({ length: Math.min(masonryColumnCount, filteredCandidates.length - visibleCandidates.length) }, (_, index) => (
+                    <div key={`skeleton-${index}`} className="ex-pin-skeleton">
+                      <span className="ex-skeleton ex-pin-skeleton-media" />
+                      <span className="ex-skeleton ex-pin-skeleton-title" />
+                      <span className="ex-skeleton ex-pin-skeleton-line" />
+                    </div>
+                  ))}
+                </div>
+              )}
               <div ref={loadMoreRef} className="ex-load-sentinel" role="status" aria-live="polite">
                 <span className="sr-only">{isLoadingMore
                   ? t("Chargement de nouveaux outils", "Loading more tools")
@@ -787,42 +916,23 @@ export default function ExplorerPage() {
               </div>
             </>
           )}
+          {!hasMoreCandidates && filteredCandidates.length > INITIAL_RESULT_COUNT && (
+            <div className="ex-list-end">
+              <span>{t(`${filteredCandidates.length} outils parcourus`, `${filteredCandidates.length} tools browsed`)}</span>
+              <button type="button" onClick={() => document.querySelector(".ex-results-heading")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" })}>
+                {t("Revenir aux filtres", "Back to filters")}
+              </button>
+            </div>
+          )}
         </section>
       ) : (
         <section className="ex-empty">
           <Compass size={24} aria-hidden />
-          <h2>{isObjectiveSource ? t("Aucun outil dans cette thématique", "No tools in this theme") : t("Aucun outil dans cet angle", "No tools in this direction")}</h2>
-          <button type="button" onClick={() => isObjectiveSource ? setTheme(null) : sourceTool ? clearToolFilters() : setAngle("all")}>{t("Voir l’ensemble", "View overview")}</button>
+          <h2>{isObjectiveSource ? t("Aucun outil dans cette thématique", "No tools in this theme") : t("Aucun outil pour ce filtre", "No tools for this filter")}</h2>
+          <button type="button" onClick={() => isObjectiveSource ? setTheme(null) : sourceTool ? clearToolFilters() : setAngle("all")}>{t("Voir tous les outils", "See all tools")}</button>
         </section>
       )}
     </main>
-    <StackSaveDialog
-      isOpen={Boolean(pendingTool)}
-      label={pendingTool?.name || ""}
-      lang={lang}
-      needs={state.needs}
-      toolEntries={state.toolEntries}
-      initialIntent={pendingEntry?.intent || "stack"}
-      initialNeedIds={initialNeedIds}
-      suggestedNeedId={suggestedNeedId}
-      onClose={() => { setPendingTool(null); setAddingSlug(null); }}
-      onCreateNeed={createNeed}
-      onSave={(needIds, intent) => {
-        if (!pendingTool) return;
-        saveToolSelection(pendingToolSlug, needIds, intent);
-        trackEvent("explorer_save", { source_type: source?.type, intent });
-        const labels = state.needs
-          .filter((need) => needIds.includes(need.id))
-          .map((need) => t(need.labelFr, need.labelEn));
-        toast.success(t(
-          `${pendingTool.name} ajouté à ${labels.join(" et ")}.`,
-          `${pendingTool.name} added to ${labels.join(" and ")}.`,
-        ) as string);
-        setPendingTool(null);
-        setAddingSlug(null);
-      }}
-      t={(fr, en) => t(fr, en) as string}
-    />
     </>
   );
 }

@@ -27924,8 +27924,9 @@ section[id]:not(.cp-guide-section) {
 }
 .ex-tool-focus-main {
   display: grid;
-  gap: 22px;
-  grid-template-columns: minmax(260px, 38%) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   padding: 18px;
 }
 /* Reuses the shared .tc-image cover/fallback logic (OG image when large
@@ -27950,20 +27951,17 @@ section[id]:not(.cp-guide-section) {
 .ex-tool-focus-content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 12px 18px 12px 0;
+  gap: 0;
+  padding: 0 24px 0 0;
 }
-/* Mirrors an e-commerce PDP footer: secondary link low-emphasis on the
-   left, primary "add" action anchored bottom-right — pinned to the base
-   of the column via margin-top: auto rather than floating on the visual. */
+/* Primary then secondary, grouped on the text's left edge. Spacing is
+   tighter inside a group (eyebrow + identity) than between groups. */
 .ex-tool-focus-footer {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 6px;
+  gap: 10px;
+  margin-top: 24px;
 }
 .ex-tool-focus-eyebrow {
   color: var(--color-muted);
@@ -27971,7 +27969,7 @@ section[id]:not(.cp-guide-section) {
   font-size: var(--tt-size-kicker);
   font-weight: 720;
 }
-.ex-tool-focus-title { align-items: center; display: flex; gap: 14px; min-width: 0; }
+.ex-tool-focus-title { align-items: center; display: flex; gap: 14px; margin-top: 10px; min-width: 0; }
 .ex-tool-focus-title > div { min-width: 0; }
 .ex-tool-focus-title h1 {
   color: var(--color-text);
@@ -27997,10 +27995,10 @@ section[id]:not(.cp-guide-section) {
   font-family: var(--font-ui);
   font-size: var(--tt-size-body);
   line-height: 1.5;
-  margin: 0;
+  margin: 16px 0 0;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
 }
 .ex-tool-focus-profile {
   align-items: center;
@@ -28011,11 +28009,16 @@ section[id]:not(.cp-guide-section) {
   font-weight: 800;
   gap: 8px;
   justify-self: start;
-  min-height: 44px;
+  background: var(--color-text);
+  border-radius: var(--radius-pill);
+  color: var(--color-bg);
+  min-height: 46px;
+  padding: 0 20px;
   white-space: nowrap;
   text-decoration: none;
+  transition: background 150ms ease;
 }
-.ex-tool-focus-profile:hover { text-decoration: underline; text-underline-offset: 4px; }
+.ex-tool-focus-profile:hover { background: color-mix(in srgb, var(--color-text) 88%, var(--color-bg)); }
 .ex-tool-focus-profile:focus-visible { border-radius: 4px; outline: 2px solid var(--color-text); outline-offset: 3px; }
 .ex-tool-focus > .ex-directions { border-top: 1px solid var(--color-border); padding: 14px 18px 18px; }
 .ex-back {
@@ -28039,9 +28042,9 @@ section[id]:not(.cp-guide-section) {
    contrast than the secondary link beside it, never shrinks in the row. */
 .ex-tool-focus-add {
   appearance: none;
-  background: var(--color-text);
-  border: 0;
-  color: var(--color-bg);
+  background: transparent;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
   cursor: pointer;
   flex-shrink: 0;
   font-size: var(--tt-size-card-body);
@@ -28049,9 +28052,9 @@ section[id]:not(.cp-guide-section) {
   padding: 0 20px;
   transition: background 150ms ease;
 }
-.ex-tool-focus-add:hover:not(:disabled) { background: color-mix(in srgb, var(--color-text) 88%, var(--color-bg)); }
+.ex-tool-focus-add:hover:not(:disabled) { background: var(--color-surface-soft); }
 .ex-tool-focus-add:focus-visible { outline: 2px solid var(--color-text); outline-offset: 3px; }
-.ex-tool-focus-add.is-added { background: color-mix(in srgb, #5f7f68 82%, var(--color-text)); color: #fff; cursor: default; }
+.ex-tool-focus-add.is-added { background: color-mix(in srgb, #5f7f68 82%, var(--color-text)); border-color: transparent; color: #fff; cursor: default; }
 .ex-directions { display: grid; gap: 8px; grid-column: 1 / -1; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .ex-directions--themes { grid-template-columns: repeat(auto-fit, minmax(142px, 1fr)); }
 .ex-directions button { align-items: center; appearance: none; background: var(--color-surface-soft); border-radius: var(--radius-pill); color: var(--color-muted); cursor: pointer; display: flex; font-family: var(--font-ui); font-size: var(--tt-size-card-body); font-weight: 760; justify-content: space-between; min-height: 36px; padding: 0 12px; transition: background 160ms ease, color 160ms ease; }
@@ -28191,7 +28194,7 @@ section[id]:not(.cp-guide-section) {
   .ex-tool-focus-main { grid-template-columns: minmax(0, 1fr); padding: 12px; }
   .ex-tool-focus-visual { border-radius: var(--radius-lg) var(--radius-lg) 0 0; min-height: 0; }
   .ex-tool-focus-visual img { max-height: none; min-height: 0; }
-  .ex-tool-focus-content { border-radius: 0 0 var(--radius-lg) var(--radius-lg); gap: 14px; padding: 24px 20px; }
+  .ex-tool-focus-content { border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 20px 8px 8px; }
   .ex-tool-focus-footer { align-items: stretch; flex-direction: column; }
   .ex-tool-focus-add { width: 100%; }
   .ex-tool-focus > .ex-directions { padding: 12px; }
@@ -37388,4 +37391,504 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .td-verdict-axis:nth-child(4)::before { animation-delay: 940ms; }
     .td-verdict-axis:nth-child(5)::before { animation-delay: 1020ms; }
   }
+}
+
+/* Explorer hero, Apple product-tile pass: no box around the hero, the
+   visual carries the brand (so no logo tile beside the name), one text
+   column with a clear ladder (context, name, category, pitch, actions)
+   and both actions on one line. */
+.ex-tool-focus { background: transparent; border-radius: 0; box-shadow: none; overflow: visible; }
+.ex-tool-focus-main { gap: clamp(28px, 4vw, 56px); grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); padding: 8px 0 12px; }
+.ex-tool-focus-visual.tc-image { border-radius: var(--radius-2xl); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 6%, transparent); overflow: hidden; }
+.ex-tool-focus-content { padding: 0; }
+.ex-tool-focus-eyebrow { color: var(--color-text); font-size: 12px; font-weight: 600; letter-spacing: .01em; }
+.ex-tool-focus-title { margin-top: 12px; }
+.ex-tool-focus-title h1 { font-size: var(--tt-size-page-title); font-weight: 600; letter-spacing: -.04em; line-height: 1.02; margin: 0; }
+.ex-tool-focus-title span { color: color-mix(in srgb, var(--color-text) 56%, transparent); display: block; font-size: var(--tt-size-card-body); font-weight: 450; margin-top: 6px; }
+.ex-tool-focus-content > p { color: color-mix(in srgb, var(--color-text) 74%, transparent); font-size: var(--tt-size-section-intro); line-height: 1.45; margin-top: 18px; max-width: 44ch; text-wrap: pretty; }
+.ex-tool-focus-footer { flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.ex-tool-focus-profile, .ex-tool-focus-add { border-radius: var(--radius-pill); font-size: 14px; font-weight: 600; min-height: 44px; padding: 0 18px; white-space: nowrap; }
+.ex-tool-focus-add { border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); }
+.ex-tool-focus-add:hover:not(:disabled) { background: transparent; border-color: var(--color-text); }
+@media (max-width: 960px) {
+  .ex-tool-focus-main { gap: 20px; grid-template-columns: minmax(0, 1fr); padding: 0; }
+  .ex-tool-focus-content { padding: 0 4px; }
+  .ex-tool-focus-footer { flex-direction: row; flex-wrap: wrap; }
+  .ex-tool-focus-profile, .ex-tool-focus-add { flex: 1 1 auto; justify-content: center; width: auto; }
+}
+/* Anchor the text to the visual: eyebrow on the image's top edge, actions
+   on its bottom edge, so the column no longer floats in the middle. */
+@media (min-width: 961px) {
+  .ex-tool-focus-main { align-items: stretch; }
+  /* The image keeps its own ratio and sets the row height; stretching it
+     made aspect-ratio widen it over the text column. */
+  .ex-tool-focus-visual.tc-image { align-self: start; height: auto; max-width: 100%; width: 100%; }
+  .ex-tool-focus-content { padding: 2px 0; }
+  .ex-tool-focus-footer { margin-top: auto; padding-top: 20px; }
+}
+/* Logo sized to the name + category block it sits beside, so the identity
+   reads as one unit; hairline instead of a boxed tile. */
+.ex-tool-focus-title { align-items: center; gap: 16px; }
+.ex-tool-focus-logo { border-radius: var(--radius-lg); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 8%, transparent); flex-shrink: 0; }
+@media (max-width: 960px) { .ex-tool-focus-logo { height: 52px !important; width: 52px !important; } }
+/* Long names step down one size so the name stays on one line beside the
+   logo instead of wrapping into a tall block that unbalances it. */
+.ex-tool-focus-title h1.is-long { font-size: clamp(28px, 2.6vw, 38px); text-wrap: balance; }
+
+/* Zone 2, category filters: active pill is a light outlined chip (no black),
+   counts in the secondary tone, slimmer pinned context on one line. */
+.ex-tag-filter-item { font-weight: 600; gap: 6px; letter-spacing: -.01em; }
+/* Apple segmented control: a soft grey track hugging its items, and one
+   white thumb that glides to the active item instead of each pill
+   switching on and off. */
+.ex-tag-filter-scroll { flex: 0 1 auto; }
+.ex-tag-filter-track { background: var(--color-surface-soft); border-radius: var(--radius-pill); gap: 2px; padding: 4px; position: relative; width: fit-content; max-width: 100%; }
+.ex-tag-filter-thumb {
+  background: var(--color-surface);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text) 10%, transparent), 0 3px 10px color-mix(in srgb, var(--color-text) 6%, transparent);
+  height: calc(100% - 8px);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 4px;
+  transition: transform 320ms cubic-bezier(.32,.72,0,1), width 320ms cubic-bezier(.32,.72,0,1);
+}
+.ex-tag-filter-item { min-height: 40px; position: relative; z-index: 1; }
+.ex-tag-filter-item:hover { background: transparent; color: color-mix(in srgb, var(--color-text) 72%, transparent); }
+.ex-tag-filter-item.is-active, .ex-tag-filter-item.is-active:hover { background: transparent; color: var(--color-text); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) { .ex-tag-filter-thumb { transition: none; } }
+.ex-tag-filter-count { color: color-mix(in srgb, currentColor 55%, transparent); font-size: 12px; font-variant-numeric: tabular-nums; font-weight: 500; }
+.ex-filter-context { gap: 10px; }
+.ex-filter-context-name { color: var(--color-text); font-family: var(--font-ui); font-size: var(--tt-size-card-body); font-weight: 600; max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ex-filter-context-divider { height: 24px; }
+/* Title, then its control, then the grid: 16px from title to control,
+   24px from control to cards, flush with the title's left edge. */
+.ex-results-heading ~ .ex-tag-filter:not(.is-pinned) { margin-top: -19px; }
+.ex-tag-filter:not(.is-pinned) .ex-tag-filter-scroll { margin-left: -2px; }
+.ex-tag-filter:not(.is-pinned) .ex-tag-filter-surface { padding-bottom: 24px; }
+/* Segmented control, compact pass: Apple proportions (36px items in a
+   3px track, regular weight with a semibold selection) so the control
+   reads as a quiet tool under the title, not a second headline. */
+.ex-tag-filter-track { gap: 0; padding: 3px; }
+.ex-tag-filter-thumb { height: calc(100% - 6px); top: 3px; box-shadow: 0 1px 1px color-mix(in srgb, var(--color-text) 8%, transparent), 0 2px 6px color-mix(in srgb, var(--color-text) 6%, transparent); }
+.ex-tag-filter-item { font-size: var(--tt-size-card-body); font-weight: 500; gap: 5px; min-height: 36px; padding: 0 14px; }
+.ex-tag-filter-item.is-active, .ex-tag-filter-item.is-active:hover { font-weight: 600; }
+.ex-tag-filter-count { font-size: 12px; }
+/* Centred section axis: the title and its control sit on the page's
+   centre line, like Apple's section tabs, so the filter structures the
+   grid below instead of weighting its left edge. When pinned, the source
+   context stays on the left and the control keeps the same centre. */
+.ex-results-heading { align-items: center; flex-direction: column; gap: 6px; text-align: center; }
+.ex-tag-filter-surface { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+.ex-tag-filter.is-pinned .ex-tag-filter-surface { gap: 0; }
+.ex-filter-context { grid-column: 1; justify-self: start; }
+.ex-tag-filter-scroll { grid-column: 2; max-width: 100%; }
+.ex-tag-filter:not(.is-pinned) .ex-tag-filter-scroll { margin-left: 0; }
+@media (max-width: 760px) {
+  .ex-tag-filter-surface { grid-template-columns: auto minmax(0, 1fr); }
+  .ex-tag-filter:not(.is-pinned) .ex-tag-filter-surface { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+  .ex-tag-filter:not(.is-pinned) .ex-filter-context { display: none; }
+  .ex-tag-filter:not(.is-pinned) .ex-tag-filter-scroll { grid-column: 1; }
+  .ex-tag-filter-item { min-height: 44px; }
+}
+.ex-results-heading h2 { text-wrap: balance; }
+/* Rhythm: a clear break after the hero, then title, control and grid
+   tightening as they get closer to the content they introduce. */
+.ex-results-heading { margin: 0 0 20px; padding-top: 46px; }
+.ex-tag-filter:not(.is-pinned) .ex-tag-filter-surface { padding-bottom: 32px; }
+
+/* Satisfying switch: the thumb glides with a soft overshoot, the label it
+   lands on settles, and the cards of the new filter rise in one after the
+   other (re-keyed grid). Reduced motion keeps only the state change. */
+.ex-tag-filter-thumb { transition: transform 420ms cubic-bezier(.34,1.36,.5,1), width 420ms cubic-bezier(.34,1.36,.5,1); }
+.ex-tag-filter-item.is-active { animation: ex-filter-settle 420ms cubic-bezier(.34,1.36,.5,1); }
+@keyframes ex-filter-settle { 0% { transform: scale(.94); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .ex-tag-filter-item.is-active { animation: none; }
+}
+
+/* Filter switch as a shared-element transition: cards that stay glide to
+   their new slot, leaving ones shrink away, arriving ones grow in. */
+::view-transition-group(*) { animation-duration: 460ms; animation-timing-function: cubic-bezier(.32,.72,0,1); }
+::view-transition-old(*):only-child { animation: ex-vt-out 220ms ease-in both; }
+::view-transition-new(*):only-child { animation: ex-vt-in 380ms cubic-bezier(.22,1,.36,1) 80ms both; }
+::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+@keyframes ex-vt-out { to { opacity: 0; transform: scale(.92); } }
+@keyframes ex-vt-in { from { opacity: 0; transform: scale(.94) translateY(10px); } }
+.ex-tag-filter-thumb { view-transition-name: ex-filter-thumb; }
+.ex-tag-filter.is-pinned { view-transition-name: ex-filter-bar; }
+::view-transition-group(ex-filter-bar) { z-index: 2; animation: none; }
+::view-transition-group(ex-filter-thumb) { z-index: 3; animation-duration: 420ms; animation-timing-function: cubic-bezier(.34,1.36,.5,1); }
+/* Hero structure: one Apple-style product tile (soft panel, no border)
+   holding a visual that fills its half edge to edge, so image and text
+   always share the same height whatever the description length. */
+.ex-tool-focus { background: color-mix(in srgb, var(--color-surface-soft) 70%, var(--color-surface)); border-radius: var(--radius-2xl); overflow: hidden; }
+.ex-tool-focus-main { align-items: stretch; gap: 0; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); padding: 0; }
+.ex-tool-focus-content { justify-content: center; padding: clamp(28px, 3.4vw, 48px); }
+.ex-tool-focus-footer { margin-top: 24px; padding-top: 0; }
+@media (min-width: 961px) {
+  .ex-tool-focus-visual.tc-image { align-self: stretch; aspect-ratio: auto; border-radius: 0; box-shadow: none; height: 100%; min-height: 300px; }
+  .ex-tool-focus-visual img { height: 100%; object-fit: cover; width: 100%; }
+  .ex-tool-focus-footer { margin-top: 24px; }
+}
+@media (max-width: 960px) {
+  .ex-tool-focus-main { gap: 0; }
+  .ex-tool-focus-visual.tc-image { border-radius: 0; box-shadow: none; }
+  .ex-tool-focus-content { padding: 22px 20px 24px; }
+}
+/* Never crop the OG image (wordmarks get cut): it keeps its ratio, inset
+   in the tile with its own radius, centred against the text. */
+.ex-tool-focus-main { align-items: center; padding: 12px; }
+.ex-tool-focus-visual.tc-image { align-self: center; aspect-ratio: 1200 / 630; border-radius: var(--radius-xl); height: auto; min-height: 0; }
+.ex-tool-focus-visual img { object-fit: cover; }
+.ex-tool-focus-content { padding: clamp(20px, 2.6vw, 36px); }
+@media (min-width: 961px) {
+  .ex-tool-focus-visual.tc-image { align-self: center; aspect-ratio: 1200 / 630; border-radius: var(--radius-xl); height: auto; min-height: 0; }
+}
+@media (max-width: 960px) {
+  .ex-tool-focus-content { padding: 20px 8px 12px; }
+}
+@media (max-width: 960px) {
+  .ex-tool-focus-main { grid-template-columns: minmax(0, 1fr); padding: 10px; }
+  .ex-tool-focus-visual.tc-image { border-radius: var(--radius-xl); }
+}
+/* Visual first, current Apple style: no glow, no drop shadow. The image
+   is the largest thing in the tile and reacts to scroll (slow zoom-out
+   inside its frame as the hero leaves the screen), CSS-only. */
+.ex-tool-focus-media { align-self: center; min-width: 0; }
+.ex-tool-focus-media .ex-tool-focus-visual.tc-image { overflow: hidden; }
+@supports (animation-timeline: view()) {
+  .ex-tool-focus-media .ex-tool-focus-visual img {
+    animation: ex-visual-scroll linear both;
+    animation-range: exit 0% exit 100%;
+    animation-timeline: view();
+  }
+  @keyframes ex-visual-scroll { from { transform: scale(1); } to { transform: scale(1.08); } }
+}
+@media (prefers-reduced-motion: reduce) { .ex-tool-focus-media .ex-tool-focus-visual img { animation: none; } }
+/* Balanced tile: equal halves, actions kept on one line, so the text block
+   matches the image height instead of towering over it. */
+@media (min-width: 961px) {
+  .ex-tool-focus-main { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .ex-tool-focus-footer { flex-wrap: nowrap; }
+  .ex-tool-focus-logo { height: 56px !important; width: 56px !important; }
+}
+
+/* Zone 4, cards, Apple store tile: picture, then one row with logo, name
+   and a small add button, then what the tool does in two quiet lines.
+   The kind of link sits on the picture as a small frosted tag. */
+.ex-card-content { gap: 0; padding-top: 12px; }
+.ex-card-header { align-items: center; gap: 8px; grid-template-columns: 22px minmax(0, 1fr) auto; }
+.ex-card-identity strong { font-size: 15px; min-height: 0; -webkit-line-clamp: 1; }
+.ex-card-description { color: color-mix(in srgb, var(--color-text) 58%, transparent); margin-top: 4px; min-height: 0; }
+.ex-card-media::after { display: none; }
+.ex-card-media img { transition: transform 500ms cubic-bezier(.22,1,.36,1); }
+.ex-card:hover .ex-card-media img { transform: scale(1.03); }
+.ex-card-kind {
+  backdrop-filter: blur(14px) saturate(1.6);
+  background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  font: 600 12px/1 var(--font-ui);
+  left: 10px;
+  padding: 6px 9px;
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+}
+.ex-card-header .ex-card-actions { position: static; right: auto; top: auto; }
+.ex-card-actions button,
+.ex-card-actions button:last-child {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 18%, transparent);
+  color: var(--color-text);
+  height: 32px;
+  min-height: 32px;
+  min-width: 32px;
+  transition: transform 260ms cubic-bezier(.34,1.56,.64,1), background 160ms ease, box-shadow 160ms ease;
+  width: 32px;
+}
+.ex-card-actions button:hover:not(:disabled) { background: var(--color-surface-soft); box-shadow: inset 0 0 0 1px var(--color-text); }
+.ex-card-actions button:active:not(:disabled) { transform: scale(.9); }
+.ex-card-actions button:disabled { background: var(--color-text); box-shadow: none; color: var(--color-bg); animation: ex-add-pop 420ms cubic-bezier(.34,1.56,.64,1); }
+@keyframes ex-add-pop { 0% { transform: scale(.7); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }
+@media (pointer: coarse) { .ex-card-actions button, .ex-card-actions button:last-child { height: 40px; min-height: 40px; min-width: 40px; width: 40px; } }
+@media (prefers-reduced-motion: reduce) {
+  .ex-card-media img, .ex-card-actions button { transition: none; }
+  .ex-card-actions button:disabled { animation: none; }
+}
+/* A11y audit 16/10: secondary text and counts to >= 4.5:1, solid focus ring
+   on filter items. */
+.ex-card-description { color: color-mix(in srgb, var(--color-text) 70%, transparent); }
+.ex-tool-focus-title span, .ex-tool-focus-eyebrow { color: color-mix(in srgb, var(--color-text) 68%, transparent); }
+.ex-tool-focus-eyebrow { color: var(--color-text); }
+.ex-tag-filter-count { color: color-mix(in srgb, currentColor 70%, transparent); }
+.ex-tag-filter-item:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+/* Design review 16/10: one vertical spine (title, filter, shelf titles all
+   centred) and a little more air inside the card text. */
+.ex-card-content { padding: 14px 2px 4px; }
+.ex-card-description { line-height: 1.5; margin-top: 6px; }
+/* Zone 4, Pinterest masonry: columns of pins with natural heights.
+   A pin is the picture edge to edge (OG ratio, or a square logo tile when a
+   tool has no picture), then logo + name, the precise relation if any, and
+   up to three lines of description. "Ajouter" is the pin's save button:
+   it shows on hover over the picture (always on touch) and pops into
+   "Ajouté". */
+.ex-masonry-columns { align-items: start; display: grid; gap: 20px; grid-template-columns: repeat(var(--ex-cols, 3), minmax(0, 1fr)); }
+.ex-masonry-column { display: grid; gap: 28px; min-width: 0; }
+.ex-masonry .ex-card { height: auto; }
+.ex-card-media { background: var(--color-surface-soft); padding: 0; }
+.ex-card-media.is-logo { aspect-ratio: 1 / 1; }
+.ex-card-media img { border-radius: 0; box-shadow: none; }
+.ex-card:hover .ex-card-media img { transform: scale(1.03); }
+.ex-card-content { padding: 12px 4px 0; }
+.ex-card-header { grid-template-columns: 22px minmax(0, 1fr); }
+.ex-card-identity strong { font-size: var(--tt-size-card-title); font-weight: 600; letter-spacing: -.01em; }
+.ex-card-relation { color: var(--color-text); font: 550 13px/1.35 var(--font-ui); margin: 4px 0 0; }
+.ex-card-description { font-size: var(--tt-size-card-body); line-height: 1.45; margin-top: 4px; -webkit-line-clamp: 3; }
+.ex-card > .ex-card-actions { position: absolute; right: 10px; top: 10px; z-index: 3; }
+.ex-card-actions button,
+.ex-card-actions button:last-child {
+  align-items: center;
+  background: var(--color-surface);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text) 12%, transparent);
+  color: var(--color-text);
+  display: inline-flex;
+  font: 600 13px/1 var(--font-ui);
+  gap: 5px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0 12px 0 10px;
+  width: auto;
+}
+.ex-card-actions button:hover:not(:disabled) { background: var(--color-surface); box-shadow: inset 0 0 0 1px var(--color-text); transform: scale(1.04); }
+.ex-card-actions button:disabled { background: var(--color-text); color: var(--color-bg); }
+@media (hover: hover) and (pointer: fine) {
+  .ex-card > .ex-card-actions { opacity: 0; transform: translateY(-4px); transition: opacity 180ms ease, transform 220ms cubic-bezier(.22,1,.36,1); }
+  .ex-card:hover > .ex-card-actions, .ex-card:focus-within > .ex-card-actions, .ex-card.is-present > .ex-card-actions { opacity: 1; transform: none; }
+}
+@media (max-width: 560px) {
+  .ex-masonry-columns { gap: 12px; }
+  .ex-masonry-column { gap: 20px; }
+  .ex-card-actions button span { display: none; }
+  .ex-card-actions button, .ex-card-actions button:last-child { padding: 0; width: 34px; justify-content: center; }
+}
+/* Lighter pins (16/10): picture, name, and the precise relation when there
+   is one. The description stays for screen readers and appears in the
+   hero once the user recentres on the tool. */
+.ex-masonry .ex-card-description { block-size: 1px; clip-path: inset(50%); margin: 0; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
+.ex-masonry .ex-card-relation { color: color-mix(in srgb, var(--color-text) 62%, transparent); font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ex-masonry .ex-card-content { padding-top: 10px; }
+.ex-masonry-column { gap: 24px; }
+/* Context back, kept light (16/10): the relation says why the pin is here,
+   then two small lines say what the tool does. */
+.ex-masonry .ex-card-relation { color: var(--color-text); font-weight: 550; }
+.ex-masonry .ex-card-description { block-size: auto; clip-path: none; color: color-mix(in srgb, var(--color-text) 64%, transparent); font-size: 13px; line-height: 1.4; margin-top: 3px; position: static; white-space: normal; width: auto; -webkit-line-clamp: 2; }
+/* A touch lighter (16/10): relation as a quiet 12px caption, description on
+   one line; the name alone carries weight. */
+.ex-masonry .ex-card-relation { color: color-mix(in srgb, var(--color-text) 66%, transparent); font-size: 12px; font-weight: 500; margin-top: 3px; }
+.ex-masonry .ex-card-description { -webkit-line-clamp: 1; }
+.ex-masonry .ex-card-identity strong { font-weight: 600; }
+/* Add-to-stack story: logo ghost in flight, then a dark, clearly visible
+   confirmation pill (logo, name, undo, view) that rises from the bottom. */
+.stack-fly-ghost { align-items: center; background: var(--color-text); border-radius: var(--radius-circle); box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--color-text) 60%, transparent); color: var(--color-bg); display: flex; justify-content: center; left: 0; pointer-events: none; position: fixed; top: 0; transform-origin: center; will-change: transform; z-index: 1000; }
+.stack-fly-ghost svg { height: 18px; width: 18px; }
+.stack-toast {
+  align-items: center;
+  animation: stack-toast-rise 420ms cubic-bezier(.34,1.56,.64,1) both;
+  background: var(--color-text);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--color-text) 55%, transparent);
+  color: var(--color-bg);
+  display: flex;
+  font-family: var(--font-ui);
+  gap: 12px;
+  max-width: min(92vw, 460px);
+  padding: 8px 8px 8px 10px;
+}
+.stack-toast-logo { background: var(--color-surface); border-radius: var(--radius-md); flex-shrink: 0; }
+.stack-toast-text { display: grid; flex: 1; line-height: 1.25; min-width: 0; }
+.stack-toast-text strong { font-size: var(--tt-size-card-body); font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stack-toast-text span { color: color-mix(in srgb, var(--color-bg) 72%, transparent); font-size: 13px; }
+.stack-toast-undo, .stack-toast-open { align-items: center; border-radius: var(--radius-pill); cursor: pointer; display: inline-flex; font: 600 13px/1 var(--font-ui); min-height: 36px; padding: 0 14px; text-decoration: none; white-space: nowrap; }
+.stack-toast-undo { appearance: none; background: transparent; border: 0; color: var(--color-bg); }
+.stack-toast-undo:hover { background: color-mix(in srgb, var(--color-bg) 14%, transparent); }
+.stack-toast-open { background: var(--color-bg); color: var(--color-text); }
+.stack-toast-open:hover { background: color-mix(in srgb, var(--color-bg) 88%, var(--color-text)); }
+.stack-toast :focus-visible { outline: 2px solid var(--color-bg); outline-offset: 2px; }
+@keyframes stack-toast-rise { from { opacity: 0; transform: translateY(16px) scale(.96); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .stack-toast { animation: none; } }
+.stack-toast-logo { height: 32px; object-fit: contain; padding: 3px; width: 32px; }
+.stack-toast-logo--letter { align-items: center; color: var(--color-text); display: inline-flex; font: 700 15px/1 var(--font-ui); justify-content: center; }
+/* Sticky bar: a "Ma stack" link on the right (landing spot of the add
+   flight while scrolling), and counters that roll in when they change. */
+.ex-filter-stack { align-items: center; border-radius: var(--radius-pill); color: var(--color-text); display: none; flex-shrink: 0; font: 600 var(--tt-size-card-body)/1 var(--font-ui); gap: 8px; grid-column: 3; justify-self: end; min-height: 40px; padding: 0 14px 0 12px; text-decoration: none; transition: background 150ms ease; }
+.ex-tag-filter.is-pinned .ex-filter-stack { display: inline-flex; }
+.ex-filter-stack:hover { background: var(--color-surface-soft); }
+.ex-filter-stack:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+.ex-filter-stack-icon { display: inline-flex; position: relative; }
+.ex-filter-stack-count, .asv2-topbar-cta-badge { animation: ex-count-roll 520ms cubic-bezier(.34,1.56,.64,1) both; }
+.ex-filter-stack-count { align-items: center; background: var(--color-text); border-radius: var(--radius-pill); color: var(--color-bg); display: inline-flex; font: 700 10px/1 var(--font-ui); height: 16px; justify-content: center; min-width: 16px; padding: 0 4px; position: absolute; right: -9px; top: -7px; }
+@keyframes ex-count-roll { 0% { opacity: 0; transform: translateY(70%) scale(.6); } 60% { opacity: 1; transform: translateY(-12%) scale(1.15); } 100% { transform: none; } }
+@media (max-width: 760px) { .ex-filter-stack-label { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ex-filter-stack-count, .asv2-topbar-cta-badge { animation: none; } }
+/* Softer contours: the toast logo sits flush (no white tile), the pinned
+   context logo loses its ring. */
+.stack-toast-logo { background: transparent; border-radius: var(--radius-md); padding: 0; }
+.stack-toast-logo--letter { background: color-mix(in srgb, var(--color-bg) 16%, transparent); color: var(--color-bg); }
+.ex-filter-context img { box-shadow: none; outline: none; }
+/* The site Toaster gives every toast a white card; the add confirmation is
+   its own pill, so its host must stay transparent (no white corners). */
+[data-sonner-toast]:has(.stack-toast) { background: transparent !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; width: auto !important; }
+/* One "Ma stack" at a time: the sticky bar shows its own link only while
+   the top bar is tucked away (scrolling down); scrolling up brings the top
+   bar's button back and hides this one. */
+.asv2-root[data-chrome="shown"] .ex-filter-stack { display: none; }
+/* Responsive: when the bar cannot centre the control between equal sides,
+   context, control and stack link share the row without overlapping. */
+@media (max-width: 1100px) {
+  .ex-tag-filter.is-pinned .ex-tag-filter-surface { gap: 10px; grid-template-columns: auto minmax(0, 1fr) auto; }
+  .ex-tag-filter.is-pinned .ex-tag-filter-scroll { justify-self: stretch; }
+  .ex-filter-stack-label, .ex-filter-context-name, .ex-filter-context-divider { display: none; }
+  .ex-filter-stack { padding: 0 10px; }
+}
+/* Hover pills: every Explorer control names its action in a small dark
+   pill under it, after a short delay (hover or keyboard focus, fine
+   pointers only). Text comes from data-tip, the accessible name stays on
+   aria-label. */
+@media (hover: hover) and (pointer: fine) {
+  .ex-page [data-tip], .ex-tag-filter [data-tip] { position: relative; }
+  .ex-page [data-tip]::after, .ex-tag-filter [data-tip]::after {
+    background: var(--color-text);
+    border-radius: var(--radius-pill);
+    color: var(--color-bg);
+    content: attr(data-tip);
+    font: 600 12px/1 var(--font-ui);
+    left: 50%;
+    opacity: 0;
+    padding: 7px 10px;
+    pointer-events: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    transform: translate(-50%, -4px);
+    transition: opacity 140ms ease, transform 180ms cubic-bezier(.22,1,.36,1);
+    transition-delay: 0ms;
+    white-space: nowrap;
+    z-index: 60;
+  }
+  .ex-page [data-tip]:hover::after, .ex-page [data-tip]:focus-visible::after,
+  .ex-tag-filter [data-tip]:hover::after, .ex-tag-filter [data-tip]:focus-visible::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    transition-delay: 350ms;
+  }
+  /* Right-edge controls open their pill leftwards so it stays on screen. */
+  .ex-card-actions [data-tip]::after, .ex-filter-stack[data-tip]::after { left: auto; right: 0; transform: translateY(-4px); }
+  .ex-card-actions [data-tip]:hover::after, .ex-card-actions [data-tip]:focus-visible::after,
+  .ex-filter-stack[data-tip]:hover::after, .ex-filter-stack[data-tip]:focus-visible::after { transform: none; }
+}
+/* Hover pills must not move positioned controls (filter arrows, card
+   add button): keep their own positioning. */
+.ex-tag-filter .ex-tag-filter-control[data-tip] { position: absolute; }
+/* Overflowing filter control: arrows sit inside the track ends, over a
+   soft fade so labels slide under them instead of being cut. */
+.ex-tag-filter-scroll { position: relative; }
+.ex-tag-filter-control { background: var(--color-surface); box-shadow: 0 1px 3px color-mix(in srgb, var(--color-text) 14%, transparent); height: 32px; width: 32px; }
+.ex-tag-filter-control--left { left: 5px; }
+.ex-tag-filter-control--right { right: 5px; }
+/* Pin button now names its action in data-tip (shared hover-pill text). */
+.tce-hover-actions .pin-tool-button::after { content: attr(data-tip); }
+
+/* Add-to-stack story tokens (read by src/lib/stackAddStory.tsx). */
+:root {
+  --stack-add-token-size: 40;
+  --stack-add-gather: 220;
+  --stack-add-travel: 640;
+  --stack-add-bump: 520;
+}
+/* Remove confirmation for the add-to-stack toggle: a small dark popover
+   under the button (right-aligned), Keep focused by default. */
+.stack-confirm { animation: stack-toast-rise 260ms cubic-bezier(.34,1.56,.64,1) both; background: var(--color-text); border-radius: var(--radius-lg); box-shadow: 0 12px 30px -12px color-mix(in srgb, var(--color-text) 60%, transparent); color: var(--color-bg); display: grid; font-family: var(--font-ui); gap: 10px; padding: 12px; position: fixed; transform-origin: top right; translate: -100% 0; width: max-content; max-width: min(300px, calc(100vw - 32px)); z-index: 1100; }
+.stack-confirm p { font-size: var(--tt-size-card-body); font-weight: 600; margin: 0; }
+.stack-confirm > div { display: flex; gap: 8px; justify-content: flex-end; }
+.stack-confirm button { appearance: none; border: 0; border-radius: var(--radius-pill); cursor: pointer; font: 600 13px/1 var(--font-ui); min-height: 36px; padding: 0 14px; }
+.stack-confirm-keep { background: transparent; color: var(--color-bg); }
+.stack-confirm-keep:hover { background: color-mix(in srgb, var(--color-bg) 14%, transparent); }
+.stack-confirm-remove { background: var(--color-bg); color: var(--color-text); }
+.stack-confirm button:focus-visible { outline: 2px solid var(--color-bg); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .stack-confirm { animation: none; } }
+/* Every add-to-stack control shows the hand cursor. */
+.pin-tool-button:not(:disabled), .ex-card-actions button:not(:disabled), .ex-tool-focus-add:not(:disabled), .stack-toast button, .stack-confirm button { cursor: pointer; }
+.stack-fly-ghost--logo { background: var(--color-surface); box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-text) 10%, transparent), 0 8px 18px -8px color-mix(in srgb, var(--color-text) 55%, transparent); }
+.stack-fly-ghost--logo img { border-radius: var(--radius-md); height: 70%; object-fit: contain; width: 70%; }
+/* Added state tells what a click does: on hover or keyboard focus the
+   label becomes "Retirer de ma stack", both labels share one grid cell so
+   the button keeps its width. */
+.pin-tool-button-text { display: inline-grid; }
+.pin-tool-button-state, .pin-tool-button-hint { grid-area: 1 / 1; transition: opacity 140ms ease, transform 180ms cubic-bezier(.22,1,.36,1); }
+.pin-tool-button-hint { opacity: 0; transform: translateY(4px); }
+.pin-tool-button--active:hover .pin-tool-button-state,
+.pin-tool-button--active:focus-visible .pin-tool-button-state { opacity: 0; transform: translateY(-4px); }
+.pin-tool-button--active:hover .pin-tool-button-hint,
+.pin-tool-button--active:focus-visible .pin-tool-button-hint { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .pin-tool-button-state, .pin-tool-button-hint { transition: none; } }
+/* Overflow edges: labels fade out under the arrows instead of showing
+   through behind them (mask on the track only, arrows stay crisp). */
+.ex-tag-filter-scroll.has-left .ex-tag-filter-track { -webkit-mask-image: linear-gradient(to right, transparent 0, transparent 34px, black 64px); mask-image: linear-gradient(to right, transparent 0, transparent 34px, black 64px); }
+.ex-tag-filter-scroll.has-right .ex-tag-filter-track { -webkit-mask-image: linear-gradient(to left, transparent 0, transparent 34px, black 64px); mask-image: linear-gradient(to left, transparent 0, transparent 34px, black 64px); }
+.ex-tag-filter-scroll.has-left.has-right .ex-tag-filter-track { -webkit-mask-image: linear-gradient(to right, transparent 0, transparent 34px, black 64px, black calc(100% - 64px), transparent calc(100% - 34px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, transparent 34px, black 64px, black calc(100% - 64px), transparent calc(100% - 34px), transparent 100%); }
+/* The rail colour moves to the wrapper while masked, so only the labels
+   fade, not the rail's rounded ends. */
+.ex-tag-filter-scroll.has-left, .ex-tag-filter-scroll.has-right { background: var(--color-surface-soft); border-radius: var(--radius-pill); }
+.ex-tag-filter-scroll.has-left .ex-tag-filter-track, .ex-tag-filter-scroll.has-right .ex-tag-filter-track { background: transparent; }
+/* Filter switch: the whole filter bar is one live layer during the view
+   transition (no separate thumb snapshot floating over the labels); the
+   thumb keeps its own CSS glide inside that live layer. */
+.ex-tag-filter-thumb { view-transition-name: none; }
+.ex-tag-filter, .ex-tag-filter.is-pinned { view-transition-name: ex-filter-bar; }
+::view-transition-group(ex-filter-bar) { animation: none; z-index: 2; }
+::view-transition-old(ex-filter-bar) { display: none; }
+::view-transition-new(ex-filter-bar) { animation: none; }
+/* Zone 5. Relation filter as one removable pill; skeleton pins shaped like
+   real pins (picture, name, caption) laid in the same columns; a quiet
+   end-of-list marker; a lighter empty state without a box. */
+.ex-angle-filter { display: flex; justify-content: center; margin: -12px 0 24px; }
+.ex-angle-pill { align-items: center; appearance: none; background: var(--color-text); border: 0; border-radius: var(--radius-pill); color: var(--color-bg); cursor: pointer; display: inline-flex; font: 600 var(--tt-size-card-body)/1 var(--font-ui); gap: 8px; min-height: 36px; padding: 0 12px 0 16px; text-decoration: none; transition: transform 200ms cubic-bezier(.34,1.56,.64,1); }
+.ex-angle-pill:hover { transform: scale(1.03); }
+.ex-angle-pill:active { transform: scale(.96); }
+.ex-angle-pill:focus-visible { outline: 2px solid var(--color-text); outline-offset: 3px; }
+.ex-masonry-skeletons { margin-top: 24px; }
+.ex-pin-skeleton { display: grid; gap: 10px; }
+.ex-pin-skeleton-media { aspect-ratio: 40 / 21; border-radius: var(--radius-lg); width: 100%; }
+.ex-pin-skeleton-title { height: 14px; width: 55%; }
+.ex-pin-skeleton-line { height: 11px; width: 80%; }
+.ex-list-end { align-items: center; color: color-mix(in srgb, var(--color-text) 64%, transparent); display: flex; flex-direction: column; font: 500 13px/1.4 var(--font-ui); gap: 12px; margin: 56px 0 8px; }
+.ex-list-end::before { background: var(--color-border); content: ""; height: 1px; width: 48px; }
+.ex-list-end button { appearance: none; background: var(--color-surface-soft); border: 0; border-radius: var(--radius-pill); color: var(--color-text); cursor: pointer; font: 600 var(--tt-size-card-body)/1 var(--font-ui); min-height: 40px; padding: 0 16px; }
+.ex-list-end button:hover { background: color-mix(in srgb, var(--color-surface-soft) 85%, var(--color-text)); }
+.ex-list-end button:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+.ex-empty { background: transparent; padding: 32px 24px; }
+.ex-empty h2 { color: var(--color-text); font: 600 var(--tt-size-card-title)/1.3 var(--font-ui); }
+.ex-empty button { font-weight: 600; }
+/* Mobile pass: the pin's add button is a 44px round target on touch
+   screens (icon only), the confirmation pill fits small screens. */
+@media (pointer: coarse), (max-width: 560px) {
+  .ex-card-actions button, .ex-card-actions button:last-child { height: 44px; justify-content: center; min-height: 44px; min-width: 44px; padding: 0; width: 44px; }
+  .ex-card-actions button span { display: none; }
+  .stack-toast { gap: 8px; max-width: calc(100vw - 24px); }
+  .stack-toast-undo, .stack-toast-open { min-height: 40px; padding: 0 12px; }
+}
+/* Shared-element names for the filter transition come from CSS, not an
+   inline style per card (prerendered HTML weight). */
+@supports (view-transition-name: match-element) { .ex-card { view-transition-name: match-element; } }
+/* Back stays reachable before any scroll: the arrow alone sits at the left
+   of the filter row; logo and name join it once the bar is pinned. */
+.ex-tag-filter:not(.is-pinned) .ex-filter-context { max-width: none; opacity: 1; pointer-events: auto; transform: none; }
+.ex-tag-filter:not(.is-pinned) .ex-filter-context > :not(.ex-filter-context-back) { display: none; }
+@media (max-width: 760px) {
+  .ex-tag-filter:not(.is-pinned) .ex-tag-filter-surface { grid-template-columns: auto minmax(0, 1fr); justify-items: stretch; }
+  .ex-tag-filter:not(.is-pinned) .ex-filter-context { display: flex; }
+  .ex-tag-filter:not(.is-pinned) .ex-tag-filter-scroll { grid-column: 2; }
 }

@@ -12,6 +12,7 @@ import StackFreemiumPlans from "@/components/stack/StackFreemiumPlans";
 import StackToolSheet from "@/components/stack/StackToolSheet";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
+import { useAddToStack } from "@/hooks/useAddToStack";
 import { useCategories, useToolSummaries, useToolBySlug, type ToolSummary } from "@/hooks/useSupabaseData";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
 import { stackDisplayLabel, stackPlacement, stackMapTerritories, stackRelations } from "@/lib/stackUsage";
@@ -35,7 +36,8 @@ export default function CartPage() {
   const { t, lang, prefix } = useLang();
   const { tools, loading } = useToolSummaries();
   const { categories } = useCategories();
-  const { state, persistenceStatus, pinTool, unpinTool, restoreTool } = useStackPins();
+  const { state, persistenceStatus, unpinTool, restoreTool } = useStackPins();
+  const { addToStack } = useAddToStack();
   const [params, setParams] = useSearchParams();
   const [domainFilter, setDomainFilter] = useState("all");
   const [searchOpen, setSearchOpen] = useState(false);
@@ -333,7 +335,7 @@ export default function CartPage() {
             type="button"
             disabled={present}
             aria-label={present ? t(`${tool.name} est dans votre stack`, `${tool.name} is in your stack`) : t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}
-            onClick={() => { pinTool(toolKey(tool)); toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); }}
+            onClick={(event) => addToStack(toolKey(tool), tool.name, { origin: event.currentTarget.closest("li") })}
           >{present ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}</button></li>;
         })}</ul>
       </>}
