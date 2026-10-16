@@ -24,6 +24,29 @@
         try { localStorage.removeItem("theme"); } catch (e) {}
       })();
     </script>
+    <!-- Sidebar preference before first paint. Prerendered pages ship the
+         sidebar expanded (the server cannot know the visitor's choice) and
+         React only reads the stored preference after mounting, so a collapsed
+         sidebar flashed open on every reload. As the parser inserts the shell,
+         this collapses it in the HTML itself; React then takes over. -->
+    <script>
+      (function () {
+        var collapsed = false;
+        try { collapsed = localStorage.getItem("tooltrim:sidebar-expanded") === "false"; } catch (e) {}
+        if (!collapsed || !window.MutationObserver) return;
+        var apply = function () {
+          var root = document.querySelector(".asv2-root");
+          if (!root) return false;
+          root.classList.remove("asv2-root--sidebar-expanded");
+          var aside = root.querySelector(".asv2-sidebar");
+          if (aside) aside.setAttribute("data-expanded", "false");
+          return !!aside;
+        };
+        var observer = new MutationObserver(function () { if (apply()) observer.disconnect(); });
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+        document.addEventListener("DOMContentLoaded", function () { apply(); observer.disconnect(); });
+      })();
+    </script>
 
     <title>ToolTrim | Decide which software to keep, replace, or add</title>
     <meta
