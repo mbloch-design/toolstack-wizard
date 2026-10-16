@@ -1,3 +1,9 @@
+## 2026-10-16 — Registre de relecture réaligné sur le catalogue versionné
+
+- Contrôle initial en échec : registre de 1 177 entrées pour 1 349 entrées catalogue sur main. Régénération par le moteur existant : 172 entrées ajoutées en QUEUED, aucune supprimée.
+- 71 validations PUBLISHED et une RENDER_VERIFIED deviennent STALE après changement d'empreinte. Décisions, réviseurs, dates et affectations de lots conservés ; aucune nouvelle approbation ni publication de fiche.
+- Contrôle de couverture, assertions Node du registre et régénération idempotente PASS. Catalogue, application et API inchangés. Les trois entrées supplémentaires du checkout principal non publié ne sont pas embarquées.
+
 ## 16 octobre 2026 : GEO, verdict exposé aux moteurs de réponse
 
 - `llms-full.txt` : chaque outil porte `verdict_fr` / `verdict_en` (note sur 5 axes seulement si la grille est complète, 594 outils ; libellé, à garder si, à éviter si, 3 points forts et faibles) et `price_verified_on`. En-têtes `llms.txt` / `llms-full.txt` expliquant la note (jamais influencée par un paiement).
