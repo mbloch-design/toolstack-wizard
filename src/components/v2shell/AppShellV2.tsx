@@ -139,6 +139,14 @@ function CurrencyPicker({
   );
 }
 
+/** Expanded unless the visitor collapsed it. Prerendered HTML ships expanded;
+    the inline script in index.html collapses it before first paint, so on
+    hydrated pages the DOM already matches this value. */
+function readSidebarPreference(): boolean {
+  if (typeof window === "undefined") return true;
+  try { return localStorage.getItem("tooltrim:sidebar-expanded") !== "false"; } catch { return true; }
+}
+
 export default function AppShellV2({ children }: { children: ReactNode }) {
   const { t, prefix, lang } = useLang();
   const { currency, setCurrency } = useCurrency();
@@ -147,7 +155,10 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const [searchOpen, setSearchOpen] = useState(false);
   // The labelled navigation is the canonical desktop state. The compact rail
   // remains available as a deliberate choice and is remembered per browser.
-  const [sidebarExpanded, setSidebarExpanded] = useState(true);
+  // Read the stored choice in the first render, not after mounting: most pages
+  // are re-rendered by createRoot (not hydrated), so starting "expanded" then
+  // correcting in an effect painted the wide bar and animated it shut.
+  const [sidebarExpanded, setSidebarExpanded] = useState(readSidebarPreference);
   const contentRef = useRef<HTMLElement>(null);
   const { state: cartState } = useStackPins();
   const cartCount = cartState.pinnedToolSlugs.length;
@@ -251,12 +262,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  useEffect(() => {
-    let storedPreference: string | null = null;
-    try { storedPreference = localStorage.getItem("tooltrim:sidebar-expanded"); } catch { /* Use default navigation. */ }
-    setSidebarExpanded(storedPreference === null ? true : storedPreference === "true");
-  }, []);
-
   // De 641 à 1 180 px, la barre est une colonne imposée pour laisser la place
   // au contenu. Elle peut quand même se déplier : elle pousse alors le contenu,
   // comme sur grand écran (Michael, 8 oct. 2026 ; avant : par-dessus), sans
@@ -307,9 +312,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
   return (
     <TopbarBreadcrumbContext.Provider value={breadcrumbCtx}>
-    <div className={`asv2-root${sidebarExpanded || railIsOpen ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"}>
+    <div className={`asv2-root${sidebarExpanded || railIsOpen ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"} suppressHydrationWarning>
       {railIsOpen && <button type="button" className="asv2-rail-backdrop" tabIndex={-1} aria-label={t("Réduire la barre latérale", "Collapse sidebar")} onClick={() => setRailOpen(false)} />}
-      <aside ref={sidebarRef} className="asv2-sidebar" data-expanded={shownExpanded}>
+      <aside ref={sidebarRef} className="asv2-sidebar" data-expanded={shownExpanded} suppressHydrationWarning>
         <div className="asv2-sidebar-top">
           <Link to={prefix} className="asv2-logo" aria-label="ToolTrim">
             <img className="asv2-logo-mark" src={pictoToolTrim} alt="" width={24} height={24} aria-hidden />
