@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1350
+# Records: 1351
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
@@ -56982,6 +56982,53 @@
       "weaknesses": [
         "Bank connections and extra accountant seats stay limited in number on the Freelance plan (1 bank account, 1 accountant access)",
         "The default displayed price assumes an annual commitment; without it, the monthly cost runs about 10% higher"
+      ]
+    }
+  },
+  {
+    "name": "Sovkern",
+    "slug": "sovkern",
+    "url_fr": "https://tooltrim.com/fr/tool/sovkern",
+    "url_en": "https://tooltrim.com/en/tool/sovkern",
+    "website": "https://www.sovkern.com/",
+    "category": "security",
+    "pricing": {
+      "free": "Diagnostic en ligne gratuit, distinct de la plateforme. Aucune formule logicielle gratuite permanente affichée.",
+      "paid": "Offre RGPD : 265 €/mois ; Core : 553 €/mois ; Unlimited sur devis. Les tarifs sont annoncés avec engagement annuel et prix bloqué 3 ans ; TVA et modalités exactes de paiement à confirmer. Contrôle technique cyber ponctuel distinct : 2 200 € HT pour moins de 10 collaborateurs, 4 400 € HT de 10 à 50."
+    },
+    "description_fr": "Plateforme française pour structurer la conformité RGPD et suivre plusieurs référentiels dans un plan d’action partagé.",
+    "description_en": "French platform for managing GDPR compliance and multiple frameworks through a shared action plan.",
+    "price_verified_on": "2026-10-15",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu dois suivre des obligations RGPD ou plusieurs référentiels dans la durée et veux centraliser les preuves et les actions",
+      "avoid_if": "Tu es freelance solo ou au démarrage sans exigence de conformité récurrente : l’engagement annuel à partir de 265 €/mois est probablement disproportionné",
+      "strengths": [
+        "Un plan d’action et un tableau de bord donnent une vue des priorités annoncées par l’éditeur",
+        "La réutilisation des preuves entre référentiels peut éviter les saisies documentaires en double",
+        "L’offre RGPD commence avec un périmètre limité avant d’évoluer vers Core"
+      ],
+      "weaknesses": [
+        "Le ticket d’entrée de 265 €/mois avec engagement annuel est élevé pour un freelance ou une très petite structure sans obligation récurrente",
+        "La page tarifaire consultée ne précise ni la TVA ni les modalités de paiement",
+        "La plateforme structure la conformité mais ne certifie pas l’entreprise et ne remplace pas un avis juridique"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You need to track GDPR obligations or several frameworks over time and want one place for evidence and actions",
+      "avoid_if": "You are a solo freelancer or just starting without recurring compliance requirements; the annual commitment from €265/month is likely disproportionate",
+      "strengths": [
+        "A dashboard and action plan surface priorities described by the publisher",
+        "Reusing evidence across frameworks can reduce duplicate documentation",
+        "The GDPR plan starts with a narrower scope before moving to Core"
+      ],
+      "weaknesses": [
+        "The €265/month entry plan with an annual commitment is expensive for a freelancer or very small business without recurring requirements",
+        "The reviewed pricing page does not specify VAT treatment or payment terms",
+        "The platform organizes compliance but does not certify a business or replace legal advice"
       ]
     }
   }

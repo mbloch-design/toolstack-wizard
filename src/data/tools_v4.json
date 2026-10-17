@@ -274716,5 +274716,287 @@
       "researchedOn": "2026-10-09",
       "sources": 1
     }
+  },
+  {
+    "id": "sovkern",
+    "slug": "sovkern",
+    "name": "Sovkern",
+    "category": "security",
+    "shortDescription": "Plateforme française pour structurer la conformité RGPD et suivre plusieurs référentiels dans un plan d’action partagé.",
+    "shortDescriptionEn": "French platform for managing GDPR compliance and multiple frameworks through a shared action plan.",
+    "description": "Sovkern centralise le suivi de conformité des entreprises qui n’ont pas toujours d’équipe dédiée. La plateforme affiche un état d’avancement, organise les priorités et permet de réutiliser des preuves entre plusieurs référentiels. L’offre RGPD couvre notamment le registre des traitements et les analyses d’impact ; Core ajoute la gestion multi-référentiels, des risques, contrôles et preuves. L’éditeur indique un hébergement en France. Le logiciel structure le travail, mais ne remplace ni un avis juridique ni un expert pour les décisions qui en nécessitent un.",
+    "longDescription": "Sovkern est une plateforme française de gestion de conformité destinée aux entreprises sans ressources internes dédiées à ce sujet. Elle vise à remplacer le suivi éparpillé entre tableurs, réunions et relances par un tableau de bord, un plan d’action priorisé et une centralisation des éléments de preuve. L’éditeur indique que les preuves peuvent être réutilisées entre les directives et référentiels concernés, pour éviter de documenter plusieurs fois les mêmes éléments.\n\nL’offre RGPD annoncée comprend notamment un registre des traitements, des analyses d’impact, un score de progression et un plan d’action personnalisé. Core ajoute les directives et référentiels illimités, la gestion des risques, des contrôles et des preuves, ainsi qu’un espace collaboratif. Unlimited est proposé sur devis avec des modules et services complémentaires. L’éditeur indique que la plateforme est hébergée en France et propose l’authentification à deux facteurs.\n\nPour une TPE, l’intérêt est surtout de donner un cadre aux obligations et demandes de conformité récurrentes sans recruter immédiatement une fonction dédiée. Pour un freelance solo ou une petite structure en démarrage, le prix et l’engagement annuel rendent l’achat difficile à justifier sans exigences concrètes de clients, de secteur ou de référentiel. Un contrôle technique cyber ponctuel est également présenté par l’éditeur comme un service distinct, avec un tarif annoncé à 2 200 € HT pour moins de 10 collaborateurs et 4 400 € HT entre 10 et 50 collaborateurs.\n\nSovkern organise les démarches et les preuves ; la plateforme ne vaut pas certification, ne garantit pas la conformité à elle seule et ne remplace pas un conseil juridique ou un accompagnement spécialisé lorsque la situation l’exige.",
+    "longDescriptionEn": "Sovkern is a French compliance management platform for businesses without a dedicated in-house team. It aims to replace scattered spreadsheets, meetings, and follow-ups with a dashboard, prioritized action plan, and centralized evidence. The publisher says evidence can be reused across relevant directives and frameworks, reducing duplicate documentation.\n\nThe advertised GDPR plan includes a processing register, impact assessments, a progress score, and a tailored action plan. Core adds unlimited directives and frameworks, risk, control, and evidence management, plus a collaborative workspace. Unlimited is quote-based and includes additional modules and services. The publisher states that the platform is hosted in France and supports two-factor authentication.\n\nFor a small business, the product is most relevant when compliance obligations or client security requests recur and need an owner, evidence trail, and prioritized plan. For a solo freelancer or a newly started microbusiness, the price and annual commitment are hard to justify without concrete client, sector, or framework requirements. The publisher also presents a separate one-off cyber health check, listed at €2,200 excl. VAT for fewer than 10 employees and €4,400 excl. VAT for 10 to 50 employees.\n\nSovkern helps organize compliance work and evidence. The platform is not a certification, does not by itself guarantee compliance, and does not replace legal advice or specialist support where needed.",
+    "pricing": {
+      "free": "Diagnostic en ligne gratuit, distinct de la plateforme. Aucune formule logicielle gratuite permanente affichée.",
+      "paid": "Offre RGPD : 265 €/mois ; Core : 553 €/mois ; Unlimited sur devis. Les tarifs sont annoncés avec engagement annuel et prix bloqué 3 ans ; TVA et modalités exactes de paiement à confirmer. Contrôle technique cyber ponctuel distinct : 2 200 € HT pour moins de 10 collaborateurs, 4 400 € HT de 10 à 50."
+    },
+    "pricingEn": {
+      "free": "Free online diagnostic, separate from the platform. No permanent free software plan is listed.",
+      "paid": "GDPR plan: €265/month; Core: €553/month; Unlimited by quote. Prices are advertised with an annual commitment and a rate locked for 3 years; VAT and exact payment terms should be confirmed. Separate one-off cyber health check: €2,200 excl. VAT for fewer than 10 employees, €4,400 excl. VAT for 10 to 50."
+    },
+    "defaultMonthlyPrice": 265,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 265,
+      "compare_plan_name": "Offre RGPD",
+      "compare_plan_kind": "monthly",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-15",
+      "official_source_url": "https://www.sovkern.com/",
+      "source_domain": "sovkern.com",
+      "location_sensitive": false,
+      "usage_sensitive": false,
+      "cautions": [
+        "Le prix public est affiché par mois avec engagement annuel et tarif bloqué sur trois ans. La page consultée ne précise pas si le montant est HT ou TTC ni les modalités de paiement.",
+        "Le diagnostic gratuit est distinct de la plateforme payante. Le contrôle technique cyber est un service ponctuel distinct des abonnements SaaS."
+      ],
+      "cautionsEn": [
+        "The public price is shown per month with an annual commitment and a rate locked for three years. The reviewed page does not specify whether the amount includes VAT or the payment schedule.",
+        "The free diagnostic is separate from the paid platform. The cyber health check is a one-off service, separate from the SaaS plans."
+      ],
+      "plans": [
+        {
+          "planKey": "gdpr",
+          "displayName": "Offre RGPD",
+          "summary": "Périmètre RGPD, registre des traitements, analyses d’impact, score et plan d’action ; deux comptes utilisateurs annoncés.",
+          "featureHighlights": [
+            "Registre des traitements",
+            "Analyses d’impact",
+            "Plan d’action personnalisé",
+            "2 comptes utilisateurs"
+          ],
+          "detailsSourceUrl": "https://www.sovkern.com/",
+          "pricingUnit": "plan",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 265,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-10-15",
+          "lastConfirmedOn": "2026-10-15"
+        },
+        {
+          "planKey": "core",
+          "displayName": "Core",
+          "summary": "Plateforme multi-référentiels avec gestion des risques, contrôles et preuves.",
+          "featureHighlights": [
+            "Directives et référentiels illimités",
+            "Gestion des risques, contrôles et preuves",
+            "Utilisateurs illimités",
+            "Support e-mail annoncé sous 72 h"
+          ],
+          "detailsSourceUrl": "https://www.sovkern.com/",
+          "pricingUnit": "plan",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 553,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-10-15",
+          "lastConfirmedOn": "2026-10-15"
+        },
+        {
+          "planKey": "unlimited",
+          "displayName": "Unlimited",
+          "summary": "Offre avancée avec modules et accompagnement, sur devis.",
+          "featureHighlights": [
+            "Gestion des fournisseurs",
+            "Reporting personnalisé",
+            "Sensibilisation",
+            "Accompagnement dédié"
+          ],
+          "detailsSourceUrl": "https://www.sovkern.com/",
+          "pricingUnit": "custom",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "EUR",
+          "taxInclusion": "unknown",
+          "observedMarket": "France",
+          "observedLocale": "fr",
+          "observedOn": "2026-10-15",
+          "lastConfirmedOn": "2026-10-15"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 265,
+      "compare_plan_name": "GDPR plan",
+      "compare_plan_kind": "monthly",
+      "price_reliability": "official_explicit",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-15",
+      "official_source_url": "https://www.sovkern.com/",
+      "source_domain": "sovkern.com",
+      "location_sensitive": false,
+      "usage_sensitive": false,
+      "cautions": [
+        "The public price is shown per month with an annual commitment and a rate locked for three years. The reviewed page does not specify whether the amount includes VAT or the payment schedule.",
+        "The free diagnostic is separate from the paid platform. The cyber health check is a one-off service, separate from the SaaS plans."
+      ],
+      "plans": []
+    },
+    "websiteUrl": "https://www.sovkern.com/",
+    "affiliateLink": "",
+    "logo": "https://www.sovkern.com/favicon.svg",
+    "ogImageUrl": "https://www.sovkern.com/24-Sov-shoot-4.webp",
+    "galleryImages": [
+      "https://www.sovkern.com/dashboard-preview.png",
+      "https://www.sovkern.com/sovkern_interface_computer.webp"
+    ],
+    "pros": [
+      "Un plan d’action et un tableau de bord donnent une vue des priorités annoncées par l’éditeur.",
+      "La réutilisation des preuves entre référentiels peut éviter les saisies documentaires en double.",
+      "L’offre RGPD commence avec un périmètre limité avant d’évoluer vers Core."
+    ],
+    "prosEn": [
+      "A dashboard and action plan surface priorities described by the publisher.",
+      "Reusing evidence across frameworks can reduce duplicate documentation.",
+      "The GDPR plan starts with a narrower scope before moving to Core."
+    ],
+    "cons": [
+      "Le ticket d’entrée de 265 €/mois avec engagement annuel est élevé pour un freelance ou une très petite structure sans obligation récurrente.",
+      "La page tarifaire consultée ne précise ni la TVA ni les modalités de paiement.",
+      "La plateforme structure la conformité mais ne certifie pas l’entreprise et ne remplace pas un avis juridique."
+    ],
+    "consEn": [
+      "The €265/month entry plan with an annual commitment is expensive for a freelancer or very small business without recurring requirements.",
+      "The reviewed pricing page does not specify VAT treatment or payment terms.",
+      "The platform organizes compliance but does not certify a business or replace legal advice."
+    ],
+    "useCases": [
+      "Centraliser le registre RGPD, les analyses d’impact et les preuves associées.",
+      "Suivre un plan d’action de conformité avec plusieurs personnes dans l’entreprise.",
+      "Réutiliser des preuves communes lorsque plusieurs référentiels s’appliquent.",
+      "Structurer le suivi de conformité avant un audit ou des demandes récurrentes de clients."
+    ],
+    "useCasesEn": [
+      "Centralize a GDPR processing register, impact assessments, and related evidence.",
+      "Track a compliance action plan with several people in the business.",
+      "Reuse common evidence when multiple frameworks apply.",
+      "Structure compliance work ahead of an audit or recurring customer requests."
+    ],
+    "relevantFor": [
+      "TPE et PME sans équipe conformité dédiée",
+      "Entreprises devant suivre plusieurs directives ou référentiels",
+      "Petites équipes recevant des demandes récurrentes de conformité de leurs clients"
+    ],
+    "relevantForEn": [
+      "Small businesses without a dedicated compliance team",
+      "Companies tracking multiple directives or frameworks",
+      "Small teams receiving recurring compliance requests from customers"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu dois suivre des obligations RGPD ou plusieurs référentiels dans la durée et veux centraliser les preuves et les actions.",
+        "Des demandes de conformité de clients ou d’audit reviennent assez souvent pour justifier un outil dédié."
+      ],
+      "avoidIf": [
+        "Tu es freelance solo ou au démarrage sans exigence de conformité récurrente : l’engagement annuel à partir de 265 €/mois est probablement disproportionné.",
+        "Tu attends du logiciel qu’il délivre une certification ou décide à ta place de la conformité juridique."
+      ],
+      "threshold": "Avant de souscrire, identifie les référentiels réellement applicables, les personnes qui contribueront et le temps actuellement consacré au suivi. Demande confirmation de la TVA, de l’échéancier annuel et du périmètre exact de l’offre RGPD."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You need to track GDPR obligations or several frameworks over time and want one place for evidence and actions.",
+        "Customer compliance requests or audits recur often enough to justify a dedicated platform."
+      ],
+      "avoidIf": [
+        "You are a solo freelancer or just starting without recurring compliance requirements; the annual commitment from €265/month is likely disproportionate.",
+        "You expect software to issue a certification or make legal compliance decisions for you."
+      ],
+      "threshold": "Before subscribing, identify which frameworks actually apply, who will contribute, and how much time you currently spend on tracking. Confirm VAT, the annual payment schedule, and the precise scope of the GDPR plan."
+    },
+    "alternatives": [
+      "vanta",
+      "drata",
+      "onetrust"
+    ],
+    "soloRelevance": "low",
+    "teamRelevance": "high",
+    "tool_type": "gestion",
+    "substitutable": true,
+    "verticals": [
+      "business-ops",
+      "consulting"
+    ],
+    "functional_needs": [
+      "compliance-dashboard",
+      "compliance-action-plan",
+      "gdpr-processing-register",
+      "privacy-impact-assessment",
+      "compliance-risk-management",
+      "cross-framework-evidence"
+    ],
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "applicable_frameworks",
+      "client_compliance_requirements",
+      "company_size",
+      "current_compliance_process"
+    ],
+    "substitution_cluster_v2": "security-compliance",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "auto_downgrade_allowed": false,
+      "requires_context_questions": true,
+      "never_auto_cancel_reason": "La pertinence dépend des obligations applicables, des demandes clients, de la taille de l’organisation et du suivi déjà en place.",
+      "default_decision_lane": "review_then_prescribe"
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-10-16",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Tableau de bord, plan d’action priorisé et preuves réutilisables entre référentiels : un ensemble pertinent pour les TPE/PME qui doivent organiser un suivi de conformité récurrent sans équipe dédiée. Source : sovkern.com, 16 octobre 2026.",
+        "simplicite": "Auto-onboarding, contrôles expliqués en langage clair et prochaines étapes classées par priorité : le parcours annoncé facilite la prise en main pour une équipe non spécialiste. Source : sovkern.com, 16 octobre 2026.",
+        "utilisation": "Les offres décrivent registre, analyses d’impact, plan d’action et, en Core, gestion des risques, contrôles et preuves. Source : sovkern.com, 15 octobre 2026.",
+        "puissance": "Core annonce directives et référentiels illimités, gestion de preuves, risques et contrôles ; la couverture applicable doit être déterminée pour chaque organisation. Source : sovkern.com, 15 octobre 2026.",
+        "reversibilite": "Note neutre : les pages consultées ne documentent pas le format d’export ni les modalités de récupération des données à la résiliation. Source : sovkern.com, 15 octobre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "A dashboard, prioritized action plan, and reusable cross-framework evidence provide a relevant foundation for small businesses managing recurring compliance work without a dedicated team. Source: sovkern.com, October 16, 2026.",
+        "simplicite": "Self-onboarding, controls explained in plain language, and prioritized next steps make the advertised workflow approachable for a non-specialist team. Source: sovkern.com, October 16, 2026.",
+        "utilisation": "Plans describe a processing register, impact assessments, an action plan and, on Core, risk, control, and evidence management. Source: sovkern.com, October 15, 2026.",
+        "puissance": "Core advertises unlimited directives and frameworks plus evidence, risk, and control management; each organization still needs to determine its applicable scope. Source: sovkern.com, October 15, 2026.",
+        "reversibilite": "Neutral score: the reviewed pages do not document export formats or data recovery on cancellation. Source: sovkern.com, October 15, 2026."
+      }
+    },
+    "tagline": {
+      "fr": "Conformité RGPD et multi-référentiels",
+      "en": "GDPR and multi-framework compliance"
+    },
+    "seo": {
+      "metaDescription": "Sovkern : avis, tarifs et limites de la plateforme française de conformité RGPD et multi-référentiels pour TPE et PME.",
+      "metaDescriptionEn": "Sovkern review, pricing, and limitations: a French GDPR and multi-framework compliance platform for small businesses.",
+      "presentationTitleFr": "Sovkern : avis, prix et conformité RGPD pour TPE/PME | ToolTrim",
+      "presentationTitleEn": "Sovkern review and pricing: GDPR compliance for small businesses | ToolTrim",
+      "idealForFr": "TPE et PME qui suivent des obligations RGPD ou plusieurs référentiels et reçoivent des demandes de conformité récurrentes.",
+      "idealForEn": "Small businesses tracking GDPR or multiple frameworks and receiving recurring compliance requests."
+    },
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-10-15"
+    },
+    "research": {
+      "researchedOn": "2026-10-15",
+      "sources": 2
+    }
   }
 ]

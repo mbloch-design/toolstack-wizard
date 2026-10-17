@@ -60069,5 +60069,67 @@
       "indy",
       "tiime"
     ]
+  },
+  {
+    "id": "sovkern",
+    "slug": "sovkern",
+    "name": "Sovkern",
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-10-16",
+      "lastActivityVerifiedOn": null
+    },
+    "categoryId": "security",
+    "shortDescription": "Plateforme française pour structurer la conformité RGPD et suivre plusieurs référentiels dans un plan d’action partagé.",
+    "shortDescriptionEn": "French platform for managing GDPR compliance and multiple frameworks through a shared action plan.",
+    "pricing": {
+      "free": "Diagnostic en ligne gratuit, distinct de la plateforme. Aucune formule logicielle gratuite permanente affichée.",
+      "paid": "Offre RGPD : 265 €/mois ; Core : 553 €/mois ; Unlimited sur devis. Les tarifs sont annoncés avec engagement annuel et prix bloqué 3 ans ; TVA et modalités exactes de paiement à confirmer. Contrôle technique cyber ponctuel distinct : 2 200 € HT pour moins de 10 collaborateurs, 4 400 € HT de 10 à 50."
+    },
+    "pricingEn": {
+      "free": "Free online diagnostic, separate from the platform. No permanent free software plan is listed.",
+      "paid": "GDPR plan: €265/month; Core: €553/month; Unlimited by quote. Prices are advertised with an annual commitment and a rate locked for 3 years; VAT and exact payment terms should be confirmed. Separate one-off cyber health check: €2,200 excl. VAT for fewer than 10 employees, €4,400 excl. VAT for 10 to 50."
+    },
+    "defaultMonthlyPrice": 265,
+    "compareMonthlyPrice": 265,
+    "nativePrices": [
+      {
+        "amount": 265,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://www.sovkern.com/",
+    "ogImageUrl": "https://www.sovkern.com/24-Sov-shoot-4.webp",
+    "logo": "https://www.sovkern.com/favicon.svg",
+    "tool_type": "gestion",
+    "substitution_cluster_v2": "security-compliance",
+    "functional_needs": [
+      "compliance-dashboard",
+      "compliance-action-plan",
+      "gdpr-processing-register",
+      "privacy-impact-assessment",
+      "compliance-risk-management",
+      "cross-framework-evidence"
+    ],
+    "verticals": [
+      "business-ops",
+      "consulting"
+    ],
+    "relevantFor": [
+      "TPE et PME sans équipe conformité dédiée",
+      "Entreprises devant suivre plusieurs directives ou référentiels",
+      "Petites équipes recevant des demandes récurrentes de conformité de leurs clients"
+    ],
+    "prescription_quality": "question",
+    "alternatives": [
+      "vanta",
+      "drata",
+      "onetrust"
+    ]
   }
 ]

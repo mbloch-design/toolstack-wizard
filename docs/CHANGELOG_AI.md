@@ -5832,3 +5832,8 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - Vanta, Drata, OneTrust, Didomi et Axeptio : contenus FR/EN, prix officiels, alternatives et notes revus. Sovkern reste hors catalogue public.
 - Notes des cartes alignees sur les cinq axes des fiches. Lecture locale par defaut et transport compact de main conserves.
 
+## 2026-10-17 : publication publique de Sovkern
+
+- Publication explicitement demandee de la fiche FR/EN validee en prive : note 3,8/5, prix, alternatives, fonctionnalites et trois visuels officiels conserves.
+- Lien officiel do-follow. Integration au catalogue, a la recherche, aux routes prerender, au sitemap et aux fichiers LLM via les generateurs existants. Aucun encart dedie ajoute a l'accueil.
+
