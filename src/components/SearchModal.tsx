@@ -244,7 +244,8 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
       dialogRef.current?.querySelector<HTMLElement>(".gs-guide .gs-row")?.focus();
       return;
     }
-    if (event.key === "ArrowDown") { event.preventDefault(); setActiveIndex((index) => Math.min(index + 1, results.length - 1)); }
+    // The last stop is « See all results », a row like the others.
+    if (event.key === "ArrowDown") { event.preventDefault(); setActiveIndex((index) => Math.min(index + 1, results.length)); }
     if (event.key === "ArrowUp") { event.preventDefault(); setActiveIndex((index) => Math.max(index - 1, 0)); }
     if (event.key === "Enter") {
       event.preventDefault();
@@ -285,9 +286,16 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
             aria-activedescendant={activeIndex >= 0 ? `gs-option-${activeIndex}` : undefined}
             autoComplete="off"
           />
-          {query && <button type="button" className="gs-clear" onClick={() => { setQuery(""); inputRef.current?.focus(); }}>{t("Effacer", "Clear")}</button>}
+          {query && (
+            <button type="button" className="gs-clear" onClick={() => { setQuery(""); inputRef.current?.focus(); }} aria-label={t("Effacer la recherche", "Clear search")}>
+              <X aria-hidden />
+            </button>
+          )}
           </label>
-          <button type="button" className="gs-icon-button" onClick={onClose} aria-label={t("Fermer", "Close")}><X aria-hidden /></button>
+          {/* Mobile only (iOS « Annuler ») : on a large screen Esc and a click
+              outside close the window, and a second round button next to the
+              clear one read as a duplicate. */}
+          <button type="button" className="gs-cancel" onClick={onClose}>{t("Annuler", "Cancel")}</button>
         </div>
         <p className="sr-only" role="status" aria-live="polite">{statusMessage}</p>
 
@@ -315,9 +323,9 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
                             onMouseEnter={() => setActiveIndex(index)}
                             onClick={() => goTo(result.to)}
                           >
-                            {result.tool ? <ToolLogo tool={result.tool} size={32} /> : <span className="gs-result-icon" aria-hidden><KindIcon kind={result.kind} /></span>}
+                            {result.tool ? <ToolLogo tool={result.tool} size={28} className="gs-result-logo" /> : <span className="gs-result-icon" aria-hidden><KindIcon kind={result.kind} /></span>}
                             <span className="gs-result-text">
-                              <strong>{displayText(result.label, lang)}</strong>
+                              <strong><Highlight text={displayText(result.label, lang)} query={query} /></strong>
                               {result.meta && <small>{result.meta}</small>}
                             </span>
                             <ArrowRight className="gs-result-arrow" aria-hidden />
@@ -328,8 +336,18 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
                   );
                 })}
               </div>
-                <button type="button" className="gs-view-all" onClick={viewAllResults}>
-                  {t("Voir tous les résultats pour", "See all results for")} « {query.trim()} » <ArrowRight aria-hidden />
+                <button
+                  type="button"
+                  id={`gs-option-${results.length}`}
+                  className={activeIndex === results.length ? "gs-result gs-view-all is-active" : "gs-result gs-view-all"}
+                  onMouseEnter={() => setActiveIndex(results.length)}
+                  onClick={viewAllResults}
+                >
+                  <span className="gs-result-icon" aria-hidden><Search /></span>
+                  <span className="gs-result-text">
+                    <strong>{t("Tous les résultats pour", "All results for")} « {query.trim()} »</strong>
+                  </span>
+                  <ArrowRight className="gs-result-arrow" aria-hidden />
                 </button>
               </div>
             ) : (
@@ -453,6 +471,16 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
       </div>
     </div>
   );
+}
+
+/** The typed part of a name, set apart like Spotlight: the eye finds why the
+    row matched. Accent- and case-insensitive; no match leaves the text as is. */
+function Highlight({ text, query }: { text: string; query: string }) {
+  const needle = fold(query.trim());
+  if (needle.length < 2) return <>{text}</>;
+  const at = fold(text).indexOf(needle);
+  if (at < 0) return <>{text}</>;
+  return <>{text.slice(0, at)}<mark className="gs-hit">{text.slice(at, at + needle.length)}</mark>{text.slice(at + needle.length)}</>;
 }
 
 function NeedChips({ prefix, lang, onPick }: { prefix: string; lang: string; onPick: () => void }) {

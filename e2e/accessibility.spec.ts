@@ -127,7 +127,7 @@ test("mobile search has an explicit close action", async ({ page }) => {
 
   const dialog = page.getByRole("dialog", { name: "Recherche globale", exact: true });
   await expect(dialog).toBeVisible();
-  await dialog.getByRole("button", { name: "Fermer", exact: true }).click();
+  await dialog.getByRole("button", { name: "Annuler", exact: true }).click();
   await expect(dialog).toHaveCount(0);
   await expect(trigger).toBeFocused();
 });

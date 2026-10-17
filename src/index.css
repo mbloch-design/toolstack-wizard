@@ -17386,34 +17386,26 @@
     caret-color: var(--color-text-strong);
   }
   .gs-field input::placeholder { color: var(--color-text-meta); }
+  /* Effacer : la pastille ronde d'iOS (x.circle.fill), dans le champ. */
   .gs-clear {
-    flex: none;
-    min-height: 32px;
-    padding: 0 var(--space-xs);
-    border: 0;
-    border-radius: var(--radius-sm);
-    background: transparent;
-    color: var(--color-text-meta);
-    font: 500 13px/1 var(--font-ui);
-    cursor: pointer;
-  }
-  .gs-clear:hover { color: var(--color-text-strong); }
-  /* Fermer : le rond gris plein de macOS et iOS, croix fine. */
-  .gs-icon-button {
     display: grid;
     flex: none;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     place-items: center;
+    margin-right: var(--space-xs);
+    padding: 0;
     border: 0;
     border-radius: var(--radius-circle);
-    background: var(--gs-fill);
-    color: var(--color-text-secondary);
+    background: color-mix(in srgb, var(--color-text-meta) 70%, transparent);
+    color: var(--color-surface);
     cursor: pointer;
-    transition: background-color 140ms ease-out, color 140ms ease-out;
+    transition: background-color 120ms ease-out;
   }
-  .gs-icon-button:hover { background: var(--gs-fill-hover); color: var(--color-text-strong); }
-  .gs-icon-button svg { width: 14px; height: 14px; stroke-width: 2; }
+  .gs-clear svg { width: 11px; height: 11px; stroke-width: 2.5; }
+  .gs-clear:hover { background: var(--color-text-secondary); }
+  /* « Annuler » n'existe que sur mobile (voir max-width: 640px). */
+  .gs-cancel { display: none; }
 
   .gs-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
 
@@ -17492,62 +17484,57 @@
     font: 500 11px/1 var(--font-ui);
   }
 
-  /* Pendant la frappe */
-  .gs-results { padding: var(--space-md) var(--space-xs) var(--space-xs); }
-  .gs-group + .gs-group { margin-top: var(--space-md); }
-  .gs-group .gs-label { margin: 0 var(--space-md) var(--space-2xs); }
+  /* Pendant la frappe. Même grille que le champ : logos sur le bord de la
+     loupe (x = 32), noms sur le bord du texte tapé (x = 76). */
+  .gs-results { padding: var(--space-xs) var(--space-xl) var(--space-sm); }
+  .gs-group + .gs-group { margin-top: var(--space-sm); }
+  .gs-group .gs-label { margin: 0 0 var(--space-2xs); padding: var(--space-xs) 0 0; }
   .gs-result {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    width: 100%;
-    min-height: 48px;
-    padding: var(--space-xs) var(--space-md);
+    gap: var(--space-md);
+    width: calc(100% + 2 * var(--space-xs));
+    min-height: 52px;
+    margin-inline: calc(-1 * var(--space-xs));
+    padding: var(--space-xs);
     border: 0;
     border-radius: var(--radius-md);
     background: transparent;
     color: var(--color-text-strong);
     text-align: left;
     cursor: pointer;
+    transition: background-color 100ms ease-out;
   }
   .gs-result.is-active { background: var(--gs-fill); }
+  .gs-result:active { background: var(--gs-fill-hover); }
+  .gs-result-logo { flex: none; border-radius: var(--radius-sm) !important; }
   .gs-result-icon {
     display: grid;
     flex: none;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     place-items: center;
     border-radius: var(--radius-sm);
     background: var(--gs-fill);
-    color: var(--color-text-strong);
+    color: var(--color-text-secondary);
+    transition: background-color 100ms ease-out;
   }
   .gs-result.is-active .gs-result-icon { background: var(--color-surface); }
-  .gs-result-icon svg { width: 16px; height: 16px; }
-  .gs-result-text { display: grid; flex: 1; min-width: 0; gap: 2px; }
-  .gs-result-text strong { overflow: hidden; font: 600 var(--tt-size-card-body)/1.25 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
-  .gs-result-text small { overflow: hidden; color: var(--color-text-meta); font: 400 12px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
-  .gs-result-arrow { flex: none; width: 16px; height: 16px; color: var(--color-text-meta); opacity: 0; transition: opacity 120ms ease-out, transform 120ms ease-out; transform: translateX(-4px); }
-  /* Même règle partout : la flèche apparaît sur l'élément visé (survol,
-     focus clavier, option active), jamais en permanence. */
-  .gs-result.is-active .gs-result-arrow,
-  .gs-view-all {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2xs);
-    width: 100%;
-    min-height: 44px;
-    margin-top: var(--space-xs);
-    padding: 0 var(--space-md);
-    border: 0;
-    border-top: 1px solid var(--color-border-soft);
-    background: transparent;
-    color: var(--color-text-secondary);
-    font: 500 13px/1.2 var(--font-ui);
-    text-align: left;
-    cursor: pointer;
-  }
-  .gs-view-all:hover { color: var(--color-text-strong); }
-  .gs-view-all svg { width: 14px; height: 14px; }
+  .gs-result-icon svg { width: 15px; height: 15px; }
+  .gs-result-text { display: grid; flex: 1; min-width: 0; gap: 1px; }
+  .gs-result-text strong { overflow: hidden; font: 400 15px/1.3 var(--font-ui); letter-spacing: -0.01em; text-overflow: ellipsis; white-space: nowrap; }
+  .gs-result-text small { overflow: hidden; color: var(--color-text-meta); font: 400 13px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+  /* La partie tapée, en gras : on voit d'un coup d'œil pourquoi la ligne sort. */
+  .gs-hit { background: none; color: inherit; font-weight: 600; }
+  .gs-result-arrow { flex: none; width: 16px; height: 16px; color: var(--color-text-meta); opacity: 0; transform: translateX(-4px); transition: opacity 120ms ease-out, transform 120ms ease-out; }
+  /* La flèche n'apparaît que sur la ligne visée (survol, clavier). */
+  .gs-result.is-active .gs-result-arrow { opacity: 1; transform: none; }
+  /* « Tous les résultats » : une ligne comme les autres, la dernière étape
+     des flèches, séparée par un filet. */
+  .gs-view-all { position: relative; margin-top: var(--space-md); }
+  .gs-view-all::before { content: ""; position: absolute; top: calc(-1 * var(--space-xs)); left: var(--space-xs); right: var(--space-xs); height: 1px; background: var(--color-border-soft); }
+  .gs-view-all .gs-result-text strong { color: var(--color-text-secondary); }
+  .gs-view-all.is-active .gs-result-text strong { color: var(--color-text-strong); }
 
   .gs-empty { display: grid; gap: var(--space-xs); padding: var(--space-lg); }
   .gs-empty-title { margin: 0; color: var(--color-text-strong); font: 600 var(--tt-size-card-title)/1.3 var(--font-ui); }
@@ -17582,9 +17569,13 @@
     .gs-list { grid-template-columns: minmax(0, 1fr); }
     .gs-row { min-height: 44px; }
     .gs-hints { display: none; }
-    /* Cibles tactiles de 44 px au doigt. */
-    .gs-clear { min-width: 44px; min-height: 44px; }
-    .gs-icon-button { width: 36px; height: 36px; }
+    /* Annuler à droite du champ, comme iOS ; la pastille Effacer garde une
+       zone de 44 px au doigt. */
+    .gs-cancel { display: inline-flex; flex: none; align-items: center; min-height: 44px; padding: 0 var(--space-2xs); border: 0; background: none; color: var(--color-text-strong); font: 400 17px/1 var(--font-ui); cursor: pointer; }
+    .gs-field { height: 44px; gap: var(--space-sm); padding-left: var(--space-sm); }
+    .gs-clear { position: relative; }
+    .gs-clear::after { content: ""; position: absolute; inset: -12px; }
+    .gs-results { padding-inline: calc(var(--space-md) + var(--space-sm)); }
   }
 }
 
