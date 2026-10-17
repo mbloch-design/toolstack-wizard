@@ -165,7 +165,11 @@ const ToolDetailPage = () => {
     setActionBarArmed(false);
     // The bars take over once the in-page tabs have left the screen, so the two
     // tab rows are never visible together.
-    const strip = document.querySelector(".td-scroll-body > .td-tool-subnav") ?? heroRef.current?.querySelector(".td-hero-actions");
+    // On mobile the tabs stick under the top bar and never leave the screen,
+    // so the bottom bar follows the hero buttons it repeats instead.
+    const mobile = window.matchMedia("(max-width: 640px)").matches;
+    const heroActions = heroRef.current?.querySelector(".td-hero-actions");
+    const strip = (mobile ? heroActions : document.querySelector(".td-scroll-body > .td-tool-subnav")) ?? heroActions;
     if (!strip || typeof IntersectionObserver === "undefined") return;
     const observer = new IntersectionObserver(([entry]) => {
       setActionBarArmed(!entry.isIntersecting && entry.boundingClientRect.top < 0);
@@ -370,6 +374,11 @@ const ToolDetailPage = () => {
   const primaryCtaUrl = safeAffiliateUrl || safeWebsiteUrl;
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
   const primaryCtaLabel = tool.slug === "tapstitch" ? t("Créer mon premier produit", "Create my first product") : (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t(`Visiter ${tool.name}`, `Visit ${tool.name}`);
+  // The bottom bar already names the tool next to its logo: its button only
+  // needs the action, so the name keeps the room (custom labels stay as set).
+  const mobileCtaLabel = tool.slug !== "tapstitch" && !(lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr)
+    ? t("Visiter le site", "Visit site")
+    : primaryCtaLabel;
   const trackOutbound = (location: string, label: string) => trackEvent("outbound_tool_click", {
     tool_slug: tool.slug || tool.id,
     tool_name: tool.name,
@@ -1217,17 +1226,18 @@ const ToolDetailPage = () => {
                   target="_blank"
                   rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
                   className="td-mobile-actionbar-cta"
+                  aria-label={primaryCtaLabel}
                   onClick={() => trackEvent("outbound_tool_click", {
                     tool_slug: tool.slug || tool.id,
                     tool_name: tool.name,
                     cta_location: "tool_mobile_bar",
-                    cta_label: primaryCtaLabel,
+                    cta_label: mobileCtaLabel,
                     destination_domain: getDomainFromUrl(primaryCtaUrl),
                     language: lang,
                     is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
                   })}
                 >
-                  {primaryCtaLabel}
+                  <span>{mobileCtaLabel}</span>
                   <ExternalLink aria-hidden />
                 </a>
               </div>

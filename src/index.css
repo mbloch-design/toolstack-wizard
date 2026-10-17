@@ -33592,7 +33592,11 @@ img[data-logo-loading] {
   .td-mobile-actionbar-id span { overflow: hidden; color: var(--color-muted); font: 400 13px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
   .td-mobile-actionbar .pin-tool-button { position: static; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border: 1px solid var(--color-border); border-radius: 50%; background: var(--color-surface); color: var(--color-text); display: inline-flex; align-items: center; justify-content: center; }
   .td-mobile-actionbar-cta { display: inline-flex; flex: none; align-items: center; gap: 6px; min-height: 44px; padding: 0 18px; border-radius: var(--radius-pill); background: var(--color-text); color: var(--color-surface); font: 600 15px/20px var(--font-ui); text-decoration: none; }
-  .td-mobile-actionbar-cta svg { width: 14px; height: 14px; }
+  .td-mobile-actionbar-cta svg { width: 14px; height: 14px; flex: none; }
+  /* A long custom label shrinks before the tool name does. */
+  .td-mobile-actionbar-cta { flex: 0 1 auto; min-width: 0; }
+  .td-mobile-actionbar-cta span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .td-mobile-actionbar-id { min-width: 64px; }
 }
 @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
   .td-mobile-actionbar { transition: none; }
@@ -36113,8 +36117,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .td-tool-page .td-section .td-eyebrow,
   .td-tool-page .td-review-verdict-header .td-eyebrow { font-size: 12px; letter-spacing: 0.05em; }
   .td-tool-page .td-mobile-actionbar,
-  .td-tool-page .td-mobile-actionbar-id,
-  .td-tool-page .td-mobile-actionbar .td-mobile-actionbar-cta { color: var(--color-text); }
+  .td-tool-page .td-mobile-actionbar-id { color: var(--color-text); }
+  /* The CTA is a dark pill: its label takes the surface colour (it was set to
+     the text colour here, which made it invisible). */
+  .td-tool-page .td-mobile-actionbar .td-mobile-actionbar-cta { color: var(--color-surface); }
   .td-tool-page .td-localnav-cta { border-radius: var(--radius-pill); }
 }
 
