@@ -5805,3 +5805,14 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - Sovkern reste en relecture privée : brouillon local dans .private-previews/sovkern, exclu du catalogue, de l’accueil, des fichiers LLM et des envois Git/Vercel ordinaires. La mise en avant à l’accueil attend la validation éditoriale.
 - Les anciennes modifications locales des pages soumission, catégories et de leur CSS sont conservées dans le stash « local work before GitHub main sync 2026-10-15 » ; les versions récentes de GitHub sont utilisées.
 - Validation : TypeScript et 23 tests des liens/recherche PASS ; accueil, recherche vers Sovkern et trois fiches contrôlés dans le navigateur ; build production, sitemap, routes, fichiers LLM et budgets PASS (697,7 Mio HTML pour 716 Mio autorisés). Aucun push.
+
+## 2026-10-17 : revue des alternatives de conformité autour de Sovkern
+
+- Revue FR/EN de Vanta, Drata, OneTrust, Didomi et Axeptio : positionnement, prix officiels, notation à cinq critères et alternatives existantes.
+- Suppression des estimations de coût Drata non officielles ; distinction Foundation + options / Advanced ; exports Vanta, Drata, OneTrust et Didomi documentés avec leurs limites.
+- Axeptio : prix EUR/USD natifs, total annuel distinct des mensualités ; affichages contradictoires d'Extra Small signalés, sans conversion ni quota arbitrairement retenu.
+- Séparation des plateformes GRC/confidentialité et des CMP ; aucune route ni lien public vers Sovkern. Sources et décisions : research/reviews/sovkern-neighborhood.json.
+- Contrôles de régression ajoutés pour les devis sans montant, les périodes tarifaires et la confidentialité de Sovkern. Publication non demandée : aucun push.
+- Correction de la divergence entre note de fiche et note de carte : l'index léger transporte les cinq axes éditoriaux et leur date, sans les textes de preuve. Conservation lors du chargement des résumés. Test reproduit en échec puis passé après correction.
+- Validation : 408 tests PASS, TypeScript app PASS, build complet PASS avec contrôles SEO/routage/LLM/Explorer et budgets.
+- Cinq routes contrôlées en navigateur ; aperçu Vercel protégé disponible. Création du lien anonyme pour le lot élargi bloquée par le contrôle d'autorisation : accord utilisateur requis, aucune protection désactivée.

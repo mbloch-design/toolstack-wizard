@@ -48,6 +48,13 @@ const summaries = tools.map((tool, index) => {
     id,
     slug,
     name: tool.name || id,
+    // Cards use the same editorial score as the detail page. Keep the
+    // numeric axes and freshness date, not the full evidence prose.
+    ...(tool.toolTrimRating ? { toolTrimRating: Object.fromEntries(
+      ["valeurAjoutee", "simplicite", "utilisation", "puissance", "reversibilite", "notedOn", "lastActivityVerifiedOn"]
+        .filter((key) => tool.toolTrimRating[key] !== undefined)
+        .map((key) => [key, tool.toolTrimRating[key]]),
+    ) } : {}),
     categoryId: tool.category || tool.categoryId || "",
     shortDescription: tool.shortDescription || "",
     ...(tool.shortDescriptionEn && tool.shortDescriptionEn !== tool.shortDescription

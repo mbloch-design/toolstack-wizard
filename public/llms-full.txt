@@ -4213,38 +4213,42 @@
     "website": "https://axeptio.eu",
     "category": "legal-contracts",
     "pricing": {
-      "free": "Gratuit sous 200 visiteurs/mois",
-      "paid": "29€/mois (Small, 5 000 pages vues) à 129€/mois (Large, 500 000 pages vues)"
+      "free": "Aucune formule gratuite permanente de la plateforme relevée ; une démonstration ne constitue pas un plan gratuit.",
+      "paid": "Extra Small : 90 €/an. Small : 29 €/mois ; Medium : 69 €/mois ; Large : 129 €/mois. Les affichages Extra Small de 7 €/mois facturés annuellement et certains quotas sont contradictoires : confirmer le total au panier."
     },
-    "description_fr": "Bannière de consentement cookies (CMP) conforme RGPD, dès 29€/mois.",
-    "description_en": "GDPR-compliant cookie consent banner (CMP), from €29/month.",
-    "price_verified_on": "2026-07-07",
+    "description_fr": "Bandeau de consentement personnalisable, registre de consentements et intégration des traceurs d'un site.",
+    "description_en": "Customizable consent notices, consent records and website tracker integration.",
+    "price_verified_on": "2026-10-17",
     "verdict_fr": {
-      "keep_if": "Votre site collect des données via cookies ou trackers et doit être RGPD-conforme",
-      "avoid_if": "Votre site n'utilise aucun tracker ou cookie tiers",
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Ton site utilise des traceurs nécessitant un consentement et tu veux un bandeau configurable",
+      "avoid_if": "Tu cherches un registre RGPD, une cartographie des risques ou des preuves d'audit SOC 2",
       "strengths": [
-        "Banneau entièrement personnalisable et no-code",
-        "Scanner automatique des cookies et trackers sur votre site",
-        "Certifié Google Gold et conforme eIDAS"
+        "Bandeau personnalisable à l'identité du site",
+        "Tarifs publics par palier",
+        "Consent Mode v2 et scan de cookies selon l'offre"
       ],
       "weaknesses": [
-        "Tarification opaque, nécessite contact commercial",
-        "Interface peut être complexe pour configurations avancées",
-        "Pas de version gratuite permanente pour tous les cas d'usage"
+        "Trafic et fonctionnalités déterminent le palier",
+        "Affichages Extra Small contradictoires sur le prix équivalent et les quotas",
+        "L'intégration des traceurs ne se résume pas à afficher le bandeau"
       ]
     },
     "verdict_en": {
-      "keep_if": "Your site collects data via cookies or trackers and must be GDPR-compliant",
-      "avoid_if": "Your site has no third-party trackers or cookies",
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "Your website uses consent-requiring trackers and needs configurable notices",
+      "avoid_if": "You need a privacy register, risk mapping or SOC 2 audit evidence",
       "strengths": [
-        "Fully customizable, no-code consent banner",
-        "Automatic cookie and tracker scanning",
-        "Google Gold certified and eIDAS compliant"
+        "Notices customizable to website branding",
+        "Published tier prices",
+        "Consent Mode v2 and plan-dependent cookie scanning"
       ],
       "weaknesses": [
-        "Opaque pricing, requires sales contact",
-        "Interface can be complex for advanced configurations",
-        "No permanent free tier for all use cases"
+        "Traffic and features determine the tier",
+        "Extra Small has inconsistent equivalent-price and quota displays",
+        "Tracker integration requires more than showing a banner"
       ]
     }
   },
@@ -10897,38 +10901,42 @@
     "website": "https://didomi.io",
     "category": "legal-contracts",
     "pricing": {
-      "free": "Pas de plan gratuit.",
-      "paid": "Prix non public, sur devis."
+      "free": "Aucune formule gratuite permanente de la plateforme relevée ; une démonstration ne constitue pas un plan gratuit.",
+      "paid": "CMP Essential, Advanced et Premium sur devis, selon le volume et le périmètre. Les tarifs des modules server-side ou préférences ne constituent pas le prix de la CMP."
     },
-    "description_fr": "Plateforme de gestion du consentement avec bandeaux conformes au RGPD, synchronisation entre appareils et suivi de conformité, entièrement tarifée sur devis sur plusieurs modules.",
-    "description_en": "Consent Management Platform with GDPR-grade banners, cross-device sync and compliance monitoring, priced entirely on quote across several modules.",
-    "price_verified_on": "2026-09-25",
+    "description_fr": "Gestion du consentement et des préférences sur plusieurs sites et canaux.",
+    "description_en": "Consent and preference management across websites and channels.",
+    "price_verified_on": "2026-10-17",
     "verdict_fr": {
-      "score": "3/5",
-      "label": "Bon",
-      "keep_if": "À garder si tu as besoin d'une gestion du consentement multi-réglementations de niveau entreprise avec intégrations CRM, et acceptes de passer par un devis commercial",
-      "avoid_if": "À éviter si tu veux une CMP en libre-service avec un prix public, car aucun plan de base n'affiche de tarif",
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu dois coordonner le consentement sur plusieurs sites, canaux ou systèmes marketing",
+      "avoid_if": "Tu cherches un registre des traitements, un plan d'action RGPD global ou une préparation SOC 2",
       "strengths": [
-        "Conformité multi-réglementations et synchronisation du consentement entre appareils sur une seule plateforme, au lieu d'un assemblage de scripts",
-        "Intégrations CRM natives (Salesforce, HubSpot, Mailchimp) qui relient directement les données de consentement aux outils marketing"
+        "Consentement et préférences coordonnés entre propriétés",
+        "Personnalisation des parcours de collecte",
+        "Exports par lots décrits dans la documentation"
       ],
       "weaknesses": [
-        "Aucun prix public sur un seul des plans de base de la CMP ; chaque acheteur doit demander un devis avant de connaître le coût",
-        "Le produit est découpé en plusieurs modules facturés séparément, ce qui ajoute des étapes d'achat par rapport à un plan unique à prix fixe"
+        "Prix de la CMP sur devis",
+        "Canaux et modules à préciser dans le périmètre",
+        "Exports par défaut limités aux utilisateurs identifiés"
       ]
     },
     "verdict_en": {
-      "score": "3/5",
-      "label": "Good",
-      "keep_if": "Keep if you need enterprise-grade, multi-regulation consent management with CRM integrations and are willing to go through a sales quote process",
-      "avoid_if": "Avoid if you want a self-service CMP with public pricing, since no core tier publishes a rate",
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "You need coordinated consent across sites, channels or marketing systems",
+      "avoid_if": "You need a processing register, an overall privacy action plan or SOC 2 preparation",
       "strengths": [
-        "Multi-regulation compliance and cross-device consent sync in one platform instead of a patchwork of scripts",
-        "Native CRM integrations (Salesforce, HubSpot, Mailchimp) connect consent data directly to marketing tools"
+        "Coordinated consent and preferences across properties",
+        "Customizable collection experiences",
+        "Documented batch exports"
       ],
       "weaknesses": [
-        "No public price on any core CMP tier; every buyer must request a quote before knowing the cost",
-        "The product is split into several separately priced modules, adding procurement steps compared to a single flat plan"
+        "CMP pricing requires a quote",
+        "Channels and modules need scoping",
+        "Default exports are limited to identified users"
       ]
     }
   },
@@ -11537,38 +11545,42 @@
     "website": "https://drata.com",
     "category": "security",
     "pricing": {
-      "free": "Pas de plan gratuit.",
-      "paid": "Prix non public, sur devis."
+      "free": "Aucune formule gratuite permanente de la plateforme relevée ; une démonstration ne constitue pas un plan gratuit.",
+      "paid": "Foundation, Advanced et Enterprise sur devis. Foundation : jusqu'à 50 ETP et un référentiel inclus ; référentiels supplémentaires en option. Faire préciser audit, accompagnement et gammes Assurance/risque tiers dans le devis."
     },
-    "description_fr": "Drata automatise la conformité SOC 2, ISO 27001 et d'autres frameworks avec un suivi continu des contrôles ; chaque palier tarifaire nécessite un devis commercial.",
-    "description_en": "Drata automates SOC 2, ISO 27001 and other compliance frameworks with continuous control monitoring; every pricing tier requires a sales quote.",
-    "price_verified_on": "2026-09-25",
+    "description_fr": "Préparation aux audits, collecte de preuves et suivi des contrôles pour équipes B2B.",
+    "description_en": "Audit preparation, evidence collection and control monitoring for B2B teams.",
+    "price_verified_on": "2026-10-17",
     "verdict_fr": {
-      "score": "3.2/5",
-      "label": "Bon",
-      "keep_if": "Tu prépares un premier audit SOC 2 ou ISO 27001, ou tu gères plusieurs frameworks de conformité, et tu veux un suivi continu des contrôles",
-      "avoid_if": "Tu veux comparer les prix avant de parler à un commercial, ou ton entreprise n'a pas d'échéance de conformité à court terme",
+      "score": "4.2/5",
+      "label": "Excellent",
+      "keep_if": "Une exigence client ou un audit justifie de relier intégrations, contrôles et preuves",
+      "avoid_if": "Tu cherches uniquement un registre RGPD simple ou une CMP de site web",
       "strengths": [
-        "Le suivi continu des contrôles sur plusieurs frameworks réduit la collecte manuelle de preuves avant un audit",
-        "Le Trust Center séparé permet à une équipe de répondre aux questionnaires de sécurité avec l'aide de l'IA plutôt qu'une par une"
+        "Intégrations et bibliothèque de preuves pour les contrôles",
+        "API incluse dans Foundation selon la grille publiée",
+        "Dossier de preuves exportable avec manifeste et correspondances"
       ],
       "weaknesses": [
-        "Aucun prix public nulle part ; chaque palier nécessite un échange commercial avant de connaître le coût réel",
-        "Le palier d'entrée Foundation est plafonné à 50 ETP et un seul framework pré-cartographié, ce qui oblige à monter de gamme dès que les besoins augmentent"
+        "Périmètre et options à comparer dans un devis",
+        "Le suivi des contrôles demande toujours des responsables internes",
+        "Les fonctions Assurance et risque tiers ne doivent pas être supposées incluses partout"
       ]
     },
     "verdict_en": {
-      "score": "3.2/5",
-      "label": "Good",
-      "keep_if": "You're preparing a first SOC 2 or ISO 27001 audit, or managing several compliance frameworks, and want continuous control monitoring",
-      "avoid_if": "You want to compare prices before talking to sales, or your company has no near-term compliance deadline",
+      "score": "4.2/5",
+      "label": "Excellent",
+      "keep_if": "Customer requirements or an audit justify linking integrations, controls and evidence",
+      "avoid_if": "You only need a simple processing register or website CMP",
       "strengths": [
-        "Continuous control monitoring across several frameworks reduces manual evidence-gathering before an audit",
-        "The separate Trust Center lets a team answer security questionnaires with AI assistance instead of replying one by one"
+        "Integrations and evidence library support controls",
+        "Published Foundation scope includes API access",
+        "Evidence package exports include a manifest and mappings"
       ],
       "weaknesses": [
-        "No public pricing anywhere; every tier needs a sales conversation before the real cost is known",
-        "The entry Foundation tier is capped at 50 FTEs and one pre-mapped framework, forcing an upgrade as needs grow"
+        "Scope and options require a quote comparison",
+        "Controls still need internal owners",
+        "Do not assume every Assurance or third-party risk feature is included"
       ]
     }
   },
@@ -28716,38 +28728,42 @@
     "website": "https://www.onetrust.com",
     "category": "security",
     "pricing": {
-      "free": "Pas de plan gratuit.",
-      "paid": "Prix non public, sur devis."
+      "free": "Aucune formule gratuite permanente de la plateforme relevée ; une démonstration ne constitue pas un plan gratuit.",
+      "paid": "Sur devis par module et périmètre. CMP : visiteurs quotidiens moyens agrégés ; Privacy Automation : utilisateurs et inventaire d'actifs. Aucun montant de départ public relevé."
     },
-    "description_fr": "OneTrust automatise la gestion du consentement, les opérations de confidentialité, la gouvernance IA et le risque tiers via des modules séparés, vendu sur devis.",
-    "description_en": "OneTrust automates consent management, privacy operations, AI governance and third-party risk across separate modules, sold on a custom sales quote.",
-    "price_verified_on": "2026-09-25",
+    "description_fr": "Modules de confidentialité, consentement, gouvernance IA et gestion des risques pour organisations structurées.",
+    "description_en": "Privacy, consent, AI governance and risk modules for structured organizations.",
+    "price_verified_on": "2026-10-17",
     "verdict_fr": {
-      "score": "3.2/5",
-      "label": "Bon",
-      "keep_if": "Tu as besoin d'automatiser le consentement, les opérations de confidentialité, la gouvernance IA ou le risque tiers et tu peux passer par un déploiement commercial",
-      "avoid_if": "Tu n'as besoin que d'une partie restreinte (par exemple le seul consentement cookies) et tu veux un prix en libre-service sans devis commercial",
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Plusieurs équipes doivent partager un programme de confidentialité ou de gestion des risques",
+      "avoid_if": "Tu veux seulement un bandeau cookies pour un site, sans programme de gouvernance plus large",
       "strengths": [
-        "Couvre consentement, opérations de confidentialité, gouvernance IA et risque tiers chez un seul éditeur, plutôt que d'assembler des outils séparés",
-        "L'automatisation du risque tiers couvre tout le cycle de vie fournisseur, de l'intégration à la sortie, pas seulement une vérification initiale"
+        "Modules de confidentialité et de risques coordonnés",
+        "Évaluations et circuits de validation partagés",
+        "API d'export des évaluations documentée"
       ],
       "weaknesses": [
-        "Aucun prix n'est publié nulle part, le budget nécessite donc un échange commercial avant toute vraie comparaison",
-        "La structure modulaire implique qu'une petite équipe a probablement besoin de plus d'un module pour couvrir ses besoins réels, chacun s'ajoutant au devis"
+        "Modules et unités de facturation à cadrer dans le devis",
+        "Le déploiement implique plusieurs responsables métier",
+        "Une CMP seule ne couvre pas les opérations internes de conformité"
       ]
     },
     "verdict_en": {
-      "score": "3.2/5",
-      "label": "Good",
-      "keep_if": "You need consent, privacy ops, AI governance or third-party risk automated and can go through a sales-led deployment",
-      "avoid_if": "You only need one narrow piece of this (e.g. cookie consent alone) and want a self-serve price without a sales quote",
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Several teams need a shared privacy or risk management program",
+      "avoid_if": "You only need a website cookie banner, without a wider governance program",
       "strengths": [
-        "Covers consent, privacy ops, AI governance and third-party risk under one vendor instead of stitching together separate point tools",
-        "Third-party risk automation covers the full vendor lifecycle from onboarding to offboarding, not just an initial check"
+        "Coordinated privacy and risk modules",
+        "Shared assessments and approval workflows",
+        "Documented assessment export API"
       ],
       "weaknesses": [
-        "No price is published anywhere, so budgeting requires a sales conversation before any real comparison is possible",
-        "The modular structure means a small team likely needs more than one module to cover its actual needs, each adding to the quote"
+        "Define modules and billing units in the quote",
+        "Deployment involves several business owners",
+        "CMP alone does not cover internal compliance operations"
       ]
     }
   },
@@ -45401,38 +45417,42 @@
     "website": "https://www.vanta.com",
     "category": "security",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Aucune formule gratuite permanente de la plateforme relevée ; une démonstration ne constitue pas un plan gratuit.",
+      "paid": "Essentials, Plus, Professional et Enterprise sur devis. Essentials comprend un référentiel ; options et périmètre sont à préciser dans le contrat. Aucun prix de départ public relevé."
     },
-    "description_fr": "Vanta aide à gérer accès, conformité ou sécurité dans une stack d’entreprise.",
-    "description_en": "Vanta helps manage access, compliance, or security in a company stack.",
-    "price_verified_on": "2026-05-02",
+    "description_fr": "Centralise les preuves, les contrôles de sécurité et la préparation aux audits de conformité.",
+    "description_en": "Centralizes evidence, security controls and compliance audit preparation.",
+    "price_verified_on": "2026-10-17",
     "verdict_fr": {
-      "keep_if": "Vous avez exigences conformité SOC 2, ISO 27001, HIPAA",
-      "avoid_if": "Vous êtes startup sans exigences réglementaires",
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Une échéance d'audit ou des demandes clients justifient un programme de conformité suivi",
+      "avoid_if": "Ton besoin se limite à un bandeau cookies ou à une démarche ponctuelle sans suivi des contrôles",
       "strengths": [
-        "Plateforme complète 35+ frameworks compliance",
-        "Vanta Agent IA automatise questionnaires",
-        "Trust Center pour transparence clients"
+        "Collecte de preuves et contrôles reliés aux intégrations",
+        "Trust Center et questionnaires pour les demandes clients",
+        "Exports documentés par rubrique"
       ],
       "weaknesses": [
-        "Tarification personnalisée (pas transparence prix)",
-        "Probablement solution chère pour PME",
-        "Nécessite engagement commercial et démo"
+        "Le devis doit préciser les référentiels et options inclus",
+        "Paramétrer le périmètre et les responsabilités reste nécessaire",
+        "Pas d'export unique de toutes les données et historiques"
       ]
     },
     "verdict_en": {
-      "keep_if": "You have SOC 2, ISO 27001, HIPAA compliance requirements",
-      "avoid_if": "You're a startup with no regulatory requirements",
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "An audit deadline or customer requests justify an ongoing compliance program",
+      "avoid_if": "You only need a cookie banner or a one-off task without ongoing control tracking",
       "strengths": [
-        "Complete platform covering 35+ compliance frameworks",
-        "Vanta Agent AI automates questionnaires",
-        "Trust Center for client transparency"
+        "Evidence and controls connected to integrations",
+        "Trust Center and questionnaires for customer requests",
+        "Documented section-specific exports"
       ],
       "weaknesses": [
-        "Custom pricing (no price transparency)",
-        "Likely expensive for SMBs",
-        "Requires sales engagement and demo"
+        "The quote must define included frameworks and options",
+        "Scope and ownership still require configuration",
+        "No single export of all data and history"
       ]
     }
   },
