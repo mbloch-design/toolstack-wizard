@@ -1,0 +1,419 @@
+{
+  "checkedOn": "2026-10-17",
+  "status": "approved-for-publication",
+  "validation": "Base da086217d7: 474 tests passed; app TypeScript passed; full production build passed including SEO, routing, LLM and output budgets.",
+  "method": "Analyse des fonctionnalités et documents officiels, sans test terrain ni estimation de prix non publiés. Les notes évaluent le cas d'usage cible, pas une obligation d'achat pour les freelances.",
+  "dependency_status": "approved-fallback",
+  "narrative_canon_id": null,
+  "narrative_canon_version": null,
+  "claims_projection_offset": null,
+  "privateTool": "sovkern",
+  "tools": {
+    "vanta": {
+      "sources": [
+        "https://www.vanta.com/pricing",
+        "https://www.vanta.com/",
+        "https://help.vanta.com/en/articles/14998654-exporting-your-data-from-vanta"
+      ],
+      "shortDescription": "Centralise les preuves, les contrôles de sécurité et la préparation aux audits de conformité.",
+      "shortDescriptionEn": "Centralizes evidence, security controls and compliance audit preparation.",
+      "longDescription": "Vanta s'adresse aux équipes B2B qui doivent démontrer leur sécurité à des clients ou préparer un audit. Les intégrations alimentent les contrôles et les preuves ; le Trust Center aide à partager les documents autorisés. La plateforme prépare le travail, elle ne délivre pas elle-même une certification.\n\nEssentials couvre un référentiel. Plus ajoute notamment les questionnaires et la gestion des accès ; Professional élargit le suivi des risques et les rapports. Les montants restent sur devis. Compare les fonctions incluses, les options et le périmètre d'audit.\n\nLes exports existent par rubrique : documents et preuves en ZIP, contrôles en CSV. Il n'existe pas d'export universel ; la page Trust Center et certains historiques ne se récupèrent pas en bloc. Pour un simple bandeau cookies, une CMP est un choix différent, pas une version allégée de Vanta.",
+      "longDescriptionEn": "Vanta serves B2B teams preparing an audit or demonstrating security to customers. Integrations feed controls and evidence; the Trust Center shares approved documents. The platform supports preparation rather than issuing certification itself.\n\nEssentials covers one framework. Plus adds questionnaire and access capabilities; Professional expands risk and reporting. Prices are quoted: compare inclusions, options and audit scope.\n\nExports are available by section, including document and evidence ZIPs and controls CSVs. There is no universal export; the live Trust Center and some historical records cannot be exported in bulk. A cookie banner calls for a CMP, not a smaller Vanta deployment.",
+      "alternatives": [
+        "drata",
+        "onetrust"
+      ],
+      "pros": [
+        "Collecte de preuves et contrôles reliés aux intégrations.",
+        "Trust Center et questionnaires pour les demandes clients.",
+        "Exports documentés par rubrique."
+      ],
+      "prosEn": [
+        "Evidence and controls connected to integrations.",
+        "Trust Center and questionnaires for customer requests.",
+        "Documented section-specific exports."
+      ],
+      "cons": [
+        "Le devis doit préciser les référentiels et options inclus.",
+        "Paramétrer le périmètre et les responsabilités reste nécessaire.",
+        "Pas d'export unique de toutes les données et historiques."
+      ],
+      "consEn": [
+        "The quote must define included frameworks and options.",
+        "Scope and ownership still require configuration.",
+        "No single export of all data and history."
+      ],
+      "useCases": [
+        "Préparer un audit demandé par un client B2B.",
+        "Suivre les contrôles et relances dans la durée.",
+        "Partager des preuves de sécurité avec les prospects."
+      ],
+      "useCasesEn": [
+        "Prepare an audit requested by a B2B customer.",
+        "Track controls and follow-ups over time.",
+        "Share security evidence with prospects."
+      ],
+      "keepFr": "Une échéance d'audit ou des demandes clients justifient un programme de conformité suivi.",
+      "keepEn": "An audit deadline or customer requests justify an ongoing compliance program.",
+      "avoidFr": "Ton besoin se limite à un bandeau cookies ou à une démarche ponctuelle sans suivi des contrôles.",
+      "avoidEn": "You only need a cookie banner or a one-off task without ongoing control tracking.",
+      "thresholdFr": "Choisis le périmètre d'audit et les intégrations avant de comparer les devis Vanta et Drata.",
+      "thresholdEn": "Define audit scope and integrations before comparing Vanta and Drata quotes.",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        4
+      ],
+      "evidenceFr": [
+        "Preuves et contrôles réunis pour répondre aux exigences clients ; intérêt apprécié sur ce besoin, sans gain de temps chiffré.",
+        "Intégrations, périmètre et propriétaires des contrôles demandent une configuration coordonnée.",
+        "Suivi continu, preuves et questionnaires forment un parcours documenté ; aucun test terrain ToolTrim revendiqué.",
+        "Conformité, risques, accès et Trust Center selon le plan : couverture étendue du programme de sécurité.",
+        "ZIP de documents et preuves, CSV de contrôles ; exports par rubrique, sans récupération universelle des historiques."
+      ],
+      "evidenceEn": [
+        "Evidence and controls support customer requirements; value is assessed for that need without quantified time savings.",
+        "Integrations, scope and control owners require coordinated configuration.",
+        "Continuous monitoring, evidence and questionnaires form a documented workflow; no ToolTrim hands-on test is claimed.",
+        "Compliance, risk, access and Trust Center capabilities vary by plan and cover a broad security program.",
+        "Document and evidence ZIPs and controls CSVs are available by section, without universal historical export."
+      ],
+      "planNames": [
+        "Essentials",
+        "Plus",
+        "Professional",
+        "Enterprise"
+      ],
+      "pricingFr": "Essentials, Plus, Professional et Enterprise sur devis. Essentials comprend un référentiel ; options et périmètre sont à préciser dans le contrat. Aucun prix de départ public relevé.",
+      "pricingEn": "Essentials, Plus, Professional and Enterprise are quote-based. Essentials includes one framework; confirm scope and options in the contract. No public starting amount found."
+    },
+    "drata": {
+      "sources": [
+        "https://drata.com/plans",
+        "https://drata.com/",
+        "https://help.drata.com/en/articles/12739202-using-the-drata-evidence-package-and-manifest-file"
+      ],
+      "shortDescription": "Préparation aux audits, collecte de preuves et suivi des contrôles pour équipes B2B.",
+      "shortDescriptionEn": "Audit preparation, evidence collection and control monitoring for B2B teams.",
+      "longDescription": "Drata relie les outils de l'entreprise aux contrôles de conformité et centralise les preuves d'audit. Il convient à une équipe qui doit répondre à des exigences clients récurrentes ; une petite entreprise peut aussi être concernée si un contrat le demande.\n\nFoundation vise jusqu'à 50 ETP avec un référentiel inclus, des intégrations, un Trust Center et l'accès API. Des référentiels supplémentaires sont proposés en option : un second référentiel n'impose donc pas automatiquement Advanced. Les gammes Assurance et risque tiers ont leur propre périmètre. Tous les montants sont sur devis.\n\nLes preuves d'audit peuvent être téléchargées en ZIP avec un manifeste et une table CSV des correspondances. C'est une base concrète pour récupérer les documents, pas une promesse de migration complète. L'audit indépendant et le travail interne restent distincts du logiciel.",
+      "longDescriptionEn": "Drata connects business systems to compliance controls and centralizes audit evidence. It suits teams with recurring customer requirements; a small business may also need it when a contract calls for assurance.\n\nFoundation supports up to 50 FTEs with one included framework, integrations, a Trust Center and API access. Additional frameworks are available as add-ons, so a second framework does not automatically require Advanced. Assurance and third-party risk have their own scope. All amounts are quoted.\n\nAudit evidence can be downloaded as a ZIP with a manifest and CSV mappings. That supports document recovery, not guaranteed full migration. Independent auditing and internal implementation remain separate from the software.",
+      "alternatives": [
+        "vanta",
+        "onetrust"
+      ],
+      "pros": [
+        "Intégrations et bibliothèque de preuves pour les contrôles.",
+        "API incluse dans Foundation selon la grille publiée.",
+        "Dossier de preuves exportable avec manifeste et correspondances."
+      ],
+      "prosEn": [
+        "Integrations and evidence library support controls.",
+        "Published Foundation scope includes API access.",
+        "Evidence package exports include a manifest and mappings."
+      ],
+      "cons": [
+        "Périmètre et options à comparer dans un devis.",
+        "Le suivi des contrôles demande toujours des responsables internes.",
+        "Les fonctions Assurance et risque tiers ne doivent pas être supposées incluses partout."
+      ],
+      "consEn": [
+        "Scope and options require a quote comparison.",
+        "Controls still need internal owners.",
+        "Do not assume every Assurance or third-party risk feature is included."
+      ],
+      "useCases": [
+        "Préparer un premier audit de conformité.",
+        "Centraliser les preuves entre équipes.",
+        "Répondre aux questionnaires de sécurité clients."
+      ],
+      "useCasesEn": [
+        "Prepare a first compliance audit.",
+        "Centralize evidence across teams.",
+        "Handle customer security questionnaires."
+      ],
+      "keepFr": "Une exigence client ou un audit justifie de relier intégrations, contrôles et preuves.",
+      "keepEn": "Customer requirements or an audit justify linking integrations, controls and evidence.",
+      "avoidFr": "Tu cherches uniquement un registre RGPD simple ou une CMP de site web.",
+      "avoidEn": "You only need a simple processing register or website CMP.",
+      "thresholdFr": "Compare Foundation et ses options à Advanced selon effectif, référentiels et connexions personnalisées.",
+      "thresholdEn": "Compare Foundation plus add-ons with Advanced based on headcount, frameworks and custom connections.",
+      "scores": [
+        4,
+        4,
+        4,
+        5,
+        4
+      ],
+      "evidenceFr": [
+        "Collecte et réutilisation des preuves répondent à un besoin d'audit concret ; pas de rentabilité chiffrée sans devis.",
+        "Intégrations prêtes à l'emploi et contrôles pré-cartographiés facilitent le démarrage d'un programme défini.",
+        "Contrôles, bibliothèque de preuves et audit forment un processus documenté, non un test terrain ToolTrim.",
+        "API, connexions personnalisées, référentiels et options de risque offrent une couverture étendue selon le plan.",
+        "ZIP de preuves, manifeste consultable et table CSV documentés ; une migration des workflows demande un projet distinct."
+      ],
+      "evidenceEn": [
+        "Evidence collection and reuse address a concrete audit need; no quantified ROI without a quote.",
+        "Pre-built integrations and mapped controls support a defined program's setup.",
+        "Controls, evidence library and audit form a documented process, not a ToolTrim hands-on test.",
+        "API, custom connections, frameworks and risk options provide broad coverage depending on plan.",
+        "Evidence ZIPs, a browsable manifest and CSV mappings are documented; workflow migration remains a separate project."
+      ],
+      "planNames": [
+        "Foundation",
+        "Advanced",
+        "Enterprise"
+      ],
+      "pricingFr": "Foundation, Advanced et Enterprise sur devis. Foundation : jusqu'à 50 ETP et un référentiel inclus ; référentiels supplémentaires en option. Faire préciser audit, accompagnement et gammes Assurance/risque tiers dans le devis.",
+      "pricingEn": "Foundation, Advanced and Enterprise are quote-based. Foundation includes up to 50 FTEs and one framework; more frameworks are add-ons. Clarify audit, services and Assurance/third-party risk scope in the quote."
+    },
+    "onetrust": {
+      "sources": [
+        "https://www.onetrust.com/pricing/",
+        "https://www.onetrust.com/",
+        "https://developer.onetrust.com/onetrust/reference/exportassessmentusingget"
+      ],
+      "shortDescription": "Modules de confidentialité, consentement, gouvernance IA et gestion des risques pour organisations structurées.",
+      "shortDescriptionEn": "Privacy, consent, AI governance and risk modules for structured organizations.",
+      "longDescription": "OneTrust regroupe plusieurs métiers : consentement, opérations de confidentialité, risques technologiques, tiers et gouvernance IA. Pour un besoin de conformité interne, le périmètre pertinent est notamment Privacy Automation ou Tech Risk & Compliance, pas seulement le bandeau cookies.\n\nLes prix sont sur devis et les unités varient : visiteurs moyens pour la CMP, utilisateurs et inventaire d'actifs pour Privacy Automation. Le coût d'un module ne représente pas le coût de toute la plateforme.\n\nLe produit convient à un programme partagé entre plusieurs équipes. Pour un seul site vitrine, compare plutôt une CMP ciblée. Des API permettent de récupérer les évaluations ; les droits et le périmètre doivent être prévus au contrat. Aucun module ne remplace à lui seul les décisions de conformité de l'organisation.",
+      "longDescriptionEn": "OneTrust spans consent, privacy operations, technology and third-party risk, and AI governance. Privacy Automation or Tech Risk & Compliance are more relevant comparisons for internal compliance than the cookie banner alone.\n\nPricing is quoted with module-specific units: average visitors for CMP, users and asset inventory for Privacy Automation. One module's cost is not the platform-wide cost.\n\nIt suits cross-team governance programs. A single small website may be better served by a focused CMP. Assessment export APIs exist; scope and permissions belong in the contract. No module replaces the organization's compliance decisions.",
+      "alternatives": [
+        "vanta",
+        "drata",
+        "didomi"
+      ],
+      "pros": [
+        "Modules de confidentialité et de risques coordonnés.",
+        "Évaluations et circuits de validation partagés.",
+        "API d'export des évaluations documentée."
+      ],
+      "prosEn": [
+        "Coordinated privacy and risk modules.",
+        "Shared assessments and approval workflows.",
+        "Documented assessment export API."
+      ],
+      "cons": [
+        "Modules et unités de facturation à cadrer dans le devis.",
+        "Le déploiement implique plusieurs responsables métier.",
+        "Une CMP seule ne couvre pas les opérations internes de conformité."
+      ],
+      "consEn": [
+        "Define modules and billing units in the quote.",
+        "Deployment involves several business owners.",
+        "CMP alone does not cover internal compliance operations."
+      ],
+      "useCases": [
+        "Organiser les évaluations de confidentialité.",
+        "Suivre les risques technologiques et fournisseurs.",
+        "Coordonner consentement et demandes des personnes selon les modules."
+      ],
+      "useCasesEn": [
+        "Organize privacy assessments.",
+        "Track technology and vendor risks.",
+        "Coordinate consent and data subject requests by module."
+      ],
+      "keepFr": "Plusieurs équipes doivent partager un programme de confidentialité ou de gestion des risques.",
+      "keepEn": "Several teams need a shared privacy or risk management program.",
+      "avoidFr": "Tu veux seulement un bandeau cookies pour un site, sans programme de gouvernance plus large.",
+      "avoidEn": "You only need a website cookie banner, without a wider governance program.",
+      "thresholdFr": "Compare les mêmes modules et unités de facturation, pas deux devis portant seulement le nom OneTrust.",
+      "thresholdEn": "Compare matching modules and billing units rather than two quotes merely labeled OneTrust.",
+      "scores": [
+        4,
+        3,
+        4,
+        5,
+        4
+      ],
+      "evidenceFr": [
+        "Registres, évaluations et risques partagés apportent une valeur à un programme multi-équipe, sans présumer du coût du devis.",
+        "Le périmètre modulaire et les circuits de validation demandent un cadrage avec plusieurs responsables.",
+        "Cartographie, évaluations et suivi des demandes structurent les opérations décrites ; analyse documentaire uniquement.",
+        "Confidentialité, risques, tiers, consentement et gouvernance IA couvrent plusieurs fonctions de l'organisation.",
+        "API d'export des évaluations documentée ; droits, pièces jointes et reprise des workflows doivent être cadrés."
+      ],
+      "evidenceEn": [
+        "Shared inventories, assessments and risks support cross-team programs without assuming quote value.",
+        "Module scope and approval workflows require coordination among owners.",
+        "Mapping, assessments and request tracking structure the documented operations; desk review only.",
+        "Privacy, risk, third parties, consent and AI governance span several organizational functions.",
+        "Assessment export API is documented; permissions, attachments and workflow migration need scoping."
+      ],
+      "planNames": [
+        "Privacy Automation Base",
+        "Privacy Automation Suite",
+        "Tech Risk & Compliance",
+        "CMP Base",
+        "CMP Suite"
+      ],
+      "pricingFr": "Sur devis par module et périmètre. CMP : visiteurs quotidiens moyens agrégés ; Privacy Automation : utilisateurs et inventaire d'actifs. Aucun montant de départ public relevé.",
+      "pricingEn": "Quoted by module and scope. CMP uses aggregated average daily visitors; Privacy Automation uses users and asset inventory. No public starting amount found."
+    },
+    "didomi": {
+      "sources": [
+        "https://www.didomi.io/offers",
+        "https://www.didomi.io/",
+        "https://developers.didomi.io/integrations/generic-integrations/batch-export/exported-data"
+      ],
+      "shortDescription": "Gestion du consentement et des préférences sur plusieurs sites et canaux.",
+      "shortDescriptionEn": "Consent and preference management across websites and channels.",
+      "longDescription": "Didomi est une plateforme de consentement et de préférences, pas un outil de préparation aux audits SOC 2. Son intérêt est de coordonner des parcours de collecte et de propagation du consentement sur plusieurs propriétés.\n\nLa CMP comporte les offres Essential, Advanced et Premium, sur devis. Les modules CTV, préférences et server-side ont un périmètre distinct : leur prix ne doit pas servir de prix d'appel à la CMP. Le volume de visiteurs uniques mensuels intervient dans l'offre.\n\nDes exports par lots sont documentés. Ils portent par défaut sur les utilisateurs identifiés avec un identifiant d'organisation ; les visiteurs anonymes ne sont pas automatiquement inclus. L'intégration des traceurs et la politique de consentement restent à configurer.",
+      "longDescriptionEn": "Didomi manages consent and preferences, not SOC 2 audit preparation. Its role is coordinating collection and consent propagation across properties.\n\nCMP tiers Essential, Advanced and Premium are quote-based. CTV, preference and server-side products have separate scope and must not be used as the CMP's starting price. Monthly unique visitor volume matters.\n\nBatch exports are documented for users with an organization user ID by default; anonymous visitors are not automatically included. Tracker integration and consent policy still require configuration.",
+      "alternatives": [
+        "axeptio",
+        "onetrust"
+      ],
+      "pros": [
+        "Consentement et préférences coordonnés entre propriétés.",
+        "Personnalisation des parcours de collecte.",
+        "Exports par lots décrits dans la documentation."
+      ],
+      "prosEn": [
+        "Coordinated consent and preferences across properties.",
+        "Customizable collection experiences.",
+        "Documented batch exports."
+      ],
+      "cons": [
+        "Prix de la CMP sur devis.",
+        "Canaux et modules à préciser dans le périmètre.",
+        "Exports par défaut limités aux utilisateurs identifiés."
+      ],
+      "consEn": [
+        "CMP pricing requires a quote.",
+        "Channels and modules need scoping.",
+        "Default exports are limited to identified users."
+      ],
+      "useCases": [
+        "Coordonner les bandeaux de plusieurs sites.",
+        "Propager les préférences vers les systèmes marketing.",
+        "Contrôler la configuration du consentement."
+      ],
+      "useCasesEn": [
+        "Coordinate notices across websites.",
+        "Propagate preferences to marketing systems.",
+        "Monitor consent configuration."
+      ],
+      "keepFr": "Tu dois coordonner le consentement sur plusieurs sites, canaux ou systèmes marketing.",
+      "keepEn": "You need coordinated consent across sites, channels or marketing systems.",
+      "avoidFr": "Tu cherches un registre des traitements, un plan d'action RGPD global ou une préparation SOC 2.",
+      "avoidEn": "You need a processing register, an overall privacy action plan or SOC 2 preparation.",
+      "thresholdFr": "Compare les visiteurs uniques, canaux et intégrations inclus ; pour un site simple, compare aussi Axeptio.",
+      "thresholdEn": "Compare included unique visitors, channels and integrations; for a simple site also consider Axeptio.",
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "evidenceFr": [
+        "Centraliser les préférences et leur propagation est utile pour un parc de propriétés, sans inventer de gain financier.",
+        "Bandeaux personnalisables et intégrations structurent le déploiement ; la configuration des traceurs reste nécessaire.",
+        "Collecte, synchronisation et suivi du consentement constituent le périmètre documenté, sans test terrain revendiqué.",
+        "CMP, préférences et canaux supplémentaires couvrent un besoin étendu de consentement, pas toute la GRC.",
+        "Export par lots documenté ; identifiant d'organisation requis par défaut, visiteurs anonymes exclus du périmètre automatique."
+      ],
+      "evidenceEn": [
+        "Centralizing preferences and propagation supports multiple properties, without invented financial gains.",
+        "Customizable notices and integrations support deployment; trackers still require configuration.",
+        "Collection, synchronization and monitoring are documented consent capabilities, not a claimed hands-on test.",
+        "CMP, preferences and additional channels address broad consent needs, not all GRC functions.",
+        "Documented batch exports require an organization user ID by default and exclude anonymous visitors automatically."
+      ],
+      "planNames": [
+        "Essential",
+        "Advanced",
+        "Premium"
+      ],
+      "pricingFr": "CMP Essential, Advanced et Premium sur devis, selon le volume et le périmètre. Les tarifs des modules server-side ou préférences ne constituent pas le prix de la CMP.",
+      "pricingEn": "CMP Essential, Advanced and Premium are quoted by volume and scope. Server-side or preference product pricing is not the CMP price."
+    },
+    "axeptio": {
+      "sources": [
+        "https://www.axept.io/pricing",
+        "https://www.axept.io/"
+      ],
+      "shortDescription": "Bandeau de consentement personnalisable, registre de consentements et intégration des traceurs d'un site.",
+      "shortDescriptionEn": "Customizable consent notices, consent records and website tracker integration.",
+      "longDescription": "Axeptio répond au consentement des visiteurs d'un site : bandeau personnalisable, stockage des consentements et intégration de Google Consent Mode v2. Cela ne remplace ni le registre des traitements ni une plateforme de conformité interne.\n\nLa grille EUR affiche Extra Small à 90 € par an, puis Small à 29 €, Medium à 69 € et Large à 129 € par mois. Extra Small est aussi affiché à 7 €/mois avec paiement annuel : ce montant ne correspond pas exactement au total annuel publié. Les quotas de cette offre varient également entre blocs ; confirmer le panier avant souscription.\n\nLes offres supérieures ajoutent statistiques et fonctions selon palier. Une migration implique de reconfigurer le bandeau et les traceurs et d'organiser la conservation des preuves de consentement.",
+      "longDescriptionEn": "Axeptio handles website visitor consent with customizable notices, consent storage and Google Consent Mode v2 integration. It is not a processing register or an internal compliance platform.\n\nPublished USD pricing lists Extra Small at $90 annually and Small, Medium and Large at $29, $69 and $129 monthly. Extra Small also shows $7/month with yearly payment, which does not exactly match the annual total. Its quotas also differ across page blocks; confirm checkout details.\n\nHigher tiers add statistics and other capabilities. Migration involves reconfiguring notices and trackers and retaining consent evidence.",
+      "alternatives": [
+        "didomi",
+        "onetrust"
+      ],
+      "pros": [
+        "Bandeau personnalisable à l'identité du site.",
+        "Tarifs publics par palier.",
+        "Consent Mode v2 et scan de cookies selon l'offre."
+      ],
+      "prosEn": [
+        "Notices customizable to website branding.",
+        "Published tier prices.",
+        "Consent Mode v2 and plan-dependent cookie scanning."
+      ],
+      "cons": [
+        "Trafic et fonctionnalités déterminent le palier.",
+        "Affichages Extra Small contradictoires sur le prix équivalent et les quotas.",
+        "L'intégration des traceurs ne se résume pas à afficher le bandeau."
+      ],
+      "consEn": [
+        "Traffic and features determine the tier.",
+        "Extra Small has inconsistent equivalent-price and quota displays.",
+        "Tracker integration requires more than showing a banner."
+      ],
+      "useCases": [
+        "Configurer le consentement des visiteurs d'un site.",
+        "Personnaliser le bandeau et les choix proposés.",
+        "Recenser les cookies selon les fonctions du forfait."
+      ],
+      "useCasesEn": [
+        "Configure visitor consent on a website.",
+        "Customize notices and available choices.",
+        "Inventory cookies using plan features."
+      ],
+      "keepFr": "Ton site utilise des traceurs nécessitant un consentement et tu veux un bandeau configurable.",
+      "keepEn": "Your website uses consent-requiring trackers and needs configurable notices.",
+      "avoidFr": "Tu cherches un registre RGPD, une cartographie des risques ou des preuves d'audit SOC 2.",
+      "avoidEn": "You need a privacy register, risk mapping or SOC 2 audit evidence.",
+      "thresholdFr": "Dimensionne l'offre sur le trafic et les fonctionnalités ; vérifie le total annuel et les quotas Extra Small au panier.",
+      "thresholdEn": "Size the plan by traffic and features; confirm Extra Small annual totals and quotas at checkout.",
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "evidenceFr": [
+        "Bandeau, registre et personnalisation répondent au besoin précis de consentement d'un site.",
+        "Personnalisation et intégrations facilitent un déploiement ciblé ; les traceurs demandent toujours une configuration.",
+        "Stockage du consentement, Consent Mode v2 et fonctions de scan selon offre sont documentés ; pas de test terrain revendiqué.",
+        "Paliers de trafic, statistiques et fonctions de consentement couvrent le site ; ce n'est pas une suite GRC.",
+        "Changer de CMP implique de reconfigurer les traceurs et de prévoir la conservation des preuves ; migration non assimilée à un simple changement de bandeau."
+      ],
+      "evidenceEn": [
+        "Notices, consent records and customization address a focused website need.",
+        "Customization and integrations support targeted deployment; trackers still need configuration.",
+        "Consent storage, Consent Mode v2 and plan-dependent scanning are documented; no hands-on test is claimed.",
+        "Traffic tiers, statistics and consent features cover website needs rather than a full GRC suite.",
+        "Changing CMP requires tracker reconfiguration and an evidence-retention plan, not just swapping a banner."
+      ],
+      "planNames": [
+        "Extra Small",
+        "Small",
+        "Medium",
+        "Large"
+      ],
+      "pricingFr": "Extra Small : 90 €/an. Small : 29 €/mois ; Medium : 69 €/mois ; Large : 129 €/mois. Les affichages Extra Small de 7 €/mois facturés annuellement et certains quotas sont contradictoires : confirmer le total au panier.",
+      "pricingEn": "Extra Small: $90/year. Small: $29/month; Medium: $69/month; Large: $129/month. Extra Small's $7/month yearly-billed display and some quotas conflict: confirm checkout totals."
+    }
+  },
+  "publicationScope": [
+    "vanta",
+    "drata",
+    "onetrust",
+    "didomi",
+    "axeptio"
+  ]
+}

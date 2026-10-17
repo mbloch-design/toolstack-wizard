@@ -5827,3 +5827,8 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - 105 scénarios navigateur PASS : 44 recherche/stack/découverte/routage, quatre Explorer et 57 hydratations. 34 captures : zéro requête Supabase, zéro catalogue complet, zéro erreur applicative ou sélection altérée ; détails toujours en shards.
 - Tests Ma Stack alignés sur la publication locale et les interactions actuelles Annuler/Voir ; assertions de stockage et destination conservées. Analytics des recettes isolés. Relecture indépendante sans défaut bloquant.
 - Validé localement, publication et recette CDN à effectuer. Ni nouvelle base, dépendance, source éditoriale, fournisseur ni modification de service distant.
+## 2026-10-17 : alternatives conformite actualisees
+
+- Vanta, Drata, OneTrust, Didomi et Axeptio : contenus FR/EN, prix officiels, alternatives et notes revus. Sovkern reste hors catalogue public.
+- Notes des cartes alignees sur les cinq axes des fiches. Lecture locale par defaut et transport compact de main conserves.
+

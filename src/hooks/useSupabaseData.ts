@@ -213,6 +213,8 @@ export type ToolSummary = Pick<
   | "substitutable"
   | "betterAlternative"
 > & {
+  /** Editorial axes only; evidence remains on the full detail record. */
+  toolTrimRating?: Omit<NonNullable<Tool["toolTrimRating"]>, "evidence" | "evidenceEn">;
   compareMonthlyPrice?: number | null;
   /** "Prix non public" sentinel: a 0 comparison price means unknown, not free. */
   priceUndisclosed?: boolean;
@@ -239,6 +241,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   id: asLocalizedText(t.id || t.slug, ""),
   slug: asLocalizedText(t.slug || t.id, ""),
   name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
+  ...(t.toolTrimRating ? { toolTrimRating: t.toolTrimRating } : {}),
   categoryId: asLocalizedText(t.categoryId || t.category, ""),
   shortDescription: asLocalizedText(t.shortDescription || t.short_description, "", "fr"),
   shortDescriptionEn: asLocalizedText(t.shortDescriptionEn || t.short_description_en || t.shortDescription || t.short_description, "", "en"),
@@ -560,6 +563,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
                 || Boolean(localFallback?.priceUndisclosed),
               // Supabase has no native price column: keep the attested one.
               ...(localFallback?.nativePrices ? { nativePrices: localFallback.nativePrices } : {}),
+              ...(localFallback?.toolTrimRating ? { toolTrimRating: localFallback.toolTrimRating } : {}),
               ...(localFallback?.alternatives ? { alternatives: localFallback.alternatives } : {}),
               publishedAt: t.published_at || null,
               worksWith: Array.isArray(t.works_with) ? t.works_with : [],
