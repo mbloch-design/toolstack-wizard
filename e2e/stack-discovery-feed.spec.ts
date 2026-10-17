@@ -3,6 +3,7 @@ const key='tooltrim-ma-stack-mvp-v3';
 const seeds=['figma','notion','slack'];
 test.beforeEach(async({page})=>{
  await page.route('**/*supabase.co/**',route=>route.abort());
+ await page.route(/google-analytics\.com|googletagmanager\.com|vercel-insights\.com|vercel-scripts\.com|_vercel\/insights/,route=>route.abort());
  await page.addInitScript(({key,seeds})=>{
   localStorage.setItem('tooltrim-analytics-consent',JSON.stringify({version:1,choice:'refused',decidedAt:Date.now(),expiresAt:Date.now()+3600000}));
   if(!localStorage.getItem(key))localStorage.setItem(key,JSON.stringify({version:3,needs:[],pinnedToolSlugs:seeds,toolEntries:seeds.map(toolSlug=>({toolSlug,needIds:[],intent:'stack',addedAt:'2026-10-13T00:00:00Z',assignmentMode:'pending'}))}));

@@ -1,5 +1,94 @@
 # Projection de l’index navigateur — 8 octobre 2026
 
+<a id="r7-compact-2026-10-17"></a>
+
+## R7 — transport compact sans perte — 17 octobre 2026
+
+Ce canary prolonge le mode public local de `3d99d772d4`. Il compacte uniquement le
+module navigateur de l'index, dans le plugin Vite existant. Il ne crée ni source
+éditable supplémentaire, ni dépendance, ni base de données.
+
+Les listes de clés identiques sont mutualisées au build. Les valeurs restent
+entières et les composants reçoivent exactement le même tableau d'objets :
+ordre des outils et des clés, valeurs nulles, champs absents, champs futurs,
+prix, traductions et relations conservés. Les tables compactes sont limitées à
+l'appel de reconstruction ; elles ne subsistent pas dans les variables du module.
+Le filtrage des alias est inchangé ; les imports SSR et développement restent
+des lectures JSON normales. Le chunk garde la politique de preload et de cache
+existante, sous un nouveau nom haché.
+
+### Gain sur le module réellement émis
+
+| Mesure comparable | Témoin local | Compact | Réduction |
+|---|---:|---:|---:|
+| JavaScript décompressé | 1 421 919 octets | 1 161 324 octets | 260 595 / **18,33 %** |
+| gzip niveau 9 | 326 124 | 304 054 | 22 070 / **6,77 %** |
+| Brotli qualité 5 | 266 296 | 253 313 | 12 983 / **4,88 %** |
+
+Le module est passé de `data-tool-index-GpIJ6VN9.js` à
+`data-tool-index-ChLQuXDY.js`. Ces compressions locales ne sont pas les octets
+CDN d'une publication déjà effectuée. Les pourcentages concernent cet index,
+pas tout le JavaScript du site.
+
+### Coût de lecture contrôlé
+
+Micromesure Chromium : neuf contextes jetables par variante et profil, ordre
+avant/après alterné, module réel importé via une URL Blob neuve. Le chronométrage
+couvre la compilation/évaluation/import, après création du Blob, sans réseau.
+Les tableaux exportés sont comparés intégralement hors de la fenêtre chronométrée.
+
+| Profil | Témoin, médiane [min–max] | Compact, médiane [min–max] |
+|---|---:|---:|
+| CPU normal | 18,7 ms [18,2–19,2] | 13,2 ms [12,9–13,8] |
+| CPU ×4 | 35,4 ms [33,1–36,6] | 25,2 ms [24,3–26,9] |
+
+Ce contrôle ne montre pas de coût d'import supplémentaire dans le laboratoire.
+Il ne mesure ni le démarrage de toute l'application, ni INP, ni Core Web Vitals,
+ni un téléphone physique.
+
+### Validation et statut
+
+- Fixture Vite : échec initial sur le budget de transport, puis parité du catalogue
+  visible réel et de l'ordre des clés ; source intacte et SSR inchangé.
+- 463 tests applicatifs, 198 tests Ma Stack (couverture distincte qui se recoupe),
+  39 contrats SEO et typecheck app/node/API : PASS. Build complet et ses gates
+  SEO/routage/budgets : PASS.
+- **13 184 documents HTML identiques** après normalisation des seuls noms des
+  modules JavaScript. Sources `tools_v4`, `tools_index`, catégories et sitemap
+  identiques. Aucun texte, style, lien, metadata ou JSON-LD éditorial retiré.
+- **44 scénarios navigateur PASS** : recherche, absence de lectures Supabase,
+  Ma Stack, fil Explorer et routage/404. Le scénario de mise à jour du catalogue
+  simule maintenant une nouvelle publication locale ; il vérifie toujours que
+  la sélection conserve des identifiants sans copie des données catalogue.
+  Les attentes Annuler/Voir et la casse d'un libellé suivent l'UI actuelle ;
+  aucune modification produit de ces interactions.
+- **57 hydratations FR/EN PASS**, avec sélection vide/enregistrée, prix, navigation
+  et rechargement. Quatre parcours Explorer supplémentaires mobile/ordinateur
+  PASS : **105 scénarios navigateur au total** dans ces suites.
+- **34 captures réseau PASS** : module compact réellement chargé, zéro appel
+  Supabase, zéro catalogue complet, zéro erreur applicative ou requête catalogue
+  inachevée ; sélection conservée. Le détail Figma reste chargé via `s33.json`
+  dans les sept ouvertures prévues. Serveur local sans compression ni cache :
+  les octets CDN et son cache après publication restent à contrôler.
+  Les captures de parcours ont partiellement tourné en parallèle ; leurs durées
+  ne fondent aucune comparaison de vitesse. La micromesure d'import finale
+  ci-dessus a été exécutée séparément.
+- Relecture indépendante sans défaut bloquant. Logs, signatures et micromesures
+  restent hors des sources du dépôt. Reproduction pérenne de l'équivalence et
+  du budget : `npx vitest run src/lib/browserToolIndexProjection.test.ts`.
+- **Validé localement, non publié.** Retour arrière du transport : rétablir le plugin et sa fixture
+  du commit `3d99d772d4`, puis rebuild. Cela conserve le mode catalogue local.
+  La recette CDN de production reste nécessaire après push.
+
+Le fractionnement des descriptions/prix par langue ou par route n'est pas
+nécessaire pour ce canary. Il reste une option d'architecture à évaluer seulement
+si les prochaines mesures le justifient, avec sa matrice de consommateurs.
+
+---
+
+## Historique — publication du 8 octobre 2026
+
+
 Correctif publié sur `main` et vérifié en production, commit applicatif `81f44da6e0`. Les preuves locales ci-dessous sont complétées par la recette publique en fin de rapport.
 
 ## Résultat

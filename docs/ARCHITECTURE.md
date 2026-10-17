@@ -399,3 +399,12 @@ Ce réglage ne modifie ni le backoffice, ni les scripts de migration, ni les
 soumissions Redis/Creem. Le garde-fou JSON du build reste inchangé.
 Ne réactiver les lectures distantes qu'après vérification de disponibilité,
 parité des données et budget de quota. Aucun nouveau fournisseur n'est requis.
+
+
+Le plugin `scripts/lib/browser-tool-index.ts` compacte le transport de
+`tools_index.json` uniquement dans le build navigateur : clés mutualisées et
+valeurs complètes, reconstruites en objets avant exposition aux importeurs.
+Ce format n'est pas une source éditoriale ni un contrat à employer dans les
+composants. Le JSON versionné, le SSR, les générateurs et le développement
+restent inchangés ; les tests de fixture contrôlent les champs futurs et les
+budgets de transport. [Mesures R7](PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md#r7-compact-2026-10-17).

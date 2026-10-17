@@ -5817,3 +5817,13 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - Validation : 462 tests applicatifs, TypeScript, build/SEO/routage/budgets PASS ; 57 hydratations, huit recherche/source locale et 15 routages PASS. Parité de 18 pages FR/EN (texte/meta/JSON-LD), données et sitemap. Relecture indépendante sans défaut bloquant.
 - Régression navigateur ajoutée à la CI : session expirée fictive et vraie navigation SPA sans Supabase. Consentement des recettes normalisé et appels analytics bloqués.
 - Validé localement ; publication et recette production à effectuer. Aucun projet distant, clé, email ou paiement modifié.
+
+
+## 2026-10-17 — R7 : transport compact de l'index navigateur sans perte
+
+- Plugin Vite existant : clés mutualisées au build et restitution du même tableau d'objets. Tous les champs, valeurs nulles/absentes, relations, prix et traductions conservés ; JSON source, SSR et dev inchangés. Tables de transport limitées à l'appel de reconstruction.
+- Module réel : 1 421 919 → 1 161 324 octets (−18,33 %) ; gzip9 326 124 → 304 054 (−6,77 %), Brotli5 266 296 → 253 313 (−4,88 %). Micromesure Chromium séparée : aucune hausse du coût d'import observée ; aucun gain de vitesse globale du site annoncé.
+- Validation : 463 tests app, 198 Ma Stack (couverture recoupée), 39 contrats SEO, types app/node/API, build et budgets PASS. 13 184 HTML identiques après seuls noms de modules JS normalisés ; trois sources catalogue et sitemap identiques.
+- 105 scénarios navigateur PASS : 44 recherche/stack/découverte/routage, quatre Explorer et 57 hydratations. 34 captures : zéro requête Supabase, zéro catalogue complet, zéro erreur applicative ou sélection altérée ; détails toujours en shards.
+- Tests Ma Stack alignés sur la publication locale et les interactions actuelles Annuler/Voir ; assertions de stockage et destination conservées. Analytics des recettes isolés. Relecture indépendante sans défaut bloquant.
+- Validé localement, publication et recette CDN à effectuer. Ni nouvelle base, dépendance, source éditoriale, fournisseur ni modification de service distant.

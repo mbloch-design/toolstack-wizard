@@ -4,6 +4,7 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
  test(`stack → explore → add → return ${lang}/${width}`, async ({ page }) => {
   await page.setViewportSize({width, height:1000});
   await page.route('**/*supabase.co/**', route => route.abort());
+  await page.route(/google-analytics\.com|googletagmanager\.com|vercel-insights\.com|vercel-scripts\.com|_vercel\/insights/, route => route.abort());
   await page.addInitScript(({key}) => {
    localStorage.setItem('tooltrim-analytics-consent',JSON.stringify({version:1,choice:'refused',decidedAt:Date.now(),expiresAt:Date.now()+3600000}));
    if (!localStorage.getItem(key)) localStorage.setItem(key,JSON.stringify({version:3,needs:[],pinnedToolSlugs:['figma'],toolEntries:[{toolSlug:'figma',needIds:[],intent:'stack',addedAt:'2026-10-13T00:00:00Z',assignmentMode:'pending'}]}));

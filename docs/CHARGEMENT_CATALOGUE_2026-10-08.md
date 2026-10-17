@@ -1,5 +1,11 @@
 # Chargement catalogue — mesures et prochain lot
 
+> **Suite R7 vérifiée le 17 octobre 2026 :** index compact sans perte
+> (−18,33 % décompressé / −6,77 % gzip local), 105 scénarios navigateur et
+> 34 captures sans lecture Supabase. [Bilan et limites](PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md#r7-compact-2026-10-17).
+> Les mesures du 16 octobre ci-dessous restent le témoin historique du premier lot.
+
+
 Le bilan initial du 8 octobre 2026 porte sur https://tooltrim.com, application publiée `34391450cc`. La section suivante actualise le diagnostic et le canary du 16 octobre ; les résultats historiques sont conservés plus bas.
 
 ## Actualisation R3/R7 — 16 octobre 2026

@@ -6,6 +6,7 @@ const seed = (ids = slugs) => ({ version: 3, needs: [], pinnedToolSlugs: ids, to
 
 test.beforeEach(async ({ page }) => {
   await page.route("**/*supabase.co/**", (route) => route.abort());
+  await page.route(/google-analytics\.com|googletagmanager\.com|vercel-insights\.com|vercel-scripts\.com|_vercel\/insights/, route => route.abort());
   await page.addInitScript(() => localStorage.setItem("tooltrim-analytics-consent", JSON.stringify({ version: 1, choice: "refused", decidedAt: Date.now(), expiresAt: Date.now() + 3600000 })));
 });
 
@@ -21,21 +22,21 @@ test("empty → search → add → inspect → remove → undo → persist", asy
   await expect(page.locator(".ms-tool-sheet")).toBeVisible();
   await page.getByRole("button", { name: "Retirer de ma stack", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(0);
-  // The add confirmation pill also has an "Annuler": use the removal's undo.
-  await page.locator("button:not(.stack-toast-undo)", { hasText: /^Annuler$/ }).click();
+  await page.getByRole("listitem").filter({ hasText: "Figma retiré de ma stack." }).getByRole("button", { name: "Annuler", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await page.reload({ waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   const storage = await page.context().storageState();
   const context = await page.context().browser()!.newContext({ storageState: storage });
   await context.route("**/*supabase.co/**", (route) => route.abort());
+  await context.route(/google-analytics\.com|googletagmanager\.com|vercel-insights\.com|vercel-scripts\.com|_vercel\/insights/, route => route.abort());
   const reopened = await context.newPage();
   await reopened.goto(`${test.info().project.use.baseURL}/fr/ma-stack`, { waitUntil: "domcontentloaded" });
   await expect(reopened.locator(".ms-tool")).toHaveCount(1);
   await context.close();
 });
 
-test("tool profile adds with one click and its saved CTA opens stack context", async ({ page }) => {
+test("tool profile adds with one click and its confirmation opens stack context", async ({ page }) => {
   await page.goto("/fr/tool/figma", { waitUntil: "domcontentloaded" });
   const cta = page.locator(".td-hero-actions .pin-tool-button--full");
   await cta.click();
@@ -120,16 +121,16 @@ test("blocked localStorage getter keeps selection usable in memory", async ({ pa
 });
 
 
-test("catalogue refresh updates the same saved selection without persisting tool data", async ({ page }) => {
+test("published local catalogue refresh updates the same saved selection without persisting tool data", async ({ page }) => {
   let name = "Figma — catalogue initial";
-  await page.route("**/*supabase.co/**", async (route) => {
-    expect(["GET", "OPTIONS"]).toContain(route.request().method());
-    if (route.request().url().includes("/rest/v1/tools?")) {
-      await route.fulfill({ json: [{
-        id: "figma", slug: "figma", name, category: "design-tools",
-        pricing: { free: "", paid: "Sur devis" },
-      }] });
-    } else await route.abort();
+  // Simulate a new published snapshot, for both Vite dev and generated builds.
+  await page.route(/\/(?:src\/data\/tools_index\.json|assets\/data-tool-index-[^/]+\.js)(?:\?|$)/, async (route) => {
+    const response = await route.fetch();
+    const literal = JSON.stringify(name);
+    const body = (await response.text())
+      .replaceAll('"Figma"', literal)
+      .replaceAll('\\"Figma\\"', JSON.stringify(literal).slice(1, -1));
+    await route.fulfill({ response, body });
   });
   await page.addInitScript(({ key, state }) => {
     if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(state));
