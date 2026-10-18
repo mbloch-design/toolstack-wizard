@@ -5236,14 +5236,17 @@
     "slug": "beehiiv",
     "name": "Beehiiv",
     "categoryId": "email-productivity",
-    "shortDescription": "La plateforme newsletter conçue pour la croissance et la monétisation.",
-    "shortDescriptionEn": "The newsletter platform built for growth and monetisation.",
+    "shortDescription": "Développer une publication avec newsletter, site et outils de monétisation.",
+    "shortDescriptionEn": "Grow a publication with newsletters, a website and monetization tools.",
     "pricing": {
-      "free": "Jusqu'à 2500 abonnés",
-      "paid": "39$/mois (Scale)"
+      "free": "Gratuit jusqu’à 2 500 abonnés, envois email illimités.",
+      "paid": "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
     },
-    "defaultMonthlyPrice": 37.31,
-    "compareMonthlyPrice": 37.31,
+    "pricingEn": {
+      "free": "Free up to 2,500 subscribers with unlimited email sends.",
+      "paid": "Price depends on the tier in the official selector; no legacy converted amount retained."
+    },
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://beehiiv.com",
     "ogImageUrl": "https://media.beehiiv.com/www/og-image/og-beehiiv.png",
     "substitution_cluster_v2": "newsletter-platform",
@@ -5266,6 +5269,11 @@
       "sofia",
       "theo",
       "alix"
+    ],
+    "alternatives": [
+      "kit",
+      "substack",
+      "mailerlite"
     ]
   },
   {
@@ -6349,15 +6357,15 @@
       "lastActivityVerifiedOn": null
     },
     "categoryId": "email-productivity",
-    "shortDescription": "Email marketing, automatisations et messages transactionnels pour petites équipes.",
-    "shortDescriptionEn": "Email marketing, automation and transactional messaging for small teams.",
+    "shortDescription": "Campagnes email, transactionnel et automatisations pour une petite équipe multicanale.",
+    "shortDescriptionEn": "Email campaigns, transactional messaging and automation for a multichannel small team.",
     "pricing": {
       "free": "Gratuit sans carte bancaire : 300 emails/jour, jusqu’à 100 000 contacts. Quota quotidien non reportable.",
       "paid": "Tarifs publics en EUR : Starter dès 7 €/mois, Standard dès 17 €/mois, Pro dès 499 €/mois. Volume, contacts et options déterminent le coût final."
     },
     "pricingEn": {
-      "free": "Free without a credit card: 300 emails/day and up to 100,000 contacts. Unused daily quota does not roll over.",
-      "paid": "Published EUR prices: Starter from €7/month, Standard from €17/month, Pro from €499/month. Sending volume, contacts and add-ons determine the final cost. No currency conversion applied."
+      "free": "Free: 300 emails/day and up to 100,000 stored contacts.",
+      "paid": "US entry prices: Starter $9/month; Standard $18/month. Each tier sets sends and stored contacts; options can cost extra."
     },
     "defaultMonthlyPrice": 7,
     "compareMonthlyPrice": 7,
@@ -6365,6 +6373,11 @@
       {
         "amount": 7,
         "currency": "EUR",
+        "period": "monthly"
+      },
+      {
+        "amount": 9,
+        "currency": "USD",
         "period": "monthly"
       }
     ],
@@ -6395,8 +6408,8 @@
       "MARC"
     ],
     "alternatives": [
-      "convertkit",
-      "mailchimp",
+      "kit",
+      "mailerlite",
       "activecampaign"
     ]
   },
@@ -22529,26 +22542,27 @@
     "id": "convertkit",
     "slug": "kit",
     "name": "Kit",
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 4,
+      "notedOn": "2026-10-19",
+      "lastActivityVerifiedOn": null
+    },
     "categoryId": "email-productivity",
-    "shortDescription": "Newsletter, formulaires, automatisations et ventes numériques pour créateurs d’audience.",
-    "shortDescriptionEn": "Email marketing, forms, automations and digital sales for audience-led creators.",
+    "shortDescription": "Transforme tes lecteurs en abonnés, puis accompagne-les jusqu’à ton prochain lancement.",
+    "shortDescriptionEn": "Turn readers into subscribers, then guide them toward your next launch.",
     "pricing": {
-      "free": "Plan gratuit jusqu’à 10 000 abonnés, avec formulaires, pages d’inscription, newsletters et segmentation. Les automatisations visuelles et séquences email ne sont pas incluses.",
-      "paid": "Creator : 390 $US/an, soit 33 $US/mois équivalent, pour 1 000 abonnés avec facturation annuelle. Le prix évolue avec la taille de la liste. Pro : 790 $US/an, soit 66 $US/mois équivalent, pour 1 000 abonnés."
+      "free": "Gratuit jusqu’à 10 000 abonnés, sans séquences ni automatisations visuelles.",
+      "paid": "Pour 1 000 abonnés : Creator 390 $US/an ; Pro 790 $US/an au tarif standard. Essai de 14 jours sans carte. Promotion Pro affichée à 593 $US la première année uniquement, soumise aux conditions en vigueur."
     },
     "pricingEn": {
-      "free": "Free plan for up to 10,000 subscribers, with forms, landing pages, broadcasts and segmentation. Visual automations and email sequences are not included.",
-      "paid": "For 1,000 subscribers, Creator is $390/year ($33/month equivalent) and Pro is $790/year ($66/month equivalent), billed annually. Pricing changes with subscriber count."
+      "free": "Free up to 10,000 subscribers; no sequences or visual automations.",
+      "paid": "At 1,000 subscribers: Creator $390/year; Pro standard $790/year. 14-day trial without a card. Pro offer displayed at $593 for the first year only, subject to current eligibility."
     },
-    "defaultMonthlyPrice": 29.03,
-    "compareMonthlyPrice": 29.03,
-    "nativePrices": [
-      {
-        "amount": 390,
-        "currency": "USD",
-        "period": "annual"
-      }
-    ],
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://partners.kit.com/u037oht6r48p",
     "websiteUrl": "https://kit.com",
     "ogImageUrl": "/og-images/kit.jpg",
@@ -22566,9 +22580,8 @@
       "newslettiste-auteur"
     ],
     "relevantFor": [
-      "Creators et writers indépendants",
-      "Online course instructors",
-      "Content creators avec monetization"
+      "Créateurs qui vendent leurs contenus et formations",
+      "Auteurs et indépendants avec une newsletter régulière"
     ],
     "prescription_quality": "question",
     "personas": [
@@ -26283,19 +26296,17 @@
     "slug": "mailerlite",
     "name": "Mailerlite",
     "categoryId": "email-productivity",
-    "shortDescription": "Email marketing simple et abordable, avec un plan gratuit généreux pour démarrer.",
-    "shortDescriptionEn": "Simple, affordable email marketing, with a generous free plan to start.",
-    "pricing": "Gratuit jusqu'à 1000 contacts ; plans payants à partir de ~10€/mois au-delà.",
-    "pricingEn": "Free up to 1,000 contacts; paid plans from ~$10/month beyond that.",
-    "defaultMonthlyPrice": 10.3,
-    "compareMonthlyPrice": 10.3,
-    "nativePrices": [
-      {
-        "amount": 12,
-        "currency": "USD",
-        "period": "monthly"
-      }
-    ],
+    "shortDescription": "Créer des campagnes, formulaires et automatisations email pour une petite liste.",
+    "shortDescriptionEn": "Build campaigns, signup forms and email automations for a small list.",
+    "pricing": {
+      "free": "Gratuit : 250 abonnés et 2 500 emails par mois.",
+      "paid": "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
+    },
+    "pricingEn": {
+      "free": "Free: 250 subscribers and 2,500 monthly emails.",
+      "paid": "Price depends on the tier in the official selector; no legacy converted amount retained."
+    },
+    "compareMonthlyPrice": 0,
     "affiliateLink": "https://mailerlite.com",
     "ogImageUrl": "https://www.mailerlite.com/img/containers/assets/SEO/homepage-meta.jpg/a271969696ccb718c1a26ea27c86ef53.jpg",
     "logo": "https://logo.clearbit.com/mailerlite.com",
@@ -26315,6 +26326,11 @@
     "prescription_quality": "medium",
     "personas": [
       "lina"
+    ],
+    "alternatives": [
+      "kit",
+      "brevo",
+      "beehiiv"
     ]
   },
   {
@@ -43619,11 +43635,15 @@
     "slug": "substack",
     "name": "Substack",
     "categoryId": "email-productivity",
-    "shortDescription": "Plateforme newsletter et blog avec monétisation intégrée. Zéro friction.",
-    "shortDescriptionEn": "Newsletter and blog platform with built-in monetisation. Zero friction.",
+    "shortDescription": "Publier une newsletter et proposer des abonnements payants sans forfait de départ.",
+    "shortDescriptionEn": "Publish a newsletter and offer paid subscriptions without a starting subscription fee.",
     "pricing": {
-      "free": "Gratuit (10% commission sur abonnements payants)",
-      "paid": "Aucun abonnement requis"
+      "free": "Publication gratuite ; 10 % sur les abonnements payants, plus frais Stripe.",
+      "paid": "Pas de forfait logiciel obligatoire ; frais liés aux revenus."
+    },
+    "pricingEn": {
+      "free": "Free publishing; 10% on paid subscriptions plus Stripe charges.",
+      "paid": "No mandatory software subscription; revenue-based fees apply."
     },
     "compareMonthlyPrice": 0,
     "affiliateLink": "https://substack.com",
@@ -43648,6 +43668,11 @@
     "personas": [
       "sofia",
       "theo"
+    ],
+    "alternatives": [
+      "kit",
+      "beehiiv",
+      "mailerlite"
     ],
     "betterAlternative": {
       "tool": "beehiiv",

@@ -1,5 +1,5 @@
 export interface ToolTutorial {
-  provider: "youtube" | "native";
+  provider: "youtube" | "native" | "wistia";
   videoUrl?: string;
   posterUrl?: string;
   videoId: string;
@@ -17,6 +17,13 @@ export interface ToolTutorial {
  * YouTube entries are checked against oEmbed; native videos against the official page and media URL.
  */
 export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
+  kit: [{
+    provider: 'wistia', videoId: 'z0e60vz71d',
+    posterUrl: 'https://embed-ssl.wistia.com/deliveries/5094168e07a72e182b4116dc974787da.jpg?image_crop_resized=960x540',
+    titleFr: 'Présentation officielle de Kit', titleEn: 'Official Kit introduction',
+    author: 'Kit', duration: '1:27',
+    sourceUrl: 'https://kit.com/', verifiedOn: '2026-10-19',
+  }],
   piktochart: [{
     provider: 'native', videoId: 'pikto-ai-official',
     videoUrl: 'https://piktochart.com/wp-content/uploads/2025/08/pikto-ai-hero-1.webm',

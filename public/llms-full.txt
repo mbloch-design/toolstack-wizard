@@ -4698,38 +4698,36 @@
     "website": "https://beehiiv.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Jusqu'à 2500 abonnés",
-      "paid": "39$/mois (Scale)"
+      "free": "Gratuit jusqu’à 2 500 abonnés, envois email illimités.",
+      "paid": "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
     },
-    "description_fr": "La plateforme newsletter conçue pour la croissance et la monétisation.",
-    "description_en": "The newsletter platform built for growth and monetisation.",
-    "price_verified_on": "2026-03-13",
+    "description_fr": "Développer une publication avec newsletter, site et outils de monétisation.",
+    "description_en": "Grow a publication with newsletters, a website and monetization tools.",
+    "price_verified_on": "2026-10-19",
     "verdict_fr": {
       "keep_if": "Vous êtes un creator monétisant une newsletter et cherchez alternative à Substack",
       "avoid_if": "Vous cherchez une simple plateforme email marketing B2B",
       "strengths": [
-        "Aucune commission sur les revenus, contrairement à Substack",
-        "Croissance via recommandations et marketplace",
-        "Analytics très détaillées et dashboards"
+        "Free jusqu’à 2 500 abonnés",
+        "Envois email illimités sur les forfaits annoncés",
+        "Publication, site et monétisation réunis"
       ],
       "weaknesses": [
-        "Orienté creators ; moins complet pour B2B marketing",
-        "Pas de vraie automation avancée",
-        "Moins intégrations que Mailchimp/ActiveCampaign"
+        "Les capacités avancées et limites des produits dépendent du forfait",
+        "Le modèle publication ne répond pas à tous les besoins CRM ou multicanaux"
       ]
     },
     "verdict_en": {
       "keep_if": "You're monetizing a newsletter and want a Substack alternative",
       "avoid_if": "You're looking for a straightforward B2B email marketing platform",
       "strengths": [
-        "No cut of your revenue, unlike Substack",
-        "Audience growth via cross-recommendations and marketplace",
-        "Very detailed analytics and dashboards"
+        "Free for up to 2,500 subscribers",
+        "Unlimited email sends on the listed plans",
+        "Publishing, website and monetization together"
       ],
       "weaknesses": [
-        "Oriented toward creators; less complete for B2B marketing",
-        "No advanced automation",
-        "Fewer integrations than Mailchimp/ActiveCampaign"
+        "Advanced capabilities and product limits depend on the plan",
+        "A publication-led model does not cover every CRM or multichannel need"
       ]
     }
   },
@@ -5751,8 +5749,8 @@
       "free": "Gratuit sans carte bancaire : 300 emails/jour, jusqu’à 100 000 contacts. Quota quotidien non reportable.",
       "paid": "Tarifs publics en EUR : Starter dès 7 €/mois, Standard dès 17 €/mois, Pro dès 499 €/mois. Volume, contacts et options déterminent le coût final."
     },
-    "description_fr": "Email marketing, automatisations et messages transactionnels pour petites équipes.",
-    "description_en": "Email marketing, automation and transactional messaging for small teams.",
+    "description_fr": "Campagnes email, transactionnel et automatisations pour une petite équipe multicanale.",
+    "description_en": "Email campaigns, transactional messaging and automation for a multichannel small team.",
     "price_verified_on": "2026-09-26",
     "verdict_fr": {
       "score": "3.6/5",
@@ -21004,41 +21002,45 @@
     "website": "https://kit.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Plan gratuit jusqu’à 10 000 abonnés, avec formulaires, pages d’inscription, newsletters et segmentation. Les automatisations visuelles et séquences email ne sont pas incluses.",
-      "paid": "Creator : 390 $US/an, soit 33 $US/mois équivalent, pour 1 000 abonnés avec facturation annuelle. Le prix évolue avec la taille de la liste. Pro : 790 $US/an, soit 66 $US/mois équivalent, pour 1 000 abonnés."
+      "free": "Gratuit jusqu’à 10 000 abonnés, sans séquences ni automatisations visuelles.",
+      "paid": "Pour 1 000 abonnés : Creator 390 $US/an ; Pro 790 $US/an au tarif standard. Essai de 14 jours sans carte. Promotion Pro affichée à 593 $US la première année uniquement, soumise aux conditions en vigueur."
     },
-    "description_fr": "Newsletter, formulaires, automatisations et ventes numériques pour créateurs d’audience.",
-    "description_en": "Email marketing, forms, automations and digital sales for audience-led creators.",
+    "description_fr": "Transforme tes lecteurs en abonnés, puis accompagne-les jusqu’à ton prochain lancement.",
+    "description_en": "Turn readers into subscribers, then guide them toward your next launch.",
     "alternatives": [
       "brevo"
     ],
-    "price_verified_on": "2026-09-26",
+    "price_verified_on": "2026-10-19",
     "verdict_fr": {
-      "keep_if": "Vous développez une audience propriétaire et envoyez des newsletters régulièrement",
-      "avoid_if": "Vous avez seulement besoin d’envoyer quelques emails sans automatisation ni gestion d’audience",
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Tu veux transformer ta newsletter en canal régulier pour tes contenus et tes offres",
+      "avoid_if": "Tu cherches avant tout un CRM commercial ou des campagnes multicanales",
       "strengths": [
-        "Plan gratuit jusqu’à 10 000 abonnés",
-        "Formulaires, pages d’inscription, newsletters et segmentation réunis au même endroit",
-        "Vente de produits numériques et d’abonnements possible depuis la plateforme"
+        "Plan Free pour démarrer et conserver jusqu’à 10 000 abonnés",
+        "Creator relie formulaires, tags et séquences dans un parcours automatisé",
+        "Vente de produits numériques et d’abonnements dans le même environnement"
       ],
       "weaknesses": [
-        "Le plan gratuit n’inclut pas les automatisations visuelles ni les séquences email",
-        "Les forfaits payants évoluent avec le nombre d’abonnés : le tarif d’entrée ne vaut pas pour toutes les listes",
-        "L’outil est centré sur l’email des créateurs et ne remplace pas une suite marketing multicanale complète"
+        "Les séquences email et automatisations visuelles nécessitent un forfait payant",
+        "Le prix payant dépend de la taille de la liste ; une promotion de première année ne fixe pas le renouvellement",
+        "Changer de plateforme implique de reconstruire et tester les parcours, au-delà de l’export des contacts"
       ]
     },
     "verdict_en": {
-      "keep_if": "You are building an owned audience and send newsletters regularly",
-      "avoid_if": "You only need to send occasional emails without automations or audience management",
+      "score": "4/5",
+      "label": "Excellent",
+      "keep_if": "Your newsletter is a recurring channel for your content and offers",
+      "avoid_if": "Your main need is a sales CRM or multichannel campaigns",
       "strengths": [
-        "Free plan for up to 10,000 subscribers",
-        "Landing pages, forms, broadcasts and audience segmentation in one platform",
-        "Digital product and subscription sales are supported"
+        "Free supports a growing list of up to 10,000 subscribers",
+        "Creator connects forms, tags and sequences into automated journeys",
+        "Digital products and subscriptions in the same environment"
       ],
       "weaknesses": [
-        "The free plan does not include visual automations or email sequences",
-        "Paid plans scale with subscriber count, so the displayed entry price is not universal",
-        "The product is centered on creator email workflows, not a complete multichannel marketing suite"
+        "Sequences and visual automations require a paid plan",
+        "Paid pricing scales with list size; a first-year offer is not the renewal rate",
+        "Switching platforms requires rebuilding and testing journeys, beyond exporting contacts"
       ]
     }
   },
@@ -24484,36 +24486,37 @@
     "url_en": "https://tooltrim.com/en/tool/mailerlite",
     "website": "https://mailerlite.com",
     "category": "email-productivity",
-    "pricing": "Gratuit jusqu'à 1000 contacts ; plans payants à partir de ~10€/mois au-delà.",
-    "description_fr": "Email marketing simple et abordable, avec un plan gratuit généreux pour démarrer.",
-    "description_en": "Simple, affordable email marketing, with a generous free plan to start.",
-    "price_verified_on": "2026-09-24",
+    "pricing": {
+      "free": "Gratuit : 250 abonnés et 2 500 emails par mois.",
+      "paid": "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
+    },
+    "description_fr": "Créer des campagnes, formulaires et automatisations email pour une petite liste.",
+    "description_en": "Build campaigns, signup forms and email automations for a small list.",
+    "price_verified_on": "2026-10-19",
     "verdict_fr": {
       "keep_if": "Vous débutez email + landing pages et cherchez plan gratuit bon marché",
       "avoid_if": "Vous avez besoin automation très avancée",
       "strengths": [
-        "Plan gratuit très généreux (250 abonnés)",
-        "Interface simple et intuitive (meilleure UX)",
-        "Landing pages intégrées sans add-on"
+        "Automatisations disponibles sur Free",
+        "Formulaires et landing page pour commencer",
+        "Deux accès utilisateurs sur Free"
       ],
       "weaknesses": [
-        "Automation limitée (pas flows avancés)",
-        "CRM minimal (overkill pour contenu)",
-        "Pas multi-canal (email + landing pages seulement)"
+        "Free est limité à 250 abonnés et 2 500 emails mensuels",
+        "Le coût et les plafonds payants varient selon le palier sélectionné"
       ]
     },
     "verdict_en": {
       "keep_if": "You're starting email + landing pages and want a free, cheap option",
       "avoid_if": "You need very advanced automation",
       "strengths": [
-        "Very generous free tier (250 subscribers)",
-        "Simple and intuitive interface (best UX)",
-        "Integrated landing pages no add-on"
+        "Automations available on Free",
+        "Signup forms and a landing page to get started",
+        "Two user seats on Free"
       ],
       "weaknesses": [
-        "Limited automation (no advanced flows)",
-        "Minimal CRM (overkill for content)",
-        "No multi-channel (email + landing pages only)"
+        "Free is capped at 250 subscribers and 2,500 monthly sends",
+        "Paid cost and allowances depend on the selected tier"
       ]
     }
   },
@@ -41178,38 +41181,34 @@
     "website": "https://substack.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Gratuit (10% commission sur abonnements payants)",
-      "paid": "Aucun abonnement requis"
+      "free": "Publication gratuite ; 10 % sur les abonnements payants, plus frais Stripe.",
+      "paid": "Pas de forfait logiciel obligatoire ; frais liés aux revenus."
     },
-    "description_fr": "Plateforme newsletter et blog avec monétisation intégrée. Zéro friction.",
-    "description_en": "Newsletter and blog platform with built-in monetisation. Zero friction.",
-    "price_verified_on": "2026-03-13",
+    "description_fr": "Publier une newsletter et proposer des abonnements payants sans forfait de départ.",
+    "description_en": "Publish a newsletter and offer paid subscriptions without a starting subscription fee.",
+    "price_verified_on": "2026-10-19",
     "verdict_fr": {
       "keep_if": "Vous êtes un créateur ou journaliste voulant démarrer une newsletter",
       "avoid_if": "Vous avez besoin d'automatisation email complexe",
       "strengths": [
-        "Entièrement gratuit pour publier et démarrer",
-        "Monétisation native avec abonnements intégrés",
-        "Pas de frais initiaux ou de forfait de base"
+        "Publication gratuite sans forfait logiciel de départ",
+        "Abonnements payants intégrés"
       ],
       "weaknesses": [
-        "Commission prélevée par Substack, à laquelle s'ajoutent les frais Stripe",
-        "Pas d'outils marketing avancés ou d'automation email",
-        "Analytics basiques comparées aux plateformes spécialisées"
+        "10 % des revenus d’abonnement payant, plus les frais Stripe",
+        "Le choix doit tenir compte du modèle publication plutôt que d’un besoin d’automatisation marketing"
       ]
     },
     "verdict_en": {
       "keep_if": "You're a creator or journalist starting a newsletter",
       "avoid_if": "You need advanced email marketing and automation",
       "strengths": [
-        "Completely free to start publishing",
-        "Native monetization with subscriber paywalls",
-        "No monthly fee or minimum spend"
+        "Free publishing without an upfront software subscription",
+        "Integrated paid subscriptions"
       ],
       "weaknesses": [
-        "Substack takes a cut of subscription revenue, on top of Stripe fees",
-        "No advanced email automation or segmentation",
-        "Basic analytics compared to marketing platforms"
+        "10% of paid subscription revenue plus Stripe charges",
+        "Choose around the publication model rather than marketing automation needs"
       ]
     }
   },

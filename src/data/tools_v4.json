@@ -25085,11 +25085,11 @@
     "substitutable": true,
     "bundle_parent": null,
     "category": "email-productivity",
-    "shortDescription": "La plateforme newsletter conçue pour la croissance et la monétisation.",
-    "defaultMonthlyPrice": 37.31,
+    "shortDescription": "Développer une publication avec newsletter, site et outils de monétisation.",
+    "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Jusqu'à 2500 abonnés",
-      "paid": "39$/mois (Scale)"
+      "free": "Gratuit jusqu’à 2 500 abonnés, envois email illimités.",
+      "paid": "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
     },
     "covers": [
       "analytics-email",
@@ -25125,30 +25125,48 @@
       ],
       "threshold": "Beehiiv gagne contre Substack dès 100 abonnés payants ; pour newsletter corporate ou B2B, Mailchimp/MailerLite sont plus adaptés."
     },
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
     "betterAlternative": null,
     "migrationGuide": null,
     "host_app": null,
     "ia_use_case": null,
     "slug": "beehiiv",
-    "shortDescriptionEn": "The newsletter platform built for growth and monetisation.",
-    "description": "Beehiiv, c'est la plateforme newsletter conçue pour la croissance et la monétisation. À partir de 37.31€/mois. Pensé pour les auteurs et newslettistes et les créateurs de contenu.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : newsletter avec ambition de monétisation. À éviter si : simple email marketing — Mailchimp suffit. Rentable dès que vous monétisez votre newsletter.",
-    "longDescription": "Beehiiv, c'est la plateforme newsletter conçue pour la croissance et la monétisation. À partir de 37.31€/mois. Pensé pour les auteurs et newslettistes et les créateurs de contenu.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : newsletter avec ambition de monétisation. À éviter si : simple email marketing — Mailchimp suffit. Rentable dès que vous monétisez votre newsletter.",
-    "longDescriptionEn": "Beehiiv is the newsletter platform built for growth and monetisation. Starting at €37.31/month. Built for writers and newsletter creators and content creators.\n\nEstimated time saving: 3h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Grow a publication with newsletters, a website and monetization tools.",
+    "description": "Beehiiv s’adresse à une publication qui veut réunir newsletter, site et monétisation. La grille actuelle distingue Free, Lite, Pro et Enterprise. Free accepte jusqu’à 2 500 abonnés et les envois email sont illimités ; les fonctions avancées et limites des produits varient selon le forfait.\n\nCompare Beehiiv pour développer un média ou une newsletter comme produit. Kit répond à un angle différent : organiser des séquences autour de tes contenus, formations ou lancements. Ne choisis pas sur un ancien tarif Scale : utilise le sélecteur actuel avec ta taille de liste.",
+    "longDescription": "Beehiiv s’adresse à une publication qui veut réunir newsletter, site et monétisation. La grille actuelle distingue Free, Lite, Pro et Enterprise. Free accepte jusqu’à 2 500 abonnés et les envois email sont illimités ; les fonctions avancées et limites des produits varient selon le forfait.\n\nCompare Beehiiv pour développer un média ou une newsletter comme produit. Kit répond à un angle différent : organiser des séquences autour de tes contenus, formations ou lancements. Ne choisis pas sur un ancien tarif Scale : utilise le sélecteur actuel avec ta taille de liste.",
+    "longDescriptionEn": "Beehiiv targets a publication combining newsletters, a website and monetization. The current grid lists Free, Lite, Pro and Enterprise. Free supports up to 2,500 subscribers and email sends are unlimited; advanced features and product limits depend on the plan.\n\nCompare Beehiiv when the newsletter itself is the publication you want to grow. Kit takes a different angle: sequences around your content, courses or launches. Do not budget from an old Scale price; use the current selector at your list size.",
+    "pricingEn": {
+      "free": "Free up to 2,500 subscribers with unlimited email sends.",
+      "paid": "Price depends on the tier in the official selector; no legacy converted amount retained."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "beehiiv.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "contact_volume",
-      "compare_plan_name": "Scale",
-      "price_reliability": "high",
-      "location_sensitive": false,
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "free",
+      "verified_on": "2026-10-19",
       "official_source_url": "https://www.beehiiv.com/pricing",
+      "source_domain": "www.beehiiv.com",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 37.31
+      "price_reliability": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "free_plan_card": "Gratuit jusqu’à 2 500 abonnés, envois email illimités.",
+      "cautions": [
+        "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "summary": "Gratuit jusqu’à 2 500 abonnés, envois email illimités.",
+          "observedOn": "2026-10-19"
+        }
+      ]
     },
     "websiteUrl": "https://beehiiv.com",
     "logo": "",
@@ -25161,7 +25179,11 @@
       "Writers indépendants",
       "Thought leaders"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "kit",
+      "substack",
+      "mailerlite"
+    ],
     "verdictEn": {
       "keepIf": [
         "You're monetizing a newsletter and want a Substack alternative.",
@@ -25176,30 +25198,22 @@
       "threshold": "Beehiiv beats Substack from 100 paying subscribers onward; for corporate or B2B newsletters, Mailchimp/MailerLite are better."
     },
     "pros": [
-      "Aucune commission sur les revenus, contrairement à Substack.",
-      "Croissance via recommandations et marketplace.",
-      "Analytics très détaillées et dashboards.",
-      "Polls, surveys, engagement communautaire.",
-      "Interface moderne et creator-friendly."
+      "Free jusqu’à 2 500 abonnés.",
+      "Envois email illimités sur les forfaits annoncés.",
+      "Publication, site et monétisation réunis."
     ],
     "prosEn": [
-      "No cut of your revenue, unlike Substack.",
-      "Audience growth via cross-recommendations and marketplace.",
-      "Very detailed analytics and dashboards.",
-      "Polls, surveys, community engagement.",
-      "Modern, creator-friendly interface."
+      "Free for up to 2,500 subscribers.",
+      "Unlimited email sends on the listed plans.",
+      "Publishing, website and monetization together."
     ],
     "cons": [
-      "Orienté creators ; moins complet pour B2B marketing.",
-      "Pas de vraie automation avancée.",
-      "Moins intégrations que Mailchimp/ActiveCampaign.",
-      "Plan gratuit limité."
+      "Les capacités avancées et limites des produits dépendent du forfait.",
+      "Le modèle publication ne répond pas à tous les besoins CRM ou multicanaux."
     ],
     "consEn": [
-      "Oriented toward creators; less complete for B2B marketing.",
-      "No advanced automation.",
-      "Fewer integrations than Mailchimp/ActiveCampaign.",
-      "Limited free tier."
+      "Advanced capabilities and product limits depend on the plan.",
+      "A publication-led model does not cover every CRM or multichannel need."
     ],
     "useCases": [
       "Monétiser une newsletter via subscriptions payantes.",
@@ -25237,7 +25251,43 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://media.beehiiv.com/www/og-image/og-beehiiv.png"
+    "ogImageUrl": "https://media.beehiiv.com/www/og-image/og-beehiiv.png",
+    "descriptionEn": "Beehiiv targets a publication combining newsletters, a website and monetization. The current grid lists Free, Lite, Pro and Enterprise. Free supports up to 2,500 subscribers and email sends are unlimited; advanced features and product limits depend on the plan.\n\nCompare Beehiiv when the newsletter itself is the publication you want to grow. Kit takes a different angle: sequences around your content, courses or launches. Do not budget from an old Scale price; use the current selector at your list size.",
+    "research": {
+      "researchedOn": "2026-10-19"
+    },
+    "pricingTiers": {
+      "free": "Gratuit jusqu’à 2 500 abonnés, envois email illimités.",
+      "paid": "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "free",
+      "verified_on": "2026-10-19",
+      "official_source_url": "https://www.beehiiv.com/pricing",
+      "source_domain": "www.beehiiv.com",
+      "verification_status": "official_explicit",
+      "price_reliability": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "free_plan_card": "Free up to 2,500 subscribers with unlimited email sends.",
+      "cautions": [
+        "Price depends on the tier in the official selector; no legacy converted amount retained."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "summary": "Free up to 2,500 subscribers with unlimited email sends.",
+          "observedOn": "2026-10-19"
+        }
+      ]
+    }
   },
   {
     "id": "beehiiv-analytics",
@@ -30411,18 +30461,18 @@
     "slug": "brevo",
     "name": "Brevo",
     "category": "email-productivity",
-    "shortDescription": "Email marketing, automatisations et messages transactionnels pour petites équipes.",
-    "shortDescriptionEn": "Email marketing, automation and transactional messaging for small teams.",
-    "description": "Brevo réunit newsletters, automatisations marketing et emails transactionnels, avec des fonctions commerciales et des canaux SMS ou WhatsApp selon l’offre. L’intérêt est de centraliser les contacts et les campagnes sans ajouter un outil pour chaque canal.\n\nToolTrim le retient pour une petite équipe qui envoie régulièrement des campagnes et veut faire évoluer ses automatisations. Le gratuit permet de commencer sans carte bancaire, mais son plafond de 300 emails par jour ne convient pas à une newsletter envoyée en une fois à plusieurs milliers de personnes.\n\nLe prix ne dépend pas seulement des emails : le palier choisi fixe aussi le nombre de contacts stockés. Starter et Standard commencent à 5 000 emails par mois avec 500 contacts. Vérifiez ensemble la taille de votre base, le volume d’envoi et les options avant de choisir. Les crédits SMS et certaines fonctions Sales s’ajoutent au budget. Analyse documentaire, sans test terrain ni promesse de gain chiffré.",
-    "longDescription": "Brevo réunit newsletters, automatisations marketing et emails transactionnels, avec des fonctions commerciales et des canaux SMS ou WhatsApp selon l’offre. L’intérêt est de centraliser les contacts et les campagnes sans ajouter un outil pour chaque canal.\n\nToolTrim le retient pour une petite équipe qui envoie régulièrement des campagnes et veut faire évoluer ses automatisations. Le gratuit permet de commencer sans carte bancaire, mais son plafond de 300 emails par jour ne convient pas à une newsletter envoyée en une fois à plusieurs milliers de personnes.\n\nLe prix ne dépend pas seulement des emails : le palier choisi fixe aussi le nombre de contacts stockés. Starter et Standard commencent à 5 000 emails par mois avec 500 contacts. Vérifiez ensemble la taille de votre base, le volume d’envoi et les options avant de choisir. Les crédits SMS et certaines fonctions Sales s’ajoutent au budget. Analyse documentaire, sans test terrain ni promesse de gain chiffré.",
-    "longDescriptionEn": "Brevo combines newsletters, marketing automation and transactional emails, with sales features and SMS or WhatsApp channels depending on the plan. Its appeal is keeping contacts and campaigns together instead of adding a separate tool for every channel.\n\nToolTrim sees a fit for small teams running recurring campaigns and gradually expanding automation. The permanent free plan requires no credit card, but its 300-email daily cap does not suit a newsletter sent to thousands of subscribers at once.\n\nPricing is not based on email volume alone: the selected tier also determines contact storage. Starter and Standard begin at 5,000 emails per month and 500 contacts. Check your list size, sends and add-ons together before choosing. SMS credits and some Sales features cost extra. This is a documentation-based review, not a hands-on test or a quantified productivity claim.",
+    "shortDescription": "Campagnes email, transactionnel et automatisations pour une petite équipe multicanale.",
+    "shortDescriptionEn": "Email campaigns, transactional messaging and automation for a multichannel small team.",
+    "description": "Brevo convient à une TPE qui veut réunir campagnes email, messages transactionnels et automatisations. Le gratuit autorise 300 emails par jour ; ce plafond est moins adapté à l’envoi immédiat d’une newsletter à plusieurs milliers de lecteurs.\n\nLes paliers payants combinent volume d’envoi et contacts stockés. Compare aussi les options SMS, WhatsApp et commerciales nécessaires. Pour un créateur centré sur sa newsletter et ses lancements, Kit constitue une autre piste ; pour plusieurs canaux et le transactionnel, le périmètre de Brevo est plus directement pertinent.",
+    "longDescription": "Brevo convient à une TPE qui veut réunir campagnes email, messages transactionnels et automatisations. Le gratuit autorise 300 emails par jour ; ce plafond est moins adapté à l’envoi immédiat d’une newsletter à plusieurs milliers de lecteurs.\n\nLes paliers payants combinent volume d’envoi et contacts stockés. Compare aussi les options SMS, WhatsApp et commerciales nécessaires. Pour un créateur centré sur sa newsletter et ses lancements, Kit constitue une autre piste ; pour plusieurs canaux et le transactionnel, le périmètre de Brevo est plus directement pertinent.",
+    "longDescriptionEn": "Brevo fits a small business combining email campaigns, transactional messages and automation. Free allows 300 emails per day, which is a constraint when a newsletter needs to reach thousands of readers at once.\n\nPaid tiers combine sending volume and stored contacts. Include the SMS, WhatsApp and sales options you need. Compare Kit for a creator-led newsletter and launches; Brevo is more directly relevant when transactional messaging and multiple channels are central.",
     "pricing": {
       "free": "Gratuit sans carte bancaire : 300 emails/jour, jusqu’à 100 000 contacts. Quota quotidien non reportable.",
       "paid": "Tarifs publics en EUR : Starter dès 7 €/mois, Standard dès 17 €/mois, Pro dès 499 €/mois. Volume, contacts et options déterminent le coût final."
     },
     "pricingEn": {
-      "free": "Free without a credit card: 300 emails/day and up to 100,000 contacts. Unused daily quota does not roll over.",
-      "paid": "Published EUR prices: Starter from €7/month, Standard from €17/month, Pro from €499/month. Sending volume, contacts and add-ons determine the final cost. No currency conversion applied."
+      "free": "Free: 300 emails/day and up to 100,000 stored contacts.",
+      "paid": "US entry prices: Starter $9/month; Standard $18/month. Each tier sets sends and stored contacts; options can cost extra."
     },
     "defaultMonthlyPrice": 7,
     "pricing_v5": {
@@ -30537,8 +30587,8 @@
       "Agences marketing"
     ],
     "alternatives": [
-      "convertkit",
-      "mailchimp",
+      "kit",
+      "mailerlite",
       "activecampaign"
     ],
     "verdict": {
@@ -30650,88 +30700,49 @@
       "cautions": [
         "Published EUR prices, not a conversion. Email tiers also set contact storage limits. SMS and add-ons cost extra."
       ],
-      "verified_on": "2026-09-26",
+      "verified_on": "2026-10-19",
       "source_domain": "brevo.com",
       "usage_sensitive": true,
       "compare_plan_kind": "paid",
       "compare_plan_name": "Starter",
       "price_reliability": "public_pricing_or_public_entry_plan",
       "location_sensitive": true,
-      "official_source_url": "https://help.brevo.com/hc/fr/articles/208589409",
+      "official_source_url": "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans",
       "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 7,
+      "compare_price_monthly_eur": 0,
       "plans": [
         {
           "planKey": "free",
           "displayName": "Free",
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
           "isFree": true,
           "isComparePlan": false,
-          "nativeAmount": 0,
-          "nativeCurrency": "EUR",
-          "billingPeriod": "monthly",
-          "summary": "Permanent free plan without a credit card.",
-          "featureHighlights": [
-            "300 emails/day",
-            "Up to 100,000 contacts"
-          ],
-          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
-          "taxInclusion": "unknown",
-          "observedOn": "2026-09-26",
-          "lastConfirmedOn": "2026-09-26"
+          "summary": "Free: 300 emails/day and up to 100,000 stored contacts."
         },
         {
           "planKey": "starter",
           "displayName": "Starter",
+          "nativeAmount": 9,
+          "nativeCurrency": "USD",
           "isFree": false,
           "isComparePlan": true,
-          "nativeAmount": 7,
-          "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "summary": "From €7/month depending on volume and add-ons.",
-          "featureHighlights": [
-            "5,000 emails/month at entry tier",
-            "500 contacts at entry tier"
-          ],
-          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
-          "taxInclusion": "unknown",
-          "observedOn": "2026-09-26",
-          "lastConfirmedOn": "2026-09-26"
+          "pricingUnit": "5,000 sends / 500 stored contacts",
+          "observedOn": "2026-10-19",
+          "detailsSourceUrl": "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans"
         },
         {
           "planKey": "standard",
           "displayName": "Standard",
+          "nativeAmount": 18,
+          "nativeCurrency": "USD",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 17,
-          "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "summary": "From €17/month depending on volume and add-ons.",
-          "featureHighlights": [
-            "5,000 emails/month at entry tier",
-            "A/B testing and advanced reports"
-          ],
-          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
-          "taxInclusion": "unknown",
-          "observedOn": "2026-09-26",
-          "lastConfirmedOn": "2026-09-26"
-        },
-        {
-          "planKey": "pro",
-          "displayName": "Pro",
-          "isFree": false,
-          "isComparePlan": false,
-          "nativeAmount": 499,
-          "nativeCurrency": "EUR",
-          "billingPeriod": "monthly",
-          "summary": "From €499/month depending on volume and add-ons.",
-          "featureHighlights": [
-            "150,000 emails/month at entry tier",
-            "10 users"
-          ],
-          "detailsSourceUrl": "https://help.brevo.com/hc/fr/articles/208589409",
-          "taxInclusion": "unknown",
-          "observedOn": "2026-09-26",
-          "lastConfirmedOn": "2026-09-26"
+          "pricingUnit": "5,000 sends / 500 stored contacts",
+          "observedOn": "2026-10-19",
+          "detailsSourceUrl": "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans"
         }
       ]
     },
@@ -30757,6 +30768,10 @@
         "puissance": "Automation, A/B testing and advanced reports depending on plan. https://help.brevo.com/hc/en-us/articles/208589409 (2026-09-26).",
         "reversibilite": "CSV contact and attribute export; automation portability not established. https://help.brevo.com/hc/en-us/articles/5310065850642 (2026-09-26)."
       }
+    },
+    "descriptionEn": "Brevo fits a small business combining email campaigns, transactional messages and automation. Free allows 300 emails per day, which is a constraint when a newsletter needs to reach thousands of readers at once.\n\nPaid tiers combine sending volume and stored contacts. Include the SMS, WhatsApp and sales options you need. Compare Kit for a creator-led newsletter and launches; Brevo is more directly relevant when transactional messaging and multiple channels are central.",
+    "research": {
+      "researchedOn": "2026-10-19"
     }
   },
   {
@@ -106857,31 +106872,29 @@
     "id": "convertkit",
     "name": "Kit",
     "category": "email-productivity",
-    "description": "Kit (anciennement ConvertKit) réunit l’email marketing, les formulaires d’inscription et les automatisations pour les créateurs qui développent une audience. La plateforme permet aussi de vendre des produits numériques et des abonnements. Son plan gratuit va jusqu’à 10 000 abonnés, tandis que les séquences email et les automatisations visuelles sont réservées aux offres payantes. Le bon choix dépend donc surtout de la taille de votre liste et des fonctions dont vous avez réellement besoin.",
-    "shortDescription": "Newsletter, formulaires, automatisations et ventes numériques pour créateurs d’audience.",
+    "description": "Kit, anciennement ConvertKit, relie ta newsletter à ton activité de créateur : collecter des inscriptions, comprendre les intérêts de tes lecteurs et présenter une offre au bon moment. Il convient aux auteurs, formateurs, coachs et indépendants qui veulent construire une relation email au-delà des réseaux sociaux.\n\nCommence par un formulaire, une page d’inscription et une newsletter. Le plan Free couvre jusqu’à 10 000 abonnés ; il ne comprend ni séquences email ni automatisations visuelles. Pour tester un parcours de bienvenue ou de lancement, l’essai des fonctions payantes dure 14 jours sans carte bancaire.\n\nCreator permet de déclencher une séquence après une inscription et d’adapter le parcours aux tags. Prépare trois messages : livrer la ressource promise, aider sur un problème précis, puis présenter ton offre. Pro devient pertinent lorsque les analyses d’engagement et le travail à plusieurs répondent à un besoin réel ; il n’est pas nécessaire pour ta première séquence.\n\nKit propose aussi la vente de produits numériques et d’abonnements. Les frais de transaction et les conditions de paiement restent à intégrer à ta marge. Une migration gratuite est proposée par l’éditeur : demande quel périmètre est couvert pour tes formulaires et automatisations. L’export CSV des abonnés inclut notamment tags et champs personnalisés ; il ne constitue pas un export complet de tes parcours.\n\nLe prochain pas : crée une page d’inscription ou teste ta séquence de bienvenue. Compare ensuite ton tarif au nombre réel d’abonnés, avant de choisir un abonnement annuel. Brevo sert un besoin multicanal ; Beehiiv et Substack répondent davantage à un projet de publication.",
+    "shortDescription": "Transforme tes lecteurs en abonnés, puis accompagne-les jusqu’à ton prochain lancement.",
     "pricing": {
-      "free": "Plan gratuit jusqu’à 10 000 abonnés, avec formulaires, pages d’inscription, newsletters et segmentation. Les automatisations visuelles et séquences email ne sont pas incluses.",
-      "paid": "Creator : 390 $US/an, soit 33 $US/mois équivalent, pour 1 000 abonnés avec facturation annuelle. Le prix évolue avec la taille de la liste. Pro : 790 $US/an, soit 66 $US/mois équivalent, pour 1 000 abonnés."
+      "free": "Gratuit jusqu’à 10 000 abonnés, sans séquences ni automatisations visuelles.",
+      "paid": "Pour 1 000 abonnés : Creator 390 $US/an ; Pro 790 $US/an au tarif standard. Essai de 14 jours sans carte. Promotion Pro affichée à 593 $US la première année uniquement, soumise aux conditions en vigueur."
     },
     "affiliateLink": "https://partners.kit.com/u037oht6r48p",
     "verdict": {
       "keepIf": [
-        "Vous développez une audience propriétaire et envoyez des newsletters régulièrement.",
-        "Vous voulez relier formulaires, segmentation et séquences email dans le même outil.",
-        "Vous vendez des produits numériques ou une newsletter payante depuis votre activité de créateur."
+        "Tu veux transformer ta newsletter en canal régulier pour tes contenus et tes offres.",
+        "Tu veux relier inscriptions, tags et séquences sans multiplier les outils."
       ],
       "avoidIf": [
-        "Vous avez seulement besoin d’envoyer quelques emails sans automatisation ni gestion d’audience.",
-        "Votre priorité est une plateforme marketing multicanale complète plutôt qu’un outil centré sur l’email des créateurs.",
-        "Votre liste dépasse le volume inclus dans le plan gratuit et votre budget ne permet pas un forfait payant."
+        "Tu cherches avant tout un CRM commercial ou des campagnes multicanales.",
+        "Tu ne veux pas payer pour automatiser tes séquences : Free ne les inclut pas."
       ],
-      "threshold": "Kit est à considérer si la newsletter est un canal durable pour développer et monétiser votre audience. Commencez par le plan gratuit si ses limites fonctionnelles vous conviennent. Avant de passer à Creator ou Pro, comparez le tarif selon votre nombre d’abonnés et vérifiez que les séquences, automatisations ou outils d’analyse supplémentaires répondent à un besoin réel."
+      "threshold": "Commence avec une page d’inscription. Pour tester une séquence de bienvenue ou de lancement, utilise l’essai de 14 jours sans carte ; choisis Creator seulement si ce parcours répond à ton besoin."
     },
     "seo": {
-      "presentationTitleFr": "Kit (ex-ConvertKit) : prix, fonctionnalités et avis 2026 | ToolTrim",
-      "presentationTitleEn": "Kit (formerly ConvertKit): pricing, features and review 2026 | ToolTrim",
-      "presentationMetaDescriptionFr": "Kit, ex-ConvertKit, propose newsletters, formulaires, automatisations et vente de produits numériques. Prix vérifiés, limites du gratuit et avis indépendant.",
-      "presentationMetaDescriptionEn": "Kit, formerly ConvertKit, combines newsletters, forms, automations and digital product sales. Explore current pricing, free-plan limits and an independent review.",
+      "presentationTitleFr": "Kit : avis, prix et automatisation email pour créateurs | ToolTrim",
+      "presentationTitleEn": "Kit review: free plan, pricing & creator email automation | ToolTrim",
+      "presentationMetaDescriptionFr": "Développe ta newsletter avec Kit. Compare Free et Creator, les prix annuels et l’essai de 14 jours sans carte pour préparer tes séquences.",
+      "presentationMetaDescriptionEn": "Build your newsletter and launch email sequences with Kit. Compare Free and Creator, current annual pricing and the 14-day no-card trial.",
       "aiAngle": {
         "stance": "augmente",
         "aiTools": [],
@@ -106890,7 +106903,9 @@
         "replaceEn": "Replace Kit with an AI? No: sending emails to a subscriber list with deliverability and automations remains a technical infrastructure need. AI helps write the emails, it doesn't replace the sending platform. Verdict: AI augments writing, sending infrastructure remains the product.",
         "replaceFr": "Remplacer Kit par une IA ? Non : envoyer des emails à une liste d'abonnés avec délivrabilité et automatisations reste un besoin d'infrastructure technique. L'IA aide à rédiger les emails, elle ne remplace pas la plateforme d'envoi. Verdict : l'IA augmente la rédaction, l'infrastructure d'envoi reste le produit."
       },
-      "metaDescription": "Kit sur ToolTrim : prix, cas d'usage, limites et avis critique pour décider si Kit mérite sa place dans ta stack."
+      "metaDescription": "Kit : newsletter, séquences de lancement, prix et essai gratuit pour créateurs.",
+      "idealForEn": "Creators, educators and independent writers building an audience and launching offers by email.",
+      "idealForFr": "Créateurs, formateurs et auteurs indépendants qui développent une audience et lancent leurs offres par email."
     },
     "articles": [],
     "alternatives": [
@@ -106918,21 +106933,20 @@
       "newsletter"
     ],
     "freeAlternative": "brevo",
-    "soloRelevance": "à vérifier selon volume",
-    "teamRelevance": "utile si usage récurrent",
+    "soloRelevance": "high",
+    "teamRelevance": "high",
     "bestFor": [
       "content-creator",
       "writer"
     ],
-    "defaultMonthlyPrice": 29.03,
+    "defaultMonthlyPrice": 0,
     "pricingTiers": {
-      "free": "Gratuit jusqu’à 10 000 abonnés. Les automatisations visuelles et séquences email ne sont pas incluses.",
-      "paid": "À 1 000 abonnés, Creator coûte 390 $US/an (33 $US/mois équivalent) et Pro 790 $US/an (66 $US/mois équivalent), avec facturation annuelle. Les tarifs varient selon le nombre d’abonnés."
+      "free": "Gratuit jusqu’à 10 000 abonnés, sans séquences ni automatisations visuelles.",
+      "paid": "Pour 1 000 abonnés : Creator 390 $US/an ; Pro 790 $US/an au tarif standard. Essai de 14 jours sans carte. Promotion Pro affichée à 593 $US la première année uniquement, soumise aux conditions en vigueur."
     },
     "relevantFor": [
-      "Creators et writers indépendants",
-      "Online course instructors",
-      "Content creators avec monetization"
+      "Créateurs qui vendent leurs contenus et formations",
+      "Auteurs et indépendants avec une newsletter régulière"
     ],
     "tool_type": "gestion",
     "substitutable": true,
@@ -106952,28 +106966,28 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "kit",
-    "shortDescriptionEn": "Email marketing, forms, automations and digital sales for audience-led creators.",
-    "longDescription": "Kit (anciennement ConvertKit) est une plateforme d’email marketing destinée aux créateurs, auteurs, formateurs et indépendants qui construisent une audience. Elle rassemble formulaires et pages d’inscription, newsletters, segmentation des abonnés et automatisations visuelles. Les créateurs peuvent également vendre des produits numériques ou des abonnements. Le plan gratuit couvre jusqu’à 10 000 abonnés, mais sans séquences email ni automatisations visuelles. Les forfaits payants ajoutent ces fonctions et leur prix dépend du volume d’abonnés. Kit convient surtout si l’email joue un rôle régulier dans l’acquisition, la relation ou la monétisation de votre audience. Pour un usage ponctuel ou une stratégie marketing fortement multicanale, comparez d’abord les besoins et les coûts avec d’autres plateformes.",
-    "longDescriptionEn": "Kit, formerly ConvertKit, is an email marketing platform for creators, authors, educators and independent businesses building an audience. It brings together signup forms and landing pages, newsletters, subscriber segmentation and visual automations. Creators can also sell digital products and subscriptions. The free plan covers up to 10,000 subscribers but does not include email sequences or visual automations. Paid plans add those features, with prices based on subscriber count. Kit is most relevant when email plays a regular role in growing, engaging or monetizing an audience. For occasional email use or a strongly multi-channel marketing strategy, compare your requirements and total costs with other platforms first.",
+    "shortDescriptionEn": "Turn readers into subscribers, then guide them toward your next launch.",
+    "longDescription": "Kit, anciennement ConvertKit, relie ta newsletter à ton activité de créateur : collecter des inscriptions, comprendre les intérêts de tes lecteurs et présenter une offre au bon moment. Il convient aux auteurs, formateurs, coachs et indépendants qui veulent construire une relation email au-delà des réseaux sociaux.\n\nCommence par un formulaire, une page d’inscription et une newsletter. Le plan Free couvre jusqu’à 10 000 abonnés ; il ne comprend ni séquences email ni automatisations visuelles. Pour tester un parcours de bienvenue ou de lancement, l’essai des fonctions payantes dure 14 jours sans carte bancaire.\n\nCreator permet de déclencher une séquence après une inscription et d’adapter le parcours aux tags. Prépare trois messages : livrer la ressource promise, aider sur un problème précis, puis présenter ton offre. Pro devient pertinent lorsque les analyses d’engagement et le travail à plusieurs répondent à un besoin réel ; il n’est pas nécessaire pour ta première séquence.\n\nKit propose aussi la vente de produits numériques et d’abonnements. Les frais de transaction et les conditions de paiement restent à intégrer à ta marge. Une migration gratuite est proposée par l’éditeur : demande quel périmètre est couvert pour tes formulaires et automatisations. L’export CSV des abonnés inclut notamment tags et champs personnalisés ; il ne constitue pas un export complet de tes parcours.\n\nLe prochain pas : crée une page d’inscription ou teste ta séquence de bienvenue. Compare ensuite ton tarif au nombre réel d’abonnés, avant de choisir un abonnement annuel. Brevo sert un besoin multicanal ; Beehiiv et Substack répondent davantage à un projet de publication.",
+    "longDescriptionEn": "Kit, formerly ConvertKit, connects your newsletter to your creator business: collect signups, understand readers’ interests and introduce an offer at the right moment. It fits authors, educators, coaches and independent businesses building an email relationship beyond social media.\n\nStart with a form, a signup page and a newsletter. Free supports up to 10,000 subscribers but does not include email sequences or visual automations. To test a welcome journey or launch sequence, the paid-feature trial lasts 14 days without a credit card.\n\nCreator can trigger a sequence after signup and branch journeys using tags. Draft three messages: deliver the promised resource, solve one specific problem, then introduce your offer. Pro is worth considering when engagement analytics and collaboration solve an actual need, not simply because you are starting a newsletter.\n\nKit also supports digital products and subscriptions. Account for transaction charges and payment conditions in your margin. The publisher offers free migration: confirm which forms and automations it will rebuild. Subscriber CSV exports include tags and custom fields, but are not a complete export of your automated journeys.\n\nYour next step: publish one signup page or test your welcome sequence. Then price the plan at your actual subscriber count before making an annual commitment. Compare Brevo for multichannel marketing, and Beehiiv or Substack for a publication-led business.",
     "pricingEn": {
-      "free": "Free plan for up to 10,000 subscribers, with forms, landing pages, broadcasts and segmentation. Visual automations and email sequences are not included.",
-      "paid": "For 1,000 subscribers, Creator is $390/year ($33/month equivalent) and Pro is $790/year ($66/month equivalent), billed annually. Pricing changes with subscriber count."
+      "free": "Free up to 10,000 subscribers; no sequences or visual automations.",
+      "paid": "At 1,000 subscribers: Creator $390/year; Pro standard $790/year. 14-day trial without a card. Pro offer displayed at $593 for the first year only, subject to current eligibility."
     },
     "pricing_v5": {
       "cautions": [
-        "Les forfaits payants dépendent du nombre d’abonnés. Les tarifs affichés sont des équivalents mensuels avec facturation annuelle, pour 1 000 abonnés."
+        "Prix en USD pour 1 000 abonnés, paiement annuel et non mensuel. La promotion Pro de première année ne fixe pas le renouvellement. Conditions et taxes à confirmer."
       ],
-      "verified_on": "2026-09-26",
+      "verified_on": "2026-10-19",
       "source_domain": "kit.com",
       "usage_sensitive": true,
-      "compare_plan_kind": "paid",
-      "compare_plan_name": "Creator",
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free",
       "price_reliability": "public_pricing_or_public_entry_plan",
       "location_sensitive": true,
       "official_source_url": "https://kit.com/pricing",
       "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 29.03,
-      "free_plan_card": "Jusqu’à 10 000 abonnés. Formulaires, pages d’inscription, newsletters et segmentation inclus. Pas de séquences email ni d’automatisations visuelles.",
+      "compare_price_monthly_eur": 0,
+      "free_plan_card": "Gratuit jusqu’à 10 000 abonnés, sans séquences ni automatisations visuelles.",
       "free_plan_cardEn": "Up to 10,000 subscribers. Includes forms, landing pages, broadcasts and segmentation. Email sequences and visual automations are not included.",
       "cautionsEn": [
         "Paid pricing depends on subscriber count. The displayed Creator and Pro rates are monthly equivalents for annual billing at 1,000 subscribers."
@@ -106982,64 +106996,54 @@
         {
           "planKey": "free",
           "displayName": "Free",
-          "summary": "Jusqu’à 10 000 abonnés, avec formulaires, pages d’inscription et newsletters.",
-          "featureHighlights": [
-            "Formulaires et pages illimités",
-            "Newsletters et segmentation",
-            "Sans séquences email ni automatisations visuelles"
-          ],
-          "detailsSourceUrl": "https://kit.com/pricing",
-          "pricingUnit": "jusqu’à 10 000 abonnés",
           "isFree": true,
-          "isComparePlan": false,
+          "isComparePlan": true,
           "nativeAmount": 0,
-          "nativeCurrency": "USD"
+          "nativeCurrency": "USD",
+          "pricingUnit": "jusqu’à 10 000 abonnés",
+          "summary": "Gratuit jusqu’à 10 000 abonnés, sans séquences ni automatisations visuelles."
         },
         {
           "planKey": "creator",
           "displayName": "Creator",
-          "summary": "390 $US/an, soit 33 $US/mois équivalent, pour 1 000 abonnés. Tarif payé annuellement et variable selon la taille de la liste.",
-          "featureHighlights": [
-            "Automatisations visuelles",
-            "Séquences email",
-            "Kit MCP et tests A/B d’objet"
-          ],
-          "detailsSourceUrl": "https://kit.com/pricing",
-          "pricingUnit": "jusqu’à 1 000 abonnés",
           "isFree": false,
-          "isComparePlan": true,
+          "isComparePlan": false,
           "nativeAmount": 390,
           "nativeCurrency": "USD",
           "billingPeriod": "annual",
           "billingCommitment": "annual_prepaid",
-          "taxInclusion": "unknown",
+          "pricingUnit": "1 000 abonnés",
           "observedMarket": "US",
-          "observedLocale": "en-US",
-          "observedOn": "2026-09-26",
-          "lastConfirmedOn": "2026-09-26"
+          "observedOn": "2026-10-19",
+          "lastConfirmedOn": "2026-10-19",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://kit.com/pricing",
+          "summary": "Séquences de bienvenue et de lancement avec automatisations visuelles.",
+          "featureHighlights": [
+            "Séquences email",
+            "Automatisations visuelles"
+          ]
         },
         {
           "planKey": "pro",
           "displayName": "Pro",
-          "summary": "790 $US/an, soit 66 $US/mois équivalent, pour 1 000 abonnés. Tarif payé annuellement et variable selon la taille de la liste.",
-          "featureHighlights": [
-            "Subscriber Signals et analyses d’engagement",
-            "Utilisateurs illimités",
-            "Rapports de délivrabilité"
-          ],
-          "detailsSourceUrl": "https://kit.com/pricing",
-          "pricingUnit": "jusqu’à 1 000 abonnés",
           "isFree": false,
           "isComparePlan": false,
           "nativeAmount": 790,
           "nativeCurrency": "USD",
           "billingPeriod": "annual",
           "billingCommitment": "annual_prepaid",
-          "taxInclusion": "unknown",
+          "pricingUnit": "1 000 abonnés",
           "observedMarket": "US",
-          "observedLocale": "en-US",
-          "observedOn": "2026-09-26",
-          "lastConfirmedOn": "2026-09-26"
+          "observedOn": "2026-10-19",
+          "lastConfirmedOn": "2026-10-19",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://kit.com/pricing",
+          "summary": "Tarif standard de renouvellement ; offres temporaires possibles la première année.",
+          "featureHighlights": [
+            "Analyses d’engagement",
+            "Utilisateurs illimités"
+          ]
         }
       ]
     },
@@ -107047,56 +107051,50 @@
     "logo": "/tool-media/logos/kit.png",
     "verdictEn": {
       "keepIf": [
-        "You are building an owned audience and send newsletters regularly.",
-        "You want forms, segmentation and email sequences in one platform.",
-        "You sell digital products or a paid newsletter as part of your creator business."
+        "Your newsletter is a recurring channel for your content and offers.",
+        "You want signups, tags and email sequences in one workflow."
       ],
       "avoidIf": [
-        "You only need to send occasional emails without automations or audience management.",
-        "You need a full multi-channel marketing suite rather than creator-focused email tools.",
-        "Your list exceeds the free-plan limit and paid pricing is outside your budget."
+        "Your main need is a sales CRM or multichannel campaigns.",
+        "You need automated sequences without a paid plan: Free does not include them."
       ],
-      "threshold": "Consider Kit when newsletters are a consistent channel for growing and monetizing your audience. Start with the free plan if its feature limits fit your workflow. Before upgrading to Creator or Pro, check pricing for your subscriber count and confirm you need the additional sequences, automations or analytics."
+      "threshold": "Start with one signup page. Use the 14-day, no-card trial to test a welcome or launch sequence; choose Creator only if that journey meets your needs."
     },
     "pros": [
-      "Plan gratuit jusqu’à 10 000 abonnés.",
-      "Formulaires, pages d’inscription, newsletters et segmentation réunis au même endroit.",
-      "Vente de produits numériques et d’abonnements possible depuis la plateforme.",
-      "Creator ajoute les automatisations visuelles et les séquences email.",
-      "Kit MCP est inclus dans Creator et Pro.",
-      "Kit annonce une migration gratuite."
+      "Plan Free pour démarrer et conserver jusqu’à 10 000 abonnés.",
+      "Creator relie formulaires, tags et séquences dans un parcours automatisé.",
+      "Vente de produits numériques et d’abonnements dans le même environnement.",
+      "Essai de 14 jours sans carte pour tester les fonctions payantes.",
+      "Export des abonnés en CSV et migration gratuite proposée par Kit."
     ],
     "prosEn": [
-      "Free plan for up to 10,000 subscribers.",
-      "Landing pages, forms, broadcasts and audience segmentation in one platform.",
-      "Digital product and subscription sales are supported.",
-      "Creator adds visual automations and email sequences.",
-      "Creator and Pro include Kit MCP.",
-      "Free migration is advertised by Kit."
+      "Free supports a growing list of up to 10,000 subscribers.",
+      "Creator connects forms, tags and sequences into automated journeys.",
+      "Digital products and subscriptions in the same environment.",
+      "A 14-day, no-card trial to test paid features.",
+      "Subscriber CSV export and migration assistance offered by Kit."
     ],
     "cons": [
-      "Le plan gratuit n’inclut pas les automatisations visuelles ni les séquences email.",
-      "Les forfaits payants évoluent avec le nombre d’abonnés : le tarif d’entrée ne vaut pas pour toutes les listes.",
-      "L’outil est centré sur l’email des créateurs et ne remplace pas une suite marketing multicanale complète."
+      "Les séquences email et automatisations visuelles nécessitent un forfait payant.",
+      "Le prix payant dépend de la taille de la liste ; une promotion de première année ne fixe pas le renouvellement.",
+      "Changer de plateforme implique de reconstruire et tester les parcours, au-delà de l’export des contacts."
     ],
     "consEn": [
-      "The free plan does not include visual automations or email sequences.",
-      "Paid plans scale with subscriber count, so the displayed entry price is not universal.",
-      "The product is centered on creator email workflows, not a complete multichannel marketing suite."
+      "Sequences and visual automations require a paid plan.",
+      "Paid pricing scales with list size; a first-year offer is not the renewal rate.",
+      "Switching platforms requires rebuilding and testing journeys, beyond exporting contacts."
     ],
     "useCases": [
-      "Créer des formulaires et pages d’inscription pour développer une liste email.",
-      "Envoyer des newsletters et segmenter les abonnés selon leurs intérêts.",
-      "Automatiser une séquence de bienvenue ou une campagne de lancement avec Creator.",
-      "Vendre des produits numériques ou proposer un abonnement payant.",
-      "Suivre l’engagement des abonnés avec les outils inclus dans Pro."
+      "Livrer une ressource gratuite après une inscription.",
+      "Accueillir un nouvel abonné avec une séquence Creator.",
+      "Préparer un lancement selon les intérêts des lecteurs.",
+      "Vendre un produit numérique ou une newsletter payante."
     ],
     "useCasesEn": [
-      "Create signup forms and landing pages to grow an email list.",
-      "Send newsletters and segment subscribers by interest.",
-      "Automate a welcome sequence or launch campaign with Creator.",
-      "Sell digital products or offer a paid newsletter.",
-      "Monitor subscriber engagement with Pro features."
+      "Deliver a free resource after signup.",
+      "Welcome a subscriber with a Creator email sequence.",
+      "Prepare a launch around readers’ interests.",
+      "Sell a digital product or paid newsletter."
     ],
     "personas": [
       "ALIX",
@@ -107128,91 +107126,114 @@
     "force_silence": false,
     "ogImageUrl": "/og-images/kit.jpg",
     "galleryImages": [
-      "/tool-media/kit/visual-automations.png"
+      "/tool-media/kit/visual-automations.png",
+      "https://media.kit.com/images/pages/features/automations/segmenting-kit-emails-tags.jpg?q=75&fm=webp&auto=format",
+      "https://media.kit.com/images/pages/features/commerce/commerce-kit-automations.jpg?q=75&fm=webp&auto=format"
     ],
     "affiliateDisclosureFr": "Lien affilié : ToolTrim peut percevoir une commission si vous souscrivez à un forfait payant, sans coût supplémentaire pour vous.",
     "affiliateDisclosureEn": "Affiliate link: ToolTrim may earn a commission if you subscribe to a paid plan, at no extra cost to you.",
-    "affiliateCtaLabelFr": "Commencer gratuitement",
-    "affiliateCtaLabelEn": "Start for free",
+    "affiliateCtaLabelFr": "Essayer Kit gratuitement",
+    "affiliateCtaLabelEn": "Try Kit for free",
     "pricing_v5En": {
       "cautions": [
-        "Paid pricing depends on subscriber count. Displayed rates are monthly equivalents with annual billing, for 1,000 subscribers."
+        "Prices in USD at 1,000 subscribers; annual payment, not a monthly charge. Pro first-year promotion renews at the standard rate. Confirm current eligibility and taxes."
       ],
-      "verified_on": "2026-09-26",
+      "verified_on": "2026-10-19",
       "source_domain": "kit.com",
       "usage_sensitive": true,
-      "compare_plan_kind": "paid",
-      "compare_plan_name": "Creator",
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free",
       "price_reliability": "public_pricing_or_public_entry_plan",
       "location_sensitive": true,
       "official_source_url": "https://kit.com/pricing",
       "verification_status": "verified_public_pricing_page",
-      "compare_price_monthly_eur": 29.03,
-      "free_plan_card": "Up to 10,000 subscribers. Includes forms, landing pages, broadcasts and segmentation. Email sequences and visual automations are not included.",
+      "compare_price_monthly_eur": 0,
+      "free_plan_card": "Free up to 10,000 subscribers; no sequences or visual automations.",
       "plans": [
         {
           "planKey": "free",
           "displayName": "Free",
-          "summary": "Up to 10,000 subscribers, with forms, landing pages and broadcasts.",
-          "featureHighlights": [
-            "Unlimited forms and landing pages",
-            "Broadcasts and segmentation",
-            "No email sequences or visual automations"
-          ],
-          "detailsSourceUrl": "https://kit.com/pricing",
-          "pricingUnit": "up to 10,000 subscribers",
           "isFree": true,
-          "isComparePlan": false,
+          "isComparePlan": true,
           "nativeAmount": 0,
-          "nativeCurrency": "USD"
+          "nativeCurrency": "USD",
+          "pricingUnit": "up to 10,000 subscribers",
+          "summary": "Free up to 10,000 subscribers; no sequences or visual automations."
         },
         {
           "planKey": "creator",
           "displayName": "Creator",
-          "summary": "$390/year, or $33/month equivalent, for 1,000 subscribers. Billed annually; price varies with list size.",
-          "featureHighlights": [
-            "Visual automations",
-            "Email sequences",
-            "Kit MCP and subject-line A/B tests"
-          ],
-          "detailsSourceUrl": "https://kit.com/pricing",
-          "pricingUnit": "up to 1,000 subscribers",
           "isFree": false,
-          "isComparePlan": true,
+          "isComparePlan": false,
           "nativeAmount": 390,
           "nativeCurrency": "USD",
           "billingPeriod": "annual",
           "billingCommitment": "annual_prepaid",
-          "taxInclusion": "unknown",
+          "pricingUnit": "1,000 subscribers",
           "observedMarket": "US",
-          "observedLocale": "en-US",
-          "observedOn": "2026-09-26",
-          "lastConfirmedOn": "2026-09-26"
+          "observedOn": "2026-10-19",
+          "lastConfirmedOn": "2026-10-19",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://kit.com/pricing",
+          "summary": "Welcome and launch sequences with visual automations.",
+          "featureHighlights": [
+            "Email sequences",
+            "Visual automations"
+          ]
         },
         {
           "planKey": "pro",
           "displayName": "Pro",
-          "summary": "$790/year, or $66/month equivalent, for 1,000 subscribers. Billed annually; price varies with list size.",
-          "featureHighlights": [
-            "Subscriber Signals and engagement analytics",
-            "Unlimited users",
-            "Deliverability reporting"
-          ],
-          "detailsSourceUrl": "https://kit.com/pricing",
-          "pricingUnit": "up to 1,000 subscribers",
           "isFree": false,
           "isComparePlan": false,
           "nativeAmount": 790,
           "nativeCurrency": "USD",
           "billingPeriod": "annual",
           "billingCommitment": "annual_prepaid",
-          "taxInclusion": "unknown",
+          "pricingUnit": "1,000 subscribers",
           "observedMarket": "US",
-          "observedLocale": "en-US",
-          "observedOn": "2026-09-26",
-          "lastConfirmedOn": "2026-09-26"
+          "observedOn": "2026-10-19",
+          "lastConfirmedOn": "2026-10-19",
+          "taxInclusion": "unknown",
+          "detailsSourceUrl": "https://kit.com/pricing",
+          "summary": "Standard renewal price; temporary first-year offers may apply.",
+          "featureHighlights": [
+            "Engagement analytics",
+            "Unlimited users"
+          ]
         }
       ]
+    },
+    "descriptionEn": "Kit, formerly ConvertKit, connects your newsletter to your creator business: collect signups, understand readers’ interests and introduce an offer at the right moment. It fits authors, educators, coaches and independent businesses building an email relationship beyond social media.\n\nStart with a form, a signup page and a newsletter. Free supports up to 10,000 subscribers but does not include email sequences or visual automations. To test a welcome journey or launch sequence, the paid-feature trial lasts 14 days without a credit card.\n\nCreator can trigger a sequence after signup and branch journeys using tags. Draft three messages: deliver the promised resource, solve one specific problem, then introduce your offer. Pro is worth considering when engagement analytics and collaboration solve an actual need, not simply because you are starting a newsletter.\n\nKit also supports digital products and subscriptions. Account for transaction charges and payment conditions in your margin. The publisher offers free migration: confirm which forms and automations it will rebuild. Subscriber CSV exports include tags and custom fields, but are not a complete export of your automated journeys.\n\nYour next step: publish one signup page or test your welcome sequence. Then price the plan at your actual subscriber count before making an annual commitment. Compare Brevo for multichannel marketing, and Beehiiv or Substack for a publication-led business.",
+    "research": {
+      "researchedOn": "2026-10-19"
+    },
+    "relevantForEn": [
+      "Creators selling content and courses",
+      "Writers and independent businesses with a recurring newsletter"
+    ],
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 4,
+      "notedOn": "2026-10-19",
+      "lastActivityVerifiedOn": null,
+      "evidence": {
+        "valeurAjoutee": "Formulaires, segmentation et vente de contenus réunis autour de l’audience. Source : https://kit.com/features/commerce (19/10/2026).",
+        "simplicite": "Un formulaire puis une séquence donnent un point de départ concret ; les tags demandent une structure claire. Source : https://help.kit.com/en/articles/5523023-how-to-create-your-first-kit-visual-automation (19/10/2026).",
+        "utilisation": "Newsletters régulières et séquences de bienvenue ou de lancement. Source : https://help.kit.com/en/articles/5523023-how-to-create-your-first-kit-visual-automation (19/10/2026).",
+        "puissance": "Automatisations visuelles illimitées sur les offres payantes ; outil centré sur les créateurs. Source : https://help.kit.com/en/articles/5523023-how-to-create-your-first-kit-visual-automation (19/10/2026).",
+        "reversibilite": "Export CSV des abonnés avec tags et champs personnalisés ; les parcours restent à reconstruire ailleurs. Source : https://help.kit.com/en/articles/2502489-how-to-export-subscribers-in-kit (19/10/2026)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Forms, segmentation and content sales connected around an audience. Source: https://kit.com/features/commerce (2026-10-19).",
+        "simplicite": "A form and welcome sequence provide a concrete starting point; tags need a clear structure. Source: https://help.kit.com/en/articles/5523023-how-to-create-your-first-kit-visual-automation (2026-10-19).",
+        "utilisation": "Recurring newsletters and welcome or launch sequences. Source: https://help.kit.com/en/articles/5523023-how-to-create-your-first-kit-visual-automation (2026-10-19).",
+        "puissance": "Unlimited visual automations on paid plans, focused on creator workflows. Source: https://help.kit.com/en/articles/5523023-how-to-create-your-first-kit-visual-automation (2026-10-19).",
+        "reversibilite": "Subscriber CSV exports include tags and custom fields; journeys still need rebuilding elsewhere. Source: https://help.kit.com/en/articles/2502489-how-to-export-subscribers-in-kit (2026-10-19)."
+      }
     }
   },
   {
@@ -124681,51 +124702,45 @@
     "slug": "mailerlite",
     "name": "Mailerlite",
     "category": "email-productivity",
-    "shortDescription": "Email marketing simple et abordable, avec un plan gratuit généreux pour démarrer.",
-    "shortDescriptionEn": "Simple, affordable email marketing, with a generous free plan to start.",
-    "description": "MailerLite est un outil d'email marketing positionné comme alternative plus simple et moins chère à Mailchimp ou ActiveCampaign : éditeur de newsletter par glisser-déposer, automatisations de base, pages de destination, le tout avec un plan gratuit qui couvre déjà jusqu'à 1000 contacts.\n\nPour un créateur ou une petite entreprise qui démarre sa liste email, c'est souvent le meilleur rapport fonctionnalités/prix pour les automatisations simples (séquence de bienvenue, relance panier abandonné).",
-    "longDescription": "MailerLite est un outil d'email marketing positionné comme alternative plus simple et moins chère à Mailchimp ou ActiveCampaign : éditeur de newsletter par glisser-déposer, automatisations de base, pages de destination, le tout avec un plan gratuit qui couvre déjà jusqu'à 1000 contacts.\n\nPour un créateur ou une petite entreprise qui démarre sa liste email, c'est souvent le meilleur rapport fonctionnalités/prix pour les automatisations simples (séquence de bienvenue, relance panier abandonné).",
-    "longDescriptionEn": "MailerLite is an email marketing tool positioned as a simpler, cheaper alternative to Mailchimp or ActiveCampaign: drag-and-drop newsletter editor, basic automations, landing pages, all with a free plan already covering up to 1,000 contacts.\n\nFor a creator or small business starting an email list, it's often the best features-to-price ratio for simple automations (welcome sequence, abandoned cart follow-up).",
-    "pricing": "Gratuit jusqu'à 1000 contacts ; plans payants à partir de ~10€/mois au-delà.",
-    "pricingEn": "Free up to 1,000 contacts; paid plans from ~$10/month beyond that.",
-    "defaultMonthlyPrice": 10.3,
+    "shortDescription": "Créer des campagnes, formulaires et automatisations email pour une petite liste.",
+    "shortDescriptionEn": "Build campaigns, signup forms and email automations for a small list.",
+    "description": "MailerLite réunit campagnes, formulaires et automatisations email. La page tarifaire actuelle distingue Free, Comfort, Power et Enterprise. Free comprend 250 abonnés et 2 500 emails mensuels, et non les 1 000 contacts encore mentionnés dans certaines anciennes fiches.\n\nC’est une piste pour commencer sur une petite liste et tester une automatisation sans abonnement. Pour une audience qui grandit, compare les paliers d’abonnés, les envois et les fonctions incluses. Kit est une autre option lorsque le parcours de créateur, les séquences de lancement et la vente de produits sont au centre du projet.",
+    "longDescription": "MailerLite réunit campagnes, formulaires et automatisations email. La page tarifaire actuelle distingue Free, Comfort, Power et Enterprise. Free comprend 250 abonnés et 2 500 emails mensuels, et non les 1 000 contacts encore mentionnés dans certaines anciennes fiches.\n\nC’est une piste pour commencer sur une petite liste et tester une automatisation sans abonnement. Pour une audience qui grandit, compare les paliers d’abonnés, les envois et les fonctions incluses. Kit est une autre option lorsque le parcours de créateur, les séquences de lancement et la vente de produits sont au centre du projet.",
+    "longDescriptionEn": "MailerLite combines email campaigns, signup forms and automations. Its current pricing page lists Free, Comfort, Power and Enterprise. Free includes 250 subscribers and 2,500 monthly sends, not the 1,000 contacts still mentioned in older descriptions.\n\nConsider it for starting a small list and testing automation without a subscription. As the list grows, compare subscriber tiers, sending allowances and included features. Kit is another option when creator journeys, launch sequences and selling products drive the project.",
+    "pricing": {
+      "free": "Gratuit : 250 abonnés et 2 500 emails par mois.",
+      "paid": "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
+    },
+    "pricingEn": {
+      "free": "Free: 250 subscribers and 2,500 monthly emails.",
+      "paid": "Price depends on the tier in the official selector; no legacy converted amount retained."
+    },
+    "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-09-24",
-      "source_domain": "mailerlite.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "flat",
-      "compare_plan_name": "Comfort",
-      "price_reliability": "high",
-      "location_sensitive": false,
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "free",
+      "verified_on": "2026-10-19",
       "official_source_url": "https://www.mailerlite.com/pricing",
+      "source_domain": "www.mailerlite.com",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 10.3,
+      "price_reliability": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "free_plan_card": "Gratuit : 250 abonnés et 2 500 emails par mois.",
+      "cautions": [
+        "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
+      ],
       "plans": [
         {
           "planKey": "free",
           "displayName": "Free",
           "isFree": true,
-          "isComparePlan": false,
+          "isComparePlan": true,
           "nativeAmount": 0,
           "nativeCurrency": "USD",
-          "observedOn": "2026-09-24"
-        },
-        {
-          "planKey": "compare-usd",
-          "displayName": "Comfort",
-          "isFree": false,
-          "isComparePlan": true,
-          "pricingUnit": "par compte",
-          "billingPeriod": "monthly",
-          "billingCommitment": "monthly",
-          "taxInclusion": "unknown",
-          "detailsSourceUrl": "https://www.mailerlite.com/pricing",
-          "observedOn": "2026-09-24",
-          "lastConfirmedOn": "2026-09-24",
-          "nativeAmount": 12,
-          "nativeCurrency": "USD",
-          "observedMarket": null
+          "summary": "Gratuit : 250 abonnés et 2 500 emails par mois.",
+          "observedOn": "2026-10-19"
         }
       ]
     },
@@ -124734,36 +124749,22 @@
     "logo": "https://logo.clearbit.com/mailerlite.com",
     "seo": {},
     "pros": [
-      "Plan gratuit très généreux (250 abonnés).",
-      "Interface simple et intuitive (meilleure UX).",
-      "Landing pages intégrées sans add-on.",
-      "Aucune commission ni frais de plateforme sur vos revenus.",
-      "Support excellent et humain.",
-      "Pricing gentle escalade.",
-      "2 user seats even on free tier."
+      "Automatisations disponibles sur Free.",
+      "Formulaires et landing page pour commencer.",
+      "Deux accès utilisateurs sur Free."
     ],
     "prosEn": [
-      "Very generous free tier (250 subscribers).",
-      "Simple and intuitive interface (best UX).",
-      "Integrated landing pages no add-on.",
-      "No commission or platform fees on your revenue.",
-      "Excellent and human support.",
-      "Gentle pricing escalation.",
-      "2 user seats even on free tier."
+      "Automations available on Free.",
+      "Signup forms and a landing page to get started.",
+      "Two user seats on Free."
     ],
     "cons": [
-      "Automation limitée (pas flows avancés).",
-      "CRM minimal (overkill pour contenu).",
-      "Pas multi-canal (email + landing pages seulement).",
-      "Pas d'AI tools (subject line generator, etc).",
-      "Analytics basiques."
+      "Free est limité à 250 abonnés et 2 500 emails mensuels.",
+      "Le coût et les plafonds payants varient selon le palier sélectionné."
     ],
     "consEn": [
-      "Limited automation (no advanced flows).",
-      "Minimal CRM (overkill for content).",
-      "No multi-channel (email + landing pages only).",
-      "No AI tools (subject line generator, etc).",
-      "Basic analytics."
+      "Free is capped at 250 subscribers and 2,500 monthly sends.",
+      "Paid cost and allowances depend on the selected tier."
     ],
     "useCases": [
       "Newsletter gratuite pour creators.",
@@ -124790,7 +124791,11 @@
     "personas": [
       "lina"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "kit",
+      "brevo",
+      "beehiiv"
+    ],
     "verdict": {
       "keepIf": [
         "Vous débutez email + landing pages et cherchez plan gratuit bon marché.",
@@ -124818,7 +124823,7 @@
       "threshold": "MailerLite wins for free/cheap creator start; for advanced automation, ActiveCampaign/GetResponse better."
     },
     "articles": [],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
     "soloRelevance": "medium",
     "teamRelevance": "medium",
@@ -124843,7 +124848,43 @@
     "substitution_cluster_v2": "email-marketing",
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.mailerlite.com/img/containers/assets/SEO/homepage-meta.jpg/a271969696ccb718c1a26ea27c86ef53.jpg",
-    "force_silence": false
+    "force_silence": false,
+    "descriptionEn": "MailerLite combines email campaigns, signup forms and automations. Its current pricing page lists Free, Comfort, Power and Enterprise. Free includes 250 subscribers and 2,500 monthly sends, not the 1,000 contacts still mentioned in older descriptions.\n\nConsider it for starting a small list and testing automation without a subscription. As the list grows, compare subscriber tiers, sending allowances and included features. Kit is another option when creator journeys, launch sequences and selling products drive the project.",
+    "research": {
+      "researchedOn": "2026-10-19"
+    },
+    "pricingTiers": {
+      "free": "Gratuit : 250 abonnés et 2 500 emails par mois.",
+      "paid": "Tarif selon palier dans le sélecteur officiel ; aucun ancien prix converti conservé."
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "free",
+      "verified_on": "2026-10-19",
+      "official_source_url": "https://www.mailerlite.com/pricing",
+      "source_domain": "www.mailerlite.com",
+      "verification_status": "official_explicit",
+      "price_reliability": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "free_plan_card": "Free: 250 subscribers and 2,500 monthly emails.",
+      "cautions": [
+        "Price depends on the tier in the official selector; no legacy converted amount retained."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "summary": "Free: 250 subscribers and 2,500 monthly emails.",
+          "observedOn": "2026-10-19"
+        }
+      ]
+    }
   },
   {
     "id": "mailgun",
@@ -203643,11 +203684,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "email-productivity",
-    "shortDescription": "Plateforme newsletter et blog avec monétisation intégrée. Zéro friction.",
+    "shortDescription": "Publier une newsletter et proposer des abonnements payants sans forfait de départ.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Gratuit (10% commission sur abonnements payants)",
-      "paid": "Aucun abonnement requis"
+      "free": "Publication gratuite ; 10 % sur les abonnements payants, plus frais Stripe.",
+      "paid": "Pas de forfait logiciel obligatoire ; frais liés aux revenus."
     },
     "covers": [
       "blog",
@@ -203670,7 +203711,7 @@
       "sofia",
       "theo"
     ],
-    "timeGainedHoursPerMonth": 3,
+    "timeGainedHoursPerMonth": null,
     "freeAlternative": null,
     "betterAlternative": {
       "tool": "beehiiv",
@@ -203706,16 +203747,12 @@
       "threshold": "Substack convient aux créateurs indépendants et journalistes ; pour des besoins marketing d'entreprise, des outils comme Mailchimp ou Brevo sont plus adaptés."
     },
     "pros": [
-      "Entièrement gratuit pour publier et démarrer.",
-      "Monétisation native avec abonnements intégrés.",
-      "Pas de frais initiaux ou de forfait de base.",
-      "Audience peut être construite sans coût."
+      "Publication gratuite sans forfait logiciel de départ.",
+      "Abonnements payants intégrés."
     ],
     "cons": [
-      "Commission prélevée par Substack, à laquelle s'ajoutent les frais Stripe.",
-      "Pas d'outils marketing avancés ou d'automation email.",
-      "Analytics basiques comparées aux plateformes spécialisées.",
-      "Moins de contrôle sur la monétisation."
+      "10 % des revenus d’abonnement payant, plus les frais Stripe.",
+      "Le choix doit tenir compte du modèle publication plutôt que d’un besoin d’automatisation marketing."
     ],
     "useCases": [
       "Publier une newsletter indépendante et la monétiser.",
@@ -203745,28 +203782,50 @@
       "Consultants"
     ],
     "pricingTiers": {
-      "free": "Gratuit (10% commission sur abonnements payants)",
-      "paid": "Aucun abonnement requis"
+      "free": "Publication gratuite ; 10 % sur les abonnements payants, plus frais Stripe.",
+      "paid": "Pas de forfait logiciel obligatoire ; frais liés aux revenus."
     },
-    "longDescription": "Substack, c'est plateforme newsletter et blog avec monétisation intégrée. Zéro friction. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les auteurs et newslettistes et les créateurs de contenu.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : démarrage newsletter, communauté déjà sur Substack. À éviter si : beehiiv si vous monétisez — 0% commission vs 10%. Gratuit — pertinent pour démarrer sans engagement. Si le budget le permet, beehiiv va plus loin.",
-    "alternatives": [],
+    "longDescription": "Substack est une option pour publier une newsletter et faire payer l’accès à son contenu sans abonnement logiciel de départ. L’éditeur prélève 10 % des revenus d’abonnement payant, auxquels s’ajoutent les frais Stripe applicables. Publier gratuitement et monétiser sans frais sont donc deux choses différentes.\n\nCompare le prélèvement sur tes revenus au coût d’un outil par taille de liste. Kit est à considérer si tu veux surtout construire des parcours email et vendre des offres autour de ta newsletter. Substack reste une piste lorsque l’abonnement à la publication est le produit principal.",
+    "alternatives": [
+      "kit",
+      "beehiiv",
+      "mailerlite"
+    ],
     "slug": "substack",
-    "shortDescriptionEn": "Newsletter and blog platform with built-in monetisation. Zero friction.",
-    "description": "Substack, c'est plateforme newsletter et blog avec monétisation intégrée. Zéro friction. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les auteurs et newslettistes et les créateurs de contenu.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : démarrage newsletter, communauté déjà sur Substack. À éviter si : beehiiv si vous monétisez — 0% commission vs 10%. Gratuit — pertinent pour démarrer sans engagement. Si le budget le permet, beehiiv va plus loin.",
-    "longDescriptionEn": "Substack is newsletter and blog platform with built-in monetisation. Zero friction. Free to start, paid plans for more. Built for writers and newsletter creators and content creators.\n\nEstimated time saving: 3h/month.\n\nIf budget allows, beehiiv goes further.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Publish a newsletter and offer paid subscriptions without a starting subscription fee.",
+    "description": "Substack est une option pour publier une newsletter et faire payer l’accès à son contenu sans abonnement logiciel de départ. L’éditeur prélève 10 % des revenus d’abonnement payant, auxquels s’ajoutent les frais Stripe applicables. Publier gratuitement et monétiser sans frais sont donc deux choses différentes.\n\nCompare le prélèvement sur tes revenus au coût d’un outil par taille de liste. Kit est à considérer si tu veux surtout construire des parcours email et vendre des offres autour de ta newsletter. Substack reste une piste lorsque l’abonnement à la publication est le produit principal.",
+    "longDescriptionEn": "Substack is an option for publishing a newsletter and charging for access without an upfront software subscription. It takes 10% of paid subscription revenue, with applicable Stripe charges on top. Free publishing does not mean fee-free monetization.\n\nCompare that revenue share with a list-based platform cost. Consider Kit when your main need is building email journeys and selling offers around a newsletter. Substack remains an option when access to the publication is the main product.",
+    "pricingEn": {
+      "free": "Free publishing; 10% on paid subscriptions plus Stripe charges.",
+      "paid": "No mandatory software subscription; revenue-based fees apply."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "substack.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
+      "compare_price_monthly_eur": 0,
       "compare_plan_name": "Free",
-      "price_reliability": "low",
-      "location_sensitive": false,
-      "official_source_url": "https://substack.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 0
+      "compare_plan_kind": "free",
+      "verified_on": "2026-10-19",
+      "official_source_url": "https://support.substack.com/hc/en-us/articles/360037607131-How-much-does-Substack-cost",
+      "source_domain": "support.substack.com",
+      "verification_status": "official_explicit",
+      "price_reliability": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "free_plan_card": "Publication gratuite ; 10 % sur les abonnements payants, plus frais Stripe.",
+      "cautions": [
+        "Pas de forfait logiciel obligatoire ; frais liés aux revenus."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "summary": "Publication gratuite ; 10 % sur les abonnements payants, plus frais Stripe.",
+          "observedOn": "2026-10-19"
+        }
+      ]
     },
     "websiteUrl": "https://substack.com",
     "logo": "",
@@ -203785,16 +203844,12 @@
       "threshold": "Substack is ideal for independent creators; businesses seeking advanced marketing should look at Mailchimp or Brevo."
     },
     "prosEn": [
-      "Completely free to start publishing.",
-      "Native monetization with subscriber paywalls.",
-      "No monthly fee or minimum spend.",
-      "Audience can grow without upfront cost."
+      "Free publishing without an upfront software subscription.",
+      "Integrated paid subscriptions."
     ],
     "consEn": [
-      "Substack takes a cut of subscription revenue, on top of Stripe fees.",
-      "No advanced email automation or segmentation.",
-      "Basic analytics compared to marketing platforms.",
-      "Less control over pricing and billing."
+      "10% of paid subscription revenue plus Stripe charges.",
+      "Choose around the publication model rather than marketing automation needs."
     ],
     "useCasesEn": [
       "Publish an independent newsletter and monetize it.",
@@ -203824,7 +203879,39 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://substackcdn.com/image/fetch/$s_!Xim-!,w_400,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficons%2Fsubstack%2Ficon.svg"
+    "ogImageUrl": "https://substackcdn.com/image/fetch/$s_!Xim-!,w_400,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficons%2Fsubstack%2Ficon.svg",
+    "descriptionEn": "Substack is an option for publishing a newsletter and charging for access without an upfront software subscription. It takes 10% of paid subscription revenue, with applicable Stripe charges on top. Free publishing does not mean fee-free monetization.\n\nCompare that revenue share with a list-based platform cost. Consider Kit when your main need is building email journeys and selling offers around a newsletter. Substack remains an option when access to the publication is the main product.",
+    "research": {
+      "researchedOn": "2026-10-19"
+    },
+    "pricing_v5En": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Free",
+      "compare_plan_kind": "free",
+      "verified_on": "2026-10-19",
+      "official_source_url": "https://support.substack.com/hc/en-us/articles/360037607131-How-much-does-Substack-cost",
+      "source_domain": "support.substack.com",
+      "verification_status": "official_explicit",
+      "price_reliability": "official_explicit",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "free_plan_card": "Free publishing; 10% on paid subscriptions plus Stripe charges.",
+      "cautions": [
+        "No mandatory software subscription; revenue-based fees apply."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "summary": "Free publishing; 10% on paid subscriptions plus Stripe charges.",
+          "observedOn": "2026-10-19"
+        }
+      ]
+    }
   },
   {
     "id": "substance-3d-designer",

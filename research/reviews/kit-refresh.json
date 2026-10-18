@@ -1,0 +1,103 @@
+{
+  "checkedOn": "2026-10-19",
+  "dependency_status": "approved-fallback",
+  "narrative_canon_id": null,
+  "narrative_canon_version": null,
+  "claims_projection_offset": null,
+  "status": "local-review-not-published",
+  "scope": ["kit", "brevo", "mailerlite", "beehiiv", "substack", "mailchimp-vs-convertkit", "convertkit-vs-getresponse"],
+  "method": "Official documentation review, not a hands-on deliverability benchmark. Conversion means helping the right reader start, not inflating ratings. Traffic, CTR and conversion baseline unknown; no uplift claimed. Approved by user on 2026-10-19. Existing template and product names retained.",
+  "sources": [
+    "https://kit.com/pricing",
+    "https://help.kit.com/en/articles/16627071-the-kit-free-plan",
+    "https://help.kit.com/en/articles/5523023-how-to-create-your-first-kit-visual-automation",
+    "https://help.kit.com/en/articles/2502489-how-to-export-subscribers-in-kit",
+    "https://kit.com/features/commerce",
+    "https://kit.com/migrations",
+    "https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans",
+    "https://www.mailerlite.com/pricing",
+    "https://www.beehiiv.com/pricing",
+    "https://support.substack.com/hc/en-us/articles/360037607131-How-much-does-Substack-cost",
+    "https://mailchimp.com/features/",
+    "https://www.getresponse.com/features"
+  ],
+  "video": {
+    "source": "https://kit.com/",
+    "provider": "Wistia",
+    "videoId": "z0e60vz71d",
+    "title": "kit-sizzle-v1.0",
+    "durationSeconds": 87.0167,
+    "oembed": "https://fast.wistia.com/oembed?url=https%3A%2F%2Fhome.wistia.com%2Fmedias%2Fz0e60vz71d&format=json",
+    "verifiedOn": "2026-10-19",
+    "method": "Observed in the official Kit homepage player. Official embed preserved, no download or rehosting, loaded on click. Browser playback and pause verified."
+  },
+  "media": [
+    {"src":"https://media.kit.com/images/pages/features/automations/segmenting-kit-emails-tags.jpg?q=75&fm=webp&auto=format", "source":"https://kit.com/features/automations", "altEn":"Official Kit visual showing tags and the signup-to-purchase journey."},
+    {"src":"https://media.kit.com/images/pages/features/commerce/commerce-kit-automations.jpg?q=75&fm=webp&auto=format", "source":"https://kit.com/features/commerce", "altEn":"Official Kit visual showing a product offer and follow-up email automation."}
+  ],
+  "pricingObservations": {
+    "kit": {"source":"https://kit.com/pricing", "freeLimit":10000, "creatorAnnualUsd":390, "proAnnualUsd":790, "proFirstYearOfferUsd":593, "subscribersAtPaidPrice":1000, "trialDays":14},
+    "mailerlite": {"source":"https://www.mailerlite.com/pricing", "freeLimit":250, "freeMonthlySends":2500, "paidPrice":"unknown-dynamic-selector"},
+    "beehiiv": {"source":"https://www.beehiiv.com/pricing", "freeLimit":2500, "paidPrice":"unknown-dynamic-selector"},
+    "substack": {"source":"https://support.substack.com/hc/en-us/articles/360037607131-How-much-does-Substack-cost", "paidRevenueSharePercent":10},
+    "brevo": {"source":"https://help.brevo.com/hc/en-us/articles/208589409-About-Brevo-s-pricing-plans", "starterMonthlyUsd":9, "standardMonthlyUsd":18, "freeDailySends":300}
+  },
+  "tools": {
+    "kit": {
+      "shortDescription": "Transforme tes lecteurs en abonnés, puis accompagne-les jusqu’à ton prochain lancement.",
+      "shortDescriptionEn": "Turn readers into subscribers, then guide them toward your next launch.",
+      "longDescription": "Kit, anciennement ConvertKit, relie ta newsletter à ton activité de créateur : collecter des inscriptions, comprendre les intérêts de tes lecteurs et présenter une offre au bon moment. Il convient aux auteurs, formateurs, coachs et indépendants qui veulent construire une relation email au-delà des réseaux sociaux.\n\nCommence par un formulaire, une page d’inscription et une newsletter. Le plan Free couvre jusqu’à 10 000 abonnés ; il ne comprend ni séquences email ni automatisations visuelles. Pour tester un parcours de bienvenue ou de lancement, l’essai des fonctions payantes dure 14 jours sans carte bancaire.\n\nCreator permet de déclencher une séquence après une inscription et d’adapter le parcours aux tags. Prépare trois messages : livrer la ressource promise, aider sur un problème précis, puis présenter ton offre. Pro devient pertinent lorsque les analyses d’engagement et le travail à plusieurs répondent à un besoin réel ; il n’est pas nécessaire pour ta première séquence.\n\nKit propose aussi la vente de produits numériques et d’abonnements. Les frais de transaction et les conditions de paiement restent à intégrer à ta marge. Une migration gratuite est proposée par l’éditeur : demande quel périmètre est couvert pour tes formulaires et automatisations. L’export CSV des abonnés inclut notamment tags et champs personnalisés ; il ne constitue pas un export complet de tes parcours.\n\nLe prochain pas : crée une page d’inscription ou teste ta séquence de bienvenue. Compare ensuite ton tarif au nombre réel d’abonnés, avant de choisir un abonnement annuel. Brevo sert un besoin multicanal ; Beehiiv et Substack répondent davantage à un projet de publication.",
+      "longDescriptionEn": "Kit, formerly ConvertKit, connects your newsletter to your creator business: collect signups, understand readers’ interests and introduce an offer at the right moment. It fits authors, educators, coaches and independent businesses building an email relationship beyond social media.\n\nStart with a form, a signup page and a newsletter. Free supports up to 10,000 subscribers but does not include email sequences or visual automations. To test a welcome journey or launch sequence, the paid-feature trial lasts 14 days without a credit card.\n\nCreator can trigger a sequence after signup and branch journeys using tags. Draft three messages: deliver the promised resource, solve one specific problem, then introduce your offer. Pro is worth considering when engagement analytics and collaboration solve an actual need, not simply because you are starting a newsletter.\n\nKit also supports digital products and subscriptions. Account for transaction charges and payment conditions in your margin. The publisher offers free migration: confirm which forms and automations it will rebuild. Subscriber CSV exports include tags and custom fields, but are not a complete export of your automated journeys.\n\nYour next step: publish one signup page or test your welcome sequence. Then price the plan at your actual subscriber count before making an annual commitment. Compare Brevo for multichannel marketing, and Beehiiv or Substack for a publication-led business.",
+      "affiliateCtaLabelFr": "Essayer Kit gratuitement",
+      "affiliateCtaLabelEn": "Try Kit for free",
+      "pros": ["Plan Free pour démarrer et conserver jusqu’à 10 000 abonnés.", "Creator relie formulaires, tags et séquences dans un parcours automatisé.", "Vente de produits numériques et d’abonnements dans le même environnement.", "Essai de 14 jours sans carte pour tester les fonctions payantes.", "Export des abonnés en CSV et migration gratuite proposée par Kit."],
+      "prosEn": ["Free supports a growing list of up to 10,000 subscribers.", "Creator connects forms, tags and sequences into automated journeys.", "Digital products and subscriptions in the same environment.", "A 14-day, no-card trial to test paid features.", "Subscriber CSV export and migration assistance offered by Kit."],
+      "cons": ["Les séquences email et automatisations visuelles nécessitent un forfait payant.", "Le prix payant dépend de la taille de la liste ; une promotion de première année ne fixe pas le renouvellement.", "Changer de plateforme implique de reconstruire et tester les parcours, au-delà de l’export des contacts."],
+      "consEn": ["Sequences and visual automations require a paid plan.", "Paid pricing scales with list size; a first-year offer is not the renewal rate.", "Switching platforms requires rebuilding and testing journeys, beyond exporting contacts."],
+      "useCases": ["Livrer une ressource gratuite après une inscription.", "Accueillir un nouvel abonné avec une séquence Creator.", "Préparer un lancement selon les intérêts des lecteurs.", "Vendre un produit numérique ou une newsletter payante."],
+      "useCasesEn": ["Deliver a free resource after signup.", "Welcome a subscriber with a Creator email sequence.", "Prepare a launch around readers’ interests.", "Sell a digital product or paid newsletter."],
+      "verdict": {"keepIf": ["Tu veux transformer ta newsletter en canal régulier pour tes contenus et tes offres.", "Tu veux relier inscriptions, tags et séquences sans multiplier les outils."], "avoidIf": ["Tu cherches avant tout un CRM commercial ou des campagnes multicanales.", "Tu ne veux pas payer pour automatiser tes séquences : Free ne les inclut pas."], "threshold": "Commence avec une page d’inscription. Pour tester une séquence de bienvenue ou de lancement, utilise l’essai de 14 jours sans carte ; choisis Creator seulement si ce parcours répond à ton besoin."},
+      "verdictEn": {"keepIf": ["Your newsletter is a recurring channel for your content and offers.", "You want signups, tags and email sequences in one workflow."], "avoidIf": ["Your main need is a sales CRM or multichannel campaigns.", "You need automated sequences without a paid plan: Free does not include them."], "threshold": "Start with one signup page. Use the 14-day, no-card trial to test a welcome or launch sequence; choose Creator only if that journey meets your needs."}
+    },
+    "brevo": {
+      "shortDescription": "Campagnes email, transactionnel et automatisations pour une petite équipe multicanale.",
+      "shortDescriptionEn": "Email campaigns, transactional messaging and automation for a multichannel small team.",
+      "longDescription": "Brevo convient à une TPE qui veut réunir campagnes email, messages transactionnels et automatisations. Le gratuit autorise 300 emails par jour ; ce plafond est moins adapté à l’envoi immédiat d’une newsletter à plusieurs milliers de lecteurs.\n\nLes paliers payants combinent volume d’envoi et contacts stockés. Compare aussi les options SMS, WhatsApp et commerciales nécessaires. Pour un créateur centré sur sa newsletter et ses lancements, Kit constitue une autre piste ; pour plusieurs canaux et le transactionnel, le périmètre de Brevo est plus directement pertinent.",
+      "longDescriptionEn": "Brevo fits a small business combining email campaigns, transactional messages and automation. Free allows 300 emails per day, which is a constraint when a newsletter needs to reach thousands of readers at once.\n\nPaid tiers combine sending volume and stored contacts. Include the SMS, WhatsApp and sales options you need. Compare Kit for a creator-led newsletter and launches; Brevo is more directly relevant when transactional messaging and multiple channels are central.",
+      "alternatives": ["kit", "mailerlite", "activecampaign"]
+    },
+    "mailerlite": {
+      "shortDescription": "Créer des campagnes, formulaires et automatisations email pour une petite liste.",
+      "shortDescriptionEn": "Build campaigns, signup forms and email automations for a small list.",
+      "longDescription": "MailerLite réunit campagnes, formulaires et automatisations email. La page tarifaire actuelle distingue Free, Comfort, Power et Enterprise. Free comprend 250 abonnés et 2 500 emails mensuels, et non les 1 000 contacts encore mentionnés dans certaines anciennes fiches.\n\nC’est une piste pour commencer sur une petite liste et tester une automatisation sans abonnement. Pour une audience qui grandit, compare les paliers d’abonnés, les envois et les fonctions incluses. Kit est une autre option lorsque le parcours de créateur, les séquences de lancement et la vente de produits sont au centre du projet.",
+      "longDescriptionEn": "MailerLite combines email campaigns, signup forms and automations. Its current pricing page lists Free, Comfort, Power and Enterprise. Free includes 250 subscribers and 2,500 monthly sends, not the 1,000 contacts still mentioned in older descriptions.\n\nConsider it for starting a small list and testing automation without a subscription. As the list grows, compare subscriber tiers, sending allowances and included features. Kit is another option when creator journeys, launch sequences and selling products drive the project.",
+      "pros": ["Automatisations disponibles sur Free.", "Formulaires et landing page pour commencer.", "Deux accès utilisateurs sur Free."],
+      "prosEn": ["Automations available on Free.", "Signup forms and a landing page to get started.", "Two user seats on Free."],
+      "cons": ["Free est limité à 250 abonnés et 2 500 emails mensuels.", "Le coût et les plafonds payants varient selon le palier sélectionné."],
+      "consEn": ["Free is capped at 250 subscribers and 2,500 monthly sends.", "Paid cost and allowances depend on the selected tier."],
+      "alternatives": ["kit", "brevo", "beehiiv"]
+    },
+    "beehiiv": {
+      "shortDescription": "Développer une publication avec newsletter, site et outils de monétisation.",
+      "shortDescriptionEn": "Grow a publication with newsletters, a website and monetization tools.",
+      "longDescription": "Beehiiv s’adresse à une publication qui veut réunir newsletter, site et monétisation. La grille actuelle distingue Free, Lite, Pro et Enterprise. Free accepte jusqu’à 2 500 abonnés et les envois email sont illimités ; les fonctions avancées et limites des produits varient selon le forfait.\n\nCompare Beehiiv pour développer un média ou une newsletter comme produit. Kit répond à un angle différent : organiser des séquences autour de tes contenus, formations ou lancements. Ne choisis pas sur un ancien tarif Scale : utilise le sélecteur actuel avec ta taille de liste.",
+      "longDescriptionEn": "Beehiiv targets a publication combining newsletters, a website and monetization. The current grid lists Free, Lite, Pro and Enterprise. Free supports up to 2,500 subscribers and email sends are unlimited; advanced features and product limits depend on the plan.\n\nCompare Beehiiv when the newsletter itself is the publication you want to grow. Kit takes a different angle: sequences around your content, courses or launches. Do not budget from an old Scale price; use the current selector at your list size.",
+      "pros": ["Free jusqu’à 2 500 abonnés.", "Envois email illimités sur les forfaits annoncés.", "Publication, site et monétisation réunis."],
+      "prosEn": ["Free for up to 2,500 subscribers.", "Unlimited email sends on the listed plans.", "Publishing, website and monetization together."],
+      "cons": ["Les capacités avancées et limites des produits dépendent du forfait.", "Le modèle publication ne répond pas à tous les besoins CRM ou multicanaux."],
+      "consEn": ["Advanced capabilities and product limits depend on the plan.", "A publication-led model does not cover every CRM or multichannel need."],
+      "alternatives": ["kit", "substack", "mailerlite"]
+    },
+    "substack": {
+      "shortDescription": "Publier une newsletter et proposer des abonnements payants sans forfait de départ.",
+      "shortDescriptionEn": "Publish a newsletter and offer paid subscriptions without a starting subscription fee.",
+      "longDescription": "Substack est une option pour publier une newsletter et faire payer l’accès à son contenu sans abonnement logiciel de départ. L’éditeur prélève 10 % des revenus d’abonnement payant, auxquels s’ajoutent les frais Stripe applicables. Publier gratuitement et monétiser sans frais sont donc deux choses différentes.\n\nCompare le prélèvement sur tes revenus au coût d’un outil par taille de liste. Kit est à considérer si tu veux surtout construire des parcours email et vendre des offres autour de ta newsletter. Substack reste une piste lorsque l’abonnement à la publication est le produit principal.",
+      "longDescriptionEn": "Substack is an option for publishing a newsletter and charging for access without an upfront software subscription. It takes 10% of paid subscription revenue, with applicable Stripe charges on top. Free publishing does not mean fee-free monetization.\n\nCompare that revenue share with a list-based platform cost. Consider Kit when your main need is building email journeys and selling offers around a newsletter. Substack remains an option when access to the publication is the main product.",
+      "pros": ["Publication gratuite sans forfait logiciel de départ.", "Abonnements payants intégrés."],
+      "prosEn": ["Free publishing without an upfront software subscription.", "Integrated paid subscriptions."],
+      "cons": ["10 % des revenus d’abonnement payant, plus les frais Stripe.", "Le choix doit tenir compte du modèle publication plutôt que d’un besoin d’automatisation marketing."],
+      "consEn": ["10% of paid subscription revenue plus Stripe charges.", "Choose around the publication model rather than marketing automation needs."],
+      "alternatives": ["kit", "beehiiv", "mailerlite"]
+    }
+  }
+}

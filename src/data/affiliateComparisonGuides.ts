@@ -1,9 +1,12 @@
 import type { ComparisonDecisionGuide } from './comparisonDecisionGuides';
+import { kitComparisonGuides, kitAffiliateUrl } from './kitComparisonGuides';
 import { creativeComparisonGuides, creativeOffers, creativeVisuals } from './creativeComparisonGuides';
 import { websiteComparisonGuides, websiteOffers, websiteVisuals } from './websiteComparisonGuides';
 
 // Existing official product assets; provenance is retained in the catalogue research.
 export const comparisonVisuals: Record<string, { src: string; name: string }> = {
+  'mailchimp-vs-convertkit': { src: '/tool-media/kit/visual-automations.png', name: 'Kit' },
+  'convertkit-vs-getresponse': { src: '/tool-media/kit/visual-automations.png', name: 'Kit' },
   ...creativeVisuals,
   ...websiteVisuals,
   'getresponse-vs-brevo': { src: '/tool-media/getresponse/overview.webp', name: 'GetResponse' },
@@ -12,6 +15,14 @@ export const comparisonVisuals: Record<string, { src: string; name: string }> = 
 };
 
 export const comparisonOffers: Record<string, { name: string; url: string; affiliated: boolean }[]> = {
+  'mailchimp-vs-convertkit': [
+    { name: 'Kit', url: kitAffiliateUrl, affiliated: true },
+    { name: 'Mailchimp', url: 'https://mailchimp.com/', affiliated: false },
+  ],
+  'convertkit-vs-getresponse': [
+    { name: 'Kit', url: kitAffiliateUrl, affiliated: true },
+    { name: 'GetResponse', url: 'https://try.getresponsetoday.com/k3g20w6hpboy', affiliated: true },
+  ],
   ...creativeOffers,
   ...websiteOffers,
   'getresponse-vs-brevo': [
@@ -42,6 +53,7 @@ const videoSources = [
 ];
 
 export const affiliateComparisonGuides: Record<string, Record<'fr' | 'en', ComparisonDecisionGuide>> = {
+  ...kitComparisonGuides,
   ...creativeComparisonGuides,
   ...websiteComparisonGuides,
   'getresponse-vs-brevo': {

@@ -154,9 +154,11 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
         description: lang === "en"
           ? `Official ${tool.name} tutorial published by ${tutorial.author}.`
           : `Tutoriel officiel ${tool.name} publié par ${tutorial.author}.`,
-        thumbnailUrl: `https://i.ytimg.com/vi/${tutorial.videoId}/hqdefault.jpg`,
-        embedUrl: `https://www.youtube-nocookie.com/embed/${tutorial.videoId}`,
-        contentUrl: tutorial.sourceUrl,
+        thumbnailUrl: tutorial.posterUrl || `https://i.ytimg.com/vi/${tutorial.videoId}/hqdefault.jpg`,
+        embedUrl: tutorial.provider === 'wistia'
+          ? `https://fast.wistia.net/embed/iframe/${tutorial.videoId}`
+          : tutorial.provider === 'native' ? undefined : `https://www.youtube-nocookie.com/embed/${tutorial.videoId}`,
+        contentUrl: tutorial.provider === 'native' ? tutorial.videoUrl : undefined,
         uploadDate: tutorial.publishedOn,
       }));
       setJsonLd("tool-video-jsonld", videos.length === 1 ? videos[0] : {

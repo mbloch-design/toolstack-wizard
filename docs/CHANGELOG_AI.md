@@ -5837,3 +5837,9 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - Publication explicitement demandee de la fiche FR/EN validee en prive : note 3,8/5, prix, alternatives, fonctionnalites et trois visuels officiels conserves.
 - Lien officiel do-follow. Integration au catalogue, a la recherche, aux routes prerender, au sitemap et aux fichiers LLM via les generateurs existants. Aucun encart dedie ajoute a l'accueil.
 
+## 2026-10-19 : Kit et parcours de conversion associe
+
+- Fiche Kit FR/EN et pages Prix/Avis/Alternatives : benefices concrets, essai 14 jours sans carte, distinction Free/Creator/Pro, note documentee 4/5, prix annuels USD sans conversion et promotion distincte du renouvellement. Lien affilie conserve.
+- Deux visuels produit officiels supplementaires et video officielle Kit de 1 min 27 : lecteur Wistia charge au clic, sans telechargement ni lecture automatique au chargement. Metadonnees VideoObject adaptees au fournisseur. Brevo, MailerLite, Beehiiv et Substack : positionnement et liens canoniques vers Kit ; anciens quotas, prix convertis et gains de temps non sources retires dans ce perimetre.
+- Comparatifs Mailchimp–Kit et Kit–GetResponse : guides FR/EN par scenario, etapes de test, sources et liens affilies via le template existant. Aucune promesse de hausse mesuree de conversion, aucun push inclus.
+
