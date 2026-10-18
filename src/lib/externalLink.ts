@@ -127,7 +127,7 @@ export function relExterne(nature: NatureLien = "autre"): string {
  * de la base où il a atterri.
  */
 const PARAM_TRACKING = /[?&](via|ref|referral|aff|affiliate|fpr|partner|sponsor|rfsn|tap_a|tap_s|lmref|irclickid|deal|promo)=/i;
-const PLATEFORMES_AFFILIATION = /(^|\.)(partnerstack|impact|shareasale|cj|awin|refersion|tapfiliate|firstpromoter|affilae|lemonsqueezy|gumroad)\.(com|net|io)|partnerstack\.[a-z0-9-]+\.com/i;
+const PLATEFORMES_AFFILIATION = /(^|\.)(partnerstack|impact|shareasale|cj|awin|refersion|tapfiliate|firstpromoter|affilae|lemonsqueezy|gumroad)\.(com|net|io)|partnerstack\.[a-z0-9-]+\.com|partners\.kit\.com/i;
 
 export function estLienRemunere(url: string | null | undefined): boolean {
   const u = (url || "").trim();
