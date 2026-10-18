@@ -425,42 +425,50 @@
 
 /* Story article layout: documentary grid inspired by the shared reference. */
 @layer components {
-  .analytics-consent { position: fixed; z-index: 1000; right: 20px; bottom: 20px; width: min(440px, calc(100vw - 32px)); display: flex; gap: 20px; align-items: end; padding: 20px; border: 1px solid #DADAD4; border-radius: 14px; background: #FFFFFF; box-shadow: 0 12px 40px rgba(34,34,34,.14); color: #222222; }
-  .analytics-consent__copy { flex: 1; }
-  .analytics-consent__copy strong { display: block; margin-bottom: 6px; font: 600 16px/1.2 var(--font-ui); }
-  .analytics-consent__copy p { margin: 0 0 8px; font: 400 13px/1.45 var(--font-ui); color: #6F6F68; }
-  .analytics-consent__copy a { font: 500 12px/1 var(--font-ui); color: #222222; text-decoration: underline; }
-  .analytics-consent__actions { display: flex; flex-direction: column-reverse; gap: 8px; flex-shrink: 0; }
-  .analytics-consent__actions button { min-height: 36px; padding: 0 14px; border: 1px solid #DADAD4; border-radius: 999px; font: 600 12px/1 var(--font-ui); cursor: pointer; }
-  .analytics-consent__accept { background: #FFFFFF; color: #222222; }
-  .analytics-consent__close { margin-left: 12px; background: transparent; border: 0; padding: 0; font: 500 12px/1 var(--font-ui); text-decoration: underline; cursor: pointer; }
-  .analytics-consent button:focus-visible { outline: 2px solid #222222; outline-offset: 3px; }
-  .analytics-consent__refuse { background: #FFFFFF; color: #222222; }
-  @media (max-width: 560px) {
-    .analytics-consent {
-      right: 0;
-      bottom: calc(66px + env(safe-area-inset-bottom));
-      width: 100%;
-      max-height: min(48vh, 360px);
-      flex-direction: column;
-      align-items: stretch;
-      gap: 12px;
-      padding: 16px;
-      border-right: 0;
-      border-bottom: 0;
-      border-left: 0;
-      border-radius: 16px 16px 0 0;
-    }
-    .analytics-consent__copy { min-height: 0; overflow: auto; }
-    .analytics-consent__copy p { max-width: 60ch; }
-    .analytics-consent__actions { flex-direction: row; }
-    .analytics-consent__actions button { flex: 1; min-height: 40px; }
+  /* CookieConsent v3 (vanilla-cookieconsent) themed on the site tokens, so
+     it follows light and dark. Accept and Refuse keep the same weight (CNIL). */
+  #cc-main {
+    --cc-font-family: var(--font-ui);
+    --cc-bg: var(--color-surface);
+    --cc-primary-color: var(--color-text);
+    --cc-secondary-color: var(--color-text-secondary);
+    --cc-link-color: var(--color-text);
+    --cc-btn-primary-bg: var(--color-text);
+    --cc-btn-primary-color: var(--color-bg);
+    --cc-btn-primary-border-color: var(--color-text);
+    --cc-btn-primary-hover-bg: var(--color-text-secondary);
+    --cc-btn-primary-hover-color: var(--color-bg);
+    --cc-btn-primary-hover-border-color: var(--color-text-secondary);
+    --cc-btn-secondary-bg: var(--color-text);
+    --cc-btn-secondary-color: var(--color-bg);
+    --cc-btn-secondary-border-color: var(--color-text);
+    --cc-btn-secondary-hover-bg: var(--color-text-secondary);
+    --cc-btn-secondary-hover-color: var(--color-bg);
+    --cc-btn-secondary-hover-border-color: var(--color-text-secondary);
+    --cc-btn-border-radius: var(--radius-pill);
+    --cc-modal-border-radius: var(--radius-lg);
+    --cc-separator-border-color: var(--color-border);
+    --cc-toggle-on-bg: var(--color-text);
+    --cc-toggle-off-bg: var(--color-text-secondary);
+    --cc-toggle-readonly-bg: var(--color-border);
+    --cc-cookie-category-block-bg: var(--color-surface-soft);
+    --cc-cookie-category-block-border: var(--color-border);
+    --cc-cookie-category-block-hover-bg: var(--color-surface-soft);
+    --cc-cookie-category-block-hover-border: var(--color-border);
+    --cc-cookie-category-expanded-block-bg: transparent;
+    --cc-cookie-category-expanded-block-hover-bg: var(--color-surface-soft);
+    --cc-footer-bg: var(--color-surface-soft);
+    --cc-footer-color: var(--color-text-secondary);
+    --cc-footer-border-color: var(--color-border);
+    --cc-overlay-bg: rgba(0, 0, 0, .45);
   }
-  /* Barre d'onglets du bas (jusqu'à 640 px) : le bandeau se pose au-dessus
-     au lieu de la couvrir. */
-  @media (min-width: 561px) and (max-width: 640px) {
-    .analytics-consent { bottom: calc(78px + env(safe-area-inset-bottom)); }
-  }
+  #cc-main .cm--bar { border-top: 1px solid var(--color-border); box-shadow: 0 -8px 32px rgba(0, 0, 0, .08); }
+  #cc-main .cm__title { font-size: 16px; }
+  #cc-main .cm__desc { font-size: 14px; line-height: 1.5; }
+  #cc-main .cm__btn, #cc-main .pm__btn { min-height: 44px; font-weight: 600; }
+  /* Same focus ring as the rest of the site; links reach the 24px target size. */
+  #cc-main :is(button, a, input):focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+  #cc-main .cm__footer a, #cc-main .pm__section a { display: inline-flex; align-items: center; min-height: 24px; }
 }
 @layer components {
   body .ga-header--story {
@@ -35364,7 +35372,6 @@ img[data-logo-loading] {
 /* Focus rings where the audit found none or a faint one. */
 .asv2-sidebar-resizer:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
 .pin-tool-button:focus-visible { box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-text); }
-.analytics-consent__copy a { display: inline-flex; align-items: center; min-height: 24px; }
 /* Stack folder: the apps drift apart with transform, not by animating gap. */
 .home-v2 .sgs-folder { transition: background 200ms ease-out; }
 .home-v2 .sgs-item:hover .sgs-folder { gap: 10px; }

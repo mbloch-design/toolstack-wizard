@@ -23,6 +23,17 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 - [ ] n8n : exclu de la recherche automatique (refonte dédiée)
 - [ ] 638 outils sans impression Google : non planifiés
 
+### Mesure d'audience et cookies (constat du 19/10/2026)
+- Cause du « GA4 vide » depuis le 02/10 (`c7ff058d`) : sans clic sur « Accepter », GA4 reçoit des pings refusés (`gcs=G100`, vérifié en prod). GA4 ne les affiche pas dans ses rapports : ils ne servent qu'à la modélisation, qui exige au moins 1 000 utilisateurs consentants par jour. Seuls les visiteurs qui acceptent apparaissent. Vercel compte tout le monde, sans cookie.
+- Le bandeau est discret (bas à droite, non bloquant), son texte est confus (« reçoit des signaux même si vous refusez ») : peu de visiteurs cliquent.
+- Mode avancé (pings envoyés à Google avant consentement) fragile au regard de la CNIL : GA4 n'est pas exemptable.
+- Code maison complexe : `window.name`, minuteur 60 s, rechargement au refus.
+- Le tag `G-DL5MJKQ3JE` envoie aussi vers `G-PQPPPH19MH` (configuré dans l'admin GA) : vérifier quelle propriété on consulte.
+- [x] Bandeau remplacé par CookieConsent v3 (open source, auto-hébergé) le 19/10/2026 : barre en bas, Accepter / Refuser au même poids, préférences en pied de page, choix gardé six mois dans le cookie `tooltrim_consent`, anciens choix datés repris. Michael garde le mode avancé de Consent Mode.
+- [ ] Vers le 02/11 : comparer dans GA4 les utilisateurs par jour à ceux de Vercel pour mesurer le taux d'acceptation du nouveau bandeau
+- [ ] Prendre Vercel Analytics comme compteur du trafic total ; GA4 sert au comportement des visiteurs consentants
+- [x] DataFast retiré le 19/10/2026 (ne fonctionnait plus) : script, CSP, politique de confidentialité, tests
+
 ### Mesure SEO
 - [ ] Entre le 9 et le 23/10/2026 : comparer un nouvel export Search Console non filtré sur les requêtes visées par le commit `9b3f179f` (nordpass pricing, is dependabot free, mongodb atlas prix, motion bro free, lightroom pricing, capture one price, enscape pricing)
 

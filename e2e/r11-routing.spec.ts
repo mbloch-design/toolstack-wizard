@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({version:1,choice:'refused',decidedAt:Date.now(),expiresAt:Date.now()+3600000})));
-  await page.route(/google-analytics\.com|googletagmanager\.com|datafa\.st|_vercel\/insights/, route => route.abort());
+  await page.route(/google-analytics\.com|googletagmanager\.com|_vercel\/insights/, route => route.abort());
 });
 
 for (const route of ['/fr/r11-route-inexistante', '/en/tool/r11-inexistant', '/fr/guide/r11-inexistant', '/en/explorer/around/r11-inexistant']) {

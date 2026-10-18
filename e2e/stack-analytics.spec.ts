@@ -29,7 +29,6 @@ async function saveIdea(page: Page, lang = 'fr') {
 
 test.beforeEach(async ({page}) => {
   // No recipe interaction reaches a live analytics account.
-  await page.route('https://datafa.st/**', route => route.fulfill({status:200, body:''}));
   await page.route('**/_vercel/insights/**', route => route.fulfill({status:200, body:''}));
   await page.route('https://www.googletagmanager.com/**', route => route.fulfill({status:200,contentType:'application/javascript',body:''}));
   await page.route('https://*.google-analytics.com/**', route => route.abort());
