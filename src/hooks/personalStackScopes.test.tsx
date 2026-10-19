@@ -63,3 +63,69 @@ it("publishes a compare decision as one complete selection and decision snapshot
   act(() => decisions.result.current.decide("replace", { slug: "figma", name: "Figma" }, { slug: "canva", name: "Canva" }, 9, "compare")); off();
   expect(snapshots).toHaveLength(1); expect(snapshots[0].selection.pinnedToolSlugs).toEqual(["figma"]); expect(snapshots[0].decisions).toHaveProperty("canva|figma");
 });
+
+it.each(["anonymous", "B"])("ignores the ordinary removal toast from A after switching to %s", async targetScope => {
+  const store = await import("@/lib/personalStackStore");
+  const { useStackPins } = await import("./useStackPins");
+  store.setPersonalStackScope("A");
+  const pins = renderHook(useStackPins);
+  act(() => pins.result.current.saveToolSelection("private-a", ["design"], "wishlist"));
+  // Same captured state/functions as CartPage.removeTool's six-second toast.
+  const { state, unpinTool, restoreTool } = pins.result.current;
+  const index = state.toolEntries.findIndex(entry => entry.toolSlug === "private-a");
+  const entry = state.toolEntries[index];
+  const undoRemoval = () => restoreTool(entry, index);
+  act(() => unpinTool("private-a"));
+  act(() => store.setPersonalStackScope(targetScope));
+  act(() => pins.result.current.pinTool("current-only"));
+  act(undoRemoval);
+  expect(store.readPersonalStack().selection.pinnedToolSlugs).toEqual(["current-only"]);
+  act(() => store.setPersonalStackScope("A"));
+  expect(store.readPersonalStack().selection.pinnedToolSlugs).toEqual([]);
+});
+
+it("replays ordinary edits after a partial legacy read recovers without reviving removals", async () => {
+  const { createDefaultToolCartState, pinToolInState, STACK_STATE_STORAGE_KEY } = await import("@/lib/stackState");
+  const selection = pinToolInState(pinToolInState(createDefaultToolCartState(), "notion"), "obsidian");
+  const legacyChoice = { source: "custom", amount: 24, currency: "EUR", period: "annual" };
+  values.set(STACK_STATE_STORAGE_KEY, JSON.stringify(selection));
+  values.set("tooltrim-ma-stack-paid-plans-v1", '["notion","obsidian"]');
+  values.set("tooltrim-ma-stack-plan-choices-v1", JSON.stringify({ notion: legacyChoice, obsidian: legacyChoice }));
+  values.set("tooltrim-ma-stack-decisions-v1", JSON.stringify({ "notion|obsidian": { kind: "keep-both", kept: "notion", saving: 0, at: "2026-10-19T00:00:00Z" } }));
+  let legacyUnreadable = true;
+  Object.defineProperty(window, "localStorage", { configurable: true, value: {
+    getItem(key: string) { if (key === "tooltrim-ma-stack-paid-plans-v1" && legacyUnreadable) throw new Error("temporary read failure"); return values.get(key) ?? null; },
+    setItem(key: string, value: string) { values.set(key, value); },
+    removeItem(key: string) { values.delete(key); },
+  } });
+  let store = await import("@/lib/personalStackStore");
+  const { useStackPins } = await import("./useStackPins");
+  const { useStackPaidPlans } = await import("./useStackPaidPlans");
+  const { useStackDecisions } = await import("./useStackDecisions");
+  const pins = renderHook(useStackPins), billing = renderHook(useStackPaidPlans), decisions = renderHook(() => useStackDecisions(t, String, "EUR"));
+  act(() => {
+    pins.result.current.pinTool("figma");
+    pins.result.current.unpinTool("notion");
+    billing.result.current.setPaid("notion", false);
+    billing.result.current.setChoice("figma", { source: "custom", amount: 9, currency: "USD", period: "monthly" });
+    billing.result.current.setChoice("obsidian", null);
+    decisions.result.current.reopen("notion", "obsidian");
+  });
+  expect(pins.result.current.state.pinnedToolSlugs).toContain("figma");
+  expect(values.get(store.personalStackStorageKey("anonymous"))).toBeUndefined();
+  expect(values.get("tooltrim-personal-stack-v4:anonymous-migrated")).toBeUndefined();
+  legacyUnreadable = false;
+  act(() => window.dispatchEvent(new StorageEvent("storage", { key: null })));
+  expect(pins.result.current.state.pinnedToolSlugs).toEqual(["obsidian", "figma"]);
+  expect(billing.result.current.paid).toEqual(["obsidian"]);
+  expect(billing.result.current.choices.notion).toEqual(legacyChoice);
+  expect(billing.result.current.choices.obsidian).toBeUndefined();
+  expect(billing.result.current.choices.figma.amount).toBe(9);
+  expect(decisions.result.current.decisions).toEqual({});
+  cleanup(); vi.resetModules(); store = await import("@/lib/personalStackStore");
+  expect(store.readPersonalStack().selection.pinnedToolSlugs).toEqual(["obsidian", "figma"]);
+  expect(store.readPersonalStack().billing.paid).toEqual(["obsidian"]);
+  expect(store.readPersonalStack().billing.choices.notion).toEqual(legacyChoice);
+  expect(store.readPersonalStack().billing.choices.figma.amount).toBe(9);
+  expect(store.readPersonalStack().decisions).toEqual({});
+});

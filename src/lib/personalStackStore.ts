@@ -8,7 +8,15 @@ export function personalStackStorageKey(scope: PersonalStackScope): string {
   return scope === "anonymous" ? "tooltrim-personal-stack-v4:anonymous" : `tooltrim-personal-stack-v4:account:${encodeURIComponent(scope)}`;
 }
 const backupKey = (scope: PersonalStackScope) => `${personalStackStorageKey(scope)}:backup`;
-type Snapshot = { state: PersonalStackV4; raw: string | null | undefined; status: StackPersistenceStatus; dirty?: boolean };
+type StackUpdater = (current: PersonalStackV4) => PersonalStackV4;
+type Snapshot = {
+  state: PersonalStackV4;
+  raw: string | null | undefined;
+  status: StackPersistenceStatus;
+  dirty?: boolean;
+  // Undefined means the legacy base is known. An empty queue is still pending.
+  pendingMigration?: StackUpdater[];
+};
 const memories = new Map<string, Snapshot>();
 const listeners = new Set<() => void>();
 let activeScope: PersonalStackScope = "anonymous";
@@ -32,7 +40,7 @@ function parseLegacy(storage: Storage, key: string): unknown {
   const raw = storage.getItem(key);
   try { return JSON.parse(raw || "null"); } catch { return null; }
 }
-function migrateAnonymous(storage: Storage): Snapshot {
+function migrateAnonymous(storage: Storage, pending: StackUpdater[] = []): Snapshot {
   const loaded = loadToolCartStateWithStatus(storage);
   if (loaded.status.issue === "storage-read-failed") throw new Error("Legacy stack unreadable");
   const state = normalizePersonalStack({
@@ -44,13 +52,27 @@ function migrateAnonymous(storage: Storage): Snapshot {
     },
     decisions: parseLegacy(storage, "tooltrim-ma-stack-decisions-v1"),
   });
-  const entry: Snapshot = { state, raw: null, status: loaded.status };
+  const recovered = pending.reduce((current, update) => normalizePersonalStack(update(current)), state);
+  const entry = persistScope("anonymous", recovered, { state, raw: null, status: loaded.status });
+  if (entry.status.state === "ok") entry.status = loaded.status;
+  if (!entry.dirty) {
+    try { storage.setItem(MIGRATED_KEY, "1"); } catch { entry.status = failed("storage-write-failed"); }
+  }
+  return entry;
+}
+
+function persistScope(scope: PersonalStackScope, state: PersonalStackV4, previous: Snapshot): Snapshot {
+  const entry: Snapshot = { state: normalizePersonalStack(state), raw: previous.raw, status: { state: "ok", source: "current" }, dirty: true };
   try {
-    const raw = JSON.stringify(state);
-    storage.setItem(personalStackStorageKey("anonymous"), raw);
+    const storage = window.localStorage;
+    const currentRaw = storage.getItem(personalStackStorageKey(scope));
+    const raw = JSON.stringify(entry.state);
+    let backupFailed = false;
+    try { storage.setItem(backupKey(scope), parse(currentRaw) ? currentRaw! : raw); } catch { backupFailed = true; }
+    storage.setItem(personalStackStorageKey(scope), raw);
     entry.raw = raw;
-    storage.setItem(backupKey("anonymous"), raw);
-    storage.setItem(MIGRATED_KEY, "1");
+    entry.dirty = false;
+    if (backupFailed) entry.status = { state: "degraded", source: "current", issue: "backup-write-failed" };
   } catch { entry.status = failed("storage-write-failed"); }
   return entry;
 }
@@ -62,24 +84,29 @@ function readScope(scope: PersonalStackScope): Snapshot {
     const storage = window.localStorage;
     const raw = storage.getItem(personalStackStorageKey(scope));
     // A failed local write leaves raw unchanged. Preserve its session snapshot.
-    if (entry && raw === entry.raw) return entry;
-    if (entry?.dirty && entry.raw === undefined && raw === null) {
+    if (entry && !entry.pendingMigration && raw === entry.raw) return entry;
+    if (entry?.dirty && !entry.pendingMigration && entry.raw === undefined && raw === null) {
       entry.raw = null;
       return entry;
     }
     const state = parse(raw);
     if (state) {
-      entry = { state, raw, status: { state: "ok", source: "current" } };
+      const current: Snapshot = { state, raw, status: { state: "ok", source: "current" } };
+      entry = entry?.pendingMigration
+        ? persistScope(scope, entry.pendingMigration.reduce((next, update) => normalizePersonalStack(update(next)), state), current)
+        : current;
     } else {
       const backup = parse(storage.getItem(backupKey(scope)));
       if (backup) {
-        entry = { state: backup, raw, status: { state: "recovered", source: "backup", issue: "current-corrupt" } };
+        const pending = entry?.pendingMigration;
+        entry = { state: pending ? pending.reduce((next, update) => normalizePersonalStack(update(next)), backup) : backup, raw,
+          status: { state: "recovered", source: "backup", issue: "current-corrupt" } };
         try {
-          const restored = JSON.stringify(backup);
+          const restored = JSON.stringify(entry.state);
           storage.setItem(personalStackStorageKey(scope), restored); entry.raw = restored;
         } catch { entry.status = failed("storage-write-failed"); }
-      } else if ((!entry || (entry.raw === undefined && !entry.dirty)) && raw === null && scope === "anonymous" && storage.getItem(MIGRATED_KEY) !== "1") {
-        entry = migrateAnonymous(storage);
+      } else if ((!entry || entry.pendingMigration || (entry.raw === undefined && !entry.dirty)) && raw === null && scope === "anonymous" && storage.getItem(MIGRATED_KEY) !== "1") {
+        entry = migrateAnonymous(storage, entry?.pendingMigration);
       } else {
         // A corrupt remote write must not destroy a valid in-session draft.
         entry = { state: raw !== null && entry ? entry.state : normalizePersonalStack(null), raw,
@@ -87,7 +114,8 @@ function readScope(scope: PersonalStackScope): Snapshot {
       }
     }
   } catch {
-    if (!entry) entry = { state: normalizePersonalStack(null), raw: undefined, status: failed("storage-read-failed") };
+    if (!entry) entry = { state: normalizePersonalStack(null), raw: undefined, status: failed("storage-read-failed"),
+      ...(scope === "anonymous" ? { pendingMigration: [] } : {}) };
     else if (entry.status.issue !== "storage-read-failed" && entry.status.issue !== "storage-write-failed") {
       entry = { ...entry, status: failed("storage-read-failed") };
     }
@@ -107,30 +135,33 @@ export function setPersonalStackScope(scope: PersonalStackScope): void {
   notify();
 }
 
-export function replacePersonalStack(state: PersonalStackV4): void {
+function commitUpdate(updater: StackUpdater): void {
   if (typeof window === "undefined") return;
   const scope = activeScope;
   const previous = readScope(scope);
-  const entry: Snapshot = { state: normalizePersonalStack(state), raw: previous.raw, status: { state: "ok", source: "current" }, dirty: true };
-  try {
-    const storage = window.localStorage;
-    const currentRaw = storage.getItem(personalStackStorageKey(scope));
-    const raw = JSON.stringify(entry.state);
-    let backupFailed = false;
-    try { storage.setItem(backupKey(scope), parse(currentRaw) ? currentRaw! : raw); } catch { backupFailed = true; }
-    storage.setItem(personalStackStorageKey(scope), raw);
-    entry.raw = raw;
-    entry.dirty = false;
-    if (backupFailed) entry.status = { state: "degraded", source: "current", issue: "backup-write-failed" };
-  } catch { entry.status = failed("storage-write-failed"); }
-  memories.set(scope, entry);
+  const next = updater(previous.state);
+  if (previous.pendingMigration) {
+    // Record the operation even when it is currently a no-op (e.g. setPaid(false)).
+    // Replaying intent after recovery preserves removals rather than unioning data.
+    memories.set(scope, { ...previous,
+      state: next === previous.state ? previous.state : normalizePersonalStack(next),
+      pendingMigration: [...previous.pendingMigration, updater],
+    });
+    if (next !== previous.state) notify();
+    return;
+  }
+  if (next === previous.state) return;
+  memories.set(scope, persistScope(scope, next, previous));
   notify();
 }
 
-export function updatePersonalStack(updater: (current: PersonalStackV4) => PersonalStackV4): void {
-  const current = readPersonalStack();
-  const next = updater(current);
-  if (next !== current) replacePersonalStack(next);
+export function replacePersonalStack(state: PersonalStackV4): void {
+  const normalized = normalizePersonalStack(state);
+  commitUpdate(() => normalized);
+}
+
+export function updatePersonalStack(updater: StackUpdater): void {
+  commitUpdate(updater);
 }
 
 export function clearPersonalStackScope(scope: PersonalStackScope): void {

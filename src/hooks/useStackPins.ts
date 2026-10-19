@@ -23,7 +23,7 @@ export type { StackNeed, StackPersistenceStatus, StackToolEntry, StackToolIntent
 
 import {
   readPersonalStack, updatePersonalStack, subscribePersonalStack,
-  getPersonalStackPersistenceStatus, getServerPersonalStack, getServerPersonalStackPersistenceStatus,
+  getPersonalStackPersistenceStatus, getServerPersonalStack, getServerPersonalStackPersistenceStatus, getPersonalStackScope,
 } from "@/lib/personalStackStore";
 
 const getSelection = () => readPersonalStack().selection;
@@ -57,14 +57,17 @@ export function useStackPins() {
     updateToolCartState((current) => unpinToolInState(current, slug));
   }, []);
 
+  const scope = getPersonalStackScope();
   const restoreTool = useCallback((entry: ToolCartState["toolEntries"][number], index: number) => {
+    // CartPage's removal toast retains this callback from its originating render.
+    if (getPersonalStackScope() !== scope) return;
     updateToolCartState((current) => {
       if (current.toolEntries.some((item) => item.toolSlug === entry.toolSlug)) return current;
       const toolEntries = [...current.toolEntries];
       toolEntries.splice(Math.min(index, toolEntries.length), 0, entry);
       return { ...current, toolEntries, pinnedToolSlugs: toolEntries.map((item) => item.toolSlug) };
     });
-  }, []);
+  }, [scope]);
 
   const saveToolSelection = useCallback((slug: string, needIds: string[], intent: StackToolIntent) => {
     // The confirm step of the "Enregistrer l'outil" dialog — the actual path
