@@ -1,3 +1,9 @@
+## 2026-10-19 : stockage prive des stacks personnelles v4
+
+- Migration dediee avec verification de session Auth en base, revision CAS, verrou par proprietaire et statut de suppression reprenable. Acces directs clients et execution publique des RPC revoques ; politiques proprietaire conservees.
+- RPC de lecture, sauvegarde, suppression et consultation comptes reservees au serveur. Agregats globaux calcules hors pagination, outils comptes par compte et intention ; aucune modification du catalogue.
+- Tests SQL reproductibles sur PostgreSQL embarque PGlite 0.5.10 : isolation A/B, validation du payload, session revoquee/expiree, conflits et suppression. Rollback de configuration conservant les snapshots. Types ajoutes manuellement depuis la migration locale, generation CLI indisponible ; Auth/OAuth reels et connexions SQL concurrentes restent a verifier sur recette Supabase.
+
 ## 2026-10-16 : correction du garde-fou des tokens sur les tags
 
 - Le commit `78f2e72c` avait ajouté un rayon littéral de 6 px sur les tags de fonctionnalités, portant le compteur CSS à 222 pour une limite de 221 et bloquant la CI.

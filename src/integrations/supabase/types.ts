@@ -16,6 +16,8 @@ export type Database = {
     Tables: {
       profiles: {
         Row: {
+          // Manually maintained contract for 20261019081436; not CLI generated.
+          account_status: string
           avatar_url: string | null
           created_at: string
           display_name: string | null
@@ -24,6 +26,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          account_status?: string
           avatar_url?: string | null
           created_at?: string
           display_name?: string | null
@@ -32,6 +35,7 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          account_status?: string
           avatar_url?: string | null
           created_at?: string
           display_name?: string | null
@@ -598,8 +602,32 @@ export type Database = {
     Views: {
       [_ in never]: never
     }
+    // Manually maintained additions from the local, executable migration.
+    // Supabase CLI/schema generation was unavailable; regenerate from isolated
+    // Supabase before deployment. No unrelated catalogue types were inferred.
     Functions: {
-      [_ in never]: never
+      _personal_stack_strings: { Args: { p_value: Json }; Returns: boolean }
+      _personal_stack_valid: { Args: { p_state: Json }; Returns: boolean }
+      require_account_session: {
+        Args: { p_owner: string; p_session: string }
+        Returns: undefined
+      }
+      read_personal_stack: {
+        Args: { p_owner: string; p_session: string }
+        Returns: Json
+      }
+      save_personal_stack: {
+        Args: { p_owner: string; p_session: string; p_expected_revision: number; p_state: Json }
+        Returns: Json
+      }
+      begin_personal_account_deletion: {
+        Args: { p_owner: string; p_session: string }
+        Returns: undefined
+      }
+      accounts_dashboard: {
+        Args: { p_admin: string; p_session: string; p_query?: Json }
+        Returns: Json
+      }
     }
     Enums: {
       [_ in never]: never

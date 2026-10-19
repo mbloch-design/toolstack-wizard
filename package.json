@@ -105,7 +105,8 @@
     "typecheck": "npm run typecheck:app && npm run typecheck:node && npm run typecheck:api",
     "test:seo-contracts": "vitest run --config vitest.research.config.mjs scripts/validate-generated-seo.test.mjs scripts/lib/ssr-contract.test.mjs scripts/lib/compact-html.test.mjs scripts/lib/explorer-related-paths.test.mjs scripts/lib/explorer-r5-review.test.mjs scripts/lib/legacy-css-cascade.test.mjs scripts/lib/shared-critical-css.test.mjs scripts/generated-routing.test.mjs",
     "typecheck:api": "tsc --noEmit -p tsconfig.api.json",
-    "test:api": "vitest run --config vitest.api.config.ts"
+    "test:api": "vitest run --config vitest.api.config.ts",
+    "test:accounts:db": "node scripts/test-accounts-db.mjs"
   },
   "dependencies": {
     "@orama/orama": "^3.1.18",
@@ -132,6 +133,7 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.12.1",
+    "@electric-sql/pglite": "0.5.10",
     "@eslint/js": "^9.32.0",
     "@playwright/test": "^1.57.0",
     "@tailwindcss/postcss": "4.3.3",
