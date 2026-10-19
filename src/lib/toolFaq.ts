@@ -2,7 +2,8 @@ import type { Tool } from "@/data/types";
 import { formatToolPrice } from "@/lib/currencyRates";
 import { formatCurrencyAmount } from "@/lib/currency";
 import { localizePlanName } from "@/lib/planNames";
-import { isPriceUndisclosed } from "@/lib/pricing";
+import { hasConfirmedFreeTier, isPriceUndisclosed } from "@/lib/pricing";
+import { toolPriceFacts } from "@/lib/toolSeo";
 
 export interface ToolFaqEntry {
   q: string;
@@ -30,11 +31,18 @@ export function buildToolFaqs(
   const plan = planLabel
     ? isFr ? ` (plan ${planLabel})` : ` (${planLabel} plan)`
     : "";
-  const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
+  // Same rule as the titles: the compare plan's own unit counts too.
+  const oneTime = toolPriceFacts(tool).oneTime;
   const lifetimeLicense = /licence (?:à vie|perp[ée]tuelle)|lifetime|perpetual/i.test(`${tool.pricing_v5?.compare_plan_name || ""} ${tool.pricing?.paid || ""}`);
   const maxonAnnual = tool.pricing_v5?.source_domain === "maxon.net"
     ? tool.pricing_v5.plans?.find((entry) => entry.isComparePlan && entry.billingPeriod === "annual" && entry.nativeAmount != null)
     : null;
+  // The plan's own currency: Maxon publishes US prices in dollars, and the
+  // forced "EUR" served ZBrush at « €430.80 » for a $430.80 plan.
+  const maxonCurrency = maxonAnnual?.nativeCurrency === "USD" || maxonAnnual?.nativeCurrency === "GBP" ? maxonAnnual.nativeCurrency : "EUR";
+  // A zero price is only « free » when ToolTrim can confirm a free tier:
+  // a bulk placeholder made Logic Pro « free » in the FAQPage JSON-LD.
+  const unverifiedZero = displayPrice === 0 && !hasConfirmedFreeTier(tool);
   // Sans date de verification, la reponse s'arrete au prix. Ecrire « Prix
   // verifie le 2026-03-29 » a partir d'un repli code en dur affirmait un
   // controle qui n'avait pas eu lieu, sur 644 pages.
@@ -63,7 +71,7 @@ export function buildToolFaqs(
     {
       q: isFr ? `Combien coûte ${tool.name} ?` : `How much does ${tool.name} cost?`,
       a: maxonAnnual
-        ? (isFr ? `${tool.name} coûte ${formatCurrencyAmount(maxonAnnual.nativeAmount!, "EUR", "fr")} par an, avec paiement annuel anticipé. Le montant définitif dépend du pays et des taxes affichées au panier.${verifiedSuffixFr}` : `${tool.name} costs ${formatCurrencyAmount(maxonAnnual.nativeAmount!, "EUR", "en")} per year, billed annually upfront. Final pricing depends on region and taxes at checkout.${verifiedSuffixEn}`)
+        ? (isFr ? `${tool.name} coûte ${formatCurrencyAmount(maxonAnnual.nativeAmount!, maxonCurrency, "fr")} par an, avec paiement annuel anticipé. Le montant définitif dépend du pays et des taxes affichées au panier.${verifiedSuffixFr}` : `${tool.name} costs ${formatCurrencyAmount(maxonAnnual.nativeAmount!, maxonCurrency, "en")} per year, billed annually upfront. Final pricing depends on region and taxes at checkout.${verifiedSuffixEn}`)
         : tool.pricing_v5?.compare_plan_kind === "included"
         ? (isFr ? `${tool.name} est inclus dans ${tool.pricing_v5.compare_plan_name || "une suite"}. Aucun tarif individuel n'est confirmé. Vérifiez les conditions de la licence.` : `${tool.name} is included in ${tool.pricing_v5.compare_plan_name || "a suite"}. No standalone price is confirmed. Check the licence terms.`)
         : tool.pricing_v5?.compare_plan_kind === "discontinued"
@@ -74,6 +82,10 @@ export function buildToolFaqs(
         ? (isFr
           ? `${tool.name} est proposé en ${lifetimeLicense ? "licence à vie" : "achat unique"}. ${tool.pricing?.paid || "Consultez le tarif officiel."}${verifiedSuffixFr}`
           : `${tool.name} is sold as ${lifetimeLicense ? "a lifetime license" : "a one-time purchase"}. ${tool.pricingEn?.paid || "See the official price."}${verifiedSuffixEn}`)
+        : unverifiedZero && !isPriceUndisclosed(tool)
+        ? (isFr
+          ? `ToolTrim n'a pas encore vérifié la grille tarifaire de ${tool.name} : le prix se consulte sur la page officielle.`
+          : `ToolTrim has not verified ${tool.name}'s pricing yet; check the official page for current prices.`)
         : displayPrice === 0 && isPriceUndisclosed(tool)
         ? (isFr
           ? `${tool.name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedSuffixFr}`

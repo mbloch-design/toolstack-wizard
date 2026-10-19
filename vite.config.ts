@@ -11,7 +11,7 @@ import { transformSync } from "esbuild";
 import { STACKS } from "./src/data/stacks";
 import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
-import { hasGenuineFreeTier, isPriceUndisclosed, resolveMonthlyPrice } from "./src/lib/pricing";
+import { hasConfirmedFreeTier, hasGenuineFreeTier, isPriceUndisclosed, resolveMonthlyPrice } from "./src/lib/pricing";
 import { formatToolPrice, nativePriceFromTool, usdFromEur } from "./src/lib/currencyRates";
 import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
 import { fitBrandedTitle } from "./src/lib/seoTitle";
@@ -21,7 +21,7 @@ import { TOOLS_TABLE_SELECT } from "./src/lib/toolsTableColumns";
 import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
 import { getCategoryLabel } from "./src/lib/categoryLabel";
 import { categorySeoDescription, categorySeoTitle, isCategoryIndexable } from "./src/lib/categorySeo";
-import { toolSeoDescription, toolSeoTitle, type ToolSeoPage } from "./src/lib/toolSeo";
+import { toolPriceFacts, toolSeoDescription, toolSeoTitle, type ToolSeoPage } from "./src/lib/toolSeo";
 
 /** Year in tool titles; the client uses the same clock (ToolDetailPage). */
 const SEO_YEAR = new Date().getFullYear();
@@ -234,6 +234,10 @@ function buildToolFaqSchema(params: {
           "@type": "Answer",
           text: (() => {
             const hasFree = toolHasFreePlan(tool);
+            // « Prix vérifié » only when a verification date exists: it was
+            // stated on every tool, researched or not.
+            const verifiedFr = tool.pricing_v5?.verified_on ? " Prix vérifié par ToolTrim." : "";
+            const verifiedEn = tool.pricing_v5?.verified_on ? " Price verified by ToolTrim." : "";
             // Must match the visible FAQ answer (src/lib/toolFaq.ts).
             if (isPriceUndisclosed(tool)) {
               const verifiedOn = tool.pricing_v5?.verified_on;
@@ -246,14 +250,27 @@ function buildToolFaqSchema(params: {
                 ? `${name} ne publie pas de grille tarifaire : le prix se vérifie sur la page officielle.${verifiedOn ? ` Prix vérifié le ${written}.` : ""}`
                 : `${name} doesn't publish a price list; check the official page for current pricing.${verifiedOn ? ` Price verified on ${written}.` : ""}`;
             }
-            if (isFr) {
-              if (priceDisplay === 0) return `${name} est gratuit. Prix vérifié par ToolTrim.`;
-              if (priceDisplay) return `${name} propose ${hasFree ? "un plan gratuit, puis des offres payantes à partir de" : "des offres à partir de"} ${fr(tool, priceDisplay)}/mois. Prix vérifié par ToolTrim.`;
-              return `${name} a un tarif variable selon le plan${hasFree ? ", avec une offre gratuite" : ""}. Prix vérifié par ToolTrim.`;
+            // A zero price is only « free » when a free tier is confirmed (same
+            // rule as src/lib/toolFaq.ts): a placeholder made Logic Pro free.
+            if (priceDisplay === 0 && !hasFree) {
+              return isFr
+                ? `ToolTrim n'a pas encore vérifié la grille tarifaire de ${name} : le prix se consulte sur la page officielle.`
+                : `ToolTrim has not verified ${name}'s pricing yet; check the official page for current prices.`;
             }
-            if (priceDisplay === 0) return `${name} is free. Price verified by ToolTrim.`;
-            if (priceDisplay) return `${name} offers ${hasFree ? "a free plan, then paid tiers from" : "paid plans from"} ${usd(tool, priceDisplay)}/month. Price verified by ToolTrim.`;
-            return `${name} has variable pricing by plan${hasFree ? ", including a free tier" : ""}. Price verified by ToolTrim.`;
+            // A one-time licence is not a monthly price (Logic Pro: $199.99 once).
+            if (priceDisplay && toolPriceFacts(tool).oneTime) {
+              return isFr
+                ? `${name} coûte ${fr(tool, priceDisplay)} en achat unique, sans abonnement.${verifiedFr}`
+                : `${name} costs ${usd(tool, priceDisplay)} as a one-time purchase, no subscription.${verifiedEn}`;
+            }
+            if (isFr) {
+              if (priceDisplay === 0) return `${name} est gratuit.${verifiedFr}`;
+              if (priceDisplay) return `${name} propose ${hasFree ? "un plan gratuit, puis des offres payantes à partir de" : "des offres à partir de"} ${fr(tool, priceDisplay)}/mois.${verifiedFr}`;
+              return `${name} a un tarif variable selon le plan${hasFree ? ", avec une offre gratuite" : ""}.${verifiedFr}`;
+            }
+            if (priceDisplay === 0) return `${name} is free.${verifiedEn}`;
+            if (priceDisplay) return `${name} offers ${hasFree ? "a free plan, then paid tiers from" : "paid plans from"} ${usd(tool, priceDisplay)}/month.${verifiedEn}`;
+            return `${name} has variable pricing by plan${hasFree ? ", including a free tier" : ""}.${verifiedEn}`;
           })(),
         },
       },
@@ -276,10 +293,10 @@ function buildToolFaqSchema(params: {
   };
 }
 
-/** True when a tool has a real free plan (freemium or free). */
+/** True when a tool has a free plan ToolTrim can confirm (never a bulk placeholder). */
 function toolHasFreePlan(tool: any): boolean {
   const p = tool.pricing;
-  return !!(p && typeof p === "object" && hasGenuineFreeTier(p.free));
+  return !!(p && typeof p === "object" && hasConfirmedFreeTier(tool));
 }
 
 /**
@@ -885,6 +902,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           }
         }
         const categories = JSON.parse(categoriesRaw);
+        // Breadcrumbs link the category's public slug: its internal id
+        // (`security`) only reaches the page through a 308 to `securite`,
+        // on ~1,670 tool pages.
+        const categorySlugById = new Map<string, string>(
+          (Array.isArray(categories) ? categories : categories.categories || []).map((cat: any) => [cat.id, cat.slug || cat.id]),
+        );
         const categoryById = new Map(categories.map((c: any) => [c.id, c]));
         const breadcrumbCategoryLabel = (tool: any, isFr: boolean): string | null => {
           const cat = categoryById.get(tool.category);
@@ -1091,7 +1114,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               itemListElement: [
                 { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
                 { "@type": "ListItem", position: 2, name: isFr ? "Outils" : "Tools", item: `${BASE}/${lang}/tools` },
-                ...(breadcrumbCatLabel ? [{ "@type": "ListItem", position: 3, name: breadcrumbCatLabel, item: `${BASE}/${lang}/category/${tool.category}` }] : []),
+                ...(breadcrumbCatLabel ? [{ "@type": "ListItem", position: 3, name: breadcrumbCatLabel, item: `${BASE}/${lang}/category/${categorySlugById.get(tool.category) || tool.category}` }] : []),
                 { "@type": "ListItem", position: breadcrumbCatLabel ? 4 : 3, name, item: url },
               ],
             };
@@ -1288,7 +1311,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 itemListElement: [
                   { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
                   { "@type": "ListItem", position: 2, name: isFr ? "Outils" : "Tools", item: `${BASE}/${lang}/tools` },
-                  ...(subBreadcrumbCatLabel ? [{ "@type": "ListItem", position: 3, name: subBreadcrumbCatLabel, item: `${BASE}/${lang}/category/${tool.category}` }] : []),
+                  ...(subBreadcrumbCatLabel ? [{ "@type": "ListItem", position: 3, name: subBreadcrumbCatLabel, item: `${BASE}/${lang}/category/${categorySlugById.get(tool.category) || tool.category}` }] : []),
                   { "@type": "ListItem", position: subBreadcrumbCatLabel ? 4 : 3, name, item: mainUrl },
                   { "@type": "ListItem", position: subBreadcrumbCatLabel ? 5 : 4, name: title.split("|")[0].trim(), item: url },
                 ],

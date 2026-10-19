@@ -9860,7 +9860,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -9870,7 +9870,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -16466,7 +16466,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "internal-tools-builder"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -16476,7 +16476,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "internal-tools-builder",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -26884,7 +26884,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "flutter-state-management"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -26894,7 +26894,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "flutter-state-management",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -30887,7 +30887,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -30897,7 +30897,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -31029,7 +31029,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -31039,7 +31039,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -32294,7 +32294,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "internal-tools-builder"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -32304,7 +32304,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "internal-tools-builder",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -40914,7 +40914,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "dev-environment"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -40924,7 +40924,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "dev-environment",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -41014,15 +41014,7 @@
       "metaDescription": "Cinema 4D : usages, licence, limites et avis ToolTrim. Modélisation, animation et motion design 3D, avec le moteur Redshift inclus dans l'abonnement.",
       "metaDescriptionEn": "Cinema 4D: uses, licensing, limitations and ToolTrim review. 3D modelling, animation and motion design, with Redshift included in the subscription.",
       "idealForFr": "Un ou une motion designer ou artiste 3D qui a besoin d'une suite complète de modélisation, d'animation et de rendu avec le rendu GPU inclus, plutôt que d'assembler des outils séparés.",
-      "idealForEn": "A motion designer or 3D artist who needs a full modeling, animation and rendering suite with GPU rendering included, rather than assembling separate tools.",
-      "presentationTitleFr": "Cinema 4D : 838,80 € par an, avis 2026 | ToolTrim",
-      "presentationTitleEn": "Cinema 4D: €838.80 per year, review 2026 | ToolTrim",
-      "prixTitleFr": "Cinema 4D prix 2026 : 838,80 € par an | ToolTrim",
-      "prixTitleEn": "Cinema 4D pricing 2026: €838.80 per year | ToolTrim",
-      "presentationMetaDescriptionFr": "Modélisation, animation et motion design 3D, avec le moteur Redshift inclus dans l'abonnement. Abonnement annuel : 838,80 € payés d'avance, selon les conditions",
-      "presentationMetaDescriptionEn": "3D modelling, animation and motion design, with Redshift included in the subscription. Annual plan: €838.80 paid upfront, subject to Maxon's regional checkout.",
-      "prixMetaDescriptionFr": "Prix de Cinema 4D en 2026 : 838,80 € par an en EUR, paiement anticipé. Vérifiez les taxes et le pays au panier Maxon.",
-      "prixMetaDescriptionEn": "Cinema 4D pricing in 2026: €838.80 per year, paid upfront. Check regional pricing and taxes at Maxon checkout."
+      "idealForEn": "A motion designer or 3D artist who needs a full modeling, animation and rendering suite with GPU rendering included, rather than assembling separate tools."
     },
     "alternatives": [
       "blender",
@@ -43426,7 +43418,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "webflow-tooling"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -43436,7 +43428,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "webflow-tooling",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -47745,7 +47737,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -47755,7 +47747,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -52079,7 +52071,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -52089,7 +52081,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -52876,7 +52868,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -52886,7 +52878,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "pricing_v5": {
       "cautions": [
         "Langage open source et gratuit, sans coût de licence",
@@ -58137,7 +58129,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -58147,7 +58139,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -58548,7 +58540,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -58558,7 +58550,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -63685,7 +63677,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -63695,7 +63687,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -67156,7 +67148,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "code-quality"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -67166,7 +67158,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-quality",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -68886,7 +68878,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -68896,7 +68888,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -73379,7 +73371,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "webflow-tooling"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -73389,7 +73381,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "webflow-tooling",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -74363,7 +74355,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -74373,7 +74365,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -75870,7 +75862,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "mobile-framework"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -75880,7 +75872,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "mobile-framework",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -83999,8 +83991,6 @@
     ],
     "alternatives": [],
     "seo": {
-      "prixTitleEn": "GitLens: Free for Git, Pro at $10/mo — Pricing 2026 | ToolTrim",
-      "prixTitleFr": "GitLens : Gratuit pour Git, Pro à 10$/mois — Prix 2026 | ToolTrim",
       "metaDescription": "GitLens en 2026 : ce qui est gratuit, ce que coûte GitLens Pro et ses alternatives. Le guide ToolTrim de l'extension Git pour VS Code.",
       "idealForFr": "Un développeur qui veut l'historique Git, le blame et le contexte des pull requests directement dans VS Code plutôt que de basculer vers un client Git séparé.",
       "idealForEn": "A developer who wants Git history, blame and pull-request context directly inside VS Code instead of switching to a separate Git client."
@@ -84019,7 +84009,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "dev-environment"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -84029,7 +84019,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "dev-environment",
     "pricing_v5": {
       "cautions": [
         "La page de tarifs de GitKraken affiche les prix via JavaScript, donc une lecture statique ne renvoie rien ; une lecture en direct dans un navigateur a confirmé Pro 8 €, Advanced 14 €, Business 18 € par siège/mois, facturé annuellement, mais seulement en euros, sans sélecteur de région ou de devise trouvé pour confirmer un montant en dollars pour la région US de cette fiche. Les prix affichés n'incluent pas les taxes."
@@ -85149,7 +85139,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -85159,7 +85149,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -89911,7 +89901,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -89921,7 +89911,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -100971,7 +100961,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -100981,7 +100971,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -103006,12 +102996,12 @@
     "longDescription": "Framework de test JavaScript largement utilisé.",
     "longDescriptionEn": "Widely used JavaScript testing framework.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Open source sous licence MIT : gratuit pour tout projet.",
+      "paid": null
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Open source under the MIT license: free for any project.",
+      "paid": null
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": null,
@@ -103111,7 +103101,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -103121,7 +103111,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -117543,8 +117533,8 @@
     "shortDescription": "Station audio Apple pour composition, mixage et postproduction.",
     "shortDescriptionEn": "Apple DAW for composition, mixing, and post-production.",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Pas de version gratuite. Essai gratuit de 30 jours via Apple Creator Studio.",
+      "paid": "199,99 $ en achat unique sur Mac, ou inclus dans Apple Creator Studio à 12,99 $/mois (129 $/an)."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
@@ -117626,8 +117616,69 @@
     "ogImageUrl": "https://www.apple.com/v/logic-pro/n/images/meta/logic_pro__bwh8nhmy69jm_og.png?202603241546",
     "description": "Station audio Apple pour composition, mixage et postproduction.",
     "longDescriptionEn": "Apple's professional digital audio workstation (DAW) for Mac and iPad, with a large library of instruments, loops and effects, plus advanced production and mixing tools.",
-    "pricingEn": null,
-    "pricing_v5": null,
+    "pricingEn": {
+      "free": "No free version. 30-day free trial through Apple Creator Studio.",
+      "paid": "$199.99 one-time purchase on Mac, or included in Apple Creator Studio at $12.99/month ($129/year)."
+    },
+    "pricing_v5": {
+      "compare_price_monthly_eur": null,
+      "compare_plan_name": "Logic Pro (Mac)",
+      "compare_plan_kind": "one_time",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-19",
+      "official_source_url": "https://www.apple.com/logic-pro/",
+      "source_domain": "apple.com",
+      "usage_sensitive": false,
+      "cautions": [
+        "Prix publié en dollars sur apple.com (marché US). L'abonnement Apple Creator Studio regroupe Logic Pro, MainStage et d'autres apps créatives."
+      ],
+      "cautionsEn": [
+        "Price published in US dollars on apple.com. The Apple Creator Studio subscription bundles Logic Pro, MainStage and other creative apps."
+      ],
+      "plans": [
+        {
+          "planKey": "logic-pro-mac",
+          "displayName": "Logic Pro (Mac)",
+          "summary": "Achat unique, app autonome.",
+          "featureHighlights": [
+            "Licence Mac en achat unique, mêmes fonctions que dans l'abonnement."
+          ],
+          "detailsSourceUrl": "https://www.apple.com/logic-pro/",
+          "pricingUnit": "one_time",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 199.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-19",
+          "lastConfirmedOn": "2026-10-19"
+        },
+        {
+          "planKey": "apple-creator-studio",
+          "displayName": "Apple Creator Studio",
+          "summary": "Abonnement : 12,99 $/mois ou 129 $/an, essai de 30 jours.",
+          "featureHighlights": [
+            "Inclut Logic Pro, MainStage et d'autres apps créatives Apple."
+          ],
+          "detailsSourceUrl": "https://www.apple.com/logic-pro/",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 12.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-19",
+          "lastConfirmedOn": "2026-10-19"
+        }
+      ]
+    },
     "seo": null,
     "verdictEn": {
       "keepIf": [
@@ -127821,15 +127872,7 @@
       "metaDescription": "Maxon One : usages, licence, limites et avis ToolTrim. Suite réunissant Cinema 4D, Redshift, ZBrush et Red Giant pour la création 3D et vidéo.",
       "metaDescriptionEn": "Maxon One: uses, licensing, limitations and ToolTrim review. A suite combining Cinema 4D, Redshift, ZBrush and Red Giant for 3D and video work.",
       "idealForFr": "Un artiste 3D, motion designer ou freelance VFX qui a besoin d'outils de modélisation, sculpture, rendu et motion design réunis dans un seul abonnement.",
-      "idealForEn": "A 3D artist, motion designer, or VFX freelancer who needs modeling, sculpting, rendering, and motion graphics tools in one subscription.",
-      "presentationTitleFr": "Maxon One : 1 390,80 € par an, avis 2026 | ToolTrim",
-      "presentationTitleEn": "Maxon One: €1,390.80 per year, review 2026 | ToolTrim",
-      "prixTitleFr": "Maxon One prix 2026 : 1 390,80 € par an | ToolTrim",
-      "prixTitleEn": "Maxon One pricing 2026: €1,390.80 per year | ToolTrim",
-      "presentationMetaDescriptionFr": "Suite réunissant Cinema 4D, Redshift, ZBrush et Red Giant pour la création 3D et vidéo. Abonnement annuel : 1 390,80 € payés d'avance, selon les conditions affi",
-      "presentationMetaDescriptionEn": "A suite combining Cinema 4D, Redshift, ZBrush and Red Giant for 3D and video work. Annual plan: €1,390.80 paid upfront, subject to Maxon's regional checkout.",
-      "prixMetaDescriptionFr": "Prix de Maxon One en 2026 : 1 390,80 € par an en EUR, paiement anticipé. Vérifiez les taxes et le pays au panier Maxon.",
-      "prixMetaDescriptionEn": "Maxon One pricing in 2026: €1,390.80 per year, paid upfront. Check regional pricing and taxes at Maxon checkout."
+      "idealForEn": "A 3D artist, motion designer, or VFX freelancer who needs modeling, sculpting, rendering, and motion graphics tools in one subscription."
     },
     "alternatives": [
       "blender",
@@ -138880,7 +138923,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -138890,7 +138933,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -139904,7 +139947,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -139914,7 +139957,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -140592,7 +140635,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -140602,7 +140645,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -141180,7 +141223,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -141190,7 +141233,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -146027,7 +146070,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -146037,7 +146080,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -152183,7 +152226,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -152193,7 +152236,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -154914,7 +154957,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -154924,7 +154967,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -158616,7 +158659,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -158626,7 +158669,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -159957,7 +160000,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "python-packaging"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -159967,7 +160010,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "python-packaging",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -160089,7 +160132,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -160099,7 +160142,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -160599,7 +160642,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -160609,7 +160652,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -161625,7 +161668,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "code-quality"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -161635,7 +161678,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-quality",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -162806,7 +162849,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -162816,7 +162859,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -167187,7 +167230,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -167197,7 +167240,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -167322,7 +167365,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -167332,7 +167375,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -171441,7 +171484,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "mobile-framework"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -171451,7 +171494,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "mobile-framework",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -173522,15 +173565,7 @@
       "metaDescription": "Red Giant : usages, licence, limites et avis ToolTrim. Plugins de particules, étalonnage et compositing pour la postproduction, avec Universe et Maxon Studio.",
       "metaDescriptionEn": "Red Giant: uses, licensing, limitations and ToolTrim review. Particle, colour and compositing plugins for postproduction, including Universe and Maxon Studio.",
       "idealForFr": "Freelances motion design et monteurs vidéo qui travaillent déjà dans After Effects ou Premiere Pro et veulent une boîte à outils large et prête à l'emploi pour les particules, transitions, étalonnage et effets VFX, sans repartir de zéro.",
-      "idealForEn": "Freelance motion designers and video editors who already work inside After Effects or Premiere Pro and want a broad, ready-made toolkit for particles, transitions, color grading, and VFX shots without building custom effects from scratch.",
-      "presentationTitleFr": "Red Giant : 718,80 € par an, avis 2026 | ToolTrim",
-      "presentationTitleEn": "Red Giant: €718.80 per year, review 2026 | ToolTrim",
-      "prixTitleFr": "Red Giant prix 2026 : 718,80 € par an | ToolTrim",
-      "prixTitleEn": "Red Giant pricing 2026: €718.80 per year | ToolTrim",
-      "presentationMetaDescriptionFr": "Plugins de particules, étalonnage et compositing pour la postproduction, avec Universe et Maxon Studio. Abonnement annuel : 718,80 € payés d'avance, selon les c",
-      "presentationMetaDescriptionEn": "Particle, colour and compositing plugins for postproduction, including Universe and Maxon Studio. Annual plan: €718.80 paid upfront, subject to Maxon's regional",
-      "prixMetaDescriptionFr": "Prix de Red Giant en 2026 : 718,80 € par an en EUR, paiement anticipé. Vérifiez les taxes et le pays au panier Maxon.",
-      "prixMetaDescriptionEn": "Red Giant pricing in 2026: €718.80 per year, paid upfront. Check regional pricing and taxes at Maxon checkout."
+      "idealForEn": "Freelance motion designers and video editors who already work inside After Effects or Premiere Pro and want a broad, ready-made toolkit for particles, transitions, color grading, and VFX shots without building custom effects from scratch."
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,
@@ -174304,15 +174339,7 @@
       "metaDescription": "Redshift : usages, licence, limites et avis ToolTrim. Moteur de rendu 3D pour éclairer et finaliser des scènes dans les applications compatibles.",
       "metaDescriptionEn": "Redshift: uses, licensing, limitations and ToolTrim review. A 3D renderer for lighting and finishing scenes in compatible applications.",
       "idealForFr": "Un ou une artiste 3D ou motion designer travaillant sous Houdini, Maya, 3ds Max ou Blender qui a besoin d'un rendu GPU rapide sans passer à Cinema 4D pour l'obtenir.",
-      "idealForEn": "A 3D artist or motion designer working in Houdini, Maya, 3ds Max or Blender who needs fast GPU rendering without switching to Cinema 4D for it.",
-      "presentationTitleFr": "Redshift : 298,80 € par an, avis 2026 | ToolTrim",
-      "presentationTitleEn": "Redshift: €298.80 per year, review 2026 | ToolTrim",
-      "prixTitleFr": "Redshift prix 2026 : 298,80 € par an | ToolTrim",
-      "prixTitleEn": "Redshift pricing 2026: €298.80 per year | ToolTrim",
-      "presentationMetaDescriptionFr": "Moteur de rendu 3D pour éclairer et finaliser des scènes dans les applications compatibles. Abonnement annuel : 298,80 € payés d'avance, selon les conditions af",
-      "presentationMetaDescriptionEn": "A 3D renderer for lighting and finishing scenes in compatible applications. Annual plan: €298.80 paid upfront, subject to Maxon's regional checkout.",
-      "prixMetaDescriptionFr": "Prix de Redshift en 2026 : 298,80 € par an en EUR, paiement anticipé. Vérifiez les taxes et le pays au panier Maxon.",
-      "prixMetaDescriptionEn": "Redshift pricing in 2026: €298.80 per year, paid upfront. Check regional pricing and taxes at Maxon checkout."
+      "idealForEn": "A 3D artist or motion designer working in Houdini, Maya, 3ds Max or Blender who needs fast GPU rendering without switching to Cinema 4D for it."
     },
     "alternatives": [
       "octane-render",
@@ -175334,7 +175361,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "ia_use_case": null,
     "betterAlternative": {
@@ -175349,7 +175376,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
       "compare_plan_name": null,
@@ -177515,7 +177542,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -177525,7 +177552,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -180259,7 +180286,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "flutter-state-management"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -180269,7 +180296,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "flutter-state-management",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -185138,7 +185165,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -185148,7 +185175,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -200718,7 +200745,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -200728,7 +200755,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -202758,7 +202785,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -202768,7 +202795,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -212923,7 +212950,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -212933,7 +212960,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -213946,7 +213973,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -213956,7 +213983,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -221983,7 +222010,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -221993,7 +222020,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -224647,7 +224674,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "python-packaging"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -224657,7 +224684,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "python-packaging",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -227767,7 +227794,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -227777,7 +227804,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -228541,7 +228568,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "dev-environment"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -228551,7 +228578,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "dev-environment",
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
       "auto_replace_allowed": false,
@@ -232986,7 +233013,7 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "ia_use_case": null,
     "betterAlternative": null,
@@ -232996,7 +233023,7 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "pricing_v5": {
       "cautions": [
         "WordPress recouvre en realite deux offres : le logiciel WordPress.org est gratuit a vie mais demande de payer l'hebergement a part ; WordPress.com est un SaaS heberge avec les plans et prix ci-dessus. Le comparePlanKey est laisse vide car la voie auto-hebergee open source n'a pas de prix d'entree unique."
@@ -237440,15 +237467,7 @@
       "metaDescription": "ZBrush : usages, licence, limites et avis ToolTrim. Sculpture et peinture numériques pour personnages, créatures et modèles détaillés.",
       "metaDescriptionEn": "ZBrush: uses, licensing, limitations and ToolTrim review. Digital sculpting and painting for characters, creatures and detailed models.",
       "idealForFr": "Artistes 3D professionnels spécialisés en personnages, créatures et hard-surface, qui ont besoin de très hautes densités de polygones et d'un pipeline direct vers Cinema 4D, Maya ou 3ds Max.",
-      "idealForEn": "Professional character, creature and hard-surface 3D artists who need very high polygon counts and a direct pipeline into Cinema 4D, Maya or 3ds Max.",
-      "presentationTitleFr": "ZBrush : 430,80 € par an, avis 2026 | ToolTrim",
-      "presentationTitleEn": "ZBrush: €430.80 per year, review 2026 | ToolTrim",
-      "prixTitleFr": "ZBrush prix 2026 : 430,80 € par an | ToolTrim",
-      "prixTitleEn": "ZBrush pricing 2026: €430.80 per year | ToolTrim",
-      "presentationMetaDescriptionFr": "Sculpture et peinture numériques pour personnages, créatures et modèles détaillés. Abonnement annuel : 430,80 € payés d'avance, selon les conditions affichées p",
-      "presentationMetaDescriptionEn": "Digital sculpting and painting for characters, creatures and detailed models. Annual plan: €430.80 paid upfront, subject to Maxon's regional checkout.",
-      "prixMetaDescriptionFr": "Prix de ZBrush en 2026 : 430,80 € par an en EUR, paiement anticipé. Vérifiez les taxes et le pays au panier Maxon.",
-      "prixMetaDescriptionEn": "ZBrush pricing in 2026: €430.80 per year, paid upfront. Check regional pricing and taxes at Maxon checkout."
+      "idealForEn": "Professional character, creature and hard-surface 3D artists who need very high polygon counts and a direct pipeline into Cinema 4D, Maya or 3ds Max."
     },
     "alternatives": [
       "nomad-sculpt",

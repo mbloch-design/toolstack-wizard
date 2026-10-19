@@ -69,3 +69,42 @@ const TRIAL_ONLY_RE = /essai|trial|jours? gratuit|demo gratuite|démo gratuite/i
 // free tier, not a trial; Logseq mentions "sans... essai" while being fully
 // free/open-source).
 const PERMANENT_FREE_OVERRIDE_RE = /gratuit (a|à) vie|forever free|illimité dans le temps|sans limite de temps|entièrement gratuit|plan gratuit permanent|produit complet|open-?source/i;
+
+/**
+ * Bulk placeholders written on tools that were never researched (19/10/2026:
+ * 104 « Gratuit ou open source selon usage », 13 « Gratuit ou plan gratuit
+ * disponible »...). They read like facts, so Logic Pro ($199.99) was served
+ * to Google as free, down to its FAQPage JSON-LD, and Jest got an invented
+ * « Paid plan ». They are not evidence of anything and must never be shown
+ * or turned into a claim.
+ */
+const PLACEHOLDER_PRICING_TEXTS = new Set([
+  "gratuit ou open source selon usage",
+  "free or open source depending on usage",
+  "gratuit ou plan gratuit disponible",
+  "options payantes possibles selon hébergement, équipe ou volume",
+  "paid options may apply depending on hosting, team, or volume",
+  "fonctionnalités de base",
+  "core features",
+  "toutes les fonctionnalités",
+  "all features",
+  "version payante disponible",
+  "paid version available",
+  "tarif à vérifier selon plan et usage",
+]);
+
+export function isPlaceholderPricingText(text: string | null | undefined): boolean {
+  return PLACEHOLDER_PRICING_TEXTS.has(String(text || "").trim().toLowerCase().replace(/\.$/, ""));
+}
+
+/**
+ * A free tier ToolTrim can state: from the verified plan grid when there is
+ * one, otherwise from a specific `pricing.free` text, never from a placeholder.
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function hasConfirmedFreeTier(tool: any): boolean {
+  const plans = [...(tool?.pricing_v5?.plans || []), ...(tool?.pricing_v5En?.plans || [])];
+  if (plans.some((plan) => plan?.isFree)) return true;
+  const free = tool?.pricing?.free;
+  return hasGenuineFreeTier(free) && !isPlaceholderPricingText(free);
+}
