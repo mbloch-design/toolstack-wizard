@@ -510,18 +510,34 @@ function resequenceNeeds(needs: StackNeed[]) {
 export function createCustomNeedInState(
   state: ToolCartState,
   label: string,
+  allocatedId?: string,
 ): { state: ToolCartState; needId: string | null } {
-  const normalized = normalizeToolCartState(state);
+  let normalized = normalizeToolCartState(state);
   const cleanLabel = normalizeCustomNeedLabel(label);
   if (!cleanLabel) return { state: normalized, needId: null };
 
   const existingIds = new Set(normalized.needs.map((need) => need.id));
-  const baseId = `custom-${customNeedSlug(cleanLabel)}`;
+  const baseId = allocatedId || `custom-${customNeedSlug(cleanLabel)}`;
   let needId = baseId;
   let suffix = 2;
-  while (existingIds.has(needId)) {
-    needId = `${baseId}-${suffix}`;
-    suffix += 1;
+  if (allocatedId && existingIds.has(allocatedId)) {
+    // Recovery can reveal an unknown legacy ID after the UI has already used
+    // allocatedId. Reserve the returned ID for the new need; keep the legacy
+    // collection distinct and move its existing assignments together with it.
+    let recoveredId = `${allocatedId}-recovered`;
+    while (existingIds.has(recoveredId)) recoveredId = `${allocatedId}-recovered-${suffix++}`;
+    normalized = {
+      ...normalized,
+      needs: normalized.needs.map(need => need.id === allocatedId ? { ...need, id: recoveredId } : need),
+      toolEntries: normalized.toolEntries.map(entry => ({ ...entry,
+        needIds: entry.needIds.map(id => id === allocatedId ? recoveredId : id),
+      })),
+    };
+  } else if (!allocatedId) {
+    while (existingIds.has(needId)) {
+      needId = `${baseId}-${suffix}`;
+      suffix += 1;
+    }
   }
 
   const needs = resequenceNeeds([

@@ -90,9 +90,13 @@ export function useStackPins() {
   }, []);
 
   const createNeed = useCallback((label: string) => {
+    // Allocate once per user action: a queued reducer may run again after recovery.
+    const token = typeof crypto.randomUUID === "function" ? crypto.randomUUID()
+      : Array.from(crypto.getRandomValues(new Uint32Array(4)), part => part.toString(16)).join("-");
+    const allocatedId = `custom-${token}`;
     let createdNeedId: string | null = null;
     updateToolCartState((current) => {
-      const result = createCustomNeedInState(current, label);
+      const result = createCustomNeedInState(current, label, allocatedId);
       createdNeedId = result.needId;
       return result.state;
     });

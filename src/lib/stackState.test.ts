@@ -263,6 +263,22 @@ describe("stackState", () => {
     expect(second.state.needs.filter((need) => need.source === "custom")).toHaveLength(2);
   });
 
+  it("keeps an explicitly allocated need ID and preserves a colliding existing collection", () => {
+    const base = createDefaultToolCartState();
+    const legacy = pinToolInState(normalizeToolCartState({ ...base, needs: [...base.needs, {
+      id: "custom-fixed", labelFr: "Historique", labelEn: "Legacy", source: "custom", order: 90,
+    }, { id: "custom-fixed-recovered", labelFr: "Autre", labelEn: "Other", source: "custom", order: 100 }] }), "legacy-tool", ["custom-fixed"]);
+    const created = createCustomNeedInState(legacy, "Client", "custom-fixed");
+    const oldNeed = created.state.needs.find(need => need.labelFr === "Historique")!;
+    expect(created.needId).toBe("custom-fixed");
+    expect(created.state.needs.find(need => need.id === "custom-fixed")?.labelFr).toBe("Client");
+    expect(oldNeed.id).not.toBe("custom-fixed");
+    expect(oldNeed.id).not.toBe("custom-fixed-recovered");
+    expect(created.state.needs.some(need => need.id === "custom-fixed-recovered" && need.labelFr === "Autre")).toBe(true);
+    expect(created.state.toolEntries[0].needIds).toEqual([oldNeed.id]);
+    expect(new Set(created.state.needs.map(need => need.id)).size).toBe(created.state.needs.length);
+  });
+
   it("renames custom and suggested needs", () => {
     const created = createCustomNeedInState(createDefaultToolCartState(), "Relation client");
     const renamed = renameCustomNeedInState(created.state, created.needId as string, "Suivi client");

@@ -12,7 +12,7 @@ beforeEach(() => {
     removeItem: (key: string) => { values.delete(key); },
   } });
 });
-afterEach(cleanup);
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 const t = (fr: string) => fr;
 
 it("shares one scope across all existing hook APIs and non-React plan lookup", async () => {
@@ -128,4 +128,47 @@ it("replays ordinary edits after a partial legacy read recovers without reviving
   expect(store.readPersonalStack().billing.choices.notion).toEqual(legacyChoice);
   expect(store.readPersonalStack().billing.choices.figma.amount).toBe(9);
   expect(store.readPersonalStack().decisions).toEqual({});
+});
+
+
+it.each(["custom-client", "custom-00000000-0000-4000-8000-000000000001"])("keeps created Client identity and assignments when legacy contains %s", async legacyId => {
+  const { createDefaultToolCartState, normalizeToolCartState, pinToolInState, STACK_STATE_STORAGE_KEY } = await import("@/lib/stackState");
+  const base = createDefaultToolCartState();
+  const legacy = pinToolInState(normalizeToolCartState({ ...base, needs: [...base.needs, {
+    id: legacyId, labelFr: "Client historique", labelEn: "Legacy client", source: "custom", order: 90,
+  }] }), "legacy-tool", [legacyId]);
+  values.set(STACK_STATE_STORAGE_KEY, JSON.stringify(legacy));
+  values.set("tooltrim-ma-stack-paid-plans-v1", '["legacy-tool"]');
+  let unreadable = true;
+  Object.defineProperty(window, "localStorage", { configurable: true, value: {
+    getItem(key: string) { if (key === "tooltrim-ma-stack-paid-plans-v1" && unreadable) throw new Error("read blocked"); return values.get(key) ?? null; },
+    setItem(key: string, value: string) { values.set(key, value); },
+    removeItem(key: string) { values.delete(key); },
+  } });
+  // The second table row forces an exact collision with an unknown legacy ID.
+  vi.stubGlobal("crypto", { randomUUID: () => "00000000-0000-4000-8000-000000000001" });
+  let store = await import("@/lib/personalStackStore"); const { useStackPins } = await import("./useStackPins");
+  const pins = renderHook(useStackPins);
+  let createdId: string | null = null;
+  act(() => { createdId = pins.result.current.createNeed("Client"); });
+  expect(createdId).not.toBeNull();
+  act(() => {
+    pins.result.current.saveToolSelection("new-tool", [createdId!], "wishlist");
+    pins.result.current.renameNeed(createdId!, "Nouveau client");
+  });
+  unreadable = false;
+  act(() => window.dispatchEvent(new StorageEvent("storage", { key: null })));
+  function assertReferences(selection: typeof legacy) {
+    const oldNeed = selection.needs.find(need => need.labelFr === "Client historique")!;
+    const newNeed = selection.needs.find(need => need.labelFr === "Nouveau client")!;
+    expect(oldNeed).toBeDefined(); expect(newNeed).toBeDefined();
+    expect(newNeed.id).toBe(createdId);
+    expect(oldNeed.id).not.toBe(createdId);
+    if (legacyId === "custom-client") expect(oldNeed.id).toBe("custom-client");
+    expect(selection.toolEntries.find(entry => entry.toolSlug === "legacy-tool")!.needIds).toEqual([oldNeed.id]);
+    expect(selection.toolEntries.find(entry => entry.toolSlug === "new-tool")!).toMatchObject({ needIds: [createdId], intent: "wishlist" });
+  }
+  assertReferences(pins.result.current.state);
+  cleanup(); vi.resetModules(); store = await import("@/lib/personalStackStore");
+  assertReferences(store.readPersonalStack().selection);
 });
