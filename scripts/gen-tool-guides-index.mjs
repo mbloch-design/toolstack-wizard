@@ -36,6 +36,19 @@ const priced = new Set(
     .map((tool) => tool.slug || tool.id),
 );
 
+/**
+ * English posts whose slug is the French side of a declared pair only exist to
+ * redirect (`/en/guide/chatgpt-plus-utile-ou-inutile` → `chatgpt-pro-worth-it`):
+ * linking them would send every visitor and crawler through a 301. The pairs
+ * live in src/lib/seo.ts, kept in sync with App.tsx and vite.config.ts by
+ * src/test/seo/guideSlugMaps.spec.ts.
+ */
+const seoSource = readFileSync(resolve("src/lib/seo.ts"), "utf8");
+const pairBlock = seoSource.match(/GUIDE_SLUG_ALTERNATES[^{]*\{([\s\S]*?)\n\};/)?.[1] ?? "";
+const redirectedEnSlugs = new Set([...pairBlock.matchAll(/"([^"]+)":\s*"([^"]+)"/g)].filter(([, fr, en]) => fr !== en).map(([, fr]) => fr));
+const loadPosts = (lang) => JSON.parse(readFileSync(resolve(`src/data/posts-${lang}.json`), "utf8"))
+  .filter((post) => lang !== "en" || !redirectedEnSlugs.has(post.slug));
+
 /** Guides whose category is editorial narrative, not tool advice. */
 const NARRATIVE_CATEGORY = "Stories";
 
@@ -44,7 +57,7 @@ const byGuide = {};
 const unresolved = [];
 
 for (const lang of LANGUAGES) {
-  const posts = JSON.parse(readFileSync(resolve(`src/data/posts-${lang}.json`), "utf8"));
+  const posts = loadPosts(lang);
 
   for (const post of posts) {
     if (!post.toolId) continue;
@@ -132,7 +145,7 @@ const coveredTools = (post) => {
   return covered;
 };
 for (const lang of LANGUAGES) {
-  const posts = JSON.parse(readFileSync(resolve(`src/data/posts-${lang}.json`), "utf8"));
+  const posts = loadPosts(lang);
   for (const post of posts) {
     const tags = (post.tags || []).map((tag) => String(tag).toLowerCase());
     const covered = coveredTools(post);

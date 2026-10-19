@@ -10,6 +10,7 @@ import { Check, Clock, Link2, Linkedin, X as XIcon } from "@/lib/icons";
 import { buildGuideToc, renderGuideMarkdown, type GuideTocItem } from "@/lib/guideMarkdown";
 import { cleanupSeo, setHreflang, setJsonLd, setMeta, setSeoTags } from "@/lib/seo";
 import { getRelatedGuides, getToolForGuide, getToolsForGuide } from "@/lib/toolGuides";
+import { getStacksForTool } from "@/lib/toolStacks";
 import ToolLogo from "@/components/ToolLogo";
 import brandColors from "@/data/brandColors.json";
 import GuideCover from "@/components/guide/GuideCover";
@@ -36,6 +37,14 @@ const GuideDetailPage = () => {
   // stays a static read — the page loads no catalogue at runtime.
   const relatedTool = useMemo(() => getToolForGuide(post?.slug, lang), [post?.slug, lang]);
   const coveredTools = useMemo(() => getToolsForGuide(post?.slug, lang), [post?.slug, lang]);
+  // Stacks that use the article's tools, three at most, each shown with the
+  // tool that brought it in. Guides and stacks never linked to each other.
+  const coveredStacks = useMemo(() => {
+    const seen = new Set<string>();
+    return coveredTools.flatMap((tool) => getStacksForTool(tool.slug, lang).map((stack) => ({ stack, tool })))
+      .filter(({ stack }) => !seen.has(stack.slug) && seen.add(stack.slug))
+      .slice(0, 3);
+  }, [coveredTools, lang]);
   const relatedGuides = useMemo(() => getRelatedGuides(post?.slug, lang), [post?.slug, lang]);
   const h2Toc = useMemo(() => toc.filter((item) => item.level === 2), [toc]);
 
@@ -281,6 +290,29 @@ const GuideDetailPage = () => {
                     </Link>
                   ) : null}
                 </div>
+              </aside>
+            ) : null}
+
+            {coveredStacks.length > 0 ? (
+              <aside className="ga-tools" aria-labelledby="ga-stacks-title">
+                <h2 id="ga-stacks-title" className="ga-tools-title">
+                  {coveredTools.length > 1 ? t("Les stacks qui les utilisent", "Stacks that use them") : t("Les stacks qui l’utilisent", "Stacks that use it")}
+                </h2>
+                <ul className="ga-tools-list">
+                  {coveredStacks.map(({ stack, tool }) => (
+                    <li key={stack.slug} className="ga-tools-item">
+                      <Link to={`${prefix}/stacks/${stack.slug}`} className="ga-tools-main">
+                        <ToolLogo tool={tool} size={48} className="ga-tools-icon" />
+                        <span className="ga-tools-name">{stack.title}</span>
+                      </Link>
+                      {/* Same destination as the row link: kept for the pointer, out of
+                          the tab order and the accessibility tree (one stop per stack). */}
+                      <Link className="ga-tools-open" to={`${prefix}/stacks/${stack.slug}`} tabIndex={-1} aria-hidden="true">
+                        {t("Voir", "View")}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </aside>
             ) : null}
 

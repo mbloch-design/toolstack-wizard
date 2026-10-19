@@ -47,6 +47,24 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 - [ ] Slugs français dans les URL anglaises des catégories (`/en/category/gestion-projet`), à traiter avec les pages par intention (301)
 - [ ] `x-default` des pages piliers persona pointe vers le français, contraire à « anglais d'abord »
 - [ ] Maillage vers les sous-pages prix et alternatives depuis fiches, comparatifs et catégories
+- [x] Audit guides et stacks (19/10/2026, HTML servi à Googlebot + GSC du 18/07 au 17/10) : stacks 1 clic / 350 impressions, guides 20 clics / 5 500 impressions. Livré le 19/10 (branche `seo/guides-stacks-2026-10`) :
+  - Maillage : bloc « Stacks » sur la fiche outil (212 stacks sur 212 liées depuis au moins une fiche, `src/data/tool_stacks_index.json`), « Les guides pour choisir » sur 182 stacks, « Les stacks qui les utilisent » sur les guides, « Autres stacks » choisies par outils partagés (stacks sans lien entrant venant d'une autre stack : 188 → 20).
+  - Données structurées au prérendu : BreadcrumbList et ItemList sur les 424 stacks, les 5 comparatifs « meilleurs outils » et les 10 piliers persona.
+  - Titres des stacks (`src/lib/stackSeo.ts`, partagé prérendu/client) : « Stack X : meilleurs outils et budget 2026 » / « X stack: best tools and budget (2026) » ; descriptions FR sans la phrase de remplissage (> 160 car. : 171 → 38) ; H1 complet quand l'accroche éditoriale n'est qu'un profil ; sigles corrigés (« Stack RH », « Stack IA »).
+  - 456 rôles d'outils restés en français dans les pages anglaises traduits.
+  - 20 guides anglais renommés avec slug anglais, 301 dans les deux langues (`vercel.json`), tables FR/EN des trois fichiers à jour.
+  - Guide Loom : prix revérifiés le 19/10 (Business + AI à 24 $/mois en mensuel), titre et description sur « loom pricing », « is loom free » ; guide court Loom relié au guide complet (FR et EN). Pas de cannibalisation avec `/tool/loom/pricing`, absente de ces requêtes.
+  - Guide alternatives Notion : liens vers les fiches Obsidian, Logseq, Notion.
+  - `/ma-stack` et `/my-stack` en noindex, follow.
+  - 96 emplacements de stacks pointaient vers 27 fiches retirées le 02/10 (`descript`, `topaz-video`, `capcut-ai`…), affichées en slug brut sans lien : 79 remplacés par la fiche de destination de la 301, 17 retirés car l'outil cible était déjà dans la stack ; un HubSpot en double retiré.
+  - Index guides ↔ outils : les articles anglais à slug français qui redirigent ne sont plus liés.
+- [ ] Mesurer l'effet sur GSC entre le 9 et le 23/11/2026 : impressions des stacks (base 350 sur 3 mois), position du guide Loom (base 48-54), « notion alternative freelancer » (base 6).
+- [ ] Slugs anglais des stacks (136 URL `/en/stacks/` à slug français) : reporté le 19/10. Coût élevé (20 constructions d'URL, routage, hreflang, sitemap, ~270 redirections), slugs générés trop génériques (`/en/stacks/seo`), et le seul slug visible (`consultant-seo-editorial`, pos. 9) y perdrait. À rouvrir si les titres ne suffisent pas.
+- [ ] **[décision]** Guides courts sur la même intention que des guides complets : `pourquoi-payer-loom` / `why-pay-for-loom` (180 à 290 mots) contre `loom-prix-alternatives`, `canva-pro-rentable` (250 mots). Fusionner en 301 ou étoffer.
+- [ ] Guides sans aucune fiche liée : `stack-minimaliste-freelance-2026`, `auditer-stack-saas-45-minutes`, `stack-redactrice-freelance`, les portraits. Ajouter `toolId`/tags ou des liens dans le texte.
+- [ ] Guides datés par leur titre : `claude-opus-4-6-guide-complet-freelances` (slug EN déjà neutre : `claude-opus-guide-freelancers`), `claude-sonnet-4-6-vs-...-fevrier-2026`.
+- [ ] Table `posts` de Supabase : porte encore les anciens slugs anglais des 20 guides renommés et l'ancien texte du guide Loom. Sans effet tant que `VITE_CATALOG_READ_SOURCE` n'est pas `supabase` (vérifié en production le 19/10 : aucun appel), à réinjecter avant de le rebrancher.
+- [ ] Anytype, Capacities et Tana cités dans le guide alternatives Notion mais absents du catalogue.
 
 ## Données du catalogue
 

@@ -83,7 +83,10 @@ describe("generated llms files", () => {
       for (const comparison of FEATURED_COMPARISONS) {
         expect(urls).toContain(`https://tooltrim.com/${lang}/comparatif/${comparison.slugPair}`);
       }
-      for (const route of ["comparatif/b12-vs-wix", "comparatif/pixlr-vs-photopea", "guide/creer-video-produit-sans-montage", "guide/choisir-outil-premiere-newsletter"]) {
+      const guideRoutes = lang === "fr"
+        ? ["guide/creer-video-produit-sans-montage", "guide/choisir-outil-premiere-newsletter"]
+        : ["guide/create-product-video-without-editing", "guide/choose-first-newsletter-tool"];
+      for (const route of ["comparatif/b12-vs-wix", "comparatif/pixlr-vs-photopea", ...guideRoutes]) {
         expect(urls).toContain(`https://tooltrim.com/${lang}/${route}`);
       }
     }

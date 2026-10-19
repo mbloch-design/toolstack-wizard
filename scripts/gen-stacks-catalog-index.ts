@@ -90,6 +90,60 @@ const output = {
 };
 
 writeFileSync("src/data/stacks-catalog-index.json", `${JSON.stringify(output)}\n`);
+
+// Fiche outil → stacks qui l'utilisent (3 au plus). Sans ce lien, les stacks
+// ne recevaient du jus que du hub /stacks. Un outil présent dans des dizaines
+// de stacks (Notion, ChatGPT) les répartit : on préfère les stacks où il est
+// au socle, puis celles qui ont encore reçu le moins de liens, pour étaler le
+// maillage au lieu de le concentrer sur les mêmes pages.
+const STACKS_PER_TOOL = 3;
+const received = new Map<string, number>(STACKS.map((stack) => [stack.slug, 0]));
+const byTool: Record<string, string[]> = {};
+const toolSlugs = [...new Set(STACKS.flatMap((stack) => stack.tools.map((tool) => tool.slug)))].sort();
+for (const toolSlug of toolSlugs) {
+  const candidates = STACKS.flatMap((stack) => {
+    const position = stack.tools.findIndex((tool) => tool.slug === toolSlug);
+    if (position < 0) return [];
+    const core = stack.tools[position].decision !== "conditional";
+    return [{ slug: stack.slug, core, position }];
+  }).sort((a, b) =>
+    Number(b.core) - Number(a.core) ||
+    (received.get(a.slug) ?? 0) - (received.get(b.slug) ?? 0) ||
+    a.position - b.position ||
+    a.slug.localeCompare(b.slug),
+  ).slice(0, STACKS_PER_TOOL);
+  for (const c of candidates) received.set(c.slug, (received.get(c.slug) ?? 0) + 1);
+  byTool[toolSlug] = candidates.map((c) => c.slug);
+}
+const linkedStacks = new Set(Object.values(byTool).flat());
+// The four first tools of each stack draw the card's folder cover, the same
+// visual as the homepage stacks; only those tools' logo fields are shipped.
+const FOLDER_TOOLS = 4;
+const folderTools = (stack: (typeof STACKS)[number]) =>
+  stack.tools.map((tool) => tool.slug).filter((slug) => toolsBySlug.has(slug)).slice(0, FOLDER_TOOLS);
+const linkedStackList = STACKS.filter((stack) => linkedStacks.has(stack.slug));
+const toolStacksIndex = {
+  byTool,
+  stacks: Object.fromEntries(
+    linkedStackList.map((stack) => [stack.slug, {
+      title: stack.title,
+      titleEn: stack.titleEn,
+      toolCount: stack.tools.length,
+      monthlyBudget: stack.monthlyBudget,
+      tools: folderTools(stack),
+    }]),
+  ),
+  tools: Object.fromEntries(
+    [...new Set(linkedStackList.flatMap(folderTools))].sort().map((slug) => {
+      const tool = toolsBySlug.get(slug)!;
+      return [slug, { name: tool.name, logo: tool.logo || "", websiteUrl: tool.websiteUrl || "" }];
+    }),
+  ),
+};
+writeFileSync("src/data/tool_stacks_index.json", `${JSON.stringify(toolStacksIndex)}\n`);
+console.log(
+  `tool_stacks_index.json written: ${toolSlugs.length} tools, ${linkedStacks.size}/${STACKS.length} stacks linked from a tool page`,
+);
 console.log(
   `stacks-catalog-index.json written: ${stacks.length} stacks, ${tools.length} tools`,
 );

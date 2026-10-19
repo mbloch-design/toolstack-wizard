@@ -1,4 +1,5 @@
 import { isToolCoverBlocked } from "@/lib/toolImageBlocklist";
+import { localizeGuideCategory } from "@/lib/guideCategory";
 import { useParams, useLocation } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
@@ -34,6 +35,7 @@ import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { findSimilarTools, functionalAffinity } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import { getGuidesForTool } from "@/lib/toolGuides";
+import { getStacksForTool } from "@/lib/toolStacks";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
@@ -434,6 +436,7 @@ const ToolDetailPage = () => {
   const showReview = isPresentation || subPage === "avis";
   const showFaq = isPresentation || subPage === "faq";
   const relatedGuides = getGuidesForTool(tool.slug || tool.id, lang);
+  const relatedStacks = getStacksForTool(tool.slug || tool.id, lang);
   const baseToolPath = `${prefix}/tool/${tool.slug || tool.id}`;
   const mobileBarPrice = toolPriceLine(tool, lang, t).priceLine;
   // Accent colour drawn from the tool's logo (scripts/gen-tool-accents.mjs);
@@ -1199,9 +1202,43 @@ const ToolDetailPage = () => {
                                 : <ToolLogo tool={tool} size={48} />}
                             </span>
                             <span className="td-guide-card-meta">
-                              {[guide.category, guide.readTime ? t(`${guide.readTime} de lecture`, `${guide.readTime} read`) : null].filter(Boolean).join(" · ")}
+                              {[guide.category ? localizeGuideCategory(guide.category, lang) : null, guide.readTime ? t(`${guide.readTime} de lecture`, `${guide.readTime} read`) : null].filter(Boolean).join(" · ")}
                             </span>
                             <span className="td-guide-card-title">{guide.title}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            )}
+
+            {/* Stacks qui utilisent l'outil : seul chemin d'une fiche vers les
+                stacks, qui ne recevaient sinon de liens que de leur hub. */}
+            {isPresentation && relatedStacks.length > 0 && (
+              <div className="td-subpage-content">
+                <div className="td-section">
+                  <section className="td-guides">
+                    <h2 className="td-title">
+                      {t("Stacks.", "Stacks.")} <span className="tt-title-muted">{t(`Où ${tool.name} trouve sa place.`, `Where ${tool.name} fits in.`)}</span>
+                    </h2>
+                    <ul className="td-guide-cards">
+                      {relatedStacks.map((stack) => (
+                        <li key={stack.slug}>
+                          <Link to={`${prefix}/stacks/${stack.slug}`} className="td-guide-card">
+                            {/* Same iOS-folder cluster as the homepage stacks. */}
+                            <span className="td-guide-card-cover" aria-hidden="true">
+                              <span className="sgs-folder">
+                                {stack.tools.map((stackTool) => (
+                                  <span key={stackTool.slug} className="sgs-folder-app"><ToolLogo tool={stackTool} size={32} className="sgs-folder-logo" /></span>
+                                ))}
+                              </span>
+                            </span>
+                            <span className="td-guide-card-meta">
+                              {t(`${stack.toolCount} outils`, `${stack.toolCount} tools`)}
+                            </span>
+                            <span className="td-guide-card-title">{stack.title}</span>
                           </Link>
                         </li>
                       ))}

@@ -1,3 +1,16 @@
+## 19 octobre 2026 : SEO des guides et des stacks
+
+Constat (GSC du 18/07 au 17/10) : 424 pages de stacks pour 1 clic et 350 impressions, guides à 20 clics pour 5 500 impressions. Les stacks n'étaient liées que depuis leur hub, sans donnée structurée, avec un titre calé sur « stack ».
+
+- Maillage : bloc « Stacks » en fin de fiche outil (`src/lib/toolStacks.ts`, index `src/data/tool_stacks_index.json` généré par `scripts/gen-stacks-catalog-index.ts`, 3 stacks par outil réparties pour couvrir les 212) ; « Les guides pour choisir » sur les stacks ; « Les stacks qui les utilisent » sur les guides ; « Autres stacks » par outils et sous-profils partagés.
+- Prérendu : BreadcrumbList + ItemList sur les stacks, les comparatifs « meilleurs outils » et les piliers persona (liste lue dans le rendu serveur).
+- `src/lib/stackSeo.ts` : titre et description des stacks partagés entre prérendu et client (« X stack: best tools and budget (2026) »).
+- 456 rôles d'outils traduits dans les pages anglaises des stacks ; sigles des titres FR.
+- 20 guides anglais passés sur un slug anglais, 301 dans les deux sens.
+- Guide Loom : prix revérifiés sur loom.com/pricing, titre et FAQ sur « is loom free » ; liens internes vers les guides et fiches concernés.
+- `/ma-stack` et `/my-stack` en noindex, follow.
+- Reporté : slugs anglais des stacks (voir docs/TODO.md).
+
 ## 16 octobre 2026 : rail de filtres commun, titres harmonisés, CI réparée
 
 - Rail segmenté de l'Explorer (rail gris, curseur blanc glissant `RailThumb`, compteurs) appliqué à Outils, Catégorie, Stacks, Comparatifs, Guides et Recherche ; logique de filtre inchangée. Mode télescope (Stacks) : segment parent « ‹ objectif » qui porte le curseur et fait remonter d'un niveau.
