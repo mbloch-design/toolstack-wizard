@@ -1926,8 +1926,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             // Same helpers as StackDetailPage, so hydration keeps this title.
-            const title = stackSeoTitle(stack, lang);
-            const description = stackSeoDescription(stack, lang);
+            const title = stackSeoTitle(stack, isFr ? "fr" : "en");
+            const description = stackSeoDescription(stack, isFr ? "fr" : "en");
             const url = `${BASE}/${lang}/stacks/${stack.slug}`;
             const frUrl = `${BASE}/fr/stacks/${stack.slug}`;
             const enUrl = `${BASE}/en/stacks/${stack.slug}`;
