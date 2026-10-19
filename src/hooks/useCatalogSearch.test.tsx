@@ -14,7 +14,7 @@ describe("guide search identities", () => {
     const posts = await loadLocalPosts(lang);
     const { result } = renderHook(() => useCatalogSearch({ query: "notion", posts, tools: emptyTools, categories: emptyCategories, lang }));
     await waitFor(() => expect(result.current.status).toBe("ready"));
-    expect(result.current.hits).toEqual(expect.arrayContaining([expect.objectContaining({ kind: "guide", slug: "notion-gratuit-vs-payant-vrai-calcul" })]));
+    expect(result.current.hits).toEqual(expect.arrayContaining([expect.objectContaining({ kind: "guide", slug: lang === "en" ? "notion-free-vs-paid-real-cost" : "notion-gratuit-vs-payant-vrai-calcul" })]));
   });
 
   it("keeps locale and slug identities distinct even when remote numeric IDs match", async () => {

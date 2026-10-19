@@ -15,6 +15,7 @@ import { hasGenuineFreeTier, isPriceUndisclosed, resolveMonthlyPrice } from "./s
 import { formatToolPrice, nativePriceFromTool, usdFromEur } from "./src/lib/currencyRates";
 import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
 import { fitBrandedTitle } from "./src/lib/seoTitle";
+import { stackSeoDescription, stackSeoTitle } from "./src/lib/stackSeo";
 import { localizePlanName } from "./src/lib/planNames";
 import { TOOLS_TABLE_SELECT } from "./src/lib/toolsTableColumns";
 import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
@@ -79,6 +80,27 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "agents-ia-freelances-2026-lesquels-valent-le-coup": "ai-agents-freelancers-2026",
   "stack-saas-minimaliste-freelance-2026-moins-50-euros": "minimalist-saas-stack-freelancer-2026-under-50-euros",
   "plateforme-ecommerce-solo-petite-equipe-produits-physiques": "ecommerce-platform-solo-small-team-physical-products-2026",
+  // Guides anglais qui gardaient le slug français (audit du 19/10/2026).
+  "mesurer-visibilite-ia-geo-2026": "measure-ai-search-visibility-geo-2026",
+  "creer-video-produit-sans-montage": "create-product-video-without-editing",
+  "choisir-outil-premiere-newsletter": "choose-first-newsletter-tool",
+  "andrew-huberman-kit-systeme-audience": "andrew-huberman-kit-audience-system",
+  "atelier-hors-champ-scenographie-espace-raconte": "atelier-hors-champ-scenography-storytelling-space",
+  "auditer-stack-saas-45-minutes": "audit-saas-stack-45-minutes",
+  "marc-delmas-clarifier-entreprise-qui-grandit": "marc-delmas-clarity-for-a-growing-company",
+  "nora-bensaid-produit-sante-depuis-terrain": "nora-bensaid-health-product-from-the-field",
+  "anna-morel-designer-studio-augmente": "anna-morel-solo-designer-augmented-studio",
+  "pourquoi-visualiser-stack-saas": "why-visualize-saas-stack",
+  "top-5-competences-ia-freelance-2026": "top-5-ai-skills-freelancers-2026",
+  "meilleurs-outils-ia-freelances-2026": "best-ai-tools-freelancers-2026",
+  "claude-opus-4-6-guide-complet-freelances": "claude-opus-guide-freelancers",
+  "alternatives-gratuites-notion-freelance-2026": "free-notion-alternatives-freelancers-2026",
+  "stack-minimaliste-freelance-2026": "minimalist-freelance-stack-2026",
+  "canva-pro-rentable": "is-canva-pro-worth-it",
+  "pourquoi-payer-loom": "why-pay-for-loom",
+  "stripe-freelance-tarifs-alternatives": "stripe-freelancers-pricing-alternatives",
+  "perplexity-vs-chatgpt-recherche": "perplexity-vs-chatgpt-research",
+  "notion-gratuit-vs-payant-vrai-calcul": "notion-free-vs-paid-real-cost",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(
@@ -1579,6 +1601,9 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           "/en/guide/best-tools-freelance-ops-manager": "CLAIRE",
         };
         let pillarsSsrd = 0;
+        const guideToolNameBySlug = new Map<string, string>(
+          tools.map((t: any) => [t.slug || t.id, t.name || t.slug || t.id]),
+        );
 
         for (const sp of SEO_PAGES) {
           const url = `${BASE}${sp.path}`;
@@ -1617,10 +1642,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           // phrase autour d'un <div id="root"> vide : 44 mots au crawl, alors
           // que la liste d'outils et la FAQ existent cote client. Meme correctif
           // que pour /tools et /stacks, via un rendu de la page dans sa route.
+          let guideMarkup = "";
           const pillarPersona = PERSONA_BY_PILLAR_PATH[sp.path];
           if (pillarPersona && renderPersonaPillarPage) {
             try {
               const markup = await renderPersonaPillarPage(sp.path, pillarPersona, spLang);
+              guideMarkup = markup;
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
               if (compiledCssPath) {
                 const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
@@ -1638,6 +1665,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           if (bestOfId && renderBestOfGuidePage) {
             try {
               const markup = await renderBestOfGuidePage(sp.path, bestOfId, spLang);
+              guideMarkup = markup;
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
               if (compiledCssPath) {
                 const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
@@ -1649,6 +1677,45 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             } catch (e) {
               throw new Error(`Best-of guide SSR failed for ${sp.path}`, { cause: e });
             }
+          }
+
+          // Comparatifs « meilleurs outils » et piliers persona : aucune donnée
+          // structurée au crawl. Fil d'Ariane, plus la liste des fiches citées
+          // dans l'ordre de la page, lue dans le rendu serveur lui-même pour
+          // ne jamais diverger de ce qui est affiché.
+          if (pillarPersona || bestOfId) {
+            const toolOrder: string[] = [];
+            for (const m of guideMarkup.matchAll(new RegExp(`href="/${spLang}/tool/([a-z0-9-]+)"`, "g"))) {
+              if (!toolOrder.includes(m[1]) && guideToolNameBySlug.has(m[1])) toolOrder.push(m[1]);
+            }
+            const pageName = sp.title.replace(/\s*\|\s*(ToolTrim|tooltrim\.com)\s*$/i, "");
+            const guideLd = [
+              {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${spLang}` },
+                  { "@type": "ListItem", position: 2, name: "Guides", item: `${BASE}/${spLang}/guides` },
+                  { "@type": "ListItem", position: 3, name: pageName, item: url },
+                ],
+              },
+              ...(toolOrder.length > 0 ? [{
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                name: pageName,
+                numberOfItems: toolOrder.length,
+                itemListElement: toolOrder.map((slug, i) => ({
+                  "@type": "ListItem",
+                  position: i + 1,
+                  name: guideToolNameBySlug.get(slug),
+                  url: `${BASE}/${spLang}/tool/${slug}`,
+                })),
+              }] : []),
+            ];
+            html = html.replace(
+              "</head>",
+              `    ${guideLd.map((ld) => `<script type="application/ld+json">${JSON.stringify(ld)}</script>`).join("\n    ")}\n  </head>`,
+            );
           }
 
           const outDir = path.resolve(distDir, sp.path.replace(/^\//, ""));
@@ -1697,13 +1764,15 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           // static HTML needs the same directive, not just a fixed canonical.
           { path: "/fr/privacy-policy", lang: "fr", title: "Politique de confidentialité — ToolTrim", description: "Comment ToolTrim collecte, utilise et protège vos données personnelles.", noindex: true },
           { path: "/en/privacy-policy", lang: "en", title: "Privacy Policy — ToolTrim", description: "How ToolTrim collects, uses, and protects your personal data.", noindex: true },
-          { path: "/fr/ma-stack",    lang: "fr", title: "Ma stack — ToolTrim",  description: "Composez et suivez votre stack d'outils SaaS avec ToolTrim." },
-          { path: "/en/ma-stack",    lang: "en", title: "My stack — ToolTrim",  description: "Build and track your SaaS tool stack with ToolTrim." },
+          // Outil personnel sans contenu propre (71 mots au crawl) : hors index,
+          // les liens restent suivis.
+          { path: "/fr/ma-stack",    lang: "fr", title: "Ma stack — ToolTrim",  description: "Composez et suivez votre stack d'outils SaaS avec ToolTrim.", noindex: true },
+          { path: "/en/ma-stack",    lang: "en", title: "My stack — ToolTrim",  description: "Build and track your SaaS tool stack with ToolTrim.", noindex: true },
           // /my-stack renders the exact same CartPage as /ma-stack (see
           // App.tsx) — a real duplicate route, not a translation. Canonicalize
           // to /ma-stack instead of giving it its own indexable identity.
-          { path: "/fr/my-stack",    lang: "fr", title: "Ma stack — ToolTrim",  description: "Composez et suivez votre stack d'outils SaaS avec ToolTrim.", canonicalPath: "/fr/ma-stack" },
-          { path: "/en/my-stack",    lang: "en", title: "My stack — ToolTrim",  description: "Build and track your SaaS tool stack with ToolTrim.", canonicalPath: "/en/ma-stack" },
+          { path: "/fr/my-stack",    lang: "fr", title: "Ma stack — ToolTrim",  description: "Composez et suivez votre stack d'outils SaaS avec ToolTrim.", canonicalPath: "/fr/ma-stack", noindex: true },
+          { path: "/en/my-stack",    lang: "en", title: "My stack — ToolTrim",  description: "Build and track your SaaS tool stack with ToolTrim.", canonicalPath: "/en/ma-stack", noindex: true },
         ];
 
         for (const sp of SECTION_PAGES) {
@@ -1850,35 +1919,44 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
         // --- Prerender stack detail pages ---
         let stacksRendered = 0;
+        const stackToolBySlug = new Map<string, string>(
+          tools.map((t: any) => [t.slug || t.id, t.name || t.slug || t.id]),
+        );
         for (const stack of STACKS) {
           for (const lang of LANGS) {
             const isFr = lang === "fr";
-            // seoTitle/seoTitleEn are hand-written per stack, never generated —
-            // title/titleEn stay generic because they also serve as the page H1,
-            // card label, and breadcrumb, so they can't carry a search-result hook.
-            const title = isFr
-              ? fitBrandedTitle(stack.seoTitle || `${stack.title} : outils, usages et budget`)
-              : fitBrandedTitle(stack.seoTitleEn || `${stack.titleEn}: tools, use cases and budget`);
-            // `subtitleEn` was generic boilerplate on the 111 auto-generated
-            // stacks ("Recommended tools for this consulting profile."), which
-            // is why the EN description used to rebuild from `titleEn` instead
-            // and never showed the real hook. As stacks get a real editorial
-            // pass (see the 8-stack pilot, a01254d0), `subtitleEn` becomes a
-            // genuine, differentiated hook — use it whenever it's not that
-            // boilerplate pattern, since it's what actually earns the click.
-            const isGenericSubtitleEn = /^Recommended tools for this \w[\w-]* profile\.$/.test(stack.subtitleEn.trim());
-            const description = stack.slug === "developpeur-freelance-shipper"
-              ? isFr
-                ? "Stack dev freelance pour coder, partager une preview client, documenter et encaisser sans payer une stack produit trop lourde. Budget cible : 32€/mois."
-                : `Freelance dev stack to code, share a client preview, document, and get paid without paying for an overweight product stack. Target budget: ${usdFromEur(32)}/month.`
-              : isFr
-                ? `${stack.subtitle} Budget cible : ${stack.monthlyBudget}€/mois. Stack organisée par workflow, budget, risques et calibrage.`
-                : isGenericSubtitleEn
-                  ? `${stack.titleEn}: the tools recommended for this profile, with a target budget of ${usdFromEur(stack.monthlyBudget)}/month, organized by workflow, budget, risks and calibration.`
-                  : `${stack.subtitleEn} Target budget: ${usdFromEur(stack.monthlyBudget)}/month.`;
+            // Same helpers as StackDetailPage, so hydration keeps this title.
+            const title = stackSeoTitle(stack, lang);
+            const description = stackSeoDescription(stack, lang);
             const url = `${BASE}/${lang}/stacks/${stack.slug}`;
             const frUrl = `${BASE}/fr/stacks/${stack.slug}`;
             const enUrl = `${BASE}/en/stacks/${stack.slug}`;
+
+            // Fil d'Ariane et liste ordonnée des outils dans le HTML servi :
+            // les 424 pages ne portaient que Organization/WebSite au crawl.
+            const stackName = isFr ? stack.title : stack.titleEn;
+            const stackBreadcrumb = {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "ToolTrim", item: `${BASE}/${lang}` },
+                { "@type": "ListItem", position: 2, name: "Stacks", item: `${BASE}/${lang}/stacks` },
+                { "@type": "ListItem", position: 3, name: stackName, item: url },
+              ],
+            };
+            const stackSlots = stack.tools.filter((slot) => stackToolBySlug.has(slot.slug));
+            const stackItemList = stackSlots.length > 0 ? {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              name: stackName,
+              numberOfItems: stackSlots.length,
+              itemListElement: stackSlots.map((slot, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                name: stackToolBySlug.get(slot.slug),
+                url: `${BASE}/${lang}/tool/${slot.slug}`,
+              })),
+            } : null;
 
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
@@ -1890,6 +1968,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:description" content="${description.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:url" content="${url}" />`,
+              `<script id="stack-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(stackBreadcrumb)}</script>`,
+              ...(stackItemList ? [`<script id="stack-itemlist-jsonld" type="application/ld+json">${JSON.stringify(stackItemList)}</script>`] : []),
             ].join("\n    ");
 
             let html = baseHtml;

@@ -661,7 +661,7 @@ export const STACKS: StackGuide[] = [
       { role: "IA structure", roleEn: "Structure AI", slug: "chatgpt", reason: "Brief, comptes rendus, planning, livrables, mails client et clarification des arbitrages.", reasonEn: "Briefs, recaps, planning, deliverables, client emails, and trade-off clarification." },
       { role: "IA ambiance", roleEn: "Mood AI", slug: "krea-ai", reason: "Explore vite des matières, lumières, styles et variantes d'intérieur à partir d'images.", reasonEn: "Quickly explores materials, lighting, styles, and interior variations from images." },
       { role: "Exploration visuelle", roleEn: "Visual exploration", slug: "midjourney", decision: "conditional", reason: "Utile pour directions visuelles et moodboards conceptuels, pas pour valider un plan technique.", reasonEn: "Useful for visual directions and concept moodboards, not for validating a technical plan." },
-      { role: "Upscale rendu", roleEn: "Render upscale", slug: "magnific-ai", decision: "conditional", reason: "À réserver aux visuels finaux qui doivent vraiment gagner en impact.", reasonEn: "Reserve for final visuals that truly need extra impact." },
+      { role: "Upscale rendu", roleEn: "Render upscale", slug: "magnific", decision: "conditional", reason: "À réserver aux visuels finaux qui doivent vraiment gagner en impact.", reasonEn: "Reserve for final visuals that truly need extra impact." },
       { role: "Moodboard", roleEn: "Moodboard", slug: "milanote", reason: "Simple pour rassembler références, ambiance, premières intentions et retours client.", reasonEn: "Simple for gathering references, mood, early intent, and client feedback." },
       { role: "Recherche visuelle", roleEn: "Visual research", slug: "pinterest", reason: "Indispensable pour inspiration, matières, détails et discussion client en amont.", reasonEn: "Essential for inspiration, materials, details, and early client discussion." },
       { role: "Bibliothèque images", roleEn: "Image library", slug: "eagle", reason: "Classe références, textures, détails, plans et images sans dépendre d'un board social.", reasonEn: "Organizes references, textures, details, plans, and images without depending on a social board." },
@@ -673,7 +673,7 @@ export const STACKS: StackGuide[] = [
       { role: "Facturation", roleEn: "Billing", slug: "indy", reason: "Très adapté aux indépendants pour devis, factures, suivi et déclarations.", reasonEn: "Well suited to independents for quotes, invoices, tracking, and declarations." },
       { role: "Compte pro", roleEn: "Business account", slug: "qonto", reason: "Compte pro, justificatifs, cartes, virements et suivi des flux.", reasonEn: "Business account, receipts, cards, transfers, and cash-flow tracking." },
       { role: "Compte pro + factures", roleEn: "Business account + invoices", slug: "shine", decision: "conditional", reason: "Bonne option si tu veux rapprocher compte pro, devis, factures et relances sans ajouter un outil dédié.", reasonEn: "Good option when you want business banking, quotes, invoices, and reminders without adding a separate tool." },
-      { role: "Signature", roleEn: "Signature", slug: "yousign", reason: "Devis, contrats, lettres de mission et validations client signés proprement.", reasonEn: "Quotes, contracts, engagement letters, and client approvals signed cleanly." },
+      { role: "Signature", roleEn: "E-signature", slug: "yousign", reason: "Devis, contrats, lettres de mission et validations client signés proprement.", reasonEn: "Quotes, contracts, engagement letters, and client approvals signed cleanly." },
       { role: "Compta société", roleEn: "Company accounting", slug: "pennylane", decision: "conditional", reason: "À envisager quand la structure grossit ou travaille avec un expert-comptable.", reasonEn: "Consider when the structure grows or works with an accountant." },
     ],
   },
@@ -794,7 +794,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Plans 2D",
-              "roleEn": "Plans 2D",
+              "roleEn": "2D plans",
               "slug": "autocad",
               "reason": "Standard pour échanges techniques et prestataires.",
               "reasonEn": "The standard for technical exchanges and suppliers.",
@@ -802,7 +802,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Rendu rapide",
-              "roleEn": "Rendu rapide",
+              "roleEn": "Quick rendering",
               "slug": "d5-render",
               "reason": "Bon ratio vitesse / impact visuel pour validation.",
               "reasonEn": "A good speed to visual impact ratio for sign-off."
@@ -831,7 +831,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Retouche",
-              "roleEn": "Retouche",
+              "roleEn": "Retouching",
               "slug": "adobe-photoshop",
               "reason": "Nettoyage de rendus, photomontages et moodboards.",
               "reasonEn": "Cleaning up renders, photomontage and moodboards."
@@ -845,7 +845,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Atelier client",
-              "roleEn": "Atelier client",
+              "roleEn": "Client workshop",
               "slug": "miro",
               "reason": "Cadrage, parcours et workshop.",
               "reasonEn": "Framing, journeys and workshops.",
@@ -853,7 +853,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Pilotage",
-              "roleEn": "Pilotage",
+              "roleEn": "Management",
               "slug": "notion",
               "reason": "Décisions, budget, fournisseurs et compte rendu.",
               "reasonEn": "Decisions, budget, suppliers and minutes."
@@ -861,21 +861,21 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Planning équipe",
               "roleEn": "Team scheduling",
-              "slug": "monday",
+              "slug": "monday-com",
               "reason": "Utile si plusieurs prestataires avancent en parallèle.",
               "reasonEn": "Useful when several suppliers run in parallel.",
               "decision": "conditional"
           },
           {
               "role": "Plugin profils",
-              "roleEn": "Plugin profils",
+              "roleEn": "Profiles plugin",
               "slug": "profile-builder-3",
               "reason": "Structure répétitive, rails, cadres et éléments modulaires.",
               "reasonEn": "Repeating structure, rails, frames and modular elements."
           },
           {
               "role": "Imports 3D",
-              "roleEn": "Imports 3D",
+              "roleEn": "3D imports",
               "slug": "transmutr",
               "reason": "Optimise les modèles téléchargés.",
               "reasonEn": "Optimises downloaded models."
@@ -890,7 +890,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Liste de coupe",
-              "roleEn": "Liste de coupe",
+              "roleEn": "Cut list",
               "slug": "open-cut-list",
               "reason": "Préparation fabrication et débits.",
               "reasonEn": "Fabrication prep and cutting lists.",
@@ -898,14 +898,14 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "IA concept",
-              "roleEn": "IA concept",
+              "roleEn": "AI concepting",
               "slug": "chatgpt",
               "reason": "Structure brief, narration, livrables et comptes rendus.",
               "reasonEn": "Structures brief, narrative, deliverables and write-ups."
           },
           {
               "role": "IA ambiance",
-              "roleEn": "IA ambiance",
+              "roleEn": "AI mood",
               "slug": "midjourney",
               "reason": "Explore directions visuelles et atmosphères.",
               "reasonEn": "Explores visual directions and atmospheres.",
@@ -913,7 +913,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Retouche IA",
-              "roleEn": "Retouche IA",
+              "roleEn": "AI retouching",
               "slug": "firefly",
               "reason": "Variations et nettoyage visuel.",
               "reasonEn": "Variants and visual cleanup.",
@@ -1023,14 +1023,14 @@ export const STACKS: StackGuide[] = [
       "tools": [
           {
               "role": "Volume rapide",
-              "roleEn": "Volume rapide",
+              "roleEn": "Fast volume modeling",
               "slug": "sketchup-pro",
               "reason": "Base efficace pour tester implantation, mobilier et circulation.",
               "reasonEn": "An effective base for testing layout, furniture and circulation."
           },
           {
               "role": "Formes complexes",
-              "roleEn": "Formes complexes",
+              "roleEn": "Complex shapes",
               "slug": "rhino",
               "reason": "Utile pour mobilier sur-mesure et formes sculpturales.",
               "reasonEn": "Useful for bespoke furniture and sculptural shapes.",
@@ -1038,14 +1038,14 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Plans techniques",
-              "roleEn": "Plans techniques",
+              "roleEn": "Technical drawings",
               "slug": "autocad",
               "reason": "Échanges avec fabricants et prestataires.",
               "reasonEn": "Exchanges with manufacturers and suppliers."
           },
           {
               "role": "CAO retail",
-              "roleEn": "CAO retail",
+              "roleEn": "Retail CAD",
               "slug": "vectorworks",
               "reason": "Option solide pour implantation et dossiers techniques.",
               "reasonEn": "A solid option for layouts and technical packs.",
@@ -1053,14 +1053,14 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Rendu quotidien",
-              "roleEn": "Rendu quotidien",
+              "roleEn": "Everyday rendering",
               "slug": "d5-render",
               "reason": "Images rapides pour validation client.",
               "reasonEn": "Quick images for client sign-off."
           },
           {
               "role": "Image premium",
-              "roleEn": "Image premium",
+              "roleEn": "Premium imagery",
               "slug": "v-ray",
               "reason": "À garder pour les rendus haut de gamme vendus.",
               "reasonEn": "Keep it for the high-end renders you actually sell.",
@@ -1075,28 +1075,28 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Dossier client",
-              "roleEn": "Dossier client",
+              "roleEn": "Client file",
               "slug": "indesign",
               "reason": "Présentation propre des intentions, plans et options.",
               "reasonEn": "A clean presentation of intent, drawings and options."
           },
           {
               "role": "Retouche",
-              "roleEn": "Retouche",
+              "roleEn": "Retouching",
               "slug": "adobe-photoshop",
               "reason": "Photomontages et corrections de rendu.",
               "reasonEn": "Photomontage and render fixes."
           },
           {
               "role": "Pilotage",
-              "roleEn": "Pilotage",
+              "roleEn": "Management",
               "slug": "notion",
               "reason": "Décisions, coûts, prestataires et livrables.",
               "reasonEn": "Decisions, costs, suppliers and deliverables."
           },
           {
               "role": "Base production",
-              "roleEn": "Base production",
+              "roleEn": "Production base",
               "slug": "airtable",
               "reason": "Utile si beaucoup d’items, fournisseurs et statuts.",
               "reasonEn": "Useful when there are many items, suppliers and statuses.",
@@ -1112,21 +1112,21 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Planning",
               "roleEn": "Planning",
-              "slug": "monday",
+              "slug": "monday-com",
               "reason": "Coordination multi-prestataires.",
-              "reasonEn": "Coordination multi-prestataires.",
+              "reasonEn": "Multi-vendor coordination.",
               "decision": "conditional"
           },
           {
               "role": "Plugin profils",
-              "roleEn": "Plugin profils",
+              "roleEn": "Profiles plugin",
               "slug": "profile-builder-3",
               "reason": "Structures répétitives, rails, cadres et modules.",
               "reasonEn": "Repeating structures, rails, frames and modules."
           },
           {
               "role": "Imports 3D",
-              "roleEn": "Imports 3D",
+              "roleEn": "3D imports",
               "slug": "transmutr",
               "reason": "Nettoie les assets importés.",
               "reasonEn": "Cleans up imported assets."
@@ -1141,14 +1141,14 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "IA brief",
-              "roleEn": "IA brief",
+              "roleEn": "AI brief",
               "slug": "chatgpt",
               "reason": "Clarifie contraintes, planning, livrables et emails client.",
               "reasonEn": "Clarifies constraints, schedule, deliverables and client emails."
           },
           {
               "role": "IA ambiance",
-              "roleEn": "IA ambiance",
+              "roleEn": "AI mood",
               "slug": "krea-ai",
               "reason": "Variations visuelles rapides sur matières et lumières.",
               "reasonEn": "Fast visual variations on materials and lighting.",
@@ -1157,7 +1157,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Upscale",
               "roleEn": "Upscale",
-              "slug": "magnific-ai",
+              "slug": "magnific",
               "reason": "À réserver aux rendus finaux.",
               "reasonEn": "Keep it for final renders.",
               "decision": "conditional"
@@ -1266,21 +1266,21 @@ export const STACKS: StackGuide[] = [
       "tools": [
           {
               "role": "Vectoriel",
-              "roleEn": "Vectoriel",
+              "roleEn": "Vector",
               "slug": "adobe-illustrator",
               "reason": "Logo, pictos, formes, print et fichiers sources.",
               "reasonEn": "Logo, pictograms, shapes, print and source files."
           },
           {
               "role": "Retouche",
-              "roleEn": "Retouche",
+              "roleEn": "Retouching",
               "slug": "adobe-photoshop",
               "reason": "Images, mockups, détourages et photomontages.",
               "reasonEn": "Images, mockups, cut-outs and photomontage."
           },
           {
               "role": "Mise en page",
-              "roleEn": "Mise en page",
+              "roleEn": "Layout",
               "slug": "indesign",
               "reason": "Brochures, dossiers, catalogues et exports print.",
               "reasonEn": "Brochures, packs, catalogues and print exports."
@@ -1303,7 +1303,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Visuels rapides",
-              "roleEn": "Visuels rapides",
+              "roleEn": "Fast visuals",
               "slug": "adobe-express",
               "reason": "Déclinaisons Adobe sans ouvrir toute la chaîne.",
               "reasonEn": "Adobe variants without opening the whole chain.",
@@ -1311,7 +1311,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Gestion fontes",
-              "roleEn": "Gestion fontes",
+              "roleEn": "Font management",
               "slug": "fontbase",
               "reason": "Organisation et activation des typographies.",
               "reasonEn": "Organising and activating fonts."
@@ -1332,28 +1332,28 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Projet",
-              "roleEn": "Projet",
+              "roleEn": "Project",
               "slug": "notion",
               "reason": "Brief, décisions, retours et suivi client.",
               "reasonEn": "Brief, decisions, feedback and client follow-up."
           },
           {
               "role": "Fichiers",
-              "roleEn": "Fichiers",
+              "roleEn": "Files",
               "slug": "google-drive",
               "reason": "Livrables, sources et archives partagées.",
               "reasonEn": "Deliverables, sources and shared archives."
           },
           {
               "role": "Facturation",
-              "roleEn": "Facturation",
+              "roleEn": "Invoicing",
               "slug": "indy",
               "reason": "Devis, factures et suivi.",
               "reasonEn": "Quotes, invoices and follow-up."
           },
           {
               "role": "Plugin Illustrator",
-              "roleEn": "Plugin Illustrator",
+              "roleEn": "Illustrator plugin",
               "slug": "astute-graphics",
               "reason": "Accélère vectoriel avancé et nettoyage.",
               "reasonEn": "Speeds up advanced vector work and cleanup.",
@@ -1361,14 +1361,14 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "IA structure",
-              "roleEn": "IA structure",
+              "roleEn": "AI structuring",
               "slug": "chatgpt",
               "reason": "Angles, textes, présentations et mails.",
               "reasonEn": "Angles, copy, presentations and emails."
           },
           {
               "role": "IA image",
-              "roleEn": "IA image",
+              "roleEn": "AI images",
               "slug": "firefly",
               "reason": "Retouche générative dans le flux Adobe.",
               "reasonEn": "Generative retouching inside the Adobe flow.",
@@ -1376,7 +1376,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "IA exploration",
-              "roleEn": "IA exploration",
+              "roleEn": "AI exploration",
               "slug": "midjourney",
               "reason": "Univers visuels et moodboards.",
               "reasonEn": "Visual worlds and moodboards.",
@@ -1501,21 +1501,21 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Vectoriel",
-              "roleEn": "Vectoriel",
+              "roleEn": "Vector",
               "slug": "adobe-illustrator",
               "reason": "Logo, pictos et éléments de marque.",
               "reasonEn": "Logo, pictograms and brand elements."
           },
           {
               "role": "Retouche",
-              "roleEn": "Retouche",
+              "roleEn": "Retouching",
               "slug": "adobe-photoshop",
               "reason": "Images de marque et mockups.",
               "reasonEn": "Brand imagery and mockups."
           },
           {
               "role": "Guidelines print",
-              "roleEn": "Guidelines print",
+              "roleEn": "Print guidelines",
               "slug": "indesign",
               "reason": "Brand book, règles et dossiers premium.",
               "reasonEn": "Brand book, rules and premium packs."
@@ -1544,7 +1544,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Base projet",
-              "roleEn": "Base projet",
+              "roleEn": "Project base",
               "slug": "notion",
               "reason": "Brief, décisions, livrables et liens.",
               "reasonEn": "Brief, decisions, deliverables and links."
@@ -1558,7 +1558,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Veille",
-              "roleEn": "Veille",
+              "roleEn": "Monitoring",
               "slug": "arena",
               "reason": "Références plus éditoriales et moins standardisées.",
               "reasonEn": "More editorial, less standardised references.",
@@ -1566,14 +1566,14 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Recherche visuelle",
-              "roleEn": "Recherche visuelle",
+              "roleEn": "Visual research",
               "slug": "pinterest",
               "reason": "Inspiration client et moodboards rapides.",
               "reasonEn": "Client inspiration and fast moodboards."
           },
           {
               "role": "Livraison guidelines",
-              "roleEn": "Livraison guidelines",
+              "roleEn": "Guidelines delivery",
               "slug": "brandpad",
               "reason": "Guidelines en ligne et assets maintenables.",
               "reasonEn": "Online guidelines and maintainable assets.",
@@ -1589,7 +1589,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Plugin tokens",
-              "roleEn": "Plugin tokens",
+              "roleEn": "Tokens plugin",
               "slug": "figma-tokens",
               "reason": "Variables et tokens Figma.",
               "reasonEn": "Figma variables and tokens.",
@@ -1611,15 +1611,15 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "IA mood",
-              "roleEn": "IA mood",
+              "roleEn": "AI mood",
               "slug": "midjourney",
               "reason": "Exploration de territoires visuels.",
-              "reasonEn": "Exploration de territoires visuels.",
+              "reasonEn": "Exploring visual territories.",
               "decision": "conditional"
           },
           {
               "role": "Retouche IA",
-              "roleEn": "Retouche IA",
+              "roleEn": "AI retouching",
               "slug": "firefly",
               "reason": "Nettoyage et variations Adobe.",
               "reasonEn": "Cleanup and variants inside Adobe.",
@@ -1758,7 +1758,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Veille",
-              "roleEn": "Veille",
+              "roleEn": "Monitoring",
               "slug": "arena",
               "reason": "Collecte éditoriale et références pointues.",
               "reasonEn": "Editorial collection and specialised references."
@@ -1772,7 +1772,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Recherche visuelle",
-              "roleEn": "Recherche visuelle",
+              "roleEn": "Visual research",
               "slug": "pinterest",
               "reason": "Références rapides et partage client.",
               "reasonEn": "Quick references and client sharing."
@@ -1795,7 +1795,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Pilotage",
-              "roleEn": "Pilotage",
+              "roleEn": "Management",
               "slug": "notion",
               "reason": "Rationale, décisions, statut et livrables.",
               "reasonEn": "Rationale, decisions, status and deliverables."
@@ -1810,29 +1810,29 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Fichiers",
-              "roleEn": "Fichiers",
+              "roleEn": "Files",
               "slug": "google-drive",
               "reason": "Livraison et partage de sources.",
               "reasonEn": "Delivery and source file sharing."
           },
           {
               "role": "IA concept",
-              "roleEn": "IA concept",
+              "roleEn": "AI concepting",
               "slug": "chatgpt",
               "reason": "Rationale, structure de deck et notes de direction.",
               "reasonEn": "Rationale, deck structure and direction notes."
           },
           {
               "role": "IA image",
-              "roleEn": "IA image",
+              "roleEn": "AI images",
               "slug": "midjourney",
               "reason": "Exploration visuelle rapide.",
-              "reasonEn": "Exploration visuelle rapide.",
+              "reasonEn": "Fast visual exploration.",
               "decision": "conditional"
           },
           {
               "role": "Retouche IA",
-              "roleEn": "Retouche IA",
+              "roleEn": "AI retouching",
               "slug": "firefly",
               "reason": "Nettoyage et variations image.",
               "reasonEn": "Image cleanup and variants.",
@@ -1849,7 +1849,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Upscale",
               "roleEn": "Upscale",
-              "slug": "magnific-ai",
+              "slug": "magnific",
               "reason": "Visuels finaux et détails.",
               "reasonEn": "Final visuals and detail work.",
               "decision": "conditional"
@@ -1979,7 +1979,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Prototype rapide",
-              "roleEn": "Prototype rapide",
+              "roleEn": "Rapid prototype",
               "slug": "framer",
               "reason": "Option si le projet est plus landing que CMS.",
               "reasonEn": "An option when the project is more landing page than CMS.",
@@ -1994,7 +1994,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Automation simple",
-              "roleEn": "Automation simple",
+              "roleEn": "Simple automation",
               "slug": "zapier",
               "reason": "Alternative plus simple pour intégrations rapides.",
               "reasonEn": "A simpler option for fast integrations.",
@@ -2018,7 +2018,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "App no-code",
-              "roleEn": "App no-code",
+              "roleEn": "No-code app",
               "slug": "wized",
               "reason": "Logique app et front dynamique au-dessus de Webflow.",
               "reasonEn": "App logic and a dynamic front end on top of Webflow.",
@@ -2026,7 +2026,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Synchronisation",
-              "roleEn": "Synchronisation",
+              "roleEn": "Sync",
               "slug": "whalesync",
               "reason": "Sync Webflow avec Airtable ou Notion.",
               "reasonEn": "Syncs Webflow with Airtable or Notion.",
@@ -2034,7 +2034,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Formulaire",
-              "roleEn": "Formulaire",
+              "roleEn": "Form",
               "slug": "tally",
               "reason": "Qualification et formulaires légers.",
               "reasonEn": "Qualification and lightweight forms."
@@ -2049,7 +2049,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Paiement",
-              "roleEn": "Paiement",
+              "roleEn": "Payments",
               "slug": "stripe",
               "reason": "Paiements, acomptes ou offres packagées.",
               "reasonEn": "Payments, deposits or packaged offers.",
@@ -2071,14 +2071,14 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "IA structure",
-              "roleEn": "IA structure",
+              "roleEn": "AI structuring",
               "slug": "chatgpt",
               "reason": "Plans de pages, specs, scripts et debug.",
               "reasonEn": "Page plans, specs, scripts and debugging."
           },
           {
               "role": "IA recherche",
-              "roleEn": "IA recherche",
+              "roleEn": "AI research",
               "slug": "perplexity",
               "reason": "Benchmarks et vérifications rapides.",
               "reasonEn": "Benchmarks and quick checks.",
@@ -2187,14 +2187,14 @@ export const STACKS: StackGuide[] = [
       "tools": [
           {
               "role": "Montage principal",
-              "roleEn": "Montage principal",
+              "roleEn": "Main editor",
               "slug": "davinci-resolve",
               "reason": "Montage, étalonnage, audio et exports dans une suite solide.",
               "reasonEn": "Editing, grading, audio and exports in one solid suite."
           },
           {
               "role": "Montage Adobe",
-              "roleEn": "Montage Adobe",
+              "roleEn": "Adobe editing",
               "slug": "adobe-premiere-pro",
               "reason": "À garder si clients, templates ou équipe sont Adobe.",
               "reasonEn": "Keep it if clients, templates or the team are on Adobe.",
@@ -2202,7 +2202,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Montage Mac",
-              "roleEn": "Montage Mac",
+              "roleEn": "Mac editing",
               "slug": "final-cut-pro",
               "reason": "Rapide et efficace si ton workflow est 100% Apple.",
               "reasonEn": "Fast and effective if your workflow is entirely Apple.",
@@ -2210,7 +2210,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Validation",
-              "roleEn": "Validation",
+              "roleEn": "Approval",
               "slug": "frame-io",
               "reason": "Commentaires timecodés et validation client.",
               "reasonEn": "Timecoded comments and client sign-off."
@@ -2218,14 +2218,14 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Sous-titres / dérush",
               "roleEn": "Subtitles and rushes",
-              "slug": "descript",
+              "slug": "descript-ai",
               "reason": "Transcription, montage texte et formats courts.",
               "reasonEn": "Transcription, text-based editing and short formats.",
               "decision": "conditional"
           },
           {
               "role": "Social court",
-              "roleEn": "Social court",
+              "roleEn": "Short-form social",
               "slug": "capcut",
               "reason": "Formats rapides et réseaux sociaux.",
               "reasonEn": "Fast formats and social networks.",
@@ -2241,14 +2241,14 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Musique",
-              "roleEn": "Musique",
+              "roleEn": "Music",
               "slug": "artlist",
               "reason": "Musique et assets sous licence.",
               "reasonEn": "Licensed music and assets."
           },
           {
               "role": "SFX / musique",
-              "roleEn": "SFX / musique",
+              "roleEn": "SFX / music",
               "slug": "epidemic-sound",
               "reason": "Alternative solide pour contenus récurrents.",
               "reasonEn": "A solid option for recurring content.",
@@ -2256,7 +2256,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Stockage",
-              "roleEn": "Stockage",
+              "roleEn": "Storage",
               "slug": "dropbox",
               "reason": "Partage de fichiers lourds et versions.",
               "reasonEn": "Sharing large files and versions.",
@@ -2264,7 +2264,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Drive client",
-              "roleEn": "Drive client",
+              "roleEn": "Client drive",
               "slug": "google-drive",
               "reason": "Livraison simple et accessible.",
               "reasonEn": "Simple, accessible delivery."
@@ -2280,14 +2280,14 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Upscale vidéo",
               "roleEn": "Video upscaling",
-              "slug": "topaz-video",
+              "slug": "topaz-video-ai",
               "reason": "À réserver aux plans à sauver ou livrables premium.",
               "reasonEn": "Keep it for shots worth rescuing or premium deliverables.",
               "decision": "conditional"
           },
           {
               "role": "Voix IA",
-              "roleEn": "Voix IA",
+              "roleEn": "AI voice",
               "slug": "elevenlabs",
               "reason": "Voix off, scratch voice ou variations.",
               "reasonEn": "Voiceover, scratch voice or variants.",
@@ -2295,7 +2295,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "IA structure",
-              "roleEn": "IA structure",
+              "roleEn": "AI structuring",
               "slug": "chatgpt",
               "reason": "Scripts, plan de montage, résumés et emails client.",
               "reasonEn": "Scripts, edit plan, summaries and client emails."
@@ -2411,7 +2411,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Pilotage",
-              "roleEn": "Pilotage",
+              "roleEn": "Management",
               "slug": "notion",
               "reason": "Brief, planning, shotlist, décisions et livrables.",
               "reasonEn": "Brief, schedule, shotlist, decisions and deliverables."
@@ -2426,21 +2426,21 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Validation",
-              "roleEn": "Validation",
+              "roleEn": "Approval",
               "slug": "frame-io",
               "reason": "Commentaires timecodés et versions.",
               "reasonEn": "Timecoded comments and versions."
           },
           {
               "role": "Montage",
-              "roleEn": "Montage",
+              "roleEn": "Editing",
               "slug": "davinci-resolve",
               "reason": "Montage, couleur, audio et livraison.",
               "reasonEn": "Editing, colour, audio and delivery."
           },
           {
               "role": "Montage Adobe",
-              "roleEn": "Montage Adobe",
+              "roleEn": "Adobe editing",
               "slug": "adobe-premiere-pro",
               "reason": "À garder si le workflow client est Adobe.",
               "reasonEn": "Keep it if the client workflow is Adobe.",
@@ -2448,7 +2448,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Montage Mac",
-              "roleEn": "Montage Mac",
+              "roleEn": "Mac editing",
               "slug": "final-cut-pro",
               "reason": "Option rapide sur workflow Apple.",
               "reasonEn": "A fast option on an Apple workflow.",
@@ -2456,14 +2456,14 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Musique",
-              "roleEn": "Musique",
+              "roleEn": "Music",
               "slug": "artlist",
               "reason": "Musique et SFX sous licence.",
               "reasonEn": "Licensed music and sound effects."
           },
           {
               "role": "Musique alternative",
-              "roleEn": "Musique alternative",
+              "roleEn": "Alternative music",
               "slug": "epidemic-sound",
               "reason": "Bibliothèque audio récurrente.",
               "reasonEn": "Recurring audio library.",
@@ -2471,7 +2471,7 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Captation distante",
-              "roleEn": "Captation distante",
+              "roleEn": "Remote recording",
               "slug": "riverside",
               "reason": "Interviews à distance propres.",
               "reasonEn": "Clean remote interviews.",
@@ -2479,28 +2479,28 @@ export const STACKS: StackGuide[] = [
           },
           {
               "role": "Fichiers",
-              "roleEn": "Fichiers",
+              "roleEn": "Files",
               "slug": "google-drive",
               "reason": "Partage client et livraison.",
               "reasonEn": "Client sharing and delivery."
           },
           {
               "role": "Facturation",
-              "roleEn": "Facturation",
+              "roleEn": "Invoicing",
               "slug": "indy",
               "reason": "Devis, factures et suivi.",
               "reasonEn": "Quotes, invoices and follow-up."
           },
           {
               "role": "Signature",
-              "roleEn": "Signature",
+              "roleEn": "E-signature",
               "slug": "yousign",
               "reason": "Contrats, devis et autorisations signés.",
               "reasonEn": "Contracts, quotes and signed permissions."
           },
           {
               "role": "IA structure",
-              "roleEn": "IA structure",
+              "roleEn": "AI structuring",
               "slug": "chatgpt",
               "reason": "Questions d’interview, scripts, planning et comptes rendus.",
               "reasonEn": "Interview questions, scripts, scheduling and write-ups."
@@ -2516,7 +2516,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "IA vidéo générative",
               "roleEn": "Generative AI video",
-              "slug": "kling-ai",
+              "slug": "kling",
               "reason": "À tester projet par projet.",
               "reasonEn": "Worth testing project by project.",
               "decision": "conditional"
@@ -2524,14 +2524,14 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Transcription",
               "roleEn": "Transcription",
-              "slug": "descript",
+              "slug": "descript-ai",
               "reason": "Sous-titres, dérush et formats courts.",
               "reasonEn": "Subtitles, rushes and short formats.",
               "decision": "conditional"
           },
           {
               "role": "Voix",
-              "roleEn": "Voix",
+              "roleEn": "Voice",
               "slug": "elevenlabs",
               "reason": "Voix off temporaire ou version alternative.",
               "reasonEn": "Temporary voiceover or an alternative take.",
@@ -2948,7 +2948,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Support / finition",
               "roleEn": "Support / finish",
-              "slug": "magnific-ai",
+              "slug": "magnific",
               "decision": "conditional",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
@@ -3152,7 +3152,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Support / finition",
               "roleEn": "Support / finish",
-              "slug": "magnific-ai",
+              "slug": "magnific",
               "decision": "conditional",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
@@ -3364,7 +3364,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Support / finition",
               "roleEn": "Support / finish",
-              "slug": "magnific-ai",
+              "slug": "magnific",
               "decision": "conditional",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
@@ -3763,7 +3763,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Support / finition",
               "roleEn": "Support / finish",
-              "slug": "magnific-ai",
+              "slug": "magnific",
               "decision": "conditional",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
@@ -3991,7 +3991,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Support / finition",
               "roleEn": "Support / finish",
-              "slug": "magnific-ai",
+              "slug": "magnific",
               "decision": "conditional",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
@@ -4960,7 +4960,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Production",
               "roleEn": "Production",
-              "slug": "ga4",
+              "slug": "google-analytics",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
           },
@@ -5843,7 +5843,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Support / finition",
               "roleEn": "Support / finish",
-              "slug": "magnific-ai",
+              "slug": "magnific",
               "decision": "conditional",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
@@ -5980,7 +5980,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Production",
               "roleEn": "Production",
-              "slug": "descript",
+              "slug": "descript-ai",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
           },
@@ -6197,7 +6197,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Production",
               "roleEn": "Production",
-              "slug": "descript",
+              "slug": "descript-ai",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
           },
@@ -6593,7 +6593,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Production",
               "roleEn": "Production",
-              "slug": "monday",
+              "slug": "monday-com",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
           },
@@ -6841,14 +6841,14 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Production",
               "roleEn": "Production",
-              "slug": "kling-ai",
+              "slug": "kling",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
           },
           {
               "role": "Support / finition",
               "roleEn": "Support / finish",
-              "slug": "magnific-ai",
+              "slug": "magnific",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
           },
@@ -7843,7 +7843,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Socle métier",
               "roleEn": "Core workflow",
-              "slug": "monday",
+              "slug": "monday-com",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
           },
@@ -8738,7 +8738,7 @@ export const STACKS: StackGuide[] = [
           {
               "role": "Support / finition",
               "roleEn": "Support / finish",
-              "slug": "kling-ai",
+              "slug": "kling",
               "decision": "conditional",
               "reason": "Utile dans ce workflow métier pour produire, valider ou livrer plus proprement.",
               "reasonEn": "Useful in this role workflow to produce, approve, or deliver more cleanly."
@@ -9030,7 +9030,7 @@ export const STACKS: StackGuide[] = [
       { role: "Paiement", roleEn: "Payment", slug: "stripe", reason: "Factures simples, cartes, liens de paiement.", reasonEn: "Simple invoices, cards, payment links." },
       { role: "Réseau", roleEn: "Relationship network", slug: "folk", reason: "Utile si tes opportunités viennent d'intros, partenaires et anciens clients.", reasonEn: "Useful if opportunities come from intros, partners, and past clients." },
       { role: "Proposition", roleEn: "Proposal", slug: "canva", reason: "Présentations propres sans outil de deck lourd.", reasonEn: "Clean proposals without a heavy deck tool." },
-      { role: "Signature", roleEn: "Signature", slug: "docusign", reason: "À réserver aux contrats où la preuve formelle compte vraiment.", reasonEn: "Reserve for contracts where formal proof really matters." },
+      { role: "Signature", roleEn: "E-signature", slug: "docusign", reason: "À réserver aux contrats où la preuve formelle compte vraiment.", reasonEn: "Reserve for contracts where formal proof really matters." },
       { role: "Recherche", roleEn: "Research", slug: "perplexity", reason: "Préparer appels, benchmarks et notes avec sources vérifiables.", reasonEn: "Prepare calls, benchmarks, and notes with verifiable sources." },
       { role: "Facturation FR", roleEn: "French billing", slug: "indy", reason: "TVA, déclarations et administratif si ton activité est française.", reasonEn: "VAT, declarations, and admin if your activity is French." },
       { role: "Compte pro + factures", roleEn: "Business account + invoices", slug: "shine", decision: "conditional", reason: "À regarder si tu veux un compte pro français avec facturation intégrée plutôt qu'un couple banque + outil séparé.", reasonEn: "Consider if you want a French business account with built-in invoicing instead of banking plus a separate tool." },
@@ -9069,7 +9069,7 @@ export const STACKS: StackGuide[] = [
       { role: "Formulaires", roleEn: "Forms", slug: "tally", reason: "Capture de demandes sans payer Typeform trop tôt.", reasonEn: "Capture requests without paying for Typeform too early." },
       { role: "Newsletter", roleEn: "Newsletter", slug: "beehiiv", reason: "À activer quand l'email devient un canal régulier, pas une idée vague.", reasonEn: "Activate when email becomes a regular channel, not a vague idea." },
       { role: "Publication sociale", roleEn: "Social scheduling", slug: "buffer", reason: "Suffisant pour planifier plusieurs canaux sans suite social media lourde.", reasonEn: "Enough to schedule several channels without a heavy social suite." },
-      { role: "Montage parlé", roleEn: "Spoken editing", slug: "descript", reason: "Utile si tu transformes interviews, vidéos ou podcasts en textes et clips.", reasonEn: "Useful if you turn interviews, videos, or podcasts into text and clips." },
+      { role: "Montage parlé", roleEn: "Spoken editing", slug: "descript-ai", reason: "Utile si tu transformes interviews, vidéos ou podcasts en textes et clips.", reasonEn: "Useful if you turn interviews, videos, or podcasts into text and clips." },
       { role: "Stockage assets", roleEn: "Asset storage", slug: "google-drive", reason: "Garder scripts, exports, visuels et briefs clients au même endroit.", reasonEn: "Keep scripts, exports, visuals, and client briefs in one place." },
     ],
   },
@@ -9307,7 +9307,7 @@ export const STACKS: StackGuide[] = [
     tools: [
       { role: "Voix synthétique", roleEn: "Synthetic voice", slug: "elevenlabs", reason: "Référence absolue sur le rendu naturel et le clonage de voix.", reasonEn: "Absolute reference for natural voice rendering and voice cloning." },
       { role: "Avatar vidéo", roleEn: "Video avatar", slug: "heygen", reason: "Le plus crédible pour avatars formation, pitch et localisation.", reasonEn: "Most credible for training avatars, pitches, and localization." },
-      { role: "Édition podcast/vidéo", roleEn: "Podcast/video editing", slug: "descript", reason: "Édition par texte, à garder si tu produis régulièrement audio ou vidéo parlée.", reasonEn: "Edit-by-text. Keep if you regularly produce audio or talking video." },
+      { role: "Édition podcast/vidéo", roleEn: "Podcast/video editing", slug: "descript-ai", reason: "Édition par texte, à garder si tu produis régulièrement audio ou vidéo parlée.", reasonEn: "Edit-by-text. Keep if you regularly produce audio or talking video." },
       { role: "Vidéo générative", roleEn: "Generative video", slug: "runway", reason: "Pour plans courts génératifs, B-roll IA, effets. Pas pour la vidéo longue.", reasonEn: "For short generative shots, AI B-roll, effects. Not long-form video." },
     ],
   },
@@ -9404,7 +9404,7 @@ export const STACKS: StackGuide[] = [
     ],
     tools: [
       { role: "Plateforme principale", roleEn: "Main platform", slug: "krea-ai", reason: "Real-time generation, enhance, vidéo et training de styles dans un seul abonnement.", reasonEn: "Real-time generation, enhance, video, and style training in a single subscription." },
-      { role: "Upscale haut de gamme", roleEn: "Premium upscale", slug: "magnific-ai", reason: "À garder seulement si tu livres des visuels print ou très grand format.", reasonEn: "Keep only if you deliver print or very large-format visuals." },
+      { role: "Upscale haut de gamme", roleEn: "Premium upscale", slug: "magnific", reason: "À garder seulement si tu livres des visuels print ou très grand format.", reasonEn: "Keep only if you deliver print or very large-format visuals." },
       { role: "Image stylisée", roleEn: "Stylized image", slug: "midjourney", reason: "Garder si le rendu Midjourney reste signature de ta direction artistique.", reasonEn: "Keep if Midjourney's look is still part of your artistic signature." },
     ],
   },
@@ -9724,7 +9724,7 @@ export const STACKS: StackGuide[] = [
     ],
     tools: [
       { role: "Enregistrement", roleEn: "Recording", slug: "riverside", reason: "Audio/vidéo local propre pour interviews à distance.", reasonEn: "Clean local audio/video for remote interviews." },
-      { role: "Montage par texte", roleEn: "Text-based editing", slug: "descript", reason: "Montage, transcription et clips à partir de contenus parlés.", reasonEn: "Editing, transcription, and clips from spoken content." },
+      { role: "Montage par texte", roleEn: "Text-based editing", slug: "descript-ai", reason: "Montage, transcription et clips à partir de contenus parlés.", reasonEn: "Editing, transcription, and clips from spoken content." },
       { role: "Hébergement podcast", roleEn: "Podcast hosting", slug: "spotify-for-podcasters", reason: "Solution simple pour démarrer sans coût fixe lourd.", reasonEn: "Simple way to start without heavy fixed cost." },
       { role: "Newsletter croissance", roleEn: "Growth newsletter", slug: "beehiiv", reason: "Utile si l'email devient un actif d'audience.", reasonEn: "Useful if email becomes an audience asset." },
       { role: "Newsletter simple", roleEn: "Simple newsletter", slug: "substack", reason: "Plus naturel si la relation auteur-lecteur prime.", reasonEn: "More natural if author-reader relationship matters most." },
@@ -9825,7 +9825,7 @@ export const STACKS: StackGuide[] = [
       { role: "Réseau relationnel", roleEn: "Relationship network", slug: "folk", reason: "Très bon pour consultants qui vendent par réseau et introductions.", reasonEn: "Great for consultants selling through network and introductions." },
       { role: "Appels", roleEn: "Calls", slug: "aircall", reason: "À garder si appels sortants et suivi téléphonique sont un vrai canal.", reasonEn: "Keep if outbound calls and call tracking are a real channel." },
       { role: "Rendez-vous", roleEn: "Scheduling", slug: "calendly", reason: "Réduit la friction quand les calls qualifiés deviennent réguliers.", reasonEn: "Reduces friction when qualified calls become regular." },
-      { role: "Signature", roleEn: "Signature", slug: "docusign", reason: "À réserver aux contrats où la preuve formelle a une vraie valeur.", reasonEn: "Reserve for contracts where formal proof has real value." },
+      { role: "Signature", roleEn: "E-signature", slug: "docusign", reason: "À réserver aux contrats où la preuve formelle a une vraie valeur.", reasonEn: "Reserve for contracts where formal proof has real value." },
       { role: "Livraison", roleEn: "Delivery", slug: "notion", reason: "Passer de l'opportunité signée au contexte de mission.", reasonEn: "Move from signed opportunity to mission context." },
     ],
   },
@@ -10029,7 +10029,7 @@ export const STACKS: StackGuide[] = [
       { role: "Production vidéo courte", roleEn: "Short video production", slug: "capcut", reason: "Formats courts, ads, reels et déclinaisons vidéo sans suite lourde.", reasonEn: "Short formats, ads, reels, and video variations without a heavy suite." },
       { role: "Publication social", roleEn: "Social publishing", slug: "buffer", reason: "Planification sobre si l'agence gère quelques comptes et canaux.", reasonEn: "Lean scheduling if the agency manages a few accounts and channels." },
       { role: "Suite social avancée", roleEn: "Advanced social suite", slug: "hootsuite", reason: "À ne garder que si validation, volume et multi-comptes justifient le coût.", reasonEn: "Keep only if approval, volume, and multi-account needs justify the cost." },
-      { role: "Emailing / automation", roleEn: "Emailing / automation", slug: "brevo", reason: "Newsletters, séquences simples, transactional léger et segmentation de base.", reasonEn: "Newsletters, simple sequences, light transactional, and basic segmentation." },
+      { role: "Emailing / automation", roleEn: "Email / automation", slug: "brevo", reason: "Newsletters, séquences simples, transactional léger et segmentation de base.", reasonEn: "Newsletters, simple sequences, light transactional, and basic segmentation." },
       { role: "Email marketing avancé", roleEn: "Advanced email marketing", slug: "mailchimp", reason: "À envisager si templates, audience et reporting sont déjà matures.", reasonEn: "Consider if templates, audience, and reporting are already mature." },
       { role: "SEO / audit", roleEn: "SEO / audit", slug: "semrush", reason: "Recherche mots-clés, audits techniques, concurrence et reporting SEO.", reasonEn: "Keyword research, technical audits, competitors, and SEO reporting." },
       { role: "SEO / backlinks", roleEn: "SEO / backlinks", slug: "ahrefs", reason: "Plus pertinent si l'agence vend vraiment SEO, contenus et netlinking.", reasonEn: "More relevant if the agency truly sells SEO, content, and link building." },
@@ -11409,7 +11409,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Contrôle",
         "roleEn": "Control",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "conditional",
         "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
         "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
@@ -16130,7 +16130,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Production",
         "roleEn": "Production",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "core",
         "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
         "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
@@ -16491,7 +16491,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -16511,7 +16511,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Deck client",
-        "roleEn": "Deck client",
+        "roleEn": "Client deck",
         "slug": "pitch",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -16531,7 +16531,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -16541,7 +16541,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -16571,7 +16571,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "challenge",
         "tip": "À activer seulement si la mission le justifie.",
@@ -16686,7 +16686,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -16706,7 +16706,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -16726,7 +16726,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -16746,7 +16746,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -16871,7 +16871,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -16931,7 +16931,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -17056,7 +17056,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -17066,7 +17066,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -17086,7 +17086,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -17096,7 +17096,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -17116,7 +17116,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -17149,7 +17149,7 @@ export const STACKS: StackGuide[] = [
   {
     "id": "consultant-ia-automation",
     "slug": "consultant-ia-automation",
-    "title": "Stack ia",
+    "title": "Stack IA",
     "titleEn": "AI stack",
     "subtitle": "Les outils recommandés pour consultant ia / automation",
     "subtitleEn": "Recommended tools for this consulting profile.",
@@ -17251,7 +17251,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -17271,7 +17271,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -17291,7 +17291,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -17311,7 +17311,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -17478,7 +17478,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Preuve d'acquisition",
         "roleEn": "Acquisition proof",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "core",
         "tip": "Gratuit, à connecter dès le premier audit.",
         "tipEn": "Free, connect it from the very first audit.",
@@ -17676,7 +17676,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Trafic",
         "roleEn": "Traffic",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "core",
         "tip": "Gratuit, à connecter dès le début de la mission.",
         "tipEn": "Free, connect it from the start of the mission.",
@@ -17871,7 +17871,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
@@ -17910,7 +17910,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "challenge",
         "tip": "À activer seulement si la mission le justifie.",
@@ -18016,7 +18016,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18261,7 +18261,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -18376,7 +18376,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18386,7 +18386,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Maquette",
-        "roleEn": "Maquette",
+        "roleEn": "Mockups",
         "slug": "figma",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18406,7 +18406,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18436,7 +18436,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Deck client",
-        "roleEn": "Deck client",
+        "roleEn": "Client deck",
         "slug": "pitch",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -18550,7 +18550,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18560,7 +18560,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18590,7 +18590,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -18620,7 +18620,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -18633,7 +18633,7 @@ export const STACKS: StackGuide[] = [
   {
     "id": "consultant-relations-presse-influence",
     "slug": "consultant-relations-presse-influence",
-    "title": "Stack rp influence",
+    "title": "Stack RP et influence",
     "titleEn": "PR and influence stack",
     "subtitle": "Les outils recommandés pour consultant relations presse / influence",
     "subtitleEn": "Recommended tools for this consulting profile.",
@@ -18755,7 +18755,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18808,7 +18808,7 @@ export const STACKS: StackGuide[] = [
   {
     "id": "consultant-rh",
     "slug": "consultant-rh",
-    "title": "Stack rh",
+    "title": "Stack RH",
     "titleEn": "HR stack",
     "subtitle": "Les outils recommandés pour consultant rh",
     "subtitleEn": "Recommended tools for this consulting profile.",
@@ -18899,7 +18899,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18939,7 +18939,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -18949,7 +18949,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -18959,7 +18959,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -18969,7 +18969,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -19085,7 +19085,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "apollo",
+        "slug": "apollo-io",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
@@ -19094,7 +19094,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -19134,7 +19134,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -19248,7 +19248,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -19318,7 +19318,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -19433,7 +19433,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -19453,7 +19453,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -19473,7 +19473,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -19503,7 +19503,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -19516,7 +19516,7 @@ export const STACKS: StackGuide[] = [
   {
     "id": "consultant-finance-cfo-freelance",
     "slug": "consultant-finance-cfo-freelance",
-    "title": "Stack cfo freelance",
+    "title": "Stack CFO freelance",
     "titleEn": "CFO freelance stack",
     "subtitle": "Les outils recommandés pour consultant finance / cfo freelance",
     "subtitleEn": "Recommended tools for this consulting profile.",
@@ -19679,7 +19679,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -19804,7 +19804,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -19814,7 +19814,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -19825,7 +19825,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
@@ -20000,7 +20000,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "apollo",
+        "slug": "apollo-io",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
@@ -20029,7 +20029,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20049,7 +20049,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "challenge",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20062,7 +20062,7 @@ export const STACKS: StackGuide[] = [
   {
     "id": "consultant-crm",
     "slug": "consultant-crm",
-    "title": "Stack crm",
+    "title": "Stack CRM",
     "titleEn": "CRM stack",
     "subtitle": "Les outils recommandés pour consultant crm",
     "subtitleEn": "Recommended tools for this consulting profile.",
@@ -20204,7 +20204,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20214,7 +20214,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20370,7 +20370,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
@@ -20399,7 +20399,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20409,7 +20409,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Maquette",
-        "roleEn": "Maquette",
+        "roleEn": "Mockups",
         "slug": "figma",
         "decision": "challenge",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20422,7 +20422,7 @@ export const STACKS: StackGuide[] = [
   {
     "id": "consultant-cro-conversion",
     "slug": "consultant-cro-conversion",
-    "title": "Stack cro",
+    "title": "Stack CRO",
     "titleEn": "CRO stack",
     "subtitle": "Les outils recommandés pour consultant cro / conversion",
     "subtitleEn": "Recommended tools for this consulting profile.",
@@ -20535,7 +20535,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
@@ -20574,7 +20574,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Maquette",
-        "roleEn": "Maquette",
+        "roleEn": "Mockups",
         "slug": "figma",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20758,7 +20758,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21080,7 +21080,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -21090,7 +21090,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Maquette",
-        "roleEn": "Maquette",
+        "roleEn": "Mockups",
         "slug": "figma",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21130,7 +21130,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "challenge",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21143,7 +21143,7 @@ export const STACKS: StackGuide[] = [
   {
     "id": "consultant-ux-research",
     "slug": "consultant-ux-research",
-    "title": "Stack ux research",
+    "title": "Stack UX research",
     "titleEn": "UX research stack",
     "subtitle": "Les outils recommandés pour consultant ux research",
     "subtitleEn": "Recommended tools for this consulting profile.",
@@ -21274,7 +21274,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21284,7 +21284,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21304,7 +21304,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21317,7 +21317,7 @@ export const STACKS: StackGuide[] = [
   {
     "id": "consultant-it-systemes",
     "slug": "consultant-it-systemes",
-    "title": "Stack it",
+    "title": "Stack IT",
     "titleEn": "IT stack",
     "subtitle": "Les outils recommandés pour consultant it / systèmes",
     "subtitleEn": "Recommended tools for this consulting profile.",
@@ -21419,7 +21419,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -21449,7 +21449,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21459,7 +21459,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21644,7 +21644,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21654,7 +21654,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21759,7 +21759,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -21819,7 +21819,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -21842,7 +21842,7 @@ export const STACKS: StackGuide[] = [
   {
     "id": "consultant-sustainability-rse",
     "slug": "consultant-sustainability-rse",
-    "title": "Stack rse",
+    "title": "Stack RSE",
     "titleEn": "CSR stack",
     "subtitle": "Les outils recommandés pour consultant sustainability / rse",
     "subtitleEn": "Recommended tools for this consulting profile.",
@@ -21934,7 +21934,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -21994,7 +21994,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -22004,7 +22004,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -22129,7 +22129,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22169,7 +22169,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -22324,7 +22324,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -22354,7 +22354,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -22367,7 +22367,7 @@ export const STACKS: StackGuide[] = [
   {
     "id": "consultant-qualite-iso",
     "slug": "consultant-qualite-iso",
-    "title": "Stack qualité iso",
+    "title": "Stack qualité ISO",
     "titleEn": "ISO quality stack",
     "subtitle": "Les outils recommandés pour consultant qualité / iso",
     "subtitleEn": "Recommended tools for this consulting profile.",
@@ -22459,7 +22459,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22479,7 +22479,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22633,7 +22633,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22663,7 +22663,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22798,7 +22798,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22808,7 +22808,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22848,7 +22848,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -22858,7 +22858,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -22973,7 +22973,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22984,7 +22984,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "monday",
+        "slug": "monday-com",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
@@ -23013,7 +23013,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -23043,7 +23043,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -23148,7 +23148,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Deck client",
-        "roleEn": "Deck client",
+        "roleEn": "Client deck",
         "slug": "pitch",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23168,7 +23168,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Maquette",
-        "roleEn": "Maquette",
+        "roleEn": "Mockups",
         "slug": "figma",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23178,7 +23178,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23313,7 +23313,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23333,7 +23333,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Maquette",
-        "roleEn": "Maquette",
+        "roleEn": "Mockups",
         "slug": "figma",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23343,7 +23343,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23353,7 +23353,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -23488,7 +23488,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23498,7 +23498,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23508,7 +23508,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23528,7 +23528,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -23654,7 +23654,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit mission",
-        "roleEn": "Cockpit mission",
+        "roleEn": "Project cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23684,7 +23684,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23694,7 +23694,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -23714,7 +23714,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -24008,19 +24008,9 @@ export const STACKS: StackGuide[] = [
         "reasonEn": "Useful to generate hook variants quickly; tone and editing remain what actually differentiates the creator."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "capcut-ai",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser sous-titres dans le workflow contenu.",
-        "reasonEn": "Useful to secure subtitles in the content workflow."
-      },
-      {
         "role": "Repurposing vidéo",
         "roleEn": "Video repurposing",
-        "slug": "opusclip",
+        "slug": "opus-clip",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -24029,7 +24019,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Sous-titres",
-        "roleEn": "Sous-titres",
+        "roleEn": "Subtitles",
         "slug": "captions",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24173,7 +24163,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Montage par le texte",
         "roleEn": "Text-based editing",
-        "slug": "descript",
+        "slug": "descript-ai",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -24423,23 +24413,13 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Enregistrement",
-        "roleEn": "Enregistrement",
+        "roleEn": "Recording",
         "slug": "riverside",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Enregistrement : utile pour sécuriser préparation dans le workflow contenu.",
         "reasonEn": "Useful to secure preparation in the content workflow."
-      },
-      {
-        "role": "Montage texte/audio",
-        "roleEn": "Montage texte/audio",
-        "slug": "descript",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Montage texte/audio : utile pour sécuriser enregistrement dans le workflow contenu.",
-        "reasonEn": "Useful to secure recording in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24493,7 +24473,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -24554,7 +24534,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Repurposing vidéo",
         "roleEn": "Video repurposing",
-        "slug": "opusclip",
+        "slug": "opus-clip",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -24583,7 +24563,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Voix IA",
-        "roleEn": "Voix IA",
+        "roleEn": "AI voice",
         "slug": "elevenlabs",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24704,7 +24684,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -24734,7 +24714,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -24764,7 +24744,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Planification social",
-        "roleEn": "Planification social",
+        "roleEn": "Social scheduling",
         "slug": "metricool",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -25269,7 +25249,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Retouche photo",
-        "roleEn": "Retouche photo",
+        "roleEn": "Photo retouching",
         "slug": "adobe-lightroom",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25289,7 +25269,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25299,7 +25279,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25319,7 +25299,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Planification social",
-        "roleEn": "Planification social",
+        "roleEn": "Social scheduling",
         "slug": "metricool",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -25440,7 +25420,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "krea",
+        "slug": "krea-ai",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -25551,7 +25531,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25561,7 +25541,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25571,7 +25551,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Livraison fichiers",
-        "roleEn": "Livraison fichiers",
+        "roleEn": "File delivery",
         "slug": "google-drive",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25581,7 +25561,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25631,7 +25611,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Facturation",
-        "roleEn": "Facturation",
+        "roleEn": "Invoicing",
         "slug": "indy",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -25652,7 +25632,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "teleprompter-apps",
+        "slug": "teleprompter",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -25701,23 +25681,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Sous-titres",
-        "roleEn": "Sous-titres",
+        "roleEn": "Subtitles",
         "slug": "captions",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Sous-titres : utile pour sécuriser montage dans le workflow contenu.",
         "reasonEn": "Useful to secure editing in the content workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "capcut-ai",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser brief marque dans le workflow contenu.",
-        "reasonEn": "Useful to secure brand brief in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25832,7 +25802,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25842,7 +25812,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25852,7 +25822,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Planification social",
-        "roleEn": "Planification social",
+        "roleEn": "Social scheduling",
         "slug": "metricool",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25882,7 +25852,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Boutique",
-        "roleEn": "Boutique",
+        "roleEn": "Online store",
         "slug": "shopify",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -25992,7 +25962,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Image IA",
-        "roleEn": "Image IA",
+        "roleEn": "AI images",
         "slug": "midjourney",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -26002,7 +25972,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Sous-titres",
-        "roleEn": "Sous-titres",
+        "roleEn": "Subtitles",
         "slug": "captions",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -26113,7 +26083,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -26123,7 +26093,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -26153,8 +26123,8 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage texte/audio",
-        "roleEn": "Montage texte/audio",
-        "slug": "descript",
+        "roleEn": "Text-based editing",
+        "slug": "descript-ai",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -26163,7 +26133,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Pilotage YouTube",
-        "roleEn": "Pilotage YouTube",
+        "roleEn": "YouTube management",
         "slug": "youtube-studio",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -26454,7 +26424,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -26474,7 +26444,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -26675,7 +26645,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Boutique",
-        "roleEn": "Boutique",
+        "roleEn": "Online store",
         "slug": "shopify",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -26685,7 +26655,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -26695,7 +26665,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -26736,7 +26706,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Analytics",
         "roleEn": "Analytics",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -26986,7 +26956,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Publication SEO",
-        "roleEn": "Publication SEO",
+        "roleEn": "SEO publishing",
         "slug": "wordpress",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -27237,7 +27207,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Publication SEO",
-        "roleEn": "Publication SEO",
+        "roleEn": "SEO publishing",
         "slug": "wordpress",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -27278,7 +27248,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "gsc",
+        "slug": "google-search-console",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -27288,7 +27258,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Analytics",
         "roleEn": "Analytics",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -27317,7 +27287,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -27549,16 +27519,6 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "twitch-studio",
-        "decision": "core",
-        "tip": "À garder dans le socle de production.",
-        "tipEn": "Keep it in the production core.",
-        "reason": "Outil métier : utile pour sécuriser modération dans le workflow contenu.",
-        "reasonEn": "Useful to secure moderation in the content workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
         "slug": "youtube-live",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -27589,7 +27549,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "elgato-stream-deck",
+        "slug": "elgato",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -27627,16 +27587,6 @@ export const STACKS: StackGuide[] = [
         "reasonEn": "Useful to secure sound in the content workflow."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "streamelements-widgets",
-        "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser modération dans le workflow contenu.",
-        "reasonEn": "Useful to secure moderation in the content workflow."
-      },
-      {
         "role": "Idées et scripts",
         "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
@@ -27649,7 +27599,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Repurposing vidéo",
         "roleEn": "Video repurposing",
-        "slug": "opusclip",
+        "slug": "opus-clip",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -27658,7 +27608,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Sous-titres",
-        "roleEn": "Sous-titres",
+        "roleEn": "Subtitles",
         "slug": "captions",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27668,7 +27618,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Voix IA",
-        "roleEn": "Voix IA",
+        "roleEn": "AI voice",
         "slug": "elevenlabs",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27819,7 +27769,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Pilotage YouTube",
-        "roleEn": "Pilotage YouTube",
+        "roleEn": "YouTube management",
         "slug": "youtube-studio",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -27839,7 +27789,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -27859,7 +27809,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -27930,7 +27880,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Repurposing vidéo",
         "roleEn": "Video repurposing",
-        "slug": "opusclip",
+        "slug": "opus-clip",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -27939,7 +27889,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Sous-titres",
-        "roleEn": "Sous-titres",
+        "roleEn": "Subtitles",
         "slug": "captions",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27949,7 +27899,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Image IA",
-        "roleEn": "Image IA",
+        "roleEn": "AI images",
         "slug": "midjourney",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -28070,7 +28020,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Retouche photo",
-        "roleEn": "Retouche photo",
+        "roleEn": "Photo retouching",
         "slug": "adobe-lightroom",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28090,7 +28040,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28101,7 +28051,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "premiere-rush",
+        "slug": "adobe-premiere-pro",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -28120,7 +28070,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -28140,7 +28090,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Distribution Instagram",
-        "roleEn": "Distribution Instagram",
+        "roleEn": "Instagram distribution",
         "slug": "instagram",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -28231,7 +28181,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "krea",
+        "slug": "krea-ai",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -28240,7 +28190,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Image IA",
-        "roleEn": "Image IA",
+        "roleEn": "AI images",
         "slug": "midjourney",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -28351,7 +28301,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28361,7 +28311,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Retouche photo",
-        "roleEn": "Retouche photo",
+        "roleEn": "Photo retouching",
         "slug": "adobe-lightroom",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28371,7 +28321,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28381,7 +28331,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28401,7 +28351,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Distribution Instagram",
-        "roleEn": "Distribution Instagram",
+        "roleEn": "Instagram distribution",
         "slug": "instagram",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -28411,7 +28361,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Pilotage YouTube",
-        "roleEn": "Pilotage YouTube",
+        "roleEn": "YouTube management",
         "slug": "youtube-studio",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -28462,7 +28412,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "teleprompter-apps",
+        "slug": "teleprompter",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -28492,7 +28442,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "krea",
+        "slug": "krea-ai",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -28501,7 +28451,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Image IA",
-        "roleEn": "Image IA",
+        "roleEn": "AI images",
         "slug": "midjourney",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -28509,16 +28459,6 @@ export const STACKS: StackGuide[] = [
         "reason": "Image IA : utile pour sécuriser photo dans le workflow contenu.",
         "reasonEn": "Useful to secure photo in the content workflow."
       },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "capcut-ai",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser recettes dans le workflow contenu.",
-        "reasonEn": "Useful to secure recipes in the content workflow."
-      }
     ]
   },
   {
@@ -28622,7 +28562,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28632,7 +28572,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Retouche photo",
-        "roleEn": "Retouche photo",
+        "roleEn": "Photo retouching",
         "slug": "adobe-lightroom",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28642,7 +28582,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28672,7 +28612,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Distribution Instagram",
-        "roleEn": "Distribution Instagram",
+        "roleEn": "Instagram distribution",
         "slug": "instagram",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -28692,7 +28632,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Planification social",
-        "roleEn": "Planification social",
+        "roleEn": "Social scheduling",
         "slug": "metricool",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -28773,7 +28713,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "krea",
+        "slug": "krea-ai",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -28782,7 +28722,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Image IA",
-        "roleEn": "Image IA",
+        "roleEn": "AI images",
         "slug": "midjourney",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -28893,7 +28833,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28923,7 +28863,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -29154,7 +29094,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -29164,7 +29104,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -29214,7 +29154,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -29304,7 +29244,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Sous-titres",
-        "roleEn": "Sous-titres",
+        "roleEn": "Subtitles",
         "slug": "captions",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -29425,7 +29365,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -29455,8 +29395,8 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage texte/audio",
-        "roleEn": "Montage texte/audio",
-        "slug": "descript",
+        "roleEn": "Text-based editing",
+        "slug": "descript-ai",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -29505,7 +29445,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Pilotage YouTube",
-        "roleEn": "Pilotage YouTube",
+        "roleEn": "YouTube management",
         "slug": "youtube-studio",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -29542,16 +29482,6 @@ export const STACKS: StackGuide[] = [
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser démos dans le workflow contenu.",
         "reasonEn": "Useful to secure demos in the content workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "hubspot",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser positionnement dans le workflow contenu.",
-        "reasonEn": "Useful to secure positioning in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29746,7 +29676,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Enregistrement",
-        "roleEn": "Enregistrement",
+        "roleEn": "Recording",
         "slug": "riverside",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -29756,7 +29686,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -29766,7 +29696,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -29987,7 +29917,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -30007,7 +29937,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -30037,7 +29967,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Boutique",
-        "roleEn": "Boutique",
+        "roleEn": "Online store",
         "slug": "shopify",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -30157,7 +30087,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Image IA",
-        "roleEn": "Image IA",
+        "roleEn": "AI images",
         "slug": "midjourney",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30268,7 +30198,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Image IA",
-        "roleEn": "Image IA",
+        "roleEn": "AI images",
         "slug": "midjourney",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -30279,7 +30209,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "krea",
+        "slug": "krea-ai",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -30328,7 +30258,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Voix IA",
-        "roleEn": "Voix IA",
+        "roleEn": "AI voice",
         "slug": "elevenlabs",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -30338,7 +30268,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -30348,7 +30278,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -30539,7 +30469,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -30569,8 +30499,8 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage texte/audio",
-        "roleEn": "Montage texte/audio",
-        "slug": "descript",
+        "roleEn": "Text-based editing",
+        "slug": "descript-ai",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -30579,7 +30509,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage pro",
-        "roleEn": "Montage pro",
+        "roleEn": "Pro editing",
         "slug": "adobe-premiere-pro",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -30609,7 +30539,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Livraison fichiers",
-        "roleEn": "Livraison fichiers",
+        "roleEn": "File delivery",
         "slug": "google-drive",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -30640,7 +30570,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "otter",
+        "slug": "otter-ai",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -30820,7 +30750,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -30830,7 +30760,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -30870,7 +30800,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Distribution Instagram",
-        "roleEn": "Distribution Instagram",
+        "roleEn": "Instagram distribution",
         "slug": "instagram",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -30970,7 +30900,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Image IA",
-        "roleEn": "Image IA",
+        "roleEn": "AI images",
         "slug": "midjourney",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30978,16 +30908,6 @@ export const STACKS: StackGuide[] = [
         "reason": "Image IA : utile pour sécuriser templates dans le workflow contenu.",
         "reasonEn": "Useful to secure templates in the content workflow."
       },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "capcut-ai",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser veille dans le workflow contenu.",
-        "reasonEn": "Useful to secure market watch in the content workflow."
-      }
     ]
   },
   {
@@ -31091,7 +31011,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Montage vertical",
-        "roleEn": "Montage vertical",
+        "roleEn": "Vertical video editing",
         "slug": "capcut",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -31111,7 +31031,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -31121,7 +31041,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Livraison fichiers",
-        "roleEn": "Livraison fichiers",
+        "roleEn": "File delivery",
         "slug": "google-drive",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -31141,7 +31061,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Planification social",
-        "roleEn": "Planification social",
+        "roleEn": "Social scheduling",
         "slug": "metricool",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -31151,7 +31071,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Distribution Instagram",
-        "roleEn": "Distribution Instagram",
+        "roleEn": "Instagram distribution",
         "slug": "instagram",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -31231,23 +31151,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Sous-titres",
-        "roleEn": "Sous-titres",
+        "roleEn": "Subtitles",
         "slug": "captions",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Sous-titres : utile pour sécuriser montage express dans le workflow contenu.",
         "reasonEn": "Useful to secure express editing in the content workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "capcut-ai",
-        "decision": "challenge",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser publication live dans le workflow contenu.",
-        "reasonEn": "Useful to secure live publishing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31362,7 +31272,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -31372,7 +31282,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Livraison fichiers",
-        "roleEn": "Livraison fichiers",
+        "roleEn": "File delivery",
         "slug": "google-drive",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -31392,7 +31302,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage pro",
-        "roleEn": "Montage pro",
+        "roleEn": "Pro editing",
         "slug": "adobe-premiere-pro",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -31402,8 +31312,8 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage texte/audio",
-        "roleEn": "Montage texte/audio",
-        "slug": "descript",
+        "roleEn": "Text-based editing",
+        "slug": "descript-ai",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -31412,7 +31322,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -31643,8 +31553,8 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Montage texte/audio",
-        "roleEn": "Montage texte/audio",
-        "slug": "descript",
+        "roleEn": "Text-based editing",
+        "slug": "descript-ai",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -31654,7 +31564,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Repurposing vidéo",
         "roleEn": "Video repurposing",
-        "slug": "opusclip",
+        "slug": "opus-clip",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -31673,7 +31583,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -31703,7 +31613,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Planification social",
-        "roleEn": "Planification social",
+        "roleEn": "Social scheduling",
         "slug": "metricool",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -31713,7 +31623,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -31793,7 +31703,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Sous-titres",
-        "roleEn": "Sous-titres",
+        "roleEn": "Subtitles",
         "slug": "captions",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -31964,7 +31874,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -31974,7 +31884,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Cockpit contenu",
-        "roleEn": "Cockpit contenu",
+        "roleEn": "Content cockpit",
         "slug": "notion",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -31991,16 +31901,6 @@ export const STACKS: StackGuide[] = [
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser animation dans le workflow contenu.",
         "reasonEn": "Useful to secure animation in the content workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "bots-discord",
-        "decision": "conditional",
-        "tip": "À activer selon le format et la monétisation.",
-        "tipEn": "Activate based on format and monetization.",
-        "reason": "Outil métier : utile pour sécuriser contenus exclusifs dans le workflow contenu.",
-        "reasonEn": "Useful to secure exclusive content in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -32195,7 +32095,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Gestion projet",
-        "roleEn": "Gestion projet",
+        "roleEn": "Project management",
         "slug": "clickup",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -32206,7 +32106,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Planning",
         "roleEn": "Planning",
-        "slug": "monday",
+        "slug": "monday-com",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -32225,7 +32125,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -32255,7 +32155,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32275,7 +32175,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32285,7 +32185,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32315,7 +32215,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Compte pro",
-        "roleEn": "Compte pro",
+        "roleEn": "Business account",
         "slug": "qonto",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32325,7 +32225,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32345,7 +32245,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32355,7 +32255,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32709,7 +32609,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Tableur",
-        "roleEn": "Tableur",
+        "roleEn": "Spreadsheet",
         "slug": "google-sheets",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -32769,7 +32669,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32809,7 +32709,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32950,7 +32850,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "CRM entreprise",
-        "roleEn": "CRM entreprise",
+        "roleEn": "Enterprise CRM",
         "slug": "salesforce",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -32971,7 +32871,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "apollo",
+        "slug": "apollo-io",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -33000,7 +32900,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33010,7 +32910,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33050,7 +32950,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33181,7 +33081,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "CRM entreprise",
-        "roleEn": "CRM entreprise",
+        "roleEn": "Enterprise CRM",
         "slug": "salesforce",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -33192,7 +33092,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "apollo",
+        "slug": "apollo-io",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -33261,7 +33161,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33372,7 +33272,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Support client",
-        "roleEn": "Support client",
+        "roleEn": "Customer support",
         "slug": "intercom",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -33442,7 +33342,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33452,7 +33352,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33462,7 +33362,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33482,7 +33382,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33593,7 +33493,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Gestion projet",
-        "roleEn": "Gestion projet",
+        "roleEn": "Project management",
         "slug": "clickup",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -33604,7 +33504,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Planning",
         "roleEn": "Planning",
-        "slug": "monday",
+        "slug": "monday-com",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -33613,7 +33513,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Gestion projet",
-        "roleEn": "Gestion projet",
+        "roleEn": "Project management",
         "slug": "asana",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -33673,7 +33573,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Fichiers",
-        "roleEn": "Fichiers",
+        "roleEn": "Files",
         "slug": "google-drive",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33703,7 +33603,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33711,16 +33611,6 @@ export const STACKS: StackGuide[] = [
         "reason": "Analyse longue : utile pour sécuriser livraison sans alourdir le système.",
         "reasonEn": "Useful to secure delivery without weighing down the system."
       },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "clickup-ai",
-        "decision": "challenge",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser brief sans alourdir le système.",
-        "reasonEn": "Useful to secure brief without weighing down the system."
-      }
     ]
   },
   {
@@ -33834,7 +33724,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Gestion projet",
-        "roleEn": "Gestion projet",
+        "roleEn": "Project management",
         "slug": "clickup",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -33845,7 +33735,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Planning",
         "roleEn": "Planning",
-        "slug": "monday",
+        "slug": "monday-com",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -33884,7 +33774,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33914,7 +33804,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Compte pro",
-        "roleEn": "Compte pro",
+        "roleEn": "Business account",
         "slug": "qonto",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33934,7 +33824,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33942,16 +33832,6 @@ export const STACKS: StackGuide[] = [
         "reason": "Analyse longue : utile pour sécuriser feedback sans alourdir le système.",
         "reasonEn": "Useful to secure feedback without weighing down the system."
       },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "clickup-ai",
-        "decision": "challenge",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser planning équipe sans alourdir le système.",
-        "reasonEn": "Useful to secure team scheduling without weighing down the system."
-      }
     ]
   },
   {
@@ -34115,7 +33995,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34135,7 +34015,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34155,7 +34035,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34286,7 +34166,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Compte pro",
-        "roleEn": "Compte pro",
+        "roleEn": "Business account",
         "slug": "qonto",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -34326,7 +34206,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Tableur",
-        "roleEn": "Tableur",
+        "roleEn": "Spreadsheet",
         "slug": "google-sheets",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34346,7 +34226,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34356,7 +34236,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34386,7 +34266,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34527,7 +34407,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Tableur",
-        "roleEn": "Tableur",
+        "roleEn": "Spreadsheet",
         "slug": "google-sheets",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -34547,7 +34427,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Compte pro",
-        "roleEn": "Compte pro",
+        "roleEn": "Business account",
         "slug": "qonto",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -34567,7 +34447,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34607,7 +34487,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34617,7 +34497,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34769,7 +34649,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -34798,7 +34678,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34808,7 +34688,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34828,7 +34708,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34838,7 +34718,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35049,7 +34929,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35057,16 +34937,6 @@ export const STACKS: StackGuide[] = [
         "reason": "Analyse longue : utile pour sécuriser discovery sans alourdir le système.",
         "reasonEn": "Useful to secure discovery without weighing down the system."
       },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "dovetail-ai",
-        "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser product analytics sans alourdir le système.",
-        "reasonEn": "Useful to secure product analytics without weighing down the system."
-      }
     ]
   },
   {
@@ -35200,7 +35070,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Tableur",
-        "roleEn": "Tableur",
+        "roleEn": "Spreadsheet",
         "slug": "google-sheets",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35270,7 +35140,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35288,16 +35158,6 @@ export const STACKS: StackGuide[] = [
         "reason": "Outil métier : utile pour sécuriser consolidation sans alourdir le système.",
         "reasonEn": "Useful to secure consolidation without weighing down the system."
       },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "excel-copilot",
-        "decision": "challenge",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser kpi sans alourdir le système.",
-        "reasonEn": "Useful to secure kpi without weighing down the system."
-      }
     ]
   },
   {
@@ -35401,7 +35261,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35411,7 +35271,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35451,7 +35311,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Formulaires",
-        "roleEn": "Formulaires",
+        "roleEn": "Forms",
         "slug": "typeform",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35481,7 +35341,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35501,7 +35361,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35622,7 +35482,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35642,7 +35502,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35652,7 +35512,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35662,7 +35522,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35853,7 +35713,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35863,7 +35723,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Gestion projet",
-        "roleEn": "Gestion projet",
+        "roleEn": "Project management",
         "slug": "clickup",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35883,7 +35743,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35903,7 +35763,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35923,7 +35783,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36034,7 +35894,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -36084,7 +35944,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Fichiers",
-        "roleEn": "Fichiers",
+        "roleEn": "Files",
         "slug": "google-drive",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36114,7 +35974,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36124,7 +35984,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36296,7 +36156,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
@@ -36315,7 +36175,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Compte pro",
-        "roleEn": "Compte pro",
+        "roleEn": "Business account",
         "slug": "qonto",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36345,7 +36205,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36477,7 +36337,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Planning",
         "roleEn": "Planning",
-        "slug": "monday",
+        "slug": "monday-com",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -36486,7 +36346,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Tableur",
-        "roleEn": "Tableur",
+        "roleEn": "Spreadsheet",
         "slug": "google-sheets",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -36526,7 +36386,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36536,7 +36396,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Fichiers",
-        "roleEn": "Fichiers",
+        "roleEn": "Files",
         "slug": "google-drive",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36556,7 +36416,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36677,7 +36537,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -36697,7 +36557,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -36707,7 +36567,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -36727,7 +36587,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Compte pro",
-        "roleEn": "Compte pro",
+        "roleEn": "Business account",
         "slug": "qonto",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36737,7 +36597,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36757,7 +36617,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36777,7 +36637,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36787,7 +36647,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36918,7 +36778,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Fichiers",
-        "roleEn": "Fichiers",
+        "roleEn": "Files",
         "slug": "google-drive",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -36938,7 +36798,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -36958,7 +36818,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Compte pro",
-        "roleEn": "Compte pro",
+        "roleEn": "Business account",
         "slug": "qonto",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36968,7 +36828,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36988,7 +36848,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37018,7 +36878,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37159,7 +37019,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -37199,7 +37059,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37209,7 +37069,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37239,7 +37099,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37249,7 +37109,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37257,16 +37117,6 @@ export const STACKS: StackGuide[] = [
         "reason": "Recherche : utile pour sécuriser slides sans alourdir le système.",
         "reasonEn": "Useful to secure slides without weighing down the system."
       },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "gamma-ai",
-        "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser ateliers sans alourdir le système.",
-        "reasonEn": "Useful to secure workshops without weighing down the system."
-      }
     ]
   },
   {
@@ -37613,7 +37463,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -37663,7 +37513,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37703,7 +37553,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37720,16 +37570,6 @@ export const STACKS: StackGuide[] = [
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser newsletter sans alourdir le système.",
         "reasonEn": "Useful to secure newsletter without weighing down the system."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "capcut-ai",
-        "decision": "challenge",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser calendrier contenu sans alourdir le système.",
-        "reasonEn": "Useful to secure content calendar without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -37845,7 +37685,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "webflow-framer",
+        "slug": "webflow",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -37864,7 +37704,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -37904,7 +37744,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37914,7 +37754,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37944,7 +37784,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38055,7 +37895,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -38115,7 +37955,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38155,7 +37995,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38176,7 +38016,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "descript",
+        "slug": "descript-ai",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
@@ -38306,7 +38146,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Gestion projet",
-        "roleEn": "Gestion projet",
+        "roleEn": "Project management",
         "slug": "clickup",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -38326,7 +38166,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Fichiers",
-        "roleEn": "Fichiers",
+        "roleEn": "Files",
         "slug": "google-drive",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -38356,7 +38196,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38386,7 +38226,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38394,16 +38234,6 @@ export const STACKS: StackGuide[] = [
         "reason": "Analyse longue : utile pour sécuriser planning sans alourdir le système.",
         "reasonEn": "Useful to secure scheduling without weighing down the system."
       },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "clickup-ai",
-        "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser gestion prestataires sans alourdir le système.",
-        "reasonEn": "Useful to secure contractor management without weighing down the system."
-      }
     ]
   },
   {
@@ -38507,7 +38337,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -38527,7 +38357,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Gestion projet",
-        "roleEn": "Gestion projet",
+        "roleEn": "Project management",
         "slug": "clickup",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -38557,7 +38387,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38567,7 +38397,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38577,7 +38407,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38587,7 +38417,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38607,7 +38437,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38778,7 +38608,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38788,7 +38618,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38808,7 +38638,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38828,7 +38658,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38868,7 +38698,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38989,7 +38819,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -38999,7 +38829,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -39026,16 +38856,6 @@ export const STACKS: StackGuide[] = [
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser audit sans alourdir le système.",
         "reasonEn": "Useful to secure audit without weighing down the system."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "openai",
-        "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser workflow sans alourdir le système.",
-        "reasonEn": "Useful to secure workflow without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39079,7 +38899,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39099,7 +38919,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39231,7 +39051,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "apollo",
+        "slug": "apollo-io",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -39270,7 +39090,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39310,7 +39130,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39421,7 +39241,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -39441,7 +39261,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -39461,7 +39281,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Compte pro",
-        "roleEn": "Compte pro",
+        "roleEn": "Business account",
         "slug": "qonto",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -39471,7 +39291,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39481,7 +39301,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rendez-vous",
-        "roleEn": "Rendez-vous",
+        "roleEn": "Scheduling",
         "slug": "calendly",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39511,7 +39331,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39632,7 +39452,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Suite collaborative",
-        "roleEn": "Suite collaborative",
+        "roleEn": "Collaboration suite",
         "slug": "google-workspace",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -39652,7 +39472,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Kanban simple",
-        "roleEn": "Kanban simple",
+        "roleEn": "Simple kanban",
         "slug": "trello",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -39682,7 +39502,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Compte pro",
-        "roleEn": "Compte pro",
+        "roleEn": "Business account",
         "slug": "qonto",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39692,7 +39512,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39722,7 +39542,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39873,7 +39693,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -39903,7 +39723,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39933,7 +39753,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40054,7 +39874,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -40075,7 +39895,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "gorgias-helpscout",
+        "slug": "gorgias",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -40104,7 +39924,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40115,7 +39935,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "ga4",
+        "slug": "google-analytics",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
@@ -40124,7 +39944,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Compte pro",
-        "roleEn": "Compte pro",
+        "roleEn": "Business account",
         "slug": "qonto",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40144,7 +39964,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40265,7 +40085,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -40286,7 +40106,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "descript",
+        "slug": "descript-ai",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -40315,7 +40135,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Paiement",
-        "roleEn": "Paiement",
+        "roleEn": "Payments",
         "slug": "stripe",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40355,7 +40175,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40516,7 +40336,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -40546,7 +40366,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Atelier",
-        "roleEn": "Atelier",
+        "roleEn": "Workshop",
         "slug": "miro",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40556,7 +40376,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Signature",
-        "roleEn": "Signature",
+        "roleEn": "E-signature",
         "slug": "yousign",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40586,7 +40406,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40717,7 +40537,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -40727,7 +40547,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -40757,7 +40577,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "make",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40767,7 +40587,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Automatisation",
-        "roleEn": "Automatisation",
+        "roleEn": "Automation",
         "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40777,7 +40597,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design rapide",
-        "roleEn": "Design rapide",
+        "roleEn": "Quick design",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40919,7 +40739,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "webflow-framer",
+        "slug": "webflow",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -40959,7 +40779,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "zapier-make",
+        "slug": "zapier",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
@@ -40998,7 +40818,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Analyse longue",
-        "roleEn": "Analyse longue",
+        "roleEn": "Long-form analysis",
         "slug": "claude",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -41008,7 +40828,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche",
-        "roleEn": "Recherche",
+        "roleEn": "Research",
         "slug": "perplexity",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -41019,7 +40839,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "relume-ai",
+        "slug": "relume",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",

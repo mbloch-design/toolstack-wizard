@@ -27,7 +27,7 @@ import { trackEvent } from "@/lib/analytics";
 import { getExplorerHref } from "@/lib/toolExploration";
 import ValueChange from "@/components/motion/ValueChange";
 import { writeStackSnapshot } from "@/lib/stackSnapshot";
-import { SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
+import { SEO_BASE, setHreflang, setNoindex, setSeoTags } from "@/lib/seo";
 import { getToolLogoSources } from "@/lib/toolLogos";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
@@ -138,6 +138,8 @@ export default function CartPage() {
       locale: lang === "fr" ? "fr_FR" : "en_US",
     });
     setHreflang(`/${lang}/ma-stack`);
+    // setSeoTags removes any noindex: the personal stack stays out of the index.
+    setNoindex();
   }, [lang, t]);
   useEffect(() => { if (searchOpen) searchRef.current?.focus(); }, [searchOpen]);
   useEffect(() => {
