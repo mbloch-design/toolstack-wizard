@@ -85,15 +85,15 @@ select accounts_test.ok((public.read_personal_stack(current_setting('test.a')::u
 -- Built-in need references remain valid alongside custom needs, matching the shared normalizer.
 select accounts_test.ok(public._personal_stack_valid(jsonb_set(current_setting('test.state')::jsonb,
  '{selection,toolEntries,0,needIds}','["dev"]')),'standard needs survive custom input');
--- A second stack with duplicate tool references and separate wishlist intent.
+-- Conflicting historical duplicates must retain the first entry per trimmed slug.
 select public.save_personal_stack(current_setting('test.b')::uuid,current_setting('test.sb')::uuid,0,
  jsonb_set(current_setting('test.state')::jsonb,'{selection,toolEntries}',
- '[{"toolSlug":"missing-from-json","needIds":[],"addedAt":"2026-10-19T00:00:00Z","assignmentMode":"pending","intent":"wishlist"},{"toolSlug":"missing-from-json","needIds":[],"addedAt":"2026-10-19T00:00:00Z","assignmentMode":"pending","intent":"wishlist"}]'));
+ '[{"toolSlug":"missing-from-json","needIds":[],"addedAt":"2026-10-19T00:00:00Z","assignmentMode":"pending","intent":"wishlist"},{"toolSlug":"missing-from-json","needIds":[],"addedAt":"2026-10-19T00:00:00Z","assignmentMode":"pending","intent":"stack"},{"toolSlug":" missing-from-json ","needIds":[],"addedAt":"2026-10-19T00:00:00Z","assignmentMode":"pending","intent":"stack"}]'));
 do $$ declare dashboard jsonb; begin
  dashboard := public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,'{"page":1,"pageSize":1}');
  perform accounts_test.ok(dashboard->'totals'='{"accounts":2,"accountsWithStack":2,"nonemptyStacks":2}'::jsonb,'global confirmed totals independent of pagination');
  perform accounts_test.ok(dashboard->>'total'='2' and jsonb_array_length(dashboard->'accounts')=1,'list paginated');
- perform accounts_test.ok(dashboard->'topTools'='[{"toolSlug":"missing-from-json","usedAccounts":1,"wishlistAccounts":1}]'::jsonb,'tools count distinct accounts by intent');
+ perform accounts_test.ok(dashboard->'topTools'='[{"toolSlug":"missing-from-json","usedAccounts":1,"wishlistAccounts":1}]'::jsonb,'conflicting duplicates retain first intent for each trimmed slug');
  dashboard := public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,'{"search":"b@example.invalid"}');
  perform accounts_test.ok(dashboard->>'total'='1' and dashboard->'totals'->>'accounts'='2','search cannot truncate totals');
  dashboard := public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,jsonb_build_object('mode','detail','userId',current_setting('test.b')));
@@ -131,6 +131,22 @@ insert into public.stack_snapshots(owner_id,state,state_version) values
 set local role service_role;
 select accounts_test.ok(public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,'{}')->'totals'='{"accounts":3,"accountsWithStack":3,"nonemptyStacks":3}'::jsonb,'v3 stack included without catalogue lookup');
 select accounts_test.ok(public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,'{}')->'topTools' @> '[{"toolSlug":"legacy-tool","usedAccounts":1,"wishlistAccounts":0}]'::jsonb,'legacy duplicate references count once');
+-- A confirmed account with an empty saved snapshot counts as saved, not nonempty.
+reset role;
+insert into auth.users(id,email,email_confirmed_at) values
+ ('00000000-0000-0000-0000-000000000004','empty@example.invalid',now());
+insert into auth.sessions(id,user_id) values
+ ('10000000-0000-0000-0000-000000000004','00000000-0000-0000-0000-000000000004');
+set local role service_role;
+select accounts_test.ok(public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,'{}')->'totals'='{"accounts":4,"accountsWithStack":3,"nonemptyStacks":3}'::jsonb,'confirmed empty account initially has no snapshot');
+select public.save_personal_stack('00000000-0000-0000-0000-000000000004','10000000-0000-0000-0000-000000000004',0,
+ '{"version":4,"selection":{"version":3,"needs":[],"toolEntries":[],"pinnedToolSlugs":[]},"billing":{"paid":[],"reviewed":[],"choices":{}},"decisions":{}}');
+do $$ declare dashboard jsonb; begin
+ dashboard:=public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,'{"search":"empty@example.invalid"}');
+ perform accounts_test.ok(dashboard->'totals'='{"accounts":4,"accountsWithStack":4,"nonemptyStacks":3}'::jsonb,'empty persisted snapshot increases saved count only');
+ perform accounts_test.ok(dashboard->>'total'='1' and dashboard->'accounts'->0->>'hasStack'='true','empty saved snapshot is visible as saved');
+ perform accounts_test.ok(dashboard->'topTools'='[{"toolSlug":"missing-from-json","usedAccounts":1,"wishlistAccounts":1},{"toolSlug":"legacy-tool","usedAccounts":1,"wishlistAccounts":0}]'::jsonb,'empty snapshot does not change tool totals');
+end $$;
 reset role;
 delete from auth.sessions where id=current_setting('test.sb')::uuid;
 set local role service_role;

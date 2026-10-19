@@ -149,6 +149,7 @@ end $$;
 create function public.accounts_dashboard(p_admin uuid, p_session uuid, p_query jsonb default '{}'::jsonb) returns jsonb
 language plpgsql security invoker set search_path = pg_catalog as $$
 declare mode text; page_no integer; page_size integer; search_text text; target uuid; result jsonb;
+ trim_chars constant text := E' \t\n\r\f\013' || U&'\00A0\1680\2000\2001\2002\2003\2004\2005\2006\2007\2008\2009\200A\2028\2029\202F\205F\3000\FEFF';
 begin
  perform pg_advisory_xact_lock(hashtextextended(p_admin::text,478321));
  perform public.require_account_session(p_admin,p_session);
@@ -184,15 +185,23 @@ begin
     and coalesce(p.account_status,'active')='active'
  ), selections as (
    select e.id,case when e.state->>'version'='4' then e.state->'selection' else e.state end as selection from eligible e
+ ), entry_candidates as (
+   select s.id,btrim(t.entry->>'toolSlug',trim_chars) as slug,
+     case when t.entry->>'intent'='wishlist' then 'wishlist' else 'stack' end as intent,t.entry_position
+   from selections s cross join lateral jsonb_array_elements(
+     case when jsonb_typeof(s.selection->'toolEntries')='array' then s.selection->'toolEntries' else '[]'::jsonb end
+   ) with ordinality as t(entry,entry_position)
+   where jsonb_typeof(t.entry->'toolSlug')='string' and nullif(btrim(t.entry->>'toolSlug',trim_chars),'') is not null
+ ), canonical_entries as (
+   -- Match normalizeToolCartState: first valid entry wins per trimmed slug.
+   select distinct on (id,slug) id,slug,intent from entry_candidates order by id,slug,entry_position
  ), tools as (
-   select distinct s.id, t->>'toolSlug' as slug,coalesce(t->>'intent','stack') as intent
-   from selections s cross join lateral jsonb_array_elements(case when jsonb_typeof(s.selection->'toolEntries')='array' then s.selection->'toolEntries' else '[]'::jsonb end) t
-   where nullif(btrim(t->>'toolSlug'),'') is not null
+   select id,slug,intent from canonical_entries
    union
-   select distinct s.id,t #>> '{}','stack' from selections s
+   select distinct s.id,btrim(t #>> '{}',trim_chars),'stack' from selections s
    cross join lateral jsonb_array_elements(case when jsonb_typeof(s.selection->'pinnedToolSlugs')='array' then s.selection->'pinnedToolSlugs' else '[]'::jsonb end) t
-   where jsonb_typeof(t)='string' and nullif(btrim(t #>> '{}'),'') is not null
-     and not exists(select from jsonb_array_elements(case when jsonb_typeof(s.selection->'toolEntries')='array' then s.selection->'toolEntries' else '[]'::jsonb end) x where x->>'toolSlug'=t #>> '{}')
+   where jsonb_typeof(t)='string' and nullif(btrim(t #>> '{}',trim_chars),'') is not null
+     and not exists(select from canonical_entries x where x.id=s.id and x.slug=btrim(t #>> '{}',trim_chars))
  ), top_tools as (
    select slug,count(distinct id) filter(where intent='stack') as used_accounts,
      count(distinct id) filter(where intent='wishlist') as wishlist_accounts from tools group by slug
