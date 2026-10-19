@@ -106,7 +106,7 @@ export function validatePersonalStack(input: unknown): PersonalStackV4 {
     requireValid(isRecord(entry) && isString(entry.toolSlug) && isStringArray(entry.needIds)
       && entry.needIds.every(id => knownNeeds.has(id))
       && typeof entry.addedAt === "string" && Number.isFinite(Date.parse(entry.addedAt))
-      && ["pending", "auto", "manual"].includes(String(entry.assignmentMode))
+      && (entry.assignmentMode === "pending" || entry.assignmentMode === "auto" || entry.assignmentMode === "manual")
       && (entry.intent === "stack" || entry.intent === "wishlist"), "selection.toolEntries");
   }
   const billing = input.billing;

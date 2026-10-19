@@ -82,6 +82,18 @@ describe("personal stack snapshot", () => {
     expect(() => validatePersonalStack(input)).toThrow(PersonalStackValidationError);
   });
 
+  it.each([
+    { assignmentMode: ["manual"] }, { assignmentMode: ["auto"] }, { assignmentMode: ["pending"] },
+    { assignmentMode: null }, { assignmentMode: 1 }, { assignmentMode: true },
+  ])("rejects a non-string assignmentMode $assignmentMode", ({ assignmentMode }) => {
+    const input = stack(["a"]);
+    const malformed = {
+      ...input,
+      selection: { ...input.selection, toolEntries: [{ ...input.selection.toolEntries[0], assignmentMode }] },
+    };
+    expect(() => validatePersonalStack(malformed)).toThrow(PersonalStackValidationError);
+  });
+
   it("accepts zero-cost annual choices and supported currencies without changing declared amounts", () => {
     const input = stack(["free", "usd", "gbp"]);
     input.billing.choices = {
