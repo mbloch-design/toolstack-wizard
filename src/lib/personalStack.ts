@@ -140,6 +140,14 @@ export function mergeAnonymousDraft(saved: PersonalStackV4, draft: PersonalStack
   const savedSlugs = new Set(retained.selection.pinnedToolSlugs);
   const additions = incoming.selection.toolEntries.filter(entry => !savedSlugs.has(entry.toolSlug));
   const newSlugs = new Set(additions.map(entry => entry.toolSlug));
+  const unspecifiedBilling = (slug: string) => newSlugs.has(slug) || (savedSlugs.has(slug)
+    && !retained.billing.paid.includes(slug) && !retained.billing.reviewed.includes(slug)
+    && !Object.hasOwn(retained.billing.choices, slug));
+  const importChoice = (slug: string) => newSlugs.has(slug) || (savedSlugs.has(slug)
+    && !Object.hasOwn(retained.billing.choices, slug)
+    // An explicit free answer wins, as does a paid answer over a conflicting free draft.
+    && (!retained.billing.reviewed.includes(slug) || retained.billing.paid.includes(slug))
+    && !(retained.billing.paid.includes(slug) && incoming.billing.reviewed.includes(slug) && !incoming.billing.paid.includes(slug)));
   const needs = [...retained.selection.needs];
   // Reserve draft IDs too so remapping cannot steal a later incoming need's identity.
   const reserved = new Set([...needs, ...incoming.selection.needs].map(need => need.id));
@@ -184,10 +192,10 @@ export function mergeAnonymousDraft(saved: PersonalStackV4, draft: PersonalStack
     version: 4,
     selection: { ...retained.selection, needs, toolEntries, pinnedToolSlugs: [...selected] },
     billing: {
-      paid: [...retained.billing.paid, ...incoming.billing.paid.filter(slug => newSlugs.has(slug))],
-      reviewed: [...retained.billing.reviewed, ...incoming.billing.reviewed.filter(slug => newSlugs.has(slug))],
+      paid: [...retained.billing.paid, ...incoming.billing.paid.filter(unspecifiedBilling)],
+      reviewed: [...retained.billing.reviewed, ...incoming.billing.reviewed.filter(unspecifiedBilling)],
       choices: Object.fromEntries([
-        ...Object.entries(incoming.billing.choices).filter(([slug]) => newSlugs.has(slug)),
+        ...Object.entries(incoming.billing.choices).filter(([slug]) => importChoice(slug)),
         ...Object.entries(retained.billing.choices),
       ]),
     },

@@ -118,6 +118,22 @@ describe("personal stack snapshot", () => {
 });
 
 describe("explicit anonymous draft merge", () => {
+  it("explicitly fills unrecorded legacy billing while preserving recorded free and chosen plans", () => {
+    const saved = stack(["legacy", "free", "paid", "chosen", "paid-free"]);
+    saved.billing.reviewed = ["free"];
+    saved.billing.paid = ["paid", "paid-free"];
+    saved.billing.choices.chosen = choice;
+    const draft = stack(["legacy", "free", "paid", "chosen", "paid-free"]);
+    draft.billing = { paid: ["legacy", "free", "paid", "chosen"], reviewed: ["legacy", "free", "paid", "chosen", "paid-free"], choices: {
+      legacy: { ...choice, amount: 12 }, free: { ...choice, amount: 99 },
+      paid: { ...choice, amount: 25 }, chosen: { ...choice, amount: 77 }, "paid-free": { ...choice, amount: 0 },
+    } };
+    const merged = mergeAnonymousDraft(saved, draft);
+    expect(merged.billing.paid).toEqual(["paid", "paid-free", "legacy"]);
+    expect(merged.billing.choices).toEqual({ legacy: draft.billing.choices.legacy, paid: draft.billing.choices.paid, chosen: choice });
+    expect(merged.billing.reviewed).toEqual(["free", "legacy"]);
+  });
+
   it("keeps saved entries and billing, imports declarations only for newly added tools", () => {
     const saved = stack(["a"]);
     saved.billing.choices.a = choice;

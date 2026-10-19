@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LangContext } from "@/hooks/useLang";
 import { CurrencyProvider } from "@/hooks/useCurrency";
+import { StackAccountProvider } from "@/hooks/useStackAccount";
 import { Lang } from "@/data/types";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -268,6 +269,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <StackAccountProvider>
         <ScrollToTop />
         <DynamicCanonical />
         <AnalyticsPageView />
@@ -280,6 +282,7 @@ const App = () => (
         {/* After the page in the DOM, so the skip link is the first Tab stop
             (a11y audit, 8 Oct 2026); the banner stays fixed on screen. */}
         <AnalyticsConsent />
+        </StackAccountProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
