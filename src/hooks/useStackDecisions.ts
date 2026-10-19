@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from "react";
 import { toast } from "sonner";
-import { useStackPins } from "@/hooks/useStackPins";
+import { pinToolInState, unpinToolInState } from "@/lib/stackState";
+import { readPersonalStack, updatePersonalStack, subscribePersonalStack, getServerPersonalStack, getPersonalStackScope } from "@/lib/personalStackStore";
 import { trackEvent } from "@/lib/analytics";
 
 /**
@@ -19,53 +20,10 @@ import { trackEvent } from "@/lib/analytics";
 
 export type { StackDecision } from "@/lib/stackDecisions";
 import type { StackDecision } from "@/lib/stackDecisions";
-import { normalizeStackDecisions } from "@/lib/stackDecisions";
 import type { Currency } from "@/lib/currencyRates";
 
-const KEY = "tooltrim-ma-stack-decisions-v1";
-const listeners = new Set<() => void>();
-let memory: Record<string, StackDecision> | null = null;
-let persistedRaw: string | null | undefined;
-const EMPTY: Record<string, StackDecision> = {};
-
-function read(): Record<string, StackDecision> {
-  try {
-    const raw = window.localStorage.getItem(KEY);
-    if (memory && raw === persistedRaw) return memory;
-    let parsed: unknown;
-    try { parsed = JSON.parse(raw || "{}"); } catch { parsed = {}; }
-    memory = normalizeStackDecisions(parsed);
-    persistedRaw = raw;
-  } catch {
-    memory ??= {};
-  }
-  return memory as Record<string, StackDecision>;
-}
-function write(next: Record<string, StackDecision>) {
-  memory = next;
-  try {
-    const raw = JSON.stringify(next);
-    window.localStorage.setItem(KEY, raw);
-    persistedRaw = raw;
-  } catch { /* session only */ }
-  listeners.forEach((listener) => listener());
-}
-
-function handleStorage(event: StorageEvent) {
-  if (event.key !== KEY && event.key !== null) return;
-  try { if (event.storageArea && event.storageArea !== window.localStorage) return; } catch { return; }
-  read();
-  listeners.forEach((listener) => listener());
-}
-
-function subscribe(listener: () => void) {
-  if (listeners.size === 0 && typeof window !== "undefined") window.addEventListener("storage", handleStorage);
-  listeners.add(listener);
-  return () => {
-    listeners.delete(listener);
-    if (listeners.size === 0 && typeof window !== "undefined") window.removeEventListener("storage", handleStorage);
-  };
-}
+const read = () => readPersonalStack().decisions;
+const getServerDecisions = () => getServerPersonalStack().decisions;
 
 export const pairKey = (a: string, b: string) => [a, b].sort().join("|");
 
@@ -73,34 +31,40 @@ type Source = "stack" | "compare" | "sheet";
 
 export function useStackDecisions(t: (fr: string, en: string) => string, formatSaving: (amount: number) => string, currency: Currency) {
   const decisions = useSyncExternalStore(
-    subscribe,
-    () => (typeof window === "undefined" ? EMPTY : read()),
-    () => EMPTY,
+    subscribePersonalStack,
+    read,
+    getServerDecisions,
   );
-  const { state, pinTool, unpinTool, restoreTool } = useStackPins();
 
   const forget = (key: string) => {
-    const { [key]: _, ...rest } = read();
-    write(rest);
+    updatePersonalStack(current => {
+      const { [key]: _, ...rest } = current.decisions;
+      return { ...current, decisions: rest };
+    });
   };
 
   /** Removes `removed` (and adds `kept` when replacing), records the decision, offers undo. */
   function decide(kind: StackDecision["kind"], kept: { slug: string; name: string }, removed: { slug: string; name: string } | null, saving: number, source: Source, note?: string) {
+    const scope = getPersonalStackScope();
     const keyBoth = pairKey(kept.slug, removed?.slug || "");
     trackEvent("stack_decision", { kind, source, kept: kept.slug, removed: removed?.slug, saving: Math.round(saving) });
     if (kind === "keep-both" || !removed) {
-      write({ ...read(), [keyBoth]: { kind: "keep-both", kept: kept.slug, saving: 0, savingCurrency: currency, at: new Date().toISOString() } });
+      updatePersonalStack(current => ({ ...current, decisions: { ...current.decisions, [keyBoth]: { kind: "keep-both", kept: kept.slug, saving: 0, savingCurrency: currency, at: new Date().toISOString() } } }));
       toast(note || t("Noté : vous gardez les deux.", "Noted: you keep both."), {
         duration: 5000,
-        action: { label: t("Annuler", "Undo"), onClick: () => { forget(keyBoth); trackEvent("stack_decision_undo", { kind, source }); } },
+        action: { label: t("Annuler", "Undo"), onClick: () => { if (getPersonalStackScope() !== scope) return; forget(keyBoth); trackEvent("stack_decision_undo", { kind, source }); } },
       });
       return;
     }
+    const state = readPersonalStack().selection;
     const index = state.toolEntries.findIndex((entry) => entry.toolSlug === removed.slug);
     const entry = state.toolEntries[index];
-    if (kind === "replace") pinTool(kept.slug);
-    unpinTool(removed.slug);
-    write({ ...read(), [keyBoth]: { kind, kept: kept.slug, removed: removed.slug, saving, savingCurrency: currency, at: new Date().toISOString() } });
+    if (kind === "replace") trackEvent("add_to_stack", { tool_slug: kept.slug });
+    updatePersonalStack(current => ({
+      ...current,
+      selection: unpinToolInState(kind === "replace" ? pinToolInState(current.selection, kept.slug) : current.selection, removed.slug),
+      decisions: { ...current.decisions, [keyBoth]: { kind, kept: kept.slug, removed: removed.slug, saving, savingCurrency: currency, at: new Date().toISOString() } },
+    }));
     const message = kind === "replace"
       ? t(`${removed.name} remplacé par ${kept.name}.`, `${removed.name} replaced with ${kept.name}.`)
       : t(`${removed.name} retiré, vous gardez ${kept.name}.`, `${removed.name} removed, you keep ${kept.name}.`);
@@ -110,9 +74,19 @@ export function useStackDecisions(t: (fr: string, en: string) => string, formatS
       action: {
         label: t("Annuler", "Undo"),
         onClick: () => {
-          if (entry) restoreTool(entry, index);
-          if (kind === "replace") unpinTool(kept.slug);
-          forget(keyBoth);
+          // Toasts can outlive the page and the signed-in account.
+          if (getPersonalStackScope() !== scope) return;
+          updatePersonalStack(current => {
+            let selection = current.selection;
+            if (entry && !selection.toolEntries.some(item => item.toolSlug === entry.toolSlug)) {
+              const toolEntries = [...selection.toolEntries];
+              toolEntries.splice(Math.min(index, toolEntries.length), 0, entry);
+              selection = { ...selection, toolEntries, pinnedToolSlugs: toolEntries.map(item => item.toolSlug) };
+            }
+            if (kind === "replace") selection = unpinToolInState(selection, kept.slug);
+            const { [keyBoth]: _, ...rest } = current.decisions;
+            return { ...current, selection, decisions: rest };
+          });
           trackEvent("stack_decision_undo", { kind, source });
         },
       },

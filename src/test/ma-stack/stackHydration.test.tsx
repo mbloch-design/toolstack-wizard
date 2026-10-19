@@ -4,6 +4,7 @@ import { act, renderHook } from "@testing-library/react";
 import { hydrateRoot } from "react-dom/client";
 import { renderToString } from "react-dom/server";
 import { expect, it, vi } from "vitest";
+import { personalStackStorageKey } from "@/lib/personalStackStore";
 import { STACK_STATE_STORAGE_KEY, createDefaultToolCartState, pinToolInState, saveToolCartState } from "@/lib/stackState";
 
 it("hydrates saved pins without replacing SSR, then shares updates without losing saved selections", async () => {
@@ -53,7 +54,7 @@ it("hydrates saved pins without replacing SSR, then shares updates without losin
     await act(async () => pin("figma"));
     expect(container.textContent).toBe("notion,figma");
     expect(other.result.current.state.pinnedToolSlugs).toEqual(["notion", "figma"]);
-    expect(JSON.parse(window.localStorage.getItem(STACK_STATE_STORAGE_KEY)!).toolEntries[0]).toEqual(savedState.toolEntries[0]);
+    expect(JSON.parse(window.localStorage.getItem(personalStackStorageKey("anonymous"))!).selection.toolEntries[0]).toEqual(savedState.toolEntries[0]);
     other.unmount();
   } finally {
     await act(async () => root?.unmount());

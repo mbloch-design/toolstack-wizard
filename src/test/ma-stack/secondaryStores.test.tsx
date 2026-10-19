@@ -7,12 +7,16 @@ import { runInNewContext } from "node:vm";
 import ts from "typescript";
 import { afterEach, describe, expect, it } from "vitest";
 import * as decisionLibrary from "@/lib/stackDecisions";
+import * as stackStateLibrary from "@/lib/stackState";
+import * as personalStackLibrary from "@/lib/personalStack";
+import type * as personalStore from "@/lib/personalStackStore";
 import type { useStackPaidPlans } from "@/hooks/useStackPaidPlans";
 import type { useStackDecisions } from "@/hooks/useStackDecisions";
 
-const PAID = "tooltrim-ma-stack-paid-plans-v1";
-const REVIEWED = "tooltrim-ma-stack-freemium-reviewed-v1";
-const DECISIONS = "tooltrim-ma-stack-decisions-v1";
+const SCOPE_KEY = "tooltrim-personal-stack-v4:anonymous";
+const PAID = SCOPE_KEY;
+const REVIEWED = SCOPE_KEY;
+const DECISIONS = SCOPE_KEY;
 const keptBoth = { kind: "keep-both", kept: "notion", saving: 0, at: "2026-10-07T00:00:00Z" };
 
 function contexts() {
@@ -27,15 +31,17 @@ function contexts() {
   function tab() {
     const listeners = new Set<(event: { key: string | null; storageArea: unknown }) => void>();
     const toasts: Array<{ action: { onClick: () => void } }> = [];
-    const pins: string[] = [];
+    const modules = new Map<string, Record<string, unknown>>();
     const browser = {
       localStorage: storage,
       addEventListener: (_type: string, listener: (event: { key: string | null; storageArea: unknown }) => void) => listeners.add(listener),
       removeEventListener: (_type: string, listener: (event: { key: string | null; storageArea: unknown }) => void) => listeners.delete(listener),
     };
     function load(file: string) {
+      if (modules.has(file)) return modules.get(file)!;
       const exports: Record<string, unknown> = {};
-      const javascript = ts.transpileModule(readFileSync(resolve(process.cwd(), "src/hooks", file), "utf8"), {
+      modules.set(file, exports);
+      const javascript = ts.transpileModule(readFileSync(resolve(process.cwd(), "src", file), "utf8"), {
         compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022 },
       }).outputText;
       runInNewContext(javascript, {
@@ -45,22 +51,21 @@ function contexts() {
           if (id === "sonner") return { toast: (_message: unknown, options: typeof toasts[number]) => toasts.push(options) };
           if (id === "@/lib/stackDecisions") return decisionLibrary;
           if (id === "@/lib/analytics") return { trackEvent() {} };
-          if (id === "@/hooks/useStackPins") return { useStackPins: () => ({
-            state: { toolEntries: [{ toolSlug: "canva" }] },
-            pinTool: (slug: string) => pins.push(`pin:${slug}`),
-            unpinTool: (slug: string) => pins.push(`remove:${slug}`),
-            restoreTool: (entry: { toolSlug: string }) => pins.push(`restore:${entry.toolSlug}`),
-          }) };
+          if (id === "@/lib/personalStackStore") return load("lib/personalStackStore.ts");
+          if (id === "./personalStack") return personalStackLibrary;
+          if (id === "./stackState" || id === "@/lib/stackState") return stackStateLibrary;
           throw new Error(`Unexpected dependency: ${id}`);
         },
       });
       return exports;
     }
+    const store = load("lib/personalStackStore.ts") as unknown as typeof personalStore;
     return {
-      paid: load("useStackPaidPlans.ts").useStackPaidPlans as typeof useStackPaidPlans,
-      decisions: load("useStackDecisions.ts").useStackDecisions as typeof useStackDecisions,
+      store,
+      paid: load("hooks/useStackPaidPlans.ts").useStackPaidPlans as typeof useStackPaidPlans,
+      decisions: load("hooks/useStackDecisions.ts").useStackDecisions as typeof useStackDecisions,
       notify: (key: string | null, storageArea: unknown = storage) => listeners.forEach(listener => listener({ key, storageArea })),
-      toasts, pins,
+      toasts,
     };
   }
   return { storage, a: tab(), b: tab(), blockWrites: () => { blocked = true; } };
@@ -79,7 +84,7 @@ describe("Ma stack secondary stores across tabs", () => {
     expect(hookA.result.current.isReviewed("notion")).toBe(true);
     act(() => { hookA.result.current.setPaid("figma", true); hookA.result.current.markReviewed(["figma"]); b.notify(PAID); b.notify(REVIEWED); });
     expect(hookB.result.current.paid).toEqual(["notion", "figma"]);
-    expect(JSON.parse(storage.getItem(REVIEWED)!)).toEqual(["notion", "figma"]);
+    expect(JSON.parse(storage.getItem(REVIEWED)!).billing.reviewed).toEqual(["notion", "figma"]);
   });
 
   it("rereads paid/reviewed persistence before a mutation even when the remote event is delayed", () => {
@@ -88,8 +93,8 @@ describe("Ma stack secondary stores across tabs", () => {
     const hookB = renderHook(b.paid);
     act(() => { hookB.result.current.setPaid("notion", true); hookB.result.current.markReviewed(["notion"]); });
     act(() => { hookA.result.current.setPaid("figma", true); hookA.result.current.markReviewed(["figma"]); });
-    expect(JSON.parse(storage.getItem(PAID)!)).toEqual(["notion", "figma"]);
-    expect(JSON.parse(storage.getItem(REVIEWED)!)).toEqual(["notion", "figma"]);
+    expect(JSON.parse(storage.getItem(PAID)!).billing.paid).toEqual(["notion", "figma"]);
+    expect(JSON.parse(storage.getItem(REVIEWED)!).billing.reviewed).toEqual(["notion", "figma"]);
   });
 
   it("notifies every subscriber even if one rerender already refreshed the cached snapshot", () => {
@@ -98,8 +103,7 @@ describe("Ma stack secondary stores across tabs", () => {
     const second = renderHook(a.paid);
     const firstDecisions = renderHook(() => a.decisions(t, String, "EUR"));
     const secondDecisions = renderHook(() => a.decisions(t, String, "EUR"));
-    storage.setItem(PAID, JSON.stringify(["notion"]));
-    storage.setItem(DECISIONS, JSON.stringify({ "notion|obsidian": keptBoth }));
+    storage.setItem(SCOPE_KEY, JSON.stringify({ ...a.store.readPersonalStack(), billing: { paid: ["notion"], reviewed: [], choices: {} }, decisions: { "notion|obsidian": keptBoth } }));
     first.rerender(); firstDecisions.rerender();
     act(() => { a.notify(PAID); a.notify(DECISIONS); });
     expect(second.result.current.paid).toEqual(["notion"]);
@@ -108,15 +112,16 @@ describe("Ma stack secondary stores across tabs", () => {
 
   it("refreshes decisions across tabs and preserves another pair during decide and undo", () => {
     const { a, b, storage } = contexts();
+    a.store.updatePersonalStack(current => ({ ...current, selection: stackStateLibrary.pinToolInState(current.selection, "canva") }));
     const hookA = renderHook(() => a.decisions(t, String, "EUR"));
     const hookB = renderHook(() => b.decisions(t, String, "USD"));
     act(() => { hookB.result.current.decide("keep-both", { slug: "notion", name: "Notion" }, { slug: "obsidian", name: "Obsidian" }, 0, "stack"); a.notify(DECISIONS); });
     expect(hookA.result.current.decisions["notion|obsidian"]).toMatchObject({ kind: "keep-both" });
     act(() => { hookA.result.current.decide("replace", { slug: "figma", name: "Figma" }, { slug: "canva", name: "Canva" }, 9, "compare"); });
-    expect(JSON.parse(storage.getItem(DECISIONS)!)).toHaveProperty("notion|obsidian");
-    expect(a.pins).toEqual(["pin:figma", "remove:canva"]);
+    expect(JSON.parse(storage.getItem(DECISIONS)!).decisions).toHaveProperty("notion|obsidian");
+    expect(a.store.readPersonalStack().selection.pinnedToolSlugs).toEqual(["figma"]);
     act(() => { a.toasts.at(-1)!.action.onClick(); b.notify(DECISIONS); });
-    expect(a.pins).toEqual(["pin:figma", "remove:canva", "restore:canva", "remove:figma"]);
+    expect(a.store.readPersonalStack().selection.pinnedToolSlugs).toEqual(["canva"]);
     expect(hookB.result.current.decisions).toHaveProperty("notion|obsidian");
     expect(hookB.result.current.decisions).not.toHaveProperty("canva|figma");
   });
@@ -127,14 +132,14 @@ describe("Ma stack secondary stores across tabs", () => {
     const hookB = renderHook(() => b.decisions(t, String, "USD"));
     act(() => hookB.result.current.decide("keep-both", { slug: "notion", name: "Notion" }, { slug: "obsidian", name: "Obsidian" }, 0, "stack"));
     act(() => hookA.result.current.decide("keep-both", { slug: "figma", name: "Figma" }, { slug: "canva", name: "Canva" }, 0, "stack"));
-    expect(JSON.parse(storage.getItem(DECISIONS)!)).toHaveProperty("notion|obsidian");
+    expect(JSON.parse(storage.getItem(DECISIONS)!).decisions).toHaveProperty("notion|obsidian");
     act(() => hookB.result.current.reopen("notion", "obsidian"));
-    expect(JSON.parse(storage.getItem(DECISIONS)!)).toHaveProperty("canva|figma");
+    expect(JSON.parse(storage.getItem(DECISIONS)!).decisions).toHaveProperty("canva|figma");
   });
 
   it("filters corrupt individual decisions while preserving valid and legacy amounts", () => {
     const { a, storage } = contexts();
-    storage.setItem(DECISIONS, JSON.stringify({
+    storage.setItem("tooltrim-ma-stack-decisions-v1", JSON.stringify({
       "notion|obsidian": keptBoth,
       "canva|figma": { kind: "keep-one", kept: "figma", removed: "canva", saving: 9, at: "2026-10-07T00:00:00Z" },
       nullRecord: null, array: [], invalidKind: { ...keptBoth, kind: "surprise" }, negative: { ...keptBoth, saving: -1 },
@@ -143,7 +148,7 @@ describe("Ma stack secondary stores across tabs", () => {
     const { result } = renderHook(() => a.decisions(t, String, "EUR"));
     expect(Object.keys(result.current.decisions)).toEqual(["notion|obsidian", "canva|figma"]);
     expect(decisionLibrary.decisionSavingInCurrency(result.current.decisions["canva|figma"], "USD")).toBeNull();
-    act(() => { storage.setItem(DECISIONS, "not-json"); a.notify(DECISIONS); });
+    act(() => { storage.setItem(DECISIONS, JSON.stringify({ ...a.store.readPersonalStack(), decisions: "not-json" })); a.notify(DECISIONS); });
     expect(result.current.decisions).toEqual({});
   });
 

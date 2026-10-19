@@ -3,11 +3,11 @@
 import { act, renderHook } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { useStackPins } from "@/hooks/useStackPins";
+import { normalizePersonalStack } from "@/lib/personalStack";
+import { personalStackStorageKey } from "@/lib/personalStackStore";
 import {
-  STACK_STATE_STORAGE_KEY,
   createDefaultToolCartState,
   pinToolInState,
-  saveToolCartState,
 } from "@/lib/stackState";
 
 class TestStorage implements Storage {
@@ -61,13 +61,13 @@ describe("useStackPins persistence", () => {
 
     const healthyStorage = new TestStorage();
     const remoteState = pinToolInState(createDefaultToolCartState(), "figma", ["design"]);
-    saveToolCartState(healthyStorage, remoteState);
+    healthyStorage.setItem(personalStackStorageKey("anonymous"), JSON.stringify(normalizePersonalStack(remoteState)));
     Object.defineProperty(window, "localStorage", { configurable: true, value: healthyStorage });
 
     act(() => {
       window.dispatchEvent(new StorageEvent("storage", {
-        key: STACK_STATE_STORAGE_KEY,
-        newValue: healthyStorage.getItem(STACK_STATE_STORAGE_KEY),
+        key: personalStackStorageKey("anonymous"),
+        newValue: healthyStorage.getItem(personalStackStorageKey("anonymous")),
       }));
     });
 

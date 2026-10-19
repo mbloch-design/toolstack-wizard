@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useSyncExternalStore } from "react";
+import { useCallback, useSyncExternalStore } from "react";
 import { trackEvent } from "@/lib/analytics";
 import {
   STACK_STATE_STORAGE_KEY,
@@ -6,18 +6,14 @@ import {
   assignToolNeedsAutomaticallyInState,
   assignToolNeedsInState,
   createCustomNeedInState,
-  createDefaultToolCartState,
   deleteCustomNeedInState,
-  loadToolCartStateWithStatus,
   normalizeToolCartState,
   pinToolInState,
   moveNeedInState,
   renameCustomNeedInState,
   reorderToolsInState,
   saveToolSelectionInState,
-  saveToolCartStateWithStatus,
   unpinToolInState,
-  type StackPersistenceStatus,
   type StackToolIntent,
   type ToolCartState,
 } from "@/lib/stackState";
@@ -25,109 +21,26 @@ import {
 export const STACK_PINS_STORAGE_KEY = STACK_STATE_STORAGE_KEY;
 export type { StackNeed, StackPersistenceStatus, StackToolEntry, StackToolIntent, ToolCartState } from "@/lib/stackState";
 
-function readToolCartState(): { state: ToolCartState; status: StackPersistenceStatus } {
-  if (typeof window === "undefined") {
-    return {
-      state: createDefaultToolCartState(),
-      status: { state: "ok", source: "default" },
-    };
-  }
-  try {
-    return loadToolCartStateWithStatus(window.localStorage);
-  } catch {
-    return {
-      state: currentToolCartState ?? createDefaultToolCartState(),
-      status: { state: "degraded", source: "memory", issue: "storage-read-failed" },
-    };
-  }
+import {
+  readPersonalStack, updatePersonalStack, subscribePersonalStack,
+  getPersonalStackPersistenceStatus, getServerPersonalStack, getServerPersonalStackPersistenceStatus,
+} from "@/lib/personalStackStore";
+
+const getSelection = () => readPersonalStack().selection;
+const getServerSelection = () => getServerPersonalStack().selection;
+function commitToolCartState(selection: ToolCartState) {
+  updatePersonalStack(current => ({ ...current, selection }));
 }
-
-let currentToolCartState: ToolCartState | null = null;
-let currentPersistenceStatus: StackPersistenceStatus | null = null;
-const subscribers = new Set<(state: ToolCartState) => void>();
-const statusSubscribers = new Set<(status: StackPersistenceStatus) => void>();
-// SSR cannot know the browser's saved stack. React uses these stable snapshots
-// for SSR and the first hydration render, then restores the live browser store.
-const serverToolCartState = createDefaultToolCartState();
-const serverPersistenceStatus: StackPersistenceStatus = { state: "ok", source: "default" };
-const getServerToolCartState = () => serverToolCartState;
-const getServerPersistenceStatus = () => serverPersistenceStatus;
-
-function subscribeToToolCartState(listener: () => void) {
-  subscribers.add(listener);
-  return () => { subscribers.delete(listener); };
-}
-
-function subscribeToPersistenceStatus(listener: () => void) {
-  statusSubscribers.add(listener);
-  return () => { statusSubscribers.delete(listener); };
-}
-
-function initializeToolCartState() {
-  if (currentToolCartState && currentPersistenceStatus) return;
-  const loaded = readToolCartState();
-  currentToolCartState = loaded.state;
-  currentPersistenceStatus = loaded.status;
-}
-
-function getCurrentToolCartState() {
-  initializeToolCartState();
-  return currentToolCartState as ToolCartState;
-}
-
-function getCurrentPersistenceStatus() {
-  initializeToolCartState();
-  return currentPersistenceStatus as StackPersistenceStatus;
-}
-
-function publishToolCartState() {
-  subscribers.forEach((subscriber) => subscriber(currentToolCartState as ToolCartState));
-  statusSubscribers.forEach((subscriber) => subscriber(currentPersistenceStatus as StackPersistenceStatus));
-}
-
-function commitToolCartState(nextState: ToolCartState) {
-  currentToolCartState = normalizeToolCartState(nextState);
-  if (typeof window !== "undefined") {
-    try {
-      const saved = saveToolCartStateWithStatus(window.localStorage, currentToolCartState);
-      currentToolCartState = saved.state;
-      currentPersistenceStatus = saved.status;
-    } catch {
-      currentPersistenceStatus = { state: "degraded", source: "memory", issue: "storage-write-failed" };
-    }
-  } else {
-    currentPersistenceStatus = { state: "ok", source: "memory" };
-  }
-  publishToolCartState();
-}
-
 function updateToolCartState(updater: (current: ToolCartState) => ToolCartState) {
-  commitToolCartState(updater(getCurrentToolCartState()));
+  updatePersonalStack(current => {
+    const selection = updater(current.selection);
+    return selection === current.selection ? current : { ...current, selection };
+  });
 }
 
 export function useStackPins() {
-  const state = useSyncExternalStore(subscribeToToolCartState, getCurrentToolCartState, getServerToolCartState);
-  const persistenceStatus = useSyncExternalStore(subscribeToPersistenceStatus, getCurrentPersistenceStatus, getServerPersistenceStatus);
-
-  useEffect(() => {
-    function handleStorage(event: StorageEvent) {
-      if (event.key !== STACK_PINS_STORAGE_KEY && event.key !== null) return;
-      const loaded = readToolCartState();
-      currentToolCartState = loaded.state;
-      currentPersistenceStatus = loaded.status;
-      publishToolCartState();
-    }
-
-    if (typeof window !== "undefined") {
-      window.addEventListener("storage", handleStorage);
-    }
-
-    return () => {
-      if (typeof window !== "undefined") {
-        window.removeEventListener("storage", handleStorage);
-      }
-    };
-  }, []);
+  const state = useSyncExternalStore(subscribePersonalStack, getSelection, getServerSelection);
+  const persistenceStatus = useSyncExternalStore(subscribePersonalStack, getPersonalStackPersistenceStatus, getServerPersonalStackPersistenceStatus);
 
   const pinTool = useCallback((slug: string, needIds: string[] = []) => {
     // Deliberate "Ajouter à Ma Stack" click — the closest thing this site has
