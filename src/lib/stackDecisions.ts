@@ -1,4 +1,4 @@
-import { convertAmount, isCurrency, type Currency } from "@/lib/currencyRates";
+import { convertAmount, isCurrency, type Currency } from "./currencyRates";
 
 export type StackDecision = {
   kind: "keep-both" | "keep-one" | "replace";

@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
-import type { Currency } from "@/lib/currencyRates";
+import type { PlanChoice } from "@/lib/stackPlanChoice";
+export type { PlanChoice } from "@/lib/stackPlanChoice";
 
 /**
  * Outils freemium que la personne déclare payer, dans Ma stack. Par défaut un
@@ -17,18 +18,6 @@ import type { Currency } from "@/lib/currencyRates";
  * produit, 8 oct. 2026) : un plan du catalogue avec son nombre de places, ou
  * le montant que la personne paie vraiment. Il prime sur l'offre d'entrée.
  */
-
-export type PlanChoice = {
-  source: "plan" | "custom";
-  /** Plan name when chosen from the catalogue. */
-  label?: string;
-  amount: number;
-  currency: Currency;
-  period: "monthly" | "annual";
-  /** Number of seats when the plan is priced per user. */
-  seats?: number;
-  perSeat?: boolean;
-};
 
 function createStore(key: string) {
   const listeners = new Set<() => void>();
