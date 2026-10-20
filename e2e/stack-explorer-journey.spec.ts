@@ -3,7 +3,8 @@ const key = 'tooltrim-ma-stack-mvp-v3';
 for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
  test(`stack → explore → add → return ${lang}/${width}`, async ({ page }) => {
   await page.setViewportSize({width, height:1000});
-  await page.route('**/*supabase.co/**', route => route.abort());
+  const origin = new URL(String(test.info().project.use.baseURL)).origin;
+  await page.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
   await page.addInitScript(({key}) => {
    localStorage.setItem('tooltrim-analytics-consent',JSON.stringify({version:1,choice:'refused',decidedAt:Date.now(),expiresAt:Date.now()+3600000}));
    if (!localStorage.getItem(key)) localStorage.setItem(key,JSON.stringify({version:3,needs:[],pinnedToolSlugs:['figma'],toolEntries:[{toolSlug:'figma',needIds:[],intent:'stack',addedAt:'2026-10-13T00:00:00Z',assignmentMode:'pending'}]}));
@@ -40,7 +41,9 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   await expect(page.locator('.ms-tool')).toHaveCount(2);
   await page.reload({waitUntil:'domcontentloaded'});
   await expect(page.locator('.ms-tool')).toHaveCount(2);
-  const stored=await page.evaluate(key=>JSON.parse(localStorage.getItem(key)||'{}'),key);
+  const envelope=await page.evaluate(()=>JSON.parse(localStorage.getItem('tooltrim-personal-stack-v4:anonymous')||'{}'));
+  expect(envelope.version).toBe(4);
+  const stored=envelope.selection;
   expect(stored.pinnedToolSlugs).toEqual(expect.arrayContaining(['figma',added]));
   const collection=stored.needs.find((need:{id:string;labelFr:string})=>need.labelFr==='Client');expect(collection).toBeTruthy();
   expect(stored.toolEntries.find((entry:{toolSlug:string})=>entry.toolSlug===added).needIds).toContain(collection.id);

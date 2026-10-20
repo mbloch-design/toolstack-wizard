@@ -6,7 +6,8 @@ for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
   test(`budget ${lang} ${width}px: every tool is accessible, including unpriced tools`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     await page.emulateMedia({ reducedMotion: "reduce" });
-    await page.route("**/*supabase.co/**", (route) => route.abort());
+    const origin = new URL(String(test.info().project.use.baseURL)).origin;
+    await page.route("**/*", route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
     await page.addInitScript((ids) => {
       localStorage.setItem("tooltrim-analytics-consent", "refused");
       localStorage.setItem("tooltrim-ma-stack-mvp-v3", JSON.stringify({ version: 3, needs: [], pinnedToolSlugs: ids,

@@ -9,6 +9,12 @@
 > - [`ROADMAP_DIAGNOSTIC.md`](../ROADMAP_DIAGNOSTIC.md) pour le diagnostic adaptatif ;
 > - [`MA_STACK_ROADMAP.md`](./MA_STACK_ROADMAP.md) pour Ma stack et l’exploration contextuelle.
 
+## Livraison A — comptes et stack enregistrée (20 octobre 2026)
+
+Implémentation locale derrière flags désactivés : état personnel complet v4, synchronisation avec révision, parcours sans mot de passe personnel, isolation des comptes et suppression reprenable ; consultation comptes/stacks dans le back-office courant. Catalogue JSON conservé, livraison éditeur B séparée.
+
+Recette automatique locale : `npm run test:e2e:accounts` ; [conception](superpowers/specs/2026-10-19-accounts-stack-design.md), [user stories](superpowers/specs/tooltrim-user-stories-mvp.md) et [guide d'exploitation](STACK_ACCOUNT_OPERATIONS.md) versionnés. **Reste ouvert avant activation :** configuration Google et e-mail réelle, variables serveur/Vercel, migrations sur recette Supabase isolée, permissions/RLS avec rôles réels, concurrence multi-connexion, conseillers après migration et validation fournisseur FR/EN mobile/bureau. Mocks et tests SQL embarqués ne ferment pas ces points. Activation et publication seront des opérations distinctes.
+
 ---
 
 <a id="suivi-technique-actif"></a>

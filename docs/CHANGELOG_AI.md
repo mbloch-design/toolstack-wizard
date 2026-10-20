@@ -1,3 +1,9 @@
+## 2026-10-20 : comptes et stack complète, recette locale préparée
+
+- Livraison A derrière deux flags désactivés par défaut : code e-mail/Google, sauvegarde complète v4, caches par compte, conflits explicites et suppression reprenable. Le back-office comptes/stacks utilise AppShellV2 et les fiches JSON, avec autorisation administrateur côté serveur.
+- Recette Playwright dédiée `npm run test:e2e:accounts` : serveur Auth/API exclusivement local, blocage des réseaux externes, parcours FR/EN mobile/bureau et réutilisation de la recette suppression. Les fixtures restent hors du code de production.
+- [Guide opérateur](STACK_ACCOUNT_OPERATIONS.md) : variables, Google/e-mail, migrations, recette fournisseur et rollback préservant les données. Migrations distantes, RLS réelle, GoTrue/PostgREST et livraison des codes restent à vérifier sur recette isolée ; aucune activation publique n'est déduite des mocks. Aucun catalogue, paiement ou abonnement modifié.
+
 ## 2026-10-19 : stockage prive des stacks personnelles v4
 
 - Migration dediee avec verification de session Auth en base, revision CAS, verrou par proprietaire et statut de suppression reprenable. Acces directs clients et execution publique des RPC revoques ; politiques proprietaire conservees.

@@ -8,9 +8,9 @@
 
 **Tech Stack:** React 18, React Router 7 déclaratif, Vite, TypeScript, Supabase JS existant, PostgreSQL, fonctions Node Vercel existantes, Vitest et Playwright. Pas de nouvel ORM ni fournisseur d'authentification.
 
-**Spec:** docs/superpowers/specs/2026-10-19-accounts-stack-design.md
-**Backlog:** /Users/mike/Documents/Codex/2026-10-19/mlo/outputs/tooltrim-user-stories-mvp.md
-**Status:** plan proposé après validation de la conception ; tâches non exécutées.
+**Spec:** [Conception](../specs/2026-10-19-accounts-stack-design.md)
+**Backlog:** [User stories MVP](../specs/tooltrim-user-stories-mvp.md)
+**Status:** plan de référence de l’implémentation locale ; voir le [guide opérateur](../../STACK_ACCOUNT_OPERATIONS.md) pour la recette et l’activation encore désactivée.
 
 ## Global Constraints
 

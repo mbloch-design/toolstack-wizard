@@ -1,4 +1,5 @@
-import { expect, test, type Page } from "@playwright/test";
+import type { Page } from "@playwright/test";
+import { expect, test } from "./fixtures/accounts";
 
 // The unified test-only Auth/API server is supplied by Task 8. Never target a remote service.
 const fixtureBase = process.env.PLAYWRIGHT_BASE_URL;
@@ -17,7 +18,6 @@ async function login(page: Page, lang: "fr" | "en", email: string) {
 
 for (const lang of ["fr", "en"] as const) test(`account deletion ${lang}: explicit confirmation, failure retry and fresh recreation`, async ({ page }) => {
   const errors: string[] = []; page.on("pageerror", error => errors.push(error.message));
-  await page.route("**/*", route => ["127.0.0.1", "localhost"].includes(new URL(route.request().url()).hostname) ? route.continue() : route.abort());
   await page.addInitScript(() => {
     localStorage.setItem("tooltrim-analytics-consent", "refused");
     if (sessionStorage.getItem("lifecycle-seeded")) return;

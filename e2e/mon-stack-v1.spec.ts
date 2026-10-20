@@ -4,8 +4,9 @@ const key = "tooltrim-ma-stack-mvp-v3";
 const slugs = ["figma", "canva", "notion", "slack", "chatgpt", "claude", "miro", "zapier", "make", "dropbox", "calendly", "typeform"];
 const seed = (ids = slugs) => ({ version: 3, needs: [], pinnedToolSlugs: ids, toolEntries: ids.map((toolSlug) => ({ toolSlug, needIds: [], intent: "stack", addedAt: "2026-10-05T00:00:00.000Z", assignmentMode: "pending" })) });
 
-test.beforeEach(async ({ page }) => {
-  await page.route("**/*supabase.co/**", (route) => route.abort());
+test.beforeEach(async ({ page, context }) => {
+  const origin = new URL(String(test.info().project.use.baseURL)).origin;
+  await context.route("**/*", route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
   await page.addInitScript(() => localStorage.setItem("tooltrim-analytics-consent", JSON.stringify({ version: 1, choice: "refused", decidedAt: Date.now(), expiresAt: Date.now() + 3600000 })));
 });
 
@@ -27,7 +28,8 @@ test("empty → search → add → inspect → remove → undo → persist", asy
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   const storage = await page.context().storageState();
   const context = await page.context().browser()!.newContext({ storageState: storage });
-  await context.route("**/*supabase.co/**", (route) => route.abort());
+  const origin = new URL(String(test.info().project.use.baseURL)).origin;
+  await context.route("**/*", route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
   const reopened = await context.newPage();
   await reopened.goto(`${test.info().project.use.baseURL}/fr/ma-stack`, { waitUntil: "domcontentloaded" });
   await expect(reopened.locator(".ms-tool")).toHaveCount(1);
@@ -132,7 +134,8 @@ test("catalogue refresh updates the same saved selection without persisting tool
   name = "Figma — catalogue actualisé";
   await page.reload({ waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-tool")).toContainText("Figma — catalogue actualisé");
-  const stored = await page.evaluate((key) => localStorage.getItem(key), key);
+  const stored = await page.evaluate(() => localStorage.getItem("tooltrim-personal-stack-v4:anonymous"));
+  expect(stored).not.toBeNull();
   expect(stored).not.toMatch(/pricing|logo|description|catalogue initial|catalogue actualisé/);
 });
 

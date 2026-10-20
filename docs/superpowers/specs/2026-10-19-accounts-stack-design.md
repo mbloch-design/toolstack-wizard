@@ -1,8 +1,8 @@
 # ToolTrim — conception de la livraison A : compte et stack enregistrée
 
 19 octobre 2026.
-Statut : proposition de conception consolidée à relire ; aucune implémentation du lot A commencée.
-Référence produit : tooltrim-user-stories-mvp.md, stories U01–U06, A01–A02, A05 et partie comptes/stacks de A04.
+Statut : conception consolidée, implémentation locale préparée ; activation désactivée et recette fournisseur encore ouverte. Voir le [guide opérateur](../../STACK_ACCOUNT_OPERATIONS.md).
+Référence produit : [User stories MVP](./tooltrim-user-stories-mvp.md), stories U01–U06, A01–A02, A05 et partie comptes/stacks de A04.
 
 ## Objectif de cette livraison
 
