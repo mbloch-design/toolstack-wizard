@@ -220,6 +220,37 @@ describe("global personal account coordinator", () => {
     expect(hook.result.current.syncStatus).toBe("synced");
   });
 
+  it("keeps a revert unsaved during the pending write and resaves it against the resulting revision", async () => {
+    const confirmed = state("confirmed-A");
+    const submitted = state("submitted-B");
+    mocks.load.mockResolvedValue(record(confirmed, 1));
+    const saveB = deferred<PersonalStackRecord>();
+    const saveA = deferred<PersonalStackRecord>();
+    mocks.save.mockReturnValueOnce(saveB.promise).mockReturnValueOnce(saveA.promise);
+    const hook = mount(); await settle(); await login(session());
+    act(() => replacePersonalStack(submitted)); await tick();
+    expect(mocks.save).toHaveBeenCalledWith("token-A", { expectedRevision: 1, state: submitted });
+
+    act(() => replacePersonalStack(confirmed));
+    expect(hook.result.current.syncStatus).toBe("syncing");
+    expect(hook.result.current.hasUnsavedChanges).toBe(true);
+    await act(async () => { expect(await hook.result.current.signOut()).toBe(false); });
+    expect(mocks.signOut).not.toHaveBeenCalled();
+
+    await act(async () => { saveB.resolve(record(submitted, 2)); });
+    expect(readPersonalStack()).toEqual(confirmed);
+    expect(hook.result.current.hasUnsavedChanges).toBe(true);
+    await tick();
+    expect(mocks.save).toHaveBeenCalledTimes(2);
+    expect(mocks.save).toHaveBeenLastCalledWith("token-A", { expectedRevision: 2, state: confirmed });
+    expect(hook.result.current.syncStatus).toBe("syncing");
+    expect(hook.result.current.hasUnsavedChanges).toBe(true);
+
+    await act(async () => { saveA.resolve(record(confirmed, 3)); });
+    expect(hook.result.current.syncStatus).toBe("synced");
+    expect(hook.result.current.hasUnsavedChanges).toBe(false);
+  });
+
   it("ignores late A save completion after B connects", async () => {
     mocks.load.mockImplementation(token => Promise.resolve(record(state(token === "token-A" ? "A" : "B"))));
     const saving = deferred<PersonalStackRecord>(); mocks.save.mockReturnValue(saving.promise);

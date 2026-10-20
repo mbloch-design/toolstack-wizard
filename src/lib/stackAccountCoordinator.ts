@@ -190,9 +190,11 @@ export class StackAccountCoordinator {
     if (!scope || !this.current(scope) || this.applying || !this.ready || this.snapshot.pendingDraftChoice || this.snapshot.conflict) return;
     const dirty = fingerprint(readPersonalStack()) !== this.metadata?.fingerprint;
     this.cancelTimer();
+    // The pending write may already have replaced the previous confirmation.
+    if (this.inFlight) { this.emit({ syncStatus: "syncing", hasUnsavedChanges: true }); return; }
     if (!dirty) { this.emit({ syncStatus: "synced", error: null, hasUnsavedChanges: false }); return; }
-    this.emit({ syncStatus: this.inFlight ? "syncing" : "unsaved", hasUnsavedChanges: true });
-    if (!this.inFlight) this.timer = setTimeout(() => { void this.saveCurrent(scope); }, 650);
+    this.emit({ syncStatus: "unsaved", hasUnsavedChanges: true });
+    this.timer = setTimeout(() => { void this.saveCurrent(scope); }, 650);
   };
 
   private async saveCurrent(scope: RequestScope): Promise<boolean> {
