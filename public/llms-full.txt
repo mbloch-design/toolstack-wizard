@@ -27804,7 +27804,7 @@
     }
   },
   {
-    "name": "Pagefly",
+    "name": "PageFly",
     "slug": "pagefly",
     "url_fr": "https://tooltrim.com/fr/tool/pagefly",
     "url_en": "https://tooltrim.com/en/tool/pagefly",
