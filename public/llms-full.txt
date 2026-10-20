@@ -3453,7 +3453,7 @@
     }
   },
   {
-    "name": "Authoredup",
+    "name": "AuthoredUp",
     "slug": "authoredup",
     "url_fr": "https://tooltrim.com/fr/tool/authoredup",
     "url_en": "https://tooltrim.com/en/tool/authoredup",
@@ -4351,7 +4351,7 @@
     }
   },
   {
-    "name": "Beehiiv",
+    "name": "beehiiv",
     "slug": "beehiiv",
     "url_fr": "https://tooltrim.com/fr/tool/beehiiv",
     "url_en": "https://tooltrim.com/en/tool/beehiiv",

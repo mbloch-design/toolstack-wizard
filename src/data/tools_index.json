@@ -4281,7 +4281,7 @@
   {
     "id": "authoredup",
     "slug": "authoredup",
-    "name": "Authoredup",
+    "name": "AuthoredUp",
     "categoryId": "creation",
     "shortDescription": "Outil de rédaction et de planification de posts LinkedIn avec aperçu de mise en forme.",
     "shortDescriptionEn": "LinkedIn post writing and scheduling tool with formatting preview.",
@@ -5250,7 +5250,7 @@
   {
     "id": "beehiiv",
     "slug": "beehiiv",
-    "name": "Beehiiv",
+    "name": "beehiiv",
     "categoryId": "email-productivity",
     "shortDescription": "Développer une publication avec newsletter, site et outils de monétisation.",
     "shortDescriptionEn": "Grow a publication with newsletters, a website and monetization tools.",
