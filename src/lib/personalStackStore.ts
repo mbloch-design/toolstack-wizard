@@ -189,6 +189,8 @@ export function clearPersonalStackScope(scope: PersonalStackScope): void {
 // Canonical identities are private cache data too. Keep them only until erasure is verified.
 const CONSUMED_ANONYMOUS_KEY = "tooltrim-personal-stack-v4:consumed-anonymous-cleanup";
 const consumedAnonymous = new Set<string>();
+const pendingAnonymousBackup = new Set<string>();
+const cleanupObligation = () => JSON.stringify({ version: 2, identities: [...consumedAnonymous], pendingBackup: [...pendingAnonymousBackup] });
 
 /** Retry only known consumed copies; a newer unrelated draft belongs to the browser. */
 export function retryConsumedAnonymousPersonalStackCleanup(): boolean {
@@ -200,22 +202,54 @@ export function retryConsumedAnonymousPersonalStackCleanup(): boolean {
     const raw = storage.getItem(CONSUMED_ANONYMOUS_KEY);
     if (raw) {
       const value: unknown = JSON.parse(raw);
-      if (!Array.isArray(value) || !value.every(item => typeof item === "string")) return false;
-      value.forEach(item => consumedAnonymous.add(item));
+      // Read the first focused fix's array format as well as provenance-aware obligations.
+      const record = value as { version?: unknown; identities?: unknown; pendingBackup?: unknown };
+      const identities = Array.isArray(value) ? value : record?.version === 2 ? record.identities : null;
+      const pending = Array.isArray(value) ? [] : record?.pendingBackup;
+      if (!Array.isArray(identities) || !identities.every(item => typeof item === "string")
+        || !Array.isArray(pending) || !pending.every(item => typeof item === "string" && identities.includes(item))) return false;
+      identities.forEach(item => consumedAnonymous.add(item));
+      pending.forEach(item => pendingAnonymousBackup.add(item));
     }
   } catch { complete = false; }
   if (!consumedAnonymous.size) return complete;
   // Persist before touching any copy, so a reload can finish an interrupted cleanup.
-  try { storage.setItem(CONSUMED_ANONYMOUS_KEY, JSON.stringify([...consumedAnonymous])); }
+  try { storage.setItem(CONSUMED_ANONYMOUS_KEY, cleanupObligation()); }
   catch { complete = false; }
+  // A normal edit stores the previous state X as the backup of consumed state Y.
+  // Capture X only while the primary still proves that this is Y's own history.
+  if (pendingAnonymousBackup.size) {
+    try {
+      const primary = parse(storage.getItem(personalStackStorageKey("anonymous")));
+      const identity = primary && personalStackFingerprint(primary);
+      if (identity && pendingAnonymousBackup.has(identity)) {
+        const rawBackup = storage.getItem(backupKey("anonymous"));
+        const backup = parse(rawBackup);
+        if (rawBackup !== null && !backup) complete = false;
+        else {
+          if (backup && personalStackFingerprint(backup) !== personalStackFingerprint(normalizePersonalStack(null))) {
+            consumedAnonymous.add(personalStackFingerprint(backup));
+          }
+          pendingAnonymousBackup.delete(identity);
+          try { storage.setItem(CONSUMED_ANONYMOUS_KEY, cleanupObligation()); }
+          catch { pendingAnonymousBackup.add(identity); complete = false; }
+        }
+      }
+    } catch { complete = false; }
+    if (pendingAnonymousBackup.size) complete = false;
+  }
   const matches = (state: PersonalStackV4 | null) => state !== null && consumedAnonymous.has(personalStackFingerprint(state));
   const previous = memories.get("anonymous");
   let clearedMemory = matches(previous?.state ?? null) || previous?.purged === true;
   try {
     const raw = storage.getItem(personalStackStorageKey("anonymous"));
-    if (matches(parse(raw))) {
+    const primary = parse(raw);
+    if (matches(primary)) {
       clearedMemory = true;
-      storage.setItem(personalStackStorageKey("anonymous"), JSON.stringify(normalizePersonalStack(null)));
+      // Preserve the primary's ownership evidence until an unread backup can be identified.
+      if (!pendingAnonymousBackup.has(personalStackFingerprint(primary!))) {
+        storage.setItem(personalStackStorageKey("anonymous"), JSON.stringify(normalizePersonalStack(null)));
+      }
     }
   } catch { complete = false; }
   // Try the backup independently, even if the primary tombstone was rejected.
@@ -248,6 +282,7 @@ export function retryConsumedAnonymousPersonalStackCleanup(): boolean {
 export function consumeAnonymousPersonalStack(state: PersonalStackV4): boolean {
   const identity = personalStackFingerprint(state);
   consumedAnonymous.add(identity);
+  pendingAnonymousBackup.add(identity);
   const previous = memories.get("anonymous");
   if (previous && personalStackFingerprint(previous.state) === identity) {
     scopeEpochs.set("anonymous", getPersonalStackScopeEpoch("anonymous") + 1);

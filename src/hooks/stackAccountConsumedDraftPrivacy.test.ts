@@ -10,7 +10,7 @@ vi.mock("@/lib/stackAccountApi", async original => ({ ...await original<typeof i
 const primary = "tooltrim-personal-stack-v4:anonymous";
 const backup = `${primary}:backup`;
 const values = new Map<string, string>();
-let denyPrimary = false, denyBackup = false;
+let denyPrimary = false, denyBackup = false, denyBackupRead = false;
 let stops: (() => void)[] = [];
 function state(slug: string): PersonalStackV4 {
   const current = normalizePersonalStack(null);
@@ -28,9 +28,9 @@ async function boot(owner: string) {
   return { store, coordinator };
 }
 beforeEach(() => {
-  vi.resetModules(); vi.useFakeTimers(); vi.resetAllMocks(); values.clear(); denyPrimary = false; denyBackup = false;
+  vi.resetModules(); vi.useFakeTimers(); vi.resetAllMocks(); values.clear(); denyPrimary = false; denyBackup = false; denyBackupRead = false;
   Object.defineProperty(window, "localStorage", { configurable: true, value: {
-    getItem: (key: string) => values.get(key) ?? null,
+    getItem: (key: string) => { if (denyBackupRead && key === backup) throw new Error("backup read denied"); return values.get(key) ?? null; },
     setItem: (key: string, value: string) => { if (denyPrimary && key === primary) throw new Error("primary denied"); values.set(key, value); },
     removeItem: (key: string) => { if (denyBackup && key === backup) throw new Error("backup denied"); values.delete(key); },
   } });
@@ -127,4 +127,68 @@ it("clears consumed memory even if storage becomes inaccessible as the import is
   expect(await coordinator.signOut()).toBe(true);
   expect(coordinator.getSnapshot().privacyWarning).toBe("ACCOUNT_LOCAL_CLEANUP_INCOMPLETE");
   expect(store.readPersonalStack().selection.pinnedToolSlugs).toEqual([]);
+});
+
+async function realAnonymousEdits() {
+  values.clear();
+  const store = await import("@/lib/personalStackStore");
+  const previous = state("previous-private-X");
+  previous.billing.paid = ["previous-private-X"];
+  previous.billing.choices["previous-private-X"] = { source: "custom", amount: 23, currency: "EUR", period: "monthly" };
+  store.replacePersonalStack(previous);
+  const consumed = state("consumed-private-Y");
+  consumed.billing.reviewed = ["consumed-private-Y"];
+  store.replacePersonalStack(consumed);
+  expect(JSON.parse(values.get(backup)!)).toEqual(previous);
+  expect(JSON.parse(values.get(primary)!)).toEqual(consumed);
+  return consumed;
+}
+
+it.each(["none", "primary", "backup"] as const)("cleans real X-to-Y edit history with %s cleanup denial and a fresh B after deletion", async failure => {
+  await realAnonymousEdits();
+  denyPrimary = failure === "primary"; denyBackup = failure === "backup";
+  const { coordinator } = await boot("A");
+  expect(coordinator.getSnapshot().privacyWarning).toBe(failure === "none" ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE");
+  if (failure === "none") expect(values.has(backup)).toBe(false);
+  denyPrimary = false; denyBackup = false;
+  expect(await coordinator.deleteAccount()).toBe(true);
+  expect(coordinator.getSnapshot().privacyWarning).toBeNull();
+  expect([...values.values()].some(value => value.includes("previous-private-X") || value.includes("consumed-private-Y"))).toBe(false);
+  stops.pop()!(); vi.resetModules(); api.save.mockClear();
+  const next = await boot("B");
+  expect(next.store.readPersonalStack().selection.pinnedToolSlugs).toEqual([]);
+  expect(api.save).not.toHaveBeenCalled();
+});
+
+it("retains unread backup provenance until it can prove and retire real X-to-Y history", async () => {
+  await realAnonymousEdits(); denyBackupRead = true;
+  const first = await boot("A");
+  expect(first.coordinator.getSnapshot().privacyWarning).toBe("ACCOUNT_LOCAL_CLEANUP_INCOMPLETE");
+  expect(JSON.parse(values.get(primary)!).selection.pinnedToolSlugs).toEqual(["consumed-private-Y"]);
+  stops.pop()!(); vi.resetModules(); denyBackupRead = false;
+  api.load.mockResolvedValue({ state: state("saved-A"), revision: 1, updatedAt: "2026-10-20T00:00:00Z" });
+  const reloaded = await boot("A");
+  expect(await reloaded.coordinator.signOut()).toBe(true);
+  expect(reloaded.coordinator.getSnapshot().privacyWarning).toBeNull();
+  expect([...values.values()].some(value => value.includes("previous-private-X") || value.includes("consumed-private-Y"))).toBe(false);
+});
+
+it("keeps primary ownership evidence if persisting the newly captured backup identity fails", async () => {
+  await realAnonymousEdits();
+  const storage = window.localStorage;
+  const setItem = storage.setItem.bind(storage);
+  let obligationWrites = 0;
+  vi.spyOn(storage, "setItem").mockImplementation((key, value) => {
+    if (key === "tooltrim-personal-stack-v4:consumed-anonymous-cleanup" && ++obligationWrites > 1) throw new Error("provenance write denied");
+    setItem(key, value);
+  });
+  denyBackup = true;
+  const first = await boot("A");
+  expect(first.coordinator.getSnapshot().privacyWarning).toBe("ACCOUNT_LOCAL_CLEANUP_INCOMPLETE");
+  expect(JSON.parse(values.get(primary)!).selection.pinnedToolSlugs).toEqual(["consumed-private-Y"]);
+  stops.pop()!(); vi.resetModules(); denyBackup = false;
+  storage.setItem = setItem;
+  const next = await boot("B");
+  expect(next.store.readPersonalStack().selection.pinnedToolSlugs).toEqual([]);
+  expect(values.has(backup)).toBe(false);
 });
