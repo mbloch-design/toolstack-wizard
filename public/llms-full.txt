@@ -23375,7 +23375,7 @@
     }
   },
   {
-    "name": "Material-UI",
+    "name": "Material UI",
     "slug": "material-ui",
     "url_fr": "https://tooltrim.com/fr/tool/material-ui",
     "url_en": "https://tooltrim.com/en/tool/material-ui",

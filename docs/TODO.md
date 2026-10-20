@@ -41,7 +41,8 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 
 - [ ] Pages alternatives vides ou hors sujet : 814 outils sans `alternatives` (Freshservice n'en cite aucune, ESLint renvoie vers ACF ou Appsmith). Couvert en partie par la recherche cloud.
 - [ ] Pages prix minces : un bloc de tarifs puis « Et maintenant ? ». À enrichir avec la grille complète issue de la recherche.
-- [ ] Titres et meta descriptions rédigés des fiches (20/10) : 4 pages × 2 langues par fiche, jetons {price} {verified} {rating}, outils dans `scripts/seo-meta/`, ordre par impressions GSC. 75 fiches faites sur 1 247 ; mesurer le CTR GSC par moitié 3 semaines après.
+- [ ] Titres et meta descriptions rédigés des fiches (20/10) : 4 pages × 2 langues par fiche, jetons {price} {verified} {rating}, outils dans `scripts/seo-meta/`, ordre par impressions GSC. 115 fiches faites sur 1 247 (n8n exclu, chantier dédié) ; mesurer le CTR GSC par moitié 3 semaines après.
+- [ ] Prix à revérifier, la grille contredit le texte de la fiche : Postman (grille 9 $, texte 11 $), Sprout Social (79 $ contre 99 $ en mensuel).
 - [ ] WeTransfer : grille à 7 € alors que la fiche indique un Starter passé à 8 € ; revérifier la page officielle.
 - [ ] 689 `seo.metaDescription` rédigées mais jamais utilisées (français seulement, qualité inégale) **[décision]** : les brancher, les réécrire ou les supprimer
 - [x] Pilote des pages par intention (02/10/2026) : 5 comparatifs sous /guide/ (plugins After Effects, gestion de projet freelance, second cerveau, moteurs de rendu 3D avec angle IA, hébergement cloud), classés sur la note ToolTrim, prix réels sans conversion, encadré « L'avis ToolTrim ». Config `src/data/bestOfGuides.json`
