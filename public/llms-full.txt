@@ -22816,7 +22816,7 @@
     }
   },
   {
-    "name": "Mailerlite",
+    "name": "MailerLite",
     "slug": "mailerlite",
     "url_fr": "https://tooltrim.com/fr/tool/mailerlite",
     "url_en": "https://tooltrim.com/en/tool/mailerlite",

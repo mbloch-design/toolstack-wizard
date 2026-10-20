@@ -26438,7 +26438,7 @@
   {
     "id": "mailerlite",
     "slug": "mailerlite",
-    "name": "Mailerlite",
+    "name": "MailerLite",
     "categoryId": "email-productivity",
     "shortDescription": "Créer des campagnes, formulaires et automatisations email pour une petite liste.",
     "shortDescriptionEn": "Build campaigns, signup forms and email automations for a small list.",
