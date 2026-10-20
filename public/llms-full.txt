@@ -12917,7 +12917,7 @@
     }
   },
   {
-    "name": "Figma Tokens (Tokens Studio)",
+    "name": "Tokens Studio for Figma",
     "slug": "figma-tokens",
     "url_fr": "https://tooltrim.com/fr/tool/figma-tokens",
     "url_en": "https://tooltrim.com/en/tool/figma-tokens",
