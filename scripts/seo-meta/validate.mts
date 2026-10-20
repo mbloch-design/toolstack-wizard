@@ -42,11 +42,10 @@ for (const [slug, pages] of Object.entries<any>(metas)) {
         if (!text.toLowerCase().includes(name.split(" ")[0]) && !text.toLowerCase().includes(short)) errors.push(`${where}: tool name missing`);
         if (/—/.test(text)) errors.push(`${where}: em dash`);
         if (/!/.test(text)) errors.push(`${where}: exclamation mark`);
-        // Thresholds and fees (« $100K revenue », « $15 per payment ») are facts; the
-        // compare price itself must go through {price} so it never goes stale.
-        const priceDigits = String(b.price?.en || "").replace(/[^\d.]/g, "");
-        const amounts = [...raw.matchAll(/(?:[€$]\s?(\d[\d.,]*)|(\d[\d.,]*)\s?(?:€|\$))/g)].map((m) => (m[1] || m[2]).replace(",", "."));
-        if (priceDigits && amounts.some((a) => parseFloat(a) === parseFloat(priceDigits))) errors.push(`${where}: hard-coded price, use {price}`);
+        // Same rule as src/test/seo/seoOverridePrices.spec.ts: no literal amount at
+        // all. The compare price goes through {price}; fees and thresholds are
+        // described in words, since they are not in the verified grid.
+        if (/(?:[€$£]\s?\d|\d\s?(?:[€$£]|EUR|USD))/.test(raw)) errors.push(`${where}: literal amount, use {price} or words`);
         // Past years are facts (« limits tightened in 2024 »); the current one goes stale.
         if (new RegExp(`\\b${new Date().getFullYear()}\\b`).test(raw)) errors.push(`${where}: hard-coded current year, use {year}`);
         if (/\b\d[.,]\d\s?\/\s?5\b/.test(raw)) errors.push(`${where}: hard-coded score, use {rating}`);
