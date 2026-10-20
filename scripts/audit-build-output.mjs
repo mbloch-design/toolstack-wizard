@@ -36,10 +36,10 @@ const budgets = {
   // 2026-10-01: 54 more researched fiches and 48 hashed catalogue shards
   // (was 29 by first letter): measured 14,972 files, 987.2 MiB total,
   // 880.1 MiB HTML, 32.5 MiB CSS. Sized for the ~120 dossiers still to merge.
-  // 2026-10-20: password-manager best-of page (FR/EN) and critical CSS
-  // variants of the pricing pilot: measured 15,068 files, 818.4 MiB total.
-  // Narrow margin kept.
-  files: 15_100,
+  // 2026-10-20: ViralSnap and Sprokl add 20 localized tool routes.
+  // 2026-10-20: four best-of pages (FR/EN) and critical CSS variants of the
+  // pricing pilot. Measured 15,116 files after both; narrow margin kept.
+  files: 15_150,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
   // 2026-10-02 (US-NAV-01): search and menu buttons in the shared topbar add
   // about 2 KB of markup and critical CSS to each of the ~13,100 pages, plus

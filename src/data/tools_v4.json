@@ -276361,5 +276361,431 @@
       "researchedOn": "2026-10-20",
       "sources": 1
     }
+  },
+  {
+    "id": "viralsnap",
+    "slug": "viralsnap",
+    "name": "ViralSnap",
+    "category": "creation",
+    "categoryId": "creation",
+    "shortDescription": "Analyse des Reels Instagram publics et réécriture de scripts à partir de leurs hooks, scènes et rythmes.",
+    "shortDescriptionEn": "Analyze public Instagram Reels and rewrite scripts from their hooks, scenes, and pacing.",
+    "description": "ViralSnap aide les créateurs à étudier des Reels Instagram publics pris en charge : analyse du hook, des scènes, de la structure et du rythme, puis proposition de scripts ou de directions créatives adaptés à leur contenu.",
+    "longDescription": "ViralSnap transforme un Reel Instagram public pris en charge en support de travail créatif. L’outil décrit le hook, les scènes, le rythme et la structure observables, puis propose une interprétation du mécanisme créatif et une réécriture à adapter à un autre produit, une autre audience ou une autre voix. Il peut également produire une direction de storyboard.\n\nLa fiche s’adresse surtout aux créateurs UGC, aux créateurs de vidéos courtes et aux équipes social media qui veulent passer d’une référence repérée sur Instagram à un brief ou un premier script. Des outils gratuits complémentaires servent à télécharger certains Reels publics, extraire des légendes, obtenir une transcription ou récupérer une miniature.\n\nViralSnap ne génère pas encore de vidéo finalisée et n’en prédit pas les performances. L’accès à une analyse dépend du fait que le média source soit public, pris en charge et récupérable ; les interprétations décrivent des éléments observables et ne prouvent pas pourquoi un Reel a obtenu ses résultats. Le forfait gratuit comprend 100 crédits à vie, soit jusqu’à cinq analyses si ces crédits sont tous consacrés à la fonction Analyze. Starter est affiché à 12 $US par mois pour 1 000 crédits mensuels. Les crédits étant consommés par plusieurs fonctions, le nombre réel d’analyses varie.",
+    "longDescriptionEn": "ViralSnap turns a supported public Instagram Reel into a creative working reference. It describes observable hooks, scenes, pacing, and structure, then suggests an interpretation of the creative mechanism and a rewrite to adapt to a different product, audience, or voice. It can also provide a storyboard direction.\n\nThe product is aimed mainly at UGC creators, short-form video creators, and social media teams who want to turn an Instagram reference into a brief or first script. Complementary free tools can download some public Reels, extract captions, produce a transcript, or retrieve a thumbnail.\n\nViralSnap does not yet generate a finished video or predict its performance. Analysis depends on the source being public, supported, and retrievable; interpretations describe observable elements and do not prove why a Reel achieved its results. The free plan includes 100 lifetime credits, equivalent to up to five analyses only if all credits are spent on Analyze. Starter is listed at US$12 per month for 1,000 monthly credits. Since several features consume credits, the actual number of analyses varies.",
+    "pricing": {
+      "free": "100 crédits à vie ; jusqu’à 5 analyses si les crédits sont consacrés uniquement à Analyze. Des outils gratuits complémentaires sont aussi proposés.",
+      "paid": "Starter : 12 $US/mois pour 1 000 crédits mensuels. Offre Teams & Agencies sur devis. Taxes et conditions de facturation à confirmer au paiement."
+    },
+    "pricingEn": {
+      "free": "100 lifetime credits; up to 5 analyses if credits are spent only on Analyze. Additional free tools are also available.",
+      "paid": "Starter: US$12/month for 1,000 monthly credits. Teams & Agencies is custom-priced. Confirm taxes and billing terms at checkout."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Les 100 crédits gratuits sont à vie, pas mensuels. L’estimation de cinq analyses n’est valable que si tous les crédits sont dépensés sur Analyze ; les autres fonctions consomment aussi des crédits.",
+        "Starter est affiché à 12 $US par mois pour 1 000 crédits mensuels. Le traitement des taxes et les conditions détaillées de facturation ne sont pas précisés sur la page tarifaire consultée.",
+        "Le nombre d’analyses et le niveau de détail dépendent des crédits disponibles et de la récupération du Reel public pris en charge."
+      ],
+      "cautionsEn": [
+        "The 100 free credits are lifetime credits, not a monthly allowance. The estimate of five analyses applies only when all credits are spent on Analyze; other features also consume credits.",
+        "Starter is listed at US$12 per month for 1,000 monthly credits. Tax treatment and detailed billing terms are not stated on the pricing page reviewed.",
+        "The number of analyses and level of detail depend on available credits and whether a supported public Reel can be retrieved."
+      ],
+      "verified_on": "2026-10-15",
+      "source_domain": "getviralsnap.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Starter",
+      "price_reliability": "official_explicit",
+      "location_sensitive": false,
+      "official_source_url": "https://getviralsnap.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Pour tester l’analyse et les outils gratuits avec un quota de crédits à vie.",
+          "featureHighlights": [
+            "100 crédits à vie",
+            "Jusqu’à 5 analyses si tous les crédits sont réservés à Analyze",
+            "Historique enregistré et export CSV"
+          ],
+          "detailsSourceUrl": "https://getviralsnap.com/pricing",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "observedMarket": "Global",
+          "observedLocale": "en",
+          "observedOn": "2026-10-15",
+          "lastConfirmedOn": "2026-10-15"
+        },
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "12 $US/mois pour 1 000 crédits mensuels et des outils d’analyse et de réécriture.",
+          "featureHighlights": [
+            "1 000 crédits par mois",
+            "Analyse et transcription de Reels",
+            "Réécriture de scripts et recharges de crédits"
+          ],
+          "detailsSourceUrl": "https://getviralsnap.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 12,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "taxInclusion": "unknown",
+          "observedMarket": "Global",
+          "observedLocale": "en",
+          "observedOn": "2026-10-15",
+          "lastConfirmedOn": "2026-10-15"
+        },
+        {
+          "planKey": "teams-agencies",
+          "displayName": "Teams & Agencies",
+          "summary": "Offre personnalisée sur devis.",
+          "featureHighlights": [
+            "Limites d’usage flexibles",
+            "Espace de travail partagé",
+            "Accompagnement de workflow et support prioritaire"
+          ],
+          "detailsSourceUrl": "https://getviralsnap.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": null,
+          "nativeCurrency": "USD",
+          "observedMarket": "Global",
+          "observedLocale": "en",
+          "observedOn": "2026-10-15",
+          "lastConfirmedOn": "2026-10-15"
+        }
+      ]
+    },
+    "websiteUrl": "https://getviralsnap.com/",
+    "functional_needs": [
+      "creator-workflow",
+      "short-form-video"
+    ],
+    "verticals": [
+      "creator-economy",
+      "social-media"
+    ],
+    "relevantFor": [
+      "Créateurs UGC",
+      "Créateurs de vidéos courtes",
+      "Équipes social media"
+    ],
+    "pros": [
+      "Décompose une référence en hook, scènes, structure et rythme, au-delà d’un simple résumé de transcription.",
+      "Propose une adaptation de script ou une direction de storyboard à revoir avant production.",
+      "Associe l’analyse à des outils gratuits d’extraction, de téléchargement et de transcription de Reels publics."
+    ],
+    "prosEn": [
+      "Breaks a reference down into hook, scenes, structure, and pacing rather than only summarizing its transcript.",
+      "Suggests a script adaptation or storyboard direction for review before production.",
+      "Combines analysis with free extraction, download, and transcription tools for public Reels."
+    ],
+    "cons": [
+      "L’analyse dépend de Reels publics pris en charge et récupérables ; une URL ne garantit pas un résultat exploitable.",
+      "Les crédits partagés entre fonctions rendent le nombre d’analyses difficile à déduire du seul quota mensuel.",
+      "L’outil ne monte ni ne publie une vidéo finalisée, et ses interprétations ne démontrent pas les causes de performance."
+    ],
+    "consEn": [
+      "Analysis depends on supported, retrievable public Reels; a URL does not guarantee a usable result.",
+      "Credits shared across features make the number of analyses difficult to infer from the monthly allowance alone.",
+      "The tool does not edit or publish a finished video, and its interpretations do not prove the causes of performance."
+    ],
+    "useCases": [
+      "Étudier la structure d’un Reel public avant de rédiger un script UGC original.",
+      "Transformer une référence repérée sur Instagram en brief de scènes et de rythme.",
+      "Comparer des hooks et organiser des exemples créatifs dans un historique exportable."
+    ],
+    "useCasesEn": [
+      "Study the structure of a public Reel before writing an original UGC script.",
+      "Turn an Instagram reference into a brief for scenes and pacing.",
+      "Compare hooks and organize creative examples in an exportable history."
+    ],
+    "covers": [
+      "creator-workflow"
+    ],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "personas": [
+      "lina"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu étudies régulièrement des Reels publics pour préparer tes scripts ou briefs UGC.",
+        "Tu veux expliciter la structure d’une référence avant de l’adapter à ton propre produit et à ta voix."
+      ],
+      "avoidIf": [
+        "Tu cherches un éditeur qui monte et publie directement la vidéo finale.",
+        "Tu as besoin d’analyser des contenus privés, restreints ou non pris en charge."
+      ],
+      "threshold": "Le forfait gratuit suffit pour tester quelques analyses si tes Reels sont récupérables. Starter se justifie surtout si l’analyse et la réécriture font déjà partie de ton flux de création chaque mois."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly study public Reels to prepare scripts or UGC briefs.",
+        "You want to make a reference’s structure explicit before adapting it to your own product and voice."
+      ],
+      "avoidIf": [
+        "You need an editor that directly produces and publishes the finished video.",
+        "You need to analyze private, restricted, or unsupported content."
+      ],
+      "threshold": "The free plan is enough to try a few analyses if the Reels can be retrieved. Starter is mainly justified when analysis and rewriting are already part of your monthly content workflow."
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 3,
+      "notedOn": "2026-10-15",
+      "evidence": {
+        "valeurAjoutee": "Le produit relie l’analyse structurée d’un Reel à une réécriture, ce qui donne une suite concrète à l’inspiration. Cette valeur dépend de la disponibilité du média. Source : getviralsnap.com, 15 octobre 2026.",
+        "simplicite": "Le parcours annoncé commence par coller l’URL d’un Reel public puis conduit à l’analyse et à une adaptation. Les limites de prise en charge peuvent toutefois interrompre ce parcours. Source : getviralsnap.com/how-it-works, 15 octobre 2026.",
+        "utilisation": "L’offre gratuite permet de tester la chaîne avec 100 crédits à vie et des exports, mais le quota est partagé entre fonctions et dépend des crédits dépensés. Source : getviralsnap.com/pricing, 15 octobre 2026.",
+        "puissance": "L’outil couvre hooks, scènes, rythme, motifs créatifs et réécriture, mais ne produit pas la vidéo finale et ne prédit pas ses performances. Source : getviralsnap.com/how-it-works, 15 octobre 2026.",
+        "reversibilite": "L’historique et l’export CSV sont annoncés ; les modalités de récupération complète des données de compte ne sont pas détaillées. Source : getviralsnap.com, 15 octobre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The product connects a structured Reel analysis to a rewrite, giving inspiration a concrete next step. Value depends on media availability. Source: getviralsnap.com, October 15, 2026.",
+        "simplicite": "The stated workflow starts by pasting a public Reel URL and continues to analysis and adaptation. Supported-source limits can interrupt that flow. Source: getviralsnap.com/how-it-works, October 15, 2026.",
+        "utilisation": "The free offer lets users try the workflow with 100 lifetime credits and exports, but the allowance is shared across features and depends on how credits are spent. Source: getviralsnap.com/pricing, October 15, 2026.",
+        "puissance": "The tool covers hooks, scenes, pacing, creative patterns, and rewriting, but does not produce a finished video or predict performance. Source: getviralsnap.com/how-it-works, October 15, 2026.",
+        "reversibilite": "History and CSV export are advertised; full account-data recovery terms are not detailed. Source: getviralsnap.com, October 15, 2026."
+      }
+    },
+    "seo": {
+      "metaDescription": "Avis ViralSnap : analyse de Reels Instagram, hooks et scripts UGC. Découvrez les limites des crédits gratuits et le tarif Starter à 12 $US/mois.",
+      "metaDescriptionEn": "ViralSnap review: analyze Instagram Reels, hooks, and UGC scripts. See free-credit limits and the $12/month Starter price.",
+      "idealForFr": "Un créateur UGC ou social media qui veut transformer des Reels publics en références structurées pour ses propres scripts.",
+      "idealForEn": "A UGC creator or social media operator turning public Reels into structured references for original scripts."
+    }
+  },
+  {
+    "id": "sprokl",
+    "slug": "sprokl",
+    "name": "Sprokl",
+    "category": "creation",
+    "categoryId": "creation",
+    "shortDescription": "Transformez vos ressources produit en angles, scripts et variations vidéo pour tester des publicités e-commerce.",
+    "shortDescriptionEn": "Turn product assets into angles, scripts, and video variations for ecommerce ad testing.",
+    "description": "Sprokl aide les équipes e-commerce à transformer des images, vidéos et informations produit en pistes créatives, scripts publicitaires et variations vidéo. Le flux prépare des créations à examiner puis à tester sur des campagnes payantes.",
+    "longDescription": "Sprokl réunit plusieurs étapes de préparation de publicités e-commerce : importer les visuels et informations d’un produit, explorer des angles de communication, générer des hooks et scripts, puis créer des variations vidéo à comparer. L’équipe peut revoir les angles et les scripts avant de retenir une direction.\n\nL’outil vise les marques e-commerce, équipes Shopify/DTC et annonceurs TikTok qui disposent déjà de ressources produit et veulent organiser leurs tests créatifs. Les forfaits utilisent des crédits mensuels ; le nombre de vidéos dépend de la durée. Les estimations de volume pour Team diffèrent entre la page d’accueil (20–60) et la page tarifaire (environ 30–60), nous ne les présentons donc pas comme une garantie.\n\nSprokl prépare des créations, mais ne mesure pas les résultats des campagnes, ne détermine pas quelle annonce gagne et n’optimise pas automatiquement les campagnes. Les performances doivent être évaluées dans les plateformes publicitaires, avec l’audience, le budget et l’offre concernés.",
+    "longDescriptionEn": "Sprokl brings several ecommerce ad-preparation steps into one workflow: upload product images, videos, and information; explore creative angles; generate hooks and scripts; then create video variations to compare. Teams can review angles and scripts before choosing a direction.\n\nIt is aimed mainly at ecommerce brands, Shopify/DTC teams, and TikTok advertisers that already have product assets and want to prepare creative tests more consistently. Plans use monthly credits, and video output depends on duration. Team volume estimates differ between the homepage (20–60) and pricing page (about 30–60), so they are not presented as a guarantee.\n\nSprokl prepares creative assets, but does not measure campaign results, identify winning ads, or automatically optimize campaigns. Performance still needs to be evaluated in the advertising platforms, with the relevant audience, budget, and offer.",
+    "pricing": {
+      "free": "Free : 0 $US/mois, avec 3 crédits par mois et des exports standard.",
+      "paid": "Team : 39 $US/mois pour 60 crédits ; Scale : 99 $US/mois pour 200 crédits. Crédits renouvelés chaque mois ; annulation possible à tout moment selon la page tarifaire."
+    },
+    "pricingEn": {
+      "free": "Free: US$0/month, with 3 credits per month and standard exports.",
+      "paid": "Team: US$39/month for 60 credits; Scale: US$99/month for 200 credits. Credits reset monthly; cancel anytime according to the pricing page."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Les crédits sont mensuels et le volume vidéo dépend de la durée sélectionnée.",
+        "Les estimations de vidéos Team diffèrent selon les pages officielles : 20–60 sur l’accueil et environ 30–60 sur la page tarifaire.",
+        "Les tarifs sont affichés en USD ; le traitement des taxes n’est pas précisé sur la page tarifaire consultée."
+      ],
+      "cautionsEn": [
+        "Credits reset monthly and video output depends on the selected duration.",
+        "Team video estimates differ between official pages: 20–60 on the homepage and about 30–60 on the pricing page.",
+        "Prices are displayed in USD; tax treatment is not specified on the pricing page reviewed."
+      ],
+      "verified_on": "2026-10-15",
+      "source_domain": "getsprokl.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Team",
+      "price_reliability": "official_explicit",
+      "location_sensitive": false,
+      "official_source_url": "https://getsprokl.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": null,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "3 crédits mensuels pour essayer le workflow créatif e-commerce.",
+          "featureHighlights": [
+            "3 crédits par mois",
+            "Angles, scripts et variations vidéo",
+            "Exports standard"
+          ],
+          "detailsSourceUrl": "https://getsprokl.com/pricing",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "observedMarket": "Global",
+          "observedLocale": "en",
+          "observedOn": "2026-10-15",
+          "lastConfirmedOn": "2026-10-15"
+        },
+        {
+          "planKey": "team",
+          "displayName": "Team",
+          "summary": "39 $US/mois pour 60 crédits mensuels et des exports sans filigrane.",
+          "featureHighlights": [
+            "60 crédits par mois",
+            "Rendu jusqu’à 60 secondes",
+            "Exports sans filigrane"
+          ],
+          "detailsSourceUrl": "https://getsprokl.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 39,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "Global",
+          "observedLocale": "en",
+          "observedOn": "2026-10-15",
+          "lastConfirmedOn": "2026-10-15"
+        },
+        {
+          "planKey": "scale",
+          "displayName": "Scale",
+          "summary": "99 $US/mois pour 200 crédits mensuels et un rendu vidéo plus rapide.",
+          "featureHighlights": [
+            "200 crédits par mois",
+            "Rendu jusqu’à 90 secondes",
+            "Génération accélérée"
+          ],
+          "detailsSourceUrl": "https://getsprokl.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "Global",
+          "observedLocale": "en",
+          "observedOn": "2026-10-15",
+          "lastConfirmedOn": "2026-10-15"
+        }
+      ]
+    },
+    "websiteUrl": "https://getsprokl.com/",
+    "functional_needs": [
+      "creator-workflow"
+    ],
+    "verticals": [
+      "ecommerce",
+      "marketing",
+      "social-media"
+    ],
+    "relevantFor": [
+      "Marques e-commerce et DTC",
+      "Équipes Shopify",
+      "Annonceurs TikTok et paid social"
+    ],
+    "pros": [
+      "Relie angles créatifs, scripts et variations vidéo à partir des ressources d’un produit.",
+      "Permet de revoir les angles et les scripts avant de poursuivre la production.",
+      "Les offres affichent des crédits mensuels et distinguent les options de rendu et d’export."
+    ],
+    "prosEn": [
+      "Connects creative angles, scripts, and video variations from existing product assets.",
+      "Lets teams review angles and scripts before moving into production.",
+      "Plans state monthly credits and distinguish rendering and export features."
+    ],
+    "cons": [
+      "Les crédits ne correspondent pas à un nombre fixe de vidéos : le volume dépend de la durée.",
+      "Les estimations vidéo de Team diffèrent entre les pages d’accueil et de tarifs.",
+      "L’outil ne mesure pas les performances publicitaires et ne désigne pas les créations gagnantes."
+    ],
+    "consEn": [
+      "Credits do not map to a fixed number of videos; output depends on duration.",
+      "Team video estimates differ between the homepage and pricing page.",
+      "The product does not measure ad performance or identify winning creatives."
+    ],
+    "useCases": [
+      "Préparer plusieurs angles et scripts à partir d’un produit e-commerce avant une campagne.",
+      "Créer des variations vidéo à comparer en paid social.",
+      "Structurer les étapes de revue créative d’une petite équipe marketing."
+    ],
+    "useCasesEn": [
+      "Prepare multiple angles and scripts from an ecommerce product before a campaign.",
+      "Create video variations to compare in paid social.",
+      "Structure creative review steps for a small marketing team."
+    ],
+    "covers": [
+      "creator-workflow"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "tool_type": "ia",
+    "substitutable": true,
+    "personas": [
+      "lina"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu produis régulièrement des publicités e-commerce et veux préparer plusieurs directions à partir des mêmes ressources produit.",
+        "Ton équipe valide les concepts en amont et mesure ensuite les résultats dans les plateformes publicitaires."
+      ],
+      "avoidIf": [
+        "Tu cherches un outil qui suit les conversions et choisit automatiquement les publicités gagnantes.",
+        "Tu produis trop peu de vidéos pour tirer parti de crédits renouvelés chaque mois."
+      ],
+      "threshold": "Le forfait gratuit permet de tester le flux avec 3 crédits par mois. Avant de choisir Team ou Scale, compare les créations exportables et leur durée, car les volumes vidéo annoncés varient."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly produce ecommerce ads and want multiple creative directions from the same product assets.",
+        "Your team reviews concepts first and measures results in the advertising platforms afterward."
+      ],
+      "avoidIf": [
+        "You need a tool that tracks conversions and automatically picks winning ads.",
+        "You produce too few videos to use monthly recurring credits."
+      ],
+      "threshold": "The free plan lets you try the workflow with 3 credits per month. Before choosing Team or Scale, compare usable exports and duration because stated video volumes vary."
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-10-15",
+      "evidence": {
+        "valeurAjoutee": "Le flux relie les ressources produit aux angles, scripts et variations, avec revue humaine avant test. Source : getsprokl.com, 15 octobre 2026.",
+        "simplicite": "Le parcours annoncé suit trois étapes, des ressources produit aux variations prêtes à tester. La préparation des ressources et le choix des formats restent à la charge de l’équipe. Source : getsprokl.com, 15 octobre 2026.",
+        "utilisation": "Le forfait gratuit propose 3 crédits par mois ; les offres payantes portent ce quota à 60 ou 200 crédits. Le volume vidéo dépend de la durée. Source : getsprokl.com/pricing, 15 octobre 2026.",
+        "puissance": "Sprokl couvre angles, scripts et variations vidéo, mais ne mesure pas les résultats de campagne. Source : getsprokl.com, 15 octobre 2026.",
+        "reversibilite": "Les offres mentionnent les exports standard et sans filigrane. Les modalités de récupération des ressources importées ne sont pas détaillées sur les pages consultées. Source : getsprokl.com/pricing, 15 octobre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The workflow connects product assets to angles, scripts, and variations, with human review before testing. Source: getsprokl.com, October 15, 2026.",
+        "simplicite": "The stated flow has three steps, from product assets to test-ready variations. Preparing assets and choosing formats remain team tasks. Source: getsprokl.com, October 15, 2026.",
+        "utilisation": "Free includes 3 monthly credits; paid plans raise the allowance to 60 or 200. Video output depends on duration. Source: getsprokl.com/pricing, October 15, 2026.",
+        "puissance": "Sprokl covers angles, scripts, and video variations, but does not measure campaign results. Source: getsprokl.com, October 15, 2026.",
+        "reversibilite": "Plans mention standard and watermark-free exports. Recovery terms for imported assets are not detailed on the pages reviewed. Source: getsprokl.com/pricing, October 15, 2026."
+      }
+    },
+    "seo": {
+      "metaDescription": "Sprokl : avis, prix et crédits. Préparez des angles, scripts et variations vidéo pour vos publicités e-commerce, sans confondre création et mesure des performances.",
+      "metaDescriptionEn": "Sprokl review and pricing: prepare ecommerce ad angles, scripts, and video variations while keeping creative production separate from performance measurement.",
+      "idealForFr": "Une marque e-commerce ou petite équipe paid social qui veut décliner des ressources produit en créations publicitaires à tester.",
+      "idealForEn": "An ecommerce brand or small paid social team turning product assets into ad creatives to test."
+    }
   }
 ]

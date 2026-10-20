@@ -5869,3 +5869,8 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - Deux visuels produit officiels supplementaires et video officielle Kit de 1 min 27 : lecteur Wistia charge au clic, sans telechargement ni lecture automatique au chargement. Metadonnees VideoObject adaptees au fournisseur. Brevo, MailerLite, Beehiiv et Substack : positionnement et liens canoniques vers Kit ; anciens quotas, prix convertis et gains de temps non sources retires dans ce perimetre.
 - Comparatifs Mailchimp–Kit et Kit–GetResponse : guides FR/EN par scenario, etapes de test, sources et liens affilies via le template existant. Aucune promesse de hausse mesuree de conversion, aucun push inclus.
 
+## 2026-10-19 : publication des fiches locales restantes
+
+- Comparaison integrale du catalogue local avec GitHub : seules ViralSnap et Sprokl manquaient au catalogue public. Ajout des deux fiches FR/EN deja redigees, avec liens officiels nofollow et prix natifs documentes.
+- Regeneration de l'index de recherche, des routes, du sitemap et des fichiers LLM. Aucun ancien changement d'interface ni chantier catalogue non publie ajoute au lot.
+
