@@ -21,11 +21,15 @@ export default function StackAccountPanel() {
   const [nextSendAt, setNextSendAt] = useState(0);
   const [now, setNow] = useState(0);
   const [dismissLogout, setDismissLogout] = useState(false);
+  const [deleteOpen, setDeleteOpen] = useState(false);
   const trigger = useRef<HTMLButtonElement>(null);
   const emailInput = useRef<HTMLInputElement>(null);
   const codeInput = useRef<HTMLInputElement>(null);
   const interaction = useRef(0);
   const restoreTriggerFocus = useRef(false);
+  const deleteTrigger = useRef<HTMLButtonElement>(null);
+  const deleteConfirm = useRef<HTMLButtonElement>(null);
+  const restoreDeleteFocus = useRef(false);
   const seconds = Math.max(0, Math.ceil((nextSendAt - now) / 1000));
   const expired = account.syncStatus === "session-expired";
   const needsAuth = !account.user || expired;
@@ -36,6 +40,17 @@ export default function StackAccountPanel() {
   const candidate = getStackAccountLabel(account.user);
   const accountLabel = typeof candidate === "string" && candidate.trim() ? candidate
     : typeof account.user?.email === "string" ? account.user.email : t("Mon compte", "My account");
+
+  useEffect(() => {
+    interaction.current++;
+    setEmail(""); setSentTo(""); setCode(""); setLocalError(null); setBusy(null);
+    setStep("email"); setOpen(false); setDeleteOpen(false); setNextSendAt(0); setNow(0); setDismissLogout(false);
+  }, [account.user?.id, account.deletionConfirmed]);
+  useEffect(() => () => { interaction.current++; }, []);
+  useEffect(() => {
+    if (deleteOpen) deleteConfirm.current?.focus();
+    else if (restoreDeleteFocus.current) { restoreDeleteFocus.current = false; deleteTrigger.current?.focus(); }
+  }, [deleteOpen]);
 
   useEffect(() => {
     if (open) (step === "code" ? codeInput : emailInput).current?.focus();
@@ -63,6 +78,9 @@ export default function StackAccountPanel() {
       case "ACCOUNT_SESSION_INVALID": return t("Votre session a expiré. Reconnectez-vous pour enregistrer vos modifications.", "Your session expired. Sign in again to save your changes.");
       case "STACK_REVISION_CONFLICT": return t("Une autre version a été enregistrée. Choisissez la version à conserver.", "Another version was saved. Choose which version to keep.");
       case "ACCOUNT_SIGN_OUT_FAILED": return t("La déconnexion a échoué. Réessayez.", "Sign-out failed. Please try again.");
+      case "ACCOUNT_DELETION_FAILED": return t("La suppression n’a pas abouti. Vous pouvez réessayer ; votre compte reste protégé pendant la reprise.", "Deletion did not complete. You can retry; your account remains protected while you do.");
+      case "ACCOUNT_HAS_CONTRIBUTIONS": return t("Ce compte est lié à des contributions. La suppression est interrompue pour préserver leur historique. Contactez ToolTrim pour organiser la suite.", "This account is linked to contributions. Deletion is paused to preserve their history. Contact ToolTrim to arrange the next step.");
+      case "ACCOUNT_DELETION_UNCONFIRMED": return t("Votre session s’est terminée et la suppression n’a pas été confirmée. Vous pouvez effacer les données de cet appareil sans confirmer la suppression du compte.", "Your session ended and account deletion was not confirmed. You can clear this device without confirming remote account deletion.");
       default: return t("L’enregistrement est indisponible pour le moment. Votre sélection reste disponible sur cet appareil.", "Saving is unavailable right now. Your selection remains available on this device.");
     }
   }
@@ -119,11 +137,25 @@ export default function StackAccountPanel() {
         {account.user && <button type="button" className="ms-account-text-button" disabled={!!busy} onClick={() => { setDismissLogout(false); void run("logout", () => account.signOut()); }}>
           <LogOut size={16} aria-hidden />{t("Se déconnecter", "Sign out")}
         </button>}
+        {account.user && !expired && <button ref={deleteTrigger} type="button" className="ms-account-text-button" disabled={!!busy} aria-expanded={deleteOpen} aria-controls={`${id}-delete`}
+          onClick={() => setDeleteOpen(true)}>{t("Supprimer mon compte", "Delete my account")}</button>}
         {account.user && !expired && !account.pendingDraftChoice && !account.conflict && (account.syncStatus === "error" || account.syncStatus === "unsaved") &&
           <button type="button" className="tt-button-primary ms-account-button" disabled={!!busy} onClick={() => void run("retry", account.retry)}>{t("Réessayer", "Try again")}</button>}
       </div>
     </div>
     {error && <p id={`${id}-error`} className="ms-account-error" role="alert">{errorMessage(error)}</p>}
+    {account.deletionConfirmed && <p role="status">{t("Votre compte a été supprimé.", "Your account was deleted.")}</p>}
+    {account.privacyWarning && <p className="ms-account-error" role="alert">{account.privacyWarning === "ACCOUNT_LOCAL_RECOVERY_PENDING"
+      ? t("Certaines données locales n’ont pas encore pu être récupérées. Elles sont conservées sur cet appareil pour une nouvelle tentative.", "Some local data could not be recovered yet. It remains on this device for another attempt.")
+      : t("L’affichage personnel a été effacé, mais le navigateur a bloqué une partie du nettoyage. Effacez les données du site ToolTrim dans les réglages de votre navigateur avant de fermer cet appareil partagé.", "Your personal view was cleared, but the browser blocked part of the cleanup. Clear ToolTrim site data in your browser settings before leaving this shared device.")}</p>}
+    {error === "ACCOUNT_DELETION_UNCONFIRMED" && <button type="button" className="ms-account-outline-button" disabled={!!busy} onClick={() => void run("cleanup", account.clearLocalAccount)}>{t("Effacer les données de cet appareil", "Clear this device's data")}</button>}
+
+    {deleteOpen && account.user && <div id={`${id}-delete`} className="ms-account-choice" aria-labelledby={`${id}-delete-title`} aria-busy={!!busy}>
+      <h3 id={`${id}-delete-title`}>{t("Supprimer votre compte ?", "Delete your account?")}</h3>
+      <p>{t("Votre compte et sa stack enregistrée seront supprimés définitivement. Les modifications non enregistrées seront abandonnées.", "Your account and saved stack will be permanently deleted. Unsaved changes will be discarded.")}</p>
+      <div className="ms-account-actions"><button ref={deleteConfirm} type="button" className="ms-account-outline-button" disabled={!!busy} onClick={() => void run("delete", account.deleteAccount)}>{t("Supprimer définitivement mon compte", "Permanently delete my account")}</button>
+        <button type="button" className="ms-account-text-button" disabled={!!busy} onClick={() => { restoreDeleteFocus.current = true; setDeleteOpen(false); }}>{t("Conserver mon compte", "Keep my account")}</button></div>
+    </div>}
 
     {open && needsAuth && <div id={`${id}-auth`} className="ms-account-auth" aria-busy={!!busy}>
       {step === "email" ? <>

@@ -1,7 +1,7 @@
 import { useSyncExternalStore } from "react";
 import { toast } from "sonner";
 import { pinToolInState, unpinToolInState } from "@/lib/stackState";
-import { readPersonalStack, updatePersonalStack, subscribePersonalStack, getServerPersonalStack, getPersonalStackScope } from "@/lib/personalStackStore";
+import { readPersonalStack, updatePersonalStack, subscribePersonalStack, getServerPersonalStack, getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
 import { trackEvent } from "@/lib/analytics";
 
 /**
@@ -46,13 +46,14 @@ export function useStackDecisions(t: (fr: string, en: string) => string, formatS
   /** Removes `removed` (and adds `kept` when replacing), records the decision, offers undo. */
   function decide(kind: StackDecision["kind"], kept: { slug: string; name: string }, removed: { slug: string; name: string } | null, saving: number, source: Source, note?: string) {
     const scope = getPersonalStackScope();
+    const epoch = getPersonalStackScopeEpoch(scope);
     const keyBoth = pairKey(kept.slug, removed?.slug || "");
     trackEvent("stack_decision", { kind, source, kept: kept.slug, removed: removed?.slug, saving: Math.round(saving) });
     if (kind === "keep-both" || !removed) {
       updatePersonalStack(current => ({ ...current, decisions: { ...current.decisions, [keyBoth]: { kind: "keep-both", kept: kept.slug, saving: 0, savingCurrency: currency, at: new Date().toISOString() } } }));
       toast(note || t("Noté : vous gardez les deux.", "Noted: you keep both."), {
         duration: 5000,
-        action: { label: t("Annuler", "Undo"), onClick: () => { if (getPersonalStackScope() !== scope) return; forget(keyBoth); trackEvent("stack_decision_undo", { kind, source }); } },
+        action: { label: t("Annuler", "Undo"), onClick: () => { if (getPersonalStackScope() !== scope || getPersonalStackScopeEpoch(scope) !== epoch) return; forget(keyBoth); trackEvent("stack_decision_undo", { kind, source }); } },
       });
       return;
     }
@@ -75,7 +76,7 @@ export function useStackDecisions(t: (fr: string, en: string) => string, formatS
         label: t("Annuler", "Undo"),
         onClick: () => {
           // Toasts can outlive the page and the signed-in account.
-          if (getPersonalStackScope() !== scope) return;
+          if (getPersonalStackScope() !== scope || getPersonalStackScopeEpoch(scope) !== epoch) return;
           updatePersonalStack(current => {
             let selection = current.selection;
             if (entry && !selection.toolEntries.some(item => item.toolSlug === entry.toolSlug)) {

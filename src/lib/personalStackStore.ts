@@ -1,5 +1,5 @@
 import { normalizePersonalStack, type PersonalStackV4 } from "./personalStack";
-import { loadToolCartStateWithStatus, type StackPersistenceStatus } from "./stackState";
+import { LEGACY_STACK_STATE_STORAGE_KEYS, STACK_STATE_BACKUP_STORAGE_KEY, STACK_STATE_STORAGE_KEY, loadToolCartStateWithStatus, type StackPersistenceStatus } from "./stackState";
 
 export type PersonalStackScope = "anonymous" | string;
 const MIGRATED_KEY = "tooltrim-personal-stack-v4:anonymous-migrated";
@@ -14,10 +14,12 @@ type Snapshot = {
   raw: string | null | undefined;
   status: StackPersistenceStatus;
   dirty?: boolean;
+  purged?: boolean;
   // Undefined means the legacy base is known. An empty queue is still pending.
   pendingMigration?: StackUpdater[];
 };
 const memories = new Map<string, Snapshot>();
+const scopeEpochs = new Map<string, number>();
 const listeners = new Set<() => void>();
 let activeScope: PersonalStackScope = "anonymous";
 const serverState = normalizePersonalStack(null);
@@ -25,6 +27,7 @@ const serverStatus: StackPersistenceStatus = { state: "ok", source: "default" };
 export const getServerPersonalStack = () => serverState;
 export const getServerPersonalStackPersistenceStatus = () => serverStatus;
 export const getPersonalStackScope = () => activeScope;
+export const getPersonalStackScopeEpoch = (scope = activeScope) => scopeEpochs.get(scope) ?? 0;
 const notify = () => listeners.forEach(listener => listener());
 const failed = (issue: "storage-read-failed" | "storage-write-failed"): StackPersistenceStatus => ({ state: "degraded", source: "memory", issue });
 
@@ -79,6 +82,8 @@ function persistScope(scope: PersonalStackScope, state: PersonalStackV4, previou
 
 function readScope(scope: PersonalStackScope): Snapshot {
   let entry = memories.get(scope);
+  // A failed durable purge must never repopulate its cleared in-session view.
+  if (entry?.purged) return entry;
   if (typeof window === "undefined") return { state: serverState, raw: undefined, status: serverStatus };
   try {
     const storage = window.localStorage;
@@ -125,6 +130,7 @@ function readScope(scope: PersonalStackScope): Snapshot {
 }
 
 export function readPersonalStack(): PersonalStackV4 { return readScope(activeScope).state; }
+export function isAnonymousPersonalStackMigrationPending(): boolean { return readScope("anonymous").pendingMigration !== undefined; }
 export function getPersonalStackPersistenceStatus(): StackPersistenceStatus { return readScope(activeScope).status; }
 
 /** The future account coordinator owns this global lifecycle, independent of any page. */
@@ -165,6 +171,7 @@ export function updatePersonalStack(updater: StackUpdater): void {
 }
 
 export function clearPersonalStackScope(scope: PersonalStackScope): void {
+  scopeEpochs.set(scope, getPersonalStackScopeEpoch(scope) + 1);
   const entry: Snapshot = { state: normalizePersonalStack(null), raw: null, status: { state: "ok", source: "default" } };
   if (typeof window !== "undefined") {
     try {
@@ -173,10 +180,21 @@ export function clearPersonalStackScope(scope: PersonalStackScope): void {
       const raw = JSON.stringify(entry.state);
       storage.setItem(personalStackStorageKey(scope), raw); entry.raw = raw;
       storage.removeItem(backupKey(scope));
-    } catch { entry.raw = memories.get(scope)?.raw; entry.status = failed("storage-write-failed"); }
+    } catch { entry.raw = undefined; entry.purged = true; entry.status = failed("storage-write-failed"); }
   }
   memories.set(scope, entry);
   if (scope === activeScope) notify();
+}
+
+/** Called only once anonymous work has explicitly been consumed by an account. */
+export function purgeLegacyPersonalStackSources(): boolean {
+  if (typeof window === "undefined") return false;
+  let complete = true;
+  const keys = [STACK_STATE_STORAGE_KEY, STACK_STATE_BACKUP_STORAGE_KEY, ...LEGACY_STACK_STATE_STORAGE_KEYS,
+    "tooltrim-ma-stack-paid-plans-v1", "tooltrim-ma-stack-freemium-reviewed-v1", "tooltrim-ma-stack-plan-choices-v1", "tooltrim-ma-stack-decisions-v1"];
+  for (const key of keys) { try { window.localStorage.removeItem(key); } catch { complete = false; } }
+  try { window.localStorage.setItem(MIGRATED_KEY, "1"); } catch { complete = false; }
+  return complete;
 }
 
 function handleStorage(event: StorageEvent): void {

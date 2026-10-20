@@ -1,6 +1,6 @@
 import type { Session, SupabaseClient, User } from "@supabase/supabase-js";
 import { mergeAnonymousDraft, normalizePersonalStack, personalStackFingerprint, type PersonalStackRecord, type PersonalStackV4 } from "./personalStack";
-import { clearPersonalStackScope, getPersonalStackScope, personalStackStorageKey, readPersonalStack, replacePersonalStack, setPersonalStackScope, subscribePersonalStack } from "./personalStackStore";
+import { clearPersonalStackScope, getPersonalStackPersistenceStatus, getPersonalStackScope, isAnonymousPersonalStackMigrationPending, personalStackStorageKey, purgeLegacyPersonalStackSources, readPersonalStack, replacePersonalStack, setPersonalStackScope, subscribePersonalStack } from "./personalStackStore";
 import { deletePersonalAccount, loadPersonalStack, savePersonalStack, StackAccountApiError } from "./stackAccountApi";
 
 export type StackSyncStatus = "local" | "connecting" | "syncing" | "synced" | "unsaved" | "choice" | "conflict" | "session-expired" | "error";
@@ -10,6 +10,7 @@ export type AccountSnapshot = {
   user: User | null; syncStatus: StackSyncStatus; status: StackSyncStatus; error: string | null;
   pendingDraftChoice: DraftChoice | null; conflict: StackConflict | null; magicLinkSentTo: string | null;
   hasUnsavedChanges: boolean; signOutNeedsConfirmation: boolean;
+  deletionConfirmed: boolean; privacyWarning: string | null;
 };
 type SyncMetadata = { version: 1; owner: string; revision: number; fingerprint: string };
 type RequestScope = { owner: string; token: string; generation: number };
@@ -19,9 +20,11 @@ const empty = () => normalizePersonalStack(null);
 const fingerprint = personalStackFingerprint;
 const hasContent = (state: PersonalStackV4) => fingerprint(state) !== fingerprint(empty());
 export const accountSyncMetadataKey = (owner: string) => `${personalStackStorageKey(owner)}:sync`;
+const consumedDraftKey = (owner: string) => `${personalStackStorageKey(owner)}:consumed-anonymous`;
 export const INITIAL_ACCOUNT_SNAPSHOT: AccountSnapshot = {
   user: null, syncStatus: "local", status: "local", error: null, pendingDraftChoice: null,
   conflict: null, magicLinkSentTo: null, hasUnsavedChanges: false, signOutNeedsConfirmation: false,
+  deletionConfirmed: false, privacyWarning: null,
 };
 
 /** Same-origin known ToolTrim routes only; preserve permitted query and hash. */
@@ -48,6 +51,9 @@ export class StackAccountCoordinator {
   private ready = false;
   private applying = false;
   private inFlight = false;
+  private writeCompletion: Promise<void> | null = null;
+  private abandonedWrite: Promise<void> | null = null;
+  private deleting = false;
   private signingOut = false;
   private timer: ReturnType<typeof setTimeout> | undefined;
   private metadata: SyncMetadata | null = null;
@@ -86,11 +92,26 @@ export class StackAccountCoordinator {
   }
   private finishDraft() {
     if (!this.draft) return;
+    if (isAnonymousPersonalStackMigrationPending()) {
+      // A temporarily unreadable legacy base and its operation queue are still recoverable.
+      this.emit({ privacyWarning: "ACCOUNT_LOCAL_RECOVERY_PENDING" });
+      this.draft = null; this.clearDraftAfterSave = false; return;
+    }
+    let complete = true;
+    const owner = this.session?.user.id;
+    try { if (owner) window.localStorage.setItem(consumedDraftKey(owner), "1"); } catch { complete = false; }
     // Do not clear an anonymous draft another tab changed while this save ran.
     try {
       const raw = window.localStorage.getItem(personalStackStorageKey("anonymous"));
-      if (raw && fingerprint(normalizePersonalStack(JSON.parse(raw))) === fingerprint(this.draft)) clearPersonalStackScope("anonymous");
-    } catch { /* Retaining a draft is safer when its persistence cannot be checked. */ }
+      if (raw && fingerprint(normalizePersonalStack(JSON.parse(raw))) === fingerprint(this.draft)) {
+        clearPersonalStackScope("anonymous");
+        // Scope is private here; verify the anonymous tombstone directly without switching views.
+        const cleared = window.localStorage.getItem(personalStackStorageKey("anonymous"));
+        if (!cleared || hasContent(normalizePersonalStack(JSON.parse(cleared)))) complete = false;
+      }
+    } catch { complete = false; }
+    if (!purgeLegacyPersonalStackSources()) complete = false;
+    if (!complete) this.emit({ privacyWarning: "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
     this.draft = null; this.clearDraftAfterSave = false;
   }
 
@@ -124,6 +145,7 @@ export class StackAccountCoordinator {
     if (next?.user.is_anonymous) next = null;
     if (next && this.session?.user.id === next.user.id && this.session.access_token === next.access_token) return;
     this.generation++; this.cancelTimer(); this.inFlight = false; this.ready = false;
+    this.abandonedWrite = null; this.deleting = false;
     this.session = next;
     if (!next) {
       let owner = getPersonalStackScope();
@@ -142,7 +164,7 @@ export class StackAccountCoordinator {
     setPersonalStackScope(scope.owner);
     try { window.localStorage.setItem(ACTIVE_OWNER_KEY, scope.owner); } catch { /* Namespace remains isolated in memory. */ }
     this.metadata = this.readMetadata(scope.owner);
-    this.emit({ user: next.user, syncStatus: "connecting", error: null, pendingDraftChoice: null, conflict: null, signOutNeedsConfirmation: false, magicLinkSentTo: null });
+    this.emit({ user: next.user, syncStatus: "connecting", error: null, pendingDraftChoice: null, conflict: null, signOutNeedsConfirmation: false, magicLinkSentTo: null, deletionConfirmed: false });
     const loadingFingerprint = fingerprint(readPersonalStack());
     void this.hydrate(scope, loadingFingerprint);
   }
@@ -200,6 +222,9 @@ export class StackAccountCoordinator {
   private async saveCurrent(scope: RequestScope): Promise<boolean> {
     if (!this.current(scope) || this.inFlight || !this.ready || !this.metadata) return false;
     this.cancelTimer(); this.inFlight = true;
+    let finishWrite!: () => void;
+    const completion = new Promise<void>(resolve => { finishWrite = resolve; });
+    this.writeCompletion = completion;
     const submitted = readPersonalStack(); const submittedFingerprint = fingerprint(submitted);
     const revision = this.metadata.revision;
     this.emit({ syncStatus: "syncing", error: null, hasUnsavedChanges: true });
@@ -222,6 +247,8 @@ export class StackAccountCoordinator {
       return true;
     } catch (cause) { if (this.current(scope)) this.fail(cause); return false; }
     finally {
+      finishWrite();
+      if (this.writeCompletion === completion) this.writeCompletion = null;
       if (this.current(scope)) {
         this.inFlight = false;
         // Read the whole current store again: an edit may have happened during either request.
@@ -264,6 +291,11 @@ export class StackAccountCoordinator {
   retry = async (): Promise<boolean> => {
     const scope = this.scope(); if (!scope || !this.current(scope)) return false;
     if (this.snapshot.conflict || this.snapshot.pendingDraftChoice) return false;
+    if (this.abandonedWrite) {
+      await this.abandonedWrite;
+      if (!this.current(scope)) return false;
+      this.abandonedWrite = null;
+    }
     this.ready = false; await this.hydrate(scope, fingerprint(readPersonalStack()));
     return this.snapshot.syncStatus !== "error" && this.snapshot.syncStatus !== "session-expired";
   };
@@ -300,26 +332,81 @@ export class StackAccountCoordinator {
     if (!this.enabled) return false;
     if (this.snapshot.hasUnsavedChanges && !options.discardUnsaved) { this.emit({ signOutNeedsConfirmation: true }); return false; }
     const owner = this.session?.user.id ?? (getPersonalStackScope() !== "anonymous" ? getPersonalStackScope() : null);
+    const abandoned = this.writeCompletion;
+    this.ready = false; this.inFlight = false;
     this.generation++; this.cancelTimer(); this.signingOut = true;
     const generation = this.generation;
     try {
-      const { error } = await this.auth.signOut();
+      const { error } = await this.auth.signOut({ scope: "local" });
       if (!this.running || this.generation !== generation || (owner && getPersonalStackScope() !== owner)) return false;
       if (error) throw error;
-      this.session = null; this.ready = false; this.inFlight = false; this.draft = null;
-      if (owner) { clearPersonalStackScope(owner); try { window.localStorage.removeItem(accountSyncMetadataKey(owner)); } catch { /* Session stays cleared. */ } }
-      clearPersonalStackScope("anonymous"); setPersonalStackScope("anonymous");
-      try { window.localStorage.removeItem(ACTIVE_OWNER_KEY); } catch { /* Private scopes still cannot become drafts. */ }
-      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT }); return true;
-    } catch { if (this.running && this.generation === generation) this.emit({ syncStatus: "error", error: "ACCOUNT_SIGN_OUT_FAILED" }); return false; }
+      const complete = this.purgeOwner(owner);
+      this.session = null; this.metadata = null; this.draft = null;
+      setPersonalStackScope("anonymous");
+      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" }); return true;
+    } catch {
+      if (this.running && this.generation === generation) {
+        this.abandonedWrite = abandoned; this.inFlight = false; this.ready = false;
+        this.emit({ syncStatus: "error", error: "ACCOUNT_SIGN_OUT_FAILED" });
+      }
+      return false;
+    }
     finally { this.signingOut = false; }
   };
   deleteAccount = async (): Promise<boolean> => {
-    const scope = this.scope(); if (!scope || !this.current(scope)) return false;
-    try { await deletePersonalAccount(scope.token); }
-    catch (cause) { if (this.current(scope)) this.fail(cause); return false; }
-    // Task 6 supplies the deletion lifecycle and purge. Never present this prepared interface as complete.
-    if (this.current(scope)) this.emit({ syncStatus: "error", error: "ACCOUNT_DELETION_UNAVAILABLE" });
-    return false;
+    if (this.deleting || !this.scope()) return false;
+    this.generation++; this.cancelTimer(); this.ready = false; this.inFlight = false; this.deleting = true;
+    const scope = this.scope()!;
+    this.emit({ syncStatus: "syncing", error: null, deletionConfirmed: false, hasUnsavedChanges: true });
+    try {
+      await deletePersonalAccount(scope.token);
+      if (!this.current(scope)) return false;
+      let complete = true;
+      this.signingOut = true;
+      try { const result = await this.auth.signOut({ scope: "local" }); if (result.error) complete = false; }
+      catch { complete = false; }
+      finally { this.signingOut = false; }
+      if (!this.current(scope)) return false;
+      if (!this.purgeOwner(scope.owner)) complete = false;
+      this.session = null; this.metadata = null; this.draft = null; setPersonalStackScope("anonymous");
+      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, deletionConfirmed: true, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
+      return true;
+    } catch (cause) {
+      if (this.current(scope)) {
+        this.fail(cause);
+        if (cause instanceof StackAccountApiError && cause.status === 401) this.emit({ error: "ACCOUNT_DELETION_UNCONFIRMED" });
+      }
+      return false;
+    } finally { if (this.generation === scope.generation) this.deleting = false; }
+  };
+
+  private purgeOwner(owner: string | null): boolean {
+    let complete = true;
+    if (owner) {
+      clearPersonalStackScope(owner);
+      if (getPersonalStackPersistenceStatus().state === "degraded") complete = false;
+      try { if (window.localStorage.getItem(consumedDraftKey(owner)) === "1" && !purgeLegacyPersonalStackSources()) complete = false; }
+      catch { complete = false; }
+      for (const key of [accountSyncMetadataKey(owner), consumedDraftKey(owner)]) {
+        try { window.localStorage.removeItem(key); } catch { complete = false; }
+      }
+    }
+    try { window.localStorage.removeItem(ACTIVE_OWNER_KEY); } catch { complete = false; }
+    return complete;
+  }
+
+  /** Privacy-only fallback after an unconfirmed deletion/session loss; never asserts remote deletion. */
+  clearLocalAccount = async (): Promise<boolean> => {
+    const owner = getPersonalStackScope() === "anonymous" ? null : getPersonalStackScope();
+    this.generation++; const generation = this.generation; this.cancelTimer(); this.ready = false; this.inFlight = false;
+    let complete = true; this.signingOut = true;
+    try { const result = await this.auth.signOut({ scope: "local" }); if (result.error) complete = false; }
+    catch { complete = false; }
+    finally { this.signingOut = false; }
+    if (!this.running || this.generation !== generation || (owner && getPersonalStackScope() !== owner)) return false;
+    if (!this.purgeOwner(owner)) complete = false;
+    this.session = null; this.metadata = null; this.draft = null; setPersonalStackScope("anonymous");
+    this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
+    return complete;
   };
 }

@@ -15,6 +15,17 @@ beforeEach(() => {
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 const t = (fr: string) => fr;
 
+it("does not let an old removal undo revive a purged scope after reconnecting the same account", async () => {
+  const store = await import("@/lib/personalStackStore");
+  const { useStackPins } = await import("./useStackPins");
+  store.setPersonalStackScope("A"); const pins = renderHook(useStackPins);
+  act(() => pins.result.current.pinTool("private"));
+  const entry = pins.result.current.state.toolEntries[0]; const restore = pins.result.current.restoreTool;
+  act(() => { pins.result.current.unpinTool("private"); store.clearPersonalStackScope("A"); store.setPersonalStackScope("anonymous"); store.setPersonalStackScope("A"); });
+  act(() => restore(entry, 0));
+  expect(store.readPersonalStack().selection.pinnedToolSlugs).toEqual([]);
+});
+
 it("shares one scope across all existing hook APIs and non-React plan lookup", async () => {
   const store = await import("@/lib/personalStackStore");
   const { useStackPins } = await import("./useStackPins");

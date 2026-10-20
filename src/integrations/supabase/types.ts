@@ -624,6 +624,10 @@ export type Database = {
         Args: { p_owner: string; p_session: string }
         Returns: undefined
       }
+      personal_account_has_contributions: {
+        Args: { p_owner: string; p_session: string }
+        Returns: boolean
+      }
       accounts_dashboard: {
         Args: { p_admin: string; p_session: string; p_query?: Json }
         Returns: Json

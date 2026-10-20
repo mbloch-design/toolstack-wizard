@@ -21,6 +21,24 @@ afterEach(() => { unsubscribe(); vi.restoreAllMocks(); });
 
 // Each case guards a concrete loss/leak boundary, using the actual browser store.
 describe("personal stack scope store", () => {
+  it("keeps a cleared unvisited scope empty in memory when browser cleanup is denied", async () => {
+    const store = await import("./personalStackStore");
+    storage.setItem(store.personalStackStorageKey("unvisited"), JSON.stringify(draft("private")));
+    blocked = true; store.clearPersonalStackScope("unvisited"); store.setPersonalStackScope("unvisited");
+    expect(store.readPersonalStack().selection.pinnedToolSlugs).toEqual([]);
+    expect(store.getPersonalStackPersistenceStatus().state).toBe("degraded");
+  });
+
+  it("purges consumed migration sources and backups while preserving an unrelated authoritative anonymous draft", async () => {
+    const store = await import("./personalStackStore");
+    store.replacePersonalStack(draft("later-anonymous"));
+    for (const key of [STACK_STATE_STORAGE_KEY, `${STACK_STATE_STORAGE_KEY}-backup`, "tooltrim-ma-stack-paid-plans-v1", "tooltrim-ma-stack-decisions-v1"]) storage.setItem(key, "old-private-source");
+    expect(store.purgeLegacyPersonalStackSources()).toBe(true);
+    expect(storage.getItem(STACK_STATE_STORAGE_KEY)).toBeNull();
+    expect(storage.getItem(`${STACK_STATE_STORAGE_KEY}-backup`)).toBeNull();
+    expect(store.readPersonalStack().selection.pinnedToolSlugs).toEqual(["later-anonymous"]);
+  });
+
   it("imports all legacy anonymous declarations once, then ignores stale keys on reload", async () => {
     storage.setItem(STACK_STATE_STORAGE_KEY, JSON.stringify(pinToolInState(createDefaultToolCartState(), "notion")));
     storage.setItem("tooltrim-ma-stack-paid-plans-v1", '["notion"]');

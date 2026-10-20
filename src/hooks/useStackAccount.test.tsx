@@ -286,6 +286,84 @@ describe("global personal account coordinator", () => {
     expect(mocks.signOut).not.toHaveBeenCalled();
   });
 
+  it("purges the complete account cache after confirmed deletion and ignores a late save", async () => {
+    const saved = state("private"); saved.billing.paid = ["private"]; saved.billing.choices.private = { source: "custom", amount: 12, currency: "EUR", period: "monthly" };
+    saved.decisions["old|private"] = { kind: "replace", kept: "private", removed: "old", saving: 5, at };
+    mocks.load.mockResolvedValue(record(saved)); mocks.remove.mockResolvedValue(undefined);
+    const saving = deferred<PersonalStackRecord>(); mocks.save.mockReturnValue(saving.promise);
+    const hook = mount(); await settle(); await login(session());
+    act(() => replacePersonalStack({ ...saved, selection: state("private", "new").selection })); await tick();
+    await act(async () => { expect(await hook.result.current.deleteAccount()).toBe(true); });
+    expect(hook.result.current.deletionConfirmed).toBe(true); expect(hook.result.current.user).toBeNull();
+    expect(getPersonalStackScope()).toBe("anonymous"); expect(readPersonalStack()).toEqual(state());
+    expect(window.localStorage.getItem(`${personalStackStorageKey("A")}:backup`)).toBeNull();
+    expect(window.localStorage.getItem(`${personalStackStorageKey("A")}:sync`)).toBeNull();
+    await act(async () => { saving.resolve(record(saved, 2)); });
+    expect(readPersonalStack()).toEqual(state());
+    mocks.load.mockResolvedValue(null); await login(session("recreated")); await tick();
+    expect(readPersonalStack()).toEqual(state()); expect(hook.result.current.pendingDraftChoice).toBeNull();
+  });
+
+  it("purges consumed legacy sources on import and preserves a later unrelated anonymous draft on logout", async () => {
+    replacePersonalStack(state("original"));
+    window.localStorage.setItem("tooltrim-ma-stack-mvp-v3", JSON.stringify(state("original").selection));
+    window.localStorage.setItem("tooltrim-ma-stack-mvp-v3-backup", JSON.stringify(state("original").selection));
+    window.localStorage.setItem("tooltrim-ma-stack-paid-plans-v1", '["original"]');
+    const hook = mount(); await settle(); await login(session()); await tick();
+    expect(window.localStorage.getItem("tooltrim-ma-stack-mvp-v3")).toBeNull();
+    expect(window.localStorage.getItem("tooltrim-ma-stack-mvp-v3-backup")).toBeNull();
+    expect(window.localStorage.getItem("tooltrim-ma-stack-paid-plans-v1")).toBeNull();
+    window.localStorage.setItem(personalStackStorageKey("anonymous"), JSON.stringify(state("later-unrelated")));
+    await act(async () => { expect(await hook.result.current.signOut()).toBe(true); });
+    expect(readPersonalStack().selection.pinnedToolSlugs).toEqual(["later-unrelated"]);
+  });
+
+  it("does not claim durable cleanup when browser storage rejects a confirmed deletion purge", async () => {
+    mocks.load.mockResolvedValue(record(state("private"))); mocks.remove.mockResolvedValue(undefined);
+    const hook = mount(); await settle(); await login(session());
+    vi.spyOn(window.localStorage, "setItem").mockImplementation(() => { throw new Error("denied"); });
+    vi.spyOn(window.localStorage, "removeItem").mockImplementation(() => { throw new Error("denied"); });
+    await act(async () => { expect(await hook.result.current.deleteAccount()).toBe(true); });
+    expect(hook.result.current.deletionConfirmed).toBe(true);
+    expect(hook.result.current.privacyWarning).toBe("ACCOUNT_LOCAL_CLEANUP_INCOMPLETE");
+    expect(readPersonalStack()).toEqual(state());
+    act(() => setPersonalStackScope("A")); expect(readPersonalStack()).toEqual(state());
+  });
+
+  it("allows deletion retry after provider failure and never autosaves the deleting account", async () => {
+    mocks.load.mockResolvedValue(record(state("private"))); mocks.remove.mockRejectedValueOnce(new StackAccountApiError(503, "ACCOUNT_DELETION_FAILED")).mockResolvedValueOnce(undefined);
+    const hook = mount(); await settle(); await login(session());
+    await act(async () => { expect(await hook.result.current.deleteAccount()).toBe(false); });
+    expect(getPersonalStackScope()).toBe("A"); expect(readPersonalStack().selection.pinnedToolSlugs).toEqual(["private"]);
+    act(() => replacePersonalStack(state("still-local"))); await tick(); expect(mocks.save).not.toHaveBeenCalled();
+    await act(async () => { expect(await hook.result.current.deleteAccount()).toBe(true); });
+    expect(hook.result.current.deletionConfirmed).toBe(true);
+  });
+
+  it("keeps a lost deletion acknowledgement unconfirmed after 401 and offers separate local cleanup", async () => {
+    mocks.load.mockResolvedValue(record(state("private"))); mocks.remove.mockRejectedValueOnce(new StackAccountApiError(0, "STACK_ACCOUNT_NETWORK_ERROR")).mockRejectedValueOnce(new StackAccountApiError(401, "ACCOUNT_SESSION_INVALID"));
+    const hook = mount(); await settle(); await login(session());
+    await act(async () => { expect(await hook.result.current.deleteAccount()).toBe(false); });
+    await act(async () => { expect(await hook.result.current.deleteAccount()).toBe(false); });
+    expect(hook.result.current.deletionConfirmed).toBe(false); expect(hook.result.current.error).toBe("ACCOUNT_DELETION_UNCONFIRMED");
+    await act(async () => { await hook.result.current.clearLocalAccount(); });
+    expect(hook.result.current.deletionConfirmed).toBe(false); expect(hook.result.current.user).toBeNull(); expect(readPersonalStack()).toEqual(state());
+  });
+
+  it.each(["success", "failure"])("recovers a failed sign-out with a pending PUT after its late %s without reload", async outcome => {
+    const pending = deferred<PersonalStackRecord>();
+    mocks.load.mockResolvedValueOnce(record(state("base"), 1)).mockResolvedValueOnce(record(state(outcome === "success" ? "pending" : "base"), outcome === "success" ? 2 : 1));
+    mocks.save.mockReturnValueOnce(pending.promise); mocks.signOut.mockResolvedValueOnce({ error: new Error("sign-out unavailable") });
+    const hook = mount(); await settle(); await login(session());
+    act(() => replacePersonalStack(state("pending"))); await tick();
+    await act(async () => { expect(await hook.result.current.signOut({ discardUnsaved: true })).toBe(false); });
+    await act(async () => { if (outcome === "success") pending.resolve(record(state("pending"), 2)); else pending.reject(new StackAccountApiError(0, "STACK_ACCOUNT_NETWORK_ERROR")); });
+    await act(async () => { await hook.result.current.retry(); }); await tick();
+    act(() => replacePersonalStack(state("after-recovery"))); await tick();
+    expect(mocks.save).toHaveBeenLastCalledWith("token-A", expect.objectContaining({ state: expect.objectContaining({ selection: expect.objectContaining({ pinnedToolSlugs: ["after-recovery"] }) }) }));
+    expect(hook.result.current.syncStatus).toBe("synced"); expect(getPersonalStackScope()).toBe("A");
+  });
+
   it("retains unsaved private state until logout is explicitly confirmed", async () => {
     mocks.load.mockResolvedValue(record(state("saved")));
     const hook = mount(); await settle(); await login(session());
@@ -294,6 +372,7 @@ describe("global personal account coordinator", () => {
     expect(hook.result.current.signOutNeedsConfirmation).toBe(true); expect(mocks.signOut).not.toHaveBeenCalled();
     expect(readPersonalStack().selection.pinnedToolSlugs).toEqual(["unsaved"]);
     await act(async () => { expect(await hook.result.current.signOut({ discardUnsaved: true })).toBe(true); });
+    expect(mocks.signOut).toHaveBeenCalledWith({ scope: "local" });
     expect(getPersonalStackScope()).toBe("anonymous"); expect(readPersonalStack().selection.pinnedToolSlugs).toEqual([]);
   });
 

@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import { httpFixture } from "./http";
 import { normalizePersonalStack } from "../../src/lib/personalStack";
 
-const mocks = vi.hoisted(() => ({ getUser: vi.fn(), rpc: vi.fn(), createClient: vi.fn() }));
+const mocks = vi.hoisted(() => ({ getUser: vi.fn(), deleteUser: vi.fn(), rpc: vi.fn(), createClient: vi.fn() }));
 vi.mock("@supabase/supabase-js", () => ({ createClient: mocks.createClient }));
 import handler from "../../api/stack-account";
 
@@ -22,9 +22,10 @@ beforeEach(() => {
   vi.stubEnv("STACK_ACCOUNT_ENABLED", "true");
   vi.stubEnv("SUPABASE_URL", "https://example.supabase.co");
   vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "server-only-fixture");
-  mocks.createClient.mockReturnValue({ auth: { getUser: mocks.getUser }, rpc: mocks.rpc });
+  mocks.createClient.mockReturnValue({ auth: { getUser: mocks.getUser, admin: { deleteUser: mocks.deleteUser } }, rpc: mocks.rpc });
+  mocks.deleteUser.mockResolvedValue({ data: null, error: null });
   mocks.getUser.mockResolvedValue({ data: { user: { id: owner, email: "owner@example.test", email_confirmed_at: "2026-10-19T12:00:00Z", is_anonymous: false } }, error: null });
-  mocks.rpc.mockImplementation(async (name: string) => ({ data: name === "require_account_session" ? null : record, error: null }));
+  mocks.rpc.mockImplementation(async (name: string) => ({ data: name === "personal_account_has_contributions" ? false : name === "require_account_session" || name === "begin_personal_account_deletion" ? null : record, error: null }));
 });
 
 describe("personal stack HTTP boundary", () => {
@@ -165,11 +166,50 @@ describe("personal stack HTTP boundary", () => {
     expect(mocks.rpc).toHaveBeenCalledWith("save_personal_stack", expect.objectContaining({ p_expected_revision: 0 }));
   });
 
-  it("does not expose deletion until the lifecycle is implemented", async () => {
+  it("deletes an ordinary account only after session verification, barrier and history protection", async () => {
     const fixture = request(undefined, "DELETE");
     await handler(fixture.req, fixture.res);
+    expect(fixture.res.statusCode).toBe(204);
+    expect(mocks.rpc.mock.calls.map(([name]) => name)).toEqual(["require_account_session", "begin_personal_account_deletion", "personal_account_has_contributions"]);
+    expect(mocks.deleteUser).toHaveBeenCalledWith(owner);
+    expect(mocks.deleteUser.mock.invocationCallOrder[0]).toBeGreaterThan(mocks.rpc.mock.invocationCallOrder[2]);
+  });
+
+  it("retains contribution history and never invokes Auth deletion for a referenced account", async () => {
+    mocks.rpc.mockImplementation(async (name: string) => ({ data: name === "personal_account_has_contributions" ? true : null, error: null }));
+    const fixture = request(undefined, "DELETE");
+    await handler(fixture.req, fixture.res);
+    expect(fixture.res.statusCode).toBe(409);
+    expect(fixture.body).toEqual({ error: { code: "ACCOUNT_HAS_CONTRIBUTIONS" } });
+    expect(mocks.deleteUser).not.toHaveBeenCalled();
+  });
+
+  it("leaves a provider failure resumable and only returns 204 on the successful retry", async () => {
+    mocks.deleteUser.mockResolvedValueOnce({ error: { status: 500, message: "provider details secret" } });
+    const first = request(undefined, "DELETE");
+    await handler(first.req, first.res);
+    expect(first.res.statusCode).toBe(503);
+    expect(first.body).toEqual({ error: { code: "ACCOUNT_DELETION_FAILED" } });
+    const retry = request(undefined, "DELETE"); await handler(retry.req, retry.res);
+    expect(retry.res.statusCode).toBe(204);
+    expect(mocks.rpc.mock.calls.filter(([name]) => name === "begin_personal_account_deletion")).toHaveLength(2);
+    expect(mocks.deleteUser).toHaveBeenCalledTimes(2);
+  });
+
+  it("reports a concurrent contribution FK failure without removing history or leaking details", async () => {
+    mocks.deleteUser.mockResolvedValue({ error: { code: "23503", message: "private table secret" } });
+    const fixture = request(undefined, "DELETE"); await handler(fixture.req, fixture.res);
+    expect(fixture.res.statusCode).toBe(409);
+    expect(fixture.body).toEqual({ error: { code: "ACCOUNT_HAS_CONTRIBUTIONS" } });
+  });
+
+  it("never deletes on history-check failure or revoked session", async () => {
+    mocks.rpc.mockImplementation(async (name: string) => ({ data: null, error: name === "personal_account_has_contributions" ? { code: "XX000", message: "private DB details" } : null }));
+    const fixture = request(undefined, "DELETE"); await handler(fixture.req, fixture.res);
     expect(fixture.res.statusCode).toBe(503);
-    expect(fixture.body).toEqual({ error: { code: "ACCOUNT_DELETION_UNAVAILABLE" } });
-    expect(mocks.createClient).not.toHaveBeenCalled();
+    expect(mocks.deleteUser).not.toHaveBeenCalled();
+    mocks.getUser.mockResolvedValue({ data: { user: null }, error: { status: 401 } });
+    const revoked = request(undefined, "DELETE"); await handler(revoked.req, revoked.res);
+    expect(revoked.res.statusCode).toBe(401); expect(mocks.deleteUser).not.toHaveBeenCalled();
   });
 });

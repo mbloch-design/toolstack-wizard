@@ -23,7 +23,7 @@ export type { StackNeed, StackPersistenceStatus, StackToolEntry, StackToolIntent
 
 import {
   readPersonalStack, updatePersonalStack, subscribePersonalStack,
-  getPersonalStackPersistenceStatus, getServerPersonalStack, getServerPersonalStackPersistenceStatus, getPersonalStackScope,
+  getPersonalStackPersistenceStatus, getServerPersonalStack, getServerPersonalStackPersistenceStatus, getPersonalStackScope, getPersonalStackScopeEpoch,
 } from "@/lib/personalStackStore";
 
 const getSelection = () => readPersonalStack().selection;
@@ -58,16 +58,17 @@ export function useStackPins() {
   }, []);
 
   const scope = getPersonalStackScope();
+  const epoch = getPersonalStackScopeEpoch(scope);
   const restoreTool = useCallback((entry: ToolCartState["toolEntries"][number], index: number) => {
     // CartPage's removal toast retains this callback from its originating render.
-    if (getPersonalStackScope() !== scope) return;
+    if (getPersonalStackScope() !== scope || getPersonalStackScopeEpoch(scope) !== epoch) return;
     updateToolCartState((current) => {
       if (current.toolEntries.some((item) => item.toolSlug === entry.toolSlug)) return current;
       const toolEntries = [...current.toolEntries];
       toolEntries.splice(Math.min(index, toolEntries.length), 0, entry);
       return { ...current, toolEntries, pinnedToolSlugs: toolEntries.map((item) => item.toolSlug) };
     });
-  }, [scope]);
+  }, [scope, epoch]);
 
   const saveToolSelection = useCallback((slug: string, needIds: string[], intent: StackToolIntent) => {
     // The confirm step of the "Enregistrer l'outil" dialog — the actual path

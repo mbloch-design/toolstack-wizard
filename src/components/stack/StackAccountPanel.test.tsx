@@ -13,9 +13,10 @@ vi.mock("@/hooks/useStackAccount", () => ({
   getStackAccountLabel: (value: StackAccountContext["user"]) => value?.user_metadata?.full_name || value?.email || null,
 }));
 const user = { id: "A", aud: "authenticated", role: "authenticated", email: "person@example.com", app_metadata: {}, user_metadata: {}, created_at: "2026-10-19T00:00:00Z" };
-function view(lang: "fr" | "en" = "fr", route = `/${lang}/ma-stack?outil=notion#ms-list`) {
-  return render(<MemoryRouter initialEntries={[route]}><LangContext.Provider value={{ lang, prefix: `/${lang}`, t: (fr, en) => lang === "en" ? en : fr }}><StackAccountPanel /></LangContext.Provider></MemoryRouter>);
+function content(lang: "fr" | "en" = "fr", route = `/${lang}/ma-stack?outil=notion#ms-list`) {
+  return <MemoryRouter initialEntries={[route]}><LangContext.Provider value={{ lang, prefix: `/${lang}`, t: (fr, en) => lang === "en" ? en : fr }}><StackAccountPanel /></LangContext.Provider></MemoryRouter>;
 }
+function view(lang: "fr" | "en" = "fr", route = `/${lang}/ma-stack?outil=notion#ms-list`) { return render(content(lang, route)); }
 async function click(name: string) { await act(async () => { fireEvent.click(screen.getByRole("button", { name })); }); }
 async function sendCode() {
   await click("Enregistrer ma stack");
@@ -26,16 +27,68 @@ beforeEach(() => {
   vi.useFakeTimers();
   account = {
     enabled: true, user: null, syncStatus: "local", status: "local", error: null, pendingDraftChoice: null, conflict: null,
-    magicLinkSentTo: null, hasUnsavedChanges: false, signOutNeedsConfirmation: false,
+    magicLinkSentTo: null, hasUnsavedChanges: false, signOutNeedsConfirmation: false, deletionConfirmed: false, privacyWarning: null,
     signInWithGoogle: vi.fn().mockResolvedValue(true), sendEmailCode: vi.fn().mockResolvedValue(true), sendMagicLink: vi.fn().mockResolvedValue(true),
     verifyEmailCode: vi.fn().mockResolvedValue(true), loadSaved: vi.fn().mockResolvedValue(true), addDraft: vi.fn().mockResolvedValue(true),
     reloadLatest: vi.fn().mockResolvedValue(true), keepCurrent: vi.fn().mockResolvedValue(true), retry: vi.fn().mockResolvedValue(true),
-    signOut: vi.fn().mockResolvedValue(true), deleteAccount: vi.fn().mockResolvedValue(false),
+    signOut: vi.fn().mockResolvedValue(true), deleteAccount: vi.fn().mockResolvedValue(false), clearLocalAccount: vi.fn().mockResolvedValue(true),
   };
 });
 afterEach(() => { cleanup(); vi.useRealTimers(); });
 
 describe("inline personal account panel", () => {
+  it.each(["fr", "en"] as const)("requires explicit account deletion confirmation and supports cancel in %s", async lang => {
+    account.user = user; account.syncStatus = "synced";
+    view(lang);
+    const trigger = lang === "fr" ? "Supprimer mon compte" : "Delete my account";
+    const confirm = lang === "fr" ? "Supprimer définitivement mon compte" : "Permanently delete my account";
+    await click(trigger); expect(account.deleteAccount).not.toHaveBeenCalled();
+    expect(screen.getByRole("button", { name: confirm })).toHaveFocus();
+    await click(lang === "fr" ? "Conserver mon compte" : "Keep my account");
+    expect(screen.getByRole("button", { name: trigger })).toHaveFocus();
+    await click(trigger); await click(confirm);
+    expect(account.deleteAccount).toHaveBeenCalledTimes(1);
+  });
+
+  it("resets private email/code state across account switching and logout", async () => {
+    const mounted = view(); await sendCode();
+    fireEvent.change(screen.getByLabelText("Code reçu par e-mail"), { target: { value: "123456" } });
+    account = { ...account, user, syncStatus: "synced" }; mounted.rerender(content());
+    account = { ...account, user: { ...user, id: "B", email: "b@example.test" } }; mounted.rerender(content());
+    account = { ...account, user: null, syncStatus: "local" }; mounted.rerender(content());
+    await click("Enregistrer ma stack");
+    expect(screen.getByLabelText("Adresse e-mail")).toHaveValue("");
+    expect(screen.queryByLabelText("Code reçu par e-mail")).not.toBeInTheDocument();
+    expect(screen.queryByText(/person@example.com/)).not.toBeInTheDocument();
+  });
+
+  it("does not expose a late old email-code failure in the next account", async () => {
+    let finish!: (value: boolean) => void;
+    account.sendEmailCode = vi.fn().mockImplementation(() => new Promise<boolean>(resolve => { finish = resolve; }));
+    const mounted = view(); await click("Enregistrer ma stack");
+    fireEvent.change(screen.getByLabelText("Adresse e-mail"), { target: { value: "private-a@example.test" } });
+    await click("Recevoir un code");
+    account = { ...account, user: { ...user, id: "B" }, syncStatus: "synced" }; mounted.rerender(content());
+    await act(async () => { finish(false); });
+    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+  });
+
+  it("distinguishes unconfirmed remote deletion from explicit device cleanup", async () => {
+    account.user = user; account.syncStatus = "session-expired"; account.error = "ACCOUNT_DELETION_UNCONFIRMED";
+    view();
+    expect(screen.getByRole("alert")).toHaveTextContent("suppression n’a pas été confirmée");
+    await click("Effacer les données de cet appareil");
+    expect(account.clearLocalAccount).toHaveBeenCalledTimes(1); expect(account.deleteAccount).not.toHaveBeenCalled();
+    expect(screen.queryByText("Votre compte a été supprimé.")).not.toBeInTheDocument();
+  });
+
+  it("explains remaining browser cleanup after confirmed remote deletion without claiming local erasure", () => {
+    account.deletionConfirmed = true; account.privacyWarning = "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE";
+    view();
+    expect(screen.getByText("Votre compte a été supprimé.")).toBeInTheDocument();
+    expect(screen.getByRole("alert")).toHaveTextContent("réglages de votre navigateur");
+  });
+
   it("remains hidden when account activation is disabled", () => {
     account.enabled = false; view(); expect(screen.queryByRole("button", { name: "Enregistrer ma stack" })).not.toBeInTheDocument();
   });

@@ -7,7 +7,7 @@ import type { ToolCartState } from "@/lib/stackState";
 export type { StackSyncStatus, DraftChoice, StackConflict } from "@/lib/stackAccountCoordinator";
 export { getStackAccountReturnUrl } from "@/lib/stackAccountCoordinator";
 
-type Actions = Pick<StackAccountCoordinator, "loadSaved" | "addDraft" | "reloadLatest" | "keepCurrent" | "retry" | "signInWithGoogle" | "sendEmailCode" | "verifyEmailCode" | "signOut" | "deleteAccount">;
+type Actions = Pick<StackAccountCoordinator, "loadSaved" | "addDraft" | "reloadLatest" | "keepCurrent" | "retry" | "signInWithGoogle" | "sendEmailCode" | "verifyEmailCode" | "signOut" | "deleteAccount" | "clearLocalAccount">;
 export type StackAccountContext = AccountSnapshot & Actions & { enabled: boolean; sendMagicLink: Actions["sendEmailCode"] };
 const Context = createContext<StackAccountContext | null>(null);
 
@@ -20,7 +20,7 @@ export function StackAccountProvider({ children, enabled = STACK_ACCOUNT_ENABLED
     loadSaved: coordinator.loadSaved, addDraft: coordinator.addDraft, reloadLatest: coordinator.reloadLatest,
     keepCurrent: coordinator.keepCurrent, retry: coordinator.retry, signInWithGoogle: coordinator.signInWithGoogle,
     sendEmailCode: coordinator.sendEmailCode, sendMagicLink: coordinator.sendEmailCode,
-    verifyEmailCode: coordinator.verifyEmailCode, signOut: coordinator.signOut, deleteAccount: coordinator.deleteAccount,
+    verifyEmailCode: coordinator.verifyEmailCode, signOut: coordinator.signOut, deleteAccount: coordinator.deleteAccount, clearLocalAccount: coordinator.clearLocalAccount,
   }), [coordinator, snapshot]);
   return createElement(Context.Provider, { value }, children);
 }

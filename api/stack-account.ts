@@ -53,8 +53,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   res.setHeader("Cache-Control", "no-store");
   try {
     requireAccountsEnabled();
-    if (req.method === "DELETE") throw new AccountApiError(503, "ACCOUNT_DELETION_UNAVAILABLE");
-    if (req.method !== "GET" && req.method !== "PUT") {
+    if (req.method !== "GET" && req.method !== "PUT" && req.method !== "DELETE") {
       res.setHeader("Allow", "GET, PUT, DELETE");
       res.status(405).json({ error: { code: "METHOD_NOT_ALLOWED" } }); return;
     }
@@ -62,6 +61,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     const account = await requireAccount(req);
     const client = getAccountServiceClient();
     const args = { p_owner: account.userId, p_session: account.sessionId };
+    if (req.method === "DELETE") {
+      const barrier = await client.rpc("begin_personal_account_deletion", args);
+      if (barrier.error) throw accountRpcError(barrier.error);
+      const history = await client.rpc("personal_account_has_contributions", args);
+      if (history.error) throw accountRpcError(history.error);
+      if (history.data !== false) throw new AccountApiError(history.data === true ? 409 : 503,
+        history.data === true ? "ACCOUNT_HAS_CONTRIBUTIONS" : "STACK_ACCOUNT_UNAVAILABLE");
+      const deleted = await client.auth.admin.deleteUser(account.userId);
+      if (deleted.error) throw new AccountApiError(deleted.error.code === "23503" ? 409 : 503,
+        deleted.error.code === "23503" ? "ACCOUNT_HAS_CONTRIBUTIONS" : "ACCOUNT_DELETION_FAILED");
+      res.status(204).end(); return;
+    }
     if (req.method === "GET") {
       const { data, error } = await client.rpc("read_personal_stack", args);
       if (error) throw accountRpcError(error);
