@@ -25,6 +25,7 @@ export default function StackAccountPanel() {
   const emailInput = useRef<HTMLInputElement>(null);
   const codeInput = useRef<HTMLInputElement>(null);
   const interaction = useRef(0);
+  const restoreTriggerFocus = useRef(false);
   const seconds = Math.max(0, Math.ceil((nextSendAt - now) / 1000));
   const expired = account.syncStatus === "session-expired";
   const needsAuth = !account.user || expired;
@@ -38,6 +39,10 @@ export default function StackAccountPanel() {
 
   useEffect(() => {
     if (open) (step === "code" ? codeInput : emailInput).current?.focus();
+    else if (restoreTriggerFocus.current) {
+      restoreTriggerFocus.current = false;
+      trigger.current?.focus();
+    }
   }, [open, step]);
   useEffect(() => {
     if (!nextSendAt) return;
@@ -76,8 +81,8 @@ export default function StackAccountPanel() {
     } finally { if (version === interaction.current) setBusy(null); }
   }
   function cancel() {
+    restoreTriggerFocus.current = true;
     interaction.current++; setBusy(null); setOpen(false); setLocalError(null);
-    trigger.current?.focus();
   }
   async function send(event?: FormEvent) {
     event?.preventDefault();
@@ -107,7 +112,7 @@ export default function StackAccountPanel() {
           <p role="status" aria-live="polite">{status}{!account.user && account.syncStatus === "local" ? t(" · Enregistrez-la pour la retrouver ailleurs.", " · Save it to find it elsewhere.") : ""}</p></div>
       </div>
       <div className="ms-account-actions">
-        {needsAuth && <button ref={trigger} type="button" className="tt-button-primary ms-account-button" aria-expanded={open} aria-controls={`${id}-auth`}
+        {needsAuth && <button ref={trigger} type="button" className="tt-button-primary ms-account-button" disabled={!!busy} aria-expanded={open} aria-controls={`${id}-auth`}
           onClick={() => { interaction.current++; setOpen(!open); setLocalError(null); }}>
           {expired ? t("Me reconnecter", "Sign in again") : t("Enregistrer ma stack", "Save my stack")}
         </button>}

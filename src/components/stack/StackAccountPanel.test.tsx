@@ -57,6 +57,36 @@ describe("inline personal account panel", () => {
     await click("Renvoyer le code"); expect(account.sendEmailCode).toHaveBeenCalledTimes(2);
     expect(screen.getByRole("button", { name: /Renvoyer le code/ })).toBeDisabled();
   });
+  it("cannot strand a delayed email request by toggling the save trigger", async () => {
+    let finish!: (ok: boolean) => void;
+    vi.mocked(account.sendEmailCode).mockReturnValueOnce(new Promise<boolean>(resolve => { finish = resolve; }));
+    view(); await sendCode();
+    const save = screen.getByRole("button", { name: "Enregistrer ma stack" });
+    // A slow request used to let these collapse/reopen clicks invalidate its
+    // completion while leaving busy set forever on the reopened form.
+    fireEvent.click(save); fireEvent.click(save);
+    await act(async () => { finish(true); });
+    expect(screen.getByLabelText("Code reçu par e-mail")).toBeEnabled();
+    expect(screen.getByLabelText("Code reçu par e-mail")).toHaveFocus();
+    expect(save).toBeEnabled();
+    expect(screen.getByRole("button", { name: /Renvoyer le code/ })).toBeDisabled();
+    expect(account.sendEmailCode).toHaveBeenCalledTimes(1);
+  });
+
+  it("allows cancel during a slow send and restores focus without bypassing cooldown", async () => {
+    let finish!: (ok: boolean) => void;
+    vi.mocked(account.sendEmailCode).mockReturnValueOnce(new Promise<boolean>(resolve => { finish = resolve; }));
+    view(); await sendCode();
+    await click("Annuler");
+    expect(screen.getByRole("button", { name: "Enregistrer ma stack" })).toHaveFocus();
+    await act(async () => { finish(true); });
+    expect(screen.queryByLabelText("Code reçu par e-mail")).not.toBeInTheDocument();
+    await click("Enregistrer ma stack");
+    expect(screen.getByLabelText("Adresse e-mail")).toBeEnabled();
+    expect(screen.getByRole("button", { name: "Recevoir un code" })).toBeDisabled();
+    expect(account.sendEmailCode).toHaveBeenCalledTimes(1);
+  });
+
   it("keeps the code form available on an invalid or expired code and permits correction", async () => {
     vi.mocked(account.verifyEmailCode).mockResolvedValueOnce(false).mockResolvedValueOnce(true);
     view(); await sendCode();
