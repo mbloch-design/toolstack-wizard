@@ -58,12 +58,24 @@ function flatName(name: unknown): string {
   return String(name || "").replace(/\s*\(([^)]*)\)/g, ", $1").trim();
 }
 
+/** Only when the summary calls this very amount promotional (« 1,39 » or « 1.39 »). */
+function isPromotional(plan: Plan): boolean {
+  const summary = String(plan.summary || "");
+  const amount = String(plan.nativeAmount);
+  const mentionsAmount = summary.includes(amount) || summary.includes(amount.replace(".", ","));
+  return mentionsAmount && /promotion|introductory|offre de lancement|first term/i.test(summary);
+}
+
 function billing(plan: Plan, fr: boolean): string {
   if (plan.pricingUnit === "one_time") return fr ? " en achat unique" : " as a one-time purchase";
   const unit = plan.pricingUnit === "seat" ? (fr ? " par utilisateur" : " per user") : "";
-  const commitment = plan.billingCommitment === "annual_prepaid"
-    ? (fr ? ", facturé à l'année" : ", billed yearly")
-    : plan.billingCommitment === "monthly" ? (fr ? ", sans engagement" : ", billed monthly") : "";
+  const commitment = {
+    annual_prepaid: fr ? ", facturé à l'année" : ", billed yearly",
+    annual: fr ? ", engagement d'un an" : ", with a one-year commitment",
+    biennial_prepaid: fr ? ", facturé tous les 2 ans" : ", billed every 2 years",
+    quarterly: fr ? ", facturé au trimestre" : ", billed quarterly",
+    monthly: fr ? ", sans engagement" : ", billed monthly",
+  }[plan.billingCommitment as string] || "";
   const period = plan.billingPeriod === "annual" ? (fr ? " par an" : " per year") : (fr ? " par mois" : " per month");
   return `${unit}${period}${commitment}`;
 }
@@ -83,9 +95,13 @@ export function buildPricingDetail(tool: DetailTool, lang: string): PricingDetai
   const verifiedLine = verified ? (fr ? ` Prix vérifié le ${writtenDate(verified, lang)}.` : ` Price verified on ${writtenDate(verified, lang)}.`) : "";
   const price = money(Number(compare.nativeAmount), compare.nativeCurrency);
   const planName = flatName(compare.displayName);
+  // A promotional first-term price must read as one, not as the list price.
+  const promo = isPromotional(compare)
+    ? (fr ? " Prix promotionnel sur la première période." : " Promotional price for the first term.")
+    : "";
   const answer = fr
-    ? `${name} coûte ${price}${billing(compare, true)} (offre ${planName}).${freeLine}${verifiedLine}`
-    : `${name} costs ${price}${billing(compare, false)} (${/\bplan$/i.test(planName) ? planName : `${planName} plan`}).${freeLine}${verifiedLine}`;
+    ? `${name} coûte ${price}${billing(compare, true)} (offre ${planName.replace(/\s+plan$/i, "")}).${promo}${freeLine}${verifiedLine}`
+    : `${name} costs ${price}${billing(compare, false)} (${/\bplan$/i.test(planName) ? planName : `${planName} plan`}).${promo}${freeLine}${verifiedLine}`;
 
   // Per-seat example: a multiplication of the published price, never a quote.
   const perSeat = compare.pricingUnit === "seat" && compare.billingPeriod !== "annual";
