@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useState } from "react";
+import Breadcrumb from "@/components/Breadcrumb";
 import { AccountsDashboard } from "@/components/backoffice/AccountsDashboard";
 import type { Session } from "@supabase/supabase-js";
 import { useLang } from "@/hooks/useLang";
@@ -427,6 +428,7 @@ function toAdminSession(session: Session | null): AdminSession | null {
 export default function BackOfficePage() {
   const { lang, t } = useLang();
   const locale = lang === "en" ? "en" : "fr";
+  const loginId = useId();
 
   const [adminEmailInput, setAdminEmailInput] = useState("");
   const [adminPasswordInput, setAdminPasswordInput] = useState("");
@@ -1259,69 +1261,49 @@ export default function BackOfficePage() {
 
   if (!adminSession) {
     return (
-      <div className="max-w-xl mx-auto px-4 py-16">
-        <div className="border border-border rounded-lg bg-card p-6 space-y-4">
-          <div className="flex items-center gap-2 text-foreground">
-            <Lock className="w-5 h-5" />
-            <h1 className="text-xl font-semibold">
-              {t("Back-office ToolTrim", "ToolTrim Back Office")}
-            </h1>
+      <section className="ba-shell ba-access" aria-labelledby={`${loginId}-page-title`}>
+        <Breadcrumb items={[{ label: t("Back-office", "Back office") }]} includeSchema={false}/>
+        <header className="ba-heading ba-entry-header"><div>
+          <h1 id={`${loginId}-page-title`}>{t("Back-office ToolTrim", "ToolTrim back office")}</h1>
+          <p>{t("Retrouvez les comptes et les stacks enregistrées.", "View accounts and their saved stacks.")}</p>
+        </div></header>
+        <form className="ba-login" aria-label={t("Connexion administrateur", "Administrator sign-in")} aria-busy={authLoading}
+          onSubmit={event => { event.preventDefault(); void connect(); }}>
+          <div className="ba-login-heading"><Lock size={20} aria-hidden="true"/><h2>{t("Accès administrateur", "Administrator access")}</h2></div>
+          <p className="ba-login-intro">{t("Connectez-vous avec votre e-mail et votre mot de passe administrateur.", "Sign in with your admin email and password.")}</p>
+          {error && <p id={`${loginId}-error`} className="ba-login-error" role="alert">{error}</p>}
+          <div className="ba-login-field">
+            <label htmlFor={`${loginId}-email`}>{t("E-mail administrateur", "Admin email")}</label>
+            <input id={`${loginId}-email`} type="email" name="username" autoComplete="username" inputMode="email" required
+              value={adminEmailInput} onChange={event => setAdminEmailInput(event.target.value)} disabled={authLoading}
+              aria-describedby={error ? `${loginId}-error` : undefined}/>
           </div>
-          <p className="text-sm text-muted-foreground">
-            {t(
-              "Connecte-toi avec ton email et ton mot de passe administrateur.",
-              "Sign in with your admin email and password."
-            )}
-          </p>
-          {error && (
-            <div className="border border-red-300 bg-red-50 text-red-700 rounded-md px-3 py-2 text-sm">
-              {error}
-            </div>
-          )}
-          <div className="grid gap-2">
-            <input
-              type="email"
-              value={adminEmailInput}
-              onChange={(event) => setAdminEmailInput(event.target.value)}
-              placeholder={t("Email administrateur", "Admin email")}
-              className="h-10 px-3 rounded-md border border-input bg-background text-sm"
-            />
-            <input
-              type="password"
-              value={adminPasswordInput}
-              onChange={(event) => setAdminPasswordInput(event.target.value)}
-              onKeyDown={(event) => {
-                if (event.key === "Enter") void connect();
-              }}
-              placeholder={t("Mot de passe", "Password")}
-              className="h-10 px-3 rounded-md border border-input bg-background text-sm"
-            />
-            <button
-              onClick={() => void connect()}
-              disabled={authLoading}
-              className="h-10 px-4 rounded-md bg-primary text-primary-foreground text-sm font-medium disabled:opacity-60"
-            >
-              {authLoading ? t("Connexion…", "Signing in…") : t("Ouvrir", "Open")}
-            </button>
+          <div className="ba-login-field">
+            <label htmlFor={`${loginId}-password`}>{t("Mot de passe", "Password")}</label>
+            <input id={`${loginId}-password`} type="password" name="password" autoComplete="current-password" required
+              value={adminPasswordInput} onChange={event => setAdminPasswordInput(event.target.value)} disabled={authLoading}
+              aria-describedby={error ? `${loginId}-error` : undefined}/>
           </div>
-          <div className="text-xs text-muted-foreground">
-            {t("L'accès est limité aux emails autorisés côté serveur.", "Access is restricted to server-allowed emails.")}
-          </div>
-        </div>
-      </div>
+          <button type="submit" className="tt-button-primary ba-login-submit" disabled={authLoading}>
+            {authLoading ? t("Connexion…", "Signing in…") : t("Se connecter", "Sign in")}
+          </button>
+          <p className="ba-login-note">{t("L’accès est réservé aux comptes autorisés côté serveur.", "Access is restricted to accounts authorized by the server.")}</p>
+        </form>
+      </section>
     );
   }
 
   if (activeTab === "accounts") return (
-    <main className="ba-shell">
-      <header className="ba-heading"><div><h1>{t("Back-office ToolTrim", "ToolTrim back office")}</h1><p>{adminSession.email || t("Compte connecté", "Signed-in account")}</p></div>
+    <div className="ba-shell">
+      <Breadcrumb items={[{ label: t("Back-office", "Back office") }]} includeSchema={false}/>
+      <header className="ba-heading ba-entry-header"><div><h1>{t("Back-office ToolTrim", "ToolTrim back office")}</h1><p>{adminSession.email || t("Compte connecté", "Signed-in account")}</p></div>
         <nav className="ba-actions" aria-label={t("Sections du back-office", "Back-office sections")}>
           <button className="ba-button" onClick={() => setActiveTab("preprod")}>{t("Diagnostic historique", "Historical diagnostic")}</button>
           <button className="ba-button" onClick={disconnect}><LogOut aria-hidden="true"/>{t("Fermer", "Sign out")}</button>
         </nav>
       </header>
       <AccountsDashboard key={adminSession.accessToken}/>
-    </main>
+    </div>
   );
 
   return (

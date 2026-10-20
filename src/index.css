@@ -37484,3 +37484,34 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .ba-pagination { align-items: flex-start; flex-direction: column; }
   }
 }
+
+
+/* The back-office is content inside the active product shell. */
+@layer components {
+  .ba-shell { max-width: 1440px; min-width: 0; padding: var(--space-2xl) var(--space-2xl) var(--space-3xl); }
+  .ba-entry-header { align-items: flex-start; }
+  .ba-shell > .ba-entry-header { margin-bottom: var(--space-2xl); }
+  .ba-entry-header h1 { margin: 0; font: 650 var(--tt-size-page-title)/1.08 var(--font-brand); letter-spacing: -.045em; overflow-wrap: anywhere; }
+  .ba-entry-header p { max-width: 60ch; color: var(--color-text-secondary); font: 400 16px/1.5 var(--font-ui); }
+  .ba-entry-header > div { min-width: 0; }
+  .ba-entry-header .ba-actions { justify-content: flex-start; }
+  .ba-login { display: grid; gap: var(--space-lg); max-width: 480px; margin: 0; padding: var(--space-xl); border: 1px solid var(--color-border); border-radius: var(--tt-surface-radius-info); background: var(--color-card, #fff); }
+  .ba-login-heading { display: flex; align-items: center; gap: var(--space-sm); }
+  .ba-login-heading > svg { flex: none; }
+  .ba-login h2 { margin: 0; font: 600 var(--tt-size-section-h)/1.2 var(--font-brand); letter-spacing: -.025em; }
+  .ba-login-intro { margin: 0; color: var(--color-text-secondary); font: 400 16px/1.5 var(--font-ui); }
+  .ba-login-field { display: grid; gap: var(--space-xs); min-width: 0; }
+  .ba-login-field label { color: var(--color-text); font: 600 14px/1.4 var(--font-ui); }
+  .ba-login-field input { width: 100%; min-width: 0; min-height: 48px; padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-card, #fff); color: var(--color-text); font: 400 16px/1.4 var(--font-ui); }
+  .ba-login-field input:focus-visible, .ba-login-submit:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 3px; }
+  .ba-login-submit { width: 100%; min-height: 48px; justify-content: center; }
+  .ba-login-submit:disabled { cursor: default; opacity: .5; }
+  .ba-login-note { margin: 0; color: var(--color-text-meta); font: 400 13px/1.5 var(--font-ui); }
+  .ba-login-error { margin: 0; color: var(--color-text); font: 500 14px/1.5 var(--font-ui); }
+  @media (max-width: 640px) {
+    .ba-shell { padding: var(--space-lg) var(--space-md) var(--space-2xl); }
+    .ba-shell > .ba-entry-header { margin-bottom: var(--space-lg); }
+    .ba-login { max-width: none; padding: var(--space-lg); }
+    .ba-entry-header .ba-actions { width: 100%; }
+  }
+}

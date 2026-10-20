@@ -10,8 +10,6 @@ import { LangContext } from "@/hooks/useLang";
 import { CurrencyProvider } from "@/hooks/useCurrency";
 import { StackAccountProvider } from "@/hooks/useStackAccount";
 import { Lang } from "@/data/types";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import AppShellV2 from "@/components/v2shell/AppShellV2";
 import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
@@ -122,12 +120,9 @@ export const LangLayout = () => {
   const pathLang = location.pathname.split("/")[1];
   const effectiveLang: Lang = pathLang === "en" ? "en" : validLang;
 
-  // Back-office keeps the legacy Navbar/Footer chrome.
-  const isBackOffice = /^\/(fr|en)\/back-office\/?$/.test(location.pathname);
-
   // Suspense lives here (inside the shell) rather than only at the app root,
   // so a lazy page's chunk-load fallback only ever replaces the inner content
-  // area — the sidebar/top bar (or legacy Navbar/Footer) stay mounted and
+  // area — the sidebar/top bar stay mounted and
   // don't flash away on every navigation.
   const content = (
     <Suspense fallback={<LazyFallback />}>
@@ -144,25 +139,12 @@ export const LangLayout = () => {
         prefix: `/${effectiveLang}`,
       }}
     >
-      {isBackOffice ? (
-        <div className="flex min-h-screen flex-col">
-          <a href="#main-content" className="skip-to-content">
-            {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
-          </a>
-          <Navbar />
-          <main id="main-content" className="flex-1 pt-[68px]">
-            {content}
-          </main>
-          <Footer />
-        </div>
-      ) : (
-        <>
-          <a href="#main-content" className="skip-to-content">
-            {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
-          </a>
-          <AppShellV2>{content}</AppShellV2>
-        </>
-      )}
+      <>
+        <a href="#main-content" className="skip-to-content">
+          {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
+        </a>
+        <AppShellV2>{content}</AppShellV2>
+      </>
     </LangContext.Provider>
     </CurrencyProvider>
   );
