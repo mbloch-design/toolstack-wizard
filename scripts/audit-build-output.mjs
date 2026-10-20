@@ -55,9 +55,12 @@ const budgets = {
   // Measured 820.6 MiB total, 709.0 MiB HTML; retain existing headroom
   // while preventing the removed documentary/formatting bytes from returning.
   // Historical __SSR_TOOL__ fields removed: retain the measured gain.
-  totalBytes: 831 * MiB,
+  // 2026-10-20: written titles and metas (scripts/seo-meta) run longer than
+  // the templates, repeated in og/twitter/JSON-LD: 717.1 MiB HTML after 265
+  // fiches. Sized for the remaining ~980 fiches of the rewrite.
+  totalBytes: 842 * MiB,
   // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
-  htmlBytes: 716 * MiB,
+  htmlBytes: 728 * MiB,
   javascriptBytes: 15 * MiB,
   // 32 MiB (2026-09-30): each researched fiche adds pricing-card critical CSS
   // variants (+0.2 MiB per 25 fiches, 30.7 MiB at 146); sized for the ~200
