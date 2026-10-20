@@ -1,53 +1,32 @@
-import { useCallback, useEffect, useState } from "react";
-
-export type Theme = "light" | "dark";
-
-const THEME_STORAGE_KEY = "tooltrim:theme";
-
-function applyTheme(theme: Theme) {
+import { useSyncExternalStore } from 'react';
+export type Theme = 'light' | 'dark';
+const THEME_STORAGE_KEY = 'tooltrim:theme';
+let theme: Theme = 'light';
+const listeners = new Set<() => void>();
+function applyTheme(next: Theme) {
   const root = document.documentElement;
-  root.classList.toggle("dark", theme === "dark");
-  root.classList.toggle("light", theme === "light");
-  root.style.colorScheme = theme;
+  root.classList.toggle('dark', next === 'dark'); root.classList.toggle('light', next === 'light'); root.style.colorScheme = next;
 }
-
-/**
- * Shared ToolTrim theme preference.
- *
- * The first render stays light so SSR and hydration keep the same markup.
- * Once mounted, the explicit preference wins, then the operating-system
- * preference is used as the initial fallback.
- */
+function publish(next: Theme) { theme = next; applyTheme(next); listeners.forEach(listener => listener()); }
+function initialTheme(): Theme {
+  let stored: string | null = null;
+  try { stored = window.localStorage.getItem(THEME_STORAGE_KEY); } catch { /* Use system preference. */ }
+  return stored === 'dark' || stored === 'light' ? stored : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+function onStorage(event: StorageEvent) { if (event.key === THEME_STORAGE_KEY) publish(event.newValue === 'dark' ? 'dark' : 'light'); }
+function subscribe(listener: () => void) {
+  if (listeners.size === 0) publish(initialTheme());
+  listeners.add(listener);
+  if (listeners.size === 1) window.addEventListener('storage', onStorage);
+  return () => { listeners.delete(listener); if (listeners.size === 0) window.removeEventListener('storage', onStorage); };
+}
+function setTheme(next: Theme) {
+  try { window.localStorage.setItem(THEME_STORAGE_KEY, next); } catch { /* In-memory preference stays usable. */ }
+  publish(next);
+}
+function toggle() { setTheme(theme === 'dark' ? 'light' : 'dark'); }
+/** One store for every shell/settings consumer; deterministic light server snapshot. */
 export function useTheme() {
-  const [theme, setThemeState] = useState<Theme>("light");
-
-  useEffect(() => {
-    let storedTheme: string | null = null;
-    try { storedTheme = localStorage.getItem(THEME_STORAGE_KEY); } catch { /* Use system preference. */ }
-    const initialTheme: Theme = storedTheme === "dark" || storedTheme === "light"
-      ? storedTheme
-      : window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
-
-    setThemeState(initialTheme);
-    applyTheme(initialTheme);
-  }, []);
-
-  const setTheme = useCallback((nextTheme: Theme) => {
-    setThemeState(nextTheme);
-    try { localStorage.setItem(THEME_STORAGE_KEY, nextTheme); } catch { /* Session preference remains usable. */ }
-    applyTheme(nextTheme);
-  }, []);
-
-  const toggle = useCallback(() => {
-    setThemeState((currentTheme) => {
-      const nextTheme = currentTheme === "dark" ? "light" : "dark";
-      try { localStorage.setItem(THEME_STORAGE_KEY, nextTheme); } catch { /* Session preference remains usable. */ }
-      applyTheme(nextTheme);
-      return nextTheme;
-    });
-  }, []);
-
-  return { theme, setTheme, toggle };
+  const current = useSyncExternalStore(subscribe, () => theme, () => 'light' as Theme);
+  return { theme: current, setTheme, toggle };
 }

@@ -1,8 +1,12 @@
-import type { Session, SupabaseClient, User } from "@supabase/supabase-js";
+import type { AuthChangeEvent, Session, SupabaseClient, User } from "@supabase/supabase-js";
 import { mergeAnonymousDraft, normalizePersonalStack, personalStackFingerprint, type PersonalStackRecord, type PersonalStackV4 } from "./personalStack";
 import { clearPersonalStackScope, consumeAnonymousPersonalStack, getPersonalStackPersistenceStatus, getPersonalStackScope, isAnonymousPersonalStackMigrationPending, personalStackStorageKey, purgeLegacyPersonalStackSources, readPersonalStack, replacePersonalStack, retryConsumedAnonymousPersonalStackCleanup, setPersonalStackScope, subscribePersonalStack } from "./personalStackStore";
 import { deletePersonalAccount, loadPersonalStack, savePersonalStack, StackAccountApiError } from "./stackAccountApi";
 
+import { ACCOUNT_GOOGLE_ENABLED, ACCOUNT_GITHUB_ENABLED } from '@/config/features';
+import { accountPath, safeAccountReturnTo } from './accountPaths';
+import { accountSessionId, passwordSignIn, passwordSignUp, providerSignIn, resendAccountConfirmation, requestAccountPasswordReset, updateAccountPassword, type AccountAuthOptions, type AuthResult, type AuthMethod } from './accountAuth';
+export type { AccountAuthOptions, AuthResult, AuthMethod } from './accountAuth';
 export type StackSyncStatus = "local" | "connecting" | "syncing" | "synced" | "unsaved" | "choice" | "conflict" | "session-expired" | "error";
 export type DraftChoice = { draft: PersonalStackV4; saved: PersonalStackRecord };
 export type StackConflict = { local: PersonalStackV4; remote: PersonalStackRecord | null };
@@ -11,10 +15,10 @@ export type AccountSnapshot = {
   pendingDraftChoice: DraftChoice | null; conflict: StackConflict | null; magicLinkSentTo: string | null;
   hasUnsavedChanges: boolean; signOutNeedsConfirmation: boolean;
   deletionConfirmed: boolean; privacyWarning: string | null;
+  authBusy: boolean; recoveryStatus: 'none' | 'ready' | 'complete' | 'invalid'; lastAuthMethod: AuthMethod | null;
 };
 type SyncMetadata = { version: 1; owner: string; revision: number; fingerprint: string };
 type RequestScope = { owner: string; token: string; generation: number };
-export type AccountAuthOptions = { lang?: "fr" | "en"; returnTo?: string };
 const ACTIVE_OWNER_KEY = "tooltrim-personal-stack-active-account-v1";
 const empty = () => normalizePersonalStack(null);
 const fingerprint = personalStackFingerprint;
@@ -24,21 +28,15 @@ const consumedDraftKey = (owner: string) => `${personalStackStorageKey(owner)}:c
 export const INITIAL_ACCOUNT_SNAPSHOT: AccountSnapshot = {
   user: null, syncStatus: "local", status: "local", error: null, pendingDraftChoice: null,
   conflict: null, magicLinkSentTo: null, hasUnsavedChanges: false, signOutNeedsConfirmation: false,
-  deletionConfirmed: false, privacyWarning: null,
+  deletionConfirmed: false, privacyWarning: null, authBusy: false, recoveryStatus: "none", lastAuthMethod: null,
 };
 
 /** Same-origin known ToolTrim routes only; preserve permitted query and hash. */
 export function getStackAccountReturnUrl(options: AccountAuthOptions = {}): string | undefined {
   if (typeof window === "undefined") return undefined;
-  const fallback = new URL(`/${options.lang === "en" ? "en" : "fr"}/ma-stack`, window.location.origin).href;
+  const lang = options.lang ?? "fr";
   const requested = options.returnTo ?? `${window.location.pathname}${window.location.search}${window.location.hash}`;
-  if (requested.includes("\\")) return fallback;
-  try {
-    const url = new URL(requested, window.location.origin);
-    const [, lang, page] = url.pathname.split("/");
-    const pages = new Set([undefined, "", "ma-stack", "my-stack", "panier", "cart", "tools", "tool", "category", "guides", "guide", "stacks", "stack", "comparatifs", "comparatif", "explorer", "about", "methodology", "transparency", "contact", "submit", "legal-notice", "privacy-policy", "terms", "search", "back-office"]);
-    return url.origin === window.location.origin && (lang === "fr" || lang === "en") && pages.has(page) ? url.href : fallback;
-  } catch { return fallback; }
+  return new URL(safeAccountReturnTo(requested, lang, window.location.origin), window.location.origin).href;
 }
 
 /** One instance per application provider; hooks only consume its snapshot. */
@@ -59,13 +57,20 @@ export class StackAccountCoordinator {
   private metadata: SyncMetadata | null = null;
   private draft: PersonalStackV4 | null = null;
   private clearDraftAfterSave = false;
+  private authMutation = false;
+  private identityEpoch = 0;
+  private lifecycle = 0;
+  private recovery: { owner: string; sessionId: string; expiresAt: number } | null = null;
+  private readonly recoveryKey = 'tooltrim:account-recovery-v1';
+  private readonly lastMethodKey = 'tooltrim:last-auth-method';
+  private readonly pendingMethodKey = 'tooltrim:pending-auth-method';
 
   constructor(private auth: SupabaseClient["auth"], readonly enabled: boolean) {}
   getSnapshot = () => this.snapshot;
   getServerSnapshot = () => INITIAL_ACCOUNT_SNAPSHOT;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };
   private emit(patch: Partial<AccountSnapshot>) {
-    this.snapshot = { ...this.snapshot, ...patch, ...(patch.syncStatus ? { status: patch.syncStatus } : {}) };
+    this.snapshot = { ...this.snapshot, ...patch, authBusy: this.authMutation, ...(patch.syncStatus ? { status: patch.syncStatus } : {}) };
     this.listeners.forEach(listener => listener());
   }
   private cancelTimer() { if (this.timer !== undefined) clearTimeout(this.timer); this.timer = undefined; }
@@ -109,6 +114,11 @@ export class StackAccountCoordinator {
   start(): () => void {
     if (!this.enabled) return () => {};
     this.running = true;
+    this.lifecycle++;
+    try {
+      const method = window.localStorage.getItem(this.lastMethodKey);
+      if (method === 'google' || method === 'github' || method === 'email') this.emit({ lastAuthMethod: method });
+    } catch { /* The hint is optional. */ }
     if (!retryConsumedAnonymousPersonalStackCleanup()) this.emit({ privacyWarning: "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
     // Only this true anonymous namespace is ever eligible for account import.
     if (getPersonalStackScope() === "anonymous") {
@@ -120,22 +130,28 @@ export class StackAccountCoordinator {
     const offStore = subscribePersonalStack(this.storeChanged);
     const initialGeneration = this.generation;
     // Auth callbacks only update synchronous identity state and dispatch work; no awaited SDK calls under its lock.
-    const { data } = this.auth.onAuthStateChange((_event, session) => { if (!this.signingOut || session) this.adoptSession(session); });
+    const { data } = this.auth.onAuthStateChange((event, session) => { if (!this.signingOut || session) this.adoptSession(session, event); });
     void this.auth.getSession().then(result => {
       if (!this.running || this.generation !== initialGeneration) return;
       if (result.error) this.emit({ syncStatus: "error", error: "ACCOUNT_SESSION_UNAVAILABLE" });
-      else this.adoptSession(result.data.session);
+      else this.adoptSession(result.data.session, "INITIAL_SESSION");
     }).catch(() => { if (this.running && this.generation === initialGeneration) this.emit({ syncStatus: "error", error: "ACCOUNT_SESSION_UNAVAILABLE" }); });
     return () => {
-      this.running = false; this.generation++; this.cancelTimer(); offStore(); data.subscription.unsubscribe();
+      this.running = false; this.lifecycle++; this.generation++; this.cancelTimer(); offStore(); data.subscription.unsubscribe();
       this.session = null; this.ready = false; this.inFlight = false;
     };
   }
 
-  private adoptSession(next: Session | null) {
+  private adoptSession(next: Session | null, event?: AuthChangeEvent) {
     if (!this.running) return;
     if (next?.user.is_anonymous) next = null;
-    if (next && this.session?.user.id === next.user.id && this.session.access_token === next.access_token) return;
+    const sameIdentity = this.sameSession(this.session, next);
+    if (!sameIdentity) { this.identityEpoch++; if (this.session || event === "SIGNED_OUT") this.clearRecovery(); }
+    this.observeRecovery(next, event);
+    this.observeAuthMethod(next, event);
+    if (next && this.session?.user.id === next.user.id && this.session.access_token === next.access_token) {
+      this.session = next; this.emit({ user: next.user }); return;
+    }
     this.generation++; this.cancelTimer(); this.inFlight = false; this.ready = false;
     this.abandonedWrite = null; this.deleting = false;
     this.session = next;
@@ -292,7 +308,130 @@ export class StackAccountCoordinator {
     return this.snapshot.syncStatus !== "error" && this.snapshot.syncStatus !== "session-expired";
   };
 
-  signInWithGoogle = async (options: AccountAuthOptions = {}): Promise<boolean> => {
+  private sameSession(a: Session | null, b: Session | null): boolean {
+    return a?.user.id === b?.user.id && accountSessionId(a) === accountSessionId(b);
+  }
+  private clearRecovery(status: AccountSnapshot['recoveryStatus'] = 'none') {
+    this.recovery = null;
+    try { window.sessionStorage.removeItem(this.recoveryKey); } catch { /* No in-memory proof remains. */ }
+    this.emit({ recoveryStatus: status });
+  }
+  private observeRecovery(next: Session | null, event?: AuthChangeEvent) {
+    const sessionId = accountSessionId(next);
+    if (!next) { this.clearRecovery(event === 'PASSWORD_RECOVERY' ? 'invalid' : 'none'); return; }
+    if (event === 'PASSWORD_RECOVERY') {
+      if (!next || !sessionId || (next.expires_at ?? 0) <= Date.now() / 1000) { this.clearRecovery('invalid'); return; }
+      this.recovery = { owner: next.user.id, sessionId, expiresAt: Math.min(Date.now() + 15 * 60 * 1000, next.expires_at! * 1000) };
+      try { window.sessionStorage.setItem(this.recoveryKey, JSON.stringify(this.recovery)); } catch { /* This mounted recovery remains usable. */ }
+    } else if (!this.recovery && next && event === 'INITIAL_SESSION') {
+      try {
+        const value = JSON.parse(window.sessionStorage.getItem(this.recoveryKey) || 'null');
+        if (value && sessionId && value.owner === next.user.id && value.sessionId === sessionId && typeof value.expiresAt === 'number' && value.expiresAt > Date.now() && value.expiresAt <= Date.now() + 15 * 60 * 1000) this.recovery = value;
+        else if (value) this.clearRecovery('invalid');
+      } catch { /* A new recovery link is required if proof cannot be read. */ }
+    }
+    if (this.recovery) {
+      if (!next || this.recovery.owner !== next.user.id || this.recovery.sessionId !== sessionId || this.recovery.expiresAt <= Date.now()) this.clearRecovery('invalid');
+      else this.emit({ recoveryStatus: 'ready' });
+    }
+  }
+  private recordAuthMethod(method: AuthMethod) {
+    try { window.localStorage.setItem(this.lastMethodKey, method); } catch { /* In-memory public hint remains usable. */ }
+    this.emit({ lastAuthMethod: method });
+  }
+  private observeAuthMethod(next: Session | null, event?: AuthChangeEvent) {
+    if (!next || event !== 'SIGNED_IN') return;
+    const lang = window.location.pathname.startsWith('/en/') ? 'en' : 'fr';
+    if (window.location.pathname !== accountPath(lang, 'callback')) return;
+    try {
+      const pending = window.sessionStorage.getItem(this.pendingMethodKey);
+      window.sessionStorage.removeItem(this.pendingMethodKey);
+      if (new URLSearchParams(window.location.search).has('error') || new URLSearchParams(window.location.hash.slice(1)).has('error')) return;
+      if ((pending === 'google' || pending === 'github' || pending === 'email') && next.user.app_metadata?.provider === pending) this.recordAuthMethod(pending);
+    } catch { /* Never infer success from a button click. */ }
+  }
+  private async withAuth<T>(action: () => Promise<T>, blocked: T): Promise<T> {
+    if (!this.enabled || !this.running || this.authMutation) return blocked;
+    this.authMutation = true; this.emit({ error: null });
+    try { return await action(); }
+    finally { this.authMutation = false; this.emit({}); }
+  }
+  private authAction(action: () => Promise<AuthResult>): Promise<AuthResult> {
+    const epoch = this.identityEpoch; const lifecycle = this.lifecycle;
+    return this.withAuth(async () => {
+      const result = await action();
+      if (!this.running || lifecycle !== this.lifecycle || epoch !== this.identityEpoch) return { ok: false, error: 'ACCOUNT_AUTH_SESSION_CHANGED' };
+      if (!result.ok) this.emit({ error: result.error });
+      return result;
+    }, { ok: false, error: this.authMutation ? 'ACCOUNT_AUTH_BUSY' : 'ACCOUNT_AUTH_UNAVAILABLE' });
+  }
+  signInWithProvider = (provider: 'google' | 'github', options: AccountAuthOptions = {}): Promise<AuthResult> => {
+    if (!(provider === 'google' ? ACCOUNT_GOOGLE_ENABLED : ACCOUNT_GITHUB_ENABLED)) return Promise.resolve({ ok: false, error: 'ACCOUNT_PROVIDER_UNAVAILABLE' });
+    return this.authAction(async () => {
+      // A method-only intent is harmless and only becomes a hint on a matching real callback.
+      try { window.sessionStorage.setItem(this.pendingMethodKey, provider); } catch { /* Optional hint. */ }
+      const result = await providerSignIn(this.auth, provider, options);
+      if (!result.ok) try { window.sessionStorage.removeItem(this.pendingMethodKey); } catch { /* Optional hint. */ }
+      return result;
+    });
+  };
+  private passwordAction(email: string, password: string, options?: AccountAuthOptions, signup = false): Promise<AuthResult> {
+    const epoch = this.identityEpoch; const lifecycle = this.lifecycle;
+    let accepted = false;
+    const accept = (session: Session) => {
+      if (!this.running || lifecycle !== this.lifecycle || (epoch !== this.identityEpoch && !this.sameSession(this.session, session))) return false;
+      this.adoptSession(session); accepted = true;
+      try { window.sessionStorage.removeItem(this.pendingMethodKey); } catch { /* Optional hint. */ }
+      this.recordAuthMethod('email'); return true;
+    };
+    return this.withAuth(async () => {
+      const result = signup ? await passwordSignUp(this.auth, email, password, options, accept) : await passwordSignIn(this.auth, email, password, accept);
+      if (!this.running || lifecycle !== this.lifecycle || (!accepted && epoch !== this.identityEpoch)) return { ok: false, error: 'ACCOUNT_AUTH_SESSION_CHANGED' };
+      if (!result.ok) this.emit({ error: result.error });
+      else if (result.outcome === 'confirmation-required') {
+        try { window.sessionStorage.setItem(this.pendingMethodKey, 'email'); } catch { /* Optional hint. */ }
+      }
+      return result;
+    }, { ok: false, error: this.authMutation ? 'ACCOUNT_AUTH_BUSY' : 'ACCOUNT_AUTH_UNAVAILABLE' });
+  }
+  signInWithPassword = (email: string, password: string, _options?: AccountAuthOptions) => this.passwordAction(email, password);
+  signUpWithPassword = (email: string, password: string, options?: AccountAuthOptions) => this.passwordAction(email, password, options, true);
+  resendConfirmation = (email: string, options?: AccountAuthOptions) => this.authAction(() => resendAccountConfirmation(this.auth, email, options));
+  requestPasswordReset = (email: string, options?: AccountAuthOptions) => this.authAction(() => requestAccountPasswordReset(this.auth, email, options));
+  completePasswordReset = (password: string): Promise<AuthResult> => this.authAction(async () => {
+    const proof = this.recovery;
+    if (!proof || !this.session || proof.owner !== this.session.user.id || proof.sessionId !== accountSessionId(this.session) || proof.expiresAt <= Date.now() || (this.session.expires_at ?? 0) <= Date.now() / 1000) {
+      this.clearRecovery('invalid'); return { ok: false, error: 'ACCOUNT_RECOVERY_INVALID' };
+    }
+    const epoch = this.identityEpoch; const lifecycle = this.lifecycle;
+    const result = await updateAccountPassword(this.auth, password);
+    if (!this.running || epoch !== this.identityEpoch || lifecycle !== this.lifecycle) return { ok: false, error: 'ACCOUNT_AUTH_SESSION_CHANGED' };
+    if (!result.ok) { if (result.error === 'ACCOUNT_RECOVERY_INVALID') this.clearRecovery('invalid'); return result; }
+    this.clearRecovery('complete');
+    try {
+      const { error } = await this.auth.signOut({ scope: 'others' });
+      return error ? { ...result, warning: 'ACCOUNT_OTHER_SESSIONS_NOT_REVOKED' } : result;
+    } catch { return { ...result, warning: 'ACCOUNT_OTHER_SESSIONS_NOT_REVOKED' }; }
+  });
+  getAccessToken = async (): Promise<string | null> => {
+    if (!this.enabled || !this.running || !this.session) return null;
+    const epoch = this.identityEpoch; const lifecycle = this.lifecycle; const originalToken = this.session.access_token;
+    try {
+      const { data, error } = await this.auth.getSession();
+      if (error || !this.running || lifecycle !== this.lifecycle || epoch !== this.identityEpoch || !data.session || !this.sameSession(this.session, data.session)) return null;
+      if (this.session!.access_token !== originalToken) return this.session!.access_token;
+      if (data.session.access_token !== originalToken) this.adoptSession(data.session);
+      return this.session!.access_token;
+    } catch { return null; }
+  };
+  signInWithGoogle = (options?: AccountAuthOptions) => this.withAuth(() => this.legacyGoogle(options), false);
+  sendEmailCode = (email: string, options?: AccountAuthOptions) => this.withAuth(() => this.legacySendEmailCode(email, options), false);
+  verifyEmailCode = (email: string, code: string) => this.withAuth(() => this.legacyVerifyEmailCode(email, code), false);
+  signOut = (options?: { discardUnsaved?: boolean }) => this.withAuth(() => this.performSignOut(options), false);
+  deleteAccount = () => this.withAuth(() => this.performDeleteAccount(), false);
+  clearLocalAccount = () => this.withAuth(() => this.performClearLocalAccount(), false);
+
+  private legacyGoogle = async (options: AccountAuthOptions = {}): Promise<boolean> => {
     if (!this.enabled) return false;
     const generation = this.generation;
     this.emit({ error: null });
@@ -301,7 +440,7 @@ export class StackAccountCoordinator {
       if (error) throw error; return true;
     } catch { if (this.running && generation === this.generation) this.emit({ error: "ACCOUNT_GOOGLE_SIGN_IN_FAILED" }); return false; }
   };
-  sendEmailCode = async (email: string, options: AccountAuthOptions = {}): Promise<boolean> => {
+  private legacySendEmailCode = async (email: string, options: AccountAuthOptions = {}): Promise<boolean> => {
     if (!this.enabled) return false;
     const generation = this.generation;
     const normalized = email.trim().toLowerCase();
@@ -312,7 +451,7 @@ export class StackAccountCoordinator {
       if (error) throw error; this.emit({ magicLinkSentTo: normalized }); return true;
     } catch { if (this.running && generation === this.generation) this.emit({ error: "ACCOUNT_EMAIL_CODE_FAILED" }); return false; }
   };
-  verifyEmailCode = async (email: string, code: string): Promise<boolean> => {
+  private legacyVerifyEmailCode = async (email: string, code: string): Promise<boolean> => {
     if (!this.enabled) return false;
     const generation = this.generation;
     try {
@@ -320,7 +459,7 @@ export class StackAccountCoordinator {
       if (error) throw error; if (this.running && generation === this.generation) this.emit({ error: null }); return true;
     } catch { if (this.running && generation === this.generation) this.emit({ error: "ACCOUNT_EMAIL_CODE_INVALID" }); return false; }
   };
-  signOut = async (options: { discardUnsaved?: boolean } = {}): Promise<boolean> => {
+  private performSignOut = async (options: { discardUnsaved?: boolean } = {}): Promise<boolean> => {
     if (!this.enabled) return false;
     if (this.snapshot.hasUnsavedChanges && !options.discardUnsaved) { this.emit({ signOutNeedsConfirmation: true }); return false; }
     const owner = this.session?.user.id ?? (getPersonalStackScope() !== "anonymous" ? getPersonalStackScope() : null);
@@ -335,7 +474,7 @@ export class StackAccountCoordinator {
       const complete = this.purgeOwner(owner);
       this.session = null; this.metadata = null; this.draft = null;
       setPersonalStackScope("anonymous");
-      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" }); return true;
+      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, lastAuthMethod: this.snapshot.lastAuthMethod, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" }); return true;
     } catch {
       if (this.running && this.generation === generation) {
         this.abandonedWrite = abandoned; this.inFlight = false; this.ready = false;
@@ -345,7 +484,7 @@ export class StackAccountCoordinator {
     }
     finally { this.signingOut = false; }
   };
-  deleteAccount = async (): Promise<boolean> => {
+  private performDeleteAccount = async (): Promise<boolean> => {
     if (this.deleting || !this.scope()) return false;
     this.generation++; this.cancelTimer(); this.ready = false; this.inFlight = false; this.deleting = true;
     const scope = this.scope()!;
@@ -361,7 +500,7 @@ export class StackAccountCoordinator {
       if (!this.current(scope)) return false;
       if (!this.purgeOwner(scope.owner)) complete = false;
       this.session = null; this.metadata = null; this.draft = null; setPersonalStackScope("anonymous");
-      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, deletionConfirmed: true, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
+      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, lastAuthMethod: this.snapshot.lastAuthMethod, deletionConfirmed: true, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
       return true;
     } catch (cause) {
       if (this.current(scope)) {
@@ -373,6 +512,8 @@ export class StackAccountCoordinator {
   };
 
   private purgeOwner(owner: string | null): boolean {
+    this.clearRecovery();
+    try { window.sessionStorage.removeItem(this.pendingMethodKey); } catch { /* Optional hint. */ }
     let complete = retryConsumedAnonymousPersonalStackCleanup();
     if (owner) {
       clearPersonalStackScope(owner);
@@ -388,7 +529,7 @@ export class StackAccountCoordinator {
   }
 
   /** Privacy-only fallback after an unconfirmed deletion/session loss; never asserts remote deletion. */
-  clearLocalAccount = async (): Promise<boolean> => {
+  private performClearLocalAccount = async (): Promise<boolean> => {
     const owner = getPersonalStackScope() === "anonymous" ? null : getPersonalStackScope();
     this.generation++; const generation = this.generation; this.cancelTimer(); this.ready = false; this.inFlight = false;
     let complete = true; this.signingOut = true;
@@ -398,7 +539,7 @@ export class StackAccountCoordinator {
     if (!this.running || this.generation !== generation || (owner && getPersonalStackScope() !== owner)) return false;
     if (!this.purgeOwner(owner)) complete = false;
     this.session = null; this.metadata = null; this.draft = null; setPersonalStackScope("anonymous");
-    this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
+    this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, lastAuthMethod: this.snapshot.lastAuthMethod, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
     return complete;
   };
 }

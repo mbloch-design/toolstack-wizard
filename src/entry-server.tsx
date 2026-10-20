@@ -7,7 +7,6 @@ import { HelmetProvider } from "react-helmet-async";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { StackAccountProvider } from "@/hooks/useStackAccount";
 import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -636,11 +635,11 @@ function renderAdditionalSection(path: string, element: ReactNode): string {
           <Toaster /><Sonner />
           <StaticRouter location={path}>
             <ScrollToTop /><DynamicCanonical />
-            <StackAccountProvider><ErrorBoundary><Suspense fallback={null}>
+            <ErrorBoundary><Suspense fallback={null}>
               <Routes><Route path="/:lang" element={<LangLayout />}>
                 <Route path="*" element={element} />
               </Route></Routes>
-            </Suspense></ErrorBoundary></StackAccountProvider>
+            </Suspense></ErrorBoundary>
           </StaticRouter>
         </TooltipProvider>
       </QueryClientProvider>

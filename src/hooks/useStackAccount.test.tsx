@@ -1,15 +1,18 @@
 import { createElement, StrictMode, type ReactNode } from "react";
-import { act, cleanup, renderHook } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, renderHook, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { Session } from "@supabase/supabase-js";
 import { normalizePersonalStack, personalStackFingerprint, type PersonalStackRecord, type PersonalStackV4 } from "@/lib/personalStack";
 import { pinToolInState } from "@/lib/stackState";
 import { clearPersonalStackScope, getPersonalStackScope, personalStackStorageKey, readPersonalStack, replacePersonalStack, setPersonalStackScope } from "@/lib/personalStackStore";
 
-const mocks = vi.hoisted(() => ({ getSession: vi.fn(), onAuthStateChange: vi.fn(), signOut: vi.fn(), oauth: vi.fn(), otp: vi.fn(), verifyOtp: vi.fn(), load: vi.fn(), save: vi.fn(), remove: vi.fn() }));
-vi.mock("@/integrations/supabase/client", () => ({ supabase: { auth: { getSession: mocks.getSession, onAuthStateChange: mocks.onAuthStateChange, signOut: mocks.signOut, signInWithOAuth: mocks.oauth, signInWithOtp: mocks.otp, verifyOtp: mocks.verifyOtp } } }));
+const mocks = vi.hoisted(() => ({ getSession: vi.fn(), onAuthStateChange: vi.fn(), signOut: vi.fn(), oauth: vi.fn(), otp: vi.fn(), verifyOtp: vi.fn(), load: vi.fn(), save: vi.fn(), remove: vi.fn(), password: vi.fn(), signup: vi.fn(), resend: vi.fn(), reset: vi.fn(), update: vi.fn() }));
+vi.mock("@/config/features", () => ({ STACK_ACCOUNT_ENABLED: true, ACCOUNT_GOOGLE_ENABLED: true, ACCOUNT_GITHUB_ENABLED: true }));
+vi.mock("@/components/v2shell/AppShellV2", () => ({ default: ({ children }: { children: ReactNode }) => createElement("main", null, children) }));
+vi.mock("@/integrations/supabase/client", () => ({ supabase: { auth: { getSession: mocks.getSession, onAuthStateChange: mocks.onAuthStateChange, signOut: mocks.signOut, signInWithOAuth: mocks.oauth, signInWithOtp: mocks.otp, verifyOtp: mocks.verifyOtp, signInWithPassword: mocks.password, signUp: mocks.signup, resend: mocks.resend, resetPasswordForEmail: mocks.reset, updateUser: mocks.update } } }));
 vi.mock("@/lib/stackAccountApi", async importOriginal => ({ ...await importOriginal<typeof import("@/lib/stackAccountApi")>(), loadPersonalStack: mocks.load, savePersonalStack: mocks.save, deletePersonalAccount: mocks.remove }));
 import { getStackAccountReturnUrl, StackAccountProvider, useStackAccount } from "./useStackAccount";
+import { MemoryRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { StackAccountApiError } from "@/lib/stackAccountApi";
 
 const at = "2026-10-19T12:00:00Z";
@@ -30,8 +33,9 @@ async function login(value: Session | null) { await act(async () => { authChange
 
 beforeEach(() => {
   vi.useFakeTimers(); vi.resetAllMocks();
+  vi.stubEnv("VITE_ACCOUNT_GOOGLE_ENABLED", "true"); vi.stubEnv("VITE_ACCOUNT_GITHUB_ENABLED", "true");
   const values = new Map<string, string>();
-  Object.defineProperty(window, "localStorage", { configurable: true, value: {
+  for (const storageName of ["localStorage", "sessionStorage"]) Object.defineProperty(window, storageName, { configurable: true, value: {
     getItem: (key: string) => values.get(key) ?? null,
     setItem: (key: string, value: string) => { values.set(key, value); },
     removeItem: (key: string) => { values.delete(key); }, clear: () => values.clear(),
@@ -42,10 +46,14 @@ beforeEach(() => {
   mocks.onAuthStateChange.mockImplementation(callback => { authChange = callback; return { data: { subscription: { unsubscribe: vi.fn() } } }; });
   mocks.signOut.mockResolvedValue({ error: null });
   mocks.oauth.mockResolvedValue({ error: null }); mocks.otp.mockResolvedValue({ error: null }); mocks.verifyOtp.mockResolvedValue({ error: null });
+  mocks.password.mockResolvedValue({ data: { session: session() }, error: null });
+  mocks.signup.mockResolvedValue({ data: { session: null }, error: null });
+  mocks.resend.mockResolvedValue({ data: {}, error: null }); mocks.reset.mockResolvedValue({ data: {}, error: null });
+  mocks.update.mockResolvedValue({ data: { user: session().user }, error: null });
   mocks.load.mockResolvedValue(null);
   mocks.save.mockImplementation(async (_token, input) => record(input.state, input.expectedRevision + 1));
 });
-afterEach(() => { cleanup(); vi.useRealTimers(); });
+afterEach(() => { cleanup(); vi.useRealTimers(); vi.unstubAllEnvs(); });
 
 describe("global personal account coordinator", () => {
   it("keeps disabled accounts local without starting auth or network", async () => {
@@ -300,7 +308,11 @@ describe("global personal account coordinator", () => {
     expect(window.localStorage.getItem(`${personalStackStorageKey("A")}:sync`)).toBeNull();
     await act(async () => { saving.resolve(record(saved, 2)); });
     expect(readPersonalStack()).toEqual(state());
-    mocks.load.mockResolvedValue(null); await login(session("recreated")); await tick();
+    mocks.password.mockResolvedValue({ data: { session: session() }, error: null });
+  mocks.signup.mockResolvedValue({ data: { session: null }, error: null });
+  mocks.resend.mockResolvedValue({ data: {}, error: null }); mocks.reset.mockResolvedValue({ data: {}, error: null });
+  mocks.update.mockResolvedValue({ data: { user: session().user }, error: null });
+  mocks.load.mockResolvedValue(null); await login(session("recreated")); await tick();
     expect(readPersonalStack()).toEqual(state()); expect(hook.result.current.pendingDraftChoice).toBeNull();
   });
 
@@ -426,4 +438,126 @@ describe("global personal account coordinator", () => {
     expect(getPersonalStackScope()).toBe("A"); expect(readPersonalStack().selection.pinnedToolSlugs).toEqual(["private"]);
     expect(second.result.current.syncStatus).toBe("session-expired");
   });
+});
+
+function recoverySession(owner = "A", sessionId = "session-A", nonce = "first"): Session {
+  return { ...session(owner, `header.${btoa(JSON.stringify({ session_id: sessionId, nonce }))}.sig`), expires_at: Math.floor(Date.now() / 1000) + 3600 } as Session;
+}
+async function event(name: string, value: Session | null) { await act(async () => { authChange(name, value); }); }
+describe("complete account identity operations", () => {
+  it("serializes all consumers while a request survives close/reopen and releases after SDK rejection", async () => {
+    const pending = deferred<{ data: { session: null }; error: { code: string } }>(); mocks.password.mockReturnValue(pending.promise);
+    const hook = mount(); await settle(); let operation!: Promise<unknown>;
+    act(() => { operation = hook.result.current.signInWithPassword("a@example.invalid", "password"); });
+    expect(hook.result.current.authBusy).toBe(true);
+    await act(async () => { expect(await hook.result.current.signUpWithPassword("a@example.invalid", "password")).toEqual({ ok: false, error: "ACCOUNT_AUTH_BUSY" }); });
+    await act(async () => { expect(await hook.result.current.signOut()).toBe(false); });
+    await act(async () => { pending.resolve({ data: { session: null }, error: { code: "invalid_credentials" } }); await operation; });
+    expect(hook.result.current.authBusy).toBe(false); expect(hook.result.current.error).toBe("ACCOUNT_INVALID_CREDENTIALS");
+    await act(async () => { expect(await hook.result.current.signUpWithPassword("a@example.invalid", "password")).toEqual({ ok: true, outcome: "confirmation-required" }); });
+    expect(mocks.signup).toHaveBeenCalledTimes(1);
+  });
+  it("never enables recovery from a forged query or ordinary authenticated session", async () => {
+    window.history.replaceState(null, "", "/fr/compte/reinitialiser?recovery=true");
+    const hook = mount(); await settle(); await login(recoverySession());
+    await act(async () => { expect(await hook.result.current.completePasswordReset("new phrase")).toEqual({ ok: false, error: "ACCOUNT_RECOVERY_INVALID" }); });
+    expect(hook.result.current.recoveryStatus).toBe("invalid"); expect(mocks.update).not.toHaveBeenCalled();
+  });
+  it("keeps real recovery valid through USER_UPDATED and TOKEN_REFRESHED while changing the password", async () => {
+    const hook = mount(); await settle(); const recovered = recoverySession(); await event("PASSWORD_RECOVERY", recovered);
+    mocks.update.mockImplementation(async () => { await event("USER_UPDATED", { ...recovered, user: { ...recovered.user, updated_at: at } }); await event("TOKEN_REFRESHED", recoverySession("A", "session-A", "refreshed")); return { data: { user: recovered.user }, error: null }; });
+    await act(async () => { expect(await hook.result.current.completePasswordReset("  new phrase  ")).toEqual({ ok: true, outcome: "password-updated" }); });
+    expect(mocks.update).toHaveBeenCalledWith({ password: "  new phrase  " }); expect(mocks.signOut).toHaveBeenCalledWith({ scope: "others" });
+    expect(hook.result.current.recoveryStatus).toBe("complete"); expect(hook.result.current.authBusy).toBe(false);
+    await act(async () => { expect((await hook.result.current.completePasswordReset("different phrase")).ok).toBe(false); });
+    expect(mocks.update).toHaveBeenCalledTimes(1);
+  });
+  it("returns password success with a warning when other-session revocation fails", async () => {
+    const hook = mount(); await settle(); await event("PASSWORD_RECOVERY", recoverySession()); mocks.signOut.mockResolvedValue({ error: { code: "network" } });
+    await act(async () => { expect(await hook.result.current.completePasswordReset("new phrase")).toEqual({ ok: true, outcome: "password-updated", warning: "ACCOUNT_OTHER_SESSIONS_NOT_REVOKED" }); });
+    expect(hook.result.current.recoveryStatus).toBe("complete");
+  });
+  it("rejects expired recovery and discards proof when another session of the same owner takes over", async () => {
+    const hook = mount(); await settle(); await event("PASSWORD_RECOVERY", recoverySession());
+    await act(async () => { await vi.advanceTimersByTimeAsync(16 * 60 * 1000); expect((await hook.result.current.completePasswordReset("new phrase")).ok).toBe(false); });
+    expect(mocks.update).not.toHaveBeenCalled();
+    await event("PASSWORD_RECOVERY", recoverySession()); await login(recoverySession("A", "another-session"));
+    await act(async () => { expect((await hook.result.current.completePasswordReset("new phrase")).ok).toBe(false); });
+  });
+  it("restores recovery across reload only for the matching subject and session", async () => {
+    const first = mount(); await settle(); await event("PASSWORD_RECOVERY", recoverySession()); first.unmount();
+    mocks.getSession.mockResolvedValue({ data: { session: recoverySession("A", "session-A", "refresh") }, error: null });
+    const second = mount(); await settle(); expect(second.result.current.recoveryStatus).toBe("ready"); second.unmount();
+    mocks.getSession.mockResolvedValue({ data: { session: recoverySession("A", "new-session") }, error: null });
+    const third = mount(); await settle(); expect(third.result.current.recoveryStatus).not.toBe("ready");
+    await act(async () => { expect((await third.result.current.completePasswordReset("new phrase")).ok).toBe(false); });
+    expect(mocks.update).not.toHaveBeenCalled();
+  });
+  it("does not restore recovery when marker persistence is blocked", async () => {
+    vi.spyOn(window.sessionStorage, "setItem").mockImplementation(() => { throw new Error("blocked"); });
+    const first = mount(); await settle(); await event("PASSWORD_RECOVERY", recoverySession()); expect(first.result.current.recoveryStatus).toBe("ready"); first.unmount();
+    mocks.getSession.mockResolvedValue({ data: { session: recoverySession() }, error: null }); const second = mount(); await settle();
+    expect(second.result.current.recoveryStatus).not.toBe("ready");
+  });
+  it.each([false, true])("ignores late recovery result after A is replaced by B (SDK success=%s), and never revokes B sessions", async succeeds => {
+    const pending = deferred<{ data: { user: Session["user"] | null }; error: { code: string } | null }>(); mocks.update.mockReturnValue(pending.promise);
+    const hook = mount(); await settle(); await event("PASSWORD_RECOVERY", recoverySession()); let operation!: Promise<unknown>;
+    act(() => { operation = hook.result.current.completePasswordReset("new phrase"); }); await login(recoverySession("B", "session-B"));
+    await act(async () => { pending.resolve({ data: { user: succeeds ? recoverySession().user : null }, error: succeeds ? null : { code: "otp_expired" } }); await operation; });
+    expect(hook.result.current.user?.id).toBe("B"); expect(hook.result.current.error).toBeNull(); expect(hook.result.current.authBusy).toBe(false); expect(mocks.signOut).not.toHaveBeenCalled();
+  });
+  it("returns only the current SDK token and discards getSession responses from a former owner", async () => {
+    const hook = mount(); await settle(); await login(session());
+    const late = deferred<{ data: { session: Session }; error: null }>(); mocks.getSession.mockReturnValue(late.promise);
+    const token = hook.result.current.getAccessToken(); await login(session("B"));
+    late.resolve({ data: { session: session() }, error: null }); expect(await token).toBeNull();
+    mocks.getSession.mockResolvedValue({ data: { session: session("B") }, error: null }); expect(await hook.result.current.getAccessToken()).toBe("token-B");
+  });
+  it("records only successful email session method and preserves the public hint across logout", async () => {
+    const hook = mount(); await settle();
+    await act(async () => { await hook.result.current.signUpWithPassword("a@example.invalid", "password"); }); expect(hook.result.current.lastAuthMethod).toBeNull();
+    mocks.password.mockImplementation(async () => { await login(session()); return { data: { session: session() }, error: null }; });
+    await act(async () => { expect((await hook.result.current.signInWithPassword("a@example.invalid", "password")).ok).toBe(true); });
+    expect(hook.result.current.lastAuthMethod).toBe("email");
+    await act(async () => { await hook.result.current.signOut({ discardUnsaved: true }); }); expect(hook.result.current.lastAuthMethod).toBe("email");
+    expect(window.localStorage.getItem("tooltrim:last-auth-method")).toBe("email");
+  });
+});
+
+it("keeps the real LangLayout owner across Outlet and language navigation", async () => {
+  const { LangLayout } = await import("@/App");
+  function Consumer() { const account = useStackAccount(); const navigate = useNavigate(); return createElement('button', { onClick: () => navigate('/en/tools') }, account.user?.id ?? 'visitor'); }
+  render(createElement(MemoryRouter, { initialEntries: ['/fr/ma-stack'] }, createElement(Routes, null,
+    createElement(Route, { path: '/:lang', element: createElement(LangLayout) }, createElement(Route, { path: '*', element: createElement(Consumer) })))));
+  await settle(); await login(session()); expect(screen.getByRole('button', { name: 'A' })).toBeInTheDocument();
+  act(() => fireEvent.click(screen.getByRole('button', { name: 'A' }))); await settle();
+  expect(screen.getByRole('button', { name: 'A' })).toBeInTheDocument(); expect(mocks.onAuthStateChange).toHaveBeenCalledTimes(1); expect(mocks.getSession).toHaveBeenCalledTimes(1);
+}, 20000);
+it("records OAuth only after a real matching callback, never on a button or cancellation", async () => {
+  window.history.replaceState(null, '', '/fr/tools'); const first = mount(); await settle();
+  await act(async () => { expect(await first.result.current.signInWithProvider('github', { lang: 'en', returnTo: '/en/tool/notion' })).toEqual({ ok: true, outcome: 'redirecting' }); });
+  expect(first.result.current.lastAuthMethod).toBeNull(); expect(window.sessionStorage.getItem('tooltrim:pending-auth-method')).toBe('github'); first.unmount();
+  window.history.replaceState(null, '', '/en/sign-in/callback?error=access_denied'); const callback = mount(); await settle();
+  expect(callback.result.current.lastAuthMethod).toBeNull();
+  const actual = recoverySession(); actual.user.app_metadata = { provider: 'github' };
+  await event('SIGNED_IN', actual); expect(callback.result.current.lastAuthMethod).toBeNull();
+  expect(window.sessionStorage.getItem('tooltrim:pending-auth-method')).toBeNull();
+  window.history.replaceState(null, '', '/en/sign-in/callback');
+  window.sessionStorage.setItem('tooltrim:pending-auth-method', 'github');
+  await event('SIGNED_IN', actual); expect(callback.result.current.lastAuthMethod).toBe('github');
+  expect(window.localStorage.getItem('tooltrim:last-auth-method')).toBe('github'); expect(window.sessionStorage.getItem('tooltrim:pending-auth-method')).toBeNull();
+});
+it("does not return a stale token when the SDK refreshes during getAccessToken", async () => {
+  const hook = mount(); await settle(); const original = recoverySession(); await login(original);
+  const late = deferred<{ data: { session: Session }; error: null }>(); mocks.getSession.mockReturnValue(late.promise);
+  const pending = hook.result.current.getAccessToken(); const refreshed = recoverySession('A', 'session-A', 'new'); await event('TOKEN_REFRESHED', refreshed);
+  late.resolve({ data: { session: original }, error: null }); expect(await pending).toBe(refreshed.access_token);
+});
+
+it("records email confirmation only after its matching SDK callback session", async () => {
+  window.history.replaceState(null, '', '/fr/inscription'); const hook = mount(); await settle();
+  await act(async () => { await hook.result.current.signUpWithPassword('a@example.invalid', 'password'); });
+  expect(hook.result.current.lastAuthMethod).toBeNull();
+  window.history.replaceState(null, '', '/fr/connexion/retour'); const actual = recoverySession(); actual.user.app_metadata = { provider: 'email' };
+  await event('SIGNED_IN', actual); expect(hook.result.current.lastAuthMethod).toBe('email');
 });

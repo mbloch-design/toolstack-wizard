@@ -131,6 +131,7 @@ export const LangLayout = () => {
   );
 
   return (
+    <StackAccountProvider>
     <CurrencyProvider lang={effectiveLang}>
     <LangContext.Provider
       value={{
@@ -147,6 +148,7 @@ export const LangLayout = () => {
       </>
     </LangContext.Provider>
     </CurrencyProvider>
+    </StackAccountProvider>
   );
 };
 
@@ -251,7 +253,6 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <StackAccountProvider>
         <ScrollToTop />
         <DynamicCanonical />
         <AnalyticsPageView />
@@ -264,7 +265,6 @@ const App = () => (
         {/* After the page in the DOM, so the skip link is the first Tab stop
             (a11y audit, 8 Oct 2026); the banner stays fixed on screen. */}
         <AnalyticsConsent />
-        </StackAccountProvider>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

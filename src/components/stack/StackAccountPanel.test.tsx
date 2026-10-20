@@ -26,6 +26,9 @@ async function sendCode() {
 beforeEach(() => {
   vi.useFakeTimers();
   account = {
+    authBusy: false, recoveryStatus: "none", lastAuthMethod: null,
+    signInWithProvider: vi.fn(), signInWithPassword: vi.fn(), signUpWithPassword: vi.fn(), resendConfirmation: vi.fn(),
+    requestPasswordReset: vi.fn(), completePasswordReset: vi.fn(), getAccessToken: vi.fn().mockResolvedValue(null),
     enabled: true, user: null, syncStatus: "local", status: "local", error: null, pendingDraftChoice: null, conflict: null,
     magicLinkSentTo: null, hasUnsavedChanges: false, signOutNeedsConfirmation: false, deletionConfirmed: false, privacyWarning: null,
     signInWithGoogle: vi.fn().mockResolvedValue(true), sendEmailCode: vi.fn().mockResolvedValue(true), sendMagicLink: vi.fn().mockResolvedValue(true),
