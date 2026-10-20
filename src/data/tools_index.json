@@ -10313,7 +10313,7 @@
   {
     "id": "coupler-io",
     "slug": "coupler-io",
-    "name": "Coupler Io",
+    "name": "Coupler.io",
     "toolTrimRating": {
       "valeurAjoutee": 3,
       "simplicite": 4,
@@ -19705,7 +19705,7 @@
   {
     "id": "helpscout",
     "slug": "helpscout",
-    "name": "Helpscout",
+    "name": "Help Scout",
     "toolTrimRating": {
       "valeurAjoutee": 4,
       "simplicite": 3,

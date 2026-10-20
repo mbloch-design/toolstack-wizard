@@ -8698,7 +8698,7 @@
     }
   },
   {
-    "name": "Coupler Io",
+    "name": "Coupler.io",
     "slug": "coupler-io",
     "url_fr": "https://tooltrim.com/fr/tool/coupler-io",
     "url_en": "https://tooltrim.com/en/tool/coupler-io",
@@ -17022,7 +17022,7 @@
     }
   },
   {
-    "name": "Helpscout",
+    "name": "Help Scout",
     "slug": "helpscout",
     "url_fr": "https://tooltrim.com/fr/tool/helpscout",
     "url_en": "https://tooltrim.com/en/tool/helpscout",

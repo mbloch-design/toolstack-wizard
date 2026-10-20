@@ -36,13 +36,17 @@ for (const [slug, pages] of Object.entries<any>(metas)) {
         const [min, max] = LIMITS[kind];
         if (text.length > max || text.length < min) errors.push(`${where}: ${text.length} chars (${min}-${max})`);
         if (/ToolTrim\s*$/.test(text) && kind === "title") errors.push(`${where}: brand is added automatically`);
-        if (!text.toLowerCase().includes(String(b.name).toLowerCase().split(" ")[0])) errors.push(`${where}: tool name missing`);
+        // « After Effects » for Adobe After Effects: the vendor prefix may be dropped.
+        const name = String(b.name).toLowerCase();
+        const short = name.split(" ").length > 1 ? name.split(" ").slice(1).join(" ") : name;
+        if (!text.toLowerCase().includes(name.split(" ")[0]) && !text.toLowerCase().includes(short)) errors.push(`${where}: tool name missing`);
         if (/—/.test(text)) errors.push(`${where}: em dash`);
         if (/!/.test(text)) errors.push(`${where}: exclamation mark`);
         if (/(\d[\d.,]*\s?(€|\$|US)|[€$]\s?\d)/.test(raw)) errors.push(`${where}: hard-coded price, use {price}`);
-        if (/\b20\d\d\b/.test(raw)) errors.push(`${where}: hard-coded year, use {year}`);
+        // Past years are facts (« limits tightened in 2024 »); the current one goes stale.
+        if (new RegExp(`\\b${new Date().getFullYear()}\\b`).test(raw)) errors.push(`${where}: hard-coded current year, use {year}`);
         if (/\b\d[.,]\d\s?\/\s?5\b/.test(raw)) errors.push(`${where}: hard-coded score, use {rating}`);
-        if (/\b(gratuit|free)\b/i.test(text) && !b.freePlan && !/(pas d['’]offre gratuite|aucune offre gratuite|sans offre gratuite|no free|not free|pas gratuit|free alternatives?|alternatives? gratuites?|gratuites? (ou|et)|free (or|and)|(ou|or) (free|gratuit)|no free plan|offre gratuite[^.]*absente?s?)/i.test(text)) errors.push(`${where}: claims free without a confirmed free plan`);
+        if (/\b(gratuit|free)\b/i.test(text) && !b.freePlan && !/(pas d['’]offre gratuite|aucune offre gratuite|sans offre gratuite|no free|not free|pas gratuit|free alternatives?|alternatives? gratuites?|gratuites? (ou|et)|free (or|and)|(ou|or) (free|gratuit)|no free plan|no permanent free|ni gratuit|pas de gratuit|free trial|essai gratuit|free whois|whois privé gratuit|whois gratuite|pas d['’]offre gratuite permanente|offre gratuite[^.]*absente?s?)/i.test(text)) errors.push(`${where}: claims free without a confirmed free plan`);
         if (lang === "en" && /\s[:;?]/.test(text)) errors.push(`${where}: French spacing in English`);
         if (lang === "fr" && /\S[:;?](\s|$)/.test(text.replace(/https?:\/\/\S+/g, ""))) errors.push(`${where}: missing space before : ; ? in French`);
         const key = `${kind}:${text}`;
