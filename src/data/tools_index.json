@@ -8331,7 +8331,7 @@
   {
     "id": "chartmogul",
     "slug": "chartmogul",
-    "name": "Chartmogul",
+    "name": "ChartMogul",
     "toolTrimRating": {
       "valeurAjoutee": 4,
       "simplicite": 3,
@@ -22124,7 +22124,7 @@
   {
     "id": "judge-me",
     "slug": "judge-me",
-    "name": "Judge Me",
+    "name": "Judge.me",
     "categoryId": "creation",
     "shortDescription": "Application d'avis clients pour Shopify, alternative économique aux solutions premium.",
     "shortDescriptionEn": "Customer review app for Shopify, an affordable alternative to premium solutions.",
@@ -24723,7 +24723,7 @@
   {
     "id": "linkedin",
     "slug": "linkedin",
-    "name": "Linkedin",
+    "name": "LinkedIn",
     "categoryId": "communication",
     "shortDescription": "Réseau pro gratuit ; Premium Business à 60$/mois, Sales Navigator dès 120$/mois.",
     "shortDescriptionEn": "Free professional network; Premium Business at $60/month, Sales Navigator from $120/month.",

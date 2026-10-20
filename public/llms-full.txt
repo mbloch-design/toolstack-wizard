@@ -6934,7 +6934,7 @@
     }
   },
   {
-    "name": "Chartmogul",
+    "name": "ChartMogul",
     "slug": "chartmogul",
     "url_fr": "https://tooltrim.com/fr/tool/chartmogul",
     "url_en": "https://tooltrim.com/en/tool/chartmogul",
@@ -19207,7 +19207,7 @@
     }
   },
   {
-    "name": "Judge Me",
+    "name": "Judge.me",
     "slug": "judge-me",
     "url_fr": "https://tooltrim.com/fr/tool/judge-me",
     "url_en": "https://tooltrim.com/en/tool/judge-me",
@@ -21399,7 +21399,7 @@
     }
   },
   {
-    "name": "Linkedin",
+    "name": "LinkedIn",
     "slug": "linkedin",
     "url_fr": "https://tooltrim.com/fr/tool/linkedin",
     "url_en": "https://tooltrim.com/en/tool/linkedin",
