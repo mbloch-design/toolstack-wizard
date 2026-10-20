@@ -21442,7 +21442,7 @@
     }
   },
   {
-    "name": "Linkedin Recruiter",
+    "name": "LinkedIn Recruiter",
     "slug": "linkedin-recruiter",
     "url_fr": "https://tooltrim.com/fr/tool/linkedin-recruiter",
     "url_en": "https://tooltrim.com/en/tool/linkedin-recruiter",
@@ -44690,7 +44690,7 @@
     }
   },
   {
-    "name": "Youtube Studio",
+    "name": "YouTube Studio",
     "slug": "youtube-studio",
     "url_fr": "https://tooltrim.com/fr/tool/youtube-studio",
     "url_en": "https://tooltrim.com/en/tool/youtube-studio",
