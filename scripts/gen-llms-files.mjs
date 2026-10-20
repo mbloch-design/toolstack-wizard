@@ -15,10 +15,14 @@ if (!Array.isArray(tools)) throw new Error(`${toolsPath} doit contenir un tablea
 const fullRaw = JSON.parse(await readFile("src/data/tools_v4.json", "utf8"));
 const fullTools = Array.isArray(fullRaw) ? fullRaw : (fullRaw.tools || Object.values(fullRaw));
 const fullBySlug = new Map(fullTools.filter((tool) => tool?.slug).map((tool) => [tool.slug, tool]));
-const catalogue = toolRecords(tools, fullBySlug);
 // Run after prerender and SEO validation: the sitemap and generated HTML are
 // the publication authority, including translated slugs and standalone guides.
-const urls = editorialUrls(await readFile("dist/sitemap.xml", "utf8"));
+const sitemap = await readFile("dist/sitemap.xml", "utf8");
+// Hidden and renamed tools stay in the index but answer 404 or 308: listing
+// them sent agents to 218 non-canonical URLs (20/10/2026).
+const published = new Set([...sitemap.matchAll(/<loc>https:\/\/tooltrim\.com\/en\/tool\/([^/<]+)<\/loc>/g)].map((match) => match[1]));
+const catalogue = toolRecords(tools.filter((tool) => published.has(tool.slug)), fullBySlug);
+const urls = editorialUrls(sitemap);
 const editorial = await Promise.all(urls.map(async (url) => editorialRecord(
   url, await readFile(`dist${new URL(url).pathname}/index.html`, "utf8"),
 )));
@@ -63,7 +67,7 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 
 ## Catalogue
 
-- ${tools.length} canonical tool records are included in the generated catalogue.
+- ${catalogue.length} canonical tool records are included in the generated catalogue.
 - [Machine-readable catalogue](https://tooltrim.com/llms-full.txt)
 - [Editorial index: guide and comparison summaries](https://tooltrim.com/llms-editorial.txt)
 - ${guideCount} localized guide pages and ${comparisonCount} localized comparison pages are included in the editorial index, generated from the same build as the sitemap.

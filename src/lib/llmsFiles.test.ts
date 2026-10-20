@@ -17,9 +17,14 @@ describe("generated llms files", () => {
     pricing?: unknown;
   }>;
 
-  it("contains every canonical tool exactly once", () => {
-    expect(catalogue).toHaveLength(tools.length);
-    expect(new Set(catalogue.map(({ slug }) => slug)).size).toBe(tools.length);
+  it("contains every published tool exactly once, and only those", () => {
+    const sitemapPath = path.resolve(process.cwd(), "dist/sitemap.xml");
+    const indexed = new Set(tools.map(({ slug }) => slug));
+    expect(new Set(catalogue.map(({ slug }) => slug)).size).toBe(catalogue.length);
+    for (const { slug } of catalogue) expect(indexed.has(slug)).toBe(true);
+    if (!fs.existsSync(sitemapPath)) return;
+    const published = [...fs.readFileSync(sitemapPath, "utf8").matchAll(/<loc>https:\/\/tooltrim\.com\/en\/tool\/([^/<]+)<\/loc>/g)].map((match) => match[1]);
+    expect(catalogue.map(({ slug }) => slug).sort()).toEqual([...new Set(published)].sort());
   });
 
   it("uses canonical localized tool URLs", () => {
@@ -30,7 +35,7 @@ describe("generated llms files", () => {
   });
 
   it("does not advertise stale routes or catalogue counts", () => {
-    expect(llms).toContain(`${tools.length} canonical tool records`);
+    expect(llms).toContain(`${catalogue.length} canonical tool records`);
     expect(llms).not.toContain("/fr/categories");
     expect(llms).not.toContain("314 tools");
     expect(llms).not.toContain("Last full pricing audit");
