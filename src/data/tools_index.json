@@ -23920,7 +23920,7 @@
   {
     "id": "legalplace",
     "slug": "legalplace",
-    "name": "Legalplace",
+    "name": "LegalPlace",
     "toolTrimRating": {
       "valeurAjoutee": 3,
       "simplicite": 3,
@@ -35226,7 +35226,7 @@
   {
     "id": "productive-io",
     "slug": "productive-io",
-    "name": "Productive Io",
+    "name": "Productive",
     "toolTrimRating": {
       "valeurAjoutee": 3,
       "simplicite": 3,
@@ -46750,7 +46750,7 @@
   {
     "id": "tradingview",
     "slug": "tradingview",
-    "name": "Tradingview",
+    "name": "TradingView",
     "toolTrimRating": {
       "valeurAjoutee": 3,
       "simplicite": 3,

@@ -20843,7 +20843,7 @@
     }
   },
   {
-    "name": "Legalplace",
+    "name": "LegalPlace",
     "slug": "legalplace",
     "url_fr": "https://tooltrim.com/fr/tool/legalplace",
     "url_en": "https://tooltrim.com/en/tool/legalplace",
@@ -30621,7 +30621,7 @@
     }
   },
   {
-    "name": "Productive Io",
+    "name": "Productive",
     "slug": "productive-io",
     "url_fr": "https://tooltrim.com/fr/tool/productive-io",
     "url_en": "https://tooltrim.com/en/tool/productive-io",
@@ -40811,7 +40811,7 @@
     }
   },
   {
-    "name": "Tradingview",
+    "name": "TradingView",
     "slug": "tradingview",
     "url_fr": "https://tooltrim.com/fr/tool/tradingview",
     "url_en": "https://tooltrim.com/en/tool/tradingview",
