@@ -28,8 +28,8 @@ Une fenêtre partagée de connexion/inscription préserve le contexte de découv
 - Autocomplete `username`, `current-password` ou `new-password` selon l'action. Aucun mot de passe en URL, stockage, journal ou analytics.
 - Après inscription nécessitant confirmation : écran « Vérifiez votre e-mail », renvoi borné et retour vers connexion ; ne pas prétendre que le compte est confirmé avant le fournisseur.
 - Erreurs compréhensibles : identifiants invalides sans révéler l'existence d'un compte, e-mail non confirmé avec renvoi, limitation de débit, panne, refus OAuth. Aucune réussite simulée dans le produit.
-- Après succès : retour à la route/action commencée, sauvegarde via le coordinateur existant et choix explicite si un brouillon diverge. Les intentions/prix/décisions sont conservés.
-- La mention de méthode récemment utilisée est facultative ; si ajoutée, elle repose sur un succès local réel et stocke seulement `google`, `github` ou `email`, jamais une adresse ni un mot de passe.
+- Après succès : attendre la fin de la lecture initiale de stack ; afficher le choix explicite du brouillon dans le parcours central s’il diverge, puis revenir à la route/action commencée. Les mêmes choix restent accessibles dans Ma stack, sans nouvelle fusion automatique. En panne, distinguer compte connecté et sauvegarde indisponible, avec sortie possible et réessai conservant le brouillon. Les intentions/prix/décisions sont conservés.
+- La mention de méthode récemment utilisée repose sur un succès local réel et stocke seulement `google`, `github` ou `email`, jamais une adresse ni un mot de passe.
 
 ### Mot de passe oublié et récupération
 

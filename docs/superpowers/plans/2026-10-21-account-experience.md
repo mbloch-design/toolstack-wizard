@@ -50,8 +50,9 @@
 
 **Consumes:** socle final `b2c2ca7c91`, SDK2.99.1 et spec.
 **Produces:**
-- `AuthResult = {ok:true;outcome:'signed-in'|'confirmation-required'|'email-sent'|'password-updated';warning?:string}|{ok:false;error:string}`.
+- `AuthResult = {ok:true;outcome:'signed-in'|'redirecting'|'confirmation-required'|'email-sent'|'password-updated';warning?:string}|{ok:false;error:string}`.
 - Contexte : `signInWithProvider(provider:'google'|'github',options?)`, `signInWithPassword(email,password,options?)`, `signUpWithPassword(email,password,options?)`, `resendConfirmation(email,options?)`, `requestPasswordReset(email,options?)`, `completePasswordReset(password):Promise<AuthResult>` ; anciennes actions compatibles pour les tests/clients transitoires, mais nouvelles vues n'emploient pas OTP.
+- `getAccessToken():Promise<string|null>` retourne le token de la session actuelle uniquement ; pas de nouvel abonnement, pas de token dans les données de profil.
 - Snapshot : `authBusy:boolean`, `recoveryStatus:'none'|'ready'|'complete'|'invalid'` ; garde récupération privée liée au sujet/session, nettoyée à sortie/suppression. Un succès updateUser suivi d'échec de révocation renvoie ok/password-updated + warning.
 - `accountPath(lang,kind)` kind `signin|signup|callback|reset|settings` : FR `/connexion`, `/inscription`, `/connexion/retour`, `/compte/reinitialiser`, `/compte/parametres`; EN `/sign-in`, `/sign-up`, `/sign-in/callback`, `/account/reset-password`, `/account/settings`.
 - `safeAccountReturnTo(input,lang,origin):string` chemin relatif connu même origine, défaut `/:lang/ma-stack`, transport Auth exclu, retour interdit vers callback/reset pour éviter boucles. Étendre helper existant sans redirection ouverte.
@@ -72,7 +73,7 @@
 - `AccountProfile {userId:string,displayName:string|null,email:string|null,emailConfirmed:boolean,createdAt:string,updatedAt:string,canAccessBackoffice:boolean}` ; contrôles DTO non tolérants à une source invalide.
 - GET/PUT `/api/account-profile` → `{profile:AccountProfile}` ; PUT `{displayName:string|null}` seul, nom trimé max80 caractères et sans caractères de contrôle, corps borné4KiB ; aucun owner/rôle éditable.
 - `loadAccountProfile(token,signal?):Promise<AccountProfile>`, `saveAccountProfile(token,displayName,signal?):Promise<AccountProfile>`.
-- Hook `useAccountProfile(userId,token,enabled)` → `{profile,status:'idle'|'loading'|'ready'|'saving'|'error',error,saveDisplayName,retry}`. Token obtenu par la session SDK sans nouvel abonnement ; si nécessaire fournir un `getAccessToken()` borné à l'identité dans le contexte existant, jamais de token en profil/URL.
+- Hook `useAccountProfile(userId,token,enabled)` → `{profile,status:'idle'|'loading'|'ready'|'saving'|'error',error,saveDisplayName,retry}`. Le provider appelle `getAccessToken()` de Task1, borne le résultat à l'identité et la génération, et passe le token au hook, jamais en profil/URL.
 - RPC `read_personal_profile(p_owner,p_session)`, `update_personal_profile(p_owner,p_session,p_display_name)` ; réponses profil+createdAt Auth, locks/session/deleting et service-only. API ajoute e-mail confirmé/capacité à partir du helper vérifié, pas de métadonnées d'autorisation.
 
 - [ ] Générer le nom de migration avec CLI `supabase migration new account_profile_settings` après découverte --help ; ne pas inventer d'horodatage. Nom exact consigné au contrat/rapport ; rollback même basename. Aucun DDL distant.
@@ -91,6 +92,7 @@
 
 - [ ] RED formulaire : différenciation sign-in/sign-up, Google+GitHub+email, new/current autocomplete, show/hide, validation8caractères sur nouveau et sans min sur login, confirmation e-mail/réinitialisation/rate limit, pas de signup implicite dans login, retour safe et fermeture/focus/busy.
 - [ ] RED settings/menu : aperçu anonyme/expiré/indisponible, nom sauvegardé puis retour serveur et backoffice, identités réelles, préférences partagées et mention appareil, export JSON owner/draft local, sortie dirty cancel/confirm et suppression protégée, profil A jamais visible chez B.
+- [ ] Après sign-in, attendre hydration et résoudre pendingDraftChoice dans le parcours central (mêmes actions que Ma stack), puis destination demandée. En erreur de sauvegarde, compte connecté/stack indisponible restent distincts et le brouillon conservé ; aucune fermeture prématurée qui cache le choix sur une fiche outil.
 - [ ] Implémenter UI ToolTrim avec primitives existantes, classes ac-* dans couche components, header/mobile 44px. Pas de bouton éditeur/persona fantôme, pas de collecte obligatoire, pas de skin Toolfolio. Settings possède une seule hiérarchie de titres, pas un main imbriqué.
 - [ ] CartPanel garde états/retry/résolutions et ouvre auth commune ; retirer ancien formulaire public code et commandes compte lourdes. Connexion admin enabled réutilise mutation commune, disabled méthode historique conservée.
 - [ ] Ajouter routes App, liens de langue traduits et rewrites client-only exacts dans vercel.json ; noindex pour routes privées sans données personnelles statiques. Inconnu reste404, pages catalogue/prérendues non interceptées.
@@ -98,12 +100,12 @@
 
 ## Task 4 — Recette intégrée et prévisualisation
 
-**Files:** modifier `e2e/fixtures/accounts-server.mjs`, `e2e/fixtures/accounts-helpers.ts` (nom réel à retrouver si différent), specs comptes/backoffice/lifecycle ; créer `e2e/account-experience.spec.ts` et inclure dans config comptes ; actualiser `docs/STACK_ACCOUNT_OPERATIONS.md`, `CHANGELOG_AI.md`, `ROADMAP.md` et conception/plan outputs. Prévisualisation extérieure `/work/accounts-preview.mjs` gérée par root seulement, jamais dans le produit.
+**Files:** modifier `e2e/fixtures/accounts-server.mjs`, `e2e/fixtures/accounts.ts`, specs comptes/backoffice/lifecycle ; créer `e2e/account-experience.spec.ts` et inclure dans config comptes ; actualiser `docs/STACK_ACCOUNT_OPERATIONS.md`, `CHANGELOG_AI.md`, `ROADMAP.md` et conception/plan outputs. Prévisualisation extérieure `/work/accounts-preview.mjs` gérée par root seulement, jamais dans le produit.
 
 **Consumes:** Tasks1–3, fixture SDK existante avec blocage strict des autres origines.
 **Produces:** preuve de tous les parcours et visibilité locale réelle, configuration à activer séparément.
 
-- [ ] RED : fixture routes SDK signup/token/password/confirmation-resend/recovery/user-update/Google/GitHub et profil, .invalid seulement. Mot de passe absent des logs/stockages applicatifs, méthodes simulées jamais importées dans le produit. Liens de test consommés via écran fixture local dédié si nécessaire, jamais de mail réel.
+- [ ] RED : fixture routes SDK signup/token/password/confirmation-resend/recovery/user-update/Google/GitHub et profil, .invalid seulement. Mot de passe absent des logs/stockages applicatifs, méthodes simulées jamais importées dans le produit. Liens de test consommés via écran `/__accounts-test/mailbox` de la fixture locale uniquement, jamais de mail réel.
 - [ ] Adapter les anciennes recettes OTP aux parcours mot de passe publics sans affaiblir fullstate/CAS/privacy. Couvrir création→confirmation→session→stack entière→autre contexte, forgot→lienvalide/expiré→update→connexionnouveaupass, deux OAuth succès/annulation et retour fiche, identités/nom/profile reread, data/export/logout/delete, profil A tardif/B.
 - [ ] Tester header/modal/settings en FR/EN390/1440, clair/sombre, clavier/focus/Escape, aucune erreur JS ni débordement, aucune requête externe. Directlinks sur serveur généré, noindex et réglages de langue ; flagoff n'effectue aucun Auth/profilefetch.
 - [ ] Root préserve utilisateur/stack de démo avant tout redémarrage ; cacheDir preview distinct des fixtures/tests. Nouveaux endpoints locaux et méthodes réelles SDK simulées ; ne pas réinitialiser la stack de l'utilisateur pour simplifier la démo.
