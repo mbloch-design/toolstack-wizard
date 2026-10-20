@@ -9050,9 +9050,13 @@
     "url_en": "https://tooltrim.com/en/tool/crowdfire-inc",
     "website": "https://crowdfireapp.com",
     "category": "email-productivity",
-    "description_fr": "Plateforme de gestion des réseaux sociaux.",
-    "description_en": "Social media management platform.",
-    "price_verified_on": "2026-03-13",
+    "pricing": {
+      "free": "Produit arrêté.",
+      "paid": "Plus aucune offre vendue : le site annonce sa transformation en média."
+    },
+    "description_fr": "Ancien outil de planification et de suivi des réseaux sociaux, arrêté en 2026 : Crowdfire devient un média. Voir les alternatives.",
+    "description_en": "Former social media scheduling and monitoring tool, retired in 2026 as Crowdfire turns into a media outlet. See the alternatives.",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez plusieurs réseaux sociaux (Instagram, TikTok, LinkedIn)",
       "avoid_if": "Vous avez besoin d'email marketing (ce n'est pas la spécialité)",
@@ -38041,12 +38045,12 @@
     "website": "https://streamelements.com",
     "category": "communication",
     "pricing": {
-      "free": "Gratuit : overlays, chatbot, alertes, boutique merch (tailles et designs limités).",
-      "paid": "Entrée payante dès 10$/mois pour plus de tailles de merch et d'overlays, et un meilleur accompagnement débutant."
+      "free": "Gratuit : alertes, overlays, widgets et chatbot pour le live, présentés comme gratuits à vie.",
+      "paid": "Aucune offre payante publiée ; partenariats et sponsorings sur demande."
     },
     "description_fr": "Overlays, alertes et boutique merch pour streamers, sans abonnement obligatoire.",
     "description_en": "Overlays, alerts and a merch store for streamers, no subscription required.",
-    "price_verified_on": "2026-05-11",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous streamez sur Twitch, YouTube ou Facebook et vous voulez des overlays professionnels",
       "avoid_if": "Vous avez besoin d'une suite plus large (enregistrement, édition, multistream)",
