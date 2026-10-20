@@ -9079,7 +9079,7 @@
     }
   },
   {
-    "name": "Crowdstrike",
+    "name": "CrowdStrike",
     "slug": "crowdstrike",
     "url_fr": "https://tooltrim.com/fr/tool/crowdstrike",
     "url_en": "https://tooltrim.com/en/tool/crowdstrike",
@@ -36097,7 +36097,7 @@
     }
   },
   {
-    "name": "Shortpixel",
+    "name": "ShortPixel",
     "slug": "shortpixel",
     "url_fr": "https://tooltrim.com/fr/tool/shortpixel",
     "url_en": "https://tooltrim.com/en/tool/shortpixel",
@@ -37344,7 +37344,7 @@
     }
   },
   {
-    "name": "Sparkloop",
+    "name": "SparkLoop",
     "slug": "sparkloop",
     "url_fr": "https://tooltrim.com/fr/tool/sparkloop",
     "url_en": "https://tooltrim.com/en/tool/sparkloop",

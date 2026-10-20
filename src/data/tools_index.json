@@ -10711,7 +10711,7 @@
   {
     "id": "crowdstrike",
     "slug": "crowdstrike",
-    "name": "Crowdstrike",
+    "name": "CrowdStrike",
     "categoryId": "security",
     "shortDescription": "Sécurité endpoint enterprise (EDR/XDR) ; Falcon Go pour petites structures dès ~5€/poste/mois.",
     "shortDescriptionEn": "Enterprise endpoint security (EDR/XDR); Falcon Go for small businesses from ~€5/device/month.",
@@ -41422,7 +41422,7 @@
   {
     "id": "shortpixel",
     "slug": "shortpixel",
-    "name": "Shortpixel",
+    "name": "ShortPixel",
     "categoryId": "creation",
     "shortDescription": "Plugin WordPress de compression d'images pour accélérer le chargement d'un site.",
     "shortDescriptionEn": "WordPress image compression plugin to speed up site loading.",
@@ -42767,7 +42767,7 @@
   {
     "id": "sparkloop",
     "slug": "sparkloop",
-    "name": "Sparkloop",
+    "name": "SparkLoop",
     "categoryId": "creation",
     "shortDescription": "Programme de recommandation entre newsletters pour faire grandir sa liste d'abonnés.",
     "shortDescriptionEn": "Newsletter cross-recommendation program to grow your subscriber list.",
