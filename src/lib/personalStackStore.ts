@@ -1,4 +1,4 @@
-import { normalizePersonalStack, type PersonalStackV4 } from "./personalStack";
+import { normalizePersonalStack, personalStackFingerprint, type PersonalStackV4 } from "./personalStack";
 import { LEGACY_STACK_STATE_STORAGE_KEYS, STACK_STATE_BACKUP_STORAGE_KEY, STACK_STATE_STORAGE_KEY, loadToolCartStateWithStatus, type StackPersistenceStatus } from "./stackState";
 
 export type PersonalStackScope = "anonymous" | string;
@@ -184,6 +184,77 @@ export function clearPersonalStackScope(scope: PersonalStackScope): void {
   }
   memories.set(scope, entry);
   if (scope === activeScope) notify();
+}
+
+// Canonical identities are private cache data too. Keep them only until erasure is verified.
+const CONSUMED_ANONYMOUS_KEY = "tooltrim-personal-stack-v4:consumed-anonymous-cleanup";
+const consumedAnonymous = new Set<string>();
+
+/** Retry only known consumed copies; a newer unrelated draft belongs to the browser. */
+export function retryConsumedAnonymousPersonalStackCleanup(): boolean {
+  if (typeof window === "undefined") return false;
+  let storage: Storage;
+  try { storage = window.localStorage; } catch { return false; }
+  let complete = true;
+  try {
+    const raw = storage.getItem(CONSUMED_ANONYMOUS_KEY);
+    if (raw) {
+      const value: unknown = JSON.parse(raw);
+      if (!Array.isArray(value) || !value.every(item => typeof item === "string")) return false;
+      value.forEach(item => consumedAnonymous.add(item));
+    }
+  } catch { complete = false; }
+  if (!consumedAnonymous.size) return complete;
+  // Persist before touching any copy, so a reload can finish an interrupted cleanup.
+  try { storage.setItem(CONSUMED_ANONYMOUS_KEY, JSON.stringify([...consumedAnonymous])); }
+  catch { complete = false; }
+  const matches = (state: PersonalStackV4 | null) => state !== null && consumedAnonymous.has(personalStackFingerprint(state));
+  const previous = memories.get("anonymous");
+  let clearedMemory = matches(previous?.state ?? null) || previous?.purged === true;
+  try {
+    const raw = storage.getItem(personalStackStorageKey("anonymous"));
+    if (matches(parse(raw))) {
+      clearedMemory = true;
+      storage.setItem(personalStackStorageKey("anonymous"), JSON.stringify(normalizePersonalStack(null)));
+    }
+  } catch { complete = false; }
+  // Try the backup independently, even if the primary tombstone was rejected.
+  try {
+    if (matches(parse(storage.getItem(backupKey("anonymous"))))) storage.removeItem(backupKey("anonymous"));
+  } catch { complete = false; }
+  let remaining: string | null | undefined;
+  try {
+    remaining = storage.getItem(personalStackStorageKey("anonymous"));
+    if (matches(parse(remaining)) || matches(parse(storage.getItem(backupKey("anonymous"))))) complete = false;
+  } catch { complete = false; }
+  if (clearedMemory) {
+    const persisted = remaining === undefined ? null : parse(remaining);
+    const state = persisted && !matches(persisted) ? persisted : normalizePersonalStack(null);
+    const retainedPrimary = persisted !== null && matches(persisted);
+    scopeEpochs.set("anonymous", getPersonalStackScopeEpoch("anonymous") + 1);
+    memories.set("anonymous", { state, raw: remaining,
+      status: complete ? { state: "ok", source: "current" } : failed("storage-write-failed"),
+      purged: retainedPrimary || remaining === undefined });
+    if (activeScope === "anonymous") notify();
+  }
+  if (complete) {
+    try { storage.removeItem(CONSUMED_ANONYMOUS_KEY); consumedAnonymous.clear(); }
+    catch { complete = false; }
+  }
+  return complete;
+}
+
+/** Register provenance before discarding the account coordinator's draft reference. */
+export function consumeAnonymousPersonalStack(state: PersonalStackV4): boolean {
+  const identity = personalStackFingerprint(state);
+  consumedAnonymous.add(identity);
+  const previous = memories.get("anonymous");
+  if (previous && personalStackFingerprint(previous.state) === identity) {
+    scopeEpochs.set("anonymous", getPersonalStackScopeEpoch("anonymous") + 1);
+    memories.set("anonymous", { state: normalizePersonalStack(null), raw: undefined, purged: true, status: failed("storage-write-failed") });
+    if (activeScope === "anonymous") notify();
+  }
+  return retryConsumedAnonymousPersonalStackCleanup();
 }
 
 /** Called only once anonymous work has explicitly been consumed by an account. */

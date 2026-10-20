@@ -1,6 +1,6 @@
 import type { Session, SupabaseClient, User } from "@supabase/supabase-js";
 import { mergeAnonymousDraft, normalizePersonalStack, personalStackFingerprint, type PersonalStackRecord, type PersonalStackV4 } from "./personalStack";
-import { clearPersonalStackScope, getPersonalStackPersistenceStatus, getPersonalStackScope, isAnonymousPersonalStackMigrationPending, personalStackStorageKey, purgeLegacyPersonalStackSources, readPersonalStack, replacePersonalStack, setPersonalStackScope, subscribePersonalStack } from "./personalStackStore";
+import { clearPersonalStackScope, consumeAnonymousPersonalStack, getPersonalStackPersistenceStatus, getPersonalStackScope, isAnonymousPersonalStackMigrationPending, personalStackStorageKey, purgeLegacyPersonalStackSources, readPersonalStack, replacePersonalStack, retryConsumedAnonymousPersonalStackCleanup, setPersonalStackScope, subscribePersonalStack } from "./personalStackStore";
 import { deletePersonalAccount, loadPersonalStack, savePersonalStack, StackAccountApiError } from "./stackAccountApi";
 
 export type StackSyncStatus = "local" | "connecting" | "syncing" | "synced" | "unsaved" | "choice" | "conflict" | "session-expired" | "error";
@@ -100,16 +100,7 @@ export class StackAccountCoordinator {
     let complete = true;
     const owner = this.session?.user.id;
     try { if (owner) window.localStorage.setItem(consumedDraftKey(owner), "1"); } catch { complete = false; }
-    // Do not clear an anonymous draft another tab changed while this save ran.
-    try {
-      const raw = window.localStorage.getItem(personalStackStorageKey("anonymous"));
-      if (raw && fingerprint(normalizePersonalStack(JSON.parse(raw))) === fingerprint(this.draft)) {
-        clearPersonalStackScope("anonymous");
-        // Scope is private here; verify the anonymous tombstone directly without switching views.
-        const cleared = window.localStorage.getItem(personalStackStorageKey("anonymous"));
-        if (!cleared || hasContent(normalizePersonalStack(JSON.parse(cleared)))) complete = false;
-      }
-    } catch { complete = false; }
+    if (!consumeAnonymousPersonalStack(this.draft)) complete = false;
     if (!purgeLegacyPersonalStackSources()) complete = false;
     if (!complete) this.emit({ privacyWarning: "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
     this.draft = null; this.clearDraftAfterSave = false;
@@ -118,6 +109,7 @@ export class StackAccountCoordinator {
   start(): () => void {
     if (!this.enabled) return () => {};
     this.running = true;
+    if (!retryConsumedAnonymousPersonalStackCleanup()) this.emit({ privacyWarning: "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
     // Only this true anonymous namespace is ever eligible for account import.
     if (getPersonalStackScope() === "anonymous") {
       const anonymous = readPersonalStack(); this.draft = hasContent(anonymous) ? anonymous : null;
@@ -381,7 +373,7 @@ export class StackAccountCoordinator {
   };
 
   private purgeOwner(owner: string | null): boolean {
-    let complete = true;
+    let complete = retryConsumedAnonymousPersonalStackCleanup();
     if (owner) {
       clearPersonalStackScope(owner);
       if (getPersonalStackPersistenceStatus().state === "degraded") complete = false;
