@@ -2122,7 +2122,7 @@
     "slug": "meilleurs-gestionnaires-mots-de-passe-freelances",
     "url": "https://tooltrim.com/fr/guide/meilleurs-gestionnaires-mots-de-passe-freelances",
     "title": "Meilleurs gestionnaires de mots de passe pour freelances en 2026",
-    "summary": "NordPass, 1Password, Bitwarden, Dashlane et LastPass comparés pour un freelance : offres gratuites, vrai prix de la première année, et ce qui se renouvelle plus cher."
+    "summary": "NordPass, 1Password, Bitwarden, Proton Pass, Dashlane, Keeper et LastPass comparés pour un freelance : offres gratuites, vrai prix la première année."
   },
   {
     "type": "guide",
@@ -2130,7 +2130,7 @@
     "slug": "best-password-managers-freelancers",
     "url": "https://tooltrim.com/en/guide/best-password-managers-freelancers",
     "title": "Best password managers for freelancers in 2026",
-    "summary": "NordPass, 1Password, Bitwarden, Dashlane and LastPass compared for a freelancer: free plans, the real first-year price, and what renews at a higher rate."
+    "summary": "NordPass, 1Password, Bitwarden, Proton Pass, Dashlane, Keeper and LastPass compared for freelancers: free plans, real first-year price, renewals."
   },
   {
     "type": "guide",

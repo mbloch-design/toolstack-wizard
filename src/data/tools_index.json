@@ -352,7 +352,9 @@
     "alternatives": [
       "bitwarden",
       "dashlane",
-      "nordpass"
+      "nordpass",
+      "proton-pass",
+      "keeper"
     ],
     "freeAlternative": "bitwarden"
   },
@@ -5536,7 +5538,11 @@
       "Équipes IT",
       "Organisations sensibles aux données"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "proton-pass",
+      "keeper"
+    ]
   },
   {
     "id": "fusion",
@@ -11264,7 +11270,9 @@
       "1password",
       "bitwarden",
       "nordpass",
-      "lastpass"
+      "lastpass",
+      "proton-pass",
+      "keeper"
     ]
   },
   {
@@ -23581,7 +23589,11 @@
       "Petites équipes",
       "Familles partageant access"
     ],
-    "prescription_quality": "silence"
+    "prescription_quality": "silence",
+    "alternatives": [
+      "proton-pass",
+      "keeper"
+    ]
   },
   {
     "id": "later",
@@ -30212,7 +30224,9 @@
       "1password",
       "bitwarden",
       "dashlane",
-      "lastpass"
+      "lastpass",
+      "proton-pass",
+      "keeper"
     ]
   },
   {
@@ -60553,6 +60567,112 @@
     ],
     "personas": [
       "lina"
+    ]
+  },
+  {
+    "id": "proton-pass",
+    "slug": "proton-pass",
+    "name": "Proton Pass",
+    "categoryId": "security",
+    "shortDescription": "Gestionnaire de mots de passe chiffré de bout en bout de Proton, avec une offre gratuite sans limite d'identifiants et des alias e-mail.",
+    "shortDescriptionEn": "Proton's end-to-end encrypted password manager, with a free plan that has no login limit and built-in email aliases.",
+    "pricing": {
+      "free": "Gratuit : identifiants et appareils illimités, 10 alias e-mail.",
+      "paid": "Pass Plus 2,99 €/mois facturés 35,88 € par an (4,99 € en mensuel) ; Pass Family 4,99 €/mois en annuel pour 6 utilisateurs."
+    },
+    "pricingEn": {
+      "free": "Free: unlimited logins and devices, 10 email aliases.",
+      "paid": "Pass Plus $2.99/month billed $35.88 a year ($4.99 monthly); Pass Family $4.99/month yearly for 6 users."
+    },
+    "defaultMonthlyPrice": 2.99,
+    "compareMonthlyPrice": 2.99,
+    "nativePrices": [
+      {
+        "amount": 2.99,
+        "currency": "EUR",
+        "period": "monthly"
+      },
+      {
+        "amount": 2.99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://proton.me/pass",
+    "substitution_cluster_v2": "password-manager",
+    "functional_needs": [
+      "security"
+    ],
+    "verticals": [
+      "business-ops"
+    ],
+    "relevantFor": [
+      "Particuliers",
+      "Indépendants attentifs à la vie privée",
+      "Familles"
+    ],
+    "prescription_quality": "silence",
+    "personas": [
+      "CLAIRE"
+    ],
+    "alternatives": [
+      "bitwarden",
+      "1password",
+      "nordpass",
+      "dashlane"
+    ]
+  },
+  {
+    "id": "keeper",
+    "slug": "keeper",
+    "name": "Keeper",
+    "categoryId": "security",
+    "shortDescription": "Gestionnaire de mots de passe chiffré pour particuliers et familles, facturé à l'année, avec des options payantes de surveillance et de stockage.",
+    "shortDescriptionEn": "Encrypted password manager for individuals and families, billed yearly, with paid add-ons for monitoring and file storage.",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Personnel 4,30 €/mois (51,59 € facturés à l'année) ; Famille 9,20 €/mois (110,39 €/an, 5 utilisateurs)."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan.",
+      "paid": "Personal $3.58/month ($42.99 billed yearly); Family $7.67/month ($91.99/year, 5 users)."
+    },
+    "defaultMonthlyPrice": 4.3,
+    "compareMonthlyPrice": 4.3,
+    "nativePrices": [
+      {
+        "amount": 4.3,
+        "currency": "EUR",
+        "period": "monthly"
+      },
+      {
+        "amount": 3.58,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://www.keepersecurity.com",
+    "substitution_cluster_v2": "password-manager",
+    "functional_needs": [
+      "security"
+    ],
+    "verticals": [
+      "business-ops"
+    ],
+    "relevantFor": [
+      "Particuliers",
+      "Familles",
+      "Indépendants"
+    ],
+    "prescription_quality": "silence",
+    "personas": [
+      "CLAIRE"
+    ],
+    "alternatives": [
+      "1password",
+      "bitwarden",
+      "nordpass",
+      "proton-pass"
     ]
   }
 ]

@@ -39,7 +39,8 @@ const budgets = {
   // 2026-10-20: ViralSnap and Sprokl add 20 localized tool routes.
   // 2026-10-20: four best-of pages (FR/EN) and critical CSS variants of the
   // pricing pilot. Measured 15,116 files after both; narrow margin kept.
-  files: 15_150,
+  // 2026-10-20: Proton Pass and Keeper fiches. Measured 15,167 files.
+  files: 15_200,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
   // 2026-10-02 (US-NAV-01): search and menu buttons in the shared topbar add
   // about 2 KB of markup and critical CSS to each of the ~13,100 pages, plus

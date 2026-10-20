@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1245
+# Records: 1247
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
@@ -53831,6 +53831,88 @@
         "Credits do not map to a fixed number of videos; output depends on duration",
         "Team video estimates differ between the homepage and pricing page",
         "The product does not measure ad performance or identify winning creatives"
+      ]
+    }
+  },
+  {
+    "name": "Proton Pass",
+    "slug": "proton-pass",
+    "url_fr": "https://tooltrim.com/fr/tool/proton-pass",
+    "url_en": "https://tooltrim.com/en/tool/proton-pass",
+    "website": "https://proton.me/pass",
+    "category": "security",
+    "pricing": {
+      "free": "Gratuit : identifiants et appareils illimités, 10 alias e-mail.",
+      "paid": "Pass Plus 2,99 €/mois facturés 35,88 € par an (4,99 € en mensuel) ; Pass Family 4,99 €/mois en annuel pour 6 utilisateurs."
+    },
+    "description_fr": "Gestionnaire de mots de passe chiffré de bout en bout de Proton, avec une offre gratuite sans limite d'identifiants et des alias e-mail.",
+    "description_en": "Proton's end-to-end encrypted password manager, with a free plan that has no login limit and built-in email aliases.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Tu veux un gestionnaire de mots de passe gratuit sans limite d'identifiants ni d'appareils, ou tu utilises déjà Proton Mail",
+      "avoid_if": "Tu as besoin d'une gestion d'équipe avancée : les offres entreprise sont à part et non couvertes ici",
+      "strengths": [
+        "Offre gratuite sans limite d'identifiants ni d'appareils",
+        "Alias e-mail masqués intégrés, illimités en Pass Plus",
+        "Chiffrement de bout en bout et apps sur tous les systèmes, Linux compris"
+      ],
+      "weaknesses": [
+        "Authentificateur 2FA, partage d'éléments et pièces jointes réservés aux offres payantes",
+        "Le prix bas suppose un engagement d'un an"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a free password manager with no login or device limit, or you already use Proton Mail",
+      "avoid_if": "You need advanced team management: business plans are separate and not covered here",
+      "strengths": [
+        "Free plan with no login or device limit",
+        "Built-in hide-my-email aliases, unlimited on Pass Plus",
+        "End-to-end encryption and apps on every platform, Linux included"
+      ],
+      "weaknesses": [
+        "2FA authenticator, item sharing and attachments are paid-only",
+        "The low price requires a one-year commitment"
+      ]
+    }
+  },
+  {
+    "name": "Keeper",
+    "slug": "keeper",
+    "url_fr": "https://tooltrim.com/fr/tool/keeper",
+    "url_en": "https://tooltrim.com/en/tool/keeper",
+    "website": "https://www.keepersecurity.com",
+    "category": "security",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Personnel 4,30 €/mois (51,59 € facturés à l'année) ; Famille 9,20 €/mois (110,39 €/an, 5 utilisateurs)."
+    },
+    "description_fr": "Gestionnaire de mots de passe chiffré pour particuliers et familles, facturé à l'année, avec des options payantes de surveillance et de stockage.",
+    "description_en": "Encrypted password manager for individuals and families, billed yearly, with paid add-ons for monitoring and file storage.",
+    "price_verified_on": "2026-10-20",
+    "verdict_fr": {
+      "keep_if": "Tu veux un coffre-fort simple pour toi ou ta famille et tu acceptes de payer à l'année",
+      "avoid_if": "Tu veux une offre gratuite ou payer au mois : la grille publiée n'en propose pas",
+      "strengths": [
+        "Mots de passe, appareils et partage sécurisé illimités dès l'offre Personnel",
+        "Offre Famille à 5 utilisateurs avec des coffres séparés",
+        "Assistance client 24h/24 et 7j/7"
+      ],
+      "weaknesses": [
+        "Pas d'offre gratuite permanente ni de facturation mensuelle dans la grille publiée",
+        "Surveillance du dark web et stockage de fichiers vendus en options"
+      ]
+    },
+    "verdict_en": {
+      "keep_if": "You want a simple vault for yourself or your family and are fine paying yearly",
+      "avoid_if": "You want a free plan or monthly billing: the published grid has neither",
+      "strengths": [
+        "Unlimited passwords, devices and secure sharing from the Personal plan",
+        "Family plan for 5 users with separate vaults",
+        "24/7 customer support"
+      ],
+      "weaknesses": [
+        "No permanent free plan and no monthly billing in the published grid",
+        "Dark web alerts and file storage sold as add-ons"
       ]
     }
   }

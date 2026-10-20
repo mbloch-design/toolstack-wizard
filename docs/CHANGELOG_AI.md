@@ -1,3 +1,9 @@
+## 2026-10-20 · Maillage des sous-pages, llms-full, Proton Pass et Keeper
+
+- Sous-pages prix et alternatives : bloc de liens vers les mêmes sous-pages des 5 premières alternatives (« 1Password pricing », « Prix de Bitwarden ») et vers la sous-page sœur.
+- `llms-full.txt` filtré par le sitemap : 1 245 outils publiés, plus aucune URL en 404 ou 308.
+- Fiches Proton Pass et Keeper (grilles officielles relevées le 20/10, $ et €), ajoutées au classement des gestionnaires de mots de passe et aux alternatives de NordPass, 1Password, Bitwarden, Dashlane et LastPass. Pas de note ToolTrim.
+
 ## 2026-10-20 · Consentement GA4 par région, nouveau bandeau
 
 - Constat : Vercel compte environ 7 fois plus de visiteurs que GA4, parce que GA4 ne compte que les visiteurs qui acceptent les cookies (Consent Mode avancé, refus par défaut).

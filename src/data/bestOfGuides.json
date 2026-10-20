@@ -236,16 +236,16 @@
         "fr": "Meilleurs gestionnaires de mots de passe pour freelances en 2026"
       },
       "description": {
-        "en": "NordPass, 1Password, Bitwarden, Dashlane and LastPass compared for a freelancer: free plans, the real first-year price, and what renews at a higher rate.",
-        "fr": "NordPass, 1Password, Bitwarden, Dashlane et LastPass comparés pour un freelance : offres gratuites, vrai prix de la première année, et ce qui se renouvelle plus cher."
+        "en": "NordPass, 1Password, Bitwarden, Proton Pass, Dashlane, Keeper and LastPass compared for freelancers: free plans, real first-year price, renewals.",
+        "fr": "NordPass, 1Password, Bitwarden, Proton Pass, Dashlane, Keeper et LastPass comparés pour un freelance : offres gratuites, vrai prix la première année."
       },
       "h1": {
         "en": "The best password managers for freelancers",
         "fr": "Les meilleurs gestionnaires de mots de passe pour freelances"
       },
       "intro": {
-        "en": "A freelancer stores client logins, banking access and tool accounts in one vault, so the choice is about trust and sharing more than features. All five cover autofill and encrypted storage. They differ on three things: whether the free plan works across your devices, whether the advertised price is an introductory offer, and how cleanly you can share a vault with a client or a partner.",
-        "fr": "Un freelance range dans un seul coffre les accès clients, la banque et les comptes de ses outils : le choix tient à la confiance et au partage plus qu'aux fonctionnalités. Les cinq couvrent le remplissage automatique et le stockage chiffré. Ils se distinguent sur trois points : l'offre gratuite fonctionne-t-elle sur tous vos appareils, le prix affiché est-il une offre de lancement, et peut-on partager proprement un coffre avec un client ou un associé."
+        "en": "A freelancer stores client logins, banking access and tool accounts in one vault, so the choice is about trust and sharing more than features. All seven cover autofill and encrypted storage. They differ on three things: whether the free plan works across your devices, whether the advertised price is an introductory offer, and how cleanly you can share a vault with a client or a partner.",
+        "fr": "Un freelance range dans un seul coffre les accès clients, la banque et les comptes de ses outils : le choix tient à la confiance et au partage plus qu'aux fonctionnalités. Les sept couvrent le remplissage automatique et le stockage chiffré. Ils se distinguent sur trois points : l'offre gratuite fonctionne-t-elle sur tous vos appareils, le prix affiché est-il une offre de lancement, et peut-on partager proprement un coffre avec un client ou un associé."
       },
       "audience": {
         "en": "for freelancers",
@@ -255,12 +255,14 @@
         "nordpass",
         "1password",
         "bitwarden",
+        "proton-pass",
         "dashlane",
+        "keeper",
         "lastpass"
       ],
       "angle": {
-        "en": "Read the billing terms before the price. NordPass's headline price applies to a prepaid two-year plan and its renewal price is not shown on the vendor's page, and 1Password's first-year discount is reserved for new customers. Bitwarden is the one whose free plan already covers unlimited devices; LastPass limits its free plan to a single device type.",
-        "fr": "Lisez les conditions avant le prix. Le prix d'appel de NordPass vaut pour un abonnement de deux ans payé d'avance, et son prix de renouvellement n'est pas affiché par l'éditeur ; la remise de première année de 1Password est réservée aux nouveaux clients. Bitwarden est celui dont l'offre gratuite couvre déjà un nombre illimité d'appareils ; LastPass limite la sienne à un seul type d'appareil."
+        "en": "Read the billing terms before the price. NordPass's headline price applies to a prepaid two-year plan and its renewal price is not shown on the vendor's page, and 1Password's first-year discount is reserved for new customers. Bitwarden and Proton Pass have free plans that already cover unlimited devices, Proton adding 10 email aliases; Keeper has no free plan and bills yearly only; LastPass limits its free plan to a single device type.",
+        "fr": "Lisez les conditions avant le prix. Le prix d'appel de NordPass vaut pour un abonnement de deux ans payé d'avance, et son prix de renouvellement n'est pas affiché par l'éditeur ; la remise de première année de 1Password est réservée aux nouveaux clients. Bitwarden et Proton Pass ont une offre gratuite qui couvre déjà un nombre illimité d'appareils, Proton y ajoutant 10 alias e-mail ; Keeper n'a pas d'offre gratuite et ne facture qu'à l'année ; LastPass limite la sienne à un seul type d'appareil."
       }
     },
     {

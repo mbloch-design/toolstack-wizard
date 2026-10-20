@@ -132,7 +132,7 @@
     ]
   },
   "password-managers": {
-    "count": 5,
+    "count": 7,
     "checkedOn": "2026-10-20",
     "tools": [
       {
@@ -151,9 +151,9 @@
         "websiteUrl": "https://bitwarden.com"
       },
       {
-        "slug": "dashlane",
-        "name": "Dashlane",
-        "websiteUrl": "https://dashlane.com"
+        "slug": "proton-pass",
+        "name": "Proton Pass",
+        "websiteUrl": "https://proton.me/pass"
       }
     ]
   },

@@ -1346,7 +1346,9 @@
     "alternatives": [
       "bitwarden",
       "dashlane",
-      "nordpass"
+      "nordpass",
+      "proton-pass",
+      "keeper"
     ],
     "seo": {
       "aiAngle": {
@@ -26452,7 +26454,10 @@
       "Équipes IT",
       "Organisations sensibles aux données"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "proton-pass",
+      "keeper"
+    ],
     "verdict": {
       "keepIf": [
         "Vous cherchez un gestionnaire de mots de passe open-source et de confiance.",
@@ -53344,7 +53349,9 @@
       "1password",
       "bitwarden",
       "nordpass",
-      "lastpass"
+      "lastpass",
+      "proton-pass",
+      "keeper"
     ],
     "verdict": {
       "keepIf": [
@@ -111544,7 +111551,10 @@
       "Petites équipes",
       "Familles partageant access"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "proton-pass",
+      "keeper"
+    ],
     "verdict": {
       "keepIf": [
         "Vous avez besoin gestionnaire passwords cloud simple.",
@@ -142398,7 +142408,9 @@
       "1password",
       "bitwarden",
       "dashlane",
-      "lastpass"
+      "lastpass",
+      "proton-pass",
+      "keeper"
     ],
     "verdict": {
       "keepIf": [
@@ -276920,6 +276932,678 @@
       "metaDescriptionEn": "Sprokl review and pricing: prepare ecommerce ad angles, scripts, and video variations while keeping creative production separate from performance measurement.",
       "idealForFr": "Une marque e-commerce ou petite équipe paid social qui veut décliner des ressources produit en créations publicitaires à tester.",
       "idealForEn": "An ecommerce brand or small paid social team turning product assets into ad creatives to test."
+    }
+  },
+  {
+    "id": "proton-pass",
+    "slug": "proton-pass",
+    "category": "security",
+    "affiliateLink": "",
+    "logo": "",
+    "articles": [],
+    "covers": [
+      "security"
+    ],
+    "freeAlternative": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "personas": [
+      "CLAIRE"
+    ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "business-ops"
+    ],
+    "functional_needs": [
+      "security"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "silence",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": "password-manager",
+    "decision_policy_v3": null,
+    "force_silence": false,
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-10-20"
+    },
+    "research": {
+      "dossier": null,
+      "researchedOn": "2026-10-20",
+      "sources": 1
+    },
+    "name": "Proton Pass",
+    "websiteUrl": "https://proton.me/pass",
+    "shortDescription": "Gestionnaire de mots de passe chiffré de bout en bout de Proton, avec une offre gratuite sans limite d'identifiants et des alias e-mail.",
+    "shortDescriptionEn": "Proton's end-to-end encrypted password manager, with a free plan that has no login limit and built-in email aliases.",
+    "description": "Proton Pass, le gestionnaire de mots de passe de Proton (Suisse). Gratuit sans limite d'identifiants ; Pass Plus dès 2,99 €/mois en annuel.",
+    "longDescription": "Proton Pass est le gestionnaire de mots de passe de Proton, l'éditeur suisse de Proton Mail et Proton VPN. Le coffre-fort est chiffré de bout en bout et disponible sur Android, iOS, Windows, macOS, Linux, le web et les principaux navigateurs.\n\nL'offre gratuite est rare par sa générosité : identifiants, notes et cartes illimités, appareils illimités, passkeys et 10 alias e-mail masqués. Pass Plus (2,99 €/mois en annuel, 4,99 € en mensuel) ajoute les alias illimités, l'authentificateur 2FA intégré, le partage d'éléments, la surveillance du dark web et l'accès d'urgence. Pass Family couvre jusqu'à 6 personnes pour 4,99 €/mois en annuel.",
+    "longDescriptionEn": "Proton Pass is the password manager from Proton, the Swiss company behind Proton Mail and Proton VPN. The vault is end-to-end encrypted and runs on Android, iOS, Windows, macOS, Linux, the web and the main browsers.\n\nIts free plan is unusually generous: unlimited logins, notes and cards, unlimited devices, passkeys and 10 hide-my-email aliases. Pass Plus ($2.99/month yearly, $4.99 monthly) adds unlimited aliases, a built-in 2FA authenticator, item sharing, Dark Web Monitoring and Emergency Access. Pass Family covers up to 6 people for $4.99/month yearly.",
+    "pricing": {
+      "free": "Gratuit : identifiants et appareils illimités, 10 alias e-mail.",
+      "paid": "Pass Plus 2,99 €/mois facturés 35,88 € par an (4,99 € en mensuel) ; Pass Family 4,99 €/mois en annuel pour 6 utilisateurs."
+    },
+    "pricingEn": {
+      "free": "Free: unlimited logins and devices, 10 email aliases.",
+      "paid": "Pass Plus $2.99/month billed $35.88 a year ($4.99 monthly); Pass Family $4.99/month yearly for 6 users."
+    },
+    "defaultMonthlyPrice": 2.99,
+    "relevantFor": [
+      "Particuliers",
+      "Indépendants attentifs à la vie privée",
+      "Familles"
+    ],
+    "alternatives": [
+      "bitwarden",
+      "1password",
+      "nordpass",
+      "dashlane"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu veux un gestionnaire de mots de passe gratuit sans limite d'identifiants ni d'appareils, ou tu utilises déjà Proton Mail."
+      ],
+      "avoidIf": [
+        "Tu as besoin d'une gestion d'équipe avancée : les offres entreprise sont à part et non couvertes ici."
+      ],
+      "threshold": "L'offre gratuite suffit pour stocker et synchroniser ses mots de passe ; Pass Plus (35,88 €/an) se justifie si tu veux des alias illimités ou les codes 2FA dans le même coffre.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le prix affiché de 2,99 €/mois suppose 35,88 € payés pour un an ; en mensuel, Pass Plus coûte 4,99 €."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a free password manager with no login or device limit, or you already use Proton Mail."
+      ],
+      "avoidIf": [
+        "You need advanced team management: business plans are separate and not covered here."
+      ],
+      "threshold": "The free plan covers storing and syncing passwords; Pass Plus ($35.88 a year) pays off if you want unlimited aliases or 2FA codes in the same vault.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The $2.99/month headline assumes $35.88 paid for a year; billed monthly, Pass Plus is $4.99."
+        }
+      ]
+    },
+    "pros": [
+      "Offre gratuite sans limite d'identifiants ni d'appareils.",
+      "Alias e-mail masqués intégrés, illimités en Pass Plus.",
+      "Chiffrement de bout en bout et apps sur tous les systèmes, Linux compris."
+    ],
+    "prosEn": [
+      "Free plan with no login or device limit.",
+      "Built-in hide-my-email aliases, unlimited on Pass Plus.",
+      "End-to-end encryption and apps on every platform, Linux included."
+    ],
+    "cons": [
+      "Authentificateur 2FA, partage d'éléments et pièces jointes réservés aux offres payantes.",
+      "Le prix bas suppose un engagement d'un an."
+    ],
+    "consEn": [
+      "2FA authenticator, item sharing and attachments are paid-only.",
+      "The low price requires a one-year commitment."
+    ],
+    "useCases": [
+      "Un indépendant qui quitte les mots de passe du navigateur pour un coffre-fort gratuit synchronisé sur tous ses appareils.",
+      "Créer un alias e-mail par inscription pour limiter le spam et les fuites de son adresse réelle."
+    ],
+    "useCasesEn": [
+      "A freelancer moving off browser-saved passwords to a free vault synced across every device.",
+      "Creating one email alias per sign-up to limit spam and leaks of their real address."
+    ],
+    "seo": {
+      "idealForFr": "Un indépendant attentif à sa vie privée qui veut un gestionnaire de mots de passe gratuit et complet, avec des alias e-mail.",
+      "idealForEn": "A privacy-minded freelancer who wants a complete free password manager with email aliases."
+    },
+    "tagline": {
+      "fr": "Gestionnaire mots de passe",
+      "en": "Password manager"
+    },
+    "ogImageUrl": null,
+    "pricing_v5": {
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-20",
+      "official_source_url": "https://proton.me/pass/pricing",
+      "source_domain": "proton.me",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "compare_plan_name": "Pass Plus",
+      "compare_plan_kind": "account",
+      "compare_price_monthly_eur": 2.99,
+      "cautions": [
+        "Le prix bas (2,99/mois) suppose un an payé d'avance ; sans engagement, Pass Plus coûte 4,99/mois.",
+        "Offres entreprise (Pass Essentials, Professional) sur un onglet séparé, non relevées ici."
+      ],
+      "cautionsEn": [
+        "The low price (2.99/month) assumes a year paid upfront; with no commitment Pass Plus is 4.99/month.",
+        "Business plans (Pass Essentials, Professional) sit on a separate tab and are not covered here."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Proton Free",
+          "summary": "Gratuit : identifiants, notes et cartes illimités, appareils illimités, 10 alias e-mail.",
+          "featureHighlights": [
+            "Identifiants et appareils illimités",
+            "10 alias e-mail masqués",
+            "Passkeys sur tous les appareils"
+          ],
+          "detailsSourceUrl": "https://proton.me/pass/pricing",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pass-plus-yearly",
+          "displayName": "Pass Plus",
+          "summary": "2,99 €/mois facturés 35,88 € tous les 12 mois.",
+          "featureHighlights": [
+            "Alias illimités",
+            "Authentificateur 2FA intégré",
+            "Surveillance du dark web",
+            "Accès d'urgence"
+          ],
+          "detailsSourceUrl": "https://proton.me/pass/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 2.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pass-plus-monthly",
+          "displayName": "Pass Plus",
+          "summary": "Sans engagement.",
+          "featureHighlights": [
+            "Mêmes fonctions que l'offre annuelle"
+          ],
+          "detailsSourceUrl": "https://proton.me/pass/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 4.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pass-family-yearly",
+          "displayName": "Pass Family",
+          "summary": "4,99 €/mois facturés 59,88 € tous les 12 mois, jusqu'à 6 utilisateurs.",
+          "featureHighlights": [
+            "6 comptes Pass Plus",
+            "Panneau d'administration familial"
+          ],
+          "detailsSourceUrl": "https://proton.me/pass/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 4.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pass-family-monthly",
+          "displayName": "Pass Family",
+          "summary": "Sans engagement, jusqu'à 6 utilisateurs.",
+          "featureHighlights": [
+            "6 comptes Pass Plus"
+          ],
+          "detailsSourceUrl": "https://proton.me/pass/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 6.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-20",
+      "official_source_url": "https://proton.me/pass/pricing",
+      "source_domain": "proton.me",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "compare_plan_name": "Pass Plus",
+      "compare_plan_kind": "account",
+      "compare_price_monthly_eur": 2.99,
+      "cautions": [
+        "The low price (2.99/month) assumes a year paid upfront; with no commitment Pass Plus is 4.99/month.",
+        "Business plans (Pass Essentials, Professional) sit on a separate tab and are not covered here."
+      ],
+      "cautionsEn": [
+        "The low price (2.99/month) assumes a year paid upfront; with no commitment Pass Plus is 4.99/month.",
+        "Business plans (Pass Essentials, Professional) sit on a separate tab and are not covered here."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Proton Free",
+          "summary": "Free: unlimited logins, notes and cards, unlimited devices, 10 email aliases.",
+          "featureHighlights": [
+            "Unlimited logins and devices",
+            "10 hide-my-email aliases",
+            "Passkeys on every device"
+          ],
+          "detailsSourceUrl": "https://proton.me/pass/pricing",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pass-plus-yearly",
+          "displayName": "Pass Plus",
+          "summary": "$2.99/month billed $35.88 every 12 months.",
+          "featureHighlights": [
+            "Unlimited aliases",
+            "Built-in 2FA authenticator",
+            "Dark Web Monitoring",
+            "Emergency Access"
+          ],
+          "detailsSourceUrl": "https://proton.me/pass/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 2.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pass-plus-monthly",
+          "displayName": "Pass Plus",
+          "summary": "No commitment.",
+          "featureHighlights": [
+            "Same features as the yearly plan"
+          ],
+          "detailsSourceUrl": "https://proton.me/pass/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 4.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pass-family-yearly",
+          "displayName": "Pass Family",
+          "summary": "$4.99/month billed $59.88 every 12 months, up to 6 users.",
+          "featureHighlights": [
+            "6 Pass Plus accounts",
+            "Family admin panel"
+          ],
+          "detailsSourceUrl": "https://proton.me/pass/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 4.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pass-family-monthly",
+          "displayName": "Pass Family",
+          "summary": "No commitment, up to 6 users.",
+          "featureHighlights": [
+            "6 Pass Plus accounts"
+          ],
+          "detailsSourceUrl": "https://proton.me/pass/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 6.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        }
+      ]
+    }
+  },
+  {
+    "id": "keeper",
+    "slug": "keeper",
+    "category": "security",
+    "affiliateLink": "",
+    "logo": "",
+    "articles": [],
+    "covers": [
+      "security"
+    ],
+    "freeAlternative": null,
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "personas": [
+      "CLAIRE"
+    ],
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "business-ops"
+    ],
+    "functional_needs": [
+      "security"
+    ],
+    "ia_use_case": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "prescription_quality": "silence",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [],
+    "substitution_cluster_v2": "password-manager",
+    "decision_policy_v3": null,
+    "force_silence": false,
+    "lifecycle": {
+      "status": "active",
+      "note": null,
+      "checkedOn": "2026-10-20"
+    },
+    "research": {
+      "dossier": null,
+      "researchedOn": "2026-10-20",
+      "sources": 1
+    },
+    "name": "Keeper",
+    "websiteUrl": "https://www.keepersecurity.com",
+    "shortDescription": "Gestionnaire de mots de passe chiffré pour particuliers et familles, facturé à l'année, avec des options payantes de surveillance et de stockage.",
+    "shortDescriptionEn": "Encrypted password manager for individuals and families, billed yearly, with paid add-ons for monitoring and file storage.",
+    "description": "Keeper, gestionnaire de mots de passe chiffré. Personnel 4,30 €/mois facturés à l'année ; Famille 9,20 €/mois pour 5 utilisateurs.",
+    "longDescription": "Keeper est un gestionnaire de mots de passe chiffré qui stocke mots de passe, informations d'identité et moyens de paiement sans limite, synchronisés sur tous les appareils, avec connexion par Face ID ou empreinte et une assistance 24h/24.\n\nL'offre Personnel coûte 4,30 €/mois, soit 51,59 € facturés à l'année ; Famille couvre 5 utilisateurs pour 9,20 €/mois (110,39 € par an), chacun gardant un coffre-fort séparé. Plusieurs fonctions sont vendues en options : alertes du dark web, stockage de fichiers chiffré, accompagnement personnalisé. La grille publiée ne propose ni offre gratuite permanente ni facturation mensuelle.",
+    "longDescriptionEn": "Keeper is an encrypted password manager that stores unlimited passwords, identity details and payment cards, synced across every device, with Face ID or fingerprint sign-in and 24/7 support.\n\nThe Personal plan costs $3.58/month, or $42.99 billed yearly; Family covers 5 users for $7.67/month ($91.99 a year), each with a separate vault. Several features are sold as add-ons: dark web alerts, encrypted file storage, personal onboarding. The published grid offers no permanent free plan and no monthly billing.",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Personnel 4,30 €/mois (51,59 € facturés à l'année) ; Famille 9,20 €/mois (110,39 €/an, 5 utilisateurs)."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan.",
+      "paid": "Personal $3.58/month ($42.99 billed yearly); Family $7.67/month ($91.99/year, 5 users)."
+    },
+    "defaultMonthlyPrice": 4.3,
+    "relevantFor": [
+      "Particuliers",
+      "Familles",
+      "Indépendants"
+    ],
+    "alternatives": [
+      "1password",
+      "bitwarden",
+      "nordpass",
+      "proton-pass"
+    ],
+    "verdict": {
+      "keepIf": [
+        "Tu veux un coffre-fort simple pour toi ou ta famille et tu acceptes de payer à l'année."
+      ],
+      "avoidIf": [
+        "Tu veux une offre gratuite ou payer au mois : la grille publiée n'en propose pas."
+      ],
+      "threshold": "À 51,59 € par an, compare avec Proton Pass ou Bitwarden, dont les offres gratuites couvrent déjà le stockage et la synchronisation.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "La surveillance du dark web et le stockage de fichiers ne sont pas inclus dans l'offre Personnel : ce sont des options payantes en plus."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a simple vault for yourself or your family and are fine paying yearly."
+      ],
+      "avoidIf": [
+        "You want a free plan or monthly billing: the published grid has neither."
+      ],
+      "threshold": "At $42.99 a year, compare with Proton Pass or Bitwarden, whose free plans already cover storage and sync.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Dark web alerts and file storage are not in the Personal plan: they are paid add-ons on top."
+        }
+      ]
+    },
+    "pros": [
+      "Mots de passe, appareils et partage sécurisé illimités dès l'offre Personnel.",
+      "Offre Famille à 5 utilisateurs avec des coffres séparés.",
+      "Assistance client 24h/24 et 7j/7."
+    ],
+    "prosEn": [
+      "Unlimited passwords, devices and secure sharing from the Personal plan.",
+      "Family plan for 5 users with separate vaults.",
+      "24/7 customer support."
+    ],
+    "cons": [
+      "Pas d'offre gratuite permanente ni de facturation mensuelle dans la grille publiée.",
+      "Surveillance du dark web et stockage de fichiers vendus en options."
+    ],
+    "consEn": [
+      "No permanent free plan and no monthly billing in the published grid.",
+      "Dark web alerts and file storage sold as add-ons."
+    ],
+    "useCases": [
+      "Une famille qui partage les mots de passe du Wi-Fi et des services de streaming sans voir les coffres des autres.",
+      "Un indépendant qui centralise mots de passe et moyens de paiement avec connexion biométrique."
+    ],
+    "useCasesEn": [
+      "A family sharing Wi-Fi and streaming passwords without seeing each other's vaults.",
+      "A freelancer centralising passwords and payment cards with biometric sign-in."
+    ],
+    "seo": {
+      "idealForFr": "Une famille ou un indépendant qui veut un coffre-fort payant simple, avec assistance 24h/24.",
+      "idealForEn": "A family or freelancer who wants a simple paid vault with 24/7 support."
+    },
+    "tagline": {
+      "fr": "Gestionnaire mots de passe",
+      "en": "Password manager"
+    },
+    "ogImageUrl": null,
+    "pricing_v5": {
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-20",
+      "official_source_url": "https://www.keepersecurity.com/pricing/personal-and-family.html",
+      "source_domain": "keepersecurity.com",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "compare_plan_name": "Personnel",
+      "compare_plan_kind": "account",
+      "compare_price_monthly_eur": 4.3,
+      "cautions": [
+        "Facturation annuelle uniquement dans la grille publiée.",
+        "Options payantes en plus : surveillance du dark web (27,53 €/an), stockage de fichiers chiffré (dès 16,79 €/an), accompagnement personnalisé (137,99 €/an).",
+        "Offres entreprise sur une page séparée, non relevées ici."
+      ],
+      "cautionsEn": [
+        "Yearly billing only in the published grid.",
+        "Paid add-ons: dark web alerts ($26.99/year), encrypted file storage (from $13.99/year), personal onboarding ($137.99/year).",
+        "Business plans are on a separate page and not covered here."
+      ],
+      "plans": [
+        {
+          "planKey": "personal-eur",
+          "displayName": "Personnel",
+          "summary": "4,30 €/mois, 51,59 € facturés à l'année.",
+          "featureHighlights": [
+            "Mots de passe et appareils illimités",
+            "Partage sécurisé illimité",
+            "Assistance 24h/24"
+          ],
+          "detailsSourceUrl": "https://www.keepersecurity.com/pricing/personal-and-family.html",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 4.3,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "family-eur",
+          "displayName": "Famille",
+          "summary": "9,20 €/mois, 110,39 € facturés à l'année, 5 utilisateurs.",
+          "featureHighlights": [
+            "5 utilisateurs",
+            "Dossiers partagés",
+            "Coffres séparés par membre"
+          ],
+          "detailsSourceUrl": "https://www.keepersecurity.com/pricing/personal-and-family.html",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 9.2,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "FR",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-20",
+      "official_source_url": "https://www.keepersecurity.com/pricing/personal-and-family.html",
+      "source_domain": "keepersecurity.com",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "compare_plan_name": "Personal",
+      "compare_plan_kind": "account",
+      "compare_price_monthly_eur": 4.3,
+      "cautions": [
+        "Yearly billing only in the published grid.",
+        "Paid add-ons: dark web alerts ($26.99/year), encrypted file storage (from $13.99/year), personal onboarding ($137.99/year).",
+        "Business plans are on a separate page and not covered here."
+      ],
+      "cautionsEn": [
+        "Yearly billing only in the published grid.",
+        "Paid add-ons: dark web alerts ($26.99/year), encrypted file storage (from $13.99/year), personal onboarding ($137.99/year).",
+        "Business plans are on a separate page and not covered here."
+      ],
+      "plans": [
+        {
+          "planKey": "personal-usd",
+          "displayName": "Personal",
+          "summary": "$3.58/month, $42.99 billed yearly.",
+          "featureHighlights": [
+            "Unlimited passwords and devices",
+            "Unlimited secure sharing",
+            "24/7 support"
+          ],
+          "detailsSourceUrl": "https://www.keepersecurity.com/pricing/personal-and-family.html",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 3.58,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "family-usd",
+          "displayName": "Family",
+          "summary": "$7.67/month, $91.99 billed yearly, 5 users.",
+          "featureHighlights": [
+            "5 users",
+            "Shared folders",
+            "Separate vault per member"
+          ],
+          "detailsSourceUrl": "https://www.keepersecurity.com/pricing/personal-and-family.html",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 7.67,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        }
+      ]
     }
   }
 ]

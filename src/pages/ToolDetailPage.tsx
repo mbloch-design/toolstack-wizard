@@ -364,6 +364,31 @@ const ToolDetailPage = () => {
       })}
     </ul>
   );
+  // Sub-pages were linked only from their own fiche. The pricing and
+  // alternatives sub-pages now link the same sub-page of each alternative,
+  // anchored on the tool's name (« 1Password pricing »), and each other.
+  const renderSubpageLinks = (kind: "prix" | "alternatives") => {
+    const pricingSegment = lang === "en" ? "pricing" : "prix";
+    const others = alternatives.slice(0, 5);
+    if (!others.length) return null;
+    return (
+      <div className="td-subs td-subpage-links">
+        <h3 className="td-subtitle">
+          {kind === "prix" ? t("Comparer les prix", "Compare pricing") : t("Prix des alternatives", "Alternatives pricing")}
+        </h3>
+        <div className="td-chips">
+          {others.map((alt: any) => (
+            <Link key={alt.id} to={`${prefix}/tool/${alt.slug || alt.id}/${pricingSegment}`} className="td-chip">
+              {t(`Prix de ${alt.name}`, `${alt.name} pricing`)}
+            </Link>
+          ))}
+          {kind === "prix"
+            ? <Link to={`${prefix}/tool/${tool.slug || tool.id}/alternatives`} className="td-chip">{t(`Alternatives à ${tool.name}`, `${tool.name} alternatives`)}</Link>
+            : <Link to={`${prefix}/tool/${tool.slug || tool.id}/${pricingSegment}`} className="td-chip">{t(`Prix de ${tool.name}`, `${tool.name} pricing`)}</Link>}
+        </div>
+      </div>
+    );
+  };
   const displayPrice  = resolveMonthlyPrice(tool) || nativePriceFromTool(tool)?.amount || 0;
   // Pas de date de repli. Elle valait « 2026-03-29 » et s'affichait comme
   // « Dernière vérification » sur les 325 fiches sans `pricing_v5`, soit 644
@@ -887,6 +912,7 @@ const ToolDetailPage = () => {
                   {pricingDetail && <ToolPricingExtras detail={pricingDetail} toolName={tool.name} t={t} />}
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
                   <ToolBundleSection tool={tool} tools={tools} lang={lang} t={t} />
+                  {subPage === "prix" && renderSubpageLinks("prix")}
                 </div>
               </div>
             )}
@@ -908,6 +934,7 @@ const ToolDetailPage = () => {
                       prefix={prefix} lang={lang} t={t}
                     />
                   )}
+                  {subPage === "alternatives" && renderSubpageLinks("alternatives")}
 
                   {/* Substitution cluster — substitution_cluster_v2 groups
                        candidates roughly, but sharing a cluster tag (or a
