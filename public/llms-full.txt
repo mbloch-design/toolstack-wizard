@@ -24347,25 +24347,25 @@
     "website": "https://www.magnific.com",
     "category": "creation",
     "pricing": {
-      "free": "Pas de plan gratuit.",
-      "paid": "Dès 20 $/mois, plan Premium."
+      "free": "Pas d'offre gratuite dans la grille publiée (seuls des médias de stock gratuits sont proposés).",
+      "paid": "Premium dès 12 €/mois facturés à l'année (16 € en mensuel), 240 000 crédits par an ; Premium+ 27 €, Pro Starter 66 €. Prix HT, usage décompté en crédits."
     },
-    "description_fr": "Magnific agrandit et améliore les images par IA de façon créative, intégré à la suite plus large image, vidéo et audio de Freepik.",
-    "description_en": "Magnific upscales and creatively enhances images with AI, bundled into Freepik's broader image, video and audio suite.",
-    "price_verified_on": "2026-09-25",
+    "description_fr": "Magnific (ex-Freepik) réunit l'agrandisseur d'images Magnific, des modèles IA image, vidéo et audio et 250 millions de médias, payés en crédits.",
+    "description_en": "Magnific (formerly Freepik) combines the Magnific image upscaler, AI image, video and audio models and 250M stock assets, paid in credits.",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "score": "3.6/5",
       "label": "Très bon",
       "keep_if": "Tu veux de l'upscaling d'image par IA regroupé avec des outils de génération image, vidéo et audio plus larges sur un seul abonnement",
       "avoid_if": "Tu as seulement besoin d'upscaling dédié et tu ne veux pas payer pour un pool de crédits partagé avec d'autres outils IA",
       "strengths": [
-        "Regroupe l'upscaling avec une large suite de génération IA et une grande bibliothèque de médias sur un seul abonnement",
-        "Réglages fins de créativité, ressemblance et HDR pour ajuster le résultat de l'amélioration",
-        "Premium+ inclut une licence commerciale et un accès illimité à un modèle phare"
+        "Agrandisseur Magnific réputé (créativité, ressemblance, HDR, mode Precision) dans le même abonnement qu'une trentaine de modèles image, vidéo et audio",
+        "Coût par action publié pour chaque modèle (par exemple 90 crédits par agrandissement 2K), ce qui permet d'estimer sa consommation",
+        "S'intègre à d'autres outils : MCP pour Claude et ChatGPT, ComfyUI, API, plugins"
       ],
       "weaknesses": [
-        "Pas de plan gratuit ; tester l'outil nécessite un abonnement payant",
-        "Les crédits sont partagés entre génération d'image, vidéo et audio, donc un usage intensif d'upscaling entre en concurrence avec les autres usages"
+        "Pas d'offre gratuite dans la grille publiée ; tester l'outil suppose un abonnement",
+        "Facturation en crédits partagés entre image, vidéo, audio et agrandissement : le coût réel dépend de l'usage, et la vidéo épuise vite le pool"
       ]
     },
     "verdict_en": {
@@ -24374,13 +24374,13 @@
       "keep_if": "You want AI image upscaling bundled with broader image, video and audio generation tools on one subscription",
       "avoid_if": "You only need dedicated upscaling and don't want to pay for a shared credit pool covering other AI tools",
       "strengths": [
-        "Bundles upscaling with a broad AI generation suite and large stock library on one subscription",
-        "Fine-grained creativity, resemblance and HDR controls for tuning the enhancement result",
-        "Premium+ includes a commercial license and unlimited access to a flagship model"
+        "The well-known Magnific upscaler (creativity, resemblance, HDR, Precision mode) on the same plan as about thirty image, video and audio models",
+        "Published per-action cost for each model (for example 90 credits per 2K upscale), so usage can be estimated",
+        "Plugs into other tools: MCP for Claude and ChatGPT, ComfyUI, API, plugins"
       ],
       "weaknesses": [
-        "No free plan; testing requires a paid subscription",
-        "Credits are shared across image, video and audio generation, so heavy upscaling use competes with other usage"
+        "No free plan in the published grid; trying it means subscribing",
+        "Credits are shared across image, video, audio and upscaling: real cost depends on usage, and video drains the pool fast"
       ]
     }
   },

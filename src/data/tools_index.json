@@ -15248,7 +15248,7 @@
     ],
     "alternatives": [
       "krea-ai",
-      "magnific-ai"
+      "magnific"
     ]
   },
   {
@@ -23002,7 +23002,7 @@
     "alternatives": [
       "midjourney",
       "leonardo-ai",
-      "magnific-ai"
+      "magnific"
     ]
   },
   {
@@ -26234,22 +26234,22 @@
       "lastActivityVerifiedOn": null
     },
     "categoryId": "creation",
-    "shortDescription": "Magnific agrandit et améliore les images par IA de façon créative, intégré à la suite plus large image, vidéo et audio de Freepik.",
-    "shortDescriptionEn": "Magnific upscales and creatively enhances images with AI, bundled into Freepik's broader image, video and audio suite.",
+    "shortDescription": "Magnific (ex-Freepik) réunit l'agrandisseur d'images Magnific, des modèles IA image, vidéo et audio et 250 millions de médias, payés en crédits.",
+    "shortDescriptionEn": "Magnific (formerly Freepik) combines the Magnific image upscaler, AI image, video and audio models and 250M stock assets, paid in credits.",
     "pricing": {
-      "free": "Pas de plan gratuit.",
-      "paid": "Dès 20 $/mois, plan Premium."
+      "free": "Pas d'offre gratuite dans la grille publiée (seuls des médias de stock gratuits sont proposés).",
+      "paid": "Premium dès 12 €/mois facturés à l'année (16 € en mensuel), 240 000 crédits par an ; Premium+ 27 €, Pro Starter 66 €. Prix HT, usage décompté en crédits."
     },
     "pricingEn": {
-      "free": "No free plan.",
-      "paid": "From $20/mo, Premium plan."
+      "free": "No free plan in the published grid (only free stock assets).",
+      "paid": "Premium from €12/month billed yearly (€16 monthly), 240,000 credits a year; Premium+ €27, Pro Starter €66. Prices before tax, usage counted in credits."
     },
-    "defaultMonthlyPrice": 17.17,
-    "compareMonthlyPrice": 17.17,
+    "defaultMonthlyPrice": 12,
+    "compareMonthlyPrice": 12,
     "nativePrices": [
       {
-        "amount": 20,
-        "currency": "USD",
+        "amount": 12,
+        "currency": "EUR",
         "period": "monthly"
       }
     ],
@@ -26275,9 +26275,10 @@
     ],
     "alternatives": [
       "krea-ai",
-      "figma-weave",
+      "topaz-gigapixel",
       "leonardo-ai",
-      "firefly"
+      "firefly",
+      "figma-weave"
     ]
   },
   {
@@ -46514,7 +46515,7 @@
       "ALIX"
     ],
     "alternatives": [
-      "magnific-ai",
+      "magnific",
       "topaz-photo-ai",
       "luminar-neo",
       "nik-collection"

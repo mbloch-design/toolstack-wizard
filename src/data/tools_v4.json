@@ -72565,7 +72565,7 @@
     ],
     "alternatives": [
       "krea-ai",
-      "magnific-ai"
+      "magnific"
     ],
     "seo": {
       "aiAngle": {
@@ -108654,7 +108654,7 @@
     "alternatives": [
       "midjourney",
       "leonardo-ai",
-      "magnific-ai"
+      "magnific"
     ],
     "seo": {
       "aiAngle": {
@@ -124289,99 +124289,163 @@
     "slug": "magnific",
     "name": "Magnific",
     "category": "creation",
-    "shortDescription": "Magnific agrandit et améliore les images par IA de façon créative, intégré à la suite plus large image, vidéo et audio de Freepik.",
-    "shortDescriptionEn": "Magnific upscales and creatively enhances images with AI, bundled into Freepik's broader image, video and audio suite.",
-    "description": "Upscaler et enhancer d'images par IA : agrandit jusqu'à 16× en inventant du détail réaliste absent de l'original, avec un curseur « Creativity » qui règle la quantité de détail ajouté. Racheté par Freepik (2024), regroupé sous la marque Magnific en 2026.",
-    "longDescription": "Magnific (anciennement Magnific AI) agrandit et réinterprète les images de façon créative, avec des réglages ajustables de créativité, ressemblance et HDR. Ce n'est plus un upscaler autonome : il est intégré à la plateforme créative unifiée de Freepik, donc l'abonnement donne aussi accès aux modèles de génération d'image, vidéo et audio, plus une bibliothèque de plus de 250 millions de médias.\n\nLes plans démarrent à 20 $/mois pour Premium (240 000 crédits/an, partagés entre tous les outils IA de Freepik), jusqu'à 110 $/mois pour Pro Starter, niveau agence. Pas de plan gratuit. Convient à une designer qui a besoin d'images agrandies prêtes pour le client et accepte de partager un pool de crédits avec d'autres usages IA.",
-    "longDescriptionEn": "Magnific (formerly Magnific AI) upscales and creatively reimagines images with adjustable creativity, resemblance and HDR controls. It is no longer a standalone upscaler: it was folded into Freepik's unified creative platform, so a subscription also grants access to image, video and audio generation models plus a stock library of over 250 million assets.\n\nPlans start at $20/month for Premium (240,000 credits/year, shared across all Freepik AI tools), up to $110/month for Pro Starter aimed at agency-level output. There is no free plan. It fits a designer who needs client-ready upscaled images and is fine sharing a credit pool with other AI generation needs.",
+    "shortDescription": "Magnific (ex-Freepik) réunit l'agrandisseur d'images Magnific, des modèles IA image, vidéo et audio et 250 millions de médias, payés en crédits.",
+    "shortDescriptionEn": "Magnific (formerly Freepik) combines the Magnific image upscaler, AI image, video and audio models and 250M stock assets, paid in credits.",
+    "description": "Magnific est le nouveau nom de Freepik depuis 2026. La plateforme garde l'agrandisseur d'images qui a fait connaître Magnific AI (réglages de créativité, ressemblance et HDR, mode Precision plus fidèle à l'original) et l'entoure d'une suite complète : une trentaine de modèles de génération d'image, vidéo et audio (Magnific One, Nano Banana, Kling, Seedance, Veo, Flux, ElevenLabs…), des outils d'édition, un canevas partagé (Spaces) et plus de 250 millions de photos, vidéos, vecteurs et PSD.",
+    "longDescription": "Magnific est le nouveau nom de Freepik depuis 2026. La plateforme garde l'agrandisseur d'images qui a fait connaître Magnific AI (réglages de créativité, ressemblance et HDR, mode Precision plus fidèle à l'original) et l'entoure d'une suite complète : une trentaine de modèles de génération d'image, vidéo et audio (Magnific One, Nano Banana, Kling, Seedance, Veo, Flux, ElevenLabs…), des outils d'édition, un canevas partagé (Spaces) et plus de 250 millions de photos, vidéos, vecteurs et PSD.\n\nTout se paie en crédits. Premium coûte 12 € HT par mois en annuel (16 € en mensuel) pour 240 000 crédits par an ; un agrandissement Precision en 2K en consomme 90, une image Nano Banana 2 75, cinq secondes de vidéo Kling 3.0 Pro 450. Premium+ (27 €) ajoute des générations illimitées sur certains modèles et l'upscaler Topaz, Pro Starter (66 €) vise la production en volume. Pas d'offre gratuite dans la grille publiée.\n\nCôté écosystème, Magnific s'utilise aussi hors de l'application web : serveur MCP pour Claude et ChatGPT, nœuds ComfyUI, API facturée en crédits, plugins, application de bureau et mobile.",
+    "longDescriptionEn": "Magnific is Freepik's new name since 2026. The platform keeps the upscaler that made Magnific AI known (creativity, resemblance and HDR controls, plus a Precision mode that stays closer to the original) and wraps it in a full suite: about thirty image, video and audio generation models (Magnific One, Nano Banana, Kling, Seedance, Veo, Flux, ElevenLabs…), editing tools, a shared canvas (Spaces) and over 250 million photos, videos, vectors and PSDs.\n\nEverything is paid in credits. Premium costs €12 a month before tax billed yearly (€16 monthly) for 240,000 credits a year; a 2K Precision upscale uses 90, a Nano Banana 2 image 75, five seconds of Kling 3.0 Pro video 450. Premium+ (€27) adds unlimited generations on some models and the Topaz upscaler; Pro Starter (€66) targets volume production. No free plan in the published grid.\n\nBeyond the web app, Magnific plugs into other tools: an MCP server for Claude and ChatGPT, ComfyUI nodes, a credit-billed API, plugins, and desktop and mobile apps.",
     "pricing": {
-      "free": "Pas de plan gratuit.",
-      "paid": "Dès 20 $/mois, plan Premium."
+      "free": "Pas d'offre gratuite dans la grille publiée (seuls des médias de stock gratuits sont proposés).",
+      "paid": "Premium dès 12 €/mois facturés à l'année (16 € en mensuel), 240 000 crédits par an ; Premium+ 27 €, Pro Starter 66 €. Prix HT, usage décompté en crédits."
     },
     "pricingEn": {
-      "free": "No free plan.",
-      "paid": "From $20/mo, Premium plan."
+      "free": "No free plan in the published grid (only free stock assets).",
+      "paid": "Premium from €12/month billed yearly (€16 monthly), 240,000 credits a year; Premium+ €27, Pro Starter €66. Prices before tax, usage counted in credits."
     },
-    "defaultMonthlyPrice": 17.17,
+    "defaultMonthlyPrice": 12,
     "pricing_v5": {
-      "cautions": [
-        "Les prix affichés excluent la TVA et les taxes locales ; un tarif promotionnel à -50 % est affiché à côté du prix normal pour la facturation annuelle, et les prix mensuels normaux s'appliquent sans engagement.",
-        "Les crédits sont mutualisés sur l'année entre les outils image, vidéo et audio de Freepik plutôt que réservés à l'upscaler, donc la capacité réelle d'upscaling par plan varie selon les autres usages."
-      ],
-      "verified_on": "2026-09-25",
-      "source_domain": "magnific.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "account",
-      "compare_plan_name": "Premium",
       "price_reliability": "high",
-      "location_sensitive": false,
-      "official_source_url": "https://www.magnific.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 17.17,
+      "verified_on": "2026-10-20",
+      "official_source_url": "https://www.magnific.com/pricing",
+      "source_domain": "magnific.com",
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "compare_plan_name": "Premium",
+      "compare_plan_kind": "account",
+      "compare_price_monthly_eur": 12,
+      "cautions": [
+        "Facturation en crédits : chaque génération consomme un nombre de crédits qui dépend du modèle et de la résolution (par exemple 90 crédits pour un agrandissement Magnific Precision en 2K, 75 pour une image Nano Banana 2, 450 pour 5 s de vidéo Kling 3.0 Pro). Le coût réel dépend donc de l'usage, pas seulement de l'abonnement.",
+        "Les crédits sont communs à tous les outils (image, vidéo, audio, agrandissement) : un usage vidéo intensif réduit la capacité d'agrandissement.",
+        "En annuel, les crédits sont versés pour 12 mois ; en mensuel, ils sont versés chaque mois. Des recharges de crédits sont possibles.",
+        "Prix relevés en euros, hors TVA ; la page ne propose pas de sélecteur de devise, aucun prix en dollars n'a été vérifié."
+      ],
       "cautionsEn": [
-        "Displayed prices exclude VAT and local taxes; a 50%-off promotional rate is shown alongside the regular price for annual billing, and regular monthly prices apply without commitment.",
-        "Credits are pooled annually across Freepik's image, video and audio tools rather than dedicated solely to the upscaler, so real upscaling capacity per plan varies with other usage."
+        "Credit-based billing: each generation burns credits that depend on model and resolution (for example 90 credits for a 2K Magnific Precision upscale, 75 for a Nano Banana 2 image, 450 for 5 s of Kling 3.0 Pro video). Real cost depends on usage, not only on the subscription.",
+        "Credits are shared across every tool (image, video, audio, upscaling): heavy video use cuts upscaling capacity.",
+        "Annual plans grant credits for 12 months; monthly plans grant them each month. Credit top-ups are available.",
+        "Prices observed in euros, before VAT; the page has no currency selector and no dollar price was verified."
       ],
       "plans": [
         {
-          "planKey": "premium",
+          "planKey": "premium-annual-eur",
           "displayName": "Premium",
-          "summary": "Offre de lancement à 7,25 $/mois sur la première période ; prix de renouvellement non publié.",
+          "summary": "12 €/mois facturés à l'année (144 € HT), au lieu de 16 € en mensuel.",
           "featureHighlights": [
-            "240 000 crédits/an (environ 3 200 images), accès aux modèles de génération d'image, vidéo et audio, plus plus de 250 millions de médias libres de droits."
+            "240 000 crédits pour l'année, valables 12 mois sans remise à zéro mensuelle."
           ],
           "detailsSourceUrl": "https://www.magnific.com/pricing",
           "pricingUnit": "account",
           "isFree": false,
           "isComparePlan": true,
-          "nativeAmount": 20,
-          "nativeCurrency": "USD",
+          "nativeAmount": 12,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "premium-monthly-eur",
+          "displayName": "Premium",
+          "summary": "Sans engagement.",
+          "featureHighlights": [
+            "20 000 crédits par mois."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 16,
+          "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
           "billingCommitment": "monthly",
           "taxInclusion": "ht",
-          "observedMarket": null,
-          "observedOn": "2026-09-25",
-          "lastConfirmedOn": "2026-09-25"
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
         },
         {
-          "planKey": "premium-plus",
+          "planKey": "premium-plus-annual-eur",
           "displayName": "Premium+",
-          "summary": "Offre de lancement à 33,75 $/mois sur la première période ; prix de renouvellement non publié.",
+          "summary": "27 €/mois facturés à l'année (324 € HT), au lieu de 36 € en mensuel.",
           "featureHighlights": [
-            "600 000 crédits/an (environ 8 000 images), licence commerciale, accès illimité au modèle Nano Banana 2."
+            "600 000 crédits pour l'année, générations illimitées sur Nano Banana 2 en 1K, upscalers Magnific et Topaz, licence musique."
           ],
           "detailsSourceUrl": "https://www.magnific.com/pricing",
           "pricingUnit": "account",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 45,
-          "nativeCurrency": "USD",
+          "nativeAmount": 27,
+          "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "monthly",
+          "billingCommitment": "annual_prepaid",
           "taxInclusion": "ht",
-          "observedMarket": null,
-          "observedOn": "2026-09-25",
-          "lastConfirmedOn": "2026-09-25"
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
         },
         {
-          "planKey": "pro-starter",
-          "displayName": "Pro Starter",
-          "summary": "Offre de lancement à 82,50 $/mois sur la première période ; prix de renouvellement non publié.",
+          "planKey": "premium-plus-monthly-eur",
+          "displayName": "Premium+",
+          "summary": "Sans engagement.",
           "featureHighlights": [
-            "1,5 million de crédits/an, destiné à une production de contenu de niveau professionnel/agence."
+            "45 000 crédits par mois."
           ],
           "detailsSourceUrl": "https://www.magnific.com/pricing",
           "pricingUnit": "account",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 110,
-          "nativeCurrency": "USD",
+          "nativeAmount": 36,
+          "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
           "billingCommitment": "monthly",
           "taxInclusion": "ht",
-          "observedMarket": null,
-          "observedOn": "2026-09-25",
-          "lastConfirmedOn": "2026-09-25"
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pro-starter-annual-eur",
+          "displayName": "Pro Starter",
+          "summary": "66 €/mois facturés à l'année pour le palier 1,5 million de crédits ; un palier 4 millions existe, prix affiché après sélection.",
+          "featureHighlights": [
+            "1,5 million de crédits pour l'année."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 66,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pro-starter-monthly-eur",
+          "displayName": "Pro Starter",
+          "summary": "Sans engagement, palier 112 500 crédits par mois.",
+          "featureHighlights": [
+            "112 500 crédits par mois."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 88,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
         }
       ]
     },
@@ -124390,25 +124454,31 @@
     "logo": "https://logo.clearbit.com/magnific.com",
     "seo": {
       "idealForFr": "Une designer qui doit agrandir et améliorer des images générées par IA ou en basse résolution pour un rendu livrable au client.",
-      "idealForEn": "A designer who needs to upscale and enhance AI-generated or low-resolution images for client-ready output."
+      "idealForEn": "A designer who needs to upscale and enhance AI-generated or low-resolution images for client-ready output.",
+      "presentationTitleFr": "Magnific (ex-Freepik) : avis, prix et crédits 2026 | ToolTrim",
+      "presentationTitleEn": "Magnific (formerly Freepik): review, pricing and credits 2026 | ToolTrim",
+      "presentationMetaDescriptionFr": "Magnific, ex-Freepik : upscaler IA, modèles image, vidéo et audio. Premium dès 12 €/mois en annuel, 240 000 crédits par an. Coût réel par image et vidéo.",
+      "presentationMetaDescriptionEn": "Magnific, formerly Freepik: AI upscaler plus image, video and audio models. Premium from €12/month yearly, 240,000 credits a year. Real cost per image.",
+      "prixMetaDescriptionFr": "Prix Magnific (ex-Freepik) 2026 : Premium 12 €/mois en annuel ou 16 € en mensuel, Premium+ 27 €, Pro Starter 66 €. Combien de crédits par image et vidéo.",
+      "prixMetaDescriptionEn": "Magnific (formerly Freepik) pricing 2026: Premium €12/month yearly or €16 monthly, Premium+ €27, Pro Starter €66. How many credits per image and video."
     },
     "pros": [
-      "Regroupe l'upscaling avec une large suite de génération IA et une grande bibliothèque de médias sur un seul abonnement.",
-      "Réglages fins de créativité, ressemblance et HDR pour ajuster le résultat de l'amélioration.",
-      "Premium+ inclut une licence commerciale et un accès illimité à un modèle phare."
+      "Agrandisseur Magnific réputé (créativité, ressemblance, HDR, mode Precision) dans le même abonnement qu'une trentaine de modèles image, vidéo et audio.",
+      "Coût par action publié pour chaque modèle (par exemple 90 crédits par agrandissement 2K), ce qui permet d'estimer sa consommation.",
+      "S'intègre à d'autres outils : MCP pour Claude et ChatGPT, ComfyUI, API, plugins."
     ],
     "prosEn": [
-      "Bundles upscaling with a broad AI generation suite and large stock library on one subscription.",
-      "Fine-grained creativity, resemblance and HDR controls for tuning the enhancement result.",
-      "Premium+ includes a commercial license and unlimited access to a flagship model."
+      "The well-known Magnific upscaler (creativity, resemblance, HDR, Precision mode) on the same plan as about thirty image, video and audio models.",
+      "Published per-action cost for each model (for example 90 credits per 2K upscale), so usage can be estimated.",
+      "Plugs into other tools: MCP for Claude and ChatGPT, ComfyUI, API, plugins."
     ],
     "cons": [
-      "Pas de plan gratuit ; tester l'outil nécessite un abonnement payant.",
-      "Les crédits sont partagés entre génération d'image, vidéo et audio, donc un usage intensif d'upscaling entre en concurrence avec les autres usages."
+      "Pas d'offre gratuite dans la grille publiée ; tester l'outil suppose un abonnement.",
+      "Facturation en crédits partagés entre image, vidéo, audio et agrandissement : le coût réel dépend de l'usage, et la vidéo épuise vite le pool."
     ],
     "consEn": [
-      "No free plan; testing requires a paid subscription.",
-      "Credits are shared across image, video and audio generation, so heavy upscaling use competes with other usage."
+      "No free plan in the published grid; trying it means subscribing.",
+      "Credits are shared across image, video, audio and upscaling: real cost depends on usage, and video drains the pool fast."
     ],
     "useCases": [
       "Agrandir : transformer une image générée par IA en basse résolution en fichier prêt à imprimer grâce aux réglages de créativité et HDR.",
@@ -124431,9 +124501,10 @@
     ],
     "alternatives": [
       "krea-ai",
-      "figma-weave",
+      "topaz-gigapixel",
       "leonardo-ai",
-      "firefly"
+      "firefly",
+      "figma-weave"
     ],
     "verdict": {
       "keepIf": [
@@ -124442,11 +124513,11 @@
       "avoidIf": [
         "Tu as seulement besoin d'upscaling dédié et tu ne veux pas payer pour un pool de crédits partagé avec d'autres outils IA."
       ],
-      "threshold": "Premium coûte 240 $/an au tarif mensuel normal ; compare ce coût au nombre d'images à agrandir réellement chaque mois.",
+      "threshold": "Premium revient à 144 € HT par an : avec 90 crédits par agrandissement 2K, les 240 000 crédits couvrent environ 2 600 agrandissements si rien d'autre ne les consomme.",
       "billingTraps": [
         {
           "title": "Avant de payer",
-          "text": "Le prix annuel affiché (par exemple 7,25 $/mois pour Premium) est un tarif promotionnel à -50 % ; le prix mensuel normal sans engagement est plus élevé (20 $/mois), donc vérifie quel tarif s'applique avant de t'abonner."
+          "text": "Le prix bas (12 €/mois) suppose un an payé d'avance ; sans engagement, Premium coûte 16 €/mois. Les crédits sont partagés entre image, vidéo et audio, et une vidéo 4K peut consommer plusieurs milliers de crédits en quelques secondes."
         }
       ]
     },
@@ -124457,11 +124528,11 @@
       "avoidIf": [
         "You only need dedicated upscaling and don't want to pay for a shared credit pool covering other AI tools."
       ],
-      "threshold": "Premium costs $240/year at the regular monthly rate; compare that to how many images per month you actually need upscaled.",
+      "threshold": "Premium costs €144 a year before tax: at 90 credits per 2K upscale, 240,000 credits cover about 2,600 upscales if nothing else draws on them.",
       "billingTraps": [
         {
           "title": "Before you pay",
-          "text": "The annual price shown (e.g. $7.25/month for Premium) is a 50%-off promotional rate; the regular monthly price without commitment is higher ($20/month), so check which rate applies before subscribing."
+          "text": "The low price (€12/month) assumes a year paid upfront; with no commitment, Premium is €16/month. Credits are shared across image, video and audio, and a 4K video can burn thousands of credits in a few seconds."
         }
       ]
     },
@@ -124501,79 +124572,142 @@
       "checkedOn": "2026-09-25"
     },
     "pricing_v5En": {
-      "compare_price_monthly_eur": 17.17,
-      "compare_plan_name": "Premium",
-      "compare_plan_kind": "account",
       "price_reliability": "high",
       "verification_status": "official_explicit",
-      "verified_on": "2026-09-25",
+      "verified_on": "2026-10-20",
       "official_source_url": "https://www.magnific.com/pricing",
       "source_domain": "magnific.com",
-      "usage_sensitive": false,
+      "usage_sensitive": true,
+      "location_sensitive": true,
+      "compare_plan_name": "Premium",
+      "compare_plan_kind": "account",
+      "compare_price_monthly_eur": 12,
       "cautions": [
-        "Displayed prices exclude VAT and local taxes; a 50%-off promotional rate is shown alongside the regular price for annual billing, and regular monthly prices apply without commitment.",
-        "Credits are pooled annually across Freepik's image, video and audio tools rather than dedicated solely to the upscaler, so real upscaling capacity per plan varies with other usage."
+        "Credit-based billing: each generation burns credits that depend on model and resolution (for example 90 credits for a 2K Magnific Precision upscale, 75 for a Nano Banana 2 image, 450 for 5 s of Kling 3.0 Pro video). Real cost depends on usage, not only on the subscription.",
+        "Credits are shared across every tool (image, video, audio, upscaling): heavy video use cuts upscaling capacity.",
+        "Annual plans grant credits for 12 months; monthly plans grant them each month. Credit top-ups are available.",
+        "Prices observed in euros, before VAT; the page has no currency selector and no dollar price was verified."
       ],
       "plans": [
         {
-          "planKey": "premium",
+          "planKey": "premium-annual-eur",
           "displayName": "Premium",
-          "summary": "Introductory offer at $7.25/mo for the first term; renewal price not published.",
+          "summary": "€12/month billed yearly (€144 before tax), instead of €16 monthly.",
           "featureHighlights": [
-            "240,000 credits/year (~3,200 images), access to image, video and audio generation models plus 250M+ stock assets."
+            "240,000 credits for the year, valid 12 months with no monthly reset."
           ],
           "detailsSourceUrl": "https://www.magnific.com/pricing",
           "pricingUnit": "account",
           "isFree": false,
           "isComparePlan": true,
-          "nativeAmount": 20,
-          "nativeCurrency": "USD",
+          "nativeAmount": 12,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "premium-monthly-eur",
+          "displayName": "Premium",
+          "summary": "No commitment.",
+          "featureHighlights": [
+            "20,000 credits per month."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 16,
+          "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
           "billingCommitment": "monthly",
           "taxInclusion": "ht",
-          "observedMarket": null,
-          "observedOn": "2026-09-25",
-          "lastConfirmedOn": "2026-09-25"
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
         },
         {
-          "planKey": "premium-plus",
+          "planKey": "premium-plus-annual-eur",
           "displayName": "Premium+",
-          "summary": "Introductory offer at $33.75/mo for the first term; renewal price not published.",
+          "summary": "€27/month billed yearly (€324 before tax), instead of €36 monthly.",
           "featureHighlights": [
-            "600,000 credits/year (~8,000 images), commercial license, unlimited access to the Nano Banana 2 model."
+            "600,000 credits for the year, unlimited Nano Banana 2 generations at 1K, Magnific and Topaz upscalers, music rights."
           ],
           "detailsSourceUrl": "https://www.magnific.com/pricing",
           "pricingUnit": "account",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 45,
-          "nativeCurrency": "USD",
+          "nativeAmount": 27,
+          "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
-          "billingCommitment": "monthly",
+          "billingCommitment": "annual_prepaid",
           "taxInclusion": "ht",
-          "observedMarket": null,
-          "observedOn": "2026-09-25",
-          "lastConfirmedOn": "2026-09-25"
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
         },
         {
-          "planKey": "pro-starter",
-          "displayName": "Pro Starter",
-          "summary": "Introductory offer at $82.50/mo for the first term; renewal price not published.",
+          "planKey": "premium-plus-monthly-eur",
+          "displayName": "Premium+",
+          "summary": "No commitment.",
           "featureHighlights": [
-            "1.5M credits/year, aimed at professional/agency-level content production."
+            "45,000 credits per month."
           ],
           "detailsSourceUrl": "https://www.magnific.com/pricing",
           "pricingUnit": "account",
           "isFree": false,
           "isComparePlan": false,
-          "nativeAmount": 110,
-          "nativeCurrency": "USD",
+          "nativeAmount": 36,
+          "nativeCurrency": "EUR",
           "billingPeriod": "monthly",
           "billingCommitment": "monthly",
           "taxInclusion": "ht",
-          "observedMarket": null,
-          "observedOn": "2026-09-25",
-          "lastConfirmedOn": "2026-09-25"
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pro-starter-annual-eur",
+          "displayName": "Pro Starter",
+          "summary": "€66/month billed yearly for the 1.5M-credit tier; a 4M tier exists, priced after selection.",
+          "featureHighlights": [
+            "1.5 million credits for the year."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 66,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        },
+        {
+          "planKey": "pro-starter-monthly-eur",
+          "displayName": "Pro Starter",
+          "summary": "No commitment, 112,500-credit monthly tier.",
+          "featureHighlights": [
+            "112,500 credits per month."
+          ],
+          "detailsSourceUrl": "https://www.magnific.com/pricing",
+          "pricingUnit": "account",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 88,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "EU",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
         }
       ]
     },
@@ -124584,14 +124718,14 @@
       "puissance": 4,
       "reversibilite": 3,
       "evidence": {
-        "valeurAjoutee": "Le plan d'entrée Premium regroupe l'upscaling avec une large suite IA et une bibliothèque de médias, mais à 20 $/mois avec des crédits partagés entre les outils, un usage intensif d'upscaling peut épuiser le pool rapidement.",
+        "valeurAjoutee": "Le plan d'entrée Premium regroupe l'agrandissement, une large suite IA et une bibliothèque de médias pour 12 €/mois en annuel, mais les crédits sont partagés entre les outils et un usage vidéo peut épuiser le pool rapidement.",
         "simplicite": "Les réglages de créativité, ressemblance et HDR donnent un résultat utilisable rapidement sans formation spécialisée.",
         "utilisation": "Assure l'agrandissement d'image et la réinterprétation créative comme annoncé, avec les modèles de génération de Freepik en plus.",
         "puissance": "Premium+ débloque une licence commerciale et un accès illimité à un modèle phare, ce qui en fait une option solide pour un usage professionnel.",
         "reversibilite": "Note neutre : les formats d'export et la portabilité des données ne figurent pas dans les sources relevées."
       },
       "evidenceEn": {
-        "valeurAjoutee": "The entry Premium plan bundles upscaling with a broad AI suite and stock library, but at $20/month with credits shared across tools, heavy upscaling users may exhaust their pool quickly.",
+        "valeurAjoutee": "The entry Premium plan bundles upscaling, a broad AI suite and a stock library for €12/month billed yearly, but credits are shared across tools and video use can drain the pool quickly.",
         "simplicite": "Creativity, resemblance and HDR controls give a usable result quickly without specialist training.",
         "utilisation": "Delivers image upscaling and creative reimagining as advertised, bundled with Freepik's generation models.",
         "puissance": "Premium+ unlocks a commercial license and unlimited access to a flagship model, positioning it as a strong option for professional output.",
@@ -124601,8 +124735,8 @@
       "notedOn": "2026-09-25"
     },
     "tagline": {
-      "fr": "Agrandisseur d'image par IA",
-      "en": "AI image upscaler"
+      "fr": "Agrandisseur d'image IA et plateforme créative (ex-Freepik)",
+      "en": "AI image upscaler and creative platform (formerly Freepik)"
     },
     "research": {
       "dossier": "research/dossiers/magnific.json",
@@ -216376,7 +216510,7 @@
       "Éditeurs photo"
     ],
     "alternatives": [
-      "magnific-ai",
+      "magnific",
       "topaz-photo-ai",
       "luminar-neo",
       "nik-collection"

@@ -1,3 +1,10 @@
+## 2026-10-20 · Magnific (ex-Freepik) : prix en crédits, fiche et maillage
+
+- Grille officielle en euros relevée le 20/10 (annuel et mensuel), `usage_sensitive`, mises en garde sur le coût en crédits par modèle ; suppression de la fausse offre de lancement à 7,25 $.
+- Fiche réécrite : Freepik renommé Magnific, agrandisseur conservé, écosystème MCP, ComfyUI, API ; titre, meta fiche et meta prix dédiés.
+- Pilote prix : `magnific` remplace le doublon redirigé `magnific-ai` ; FAQ « le prix dépend-il de l'usage ? » pour les outils facturés à l'usage ; réponse prix qui signale les tarifs promotionnels et les engagements de 2 ans.
+- « Pas d’offre gratuite » (de élidé) était lu comme une offre gratuite : 30 fiches payantes (Pipedrive, Castmagic, Moosend, Teachable…) titraient « free plan ». Règle corrigée, test ajouté.
+
 ## 2026-10-20 : guides et classements « meilleurs outils », refonte
 
 - /guides : en-tête resserré (titre, une phrase, une barre filtres + recherche compacte + tri) ; derniers guides en 4 colonnes après la rangée vedette ; classements par besoin après le flux daté, en lignes compactes (trois logos, titre, nombre d'outils).

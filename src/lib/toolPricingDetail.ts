@@ -16,7 +16,7 @@ import { formatAmount, isCurrency, type Currency } from "./currencyRates";
 /** Pricing URLs with impressions on price queries (GSC, 18/07-17/10/2026). */
 export const PRICING_DETAIL_PILOT = new Set([
   "nordpass", "jest", "safetyculture", "gitlens", "zbrush", "capture-one",
-  "touchdesigner", "material-ui", "magnific-ai", "mongodb-atlas", "hotjar",
+  "touchdesigner", "material-ui", "magnific", "mongodb-atlas", "hotjar",
   "dependabot", "enscape", "adobe-photoshop", "adobe-premiere-pro",
   "adobe-lightroom", "logic-pro", "clerk", "cinema-4d", "maxon-one",
 ]);
@@ -129,7 +129,7 @@ export function buildPricingDetail(tool: DetailTool, lang: string): PricingDetai
   if (paid.length > 1) {
     faq.push({
       q: fr ? `Quelles sont les offres payantes de ${name} ?` : `What are ${name}'s paid plans?`,
-      a: paid.map((plan) => `${plan.displayName} : ${money(Number(plan.nativeAmount), plan.nativeCurrency)}${billing(plan, fr)}`).join(" ; ") + ".",
+      a: paid.map((plan) => `${plan.displayName}${fr ? " : " : ": "}${money(Number(plan.nativeAmount), plan.nativeCurrency)}${billing(plan, fr)}`).join(fr ? " ; " : "; ") + ".",
     });
   }
   if (compare.pricingUnit === "seat") {
@@ -138,6 +138,14 @@ export function buildPricingDetail(tool: DetailTool, lang: string): PricingDetai
       a: fr
         ? `Oui, l'offre ${planName} est facturée par utilisateur${seatCosts[2] ? ` : ${seatCosts[2].monthly} par mois pour 5 utilisateurs` : ""}.`
         : `Yes, the ${planName} plan is billed per user${seatCosts[2] ? `: ${seatCosts[2].monthly} per month for 5 users` : ""}.`,
+    });
+  }
+  // Credit or token billing: the subscription price alone is not the cost.
+  const usageNote = (fr ? tool.pricing_v5?.cautions : tool.pricing_v5?.cautionsEn || tool.pricing_v5En?.cautions)?.[0];
+  if (tool.pricing_v5?.usage_sensitive && usageNote) {
+    faq.push({
+      q: fr ? `Le prix de ${name} dépend-il de l'usage ?` : `Does ${name} pricing depend on usage?`,
+      a: fr ? `Oui. ${usageNote}` : `Yes. ${usageNote}`,
     });
   }
   if (verified && tool.pricing_v5?.official_source_url) {
