@@ -1910,9 +1910,9 @@
     "websiteUrl": "https://www.advancedcustomfields.com",
     "ogImageUrl": "https://www.advancedcustomfields.com/wp-content/uploads/2024/06/acf-social.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "verticals": [
       "dev-freelance"
@@ -3330,9 +3330,9 @@
     "websiteUrl": "https://www.appsmith.com",
     "ogImageUrl": "https://images.ctfassets.net/lpvian6u6i39/3K4hnNGrLSlQzJRF4bn32J/8da3f35480fa66fd6c439e9af35b60ab/Default_OG_image.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "internal-tools-builder",
     "functional_needs": [
-      "nocode-web"
+      "internal-tools-builder"
     ],
     "verticals": [
       "dev-freelance"
@@ -5632,9 +5632,9 @@
     "websiteUrl": "https://bloclibrary.dev",
     "ogImageUrl": "https://bloclibrary.dev/og.png?v=1",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "flutter-state-management",
     "functional_needs": [
-      "nocode-web"
+      "flutter-state-management"
     ],
     "verticals": [
       "dev-freelance"
@@ -6432,9 +6432,9 @@
     "websiteUrl": "https://bricksbuilder.io",
     "ogImageUrl": "https://bricksbuilder.io/wp-content/uploads/2026/06/social-share.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "verticals": [
       "dev-freelance"
@@ -6469,9 +6469,9 @@
     "websiteUrl": "https://www.browserstack.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/browserstack.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -6701,9 +6701,9 @@
     "websiteUrl": "https://budibase.com",
     "ogImageUrl": "https://budibase.com/og.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "internal-tools-builder",
     "functional_needs": [
-      "nocode-web"
+      "internal-tools-builder"
     ],
     "verticals": [
       "dev-freelance"
@@ -8548,9 +8548,9 @@
     "websiteUrl": "https://developer.chrome.com/docs/devtools",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/chrome-devtools.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "dev-environment",
     "functional_needs": [
-      "nocode-web"
+      "dev-environment"
     ],
     "verticals": [
       "dev-freelance"
@@ -9084,9 +9084,9 @@
     "websiteUrl": "https://finsweet.com/client-first",
     "ogImageUrl": "https://cdn.prod.website-files.com/60f51550d69dbad0b4e158eb/62fbefefac4d996f6ede6a9c_og-image.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "webflow-tooling",
     "functional_needs": [
-      "nocode-web"
+      "webflow-tooling"
     ],
     "verticals": [
       "dev-freelance"
@@ -9951,9 +9951,9 @@
     "websiteUrl": "https://www.contentful.com",
     "ogImageUrl": "https://images-www.contentful.com/jtqsy5pye0zd/7lBI01K3NAF1S9JZvC4rkV/478c66f4f3db3ef6c500039d3672049d/image.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "verticals": [
       "dev-freelance"
@@ -10929,9 +10929,9 @@
     "websiteUrl": "https://www.cypress.io",
     "ogImageUrl": "https://www.cypress.io/cypress_logo_social.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -11119,9 +11119,9 @@
     "websiteUrl": "https://dart.dev",
     "ogImageUrl": "https://dart.dev/assets/img/logo/dart-logo-for-shares.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -12136,9 +12136,9 @@
     "websiteUrl": "https://directus.io",
     "ogImageUrl": "https://framerusercontent.com/images/wDMzR3oV9R51pVCPoOz6PGTRs54.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "verticals": [
       "dev-freelance"
@@ -12233,9 +12233,9 @@
     "websiteUrl": "https://www.djangoproject.com",
     "ogImageUrl": "https://static.djangoproject.com/img/logos/django-logo-negative.1d528e2cb5fb.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -13325,9 +13325,9 @@
     "websiteUrl": "https://elementor.com",
     "ogImageUrl": "https://elementor.com/wp-content/uploads/2026/01/Featured-image-HP.webp",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "verticals": [
       "dev-freelance"
@@ -14055,9 +14055,9 @@
     "websiteUrl": "https://eslint.org",
     "ogImageUrl": "https://eslint.org/icon-512.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-quality",
     "functional_needs": [
-      "nocode-web"
+      "code-quality"
     ],
     "verticals": [
       "dev-freelance"
@@ -14392,9 +14392,9 @@
     "websiteUrl": "https://fastapi.tiangolo.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/fastapi.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -15349,9 +15349,9 @@
     "websiteUrl": "https://finsweet.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/61819aaca0e7acc94c5a2d47/68caacc6851d7e0cb0944152_finsweetog.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "webflow-tooling",
     "functional_needs": [
-      "nocode-web"
+      "webflow-tooling"
     ],
     "verticals": [
       "dev-freelance"
@@ -15546,9 +15546,9 @@
     "websiteUrl": "https://flask.palletsprojects.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/flask.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -15866,9 +15866,9 @@
     "websiteUrl": "https://flutter.dev",
     "ogImageUrl": "https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "mobile-framework",
     "functional_needs": [
-      "nocode-web"
+      "mobile-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -17658,9 +17658,9 @@
     "websiteUrl": "https://www.gitkraken.com/gitlens",
     "ogImageUrl": "https://www.gitkraken.com/wp-content/uploads/2023/03/GlOg.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "dev-environment",
     "functional_needs": [
-      "nocode-web"
+      "dev-environment"
     ],
     "verticals": [
       "dev-freelance"
@@ -17829,9 +17829,9 @@
     "websiteUrl": "https://go.dev",
     "ogImageUrl": "https://go.dev/doc/gopher/gopherbelly300.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -18895,9 +18895,9 @@
     "websiteUrl": "https://graphql.org",
     "ogImageUrl": "https://graphql-github-akqzjdz0w-the-graph-ql-foundation.vercel.app/img/og-logo.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "verticals": [
       "dev-freelance"
@@ -21228,9 +21228,9 @@
     "websiteUrl": "https://insomnia.rest",
     "ogImageUrl": "https://insomnia.rest/images/open-graph-insomnia.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -21732,19 +21732,19 @@
     "shortDescription": "Framework de test JavaScript largement utilisé.",
     "shortDescriptionEn": "Widely used JavaScript testing framework.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Open source sous licence MIT : gratuit pour tout projet.",
+      "paid": null
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Open source under the MIT license: free for any project.",
+      "paid": null
     },
     "websiteUrl": "https://jestjs.io",
     "ogImageUrl": "https://jestjs.io/img/opengraph.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -24883,9 +24883,20 @@
     "shortDescription": "Station audio Apple pour composition, mixage et postproduction.",
     "shortDescriptionEn": "Apple DAW for composition, mixing, and post-production.",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Pas de version gratuite. Essai gratuit de 30 jours via Apple Creator Studio.",
+      "paid": "199,99 $ en achat unique sur Mac, ou inclus dans Apple Creator Studio à 12,99 $/mois (129 $/an)."
     },
+    "pricingEn": {
+      "free": "No free version. 30-day free trial through Apple Creator Studio.",
+      "paid": "$199.99 one-time purchase on Mac, or included in Apple Creator Studio at $12.99/month ($129/year)."
+    },
+    "nativePrices": [
+      {
+        "amount": 199.99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "websiteUrl": "https://www.apple.com/logic-pro/",
     "ogImageUrl": "https://www.apple.com/v/logic-pro/n/images/meta/logic_pro__bwh8nhmy69jm_og.png?202603241546",
     "substitution_cluster_v2": "audio-daw",
@@ -29465,9 +29476,9 @@
     "websiteUrl": "https://nestjs.com",
     "ogImageUrl": "https://nestjs.com/nest-og.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -29653,9 +29664,9 @@
     "websiteUrl": "https://github.com/postmanlabs/newman",
     "ogImageUrl": "https://opengraph.githubassets.com/227b8f3dede553b842edb1bbc94947d4f424ebf2e297efa32920b4bfde70d2ee/postmanlabs/newman",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -29820,9 +29831,9 @@
     "websiteUrl": "https://nextjs.org",
     "ogImageUrl": "https://h8dxkfmaphn8o0p3.public.blob.vercel-storage.com/nextjs/twitter-card.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -29951,9 +29962,9 @@
     "websiteUrl": "https://nodejs.org",
     "ogImageUrl": "https://nodejs.org/en/next-data/og/announcement/Node.js%20%E2%80%94%20Run%20JavaScript%20Everywhere",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -30947,9 +30958,9 @@
     "websiteUrl": "https://www.openapis.org",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/openapi.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -32353,9 +32364,9 @@
     "websiteUrl": "https://payloadcms.com",
     "ogImageUrl": "https://payloadcms.com/images/og-image.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "verticals": [
       "dev-freelance"
@@ -33001,9 +33012,9 @@
     "websiteUrl": "https://www.php.net",
     "ogImageUrl": "https://www.php.net/images/meta-image.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -33793,9 +33804,9 @@
     "websiteUrl": "https://playwright.dev",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/playwright.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -34085,9 +34096,9 @@
     "websiteUrl": "https://python-poetry.org",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/poetry.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "python-packaging",
     "functional_needs": [
-      "nocode-web"
+      "python-packaging"
     ],
     "verticals": [
       "dev-freelance"
@@ -34121,9 +34132,9 @@
     "websiteUrl": "https://www.postgresql.org",
     "ogImageUrl": "https://www.postgresql.org/media/img/about/press/elephant.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "verticals": [
       "dev-freelance"
@@ -34228,9 +34239,9 @@
     "websiteUrl": "https://www.postman.com",
     "ogImageUrl": "https://voyager.postman.com/social-preview/postman-v12-social-preview-homepage.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -34488,9 +34499,9 @@
     "websiteUrl": "https://prettier.io",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/prettier.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-quality",
     "functional_needs": [
-      "nocode-web"
+      "code-quality"
     ],
     "verticals": [
       "dev-freelance"
@@ -34712,9 +34723,9 @@
     "websiteUrl": "https://www.prisma.io",
     "ogImageUrl": "https://www.prisma.io/og.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "verticals": [
       "dev-freelance"
@@ -35709,9 +35720,9 @@
     "websiteUrl": "https://pytest.org",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pytest.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -35755,9 +35766,9 @@
     "websiteUrl": "https://www.python.org",
     "ogImageUrl": "https://www.python.org/static/opengraph-icon-200x200.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -36628,9 +36639,9 @@
     "websiteUrl": "https://reactnative.dev",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/react-native.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "mobile-framework",
     "functional_needs": [
-      "nocode-web"
+      "mobile-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -37634,9 +37645,9 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://remix.run",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -38096,9 +38107,9 @@
     "websiteUrl": "https://marketplace.visualstudio.com/items?itemName=humao.rest-client",
     "ogImageUrl": "https://humao.gallerycdn.vsassets.io/extensions/humao/rest-client/0.25.1/1660918934840/Microsoft.VisualStudio.Services.Icons.Default",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -38654,9 +38665,9 @@
     "websiteUrl": "https://riverpod.dev",
     "ogImageUrl": "https://riverpod.dev/img/cover.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "flutter-state-management",
     "functional_needs": [
-      "nocode-web"
+      "flutter-state-management"
     ],
     "verticals": [
       "dev-freelance"
@@ -39619,9 +39630,9 @@
     "websiteUrl": "https://www.sanity.io",
     "ogImageUrl": "https://cdn.sanity.io/images/3do82whm/next/f21df064721ee7867372278bcbd0de4b512de556-1200x630.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "verticals": [
       "dev-freelance"
@@ -42903,9 +42914,9 @@
     "websiteUrl": "https://www.sqlalchemy.org",
     "ogImageUrl": "https://www.sqlalchemy.org/img/sqla_og.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "verticals": [
       "dev-freelance"
@@ -43362,9 +43373,9 @@
     "websiteUrl": "https://strapi.io",
     "ogImageUrl": "https://delicate-dawn-ac25646e6d.media.strapiapp.com/HP_meta_b32f546a40.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "verticals": [
       "dev-freelance"
@@ -45704,9 +45715,9 @@
     "websiteUrl": "https://www.thunderclient.com",
     "ogImageUrl": "https://www.thunderclient.com/images/thunder-screenshot-v8.png?v=3",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -45952,9 +45963,9 @@
     "websiteUrl": "https://timber.github.io/docs/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/timber.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "verticals": [
       "dev-freelance"
@@ -47509,9 +47520,9 @@
     "websiteUrl": "https://www.typescriptlang.org",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/typescript.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -48075,9 +48086,9 @@
     "websiteUrl": "https://github.com/astral-sh/uv",
     "ogImageUrl": "https://opengraph.githubassets.com/ac6b07e5da2a9cfd07bebafab96c7780961f6c1e90223d92a12b952ff92aa47f/astral-sh/uv",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "python-packaging",
     "functional_needs": [
-      "nocode-web"
+      "python-packaging"
     ],
     "verticals": [
       "dev-freelance"
@@ -48781,9 +48792,9 @@
     "websiteUrl": "https://vitest.dev",
     "ogImageUrl": "https://vitest.dev/og.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -48956,9 +48967,9 @@
     "websiteUrl": "https://code.visualstudio.com",
     "ogImageUrl": "https://code.visualstudio.com/opengraphimg/opengraph-home.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "dev-environment",
     "functional_needs": [
-      "nocode-web"
+      "dev-environment"
     ],
     "verticals": [
       "dev-freelance"
@@ -50041,9 +50052,9 @@
     "websiteUrl": "https://wordpress.org",
     "ogImageUrl": "https://wordpress.org/files/2024/04/wordpress-homepage-ogimage-202404.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "verticals": [
       "dev-freelance"
@@ -60155,6 +60166,104 @@
       "vanta",
       "drata",
       "onetrust"
+    ]
+  },
+  {
+    "id": "viralsnap",
+    "slug": "viralsnap",
+    "name": "ViralSnap",
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 3,
+      "notedOn": "2026-10-15"
+    },
+    "categoryId": "creation",
+    "shortDescription": "Analyse des Reels Instagram publics et réécriture de scripts à partir de leurs hooks, scènes et rythmes.",
+    "shortDescriptionEn": "Analyze public Instagram Reels and rewrite scripts from their hooks, scenes, and pacing.",
+    "pricing": {
+      "free": "100 crédits à vie ; jusqu’à 5 analyses si les crédits sont consacrés uniquement à Analyze. Des outils gratuits complémentaires sont aussi proposés.",
+      "paid": "Starter : 12 $US/mois pour 1 000 crédits mensuels. Offre Teams & Agencies sur devis. Taxes et conditions de facturation à confirmer au paiement."
+    },
+    "pricingEn": {
+      "free": "100 lifetime credits; up to 5 analyses if credits are spent only on Analyze. Additional free tools are also available.",
+      "paid": "Starter: US$12/month for 1,000 monthly credits. Teams & Agencies is custom-priced. Confirm taxes and billing terms at checkout."
+    },
+    "nativePrices": [
+      {
+        "amount": 12,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://getviralsnap.com/",
+    "tool_type": "specialise",
+    "functional_needs": [
+      "creator-workflow",
+      "short-form-video"
+    ],
+    "verticals": [
+      "creator-economy",
+      "social-media"
+    ],
+    "relevantFor": [
+      "Créateurs UGC",
+      "Créateurs de vidéos courtes",
+      "Équipes social media"
+    ],
+    "personas": [
+      "lina"
+    ]
+  },
+  {
+    "id": "sprokl",
+    "slug": "sprokl",
+    "name": "Sprokl",
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-10-15"
+    },
+    "categoryId": "creation",
+    "shortDescription": "Transformez vos ressources produit en angles, scripts et variations vidéo pour tester des publicités e-commerce.",
+    "shortDescriptionEn": "Turn product assets into angles, scripts, and video variations for ecommerce ad testing.",
+    "pricing": {
+      "free": "Free : 0 $US/mois, avec 3 crédits par mois et des exports standard.",
+      "paid": "Team : 39 $US/mois pour 60 crédits ; Scale : 99 $US/mois pour 200 crédits. Crédits renouvelés chaque mois ; annulation possible à tout moment selon la page tarifaire."
+    },
+    "pricingEn": {
+      "free": "Free: US$0/month, with 3 credits per month and standard exports.",
+      "paid": "Team: US$39/month for 60 credits; Scale: US$99/month for 200 credits. Credits reset monthly; cancel anytime according to the pricing page."
+    },
+    "nativePrices": [
+      {
+        "amount": 39,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "websiteUrl": "https://getsprokl.com/",
+    "tool_type": "ia",
+    "functional_needs": [
+      "creator-workflow"
+    ],
+    "verticals": [
+      "ecommerce",
+      "marketing",
+      "social-media"
+    ],
+    "relevantFor": [
+      "Marques e-commerce et DTC",
+      "Équipes Shopify",
+      "Annonceurs TikTok et paid social"
+    ],
+    "personas": [
+      "lina"
     ]
   }
 ]

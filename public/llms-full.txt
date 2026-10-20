@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1351
+# Records: 1353
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
@@ -20185,8 +20185,8 @@
     "website": "https://jestjs.io",
     "category": "nocode-web",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Open source sous licence MIT : gratuit pour tout projet.",
+      "paid": null
     },
     "description_fr": "Framework de test JavaScript largement utilisé.",
     "description_en": "Widely used JavaScript testing framework.",
@@ -23199,11 +23199,12 @@
     "website": "https://www.apple.com/logic-pro/",
     "category": "creation",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Pas de version gratuite. Essai gratuit de 30 jours via Apple Creator Studio.",
+      "paid": "199,99 $ en achat unique sur Mac, ou inclus dans Apple Creator Studio à 12,99 $/mois (129 $/an)."
     },
     "description_fr": "Station audio Apple pour composition, mixage et postproduction.",
     "description_en": "Apple DAW for composition, mixing, and post-production.",
+    "price_verified_on": "2026-10-19",
     "verdict_fr": {
       "keep_if": "Vous produisez de la musique sur Mac ou iPad",
       "avoid_if": "Vous travaillez sur Windows ou Linux",
@@ -57028,6 +57029,100 @@
         "The €265/month entry plan with an annual commitment is expensive for a freelancer or very small business without recurring requirements",
         "The reviewed pricing page does not specify VAT treatment or payment terms",
         "The platform organizes compliance but does not certify a business or replace legal advice"
+      ]
+    }
+  },
+  {
+    "name": "ViralSnap",
+    "slug": "viralsnap",
+    "url_fr": "https://tooltrim.com/fr/tool/viralsnap",
+    "url_en": "https://tooltrim.com/en/tool/viralsnap",
+    "website": "https://getviralsnap.com/",
+    "category": "creation",
+    "pricing": {
+      "free": "100 crédits à vie ; jusqu’à 5 analyses si les crédits sont consacrés uniquement à Analyze. Des outils gratuits complémentaires sont aussi proposés.",
+      "paid": "Starter : 12 $US/mois pour 1 000 crédits mensuels. Offre Teams & Agencies sur devis. Taxes et conditions de facturation à confirmer au paiement."
+    },
+    "description_fr": "Analyse des Reels Instagram publics et réécriture de scripts à partir de leurs hooks, scènes et rythmes.",
+    "description_en": "Analyze public Instagram Reels and rewrite scripts from their hooks, scenes, and pacing.",
+    "price_verified_on": "2026-10-15",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu étudies régulièrement des Reels publics pour préparer tes scripts ou briefs UGC",
+      "avoid_if": "Tu cherches un éditeur qui monte et publie directement la vidéo finale",
+      "strengths": [
+        "Décompose une référence en hook, scènes, structure et rythme, au-delà d’un simple résumé de transcription",
+        "Propose une adaptation de script ou une direction de storyboard à revoir avant production",
+        "Associe l’analyse à des outils gratuits d’extraction, de téléchargement et de transcription de Reels publics"
+      ],
+      "weaknesses": [
+        "L’analyse dépend de Reels publics pris en charge et récupérables ; une URL ne garantit pas un résultat exploitable",
+        "Les crédits partagés entre fonctions rendent le nombre d’analyses difficile à déduire du seul quota mensuel",
+        "L’outil ne monte ni ne publie une vidéo finalisée, et ses interprétations ne démontrent pas les causes de performance"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You regularly study public Reels to prepare scripts or UGC briefs",
+      "avoid_if": "You need an editor that directly produces and publishes the finished video",
+      "strengths": [
+        "Breaks a reference down into hook, scenes, structure, and pacing rather than only summarizing its transcript",
+        "Suggests a script adaptation or storyboard direction for review before production",
+        "Combines analysis with free extraction, download, and transcription tools for public Reels"
+      ],
+      "weaknesses": [
+        "Analysis depends on supported, retrievable public Reels; a URL does not guarantee a usable result",
+        "Credits shared across features make the number of analyses difficult to infer from the monthly allowance alone",
+        "The tool does not edit or publish a finished video, and its interpretations do not prove the causes of performance"
+      ]
+    }
+  },
+  {
+    "name": "Sprokl",
+    "slug": "sprokl",
+    "url_fr": "https://tooltrim.com/fr/tool/sprokl",
+    "url_en": "https://tooltrim.com/en/tool/sprokl",
+    "website": "https://getsprokl.com/",
+    "category": "creation",
+    "pricing": {
+      "free": "Free : 0 $US/mois, avec 3 crédits par mois et des exports standard.",
+      "paid": "Team : 39 $US/mois pour 60 crédits ; Scale : 99 $US/mois pour 200 crédits. Crédits renouvelés chaque mois ; annulation possible à tout moment selon la page tarifaire."
+    },
+    "description_fr": "Transformez vos ressources produit en angles, scripts et variations vidéo pour tester des publicités e-commerce.",
+    "description_en": "Turn product assets into angles, scripts, and video variations for ecommerce ad testing.",
+    "price_verified_on": "2026-10-15",
+    "verdict_fr": {
+      "score": "3.4/5",
+      "label": "Bon",
+      "keep_if": "Tu produis régulièrement des publicités e-commerce et veux préparer plusieurs directions à partir des mêmes ressources produit",
+      "avoid_if": "Tu cherches un outil qui suit les conversions et choisit automatiquement les publicités gagnantes",
+      "strengths": [
+        "Relie angles créatifs, scripts et variations vidéo à partir des ressources d’un produit",
+        "Permet de revoir les angles et les scripts avant de poursuivre la production",
+        "Les offres affichent des crédits mensuels et distinguent les options de rendu et d’export"
+      ],
+      "weaknesses": [
+        "Les crédits ne correspondent pas à un nombre fixe de vidéos : le volume dépend de la durée",
+        "Les estimations vidéo de Team diffèrent entre les pages d’accueil et de tarifs",
+        "L’outil ne mesure pas les performances publicitaires et ne désigne pas les créations gagnantes"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.4/5",
+      "label": "Good",
+      "keep_if": "You regularly produce ecommerce ads and want multiple creative directions from the same product assets",
+      "avoid_if": "You need a tool that tracks conversions and automatically picks winning ads",
+      "strengths": [
+        "Connects creative angles, scripts, and video variations from existing product assets",
+        "Lets teams review angles and scripts before moving into production",
+        "Plans state monthly credits and distinguish rendering and export features"
+      ],
+      "weaknesses": [
+        "Credits do not map to a fixed number of videos; output depends on duration",
+        "Team video estimates differ between the homepage and pricing page",
+        "The product does not measure ad performance or identify winning creatives"
       ]
     }
   }
