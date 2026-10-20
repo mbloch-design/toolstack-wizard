@@ -9727,7 +9727,7 @@
     }
   },
   {
-    "name": "Datev",
+    "name": "DATEV",
     "slug": "datev",
     "url_fr": "https://tooltrim.com/fr/tool/datev",
     "url_en": "https://tooltrim.com/en/tool/datev",
