@@ -511,7 +511,8 @@ export default function ExplorerPage() {
         locale: lang === "en" ? "en_US" : "fr_FR",
       });
     }
-    if (hasNonCanonicalSearchParams(searchParams) || source?.type === "objectif" || source?.type === "stack") setNoindex();
+    // « Around a tool » pages are noindex too since 19/10/2026 (thin lists).
+    if (hasNonCanonicalSearchParams(searchParams) || source?.type === "objectif" || source?.type === "stack" || source?.type === "outil") setNoindex();
     else removeNoindex();
     return () => {
       removeNoindex();

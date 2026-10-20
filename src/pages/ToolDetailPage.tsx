@@ -36,6 +36,8 @@ import { findSimilarTools, functionalAffinity } from "@/lib/alternativesSimilari
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import { getGuidesForTool } from "@/lib/toolGuides";
 import { getStacksForTool } from "@/lib/toolStacks";
+import { buildPricingDetail, isPricingDetailPilot } from "@/lib/toolPricingDetail";
+import { ToolPricingAnswer, ToolPricingExtras } from "@/components/tool/ToolPricingDetail";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
@@ -437,6 +439,9 @@ const ToolDetailPage = () => {
   const showFaq = isPresentation || subPage === "faq";
   const relatedGuides = getGuidesForTool(tool.slug || tool.id, lang);
   const relatedStacks = getStacksForTool(tool.slug || tool.id, lang);
+  // Pricing sub-page pilot: what the fiche does not carry (answer, per-seat
+  // cost, pricing FAQ), from the verified grid only.
+  const pricingDetail = subPage === "prix" && isPricingDetailPilot(tool) ? buildPricingDetail(tool, lang) : null;
   const baseToolPath = `${prefix}/tool/${tool.slug || tool.id}`;
   const mobileBarPrice = toolPriceLine(tool, lang, t).priceLine;
   // Accent colour drawn from the tool's logo (scripts/gen-tool-accents.mjs);
@@ -873,11 +878,13 @@ const ToolDetailPage = () => {
                   <h2 className="td-title">
                     {t("Tarifs.", "Pricing.")} <span className="tt-title-muted">{t(`Quel budget pour ${tool.name}\u00a0?`, `What does ${tool.name} cost\u00a0?`)}</span>
                   </h2>
+                  {pricingDetail && <ToolPricingAnswer detail={pricingDetail} />}
                   <ToolPricingSection
                     tool={tool} displayPrice={displayPrice}
                     lang={lang} t={t}
                     onOfficialClick={() => trackOutbound("tool_pricing", "official_pricing")}
                   />
+                  {pricingDetail && <ToolPricingExtras detail={pricingDetail} toolName={tool.name} t={t} />}
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
                   <ToolBundleSection tool={tool} tools={tools} lang={lang} t={t} />
                 </div>

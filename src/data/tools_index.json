@@ -305,16 +305,21 @@
     "shortDescription": "1Password génère, stocke et remplit automatiquement les mots de passe sur tous les appareils, avec alertes de fuite et partage sécurisé intégrés.",
     "shortDescriptionEn": "1Password generates, stores and autofills passwords across devices, with breach alerts and secure sharing built in.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
-      "paid": "Dès 2,99 $/mois, plan Individual."
+      "free": "Pas d'offre gratuite permanente, essai de 14 jours.",
+      "paid": "Individual à 2,74 €/mois facturé à l'année la première année (prix normal 3,65 €/mois)."
     },
     "pricingEn": {
       "free": "No permanent free plan, 14-day trial.",
-      "paid": "From $2.99/mo, Individual plan."
+      "paid": "Individual at $2.99/month billed yearly for the first year (regular price $3.99/month)."
     },
     "defaultMonthlyPrice": 2.57,
-    "compareMonthlyPrice": 2.57,
+    "compareMonthlyPrice": 2.74,
     "nativePrices": [
+      {
+        "amount": 2.74,
+        "currency": "EUR",
+        "period": "monthly"
+      },
       {
         "amount": 2.99,
         "currency": "USD",
@@ -405,15 +410,14 @@
     "shortDescription": "Plateforme de financement de croissance pour les fondateurs e-commerce.",
     "shortDescriptionEn": "Growth funding platform for e-commerce founders.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "5€/mois pour version Pro"
+      "free": null,
+      "paid": "Financement non dilutif pour e-commerçants, coûts fixés au cas par cas dans l'offre, aucun tarif publié."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€5/month for the Pro version"
+      "free": null,
+      "paid": "Non-dilutive funding for e-commerce sellers; costs set per offer, no published rates."
     },
-    "defaultMonthlyPrice": 5,
-    "compareMonthlyPrice": 5,
+    "priceUndisclosed": true,
     "affiliateLink": "https://8fig.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/8fig.jpg",
     "tool_type": "gestion",
@@ -1910,9 +1914,9 @@
     "websiteUrl": "https://www.advancedcustomfields.com",
     "ogImageUrl": "https://www.advancedcustomfields.com/wp-content/uploads/2024/06/acf-social.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "verticals": [
       "dev-freelance"
@@ -3330,9 +3334,9 @@
     "websiteUrl": "https://www.appsmith.com",
     "ogImageUrl": "https://images.ctfassets.net/lpvian6u6i39/3K4hnNGrLSlQzJRF4bn32J/8da3f35480fa66fd6c439e9af35b60ab/Default_OG_image.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "internal-tools-builder",
     "functional_needs": [
-      "nocode-web"
+      "internal-tools-builder"
     ],
     "verticals": [
       "dev-freelance"
@@ -3638,15 +3642,20 @@
     "shortDescription": "Plateforme d’intelligence B2B pour contacts et informations d’entreprises.",
     "shortDescriptionEn": "B2B intelligence platform for contacts and company insights.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan Free gratuit : 3 crédits contact par mois, filtres de recherche basiques.",
+      "paid": "Plan VIP à 49 $/mois en facturation mensuelle (100 crédits contact par mois)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "Free plan: 3 contact credits per month, basic search filters.",
+      "paid": "VIP plan at $49/month billed monthly (100 contact credits per month)."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://arounddeal.com",
     "ogImageUrl": "https://www.arounddeal.com/img/pages/og-default.png",
     "substitution_cluster_v2": "email-outreach",
@@ -4507,15 +4516,20 @@
     "shortDescription": "Outil de suivi de QR codes et d’analytique pour agences et marketers.",
     "shortDescriptionEn": "QR code tracking and analytics tool for agencies and marketers.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan Free gratuit à vie : tableau de bord, 3 trackers, logo Autonix sur les QR codes.",
+      "paid": "Plan Professional à 99 $/mois ou 999 $/an pour 1 utilisateur."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "Forever-free plan: dashboard, 3 trackers, Autonix branding on QR codes.",
+      "paid": "Professional plan at $99/month or $999/year for 1 user."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://autonix.io",
     "ogImageUrl": "https://autonix.io/images/og-image.png",
     "substitution_cluster_v2": "email-outreach",
@@ -5492,8 +5506,21 @@
     "categoryId": "security",
     "shortDescription": "Gestionnaire de mots de passe open source, gratuit et multiplateforme.",
     "shortDescriptionEn": "Open-source, free, cross-platform password manager.",
-    "pricing": "Gratuit (mots de passe illimités) ; Premium à ~10$/an, Famille à ~40$/an.",
-    "pricingEn": "Free (unlimited passwords); Premium at ~$10/year, Family at ~$40/year.",
+    "pricing": {
+      "free": "Offre gratuite permanente : appareils et mots de passe illimités, partage avec un autre utilisateur.",
+      "paid": "Premium à 1,65 $/mois, facturé 19,80 $ par an."
+    },
+    "pricingEn": {
+      "free": "Always-free plan: unlimited devices and passwords, sharing with one other user.",
+      "paid": "Premium at $1.65/month, billed $19.80 per year."
+    },
+    "nativePrices": [
+      {
+        "amount": 1.65,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://bitwarden.com",
     "ogImageUrl": "https://bitwarden.com/assets/7fzQJmr0qt5ggGZp3t66Y/7bf59a6a2379d49fc580ff49e8510efb/bitwarden.com_og_image.png",
     "substitution_cluster_v2": "password-manager",
@@ -5632,9 +5659,9 @@
     "websiteUrl": "https://bloclibrary.dev",
     "ogImageUrl": "https://bloclibrary.dev/og.png?v=1",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "flutter-state-management",
     "functional_needs": [
-      "nocode-web"
+      "flutter-state-management"
     ],
     "verticals": [
       "dev-freelance"
@@ -5776,14 +5803,14 @@
     "shortDescription": "Plateforme d’automatisation des déclarations de crédit R&D.",
     "shortDescriptionEn": "R&D tax credit claim automation platform.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Accompagnement crédits d'impôt R&D sur devis après un appel, aucun tarif publié."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": null,
+      "paid": "R&D tax credit service priced on quote after a call; no published prices."
     },
-    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://boast.ai",
     "ogImageUrl": "https://www.boast.ai/wp-content/uploads/iStock-1128258459-woman-e1736362822366.jpg",
     "tool_type": "gestion",
@@ -5973,14 +6000,13 @@
     "shortDescription": "Service d’organisation d’événements d’entreprise et networking.",
     "shortDescriptionEn": "Corporate event planning and networking service.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "BoomPop a rejoint Navan ; aucun tarif publié."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": null,
+      "paid": "BoomPop has joined Navan; no published prices."
     },
-    "compareMonthlyPrice": 0,
     "affiliateLink": "https://boompop.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/69a5c7e6ea7c2b056a4c8bb8/69e7be9327a6aadf2bab58fd_735dba0479354e7677da18525b927ccb_open-graph-event-planning.webp",
     "substitution_cluster_v2": "event-management",
@@ -6432,9 +6458,9 @@
     "websiteUrl": "https://bricksbuilder.io",
     "ogImageUrl": "https://bricksbuilder.io/wp-content/uploads/2026/06/social-share.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "verticals": [
       "dev-freelance"
@@ -6469,9 +6495,9 @@
     "websiteUrl": "https://www.browserstack.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/browserstack.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -6701,9 +6727,9 @@
     "websiteUrl": "https://budibase.com",
     "ogImageUrl": "https://budibase.com/og.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "internal-tools-builder",
     "functional_needs": [
-      "nocode-web"
+      "internal-tools-builder"
     ],
     "verticals": [
       "dev-freelance"
@@ -8017,15 +8043,20 @@
     "shortDescription": "Outil de transformation rapide de tout format audio en contenu.",
     "shortDescriptionEn": "A tool for quickly transforming any audio format into content.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Hobby à 19 $/mois facturé à l'année (239 $/an), 30 heures transcrites, jusqu'à 3 sièges."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Hobby plan at $19/month billed yearly ($239/year), 30 transcribed hours, up to 3 seats."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://castmagic.io",
     "ogImageUrl": "https://www.castmagic.io/meta/og-default.png",
     "substitution_cluster_v2": "content-creation",
@@ -8548,9 +8579,9 @@
     "websiteUrl": "https://developer.chrome.com/docs/devtools",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/chrome-devtools.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "dev-environment",
     "functional_needs": [
-      "nocode-web"
+      "dev-environment"
     ],
     "verticals": [
       "dev-freelance"
@@ -9084,9 +9115,9 @@
     "websiteUrl": "https://finsweet.com/client-first",
     "ogImageUrl": "https://cdn.prod.website-files.com/60f51550d69dbad0b4e158eb/62fbefefac4d996f6ede6a9c_og-image.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "webflow-tooling",
     "functional_needs": [
-      "nocode-web"
+      "webflow-tooling"
     ],
     "verticals": [
       "dev-freelance"
@@ -9489,14 +9520,14 @@
     "shortDescription": "Marketplace de talents B2B RevOps en freelance.",
     "shortDescriptionEn": "B2B marketplace for freelance RevOps talent.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Service de recrutement : 299 $ de frais de mise en relation par recrutement, staffing géré sur devis."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": null,
+      "paid": "Recruiting service: $299 matching fee per hire, managed staffing on quote."
     },
-    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://cloudtask.com/",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
@@ -9951,9 +9982,9 @@
     "websiteUrl": "https://www.contentful.com",
     "ogImageUrl": "https://images-www.contentful.com/jtqsy5pye0zd/7lBI01K3NAF1S9JZvC4rkV/478c66f4f3db3ef6c500039d3672049d/image.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "verticals": [
       "dev-freelance"
@@ -10639,16 +10670,6 @@
     "categoryId": "email-productivity",
     "shortDescription": "Plateforme de gestion des réseaux sociaux.",
     "shortDescriptionEn": "Social media management platform.",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
-    },
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for Pro version"
-    },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
     "affiliateLink": "https://crowdfireapp.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/crowdfire-inc.jpg",
     "substitution_cluster_v2": "email-outreach",
@@ -10929,9 +10950,9 @@
     "websiteUrl": "https://www.cypress.io",
     "ogImageUrl": "https://www.cypress.io/cypress_logo_social.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -11119,9 +11140,9 @@
     "websiteUrl": "https://dart.dev",
     "ogImageUrl": "https://dart.dev/assets/img/logo/dart-logo-for-shares.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -11200,12 +11221,12 @@
     "shortDescription": "Un gestionnaire de mots de passe pour particuliers, familles et entreprises, avec remplissage automatique, partage sécurisé et contrôles d'administration pour les équipes.",
     "shortDescriptionEn": "A password manager and credential vault for individuals, families and businesses, with autofill, secure sharing and admin controls for teams.",
     "pricing": {
-      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
-      "paid": "Dès 4 €/mois, plan Premium."
+      "free": "Pas d'offre gratuite permanente, essai de 14 jours.",
+      "paid": "Premium à 4,00 € HT/mois facturé à l'année."
     },
     "pricingEn": {
       "free": "No permanent free plan, 14-day trial.",
-      "paid": "From €4/mo, Premium plan."
+      "paid": "Premium at $5.42/month billed yearly."
     },
     "defaultMonthlyPrice": 4,
     "compareMonthlyPrice": 4,
@@ -11213,6 +11234,11 @@
       {
         "amount": 4,
         "currency": "EUR",
+        "period": "monthly"
+      },
+      {
+        "amount": 5.42,
+        "currency": "USD",
         "period": "monthly"
       }
     ],
@@ -12136,9 +12162,9 @@
     "websiteUrl": "https://directus.io",
     "ogImageUrl": "https://framerusercontent.com/images/wDMzR3oV9R51pVCPoOz6PGTRs54.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "verticals": [
       "dev-freelance"
@@ -12233,9 +12259,9 @@
     "websiteUrl": "https://www.djangoproject.com",
     "ogImageUrl": "https://static.djangoproject.com/img/logos/django-logo-negative.1d528e2cb5fb.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -12621,15 +12647,20 @@
     "shortDescription": "Générateur d’applications natives (avec code) pour mobiles.",
     "shortDescriptionEn": "Native (with code) mobile app builder.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan Free gratuit sans limite de durée : 1 sandbox, assistance IA, 3 000 crédits uniques, publication web sur draftbit.dev.",
+      "paid": "Plan Standard à 9,60 $/mois facturé à l'année (12 $ en mensuel)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "Free-forever plan: 1 sandbox, AI assistance, 3,000 one-time credits, web publishing on draftbit.dev.",
+      "paid": "Standard plan at $9.60/month billed yearly ($12 monthly)."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 9.6,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://draftbit.com",
     "ogImageUrl": "https://draftbit.com/og-image.jpg",
     "substitution_cluster_v2": "automation-orchestration",
@@ -13192,15 +13223,25 @@
     "shortDescription": "SaaS pour résoudre les problèmes de sécurité et délivrabilité email.",
     "shortDescriptionEn": "SaaS to solve email security and deliverability issues.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan DMARC Plus à 35,99 € ou 35,99 $ par mois facturé à l'année (44,99 en mensuel), 2 domaines."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for Pro version"
+      "free": "No permanent free plan.",
+      "paid": "DMARC Plus at $35.99 or €35.99 per month billed yearly (44.99 monthly), 2 domains."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "nativePrices": [
+      {
+        "amount": 35.99,
+        "currency": "USD",
+        "period": "monthly"
+      },
+      {
+        "amount": 35.99,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://easydmarc.com",
     "ogImageUrl": "https://easydmarc.com/img/easydmarc-og.jpg",
     "substitution_cluster_v2": "automation-orchestration",
@@ -13325,9 +13366,9 @@
     "websiteUrl": "https://elementor.com",
     "ogImageUrl": "https://elementor.com/wp-content/uploads/2026/01/Featured-image-HP.webp",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "verticals": [
       "dev-freelance"
@@ -14055,9 +14096,9 @@
     "websiteUrl": "https://eslint.org",
     "ogImageUrl": "https://eslint.org/icon-512.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-quality",
     "functional_needs": [
-      "nocode-web"
+      "code-quality"
     ],
     "verticals": [
       "dev-freelance"
@@ -14312,15 +14353,20 @@
     "shortDescription": "Plateforme de gestion de polices et ressources créatives.",
     "shortDescriptionEn": "Font and creative asset management platform.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Extensis renvoie désormais vers Monotype Connect : 200 $ par utilisateur et par an (Pro : 300 $)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Extensis now redirects to Monotype Connect: $200 per user per year (Pro: $300)."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 200,
+        "currency": "USD",
+        "period": "annual"
+      }
+    ],
     "affiliateLink": "https://extensis.com",
     "ogImageUrl": "https://www.extensis.com/hubfs/extensis-home-page-banner-img-D.png",
     "substitution_cluster_v2": "content-creation",
@@ -14392,9 +14438,9 @@
     "websiteUrl": "https://fastapi.tiangolo.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/fastapi.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -15304,15 +15350,20 @@
     "shortDescription": "Solution de gestion des stocks pour vendeurs à gros volume.",
     "shortDescriptionEn": "Inventory management solution for high-volume sellers.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Essentials à partir de 499 $/mois (1 à 2 entrepôts)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Essentials plan from $499/month (1-2 warehouses)."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "nativePrices": [
+      {
+        "amount": 499,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://finaleinventory.com",
     "ogImageUrl": "https://www.finaleinventory.com/wp-content/uploads/2026/03/finale-social-image.jpg",
     "substitution_cluster_v2": "website-app-builder",
@@ -15349,9 +15400,9 @@
     "websiteUrl": "https://finsweet.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/61819aaca0e7acc94c5a2d47/68caacc6851d7e0cb0944152_finsweetog.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "webflow-tooling",
     "functional_needs": [
-      "nocode-web"
+      "webflow-tooling"
     ],
     "verticals": [
       "dev-freelance"
@@ -15546,9 +15597,9 @@
     "websiteUrl": "https://flask.palletsprojects.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/flask.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -15573,15 +15624,20 @@
     "shortDescription": "Générateur de quiz personnalisés avec fonctionnalités LMS.",
     "shortDescriptionEn": "Custom quiz generator with LMS features.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan gratuit sans carte bancaire, limité à 20 réponses par mois.",
+      "paid": "Plan Essentials à 17 $/mois soit 204 $/an, 500 réponses par mois, 1 administrateur."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Free plan, no credit card, limited to 20 responses per month.",
+      "paid": "Essentials plan at $17/month or $204/year, 500 responses per month, 1 administrator."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 17,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://flexiquiz.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/flexiquiz.jpg",
     "substitution_cluster_v2": "content-creation",
@@ -15866,9 +15922,9 @@
     "websiteUrl": "https://flutter.dev",
     "ogImageUrl": "https://flutter.dev/assets/flutter-logo-sharing.d744440971931f937269e060e720f5a7.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "mobile-framework",
     "functional_needs": [
-      "nocode-web"
+      "mobile-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -17658,9 +17714,9 @@
     "websiteUrl": "https://www.gitkraken.com/gitlens",
     "ogImageUrl": "https://www.gitkraken.com/wp-content/uploads/2023/03/GlOg.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "dev-environment",
     "functional_needs": [
-      "nocode-web"
+      "dev-environment"
     ],
     "verticals": [
       "dev-freelance"
@@ -17829,9 +17885,9 @@
     "websiteUrl": "https://go.dev",
     "ogImageUrl": "https://go.dev/doc/gopher/gopherbelly300.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -18895,9 +18951,9 @@
     "websiteUrl": "https://graphql.org",
     "ogImageUrl": "https://graphql-github-akqzjdz0w-the-graph-ql-foundation.vercel.app/img/og-logo.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "verticals": [
       "dev-freelance"
@@ -20318,14 +20374,20 @@
     "shortDescription": "Solution tout-en-un pour gérer les projets de construction résidentielle.",
     "shortDescriptionEn": "All-in-one solution for managing residential construction projects.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Offre gratuite avec planificateur 3D, devis et facturation.",
+      "paid": "Plan Design à 99 $/mois pour 1 utilisateur (Pro 199 $, Teams dès 399 $)."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": "Free tier with 3D Floor Planner, Estimates and Invoicing.",
+      "paid": "Design plan at $99/month for 1 user (Pro $199, Teams from $399)."
     },
-    "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://houzz.com/pro",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/houzz-pro.jpg",
     "substitution_cluster_v2": "workspace-ops",
@@ -20926,15 +20988,20 @@
     "shortDescription": "Plateforme pour améliorer la délivrabilité et taux d’ouverture des emails.",
     "shortDescriptionEn": "Platform to improve email deliverability and open rates.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Starter à 149 $/mois en facturation mensuelle, 100 seed emails par jour."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Starter plan at $149/month billed monthly, 100 seed emails per day."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 149,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://inboxally.com",
     "ogImageUrl": "https://www.inboxally.com/wp-content/uploads/2023/04/yoast-site-image-1.jpg",
     "substitution_cluster_v2": "email-outreach",
@@ -20985,7 +21052,8 @@
         "period": "monthly"
       }
     ],
-    "affiliateLink": "https://indy.fr",
+    "affiliateLink": "https://www.indy.fr/?ae=1402",
+    "websiteUrl": "https://indy.fr",
     "ogImageUrl": "https://www.indy.fr/wp-content/uploads/img-indy-www.jpg",
     "tool_type": "gestion",
     "substitution_cluster_v2": "finance-ops",
@@ -21084,15 +21152,20 @@
     "shortDescription": "Logiciel de gestion des stocks pour petites entreprises.",
     "shortDescriptionEn": "Inventory management software for small businesses.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Lite à 99 $/mois (1 188 $/an), 2 membres, 1 emplacement."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Lite plan at $99/month ($1,188/year), 2 team members, 1 location."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://inflowinventory.com",
     "ogImageUrl": "https://www.inflowinventory.com/wp-content/uploads/2024/11/inFlow_URL-Image-x2.png",
     "substitution_cluster_v2": "website-app-builder",
@@ -21228,9 +21301,9 @@
     "websiteUrl": "https://insomnia.rest",
     "ogImageUrl": "https://insomnia.rest/images/open-graph-insomnia.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -21339,15 +21412,20 @@
     "shortDescription": "Générateur de landing pages et plateforme d’optimisation.",
     "shortDescriptionEn": "Landing page generator and optimization platform.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Create à 99 $/mois en facturation mensuelle (15 000 visiteurs uniques par mois), jusqu'à 20 % de remise en annuel."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Create plan at $99/month billed monthly (15,000 unique visitors per month), up to 20% off yearly."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://instapage.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/instapage.jpg",
     "substitution_cluster_v2": "email-outreach",
@@ -21732,19 +21810,19 @@
     "shortDescription": "Framework de test JavaScript largement utilisé.",
     "shortDescriptionEn": "Widely used JavaScript testing framework.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Open source sous licence MIT : gratuit pour tout projet.",
+      "paid": null
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Open source under the MIT license: free for any project.",
+      "paid": null
     },
     "websiteUrl": "https://jestjs.io",
     "ogImageUrl": "https://jestjs.io/img/opengraph.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -22238,15 +22316,13 @@
     "shortDescription": "Logiciel cloud de gestion manufacturière intégrée au e-commerce.",
     "shortDescriptionEn": "Cloud manufacturing management software integrated with e-commerce.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan Free gratuit sans carte bancaire, limité à 30 SKU, utilisateurs et intégrations illimités.",
+      "paid": "Plan Advantage sur devis avec contrat annuel."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Free plan, no credit card, up to 30 SKUs, unlimited users and integrations.",
+      "paid": "Advantage plan on quote with an annual contract."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
     "affiliateLink": "https://katanamrp.com",
     "ogImageUrl": "https://katanamrp.com/wp-content/uploads/2024/05/katana-fallback-image.png",
     "substitution_cluster_v2": "website-app-builder",
@@ -22273,15 +22349,20 @@
     "shortDescription": "Solution de téléphonie IP pour communications d’entreprise.",
     "shortDescriptionEn": "IP telephony solution for business communications.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Pack Basic à 8 € HT par utilisateur et par mois avec engagement de 12 mois (10 € sans engagement)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Basic Pack at €8 excl. VAT per user per month with a 12-month commitment (€10 without commitment)."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 8,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://kavkom.com",
     "ogImageUrl": "https://kavkom.com/wp-content/uploads/2024/07/Installation-en-5-minutes-Frame-6.webp",
     "substitution_cluster_v2": "communication-ops",
@@ -22307,15 +22388,14 @@
     "shortDescription": "Logiciel de gestion de flottes pour entreprises de transport.",
     "shortDescriptionEn": "Fleet management software for transport companies.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": null,
+      "paid": "KeepTruckin est devenu Motive ; tarifs sur devis selon le secteur et la taille de flotte."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for the Pro version"
+      "free": null,
+      "paid": "KeepTruckin is now Motive; pricing on quote based on industry and fleet size."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "priceUndisclosed": true,
     "affiliateLink": "https://keeptruckin.com",
     "ogImageUrl": "https://gomotive.com/wp-content/uploads/2022/04/Social-Share-Image.png",
     "substitution_cluster_v2": "fleet-management",
@@ -22512,15 +22592,20 @@
     "shortDescription": "Outil d’analytics comportemental pour augmenter conversions & engagement.",
     "shortDescriptionEn": "Behavioral analytics tool to increase conversions & engagement.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan Free gratuit sans carte : 100 000 événements par mois, tableaux de bord et rapports de base.",
+      "paid": "Plan Growth à partir de 99 $/mois (500 000 événements et plus), 20 % de remise en annuel."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "Free plan, no card: 100,000 events per month, dashboards and core reports.",
+      "paid": "Growth plan from $99/month (500K+ events), 20% off with yearly billing."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://kissmetrics.io",
     "ogImageUrl": "https://www.kissmetrics.io/api/og?type=product&amp;title=Person-Level%20Analytics&amp;subtitle=Track%20users%2C%20grow%20revenue",
     "substitution_cluster_v2": "email-outreach",
@@ -22604,15 +22689,14 @@
     "shortDescription": "Plateforme d’engagement commercial avec appels et SMS intégrés.",
     "shortDescriptionEn": "Sales engagement platform with integrated calling and SMS.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": null,
+      "paid": "Plans présentés sans prix sur la page tarifs ; tarif sur devis."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": null,
+      "paid": "Plans shown without prices on the pricing page; pricing on quote."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "priceUndisclosed": true,
     "affiliateLink": "https://kixie.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/kixie.jpg",
     "substitution_cluster_v2": "communication-ops",
@@ -23213,15 +23297,25 @@
     "shortDescription": "Générateur de chatbot pour automatiser la capture de leads et interactions client.",
     "shortDescriptionEn": "Chatbot builder to automate lead capture and customer interactions.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan Free gratuit à vie : 100 chats par mois, 1 siège, sans chats IA.",
+      "paid": "Plan Starter à 25,60 €/mois facturé à l'année (32 € en mensuel), 500 chats par mois."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Free-forever plan: 100 chats per month, 1 seat, no AI chats.",
+      "paid": "Starter plan at $32/month billed yearly ($40 monthly), 500 chats per month."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 32,
+        "currency": "USD",
+        "period": "monthly"
+      },
+      {
+        "amount": 25.6,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://landbot.io",
     "ogImageUrl": "https://cdn.prod.website-files.com/5e1c4fb5db4d5243c0021d34/6939b94ec838c897192361fa_Screenshot%202025-12-10%20at%2019.14.48%20(1).png",
     "substitution_cluster_v2": "email-outreach",
@@ -23419,14 +23513,14 @@
     "shortDescription": "Solution globale d’employeur de référence et gestion de paie.",
     "shortDescriptionEn": "Global Employer of Record and payroll management solution.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Prix d'appel à partir de 3 € par employé et par mois (consolidation de paie) et 19 € par freelance et par mois ; tarif final sur proposition."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": null,
+      "paid": "From €3 per employee per month (payroll consolidation) and €19 per contractor per month; final price via a tailored proposal."
     },
-    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://lano.io",
     "ogImageUrl": "https://a.storyblok.com/f/140335/1200x628/0bd5e6182c/fallback-image.png",
     "substitution_cluster_v2": "workspace-ops",
@@ -23451,9 +23545,28 @@
     "categoryId": "security",
     "shortDescription": "Gestionnaire de mots de passe grand public, avec une version gratuite limitée.",
     "shortDescriptionEn": "Mainstream password manager, with a limited free version.",
-    "pricing": "Gratuit (limité à un type d'appareil) ; Premium à partir de ~3$/mois.",
-    "pricingEn": "Free (limited to one device type); Premium from ~$3/month.",
+    "pricing": {
+      "free": "Offre gratuite limitée à un type d'appareil : stockage illimité, remplissage automatique, surveillance du dark web.",
+      "paid": "Premium à 2,90 €/mois facturé à l'année, taxes en sus."
+    },
+    "pricingEn": {
+      "free": "Free plan limited to one device type: unlimited storage, autofill, dark web monitoring.",
+      "paid": "Premium at $3.00/month billed yearly, plus tax."
+    },
     "defaultMonthlyPrice": 3,
+    "compareMonthlyPrice": 2.9,
+    "nativePrices": [
+      {
+        "amount": 2.9,
+        "currency": "EUR",
+        "period": "monthly"
+      },
+      {
+        "amount": 3,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://lastpass.com",
     "ogImageUrl": "https://www.lastpass.com/-/media/28cbf631b1954ed081a8979e2c46b6e4.png",
     "substitution_cluster_v2": "password-manager",
@@ -23601,16 +23714,6 @@
     "categoryId": "email-productivity",
     "shortDescription": "Générateur de leads immobilier alimenté par l’IA.",
     "shortDescriptionEn": "AI-powered real estate lead generator.",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
-    },
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
-    },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
     "affiliateLink": "https://leadflow.com",
     "ogImageUrl": "https://leadflow.com/Assets/Images/Leadflow-OG.jpg",
     "substitution_cluster_v2": "email-outreach",
@@ -23700,15 +23803,20 @@
     "shortDescription": "Plateforme d’exécution commerciale et d’automatisation marketing.",
     "shortDescriptionEn": "Sales execution and marketing automation platform.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "CRM Sales Pro à 40 $ par utilisateur et par mois, facturé à l'année."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Sales Pro CRM at $40 per user per month, billed yearly."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "nativePrices": [
+      {
+        "amount": 40,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://leadsquared.com",
     "ogImageUrl": "https://www.leadsquared.com/wp-content/uploads/2025/04/LeadSquared-logo-1200x630-1.webp",
     "substitution_cluster_v2": "communication-ops",
@@ -23807,7 +23915,8 @@
       "paid": "From €0 (lifetime license), Création d'entreprise plan."
     },
     "compareMonthlyPrice": 0,
-    "affiliateLink": "https://legalplace.fr",
+    "affiliateLink": "https://www.legalplace.fr/?utm_source=affilae&utm_medium=partner&utm_campaign=tooltrim&ae=1498",
+    "websiteUrl": "https://legalplace.fr",
     "ogImageUrl": "https://www.legalplace.fr/wp-content/uploads/2025/12/legalplace-creation-gestion-societe-og.png",
     "logo": "https://logo.clearbit.com/legalplace.fr",
     "tool_type": "specialise",
@@ -23845,6 +23954,7 @@
       "paid": "À partir de 15€/mois ou actes à l'unité"
     },
     "defaultMonthlyPrice": 15,
+    "affiliateLink": "https://www.legalstart.fr/?ae=785",
     "websiteUrl": "https://www.legalstart.fr",
     "tool_type": "gestion",
     "substitution_cluster_v2": "legal-contracts",
@@ -24010,14 +24120,14 @@
     "shortDescription": "Service de prêts professionnels avec multiples options de financement.",
     "shortDescriptionEn": "Business loan service with multiple financing options.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Place de marché de financement : coût du crédit fixé par chaque prêteur, pas d'abonnement publié."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": null,
+      "paid": "Financing marketplace: loan cost set by each lender, no published subscription."
     },
-    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://lendio.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lendio.jpg",
     "tool_type": "gestion",
@@ -24769,16 +24879,6 @@
     "categoryId": "nocode-web",
     "shortDescription": "Fournisseur d’hébergement cloud et web managé.",
     "shortDescriptionEn": "Managed cloud and web hosting provider.",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
-    },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
     "substitution_cluster_v2": "website-app-builder",
     "functional_needs": [
       "web-hosting"
@@ -24883,9 +24983,20 @@
     "shortDescription": "Station audio Apple pour composition, mixage et postproduction.",
     "shortDescriptionEn": "Apple DAW for composition, mixing, and post-production.",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Pas de version gratuite. Essai gratuit de 30 jours via Apple Creator Studio.",
+      "paid": "199,99 $ en achat unique sur Mac, ou inclus dans Apple Creator Studio à 12,99 $/mois (129 $/an)."
     },
+    "pricingEn": {
+      "free": "No free version. 30-day free trial through Apple Creator Studio.",
+      "paid": "$199.99 one-time purchase on Mac, or included in Apple Creator Studio at $12.99/month ($129/year)."
+    },
+    "nativePrices": [
+      {
+        "amount": 199.99,
+        "currency": "USD",
+        "period": "once"
+      }
+    ],
     "websiteUrl": "https://www.apple.com/logic-pro/",
     "ogImageUrl": "https://www.apple.com/v/logic-pro/n/images/meta/logic_pro__bwh8nhmy69jm_og.png?202603241546",
     "substitution_cluster_v2": "audio-daw",
@@ -25599,15 +25710,20 @@
     "shortDescription": "Solutions de diagrammes intelligents et tableau blanc en ligne.",
     "shortDescriptionEn": "Intelligent diagramming and online whiteboard solutions.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan Free gratuit : 3 documents modifiables, 75 formes par document, 100 modèles.",
+      "paid": "Lucidchart Individual à 9 $/mois facturé à l'année ; Team à 10 $ par utilisateur et par mois en annuel."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for Pro version"
+      "free": "Free plan: 3 editable documents, 75 shapes per document, 100 templates.",
+      "paid": "Lucidchart Individual at $9/month billed yearly; Team at $10 per user per month billed yearly."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://lucid.co",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/lucid-software.jpg",
     "substitution_cluster_v2": "content-creation",
@@ -26816,15 +26932,13 @@
     "shortDescription": "Service de transfert de fichiers volumineux pour vidéastes et médias.",
     "shortDescriptionEn": "Large file transfer service for videographers and media professionals.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "15 Go de transfert gratuits chaque mois sur l'offre à l'usage.",
+      "paid": "À l'usage : 0,25 $ par Go au-delà des 15 Go gratuits, sans engagement ; abonnement annuel dès 58 $/mois pour 250 Go."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for the Pro version"
+      "free": "15 GB of free transfer every month on the pay-as-you-go plan.",
+      "paid": "Pay-as-you-go: $0.25 per GB beyond the 15 free GB, no contract; yearly subscription from $58/month for 250 GB."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
     "affiliateLink": "https://massive.io",
     "ogImageUrl": "https://masv.io/cdn-cgi/image/format=jpeg,quality=80/https://masv.io/img-original/https%3A%2F%2Fcdn.prod.website-files.com%2F69f2bb1a3268ff2bfd7df335%2F6a46ce1e641e26e565039e3f_MASV%2520Feature%2520Image.png",
     "substitution_cluster_v2": "content-creation",
@@ -28616,15 +28730,14 @@
     "shortDescription": "Base de données documentaire managée dans le cloud par MongoDB, avec un plan gratuit et des clusters dédiés facturés à l'usage.",
     "shortDescriptionEn": "Managed cloud document database from MongoDB, with a free tier and usage-based dedicated clusters.",
     "pricing": {
-      "free": "Plan gratuit : Cluster M0, 512 Mo de stockage, RAM/vCPU partagés, gratuit à vie",
-      "paid": "Dès 8 $/mois, plan Flex."
+      "free": "Cluster M0 gratuit à vie : 512 Mo de stockage, ressources partagées.",
+      "paid": "Flex facturé à l'heure (0,011 $/h au palier de base, soit 8 $/mois selon le calcul de MongoDB sur 30 jours), plafonné à 30 $/mois ; Dedicated M10 à partir de 56,94 $/mois."
     },
     "pricingEn": {
-      "free": "Free plan: M0 cluster, 512 MB storage, shared RAM/vCPU, forever free",
-      "paid": "From $8/mo, Flex plan."
+      "free": "Free-forever M0 cluster: 512 MB storage, shared resources.",
+      "paid": "Flex billed hourly ($0.011/h at the base tier, $8/month as computed by MongoDB over 30 days), capped at $30/month; Dedicated M10 from $56.94/month."
     },
     "defaultMonthlyPrice": 6.87,
-    "compareMonthlyPrice": 6.87,
     "nativePrices": [
       {
         "amount": 8,
@@ -28738,15 +28851,13 @@
     "shortDescription": "Outil d’email marketing et d’automatisation.",
     "shortDescriptionEn": "Email marketing and automation tool.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Pro à 7 $/mois en facturation annuelle pour 500 contacts (9 $ en mensuel), envois illimités."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Pro plan at $7/month billed yearly for 500 contacts ($9 monthly), unlimited sends."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
     "affiliateLink": "https://moosend.com",
     "ogImageUrl": "https://moosend.com/wp-content/uploads/2026/06/Featured-image-new-ctct-logo.png",
     "substitution_cluster_v2": "email-outreach",
@@ -29041,15 +29152,20 @@
     "shortDescription": "ERP/MRP pour petites entreprises manufacturières.",
     "shortDescriptionEn": "ERP/MRP for small manufacturing businesses.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Starter à 49 $ par utilisateur et par mois en mensuel ; l'annuel offre 1 mois gratuit."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Starter plan at $49 per user per month billed monthly; yearly billing gives 1 month free."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 49,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://mrpeasy.com",
     "ogImageUrl": "https://www.mrpeasy.com/wp-content/uploads/2023/08/software-for-manufacturers-English.jpg",
     "substitution_cluster_v2": "website-app-builder",
@@ -29172,15 +29288,20 @@
     "shortDescription": "Solution de gestion de dossiers juridiques pour cabinets B2C.",
     "shortDescriptionEn": "Legal case management solution for B2C law firms.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "MyCase Basic à 50 $ par utilisateur et par mois facturé à l'année (60 $ en mensuel)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for Pro version"
+      "free": "No permanent free plan.",
+      "paid": "MyCase Basic at $50 per user per month billed yearly ($60 monthly)."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "nativePrices": [
+      {
+        "amount": 50,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://mycase.com",
     "ogImageUrl": "https://www.mycase.com/opengraph_default.webp",
     "substitution_cluster_v2": "workspace-ops",
@@ -29325,14 +29446,20 @@
     "shortDescription": "Solution tout-en-un de gestion des voyages et notes de frais.",
     "shortDescriptionEn": "All-in-one travel and expense management solution.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Navan Business est gratuit pour les entreprises jusqu'à 300 salariés : voyages illimités et notes de frais gratuites pour les 5 premiers utilisateurs.",
+      "paid": "Au-delà de 5 utilisateurs, le module Expense coûte 15 $ par utilisateur et par mois ; Enterprise sur devis."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": "Navan Business is free for companies up to 300 employees: unlimited travel, and expenses free for the first 5 users.",
+      "paid": "Beyond 5 users, Expense costs $15 per user per month; Enterprise is quote only."
     },
-    "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 15,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://navan.com",
     "ogImageUrl": "https://images.ctfassets.net/r49k2skuorjz/6FIv7ITxTTSkfATgwmVUN6/d991df51e415434ccd32ca0c609a6a3d/Share-image.webp",
     "substitution_cluster_v2": "expense-management",
@@ -29359,15 +29486,14 @@
     "shortDescription": "Convertit les visiteurs en ligne en clients en magasin en montrant les stocks locaux.",
     "shortDescriptionEn": "Converts online visitors into in-store customers by displaying local inventory.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": null,
+      "paid": "Aucun tarif publié : le prix se demande à NearSt."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for the Pro version"
+      "free": null,
+      "paid": "No published prices: pricing is on request from NearSt."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "priceUndisclosed": true,
     "affiliateLink": "https://near.st",
     "substitution_cluster_v2": "email-outreach",
     "functional_needs": [
@@ -29465,9 +29591,9 @@
     "websiteUrl": "https://nestjs.com",
     "ogImageUrl": "https://nestjs.com/nest-og.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -29496,14 +29622,14 @@
     "shortDescription": "Solution de gestion RH et paie.",
     "shortDescriptionEn": "HR and payroll management solution.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Trois formules (Core, All-In, Flex), toutes sur devis."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": null,
+      "paid": "Three packages (Core, All-In, Flex), all quote only."
     },
-    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://netchex.com",
     "ogImageUrl": "https://netchex.com/wp-content/uploads/2024/06/Netchex.jpg",
     "substitution_cluster_v2": "workspace-ops",
@@ -29653,9 +29779,9 @@
     "websiteUrl": "https://github.com/postmanlabs/newman",
     "ogImageUrl": "https://opengraph.githubassets.com/227b8f3dede553b842edb1bbc94947d4f424ebf2e297efa32920b4bfde70d2ee/postmanlabs/newman",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -29820,9 +29946,9 @@
     "websiteUrl": "https://nextjs.org",
     "ogImageUrl": "https://h8dxkfmaphn8o0p3.public.blob.vercel-storage.com/nextjs/twitter-card.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -29951,9 +30077,9 @@
     "websiteUrl": "https://nodejs.org",
     "ogImageUrl": "https://nodejs.org/en/next-data/og/announcement/Node.js%20%E2%80%94%20Run%20JavaScript%20Everywhere",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -30043,15 +30169,26 @@
     "shortDescription": "Gestionnaire de mots de passe chiffré de Nord Security, avec un plan gratuit et des offres entreprise par siège.",
     "shortDescriptionEn": "Encrypted password manager from Nord Security, with a free tier and per-seat business plans.",
     "pricing": {
-      "free": "Plan gratuit : 1 compte, un seul appareil, sans analyse de la santé des mots de passe ni scanner de fuites de données",
-      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
+      "free": "Offre gratuite : sauvegarde et remplissage automatique, stockage sécurisé, sans accès multi-appareils ni analyse des fuites.",
+      "paid": "Premium à 1,39 €/mois en tarif promotionnel sur 2 ans (37,53 € pour les 27 premiers mois, HT) ; 1,99 €/mois sur 1 an. Renouvellement non affiché."
     },
     "pricingEn": {
-      "free": "Free plan: 1 account, single device only, no Password Health or Data Breach Scanner",
-      "paid": "Paid plans shown at promotional prices; regular price not published."
+      "free": "Free plan: autosave/autofill and secure storage, without multi-device access or breach scanning.",
+      "paid": "Premium at $1.39/month on the promotional 2-year plan ($37.53 for the first 27 months, excl. tax). Renewal price not shown."
     },
-    "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
+    "compareMonthlyPrice": 1.39,
+    "nativePrices": [
+      {
+        "amount": 1.39,
+        "currency": "EUR",
+        "period": "monthly"
+      },
+      {
+        "amount": 1.39,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://nordpass.com",
     "ogImageUrl": "https://sb.nordcdn.com/transform/3d7f8d78-75bf-422b-9481-bc4a26643afe/nordpass-meta-trademark",
     "substitution_cluster_v2": "password-manager",
@@ -30667,15 +30804,13 @@
     "shortDescription": "Outil d’optimisation des conversions (CRO) pour améliorer l’expérience utilisateur.",
     "shortDescriptionEn": "Conversion optimization (CRO) tool designed to improve the user experience.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Offre gratuite permanente pour l'A/B testing jusqu'à 50 000 utilisateurs testés par mois, sans carte bancaire.",
+      "paid": null
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "Permanent free plan for A/B testing up to 50,000 tested users per month, no credit card required.",
+      "paid": null
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
     "affiliateLink": "https://omniconvert.com",
     "ogImageUrl": "https://www.omniconvert.com/images/favicon-omniconvert.png",
     "substitution_cluster_v2": "email-outreach",
@@ -30828,14 +30963,14 @@
     "shortDescription": "Fournit des financements aux marchands pour soutenir leur croissance.",
     "shortDescriptionEn": "Provides funding to merchants to support their growth.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Financement e-commerce avec un frais unique communiqué dans une offre personnalisée après inscription ; aucun barème publié."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": null,
+      "paid": "E-commerce financing with one fee disclosed in a personalised offer after sign-up; no published fee schedule."
     },
-    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://onrampfunds.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/64950fd5ee1d311f281adf40/65d67e8500c81cb10ca33399_Thumbnail.jpg",
     "tool_type": "gestion",
@@ -30947,9 +31082,9 @@
     "websiteUrl": "https://www.openapis.org",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/openapi.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -31603,14 +31738,13 @@
     "shortDescription": "Plateforme d’enregistrement et de création d’entreprises (Canada).",
     "shortDescriptionEn": "Business registration and incorporation platform (Canada).",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Online Minute Book Plan à 199 $ CA la première année avec un compte RBC (frais gouvernementaux inclus), renouvelé à 199 $ CA par an."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": "No permanent free plan.",
+      "paid": "Online Minute Book Plan at CA$199 for the first year with an RBC account (government fees included), renewing at CA$199 per year."
     },
-    "compareMonthlyPrice": 0,
     "affiliateLink": "https://ownr.co",
     "ogImageUrl": "https://framerusercontent.com/assets/V9XCSZ0ML4jHH9G1SVrZrY4oSWA.png",
     "tool_type": "gestion",
@@ -31637,15 +31771,20 @@
     "shortDescription": "Plateforme RH pour entreprises distribuées mondialement.",
     "shortDescriptionEn": "Global HR platform for distributed teams.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Global Contractors : gratuit 30 jours puis 29 USD par prestataire et par mois ; Employer of Record à 699 USD par salarié et par mois."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Global Contractors: free for 30 days then USD 29 per contractor per month; Employer of Record at USD 699 per employee per month."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://oysterhr.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/5ffc74fef1579006dc588807/6762c84a9405ea6b6c803d52_oyster_share_image_b.webp",
     "substitution_cluster_v2": "workspace-ops",
@@ -31779,15 +31918,14 @@
     "shortDescription": "Marketplace de packagings personnalisés.",
     "shortDescriptionEn": "Marketplace for custom packaging.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": null,
+      "paid": "Emballages personnalisés facturés à la commande via un configurateur ; aucun abonnement ni grille publique."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for Pro version"
+      "free": null,
+      "paid": "Custom packaging billed per order through a configurator; no subscription and no public price grid."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "priceUndisclosed": true,
     "affiliateLink": "https://packhelp.com",
     "ogImageUrl": "https://static.cdn.packhelp.com/wp-content/uploads/2020/11/02173155/MG_Packhelp_02_1897_2000px.jpg",
     "substitution_cluster_v2": "website-app-builder",
@@ -31897,15 +32035,20 @@
     "shortDescription": "Constructeur de site web et boutique en ligne.",
     "shortDescriptionEn": "Website and online store builder.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Launch à 22 $ US par mois en annuel (26 $ US en mensuel)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Launch at US$22 per month billed annually (US$26 monthly)."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 22,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://pagecloud.com",
     "ogImageUrl": "https://img.pagecloud.com/DMzFXEew9uIteN9edh7v658gfVY=/1300x0/filters:no_upscale()/web/images/pagecloud-ma-og2x-a0c52.png",
     "substitution_cluster_v2": "automation-orchestration",
@@ -32257,7 +32400,8 @@
     },
     "compareMonthlyPrice": 0,
     "priceUndisclosed": true,
-    "affiliateLink": "https://payfit.com",
+    "affiliateLink": "https://lb.affilae.com/r/?p=6328744364f6832673b8624c&af=416&lp=https%3A%2F%2Fpayfit.com%2F%3Futm_medium%3Daffiliate%26utm_campaign%3DFR_Affiliate%26utm_source%3Dtooltrim",
+    "websiteUrl": "https://payfit.com",
     "ogImageUrl": "https://www.datocms-assets.com/50397/1730212897-og-image-uk.jpg?auto=format&fit=max&w=1200",
     "tool_type": "metier",
     "substitution_cluster_v2": "hris-sync",
@@ -32353,9 +32497,9 @@
     "websiteUrl": "https://payloadcms.com",
     "ogImageUrl": "https://payloadcms.com/images/og-image.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "verticals": [
       "dev-freelance"
@@ -32488,7 +32632,7 @@
         "period": "monthly"
       }
     ],
-    "affiliateLink": "https://www.pennylane.com",
+    "affiliateLink": "https://lb.affilae.com/r/?p=608019f0b27a1f2e0480a96d&af=514&lp=https%3A%2F%2Fwww.pennylane.com%2Ffr%3Futm_source%3Dafl%26utm_campaign%3Dpennylane-fr%26utm_medium%3Dtooltrim",
     "websiteUrl": "https://pennylane.com",
     "ogImageUrl": "https://images.ctfassets.net/b76knntgaaiu/5f6bEcEKJxLvdKvuwbax05/e292cd12828391facec2a2aa77eecee3/Image_Meta.jpg",
     "substitution_cluster_v2": "erp-sync",
@@ -33001,9 +33145,9 @@
     "websiteUrl": "https://www.php.net",
     "ogImageUrl": "https://www.php.net/images/meta-image.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -33287,15 +33431,20 @@
     "shortDescription": "CRM simple d’utilisation pour les ventes.",
     "shortDescriptionEn": "Easy-to-use CRM for sales.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Lite à 14 € HT par utilisateur et par mois, facturé à l'année (168 € par utilisateur et par an) ; Growth 39 €, Premium 59 €, Ultimate 79 €. Essai de 14 jours."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Lite at €14 excl. VAT per user per month, billed yearly (€168 per user per year); Growth €39, Premium €59, Ultimate €79. 14-day trial."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 14,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://pipedrive.com",
     "ogImageUrl": "https://www-cms.pipedriveassets.com/brand-half-page-illustrations/Pipedrive-product-view.png",
     "substitution_cluster_v2": "communication-ops",
@@ -33326,15 +33475,20 @@
     "shortDescription": "Plateforme de gestion de pipeline de ventes et d’automatisation marketing.",
     "shortDescriptionEn": "Sales pipeline management and marketing automation platform.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Cloud à 25 € par utilisateur et par mois (2 To de stockage)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Cloud plan at €25 per user per month (2 TB storage)."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://pipelinepro.io",
     "ogImageUrl": "https://pipelinepro.io/static/home/game/images/share.jpg",
     "substitution_cluster_v2": "communication-ops",
@@ -33793,9 +33947,9 @@
     "websiteUrl": "https://playwright.dev",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/playwright.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -34085,9 +34239,9 @@
     "websiteUrl": "https://python-poetry.org",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/poetry.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "python-packaging",
     "functional_needs": [
-      "nocode-web"
+      "python-packaging"
     ],
     "verticals": [
       "dev-freelance"
@@ -34121,9 +34275,9 @@
     "websiteUrl": "https://www.postgresql.org",
     "ogImageUrl": "https://www.postgresql.org/media/img/about/press/elephant.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "verticals": [
       "dev-freelance"
@@ -34228,9 +34382,9 @@
     "websiteUrl": "https://www.postman.com",
     "ogImageUrl": "https://voyager.postman.com/social-preview/postman-v12-social-preview-homepage.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -34488,9 +34642,9 @@
     "websiteUrl": "https://prettier.io",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/prettier.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-quality",
     "functional_needs": [
-      "nocode-web"
+      "code-quality"
     ],
     "verticals": [
       "dev-freelance"
@@ -34712,9 +34866,9 @@
     "websiteUrl": "https://www.prisma.io",
     "ogImageUrl": "https://www.prisma.io/og.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "verticals": [
       "dev-freelance"
@@ -35278,15 +35432,20 @@
     "shortDescription": "Plateforme de création vidéo pour entreprises et agences.",
     "shortDescriptionEn": "Video creation platform for businesses and agencies.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Basic à 29 € par mois facturé 348 € par an (59 € en mensuel sans engagement)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Basic at €29 per month billed €348 yearly (€59 month to month)."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://promo.com",
     "ogImageUrl": "https://ak01-promo-cdn.slidely.com/images/promoVideos/default-og.png/1782810644",
     "substitution_cluster_v2": "content-creation",
@@ -35525,14 +35684,20 @@
     "shortDescription": "Assistant d’écriture pour améliorer style, grammaire et clarté.",
     "shortDescriptionEn": "Writing assistant to improve style, grammar and clarity.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Offre gratuite permanente avec usage limité : 2 passages par rapport d'édition par jour, 10 reformulations par jour.",
+      "paid": "Premium à 10 € par mois facturé 120 € par an (30 € en mensuel) ; licence à vie à 399 €."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": "Permanent free plan with limited use: 2 runs per editing report per day, 10 rephrases per day.",
+      "paid": "Premium at €10 per month billed €120 yearly (€30 monthly); lifetime licence €399."
     },
-    "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 10,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://prowritingaid.com",
     "tool_type": "ia",
     "substitution_cluster_v2": "writing-assistant",
@@ -35665,15 +35830,20 @@
     "shortDescription": "Application de notifications push web pour Shopify.",
     "shortDescriptionEn": "Web push notifications app for Shopify.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Offre gratuite permanente : 500 notifications web push et 500 e-mails par mois, contacts illimités.",
+      "paid": "Plus à 19 $ par mois (10 000 web push par mois)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for Pro version"
+      "free": "Permanent free plan: 500 web push notifications and 500 emails per month, unlimited contacts.",
+      "paid": "Plus at $19 per month (10,000 web pushes per month)."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "nativePrices": [
+      {
+        "amount": 19,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://pushowl.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/649c1bc8c68d9600b9a74616/64c7d6600e551e5295288661_Open%20Graph%20Image%20(1).webp",
     "substitution_cluster_v2": "email-outreach",
@@ -35709,9 +35879,9 @@
     "websiteUrl": "https://pytest.org",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/pytest.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -35755,9 +35925,9 @@
     "websiteUrl": "https://www.python.org",
     "ogImageUrl": "https://www.python.org/static/opengraph-icon-200x200.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -35916,14 +36086,14 @@
     "shortDescription": "Solutions d’automatisation des comptes clients et fournisseurs.",
     "shortDescriptionEn": "Accounts payable and accounts receivable automation solutions.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Aucun tarif publié : démo et devis uniquement."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": null,
+      "paid": "No published prices: demo and quote only."
     },
-    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://quadient.com",
     "ogImageUrl": "https://images.ctfassets.net/yymku90gll7g/1YpNOb5JCQZnkoDQZpOulu/646faeb83c017d8d4a7d21464d49a1e3/Design_Q_Image_3.jpg",
     "tool_type": "gestion",
@@ -36009,15 +36179,14 @@
     "shortDescription": "Plateforme publicitaire multicanal pour optimiser la performance e-commerce.",
     "shortDescriptionEn": "Multi-channel advertising platform to optimize e-commerce performance.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": null,
+      "paid": "Aucun tarif publié : démo et devis uniquement."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": null,
+      "paid": "No published prices: demo and quote only."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "priceUndisclosed": true,
     "affiliateLink": "https://quartile.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/678abd9940e74ed6d9f47b1b/67d9e1cd6e847c7fd5223f25_og-image.png",
     "substitution_cluster_v2": "email-outreach",
@@ -36043,15 +36212,20 @@
     "shortDescription": "Plateforme de développement d’applications sans code.",
     "shortDescriptionEn": "No-code application development platform.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Team à partir de 35 $ par utilisateur et par mois, facturé annuellement, hors minimum de plateforme."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Team from $35 per user per month, billed annually, excluding the platform minimum fee."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 35,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://quickbase.com",
     "ogImageUrl": "https://payload-assets-us-west-2.marketing.quickbase.com/share-general-seo-image-eden%20(1)-1200x630.png",
     "substitution_cluster_v2": "automation-orchestration",
@@ -36488,15 +36662,13 @@
     "shortDescription": "Passerelle de paiement et services financiers pour entreprises en Inde.",
     "shortDescriptionEn": "Payment gateway and financial services for businesses in India.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "2 % par transaction réussie (plus 18 % de GST sur ces frais), sans frais d'installation ni de maintenance annuelle."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "2% per successful transaction (plus 18% GST on the fee), with no setup or annual maintenance fee."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
     "affiliateLink": "https://razorpay.com",
     "ogImageUrl": "https://razorpay.com/build/browser/static/static/og-default.png",
     "tool_type": "gestion",
@@ -36628,9 +36800,9 @@
     "websiteUrl": "https://reactnative.dev",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/react-native.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "mobile-framework",
     "functional_needs": [
-      "nocode-web"
+      "mobile-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -37634,9 +37806,9 @@
     "compareMonthlyPrice": 0,
     "websiteUrl": "https://remix.run",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "web-framework",
     "functional_needs": [
-      "nocode-web"
+      "web-framework"
     ],
     "verticals": [
       "dev-freelance"
@@ -38016,15 +38188,20 @@
     "shortDescription": "Logiciel de messagerie alimenté par l’IA pour entreprises B2C.",
     "shortDescriptionEn": "AI-powered messaging software for B2C businesses.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Starter à 79 $ par mois (948 $ par an en annuel), 5 utilisateurs inclus."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Starter at $79 per month ($948 per year on annual billing), 5 users included."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 79,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://respond.io",
     "ogImageUrl": "https://assets1-proxy.respond.io/api/v1/image/assets%2F11f7a662b80a4675973850b067c01fa5%2F3f43c48b21b24f4e8b02b100c0c8fab0",
     "substitution_cluster_v2": "email-outreach",
@@ -38050,15 +38227,13 @@
     "shortDescription": "Logiciel de suivi des appels pour les marketers.",
     "shortDescriptionEn": "Call tracking software for marketers.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": null,
+      "paid": "ResponseTap fait désormais partie d'Infinity ; tarifs sur devis."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": null,
+      "paid": "ResponseTap is now part of Infinity; pricing on quote."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
     "affiliateLink": "https://responsetap.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/responsetap.jpg",
     "substitution_cluster_v2": "communication-ops",
@@ -38096,9 +38271,9 @@
     "websiteUrl": "https://marketplace.visualstudio.com/items?itemName=humao.rest-client",
     "ogImageUrl": "https://humao.gallerycdn.vsassets.io/extensions/humao/rest-client/0.25.1/1660918934840/Microsoft.VisualStudio.Services.Icons.Default",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -38654,9 +38829,9 @@
     "websiteUrl": "https://riverpod.dev",
     "ogImageUrl": "https://riverpod.dev/img/cover.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "flutter-state-management",
     "functional_needs": [
-      "nocode-web"
+      "flutter-state-management"
     ],
     "verticals": [
       "dev-freelance"
@@ -39027,14 +39202,20 @@
     "shortDescription": "Standard téléphonique virtuel et chat en direct pour entreprises.",
     "shortDescriptionEn": "Virtual phone system and live chat for businesses.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Réceptionniste virtuel Starter à 250 $ par mois pour 50 minutes, facturé mensuellement."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": "No permanent free plan.",
+      "paid": "Virtual receptionist Starter at $250 per month for 50 minutes, billed monthly."
     },
-    "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 250,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://ruby.com",
     "ogImageUrl": "https://www.ruby.com/wp-content/uploads/2026/03/desktop_ai-version_header.png",
     "substitution_cluster_v2": "business-phone",
@@ -39174,7 +39355,7 @@
   {
     "id": "safetyculture",
     "slug": "safetyculture",
-    "name": "Safetyculture",
+    "name": "SafetyCulture",
     "toolTrimRating": {
       "valeurAjoutee": 3,
       "simplicite": 3,
@@ -39376,15 +39557,25 @@
     "shortDescription": "CRM pour PME vendant en B2B.",
     "shortDescriptionEn": "CRM for SMEs selling in B2B.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Growth à 29 $ ou 29 € par utilisateur et par mois en annuel (39 $ ou 39 € en mensuel)."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Growth at $29 or €29 per user per month billed annually ($39 or €39 monthly)."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly"
+      },
+      {
+        "amount": 29,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://salesflare.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/66debba50fa44d1b1acdb82f/675abcfcb4efb5058158657e_opengraph-image.jpg",
     "substitution_cluster_v2": "communication-ops",
@@ -39410,15 +39601,25 @@
     "shortDescription": "Logiciel de gestion de la relation client et solutions cloud.",
     "shortDescriptionEn": "Customer relationship management software and cloud solutions.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Salesforce Free Suite : CRM gratuit pour 2 utilisateurs maximum, sans carte bancaire.",
+      "paid": "Starter Suite à 25 $ ou 25 € par utilisateur et par mois, facturé mensuellement ou annuellement."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Salesforce Free Suite: free CRM for up to 2 users, no credit card.",
+      "paid": "Starter Suite at $25 or €25 per user per month, billed monthly or annually."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      },
+      {
+        "amount": 25,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://salesforce.com",
     "ogImageUrl": "https://wp.sfdcdigital.com/en-us/wp-content/uploads/sites/4/2022/11/salesforce-logo.jpg?w=1024",
     "substitution_cluster_v2": "communication-ops",
@@ -39619,9 +39820,9 @@
     "websiteUrl": "https://www.sanity.io",
     "ogImageUrl": "https://cdn.sanity.io/images/3do82whm/next/f21df064721ee7867372278bcbd0de4b512de556-1200x630.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "verticals": [
       "dev-freelance"
@@ -40240,14 +40441,14 @@
     "shortDescription": "Fintech pour commerçants e-commerce (financement).",
     "shortDescriptionEn": "Fintech for e-commerce merchants (funding).",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Financement pour vendeurs e-commerce, taux communiqués après demande ; aucun barème publié."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": null,
+      "paid": "Financing for e-commerce sellers, rates disclosed after application; no published fee schedule."
     },
-    "compareMonthlyPrice": 0,
+    "priceUndisclosed": true,
     "affiliateLink": "https://sellersfi.com",
     "ogImageUrl": "https://sellersfi.com/wp-content/uploads/2023/06/thumbnail-home.jpg",
     "tool_type": "gestion",
@@ -40977,15 +41178,20 @@
     "shortDescription": "Outils d’optimisation et merchandising pour boutiques Shopify.",
     "shortDescriptionEn": "Optimization and merchandising tools for Shopify stores.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Page Builder Build à 31 $ par mois en annuel (39 $ en mensuel) ; un mode Draft gratuit permet de concevoir des pages."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Page Builder Build at $31 per month billed annually ($39 monthly); a free Draft Mode lets you design pages."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 31,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://getshogun.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/65f36a007b9322599125cdb7/661d5192ec41e77e6bec68bb_home_open_graph_image%20(2).webp",
     "substitution_cluster_v2": "website-app-builder",
@@ -41012,15 +41218,14 @@
     "shortDescription": "Plateforme de gestion e-commerce et supply chain.",
     "shortDescriptionEn": "E-commerce and supply chain management platform.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": null,
+      "paid": "Plateforme pour épiceries indépendantes, tarifs sur rendez-vous commercial."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€10/month for the Pro version"
+      "free": null,
+      "paid": "Platform for independent grocers, pricing via a sales call."
     },
-    "defaultMonthlyPrice": 10,
-    "compareMonthlyPrice": 10,
+    "priceUndisclosed": true,
     "affiliateLink": "https://shophero.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/shophero.jpg",
     "substitution_cluster_v2": "website-app-builder",
@@ -41930,14 +42135,20 @@
     "shortDescription": "Service d’emails transactionnels et API avec haute délivrabilité.",
     "shortDescriptionEn": "Transactional email service and API with high deliverability.",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Essential à 25 $ par mois pour 50 000 e-mails (IP partagée)."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": "No permanent free plan.",
+      "paid": "Essential at $25 per month for 50,000 emails (shared IP)."
     },
-    "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://smtp.com",
     "ogImageUrl": "https://www.smtp.com/wp-content/uploads/2021/01/Home-page.jpg",
     "substitution_cluster_v2": "email-outreach",
@@ -42048,14 +42259,20 @@
     "shortDescription": "Plateforme d’automatisation des ventes (recherche d’emails",
     "shortDescriptionEn": "Sales automation platform (email search)",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Offre Trial gratuite renouvelée chaque mois : 50 crédits, 100 destinataires et 25 jetons d'enrichissement.",
+      "paid": "Starter à 39 $ par mois (1 000 crédits, 5 000 destinataires), utilisateurs illimités."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": "Free Trial plan renewed monthly: 50 credits, 100 recipients and 25 enrichment tokens.",
+      "paid": "Starter at $39 per month (1,000 credits, 5,000 recipients), unlimited seats."
     },
-    "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 39,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://snov.io/",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
@@ -42903,9 +43120,9 @@
     "websiteUrl": "https://www.sqlalchemy.org",
     "ogImageUrl": "https://www.sqlalchemy.org/img/sqla_og.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "database-orm",
     "functional_needs": [
-      "nocode-web"
+      "database-orm"
     ],
     "verticals": [
       "dev-freelance"
@@ -43362,9 +43579,9 @@
     "websiteUrl": "https://strapi.io",
     "ogImageUrl": "https://delicate-dawn-ac25646e6d.media.strapiapp.com/HP_meta_b32f546a40.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "headless-cms",
     "functional_needs": [
-      "nocode-web"
+      "headless-cms"
     ],
     "verticals": [
       "dev-freelance"
@@ -44362,15 +44579,14 @@
     "shortDescription": "Plateforme d’enquêtes et collecte de feedback.",
     "shortDescriptionEn": "Survey platform and feedback collection.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Offre gratuite permanente pour 1 utilisateur : 3 enquêtes actives, 10 questions par enquête, 75 réponses par trimestre.",
+      "paid": "Plans Basic, Starter et Business facturés au trimestre ou à l'année, montants non affichés."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Permanent free plan for 1 user: 3 active surveys, 10 questions per survey, 75 responses per quarter.",
+      "paid": "Basic, Starter and Business plans billed quarterly or yearly, amounts not displayed."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "priceUndisclosed": true,
     "affiliateLink": "https://surveysparrow.com",
     "ogImageUrl": "https://static.surveysparrow.com/site/assets/common/Surveysparrow.png",
     "substitution_cluster_v2": "email-outreach",
@@ -45048,15 +45264,20 @@
     "shortDescription": "Plateforme pour créer et vendre des cours en ligne, des coachings et des produits digitaux, avec pages de vente et paiements intégrés.",
     "shortDescriptionEn": "Platform to create and sell online courses, coaching and digital products, with built-in sales pages and payments.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Starter à 29 $ par mois en annuel (39 $ en mensuel), avec 7,5 % de frais de transaction."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€20/month for the Pro version"
+      "free": "No permanent free plan.",
+      "paid": "Starter at $29 per month billed annually ($39 monthly), with a 7.5% transaction fee."
     },
-    "defaultMonthlyPrice": 20,
-    "compareMonthlyPrice": 20,
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://teachable.com",
     "ogImageUrl": "https://cdn.prod.website-files.com/687904fb2b26c434698c47e9/68f7dd90eed5bf0a9cb37cd1_teachable-og-main.webp",
     "substitution_cluster_v2": "website-app-builder",
@@ -45704,9 +45925,9 @@
     "websiteUrl": "https://www.thunderclient.com",
     "ogImageUrl": "https://www.thunderclient.com/images/thunder-screenshot-v8.png?v=3",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "api-client",
     "functional_needs": [
-      "nocode-web"
+      "api-client"
     ],
     "verticals": [
       "dev-freelance"
@@ -45952,9 +46173,9 @@
     "websiteUrl": "https://timber.github.io/docs/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/timber.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "verticals": [
       "dev-freelance"
@@ -46971,15 +47192,20 @@
     "shortDescription": "Plateforme d’avis en ligne pour entreprises et consommateurs.",
     "shortDescriptionEn": "Online review platform for businesses and consumers.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Offre gratuite permanente avec 50 invitations d'avis par mois.",
+      "paid": "Starter à partir de 99 $ par mois et par domaine, facturé annuellement avec engagement de 12 mois."
     },
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Permanent free plan with 50 review invitations per month.",
+      "paid": "Starter from $99 per month per domain, billed annually with a 12-month commitment."
     },
-    "defaultMonthlyPrice": 15,
-    "compareMonthlyPrice": 15,
+    "nativePrices": [
+      {
+        "amount": 99,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://trustpilot.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/trustpilot.jpg",
     "substitution_cluster_v2": "email-outreach",
@@ -47509,9 +47735,9 @@
     "websiteUrl": "https://www.typescriptlang.org",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/typescript.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "programming-language",
     "functional_needs": [
-      "nocode-web"
+      "programming-language"
     ],
     "verticals": [
       "dev-freelance"
@@ -48075,9 +48301,9 @@
     "websiteUrl": "https://github.com/astral-sh/uv",
     "ogImageUrl": "https://opengraph.githubassets.com/ac6b07e5da2a9cfd07bebafab96c7780961f6c1e90223d92a12b952ff92aa47f/astral-sh/uv",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "python-packaging",
     "functional_needs": [
-      "nocode-web"
+      "python-packaging"
     ],
     "verticals": [
       "dev-freelance"
@@ -48245,10 +48471,20 @@
     "shortDescription": "Plateforme de gestion clients pour PME (rendez-vous",
     "shortDescriptionEn": "Client management platform for SMEs (appointments, CRM, billing).",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Kickstart à 29 €/mois facturé à l'année (35 € en mensuel). Essai gratuit."
     },
-    "compareMonthlyPrice": 0,
+    "pricingEn": {
+      "free": "No permanent free plan.",
+      "paid": "Kickstart at €29/month billed yearly (€35 monthly). Free trial."
+    },
+    "nativePrices": [
+      {
+        "amount": 29,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
     "websiteUrl": "https://www.vcita.com/",
     "substitution_cluster_v2": "communication-ops",
     "functional_needs": [
@@ -48703,14 +48939,20 @@
     "shortDescription": "Plateforme de création de contenus visuels (présentations, infographies).",
     "shortDescriptionEn": "Visual content creation platform (presentations, infographics).",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Offre Basic gratuite permanente : projets illimités, modèles et ressources limités, 500 Mo de stockage.",
+      "paid": "Starter à 12,25 $ par personne et par mois, facturé 147 $ par an."
     },
     "pricingEn": {
-      "free": "All features",
-      "paid": "Paid version available"
+      "free": "Permanent free Basic plan: unlimited projects, limited templates and assets, 500 MB storage.",
+      "paid": "Starter at $12.25 per person per month, billed $147 yearly."
     },
-    "compareMonthlyPrice": 0,
+    "nativePrices": [
+      {
+        "amount": 12.25,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
     "affiliateLink": "https://www.visme.co",
     "substitution_cluster_v2": "content-creation",
     "functional_needs": [
@@ -48781,9 +49023,9 @@
     "websiteUrl": "https://vitest.dev",
     "ogImageUrl": "https://vitest.dev/og.jpg",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "code-testing",
     "functional_needs": [
-      "nocode-web"
+      "code-testing"
     ],
     "verticals": [
       "dev-freelance"
@@ -48956,9 +49198,9 @@
     "websiteUrl": "https://code.visualstudio.com",
     "ogImageUrl": "https://code.visualstudio.com/opengraphimg/opengraph-home.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "dev-environment",
     "functional_needs": [
-      "nocode-web"
+      "dev-environment"
     ],
     "verticals": [
       "dev-freelance"
@@ -50041,9 +50283,9 @@
     "websiteUrl": "https://wordpress.org",
     "ogImageUrl": "https://wordpress.org/files/2024/04/wordpress-homepage-ogimage-202404.png",
     "tool_type": "metier",
-    "substitution_cluster_v2": "nocode-web",
+    "substitution_cluster_v2": "wordpress-building",
     "functional_needs": [
-      "nocode-web"
+      "wordpress-building"
     ],
     "verticals": [
       "dev-freelance"
@@ -60155,6 +60397,63 @@
       "vanta",
       "drata",
       "onetrust"
+    ]
+  },
+  {
+    "id": "elephorm",
+    "slug": "elephorm",
+    "name": "Elephorm",
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 4,
+      "notedOn": "2026-10-20",
+      "lastActivityVerifiedOn": null
+    },
+    "categoryId": "formation-education",
+    "shortDescription": "Plateforme française de formations vidéo en ligne (plus de 1700 formations) en bureautique, développement, design, vidéo et IA, en abonnement illimité ou à l'unité.",
+    "shortDescriptionEn": "French video training platform (1,700+ courses) covering office software, development, design, video and AI, available as an unlimited subscription or per course.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent.",
+      "paid": "Dès 19,90 €/mois (puis 39,90 €/mois), abonnement mensuel sans engagement."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan.",
+      "paid": "From €19.90/month (then €39.90/month), no-commitment monthly subscription."
+    },
+    "defaultMonthlyPrice": 33.25,
+    "compareMonthlyPrice": 33.25,
+    "nativePrices": [
+      {
+        "amount": 33.25,
+        "currency": "EUR",
+        "period": "monthly"
+      }
+    ],
+    "affiliateLink": "https://lb.affilae.com/r/?p=67976259256873af7b50f01b&af=126&lp=https%3A%2F%2Fwww.elephorm.com%2F%3Futm_source%3Daffilae%26utm_medium%3Daffiliation%26utm_campaign%3Dtooltrim",
+    "websiteUrl": "https://www.elephorm.com",
+    "substitution_cluster_v2": "online-learning",
+    "functional_needs": [
+      "cours-en-ligne",
+      "formation"
+    ],
+    "verticals": [
+      "dev-freelance",
+      "graphiste-da",
+      "photographe",
+      "motion-video",
+      "consultant-b2b"
+    ],
+    "relevantFor": [
+      "Freelances qui veulent monter en compétences sur un logiciel",
+      "Salariés en reconversion ou en formation continue",
+      "Indépendants du design, de la vidéo et du développement"
+    ],
+    "prescription_quality": "question",
+    "personas": [
+      "CLAIRE"
     ]
   }
 ]

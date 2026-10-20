@@ -22,6 +22,7 @@ import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/li
 import { getCategoryLabel } from "./src/lib/categoryLabel";
 import { categorySeoDescription, categorySeoTitle, isCategoryIndexable } from "./src/lib/categorySeo";
 import { toolPriceFacts, toolSeoDescription, toolSeoTitle, type ToolSeoPage } from "./src/lib/toolSeo";
+import { buildPricingDetail, isPricingDetailPilot } from "./src/lib/toolPricingDetail";
 
 /** Year in tool titles; the client uses the same clock (ToolDetailPage). */
 const SEO_YEAR = new Date().getFullYear();
@@ -758,9 +759,8 @@ function sitemapPlugin(): Plugin {
           // `/faq` is deliberately absent: it canonicalises to the fiche (see
           // the prerenderer and DynamicCanonical), and a sitemap must not
           // advertise a URL whose own canonical points elsewhere.
-          // Mirrors staticPrerenderPlugin's explorer/around loop — one
-          // prerendered, indexable page per tool, same slug set.
-          addPair(`${BASE}/fr/explorer/around/${slug}`,   `${BASE}/en/explorer/around/${slug}`,   "monthly", "0.5");
+          // /explorer/around/* is noindex since 19/10/2026 (median 243 words,
+          // average position 68, off-topic neighbours): out of the sitemap.
         }
 
         // ── Category pages ────────────────────────────────────────────────────
@@ -1368,6 +1368,13 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 `<script id="tool-subpage-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
                 `<script id="tool-subpage-webpage-jsonld" type="application/ld+json">${JSON.stringify(subPageSchema)}</script>`,
                 ...(appSchema ? [`<script id="tool-subpage-app-jsonld" type="application/ld+json">${JSON.stringify(appSchema)}</script>`] : []),
+                // Pricing sub-page pilot: the pricing FAQ shown on the page
+                // (src/lib/toolPricingDetail.ts), same questions and answers.
+                ...(sub.path === "prix" && isPricingDetailPilot(tool) && buildPricingDetail(tool, lang) ? [`<script id="tool-subpage-pricing-faq-jsonld" type="application/ld+json">${JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "FAQPage",
+                  mainEntity: buildPricingDetail(tool, lang)!.faq.map((item) => ({ "@type": "Question", name: item.q, acceptedAnswer: { "@type": "Answer", text: item.a } })),
+                })}</script>`] : []),
               ].join("\n    ");
 
               let html = baseHtml;
@@ -1901,6 +1908,9 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             const altLang = lang === "fr" ? "en" : "fr";
             const metaTags = [
               `<link rel="canonical" href="${url}" />`,
+              // Thin neighbour lists (median 243 words, position 68): kept
+              // for visitors and as a crawl path, out of the index.
+              `<meta name="robots" content="noindex, follow" />`,
               `<link rel="alternate" hreflang="${lang}" href="${url}" />`,
               `<link rel="alternate" hreflang="${altLang}" href="${BASE}/${altLang}/explorer/around/${slug}" />`,
               `<link rel="alternate" hreflang="x-default" href="${BASE}/en/explorer/around/${slug}" />`,
@@ -1916,6 +1926,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
             html = html.replace(/<title>[^<]*<\/title>/, "");
             html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+            // baseHtml says "index, follow": drop it so only the noindex remains.
+            html = html.replace(/<meta\s+name="robots"[^>]*\/?>/, "");
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
 
             if (renderExplorerAroundPage) {

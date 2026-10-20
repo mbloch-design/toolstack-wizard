@@ -1,6 +1,6 @@
 # ToolTrim editorial index
 # Generated from dist/sitemap.xml and its canonical prerendered pages.
-# Records: 264 (98 guides, 166 comparisons, localized FR/EN pages)
+# Records: 272 (106 guides, 166 comparisons, localized FR/EN pages)
 # Titles and available source summaries only. A missing summary is not inferred. Consult each canonical URL for full content and current offers.
 
 [
@@ -2115,5 +2115,69 @@
     "url": "https://tooltrim.com/en/guide/best-cloud-hosting-developers",
     "title": "Best cloud hosting for developers in 2026: Vercel, Netlify, Heroku",
     "summary": "Cloud hosting platforms compared for a freelance developer: free tiers, what the first paid plan costs, and where usage billing can surprise you."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-gestionnaires-mots-de-passe-freelances",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-gestionnaires-mots-de-passe-freelances",
+    "title": "Meilleurs gestionnaires de mots de passe pour freelances en 2026",
+    "summary": "NordPass, 1Password, Bitwarden, Dashlane et LastPass comparés pour un freelance : offres gratuites, vrai prix de la première année, et ce qui se renouvelle plus cher."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-password-managers-freelancers",
+    "url": "https://tooltrim.com/en/guide/best-password-managers-freelancers",
+    "title": "Best password managers for freelancers in 2026",
+    "summary": "NordPass, 1Password, Bitwarden, Dashlane and LastPass compared for a freelancer: free plans, the real first-year price, and what renews at a higher rate."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-logiciels-photo-raw",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-logiciels-photo-raw",
+    "title": "Meilleurs logiciels photo RAW en 2026 : alternatives à Lightroom",
+    "summary": "Capture One, Lightroom, DxO PhotoLab, Luminar Neo, Affinity Photo et darktable comparés pour un photographe freelance : abonnement ou licence, et ce que coûte chacun."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-raw-photo-editors",
+    "url": "https://tooltrim.com/en/guide/best-raw-photo-editors",
+    "title": "Best RAW photo editors in 2026: Lightroom alternatives compared",
+    "summary": "Capture One, Lightroom, DxO PhotoLab, Luminar Neo, Affinity Photo and darktable compared for a freelance photographer: subscription or licence, and what each costs."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-createurs-site-portfolio",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-createurs-site-portfolio",
+    "title": "Meilleurs créateurs de site portfolio pour créatifs en 2026",
+    "summary": "Cargo, Readymag, Format, ArtStation, Framer et Pixieset comparés pour un créatif freelance : offres gratuites, coût du premier plan payant, et à qui chacun convient."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-portfolio-website-builders",
+    "url": "https://tooltrim.com/en/guide/best-portfolio-website-builders",
+    "title": "Best portfolio website builders for creatives in 2026",
+    "summary": "Cargo, Readymag, Format, ArtStation, Framer and Pixieset compared for a freelance creative: free plans, what the first paid plan costs, and who each one suits."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-logiciels-sculpture-3d",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-logiciels-sculpture-3d",
+    "title": "Meilleurs logiciels de sculpture 3D en 2026 : ZBrush et alternatives",
+    "summary": "ZBrush, Blender, Nomad Sculpt, Plasticity, Maya et Cinema 4D comparés pour un artiste 3D freelance : abonnement, licence ou gratuit, et ce pour quoi chacun est fait."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-digital-sculpting-software",
+    "url": "https://tooltrim.com/en/guide/best-digital-sculpting-software",
+    "title": "Best digital sculpting software in 2026: ZBrush and alternatives",
+    "summary": "ZBrush, Blender, Nomad Sculpt, Plasticity, Maya and Cinema 4D compared for a freelance 3D artist: subscription, licence or free, and what each one is built for."
   }
 ]

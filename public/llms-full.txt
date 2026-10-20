@@ -277,15 +277,15 @@
     "website": "https://1password.com",
     "category": "security",
     "pricing": {
-      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
-      "paid": "Dès 2,99 $/mois, plan Individual."
+      "free": "Pas d'offre gratuite permanente, essai de 14 jours.",
+      "paid": "Individual à 2,74 €/mois facturé à l'année la première année (prix normal 3,65 €/mois)."
     },
     "description_fr": "1Password génère, stocke et remplit automatiquement les mots de passe sur tous les appareils, avec alertes de fuite et partage sécurisé intégrés.",
     "description_en": "1Password generates, stores and autofills passwords across devices, with breach alerts and secure sharing built in.",
     "alternatives": [
       "bitwarden"
     ],
-    "price_verified_on": "2026-09-25",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "score": "3.6/5",
       "label": "Très bon",
@@ -371,12 +371,12 @@
     "website": "https://8fig.com",
     "category": "finance",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "5€/mois pour version Pro"
+      "free": null,
+      "paid": "Financement non dilutif pour e-commerçants, coûts fixés au cas par cas dans l'offre, aucun tarif publié."
     },
     "description_fr": "Plateforme de financement de croissance pour les fondateurs e-commerce.",
     "description_en": "Growth funding platform for e-commerce founders.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous vendez sur Amazon ou Shopify et avez besoin de capital d'inventaire",
       "avoid_if": "Vous avez moins de 6 mois d'antériorité ou moins de 12 k$ de chiffre d'affaires mensuel",
@@ -3196,12 +3196,12 @@
     "website": "https://arounddeal.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan Free gratuit : 3 crédits contact par mois, filtres de recherche basiques.",
+      "paid": "Plan VIP à 49 $/mois en facturation mensuelle (100 crédits contact par mois)."
     },
     "description_fr": "Plateforme d’intelligence B2B pour contacts et informations d’entreprises.",
     "description_en": "B2B intelligence platform for contacts and company insights.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous cherchez une base de données B2B abordable à l'entrée",
       "avoid_if": "Vous cherchez un outil de prospection tout-en-un avec automation avancée",
@@ -3969,12 +3969,12 @@
     "website": "https://autonix.io",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan Free gratuit à vie : tableau de bord, 3 trackers, logo Autonix sur les QR codes.",
+      "paid": "Plan Professional à 99 $/mois ou 999 $/an pour 1 utilisateur."
     },
     "description_fr": "Outil de suivi de QR codes et d’analytique pour agences et marketers.",
     "description_en": "QR code tracking and analytics tool for agencies and marketers.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez plusieurs lieux physiques et suivi de présence",
       "avoid_if": "Vous cherchez un outil email ou marketing direct",
@@ -4948,9 +4948,13 @@
     "url_en": "https://tooltrim.com/en/tool/bitwarden",
     "website": "https://bitwarden.com",
     "category": "security",
-    "pricing": "Gratuit (mots de passe illimités) ; Premium à ~10$/an, Famille à ~40$/an.",
+    "pricing": {
+      "free": "Offre gratuite permanente : appareils et mots de passe illimités, partage avec un autre utilisateur.",
+      "paid": "Premium à 1,65 $/mois, facturé 19,80 $ par an."
+    },
     "description_fr": "Gestionnaire de mots de passe open source, gratuit et multiplateforme.",
     "description_en": "Open-source, free, cross-platform password manager.",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous cherchez un gestionnaire de mots de passe open-source et de confiance",
       "avoid_if": "Vous avez besoin du support commercial premium inclus",
@@ -5204,12 +5208,12 @@
     "website": "https://boast.ai",
     "category": "finance",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Accompagnement crédits d'impôt R&D sur devis après un appel, aucun tarif publié."
     },
     "description_fr": "Plateforme d’automatisation des déclarations de crédit R&D.",
     "description_en": "R&D tax credit claim automation platform.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Votre entreprise investit en R&D et n'a jamais réclamé les crédits R&D fédéraux/étatiques",
       "avoid_if": "Votre entreprise n'a aucune R&D ou innovation technologique",
@@ -5376,12 +5380,12 @@
     "website": "https://boompop.com",
     "category": "communication",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "BoomPop a rejoint Navan ; aucun tarif publié."
     },
     "description_fr": "Service d’organisation d’événements d’entreprise et networking.",
     "description_en": "Corporate event planning and networking service.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous organisez des événements complexes fréquemment",
       "avoid_if": "Vous organisez des événements très simples ponctuels",
@@ -7203,12 +7207,12 @@
     "website": "https://castmagic.io",
     "category": "creation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Hobby à 19 $/mois facturé à l'année (239 $/an), 30 heures transcrites, jusqu'à 3 sièges."
     },
     "description_fr": "Outil de transformation rapide de tout format audio en contenu.",
     "description_en": "A tool for quickly transforming any audio format into content.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous publiez un podcast ou beaucoup de contenu audio/vidéo",
       "avoid_if": "Vous produisez peu de contenu audio",
@@ -8531,12 +8535,12 @@
     "website": "https://cloudtask.com/",
     "category": "communication",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Service de recrutement : 299 $ de frais de mise en relation par recrutement, staffing géré sur devis."
     },
     "description_fr": "Marketplace de talents B2B RevOps en freelance.",
     "description_en": "B2B marketplace for freelance RevOps talent.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez besoin de prospecteurs ou d'agences de vente supplémentaires rapidement",
       "avoid_if": "Vous demandez une solution interne et autonome pour la prospection",
@@ -9686,10 +9690,6 @@
     "url_en": "https://tooltrim.com/en/tool/crowdfire-inc",
     "website": "https://crowdfireapp.com",
     "category": "email-productivity",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
-    },
     "description_fr": "Plateforme de gestion des réseaux sociaux.",
     "description_en": "Social media management platform.",
     "price_verified_on": "2026-03-13",
@@ -10247,12 +10247,12 @@
     "website": "https://dashlane.com",
     "category": "security",
     "pricing": {
-      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
-      "paid": "Dès 4 €/mois, plan Premium."
+      "free": "Pas d'offre gratuite permanente, essai de 14 jours.",
+      "paid": "Premium à 4,00 € HT/mois facturé à l'année."
     },
     "description_fr": "Un gestionnaire de mots de passe pour particuliers, familles et entreprises, avec remplissage automatique, partage sécurisé et contrôles d'administration pour les équipes.",
     "description_en": "A password manager and credential vault for individuals, families and businesses, with autofill, secure sharing and admin controls for teams.",
-    "price_verified_on": "2026-10-02",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "score": "3.6/5",
       "label": "Très bon",
@@ -11547,12 +11547,12 @@
     "website": "https://draftbit.com",
     "category": "automation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan Free gratuit sans limite de durée : 1 sandbox, assistance IA, 3 000 crédits uniques, publication web sur draftbit.dev.",
+      "paid": "Plan Standard à 9,60 $/mois facturé à l'année (12 $ en mensuel)."
     },
     "description_fr": "Générateur d’applications natives (avec code) pour mobiles.",
     "description_en": "Native (with code) mobile app builder.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous cherchez un équilibre entre visuel et code pour développer rapidement",
       "avoid_if": "Vous préférez un full no-code sans accès au code",
@@ -12027,12 +12027,12 @@
     "website": "https://easydmarc.com",
     "category": "automation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan DMARC Plus à 35,99 € ou 35,99 $ par mois facturé à l'année (44,99 en mensuel), 2 domaines."
     },
     "description_fr": "SaaS pour résoudre les problèmes de sécurité et délivrabilité email.",
     "description_en": "SaaS to solve email security and deliverability issues.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez des domaines email et avez des problèmes de délivrabilité",
       "avoid_if": "Vous faites de la configuration minimale et cherchez des outils gratuits uniquement",
@@ -13057,12 +13057,12 @@
     "website": "https://extensis.com",
     "category": "creation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Extensis renvoie désormais vers Monotype Connect : 200 $ par utilisateur et par an (Pro : 300 $)."
     },
     "description_fr": "Plateforme de gestion de polices et ressources créatives.",
     "description_en": "Font and creative asset management platform.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez de très nombreuses polices au quotidien",
       "avoid_if": "Vous n'utilisez qu'une poignée de polices système",
@@ -13969,12 +13969,12 @@
     "website": "https://finaleinventory.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Essentials à partir de 499 $/mois (1 à 2 entrepôts)."
     },
     "description_fr": "Solution de gestion des stocks pour vendeurs à gros volume.",
     "description_en": "Inventory management solution for high-volume sellers.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous vendez sur plusieurs canaux (Shopify + Amazon + autres)",
       "avoid_if": "Vous n'avez qu'un seul canal de vente",
@@ -14230,12 +14230,12 @@
     "website": "https://flexiquiz.com",
     "category": "creation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan gratuit sans carte bancaire, limité à 20 réponses par mois.",
+      "paid": "Plan Essentials à 17 $/mois soit 204 $/an, 500 réponses par mois, 1 administrateur."
     },
     "description_fr": "Générateur de quiz personnalisés avec fonctionnalités LMS.",
     "description_en": "Custom quiz generator with LMS features.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous créez régulièrement des quiz, tests ou examens",
       "avoid_if": "Vous n'avez besoin que d'un formulaire simple ponctuel",
@@ -18741,12 +18741,12 @@
     "website": "https://houzz.com/pro",
     "category": "project-management",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Offre gratuite avec planificateur 3D, devis et facturation.",
+      "paid": "Plan Design à 99 $/mois pour 1 utilisateur (Pro 199 $, Teams dès 399 $)."
     },
     "description_fr": "Solution tout-en-un pour gérer les projets de construction résidentielle.",
     "description_en": "All-in-one solution for managing residential construction projects.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous êtes entrepreneur en bâtiment ou designer d'intérieur",
       "avoid_if": "Vous faites surtout du design graphique web",
@@ -19333,12 +19333,12 @@
     "website": "https://inboxally.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Starter à 149 $/mois en facturation mensuelle, 100 seed emails par jour."
     },
     "description_fr": "Plateforme pour améliorer la délivrabilité et taux d’ouverture des emails.",
     "description_en": "Platform to improve email deliverability and open rates.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous envoyez du cold email et avez besoin warm-up domaine",
       "avoid_if": "Vous utilisez déjà un ESL avec warm-up built-in (Lemlist, Amplemarket)",
@@ -19465,12 +19465,12 @@
     "website": "https://inflowinventory.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Lite à 99 $/mois (1 188 $/an), 2 membres, 1 emplacement."
     },
     "description_fr": "Logiciel de gestion des stocks pour petites entreprises.",
     "description_en": "Inventory management software for small businesses.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous vendez sur plusieurs canaux (Shopify, Amazon, WooCommerce)",
       "avoid_if": "Votre gestion d'inventaire est très simple ou manuelle",
@@ -19757,12 +19757,12 @@
     "website": "https://instapage.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Create à 99 $/mois en facturation mensuelle (15 000 visiteurs uniques par mois), jusqu'à 20 % de remise en annuel."
     },
     "description_fr": "Générateur de landing pages et plateforme d’optimisation.",
     "description_en": "Landing page generator and optimization platform.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez campagnes payantes (Google Ads, FB Ads) et optimisez ROI",
       "avoid_if": "Vous cherchez outil landing page simple et gratuit",
@@ -20185,8 +20185,8 @@
     "website": "https://jestjs.io",
     "category": "nocode-web",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Open source sous licence MIT : gratuit pour tout projet.",
+      "paid": null
     },
     "description_fr": "Framework de test JavaScript largement utilisé.",
     "description_en": "Widely used JavaScript testing framework.",
@@ -20657,12 +20657,11 @@
     "website": "https://katanamrp.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan Free gratuit sans carte bancaire, limité à 30 SKU, utilisateurs et intégrations illimités.",
+      "paid": "Plan Advantage sur devis avec contrat annuel."
     },
     "description_fr": "Logiciel cloud de gestion manufacturière intégrée au e-commerce.",
     "description_en": "Cloud manufacturing management software integrated with e-commerce.",
-    "price_verified_on": "2026-03-13",
     "verdict_fr": {
       "keep_if": "Vous fabriquez et vendez des produits sur plusieurs canaux (Shopify, Amazon, etc.)",
       "avoid_if": "Vous cherchez une solution gratuite permanente avec tous les features",
@@ -20700,12 +20699,12 @@
     "website": "https://kavkom.com",
     "category": "communication",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Pack Basic à 8 € HT par utilisateur et par mois avec engagement de 12 mois (10 € sans engagement)."
     },
     "description_fr": "Solution de téléphonie IP pour communications d’entreprise.",
     "description_en": "IP telephony solution for business communications.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez besoin d'une solution de téléphonie cloud avec appels illimités",
       "avoid_if": "Votre budget est très limité",
@@ -20743,12 +20742,12 @@
     "website": "https://keeptruckin.com",
     "category": "analytics",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": null,
+      "paid": "KeepTruckin est devenu Motive ; tarifs sur devis selon le secteur et la taille de flotte."
     },
     "description_fr": "Logiciel de gestion de flottes pour entreprises de transport.",
     "description_en": "Fleet management software for transport companies.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez une flotte de véhicules commerciaux (transporteurs, logistique)",
       "avoid_if": "Vous avez une flotte petite (< 5 véhicules) et besoin de tracking simple",
@@ -20959,12 +20958,12 @@
     "website": "https://kissmetrics.io",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan Free gratuit sans carte : 100 000 événements par mois, tableaux de bord et rapports de base.",
+      "paid": "Plan Growth à partir de 99 $/mois (500 000 événements et plus), 20 % de remise en annuel."
     },
     "description_fr": "Outil d’analytics comportemental pour augmenter conversions & engagement.",
     "description_en": "Behavioral analytics tool to increase conversions & engagement.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous êtes e-commerce ou SaaS trackant email-to-revenue attribution",
       "avoid_if": "Vous n'avez pas besoin tracking revenue (content only)",
@@ -21052,12 +21051,12 @@
     "website": "https://kixie.com",
     "category": "communication",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": null,
+      "paid": "Plans présentés sans prix sur la page tarifs ; tarif sur devis."
     },
     "description_fr": "Plateforme d’engagement commercial avec appels et SMS intégrés.",
     "description_en": "Sales engagement platform with integrated calling and SMS.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez une équipe de prospection téléphonique importante",
       "avoid_if": "Votre budget est limité (Kixie est premium)",
@@ -21573,12 +21572,12 @@
     "website": "https://landbot.io",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Plan Free gratuit à vie : 100 chats par mois, 1 siège, sans chats IA.",
+      "paid": "Plan Starter à 25,60 €/mois facturé à l'année (32 € en mensuel), 500 chats par mois."
     },
     "description_fr": "Générateur de chatbot pour automatiser la capture de leads et interactions client.",
     "description_en": "Chatbot builder to automate lead capture and customer interactions.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous cherchez lead capture sans coding sur site/WhatsApp",
       "avoid_if": "Vous besoin NLP très avancé (off-script handling)",
@@ -21790,12 +21789,12 @@
     "website": "https://lano.io",
     "category": "hris-payroll",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Prix d'appel à partir de 3 € par employé et par mois (consolidation de paie) et 19 € par freelance et par mois ; tarif final sur proposition."
     },
     "description_fr": "Solution globale d’employeur de référence et gestion de paie.",
     "description_en": "Global Employer of Record and payroll management solution.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous opérez dans 5+ pays et avez besoin de consolidation paie",
       "avoid_if": "Vous n'opérez qu'en un seul pays",
@@ -21832,9 +21831,13 @@
     "url_en": "https://tooltrim.com/en/tool/lastpass",
     "website": "https://lastpass.com",
     "category": "security",
-    "pricing": "Gratuit (limité à un type d'appareil) ; Premium à partir de ~3$/mois.",
+    "pricing": {
+      "free": "Offre gratuite limitée à un type d'appareil : stockage illimité, remplissage automatique, surveillance du dark web.",
+      "paid": "Premium à 2,90 €/mois facturé à l'année, taxes en sus."
+    },
     "description_fr": "Gestionnaire de mots de passe grand public, avec une version gratuite limitée.",
     "description_en": "Mainstream password manager, with a limited free version.",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez besoin gestionnaire passwords cloud simple",
       "avoid_if": "Vous cherchez solution open-source self-hosted",
@@ -21995,10 +21998,6 @@
     "url_en": "https://tooltrim.com/en/tool/leadflow",
     "website": "https://leadflow.com",
     "category": "email-productivity",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
-    },
     "description_fr": "Générateur de leads immobilier alimenté par l’IA.",
     "description_en": "AI-powered real estate lead generator.",
     "price_verified_on": "2026-03-13",
@@ -22086,12 +22085,12 @@
     "website": "https://leadsquared.com",
     "category": "communication",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "CRM Sales Pro à 40 $ par utilisateur et par mois, facturé à l'année."
     },
     "description_fr": "Plateforme d’exécution commerciale et d’automatisation marketing.",
     "description_en": "Sales execution and marketing automation platform.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez une équipe commerciale avec besoins multi-canal (appels, SMS, WhatsApp)",
       "avoid_if": "Vous cherchez un CRM très simple pour PME léger",
@@ -22408,12 +22407,12 @@
     "website": "https://lendio.com",
     "category": "finance",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Place de marché de financement : coût du crédit fixé par chaque prêteur, pas d'abonnement publié."
     },
     "description_fr": "Service de prêts professionnels avec multiples options de financement.",
     "description_en": "Business loan service with multiple financing options.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez besoin de capital pour démarrer ou développer une petite entreprise",
       "avoid_if": "Vous n'avez pas besoin de financement externe",
@@ -23076,10 +23075,6 @@
     "url_fr": "https://tooltrim.com/fr/tool/liquid-web-partner-program",
     "url_en": "https://tooltrim.com/en/tool/liquid-web-partner-program",
     "category": "nocode-web",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
-    },
     "description_fr": "Fournisseur d’hébergement cloud et web managé.",
     "description_en": "Managed cloud and web hosting provider.",
     "price_verified_on": "2026-03-13",
@@ -23199,11 +23194,12 @@
     "website": "https://www.apple.com/logic-pro/",
     "category": "creation",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Pas de version gratuite. Essai gratuit de 30 jours via Apple Creator Studio.",
+      "paid": "199,99 $ en achat unique sur Mac, ou inclus dans Apple Creator Studio à 12,99 $/mois (129 $/an)."
     },
     "description_fr": "Station audio Apple pour composition, mixage et postproduction.",
     "description_en": "Apple DAW for composition, mixing, and post-production.",
+    "price_verified_on": "2026-10-19",
     "verdict_fr": {
       "keep_if": "Vous produisez de la musique sur Mac ou iPad",
       "avoid_if": "Vous travaillez sur Windows ou Linux",
@@ -23878,12 +23874,12 @@
     "website": "https://lucid.co",
     "category": "creation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Plan Free gratuit : 3 documents modifiables, 75 formes par document, 100 modèles.",
+      "paid": "Lucidchart Individual à 9 $/mois facturé à l'année ; Team à 10 $ par utilisateur et par mois en annuel."
     },
     "description_fr": "Solutions de diagrammes intelligents et tableau blanc en ligne.",
     "description_en": "Intelligent diagramming and online whiteboard solutions.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous cartographiez des processus, systèmes ou architectures en équipe",
       "avoid_if": "Un simple tableau blanc gratuit vous suffit",
@@ -24987,12 +24983,11 @@
     "website": "https://massive.io",
     "category": "creation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "15 Go de transfert gratuits chaque mois sur l'offre à l'usage.",
+      "paid": "À l'usage : 0,25 $ par Go au-delà des 15 Go gratuits, sans engagement ; abonnement annuel dès 58 $/mois pour 250 Go."
     },
     "description_fr": "Service de transfert de fichiers volumineux pour vidéastes et médias.",
     "description_en": "Large file transfer service for videographers and media professionals.",
-    "price_verified_on": "2026-03-13",
     "verdict_fr": {
       "keep_if": "Vous envoyez régulièrement des fichiers vidéo très volumineux",
       "avoid_if": "Vos fichiers sont légers et occasionnels",
@@ -26696,12 +26691,12 @@
     "website": "https://mongodb.com/atlas",
     "category": "nocode-web",
     "pricing": {
-      "free": "Plan gratuit : Cluster M0, 512 Mo de stockage, RAM/vCPU partagés, gratuit à vie",
-      "paid": "Dès 8 $/mois, plan Flex."
+      "free": "Cluster M0 gratuit à vie : 512 Mo de stockage, ressources partagées.",
+      "paid": "Flex facturé à l'heure (0,011 $/h au palier de base, soit 8 $/mois selon le calcul de MongoDB sur 30 jours), plafonné à 30 $/mois ; Dedicated M10 à partir de 56,94 $/mois."
     },
     "description_fr": "Base de données documentaire managée dans le cloud par MongoDB, avec un plan gratuit et des clusters dédiés facturés à l'usage.",
     "description_en": "Managed cloud document database from MongoDB, with a free tier and usage-based dedicated clusters.",
-    "price_verified_on": "2026-09-25",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "score": "4/5",
       "label": "Excellent",
@@ -26826,12 +26821,11 @@
     "website": "https://moosend.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Pro à 7 $/mois en facturation annuelle pour 500 contacts (9 $ en mensuel), envois illimités."
     },
     "description_fr": "Outil d’email marketing et d’automatisation.",
     "description_en": "Email marketing and automation tool.",
-    "price_verified_on": "2026-03-13",
     "verdict_fr": {
       "keep_if": "Vous cherchez une solution email marketing simple et abordable",
       "avoid_if": "Vous avez des besoins SMS ou multichannel avancés",
@@ -27125,12 +27119,12 @@
     "website": "https://mrpeasy.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Starter à 49 $ par utilisateur et par mois en mensuel ; l'annuel offre 1 mois gratuit."
     },
     "description_fr": "ERP/MRP pour petites entreprises manufacturières.",
     "description_en": "ERP/MRP for small manufacturing businesses.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous êtes un petit fabricant (10-200 personnes) avec des besoins de planification",
       "avoid_if": "Vous travaillez principalement en mode projet ou service (pas de fabrication continue)",
@@ -27234,12 +27228,12 @@
     "website": "https://mycase.com",
     "category": "legal-contracts",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "MyCase Basic à 50 $ par utilisateur et par mois facturé à l'année (60 $ en mensuel)."
     },
     "description_fr": "Solution de gestion de dossiers juridiques pour cabinets B2C.",
     "description_en": "Legal case management solution for B2C law firms.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez un cabinet d'avocats avec gestion temps/facturation critique",
       "avoid_if": "Vous êtes freelance/consultant et n'avez pas de clients confidentiels",
@@ -27373,12 +27367,12 @@
     "website": "https://navan.com",
     "category": "finance",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Navan Business est gratuit pour les entreprises jusqu'à 300 salariés : voyages illimités et notes de frais gratuites pour les 5 premiers utilisateurs.",
+      "paid": "Au-delà de 5 utilisateurs, le module Expense coûte 15 $ par utilisateur et par mois ; Enterprise sur devis."
     },
     "description_fr": "Solution tout-en-un de gestion des voyages et notes de frais.",
     "description_en": "All-in-one travel and expense management solution.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez une équipe avec voyages d'affaires fréquents",
       "avoid_if": "Vous avez peu ou pas de voyages d'affaires",
@@ -27416,12 +27410,12 @@
     "website": "https://near.st",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": null,
+      "paid": "Aucun tarif publié : le prix se demande à NearSt."
     },
     "description_fr": "Convertit les visiteurs en ligne en clients en magasin en montrant les stocks locaux.",
     "description_en": "Converts online visitors into in-store customers by displaying local inventory.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous êtes un retailer avec une présence physique importante",
       "avoid_if": "Vous êtes purement e-commerce (sans boutiques physiques)",
@@ -27547,12 +27541,12 @@
     "website": "https://netchex.com",
     "category": "hris-payroll",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Trois formules (Core, All-In, Flex), toutes sur devis."
     },
     "description_fr": "Solution de gestion RH et paie.",
     "description_en": "HR and payroll management solution.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez une workforce horaire ou sur le terrain",
       "avoid_if": "Vous avez surtout du personnel de bureau",
@@ -28044,12 +28038,12 @@
     "website": "https://nordpass.com",
     "category": "security",
     "pricing": {
-      "free": "Plan gratuit : 1 compte, un seul appareil, sans analyse de la santé des mots de passe ni scanner de fuites de données",
-      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
+      "free": "Offre gratuite : sauvegarde et remplissage automatique, stockage sécurisé, sans accès multi-appareils ni analyse des fuites.",
+      "paid": "Premium à 1,39 €/mois en tarif promotionnel sur 2 ans (37,53 € pour les 27 premiers mois, HT) ; 1,99 €/mois sur 1 an. Renouvellement non affiché."
     },
     "description_fr": "Gestionnaire de mots de passe chiffré de Nord Security, avec un plan gratuit et des offres entreprise par siège.",
     "description_en": "Encrypted password manager from Nord Security, with a free tier and per-seat business plans.",
-    "price_verified_on": "2026-09-25",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "score": "3.6/5",
       "label": "Très bon",
@@ -28649,8 +28643,8 @@
     "website": "https://omniconvert.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Offre gratuite permanente pour l'A/B testing jusqu'à 50 000 utilisateurs testés par mois, sans carte bancaire.",
+      "paid": null
     },
     "description_fr": "Outil d’optimisation des conversions (CRO) pour améliorer l’expérience utilisateur.",
     "description_en": "Conversion optimization (CRO) tool designed to improve the user experience.",
@@ -28825,12 +28819,12 @@
     "website": "https://onrampfunds.com",
     "category": "finance",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Financement e-commerce avec un frais unique communiqué dans une offre personnalisée après inscription ; aucun barème publié."
     },
     "description_fr": "Fournit des financements aux marchands pour soutenir leur croissance.",
     "description_en": "Provides funding to merchants to support their growth.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous vendez sur Amazon, Shopify ou autre plateforme eCommerce",
       "avoid_if": "Vous avez moins de 6 mois d'antériorité ou revenu < 10k$/mois",
@@ -29571,12 +29565,11 @@
     "website": "https://ownr.co",
     "category": "finance",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Online Minute Book Plan à 199 $ CA la première année avec un compte RBC (frais gouvernementaux inclus), renouvelé à 199 $ CA par an."
     },
     "description_fr": "Plateforme d’enregistrement et de création d’entreprises (Canada).",
     "description_en": "Business registration and incorporation platform (Canada).",
-    "price_verified_on": "2026-03-13",
     "verdict_fr": {
       "keep_if": "Vous êtes entrepreneur canadien et vous voulez incorporer rapidement",
       "avoid_if": "Vous êtes un indépendant sans intention d'incorporation",
@@ -29614,12 +29607,12 @@
     "website": "https://oysterhr.com",
     "category": "hris-payroll",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Global Contractors : gratuit 30 jours puis 29 USD par prestataire et par mois ; Employer of Record à 699 USD par salarié et par mois."
     },
     "description_fr": "Plateforme RH pour entreprises distribuées mondialement.",
     "description_en": "Global HR platform for distributed teams.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous embauchez des employés dans 5+ pays sans entité locale",
       "avoid_if": "Vous n'opérez qu'en un seul pays",
@@ -29784,12 +29777,12 @@
     "website": "https://packhelp.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": null,
+      "paid": "Emballages personnalisés facturés à la commande via un configurateur ; aucun abonnement ni grille publique."
     },
     "description_fr": "Marketplace de packagings personnalisés.",
     "description_en": "Marketplace for custom packaging.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez besoin de packaging personnalisé pour e-commerce ou PME",
       "avoid_if": "Vous avez besoin d'impression de 5-10 pièces seulement",
@@ -29914,12 +29907,12 @@
     "website": "https://pagecloud.com",
     "category": "automation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Launch à 22 $ US par mois en annuel (26 $ US en mensuel)."
     },
     "description_fr": "Constructeur de site web et boutique en ligne.",
     "description_en": "Website and online store builder.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez besoin d'un site web simple à beau rapidement",
       "avoid_if": "Vous avez besoin d'une architecture très custom ou d'un blog complexe",
@@ -31259,12 +31252,12 @@
     "website": "https://pipedrive.com",
     "category": "crm",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Lite à 14 € HT par utilisateur et par mois, facturé à l'année (168 € par utilisateur et par an) ; Growth 39 €, Premium 59 €, Ultimate 79 €. Essai de 14 jours."
     },
     "description_fr": "CRM simple d’utilisation pour les ventes.",
     "description_en": "Easy-to-use CRM for sales.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez une équipe de vente avec un processus d'entonnoir classique",
       "avoid_if": "Vous cherchez un CRM gratuit",
@@ -31302,12 +31295,12 @@
     "website": "https://pipelinepro.io",
     "category": "communication",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Plan Cloud à 25 € par utilisateur et par mois (2 To de stockage)."
     },
     "description_fr": "Plateforme de gestion de pipeline de ventes et d’automatisation marketing.",
     "description_en": "Sales pipeline management and marketing automation platform.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous dirigez un studio d'animation ou VFX avec équipe distribuée",
       "avoid_if": "Vous êtes freelancer solo",
@@ -33167,12 +33160,12 @@
     "website": "https://promo.com",
     "category": "creation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Basic à 29 € par mois facturé 348 € par an (59 € en mensuel sans engagement)."
     },
     "description_fr": "Plateforme de création vidéo pour entreprises et agences.",
     "description_en": "Video creation platform for businesses and agencies.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous produisez souvent de courtes vidéos marketing",
       "avoid_if": "Vous faites du montage vidéo créatif et sur mesure",
@@ -33408,12 +33401,12 @@
     "website": "https://prowritingaid.com",
     "category": "creation",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Offre gratuite permanente avec usage limité : 2 passages par rapport d'édition par jour, 10 reformulations par jour.",
+      "paid": "Premium à 10 € par mois facturé 120 € par an (30 € en mensuel) ; licence à vie à 399 €."
     },
     "description_fr": "Assistant d’écriture pour améliorer style, grammaire et clarté.",
     "description_en": "Writing assistant to improve style, grammar and clarity.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous écrivez de longs textes en anglais et voulez soigner le style",
       "avoid_if": "Vous écrivez surtout dans une autre langue que l'anglais",
@@ -33574,12 +33567,12 @@
     "website": "https://pushowl.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": "Offre gratuite permanente : 500 notifications web push et 500 e-mails par mois, contacts illimités.",
+      "paid": "Plus à 19 $ par mois (10 000 web push par mois)."
     },
     "description_fr": "Application de notifications push web pour Shopify.",
     "description_en": "Web push notifications app for Shopify.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez un site Shopify et voulez des notifs push",
       "avoid_if": "Vous ne ciblez pas les clients Shopify",
@@ -33831,12 +33824,12 @@
     "website": "https://quadient.com",
     "category": "finance",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Aucun tarif publié : démo et devis uniquement."
     },
     "description_fr": "Solutions d’automatisation des comptes clients et fournisseurs.",
     "description_en": "Accounts payable and accounts receivable automation solutions.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous traitez un volume élevé de factures fournisseurs (100+/mois)",
       "avoid_if": "Votre volume de factures est faible",
@@ -33917,12 +33910,12 @@
     "website": "https://quartile.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": null,
+      "paid": "Aucun tarif publié : démo et devis uniquement."
     },
     "description_fr": "Plateforme publicitaire multicanal pour optimiser la performance e-commerce.",
     "description_en": "Multi-channel advertising platform to optimize e-commerce performance.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez un budget publicitaire e-commerce important",
       "avoid_if": "Vous êtes nouveau vendeur sur Amazon avec petit budget",
@@ -33960,12 +33953,12 @@
     "website": "https://quickbase.com",
     "category": "automation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Team à partir de 35 $ par utilisateur et par mois, facturé annuellement, hors minimum de plateforme."
     },
     "description_fr": "Plateforme de développement d’applications sans code.",
     "description_en": "No-code application development platform.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez des projets complexes ou du terrain et avez besoin d'une app custom",
       "avoid_if": "Vous avez un très petit budget ou cherchez une solution startup",
@@ -34424,12 +34417,11 @@
     "website": "https://razorpay.com",
     "category": "finance",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "2 % par transaction réussie (plus 18 % de GST sur ces frais), sans frais d'installation ni de maintenance annuelle."
     },
     "description_fr": "Passerelle de paiement et services financiers pour entreprises en Inde.",
     "description_en": "Payment gateway and financial services for businesses in India.",
-    "price_verified_on": "2026-03-13",
     "verdict_fr": {
       "keep_if": "Vous opérez en Inde ou acceptez des paiements indiens",
       "avoid_if": "Vous êtes basé en Europe (disponibilité limitée)",
@@ -35819,12 +35811,12 @@
     "website": "https://respond.io",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Starter à 79 $ par mois (948 $ par an en annuel), 5 utilisateurs inclus."
     },
     "description_fr": "Logiciel de messagerie alimenté par l’IA pour entreprises B2C.",
     "description_en": "AI-powered messaging software for B2C businesses.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous gérez une équipe support/ventes avec clients sur plusieurs canaux",
       "avoid_if": "Vous n'utilisez qu'un ou deux canaux (email + chat suffisent)",
@@ -35862,12 +35854,12 @@
     "website": "https://responsetap.com",
     "category": "communication",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": null,
+      "paid": "ResponseTap fait désormais partie d'Infinity ; tarifs sur devis."
     },
     "description_fr": "Logiciel de suivi des appels pour les marketers.",
     "description_en": "Call tracking software for marketers.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez des campagnes marketing numériques générant des appels entrants",
       "avoid_if": "Vous avez peu d'appels entrants",
@@ -36775,12 +36767,12 @@
     "website": "https://ruby.com",
     "category": "communication",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Réceptionniste virtuel Starter à 250 $ par mois pour 50 minutes, facturé mensuellement."
     },
     "description_fr": "Standard téléphonique virtuel et chat en direct pour entreprises.",
     "description_en": "Virtual phone system and live chat for businesses.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous recevez beaucoup d'appels entrants que vous ne pouvez pas tous répondre",
       "avoid_if": "Vous avez très peu d'appels entrants",
@@ -36897,7 +36889,7 @@
     }
   },
   {
-    "name": "Safetyculture",
+    "name": "SafetyCulture",
     "slug": "safetyculture",
     "url_fr": "https://tooltrim.com/fr/tool/safetyculture",
     "url_en": "https://tooltrim.com/en/tool/safetyculture",
@@ -37116,12 +37108,12 @@
     "website": "https://salesflare.com",
     "category": "crm",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Growth à 29 $ ou 29 € par utilisateur et par mois en annuel (39 $ ou 39 € en mensuel)."
     },
     "description_fr": "CRM pour PME vendant en B2B.",
     "description_en": "CRM for SMEs selling in B2B.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Votre équipe passe trop de temps à saisir manuellement des données CRM",
       "avoid_if": "Vous cherchez un CRM très bon marché ou gratuit",
@@ -37159,12 +37151,12 @@
     "website": "https://salesforce.com",
     "category": "crm",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Salesforce Free Suite : CRM gratuit pour 2 utilisateurs maximum, sans carte bancaire.",
+      "paid": "Starter Suite à 25 $ ou 25 € par utilisateur et par mois, facturé mensuellement ou annuellement."
     },
     "description_fr": "Logiciel de gestion de la relation client et solutions cloud.",
     "description_en": "Customer relationship management software and cloud solutions.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous êtes une équipe de ventes structurée et vous avez besoin d'une source unique pour les leads et contrats",
       "avoid_if": "Vous êtes un freelance ou une petite équipe avec un budget limité",
@@ -37924,12 +37916,12 @@
     "website": "https://sellersfi.com",
     "category": "finance",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": null,
+      "paid": "Financement pour vendeurs e-commerce, taux communiqués après demande ; aucun barème publié."
     },
     "description_fr": "Fintech pour commerçants e-commerce (financement).",
     "description_en": "Fintech for e-commerce merchants (funding).",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous vendez sur Amazon ou Shopify et besoin capital de travail",
       "avoid_if": "Vous n'avez pas d'historique de ventes (< 3 mois)",
@@ -38586,12 +38578,12 @@
     "website": "https://getshogun.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Page Builder Build à 31 $ par mois en annuel (39 $ en mensuel) ; un mode Draft gratuit permet de concevoir des pages."
     },
     "description_fr": "Outils d’optimisation et merchandising pour boutiques Shopify.",
     "description_en": "Optimization and merchandising tools for Shopify stores.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous avez une boutique Shopify",
       "avoid_if": "Vous n'utilisez pas Shopify comme plateforme",
@@ -38629,12 +38621,12 @@
     "website": "https://shophero.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10€/mois pour version Pro"
+      "free": null,
+      "paid": "Plateforme pour épiceries indépendantes, tarifs sur rendez-vous commercial."
     },
     "description_fr": "Plateforme de gestion e-commerce et supply chain.",
     "description_en": "E-commerce and supply chain management platform.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous dirigez une épicerie indépendante",
       "avoid_if": "Vous êtes une petite boutique avec budget très limité",
@@ -39528,12 +39520,12 @@
     "website": "https://smtp.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Essential à 25 $ par mois pour 50 000 e-mails (IP partagée)."
     },
     "description_fr": "Service d’emails transactionnels et API avec haute délivrabilité.",
     "description_en": "Transactional email service and API with high deliverability.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous envoyez du volume significatif d'emails transactionnels",
       "avoid_if": "Vous n'envoyez que quelques centaines d'emails par mois",
@@ -39657,12 +39649,12 @@
     "website": "https://snov.io/",
     "category": "communication",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Offre Trial gratuite renouvelée chaque mois : 50 crédits, 100 destinataires et 25 jetons d'enrichissement.",
+      "paid": "Starter à 39 $ par mois (1 000 crédits, 5 000 destinataires), utilisateurs illimités."
     },
     "description_fr": "Plateforme d’automatisation des ventes (recherche d’emails",
     "description_en": "Sales automation platform (email search)",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous prospectez par email et avez besoin de trouver des adresses ciblées",
       "avoid_if": "Vous n'avez que des listes complètes et vous n'avez pas besoin de chercher des emails",
@@ -41771,12 +41763,12 @@
     "website": "https://surveysparrow.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Offre gratuite permanente pour 1 utilisateur : 3 enquêtes actives, 10 questions par enquête, 75 réponses par trimestre.",
+      "paid": "Plans Basic, Starter et Business facturés au trimestre ou à l'année, montants non affichés."
     },
     "description_fr": "Plateforme d’enquêtes et collecte de feedback.",
     "description_en": "Survey platform and feedback collection.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous cherchez une plateforme pour mesurer la satisfaction client (NPS)",
       "avoid_if": "Vous ne faites que quelques sondages ponctuels",
@@ -42449,12 +42441,12 @@
     "website": "https://teachable.com",
     "category": "nocode-web",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Starter à 29 $ par mois en annuel (39 $ en mensuel), avec 7,5 % de frais de transaction."
     },
     "description_fr": "Plateforme pour créer et vendre des cours en ligne, des coachings et des produits digitaux, avec pages de vente et paiements intégrés.",
     "description_en": "Platform to create and sell online courses, coaching and digital products, with built-in sales pages and payments.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous vendez des cours ou du coaching en ligne",
       "avoid_if": "Vous cherchez une plateforme gratuite",
@@ -44288,12 +44280,12 @@
     "website": "https://trustpilot.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Offre gratuite permanente avec 50 invitations d'avis par mois.",
+      "paid": "Starter à partir de 99 $ par mois et par domaine, facturé annuellement avec engagement de 12 mois."
     },
     "description_fr": "Plateforme d’avis en ligne pour entreprises et consommateurs.",
     "description_en": "Online review platform for businesses and consumers.",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous êtes une entreprise cherchant à gérer et améliorer vos avis",
       "avoid_if": "Vous ne voulez que des avis positifs (Trustpilot inclut les critiques)",
@@ -45510,12 +45502,12 @@
     "website": "https://www.vcita.com/",
     "category": "communication",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Kickstart à 29 €/mois facturé à l'année (35 € en mensuel). Essai gratuit."
     },
     "description_fr": "Plateforme de gestion clients pour PME (rendez-vous",
     "description_en": "Client management platform for SMEs (appointments, CRM, billing).",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous offrez des services (coaching, consulting, legal, etc.) et vous facturez par consultation",
       "avoid_if": "Vous vendez des produits ou du SaaS (pas un service de consultation)",
@@ -45935,12 +45927,12 @@
     "website": "https://www.visme.co",
     "category": "creation",
     "pricing": {
-      "free": "Toutes les fonctionnalités",
-      "paid": "Version payante disponible"
+      "free": "Offre Basic gratuite permanente : projets illimités, modèles et ressources limités, 500 Mo de stockage.",
+      "paid": "Starter à 12,25 $ par personne et par mois, facturé 147 $ par an."
     },
     "description_fr": "Plateforme de création de contenus visuels (présentations, infographies).",
     "description_en": "Visual content creation platform (presentations, infographics).",
-    "price_verified_on": "2026-03-13",
+    "price_verified_on": "2026-10-20",
     "verdict_fr": {
       "keep_if": "Vous créez présentations, infographies et rapports régulièrement",
       "avoid_if": "Vous avez besoin d'un outil de design vectoriel avancé",

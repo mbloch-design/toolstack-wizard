@@ -19,7 +19,7 @@ import { CATALOG_NEEDS } from "@/data/catalogNeeds";
 import { activePlacements, type CatalogPlacement } from "@/data/catalogPlacements";
 import { toolTagline } from "@/data/toolTaglines";
 import { compareByDemand, formatFacetLabel, hasFreePlan, isPaid, knownPrice, toolFacets } from "@/lib/catalogFilters";
-import { categorySeoDescription, categorySeoTitle, isCategoryIndexable } from "@/lib/categorySeo";
+import { categorySeoDescription, categorySeoTitle, isCategoryIndexable, isCategoryLinkable } from "@/lib/categorySeo";
 
 type SortKey = "popular" | "name" | "price-asc";
 type PriceFilter = "all" | "free" | "paid";
@@ -211,7 +211,7 @@ const CategoryPage = () => {
   const hasMore = visibleCount < gridTools.length;
   const needLabel = need ? (lang === "en" ? need.en : need.fr) : "";
   const relatedCats = categories
-    .filter((c) => c.id !== category.id && !siblings.some((s) => s.id === c.id) && isCategoryIndexable(toolCountByCategory.get(c.id) || 0))
+    .filter((c) => c.id !== category.id && !siblings.some((s) => s.id === c.id) && isCategoryLinkable(toolCountByCategory.get(c.id) || 0))
     .sort((a, b) => (toolCountByCategory.get(b.id) || 0) - (toolCountByCategory.get(a.id) || 0))
     .slice(0, 4);
   const exploreState = { explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: displayName };
