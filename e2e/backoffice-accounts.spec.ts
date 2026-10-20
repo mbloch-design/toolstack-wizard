@@ -1,4 +1,4 @@
-import { test, expect, state, control } from './fixtures/accounts';
+import { test, expect, state, control, saved, change, snapshot } from './fixtures/accounts';
 
 async function passwordLogin(page: import('@playwright/test').Page, lang: 'fr' | 'en', email = 'admin@example.invalid') {
   await page.goto(`/${lang}/back-office`);
@@ -43,4 +43,68 @@ for (const forged of [false, true]) test(`ordinary account denied despite forged
     const modulePath = '/src/integrations/supabase/client.ts'; const { supabase } = await import(/* @vite-ignore */ modulePath);
     const { data } = await supabase.auth.getSession(); return (await fetch('/api/backoffice-accounts', { headers: { Authorization: `Bearer ${data.session.access_token}` } })).status;
   }); expect(result).toBe(403);
+});
+
+async function openBackOffice(page: import('@playwright/test').Page) {
+  await page.evaluate(() => { history.pushState({}, '', '/en/back-office'); dispatchEvent(new PopStateEvent('popstate')); });
+  await expect(page.getByTestId('accounts-total')).toBeVisible();
+}
+async function seededAdmin(page: import('@playwright/test').Page, request: import('@playwright/test').APIRequestContext) {
+  const personal = state(['figma']);
+  personal.billing.choices.figma = { source: 'custom', amount: 37, currency: 'EUR', period: 'annual' };
+  personal.billing.paid = ['figma']; personal.decisions = { historical: { kind: 'keep-both', kept: 'figma', saving: 12, at: '2026-10-19T12:00:00Z' } };
+  await control(request, 'seed', { email: 'admin@example.invalid', state: personal });
+  await passwordLogin(page, 'en'); await expect(page.getByTestId('accounts-total')).toBeVisible();
+  await page.goto('/en/ma-stack'); await saved(page); return personal;
+}
+test('back-office clean logout purges private primary, backup, plans and decisions', async ({ page, request }) => {
+  await seededAdmin(page, request); await openBackOffice(page);
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
+  await page.goto('/en/ma-stack'); await expect(page.getByRole('button', { name: 'Save my stack', exact: true })).toBeVisible();
+  expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
+  expect(await page.evaluate(() => Object.entries(localStorage).filter(([key]) => /tooltrim-(personal-stack|ma-stack)/.test(key)).every(([, value]) => !value.includes('figma') && !value.includes('historical')))).toBe(true);
+});
+test('back-office dirty logout supports cancel, failed signout retry and confirmed privacy cleanup', async ({ page, request }) => {
+  const personal = await seededAdmin(page, request);
+  await page.route('**/api/stack-account', route => route.request().method() === 'PUT' ? route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":{"code":"STACK_ACCOUNT_UNAVAILABLE"}}' }) : route.continue());
+  personal.billing.choices.figma.amount = 99; await change(page, personal);
+  await expect(page.locator('.ms-account-summary [role=status]')).toHaveText('Not saved');
+  await openBackOffice(page); await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  const confirm = page.getByRole('button', { name: 'Sign out without saving', exact: true }); await expect(confirm).toBeVisible();
+  await page.getByRole('button', { name: 'Keep editing', exact: true }).click(); await expect(confirm).toHaveCount(0);
+  expect((await snapshot(page)).billing.choices.figma.amount).toBe(99);
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  await control(request, 'fault', { path: '/auth/v1/logout', method: 'POST', status: 400 });
+  await confirm.click(); await expect(page.getByRole('alert')).toContainText('Sign-out failed');
+  await expect(page.getByTestId('accounts-total')).toBeVisible(); expect((await snapshot(page)).billing.choices.figma.amount).toBe(99);
+  await confirm.click(); await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
+  await page.goto('/en/ma-stack'); expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
+});
+
+for (const theme of ['light', 'dark'] as const) test(`account surfaces remain readable in ${theme} theme`, async ({ page, request }) => {
+  await page.addInitScript(theme => localStorage.setItem('tooltrim:theme', theme), theme);
+  await page.goto('/en/back-office');
+  const surface = theme === 'dark' ? 'rgb(26, 26, 26)' : 'rgb(255, 255, 255)';
+  async function readable(selector: string) {
+    const elements = page.locator(selector); await expect(elements.first()).toBeVisible();
+    const styles = await elements.evaluateAll(nodes => nodes.map(node => {
+      const style = getComputedStyle(node);
+      const luminance = (color: string) => {
+        const rgb = color.match(/[\d.]+/g)!.slice(0, 3).map(Number).map(value => { const s = value / 255; return s <= .04045 ? s / 12.92 : ((s + .055) / 1.055) ** 2.4; });
+        return .2126 * rgb[0] + .7152 * rgb[1] + .0722 * rgb[2];
+      };
+      const a = luminance(style.color), b = luminance(style.backgroundColor);
+      return { background: style.backgroundColor, contrast: (Math.max(a,b) + .05) / (Math.min(a,b) + .05) };
+    }));
+    for (const style of styles) { expect(style.background).toBe(surface); expect(style.contrast).toBeGreaterThanOrEqual(4.5); }
+  }
+  await readable('.ba-login, .ba-login-field input');
+  await seededAdmin(page, request); await openBackOffice(page);
+  await readable('.ba-button, .ba-search input, .ba-metrics > div, .ba-dashboard table');
+  await page.getByRole('button', { name: 'View stack for admin@example.invalid', exact: true }).click(); await readable('.ba-detail');
+  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
+  await page.goto('/en/ma-stack'); await page.getByRole('button', { name: 'Save my stack', exact: true }).click();
+  await readable('.ms-account-google, .ms-account-fields input');
 });

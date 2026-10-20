@@ -1,3 +1,10 @@
+## 2026-10-21 : corrections finales comptes et stack
+
+- Déconnexion du back-office raccordée au cycle partagé : confirmation des modifications non enregistrées, annulation, reprise après échec et effacement des caches personnels. Le mode administrateur sans activation conserve sa connexion par mot de passe ; un nettoyage local bloqué affiche un avertissement distinct d’un échec d’authentification.
+- Agrégats SQL indisponibles si un snapshot global éligible est illisible, même hors recherche ou page ; formes anciennes et reprise tolérante des membres conservées. Le nouveau garde-fou reste réservé au serveur et figure dans le rollback.
+- Ma stack possède son provider dans le véritable rendu SSR des quatre alias FR/EN. Les fragments OAuth et les ancres encodées ne passent plus dans un sélecteur CSS ; les tâches de défilement périmées sont annulées. Les nouvelles surfaces comptes/back-office utilisent le token de thème existant en clair et sombre.
+- Régressions ciblées : 13 tests composants/SSR, 66 tests API et recette SQL PASS ; 5 parcours navigateur ciblés PASS, dont retour Google sans erreur de page et contraste calculé clair/sombre. Le contrôleur conserve les vérifications intégrées finales ; aucune activation, migration distante ou publication effectuée.
+
 ## 2026-10-20 : comptes et stack complète, recette locale préparée
 
 - Livraison A derrière deux flags désactivés par défaut : code e-mail/Google, sauvegarde complète v4, caches par compte, conflits explicites et suppression reprenable. Le back-office comptes/stacks utilise AppShellV2 et les fiches JSON, avec autorisation administrateur côté serveur.

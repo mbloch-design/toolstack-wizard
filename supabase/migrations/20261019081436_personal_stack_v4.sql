@@ -19,6 +19,29 @@ language sql immutable security invoker set search_path = pg_catalog as $$
  ) else false end
 $$;
 
+-- Minimal persisted-envelope recognition, matching normalizeStoredPersonalStack.
+-- Member recovery stays tolerant; strict validation is for new writes only.
+create function public._personal_stack_stored(p_state jsonb) returns boolean
+language plpgsql immutable security invoker set search_path = pg_catalog as $$
+declare s jsonb; b jsonb;
+begin
+ if jsonb_typeof(p_state) is distinct from 'object' then return false; end if;
+ if p_state->'version' = '4'::jsonb then
+  s := p_state->'selection'; b := p_state->'billing';
+  return coalesce(jsonb_typeof(s)='object' and s->'version'='3'::jsonb
+    and jsonb_typeof(s->'needs')='array' and jsonb_typeof(s->'toolEntries')='array'
+    and jsonb_typeof(s->'pinnedToolSlugs')='array' and jsonb_typeof(b)='object'
+    and jsonb_typeof(b->'paid')='array' and jsonb_typeof(b->'reviewed')='array'
+    and jsonb_typeof(b->'choices')='object' and jsonb_typeof(p_state->'decisions')='object',false);
+ end if;
+ return coalesce(not (p_state ? 'selection')
+   and (not (p_state ? 'version') or p_state->'version'='3'::jsonb)
+   and (jsonb_typeof(p_state->'pinnedToolSlugs')='array' or jsonb_typeof(p_state->'toolEntries')='array')
+   and (not (p_state ? 'needs') or jsonb_typeof(p_state->'needs')='array')
+   and (not (p_state ? 'pinnedToolSlugs') or jsonb_typeof(p_state->'pinnedToolSlugs')='array')
+   and (not (p_state ? 'toolEntries') or jsonb_typeof(p_state->'toolEntries')='array'),false);
+end $$;
+
 create function public._personal_stack_valid(p_state jsonb) returns boolean
 language plpgsql stable security invoker set search_path = pg_catalog as $$
 declare s jsonb; b jsonb; v jsonb; n jsonb; k text; ids text[]; num numeric;
@@ -148,7 +171,7 @@ end $$;
 -- live session only. No client-supplied role or metadata can confer admin rights.
 create function public.accounts_dashboard(p_admin uuid, p_session uuid, p_query jsonb default '{}'::jsonb) returns jsonb
 language plpgsql security invoker set search_path = pg_catalog as $$
-declare mode text; page_no integer; page_size integer; search_text text; target uuid; result jsonb;
+declare source_invalid boolean; mode text; page_no integer; page_size integer; search_text text; target uuid; result jsonb;
  trim_chars constant text := E' \t\n\r\f\013' || U&'\00A0\1680\2000\2001\2002\2003\2004\2005\2006\2007\2008\2009\200A\2028\2029\202F\205F\3000\FEFF';
 begin
  perform pg_advisory_xact_lock(hashtextextended(p_admin::text,478321));
@@ -210,21 +233,22 @@ begin
    select * from eligible where search_text='' or position(lower(search_text) in lower(coalesce(email,'') || ' ' || coalesce(display_name,'')))>0
  ), paged as (
    select * from filtered order by created_at desc,id limit page_size offset (page_no::bigint-1)*page_size
- ) select jsonb_build_object(
+ ) select exists(select from eligible where owner_id is not null and not public._personal_stack_stored(state)), jsonb_build_object(
    'totals',jsonb_build_object('accounts',(select count(*) from eligible),
      'accountsWithStack',(select count(*) from eligible where owner_id is not null),
      'nonemptyStacks',(select count(distinct id) from tools)),
    'topTools',coalesce((select jsonb_agg(jsonb_build_object('toolSlug',slug,'usedAccounts',used_accounts,'wishlistAccounts',wishlist_accounts) order by used_accounts+wishlist_accounts desc,slug) from top_tools),'[]'::jsonb),
    'accounts',coalesce((select jsonb_agg(jsonb_build_object('userId',id,'email',email,'displayName',display_name,'createdAt',created_at,'hasStack',owner_id is not null,'stackUpdatedAt',stack_updated_at) order by created_at desc,id) from paged),'[]'::jsonb),
-   'page',page_no,'pageSize',page_size,'total',(select count(*) from filtered),'updatedAt',clock_timestamp()) into result;
+   'page',page_no,'pageSize',page_size,'total',(select count(*) from filtered),'updatedAt',clock_timestamp()) into source_invalid,result;
+ if source_invalid then raise sqlstate 'PT503' using message='ACCOUNTS_SOURCE_UNAVAILABLE'; end if;
  return result;
 end $$;
 
-revoke all on function public._personal_stack_strings(jsonb), public._personal_stack_valid(jsonb),
+revoke all on function public._personal_stack_strings(jsonb), public._personal_stack_valid(jsonb),public._personal_stack_stored(jsonb),
  public.require_account_session(uuid,uuid),public.read_personal_stack(uuid,uuid),
  public.save_personal_stack(uuid,uuid,bigint,jsonb),public.begin_personal_account_deletion(uuid,uuid),
  public.accounts_dashboard(uuid,uuid,jsonb) from public,anon,authenticated;
-grant execute on function public._personal_stack_strings(jsonb), public._personal_stack_valid(jsonb),
+grant execute on function public._personal_stack_strings(jsonb), public._personal_stack_valid(jsonb),public._personal_stack_stored(jsonb),
  public.require_account_session(uuid,uuid),public.read_personal_stack(uuid,uuid),
  public.save_personal_stack(uuid,uuid,bigint,jsonb),public.begin_personal_account_deletion(uuid,uuid),
  public.accounts_dashboard(uuid,uuid,jsonb) to service_role;

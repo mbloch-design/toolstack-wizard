@@ -1,12 +1,15 @@
-import { act, fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render as rtlRender, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
-const mocks=vi.hoisted(()=>({legacy:vi.fn(),list:vi.fn(),detail:vi.fn(),getSession:vi.fn(),onAuthStateChange:vi.fn(),signInWithPassword:vi.fn()}));
-vi.mock("@/integrations/supabase/client",()=>({supabase:{auth:{getSession:mocks.getSession,onAuthStateChange:mocks.onAuthStateChange,signInWithPassword:mocks.signInWithPassword,signOut:vi.fn()}}}));
+const mocks=vi.hoisted(()=>({legacy:vi.fn(),list:vi.fn(),detail:vi.fn(),getSession:vi.fn(),onAuthStateChange:vi.fn(),signInWithPassword:vi.fn(),signOut:vi.fn()}));
+vi.mock("@/integrations/supabase/client",()=>({supabase:{auth:{getSession:mocks.getSession,onAuthStateChange:mocks.onAuthStateChange,signInWithPassword:mocks.signInWithPassword,signOut:mocks.signOut}}}));
 vi.mock("@/lib/backofficeAccountsApi",()=>({loadAccountsDashboard:mocks.list,loadAccountDetail:mocks.detail}));
 vi.mock("@/lib/backofficeApi",()=>({fetchBackofficeDashboard:mocks.legacy,fetchBackofficeSessionDetail:vi.fn(),updateBackofficeEmailJob:vi.fn(),updateBackofficeSessionAdmin:vi.fn()}));
+import { StackAccountProvider } from "@/hooks/useStackAccount";
+import type { ReactNode } from "react";
+const render = (ui: ReactNode) => rtlRender(<StackAccountProvider enabled={false}>{ui}</StackAccountProvider>);
 import BackOfficePage from "./BackOfficePage";
 import { LangContext } from "@/hooks/useLang";
-afterEach(()=>{vi.useRealTimers();vi.clearAllMocks();vi.unstubAllGlobals();});
+afterEach(()=>{vi.useRealTimers();vi.clearAllMocks();vi.unstubAllGlobals();vi.restoreAllMocks();});
 describe("back-office accounts entry",()=>{
  it("loads accounts by default and never fetches or polls diagnostic data before explicit selection",async()=>{
   vi.useFakeTimers();vi.stubGlobal("localStorage",window.sessionStorage);
@@ -44,4 +47,32 @@ describe("accessible administrator entry", () => {
   expect(screen.getByTestId("accounts-total")).toHaveTextContent("26");
   expect(mocks.legacy).not.toHaveBeenCalled();
  });
+});
+
+describe("feature-disabled administrator logout", () => {
+ it.each([false, true])("keeps password admin logout usable; SDK failure=%s", async failed => {
+  vi.stubGlobal("localStorage", window.sessionStorage);
+  mocks.getSession.mockResolvedValue({data:{session:{access_token:"admin-session",user:{email:"admin@example.test"}}}});
+  mocks.onAuthStateChange.mockReturnValue({data:{subscription:{unsubscribe:vi.fn()}}});
+  mocks.list.mockResolvedValue({totals:{accounts:26,accountsWithStack:0,nonemptyStacks:0},topTools:[],accounts:[],page:1,pageSize:25,total:26,updatedAt:"2026-10-20T12:00:00Z"});
+  mocks.signOut.mockResolvedValue({ error: failed ? new Error("SDK refused") : null });
+  render(<BackOfficePage />); await act(async () => {});
+  fireEvent.click(screen.getByRole("button", { name: "Fermer" })); await act(async () => {});
+  if (failed) { expect(screen.getByTestId("accounts-total")).toHaveTextContent("26"); expect(screen.getByRole("alert")).toHaveTextContent("déconnexion a échoué"); }
+  else expect(screen.getByRole("form", { name: "Connexion administrateur" })).toBeInTheDocument();
+ });
+});
+
+it("reports blocked local cleanup after successful admin signout without claiming auth failed", async () => {
+ vi.stubGlobal("localStorage", window.sessionStorage);
+ mocks.getSession.mockResolvedValue({data:{session:{access_token:"admin-session",user:{email:"admin@example.test"}}}});
+ mocks.onAuthStateChange.mockReturnValue({data:{subscription:{unsubscribe:vi.fn()}}});
+ mocks.list.mockResolvedValue({totals:{accounts:26,accountsWithStack:0,nonemptyStacks:0},topTools:[],accounts:[],page:1,pageSize:25,total:26,updatedAt:"2026-10-20T12:00:00Z"});
+ mocks.signOut.mockResolvedValue({ error: null });
+ render(<BackOfficePage />); await act(async () => {});
+ vi.stubGlobal("localStorage", { removeItem: () => { throw new Error("storage blocked"); } });
+ fireEvent.click(screen.getByRole("button", { name: "Fermer" })); await act(async () => {});
+ expect(screen.getByRole("form", { name: "Connexion administrateur" })).toBeInTheDocument();
+ expect(screen.getByRole("alert")).toHaveTextContent("le navigateur a bloqué une partie du nettoyage");
+ expect(screen.queryByText("La déconnexion a échoué. Réessayez.")).not.toBeInTheDocument();
 });

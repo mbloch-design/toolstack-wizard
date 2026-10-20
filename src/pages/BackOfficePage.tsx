@@ -2,6 +2,7 @@ import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import { AccountsDashboard } from "@/components/backoffice/AccountsDashboard";
 import type { Session } from "@supabase/supabase-js";
+import { useStackAccount } from "@/hooks/useStackAccount";
 import { useLang } from "@/hooks/useLang";
 import { removeNoindex, setNoindex } from "@/lib/seo";
 import { supabase } from "@/integrations/supabase/client";
@@ -427,6 +428,10 @@ function toAdminSession(session: Session | null): AdminSession | null {
 
 export default function BackOfficePage() {
   const { lang, t } = useLang();
+  const account = useStackAccount();
+  const [logoutPrompt, setLogoutPrompt] = useState(false);
+  const [logoutError, setLogoutError] = useState(false);
+  const [logoutCleanupWarning, setLogoutCleanupWarning] = useState(false);
   const locale = lang === "en" ? "en" : "fr";
   const loginId = useId();
 
@@ -878,16 +883,35 @@ export default function BackOfficePage() {
     }
   }, [adminEmailInput, adminPasswordInput, t]);
 
-  const disconnect = useCallback(() => {
-    void supabase.auth.signOut();
-    localStorage.removeItem(LEGACY_STORAGE_KEY);
-    localStorage.removeItem(LEGACY_SESSION_STORAGE_KEY);
-    setAdminSession(null);
-    setDashboard(null);
-    setDetail(null);
-    setError(null);
-    setDetailError(null);
-  }, []);
+  const disconnect = useCallback(async (discardUnsaved = false) => {
+    if (authLoading) return;
+    setLogoutError(false);
+    if (account.enabled && account.hasUnsavedChanges && !discardUnsaved) {
+      setLogoutPrompt(true);
+      await account.signOut();
+      return;
+    }
+    setAuthLoading(true);
+    try {
+      if (account.enabled) {
+        if (!await account.signOut({ discardUnsaved })) { setLogoutError(true); return; }
+      } else {
+        const { error: signOutError } = await supabase.auth.signOut();
+        if (signOutError) throw signOutError;
+      }
+      try {
+        localStorage.removeItem(LEGACY_STORAGE_KEY);
+        localStorage.removeItem(LEGACY_SESSION_STORAGE_KEY);
+      } catch { setLogoutCleanupWarning(true); }
+      setLogoutPrompt(false);
+      setAdminSession(null);
+      setDashboard(null);
+      setDetail(null);
+      setError(null);
+      setDetailError(null);
+    } catch { setLogoutError(true); }
+    finally { setAuthLoading(false); }
+  }, [account, authLoading]);
 
   const saveSessionAdmin = useCallback(async () => {
     if (!adminSession || !detail?.session?.session_id) return;
@@ -1259,6 +1283,20 @@ export default function BackOfficePage() {
     );
   }, [locale, qualityRows]);
 
+  const logoutFeedback = <>
+    {logoutError && <p className="ba-login-error" role="alert">{t("La déconnexion a échoué. Réessayez.", "Sign-out failed. Please try again.")}</p>}
+    {(account.privacyWarning || logoutCleanupWarning) && <p className="ba-login-error" role="alert">{account.privacyWarning === "ACCOUNT_LOCAL_RECOVERY_PENDING"
+      ? t("Certaines données locales n’ont pas encore pu être récupérées. Elles sont conservées sur cet appareil pour une nouvelle tentative.", "Some local data could not be recovered yet. It remains on this device for another attempt.")
+      : t("L’affichage personnel a été effacé, mais le navigateur a bloqué une partie du nettoyage. Effacez les données du site ToolTrim dans les réglages de votre navigateur avant de fermer cet appareil partagé.", "Your personal view was cleared, but the browser blocked part of the cleanup. Clear ToolTrim site data in your browser settings before leaving this shared device.")}</p>}
+    {logoutPrompt && <div className="ms-account-choice" aria-busy={authLoading}>
+      <p>{t("Certaines modifications ne sont pas enregistrées. Les abandonner en vous déconnectant ?", "Some changes are not saved. Discard them and sign out?")}</p>
+      <div className="ms-account-actions">
+        <button type="button" className="ms-account-outline-button" disabled={authLoading} onClick={() => void disconnect(true)}>{t("Me déconnecter sans enregistrer", "Sign out without saving")}</button>
+        <button type="button" className="ms-account-text-button" disabled={authLoading} onClick={() => setLogoutPrompt(false)}>{t("Continuer mes modifications", "Keep editing")}</button>
+      </div>
+    </div>}
+  </>;
+
   if (!adminSession) {
     return (
       <section className="ba-shell ba-access" aria-labelledby={`${loginId}-page-title`}>
@@ -1267,6 +1305,7 @@ export default function BackOfficePage() {
           <h1 id={`${loginId}-page-title`}>{t("Back-office ToolTrim", "ToolTrim back office")}</h1>
           <p>{t("Retrouvez les comptes et les stacks enregistrées.", "View accounts and their saved stacks.")}</p>
         </div></header>
+        {logoutFeedback}
         <form className="ba-login" aria-label={t("Connexion administrateur", "Administrator sign-in")} aria-busy={authLoading}
           onSubmit={event => { event.preventDefault(); void connect(); }}>
           <div className="ba-login-heading"><Lock size={20} aria-hidden="true"/><h2>{t("Accès administrateur", "Administrator access")}</h2></div>
@@ -1299,9 +1338,10 @@ export default function BackOfficePage() {
       <header className="ba-heading ba-entry-header"><div><h1>{t("Back-office ToolTrim", "ToolTrim back office")}</h1><p>{adminSession.email || t("Compte connecté", "Signed-in account")}</p></div>
         <nav className="ba-actions" aria-label={t("Sections du back-office", "Back-office sections")}>
           <button className="ba-button" onClick={() => setActiveTab("preprod")}>{t("Diagnostic historique", "Historical diagnostic")}</button>
-          <button className="ba-button" onClick={disconnect}><LogOut aria-hidden="true"/>{t("Fermer", "Sign out")}</button>
+          <button className="ba-button" disabled={authLoading} onClick={() => void disconnect()}><LogOut aria-hidden="true"/>{t("Fermer", "Sign out")}</button>
         </nav>
       </header>
+      {logoutFeedback}
       <AccountsDashboard key={adminSession.accessToken}/>
     </div>
   );
@@ -1351,7 +1391,7 @@ export default function BackOfficePage() {
             {t("Rafraîchir", "Refresh")}
           </button>
           <button
-            onClick={disconnect}
+            disabled={authLoading} onClick={() => void disconnect()}
             className="h-9 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
           >
             <LogOut className="w-4 h-4" />
@@ -1360,6 +1400,7 @@ export default function BackOfficePage() {
         </div>
       </div>
 
+      {logoutFeedback}
       {error && (
         <div className="border border-red-300 bg-red-50 text-red-700 rounded-lg px-4 py-3 text-sm">
           {error}

@@ -75,10 +75,14 @@ const ScrollToTop = () => {
   // grows, browser scroll anchoring can keep the footer in view.
   useIsomorphicLayoutEffect(() => {
     if (hash) {
-      window.setTimeout(() => {
-        document.querySelector(hash)?.scrollIntoView({ block: "start" });
+      // OAuth response parameters are fragments too, never CSS selectors.
+      // ID lookup also supports punctuation and percent-encoded anchor IDs.
+      let id: string;
+      try { id = decodeURIComponent(hash.slice(1)); } catch { return; }
+      const timer = window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ block: "start" });
       }, 0);
-      return;
+      return () => window.clearTimeout(timer);
     }
 
     const locationState = state as ScrollLocationState | null;

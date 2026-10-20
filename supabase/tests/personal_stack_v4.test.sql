@@ -21,7 +21,7 @@ grant execute on all functions in schema accounts_test to anon, authenticated, s
 select accounts_test.ok(not has_table_privilege('authenticated','public.stack_snapshots','UPDATE'), 'clients cannot bypass revision checks');
 select accounts_test.ok(not has_table_privilege('authenticated','public.profiles','UPDATE'), 'clients cannot alter deletion status');
 select accounts_test.ok(not exists(select 1 from pg_proc p join pg_namespace n on n.oid=p.pronamespace
- where n.nspname='public' and p.proname in ('require_account_session','read_personal_stack','save_personal_stack','begin_personal_account_deletion','accounts_dashboard')
+ where n.nspname='public' and p.proname in ('_personal_stack_stored','require_account_session','read_personal_stack','save_personal_stack','begin_personal_account_deletion','accounts_dashboard')
  and (has_function_privilege('anon',p.oid,'EXECUTE') or has_function_privilege('authenticated',p.oid,'EXECUTE') or p.prosecdef)), 'all RPCs invoker and service-only');
 
 insert into auth.users (id,email,email_confirmed_at) values
@@ -99,6 +99,22 @@ do $$ declare dashboard jsonb; begin
  dashboard := public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,jsonb_build_object('mode','detail','userId',current_setting('test.b')));
  perform accounts_test.ok(dashboard->>'email'='b@example.invalid' and dashboard->'stack'->>'revision'='1','detail returns selected account');
  perform accounts_test.throws('select public.accounts_dashboard(current_setting(''test.a'')::uuid,current_setting(''test.sa'')::uuid,''{"pageSize":101}'')','PT400','invalid dashboard pagination rejected');
+end $$;
+-- Global unreadable source must fail even outside the requested search/page.
+do $$ declare bad jsonb; query jsonb; original jsonb; begin
+ select state into original from public.stack_snapshots where owner_id=current_setting('test.b')::uuid;
+ for bad in select value from jsonb_array_elements('[{}, {"version":4,"selection":null}, {"version":3}, {"version":5,"pinnedToolSlugs":[]}, {"pinnedToolSlugs":[],"needs":null}]') loop
+  update public.stack_snapshots set state=bad where owner_id=current_setting('test.b')::uuid;
+  for query in select value from jsonb_array_elements('[{}, {"search":"a@example.invalid"}, {"page":20,"pageSize":1}]') loop
+   perform accounts_test.throws(format('select public.accounts_dashboard(%L::uuid,%L::uuid,%L::jsonb)',current_setting('test.a'),current_setting('test.sa'),query),'PT503','unreadable global source is unavailable');
+  end loop;
+ end loop;
+ -- Structural recognition is tolerant of members, and accepts old partial selections.
+ for bad in select value from jsonb_array_elements('[{"pinnedToolSlugs":[]}, {"toolEntries":[]}, {"version":3,"pinnedToolSlugs":[]}, {"version":3,"toolEntries":[null, {"toolSlug":"recovered"}]}, {"version":4,"selection":{"version":3,"needs":[],"toolEntries":[null],"pinnedToolSlugs":[]},"billing":{"paid":[],"reviewed":[],"choices":{}},"decisions":{}}]') loop
+  update public.stack_snapshots set state=bad where owner_id=current_setting('test.b')::uuid;
+  perform accounts_test.ok(public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,'{}')->'totals'->>'accountsWithStack'='2','recognizable empty or tolerant legacy remains available');
+ end loop;
+ update public.stack_snapshots set state=original where owner_id=current_setting('test.b')::uuid;
 end $$;
 -- Existing owner policies remain a second defense if SELECT is accidentally restored.
 reset role;
