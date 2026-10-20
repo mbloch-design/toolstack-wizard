@@ -141,7 +141,7 @@
     }
   },
   {
-    "name": "RGE Studio (Beefree)",
+    "name": "Beefree",
     "slug": "beefree",
     "url_fr": "https://tooltrim.com/fr/tool/beefree",
     "url_en": "https://tooltrim.com/en/tool/beefree",
