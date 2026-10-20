@@ -16,7 +16,7 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 - [ ] En cours : grilles en dollars pour 25 fiches enregistrées en euros par géolocalisation ; 7 sans grille dollars accessible (GitLens, Gmail, Linktree, Luminar Neo, Motion Array, NordPass, Notion)
 - [ ] Prix à vérifier par un humain (navigateur ordinaire) : Arnold, Autodesk Flow Studio, Patreon, Vimeo (compte obligatoire), Billo
 - [ ] Prix publiés mais douteux : Rydoo (5 postes minimum), Microsoft Defender (mensuel = annuel), Restream Business, D5 Render (unité Teams), Indy (auto-entrepreneur seulement), Doola, Descript, Superlist, Unity Pro, NetSuite (estimations tierces), Smartsuite (3 sièges minimum), Kajabi
-- [ ] Crowdfire (site pivoté, plus de prix) et StreamElements (aucune grille Plus) **[décision]** : produits encore vivants ?
+- [x] Crowdfire marqué arrêté (le site annonce sa transformation en média), 5 alternatives ; StreamElements gratuit à vie selon l'éditeur, ancienne offre à 10 $ retirée (20/10).
 - [ ] Stripe : commission en pourcentage impossible à saisir dans le schéma v2 ; ajouter un champ de taux (aussi Shopify Payments, aujourd'hui « sur devis »)
 - [ ] Devises non gérées : Razorpay (INR), Skribble (CHF), Ownr (CAD)
 - [ ] Afficher le champ `tagline` dans le catalogue (aujourd'hui `toolTaglines.ts`) et un badge « racheté / renommé » depuis `lifecycle`

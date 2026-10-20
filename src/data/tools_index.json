@@ -10674,11 +10674,19 @@
     "slug": "crowdfire-inc",
     "name": "Crowdfire Inc",
     "categoryId": "email-productivity",
-    "shortDescription": "Plateforme de gestion des réseaux sociaux.",
-    "shortDescriptionEn": "Social media management platform.",
+    "shortDescription": "Ancien outil de planification et de suivi des réseaux sociaux, arrêté en 2026 : Crowdfire devient un média. Voir les alternatives.",
+    "shortDescriptionEn": "Former social media scheduling and monitoring tool, retired in 2026 as Crowdfire turns into a media outlet. See the alternatives.",
+    "pricing": {
+      "free": "Produit arrêté.",
+      "paid": "Plus aucune offre vendue : le site annonce sa transformation en média."
+    },
+    "pricingEn": {
+      "free": "Discontinued.",
+      "paid": "No plan sold any more: the site announces its shift to a media outlet."
+    },
     "affiliateLink": "https://crowdfireapp.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/crowdfire-inc.jpg",
-    "substitution_cluster_v2": "email-outreach",
+    "substitution_cluster_v2": "social-media-scheduler",
     "functional_needs": [
       "social-media-management"
     ],
@@ -10691,7 +10699,14 @@
       "Petites agences social",
       "Teams marketing multi-réseaux"
     ],
-    "prescription_quality": "question"
+    "prescription_quality": "question",
+    "alternatives": [
+      "buffer",
+      "metricool",
+      "publer",
+      "socialbee",
+      "hootsuite"
+    ]
   },
   {
     "id": "crowdstrike",
@@ -43620,15 +43635,14 @@
     "shortDescription": "Overlays, alertes et boutique merch pour streamers, sans abonnement obligatoire.",
     "shortDescriptionEn": "Overlays, alerts and a merch store for streamers, no subscription required.",
     "pricing": {
-      "free": "Gratuit : overlays, chatbot, alertes, boutique merch (tailles et designs limités).",
-      "paid": "Entrée payante dès 10$/mois pour plus de tailles de merch et d'overlays, et un meilleur accompagnement débutant."
+      "free": "Gratuit : alertes, overlays, widgets et chatbot pour le live, présentés comme gratuits à vie.",
+      "paid": "Aucune offre payante publiée ; partenariats et sponsorings sur demande."
     },
     "pricingEn": {
-      "free": "Free: overlays, chatbot, alerts, merch store (limited sizes and designs).",
-      "paid": "Paid tier starting at $10/month for more merch sizes, overlays, and better beginner support."
+      "free": "Free: alerts, overlays, widgets and chatbot for live streams, presented as free forever.",
+      "paid": "No paid plan published; partnerships and sponsorships on request."
     },
     "compareMonthlyPrice": 0,
-    "priceUndisclosed": true,
     "affiliateLink": "https://streamelements.com",
     "ogImageUrl": "https://cdn.streamelements.com/assets/homepage/og/main.jpg",
     "logo": "https://logo.clearbit.com/streamelements.com",

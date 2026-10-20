@@ -50872,12 +50872,12 @@
   {
     "id": "crowdfire-inc",
     "name": "Crowdfire Inc",
-    "shortDescription": "Plateforme de gestion des réseaux sociaux.",
-    "description": "Crowdfire Inc, c'est plateforme de gestion des réseaux sociaux. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en social media management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage.",
+    "shortDescription": "Ancien outil de planification et de suivi des réseaux sociaux, arrêté en 2026 : Crowdfire devient un média. Voir les alternatives.",
+    "description": "Ancien outil de planification et de suivi des réseaux sociaux, arrêté en 2026 : Crowdfire devient un média. Voir les alternatives.",
     "category": "email-productivity",
     "pricing": {
-      "free": null,
-      "paid": null
+      "free": "Produit arrêté.",
+      "paid": "Plus aucune offre vendue : le site annonce sa transformation en média."
     },
     "website": "https://crowdfireapp.com",
     "affiliateLink": "https://crowdfireapp.com",
@@ -50928,7 +50928,13 @@
       ],
       "threshold": "Crowdfire excelle pour social simple ; pour email/marketing/automation, utiliser Brevo/Mailchimp plutôt."
     },
-    "alternatives": [],
+    "alternatives": [
+      "buffer",
+      "metricool",
+      "publer",
+      "socialbee",
+      "hootsuite"
+    ],
     "seo": {
       "metaDescription": "Crowdfire Inc : Plateforme de gestion des réseaux sociaux. Découvrez si cet outil vaut le coup pour votre activité freelance."
     },
@@ -50948,21 +50954,31 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "crowdfire-inc",
-    "shortDescriptionEn": "Social media management platform.",
-    "longDescription": "Crowdfire Inc, c'est plateforme de gestion des réseaux sociaux. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en social media management, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage.",
-    "longDescriptionEn": "Crowdfire Inc is social media management platform. Built for e-commerce sellers and SaaS founders.\n\nSpecialized in social media management, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified depending on usage.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Former social media scheduling and monitoring tool, retired in 2026 as Crowdfire turns into a media outlet. See the alternatives.",
+    "longDescription": "Crowdfire a aidé pendant une quinzaine d'années les créateurs et petites équipes à planifier leurs publications et à suivre leurs comptes sociaux. En 2026, l'éditeur a arrêté l'outil : le site annonce que Crowdfire devient un média consacré aux réseaux sociaux, au Web3 et à l'IA, et n'affiche plus ni offre ni inscription.\n\nPour planifier ses publications, les remplaçants directs sont Buffer, Metricool, Publer, SocialBee ou Hootsuite, selon le budget et le nombre de comptes à gérer.",
+    "longDescriptionEn": "For about fifteen years Crowdfire helped creators and small teams schedule posts and monitor their social accounts. In 2026 the company retired the tool: the site says Crowdfire is becoming a media outlet on social media, Web3 and AI, and no longer shows any plan or sign-up.\n\nTo keep scheduling posts, the direct replacements are Buffer, Metricool, Publer, SocialBee or Hootsuite, depending on budget and number of accounts.",
+    "pricingEn": {
+      "free": "Discontinued.",
+      "paid": "No plan sold any more: the site announces its shift to a media outlet."
+    },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-20",
+      "official_source_url": "https://www.crowdfireapp.com/",
       "source_domain": "crowdfireapp.com",
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "medium",
       "location_sensitive": false,
-      "official_source_url": "https://www.crowdfireapp.com/",
-      "verification_status": "official_contextual"
+      "compare_plan_kind": "discontinued",
+      "compare_plan_name": "Crowdfire",
+      "compare_price_monthly_eur": null,
+      "cautions": [
+        "Outil arrêté : le site annonce « Crowdfire is evolving » vers un média, sans offre ni inscription."
+      ],
+      "cautionsEn": [
+        "Tool retired: the site announces « Crowdfire is evolving » into a media outlet, with no plan or sign-up."
+      ],
+      "plans": []
     },
     "websiteUrl": "https://crowdfireapp.com",
     "logo": "",
@@ -51018,7 +51034,7 @@
       "deliverability_requirement",
       "multichannel_requirement"
     ],
-    "substitution_cluster_v2": "email-outreach",
+    "substitution_cluster_v2": "social-media-scheduler",
     "decision_policy_v3": {
       "auto_cancel_allowed": true,
       "auto_replace_allowed": true,
@@ -51028,7 +51044,34 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/crowdfire-inc.jpg"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/crowdfire-inc.jpg",
+    "lifecycle": {
+      "status": "discontinued",
+      "note": {
+        "fr": "Crowdfire a arrêté son outil de gestion des réseaux sociaux en 2026 et devient un média sur les réseaux sociaux, le Web3 et l'IA ; le site n'affiche plus d'offre.",
+        "en": "Crowdfire retired its social media management tool in 2026 and is becoming a media outlet on social media, Web3 and AI; the site no longer shows any plan."
+      },
+      "checkedOn": "2026-10-20"
+    },
+    "pricing_v5En": {
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-20",
+      "official_source_url": "https://www.crowdfireapp.com/",
+      "source_domain": "crowdfireapp.com",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "compare_plan_kind": "discontinued",
+      "compare_plan_name": "Crowdfire",
+      "compare_price_monthly_eur": null,
+      "cautions": [
+        "Tool retired: the site announces « Crowdfire is evolving » into a media outlet, with no plan or sign-up."
+      ],
+      "cautionsEn": [
+        "Tool retired: the site announces « Crowdfire is evolving » into a media outlet, with no plan or sign-up."
+      ],
+      "plans": []
+    }
   },
   {
     "id": "crowdstrike",
@@ -203814,28 +203857,55 @@
     "longDescription": "StreamElements fonctionne sans abonnement obligatoire : l'essentiel (overlays, chatbot, alertes, et même une boutique merch intégrée) est accessible gratuitement, ce qui le distingue de Streamlabs qui pousse plus fort vers Prime. La contrepartie, c'est que le plan gratuit limite les tailles de merch et certains designs d'overlay.\n\nÀ partir de 10$/mois, on débloque plus de tailles de merch, plus d'overlays et un meilleur accompagnement pour les nouveaux streamers. Pour qui veut juste streamer avec des widgets propres sans payer, c'est l'un des choix les plus généreux du marché.",
     "longDescriptionEn": "StreamElements works with no subscription required: the essentials (overlays, chatbot, alerts, and even an integrated merch store) are accessible for free, which sets it apart from Streamlabs, which pushes harder toward Prime. The trade-off is that the free plan limits merch sizes and some overlay designs.\n\nStarting at $10/month, you unlock more merch sizes, more overlays and better support for new streamers. For anyone who just wants to stream with clean widgets without paying, it's one of the most generous options on the market.",
     "pricing": {
-      "free": "Gratuit : overlays, chatbot, alertes, boutique merch (tailles et designs limités).",
-      "paid": "Entrée payante dès 10$/mois pour plus de tailles de merch et d'overlays, et un meilleur accompagnement débutant."
+      "free": "Gratuit : alertes, overlays, widgets et chatbot pour le live, présentés comme gratuits à vie.",
+      "paid": "Aucune offre payante publiée ; partenariats et sponsorings sur demande."
     },
     "pricingEn": {
-      "free": "Free: overlays, chatbot, alerts, merch store (limited sizes and designs).",
-      "paid": "Paid tier starting at $10/month for more merch sizes, overlays, and better beginner support."
+      "free": "Free: alerts, overlays, widgets and chatbot for live streams, presented as free forever.",
+      "paid": "No paid plan published; partnerships and sponsorships on request."
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
-      "cautions": [
-        "Prix à vérifier sur la page officielle avant décision."
-      ],
-      "verified_on": "2026-05-11",
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-20",
+      "official_source_url": "https://streamelements.com/",
       "source_domain": "streamelements.com",
-      "usage_sensitive": true,
-      "compare_plan_kind": "custom",
-      "compare_plan_name": "Prix non public",
-      "price_reliability": "official_context_required",
+      "usage_sensitive": false,
       "location_sensitive": false,
-      "official_source_url": "https://streamelements.com",
-      "verification_status": "needs_official_quote",
-      "compare_price_monthly_eur": 0
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "cautions": [
+        "L'éditeur se finance par les sponsorings et partenariats avec les streamers, pas par abonnement ; l'ancienne offre payante à 10 $/mois n'apparaît plus."
+      ],
+      "cautionsEn": [
+        "The company earns from sponsorships and streamer partnerships, not subscriptions; the former $10/month paid tier no longer appears."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Gratuit à vie selon l'éditeur.",
+          "featureHighlights": [
+            "Alertes et overlays animés",
+            "Éditeur visuel de widgets",
+            "Chatbot"
+          ],
+          "detailsSourceUrl": "https://streamelements.com/",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        }
+      ]
     },
     "affiliateLink": "https://streamelements.com",
     "websiteUrl": "https://streamelements.com",
@@ -203944,7 +204014,49 @@
     "substitution_cluster_v2": "streaming-overlay-software",
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.streamelements.com/assets/homepage/og/main.jpg",
-    "force_silence": false
+    "force_silence": false,
+    "pricing_v5En": {
+      "price_reliability": "high",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-10-20",
+      "official_source_url": "https://streamelements.com/",
+      "source_domain": "streamelements.com",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "cautions": [
+        "The company earns from sponsorships and streamer partnerships, not subscriptions; the former $10/month paid tier no longer appears."
+      ],
+      "cautionsEn": [
+        "The company earns from sponsorships and streamer partnerships, not subscriptions; the former $10/month paid tier no longer appears."
+      ],
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Free forever, per the vendor.",
+          "featureHighlights": [
+            "Alertes et overlays animés",
+            "Éditeur visuel de widgets",
+            "Chatbot"
+          ],
+          "detailsSourceUrl": "https://streamelements.com/",
+          "pricingUnit": "account",
+          "isFree": true,
+          "isComparePlan": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedOn": "2026-10-20",
+          "lastConfirmedOn": "2026-10-20"
+        }
+      ]
+    }
   },
   {
     "id": "streamelements-widgets",
