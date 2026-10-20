@@ -67414,7 +67414,23 @@
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "EasyDMARC : SaaS pour résoudre les problèmes de sécurité et délivrabilité email. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "EasyDMARC : SaaS pour résoudre les problèmes de sécurité et délivrabilité email. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "presentationTitleEn": "EasyDMARC: DMARC, SPF and DKIM made easy",
+      "presentationTitleFr": "EasyDMARC : DMARC, SPF et DKIM simplifiés",
+      "presentationMetaDescriptionEn": "EasyDMARC secures your email domains and fixes deliverability with automated DMARC management, SPF and DKIM tools and expert support. From {price}/mo.",
+      "presentationMetaDescriptionFr": "EasyDMARC sécurise vos domaines e-mail et améliore la délivrabilité : DMARC automatisé, outils SPF et DKIM, support expert. Dès {price}/mois.",
+      "prixTitleEn": "EasyDMARC pricing: DMARC Plus {price}/mo",
+      "prixTitleFr": "Prix d'EasyDMARC : DMARC Plus {price}/mois",
+      "prixMetaDescriptionEn": "EasyDMARC pricing: DMARC, SPF and DKIM checkers with no sign-up, then DMARC Plus from {price}/mo for automated management, with higher plans by volume.",
+      "prixMetaDescriptionFr": "Prix d'EasyDMARC : vérificateurs DMARC, SPF et DKIM sans inscription, puis DMARC Plus dès {price}/mois pour la gestion automatisée, plus selon le volume.",
+      "altTitleEn": "EasyDMARC alternatives: dmarcian, Valimail",
+      "altTitleFr": "Alternatives à EasyDMARC : dmarcian, Valimail",
+      "altMetaDescriptionEn": "Want minimal setup or a different approach? dmarcian, Valimail and PowerDMARC compared with EasyDMARC on DMARC automation, support and price.",
+      "altMetaDescriptionFr": "Vous préférez des outils gratuits et peu de réglages ? dmarcian, Valimail et PowerDMARC comparés à EasyDMARC sur l'automatisation DMARC et le prix.",
+      "avisTitleEn": "EasyDMARC review: deliverability, automated",
+      "avisTitleFr": "Avis EasyDMARC : la délivrabilité automatisée",
+      "avisMetaDescriptionEn": "EasyDMARC review, rated {rating}: handy checkers without sign-up, fully automated DMARC and 24/7 experts; full management is paid and pricing is unclear.",
+      "avisMetaDescriptionFr": "Avis EasyDMARC, noté {rating} : vérificateurs sans inscription, DMARC automatisé et experts 24 h/24 ; la gestion complète est payante, prix peu clairs."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -67791,7 +67807,23 @@
     "websiteUrl": "https://ecovadis.com",
     "logo": "",
     "seo": {
-      "metaDescription": "EcoVadis : fiche ToolTrim avec usage, limites, alternatives et points de vigilance pour décider si l'outil mérite sa place dans votre stack."
+      "metaDescription": "EcoVadis : fiche ToolTrim avec usage, limites, alternatives et points de vigilance pour décider si l'outil mérite sa place dans votre stack.",
+      "presentationTitleEn": "EcoVadis: ESG ratings for supply chains",
+      "presentationTitleFr": "EcoVadis : notation RSE des fournisseurs",
+      "presentationMetaDescriptionEn": "EcoVadis rates suppliers' sustainability with standardized ESG assessments benchmarked by industry, used by 175,000+ companies in 180+ countries.",
+      "presentationMetaDescriptionFr": "EcoVadis évalue la performance RSE des fournisseurs avec des notations standardisées et comparées par secteur, utilisées par plus de 175 000 entreprises.",
+      "prixTitleEn": "EcoVadis pricing: on quote, by assessments",
+      "prixTitleFr": "Prix d'EcoVadis : sur devis, selon les évaluations",
+      "prixMetaDescriptionEn": "EcoVadis pricing: not public, quoted by the number of supplier assessments and modules; costly for small volumes under about 50 suppliers.",
+      "prixMetaDescriptionFr": "Prix d'EcoVadis : non public, chiffré selon le nombre d'évaluations fournisseurs et les modules ; coûteux pour moins d'une cinquantaine de fournisseurs.",
+      "altTitleEn": "EcoVadis alternatives for supplier ESG",
+      "altTitleFr": "Alternatives à EcoVadis pour la RSE fournisseurs",
+      "altMetaDescriptionEn": "A small business without complex suppliers? What to compare in ESG rating and supplier assessment platforms, from Sweep to IntegrityNext, before EcoVadis.",
+      "altMetaDescriptionFr": "Petite entreprise sans chaîne fournisseurs complexe ? Ce qu'il faut comparer dans les plateformes RSE, de Sweep à IntegrityNext, avant EcoVadis.",
+      "avisTitleEn": "EcoVadis review: the shared ESG standard",
+      "avisTitleFr": "Avis EcoVadis : le standard RSE partagé",
+      "avisMetaDescriptionEn": "EcoVadis review, rated {rating}: a common, benchmarked ESG standard across 180+ countries; pricey at low volume, with costs that scale per assessment.",
+      "avisMetaDescriptionFr": "Avis EcoVadis, noté {rating} : un standard RSE commun et comparable dans plus de 180 pays ; cher à faible volume, coût lié à chaque évaluation."
     },
     "articles": [],
     "covers": [
@@ -67970,7 +68002,23 @@
         "replaceEn": "Replace Elementor with an AI? For a first page draft, AI-first generators move faster. Elementor keeps the edge for anyone already on WordPress who wants fine visual control page by page. Verdict: challenged on initial generation, solid for fine-grained editing on WordPress.",
         "replaceFr": "Remplacer Elementor par une IA ? Pour un premier jet de page, les générateurs IA-first vont plus vite. Elementor garde l'avantage pour qui est déjà sur WordPress et veut un contrôle visuel fin page par page. Verdict : challengé sur la génération initiale, solide pour l'édition fine sur WordPress."
       },
-      "metaDescription": "Elementor sur ToolTrim : rôle, limites et place dans une stack freelance."
+      "metaDescription": "Elementor sur ToolTrim : rôle, limites et place dans une stack freelance.",
+      "presentationTitleEn": "Elementor: visual page builder for WordPress",
+      "presentationTitleFr": "Elementor : le constructeur visuel de WordPress",
+      "presentationMetaDescriptionEn": "Elementor builds WordPress pages visually with drag and drop, a Theme Builder, Popup Builder and 100+ widgets, starting from a functional core plugin.",
+      "presentationMetaDescriptionFr": "Elementor construit vos pages WordPress en glisser-déposer, avec Theme Builder, Popup Builder et plus de 100 widgets, dès son extension de base.",
+      "prixTitleEn": "Elementor pricing: core plugin and Pro yearly",
+      "prixTitleFr": "Prix d'Elementor : extension de base et Pro annuel",
+      "prixMetaDescriptionEn": "Elementor pricing: a functional core plugin to start, then Elementor Pro billed annually only, with no monthly option, for themes, popups and pro widgets.",
+      "prixMetaDescriptionFr": "Prix d'Elementor : une extension de base fonctionnelle, puis Elementor Pro facturé à l'année seulement, sans mensuel, pour thèmes, popups et widgets pros.",
+      "altTitleEn": "Elementor alternatives: Bricks, Divi",
+      "altTitleFr": "Alternatives à Elementor : Bricks, Divi",
+      "altMetaDescriptionEn": "Prefer faster pages or coding your own design? Bricks, Divi and the block editor compared with Elementor on performance, features and price.",
+      "altMetaDescriptionFr": "Envie de pages plus rapides ou de coder votre design ? Bricks, Divi et l'éditeur de blocs comparés à Elementor sur la performance et le prix.",
+      "avisTitleEn": "Elementor review: WordPress without code",
+      "avisTitleFr": "Avis Elementor : WordPress sans coder",
+      "avisMetaDescriptionEn": "Elementor review, rated {rating}: a usable core plugin and powerful theme and popup builders; advanced features are paid, billed yearly only.",
+      "avisMetaDescriptionFr": "Avis Elementor, noté {rating} : une extension de base utilisable, Theme et Popup Builders puissants ; fonctions avancées payantes, à l'année seulement."
     },
     "pros": [
       "Plugin gratuit fonctionnel pour débuter.",
@@ -68098,7 +68146,24 @@
     "affiliateLink": "",
     "websiteUrl": "https://elements-library.com/",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "presentationTitleEn": "Elements Library: 500+ Framer components",
+      "presentationTitleFr": "Elements Library : 500 composants Framer",
+      "presentationMetaDescriptionEn": "Elements Library offers 500+ responsive, copy-paste Framer components and templates for SaaS sites, portfolios and landing pages, ready in seconds.",
+      "presentationMetaDescriptionFr": "Elements Library propose plus de 500 composants et modèles Framer responsives, à copier-coller, pour sites SaaS, portfolios et landing pages.",
+      "prixTitleEn": "Elements Library pricing: sample, then paid",
+      "prixTitleFr": "Prix d'Elements Library : échantillon, puis payant",
+      "prixMetaDescriptionEn": "Elements Library pricing: some components are offered to judge quality, then paid access unlocks the full library of 500+ elements.",
+      "prixMetaDescriptionFr": "Prix d'Elements Library : certains composants sont offerts pour juger la qualité, puis un accès payant débloque toute la bibliothèque de 500 éléments.",
+      "altTitleEn": "Elements Library alternatives for Framer",
+      "altTitleFr": "Alternatives à Elements Library pour Framer",
+      "altMetaDescriptionEn": "Using Framer only now and then, or want unique interfaces? What to compare in Framer UI kits and template stores before Elements Library.",
+      "altMetaDescriptionFr": "Framer de temps en temps, ou envie d'interfaces uniques ? Ce qu'il faut comparer dans les kits UI et boutiques de modèles Framer avant Elements Library.",
+      "avisTitleEn": "Elements Library review: ship Framer faster",
+      "avisTitleFr": "Avis Elements Library : livrer plus vite sur Framer",
+      "avisMetaDescriptionEn": "Elements Library review, rated {rating}: a rich, copy-paste catalog that slashes build time; the choice can overwhelm and shared parts look alike.",
+      "avisMetaDescriptionFr": "Avis Elements Library, noté {rating} : un riche catalogue à copier-coller qui réduit le temps de création ; trop de choix, interfaces qui se ressemblent."
+    },
     "articles": [],
     "covers": [
       "templates",
@@ -69873,7 +69938,23 @@
       "no-code"
     ],
     "seo": {
-      "metaDescription": "Emergent avis 2026 : construis une app web ou SaaS avec l'IA. Prix 18,40€/mois, alternatives Lovable, Bolt. Verdict."
+      "metaDescription": "Emergent avis 2026 : construis une app web ou SaaS avec l'IA. Prix 18,40€/mois, alternatives Lovable, Bolt. Verdict.",
+      "presentationTitleEn": "Emergent: build apps with AI, no code",
+      "presentationTitleFr": "Emergent : créer des applis par IA, sans code",
+      "presentationMetaDescriptionEn": "Emergent builds web and mobile apps with AI, generating design, code and deployment so you can ship an MVP in hours, with a free tier to explore.",
+      "presentationMetaDescriptionFr": "Emergent crée des applis web et mobiles par IA, en générant design, code et déploiement pour lancer un MVP en quelques heures, avec un gratuit pour tester.",
+      "prixTitleEn": "Emergent pricing: free tier, then credits",
+      "prixTitleFr": "Prix d'Emergent : gratuit, puis crédits",
+      "prixMetaDescriptionEn": "Emergent pricing: a free tier to try, then Standard and higher plans with AI credits whose consumption is hard to predict and can scale quickly.",
+      "prixMetaDescriptionFr": "Prix d'Emergent : un gratuit pour tester, puis Standard et des offres supérieures avec des crédits IA à la consommation difficile à prévoir et vite élevée.",
+      "altTitleEn": "Emergent alternatives: Lovable, Cursor",
+      "altTitleFr": "Alternatives à Emergent : Lovable, Cursor",
+      "altMetaDescriptionEn": "Need full control over architecture and code? Lovable, Cursor and Bolt compared with Emergent on code ownership, credits and price.",
+      "altMetaDescriptionFr": "Besoin d'un contrôle total sur l'architecture et le code ? Lovable, Cursor et Bolt comparés à Emergent sur la maîtrise du code, les crédits et le prix.",
+      "avisTitleEn": "Emergent review: an MVP in hours",
+      "avisTitleFr": "Avis Emergent : un MVP en quelques heures",
+      "avisMetaDescriptionEn": "Emergent review, rated {rating}: end-to-end generation and rapid iteration without developers; unpredictable credit costs and less code control.",
+      "avisMetaDescriptionFr": "Avis Emergent, noté {rating} : génération de bout en bout et itération rapide sans développeur ; coût des crédits imprévisible, moins de maîtrise du code."
     },
     "ogImageUrl": "https://tooltrim.com/og-screenshots/emergent.jpg",
     "description": "Emergent est une plateforme vibe-coding qui permet de construire des applications web et mobiles complètes depuis une description en langage naturel. L'IA comprend les exigences, génère le code, connecte les bases de données et déploie automatiquement.\n\nLe plan Standard à 20$/mois (≈18,40€) donne 100 crédits/mois — assez pour 1-2 MVPs par mois. Le plan Pro à 200$/mois débloque 750 crédits et un contexte de 1M tokens pour comprendre une codebase entière.\n\nDifférence avec Rork ou Lovable : Emergent est plus orienté web apps que mobile, et met l'accent sur la capacité à construire des apps avec des backends complexes. Pour un solopreneur non-tech qui veut lancer un SaaS rapidement, c'est une des options les plus accessibles du marché.",
@@ -70029,7 +70110,23 @@
     "websiteUrl": "https://emotion.sh",
     "logo": "",
     "seo": {
-      "metaDescription": "Emotion sur ToolTrim : CSS-in-JS performant, comparaison avec styled-components et quand l'utiliser."
+      "metaDescription": "Emotion sur ToolTrim : CSS-in-JS performant, comparaison avec styled-components et quand l'utiliser.",
+      "presentationTitleEn": "Emotion: lightweight CSS-in-JS for React",
+      "presentationTitleFr": "Emotion : le CSS-in-JS léger pour React",
+      "presentationMetaDescriptionEn": "Emotion is a free, lightweight CSS-in-JS library for React and other frameworks, with predictable style composition and strong performance.",
+      "presentationMetaDescriptionFr": "Emotion est une bibliothèque CSS-in-JS gratuite et légère pour React et d'autres frameworks, à la composition de styles prévisible et performante.",
+      "prixTitleEn": "Is Emotion free? Yes, open source",
+      "prixTitleFr": "Emotion est-il gratuit ? Oui, open source",
+      "prixMetaDescriptionEn": "Emotion pricing: free and open source from npm, with no license. It needs a bundler like Vite or webpack, and some time to learn CSS-in-JS.",
+      "prixMetaDescriptionFr": "Prix d'Emotion : libre et gratuit via npm, sans licence. Il faut un bundler comme Vite ou webpack, et un peu de temps pour apprendre le CSS-in-JS.",
+      "altTitleEn": "Emotion alternatives: styled-components",
+      "altTitleFr": "Alternatives à Emotion : styled-components",
+      "altMetaDescriptionEn": "Already on another CSS-in-JS tool, or want zero runtime? styled-components, Tailwind CSS and vanilla-extract compared with Emotion.",
+      "altMetaDescriptionFr": "Déjà sur un autre outil CSS-in-JS, ou envie de zéro runtime ? styled-components, Tailwind CSS et vanilla-extract comparés à Emotion.",
+      "avisTitleEn": "Emotion review: fast, predictable styles",
+      "avisTitleFr": "Avis Emotion : des styles rapides et prévisibles",
+      "avisMetaDescriptionEn": "Emotion review, rated {rating}: very lightweight with predictable composition across frameworks; a CSS-in-JS learning curve and a bundler required.",
+      "avisMetaDescriptionFr": "Avis Emotion, noté {rating} : très léger, composition prévisible et multi-framework ; apprentissage du CSS-in-JS et bundler obligatoire."
     },
     "pros": [
       "Très léger avec performance optimisée",
@@ -70211,7 +70308,24 @@
       "free": "Gratuit, extension officielle du SketchUp Extension Warehouse, aucun frais ou limitation.",
       "paid": "Eneroth Face Creator: Gratuit"
     },
-    "seo": null,
+    "seo": {
+      "presentationTitleEn": "Eneroth Face Creator: auto faces in SketchUp",
+      "presentationTitleFr": "Eneroth Face Creator : faces auto dans SketchUp",
+      "presentationMetaDescriptionEn": "Eneroth Face Creator is a free SketchUp extension that automatically generates every possible face from selected edges, ideal for imported DWG wireframes.",
+      "presentationMetaDescriptionFr": "Eneroth Face Creator est une extension SketchUp gratuite qui génère toutes les faces possibles depuis des arêtes, idéale pour les fichiers DWG importés.",
+      "prixTitleEn": "Is Eneroth Face Creator free? Yes",
+      "prixTitleFr": "Eneroth Face Creator est-il gratuit ? Oui",
+      "prixMetaDescriptionEn": "Eneroth Face Creator pricing: entirely free, installed from the SketchUp Extension Warehouse. You only need a SketchUp license to use it.",
+      "prixMetaDescriptionFr": "Prix d'Eneroth Face Creator : entièrement gratuit, à installer depuis l'Extension Warehouse de SketchUp. Il suffit d'une licence SketchUp.",
+      "altTitleEn": "Eneroth Face Creator alternatives",
+      "altTitleFr": "Alternatives à Eneroth Face Creator",
+      "altMetaDescriptionEn": "Need selective face creation, not all at once? What to compare in SketchUp extensions for CAD import cleanup before relying on Eneroth Face Creator.",
+      "altMetaDescriptionFr": "Besoin de créer des faces de façon sélective ? Ce qu'il faut comparer dans les extensions SketchUp de nettoyage d'import CAO face à Eneroth Face Creator.",
+      "avisTitleEn": "Eneroth Face Creator review: hours saved",
+      "avisTitleFr": "Avis Eneroth Face Creator : des heures gagnées",
+      "avisMetaDescriptionEn": "Eneroth Face Creator review, rated {rating}: free and a huge time-saver on wireframe imports; only useful for CAD imports, with no selectivity.",
+      "avisMetaDescriptionFr": "Avis Eneroth Face Creator, noté {rating} : gratuit et très gros gain de temps sur les imports filaires ; utile seulement pour la CAO, sans sélection."
+    },
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -71294,7 +71408,24 @@
     "longDescriptionEn": "Subscription library of royalty-free music and sound effects: as long as the subscription is active, users can download and use tracks in their videos and podcasts, including monetized ones, with no extra royalties.",
     "pricingEn": null,
     "pricing_v5": null,
-    "seo": null,
+    "seo": {
+      "presentationTitleEn": "Epidemic Sound: royalty-free music for creators",
+      "presentationTitleFr": "Epidemic Sound : musique libre de droits",
+      "presentationMetaDescriptionEn": "Epidemic Sound offers a large, growing library of music and sound effects for creators, brands and client videos, with clear social and podcast licenses.",
+      "presentationMetaDescriptionFr": "Epidemic Sound propose une vaste bibliothèque de musiques et d'effets sonores pour créateurs, marques et vidéos clients, avec des licences claires.",
+      "prixTitleEn": "Epidemic Sound pricing: subscription plans",
+      "prixTitleFr": "Prix d'Epidemic Sound : offres sur abonnement",
+      "prixMetaDescriptionEn": "Epidemic Sound pricing: subscription plans for creators and businesses, with no permanent free version. Rights cover content published while subscribed.",
+      "prixMetaDescriptionFr": "Prix d'Epidemic Sound : abonnements créateurs et entreprises, sans version gratuite permanente. Les droits couvrent ce qui sort pendant l'abonnement.",
+      "altTitleEn": "Epidemic Sound alternatives: Artlist, Musicbed",
+      "altTitleFr": "Alternatives à Epidemic Sound : Artlist, Musicbed",
+      "altMetaDescriptionEn": "Only need a single one-off track? Artlist, Musicbed and Uppbeat compared with Epidemic Sound on catalog, licensing and price.",
+      "altMetaDescriptionFr": "Juste un morceau ponctuel ? Artlist, Musicbed et Uppbeat comparés à Epidemic Sound sur le catalogue, les licences et le prix.",
+      "avisTitleEn": "Epidemic Sound review: no more claims",
+      "avisTitleFr": "Avis Epidemic Sound : fini les réclamations",
+      "avisMetaDescriptionEn": "Epidemic Sound review, rated {rating}: a large catalog and no copyright claims while subscribed; rights depend on staying subscribed, no free version.",
+      "avisMetaDescriptionFr": "Avis Epidemic Sound, noté {rating} : un vaste catalogue, sans réclamation de droits tant que l'abonnement court ; pas de version gratuite."
+    },
     "verdictEn": {
       "keepIf": [
         "You regularly publish monetized videos or podcasts.",
@@ -71786,7 +71917,24 @@
     "affiliateLink": "",
     "websiteUrl": "https://www.essaytone.com/en",
     "logo": "",
-    "seo": null,
+    "seo": {
+      "presentationTitleEn": "EssayTone: AI text rewriting tool",
+      "presentationTitleFr": "EssayTone : réécriture de textes par IA",
+      "presentationMetaDescriptionEn": "EssayTone rewrites AI-generated text into more natural prose, with formal, persuasive or analytical styles and on-device editing for privacy.",
+      "presentationMetaDescriptionFr": "EssayTone réécrit les textes générés par IA en une prose plus naturelle, en style formel, persuasif ou analytique, avec édition locale et confidentielle.",
+      "prixTitleEn": "EssayTone pricing: plans for rewriting",
+      "prixTitleFr": "Prix d'EssayTone : offres de réécriture",
+      "prixMetaDescriptionEn": "EssayTone pricing: plans for AI text rewriting with usage limits. Before paying, check your school or employer's rules on AI-generated work.",
+      "prixMetaDescriptionFr": "Prix d'EssayTone : des offres de réécriture IA avec limites d'usage. Avant de payer, vérifiez les règles de votre école ou employeur sur les travaux IA.",
+      "altTitleEn": "EssayTone alternatives for writing help",
+      "altTitleFr": "Alternatives à EssayTone pour écrire",
+      "altMetaDescriptionEn": "Want writing help that stays within academic rules? What to compare in writing assistants, from Grammarly to QuillBot and LanguageTool, before EssayTone.",
+      "altMetaDescriptionFr": "Envie d'une aide à l'écriture dans les règles académiques ? Ce qu'il faut comparer, de Grammarly à QuillBot et LanguageTool, avant EssayTone.",
+      "avisTitleEn": "EssayTone review: natural prose, real risks",
+      "avisTitleFr": "Avis EssayTone : une prose naturelle, de vrais risques",
+      "avisMetaDescriptionEn": "EssayTone review, rated {rating}: smoother, more natural prose with tone options and local editing; using it to evade AI detectors carries real academic risk.",
+      "avisMetaDescriptionFr": "Avis EssayTone, noté {rating} : une prose plus fluide, styles au choix et édition locale ; s'en servir pour tromper un détecteur expose à un vrai risque."
+    },
     "articles": [],
     "covers": [
       "ai-general",
@@ -73253,7 +73401,23 @@
         "replaceEn": "Replace Factorial with an AI? No: managing a team's contracts, leave, and payroll involves legal liability an AI can't take on alone. AI speeds up certain HR tasks, the regulatory infrastructure remains the real product. Verdict: AI augments HR productivity, not compliance itself.",
         "replaceFr": "Remplacer Factorial par une IA ? Non : gérer les contrats, congés et paie d'une équipe implique une responsabilité légale qu'une IA ne peut pas assumer seule. L'IA accélère certaines tâches RH, l'infrastructure réglementaire reste le vrai produit. Verdict : l'IA augmente la productivité RH, pas la conformité elle-même."
       },
-      "metaDescription": "Factorial : fiche ToolTrim avec usage, limites, alternatives et points de vigilance pour décider si l'outil mérite sa place dans votre stack."
+      "metaDescription": "Factorial : fiche ToolTrim avec usage, limites, alternatives et points de vigilance pour décider si l'outil mérite sa place dans votre stack.",
+      "presentationTitleEn": "Factorial: HR, payroll and time in one suite",
+      "presentationTitleFr": "Factorial : RH, paie et temps en une suite",
+      "presentationMetaDescriptionEn": "Factorial brings HR, payroll, time tracking, finance and IT together in one modular suite, with the One AI agent for automation and insights.",
+      "presentationMetaDescriptionFr": "Factorial réunit RH, paie, suivi du temps, finance et IT dans une suite modulaire, avec l'agent IA One pour automatiser et analyser.",
+      "prixTitleEn": "Factorial pricing: modular, on quote",
+      "prixTitleFr": "Prix de Factorial : modulaire, sur devis",
+      "prixMetaDescriptionEn": "Factorial pricing: custom and modular, so you can start with a few modules and add more; no free tier and no fully transparent public grid.",
+      "prixMetaDescriptionFr": "Prix de Factorial : sur mesure et modulaire, pour démarrer avec quelques modules et en ajouter ; pas d'offre gratuite ni de grille publique complète.",
+      "altTitleEn": "Factorial alternatives: Lucca, Personio",
+      "altTitleFr": "Alternatives à Factorial : Lucca, Personio",
+      "altMetaDescriptionEn": "Looking for something simpler or with public prices? Lucca, Personio and HiBob compared with Factorial on modules, payroll and price.",
+      "altMetaDescriptionFr": "Vous cherchez plus simple ou avec des prix publics ? Lucca, Personio et HiBob comparés à Factorial sur les modules, la paie et le prix.",
+      "avisTitleEn": "Factorial review: one suite for HR and more",
+      "avisTitleFr": "Avis Factorial : une suite pour les RH et plus",
+      "avisMetaDescriptionEn": "Factorial review, rated {rating}: an integrated HR, payroll, finance and IT suite with AI and modular pricing; no free tier and quote-based prices.",
+      "avisMetaDescriptionFr": "Avis Factorial, noté {rating} : une suite RH, paie, finance et IT intégrée, avec IA et prix modulaire ; pas d'offre gratuite, tarifs sur devis."
     },
     "articles": [],
     "covers": [
@@ -75199,7 +75363,24 @@
       "source_domain": "figma.com",
       "verification_status": "official_explicit"
     },
-    "seo": null,
+    "seo": {
+      "presentationTitleEn": "FigJam: Figma's collaborative whiteboard",
+      "presentationTitleFr": "FigJam : le tableau blanc collaboratif de Figma",
+      "presentationMetaDescriptionEn": "FigJam is Figma's online whiteboard for brainstorming, diagrams and team planning, with templates, AI-generated diagrams and links to your Figma designs.",
+      "presentationMetaDescriptionFr": "FigJam est le tableau blanc en ligne de Figma pour brainstormer, schématiser et planifier en équipe, avec modèles, diagrammes par IA et lien aux maquettes.",
+      "prixTitleEn": "FigJam pricing: free, seats from {price}/mo",
+      "prixTitleFr": "Prix de FigJam : gratuit, places dès {price}/mois",
+      "prixMetaDescriptionEn": "FigJam pricing: free to start and included with Figma plans, with paid collaborator seats from {price}/mo for unlimited files and team features.",
+      "prixMetaDescriptionFr": "Prix de FigJam : gratuit pour débuter et inclus dans les offres Figma, avec des places payantes dès {price}/mois pour fichiers illimités et fonctions d'équipe.",
+      "altTitleEn": "FigJam alternatives: Miro, Excalidraw",
+      "altTitleFr": "Alternatives à FigJam : Miro, Excalidraw",
+      "altMetaDescriptionEn": "Want a standalone whiteboard outside Figma? Miro, Excalidraw and Whimsical compared with FigJam on freedom, templates and price.",
+      "altMetaDescriptionFr": "Envie d'un tableau blanc indépendant de Figma ? Miro, Excalidraw et Whimsical comparés à FigJam sur la liberté, les modèles et le prix.",
+      "avisTitleEn": "FigJam review: best if you're on Figma",
+      "avisTitleFr": "Avis FigJam : idéal si vous êtes sur Figma",
+      "avisMetaDescriptionEn": "FigJam review, rated {rating}: included with Figma, tightly linked to designs and Jira or Asana; needs a Figma account, less drawing freedom than Excalidraw.",
+      "avisMetaDescriptionFr": "Avis FigJam, noté {rating} : inclus avec Figma, lié aux maquettes, à Jira et Asana ; compte Figma requis, moins de liberté de dessin qu'Excalidraw."
+    },
     "verdictEn": {
       "keepIf": [
         "You're already using Figma as a team.",
@@ -75844,7 +76025,25 @@
       "https://cdn.sanity.io/images/599r6htc/regionalized/ec904960a5d46447f31afe6e7abab92f97ec444e-3840x2160.png?auto=format&fit=max&h=452&q=75&rect=0%2C1%2C3840%2C2159&w=804",
       "https://cdn.sanity.io/images/599r6htc/regionalized/af228a202004b8e7a6bf03fcef7f1a22a7bd603d-3840x2160.png?auto=format&fit=max&h=452&q=75&rect=0%2C1%2C3840%2C2159&w=804"
     ],
-    "substitution_cluster_v2": "ai-app-builder"
+    "substitution_cluster_v2": "ai-app-builder",
+    "seo": {
+      "presentationTitleEn": "Figma Make: prompts to working prototypes",
+      "presentationTitleFr": "Figma Make : du prompt au prototype fonctionnel",
+      "presentationMetaDescriptionEn": "Figma Make turns a prompt or an existing Figma design into a working prototype, interactive interface or web app, with code editing and publishing.",
+      "presentationMetaDescriptionFr": "Figma Make transforme un prompt ou une maquette Figma en prototype fonctionnel, interface interactive ou appli web, avec édition du code et publication.",
+      "prixTitleEn": "Figma Make pricing: by plan, seat and credits",
+      "prixTitleFr": "Prix de Figma Make : selon offre, place et crédits",
+      "prixMetaDescriptionEn": "Figma Make pricing: available to try on Figma's free plan, with limits that depend on your seat, plan and AI credits on paid tiers.",
+      "prixMetaDescriptionFr": "Prix de Figma Make : utilisable à l'essai avec l'offre gratuite de Figma, avec des limites selon la place, l'offre et les crédits IA des offres payantes.",
+      "altTitleEn": "Figma Make alternatives: Lovable, Bolt.new",
+      "altTitleFr": "Alternatives à Figma Make : Lovable, Bolt.new",
+      "altMetaDescriptionEn": "Need production software, not a prototype? Lovable and Bolt.new compared with Figma Make on code quality, deployment and price.",
+      "altMetaDescriptionFr": "Besoin d'un logiciel de production, pas d'un prototype ? Lovable et Bolt.new comparés à Figma Make sur la qualité du code, le déploiement et le prix.",
+      "avisTitleEn": "Figma Make review: test ideas from your designs",
+      "avisTitleFr": "Avis Figma Make : tester vos idées depuis vos maquettes",
+      "avisMetaDescriptionEn": "Figma Make review, rated {rating}: starts from your designs and components so anyone can test interactions; generated code still needs review.",
+      "avisMetaDescriptionFr": "Avis Figma Make, noté {rating} : part de vos maquettes et composants pour tester les interactions ; le code généré doit encore être relu."
+    }
   },
   {
     "id": "figma-sites",
@@ -75966,7 +76165,25 @@
       "https://cdn.sanity.io/images/599r6htc/regionalized/d88fb912c65fa24938c25b067c88b22ea6917041-1608x1072.png?auto=format&fit=max&h=520&q=75&w=780",
       "https://cdn.sanity.io/images/599r6htc/regionalized/812f934f093212b5f2a939227b970a6bf3406929-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080"
     ],
-    "substitution_cluster_v2": "figma-feature-suite"
+    "substitution_cluster_v2": "figma-feature-suite",
+    "seo": {
+      "presentationTitleEn": "Figma Sites: publish websites from Figma",
+      "presentationTitleFr": "Figma Sites : publier un site depuis Figma",
+      "presentationMetaDescriptionEn": "Figma Sites, in open beta, turns Figma Design frames into responsive published websites, with components, interactions, a CMS, code and AI assistance.",
+      "presentationMetaDescriptionFr": "Figma Sites, en bêta ouverte, transforme vos cadres Figma Design en sites responsives publiés, avec composants, interactions, CMS, code et aide de l'IA.",
+      "prixTitleEn": "Figma Sites pricing: publishing needs a paid seat",
+      "prixTitleFr": "Prix de Figma Sites : publication sur place payante",
+      "prixMetaDescriptionEn": "Figma Sites pricing: you can design on the free plan, but publishing a site requires a paid Figma plan and a Full seat. Beta terms can still change.",
+      "prixMetaDescriptionFr": "Prix de Figma Sites : on peut concevoir en gratuit, mais publier exige une offre Figma payante et une place Full. Conditions de bêta encore évolutives.",
+      "altTitleEn": "Figma Sites alternatives: Framer, Webflow",
+      "altTitleFr": "Alternatives à Figma Sites : Framer, Webflow",
+      "altMetaDescriptionEn": "Need full control over framework, backend or hosting? Framer and Webflow compared with Figma Sites on CMS, flexibility and price.",
+      "altMetaDescriptionFr": "Besoin d'un contrôle total du framework, du backend ou de l'hébergement ? Framer et Webflow comparés à Figma Sites sur le CMS, la souplesse et le prix.",
+      "avisTitleEn": "Figma Sites review: design to live site",
+      "avisTitleFr": "Avis Figma Sites : de la maquette au site en ligne",
+      "avisMetaDescriptionEn": "Figma Sites review, rated {rating}: keeps every detail of your frames and design system, with CMS and publishing; still a beta, paid plan to publish.",
+      "avisMetaDescriptionFr": "Avis Figma Sites, noté {rating} : garde chaque détail de vos cadres et design system, avec CMS et publication ; encore en bêta, offre payante pour publier."
+    }
   },
   {
     "id": "figma-buzz",
@@ -76075,7 +76292,23 @@
     ],
     "articles": [],
     "seo": {
-      "metaDescription": "Figma Buzz en 2026 : bêta, accès gratuit, modèles de marque, création en masse, limites et alternatives. Le verdict ToolTrim."
+      "metaDescription": "Figma Buzz en 2026 : bêta, accès gratuit, modèles de marque, création en masse, limites et alternatives. Le verdict ToolTrim.",
+      "presentationTitleEn": "Figma Buzz: brand templates for marketing",
+      "presentationTitleFr": "Figma Buzz : modèles de marque pour le marketing",
+      "presentationMetaDescriptionEn": "Figma Buzz lets design teams hand marketing locked brand templates built from Figma assets, with data import and multi-edit for high-volume variants.",
+      "presentationMetaDescriptionFr": "Figma Buzz permet aux designers de fournir au marketing des modèles de marque verrouillés, issus de Figma, avec import de données et édition en masse.",
+      "prixTitleEn": "Figma Buzz pricing: free beta, paid to publish",
+      "prixTitleFr": "Prix de Figma Buzz : bêta gratuite, publication payante",
+      "prixMetaDescriptionEn": "Figma Buzz pricing: available in beta on the Starter plan, while publishing team templates requires a paid Figma plan. Beta terms may change.",
+      "prixMetaDescriptionFr": "Prix de Figma Buzz : accessible en bêta avec l'offre Starter, la publication de modèles d'équipe exigeant une offre Figma payante. Conditions évolutives.",
+      "altTitleEn": "Figma Buzz alternatives: Canva and more",
+      "altTitleFr": "Alternatives à Figma Buzz : Canva et autres",
+      "altMetaDescriptionEn": "Need a standalone tool outside Figma? Canva and other brand template platforms compared with Figma Buzz on control, volume and price.",
+      "altMetaDescriptionFr": "Besoin d'un outil indépendant de Figma ? Canva et d'autres plateformes de modèles de marque comparés à Figma Buzz sur le contrôle, le volume et le prix.",
+      "avisTitleEn": "Figma Buzz review: on-brand at scale",
+      "avisTitleFr": "Avis Figma Buzz : la marque respectée en volume",
+      "avisMetaDescriptionEn": "Figma Buzz review, rated {rating}: templates linked to Figma assets with editing locks and bulk variants; still a beta, and team publishing is paid.",
+      "avisMetaDescriptionFr": "Avis Figma Buzz, noté {rating} : modèles liés aux ressources Figma, verrouillage et variantes en masse ; encore en bêta, publication d'équipe payante."
     },
     "pricing_v5": {
       "cautions": [
@@ -76220,7 +76453,25 @@
     "galleryImages": [
       "https://cdn.sanity.io/images/599r6htc/regionalized/9cdc0cedb39a7c60e5b814ea857175cfd0fd0616-2720x1360.png?auto=format&fit=max&h=1360&q=75&w=2720"
     ],
-    "substitution_cluster_v2": "figma-feature-suite"
+    "substitution_cluster_v2": "figma-feature-suite",
+    "seo": {
+      "presentationTitleEn": "Figma Dev Mode: design handoff for developers",
+      "presentationTitleFr": "Figma Dev Mode : le passage aux développeurs",
+      "presentationMetaDescriptionEn": "Figma Dev Mode gives developers a workspace inside Figma files to inspect specs, link design components to code and track handoff. Dev seat from {price}/mo.",
+      "presentationMetaDescriptionFr": "Figma Dev Mode donne aux développeurs un espace dans les fichiers Figma où inspecter les specs, relier composants et code, suivre la livraison. {price}/mois.",
+      "prixTitleEn": "Figma Dev Mode pricing: Dev seat {price}/mo",
+      "prixTitleFr": "Prix de Figma Dev Mode : place Dev {price}/mois",
+      "prixMetaDescriptionEn": "Figma Dev Mode pricing: limited inspection on the free plan, while full Dev Mode requires a Dev seat from {price}/mo or a Full seat on a paid plan.",
+      "prixMetaDescriptionFr": "Prix de Figma Dev Mode : inspection limitée en gratuit, le Dev Mode complet exigeant une place Dev dès {price}/mois ou une place Full sur une offre payante.",
+      "altTitleEn": "Figma Dev Mode alternatives: Zeplin",
+      "altTitleFr": "Alternatives à Figma Dev Mode : Zeplin",
+      "altMetaDescriptionEn": "Not designing in Figma? Zeplin and other handoff tools compared with Figma Dev Mode on specs, code links and price per developer.",
+      "altMetaDescriptionFr": "Vous ne concevez pas dans Figma ? Zeplin et d'autres outils de passage comparés à Figma Dev Mode sur les specs, le lien au code et le prix par développeur.",
+      "avisTitleEn": "Figma Dev Mode review: specs at the source",
+      "avisTitleFr": "Avis Figma Dev Mode : les specs à la source",
+      "avisMetaDescriptionEn": "Figma Dev Mode review, rated {rating}: specs in the source file, linked to real code and delivery status; needs a tidy Figma workflow and a paid seat.",
+      "avisMetaDescriptionFr": "Avis Figma Dev Mode, noté {rating} : specs dans le fichier source, liées au code et au statut de livraison ; exige des fichiers rangés et une place payante."
+    }
   },
   {
     "id": "figma-draw",
@@ -76340,7 +76591,25 @@
       "https://cdn.sanity.io/images/599r6htc/regionalized/a02aff53e28875fb72d35769a8827e40b2d5d552-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080",
       "https://cdn.sanity.io/images/599r6htc/regionalized/f1e43870f025011e7fcac304e4b24fa47c5d8b1d-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080"
     ],
-    "substitution_cluster_v2": "figma-feature-suite"
+    "substitution_cluster_v2": "figma-feature-suite",
+    "seo": {
+      "presentationTitleEn": "Figma Draw: illustration inside Figma",
+      "presentationTitleFr": "Figma Draw : l'illustration dans Figma",
+      "presentationMetaDescriptionEn": "Figma Draw adds an illustration workspace and advanced vector tools to Figma Design files, so you can draw expressive art without switching apps.",
+      "presentationMetaDescriptionFr": "Figma Draw ajoute un espace d'illustration et des outils vectoriels avancés aux fichiers Figma Design, pour dessiner sans changer d'application.",
+      "prixTitleEn": "Figma Draw pricing: included in Figma",
+      "prixTitleFr": "Prix de Figma Draw : inclus dans Figma",
+      "prixMetaDescriptionEn": "Figma Draw pricing: included with Figma Design, starting on the free plan, with seat-based limits on paid plans. It is not sold as a separate app.",
+      "prixMetaDescriptionFr": "Prix de Figma Draw : inclus dans Figma Design dès l'offre gratuite, avec des limites selon la place sur les offres payantes. Il n'est pas vendu à part.",
+      "altTitleEn": "Figma Draw alternatives: Illustrator",
+      "altTitleFr": "Alternatives à Figma Draw : Illustrator",
+      "altMetaDescriptionEn": "Not using Figma Design, or need a full illustration app? Adobe Illustrator and Affinity Designer compared with Figma Draw on tools and price.",
+      "altMetaDescriptionFr": "Pas sur Figma Design, ou besoin d'une vraie appli d'illustration ? Adobe Illustrator et Affinity Designer comparés à Figma Draw sur les outils et le prix.",
+      "avisTitleEn": "Figma Draw review: draw where you design",
+      "avisTitleFr": "Avis Figma Draw : dessiner là où l'on conçoit",
+      "avisMetaDescriptionEn": "Figma Draw review, rated {rating}: expressive vector tools in the same collaborative files, with variables and components; tied to Figma Design.",
+      "avisMetaDescriptionFr": "Avis Figma Draw, noté {rating} : des outils vectoriels expressifs dans les mêmes fichiers collaboratifs, variables et composants ; lié à Figma Design."
+    }
   },
   {
     "id": "figma-motion",
@@ -76460,7 +76729,25 @@
     "galleryImages": [
       "https://cdn.sanity.io/images/599r6htc/regionalized/7fbacb4b82f4f9ecca0d9788f5eab4c8a1ae1e7b-2016x1135.png?auto=format&fit=max&h=1135&q=75&w=2016"
     ],
-    "substitution_cluster_v2": "figma-feature-suite"
+    "substitution_cluster_v2": "figma-feature-suite",
+    "seo": {
+      "presentationTitleEn": "Figma Motion: animate right on the canvas",
+      "presentationTitleFr": "Figma Motion : animer directement sur le canevas",
+      "presentationMetaDescriptionEn": "Figma Motion, in open beta, adds a timeline, keyframes, motion presets and agent assistance to the Figma canvas, with exports for developer handoff.",
+      "presentationMetaDescriptionFr": "Figma Motion, en bêta ouverte, ajoute timeline, images clés, préréglages et aide d'un agent au canevas Figma, avec exports pour les développeurs.",
+      "prixTitleEn": "Figma Motion pricing: beta, Full seat for more",
+      "prixTitleFr": "Prix de Figma Motion : bêta, place Full pour plus",
+      "prixMetaDescriptionEn": "Figma Motion pricing: available in beta within Figma, while the most structured capabilities depend on a paid Full seat. Beta terms may change.",
+      "prixMetaDescriptionFr": "Prix de Figma Motion : accessible en bêta dans Figma, les fonctions les plus structurées dépendant d'une place Full payante. Conditions de bêta évolutives.",
+      "altTitleEn": "Figma Motion alternatives: Rive, After Effects",
+      "altTitleFr": "Alternatives à Figma Motion : Rive, After Effects",
+      "altMetaDescriptionEn": "Need advanced compositing or interactive runtime animation? Rive and After Effects compared with Figma Motion on depth and handoff.",
+      "altMetaDescriptionFr": "Besoin de compositing avancé ou d'animations interactives ? Rive et After Effects comparés à Figma Motion sur la profondeur et le passage aux devs.",
+      "avisTitleEn": "Figma Motion review: motion from components",
+      "avisTitleFr": "Avis Figma Motion : animer vos composants",
+      "avisMetaDescriptionEn": "Figma Motion review, rated {rating}: animates existing components and variables with presets and agent help; still a beta, some features missing.",
+      "avisMetaDescriptionFr": "Avis Figma Motion, noté {rating} : anime vos composants et variables avec préréglages et aide d'un agent ; encore en bêta, certaines fonctions manquent."
+    }
   },
   {
     "id": "figma-slides",
@@ -76536,7 +76823,24 @@
       "free": "Le forfait Starter offre un accès gratuit limité. Slides est inclus avec toutes les licences payantes.",
       "paid": "Starter: Gratuit, accès limité ; Professional Collab seat: 3 $/mois, Slides inclus ; Professional Dev seat: 12 $/mois, Slides inclus ; Professional Full seat: 16 $/mois, mode Design inclus"
     },
-    "seo": null,
+    "seo": {
+      "presentationTitleEn": "Figma Slides: presentations built in Figma",
+      "presentationTitleFr": "Figma Slides : des présentations dans Figma",
+      "presentationMetaDescriptionEn": "Figma Slides builds collaborative decks inside Figma, with Auto Layout, components, embedded prototypes and live audience interaction, free with Figma.",
+      "presentationMetaDescriptionFr": "Figma Slides crée des présentations collaboratives dans Figma, avec Auto Layout, composants, prototypes intégrés et interaction en direct, gratuit.",
+      "prixTitleEn": "Is Figma Slides free? Yes, with Figma",
+      "prixTitleFr": "Figma Slides est-il gratuit ? Oui, avec Figma",
+      "prixMetaDescriptionEn": "Figma Slides pricing: included with Figma Free and every plan, while the advanced Design mode for slides requires a paid Full seat.",
+      "prixMetaDescriptionFr": "Prix de Figma Slides : inclus dans Figma Free et toutes les offres, le mode Design avancé des slides exigeant une place Full payante.",
+      "altTitleEn": "Figma Slides alternatives: Keynote, Pitch",
+      "altTitleFr": "Alternatives à Figma Slides : Keynote, Pitch",
+      "altMetaDescriptionEn": "Need complex transitions and animations? Keynote, Pitch and PowerPoint compared with Figma Slides on motion, collaboration and price.",
+      "altMetaDescriptionFr": "Besoin de transitions et d'animations complexes ? Keynote, Pitch et PowerPoint comparés à Figma Slides sur l'animation, la collaboration et le prix.",
+      "avisTitleEn": "Figma Slides review: decks with your design system",
+      "avisTitleFr": "Avis Figma Slides : vos slides au design system",
+      "avisMetaDescriptionEn": "Figma Slides review, rated {rating}: free with Figma, with Auto Layout, components and live presenting; fewer animations and tied to Figma.",
+      "avisMetaDescriptionFr": "Avis Figma Slides, noté {rating} : gratuit avec Figma, Auto Layout, composants et présentation en direct ; moins d'animations, lié à Figma."
+    },
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -77702,7 +78006,23 @@
         "augmentFr": "Final Cut Pro a ajouté des fonctions IA (suivi d'objet, suppression de bruit de fond, transcription automatique), mais reste un éditeur de montage professionnel précis — l'IA accélère certaines tâches répétitives, elle ne remplace pas le montage créatif.",
         "replaceEn": "Replace Final Cut Pro with an AI? No: editing a video with precise narrative and pacing remains creative work AI doesn't do alone. It automates technical tasks (captions, audio cleanup), not editing choices. Verdict: AI augments technical productivity, creative editing remains a human skill.",
         "replaceFr": "Remplacer Final Cut Pro par une IA ? Non : monter une vidéo avec une narration et un rythme précis reste un travail créatif que l'IA ne fait pas seule. Elle automatise des tâches techniques (sous-titres, nettoyage audio), pas les choix de montage. Verdict : l'IA augmente la productivité technique, le montage créatif reste un savoir-faire humain."
-      }
+      },
+      "presentationTitleEn": "Final Cut Pro: pro video editing on Mac",
+      "presentationTitleFr": "Final Cut Pro : le montage vidéo pro sur Mac",
+      "presentationMetaDescriptionEn": "Final Cut Pro is Apple's professional video editor for Mac and iPad, with a magnetic timeline and excellent performance on Apple Silicon.",
+      "presentationMetaDescriptionFr": "Final Cut Pro est le logiciel de montage vidéo pro d'Apple pour Mac et iPad, avec une timeline magnétique et d'excellentes performances sur Apple Silicon.",
+      "prixTitleEn": "Final Cut Pro pricing: one-time on Mac",
+      "prixTitleFr": "Prix de Final Cut Pro : achat unique sur Mac",
+      "prixMetaDescriptionEn": "Final Cut Pro pricing: a one-time purchase on the Mac App Store, with no mandatory subscription; the iPad version and Apple's bundle are subscriptions.",
+      "prixMetaDescriptionFr": "Prix de Final Cut Pro : un achat unique sur le Mac App Store, sans abonnement obligatoire ; la version iPad et l'offre créative d'Apple sont au mois.",
+      "altTitleEn": "Final Cut Pro alternatives: Premiere, DaVinci",
+      "altTitleFr": "Alternatives à Final Cut Pro : Premiere, DaVinci",
+      "altMetaDescriptionEn": "Working on Windows or in a mixed team? Premiere Pro and DaVinci Resolve compared with Final Cut Pro on platforms, collaboration and price.",
+      "altMetaDescriptionFr": "Sur Windows, ou en équipe multiplateforme ? Premiere Pro et DaVinci Resolve comparés à Final Cut Pro sur les plateformes, la collaboration et le prix.",
+      "avisTitleEn": "Final Cut Pro review: fast editing on Mac",
+      "avisTitleFr": "Avis Final Cut Pro : un montage rapide sur Mac",
+      "avisMetaDescriptionEn": "Final Cut Pro review, rated {rating}: a one-time purchase with excellent Apple Silicon speed and a productive timeline; Apple only, weak cross-OS teamwork.",
+      "avisMetaDescriptionFr": "Avis Final Cut Pro, noté {rating} : achat unique, excellente vitesse sur Apple Silicon et timeline efficace ; Apple seulement, collaboration limitée."
     },
     "articles": [],
     "covers": [
@@ -77870,7 +78190,23 @@
     },
     "alternatives": [],
     "seo": {
-      "metaDescription": "Finale Inventory : Solution de gestion des stocks pour vendeurs à gros volume. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Finale Inventory : Solution de gestion des stocks pour vendeurs à gros volume. Découvrez si cet outil vaut le coup pour votre activité freelance.",
+      "presentationTitleEn": "Finale Inventory: multichannel stock control",
+      "presentationTitleFr": "Finale Inventory : stock multicanal",
+      "presentationMetaDescriptionEn": "Finale Inventory syncs stock in real time across 25+ sales channels like Shopify and Amazon, prevents overselling and tracks landed costs. From {price}/mo.",
+      "presentationMetaDescriptionFr": "Finale Inventory synchronise le stock en temps réel sur plus de 25 canaux comme Shopify et Amazon, évite la survente et suit les coûts. Dès {price}/mois.",
+      "prixTitleEn": "Finale Inventory pricing: Essentials {price}/mo",
+      "prixTitleFr": "Prix de Finale Inventory : Essentials {price}/mois",
+      "prixMetaDescriptionEn": "Finale Inventory pricing: Essentials from {price}/mo with no free tier, then custom plans for larger catalogs and warehouses. A high entry ticket.",
+      "prixMetaDescriptionFr": "Prix de Finale Inventory : Essentials dès {price}/mois sans offre gratuite, puis des offres sur mesure pour gros catalogues et entrepôts.",
+      "altTitleEn": "Finale Inventory alternatives for e-commerce",
+      "altTitleFr": "Alternatives à Finale Inventory pour l'e-commerce",
+      "altMetaDescriptionEn": "Selling on a single channel? What to compare in inventory tools, from Shopify's own stock to Cin7 and Katana, before choosing Finale Inventory.",
+      "altMetaDescriptionFr": "Vous vendez sur un seul canal ? Ce qu'il faut comparer dans les outils de stock, du stock natif Shopify à Cin7 et Katana, avant Finale Inventory.",
+      "avisTitleEn": "Finale Inventory review: no more overselling",
+      "avisTitleFr": "Avis Finale Inventory : fini la survente",
+      "avisMetaDescriptionEn": "Finale Inventory review, rated {rating}: real-time sync across 25+ channels and robust overselling protection; no free tier and a high entry price.",
+      "avisMetaDescriptionFr": "Avis Finale Inventory, noté {rating} : synchro temps réel sur 25 canaux et protection solide contre la survente ; pas d'offre gratuite, prix d'entrée élevé."
     },
     "articles": [],
     "tool_type": "satellite",
