@@ -16150,7 +16150,7 @@
   {
     "id": "folk",
     "slug": "folk",
-    "name": "Folk",
+    "name": "folk",
     "categoryId": "crm",
     "shortDescription": "CRM léger et collaboratif pour relations (recrutement, ventes, partenariats), avec enrichissement de contacts intégré.",
     "shortDescriptionEn": "Lightweight, collaborative CRM for relationships (recruiting, sales, partnerships), with built-in contact enrichment.",
@@ -17234,7 +17234,7 @@
   {
     "id": "gempages",
     "slug": "gempages",
-    "name": "Gempages",
+    "name": "GemPages",
     "categoryId": "creation",
     "shortDescription": "Constructeur de pages drag-and-drop pour Shopify, pensé pour la conversion.",
     "shortDescriptionEn": "Drag-and-drop page builder for Shopify, designed for conversion.",
@@ -17499,7 +17499,7 @@
   {
     "id": "giphy",
     "slug": "giphy",
-    "name": "Giphy",
+    "name": "GIPHY",
     "categoryId": "creation",
     "shortDescription": "La bibliothèque de référence pour chercher et partager des GIFs.",
     "shortDescriptionEn": "The reference library for finding and sharing GIFs.",

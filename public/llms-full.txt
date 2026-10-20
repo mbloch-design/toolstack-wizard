@@ -13771,7 +13771,7 @@
     }
   },
   {
-    "name": "Folk",
+    "name": "folk",
     "slug": "folk",
     "url_fr": "https://tooltrim.com/fr/tool/folk",
     "url_en": "https://tooltrim.com/en/tool/folk",
@@ -14599,7 +14599,7 @@
     }
   },
   {
-    "name": "Gempages",
+    "name": "GemPages",
     "slug": "gempages",
     "url_fr": "https://tooltrim.com/fr/tool/gempages",
     "url_en": "https://tooltrim.com/en/tool/gempages",
@@ -14857,7 +14857,7 @@
     }
   },
   {
-    "name": "Giphy",
+    "name": "GIPHY",
     "slug": "giphy",
     "url_fr": "https://tooltrim.com/fr/tool/giphy",
     "url_en": "https://tooltrim.com/en/tool/giphy",
