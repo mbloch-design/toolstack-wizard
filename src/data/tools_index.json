@@ -10540,7 +10540,7 @@
   {
     "id": "creatoriq",
     "slug": "creatoriq",
-    "name": "Creatoriq",
+    "name": "CreatorIQ",
     "categoryId": "creation",
     "shortDescription": "Plateforme entreprise de creator/influence marketing : découverte de créateurs sur une base indexée, gestion de campagnes, workflows relationnels, analytics et reporting, avec de l'IA sur la découverte et la mesure.",
     "shortDescriptionEn": "Enterprise creator/influencer marketing platform: creator discovery, campaign management, relationship workflows, analytics and reporting.",
@@ -10869,7 +10869,7 @@
   {
     "id": "customer-io",
     "slug": "customer-io",
-    "name": "Customer Io",
+    "name": "Customer.io",
     "categoryId": "project-management",
     "shortDescription": "Plateforme d'automatisation marketing multicanal (email, push, in-app, SMS, webhooks) pilotée par les données first-party, avec segmentation et éditeur de workflows visuel.",
     "shortDescriptionEn": "Multichannel marketing automation platform (email, push, in-app, SMS, webhooks) driven by first-party data, with segmentation and a visual workflow builder.",

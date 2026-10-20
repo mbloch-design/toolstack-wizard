@@ -8916,7 +8916,7 @@
     }
   },
   {
-    "name": "Creatoriq",
+    "name": "CreatorIQ",
     "slug": "creatoriq",
     "url_fr": "https://tooltrim.com/fr/tool/creatoriq",
     "url_en": "https://tooltrim.com/en/tool/creatoriq",
@@ -9246,7 +9246,7 @@
     }
   },
   {
-    "name": "Customer Io",
+    "name": "Customer.io",
     "slug": "customer-io",
     "url_fr": "https://tooltrim.com/fr/tool/customer-io",
     "url_en": "https://tooltrim.com/en/tool/customer-io",
