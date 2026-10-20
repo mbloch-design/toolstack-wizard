@@ -13,6 +13,26 @@ import { fitBrandedTitle } from "./seoTitle";
 import { formatToolPrice, nativePriceFromTool } from "./currencyRates";
 import { hasConfirmedFreeTier, resolveMonthlyPrice } from "./pricing";
 import { localizePlanName } from "./planNames";
+import { computeToolTrimScore } from "./toolTrimScore";
+
+const MONTHS_FR = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+const MONTHS_EN = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+/** A price check older than this is not advertised in a snippet. */
+const VERIFIED_MAX_DAYS = 120;
+
+/** « octobre 2026 » / « October 2026 », or null when the check is missing or stale. */
+export function verifiedMonth(tool: SeoTool, lang: string, now = Date.now()): string | null {
+  const iso = String(tool?.pricing_v5?.verified_on || "").slice(0, 10);
+  const date = new Date(`${iso}T00:00:00Z`);
+  if (!iso || Number.isNaN(date.getTime()) || (now - date.getTime()) / 86_400_000 > VERIFIED_MAX_DAYS) return null;
+  return `${(lang === "fr" ? MONTHS_FR : MONTHS_EN)[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
+}
+
+/** The score shown on the fiche, « 3,6/5 » / « 3.6/5 ». */
+export function ratingLabel(tool: SeoTool, lang: string): string {
+  const score = computeToolTrimScore(tool).score.toFixed(1);
+  return `${lang === "fr" ? score.replace(".", ",") : score}/5`;
+}
 
 export type ToolSeoPage = "presentation" | "prix" | "alternatives" | "avis";
 
@@ -44,7 +64,7 @@ export function toolPriceFacts(tool: SeoTool) {
  * « €21 » for Capture One's €20.50) made the title disagree with the page
  * and with every competing result quoting the real price.
  */
-function priceLabel(tool: SeoTool, price: number, lang: string): string {
+export function priceLabel(tool: SeoTool, price: number, lang: string): string {
   const options = { round: false };
   return lang === "fr"
     ? formatToolPrice(tool, price, "EUR", "fr", options).text
@@ -95,15 +115,38 @@ function localizedShort(tool: SeoTool, lang: string): string {
     : (tool.shortDescriptionEn || tool.shortDescription || "");
 }
 
-function override(tool: SeoTool, page: ToolSeoPage, field: "Title" | "MetaDescription", lang: string): string | undefined {
+/**
+ * Written titles and descriptions may carry {price}, {verified}, {rating}
+ * and {year}. The price is
+ * filled from the verified grid, {verified} from the date of that check
+ * (skipped past 120 days) and {rating} from the score the fiche shows, at
+ * render time: a written snippet never contradicts the page. Without a value
+ * to fill, the written text is skipped and the template answers instead.
+ */
+function override(tool: SeoTool, page: ToolSeoPage, field: "Title" | "MetaDescription", lang: string, year?: number): string | undefined {
   const prefix = page === "alternatives" ? "alt" : page;
   const value = tool.seo?.[`${prefix}${field}${lang === "fr" ? "Fr" : "En"}`];
-  return typeof value === "string" && value.trim() ? value : undefined;
+  if (typeof value !== "string" || !value.trim()) return undefined;
+  let text = value;
+  if (text.includes("{price}")) {
+    const { price, hasPrice } = toolPriceFacts(tool);
+    if (!hasPrice) return undefined;
+    text = text.split("{price}").join(priceLabel(tool, price, lang));
+  }
+  if (text.includes("{verified}")) {
+    const month = verifiedMonth(tool, lang);
+    if (!month) return undefined;
+    text = text.split("{verified}").join(month);
+  }
+  if (text.includes("{rating}")) text = text.split("{rating}").join(ratingLabel(tool, lang));
+  if (text.includes("{year}")) text = text.split("{year}").join(String(year ?? new Date().getFullYear()));
+  return text;
 }
 
 export function toolSeoTitle(tool: SeoTool, page: ToolSeoPage, lang: string, year: number): string {
-  const custom = override(tool, page, "Title", lang);
-  if (custom) return custom;
+  const custom = override(tool, page, "Title", lang, year);
+  // Written titles carry no brand; it is added when it fits, as for templates.
+  if (custom) return /\|\s*ToolTrim\s*$/.test(custom) ? custom : fitBrandedTitle(custom);
   const name = tool.name || tool.slug || tool.id;
   const fr = lang === "fr";
   const { price, hasPrice, oneTime, free } = toolPriceFacts(tool);
@@ -193,7 +236,7 @@ function firstFitting(variants: string[]): string {
 }
 
 export function toolSeoDescription(tool: SeoTool, page: ToolSeoPage, lang: string, year: number): string {
-  const custom = override(tool, page, "MetaDescription", lang);
+  const custom = override(tool, page, "MetaDescription", lang, year);
   if (custom) return custom;
   if (page === "presentation") return presentationDescription(tool, lang);
 

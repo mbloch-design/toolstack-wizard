@@ -62,14 +62,14 @@ export function resolveMonthlyPrice(tool: {
 // agent IA" describes a free plan; a bare /aucun|pas de/ match marked
 // Mailchimp, Zoom and Blender as having none. « Pas d’offre gratuite » (elided
 // « de ») read as a free plan and titled 30 paid-only fiches « free plan ».
-const NEGATION_RE = /^\s*(?:pas de|aucune?|no|non|sans)\b|(?:pas de|pas d['’]|aucune?|sans)\s*(?:plan|version|offre|formule|forfait|palier|tier)\s+gratuit|no free (?:plan|tier|version)|non communiqué/i;
+const NEGATION_RE = /^\s*(?:pas de|aucune?|no|non|sans)\b|(?:pas de|pas d['’]|pas une?|aucune?|sans)\s*(?:plan|version|offre|formule|forfait|palier|tier)\s+gratuit|no free (?:plan|tier|version)|non communiqué/i;
 const TRIAL_ONLY_RE = /essai|trial|jours? gratuit|demo gratuite|démo gratuite/i;
 // Phrases that override a trial-word match — the free text can mention
 // "essai" while describing an actually-permanent free plan (Dubsado: "essai
 // gratuit illimité dans le temps, limité à 3 clients" is a capped-forever
 // free tier, not a trial; Logseq mentions "sans... essai" while being fully
 // free/open-source).
-const PERMANENT_FREE_OVERRIDE_RE = /gratuit (a|à) vie|forever free|illimité dans le temps|sans limite de temps|entièrement gratuit|plan gratuit permanent|produit complet|open-?source/i;
+const PERMANENT_FREE_OVERRIDE_RE = /gratuit (a|à) vie|forever free|always free|toujours gratuit|plan free permanent|illimité dans le temps|sans limite de temps|entièrement gratuit|plan gratuit permanent|produit complet|open-?source/i;
 
 /**
  * Bulk placeholders written on tools that were never researched (19/10/2026:

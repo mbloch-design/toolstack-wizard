@@ -9044,45 +9044,37 @@
     }
   },
   {
-    "name": "Crowdfire Inc",
+    "name": "Crowdfire",
     "slug": "crowdfire-inc",
     "url_fr": "https://tooltrim.com/fr/tool/crowdfire-inc",
     "url_en": "https://tooltrim.com/en/tool/crowdfire-inc",
     "website": "https://crowdfireapp.com",
     "category": "email-productivity",
     "pricing": {
-      "free": "Produit arrêté.",
+      "free": null,
       "paid": "Plus aucune offre vendue : le site annonce sa transformation en média."
     },
     "description_fr": "Ancien outil de planification et de suivi des réseaux sociaux, arrêté en 2026 : Crowdfire devient un média. Voir les alternatives.",
     "description_en": "Former social media scheduling and monitoring tool, retired in 2026 as Crowdfire turns into a media outlet. See the alternatives.",
     "price_verified_on": "2026-10-20",
     "verdict_fr": {
-      "keep_if": "Vous gérez plusieurs réseaux sociaux (Instagram, TikTok, LinkedIn)",
-      "avoid_if": "Vous avez besoin d'email marketing (ce n'est pas la spécialité)",
+      "keep_if": "Tu as encore des contenus planifiés dans Crowdfire : exporte-les et bascule vers un outil actif",
+      "avoid_if": "Tu cherches un outil de planification aujourd’hui : Crowdfire n’en vend plus",
       "strengths": [
-        "Plan gratuit disponible",
-        "Scheduling bulk simple et efficace",
-        "Analytics solides sur performance posts"
+        "Outil historique de planification multi-réseaux, utilisé une quinzaine d’années par les créateurs"
       ],
       "weaknesses": [
-        "Pas un outil email marketing",
-        "Interface moins moderne que Later/Buffer",
-        "Automation engagement limitée"
+        "Outil arrêté : plus d’offre ni d’inscription"
       ]
     },
     "verdict_en": {
-      "keep_if": "You manage multiple social networks (Instagram, TikTok, LinkedIn)",
-      "avoid_if": "You need email marketing (not this platform's focus)",
+      "keep_if": "You still have posts scheduled in Crowdfire: export them and move to an active tool",
+      "avoid_if": "You are looking for a scheduling tool today: Crowdfire no longer sells one",
       "strengths": [
-        "Free plan available",
-        "Simple, efficient bulk scheduling",
-        "Solid analytics on post performance"
+        "Long-standing multi-network scheduling tool, used by creators for about fifteen years"
       ],
       "weaknesses": [
-        "Not an email marketing tool",
-        "Less modern interface than Later/Buffer",
-        "Limited engagement automation"
+        "Retired: no plan or sign-up any more"
       ]
     }
   },

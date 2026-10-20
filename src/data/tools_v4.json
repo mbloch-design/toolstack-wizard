@@ -50871,29 +50871,21 @@
   },
   {
     "id": "crowdfire-inc",
-    "name": "Crowdfire Inc",
+    "name": "Crowdfire",
     "shortDescription": "Ancien outil de planification et de suivi des réseaux sociaux, arrêté en 2026 : Crowdfire devient un média. Voir les alternatives.",
     "description": "Ancien outil de planification et de suivi des réseaux sociaux, arrêté en 2026 : Crowdfire devient un média. Voir les alternatives.",
     "category": "email-productivity",
     "pricing": {
-      "free": "Produit arrêté.",
+      "free": null,
       "paid": "Plus aucune offre vendue : le site annonce sa transformation en média."
     },
     "website": "https://crowdfireapp.com",
     "affiliateLink": "https://crowdfireapp.com",
     "pros": [
-      "Plan gratuit disponible.",
-      "Scheduling bulk simple et efficace.",
-      "Analytics solides sur performance posts.",
-      "Multi-plateforme (Instagram, TikTok, LinkedIn, etc).",
-      "Support email réactif."
+      "Outil historique de planification multi-réseaux, utilisé une quinzaine d’années par les créateurs."
     ],
     "cons": [
-      "Pas un outil email marketing.",
-      "Interface moins moderne que Later/Buffer.",
-      "Automation engagement limitée.",
-      "Plan gratuit très limité.",
-      "Moins d'intégrations que concurrents."
+      "Outil arrêté : plus d’offre ni d’inscription."
     ],
     "bestFor": [
       "creator",
@@ -50917,16 +50909,13 @@
     ],
     "verdict": {
       "keepIf": [
-        "Vous gérez plusieurs réseaux sociaux (Instagram, TikTok, LinkedIn).",
-        "Vous avez besoin de scheduling et analytics simplifié.",
-        "Vous cherchez alternative à Later à budget modéré."
+        "Tu as encore des contenus planifiés dans Crowdfire : exporte-les et bascule vers un outil actif."
       ],
       "avoidIf": [
-        "Vous avez besoin d'email marketing (ce n'est pas la spécialité).",
-        "Vous voulez engagement avancé et réponse automatisée.",
-        "Vous cherchez une plateforme all-in-one email+social."
+        "Tu cherches un outil de planification aujourd’hui : Crowdfire n’en vend plus."
       ],
-      "threshold": "Crowdfire excelle pour social simple ; pour email/marketing/automation, utiliser Brevo/Mailchimp plutôt."
+      "threshold": "Outil arrêté : compare plutôt Buffer, Metricool, Publer ou SocialBee.",
+      "billingTraps": []
     },
     "alternatives": [
       "buffer",
@@ -50958,7 +50947,7 @@
     "longDescription": "Crowdfire a aidé pendant une quinzaine d'années les créateurs et petites équipes à planifier leurs publications et à suivre leurs comptes sociaux. En 2026, l'éditeur a arrêté l'outil : le site annonce que Crowdfire devient un média consacré aux réseaux sociaux, au Web3 et à l'IA, et n'affiche plus ni offre ni inscription.\n\nPour planifier ses publications, les remplaçants directs sont Buffer, Metricool, Publer, SocialBee ou Hootsuite, selon le budget et le nombre de comptes à gérer.",
     "longDescriptionEn": "For about fifteen years Crowdfire helped creators and small teams schedule posts and monitor their social accounts. In 2026 the company retired the tool: the site says Crowdfire is becoming a media outlet on social media, Web3 and AI, and no longer shows any plan or sign-up.\n\nTo keep scheduling posts, the direct replacements are Buffer, Metricool, Publer, SocialBee or Hootsuite, depending on budget and number of accounts.",
     "pricingEn": {
-      "free": "Discontinued.",
+      "free": null,
       "paid": "No plan sold any more: the site announces its shift to a media outlet."
     },
     "pricing_v5": {
@@ -50984,30 +50973,19 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "You manage multiple social networks (Instagram, TikTok, LinkedIn).",
-        "You need simple scheduling and analytics.",
-        "You want a Later alternative at moderate budget."
+        "You still have posts scheduled in Crowdfire: export them and move to an active tool."
       ],
       "avoidIf": [
-        "You need email marketing (not this platform's focus).",
-        "You want advanced engagement and auto-response.",
-        "You need an all-in-one email+social platform."
+        "You are looking for a scheduling tool today: Crowdfire no longer sells one."
       ],
-      "threshold": "Crowdfire excels for simple social; for email/marketing/automation, use Brevo/Mailchimp instead."
+      "threshold": "Retired tool: compare Buffer, Metricool, Publer or SocialBee instead.",
+      "billingTraps": []
     },
     "prosEn": [
-      "Free plan available.",
-      "Simple, efficient bulk scheduling.",
-      "Solid analytics on post performance.",
-      "Multi-platform (Instagram, TikTok, LinkedIn, etc).",
-      "Responsive email support."
+      "Long-standing multi-network scheduling tool, used by creators for about fifteen years."
     ],
     "consEn": [
-      "Not an email marketing tool.",
-      "Less modern interface than Later/Buffer.",
-      "Limited engagement automation.",
-      "Very limited free plan.",
-      "Fewer integrations than competitors."
+      "Retired: no plan or sign-up any more."
     ],
     "useCases": [
       "Planifier et organiser posts sur multi-réseaux.",

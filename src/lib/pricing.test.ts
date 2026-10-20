@@ -8,6 +8,11 @@ describe("hasGenuineFreeTier", () => {
     expect(hasGenuineFreeTier("No permanent free plan.")).toBe(false);
   });
 
+  it("keeps a permanent free plan that also mentions a trial", () => {
+    expect(hasGenuineFreeTier("Plan Free permanent avec un type d'événement. Essai payant de 14 jours.")).toBe(true);
+    expect(hasGenuineFreeTier("Essai de la suite, pas une version gratuite permanente.")).toBe(false);
+  });
+
   it("keeps a free plan that lists what it lacks", () => {
     expect(hasGenuineFreeTier("Plan gratuit : 3 projets, aucun agent IA.")).toBe(true);
   });
