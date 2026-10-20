@@ -1,3 +1,9 @@
+## 2026-10-20 : guides et classements « meilleurs outils », refonte
+
+- /guides : en-tête resserré (titre, une phrase, une barre filtres + recherche compacte + tri) ; derniers guides en 4 colonnes après la rangée vedette ; classements par besoin après le flux daté, en lignes compactes (trois logos, titre, nombre d'outils).
+- Page classement (BestOfGuidePage) au gabarit des articles : en-tête avec couverture des 4 premiers outils, table des matières collante, colonne de 760 px ; choix sur surface douce, tableau avec logos, chaque outil au langage de sa fiche (forces/limites, cartes « Garde-le si / Évite-le si », « Avant de payer », bouton vers la fiche), FAQ à l'échelle des fiches, « Autres classements ».
+- Couvertures légères `src/data/bestOfCovers.json` (3,7 Ko) via `scripts/gen-best-of-covers.mjs`, appelé par le générateur des classements, pour ne pas charger les 184 Ko de données dans l'index.
+
 ## 19 octobre 2026 : SEO des guides et des stacks
 
 Constat (GSC du 18/07 au 17/10) : 424 pages de stacks pour 1 clic et 350 impressions, guides à 20 clics pour 5 500 impressions. Les stacks n'étaient liées que depuis leur hub, sans donnée structurée, avec un titre calé sur « stack ».

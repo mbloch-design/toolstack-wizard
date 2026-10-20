@@ -32263,6 +32263,28 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
 .gi-card-meta { gap: 10px; margin-top: 10px; font-size: 13px; }
 .gi-card-grid { row-gap: clamp(40px, 4.5vw, 56px); margin-top: clamp(48px, 5vw, 64px); }
 .gi-simple-controls .gi-filter-pills { flex: 1 1 auto; }
+/* En-tête des guides (20 oct. 2026, « trop ») : titre et une phrase, puis une
+   seule barre, filtres à gauche, recherche compacte et tri à droite. La
+   recherche ne pèse plus plus lourd que le titre. */
+.gi-container .gi-hero-sub { max-width: 56ch; margin: 12px 0 0; color: var(--color-text-secondary); font: 400 17px/1.5 var(--font-ui); }
+.gi-simple-controls .gi-simple-search { flex: 0 1 240px; width: auto; min-height: 36px; padding: 0 12px; border: 1px solid transparent; border-radius: var(--radius-pill); background: var(--color-surface-soft); }
+.gi-simple-controls .gi-simple-search:focus-within { border-color: var(--color-border-strong); background: var(--color-surface); }
+.gi-simple-controls .gi-simple-search input { font-size: 14px; }
+/* Une seule ligne de filtres : le rail défile au lieu de passer à la ligne
+   (en français, les libellés plus longs cassaient la pastille active). */
+.gi-simple-controls { flex-wrap: nowrap; }
+.gi-simple-controls .gi-filter-pills { flex: 1 1 auto; min-width: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.gi-simple-controls .gi-filter-pills::-webkit-scrollbar { display: none; }
+.gi-simple-controls .gi-filter-pill { flex: none; }
+.gi-simple-controls .gi-simple-search > svg { width: 16px; height: 16px; }
+.gi-simple-controls .gi-simple-search button { width: 24px; height: 24px; }
+@media (max-width: 900px) {
+  .gi-simple-controls { flex-wrap: wrap; }
+  .gi-simple-controls .gi-filter-pills { flex-basis: 100%; }
+}
+@media (max-width: 700px) {
+  .gi-simple-controls .gi-simple-search { flex-basis: 100%; min-height: 44px; }
+}
 .gi-language-badge {
   padding: 2px 7px;
   border-radius: 6px;
@@ -32832,88 +32854,137 @@ img[data-logo-loading] {
   .cp-guide-source-url { display: block; overflow-wrap: anywhere; font-size: .875rem; }
 }
 
-/* ── Pages « meilleurs outils » par intention (BestOfGuidePage.tsx) ─────────
-   Préfixe gb-. Mêmes jetons que les guides : surfaces claires, texte sombre,
-   aucun bouton bleu ni dégradé. */
+/* ── Pages « meilleurs outils » (BestOfGuidePage.tsx), refonte du 20 oct. 2026
+   La page reprend le gabarit des articles (en-tête ga-, couverture d'outils,
+   table des matières collante, colonne de 760 px). Ses blocs propres (gb-)
+   parlent le langage des fiches outils : cartes sans bordure sur surface
+   douce, marqueurs coche / tiret, cartes « Garde-le si / Évite-le si ». */
 @layer components {
-  .gb-wrap { max-width: 880px; margin: 0 auto; padding: 0 var(--space-lg); }
-  .gb-crumbs { padding-top: var(--space-lg); }
-  .gb-hero { padding-top: clamp(24px, 4vw, 48px); padding-bottom: clamp(24px, 4vw, 40px); }
-  .gb-eyebrow { margin: 0 0 var(--space-sm); color: var(--color-muted); font-family: var(--font-ui); font-size: 13px; }
-  .gb-title { margin: 0; font-family: var(--font-ui); font-size: clamp(30px, 4vw, 44px); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; color: var(--color-text-strong); }
-  .gb-intro { margin: var(--space-md) 0 0; max-width: 680px; color: var(--color-muted); font-size: 18px; line-height: 1.6; }
-  .gb-section { padding-top: clamp(24px, 3.5vw, 40px); padding-bottom: clamp(24px, 3.5vw, 40px); }
-  .gb-h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 var(--space-md); font-family: var(--font-ui); font-size: clamp(22px, 2.4vw, 28px); font-weight: 600; letter-spacing: -0.02em; color: var(--color-text-strong); }
-  .gb-h3 { margin: 0; font-family: var(--font-ui); font-size: 21px; font-weight: 600; letter-spacing: -0.015em; color: var(--color-text-strong); }
-  .gb-text { margin: var(--space-sm) 0 0; color: var(--color-text); font-size: 16px; line-height: 1.65; }
-  .gb-muted { color: var(--color-muted); font-size: 15px; }
-  .gb-note { margin: var(--space-sm) 0 0; color: var(--color-muted); font-size: 13px; }
-  .gb-icon { width: 18px; height: 18px; flex: none; }
+  .gb-article { grid-column: 2; min-width: 0; }
+  .gb-section { margin: 0 0 clamp(56px, 6vw, 80px); scroll-margin-top: calc(var(--navbar-h, 68px) + 24px); }
+  .gb-h2 { display: flex; align-items: center; gap: var(--space-xs); margin: 0 0 var(--space-md); color: var(--color-text-strong); font-family: var(--font-ui); font-size: clamp(24px, 2.2vw, 30px); font-weight: 500; line-height: 1.15; letter-spacing: -0.025em; }
+  .gb-h3 { margin: 0; color: var(--color-text-strong); font-family: var(--font-ui); font-size: 22px; font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
+  .gb-text { margin: 0 0 var(--space-sm); color: var(--color-text-secondary); font-family: var(--font-ui); font-size: 16px; line-height: 1.6; }
+  .gb-muted { color: var(--color-text-meta); font-size: 15px; }
+  .gb-icon { flex: none; width: 16px; height: 16px; }
   .gb-yes { color: var(--color-text-strong); }
-  .gb-no { color: var(--color-muted-light); }
-  .gb-logo { border-radius: var(--radius-sm); flex: none; }
+  .gb-no { color: var(--color-text-meta); }
+  .gb-kicker { display: flex; align-items: center; gap: 6px; margin: 0 0 var(--space-xs); color: var(--color-text-meta); font: 600 var(--tt-size-kicker)/1.3 var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; }
 
-  .gb-picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); }
-  .gb-pick { display: flex; flex-direction: column; gap: 10px; padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-text); text-decoration: none; transition: border-color .15s ease; }
-  .gb-pick:hover { border-color: var(--color-border-strong); }
-  .gb-pick-label { color: var(--color-muted); font-family: var(--font-ui); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
-  .gb-pick-tool { display: flex; align-items: center; gap: 10px; }
-  .gb-pick-name { font-family: var(--font-ui); font-size: 17px; font-weight: 600; color: var(--color-text-strong); }
-  .gb-pick-meta { color: var(--color-muted); font-size: 14px; }
+  /* Nos choix : trois cartes au langage de l'accueil. */
+  .gb-picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-sm); }
+  .gb-pick { display: grid; justify-items: start; gap: 6px; padding: var(--space-md); border-radius: var(--radius-lg); background: var(--color-surface-soft); color: var(--color-text-strong); text-decoration: none; transition: background-color 140ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .gb-pick:hover, .gb-pick:focus-visible { background: color-mix(in srgb, var(--color-text-strong) 7%, var(--color-surface)); transform: translateY(-1px); }
+  .gb-pick > img { margin-bottom: var(--space-xs); }
+  .gb-pick-label { color: var(--color-text-meta); font: 600 var(--tt-size-kicker)/1.3 var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; }
+  .gb-pick-name { font: 600 18px/1.2 var(--font-ui); letter-spacing: -0.015em; }
+  .gb-pick-meta { color: var(--color-text-secondary); font: 400 var(--tt-size-card-body)/1.4 var(--font-ui); }
+  .gb-take { margin-top: var(--space-md); padding: var(--space-md) var(--space-lg); border-left: 2px solid var(--color-text-strong); border-radius: 0 var(--radius-md) var(--radius-md) 0; background: var(--color-surface-soft); }
+  .gb-take-label { margin: 0 0 var(--space-2xs); color: var(--color-text-strong); font: 600 var(--tt-size-kicker)/1.3 var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; }
+  .gb-take-text { margin: 0; color: var(--color-text); font: 400 16px/1.6 var(--font-ui); }
 
-  .gb-angle { padding: var(--space-md) var(--space-lg); border-left: 3px solid var(--color-text-strong); border-radius: var(--radius-sm); background: var(--color-surface-soft); }
-  .gb-angle-label { display: flex; align-items: center; gap: 8px; margin: 0; font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--color-text-strong); }
-  .gb-angle-text { margin: var(--space-sm) 0 0; font-size: 16px; line-height: 1.65; color: var(--color-text); }
-
-  .gb-table-scroll { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
-  .gb-table { width: 100%; border-collapse: collapse; font-size: 15px; }
-  .gb-table th { padding: 12px 14px; border-bottom: 1px solid var(--color-border); color: var(--color-muted); font-family: var(--font-ui); font-size: 12px; font-weight: 500; text-align: left; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
-  .gb-table td { padding: 12px 14px; border-bottom: 1px solid var(--color-border-soft); vertical-align: middle; }
+  /* Comparatif */
+  .gb-table-scroll { overflow-x: auto; border: 1px solid var(--color-border-soft); border-radius: var(--radius-lg); }
+  .gb-table { width: 100%; border-collapse: collapse; font-family: var(--font-ui); font-size: var(--tt-size-card-body); }
+  .gb-table th { padding: var(--space-sm) var(--space-md); border-bottom: 1px solid var(--color-border-soft); color: var(--color-text-meta); font-size: var(--tt-size-kicker); font-weight: 600; letter-spacing: 0.06em; text-align: left; text-transform: uppercase; white-space: nowrap; }
+  .gb-table td { padding: var(--space-sm) var(--space-md); border-bottom: 1px solid var(--color-border-soft); color: var(--color-text); vertical-align: middle; }
   .gb-table tr:last-child td { border-bottom: 0; }
-  .gb-rank { width: 36px; color: var(--color-muted); font-variant-numeric: tabular-nums; }
-  .gb-table-tool { display: flex; flex-direction: column; color: var(--color-text); text-decoration: none; }
-  .gb-table-name { font-weight: 600; color: var(--color-text-strong); }
-  .gb-table-tagline { color: var(--color-muted); font-size: 13px; }
+  .gb-rank { width: 32px; color: var(--color-text-meta); font-variant-numeric: tabular-nums; }
+  .gb-score { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .gb-table-tool { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-text-strong); text-decoration: none; }
+  .gb-table-tool:hover .gb-table-name { text-decoration: underline; text-underline-offset: 3px; }
+  .gb-table-name { display: block; font-weight: 600; }
+  .gb-table-tagline { display: block; color: var(--color-text-meta); font-size: 13px; }
+  .gb-note { margin: var(--space-xs) 0 0; color: var(--color-text-meta); font: 400 13px/1.5 var(--font-ui); }
 
-  .gb-ai-list { display: grid; gap: 0; margin: var(--space-md) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--color-border); }
-  .gb-ai-item { display: grid; grid-template-columns: 180px 1fr; gap: var(--space-md); padding: 12px 0; border-bottom: 1px solid var(--color-border-soft); font-size: 15px; }
-  .gb-ai-name { font-weight: 600; color: var(--color-text-strong); }
-  .gb-ai-text { color: var(--color-text); line-height: 1.55; }
+  .gb-ai-list { display: grid; gap: var(--space-xs); margin: var(--space-sm) 0 0; padding: 0; list-style: none; }
+  .gb-ai-item { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: var(--space-md); padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border-soft); font-family: var(--font-ui); font-size: 15px; }
+  .gb-ai-name { color: var(--color-text-strong); font-weight: 600; }
+  .gb-ai-text { color: var(--color-text-secondary); line-height: 1.5; }
 
-  .gb-review { padding: var(--space-xl) 0; border-top: 1px solid var(--color-border); scroll-margin-top: calc(var(--navbar-h) + 16px); }
-  .gb-review-head { display: flex; align-items: center; gap: 14px; }
-  .gb-review-tagline { margin: 2px 0 0; color: var(--color-muted); font-size: 14px; }
-  .gb-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: var(--space-md) 0 0; padding: 0; }
-  .gb-facts span { padding: 4px 10px; border-radius: var(--radius-pill); background: #E0DBD7; color: var(--color-text-strong); font-size: 13px; font-weight: 500; }
-  .gb-proscons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-md); }
-  .gb-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 15px; line-height: 1.5; }
-  .gb-list li { display: flex; gap: 8px; }
-  .gb-list .gb-icon { margin-top: 2px; }
-  .gb-verdict { display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; margin: var(--space-md) 0 0; font-size: 15px; line-height: 1.55; }
-  .gb-verdict dt { font-family: var(--font-ui); font-weight: 600; color: var(--color-text-strong); }
-  .gb-verdict dd { margin: 0; color: var(--color-text); }
-  .gb-links { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin: var(--space-md) 0 0; font-family: var(--font-ui); font-size: 14px; font-weight: 500; }
-  .gb-links a { color: var(--color-text-strong); text-decoration: underline; text-underline-offset: 3px; }
+  /* Outil par outil : chaque outil au langage de sa fiche. */
+  .gb-review { padding: clamp(32px, 4vw, 48px) 0; border-top: 1px solid var(--color-border-soft); scroll-margin-top: calc(var(--navbar-h, 68px) + 24px); }
+  .gb-review-head { display: grid; grid-template-columns: auto auto minmax(0, 1fr); align-items: center; gap: var(--space-md); margin-bottom: var(--space-md); }
+  .gb-review-rank { min-width: 28px; color: var(--color-text-meta); font: 500 28px/1 var(--font-ui); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .gb-review-id { min-width: 0; }
+  .gb-review-tagline { margin: 2px 0 0; color: var(--color-text-meta); font: 400 var(--tt-size-card-body)/1.4 var(--font-ui); }
+  .gb-facts { display: flex; flex-wrap: wrap; gap: var(--space-xs); grid-column: 2 / -1; margin: 0; }
+  .gb-facts span { display: inline-flex; align-items: center; min-height: 28px; padding: 0 var(--space-sm); border: 1px solid var(--color-border-soft); border-radius: var(--radius-pill); color: var(--color-text); font: 500 13px/1 var(--font-ui); }
+  .gb-proscons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); margin: var(--space-md) 0; }
+  .gb-list { display: grid; gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+  .gb-list li { display: flex; gap: var(--space-xs); color: var(--color-text); font: 400 15px/1.5 var(--font-ui); }
+  .gb-list li .gb-icon { margin-top: 3px; }
+  .gb-fit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-sm); margin: var(--space-md) 0; }
+  .gb-fit-card { padding: var(--space-md); border-radius: var(--radius-lg); background: var(--color-surface-soft); }
+  .gb-fit-card p:last-child { margin: 0; color: var(--color-text); font: 400 15px/1.5 var(--font-ui); }
+  .gb-trap { display: flex; gap: var(--space-xs); margin: var(--space-md) 0; color: var(--color-text-secondary); font: 400 15px/1.5 var(--font-ui); }
+  .gb-trap .gb-icon { margin-top: 3px; color: var(--color-alert); }
+  .gb-trap strong { color: var(--color-text-strong); font-weight: 600; }
+  .gb-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs) var(--space-md); margin: var(--space-md) 0 0; font-family: var(--font-ui); font-size: var(--tt-size-card-body); }
+  .gb-links a { color: var(--color-text); text-decoration: underline; text-decoration-color: var(--color-border); text-underline-offset: 3px; }
+  .gb-links a:hover { text-decoration-color: currentColor; }
+  .gb-links .gb-link-primary { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 var(--space-md); border-radius: var(--radius-pill); background: var(--color-text-strong); color: var(--color-bg); font-weight: 600; text-decoration: none; }
+  .gb-links .gb-link-primary:hover { background: var(--color-text-secondary); }
 
-  .gb-more-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-border); }
-  .gb-more-list a { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--color-border-soft); color: var(--color-text-strong); font-family: var(--font-ui); font-weight: 500; text-decoration: none; }
+  .gb-method .gb-text { font-size: 15px; }
 
-  @media (max-width: 720px) {
-    .gb-wrap { padding: 0 16px; }
-    .gb-picks { grid-template-columns: 1fr; }
-    .gb-proscons { grid-template-columns: 1fr; }
-    .gb-verdict { grid-template-columns: 1fr; gap: 2px; }
-    .gb-verdict dd { margin-bottom: 8px; }
-    .gb-ai-item { grid-template-columns: 1fr; gap: 2px; }
+  /* FAQ à l'échelle des fiches : questions en 17 px, pas en titres d'affiche. */
+  .gb-faq { border-top: 1px solid var(--color-border-soft); }
+  .gb-faq-item { border-bottom: 1px solid var(--color-border-soft); }
+  .gb-faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-md) 0; cursor: pointer; list-style: none; }
+  .gb-faq-item summary::-webkit-details-marker { display: none; }
+  .gb-faq-item h3 { margin: 0; color: var(--color-text-strong); font: 600 17px/1.35 var(--font-ui); letter-spacing: -0.01em; }
+  .gb-faq-item summary .gb-icon { color: var(--color-text-meta); transition: transform 180ms ease-out; }
+  .gb-faq-item[open] summary .gb-icon { transform: rotate(180deg); }
+  .gb-faq-item p { margin: 0 0 var(--space-md); color: var(--color-text-secondary); font: 400 15px/1.6 var(--font-ui); }
+
+  /* Autres classements : les cartes de l'index des guides. */
+  .gb-more { padding: clamp(56px, 6vw, 88px) 0; border-top: 1px solid var(--color-border-soft); }
+  .gb-more-inner { max-width: var(--layout-max); margin: 0 auto; padding: 0 var(--layout-gutter); }
+  .gb-more-all { display: inline-flex; align-items: center; gap: 6px; color: var(--color-text); font: 500 15px/1 var(--font-ui); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .gb-article { grid-column: 1; }
+    .gb-picks { grid-template-columns: minmax(0, 1fr); }
   }
+  @media (max-width: 640px) {
+    .gb-proscons, .gb-fit { grid-template-columns: minmax(0, 1fr); }
+    .gb-pick { grid-template-columns: 44px minmax(0, 1fr); column-gap: var(--space-sm); row-gap: 2px; align-items: center; }
+    .gb-pick > img { grid-row: span 3; margin: 0; }
+    .gb-review-head { grid-template-columns: auto minmax(0, 1fr); }
+    .gb-review-rank { display: none; }
+    .gb-facts { grid-column: 1 / -1; }
+    .gb-ai-item { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .gb-pick, .gb-faq-item summary .gb-icon { transition: none; } }
 }
 
 @layer components {
-  .gi-bestof { margin: 0 0 var(--space-lg); }
-  .gi-bestof-title { margin: 0 0 var(--space-sm); color: var(--color-muted); font-family: var(--font-ui); font-size: 13px; font-weight: 500; }
-  .gi-bestof-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
-  .gi-bestof-list a { display: inline-flex; padding: 6px 12px; border: 1px solid var(--color-border); border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-text-strong); font-family: var(--font-ui); font-size: 14px; text-decoration: none; }
-  .gi-bestof-list a:hover { border-color: var(--color-border-strong); }
+  /* Index des guides (20 oct. 2026) : deux familles, deux sections. Les
+     classements d'abord, en cartes au langage des articles ; puis le flux daté.
+     Titres de section sur un seul bord gauche, comme sur l'accueil. */
+  .gi-section-head { display: grid; gap: var(--space-xs); margin: 0 0 clamp(24px, 3vw, 32px); }
+  .gi-section-head h2 { margin: 0; color: var(--color-text-strong); font-family: var(--font-ui); font-size: clamp(24px, 2.2vw, 30px); font-weight: 500; line-height: 1.15; letter-spacing: -0.025em; }
+  .gi-section-head p { max-width: 60ch; margin: 0; color: var(--color-text-secondary); font-family: var(--font-ui); font-size: 16px; line-height: 1.5; }
+  /* Classements : après le flux daté, en lignes compactes sur trois colonnes. */
+  .gi-bestof { margin: clamp(72px, 8vw, 112px) 0 0; padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid var(--color-border); }
+  .gi-bestof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2xs) var(--space-md); }
+  .gi-rank { display: flex; align-items: center; gap: var(--space-sm); min-height: 72px; padding: var(--space-sm); border-radius: var(--radius-lg); color: var(--color-text-strong); text-decoration: none; transition: background-color 140ms ease-out; }
+  .gi-rank:hover, .gi-rank:focus-visible { background: var(--color-surface-soft); }
+  .gi-rank-logos { display: flex; flex: none; }
+  .gi-rank-logos > * { border-radius: var(--radius-sm); box-shadow: 0 0 0 2px var(--color-bg); transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .gi-rank-logos > * + * { margin-left: -8px; }
+  .gi-rank:is(:hover, :focus-visible) .gi-rank-logos > *:first-child { transform: translateX(-2px); }
+  .gi-rank:is(:hover, :focus-visible) .gi-rank-logos > *:last-child { transform: translateX(2px); }
+  .gi-rank-copy { display: grid; gap: 2px; min-width: 0; }
+  .gi-rank-title { font: 500 15px/1.3 var(--font-ui); letter-spacing: -0.01em; }
+  .gi-rank-meta { color: var(--color-text-meta); font: 400 13px/1.3 var(--font-ui); }
+  @media (max-width: 900px) { .gi-bestof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .gi-bestof-grid { grid-template-columns: minmax(0, 1fr); } }
+  @media (prefers-reduced-motion: reduce) { .gi-rank, .gi-rank-logos > * { transition: none; } }
+
+  /* Derniers guides : après la rangée vedette, quatre colonnes sur grand écran. */
+  @media (min-width: 1181px) { .gi-card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 }
 
 

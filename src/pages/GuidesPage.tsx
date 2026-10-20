@@ -12,7 +12,7 @@ import { fitBrandedTitle } from "@/lib/seoTitle";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Search, X } from "@/lib/icons";
 import { getGuidePosts } from "@/lib/guideCatalog";
-import bestOfGuides from "@/data/bestOfGuides.json";
+import BestOfCard, { BEST_OF_CARDS } from "@/components/guide/BestOfCard";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    GuidesPage — editorial redesign v2
@@ -189,22 +189,26 @@ const GuidesPage = () => {
                 : [{ label: t("Guides", "Guides") as string }]}
             />
             <h1 className="tt-catalog-compact-title">{t("Guides", "Guides")}</h1>
+            <p className="gi-hero-sub">{t("Comparatifs, guides pratiques et classements pour choisir vos outils.", "Comparisons, practical guides and rankings to choose your tools.")}</p>
           </div>
 
-          {/* Comparatifs « meilleurs outils » par intention : liens explorables
-              depuis l'index, sans quoi ces pages ne seraient atteintes que par le sitemap. */}
-          {activeFilter === "all" && (
-            <nav className="gi-bestof" aria-label={t("Comparatifs par besoin", "Comparisons by need") as string}>
-              <p className="gi-bestof-title">{t("Comparatifs par besoin", "Comparisons by need")}</p>
-              <ul className="gi-bestof-list">
-                {bestOfGuides.guides.map((g) => (
-                  <li key={g.id}><Link to={`${prefix}/guide/${g.slug[lang === "en" ? "en" : "fr"]}`}>{g.h1[lang === "en" ? "en" : "fr"]}</Link></li>
-                ))}
-              </ul>
-            </nav>
-          )}
-
+          <h2 className="sr-only">{t("Derniers guides", "Latest guides")}</h2>
           <div className="gi-simple-controls">
+            <div className="gi-filter-pills tt-rail" aria-label={t("Filtrer les guides par thème", "Filter guides by topic") as string}>
+              <RailThumb />
+              {filters.map((filter) => (
+                <button
+                  key={filter.id}
+                  type="button"
+                  className={`gi-filter-pill${activeFilter === filter.id ? " gi-filter-pill--active" : ""}`}
+                  aria-pressed={activeFilter === filter.id}
+                  onClick={() => setActiveFilter(filter.id)}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+
             <div className="gi-simple-search">
               <Search size={18} aria-hidden />
               <input
@@ -222,21 +226,6 @@ const GuidesPage = () => {
                   <X size={16} aria-hidden />
                 </button>
               ) : null}
-            </div>
-
-            <div className="gi-filter-pills tt-rail" aria-label={t("Filtrer les guides par thème", "Filter guides by topic") as string}>
-              <RailThumb />
-              {filters.map((filter) => (
-                <button
-                  key={filter.id}
-                  type="button"
-                  className={`gi-filter-pill${activeFilter === filter.id ? " gi-filter-pill--active" : ""}`}
-                  aria-pressed={activeFilter === filter.id}
-                  onClick={() => setActiveFilter(filter.id)}
-                >
-                  {filter.label}
-                </button>
-              ))}
             </div>
 
             <label className="gi-sort-wrapper">
@@ -309,6 +298,23 @@ const GuidesPage = () => {
                 )}
               </button>
             </div>
+          )}
+
+          {/* Les classements « meilleurs outils » : pages pérennes qui aident à
+              choisir. Après le flux daté, en lignes compactes (trois logos,
+              titre, nombre d'outils) pour ne pas lui voler la place. */}
+          {activeFilter === "all" && !searchQuery.trim() && (
+            <section className="gi-section gi-bestof" aria-labelledby="gi-bestof-title">
+              <div className="gi-section-head">
+                <h2 id="gi-bestof-title">{t("Les classements par besoin", "Rankings by need")}</h2>
+                <p>{t("Outils notés, prix relevés chez l'éditeur.", "Scored tools, prices read on the vendor's page.")}</p>
+              </div>
+              <div className="gi-bestof-grid">
+                {BEST_OF_CARDS.map((g) => (
+                  <BestOfCard key={g.id} guideId={g.id} lang={lang === "en" ? "en" : "fr"} />
+                ))}
+              </div>
+            </section>
           )}
 
           {storiesPosts.length > 0 && (

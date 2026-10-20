@@ -82,3 +82,6 @@ if (missing.length) {
 
 fs.writeFileSync("src/data/bestOfGuidesData.json", JSON.stringify(snapshot, null, 2) + "\n");
 console.log(`Pages « meilleurs outils » : ${config.guides.length} pages, ${Object.keys(snapshot).length} outils.`);
+
+// Couvertures légères pour l'index des guides (voir gen-best-of-covers.mjs).
+await import("./gen-best-of-covers.mjs");

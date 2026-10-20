@@ -1,0 +1,239 @@
+{
+  "after-effects-plugins": {
+    "count": 11,
+    "checkedOn": "2026-10-02",
+    "tools": [
+      {
+        "slug": "motion-bro",
+        "name": "Motion Bro",
+        "websiteUrl": "https://motionbro.com"
+      },
+      {
+        "slug": "ae-animation-composer",
+        "name": "Animation Composer 3",
+        "websiteUrl": "https://misterhorse.com/animation-composer"
+      },
+      {
+        "slug": "ae-gifgun",
+        "name": "GifGun",
+        "websiteUrl": "https://aescripts.com/gifgun"
+      },
+      {
+        "slug": "ae-bodymovin",
+        "name": "Bodymovin / Lottie",
+        "websiteUrl": "https://aescripts.com/bodymovin/"
+      }
+    ]
+  },
+  "project-management-freelancers": {
+    "count": 8,
+    "checkedOn": "2026-09-25",
+    "tools": [
+      {
+        "slug": "trello",
+        "name": "Trello",
+        "websiteUrl": "https://trello.com"
+      },
+      {
+        "slug": "asana",
+        "name": "Asana",
+        "websiteUrl": "https://asana.com"
+      },
+      {
+        "slug": "clickup",
+        "name": "ClickUp",
+        "logo": "/tool-media/logos/clickup.png",
+        "websiteUrl": "https://clickup.com"
+      },
+      {
+        "slug": "notion",
+        "name": "Notion",
+        "websiteUrl": "https://notion.so"
+      }
+    ]
+  },
+  "second-brain-apps": {
+    "count": 6,
+    "checkedOn": "2026-09-25",
+    "tools": [
+      {
+        "slug": "obsidian",
+        "name": "Obsidian",
+        "websiteUrl": "https://obsidian.md"
+      },
+      {
+        "slug": "logseq",
+        "name": "Logseq",
+        "websiteUrl": "https://logseq.com/"
+      },
+      {
+        "slug": "notion",
+        "name": "Notion",
+        "websiteUrl": "https://notion.so"
+      },
+      {
+        "slug": "heptabase",
+        "name": "Heptabase",
+        "websiteUrl": "https://heptabase.com"
+      }
+    ]
+  },
+  "3d-render-engines": {
+    "count": 5,
+    "checkedOn": "2026-10-02",
+    "tools": [
+      {
+        "slug": "octane-render",
+        "name": "Octane Render",
+        "websiteUrl": "https://home.otoy.com/render/octane-render/"
+      },
+      {
+        "slug": "redshift",
+        "name": "Redshift",
+        "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Redshift/Redshift_icon.svg",
+        "websiteUrl": "https://www.maxon.net/en/redshift"
+      },
+      {
+        "slug": "corona-renderer",
+        "name": "Corona Renderer",
+        "websiteUrl": "https://www.chaos.com/corona"
+      },
+      {
+        "slug": "renderman",
+        "name": "RenderMan",
+        "websiteUrl": "https://renderman.pixar.com"
+      }
+    ]
+  },
+  "cloud-hosting-developers": {
+    "count": 5,
+    "checkedOn": "2026-09-25",
+    "tools": [
+      {
+        "slug": "vercel",
+        "name": "Vercel",
+        "websiteUrl": "https://vercel.com"
+      },
+      {
+        "slug": "netlify",
+        "name": "Netlify",
+        "websiteUrl": "https://netlify.com"
+      },
+      {
+        "slug": "digitalocean",
+        "name": "DigitalOcean",
+        "websiteUrl": "https://digitalocean.com"
+      },
+      {
+        "slug": "heroku",
+        "name": "Heroku",
+        "websiteUrl": "https://heroku.com"
+      }
+    ]
+  },
+  "password-managers": {
+    "count": 5,
+    "checkedOn": "2026-10-20",
+    "tools": [
+      {
+        "slug": "nordpass",
+        "name": "NordPass",
+        "websiteUrl": "https://nordpass.com"
+      },
+      {
+        "slug": "1password",
+        "name": "1Password",
+        "websiteUrl": "https://1password.com"
+      },
+      {
+        "slug": "bitwarden",
+        "name": "Bitwarden",
+        "websiteUrl": "https://bitwarden.com"
+      },
+      {
+        "slug": "dashlane",
+        "name": "Dashlane",
+        "websiteUrl": "https://dashlane.com"
+      }
+    ]
+  },
+  "raw-photo-editors": {
+    "count": 6,
+    "checkedOn": "2026-10-01",
+    "tools": [
+      {
+        "slug": "capture-one",
+        "name": "Capture One",
+        "websiteUrl": "https://captureone.com"
+      },
+      {
+        "slug": "adobe-lightroom",
+        "name": "Adobe Lightroom",
+        "websiteUrl": "https://adobe.com/products/lightroom"
+      },
+      {
+        "slug": "dxo-photolab",
+        "name": "DxO PhotoLab",
+        "websiteUrl": "https://www.dxo.com/dxo-photolab/"
+      },
+      {
+        "slug": "luminar-neo",
+        "name": "Luminar Neo",
+        "websiteUrl": "https://skylum.com/luminar-neo"
+      }
+    ]
+  },
+  "portfolio-website-builders": {
+    "count": 6,
+    "checkedOn": "2026-10-02",
+    "tools": [
+      {
+        "slug": "cargo-site",
+        "name": "Cargo Site",
+        "websiteUrl": "https://cargo.site/"
+      },
+      {
+        "slug": "readymag",
+        "name": "Readymag",
+        "websiteUrl": "https://readymag.com"
+      },
+      {
+        "slug": "format",
+        "name": "Format",
+        "websiteUrl": "https://format.com"
+      },
+      {
+        "slug": "artstation",
+        "name": "ArtStation",
+        "websiteUrl": "https://www.artstation.com"
+      }
+    ]
+  },
+  "digital-sculpting-software": {
+    "count": 6,
+    "checkedOn": "2026-10-02",
+    "tools": [
+      {
+        "slug": "zbrush",
+        "name": "ZBrush",
+        "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_icon.svg",
+        "websiteUrl": "https://www.maxon.net/en/zbrush"
+      },
+      {
+        "slug": "blender",
+        "name": "Blender",
+        "websiteUrl": "https://blender.org"
+      },
+      {
+        "slug": "nomad-sculpt",
+        "name": "Nomad Sculpt",
+        "websiteUrl": "https://nomadsculpt.com"
+      },
+      {
+        "slug": "plasticity",
+        "name": "Plasticity",
+        "websiteUrl": "https://www.plasticity.xyz"
+      }
+    ]
+  }
+}
