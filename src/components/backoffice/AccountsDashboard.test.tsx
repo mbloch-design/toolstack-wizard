@@ -1,6 +1,7 @@
 import { act, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { normalizePersonalStack } from "@/lib/personalStack";
+import { parseAccountDetail } from "@/lib/backofficeAccounts";
 const mocks=vi.hoisted(()=>({list:vi.fn(),detail:vi.fn()}));
 vi.mock("@/lib/backofficeAccountsApi",()=>({loadAccountsDashboard:mocks.list,loadAccountDetail:mocks.detail}));
 import { AccountsDashboard } from "./AccountsDashboard";
@@ -42,6 +43,17 @@ describe("accounts dashboard",()=>{
   mocks.detail.mockRejectedValue(new Error("offline"));render(<AccountsDashboard/>);await screen.findByText("Personne");fireEvent.click(screen.getByRole("button",{name:"Voir la stack de person@example.test"}));
   expect(await screen.findByRole("alert")).toHaveTextContent("Détail indisponible");expect(screen.queryByText("Aucune stack enregistrée.")).not.toBeInTheDocument();
   mocks.detail.mockResolvedValue({...row,stack:null});fireEvent.click(screen.getByRole("button",{name:"Réessayer le détail"}));expect(await screen.findByText("Aucune stack enregistrée.")).toBeVisible();
+ });
+ it.each([{}, {version:4,selection:null}])("shows corrupt persisted detail %j as unavailable, never as an empty saved record",async state=>{
+  mocks.detail.mockImplementation(async()=>parseAccountDetail({...row,stack:{state,revision:1,updatedAt:at}}));
+  render(<AccountsDashboard/>);await screen.findByText("Personne");fireEvent.click(screen.getByRole("button",{name:"Voir la stack de person@example.test"}));
+  const detail=await screen.findByRole("region",{name:"Détail du compte"});expect(await within(detail).findByRole("alert")).toHaveTextContent("Détail indisponible");
+  expect(within(detail).queryByText("La stack enregistrée est vide.")).not.toBeInTheDocument();expect(within(detail).queryByText("Toutes les données enregistrées")).not.toBeInTheDocument();
+ });
+ it("still displays a genuine persisted empty record as empty",async()=>{
+  mocks.detail.mockImplementation(async()=>parseAccountDetail({...row,stack:{state:{version:3,pinnedToolSlugs:[]},revision:2,updatedAt:at}}));
+  render(<AccountsDashboard/>);await screen.findByText("Personne");fireEvent.click(screen.getByRole("button",{name:"Voir la stack de person@example.test"}));
+  expect(await screen.findByText("La stack enregistrée est vide.")).toBeVisible();expect(screen.queryByRole("alert")).not.toBeInTheDocument();
  });
  it("ignores late detail responses after selecting a different account",async()=>{
   let resolveFirst!:(value:unknown)=>void;mocks.list.mockResolvedValue({...dashboard,accounts:[row,{...row,userId:"44444444-4444-4444-8444-444444444444",email:"second@example.test",displayName:"Deuxième"}]});

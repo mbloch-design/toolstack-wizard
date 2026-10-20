@@ -60,6 +60,41 @@ function copyChoice(choice: PlanChoice): PlanChoice {
   };
 }
 
+function isStoredSelection(input: unknown, complete: boolean): boolean {
+  if (!isRecord(input) || (input.version !== undefined && input.version !== 3)) return false;
+  if (complete) {
+    return input.version === 3 && Array.isArray(input.needs)
+      && Array.isArray(input.toolEntries) && Array.isArray(input.pinnedToolSlugs);
+  }
+  // Older server snapshots may contain only the pinned references or entries.
+  // A version marker alone cannot establish that a selection was saved.
+  return (Array.isArray(input.pinnedToolSlugs) || Array.isArray(input.toolEntries))
+    && (input.needs === undefined || Array.isArray(input.needs))
+    && (input.pinnedToolSlugs === undefined || Array.isArray(input.pinnedToolSlugs))
+    && (input.toolEntries === undefined || Array.isArray(input.toolEntries));
+}
+
+/**
+ * Recognize a persisted server snapshot before tolerant member recovery.
+ * Local recovery deliberately accepts more damaged input; a server response
+ * must not invent an empty selection from an unrecognizable stored object.
+ * Source failures are plain errors, distinct from client write-validation errors.
+ */
+export function normalizeStoredPersonalStack(input: unknown): PersonalStackV4 {
+  if (!isRecord(input)) throw new Error("Invalid stored personal stack");
+  if (input.version === 4) {
+    const billing = input.billing;
+    if (!isStoredSelection(input.selection, true) || !isRecord(billing)
+      || !Array.isArray(billing.paid) || !Array.isArray(billing.reviewed)
+      || !isRecord(billing.choices) || !isRecord(input.decisions)) {
+      throw new Error("Invalid stored personal stack");
+    }
+  } else if ("selection" in input || !isStoredSelection(input, false)) {
+    throw new Error("Invalid stored personal stack");
+  }
+  return normalizePersonalStack(input);
+}
+
 /** Pure recovery: never reads localStorage or resolves tool slugs against a catalogue. */
 export function normalizePersonalStack(input: unknown): PersonalStackV4 {
   const envelope = isRecord(input) && (input.version === 4 || "selection" in input) ? input : null;

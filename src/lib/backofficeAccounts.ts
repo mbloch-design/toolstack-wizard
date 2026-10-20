@@ -1,4 +1,4 @@
-import { normalizePersonalStack, type PersonalStackRecord } from "./personalStack";
+import { normalizeStoredPersonalStack, type PersonalStackRecord } from "./personalStack";
 
 export type AccountSummary = {
   userId: string; email: string | null; displayName: string | null; createdAt: string | null;
@@ -64,7 +64,7 @@ export function parseAccountDetail(input: unknown): AccountDetail | null {
     const saved = record(value.stack); const revision = count(saved.revision);
     if (revision < 1) throw new Error("Invalid accounts response");
     record(saved.state);
-    stack = { state: normalizePersonalStack(saved.state), revision, updatedAt: date(saved.updatedAt) };
+    stack = { state: normalizeStoredPersonalStack(saved.state), revision, updatedAt: date(saved.updatedAt) };
   }
   return { ...identity(value), stack };
 }

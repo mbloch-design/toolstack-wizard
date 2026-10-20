@@ -58,6 +58,20 @@ describe("personal stack HTTP boundary", () => {
     expect(mocks.rpc.mock.calls.map(([name]) => name)).toEqual(["require_account_session", "read_personal_stack"]);
   });
 
+  it.each([{}, [[]], { version: 3 }, { version: 4, selection: null }, { ...state, selection: {} }, { ...state, billing: null }])("reports corrupt stored source %j as unavailable rather than empty", async storedState => {
+    mocks.rpc.mockImplementation(async (name: string) => ({ data: name === "require_account_session" ? null : { ...record, state: storedState }, error: null }));
+    const fixture = request(); await handler(fixture.req, fixture.res);
+    expect(fixture.res.statusCode).toBe(503);
+    expect(fixture.body).toEqual({ error: { code: "STACK_ACCOUNT_UNAVAILABLE" } });
+  });
+
+  it.each([{ version: 3, pinnedToolSlugs: [] }, { pinnedToolSlugs: [] }, state])("retains real empty stored snapshots %j", async storedState => {
+    mocks.rpc.mockImplementation(async (name: string) => ({ data: name === "require_account_session" ? null : { ...record, state: storedState }, error: null }));
+    const fixture = request(); await handler(fixture.req, fixture.res);
+    expect(fixture.res.statusCode).toBe(200);
+    expect(fixture.body).toMatchObject({ stack: { revision: 1, state: { version: 4, selection: { toolEntries: [] } } } });
+  });
+
   it("returns null when no snapshot exists without creating an empty one", async () => {
     mocks.rpc.mockResolvedValue({ data: null, error: null });
     const fixture = request();

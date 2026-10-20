@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "../types/vercel-http";
 import { AccountApiError, accountRpcError, getAccountServiceClient, requireAccount, requireAccountsEnabled } from "./_account-auth";
-import { normalizePersonalStack, PersonalStackValidationError, validatePersonalStack, type PersonalStackRecord } from "../src/lib/personalStack";
+import { normalizeStoredPersonalStack, PersonalStackValidationError, validatePersonalStack, type PersonalStackRecord } from "../src/lib/personalStack";
 import type { Json } from "../src/integrations/supabase/types";
 
 // Framework adapters can disable body parsing. Standalone Vercel lazy getters
@@ -46,7 +46,7 @@ export function personalStackRecordFromRpc(value: unknown): PersonalStackRecord 
     || !Number.isFinite(Date.parse(record.updatedAt)) || !record.state || typeof record.state !== "object") {
     throw new AccountApiError(503, "STACK_ACCOUNT_UNAVAILABLE");
   }
-  return { state: normalizePersonalStack(record.state), revision: record.revision as number, updatedAt: record.updatedAt };
+  return { state: normalizeStoredPersonalStack(record.state), revision: record.revision as number, updatedAt: record.updatedAt };
 }
 
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {

@@ -12,6 +12,10 @@ describe("back-office accounts client",()=>{
  });
  it("rejects missing sessions before a request",async()=>{mocks.getSession.mockResolvedValue({data:{session:null}});await expect(loadAccountsDashboard()).rejects.toMatchObject({status:401});expect(mocks.fetch).not.toHaveBeenCalled();});
  it("parses detail wrappers and keeps an absent account distinct from failure",async()=>{mocks.fetch.mockResolvedValue({ok:true,status:200,json:async()=>({account:null})});expect(await loadAccountDetail("id")).toBeNull();});
+ it.each([{}, {version:4,selection:null}])("rejects corrupt detail source %j even in a successful HTTP response",async state=>{
+  mocks.fetch.mockResolvedValue({ok:true,status:200,json:async()=>({account:{userId:"id",email:null,displayName:null,createdAt:null,stack:{state,revision:1,updatedAt:"2026-10-20T12:00:00Z"}}})});
+  await expect(loadAccountDetail("id")).rejects.toMatchObject({status:503,code:"BACKOFFICE_UNAVAILABLE"});
+ });
  it("does not convert source failure or malformed totals into a zero result",async()=>{
   mocks.fetch.mockResolvedValueOnce({ok:false,status:503,json:async()=>({error:{code:"secret SQL"}})}).mockResolvedValueOnce({ok:true,status:200,json:async()=>({accounts:[]})});
   await expect(loadAccountsDashboard()).rejects.toMatchObject({status:503,code:"BACKOFFICE_UNAVAILABLE"});await expect(loadAccountsDashboard()).rejects.toMatchObject({status:503});

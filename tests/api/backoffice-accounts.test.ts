@@ -65,6 +65,16 @@ describe("accounts back-office HTTP boundary", () => {
     expect(f.res.statusCode).toBe(200); expect(f.body).toMatchObject({account:{userId:target,stack:{state:{version:4,selection:{pinnedToolSlugs:["json-only-reference"]},billing:{choices:{}},decisions:{}}}}});
     expect(mocks.rpc).toHaveBeenLastCalledWith("accounts_dashboard", {p_admin:owner,p_session:sessionId,p_query:{mode:"detail",userId:target}});
   });
+  it.each([{}, { version: 3 }, { version: 4, selection: null }, { version: 4, selection: {} }])("rejects corrupted stored detail %j as source unavailable", async state => {
+    mocks.rpc.mockImplementation(async (name: string) => ({ data: name === "require_account_session" ? null : { userId:target,email:account.email,displayName:null,createdAt:at,stack:{state,revision:1,updatedAt:at} }, error:null }));
+    const f=request({mode:"detail",userId:target});await handler(f.req,f.res);
+    expect(f.res.statusCode).toBe(503);expect(f.body).toEqual({error:{code:"BACKOFFICE_UNAVAILABLE"}});
+  });
+  it.each([{version:3,pinnedToolSlugs:[]},{pinnedToolSlugs:[]},{version:4,selection:{version:3,needs:[],toolEntries:[],pinnedToolSlugs:[]},billing:{paid:[],reviewed:[],choices:{}},decisions:{}}])("returns genuine empty stored detail %j as a record",async state=>{
+    mocks.rpc.mockImplementation(async(name:string)=>({data:name==="require_account_session"?null:{userId:target,email:account.email,displayName:null,createdAt:at,stack:{state,revision:1,updatedAt:at}},error:null}));
+    const f=request({mode:"detail",userId:target});await handler(f.req,f.res);
+    expect(f.res.statusCode).toBe(200);expect(f.body).toMatchObject({account:{stack:{revision:1,state:{version:4,selection:{toolEntries:[]}}}}});
+  });
   it("distinguishes a missing account from source failure", async () => {
     mocks.rpc.mockResolvedValue({data:null,error:null}); const f=request({mode:"detail",userId:target}); await handler(f.req,f.res);
     expect(f.res.statusCode).toBe(200); expect(f.body).toEqual({account:null});

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  mergeAnonymousDraft, normalizePersonalStack, personalStackFingerprint,
+  mergeAnonymousDraft, normalizePersonalStack, normalizeStoredPersonalStack, personalStackFingerprint,
   PersonalStackValidationError, validatePersonalStack, type PersonalStackV4,
 } from "./personalStack";
 import { createDefaultToolCartState, pinToolInState } from "./stackState";
@@ -187,5 +187,36 @@ describe("explicit anonymous draft merge", () => {
     const reordered = { ...draft, decisions: Object.fromEntries(Object.entries(draft.decisions).reverse()) };
     expect(personalStackFingerprint(mergeAnonymousDraft(stack(), draft)))
       .toBe(personalStackFingerprint(mergeAnonymousDraft(stack(), reordered)));
+  });
+});
+
+
+describe("stored personal stack recognition", () => {
+  it.each([
+    null, [[]], {}, { version: 3 }, { version: 5, pinnedToolSlugs: [] },
+    { version: 3, pinnedToolSlugs: null }, { version: 3, toolEntries: {} },
+    { version: 4, selection: null }, { version: 4, selection: {} },
+    { ...stack(), selection: { ...stack().selection, version: 5 } },
+    { ...stack(), selection: { ...stack().selection, needs: null } },
+    { ...stack(), billing: null }, { ...stack(), billing: { paid: [], reviewed: [], choices: [] } },
+    { ...stack(), decisions: null },
+  ])("rejects an unrecognizable stored source %j rather than claiming an empty stack", input => {
+    expect(() => normalizeStoredPersonalStack(input)).toThrow();
+  });
+
+  it.each([
+    { version: 3, pinnedToolSlugs: [] }, { pinnedToolSlugs: [] },
+    { version: 3, toolEntries: [] }, stack().selection, stack(),
+  ])("accepts a genuine empty stored selection %j", input => {
+    expect(normalizeStoredPersonalStack(input).selection.toolEntries).toEqual([]);
+  });
+
+  it("recovers recognized legacy references individually without catalogue lookup or source rewriting", () => {
+    const input = { version: 3, pinnedToolSlugs: ["unknown-json-reference", null, " padded-reference ", "unknown-json-reference"] };
+    const before = JSON.stringify(input);
+    const output = normalizeStoredPersonalStack(input);
+    expect(output.selection.pinnedToolSlugs).toEqual(["unknown-json-reference", " padded-reference "]);
+    expect(output.billing).toEqual({ paid: [], reviewed: [], choices: {} });
+    expect(JSON.stringify(input)).toBe(before);
   });
 });
