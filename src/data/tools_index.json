@@ -17929,7 +17929,7 @@
   {
     "id": "gocardless",
     "slug": "gocardless",
-    "name": "Gocardless",
+    "name": "GoCardless",
     "categoryId": "finance",
     "shortDescription": "Plateforme de paiements récurrents par prélèvement bancaire (Direct Debit, SEPA, ACH…), pensée pour la facturation par abonnement — alternative bancaire aux paiements par carte.",
     "shortDescriptionEn": "Recurring bank-debit payments platform (Direct Debit, SEPA, ACH) built for subscription billing — a bank-based alternative to card payments.",
