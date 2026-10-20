@@ -37389,3 +37389,46 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .td-verdict-axis:nth-child(5)::before { animation-delay: 1020ms; }
   }
 }
+
+
+/* Personal account access stays in the existing My stack flow. */
+@layer components {
+  .ms-account { margin-block: var(--space-lg); padding: var(--space-lg); border-radius: var(--radius-xl); background: var(--color-surface-soft); color: var(--color-text); }
+  .ms-account-bar, .ms-account-summary, .ms-account-actions, .ms-account-fields, .ms-account-auth-foot { display: flex; align-items: center; gap: var(--space-sm); }
+  .ms-account-bar { flex-wrap: wrap; justify-content: space-between; gap: var(--space-md) var(--space-lg); }
+  .ms-account-summary { min-width: 0; flex: 1 1 260px; }
+  .ms-account-summary > svg { flex: none; }
+  .ms-account-summary > div { min-width: 0; }
+  .ms-account h2, .ms-account h3 { margin: 0; font: 650 16px/1.4 var(--font-ui); letter-spacing: -.015em; overflow-wrap: anywhere; }
+  .ms-account p { margin: var(--space-2xs) 0 0; color: var(--color-text-secondary); font: 400 14px/1.5 var(--font-ui); overflow-wrap: anywhere; }
+  .ms-account-actions { flex-wrap: wrap; }
+  .ms-account button { cursor: pointer; }
+  .ms-account button:disabled { opacity: .5; cursor: default; }
+  .ms-account-button, .ms-account-outline-button, .ms-account-google { min-height: 44px; height: auto; padding: var(--space-sm) var(--space-md); border-radius: var(--radius-pill); justify-content: center; text-align: center; font: 600 14px/1.4 var(--font-ui); white-space: normal; }
+  .ms-account-text-button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-height: 44px; padding: var(--space-xs); color: var(--color-text); font: 500 14px/1.4 var(--font-ui); text-align: center; }
+  .ms-account-text-button:hover:not(:disabled) { text-decoration: underline; text-underline-offset: 3px; }
+  .ms-account-outline-button, .ms-account-google { display: inline-flex; align-items: center; border: 1px solid var(--color-border); color: var(--color-text); background: var(--color-card, #fff); }
+  .ms-account-outline-button:hover:not(:disabled), .ms-account-google:hover:not(:disabled) { border-color: var(--color-text); }
+  .ms-account-auth, .ms-account-choice { margin-top: var(--space-lg); padding-top: var(--space-lg); border-top: 1px solid var(--color-border); }
+  .ms-account-auth { display: grid; gap: var(--space-md); max-width: 680px; }
+  .ms-account-google { justify-self: start; }
+  .ms-account-or { color: var(--color-text-meta); font: 400 13px/1.4 var(--font-ui); }
+  .ms-account-form { display: grid; gap: var(--space-xs); min-width: 0; }
+  .ms-account-form label { color: var(--color-text); font: 600 14px/1.4 var(--font-ui); }
+  .ms-account-fields { flex-wrap: wrap; }
+  .ms-account-fields input { flex: 1 1 220px; min-width: 0; width: 100%; min-height: 44px; padding: var(--space-sm); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-card, #fff); color: var(--color-text); font: 400 16px/1.4 var(--font-ui); }
+  .ms-account-fields input:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
+  .ms-account-code { letter-spacing: .18em; font-variant-numeric: tabular-nums; }
+  .ms-account-auth-foot { justify-content: space-between; align-items: flex-start; }
+  .ms-account-auth-foot p { max-width: 48ch; color: var(--color-text-meta); font-size: 13px; }
+  .ms-account-choice > .ms-account-actions { margin-top: var(--space-md); }
+  .ms-account .ms-account-error { margin-top: var(--space-md); color: var(--color-text); }
+  .ms-account [aria-invalid="true"] { border-color: var(--color-text); }
+  @container mspage (max-width: 640px) {
+    .ms-account { padding: var(--space-md); }
+    .ms-account-bar > .ms-account-actions, .ms-account-fields, .ms-account-choice > .ms-account-actions { width: 100%; flex-direction: column; align-items: stretch; }
+    .ms-account-fields input { flex-basis: auto; }
+    .ms-account-google { justify-self: stretch; }
+    .ms-account-summary { flex-basis: 100%; }
+  }
+}

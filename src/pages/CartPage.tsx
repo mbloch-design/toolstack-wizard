@@ -7,6 +7,7 @@ import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { AREA_COLORS } from "@/lib/stackAreas";
 import StackBudgetBreakdown from "@/components/stack/StackBudgetBreakdown";
+import StackAccountPanel from "@/components/stack/StackAccountPanel";
 import StackOverlapPairs, { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
 import StackFreemiumPlans from "@/components/stack/StackFreemiumPlans";
 import StackToolSheet from "@/components/stack/StackToolSheet";
@@ -391,6 +392,8 @@ export default function CartPage() {
         {heroOverflow > 0 && <span className="sg-cluster-more" style={{ left: `${(HERO_CLUSTER_SLOTS[heroApps.length].x / 440) * 100}%`, top: `${(HERO_CLUSTER_SLOTS[heroApps.length].y / 380) * 100}%` }}>+{heroOverflow}</span>}
       </div>}
     </header>
+
+    <StackAccountPanel />
 
     {empty && <p className="ms-empty-copy">{t("Ajoutez les outils que vous utilisez. ToolTrim organise automatiquement votre environnement.", "Add the tools you use. ToolTrim automatically organizes your environment.")}</p>}
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
