@@ -132,6 +132,7 @@ Base saine (397 URL live : 200, canonical, H1, hreflang réciproque, JSON-LD val
 - [ ] 7 erreurs TypeScript préexistantes dans `HomePageV2.tsx`
 - [ ] Budget de fichiers du build à 12 900 : les variantes de CSS critique des pages catégorie en consomment une vingtaine
 - [ ] Contenu des pages piliers persona dupliqué entre `PersonaPillarPage.tsx` et `vite.config.ts`
+- [ ] Dépôt local déplacé le 20/10/2026 vers `/Users/mike/toolstack-wizard-clean` : iCloud avait vidé (dataless) des fichiers et objets git de l'ancien dossier `~/Documents/toolstack-wizard-clean`, ce qui figeait git et les builds. Ne plus travailler dans `~/Documents`. À reconstituer : 3 fichiers du skill `.claude/skills/seo-brief-generator` (`README.md`, `reference/voice-tone.md`, `reference/brand-positioning.md`) et les skills `.agents/skills` (réinstallables via `skills-lock.json`)
 
 ## Fait récemment
 
