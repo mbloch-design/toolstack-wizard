@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { AccountsDashboard } from "@/components/backoffice/AccountsDashboard";
 import type { Session } from "@supabase/supabase-js";
 import { useLang } from "@/hooks/useLang";
 import { removeNoindex, setNoindex } from "@/lib/seo";
@@ -44,7 +45,7 @@ const LEGACY_SESSION_STORAGE_KEY = "tooltrim.backoffice.admin_session";
 const LEGACY_STORAGE_KEY = "tooltrim.backoffice.admin_key";
 
 type SessionStatus = "all" | "new" | "active" | "completed" | "abandoned";
-type TabId = "preprod" | "pilotage" | "sessions" | "emails" | "restitutions" | "quality";
+type TabId = "accounts" | "preprod" | "pilotage" | "sessions" | "emails" | "restitutions" | "quality";
 type RestitutionLike = Pick<BackofficeRestitution, "channel" | "summary" | "details" | "score_snapshot">;
 type PreprodCheckStatus = "ok" | "warning" | "fail";
 type AdminSession = {
@@ -436,7 +437,7 @@ export default function BackOfficePage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const [activeTab, setActiveTab] = useState<TabId>("preprod");
+  const [activeTab, setActiveTab] = useState<TabId>("accounts");
   const [days, setDays] = useState(30);
   const [limit, setLimit] = useState(150);
   const [personaFilter, setPersonaFilter] = useState<string>("all");
@@ -477,7 +478,7 @@ export default function BackOfficePage() {
   }, []);
 
   const loadDashboard = useCallback(async () => {
-    if (!adminSession) return;
+    if (!adminSession || activeTab === "accounts") return;
     setLoading(true);
     setError(null);
     try {
@@ -497,19 +498,19 @@ export default function BackOfficePage() {
     } finally {
       setLoading(false);
     }
-  }, [adminSession, days, limit, personaFilter]);
+  }, [adminSession, activeTab, days, limit, personaFilter]);
 
   useEffect(() => {
     void loadDashboard();
   }, [loadDashboard]);
 
   useEffect(() => {
-    if (!adminSession) return;
+    if (!adminSession || activeTab === "accounts") return;
     const timer = setInterval(() => {
       void loadDashboard();
     }, 30000);
     return () => clearInterval(timer);
-  }, [adminSession, loadDashboard]);
+  }, [adminSession, activeTab, loadDashboard]);
 
   const openDetail = useCallback(
     async (sessionId: string) => {
@@ -1311,8 +1312,21 @@ export default function BackOfficePage() {
     );
   }
 
+  if (activeTab === "accounts") return (
+    <main className="ba-shell">
+      <header className="ba-heading"><div><h1>{t("Back-office ToolTrim", "ToolTrim back office")}</h1><p>{adminSession.email || t("Compte connecté", "Signed-in account")}</p></div>
+        <nav className="ba-actions" aria-label={t("Sections du back-office", "Back-office sections")}>
+          <button className="ba-button" onClick={() => setActiveTab("preprod")}>{t("Diagnostic historique", "Historical diagnostic")}</button>
+          <button className="ba-button" onClick={disconnect}><LogOut aria-hidden="true"/>{t("Fermer", "Sign out")}</button>
+        </nav>
+      </header>
+      <AccountsDashboard key={adminSession.accessToken}/>
+    </main>
+  );
+
   return (
     <div className="max-w-[1400px] mx-auto px-4 py-6 md:py-10 space-y-6">
+      <button className="ba-button" onClick={() => setActiveTab("accounts")}>{t("Comptes et stacks", "Accounts and stacks")}</button>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold text-foreground">

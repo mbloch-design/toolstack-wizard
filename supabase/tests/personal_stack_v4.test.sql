@@ -147,6 +147,28 @@ do $$ declare dashboard jsonb; begin
  perform accounts_test.ok(dashboard->>'total'='1' and dashboard->'accounts'->0->>'hasStack'='true','empty saved snapshot is visible as saved');
  perform accounts_test.ok(dashboard->'topTools'='[{"toolSlug":"missing-from-json","usedAccounts":1,"wishlistAccounts":1},{"toolSlug":"legacy-tool","usedAccounts":1,"wishlistAccounts":0}]'::jsonb,'empty snapshot does not change tool totals');
 end $$;
+-- Twenty-six eligible accounts exercise actual SQL pagination and global totals.
+reset role;
+insert into auth.users(id,email,email_confirmed_at)
+ select (lpad(n::text,8,'0') || '-0000-4000-8000-000000000000')::uuid,
+ 'page-' || n || '@example.invalid',now() from generate_series(10,31) n;
+set local role service_role;
+do $$ declare dashboard jsonb; begin
+ dashboard:=public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,'{"page":1,"pageSize":25}');
+ perform accounts_test.ok(dashboard->'totals'='{"accounts":26,"accountsWithStack":4,"nonemptyStacks":3}'::jsonb,'26 global accounts independent of page size');
+ perform accounts_test.ok(dashboard->>'total'='26' and jsonb_array_length(dashboard->'accounts')=25,'first page has 25 of 26 accounts');
+ dashboard:=public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,'{"page":2,"pageSize":25}');
+ perform accounts_test.ok(dashboard->>'total'='26' and jsonb_array_length(dashboard->'accounts')=1,'second page has the final account');
+end $$;
+-- The shared legacy normalizer preserves pinned-only identity strings verbatim.
+-- A padded historical reference and its plain spelling remain separate entries.
+reset role;
+update public.stack_snapshots set state='{"version":3,"pinnedToolSlugs":[" legacy-tool ","legacy-tool"," legacy-tool "],"toolEntries":[]}'
+ where owner_id='00000000-0000-0000-0000-000000000003';
+set local role service_role;
+select accounts_test.ok(public.accounts_dashboard(current_setting('test.a')::uuid,current_setting('test.sa')::uuid,'{}')->'topTools'
+ @> '[{"toolSlug":" legacy-tool ","usedAccounts":1,"wishlistAccounts":0},{"toolSlug":"legacy-tool","usedAccounts":1,"wishlistAccounts":0}]'::jsonb,
+ 'pinned-only raw identities agree with normalized detail references');
 reset role;
 delete from auth.sessions where id=current_setting('test.sb')::uuid;
 set local role service_role;

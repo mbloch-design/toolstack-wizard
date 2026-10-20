@@ -198,10 +198,11 @@ begin
  ), tools as (
    select id,slug,intent from canonical_entries
    union
-   select distinct s.id,btrim(t #>> '{}',trim_chars),'stack' from selections s
+   -- Legacy pinned-only identities are preserved verbatim by the shared normalizer.
+   select distinct s.id,t #>> '{}','stack' from selections s
    cross join lateral jsonb_array_elements(case when jsonb_typeof(s.selection->'pinnedToolSlugs')='array' then s.selection->'pinnedToolSlugs' else '[]'::jsonb end) t
    where jsonb_typeof(t)='string' and nullif(btrim(t #>> '{}',trim_chars),'') is not null
-     and not exists(select from canonical_entries x where x.id=s.id and x.slug=btrim(t #>> '{}',trim_chars))
+     and not exists(select from canonical_entries x where x.id=s.id and x.slug=t #>> '{}')
  ), top_tools as (
    select slug,count(distinct id) filter(where intent='stack') as used_accounts,
      count(distinct id) filter(where intent='wishlist') as wishlist_accounts from tools group by slug
