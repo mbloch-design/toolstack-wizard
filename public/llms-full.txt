@@ -35670,7 +35670,7 @@
     }
   },
   {
-    "name": "shadcn UI",
+    "name": "shadcn/ui",
     "slug": "shadcn-ui",
     "url_fr": "https://tooltrim.com/fr/tool/shadcn-ui",
     "url_en": "https://tooltrim.com/en/tool/shadcn-ui",
@@ -37473,7 +37473,7 @@
     }
   },
   {
-    "name": "Spotify for Podcasters",
+    "name": "Spotify for Creators",
     "slug": "spotify-for-podcasters",
     "url_fr": "https://tooltrim.com/fr/tool/spotify-for-podcasters",
     "url_en": "https://tooltrim.com/en/tool/spotify-for-podcasters",
@@ -38030,7 +38030,7 @@
     }
   },
   {
-    "name": "Streamelements",
+    "name": "StreamElements",
     "slug": "streamelements",
     "url_fr": "https://tooltrim.com/fr/tool/streamelements",
     "url_en": "https://tooltrim.com/en/tool/streamelements",
@@ -40286,7 +40286,7 @@
     }
   },
   {
-    "name": "Tiktok Studio",
+    "name": "TikTok Studio",
     "slug": "tiktok-studio",
     "url_fr": "https://tooltrim.com/fr/tool/tiktok-studio",
     "url_en": "https://tooltrim.com/en/tool/tiktok-studio",

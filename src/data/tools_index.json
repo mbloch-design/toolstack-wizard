@@ -40900,7 +40900,7 @@
   {
     "id": "shadcn-ui",
     "slug": "shadcn-ui",
-    "name": "shadcn UI",
+    "name": "shadcn/ui",
     "toolTrimRating": {
       "valeurAjoutee": 5,
       "simplicite": 4,
@@ -42948,7 +42948,7 @@
   {
     "id": "spotify-for-podcasters",
     "slug": "spotify-for-podcasters",
-    "name": "Spotify for Podcasters",
+    "name": "Spotify for Creators",
     "toolTrimRating": {
       "valeurAjoutee": 4,
       "simplicite": 3,
@@ -43630,7 +43630,7 @@
   {
     "id": "streamelements",
     "slug": "streamelements",
-    "name": "Streamelements",
+    "name": "StreamElements",
     "categoryId": "communication",
     "shortDescription": "Overlays, alertes et boutique merch pour streamers, sans abonnement obligatoire.",
     "shortDescriptionEn": "Overlays, alerts and a merch store for streamers, no subscription required.",
@@ -46128,7 +46128,7 @@
   {
     "id": "tiktok-studio",
     "slug": "tiktok-studio",
-    "name": "Tiktok Studio",
+    "name": "TikTok Studio",
     "toolTrimRating": {
       "valeurAjoutee": 4,
       "simplicite": 4,
