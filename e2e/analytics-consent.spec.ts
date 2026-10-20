@@ -107,3 +107,26 @@ test('English mobile banner, equal choices and preferences keyboard dismissal', 
   await page.keyboard.press('Escape');
   await expect(page.getByRole('dialog', {name:'Cookie preferences'})).toBeHidden();
 });
+
+test('outside consent regions GA4 measures without a banner, and refusal still works', async ({ page }) => {
+  await page.route('**/api/consent-region', route => route.fulfill({
+    status:200, contentType:'application/json', body:JSON.stringify({consentRequired:false}),
+  }));
+  await page.goto('/en/privacy-policy');
+  await expect.poll(() => page.evaluate(() => window.__tooltrimAnalyticsConsent)).toBe(true);
+  await expect.poll(async () => (await views(page)).length).toBe(1);
+  expect((await views(page))[0][2]).toMatchObject({page_path:'/en/privacy-policy'});
+  await expect(page.getByRole('button', {name:'Accept', exact:true})).toHaveCount(0);
+  await page.getByRole('button', {name:'Cookie preferences', exact:true}).click();
+  await page.getByRole('button', {name:'Refuse', exact:true}).click();
+  await expect.poll(() => page.evaluate(() => window.__tooltrimAnalyticsConsent).catch(() => undefined)).toBe(false);
+  await page.reload();
+  await expect.poll(() => page.evaluate(() => window.__tooltrimAnalyticsConsent).catch(() => undefined)).toBe(false);
+});
+
+test('a failing region lookup keeps the banner', async ({ page }) => {
+  await page.route('**/api/consent-region', route => route.fulfill({status:500, body:''}));
+  await page.goto('/en/privacy-policy');
+  await expect(page.getByRole('button', {name:'Accept', exact:true})).toBeVisible();
+  await expect.poll(() => page.evaluate(() => window.__tooltrimAnalyticsConsent)).toBe(false);
+});

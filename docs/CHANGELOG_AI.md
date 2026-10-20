@@ -1,3 +1,9 @@
+## 2026-10-20 · Consentement GA4 par région, nouveau bandeau
+
+- Constat : Vercel compte environ 7 fois plus de visiteurs que GA4, parce que GA4 ne compte que les visiteurs qui acceptent les cookies (Consent Mode avancé, refus par défaut).
+- `api/consent-region.ts` lit le pays fourni par Vercel (`x-vercel-ip-country`). Dans l'EEE, au Royaume-Uni et en Suisse, ou si le pays est inconnu, le bandeau s'affiche comme avant. Ailleurs, GA4 mesure dès l'arrivée et « Préférences cookies » permet toujours de refuser.
+- Bandeau réécrit (« Help us improve ToolTrim / Aidez-nous à améliorer ToolTrim »), boutons toujours à égalité ; politique de confidentialité complétée ; 2 tests e2e ajoutés (hors région, échec de la détection).
+
 ## 2026-10-20 · Magnific (ex-Freepik) : prix en crédits, fiche et maillage
 
 - Grille officielle en euros relevée le 20/10 (annuel et mensuel), `usage_sensitive`, mises en garde sur le coût en crédits par modèle ; suppression de la fausse offre de lancement à 7,25 $.

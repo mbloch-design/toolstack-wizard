@@ -21,8 +21,8 @@ const gaCookies = (lang: Lang) => ({
 const translations: Record<Lang, CookieConsent.Translation> = {
   fr: {
     consentModal: {
-      title: 'Mesure d’audience',
-      description: 'Nous utilisons Google Analytics pour savoir quelles pages vous sont utiles. Si vous acceptez, il dépose des cookies et mesure vos interactions. Si vous refusez, Google reçoit seulement des signaux limités, sans cookie. Votre choix ne change rien à l’accès au site.',
+      title: 'Aidez-nous à améliorer ToolTrim',
+      description: 'Google Analytics nous montre quelles pages et quels comparatifs vous servent vraiment, pour savoir quoi enrichir en priorité. Aucune publicité ciblée, aucune donnée revendue. Si vous refusez, Google reçoit seulement des signaux techniques limités, sans cookie. Le site reste entièrement accessible dans les deux cas.',
       acceptAllBtn: 'Accepter',
       acceptNecessaryBtn: 'Refuser',
       footer: privacyLink('fr'),
@@ -47,8 +47,8 @@ const translations: Record<Lang, CookieConsent.Translation> = {
   },
   en: {
     consentModal: {
-      title: 'Audience measurement',
-      description: 'We use Google Analytics to learn which pages help you. If you accept, it sets cookies and measures your interactions. If you refuse, Google only receives limited signals, without cookies. Your choice does not affect access to the site.',
+      title: 'Help us improve ToolTrim',
+      description: 'Google Analytics shows us which pages and comparisons are genuinely useful to you, so we know what to improve first. No targeted ads, no data sold. If you refuse, Google only receives limited technical signals, without cookies. The whole site stays available either way.',
       acceptAllBtn: 'Accept',
       acceptNecessaryBtn: 'Refuse',
       footer: privacyLink('en'),
@@ -122,13 +122,29 @@ function reserveBannerSpace(modal: HTMLElement | null): void {
   if (typeof ResizeObserver !== 'undefined') { bannerObserver = new ResizeObserver(measure); bannerObserver.observe(modal); }
 }
 
+const REGION_KEY = 'tooltrim-consent-region';
+
+/** Whether the visitor's country requires prior consent. Any failure keeps the banner. */
+async function consentRegion(): Promise<boolean> {
+  try { const cached = window.sessionStorage.getItem(REGION_KEY); if (cached) return cached !== 'open'; } catch { /* storage blocked */ }
+  try {
+    const res = await fetch('/api/consent-region', {signal: AbortSignal.timeout(1500), credentials: 'omit'});
+    const data = res.ok ? await res.json() : null;
+    if (data?.consentRequired !== false) return true;
+    try { window.sessionStorage.setItem(REGION_KEY, 'open'); } catch { /* storage blocked */ }
+    return false;
+  } catch { return true; }
+}
+
 let started = false;
 /** Idempotent: the first call runs CookieConsent, later calls only follow the page language. */
 export async function startConsent(lang: Lang): Promise<void> {
   if (started) { await CookieConsent.setLanguage(lang); return; }
   started = true;
+  const region = consentRegion();
   await CookieConsent.run({
     revision: 1,
+    autoShow: false, // Shown below, only where prior consent is required.
     hideFromBots: false,
     cookie: {name: CONSENT_COOKIE, expiresAfterDays: 182, sameSite: 'Lax'},
     guiOptions: {
@@ -145,8 +161,15 @@ export async function startConsent(lang: Lang): Promise<void> {
     onModalHide: ({modalName}) => { if (modalName === 'consentModal') reserveBannerSpace(null); },
   });
   migrateLegacyChoice();
-  // Advanced Consent Mode: before any choice, GA4 runs with storage denied.
-  if (!CookieConsent.validConsent()) loadGoogleAnalytics(false);
+  if (!CookieConsent.validConsent()) {
+    // Outside consent regions GA4 measures by default; "Cookie preferences" still lets anyone refuse.
+    if (!(await region)) loadGoogleAnalytics(true);
+    else if (!CookieConsent.validConsent()) {
+      // Advanced Consent Mode: before any choice, GA4 runs with storage denied.
+      loadGoogleAnalytics(false);
+      CookieConsent.show(true); // autoShow is off, so the modal must be created here.
+    }
+  }
   watchOtherTabs();
 }
 
