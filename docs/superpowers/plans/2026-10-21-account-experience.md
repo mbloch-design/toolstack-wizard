@@ -73,7 +73,7 @@
 - `AccountProfile {userId:string,displayName:string|null,email:string|null,emailConfirmed:boolean,createdAt:string,updatedAt:string,canAccessBackoffice:boolean}` ; contrôles DTO non tolérants à une source invalide.
 - GET/PUT `/api/account-profile` → `{profile:AccountProfile}` ; PUT `{displayName:string|null}` seul, nom trimé max80 caractères et sans caractères de contrôle, corps borné4KiB ; aucun owner/rôle éditable.
 - `loadAccountProfile(token,signal?):Promise<AccountProfile>`, `saveAccountProfile(token,displayName,signal?):Promise<AccountProfile>`.
-- Hook `useAccountProfile(userId,token,enabled)` → `{profile,status:'idle'|'loading'|'ready'|'saving'|'error',error,saveDisplayName,retry}`. Le provider appelle `getAccessToken()` de Task1, borne le résultat à l'identité et la génération, et passe le token au hook, jamais en profil/URL.
+- Hook `useAccountProfile(userId,getAccessToken,enabled)` → `{profile,status:'idle'|'loading'|'ready'|'saving'|'error',error,saveDisplayName,retry}`. Chaque chargement/sauvegarde demande un token frais via l'action stable de Task1 ; le hook borne cette attente et la réponse à l'identité et à sa génération. Aucun token en profil/URL, aucun abonnement Auth supplémentaire.
 - RPC `read_personal_profile(p_owner,p_session)`, `update_personal_profile(p_owner,p_session,p_display_name)` ; réponses profil+createdAt Auth, locks/session/deleting et service-only. API ajoute e-mail confirmé/capacité à partir du helper vérifié, pas de métadonnées d'autorisation.
 
 - [ ] Générer le nom de migration avec CLI `supabase migration new account_profile_settings` après découverte --help ; ne pas inventer d'horodatage. Nom exact consigné au contrat/rapport ; rollback même basename. Aucun DDL distant.
