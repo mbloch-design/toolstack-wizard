@@ -40203,7 +40203,7 @@
     }
   },
   {
-    "name": "Tiktok",
+    "name": "TikTok",
     "slug": "tiktok",
     "url_fr": "https://tooltrim.com/fr/tool/tiktok",
     "url_en": "https://tooltrim.com/en/tool/tiktok",
@@ -40246,7 +40246,7 @@
     }
   },
   {
-    "name": "Tiktok Ads",
+    "name": "TikTok Ads",
     "slug": "tiktok-ads",
     "url_fr": "https://tooltrim.com/fr/tool/tiktok-ads",
     "url_en": "https://tooltrim.com/en/tool/tiktok-ads",
@@ -41198,7 +41198,7 @@
     }
   },
   {
-    "name": "Truecoach",
+    "name": "TrueCoach",
     "slug": "truecoach",
     "url_fr": "https://tooltrim.com/fr/tool/truecoach",
     "url_en": "https://tooltrim.com/en/tool/truecoach",
@@ -41281,7 +41281,7 @@
     }
   },
   {
-    "name": "Tubebuddy",
+    "name": "TubeBuddy",
     "slug": "tubebuddy",
     "url_fr": "https://tooltrim.com/fr/tool/tubebuddy",
     "url_en": "https://tooltrim.com/en/tool/tubebuddy",

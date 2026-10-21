@@ -46057,7 +46057,7 @@
   {
     "id": "tiktok",
     "slug": "tiktok",
-    "name": "Tiktok",
+    "name": "TikTok",
     "categoryId": "communication",
     "shortDescription": "Plateforme de vidéos courtes portée par un algorithme de découverte : création, montage in-app (sons, effets, sous-titres) et diffusion, avec un fort potentiel de portée organique. Volet pro via TikTok for Business / TikTok Ads.",
     "shortDescriptionEn": "Short-form video platform driven by a discovery algorithm: create, edit in-app (sounds, effects, captions) and publish, with strong organic-reach potential. Business side via TikTok for Business / TikTok Ads.",
@@ -46095,7 +46095,7 @@
   {
     "id": "tiktok-ads",
     "slug": "tiktok-ads",
-    "name": "Tiktok Ads",
+    "name": "TikTok Ads",
     "categoryId": "analytics",
     "shortDescription": "Plateforme publicitaire de TikTok pour cibler une audience jeune avec des formats vidéo natifs.",
     "shortDescriptionEn": "TikTok's advertising platform to target a younger audience with native video formats.",
@@ -47177,7 +47177,7 @@
   {
     "id": "truecoach",
     "slug": "truecoach",
-    "name": "Truecoach",
+    "name": "TrueCoach",
     "categoryId": "creation",
     "shortDescription": "Application de coaching fitness à distance, alternative à Trainerize.",
     "shortDescriptionEn": "Remote fitness coaching app, an alternative to Trainerize.",
@@ -47255,7 +47255,7 @@
   {
     "id": "tubebuddy",
     "slug": "tubebuddy",
-    "name": "Tubebuddy",
+    "name": "TubeBuddy",
     "toolTrimRating": {
       "valeurAjoutee": 3,
       "simplicite": 3,
