@@ -31796,7 +31796,7 @@
   {
     "id": "oyster",
     "slug": "oyster",
-    "name": "Oyster®",
+    "name": "Oyster",
     "categoryId": "hris-payroll",
     "shortDescription": "Plateforme RH pour entreprises distribuées mondialement.",
     "shortDescriptionEn": "Global HR platform for distributed teams.",
@@ -32242,7 +32242,7 @@
   {
     "id": "pandadoc",
     "slug": "pandadoc",
-    "name": "Pandadoc",
+    "name": "PandaDoc",
     "categoryId": "legal-contracts",
     "shortDescription": "Création, envoi et signature électronique de devis, propositions et contrats.",
     "shortDescriptionEn": "Create, send, and electronically sign quotes, proposals, and contracts.",
@@ -32317,7 +32317,7 @@
   {
     "id": "partnerstack",
     "slug": "partnerstack",
-    "name": "Partnerstack",
+    "name": "PartnerStack",
     "categoryId": "finance",
     "shortDescription": "Plateforme de gestion de partenariats et d'affiliation pour SaaS B2B, plus complète que Rewardful.",
     "shortDescriptionEn": "Partnership and affiliate management platform for B2B SaaS, more complete than Rewardful.",
@@ -32416,7 +32416,7 @@
   {
     "id": "payfit",
     "slug": "payfit",
-    "name": "Payfit",
+    "name": "PayFit",
     "categoryId": "hris-payroll",
     "shortDescription": "Payfit structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
     "shortDescriptionEn": "Payfit structures employee, HR, or payroll data in a company stack.",

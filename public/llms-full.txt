@@ -27505,7 +27505,7 @@
     }
   },
   {
-    "name": "Oyster®",
+    "name": "Oyster",
     "slug": "oyster",
     "url_fr": "https://tooltrim.com/fr/tool/oyster",
     "url_en": "https://tooltrim.com/en/tool/oyster",
@@ -27930,7 +27930,7 @@
     }
   },
   {
-    "name": "Pandadoc",
+    "name": "PandaDoc",
     "slug": "pandadoc",
     "url_fr": "https://tooltrim.com/fr/tool/pandadoc",
     "url_en": "https://tooltrim.com/en/tool/pandadoc",
@@ -28012,7 +28012,7 @@
     }
   },
   {
-    "name": "Partnerstack",
+    "name": "PartnerStack",
     "slug": "partnerstack",
     "url_fr": "https://tooltrim.com/fr/tool/partnerstack",
     "url_en": "https://tooltrim.com/en/tool/partnerstack",
@@ -28134,7 +28134,7 @@
     }
   },
   {
-    "name": "Payfit",
+    "name": "PayFit",
     "slug": "payfit",
     "url_fr": "https://tooltrim.com/fr/tool/payfit",
     "url_en": "https://tooltrim.com/en/tool/payfit",
