@@ -123,7 +123,7 @@ describe("personal stack HTTP boundary", () => {
   it("does not confer verified email authority on an unconfirmed email", async () => {
     const { requireAccount } = await import("../../api/_account-auth");
     mocks.getUser.mockResolvedValue({ data: { user: { id: owner, email: "admin@example.test", email_confirmed_at: null, is_anonymous: false } }, error: null });
-    expect(await requireAccount(request().req)).toEqual({ userId: owner, sessionId, email: null });
+    expect(await requireAccount(request().req)).toMatchObject({ userId: owner, sessionId, email: null });
   });
 
   it.each([-1, 1.5, Number.MAX_SAFE_INTEGER, "1"])("rejects invalid expectedRevision %s", async expectedRevision => {

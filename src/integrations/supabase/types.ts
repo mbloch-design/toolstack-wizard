@@ -612,6 +612,15 @@ export type Database = {
         Args: { p_owner: string; p_session: string }
         Returns: undefined
       }
+      // Manually maintained from 20261021073601_account_profile_settings.sql.
+      read_personal_profile: {
+        Args: { p_owner: string; p_session: string }
+        Returns: Json
+      }
+      update_personal_profile: {
+        Args: { p_owner: string; p_session: string; p_display_name: string | null }
+        Returns: Json
+      }
       read_personal_stack: {
         Args: { p_owner: string; p_session: string }
         Returns: Json

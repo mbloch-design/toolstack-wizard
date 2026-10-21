@@ -26,7 +26,7 @@ export function accountRpcError(error: { code?: string; message?: string }): Acc
   return new AccountApiError(503, "STACK_ACCOUNT_UNAVAILABLE");
 }
 
-export async function requireAccount(req: VercelRequest): Promise<{ userId: string; sessionId: string; email: string | null }> {
+export async function requireAccount(req: VercelRequest): Promise<{ userId: string; sessionId: string; email: string | null; accountEmail: string | null; emailConfirmed: boolean }> {
   requireAccountsEnabled();
   const authorization = req.headers.authorization;
   const token = typeof authorization === "string" ? /^Bearer ([^\s]+)$/i.exec(authorization)?.[1] : undefined;
@@ -52,5 +52,9 @@ export async function requireAccount(req: VercelRequest): Promise<{ userId: stri
   }
   const result = await client.rpc("require_account_session", { p_owner: user.id, p_session: claims.session_id });
   if (result.error) throw accountRpcError(result.error);
-  return { userId: user.id, sessionId: claims.session_id, email: user.email_confirmed_at ? user.email ?? null : null };
+  const accountEmail = typeof user.email === "string" && user.email ? user.email : null;
+  const emailConfirmed = Boolean(accountEmail && user.email_confirmed_at);
+  // email retains the confirmed-only authorization contract. accountEmail is
+  // verified account data for private display and never confers a capability.
+  return { userId: user.id, sessionId: claims.session_id, email: emailConfirmed ? accountEmail : null, accountEmail, emailConfirmed };
 }

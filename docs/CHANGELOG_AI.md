@@ -5835,3 +5835,10 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - Correction de la divergence entre note de fiche et note de carte : l'index léger transporte les cinq axes éditoriaux et leur date, sans les textes de preuve. Conservation lors du chargement des résumés. Test reproduit en échec puis passé après correction.
 - Validation : 408 tests PASS, TypeScript app PASS, build complet PASS avec contrôles SEO/routage/LLM/Explorer et budgets.
 - Cinq routes contrôlées en navigateur ; aperçu Vercel protégé disponible. Création du lien anonyme pour le lot élargi bloquée par le contrôle d'autorisation : accord utilisateur requis, aucune protection désactivée.
+
+## 2026-10-21 — Contrat de profil privé du compte
+
+- API GET/PUT de profil privée : nom facultatif validé, e-mail vérifié et capacité back-office issue exclusivement de l'allowlist serveur. Aucun champ d'identité ou de rôle éditable.
+- Hook lié au propriétaire et à la génération de requête, token frais par opération et délai borné ; sortie/changement de compte efface le profil, réponse tardive ignorée, sauvegarde en erreur jamais annoncée réussie.
+- RPC service-only dans les tables existantes, verrou propriétaire/session/barrière de suppression ; rollback révoque les appels et conserve noms, identités et stacks. Migration locale `20261021073601_account_profile_settings.sql` générée par CLI.
+- Validation ciblée : 102 tests API, 90 tests client/hook/Auth, TypeScript app/API et lint ciblé ; SQL embarqué PostgreSQL 18. Contrôle PostgreSQL 17 par le contrôleur. Aucun changement UI ni opération distante.
