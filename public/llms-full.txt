@@ -33183,7 +33183,7 @@
     }
   },
   {
-    "name": "Repurpose Io",
+    "name": "Repurpose.io",
     "slug": "repurpose-io",
     "url_fr": "https://tooltrim.com/fr/tool/repurpose-io",
     "url_en": "https://tooltrim.com/en/tool/repurpose-io",
