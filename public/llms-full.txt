@@ -39071,7 +39071,7 @@
     }
   },
   {
-    "name": "Systeme Io",
+    "name": "systeme.io",
     "slug": "systeme-io",
     "url_fr": "https://tooltrim.com/fr/tool/systeme-io",
     "url_en": "https://tooltrim.com/en/tool/systeme-io",
