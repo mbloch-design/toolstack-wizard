@@ -24829,7 +24829,7 @@
     }
   },
   {
-    "name": "Monday.com",
+    "name": "monday.com",
     "slug": "monday-com",
     "url_fr": "https://tooltrim.com/fr/tool/monday-com",
     "url_en": "https://tooltrim.com/en/tool/monday-com",

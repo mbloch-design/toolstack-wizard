@@ -28675,7 +28675,7 @@
   {
     "id": "monday-com",
     "slug": "monday-com",
-    "name": "Monday.com",
+    "name": "monday.com",
     "categoryId": "project-management",
     "shortDescription": "Gestion de projets et workflows visuels",
     "shortDescriptionEn": "Project management and visual workflows.",
@@ -28701,7 +28701,7 @@
   {
     "id": "monday",
     "slug": "monday",
-    "name": "Monday.com",
+    "name": "monday.com",
     "categoryId": "project-management",
     "shortDescription": "Plateforme de gestion de projets et CRM visuelle pour équipes de toutes tailles.",
     "shortDescriptionEn": "Visual project management and CRM platform for teams of all sizes.",
