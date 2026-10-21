@@ -31941,7 +31941,7 @@
     }
   },
   {
-    "name": "Rank Math",
+    "name": "Rank Math SEO",
     "slug": "rankmath",
     "url_fr": "https://tooltrim.com/fr/tool/rankmath",
     "url_en": "https://tooltrim.com/en/tool/rankmath",
