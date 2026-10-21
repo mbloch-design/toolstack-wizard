@@ -22209,7 +22209,7 @@
     }
   },
   {
-    "name": "Ltk",
+    "name": "LTK",
     "slug": "ltk",
     "url_fr": "https://tooltrim.com/fr/tool/ltk",
     "url_en": "https://tooltrim.com/en/tool/ltk",
