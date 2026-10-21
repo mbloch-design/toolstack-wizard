@@ -35340,7 +35340,7 @@
   {
     "id": "profitwell",
     "slug": "profitwell",
-    "name": "Profitwell",
+    "name": "ProfitWell",
     "categoryId": "analytics",
     "shortDescription": "Analytics de revenus SaaS (MRR, churn, rétention) gratuit, par Paddle.",
     "shortDescriptionEn": "Free SaaS revenue analytics (MRR, churn, retention) by Paddle.",
@@ -36610,7 +36610,7 @@
   {
     "id": "rankmath",
     "slug": "rankmath",
-    "name": "Rankmath",
+    "name": "Rank Math",
     "categoryId": "creation",
     "shortDescription": "Plugin SEO WordPress, alternative à Yoast avec plus de fonctionnalités gratuites.",
     "shortDescriptionEn": "WordPress SEO plugin, an alternative to Yoast with more free features.",

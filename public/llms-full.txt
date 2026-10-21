@@ -30707,7 +30707,7 @@
     }
   },
   {
-    "name": "Profitwell",
+    "name": "ProfitWell",
     "slug": "profitwell",
     "url_fr": "https://tooltrim.com/fr/tool/profitwell",
     "url_en": "https://tooltrim.com/en/tool/profitwell",
@@ -31941,7 +31941,7 @@
     }
   },
   {
-    "name": "Rankmath",
+    "name": "Rank Math",
     "slug": "rankmath",
     "url_fr": "https://tooltrim.com/fr/tool/rankmath",
     "url_en": "https://tooltrim.com/en/tool/rankmath",
