@@ -1,10 +1,12 @@
-import { test, expect, state, control, saved, change, snapshot } from './fixtures/accounts';
+import { test, expect, state, control, saved, change, snapshot, dismissConsent } from './fixtures/accounts';
 
 async function passwordLogin(page: import('@playwright/test').Page, lang: 'fr' | 'en', email = 'admin@example.invalid') {
-  await page.goto(`/${lang}/back-office`);
+  const current = await control(page.request, 'state');
+  if (!current.accounts.some((user: {email: string}) => user.email === email)) await control(page.request, 'seed', { email });
+  await page.goto(`/${lang}/back-office`); await dismissConsent(page);
   await page.getByLabel(lang === 'fr' ? 'E-mail administrateur' : 'Admin email', { exact: true }).fill(email);
   await page.getByLabel(lang === 'fr' ? 'Mot de passe' : 'Password', { exact: true }).fill('fixture-password');
-  await page.getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
+  await page.locator('.ba-login').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
 }
 for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(`back office ${lang} ${width}: direct password, global counts, paging, search and JSON details`, async ({ page, request }) => {
   await page.setViewportSize({ width, height: 1000 });
@@ -59,7 +61,7 @@ async function seededAdmin(page: import('@playwright/test').Page, request: impor
 }
 test('back-office clean logout purges private primary, backup, plans and decisions', async ({ page, request }) => {
   await seededAdmin(page, request); await openBackOffice(page);
-  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.locator('.ba-entry-header').getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await expect(page.getByRole('button', { name: 'Save my stack', exact: true })).toBeVisible();
   expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
@@ -69,12 +71,12 @@ test('back-office dirty logout supports cancel, failed signout retry and confirm
   const personal = await seededAdmin(page, request);
   await page.route('**/api/stack-account', route => route.request().method() === 'PUT' ? route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":{"code":"STACK_ACCOUNT_UNAVAILABLE"}}' }) : route.continue());
   personal.billing.choices.figma.amount = 99; await change(page, personal);
-  await expect(page.locator('.ms-account-summary [role=status]')).toHaveText('Not saved');
-  await openBackOffice(page); await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  await expect(page.locator('.ms-account [role=status]')).toHaveText('Unsaved changes');
+  await openBackOffice(page); await page.locator('.ba-entry-header').getByRole('button', { name: 'Sign out', exact: true }).click();
   const confirm = page.getByRole('button', { name: 'Sign out without saving', exact: true }); await expect(confirm).toBeVisible();
   await page.getByRole('button', { name: 'Keep editing', exact: true }).click(); await expect(confirm).toHaveCount(0);
   expect((await snapshot(page)).billing.choices.figma.amount).toBe(99);
-  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.locator('.ba-entry-header').getByRole('button', { name: 'Sign out', exact: true }).click();
   await control(request, 'fault', { path: '/auth/v1/logout', method: 'POST', status: 400 });
   await confirm.click(); await expect(page.getByRole('alert')).toContainText('Sign-out failed');
   await expect(page.getByTestId('accounts-total')).toBeVisible(); expect((await snapshot(page)).billing.choices.figma.amount).toBe(99);
@@ -103,8 +105,8 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
   await seededAdmin(page, request); await openBackOffice(page);
   await readable('.ba-button, .ba-search input, .ba-metrics > div, .ba-dashboard table');
   await page.getByRole('button', { name: 'View stack for admin@example.invalid', exact: true }).click(); await readable('.ba-detail');
-  await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.locator('.ba-entry-header').getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await page.getByRole('button', { name: 'Save my stack', exact: true }).click();
-  await readable('.ms-account-google, .ms-account-fields input');
+  await page.getByRole('button', { name: 'Continue with email', exact: true }).click(); await readable('.ac-providers .ac-button, .ac-form input');
 });

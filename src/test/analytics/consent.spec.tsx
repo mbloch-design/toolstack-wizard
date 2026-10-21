@@ -26,6 +26,7 @@ beforeEach(async () => {
     key: (i: number) => [...values.keys()][i] ?? null, get length() { return values.size; },
   }});
   window.history.replaceState({}, '', '/');
+  Object.defineProperty(document, 'referrer', { configurable: true, value: '' });
   vi.useFakeTimers();
   commands.length = 0;
   window.localStorage.clear();
@@ -149,5 +150,31 @@ describe('consented current-view measurement', () => {
     fireEvent.click(screen.getByRole('button', {name:'Accepter'}));
     loadTag();
     expect(report).not.toHaveBeenCalled();
+  });
+});
+
+describe('authentication URL privacy with previously granted analytics consent', () => {
+  const acceptBeforeLoad = () => window.localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({ version: 1, choice: 'accepted', expiresAt: Date.now() + 86400000 }));
+  it.each(['/fr/connexion/retour', '/fr/compte/reinitialiser', '/en/sign-in/callback', '/en/account/reset-password', '/en/account/settings', '/en/sign-up'])('drops all callback fragments and private query parameters on %s', async route => {
+    const query = '?returnTo=' + encodeURIComponent('/en/tool/notion?access_token=nested-fixture-secret') + '&unrecognized=private-fixture-value';
+    window.history.replaceState({}, '', route + query + '#access_token=access-fixture-secret&refresh_token=refresh-fixture-secret&provider_token=provider-fixture-secret');
+    Object.defineProperty(document, 'referrer', { configurable: true, value: 'https://tooltrim.com/fr/connexion/retour?error_description=referrer-fixture-secret#access_token=referrer-token' });
+    acceptBeforeLoad(); mount(); loadTag();
+    expect(views()[0][2]).toMatchObject({ page_path: route, page_location: 'http://localhost:3000' + route, page_referrer: 'https://tooltrim.com/fr/connexion/retour' });
+    const { trackPageView } = await import('@/lib/analytics');
+    window.history.replaceState({}, '', '/en/tool/notion?utm_source=legitimate#public-section');
+    trackPageView('/en/tool/notion?utm_source=legitimate#public-section', 'Notion');
+    const payload = views().at(-1)![2] as Record<string, string>;
+    expect(payload).toMatchObject({ page_path: '/en/tool/notion?utm_source=legitimate', page_location: 'http://localhost:3000/en/tool/notion?utm_source=legitimate', page_referrer: 'http://localhost:3000' + route });
+    expect(commands.filter(command => command[0] === 'set' && typeof command[1] === 'object').at(-1)?.[1]).toMatchObject({ page_location: payload.page_location, page_referrer: payload.page_referrer });
+    expect(JSON.stringify(commands)).not.toMatch(/fixture-secret|fixture-value|referrer-token/);
+  });
+  it('removes case-insensitive private and auth fields from public URLs and initial referrer, retaining legitimate public queries', () => {
+    const query = '?utm_campaign=public&currency=EUR&Email=email-fixture-secret&NAME=name-fixture-secret&PaSsWoRd=password-fixture-secret&ACCESS_TOKEN=access-fixture-secret&refresh_token=refresh-fixture-secret&provider_token=provider-fixture-secret&error_description=error-fixture-secret&Code=code-fixture-secret&token_hash=hash-fixture-secret&returnTo=nested-fixture-secret';
+    window.history.replaceState({}, '', '/en/tool/notion' + query + '#private-fixture-fragment');
+    Object.defineProperty(document, 'referrer', { configurable: true, value: 'https://tooltrim.com/en/tool/figma' + query + '#referrer-fixture-fragment' });
+    acceptBeforeLoad(); mount(); loadTag();
+    expect(views()[0][2]).toMatchObject({ page_path: '/en/tool/notion?utm_campaign=public&currency=EUR', page_location: 'http://localhost:3000/en/tool/notion?utm_campaign=public&currency=EUR', page_referrer: 'https://tooltrim.com/en/tool/figma?utm_campaign=public&currency=EUR' });
+    expect(JSON.stringify(commands)).not.toContain('fixture');
   });
 });

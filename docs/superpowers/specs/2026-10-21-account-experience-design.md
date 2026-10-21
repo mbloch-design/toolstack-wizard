@@ -76,6 +76,7 @@ Le bloc de sauvegarde devient une interface courte : état de sauvegarde, action
 - Google + GitHub + e-mail/mot de passe dans le parcours public ; pas de code e-mail public concurrent.
 - Un seul coordinateur Auth/synchronisation dans chaque application ; SSR sans effets Auth ni fetch privé.
 - Les deux flags comptes restent désactivés par défaut ; disponibilité OAuth déclarée explicitement pour chaque fournisseur. La simulation locale les active sans appel externe.
+- Les retours Auth restent consommables par le SDK sans nettoyage prématuré, mais leurs tokens/fragments et paramètres privés sont exclus des URL/referrers analytics. Les documents initiaux sensibles omettent les trackers bruts pendant toute leur durée de vie ; ce garde ne persiste qu’un booléen en mémoire. Perte de mesure volontaire sur ces documents, sans changement du choix de consentement.
 - Aucun secret serveur dans le navigateur ; droits jamais dérivés de user_metadata ; profil/stack toujours attachés au sujet validé.
 - Pas de migration distante, création réelle d'identité/e-mail, association réelle de fournisseur, modification SMTP/OAuth, achat, push ou déploiement dans ce lot.
 - Conserver le dépôt original sale, la copie isolée et la stack de démonstration actuelle lors de la mise à jour de la prévisualisation.

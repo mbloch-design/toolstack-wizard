@@ -1,3 +1,4 @@
+import { sanitizeAnalyticsUrl } from "./analyticsPrivacy";
 /** GA4 is configured before any events, and loaded with denied storage until explicit consent (advanced Consent Mode). */
 export const GA_ID = 'G-DL5MJKQ3JE';
 declare global {
@@ -35,25 +36,13 @@ export function whenAnalyticsReady(report: () => void): () => void {
   return dispose;
 }
 
-const PRIVATE_QUERY_PARAMS = ["email", "name"];
-
-/** Outreach links may carry a recipient's email or name for prefilling: never send them to analytics. */
-function withoutPrivateParams(url: string): string {
-  try {
-    const parsed = new URL(url, window.location.origin);
-    PRIVATE_QUERY_PARAMS.forEach((key) => parsed.searchParams.delete(key));
-    return url.startsWith("/") ? parsed.pathname + parsed.search : parsed.href;
-  } catch {
-    return url.split("?")[0];
-  }
-}
 
 export function trackPageView(rawPath: string, title: string): void {
-  const path = withoutPrivateParams(rawPath);
+  const path = sanitizeAnalyticsUrl(rawPath);
   if (!ready || !window.gtag || lastPagePath === path) return;
   const granted = window.__tooltrimAnalyticsConsent;
-  const location = granted ? withoutPrivateParams(window.location.href) : window.location.origin + window.location.pathname;
-  let referrer = previousPageLocation ?? document.referrer;
+  const location = granted ? sanitizeAnalyticsUrl(window.location.href) : window.location.origin + window.location.pathname;
+  let referrer = sanitizeAnalyticsUrl(previousPageLocation ?? document.referrer);
   if (!granted && referrer) {
     try { referrer = new URL(referrer).origin; } catch { referrer = ''; }
   }

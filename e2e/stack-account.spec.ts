@@ -1,4 +1,4 @@
-import { test, expect, state, draft, login, saved, snapshot, change, control, isolate } from './fixtures/accounts';
+import { test, expect, state, draft, login, saved, snapshot, change, control, isolate, signOut, dismissConsent } from './fixtures/accounts';
 
 for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) {
   test(`${lang} ${width}: full personal state survives new device and persistent removal`, async ({ page, browser, request }) => {
@@ -16,7 +16,7 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) {
     await page.locator('.ms-account').screenshot({ path: test.info().outputPath(`${lang}-${width}-account.png`) });
     // A clean context signs in independently: no localStorage or session copied.
     const second = await browser.newContext({ baseURL: process.env.PLAYWRIGHT_BASE_URL, viewport: { width, height: 1000 } }); await isolate(second);
-    const other = await second.newPage(); await other.goto(`/${lang}/ma-stack`);
+    const other = await second.newPage(); const otherErrors: string[] = []; other.on('pageerror', error => otherErrors.push(error.message)); await other.goto(`/${lang}/ma-stack`);
     await login(other, lang, 'roundtrip@example.invalid'); await saved(other, lang);
     expect(await snapshot(other)).toEqual(full);
     await other.locator('.ms-tool').filter({ hasText: 'Notion' }).click();
@@ -25,7 +25,7 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) {
     await other.reload(); await saved(other, lang);
     expect((await snapshot(other)).selection.pinnedToolSlugs).toEqual(['figma']);
     const remote = await control(request, 'state'); expect(remote.accounts[0].stack.state.selection.pinnedToolSlugs).toEqual(['figma']);
-    await second.close();
+    expect(otherErrors).toEqual([]); await second.close();
   });
 }
 
@@ -41,28 +41,13 @@ for (const choice of ['saved', 'merge', 'equivalent']) test(`anonymous divergent
   expect(result.selection.pinnedToolSlugs).toEqual(choice === 'merge' ? ['notion', 'figma'] : ['notion']); expect(result.billing.choices.notion.amount).toBe(11);
 });
 
-test('invalid code, bounded resend, safe OAuth cancellation preserve draft', async ({ page, request }) => {
-  await draft(page, state()); await page.goto('/en/ma-stack?recette=1'); await page.clock.install();
-  await page.getByRole('button', { name: 'Save my stack', exact: true }).click();
-  await page.getByLabel('Email address', { exact: true }).fill('codes@example.invalid'); await page.getByRole('button', { name: 'Send me a code', exact: true }).click();
-  await page.getByLabel('Email code', { exact: true }).fill('000000'); await page.getByRole('button', { name: 'Verify code', exact: true }).click();
-  await expect(page.locator('.ms-account [role=alert]')).toContainText('Incorrect or expired');
-  await expect(page.getByRole('button', { name: /Resend code/ })).toBeDisabled();
-  await page.clock.fastForward(61000); await page.getByRole('button', { name: /Resend code/ }).click();
-  expect((await control(request, 'state')).requests.filter((r: { path: string }) => r.path === '/auth/v1/otp')).toHaveLength(2);
-  await page.getByRole('button', { name: 'Cancel', exact: true }).click(); await page.clock.resume();
-  await control(request, 'oauth', { denied: true }); await page.getByRole('button', { name: 'Save my stack', exact: true }).click(); await page.getByRole('button', { name: 'Change email', exact: true }).click(); await page.getByRole('button', { name: 'Continue with Google', exact: true }).click();
-  await expect(page).toHaveURL(/\/en\/ma-stack\?recette=1&error=access_denied/);
-  await expect(page.locator('.ms-account [role=alert]')).toContainText('Google sign-in did not complete'); expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual(['notion']);
-});
-
 test('offline dirty cache survives reload, retry and lost acknowledgement', async ({ page, request }) => {
   await draft(page, state()); await page.goto('/en/ma-stack'); await login(page, 'en', 'offline@example.invalid'); await saved(page);
   await page.route('**/api/stack-account', route => route.abort());
-  await change(page, state(['notion', 'figma'])); await expect(page.locator('.ms-account [role=alert]')).toBeVisible();
+  await change(page, state(['notion', 'figma'])); await expect(page.locator('.ms-account [role=status]')).toHaveText(/Unsaved changes|Saving unavailable/);
   await page.reload(); await expect.poll(async () => (await snapshot(page)).selection.pinnedToolSlugs).toEqual(['notion', 'figma']);
-  await expect(page.locator('.ms-account [role=alert]')).toBeVisible();
-  await page.unroute('**/api/stack-account'); await page.getByRole('button', { name: 'Try again', exact: true }).click(); await saved(page);
+  await expect(page.locator('.ms-account [role=status]')).toHaveText(/Unsaved changes|Saving unavailable/);
+  await page.unroute('**/api/stack-account'); await page.getByRole('button', { name: 'Retry saving', exact: true }).click(); await saved(page);
   await control(request, 'fault', { path: '/api/stack-account', method: 'PUT', commitThenFail: true, status: 503 });
   await change(page, state(['figma']));
   await expect.poll(async () => (await control(request, 'state')).accounts[0].stack.revision).toBe(3); await saved(page);
@@ -84,7 +69,7 @@ test('late A response cannot hydrate or save as B after sign out', async ({ page
   await control(request, 'seed', { email: 'b@example.invalid', state: state(['figma']) });
   await page.goto('/en/ma-stack'); await login(page, 'en', 'a@example.invalid'); await saved(page);
   await control(request, 'fault', { path: '/api/stack-account', method: 'GET', delayMs: 1500 });
-  await page.reload(); await expect(page.getByRole('button', { name: 'Sign out', exact: true })).toBeVisible(); await page.getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.reload(); await expect(page.locator('.ac-header-trigger')).toBeVisible(); await signOut(page);
   await login(page, 'en', 'b@example.invalid'); await saved(page);
   // Wait on the delayed transport completion, then check scoped state again.
   await expect.poll(async () => (await control(request, 'state')).requests.filter((r: { method: string; path: string }) => r.path === '/api/stack-account' && r.method === 'GET').length).toBeGreaterThanOrEqual(3);
@@ -98,8 +83,8 @@ test('Google success returns safely and adopts the SDK session without losing dr
     const path = '/src/lib/stackAccountCoordinator.ts'; const { getStackAccountReturnUrl } = await import(/* @vite-ignore */ path);
     return ['https://outside.example.invalid/path', '//outside.example.invalid/path', '/en/not-a-route', '/\\outside.example.invalid'].map(returnTo => getStackAccountReturnUrl({ lang: 'en', returnTo }));
   }); expect(safeReturns).toEqual(Array(4).fill(`${process.env.PLAYWRIGHT_BASE_URL}/en/ma-stack`));
-  await page.getByRole('button', { name: 'Save my stack', exact: true }).click(); await page.getByRole('button', { name: 'Continue with Google', exact: true }).click();
-  await expect(page.locator('.ms-account h2')).toHaveText('google@example.invalid'); await saved(page);
+  await dismissConsent(page); await page.getByRole('button', { name: 'Save my stack', exact: true }).click(); await page.getByRole('button', { name: 'Continue with Google', exact: true }).click();
+  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: google@example.invalid'); await saved(page);
   await expect(page).toHaveURL(/\/en\/ma-stack\?recette=google#?$/); expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual(['figma']);
   expect((await control(request, 'state')).accounts[0].stack.state.selection.pinnedToolSlugs).toEqual(['figma']);
 });

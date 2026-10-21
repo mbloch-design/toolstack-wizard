@@ -17,7 +17,7 @@ import DynamicCanonical from "@/components/DynamicCanonical";
 import AnalyticsPageView from "@/components/AnalyticsPageView";
 import AnalyticsConsent from "@/components/AnalyticsConsent";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { Analytics } from "@vercel/analytics/react";
+import PrivateSafeAnalytics from "@/components/PrivateSafeAnalytics";
 
 // The homepage stays eager for FCP. Detail pages must be synchronous in the
 // SSR build, but can remain route chunks in the browser. import.meta.env.SSR
@@ -272,7 +272,7 @@ const App = () => (
         <ScrollToTop />
         <DynamicCanonical />
         <AnalyticsPageView />
-        <Analytics />
+        <PrivateSafeAnalytics />
         <ErrorBoundary>
         <Suspense fallback={<LazyFallback />}>
           <AppRoutes />

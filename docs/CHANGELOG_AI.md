@@ -1,3 +1,10 @@
+## 2026-10-21 : recette complète de l’expérience de compte
+
+- Fixture locale adaptée aux appels SDK inscription/confirmation/renvoi, mot de passe/récupération, Google/GitHub et profil ; boîte de liens locale, identités `.invalid` et blocage des origines externes. Les parcours publics remplacent le code e-mail sans retirer les contrôles de stack complète, CAS, reprise et isolation A/B.
+- Recette navigateur conservée : 43/43 PASS, dont les huit combinaisons FR/EN, 390/1440 px, clair/sombre avec clavier, focus, menu, fenêtre et paramètres ; 24 captures. Vérification ciblée de reprise : analytics 23/23, bootstrap/serveur/routage 24/24, types app/Node/E2E et lint PASS.
+- Confidentialité des URL Auth : fragments et paramètres privés exclus des champs GA4 et du referrer ; DataFast et Vercel Analytics omis pour toute la vie d’un document initial sensible, avec filtrage Vercel des événements suivants. Le SDK conserve son transport et les documents publics ordinaires conservent leur mesure ; la perte d’audience sur les documents sensibles est volontaire.
+- Serveur de recette générée étendu aux en-têtes `vercel.json`, avec cache local `no-store` ; recette dédiée préparée pour les dix routes privées flags désactivés, HTTP noindex, 404 et fiche publique. **Build final et exécution sur dist frais en attente du contrôleur** : `npx playwright test --config playwright.accounts-generated.config.ts`. Exploitation Google/GitHub, SMTP/templates, callbacks et migrations documentés ; aucun service distant activé ni publication.
+
 ## 2026-10-21 : expérience visible du compte
 
 - Revue lot 3 : menu modal avec focus contenu et retour au déclencheur, styles du bloc Ma stack rétablis et état de vérification initiale du lien de récupération avant toute conclusion. L’initialisation attend la notification différée prévue par le SDK ; elle ne confère aucun droit de récupération.

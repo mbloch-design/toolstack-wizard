@@ -6,7 +6,7 @@ const baseURL = `http://127.0.0.1:${port}`;
 process.env.PLAYWRIGHT_BASE_URL = baseURL;
 export default defineConfig({
   testDir: "./e2e",
-  testMatch: ["stack-account.spec.ts", "backoffice-accounts.spec.ts", "stack-account-lifecycle.spec.ts"],
+  testMatch: ["stack-account.spec.ts", "backoffice-accounts.spec.ts", "stack-account-lifecycle.spec.ts", "account-experience.spec.ts"],
   timeout: 45_000, expect: { timeout: 10_000 }, fullyParallel: false, workers: 1,
   forbidOnly: !!process.env.CI, retries: 0, reporter: "list",
   outputDir: "test-results/accounts",

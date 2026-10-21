@@ -15,7 +15,7 @@ export async function isolate(context: BrowserContext) {
   // Match the exact fixture origin, including port; localhost and other loopback services are blocked too.
   const origin = new URL(process.env.PLAYWRIGHT_BASE_URL!).origin;
   await context.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
-  await context.addInitScript(() => localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({ version: 1, choice: 'refused', decidedAt: Date.now(), expiresAt: Date.now() + 3600000 })));
+
 }
 export async function draft(page: Page, value: PersonalStackV4) {
   await page.addInitScript(value => {
@@ -25,16 +25,29 @@ export async function draft(page: Page, value: PersonalStackV4) {
     localStorage.setItem('tooltrim-personal-stack-v4:anonymous-migrated', '1');
   }, value);
 }
-export async function login(page: Page, lang: 'fr' | 'en', email: string) {
+export async function dismissConsent(page: Page) {
+  const reject = page.getByRole('button', { name: /^(Refuser|Refuse|Reject)$/ });
+  if (await reject.isVisible()) await reject.click();
+}
+export async function login(page: Page, lang: 'fr' | 'en', email: string, password = 'fixture-password') {
+  const accounts = await control(page.request, 'state');
+  if (!accounts.accounts.some((user: { email: string }) => user.email === email)) await control(page.request, 'seed', { email });
+  await dismissConsent(page);
   await page.getByRole('button', { name: lang === 'fr' ? 'Enregistrer ma stack' : 'Save my stack', exact: true }).click();
+  await page.getByRole('button', { name: lang === 'fr' ? 'Continuer avec l’e-mail' : 'Continue with email', exact: true }).click();
   await page.getByLabel(lang === 'fr' ? 'Adresse e-mail' : 'Email address', { exact: true }).fill(email);
-  await page.getByRole('button', { name: lang === 'fr' ? 'Recevoir un code' : 'Send me a code', exact: true }).click();
-  await page.getByLabel(lang === 'fr' ? 'Code reçu par e-mail' : 'Email code', { exact: true }).fill('123456');
-  await page.getByRole('button', { name: lang === 'fr' ? 'Vérifier le code' : 'Verify code', exact: true }).click();
-  await expect(page.locator('.ms-account h2')).toHaveText(email);
+  await page.getByLabel(lang === 'fr' ? 'Mot de passe' : 'Password', { exact: true }).fill(password);
+  await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
+  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `${lang === 'fr' ? 'Compte : ' : 'Account: '}${email}`);
 }
 export async function saved(page: Page, lang: 'fr' | 'en' = 'en') {
-  await expect(page.locator('.ms-account-summary [role=status]')).toHaveText(lang === 'fr' ? 'Enregistré' : 'Saved');
+  await expect(page.locator('.ms-account [role=status]')).toHaveText(lang === 'fr' ? 'Stack enregistrée' : 'Stack saved');
+}
+export async function signOut(page: Page, lang: 'fr' | 'en' = 'en') {
+  await page.evaluate(() => { window.scrollTo(0, 0); document.querySelector('.asv2-content')?.scrollTo(0, 0); });
+  await page.locator('.ac-header-trigger').click();
+  await page.getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
+  await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
 }
 export async function snapshot(page: Page) {
   return page.evaluate(async () => {
