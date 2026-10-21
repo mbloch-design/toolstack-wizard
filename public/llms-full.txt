@@ -43164,7 +43164,7 @@
     }
   },
   {
-    "name": "Vwo",
+    "name": "VWO",
     "slug": "vwo",
     "url_fr": "https://tooltrim.com/fr/tool/vwo",
     "url_en": "https://tooltrim.com/en/tool/vwo",
@@ -43590,7 +43590,7 @@
     }
   },
   {
-    "name": "Whatsapp Business",
+    "name": "WhatsApp Business",
     "slug": "whatsapp-business",
     "url_fr": "https://tooltrim.com/fr/tool/whatsapp-business",
     "url_en": "https://tooltrim.com/en/tool/whatsapp-business",
