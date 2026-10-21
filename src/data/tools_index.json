@@ -41390,7 +41390,7 @@
   {
     "id": "shopmy",
     "slug": "shopmy",
-    "name": "Shopmy",
+    "name": "ShopMy",
     "categoryId": "creation",
     "shortDescription": "Plateforme de liens shoppables pour influenceurs mode, beauté et lifestyle, alternative à LTK.",
     "shortDescriptionEn": "Shoppable link platform for fashion, beauty, and lifestyle influencers, an alternative to LTK.",
@@ -42247,7 +42247,7 @@
   {
     "id": "snipe-it",
     "slug": "snipe-it",
-    "name": "Snipe IT",
+    "name": "Snipe-IT",
     "categoryId": "organization",
     "shortDescription": "Gestion d'actifs IT open source : suivi du matériel, licences et consommables, auto-hébergeable gratuitement ou en cloud payant.",
     "shortDescriptionEn": "Open-source IT asset management: hardware, license and consumable tracking, free self-hosted or paid cloud.",

@@ -36057,7 +36057,7 @@
     }
   },
   {
-    "name": "Shopmy",
+    "name": "ShopMy",
     "slug": "shopmy",
     "url_fr": "https://tooltrim.com/fr/tool/shopmy",
     "url_en": "https://tooltrim.com/en/tool/shopmy",
@@ -36874,7 +36874,7 @@
     }
   },
   {
-    "name": "Snipe IT",
+    "name": "Snipe-IT",
     "slug": "snipe-it",
     "url_fr": "https://tooltrim.com/fr/tool/snipe-it",
     "url_en": "https://tooltrim.com/en/tool/snipe-it",
