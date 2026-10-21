@@ -39153,7 +39153,7 @@
     }
   },
   {
-    "name": "Tablepress",
+    "name": "TablePress",
     "slug": "tablepress",
     "url_fr": "https://tooltrim.com/fr/tool/tablepress",
     "url_en": "https://tooltrim.com/en/tool/tablepress",
@@ -39915,7 +39915,7 @@
     }
   },
   {
-    "name": "Thirstyaffiliates",
+    "name": "ThirstyAffiliates",
     "slug": "thirstyaffiliates",
     "url_fr": "https://tooltrim.com/fr/tool/thirstyaffiliates",
     "url_en": "https://tooltrim.com/en/tool/thirstyaffiliates",
@@ -40040,7 +40040,7 @@
     }
   },
   {
-    "name": "Thrivecart",
+    "name": "ThriveCart",
     "slug": "thrivecart",
     "url_fr": "https://tooltrim.com/fr/tool/thrivecart",
     "url_en": "https://tooltrim.com/en/tool/thrivecart",
