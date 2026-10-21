@@ -13,10 +13,10 @@ export default function StackAccountPanel() {
   const needsAuth = !account.user || account.syncStatus === "session-expired";
   return (
     <section
-      className="ms-account-panel"
+      className="ms-account ac-stack-status"
       aria-label={t("Enregistrement de ma stack", "My stack saving")}
     >
-      <div className="ms-account-heading">
+      <div className="ac-stack-heading">
         <Cloud size={18} aria-hidden />
         <strong>
           {needsAuth

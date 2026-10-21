@@ -64,6 +64,7 @@ async function click(name: string) {
 beforeEach(() => {
   vi.useFakeTimers();
   account = {
+    authInitialized: true,
     authBusy: false,
     recoveryStatus: "none",
     lastAuthMethod: null,

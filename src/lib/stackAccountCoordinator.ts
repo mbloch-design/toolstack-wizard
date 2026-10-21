@@ -15,7 +15,7 @@ export type AccountSnapshot = {
   pendingDraftChoice: DraftChoice | null; conflict: StackConflict | null; magicLinkSentTo: string | null;
   hasUnsavedChanges: boolean; signOutNeedsConfirmation: boolean;
   deletionConfirmed: boolean; privacyWarning: string | null;
-  authBusy: boolean; recoveryStatus: 'none' | 'ready' | 'complete' | 'invalid'; lastAuthMethod: AuthMethod | null;
+  authInitialized: boolean; authBusy: boolean; recoveryStatus: 'none' | 'ready' | 'complete' | 'invalid'; lastAuthMethod: AuthMethod | null;
 };
 type SyncMetadata = { version: 1; owner: string; revision: number; fingerprint: string };
 type RequestScope = { owner: string; token: string; generation: number };
@@ -28,7 +28,7 @@ const consumedDraftKey = (owner: string) => `${personalStackStorageKey(owner)}:c
 export const INITIAL_ACCOUNT_SNAPSHOT: AccountSnapshot = {
   user: null, syncStatus: "local", status: "local", error: null, pendingDraftChoice: null,
   conflict: null, magicLinkSentTo: null, hasUnsavedChanges: false, signOutNeedsConfirmation: false,
-  deletionConfirmed: false, privacyWarning: null, authBusy: false, recoveryStatus: "none", lastAuthMethod: null,
+  deletionConfirmed: false, privacyWarning: null, authInitialized: false, authBusy: false, recoveryStatus: "none", lastAuthMethod: null,
 };
 
 /** Same-origin known ToolTrim routes only; preserve permitted query and hash. */
@@ -54,6 +54,7 @@ export class StackAccountCoordinator {
   private deleting = false;
   private signingOut = false;
   private timer: ReturnType<typeof setTimeout> | undefined;
+  private initializationTimer: ReturnType<typeof setTimeout> | undefined;
   private metadata: SyncMetadata | null = null;
   private draft: PersonalStackV4 | null = null;
   private clearDraftAfterSave = false;
@@ -111,6 +112,17 @@ export class StackAccountCoordinator {
     this.draft = null; this.clearDraftAfterSave = false;
   }
 
+  // The installed SDK queues its initial PASSWORD_RECOVERY notification with setTimeout(0).
+  // Yield one event-loop turn after adopting the initial result so that proof can arrive first.
+  private finishAuthInitialization() {
+    if (this.snapshot.authInitialized || this.initializationTimer !== undefined) return;
+    const lifecycle = this.lifecycle;
+    this.initializationTimer = setTimeout(() => {
+      this.initializationTimer = undefined;
+      if (this.running && this.lifecycle === lifecycle) this.emit({ authInitialized: true });
+    }, 0);
+  }
+
   start(): () => void {
     if (!this.enabled) return () => {};
     this.running = true;
@@ -135,15 +147,25 @@ export class StackAccountCoordinator {
       if (!this.running || this.generation !== initialGeneration) return;
       if (result.error) this.emit({ syncStatus: "error", error: "ACCOUNT_SESSION_UNAVAILABLE" });
       else this.adoptSession(result.data.session, "INITIAL_SESSION");
-    }).catch(() => { if (this.running && this.generation === initialGeneration) this.emit({ syncStatus: "error", error: "ACCOUNT_SESSION_UNAVAILABLE" }); });
+      this.finishAuthInitialization();
+    }).catch(() => {
+      if (this.running && this.generation === initialGeneration) {
+        this.emit({ syncStatus: "error", error: "ACCOUNT_SESSION_UNAVAILABLE" });
+        this.finishAuthInitialization();
+      }
+    });
     return () => {
-      this.running = false; this.lifecycle++; this.generation++; this.cancelTimer(); offStore(); data.subscription.unsubscribe();
+      this.running = false; this.lifecycle++; this.generation++; this.cancelTimer();
+      if (this.initializationTimer !== undefined) clearTimeout(this.initializationTimer);
+      this.initializationTimer = undefined;
+      offStore(); data.subscription.unsubscribe();
       this.session = null; this.ready = false; this.inFlight = false;
     };
   }
 
   private adoptSession(next: Session | null, event?: AuthChangeEvent) {
     if (!this.running) return;
+    this.finishAuthInitialization();
     if (next?.user.is_anonymous) next = null;
     const sameIdentity = this.sameSession(this.session, next);
     if (!sameIdentity) { this.identityEpoch++; if (this.session || event === "SIGNED_OUT") this.clearRecovery(); }
@@ -474,7 +496,7 @@ export class StackAccountCoordinator {
       const complete = this.purgeOwner(owner);
       this.session = null; this.metadata = null; this.draft = null;
       setPersonalStackScope("anonymous");
-      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, lastAuthMethod: this.snapshot.lastAuthMethod, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" }); return true;
+      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, authInitialized: this.snapshot.authInitialized, lastAuthMethod: this.snapshot.lastAuthMethod, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" }); return true;
     } catch {
       if (this.running && this.generation === generation) {
         this.abandonedWrite = abandoned; this.inFlight = false; this.ready = false;
@@ -500,7 +522,7 @@ export class StackAccountCoordinator {
       if (!this.current(scope)) return false;
       if (!this.purgeOwner(scope.owner)) complete = false;
       this.session = null; this.metadata = null; this.draft = null; setPersonalStackScope("anonymous");
-      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, lastAuthMethod: this.snapshot.lastAuthMethod, deletionConfirmed: true, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
+      this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, authInitialized: this.snapshot.authInitialized, lastAuthMethod: this.snapshot.lastAuthMethod, deletionConfirmed: true, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
       return true;
     } catch (cause) {
       if (this.current(scope)) {
@@ -539,7 +561,7 @@ export class StackAccountCoordinator {
     if (!this.running || this.generation !== generation || (owner && getPersonalStackScope() !== owner)) return false;
     if (!this.purgeOwner(owner)) complete = false;
     this.session = null; this.metadata = null; this.draft = null; setPersonalStackScope("anonymous");
-    this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, lastAuthMethod: this.snapshot.lastAuthMethod, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
+    this.emit({ ...INITIAL_ACCOUNT_SNAPSHOT, authInitialized: this.snapshot.authInitialized, lastAuthMethod: this.snapshot.lastAuthMethod, privacyWarning: complete ? null : "ACCOUNT_LOCAL_CLEANUP_INCOMPLETE" });
     return complete;
   };
 }

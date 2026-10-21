@@ -530,8 +530,9 @@ it("keeps the real LangLayout owner across Outlet and language navigation", asyn
   render(createElement(MemoryRouter, { initialEntries: ['/fr/ma-stack'] }, createElement(Routes, null,
     createElement(Route, { path: '/:lang', element: createElement(LangLayout) }, createElement(Route, { path: '*', element: createElement(Consumer) })))));
   await settle(); await login(session()); expect(screen.getByRole('button', { name: 'A' })).toBeInTheDocument();
+  const sessionReads = mocks.getSession.mock.calls.length;
   act(() => fireEvent.click(screen.getByRole('button', { name: 'A' }))); await settle();
-  expect(screen.getByRole('button', { name: 'A' })).toBeInTheDocument(); expect(mocks.onAuthStateChange).toHaveBeenCalledTimes(1); expect(mocks.getSession).toHaveBeenCalledTimes(1);
+  expect(screen.getByRole('button', { name: 'A' })).toBeInTheDocument(); expect(mocks.onAuthStateChange).toHaveBeenCalledTimes(1); expect(mocks.getSession).toHaveBeenCalledTimes(sessionReads);
 }, 20000);
 it("records OAuth only after a real matching callback, never on a button or cancellation", async () => {
   window.history.replaceState(null, '', '/fr/tools'); const first = mount(); await settle();
@@ -560,4 +561,40 @@ it("records email confirmation only after its matching SDK callback session", as
   expect(hook.result.current.lastAuthMethod).toBeNull();
   window.history.replaceState(null, '', '/fr/connexion/retour'); const actual = recoverySession(); actual.user.app_metadata = { provider: 'email' };
   await event('SIGNED_IN', actual); expect(hook.result.current.lastAuthMethod).toBe('email');
+});
+
+it("reports pending SDK initialization until a settled session result without granting recovery", async () => {
+  const initial = deferred<{ data: { session: Session | null }; error: null }>();
+  mocks.getSession.mockReturnValue(initial.promise);
+  const hook = mount();
+  expect(hook.result.current.authInitialized).toBe(false);
+  expect(hook.result.current.recoveryStatus).toBe("none");
+  await act(async () => initial.resolve({ data: { session: null }, error: null }));
+  expect(hook.result.current.authInitialized).toBe(false);
+  await act(async () => vi.advanceTimersByTimeAsync(0));
+  expect(hook.result.current.authInitialized).toBe(true);
+  expect(hook.result.current.recoveryStatus).toBe("none");
+});
+it("settles SDK initialization after session failure so recovery can offer retry", async () => {
+  mocks.getSession.mockRejectedValue(new Error("offline"));
+  const hook = mount();
+  await settle();
+  await act(async () => vi.advanceTimersByTimeAsync(0));
+  expect(hook.result.current.authInitialized).toBe(true);
+  expect(hook.result.current.recoveryStatus).not.toBe("ready");
+});
+
+it("waits for the SDK deferred PASSWORD_RECOVERY notification after getSession resolves", async () => {
+  const initial = deferred<{ data: { session: Session }; error: null }>();
+  mocks.getSession.mockReturnValue(initial.promise);
+  const hook = mount();
+  const states: { initialized: boolean; proof: string }[] = [];
+  // Installed SDK 2.99.1 queues the recovery event during initialize before getSession settles.
+  setTimeout(() => authChange("PASSWORD_RECOVERY", recoverySession()), 0);
+  await act(async () => initial.resolve({ data: { session: recoverySession() }, error: null }));
+  states.push({ initialized: hook.result.current.authInitialized, proof: hook.result.current.recoveryStatus });
+  expect(hook.result.current.authInitialized).toBe(false);
+  await act(async () => vi.advanceTimersByTimeAsync(0));
+  states.push({ initialized: hook.result.current.authInitialized, proof: hook.result.current.recoveryStatus });
+  expect(states).toEqual([{ initialized: false, proof: "none" }, { initialized: true, proof: "ready" }]);
 });

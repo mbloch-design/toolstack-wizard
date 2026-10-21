@@ -1,5 +1,7 @@
 ## 2026-10-21 : expérience visible du compte
 
+- Revue lot 3 : menu modal avec focus contenu et retour au déclencheur, styles du bloc Ma stack rétablis et état de vérification initiale du lien de récupération avant toute conclusion. L’initialisation attend la notification différée prévue par le SDK ; elle ne confère aucun droit de récupération.
+
 - Connexion et inscription partagées (Google, GitHub, e-mail/mot de passe), pages de retour et récupération, avatar/menu et paramètres FR/EN : profil facultatif, identités réelles, préférences de cet appareil, export propriétaire et contrôles de sortie/suppression.
 - Le parcours attend la lecture de stack et le choix du brouillon ; Ma stack utilise les mêmes actions, sans second formulaire public ni abonnement Auth. Les intentions destructives sont annulées au changement de compte et les avertissements de stockage restent accessibles après sortie.
 - Routes privées exactes rendues côté client avec noindex ; catalogue et 404 conservés. Vérification ciblée composants/routage, TypeScript app et ESLint ; rendus isolés FR/EN, 390/1440 px, clair/sombre contrôlés en simulation locale. Recette fournisseur et intégration finale restent distinctes. Flags désactivés par défaut, aucune opération distante ni publication.

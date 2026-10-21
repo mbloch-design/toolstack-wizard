@@ -13,7 +13,7 @@ for (const enabled of ["false", "true"]) it(`renders actual public Ma stack SSR 
     const { useStackAccount } = await import("@/hooks/useStackAccount");
     return { ...real, default: function AccountShellProbe(props: Parameters<typeof real.default>[0]) {
       const account = useStackAccount();
-      expect(account.user).toBeNull(); expect(account.authBusy).toBe(false);
+      expect(account.user).toBeNull(); expect(account.authBusy).toBe(false); expect(account.authInitialized).toBe(false);
       return createElement(real.default, props);
     } };
   });

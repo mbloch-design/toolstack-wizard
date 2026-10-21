@@ -17,6 +17,7 @@ beforeEach(() => {
   mocks.account = {
     ...INITIAL_ACCOUNT_SNAPSHOT,
     enabled: true,
+    authInitialized: true,
     recoveryStatus: "ready",
     user: { id: "A" },
     completePasswordReset: vi
@@ -75,4 +76,16 @@ it("requires matching passwords and separates successful change from revocation 
   expect(
     screen.queryByLabelText("Nouveau mot de passe"),
   ).not.toBeInTheDocument();
+});
+
+it("waits for SDK initialization before evaluating a cold recovery link", () => {
+  mocks.account = { ...mocks.account, user: null, authInitialized: false, recoveryStatus: "none" };
+  const mounted = view();
+  expect(screen.getByRole("status")).toHaveTextContent("Vérification de votre lien");
+  expect(screen.queryByText(/Ce lien est invalide ou expiré/)).not.toBeInTheDocument();
+  expect(screen.queryByLabelText("Nouveau mot de passe")).not.toBeInTheDocument();
+  mocks.account = { ...mocks.account, user: { id: "A" }, authInitialized: true, recoveryStatus: "ready" };
+  mounted.rerender(<MemoryRouter><AccountRecoveryPage /></MemoryRouter>);
+  expect(screen.getByLabelText("Nouveau mot de passe")).toBeVisible();
+  expect(screen.queryByText(/Ce lien est invalide ou expiré/)).not.toBeInTheDocument();
 });

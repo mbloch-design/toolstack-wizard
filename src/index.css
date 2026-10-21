@@ -37527,6 +37527,8 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ac-page-header p, .ac-intro { color: var(--color-text-secondary); font-size: var(--tt-size-body); line-height: 1.5; }
   .ac-auth-card { padding: var(--space-xl); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--tt-radius-md); }
   .ac-auth, .ac-form, .ac-providers, .ac-section-content, .ac-stack-status { display: flex; flex-direction: column; gap: var(--space-md); min-width: 0; }
+  .ac-stack-heading { display: flex; align-items: center; gap: var(--space-sm); }
+  .ac-stack-heading > svg { flex: none; }
   .ac-auth p, .ac-section-content p { margin: 0; line-height: 1.5; }
   .ac-form label { font-size: var(--tt-size-card-body); font-weight: 600; }
   .ac-form input, .ac-form select { width: 100%; min-width: 0; min-height: 48px; padding: var(--space-sm) var(--space-md); color: var(--color-text); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--tt-radius-sm); font: inherit; }

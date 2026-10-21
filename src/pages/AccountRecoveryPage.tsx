@@ -75,6 +75,10 @@ export default function AccountRecoveryPage() {
               "Password recovery is unavailable.",
             )}
           </p>
+        ) : !account.authInitialized ? (
+          <p role="status">
+            {t("Vérification de votre lien…", "Checking your recovery link…")}
+          </p>
         ) : done ? (
           <>
             <p className="ac-notice" role="status">

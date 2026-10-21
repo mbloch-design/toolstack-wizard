@@ -360,3 +360,26 @@ it("distinguishes a recoverable local draft from incomplete privacy cleanup", ()
   expect(screen.getByRole("alert")).toHaveTextContent("conservées sur cet appareil");
   expect(screen.getByRole("alert")).not.toHaveTextContent("vue personnelle a été effacée");
 });
+
+it("contains keyboard focus in the account menu and restores it after Escape", async () => {
+  account = { ...account, user };
+  render(centralContent());
+  const trigger = screen.getByRole("button", { name: "Compte : a@example.test" });
+  trigger.focus();
+  fireEvent.click(trigger);
+  const first = screen.getByRole("link", { name: "Ma stack" });
+  const last = screen.getByRole("button", { name: "Me déconnecter" });
+  await waitFor(() => expect(screen.getByRole("dialog")).toContainElement(document.activeElement as HTMLElement));
+  last.focus();
+  fireEvent.keyDown(last, { key: "Tab" });
+  expect(first).toHaveFocus();
+  fireEvent.keyDown(first, { key: "Tab", shiftKey: true });
+  expect(last).toHaveFocus();
+  act(() => document.querySelector<HTMLButtonElement>("button:not(.ac-header-trigger)")?.focus());
+  expect(last).toHaveFocus();
+  expect(document.body.style.pointerEvents).toBe("none");
+  fireEvent.keyDown(last, { key: "Escape" });
+  await waitFor(() => expect(screen.queryByRole("dialog")).not.toBeInTheDocument());
+  await waitFor(() => expect(trigger).toHaveFocus());
+  expect(document.body.style.pointerEvents).not.toBe("none");
+});

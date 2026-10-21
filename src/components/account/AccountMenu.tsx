@@ -33,7 +33,7 @@ export default function AccountMenu() {
     account.user.email ||
     t("Mon compte", "My account");
   return (
-    <Popover open={open} onOpenChange={setOpen}>
+    <Popover modal open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <button
           type="button"
