@@ -154,7 +154,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
             <strong aria-hidden="true">{scoreText}<span className="sr-only">{t(" sur 5 ", " out of 5 ")}</span></strong>
           </a>
           <span className="td-verdict-side">
-            <span className={`td-verdict-pill td-verdict-pill--${scoreTone}`}>{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
+            <span className={`td-verdict-pill td-verdict-pill--${scoreTone}`}>{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>{" "}
             {axes.length > 0 ? (
               /* Five criteria as mini bars that rise one after another; name and score on hover/focus. */
               <span className="td-verdict-axes" role="list" aria-label={t("Les 5 critères de la note", "The 5 scoring criteria")}>
@@ -168,10 +168,11 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
             ) : <span className="td-verdict-out">{t("sur 5", "out of 5")}</span>}
           </span>
         </span>
+        {" "}
         {keepIf ? <div className="td-fit">
           {avoidIf && (
             <div className="td-fit-switch" role="group" aria-label={t("Pour qui", "Who it is for")}>
-              <button type="button" aria-pressed={fitTab === "keep"} className="td-fit-switch-btn" onClick={() => setFitTab("keep")}>{t("Pour toi si", "For you if")}</button>
+              <button type="button" aria-pressed={fitTab === "keep"} className="td-fit-switch-btn" onClick={() => setFitTab("keep")}>{t("Pour toi si", "For you if")}</button>{" "}
               <button type="button" aria-pressed={fitTab === "avoid"} className="td-fit-switch-btn" onClick={() => setFitTab("avoid")}>{t("Pas pour toi si", "Not for you if")}</button>
               <span className={`td-fit-switch-thumb${fitTab === "avoid" ? " is-right" : ""}`} aria-hidden="true" />
             </div>
