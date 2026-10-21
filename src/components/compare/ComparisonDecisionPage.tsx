@@ -92,7 +92,7 @@ export default function ComparisonDecisionPage({ toolA, toolB, content, slugPair
                   const row = curated?.prices.find(row => row.audience === 'solo' && row.featured);
                   return tool === toolA ? row?.a : row?.b;
                 })() : priceOf(tool)}</span>}
-                {score && score.score > 0 && <span className="cp-vs-score">★ {score.score.toFixed(1)}</span>}
+                {score && score.score > 0 && <span className="cp-vs-score">★ {lang === 'fr' ? score.score.toFixed(1).replace('.', ',') : score.score.toFixed(1)}</span>}
               </span>
             </Link>;
           })}

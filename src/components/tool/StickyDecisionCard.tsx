@@ -120,6 +120,8 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
   const shareUrl = typeof window === "undefined" ? "" : window.location.href;
   const shareText = t(`Découvre ${tool.name} sur ToolTrim`, `Discover ${tool.name} on ToolTrim`);
 
+  const scoreText = t(toolTrimScore.score.toFixed(1).replace(".", ","), toolTrimScore.score.toFixed(1));
+
   return (
     <div className="td-decision-card td-decision-card--utility">
       {(section === "all" || section === "verdict") && (slug === "tapstitch" ? <TapstitchDecision t={t} compact /> : <div className="td-decision-verdict">
@@ -135,18 +137,21 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
           </Link>
           {/* The tool's own logo gives each verdict card its identity. */}
           <span className="td-verdict-logo" aria-hidden="true"><ToolLogo tool={tool as any} size={24} /></span>
+          {/* Collapsed by flex, but keeps crawlers from reading the label glued to the score. */}
+          {" "}
         </span>
         {/* Score as an activity ring in the tool's colour: it draws itself to the
             score once (pathLength 100 keeps the arc in attributes, no inline style). */}
         <span className="td-verdict-hero">
           <a className="td-verdict-ring" href={reviewHref} onClick={openScoreDetail}
-            aria-label={t(`Note ${toolTrimScore.score.toFixed(1)} sur 5 : voir le détail`, `Score ${toolTrimScore.score.toFixed(1)} out of 5: see the breakdown`)}>
+            aria-label={t(`Note ${scoreText} sur 5 : voir le détail`, `Score ${scoreText} out of 5: see the breakdown`)}>
             <svg viewBox="0 0 88 88" aria-hidden="true">
               <circle className="td-verdict-ring-track" cx="44" cy="44" r="38" pathLength={100} />
               <circle className="td-verdict-ring-fill" cx="44" cy="44" r="38" pathLength={100}
                 strokeDasharray="100" strokeDashoffset={100 - Math.max(0, Math.min(100, (toolTrimScore.score / 5) * 100))} />
             </svg>
-            <strong aria-hidden="true">{toolTrimScore.score.toFixed(1)}</strong>
+            {/* "sur 5" is only for text readers such as search snippets ("4,0 sur 5 Excellent"). */}
+            <strong aria-hidden="true">{scoreText}<span className="sr-only">{t(" sur 5 ", " out of 5 ")}</span></strong>
           </a>
           <span className="td-verdict-side">
             <span className={`td-verdict-pill td-verdict-pill--${scoreTone}`}>{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
