@@ -48241,7 +48241,7 @@
   {
     "id": "usertesting",
     "slug": "usertesting",
-    "name": "Usertesting",
+    "name": "UserTesting",
     "categoryId": "analytics",
     "shortDescription": "Tests utilisateurs modérés et non-modérés à grande échelle, sur devis.",
     "shortDescriptionEn": "Moderated and unmoderated user testing at scale, quote-based.",

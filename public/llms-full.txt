@@ -42130,7 +42130,7 @@
     }
   },
   {
-    "name": "Usertesting",
+    "name": "UserTesting",
     "slug": "usertesting",
     "url_fr": "https://tooltrim.com/fr/tool/usertesting",
     "url_en": "https://tooltrim.com/en/tool/usertesting",
