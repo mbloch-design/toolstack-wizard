@@ -1,3 +1,4 @@
+import { accountPath, type AccountPathKind } from "./accountPaths";
 import bestOfGuides from "../data/bestOfGuides.json";
 /**
  * SEO utility: set meta tags, canonical, and JSON-LD dynamically.
@@ -87,6 +88,9 @@ export function setHreflang(_path: string, _base = SEO_BASE) {
 }
 
 export function getAlternateLinks(path: string, base = SEO_BASE): [string, string][] {
+  const accountKinds: AccountPathKind[] = ['signin','signup','callback','reset','settings'];
+  const accountKind = accountKinds.find(kind => path === accountPath('fr',kind) || path === accountPath('en',kind));
+  if (accountKind) return [['fr', `${base}${accountPath('fr',accountKind)}`], ['en', `${base}${accountPath('en',accountKind)}`], ['x-default', `${base}${accountPath('en',accountKind)}`]];
   const cleanPath = path.replace(/^\/(fr|en)/, "");
   const guideMatch = cleanPath.match(/^\/guide\/([^/]+)$/);
 

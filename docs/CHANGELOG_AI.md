@@ -1,3 +1,9 @@
+## 2026-10-21 : expérience visible du compte
+
+- Connexion et inscription partagées (Google, GitHub, e-mail/mot de passe), pages de retour et récupération, avatar/menu et paramètres FR/EN : profil facultatif, identités réelles, préférences de cet appareil, export propriétaire et contrôles de sortie/suppression.
+- Le parcours attend la lecture de stack et le choix du brouillon ; Ma stack utilise les mêmes actions, sans second formulaire public ni abonnement Auth. Les intentions destructives sont annulées au changement de compte et les avertissements de stockage restent accessibles après sortie.
+- Routes privées exactes rendues côté client avec noindex ; catalogue et 404 conservés. Vérification ciblée composants/routage, TypeScript app et ESLint ; rendus isolés FR/EN, 390/1440 px, clair/sombre contrôlés en simulation locale. Recette fournisseur et intégration finale restent distinctes. Flags désactivés par défaut, aucune opération distante ni publication.
+
 ## 2026-10-21 : corrections finales comptes et stack
 
 - Déconnexion du back-office raccordée au cycle partagé : confirmation des modifications non enregistrées, annulation, reprise après échec et effacement des caches personnels. Le mode administrateur sans activation conserve sa connexion par mot de passe ; un nettoyage local bloqué affiche un avertissement distinct d’un échec d’authentification.

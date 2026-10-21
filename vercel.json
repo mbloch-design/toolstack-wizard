@@ -1,6 +1,16 @@
 {
   "ignoreCommand": "bash scripts/vercel-ignore-build.sh",
   "headers": [
+    {"source": "/fr/connexion", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/fr/inscription", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/fr/connexion/retour", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/fr/compte/reinitialiser", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/fr/compte/parametres", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/en/sign-in", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/en/sign-up", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/en/sign-in/callback", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/en/account/reset-password", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
+    {"source": "/en/account/settings", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
     {"source": "/:lang(fr|en)/tool/:slug([a-z0-9-]+)\\.md", "headers": [{"key": "Link", "value": "<https://tooltrim.com/:lang/tool/:slug>; rel=\"canonical\""}]},
     {
       "source": "/assets/(tool|stack)-catalog/(.*)",
@@ -296,6 +306,16 @@
     {"source": "/:lang(fr|en)/tool/clearbit/:path*", "destination": "/:lang/tool/hubspot/:path*", "permanent": true}
   ],
   "rewrites": [
+    {"source": "/fr/connexion", "destination": "/client-only.html"},
+    {"source": "/fr/inscription", "destination": "/client-only.html"},
+    {"source": "/fr/connexion/retour", "destination": "/client-only.html"},
+    {"source": "/fr/compte/reinitialiser", "destination": "/client-only.html"},
+    {"source": "/fr/compte/parametres", "destination": "/client-only.html"},
+    {"source": "/en/sign-in", "destination": "/client-only.html"},
+    {"source": "/en/sign-up", "destination": "/client-only.html"},
+    {"source": "/en/sign-in/callback", "destination": "/client-only.html"},
+    {"source": "/en/account/reset-password", "destination": "/client-only.html"},
+    {"source": "/en/account/settings", "destination": "/client-only.html"},
     {"source": "/:lang(fr|en)/tool/:slug([a-z0-9-]+)\\.md", "destination": "/api/tool-md?lang=:lang&slug=:slug"},
     {"source": "/:lang(fr|en)/:page(search|back-office)", "destination": "/client-only.html"},
     {"source": "/submit", "destination": "/client-only.html"},

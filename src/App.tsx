@@ -1,3 +1,4 @@
+import AccountExperienceProvider from "@/components/account/AccountExperienceProvider";
 import { lazy, Suspense } from "react";
 import { isStaticNotFoundPath } from "@/lib/staticHttpError";
 import bestOfGuides from "@/data/bestOfGuides.json";
@@ -111,6 +112,11 @@ const GUIDE_FR_ONLY_SLUGS = new Set([
   "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
 ]);
 
+const AccountAuthPage = lazy(() => import("@/pages/AccountAuthPage"));
+const AccountCallbackPage = lazy(() => import("@/pages/AccountCallbackPage"));
+const AccountRecoveryPage = lazy(() => import("@/pages/AccountRecoveryPage"));
+const AccountSettingsPage = lazy(() => import("@/pages/AccountSettingsPage"));
+
 export const LangLayout = () => {
   const { lang } = useParams<{ lang: string }>();
   const location = useLocation();
@@ -144,7 +150,7 @@ export const LangLayout = () => {
         <a href="#main-content" className="skip-to-content">
           {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
         </a>
-        <AppShellV2>{content}</AppShellV2>
+        <AccountExperienceProvider><AppShellV2>{content}</AppShellV2></AccountExperienceProvider>
       </>
     </LangContext.Provider>
     </CurrencyProvider>
@@ -240,6 +246,16 @@ export const AppRoutes = () => {
       {/* SEO landing — localized slugs (FR + EN) under same LangLayout */}
       <Route path="search" element={<SearchPage />} />
       <Route path="back-office" element={<BackOfficePage />} />
+      <Route path="connexion" element={<AccountAuthPage mode="signin" />} />
+      <Route path="sign-in" element={<AccountAuthPage mode="signin" />} />
+      <Route path="inscription" element={<AccountAuthPage mode="signup" />} />
+      <Route path="sign-up" element={<AccountAuthPage mode="signup" />} />
+      <Route path="connexion/retour" element={<AccountCallbackPage />} />
+      <Route path="sign-in/callback" element={<AccountCallbackPage />} />
+      <Route path="compte/reinitialiser" element={<AccountRecoveryPage />} />
+      <Route path="account/reset-password" element={<AccountRecoveryPage />} />
+      <Route path="compte/parametres" element={<AccountSettingsPage />} />
+      <Route path="account/settings" element={<AccountSettingsPage />} />
       <Route path="v2" element={<RedirectV2ToHome />} />
     </Route>
     <Route path="*" element={<NotFound />} />

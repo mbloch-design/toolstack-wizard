@@ -1,3 +1,4 @@
+import AccountMenu from "@/components/account/AccountMenu";
 import { useLocation } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
@@ -475,6 +476,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </button>
 
           <div className="asv2-topbar-right">
+            <AccountMenu />
             {/* Recherche toujours atteignable depuis la barre du haut, même
                 quand le fil d'Ariane occupe la place du champ. */}
             <button

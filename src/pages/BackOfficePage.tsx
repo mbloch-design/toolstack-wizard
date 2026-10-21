@@ -863,25 +863,30 @@ export default function BackOfficePage() {
   const connect = useCallback(async () => {
     const email = adminEmailInput.trim();
     const password = adminPasswordInput;
-    if (!email || !password) return;
+    if (!email || !password || account.authBusy) return;
     setAuthLoading(true);
     setError(null);
     try {
-      const { data, error: signInError } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      });
-      if (signInError) throw signInError;
+      let session: Session | null;
+      if (account.enabled) {
+        const result = await account.signInWithPassword(email, password);
+        if (!result.ok) throw new Error(t("Connexion impossible. Vérifiez vos identifiants ou réessayez plus tard.", "Unable to sign in. Check your credentials or try again later."));
+        session = (await supabase.auth.getSession()).data.session;
+      } else {
+        const { data, error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+        if (signInError) throw signInError;
+        session = data.session;
+      }
       localStorage.removeItem(LEGACY_STORAGE_KEY);
       localStorage.removeItem(LEGACY_SESSION_STORAGE_KEY);
-      setAdminSession(toAdminSession(data.session));
+      setAdminSession(toAdminSession(session));
       setAdminPasswordInput("");
     } catch (e) {
       setError(e instanceof Error ? e.message : t("Connexion impossible", "Unable to sign in"));
     } finally {
       setAuthLoading(false);
     }
-  }, [adminEmailInput, adminPasswordInput, t]);
+  }, [adminEmailInput, adminPasswordInput, account, t]);
 
   const disconnect = useCallback(async (discardUnsaved = false) => {
     if (authLoading) return;

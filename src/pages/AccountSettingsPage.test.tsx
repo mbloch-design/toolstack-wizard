@@ -1,0 +1,188 @@
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  act,
+} from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import { afterEach, beforeEach, it, expect, vi } from "vitest";
+import { INITIAL_ACCOUNT_SNAPSHOT } from "@/lib/stackAccountCoordinator";
+import AccountSettingsPage from "./AccountSettingsPage";
+const mocks = vi.hoisted(() => ({
+  account: {} as Record<string, unknown>,
+  experience: {} as Record<string, unknown>,
+}));
+vi.mock("@/hooks/useStackAccount", () => ({
+  useStackAccount: () => mocks.account,
+}));
+vi.mock("@/components/account/AccountExperienceProvider", () => ({
+  useAccountExperience: () => mocks.experience,
+}));
+const user = {
+  id: "A",
+  email: "a@example.test",
+  identities: [{ id: "email", provider: "email" }],
+  created_at: "2026-10-20T12:00:00Z",
+};
+beforeEach(() => {
+  mocks.account = {
+    ...INITIAL_ACCOUNT_SNAPSHOT,
+    enabled: true,
+    user,
+    syncStatus: "synced",
+    requestPasswordReset: vi.fn(),
+  };
+  mocks.experience = {
+    profile: {
+      userId: "A",
+      displayName: "Alex",
+      email: user.email,
+      emailConfirmed: true,
+      createdAt: user.created_at,
+      canAccessBackoffice: false,
+    },
+    status: "ready",
+    error: null,
+    saveDisplayName: vi.fn().mockResolvedValue(true),
+    retry: vi.fn(),
+    openAuth: vi.fn(),
+    requestSignOut: vi.fn(),
+    requestDeleteAccount: vi.fn(),
+  };
+});
+afterEach(cleanup);
+const view = () =>
+  render(
+    <MemoryRouter initialEntries={["/fr/compte/parametres"]}>
+      <AccountSettingsPage />
+    </MemoryRouter>,
+  );
+it("shows four settings sections with real identities and device-only preferences", () => {
+  view();
+  expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
+  expect(screen.getByRole("heading", { name: "Profil" })).toBeVisible();
+  expect(
+    screen.getByRole("heading", { name: "Connexion et sécurité" }),
+  ).toBeVisible();
+  expect(
+    screen.getByRole("heading", { name: "Préférences d’affichage" }),
+  ).toBeVisible();
+  expect(
+    screen.getByRole("heading", { name: "Stack et données" }),
+  ).toBeVisible();
+  expect(
+    screen.getByText("Ces choix sont enregistrés sur cet appareil."),
+  ).toBeVisible();
+  expect(screen.getByText("E-mail")).toBeVisible();
+  expect(screen.queryByText("Google")).not.toBeInTheDocument();
+  expect(screen.queryByRole("main")).not.toBeInTheDocument();
+});
+it("saves an optional display name with confirmation only after success", async () => {
+  view();
+  fireEvent.change(screen.getByLabelText("Nom d’affichage (facultatif)"), {
+    target: { value: "Alex Studio" },
+  });
+  await act(async () =>
+    fireEvent.click(screen.getByRole("button", { name: "Enregistrer le nom" })),
+  );
+  expect(mocks.experience.saveDisplayName).toHaveBeenCalledWith("Alex Studio");
+  expect(screen.getByRole("status", { name: "Profil" })).toHaveTextContent(
+    "Nom enregistré",
+  );
+});
+it("provides a sign-in entry for an expired session without exposing the profile", () => {
+  mocks.account = { ...mocks.account, syncStatus: "session-expired" };
+  view();
+  expect(screen.getByText("Votre session a expiré.")).toBeVisible();
+  expect(screen.queryByDisplayValue("Alex")).not.toBeInTheDocument();
+});
+it("shows profile failure and a retry without inventing a saved name", () => {
+  mocks.experience = { ...mocks.experience, profile: null, status: "error" };
+  view();
+  expect(
+    screen.getByRole("button", { name: "Réessayer le profil" }),
+  ).toBeVisible();
+  expect(screen.queryByDisplayValue("Alex")).not.toBeInTheDocument();
+});
+
+import {
+  setPersonalStackScope,
+  replacePersonalStack,
+} from "@/lib/personalStackStore";
+import { normalizePersonalStack } from "@/lib/personalStack";
+import { pinToolInState } from "@/lib/stackState";
+it("exports the active owner version as JSON and warns when it is unsynchronized", async () => {
+  vi.stubGlobal("localStorage", window.sessionStorage);
+  setPersonalStackScope("A");
+  const state = normalizePersonalStack(null);
+  state.selection = pinToolInState(state.selection, "notion");
+  replacePersonalStack(state);
+  mocks.account = { ...mocks.account, syncStatus: "unsaved" };
+  let exported: Blob | undefined;
+  Object.defineProperty(URL, "createObjectURL", {
+    value: vi.fn((blob: Blob) => {
+      exported = blob;
+      return "blob:test";
+    }),
+    configurable: true,
+  });
+  Object.defineProperty(URL, "revokeObjectURL", {
+    value: vi.fn(),
+    configurable: true,
+  });
+  const click = vi
+    .spyOn(HTMLAnchorElement.prototype, "click")
+    .mockImplementation(() => undefined);
+  view();
+  expect(screen.getByText(/L’export peut différer/)).toBeVisible();
+  fireEvent.click(
+    screen.getByRole("button", { name: "Exporter ma stack en JSON" }),
+  );
+  expect(click).toHaveBeenCalledOnce();
+  const contents = await new Promise<string>((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result));
+    reader.readAsText(exported!);
+  });
+  expect(JSON.parse(contents)).toEqual(state);
+  click.mockRestore();
+  setPersonalStackScope("anonymous");
+  vi.unstubAllGlobals();
+});
+it("refuses to export a previous owner scope during an identity transition", () => {
+  vi.stubGlobal("localStorage", window.sessionStorage);
+  setPersonalStackScope("B");
+  view();
+  fireEvent.click(
+    screen.getByRole("button", { name: "Exporter ma stack en JSON" }),
+  );
+  expect(screen.getByRole("alert")).toHaveTextContent(
+    "L’export est indisponible",
+  );
+  setPersonalStackScope("anonymous");
+  vi.unstubAllGlobals();
+});
+it("offers local draft export to an anonymous visitor", () => {
+  mocks.account = { ...mocks.account, user: null, syncStatus: "local" };
+  view();
+  expect(
+    screen.getByRole("button", { name: "Exporter ma stack en JSON" }),
+  ).toBeVisible();
+  expect(
+    screen.queryByLabelText("Nom d’affichage (facultatif)"),
+  ).not.toBeInTheDocument();
+});
+it("identifies unconfirmed email explicitly without claiming a password exists", () => {
+  mocks.experience = {
+    ...mocks.experience,
+    profile: {
+      ...(mocks.experience.profile as Record<string, unknown>),
+      emailConfirmed: false,
+    },
+  };
+  view();
+  expect(screen.getByText("E-mail non confirmé")).toBeVisible();
+  expect(screen.getByText("E-mail")).toBeVisible();
+  expect(screen.queryByText("E-mail et mot de passe")).not.toBeInTheDocument();
+});

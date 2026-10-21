@@ -46,3 +46,9 @@ describe("getLanguageSwitchPath", () => {
     expect(getLanguageSwitchPath("/fr/tools", "en")).toBe("/en/tools");
   });
 });
+
+it('translates account settings and authentication links without changing public route behavior', () => {
+  expect(getLanguageSwitchPath('/fr/compte/parametres', 'en')).toBe('/en/account/settings');
+  expect(getLanguageSwitchPath('/en/sign-in/callback', 'fr')).toBe('/fr/connexion/retour');
+  expect(getLanguageSwitchPath('/fr/compte/reinitialiser', 'en')).toBe('/en/account/reset-password');
+});
