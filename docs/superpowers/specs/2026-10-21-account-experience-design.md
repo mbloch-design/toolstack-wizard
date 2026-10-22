@@ -15,7 +15,7 @@ Une fenêtre partagée de connexion/inscription préserve le contexte de découv
 ### Accès global
 
 - Visiteur : action « Se connecter » dans le header, avec accès explicite à « Créer un compte » dans le formulaire. Sur mobile, cible icône de 44px et nom accessible ; aucune collision avec recherche, Ma stack et menu.
-- Connecté : avatar initiale, nom d'affichage ou e-mail de secours ; menu avec identité, Ma stack, Paramètres et déconnexion. L'accès back-office n'apparaît que sur capacité confirmée par le serveur ; aucun rôle de métadonnées ne confère un droit.
+- Connecté : photo disponible avec initiale de secours, nom d'affichage ou e-mail de secours ; menu avec identité, Ma stack, Paramètres et déconnexion. L'accès back-office n'apparaît que sur capacité confirmée par le serveur ; aucun rôle de métadonnées ne confère un droit.
 - Pas d'entrée éditeur vide, de communauté fictive ni de contrôle sans effet.
 - Menu et fenêtre accessibles : clavier, Échap, focus initial/restauré, page arrière non interactive, annonces d'erreurs, fermeture pendant une requête sans blocage permanent.
 
@@ -44,7 +44,7 @@ Une fenêtre partagée de connexion/inscription préserve le contexte de découv
 
 Page `/fr/compte/parametres` et `/en/account/settings`, avec H1 et fil d'Ariane dans le shell existant, états chargement/visiteur/session expirée/indisponible.
 
-1. **Profil** : initiale, nom d'affichage facultatif modifiable (80 caractères max), e-mail confirmé et date de création. Le nom est stocké dans `profiles.display_name`, sans changer l'identité ni les droits.
+1. **Profil** : photo ou initiale, nom d'affichage facultatif modifiable (80 caractères max), e-mail confirmé et date de création. Le nom est stocké dans `profiles.display_name`, sans changer l'identité ni les droits.
 2. **Connexion et sécurité** : identités réellement associées à l'utilisateur, demande de définition/réinitialisation du mot de passe, déconnexion. Pas de prétendue association de fournisseurs dont les identités sont absentes ; association/dissociation manuelle n'est pas incluse.
 3. **Préférences d'affichage** : thème et devise existants, clairement indiqués « sur cet appareil ». Langue via route FR/EN ; pas de nouvelle collecte ni de synchronisation fictive. Les commandes du shell et de la page restent cohérentes immédiatement.
 4. **Stack et données** : lien Ma stack, état réel de sauvegarde, export JSON de la version présente sur l'appareil avec avertissement si non synchronisée ; suppression de compte via confirmation et protection contributive existantes.
@@ -72,7 +72,7 @@ Le bloc de sauvegarde devient une interface courte : état de sauvegarde, action
 
 - Design ToolTrim actuel : shell existant, tokens, CSS préfixé dans `@layer components`, icônes centralisées, CTA neutres, clair/sombre, FR/EN, clavier et 390/1440px sans débordement de page.
 - Une stack personnelle complète par compte ; fiches JSON et paiements/soumissions existants hors scope.
-- Aucune collecte de persona/métier/entreprise/onboarding obligatoire ; nom facultatif dans paramètres seulement.
+- Aucune collecte de persona/métier/entreprise/onboarding obligatoire ; nom facultatif importé du fournisseur ou modifié dans les paramètres, jamais exigé à l’inscription.
 - Google + GitHub + e-mail/mot de passe dans le parcours public ; pas de code e-mail public concurrent.
 - Un seul coordinateur Auth/synchronisation dans chaque application ; SSR sans effets Auth ni fetch privé.
 - Les deux flags comptes restent désactivés par défaut ; disponibilité OAuth déclarée explicitement pour chaque fournisseur. La simulation locale les active sans appel externe.
@@ -97,3 +97,25 @@ SDK installé : supabase-js 2.99.1, pas de mise à niveau requise ; ne pas suppo
 - https://supabase.com/docs/guides/auth/passwords
 - https://supabase.com/docs/guides/auth/auth-identity-linking
 - https://supabase.com/changelog/cbc-tls-ciphers-deprecated
+
+## Extension demandée le 22 octobre — anticipation des données OAuth
+
+L’utilisateur demande de récupérer dès maintenant les données utiles disponibles lors de Google/GitHub. Cette instruction étend le lot au préremplissage et à la conservation structurée du profil cosmétique. Autonomie d’exécution conservée. Aucune étape obligatoire, aucun scope supplémentaire, aucun questionnaire de persona. Métier, entreprise, taille d’équipe, objectifs et rôle éditeur restent ultérieurs et déclaratifs.
+
+### Données et priorité
+
+Auth reste la source des identités liées, identifiants fournisseur, e-mail/vérification et dates de création/dernière connexion ; pas de duplication de ces objets ou de tokens dans profiles. À partir du `getUser(token)` déjà vérifié côté serveur, sélectionner une identité Google/GitHub attachée au même owner, de manière déterministe : fournisseur initial Auth s’il correspond à une identité attachée, sinon Google puis GitHub. Utiliser exclusivement son `identity_data`, sans mélanger les fournisseurs ni importer `user_metadata` comme autorité. Seuls nom/pseudo, URL de photo et langue fournis sont projetés ; tout autre champ est ignoré.
+
+Réutiliser `profiles.display_name` et `avatar_url`. Ajouter `oauth_profile_source` nullable google/github (marqueur d’import unique et provenance), `provider_locale` nullable distinct de `profiles.locale`/langue de navigation, et `display_name_auto_fill_allowed` boolean : anciennes lignes false par prudence, nouvelles true. Tout PUT du nom met ce booléen false, même pour null. Préserver tout nom et avatar déjà renseignés. Sous verrou owner/session et barrière deleting, importer une fois les seuls champs exploitables et marquer la source atomiquement ; les reconnexions et liaisons ultérieures ne remplacent jamais les choix. Les champs manquants restent null, sans prénom/nom légal séparés ni blob OAuth.
+
+Le nom suit la limite80 points Unicode et l’absence de contrôles existantes ; une valeur fournisseur invalide est omise et ne bloque pas la connexion. Locale fournisseur : tag optionnel borné35 caractères, langue2–3 lettres suivie de sous-tags alphanumériques 2–8 séparés par tirets ; normaliser underscore en tiret. Photo : HTTPS, maximum 2048 caractères, sans user/password/port non standard/fragment, hôtes `lh<chiffres>.googleusercontent.com` pour Google et `avatars.githubusercontent.com` pour GitHub ; query uniquement clés `s`, `sz`, `v` numériques. Aucun fetch/proxy serveur ni Storage. Toutes ces données restent cosmétiques et ne confèrent aucun droit ; l’autorité e-mail confirmé/allowlist ne change pas.
+
+### Contrats et présentation
+
+Ajouter au DTO AccountProfile `avatarUrl:string|null`, `providerLocale:string|null`, `oauthProfileSource:'google'|'github'|null`. GET profil utilise la projection serveur pour l’import idempotent, un seul abonnement Auth existant ; PUT public accepte toujours uniquement displayName. Ajouter un RPC service-only `import_personal_oauth_profile(p_owner uuid,p_session uuid,p_provider text,p_display_name text,p_avatar_url text,p_provider_locale text) returns jsonb`, avec les mêmes garde/verrou/ACL que le profil actuel. Étendre read/update_personal_profile sans modifier stack ni Auth. Migration CLI `20261022073822_account_oauth_profile.sql`, rollback même basename conservant colonnes et données, révocation des RPC concernés ; aucun DDL distant.
+
+Nom/photo alimentent menu et paramètres ; image à dimensions fixes, referrerPolicy no-referrer, alt vide avec identité textuelle et initiale en cas d’erreur. Aucun changement automatique de langue UI. Back-office : nom existant bénéficie déjà de l’import ; ajouter les trois scalaires dans le détail, par lecture service ciblée du profil après autorisation administrateur et résultat owner validé, sans N+1 sur la liste, sans charge OAuth brute. Les champs absents restent neutres. Profil A tardif ne doit jamais apparaître chez B.
+
+### Recette supplémentaire
+
+Tests RED/GREEN normalisation, deux fournisseurs, champs invalides/absents, métadonnées forgées, import unique, nom modifié/effacé, migration historique nullable, concurrence des intentions dans les deux ordres, owner/session/deleting et rollback conservation. API profil et détail BO gardent leurs gardes ; aucun token/role/email du seed n’est projeté. UI : photo/échec/owner tardif et langue informative. Fixture SDK réelle en .invalid couvre OAuth→nom/photo persistants→reconnexion→nom effacé non réimporté ; aucun appel photo externe pendant recette. Puis gates intégrés et revue fraîche de cette extension avant build final.
