@@ -18,6 +18,9 @@ export type Database = {
         Row: {
           // Manually maintained contract for 20261019081436; not CLI generated.
           account_status: string
+          oauth_profile_source: "google" | "github" | null
+          provider_locale: string | null
+          display_name_auto_fill_allowed: boolean
           avatar_url: string | null
           created_at: string
           display_name: string | null
@@ -27,6 +30,9 @@ export type Database = {
         }
         Insert: {
           account_status?: string
+          oauth_profile_source?: "google" | "github" | null
+          provider_locale?: string | null
+          display_name_auto_fill_allowed?: boolean
           avatar_url?: string | null
           created_at?: string
           display_name?: string | null
@@ -36,6 +42,9 @@ export type Database = {
         }
         Update: {
           account_status?: string
+          oauth_profile_source?: "google" | "github" | null
+          provider_locale?: string | null
+          display_name_auto_fill_allowed?: boolean
           avatar_url?: string | null
           created_at?: string
           display_name?: string | null
@@ -613,6 +622,10 @@ export type Database = {
         Returns: undefined
       }
       // Manually maintained from 20261021073601_account_profile_settings.sql.
+      import_personal_oauth_profile: {
+        Args: { p_owner: string; p_session: string; p_provider: string; p_display_name: string | null; p_avatar_url: string | null; p_provider_locale: string | null }
+        Returns: Json
+      }
       read_personal_profile: {
         Args: { p_owner: string; p_session: string }
         Returns: Json

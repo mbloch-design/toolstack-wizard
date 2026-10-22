@@ -1,3 +1,4 @@
+import { normalizeOAuthAvatar, normalizeProviderLocale } from "./accountIdentityProfile";
 import { normalizeStoredPersonalStack, type PersonalStackRecord } from "./personalStack";
 
 export type AccountSummary = {
@@ -9,7 +10,7 @@ export type AccountsDashboard = {
   topTools: { toolSlug: string; usedAccounts: number; wishlistAccounts: number }[];
   accounts: AccountSummary[]; page: number; pageSize: number; total: number; updatedAt: string;
 };
-export type AccountDetail = Omit<AccountSummary, "hasStack" | "stackUpdatedAt"> & { stack: PersonalStackRecord | null };
+export type AccountDetail = Omit<AccountSummary, "hasStack" | "stackUpdatedAt"> & { stack: PersonalStackRecord | null; avatarUrl: string | null; providerLocale: string | null; oauthProfileSource: "google" | "github" | null };
 
 function record(value: unknown): Record<string, unknown> {
   if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error("Invalid accounts response");
@@ -66,5 +67,8 @@ export function parseAccountDetail(input: unknown): AccountDetail | null {
     record(saved.state);
     stack = { state: normalizeStoredPersonalStack(saved.state), revision, updatedAt: date(saved.updatedAt) };
   }
-  return { ...identity(value), stack };
+  if (!(value.oauthProfileSource === null || value.oauthProfileSource === 'google' || value.oauthProfileSource === 'github')
+    || !(value.avatarUrl === null || typeof value.avatarUrl === 'string' && normalizeOAuthAvatar(value.avatarUrl,null) === value.avatarUrl)
+    || !(value.providerLocale === null || typeof value.providerLocale === 'string' && normalizeProviderLocale(value.providerLocale) === value.providerLocale)) throw new Error("Invalid accounts response");
+  return { ...identity(value), stack, avatarUrl:value.avatarUrl as string|null,providerLocale:value.providerLocale as string|null,oauthProfileSource:value.oauthProfileSource };
 }

@@ -7,7 +7,7 @@ const owner = "11111111-1111-4111-8111-111111111111";
 const other = "33333333-3333-4333-8333-333333333333";
 const sessionId = "22222222-2222-4222-8222-222222222222";
 const token = `header.${Buffer.from(JSON.stringify({ sub: owner, session_id: sessionId })).toString("base64url")}.signature`;
-const stored = { userId: owner, displayName: null, createdAt: "2026-10-19T12:00:00Z", updatedAt: "2026-10-21T12:00:00Z" };
+const stored = { avatarUrl: null, providerLocale: null, oauthProfileSource: null, userId: owner, displayName: null, createdAt: "2026-10-19T12:00:00Z", updatedAt: "2026-10-21T12:00:00Z" };
 function request(body?: unknown, method = "GET") { const f = httpFixture(body, method); f.req.headers.authorization = `Bearer ${token}`; return f; }
 async function invoke(body?: unknown, method = "GET") { const f = request(body, method); await handler(f.req, f.res); return f; }
 beforeEach(() => {
@@ -83,4 +83,25 @@ describe("private profile boundary", () => {
     const f = request({}, "PUT"); f.req.headers["content-length"] = "bad"; await handler(f.req, f.res); expect(f.res.statusCode).toBe(400);
     const badMethod = await invoke(undefined, "POST"); expect(badMethod.res.statusCode).toBe(405); expect(badMethod.res.getHeader("Allow")).toBe("GET, PUT");
   });
+});
+
+describe("OAuth import boundary", () => {
+ it("imports only the same-owner verified identity on GET and never on PUT", async () => {
+  mocks.getUser.mockResolvedValue({data:{user:{id:owner,email:"owner@example.test",email_confirmed_at:null,app_metadata:{provider:"github"},user_metadata:{role:"admin"},identities:[{id:"h",user_id:owner,provider:"github",identity_data:{user_name:"octocat",avatar_url:"https://avatars.githubusercontent.com/u/1?v=4",locale:"en",email:"forged@test",role:"admin"}}]}},error:null});
+  expect((await invoke()).res.statusCode).toBe(200);
+  expect(mocks.rpc).toHaveBeenCalledWith("import_personal_oauth_profile",{p_owner:owner,p_session:sessionId,p_provider:"github",p_display_name:"octocat",p_avatar_url:"https://avatars.githubusercontent.com/u/1?v=4",p_provider_locale:"en"});
+  expect((await invoke()).body).toMatchObject({profile:{canAccessBackoffice:false,emailConfirmed:false}});
+  mocks.rpc.mockClear(); expect((await invoke({displayName:null},"PUT")).res.statusCode).toBe(200);
+  expect(mocks.rpc.mock.calls.map(([n])=>n)).not.toContain("import_personal_oauth_profile");
+ });
+ it.each([{providerLocale:"fr-abcdefghi"},{oauthProfileSource:"admin"}])("rejects malformed new DTO source %j",async extra=>{
+  mocks.rpc.mockImplementation(async(name:string)=>({data:name==="require_account_session"?null:{...stored,...extra},error:null}));
+  expect((await invoke()).res.statusCode).toBe(503);
+ });
+});
+
+it("omits an unusable historical image without rewriting the stored profile",async()=>{
+ mocks.rpc.mockImplementation(async(name:string)=>({data:name==="require_account_session"?null:{...stored,displayName:"Historical",avatarUrl:"http://legacy.invalid"},error:null}));
+ expect((await invoke()).body).toMatchObject({profile:{displayName:"Historical",avatarUrl:null}});
+ expect(mocks.rpc.mock.calls.map(([n])=>n)).not.toContain("update_personal_profile");
 });

@@ -186,3 +186,12 @@ it("identifies unconfirmed email explicitly without claiming a password exists",
   expect(screen.getByText("E-mail")).toBeVisible();
   expect(screen.queryByText("E-mail et mot de passe")).not.toBeInTheDocument();
 });
+it('shows the cosmetic photo and informational provider locale without changing UI language',()=>{
+ mocks.experience.profile={...(mocks.experience.profile as object),avatarUrl:'https://avatars.githubusercontent.com/u/1',providerLocale:'en-US',oauthProfileSource:'github'};
+ const v=view();expect(v.container.querySelector('.ac-profile-summary img')).toHaveAttribute('referrerpolicy','no-referrer');expect(screen.getByText(/Langue du fournisseur : en-US/)).toBeVisible();expect(screen.getByRole('heading',{name:'Paramètres du compte'})).toBeVisible();
+});
+it('never renders a late profile A after the active owner changed to B',()=>{
+ mocks.account={...mocks.account,user:{...user,id:'B',email:'b@example.test'}};
+ mocks.experience.profile={...(mocks.experience.profile as object),avatarUrl:'https://avatars.githubusercontent.com/u/1',providerLocale:'en-US'};
+ const v=view();expect(v.container.querySelector('.ac-profile-summary')).toBeNull();expect(screen.queryByDisplayValue('Alex')).not.toBeInTheDocument();
+});

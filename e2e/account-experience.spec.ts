@@ -92,7 +92,7 @@ for (const provider of ['Google', 'GitHub']) for (const denied of [false, true])
  await draft(page, state(['figma'])); await control(request, 'oauth', { denied }); await page.goto('/en/tool/notion?source=account-test'); await dismissConsent(page);
  await page.locator('.ac-header-trigger').click(); await page.getByRole('button', { name: `Continue with ${provider}`, exact: true }).click();
  if (denied) { await expect(page.getByRole('alert')).toContainText('cancelled or denied'); await page.getByRole('link', { name: 'Back to sign in', exact: true }).click(); await expect(page).toHaveURL(/returnTo=%2Fen%2Ftool%2Fnotion/); }
- else { await expect(page).toHaveURL('/en/tool/notion?source=account-test'); await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `Account: ${provider.toLowerCase()}@example.invalid`); await page.goto('/en/account/settings'); await expect(page.locator('.ac-identities')).toHaveText(`${provider}Connected`); }
+ else { await expect(page).toHaveURL('/en/tool/notion?source=account-test'); await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `Account: ${provider === 'Google' ? 'Google' : 'GitHub'} Fixture`); await page.goto('/en/account/settings'); await expect(page.locator('.ac-identities')).toHaveText(`${provider}Connected`); }
  expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual(['figma']);
 });
 
@@ -168,4 +168,25 @@ test('closing a pending password request restores focus and keeps its return jou
  await expect(page.getByRole('dialog')).toHaveCount(0); await expect(page.locator('.ac-header-trigger')).toBeFocused();
  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: pending@example.invalid');
  await expect(page.getByRole('dialog')).toHaveCount(0); await expect(page).toHaveURL('/en/tool/notion');
+});
+
+for (const provider of ['google','github'] as const) test(`OAuth useful profile ${provider}: import, reread, reconnect, explicit null and back office`,async({page,request,browser})=>{
+ const displayName=provider==='google'?'Google Fixture':'GitHub Fixture';
+ const photo=provider==='google'?'https://lh3.googleusercontent.com/a/fixture?sz=96':'https://avatars.githubusercontent.com/u/123?v=4';
+ // Deliver a visible local fixture avatar; no request ever reaches a provider host.
+ const avatar='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="#315edd"/><circle cx="32" cy="25" r="11" fill="#fff"/><path d="M13 58c2-13 10-19 19-19s17 6 19 19" fill="#fff"/></svg>';
+ await page.route(/https:\/\/(lh3\.googleusercontent\.com|avatars\.githubusercontent\.com)\//,route=>route.fulfill({contentType:'image/svg+xml',body:avatar}));
+ const connect=async()=>{await page.goto('/en/sign-in');await dismissConsent(page);await page.getByRole('button',{name:`Continue with ${provider==='google'?'Google':'GitHub'}`,exact:true}).click();await expect(page).toHaveURL(/\/en\/ma-stack$/);await saved(page);};
+ await connect();await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label',`Account: ${displayName}`);
+ await page.goto('/en/account/settings');const name=page.getByLabel('Display name (optional)',{exact:true});await expect(name).toHaveValue(displayName);
+ await expect(page.locator('.ac-profile-summary img')).toHaveAttribute('src',photo);await expect(page.locator('.ac-profile-summary img')).toHaveAttribute('referrerpolicy','no-referrer');
+ await expect(page.getByText('Provider language: en-US',{exact:true})).toBeVisible();await page.reload();await expect(name).toHaveValue(displayName);
+ const context=await browser.newContext({baseURL:process.env.PLAYWRIGHT_BASE_URL});await isolate(context);const admin=await context.newPage();
+ await control(request,'seed',{email:'admin@example.invalid'});await admin.goto('/en/sign-in');await dismissConsent(admin);await emailForm(admin,'admin@example.invalid','fixture-password');await admin.locator('.ac-form').getByRole('button',{name:'Sign in',exact:true}).click();await expect(admin).toHaveURL(/\/en\/ma-stack$/);
+ await admin.goto('/en/back-office');await expect(admin.getByText(displayName,{exact:true})).toBeVisible();await admin.getByRole('button',{name:`View stack for ${provider}@example.invalid`,exact:true}).click();await expect(admin.locator('.ba-detail')).toContainText(`Initial profile provider: ${provider==='google'?'Google':'GitHub'}`);await expect(admin.locator('.ba-detail')).toContainText('Provider language: en-US');await context.close();
+ await page.screenshot({path:test.info().outputPath(`oauth-${provider}-profile.png`)});
+ await name.fill('');await page.getByRole('button',{name:'Save name',exact:true}).click();await expect(page.getByRole('status',{name:'Profile'})).toHaveText('Name saved.');
+ await signOut(page);await connect();await page.goto('/en/account/settings');await expect(name).toHaveValue('');await page.reload();await expect(name).toHaveValue('');
+ await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label',`Account: ${provider}@example.invalid`);
+ expect((await snapshot(page)).version).toBe(4);
 });

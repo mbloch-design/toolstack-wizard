@@ -1,3 +1,4 @@
+import { normalizeOAuthProfileSeed, type OAuthProfileSeed } from "../src/lib/accountIdentityProfile";
 import { createClient } from "@supabase/supabase-js";
 import type { Database } from "../src/integrations/supabase/types";
 import type { VercelRequest } from "../types/vercel-http";
@@ -26,7 +27,7 @@ export function accountRpcError(error: { code?: string; message?: string }): Acc
   return new AccountApiError(503, "STACK_ACCOUNT_UNAVAILABLE");
 }
 
-export async function requireAccount(req: VercelRequest): Promise<{ userId: string; sessionId: string; email: string | null; accountEmail: string | null; emailConfirmed: boolean }> {
+export async function requireAccount(req: VercelRequest): Promise<{ userId: string; sessionId: string; email: string | null; accountEmail: string | null; emailConfirmed: boolean; oauthProfile: OAuthProfileSeed | null }> {
   requireAccountsEnabled();
   const authorization = req.headers.authorization;
   const token = typeof authorization === "string" ? /^Bearer ([^\s]+)$/i.exec(authorization)?.[1] : undefined;
@@ -56,5 +57,5 @@ export async function requireAccount(req: VercelRequest): Promise<{ userId: stri
   const emailConfirmed = Boolean(accountEmail && user.email_confirmed_at);
   // email retains the confirmed-only authorization contract. accountEmail is
   // verified account data for private display and never confers a capability.
-  return { userId: user.id, sessionId: claims.session_id, email: emailConfirmed ? accountEmail : null, accountEmail, emailConfirmed };
+  return { userId: user.id, sessionId: claims.session_id, email: emailConfirmed ? accountEmail : null, accountEmail, emailConfirmed, oauthProfile: normalizeOAuthProfileSeed(user) };
 }

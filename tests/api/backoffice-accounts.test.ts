@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { httpFixture } from "./http";
 
-const mocks = vi.hoisted(() => ({ getUser: vi.fn(), rpc: vi.fn(), createClient: vi.fn() }));
+const mocks = vi.hoisted(() => ({ getUser: vi.fn(), rpc: vi.fn(), createClient: vi.fn(), from: vi.fn(), select: vi.fn(), eq: vi.fn(), maybeSingle: vi.fn() }));
 vi.mock("@supabase/supabase-js", () => ({ createClient: mocks.createClient }));
 import handler from "../../api/backoffice-accounts";
 
@@ -24,7 +24,9 @@ beforeEach(() => {
   vi.resetAllMocks();
   vi.stubEnv("STACK_ACCOUNT_ENABLED", "true"); vi.stubEnv("SUPABASE_URL", "https://example.supabase.co"); vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "server-test-only");
   vi.stubEnv("BACKOFFICE_ADMIN_EMAILS", " other@example.test, ADMIN@example.test ");
-  mocks.createClient.mockReturnValue({ auth: { getUser: mocks.getUser }, rpc: mocks.rpc });
+  mocks.createClient.mockReturnValue({ auth: { getUser: mocks.getUser }, rpc: mocks.rpc, from: mocks.from });
+  mocks.from.mockReturnValue({select:mocks.select}); mocks.select.mockReturnValue({eq:mocks.eq}); mocks.eq.mockReturnValue({maybeSingle:mocks.maybeSingle});
+  mocks.maybeSingle.mockResolvedValue({data:{id:target,avatar_url:null,provider_locale:null,oauth_profile_source:null},error:null});
   mocks.getUser.mockResolvedValue({ data: { user: user() }, error: null });
   mocks.rpc.mockImplementation(async (name: string) => ({ data: name === "require_account_session" ? null : dashboard, error: null }));
 });
@@ -99,4 +101,32 @@ describe("accounts back-office HTTP boundary", () => {
     const f=request(); await handler(f.req,f.res); expect(f.res.statusCode).toBe(503);
   });
   it("rejects writes",async()=>{const f=request();f.req.method="POST";await handler(f.req,f.res);expect(f.res.statusCode).toBe(405);expect(mocks.rpc).not.toHaveBeenCalled();});
+});
+
+describe("cosmetic detail projection",()=>{
+ it("reads only three profile fields after admin and owner checks; list stays one RPC",async()=>{
+  const detail={userId:target,email:account.email,displayName:"Custom",createdAt:at,stack:null};
+  mocks.rpc.mockImplementation(async(name:string)=>({data:name==="require_account_session"?null:detail,error:null}));
+  mocks.maybeSingle.mockResolvedValue({data:{id:target,avatar_url:"https://avatars.githubusercontent.com/u/1",provider_locale:"en",oauth_profile_source:"github"},error:null});
+  const f=request({mode:"detail",userId:target});await handler(f.req,f.res);
+  expect(f.res.statusCode).toBe(200);expect(f.body).toMatchObject({account:{avatarUrl:"https://avatars.githubusercontent.com/u/1",providerLocale:"en",oauthProfileSource:"github",displayName:"Custom"}});
+  expect(mocks.select).toHaveBeenCalledWith("id, avatar_url, provider_locale, oauth_profile_source");expect(mocks.eq).toHaveBeenCalledWith("id",target);
+ });
+ it("rejects mismatching owners before lookup and mismatching returned profile owners",async()=>{
+  mocks.rpc.mockImplementation(async(name:string)=>({data:name==="require_account_session"?null:{userId:owner,email:null,displayName:null,createdAt:at,stack:null},error:null}));
+  const f=request({mode:"detail",userId:target});await handler(f.req,f.res);expect(f.res.statusCode).toBe(503);expect(mocks.from).not.toHaveBeenCalled();
+  mocks.rpc.mockImplementation(async(name:string)=>({data:name==="require_account_session"?null:{userId:target,email:null,displayName:null,createdAt:at,stack:null},error:null}));
+  mocks.maybeSingle.mockResolvedValue({data:{id:owner,avatar_url:null,provider_locale:null,oauth_profile_source:null},error:null});
+  const g=request({mode:"detail",userId:target});await handler(g.req,g.res);expect(g.res.statusCode).toBe(503);
+ });
+ it("keeps missing profile rows and historical unsafe images neutral",async()=>{
+  mocks.rpc.mockImplementation(async(name:string)=>({data:name==="require_account_session"?null:{userId:target,email:null,displayName:null,createdAt:at,stack:null},error:null}));
+  for(const value of [null,{id:target,avatar_url:"http://legacy.invalid",provider_locale:null,oauth_profile_source:null}]){
+   mocks.maybeSingle.mockResolvedValue({data:value,error:null});const f=request({mode:"detail",userId:target});await handler(f.req,f.res);expect(f.res.statusCode).toBe(200);expect(f.body).toMatchObject({account:{avatarUrl:null,providerLocale:null,oauthProfileSource:null}});
+  }
+ });
+ it("never queries profiles for denied admin or list",async()=>{
+  const f=request();await handler(f.req,f.res);expect(mocks.from).not.toHaveBeenCalled();
+  mocks.getUser.mockResolvedValue({data:{user:user("member@example.test")},error:null});const g=request({mode:"detail",userId:target});await handler(g.req,g.res);expect(g.res.statusCode).toBe(403);expect(mocks.from).not.toHaveBeenCalled();
+ });
 });

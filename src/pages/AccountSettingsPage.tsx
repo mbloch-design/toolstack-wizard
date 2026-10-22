@@ -1,3 +1,4 @@
+import AccountAvatar from "@/components/account/AccountAvatar";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
@@ -95,7 +96,8 @@ export default function AccountSettingsPage() {
   const { t, lang, prefix } = useLang();
   const account = useStackAccount();
   const experience = useAccountExperience();
-  const { profile, status } = experience;
+  const { status } = experience;
+  const profile = experience.profile?.userId === account.user?.id ? experience.profile : null;
   const { theme, setTheme } = useTheme();
   const { currency, setCurrency } = useCurrency();
   const [reset, setReset] = useState<string | null>(null);
@@ -237,11 +239,7 @@ export default function AccountSettingsPage() {
               ) : profile ? (
                 <>
                   <div className="ac-profile-summary">
-                    <span className="ac-avatar ac-avatar--large" aria-hidden>
-                      {(profile.displayName || profile.email || "?")
-                        .charAt(0)
-                        .toUpperCase()}
-                    </span>
+                    <AccountAvatar ownerId={profile.userId} label={profile.displayName || profile.email || "?"} avatarUrl={profile.avatarUrl} large/>
                     <div>
                       <strong>
                         {profile.displayName || t("Mon compte", "My account")}
@@ -263,6 +261,7 @@ export default function AccountSettingsPage() {
                       </p>
                     </div>
                   </div>
+                  {profile.providerLocale && <p className="ac-note">{t("Langue du fournisseur : ","Provider language: ")}{profile.providerLocale}</p>}
                   <ProfileEditor
                     key={profile.userId}
                     profile={profile}

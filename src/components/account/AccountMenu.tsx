@@ -1,3 +1,4 @@
+import AccountAvatar from "./AccountAvatar";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { UserRound, Settings2, LogOut, Bookmark } from "@/lib/icons";
@@ -28,8 +29,9 @@ export default function AccountMenu() {
         <span className="ac-header-label">{t("Se connecter", "Sign in")}</span>
       </button>
     );
+  const profile = experience.profile?.userId === account.user.id ? experience.profile : null;
   const label =
-    experience.profile?.displayName ||
+    profile?.displayName ||
     account.user.email ||
     t("Mon compte", "My account");
   return (
@@ -40,9 +42,7 @@ export default function AccountMenu() {
           className="ac-header-trigger"
           aria-label={t(`Compte : ${label}`, `Account: ${label}`)}
         >
-          <span className="ac-avatar" aria-hidden>
-            {label.charAt(0).toUpperCase()}
-          </span>
+          <AccountAvatar ownerId={account.user.id} label={label} avatarUrl={profile?.avatarUrl ?? null}/>
           <span className="ac-header-label ac-header-name">{label}</span>
         </button>
       </PopoverTrigger>
@@ -63,7 +63,7 @@ export default function AccountMenu() {
             <Settings2 size={18} aria-hidden />
             {t("Paramètres", "Settings")}
           </Link>
-          {experience.profile?.canAccessBackoffice && (
+          {profile?.canAccessBackoffice && (
             <Link to={`${prefix}/back-office`} onClick={() => setOpen(false)}>
               {t("Back-office", "Back office")}
             </Link>

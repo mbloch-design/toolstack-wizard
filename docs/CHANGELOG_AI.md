@@ -1,3 +1,9 @@
+## 2026-10-22 : conservation des données OAuth utiles
+
+- Google et GitHub fournissent désormais, à partir de l'identité vérifiée, un nom, un avatar et une langue fournisseur facultatifs. L'import est unique et préserve tout nom ou avatar existant ; un nom personnalisé ou effacé reste prioritaire. L'e-mail, les identités et les droits gardent leurs autorités précédentes. Aucun scope ni étape d'inscription supplémentaire.
+- Le menu et les paramètres affichent l'avatar avec initiale de secours ; le détail administrateur expose les trois scalaires cosmétiques, après garde serveur. Migration locale `20261022073822_account_oauth_profile.sql` et rollback préservant les données ; aucune migration distante ni activation fournisseur.
+- Tests ciblés app/API/SQL et navigateur `.invalid` Google/GitHub avec image interceptée localement ; types et lint vérifiés. La recette fournisseur réelle et les gates intégrés restent à mener avant toute activation.
+
 ## 2026-10-22 : bootstrap analytics partagé et échec fermé
 
 - Le garde précoce et l’injection DataFast quittent le HTML répété pour un unique asset local `/analytics-bootstrap.js`, chargé en premier par un script classique bloquant. Le SDK conserve ses URL ; les documents sensibles restent exclus pendant toute leur vie. En cas de bootstrap absent ou défaillant, Vercel reste supprimé même si le SDK a déjà nettoyé l’URL.

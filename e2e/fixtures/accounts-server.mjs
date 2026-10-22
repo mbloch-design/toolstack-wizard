@@ -6,6 +6,22 @@ const origin = `http://127.0.0.1:${port}`;
 const users = new Map(), tokens = new Map(), stacks = new Map(), faults = [], requests = [];
 let oauthDenied = false;
 const passwords = new Map(), profiles = new Map(), mail = [];
+const emptyProfile = () => ({ displayName: null, avatarUrl: null, providerLocale: null, oauthProfileSource: null, autoFillAllowed: true });
+const profileFor = user => {
+  if (!profiles.has(user.id)) profiles.set(user.id, emptyProfile());
+  return profiles.get(user.id);
+};
+function importOAuthProfile(user) {
+  const profile = profileFor(user);
+  const identity = user.identities?.find(item => item.user_id === user.id && ['google', 'github'].includes(item.provider));
+  if (profile.oauthProfileSource !== null || !identity) return profile;
+  const data = identity.identity_data;
+  if (profile.autoFillAllowed && profile.displayName === null) profile.displayName = data.full_name || null;
+  if (profile.avatarUrl === null) profile.avatarUrl = data.avatar_url || null;
+  if (profile.providerLocale === null) profile.providerLocale = data.locale || null;
+  profile.oauthProfileSource = identity.provider;
+  return profile;
+}
 function mailLink(user, type, redirectTo) {
   const target = new URL(redirectTo || '/en/sign-in/callback', origin);
   if (target.origin !== origin) throw Error('External fixture mail redirect');
@@ -50,7 +66,7 @@ const entries = record => record?.state?.selection?.toolEntries || record?.state
 function seed(input) {
   const user = userFor(input.email, input.metadata);
   passwords.set(user.id, input.password || 'fixture-password');
-  if (input.displayName !== undefined) profiles.set(user.id, input.displayName);
+  if (input.displayName !== undefined) profiles.set(user.id, { ...emptyProfile(), displayName: input.displayName, autoFillAllowed: false });
   if (input.confirmed === false) { user.email_confirmed_at = null; user.confirmed_at = null; }
   if (input.state) stacks.set(user.id, { state: clone(input.state), revision: input.revision || 1, updatedAt: now() });
   return user;
@@ -112,7 +128,12 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
         if (!['google', 'github'].includes(provider)) return fail(res, 400, 'UNKNOWN_PROVIDER');
         if (oauthDenied) { target.searchParams.set('error', 'access_denied'); res.writeHead(302, { Location: target.href }); return res.end(); }
         const found = userFor(`${provider}@example.invalid`);
-        found.app_metadata = { provider, providers: [provider] }; found.identities = [{ id: randomUUID(), provider, identity_data: { email: found.email } }];
+        found.app_metadata = { provider, providers: [provider] };
+        found.identities = [{ id: randomUUID(), user_id: found.id, provider, identity_data: {
+          email: found.email, full_name: provider === 'google' ? 'Google Fixture' : 'GitHub Fixture',
+          avatar_url: provider === 'google' ? 'https://lh3.googleusercontent.com/a/fixture?sz=96' : 'https://avatars.githubusercontent.com/u/123?v=4',
+          locale: 'en-US',
+        }, created_at: now(), updated_at: now() }];
         return redirectSession(res, target, session(found));
       }
       if (path === '/auth/v1/token') {
@@ -137,8 +158,10 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
       if (!user || !users.has(user.email) || !tokens.has(token)) return fail(res, 401, 'ACCOUNT_SESSION_INVALID');
       if (path === '/api/account-profile') {
         if (user.deleting) return fail(res, 409, 'ACCOUNT_DELETING');
-        if (req.method === 'PUT') profiles.set(user.id, input.displayName || null);
-        return send(res, 200, { profile: { userId: user.id, displayName: profiles.get(user.id) || null,
+        const profile = req.method === 'PUT' ? profileFor(user) : importOAuthProfile(user);
+        if (req.method === 'PUT') { profile.displayName = input.displayName || null; profile.autoFillAllowed = false; }
+        return send(res, 200, { profile: { userId: user.id, displayName: profile.displayName,
+          avatarUrl: profile.avatarUrl, providerLocale: profile.providerLocale, oauthProfileSource: profile.oauthProfileSource,
           email: user.email, emailConfirmed: !!user.email_confirmed_at, createdAt: user.created_at, updatedAt: now(), canAccessBackoffice: user.email === 'admin@example.invalid' } });
       }
       if (path === '/api/stack-account') {
@@ -159,7 +182,10 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
         if (user.email !== 'admin@example.invalid') return fail(res, 403, 'BACKOFFICE_FORBIDDEN');
         if (url.searchParams.get('mode') === 'detail') {
           const found = [...users.values()].find(item => item.id === url.searchParams.get('userId'));
-          return send(res, 200, { account: found ? { userId: found.id, email: found.email, displayName: profiles.get(found.id) || null, createdAt: found.created_at, stack: getRecord(found) } : null });
+          const profile = found ? profiles.get(found.id) : null;
+          return send(res, 200, { account: found ? { userId: found.id, email: found.email, displayName: profile?.displayName || null,
+            avatarUrl: profile?.avatarUrl || null, providerLocale: profile?.providerLocale || null, oauthProfileSource: profile?.oauthProfileSource || null,
+            createdAt: found.created_at, stack: getRecord(found) } : null });
         }
         const all = [...users.values()], search = (url.searchParams.get('search') || '').toLowerCase();
         const filtered = all.filter(item => item.email.includes(search));
@@ -170,7 +196,7 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
           row[entry.intent === 'wishlist' ? 'wishlistAccounts' : 'usedAccounts']++; top.set(entry.toolSlug, row);
         }
         return send(res, 200, { totals: { accounts: all.length, accountsWithStack: stacks.size, nonemptyStacks: [...stacks.values()].filter(saved => entries(saved).length).length },
-          topTools: [...top.values()], accounts: filtered.slice((page - 1) * pageSize, page * pageSize).map(item => ({ userId: item.id, email: item.email, displayName: profiles.get(item.id) || null, createdAt: item.created_at, hasStack: stacks.has(item.id), stackUpdatedAt: getRecord(item)?.updatedAt || null })), page, pageSize, total: filtered.length, updatedAt: now() });
+          topTools: [...top.values()], accounts: filtered.slice((page - 1) * pageSize, page * pageSize).map(item => ({ userId: item.id, email: item.email, displayName: profiles.get(item.id)?.displayName || null, createdAt: item.created_at, hasStack: stacks.has(item.id), stackUpdatedAt: getRecord(item)?.updatedAt || null })), page, pageSize, total: filtered.length, updatedAt: now() });
       }
       return fail(res, 404, 'UNKNOWN_FIXTURE_ENDPOINT');
     } catch { return fail(res, 400, 'INVALID_FIXTURE_REQUEST'); }

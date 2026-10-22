@@ -4,7 +4,7 @@ import type { AccountProfile } from "../lib/accountProfile";
 const mocks = vi.hoisted(() => ({ load: vi.fn(), save: vi.fn() }));
 vi.mock("../lib/accountProfileApi", async original => ({ ...await original<typeof import("../lib/accountProfileApi")>(), loadAccountProfile: mocks.load, saveAccountProfile: mocks.save }));
 import { useAccountProfile } from "./useAccountProfile";
-const profile = (userId = "A"): AccountProfile => ({ userId, displayName: userId, email: null, emailConfirmed: false, createdAt: "2026-10-19T12:00:00Z", updatedAt: "2026-10-19T12:00:00Z", canAccessBackoffice: false });
+const profile = (userId = "A"): AccountProfile => ({ avatarUrl:null,providerLocale:null,oauthProfileSource:null,userId, displayName: userId, email: null, emailConfirmed: false, createdAt: "2026-10-19T12:00:00Z", updatedAt: "2026-10-19T12:00:00Z", canAccessBackoffice: false });
 function deferred<T>() { let resolve!: (value: T) => void; const promise = new Promise<T>(yes => { resolve = yes; }); return { promise, resolve }; }
 beforeEach(() => { vi.resetAllMocks(); mocks.load.mockImplementation(async (token: string) => profile(token)); mocks.save.mockImplementation(async (token: string, displayName: string) => ({ ...profile(token), displayName })); });
 afterEach(() => { cleanup(); vi.useRealTimers(); });
@@ -18,7 +18,7 @@ describe("owner-bound profile hook", () => {
     const pending = deferred<AccountProfile>(); mocks.load.mockImplementation((token: string) => token === "A" ? pending.promise : Promise.resolve(profile("B")));
     const h = renderHook(({ owner, getToken }) => useAccountProfile(owner, getToken, true), { initialProps: { owner: "A" as string | null, getToken: async () => "A" } }); await waitFor(() => expect(mocks.load).toHaveBeenCalled());
     h.rerender({ owner: "B", getToken: async () => "B" }); expect(h.result.current.profile).toBeNull(); await waitFor(() => expect(h.result.current.profile?.userId).toBe("B"));
-    await act(async () => { pending.resolve(profile("A")); }); expect(h.result.current.profile?.userId).toBe("B"); h.rerender({ owner: null, getToken: async () => "B" }); expect(h.result.current.profile).toBeNull(); expect(h.result.current.status).toBe("idle");
+    await act(async () => { pending.resolve({...profile("A"),avatarUrl:"https://avatars.githubusercontent.com/u/1",providerLocale:"fr",oauthProfileSource:"github"}); }); expect(h.result.current.profile?.userId).toBe("B"); h.rerender({ owner: null, getToken: async () => "B" }); expect(h.result.current.profile).toBeNull(); expect(h.result.current.status).toBe("idle");
   });
   it("never starts A's fetch if fresh token resolves after a switch to B", async () => {
     const token = deferred<string | null>(); const h = renderHook(({ owner, getToken }) => useAccountProfile(owner, getToken, true), { initialProps: { owner: "A", getToken: () => token.promise } });

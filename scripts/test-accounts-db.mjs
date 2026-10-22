@@ -23,26 +23,33 @@ try {
   if (!process.argv.includes('--baseline')) {
     await db.exec(await readFile(new URL('../supabase/migrations/20261021073601_account_profile_settings.sql', import.meta.url), 'utf8'));
   }
+  if (!process.argv.includes('--baseline')) {
+    await db.exec("insert into public.profiles(id) values ('00000000-0000-0000-0000-000000000009')");
+    await db.exec(await readFile(new URL('../supabase/migrations/20261022073822_account_oauth_profile.sql', import.meta.url), 'utf8'));
+    assert.equal((await db.query("select display_name_auto_fill_allowed from public.profiles where id='00000000-0000-0000-0000-000000000009'")).rows[0].display_name_auto_fill_allowed, false);
+    await db.exec("delete from public.profiles where id='00000000-0000-0000-0000-000000000009'");
+  }
+  await db.exec(await readFile(new URL('../supabase/tests/account_oauth_profile.test.sql', import.meta.url), 'utf8'));
   await db.exec(await readFile(new URL('../supabase/tests/account_profile_settings.test.sql', import.meta.url), 'utf8'));
   await db.exec(await readFile(new URL('../supabase/tests/personal_stack_v4.test.sql', import.meta.url), 'utf8'));
   await db.exec(await readFile(new URL('../supabase/tests/personal_account_deletion.test.sql', import.meta.url), 'utf8'));
   assert.deepEqual((await db.query(`select state from public.stack_snapshots
     where owner_id='00000000-0000-0000-0000-000000000009'`)).rows[0].state,
     { version: 3, pinnedToolSlugs: ['historical-only'] });
-  await db.exec(`insert into public.profiles(id,account_status,display_name) values
-    ('00000000-0000-0000-0000-000000000009','deleting','Preserved name');
+  await db.exec(`insert into public.profiles(id,account_status,display_name) values ('00000000-0000-0000-0000-000000000009','deleting','Preserved name');
     insert into auth.users(id) values ('00000000-0000-0000-0000-000000000008');
     insert into public.stack_snapshots(owner_id,state,state_version,revision) values
     ('00000000-0000-0000-0000-000000000008','{"version":4,"selection":{"version":3,"needs":[],"toolEntries":[],"pinnedToolSlugs":[]},"billing":{"paid":[],"reviewed":[],"choices":{}},"decisions":{}}',4,7);`);
   const beforeProfileRollback = (await db.query('select * from public.profiles order by id')).rows;
   const beforeAuthRollback = (await db.query('select * from auth.users order by id')).rows;
   const beforeStackRollback = (await db.query('select * from public.stack_snapshots order by owner_id')).rows;
+  await db.exec(await readFile(new URL('../supabase/rollback/20261022073822_account_oauth_profile.sql', import.meta.url), 'utf8'));
   await db.exec(await readFile(new URL('../supabase/rollback/20261021073601_account_profile_settings.sql', import.meta.url), 'utf8'));
   assert.deepEqual((await db.query('select * from public.profiles order by id')).rows, beforeProfileRollback);
   assert.deepEqual((await db.query('select * from auth.users order by id')).rows, beforeAuthRollback);
   assert.deepEqual((await db.query('select * from public.stack_snapshots order by owner_id')).rows, beforeStackRollback);
   for (const role of ['anon', 'authenticated', 'service_role']) {
-    for (const signature of ['public.read_personal_profile(uuid,uuid)', 'public.update_personal_profile(uuid,uuid,text)']) {
+    for (const signature of ['public.read_personal_profile(uuid,uuid)', 'public.update_personal_profile(uuid,uuid,text)', 'public.import_personal_oauth_profile(uuid,uuid,text,text,text,text)']) {
       assert.equal((await db.query("select has_function_privilege($1,$2,'EXECUTE') as allowed", [role, signature])).rows[0].allowed, false);
     }
   }

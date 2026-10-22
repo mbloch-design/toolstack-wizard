@@ -1,3 +1,4 @@
+import { normalizeOAuthAvatar } from "../src/lib/accountIdentityProfile";
 import type { VercelRequest, VercelResponse } from "../types/vercel-http";
 import { AccountApiError, accountRpcError, getAccountServiceClient, requireAccount, requireAccountsEnabled } from "./_account-auth";
 import { readAccountBody } from "./_account-body";
@@ -22,7 +23,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     const account = await requireAccount(req);
     const client = getAccountServiceClient();
     const args = { p_owner: account.userId, p_session: account.sessionId };
-    const { data, error } = req.method === "GET" ? await client.rpc("read_personal_profile", args)
+    const { data, error } = req.method === "GET" ? account.oauthProfile ? await client.rpc("import_personal_oauth_profile", { ...args, p_provider: account.oauthProfile.provider, p_display_name: account.oauthProfile.displayName, p_avatar_url: account.oauthProfile.avatarUrl, p_provider_locale: account.oauthProfile.providerLocale }) : await client.rpc("read_personal_profile", args)
       : await client.rpc("update_personal_profile", { ...args, p_display_name: displayName });
     if (error) {
       if (error.code === "PT400") throw new AccountApiError(400, "INVALID_ACCOUNT_PROFILE");
@@ -33,7 +34,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     try {
       if (!data || typeof data !== "object" || Array.isArray(data) || data.userId !== account.userId) throw new Error("Invalid owner source");
       const allowed = new Set((process.env.BACKOFFICE_ADMIN_EMAILS ?? "").split(",").map(email => email.trim().toLowerCase()).filter(Boolean));
-      profile = parseAccountProfile({ ...data, email: account.accountEmail, emailConfirmed: account.emailConfirmed,
+      profile = parseAccountProfile({ ...data, avatarUrl: data.avatarUrl === null ? null : normalizeOAuthAvatar(data.avatarUrl, null), email: account.accountEmail, emailConfirmed: account.emailConfirmed,
         canAccessBackoffice: Boolean(account.email && allowed.has(account.email.trim().toLowerCase())) });
     } catch { throw new AccountApiError(503, "ACCOUNT_PROFILE_UNAVAILABLE"); }
     res.status(200).json({ profile });

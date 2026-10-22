@@ -1,5 +1,9 @@
+import { normalizeOAuthAvatar, normalizeProviderLocale } from "./accountIdentityProfile";
 export type AccountProfile = {
   userId: string;
+  avatarUrl: string | null;
+  providerLocale: string | null;
+  oauthProfileSource: "google" | "github" | null;
   displayName: string | null;
   email: string | null;
   emailConfirmed: boolean;
@@ -32,6 +36,10 @@ export function parseAccountProfile(value: unknown): AccountProfile {
     || p.emailConfirmed && p.email === null || p.canAccessBackoffice && !p.emailConfirmed
     || !timestamp(p.createdAt) || !timestamp(p.updatedAt)
     || normalizeDisplayName(p.displayName) !== p.displayName) throw new AccountProfileValidationError();
-  return { userId: p.userId, displayName: p.displayName as string | null, email: p.email as string | null,
+  if (!(p.oauthProfileSource === null || p.oauthProfileSource === 'google' || p.oauthProfileSource === 'github')
+    || !(p.avatarUrl === null || typeof p.avatarUrl === 'string' && normalizeOAuthAvatar(p.avatarUrl, p.oauthProfileSource) === p.avatarUrl)
+    || !(p.providerLocale === null || typeof p.providerLocale === 'string' && normalizeProviderLocale(p.providerLocale) === p.providerLocale)) throw new AccountProfileValidationError();
+  return { avatarUrl: p.avatarUrl as string | null, providerLocale: p.providerLocale as string | null, oauthProfileSource: p.oauthProfileSource,
+    userId: p.userId, displayName: p.displayName as string | null, email: p.email as string | null,
     emailConfirmed: p.emailConfirmed, createdAt: p.createdAt, updatedAt: p.updatedAt, canAccessBackoffice: p.canAccessBackoffice };
 }

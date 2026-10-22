@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { loadAccountProfile, saveAccountProfile, AccountProfileApiError } from "./accountProfileApi";
-const profile = { userId: "11111111-1111-4111-8111-111111111111", displayName: null, email: "owner@example.test", emailConfirmed: true, createdAt: "2026-10-19T12:00:00Z", updatedAt: "2026-10-21T12:00:00Z", canAccessBackoffice: false };
+const profile = { avatarUrl: null, providerLocale: null, oauthProfileSource: null, userId: "11111111-1111-4111-8111-111111111111", displayName: null, email: "owner@example.test", emailConfirmed: true, createdAt: "2026-10-19T12:00:00Z", updatedAt: "2026-10-21T12:00:00Z", canAccessBackoffice: false };
 afterEach(() => vi.unstubAllGlobals());
 const response = (value: unknown, status = 200) => new Response(JSON.stringify(value), { status });
 describe("account profile client", () => {

@@ -45,13 +45,13 @@ describe("accounts dashboard",()=>{
   mocks.detail.mockResolvedValue({...row,stack:null});fireEvent.click(screen.getByRole("button",{name:"Réessayer le détail"}));expect(await screen.findByText("Aucune stack enregistrée.")).toBeVisible();
  });
  it.each([{}, {version:4,selection:null}])("shows corrupt persisted detail %j as unavailable, never as an empty saved record",async state=>{
-  mocks.detail.mockImplementation(async()=>parseAccountDetail({...row,stack:{state,revision:1,updatedAt:at}}));
+  mocks.detail.mockImplementation(async()=>parseAccountDetail({...row,avatarUrl:null,providerLocale:null,oauthProfileSource:null,stack:{state,revision:1,updatedAt:at}}));
   render(<AccountsDashboard/>);await screen.findByText("Personne");fireEvent.click(screen.getByRole("button",{name:"Voir la stack de person@example.test"}));
   const detail=await screen.findByRole("region",{name:"Détail du compte"});expect(await within(detail).findByRole("alert")).toHaveTextContent("Détail indisponible");
   expect(within(detail).queryByText("La stack enregistrée est vide.")).not.toBeInTheDocument();expect(within(detail).queryByText("Toutes les données enregistrées")).not.toBeInTheDocument();
  });
  it("still displays a genuine persisted empty record as empty",async()=>{
-  mocks.detail.mockImplementation(async()=>parseAccountDetail({...row,stack:{state:{version:3,pinnedToolSlugs:[]},revision:2,updatedAt:at}}));
+  mocks.detail.mockImplementation(async()=>parseAccountDetail({...row,avatarUrl:null,providerLocale:null,oauthProfileSource:null,stack:{state:{version:3,pinnedToolSlugs:[]},revision:2,updatedAt:at}}));
   render(<AccountsDashboard/>);await screen.findByText("Personne");fireEvent.click(screen.getByRole("button",{name:"Voir la stack de person@example.test"}));
   expect(await screen.findByText("La stack enregistrée est vide.")).toBeVisible();expect(screen.queryByRole("alert")).not.toBeInTheDocument();
  });
@@ -61,4 +61,9 @@ describe("accounts dashboard",()=>{
   render(<AccountsDashboard/>);await screen.findByText("Personne");fireEvent.click(screen.getByRole("button",{name:"Voir la stack de person@example.test"}));fireEvent.click(screen.getByRole("button",{name:"Voir la stack de second@example.test"}));
   const detail=await screen.findByRole("region",{name:"Détail du compte"});await within(detail).findByText("second@example.test");await act(async()=>{resolveFirst({...row,stack:null});});expect(within(detail).queryByText("person@example.test")).not.toBeInTheDocument();
  });
+});
+it('shows initial profile provider and informational locale on the detail only',async()=>{
+ mocks.detail.mockResolvedValue({...row,avatarUrl:'https://avatars.githubusercontent.com/u/1',providerLocale:'en-US',oauthProfileSource:'github',stack:null});render(<AccountsDashboard/>);await screen.findByText('Personne');
+ fireEvent.click(screen.getByRole('button',{name:'Voir la stack de person@example.test'}));const detail=await screen.findByRole('region',{name:'Détail du compte'});
+ await waitFor(()=>expect(within(detail).getByText(/Fournisseur du profil initial : GitHub/)).toBeVisible());expect(within(detail).getByText(/Langue du fournisseur : en-US/)).toBeVisible();expect(detail.querySelector('img')).toHaveAttribute('referrerpolicy','no-referrer');
 });

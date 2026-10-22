@@ -1,3 +1,4 @@
+import { normalizeOAuthAvatar } from "../src/lib/accountIdentityProfile";
 import type { VercelRequest, VercelResponse } from "../types/vercel-http";
 import { AccountApiError, accountRpcError, getAccountServiceClient, requireAccount } from "./_account-auth";
 import { parseAccountDetail, parseAccountsDashboard } from "../src/lib/backofficeAccounts";
@@ -36,12 +37,21 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       if (search.length > 320) throw new AccountApiError(400, "INVALID_ACCOUNTS_QUERY");
       query = { mode, search, page: pageValue(req, "page", 1, Number.MAX_SAFE_INTEGER), pageSize: pageValue(req, "pageSize", 25, 100) };
     } else throw new AccountApiError(400, "INVALID_ACCOUNTS_QUERY");
-    const { data, error } = await getAccountServiceClient().rpc("accounts_dashboard", { p_admin: account.userId, p_session: account.sessionId, p_query: query });
+    const client = getAccountServiceClient();
+    const { data, error } = await client.rpc("accounts_dashboard", { p_admin: account.userId, p_session: account.sessionId, p_query: query });
     if (error) {
       if (error.code === "PT400") throw new AccountApiError(400, "INVALID_ACCOUNTS_QUERY");
       throw accountRpcError(error);
     }
-    return res.status(200).json(mode === "detail" ? { account: parseAccountDetail(data) } : parseAccountsDashboard(data));
+    if (query.mode === "detail" && "userId" in query) {
+      if (data === null) return res.status(200).json({account:null});
+      if (!data || typeof data !== "object" || Array.isArray(data) || data.userId !== query.userId) throw new AccountApiError(503,"BACKOFFICE_UNAVAILABLE");
+      // Privileged cosmetic read only after verified administrator and result owner.
+      const {data:row,error:profileError}=await client.from("profiles").select("id, avatar_url, provider_locale, oauth_profile_source").eq("id",query.userId).maybeSingle();
+      if(profileError || row && row.id !== query.userId) throw new AccountApiError(503,"BACKOFFICE_UNAVAILABLE");
+      return res.status(200).json({account:parseAccountDetail({...data,avatarUrl:normalizeOAuthAvatar(row?.avatar_url,null),providerLocale:row?.provider_locale??null,oauthProfileSource:row?.oauth_profile_source??null})});
+    }
+    return res.status(200).json(parseAccountsDashboard(data));
   } catch (error) {
     const controlled = error instanceof AccountApiError ? error : new AccountApiError(503, "BACKOFFICE_UNAVAILABLE");
     return res.status(controlled.status).json({ error: { code: controlled.code } });
