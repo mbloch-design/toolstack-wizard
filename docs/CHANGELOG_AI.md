@@ -1,3 +1,8 @@
+## 2026-10-22 : validation des routes de compte localisées
+
+- Le validateur du dist traite désormais les alias de compte selon leur langue canonique : dix chemins valides vers le shell privé, dix variantes dans l’autre langue obligatoirement en 404 directe. Les autres routes App conservent leur contrôle FR/EN et les rewrites du produit restent identiques.
+- Régression exécutant le véritable validateur sur un dist temporaire : contrat valide accepté, chemin de compte valide manquant, alias interdit servi et page publique absente toujours détectés. RED 4/4 avant correction, GREEN 12/12 tests routage/harness ; validateur sur dist existant PASS (13 168 URL sitemap, 150 cas App), types Node et lint PASS. Rebuild complet et recette navigateur du dist réservés au contrôleur.
+
 ## 2026-10-21 : recette complète de l’expérience de compte
 
 - Fixture locale adaptée aux appels SDK inscription/confirmation/renvoi, mot de passe/récupération, Google/GitHub et profil ; boîte de liens locale, identités `.invalid` et blocage des origines externes. Les parcours publics remplacent le code e-mail sans retirer les contrôles de stack complète, CAS, reprise et isolation A/B.

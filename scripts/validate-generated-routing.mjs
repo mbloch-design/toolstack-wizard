@@ -31,12 +31,22 @@ for (const url of urls) {
   if (result.status !== 200 || result.destination !== pathname) failures.push(`${pathname}: sitemap route is redirected, rewritten or absent`);
 }
 
+// Account aliases share App components, but only their canonical locale is
+// deployable. Keep this expectation independent of rewrites so missing or
+// over-broad deployment rules still fail validation. Other App routes retain
+// their existing two-locale reachability check.
+const accountRouteLanguages = new Map([
+  ...['connexion', 'inscription', 'connexion/retour', 'compte/reinitialiser', 'compte/parametres'].map(route => [route, 'fr']),
+  ...['sign-in', 'sign-up', 'sign-in/callback', 'account/reset-password', 'account/settings'].map(route => [route, 'en']),
+]);
 // Derive every explicit App route family; select a valid generated slug for
-// parameterized families, and check its direct-request path in both locales.
+// parameterized families, and check both localized direct-request paths.
 const appSource = fs.readFileSync('src/App.tsx', 'utf8');
 const routes = [...appSource.matchAll(/<Route\s+path="([^"]+)"/g)].map(m => m[1]).filter(p => p !== '*' && p !== '/:lang');
 for (const lang of ['fr', 'en']) {
   for (const route of routes) {
+    const accountLang = accountRouteLanguages.get(route);
+    const expectedStatus = accountLang && accountLang !== lang ? 404 : 200;
     let pathname = route.startsWith('/') ? route : `/${lang}/${route}`;
     const slug = pathname.includes('/category/') ? 'gestion-projet'
       : pathname.includes('/stacks/') ? fs.readdirSync(path.join(dist, lang, 'stacks'))[0]
@@ -50,8 +60,10 @@ for (const lang of ['fr', 'en']) {
       if (result.status !== 308) break;
       current = result.destination;
     }
-    if (chain.at(-1).status !== 200) failures.push(`${pathname}: declared App route cannot reach a generated page or allowed client shell`);
-    results.push({ route: pathname, chain });
+    if (expectedStatus === 404) {
+      if (chain[0].status !== 404) failures.push(`${pathname}: wrong-language account alias must return a direct 404`);
+    } else if (chain.at(-1).status !== 200) failures.push(`${pathname}: declared App route cannot reach a generated page or allowed client shell`);
+    results.push({ route: pathname, expectedStatus, chain });
   }
 }
 for (const file of ['404.html', 'client-only.html']) {
