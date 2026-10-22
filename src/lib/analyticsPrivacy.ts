@@ -46,8 +46,10 @@ export function isSensitiveAnalyticsUrl(url: string, anyFragment = false): boole
   } catch { return true; }
 }
 declare global { interface Window { __tooltrimAnalyticsPrivateDocument?: boolean } }
+// Only a completed public bootstrap can opt into raw analytics. A missing or
+// failed blocking script must stay private even if the SDK already cleaned the URL.
 export function sensitiveAnalyticsDocument(): boolean {
-  return typeof window !== "undefined" && (window.__tooltrimAnalyticsPrivateDocument === true
+  return typeof window !== "undefined" && (window.__tooltrimAnalyticsPrivateDocument !== false
     || isSensitiveAnalyticsUrl(window.location.href, true) || isSensitiveAnalyticsUrl(document.referrer, true));
 }
 export function beforeSendAnalyticsEvent<T extends { type: string; url: string }>(event: T): T | null {

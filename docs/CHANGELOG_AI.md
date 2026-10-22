@@ -1,3 +1,8 @@
+## 2026-10-22 : bootstrap analytics partagé et échec fermé
+
+- Le garde précoce et l’injection DataFast quittent le HTML répété pour un unique asset local `/analytics-bootstrap.js`, chargé en premier par un script classique bloquant. Le SDK conserve ses URL ; les documents sensibles restent exclus pendant toute leur vie. En cas de bootstrap absent ou défaillant, Vercel reste supprimé même si le SDK a déjà nettoyé l’URL.
+- Régressions avec chargement du vrai fichier local, délai du bootstrap, ordre d’exécution et échecs de chargement/exécution : RED 4 bootstrap +1 Vercel avant correction ; GREEN bootstrap/compact26 et GA/Vercel24, types app/Node et lint PASS. Mesure avec le compacteur existant : 1 378 octets retirés par document, asset partagé de 1 489 octets ; économie estimée de 17,338 MiB sur 13 194 documents. Aucun budget modifié ; build complet et confirmation des budgets restent au contrôleur.
+
 ## 2026-10-22 : validation des routes de compte localisées
 
 - Le validateur du dist traite désormais les alias de compte selon leur langue canonique : dix chemins valides vers le shell privé, dix variantes dans l’autre langue obligatoirement en 404 directe. Les autres routes App conservent leur contrôle FR/EN et les rewrites du produit restent identiques.

@@ -12,7 +12,7 @@ import App from '@/App';
 beforeEach(() => {
  mounted.length = 0; window.history.replaceState({}, '', '/en/tools');
  Object.defineProperty(document, 'referrer', { configurable: true, value: '' });
- delete (window as unknown as { __tooltrimAnalyticsPrivateDocument?: boolean }).__tooltrimAnalyticsPrivateDocument;
+ window.__tooltrimAnalyticsPrivateDocument = false; // A successful public bootstrap explicitly opts in.
 });
 afterEach(cleanup);
 it('never mounts Vercel on a latched sensitive document after the SDK cleans its URL or a public SPA return', () => {
@@ -31,4 +31,12 @@ it('tracks ordinary public documents and drops sensitive subsequent events while
  expect(beforeSend({ type: 'pageview', url: 'https://tooltrim.com/en/account/settings?returnTo=fixture-secret' })).toBeNull();
  expect(beforeSend({ type: 'event', url: 'https://tooltrim.com/en/tool/notion?ACCESS_TOKEN=fixture-secret' })).toBeNull();
  expect(beforeSend({ type: 'pageview', url: 'https://tooltrim.com/en/tool/notion?utm_source=public#section' })).toEqual({ type: 'pageview', url: 'https://tooltrim.com/en/tool/notion?utm_source=public' });
+});
+
+it('fails closed when bootstrap did not run, even after SDK transport has been consumed', () => {
+ delete window.__tooltrimAnalyticsPrivateDocument;
+ window.history.replaceState({}, '', '/en/tool/notion');
+ const view = render(<App />); expect(mounted).toHaveLength(0);
+ window.__tooltrimAnalyticsPrivateDocument = false; view.rerender(<App />);
+ expect(mounted).toHaveLength(0); // A later script cannot undo this document mount's suppression.
 });
