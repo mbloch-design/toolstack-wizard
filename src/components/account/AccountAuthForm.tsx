@@ -5,6 +5,8 @@ import {
   ACCOUNT_GOOGLE_ENABLED,
   ACCOUNT_GITHUB_ENABLED,
 } from "@/config/features";
+import { Mail, ArrowRight } from "@/lib/icons";
+import AccountProviderIcon from "./AccountProviderIcon";
 import { accountErrorMessage } from "./accountMessages";
 export type AuthMode = "signin" | "signup";
 export default function AccountAuthForm({
@@ -132,7 +134,7 @@ export default function AccountAuthForm({
               return (
                 <button
                   type="button"
-                  className="ac-button"
+                  className={`ac-button ac-provider ac-provider--${provider}`}
                   key={provider}
                   disabled={disabled || !ready}
                   onClick={() =>
@@ -141,7 +143,8 @@ export default function AccountAuthForm({
                     )
                   }
                 >
-                  {t(`Continuer avec ${name}`, `Continue with ${name}`)}
+                  <AccountProviderIcon provider={provider} />
+                  <span>{t(`Continuer avec ${name}`, `Continue with ${name}`)}</span>
                   {!ready && (
                     <small>
                       {t("Bientôt disponible", "Not available yet")}
@@ -173,7 +176,9 @@ export default function AccountAuthForm({
           disabled={disabled}
           onClick={() => setStep("email")}
         >
+          <Mail size={20} aria-hidden />
           {t("Continuer avec l’e-mail", "Continue with email")}
+          <ArrowRight size={17} aria-hidden />
         </button>
       )}
       {(step === "email" || step === "reset") && (

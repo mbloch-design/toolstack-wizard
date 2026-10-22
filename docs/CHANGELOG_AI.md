@@ -1,3 +1,11 @@
+## 2026-10-22 : passe UI/UX des comptes
+
+- Paramètres en pleine largeur dans le shell actif : en-tête compact avec pictogramme et retour Ma stack, un seul fil d’Ariane dans la barre supérieure, navigation des quatre rubriques par liens directs, une rubrique affichée à la fois. Les formulaires restent montés pour conserver les saisies en cours ; retour arrière et liens directs conservent la rubrique. Identité, personnalisation et informations secondaires sont séparées.
+- Inscription en deux colonnes sur ordinateur avec contexte ToolTrim et illustration locale ; version mobile centrée sur le formulaire. Modale de connexion plus lisible, fournisseurs avec marques SVG locales, CTA distincts, inscription explicite dans le header sur ordinateur. Accents bleus mesurés, thème sombre adapté et zone de suppression identifiée.
+- Préférences à choix immédiats : aperçus clair/sombre, devises et langues avec état sélectionné, retour discret et transitions courtes respectant la réduction des animations. Le helper de recette attend désormais la fin effective de la déconnexion avant de naviguer ; aucune logique Auth changée.
+- Header réorganisé : recherche, Ma stack, puis compte ; contrôles harmonisés à40px, avatar compact et identité conservée dans son menu. Textes inutiles supprimés, pictos de langue locaux et action d’enregistrement alignée en bas à droite, pleine largeur sur mobile. Vérification de proportions/débordement sur320/390/768/1008/1440, invité et connecté.
+- Aucun changement Auth/API/SQL ni nouvelle collecte. Contrôles composants, TypeScript, lint, parcours de compte et rendus isolés 390/1440 clair/sombre consignés dans les preuves de livraison ; les services réels restent à activer séparément. Aucune publication automatique.
+
 ## 2026-10-22 : conservation des données OAuth utiles
 
 - Google et GitHub fournissent désormais, à partir de l'identité vérifiée, un nom, un avatar et une langue fournisseur facultatifs. L'import est unique et préserve tout nom ou avatar existant ; un nom personnalisé ou effacé reste prioritaire. L'e-mail, les identités et les droits gardent leurs autorités précédentes. Aucun scope ni étape d'inscription supplémentaire.

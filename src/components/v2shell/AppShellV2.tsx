@@ -476,7 +476,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </button>
 
           <div className="asv2-topbar-right">
-            <AccountMenu />
             {/* Recherche toujours atteignable depuis la barre du haut, même
                 quand le fil d'Ariane occupe la place du champ. */}
             <button
@@ -486,8 +485,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               aria-label={t(`Rechercher (${shortcut})`, `Search (${shortcut})`)}
             >
               <Search size={16} aria-hidden />
-              <span className="asv2-topbar-search-label">{t("Rechercher", "Search")}</span>
-              <kbd className="asv2-kbd">{shortcut}</kbd>
             </button>
             <Link
               to={`${prefix}/ma-stack`}
@@ -504,6 +501,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               </span>
               <span>{cartLabel}</span>
             </Link>
+            <AccountMenu />
             <button
               ref={menuButtonRef}
               type="button"

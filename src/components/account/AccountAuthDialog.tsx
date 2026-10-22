@@ -4,6 +4,7 @@ import { X } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import AccountAuthForm, { type AuthMode } from "./AccountAuthForm";
+import AccountWelcome from "./AccountWelcome";
 import AccountStackStatus from "./AccountStackStatus";
 export function AccountAuthJourney({
   mode,
@@ -84,7 +85,7 @@ export default function AccountAuthDialog({
       <Dialog.Portal>
         <Dialog.Overlay className="ac-overlay" />
         <Dialog.Content
-          className="ac-dialog"
+          className={`ac-dialog ac-dialog--auth${mode === "signup" ? " ac-dialog--signup" : ""}`}
           onCloseAutoFocus={(event) => {
             event.preventDefault();
             restoreFocus();
@@ -96,6 +97,9 @@ export default function AccountAuthDialog({
             if (account.pendingDraftChoice) event.preventDefault();
           }}
         >
+          {mode === "signup" && <AccountWelcome />}
+          <div className="ac-auth-pane">
+          <span className="ac-eyebrow">{mode === "signup" ? t("Votre espace personnel", "Your personal space") : t("Content de vous revoir", "Good to see you again")}</span>
           <Dialog.Title className="ac-title">
             {account.user && account.syncStatus !== "session-expired"
               ? t("Retrouvez votre stack", "Your stack is waiting")
@@ -118,6 +122,7 @@ export default function AccountAuthDialog({
             onComplete={onComplete}
             returnTo={returnTo}
           />
+          </div>
           {!account.pendingDraftChoice && (
             <Dialog.Close
               className="ac-close"

@@ -1,6 +1,8 @@
+import { UserRound, ShieldCheck, Palette, Database, ArrowUpRight, Settings2, Download, CheckCircle2, Sun, Moon, Check } from "@/lib/icons";
+import AccountLanguageIcon from "@/components/account/AccountLanguageIcon";
 import AccountAvatar from "@/components/account/AccountAvatar";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { useTheme } from "@/hooks/useTheme";
@@ -49,7 +51,8 @@ function ProfileEditor({
     }
   }
   return (
-    <form className="ac-form" onSubmit={submit}>
+    <form className="ac-form ac-profile-editor" onSubmit={submit}>
+      <h3>{t("Personnalisation", "Personalization")}</h3>
       <label htmlFor="ac-display-name">
         {t("Nom d’affichage (facultatif)", "Display name (optional)")}
       </label>
@@ -70,7 +73,9 @@ function ProfileEditor({
           "The name shown in your account menu. Up to 80 characters.",
         )}
       </p>
-      <button className="ac-button" disabled={busy}>
+      <div className="ac-form-footer">
+      <button className="ac-button ac-button--primary" disabled={busy || name.trim() === (profile.displayName ?? "")}>
+        {!busy && <Check size={16} aria-hidden />}
         {busy
           ? t("Enregistrement…", "Saving…")
           : t("Enregistrer le nom", "Save name")}
@@ -89,6 +94,7 @@ function ProfileEditor({
               )}
         </p>
       )}
+      </div>
     </form>
   );
 }
@@ -100,6 +106,15 @@ export default function AccountSettingsPage() {
   const profile = experience.profile?.userId === account.user?.id ? experience.profile : null;
   const { theme, setTheme } = useTheme();
   const { currency, setCurrency } = useCurrency();
+  const location = useLocation();
+  const requestedSection = location.hash.match(/^#ac-(profile|security|preferences|data)-section$/)?.[1];
+  const activeSection = requestedSection ?? "profile";
+  const [preferenceFeedback, setPreferenceFeedback] = useState(false);
+  useEffect(() => {
+    if (!preferenceFeedback) return;
+    const timer = setTimeout(() => setPreferenceFeedback(false), 2200);
+    return () => clearTimeout(timer);
+  }, [preferenceFeedback]);
   const [reset, setReset] = useState<string | null>(null);
   const [resetBusy, setResetBusy] = useState(false);
   const [resetCooldown, setResetCooldown] = useState(false);
@@ -167,6 +182,9 @@ export default function AccountSettingsPage() {
   const authenticated = !!account.user && !expired;
   return (
     <AccountPageFrame
+      wide
+      icon={<Settings2 size={24} />}
+      headerExtra={<Link className="ac-button ac-settings-back" to={`${prefix}/ma-stack`}>{t("Ma stack", "My stack")}<ArrowUpRight size={17} aria-hidden /></Link>}
       title={t("Paramètres du compte", "Account settings")}
       intro={t(
         "Votre profil, vos préférences et vos données, au même endroit.",
@@ -207,6 +225,7 @@ export default function AccountSettingsPage() {
           </Link>
           {!account.user && (
             <button className="ac-button" onClick={exportStack}>
+                  <Download size={17} aria-hidden />
               {t("Exporter ma stack en JSON", "Export my stack as JSON")}
             </button>
           )}
@@ -220,16 +239,20 @@ export default function AccountSettingsPage() {
           )}
         </section>
       ) : (
-        <div className="ac-settings">
-          <section className="ac-settings-section" aria-labelledby="ac-profile">
+        <div className="ac-settings-layout">
+          <nav className="ac-settings-nav" aria-label={t("Rubriques des paramètres", "Settings sections")}>
+            <span className="ac-nav-label">{t("Mon espace", "My workspace")}</span>
+            {[
+              { id: "profile", label: t("Profil", "Profile"), Icon: UserRound },
+              { id: "security", label: t("Connexion et sécurité", "Sign-in and security"), Icon: ShieldCheck },
+              { id: "preferences", label: t("Préférences", "Preferences"), Icon: Palette },
+              { id: "data", label: t("Stack et données", "Stack and data"), Icon: Database },
+            ].map(({ id, label, Icon }) => <Link key={id} to={`${location.pathname}#ac-${id}-section`} aria-current={activeSection === id ? "location" : undefined}><Icon size={18} aria-hidden />{label}</Link>)}
+          </nav>
+          <div className="ac-settings">
+          <section className="ac-settings-section" id="ac-profile-section" hidden={activeSection !== "profile"} aria-labelledby="ac-profile">
             <div className="ac-section-heading">
-              <h2 id="ac-profile">{t("Profil", "Profile")}</h2>
-              <p>
-                {t(
-                  "Juste l’essentiel pour vous retrouver.",
-                  "Just the essentials to make this space yours.",
-                )}
-              </p>
+              <h2 id="ac-profile"><UserRound size={21} aria-hidden />{t("Profil", "Profile")}</h2>
             </div>
             <div className="ac-section-content">
               {status === "loading" && !profile ? (
@@ -248,25 +271,26 @@ export default function AccountSettingsPage() {
                         {profile.email ??
                           t("E-mail non confirmé", "Email not confirmed")}
                       </p>
-                      <small>
+                      <small className="ac-verified">
+                        {profile.emailConfirmed && <CheckCircle2 size={14} aria-hidden />}
                         {profile.emailConfirmed
                           ? t("E-mail confirmé", "Email confirmed")
                           : t("E-mail non confirmé", "Email not confirmed")}
                       </small>
-                      <p className="ac-note">
-                        {t("Compte créé le ", "Joined ")}
-                        {new Date(profile.createdAt).toLocaleDateString(
-                          lang === "fr" ? "fr-FR" : "en-GB",
-                        )}
-                      </p>
                     </div>
                   </div>
-                  {profile.providerLocale && <p className="ac-note">{t("Langue du fournisseur : ","Provider language: ")}{profile.providerLocale}</p>}
                   <ProfileEditor
                     key={profile.userId}
                     profile={profile}
                     save={experience.saveDisplayName}
                   />
+                  <details className="ac-profile-details">
+                    <summary>{t("Informations du compte", "Account information")}</summary>
+                    <dl>
+                      <div><dt>{t("Compte créé le", "Joined")}</dt><dd>{new Date(profile.createdAt).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-GB")}</dd></div>
+                      {profile.providerLocale && <div><dt>{t("Langue du fournisseur", "Provider language")}</dt><dd>{profile.providerLocale}</dd></div>}
+                    </dl>
+                  </details>
                 </>
               ) : null}
               {status === "error" && (
@@ -286,10 +310,10 @@ export default function AccountSettingsPage() {
           </section>
           <section
             className="ac-settings-section"
-            aria-labelledby="ac-security"
+            id="ac-security-section" hidden={activeSection !== "security"} aria-labelledby="ac-security"
           >
             <div className="ac-section-heading">
-              <h2 id="ac-security">
+              <h2 id="ac-security"><ShieldCheck size={21} aria-hidden />
                 {t("Connexion et sécurité", "Sign-in and security")}
               </h2>
               <p>
@@ -374,10 +398,10 @@ export default function AccountSettingsPage() {
           </section>
           <section
             className="ac-settings-section"
-            aria-labelledby="ac-preferences"
+            id="ac-preferences-section" hidden={activeSection !== "preferences"} aria-labelledby="ac-preferences"
           >
             <div className="ac-section-heading">
-              <h2 id="ac-preferences">
+              <h2 id="ac-preferences"><Palette size={21} aria-hidden />
                 {t("Préférences d’affichage", "Display preferences")}
               </h2>
               <p>
@@ -388,51 +412,55 @@ export default function AccountSettingsPage() {
               </p>
             </div>
             <div className="ac-section-content ac-form">
-              <label htmlFor="ac-theme">{t("Thème", "Theme")}</label>
-              <select
-                id="ac-theme"
-                value={theme}
-                onChange={(event) =>
-                  setTheme(event.target.value as "light" | "dark")
-                }
-              >
-                <option value="light">{t("Clair", "Light")}</option>
-                <option value="dark">{t("Sombre", "Dark")}</option>
-              </select>
-              <label htmlFor="ac-currency">{t("Devise", "Currency")}</label>
-              <select
-                id="ac-currency"
-                value={currency}
-                onChange={(event) =>
-                  setCurrency(event.target.value as Currency)
-                }
-              >
-                <option>EUR</option>
-                <option>USD</option>
-                <option>GBP</option>
-              </select>
-              <span>{t("Langue", "Language")}</span>
-              <div className="ac-actions">
+              <fieldset className="ac-preference-group">
+                <legend>{t("Thème", "Theme")}</legend>
+                <div className="ac-theme-choices">
+                  {(["light", "dark"] as const).map(value => {
+                    const ThemeIcon = value === "light" ? Sun : Moon;
+                    return <label className="ac-option" key={value}>
+                      <input type="radio" name="account-theme" value={value} checked={theme === value} onChange={() => { setTheme(value); setPreferenceFeedback(true); }} />
+                      <span className="ac-option-body">
+                        <span className={`ac-theme-preview ac-theme-preview--${value}`} aria-hidden><i /><i /><i /></span>
+                        <span className="ac-option-caption"><ThemeIcon size={18} aria-hidden />{value === "light" ? t("Clair", "Light") : t("Sombre", "Dark")}<CheckCircle2 size={17} className="ac-option-check" aria-hidden /></span>
+                      </span>
+                    </label>;
+                  })}
+                </div>
+              </fieldset>
+              <fieldset className="ac-preference-group">
+                <legend>{t("Devise", "Currency")}</legend>
+                <div className="ac-segmented">
+                  {(["EUR", "USD", "GBP"] as Currency[]).map(value => <label className="ac-option" key={value}>
+                    <input type="radio" name="account-currency" value={value} checked={currency === value} onChange={() => { setCurrency(value); setPreferenceFeedback(true); }} />
+                    <span className="ac-option-body"><span aria-hidden>{value === "EUR" ? "€" : value === "USD" ? "$" : "£"}</span>{value}<Check size={15} className="ac-option-check" aria-hidden /></span>
+                  </label>)}
+                </div>
+              </fieldset>
+              <span className="ac-preference-label">{t("Langue", "Language")}</span>
+              <div className="ac-language-choices">
                 <Link
-                  className="ac-text-button"
-                  to={accountPath("fr", "settings")}
+                  className="ac-language-option"
+                  to={`${accountPath("fr", "settings")}#ac-preferences-section`}
                   aria-current={lang === "fr" ? "page" : undefined}
                 >
-                  Français
+                  <AccountLanguageIcon language="fr" />Français
+                  {lang === "fr" && <Check size={15} aria-hidden />}
                 </Link>
                 <Link
-                  className="ac-text-button"
-                  to={accountPath("en", "settings")}
+                  className="ac-language-option"
+                  to={`${accountPath("en", "settings")}#ac-preferences-section`}
                   aria-current={lang === "en" ? "page" : undefined}
                 >
-                  English
+                  <AccountLanguageIcon language="en" />English
+                  {lang === "en" && <Check size={15} aria-hidden />}
                 </Link>
               </div>
+              <span className="ac-preference-feedback" aria-label={t("Préférences", "Preferences")} role="status" aria-live="polite">{preferenceFeedback && <><CheckCircle2 size={15} aria-hidden />{t("Préférence appliquée", "Preference applied")}</>}</span>
             </div>
           </section>
-          <section className="ac-settings-section" aria-labelledby="ac-data">
+          <section className="ac-settings-section" id="ac-data-section" hidden={activeSection !== "data"} aria-labelledby="ac-data">
             <div className="ac-section-heading">
-              <h2 id="ac-data">{t("Stack et données", "Stack and data")}</h2>
+              <h2 id="ac-data"><Database size={21} aria-hidden />{t("Stack et données", "Stack and data")}</h2>
               <p>
                 {t(
                   "Gardez une copie et contrôlez vos données.",
@@ -447,6 +475,7 @@ export default function AccountSettingsPage() {
                   {t("Ouvrir Ma stack", "Open My stack")}
                 </Link>
                 <button className="ac-button" onClick={exportStack}>
+                  <Download size={17} aria-hidden />
                   {t("Exporter ma stack en JSON", "Export my stack as JSON")}
                 </button>
               </div>
@@ -487,6 +516,7 @@ export default function AccountSettingsPage() {
               </div>
             </div>
           </section>
+          </div>
         </div>
       )}
     </AccountPageFrame>

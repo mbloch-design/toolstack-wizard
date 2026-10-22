@@ -18,6 +18,7 @@ for (const lang of ["fr", "en"] as const) test(`account deletion ${lang}: explic
   const email = `lifecycle-${lang}-${Date.now()}@example.invalid`;
   await login(page, lang, email); await saved(page, lang);
   await page.goto(`/${lang}/${lang === "fr" ? "compte/parametres" : "account/settings"}`);
+  await page.getByRole("navigation", { name: lang === "fr" ? "Rubriques des paramètres" : "Settings sections" }).getByRole("link", { name: lang === "fr" ? "Stack et données" : "Stack and data", exact: true }).click();
   let deleteCalls = 0;
   await page.route("**/api/stack-account", async route => {
     if (route.request().method() !== "DELETE") return route.continue();

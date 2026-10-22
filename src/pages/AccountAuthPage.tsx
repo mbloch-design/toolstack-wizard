@@ -4,6 +4,7 @@ import { useLang } from "@/hooks/useLang";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { accountPath, safeAccountReturnTo } from "@/lib/accountPaths";
 import { AccountAuthJourney } from "@/components/account/AccountAuthDialog";
+import AccountWelcome from "@/components/account/AccountWelcome";
 import AccountPageFrame from "@/components/account/AccountPageFrame";
 import type { AuthMode } from "@/components/account/AccountAuthForm";
 export default function AccountAuthPage({ mode }: { mode: AuthMode }) {
@@ -30,7 +31,7 @@ export default function AccountAuthPage({ mode }: { mode: AuthMode }) {
   );
   return (
     <AccountPageFrame
-      narrow
+      wide
       title={
         mode === "signup"
           ? t("Créer un compte", "Create an account")
@@ -42,7 +43,10 @@ export default function AccountAuthPage({ mode }: { mode: AuthMode }) {
       )}
     >
       {account.enabled ? (
-        <div className="ac-auth-card">
+        <div className={`ac-auth-layout${mode === "signup" ? " ac-auth-layout--signup" : ""}`}>
+          {mode === "signup" && <AccountWelcome />}
+          <div className="ac-auth-card">
+            <span className="ac-eyebrow">{mode === "signup" ? t("Un compte gratuit, une stack à vous", "A free account, a stack of your own") : t("Content de vous revoir", "Good to see you again")}</span>
           <AccountAuthJourney
             mode={mode}
             returnTo={destination}
@@ -54,6 +58,7 @@ export default function AccountAuthPage({ mode }: { mode: AuthMode }) {
             }
             onComplete={complete}
           />
+          </div>
         </div>
       ) : (
         <p className="ac-notice">

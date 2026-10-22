@@ -3,6 +3,7 @@ import {
   fireEvent,
   render,
   screen,
+  within,
   act,
 } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
@@ -52,6 +53,7 @@ beforeEach(() => {
   };
 });
 afterEach(cleanup);
+const selectSection = (name: string) => fireEvent.click(within(screen.getByRole("navigation", { name: "Rubriques des paramètres" })).getByRole("link", { name }));
 const view = () =>
   render(
     <MemoryRouter initialEntries={["/fr/compte/parametres"]}>
@@ -62,18 +64,21 @@ it("shows four settings sections with real identities and device-only preference
   view();
   expect(screen.getAllByRole("heading", { level: 1 })).toHaveLength(1);
   expect(screen.getByRole("heading", { name: "Profil" })).toBeVisible();
+  expect(screen.queryByRole("heading", { name: "Connexion et sécurité" })).not.toBeInTheDocument();
+  selectSection("Connexion et sécurité");
   expect(
     screen.getByRole("heading", { name: "Connexion et sécurité" }),
   ).toBeVisible();
+  selectSection("Préférences");
   expect(
     screen.getByRole("heading", { name: "Préférences d’affichage" }),
   ).toBeVisible();
+  expect(screen.getByText("Ces choix sont enregistrés sur cet appareil.")).toBeVisible();
+  selectSection("Stack et données");
   expect(
     screen.getByRole("heading", { name: "Stack et données" }),
   ).toBeVisible();
-  expect(
-    screen.getByText("Ces choix sont enregistrés sur cet appareil."),
-  ).toBeVisible();
+  selectSection("Connexion et sécurité");
   expect(screen.getByText("E-mail")).toBeVisible();
   expect(screen.queryByText("Google")).not.toBeInTheDocument();
   expect(screen.queryByRole("main")).not.toBeInTheDocument();
@@ -135,6 +140,7 @@ it("exports the active owner version as JSON and warns when it is unsynchronized
     .spyOn(HTMLAnchorElement.prototype, "click")
     .mockImplementation(() => undefined);
   view();
+  selectSection("Stack et données");
   expect(screen.getByText(/L’export peut différer/)).toBeVisible();
   fireEvent.click(
     screen.getByRole("button", { name: "Exporter ma stack en JSON" }),
@@ -154,6 +160,7 @@ it("refuses to export a previous owner scope during an identity transition", () 
   vi.stubGlobal("localStorage", window.sessionStorage);
   setPersonalStackScope("B");
   view();
+  selectSection("Stack et données");
   fireEvent.click(
     screen.getByRole("button", { name: "Exporter ma stack en JSON" }),
   );
@@ -183,15 +190,42 @@ it("identifies unconfirmed email explicitly without claiming a password exists",
   };
   view();
   expect(screen.getByText("E-mail non confirmé")).toBeVisible();
+  selectSection("Connexion et sécurité");
   expect(screen.getByText("E-mail")).toBeVisible();
   expect(screen.queryByText("E-mail et mot de passe")).not.toBeInTheDocument();
 });
 it('shows the cosmetic photo and informational provider locale without changing UI language',()=>{
  mocks.experience.profile={...(mocks.experience.profile as object),avatarUrl:'https://avatars.githubusercontent.com/u/1',providerLocale:'en-US',oauthProfileSource:'github'};
- const v=view();expect(v.container.querySelector('.ac-profile-summary img')).toHaveAttribute('referrerpolicy','no-referrer');expect(screen.getByText(/Langue du fournisseur : en-US/)).toBeVisible();expect(screen.getByRole('heading',{name:'Paramètres du compte'})).toBeVisible();
+ const v=view();expect(v.container.querySelector('.ac-profile-summary img')).toHaveAttribute('referrerpolicy','no-referrer');fireEvent.click(screen.getByText('Informations du compte'));expect(screen.getByText('en-US')).toBeVisible();expect(screen.getByRole('heading',{name:'Paramètres du compte'})).toBeVisible();
 });
 it('never renders a late profile A after the active owner changed to B',()=>{
  mocks.account={...mocks.account,user:{...user,id:'B',email:'b@example.test'}};
  mocks.experience.profile={...(mocks.experience.profile as object),avatarUrl:'https://avatars.githubusercontent.com/u/1',providerLocale:'en-US'};
  const v=view();expect(v.container.querySelector('.ac-profile-summary')).toBeNull();expect(screen.queryByDisplayValue('Alex')).not.toBeInTheDocument();
+});
+it("provides section navigation without losing an unsaved profile edit", () => {
+  view();
+  const input = screen.getByLabelText("Nom d’affichage (facultatif)");
+  fireEvent.change(input, { target: { value: "Unsaved studio" } });
+  const navigation = screen.getByRole("navigation", { name: "Rubriques des paramètres" });
+  const security = within(navigation).getByRole("link", { name: "Connexion et sécurité" });
+  expect(document.getElementById("ac-security-section")).toHaveAttribute("aria-labelledby", "ac-security");
+  fireEvent.click(security);
+  expect(input).not.toBeVisible();
+  selectSection("Profil");
+  expect(input).toBeVisible();
+  expect(input).toHaveValue("Unsaved studio");
+  expect(mocks.experience.saveDisplayName).not.toHaveBeenCalled();
+  expect(screen.queryByRole("navigation", { name: "Fil d’Ariane" })).not.toBeInTheDocument();
+});
+it("exposes immediate theme and currency choices with an explicit selected state", () => {
+  view();
+  selectSection("Préférences");
+  const dark = screen.getByRole("radio", { name: "Sombre" });
+  fireEvent.click(dark);
+  expect(dark).toBeChecked();
+  expect(screen.getByRole("radio", { name: "Clair" })).not.toBeChecked();
+  const euro = screen.getByRole("radio", { name: "EUR" });
+  fireEvent.click(euro);
+  expect(euro).toBeChecked();
 });

@@ -79,7 +79,7 @@ test('cold SDK recovery waits for transport, survives reload, changes exact pass
 test('expired recovery and forged URL cannot authorize password update', async ({ page, request }) => {
  await control(request, 'seed', { email: 'expired@example.invalid' });
  await page.goto('/en/ma-stack'); await login(page, 'en', 'expired@example.invalid'); await saved(page);
- await page.goto('/en/account/settings'); await page.getByRole('button', { name: 'Send password link', exact: true }).click();
+ await page.goto('/en/account/settings'); await page.getByRole('navigation', { name: 'Settings sections' }).getByRole('link', { name: 'Sign-in and security', exact: true }).click(); await page.getByRole('button', { name: 'Send password link', exact: true }).click();
  await expect(page.getByText('If this address can receive this message, a link will be sent.', { exact: true })).toBeVisible();
  await control(request, 'expire-mail'); await signOut(page);
  await page.goto('/__accounts-test/mailbox'); await page.getByRole('link', { name: 'Recover expired@example.invalid', exact: true }).click();
@@ -92,7 +92,7 @@ for (const provider of ['Google', 'GitHub']) for (const denied of [false, true])
  await draft(page, state(['figma'])); await control(request, 'oauth', { denied }); await page.goto('/en/tool/notion?source=account-test'); await dismissConsent(page);
  await page.locator('.ac-header-trigger').click(); await page.getByRole('button', { name: `Continue with ${provider}`, exact: true }).click();
  if (denied) { await expect(page.getByRole('alert')).toContainText('cancelled or denied'); await page.getByRole('link', { name: 'Back to sign in', exact: true }).click(); await expect(page).toHaveURL(/returnTo=%2Fen%2Ftool%2Fnotion/); }
- else { await expect(page).toHaveURL('/en/tool/notion?source=account-test'); await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `Account: ${provider === 'Google' ? 'Google' : 'GitHub'} Fixture`); await page.goto('/en/account/settings'); await expect(page.locator('.ac-identities')).toHaveText(`${provider}Connected`); }
+ else { await expect(page).toHaveURL('/en/tool/notion?source=account-test'); await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `Account: ${provider === 'Google' ? 'Google' : 'GitHub'} Fixture`); await page.goto('/en/account/settings'); await page.getByRole('navigation', { name: 'Settings sections' }).getByRole('link', { name: 'Sign-in and security', exact: true }).click(); await expect(page.locator('.ac-identities')).toHaveText(`${provider}Connected`); }
  expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual(['figma']);
 });
 
@@ -130,15 +130,18 @@ test('profile save is confirmed and reread; shared theme, language, currency, ex
  await page.reload(); await expect(name).toHaveValue('My display name'); await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: My display name');
  await page.locator('.ac-header-trigger').click(); await expect(page.getByRole('link', { name: 'Back office', exact: true })).toBeVisible(); await page.keyboard.press('Escape');
  await expect(page.locator('.ac-identities')).toHaveText('EmailConnected');
- await page.getByLabel('Theme', { exact: true }).selectOption('dark'); await expect(page.locator('html')).toHaveClass(/dark/);
- await page.getByLabel('Currency', { exact: true }).selectOption('EUR');
+ await page.getByRole('navigation', { name: 'Settings sections' }).getByRole('link', { name: 'Preferences', exact: true }).click();
+ await page.getByRole('radio', { name: 'Dark', exact: true }).check(); await expect(page.locator('html')).toHaveClass(/dark/);
+ await page.getByRole('radio', { name: 'EUR', exact: true }).check();
  expect(await page.evaluate(() => localStorage.getItem('tooltrim:theme'))).toBe('dark');
- await page.locator('.ac-settings').getByRole('link', { name: 'Français', exact: true }).click(); await expect(page).toHaveURL('/fr/compte/parametres');
- await expect(page.getByLabel('Thème', { exact: true })).toHaveValue('dark'); await expect(page.getByLabel('Devise', { exact: true })).toHaveValue('EUR');
+ await page.locator('.ac-settings').getByRole('link', { name: 'Français', exact: true }).click(); await expect(page).toHaveURL('/fr/compte/parametres#ac-preferences-section');
+ await expect(page.getByRole('radio', { name: 'Sombre', exact: true })).toBeChecked(); await expect(page.getByRole('radio', { name: 'EUR', exact: true })).toBeChecked();
+ await page.getByRole('navigation', { name: 'Rubriques des paramètres' }).getByRole('link', { name: 'Stack et données', exact: true }).click();
  const download = page.waitForEvent('download'); await page.getByRole('button', { name: 'Exporter ma stack en JSON', exact: true }).click();
  const file = await (await download).path(); const { readFile } = await import('node:fs/promises'); expect(JSON.parse(await readFile(file!, 'utf8'))).toEqual(full);
  await page.route('**/api/stack-account', route => route.request().method() === 'PUT' ? route.abort() : route.continue());
  await change(page, state(['figma'])); await expect(page.getByText('Modifications non enregistrées', { exact: true })).toBeVisible();
+ await page.getByRole('navigation', { name: 'Rubriques des paramètres' }).getByRole('link', { name: 'Connexion et sécurité', exact: true }).click();
  await page.getByRole('button', { name: 'Me déconnecter', exact: true }).click(); await page.getByRole('button', { name: 'Rester connecté', exact: true }).click(); expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual(['figma']);
  await page.getByRole('button', { name: 'Me déconnecter', exact: true }).click();
  await control(request, 'fault', { path: '/auth/v1/logout', method: 'POST', status: 400 });
@@ -180,7 +183,7 @@ for (const provider of ['google','github'] as const) test(`OAuth useful profile 
  await connect();await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label',`Account: ${displayName}`);
  await page.goto('/en/account/settings');const name=page.getByLabel('Display name (optional)',{exact:true});await expect(name).toHaveValue(displayName);
  await expect(page.locator('.ac-profile-summary img')).toHaveAttribute('src',photo);await expect(page.locator('.ac-profile-summary img')).toHaveAttribute('referrerpolicy','no-referrer');
- await expect(page.getByText('Provider language: en-US',{exact:true})).toBeVisible();await page.reload();await expect(name).toHaveValue(displayName);
+ await page.getByText('Account information',{exact:true}).click();await expect(page.getByText('Provider language',{exact:true})).toBeVisible();await expect(page.getByText('en-US',{exact:true})).toBeVisible();await page.reload();await expect(name).toHaveValue(displayName);
  const context=await browser.newContext({baseURL:process.env.PLAYWRIGHT_BASE_URL});await isolate(context);const admin=await context.newPage();
  await control(request,'seed',{email:'admin@example.invalid'});await admin.goto('/en/sign-in');await dismissConsent(admin);await emailForm(admin,'admin@example.invalid','fixture-password');await admin.locator('.ac-form').getByRole('button',{name:'Sign in',exact:true}).click();await expect(admin).toHaveURL(/\/en\/ma-stack$/);
  await admin.goto('/en/back-office');await expect(admin.getByText(displayName,{exact:true})).toBeVisible();await admin.getByRole('button',{name:`View stack for ${provider}@example.invalid`,exact:true}).click();await expect(admin.locator('.ba-detail')).toContainText(`Initial profile provider: ${provider==='google'?'Google':'GitHub'}`);await expect(admin.locator('.ba-detail')).toContainText('Provider language: en-US');await context.close();

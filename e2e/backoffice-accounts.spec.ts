@@ -88,18 +88,20 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
   await page.addInitScript(theme => localStorage.setItem('tooltrim:theme', theme), theme);
   await page.goto('/en/back-office');
   const surface = theme === 'dark' ? 'rgb(26, 26, 26)' : 'rgb(255, 255, 255)';
-  async function readable(selector: string) {
+  async function readable(selector: string, expectedSurface: string | null = surface) {
     const elements = page.locator(selector); await expect(elements.first()).toBeVisible();
     const styles = await elements.evaluateAll(nodes => nodes.map(node => {
       const style = getComputedStyle(node);
       const luminance = (color: string) => {
-        const rgb = color.match(/[\d.]+/g)!.slice(0, 3).map(Number).map(value => { const s = value / 255; return s <= .04045 ? s / 12.92 : ((s + .055) / 1.055) ** 2.4; });
+        const canvas = document.createElement('canvas'); canvas.width = canvas.height = 1;
+        const context = canvas.getContext('2d')!; context.fillStyle = color; context.fillRect(0, 0, 1, 1);
+        const rgb = [...context.getImageData(0, 0, 1, 1).data].slice(0, 3).map(value => { const s = value / 255; return s <= .04045 ? s / 12.92 : ((s + .055) / 1.055) ** 2.4; });
         return .2126 * rgb[0] + .7152 * rgb[1] + .0722 * rgb[2];
       };
       const a = luminance(style.color), b = luminance(style.backgroundColor);
       return { background: style.backgroundColor, contrast: (Math.max(a,b) + .05) / (Math.min(a,b) + .05) };
     }));
-    for (const style of styles) { expect(style.background).toBe(surface); expect(style.contrast).toBeGreaterThanOrEqual(4.5); }
+    for (const style of styles) { if (expectedSurface) expect(style.background).toBe(expectedSurface); expect(style.contrast).toBeGreaterThanOrEqual(4.5); }
   }
   await readable('.ba-login, .ba-login-field input');
   await seededAdmin(page, request); await openBackOffice(page);
@@ -108,5 +110,5 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
   await page.locator('.ba-entry-header').getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await page.getByRole('button', { name: 'Save my stack', exact: true }).click();
-  await page.getByRole('button', { name: 'Continue with email', exact: true }).click(); await readable('.ac-providers .ac-button, .ac-form input');
+  await page.getByRole('button', { name: 'Continue with email', exact: true }).click(); await readable('.ac-providers .ac-button', null); await readable('.ac-form input');
 });

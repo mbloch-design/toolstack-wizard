@@ -48,6 +48,8 @@ export async function signOut(page: Page, lang: 'fr' | 'en' = 'en') {
   await page.locator('.ac-header-trigger').click();
   await page.getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
   await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
+  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', lang === 'fr' ? 'Se connecter' : 'Sign in');
+  await expect(page.getByRole('dialog')).toHaveCount(0);
 }
 export async function snapshot(page: Page) {
   return page.evaluate(async () => {

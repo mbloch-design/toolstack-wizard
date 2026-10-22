@@ -1,7 +1,7 @@
 import AccountAvatar from "./AccountAvatar";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { UserRound, Settings2, LogOut, Bookmark } from "@/lib/icons";
+import { UserRound, Settings2, LogOut, Bookmark, ChevronDown } from "@/lib/icons";
 import {
   Popover,
   PopoverContent,
@@ -19,6 +19,7 @@ export default function AccountMenu() {
   if (!account.enabled) return null;
   if (!account.user || account.syncStatus === "session-expired")
     return (
+      <div className="ac-header-guest">
       <button
         type="button"
         className="ac-header-trigger"
@@ -28,6 +29,10 @@ export default function AccountMenu() {
         <UserRound size={20} aria-hidden />
         <span className="ac-header-label">{t("Se connecter", "Sign in")}</span>
       </button>
+      <button type="button" className="ac-button ac-button--primary ac-header-signup" onClick={() => experience.openAuth("signup")}>
+        {t("S’inscrire", "Sign up")}
+      </button>
+      </div>
     );
   const profile = experience.profile?.userId === account.user.id ? experience.profile : null;
   const label =
@@ -39,11 +44,11 @@ export default function AccountMenu() {
       <PopoverTrigger asChild>
         <button
           type="button"
-          className="ac-header-trigger"
+          className="ac-header-trigger ac-header-trigger--account"
           aria-label={t(`Compte : ${label}`, `Account: ${label}`)}
         >
           <AccountAvatar ownerId={account.user.id} label={label} avatarUrl={profile?.avatarUrl ?? null}/>
-          <span className="ac-header-label ac-header-name">{label}</span>
+          <ChevronDown size={14} className="ac-account-chevron" aria-hidden />
         </button>
       </PopoverTrigger>
       <PopoverContent className="ac-menu" align="end" sideOffset={8}>
