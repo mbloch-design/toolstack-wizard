@@ -154,7 +154,7 @@ test('late profile A response cannot appear in B menu or settings', async ({ pag
  await control(request, 'seed', { email: 'profile-b@example.invalid', displayName: 'Private Bob' });
  await control(request, 'fault', { path: '/api/account-profile', method: 'GET', delayMs: 1800 });
  await page.goto('/en/ma-stack'); await login(page, 'en', 'profile-a@example.invalid'); await saved(page); await signOut(page);
- await login(page, 'en', 'profile-b@example.invalid'); await saved(page);
+ await login(page, 'en', 'profile-b@example.invalid', 'fixture-password', 'Private Bob'); await saved(page);
  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: Private Bob');
  await page.goto('/en/account/settings'); await expect(page.getByLabel('Display name (optional)', { exact: true })).toHaveValue('Private Bob');
  await page.waitForTimeout(2000); await expect(page.locator('body')).not.toContainText('Private Alice'); await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: Private Bob');

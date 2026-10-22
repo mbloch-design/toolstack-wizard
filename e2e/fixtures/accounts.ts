@@ -29,7 +29,7 @@ export async function dismissConsent(page: Page) {
   const reject = page.getByRole('button', { name: /^(Refuser|Refuse|Reject)$/ });
   if (await reject.isVisible()) await reject.click();
 }
-export async function login(page: Page, lang: 'fr' | 'en', email: string, password = 'fixture-password') {
+export async function login(page: Page, lang: 'fr' | 'en', email: string, password = 'fixture-password', expectedVisibleName = email) {
   const accounts = await control(page.request, 'state');
   if (!accounts.accounts.some((user: { email: string }) => user.email === email)) await control(page.request, 'seed', { email });
   await dismissConsent(page);
@@ -38,7 +38,7 @@ export async function login(page: Page, lang: 'fr' | 'en', email: string, passwo
   await page.getByLabel(lang === 'fr' ? 'Adresse e-mail' : 'Email address', { exact: true }).fill(email);
   await page.getByLabel(lang === 'fr' ? 'Mot de passe' : 'Password', { exact: true }).fill(password);
   await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
-  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `${lang === 'fr' ? 'Compte : ' : 'Account: '}${email}`);
+  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `${lang === 'fr' ? 'Compte : ' : 'Account: '}${expectedVisibleName}`);
 }
 export async function saved(page: Page, lang: 'fr' | 'en' = 'en') {
   await expect(page.locator('.ms-account [role=status]')).toHaveText(lang === 'fr' ? 'Stack enregistrée' : 'Stack saved');
