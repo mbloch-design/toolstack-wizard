@@ -37,7 +37,8 @@ export function parseAccountProfile(value: unknown): AccountProfile {
     || !timestamp(p.createdAt) || !timestamp(p.updatedAt)
     || normalizeDisplayName(p.displayName) !== p.displayName) throw new AccountProfileValidationError();
   if (!(p.oauthProfileSource === null || p.oauthProfileSource === 'google' || p.oauthProfileSource === 'github')
-    || !(p.avatarUrl === null || typeof p.avatarUrl === 'string' && normalizeOAuthAvatar(p.avatarUrl, p.oauthProfileSource) === p.avatarUrl)
+    // The source marks the first import, not the origin of an older retained avatar.
+    || !(p.avatarUrl === null || typeof p.avatarUrl === 'string' && normalizeOAuthAvatar(p.avatarUrl, null) === p.avatarUrl)
     || !(p.providerLocale === null || typeof p.providerLocale === 'string' && normalizeProviderLocale(p.providerLocale) === p.providerLocale)) throw new AccountProfileValidationError();
   return { avatarUrl: p.avatarUrl as string | null, providerLocale: p.providerLocale as string | null, oauthProfileSource: p.oauthProfileSource,
     userId: p.userId, displayName: p.displayName as string | null, email: p.email as string | null,

@@ -36,12 +36,15 @@ select oauth_test.ok(public.import_personal_oauth_profile(current_setting('test.
 select oauth_test.ok(public.read_personal_profile(current_setting('test.oa')::uuid,current_setting('test.osa')::uuid)->>'providerLocale'='fr-FR','provider locale retained separately');
 select public.update_personal_profile(current_setting('test.oa')::uuid,current_setting('test.osa')::uuid,null);
 select oauth_test.ok(public.import_personal_oauth_profile(current_setting('test.oa')::uuid,current_setting('test.osa')::uuid,'google','Resurrect',null,null)->'displayName'='null'::jsonb,'clear after import wins');
+select public.require_account_session(current_setting('test.ob')::uuid,current_setting('test.osb')::uuid);
+update public.profiles set avatar_url='https://lh3.googleusercontent.com/a/old?sz=96' where id=current_setting('test.ob')::uuid;
 select public.update_personal_profile(current_setting('test.ob')::uuid,current_setting('test.osb')::uuid,null);
 select oauth_test.ok(public.import_personal_oauth_profile(current_setting('test.ob')::uuid,current_setting('test.osb')::uuid,'github','Resurrect',null,null)->'displayName'='null'::jsonb,'clear before import wins');
+select oauth_test.ok((select avatar_url='https://lh3.googleusercontent.com/a/old?sz=96' and oauth_profile_source='github' from public.profiles where id=current_setting('test.ob')::uuid),'Google historical avatar survives GitHub import');
 select public.require_account_session(current_setting('test.oc')::uuid,current_setting('test.osc')::uuid);
-update public.profiles set display_name='Manual',avatar_url='historical-avatar',locale='en' where id=current_setting('test.oc')::uuid;
+update public.profiles set display_name='Manual',avatar_url='https://avatars.githubusercontent.com/u/123?v=4',locale='en' where id=current_setting('test.oc')::uuid;
 select oauth_test.ok(public.import_personal_oauth_profile(current_setting('test.oc')::uuid,current_setting('test.osc')::uuid,'google','OAuth','https://lh3.googleusercontent.com/a',null)->>'displayName'='Manual','non-null name preserved');
-select oauth_test.ok((select avatar_url='historical-avatar' and locale='en' from public.profiles where id=current_setting('test.oc')::uuid),'non-null avatar and UI locale preserved');
+select oauth_test.ok((select avatar_url='https://avatars.githubusercontent.com/u/123?v=4' and oauth_profile_source='google' and locale='en' from public.profiles where id=current_setting('test.oc')::uuid),'GitHub historical avatar and UI locale survive Google import');
 select oauth_test.throws('select public.import_personal_oauth_profile(current_setting(''test.ob'')::uuid,current_setting(''test.osa'')::uuid,''google'',null,null,null)','PT401','owner mismatch denied');
 select oauth_test.throws('select public.import_personal_oauth_profile(current_setting(''test.oa'')::uuid,current_setting(''test.osa'')::uuid,''admin'',null,null,null)','PT400','provider cannot be authority');
 select public.update_personal_profile(current_setting('test.ob')::uuid,current_setting('test.osb')::uuid,'Custom');

@@ -13,6 +13,18 @@ describe("account profile client", () => {
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(response({ profile: value }))); await expect(loadAccountProfile("token")).rejects.toMatchObject({ code: "ACCOUNT_PROFILE_UNAVAILABLE" });
   });
   it("preserves real null name/email and false confirmations", async () => { vi.stubGlobal("fetch", vi.fn().mockResolvedValue(response({ profile: { ...profile, email: null, emailConfirmed: false } }))); expect(await loadAccountProfile("token")).toEqual({ ...profile, email: null, emailConfirmed: false }); });
+  it.each([
+    ["google", "https://avatars.githubusercontent.com/u/123?v=4"],
+    ["github", "https://lh3.googleusercontent.com/a/old?sz=96"],
+  ] as const)("accepts a safe historical avatar when initial import source is %s", async (oauthProfileSource, avatarUrl) => {
+    const mixed = { ...profile, oauthProfileSource, avatarUrl };
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(response({ profile: mixed })));
+    expect(await loadAccountProfile("token")).toEqual(mixed);
+  });
+  it("still rejects an unsafe historical avatar", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(response({ profile: { ...profile, oauthProfileSource: "github", avatarUrl: "https://evil.invalid/avatar" } })));
+    await expect(loadAccountProfile("token")).rejects.toMatchObject({ code: "ACCOUNT_PROFILE_UNAVAILABLE" });
+  });
   it("rejects invalid names before issuing any request", async () => { const fetcher = vi.fn(); vi.stubGlobal("fetch", fetcher); await expect(saveAccountProfile("token", "\nname")).rejects.toThrow(); expect(fetcher).not.toHaveBeenCalled(); });
   it.each([401, 409, 503])("retains HTTP status %s and stable error code", async status => { vi.stubGlobal("fetch", vi.fn().mockResolvedValue(response({ error: { code: "ACCOUNT_SESSION_INVALID" } }, status))); await expect(loadAccountProfile("token")).rejects.toMatchObject({ status, code: "ACCOUNT_SESSION_INVALID" }); });
   it("distinguishes network errors and malformed successful JSON", async () => { vi.stubGlobal("fetch", vi.fn().mockRejectedValue(new Error("private"))); await expect(loadAccountProfile("token")).rejects.toMatchObject({ code: "ACCOUNT_PROFILE_NETWORK_ERROR" }); vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response("bad"))); await expect(loadAccountProfile("token")).rejects.toBeInstanceOf(AccountProfileApiError); });

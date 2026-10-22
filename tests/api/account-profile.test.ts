@@ -105,3 +105,12 @@ it("omits an unusable historical image without rewriting the stored profile",asy
  expect((await invoke()).body).toMatchObject({profile:{displayName:"Historical",avatarUrl:null}});
  expect(mocks.rpc.mock.calls.map(([n])=>n)).not.toContain("update_personal_profile");
 });
+
+it.each([
+ ["google","https://avatars.githubusercontent.com/u/123?v=4"],
+ ["github","https://lh3.googleusercontent.com/a/old?sz=96"],
+] as const)("keeps a safe historical avatar through GET and PUT with %s import marker",async(oauthProfileSource,avatarUrl)=>{
+ mocks.rpc.mockImplementation(async(name:string)=>({data:name==="require_account_session"?null:{...stored,oauthProfileSource,avatarUrl},error:null}));
+ const read=await invoke();expect(read.res.statusCode).toBe(200);expect(read.body).toMatchObject({profile:{oauthProfileSource,avatarUrl}});
+ const update=await invoke({displayName:"Custom"},"PUT");expect(update.res.statusCode).toBe(200);expect(update.body).toMatchObject({profile:{oauthProfileSource,avatarUrl}});
+});
