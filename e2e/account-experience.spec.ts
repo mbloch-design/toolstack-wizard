@@ -247,3 +247,27 @@ test('catalogue add requires authentication and never claims an anonymous save',
  const requests=(await control(request,'state')).requests;
  expect(requests.filter((r:{path:string;method:string})=>r.path==='/api/stack-account'&&r.method==='PUT')).toHaveLength(0);
 });
+
+for (const lang of ['fr','en'] as const) for (const width of [390,1440]) test(`connected empty stack onboarding ${lang} ${width}`, async ({page,request}) => {
+ await page.setViewportSize({width,height:1000});
+ await control(request,'seed',{email:'empty-start@example.invalid'});
+ await page.goto(`/${lang}/ma-stack`);await login(page,lang,'empty-start@example.invalid');
+ await expect(page.getByRole('heading',{name:lang==='fr'?'Commençons par vos outils.':'Start with the tools you use.',exact:true})).toBeVisible();
+ await expect(page.getByText(lang==='fr'?'Stack enregistrée':'Stack saved',{exact:true})).toHaveCount(0);
+ await expect(page.getByRole('searchbox',{name:lang==='fr'?'Ajouter un outil à ma stack':'Add a tool to my stack'})).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
+ await page.screenshot({path:`test-results/accounts/empty-start-${lang}-${width}.png`,fullPage:true});
+ await page.getByRole('button',{name:lang==='fr'?'Ajouter Notion':'Add Notion',exact:true}).click();
+ await expect.poll(async()=> (await snapshot(page)).selection.pinnedToolSlugs).toContain('notion');
+ await saved(page,lang);
+ await expect(page.getByRole('heading',{name:lang==='fr'?'Mes outils':'My tools',exact:true})).toBeVisible();
+ await expect(page.getByRole('heading',{name:lang==='fr'?'Mes outils':'My tools',exact:true})).toBeFocused();
+});
+test('OAuth callback remains a quiet transition while reading stack, then returns automatically',async({page,request})=>{
+ await page.route('**/api/stack-account',async route=>{if(route.request().method()==='GET')await new Promise(resolve=>setTimeout(resolve,1800));await route.continue();});
+ await page.goto('/en/sign-in');await dismissConsent(page);await page.getByRole('button',{name:'Continue with Google',exact:true}).click();
+ await expect(page.locator('.ac-transition-title')).toHaveText('One moment, finding your stack.');
+ await expect(page.locator('footer')).toHaveCount(0);
+ await expect(page.getByText('You are signed in.',{exact:true})).toHaveCount(0);
+ await expect(page).toHaveURL(/\/en\/ma-stack$/);
+});

@@ -10,6 +10,7 @@ export default function AccountPageFrame({
   wide = false,
   headerExtra,
   icon,
+  transition = false,
 }: {
   title: string;
   intro?: string;
@@ -18,6 +19,7 @@ export default function AccountPageFrame({
   wide?: boolean;
   headerExtra?: ReactNode;
   icon?: ReactNode;
+  transition?: boolean;
 }) {
   const { t, prefix } = useLang();
   useTopbarBreadcrumb([
@@ -37,8 +39,8 @@ export default function AccountPageFrame({
     return removeNoindex;
   }, [title, t]);
   return (
-    <div className={`ac-page${narrow ? " ac-page--narrow" : ""}${wide ? " ac-page--wide" : ""}`}>
-      <header className="ac-page-header">
+    <div className={`ac-page${narrow ? " ac-page--narrow" : ""}${wide ? " ac-page--wide" : ""}${transition ? " ac-page--transition" : ""}`}>
+      <header className={transition ? "sr-only" : "ac-page-header"}>
         <div className="ac-page-heading">
           {icon && <span className="ac-hero-icon" aria-hidden>{icon}</span>}
           <div><h1>{title}</h1>{intro && <p>{intro}</p>}</div>

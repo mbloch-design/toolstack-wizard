@@ -41,7 +41,10 @@ export async function login(page: Page, lang: 'fr' | 'en', email: string, passwo
   await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `${lang === 'fr' ? 'Compte : ' : 'Account: '}${expectedVisibleName}`);
 }
 export async function saved(page: Page, lang: 'fr' | 'en' = 'en') {
-  await expect(page.locator('.ms-account [role=status]')).toHaveText(lang === 'fr' ? 'Stack enregistrée' : 'Stack saved');
+  // An empty account has synchronized, but must not claim a saved stack.
+  await expect(page.locator('.ms-account [role=status], .ms-empty-autosave')).toHaveText(lang === 'fr'
+    ? /^(Stack enregistrée|Vos ajouts seront enregistrés automatiquement\.)$/
+    : /^(Stack saved|Your additions will be saved automatically\.)$/);
 }
 export async function signOut(page: Page, lang: 'fr' | 'en' = 'en') {
   await page.evaluate(() => { window.scrollTo(0, 0); document.querySelector('.asv2-content')?.scrollTo(0, 0); });

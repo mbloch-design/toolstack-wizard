@@ -209,3 +209,14 @@ describe("shared account stack panel", () => {
     expect(account.retry).toHaveBeenCalledTimes(1);
   });
 });
+
+it("does not claim a saved stack before the first tool, while preserving sync failures", () => {
+  account.user = user;
+  account.syncStatus = "synced";
+  const view = render(<StackAccountPanel empty />);
+  expect(screen.queryByText("Stack enregistrée")).not.toBeInTheDocument();
+  expect(screen.getByText("Vos ajouts seront enregistrés automatiquement.")).toBeVisible();
+  account.syncStatus = "error";
+  view.rerender(<StackAccountPanel empty />);
+  expect(screen.getByRole("status")).toHaveTextContent("Sauvegarde indisponible");
+});

@@ -9,6 +9,9 @@ export default function StackAccountPanel({ empty = false }: { empty?: boolean }
   const { t } = useLang();
   if (!account.enabled) return null;
   const needsAuth = !account.user || account.syncStatus === "session-expired";
+  if (empty && !needsAuth && account.syncStatus === "synced" && !account.pendingDraftChoice && !account.conflict && !account.error && !account.privacyWarning && !account.deletionConfirmed) {
+    return <p className="ms-empty-autosave"><Cloud size={16} aria-hidden />{t("Vos ajouts seront enregistrés automatiquement.", "Your additions will be saved automatically.")}</p>;
+  }
   return (
     <section
       className={`ms-account ac-stack-status ${needsAuth ? "ms-account--guest" : "ms-account--connected"}`}

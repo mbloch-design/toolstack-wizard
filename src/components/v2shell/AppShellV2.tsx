@@ -179,6 +179,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     ? location.pathname.slice(prefix.length).replace(/\/$/, "")
     : location.pathname;
   const isHome = relPath === "";
+  const isAuthCallback = relPath === "/connexion/retour" || relPath === "/sign-in/callback";
   // A handful of routes intentionally have no breadcrumb and should keep
   // showing the search bar by default, rather than the blank placeholder
   // used everywhere else while a page's breadcrumb is still registering
@@ -501,7 +502,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           <main id="main-content" tabIndex={-1} className="asv2-main">
             {children}
           </main>
-          <Footer />
+          {!isAuthCallback && <Footer />}
         </div>
       </div>
 

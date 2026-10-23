@@ -11,11 +11,13 @@ export function AccountAuthJourney({
   onModeChange,
   onComplete,
   returnTo,
+  transition = false,
 }: {
   mode: AuthMode;
   onModeChange: (mode: AuthMode) => void;
   onComplete: () => void;
   returnTo?: string;
+  transition?: boolean;
 }) {
   const account = useStackAccount();
   const { t } = useLang();
@@ -41,10 +43,10 @@ export function AccountAuthJourney({
     );
   return (
     <div className="ac-auth">
-      <p className="ac-notice">
+      {!transition && <p className="ac-notice">
         {t("Vous êtes connecté.", "You are signed in.")}
-      </p>
-      <AccountStackStatus />
+      </p>}
+      {(!transition || !["connecting", "syncing", "synced"].includes(account.syncStatus) || account.pendingDraftChoice || account.conflict) && <AccountStackStatus />}
       {["error", "unsaved"].includes(account.syncStatus) && (
         <button className="ac-text-button" onClick={onComplete}>
           {t(

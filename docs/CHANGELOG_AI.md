@@ -1,3 +1,10 @@
+## 2026-10-23 — Retour OAuth et premier outil
+
+- Retour OAuth : titre technique retiré visuellement, attente compacte accessible, animation respectant reduced-motion, footer marketing absent uniquement sur le callback. Redirection sécurisée et choix de brouillon/conflit conservés ; sortie explicite si le chargement se prolonge.
+- Stack vide connectée : titre compact, recherche dans le même bloc, raccourcis de vrais outils du catalogue et annonce de sauvegarde future, sans prétendre qu’une stack vide a déjà été enregistrée. Focus transmis à l’inventaire après le premier ajout.
+- Aucun changement de périmètre Auth, d’API, de catalogue ou de permissions.
+- Vérification : 55 parcours navigateur de comptes, 26 tests unitaires ciblés et TypeScript complet passent. Revue indépendante sans problème bloquant. Régression du faux statut vide reproduite avant correction.
+
 ## 2026-10-23 — Recette administrateur réelle en préproduction
 
 - Après accord explicite du propriétaire, son compte est ajouté à l’allowlist serveur de la seule branche Preview ; administrateurs existants conservés.

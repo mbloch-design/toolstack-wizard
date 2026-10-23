@@ -2,7 +2,7 @@ import StackWelcome from "@/components/stack/StackWelcome";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy, ChevronRight, Compass } from "@/lib/icons";
+import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy, ChevronRight, Compass, Layers3 } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -43,6 +43,7 @@ export default function CartPage() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
+  const inventoryHeadingRef = useRef<HTMLHeadingElement>(null);
   const addRef = useRef<HTMLButtonElement>(null);
   const lastToolButton = useRef<HTMLButtonElement | null>(null);
   const [editing, setEditing] = useState(false);
@@ -320,10 +321,11 @@ export default function CartPage() {
   const searchPanel = showSearch && <section className="ms-search" id="ms-search" aria-label={t("Ajouter un outil", "Add a tool")}>
       <div className="ms-search-input"><Search size={20} aria-hidden /><input
         ref={searchRef}
+        id={empty ? "ms-first-tool" : undefined}
         type="search"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-        placeholder={t("Quel outil utilisez-vous ?", "Which tool do you use?")}
+        placeholder={t("Rechercher par nom…", "Search by name…")}
         aria-label={t("Ajouter un outil à ma stack", "Add a tool to my stack")}
         onKeyDown={(event) => { if (event.key === "Escape" && !empty) { setSearchOpen(false); addRef.current?.focus(); } }}
       />{!empty && <button className="ms-icon-action" onClick={() => { setSearchOpen(false); addRef.current?.focus(); }} aria-label={t("Fermer la recherche", "Close search")}><X size={18} aria-hidden /></button>}</div>
@@ -335,13 +337,28 @@ export default function CartPage() {
             type="button"
             disabled={present}
             aria-label={present ? t(`${tool.name} est dans votre stack`, `${tool.name} is in your stack`) : t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}
-            onClick={() => { if (!pinTool(toolKey(tool))) return; toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); }}
+            onClick={() => { if (!pinTool(toolKey(tool))) return; if (empty) requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true })); toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); }}
           >{present ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}</button></li>;
         })}</ul>
       </>}
     </section>;
 
   if (requiresAccount) return <StackWelcome />;
+
+  if (empty) return <div className="ms-page ms-page--start">
+    <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
+    <header className="ms-start-heading"><h1>{t("Ma stack", "My stack")}</h1></header>
+    <section className="ms-start" aria-labelledby="ms-start-title">
+      <span className="ms-start-icon" aria-hidden><Layers3 size={28} /></span>
+      <h2 id="ms-start-title">{t("Commençons par vos outils.", "Start with the tools you use.")}</h2>
+      <p className="ms-start-intro">{t("Ajoutez un outil que vous utilisez déjà. Complétez ensuite votre stack pour voir ce qu’elle vous coûte et les usages qui se recoupent.", "Add a tool you already use. Build your stack to see its estimated cost and where tools overlap.")}</p>
+      <div className="ms-start-action"><label htmlFor="ms-first-tool">{t("Quel outil utilisez-vous ?", "Which tool do you use?")}</label>{searchPanel}</div>
+      {!query.trim() && !loading && <div className="ms-start-suggestions"><p>{t("Un premier ajout, en un clic", "Add your first tool in one click")}</p><div>{tools.filter(tool => ["notion", "figma", "chatgpt", "slack"].includes(toolKey(tool))).slice(0,4).map(tool => <button type="button" key={tool.id} onClick={() => { if (pinTool(toolKey(tool))) { requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true })); toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); } }} aria-label={t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}><ToolLogo tool={tool} size={24} /><span>{tool.name}</span><Plus size={16} aria-hidden /></button>)}</div></div>}
+      <StackAccountPanel empty />
+    </section>
+    {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt" ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.") : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
+    {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupérée depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
+  </div>;
 
   return <div className="ms-page">
     {/* Topbar breadcrumb like every other page ("Home / My stack"); a personal
@@ -354,7 +371,7 @@ export default function CartPage() {
     <header className={`sg-hero sg-hero--cluster ms-hero${empty ? " ms-hero--empty" : ""}`}>
       <div className="sg-hero-copy">
         <span className="sg-hero-pill">{t("Ma stack", "My stack")}</span>
-        <h1>{empty ? t("Ajoutez votre premier outil", "Add your first tool") : t("Mes outils", "My tools")}</h1>
+        <h1 ref={inventoryHeadingRef} tabIndex={-1}>{t("Mes outils", "My tools")}</h1>
         <p className="sg-lead">{empty ? t("Rassemblez les outils que vous utilisez pour comparer leurs usages et leur coût estimé.", "Bring together the tools you use to compare their uses and estimated cost.") : t("Retrouvez vos outils, les usages qu’ils couvrent et leur coût estimé.", "See your tools, the uses they cover and their estimated cost.")}</p>
         {state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) && <Link
           className="tt-button-primary ms-explore-stack" to={getExplorerHref(prefix, { type: "stack" })}

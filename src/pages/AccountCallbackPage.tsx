@@ -32,10 +32,16 @@ export default function AccountCallbackPage() {
   return (
     <AccountPageFrame
       narrow
+      transition
       title={t("Connexion à ToolTrim", "Signing in to ToolTrim")}
     >
       {account.enabled && account.user ? (
+        <div className="ac-callback-content">
+        {!account.pendingDraftChoice && !account.conflict && !["error", "unsaved"].includes(account.syncStatus) && <span className="ac-transition-mark" aria-hidden />}
+        <p className="ac-transition-title" role="status">{account.pendingDraftChoice || account.conflict ? t("Retrouvez la bonne version de votre stack.", "Choose the right version of your stack.") : ["error", "unsaved"].includes(account.syncStatus) ? t("Vous êtes connecté.", "You are signed in.") : t("Un instant, on retrouve votre stack.", "One moment, finding your stack.")}</p>
+        {!waiting && account.syncStatus === "connecting" && <p className="ac-note">{t("Le chargement prend plus de temps que prévu. Vous pouvez ouvrir votre stack et y suivre la synchronisation.", "Loading is taking longer than expected. You can open your stack and follow synchronization there.")} <Link to={returnTo} replace className="ac-text-button">{t("Continuer", "Continue")}</Link></p>}
         <AccountAuthJourney
+          transition
           mode="signin"
           onModeChange={() =>
             navigate(accountPath(lang, "signin"), { replace: true })
@@ -43,6 +49,7 @@ export default function AccountCallbackPage() {
           onComplete={complete}
           returnTo={returnTo}
         />
+        </div>
       ) : (
         <div className="ac-auth-card">
           <p role={denied ? "alert" : "status"}>
