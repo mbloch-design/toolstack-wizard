@@ -1,3 +1,7 @@
+## 2026-10-23 — Compatibilité API ES2020
+
+Remplacement de String.replaceAll par une expression régulière globale et de Object.hasOwn par Object.prototype.hasOwnProperty.call dans les modules partagés du compte et de la stack. La cible de compatibilité CI reste inchangée.
+
 ## 2026-10-23 — Correction du contrôle design tokens
 
 Couleurs des pictogrammes Google et langues centralisées dans des tokens dédiés. Réutilisation des tokens de palette et de rayons dans le CSS, sans relever la baseline. Contrôle design tokens : 123 couleurs CSS, 74 rayons CSS, 12 couleurs TSX ; aucune régression par rapport aux plafonds existants.
