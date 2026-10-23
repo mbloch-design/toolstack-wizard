@@ -1,3 +1,9 @@
+## 2026-10-23 — E-mails de compte : sources ToolTrim
+
+- Modèles confirmation et récupération : identité ToolTrim, un CTA, textes FR/EN, aucune ressource distante ni suivi.
+- Conservation du lien Supabase `{{ .ConfirmationURL }}` ; procédure d’installation, recette et retour arrière documentée.
+- Sources locales uniquement : aucune configuration hébergée ou SMTP modifiée. Installation distante en attente d’accès Dashboard au projet.
+
 ## 2026-10-23 : comptes, accès et accueil de Ma stack
 
 - Header stabilisé : recherche généreuse avec raccourci, Se connecter explicite, puis Ma stack en bouton plein à droite avec compteur, selon la logique d’un panier. Avatar pour le compte connecté, menus sans doublon.

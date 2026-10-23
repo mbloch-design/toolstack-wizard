@@ -125,3 +125,7 @@ Avant de communiquer une URL de recette : vérifier la cible Vercel de préprodu
 ### Reconstruire après un changement de configuration
 
 Le filtre Git ignore volontairement les sources inchangées. Pour une activation de fournisseur sans modification de code, définir explicitement `TOOLTRIM_FORCE_BUILD=1` sur la Preview visée avant de reconstruire, puis retirer ce signal une fois le déploiement lancé. Le signal ne change aucun flag métier et n’active pas les comptes en production. Le test `node --test scripts/vercel-ignore-build.test.mjs` vérifie le maintien du skip normal et le rebuild explicite. GitHub a été activé dans Supabase le 23 octobre ; le propriétaire a confirmé son retour connecté vers Ma stack et la projection serveur contient un profil GitHub avec nom et avatar.
+
+### Modèles d’e-mails ToolTrim
+
+Les sources versionnées des messages de confirmation et récupération se trouvent dans `supabase/templates/account/`. Voir leur README pour l’installation, la vérification et le retour arrière. La publication web ne déploie pas ces modèles dans Supabase. Le français et l’anglais coexistent dans un message pour les comptes existants, sans nouvelle collecte de langue. Les jetons et retours utilisent exclusivement `{{ .ConfirmationURL }}`.
