@@ -40422,8 +40422,38 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @layer components {
   .ms-page .ms-personal-hero > .ms-personal-welcome { display: block !important; }
   .ms-page .ms-personal-hero h1 { font-size: var(--tt-size-page-title) !important; line-height: 1.08; }
-  .ms-page .ms-personal-hero .ms-personal-greeting { margin: 0 !important; color: var(--color-text-secondary); font-size: var(--tt-size-body) !important; }
   .ms-page .ms-personal-hero .ms-personal-message { margin: 0 !important; font-size: var(--tt-size-body) !important; }
   .ms-page .mf .mf-budget-onboarding h3 { font-size: var(--tt-size-section-h) !important; line-height: 1.15; }
   .ms-page .mf .mf-preview { grid-template-columns: max-content max-content !important; column-gap: var(--space-md) !important; }
 }
+/* Presence at the top of the space (23/10/2026): a real hello, a line with a smile, what we know. */
+.ms-page .ms-top.ms-personal-hero p.ms-personal-greeting { display: flex; align-items: center; gap: 8px; margin: 0 0 2px; color: var(--ms-ink); font: 600 clamp(22px, 2.2vw, 28px)/1.15 var(--ap-display); letter-spacing: -.02em; }
+.ms-page .ms-personal-greeting .ms-personal-wave { display: inline-block; margin: 0; font-size: .9em; transform-origin: 70% 80%; animation: so-wave 1.5s 400ms ease-in-out 2; }
+.ms-page .ms-top.ms-personal-hero p.ms-personal-message { max-width: 60ch; margin: 4px 0 0; color: var(--ms-text2, var(--ms-meta)); font: 400 16px/1.45 var(--ap-font); }
+.ms-page .ms-top p.ms-personal-facts, .ms-page .ms-personal-facts { display: flex; flex-wrap: wrap; gap: 6px; margin: var(--space-sm) 0 0; }
+.ms-page .ms-personal-chip { display: inline-flex; align-items: center; min-height: 28px; padding: 0 12px; border-radius: var(--radius-pill); background: var(--color-accent-soft); color: var(--color-accent); font: 600 13px/1 var(--ap-font); font-variant-numeric: tabular-nums; animation: mf-pop 360ms 200ms cubic-bezier(.3, 1.6, .5, 1) both; }
+.ms-page .ms-personal-chip + .ms-personal-chip { animation-delay: 280ms; }
+/* Plan tiles: the name on one line, its qualifier under it; a fixed rhythm so prices align. */
+.ms-page .mf .mf-now .mf-plan-name { display: flex; align-items: flex-start; gap: 6px; white-space: normal; }
+.ms-page .mf .mf-now .mf-plan-name > svg { flex: none; margin-top: 2px; }
+.ms-page .mf .mf-now .mf-plan-name > span { display: grid; min-width: 0; }
+.ms-page .mf .mf-now .mf-plan-name > span, .ms-page .mf .mf-now .mf-plan-name em { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ms-page .mf .mf-now .mf-plan-name em { color: var(--ms-meta); font: 500 12px/1.3 var(--ap-font); font-style: normal; }
+.ms-page .mf .mf-now .mf-plan { grid-template-rows: 34px auto auto auto; padding-right: 36px; }
+.ms-page .mf .mf-plan-time { grid-row: 4; color: var(--color-accent); font: 500 12px/1.25 var(--ap-font); }
+/* The bar's right side: the label above the figure, never glued to it. */
+.ms-page .mf .mf-preview { display: inline-grid; justify-items: end; gap: 3px; line-height: 1.1; }
+.ms-page .mf .mf-preview-k { font: 500 12px/1 var(--ap-font); }
+.ms-page .mf .mf-preview b:not(:has(small)) { color: var(--ms-meta); font: 600 15px/1 var(--ap-font); }
+/* Welcome toast: the person's logos drop in, two short lines, a little spark. */
+.ms-welcome-toast { position: relative; display: flex; align-items: center; gap: 12px; width: min(380px, calc(100vw - 32px)); padding: 12px 16px 12px 12px; border-radius: 20px; background: var(--color-accent); color: var(--color-on-primary); font-family: var(--ap-font, inherit); overflow: hidden; animation: so-in 420ms cubic-bezier(.2, .8, .2, 1) both; }
+.ms-welcome-toast-logos { display: inline-flex; flex: none; }
+.ms-welcome-toast-logos > span { display: inline-grid; margin-left: -8px; padding: 3px; border-radius: 10px; background: var(--color-on-primary); box-shadow: 0 0 0 2px var(--color-accent); animation: so-land 560ms cubic-bezier(.3, 1.5, .5, 1) both; --x: 0px; }
+.ms-welcome-toast-logos > span:first-child { margin-left: 0; }
+.ms-welcome-toast-logos > span > * { border-radius: 7px; }
+.ms-welcome-toast-text { display: grid; gap: 2px; min-width: 0; }
+.ms-welcome-toast-text b { font-size: 15px; font-weight: 600; line-height: 1.25; }
+.ms-welcome-toast-text small { opacity: .85; font-size: 13px; line-height: 1.3; }
+.ms-welcome-toast-spark { position: absolute; right: 22px; top: 50%; pointer-events: none; }
+.ms-welcome-toast-spark i { position: absolute; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: var(--color-on-primary); opacity: 0; transform: rotate(var(--a)); animation: so-burst 760ms 520ms cubic-bezier(.2, .8, .2, 1) both; }
+@media (prefers-reduced-motion: reduce) { .ms-page .ms-personal-wave, .ms-page .ms-personal-chip, .ms-welcome-toast, .ms-welcome-toast-logos > span { animation: none; } .ms-welcome-toast-spark { display: none; } }

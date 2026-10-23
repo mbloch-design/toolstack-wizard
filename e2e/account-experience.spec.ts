@@ -384,8 +384,8 @@ for(const width of [390,1440]) test(`personal welcome recognises the signed-in o
  await page.setViewportSize({width,height:1000});
  await control(request,'seed',{email:'welcome@example.invalid',displayName:'Michael',state:state(['notion'])});
  await page.goto('/fr/ma-stack');await login(page,'fr','welcome@example.invalid','fixture-password','Michael');
- await expect(page.locator('.ms-personal-greeting')).toContainText('Bonjour, Michael');
- await expect(page.locator('.ms-personal-message')).toContainText('On fait le point, un choix à la fois');
+ await expect(page.locator('.ms-personal-greeting')).toContainText(/(Bonjour|Bonsoir), Michael/);
+ await expect(page.locator('.ms-personal-message')).toContainText('Promis, aucune ne mord');
  await expect(page.getByRole('heading',{name:'Mes outils',exact:true})).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
  const greeting=await page.locator('.ms-personal-greeting').boundingBox();const title=await page.getByRole('heading',{name:'Mes outils',exact:true}).boundingBox();expect(title!.y).toBeGreaterThan(greeting!.y);

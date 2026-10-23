@@ -57,6 +57,10 @@ interface Props {
   history?: ReactNode;
   onAddTool: () => void;
   exploreHref?: string;
+  /** The first visit after the onboarding: the decision card keeps guiding. */
+  guide?: boolean;
+  /** The person's hour, from their day rate, in the display currency: prices become time. */
+  hourly?: number | null;
 }
 
 type FitOption = { alt: ToolSummary; cost: number; power?: number; href: string };
@@ -224,7 +228,7 @@ const icon = (Icon: typeof Wallet, color?: string) => <Icon size={14} strokeWidt
 // costs, then the one thing to decide now, then, quietly, what comes next.
 // Settling the current finding brings the next one in; once nothing is left,
 // the space becomes the summary of what was decided and what it saved.
-export default function StackFindings({ lang, total, format, spend, areas, toolCount, freeTools = [], fit, items, saved, toReview, resolved, history, onAddTool, exploreHref }: Props) {
+export default function StackFindings({ lang, total, format, spend, areas, toolCount, freeTools = [], fit, items, saved, toReview, resolved, history, onAddTool, exploreHref, guide, hourly }: Props) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const s = (n: number) => (n > 1 ? "s" : "");
@@ -373,11 +377,11 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
         {/* The image of the decision: its tools, large, on a halo of their brand colours. */}
         {top.kind !== "pair" && <div className="mf-stage" aria-hidden="true">{top.tools.length > 1 ? <Duo a={top.tools[0]} b={top.tools[1]} large /> : <AppIcon tool={top.tools[0]} large />}</div>}
         <h2 id="mf-now-title" className="sr-only">{t("Prochaine décision", "Next decision")}</h2>
-        <p className="mf-k tt-kicker"><span className="mf-k-pill">{t("Votre décision", "Your decision")}</span>{expander("now", t("la décision", "the decision"))}
+        <p className="mf-k tt-kicker"><span className="mf-k-pill">{guide && (top.kind === "price" || top.kind === "freemium") ? t("Étape suivante", "Next step") : t("Votre décision", "Your decision")}</span>{expander("now", t("la décision", "the decision"))}
           {peak > 1 && <span className="mf-step" aria-label={t(`Étape ${step} sur ${peak}`, `Step ${step} of ${peak}`)}><span className="mf-step-track" aria-hidden="true"><i style={{ width: `${(step / peak) * 100}%` }} /></span>{t(`${step} sur ${peak}`, `${step} of ${peak}`)}</span>}</p>
         {/* The tool in question, on stage: its logo bounces in beside the question. */}
         <div className="mf-now-q">{top.kind !== "pair" && <span className="mf-now-logo" aria-hidden="true"><ToolLogo tool={top.tools[0]} size={36} /></span>}<h3>{top.kind === "price" && !(top.plans && top.plans.length) ? t(`Combien vous coûte ${top.tools[0].name} par mois\u00a0?`, `How much does ${top.tools[0].name} cost you a month?`) : top.title}</h3></div>
-        <p className="mf-t">{top.detail}</p>
+        <p className="mf-t">{guide && (top.kind === "price" || top.kind === "freemium") ? t("Pour un budget juste, dites-nous laquelle vous payez. Gratuite, ça compte aussi.", "For an honest budget, tell us which one you pay. Free counts too.") : top.detail}</p>
         {/* A duplicate is a face-off: one tap on a face keeps it, and each face says what it saves. */}
         {top.kind === "pair" && <div className="mf-duel" data-picked={picked !== null ? picked : undefined}>{top.tools.slice(0, 2).map((tool, index) => {
           const keep = top.actions.find((action) => action.label.endsWith(tool.name));
@@ -441,10 +445,15 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
               style={{ ["--i" as string]: index }} data-state={pickedTile === null ? undefined : pickedTile === plan.key ? "kept" : "gone"}
               onPointerEnter={() => setPreview(total + plan.monthly)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total + plan.monthly)} onBlur={() => setPreview(null)}
               onClick={() => { if (plan.perSeat) { setSeatPlan(plan.key); setSeats(1); setPreview(total + plan.monthly); } else pickTile(plan.key, () => plan.pick()); }}>
-              <span className="mf-plan-name">{(() => { const max = Math.max(1, ...tiles.map((x) => x.monthly)); const Icon = plan.monthly === 0 ? Moon : plan.monthly >= max ? Rocket : Zap; return <Icon size={14} aria-hidden />; })()}{plan.label}</span>
+              {/* "Professional (Dev seat)": the plan's name, then its qualifier on a quieter line. */}
+              {(() => { const [, main, qualifier] = /^(.*?)\s*\((.+)\)\s*$/.exec(plan.label) ?? [null, plan.label, null];
+                const max = Math.max(1, ...tiles.map((x) => x.monthly)); const Icon = plan.monthly === 0 ? Moon : plan.monthly >= max ? Rocket : Zap;
+                return <span className="mf-plan-name" title={plan.label}><Icon size={14} aria-hidden /><span>{main}{qualifier && <em>{qualifier}</em>}</span></span>; })()}
               <b>{plan.monthly > 0 ? format(plan.monthly) : t("0 €", "Free")}<small>{plan.monthly > 0 ? t("/mois", "/mo") : ""}</small></b>
-              {/* Same three lines in every tile, so prices sit on one level. */}
-              <small className="mf-plan-note">{plan.note || (plan.monthly === 0 ? t("version gratuite", "free plan") : t("par mois", "a month"))}</small>
+              {/* Same lines in every tile, so prices sit on one level. */}
+              <small className="mf-plan-note">{plan.monthly === 0 ? t("Rien à payer", "Nothing to pay") : plan.note || t("par mois", "a month")}</small>
+              {/* With a day rate, a price also reads as working time. */}
+              {hourly ? <small className="mf-plan-time">{plan.monthly === 0 ? t("0 min de votre travail", "0 min of your work") : (() => { const minutes = Math.max(1, Math.round((plan.monthly / hourly) * 60)); return minutes < 60 ? t(`≈ ${minutes} min de votre travail`, `≈ ${minutes} min of your work`) : t(`≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} de votre travail`, `≈ ${Math.floor(minutes / 60)} h ${String(minutes % 60).padStart(2, "0")} of your work`); })()}</small> : null}
               {/* The radio mark: the usual sign of a single choice. */}
               <span className="mf-plan-radio" aria-hidden="true">{pickedTile === plan.key && <Check size={12} strokeWidth={3} />}</span>
             </button>)}

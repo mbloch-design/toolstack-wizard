@@ -14,11 +14,13 @@ import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
-import StackPersonalWelcome from "@/components/stack/StackPersonalWelcome";
+import StackPersonalWelcome, { isFreshFromOnboarding, markOnboarded } from "@/components/stack/StackPersonalWelcome";
+import StackWelcomeToast from "@/components/stack/StackWelcomeToast";
 import StackWelcome from "@/components/stack/StackWelcome";
 import StackOnboarding from "@/components/stack/StackOnboarding";
 import { writeStarterDraft } from "@/components/stack/StackStarter";
 import { useStackUsage } from "@/hooks/useStackUsage";
+import { useStackTrade } from "@/hooks/useStackTrade";
 import { isUsageLevel } from "@/lib/personalStack";
 import StackAccountPanel from "@/components/stack/StackAccountPanel";
 import { useCategories, useToolSummaries, useToolBySlug, type ToolSummary } from "@/hooks/useSupabaseData";
@@ -47,6 +49,8 @@ export default function CartPage() {
   const { tools, loading } = useToolSummaries();
   const { categories } = useCategories();
   const { state, persistenceStatus, pinTool, unpinTool, restoreTool, requiresAccount } = useStackPins();
+  // The day rate from the onboarding, as the value of one hour in the display currency (7-hour day).
+  const { dailyRate } = useStackTrade();
   // Adding needs a session once accounts are on: pinTool says no, and then no success is shown.
   const inventoryHeadingRef = useRef<HTMLHeadingElement>(null);
   const addToStack = (slug: string, name: string, _options?: unknown) => {
@@ -85,6 +89,7 @@ export default function CartPage() {
   // to remove: the person decides.
   // Pairs kept on purpose (a decision) are no longer flagged anywhere.
   const { currency } = useCurrency();
+  const hourly = dailyRate ? convertAmount(dailyRate.amount, dailyRate.currency, currency) / 7 : null;
   const { decisions, decide, reopen } = useStackDecisions(t, (amount) => `${formatAmount(Math.round(amount), currency, lang)}${t("/mois", "/mo")}`, currency);
   const overlapsById = useMemo(() => new Map(selectedTools.map((tool) => [tool.id,
     stackRelations(tool, selectedTools, categories, lang)
@@ -453,7 +458,13 @@ export default function CartPage() {
     <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
     <StackOnboarding onOpen={(slugs, welcome) => {
       const added = slugs.filter((slug) => pinTool(slug));
-      if (added.length) { writeStarterDraft([]); requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true })); toast.success(welcome); }
+      if (added.length) {
+        writeStarterDraft([]); markOnboarded();
+        requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true }));
+        const placed = added.map((slug) => lookup.get(slug)).filter((tool): tool is ToolSummary => !!tool).slice(0, 3);
+        toast.custom(() => <StackWelcomeToast title={welcome} tools={placed}
+          detail={t(`${added.length} outil${added.length > 1 ? "s" : ""} bien rangé${added.length > 1 ? "s" : ""}. La suite se passe juste en dessous.`, `${added.length} tool${added.length > 1 ? "s" : ""} neatly in place. What’s next is right below.`)} />, { duration: 6000 });
+      }
     }} />
     <StackAccountPanel empty />
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt" ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.") : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
@@ -501,7 +512,7 @@ export default function CartPage() {
           if (decision.kind === "keep-both" && !(pinnedKeys.has(toolKey(x)) && pinnedKeys.has(toolKey(y)))) return [];
           return [{ key, a: x, b: y, kind: decision.kind === "keep-both" ? "keep-both" as const : "keep-one" as const, kept: lookup.get(decision.kept)?.name, removed: decision.removed ? lookup.get(decision.removed)?.name : undefined, at: decision.at }];
         }).sort((x, y) => String(y.at).localeCompare(String(x.at)));
-        return <StackFindings freeTools={selectedTools.filter(tool => monthlyOf(tool) === 0 && !unreviewed.some(item => item.id === tool.id) && !unknownTools.some(item => item.id === tool.id))} lang={lang} total={stackCost.total} format={fmt} toolCount={selectedTools.length}
+        return <StackFindings guide={isFreshFromOnboarding()} hourly={hourly} freeTools={selectedTools.filter(tool => monthlyOf(tool) === 0 && !unreviewed.some(item => item.id === tool.id) && !unknownTools.some(item => item.id === tool.id))} lang={lang} total={stackCost.total} format={fmt} toolCount={selectedTools.length}
           fit={selectedTools.filter((tool) => monthlyOf(tool) > 0).sort((x, y) => monthlyOf(y) - monthlyOf(x)).slice(0, 3).map((tool) => {
             // Right size: the catalogue's power score (1 to 5) against how much
             // the person says they use the tool. Alternatives come from the
