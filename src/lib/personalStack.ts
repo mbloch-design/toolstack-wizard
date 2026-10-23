@@ -155,7 +155,7 @@ export function validatePersonalStack(input: unknown): PersonalStackV4 {
   requireValid(isRecord(input.decisions), "decisions");
   const decisions = normalizeStackDecisions(input.decisions);
   for (const key of Object.keys(input.decisions)) {
-    requireValid(isString(key) && Object.hasOwn(decisions, key), `decisions.${key}`);
+    requireValid(isString(key) && Object.prototype.hasOwnProperty.call(decisions, key), `decisions.${key}`);
   }
   return normalizePersonalStack(input);
 }
@@ -177,9 +177,9 @@ export function mergeAnonymousDraft(saved: PersonalStackV4, draft: PersonalStack
   const newSlugs = new Set(additions.map(entry => entry.toolSlug));
   const unspecifiedBilling = (slug: string) => newSlugs.has(slug) || (savedSlugs.has(slug)
     && !retained.billing.paid.includes(slug) && !retained.billing.reviewed.includes(slug)
-    && !Object.hasOwn(retained.billing.choices, slug));
+    && !Object.prototype.hasOwnProperty.call(retained.billing.choices, slug));
   const importChoice = (slug: string) => newSlugs.has(slug) || (savedSlugs.has(slug)
-    && !Object.hasOwn(retained.billing.choices, slug)
+    && !Object.prototype.hasOwnProperty.call(retained.billing.choices, slug)
     // An explicit free answer wins, as does a paid answer over a conflicting free draft.
     && (!retained.billing.reviewed.includes(slug) || retained.billing.paid.includes(slug))
     && !(retained.billing.paid.includes(slug) && incoming.billing.reviewed.includes(slug) && !incoming.billing.paid.includes(slug)));
@@ -219,7 +219,7 @@ export function mergeAnonymousDraft(saved: PersonalStackV4, draft: PersonalStack
     const consistent = decision.kind === "keep-both"
       ? pair.split("|").every(slug => selected.has(slug))
       : selected.has(decision.kept) && !selected.has(decision.removed!);
-    if (Object.hasOwn(decisions, key) || savedPairs.has(pair) || !consistent) continue;
+    if (Object.prototype.hasOwnProperty.call(decisions, key) || savedPairs.has(pair) || !consistent) continue;
     decisions[key] = decision;
     savedPairs.add(pair);
   }

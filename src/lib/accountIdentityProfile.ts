@@ -3,7 +3,7 @@ import { normalizeDisplayName } from './accountProfile.js';
 export type OAuthProfileSeed = { provider:'google'|'github';displayName:string|null;avatarUrl:string|null;providerLocale:string|null };
 export function normalizeProviderLocale(value:unknown):string|null {
  if(typeof value!=='string'||value.length>35) return null;
- const locale=value.replaceAll('_','-');
+ const locale=value.replace(/_/g,'-');
  return /^[a-z]{2,3}(?:-[a-z0-9]{2,8})*$/i.test(locale)?locale:null;
 }
 export function normalizeOAuthAvatar(value:unknown,provider:'google'|'github'|null):string|null {
