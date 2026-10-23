@@ -22,7 +22,7 @@ Contrôles de configuration en lecture seule du 19 octobre : Google désactivé,
 | `VITE_SUPABASE_PUBLISHABLE_KEY` | navigateur | clé publique du même projet |
 | `BACKOFFICE_ADMIN_EMAILS` | serveur uniquement | liste séparée par virgules d'adresses administrateur confirmées |
 
-Ne pas déduire la configuration des valeurs de secours publiques du client. Le serveur refuse les API privées lorsque son flag ou ses variables manquent. Une allowlist absente refuse les accès administrateur ; ni les métadonnées utilisateur ni un rôle envoyé par le navigateur ne donnent ces droits. Un flag navigateur activé sans serveur prêt affiche une sauvegarde indisponible ; l'usage local reste accessible. Une modification des variables `VITE_` demande un nouveau build.
+Ne pas déduire la configuration des valeurs de secours publiques du client. Le serveur refuse les API privées lorsque son flag ou ses variables manquent. Une allowlist absente refuse les accès administrateur ; ni les métadonnées utilisateur ni un rôle envoyé par le navigateur ne donnent ces droits. Un flag navigateur activé sans serveur prêt affiche une sauvegarde indisponible ; cela ne doit pas être utilisé comme configuration de recette. Le compte est requis avant le premier ajout lorsque la fonctionnalité est activée. Une modification des variables `VITE_` demande un nouveau build.
 
 ### Fournisseurs et chemins de retour
 
@@ -54,7 +54,7 @@ Sauvegarder la base et exporter les métadonnées de schéma/permissions avant u
 3. [20261021073601_account_profile_settings.sql](../supabase/migrations/20261021073601_account_profile_settings.sql).
 4. [20261022073822_account_oauth_profile.sql](../supabase/migrations/20261022073822_account_oauth_profile.sql).
 
-Ces migrations sont préparées, elles n'ont pas été appliquées au projet distant par cette livraison. Elles conservent les snapshots historiques, ajoutent révision/statut de suppression et RPC serveur avec vérification de session. La dernière ajoute une importation unique du nom, de l'avatar et de la langue fournis par l'identité Google/GitHub vérifiée ; les noms personnalisés, même effacés, ne sont pas réimportés. La langue fournisseur est informative et ne change pas la langue de navigation. `profiles`/`stack_snapshots` ne sont plus modifiables directement par les clients ; les RPC privées ne sont exécutables que par `service_role`, avec politiques propriétaire en défense supplémentaire. Ne pas exposer le schéma Auth ni changer les FK contributrices pour faciliter une suppression.
+Ces quatre migrations ont été appliquées au projet ToolTrim le 23 octobre 2026, après accord du propriétaire et sauvegarde préalable. Les versions distantes sont attribuées par l’outil de migration ; vérifier les noms plutôt que réappliquer les fichiers locaux. Elles conservent les snapshots historiques, ajoutent révision/statut de suppression et RPC serveur avec vérification de session. La dernière ajoute une importation unique du nom, de l'avatar et de la langue fournis par l'identité Google/GitHub vérifiée ; les noms personnalisés, même effacés, ne sont pas réimportés. La langue fournisseur est informative et ne change pas la langue de navigation. `profiles`/`stack_snapshots` ne sont plus modifiables directement par les clients ; les RPC privées ne sont exécutables que par `service_role`, avec politiques propriétaire en défense supplémentaire. Ne pas exposer le schéma Auth ni changer les FK contributrices pour faciliter une suppression.
 
 Le garde de suppression conserve les contributions historiques. Un compte lié à des contributions reçoit une erreur explicite et reste protégé pour reprise ; aucune cascade improvisée. L'ancienne Edge Function `delete-account` est dormante et répond 410 dans la source : ne pas la déployer comme contournement.
 
@@ -111,3 +111,12 @@ Désactiver les flags de compte serveur et navigateur ainsi que ceux des fournis
 En cas de panne, le cache sale reste lié à son propriétaire ; ne pas le copier dans un brouillon anonyme. Proposer réessai/reconnexion/conflit selon l'état affiché. Ne pas annoncer une suppression distante après une simple expiration de session : l'action de nettoyage local est distincte de la confirmation serveur. Si le navigateur bloque le nettoyage, suivre l'avertissement de l'interface et effacer les données du site sur l'appareil partagé. Ne pas exporter les caches personnels dans les journaux de support.
 
 Le persona, le métier, l’entreprise et la qualification progressive restent pour plus tard, séparés du profil et de la preuve de connexion. Aucun questionnaire obligatoire ni schéma persona anticipé dans cette livraison.
+
+## Préflight de préproduction du 23 octobre 2026
+
+- Projet Supabase ToolTrim : quatre migrations appliquées après confirmation que cette base n’est pas exploitée. Sauvegarde préalable locale privée ; contrôle des sept RPC métier : refus anon/authenticated et exécution service_role autorisée.
+- Auth publique : e-mail activé, inscription permise, confirmation requise ; Google et GitHub désactivés. SMTP, templates et livraison réelle non vérifiés.
+- Vercel : connecteur refusé (403), mais accès CLI vérifié au projet `toolstack-wizard` de l’équipe `mbloch-designs-projects`. Déploiement de recette en préparation.
+- Recette supplémentaire locale : API 283 tests réussis, 18 ignorés ; migrations/assertions/rollback SQL réussis en base éphémère. Ces résultats ne prouvent pas une connexion OAuth ou une livraison e-mail réelle.
+
+Avant de communiquer une URL de recette : vérifier la cible Vercel de préproduction et le projet Supabase convenu, contrôler les migrations installées, configurer les secrets serveur et les retours autorisés, activer les flags, déployer la version vérifiée, puis tester inscription/confirmation, connexion/déconnexion, récupération, sauvegarde/relecture de stack et refus d’accès privé. Tester chaque fournisseur OAuth avant d’activer son bouton. Ne pas promouvoir en production dans ce lot.

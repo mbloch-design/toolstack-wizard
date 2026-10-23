@@ -5890,3 +5890,8 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 - Hook lié au propriétaire et à la génération de requête, token frais par opération et délai borné ; sortie/changement de compte efface le profil, réponse tardive ignorée, sauvegarde en erreur jamais annoncée réussie.
 - RPC service-only dans les tables existantes, verrou propriétaire/session/barrière de suppression ; rollback révoque les appels et conserve noms, identités et stacks. Migration locale `20261021073601_account_profile_settings.sql` générée par CLI.
 - Validation ciblée : 102 tests API, 90 tests client/hook/Auth, TypeScript app/API et lint ciblé ; SQL embarqué PostgreSQL 18. Contrôle PostgreSQL 17 par le contrôleur. Aucun changement UI ni opération distante.
+
+
+## 2026-10-23 — Préparation de recette des comptes
+
+Référence d’architecture alignée sur le compte requis avant le premier ajout, Google/GitHub/e-mail et paramètres. Exemple de configuration avec flags explicites désactivés. Après accord du propriétaire, quatre migrations appliquées au projet Supabase existant, sauvegarde préalable et permissions des sept RPC vérifiées. Recette locale : 50 parcours navigateur, TypeScript complet et SQL/rollback réussis. Déploiement Preview en cours ; OAuth et SMTP réels ne sont pas encore validés.
