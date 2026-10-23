@@ -15,3 +15,7 @@ it('adapts to pending decisions in English',()=>{data.lang='en';render(<StackPer
 it('keeps welcoming right after the onboarding',()=>{sessionStorage.setItem(ONBOARDED_KEY,String(Date.now()));render(<StackPersonalWelcome empty={false} pending={3}/>);expect(screen.getByText(/Bienvenue chez vous. 3 petites décisions/)).toBeVisible()});
 it('shows the trade and the value of an hour from the day rate',()=>{data.trade='designer';data.dailyRate={amount:700,currency:'EUR'};render(<StackPersonalWelcome empty={false}/>);expect(screen.getByText('Design')).toBeVisible();expect(screen.getByText(/votre heure ≈ 100/)).toBeVisible()});
 it('does not greet a signed-out account',()=>{data.user=null;const{container}=render(<StackPersonalWelcome empty/>);expect(container).toBeEmptyDOMElement()});
+it('never greets with a provider handle or an address',async()=>{const {firstNameOf}=await import('./StackPersonalWelcome');
+ expect(firstNameOf('blochmic-ops')).toBeNull();expect(firstNameOf('jdoe42')).toBeNull();expect(firstNameOf('a.b@example.invalid')).toBeNull();
+ expect(firstNameOf('Michael Bloch')).toBe('Michael');expect(firstNameOf('camille')).toBe('Camille');expect(firstNameOf('Jean-Pierre Martin')).toBe('Jean-Pierre');expect(firstNameOf('  ')).toBeNull();
+ data.profile={userId:'A',displayName:'blochmic-ops'};render(<StackPersonalWelcome empty={false}/>);expect(screen.queryByText(/blochmic/)).toBeNull()});

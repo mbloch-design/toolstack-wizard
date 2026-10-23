@@ -6,7 +6,8 @@ import { useCurrency } from "@/hooks/useCurrency";
 import { convertAmount, formatAmount } from "@/lib/currencyRates";
 import type { DailyRate } from "@/lib/personalStack";
 import { useLang } from "@/hooks/useLang";
-import { useStackAccount, getStackAccountLabel } from "@/hooks/useStackAccount";
+import { useStackAccount } from "@/hooks/useStackAccount";
+import { firstNameOf } from "@/components/stack/StackPersonalWelcome";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { TRADE_TOOLS } from "@/data/tradeTools";
@@ -74,10 +75,9 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
   const picked = known(picks);
   const reading = useStackReading(picked);
 
-  // A first name when the account has a real one; an e-mail address is never used as a name.
+  // Only the name chosen on the account; a provider handle or an address is never used as a name.
   const profile = experience.profile?.userId === account.user?.id ? experience.profile : null;
-  const label = profile?.displayName || getStackAccountLabel(account.user);
-  const fromAccount = label && !label.includes("@") ? label.trim().split(/\s+/)[0] : null;
+  const fromAccount = firstNameOf(profile?.displayName);
   const name = given || fromAccount;
   const hour = new Date().getHours();
   const greeting = lang === "en" ? (hour < 12 && hour >= 5 ? "Good morning" : hour < 18 && hour >= 5 ? "Good afternoon" : "Good evening") : (hour >= 18 || hour < 5 ? "Bonsoir" : "Bonjour");
@@ -99,7 +99,7 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
 
   const begin = () => {
     const clean = typed.trim().replace(/\s+/g, " ").slice(0, 40);
-    if (!fromAccount && clean) { setGiven(clean.split(" ")[0]); void experience.saveDisplayName?.(clean); }
+    if (!fromAccount && clean) { setGiven(firstNameOf(clean) ?? clean.split(" ")[0]); void experience.saveDisplayName?.(clean); }
     setStep("trade");
   };
   const progress = index >= 0 && <div className="so-progress" aria-label={t(`Étape ${index + 1} sur ${STEPS.length}`, `Step ${index + 1} of ${STEPS.length}`)}>
@@ -125,9 +125,8 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
         <span className="so-hello-line" aria-hidden="true">
           <span className="so-hello-stage">
             {HELLOS.map((word, at) => <span key={word} className="so-hw" style={{ ["--i" as string]: at }}>{word}</span>)}
-            <span className="so-hw so-hw--final" style={{ ["--i" as string]: HELLOS.length }}>{greeting}{name ? <>, <em>{name}</em></> : ""}.</span>
+            <span className="so-hw so-hw--final" style={{ ["--i" as string]: HELLOS.length }}>{greeting}{name ? <>, <em>{name}</em></> : ""}.<span className="so-wave">👋</span></span>
           </span>
-          <span className="so-wave">👋</span>
         </span>
       </h1>
       <div className="so-hello-rest" data-on={landed ? "" : undefined}>

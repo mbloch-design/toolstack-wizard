@@ -14,6 +14,17 @@ export function markOnboarded() { try { sessionStorage.setItem(ONBOARDED_KEY, St
 export function isFreshFromOnboarding() {
   try { const at = Number(sessionStorage.getItem(ONBOARDED_KEY)); return at > 0 && Date.now() - at < FRESH_MS; } catch { return false; }
 }
+/**
+ * A first name to greet with, or null. A provider handle ("blochmic-ops", "jdoe42")
+ * or an address is not a name: then the onboarding asks for one.
+ */
+export function firstNameOf(display: string | null | undefined): string | null {
+  const clean = display?.trim().replace(/\s+/g, " ");
+  if (!clean) return null;
+  if (!/\s/.test(clean) && /[-_.\d@]/.test(clean)) return null;
+  const first = clean.split(" ")[0];
+  return first.charAt(0).toLocaleUpperCase() + first.slice(1);
+}
 const TRADE_LABELS: Record<Trade, [string, string]> = {
   dev: ["Développement", "Development"], designer: ["Design", "Design"], consultant: ["Conseil", "Consulting"],
   content: ["Création de contenu", "Content creation"], ops: ["Opérations", "Operations"], solo: ["Un peu de tout", "A bit of everything"],
@@ -34,7 +45,7 @@ export default function StackPersonalWelcome({ empty, pending = 0, children }: {
   const { trade, dailyRate } = useStackTrade();
   if (!user || syncStatus === "session-expired") return <>{children}</>;
   const full = profile?.userId === user.id ? profile.displayName : null;
-  const name = full ? full.trim().split(/\s+/)[0] : null;
+  const name = firstNameOf(full);
   const hour = new Date().getHours();
   const evening = hour >= 18 || hour < 5;
   const hello = name ? t(`${evening ? "Bonsoir" : "Bonjour"}, ${name}`, `${evening ? "Good evening" : "Hi"}, ${name}`) : t(evening ? "Bonsoir" : "Bonjour", evening ? "Good evening" : "Hello");
