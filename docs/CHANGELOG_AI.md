@@ -1,3 +1,9 @@
+## 2026-10-23 — Recette administrateur réelle en préproduction
+
+- Après accord explicite du propriétaire, son compte est ajouté à l’allowlist serveur de la seule branche Preview ; administrateurs existants conservés.
+- Build Vercel READY sur 9fd2bf8830. Tableau réel, compteurs comparés à la base, recherche et détail du propriétaire vérifiés dans Chrome ; accès anonyme refusé (401).
+- Transition OAuth notée dans TODO : retour automatique fonctionnel, présentation de la page technique à reprendre. Aucun changement de production web.
+
 ## 2026-10-23 — E-mails : logo réel et design system actuel
 
 - Logo officiel rasterisé en PNG haute résolution pour les clients mail, hébergement public vérifié ; aucun suivi ajouté.

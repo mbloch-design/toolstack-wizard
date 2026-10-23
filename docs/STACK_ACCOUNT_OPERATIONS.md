@@ -1,6 +1,6 @@
 # Comptes et stacks : exploitation et activation
 
-Expérience complète préparée localement le 21 octobre 2026. Les flags de compte et de fournisseurs restent désactivés par défaut. Aucun déploiement, migration distante, utilisateur réel, e-mail, paiement ou abonnement n'a été créé par la recette automatique.
+État au 23 octobre 2026 : expérience de compte activée en préproduction sur la branche `codex/accounts-stack-mvp`, avec le projet Supabase existant expressément autorisé par le propriétaire. Quatre migrations de comptes ont été appliquées après sauvegarde. Google et GitHub ont été configurés puis testés par le propriétaire jusqu’au retour connecté vers Ma stack. Les flags restent désactivés par défaut dans le code. Aucune promotion du site en production.
 
 ## État de préparation
 
@@ -16,7 +16,7 @@ Contrôles de configuration en lecture seule du 19 octobre : Google désactivé,
 | `VITE_STACK_ACCOUNT_ENABLED` | build navigateur | `true` explicite après validation ; défaut désactivé |
 | `VITE_ACCOUNT_GOOGLE_ENABLED` | build navigateur | `true` seulement si Google a été configuré et recetté ; défaut désactivé |
 | `VITE_ACCOUNT_GITHUB_ENABLED` | build navigateur | `true` seulement si GitHub a été configuré et recetté ; défaut désactivé |
-| `SUPABASE_URL` | serveur | projet de recette dédié, puis projet cible validé |
+| `SUPABASE_URL` | serveur | projet existant autorisé pour la recette ; vérifier la cible avant toute modification |
 | `SUPABASE_SERVICE_ROLE_KEY` | serveur uniquement | secret de service, jamais préfixé `VITE_`, jamais dans Git |
 | `VITE_SUPABASE_URL` | navigateur | même projet que le serveur |
 | `VITE_SUPABASE_PUBLISHABLE_KEY` | navigateur | clé publique du même projet |
@@ -129,3 +129,11 @@ Le filtre Git ignore volontairement les sources inchangées. Pour une activation
 ### Modèles d’e-mails ToolTrim
 
 Les sources versionnées des messages de confirmation et récupération se trouvent dans `supabase/templates/account/`. Voir leur README pour l’installation, la vérification et le retour arrière. La publication web ne déploie pas ces modèles dans Supabase. Le français et l’anglais coexistent dans un message pour les comptes existants, sans nouvelle collecte de langue. Les jetons et retours utilisent exclusivement `{{ .ConfirmationURL }}`.
+
+### Recette réelle du 23 octobre 2026
+
+- La recette distante générale a vérifié les API privées, la persistance de stack et de profil, les conflits de révision, le refus administrateur pour un compte ordinaire et la suppression du seul compte temporaire.
+- Les messages génériques de confirmation/récupération ont été reçus sur un alias de recette autorisé. Les limitations liées à la protection Vercel lors du test navigateur sont consignées dans le rapport de recette.
+- Les deux modèles de ces messages sont maintenant enregistrés dans Supabase au style ToolTrim, avec le logo officiel converti en PNG et hébergé dans le seul bucket public de marque. Leur persistance et leur aperçu ont été revérifiés ; livraison de ces nouvelles versions non encore recettée. Le SMTP intégré reste inchangé.
+- Le 23 octobre, le compte connecté du propriétaire a été refusé par l’allowlist serveur, puis son ajout a été explicitement autorisé. Modification limitée à la variable Preview de la branche comptes ; accès existants conservés. Déploiement `dpl_8Uy7VBkNBWRdmXN8mJTTDowq4BFe` READY, commit `9fd2bf8830727ab0fa736bfdb53c0c348ddb5f47`. Accès réel vérifié dans Chrome : tableau chargé, compte retrouvé par recherche, détail et état de stack affichés. Les compteurs globaux (2 comptes confirmés, 0 stack sauvegardée) correspondent à la requête de contrôle en base et restent globaux après filtrage. API anonyme refusée avec HTTP 401.
+- Le passage OAuth par la page technique de chargement est à reprendre côté UX (voir TODO), même si le retour final à Ma stack fonctionne.
