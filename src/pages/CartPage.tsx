@@ -518,7 +518,7 @@ export default function CartPage() {
           if (decision.kind === "keep-both" && !(pinnedKeys.has(toolKey(x)) && pinnedKeys.has(toolKey(y)))) return [];
           return [{ key, a: x, b: y, kind: decision.kind === "keep-both" ? "keep-both" as const : "keep-one" as const, kept: lookup.get(decision.kept)?.name, removed: decision.removed ? lookup.get(decision.removed)?.name : undefined, at: decision.at }];
         }).sort((x, y) => String(y.at).localeCompare(String(x.at)));
-        return <StackFindings lang={lang} total={stackCost.total} format={fmt} toolCount={selectedTools.length}
+        return <StackFindings freeTools={selectedTools.filter(tool => monthlyOf(tool) === 0 && !unreviewed.some(item => item.id === tool.id) && !unknownTools.some(item => item.id === tool.id))} lang={lang} total={stackCost.total} format={fmt} toolCount={selectedTools.length}
           fit={selectedTools.filter((tool) => monthlyOf(tool) > 0).sort((x, y) => monthlyOf(y) - monthlyOf(x)).slice(0, 3).map((tool) => {
             // Right size: the catalogue's power score (1 to 5) against how much
             // the person says they use the tool. Alternatives come from the

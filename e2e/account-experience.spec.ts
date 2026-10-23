@@ -290,3 +290,27 @@ for (const width of [390, 1440]) test(`partial stack budget stays consistent ${w
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
  await page.screenshot({path:`test-results/accounts/partial-budget-${width}.png`,fullPage:true});
 });
+
+test('budget includes the two free tools alongside two paid tools', async ({page,request}) => {
+ const full=state(['motion-array','grammarly','figma','audacity']);
+ full.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly','figma','audacity'],choices:{'motion-array':{source:'custom',amount:29,currency:'USD',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'USD',period:'monthly'}}};
+ await control(request,'seed',{email:'four-tools-budget@example.invalid',state:full});
+ await page.goto('/en/ma-stack');await login(page,'en','four-tools-budget@example.invalid');await saved(page,'en');
+ await expect(page.locator('.mf-price')).toContainText('2 free tools · no added cost');
+ await expect(page.locator('.mf-cost-zero')).toContainText('Figma');
+ await expect(page.locator('.mf-cost-zero')).toContainText('Audacity');
+ await expect(page.locator('.mf-shares li')).toHaveCount(2);
+ await page.screenshot({path:'test-results/accounts/four-tools-budget.png',fullPage:true});
+});
+
+test('first unconfirmed plan has no zero budget or empty analysis cards', async ({page,request}) => {
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await control(request,'seed',{email:'first-budget@example.invalid',state:state(['notion'])});
+ await page.goto('/en/ma-stack');await login(page,'en','first-budget@example.invalid');await saved(page,'en');
+ await expect(page.locator('.mf-unknown-total')).toContainText('Budget not set yet');
+ await expect(page.locator('.mf-price')).not.toContainText('$0');
+ await expect(page.locator('.mf-balance')).toHaveCount(0);
+ await expect(page.locator('.mf-fit')).toHaveCount(0);
+ await expect(page.locator('.mf-now')).toContainText('Notion');
+ await page.screenshot({path:'test-results/accounts/first-plan-budget.png',fullPage:true});
+});

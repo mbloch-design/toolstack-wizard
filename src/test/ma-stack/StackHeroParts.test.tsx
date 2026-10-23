@@ -30,6 +30,21 @@ describe("StackFindings", () => {
     expect(container.querySelector(".mf-bb")).not.toBeNull();
     expect(screen.queryByText(/dès trois domaines/)).toBeNull();
   });
+  it("accounts for all four tools when only two have a paid cost", () => {
+    module([], { total: 41, spend: [{tool:tool("Motion Array"),amount:29},{tool:tool("Grammarly"),amount:12}], freeTools:[tool("Figma"),tool("Audacity")] });
+    expect(screen.getByText("2 outils gratuits · sans coût ajouté")).toBeTruthy();
+    expect(screen.getByText("Figma")).toBeTruthy();
+    expect(screen.getByText("Audacity")).toBeTruthy();
+    expect(screen.getAllByText("Gratuit")).toHaveLength(2);
+    expect(screen.queryByText(/autres/)).toBeNull();
+  });
+  it("does not invent a zero budget before the first plan is selected", () => {
+    const {container}=module([card("Notion")],{total:0,toolCount:1,spend:[],areas:[],fit:[]});
+    expect(screen.getByText("Budget à renseigner")).toBeTruthy();
+    expect(screen.queryByRole("text",{name:"0 €"})).toBeNull();
+    expect(container.querySelector(".mf-balance")).toBeNull();
+    expect(container.querySelector(".mf-fit")).toBeNull();
+  });
   it("shows the budget by vertical as a radar", () => {
     module([card("Canva")]);
     expect(screen.getByRole("img", { name: "RH 58 %, IT 17 %" })).toBeTruthy();

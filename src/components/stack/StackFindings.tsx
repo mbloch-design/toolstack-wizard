@@ -42,6 +42,7 @@ interface Props {
   /** Known monthly cost by vertical (area), every area of the stack. */
   areas: { id: string; label: string; amount: number; color: string; tools?: { tool: ToolSummary; amount: number }[] }[];
   toolCount: number;
+  freeTools?: ToolSummary[];
   /** What is left to decide, in order. */
   items: Finding[];
   /** Estimated monthly amount taken out by past decisions. */
@@ -222,7 +223,7 @@ const icon = (Icon: typeof Wallet, color?: string) => <Icon size={14} strokeWidt
 // costs, then the one thing to decide now, then, quietly, what comes next.
 // Settling the current finding brings the next one in; once nothing is left,
 // the space becomes the summary of what was decided and what it saved.
-export default function StackFindings({ lang, total, format, spend, areas, toolCount, fit, items, saved, toReview, resolved, history, onAddTool, exploreHref }: Props) {
+export default function StackFindings({ lang, total, format, spend, areas, toolCount, freeTools = [], fit, items, saved, toReview, resolved, history, onAddTool, exploreHref }: Props) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const s = (n: number) => (n > 1 ? "s" : "");
@@ -289,18 +290,18 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
   const room = order.length === 0 ? 8 : 3;
   const shown = priceAll ? spend : spend.slice(0, spend.length <= room ? spend.length : room);
   const otherAmount = spend.slice(shown.length).reduce((sum, line) => sum + line.amount, 0);
-  const otherCount = toolCount - shown.length;
+  const otherCount = spend.length - shown.length;
   const segments: { id: string; label: string; amount: number; color: string; tool?: ToolSummary }[] = [...shown.map((line, index) => ({ id: line.tool.id, label: line.tool.name, amount: line.amount, color: AREA_COLORS[index], tool: line.tool })),
     ...(otherCount > 0 ? [{ id: "others", label: t(`${otherCount} autre${s(otherCount)}`, `${otherCount} other${s(otherCount)}`), amount: otherAmount, color: AREA_OTHER }] : [])];
   return <section className="mf" aria-label={t("Ma stack en bref", "My stack at a glance")}>
-    <div className="mf-grid" data-next={groups.length} data-done={top ? undefined : ""}>
+    <div className="mf-grid" data-sparse={total === 0 && fit.length === 0 ? "" : undefined} data-next={groups.length} data-done={top ? undefined : ""}>
       {/* 1. Read first: what the stack costs, and the verdict under it. */}
       <article className="mf-card mf-price" data-open={openCard === "price" ? "" : undefined} data-all={priceAll ? "" : undefined}>
         <p className="mf-k tt-kicker">{icon(Wallet)}{items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}{expander("price", t("le coût", "the cost"))}</p>
         {/* An unknown price is never shown as free: no figure without a known price, and a partial total says so. */}
-        {(() => { const missing = items.filter((item) => item.kind === "price").length;
+        {(() => { const missing = items.filter((item) => item.kind === "price" || item.kind === "freemium").length;
           return spend.length === 0 && missing > 0
-            ? <p className="mf-unknown-total">{t("Coût non renseigné", "Cost unknown")}<small>{t(`Indiquez le prix de ${missing} outil${s(missing)} pour voir votre total.`, `Enter the price of ${missing} tool${s(missing)} to see your total.`)}</small></p>
+            ? <p className="mf-unknown-total">{t("Budget à renseigner", "Budget not set yet")}<small>{t("Choisissez votre formule pour calculer votre budget.", "Choose your plan to calculate your budget.")}</small></p>
             : <><Figure value={format(total)} unit={t("/mois", "/mo")} />{(() => {
               // Can the total be trusted? A tool counts once its cost is certain.
               const unsure = items.filter((item) => item.kind === "price" || item.kind === "freemium");
@@ -332,7 +333,12 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
             <b>{format(otherAmount)}</b>
           </button>}
           {priceAll && spend.length > 4 && <TextLink className="mf-less" onClick={() => setPriceAll(false)}>{t("Réduire", "Show less")}</TextLink>}
-        </> : <p className="mf-empty">{t("Aucun abonnement payant connu pour l’instant.", "No known paid plan yet.")}</p>}
+        </> : !items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="mf-empty">{t("Aucun abonnement payant renseigné.", "No paid plans recorded.")}</p>}
+        {freeTools.length > 0 && <div className="mf-cost-complement">
+          <p>{t(`${freeTools.length} outil${s(freeTools.length)} gratuit${s(freeTools.length)} · sans coût ajouté`, `${freeTools.length} free tool${s(freeTools.length)} · no added cost`)}</p>
+          <ul className="mf-cost-zero">{freeTools.map(tool => <li key={tool.id}><ToolLogo tool={tool} size={22} /><span>{tool.name}</span><b>{t("Gratuit", "Free")}</b></li>)}</ul>
+        </div>}
+        {items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="mf-cost-scope">{t("Les outils à renseigner ne sont pas inclus dans ce montant.", "Tools awaiting a price or plan are not included in this amount.")}</p>}
         {saved > 0 && <p className="mf-verdict">{icon(Check, "var(--color-pro)")}<span>{t("Vous économisez déjà ", "You already save ")}<b>{format(saved)}</b>{t(" par mois.", " a month.")}</span></p>}
         {/* Once nothing is left to decide the decision card goes; what can be reopened lives here. */}
         {!top && history && <div className="mf-history">{history}</div>}
@@ -436,7 +442,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
           {/* The effect on the total, on the bar's right: today's figure, then where an answer takes it. */}
           {(top.plans?.length || top.kind === "pair" || top.savePrice || (top.kind === "freemium" && top.options)) && <p className="mf-preview" aria-live="polite">
             <span className="mf-preview-k">{items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel", "Partial budget") : t("Budget estimé", "Estimated budget")}</span>
-            <b className="mf-preview-next" data-on={preview !== null ? "" : undefined}>{format(preview ?? total)}<small className="mf-preview-unit">{t("/mois", "/mo")}</small>
+            <b className="mf-preview-next" data-on={preview !== null ? "" : undefined}>{preview === null && total === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("À renseigner", "Not set yet") : <>{format(preview ?? total)}<small className="mf-preview-unit">{t("/mois", "/mo")}</small></>}
               {/* The difference pops over the amount like a notification bubble: overlaid, it moves nothing. */}
               {preview !== null && preview !== total && <span key={preview} className="mf-preview-delta" data-dir={preview < total ? "down" : "up"}>
                 {preview < total ? <TrendingDown size={12} aria-hidden /> : <TrendingUp size={12} aria-hidden />}{preview > total ? "+" : "−"}{format(Math.abs(preview - total))}</span>}</b>
@@ -451,7 +457,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
       </section> : null}
 
       {/* 3. How the budget is balanced across verticals: its own block. */}
-      <article className="mf-card mf-balance" data-open={openCard === "bal" ? "" : undefined}>
+      {total > 0 && <article className="mf-card mf-balance" data-open={openCard === "bal" ? "" : undefined}>
         <div className="mf-k tt-kicker">{icon(Layers3)}<span className="mf-k-label">{t("Répartition du budget", "Budget split")}</span>{spend.length > 0 && areas.length > 0 && <SplitViews view={splitView} onChange={setSplitView} t={t} radar={areas.length >= 4} />}{expander("bal", t("la répartition", "the split"))}</div>
         {spend.length > 0 && areas.length > 0 ? (() => {
           const lead = [...areas].sort((x, y) => y.amount - x.amount)[0];
@@ -472,11 +478,11 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
                 sub={t(`Le plus gros, ${lead.label}, en prend ${share} %.`, `The largest, ${lead.label}, takes ${share}%.`)} />}
           <BudgetBar areas={areas} total={total} format={format} t={t} view={splitView === "radar" && areas.length < 4 ? "bar" : splitView} /></>;
         })() : <p className="mf-t">{areas.length < 3 ? t("La répartition apparaît dès trois domaines dans votre stack.", "The split appears from three areas in your stack.") : t("Aucun coût connu à répartir pour l’instant.", "No known cost to spread yet.")}</p>}
-      </article>
+      </article>}
 
       {/* 5. Right size: is each tool that costs most sized to its use? Power is the
           catalogue's score, use is the person's answer; the verdict follows. */}
-      {(() => {
+      {fit.length > 0 && (() => {
         const answered = fit.filter((row) => row.usage).length;
         const verdictOf = (row: FitRow): { tone: "ok" | "down" | "up"; text: ReactNode; option?: FitOption } => {
           const use = row.usage ?? 3, power = row.power;

@@ -1,3 +1,11 @@
+## 2026-10-23 — Premier outil sans formule choisie
+
+Aucun montant nul suggéré avant confirmation de la première formule : budget à renseigner, répartition et optimisation masquées, grille réduite aux cartes utiles. Validation : 14 tests unitaires, typage complet et deux scénarios navigateur (première formule, quatre outils dont deux gratuits).
+
+## 2026-10-23 — Outils gratuits visibles dans le budget
+
+Le budget distingue les lignes payantes des outils gratuits, nommés avec leur logo et sans coût ajouté. Les formules non renseignées restent exclues explicitement, jamais assimilées à du gratuit. Le compteur des autres coûts ne compte que les lignes payantes restantes.
+
 ## 2026-10-23 — Contrôle des tokens après fusion Ma stack
 
 Centralisation des quatre couleurs SVG de StackKit dans la palette CSS et réutilisation pour les mêmes accents du dashboard. Baseline et règle CI inchangées.
