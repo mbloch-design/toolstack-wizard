@@ -1,3 +1,10 @@
+## 2026-10-23 — E-mails : logo réel et design system actuel
+
+- Logo officiel rasterisé en PNG haute résolution pour les clients mail, hébergement public vérifié ; aucun suivi ajouté.
+- Palette actuelle, hiérarchie, espacements et CTA arrondi appliqués aux deux e-mails.
+- Modèles enregistrés puis rouverts dans Supabase depuis le profil Chrome propriétaire ; sauvegarde préalable hors Git. Aperçus confirmation/récupération vérifiés.
+- Quatre rendus locaux mobile/ordinateur passent ; réception des nouvelles versions pas encore recettée. SMTP intégré inchangé.
+
 ## 2026-10-23 — E-mails de compte : sources ToolTrim
 
 - Modèles confirmation et récupération : identité ToolTrim, un CTA, textes FR/EN, aucune ressource distante ni suivi.

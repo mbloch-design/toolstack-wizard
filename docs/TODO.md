@@ -8,6 +8,9 @@ Légende : **[décision]** = attend un arbitrage de Michael.
 
 ## En cours
 
+### Comptes — retour de connexion (retour utilisateur du 23 octobre 2026)
+- [ ] Revoir la transition OAuth : la page « Connexion à ToolTrim / Vous êtes connecté / Chargement de votre stack… » ressemble à une destination sans action claire. Attendu : transition discrète, puis retour automatique à la page/action d’origine (Ma stack par défaut), sans hero et footer marketing. Conserver la consommation sécurisée des jetons et les résolutions de brouillon/conflit. Observation Chrome : le retour à Ma stack a bien fini par s’effectuer ; aucun blocage permanent confirmé. Revoir aussi l’état d’attente prolongée avec reprise accessible.
+
 ### Recherche des fiches outils
 Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs/PRICE_CHECK_BRIEF.md`.
 - [x] 370 dossiers « faits » produits en cloud (25 au 30/09/2026, ~0,19 $/fiche), complétés en local par Sonnet (01/10/2026), prix revérifiés sur pages officielles (02/10/2026) : **environ 350 fiches recherchées en ligne**
