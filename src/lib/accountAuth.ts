@@ -19,8 +19,23 @@ export function accountCallbackUrl(options: AccountAuthOptions = {}): string | u
   if (typeof window === 'undefined') return undefined;
   const lang = options.lang ?? 'fr';
   const url = new URL(accountPath(lang, 'callback'), window.location.origin);
-  url.searchParams.set('returnTo', safeAccountReturnTo(options.returnTo, lang, window.location.origin));
+  try { window.sessionStorage.setItem(`tooltrim:auth-return:${lang}`, JSON.stringify({ path: safeAccountReturnTo(options.returnTo, lang, window.location.origin), at: Date.now() })); } catch { /* A blocked store falls back to Ma stack after authentication. */ }
   return url.href;
+}
+/** Same-tab navigation only; cross-device email links safely open Ma stack. */
+export function accountCallbackReturnTo(lang: AccountLang, legacyReturnTo?: string | null): string {
+  const origin = typeof window === 'undefined' ? 'https://tooltrim.com' : window.location.origin;
+  let stored: string | undefined;
+  try {
+    const key = `tooltrim:auth-return:${lang}`;
+    const raw = window.sessionStorage.getItem(key);
+    const value = raw ? JSON.parse(raw) : null;
+    if (typeof value?.path === 'string' && typeof value.at === 'number' && Date.now() >= value.at && Date.now() - value.at < 60 * 60 * 1000) stored = value.path;
+  } catch { /* Storage is optional navigation context. */ }
+  return safeAccountReturnTo(legacyReturnTo ?? stored, lang, origin);
+}
+export function clearAccountCallbackReturnTo(lang: AccountLang): void {
+  try { window.sessionStorage.removeItem(`tooltrim:auth-return:${lang}`); } catch { /* Optional navigation context. */ }
 }
 const emailValue = (email: string) => email.trim().toLowerCase();
 export async function providerSignIn(auth: Auth, provider: 'google' | 'github', options?: AccountAuthOptions): Promise<AuthResult> {
