@@ -83,7 +83,7 @@ test('Google success returns safely and adopts the SDK session without losing dr
     const path = '/src/lib/stackAccountCoordinator.ts'; const { getStackAccountReturnUrl } = await import(/* @vite-ignore */ path);
     return ['https://outside.example.invalid/path', '//outside.example.invalid/path', '/en/not-a-route', '/\\outside.example.invalid'].map(returnTo => getStackAccountReturnUrl({ lang: 'en', returnTo }));
   }); expect(safeReturns).toEqual(Array(4).fill(`${process.env.PLAYWRIGHT_BASE_URL}/en/ma-stack`));
-  await dismissConsent(page); await page.getByRole('button', { name: 'Create my stack', exact: true }).click(); await page.getByRole('button', { name: 'Continue with Google', exact: true }).click();
+  await dismissConsent(page); await page.getByRole('button', { name: 'See the full diagnosis', exact: true }).click(); await page.getByRole('button', { name: 'Continue with Google', exact: true }).click();
   await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: Google Fixture'); await saved(page);
   await expect(page).toHaveURL(/\/en\/ma-stack\?recette=google#?$/); expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual(['figma']);
   expect((await control(request, 'state')).accounts[0].stack.state.selection.pinnedToolSlugs).toEqual(['figma']);

@@ -15,6 +15,8 @@ import { decisionSavingInCurrency } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import StackWelcome from "@/components/stack/StackWelcome";
+import StackOnboarding from "@/components/stack/StackOnboarding";
+import { writeStarterDraft } from "@/components/stack/StackStarter";
 import { useStackUsage } from "@/hooks/useStackUsage";
 import { isUsageLevel } from "@/lib/personalStack";
 import StackAccountPanel from "@/components/stack/StackAccountPanel";
@@ -446,31 +448,14 @@ export default function CartPage() {
   if (requiresAccount) return <StackWelcome />;
 
   // First tool: one question, a search and four one-click suggestions (accounts branch, 23/10).
+  // Signed in with an empty stack: a short setup in the person's own space; the picks become the stack at the end.
   if (empty) return <div className="ms-page ms-page--start">
     <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
-    <section className="ms-start" aria-labelledby="ms-start-title">
-      <div className="ms-start-story">
-        <div className="ms-start-copy">
-          <p className="ms-start-eyebrow">{t("VOTRE STACK, VOS CHOIX", "YOUR STACK, YOUR CHOICES")}</p>
-          <h1 id="ms-start-title">{t("Choisir, pas empiler.", "Choose. Don't pile up.")}</h1>
-          <p className="ms-start-intro">{t("Les bons outils font la différence. Rassemblez les vôtres pour voir ce qu’ils vous apportent, ce qu’ils vous coûtent et lesquels font double emploi.", "The right tools make a difference. Bring yours together to understand their value, their cost and where they overlap.")}</p>
-          <p className="ms-start-bridge">{t("Commencez par un outil. La vue d’ensemble se construit au fil de vos ajouts.", "Start with one tool. Your overview takes shape as you add more.")}</p>
-        </div>
-        <figure className="ms-start-visual">
-          <figcaption><Layers3 size={20} aria-hidden /><span>{t("Une stack plus claire", "A clearer stack")}</span><small>{t("Illustration", "Illustration")}</small></figcaption>
-          <div className="ms-start-insight"><span className="ms-start-insight-icon ms-start-insight-icon--tools"><LayoutGrid size={22} aria-hidden /></span><div><strong>{t("Vos outils, réunis", "Your tools, together")}</strong><p>{t("Une vue organisée par usage.", "An overview organised by use.")}</p></div><span className="ms-start-mini-map" aria-hidden><i/><i/><i/><i/></span></div>
-          <div className="ms-start-insight"><span className="ms-start-insight-icon ms-start-insight-icon--budget"><Wallet size={22} aria-hidden /></span><div><strong>{t("Votre budget, lisible", "Your budget, at a glance")}</strong><p>{t("Un coût estimé à affiner avec vos abonnements.", "An estimate you can refine with your subscriptions.")}</p></div><span className="ms-start-mini-bars" aria-hidden><i/><i/><i/></span></div>
-          <div className="ms-start-insight"><span className="ms-start-insight-icon ms-start-insight-icon--overlap"><Copy size={22} aria-hidden /></span><div><strong>{t("Les usages en commun, visibles", "Shared uses, made visible")}</strong><p>{t("De quoi comparer avant d’ajouter.", "Compare before adding another tool.")}</p></div><span className="ms-start-mini-overlap" aria-hidden><i/><i/></span></div>
-        </figure>
-      </div>
-      <div className="ms-start-workbench">
-      <h2>{t("Quel est votre premier outil ?", "What's your first tool?")}</h2>
-      <p className="ms-start-help">{t("Cherchez un logiciel que vous utilisez déjà, puis ajoutez-le à votre stack.", "Find software you already use, then add it to your stack.")}</p>
-      <div className="ms-start-action"><label className="sr-only" htmlFor="ms-first-tool">{t("Quel outil utilisez-vous ?", "Which tool do you use?")}</label>{searchPanel}</div>
-      {!query.trim() && !loading && <div className="ms-start-suggestions"><p>{t("Un premier ajout, en un clic", "Add your first tool in one click")}</p><div>{tools.filter(tool => ["notion", "figma", "chatgpt", "slack"].includes(toolKey(tool))).slice(0,4).map(tool => <button type="button" key={tool.id} onClick={() => { if (pinTool(toolKey(tool))) { requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true })); toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); } }} aria-label={t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}><ToolLogo tool={tool} size={24} /><span>{tool.name}</span><Plus size={16} aria-hidden /></button>)}</div></div>}
-      <StackAccountPanel empty />
-      </div>
-    </section>
+    <StackOnboarding onOpen={(slugs, welcome) => {
+      const added = slugs.filter((slug) => pinTool(slug));
+      if (added.length) { writeStarterDraft([]); requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true })); toast.success(welcome); }
+    }} />
+    <StackAccountPanel empty />
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt" ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.") : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
     {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupérée depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
   </div>;

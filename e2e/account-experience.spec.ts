@@ -195,19 +195,45 @@ for (const provider of ['google','github'] as const) test(`OAuth useful profile 
  expect((await snapshot(page)).version).toBe(4);
 });
 
-test('empty guest stack explains its value and requires an account before adding tools', async ({page,request}) => {
+test('a guest builds a stack before the account, and finds it waiting after signing in', async ({page,request}) => {
  await page.goto('/en/ma-stack'); await dismissConsent(page);
- await expect(page.getByRole('heading',{name:'The right tools. Just the essentials.',exact:true})).toBeVisible();
- await expect(page.getByRole('searchbox',{name:'Add a tool to my stack',exact:true})).toHaveCount(0);
- await page.getByRole('button',{name:'Create my stack',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'Pay for what works. Nothing more.',exact:true})).toBeVisible();
+ const keep=page.getByRole('button',{name:'See the full diagnosis',exact:true});
+ await expect(keep).toBeDisabled();
+ for (const name of ['Notion','Trello','Asana']) await page.getByRole('button',{name:`I use ${name}`,exact:true}).click();
+ const stack=page.locator('.ss-stack');
+ await expect(stack.locator('.ss-facts div').filter({hasText:'Tools'}).locator('dd')).toHaveText('3');
+ // The count of overlaps is real; the other side of each pair comes with the account.
+ await expect(stack.locator('.ss-reading')).toHaveText('3 pairs do the same job.');
+ await expect(stack.locator('.ss-pairs li').first()).toContainText('and another tool');
+ await keep.click();
  await expect(page.getByRole('dialog').getByRole('heading',{name:'Create your ToolTrim account',exact:true})).toBeVisible();
  await page.keyboard.press('Escape');
+ // Nothing is pinned without an account: the picks are a draft on this page.
  expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
+ await page.reload(); await expect(stack.getByRole('button',{name:'Remove Notion',exact:true})).toBeVisible();
  await control(request,'seed',{email:'first-tool@example.invalid',state:state([])});
  await login(page,'en','first-tool@example.invalid'); await saved(page);
- await page.getByRole('searchbox',{name:'Add a tool to my stack',exact:true}).fill('Notion');
- await page.locator('.ms-results').getByRole('button',{name:'Add Notion',exact:true}).click();
- expect((await snapshot(page)).selection.pinnedToolSlugs).toContain('notion'); await saved(page);
+ // Signed in, the onboarding opens in the person's space with the guest picks already there.
+ await expect(page.getByRole('heading',{level:1,name:/^Good (morning|afternoon|evening)\.$/})).toBeVisible();
+ await expect(page.getByText(/Your 3 tools have already moved in/)).toBeVisible();
+ await page.getByRole('button',{name:'Let’s go',exact:true}).click();
+ await page.getByRole('button',{name:/^Operations/}).click();
+ await expect(page.getByRole('heading',{level:1,name:'And your day rate?',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:'I’d rather not say',exact:true}).click();
+ for (const name of ['Notion','Trello','Asana']) await expect(page.locator('.ss-wall').getByRole('button',{name:`Remove ${name}`,exact:true})).toBeVisible();
+ await page.locator('.ss-stack').getByRole('button',{name:'Continue',exact:true}).click();
+ await expect(page.getByRole('heading',{level:1,name:'All set.',exact:true})).toBeVisible();
+ expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
+ await page.getByRole('button',{name:'Open my space',exact:true}).click();
+ await expect.poll(async()=>(await snapshot(page)).selection.pinnedToolSlugs.sort()).toEqual(['asana','notion','trello']);
+ expect((await snapshot(page)).trade).toBe('ops');
+ expect((await snapshot(page)).dailyRate).toBeNull();
+ await saved(page);
+ const remote=(await control(request,'state')).accounts.find((account:{email:string})=>account.email==='first-tool@example.invalid');
+ expect(remote.stack.state.trade).toBe('ops');
+ await expect(page.getByRole('heading',{name:'All set.',exact:true})).toHaveCount(0);
+ expect(await page.evaluate(()=>localStorage.getItem('tooltrim-stack-starter-draft'))).toBeNull();
 });
 
 for (const width of [390, 1440]) test(`navigation roles ${width}: cart access stays top right, contextual add and account menu stay distinct`, async ({page}) => {
@@ -218,7 +244,7 @@ for (const width of [390, 1440]) test(`navigation roles ${width}: cart access st
  await expect(cart).toBeVisible();
  await expect(cart).toHaveAttribute('href','/en/ma-stack');
  await expect(page.locator('.asv2-sidebar').getByRole('link',{name:'My stack',exact:true})).toHaveCount(0);
- await expect(page.getByRole('button',{name:'Create my stack',exact:true})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'Which tools do you use?',exact:true})).toBeVisible();
  await expect(page.getByRole('searchbox',{name:'Add a tool to my stack',exact:true})).toHaveCount(0);
  await login(page,'en',`navigation-${width}@example.invalid`); await saved(page);
  await page.locator('.ac-header-trigger--account').click();
@@ -249,19 +275,41 @@ test('catalogue add requires authentication and never claims an anonymous save',
 });
 
 for (const lang of ['fr','en'] as const) for (const width of [390,1440]) test(`connected empty stack onboarding ${lang} ${width}`, async ({page,request}) => {
+ const fr=lang==='fr';
  await page.setViewportSize({width,height:1000});
- await control(request,'seed',{email:'empty-start@example.invalid'});
- await page.goto(`/${lang}/ma-stack`);await login(page,lang,'empty-start@example.invalid');
- await expect(page.getByRole('heading',{name:lang==='fr'?"Choisir,\u00a0pas empiler.":"Choose. Don't pile up.",exact:true})).toBeVisible();
- await expect(page.getByText(lang==='fr'?'Stack enregistrée':'Stack saved',{exact:true})).toHaveCount(0);
- await expect(page.getByRole('searchbox',{name:lang==='fr'?'Ajouter un outil à ma stack':'Add a tool to my stack'})).toBeVisible();
+ await control(request,'seed',{email:`empty-start-${lang}-${width}@example.invalid`,displayName:'Camille Martin'});
+ await page.goto(`/${lang}/ma-stack`);await login(page,lang,`empty-start-${lang}-${width}@example.invalid`,undefined,'Camille Martin');
+ // Hello by first name, in the person's own space.
+ await expect(page.getByRole('heading',{level:1,name:fr?/^(Bonjour|Bonsoir), Camille\.$/:/^Good (morning|afternoon|evening), Camille\.$/})).toBeVisible();
+ await expect(page.getByText(fr?'Stack enregistrée':'Stack saved',{exact:true})).toHaveCount(0);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
+ await page.getByRole('button',{name:fr?'C’est parti':'Let’s go',exact:true}).click();
+ await expect(page.getByRole('heading',{level:1,name:fr?'Que faites-vous, Camille ?':'What do you do, Camille?',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:fr?/^Conseil/:/^Consulting/}).click();
+ await expect(page.getByRole('heading',{level:1,name:fr?'Et votre tarif journalier, Camille ?':'And your day rate, Camille?',exact:true})).toBeVisible();
+ const go=page.locator('.so-step').getByRole('button',{name:fr?'Continuer':'Continue',exact:true});
+ await expect(go).toBeDisabled();
+ await page.locator('.so-rate-chips button').nth(3).click();
+ await page.getByRole('button',{name:fr?'Augmenter de 25':'Raise by 25',exact:true}).click();
+ await expect(page.locator('.so-rate-hint')).toContainText(fr?'sur une journée de 7 heures':'on a 7-hour day');
+ await go.click();
+ const rate=(await snapshot(page)).dailyRate;
+ expect(rate?.amount).toBe(525);
+ await expect(page.getByRole('heading',{level:1,name:fr?'Vos trois premiers outils.':'Your first three tools.',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:fr?'J’utilise Notion':'I use Notion',exact:true}).click();
  await page.screenshot({path:`test-results/accounts/empty-start-${lang}-${width}.png`,fullPage:true});
- await page.getByRole('button',{name:lang==='fr'?'Ajouter Notion':'Add Notion',exact:true}).click();
+ await page.locator('.ss-stack').getByRole('button',{name:fr?'Continuer':'Continue',exact:true}).click();
+ await expect(page.getByRole('heading',{level:1,name:fr?'C’est prêt, Camille.':'All set, Camille.',exact:true})).toBeVisible();
+ await page.getByRole('button',{name:fr?'Ouvrir mon espace':'Open my space',exact:true}).click();
  await expect.poll(async()=> (await snapshot(page)).selection.pinnedToolSlugs).toContain('notion');
+ expect((await snapshot(page)).trade).toBe('consultant');
  await saved(page,lang);
- await expect(page.getByRole('heading',{name:lang==='fr'?'Mes outils':'My tools',exact:true})).toBeVisible();
- await expect(page.getByRole('heading',{name:lang==='fr'?'Mes outils':'My tools',exact:true})).toBeFocused();
+ const remote=(await control(request,'state')).accounts.find((account:{email:string})=>account.email===`empty-start-${lang}-${width}@example.invalid`);
+ expect(remote.stack.state.trade).toBe('consultant');
+ expect(remote.stack.state.dailyRate).toEqual(rate);
+ await expect(page.getByRole('heading',{name:fr?'Mes outils':'My tools',exact:true})).toBeVisible();
+ await expect(page.getByRole('heading',{name:fr?'Mes outils':'My tools',exact:true})).toBeFocused();
+ await expect(page.locator('[data-sonner-toast]').filter({hasText:fr?'Bienvenue chez vous, Camille. Profitez-en.':'Welcome home, Camille. Enjoy.'})).toBeVisible();
 });
 test('OAuth callback remains a quiet transition while reading stack, then returns automatically',async({page,request})=>{
  await page.route('**/api/stack-account',async route=>{if(route.request().method()==='GET')await new Promise(resolve=>setTimeout(resolve,1800));await route.continue();});

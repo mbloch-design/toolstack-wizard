@@ -10,7 +10,23 @@ export type PersonalStackV4 = {
   decisions: Record<string, StackDecision>;
   /** How much the person uses each paid tool, 1 (asleep) to 5 (flat out). */
   usage: Record<string, UsageLevel>;
+  /** The person's trade, chosen during the signed-in onboarding; null until then. */
+  trade: Trade | null;
+  /** The person's daily rate, from the onboarding: it prices their time in recommendations. */
+  dailyRate: DailyRate | null;
 };
+
+export type DailyRate = { amount: number; currency: "EUR" | "USD" | "GBP" };
+export function isDailyRate(value: unknown): value is DailyRate {
+  return isRecord(value) && typeof value.amount === "number" && Number.isFinite(value.amount) && value.amount >= 1 && value.amount <= 100000
+    && (value.currency === "EUR" || value.currency === "USD" || value.currency === "GBP");
+}
+
+export const TRADES = ["dev", "designer", "consultant", "content", "ops", "solo"] as const;
+export type Trade = typeof TRADES[number];
+export function isTrade(value: unknown): value is Trade {
+  return typeof value === "string" && (TRADES as readonly string[]).includes(value);
+}
 
 export type UsageLevel = 1 | 2 | 3 | 4 | 5;
 
@@ -137,6 +153,8 @@ export function normalizePersonalStack(input: unknown): PersonalStackV4 {
     }])),
     // Absent in snapshots saved before usage existed: an empty record, never an error.
     usage: usageLevels(envelope?.usage),
+    trade: isTrade(envelope?.trade) ? envelope.trade : null,
+    dailyRate: isDailyRate(envelope?.dailyRate) ? { amount: envelope.dailyRate.amount, currency: envelope.dailyRate.currency } : null,
   };
 }
 
@@ -183,6 +201,9 @@ export function validatePersonalStack(input: unknown): PersonalStackV4 {
     requireValid(isRecord(input.usage), "usage");
     for (const [slug, level] of Object.entries(input.usage)) requireValid(isString(slug) && isUsageLevel(level), `usage.${slug}`);
   }
+  // Optional too; when sent, null or one of the known trades.
+  if (input.trade !== undefined) requireValid(input.trade === null || isTrade(input.trade), "trade");
+  if (input.dailyRate !== undefined) requireValid(input.dailyRate === null || isDailyRate(input.dailyRate), "dailyRate");
   return normalizePersonalStack(input);
 }
 
@@ -263,6 +284,9 @@ export function mergeAnonymousDraft(saved: PersonalStackV4, draft: PersonalStack
     decisions,
     // A saved answer wins; the draft adds answers only for tools the account did not rate.
     usage: { ...Object.fromEntries(Object.entries(incoming.usage).filter(([slug]) => selected.has(slug))), ...retained.usage },
+    // Same rule: the account's trade wins, the draft fills it in when the account has none.
+    trade: retained.trade ?? incoming.trade,
+    dailyRate: retained.dailyRate ?? incoming.dailyRate,
   });
 }
 

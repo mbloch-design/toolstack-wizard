@@ -150,6 +150,22 @@ describe("personal stack HTTP boundary", () => {
     expect(mocks.rpc.mock.calls.some(([name]) => name === "save_personal_stack")).toBe(false);
   });
 
+  it.each([{ amount: 0, currency: "EUR" }, { amount: 450, currency: "JPY" }, 450])("rejects an invalid daily rate %j before persistence", async dailyRate => {
+    const invalid = { ...normalizePersonalStack(null), dailyRate };
+    const fixture = request({ state: invalid, expectedRevision: 0 }, "PUT");
+    await handler(fixture.req, fixture.res);
+    expect(fixture.res.statusCode).toBe(400);
+    expect(mocks.rpc.mock.calls.some(([name]) => name === "save_personal_stack")).toBe(false);
+  });
+
+  it.each(["astronaut", "", 3, ["dev"]])("rejects an invalid trade %s before persistence", async trade => {
+    const invalid = { ...normalizePersonalStack(null), trade };
+    const fixture = request({ state: invalid, expectedRevision: 0 }, "PUT");
+    await handler(fixture.req, fixture.res);
+    expect(fixture.res.statusCode).toBe(400);
+    expect(mocks.rpc.mock.calls.some(([name]) => name === "save_personal_stack")).toBe(false);
+  });
+
   it("rejects oversized content length before accessing the body or auth", async () => {
     const fixture = request(undefined, "PUT");
     fixture.req.headers["content-length"] = String(1024 * 1024 + 1);

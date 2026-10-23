@@ -21,7 +21,7 @@ for (const enabled of ["false", "true"]) it(`renders actual public Ma stack SSR 
   const { renderCartPage, renderHomePage, renderToolPage } = await import("./entry-server");
   for (const path of ["/fr/ma-stack", "/fr/my-stack", "/en/ma-stack", "/en/my-stack"]) {
     const html = await renderCartPage(path);
-    expect(html.match(/<h1\b[^>]*>[^<]+<\/h1>/g)).toHaveLength(1);
+    expect(html.match(/<h1\b[^>]*>(?:(?!<\/h1>)[\s\S])+<\/h1>/g)).toHaveLength(1);
     expect(html).toContain(path.startsWith("/en/") ? "My stack" : "Ma stack");
     expect(html).not.toContain("@example.");
     expect(html).not.toContain("requires StackAccountProvider");

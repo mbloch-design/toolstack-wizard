@@ -8,6 +8,10 @@ Légende : **[décision]** = attend un arbitrage de Michael.
 
 ## En cours
 
+- [ ] P1 E2E comptes : `full personal state survives new device` (×4) échoue déjà sur la branche avant l'onboarding : il attend `.ms-account`, que le panneau ne rend plus quand la stack est synchronisée (pastille « Stack enregistrée »). Viser la pastille.
+- [ ] **[décision]** Landing Ma stack : confirmer « gratuit, sans carte bancaire » et « supprimez vos données quand vous voulez » comme engagements publics.
+- [ ] P2 Onboarding : recompter `src/data/tradeTools.ts` quand les stacks éditoriales changent beaucoup (comptage du 23/10/2026).
+- [ ] P2 Exploiter `trade` et `dailyRate` dans les recommandations et la box décision (valeur de l'heure face au prix des offres).
 - [ ] P1 E2E Ma stack sur la branche comptes : 8 tests (`mon-stack-v1` parcours vide, `pricing-audit-regressions` ×3, `responsive-shell` ×3, `technical-audit-regressions` onglets) échouent déjà avant la fusion du dashboard. Ils écrivent encore dans les anciennes clés locales (`tooltrim-ma-stack-*-v1`), que le magasin personnel ne lit qu'une fois, ou visent l'ancien en-tête : les réécrire sur `tooltrim-personal-stack-v4:anonymous`.
 
 ### Recherche des fiches outils

@@ -1739,3 +1739,11 @@ Remplace le bilan à trois cartes et la file « Prochaine décision ». Un seul 
 3. **Ensuite / Puis** (deux cartes discrètes, sans bouton) : la suite, groupée par type. Une carte vide disparaît et la grille se referme.
 
 Quand tout est réglé, la carte large devient le **bilan** : économie en compteur, « soit X € par an », barres avant et après avec la part économisée hachurée, décisions en logos (outil gardé coché, outil retiré estompé), « Ajouter un outil » et « Explorer autour de ma stack ». Sur mobile, les cartes s'empilent dans le même ordre de lecture, le prix d'abord.
+
+## Ma stack — landing et onboarding (`ss-*`, `sl-*`, `so-*`)
+
+- Non connecté : le hero est le sélecteur d'outils (`StackStarter`, `ss-*`) avec la carte « Votre stack » à droite. Sous le hero, bandes `sl-*` claires uniquement : pas de gris foncé ni de noir, les illustrations montrent un fragment réel du produit sur un plateau teinté (`--tone`), jamais une forme abstraite.
+- Connecté avec une stack vide : un écran centré par étape (`so-*`), progression en segments, bouton « Retour » à gauche. Un seul champ libre : le prénom, et seulement s'il manque. Le tarif se choisit avec des pastilles et un stepper.
+- Mouvement : aucune `transform` ne doit rester sur un ancêtre du dock mobile fixe (`animation-fill-mode: backwards` sur les étapes). Le bonjour défile mot par mot dans une ligne masquée, sans fondu superposé. Chaque animation a son équivalent `prefers-reduced-motion`.
+- Accessibilité : pas de `aria-live` dans une page qui ouvre une fenêtre Radix, sinon la page reste exposée derrière elle.
+

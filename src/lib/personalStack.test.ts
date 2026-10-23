@@ -15,6 +15,8 @@ function stack(slugs: string[] = []): PersonalStackV4 {
     billing: { paid: [], reviewed: [], choices: {} },
     decisions: {},
     usage: {},
+    trade: null,
+    dailyRate: null,
   };
 }
 
@@ -30,7 +32,7 @@ describe("personal stack snapshot", () => {
 
   it("wraps legacy v3 selection without inventing billing data or touching separate local stores", () => {
     const selection = stack(["legacy-tool"]).selection;
-    expect(normalizePersonalStack(selection)).toEqual({ version: 4, selection, billing: { paid: [], reviewed: [], choices: {} }, decisions: {}, usage: {} });
+    expect(normalizePersonalStack(selection)).toEqual({ version: 4, selection, billing: { paid: [], reviewed: [], choices: {} }, decisions: {}, usage: {}, trade: null, dailyRate: null });
   });
 
   it("recovers valid records independently and deduplicates without discarding declared amounts", () => {
@@ -256,5 +258,39 @@ describe("stored personal stack recognition", () => {
     expect(output.selection.pinnedToolSlugs).toEqual(["unknown-json-reference", " padded-reference "]);
     expect(output.billing).toEqual({ paid: [], reviewed: [], choices: {} });
     expect(JSON.stringify(input)).toBe(before);
+  });
+});
+
+describe("trade", () => {
+  it("round trips a known trade, reads older snapshots as null and rejects unknown values", () => {
+    const input = stack(["a"]);
+    expect(validatePersonalStack(JSON.parse(JSON.stringify({ ...input, trade: "designer" }))).trade).toBe("designer");
+    expect(validatePersonalStack(JSON.parse(JSON.stringify({ ...input, trade: null }))).trade).toBeNull();
+    const { trade: _, ...older } = input;
+    expect(validatePersonalStack(JSON.parse(JSON.stringify(older))).trade).toBeNull();
+    expect(() => validatePersonalStack({ ...input, trade: "astronaut" })).toThrow();
+    expect(() => validatePersonalStack({ ...input, trade: 3 })).toThrow();
+    expect(normalizePersonalStack({ ...input, trade: "astronaut" }).trade).toBeNull();
+  });
+  it("keeps the account's trade when merging a draft, and takes the draft's when the account has none", () => {
+    expect(mergeAnonymousDraft({ ...stack(["a"]), trade: "ops" }, { ...stack(["b"]), trade: "dev" }).trade).toBe("ops");
+    expect(mergeAnonymousDraft(stack(["a"]), { ...stack(["b"]), trade: "dev" }).trade).toBe("dev");
+  });
+});
+
+describe("daily rate", () => {
+  it("round trips a rate, reads older snapshots as null and rejects invalid values", () => {
+    const input = stack(["a"]);
+    expect(validatePersonalStack(JSON.parse(JSON.stringify({ ...input, dailyRate: { amount: 450, currency: "EUR" } }))).dailyRate).toEqual({ amount: 450, currency: "EUR" });
+    const { dailyRate: _, ...older } = input;
+    expect(validatePersonalStack(JSON.parse(JSON.stringify(older))).dailyRate).toBeNull();
+    for (const bad of [{ amount: 0, currency: "EUR" }, { amount: 100001, currency: "EUR" }, { amount: "450", currency: "EUR" }, { amount: 450, currency: "JPY" }, 450]) {
+      expect(() => validatePersonalStack({ ...input, dailyRate: bad })).toThrow();
+    }
+  });
+  it("keeps the account's rate when merging a draft", () => {
+    const rate = { amount: 500, currency: "EUR" as const };
+    expect(mergeAnonymousDraft({ ...stack(["a"]), dailyRate: rate }, { ...stack(["b"]), dailyRate: { amount: 300, currency: "USD" } }).dailyRate).toEqual(rate);
+    expect(mergeAnonymousDraft(stack(["a"]), { ...stack(["b"]), dailyRate: rate }).dailyRate).toEqual(rate);
   });
 });
