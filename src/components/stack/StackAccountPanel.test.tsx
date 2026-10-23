@@ -233,3 +233,22 @@ it("keeps healthy save status inline and hides the standalone notice",()=>{
  view.rerender(<StackAccountPanel placement="notice"/>);
  expect(screen.getByRole('status')).toHaveTextContent('Sauvegarde indisponible');
 });
+
+// Healthy debounce and requests are progress, never recovery prompts.
+it.each(["unsaved", "syncing"] as const)("keeps healthy %s compact without retry", (status) => {
+  account.user = user; account.syncStatus = status; account.hasUnsavedChanges = true;
+  const result = render(<StackAccountPanel empty />);
+  expect(screen.getByRole("status")).toHaveTextContent("Enregistrement…");
+  expect(result.container.querySelector("section.ms-account")).toBeNull();
+  expect(screen.queryByRole("button", { name: "Réessayer l’enregistrement" })).not.toBeInTheDocument();
+  result.rerender(<StackAccountPanel placement="notice" />);
+  expect(result.container).toBeEmptyDOMElement();
+  result.rerender(<StackAccountPanel placement="inline" />);
+  expect(screen.getByRole("status")).toHaveTextContent("Enregistrement…");
+});
+
+it("keeps an actual failure visible even when the local state is unsaved", () => {
+  account.user = user; account.syncStatus = "unsaved"; account.error = "STACK_ACCOUNT_NETWORK_ERROR";
+  view();
+  expect(screen.getByRole("button", { name: "Réessayer l’enregistrement" })).toBeVisible();
+});

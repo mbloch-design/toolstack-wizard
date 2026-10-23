@@ -1,6 +1,6 @@
 # Comptes et stacks : exploitation et activation
 
-État au 23 octobre 2026 : expérience de compte activée en préproduction sur la branche `codex/accounts-stack-mvp`, avec le projet Supabase existant expressément autorisé par le propriétaire. Quatre migrations de comptes ont été appliquées après sauvegarde. Google et GitHub ont été configurés puis testés par le propriétaire jusqu’au retour connecté vers Ma stack. Les flags restent désactivés par défaut dans le code. Aucune promotion du site en production.
+État au 23 octobre 2026 : expérience de compte activée en préproduction sur la branche `codex/accounts-stack-mvp`, avec le projet Supabase existant expressément autorisé par le propriétaire. Six migrations de comptes ont été appliquées après sauvegarde (les deux dernières via SQL Editor, sans entrée dans l’historique). Google et GitHub ont été configurés puis testés par le propriétaire jusqu’au retour connecté vers Ma stack. Les flags restent désactivés par défaut dans le code. Aucune promotion du site en production.
 
 ## État de préparation
 
@@ -202,7 +202,7 @@ Désactiver les flags de compte serveur et navigateur ainsi que ceux des fournis
 
 En cas de panne, le cache sale reste lié à son propriétaire ; ne pas le copier dans un brouillon anonyme. Proposer réessai/reconnexion/conflit selon l'état affiché. Ne pas annoncer une suppression distante après une simple expiration de session : l'action de nettoyage local est distincte de la confirmation serveur. Si le navigateur bloque le nettoyage, suivre l'avertissement de l'interface et effacer les données du site sur l'appareil partagé. Ne pas exporter les caches personnels dans les journaux de support.
 
-Le persona, le métier, l’entreprise et la qualification progressive restent pour plus tard, séparés du profil et de la preuve de connexion. Aucun questionnaire obligatoire ni schéma persona anticipé dans cette livraison.
+Le métier et le tarif journalier facultatif sont collectés dans l’onboarding et conservés dans la stack, séparément du profil et de la preuve de connexion. L’entreprise et une qualification supplémentaire restent différées.
 
 ## Préflight de préproduction du 23 octobre 2026
 
@@ -212,8 +212,8 @@ Le persona, le métier, l’entreprise et la qualification progressive restent p
   - Après usage : sondes `empty_ok / usage_ok / usage_9_accepted / onboarding_ok / trade_unknown_accepted / rate_0_accepted` = `true / true / false / true / true / true`. Après onboarding : `true / true / false / true / false / false` ; contrôles `usage` / `trade` = `true / true`.
   - Après chacune : `security_definer / anon EXECUTE / authenticated EXECUTE` à `false / false / false` sur `_personal_stack_valid` et `_personal_stack_stored` ; les quatre compteurs restent `2 / 2 / 2 / 0`. Aucun écart dans les sondes, droits ou compteurs, aucun retour arrière.
   - Historique final `supabase_migrations.schema_migrations` inchangé, dernière version `20261023060651` (`account_oauth_profile`) : les deux fichiers appliqués par SQL Editor ne sont pas enregistrés dans cette table, conformément à la procédure. Aucun autre objet ni droit modifié. Ordre opératoire : les trois lectures du préflight ont précédé la sauvegarde, qui a bien précédé toute écriture. Étape 4 applicative non exécutée dans cette intervention : aucun compte de test désigné et instruction explicite de ne pas déployer ; aucun déploiement ni promotion en production lancé.
-- Auth publique : e-mail activé, inscription permise, confirmation requise ; Google et GitHub désactivés. SMTP, templates et livraison réelle non vérifiés.
-- Vercel : connecteur refusé (403), mais accès CLI vérifié au projet `toolstack-wizard` de l’équipe `mbloch-designs-projects`. Déploiement de recette en préparation.
+- État Auth au début du préflight : e-mail activé avec confirmation ; Google et GitHub étaient alors désactivés. État ultérieur : les deux fournisseurs ont été configurés et leur retour connecté confirmé par le propriétaire. Les modèles ToolTrim sont enregistrés ; leur livraison réelle reste à recetter (voir la recette ci-dessous).
+- État Vercel au début du préflight : connecteur refusé (403), accès CLI vérifié au projet `toolstack-wizard` de l’équipe `mbloch-designs-projects` ; les déploiements de recette ultérieurs sont consignés ci-dessous.
 - Recette supplémentaire locale : API 283 tests réussis, 18 ignorés ; migrations/assertions/rollback SQL réussis en base éphémère. Ces résultats ne prouvent pas une connexion OAuth ou une livraison e-mail réelle.
 
 Avant de communiquer une URL de recette : vérifier la cible Vercel de préproduction et le projet Supabase convenu, contrôler les migrations installées, configurer les secrets serveur et les retours autorisés, activer les flags, déployer la version vérifiée, puis tester inscription/confirmation, connexion/déconnexion, récupération, sauvegarde/relecture de stack et refus d’accès privé. Tester chaque fournisseur OAuth avant d’activer son bouton. Ne pas promouvoir en production dans ce lot.
@@ -233,4 +233,11 @@ Les sources versionnées des messages de confirmation et récupération se trouv
 - Les messages génériques de confirmation/récupération ont été reçus sur un alias de recette autorisé. Les limitations liées à la protection Vercel lors du test navigateur sont consignées dans le rapport de recette.
 - Les deux modèles de ces messages sont maintenant enregistrés dans Supabase au style ToolTrim, avec le logo officiel converti en PNG et hébergé dans le seul bucket public de marque. Leur persistance et leur aperçu ont été revérifiés ; livraison de ces nouvelles versions non encore recettée. Le SMTP intégré reste inchangé.
 - Le 23 octobre, le compte connecté du propriétaire a été refusé par l’allowlist serveur, puis son ajout a été explicitement autorisé. Modification limitée à la variable Preview de la branche comptes ; accès existants conservés. Déploiement `dpl_8Uy7VBkNBWRdmXN8mJTTDowq4BFe` READY, commit `9fd2bf8830727ab0fa736bfdb53c0c348ddb5f47`. Accès réel vérifié dans Chrome : tableau chargé, compte retrouvé par recherche, détail et état de stack affichés. Les compteurs globaux (2 comptes confirmés, 0 stack sauvegardée) correspondent à la requête de contrôle en base et restent globaux après filtrage. API anonyme refusée avec HTTP 401.
-- Le passage OAuth par la page technique de chargement est à reprendre côté UX (voir TODO), même si le retour final à Ma stack fonctionne.
+- L’ancienne page technique de retour OAuth a ensuite été remplacée par une transition discrète avec retour automatique. Les parcours simulés vérifient cette transition ; la recette navigateur avec les fournisseurs réels reste distincte.
+
+
+### Contrôles continus après la revue du 23 octobre 2026
+
+Le job CI `accounts` exécute les assertions de migration/droits/rollback sur PostgreSQL éphémère, puis les parcours navigateur avec fournisseurs simulés. Le job principal vérifie également les routes générées comptes après le build. Ces recettes ne remplacent pas les vrais e-mails et retours OAuth du domaine final.
+
+Les états sains d’attente et de sauvegarde sont affichés discrètement ; une reprise manuelle est proposée uniquement pour un véritable échec. Le scénario réseau attend explicitement la réponse PUT et la révision effectivement enregistrée avant l’indicateur visuel. Pour isoler une recette locale d’un serveur déjà actif : `PLAYWRIGHT_ACCOUNTS_PORT=8292 npm run test:e2e:accounts`. Aucune activation publique n’est comprise dans ces corrections.

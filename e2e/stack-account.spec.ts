@@ -49,7 +49,16 @@ test('offline dirty cache survives reload, retry and lost acknowledgement', asyn
   await change(page, state(['notion', 'figma'])); await expect(page.locator('.ms-account [role=status]')).toHaveText(/Unsaved changes|Saving unavailable/);
   await page.reload(); await expect.poll(async () => (await snapshot(page)).selection.pinnedToolSlugs).toEqual(['notion', 'figma']);
   await expect(page.locator('.ms-account [role=status]')).toHaveText(/Unsaved changes|Saving unavailable/);
-  await page.unroute('**/api/stack-account'); await page.getByRole('button', { name: 'Retry saving', exact: true }).click(); await saved(page);
+  await page.unroute('**/api/stack-account');
+  // Observe the resumed write before asserting its rendered acknowledgement.
+  // A timeout now identifies transport, committed state or UI separately.
+  const resumedWrite = page.waitForResponse(response => response.url().endsWith('/api/stack-account') && response.request().method() === 'PUT');
+  await page.getByRole('button', { name: 'Retry saving', exact: true }).click();
+  const response = await resumedWrite;
+  expect(response.status()).toBe(200);
+  expect((await response.json()).stack.revision).toBe(2);
+  await expect.poll(async () => (await control(request, 'state')).accounts[0].stack.revision).toBe(2);
+  await saved(page);
   await control(request, 'fault', { path: '/api/stack-account', method: 'PUT', commitThenFail: true, status: 503 });
   await change(page, state(['figma']));
   await expect.poll(async () => (await control(request, 'state')).accounts[0].stack.revision).toBe(3); await saved(page);

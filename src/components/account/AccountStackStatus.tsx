@@ -157,7 +157,7 @@ export default function AccountStackStatus() {
         </div>
       )}
       {(account.syncStatus === "error" ||
-        account.syncStatus === "unsaved" ||
+        (account.syncStatus === "unsaved" && Boolean(account.error)) ||
         failed) && (
         <>
           <p className="ac-note">

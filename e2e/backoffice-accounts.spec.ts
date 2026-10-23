@@ -71,7 +71,9 @@ test('back-office dirty logout supports cancel, failed signout retry and confirm
   const personal = await seededAdmin(page, request);
   await page.route('**/api/stack-account', route => route.request().method() === 'PUT' ? route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":{"code":"STACK_ACCOUNT_UNAVAILABLE"}}' }) : route.continue());
   personal.billing.choices.figma.amount = 99; await change(page, personal);
-  await expect(page.locator('.ms-account [role=status]')).toHaveText('Unsaved changes');
+  // A failed write followed by the older remote snapshot requires resolution;
+  // the debounce's transient unsaved state is intentionally no longer a notice.
+  await expect(page.locator('.ms-account [role=status]')).toHaveText('Two versions to resolve');
   await openBackOffice(page); await page.locator('.ba-entry-header').getByRole('button', { name: 'Sign out', exact: true }).click();
   const confirm = page.getByRole('button', { name: 'Sign out without saving', exact: true }); await expect(confirm).toBeVisible();
   await page.getByRole('button', { name: 'Keep editing', exact: true }).click(); await expect(confirm).toHaveCount(0);
