@@ -55,8 +55,6 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.getorlo.app",
   "glyphe.eu",
   "www.glyphe.eu",
-  "autophotos.ai",
-  "www.autophotos.ai",
   "commute.bar",
   "www.commute.bar",
   "inspoai.io",

@@ -52603,65 +52603,6 @@
     "prescription_quality": "question"
   },
   {
-    "id": "autophotos-ai",
-    "slug": "autophotos-ai",
-    "name": "AutoPhotos.ai",
-    "toolTrimRating": {
-      "valeurAjoutee": 4,
-      "simplicite": 4,
-      "utilisation": 3,
-      "puissance": 4,
-      "reversibilite": 4,
-      "notedOn": "2026-09-07",
-      "lastActivityVerifiedOn": "2026-08-23"
-    },
-    "categoryId": "creation",
-    "shortDescription": "Retouche les photos produit et crée des vidéos e-commerce avec l'IA.",
-    "shortDescriptionEn": "Edits product photos and creates e-commerce videos with AI.",
-    "pricing": {
-      "free": "Plusieurs outils gratuits dans leur limite quotidienne, plus 5 crédits à la vérification du compte",
-      "paid": "Packs : 4,50 € (20 crédits), 9 € (60), 18 € (150) ; abonnements aux mêmes prix pour 65, 180 ou 400 crédits/mois"
-    },
-    "pricingEn": {
-      "free": "Several tools are free within their daily limit, plus 5 credits after account verification",
-      "paid": "Packs: €4.50 (20 credits), €9 (60), €18 (150); subscriptions at the same prices for 65, 180, or 400 credits/month"
-    },
-    "defaultMonthlyPrice": 4.5,
-    "compareMonthlyPrice": 4.5,
-    "nativePrices": [
-      {
-        "amount": 4.5,
-        "currency": "EUR",
-        "period": "monthly"
-      }
-    ],
-    "websiteUrl": "https://autophotos.ai/",
-    "ogImageUrl": "/og-screenshots/autophotos-ai.png",
-    "logo": "https://autophotos.ai/favicon.svg",
-    "substitution_cluster_v2": "ai-product-photography",
-    "functional_needs": [
-      "generation-visuels-produit",
-      "photographie-produit-ia"
-    ],
-    "verticals": [
-      "ecommercant",
-      "graphiste-da"
-    ],
-    "relevantFor": [
-      "E-commerçants",
-      "Freelances créatifs",
-      "Agences e-commerce",
-      "Petites marques avec un catalogue produit"
-    ],
-    "prescription_quality": "question",
-    "alternatives": [
-      "remove-bg",
-      "canva",
-      "firefly"
-    ],
-    "freeAlternative": "remove-bg"
-  },
-  {
     "id": "commutebar",
     "slug": "commutebar",
     "name": "CommuteBar",

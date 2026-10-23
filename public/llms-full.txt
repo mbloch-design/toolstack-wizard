@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1247
+# Records: 1246
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
@@ -45955,56 +45955,6 @@
         "Built for the UK: several document categories don't apply outside the UK",
         "Very young indie product, no identified legal structure or evidence of use at scale",
         "No real product screenshot publicly available"
-      ]
-    }
-  },
-  {
-    "name": "AutoPhotos.ai",
-    "slug": "autophotos-ai",
-    "url_fr": "https://tooltrim.com/fr/tool/autophotos-ai",
-    "url_en": "https://tooltrim.com/en/tool/autophotos-ai",
-    "website": "https://autophotos.ai/",
-    "category": "creation",
-    "pricing": {
-      "free": "Plusieurs outils gratuits dans leur limite quotidienne, plus 5 crédits à la vérification du compte",
-      "paid": "Packs : 4,50 € (20 crédits), 9 € (60), 18 € (150) ; abonnements aux mêmes prix pour 65, 180 ou 400 crédits/mois"
-    },
-    "description_fr": "Retouche les photos produit et crée des vidéos e-commerce avec l'IA.",
-    "description_en": "Edits product photos and creates e-commerce videos with AI.",
-    "alternatives": [
-      "remove-bg"
-    ],
-    "price_verified_on": "2026-09-07",
-    "verdict_fr": {
-      "score": "3.8/5",
-      "label": "Très bon",
-      "keep_if": "Vous produisez régulièrement des photos produit et des formats courts pour une boutique en ligne",
-      "avoid_if": "Vous avez besoin d'une direction artistique très contrôlée ou d'une retouche avancée par calques",
-      "strengths": [
-        "Photo, vidéo et audio réunis dans une même réserve de crédits",
-        "Plusieurs traitements gratuits permettent de tester sans carte bancaire",
-        "Packs sans abonnement et crédits achetés à l'unité annoncés sans expiration"
-      ],
-      "weaknesses": [
-        "Le coût réel dépend du nombre d'opérations et certaines fonctions vidéo consomment les crédits par durée",
-        "Les crédits d'abonnement ne suivent pas la même règle de conservation que les crédits achetés à l'unité",
-        "Peu de preuves indépendantes permettent encore d'évaluer la régularité des résultats"
-      ]
-    },
-    "verdict_en": {
-      "score": "3.8/5",
-      "label": "Very good",
-      "keep_if": "You regularly produce product photos and short-form content for an online store",
-      "avoid_if": "You need tightly controlled art direction or advanced layer-based editing",
-      "strengths": [
-        "Photo, video, and audio tools share the same credit balance",
-        "Several free operations let you test without a credit card",
-        "One-time packs are available and purchased credits are advertised as non-expiring"
-      ],
-      "weaknesses": [
-        "Actual cost depends on operation count, while some video features charge by duration",
-        "Subscription credits do not follow the same retention rules as one-time credits",
-        "There is little independent evidence yet about output consistency"
       ]
     }
   },

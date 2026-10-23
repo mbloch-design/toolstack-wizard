@@ -1,3 +1,8 @@
+## 2026-10-23 · Retrait d’AutoPhotos.ai
+
+- Suppression de la fiche AutoPhotos.ai FR/EN à la demande du propriétaire du site, qui signale l’arrêt du produit : pas de fiche archivée promotionnelle ni de redirection vers un autre outil.
+- Retrait du catalogue, de l’index de recherche, de la couleur de marque, de l’exception dofollow et du visuel OG public. Routes, sitemap et fichiers LLM régénérés sans cette fiche. Les preuves éditoriales historiques restent dans Git et les dossiers de recherche non publiés.
+
 ## 2026-10-20 · Maillage des sous-pages, llms-full, Proton Pass et Keeper
 
 - Sous-pages prix et alternatives : bloc de liens vers les mêmes sous-pages des 5 premières alternatives (« 1Password pricing », « Prix de Bitwarden ») et vers la sous-page sœur.
