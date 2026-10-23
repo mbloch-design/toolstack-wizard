@@ -32,3 +32,24 @@ export function decisionSavingInCurrency(decision: StackDecision, currency: Curr
   if (!isCurrency(decision.savingCurrency) || !Number.isFinite(decision.saving) || decision.saving < 0) return null;
   return convertAmount(decision.saving, decision.savingCurrency, currency);
 }
+
+
+/** One current removal per tool; a re-added tool no longer contributes savings.
+ * Timestamp ties use the greatest record key, independently of insertion order.
+ */
+export function latestRemovedStackDecisions(
+  decisions: Record<string, StackDecision>,
+  pinned: ReadonlySet<string>,
+): StackDecision[] {
+  const latest = new Map<string, { key: string; decision: StackDecision }>();
+  for (const [key, decision] of Object.entries(normalizeStackDecisions(decisions))) {
+    if (decision.kind === "keep-both" || !decision.removed || pinned.has(decision.removed)) continue;
+    const previous = latest.get(decision.removed);
+    const at = Date.parse(decision.at);
+    const previousAt = previous ? Date.parse(previous.decision.at) : -Infinity;
+    if (!previous || at > previousAt || (at === previousAt && key > previous.key)) {
+      latest.set(decision.removed, { key, decision });
+    }
+  }
+  return [...latest.entries()].sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0).map(([, entry]) => entry.decision);
+}

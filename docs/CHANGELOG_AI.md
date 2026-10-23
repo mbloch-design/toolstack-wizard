@@ -1,3 +1,9 @@
+## 2026-10-23 — Cinq régressions prioritaires du bento
+
+Prix personnel nul conservé sans retour au catalogue ; baisse budgétaire comptée une seule fois par outil retiré ; réponses de formule atomiques avec annulation exacte et protection du compte ; temporisations annulées à la sortie et contrôlées avant mutation ; Plus tard libère une question ciblée depuis le budget. La réponse gratuite groupée efface aussi les anciens choix payants. Le libellé des économies désigne une baisse du budget estimé, pas une résiliation effective.
+
+Reproduction rouge puis verte des régressions de données et interactions ; relecture indépendante des transitions. Aucun changement catalogue ni migration SQL.
+
 ## 2026-10-23 — Premier outil sans formule choisie
 
 Aucun montant nul suggéré avant confirmation de la première formule : budget à renseigner, répartition et optimisation masquées, grille réduite aux cartes utiles. Validation : 14 tests unitaires, typage complet et deux scénarios navigateur (première formule, quatre outils dont deux gratuits).

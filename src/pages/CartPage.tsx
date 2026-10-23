@@ -11,7 +11,7 @@ import StackToolSheet from "@/components/stack/StackToolSheet";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
 import { ActionRow, AppIcon, Button, Segmented } from "@/components/stack/StackKit";
 import { comparisonPath } from "@/lib/comparisonLinks";
-import { decisionSavingInCurrency } from "@/lib/stackDecisions";
+import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import StackWelcome from "@/components/stack/StackWelcome";
@@ -189,10 +189,10 @@ export default function CartPage() {
       detail: t("Précisez votre formule pour inclure cet outil dans votre budget.", "Choose your plan to include this tool in your budget."),
       options: (() => { const paid = toolMonthlyCost(tool, () => true, lang); return paid.kind === "paid" ? [{ label: t("Version gratuite", "Free plan"), amount: 0 }, { label: t("Plan payant", "Paid plan"), amount: convertAmount(paid.monthly, paid.currency, currency) }] : undefined; })(),
       actions: [
-        { label: t("Non, version gratuite", "No, free version"), onClick: () => { plans.markReviewed([toolKey(tool)]); trackEvent("stack_freemium_answer", { freemium: 1, paid: 0 }); } },
+        { label: t("Non, version gratuite", "No, free version"), onClick: () => { plans.choosePlan(toolKey(tool), null); trackEvent("stack_freemium_answer", { freemium: 1, paid: 0 }); } },
         { label: t("Oui, payant", "Yes, paid"), primary: true, onClick: () => { plans.setPaid(toolKey(tool), true); plans.markReviewed([toolKey(tool)]); trackEvent("stack_freemium_answer", { freemium: 1, paid: 1 }); } },
       ],
-      bulk: unreviewed.length > 1 ? { label: t(`Aucun n’est payant (${unreviewed.length})`, `None is paid (${unreviewed.length})`), onClick: () => { plans.markReviewed(unreviewed.map(toolKey)); trackEvent("stack_freemium_answer", { freemium: unreviewed.length, paid: 0, quick: true }); } } : undefined,
+      bulk: unreviewed.length > 1 ? { label: t(`Aucun n’est payant (${unreviewed.length})`, `None is paid (${unreviewed.length})`), onClick: () => { unreviewed.forEach(tool => plans.choosePlan(toolKey(tool), null)); trackEvent("stack_freemium_answer", { freemium: unreviewed.length, paid: 0, quick: true }); } } : undefined,
     })),
     ...overlapScore.pairs.map(({ a, b, shared, explicit, double }): Finding => ({
       key: `pair:${pairKey(toolKey(a), toolKey(b))}`, kind: "pair", tools: [a, b],
@@ -208,7 +208,7 @@ export default function CartPage() {
     ...unknownTools.map((tool): Finding => ({
       key: `price:${tool.id}`, kind: "price", tools: [tool],
       title: t(`Quelle formule de ${tool.name} avez-vous\u00a0?`, `Which ${tool.name} plan do you have?`),
-      detail: t("Pour l’instant, votre total fait comme s’il était gratuit.", "For now, your total pretends it is free."),
+      detail: t("Ce prix manque : l’outil reste exclu du budget renseigné.", "This price is missing: the tool is excluded from the recorded budget."),
       savePrice: (amount: number) => { plans.setChoice(toolKey(tool), { source: "custom", amount, currency, period: "monthly" }); trackEvent("stack_price_saved", { tool_slug: toolKey(tool), source: "card" }); },
       actions: [{ label: t("Ajouter le prix", "Add the price"), primary: true, ariaLabel: t(`Ajouter le prix de ${tool.name}`, `Add the price of ${tool.name}`), onClick: () => selectTool(toolKey(tool)) }],
     })),
@@ -222,11 +222,10 @@ export default function CartPage() {
     const slug = toolKey(planTool);
     const SEATS = /seat|utilisateur|membre|collaborateur|per user/i;
     const answer = (choice: PlanChoice | null, label: string, monthly: number) => {
-      if (choice) plans.setChoice(slug, choice); else plans.setPaid(slug, false);
-      if (planItem.kind === "freemium") { if (choice) plans.setPaid(slug, true); plans.markReviewed([slug]); }
+      const undo = plans.choosePlan(slug, choice, planItem.kind === "freemium");
       trackEvent("stack_plan_pick", { tool_slug: slug, plan: label, source: "card" });
       toast(t(`Noté : ${planTool.name} ${label}${monthly > 0 ? `, ${money(monthly)}` : ""}.`, `Noted: ${planTool.name} ${label}${monthly > 0 ? `, ${money(monthly)}` : ""}.`), {
-        duration: 5000, action: { label: t("Annuler", "Undo"), onClick: () => { plans.setChoice(slug, null); if (planItem.kind === "freemium") plans.setPaid(slug, false); } },
+        duration: 5000, action: { label: t("Annuler", "Undo"), onClick: undo },
       });
     };
     const options = usablePlans(planDetail, lang).map((plan) => {
@@ -241,7 +240,7 @@ export default function CartPage() {
   // What was already decided: estimated savings and pairs kept on purpose.
   const pinnedKeys = new Set(selectedTools.map(toolKey));
   const keptBoth = Object.entries(decisions).filter(([key, d]) => d.kind === "keep-both" && key.split("|").every((slug) => pinnedKeys.has(slug))).map(([key]) => key);
-  const pastSavings = Object.values(decisions).filter((d) => d.kind !== "keep-both" && d.removed && !pinnedKeys.has(d.removed));
+  const pastSavings = latestRemovedStackDecisions(decisions, pinnedKeys);
   const saved = pastSavings.reduce((sum, d) => sum + (decisionSavingInCurrency(d, currency) ?? 0), 0);
   const unknownSavings = pastSavings.some((d) => d.saving > 0 && decisionSavingInCurrency(d, currency) === null);
   // The deck keeps what it can act on (reopen pairs kept on purpose); the

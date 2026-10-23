@@ -1,9 +1,10 @@
-import { Fragment, useEffect, useState, type ReactNode } from "react";
+import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import { Activity, Rocket, UserRound, BarChart3, Clock, Moon, Zap, Check, ChevronDown, CircleDot, ClipboardCheck, Flame, Gauge, Scale, Target, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { Link } from "@/lib/routerLinks";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
+import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
 import toolAccents from "@/data/toolAccents.json";
 import { toolKey } from "@/lib/stackView";
 import { AppIcon, Button, Donut, Duo, Figure, Odometer, Radar, Segmented, TextLink } from "./StackKit";
@@ -247,17 +248,30 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
   const [seats, setSeats] = useState(1);
   // A tapped plan lights up, the others step back, then the answer goes through.
   const [pickedTile, setPickedTile] = useState<string | null>(null);
+  const answerTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const scope = getPersonalStackScope();
+  const scopeEpoch = getPersonalStackScopeEpoch(scope);
+  useEffect(() => () => { if (answerTimer.current !== null) clearTimeout(answerTimer.current); }, []);
+  const scheduleAnswer = (run: () => void, delay: number) => {
+    if (answerTimer.current !== null) clearTimeout(answerTimer.current);
+    const owner = getPersonalStackScope(), epoch = getPersonalStackScopeEpoch(owner);
+    answerTimer.current = setTimeout(() => {
+      answerTimer.current = null;
+      setPickedTile(null); setPicked(null);
+      if (getPersonalStackScope() === owner && getPersonalStackScopeEpoch(owner) === epoch) run();
+    }, delay);
+  };
   const pickTile = (key: string, run: () => void) => {
     if (pickedTile) return;
     if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches) { run(); return; }
     setPickedTile(key);
-    window.setTimeout(() => { setPickedTile(null); run(); }, 620);
+    scheduleAnswer(run, 620);
   };
   const pick = (index: number, run?: () => void) => {
     if (picked !== null || !run) return;
     if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches) { run(); return; }
     setPicked(index);
-    window.setTimeout(() => { setPicked(null); run(); }, 720);
+    scheduleAnswer(run, 720);
   };
   // Progress across the session: the most findings seen at once is the whole run.
   const [peak, setPeak] = useState(items.length);
@@ -267,7 +281,10 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
   const queued = [...items.filter((item) => !later.includes(item.key)), ...later.flatMap((key) => items.filter((item) => item.key === key))];
   const order = [...queued.filter((item) => item.key === first), ...queued.filter((item) => item.key !== first)];
   const top = order[0];
-  useEffect(() => { setPreview(null); setSeatPlan(null); setSeats(1); }, [top?.key]);
+  useEffect(() => {
+    if (answerTimer.current !== null) { clearTimeout(answerTimer.current); answerTimer.current = null; }
+    setPickedTile(null); setPicked(null); setPreview(null); setSeatPlan(null); setSeats(1);
+  }, [top?.key, scope, scopeEpoch]);
   const rest = order.slice(1);
   const step = Math.max(1, peak - items.length + 1);
 
@@ -339,7 +356,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
           <ul className="mf-cost-zero">{freeTools.map(tool => <li key={tool.id}><ToolLogo tool={tool} size={22} /><span>{tool.name}</span><b>{t("Gratuit", "Free")}</b></li>)}</ul>
         </div>}
         {items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="mf-cost-scope">{t("Les outils à renseigner ne sont pas inclus dans ce montant.", "Tools awaiting a price or plan are not included in this amount.")}</p>}
-        {saved > 0 && <p className="mf-verdict">{icon(Check, "var(--color-pro)")}<span>{t("Vous économisez déjà ", "You already save ")}<b>{format(saved)}</b>{t(" par mois.", " a month.")}</span></p>}
+        {saved > 0 && <p className="mf-verdict">{icon(Check, "var(--color-pro)")}<span>{t("Budget estimé allégé de ", "Estimated budget reduced by ")}<b>{format(saved)}</b>{t(" par mois.", " a month.")}</span></p>}
         {/* Once nothing is left to decide the decision card goes; what can be reopened lives here. */}
         {!top && history && <div className="mf-history">{history}</div>}
       </article>
@@ -436,7 +453,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
             {top.bulk && <TextLink onClick={top.bulk.onClick}>{top.bulk.label}</TextLink>}
             {/* A pair's third answer, keep both, is the quiet one: a link. */}
             {top.kind === "pair" && top.actions.filter((action) => !top.tools.some((tool) => action.label.endsWith(tool.name))).map((action) => <TextLink key={action.label} onClick={action.onClick}>{action.label}</TextLink>)}
-            {order.length > 1 && <TextLink className="mk-link--quiet" onClick={() => setLater((keys) => [...keys.filter((key) => key !== top.key), top.key])}>{t("Plus tard", "Later")}</TextLink>}
+            {order.length > 1 && <TextLink className="mk-link--quiet" onClick={() => { setFirst(null); setLater((keys) => [...keys.filter((key) => key !== top.key), top.key]); }}>{t("Plus tard", "Later")}</TextLink>}
           </div>
           {(top.savePrice || (top.plans && top.plans.length > 0)) && top.kind === "price" && top.actions.map((action) => <TextLink key={action.label} onClick={action.onClick}>{t("Saisie détaillée (sièges, annuel)", "Detailed entry (seats, yearly)")}</TextLink>)}
           {/* The effect on the total, on the bar's right: today's figure, then where an answer takes it. */}

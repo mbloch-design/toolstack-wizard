@@ -3,10 +3,11 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import StackFindings, { type Finding } from "@/components/stack/StackFindings";
 import { MemoryRouter } from "react-router-dom";
+import { setPersonalStackScope } from "@/lib/personalStackStore";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 
 const tool = (id: string) => ({ id, slug: id, name: id, categoryId: "x", pricing: { free: "", paid: "" } } as ToolSummary);
-afterEach(cleanup);
+afterEach(() => {cleanup(); setPersonalStackScope("anonymous");});
 
 describe("StackFindings", () => {
   const card = (key: string, onClick = vi.fn()): Finding => ({ key, kind: "freemium", tools: [tool(key)], title: `Payez-vous ${key} ?`, detail: "", actions: [{ label: "Oui, payant", primary: true, onClick }] });
@@ -44,6 +45,28 @@ describe("StackFindings", () => {
     expect(screen.queryByRole("text",{name:"0 €"})).toBeNull();
     expect(container.querySelector(".mf-balance")).toBeNull();
     expect(container.querySelector(".mf-fit")).toBeNull();
+  });
+  it("defers a question even after selecting it from the budget", () => {
+    module([card("Canva"),card("Slack")]);
+    fireEvent.click(screen.getByRole("button",{name:"Plus tard"}));
+    fireEvent.click(screen.getByRole("button",{name:/outil.*sur/}));
+    expect(screen.getByText("Payez-vous Canva ?")).toBeTruthy();
+    fireEvent.click(screen.getByRole("button",{name:"Plus tard"}));
+    expect(screen.getByText("Payez-vous Slack ?")).toBeTruthy();
+  });
+  it("does not apply an animated answer to a different account", async () => {
+    setPersonalStackScope("timer-account-a");
+    const answer=vi.fn(); module([{...card("Canva"),plans:[{key:"paid",label:"Payant",monthly:21,pick:answer}]}]);
+    fireEvent.click(screen.getByRole("radio",{name:/Payant/}));
+    setPersonalStackScope("timer-account-b");
+    await new Promise(resolve=>setTimeout(resolve,800));
+    expect(answer).not.toHaveBeenCalled();
+  });
+  it("cancels an animated answer when leaving the bento", async () => {
+    const answer=vi.fn();const view=module([{...card("Canva"),plans:[{key:"paid",label:"Payant",monthly:21,pick:answer}]}]);
+    fireEvent.click(screen.getByRole("radio",{name:/Payant/}));view.unmount();
+    await new Promise(resolve=>setTimeout(resolve,800));
+    expect(answer).not.toHaveBeenCalled();
   });
   it("shows the budget by vertical as a radar", () => {
     module([card("Canva")]);
@@ -88,7 +111,7 @@ describe("StackFindings", () => {
   it("drops the decision card once nothing is left, the saving stays on the price card", () => {
     const { container } = module([], { saved: 67, total: 379, toReview: 0 });
     expect(container.querySelector(".mf-now")).toBeNull();
-    expect(container.querySelector(".mf-price")?.textContent).toMatch(/Vous économisez déjà 67 € par mois/);
+    expect(container.querySelector(".mf-price")?.textContent).toMatch(/Budget estimé allégé de 67 € par mois/);
   });
 });
 
