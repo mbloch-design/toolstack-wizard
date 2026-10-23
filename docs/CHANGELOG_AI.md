@@ -1,3 +1,7 @@
+## 2026-10-23 — Alignement des parcours CI Ma stack
+
+Le journal GitHub du run 39985062879 révèle cinq échecs dans My stack discovery journeys : quatre assertions attendent l’ancien libellé du budget et une attend l’ancien titre de l’état vide. Les assertions utilisent désormais les libellés actuels ; le parcours ajout, retrait, annulation, persistance et les contrôles mobile restent inchangés.
+
 ## 2026-10-23 — Cinq régressions prioritaires du bento
 
 Prix personnel nul conservé sans retour au catalogue ; baisse budgétaire comptée une seule fois par outil retiré ; réponses de formule atomiques avec annulation exacte et protection du compte ; temporisations annulées à la sortie et contrôlées avant mutation ; Plus tard libère une question ciblée depuis le budget. La réponse gratuite groupée efface aussi les anciens choix payants. Le libellé des économies désigne une baisse du budget estimé, pas une résiliation effective.
