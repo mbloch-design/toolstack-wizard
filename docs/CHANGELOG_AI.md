@@ -1,3 +1,7 @@
+## 2026-10-23 — Contrôle des tokens après fusion Ma stack
+
+Centralisation des quatre couleurs SVG de StackKit dans la palette CSS et réutilisation pour les mêmes accents du dashboard. Baseline et règle CI inchangées.
+
 ## 2026-10-23 — Cohérence des données affichées dans Ma stack
 
 Budget partiel qualifié dans le bilan et l’inventaire, nombre d’outils renseignés plutôt qu’un pourcentage de fiabilité, répartition disponible sans seuil arbitraire de trois domaines et limitée aux montants connus. Sauvegarde saine condensée ; erreurs et conflits préservés. Aucune donnée catalogue ni règle de calcul modifiée.

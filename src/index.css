@@ -225,6 +225,10 @@
     --color-stack-budget-ink: #865b19;
     --color-stack-overlap-soft: #e9f0e9;
     --color-stack-overlap-ink: #3a704e;
+    --color-chart-create: #2A78D6;
+    --color-chart-automation: #6250D6;
+    --color-chart-market: #E87BA4;
+    --color-chart-empty: #C7C7CC;
     --color-bg:            #FFFFFF;
     --color-surface:       #FFFFFF;
     --color-surface-soft:  #F5F5F7;
@@ -36051,9 +36055,9 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf-legend--bars li:hover em::after { filter: brightness(1.08) saturate(1.2); }
 /* Block icons: a small tinted chip per block, the one twist of colour on each label. */
 .ms-page .mf-k.tt-kicker > svg { display: grid; box-sizing: content-box; width: 14px; height: 14px; padding: 6px; border-radius: var(--radius); background: color-mix(in srgb, var(--k, var(--ms-ink)) 12%, transparent); color: var(--k, var(--ms-ink)); }
-.ms-page .mf-price .mf-k { --k: #2A78D6; }
+.ms-page .mf-price .mf-k { --k: var(--color-chart-create); }
 .ms-page .mf-now .mf-k { --k: var(--a1); }
-.ms-page .mf-balance .mf-k { --k: #6250D6; }
+.ms-page .mf-balance .mf-k { --k: var(--color-chart-automation); }
 .ms-page .mf-queue-card .mf-k { --k: #EDA100; }
 .ms-page .mf-whatif .mf-k { --k: #1BAF7A; }
 .ms-page .mf-recap .mf-k { --k: var(--ms-good); }
@@ -36068,8 +36072,8 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf-fact--wide dt { grid-column: 1; }
 .ms-page .mf-fact--wide dd { grid-column: 2; grid-row: 1; }
 .ms-page .mf-fact dt { display: flex; align-items: center; gap: var(--space-xs); margin: 0; overflow: hidden; color: var(--ms-meta); font: 500 12.5px/1.2 var(--ap-font); text-overflow: ellipsis; white-space: nowrap; }
-.ms-page .mf-fact dt svg { flex: none; width: 14px !important; height: 14px !important; color: #2A78D6; }
-.ms-page .mf-fact:nth-child(2) dt svg { color: #6250D6; }
+.ms-page .mf-fact dt svg { flex: none; width: 14px !important; height: 14px !important; color: var(--color-chart-create); }
+.ms-page .mf-fact:nth-child(2) dt svg { color: var(--color-chart-automation); }
 .ms-page .mf-fact:nth-child(3) dt svg { color: #1BAF7A; }
 .ms-page .mf-fact dd { margin: 0; color: var(--ms-ink); font: 600 22px/1.05 var(--ap-display); letter-spacing: -.03em; white-space: nowrap; }
 .ms-page .mf-fact dd small { margin-left: 2px; color: var(--ms-meta); font: 500 13px/1 var(--ap-font); letter-spacing: 0; }
@@ -36139,7 +36143,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mk-radar-ring { fill: none; stroke: var(--ms-line); stroke-width: 1; }
 .ms-page .mk-radar-ring:last-of-type { fill: color-mix(in srgb, var(--ms-card) 70%, transparent); }
 .ms-page .mk-radar-axis { stroke: var(--ms-line); stroke-width: 1; }
-.ms-page .mk-radar-shape polygon { fill-opacity: .34; stroke: #6250D6; stroke-width: 1.5; stroke-linejoin: round; }
+.ms-page .mk-radar-shape polygon { fill-opacity: .34; stroke: var(--color-chart-automation); stroke-width: 1.5; stroke-linejoin: round; }
 .ms-page .mk-radar-shape { animation: mk-radar-in 900ms cubic-bezier(.3, 1.3, .5, 1) both; }
 @keyframes mk-radar-in { from { opacity: 0; transform: scale(.2); } }
 .ms-page .mk-radar-shape circle { stroke: var(--ms-card); stroke-width: 2; }
@@ -38485,7 +38489,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mk-radar-ring { stroke: color-mix(in srgb, var(--ms-ink) 9%, transparent); stroke-width: .6; stroke-dasharray: 1.5 2.5; fill: none; }
 .ms-page .mf .mk-radar-ring:last-of-type { stroke-dasharray: none; fill: none; }
 .ms-page .mf .mk-radar-axis { stroke: color-mix(in srgb, var(--ms-ink) 7%, transparent); stroke-width: .6; }
-.ms-page .mf .mk-radar-shape polygon { fill-opacity: .12; stroke: #6250D6; stroke-width: 1; stroke-linejoin: round; }
+.ms-page .mf .mk-radar-shape polygon { fill-opacity: .12; stroke: var(--color-chart-automation); stroke-width: 1; stroke-linejoin: round; }
 .ms-page .mf .mk-radar-shape circle { stroke: var(--ms-tile); stroke-width: 1.2; }
 /* Balance: title row on top across the card; the chart and the list share the height below. */
 .ms-page .mf .mf-balance-body { grid-template-columns: 170px minmax(0, 1fr); align-items: center; gap: var(--space-xl); margin-top: var(--space-xs); }
@@ -38517,7 +38521,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mk-radar-ring { stroke: color-mix(in srgb, var(--ms-ink) 14%, transparent); stroke-width: 1; stroke-dasharray: none; fill: none; }
 .ms-page .mf .mk-radar-ring:last-of-type { fill: none; }
 .ms-page .mf .mk-radar-axis { stroke: color-mix(in srgb, var(--ms-ink) 10%, transparent); stroke-width: 1; }
-.ms-page .mf .mk-radar-shape polygon { fill: #2A78D6; fill-opacity: .16; stroke: #2A78D6; stroke-width: 2; }
+.ms-page .mf .mk-radar-shape polygon { fill: var(--color-chart-create); fill-opacity: .16; stroke: var(--color-chart-create); stroke-width: 2; }
 .ms-page .mf .mk-radar-shape circle { display: none; }
 .ms-page .mf .mk-radar-label text { fill: var(--ms-meta); font: 500 12px var(--ap-font); }
 .ms-page .mf .mk-radar-label[data-empty] text { opacity: .55; }
@@ -39067,7 +39071,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* Icon top right, label quiet: the headline says what the box is about. */
 .ms-page .mf .mf-card > .mf-k { position: relative; padding-right: 48px; }
 .ms-page .mf .mf-card > .mf-k > svg { position: absolute; top: -4px; right: 0; width: 40px; height: 40px; padding: 10px; border-radius: 12px; background: color-mix(in srgb, var(--k, var(--ms-ink)) 12%, var(--ms-card)); color: var(--k, var(--ms-ink)); }
-.ms-page .mf .mf-balance > .mf-k { --k: #6250D6; }
+.ms-page .mf .mf-balance > .mf-k { --k: var(--color-chart-automation); }
 .ms-page .mf .mf-fit > .mf-k { --k: var(--ms-good); }
 
 /* Budget bar, like iPhone storage. */

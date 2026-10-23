@@ -240,13 +240,13 @@ export function Radar({ axes, label, bare }: { axes: RadarAxis[]; label: string;
   const shape = axes.map((axis, i) => at(i, k(axis.amount)).join(",")).join(" ");
   return <svg className="mk-radar" viewBox={`0 0 ${size} ${size}`} role="img" aria-label={label}>
     <defs>
-      <linearGradient id="mk-radar-fill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#2A78D6" /><stop offset=".55" stopColor="#6250D6" /><stop offset="1" stopColor="#E87BA4" /></linearGradient>
+      <linearGradient id="mk-radar-fill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="var(--color-chart-create)" /><stop offset=".55" stopColor="var(--color-chart-automation)" /><stop offset="1" stopColor="var(--color-chart-market)" /></linearGradient>
     </defs>
     {[0.25, 0.5, 0.75, 1].map((ring) => <polygon key={ring} className="mk-radar-ring" points={axes.map((_, i) => at(i, ring).join(",")).join(" ")} />)}
     {axes.map((axis, i) => { const [x, y] = at(i, 1); return <line key={axis.id} className="mk-radar-axis" x1={c} y1={c} x2={x} y2={y} />; })}
     <g className="mk-radar-shape" style={{ transformOrigin: `${c}px ${c}px` }}>
       <polygon points={shape} fill="url(#mk-radar-fill)" />
-      {axes.map((axis, i) => { const [x, y] = at(i, k(axis.amount)); return <circle key={axis.id} cx={x} cy={y} r={axis.amount > 0 ? 2.6 : 1.6} fill={axis.amount > 0 ? axis.color : "#C7C7CC"}><title>{`${axis.label} · ${axis.value}`}</title></circle>; })}
+      {axes.map((axis, i) => { const [x, y] = at(i, k(axis.amount)); return <circle key={axis.id} cx={x} cy={y} r={axis.amount > 0 ? 2.6 : 1.6} fill={axis.amount > 0 ? axis.color : "var(--color-chart-empty)"}><title>{`${axis.label} · ${axis.value}`}</title></circle>; })}
     </g>
     {!bare && axes.map((axis, i) => {
       const [x, y] = at(i, 1.16);
