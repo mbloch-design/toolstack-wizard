@@ -60,6 +60,98 @@ Le garde de suppression conserve les contributions historiques. Un compte lié �
 
 `npm run test:accounts:db` exécute migration, assertions SQL et rollback sur PGlite PostgreSQL 18.6. Le contrôleur a aussi exécuté le même SQL sur PostgreSQL 17.5 embarqué. Ces preuves ne couvrent pas GoTrue, PostgREST, les conseillers Supabase ou deux connexions SQL indépendantes.
 
+### Usage, métier et tarif journalier : migrations du 23 octobre 2026
+
+Deux migrations à appliquer dans cet ordre, après les quatre précédentes :
+
+1. [20261023090000_personal_stack_usage.sql](../supabase/migrations/20261023090000_personal_stack_usage.sql) : l'usage des outils, de 1 à 5.
+2. [20261023100000_personal_stack_onboarding.sql](../supabase/migrations/20261023100000_personal_stack_onboarding.sql) : le métier (`trade`) et le tarif journalier (`dailyRate`) de l'onboarding.
+
+Elles ne modifient aucune table et ne réécrivent aucune ligne. Chacune remplace la fonction de validation `public._personal_stack_valid(jsonb)` par une version qui contrôle en plus les nouveaux champs, facultatifs. Une stack sans ces champs reste valide. Les droits sont conservés par `create or replace`. Sans ces migrations, le prénom s'enregistre quand même (profil existant), mais une stack qui contient un usage, un métier ou un tarif est refusée à la sauvegarde.
+
+Les requêtes ci-dessous ont été exécutées le 23 octobre 2026 sur PostgreSQL éphémère dans le même ordre (état initial, deux migrations, deux retours arrière). Les résultats attendus viennent de cette exécution.
+
+**Étape 0 : préparer**
+
+- Confirmer le projet Supabase visé (préproduction ToolTrim) et faire une sauvegarde, comme pour les migrations précédentes.
+- Ne pas déployer la nouvelle version du site avant l'étape 4 : l'ancienne version reste compatible avec les deux validateurs.
+
+**Étape 1 : relever l'état de départ** (SQL Editor, lecture seule)
+
+```sql
+-- Migrations déjà enregistrées : les quatre précédentes doivent apparaître, pas les deux nouvelles.
+select version, name from supabase_migrations.schema_migrations order by version desc limit 10;
+
+-- Le validateur en place doit être celui de la stack v4 : attendu false, false.
+select position('''usage''' in d) > 0 as has_usage_check, position('''trade''' in d) > 0 as has_onboarding_check
+from (select pg_get_functiondef('public._personal_stack_valid(jsonb)'::regprocedure) as d) f;
+
+-- Les stacks enregistrées : noter les quatre nombres, ils servent de référence jusqu'à la fin.
+select count(*) as snapshots,
+       count(*) filter (where public._personal_stack_stored(state)) as stored_ok,
+       count(*) filter (where state ? 'usage') as with_usage,
+       count(*) filter (where state ? 'trade' or state ? 'dailyRate') as with_onboarding
+from public.stack_snapshots;
+```
+
+Si le validateur contient déjà `usage`, la première migration est déjà passée : vérifier l'historique avant d'aller plus loin, ne rien réappliquer à l'aveugle.
+
+**Étape 2 : appliquer la migration usage**
+
+Soit par la CLI (vérifier d'abord `supabase db push --help` dans l'environnement opérateur) : `supabase db push --dry-run` doit lister seulement les deux fichiers du jour, puis `supabase db push`. Soit par le SQL Editor : coller le contenu complet du fichier entre `begin;` et `commit;`. Dans ce cas, l'historique `schema_migrations` n'est pas renseigné : un `db push` ultérieur rejouerait le fichier, ce qui est sans effet puisqu'il ne fait que `create or replace`.
+
+Vérifier aussitôt :
+
+```sql
+-- Sondes : attendu empty_ok true, usage_ok true, usage_9_accepted false.
+with base as (select '{"version":4,"selection":{"version":3,"needs":[],"toolEntries":[],"pinnedToolSlugs":[]},"billing":{"paid":[],"reviewed":[],"choices":{}},"decisions":{}}'::jsonb as s)
+select public._personal_stack_valid(s) as empty_ok,
+       public._personal_stack_valid(s || '{"usage":{"figma":4}}') as usage_ok,
+       public._personal_stack_valid(s || '{"usage":{"figma":9}}') as usage_9_accepted,
+       public._personal_stack_valid(s || '{"trade":"designer","dailyRate":{"amount":500,"currency":"EUR"}}') as onboarding_ok,
+       public._personal_stack_valid(s || '{"trade":"astronaut"}') as trade_unknown_accepted,
+       public._personal_stack_valid(s || '{"dailyRate":{"amount":0,"currency":"EUR"}}') as rate_0_accepted
+from base;
+
+-- Droits : attendu security_definer false, anon false, authenticated false sur les deux fonctions.
+select p.proname as fonction, p.prosecdef as security_definer,
+       has_function_privilege('anon', p.oid, 'EXECUTE') as anon,
+       has_function_privilege('authenticated', p.oid, 'EXECUTE') as authenticated
+from pg_proc p join pg_namespace n on n.oid = p.pronamespace
+where n.nspname = 'public' and p.proname in ('_personal_stack_valid', '_personal_stack_stored')
+order by 1;
+```
+
+Relancer aussi la requête des stacks enregistrées de l'étape 1 : les quatre nombres doivent être identiques.
+
+**Étape 3 : appliquer la migration onboarding**
+
+Même méthode que l'étape 2, avec le second fichier. Vérifier ensuite :
+
+- Sondes : `empty_ok`, `usage_ok`, `onboarding_ok` à true ; `usage_9_accepted`, `trade_unknown_accepted`, `rate_0_accepted` à false.
+- Droits : inchangés (false partout).
+- Validateur : `has_usage_check` et `has_onboarding_check` à true.
+- Stacks enregistrées : les quatre nombres de l'étape 1, inchangés.
+
+**Étape 4 : recette dans l'application**
+
+Déployer la version vérifiée de la branche en préproduction. Avec un compte de test : se connecter, faire l'onboarding jusqu'à « Ouvrir mon espace » en choisissant un métier et un tarif, répondre à une question d'usage, recharger, puis se connecter depuis une autre session : métier, tarif et usage doivent revenir. Contrôler la ligne du compte de test uniquement :
+
+```sql
+select revision, updated_at, state->'trade' as trade, state->'dailyRate' as daily_rate, state->'usage' as usage
+from public.stack_snapshots
+where owner_id = (select id from auth.users where email = 'adresse-du-compte-de-test');
+```
+
+**Retour arrière**
+
+Dans l'ordre inverse, et seulement si nécessaire :
+
+1. [rollback onboarding](../supabase/rollback/20261023100000_personal_stack_onboarding.sql) : remet le validateur de l'étape 2. Sondes attendues : `trade_unknown_accepted` et `rate_0_accepted` reviennent à true, `usage_9_accepted` reste false.
+2. [rollback usage](../supabase/rollback/20261023090000_personal_stack_usage.sql) : remet le validateur de la stack v4. Sondes attendues : `usage_9_accepted` revient à true.
+
+Après chaque retour arrière : droits inchangés, et les quatre nombres de l'étape 1 identiques. Les valeurs déjà enregistrées (`usage`, `trade`, `dailyRate`) restent dans les stacks : l'ancien validateur les ignore, aucune stack ne devient invalide. Si l'historique `schema_migrations` a été renseigné par la CLI, y retirer les deux versions concernées avant une nouvelle application, sinon la CLI les considérera comme déjà passées.
+
 ## Recette automatique isolée
 
 ```sh
