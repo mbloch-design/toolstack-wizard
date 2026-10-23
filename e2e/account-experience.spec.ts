@@ -271,3 +271,22 @@ test('OAuth callback remains a quiet transition while reading stack, then return
  await expect(page.getByText('You are signed in.',{exact:true})).toHaveCount(0);
  await expect(page).toHaveURL(/\/en\/ma-stack$/);
 });
+
+for (const width of [390, 1440]) test(`partial stack budget stays consistent ${width}`, async ({page, request}) => {
+ await page.setViewportSize({width, height:1000});
+ const full = state(['motion-array','audacity','figma','grammarly']);
+ full.billing = {paid:['motion-array'],reviewed:['motion-array'],choices:{'motion-array':{source:'custom',amount:29,currency:'USD',period:'monthly'}}};
+ await control(request,'seed',{email:'partial-budget@example.invalid',state:full});
+ await page.goto('/en/ma-stack'); await login(page,'en','partial-budget@example.invalid'); await saved(page,'en');
+ await expect(page.getByText('Known budget so far',{exact:true})).toBeVisible();
+ const expandPrice = page.locator('.mf-price .mf-expand[aria-expanded="false"]');
+ if(await expandPrice.isVisible()) await expandPrice.click();
+ await expect(page.getByText('2 of 4 tools priced',{exact:true})).toBeVisible();
+ await expect(page.getByText('Stack saving',{exact:true})).toHaveCount(0);
+ await expect(page.locator('.ms-all-sum')).toContainText('partial');
+ const expandSplit = page.locator('.mf-balance .mf-expand[aria-expanded="false"]');
+ if(await expandSplit.isVisible()) await expandSplit.click();
+ await expect(page.locator('.mf-balance .mf-bb')).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
+ await page.screenshot({path:`test-results/accounts/partial-budget-${width}.png`,fullPage:true});
+});

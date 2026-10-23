@@ -40021,3 +40021,8 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .ms-page .mf .mf-now .mf-now-q { display: flex; align-items: center; gap: var(--space-sm); }
 .ms-page .mf .mf-now .mf-now-q h3 { margin: 0; }
 @media (max-width: 760px) { .ms-page .mf .mf-card.mf-now:not([data-open]) > .mf-now-q { display: flex; } .ms-page .mf .mf-card.mf-now:not([data-open]) .mf-now-q h3 { margin: 0; font-size: 19px; } }
+
+@layer components {
+  .ms-page .mf .mf-price .mf-shares li { grid-template-columns: 24px minmax(0, 1.2fr) minmax(24px, 1fr) auto max-content; }
+  .ms-page .mf .mf-price .mf-shares li > small { white-space: nowrap; }
+}

@@ -19,14 +19,22 @@ describe("StackFindings", () => {
     expect(screen.getByRole("text", { name: "446 €" })).toBeTruthy();
     expect(screen.getByRole("heading", { name: "Prochaine décision" })).toBeTruthy();
     expect(screen.getByText("Payez-vous Canva ?")).toBeTruthy();
-    expect(screen.getByText("Total fiable à 25 %")).toBeTruthy();
+    expect(screen.getByText("1 outil sur 4 renseigné")).toBeTruthy();
     expect(screen.getByLabelText("Étape 1 sur 3")).toBeTruthy();
+  });
+  it("labels incomplete costs as partial and shows a split for two areas", () => {
+    const { container } = module([card("Figma"), card("Grammarly")], { total: 29, areas: [{ id: "create", label: "Créer", amount: 29, color: "blue" }, { id: "communicate", label: "Communiquer", amount: 0, color: "orange" }] });
+    expect(screen.getByText("Budget partiel renseigné")).toBeTruthy();
+    expect(screen.getByText("2 outils sur 4 renseignés")).toBeTruthy();
+    expect(screen.queryByText(/fiable à|Total exact/)).toBeNull();
+    expect(container.querySelector(".mf-bb")).not.toBeNull();
+    expect(screen.queryByText(/dès trois domaines/)).toBeNull();
   });
   it("shows the budget by vertical as a radar", () => {
     module([card("Canva")]);
     expect(screen.getByRole("img", { name: "RH 58 %, IT 17 %" })).toBeTruthy();
     expect(screen.getByRole("text", { name: "58\u00a0%" })).toBeTruthy();
-    expect(screen.getByText("de votre budget pour RH.")).toBeTruthy();
+    expect(screen.getByText("du budget renseigné pour RH.")).toBeTruthy();
   });
   it("shows a pair as two faces and tags the cheaper one", () => {
     const { container } = module([pair]);
@@ -42,7 +50,7 @@ describe("StackFindings", () => {
     module([{ ...card("Fly"), kind: "price" }, card("Canva")], { toolCount: 2 });
     fireEvent.click(screen.getByRole("button", { name: "Plus tard" }));
     expect(screen.getByText("Payez-vous Canva ?")).toBeTruthy();
-    fireEvent.click(screen.getByRole("button", { name: /Total fiable à/ }));
+    fireEvent.click(screen.getByRole("button", { name: /outil.*sur/ }));
     expect(screen.getByText(/Combien vous coûte Fly par mois/)).toBeTruthy();
   });
   it("asks free or paid with two tiles, not bars, when the catalogue has no plan", async () => {

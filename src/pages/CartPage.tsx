@@ -186,7 +186,7 @@ export default function CartPage() {
     ...unreviewed.map((tool): Finding => ({
       key: `freemium:${tool.id}`, kind: "freemium", tools: [tool],
       title: t(`Quelle formule de ${tool.name} avez-vous\u00a0?`, `Which ${tool.name} plan do you have?`),
-      detail: t("Gratuite ou payante ? Votre total retient son souffle.", "Free or paid? Your total is holding its breath."),
+      detail: t("Précisez votre formule pour inclure cet outil dans votre budget.", "Choose your plan to include this tool in your budget."),
       options: (() => { const paid = toolMonthlyCost(tool, () => true, lang); return paid.kind === "paid" ? [{ label: t("Version gratuite", "Free plan"), amount: 0 }, { label: t("Plan payant", "Paid plan"), amount: convertAmount(paid.monthly, paid.currency, currency) }] : undefined; })(),
       actions: [
         { label: t("Non, version gratuite", "No, free version"), onClick: () => { plans.markReviewed([toolKey(tool)]); trackEvent("stack_freemium_answer", { freemium: 1, paid: 0 }); } },
@@ -391,7 +391,7 @@ export default function CartPage() {
   // person pays and one status. The views only change the arrangement.
   const statusOf = (tool: ToolSummary): "ok" | "review" | "overlap" => pairedById.has(tool.id) ? "overlap"
     : unreviewed.some((item) => item.id === tool.id) || unknownTools.some((item) => item.id === tool.id) ? "review" : "ok";
-  const statusLabel = { ok: t("À jour", "Up to date"), review: t("À vérifier", "To check"), overlap: t("Doublon", "Overlap") };
+  const statusLabel = { ok: t("Prix renseigné", "Price recorded"), review: t("À vérifier", "To check"), overlap: t("Doublon", "Overlap") };
   function renderTool(tool: ToolSummary) {
     const active = selected?.id === tool.id;
     const area = mapTerritories.find((territory) => territory.tools.some((member) => member.id === tool.id));
@@ -550,7 +550,7 @@ export default function CartPage() {
           <div className="ms-stage-bar">
             <div>
               <h2 id="ms-all-title" className="ms-stage-title">{t("Ma stack", "My stack")}</h2>
-              <p className="ms-all-sum">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}</>}</p>
+              <p className="ms-all-sum">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</p>
             </div>
             <div className="ms-tools-actions">
               {/* The one primary action of the section. */}
@@ -592,7 +592,7 @@ export default function CartPage() {
               <div id="ms-all-grid" className="ms-inv" data-layout={layout} data-grouped={groupBy === "area" ? "" : undefined} data-editing={editing || undefined} ref={gridRef} role="group" aria-label={t("Mes outils", "My tools")}>
                 {groups.map((group) => <section key={group.id} className="ms-inv-group" aria-label={group.label || undefined}>
                   {group.label && <header className="ms-inv-head"><i aria-hidden="true" style={{ background: colorOf(group.id) }} /><h3>{group.label}</h3>
-                    <span>{t(`${group.tools.length} outil${group.tools.length > 1 ? "s" : ""}`, `${group.tools.length} tool${group.tools.length > 1 ? "s" : ""}`)}{group.subtotal > 0 && <> · {money(group.subtotal)}</>}</span></header>}
+                    <span>{t(`${group.tools.length} outil${group.tools.length > 1 ? "s" : ""}`, `${group.tools.length} tool${group.tools.length > 1 ? "s" : ""}`)}{group.subtotal > 0 && <> · {money(group.subtotal)}{group.tools.some(tool => unreviewed.some(item => item.id === tool.id) || unknownTools.some(item => item.id === tool.id)) && t(" · partiel", " · partial")}</>}</span></header>}
                   <div className="ms-inv-items">{group.tools.map(renderTool)}</div>
                 </section>)}
                 {shown.length === 0 && <p className="ms-inv-empty">{t("Rien ici. Tout est à jour.", "Nothing here. All up to date.")}</p>}

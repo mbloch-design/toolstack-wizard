@@ -1,3 +1,7 @@
+## 2026-10-23 — Cohérence des données affichées dans Ma stack
+
+Budget partiel qualifié dans le bilan et l’inventaire, nombre d’outils renseignés plutôt qu’un pourcentage de fiabilité, répartition disponible sans seuil arbitraire de trois domaines et limitée aux montants connus. Sauvegarde saine condensée ; erreurs et conflits préservés. Aucune donnée catalogue ni règle de calcul modifiée.
+
 ## 2026-10-23 — Ma stack : l'usage des outils suit le compte
 
 Les réponses d'usage de la box Optimisation (5 niveaux, de « Sieste » à « Plein gaz ») rejoignent la stack personnelle (`usage` dans `PersonalStackV4`) au lieu du seul navigateur : elles suivent le compte et la fusion du brouillon anonyme (la réponse du compte l'emporte). Champ facultatif : les stacks enregistrées avant restent valides. Migration Supabase `20261023090000_personal_stack_usage` (validation des niveaux entiers 1 à 5 à l'écriture, retour arrière qui conserve les données), reprise une fois de l'ancienne clé locale. Tests : unitaires 762, API 287, SQL éphémère avec retour arrière, e2e de l'aller-retour.

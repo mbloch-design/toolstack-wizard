@@ -12,6 +12,9 @@ export default function StackAccountPanel({ empty = false }: { empty?: boolean }
   if (empty && !needsAuth && account.syncStatus === "synced" && !account.pendingDraftChoice && !account.conflict && !account.error && !account.privacyWarning && !account.deletionConfirmed) {
     return <p className="ms-empty-autosave"><Cloud size={16} aria-hidden />{t("Vos ajouts seront enregistrés automatiquement.", "Your additions will be saved automatically.")}</p>;
   }
+  if (!empty && !needsAuth && account.syncStatus === "synced" && !account.pendingDraftChoice && !account.conflict && !account.error && !account.privacyWarning && !account.deletionConfirmed) {
+    return <p className="ms-empty-autosave" role="status"><Cloud size={16} aria-hidden />{t("Stack enregistrée", "Stack saved")}</p>;
+  }
   return (
     <section
       className={`ms-account ac-stack-status ${needsAuth ? "ms-account--guest" : "ms-account--connected"}`}

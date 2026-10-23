@@ -137,7 +137,7 @@ function BudgetBar({ areas, total, format, t, view }: { areas: AreaShare[]; tota
   const focus = areas.find((area) => area.id === active);
   return <div className="mf-bb" data-active={active ? "" : undefined} data-view={view}>
     {/* The chart has its title, like any chart: what it shows, and the whole it splits. */}
-    <p className="mf-bb-title"><span>{t("Où part chaque euro", "Where your money goes")}</span><b>{format(total)}<small>{t("/mois", "/mo")}</small></b></p>
+    <p className="mf-bb-title"><span>{t("Répartition des montants renseignés", "Recorded costs by area")}</span><b>{format(total)}<small>{t("/mois", "/mo")}</small></b></p>
     {view === "bar" && <div key="bar" className="mf-bb-bar mf-bb-stage" role="img" aria-label={label}>
       {paid.map((area) => <i key={area.id} style={{ flexGrow: area.amount, background: area.color }} data-on={active === area.id ? "" : undefined}
         onPointerEnter={() => setActive(area.id)} onPointerLeave={() => setActive(open)}>{pct(area.amount) >= 12 && <span>{pct(area.amount)} %</span>}</i>)}
@@ -296,7 +296,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
     <div className="mf-grid" data-next={groups.length} data-done={top ? undefined : ""}>
       {/* 1. Read first: what the stack costs, and the verdict under it. */}
       <article className="mf-card mf-price" data-open={openCard === "price" ? "" : undefined} data-all={priceAll ? "" : undefined}>
-        <p className="mf-k tt-kicker">{icon(Wallet)}{t("Votre stack coûte", "Your stack costs")}{expander("price", t("le coût", "the cost"))}</p>
+        <p className="mf-k tt-kicker">{icon(Wallet)}{items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}{expander("price", t("le coût", "the cost"))}</p>
         {/* An unknown price is never shown as free: no figure without a known price, and a partial total says so. */}
         {(() => { const missing = items.filter((item) => item.kind === "price").length;
           return spend.length === 0 && missing > 0
@@ -312,9 +312,9 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
               // One tap brings the next open question to the decision card, which lights up.
               return unsure.length > 0
                 ? <button type="button" className="mf-trust" onClick={() => { setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); }}>
-                    {ring}<span className="mf-trust-text"><b>{t(`Total fiable à ${pct} %`, `Total ${pct}% reliable`)}</b><small>{t(`Estimation partielle : ${left} à confirmer`, `Partial estimate: ${left} to confirm`)}</small>{dots}</span>
+                    {ring}<span className="mf-trust-text"><b>{t(`${toolCount - unsure.length} outil${s(toolCount - unsure.length)} sur ${toolCount} renseigné${s(toolCount - unsure.length)}`, `${toolCount - unsure.length} of ${toolCount} tools priced`)}</b><small>{t(`Estimation partielle : ${left} à confirmer`, `Partial estimate: ${left} to confirm`)}</small>{dots}</span>
                   </button>
-                : toolCount > 0 && <p className="mf-trust" data-exact="">{ring}<span className="mf-trust-text"><b>{t("Total exact", "Exact total")}</b><small>{t("Chaque outil est compté avec sa vraie formule.", "Every tool is counted with its real plan.")}</small>{dots}</span></p>;
+                : toolCount > 0 && <p className="mf-trust" data-exact="">{ring}<span className="mf-trust-text"><b>{t("Budget renseigné", "Budget recorded")}</b><small>{t("Estimation selon les prix et formules renseignés.", "Estimate based on the prices and plans recorded.")}</small>{dots}</span></p>;
             })()}</>; })()}
         {spend.length > 0 ? <>
           {/* Your stack, by what it costs: the tools that weigh most, each with a thin
@@ -415,7 +415,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
               <span className="mf-plan-name">{(() => { const max = Math.max(1, ...tiles.map((x) => x.monthly)); const Icon = plan.monthly === 0 ? Moon : plan.monthly >= max ? Rocket : Zap; return <Icon size={14} aria-hidden />; })()}{plan.label}</span>
               <b>{plan.monthly > 0 ? format(plan.monthly) : t("0 €", "Free")}<small>{plan.monthly > 0 ? t("/mois", "/mo") : ""}</small></b>
               {/* Same three lines in every tile, so prices sit on one level. */}
-              <small className="mf-plan-note">{plan.note || (plan.monthly === 0 ? t("pour toujours", "forever") : t("par mois", "a month"))}</small>
+              <small className="mf-plan-note">{plan.note || (plan.monthly === 0 ? t("version gratuite", "free plan") : t("par mois", "a month"))}</small>
               {/* The radio mark: the usual sign of a single choice. */}
               <span className="mf-plan-radio" aria-hidden="true">{pickedTile === plan.key && <Check size={12} strokeWidth={3} />}</span>
             </button>)}
@@ -435,7 +435,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
           {(top.savePrice || (top.plans && top.plans.length > 0)) && top.kind === "price" && top.actions.map((action) => <TextLink key={action.label} onClick={action.onClick}>{t("Saisie détaillée (sièges, annuel)", "Detailed entry (seats, yearly)")}</TextLink>)}
           {/* The effect on the total, on the bar's right: today's figure, then where an answer takes it. */}
           {(top.plans?.length || top.kind === "pair" || top.savePrice || (top.kind === "freemium" && top.options)) && <p className="mf-preview" aria-live="polite">
-            <span className="mf-preview-k">{t("Total", "Total")}</span>
+            <span className="mf-preview-k">{items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel", "Partial budget") : t("Budget estimé", "Estimated budget")}</span>
             <b className="mf-preview-next" data-on={preview !== null ? "" : undefined}>{format(preview ?? total)}<small className="mf-preview-unit">{t("/mois", "/mo")}</small>
               {/* The difference pops over the amount like a notification bubble: overlaid, it moves nothing. */}
               {preview !== null && preview !== total && <span key={preview} className="mf-preview-delta" data-dir={preview < total ? "down" : "up"}>
@@ -452,8 +452,8 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
 
       {/* 3. How the budget is balanced across verticals: its own block. */}
       <article className="mf-card mf-balance" data-open={openCard === "bal" ? "" : undefined}>
-        <div className="mf-k tt-kicker">{icon(Layers3)}<span className="mf-k-label">{t("Répartition du budget", "Budget split")}</span>{spend.length > 0 && areas.length >= 3 && <SplitViews view={splitView} onChange={setSplitView} t={t} radar={areas.length >= 4} />}{expander("bal", t("la répartition", "the split"))}</div>
-        {spend.length > 0 && areas.length >= 3 ? (() => {
+        <div className="mf-k tt-kicker">{icon(Layers3)}<span className="mf-k-label">{t("Répartition du budget", "Budget split")}</span>{spend.length > 0 && areas.length > 0 && <SplitViews view={splitView} onChange={setSplitView} t={t} radar={areas.length >= 4} />}{expander("bal", t("la répartition", "the split"))}</div>
+        {spend.length > 0 && areas.length > 0 ? (() => {
           const lead = [...areas].sort((x, y) => y.amount - x.amount)[0];
           const share = total > 0 ? Math.round((lead.amount / total) * 100) : 0;
           // The verdict first: is the money spread, or does one area take most of it?
@@ -464,11 +464,11 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
           const deck = (lead.tools || []).slice(0, 4);
           const extraTools = Math.max(0, (lead.tools || []).length - deck.length);
           const logos = deck.length > 0 ? <span className="mf-lead-deck" aria-hidden="true">{deck.map((row, index) => <span key={row.tool.id} style={{ ["--i" as string]: index }}><ToolLogo tool={row.tool} size={26} /></span>)}{extraTools > 0 && <em>+{extraTools}</em>}</span> : null;
-          const tag = share >= 75 ? <><Flame size={14} aria-hidden />{t("Un domaine fait la loi", "One area rules")}</> : share >= 50 ? <><TrendingUp size={14} aria-hidden />{t("Un poids lourd dans la stack", "A heavyweight in the stack")}</> : <><Scale size={14} aria-hidden />{t("Bel équilibre", "Nicely balanced")}</>;
+          const tag = share >= 75 ? <><Flame size={14} aria-hidden />{t("Premier poste renseigné", "Largest recorded cost")}</> : share >= 50 ? <><TrendingUp size={14} aria-hidden />{t("Premier poste renseigné", "Largest recorded cost")}</> : <><Scale size={14} aria-hidden />{t("Montants par domaine", "Costs by area")}</>;
           return <>{heavy
-            ? <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={logos} figure={<Odometer text={`${share}\u00a0%`} />} say={t(`de votre budget pour ${lead.label.replace(/ /g, "\u00a0")}.`, `of your budget for ${lead.label}.`)}
+            ? <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={logos} figure={<Odometer text={`${share}\u00a0%`} />} say={t(`du budget renseigné pour ${lead.label.replace(/ /g, "\u00a0")}.`, `of recorded costs for ${lead.label}.`)}
                 sub={t(`${format(lead.amount)} sur ${format(total)} chaque mois.`, `${format(lead.amount)} of ${format(total)} every month.`)} />
-            : <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={logos} figure={t(`${spread} domaines`, `${spread} areas`)} say={t("se partagent votre budget, sans excès.", "share your budget, evenly.")}
+            : <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={logos} figure={t(`${spread} domaines`, `${spread} areas`)} say={t("se partagent les montants renseignés.", "share the recorded costs.")}
                 sub={t(`Le plus gros, ${lead.label}, en prend ${share} %.`, `The largest, ${lead.label}, takes ${share}%.`)} />}
           <BudgetBar areas={areas} total={total} format={format} t={t} view={splitView === "radar" && areas.length < 4 ? "bar" : splitView} /></>;
         })() : <p className="mf-t">{areas.length < 3 ? t("La répartition apparaît dès trois domaines dans votre stack.", "The split appears from three areas in your stack.") : t("Aucun coût connu à répartir pour l’instant.", "No known cost to spread yet.")}</p>}
