@@ -22,6 +22,7 @@ try {
   }
   if (!process.argv.includes('--baseline')) {
     await db.exec(await readFile(new URL('../supabase/migrations/20261021073601_account_profile_settings.sql', import.meta.url), 'utf8'));
+    await db.exec(await readFile(new URL('../supabase/migrations/20261023090000_personal_stack_usage.sql', import.meta.url), 'utf8'));
   }
   if (!process.argv.includes('--baseline')) {
     await db.exec("insert into public.profiles(id) values ('00000000-0000-0000-0000-000000000009')");
@@ -32,6 +33,15 @@ try {
   await db.exec(await readFile(new URL('../supabase/tests/account_oauth_profile.test.sql', import.meta.url), 'utf8'));
   await db.exec(await readFile(new URL('../supabase/tests/account_profile_settings.test.sql', import.meta.url), 'utf8'));
   await db.exec(await readFile(new URL('../supabase/tests/personal_stack_v4.test.sql', import.meta.url), 'utf8'));
+  await db.exec(await readFile(new URL('../supabase/tests/personal_stack_usage.test.sql', import.meta.url), 'utf8'));
+  // The usage rollback restores the previous validator: levels are ignored again, rows are untouched.
+  const usageState = '{"version":4,"selection":{"version":3,"needs":[],"toolEntries":[],"pinnedToolSlugs":[]},"billing":{"paid":[],"reviewed":[],"choices":{}},"decisions":{},"usage":{"a":9}}';
+  assert.equal((await db.query('select public._personal_stack_valid($1::jsonb) as ok', [usageState])).rows[0].ok, false);
+  const beforeUsageRollback = (await db.query('select * from public.stack_snapshots order by owner_id')).rows;
+  await db.exec(await readFile(new URL('../supabase/rollback/20261023090000_personal_stack_usage.sql', import.meta.url), 'utf8'));
+  assert.equal((await db.query('select public._personal_stack_valid($1::jsonb) as ok', [usageState])).rows[0].ok, true);
+  assert.deepEqual((await db.query('select * from public.stack_snapshots order by owner_id')).rows, beforeUsageRollback);
+  await db.exec(await readFile(new URL('../supabase/migrations/20261023090000_personal_stack_usage.sql', import.meta.url), 'utf8'));
   await db.exec(await readFile(new URL('../supabase/tests/personal_account_deletion.test.sql', import.meta.url), 'utf8'));
   assert.deepEqual((await db.query(`select state from public.stack_snapshots
     where owner_id='00000000-0000-0000-0000-000000000009'`)).rows[0].state,

@@ -15,6 +15,8 @@ import { decisionSavingInCurrency } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import StackWelcome from "@/components/stack/StackWelcome";
+import { useStackUsage } from "@/hooks/useStackUsage";
+import { isUsageLevel } from "@/lib/personalStack";
 import StackAccountPanel from "@/components/stack/StackAccountPanel";
 import { useCategories, useToolSummaries, useToolBySlug, type ToolSummary } from "@/hooks/useSupabaseData";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
@@ -147,20 +149,9 @@ export default function CartPage() {
   const monthlyOf = (tool: ToolSummary) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0; };
   // All my tools: one grid of cards, sorted by the tab the person picks.
   // How much the person uses each paid tool: the one thing the catalogue cannot know.
-  // Five levels (1 asleep to 5 flat out); older answers in words are read as levels.
-  const [usage, setUsageState] = useState<Record<string, number>>(() => {
-    try {
-      const raw = JSON.parse(localStorage.getItem("tooltrim-ma-stack-usage-v1") || "{}") as Record<string, number | string>;
-      const legacy: Record<string, number> = { light: 1, normal: 3, full: 5 };
-      return Object.fromEntries(Object.entries(raw).map(([slug, value]) => [slug, typeof value === "number" ? value : legacy[value] ?? 3]));
-    } catch { return {}; }
-  });
-  const setUsage = (slug: string, value: number | null) => setUsageState((current) => {
-    const next = { ...current };
-    if (value) next[slug] = value; else delete next[slug];
-    try { localStorage.setItem("tooltrim-ma-stack-usage-v1", JSON.stringify(next)); } catch { /* private mode: kept for the session */ }
-    return next;
-  });
+  // Five levels (1 asleep to 5 flat out), kept in the personal stack: they follow the account.
+  const { usage, setUsage: saveUsage } = useStackUsage();
+  const setUsage = (slug: string, value: number | null) => saveUsage(slug, value !== null && isUsageLevel(value) ? value : null);
   // Grouping by area is a way to sort: one menu, four orders.
   const [sortBy, setSortBy] = useState<"area" | "cost" | "name" | "recent">("area");
   const [layout, setLayout] = useState<"grid" | "list">("grid");

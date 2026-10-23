@@ -54,6 +54,7 @@ function migrateAnonymous(storage: Storage, pending: StackUpdater[] = []): Snaps
       choices: parseLegacy(storage, "tooltrim-ma-stack-plan-choices-v1"),
     },
     decisions: parseLegacy(storage, "tooltrim-ma-stack-decisions-v1"),
+    usage: parseLegacy(storage, "tooltrim-ma-stack-usage-v1"),
   });
   const recovered = pending.reduce((current, update) => normalizePersonalStack(update(current)), state);
   const entry = persistScope("anonymous", recovered, { state, raw: null, status: loaded.status });
@@ -297,7 +298,7 @@ export function purgeLegacyPersonalStackSources(): boolean {
   if (typeof window === "undefined") return false;
   let complete = true;
   const keys = [STACK_STATE_STORAGE_KEY, STACK_STATE_BACKUP_STORAGE_KEY, ...LEGACY_STACK_STATE_STORAGE_KEYS,
-    "tooltrim-ma-stack-paid-plans-v1", "tooltrim-ma-stack-freemium-reviewed-v1", "tooltrim-ma-stack-plan-choices-v1", "tooltrim-ma-stack-decisions-v1"];
+    "tooltrim-ma-stack-paid-plans-v1", "tooltrim-ma-stack-freemium-reviewed-v1", "tooltrim-ma-stack-plan-choices-v1", "tooltrim-ma-stack-decisions-v1", "tooltrim-ma-stack-usage-v1"];
   for (const key of keys) { try { window.localStorage.removeItem(key); } catch { complete = false; } }
   try { window.localStorage.setItem(MIGRATED_KEY, "1"); } catch { complete = false; }
   return complete;

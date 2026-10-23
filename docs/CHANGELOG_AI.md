@@ -1,3 +1,7 @@
+## 2026-10-23 — Ma stack : l'usage des outils suit le compte
+
+Les réponses d'usage de la box Optimisation (5 niveaux, de « Sieste » à « Plein gaz ») rejoignent la stack personnelle (`usage` dans `PersonalStackV4`) au lieu du seul navigateur : elles suivent le compte et la fusion du brouillon anonyme (la réponse du compte l'emporte). Champ facultatif : les stacks enregistrées avant restent valides. Migration Supabase `20261023090000_personal_stack_usage` (validation des niveaux entiers 1 à 5 à l'écriture, retour arrière qui conserve les données), reprise une fois de l'ancienne clé locale. Tests : unitaires 762, API 287, SQL éphémère avec retour arrière, e2e de l'aller-retour.
+
 ## 2026-10-23 — Compatibilité API ES2020
 
 Remplacement de String.replaceAll par une expression régulière globale et de Object.hasOwn par Object.prototype.hasOwnProperty.call dans les modules partagés du compte et de la stack. La cible de compatibilité CI reste inchangée.

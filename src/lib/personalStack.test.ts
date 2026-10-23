@@ -14,6 +14,7 @@ function stack(slugs: string[] = []): PersonalStackV4 {
     selection: slugs.reduce((state, slug) => pinToolInState(state, slug, [], at), createDefaultToolCartState()),
     billing: { paid: [], reviewed: [], choices: {} },
     decisions: {},
+    usage: {},
   };
 }
 
@@ -29,7 +30,7 @@ describe("personal stack snapshot", () => {
 
   it("wraps legacy v3 selection without inventing billing data or touching separate local stores", () => {
     const selection = stack(["legacy-tool"]).selection;
-    expect(normalizePersonalStack(selection)).toEqual({ version: 4, selection, billing: { paid: [], reviewed: [], choices: {} }, decisions: {} });
+    expect(normalizePersonalStack(selection)).toEqual({ version: 4, selection, billing: { paid: [], reviewed: [], choices: {} }, decisions: {}, usage: {} });
   });
 
   it("recovers valid records independently and deduplicates without discarding declared amounts", () => {
@@ -114,6 +115,43 @@ describe("personal stack snapshot", () => {
     reordered.billing.choices.a.amount = 43;
     expect(personalStackFingerprint(reordered)).not.toBe(personalStackFingerprint(input));
     expect(personalStackFingerprint(stack(["b", "a"]))).not.toBe(personalStackFingerprint(stack(["a", "b"])));
+  });
+});
+
+describe("tool usage levels", () => {
+  it("round trips five levels of use and reads a snapshot saved before usage existed as empty", () => {
+    const input = stack(["figma", "slack"]);
+    input.usage = { figma: 5, slack: 1 };
+    expect(validatePersonalStack(JSON.parse(JSON.stringify(input))).usage).toEqual({ figma: 5, slack: 1 });
+    const { usage: _, ...older } = input;
+    expect(validatePersonalStack(JSON.parse(JSON.stringify(older))).usage).toEqual({});
+    expect(normalizeStoredPersonalStack(JSON.parse(JSON.stringify(older))).usage).toEqual({});
+  });
+
+  it("recovers valid levels, reads the three earlier words as levels and drops the rest", () => {
+    const output = normalizePersonalStack({ ...stack(["a"]), usage: { a: 4, b: "light", c: "normal", d: "full", e: 0, f: 6, g: 2.5, h: "often", "": 3 } });
+    expect(output.usage).toEqual({ a: 4, b: 1, c: 3, d: 5 });
+    expect(normalizePersonalStack({ ...stack(["a"]), usage: ["a"] }).usage).toEqual({});
+  });
+
+  it("rejects a write with a level outside 1 to 5, a fraction, a word or a non-record", () => {
+    for (const usage of [{ a: 0 }, { a: 6 }, { a: 2.5 }, { a: "full" }, ["a"], null]) {
+      expect(() => validatePersonalStack({ ...stack(["a"]), usage })).toThrow(PersonalStackValidationError);
+    }
+  });
+
+  it("keeps the account's answers and imports a draft's answers only for its selected, unrated tools", () => {
+    const saved = stack(["a", "b"]);
+    saved.usage = { a: 2 };
+    const draft = stack(["a", "b", "c"]);
+    draft.usage = { a: 5, b: 4, c: 1, gone: 3 };
+    expect(mergeAnonymousDraft(saved, draft).usage).toEqual({ a: 2, b: 4, c: 1 });
+  });
+
+  it("changes the fingerprint when an answer changes", () => {
+    const a = stack(["a"]), b = stack(["a"]);
+    b.usage = { a: 3 };
+    expect(personalStackFingerprint(a)).not.toBe(personalStackFingerprint(b));
   });
 });
 

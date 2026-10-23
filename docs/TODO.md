@@ -8,6 +8,8 @@ Légende : **[décision]** = attend un arbitrage de Michael.
 
 ## En cours
 
+- [ ] P1 E2E Ma stack sur la branche comptes : 8 tests (`mon-stack-v1` parcours vide, `pricing-audit-regressions` ×3, `responsive-shell` ×3, `technical-audit-regressions` onglets) échouent déjà avant la fusion du dashboard. Ils écrivent encore dans les anciennes clés locales (`tooltrim-ma-stack-*-v1`), que le magasin personnel ne lit qu'une fois, ou visent l'ancien en-tête : les réécrire sur `tooltrim-personal-stack-v4:anonymous`.
+
 ### Recherche des fiches outils
 Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs/PRICE_CHECK_BRIEF.md`.
 - [x] 370 dossiers « faits » produits en cloud (25 au 30/09/2026, ~0,19 $/fiche), complétés en local par Sonnet (01/10/2026), prix revérifiés sur pages officielles (02/10/2026) : **environ 350 fiches recherchées en ligne**

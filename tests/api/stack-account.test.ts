@@ -142,6 +142,14 @@ describe("personal stack HTTP boundary", () => {
     expect(mocks.rpc.mock.calls.some(([name]) => name === "save_personal_stack")).toBe(false);
   });
 
+  it.each([0, 6, 2.5, "full"])("rejects an invalid usage level %s before persistence", async level => {
+    const invalid = { ...normalizePersonalStack(null), usage: { figma: level } };
+    const fixture = request({ state: invalid, expectedRevision: 0 }, "PUT");
+    await handler(fixture.req, fixture.res);
+    expect(fixture.res.statusCode).toBe(400);
+    expect(mocks.rpc.mock.calls.some(([name]) => name === "save_personal_stack")).toBe(false);
+  });
+
   it("rejects oversized content length before accessing the body or auth", async () => {
     const fixture = request(undefined, "PUT");
     fixture.req.headers["content-length"] = String(1024 * 1024 + 1);

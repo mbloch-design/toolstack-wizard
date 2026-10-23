@@ -76,7 +76,10 @@ do $$ declare bad jsonb; begin
   jsonb_set(current_setting('test.state')::jsonb,'{decisions,old|new,savingCurrency}','"CAD"'),
   jsonb_set(current_setting('test.state')::jsonb,'{selection,toolEntries,0,needIds}','["unknown"]'),
   jsonb_set(current_setting('test.state')::jsonb,'{selection,toolEntries,0,addedAt}','"not a date"'),
-  jsonb_set(current_setting('test.state')::jsonb,'{decisions,old|new,saving}','-1')
+  jsonb_set(current_setting('test.state')::jsonb,'{decisions,old|new,saving}','-1'),
+  current_setting('test.state')::jsonb || '{"usage":{"missing-from-json":0}}',
+  current_setting('test.state')::jsonb || '{"usage":{"missing-from-json":4.5}}',
+  current_setting('test.state')::jsonb || '{"usage":["missing-from-json"]}'
  )) loop
   perform accounts_test.throws(format('select public.save_personal_stack(%L::uuid,%L::uuid,2,%L::jsonb)',current_setting('test.a'),current_setting('test.sa'),bad),'PT400','invalid JSON rejected');
  end loop;

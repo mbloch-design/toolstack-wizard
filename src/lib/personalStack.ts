@@ -8,7 +8,11 @@ export type PersonalStackV4 = {
   selection: ToolCartState;
   billing: { paid: string[]; reviewed: string[]; choices: Record<string, PlanChoice> };
   decisions: Record<string, StackDecision>;
+  /** How much the person uses each paid tool, 1 (asleep) to 5 (flat out). */
+  usage: Record<string, UsageLevel>;
 };
+
+export type UsageLevel = 1 | 2 | 3 | 4 | 5;
 
 export type PersonalStackRecord = {
   state: PersonalStackV4;
@@ -49,6 +53,21 @@ function isPlanChoice(value: unknown): value is PlanChoice {
     && (value.period === "monthly" || value.period === "annual")
     && (value.seats === undefined || (typeof value.seats === "number" && Number.isSafeInteger(value.seats) && value.seats > 0))
     && (value.perSeat === undefined || typeof value.perSeat === "boolean");
+}
+
+export function isUsageLevel(value: unknown): value is UsageLevel {
+  return typeof value === "number" && Number.isInteger(value) && value >= 1 && value <= 5;
+}
+
+/** Earlier local builds stored three words; they are read as the matching level. */
+const LEGACY_USAGE: Record<string, UsageLevel> = { light: 1, normal: 3, full: 5 };
+
+function usageLevels(value: unknown): Record<string, UsageLevel> {
+  if (!isRecord(value)) return {};
+  return Object.fromEntries(Object.entries(value).flatMap(([slug, level]) => {
+    const known = typeof level === "string" ? LEGACY_USAGE[level] : level;
+    return isString(slug) && isUsageLevel(known) ? [[slug, known]] : [];
+  }));
 }
 
 function copyChoice(choice: PlanChoice): PlanChoice {
@@ -116,6 +135,8 @@ export function normalizePersonalStack(input: unknown): PersonalStackV4 {
       ...(decision.removed !== undefined ? { removed: decision.removed } : {}),
       ...(decision.savingCurrency !== undefined ? { savingCurrency: decision.savingCurrency } : {}),
     }])),
+    // Absent in snapshots saved before usage existed: an empty record, never an error.
+    usage: usageLevels(envelope?.usage),
   };
 }
 
@@ -156,6 +177,11 @@ export function validatePersonalStack(input: unknown): PersonalStackV4 {
   const decisions = normalizeStackDecisions(input.decisions);
   for (const key of Object.keys(input.decisions)) {
     requireValid(isString(key) && Object.prototype.hasOwnProperty.call(decisions, key), `decisions.${key}`);
+  }
+  // Optional for older clients; when sent, every level must be an integer from 1 to 5.
+  if (input.usage !== undefined) {
+    requireValid(isRecord(input.usage), "usage");
+    for (const [slug, level] of Object.entries(input.usage)) requireValid(isString(slug) && isUsageLevel(level), `usage.${slug}`);
   }
   return normalizePersonalStack(input);
 }
@@ -235,6 +261,8 @@ export function mergeAnonymousDraft(saved: PersonalStackV4, draft: PersonalStack
       ]),
     },
     decisions,
+    // A saved answer wins; the draft adds answers only for tools the account did not rate.
+    usage: { ...Object.fromEntries(Object.entries(incoming.usage).filter(([slug]) => selected.has(slug))), ...retained.usage },
   });
 }
 

@@ -32,10 +32,11 @@ describe("personal stack scope store", () => {
   it("purges consumed migration sources and backups while preserving an unrelated authoritative anonymous draft", async () => {
     const store = await import("./personalStackStore");
     store.replacePersonalStack(draft("later-anonymous"));
-    for (const key of [STACK_STATE_STORAGE_KEY, `${STACK_STATE_STORAGE_KEY}-backup`, "tooltrim-ma-stack-paid-plans-v1", "tooltrim-ma-stack-decisions-v1"]) storage.setItem(key, "old-private-source");
+    for (const key of [STACK_STATE_STORAGE_KEY, `${STACK_STATE_STORAGE_KEY}-backup`, "tooltrim-ma-stack-paid-plans-v1", "tooltrim-ma-stack-decisions-v1", "tooltrim-ma-stack-usage-v1"]) storage.setItem(key, "old-private-source");
     expect(store.purgeLegacyPersonalStackSources()).toBe(true);
     expect(storage.getItem(STACK_STATE_STORAGE_KEY)).toBeNull();
     expect(storage.getItem(`${STACK_STATE_STORAGE_KEY}-backup`)).toBeNull();
+    expect(storage.getItem("tooltrim-ma-stack-usage-v1")).toBeNull();
     expect(store.readPersonalStack().selection.pinnedToolSlugs).toEqual(["later-anonymous"]);
   });
 
@@ -45,11 +46,13 @@ describe("personal stack scope store", () => {
     storage.setItem("tooltrim-ma-stack-freemium-reviewed-v1", '["notion"]');
     storage.setItem("tooltrim-ma-stack-plan-choices-v1", JSON.stringify({ notion: choice }));
     storage.setItem("tooltrim-ma-stack-decisions-v1", JSON.stringify({ "canva|figma": decision }));
+    storage.setItem("tooltrim-ma-stack-usage-v1", JSON.stringify({ notion: 4, figma: "light" }));
     let store = await import("./personalStackStore");
     const migrated = store.readPersonalStack();
     expect(migrated.selection.pinnedToolSlugs).toEqual(["notion"]);
     expect(migrated.billing).toEqual({ paid: ["notion"], reviewed: ["notion"], choices: { notion: choice } });
     expect(migrated.decisions).toEqual({ "canva|figma": decision });
+    expect(migrated.usage).toEqual({ notion: 4, figma: 1 });
     store.replacePersonalStack(normalizePersonalStack(null));
     vi.resetModules(); store = await import("./personalStackStore");
     expect(store.readPersonalStack().selection.pinnedToolSlugs).toEqual([]);
