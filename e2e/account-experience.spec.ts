@@ -340,3 +340,26 @@ for(const width of [390,1440]) test(`personal welcome recognises the signed-in o
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
  await page.screenshot({path:`test-results/accounts/personal-welcome-${width}.png`,fullPage:true});
 });
+
+for(const width of [390,1440]) test(`one paid tool offers a next step instead of empty charts ${width}`,async({page,request})=>{
+ await page.setViewportSize({width,height:1000});
+ const full=state(['notion']);full.billing={paid:['notion'],reviewed:['notion'],choices:{notion:{source:'custom',amount:11,currency:'USD',period:'monthly'}}};
+ await control(request,'seed',{email:'starter@example.invalid',displayName:'Michael',state:full});
+ await page.goto('/en/ma-stack');await login(page,'en','starter@example.invalid','fixture-password','Michael');await saved(page,'en');
+ await expect(page.getByRole('heading',{name:'Your stack is taking shape.',exact:true})).toBeVisible();
+ await expect(page.locator('.mf-balance')).toHaveCount(0);await expect(page.locator('.mf-fit')).toHaveCount(0);
+ if(width>760){const price=await page.locator('.mf-price').boundingBox();const next=await page.locator('.mf-starter-next').boundingBox();expect(Math.abs(price!.y-next!.y)).toBeLessThan(3);}
+ await page.screenshot({path:`test-results/accounts/starter-space-${width}.png`,fullPage:true,animations:'disabled'});
+ await page.getByRole('button',{name:'Add another tool',exact:true}).click();
+ await expect(page.getByRole('searchbox',{name:'Add a tool to my stack'})).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
+});
+test('general header sign-in opens the personal stack',async({page,request})=>{
+ await control(request,'seed',{email:'header-return@example.invalid',displayName:'Michael',state:state(['notion'])});
+ await page.goto('/en');await dismissConsent(page);
+ await page.getByRole('button',{name:'Sign in',exact:true}).click();
+ await emailForm(page,'header-return@example.invalid','fixture-password');
+ await page.locator('.ac-form').getByRole('button',{name:'Sign in',exact:true}).click();
+ await expect(page).toHaveURL(/\/en\/ma-stack$/);
+ await expect(page.locator('.ms-personal-greeting')).toContainText('Michael');
+});

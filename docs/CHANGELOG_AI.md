@@ -1,3 +1,11 @@
+## 2026-10-23 — Espace personnel adapté au premier outil
+
+La connexion générale du header aboutit à Ma stack ; les intentions contextuelles conservent leur destination. Avec un seul outil renseigné, budget compact et prochaine étape explicite remplacent les cartes de répartition et d’optimisation prématurées. Le bouton Ajouter un autre outil ouvre la recherche existante.
+
+## 2026-10-23 — Navigation compacte par défaut
+
+La barre latérale démarre compacte en l’absence de préférence explicite. Le choix déployé/réduit reste mémorisé sur ordinateur ; la classe de largeur suit désormais l’état réellement affiché aux largeurs intermédiaires.
+
 ## 2026-10-23 — Accueil personnel Ma stack
 
 Salutation avec le nom choisi du compte courant, repli naturel sans e-mail ni nom inféré, message adapté au premier outil ou aux choix restants. Un signe de bienvenue discret demandé par Michael. Aucun nouveau champ collecté ni persona déduit.

@@ -40056,3 +40056,27 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 }
 
 @layer components { .ms-page .mf .mf-preview { grid-template-columns: max-content max-content; column-gap: var(--space-md); } }
+
+@layer components {
+  .ms-page .mf-starter-next { grid-area: next; display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+  .ms-page .mf-starter-next h2 { margin: 0; font-family: var(--font-brand); font-size: var(--tt-size-section-h); line-height: 1.2; letter-spacing: -.025em; }
+  .ms-page .mf-starter-next p { max-width: 48ch; color: var(--color-text-secondary); font-size: var(--tt-size-body); line-height: 1.6; }
+  .mf-starter-icon { color: var(--color-text); }
+  @media (min-width: 761px) {
+    .ms-page .mf .mf-grid[data-starter] { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); grid-template-rows: auto; grid-template-areas: "price next"; align-items: stretch; }
+    .ms-page .mf .mf-grid[data-starter]:has(.mf-now) { grid-template-areas: "price now"; }
+    .ms-page .mf .mf-grid[data-starter] > .mf-card { min-height: 0; height: auto; overflow: visible; }
+  }
+  @media (max-width: 760px) { .ms-page .mf .mf-grid[data-starter] { grid-template-areas: "price" "now" "next"; grid-template-rows: auto; } }
+}
+
+/* The legacy bento has unlayered placements; constrain the starter to one row. */
+@layer components {
+  @media (min-width: 761px) {
+    .ms-page .mf .mf-grid[data-starter] { grid-template-columns: minmax(280px, 1fr) minmax(0, 2fr) !important; grid-template-rows: auto !important; grid-template-areas: "price next" !important; }
+    .ms-page .mf .mf-grid[data-starter]:has(.mf-now) { grid-template-areas: "price now" !important; }
+    .ms-page .mf .mf-grid[data-starter] > .mf-price { grid-area: price !important; }
+    .ms-page .mf .mf-grid[data-starter] > .mf-starter-next { grid-area: next !important; }
+    .ms-page .mf .mf-grid[data-starter] > .mf-now { grid-area: now !important; }
+  }
+}

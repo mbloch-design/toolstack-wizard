@@ -68,6 +68,12 @@ describe("StackFindings", () => {
     await new Promise(resolve=>setTimeout(resolve,800));
     expect(answer).not.toHaveBeenCalled();
   });
+  it("guides the first paid tool instead of showing a full dashboard",()=>{
+    const add=vi.fn();const{container}=module([],{toolCount:1,total:11,spend:[{tool:tool("Notion"),amount:11}],onAddTool:add});
+    expect(container.querySelector('.mf-balance')).toBeNull();
+    expect(screen.getByText('Votre stack prend forme.')).toBeTruthy();
+    fireEvent.click(screen.getByRole('button',{name:'Ajouter un autre outil'}));expect(add).toHaveBeenCalledOnce();
+  });
   it("shows the budget by vertical as a radar", () => {
     module([card("Canva")]);
     expect(screen.getByRole("img", { name: "RH 58 %, IT 17 %" })).toBeTruthy();

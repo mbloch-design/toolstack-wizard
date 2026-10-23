@@ -146,9 +146,8 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const { theme, toggle: toggleTheme } = useTheme();
   const location = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
-  // The labelled navigation is the canonical desktop state. The compact rail
-  // remains available as a deliberate choice and is remembered per browser.
-  const [sidebarExpanded, setSidebarExpanded] = useState(true);
+  // Start compact. An explicitly expanded desktop navigation is remembered per browser.
+  const [sidebarExpanded, setSidebarExpanded] = useState(false);
   const contentRef = useRef<HTMLElement>(null);
   const { state: cartState } = useStackPins();
   const cartCount = cartState.pinnedToolSlugs.length;
@@ -257,7 +256,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   useEffect(() => {
     let storedPreference: string | null = null;
     try { storedPreference = localStorage.getItem("tooltrim:sidebar-expanded"); } catch { /* Use default navigation. */ }
-    setSidebarExpanded(storedPreference === null ? true : storedPreference === "true");
+    setSidebarExpanded(storedPreference === "true");
   }, []);
 
   // De 641 à 1 180 px, la barre est une colonne imposée pour laisser la place
@@ -310,7 +309,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
   return (
     <TopbarBreadcrumbContext.Provider value={breadcrumbCtx}>
-    <div className={`asv2-root${sidebarExpanded || railIsOpen ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"}>
+    <div className={`asv2-root${shownExpanded ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"}>
       {railIsOpen && <button type="button" className="asv2-rail-backdrop" tabIndex={-1} aria-label={t("Réduire la barre latérale", "Collapse sidebar")} onClick={() => setRailOpen(false)} />}
       <aside ref={sidebarRef} className="asv2-sidebar" data-expanded={shownExpanded}>
         <div className="asv2-sidebar-top">

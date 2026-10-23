@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
-import { Activity, Rocket, UserRound, BarChart3, Clock, Moon, Zap, Check, ChevronDown, CircleDot, ClipboardCheck, Flame, Gauge, Scale, Target, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
+import { Activity, Rocket, UserRound, BarChart3, Clock, Moon, Zap, Check, ChevronDown, CircleDot, ClipboardCheck, Flame, Gauge, Plus, Scale, Target, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { Link } from "@/lib/routerLinks";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
@@ -311,7 +311,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
   const segments: { id: string; label: string; amount: number; color: string; tool?: ToolSummary }[] = [...shown.map((line, index) => ({ id: line.tool.id, label: line.tool.name, amount: line.amount, color: AREA_COLORS[index], tool: line.tool })),
     ...(otherCount > 0 ? [{ id: "others", label: t(`${otherCount} autre${s(otherCount)}`, `${otherCount} other${s(otherCount)}`), amount: otherAmount, color: AREA_OTHER }] : [])];
   return <section className="mf" aria-label={t("Ma stack en bref", "My stack at a glance")}>
-    <div className="mf-grid" data-sparse={total === 0 && fit.length === 0 ? "" : undefined} data-next={groups.length} data-done={top ? undefined : ""}>
+    <div className="mf-grid" data-starter={toolCount === 1 ? "" : undefined} data-sparse={total === 0 && fit.length === 0 ? "" : undefined} data-next={groups.length} data-done={top ? undefined : ""}>
       {/* 1. Read first: what the stack costs, and the verdict under it. */}
       <article className="mf-card mf-price" data-open={openCard === "price" ? "" : undefined} data-all={priceAll ? "" : undefined}>
         <p className="mf-k tt-kicker">{icon(Wallet)}{items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}{expander("price", t("le coût", "the cost"))}</p>
@@ -474,7 +474,13 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
       </section> : null}
 
       {/* 3. How the budget is balanced across verticals: its own block. */}
-      {total > 0 && <article className="mf-card mf-balance" data-open={openCard === "bal" ? "" : undefined}>
+      {toolCount === 1 && !top && <article className="mf-card mf-starter-next" data-open="">
+        <span className="mf-starter-icon" aria-hidden="true"><Layers3 size={24} /></span>
+        <h2>{t("Votre stack prend forme.", "Your stack is taking shape.")}</h2>
+        <p>{t("Votre premier outil est en place. Ajoutez ceux que vous utilisez aussi pour mieux comprendre votre budget et les usages qui se recoupent.", "Your first tool is in place. Add the others you use to understand your budget and where their uses overlap.")}</p>
+        <Button variant="primary" icon={<Plus size={18} aria-hidden />} onClick={onAddTool}>{t("Ajouter un autre outil", "Add another tool")}</Button>
+      </article>}
+      {toolCount > 1 && total > 0 && <article className="mf-card mf-balance" data-open={openCard === "bal" ? "" : undefined}>
         <div className="mf-k tt-kicker">{icon(Layers3)}<span className="mf-k-label">{t("Répartition du budget", "Budget split")}</span>{spend.length > 0 && areas.length > 0 && <SplitViews view={splitView} onChange={setSplitView} t={t} radar={areas.length >= 4} />}{expander("bal", t("la répartition", "the split"))}</div>
         {spend.length > 0 && areas.length > 0 ? (() => {
           const lead = [...areas].sort((x, y) => y.amount - x.amount)[0];
@@ -499,7 +505,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
 
       {/* 5. Right size: is each tool that costs most sized to its use? Power is the
           catalogue's score, use is the person's answer; the verdict follows. */}
-      {fit.length > 0 && (() => {
+      {toolCount > 1 && fit.length > 0 && (() => {
         const answered = fit.filter((row) => row.usage).length;
         const verdictOf = (row: FitRow): { tone: "ok" | "down" | "up"; text: ReactNode; option?: FitOption } => {
           const use = row.usage ?? 3, power = row.power;
