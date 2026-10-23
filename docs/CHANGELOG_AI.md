@@ -1,3 +1,7 @@
+## 2026-10-23 — Correction du contrôle design tokens
+
+Couleurs des pictogrammes Google et langues centralisées dans des tokens dédiés. Réutilisation des tokens de palette et de rayons dans le CSS, sans relever la baseline. Contrôle design tokens : 123 couleurs CSS, 74 rayons CSS, 12 couleurs TSX ; aucune régression par rapport aux plafonds existants.
+
 ## 2026-10-23 — Ma stack : composition éditoriale de l’état vide
 
 Reprise du premier écran connecté : promesse ToolTrim, explication des trois bénéfices avec pictogrammes et schémas illustratifs, puis recherche et ajouts directs. Typographie alignée sur les tokens du design system. Aucun chiffre de budget ni outil fictif attribué au compte. Validation TypeScript et cinq parcours navigateur FR/EN, mobile/desktop et retour de connexion.
