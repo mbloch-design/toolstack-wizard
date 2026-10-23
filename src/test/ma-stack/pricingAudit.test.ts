@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { Tool } from "@/data/types";
 import { comparisonPriceDisplay } from "@/lib/comparisonPricing";
-import { decisionSavingInCurrency, type StackDecision } from "@/lib/stackDecisions";
+import { decisionSavingInCurrency, latestRemovedStackDecisions, type StackDecision } from "@/lib/stackDecisions";
 import { EUR_TO_USD } from "@/lib/currencyRates";
 
 const tool = (override: Partial<Tool> = {}) => ({ id: "test", name: "Test", defaultMonthlyPrice: 0, pricing: { free: "", paid: "" }, ...override } as Tool);
@@ -44,5 +44,31 @@ describe("persistent decision currency", () => {
     expect(decisionSavingInCurrency(decision, "USD")).toBeNull();
     expect(decisionSavingInCurrency({ ...decision, saving: NaN, savingCurrency: "EUR" }, "EUR")).toBeNull();
     expect(decisionSavingInCurrency({ ...decision, saving: -5, savingCurrency: "EUR" }, "EUR")).toBeNull();
+  });
+});
+
+
+describe("savings from removed tools", () => {
+  const decision = (removed: string, saving: number, at: string, kind: StackDecision["kind"] = "keep-one"): StackDecision => ({ kind, kept: "figma", removed, saving, savingCurrency: "EUR", at });
+  it("counts a repeatedly removed tool once using its latest decision", () => {
+    const selected = latestRemovedStackDecisions({
+      older: decision("canva", 10, "2026-10-01T00:00:00Z"),
+      newer: decision("canva", 20, "2026-10-02T00:00:00Z", "replace"),
+      other: decision("miro", 5, "2026-10-01T00:00:00Z"),
+    }, new Set());
+    expect(selected.map(item => [item.removed, item.saving])).toEqual([["canva", 20], ["miro", 5]]);
+    expect(selected.reduce((sum, item) => sum + item.saving, 0)).toBe(25);
+  });
+  it("excludes re-added tools and keep-both decisions", () => {
+    expect(latestRemovedStackDecisions({
+      readded: decision("canva", 10, "2026-10-01T00:00:00Z"),
+      both: decision("miro", 5, "2026-10-02T00:00:00Z", "keep-both"),
+    }, new Set(["canva"]))).toEqual([]);
+  });
+  it("resolves timestamp ties independently of record insertion order", () => {
+    const a = decision("canva", 10, "2026-10-01T00:00:00Z");
+    const z = decision("canva", 20, "2026-10-01T00:00:00Z");
+    expect(latestRemovedStackDecisions({ a, z }, new Set())).toEqual([z]);
+    expect(latestRemovedStackDecisions({ z, a }, new Set())).toEqual([z]);
   });
 });

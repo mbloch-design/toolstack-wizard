@@ -12,7 +12,7 @@ test.beforeEach(async ({ page, context }) => {
 
 test("empty → search → add → inspect → remove → undo → persist", async ({ page }) => {
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.getByRole("heading", { name: "Mes outils", exact: true })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Choisir,\u00a0pas empiler.", exact: true })).toBeVisible();
   await expect(page.locator(".ms-inv")).toHaveCount(0);
   await page.getByRole("searchbox", { name: "Ajouter un outil à ma stack", exact: true }).fill("figma");
   await page.getByRole("button", { name: "Ajouter Figma", exact: true }).click();

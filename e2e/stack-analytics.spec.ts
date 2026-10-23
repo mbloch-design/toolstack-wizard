@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 
-const stackKey = 'tooltrim-ma-stack-mvp-v3';
+const stackKey = 'tooltrim-personal-stack-v4:anonymous';
 const journeyNames = ['explorer_view', 'explorer_save', 'explorer_back'];
 async function events(page: Page) {
   return page.evaluate(names => (window.dataLayer ?? [])
@@ -13,9 +13,11 @@ async function seed(page: Page, choice: 'accepted' | 'refused' | null) {
       localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({version:1, choice, decidedAt:Date.now(), expiresAt:Date.now()+3600000}));
     }
     if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify({
-      version:3, needs:[{id:'private-client',labelFr:'Client confidentiel',labelEn:'Private client',order:0,source:'custom'}],
-      pinnedToolSlugs:['figma'], toolEntries:[{toolSlug:'figma',needIds:['private-client'],intent:'stack',addedAt:'2026-10-14T00:00:00Z',assignmentMode:'manual'}],
+      version:4, selection:{version:3, needs:[{id:'private-client',labelFr:'Client confidentiel',labelEn:'Private client',order:0,source:'custom'}],
+      pinnedToolSlugs:['figma'], toolEntries:[{toolSlug:'figma',needIds:['private-client'],intent:'stack',addedAt:'2026-10-14T00:00:00Z',assignmentMode:'manual'}]},
+      billing:{paid:[],reviewed:[],choices:{}},decisions:{},usage:{},
     }));
+    localStorage.setItem('tooltrim-personal-stack-v4:anonymous-migrated','1');
   }, {key:stackKey, choice});
 }
 async function saveIdea(page: Page, lang = 'fr') {
@@ -136,6 +138,8 @@ test('private objective and try-later choice send only the source type and inten
     ['event','explorer_save',{source_type:'objectif',intent:'wishlist'}],
   ]);
   const savedIntent = await page.evaluate(({key,slug}) => JSON.parse(localStorage.getItem(key) || '{}')
-    .toolEntries.find((entry: {toolSlug: string}) => entry.toolSlug === slug)?.intent, {key:stackKey,slug});
+    .selection.toolEntries.find((entry: {toolSlug: string}) => entry.toolSlug === slug)?.intent, {key:stackKey,slug});
   expect(savedIntent).toBe('wishlist');
+  await page.reload();
+  await expect.poll(() => page.evaluate(({key,slug}) => JSON.parse(localStorage.getItem(key) || '{}').selection.toolEntries.find((entry:{toolSlug:string})=>entry.toolSlug===slug)?.intent,{key:stackKey,slug})).toBe('wishlist');
 });

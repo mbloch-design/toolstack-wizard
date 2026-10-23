@@ -220,3 +220,16 @@ it("does not claim a saved stack before the first tool, while preserving sync fa
   view.rerender(<StackAccountPanel empty />);
   expect(screen.getByRole("status")).toHaveTextContent("Sauvegarde indisponible");
 });
+
+it("keeps healthy save status inline and hides the standalone notice",()=>{
+ account.user=user;account.syncStatus="synced";
+ const view=render(<StackAccountPanel placement="notice"/>);
+ expect(view.container).toBeEmptyDOMElement();
+ view.rerender(<StackAccountPanel placement="inline"/>);
+ expect(screen.getByRole('status')).toHaveAttribute('title','Stack enregistrée');
+ expect(screen.getByText('Stack enregistrée')).toHaveClass('sr-only');
+ account.syncStatus='error';view.rerender(<StackAccountPanel placement="inline"/>);
+ expect(view.container).toBeEmptyDOMElement();
+ view.rerender(<StackAccountPanel placement="notice"/>);
+ expect(screen.getByRole('status')).toHaveTextContent('Sauvegarde indisponible');
+});

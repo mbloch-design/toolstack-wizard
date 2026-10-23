@@ -355,10 +355,64 @@ test('first unconfirmed plan has no zero budget or empty analysis cards', async 
  await page.emulateMedia({reducedMotion:'reduce'});
  await control(request,'seed',{email:'first-budget@example.invalid',state:state(['notion'])});
  await page.goto('/en/ma-stack');await login(page,'en','first-budget@example.invalid');await saved(page,'en');
- await expect(page.locator('.mf-unknown-total')).toContainText('Budget not set yet');
+ await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
  await expect(page.locator('.mf-price')).not.toContainText('$0');
  await expect(page.locator('.mf-balance')).toHaveCount(0);
  await expect(page.locator('.mf-fit')).toHaveCount(0);
  await expect(page.locator('.mf-now')).toContainText('Notion');
+ await page.getByRole('button',{name:'Choose my first plan',exact:true}).click();
+ await expect(page.locator('.mf-now')).toHaveAttribute('data-open','');
  await page.screenshot({path:'test-results/accounts/first-plan-budget.png',fullPage:true});
+});
+
+test('undoing the first free plan restores the unanswered question after reload', async ({page,request}) => {
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await control(request,'seed',{email:'undo-plan@example.invalid',state:state(['notion'])});
+ await page.goto('/en/ma-stack');await login(page,'en','undo-plan@example.invalid');await saved(page,'en');
+ await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
+ await expect(page.locator('.mf-plan')).toHaveCount(3);
+ await page.locator('.mf-plan').filter({hasText:'Free plan'}).first().click();
+ await expect(page.locator('.mf-now')).toHaveCount(0);
+ await page.getByRole('button',{name:'Undo',exact:true}).click();
+ await expect(page.locator('.mf-now')).toContainText('Notion');
+ await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
+ await saved(page,'en');await page.reload();await saved(page,'en');
+ await expect(page.locator('.mf-budget-onboarding')).toContainText("Let's talk budget.");
+});
+
+for(const width of [390,1440]) test(`personal welcome recognises the signed-in owner ${width}`,async({page,request})=>{
+ await page.setViewportSize({width,height:1000});
+ await control(request,'seed',{email:'welcome@example.invalid',displayName:'Michael',state:state(['notion'])});
+ await page.goto('/fr/ma-stack');await login(page,'fr','welcome@example.invalid','fixture-password','Michael');
+ await expect(page.locator('.ms-personal-greeting')).toContainText('Bonjour, Michael');
+ await expect(page.locator('.ms-personal-message')).toContainText('On fait le point, un choix à la fois');
+ await expect(page.getByRole('heading',{name:'Mes outils',exact:true})).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
+ const greeting=await page.locator('.ms-personal-greeting').boundingBox();const title=await page.getByRole('heading',{name:'Mes outils',exact:true}).boundingBox();expect(title!.y).toBeGreaterThan(greeting!.y);
+ await page.screenshot({path:`test-results/accounts/personal-welcome-${width}.png`,fullPage:true,animations:'disabled'});
+});
+
+for(const width of [390,1440]) test(`one paid tool offers a next step instead of empty charts ${width}`,async({page,request})=>{
+ await page.setViewportSize({width,height:1000});
+ const full=state(['notion']);full.billing={paid:['notion'],reviewed:['notion'],choices:{notion:{source:'custom',amount:11,currency:'USD',period:'monthly'}}};
+ await control(request,'seed',{email:'starter@example.invalid',displayName:'Michael',state:full});
+ await page.goto('/en/ma-stack');await login(page,'en','starter@example.invalid','fixture-password','Michael');await saved(page,'en');
+ await expect(page.getByRole('heading',{name:'Your stack is taking shape.',exact:true})).toBeVisible();
+ await expect(page.locator('.ms-inventory-heading .ms-save-indicator')).toHaveAttribute('title','Stack saved');
+ await expect(page.locator('.ms-page > .ms-empty-autosave')).toHaveCount(0);
+ await expect(page.locator('.mf-balance')).toHaveCount(0);await expect(page.locator('.mf-fit')).toHaveCount(0);
+ if(width>760){await expect.poll(async()=>{const price=await page.locator('.mf-price').boundingBox();const next=await page.locator('.mf-starter-next').boundingBox();return Math.abs(price!.y-next!.y);}).toBeLessThan(3);}
+ await page.screenshot({path:`test-results/accounts/starter-space-${width}.png`,fullPage:true,animations:'disabled'});
+ await page.getByRole('button',{name:'Add another tool',exact:true}).click();
+ await expect(page.getByRole('searchbox',{name:'Add a tool to my stack'})).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
+});
+test('general header sign-in opens the personal stack',async({page,request})=>{
+ await control(request,'seed',{email:'header-return@example.invalid',displayName:'Michael',state:state(['notion'])});
+ await page.goto('/en');await dismissConsent(page);
+ await page.getByRole('button',{name:'Sign in',exact:true}).click();
+ await emailForm(page,'header-return@example.invalid','fixture-password');
+ await page.locator('.ac-form').getByRole('button',{name:'Sign in',exact:true}).click();
+ await expect(page).toHaveURL(/\/en\/ma-stack$/);
+ await expect(page.locator('.ms-personal-greeting')).toContainText('Michael');
 });

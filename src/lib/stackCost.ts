@@ -26,6 +26,7 @@ export function toolMonthlyCost(tool: ToolSummary, isPaid: (slug: string) => boo
   // really pay) wins over the catalogue entry plan.
   const choice = getPlanChoice(toolKey(tool));
   const declared = choice ? monthlyFromChoice(choice) : null;
+  if (choice && declared === 0) return { kind: "free" };
   if (choice && declared !== null) return { kind: "paid", monthly: declared, currency: choice.currency, declared: true, source: choice.source };
   const label = stackCatalogPrice(tool, lang);
   if (label === "Free" || label === "Gratuit") return { kind: "free" };
@@ -41,7 +42,7 @@ export function toolMonthlyCost(tool: ToolSummary, isPaid: (slug: string) => boo
 
 /** Monthly amount of a declared cost: annual spread over 12 months, times the seats of a per-user plan. */
 export function monthlyFromChoice(choice: PlanChoice): number | null {
-  if (!(choice.amount > 0) || !isCurrency(choice.currency)) return null;
+  if (!Number.isFinite(choice.amount) || choice.amount < 0 || !isCurrency(choice.currency)) return null;
   const base = choice.period === "annual" ? choice.amount / 12 : choice.amount;
   return base * (choice.perSeat ? Math.max(1, choice.seats || 1) : 1);
 }

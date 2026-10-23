@@ -2,6 +2,40 @@
 
 Non connecté, `/ma-stack` devient une landing dont le hero est le produit : la personne touche ses outils, une lecture en direct (nombre d'outils, coût connu, doublons issus du catalogue) nomme un outil de chaque paire et garde l'autre pour le compte. Puis viennent trois frictions illustrées par des fragments du produit, les étapes, les questions et un final qui reprend ses logos. Les choix restent un brouillon local (7 jours) transmis au compte. Connecté avec une stack vide : onboarding en quatre écrans (bonjour en plusieurs langues puis le prénom, demandé s'il manque ; métier ; tarif journalier ; trois premiers outils parmi ceux qui reviennent le plus dans les stacks éditoriales du métier ; écran « C'est prêt » avec la lecture et la valeur de l'heure sur 7 heures). Rien n'est épinglé avant « Ouvrir mon espace ». Le prénom va dans le profil, le métier (`trade`) et le tarif (`dailyRate`) dans `PersonalStackV4` : migration `20261023100000_personal_stack_onboarding`, champs facultatifs, retour arrière qui conserve les données. Correctif : la zone `aria-live` de la lecture laissait la page accessible derrière la fenêtre de connexion (Radix garde visibles les régions live). Tests : unitaires 770, API 294, SQL éphémère avec retour arrière, e2e comptes.
 
+## 2026-10-23 — Hero personnel et premier pas budgétaire
+
+Accueil, titre, nombre d’outils et phrase de contexte réunis dans un hero. L’état budget non renseigné devient une invitation courte : « On fait les comptes ? Promis, pas de tableur. » Le lien ouvre la prochaine formule, y compris sur mobile. Suppression de l’avertissement technique redondant lorsqu’aucun montant n’est encore connu.
+
+## 2026-10-23 — Parcours analytics sur le stockage personnel actuel
+
+La recette analytics lisait encore tooltrim-ma-stack-mvp-v3 après migration. Préparation et lecture utilisent désormais l’enveloppe personnelle v4 ; assertion wishlist conservée et vérification de persistance après rechargement ajoutée. Les données collectées et le consentement restent inchangés. Validation : les 19 tests de l’étape CI analytics/consentement/CSP passent.
+
+## 2026-10-23 — Sauvegarde intégrée au titre de la stack
+
+Suppression de la ligne orpheline Stack saved avant le titre. Le statut sain devient un pictogramme discret adjacent au titre, avec libellé accessible et infobulle native, sans encart. Les erreurs, conflits et demandes de reconnexion restent dans leur surface actionnable.
+
+## 2026-10-23 — Espace personnel adapté au premier outil
+
+La connexion générale du header aboutit à Ma stack ; les intentions contextuelles conservent leur destination. Avec un seul outil renseigné, budget compact et prochaine étape explicite remplacent les cartes de répartition et d’optimisation prématurées. Le bouton Ajouter un autre outil ouvre la recherche existante.
+
+## 2026-10-23 — Navigation compacte par défaut
+
+La barre latérale démarre compacte en l’absence de préférence explicite. Le choix déployé/réduit reste mémorisé sur ordinateur ; la classe de largeur suit désormais l’état réellement affiché aux largeurs intermédiaires.
+
+## 2026-10-23 — Accueil personnel Ma stack
+
+Salutation avec le nom choisi du compte courant, repli naturel sans e-mail ni nom inféré, message adapté au premier outil ou aux choix restants. Un signe de bienvenue discret demandé par Michael. Aucun nouveau champ collecté ni persona déduit.
+
+## 2026-10-23 — Alignement des parcours CI Ma stack
+
+Le journal GitHub du run 39985062879 révèle cinq échecs dans My stack discovery journeys : quatre assertions attendent l’ancien libellé du budget et une attend l’ancien titre de l’état vide. Les assertions utilisent désormais les libellés actuels ; le parcours ajout, retrait, annulation, persistance et les contrôles mobile restent inchangés.
+
+## 2026-10-23 — Cinq régressions prioritaires du bento
+
+Prix personnel nul conservé sans retour au catalogue ; baisse budgétaire comptée une seule fois par outil retiré ; réponses de formule atomiques avec annulation exacte et protection du compte ; temporisations annulées à la sortie et contrôlées avant mutation ; Plus tard libère une question ciblée depuis le budget. La réponse gratuite groupée efface aussi les anciens choix payants. Le libellé des économies désigne une baisse du budget estimé, pas une résiliation effective.
+
+Reproduction rouge puis verte des régressions de données et interactions ; relecture indépendante des transitions. Aucun changement catalogue ni migration SQL.
+
 ## 2026-10-23 — Premier outil sans formule choisie
 
 Aucun montant nul suggéré avant confirmation de la première formule : budget à renseigner, répartition et optimisation masquées, grille réduite aux cartes utiles. Validation : 14 tests unitaires, typage complet et deux scénarios navigateur (première formule, quatre outils dont deux gratuits).

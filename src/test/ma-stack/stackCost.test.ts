@@ -1,6 +1,8 @@
-import { describe, expect, it } from "vitest";
+// @vitest-environment jsdom
+import { afterEach, describe, expect, it } from "vitest";
 import { monthlyFromChoice, toolMonthlyCost } from "@/lib/stackCost";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
+import { updatePersonalStack } from "@/lib/personalStackStore";
 import toolsIndex from "@/data/tools_index.json";
 
 const tool = (slug: string, extra: Partial<ToolSummary> = {}) => ({
@@ -49,8 +51,19 @@ describe("monthlyFromChoice", () => {
     expect(monthlyFromChoice({ source: "plan", amount: 20, currency: "EUR", period: "monthly", seats: 5 })).toBe(20);
     expect(monthlyFromChoice({ source: "plan", amount: 20, currency: "EUR", period: "monthly", perSeat: true, seats: 0 })).toBe(20);
   });
-  it("rejects an empty amount or an unsupported currency", () => {
-    expect(monthlyFromChoice({ source: "custom", amount: 0, currency: "EUR", period: "monthly" })).toBeNull();
+  it("honors an explicit free choice instead of falling back to the catalogue", () => {
+    updatePersonalStack(current => ({ ...current, billing: { ...current.billing, choices: { claude: { source: "custom", amount: 0, currency: "EUR", period: "monthly" } } } }));
+    expect(toolMonthlyCost(tool("claude"), () => true, "en")).toEqual({ kind: "free" });
+  });
+  afterEach(() => updatePersonalStack(current => ({ ...current, billing: { ...current.billing, choices: {} } })));
+  it("accepts explicit zero monthly and annual amounts", () => {
+    expect(monthlyFromChoice({ source: "custom", amount: 0, currency: "EUR", period: "monthly" })).toBe(0);
+    expect(monthlyFromChoice({ source: "plan", amount: 0, currency: "USD", period: "annual", perSeat: true, seats: 3 })).toBe(0);
+  });
+  it.each([-1, NaN, Infinity, -Infinity])("rejects invalid amount %s", amount => {
+    expect(monthlyFromChoice({ source: "custom", amount, currency: "EUR", period: "monthly" })).toBeNull();
+  });
+  it("rejects an unsupported currency", () => {
     expect(monthlyFromChoice({ source: "custom", amount: 10, currency: "INR" as never, period: "monthly" })).toBeNull();
   });
 });

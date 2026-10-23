@@ -75,6 +75,9 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
+      - name: Sidebar preference persistence
+        run: npx playwright test e2e/sidebar-preference.spec.ts
+
       - name: My stack discovery journeys
         run: npm run test:e2e:ma-stack
 

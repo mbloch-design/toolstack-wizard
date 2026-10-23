@@ -1,0 +1,13 @@
+import {afterEach,expect,it,vi} from 'vitest';
+import {cleanup,render,screen} from '@testing-library/react';
+import StackPersonalWelcome from './StackPersonalWelcome';
+const data=vi.hoisted(()=>({user:{id:'A'} as {id:string}|null,profile:{userId:'A',displayName:'Michael'} as {userId:string;displayName:string|null}|null,syncStatus:'synced',lang:'fr'}));
+vi.mock('@/hooks/useStackAccount',()=>({useStackAccount:()=>data}));
+vi.mock('@/components/account/AccountExperienceProvider',()=>({useAccountExperience:()=>data}));
+vi.mock('@/hooks/useLang',()=>({useLang:()=>({t:(fr:string,en:string)=>data.lang==='fr'?fr:en})}));
+afterEach(()=>{cleanup();data.user={id:'A'};data.profile={userId:'A',displayName:'Michael'};data.syncStatus='synced';data.lang='fr'});
+it('welcomes the current account and explains the first step',()=>{render(<StackPersonalWelcome empty/>);expect(screen.getByText(/Bonjour, Michael/)).toBeVisible();expect(screen.getByText(/Bienvenue chez vous/)).toBeVisible()});
+it('does not expose the preceding account name',()=>{data.profile={userId:'B',displayName:'Private name'};render(<StackPersonalWelcome empty={false}/>);expect(screen.queryByText(/Private name/)).toBeNull();expect(screen.getByText('Bonjour')).toBeVisible()});
+it('uses a natural fallback with no name',()=>{data.profile=null;render(<StackPersonalWelcome empty/>);expect(screen.getByText('Bonjour')).toBeVisible()});
+it('adapts to pending choices in English',()=>{data.lang='en';render(<StackPersonalWelcome empty={false} pending={2}/>);expect(screen.getByText(/Hi, Michael/)).toBeVisible();expect(screen.getByText(/One choice at a time/)).toBeVisible()});
+it('does not greet a signed-out account',()=>{data.user=null;const{container}=render(<StackPersonalWelcome empty/>);expect(container).toBeEmptyDOMElement()});
