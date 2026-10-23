@@ -70,7 +70,7 @@
     "pilot:n8n-identity": "node scripts/n8n-identity-pilot.mjs",
     "summarize:phase4": "node scripts/summarize-phase4-wave.mjs",
     "assess:g4": "node scripts/assess-phase4-g4.mjs",
-    "verify:preprod": "npm test && npm run test:api && npm run test:seo-contracts && npm run typecheck && npm run build",
+    "verify:preprod": "npm test && npm run test:api && npm run test:accounts:runtime && npm run test:seo-contracts && npm run typecheck && npm run build",
     "validate:preprod": "node scripts/validate-preprod.mjs",
     "setup:preprod-secrets": "node scripts/setup-preprod-secrets.mjs",
     "deploy:preprod-supabase": "node scripts/deploy-preprod-supabase.mjs",
@@ -107,7 +107,8 @@
     "test:seo-contracts": "vitest run --config vitest.research.config.mjs scripts/validate-generated-seo.test.mjs scripts/lib/ssr-contract.test.mjs scripts/lib/compact-html.test.mjs scripts/lib/explorer-related-paths.test.mjs scripts/lib/explorer-r5-review.test.mjs scripts/lib/legacy-css-cascade.test.mjs scripts/lib/shared-critical-css.test.mjs scripts/generated-routing.test.mjs",
     "typecheck:api": "tsc --noEmit -p tsconfig.api.json",
     "test:api": "vitest run --config vitest.api.config.ts",
-    "test:accounts:db": "node scripts/test-accounts-db.mjs"
+    "test:accounts:db": "node scripts/test-accounts-db.mjs",
+    "test:accounts:runtime": "node --test scripts/accounts-runtime.test.mjs"
   },
   "dependencies": {
     "@orama/orama": "^3.1.18",

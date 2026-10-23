@@ -51,6 +51,9 @@ jobs:
       - name: API handler contract fixtures
         run: npm run test:api
 
+      - name: Native Node account runtime
+        run: npm run test:accounts:runtime
+
       - name: SEO build contract fixtures
         run: npm run test:seo-contracts
 

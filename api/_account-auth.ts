@@ -1,7 +1,7 @@
-import { normalizeOAuthProfileSeed, type OAuthProfileSeed } from "../src/lib/accountIdentityProfile";
+import { normalizeOAuthProfileSeed, type OAuthProfileSeed } from "../src/lib/accountIdentityProfile.js";
 import { createClient } from "@supabase/supabase-js";
-import type { Database } from "../src/integrations/supabase/types";
-import type { VercelRequest } from "../types/vercel-http";
+import type { Database } from "../src/integrations/supabase/types.js";
+import type { VercelRequest } from "../types/vercel-http.js";
 
 export class AccountApiError extends Error {
   constructor(readonly status: number, readonly code: string) { super(code); this.name = "AccountApiError"; }

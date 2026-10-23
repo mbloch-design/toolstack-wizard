@@ -1,5 +1,5 @@
-import { normalizeOAuthAvatar, normalizeProviderLocale } from "./accountIdentityProfile";
-import { normalizeStoredPersonalStack, type PersonalStackRecord } from "./personalStack";
+import { normalizeOAuthAvatar, normalizeProviderLocale } from "./accountIdentityProfile.js";
+import { normalizeStoredPersonalStack, type PersonalStackRecord } from "./personalStack.js";
 
 export type AccountSummary = {
   userId: string; email: string | null; displayName: string | null; createdAt: string | null;

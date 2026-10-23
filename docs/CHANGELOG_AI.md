@@ -5895,3 +5895,8 @@ Le déploiement de `9c05265` signale TS2550 sur `Object.hasOwn`, malgré le type
 ## 2026-10-23 — Préparation de recette des comptes
 
 Référence d’architecture alignée sur le compte requis avant le premier ajout, Google/GitHub/e-mail et paramètres. Exemple de configuration avec flags explicites désactivés. Après accord du propriétaire, quatre migrations appliquées au projet Supabase existant, sauvegarde préalable et permissions des sept RPC vérifiées. Recette locale : 50 parcours navigateur, TypeScript complet et SQL/rollback réussis. Déploiement Preview en cours ; OAuth et SMTP réels ne sont pas encore validés.
+
+
+### Correctif détecté en Preview : imports Node ESM
+
+La première invocation distante des API comptes échouait avant le handler (`ERR_MODULE_NOT_FOUND` sur `_account-auth`). Les imports relatifs des API et de leurs dépendances partagées utilisent maintenant `.js`, conformément aux fonctions existantes. Un test compile ces trois entrées sans bundler puis les importe avec Node natif ; il reproduit l’échec avant correction et passe après. Il est inclus dans la vérification préproduction et sa CI.

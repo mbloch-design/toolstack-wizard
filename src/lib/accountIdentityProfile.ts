@@ -1,5 +1,5 @@
 import type { User } from '@supabase/supabase-js';
-import { normalizeDisplayName } from './accountProfile';
+import { normalizeDisplayName } from './accountProfile.js';
 export type OAuthProfileSeed = { provider:'google'|'github';displayName:string|null;avatarUrl:string|null;providerLocale:string|null };
 export function normalizeProviderLocale(value:unknown):string|null {
  if(typeof value!=='string'||value.length>35) return null;

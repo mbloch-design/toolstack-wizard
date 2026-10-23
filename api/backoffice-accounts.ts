@@ -1,7 +1,7 @@
-import { normalizeOAuthAvatar } from "../src/lib/accountIdentityProfile";
-import type { VercelRequest, VercelResponse } from "../types/vercel-http";
-import { AccountApiError, accountRpcError, getAccountServiceClient, requireAccount } from "./_account-auth";
-import { parseAccountDetail, parseAccountsDashboard } from "../src/lib/backofficeAccounts";
+import { normalizeOAuthAvatar } from "../src/lib/accountIdentityProfile.js";
+import type { VercelRequest, VercelResponse } from "../types/vercel-http.js";
+import { AccountApiError, accountRpcError, getAccountServiceClient, requireAccount } from "./_account-auth.js";
+import { parseAccountDetail, parseAccountsDashboard } from "../src/lib/backofficeAccounts.js";
 
 function queryValue(req: VercelRequest, name: string, fallback = ""): string {
   const value = req.query[name];

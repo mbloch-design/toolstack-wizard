@@ -1,4 +1,4 @@
-import { normalizeOAuthAvatar, normalizeProviderLocale } from "./accountIdentityProfile";
+import { normalizeOAuthAvatar, normalizeProviderLocale } from "./accountIdentityProfile.js";
 export type AccountProfile = {
   userId: string;
   avatarUrl: string | null;

@@ -1,4 +1,4 @@
-import type { Currency } from "./currencyRates";
+import type { Currency } from "./currencyRates.js";
 
 export type PlanChoice = {
   source: "plan" | "custom";

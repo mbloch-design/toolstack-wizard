@@ -1,7 +1,7 @@
-import { normalizeToolCartState, type ToolCartState, type StackNeed } from "./stackState";
-import type { PlanChoice } from "./stackPlanChoice";
-import { normalizeStackDecisions, type StackDecision } from "./stackDecisions";
-import { isCurrency } from "./currencyRates";
+import { normalizeToolCartState, type ToolCartState, type StackNeed } from "./stackState.js";
+import type { PlanChoice } from "./stackPlanChoice.js";
+import { normalizeStackDecisions, type StackDecision } from "./stackDecisions.js";
+import { isCurrency } from "./currencyRates.js";
 
 export type PersonalStackV4 = {
   version: 4;

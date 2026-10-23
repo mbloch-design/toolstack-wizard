@@ -1,8 +1,8 @@
-import type { VercelRequest, VercelResponse } from "../types/vercel-http";
-import { AccountApiError, accountRpcError, getAccountServiceClient, requireAccount, requireAccountsEnabled } from "./_account-auth";
-import { normalizeStoredPersonalStack, PersonalStackValidationError, validatePersonalStack, type PersonalStackRecord } from "../src/lib/personalStack";
-import { readAccountBody } from "./_account-body";
-import type { Json } from "../src/integrations/supabase/types";
+import type { VercelRequest, VercelResponse } from "../types/vercel-http.js";
+import { AccountApiError, accountRpcError, getAccountServiceClient, requireAccount, requireAccountsEnabled } from "./_account-auth.js";
+import { normalizeStoredPersonalStack, PersonalStackValidationError, validatePersonalStack, type PersonalStackRecord } from "../src/lib/personalStack.js";
+import { readAccountBody } from "./_account-body.js";
+import type { Json } from "../src/integrations/supabase/types.js";
 
 // Framework adapters can disable body parsing. Standalone Vercel lazy getters
 // are bypassed below; its restored raw stream is capped before JSON parsing.

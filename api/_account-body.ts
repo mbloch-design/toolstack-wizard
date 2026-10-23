@@ -1,5 +1,5 @@
-import type { VercelRequest } from "../types/vercel-http";
-import { AccountApiError } from "./_account-auth";
+import type { VercelRequest } from "../types/vercel-http.js";
+import { AccountApiError } from "./_account-auth.js";
 
 export async function readAccountBody(req: VercelRequest, maxBytes: number, invalidCode: string): Promise<unknown> {
   const length = req.headers["content-length"];

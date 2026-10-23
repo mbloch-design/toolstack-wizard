@@ -1,4 +1,4 @@
-import { convertAmount, isCurrency, type Currency } from "./currencyRates";
+import { convertAmount, isCurrency, type Currency } from "./currencyRates.js";
 
 export type StackDecision = {
   kind: "keep-both" | "keep-one" | "replace";

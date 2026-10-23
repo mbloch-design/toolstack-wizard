@@ -10,7 +10,7 @@
 
 // Chemin relatif volontaire : vite.config.ts importe ce module sous Node pour
 // le prerendu, et l'alias @/ n'est pas resolu dans ses propres imports.
-import { NATIVE_PRICES } from "../data/nativePrices";
+import { NATIVE_PRICES } from "../data/nativePrices.js";
 
 export type Currency = "EUR" | "USD" | "GBP";
 

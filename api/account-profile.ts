@@ -1,8 +1,8 @@
-import { normalizeOAuthAvatar } from "../src/lib/accountIdentityProfile";
-import type { VercelRequest, VercelResponse } from "../types/vercel-http";
-import { AccountApiError, accountRpcError, getAccountServiceClient, requireAccount, requireAccountsEnabled } from "./_account-auth";
-import { readAccountBody } from "./_account-body";
-import { AccountProfileValidationError, normalizeDisplayName, parseAccountProfile } from "../src/lib/accountProfile";
+import { normalizeOAuthAvatar } from "../src/lib/accountIdentityProfile.js";
+import type { VercelRequest, VercelResponse } from "../types/vercel-http.js";
+import { AccountApiError, accountRpcError, getAccountServiceClient, requireAccount, requireAccountsEnabled } from "./_account-auth.js";
+import { readAccountBody } from "./_account-body.js";
+import { AccountProfileValidationError, normalizeDisplayName, parseAccountProfile } from "../src/lib/accountProfile.js";
 
 export const config = { api: { bodyParser: false } };
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
