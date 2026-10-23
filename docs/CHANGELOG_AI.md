@@ -1,3 +1,7 @@
+## 2026-10-23 — Parcours analytics sur le stockage personnel actuel
+
+La recette analytics lisait encore tooltrim-ma-stack-mvp-v3 après migration. Préparation et lecture utilisent désormais l’enveloppe personnelle v4 ; assertion wishlist conservée et vérification de persistance après rechargement ajoutée. Les données collectées et le consentement restent inchangés. Validation : les 19 tests de l’étape CI analytics/consentement/CSP passent.
+
 ## 2026-10-23 — Sauvegarde intégrée au titre de la stack
 
 Suppression de la ligne orpheline Stack saved avant le titre. Le statut sain devient un pictogramme discret adjacent au titre, avec libellé accessible et infobulle native, sans encart. Les erreurs, conflits et demandes de reconnexion restent dans leur surface actionnable.
