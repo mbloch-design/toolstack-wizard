@@ -329,3 +329,14 @@ test('undoing the first free plan restores the unanswered question after reload'
  await saved(page,'en');await page.reload();await saved(page,'en');
  await expect(page.locator('.mf-unknown-total')).toContainText('Budget not set yet');
 });
+
+for(const width of [390,1440]) test(`personal welcome recognises the signed-in owner ${width}`,async({page,request})=>{
+ await page.setViewportSize({width,height:1000});
+ await control(request,'seed',{email:'welcome@example.invalid',displayName:'Michael',state:state(['notion'])});
+ await page.goto('/fr/ma-stack');await login(page,'fr','welcome@example.invalid','fixture-password','Michael');
+ await expect(page.locator('.ms-personal-greeting')).toContainText('Bonjour, Michael');
+ await expect(page.locator('.ms-personal-message')).toContainText('Quelques choix restent à préciser');
+ await expect(page.getByRole('heading',{name:'Mes outils',exact:true})).toBeVisible();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
+ await page.screenshot({path:`test-results/accounts/personal-welcome-${width}.png`,fullPage:true});
+});

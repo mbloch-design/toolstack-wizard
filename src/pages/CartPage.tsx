@@ -14,6 +14,7 @@ import { comparisonPath } from "@/lib/comparisonLinks";
 import { decisionSavingInCurrency, latestRemovedStackDecisions } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
+import StackPersonalWelcome from "@/components/stack/StackPersonalWelcome";
 import StackWelcome from "@/components/stack/StackWelcome";
 import { useStackUsage } from "@/hooks/useStackUsage";
 import { isUsageLevel } from "@/lib/personalStack";
@@ -450,7 +451,7 @@ export default function CartPage() {
     <section className="ms-start" aria-labelledby="ms-start-title">
       <div className="ms-start-story">
         <div className="ms-start-copy">
-          <p className="ms-start-eyebrow">{t("VOTRE STACK, VOS CHOIX", "YOUR STACK, YOUR CHOICES")}</p>
+          <StackPersonalWelcome empty />
           <h1 id="ms-start-title">{t("Choisir, pas empiler.", "Choose. Don't pile up.")}</h1>
           <p className="ms-start-intro">{t("Les bons outils font la différence. Rassemblez les vôtres pour voir ce qu’ils vous apportent, ce qu’ils vous coûtent et lesquels font double emploi.", "The right tools make a difference. Bring yours together to understand their value, their cost and where they overlap.")}</p>
           <p className="ms-start-bridge">{t("Commencez par un outil. La vue d’ensemble se construit au fil de vos ajouts.", "Start with one tool. Your overview takes shape as you add more.")}</p>
@@ -482,6 +483,7 @@ export default function CartPage() {
         is checked, then the stack itself at the centre, read through lenses,
         and the next decision beside it. On a phone the deck comes first. */}
     {/* Hero (22/10/2026): a status line, the title, one sentence. */}
+    <StackPersonalWelcome empty={false} pending={deckItems.length} />
     <header className="ms-top">
       <div>
         <h1 ref={inventoryHeadingRef} tabIndex={-1}>{t("Mes outils", "My tools")}</h1>

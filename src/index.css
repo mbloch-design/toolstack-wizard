@@ -40047,3 +40047,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .ms-page .mf .mf-grid[data-sparse]:not(:has(.mf-now)) { grid-template-areas: "price price price"; }
   }
 }
+
+@layer components {
+  .ms-personal-welcome { margin-bottom: var(--space-lg); }
+  .ms-personal-greeting { margin: 0; font-family: var(--font-brand); font-size: var(--tt-size-body-large); font-weight: 500; line-height: 1.4; overflow-wrap: anywhere; color: var(--color-text); }
+  .ms-personal-greeting span { display: inline-block; margin-left: var(--space-xs); font-size: var(--tt-size-body); }
+  .ms-personal-message { max-width: 64ch; margin: var(--space-xs) 0 0; font-size: var(--tt-size-card-body); line-height: 1.6; color: var(--color-text-secondary); }
+}
+
+@layer components { .ms-page .mf .mf-preview { grid-template-columns: max-content max-content; column-gap: var(--space-md); } }

@@ -1,3 +1,7 @@
+## 2026-10-23 — Accueil personnel Ma stack
+
+Salutation avec le nom choisi du compte courant, repli naturel sans e-mail ni nom inféré, message adapté au premier outil ou aux choix restants. Un signe de bienvenue discret demandé par Michael. Aucun nouveau champ collecté ni persona déduit.
+
 ## 2026-10-23 — Alignement des parcours CI Ma stack
 
 Le journal GitHub du run 39985062879 révèle cinq échecs dans My stack discovery journeys : quatre assertions attendent l’ancien libellé du budget et une attend l’ancien titre de l’état vide. Les assertions utilisent désormais les libellés actuels ; le parcours ajout, retrait, annulation, persistance et les contrôles mobile restent inchangés.
