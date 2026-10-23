@@ -59,8 +59,8 @@ for (const viewport of VIEWPORTS) {
 
       await seedStack(page);
       await page.goto("/fr/ma-stack", { waitUntil: "networkidle" });
-      await expect(page.locator(".ms-hero h1")).toBeVisible();
-      await expect(page.locator(".ms-tool-card").first()).toBeVisible();
+      await expect(page.locator(".ms-top h1")).toBeVisible();
+      await expect(page.locator(".ms-inv-card").first()).toBeVisible();
       await expectNoPageOverflow(page);
     });
   });

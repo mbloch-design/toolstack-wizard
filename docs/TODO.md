@@ -75,6 +75,8 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 
 ## Technique
 
+- [ ] P2 Explorer : en mode « legacy », `getLegacyRelation` (src/lib/toolExploration.ts) appelle « Extension de X » tout outil de la même suite (ex. Illustrator affiché comme extension de Lightroom). Les recommandations de Ma stack relabellisent déjà en « Même suite que X » ; corriger la règle à la source pour Explorer.
+
 - [x] Poids du build (02/10/2026) : les deux logos étaient recopiés en data URI cinq fois par page (limite d'intégration de Vite) ; servis en fichiers : HTML 931 → 726 Mo, build 1 042 → 837 Mo. Le CSS du shell, lui, était déjà mutualisé
 - [x] Test `alternativesCoverage.spec.ts` réparé le 02/10/2026 : 138 effets Maxon (Universe, Red Giant) classés par famille avec alternatives entre eux (`scripts/classify-maxon-effects.mjs`), 317 → 175 fiches sans voisin
 
@@ -88,6 +90,15 @@ Briefs : `docs/CLOUD_RESEARCH_BRIEF.md`, `docs/LOCAL_COMPLETION_BRIEF.md`, `docs
 - 25/09/2026 `9b3f179f` : titres et descriptions des fiches unifiés (`toolSeo.ts`), titres des pages prix qui répondent, H1 des sous-pages
 - 25/09/2026 `82b0ee6c` : pages catégorie alignées sur /tools, index A à Z, noindex des catégories minces, 57 couvertures bloquées
 - 25/09/2026 `511c528b` : catalogue /tools (besoins, filtres, sponsoring), barres de filtres sur une ligne, 7 recatégorisations, 5 URL réparées
+
+## Ma stack tableau de bord, revue design (22 oct. 2026)
+- [x] P0 mode sombre illisible (titre, montant, carte décision claire sur texte blanc) : la page définissait ses couleurs en dur (`--ap-*`, `#fff`). Tout passe sur les jetons du site ; carte décision encre en clair, surface relevée en sombre.
+- [x] P1 gate des jetons : couleurs et rayons littéraux du bloc remplacés (index.css 114 couleurs, 200 rayons, sous la référence ; TSX 12).
+- [x] P1 bilan sans boîtes vides : lignes de grille au contenu, verdict du prix en bas de carte, « Ensuite / Puis » en rangées compactes.
+- [x] P2 CSS Ma stack réécrit en un seul passage (1 080 → 353 lignes, classes mortes retirées). Direction « Temps d'écran » : fond gris froid, cartes blanches, couleur des domaines sur les puces, la liste et la barre de prix ; carte décision teintée de la marque de l'outil ; orange = doublon, vert = réglé. 23 e2e Ma stack verts.
+- [ ] P3 pastille orange des recoupements sur les puces de la carte : sans légende en vue « Domaines ».
+- [x] P1 bilan en bento à quatre blocs (22 oct.) : coût par outil, décision du moment en couleur de marque (plus de bloc noir), équilibre par domaine en radar (échelle racine carrée), « À suivre ». La suite n'est plus fondue dans la carte décision.
+- [ ] P2 donnée : le domaine « Autres usages » porte 82 % du budget de la stack test (Workable, SysAid). Le radar le montre honnêtement, mais ce fourre-tout rend l'équilibre peu parlant ; ranger ces outils dans un vrai domaine (RH, support IT) dans le catalogue.
 
 ## Ma stack en tableau de bord (7 oct. 2026)
 - Ordre validé (parcours) : hero inchangé, puis Recoupements (ce que je peux simplifier), puis Budget (anneau par domaine ou par outil, zoom local par domaine) puis Mes outils. Fil conducteur : combien je paie, et combien je paie en double. La question freemium se pose une fois (bandeau après le hero, fenêtre « Lesquels payez-vous ? », mémorisée par outil) ; les recoupements sont chiffrés (« ≈ X €/mois en double ») et triés par montant. Bandeau de bulles retiré. Commits locaux non poussés.

@@ -108,14 +108,13 @@ export default function StackOverlapPairs({ tools, categories, isPaid, currency,
   return (
     <section id="ms-overlaps" className="sg-section ms-section ms-overlaps-section" aria-labelledby="ms-overlaps-section-title">
       <div className="sg-section-heading">
-        <span className="sg-eyebrow">{en ? "Overlaps" : "Recoupements"}</span>
-        <h2 id="ms-overlaps-section-title">{en ? "What may be doing the same job?" : "Qu’est-ce qui fait peut-être doublon ?"}</h2>
+        <h2 id="ms-overlaps-section-title">{en ? "Overlaps" : "Recoupements"}{scored.length > 0 && <span className="ms-count">{scored.length}</span>}</h2>
       </div>
       {scored.length === 0
-        ? <p className="ms-section-lead">{en ? "Nothing left to review: every overlap has a decision." : "Plus rien à examiner : chaque recoupement a sa décision."}</p>
+        ? <p className="ms-section-lead">{en ? "Nothing left to review: each overlap has a decision." : "Rien à examiner : chaque recoupement a une décision."}</p>
         : <p className="ms-section-lead">{en
-        ? <>{scored.length} pair{scored.length > 1 ? "s" : ""} of tools may do the same job{doubleTotal > 0 && <>, <strong className="ms-double">{money(doubleTotal)} to review</strong> based on catalogue prices or your declared costs</>}. Keeping both can be the right call: compare before deciding.</>
-        : <>{scored.length} paire{scored.length > 1 ? "s" : ""} d’outils {scored.length > 1 ? "font" : "fait"} peut-être le même travail{doubleTotal > 0 && <>, soit <strong className="ms-double">{money(doubleTotal)} à examiner</strong> selon les prix du catalogue ou vos coûts déclarés</>}. Garder les deux peut être le bon choix : comparez avant de décider.</>}</p>}
+        ? <>These tools may do the same job{doubleTotal > 0 && <>: <strong className="ms-double">{money(doubleTotal)} to review</strong>, an estimate from catalogue prices or your costs</>}. Compare them, then keep one or both.</>
+        : <>Ces outils font peut-être le même travail{doubleTotal > 0 && <> : <strong className="ms-double">{money(doubleTotal)} à examiner</strong>, une estimation d’après les prix du catalogue ou vos coûts</>}. Comparez-les, puis gardez-en un ou les deux.</>}</p>}
       {doubleTotal > 0 && <p className="ms-budget-foot">{en ? "This amount sums the cheaper tool in each paid pair, counting each tool once. Shared uses do not prove that a subscription is unnecessary." : "Ce montant additionne l’outil le moins cher de chaque paire payante, une seule fois par outil. Des usages communs ne prouvent pas qu’un abonnement est inutile."}</p>}
       {(saved > 0 || keptBoth.length > 0 || unknownSavings) && <p className="ms-decided">
         {saved > 0 && <span className="ms-decided-saved">{en ? `Estimated budget reduced by ${money(saved)}` : `Budget estimé réduit de ${money(saved)}`}</span>}

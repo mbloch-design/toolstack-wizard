@@ -1,49 +1,61 @@
-import StackWelcome from "@/components/stack/StackWelcome";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { Plus, Search, Check, X, Minus, Pencil, LayoutGrid, Wallet, Copy, ChevronRight, Compass, Layers3 } from "@/lib/icons";
+import { Plus, Search, Check, X, Minus, Pencil, Compass, LayoutGrid, List, ChevronDown, Layers3 } from "@/lib/icons";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
-import { AREA_COLORS } from "@/lib/stackAreas";
-import StackBudgetBreakdown from "@/components/stack/StackBudgetBreakdown";
-import StackAccountPanel from "@/components/stack/StackAccountPanel";
-import StackOverlapPairs, { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
-import StackFreemiumPlans from "@/components/stack/StackFreemiumPlans";
+import { AREA_COLORS, AREA_OTHER } from "@/lib/stackAreas";
+import { scoreOverlapPairs } from "@/components/stack/StackOverlapPairs";
 import StackToolSheet from "@/components/stack/StackToolSheet";
+import StackFindings, { type Finding } from "@/components/stack/StackFindings";
+import { ActionRow, AppIcon, Button, Segmented } from "@/components/stack/StackKit";
+import { comparisonPath } from "@/lib/comparisonLinks";
+import { decisionSavingInCurrency } from "@/lib/stackDecisions";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
+import StackWelcome from "@/components/stack/StackWelcome";
+import StackAccountPanel from "@/components/stack/StackAccountPanel";
 import { useCategories, useToolSummaries, useToolBySlug, type ToolSummary } from "@/hooks/useSupabaseData";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
 import { stackDisplayLabel, stackPlacement, stackMapTerritories, stackRelations } from "@/lib/stackUsage";
 import toolAccents from "@/data/toolAccents.json";
 import { useCurrency } from "@/hooks/useCurrency";
-import { useStackPaidPlans } from "@/hooks/useStackPaidPlans";
+import { getPlanChoice, useStackPaidPlans, type PlanChoice } from "@/hooks/useStackPaidPlans";
+import { usablePlans } from "@/components/stack/StackCostEditor";
 import { stackMonthlyCost, toolMonthlyCost } from "@/lib/stackCost";
 import { convertAmount, formatAmount } from "@/lib/currencyRates";
-import { HERO_CLUSTER_SLOTS } from "@/lib/heroCluster";
 import { pairKey, useStackDecisions } from "@/hooks/useStackDecisions";
 import { trackEvent } from "@/lib/analytics";
-import { getExplorerHref } from "@/lib/toolExploration";
-import ValueChange from "@/components/motion/ValueChange";
+import { buildExplorationCandidates, getExplorerHref } from "@/lib/toolExploration";
 import { writeStackSnapshot } from "@/lib/stackSnapshot";
-import { SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
+import { SEO_BASE, setHreflang, setNoindex, setSeoTags } from "@/lib/seo";
 import { getToolLogoSources } from "@/lib/toolLogos";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+
+/** What the page knows about one tool's cost. */
+type MapToolInfo = { cost: string; share: number; kind: "paid" | "free" | "unknown"; pending: boolean };
 
 export default function CartPage() {
   const { t, lang, prefix } = useLang();
   const { tools, loading } = useToolSummaries();
   const { categories } = useCategories();
   const { state, persistenceStatus, pinTool, unpinTool, restoreTool, requiresAccount } = useStackPins();
+  // Adding needs a session once accounts are on: pinTool says no, and then no success is shown.
+  const inventoryHeadingRef = useRef<HTMLHeadingElement>(null);
+  const addToStack = (slug: string, name: string, _options?: unknown) => {
+    const wasEmpty = state.pinnedToolSlugs.length === 0;
+    if (!pinTool(slug)) return false;
+    if (wasEmpty) requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true }));
+    toast.success(t(`${name} ajouté à ma stack.`, `${name} added to your stack.`));
+    return true;
+  };
   const [params, setParams] = useSearchParams();
   const [domainFilter, setDomainFilter] = useState("all");
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const searchRef = useRef<HTMLInputElement>(null);
-  const inventoryHeadingRef = useRef<HTMLHeadingElement>(null);
   const addRef = useRef<HTMLButtonElement>(null);
   const lastToolButton = useRef<HTMLButtonElement | null>(null);
   const [editing, setEditing] = useState(false);
@@ -58,7 +70,6 @@ export default function CartPage() {
   const activeFilter = mapTerritories.some((territory) => territory.id === domainFilter) ? domainFilter : "all";
   const visibleMap = activeFilter === "all" ? mapTerritories : mapTerritories.filter((territory) => territory.id === activeFilter);
   const visibleIds = new Set(visibleMap.flatMap((territory) => territory.tools.map((tool) => tool.id)));
-  const listTools = selectedTools.filter((tool) => visibleIds.has(tool.id)).sort((a, b) => a.name.localeCompare(b.name, lang));
   const selected = selectedTools.find((tool) => toolKey(tool) === selectedSlug || tool.id === selectedSlug);
   const { tool: detail } = useToolBySlug(selected ? toolKey(selected) : undefined);
   // The hook can retain the preceding detail while a new selection loads.
@@ -69,7 +80,7 @@ export default function CartPage() {
   // to remove: the person decides.
   // Pairs kept on purpose (a decision) are no longer flagged anywhere.
   const { currency } = useCurrency();
-  const { decisions, decide, reopen } = useStackDecisions(t, (amount) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${t("/mois", "/mo")}`, currency);
+  const { decisions, decide, reopen } = useStackDecisions(t, (amount) => `${formatAmount(Math.round(amount), currency, lang)}${t("/mois", "/mo")}`, currency);
   const overlapsById = useMemo(() => new Map(selectedTools.map((tool) => [tool.id,
     stackRelations(tool, selectedTools, categories, lang)
       .filter((relation) => (relation.explicit || relation.commonUses.length > 0) && decisions[pairKey(toolKey(tool), toolKey(relation.tool))]?.kind !== "keep-both")
@@ -79,36 +90,175 @@ export default function CartPage() {
   // paid, total converted at the site's dated rate (Michael, 7 Oct 2026).
   const plans = useStackPaidPlans();
   const stackCost = stackMonthlyCost(selectedTools, plans.isPaid, currency, lang);
-  // Hero cluster: costliest tools first, so the one that weighs most on the
-  // budget sits in the middle.
+  // Costliest tools first: the footer snapshot shows the three that weigh most.
   const heroOrder = useMemo(() => {
     const monthly = (tool: ToolSummary) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0; };
     return [...selectedTools].sort((a, b) => monthly(b) - monthly(a) || a.name.localeCompare(b.name));
   }, [selectedTools, plans.paid, plans.choices, currency, lang]);
-  const heroApps = heroOrder.length > HERO_CLUSTER_SLOTS.length ? heroOrder.slice(0, HERO_CLUSTER_SLOTS.length - 1) : heroOrder;
-  const heroOverflow = heroOrder.length - heroApps.length;
   // Area colours of the budget ring, stable across the whole stack. Area colours stay those of the whole stack.
-  const colorOf = (id: string) => AREA_COLORS[Math.max(0, mapTerritories.findIndex((territory) => territory.id === id)) % AREA_COLORS.length];
+  const colorOf = (id: string) => AREA_COLORS[Math.max(0, mapTerritories.findIndex((territory) => territory.id === id))] || AREA_OTHER;
   // Hero micro-bars (Screen Time style): tools and cost split by area, in the
   // budget ring's colours, and the share of the estimated cost to review.
   const areaCosts = useMemo(() => mapTerritories.map((territory) => ({ id: territory.id, label: territory.label, tools: territory.tools.length, cost: stackMonthlyCost(territory.tools, plans.isPaid, currency, lang).total })), [mapTerritories, plans.paid, plans.choices, currency, lang]);
-  const amount = (value: number) => <><span className="ms-approx" aria-hidden="true">≈</span><span className="sr-only">≈ </span>{formatAmount(Math.round(value), currency, lang)}</>;
   // Freemium question (Michael, 7 Oct 2026): asked once per tool, at the start
   // of the story, because it sets both the budget and the estimated cost to review.
   const freemiumTools = selectedTools.filter((tool) => stackCatalogPrice(tool, lang) === "Freemium");
   const unreviewed = freemiumTools.filter((tool) => !plans.isReviewed(toolKey(tool)));
-  const [freemiumOpen, setFreemiumOpen] = useState(false);
-  function setFreemiumSheet(open: boolean) {
-    setFreemiumOpen(open);
-    if (open) trackEvent("stack_freemium_open", { count: unreviewed.length });
-    if (!open) {
-      plans.markReviewed(freemiumTools.map(toolKey));
-      trackEvent("stack_freemium_answer", { freemium: freemiumTools.length, paid: freemiumTools.filter((tool) => plans.isPaid(toolKey(tool))).length });
-    }
-  }
   // Hero and Overlaps section share one computation: same pairs, same amount.
   const overlapScore = useMemo(() => scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang, decisions), [selectedTools, categories, plans.paid, plans.choices, currency, lang, decisions]);
   const overlapPairs = overlapScore.pairs.length;
+  // The map marks only tools still in an unsettled pair (pairs kept on purpose
+  // and decided pairs no longer come out of scoreOverlapPairs).
+  const pairedById = useMemo(() => {
+    const map = new Map<string, ToolSummary[]>();
+    for (const { a, b } of overlapScore.pairs) { map.set(a.id, [...(map.get(a.id) || []), b]); map.set(b.id, [...(map.get(b.id) || []), a]); }
+    return map;
+  }, [overlapScore]);
+  // Recommendations: catalogue relations only (extension, host app, suite,
+  // ecosystem). Same-use relations are left out: they would be duplicates.
+  const recos = useMemo(() => {
+    if (selectedTools.length === 0) return [];
+    const base = { getCategoryLabel: (tool: ToolSummary) => stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang), sourceTools: selectedTools, stackEntries: state.toolEntries, tools };
+    // Audited relations first; the legacy rules widen the pool but call any
+    // same-suite tool an "extension", so only a real plugin keeps that word.
+    const audited = buildExplorationCandidates({ ...base, relationPolicy: "audited" });
+    const legacy = buildExplorationCandidates({ ...base, relationPolicy: "legacy" }).map((candidate) => candidate.direction === "extensions" && candidate.tool.tool_type !== "plugin"
+      ? { ...candidate, reasonFr: `Même suite que ${candidate.relatedSource.name}`, reasonEn: `Same suite as ${candidate.relatedSource.name}` } : candidate);
+    const seen = new Set<string>();
+    const perSource = new Map<string, number>();
+    return [...audited, ...legacy].filter((candidate) => {
+      if (seen.has(candidate.tool.id) || candidate.stackState !== "new" || candidate.direction === "alternatives" || candidate.comparisonNeedsReview) return false;
+      // A product's own modules ("attached to") are already part of it: not a recommendation.
+      if (!/^(Extension|Outil hôte|Même suite|Même écosystème)/.test(candidate.reasonFr)) return false;
+      // At most two per tool of the stack, so the picks cover the whole stack.
+      const n = perSource.get(candidate.relatedSource.id) || 0;
+      if (n >= 2) return false;
+      perSource.set(candidate.relatedSource.id, n + 1);
+      seen.add(candidate.tool.id);
+      return true;
+    }).slice(0, 6).map((candidate) => ({ tool: candidate.tool, reason: lang === "fr" ? candidate.reasonFr : candidate.reasonEn }));
+  }, [selectedTools, categories, lang, state.toolEntries, tools]);
+  const unknownTools = selectedTools.filter((tool) => toolMonthlyCost(tool, plans.isPaid, lang).kind === "unknown");
+  // One page logic (Oct 2026): the stack is shown once, at the centre, and
+  // read through lenses; every open question is a card in one deck; a tool is
+  // "checked" once nothing about it waits for an answer, and the ring says
+  // how much of the stack is checked.
+  const money = (value: number) => `${formatAmount(Math.round(value), currency, lang)}${t("/mois", "/mo")}`;
+  const monthlyOf = (tool: ToolSummary) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0; };
+  // All my tools: one grid of cards, sorted by the tab the person picks.
+  // How much the person uses each paid tool: the one thing the catalogue cannot know.
+  // Five levels (1 asleep to 5 flat out); older answers in words are read as levels.
+  const [usage, setUsageState] = useState<Record<string, number>>(() => {
+    try {
+      const raw = JSON.parse(localStorage.getItem("tooltrim-ma-stack-usage-v1") || "{}") as Record<string, number | string>;
+      const legacy: Record<string, number> = { light: 1, normal: 3, full: 5 };
+      return Object.fromEntries(Object.entries(raw).map(([slug, value]) => [slug, typeof value === "number" ? value : legacy[value] ?? 3]));
+    } catch { return {}; }
+  });
+  const setUsage = (slug: string, value: number | null) => setUsageState((current) => {
+    const next = { ...current };
+    if (value) next[slug] = value; else delete next[slug];
+    try { localStorage.setItem("tooltrim-ma-stack-usage-v1", JSON.stringify(next)); } catch { /* private mode: kept for the session */ }
+    return next;
+  });
+  // Grouping by area is a way to sort: one menu, four orders.
+  const [sortBy, setSortBy] = useState<"area" | "cost" | "name" | "recent">("area");
+  const [layout, setLayout] = useState<"grid" | "list">("grid");
+  const groupBy = sortBy === "area" ? "area" : "none";
+  const [statusFilter, setStatusFilter] = useState<"all" | "review" | "overlap">("all");
+  const addedAt = new Map(state.toolEntries.map((entry) => [entry.toolSlug, entry.addedAt || ""]));
+  const areaIndex = new Map(mapTerritories.flatMap((territory, index) => territory.tools.map((tool) => [tool.id, index] as const)));
+  const listTools = selectedTools.filter((tool) => visibleIds.has(tool.id)).sort((a, b) => {
+    const byName = a.name.localeCompare(b.name, lang);
+    if (sortBy === "cost" || sortBy === "area") return monthlyOf(b) - monthlyOf(a) || byName;
+    if (sortBy === "recent") return String(addedAt.get(toolKey(b)) || "").localeCompare(String(addedAt.get(toolKey(a)) || "")) || byName;
+    return byName;
+  });
+  const pendingIds = new Set([...unreviewed, ...unknownTools].map((tool) => tool.id).concat([...pairedById.keys()]));
+  const checked = selectedTools.filter((tool) => !pendingIds.has(tool.id)).length;
+  const maxMonthly = Math.max(0, ...selectedTools.map(monthlyOf));
+  const infoOf = (tool: ToolSummary): MapToolInfo => {
+    const cost = toolMonthlyCost(tool, plans.isPaid, lang);
+    const pending = pendingIds.has(tool.id);
+    if (cost.kind === "paid") { const monthly = convertAmount(cost.monthly, cost.currency, currency); return { cost: `${formatAmount(Math.round(monthly), currency, lang)}`, share: maxMonthly > 0 ? monthly / maxMonthly : 0, kind: "paid", pending }; }
+    if (cost.kind === "unknown") return { cost: t("Prix ?", "Price?"), share: 0, kind: "unknown", pending };
+    return { cost: cost.kind === "freemium-free" && !plans.isReviewed(toolKey(tool)) ? "Freemium" : t("Gratuit", "Free"), share: 0, kind: "free", pending };
+  };
+  const plural = (n: number, fr: string, en: string) => t(`${n} ${fr}${n > 1 ? "s" : ""}`, `${n} ${en}${n > 1 ? "s" : ""}`);
+  const costFigure = stackCost.paid > 0 ? money(stackCost.total) : stackCost.unknown > 0 ? t("Non renseigné", "Unknown") : t("Rien de payant", "Nothing paid");
+  // The deck: freemium plans first (they set the cost and the overlaps), then
+  // the pairs, then the prices nobody has entered.
+  const why = (shared: string[], explicit: boolean) => shared.length > 0
+    ? t(`Les deux servent à la même chose : ${stackDisplayLabel(shared[0], lang).toLowerCase()}. Un seul suffit sans doute.`, `Both do the same job: ${shared[0].toLowerCase()}. One is probably enough.`)
+    : explicit ? t("L’un remplace l’autre. Un seul suffit sans doute.", "Either can replace the other. One is probably enough.") : t("Ils font peut-être le même travail.", "They may do the same job.");
+  const deckItems: Finding[] = [
+    ...unreviewed.map((tool): Finding => ({
+      key: `freemium:${tool.id}`, kind: "freemium", tools: [tool],
+      title: t(`Quelle formule de ${tool.name} avez-vous\u00a0?`, `Which ${tool.name} plan do you have?`),
+      detail: t("Gratuite ou payante ? Votre total retient son souffle.", "Free or paid? Your total is holding its breath."),
+      options: (() => { const paid = toolMonthlyCost(tool, () => true, lang); return paid.kind === "paid" ? [{ label: t("Version gratuite", "Free plan"), amount: 0 }, { label: t("Plan payant", "Paid plan"), amount: convertAmount(paid.monthly, paid.currency, currency) }] : undefined; })(),
+      actions: [
+        { label: t("Non, version gratuite", "No, free version"), onClick: () => { plans.markReviewed([toolKey(tool)]); trackEvent("stack_freemium_answer", { freemium: 1, paid: 0 }); } },
+        { label: t("Oui, payant", "Yes, paid"), primary: true, onClick: () => { plans.setPaid(toolKey(tool), true); plans.markReviewed([toolKey(tool)]); trackEvent("stack_freemium_answer", { freemium: 1, paid: 1 }); } },
+      ],
+      bulk: unreviewed.length > 1 ? { label: t(`Aucun n’est payant (${unreviewed.length})`, `None is paid (${unreviewed.length})`), onClick: () => { plans.markReviewed(unreviewed.map(toolKey)); trackEvent("stack_freemium_answer", { freemium: unreviewed.length, paid: 0, quick: true }); } } : undefined,
+    })),
+    ...overlapScore.pairs.map(({ a, b, shared, explicit, double }): Finding => ({
+      key: `pair:${pairKey(toolKey(a), toolKey(b))}`, kind: "pair", tools: [a, b],
+      title: t(`${a.name} ou ${b.name}\u00a0?`, `${a.name} or ${b.name}?`),
+      detail: why(shared, explicit), costs: [monthlyOf(a), monthlyOf(b)], stake: double,
+      actions: [
+        ...[[a, b], [b, a]].map(([keep, drop]) => ({ label: t(`Garder ${keep.name}`, `Keep ${keep.name}`), ariaLabel: t(`Garder ${keep.name}, retirer ${drop.name}`, `Keep ${keep.name}, remove ${drop.name}`),
+          onClick: () => decide("keep-one", { slug: toolKey(keep), name: keep.name }, { slug: toolKey(drop), name: drop.name }, monthlyOf(drop), "stack") })),
+        { label: t("Garder les deux", "Keep both"), onClick: () => decide("keep-both", { slug: toolKey(a), name: a.name }, { slug: toolKey(b), name: b.name }, 0, "stack") },
+      ],
+      link: { label: t("Comparer en détail", "Compare in detail"), to: comparisonPath(prefix, toolKey(a), toolKey(b)), onClick: () => trackEvent("stack_compare_click", { source: "deck", a: toolKey(a), b: toolKey(b) }) },
+    })),
+    ...unknownTools.map((tool): Finding => ({
+      key: `price:${tool.id}`, kind: "price", tools: [tool],
+      title: t(`Quelle formule de ${tool.name} avez-vous\u00a0?`, `Which ${tool.name} plan do you have?`),
+      detail: t("Pour l’instant, votre total fait comme s’il était gratuit.", "For now, your total pretends it is free."),
+      savePrice: (amount: number) => { plans.setChoice(toolKey(tool), { source: "custom", amount, currency, period: "monthly" }); trackEvent("stack_price_saved", { tool_slug: toolKey(tool), source: "card" }); },
+      actions: [{ label: t("Ajouter le prix", "Add the price"), primary: true, ariaLabel: t(`Ajouter le prix de ${tool.name}`, `Add the price of ${tool.name}`), onClick: () => selectTool(toolKey(tool)) }],
+    })),
+  ];
+  // The first plan or price question gets the tool's catalogue plans, one tap
+  // each: most of the time the price is known, the plan is what is missing.
+  const planItem = deckItems.find((item) => item.kind === "freemium" || item.kind === "price");
+  const planTool = planItem?.tools[0];
+  const { tool: planDetail } = useToolBySlug(planTool ? toolKey(planTool) : undefined);
+  if (planItem && planTool && planDetail && planDetail.id === planTool.id) {
+    const slug = toolKey(planTool);
+    const SEATS = /seat|utilisateur|membre|collaborateur|per user/i;
+    const answer = (choice: PlanChoice | null, label: string, monthly: number) => {
+      if (choice) plans.setChoice(slug, choice); else plans.setPaid(slug, false);
+      if (planItem.kind === "freemium") { if (choice) plans.setPaid(slug, true); plans.markReviewed([slug]); }
+      trackEvent("stack_plan_pick", { tool_slug: slug, plan: label, source: "card" });
+      toast(t(`Noté : ${planTool.name} ${label}${monthly > 0 ? `, ${money(monthly)}` : ""}.`, `Noted: ${planTool.name} ${label}${monthly > 0 ? `, ${money(monthly)}` : ""}.`), {
+        duration: 5000, action: { label: t("Annuler", "Undo"), onClick: () => { plans.setChoice(slug, null); if (planItem.kind === "freemium") plans.setPaid(slug, false); } },
+      });
+    };
+    const options = usablePlans(planDetail, lang).map((plan) => {
+      const monthly = convertAmount(plan.billingPeriod === "annual" ? plan.nativeAmount! / 12 : plan.nativeAmount!, plan.nativeCurrency as never, currency);
+      const perSeat = !!plan.pricingUnit && SEATS.test(plan.pricingUnit);
+      return { key: plan.planKey, label: plan.displayName, monthly, perSeat, note: perSeat ? t("par utilisateur", "per user") : plan.billingPeriod === "annual" ? t("facturé à l’année", "billed yearly") : undefined,
+        pick: (seats = 1) => answer({ source: "plan", label: plan.displayName, amount: plan.nativeAmount!, currency: plan.nativeCurrency as never, period: plan.billingPeriod as "monthly" | "annual", perSeat, seats: perSeat ? seats : undefined }, perSeat && seats > 1 ? `${plan.displayName} × ${seats}` : plan.displayName, monthly * (perSeat ? seats : 1)) };
+    });
+    options.sort((x, y) => x.monthly - y.monthly).splice(planItem.kind === "freemium" ? 3 : 4);
+    if (options.length) planItem.plans = [...(planItem.kind === "freemium" ? [{ key: "free", label: t("Version gratuite", "Free plan"), monthly: 0, pick: () => answer(null, t("gratuit", "free"), 0) }] : []), ...options];
+  }
+  // What was already decided: estimated savings and pairs kept on purpose.
+  const pinnedKeys = new Set(selectedTools.map(toolKey));
+  const keptBoth = Object.entries(decisions).filter(([key, d]) => d.kind === "keep-both" && key.split("|").every((slug) => pinnedKeys.has(slug))).map(([key]) => key);
+  const pastSavings = Object.values(decisions).filter((d) => d.kind !== "keep-both" && d.removed && !pinnedKeys.has(d.removed));
+  const saved = pastSavings.reduce((sum, d) => sum + (decisionSavingInCurrency(d, currency) ?? 0), 0);
+  const unknownSavings = pastSavings.some((d) => d.saving > 0 && decisionSavingInCurrency(d, currency) === null);
+  // The deck keeps what it can act on (reopen pairs kept on purpose); the
+  // saving itself is the budget card's, said once.
+  const history = (keptBoth.length > 0 || unknownSavings) && <p className="ms-decided">
+    {unknownSavings && <span>{t("Baisse estimée : devise inconnue.", "Estimated reduction: currency unknown.")}</span>}
+    {keptBoth.length > 0 && <span>{t(`${keptBoth.length} paire${keptBoth.length > 1 ? "s" : ""} gardée${keptBoth.length > 1 ? "s" : ""} volontairement.`, `${keptBoth.length} pair${keptBoth.length > 1 ? "s" : ""} kept on purpose.`)} <button type="button" className="ms-inline-link" onClick={() => keptBoth.forEach((key) => { const [a, b] = key.split("|"); reopen(a, b); })}>{t("Revoir", "Review again")}</button></span>}
+  </p>;
   const empty = state.pinnedToolSlugs.length === 0;
   // The footer's "your stack" card on every other page reads these figures;
   // its logos are the costliest tools that have a logo stored on the site.
@@ -139,6 +289,8 @@ export default function CartPage() {
       locale: lang === "fr" ? "fr_FR" : "en_US",
     });
     setHreflang(`/${lang}/ma-stack`);
+    // setSeoTags removes any noindex: the personal stack stays out of the index.
+    setNoindex();
   }, [lang, t]);
   useEffect(() => { if (searchOpen) searchRef.current?.focus(); }, [searchOpen]);
   useEffect(() => {
@@ -211,6 +363,12 @@ export default function CartPage() {
       chooseDomain(target);
     });
   }
+  function sortTo(next: "area" | "cost" | "name" | "recent") {
+    if (next === sortBy) return;
+    if (!reducedMotion()) flipFrom.current = new Map([...cardsById()].map(([cardId, el]) => [cardId, el.getBoundingClientRect()]));
+    setSortBy(next);
+    trackEvent("stack_sort", { sort: next });
+  }
   useLayoutEffect(() => {
     const from = flipFrom.current;
     flipFrom.current = null;
@@ -226,36 +384,7 @@ export default function CartPage() {
         el.animate([{ opacity: 0, transform: "translateY(10px) scale(.97)" }, { opacity: 1, transform: "none" }], { duration: 320, delay: Math.min(arriving++ * 35, 280), easing: "cubic-bezier(.2, .8, .2, 1)", fill: "backwards" });
       }
     });
-  }, [activeFilter]);
-
-  // Tab ink: one underline that slides and resizes to the active tab.
-  const tabsRef = useRef<HTMLDivElement>(null);
-  const [ink, setInk] = useState<{ left: number; width: number } | null>(null);
-  useLayoutEffect(() => {
-    const place = () => {
-      const active = tabsRef.current?.querySelector<HTMLElement>('button[aria-pressed="true"]');
-      if (!active) return;
-      setInk({ left: active.offsetLeft, width: active.offsetWidth });
-      // Keep the active tab in view when the row scrolls (phones).
-      const row = tabsRef.current!;
-      if (active.offsetLeft < row.scrollLeft || active.offsetLeft + active.offsetWidth > row.scrollLeft + row.clientWidth) {
-        row.scrollTo({ left: Math.max(0, active.offsetLeft - 32), behavior: reducedMotion() ? "auto" : "smooth" });
-      }
-    };
-    place();
-    // Fade the edges only where tabs are hidden, so the row says it scrolls.
-    const row = tabsRef.current;
-    const edges = () => {
-      if (!row) return;
-      row.dataset.fadeStart = row.scrollLeft > 2 ? "true" : "false";
-      row.dataset.fadeEnd = row.scrollLeft + row.clientWidth < row.scrollWidth - 2 ? "true" : "false";
-    };
-    edges();
-    row?.addEventListener("scroll", edges, { passive: true });
-    const onResize = () => { place(); edges(); };
-    window.addEventListener("resize", onResize);
-    return () => { window.removeEventListener("resize", onResize); row?.removeEventListener("scroll", edges); };
-  }, [activeFilter, mapTerritories.length, lang]);
+  }, [activeFilter, sortBy, groupBy, layout, statusFilter]);
 
   function chooseDomain(id: string) {
     setDomainFilter(id);
@@ -267,51 +396,31 @@ export default function CartPage() {
       lastToolButton.current = null;
     }
   }
-  function jumpTo(id: string) {
-    document.getElementById(id)?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
-  }
+  // One card per tool, the same in every view: logo, name, area, what the
+  // person pays and one status. The views only change the arrangement.
+  const statusOf = (tool: ToolSummary): "ok" | "review" | "overlap" => pairedById.has(tool.id) ? "overlap"
+    : unreviewed.some((item) => item.id === tool.id) || unknownTools.some((item) => item.id === tool.id) ? "review" : "ok";
+  const statusLabel = { ok: t("À jour", "Up to date"), review: t("À vérifier", "To check"), overlap: t("Doublon", "Overlap") };
   function renderTool(tool: ToolSummary) {
     const active = selected?.id === tool.id;
-    const price = stackCatalogPrice(tool, lang);
-    const overlaps = overlapsById.get(tool.id) || [];
-    const accent = (toolAccents as Record<string, string>)[toolKey(tool)];
-    // Two fixed zones: identity on top, then a footer on a hairline (price
-    // left, overlap right) aligned across every card of a row.
+    const area = mapTerritories.find((territory) => territory.tools.some((member) => member.id === tool.id));
     const slug = state.pinnedToolSlugs.find((pinned) => lookup.get(pinned)?.id === tool.id) || toolKey(tool);
+    const info = infoOf(tool);
+    const status = statusOf(tool);
+    const cost = info.kind === "paid" ? `${info.cost}${t("/mois", "/mo")}` : info.kind === "unknown" ? t("Prix ?", "Price?") : info.cost;
+    const areaLabel = area ? (area.id === "assist" ? t("IA", "AI") : area.label) : "";
     return <div key={tool.id} className="ms-card-wrap" data-flip-id={tool.id}>
-    <button
-      type="button"
-      data-tool-id={tool.id}
-      className={`ms-tool ms-tool-card${active ? " ms-tool--selected" : ""}`}
-      style={accent ? ({ "--tool-accent": accent } as React.CSSProperties) : undefined}
-      aria-haspopup="dialog"
-      // Says what opens: the card leads to the tool sheet.
-      title={editing ? undefined : t(`Gérer ${tool.name} : abonnement, recoupements, alternatives`, `Manage ${tool.name}: subscription, overlaps, alternatives`)}
-      tabIndex={editing ? -1 : undefined}
-      onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; if (active) closeInspector(); else selectTool(toolKey(tool)); }}
-    >
-      {/* Top: identity (icon, full name, area) and what it overlaps.
-          Bottom: money and the action, "Manage ›". */}
-      <span className="ms-card-top">
-        <span className="ms-card-logo"><ToolLogo tool={tool} size={48} /></span>
-        <span className="ms-card-id"><strong>{tool.name}</strong><span>{stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang)}</span>
-          {overlaps.length > 0 && <span className="ms-card-overlap" title={t(`Recoupe ${overlaps.map((o) => o.name).join(", ")}`, `Overlaps with ${overlaps.map((o) => o.name).join(", ")}`)}>
-            <span className="ms-card-overlap-name">{overlaps[0].name}</span>{overlaps.length > 1 && <span>+{overlaps.length - 1}</span>}
-          </span>}
-        </span>
-      </span>
-      <span className="ms-card-foot">
-        <span className={`ms-card-price${price ? "" : " ms-card-price--none"}`}>{(() => {
-          // "From $22.99/mo": the word small, the amount carries the line.
-          const match = price?.match(/^(Dès|From) (.+)$/);
-          return match ? <><small>{match[1]}</small> <strong>{match[2]}</strong></> : price || t("Saisir le prix", "Enter the price");
-        })()}</span>
-        {/* Names what the click does: manage this tool (subscription, overlaps, alternatives). */}
-        {!editing && <span className="ms-card-action" aria-hidden="true"><span>{t("Gérer", "Manage")}</span><ChevronRight size={16} /></span>}
-      </span>
-    </button>
-    {/* Edit mode (iOS home screen): a minus badge removes the tool, with undo. */}
-    {editing && <button type="button" className="ms-card-remove" onClick={() => removeTool(slug, tool.name)} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}><Minus size={14} aria-hidden /></button>}
+      <button type="button" data-tool-id={tool.id} data-status={status} className={`ms-tool ms-inv-card${active ? " ms-tool--selected" : ""}`} aria-haspopup="dialog"
+        aria-label={`${tool.name}, ${cost}, ${statusLabel[status]}`} tabIndex={editing ? -1 : undefined}
+        onClick={(event) => { if (editing) return; lastToolButton.current = event.currentTarget; if (active) closeInspector(); else selectTool(toolKey(tool)); }}>
+        <span className="ms-inv-logo" aria-hidden="true"><AppIcon tool={tool} /></span>
+        <span className="ms-inv-name" aria-hidden="true">{tool.name}</span>
+        <span className="ms-inv-area" aria-hidden="true"><i style={area ? { background: colorOf(area.id) } : undefined} />{areaLabel}</span>
+        <span className="ms-inv-cost" data-tone={info.kind} aria-hidden="true">{cost}</span>
+        <span className="ms-inv-status" data-status={status} aria-hidden="true">{statusLabel[status]}</span>
+      </button>
+      {/* Edit mode (iOS home screen): a minus badge removes the tool, with undo. */}
+      {editing && <button type="button" className="ms-card-remove" onClick={() => removeTool(slug, tool.name)} aria-label={t(`Retirer ${tool.name} de ma stack`, `Remove ${tool.name} from my stack`)}><Minus size={14} aria-hidden /></button>}
     </div>;
   }
 
@@ -337,7 +446,7 @@ export default function CartPage() {
             type="button"
             disabled={present}
             aria-label={present ? t(`${tool.name} est dans votre stack`, `${tool.name} is in your stack`) : t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}
-            onClick={() => { if (!pinTool(toolKey(tool))) return; if (empty) requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true })); toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); }}
+            onClick={(event) => addToStack(toolKey(tool), tool.name, { origin: event.currentTarget.closest("li") })}
           >{present ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}</button></li>;
         })}</ul>
       </>}
@@ -345,6 +454,7 @@ export default function CartPage() {
 
   if (requiresAccount) return <StackWelcome />;
 
+  // First tool: one question, a search and four one-click suggestions (accounts branch, 23/10).
   if (empty) return <div className="ms-page ms-page--start">
     <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
     <header className="ms-start-heading"><h1>{t("Ma stack", "My stack")}</h1></header>
@@ -353,7 +463,7 @@ export default function CartPage() {
       <h2 id="ms-start-title">{t("Commençons par vos outils.", "Start with the tools you use.")}</h2>
       <p className="ms-start-intro">{t("Ajoutez un outil que vous utilisez déjà. Complétez ensuite votre stack pour voir ce qu’elle vous coûte et les usages qui se recoupent.", "Add a tool you already use. Build your stack to see its estimated cost and where tools overlap.")}</p>
       <div className="ms-start-action"><label htmlFor="ms-first-tool">{t("Quel outil utilisez-vous ?", "Which tool do you use?")}</label>{searchPanel}</div>
-      {!query.trim() && !loading && <div className="ms-start-suggestions"><p>{t("Un premier ajout, en un clic", "Add your first tool in one click")}</p><div>{tools.filter(tool => ["notion", "figma", "chatgpt", "slack"].includes(toolKey(tool))).slice(0,4).map(tool => <button type="button" key={tool.id} onClick={() => { if (pinTool(toolKey(tool))) { requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true })); toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); } }} aria-label={t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}><ToolLogo tool={tool} size={24} /><span>{tool.name}</span><Plus size={16} aria-hidden /></button>)}</div></div>}
+      {!query.trim() && !loading && <div className="ms-start-suggestions"><p>{t("Un premier ajout, en un clic", "Add your first tool in one click")}</p><div>{tools.filter(tool => ["notion", "figma", "chatgpt", "slack"].includes(toolKey(tool))).slice(0,4).map(tool => <button type="button" key={tool.id} onClick={() => addToStack(toolKey(tool), tool.name)} aria-label={t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}><ToolLogo tool={tool} size={24} /><span>{tool.name}</span><Plus size={16} aria-hidden /></button>)}</div></div>}
       <StackAccountPanel empty />
     </section>
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt" ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.") : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
@@ -364,109 +474,149 @@ export default function CartPage() {
     {/* Topbar breadcrumb like every other page ("Home / My stack"); a personal
         page, so no structured data. */}
     <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
-    {/* Hero, the whole stack at a glance: title, the figures (each one leads
-        to the section that explains it), and my tools as an
-        icon cluster with the costliest one in the middle. The dashboard below
-        breaks it down. */}
-    <header className={`sg-hero sg-hero--cluster ms-hero${empty ? " ms-hero--empty" : ""}`}>
-      <div className="sg-hero-copy">
-        <span className="sg-hero-pill">{t("Ma stack", "My stack")}</span>
+    {/* Ma Stack (Oct 2026): a title with the verdict and how much of the stack
+        is checked, then the stack itself at the centre, read through lenses,
+        and the next decision beside it. On a phone the deck comes first. */}
+    {/* Hero (22/10/2026): a status line, the title, one sentence. */}
+    <header className="ms-top">
+      <div>
         <h1 ref={inventoryHeadingRef} tabIndex={-1}>{t("Mes outils", "My tools")}</h1>
-        <p className="sg-lead">{empty ? t("Rassemblez les outils que vous utilisez pour comparer leurs usages et leur coût estimé.", "Bring together the tools you use to compare their uses and estimated cost.") : t("Retrouvez vos outils, les usages qu’ils couvrent et leur coût estimé.", "See your tools, the uses they cover and their estimated cost.")}</p>
-        {state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) && <Link
-          className="tt-button-primary ms-explore-stack" to={getExplorerHref(prefix, { type: "stack" })}
+        {/* One line above the bento: the title, how many tools, live. The bento must fit above the fold. */}
+        {!empty && <p className="ms-top-status"><i aria-hidden="true" />{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""} · analysés en direct`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""} · live analysis`)}</p>}
+        {empty && <p>{empty
+          ? t("Ajoutez les outils que vous utilisez : ToolTrim les range par domaine, repère ceux qui font le même travail et estime leur coût.", "Add the tools you use: ToolTrim sorts them by area, spots the ones that do the same job and estimates their cost.")
+          : null}</p>}
+      </div>
+      {state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) && <Link
+          className="ms-explore-stack" to={getExplorerHref(prefix, { type: "stack" })}
           state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`,
             explorerStackSources: state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; }) }}
           onClick={() => trackEvent("stack_explorer_click", { source: "whole_stack" })}>
-          <Compass size={18} aria-hidden />{t("Explorer autour de ma stack", "Explore around my stack")}
+          <Compass size={16} aria-hidden />{t("Explorer autour de ma stack", "Explore around my stack")}
         </Link>}
-        {!empty && <>
-          <dl className="sg-stats ms-hero-stats">
-            <div><dt><LayoutGrid size={15} aria-hidden />{t("Outils", "Tools")}</dt><dd>{selectedTools.length}</dd>
-              <span className="ms-stat-bar" aria-hidden="true">{areaCosts.map((area) => <i key={area.id} style={{ flexGrow: area.tools, background: colorOf(area.id) }} data-tip={`${area.label} · ${t(`${area.tools} outil${area.tools > 1 ? "s" : ""}`, `${area.tools} tool${area.tools > 1 ? "s" : ""}`)}`} />)}</span><span>{t(`${mapTerritories.length} domaine${mapTerritories.length > 1 ? "s" : ""}`, `${mapTerritories.length} area${mapTerritories.length > 1 ? "s" : ""}`)}</span></div>
-            <div><dt><Wallet size={15} aria-hidden /><span className="ms-stat-full">{stackCost.unknown > 0 && stackCost.paid > 0 ? t("Estimation partielle", "Partial estimate") : t("Coût estimé", "Estimated cost")}</span><span className="ms-stat-short">{stackCost.unknown > 0 && stackCost.paid > 0 ? t("Partiel", "Partial") : t("Estimé / mois", "Est. / month")}</span></dt><dd className={stackCost.paid > 0 ? undefined : "sg-stats-word"}><ValueChange value={Math.round(stackCost.total)}>{stackCost.paid > 0 ? amount(stackCost.total) : stackCost.unknown > 0 ? t("Coût non renseigné", "Cost unknown") : t("Gratuit", "Free")}</ValueChange></dd>
-              <span className={`ms-stat-bar${stackCost.total > 0 ? "" : " ms-stat-bar--none"}`} aria-hidden="true">{stackCost.total > 0 ? areaCosts.filter((area) => area.cost > 0).map((area) => <i key={area.id} style={{ flexGrow: area.cost, background: colorOf(area.id) }} data-tip={`${area.label} · ≈ ${formatAmount(Math.round(area.cost), currency, lang)}${t("/mois", "/mo")}`} />) : null}</span><span>{stackCost.paid > 0 ? t(`${stackCost.paid} outil${stackCost.paid > 1 ? "s" : ""} payant${stackCost.paid > 1 ? "s" : ""}`, `${stackCost.paid} paid tool${stackCost.paid > 1 ? "s" : ""}`) : stackCost.unknown > 0 ? t("à préciser outil par outil", "to set tool by tool") : t("rien de payant", "nothing paid")}</span></div>
-            {/* The thread of the page: estimated cost, and the portion to review. */}
-            <div className={overlapScore.doubleTotal > 0 ? "ms-stat--overlaps" : undefined}><dt><Copy size={15} aria-hidden /><span className="ms-stat-full">{t("Coût à examiner", "Cost to review")}</span><span className="ms-stat-short">{t("À examiner", "To review")}</span></dt><dd className={overlapScore.doubleTotal > 0 || overlapPairs > 0 ? undefined : "sg-stats-word ms-stat-clear"}><ValueChange value={Math.round(overlapScore.doubleTotal)}>{overlapScore.doubleTotal > 0 ? amount(overlapScore.doubleTotal) : (overlapPairs > 0 ? formatAmount(0, currency, lang) : <><Check size={16} aria-hidden />{t("Aucun", "None")}</>)}</ValueChange></dd>
-              {(() => {
-                const share = stackCost.total > 0 ? Math.min(1, overlapScore.doubleTotal / stackCost.total) : 0;
-                // Rien à mesurer : pas de jauge vide, qui se lit comme une donnée manquante.
-                if (overlapScore.doubleTotal === 0 && overlapPairs === 0) return <span className="ms-stat-bar ms-stat-bar--none" aria-hidden="true" />;
-                return <span className="ms-stat-bar ms-stat-bar--share" aria-label={t(`${Math.round(share * 100)} % du coût mensuel estimé`, `${Math.round(share * 100)}% of the estimated monthly cost`)}>{share > 0 && <i style={{ flexGrow: share }} data-tip={t(`≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)} à examiner`, `≈ ${formatAmount(Math.round(overlapScore.doubleTotal), currency, lang)} to review`)} />}<i style={{ flexGrow: 1 - share }} data-tip={t(`≈ ${formatAmount(Math.round(stackCost.total - overlapScore.doubleTotal), currency, lang)} hors montant à examiner`, `≈ ${formatAmount(Math.round(stackCost.total - overlapScore.doubleTotal), currency, lang)} outside the review amount`)} /></span>;
-              })()}
-              {/* Fourth row, like the other columns: share of the cost, then the way to the overlaps. */}
-              <span className="ms-stat-note">{stackCost.total > 0 && <><span className="ms-stat-share">{t(`${Math.round(Math.min(1, overlapScore.doubleTotal / stackCost.total) * 100)} % du coût`, `${Math.round(Math.min(1, overlapScore.doubleTotal / stackCost.total) * 100)}% of cost`)}<br /></span></>}{overlapPairs > 0
-              ? <a className="ms-stat-link" href="#ms-overlaps" onClick={(event) => { event.preventDefault(); jumpTo("ms-overlaps"); }}><span className="ms-stat-full">{t(`${overlapPairs} recoupement${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} overlap${overlapPairs > 1 ? "s" : ""}`)}</span><span className="ms-stat-short">{t(`${overlapPairs} paire${overlapPairs > 1 ? "s" : ""}`, `${overlapPairs} pair${overlapPairs > 1 ? "s" : ""}`)}</span> ↓</a>
-              : t("Aucun recoupement détecté", "No overlap detected")}</span></div>
-          </dl>
-        </>}
-      </div>
-      {!empty && <div className="sg-cluster" aria-label={t("Mes outils", "My tools")}>
-        {heroApps.map((tool, i) => {
-          const pos = HERO_CLUSTER_SLOTS[i];
-          return <button key={tool.id} type="button" className="sg-cluster-app" title={tool.name} onClick={() => selectTool(toolKey(tool))}
-            style={{ left: `${(pos.x / 440) * 100}%`, top: `${(pos.y / 380) * 100}%`, width: `${(pos.s / 440) * 100}%`, aspectRatio: "1", ["--r" as string]: `${pos.r}deg`, animationDelay: `${-i * 0.7}s` }}>
-            <ToolLogo tool={tool} size={pos.s} className="sg-cluster-icon" /><span className="sr-only">{tool.name}</span>
-          </button>;
-        })}
-        {heroOverflow > 0 && <span className="sg-cluster-more" style={{ left: `${(HERO_CLUSTER_SLOTS[heroApps.length].x / 440) * 100}%`, top: `${(HERO_CLUSTER_SLOTS[heroApps.length].y / 380) * 100}%` }}>+{heroOverflow}</span>}
-      </div>}
     </header>
-
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
       ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
       : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
     {persistenceStatus.state === "recovered" && <p className="ms-storage-notice" role="status">{t("Votre stack a été récupéré depuis la sauvegarde locale.", "Your stack was recovered from the local backup.")}</p>}
 
-    {empty && searchPanel}
 
-    <StackAccountPanel empty={empty} />
 
     {!empty && <>
-      {/* Order follows the visit (Michael, 7 Oct 2026): after the hero, what I
-          can simplify (overlaps), then what it really costs (budget, with the
-          freemium plans to declare beside it so the total corrects itself),
-          then the inventory. */}
-      {/* One question, once: the freemium plans set the true cost, so they are
-          asked before the figures that depend on them. Gone once answered. */}
-      {unreviewed.length > 0 && <aside className="ms-calibrate" aria-label={t("Freemium à déclarer", "Freemium to declare")}>
-        <span className="ms-calibrate-logos" aria-hidden="true">{unreviewed.slice(0, 4).map((tool) => <ToolLogo key={tool.id} tool={tool} size={28} />)}</span>
-        <p><strong>{t(`${unreviewed.length} outil${unreviewed.length > 1 ? "s" : ""} freemium compte${unreviewed.length > 1 ? "nt" : ""} 0 €.`, `${unreviewed.length} freemium tool${unreviewed.length > 1 ? "s count" : " counts"} as free.`)}</strong> {t("Vous en payez certains ? Votre coût et vos doublons en dépendent.", "Do you pay for some? Your cost and duplicates depend on it.")}</p>
-        <div className="ms-calibrate-actions">
-          <button type="button" className="ms-calibrate-skip" onClick={() => { plans.markReviewed(freemiumTools.map(toolKey)); trackEvent("stack_freemium_answer", { freemium: freemiumTools.length, paid: 0, quick: true }); }}>{t("Aucun", "None")}</button>
-          <button type="button" className="tt-button-primary ms-calibrate-go" onClick={() => setFreemiumSheet(true)}>{t("Indiquer lesquels", "Pick them")}</button>
-        </div>
-      </aside>}
-
-      <StackOverlapPairs tools={selectedTools} categories={categories} isPaid={plans.isPaid} currency={currency} prefix={prefix} lang={lang} onSelect={selectTool}
-        decisions={decisions} onReopen={(keys) => keys.forEach((key) => { const [a, b] = key.split("|"); reopen(a, b); })}
-        onDecide={(kind, kept, removed, saving) => decide(kind, { slug: toolKey(kept), name: kept.name }, { slug: toolKey(removed), name: removed.name }, saving, "stack")} />
-
-      <section className="sg-section ms-section ms-budget-section" aria-labelledby="ms-budget-section-title">
-        <div className="sg-section-heading"><span className="sg-eyebrow">{t("Budget", "Budget")}</span><h2 id="ms-budget-section-title">{t("Combien coûte ma stack ?", "What does my stack cost?")}</h2></div>
-        <StackBudgetBreakdown territories={mapTerritories} colorOf={colorOf} paid={plans} currency={currency} lang={lang} onSelect={selectTool} onFreemium={() => setFreemiumSheet(true)} />
-      </section>
-
-      <StackFreemiumPlans open={freemiumOpen} onOpenChange={setFreemiumSheet} freemium={freemiumTools} paid={plans} currency={currency} lang={lang} />
-
-      <section className="sg-section ms-section ms-tools-section" aria-labelledby="ms-list-title">
-        <div className="ms-section-row">
-          <div className="sg-section-heading"><span className="sg-eyebrow">{t("Mes outils", "My tools")}</span><h2 id="ms-list-title">{t("Quel outil pour quoi ?", "Which tool does what?")}</h2></div>
-          <div className="ms-tools-actions">
-            <button type="button" className="ms-quiet-button" ref={addRef} onClick={() => { setEditing(false); setSearchOpen((open) => !open); }} aria-expanded={searchOpen} aria-controls="ms-search"><Plus size={16} aria-hidden />{t("Ajouter", "Add")}</button>
-            <button type="button" className="ms-quiet-button" aria-pressed={editing} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? <Check size={16} aria-hidden /> : <Pencil size={16} aria-hidden />}{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</button>
+      {/* The findings module: the price first, then one decision at a time,
+          then the summary once everything is settled. */}
+      {(() => {
+        const fmt = (amount: number) => formatAmount(Math.round(amount), currency, lang);
+        const resolved = Object.entries(decisions).flatMap(([key, decision]) => {
+          const [x, y] = key.split("|").map((slug) => lookup.get(slug));
+          if (!x || !y) return [];
+          if (decision.kind === "keep-both" && !(pinnedKeys.has(toolKey(x)) && pinnedKeys.has(toolKey(y)))) return [];
+          return [{ key, a: x, b: y, kind: decision.kind === "keep-both" ? "keep-both" as const : "keep-one" as const, kept: lookup.get(decision.kept)?.name, removed: decision.removed ? lookup.get(decision.removed)?.name : undefined, at: decision.at }];
+        }).sort((x, y) => String(y.at).localeCompare(String(x.at)));
+        return <StackFindings lang={lang} total={stackCost.total} format={fmt} toolCount={selectedTools.length}
+          fit={selectedTools.filter((tool) => monthlyOf(tool) > 0).sort((x, y) => monthlyOf(y) - monthlyOf(x)).slice(0, 3).map((tool) => {
+            // Right size: the catalogue's power score (1 to 5) against how much
+            // the person says they use the tool. Alternatives come from the
+            // catalogue only, with their own power score and known price.
+            const mine = monthlyOf(tool);
+            const power = tool.toolTrimRating?.puissance ?? undefined;
+            const alts = (tool.alternatives || []).map((ref) => tools.find((item) => toolKey(item) === ref || item.id === ref))
+              .filter((item): item is ToolSummary => !!item && !existingIds.has(item.id))
+              .map((alt) => { const c = toolMonthlyCost(alt, () => true, lang); return { alt, cost: c.kind === "paid" ? convertAmount(c.monthly, c.currency, currency) : c.kind === "free" ? 0 : -1, power: alt.toolTrimRating?.puissance ?? undefined, href: comparisonPath(prefix, toolKey(tool), toolKey(alt)) }; })
+              .filter((option) => option.cost >= 0 && option.power !== undefined);
+            const cheapest = (list: typeof alts) => [...list].sort((x, y) => x.cost - y.cost)[0];
+            return { tool, cost: mine, power, usage: usage[toolKey(tool)], setUsage: (value: number | null) => setUsage(toolKey(tool), value),
+              same: power === undefined ? undefined : cheapest(alts.filter((option) => (option.power as number) >= power && option.cost < mine)),
+              lighter: power === undefined ? undefined : cheapest(alts.filter((option) => (option.power as number) < power && option.cost < mine)),
+              stronger: power === undefined ? undefined : [...alts.filter((option) => (option.power as number) > power)].sort((x, y) => (y.power as number) - (x.power as number) || x.cost - y.cost)[0],
+              detailHref: `${prefix}/tool/${toolKey(tool)}` };
+          })}
+          areas={areaCosts.map((area) => ({ id: area.id, label: area.id === "assist" ? t("IA", "AI") : area.label, amount: area.cost, color: colorOf(area.id), tools: (mapTerritories.find((territory) => territory.id === area.id)?.tools || []).map((tool) => ({ tool, amount: monthlyOf(tool) })).filter((row) => row.amount > 0).sort((x, y) => y.amount - x.amount) }))}
+          spend={selectedTools.filter((tool) => monthlyOf(tool) > 0).map((tool) => ({ tool, amount: monthlyOf(tool) })).sort((x, y) => y.amount - x.amount)}
+          items={deckItems} saved={saved} toReview={overlapScore.doubleTotal} resolved={resolved} history={history}
+          onAddTool={() => { setEditing(false); setSearchOpen(true); requestAnimationFrame(() => document.getElementById("ms-search")?.scrollIntoView({ block: "center" })); }}
+          exploreHref={state.toolEntries.some((entry) => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? getExplorerHref(prefix, { type: "stack" }) : undefined} />;
+      })()}
+      {/* Where the stack is saved: this browser, or the account. */}
+      <StackAccountPanel empty={false} />
+      <div className="ms-board">
+        {/* 1. The stack itself, one box to see it: by area, as cards or as a list, sorted from a menu. Add and edit live here. */}
+        <section className="ms-mod ms-mod--inventory ms-all" aria-labelledby="ms-all-title">
+          <div className="ms-stage-bar">
+            <div>
+              <h2 id="ms-all-title" className="ms-stage-title">{t("Ma stack", "My stack")}</h2>
+              <p className="ms-all-sum">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}</>}</p>
+            </div>
+            <div className="ms-tools-actions">
+              {/* The one primary action of the section. */}
+              <Button ref={addRef} variant="primary" icon={<Plus size={16} aria-hidden />} onClick={() => { setEditing(false); setSearchOpen((open) => !open); }} aria-expanded={searchOpen} aria-controls="ms-search">{t("Ajouter un outil", "Add a tool")}</Button>
+            </div>
           </div>
-        </div>
-        {searchPanel}
-        <div className="ms-domain-filters" role="group" aria-label={t("Filtrer par domaine", "Filter by area")} ref={tabsRef}>
-          {ink && <span className="ms-tab-ink" aria-hidden="true" style={{ transform: `translateX(${ink.left}px)`, width: ink.width }} />}
-          <button type="button" aria-pressed={activeFilter === "all"} onClick={() => filterTo("all")}>{t("Tous", "All")}<span>{selectedTools.length}</span></button>
-          {mapTerritories.map((territory) => <button key={territory.id} type="button" aria-pressed={activeFilter === territory.id} onClick={() => filterTo(territory.id)}>
-            {territory.id === "assist" ? t("IA", "AI") : territory.label}<span>{territory.tools.length}</span>
-          </button>)}
-        </div>
-        <div className="ms-card-grid" data-editing={editing || undefined} ref={gridRef}>{listTools.map(renderTool)}</div>
-      </section>
+          {searchPanel}
+          {(() => {
+            const counts = { all: listTools.length, review: listTools.filter((tool) => statusOf(tool) === "review").length, overlap: listTools.filter((tool) => statusOf(tool) === "overlap").length };
+            const shown = statusFilter === "all" ? listTools : listTools.filter((tool) => statusOf(tool) === statusFilter);
+            const groups = groupBy === "area"
+              ? mapTerritories.map((territory) => ({ id: territory.id, label: territory.id === "assist" ? t("IA", "AI") : territory.label, tools: shown.filter((tool) => territory.tools.some((member) => member.id === tool.id)) }))
+                .filter((group) => group.tools.length > 0)
+                .map((group) => ({ ...group, subtotal: group.tools.reduce((sum, tool) => sum + monthlyOf(tool), 0) }))
+                .sort((x, y) => y.subtotal - x.subtotal)
+              : [{ id: "all", label: "", tools: shown, subtotal: 0 }];
+            return <>
+              {/* Three controls, three affordances: filter chips for what needs me, menus to group and sort, icons for the layout. */}
+              <div className="ms-inv-bar">
+                <Segmented mode="toggle" className="ms-inv-filters" label={t("Filtrer par statut", "Filter by status")} value={statusFilter} onChange={(id) => setStatusFilter(id)}
+                  options={[{ id: "all", label: t("Tous", "All"), count: counts.all }, ...(counts.review ? [{ id: "review" as const, label: t("À vérifier", "To check"), count: counts.review }] : []), ...(counts.overlap ? [{ id: "overlap" as const, label: t("Doublons", "Overlaps"), count: counts.overlap }] : [])]} />
+                <div className="ms-inv-tools">
+
+                  <label className="ms-sort"><span>{t("Trier :", "Sort:")}</span>
+                    <select value={sortBy} onChange={(event) => sortTo(event.target.value as typeof sortBy)} aria-label={t("Trier mes outils", "Sort my tools")}>
+                      <option value="area">{t("Domaine", "Area")}</option>
+                      <option value="cost">{t("Coût", "Cost")}</option>
+                      <option value="name">{t("Nom", "Name")}</option>
+                      <option value="recent">{t("Ajout récent", "Recently added")}</option>
+                    </select><ChevronDown size={14} aria-hidden /></label>
+                  <div className="ms-layout" role="group" aria-label={t("Affichage", "Layout")}>
+                    <button type="button" aria-pressed={layout === "grid"} aria-label={t("Grille", "Grid")} title={t("Grille", "Grid")} onClick={() => setLayout("grid")}><LayoutGrid size={16} aria-hidden /></button>
+                    <button type="button" aria-pressed={layout === "list"} aria-label={t("Liste", "List")} title={t("Liste", "List")} onClick={() => setLayout("list")}><List size={16} aria-hidden /></button>
+                  </div>
+                  {/* Edit acts on the grid right below, so it lives with the other view controls. */}
+                  <span className="ms-inv-edit"><Button aria-pressed={editing} icon={editing ? <Check size={16} aria-hidden /> : <Pencil size={16} aria-hidden />} onClick={() => { setSearchOpen(false); setEditing((value) => !value); }}>{editing ? t("Terminé", "Done") : t("Modifier", "Edit")}</Button></span>
+                </div>
+              </div>
+              <div id="ms-all-grid" className="ms-inv" data-layout={layout} data-grouped={groupBy === "area" ? "" : undefined} data-editing={editing || undefined} ref={gridRef} role="group" aria-label={t("Mes outils", "My tools")}>
+                {groups.map((group) => <section key={group.id} className="ms-inv-group" aria-label={group.label || undefined}>
+                  {group.label && <header className="ms-inv-head"><i aria-hidden="true" style={{ background: colorOf(group.id) }} /><h3>{group.label}</h3>
+                    <span>{t(`${group.tools.length} outil${group.tools.length > 1 ? "s" : ""}`, `${group.tools.length} tool${group.tools.length > 1 ? "s" : ""}`)}{group.subtotal > 0 && <> · {money(group.subtotal)}</>}</span></header>}
+                  <div className="ms-inv-items">{group.tools.map(renderTool)}</div>
+                </section>)}
+                {shown.length === 0 && <p className="ms-inv-empty">{t("Rien ici. Tout est à jour.", "Nothing here. All up to date.")}</p>}
+              </div>
+            </>;
+          })()}
+        </section>
+
+        {/* 2. What would extend the stack, from the catalogue relations only. */}
+        {recos.length > 0 && <section className="ms-mod ms-recos" aria-labelledby="ms-recos-title">
+          <div className="ms-stage-bar">
+            <div>
+              <h2 id="ms-recos-title" className="ms-stage-title">{t("Pour aller plus loin", "Go further")}</h2>
+              <p className="ms-recos-sub">{t("Des outils liés à ceux que vous avez déjà : extensions, suites, écosystèmes. Aucun ne fait doublon.", "Tools linked to the ones you already have: extensions, suites, ecosystems. None overlaps.")}</p>
+            </div>
+            <Link className="ms-recos-more" to={getExplorerHref(prefix, { type: "stack" })} onClick={() => trackEvent("stack_explorer_click", { source: "recos" })}><Compass size={16} aria-hidden />{t("Tout explorer", "Explore all")}</Link>
+          </div>
+          <ul className="ms-recos-grid">{recos.map((reco) => <li key={reco.tool.id} className="ms-reco">
+            <Link className="ms-reco-main" to={`${prefix}/tool/${toolKey(reco.tool)}`} onClick={() => trackEvent("stack_reco_click", { tool: toolKey(reco.tool) })}>
+              <ToolLogo tool={reco.tool} size={40} />
+              <span className="ms-reco-name">{reco.tool.name}</span>
+              <span className="ms-reco-why">{reco.reason}</span>
+              <span className="ms-reco-price">{stackCatalogPrice(reco.tool, lang) || t("Prix non public", "Price not public")}</span>
+            </Link>
+            <button type="button" className="ms-reco-add" aria-label={t(`Ajouter ${reco.tool.name} à ma stack`, `Add ${reco.tool.name} to my stack`)}
+              onClick={(event) => { addToStack(toolKey(reco.tool), reco.tool.name, { origin: event.currentTarget.closest("li") }); trackEvent("stack_reco_add", { tool: toolKey(reco.tool) }); }}><Plus size={18} aria-hidden /></button>
+          </li>)}</ul>
+        </section>}
+      </div>
 
       <StackToolSheet tool={selected || null} detail={resolved} pairs={overlapScore.pairs} categories={categories} paid={plans} currency={currency} prefix={prefix} lang={lang}
         catalog={tools} stackIds={existingIds}

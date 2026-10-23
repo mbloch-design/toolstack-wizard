@@ -1,5 +1,26 @@
 import { expect, test } from "@playwright/test";
 
+/** Answers the plan question on top: a plan card when the catalogue has plans, else the yes/no buttons. */
+async function answerPlan(deck: import("@playwright/test").Locator, paid: boolean, lang: "fr" | "en" = "fr") {
+  // On a phone the decision card is a summary: open it first.
+  const expand = deck.locator(".mf-expand[aria-expanded='false']");
+  if (await expand.isVisible().catch(() => false)) await expand.click();
+  const cards = deck.locator(".mf-plan");
+  // Catalogue plans load after the deck: give them a moment before falling back to the yes/no buttons.
+  if (await cards.first().waitFor({ timeout: 4000 }).then(() => true, () => false)) {
+    if (paid) {
+      await cards.filter({ hasNotText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
+      // A per-user plan asks for the number of people first.
+      const confirm = deck.locator(".mf-seats").getByRole("button", { name: lang === "fr" ? "Valider" : "Confirm" });
+      if (await confirm.isVisible().catch(() => false)) await confirm.click();
+    }
+    else await cards.filter({ hasText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
+    return;
+  }
+  await deck.getByRole("button", { name: paid ? (lang === "fr" ? "Oui, payant" : "Yes, paid") : (lang === "fr" ? "Non, version gratuite" : "No, free version"), exact: true }).click();
+}
+
+
 const stackKey = "tooltrim-ma-stack-mvp-v3";
 function seed(slugs: string[]) {
   return { version: 3, needs: [], pinnedToolSlugs: slugs, toolEntries: slugs.map(toolSlug => ({ toolSlug, needIds: [], intent: "stack", addedAt: "2026-10-07T00:00:00.000Z", assignmentMode: "pending" })) };
@@ -26,15 +47,15 @@ for (const lang of ["fr", "en"]) {
   test(`${lang}: an unknown stack cost is not free and a mixed total is partial`, async ({ page }) => {
     await page.addInitScript(({ key, state }) => { if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(state)); }, { key: stackKey, state: seed(["adp-workforce"]) });
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
-    await expect(page.locator(".ms-hero-stats")).toContainText(lang === "fr" ? "Coût non renseigné" : "Cost unknown");
-    await expect(page.locator(".ms-hero-stats")).not.toContainText(/Gratuit|Free|rien de payant|nothing paid/);
-    await expect(page.locator("#ms-budget")).not.toContainText(/Rien de payant|Nothing paid/);
-    await page.locator(".ms-tools-actions").getByRole("button", { name: lang === "fr" ? "Ajouter" : "Add", exact: true }).click();
+    await expect(page.locator(".mf-price")).toContainText(lang === "fr" ? "Coût non renseigné" : "Cost unknown");
+    await expect(page.locator(".mf-price")).not.toContainText(/Gratuit|Free|rien de payant|nothing paid/i);
+    await page.locator(".ms-tools-actions").getByRole("button", { name: lang === "fr" ? "Ajouter un outil" : "Add a tool", exact: true }).click();
     await page.getByRole("searchbox").fill("chatgpt");
     await page.getByRole("button", { name: lang === "fr" ? "Ajouter ChatGPT" : "Add ChatGPT", exact: true }).click();
+    await expect(page.locator(".ms-tool")).toHaveCount(2);
     await page.evaluate(() => localStorage.setItem("tooltrim-ma-stack-paid-plans-v1", JSON.stringify(["chatgpt"])));
     await page.reload({ waitUntil: "domcontentloaded" });
-    await expect(page.locator(".ms-hero-stats")).toContainText(lang === "fr" ? "Total partiel" : "Partial total");
+    await expect(page.locator(".mf-price")).toContainText(lang === "fr" ? "Estimation partielle" : "Partial estimate");
     await expect(page.locator(".ms-tool")).toHaveCount(2);
   });
 }
@@ -46,14 +67,24 @@ test("a recorded saving retains its currency across changes and reloads", async 
     localStorage.setItem("tooltrim-ma-stack-paid-plans-v1", JSON.stringify(["figma", "canva"]));
   }, { key: stackKey, state: seed(["figma", "canva"]) });
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await page.locator(".ms-pair-decide").first().click();
-  await page.getByRole("button", { name: /Garder Figma/ }).click();
-  await expect(page.locator(".ms-decided-saved")).toContainText("9");
+  // Both freemium plans are confirmed paid, then the pair comes up in the deck.
+  const deck = page.locator(".mf-now");
+  const top = deck.locator("h3");
+  await expect(top).toBeVisible();
+  for (let i = 0; i < 2; i++) {
+    const title = (await top.textContent()) || "";
+    if (!title.startsWith("Quelle formule")) break;
+    await answerPlan(deck, true);
+    await expect(top).not.toHaveText(title);
+  }
+  await deck.getByRole("button", { name: /^Garder Figma/ }).click();
+  // The saving is said once, in the budget card.
+  await expect(page.locator(".mf")).toContainText(/économisez déjà 9\s€ par mois/);
   const stored = await page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-ma-stack-decisions-v1") || "{}"));
   expect(stored["canva|figma"].savingCurrency).toBe("EUR");
   await page.evaluate(() => localStorage.setItem("tooltrim:currency", "USD"));
   await page.reload({ waitUntil: "domcontentloaded" });
-  await expect(page.locator(".ms-decided-saved")).toContainText("11");
+  await expect(page.locator(".mf")).toContainText(/économisez déjà 11\s\$(US)? par mois/);
   await page.goto("/fr/comparatif/figma-vs-canva", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-cd-status")).toContainText("11");
 });
@@ -64,8 +95,8 @@ test("old savings without a currency keep the decision without inventing an amou
     localStorage.setItem("tooltrim-ma-stack-decisions-v1", JSON.stringify({ "canva|figma": { kind: "keep-one", kept: "figma", removed: "canva", saving: 9.17, at: "2026-10-07T00:00:00.000Z" } }));
   }, { key: stackKey, state: seed(["figma"]) });
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.locator("#ms-overlaps")).toContainText("devise inconnue");
-  await expect(page.locator(".ms-decided-saved")).toHaveCount(0);
+  await expect(page.locator(".mf")).toContainText("devise inconnue");
+  await expect(page.locator(".mf")).not.toContainText("économisez");
   await page.goto("/fr/comparatif/figma-vs-canva", { waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-cd-status")).toContainText("vous gardez Figma");
   await expect(page.locator(".ms-cd-status")).not.toContainText(/9|€/);

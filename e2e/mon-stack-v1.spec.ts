@@ -13,7 +13,7 @@ test.beforeEach(async ({ page, context }) => {
 test("empty → search → add → inspect → remove → undo → persist", async ({ page }) => {
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   await expect(page.getByRole("heading", { name: "Mes outils", exact: true })).toBeVisible();
-  await expect(page.locator(".ms-card-grid")).toHaveCount(0);
+  await expect(page.locator(".ms-inv")).toHaveCount(0);
   await page.getByRole("searchbox", { name: "Ajouter un outil à ma stack", exact: true }).fill("figma");
   await page.getByRole("button", { name: "Ajouter Figma", exact: true }).click();
   await expect(page).toHaveURL(/ma-stack$/);
@@ -55,21 +55,20 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.addInitScript(({ key, state }) => localStorage.setItem(key, JSON.stringify(state)), { key, state: seed() });
     await page.goto(`/${lang}/ma-stack`, { waitUntil: "domcontentloaded" });
     await expect(page.locator(".ms-tool")).toHaveCount(slugs.length);
-    await expect(page.locator(".ms-card-grid")).not.toHaveCount(0);
-    // Area tabs filter My tools; All brings every tool back.
-    const tab = page.locator(".ms-domain-filters button").nth(1);
-    await tab.click();
-    await expect(tab).toHaveAttribute("aria-pressed", "true");
-    expect(await page.locator(".ms-tool").count()).toBeLessThanOrEqual(slugs.length);
-    await page.locator(".ms-domain-filters button").first().click();
+    // Three layouts of the same tools; the sort menu reorders them.
+    await page.locator(".ms-layout").getByRole("button", { name: lang === "fr" ? "Liste" : "List", exact: true }).click();
+    await expect(page.locator('.ms-inv[data-layout="list"]')).toHaveCount(1);
+    await page.getByRole("combobox", { name: lang === "fr" ? "Trier mes outils" : "Sort my tools" }).selectOption("name");
+    const names = await page.locator(".ms-inv-name").allTextContents();
+    expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b, lang)));
     await expect(page.locator(".ms-tool")).toHaveCount(slugs.length);
     // Edit mode: a minus badge removes a tool, Undo restores it.
-    await page.locator(".ms-tools-actions").getByRole("button", { name: lang === "fr" ? "Modifier" : "Edit" }).click();
+    await page.locator(".ms-inv-edit").getByRole("button", { name: lang === "fr" ? "Modifier" : "Edit" }).click();
     await page.locator(".ms-card-remove").first().dispatchEvent("click"); // cards wiggle in edit mode
     await expect(page.locator(".ms-tool")).toHaveCount(slugs.length - 1);
     await page.getByRole("button", { name: lang === "fr" ? "Annuler" : "Undo", exact: true }).click();
     await expect(page.locator(".ms-tool")).toHaveCount(slugs.length);
-    await page.locator(".ms-tools-actions").getByRole("button", { name: lang === "fr" ? "Terminé" : "Done" }).click();
+    await page.locator(".ms-inv-edit").getByRole("button", { name: lang === "fr" ? "Terminé" : "Done" }).click();
     await page.locator(".ms-tool").first().focus();
     await page.keyboard.press("Enter");
     await expect(page.locator(".ms-tool-sheet")).toBeVisible();
@@ -78,7 +77,7 @@ for (const lang of ["fr", "en"]) for (const width of [390, 820, 1440]) {
     await page.keyboard.press("Escape");
     await expect(page.locator(".ms-tool-sheet")).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-    await page.locator(".ms-hero h1").click();
+    await page.locator(".ms-top h1").click();
     await page.screenshot({ path: test.info().outputPath(`${lang}-${width}-dashboard.png`), fullPage: true });
   });
 }
@@ -92,7 +91,7 @@ test("invalid catalogue ID can be removed without losing valid tools", async ({ 
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await expect(page.locator(".ms-page")).not.toContainText(/undefined|null/);
   await expect(page.locator(".ms-tool")).toContainText("Figma");
-  await expect(page.locator("#ms-budget")).toContainText("Freemium counted as free");
+  await expect(page.locator(".ms-inv")).toContainText("Freemium");
 });
 
 test("corrupt storage recovers without crashing", async ({ page }) => {

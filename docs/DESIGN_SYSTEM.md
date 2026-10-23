@@ -1683,3 +1683,59 @@ Toute évolution du traitement des couches doit conserver les tests `scripts/lib
 - Lorsque les comptes sont activés, l’ajout du premier outil exige une session. L’accueil déconnecté explique la valeur de la stack et propose Créer ma stack / compte existant. La recherche d’ajout apparaît après connexion. Les ajouts depuis le catalogue et l’explorateur suivent la même règle, sans faux succès en cas de refus.
 - Les paramètres sont privés : aucun profil, formulaire ou export de cette page n’est affiché à un visiteur déconnecté. Déconnexion, session expirée et accès anonyme renvoient à l’accueil, en remplaçant l’entrée de navigation.
 - Le contenu d’accueil développe chaque bénéfice une seule fois. Les pictogrammes soutiennent les usages ; une illustration décorative n’invente ni prix, ni statistique, ni outil recommandé. Les coûts restent qualifiés d’estimés.
+
+## Kit Ma stack (`mk-*`, 21/10/2026)
+
+Composants de Ma stack, dans `src/components/stack/StackKit.tsx`, styles `mk-*` dans `src/index.css` (bloc « Ma stack kit »). Règle : **un composant, un objectif, une affordance**. Un élément en lecture seule ne réagit jamais au pointeur ; un élément interactif le dit par sa forme (pilule, chevron, pastille en relief), jamais seulement par sa couleur. Préfixe `mk-` et non `sk-`, déjà pris par les pages Stacks.
+
+| Composant | Objectif | Affordance |
+|---|---|---|
+| `Card` | regrouper une réponse | surface blanche, rayon 22, ombre douce, titre en haut à gauche ; statique |
+| `Figure` | le chiffre clé d'une carte | grand chiffre et son unité ; jamais cliquable |
+| `Trend` | ce qui a bougé ou ce qu'il faut surveiller | une ligne courte, colorée selon le sens (vert : bon, orange : à surveiller, gris : neutre) |
+| `RankedBars` | comparer des montants | une barre par outil, longueur = part du total, montant et % affichés ; lecture seule |
+| `Meter` | une progression vers un tout | barre de remplissage et son ratio ; lecture seule |
+| `AppIcon` | identifier un outil | logo sur tuile blanche ; pastille verte « vérifié » ou logo estompé « en attente » |
+| `AppIconRow` | montrer qui fait partie d'un ensemble | icônes avec statut ; lecture seule |
+| `Duo` | montrer une paire qui peut faire doublon | deux icônes autour d'une pastille ⇄ |
+| `Footnote` | la dernière ligne, discrète | sous un filet, texte gris |
+| `Button` | agir sur la stack | pilule ; noire pour la réponse attendue, grise pour les autres ; `aria-pressed` pour un état |
+| `TextLink` | aller vers une action ou un lieu secondaire | texte souligné ; version discrète grise pour « Plus tard » |
+| `Segmented` | changer la vue, jamais les données | pouce en relief dans un rail ; `tabs` pilote un panneau (flèches clavier), `toggle` filtre une liste |
+| `LinkRow` | ouvrir un lieu | ligne pleine largeur, fond au survol, chevron à droite |
+| `ActionRow` | ouvrir un outil | icône, nom, détail, valeur à droite, chevron |
+
+Placement : une commande se trouve à côté de ce qu'elle change (les lentilles au-dessus de la carte, les filtres au-dessus de la liste). Le bilan du haut est en lecture seule : seules ses lignes de paires (`LinkRow`) ouvrent la comparaison.
+
+Couleurs des domaines : six teintes validées par le validateur dataviz sur `#F5F5F7` (`AREA_COLORS`, `src/lib/stackAreas.ts`), sans orange ni rouge, réservés à « à vérifier ». À partir du septième domaine, gris neutre (`AREA_OTHER`), jamais une teinte recyclée.
+
+Tokens du kit (calés sur apollo.io/product/builder-studio, relevés le 21/10/2026) :
+- surfaces : aucune ombre ; un filet de 1 px `--mk-line` (#E9E6E1), rayon 14 pour les cartes, 10 pour les boutons et icônes, 8 pour le pouce du sélecteur ;
+- neutres chauds : encre #1A1A1A, gris #6F6A65, fond #F6F5F2 ;
+- graisses : 400 partout (titres de carte, noms, chiffres clés) ; 500 pour les montants et les titres de décision ; pas de 600 ni de 700 ;
+- chiffre clé : 38 px, graisse 400, interlettrage -2,5 % ;
+- étiquette de type (« Doublon possible ») : monospace 11,5 px en capitales ;
+- icône de carte : trait fin (1,75) dans un cercle teinté de 30 px (bleu budget, orange doublons, vert vérification).
+
+Ajouts du 22/10/2026 :
+- `Allocation` : où part un total, comme un portefeuille. Anneau fin découpé par domaine (écart de 2 px), total au centre, légende triée par poids avec montant et part. Au-delà de cinq domaines, le reste est regroupé en « Autres domaines » gris. Lecture seule ; le survol d'un segment ou d'une ligne met ce domaine en avant.
+- `Row` : un fait réglé dans une liste, même mise en page que `LinkRow`, sans chevron ni survol.
+- `Trend` prend une icône explicite : flèche seulement pour un vrai changement de montant (baisse : économie, hausse : montant à examiner), coche pour un état réglé.
+- États obligatoires de chaque carte du bilan : rien encore, en cours, réglé. Une carte réglée montre ce qui a été réglé, jamais un vide.
+- Une information n'apparaît qu'à un endroit : la prochaine décision vit dans la file, l'économie réalisée dans le budget.
+- Pas de signe « ≈ » : l'estimation est dite en toutes lettres dans la ligne sous le chiffre.
+- Identité ToolTrim dans le kit (22/10/2026) : jetons de la palette maison (#1D1D1F, #6F6F68, crème #F6F5F4, bordure #E6E6E6), Inter Tight pour l'UI, Uncut Sans pour les chiffres clés. Chaque carte a un **hero crème** (titre, chiffre de 72 px dont l'unité est dans le second ton #86868B, comme `.tt-title-muted`, une phrase) ; les détails sont sur blanc en dessous. Une carte réglée passe son hero en vert doux.
+- Micro-interactions, toujours un retour : le chiffre défile dans le sens où il a bougé après une décision (`ValueChange`, jamais au premier affichage), la coche apparaît avec un léger rebond quand un état devient réglé, un segment de l'anneau s'épaissit sous le pointeur.
+- Masse : les trois cartes du bilan partagent leurs lignes de grille (`subgrid`) : les heros finissent sur la même ligne, les contenus démarrent sur la même ligne. Les chiffres sont tous à l'encre ; la couleur ne vit que dans les petits signes (icône, coche, pastille).
+- `Figure` est un compteur kilométrique (`Odometer`) : chaque chiffre roule dans sa colonne jusqu'à sa valeur, les unités en dernier, depuis 0 au premier affichage (décision de Michael, 22/10/2026, exception à la règle « jamais au premier affichage » de `ValueChange`), puis seulement les chiffres qui changent.
+- Une carte propose une action, elle la permet sur place : trancher la première paire en un geste, ouvrir un outil en attente, saisir un prix manquant.
+
+### Module constats (`StackFindings`, `mf-*`, 22/10/2026)
+
+Remplace le bilan à trois cartes et la file « Prochaine décision ». Un seul écran, lu dans l'ordre :
+
+1. **Prix** (grande carte à gauche) : `Figure` en compteur, barre de répartition des trois outils qui pèsent le plus, puis le reste ; sous un filet, le verdict (« Peut être allégée : jusqu'à X € », « Presque optimisée », « Vous économisez déjà X € »).
+2. **À faire maintenant** (carte large) : une seule décision, son étiquette à icône, `Duo` ou `AppIcon` en grand, pour une paire la comparaison des deux coûts en barres, la progression « 3 sur 15 », les réponses en `Button` (le seul bouton noir de l'écran), `TextLink` pour Comparer, la réponse groupée et Plus tard.
+3. **Ensuite / Puis** (deux cartes discrètes, sans bouton) : la suite, groupée par type. Une carte vide disparaît et la grille se referme.
+
+Quand tout est réglé, la carte large devient le **bilan** : économie en compteur, « soit X € par an », barres avant et après avec la part économisée hachurée, décisions en logos (outil gardé coché, outil retiré estompé), « Ajouter un outil » et « Explorer autour de ma stack ». Sur mobile, les cartes s'empilent dans le même ordre de lecture, le prix d'abord.

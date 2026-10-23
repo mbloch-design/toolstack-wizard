@@ -1,5 +1,26 @@
 import { expect, test } from "@playwright/test";
 
+/** Answers the plan question on top: a plan card when the catalogue has plans, else the yes/no buttons. */
+async function answerPlan(deck: import("@playwright/test").Locator, paid: boolean, lang: "fr" | "en" = "fr") {
+  // On a phone the decision card is a summary: open it first.
+  const expand = deck.locator(".mf-expand[aria-expanded='false']");
+  if (await expand.isVisible().catch(() => false)) await expand.click();
+  const cards = deck.locator(".mf-plan");
+  // Catalogue plans load after the deck: give them a moment before falling back to the yes/no buttons.
+  if (await cards.first().waitFor({ timeout: 4000 }).then(() => true, () => false)) {
+    if (paid) {
+      await cards.filter({ hasNotText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
+      // A per-user plan asks for the number of people first.
+      const confirm = deck.locator(".mf-seats").getByRole("button", { name: lang === "fr" ? "Valider" : "Confirm" });
+      if (await confirm.isVisible().catch(() => false)) await confirm.click();
+    }
+    else await cards.filter({ hasText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
+    return;
+  }
+  await deck.getByRole("button", { name: paid ? (lang === "fr" ? "Oui, payant" : "Yes, paid") : (lang === "fr" ? "Non, version gratuite" : "No, free version"), exact: true }).click();
+}
+
+
 const stackKey = "tooltrim-ma-stack-mvp-v3";
 const paidKey = "tooltrim-ma-stack-paid-plans-v1";
 const decisionsKey = "tooltrim-ma-stack-decisions-v1";
@@ -31,12 +52,11 @@ test("paid choices propagate between browser tabs without losing earlier choices
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   const other = await context.newPage();
   await other.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await page.getByRole("button", { name: "Indiquer lesquels", exact: true }).click();
-  await other.getByRole("button", { name: "Indiquer lesquels", exact: true }).click();
-  await page.getByRole("switch", { name: "Abonnement payant pour Figma", exact: true }).click();
-  await expect(other.getByRole("switch", { name: "Abonnement payant pour Figma", exact: true })).toHaveAttribute("aria-checked", "true");
-  await other.getByRole("switch", { name: "Abonnement payant pour Canva", exact: true }).click();
-  await expect(page.getByRole("switch", { name: "Abonnement payant pour Canva", exact: true })).toHaveAttribute("aria-checked", "true");
+  // Answering the deck in one tab moves the deck in the other.
+  await answerPlan(page.locator(".mf-now"), true);
+  await expect(other.locator(".mf-now h3")).toHaveText("Quelle formule de Canva avez-vous\u00a0?");
+  await answerPlan(other.locator(".mf-now"), true);
+  await expect(page.locator(".mf-now h3")).not.toHaveText(/Quelle formule/);
   expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key) || "[]"), paidKey)).toEqual(expect.arrayContaining(["figma", "canva"]));
   await other.close();
 });
@@ -48,6 +68,6 @@ test("corrupt decisions do not hide valid decisions or crash my stack", async ({
   }, { key: stackKey, state: seed(["figma", "canva"]), decisionKey: decisionsKey });
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   await expect(page.getByRole("heading", { name: "Mes outils", exact: true })).toBeVisible();
-  await expect(page.locator("#ms-overlaps")).toContainText("gardée volontairement");
+  await expect(page.locator(".mf")).toContainText("gardée volontairement");
   await expect(page.locator(".ms-tool")).toHaveCount(2);
 });

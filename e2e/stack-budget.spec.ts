@@ -1,6 +1,27 @@
 import { test, expect } from "@playwright/test";
 import fs from "node:fs";
 
+/** Answers the plan question on top: a plan card when the catalogue has plans, else the yes/no buttons. */
+async function answerPlan(deck: import("@playwright/test").Locator, paid: boolean, lang: "fr" | "en" = "fr") {
+  // On a phone the decision card is a summary: open it first.
+  const expand = deck.locator(".mf-expand[aria-expanded='false']");
+  if (await expand.isVisible().catch(() => false)) await expand.click();
+  const cards = deck.locator(".mf-plan");
+  // Catalogue plans load after the deck: give them a moment before falling back to the yes/no buttons.
+  if (await cards.first().waitFor({ timeout: 4000 }).then(() => true, () => false)) {
+    if (paid) {
+      await cards.filter({ hasNotText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
+      // A per-user plan asks for the number of people first.
+      const confirm = deck.locator(".mf-seats").getByRole("button", { name: lang === "fr" ? "Valider" : "Confirm" });
+      if (await confirm.isVisible().catch(() => false)) await confirm.click();
+    }
+    else await cards.filter({ hasText: lang === "fr" ? "Version gratuite" : "Free plan" }).first().click();
+    return;
+  }
+  await deck.getByRole("button", { name: paid ? (lang === "fr" ? "Oui, payant" : "Yes, paid") : (lang === "fr" ? "Non, version gratuite" : "No, free version"), exact: true }).click();
+}
+
+
 const slugs = ["substance-3d-painter", "ae-red-giant", "red-giant-shine", "adobe-creative-cloud", "claude", "gemini", "perplexity", "notebook-lm"];
 for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
   test(`budget ${lang} ${width}px: every tool is accessible, including unpriced tools`, async ({ page }) => {
@@ -17,41 +38,33 @@ for (const lang of ["fr", "en"]) for (const width of [390, 1440]) {
     const consent = page.getByRole("button", { name: lang === "fr" ? "Refuser" : "Refuse", exact: true });
     if (await consent.isVisible()) await consent.click();
     await expect(page.locator(".ms-tool")).toHaveCount(8);
-    const budget = page.locator("#ms-budget");
-    const toolsToggle = budget.getByRole("button", { name: lang === "fr" ? "Outils" : "Tools", exact: true });
-    if (await toolsToggle.count()) await toolsToggle.click();
-    await expect(budget.locator(".ms-budget-link")).toHaveCount(8);
-    await expect(budget.locator(".ms-budget-status").first()).toBeVisible();
-    // The same attested fallback as the tool page must power both the
-    // free-tier question and the monthly budget after declaring a payment.
-    for (const name of ["Claude", "Perplexity"]) {
-      const row = budget.locator(".ms-budget-other-list li").filter({ has: page.getByRole("button", { name, exact: true }) });
-      await expect(row).toContainText(lang === "fr" ? "Freemium compté gratuit" : "Freemium counted as free");
+    // Every card names its cost, including unpriced ones.
+    const map = page.locator(".ms-inv");
+    await expect(map.locator(".ms-inv-cost")).toHaveCount(8);
+    // The same attested fallback as the tool page powers the free-tier
+    // question and the monthly budget after declaring a payment.
+    for (const name of ["Claude", "Perplexity"]) await expect(map.getByRole("button", { name: new RegExp(`^${name}, `) })).toContainText("Freemium");
+    const deck = page.locator(".mf-now");
+    const top = deck.locator("h3");
+    await expect(top).toBeVisible();
+    for (let i = 0; i < 8; i++) {
+      const title = (await top.textContent()) || "";
+      if (!(lang === "fr" ? /^Quelle formule/ : /^Which .* plan/).test(title)) break;
+      const paid = /Claude|Perplexity/.test(title);
+      await answerPlan(deck, paid, lang as "fr" | "en");
+      await expect(top).not.toHaveText(title);
     }
-    await budget.locator(".ms-inline-link").click();
-    for (const name of ["Claude", "Perplexity"]) {
-      const control = page.getByRole("switch", { name: `${lang === "fr" ? "Abonnement payant pour" : "Paid subscription for"} ${name}`, exact: true });
-      await expect(control.locator("xpath=..")).toContainText(lang === "fr" ? "20 $" : "$20/mo");
-      await control.click();
-    }
-    await page.locator(".ms-sheet-done").click();
-    for (const name of ["Claude", "Perplexity"]) {
-      const row = budget.locator(".sg-budget-viz li").filter({ has: page.getByRole("button", { name, exact: true }) });
-      await expect(row.locator(".sg-budget-value")).toHaveText(lang === "fr" ? "≈ 17 €" : "≈ $20");
-    }
-    await budget.scrollIntoViewIfNeeded();
+    for (const name of ["Claude", "Perplexity"]) await expect(map.getByRole("button", { name: new RegExp(`^${name}, `) }).locator(".ms-inv-cost")).toHaveText(lang === "fr" ? "17 €/mois" : "$20/mo");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     fs.mkdirSync("/private/tmp/tooltrim-stack-budget", { recursive: true });
-    await budget.screenshot({ path: `/private/tmp/tooltrim-stack-budget/${lang}-${width}.png` });
-    const unknown = budget.locator(".ms-budget-other-list li").filter({ hasText: lang === "fr" ? "Coût non renseigné" : "Cost unknown" }).first();
+    await map.screenshot({ path: `/private/tmp/tooltrim-stack-budget/${lang}-${width}.png` });
+    // An unpriced tool is hatched and opens its sheet to enter the price.
+    const unknown = map.locator('.ms-inv-card:has(.ms-inv-cost[data-tone="unknown"])').first();
     await expect(unknown).toBeVisible();
-    await unknown.getByRole("button").click();
+    await unknown.click();
     await expect(page.locator(".ms-tool-sheet")).toBeVisible();
     await page.keyboard.press("Escape");
     await page.reload({ waitUntil: "domcontentloaded" });
-    await expect(budget.locator(".ms-budget-other-list li")).not.toHaveCount(0);
-    for (const name of ["Claude", "Perplexity"]) {
-      await expect(budget.locator(".sg-budget-viz li").filter({ has: page.getByRole("button", { name, exact: true }) })).toBeVisible();
-    }
+    for (const name of ["Claude", "Perplexity"]) await expect(map.getByRole("button", { name: new RegExp(`^${name}, `) }).locator(".ms-inv-cost")).toHaveText(lang === "fr" ? "17 €/mois" : "$20/mo");
   });
 }
