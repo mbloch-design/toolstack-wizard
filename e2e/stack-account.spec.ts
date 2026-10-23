@@ -13,7 +13,9 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) {
     await login(page, lang, 'roundtrip@example.invalid'); await saved(page, lang);
     expect(await snapshot(page)).toEqual(full);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    await page.locator('.ms-account').screenshot({ path: test.info().outputPath(`${lang}-${width}-account.png`) });
+    // Synced, the saving status is the discreet indicator beside the inventory title.
+    await expect(page.locator('.ms-save-indicator')).toHaveAttribute('title', lang === 'fr' ? 'Stack enregistrée' : 'Stack saved');
+    await page.locator('.ms-inventory-heading').screenshot({ path: test.info().outputPath(`${lang}-${width}-account.png`) });
     // A clean context signs in independently: no localStorage or session copied.
     const second = await browser.newContext({ baseURL: process.env.PLAYWRIGHT_BASE_URL, viewport: { width, height: 1000 } }); await isolate(second);
     const other = await second.newPage(); const otherErrors: string[] = []; other.on('pageerror', error => otherErrors.push(error.message)); await other.goto(`/${lang}/ma-stack`);

@@ -8,7 +8,7 @@ Légende : **[décision]** = attend un arbitrage de Michael.
 
 ## En cours
 
-- [ ] P1 E2E comptes : `full personal state survives new device` (×4) échoue déjà sur la branche avant l'onboarding : il attend `.ms-account`, que le panneau ne rend plus quand la stack est synchronisée (pastille « Stack enregistrée »). Viser la pastille.
+- [x] P1 E2E comptes : `full personal state survives new device` (×4) visait `.ms-account`, absent une fois la stack synchronisée ; il vise désormais la pastille « Stack enregistrée » (23/10/2026).
 - [ ] **[décision]** Landing Ma stack : confirmer « gratuit, sans carte bancaire » et « supprimez vos données quand vous voulez » comme engagements publics.
 - [ ] P2 Onboarding : recompter `src/data/tradeTools.ts` quand les stacks éditoriales changent beaucoup (comptage du 23/10/2026).
 - [ ] P2 Exploiter `trade` et `dailyRate` dans les recommandations et la box décision (valeur de l'heure face au prix des offres).
