@@ -120,3 +120,8 @@ Le persona, le métier, l’entreprise et la qualification progressive restent p
 - Recette supplémentaire locale : API 283 tests réussis, 18 ignorés ; migrations/assertions/rollback SQL réussis en base éphémère. Ces résultats ne prouvent pas une connexion OAuth ou une livraison e-mail réelle.
 
 Avant de communiquer une URL de recette : vérifier la cible Vercel de préproduction et le projet Supabase convenu, contrôler les migrations installées, configurer les secrets serveur et les retours autorisés, activer les flags, déployer la version vérifiée, puis tester inscription/confirmation, connexion/déconnexion, récupération, sauvegarde/relecture de stack et refus d’accès privé. Tester chaque fournisseur OAuth avant d’activer son bouton. Ne pas promouvoir en production dans ce lot.
+
+
+### Reconstruire après un changement de configuration
+
+Le filtre Git ignore volontairement les sources inchangées. Pour une activation de fournisseur sans modification de code, définir explicitement `TOOLTRIM_FORCE_BUILD=1` sur la Preview visée avant de reconstruire, puis retirer ce signal une fois le déploiement lancé. Le signal ne change aucun flag métier et n’active pas les comptes en production. Le test `node --test scripts/vercel-ignore-build.test.mjs` vérifie le maintien du skip normal et le rebuild explicite. GitHub a été activé dans Supabase le 23 octobre ; le propriétaire a confirmé son retour connecté vers Ma stack et la projection serveur contient un profil GitHub avec nom et avatar.

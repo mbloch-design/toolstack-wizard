@@ -9,6 +9,13 @@
 # this rule ran `git diff` directly, and a missing commit made Vercel report
 # an Error on every research push.
 
+# A reviewed environment-only change also needs a fresh frontend build.
+# Set this only on the intended deployment/environment, never infer from secrets.
+if [ "${TOOLTRIM_FORCE_BUILD:-}" = "1" ]; then
+  echo "Explicit configuration rebuild requested: building."
+  exit 1
+fi
+
 base="${VERCEL_GIT_PREVIOUS_SHA:-}"
 
 has_commit() { git cat-file -e "$1^{commit}" 2>/dev/null; }

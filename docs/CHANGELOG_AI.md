@@ -5900,3 +5900,8 @@ Référence d’architecture alignée sur le compte requis avant le premier ajou
 ### Correctif détecté en Preview : imports Node ESM
 
 La première invocation distante des API comptes échouait avant le handler (`ERR_MODULE_NOT_FOUND` sur `_account-auth`). Les imports relatifs des API et de leurs dépendances partagées utilisent maintenant `.js`, conformément aux fonctions existantes. Un test compile ces trois entrées sans bundler puis les importe avec Node natif ; il reproduit l’échec avant correction et passe après. Il est inclus dans la vérification préproduction et sa CI.
+
+
+### Activation GitHub et reconstruction de configuration
+
+Connexion GitHub réelle confirmée par le propriétaire ; import serveur du nom et de l’avatar vérifié sans exposer les données personnelles. Flag GitHub activé uniquement pour la branche Preview. Ajout d’un signal explicite `TOOLTRIM_FORCE_BUILD=1` au filtre de build pour les reconstructions après changement de configuration seul ; test de régression skip/rebuild. Google reste désactivé.
