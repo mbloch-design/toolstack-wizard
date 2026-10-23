@@ -1,8 +1,8 @@
-import { UserRound, ShieldCheck, Palette, Database, ArrowUpRight, Settings2, Download, CheckCircle2, Sun, Moon, Check } from "@/lib/icons";
+import { UserRound, ShieldCheck, Palette, Database, Settings2, Download, CheckCircle2, Sun, Moon, Check } from "@/lib/icons";
 import AccountLanguageIcon from "@/components/account/AccountLanguageIcon";
 import AccountAvatar from "@/components/account/AccountAvatar";
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { useTheme } from "@/hooks/useTheme";
@@ -180,68 +180,21 @@ export default function AccountSettingsPage() {
   const unavailable = !account.enabled;
   const expired = account.syncStatus === "session-expired";
   const authenticated = !!account.user && !expired;
+  if (account.enabled && !account.authInitialized) return <p role="status">{t("Chargement du compte…", "Loading account…")}</p>;
+  if (!authenticated || unavailable) return <Navigate to={prefix || "/"} replace />;
   return (
     <AccountPageFrame
       wide
       icon={<Settings2 size={24} />}
-      headerExtra={<Link className="ac-button ac-settings-back" to={`${prefix}/ma-stack`}>{t("Ma stack", "My stack")}<ArrowUpRight size={17} aria-hidden /></Link>}
       title={t("Paramètres du compte", "Account settings")}
       intro={t(
         "Votre profil, vos préférences et vos données, au même endroit.",
         "Your profile, preferences and data, in one place.",
       )}
     >
-      {!authenticated || unavailable ? (
-        <section className="ac-settings-section">
-          <h2>{t("Votre espace ToolTrim", "Your ToolTrim space")}</h2>
-          <p>
-            {unavailable
-              ? t(
-                  "Les comptes seront bientôt disponibles.",
-                  "Accounts will be available soon.",
-                )
-              : expired
-                ? t("Votre session a expiré.", "Your session expired.")
-                : t(
-                    "Connectez-vous pour retrouver votre profil et votre stack enregistrée.",
-                    "Sign in to access your profile and saved stack.",
-                  )}
-          </p>
-          {!unavailable && (
-            <button
-              className="ac-button ac-button--primary"
-              onClick={() =>
-                experience.openAuth("signin", accountPath(lang, "settings"))
-              }
-            >
-              {t("Se connecter", "Sign in")}
-            </button>
-          )}
-          <Link className="ac-text-button" to={`${prefix}/ma-stack`}>
-            {t(
-              "Retrouver ma stack sur cet appareil",
-              "Open my stack on this device",
-            )}
-          </Link>
-          {!account.user && (
-            <button className="ac-button" onClick={exportStack}>
-                  <Download size={17} aria-hidden />
-              {t("Exporter ma stack en JSON", "Export my stack as JSON")}
-            </button>
-          )}
-          {exportError && (
-            <p role="alert">
-              {t(
-                "Export indisponible. Réessayez.",
-                "Export unavailable. Try again.",
-              )}
-            </p>
-          )}
-        </section>
-      ) : (
         <div className="ac-settings-layout">
           <nav className="ac-settings-nav" aria-label={t("Rubriques des paramètres", "Settings sections")}>
-            <span className="ac-nav-label">{t("Mon espace", "My workspace")}</span>
+            <span className="ac-nav-label">{t("Paramètres", "Settings")}</span>
             {[
               { id: "profile", label: t("Profil", "Profile"), Icon: UserRound },
               { id: "security", label: t("Connexion et sécurité", "Sign-in and security"), Icon: ShieldCheck },
@@ -518,7 +471,6 @@ export default function AccountSettingsPage() {
           </section>
           </div>
         </div>
-      )}
     </AccountPageFrame>
   );
 }

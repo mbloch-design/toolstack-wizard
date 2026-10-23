@@ -1,4 +1,5 @@
-import { createContext, createElement, useContext, useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from "react";
+import { StackAccountReactContext } from "@/contexts/StackAccountContext";
+import { createElement, useContext, useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from "react";
 import type { User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { STACK_ACCOUNT_ENABLED } from "@/config/features";
@@ -10,7 +11,7 @@ export { getStackAccountReturnUrl } from "@/lib/stackAccountCoordinator";
 
 type Actions = Pick<StackAccountCoordinator, "loadSaved" | "addDraft" | "reloadLatest" | "keepCurrent" | "retry" | "signInWithGoogle" | "sendEmailCode" | "verifyEmailCode" | "signOut" | "deleteAccount" | "clearLocalAccount" | "signInWithProvider" | "signInWithPassword" | "signUpWithPassword" | "resendConfirmation" | "requestPasswordReset" | "completePasswordReset" | "getAccessToken">;
 export type StackAccountContext = AccountSnapshot & Actions & { enabled: boolean; sendMagicLink: Actions["sendEmailCode"] };
-const Context = createContext<StackAccountContext | null>(null);
+const Context = StackAccountReactContext;
 
 /** Mount once above routes. Page hooks never create auth listeners or autosave loops. */
 export function StackAccountProvider({ children, enabled = STACK_ACCOUNT_ENABLED }: { children: ReactNode; enabled?: boolean }) {

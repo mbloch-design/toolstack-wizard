@@ -1,6 +1,3 @@
-import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
-import { useStackAccount } from "@/hooks/useStackAccount";
-import { accountPath } from "@/lib/accountPaths";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "@/lib/routerLinks";
 import { ArrowLeft, ChevronRight, CirclePlus, X } from "@/lib/icons";
@@ -46,8 +43,6 @@ interface Props {
 const CURRENCIES: Currency[] = ["EUR", "USD", "GBP"];
 
 export default function MobileMenu({ open, onClose, prefix, lang, t, items, activeId, languageHref, currency, setCurrency, theme, toggleTheme }: Props) {
-  const account = useStackAccount();
-  const experience = useAccountExperience();
   const [level, setLevel] = useState<Level>("root");
   // Reste monté le temps de l'animation de fermeture : le panneau glisse et
   // s'efface au lieu de disparaître d'un coup.
@@ -152,7 +147,7 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
                 </ul>
               </nav>
 
-              {account.enabled && <div className="ac-mobile-entry">{account.user && account.syncStatus !== 'session-expired' ? <Link className="asv2-mm-link" to={accountPath(lang,'settings')} onClick={onClose}>{L('Paramètres du compte','Account settings')}</Link> : <button className="asv2-mm-link" onClick={()=>{onClose();experience.openAuth('signin');}}>{L('Se connecter','Sign in')}</button>}</div>}
+
               <section className="asv2-mm-prefs" aria-labelledby="asv2-mm-prefs">
                 <h3 id="asv2-mm-prefs" className="asv2-mm-subtitle">{L("Préférences", "Preferences")}</h3>
                 {/* Deux choix visibles, l'actif marqué : plus explicite qu'un

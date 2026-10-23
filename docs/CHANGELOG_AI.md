@@ -1,3 +1,12 @@
+## 2026-10-23 : comptes, accès et accueil de Ma stack
+
+- Header stabilisé : recherche généreuse avec raccourci, Se connecter explicite, puis Ma stack en bouton plein à droite avec compteur, selon la logique d’un panier. Avatar pour le compte connecté, menus sans doublon.
+- Nouvelle règle validée : un compte est requis avant le premier ajout lorsque la fonctionnalité de compte est activée. Le hook partagé bloque les ajouts depuis Ma stack, les fiches/cartes et l’explorateur ; une demande centrale ouvre l’inscription ou la reconnexion. Aucun faux message de réussite ni nouvel événement d’ajout avant authentification. Les flags de déploiement restent inchangés.
+- Accueil déconnecté de Ma stack : promesse « Les bons outils. Juste l’essentiel. », bénéfices concrets, pictogrammes et illustration abstraite sans répétition, prix ni outil recommandé inventés. Créer ma stack et accès au compte existant ; recherche d’ajout disponible après connexion.
+- Paramètres privés : attente de l’initialisation Auth, retour à l’accueil après déconnexion, visite anonyme ou session expirée ; suppression de l’ancienne page intermédiaire d’export/connexion. Aucun profil privé affiché sans session.
+- Confirmation de déconnexion structurée, distinction abandon/suppression et focus conservés. Le contexte de lecture du compte est séparé du client Auth pour éviter une initialisation SDK depuis le hook local.
+- Aucun changement de catalogue JSON, d’API/RLS, de scopes OAuth ou de configuration distante.
+
 ## 2026-10-22 : passe UI/UX des comptes
 
 - Paramètres en pleine largeur dans le shell actif : en-tête compact avec pictogramme et retour Ma stack, un seul fil d’Ariane dans la barre supérieure, navigation des quatre rubriques par liens directs, une rubrique affichée à la fois. Les formulaires restent montés pour conserver les saisies en cours ; retour arrière et liens directs conservent la rubrique. Identité, personnalisation et informations secondaires sont séparées.

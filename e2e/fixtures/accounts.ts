@@ -33,7 +33,7 @@ export async function login(page: Page, lang: 'fr' | 'en', email: string, passwo
   const accounts = await control(page.request, 'state');
   if (!accounts.accounts.some((user: { email: string }) => user.email === email)) await control(page.request, 'seed', { email });
   await dismissConsent(page);
-  await page.getByRole('button', { name: lang === 'fr' ? 'Enregistrer ma stack' : 'Save my stack', exact: true }).click();
+  await page.getByRole('button', { name: lang === 'fr' ? 'J’ai déjà un compte' : 'I already have an account', exact: true }).click();
   await page.getByRole('button', { name: lang === 'fr' ? 'Continuer avec l’e-mail' : 'Continue with email', exact: true }).click();
   await page.getByLabel(lang === 'fr' ? 'Adresse e-mail' : 'Email address', { exact: true }).fill(email);
   await page.getByLabel(lang === 'fr' ? 'Mot de passe' : 'Password', { exact: true }).fill(password);
@@ -48,7 +48,7 @@ export async function signOut(page: Page, lang: 'fr' | 'en' = 'en') {
   await page.locator('.ac-header-trigger').click();
   await page.getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
   await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
-  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', lang === 'fr' ? 'Se connecter' : 'Sign in');
+  await expect(page.locator('.ac-header-trigger--account')).toHaveCount(0);
   await expect(page.getByRole('dialog')).toHaveCount(0);
 }
 export async function snapshot(page: Page) {

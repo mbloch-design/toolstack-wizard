@@ -1,3 +1,5 @@
+import { useOptionalStackAccount } from "@/contexts/StackAccountContext";
+import { STACK_AUTH_REQUIRED_EVENT } from "@/lib/stackAuthAccess";
 import { useCallback, useSyncExternalStore } from "react";
 import { trackEvent } from "@/lib/analytics";
 import {
@@ -39,19 +41,30 @@ function updateToolCartState(updater: (current: ToolCartState) => ToolCartState)
 }
 
 export function useStackPins() {
+  const account = useOptionalStackAccount();
+  const requiresAccount = !!account?.enabled && (!account.user || account.syncStatus === "session-expired");
+  const requestAddAccess = useCallback(() => {
+    if (!requiresAccount) return true;
+    window.dispatchEvent(new CustomEvent(STACK_AUTH_REQUIRED_EVENT, { detail: { mode: account?.syncStatus === "session-expired" ? "signin" : "signup" } }));
+    return false;
+  }, [requiresAccount, account?.syncStatus]);
   const state = useSyncExternalStore(subscribePersonalStack, getSelection, getServerSelection);
   const persistenceStatus = useSyncExternalStore(subscribePersonalStack, getPersonalStackPersistenceStatus, getServerPersonalStackPersistenceStatus);
 
   const pinTool = useCallback((slug: string, needIds: string[] = []) => {
+    if (!requestAddAccess()) return false;
     // Deliberate "Ajouter à Ma Stack" click — the closest thing this site has
     // to a conversion event, and previously invisible in Analytics entirely.
     trackEvent("add_to_stack", { tool_slug: slug });
     updateToolCartState((current) => pinToolInState(current, slug, needIds));
-  }, []);
+    return true;
+  }, [requestAddAccess]);
 
   const pinToolAutomatically = useCallback((slug: string, needIds: string[] = []) => {
+    if (!requestAddAccess()) return false;
     updateToolCartState((current) => pinToolInState(current, slug, needIds, new Date().toISOString(), "auto"));
-  }, []);
+    return true;
+  }, [requestAddAccess]);
 
   const unpinTool = useCallback((slug: string) => {
     updateToolCartState((current) => unpinToolInState(current, slug));
@@ -71,12 +84,14 @@ export function useStackPins() {
   }, [scope, epoch]);
 
   const saveToolSelection = useCallback((slug: string, needIds: string[], intent: StackToolIntent) => {
+    if (!requestAddAccess()) return false;
     // The confirm step of the "Enregistrer l'outil" dialog — the actual path
     // the main "Ajouter [Tool]" button on a tool page goes through, distinct
     // from the simpler one-click pinTool() used elsewhere (e.g. tool cards).
     trackEvent("add_to_stack", { tool_slug: slug, intent });
     updateToolCartState((current) => saveToolSelectionInState(current, slug, needIds, intent));
-  }, []);
+    return true;
+  }, [requestAddAccess]);
 
   const assignToolNeeds = useCallback((slug: string, needIds: string[]) => {
     updateToolCartState((current) => assignToolNeedsInState(current, slug, needIds));
@@ -144,6 +159,8 @@ export function useStackPins() {
   }, []);
 
   return {
+    requiresAccount,
+    requestAddAccess,
     state,
     persistenceStatus,
     pinTool,

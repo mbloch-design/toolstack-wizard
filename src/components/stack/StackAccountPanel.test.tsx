@@ -162,20 +162,21 @@ describe("shared account stack panel", () => {
     },
   );
 
-  it("opens the shared sign-in experience without a second public form", async () => {
+  it("invites signup and provides a separate existing-account entry without a second form", async () => {
     view();
     await click("Enregistrer ma stack");
-    expect(openAuth).toHaveBeenCalledWith("signin");
+    expect(openAuth).toHaveBeenCalledWith("signup");
+    await click("J’ai déjà un compte");
+    expect(openAuth).toHaveBeenLastCalledWith("signin");
     expect(screen.queryByLabelText("Adresse e-mail")).not.toBeInTheDocument();
     expect(screen.queryByText("Recevoir un code")).not.toBeInTheDocument();
   });
-  it("links to settings rather than exposing destructive account controls", () => {
+  it("shows saving status without duplicating account navigation or destructive controls", () => {
     account.user = user;
     account.syncStatus = "synced";
     view();
-    expect(
-      screen.getByRole("link", { name: "Paramètres du compte" }),
-    ).toHaveAttribute("href", "/fr/compte/parametres");
+    expect(screen.getByRole("status")).toHaveTextContent("Stack enregistrée");
+    expect(screen.queryByRole("link", { name: "Paramètres du compte" })).not.toBeInTheDocument();
     expect(
       screen.queryByRole("button", { name: "Supprimer mon compte" }),
     ).not.toBeInTheDocument();

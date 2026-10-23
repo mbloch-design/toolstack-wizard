@@ -37,7 +37,7 @@ export function PinToolButton({ slug, label, t, compact = false, inline = false,
         if (pinned) {
           navigate(`${prefix}/ma-stack?outil=${encodeURIComponent(slug)}`);
         } else {
-          pinTool(slug);
+          if (!pinTool(slug)) return;
           toast.success(t(`${label} ajouté à ma stack.`, `${label} added to your stack.`));
         }
       }}

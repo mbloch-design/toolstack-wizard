@@ -14,7 +14,7 @@ test("empty → search → add → inspect → remove → undo → persist", asy
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
   await expect(page.getByRole("heading", { name: "Mes outils", exact: true })).toBeVisible();
   await expect(page.locator(".ms-card-grid")).toHaveCount(0);
-  await page.getByRole("searchbox", { name: "Rechercher un outil", exact: true }).fill("figma");
+  await page.getByRole("searchbox", { name: "Ajouter un outil à ma stack", exact: true }).fill("figma");
   await page.getByRole("button", { name: "Ajouter Figma", exact: true }).click();
   await expect(page).toHaveURL(/ma-stack$/);
   await expect(page.locator(".ms-tool")).toHaveCount(1);
@@ -98,8 +98,8 @@ test("invalid catalogue ID can be removed without losing valid tools", async ({ 
 test("corrupt storage recovers without crashing", async ({ page }) => {
   await page.addInitScript((key) => localStorage.setItem(key, "{invalid"), key);
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.getByRole("searchbox", { name: "Search for a tool", exact: true })).toBeVisible();
-  await page.getByRole("searchbox", { name: "Search for a tool", exact: true }).fill("slack");
+  await expect(page.getByRole("searchbox", { name: "Add a tool to my stack", exact: true })).toBeVisible();
+  await page.getByRole("searchbox", { name: "Add a tool to my stack", exact: true }).fill("slack");
   await page.getByRole("button", { name: "Add Slack", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(1);
 });
@@ -107,8 +107,8 @@ test("corrupt storage recovers without crashing", async ({ page }) => {
 test("blocked localStorage getter keeps selection usable in memory", async ({ page }) => {
   await page.addInitScript(() => Object.defineProperty(window, "localStorage", { get() { throw new DOMException("Blocked", "SecurityError"); } }));
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.getByRole("searchbox", { name: "Search for a tool", exact: true })).toBeVisible();
-  await page.getByRole("searchbox", { name: "Search for a tool", exact: true }).fill("slack");
+  await expect(page.getByRole("searchbox", { name: "Add a tool to my stack", exact: true })).toBeVisible();
+  await page.getByRole("searchbox", { name: "Add a tool to my stack", exact: true }).fill("slack");
   await page.getByRole("button", { name: "Add Slack", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await expect(page.locator(".ms-storage-notice")).toContainText("session");

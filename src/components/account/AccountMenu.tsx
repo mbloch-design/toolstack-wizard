@@ -1,7 +1,7 @@
 import AccountAvatar from "./AccountAvatar";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { UserRound, Settings2, LogOut, Bookmark, ChevronDown } from "@/lib/icons";
+import { UserRound, Settings2, LogOut, ChevronDown } from "@/lib/icons";
 import {
   Popover,
   PopoverContent,
@@ -17,23 +17,14 @@ export default function AccountMenu() {
   const { t, lang, prefix } = useLang();
   const [open, setOpen] = useState(false);
   if (!account.enabled) return null;
-  if (!account.user || account.syncStatus === "session-expired")
-    return (
-      <div className="ac-header-guest">
-      <button
-        type="button"
-        className="ac-header-trigger"
-        onClick={() => experience.openAuth("signin")}
-        aria-label={t("Se connecter", "Sign in")}
-      >
-        <UserRound size={20} aria-hidden />
-        <span className="ac-header-label">{t("Se connecter", "Sign in")}</span>
-      </button>
-      <button type="button" className="ac-button ac-button--primary ac-header-signup" onClick={() => experience.openAuth("signup")}>
-        {t("S’inscrire", "Sign up")}
-      </button>
-      </div>
-    );
+  if (!account.authInitialized) return <span className="ac-header-loading" role="status" aria-label={t("Chargement du compte", "Loading account")} />;
+  if (!account.user || account.syncStatus === "session-expired") return (
+    <button type="button" className="ac-header-trigger" onClick={() => experience.openAuth("signin")}
+      aria-label={account.syncStatus === "session-expired" ? t("Me reconnecter", "Sign in again") : t("Se connecter", "Sign in")}>
+      <UserRound size={20} aria-hidden />
+      <span className="ac-header-label">{account.syncStatus === "session-expired" ? t("Me reconnecter", "Sign in again") : t("Se connecter", "Sign in")}</span>
+    </button>
+  );
   const profile = experience.profile?.userId === account.user.id ? experience.profile : null;
   const label =
     profile?.displayName ||
@@ -57,10 +48,6 @@ export default function AccountMenu() {
           {label !== account.user.email && <span>{account.user.email}</span>}
         </div>
         <nav aria-label={t("Mon compte", "My account")}>
-          <Link to={`${prefix}/ma-stack`} onClick={() => setOpen(false)}>
-            <Bookmark size={18} aria-hidden />
-            {t("Ma stack", "My stack")}
-          </Link>
           <Link
             to={accountPath(lang, "settings")}
             onClick={() => setOpen(false)}

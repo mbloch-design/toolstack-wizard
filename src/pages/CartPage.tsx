@@ -1,3 +1,4 @@
+import StackWelcome from "@/components/stack/StackWelcome";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
@@ -36,7 +37,7 @@ export default function CartPage() {
   const { t, lang, prefix } = useLang();
   const { tools, loading } = useToolSummaries();
   const { categories } = useCategories();
-  const { state, persistenceStatus, pinTool, unpinTool, restoreTool } = useStackPins();
+  const { state, persistenceStatus, pinTool, unpinTool, restoreTool, requiresAccount } = useStackPins();
   const [params, setParams] = useSearchParams();
   const [domainFilter, setDomainFilter] = useState("all");
   const [searchOpen, setSearchOpen] = useState(false);
@@ -322,8 +323,8 @@ export default function CartPage() {
         type="search"
         value={query}
         onChange={(event) => setQuery(event.target.value)}
-        placeholder={t("Rechercher un outil…", "Search for a tool…")}
-        aria-label={t("Rechercher un outil", "Search for a tool")}
+        placeholder={t("Quel outil utilisez-vous ?", "Which tool do you use?")}
+        aria-label={t("Ajouter un outil à ma stack", "Add a tool to my stack")}
         onKeyDown={(event) => { if (event.key === "Escape" && !empty) { setSearchOpen(false); addRef.current?.focus(); } }}
       />{!empty && <button className="ms-icon-action" onClick={() => { setSearchOpen(false); addRef.current?.focus(); }} aria-label={t("Fermer la recherche", "Close search")}><X size={18} aria-hidden /></button>}</div>
       {query.trim() && <>
@@ -334,13 +335,15 @@ export default function CartPage() {
             type="button"
             disabled={present}
             aria-label={present ? t(`${tool.name} est dans votre stack`, `${tool.name} is in your stack`) : t(`Ajouter ${tool.name}`, `Add ${tool.name}`)}
-            onClick={() => { pinTool(toolKey(tool)); toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); }}
+            onClick={() => { if (!pinTool(toolKey(tool))) return; toast.success(t(`${tool.name} ajouté à ma stack.`, `${tool.name} added to your stack.`)); }}
           >{present ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}</button></li>;
         })}</ul>
       </>}
     </section>;
 
-  return <main className="ms-page">
+  if (requiresAccount) return <StackWelcome />;
+
+  return <div className="ms-page">
     {/* Topbar breadcrumb like every other page ("Home / My stack"); a personal
         page, so no structured data. */}
     <Breadcrumb items={[{ label: t("Ma stack", "My stack") }]} includeSchema={false} />
@@ -351,8 +354,8 @@ export default function CartPage() {
     <header className={`sg-hero sg-hero--cluster ms-hero${empty ? " ms-hero--empty" : ""}`}>
       <div className="sg-hero-copy">
         <span className="sg-hero-pill">{t("Ma stack", "My stack")}</span>
-        <h1>{t("Mes outils", "My tools")}</h1>
-        <p className="sg-lead">{t("Retrouvez vos outils, les usages qu’ils couvrent et leur coût estimé.", "See your tools, the uses they cover and their estimated cost.")}</p>
+        <h1>{empty ? t("Ajoutez votre premier outil", "Add your first tool") : t("Mes outils", "My tools")}</h1>
+        <p className="sg-lead">{empty ? t("Rassemblez les outils que vous utilisez pour comparer leurs usages et leur coût estimé.", "Bring together the tools you use to compare their uses and estimated cost.") : t("Retrouvez vos outils, les usages qu’ils couvrent et leur coût estimé.", "See your tools, the uses they cover and their estimated cost.")}</p>
         {state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) && <Link
           className="tt-button-primary ms-explore-stack" to={getExplorerHref(prefix, { type: "stack" })}
           state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`,
@@ -393,9 +396,6 @@ export default function CartPage() {
       </div>}
     </header>
 
-    <StackAccountPanel />
-
-    {empty && <p className="ms-empty-copy">{t("Ajoutez les outils que vous utilisez. ToolTrim organise automatiquement votre environnement.", "Add the tools you use. ToolTrim automatically organizes your environment.")}</p>}
     {persistenceStatus.state === "degraded" && <p className="ms-storage-notice" role="status">{persistenceStatus.issue === "current-corrupt" || persistenceStatus.issue === "backup-corrupt"
       ? t("La sauvegarde locale est illisible. Vous pouvez constituer une nouvelle stack.", "The local snapshot cannot be read. You can build a new stack.")
       : t("Le navigateur ne permet pas l’enregistrement local. Votre stack reste disponible pour cette session.", "Your browser cannot save locally. Your stack remains available for this session.")}</p>}
@@ -403,13 +403,7 @@ export default function CartPage() {
 
     {empty && searchPanel}
 
-    {/* Empty stack: what the page does, in three real steps. No suggested
-        tools (suggestions before typing were ruled out in V1). */}
-    {empty && <ol className="ms-howto" aria-label={t("Comment ça marche", "How it works")}>
-      <li><strong>{t("Ajoutez vos outils", "Add your tools")}</strong><span>{t("Cherchez-les par leur nom : ils se rangent seuls par domaine.", "Search them by name: they sort themselves by area.")}</span></li>
-      <li><strong>{t("Repérez les recoupements", "Spot the overlaps")}</strong><span>{t("ToolTrim signale les outils de votre stack qui font le même travail.", "ToolTrim flags the tools in your stack that do the same job.")}</span></li>
-      <li><strong>{t("Comparez avant d’ajouter", "Compare before adding")}</strong><span>{t("Sur chaque fiche, voyez ce qu’un nouvel outil recoupe dans votre stack.", "On every tool page, see what a new tool overlaps in your stack.")}</span></li>
-    </ol>}
+    <StackAccountPanel empty={empty} />
 
     {!empty && <>
       {/* Order follows the visit (Michael, 7 Oct 2026): after the hero, what I
@@ -467,5 +461,5 @@ export default function CartPage() {
         {loading && <p role="status">{t("Actualisation du catalogue…", "Refreshing catalogue…")}</p>}
       </section>}
     </>}
-  </main>;
+  </div>;
 }

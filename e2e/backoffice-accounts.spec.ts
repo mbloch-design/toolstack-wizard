@@ -63,7 +63,7 @@ test('back-office clean logout purges private primary, backup, plans and decisio
   await seededAdmin(page, request); await openBackOffice(page);
   await page.locator('.ba-entry-header').getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
-  await page.goto('/en/ma-stack'); await expect(page.getByRole('button', { name: 'Save my stack', exact: true })).toBeVisible();
+  await page.goto('/en/ma-stack'); await expect(page.getByRole('button', { name: 'I already have an account', exact: true })).toBeVisible();
   expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
   expect(await page.evaluate(() => Object.entries(localStorage).filter(([key]) => /tooltrim-(personal-stack|ma-stack)/.test(key)).every(([, value]) => !value.includes('figma') && !value.includes('historical')))).toBe(true);
 });
@@ -109,6 +109,6 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
   await page.getByRole('button', { name: 'View stack for admin@example.invalid', exact: true }).click(); await readable('.ba-detail');
   await page.locator('.ba-entry-header').getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
-  await page.goto('/en/ma-stack'); await page.getByRole('button', { name: 'Save my stack', exact: true }).click();
+  await page.goto('/en/ma-stack'); await page.getByRole('button', { name: 'I already have an account', exact: true }).click();
   await page.getByRole('button', { name: 'Continue with email', exact: true }).click(); await readable('.ac-providers .ac-button', null); await readable('.ac-form input');
 });

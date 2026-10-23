@@ -6,7 +6,7 @@ import {
   within,
   act,
 } from "@testing-library/react";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { afterEach, beforeEach, it, expect, vi } from "vitest";
 import { INITIAL_ACCOUNT_SNAPSHOT } from "@/lib/stackAccountCoordinator";
 import AccountSettingsPage from "./AccountSettingsPage";
@@ -30,6 +30,7 @@ beforeEach(() => {
   mocks.account = {
     ...INITIAL_ACCOUNT_SNAPSHOT,
     enabled: true,
+    authInitialized: true,
     user,
     syncStatus: "synced",
     requestPasswordReset: vi.fn(),
@@ -57,7 +58,7 @@ const selectSection = (name: string) => fireEvent.click(within(screen.getByRole(
 const view = () =>
   render(
     <MemoryRouter initialEntries={["/fr/compte/parametres"]}>
-      <AccountSettingsPage />
+      <Routes><Route path="/fr/compte/parametres" element={<AccountSettingsPage />} /><Route path="/fr" element={<h1>Accueil public</h1>} /></Routes>
     </MemoryRouter>,
   );
 it("shows four settings sections with real identities and device-only preferences", () => {
@@ -96,10 +97,10 @@ it("saves an optional display name with confirmation only after success", async 
     "Nom enregistré",
   );
 });
-it("provides a sign-in entry for an expired session without exposing the profile", () => {
+it("redirects an expired session without exposing the profile", () => {
   mocks.account = { ...mocks.account, syncStatus: "session-expired" };
   view();
-  expect(screen.getByText("Votre session a expiré.")).toBeVisible();
+  expect(screen.getByRole("heading", {name:"Accueil public"})).toBeVisible();
   expect(screen.queryByDisplayValue("Alex")).not.toBeInTheDocument();
 });
 it("shows profile failure and a retry without inventing a saved name", () => {
@@ -170,12 +171,12 @@ it("refuses to export a previous owner scope during an identity transition", () 
   setPersonalStackScope("anonymous");
   vi.unstubAllGlobals();
 });
-it("offers local draft export to an anonymous visitor", () => {
+it("redirects an anonymous visitor instead of exposing settings or export", () => {
   mocks.account = { ...mocks.account, user: null, syncStatus: "local" };
   view();
   expect(
-    screen.getByRole("button", { name: "Exporter ma stack en JSON" }),
-  ).toBeVisible();
+    screen.queryByRole("button", { name: "Exporter ma stack en JSON" }),
+  ).not.toBeInTheDocument();
   expect(
     screen.queryByLabelText("Nom d’affichage (facultatif)"),
   ).not.toBeInTheDocument();
@@ -228,4 +229,14 @@ it("exposes immediate theme and currency choices with an explicit selected state
   const euro = screen.getByRole("radio", { name: "EUR" });
   fireEvent.click(euro);
   expect(euro).toBeChecked();
+});
+
+it("leaves settings for home when the authenticated user signs out", () => {
+  const content = () => <MemoryRouter initialEntries={["/fr/compte/parametres"]}><Routes><Route path="/fr/compte/parametres" element={<AccountSettingsPage />} /><Route path="/fr" element={<h1>Accueil public</h1>} /></Routes></MemoryRouter>;
+  const mounted = render(content());
+  expect(screen.getByRole("heading", {name:"Profil"})).toBeVisible();
+  mocks.account = {...mocks.account, user:null, syncStatus:"local"};
+  mounted.rerender(content());
+  expect(screen.getByRole("heading", {name:"Accueil public"})).toBeVisible();
+  expect(screen.queryByText("Votre espace ToolTrim")).not.toBeInTheDocument();
 });

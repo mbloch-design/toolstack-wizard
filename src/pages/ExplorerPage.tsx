@@ -215,7 +215,7 @@ export default function ExplorerPage() {
   const { slug: routeSlug } = useParams<{ slug?: string }>();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
-  const { state, createNeed, saveToolSelection } = useStackPins();
+  const { state, createNeed, saveToolSelection, requestAddAccess } = useStackPins();
   const [resultLimit, setResultLimit] = useState(INITIAL_RESULT_COUNT);
   const [addingSlug, setAddingSlug] = useState<string | null>(null);
   const [pendingTool, setPendingTool] = useState<ToolSummary | null>(null);
@@ -491,6 +491,7 @@ export default function ExplorerPage() {
   }
 
   function addTool(tool: ToolSummary) {
+    if (!requestAddAccess()) return;
     const slug = getExplorationToolKey(tool);
     if (addingSlug === slug) return;
     setAddingSlug(slug);
@@ -809,7 +810,7 @@ export default function ExplorerPage() {
       onCreateNeed={createNeed}
       onSave={(needIds, intent) => {
         if (!pendingTool) return;
-        saveToolSelection(pendingToolSlug, needIds, intent);
+        if (!saveToolSelection(pendingToolSlug, needIds, intent)) { setPendingTool(null); setAddingSlug(null); return; }
         trackEvent("explorer_save", { source_type: source?.type, intent });
         const labels = state.needs
           .filter((need) => needIds.includes(need.id))

@@ -17,6 +17,13 @@ for (const [lang, routes] of Object.entries(paths)) for (const path of routes) t
  expect(response?.headers()['cache-control']).toBe('no-store');
  await expect(page.locator('h1')).toHaveCount(1);
  await expect(page.locator('html')).toHaveAttribute('lang', lang);
+ if (path.endsWith('/parametres') || path.endsWith('/settings')) {
+  await expect(page).toHaveURL(`/${lang}`);
+  await expect(page.locator('.ac-page')).toHaveCount(0);
+  await expect(page.locator('.ac-header-trigger')).toHaveCount(0);
+  expect(privateRequests).toEqual([]); expect(errors).toEqual([]);
+  return;
+ }
  await expect(page.locator('meta[name=robots]')).toHaveAttribute('content', /noindex/);
  await expect(page.locator('.ac-header-trigger')).toHaveCount(0);
  await expect(page.locator('.ac-page')).toContainText(lang === 'fr' ? /bientôt|indisponible/ : /soon|unavailable/);

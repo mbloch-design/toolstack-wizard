@@ -1675,3 +1675,11 @@ Le pattern `Stack Map` remplace les nodes workflow interactifs quand la page doi
 Le passage au compilateur Tailwind 4 conserve les tokens, les classes éditoriales préfixées et leurs règles `@layer components`. La configuration PostCSS rétablit la cascade historique pour préserver la priorité des styles hors couche. Les anciens utilitaires `shadow-sm`, `blur-sm` et `outline-none` sont remplacés, dans les composants actifs, par les équivalents v4 `shadow-xs`, `blur-xs` et `outline-hidden`, conformément au guide de migration. Les rayons personnalisés restent ceux du thème ToolTrim.
 
 Toute évolution du traitement des couches doit conserver les tests `scripts/lib/legacy-css-cascade.test.mjs` et vérifier les pages réelles ; un build seul ne valide pas les tailles de texte ou les espacements.
+
+## Comptes et Ma stack — règle du 23 octobre 2026
+
+- Ma stack reste en haut à droite, comme un panier : destination permanente, compteur de la sélection, accessible avant et après connexion. Elle ne se répète pas dans le menu du compte ou la sidebar.
+- La recherche globale a son champ et son raccourci sur ordinateur, son icône sur mobile. Se connecter reste explicite pour le visiteur ; l’avatar donne accès aux paramètres et à la déconnexion. L’inscription principale appartient au parcours de création de stack.
+- Lorsque les comptes sont activés, l’ajout du premier outil exige une session. L’accueil déconnecté explique la valeur de la stack et propose Créer ma stack / compte existant. La recherche d’ajout apparaît après connexion. Les ajouts depuis le catalogue et l’explorateur suivent la même règle, sans faux succès en cas de refus.
+- Les paramètres sont privés : aucun profil, formulaire ou export de cette page n’est affiché à un visiteur déconnecté. Déconnexion, session expirée et accès anonyme renvoient à l’accueil, en remplaçant l’entrée de navigation.
+- Le contenu d’accueil développe chaque bénéfice une seule fois. Les pictogrammes soutiennent les usages ; une illustration décorative n’invente ni prix, ni statistique, ni outil recommandé. Les coûts restent qualifiés d’estimés.

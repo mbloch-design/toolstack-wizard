@@ -1,4 +1,5 @@
 import * as Dialog from "@radix-ui/react-dialog";
+import { LogOut, ShieldAlert, Trash2 } from "@/lib/icons";
 import { useState } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useStackAccount } from "@/hooks/useStackAccount";
@@ -14,6 +15,8 @@ export default function AccountLifecycleDialog({
 }) {
   const { t } = useLang();
   const account = useStackAccount();
+  const destructive = kind === "delete" || account.hasUnsavedChanges;
+  const StatusIcon = kind === "delete" ? Trash2 : account.hasUnsavedChanges ? ShieldAlert : LogOut;
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   async function confirm() {
@@ -47,17 +50,20 @@ export default function AccountLifecycleDialog({
       <Dialog.Portal>
         <Dialog.Overlay className="ac-overlay" />
         <Dialog.Content
-          className="ac-dialog"
+          className={`ac-dialog ac-lifecycle${destructive ? " ac-lifecycle--warning" : ""}`}
           onCloseAutoFocus={(event) => {
             event.preventDefault();
             restoreFocus();
           }}
         >
+          <div className="ac-lifecycle-heading">
+          <span className="ac-lifecycle-icon" aria-hidden><StatusIcon size={23} /></span>
           <Dialog.Title className="ac-title">
             {kind === "delete"
               ? t("Supprimer votre compte ?", "Delete your account?")
               : t("Vous déconnecter ?", "Sign out?")}
           </Dialog.Title>
+          </div>
           <Dialog.Description className="ac-intro">
             {kind === "delete"
               ? t(
@@ -70,8 +76,8 @@ export default function AccountLifecycleDialog({
                     "Some changes are not saved. Discard them and sign out?",
                   )
                 : t(
-                    "Votre stack enregistrée vous attendra à votre prochaine connexion.",
-                    "Your saved stack will be here when you sign in again.",
+                    "Vous pourrez retrouver votre stack en vous reconnectant.",
+                    "You can access your stack again by signing in.",
                   )}
           </Dialog.Description>
           {error && (
@@ -79,17 +85,18 @@ export default function AccountLifecycleDialog({
               {accountErrorMessage(account.error || error, t)}
             </p>
           )}
-          <div className="ac-actions">
+          <div className="ac-lifecycle-actions">
             <button className="ac-button" disabled={busy} onClick={onClose}>
               {kind === "delete"
                 ? t("Conserver mon compte", "Keep my account")
                 : t("Rester connecté", "Stay signed in")}
             </button>
             <button
-              className="ac-button ac-button--danger"
+              className={`ac-button ${destructive ? "ac-lifecycle-discard" : "ac-button--primary"}`}
               disabled={busy || account.authBusy}
               onClick={() => void confirm()}
             >
+              {!busy && <StatusIcon size={17} aria-hidden />}
               {busy
                 ? t("Patientez…", "Please wait…")
                 : kind === "delete"

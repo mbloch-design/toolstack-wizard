@@ -184,6 +184,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   // used everywhere else while a page's breadcrumb is still registering
   // (avoids flashing the search bar for a frame on pages that do have one).
   const showsSearchByDefault = relPath === "/search";
+  const topbarCrumbs: TopbarBreadcrumbItem[] = breadcrumb ?? [{ label: isHome ? t("Accueil", "Home") : t("Recherche", "Search") }];
 
   // Ma stack changes view through query parameters while keeping the same
   // pathname. Always return the shared content rail to its canonical
@@ -424,7 +425,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         <header
           ref={topbarRef}
           className="asv2-topbar"
-          data-topbar-mode={isHome || showsSearchByDefault ? "search" : breadcrumb ? "breadcrumb" : "pending"}
+          data-topbar-mode={breadcrumb || isHome || showsSearchByDefault ? "breadcrumb" : "pending"}
           data-has-parent={mobileParent ? "true" : undefined}
         >
           {/* Mobile, page profonde : le lien vers le niveau supérieur prend la
@@ -446,10 +447,10 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           {/* Desktop/tablet: the breadcrumb (or nothing on the homepage)
               sits on the left; search lives at the right, in one place.
               Mobile always shows the search bar (see max-width: 640px). */}
-          {breadcrumb && (
+          {(breadcrumb || isHome) && (
             <nav className="asv2-topbar-breadcrumb" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
-              {breadcrumb.flatMap((item, i) => {
-                const isLast = i === breadcrumb.length - 1;
+              {topbarCrumbs.flatMap((item, i) => {
+                const isLast = i === topbarCrumbs.length - 1;
                 const sep = i > 0 ? [<span key={`sep-${i}`}>/</span>] : [];
                 const node = item.href && !isLast
                   ? <Link key={`l-${i}`} to={item.href}>{item.label}</Link>
@@ -459,22 +460,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             </nav>
           )}
 
-          <button
-            type="button"
-            className="asv2-search"
-            onClick={() => setSearchOpen(true)}
-            aria-label={t("Rechercher un outil", "Search for a tool")}
-          >
-            <span className="asv2-search-text">
-              <span className="asv2-search-long">{t("Rechercher un outil…", "Search a tool…")}</span>
-              <span className="asv2-search-short">{t("Rechercher", "Search")}</span>
-            </span>
-            <kbd className="asv2-kbd">{shortcut}</kbd>
-            <span className="asv2-search-action" aria-hidden>
-              <Search size={16} aria-hidden />
-            </span>
-          </button>
-
           <div className="asv2-topbar-right">
             {/* Recherche toujours atteignable depuis la barre du haut, même
                 quand le fil d'Ariane occupe la place du champ. */}
@@ -482,26 +467,12 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               type="button"
               className="asv2-topbar-search"
               onClick={() => setSearchOpen(true)}
-              aria-label={t(`Rechercher (${shortcut})`, `Search (${shortcut})`)}
+              aria-label={t(`Rechercher dans le catalogue (${shortcut})`, `Search the catalogue (${shortcut})`)}
             >
-              <Search size={16} aria-hidden />
+              <Search size={18} aria-hidden />
+              <span className="asv2-topbar-search-label">{t("Rechercher un outil…", "Search for a tool…")}</span>
+              <kbd className="asv2-topbar-search-key">{shortcut}</kbd>
             </button>
-            <Link
-              to={`${prefix}/ma-stack`}
-              className="asv2-topbar-cta"
-              aria-label={cartCount > 0 ? `${cartLabel} · ${cartCount}` : cartLabel}
-            >
-              <span className="asv2-topbar-cta-icon">
-                <Bookmark size={16} aria-hidden />
-                {cartCount > 0 && (
-                  <span className="asv2-topbar-cta-badge" aria-hidden>
-                    {cartCount > 99 ? "99+" : cartCount}
-                  </span>
-                )}
-              </span>
-              <span>{cartLabel}</span>
-            </Link>
-            <AccountMenu />
             <button
               ref={menuButtonRef}
               type="button"
@@ -513,6 +484,13 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             >
               <Menu size={20} aria-hidden />
             </button>
+            <AccountMenu />
+            <Link to={`${prefix}/ma-stack`} className="asv2-topbar-cta" aria-current={relPath === "/ma-stack" ? "page" : undefined} aria-label={cartCount > 0 ? `${cartLabel} · ${cartCount}` : cartLabel}>
+              <span className="asv2-topbar-cta-icon"><Bookmark size={19} aria-hidden />
+                {cartCount > 0 && <span className="asv2-topbar-cta-badge" aria-hidden>{cartCount > 99 ? "99+" : cartCount}</span>}
+              </span>
+              <span>{cartLabel}</span>
+            </Link>
           </div>
         </header>
 

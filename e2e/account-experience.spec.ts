@@ -53,7 +53,7 @@ test('cold SDK recovery waits for transport, survives reload, changes exact pass
  const recovered = await cold.newPage(); const errors: string[] = []; recovered.on('pageerror', error => errors.push(error.message)); await recovered.goto('/__accounts-test/mailbox');
  await control(request, 'fault', { path: '/auth/v1/user', method: 'GET', delayMs: 800 });
  await recovered.getByRole('link', { name: 'Recover recovery@example.invalid', exact: true }).click();
- await expect(recovered.getByRole('status')).toContainText('Checking your recovery link');
+ await expect(recovered.getByRole('status').filter({hasText:'Checking your recovery link'})).toContainText('Checking your recovery link');
  await expect(recovered.getByLabel('New password', { exact: true })).toBeVisible();
  expect(await recovered.evaluate(() => (window as unknown as { invalidFlash: boolean }).invalidFlash)).toBe(false);
  await expect(recovered).toHaveURL(/\/en\/account\/reset-password#?$/);
@@ -90,7 +90,7 @@ test('expired recovery and forged URL cannot authorize password update', async (
 
 for (const provider of ['Google', 'GitHub']) for (const denied of [false, true]) test(`${provider} ${denied ? 'cancel' : 'success'} returns to fiche and preserves draft`, async ({ page, request }) => {
  await draft(page, state(['figma'])); await control(request, 'oauth', { denied }); await page.goto('/en/tool/notion?source=account-test'); await dismissConsent(page);
- await page.locator('.ac-header-trigger').click(); await page.getByRole('button', { name: `Continue with ${provider}`, exact: true }).click();
+ await page.goto('/en/sign-in?returnTo='+encodeURIComponent('/en/tool/notion?source=account-test')); await page.getByRole('button', { name: `Continue with ${provider}`, exact: true }).click();
  if (denied) { await expect(page.getByRole('alert')).toContainText('cancelled or denied'); await page.getByRole('link', { name: 'Back to sign in', exact: true }).click(); await expect(page).toHaveURL(/returnTo=%2Fen%2Ftool%2Fnotion/); }
  else { await expect(page).toHaveURL('/en/tool/notion?source=account-test'); await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', `Account: ${provider === 'Google' ? 'Google' : 'GitHub'} Fixture`); await page.goto('/en/account/settings'); await page.getByRole('navigation', { name: 'Settings sections' }).getByRole('link', { name: 'Sign-in and security', exact: true }).click(); await expect(page.locator('.ac-identities')).toHaveText(`${provider}Connected`); }
  expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual(['figma']);
@@ -98,14 +98,15 @@ for (const provider of ['Google', 'GitHub']) for (const denied of [false, true])
 
 for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) for (const theme of ['light', 'dark'] as const) test(`${lang} ${width} ${theme}: modal, menu and settings keyboard and clean renders`, async ({ page }) => {
  await page.setViewportSize({ width, height: 1000 }); await page.addInitScript(theme => localStorage.setItem('tooltrim:theme', theme), theme);
- await page.goto(`/${lang}/tool/notion`); await dismissConsent(page);
- const header = page.locator('.ac-header-trigger'); await header.focus(); await page.keyboard.press('Enter');
+ await page.goto(`/${lang}/ma-stack`); await dismissConsent(page);
+ const entry = page.getByRole('button',{name:lang==='fr'?'J’ai déjà un compte':'I already have an account',exact:true});
+ const header = page.locator('.ac-header-trigger'); await entry.focus(); await page.keyboard.press('Enter');
  const dialog = page.getByRole('dialog'); await expect(dialog).toBeVisible(); await expect(dialog.getByRole('button', { name: /Google/ })).toBeFocused();
  expect(await page.locator('main').evaluate(node => !!node.closest('[aria-hidden=true]'))).toBe(true);
  for (let i = 0; i < 8; i++) { await page.keyboard.press('Tab'); expect(await dialog.evaluate(node => node.contains(document.activeElement))).toBe(true); }
  const directory = '.superpowers/sdd/2026-10-21-account-experience/render-task4';
  await page.screenshot({ path: `${directory}/modal-${lang}-${width}-${theme}.png` });
- await page.keyboard.press('Escape'); await expect(dialog).toHaveCount(0); await expect(header).toBeFocused();
+ await page.keyboard.press('Escape'); await expect(dialog).toHaveCount(0); await expect(entry).toBeFocused();
  await page.goto(`/${lang}/ma-stack`); await login(page, lang, 'render@example.invalid'); await saved(page, lang); await expect(page.getByRole('dialog')).toHaveCount(0); await expect(header).toBeFocused();
  await header.focus(); await page.keyboard.press('Enter'); await expect(page.locator('.ac-menu')).toBeVisible();
  expect(await page.locator('.ac-menu').evaluate(node => node.contains(document.activeElement))).toBe(true);
@@ -164,13 +165,13 @@ test('late profile A response cannot appear in B menu or settings', async ({ pag
 });
 
 test('closing a pending password request restores focus and keeps its return journey', async ({ page, request }) => {
- await control(request, 'seed', { email: 'pending@example.invalid' }); await page.goto('/en/tool/notion'); await dismissConsent(page);
- await page.locator('.ac-header-trigger').click(); await emailForm(page, 'pending@example.invalid', 'fixture-password');
+ await control(request, 'seed', { email: 'pending@example.invalid' }); await page.goto('/en/ma-stack'); await dismissConsent(page);
+ await page.getByRole('button',{name:'I already have an account',exact:true}).click(); await emailForm(page, 'pending@example.invalid', 'fixture-password');
  await control(request, 'fault', { path: '/auth/v1/token', method: 'POST', delayMs: 800 });
  await page.getByRole('dialog').getByRole('button', { name: 'Sign in', exact: true }).click(); await page.keyboard.press('Escape');
  await expect(page.getByRole('dialog')).toHaveCount(0); await expect(page.locator('.ac-header-trigger')).toBeFocused();
  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label', 'Account: pending@example.invalid');
- await expect(page.getByRole('dialog')).toHaveCount(0); await expect(page).toHaveURL('/en/tool/notion');
+ await expect(page.getByRole('dialog')).toHaveCount(0); await expect(page).toHaveURL('/en/ma-stack');
 });
 
 for (const provider of ['google','github'] as const) test(`OAuth useful profile ${provider}: import, reread, reconnect, explicit null and back office`,async({page,request,browser})=>{
@@ -192,4 +193,57 @@ for (const provider of ['google','github'] as const) test(`OAuth useful profile 
  await signOut(page);await connect();await page.goto('/en/account/settings');await expect(name).toHaveValue('');await page.reload();await expect(name).toHaveValue('');
  await expect(page.locator('.ac-header-trigger')).toHaveAttribute('aria-label',`Account: ${provider}@example.invalid`);
  expect((await snapshot(page)).version).toBe(4);
+});
+
+test('empty guest stack explains its value and requires an account before adding tools', async ({page,request}) => {
+ await page.goto('/en/ma-stack'); await dismissConsent(page);
+ await expect(page.getByRole('heading',{name:'The right tools. Just the essentials.',exact:true})).toBeVisible();
+ await expect(page.getByRole('searchbox',{name:'Add a tool to my stack',exact:true})).toHaveCount(0);
+ await page.getByRole('button',{name:'Create my stack',exact:true}).click();
+ await expect(page.getByRole('dialog').getByRole('heading',{name:'Create your ToolTrim account',exact:true})).toBeVisible();
+ await page.keyboard.press('Escape');
+ expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
+ await control(request,'seed',{email:'first-tool@example.invalid',state:state([])});
+ await login(page,'en','first-tool@example.invalid'); await saved(page);
+ await page.getByRole('searchbox',{name:'Add a tool to my stack',exact:true}).fill('Notion');
+ await page.locator('.ms-results').getByRole('button',{name:'Add Notion',exact:true}).click();
+ expect((await snapshot(page)).selection.pinnedToolSlugs).toContain('notion'); await saved(page);
+});
+
+for (const width of [390, 1440]) test(`navigation roles ${width}: cart access stays top right, contextual add and account menu stay distinct`, async ({page}) => {
+ await page.setViewportSize({width,height:900});
+ await draft(page,state([])); await page.goto('/en/ma-stack'); await dismissConsent(page);
+ const cart=page.locator('.asv2-topbar').getByRole('link',{name:'My stack',exact:true});
+ await expect(cart).toHaveAttribute('aria-current','page');
+ await expect(cart).toBeVisible();
+ await expect(cart).toHaveAttribute('href','/en/ma-stack');
+ await expect(page.locator('.asv2-sidebar').getByRole('link',{name:'My stack',exact:true})).toHaveCount(0);
+ await expect(page.getByRole('button',{name:'Create my stack',exact:true})).toBeVisible();
+ await expect(page.getByRole('searchbox',{name:'Add a tool to my stack',exact:true})).toHaveCount(0);
+ await login(page,'en',`navigation-${width}@example.invalid`); await saved(page);
+ await page.locator('.ac-header-trigger--account').click();
+ await expect(page.locator('.ac-menu').getByRole('link',{name:'My stack',exact:true})).toHaveCount(0);
+ await expect(page.locator('.ac-menu').getByRole('link',{name:'Settings',exact:true})).toBeVisible();
+});
+
+test('signing out from settings returns home and anonymous settings cannot reopen', async ({page}) => {
+ await page.goto('/en/ma-stack'); await login(page,'en','settings-exit@example.invalid'); await saved(page);
+ await page.goto('/en/account/settings'); await expect(page.getByLabel('Display name (optional)')).toBeVisible();
+ await signOut(page);
+ await expect(page).toHaveURL('/en');
+ await expect(page.getByRole('heading',{name:'Account settings',exact:true})).toHaveCount(0);
+ await page.goto('/en/account/settings'); await expect(page).toHaveURL('/en');
+ await expect(page.locator('.ac-profile-summary')).toHaveCount(0);
+ await expect(page.locator('.asv2-topbar').getByRole('button',{name:'Sign in',exact:true})).toBeVisible();
+});
+
+test('catalogue add requires authentication and never claims an anonymous save', async ({page,request}) => {
+ await draft(page,state([])); await page.goto('/en/tool/notion'); await dismissConsent(page);
+ await page.locator('.pin-tool-button:visible').first().click();
+ await expect(page.getByRole('dialog').getByRole('heading',{name:'Create your ToolTrim account',exact:true})).toBeVisible();
+ expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
+ await expect(page.locator('[data-sonner-toast]').filter({hasText:'added to your stack'})).toHaveCount(0);
+ await page.keyboard.press('Escape');
+ const requests=(await control(request,'state')).requests;
+ expect(requests.filter((r:{path:string;method:string})=>r.path==='/api/stack-account'&&r.method==='PUT')).toHaveLength(0);
 });

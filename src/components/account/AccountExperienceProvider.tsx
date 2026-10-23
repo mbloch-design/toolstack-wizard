@@ -1,3 +1,4 @@
+import { STACK_AUTH_REQUIRED_EVENT } from "@/lib/stackAuthAccess";
 import {
   createContext,
   useCallback,
@@ -67,8 +68,8 @@ export default function AccountExperienceProvider({
     if (trigger.current?.isConnected) trigger.current.focus();
     else document.querySelector<HTMLElement>(".ac-header-trigger")?.focus();
   };
-  const openAuth = (mode: AuthMode, returnTo?: string) => {
-    rememberFocus();
+  const openAuth = useCallback((mode: AuthMode, returnTo?: string) => {
+    trigger.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     setIntent({
       mode,
       returnTo: safeAccountReturnTo(
@@ -78,7 +79,16 @@ export default function AccountExperienceProvider({
       ),
       open: true,
     });
-  };
+  }, [lang, location.pathname, location.search, location.hash]);
+  useEffect(() => {
+    if (!account.enabled) return;
+    const request = (event: Event) => {
+      const mode = (event as CustomEvent<{mode?: string}>).detail?.mode;
+      openAuth(mode === "signin" ? "signin" : "signup");
+    };
+    window.addEventListener(STACK_AUTH_REQUIRED_EVENT, request);
+    return () => window.removeEventListener(STACK_AUTH_REQUIRED_EVENT, request);
+  }, [account.enabled, openAuth]);
   // Closing while SDK authentication is pending clears the form, but keeps its return intent.
   // A later successful session reopens the central stack decision rather than hiding it.
   useEffect(() => {

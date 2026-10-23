@@ -362,12 +362,13 @@ it("distinguishes a recoverable local draft from incomplete privacy cleanup", ()
 });
 
 it("contains keyboard focus in the account menu and restores it after Escape", async () => {
+  account.authInitialized = true;
   account = { ...account, user };
   render(centralContent());
   const trigger = screen.getByRole("button", { name: "Compte : a@example.test" });
   trigger.focus();
   fireEvent.click(trigger);
-  const first = screen.getByRole("link", { name: "Ma stack" });
+  const first = screen.getByRole("link", { name: "Paramètres" });
   const last = screen.getByRole("button", { name: "Me déconnecter" });
   await waitFor(() => expect(screen.getByRole("dialog")).toContainElement(document.activeElement as HTMLElement));
   last.focus();
