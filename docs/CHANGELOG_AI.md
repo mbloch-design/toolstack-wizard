@@ -1,3 +1,7 @@
+## 2026-10-23 — Ma stack : composition éditoriale de l’état vide
+
+Reprise du premier écran connecté : promesse ToolTrim, explication des trois bénéfices avec pictogrammes et schémas illustratifs, puis recherche et ajouts directs. Typographie alignée sur les tokens du design system. Aucun chiffre de budget ni outil fictif attribué au compte. Validation TypeScript et cinq parcours navigateur FR/EN, mobile/desktop et retour de connexion.
+
 ## 2026-10-23 — Retour OAuth et premier outil
 
 - Retour OAuth : titre technique retiré visuellement, attente compacte accessible, animation respectant reduced-motion, footer marketing absent uniquement sur le callback. Redirection sécurisée et choix de brouillon/conflit conservés ; sortie explicite si le chargement se prolonge.

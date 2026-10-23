@@ -252,7 +252,7 @@ for (const lang of ['fr','en'] as const) for (const width of [390,1440]) test(`c
  await page.setViewportSize({width,height:1000});
  await control(request,'seed',{email:'empty-start@example.invalid'});
  await page.goto(`/${lang}/ma-stack`);await login(page,lang,'empty-start@example.invalid');
- await expect(page.getByRole('heading',{name:lang==='fr'?'Commençons par vos outils.':'Start with the tools you use.',exact:true})).toBeVisible();
+ await expect(page.getByRole('heading',{name:lang==='fr'?"Choisir,\u00a0pas empiler.":"Choose. Don't pile up.",exact:true})).toBeVisible();
  await expect(page.getByText(lang==='fr'?'Stack enregistrée':'Stack saved',{exact:true})).toHaveCount(0);
  await expect(page.getByRole('searchbox',{name:lang==='fr'?'Ajouter un outil à ma stack':'Add a tool to my stack'})).toBeVisible();
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
