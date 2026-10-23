@@ -1,3 +1,7 @@
+## 2026-10-23 — Sauvegarde intégrée au titre de la stack
+
+Suppression de la ligne orpheline Stack saved avant le titre. Le statut sain devient un pictogramme discret adjacent au titre, avec libellé accessible et infobulle native, sans encart. Les erreurs, conflits et demandes de reconnexion restent dans leur surface actionnable.
+
 ## 2026-10-23 — Espace personnel adapté au premier outil
 
 La connexion générale du header aboutit à Ma stack ; les intentions contextuelles conservent leur destination. Avec un seul outil renseigné, budget compact et prochaine étape explicite remplacent les cartes de répartition et d’optimisation prématurées. Le bouton Ajouter un autre outil ouvre la recherche existante.

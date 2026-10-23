@@ -3,7 +3,7 @@ import { useLang } from "@/hooks/useLang";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
 import AccountStackStatus from "@/components/account/AccountStackStatus";
-export default function StackAccountPanel({ empty = false }: { empty?: boolean }) {
+export default function StackAccountPanel({ empty = false, placement = "all" }: { empty?: boolean; placement?: "all" | "inline" | "notice" }) {
   const account = useStackAccount();
   const experience = useAccountExperience();
   const { t } = useLang();
@@ -13,8 +13,10 @@ export default function StackAccountPanel({ empty = false }: { empty?: boolean }
     return <p className="ms-empty-autosave"><Cloud size={16} aria-hidden />{t("Vos ajouts seront enregistrés automatiquement.", "Your additions will be saved automatically.")}</p>;
   }
   if (!empty && !needsAuth && account.syncStatus === "synced" && !account.pendingDraftChoice && !account.conflict && !account.error && !account.privacyWarning && !account.deletionConfirmed) {
-    return <p className="ms-empty-autosave" role="status"><Cloud size={16} aria-hidden />{t("Stack enregistrée", "Stack saved")}</p>;
+    if (placement === "notice") return null;
+    return <span className="ms-save-indicator" role="status" tabIndex={0} title={t("Stack enregistrée", "Stack saved")}><Cloud size={16} aria-hidden /><span className="sr-only">{t("Stack enregistrée", "Stack saved")}</span></span>;
   }
+  if (placement === "inline") return null;
   return (
     <section
       className={`ms-account ac-stack-status ${needsAuth ? "ms-account--guest" : "ms-account--connected"}`}

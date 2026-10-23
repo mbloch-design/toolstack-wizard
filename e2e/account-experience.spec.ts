@@ -347,6 +347,8 @@ for(const width of [390,1440]) test(`one paid tool offers a next step instead of
  await control(request,'seed',{email:'starter@example.invalid',displayName:'Michael',state:full});
  await page.goto('/en/ma-stack');await login(page,'en','starter@example.invalid','fixture-password','Michael');await saved(page,'en');
  await expect(page.getByRole('heading',{name:'Your stack is taking shape.',exact:true})).toBeVisible();
+ await expect(page.locator('.ms-inventory-heading .ms-save-indicator')).toHaveAttribute('title','Stack saved');
+ await expect(page.locator('.ms-page > .ms-empty-autosave')).toHaveCount(0);
  await expect(page.locator('.mf-balance')).toHaveCount(0);await expect(page.locator('.mf-fit')).toHaveCount(0);
  if(width>760){const price=await page.locator('.mf-price').boundingBox();const next=await page.locator('.mf-starter-next').boundingBox();expect(Math.abs(price!.y-next!.y)).toBeLessThan(3);}
  await page.screenshot({path:`test-results/accounts/starter-space-${width}.png`,fullPage:true,animations:'disabled'});

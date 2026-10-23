@@ -42,7 +42,7 @@ export async function login(page: Page, lang: 'fr' | 'en', email: string, passwo
 }
 export async function saved(page: Page, lang: 'fr' | 'en' = 'en') {
   // An empty account has synchronized, but must not claim a saved stack.
-  await expect(page.locator('.ms-account [role=status], .ms-empty-autosave')).toHaveText(lang === 'fr'
+  await expect(page.locator('.ms-account [role=status], .ms-empty-autosave, .ms-save-indicator')).toHaveText(lang === 'fr'
     ? /^(Stack enregistrée|Vos ajouts seront enregistrés automatiquement\.)$/
     : /^(Stack saved|Your additions will be saved automatically\.)$/);
 }

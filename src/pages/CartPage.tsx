@@ -544,13 +544,13 @@ export default function CartPage() {
           exploreHref={state.toolEntries.some((entry) => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? getExplorerHref(prefix, { type: "stack" }) : undefined} />;
       })()}
       {/* Where the stack is saved: this browser, or the account. */}
-      <StackAccountPanel empty={false} />
+      <StackAccountPanel empty={false} placement="notice" />
       <div className="ms-board">
         {/* 1. The stack itself, one box to see it: by area, as cards or as a list, sorted from a menu. Add and edit live here. */}
         <section className="ms-mod ms-mod--inventory ms-all" aria-labelledby="ms-all-title">
           <div className="ms-stage-bar">
             <div>
-              <h2 id="ms-all-title" className="ms-stage-title">{t("Ma stack", "My stack")}</h2>
+              <div className="ms-inventory-heading"><h2 id="ms-all-title" className="ms-stage-title">{t("Ma stack", "My stack")}</h2><StackAccountPanel placement="inline" /></div>
               <p className="ms-all-sum">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</p>
             </div>
             <div className="ms-tools-actions">

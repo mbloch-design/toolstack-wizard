@@ -40080,3 +40080,9 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .ms-page .mf .mf-grid[data-starter] > .mf-now { grid-area: now !important; }
   }
 }
+
+@layer components {
+  .ms-inventory-heading { display: flex; align-items: center; gap: var(--space-sm); }
+  .ms-save-indicator { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; color: var(--color-text-meta); border-radius: var(--radius-sm); }
+  .ms-save-indicator:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+}
