@@ -40086,3 +40086,27 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-save-indicator { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; color: var(--color-text-meta); border-radius: var(--radius-sm); }
   .ms-save-indicator:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 }
+
+@layer components {
+  .ms-page .ms-personal-hero { align-items: center; margin-bottom: var(--space-lg); }
+  .ms-personal-hero .ms-personal-welcome { margin: 0; }
+  .ms-personal-title-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-md); margin-block: var(--space-sm); }
+  .ms-personal-hero .ms-personal-message { margin-top: 0; font-size: var(--tt-size-body); }
+  .ms-personal-hero .ms-top-status { margin: 0; }
+  .mf-budget-onboarding { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-md); margin-top: var(--space-lg); }
+  .mf-budget-step { font-size: var(--tt-size-kicker); text-transform: uppercase; letter-spacing: .08em; color: var(--color-text-meta); }
+  .mf-budget-onboarding h3 { margin: 0; font-family: var(--font-brand); font-size: var(--tt-size-section-h); line-height: 1.15; letter-spacing: -.03em; }
+  .mf-budget-onboarding > p { color: var(--color-text-secondary); font-size: var(--tt-size-card-body); line-height: 1.6; }
+  .mf-budget-onboarding .mf-budget-reassurance { margin-top: calc(-1 * var(--space-sm)); color: var(--color-text); font-size: var(--tt-size-body); }
+  @media(max-width:760px) { .ms-page .mf .mf-price .mf-budget-onboarding { display: flex !important; margin-top: var(--space-md); } .ms-personal-hero { gap: var(--space-md); } }
+}
+
+/* Editorial hero and onboarding override the older unlayered compact header. */
+@layer components {
+  .ms-page .ms-personal-hero > .ms-personal-welcome { display: block !important; }
+  .ms-page .ms-personal-hero h1 { font-size: var(--tt-size-page-title) !important; line-height: 1.08; }
+  .ms-page .ms-personal-hero .ms-personal-greeting { margin: 0 !important; color: var(--color-text-secondary); font-size: var(--tt-size-body) !important; }
+  .ms-page .ms-personal-hero .ms-personal-message { margin: 0 !important; font-size: var(--tt-size-body) !important; }
+  .ms-page .mf .mf-budget-onboarding h3 { font-size: var(--tt-size-section-h) !important; line-height: 1.15; }
+  .ms-page .mf .mf-preview { grid-template-columns: max-content max-content !important; column-gap: var(--space-md) !important; }
+}

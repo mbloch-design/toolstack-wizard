@@ -314,11 +314,17 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
     <div className="mf-grid" data-starter={toolCount === 1 ? "" : undefined} data-sparse={total === 0 && fit.length === 0 ? "" : undefined} data-next={groups.length} data-done={top ? undefined : ""}>
       {/* 1. Read first: what the stack costs, and the verdict under it. */}
       <article className="mf-card mf-price" data-open={openCard === "price" ? "" : undefined} data-all={priceAll ? "" : undefined}>
-        <p className="mf-k tt-kicker">{icon(Wallet)}{items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}{expander("price", t("le coût", "the cost"))}</p>
+        <p className="mf-k tt-kicker">{icon(Wallet)}{spend.length === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Votre budget", "Your budget") : items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}{expander("price", t("le coût", "the cost"))}</p>
         {/* An unknown price is never shown as free: no figure without a known price, and a partial total says so. */}
         {(() => { const missing = items.filter((item) => item.kind === "price" || item.kind === "freemium").length;
           return spend.length === 0 && missing > 0
-            ? <p className="mf-unknown-total">{t("Budget à renseigner", "Budget not set yet")}<small>{t("Choisissez votre formule pour calculer votre budget.", "Choose your plan to calculate your budget.")}</small></p>
+            ? <div className="mf-budget-onboarding">
+                <p className="mf-budget-step">{t("Premier petit pas", "One small first step")}</p>
+                <h3>{t("On fait les comptes ?", "Let's talk budget.")}</h3>
+                <p className="mf-budget-reassurance">{t("Promis, pas de tableur.", "No spreadsheet required. Promise.")}</p>
+                <p>{t("Dites-nous quelle formule vous utilisez. Gratuite ou payante, chaque réponse aide à y voir plus clair.", "Tell us which plan you use. Free or paid, every answer makes the picture clearer.")}</p>
+                <button type="button" className="mk-link" onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));setOpenCard("now");requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</button>
+              </div>
             : <><Figure value={format(total)} unit={t("/mois", "/mo")} />{(() => {
               // Can the total be trusted? A tool counts once its cost is certain.
               const unsure = items.filter((item) => item.kind === "price" || item.kind === "freemium");
@@ -355,7 +361,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
           <p>{t(`${freeTools.length} outil${s(freeTools.length)} gratuit${s(freeTools.length)} · sans coût ajouté`, `${freeTools.length} free tool${s(freeTools.length)} · no added cost`)}</p>
           <ul className="mf-cost-zero">{freeTools.map(tool => <li key={tool.id}><ToolLogo tool={tool} size={22} /><span>{tool.name}</span><b>{t("Gratuit", "Free")}</b></li>)}</ul>
         </div>}
-        {items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="mf-cost-scope">{t("Les outils à renseigner ne sont pas inclus dans ce montant.", "Tools awaiting a price or plan are not included in this amount.")}</p>}
+        {spend.length > 0 && items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="mf-cost-scope">{t("Les outils à renseigner ne sont pas inclus dans ce montant.", "Tools awaiting a price or plan are not included in this amount.")}</p>}
         {saved > 0 && <p className="mf-verdict">{icon(Check, "var(--color-pro)")}<span>{t("Budget estimé allégé de ", "Estimated budget reduced by ")}<b>{format(saved)}</b>{t(" par mois.", " a month.")}</span></p>}
         {/* Once nothing is left to decide the decision card goes; what can be reopened lives here. */}
         {!top && history && <div className="mf-history">{history}</div>}

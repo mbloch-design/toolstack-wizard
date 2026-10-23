@@ -483,16 +483,13 @@ export default function CartPage() {
         is checked, then the stack itself at the centre, read through lenses,
         and the next decision beside it. On a phone the deck comes first. */}
     {/* Hero (22/10/2026): a status line, the title, one sentence. */}
-    <StackPersonalWelcome empty={false} pending={deckItems.length} />
-    <header className="ms-top">
-      <div>
-        <h1 ref={inventoryHeadingRef} tabIndex={-1}>{t("Mes outils", "My tools")}</h1>
-        {/* One line above the bento: the title, how many tools, live. The bento must fit above the fold. */}
-        {!empty && <p className="ms-top-status"><i aria-hidden="true" />{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""} · analysés en direct`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""} · live analysis`)}</p>}
-        {empty && <p>{empty
-          ? t("Ajoutez les outils que vous utilisez : ToolTrim les range par domaine, repère ceux qui font le même travail et estime leur coût.", "Add the tools you use: ToolTrim sorts them by area, spots the ones that do the same job and estimates their cost.")
-          : null}</p>}
-      </div>
+    <header className="ms-top ms-personal-hero">
+      <StackPersonalWelcome empty={false} pending={deckItems.length}>
+        <div className="ms-personal-title-row">
+          <h1 ref={inventoryHeadingRef} tabIndex={-1}>{t("Mes outils", "My tools")}</h1>
+          <p className="ms-top-status">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""} dans votre stack`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""} in your stack`)}</p>
+        </div>
+      </StackPersonalWelcome>
       {state.toolEntries.some(entry => entry.intent === "stack" && lookup.has(entry.toolSlug)) && <Link
           className="ms-explore-stack" to={getExplorerHref(prefix, { type: "stack" })}
           state={{ explorerCanGoBack: true, explorerReturnTo: `${prefix}/ma-stack`,

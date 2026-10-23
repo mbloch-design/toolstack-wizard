@@ -1,3 +1,7 @@
+## 2026-10-23 — Hero personnel et premier pas budgétaire
+
+Accueil, titre, nombre d’outils et phrase de contexte réunis dans un hero. L’état budget non renseigné devient une invitation courte : « On fait les comptes ? Promis, pas de tableur. » Le lien ouvre la prochaine formule, y compris sur mobile. Suppression de l’avertissement technique redondant lorsqu’aucun montant n’est encore connu.
+
 ## 2026-10-23 — Parcours analytics sur le stockage personnel actuel
 
 La recette analytics lisait encore tooltrim-ma-stack-mvp-v3 après migration. Préparation et lecture utilisent désormais l’enveloppe personnelle v4 ; assertion wishlist conservée et vérification de persistance après rechargement ajoutée. Les données collectées et le consentement restent inchangés. Validation : les 19 tests de l’étape CI analytics/consentement/CSP passent.

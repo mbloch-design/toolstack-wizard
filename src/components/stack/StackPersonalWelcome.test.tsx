@@ -9,5 +9,5 @@ afterEach(()=>{cleanup();data.user={id:'A'};data.profile={userId:'A',displayName
 it('welcomes the current account and explains the first step',()=>{render(<StackPersonalWelcome empty/>);expect(screen.getByText(/Bonjour, Michael/)).toBeVisible();expect(screen.getByText(/Bienvenue chez vous/)).toBeVisible()});
 it('does not expose the preceding account name',()=>{data.profile={userId:'B',displayName:'Private name'};render(<StackPersonalWelcome empty={false}/>);expect(screen.queryByText(/Private name/)).toBeNull();expect(screen.getByText('Bonjour')).toBeVisible()});
 it('uses a natural fallback with no name',()=>{data.profile=null;render(<StackPersonalWelcome empty/>);expect(screen.getByText('Bonjour')).toBeVisible()});
-it('adapts to pending choices in English',()=>{data.lang='en';render(<StackPersonalWelcome empty={false} pending={2}/>);expect(screen.getByText(/Hi, Michael/)).toBeVisible();expect(screen.getByText(/still need your input/)).toBeVisible()});
+it('adapts to pending choices in English',()=>{data.lang='en';render(<StackPersonalWelcome empty={false} pending={2}/>);expect(screen.getByText(/Hi, Michael/)).toBeVisible();expect(screen.getByText(/One choice at a time/)).toBeVisible()});
 it('does not greet a signed-out account',()=>{data.user=null;const{container}=render(<StackPersonalWelcome empty/>);expect(container).toBeEmptyDOMElement()});
