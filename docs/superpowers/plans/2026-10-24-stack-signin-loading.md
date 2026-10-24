@@ -23,7 +23,7 @@
 - [x] Add failing browser checks for early Ma stack navigation, branded loading, no empty-state flash, delayed stack and contextual return.
 - [x] Add shared loading presentation and initial-content guard; redirect default callbacks once authenticated; preserve choices/errors.
 - [x] Check module loading and duplicate calls; prefetch the destination module where useful without starting another session or data request.
-- [ ] Run relevant unit/browser checks, inspect rendered loading and arrival, record results and publish verified scope.
+- [x] Run relevant unit/browser checks, inspect rendered loading and arrival, record results and publish verified scope.
 
 ## Execution record
 - Initial slow OAuth browser tests failed before implementation, then passed with early destination arrival.
@@ -32,3 +32,9 @@
 - Ruling: preserve contextual return journeys; only stack destinations can complete authentication presentation before synchronization.
 - A reviewer suspected the generic Suspense fallback during slow module loading. An actually held CartPage request disproves it: Router retains the branded callback presentation. No speculative fallback change was made; reviewer withdrew the finding.
 - Local tests: application 903, Ma stack 237, accounts 70, build enabled PASS. Visual proof: outputs/production-release-20261024/stack-arrival-new.png outside Git. Remote validation and publication pending.
+
+## Completion — 25 October 2026
+- Commit 340036463d2913ca6036c9801b816b4c56429642 pushed to accounts branch, then fast-forwarded to main after CI 40113617267 completed successfully (both jobs).
+- Production build dpl_Af5WwMbwZHo3dMwxqFwU5fcmrrLX promoted, domain assignment verified. HTTP checks on FR/EN home, Ma stack and callbacks pass; initial arrival markup and noindex metadata retained; account APIs refuse anonymous access with 401.
+- Mobile and desktop arrival checks pass. One local fixture-control request was reset during the concurrent build; a clean repeat passed both cases. No retry/assertion weakening added.
+- Slow-route enabled hydration passes twice. No new database migration, account, permission, credential, price or catalogue modification.
