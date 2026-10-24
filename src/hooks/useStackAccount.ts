@@ -1,5 +1,5 @@
 import { StackAccountReactContext } from "@/contexts/StackAccountContext";
-import { createElement, useContext, useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from "react";
+import { createContext, createElement, useCallback, useContext, useEffect, useMemo, useState, useSyncExternalStore, type ReactNode } from "react";
 import type { User } from "@supabase/supabase-js";
 import { supabase } from "@/integrations/supabase/client";
 import { STACK_ACCOUNT_ENABLED } from "@/config/features";
@@ -12,12 +12,28 @@ export { getStackAccountReturnUrl } from "@/lib/stackAccountCoordinator";
 type Actions = Pick<StackAccountCoordinator, "loadSaved" | "addDraft" | "reloadLatest" | "keepCurrent" | "retry" | "signInWithGoogle" | "sendEmailCode" | "verifyEmailCode" | "signOut" | "deleteAccount" | "clearLocalAccount" | "signInWithProvider" | "signInWithPassword" | "signUpWithPassword" | "resendConfirmation" | "requestPasswordReset" | "completePasswordReset" | "getAccessToken">;
 export type StackAccountContext = AccountSnapshot & Actions & { enabled: boolean; sendMagicLink: Actions["sendEmailCode"] };
 const Context = StackAccountReactContext;
+const RouteHydratedContext = createContext<(() => void) | null>(null);
+
+/** Place inside the route Suspense boundary: effects run only after its commit. */
+export function StackAccountRouteHydrated() {
+  const markHydrated = useContext(RouteHydratedContext);
+  useEffect(() => { markHydrated?.(); }, [markHydrated]);
+  return null;
+}
 
 /** Mount once above routes. Page hooks never create auth listeners or autosave loops. */
-export function StackAccountProvider({ children, enabled = STACK_ACCOUNT_ENABLED }: { children: ReactNode; enabled?: boolean }) {
+export function StackAccountProvider({ children, enabled = STACK_ACCOUNT_ENABLED, deferUntilRouteHydrated = false }: {
+  children: ReactNode; enabled?: boolean; deferUntilRouteHydrated?: boolean;
+}) {
+  const [routeHydrated, setRouteHydrated] = useState(false);
+  const markRouteHydrated = useCallback(() => setRouteHydrated(true), []);
   const [coordinator] = useState(() => new StackAccountCoordinator(() => supabase.auth, enabled));
   const snapshot = useSyncExternalStore(coordinator.subscribe, coordinator.getSnapshot, coordinator.getServerSnapshot);
-  useEffect(() => coordinator.start(), [coordinator]);
+  // Account snapshots affect consumers within the lazy route. Publishing them
+  // while React still hydrates that boundary forces a client-render bailout.
+  // This is a one-time readiness gate; navigation never restarts account sync.
+  const canStart = !deferUntilRouteHydrated || routeHydrated;
+  useEffect(() => { if (canStart) return coordinator.start(); }, [coordinator, canStart]);
   const value = useMemo<StackAccountContext>(() => ({ ...snapshot, enabled: coordinator.enabled,
     signInWithProvider: coordinator.signInWithProvider, signInWithPassword: coordinator.signInWithPassword,
     signUpWithPassword: coordinator.signUpWithPassword, resendConfirmation: coordinator.resendConfirmation,
@@ -28,7 +44,8 @@ export function StackAccountProvider({ children, enabled = STACK_ACCOUNT_ENABLED
     sendEmailCode: coordinator.sendEmailCode, sendMagicLink: coordinator.sendEmailCode,
     verifyEmailCode: coordinator.verifyEmailCode, signOut: coordinator.signOut, deleteAccount: coordinator.deleteAccount, clearLocalAccount: coordinator.clearLocalAccount,
   }), [coordinator, snapshot]);
-  return createElement(Context.Provider, { value }, children);
+  return createElement(RouteHydratedContext.Provider, { value: markRouteHydrated },
+    createElement(Context.Provider, { value }, children));
 }
 
 // Old options remain accepted for source compatibility; the complete shared store is authoritative.

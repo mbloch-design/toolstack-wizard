@@ -1,4 +1,4 @@
-import { createElement, StrictMode, type ReactNode } from "react";
+import { createElement, lazy, Suspense, StrictMode, type ReactNode } from "react";
 import { act, cleanup, fireEvent, render, renderHook, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { Session } from "@supabase/supabase-js";
@@ -11,7 +11,7 @@ vi.mock("@/config/features", () => ({ STACK_ACCOUNT_ENABLED: true, ACCOUNT_GOOGL
 vi.mock("@/components/v2shell/AppShellV2", () => ({ default: ({ children }: { children: ReactNode }) => createElement("main", null, children) }));
 vi.mock("@/integrations/supabase/client", () => ({ supabase: { get auth() { mocks.acquireAuth(); return { getSession: mocks.getSession, onAuthStateChange: mocks.onAuthStateChange, signOut: mocks.signOut, signInWithOAuth: mocks.oauth, signInWithOtp: mocks.otp, verifyOtp: mocks.verifyOtp, signInWithPassword: mocks.password, signUp: mocks.signup, resend: mocks.resend, resetPasswordForEmail: mocks.reset, updateUser: mocks.update }; } } }));
 vi.mock("@/lib/stackAccountApi", async importOriginal => ({ ...await importOriginal<typeof import("@/lib/stackAccountApi")>(), loadPersonalStack: mocks.load, savePersonalStack: mocks.save, deletePersonalAccount: mocks.remove }));
-import { getStackAccountReturnUrl, StackAccountProvider, useStackAccount } from "./useStackAccount";
+import { getStackAccountReturnUrl, StackAccountProvider, StackAccountRouteHydrated, useStackAccount } from "./useStackAccount";
 import { MemoryRouter, Route, Routes, useNavigate } from "react-router-dom";
 import { StackAccountApiError } from "@/lib/stackAccountApi";
 
@@ -62,6 +62,53 @@ describe("global personal account coordinator", () => {
     expect(hook.result.current.syncStatus).toBe("local");
     expect(mocks.acquireAuth).not.toHaveBeenCalled();
     expect(mocks.getSession).not.toHaveBeenCalled(); expect(mocks.load).not.toHaveBeenCalled();
+  });
+
+  it("waits for the route boundary commit before starting auth and keeps it alive across later route changes", async () => {
+    const route = deferred<{ default: () => ReactNode }>();
+    const SlowRoute = lazy(() => route.promise);
+    const layout = (showRoute: boolean) => createElement(StackAccountProvider, { enabled: true, deferUntilRouteHydrated: true, children:
+      createElement(Suspense, { fallback: createElement("p", null, "Loading") },
+        showRoute && createElement(SlowRoute), createElement(StackAccountRouteHydrated)) });
+    const view = render(layout(true));
+    await settle();
+    expect(mocks.acquireAuth).not.toHaveBeenCalled();
+    expect(mocks.onAuthStateChange).not.toHaveBeenCalled();
+    await act(async () => route.resolve({ default: () => createElement("h1", null, "Ready") }));
+    await settle();
+    expect(screen.getByText("Ready")).toBeVisible();
+    expect(mocks.onAuthStateChange).toHaveBeenCalledTimes(1);
+    view.rerender(layout(false));
+    await settle();
+    view.rerender(layout(true));
+    await settle();
+    expect(mocks.onAuthStateChange).toHaveBeenCalledTimes(1);
+    expect(mocks.getSession).toHaveBeenCalledTimes(1);
+  });
+
+  it("starts the gated provider once under StrictMode and keeps owner changes immediate", async () => {
+    const unsubscribe = vi.fn();
+    mocks.onAuthStateChange.mockImplementation(callback => {
+      authChange = callback;
+      callback("INITIAL_SESSION", session("A"));
+      return { data: { subscription: { unsubscribe } } };
+    });
+    mocks.load.mockImplementation(async token => record(state(token === "token-A" ? "private-A" : "private-B")));
+    const hook = renderHook(() => useStackAccount(), { wrapper: ({ children }) =>
+      createElement(StrictMode, null, createElement(StackAccountProvider, { enabled: true, deferUntilRouteHydrated: true, children:
+        createElement(Suspense, { fallback: null }, children, createElement(StackAccountRouteHydrated)) })) });
+    await settle();
+    expect(hook.result.current.user?.id).toBe("A");
+    expect(readPersonalStack().selection.pinnedToolSlugs).toEqual(["private-A"]);
+    expect(mocks.onAuthStateChange).toHaveBeenCalledTimes(1);
+    act(() => authChange("SIGNED_IN", session("B")));
+    // No deferred snapshot: the prior owner's selection is cleared immediately.
+    expect(hook.result.current.user?.id).toBe("B");
+    expect(readPersonalStack().selection.pinnedToolSlugs).not.toContain("private-A");
+    await settle();
+    expect(readPersonalStack().selection.pinnedToolSlugs).toEqual(["private-B"]);
+    hook.unmount();
+    expect(unsubscribe).toHaveBeenCalledTimes(1);
   });
 
   it("hydrates full account state once above consumers and never autosaves hydration", async () => {

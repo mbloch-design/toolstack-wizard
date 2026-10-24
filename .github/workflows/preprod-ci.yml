@@ -145,11 +145,15 @@ jobs:
           VITE_STACK_ACCOUNT_ENABLED: "true"
           VITE_ACCOUNT_GOOGLE_ENABLED: "true"
           VITE_ACCOUNT_GITHUB_ENABLED: "true"
+      - name: Enabled-account hydration with a slow route
+        run: npm run test:e2e:hydration -- --workers=1 --grep "saved stack hydrates while the detail route chunk is slow" --output=enabled-hydration-test-results
       - name: Account failure traces
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
           name: account-report
-          path: test-results/accounts/
+          path: |
+            test-results/accounts/
+            enabled-hydration-test-results/
           retention-days: 7
           if-no-files-found: ignore

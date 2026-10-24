@@ -9,7 +9,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LangContext } from "@/hooks/useLang";
 import { CurrencyProvider } from "@/hooks/useCurrency";
-import { StackAccountProvider } from "@/hooks/useStackAccount";
+import { StackAccountProvider, StackAccountRouteHydrated } from "@/hooks/useStackAccount";
 import { Lang } from "@/data/types";
 import AppShellV2 from "@/components/v2shell/AppShellV2";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -154,11 +154,12 @@ export const LangLayout = () => {
   const content = (
     <Suspense fallback={<LazyFallback />}>
       <Outlet key={effectiveLang} />
+      <StackAccountRouteHydrated />
     </Suspense>
   );
 
   return (
-    <StackAccountProvider>
+    <StackAccountProvider deferUntilRouteHydrated>
     <CurrencyProvider lang={effectiveLang}>
     <LangContext.Provider
       value={{
