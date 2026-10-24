@@ -350,7 +350,9 @@ export class StackAccountCoordinator {
       if (!next || !sessionId || (next.expires_at ?? 0) <= Date.now() / 1000) { this.clearRecovery('invalid'); return; }
       this.recovery = { owner: next.user.id, sessionId, expiresAt: Math.min(Date.now() + 15 * 60 * 1000, next.expires_at! * 1000) };
       try { window.sessionStorage.setItem(this.recoveryKey, JSON.stringify(this.recovery)); } catch { /* This mounted recovery remains usable. */ }
-    } else if (!this.recovery && next && event === 'INITIAL_SESSION') {
+    } else if (!this.recovery && next && (event === 'INITIAL_SESSION' || event === 'SIGNED_IN')) {
+      // SDK startup can emit SIGNED_IN from stored-session recovery before INITIAL_SESSION.
+      // Restore only the existing, unexpired proof bound to this exact owner and session.
       try {
         const value = JSON.parse(window.sessionStorage.getItem(this.recoveryKey) || 'null');
         if (value && sessionId && value.owner === next.user.id && value.sessionId === sessionId && typeof value.expiresAt === 'number' && value.expiresAt > Date.now() && value.expiresAt <= Date.now() + 15 * 60 * 1000) this.recovery = value;

@@ -541,6 +541,17 @@ describe("complete account identity operations", () => {
     await act(async () => { expect((await third.result.current.completePasswordReset("new phrase")).ok).toBe(false); });
     expect(mocks.update).not.toHaveBeenCalled();
   });
+  it("restores matching recovery before an SDK startup SIGNED_IN exposes initialization", async () => {
+    const first = mount(); await settle(); await event("PASSWORD_RECOVERY", recoverySession()); first.unmount();
+    const initial = deferred<{ data: { session: Session }; error: null }>();
+    mocks.getSession.mockReturnValue(initial.promise);
+    const second = mount();
+    await event("SIGNED_IN", recoverySession());
+    await act(async () => vi.advanceTimersByTimeAsync(0));
+    expect(second.result.current.authInitialized).toBe(true);
+    expect(second.result.current.recoveryStatus).toBe("ready");
+    await act(async () => initial.resolve({ data: { session: recoverySession() }, error: null }));
+  });
   it("does not restore recovery when marker persistence is blocked", async () => {
     vi.spyOn(window.sessionStorage, "setItem").mockImplementation(() => { throw new Error("blocked"); });
     const first = mount(); await settle(); await event("PASSWORD_RECOVERY", recoverySession()); expect(first.result.current.recoveryStatus).toBe("ready"); first.unmount();
