@@ -99,11 +99,31 @@ test("prerendered stack add waits for scripts, then saves on the first click", a
     await expect(cta).toBeEnabled();
     await cta.click();
     await expect(cta).toContainText("Dans ma stack");
-    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-ma-stack-mvp-v3") || "{}").pinnedToolSlugs)).toContain("figma");
+    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").selection?.pinnedToolSlugs)).toContain("figma");
     await cta.click();
     await expect(page).toHaveURL(/ma-stack\?outil=figma/);
     await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
   } finally {
     releaseScripts();
   }
+});
+
+test("saved stack hydrates while the detail route chunk is slow", async ({ page, context }) => {
+  const errors: string[] = [];
+  page.on("pageerror", error => errors.push(error.message));
+  page.on("console", message => {
+    if (message.type() === "error" && /hydrat|server HTML|Minified React error/.test(message.text())) errors.push(message.text());
+  });
+  await context.route("**/*supabase.co/**", route => route.abort());
+  await page.route("**/assets/ToolDetailPage-*.js", async route => {
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    await route.continue();
+  });
+  await page.addInitScript(() => {
+    localStorage.setItem("tooltrim-analytics-consent", JSON.stringify({ version: 1, choice: "refused", decidedAt: Date.now(), expiresAt: Date.now() + 3600000 }));
+    localStorage.setItem("tooltrim-ma-stack-mvp-v3", JSON.stringify({ version: 3, needs: [], pinnedToolSlugs: ["viso-ai"], toolEntries: [{ toolSlug: "viso-ai", needIds: [], intent: "stack", assignmentMode: "pending", addedAt: "2026-10-05T00:00:00.000Z" }] }));
+  });
+  await page.goto("/en/tool/viso-ai", {waitUntil:"domcontentloaded"});
+  await expect(page.locator(".td-hero-actions .pin-tool-button--full")).toBeEnabled();
+  expect(errors).toEqual([]);
 });

@@ -68,8 +68,8 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
 
   // Focus sur le titre du niveau affiché, pour que le lecteur d'écran annonce le changement.
   useEffect(() => {
-    if (open) headingRef.current?.focus();
-  }, [open, level]);
+    if (open && mounted) headingRef.current?.focus();
+  }, [open, level, mounted]);
 
   // Échap, piège de focus et page figée derrière le panneau.
   useEffect(() => {

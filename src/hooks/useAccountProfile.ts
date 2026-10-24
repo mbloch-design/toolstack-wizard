@@ -59,7 +59,9 @@ export function useAccountProfile(userId: string | null, getAccessToken: () => P
   const cancel = useCallback(() => { ++operation.current; active.current?.abort(); }, []);
   useEffect(() => {
     if (owner) void run();
-    else setState({ owner: null, generation: identity.current.generation, profile: null, status: "idle", error: null });
+    else setState(previous => previous.owner === null && previous.profile === null && previous.status === "idle" && previous.error === null
+      ? previous
+      : { owner: null, generation: identity.current.generation, profile: null, status: "idle", error: null });
     return cancel;
   }, [owner, run, cancel]);
   const retry = useCallback(() => { void run(); }, [run]);
