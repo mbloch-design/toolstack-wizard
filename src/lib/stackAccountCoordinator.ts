@@ -66,7 +66,12 @@ export class StackAccountCoordinator {
   private readonly lastMethodKey = 'tooltrim:last-auth-method';
   private readonly pendingMethodKey = 'tooltrim:pending-auth-method';
 
-  constructor(private auth: SupabaseClient["auth"], readonly enabled: boolean) {}
+  // Resolve lazily: disabled public pages must never initialize GoTrue or refresh
+  // a legacy stored session. Enabled starts still subscribe synchronously.
+  constructor(private authSource: SupabaseClient["auth"] | (() => SupabaseClient["auth"]), readonly enabled: boolean) {}
+  private get auth(): SupabaseClient["auth"] {
+    return typeof this.authSource === "function" ? this.authSource() : this.authSource;
+  }
   getSnapshot = () => this.snapshot;
   getServerSnapshot = () => INITIAL_ACCOUNT_SNAPSHOT;
   subscribe = (listener: () => void) => { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; };

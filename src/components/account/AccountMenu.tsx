@@ -17,7 +17,9 @@ export default function AccountMenu() {
   const { t, lang, prefix } = useLang();
   const [open, setOpen] = useState(false);
   if (!account.enabled) return null;
-  if (!account.authInitialized) return <span className="ac-header-loading" role="status" aria-label={t("Chargement du compte", "Loading account")} />;
+  // Reserve the control's space without announcing a decorative skeleton.
+  // The actual account control supplies its accessible name once ready.
+  if (!account.authInitialized) return <span className="ac-header-loading" />;
   if (!account.user || account.syncStatus === "session-expired") return (
     <button type="button" className="ac-header-trigger" onClick={() => experience.openAuth("signin", `${prefix}/ma-stack`)}
       aria-label={account.syncStatus === "session-expired" ? t("Me reconnecter", "Sign in again") : t("Se connecter", "Sign in")}>

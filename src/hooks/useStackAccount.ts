@@ -15,7 +15,7 @@ const Context = StackAccountReactContext;
 
 /** Mount once above routes. Page hooks never create auth listeners or autosave loops. */
 export function StackAccountProvider({ children, enabled = STACK_ACCOUNT_ENABLED }: { children: ReactNode; enabled?: boolean }) {
-  const [coordinator] = useState(() => new StackAccountCoordinator(supabase.auth, enabled));
+  const [coordinator] = useState(() => new StackAccountCoordinator(() => supabase.auth, enabled));
   const snapshot = useSyncExternalStore(coordinator.subscribe, coordinator.getSnapshot, coordinator.getServerSnapshot);
   useEffect(() => coordinator.start(), [coordinator]);
   const value = useMemo<StackAccountContext>(() => ({ ...snapshot, enabled: coordinator.enabled,

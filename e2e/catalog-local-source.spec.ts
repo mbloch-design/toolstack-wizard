@@ -10,7 +10,7 @@ const expiredSession = JSON.stringify({
 });
 
 for (const lang of ["fr", "en"]) {
-  test(`${lang}: public catalogue never contacts Supabase, including client navigation`, async ({ page, baseURL }) => {
+  test(`${lang}: public catalogue and empty-stack setup search never contact Supabase, including client navigation`, async ({ page, baseURL }) => {
     const attempts: string[] = [];
     const errors: string[] = [];
     page.on("request", request => {
@@ -41,9 +41,14 @@ for (const lang of ["fr", "en"]) {
     await page.goto(`/${lang}/category/communication`);
     await expect(page.locator('main a[href*="/tool/"]').first()).toBeVisible();
     await page.goto(`/${lang}/ma-stack`);
-    await expect(page.locator("h1")).toHaveText(lang === "fr" ? "Mes outils" : "My tools");
-    await page.locator(".ms-search input").fill("Notion");
-    await expect(page.locator(".ms-results")).toContainText("Notion");
+    // A fresh local stack enters setup before exposing the catalogue search.
+    await expect(page.locator(".so[data-step=hello]")).toBeVisible();
+    await page.getByRole("button", { name: lang === "fr" ? "C’est parti" : "Let’s go", exact: true }).click();
+    await page.getByRole("button", { name: lang === "fr" ? /^Conseil/ : /^Consulting/ }).click();
+    await page.locator(".so-rate-chips button").first().click();
+    await page.locator(".so-step").getByRole("button", { name: lang === "fr" ? "Continuer" : "Continue", exact: true }).click();
+    await page.getByRole("searchbox", { name: lang === "fr" ? "Chercher un outil" : "Search for a tool", exact: true }).fill("Notion");
+    await expect(page.locator(".ss-results button").filter({ has: page.getByText("Notion", { exact: true }) })).toBeVisible();
     await page.goto(`/${lang}/comparatif/notion-vs-airtable`);
     await expect(page.locator("h1")).toContainText(/Notion/);
     await page.goto(`/${lang}/guides`);

@@ -139,6 +139,12 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Account browser journeys (isolated simulated providers)
         run: npm run test:e2e:accounts
+      - name: Production build with account flags enabled
+        run: npm run build
+        env:
+          VITE_STACK_ACCOUNT_ENABLED: "true"
+          VITE_ACCOUNT_GOOGLE_ENABLED: "true"
+          VITE_ACCOUNT_GITHUB_ENABLED: "true"
       - name: Account failure traces
         if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4

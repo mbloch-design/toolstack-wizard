@@ -6,10 +6,10 @@ import { normalizePersonalStack, personalStackFingerprint, type PersonalStackRec
 import { pinToolInState } from "@/lib/stackState";
 import { clearPersonalStackScope, getPersonalStackScope, personalStackStorageKey, readPersonalStack, replacePersonalStack, setPersonalStackScope } from "@/lib/personalStackStore";
 
-const mocks = vi.hoisted(() => ({ getSession: vi.fn(), onAuthStateChange: vi.fn(), signOut: vi.fn(), oauth: vi.fn(), otp: vi.fn(), verifyOtp: vi.fn(), load: vi.fn(), save: vi.fn(), remove: vi.fn(), password: vi.fn(), signup: vi.fn(), resend: vi.fn(), reset: vi.fn(), update: vi.fn() }));
+const mocks = vi.hoisted(() => ({ acquireAuth: vi.fn(), getSession: vi.fn(), onAuthStateChange: vi.fn(), signOut: vi.fn(), oauth: vi.fn(), otp: vi.fn(), verifyOtp: vi.fn(), load: vi.fn(), save: vi.fn(), remove: vi.fn(), password: vi.fn(), signup: vi.fn(), resend: vi.fn(), reset: vi.fn(), update: vi.fn() }));
 vi.mock("@/config/features", () => ({ STACK_ACCOUNT_ENABLED: true, ACCOUNT_GOOGLE_ENABLED: true, ACCOUNT_GITHUB_ENABLED: true }));
 vi.mock("@/components/v2shell/AppShellV2", () => ({ default: ({ children }: { children: ReactNode }) => createElement("main", null, children) }));
-vi.mock("@/integrations/supabase/client", () => ({ supabase: { auth: { getSession: mocks.getSession, onAuthStateChange: mocks.onAuthStateChange, signOut: mocks.signOut, signInWithOAuth: mocks.oauth, signInWithOtp: mocks.otp, verifyOtp: mocks.verifyOtp, signInWithPassword: mocks.password, signUp: mocks.signup, resend: mocks.resend, resetPasswordForEmail: mocks.reset, updateUser: mocks.update } } }));
+vi.mock("@/integrations/supabase/client", () => ({ supabase: { get auth() { mocks.acquireAuth(); return { getSession: mocks.getSession, onAuthStateChange: mocks.onAuthStateChange, signOut: mocks.signOut, signInWithOAuth: mocks.oauth, signInWithOtp: mocks.otp, verifyOtp: mocks.verifyOtp, signInWithPassword: mocks.password, signUp: mocks.signup, resend: mocks.resend, resetPasswordForEmail: mocks.reset, updateUser: mocks.update }; } } }));
 vi.mock("@/lib/stackAccountApi", async importOriginal => ({ ...await importOriginal<typeof import("@/lib/stackAccountApi")>(), loadPersonalStack: mocks.load, savePersonalStack: mocks.save, deletePersonalAccount: mocks.remove }));
 import { getStackAccountReturnUrl, StackAccountProvider, useStackAccount } from "./useStackAccount";
 import { MemoryRouter, Route, Routes, useNavigate } from "react-router-dom";
@@ -60,6 +60,7 @@ describe("global personal account coordinator", () => {
     const hook = renderHook(() => useStackAccount(), { wrapper: ({ children }) => createElement(StackAccountProvider, { enabled: false, children }) });
     await settle();
     expect(hook.result.current.syncStatus).toBe("local");
+    expect(mocks.acquireAuth).not.toHaveBeenCalled();
     expect(mocks.getSession).not.toHaveBeenCalled(); expect(mocks.load).not.toHaveBeenCalled();
   });
 
