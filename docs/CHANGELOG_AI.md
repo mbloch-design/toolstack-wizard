@@ -1,3 +1,7 @@
+## 2026-10-24 — Une seule recherche dans le header
+
+Retrait du champ historique qui doublonnait la recherche du groupe d'actions sur l'accueil. Le même contrôle reste à droite sur toutes les pages et sur mobile, avec Ma stack à sa droite. Régression reproduite en FR/EN sur ordinateur, puis quatre parcours mobile/ordinateur vérifient un seul déclencheur visible et l'ouverture du dialogue partagé. La préférence de navigation reste conservée. Rendu navigateur inspecté ; 901 tests applicatifs et cinq parcours de shell passent.
+
 ## 2026-10-24 — Récupération sans faux lien expiré au rechargement
 
 Le SDK peut émettre SIGNED_IN pendant sa restauration locale avant INITIAL_SESSION. La preuve de récupération existante est désormais restaurée sur ces deux notifications, uniquement pour le même propriétaire, la même session et avant expiration. Aucun lien ni paramètre URL ne donne de droit supplémentaire. Régression unitaire reproduite avant correction ; 901 tests applicatifs passent. Les scénarios navigateur de récupération à froid/rechargement et refus des liens expirés passent trois répétitions chacun. Le run CI précédent avait son contrôle général vert, mais ce parcours compte en échec ; nouvelle CI requise avant publication.

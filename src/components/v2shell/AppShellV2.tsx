@@ -430,7 +430,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         <header
           ref={topbarRef}
           className="asv2-topbar"
-          data-topbar-mode={isHome || showsSearchByDefault ? "search" : breadcrumb ? "breadcrumb" : "pending"}
+          data-topbar-mode={isHome ? "home" : showsSearchByDefault ? "search" : breadcrumb ? "breadcrumb" : "pending"}
           data-has-parent={mobileParent ? "true" : undefined}
         >
           {/* Mobile, page profonde : le lien vers le niveau supérieur prend la
@@ -451,7 +451,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
           {/* Desktop/tablet: the breadcrumb (or nothing on the homepage)
               sits on the left; search lives at the right, in one place.
-              Mobile always shows the search bar (see max-width: 640px). */}
+              The same search control remains available on mobile. */}
           {breadcrumb && (
             <nav className="asv2-topbar-breadcrumb" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
               {breadcrumb.flatMap((item, i) => {
@@ -464,22 +464,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               })}
             </nav>
           )}
-
-          <button
-            type="button"
-            className="asv2-search"
-            onClick={() => setSearchOpen(true)}
-            aria-label={t("Rechercher un outil", "Search for a tool")}
-          >
-            <span className="asv2-search-text">
-              <span className="asv2-search-long">{t("Rechercher un outil…", "Search a tool…")}</span>
-              <span className="asv2-search-short">{t("Rechercher", "Search")}</span>
-            </span>
-            <kbd className="asv2-kbd">{shortcut}</kbd>
-            <span className="asv2-search-action" aria-hidden>
-              <Search size={16} aria-hidden />
-            </span>
-          </button>
 
           <div className="asv2-topbar-right">
             {/* Recherche toujours atteignable depuis la barre du haut, même
