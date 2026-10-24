@@ -1,3 +1,5 @@
+import StackArrival from "@/components/stack/StackArrival";
+import { isStackReturn, loadStackPage } from "@/lib/stackPageLoader";
 import { useCallback, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
@@ -17,6 +19,8 @@ export default function AccountCallbackPage() {
     () => { clearAccountCallbackReturnTo(lang); navigate(returnTo, { replace: true }); },
     [returnTo, navigate, lang],
   );
+  const stackReturn = isStackReturn(returnTo);
+  useEffect(() => { if (stackReturn) void loadStackPage().catch(() => undefined); }, [stackReturn]);
   const denied = [location.search, location.hash.replace(/^#/, "?")].some(
     (value) => new URLSearchParams(value).has("error"),
   );
@@ -24,6 +28,10 @@ export default function AccountCallbackPage() {
     const timer = setTimeout(() => setWaiting(false), 8000);
     return () => clearTimeout(timer);
   }, []);
+  useEffect(() => {
+    if (stackReturn && !denied && account.user && account.syncStatus !== "session-expired") complete();
+  }, [stackReturn, denied, account.user, account.syncStatus, complete]);
+  if (stackReturn && account.enabled && !denied && account.syncStatus !== "session-expired" && (account.user || waiting)) return <StackArrival />;
   return (
     <AccountPageFrame
       narrow

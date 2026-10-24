@@ -1,3 +1,11 @@
+## 2026-10-24 — Connexion : arriver dans Ma stack pendant le chargement
+
+Le retour OAuth général ouvre Ma stack dès que l'identité est connue, sans attendre la lecture complète des données ; la connexion par mot de passe suit la même logique pour cette destination. Le module de la page est préchargé dès l'ouverture du formulaire. Le profil et la stack partaient déjà en parallèle : aucun nouvel abonnement Auth, cache privé ou appel API n'est ajouté.
+
+Un aperçu partagé présente le titre Ma stack, le picto officiel animé doucement et « On retrouve vos outils… », puis une indication si l'attente dépasse huit secondes. Pas de progression inventée ni de minimum d'attente ; les emplacements décoratifs sont cachés aux lecteurs d'écran et l'animation respecte la réduction de mouvement. Les outils déjà en cache restent dans leur périmètre de compte. Une première lecture ne peut afficher un faux onboarding ou un budget à zéro ; l'onboarding ne se démonte pas pendant ses sauvegardes normales. Les erreurs, brouillons et conflits gardent leurs actions existantes ; les retours contextuels vers une fiche restent conservés.
+
+Validation locale : 903 tests applicatifs, 237 tests Ma stack, 70 parcours comptes, types et design tokens passent. Build activé sous plafonds inchangés : 845,8 Mio au total, 731,5 Mio HTML. Revue indépendante sans défaut confirmé ; le module lent conserve effectivement l'aperçu grâce à la transition Router. Vérification distante et publication à consigner après CI.
+
 ## 2026-10-24 — Comptes publiés sur ToolTrim
 
 Code `dfd61b9db1`, CI complète verte (run 40106909635), intégration main sans push forcé et promotion du build Production testé `dpl_9s7cQjkj5wv2sVCbQWR4VSa4XRyv`. Accueil sans recherche en double, récupération sans faux lien invalide au rechargement. Sondes privées réelles réussies avant et après promotion ; réception des e-mails, récupération réelle, retour connecté sur Ma stack et refus de rejeu vérifiés. Deux comptes jetables révoqués et supprimés, configuration et procédure détaillées dans STACK_ACCOUNT_OPERATIONS.md. Compte rendu seul : aucun code supplémentaire, aucune migration ni modification des comptes existants.

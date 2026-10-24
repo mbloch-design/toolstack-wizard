@@ -1,3 +1,4 @@
+import { isStackReturn } from "@/lib/stackPageLoader";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useEffect } from "react";
 import { X } from "@/lib/icons";
@@ -25,7 +26,7 @@ export function AccountAuthJourney({
   const complete =
     signedIn &&
     !account.authBusy &&
-    account.syncStatus === "synced" &&
+    (account.syncStatus === "synced" || (isStackReturn(returnTo) && account.syncStatus === "connecting")) &&
     !account.pendingDraftChoice &&
     !account.conflict;
   useEffect(() => {

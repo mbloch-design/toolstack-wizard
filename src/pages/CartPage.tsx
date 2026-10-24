@@ -1,3 +1,6 @@
+import StackArrival from "@/components/stack/StackArrival";
+import { useStackAccount } from "@/hooks/useStackAccount";
+import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
@@ -45,6 +48,11 @@ type MapToolInfo = { cost: string; share: number; kind: "paid" | "free" | "unkno
 
 export default function CartPage() {
   const { t, lang, prefix } = useLang();
+  const account = useStackAccount();
+  const accountProfile = useAccountExperience();
+  const arrival = useRef({ owner: account.user?.id, settled: false });
+  if (arrival.current.owner !== account.user?.id) arrival.current = { owner: account.user?.id, settled: false };
+  if (account.user && ["synced", "syncing", "unsaved"].includes(account.syncStatus)) arrival.current.settled = true;
   const { tools, loading } = useToolSummaries();
   const { categories } = useCategories();
   const { state, persistenceStatus, pinTool, unpinTool, restoreTool, requiresAccount } = useStackPins();
@@ -436,6 +444,14 @@ export default function CartPage() {
       </>}
     </section>;
 
+  const awaitingInitialStack = account.enabled && (!account.authInitialized ||
+    (!!account.user && loading && !empty && selectedTools.length === 0) ||
+    (!!account.user && empty && (account.syncStatus === "connecting" || accountProfile.status === "loading")));
+  if (awaitingInitialStack) return <StackArrival />;
+  if (account.enabled && account.user && empty && !arrival.current.settled &&
+      (account.pendingDraftChoice || account.conflict || account.syncStatus === "error")) {
+    return <StackArrival pending={false}><StackAccountPanel empty /></StackArrival>;
+  }
   if (requiresAccount) return <StackWelcome />;
 
   // First tool: one question, a search and four one-click suggestions (accounts branch, 23/10).

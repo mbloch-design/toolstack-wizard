@@ -1,3 +1,4 @@
+import { loadStackPage } from "@/lib/stackPageLoader";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useStackAccount, type AuthResult } from "@/hooks/useStackAccount";
@@ -23,6 +24,9 @@ export default function AccountAuthForm({
   initialReset?: boolean;
 }) {
   const { t, lang } = useLang();
+  useEffect(() => {
+    if (!initialReset) void loadStackPage().catch(() => undefined);
+  }, [initialReset]);
   const account = useStackAccount();
   const id = useId();
   const [email, setEmail] = useState("");

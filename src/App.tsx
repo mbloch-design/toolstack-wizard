@@ -1,3 +1,4 @@
+import { loadStackPage } from "@/lib/stackPageLoader";
 import AccountExperienceProvider from "@/components/account/AccountExperienceProvider";
 import { lazy, Suspense } from "react";
 import { isStaticNotFoundPath } from "@/lib/staticHttpError";
@@ -33,7 +34,7 @@ const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
 const StacksPage = lazy(() => import("@/pages/StacksPage"));
 const StackDetailPage = lazy(() => import("@/pages/StackDetailPage"));
-const CartPage = lazy(() => import("@/pages/CartPage"));
+const CartPage = lazy(loadStackPage);
 const ExplorerPage = lazy(() => import("@/pages/ExplorerPage"));
 const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const MethodologyPage = lazy(() => import("@/pages/MethodologyPage"));
