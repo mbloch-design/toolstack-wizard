@@ -158,7 +158,7 @@ export default function MobileMenu({ open, onClose, prefix, lang, t, items, acti
                     {(["fr", "en"] as const).map((code) => (
                       code === lang
                         ? <span key={code} className="is-selected" aria-current="true" lang={code}>{code === "fr" ? "Français" : "English"}</span>
-                        : <a key={code} href={languageHref} lang={code} onClick={onClose}>{code === "fr" ? "Français" : "English"}</a>
+                        : <Link key={code} to={languageHref} lang={code} onClick={onClose}>{code === "fr" ? "Français" : "English"}</Link>
                     ))}
                   </div>
                 </div>

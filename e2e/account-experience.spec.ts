@@ -488,3 +488,19 @@ test('a slow stack route module retains the same arrival presentation', async ({
  } finally { release(); }
  await expect(page.locator('.ms-tool')).toHaveCount(1);
 });
+
+for (const width of [390,1440]) test(`switching stack language ${width} keeps the document, account and saved state`, async ({page,request}) => {
+ await page.setViewportSize({width,height:1000});
+ await control(request,'seed',{email:'language@example.invalid',state:state(['notion'])});
+ await page.goto('/en/ma-stack');await login(page,'en','language@example.invalid');await saved(page);
+ await page.evaluate(()=>{(window as unknown as {languageMarker:string}).languageMarker='same-document';});
+ const before=(await control(request,'state')).requests.filter((r:{path:string})=>r.path==='/api/stack-account'||r.path==='/api/account-profile').length;
+ if(width===390){
+  await page.getByRole('button',{name:'Open menu',exact:true}).click();
+  await page.locator('.asv2-mm-panel').getByRole('link',{name:'Français',exact:true}).click();
+ }else await page.getByRole('link',{name:'Site in English. Switch to French',exact:true}).click();
+ await expect(page).toHaveURL('/fr/ma-stack');
+ expect(await page.evaluate(()=>(window as unknown as {languageMarker?:string}).languageMarker)).toBe('same-document');
+ await expect(page.locator('.ms-tool')).toHaveCount(1);await saved(page,'fr');
+ expect((await control(request,'state')).requests.filter((r:{path:string})=>r.path==='/api/stack-account'||r.path==='/api/account-profile').length).toBe(before);
+});
