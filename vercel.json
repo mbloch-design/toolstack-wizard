@@ -1,6 +1,12 @@
 {
   "ignoreCommand": "bash scripts/vercel-ignore-build.sh",
   "headers": [
+    {
+      "source": "/:directory(fonts|hero|home-logos|home-cards|logos|tool-media|editorial|guides|og-images|og-screenshots)/:path*",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    },
     {"source": "/fr/connexion", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
     {"source": "/fr/inscription", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},
     {"source": "/fr/connexion/retour", "headers": [{"key": "X-Robots-Tag", "value": "noindex, nofollow"}]},

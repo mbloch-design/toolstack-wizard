@@ -6163,3 +6163,11 @@ Connexion GitHub réelle confirmée par le propriétaire ; import serveur du nom
 
 - Comparaison integrale du catalogue local avec GitHub : seules ViralSnap et Sprokl manquaient au catalogue public. Ajout des deux fiches FR/EN deja redigees, avec liens officiels nofollow et prix natifs documentes.
 - Regeneration de l'index de recherche, des routes, du sitemap et des fichiers LLM. Aucun ancien changement d'interface ni chantier catalogue non publie ajoute au lot.
+
+## 2026-10-25 · Réduction des requêtes CDN évitables
+
+- Cache navigateur de 24 h pour les polices et les répertoires de médias publics non versionnés ; conservation des règles existantes pour les assets hashés, les données catalogue et les pages.
+- ToolLogo : le secours après 4 secondes vérifie désormais la position réelle avant de forcer un chargement. Les logos hors écran restent différés ; le secours fonctionne au défilement, au redimensionnement et sans IntersectionObserver.
+- Régression reproduite avant correction puis 3 tests ciblés PASS. Chrome, composant réel avec observateur normal : 1 requête avant / 0 après pour un logo à 8 000 px après 5 secondes. Chargement au défilement également vérifié avec observateur silencieux ou absent. Les 8 contrôles de correspondance des routes de cache passent.
+- Certains fichiers macOS « dataless » bloquent les validations dans le répertoire de travail. Vérification sur une copie temporaire de HEAD avec les corrections : 409 tests, TypeScript app et build production complet PASS, contrôles SEO/routage et budgets inclus. Accueil, catalogue mobile et fiche Notion contrôlés dans Chrome : aucune erreur JS ni débordement horizontal, aucun logo hors écran forcé en eager. Les autres travaux locaux sont conservés ; aucune économie globale chiffrée sans métriques Vercel.
+- Validation de publication après report sur origin/main actualisé : 906 tests, TypeScript app et build production complet PASS, contrôles SEO/routage et budgets inclus ; les trois routes Chrome passent également. Seul le correctif CDN, ses tests et cette entrée sont inclus dans le commit de publication.

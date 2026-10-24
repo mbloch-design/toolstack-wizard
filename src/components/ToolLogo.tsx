@@ -58,9 +58,7 @@ const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true, 
   const [sourceIndex, setSourceIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [inView, setInView] = useState(false);
-  // Set when the grace period ends before the observer fired (e.g. a card
-  // scrolled off to the side of a horizontal shelf): the image is then
-  // requested eagerly, so the source timeout measures a real download.
+  // Only the visibility safety net may promote a nearby image to eager.
   const [eager, setEager] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
   const src = sources[sourceIndex];
@@ -78,31 +76,42 @@ const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true, 
   // The observer is an optimisation, never a gate: some environments expose
   // IntersectionObserver but never deliver entries, and gating on it there
   // would disable the fallback entirely and leave blank tiles forever. So we
-  // also arm a grace period, after which we proceed regardless.
+  // also arm a geometry-based safety net, without fetching off-screen logos.
   useEffect(() => {
     if (inView) return;
     const el = imgRef.current;
-    if (!el || typeof IntersectionObserver === "undefined") {
+    if (!el) return;
+    const recoverIfVisible = () => {
+      const rect = el.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) return;
+      if (rect.bottom < -200 || rect.top > window.innerHeight + 200 ||
+          rect.right < -200 || rect.left > window.innerWidth + 200) return;
+      setEager(true);
       setInView(true);
-      return;
-    }
-    const observer = new IntersectionObserver(
+    };
+    const startSafetyNet = () => {
+      recoverIfVisible();
+      // Capture also handles scrolling inside horizontal shelves.
+      window.addEventListener("scroll", recoverIfVisible, { passive: true, capture: true });
+      window.addEventListener("resize", recoverIfVisible, { passive: true });
+    };
+    const observer = typeof IntersectionObserver === "undefined" ? undefined : new IntersectionObserver(
       (entries) => {
         if (entries.some((entry) => entry.isIntersecting)) {
           setInView(true);
-          observer.disconnect();
+          observer?.disconnect();
         }
       },
       { rootMargin: "200px" },
     );
-    observer.observe(el);
-    const failSafe = setTimeout(() => {
-      setEager(true);
-      setInView(true);
-    }, OBSERVER_GRACE_MS);
+    observer?.observe(el);
+    const failSafe = observer ? setTimeout(startSafetyNet, OBSERVER_GRACE_MS) : undefined;
+    if (!observer) startSafetyNet();
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
       clearTimeout(failSafe);
+      window.removeEventListener("scroll", recoverIfVisible, true);
+      window.removeEventListener("resize", recoverIfVisible);
     };
   }, [inView, src]);
 
