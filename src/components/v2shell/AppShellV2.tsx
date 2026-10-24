@@ -367,8 +367,8 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
         <div className="asv2-sidebar-utility">
           <div className="asv2-utility-actions">
-          <a
-            href={languageHref}
+          <Link
+            to={languageHref}
             className="asv2-utility-item"
             aria-label={t("Site en français. Passer en anglais", "Site in English. Switch to French")}
             title={!sidebarExpanded ? t("Passer en anglais", "Switch to French") : undefined}
@@ -379,7 +379,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
                 explicite que le picto de traduction. */}
             <span className="asv2-lang-glyph" aria-hidden>{lang.toUpperCase()}</span>
             <span className="asv2-utility-text">{t("Français", "English")}</span>
-          </a>
+          </Link>
 
           <CurrencyPicker
             currency={currency}

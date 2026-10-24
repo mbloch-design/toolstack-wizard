@@ -1,3 +1,7 @@
+## 2026-10-25 — Changer de langue sans recharger Ma stack
+
+Les sélecteurs de langue de la barre latérale et du menu mobile utilisent désormais les liens du routeur interne. Le lien natif rechargeait tout le document, relançait Auth et la lecture de la stack et provoquait le flash signalé sur Ma stack. La destination traduite et les attributs accessibles sont conservés. Régression reproduite avant correction ; deux parcours navigateur (390/1440) prouvent la conservation du document, du compte et des outils, sans nouvel appel profil/stack. Les 903 tests applicatifs, les types et le contrôle des design tokens passent. Validation distante avant publication.
+
 ## 2026-10-24 — Connexion : arriver dans Ma stack pendant le chargement
 
 Le retour OAuth général ouvre Ma stack dès que l'identité est connue, sans attendre la lecture complète des données ; la connexion par mot de passe suit la même logique pour cette destination. Le module de la page est préchargé dès l'ouverture du formulaire. Le profil et la stack partaient déjà en parallèle : aucun nouvel abonnement Auth, cache privé ou appel API n'est ajouté.
