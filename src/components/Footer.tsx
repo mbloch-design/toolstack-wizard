@@ -1,13 +1,10 @@
-import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { ArrowRight, ChevronRight } from "@/lib/icons";
-import ToolLogo from "@/components/ToolLogo";
+import { ArrowRight } from "@/lib/icons";
+import logoToolTrim from "@/assets/logo-tooltrim.svg";
 import { useLang } from "@/hooks/useLang";
 import { openCookiePreferences } from "@/lib/analyticsConsent";
 import { getLanguageSwitchPath } from "@/lib/seo";
-import { formatAmount } from "@/lib/currencyRates";
-import { readStackSnapshot, type StackSnapshot } from "@/lib/stackSnapshot";
 import FooterTrim from "@/components/FooterTrim";
 
 /**
@@ -46,47 +43,36 @@ const BADGES: Badge[] = [
 ];
 
 /**
- * Editorial footer on one 12-column grid (8 Oct 2026):
- *   1. Promise and proof (left half) | the visitor's stack, or the invitation
- *      to build one (right half, aligned on the third link column)
- *   2. Four link columns of three grid columns each
- *   3. Legal rail: legal links left, cookies and language right
- *   4. Directory badges in uniform cells, the label taking the first cell
+ * Footer on one 12-column grid (clinical pass, 24 Oct 2026):
+ *   1. Brand column (columns 1-4): the logo signs it, then the promise and
+ *      the two actions
+ *   2. Four link columns (columns 5-12)
+ *   3. Directory badges in uniform cells, the label taking the first cell
+ *   4. Legal rail: legal links left, language right
  *
- * The twist is the right half: whoever has a stack meets its figures again at
- * the end of every page (tools, estimated monthly cost, cost to review), read from the
- * snapshot Ma stack writes. Rendered after mount only, so the prerendered
- * HTML stays the same for everyone.
+ * The visitor's stack card left on 24 Oct 2026 (Michael: it added nothing).
  */
 const Footer = () => {
   const { t, prefix, lang } = useLang();
   const year = new Date().getFullYear();
   const location = useLocation();
-  // On Ma stack itself, the stack card would repeat the page being read.
+  // On Ma stack itself, "Build my stack" would point at the page being read.
   const onMyStack = /\/(ma-stack|my-stack)(\/|$)/.test(location.pathname);
-  const [snapshot, setSnapshot] = useState<StackSnapshot | null>(null);
-  useEffect(() => { setSnapshot(readStackSnapshot()); }, [location.pathname]);
-  // The cost-to-review gauge fills when the card is seen, not when it mounts.
-  const stackCardRef = useRef<HTMLAnchorElement>(null);
-  const [cardSeen, setCardSeen] = useState(false);
-  useEffect(() => {
-    const node = stackCardRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setCardSeen(true); observer.disconnect(); } }, { threshold: 0.5 });
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [snapshot]);
   const tagline = t("Choisir, pas empiler.", "Choose, don't stack.");
   const languagePath = (target: "fr" | "en") => `${getLanguageSwitchPath(location.pathname, target)}${location.search}`;
-  const money = (amount: number) => snapshot ? formatAmount(amount, snapshot.currency, lang) : "";
 
   return (
     <footer className="tt-footer" role="contentinfo">
       <div className="tt-footer-container">
 
-        {/* 1. Promise and the visitor's stack */}
+        {/* 1. Brand column (logo, promise, actions) and the four link
+            columns, on one grid */}
+        <div className="tt-footer-main">
         <section className="tt-footer-top">
           <div className="tt-footer-promise">
+            <Link to={prefix || "/"} className="tt-footer-logo" aria-label={t("ToolTrim, accueil", "ToolTrim, home")}>
+              <img src={logoToolTrim} alt="" width={96} height={21} />
+            </Link>
             {/* The pile follows the last word, even when the line wraps. */}
             <p className="tt-footer-tagline">{tagline.slice(0, tagline.lastIndexOf(" ") + 1)}<span className="tt-footer-tagline-end">{tagline.slice(tagline.lastIndexOf(" ") + 1)}<FooterTrim /></span></p>
             <p className="tt-footer-intro">
@@ -97,37 +83,16 @@ const Footer = () => {
             </p>
           </div>
 
-          {snapshot && !onMyStack ? (
-            <Link ref={stackCardRef} className="tt-footer-stack" data-seen={cardSeen ? "" : undefined} to={`${prefix}/ma-stack`}>
-              <span className="tt-footer-stack-head">
-                {snapshot.top && snapshot.top.length > 0 && <span className="tt-footer-stack-logos" aria-hidden="true">
-                  {snapshot.top.map((tool) => <ToolLogo key={tool.slug} tool={{ id: tool.slug, slug: tool.slug, name: tool.name, logo: tool.logo }} size={28} allowRemoteSources={false} />)}
-                </span>}
-                <span>{t("Ma stack", "My stack")} · {snapshot.tools} {t(snapshot.tools > 1 ? "outils" : "outil", snapshot.tools > 1 ? "tools" : "tool")}</span>
-              </span>
-              <span className="tt-footer-stack-total"><span className="tt-footer-stack-approx">≈</span>{money(snapshot.monthly)}<small>{t("/mois", "/mo")}</small></span>
-              {snapshot.double > 0 && snapshot.monthly > 0 ? <>
-                {/* The estimated cost to review, as a hairline gauge. */}
-                <span className="tt-footer-stack-gauge" aria-hidden="true"><span style={{ width: `${Math.max(3, Math.min(100, Math.round(snapshot.double / snapshot.monthly * 100)))}%` }} /></span>
-                <span className="tt-footer-stack-note">{t(`dont ${money(snapshot.double)} à examiner dans l’estimation`, `of which ${money(snapshot.double)} to review in the estimate`)}</span>
-              </> : <span className="tt-footer-stack-note">{t("Coût mensuel estimé", "Estimated monthly cost")}</span>}
-              <span className="tt-footer-stack-cta">
-                {snapshot.double > 0 ? t("Examiner les recoupements", "Review overlaps") : t("Reprendre ma stack", "Back to my stack")}
-                <ChevronRight aria-hidden="true" />
-              </span>
+          <div className="tt-footer-actions" aria-label={t("Continuer avec ToolTrim", "Continue with ToolTrim")}>
+            {!onMyStack && <Link className="tt-footer-action tt-footer-action--primary" to={`${prefix}/ma-stack`}>
+              <span>{t("Construire ma stack", "Build my stack")}</span>
+              <ArrowRight aria-hidden="true" />
+            </Link>}
+            <Link className="tt-footer-action tt-footer-action--secondary" to={`${prefix}/tools`}>
+              <span>{t("Explorer les outils", "Explore tools")}</span>
+              <ArrowRight aria-hidden="true" />
             </Link>
-          ) : (
-            <div className="tt-footer-actions" aria-label={t("Continuer avec ToolTrim", "Continue with ToolTrim")}>
-              {!onMyStack && <Link className="tt-footer-action tt-footer-action--primary" to={`${prefix}/ma-stack`}>
-                <span>{t("Construire ma stack", "Build my stack")}</span>
-                <ArrowRight aria-hidden="true" />
-              </Link>}
-              <Link className="tt-footer-action tt-footer-action--secondary" to={`${prefix}/tools`}>
-                <span>{t("Explorer les outils", "Explore tools")}</span>
-                <ArrowRight aria-hidden="true" />
-              </Link>
-            </div>
-          )}
+          </div>
         </section>
 
         {/* 2. Links: four columns on the same grid */}
@@ -163,8 +128,23 @@ const Footer = () => {
             <Link to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
           </nav>
         </section>
+        </div>
 
-        {/* 3. Legal rail */}
+        {/* 3. Directory badges stay visible (Michael, 8 Oct 2026): uniform
+            cells, grey until hovered, the label in the first cell. */}
+        <section className="tt-footer-partners" aria-label={t("Repéré sur", "Featured on")}>
+          <span className="tt-footer-partners-label">{t("Repéré sur", "Featured on")}</span>
+            <div className="tt-footer-badges">
+              {BADGES.map((badge) => (
+                <a key={badge.href} href={badge.href} target="_blank" rel={badge.rel} title={badge.title} className="tt-footer-badge" aria-label={badge.label}>
+                  <img src={badge.src} alt={badge.alt} width={badge.width} height={badge.height} loading="lazy"
+                    onError={badge.fallback ? (event) => { event.currentTarget.style.display = "none"; event.currentTarget.parentElement?.setAttribute("data-fallback", badge.fallback as string); } : undefined} />
+                </a>
+              ))}
+          </div>
+        </section>
+
+        {/* 4. Legal rail, last, as on every product site */}
         <section className="tt-footer-rail">
           <div className="tt-footer-legal">
             <span>{t(`Copyright © ${year} ToolTrim. Tous droits réservés.`, `Copyright © ${year} ToolTrim. All rights reserved.`)}</span>
@@ -180,20 +160,6 @@ const Footer = () => {
               ? <span key={code} aria-current="true" lang={code} title={code === "fr" ? "Français" : "English"}>{code.toUpperCase()}</span>
               : <Link key={code} to={languagePath(code)} hrefLang={code} lang={code} title={code === "fr" ? "Lire en français" : "Read in English"} aria-label={code === "fr" ? "Français" : "English"}>{code.toUpperCase()}</Link>)}
           </nav>
-        </section>
-
-        {/* 4. Directory badges stay visible (Michael, 8 Oct 2026): uniform
-            cells, grey until hovered, the label in the first cell. */}
-        <section className="tt-footer-partners" aria-label={t("Repéré sur", "Featured on")}>
-          <span className="tt-footer-partners-label">{t("Repéré sur", "Featured on")}</span>
-            <div className="tt-footer-badges">
-              {BADGES.map((badge) => (
-                <a key={badge.href} href={badge.href} target="_blank" rel={badge.rel} title={badge.title} className="tt-footer-badge" aria-label={badge.label}>
-                  <img src={badge.src} alt={badge.alt} width={badge.width} height={badge.height} loading="lazy"
-                    onError={badge.fallback ? (event) => { event.currentTarget.style.display = "none"; event.currentTarget.parentElement?.setAttribute("data-fallback", badge.fallback as string); } : undefined} />
-                </a>
-              ))}
-          </div>
         </section>
 
       </div>

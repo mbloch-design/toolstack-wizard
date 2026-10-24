@@ -1,3 +1,7 @@
+## 2026-10-24 — Footer : version épurée, fond blanc, logo
+
+Le footer passe sur une grille de 12 colonnes : le logo, la promesse et les deux actions sur les colonnes 1 à 4, les quatre colonnes de liens sur les colonnes 5 à 12. Fond blanc, filets entre les zones, typo du site (Inter Tight 600 pour les titres, 400 pour les liens en 15 px et les mentions en 13 px). Les badges passent avant la ligne légale. La carte « Ma stack » du footer est retirée (elle n'apportait rien), avec l'instantané `stackSnapshot` qui ne servait qu'à elle.
+
 ## 2026-10-23 — Ma stack : présence personnelle et suite de l'onboarding
 
 L'en-tête de l'espace salue par le prénom selon l'heure, avec une phrase qui suit l'état de la stack (juste après l'onboarding, décisions en attente, tout à jour) et les pastilles métier et tarif journalier avec la valeur de l'heure. Juste après l'onboarding (30 minutes), la box décision devient « Étape suivante » et accompagne la première formule. Avec un tarif, chaque offre affiche son équivalent en temps de travail (journée de 7 heures). Les noms d'offres séparent leur qualificatif (« Professional », puis « Dev seat »), la tuile gratuite ne se répète plus et le pied de box empile le libellé au-dessus du montant. Le toast d'arrivée devient une carte avec les logos de la personne. Tests unitaires : 798.

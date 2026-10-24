@@ -35,9 +35,7 @@ import { convertAmount, formatAmount } from "@/lib/currencyRates";
 import { pairKey, useStackDecisions } from "@/hooks/useStackDecisions";
 import { trackEvent } from "@/lib/analytics";
 import { buildExplorationCandidates, getExplorerHref } from "@/lib/toolExploration";
-import { writeStackSnapshot } from "@/lib/stackSnapshot";
 import { SEO_BASE, setHreflang, setNoindex, setSeoTags } from "@/lib/seo";
-import { getToolLogoSources } from "@/lib/toolLogos";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 
@@ -100,11 +98,6 @@ export default function CartPage() {
   // paid, total converted at the site's dated rate (Michael, 7 Oct 2026).
   const plans = useStackPaidPlans();
   const stackCost = stackMonthlyCost(selectedTools, plans.isPaid, currency, lang);
-  // Costliest tools first: the footer snapshot shows the three that weigh most.
-  const heroOrder = useMemo(() => {
-    const monthly = (tool: ToolSummary) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0; };
-    return [...selectedTools].sort((a, b) => monthly(b) - monthly(a) || a.name.localeCompare(b.name));
-  }, [selectedTools, plans.paid, plans.choices, currency, lang]);
   // Area colours of the budget ring, stable across the whole stack. Area colours stay those of the whole stack.
   const colorOf = (id: string) => AREA_COLORS[Math.max(0, mapTerritories.findIndex((territory) => territory.id === id))] || AREA_OTHER;
   // Hero micro-bars (Screen Time style): tools and cost split by area, in the
@@ -258,13 +251,6 @@ export default function CartPage() {
     {keptBoth.length > 0 && <span>{t(`${keptBoth.length} paire${keptBoth.length > 1 ? "s" : ""} gardée${keptBoth.length > 1 ? "s" : ""} volontairement.`, `${keptBoth.length} pair${keptBoth.length > 1 ? "s" : ""} kept on purpose.`)} <button type="button" className="ms-inline-link" onClick={() => keptBoth.forEach((key) => { const [a, b] = key.split("|"); reopen(a, b); })}>{t("Revoir", "Review again")}</button></span>}
   </p>;
   const empty = state.pinnedToolSlugs.length === 0;
-  // The footer's "your stack" card on every other page reads these figures;
-  // its logos are the costliest tools that have a logo stored on the site.
-  useEffect(() => {
-    if (empty) { writeStackSnapshot(null); return; }
-    if (selectedTools.length === 0) return; // catalogue still loading
-    writeStackSnapshot({ tools: selectedTools.length, monthly: Math.round(stackCost.total), double: Math.round(overlapScore.doubleTotal), currency, at: new Date().toISOString(), top: heroOrder.filter((tool) => getToolLogoSources(tool, 64).some((src) => src.startsWith("/"))).slice(0, 3).map((tool) => ({ slug: toolKey(tool), name: tool.name, logo: tool.logo || undefined })) });
-  }, [empty, selectedTools.length, stackCost.total, overlapScore.doubleTotal, currency, heroOrder]);
   const showSearch = empty || searchOpen;
   const existingIds = new Set(selectedTools.map((tool) => tool.id));
   const searchResults = useMemo(() => {
