@@ -9,6 +9,16 @@ export default function StackAccountPanel({ empty = false, placement = "all" }: 
   const { t } = useLang();
   if (!account.enabled) return null;
   const needsAuth = !account.user || account.syncStatus === "session-expired";
+  const healthyProgress = !needsAuth && ["unsaved", "syncing"].includes(account.syncStatus)
+    && !account.pendingDraftChoice && !account.conflict && !account.error
+    && !account.privacyWarning && !account.deletionConfirmed;
+  if (healthyProgress) {
+    if (placement === "notice") return null;
+    const label = t("Enregistrement…", "Saving…");
+    return empty
+      ? <p className="ms-empty-autosave" role="status"><Cloud size={16} aria-hidden />{label}</p>
+      : <span className="ms-save-indicator" role="status" title={label}><Cloud size={16} aria-hidden /><span className="sr-only">{label}</span></span>;
+  }
   if (empty && !needsAuth && account.syncStatus === "synced" && !account.pendingDraftChoice && !account.conflict && !account.error && !account.privacyWarning && !account.deletionConfirmed) {
     return <p className="ms-empty-autosave"><Cloud size={16} aria-hidden />{t("Vos ajouts seront enregistrés automatiquement.", "Your additions will be saved automatically.")}</p>;
   }

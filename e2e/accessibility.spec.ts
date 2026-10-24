@@ -77,7 +77,7 @@ test(`editorial card direct save is keyboard accessible and persists ${lang}/${w
   await page.keyboard.press("Enter");
   await expect(save).toHaveClass(/pin-tool-button--active/);
   await expect.poll(() => new URL(page.url()).pathname).toBe(`/${lang}/tools`);
-  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-ma-stack-mvp-v3") || "{}").pinnedToolSlugs)).toEqual([slug]);
+  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").selection?.pinnedToolSlugs)).toEqual([slug]);
   await page.reload();
   await expect(save).toHaveClass(/pin-tool-button--active/);
 });
@@ -96,7 +96,7 @@ test("card motion is removed when reduced motion is requested", async ({ page })
 test("global search traps focus and returns it to its trigger", async ({ page }) => {
   await page.goto("/fr/tools");
 
-  const trigger = page.getByRole("button", { name: /^Rechercher \(/ });
+  const trigger = page.getByRole("button", { name: /^Rechercher dans le catalogue \(/ });
   await expect(trigger).toBeVisible();
   await trigger.focus();
   await page.keyboard.press("Enter");
@@ -120,7 +120,7 @@ test("mobile search has an explicit close action", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/fr/tools");
 
-  const trigger = page.getByRole("button", { name: /^Rechercher \(/ });
+  const trigger = page.getByRole("button", { name: /^Rechercher dans le catalogue \(/ });
   await expect(trigger).toBeVisible();
   await trigger.focus();
   await page.keyboard.press("Enter");
@@ -132,17 +132,16 @@ test("mobile search has an explicit close action", async ({ page }) => {
   await expect(trigger).toBeFocused();
 });
 
-test("Explorer returns focus after Escape", async ({ page }) => {
-  await page.goto("/fr/back-office");
-
-  const trigger = page.locator(".nav-explorer-btn");
+test("mobile menu restores focus after Escape", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/fr/tools");
+  const trigger = page.getByRole("button", { name: "Ouvrir le menu", exact: true });
   await trigger.focus();
   await page.keyboard.press("Enter");
-
-  const dialog = page.getByRole("dialog", { name: "Menu exploration" });
+  const dialog = page.getByRole("dialog", { name: "Menu", exact: true });
   await expect(dialog).toBeVisible();
-  await expect(dialog.getByRole("button").first()).toBeFocused();
-  await expectNoHighImpactViolations(page, ".editorial-panel");
+  await expect(dialog.getByRole("heading", { name: "Menu", exact: true })).toBeFocused();
+  await expectNoHighImpactViolations(page, ".asv2-mm-panel");
   await page.keyboard.press("Escape");
   await expect(dialog).toHaveCount(0);
   await expect(trigger).toBeFocused();

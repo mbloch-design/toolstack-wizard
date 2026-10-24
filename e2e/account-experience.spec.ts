@@ -416,3 +416,27 @@ test('general header sign-in opens the personal stack',async({page,request})=>{
  await expect(page).toHaveURL(/\/en\/ma-stack$/);
  await expect(page.locator('.ms-personal-greeting')).toContainText('Michael');
 });
+
+
+test('healthy autosave stays inline while a write waits, but a real failure offers retry', async ({ page }) => {
+ await draft(page, state(['notion'])); await page.goto('/en/ma-stack');
+ await login(page, 'en', 'save-progress@example.invalid'); await saved(page);
+ let release!: () => void;
+ const pending = new Promise<void>(resolve => { release = resolve; });
+ await page.route('**/api/stack-account', async route => {
+   if (route.request().method() === 'PUT') await pending;
+   await route.continue();
+ });
+ await change(page, state(['notion', 'figma']));
+ try {
+   await expect(page.locator('.ms-save-indicator')).toHaveText('Saving…');
+   await expect(page.locator('.ms-account')).toHaveCount(0);
+   await expect(page.getByRole('button', { name: 'Retry saving', exact: true })).toHaveCount(0);
+   await page.screenshot({path:'test-results/accounts/healthy-autosave.png'});
+ } finally { release(); }
+ await saved(page);
+ await page.unroute('**/api/stack-account');
+ await page.route('**/api/stack-account', route => route.abort());
+ await change(page, state(['figma']));
+ await expect(page.getByRole('button', { name: 'Retry saving', exact: true })).toBeVisible();
+});

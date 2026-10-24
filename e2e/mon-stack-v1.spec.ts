@@ -10,12 +10,24 @@ test.beforeEach(async ({ page, context }) => {
   await page.addInitScript(() => localStorage.setItem("tooltrim-analytics-consent", JSON.stringify({ version: 1, choice: "refused", decidedAt: Date.now(), expiresAt: Date.now() + 3600000 })));
 });
 
+// Empty stacks now use the setup assistant before the inventory search.
+async function firstTool(page: import('@playwright/test').Page, lang: 'fr' | 'en', tool: string) {
+  const fr = lang === 'fr';
+  await page.getByRole('button', {name: fr ? 'C’est parti' : 'Let’s go', exact: true}).click();
+  await page.getByRole('button', {name: fr ? /^Conseil/ : /^Consulting/}).click();
+  await page.locator('.so-rate-chips button').first().click();
+  await page.locator('.so-step').getByRole('button', {name: fr ? 'Continuer' : 'Continue', exact: true}).click();
+  await page.getByRole('searchbox', {name: fr ? 'Chercher un outil' : 'Search for a tool', exact:true}).fill(tool);
+  await page.locator('.ss-results button').filter({has: page.getByText(tool, {exact:true})}).click();
+  await page.locator('.ss-stack').getByRole('button', {name:fr?'Continuer':'Continue',exact:true}).click();
+  await page.getByRole('button', {name:fr?'Ouvrir mon espace':'Open my space',exact:true}).click();
+}
+
 test("empty → search → add → inspect → remove → undo → persist", async ({ page }) => {
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.getByRole("heading", { name: "Choisir,\u00a0pas empiler.", exact: true })).toBeVisible();
+  await expect(page.locator(".so[data-step=hello]")).toBeVisible();
   await expect(page.locator(".ms-inv")).toHaveCount(0);
-  await page.getByRole("searchbox", { name: "Ajouter un outil à ma stack", exact: true }).fill("figma");
-  await page.getByRole("button", { name: "Ajouter Figma", exact: true }).click();
+  await firstTool(page, "fr", "Figma");
   await expect(page).toHaveURL(/ma-stack$/);
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await page.locator(".ms-tool").click();
@@ -97,18 +109,14 @@ test("invalid catalogue ID can be removed without losing valid tools", async ({ 
 test("corrupt storage recovers without crashing", async ({ page }) => {
   await page.addInitScript((key) => localStorage.setItem(key, "{invalid"), key);
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.getByRole("searchbox", { name: "Add a tool to my stack", exact: true })).toBeVisible();
-  await page.getByRole("searchbox", { name: "Add a tool to my stack", exact: true }).fill("slack");
-  await page.getByRole("button", { name: "Add Slack", exact: true }).click();
+  await firstTool(page, "en", "Slack");
   await expect(page.locator(".ms-tool")).toHaveCount(1);
 });
 
 test("blocked localStorage getter keeps selection usable in memory", async ({ page }) => {
   await page.addInitScript(() => Object.defineProperty(window, "localStorage", { get() { throw new DOMException("Blocked", "SecurityError"); } }));
   await page.goto("/en/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.getByRole("searchbox", { name: "Add a tool to my stack", exact: true })).toBeVisible();
-  await page.getByRole("searchbox", { name: "Add a tool to my stack", exact: true }).fill("slack");
-  await page.getByRole("button", { name: "Add Slack", exact: true }).click();
+  await firstTool(page, "en", "Slack");
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await expect(page.locator(".ms-storage-notice")).toContainText("session");
 });

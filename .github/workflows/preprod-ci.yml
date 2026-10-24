@@ -75,6 +75,9 @@ jobs:
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
 
+      - name: Account generated routing (public flags off)
+        run: npx playwright test --config playwright.accounts-generated.config.ts
+
       - name: Sidebar preference persistence
         run: npx playwright test e2e/sidebar-preference.spec.ts
 
@@ -118,3 +121,29 @@ jobs:
 
       - name: Diff hygiene
         run: git diff --check
+
+  accounts:
+    name: Account database and browser contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Account migrations, permissions and rollback (ephemeral PostgreSQL)
+        run: npm run test:accounts:db
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Account browser journeys (isolated simulated providers)
+        run: npm run test:e2e:accounts
+      - name: Account failure traces
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: account-report
+          path: test-results/accounts/
+          retention-days: 7
+          if-no-files-found: ignore

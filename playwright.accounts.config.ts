@@ -1,6 +1,6 @@
 import { defineConfig, devices } from "@playwright/test";
 
-const port = "8192";
+const port = process.env.PLAYWRIGHT_ACCOUNTS_PORT || "8192";
 const baseURL = `http://127.0.0.1:${port}`;
 // The portable deletion recipe consumes this explicit isolated origin too.
 process.env.PLAYWRIGHT_BASE_URL = baseURL;

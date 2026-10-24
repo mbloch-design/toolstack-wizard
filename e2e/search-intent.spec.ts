@@ -20,7 +20,7 @@ for (const [lang, query, expected] of [
  });
  test(`${lang}: global search respects intent ${query}`, async ({page}) => {
   await page.goto(`/${lang}/tools`);
-  await page.getByRole('button',{name:lang==='fr'?/^Rechercher \(/:/^Search \(/}).click();
+  await page.getByRole('button',{name:lang==='fr'?/^Rechercher dans le catalogue \(/:/^Search the catalogue \(/}).click();
   const dialog=page.getByRole('dialog',{name:lang==='fr'?'Recherche globale':'Global search',exact:true});
   await dialog.getByRole('combobox').fill(query);
   await expect(dialog.getByRole('option').filter({hasText:expected})).toBeVisible();

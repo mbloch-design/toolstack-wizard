@@ -1,7 +1,7 @@
 // Playwright-only loopback Auth/API simulation. No application imports this file.
 import { createServer } from 'vite';
 import { randomUUID } from 'node:crypto';
-const port = 8192;
+const port = Number(process.env.PLAYWRIGHT_ACCOUNTS_PORT || 8192);
 const origin = `http://127.0.0.1:${port}`;
 const users = new Map(), tokens = new Map(), stacks = new Map(), faults = [], requests = [];
 let oauthDenied = false;
@@ -202,7 +202,7 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
     } catch { return fail(res, 400, 'INVALID_FIXTURE_REQUEST'); }
   });
 } };
-const server = await createServer({ root: process.cwd(), cacheDir: 'node_modules/.vite-accounts-8192',
+const server = await createServer({ root: process.cwd(), cacheDir: `node_modules/.vite-accounts-${port}`,
   define: { 'import.meta.env.VITE_STACK_ACCOUNT_ENABLED': '"true"', 'import.meta.env.VITE_ACCOUNT_GOOGLE_ENABLED': '"true"', 'import.meta.env.VITE_ACCOUNT_GITHUB_ENABLED': '"true"', 'import.meta.env.VITE_SUPABASE_URL': JSON.stringify(origin), 'import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY': '"playwright-only-publishable-key"' },
   server: { host: '127.0.0.1', port, strictPort: true }, plugins: [fixture] });
 await server.listen(); console.log(`Playwright-only accounts fixture: ${origin}`);
