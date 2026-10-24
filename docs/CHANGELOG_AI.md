@@ -1,3 +1,7 @@
+## 2026-10-24 — Comptes publiés sur ToolTrim
+
+Code `dfd61b9db1`, CI complète verte (run 40106909635), intégration main sans push forcé et promotion du build Production testé `dpl_9s7cQjkj5wv2sVCbQWR4VSa4XRyv`. Accueil sans recherche en double, récupération sans faux lien invalide au rechargement. Sondes privées réelles réussies avant et après promotion ; réception des e-mails, récupération réelle, retour connecté sur Ma stack et refus de rejeu vérifiés. Deux comptes jetables révoqués et supprimés, configuration et procédure détaillées dans STACK_ACCOUNT_OPERATIONS.md. Compte rendu seul : aucun code supplémentaire, aucune migration ni modification des comptes existants.
+
 ## 2026-10-24 — Une seule recherche dans le header
 
 Retrait du champ historique qui doublonnait la recherche du groupe d'actions sur l'accueil. Le même contrôle reste à droite sur toutes les pages et sur mobile, avec Ma stack à sa droite. Régression reproduite en FR/EN sur ordinateur, puis quatre parcours mobile/ordinateur vérifient un seul déclencheur visible et l'ouverture du dialogue partagé. La préférence de navigation reste conservée. Rendu navigateur inspecté ; 901 tests applicatifs et cinq parcours de shell passent.
