@@ -1,3 +1,7 @@
+## 2026-10-24 — Informations de confidentialité des comptes
+
+La page de confidentialité FR/EN décrit les identités de connexion, le contenu des stacks sauvegardées, les champs métier/tarif facultatifs et les e-mails de compte via Resend. Elle précise les seules informations de base demandées à Google/GitHub. Aucun changement de collecte, de droit ou de durée de conservation. TypeScript app et design tokens validés avant commit ; recette de production encore en cours.
+
 ## 2026-10-24 — Footer : version épurée, fond blanc, logo
 
 Le footer passe sur une grille de 12 colonnes : le logo, la promesse et les deux actions sur les colonnes 1 à 4, les quatre colonnes de liens sur les colonnes 5 à 12. Fond blanc, filets entre les zones, typo du site (Inter Tight 600 pour les titres, 400 pour les liens en 15 px et les mentions en 13 px). Les badges passent avant la ligne légale. La carte « Ma stack » du footer est retirée (elle n'apportait rien), avec l'instantané `stackSnapshot` qui ne servait qu'à elle.

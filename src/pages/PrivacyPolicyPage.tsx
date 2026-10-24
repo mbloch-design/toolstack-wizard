@@ -28,7 +28,7 @@ const PrivacyPolicyPage = () => {
           {t("Politique de confidentialité", "Privacy Policy")}
         </h1>
         <p className="mt-4 text-sm text-muted-foreground">
-          {t("Dernière mise à jour : 12 octobre 2026", "Last updated: October 12, 2026")}
+          {t("Dernière mise à jour : 24 octobre 2026", "Last updated: October 24, 2026")}
         </p>
 
         <div className="mt-10 space-y-8 text-sm leading-relaxed text-muted-foreground">
@@ -40,6 +40,8 @@ const PrivacyPolicyPage = () => {
               <li>{t("Prénom (optionnel)", "First name (optional)")}</li>
               <li>{t("Outils sélectionnés dans le diagnostic", "Tools selected in the diagnostic")}</li>
               <li>{t("Profil utilisateur (type d'activité, maturité tech)", "User profile (activity type, tech maturity)")}</li>
+              <li>{t("Pour votre compte : adresse e-mail, nom d’affichage et, si vous utilisez Google ou GitHub, les informations d’identité de base transmises par ce fournisseur, dont votre avatar.", "For your account: email address, display name and, when signing in with Google or GitHub, the basic identity information provided by that service, including your avatar.")}</li>
+              <li>{t("Pour votre stack sauvegardée : outils, abonnements et montants renseignés, choix et usages déclarés, ainsi que votre métier et votre tarif journalier si vous les indiquez.", "For your saved stack: tools, recorded plans and amounts, declared choices and usage, plus your trade and daily rate if you provide them.")}</li>
               <li>{t("Signaux de mesure limités sans cookies via Google Analytics ; cookies et interactions détaillées uniquement après consentement", "Limited cookieless measurement signals via Google Analytics; cookies and detailed interactions only after consent")}</li>
             </ul>
           </section>
@@ -48,6 +50,7 @@ const PrivacyPolicyPage = () => {
             <h2 className="mb-3 font-heading text-lg font-semibold text-foreground">{t("Finalité du traitement", "Purpose of Processing")}</h2>
             <ul className="space-y-1 pl-4 list-disc">
               <li>{t("Générer vos résultats de diagnostic personnalisés", "Generate your personalized diagnostic results")}</li>
+              <li>{t("Vous connecter à votre espace, retrouver votre stack sur vos appareils et envoyer les e-mails nécessaires à la confirmation ou à la récupération de votre compte.", "Sign you in to your space, make your stack available across devices and send the emails needed to confirm or recover your account.")}</li>
               <li>{t("Améliorer la qualité de nos recommandations", "Improve the quality of our recommendations")}</li>
               <li>{t("Vous recontacter si vous avez opté pour le suivi", "Follow up if you opted in for communication")}</li>
               <li>{t("Analyser le trafic du site de manière agrégée", "Analyze site traffic in aggregate")}</li>
@@ -62,6 +65,8 @@ const PrivacyPolicyPage = () => {
             )}</p>
             <ul className="mt-2 space-y-1 pl-4 list-disc">
               <li><strong>Supabase</strong> — {t("hébergement de la base de données (UE)", "database hosting (EU)")}</li>
+              <li><strong>Resend</strong> — {t("envoi des e-mails de compte et de service", "delivery of account and service emails")}</li>
+              <li><strong>Google / GitHub</strong> — {t("authentification uniquement si vous choisissez ce mode de connexion ; aucun accès à vos dépôts GitHub, contacts ou fichiers Google n’est demandé", "authentication only when you choose that sign-in method; no access to your GitHub repositories, Google contacts or files is requested")}</li>
               <li><strong>Google Analytics</strong> — {t("Consent Mode avancé : signaux limités sans cookies avant accord ou après refus ; cookies et interactions détaillées après accord", "advanced Consent Mode: limited cookieless signals before consent or after refusal; cookies and detailed interactions after consent")}</li>
               <li><strong>DataFast et Vercel Web Analytics</strong> — {t("mesure d’audience sans cookies d’identification persistants, chargée indépendamment du choix Google Analytics", "audience measurement without persistent identification cookies, loaded independently of the Google Analytics choice")}</li>
             </ul>
