@@ -35,6 +35,8 @@ const POLITIQUE: Record<NatureLien, "dofollow" | "nofollow" | "sponsored"> = {
 
 const BASE = "noopener noreferrer";
 const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
+  "chronokura.com",
+  "www.chronokura.com",
   "franklymail.com",
   "www.franklymail.com",
   "snappack.io",
@@ -53,8 +55,6 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.getorlo.app",
   "glyphe.eu",
   "www.glyphe.eu",
-  "autophotos.ai",
-  "www.autophotos.ai",
   "commute.bar",
   "www.commute.bar",
   "inspoai.io",
@@ -125,7 +125,7 @@ export function relExterne(nature: NatureLien = "autre"): string {
  * de la base où il a atterri.
  */
 const PARAM_TRACKING = /[?&](via|ref|referral|aff|affiliate|fpr|partner|sponsor|rfsn|tap_a|tap_s|lmref|irclickid|deal|promo)=/i;
-const PLATEFORMES_AFFILIATION = /(^|\.)(partnerstack|impact|shareasale|cj|awin|refersion|tapfiliate|firstpromoter|affilae|lemonsqueezy|gumroad)\.(com|net|io)|partnerstack\.[a-z0-9-]+\.com/i;
+const PLATEFORMES_AFFILIATION = /(^|\.)(partnerstack|impact|shareasale|cj|awin|refersion|tapfiliate|firstpromoter|affilae|lemonsqueezy|gumroad)\.(com|net|io)|partnerstack\.[a-z0-9-]+\.com|partners\.kit\.com/i;
 
 export function estLienRemunere(url: string | null | undefined): boolean {
   const u = (url || "").trim();

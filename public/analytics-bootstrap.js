@@ -14,13 +14,6 @@
   }
   window.__tooltrimAnalyticsPrivateDocument = true;
   try {
-    if (sensitive(window.location.href) || sensitive(document.referrer)) return;
-    var script = document.createElement("script");
-    script.defer = true;
-    script.dataset.websiteId = "dfid_RKrD2vDEKLSNNPOu5wVhx";
-    script.dataset.domain = "tooltrim.com";
-    script.src = "https://datafa.st/js/script.cookieless.js";
-    document.head.appendChild(script);
-    window.__tooltrimAnalyticsPrivateDocument = false;
+    window.__tooltrimAnalyticsPrivateDocument = sensitive(window.location.href) || sensitive(document.referrer);
   } catch (e) { /* Fail closed: no successful bootstrap means no raw trackers. */ }
 })();

@@ -6,7 +6,7 @@ import { spawnSync } from "node:child_process";
 import { runInNewContext } from "node:vm";
 import { ModuleKind, transpileModule } from "typescript";
 
-it("generates only dated monthly prices and preserves whether the core offer is free", () => {
+it("keeps dated prices with the vendor's own period and preserves whether the core offer is free", () => {
   const root = mkdtempSync(path.join(tmpdir(), "tooltrim-native-prices-"));
   try {
     mkdirSync(path.join(root, "src/data"), { recursive: true });
@@ -26,8 +26,10 @@ it("generates only dated monthly prices and preserves whether the core offer is 
     const exported: { NATIVE_PRICES?: unknown } = {};
     runInNewContext(compiled, { exports: exported });
     expect(exported.NATIVE_PRICES).toEqual({
-      freemium: { amount: 20, currency: "USD", period: "monthly", freeCoreAvailable: true, verifiedOn: "2026-03-13" },
-      paid: { amount: 15, currency: "EUR", period: "monthly", freeCoreAvailable: false, verifiedOn: "2026-03-13" },
+      annual: { amount: 240, currency: "USD", period: "annual", freeCoreAvailable: false, verifiedOn: "2026-03-13", official: true },
+      freemium: { amount: 20, currency: "USD", period: "monthly", freeCoreAvailable: true, verifiedOn: "2026-03-13", official: true },
+      once: { amount: 100, currency: "EUR", period: "once", freeCoreAvailable: false, verifiedOn: "2026-03-13", official: true },
+      paid: { amount: 15, currency: "EUR", period: "monthly", freeCoreAvailable: false, verifiedOn: "2026-03-13", official: true },
     });
   } finally {
     rmSync(root, { recursive: true, force: true });

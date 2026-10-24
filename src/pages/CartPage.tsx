@@ -23,6 +23,7 @@ import { useStackUsage } from "@/hooks/useStackUsage";
 import { useStackTrade } from "@/hooks/useStackTrade";
 import { isUsageLevel } from "@/lib/personalStack";
 import StackAccountPanel from "@/components/stack/StackAccountPanel";
+import { useAddToStack } from "@/hooks/useAddToStack";
 import { useCategories, useToolSummaries, useToolBySlug, type ToolSummary } from "@/hooks/useSupabaseData";
 import { stackCatalogPrice, toolKey } from "@/lib/stackView";
 import { stackDisplayLabel, stackPlacement, stackMapTerritories, stackRelations } from "@/lib/stackUsage";
@@ -47,16 +48,15 @@ export default function CartPage() {
   const { tools, loading } = useToolSummaries();
   const { categories } = useCategories();
   const { state, persistenceStatus, pinTool, unpinTool, restoreTool, requiresAccount } = useStackPins();
-  // The day rate from the onboarding, as the value of one hour in the display currency (7-hour day).
   const { dailyRate } = useStackTrade();
-  // Adding needs a session once accounts are on: pinTool says no, and then no success is shown.
   const inventoryHeadingRef = useRef<HTMLHeadingElement>(null);
-  const addToStack = (slug: string, name: string, _options?: unknown) => {
+  const { addToStack: sharedAddToStack } = useAddToStack();
+  const addToStack = (slug: string, name: string, options: Parameters<typeof sharedAddToStack>[2] = {}) => {
     const wasEmpty = state.pinnedToolSlugs.length === 0;
-    if (!pinTool(slug)) return false;
-    if (wasEmpty) requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true }));
-    toast.success(t(`${name} ajouté à ma stack.`, `${name} added to your stack.`));
-    return true;
+    return sharedAddToStack(slug, name, { ...options, onAdded: () => {
+      options.onAdded?.();
+      if (wasEmpty) requestAnimationFrame(() => inventoryHeadingRef.current?.focus({ preventScroll: true }));
+    } });
   };
   const [params, setParams] = useSearchParams();
   const [domainFilter, setDomainFilter] = useState("all");
@@ -598,7 +598,7 @@ export default function CartPage() {
               <span className="ms-reco-price">{stackCatalogPrice(reco.tool, lang) || t("Prix non public", "Price not public")}</span>
             </Link>
             <button type="button" className="ms-reco-add" aria-label={t(`Ajouter ${reco.tool.name} à ma stack`, `Add ${reco.tool.name} to my stack`)}
-              onClick={(event) => { addToStack(toolKey(reco.tool), reco.tool.name, { origin: event.currentTarget.closest("li") }); trackEvent("stack_reco_add", { tool: toolKey(reco.tool) }); }}><Plus size={18} aria-hidden /></button>
+              onClick={(event) => { addToStack(toolKey(reco.tool), reco.tool.name, { origin: event.currentTarget.closest("li"), onAdded: () => trackEvent("stack_reco_add", { tool: toolKey(reco.tool) }) }); }}><Plus size={18} aria-hidden /></button>
           </li>)}</ul>
         </section>}
       </div>

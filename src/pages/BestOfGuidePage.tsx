@@ -2,11 +2,12 @@ import { useEffect, useMemo } from "react";
 import { Link } from "@/lib/routerLinks";
 import { Helmet } from "react-helmet-async";
 import Breadcrumb from "@/components/Breadcrumb";
-import FaqBlock from "@/components/FaqBlock";
+import GuideCover from "@/components/guide/GuideCover";
+import BestOfCard from "@/components/guide/BestOfCard";
 import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, SEO_BASE } from "@/lib/seo";
 import { quickPicks, rankTools, type BestOfTool, type Lang, type RankedTool } from "@/lib/bestOfRanking";
-import { ArrowRight, Check, HelpCircle, Layers, ShieldCheck, Sparkles, X, Cpu, AlertTriangle } from "@/lib/icons";
+import { ArrowRight, Check, ChevronDown, ShieldCheck, X, Cpu, AlertTriangle, Minus } from "@/lib/icons";
 import config from "@/data/bestOfGuides.json";
 import data from "@/data/bestOfGuidesData.json";
 
@@ -156,8 +157,24 @@ export default function BestOfGuidePage({ guideId, lang }: Props) {
     else pickCards.push(card);
   }
 
+  const checkedLabel = latestCheck
+    ? new Date(latestCheck).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-US", { day: "numeric", month: "long", year: "numeric" })
+    : null;
+  // Same table of contents as an article: the page sections, then each ranked tool.
+  const toc = [
+    { id: "gb-picks", text: t("Nos choix", "Our picks") },
+    { id: "gb-table", text: t("Le comparatif", "The comparison") },
+    ...rows.map((r) => ({ id: r.tool.slug, text: `${r.rank}. ${r.tool.name}` })),
+    { id: "gb-method", text: t("Notre méthode", "How we rank") },
+    { id: "gb-faq", text: t("Questions fréquentes", "FAQ") },
+  ];
+  // Three other rankings, starting after this one, so every page links onward.
+  const others = BEST_OF_GUIDES.filter((g) => g.id !== guide.id);
+  const start = Math.max(0, BEST_OF_GUIDES.findIndex((g) => g.id === guide.id)) % Math.max(1, others.length);
+  const more = [...others.slice(start), ...others.slice(0, start)].slice(0, 3);
+
   return (
-    <>
+    <div className="ga-page gb-page">
       <Helmet>
         <link rel="canonical" href={canonicalHref} />
         <link rel="alternate" hrefLang="fr" href={frHref} />
@@ -168,190 +185,242 @@ export default function BestOfGuidePage({ guideId, lang }: Props) {
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
-      <div className="gb-wrap gb-crumbs">
-        <Breadcrumb items={[{ label: t("Guides", "Guides"), href: `/${lang}/guides` }, { label: L(guide.h1) }]} />
-      </div>
-
-      <header className="gb-wrap gb-hero">
-        <p className="gb-eyebrow">
-          {t("Comparatif", "Comparison")} · {rows.length} {t("outils", "tools")}
-          {latestCheck ? ` · ${t("prix vérifiés le", "prices checked on")} ${new Date(latestCheck).toLocaleDateString(lang === "fr" ? "fr-FR" : "en-US", { day: "numeric", month: "long", year: "numeric" })}` : ""}
-        </p>
-        <h1 className="gb-title">{L(guide.h1)}</h1>
-        <p className="gb-intro">{L(guide.intro)}</p>
+      {/* Same header as an article: title and standfirst, the tools as cover. */}
+      <header className="ga-header">
+        <div className="ga-container">
+          <div className="ga-hero-split">
+            <div className="ga-hero-main">
+              <Breadcrumb items={[{ label: t("Guides", "Guides"), href: `/${lang}/guides` }, { label: L(guide.h1) }]} />
+              <div className="ga-eyebrow-row">
+                <span className="ga-eyebrow-item">{t("Classement", "Ranking")}</span>
+                <span className="ga-eyebrow-item">{rows.length} {t("outils comparés", "tools compared")}</span>
+                {checkedLabel ? <span className="ga-eyebrow-item">{t(`Prix vérifiés le ${checkedLabel}`, `Prices checked ${checkedLabel}`)}</span> : null}
+              </div>
+              <h1 className="ga-title">{L(guide.h1)}</h1>
+              <p className="ga-standfirst">{L(guide.intro)}</p>
+            </div>
+            <GuideCover
+              tools={rows.slice(0, 4).map((r) => ({ slug: r.tool.slug, name: r.tool.name, logo: r.tool.logo || undefined, websiteUrl: r.tool.websiteUrl || undefined, hasPricing: true }))}
+              fallbackImage=""
+              className="ga-hero-image"
+              eager
+            />
+          </div>
+        </div>
       </header>
 
-      <section className="gb-wrap gb-section" aria-labelledby="gb-picks">
-        <h2 id="gb-picks" className="gb-h2">{t("Nos choix en bref", "Our picks at a glance")}</h2>
-        <div className="gb-picks">
-          {pickCards.filter((c) => c.row).map(({ key, label, row }) => (
-            <a key={key} href={`#${row!.tool.slug}`} className="gb-pick">
-              <span className="gb-pick-label">{label}</span>
-              <span className="gb-pick-tool">
-                <ToolLogo tool={row!.tool as any} size={32} className="gb-logo" />
-                <span className="gb-pick-name">{row!.tool.name}</span>
-              </span>
-              <span className="gb-pick-meta">
-                {key === "free" && row!.priceKind !== "free" ? t("Plan gratuit, puis ", "Free plan, then ") + priceLabel(row!, lang).replace(/^(Dès|From) /, (m) => m.toLowerCase()) : priceLabel(row!, lang)}
-                {row!.score != null ? ` · ${fmtScore(row!.score, lang)}` : ""}
-              </span>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {guide.angle && (
-        <section className="gb-wrap gb-section">
-          <div className="gb-angle">
-            <p className="gb-angle-label"><AlertTriangle className="gb-icon" aria-hidden="true" />{t("L'avis ToolTrim", "The ToolTrim take")}</p>
-            <p className="gb-angle-text">{L(guide.angle)}</p>
-          </div>
-        </section>
-      )}
-
-      <section className="gb-wrap gb-section" aria-labelledby="gb-table">
-        <h2 id="gb-table" className="gb-h2">{t("Le comparatif", "The comparison")}</h2>
-        <div className="gb-table-scroll">
-          <table className="gb-table">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">{t("Outil", "Tool")}</th>
-                <th scope="col">{t("Prix d'entrée", "Entry price")}</th>
-                <th scope="col">{t("Plan gratuit", "Free plan")}</th>
-                <th scope="col">{t("Note ToolTrim", "ToolTrim score")}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((r) => (
-                <tr key={r.tool.slug}>
-                  <td className="gb-rank">{r.rank}</td>
-                  <td>
-                    <a href={`#${r.tool.slug}`} className="gb-table-tool">
-                      <span className="gb-table-name">{r.tool.name}</span>
-                      {r.tool.tagline?.[lang] && <span className="gb-table-tagline">{r.tool.tagline[lang]}</span>}
-                    </a>
-                  </td>
-                  <td>{priceLabel(r, lang)}</td>
-                  <td>
-                    {r.hasFreePlan
-                      ? <Check className="gb-icon gb-yes" aria-label={t("Oui", "Yes")} />
-                      : r.freeNonCommercialOnly
-                        ? <span className="gb-table-tagline">{t("Non commercial seulement", "Non-commercial only")}</span>
-                        : <X className="gb-icon gb-no" aria-label={t("Non", "No")} />}
-                  </td>
-                  <td>{fmtScore(r.score, lang)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="gb-note">
-          {t(
-            "Prix du plan de comparaison, tel que publié par l'éditeur, dans sa devise. Un prix annuel est ramené au mois.",
-            "Price of the comparison plan, as published by the vendor, in its currency. Annual prices are shown per month.",
-          )}
-        </p>
-      </section>
-
-      {guide.ai && (
-        <section className="gb-wrap gb-section" aria-labelledby="gb-ai">
-          <h2 id="gb-ai" className="gb-h2"><Cpu className="gb-icon" aria-hidden="true" />{L(guide.ai.title)}</h2>
-          <p className="gb-text">{L(guide.ai.intro)}</p>
-          <ul className="gb-ai-list">
-            {rows.map((r) => (
-              <li key={r.tool.slug} className="gb-ai-item">
-                <span className="gb-ai-name">{r.tool.name}</span>
-                <span className="gb-ai-text">{guide.ai!.notes[r.tool.slug] ? L(guide.ai!.notes[r.tool.slug]) : L(guide.ai!.none)}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      <section className="gb-wrap gb-section" aria-labelledby="gb-reviews">
-        <h2 id="gb-reviews" className="gb-h2">{t("Le détail, outil par outil", "Tool by tool")}</h2>
-        {rows.map((r) => {
-          const v = lang === "en" ? r.tool.verdictEn : r.tool.verdict;
-          const pros = (lang === "en" ? r.tool.prosEn : r.tool.pros) || [];
-          const cons = (lang === "en" ? r.tool.consEn : r.tool.cons) || [];
-          const desc = lang === "en" ? r.tool.shortDescriptionEn || r.tool.shortDescription : r.tool.shortDescription;
-          const free = lang === "en" ? r.tool.pricingEn?.free : r.tool.pricing?.free;
-          const trap = v?.billingTraps?.[0]?.text;
-          return (
-            <article key={r.tool.slug} id={r.tool.slug} className="gb-review">
-              <div className="gb-review-head">
-                <ToolLogo tool={r.tool as any} size={40} className="gb-logo" />
-                <div>
-                  <h3 className="gb-h3">{r.rank}. {r.tool.name}</h3>
-                  {r.tool.tagline?.[lang] && <p className="gb-review-tagline">{r.tool.tagline[lang]}</p>}
-                </div>
+      <div className="ga-body-outer">
+        <div className="ga-body-grid">
+          <article className="gb-article">
+            <section id="gb-picks" className="gb-section" aria-labelledby="gb-picks-title">
+              <h2 id="gb-picks-title" className="gb-h2">{t("Nos choix en bref", "Our picks at a glance")}</h2>
+              <div className="gb-picks">
+                {pickCards.filter((c) => c.row).map(({ key, label, row }) => (
+                  <a key={key} href={`#${row!.tool.slug}`} className="gb-pick">
+                    <ToolLogo tool={row!.tool as any} size={44} alt="" />
+                    <span className="gb-pick-label">{label}</span>
+                    <span className="gb-pick-name">{row!.tool.name}</span>
+                    <span className="gb-pick-meta">
+                      {key === "free" && row!.priceKind !== "free" ? t("Plan gratuit, puis ", "Free plan, then ") + priceLabel(row!, lang).replace(/^(Dès|From) /, (m) => m.toLowerCase()) : priceLabel(row!, lang)}
+                      {row!.score != null ? ` · ${fmtScore(row!.score, lang)}` : ""}
+                    </span>
+                  </a>
+                ))}
               </div>
-              <p className="gb-facts">
-                <span>{priceLabel(r, lang)}</span>
-                {r.score != null && <span>{t("Note", "Score")} {fmtScore(r.score, lang)} · {r.scoreLabel}</span>}
-              </p>
-              {desc && <p className="gb-text">{desc}</p>}
-              {free && (r.hasFreePlan || r.freeNonCommercialOnly) && <p className="gb-text gb-muted">{free}</p>}
-              {(pros.length > 0 || cons.length > 0) && (
-                <div className="gb-proscons">
-                  {pros.length > 0 && (
-                    <ul className="gb-list">
-                      {pros.map((p) => <li key={p}><Check className="gb-icon gb-yes" aria-hidden="true" />{p}</li>)}
-                    </ul>
-                  )}
-                  {cons.length > 0 && (
-                    <ul className="gb-list">
-                      {cons.map((c) => <li key={c}><X className="gb-icon gb-no" aria-hidden="true" />{c}</li>)}
-                    </ul>
-                  )}
-                </div>
+              {guide.angle && (
+                <aside className="gb-take">
+                  <p className="gb-take-label">{t("L'avis ToolTrim", "The ToolTrim take")}</p>
+                  <p className="gb-take-text">{L(guide.angle)}</p>
+                </aside>
               )}
-              {v && (v.keepIf?.[0] || v.avoidIf?.[0]) && (
-                <dl className="gb-verdict">
-                  {v.keepIf?.[0] && (<><dt>{t("Garde-le si", "Keep it if")}</dt><dd>{v.keepIf[0]}</dd></>)}
-                  {v.avoidIf?.[0] && (<><dt>{t("Évite-le si", "Avoid it if")}</dt><dd>{v.avoidIf[0]}</dd></>)}
-                  {trap && (<><dt>{t("Avant de payer", "Before you pay")}</dt><dd>{trap}</dd></>)}
-                </dl>
-              )}
-              <p className="gb-links">
-                <Link to={toolHref(r.tool.slug)}>{t("Fiche complète", "Full review")}</Link>
-                <Link to={toolHref(r.tool.slug, "pricing")}>{t("Tous les prix", "All prices")}</Link>
-                <Link to={toolHref(r.tool.slug, "alternatives")}>{t("Alternatives", "Alternatives")}</Link>
+            </section>
+
+            <section id="gb-table" className="gb-section" aria-labelledby="gb-table-title">
+              <h2 id="gb-table-title" className="gb-h2">{t("Le comparatif", "The comparison")}</h2>
+              <div className="gb-table-scroll">
+                <table className="gb-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">{t("Outil", "Tool")}</th>
+                      <th scope="col">{t("Prix d'entrée", "Entry price")}</th>
+                      <th scope="col">{t("Plan gratuit", "Free plan")}</th>
+                      <th scope="col">{t("Note", "Score")}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {rows.map((r) => (
+                      <tr key={r.tool.slug}>
+                        <td className="gb-rank">{r.rank}</td>
+                        <td>
+                          <a href={`#${r.tool.slug}`} className="gb-table-tool">
+                            <ToolLogo tool={r.tool as any} size={28} alt="" />
+                            <span>
+                              <span className="gb-table-name">{r.tool.name}</span>
+                              {r.tool.tagline?.[lang] && <span className="gb-table-tagline">{r.tool.tagline[lang]}</span>}
+                            </span>
+                          </a>
+                        </td>
+                        <td>{priceLabel(r, lang)}</td>
+                        <td>
+                          {r.hasFreePlan
+                            ? <Check className="gb-icon gb-yes" aria-label={t("Oui", "Yes")} />
+                            : r.freeNonCommercialOnly
+                              ? <span className="gb-table-tagline">{t("Non commercial seulement", "Non-commercial only")}</span>
+                              : <Minus className="gb-icon gb-no" aria-label={t("Non", "No")} />}
+                        </td>
+                        <td className="gb-score">{fmtScore(r.score, lang)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="gb-note">
+                {t(
+                  "Prix du plan de comparaison, tel que publié par l'éditeur, dans sa devise. Un prix annuel est ramené au mois.",
+                  "Price of the comparison plan, as published by the vendor, in its currency. Annual prices are shown per month.",
+                )}
               </p>
-            </article>
-          );
-        })}
-      </section>
+            </section>
 
-      <section className="gb-wrap gb-section" aria-labelledby="gb-method">
-        <h2 id="gb-method" className="gb-h2"><ShieldCheck className="gb-icon" aria-hidden="true" />{t("Notre méthode", "How we rank")}</h2>
-        <p className="gb-text">
-          {t(
-            "Le classement suit la note ToolTrim sur cinq axes, chacune appuyée par une source citée dans la fiche de l'outil. À note égale, l'outil le plus recherché passe devant. Les prix viennent de la page officielle de chaque éditeur, sans conversion. Les liens vers les éditeurs peuvent être affiliés ; ils ne changent ni la note ni la place.",
-            "The ranking follows the ToolTrim five-axis score, each axis backed by a source cited on the tool's page. When two scores tie, the more searched tool goes first. Prices come from each vendor's official page, never converted. Links to vendors may be affiliate links; they change neither the score nor the position.",
-          )}
-        </p>
-      </section>
+            {guide.ai && (
+              <section className="gb-section" aria-labelledby="gb-ai">
+                <h2 id="gb-ai" className="gb-h2"><Cpu className="gb-icon" aria-hidden="true" />{L(guide.ai.title)}</h2>
+                <p className="gb-text">{L(guide.ai.intro)}</p>
+                <ul className="gb-ai-list">
+                  {rows.map((r) => (
+                    <li key={r.tool.slug} className="gb-ai-item">
+                      <span className="gb-ai-name">{r.tool.name}</span>
+                      <span className="gb-ai-text">{guide.ai!.notes[r.tool.slug] ? L(guide.ai!.notes[r.tool.slug]) : L(guide.ai!.none)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
-      <section className="gb-wrap gb-section">
-        <FaqBlock
-          eyebrow={t("Questions fréquentes", "Frequently asked questions")}
-          title={t("Questions fréquentes", "Frequently asked questions")}
-          description={t("Les réponses reprennent les données du comparatif ci-dessus.", "Answers draw on the comparison data above.")}
-          items={faqs.map((f, i) => ({ ...f, icon: [HelpCircle, Sparkles, Layers, ShieldCheck][i] || HelpCircle }))}
-          openCount={2}
-        />
-      </section>
+            {/* Each tool in the language of its own page: header, judgments,
+                « keep it if / avoid it if » cards, the billing trap, the ways in. */}
+            <section className="gb-section" aria-labelledby="gb-reviews">
+              <h2 id="gb-reviews" className="gb-h2">{t("Le détail, outil par outil", "Tool by tool")}</h2>
+              {rows.map((r) => {
+                const v = lang === "en" ? r.tool.verdictEn : r.tool.verdict;
+                const pros = (lang === "en" ? r.tool.prosEn : r.tool.pros) || [];
+                const cons = (lang === "en" ? r.tool.consEn : r.tool.cons) || [];
+                const desc = lang === "en" ? r.tool.shortDescriptionEn || r.tool.shortDescription : r.tool.shortDescription;
+                const free = lang === "en" ? r.tool.pricingEn?.free : r.tool.pricing?.free;
+                const trap = v?.billingTraps?.[0]?.text;
+                return (
+                  <article key={r.tool.slug} id={r.tool.slug} className="gb-review">
+                    <header className="gb-review-head">
+                      <span className="gb-review-rank" aria-hidden="true">{r.rank}</span>
+                      <ToolLogo tool={r.tool as any} size={52} alt="" />
+                      <div className="gb-review-id">
+                        <h3 className="gb-h3"><span className="sr-only">{r.rank}. </span>{r.tool.name}</h3>
+                        {r.tool.tagline?.[lang] && <p className="gb-review-tagline">{r.tool.tagline[lang]}</p>}
+                      </div>
+                      <p className="gb-facts">
+                        <span>{priceLabel(r, lang)}</span>
+                        {r.score != null && <span>{fmtScore(r.score, lang)} · {r.scoreLabel}</span>}
+                      </p>
+                    </header>
+                    {desc && <p className="gb-text">{desc}</p>}
+                    {free && (r.hasFreePlan || r.freeNonCommercialOnly) && <p className="gb-text gb-muted">{free}</p>}
+                    {(pros.length > 0 || cons.length > 0) && (
+                      <div className="gb-proscons">
+                        {pros.length > 0 && (
+                          <div>
+                            <p className="gb-kicker">{t("Points forts", "Strengths")}</p>
+                            <ul className="gb-list">
+                              {pros.map((p) => <li key={p}><Check className="gb-icon gb-yes" aria-hidden="true" />{p}</li>)}
+                            </ul>
+                          </div>
+                        )}
+                        {cons.length > 0 && (
+                          <div>
+                            <p className="gb-kicker">{t("Limites", "Limits")}</p>
+                            <ul className="gb-list">
+                              {cons.map((c) => <li key={c}><Minus className="gb-icon gb-no" aria-hidden="true" />{c}</li>)}
+                            </ul>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    {v && (v.keepIf?.[0] || v.avoidIf?.[0]) && (
+                      <div className="gb-fit">
+                        {v.keepIf?.[0] && (
+                          <div className="gb-fit-card">
+                            <p className="gb-kicker"><Check className="gb-icon" aria-hidden="true" />{t("Garde-le si", "Keep it if")}</p>
+                            <p>{v.keepIf[0]}</p>
+                          </div>
+                        )}
+                        {v.avoidIf?.[0] && (
+                          <div className="gb-fit-card">
+                            <p className="gb-kicker"><X className="gb-icon" aria-hidden="true" />{t("Évite-le si", "Avoid it if")}</p>
+                            <p>{v.avoidIf[0]}</p>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                    {trap && (
+                      <p className="gb-trap"><AlertTriangle className="gb-icon" aria-hidden="true" /><span><strong>{t("Avant de payer", "Before you pay")}</strong> {trap}</span></p>
+                    )}
+                    <p className="gb-links">
+                      <Link to={toolHref(r.tool.slug)} className="gb-link-primary">{t(`Voir la fiche ${r.tool.name}`, `See the ${r.tool.name} review`)}<ArrowRight className="gb-icon" aria-hidden="true" /></Link>
+                      <Link to={toolHref(r.tool.slug, "pricing")}>{t("Tous les prix", "All prices")}</Link>
+                      <Link to={toolHref(r.tool.slug, "alternatives")}>{t("Alternatives", "Alternatives")}</Link>
+                    </p>
+                  </article>
+                );
+              })}
+            </section>
 
-      <nav className="gb-wrap gb-section gb-more" aria-label={t("Autres comparatifs", "More comparisons")}>
-        <h2 className="gb-h2">{t("Autres comparatifs", "More comparisons")}</h2>
-        <ul className="gb-more-list">
-          {BEST_OF_GUIDES.filter((g) => g.id !== guide.id).map((g) => (
-            <li key={g.id}><Link to={`/${lang}/guide/${g.slug[lang]}`}>{g.h1[lang]}<ArrowRight className="gb-icon" aria-hidden="true" /></Link></li>
-          ))}
-        </ul>
+            <section id="gb-method" className="gb-section gb-method" aria-labelledby="gb-method-title">
+              <h2 id="gb-method-title" className="gb-h2"><ShieldCheck className="gb-icon" aria-hidden="true" />{t("Notre méthode", "How we rank")}</h2>
+              <p className="gb-text">
+                {t(
+                  "Le classement suit la note ToolTrim sur cinq axes, chacune appuyée par une source citée dans la fiche de l'outil. À note égale, l'outil le plus recherché passe devant. Les prix viennent de la page officielle de chaque éditeur, sans conversion. Les liens vers les éditeurs peuvent être affiliés ; ils ne changent ni la note ni la place.",
+                  "The ranking follows the ToolTrim five-axis score, each axis backed by a source cited on the tool's page. When two scores tie, the more searched tool goes first. Prices come from each vendor's official page, never converted. Links to vendors may be affiliate links; they change neither the score nor the position.",
+                )}
+              </p>
+            </section>
+
+            <section id="gb-faq" className="gb-section" aria-labelledby="gb-faq-title">
+              <h2 id="gb-faq-title" className="gb-h2">{t("Questions fréquentes", "Frequently asked questions")}</h2>
+              <div className="gb-faq">
+                {faqs.map((f, i) => (
+                  <details key={f.question} className="gb-faq-item" open={i < 2}>
+                    <summary>
+                      <h3>{f.question}</h3>
+                      <ChevronDown className="gb-icon" aria-hidden="true" />
+                    </summary>
+                    <p>{f.answer}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          </article>
+
+          <aside className="ga-toc-col">
+            <p className="ga-toc-label">{t("Sur cette page", "On this page")}</p>
+            <nav className="ga-toc-nav" aria-label={t("Sur cette page", "On this page")}>
+              {toc.map((item) => <a key={item.id} href={`#${item.id}`} className="ga-toc-link">{item.text}</a>)}
+            </nav>
+          </aside>
+        </div>
+      </div>
+
+      {/* The same cards as on the guides index: every ranking links onward. */}
+      <nav className="gb-more" aria-labelledby="gb-more-title">
+        <div className="gb-more-inner">
+          <div className="gi-section-head">
+            <h2 id="gb-more-title">{t("Autres classements", "More rankings")}</h2>
+            <Link to={`/${lang}/guides`} className="gb-more-all">{t("Tous les classements", "All rankings")}<ArrowRight className="gb-icon" aria-hidden="true" /></Link>
+          </div>
+          <div className="gi-bestof-grid">
+            {more.map((g) => <BestOfCard key={g.id} guideId={g.id} lang={lang} />)}
+          </div>
+        </div>
       </nav>
-    </>
+    </div>
   );
 }

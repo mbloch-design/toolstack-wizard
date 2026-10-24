@@ -2086,7 +2086,7 @@
   "productive-io": {
     "id": "productive-io",
     "slug": "productive-io",
-    "name": "Productive Io",
+    "name": "Productive",
     "logo": "https://logo.clearbit.com/productive.io",
     "websiteUrl": "https://productive.io",
     "tagline": {
@@ -3912,5 +3912,2772 @@
     ],
     "researchedOn": "2026-09-25",
     "demand": 944
+  },
+  "nordpass": {
+    "id": "nordpass",
+    "slug": "nordpass",
+    "name": "NordPass",
+    "logo": null,
+    "websiteUrl": "https://nordpass.com",
+    "tagline": {
+      "fr": "Gestionnaire mots de passe",
+      "en": "Password manager"
+    },
+    "shortDescription": "Gestionnaire de mots de passe chiffré de Nord Security, avec un plan gratuit et des offres entreprise par siège.",
+    "shortDescriptionEn": "Encrypted password manager from Nord Security, with a free tier and per-seat business plans.",
+    "pricing": {
+      "free": "Offre gratuite : sauvegarde et remplissage automatique, stockage sécurisé, sans accès multi-appareils ni analyse des fuites.",
+      "paid": "Premium à 1,39 €/mois en tarif promotionnel sur 2 ans (37,53 € pour les 27 premiers mois, HT) ; 1,99 €/mois sur 1 an. Renouvellement non affiché."
+    },
+    "pricingEn": {
+      "free": "Free plan: autosave/autofill and secure storage, without multi-device access or breach scanning.",
+      "paid": "Premium at $1.39/month on the promotional 2-year plan ($37.53 for the first 27 months, excl. tax). Renewal price not shown."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Premium",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 1.39,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "biennial_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Premium",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 1.39,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "biennial_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu es seul ou en équipe de 5 personnes ou plus et tu veux un coffre-fort partagé simple et pas cher."
+      ],
+      "avoidIf": [
+        "Tu es en équipe de 2 à 4 personnes, car le palier entreprise le moins cher facture quand même 5 à 10 sièges."
+      ],
+      "threshold": "En dessous de 5 utilisateurs, compare le coût par siège de Business à un outil par compte où chacun garde un abonnement payant individuel.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le prix affiché au paiement est une promotion de première période ; le renouvellement est facturé à un tarif plus élevé, non communiqué à l'avance."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You are a solo user or a team of 5+ that wants a cheap, simple shared vault."
+      ],
+      "avoidIf": [
+        "You are a team of 2 to 4 people, since the cheapest business tier still bills for 5 to 10 seats."
+      ],
+      "threshold": "Below 5 users, compare the per-seat cost of Business against a per-account tool that lets each person keep an individual paid account.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The price shown at checkout is a first-term promotion; renewal is billed at a higher, undisclosed rate."
+        }
+      ]
+    },
+    "pros": [
+      "Prix d'entrée bas pour un utilisateur seul, moins de 2 euros par mois pour Premium.",
+      "Interface propre et rapide sur ordinateur, mobile et extensions navigateur."
+    ],
+    "prosEn": [
+      "Cheap entry price for a solo user, under 2 euros a month for Premium.",
+      "Clean, fast interface across desktop, mobile and browser extensions."
+    ],
+    "cons": [
+      "Les offres entreprise imposent un minimum de 5 ou 10 utilisateurs, mal adapté à une équipe de 1 à 3 personnes.",
+      "Les prix annoncés sont promotionnels ; les tarifs de renouvellement sont plus élevés et non publiés à l'avance."
+    ],
+    "consEn": [
+      "Business tiers force a 5 or 10 user minimum, poor fit for a 1 to 3 person team.",
+      "Advertised prices are promotional; renewal rates are higher and not published upfront."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 1020
+  },
+  "1password": {
+    "id": "1password",
+    "slug": "1password",
+    "name": "1Password",
+    "logo": null,
+    "websiteUrl": "https://1password.com",
+    "tagline": {
+      "fr": "Mots de passe",
+      "en": "Password manager"
+    },
+    "shortDescription": "1Password génère, stocke et remplit automatiquement les mots de passe sur tous les appareils, avec alertes de fuite et partage sécurisé intégrés.",
+    "shortDescriptionEn": "1Password generates, stores and autofills passwords across devices, with breach alerts and secure sharing built in.",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente, essai de 14 jours.",
+      "paid": "Individual à 2,74 €/mois facturé à l'année la première année (prix normal 3,65 €/mois)."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 14-day trial.",
+      "paid": "Individual at $2.99/month billed yearly for the first year (regular price $3.99/month)."
+    },
+    "defaultMonthlyPrice": 2.57,
+    "pricing_v5": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Individual",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "individual",
+          "displayName": "Individual",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 2.74,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Individual",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "individual",
+          "displayName": "Individual",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 2.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu as besoin d'un stockage de mots de passe partagé et sécurisé sur plusieurs appareils ou une petite équipe et tu apprécies les alertes de fuite Watchtower."
+      ],
+      "avoidIf": [
+        "Tu veux un gestionnaire de mots de passe gratuit en permanence ou plus d'1 Go de stockage de documents joints par utilisateur."
+      ],
+      "threshold": "Individual coûte 47,88 $/an au tarif normal de 3,99 $/mois une fois la promo de la première année terminée ; prévois ce prix de renouvellement.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le prix annuel affiché (2,99 $/mois Individual, 4,49 $/mois Families) est une promo de première année réservée aux nouveaux clients directs ; il repasse au tarif normal après un an, et les abonnements via les stores d'applications n'ont jamais ce tarif."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You need shared, secure password storage across devices or a small team and value Watchtower's breach alerts."
+      ],
+      "avoidIf": [
+        "You want a permanently free password manager or need more than 1 GB of attached document storage per user."
+      ],
+      "threshold": "Individual costs $47.88/year at the regular $3.99/month rate once the first-year promo ends; budget for that renewal price.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The advertised annual price ($2.99/mo Individual, $4.49/mo Families) is a first-year promo for new direct customers only; it rises to the regular price after year one, and app-store subscriptions never get the promo rate."
+        }
+      ]
+    },
+    "pros": [
+      "Remplissage automatique, partage et alertes de fuite Watchtower fonctionnent directement sur tous les appareils.",
+      "Protection à deux niveaux (mot de passe et Secret Key) en plus des clés d'accès et de la double authentification."
+    ],
+    "prosEn": [
+      "Autofill, sharing and Watchtower breach alerts work across devices out of the box.",
+      "Dual-layer protection (password plus Secret Key) alongside passkey and 2FA support."
+    ],
+    "cons": [
+      "Pas de palier gratuit ; chaque plan devient payant après l'essai.",
+      "Le plafond de stockage à 1 Go par utilisateur sur les plans grand public limite les gros documents joints."
+    ],
+    "consEn": [
+      "No free tier; every plan becomes paid after the trial.",
+      "1 GB storage cap per user on consumer plans limits large attached documents."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 784
+  },
+  "bitwarden": {
+    "id": "bitwarden",
+    "slug": "bitwarden",
+    "name": "Bitwarden",
+    "logo": null,
+    "websiteUrl": "https://bitwarden.com",
+    "tagline": null,
+    "shortDescription": "Gestionnaire de mots de passe open source, gratuit et multiplateforme.",
+    "shortDescriptionEn": "Open-source, free, cross-platform password manager.",
+    "pricing": {
+      "free": "Offre gratuite permanente : appareils et mots de passe illimités, partage avec un autre utilisateur.",
+      "paid": "Premium à 1,65 $/mois, facturé 19,80 $ par an."
+    },
+    "pricingEn": {
+      "free": "Always-free plan: unlimited devices and passwords, sharing with one other user.",
+      "paid": "Premium at $1.65/month, billed $19.80 per year."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Premium",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 1.65,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": null,
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un gestionnaire de mots de passe open-source et de confiance.",
+        "L'auto-hébergement ou le contrôle des données est crucial pour vous."
+      ],
+      "avoidIf": [
+        "Vous avez besoin du support commercial premium inclus.",
+        "Vous préférez une interface web entièrement gérée."
+      ],
+      "threshold": "Bitwarden convient aux équipes et entreprises valorisant l'open-source et le contrôle des données ; pour un usage très basique gratuit, des alternatives plus simples existent.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want an open-source, trustworthy password manager.",
+        "Self-hosting or data control is crucial for you."
+      ],
+      "avoidIf": [
+        "You need premium commercial support included.",
+        "You prefer a fully managed web interface."
+      ],
+      "threshold": "Bitwarden fits teams and enterprises valuing open-source and data control; for very basic free use, simpler alternatives exist.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Entièrement open-source et transparent sur le chiffrement.",
+      "Plan gratuit complet et illimité pour particuliers."
+    ],
+    "prosEn": [
+      "Fully open-source and transparent about encryption.",
+      "Complete, unlimited free plan for individuals."
+    ],
+    "cons": [
+      "Configuration de l'auto-hébergement requiert expertise technique.",
+      "Support commercial moins développé que 1Password."
+    ],
+    "consEn": [
+      "Self-hosting setup requires technical expertise.",
+      "Commercial support less developed than 1Password."
+    ],
+    "researchedOn": null,
+    "demand": 79
+  },
+  "proton-pass": {
+    "id": "proton-pass",
+    "slug": "proton-pass",
+    "name": "Proton Pass",
+    "logo": null,
+    "websiteUrl": "https://proton.me/pass",
+    "tagline": {
+      "fr": "Gestionnaire mots de passe",
+      "en": "Password manager"
+    },
+    "shortDescription": "Gestionnaire de mots de passe chiffré de bout en bout de Proton, avec une offre gratuite sans limite d'identifiants et des alias e-mail.",
+    "shortDescriptionEn": "Proton's end-to-end encrypted password manager, with a free plan that has no login limit and built-in email aliases.",
+    "pricing": {
+      "free": "Gratuit : identifiants et appareils illimités, 10 alias e-mail.",
+      "paid": "Pass Plus 2,99 €/mois facturés 35,88 € par an (4,99 € en mensuel) ; Pass Family 4,99 €/mois en annuel pour 6 utilisateurs."
+    },
+    "pricingEn": {
+      "free": "Free: unlimited logins and devices, 10 email aliases.",
+      "paid": "Pass Plus $2.99/month billed $35.88 a year ($4.99 monthly); Pass Family $4.99/month yearly for 6 users."
+    },
+    "defaultMonthlyPrice": 2.99,
+    "pricing_v5": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Pass Plus",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Proton Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "pass-plus-yearly",
+          "displayName": "Pass Plus",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 2.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Pass Plus",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Proton Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "pass-plus-yearly",
+          "displayName": "Pass Plus",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 2.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": null,
+    "verdict": {
+      "keepIf": [
+        "Tu veux un gestionnaire de mots de passe gratuit sans limite d'identifiants ni d'appareils, ou tu utilises déjà Proton Mail."
+      ],
+      "avoidIf": [
+        "Tu as besoin d'une gestion d'équipe avancée : les offres entreprise sont à part et non couvertes ici."
+      ],
+      "threshold": "L'offre gratuite suffit pour stocker et synchroniser ses mots de passe ; Pass Plus (35,88 €/an) se justifie si tu veux des alias illimités ou les codes 2FA dans le même coffre.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le prix affiché de 2,99 €/mois suppose 35,88 € payés pour un an ; en mensuel, Pass Plus coûte 4,99 €."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a free password manager with no login or device limit, or you already use Proton Mail."
+      ],
+      "avoidIf": [
+        "You need advanced team management: business plans are separate and not covered here."
+      ],
+      "threshold": "The free plan covers storing and syncing passwords; Pass Plus ($35.88 a year) pays off if you want unlimited aliases or 2FA codes in the same vault.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The $2.99/month headline assumes $35.88 paid for a year; billed monthly, Pass Plus is $4.99."
+        }
+      ]
+    },
+    "pros": [
+      "Offre gratuite sans limite d'identifiants ni d'appareils.",
+      "Alias e-mail masqués intégrés, illimités en Pass Plus."
+    ],
+    "prosEn": [
+      "Free plan with no login or device limit.",
+      "Built-in hide-my-email aliases, unlimited on Pass Plus."
+    ],
+    "cons": [
+      "Authentificateur 2FA, partage d'éléments et pièces jointes réservés aux offres payantes.",
+      "Le prix bas suppose un engagement d'un an."
+    ],
+    "consEn": [
+      "2FA authenticator, item sharing and attachments are paid-only.",
+      "The low price requires a one-year commitment."
+    ],
+    "researchedOn": "2026-10-20",
+    "demand": 0
+  },
+  "dashlane": {
+    "id": "dashlane",
+    "slug": "dashlane",
+    "name": "Dashlane",
+    "logo": null,
+    "websiteUrl": "https://dashlane.com",
+    "tagline": {
+      "fr": "Coffre-fort numérique",
+      "en": "Password manager"
+    },
+    "shortDescription": "Un gestionnaire de mots de passe pour particuliers, familles et entreprises, avec remplissage automatique, partage sécurisé et contrôles d'administration pour les équipes.",
+    "shortDescriptionEn": "A password manager and credential vault for individuals, families and businesses, with autofill, secure sharing and admin controls for teams.",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente, essai de 14 jours.",
+      "paid": "Premium à 4,00 € HT/mois facturé à l'année."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 14-day trial.",
+      "paid": "Premium at $5.42/month billed yearly."
+    },
+    "defaultMonthlyPrice": 4,
+    "pricing_v5": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Premium",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 4,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Premium",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 5.42,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux un coffre-fort mono-compte à 4 EUR/mois, un coffre-fort familial partagé à prix fixe, ou tu diriges une entreprise qui a besoin de SSO/SCIM et es prêt à demander un devis."
+      ],
+      "avoidIf": [
+        "Tu veux voir le prix entreprise exact avant de parler à quelqu'un, ou tu as besoin d'une offre gratuite permanente."
+      ],
+      "threshold": "Premium coûte 4,00 EUR/mois hors TVA (engagement annuel) pour un compte ; Family coûte 6,05 EUR/mois pour jusqu'à 10 comptes. Les offres entreprise n'ont pas de prix public à utiliser comme seuil, et la page n'affiche que des euros, pas de dollars.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Les prix Premium et Family sont des tarifs avec engagement annuel facturés au mois, affichés hors TVA ; vérifie si une option mensuelle sans engagement coûte plus cher, et confirme le montant en dollars facturé au paiement."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a single-account vault at EUR 4/month, a shared family vault at a fixed price, or you run a business that needs SSO/SCIM and is ready to get a quote."
+      ],
+      "avoidIf": [
+        "You want to see the exact business price before talking to anyone, or you need a permanent free plan."
+      ],
+      "threshold": "Premium costs EUR 4.00/month plus VAT (billed annually) for one account; Family costs EUR 6.05/month for up to 10 accounts. Business plans have no public price to use as a threshold, and the page only shows EUR, not USD.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Both Premium and Family prices are an annual-commitment rate billed monthly, shown plus VAT; confirm whether a month-to-month option costs more, and confirm the USD charge at checkout."
+        }
+      ]
+    },
+    "pros": [
+      "Le plan Family couvre jusqu'à 10 comptes pour un tarif mensuel fixe unique.",
+      "L'offre entreprise ajoute une détection du phishing par IA et une intégration SIEM/SOAR au-delà du simple stockage de mots de passe."
+    ],
+    "prosEn": [
+      "The Family plan covers up to 10 accounts under a single, fixed monthly price.",
+      "The Business tier adds AI phishing detection and SIEM/SOAR integration beyond basic password storage."
+    ],
+    "cons": [
+      "Pas d'offre gratuite permanente : les particuliers n'ont qu'un essai de 14 jours avant de payer.",
+      "Les tarifs Business et Enterprise ne sont pas publiés : il faut contacter le service commercial pour connaître le coût réel."
+    ],
+    "consEn": [
+      "No permanent free plan: individuals only get a 14-day trial before paying.",
+      "Business and Enterprise prices are not published; you need to talk to sales to know the real cost."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 99
+  },
+  "keeper": {
+    "id": "keeper",
+    "slug": "keeper",
+    "name": "Keeper",
+    "logo": null,
+    "websiteUrl": "https://www.keepersecurity.com",
+    "tagline": {
+      "fr": "Gestionnaire mots de passe",
+      "en": "Password manager"
+    },
+    "shortDescription": "Gestionnaire de mots de passe chiffré pour particuliers et familles, facturé à l'année, avec des options payantes de surveillance et de stockage.",
+    "shortDescriptionEn": "Encrypted password manager for individuals and families, billed yearly, with paid add-ons for monitoring and file storage.",
+    "pricing": {
+      "free": "Pas d'offre gratuite permanente.",
+      "paid": "Personnel 4,30 €/mois (51,59 € facturés à l'année) ; Famille 9,20 €/mois (110,39 €/an, 5 utilisateurs)."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan.",
+      "paid": "Personal $3.58/month ($42.99 billed yearly); Family $7.67/month ($91.99/year, 5 users)."
+    },
+    "defaultMonthlyPrice": 4.3,
+    "pricing_v5": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Personnel",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "personal-eur",
+          "displayName": "Personnel",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 4.3,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Personal",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "personal-usd",
+          "displayName": "Personal",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 3.58,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": null,
+    "verdict": {
+      "keepIf": [
+        "Tu veux un coffre-fort simple pour toi ou ta famille et tu acceptes de payer à l'année."
+      ],
+      "avoidIf": [
+        "Tu veux une offre gratuite ou payer au mois : la grille publiée n'en propose pas."
+      ],
+      "threshold": "À 51,59 € par an, compare avec Proton Pass ou Bitwarden, dont les offres gratuites couvrent déjà le stockage et la synchronisation.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "La surveillance du dark web et le stockage de fichiers ne sont pas inclus dans l'offre Personnel : ce sont des options payantes en plus."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a simple vault for yourself or your family and are fine paying yearly."
+      ],
+      "avoidIf": [
+        "You want a free plan or monthly billing: the published grid has neither."
+      ],
+      "threshold": "At $42.99 a year, compare with Proton Pass or Bitwarden, whose free plans already cover storage and sync.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Dark web alerts and file storage are not in the Personal plan: they are paid add-ons on top."
+        }
+      ]
+    },
+    "pros": [
+      "Mots de passe, appareils et partage sécurisé illimités dès l'offre Personnel.",
+      "Offre Famille à 5 utilisateurs avec des coffres séparés."
+    ],
+    "prosEn": [
+      "Unlimited passwords, devices and secure sharing from the Personal plan.",
+      "Family plan for 5 users with separate vaults."
+    ],
+    "cons": [
+      "Pas d'offre gratuite permanente ni de facturation mensuelle dans la grille publiée.",
+      "Surveillance du dark web et stockage de fichiers vendus en options."
+    ],
+    "consEn": [
+      "No permanent free plan and no monthly billing in the published grid.",
+      "Dark web alerts and file storage sold as add-ons."
+    ],
+    "researchedOn": "2026-10-20",
+    "demand": 0
+  },
+  "lastpass": {
+    "id": "lastpass",
+    "slug": "lastpass",
+    "name": "LastPass",
+    "logo": null,
+    "websiteUrl": "https://lastpass.com",
+    "tagline": null,
+    "shortDescription": "Gestionnaire de mots de passe grand public, avec une version gratuite limitée.",
+    "shortDescriptionEn": "Mainstream password manager, with a limited free version.",
+    "pricing": {
+      "free": "Offre gratuite limitée à un type d'appareil : stockage illimité, remplissage automatique, surveillance du dark web.",
+      "paid": "Premium à 2,90 €/mois facturé à l'année, taxes en sus."
+    },
+    "pricingEn": {
+      "free": "Free plan limited to one device type: unlimited storage, autofill, dark web monitoring.",
+      "paid": "Premium at $3.00/month billed yearly, plus tax."
+    },
+    "defaultMonthlyPrice": 3,
+    "pricing_v5": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Premium",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 2.9,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-20",
+      "compare_plan_name": "Premium",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 3,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": null,
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin gestionnaire passwords cloud simple.",
+        "Vous préférez zero-knowledge encryption garantie."
+      ],
+      "avoidIf": [
+        "Vous cherchez solution open-source self-hosted.",
+        "Vous avez besoin sync mobile ET desktop simultanément en gratuit."
+      ],
+      "threshold": "LastPass convient utilisateurs cherchant gestionnaire cloud simple et de confiance ; pour open-source ou self-hosted, Bitwarden convient mieux.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You need simple cloud password manager.",
+        "You prefer guaranteed zero-knowledge encryption."
+      ],
+      "avoidIf": [
+        "You want open-source self-hosted solution.",
+        "You need mobile AND desktop sync simultaneously free."
+      ],
+      "threshold": "LastPass fits users seeking simple, trustworthy cloud manager; for open-source or self-hosted, Bitwarden suits better.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Plan Free très généreux (passwords illimité, monitoring dark web).",
+      "Zero-knowledge encryption transparent."
+    ],
+    "prosEn": [
+      "Generous free plan (unlimited passwords, dark web monitoring).",
+      "Transparent zero-knowledge encryption."
+    ],
+    "cons": [
+      "Free plan : sync limité à 1 type device (pas mobile ET desktop).",
+      "Prix plans payants non affichés en avant (promotion en cours)."
+    ],
+    "consEn": [
+      "Free plan: sync limited to 1 device type (not mobile AND desktop).",
+      "Paid plans prices not displayed upfront (promotion ongoing)."
+    ],
+    "researchedOn": null,
+    "demand": 0
+  },
+  "capture-one": {
+    "id": "capture-one",
+    "slug": "capture-one",
+    "name": "Capture One",
+    "logo": null,
+    "websiteUrl": "https://captureone.com",
+    "tagline": {
+      "fr": "Éditeur RAW pro",
+      "en": "Pro RAW editor"
+    },
+    "shortDescription": "Logiciel professionnel d'édition RAW et de tethering, disponible en abonnement ou en licence perpétuelle.",
+    "shortDescriptionEn": "Professional RAW photo editing and tethering software, available as a subscription or a perpetual license.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 20,50 €/mois, plan Pro."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 7-day trial.",
+      "paid": "From €20.50/mo, Pro plan."
+    },
+    "defaultMonthlyPrice": 20.5,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "pro-subscription",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 20.5,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "pro-subscription",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 20.5,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 5,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu shootes professionnellement et as besoin de tethering et d'un contrôle colorimétrique précis qui vaut 20,50 €/mois ou plus."
+      ],
+      "avoidIf": [
+        "Tu veux un éditeur photo simple et occasionnel, ou as besoin du flux mobile/cloud sans payer All in One."
+      ],
+      "threshold": "Si le tethering ou la précision colorimétrique n'affecte pas directement du travail facturable, un éditeur moins cher couvre la plupart des besoins occasionnels.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Passer de la licence perpétuelle à l'abonnement, ou l'inverse, a ses propres règles ; vérifie la FAQ avant de supposer qu'un changement en cours d'année est gratuit."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You shoot professionally and need tethering plus precise color control worth 20.50 EUR/month or more."
+      ],
+      "avoidIf": [
+        "You want a simple, casual photo editor, or need the mobile/cloud workflow without paying for All in One."
+      ],
+      "threshold": "If tethering or color precision does not directly affect billable work, a cheaper editor covers most casual needs.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Switching from perpetual license back to subscription, or the reverse, has its own rules; check the FAQ before assuming a mid-year switch is free."
+        }
+      ]
+    },
+    "pros": [
+      "Tethering et précision colorimétrique considérés comme une référence parmi les éditeurs RAW.",
+      "Option de licence perpétuelle pour qui veut éviter l'abonnement sur le long terme."
+    ],
+    "prosEn": [
+      "Tethering and color accuracy considered a reference point among RAW editors.",
+      "Perpetual license option for anyone who wants to avoid a subscription long-term."
+    ],
+    "cons": [
+      "Plus d'offre gratuite ; évaluer le logiciel signifie démarrer un essai limité à 7 jours.",
+      "L'app mobile, les réglages cloud et la collaboration en ligne sont exclus du palier Pro d'entrée."
+    ],
+    "consEn": [
+      "No free tier anymore; evaluating the software means starting a 7-day trial clock.",
+      "Mobile app, cloud settings and online collaboration are locked out of the entry Pro tier."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 1376
+  },
+  "adobe-lightroom": {
+    "id": "adobe-lightroom",
+    "slug": "adobe-lightroom",
+    "name": "Adobe Lightroom",
+    "logo": null,
+    "websiteUrl": "https://adobe.com/products/lightroom",
+    "tagline": {
+      "fr": "Édition photo cloud",
+      "en": "Cloud photo editor"
+    },
+    "shortDescription": "Application Adobe d'édition et d'organisation photo synchronisée dans le cloud, vendue uniquement en abonnement Creative Cloud.",
+    "shortDescriptionEn": "Adobe's cloud-synced photo editing and organization app, sold only as a Creative Cloud subscription.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 7 jours.",
+      "paid": "Dès 11,99 $/mois, plan Lightroom."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 7-day trial.",
+      "paid": "From $11.99/mo, Lightroom plan."
+    },
+    "defaultMonthlyPrice": 10.3,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Lightroom",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "lightroom",
+          "displayName": "Lightroom",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 11.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Lightroom",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "lightroom",
+          "displayName": "Lightroom",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 11.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 2,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux une édition synchronisée dans le cloud entre appareils et un abonnement continu ne te dérange pas."
+      ],
+      "avoidIf": [
+        "Tu veux posséder ton logiciel d'édition définitivement, ou tu édites trop rarement pour qu'un abonnement en vaille la peine."
+      ],
+      "threshold": "Si une retouche de niveau Photoshop est nécessaire régulièrement, le plan Photography à 19,99 $/mois revient moins cher que Lightroom et Photoshop séparés.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Le prix promotionnel de Creative Cloud Pro ne vaut que pour les 3 premiers mois des nouveaux abonnés ; il repasse à 69,99 $/mois ensuite."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want cloud-synced editing across devices and are fine with an ongoing subscription."
+      ],
+      "avoidIf": [
+        "You want to own your editing software outright, or edit rarely enough that a subscription is not worth it."
+      ],
+      "threshold": "If Photoshop-level retouching is needed regularly, the Photography plan at $19.99/month is cheaper than buying Lightroom and Photoshop separately.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Creative Cloud Pro's promotional price is for new subscribers' first 3 months only; it reverts to $69.99/month after."
+        }
+      ]
+    },
+    "pros": [
+      "Synchronisation automatique multi-appareils des édits et de la bibliothèque photo.",
+      "Les outils IA (préréglages adaptatifs, agrandissement, suppression de poussière) réduisent vraiment le temps d'édition."
+    ],
+    "prosEn": [
+      "Automatic cross-device sync of both edits and the photo library.",
+      "AI tools (adaptive presets, upscaling, dust removal) genuinely cut editing time."
+    ],
+    "cons": [
+      "Aucune licence perpétuelle ni plan gratuit ; l'outil cesse de fonctionner sans abonnement actif.",
+      "Passer à Creative Cloud Pro pour la suite complète réduit en fait le stockage cloud de 1 To à 100 Go."
+    ],
+    "consEn": [
+      "No perpetual license or free plan; the tool stops working without an active subscription.",
+      "Upgrading to Creative Cloud Pro for the full app suite actually cuts cloud storage from 1TB to 100GB."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 7093
+  },
+  "dxo-photolab": {
+    "id": "dxo-photolab",
+    "slug": "dxo-photolab",
+    "name": "DxO PhotoLab",
+    "logo": null,
+    "websiteUrl": "https://www.dxo.com/dxo-photolab/",
+    "tagline": {
+      "fr": "Éditeur RAW achat unique",
+      "en": "One-time-purchase RAW editor"
+    },
+    "shortDescription": "Éditeur de photos RAW avec corrections optiques automatiques et débruitage IA, vendu sous forme de licence perpétuelle à achat unique.",
+    "shortDescriptionEn": "RAW photo editor with optics-based automatic corrections and AI denoising, sold as a one-time perpetual license.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 159,99 $ (licence à vie), plan Essential."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $159.99 (lifetime license), Essential plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Essential",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "essential",
+          "displayName": "Essential",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 159.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Essential",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "essential",
+          "displayName": "Essential",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 159.99,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 2,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "À garder si un achat unique pour l'édition RAW avec de fortes corrections optiques automatiques vaut mieux que payer un abonnement récurrent."
+      ],
+      "avoidIf": [
+        "À éviter si le débruitage IA est nécessaire mais que la machine n'a pas de GPU supporté, ou si la gestion d'assets basée cloud entre appareils compte."
+      ],
+      "threshold": "L'édition d'entrée, Essential, coûte 159,99 $ payés une fois pour une licence activable sur 2 ordinateurs.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "La licence nécessite une réactivation en ligne périodique, l'usage hors ligne étant limité à 37 jours après la dernière activation, et les futures versions majeures demandent une mise à niveau payante séparée plutôt que d'être incluses."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Keep it if a one-time purchase for RAW editing with strong automatic optical corrections beats paying a recurring subscription."
+      ],
+      "avoidIf": [
+        "Avoid it if AI denoising is needed but the machine lacks a supported GPU, or if cloud-based asset management across devices matters."
+      ],
+      "threshold": "The entry edition, Essential, costs a one-time $159.99 for a license activatable on 2 computers.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The license requires periodic online reactivation, with offline use limited to 37 days after the last activation, and future major versions require a separate paid upgrade rather than being included."
+        }
+      ]
+    },
+    "pros": [
+      "L'achat unique évite totalement un abonnement récurrent.",
+      "Les corrections automatiques basées sur l'optique donnent de bons résultats avec peu de réglage manuel."
+    ],
+    "prosEn": [
+      "One-time purchase avoids a recurring subscription entirely.",
+      "Optics-based automatic corrections give strong results with little manual adjustment."
+    ],
+    "cons": [
+      "Les fonctionnalités IA nécessitent un GPU assez récent et capable, non garanti sur toutes les machines.",
+      "L'activation de licence est plafonnée à 2 ou 3 ordinateurs avec seulement 37 jours d'usage hors ligne avant réactivation."
+    ],
+    "consEn": [
+      "AI features need a fairly recent, capable GPU, not guaranteed on every machine.",
+      "License activation caps at 2 or 3 computers with only 37 days of offline use before reactivation."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 263
+  },
+  "luminar-neo": {
+    "id": "luminar-neo",
+    "slug": "luminar-neo",
+    "name": "Luminar Neo",
+    "logo": null,
+    "websiteUrl": "https://skylum.com/luminar-neo",
+    "tagline": {
+      "fr": "Édition photo IA",
+      "en": "AI photo editing"
+    },
+    "shortDescription": "Luminar Neo est un logiciel de retouche photo par IA pour le portrait, le paysage et l'édition générative, vendu en licence perpétuelle ou abonnement annuel.",
+    "shortDescriptionEn": "Luminar Neo is AI-powered photo editing software for portrait, landscape and generative editing, sold as a perpetual license or annual subscription.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 129 € (licence à vie), plan Desktop Only License."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From €129 (lifetime license), Desktop Only License plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Desktop Only License",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "desktop-only",
+          "displayName": "Desktop Only License",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 129,
+          "nativeCurrency": "EUR",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Desktop Only License",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "desktop-only",
+          "displayName": "Desktop Only License",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 129,
+          "nativeCurrency": "EUR",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux un éditeur photo IA tout-en-un avec une licence perpétuelle plutôt qu'un abonnement mensuel récurrent."
+      ],
+      "avoidIf": [
+        "Tu as besoin d'une version web dès maintenant, car Luminar on Web n'est pas encore disponible."
+      ],
+      "threshold": "Desktop Only (129 EUR) est la licence la moins chère mais ne garantit qu'un an d'accès aux derniers outils IA ; pour l'accès mobile, prends All Platforms (159 EUR), et pour la bibliothèque de préréglages/LUTs/cours Luminar Prime, prends Max (199 EUR).",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want an all-in-one AI photo editor with a perpetual license instead of a recurring monthly subscription."
+      ],
+      "avoidIf": [
+        "You need a web-based version right now, since Luminar on Web is not yet available."
+      ],
+      "threshold": "Desktop Only (EUR 129) is the cheapest license but only guarantees one year of newest-AI-tool access; needing mobile access points to All Platforms (EUR 159), and wanting the Luminar Prime preset/LUT/course library points to Max (EUR 199).",
+      "billingTraps": []
+    },
+    "pros": [
+      "Un large ensemble d'outils IA (24+) couvre le portrait, le paysage et l'édition générative dans une seule application.",
+      "Édition non destructive par calques, avec support RAW, upscaling, fusion HDR et assemblage panoramique."
+    ],
+    "prosEn": [
+      "Large set of AI tools (24+) covers portrait, landscape and generative editing in one app.",
+      "Non-destructive, layer-based editing with RAW support, upscaling, HDR merge and panorama stitching."
+    ],
+    "cons": [
+      "Les prix ne sont confirmés qu'en EUR ; une grille tarifaire USD pour la zone US n'a pas pu être atteinte pendant la recherche.",
+      "La licence perpétuelle ne garantit qu'un an d'accès aux derniers outils IA, donc rester à jour nécessite probablement un renouvellement."
+    ],
+    "consEn": [
+      "Prices are only confirmed in EUR; a US-region USD price list wasn't reachable during research.",
+      "The perpetual license only guarantees one year of access to the newest AI tools, so staying current likely needs renewal."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 139
+  },
+  "affinity-photo": {
+    "id": "affinity-photo",
+    "slug": "affinity-photo",
+    "name": "Affinity Photo",
+    "logo": null,
+    "websiteUrl": "https://www.affinity.studio/photo-editing-software",
+    "tagline": {
+      "fr": "Editeur photo",
+      "en": "Photo editor"
+    },
+    "shortDescription": "Editeur photo professionnel non destructif avec developpement RAW et calques, entierement gratuit depuis le rachat par Canva en 2024.",
+    "shortDescriptionEn": "Professional, non-destructive photo editor with RAW development and layers, entirely free since Canva's 2024 acquisition.",
+    "pricing": {
+      "free": "Plan gratuit : Tous les outils d'edition photo essentiels gratuits avec un compte Canva ; les outils IA demandent un plan Canva payant.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "pricingEn": {
+      "free": "Free plan: All core photo editing tools free with a Canva account; AI tools require a Canva premium plan",
+      "paid": "No paid plan required."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": null,
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free (Canva account)",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": null,
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free (Canva account)",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 5,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 2,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux un editeur photo professionnel non destructif sans payer d'abonnement pour l'application principale."
+      ],
+      "avoidIf": [
+        "Tu as besoin d'un aller-retour PSD fluide avec Photoshop pour une equipe deja sur l'ecosysteme Adobe."
+      ],
+      "threshold": "Ca vaut le changement des que tu paierais autrement un abonnement d'editeur photo et que tu n'as pas besoin des outils IA reserves au Canva payant.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a professional, non-destructive photo editor without paying a subscription for the core app."
+      ],
+      "avoidIf": [
+        "You need reliable PSD round-tripping with Photoshop for a team already on Adobe's ecosystem."
+      ],
+      "threshold": "Worth switching once you'd otherwise pay for a photo editor subscription and don't need the AI tools gated behind Canva premium.",
+      "billingTraps": []
+    },
+    "pros": [
+      "L'application d'edition professionnelle complete, developpement RAW inclus, est entierement gratuite.",
+      "Les macros par lot et la prise en charge des profils ICC conviennent a un vrai flux de livraison client."
+    ],
+    "prosEn": [
+      "The full professional editing app, RAW development included, is entirely free.",
+      "Batch macros and ICC profile support suit a real client-delivery workflow."
+    ],
+    "cons": [
+      "L'export vers Photoshop ne conserve pas la modifiabilite ; il faut enregistrer en PDF ou PNG a la place.",
+      "Les outils IA demandent un plan Canva payant a part, dont le prix n'est pas affiche sur cette page."
+    ],
+    "consEn": [
+      "Exporting to Photoshop does not preserve editability; must save as PDF or PNG instead.",
+      "AI tools require a separate paid Canva plan whose price isn't shown on this page."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 552
+  },
+  "darktable": {
+    "id": "darktable",
+    "slug": "darktable",
+    "name": "darktable",
+    "logo": null,
+    "websiteUrl": "https://www.darktable.org/",
+    "tagline": {
+      "fr": "Éditeur de RAW",
+      "en": "RAW photo editor"
+    },
+    "shortDescription": "darktable est une application libre et gratuite pour développer des RAW de façon non destructive, gérer ses photos et shooter en tethering, sous licence GPL.",
+    "shortDescriptionEn": "darktable is a free, open-source application for non-destructive RAW photo development, image management and tethered shooting, licensed under the GPL.",
+    "pricing": {
+      "free": "Plan gratuit : Entirely free and open source, no limitations or paid tier; licensed under GNU GPL v3 or later.",
+      "paid": "Pas d'offre payante obligatoire."
+    },
+    "pricingEn": {
+      "free": "Free plan: Entirely free and open source, no limitations or paid tier; licensed under GNU GPL v3 or later.",
+      "paid": "No paid plan required."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": null,
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "open-source",
+          "displayName": "Open source",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "open_source"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": null,
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "open-source",
+          "displayName": "Open source",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "open_source"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 5,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 4,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux un vrai flux de travail RAW sans jamais payer d'abonnement."
+      ],
+      "avoidIf": [
+        "Tu as besoin d'un support officiel de l'éditeur ou d'une application mobile."
+      ],
+      "threshold": "Il n'y a pas de seuil de prix à évaluer : darktable reste gratuit à toute échelle, la vraie question est de savoir si un support communautaire suffit à ton flux de travail.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a serious RAW workflow without ever paying a subscription."
+      ],
+      "avoidIf": [
+        "You need official vendor support or a mobile editing app."
+      ],
+      "threshold": "There is no price threshold to weigh: darktable stays free at every scale, so the real question is whether community-based support is enough for your workflow.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Entièrement libre et gratuit, sans compte ni abonnement à créer.",
+      "L'édition non destructive garde les fichiers RAW d'origine intacts à chaque étape."
+    ],
+    "prosEn": [
+      "Completely free and open source, with no account or subscription ever required.",
+      "Non-destructive editing keeps original RAW files untouched at every step."
+    ],
+    "cons": [
+      "Disponible uniquement sur ordinateur, sans application mobile officielle.",
+      "Le support repose sur les forums communautaires et la documentation plutôt que sur un service client éditeur."
+    ],
+    "consEn": [
+      "Desktop only, with no official mobile app.",
+      "Support relies on community forums and documentation rather than a vendor help desk."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 160
+  },
+  "cargo-site": {
+    "id": "cargo-site",
+    "slug": "cargo-site",
+    "name": "Cargo Site",
+    "logo": null,
+    "websiteUrl": "https://cargo.site/",
+    "tagline": {
+      "fr": "Sites portfolio",
+      "en": "Portfolio sites"
+    },
+    "shortDescription": "Un créateur de sites portfolio pour designers et artistes, avec édition collaborative et boutique intégrée.",
+    "shortDescriptionEn": "A portfolio site builder for designers and artists, with collaborative editing and a built-in shop.",
+    "pricing": {
+      "free": "Plan gratuit : Construction et édition en privé, sans publication publique",
+      "paid": "Dès 14 $/mois, plan Standard."
+    },
+    "pricingEn": {
+      "free": "Free plan: Build and edit privately, cannot publish the site publicly",
+      "paid": "From $14/mo, Standard plan."
+    },
+    "defaultMonthlyPrice": 12.02,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Standard",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 14,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "site"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Standard",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 14,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "site"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Garde-le si ton site est un portfolio et que son apparence compte autant que son contenu."
+      ],
+      "avoidIf": [
+        "Passe ton tour s'il te faut un site d'entreprise avec blog, formulaires et nombreuses pages."
+      ],
+      "threshold": "168 $ par an sur le plan Standard annuel, domaine inclus.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Keep it if your site is a portfolio and its look matters as much as its content."
+      ],
+      "avoidIf": [
+        "Skip it if you need a business site with a blog, forms and many pages."
+      ],
+      "threshold": "$168 a year on the yearly Standard plan, domain included.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Des modèles de portfolio à l'identité visuelle marquée",
+      "Domaine personnalisé inclus dans le plan Standard"
+    ],
+    "prosEn": [
+      "Portfolio templates with a distinct visual identity",
+      "Custom domain included in Standard"
+    ],
+    "cons": [
+      "Le plan gratuit ne permet pas de publier",
+      "Limité pour des sites complexes à plusieurs sections"
+    ],
+    "consEn": [
+      "The free plan cannot publish a site",
+      "Limited for complex, multi-section sites"
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 2843
+  },
+  "readymag": {
+    "id": "readymag",
+    "slug": "readymag",
+    "name": "Readymag",
+    "logo": null,
+    "websiteUrl": "https://readymag.com",
+    "tagline": {
+      "fr": "Design web éditorial",
+      "en": "Editorial web design"
+    },
+    "shortDescription": "Un créateur de site visuel pour des sites éditoriaux animés et des portfolios, avec domaines personnalisés et export de code sur les plans supérieurs.",
+    "shortDescriptionEn": "A visual website builder for animated, editorial-style sites and portfolios, with custom domains and code export on higher plans.",
+    "pricing": {
+      "free": "Plan gratuit : Un site sur un sous-domaine Readymag, jusqu'à 10 pages.",
+      "paid": "Dès 13 €/mois, plan Personal."
+    },
+    "pricingEn": {
+      "free": "Free plan: One site on a Readymag subdomain, up to 10 pages.",
+      "paid": "From $14/mo, Personal plan."
+    },
+    "defaultMonthlyPrice": 12.02,
+    "pricing_v5": {
+      "verified_on": "2026-10-02",
+      "compare_plan_name": "Personal",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": null,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": null,
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "personal",
+          "displayName": "Personal",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 13,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-02",
+      "compare_plan_name": "Personal",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "personal",
+          "displayName": "Personal",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 14,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu conçois des portfolios ou sites éditoriaux et veux des widgets d'animation sans coder à la main."
+      ],
+      "avoidIf": [
+        "Tu as besoin d'un CMS complet, d'e-commerce, ou d'un site de plus de quelques pages sur le plan d'entrée."
+      ],
+      "threshold": "Le plan payant d'entrée (Personal) coûte 168 $ par an (14 $/mois) facturé à l'année, ou 19 $ facturé au mois, pour un site avec domaine personnalisé.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You design portfolio or editorial sites and want animation widgets without hand-coding."
+      ],
+      "avoidIf": [
+        "You need a full CMS, e-commerce, or a site with more than a handful of pages on the entry plan."
+      ],
+      "threshold": "The entry paid plan (Personal) costs $168 a year ($14/month) billed yearly, or $19 billed monthly, for one custom-domain site.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Un vrai plan gratuit permet de publier un site de 10 pages avant de payer quoi que ce soit.",
+      "L'export de code et l'intégration en iframe existent pour les projets qui doivent un jour quitter l'hébergement Readymag."
+    ],
+    "prosEn": [
+      "A genuine free tier lets you publish a real 10-page site before paying anything.",
+      "Code export and iframe embedding exist for projects that need to leave Readymag hosting later."
+    ],
+    "cons": [
+      "Plusieurs widgets phares (formulaires, Lottie, code personnalisé) ne s'affichent qu'en aperçu sur le plan gratuit.",
+      "Les plafonds de vues mensuelles sur tous les plans sous Advanced peuvent forcer une mise à niveau si un site devient populaire."
+    ],
+    "consEn": [
+      "Several signature widgets (forms, Lottie, custom code) only render in preview on the Free plan.",
+      "Monthly view caps on every plan below Advanced mean a popular site can force an upgrade."
+    ],
+    "researchedOn": "2026-10-02",
+    "demand": 76
+  },
+  "format": {
+    "id": "format",
+    "slug": "format",
+    "name": "Format",
+    "logo": null,
+    "websiteUrl": "https://format.com",
+    "tagline": {
+      "fr": "Sites portfolio photo",
+      "en": "Photo portfolio sites"
+    },
+    "shortDescription": "Format construit des sites portfolio pour photographes avec galeries clients, validation d'épreuves et boutique en ligne sur les offres supérieures.",
+    "shortDescriptionEn": "Format builds portfolio websites for photographers with client galleries, proofing, and an online store on higher plans.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 14 jours.",
+      "paid": "Plans payants affichés à prix promotionnel ; prix hors promotion non publié."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 14-day trial.",
+      "paid": "Paid plans shown at promotional prices; regular price not published."
+    },
+    "defaultMonthlyPrice": 20.61,
+    "pricing_v5": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Prix non public",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 24,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Prix non public",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 24,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu as besoin d'un site portfolio pensé photographe avec galeries clients, validation d'épreuves et publication depuis Lightroom."
+      ],
+      "avoidIf": [
+        "Tu veux une offre gratuite pour démarrer, ou un stockage d'images et une vidéo hébergée illimités sans monter de palier."
+      ],
+      "threshold": "L'offre de comparaison, Pro, coûte 24 $/mois en facturation mensuelle ; une bannière \"jusqu'à 50 % d'économie\" affiche actuellement 12 $/mois, mais c'est une promotion limitée dans le temps, pas un tarif annuel standard publié, donc prévois ton budget sur 24 $/mois.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You need a photographer-specific portfolio site with client galleries, proofing and a Lightroom publishing workflow."
+      ],
+      "avoidIf": [
+        "You want a free tier to start, or need unlimited image storage and video hosting without an upgrade."
+      ],
+      "threshold": "The comparison plan, Pro, costs $24/month billed monthly; a \"save up to 50%\" annual banner currently shows $12/month, but that is a limited-time promotion, not a published standing annual rate, so budget on the $24/month figure.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Les galeries clients avec validation, téléchargement et protection par mot de passe sont intégrées dès l'offre d'entrée.",
+      "Le plugin Lightroom publie directement depuis Adobe Lightroom sans étape d'export séparée."
+    ],
+    "prosEn": [
+      "Client galleries with proofing, download and password protection are built in from the entry plan.",
+      "Lightroom plugin publishes directly from Adobe Lightroom without a separate export step."
+    ],
+    "cons": [
+      "Pas d'offre gratuite ; chaque palier demande un abonnement payant après l'essai de 14 jours.",
+      "Le stockage d'images, les minutes de vidéo hébergée et les galeries clients restent plafonnés même sur les offres payantes."
+    ],
+    "consEn": [
+      "No free plan; every tier requires a paid subscription after the 14-day trial.",
+      "Image storage, hosted video minutes and client galleries stay capped even on paid plans."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 124
+  },
+  "artstation": {
+    "id": "artstation",
+    "slug": "artstation",
+    "name": "ArtStation",
+    "logo": null,
+    "websiteUrl": "https://www.artstation.com",
+    "tagline": {
+      "fr": "Portfolio d'art en ligne",
+      "en": "Art portfolio platform"
+    },
+    "shortDescription": "ArtStation héberge des portfolios et une marketplace pour artistes concept, 3D et jeu vidéo, avec un plan gratuit avec pub et une offre Pro payante.",
+    "shortDescriptionEn": "ArtStation hosts searchable online portfolios and a marketplace for concept, 3D and game artists, with a free ad-supported tier and a paid Pro tier.",
+    "pricing": {
+      "free": "Plan gratuit : Portfolio gratuit et accès à la communauté avec des fonctions de base.",
+      "paid": "Dès 9,95 $/mois, plan Pro."
+    },
+    "pricingEn": {
+      "free": "Free plan: Free portfolio and community access with basic features.",
+      "paid": "From $9.95/mo, Pro plan."
+    },
+    "defaultMonthlyPrice": 8.54,
+    "pricing_v5": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 9.95,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Pro",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 9.95,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Vous êtes artiste 3D, concept ou jeu vidéo et cherchez de la visibilité.",
+        "Vous voulez vendre des ressources digitales à une audience ciblée."
+      ],
+      "avoidIf": [
+        "Votre travail n'est pas lié aux arts visuels / 3D.",
+        "Vous voulez un site totalement personnalisé et indépendant."
+      ],
+      "threshold": "ArtStation est incontournable pour se montrer dans l'industrie de l'art 3D et du jeu ; hors de ce domaine, une autre plateforme convient mieux.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're a 3D, concept or game artist seeking visibility.",
+        "You want to sell digital assets to a targeted audience."
+      ],
+      "avoidIf": [
+        "Your work isn't tied to visual arts / 3D.",
+        "You want a fully custom, independent website."
+      ],
+      "threshold": "ArtStation is essential for visibility in 3D and game art; outside that field, another platform fits better.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Audience professionnelle très ciblée (studios, recruteurs).",
+      "Portfolio gratuit pour démarrer."
+    ],
+    "prosEn": [
+      "Highly targeted professional audience (studios, recruiters).",
+      "Free portfolio to get started."
+    ],
+    "cons": [
+      "Pertinent surtout pour l'art visuel et la 3D.",
+      "Personnalisation limitée face à un site indépendant."
+    ],
+    "consEn": [
+      "Relevant mainly for visual and 3D art.",
+      "Limited customization versus an independent site."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 355
+  },
+  "framer": {
+    "id": "framer",
+    "slug": "framer",
+    "name": "Framer",
+    "logo": null,
+    "websiteUrl": "https://framer.com",
+    "tagline": {
+      "fr": "Créateur de sites",
+      "en": "Website builder"
+    },
+    "shortDescription": "Framer est un créateur de sites sans code avec CMS intégré, environnement de préproduction et fonctions de conception et contenu assistées par IA.",
+    "shortDescriptionEn": "Framer is a no-code visual website builder with a built-in CMS, staging environment and AI-assisted design and content features.",
+    "pricing": {
+      "free": "Plan gratuit : Domaine framer.site, 1 000 pages, 10 collections CMS, 1 Go de bande passante, envois de fichiers de 5 Mo, 500 crédits IA, pas de domaine personnalisé.",
+      "paid": "Dès 10 $/mois, plan Basic."
+    },
+    "pricingEn": {
+      "free": "Free plan: framer.site domain, 1,000 pages, 10 CMS collections, 1 GB bandwidth, 5 MB file uploads, 500 AI credits, no custom domain.",
+      "paid": "From $10/mo, Basic plan."
+    },
+    "defaultMonthlyPrice": 8.59,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Basic",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "basic",
+          "displayName": "Basic",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 10,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Basic",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "basic",
+          "displayName": "Basic",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 10,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux un site visuel et sans code avec CMS intégré, et un budget de départ autour de 10 $/mois pour un domaine personnalisé te convient."
+      ],
+      "avoidIf": [
+        "Tu construis un site à très fort contenu : même le plafond de pages de Pro (150, extensible) peut ne pas suffire sans coût d'option supplémentaire."
+      ],
+      "threshold": "Basic coûte environ 10 $/mois en engagement annuel pour un domaine personnalisé et 30 pages ; Pro est autour de 30 $/mois pour 150 pages et un flux de préproduction.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "Chaque siège éditeur supplémentaire coûte 20 $/mois en plus du prix de l'offre, et les prix affichés sont facturés à l'année, la facturation mensuelle n'ayant pas été confirmée séparément."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want a visual, no-code site with a built-in CMS and are fine starting around $10/month for a custom domain."
+      ],
+      "avoidIf": [
+        "You're building a very large content site: even Pro's page cap (150, extendable) may not fit without extra add-on cost."
+      ],
+      "threshold": "Basic costs about $10/month on annual billing for a custom domain and 30 pages; Pro is about $30/month for 150 pages and a staging workflow.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "Extra editor seats cost $20/month each on top of the plan price, and displayed prices are billed yearly, with monthly billing not separately confirmed."
+        }
+      ]
+    },
+    "pros": [
+      "Les crédits IA pour les fonctions de conception et de contenu assistées par IA sont inclus sur toutes les offres, même Free.",
+      "L'environnement de préproduction de Pro, avec branches et aperçus, permet de publier en sécurité sans outil séparé."
+    ],
+    "prosEn": [
+      "AI credits for AI-assisted design and content features are included on every plan, even Free.",
+      "Pro's staging environment with branching and previews lets you publish safely without a separate tool."
+    ],
+    "cons": [
+      "Le plan gratuit n'a pas de domaine personnalisé, donc tout site public a besoin d'au moins l'offre Basic à 10 $/mois.",
+      "Le nombre de pages est plafonné même sur Pro (150, extensible via des options payantes), ce qui peut limiter les sites à fort contenu."
+    ],
+    "consEn": [
+      "The Free plan has no custom domain, so any public site needs at least the $10/month Basic plan.",
+      "Page count is capped even on Pro (150, extendable via paid add-ons), which can limit large content sites."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 339
+  },
+  "pixieset": {
+    "id": "pixieset",
+    "slug": "pixieset",
+    "name": "Pixieset",
+    "logo": null,
+    "websiteUrl": "https://pixieset.com",
+    "tagline": {
+      "fr": "Livraison de galeries photo",
+      "en": "Photo gallery delivery"
+    },
+    "shortDescription": "Livraison de galeries photo client, site portfolio et vente de tirages numériques pour photographes, avec un plan gratuit qui prélève 15% de commission sur les ventes.",
+    "shortDescriptionEn": "Client photo gallery delivery, portfolio website and print/digital sales for photographers, with a free plan that takes a 15% sales commission.",
+    "pricing": {
+      "free": "Plan gratuit : 3 Go de stockage, galeries illimitées, jusqu'à 3 applications mobiles, commission de 15 % sur les ventes en boutique",
+      "paid": "Dès 8 $/mois, plan Basic."
+    },
+    "pricingEn": {
+      "free": "Free plan: 3 GB storage, unlimited galleries, up to 3 mobile apps, 15% commission on store sales",
+      "paid": "From $8/mo, Basic plan."
+    },
+    "defaultMonthlyPrice": 6.87,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Basic",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "basic",
+          "displayName": "Basic",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 8,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Basic",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        },
+        {
+          "planKey": "basic",
+          "displayName": "Basic",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 8,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "account"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu vends régulièrement des tirages ou des téléchargements numériques et tu veux galeries, portfolio et réservation client réunis."
+      ],
+      "avoidIf": [
+        "Tu vends rarement via des galeries et la commission de 15% du plan gratuit coûterait plus cher qu'un abonnement payant."
+      ],
+      "threshold": "Compare tes ventes mensuelles de tirages numériques à la commission de 15% du plan gratuit : au-delà d'environ 67 $ de ventes par mois, le plan Basic à 10 $/mois (sans commission) devient rentable.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "La commission de 15% du plan gratuit est prélevée automatiquement sur chaque vente de tirage numérique, contrairement au coût fixe mensuel des plans payants."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You sell prints or digital downloads regularly and want galleries, portfolio and client booking in one place."
+      ],
+      "avoidIf": [
+        "You rarely sell through galleries and the free plan's 15% commission would cost more than a paid subscription."
+      ],
+      "threshold": "Compare your monthly print/digital sales against the 15% free-plan commission: past roughly $67 in monthly sales, the $10/month Basic plan (no commission) breaks even.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The free plan's 15% sales commission is deducted automatically from every print or digital sale, unlike the flat per-month cost of paid plans."
+        }
+      ]
+    },
+    "pros": [
+      "Regroupe livraison de galeries, vente de tirages, site portfolio et réservation/facturation client dans un seul abonnement.",
+      "Les plans payants suppriment entièrement la commission de 15% du plan gratuit."
+    ],
+    "prosEn": [
+      "Bundles gallery delivery, print sales, portfolio site and client booking/invoicing in one subscription.",
+      "Paid plans remove the free plan's 15% sales commission entirely."
+    ],
+    "cons": [
+      "Le stockage de 3 Go du plan gratuit est trop faible pour livrer un shooting complet.",
+      "Le stockage vidéo est plafonné séparément du stockage photo et facturé en option au-delà des minutes incluses."
+    ],
+    "consEn": [
+      "Free plan's 3GB storage is too small for full shoot deliveries.",
+      "Video storage is capped separately from photo storage and priced as an add-on beyond included minutes."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 883
+  },
+  "zbrush": {
+    "id": "zbrush",
+    "slug": "zbrush",
+    "name": "ZBrush",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/ZBrush/ZBrush_icon.svg",
+    "websiteUrl": "https://www.maxon.net/en/zbrush",
+    "tagline": {
+      "fr": "Sculpture 3D",
+      "en": "3D sculpting"
+    },
+    "shortDescription": "ZBrush est le logiciel de sculpture numérique professionnel de Maxon pour personnages, créatures et modèles hard-surface, vendu uniquement en abonnement dès 54 $/mois ou 35,90 $/mois facturé annuellement.",
+    "shortDescriptionEn": "ZBrush is Maxon's professional digital sculpting software for characters, creatures and hard-surface models, sold only as a subscription from $54/month or $35.90/month billed annually.",
+    "pricing": {
+      "free": "Plan gratuit : Offre gratuite de ZBrush pour iPad : 28 brosses, Dynamesh/SculptrisPro/ZSpheres/ZRemesher limités, maximum 20 millions de polygones par maillage. Pas de version bureau gratuite.",
+      "paid": "Dès 35,90 $/mois, plan ZBrush (desktop + iPad)."
+    },
+    "pricingEn": {
+      "free": "Free plan: ZBrush for iPad free tier: 28 brushes, limited Dynamesh/SculptrisPro/ZSpheres/ZRemesher, max 20 million polygons per mesh. No free desktop version.",
+      "paid": "From $35.90/mo, ZBrush (desktop + iPad) plan."
+    },
+    "defaultMonthlyPrice": 30.83,
+    "pricing_v5": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "ZBrush (desktop + iPad)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "zbrush-ipad-free",
+          "displayName": "ZBrush for iPad (Free)",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "one_time"
+        },
+        {
+          "planKey": "zbrush-desktop",
+          "displayName": "ZBrush (desktop + iPad)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 35.9,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "ZBrush (desktop + iPad)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "zbrush-ipad-free",
+          "displayName": "ZBrush for iPad (Free)",
+          "isComparePlan": false,
+          "isFree": true,
+          "nativeAmount": 0,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "one_time"
+        },
+        {
+          "planKey": "zbrush-desktop",
+          "displayName": "ZBrush (desktop + iPad)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 35.9,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 2,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu fais de la sculpture professionnelle de personnages, créatures ou hard-surface et tu as besoin de très hautes densités de polygones avec une connexion de pipeline vers Cinema 4D, Maya ou 3ds Max."
+      ],
+      "avoidIf": [
+        "Tu veux un achat unique plutôt qu'un abonnement continu, car ZBrush ne vend plus de licence perpétuelle."
+      ],
+      "threshold": "Prévois l'abonnement annuel desktop + iPad à 35,90 $/mois (430,80 $/an), confirmé directement sur maxon.net/en/buy.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "L'abonnement est la seule option (pas de licence perpétuelle) ; le prix affiché sur maxon.net dépend de la région sélectionnée, vérifie toujours que le sélecteur de région correspond à ton pays avant de t'abonner."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do professional character, creature or hard-surface sculpting and need very high polygon counts with a pipeline connection to Cinema 4D, Maya or 3ds Max."
+      ],
+      "avoidIf": [
+        "You want a one-time purchase instead of an ongoing subscription, since ZBrush no longer sells perpetual licenses."
+      ],
+      "threshold": "Budget the annual desktop-plus-iPad subscription at $35.90/month ($430.80/year), confirmed directly on maxon.net/en/buy.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The subscription is the only option (no perpetual license); the price shown on maxon.net depends on the selected region, so always check the region switcher is set to your own country before subscribing."
+        }
+      ]
+    },
+    "pros": [
+      "L'intégration de pipeline GoZ avec Cinema 4D, Maya et 3ds Max évite les réimports manuels entre la sculpture et le reste du pipeline.",
+      "L'abonnement desktop inclut aussi ZBrush pour iPad, donc la même licence couvre à la fois un poste de travail et un usage sur tablette."
+    ],
+    "prosEn": [
+      "GoZ pipeline integration with Cinema 4D, Maya and 3ds Max removes manual re-import steps between sculpting and the rest of the pipeline.",
+      "The desktop subscription also includes ZBrush for iPad, so the same license covers both a workstation and a tablet workflow."
+    ],
+    "cons": [
+      "Aucune licence perpétuelle n'est plus disponible ; la seule façon de continuer à utiliser ZBrush desktop est un abonnement continu.",
+      "Le palier gratuit ne couvre que ZBrush pour iPad, avec un jeu de pinceaux réduit et un plafond de polygones plus bas que l'application desktop payante."
+    ],
+    "consEn": [
+      "No perpetual license remains available; the only way to keep using desktop ZBrush is an ongoing subscription.",
+      "The free tier only covers ZBrush for iPad, with a reduced brush set and a lower polygon ceiling than the paid desktop app."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 1573
+  },
+  "nomad-sculpt": {
+    "id": "nomad-sculpt",
+    "slug": "nomad-sculpt",
+    "name": "Nomad Sculpt",
+    "logo": null,
+    "websiteUrl": "https://nomadsculpt.com",
+    "tagline": {
+      "fr": "Sculpture numérique 3D",
+      "en": "Mobile 3D sculpting"
+    },
+    "shortDescription": "Nomad Sculpt est une appli de sculpture et peinture 3D avec sculpture multirésolution, tessellation dynamique et matériaux PBR, vendue à l'achat unique par plateforme.",
+    "shortDescriptionEn": "Nomad Sculpt is a 3D sculpting and painting app with multires sculpting, dynamic tessellation and PBR materials, sold as a one-time purchase per platform.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 15 $ (licence à vie), plan Mobile license (iPad/iPhone/Android, per platform)."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $15 (lifetime license), Mobile license (iPad/iPhone/Android, per platform) plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Mobile license (iPad/iPhone/Android, per platform)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "mobile",
+          "displayName": "Mobile license (iPad/iPhone/Android, per platform)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Mobile license (iPad/iPhone/Android, per platform)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "mobile",
+          "displayName": "Mobile license (iPad/iPhone/Android, per platform)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 15,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Vous sculptez en 3D sur iPad ou tablette Android au stylet.",
+        "Vous voulez un outil pro sans abonnement."
+      ],
+      "avoidIf": [
+        "Vous travaillez uniquement sur desktop avec un pipeline lourd.",
+        "Vous avez besoin de CAO paramétrique plutôt que de sculpture."
+      ],
+      "threshold": "Nomad Sculpt est idéal pour la sculpture 3D mobile ; pour un pipeline studio desktop complet, un logiciel de bureau reste préférable.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You sculpt in 3D on an iPad or Android tablet with a stylus.",
+        "You want a pro tool with no subscription."
+      ],
+      "avoidIf": [
+        "You work only on desktop with a heavy pipeline.",
+        "You need parametric CAD rather than sculpting."
+      ],
+      "threshold": "Nomad Sculpt is ideal for mobile 3D sculpting; for a full desktop studio pipeline, a desktop app is still better.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Achat unique, sans abonnement.",
+      "Très abordable pour un outil pro."
+    ],
+    "prosEn": [
+      "One-time purchase, no subscription.",
+      "Very affordable for a pro tool."
+    ],
+    "cons": [
+      "Limité aux appareils mobiles compatibles.",
+      "Moins puissant qu'un logiciel desktop haut de gamme."
+    ],
+    "consEn": [
+      "Limited to compatible mobile devices.",
+      "Less powerful than high-end desktop software."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 342
+  },
+  "plasticity": {
+    "id": "plasticity",
+    "slug": "plasticity",
+    "name": "Plasticity",
+    "logo": null,
+    "websiteUrl": "https://www.plasticity.xyz",
+    "tagline": {
+      "fr": "Modélisation NURBS directe",
+      "en": "Direct NURBS modeling"
+    },
+    "shortDescription": "Plasticity est un outil de modélisation 3D directe, sans historique, avec surfaçage NURBS, vendu en licence unique dès 175 $, essai de 30 jours.",
+    "shortDescriptionEn": "Plasticity is a direct, history-free 3D modeling tool with NURBS surfacing, sold as a one-time license from $175 with a 30-day trial.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 175 $ (licence à vie), plan Indie."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 30-day trial.",
+      "paid": "From $175 (lifetime license), Indie plan."
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Indie",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "indie",
+          "displayName": "Indie",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 175,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-01",
+      "compare_plan_name": "Indie",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "indie",
+          "displayName": "Indie",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 175,
+          "nativeCurrency": "USD",
+          "billingPeriod": null,
+          "billingCommitment": null,
+          "pricingUnit": "one_time"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu veux un surfaçage NURBS de niveau CAO en achat unique plutôt qu'en abonnement récurrent."
+      ],
+      "avoidIf": [
+        "Tu dois utiliser la licence sur plus de 2 (Indie) ou 4 (Studio) machines, ou tu as besoin d'une prise en charge de formats plus large qu'Indie."
+      ],
+      "threshold": "Indie coûte 175 $ en paiement unique pour 2 machines ; Studio coûte 299 $ en paiement unique pour 4 machines avec une prise en charge de formats plus large.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want CAD-grade NURBS surfacing as a one-time purchase instead of a recurring subscription."
+      ],
+      "avoidIf": [
+        "You need to use the license on more than 2 (Indie) or 4 (Studio) machines, or need broader format support than Indie offers."
+      ],
+      "threshold": "Indie is a one-time $175 for 2 machines; Studio is a one-time $299 for 4 machines with broader format support.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Un paiement unique de 175 $ remplace un abonnement récurrent pour l'outil de modélisation principal.",
+      "L'édition directe sans historique évite de reconstruire un arbre de fonctions quand la conception change."
+    ],
+    "prosEn": [
+      "A one-time $175 payment replaces a recurring subscription for the core modeling toolset.",
+      "Direct, history-free editing avoids rebuilding a feature tree when a design changes."
+    ],
+    "cons": [
+      "La licence est liée à un petit nombre de machines (2 pour Indie, 4 pour Studio), ce qui limite la liberté de changer d'appareil.",
+      "Les nouvelles mises à jour ne sont garanties que pendant 12 mois après l'achat, le mécanisme de renouvellement n'étant pas détaillé entièrement."
+    ],
+    "consEn": [
+      "The license is node-locked to a small number of machines (2 for Indie, 4 for Studio), which limits moving between devices freely.",
+      "New version updates are only guaranteed for 12 months after purchase, with the renewal mechanism not fully detailed."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 180
+  },
+  "maya": {
+    "id": "maya",
+    "slug": "maya",
+    "name": "Maya",
+    "logo": null,
+    "websiteUrl": "https://www.autodesk.com/products/maya/overview",
+    "tagline": {
+      "fr": "Animation et VFX 3D",
+      "en": "3D animation & VFX"
+    },
+    "shortDescription": "Autodesk Maya est une suite 3D professionnelle de modélisation, rigging, animation de personnages, effets et rendu, utilisée par de grands studios.",
+    "shortDescriptionEn": "Autodesk Maya is a professional 3D suite for modeling, rigging, character animation, effects and rendering used by major studios.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent, essai de 30 jours.",
+      "paid": "Dès 168 $/mois, plan Annual subscription."
+    },
+    "pricingEn": {
+      "free": "No permanent free plan, 30-day trial.",
+      "paid": "From $168/mo, Annual subscription plan."
+    },
+    "defaultMonthlyPrice": 144.27,
+    "pricing_v5": {
+      "verified_on": "2026-10-02",
+      "compare_plan_name": "Annual subscription",
+      "usage_sensitive": true,
+      "plans": [
+        {
+          "planKey": "annual",
+          "displayName": "Annual subscription",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 168,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-10-02",
+      "compare_plan_name": "Annual subscription",
+      "usage_sensitive": true,
+      "plans": [
+        {
+          "planKey": "annual",
+          "displayName": "Annual subscription",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 168,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 2,
+      "utilisation": 4,
+      "puissance": 5,
+      "reversibilite": 4,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu as besoin d'un pipeline 3D professionnel complet (modélisation, rigging, animation, effets, rendu) dans un workflow de studio."
+      ],
+      "avoidIf": [
+        "Tu es amateur ou en apprentissage solo avec un petit budget et tu n'es pas éligible à Maya Indie, ou tu ne peux pas en obtenir le prix."
+      ],
+      "threshold": "L'abonnement annuel coûte 2 010 $/an (168 $/mois), le point d'entrée pour l'outillage professionnel complet sans le tarif plus élevé du plan mensuel.",
+      "billingTraps": [
+        {
+          "title": "Avant de payer",
+          "text": "La garantie de remboursement est plus courte pour l'abonnement mensuel (15 jours) que pour l'annuel ou le pluriannuel (30 jours), et le pack de tokens Flex (33 tokens pour 99 $) peut s'épuiser en moins d'une semaine à raison de 6 tokens par jour d'usage."
+        }
+      ]
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You need a full professional 3D pipeline (modeling, rigging, animation, effects, rendering) inside a studio workflow."
+      ],
+      "avoidIf": [
+        "You're a hobbyist or solo learner on a tight budget and don't qualify for (or can't get a price on) Maya Indie."
+      ],
+      "threshold": "The annual subscription costs $2,010/year ($168/month), the entry point for the full professional toolset without the monthly plan's higher rate.",
+      "billingTraps": [
+        {
+          "title": "Before you pay",
+          "text": "The money-back guarantee is shorter for monthly subscriptions (15 days) than for annual or multi-year ones (30 days), and the Flex token pack (33 tokens for $99) can run out in under a week at 6 tokens/day of use."
+        }
+      ]
+    },
+    "pros": [
+      "Couvre tout le pipeline professionnel (modélisation, rigging, effets, rendu) en un seul outil, utilisé par de grands studios.",
+      "Le support des standards ouverts (OpenUSD) et le scripting MEL/Python réduisent la dépendance à un pipeline fermé."
+    ],
+    "prosEn": [
+      "Covers the full professional pipeline (modeling, rigging, effects, rendering) in one tool, referenced by major studios.",
+      "Open standards support (OpenUSD) and MEL/Python scripting reduce lock-in to a closed pipeline."
+    ],
+    "cons": [
+      "Courbe d'apprentissage raide : un premier résultat utile demande une vraie formation, contrairement à un outil mono-usage.",
+      "L'abonnement plein tarif (168-255 $/mois) reste cher pour un artiste solo non éligible au palier Indie."
+    ],
+    "consEn": [
+      "Steep learning curve: a first useful result requires real training, unlike a single-purpose tool.",
+      "Full-price subscription ($168-255/month) is expensive for a solo artist not eligible for the Indie tier."
+    ],
+    "researchedOn": "2026-10-02",
+    "demand": 77
+  },
+  "cinema-4d": {
+    "id": "cinema-4d",
+    "slug": "cinema-4d",
+    "name": "Cinema 4D",
+    "logo": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Cinema-4D/C4D_icon.svg",
+    "websiteUrl": "https://www.maxon.net/en/cinema-4d",
+    "tagline": {
+      "fr": "Motion design 3D",
+      "en": "3D motion design"
+    },
+    "shortDescription": "Cinema 4D est une suite de modélisation, animation et rendu 3D pour le motion design, avec le moteur GPU Redshift inclus dans chaque abonnement.",
+    "shortDescriptionEn": "Cinema 4D is a 3D modeling, animation and rendering suite for motion design, bundling the Redshift GPU renderer in every subscription.",
+    "pricing": {
+      "free": "Pas de plan gratuit.",
+      "paid": "Dès 69,92 $/mois, plan Cinema 4D (annual billing)."
+    },
+    "pricingEn": {
+      "free": "No free plan.",
+      "paid": "From $69.92/mo, Cinema 4D (annual billing) plan."
+    },
+    "defaultMonthlyPrice": 60.04,
+    "pricing_v5": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Cinema 4D (annual billing)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "cinema4d-annual",
+          "displayName": "Cinema 4D (annual billing)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 69.92,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "pricing_v5En": {
+      "verified_on": "2026-09-25",
+      "compare_plan_name": "Cinema 4D (annual billing)",
+      "usage_sensitive": false,
+      "plans": [
+        {
+          "planKey": "cinema4d-annual",
+          "displayName": "Cinema 4D (annual billing)",
+          "isComparePlan": true,
+          "isFree": false,
+          "nativeAmount": 69.92,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid",
+          "pricingUnit": "seat"
+        }
+      ]
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 5,
+      "reversibilite": 3,
+      "lastActivityVerifiedOn": null
+    },
+    "verdict": {
+      "keepIf": [
+        "Tu fais du motion design ou de la 3D assez régulièrement pour justifier un abonnement récurrent et tu veux le moteur de rendu GPU inclus."
+      ],
+      "avoidIf": [
+        "Tu n'as besoin de 3D qu'occasionnellement ou ton budget est serré ; une suite gratuite comme Blender couvre le même flux de travail de base sans abonnement."
+      ],
+      "threshold": "Prévois environ 70 $/mois facturé à l'année (ou 109 $/mois facturé au mois) pour un siège, avant d'envisager le pack Maxon One.",
+      "billingTraps": []
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You do motion design or 3D work regularly enough to justify a recurring subscription and want the GPU renderer bundled in."
+      ],
+      "avoidIf": [
+        "You need 3D occasionally or are on a tight budget; a free suite like Blender covers the same core workflow without a subscription."
+      ],
+      "threshold": "Budget about $70/month billed annually (or $109/month billed monthly) for one seat before adding the Maxon One bundle.",
+      "billingTraps": []
+    },
+    "pros": [
+      "Inclut un moteur de rendu GPU et des nœuds de rendu distribué dans chaque abonnement au lieu de les facturer à part.",
+      "Couvre modélisation, animation et rendu dans une seule application, ce qui réduit le nombre d'outils séparés dont a besoin un motion designer."
+    ],
+    "prosEn": [
+      "Bundles a GPU renderer and distributed render nodes into every subscription instead of charging for them separately.",
+      "Covers modeling, animation and rendering in one application, reducing the number of separate tools a motion designer needs."
+    ],
+    "cons": [
+      "Aucun palier gratuit, contrairement à Blender ; chaque mois sans abonnement signifie aucun accès au logiciel.",
+      "Les fonctionnalités de niveau équipe comme le SSO et un tableau de bord de licences dédié sont réservées au palier tarifaire Équipes séparé, pas au plan individuel."
+    ],
+    "consEn": [
+      "No free tier at all, unlike Blender; every month without a subscription means no access to the software.",
+      "Team-level features like SSO and a dedicated license dashboard sit behind the separate Teams pricing tier, not the individual plan."
+    ],
+    "researchedOn": "2026-09-25",
+    "demand": 96
   }
 }

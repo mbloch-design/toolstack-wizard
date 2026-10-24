@@ -1,3 +1,7 @@
+## 2026-10-24 — Intégration comptes et main avant publication
+
+Intégration des deux historiques, sans remplacer le catalogue, les métadonnées SEO, CookieConsent v3 ni la navigation récents de main. L'onboarding et le bento des comptes restent présents. Les ajouts animés et leurs actions Annuler vérifient le propriétaire et la génération de session avant toute mutation ; le refus d'ajout ne déclenche aucun succès. Le bootstrap des URL d'authentification reste bloquant et ne charge plus DataFast. L'accès Ma stack indique la page courante. Les parcours de test suivent les commandes réelles du header et de l'Explorer, avec consentement initial explicite et assertions privées conservées. État de validation local : build complet, 896 tests applicatifs, 237 tests Ma stack, 298 contrats API et SQL/rollback passent ; suites navigateur complètes et publication définitive encore en cours. Incident de promotion/retour à la version précédente consigné dans STACK_ACCOUNT_OPERATIONS.md.
+
 ## 2026-10-24 — Informations de confidentialité des comptes
 
 La page de confidentialité FR/EN décrit les identités de connexion, le contenu des stacks sauvegardées, les champs métier/tarif facultatifs et les e-mails de compte via Resend. Elle précise les seules informations de base demandées à Google/GitHub. Aucun changement de collecte, de droit ou de durée de conservation. TypeScript app et design tokens validés avant commit ; recette de production encore en cours.
@@ -183,6 +187,73 @@ Reprise du premier écran connecté : promesse ToolTrim, explication des trois b
 - Remplacement par le token existant `var(--radius-sm)` (0,375 rem, soit 6 px à la taille racine standard). Baseline conservée.
 - Validation : `npm run validate:design-tokens` PASS (221 rayons littéraux) ; test `ToolFeaturesBlock` et build production complet PASS.
 
+
+## 2026-10-23 · Retrait d’AutoPhotos.ai
+
+- Suppression de la fiche AutoPhotos.ai FR/EN à la demande du propriétaire du site, qui signale l’arrêt du produit : pas de fiche archivée promotionnelle ni de redirection vers un autre outil.
+- Retrait du catalogue, de l’index de recherche, de la couleur de marque, de l’exception dofollow et du visuel OG public. Routes, sitemap et fichiers LLM régénérés sans cette fiche. Les preuves éditoriales historiques restent dans Git et les dossiers de recherche non publiés.
+
+## 2026-10-20 · Maillage des sous-pages, llms-full, Proton Pass et Keeper
+
+- Sous-pages prix et alternatives : bloc de liens vers les mêmes sous-pages des 5 premières alternatives (« 1Password pricing », « Prix de Bitwarden ») et vers la sous-page sœur.
+- `llms-full.txt` filtré par le sitemap : 1 245 outils publiés, plus aucune URL en 404 ou 308.
+- Fiches Proton Pass et Keeper (grilles officielles relevées le 20/10, $ et €), ajoutées au classement des gestionnaires de mots de passe et aux alternatives de NordPass, 1Password, Bitwarden, Dashlane et LastPass. Pas de note ToolTrim.
+
+## 2026-10-20 · Consentement GA4 par région, nouveau bandeau
+
+- Constat : Vercel compte environ 7 fois plus de visiteurs que GA4, parce que GA4 ne compte que les visiteurs qui acceptent les cookies (Consent Mode avancé, refus par défaut).
+- `api/consent-region.ts` lit le pays fourni par Vercel (`x-vercel-ip-country`). Dans l'EEE, au Royaume-Uni et en Suisse, ou si le pays est inconnu, le bandeau s'affiche comme avant. Ailleurs, GA4 mesure dès l'arrivée et « Préférences cookies » permet toujours de refuser.
+- Bandeau réécrit (« Help us improve ToolTrim / Aidez-nous à améliorer ToolTrim »), boutons toujours à égalité ; politique de confidentialité complétée ; 2 tests e2e ajoutés (hors région, échec de la détection).
+
+## 2026-10-20 · Magnific (ex-Freepik) : prix en crédits, fiche et maillage
+
+- Grille officielle en euros relevée le 20/10 (annuel et mensuel), `usage_sensitive`, mises en garde sur le coût en crédits par modèle ; suppression de la fausse offre de lancement à 7,25 $.
+- Fiche réécrite : Freepik renommé Magnific, agrandisseur conservé, écosystème MCP, ComfyUI, API ; titre, meta fiche et meta prix dédiés.
+- Pilote prix : `magnific` remplace le doublon redirigé `magnific-ai` ; FAQ « le prix dépend-il de l'usage ? » pour les outils facturés à l'usage ; réponse prix qui signale les tarifs promotionnels et les engagements de 2 ans.
+- « Pas d’offre gratuite » (de élidé) était lu comme une offre gratuite : 30 fiches payantes (Pipedrive, Castmagic, Moosend, Teachable…) titraient « free plan ». Règle corrigée, test ajouté.
+
+## 2026-10-20 : guides et classements « meilleurs outils », refonte
+
+- /guides : en-tête resserré (titre, une phrase, une barre filtres + recherche compacte + tri) ; derniers guides en 4 colonnes après la rangée vedette ; classements par besoin après le flux daté, en lignes compactes (trois logos, titre, nombre d'outils).
+- Page classement (BestOfGuidePage) au gabarit des articles : en-tête avec couverture des 4 premiers outils, table des matières collante, colonne de 760 px ; choix sur surface douce, tableau avec logos, chaque outil au langage de sa fiche (forces/limites, cartes « Garde-le si / Évite-le si », « Avant de payer », bouton vers la fiche), FAQ à l'échelle des fiches, « Autres classements ».
+- Couvertures légères `src/data/bestOfCovers.json` (3,7 Ko) via `scripts/gen-best-of-covers.mjs`, appelé par le générateur des classements, pour ne pas charger les 184 Ko de données dans l'index.
+
+## 20 octobre 2026 : prix inventés retirés, pilote des pages prix, désindexations
+
+- 66 fiches portaient des prix génériques jamais recherchés (Salesforce « 15 €/mois ») : retirés, puis grilles relevées sur les pages officielles (37 vérifiées, 16 sur devis, 2 arrêtées). NordPass, 1Password, Bitwarden, Dashlane, LastPass et MongoDB Atlas : grilles complètes, promotions signalées.
+- Pilote `/pricing` sur 20 fiches : phrase-réponse, coût par sièges, FAQ tarifaire + FAQPage, depuis la grille vérifiée (`src/lib/toolPricingDetail.ts`, `ToolPricingDetail.tsx`).
+- `/explorer/around/*` et catégories en noindex, follow ; explorer/around hors sitemap.
+- Page « meilleurs gestionnaires de mots de passe pour freelances » (FR/EN).
+
+## 19 octobre 2026 : SEO des guides et des stacks
+
+Constat (GSC du 18/07 au 17/10) : 424 pages de stacks pour 1 clic et 350 impressions, guides à 20 clics pour 5 500 impressions. Les stacks n'étaient liées que depuis leur hub, sans donnée structurée, avec un titre calé sur « stack ».
+
+- Maillage : bloc « Stacks » en fin de fiche outil (`src/lib/toolStacks.ts`, index `src/data/tool_stacks_index.json` généré par `scripts/gen-stacks-catalog-index.ts`, 3 stacks par outil réparties pour couvrir les 212) ; « Les guides pour choisir » sur les stacks ; « Les stacks qui les utilisent » sur les guides ; « Autres stacks » par outils et sous-profils partagés.
+- Prérendu : BreadcrumbList + ItemList sur les stacks, les comparatifs « meilleurs outils » et les piliers persona (liste lue dans le rendu serveur).
+- `src/lib/stackSeo.ts` : titre et description des stacks partagés entre prérendu et client (« X stack: best tools and budget (2026) »).
+- 456 rôles d'outils traduits dans les pages anglaises des stacks ; sigles des titres FR.
+- 20 guides anglais passés sur un slug anglais, 301 dans les deux sens.
+- Guide Loom : prix revérifiés sur loom.com/pricing, titre et FAQ sur « is loom free » ; liens internes vers les guides et fiches concernés.
+- `/ma-stack` et `/my-stack` en noindex, follow.
+- Reporté : slugs anglais des stacks (voir docs/TODO.md).
+
+## 16 octobre 2026 : rail de filtres commun, titres harmonisés, CI réparée
+
+- Rail segmenté de l'Explorer (rail gris, curseur blanc glissant `RailThumb`, compteurs) appliqué à Outils, Catégorie, Stacks, Comparatifs, Guides et Recherche ; logique de filtre inchangée. Mode télescope (Stacks) : segment parent « ‹ objectif » qui porte le curseur et fait remonter d'un niveau.
+- Titres de page au style Explorer (police de marque, 600) ; compteur d'outils en exposant après le titre.
+- Explorer : le rail reste visible même avec une seule catégorie.
+- Tests e2e mis à jour après les changements voulus (libellés du budget, interrupteur d'ajout, logos des cartes de guides) ; suppression de StackSaveDialog, plus utilisé.
+- Validation reproduisant la CI : API, contrats SEO, tokens, types, 198 tests Ma stack, build (HTML 705,5 Mio), 70 e2e, R11 21, paiement 16, hydratation 57.
+
+## 16 octobre 2026 : Explorer refait zone par zone, ajout à Ma stack unifié
+
+- Hero : tuile Apple (image OG jamais rognée, logo + nom + catégorie, boutons sur une ligne), élision FR (« autour d'Airtable »), catégories en casse de phrase, typographie FR (espace fine avant %).
+- Filtres : contrôle segmenté centré sous le titre de section, curseur qui glisse, compteurs, catégories < 3 outils regroupées dans « Autres », transition de vue sans flash ; flèche retour visible avant défilement ; lien « Ma stack » dans la barre collée quand la barre du haut est masquée.
+- Grille : masonry Pinterest (placement colonne la plus courte), épingle = image, nom, relation courte précise (« Alternative · Retouche photo »), description 1 ligne ; 12 cartes prérendues (le reste au défilement), fin de liste, squelettes en épingles, état vide reformulé, filtre de relation en pastille.
+- Ajout à Ma stack commun au site (`useAddToStack`, `src/lib/stackAddStory.tsx`) : envol du bouton vers « Ma stack », ajout à l'atterrissage, compteur animé, pilule de confirmation Annuler/Voir ; le bouton devient un interrupteur avec confirmation de retrait. Fin de la fenêtre de collection dans l'Explorer (Mon Stack V1).
+- Menu latéral : plus de flash déplié au rechargement (index.html).
+- Validation : 392 tests app, 170 API, garde-fou tokens, build PASS (HTML 704,8 Mio), e2e Explorer/Ma Stack 26/26.
 ## 2026-10-16 : fonctionnalites presentees en tags informatifs
 
 - Tuiles remplacees par des tags compacts : texte 13 px, espacement 6 x 10 px, icone 14 px, coins 6 px, largeur naturelle et retour entre les mots.
@@ -6017,3 +6088,50 @@ La première invocation distante des API comptes échouait avant le handler (`ER
 ### Activation GitHub et reconstruction de configuration
 
 Connexion GitHub réelle confirmée par le propriétaire ; import serveur du nom et de l’avatar vérifié sans exposer les données personnelles. Flag GitHub activé uniquement pour la branche Preview. Ajout d’un signal explicite `TOOLTRIM_FORCE_BUILD=1` au filtre de build pour les reconstructions après changement de configuration seul ; test de régression skip/rebuild. Google reste désactivé.
+
+## 2026-10-16 : publication de Chronokura
+
+- Publication autorisée du brouillon privé Chronokura, en français et en anglais, avec lien officiel dofollow.
+- Prix conservé en achat unique de 19,99 €, sans équivalent mensuel ; sources et visuels officiels conservés.
+- Publication limitée à Chronokura, depuis origin/main ; autres travaux locaux et Sovkern exclus.
+- Validation : 397 tests PASS, TypeScript app PASS, build complet et contrôles SEO/routage/budgets PASS ; recherche et rendu contrôlés dans le navigateur.
+
+
+## 2026-10-16 — R3/R7 : catalogue public sans lecture Supabase par défaut
+
+- Décision approuvée : servir le JSON versionné sans nouvelle base payante. Gate `VITE_CATALOG_READ_SOURCE=supabase` pour un éventuel retour distant après rebuild ; SDK importé seulement derrière le gate. Build, backoffice, migrations et soumissions conservés.
+- Catégories, résumés, fiches, comparatifs et guides locaux ; bundles liés à la fiche courante lors des navigations. Source active documentée dans ARCHITECTURE et statut de la cible Supabase clarifié.
+- 34 captures avant/après : 88 Fetch Supabase → zéro requête Supabase, zéro catalogue complet, zéro erreur applicative, choix Ma Stack conservés. JS d'entrée 821 334 → 639 565 octets (−22,13 % sur ce fichier). Index et données catalogue inchangés ; aucune accélération déduite des essais concurrents.
+- Validation : 462 tests applicatifs, TypeScript, build/SEO/routage/budgets PASS ; 57 hydratations, huit recherche/source locale et 15 routages PASS. Parité de 18 pages FR/EN (texte/meta/JSON-LD), données et sitemap. Relecture indépendante sans défaut bloquant.
+- Régression navigateur ajoutée à la CI : session expirée fictive et vraie navigation SPA sans Supabase. Consentement des recettes normalisé et appels analytics bloqués.
+- Validé localement ; publication et recette production à effectuer. Aucun projet distant, clé, email ou paiement modifié.
+
+
+## 2026-10-17 — R7 : transport compact de l'index navigateur sans perte
+
+- Plugin Vite existant : clés mutualisées au build et restitution du même tableau d'objets. Tous les champs, valeurs nulles/absentes, relations, prix et traductions conservés ; JSON source, SSR et dev inchangés. Tables de transport limitées à l'appel de reconstruction.
+- Module réel : 1 421 919 → 1 161 324 octets (−18,33 %) ; gzip9 326 124 → 304 054 (−6,77 %), Brotli5 266 296 → 253 313 (−4,88 %). Micromesure Chromium séparée : aucune hausse du coût d'import observée ; aucun gain de vitesse globale du site annoncé.
+- Validation : 463 tests app, 198 Ma Stack (couverture recoupée), 39 contrats SEO, types app/node/API, build et budgets PASS. 13 184 HTML identiques après seuls noms de modules JS normalisés ; trois sources catalogue et sitemap identiques.
+- 105 scénarios navigateur PASS : 44 recherche/stack/découverte/routage, quatre Explorer et 57 hydratations. 34 captures : zéro requête Supabase, zéro catalogue complet, zéro erreur applicative ou sélection altérée ; détails toujours en shards.
+- Tests Ma Stack alignés sur la publication locale et les interactions actuelles Annuler/Voir ; assertions de stockage et destination conservées. Analytics des recettes isolés. Relecture indépendante sans défaut bloquant.
+- Validé localement, publication et recette CDN à effectuer. Ni nouvelle base, dépendance, source éditoriale, fournisseur ni modification de service distant.
+## 2026-10-17 : alternatives conformite actualisees
+
+- Vanta, Drata, OneTrust, Didomi et Axeptio : contenus FR/EN, prix officiels, alternatives et notes revus. Sovkern reste hors catalogue public.
+- Notes des cartes alignees sur les cinq axes des fiches. Lecture locale par defaut et transport compact de main conserves.
+
+## 2026-10-17 : publication publique de Sovkern
+
+- Publication explicitement demandee de la fiche FR/EN validee en prive : note 3,8/5, prix, alternatives, fonctionnalites et trois visuels officiels conserves.
+- Lien officiel do-follow. Integration au catalogue, a la recherche, aux routes prerender, au sitemap et aux fichiers LLM via les generateurs existants. Aucun encart dedie ajoute a l'accueil.
+
+## 2026-10-19 : Kit et parcours de conversion associe
+
+- Fiche Kit FR/EN et pages Prix/Avis/Alternatives : benefices concrets, essai 14 jours sans carte, distinction Free/Creator/Pro, note documentee 4/5, prix annuels USD sans conversion et promotion distincte du renouvellement. Lien affilie conserve.
+- Deux visuels produit officiels supplementaires et video officielle Kit de 1 min 27 : lecteur Wistia charge au clic, sans telechargement ni lecture automatique au chargement. Metadonnees VideoObject adaptees au fournisseur. Brevo, MailerLite, Beehiiv et Substack : positionnement et liens canoniques vers Kit ; anciens quotas, prix convertis et gains de temps non sources retires dans ce perimetre.
+- Comparatifs Mailchimp–Kit et Kit–GetResponse : guides FR/EN par scenario, etapes de test, sources et liens affilies via le template existant. Aucune promesse de hausse mesuree de conversion, aucun push inclus.
+
+## 2026-10-19 : publication des fiches locales restantes
+
+- Comparaison integrale du catalogue local avec GitHub : seules ViralSnap et Sprokl manquaient au catalogue public. Ajout des deux fiches FR/EN deja redigees, avec liens officiels nofollow et prix natifs documentes.
+- Regeneration de l'index de recherche, des routes, du sitemap et des fichiers LLM. Aucun ancien changement d'interface ni chantier catalogue non publie ajoute au lot.

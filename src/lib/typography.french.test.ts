@@ -13,3 +13,10 @@ describe("frenchTypography", () => {
     expect(frenchTypography("voir https://tooltrim.com", "fr")).toBe("voir https://tooltrim.com");
   });
 });
+
+describe("frenchTypography percent", () => {
+  it("puts a narrow no-break space before % in French only", () => {
+    expect(frenchTypography("prélève 15% de commission", "fr")).toBe("prélève 15 % de commission");
+    expect(frenchTypography("takes 15% commission", "en")).toBe("takes 15% commission");
+  });
+});

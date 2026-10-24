@@ -5,12 +5,12 @@ import { renderToString } from "react-dom/server";
 import { expect, it, vi } from "vitest";
 import { PinToolButton } from "@/components/PinToolButton";
 
-const { pinTool, navigate } = vi.hoisted(() => ({ pinTool: vi.fn(), navigate: vi.fn() }));
+const { pinTool, navigate } = vi.hoisted(() => ({ pinTool: vi.fn(() => true), navigate: vi.fn() }));
 vi.mock("react-router-dom", () => ({ useNavigate: () => navigate }));
 vi.mock("@/hooks/useStackPins", () => ({
-  useStackPins: () => ({ state: { pinnedToolSlugs: [] }, pinTool }),
+  useStackPins: () => ({ state: { pinnedToolSlugs: [] }, requestAddAccess: vi.fn(async () => true), pinTool }),
 }));
-vi.mock("sonner", () => ({ toast: { success: vi.fn() } }));
+vi.mock("sonner", () => ({ toast: { success: vi.fn(), custom: vi.fn(), dismiss: vi.fn() } }));
 
 it("keeps prerendered add disabled until hydration, then handles the first click without replacing the button", async () => {
   const element = <PinToolButton slug="figma" label="Figma" t={(fr) => fr} />;
@@ -30,8 +30,8 @@ it("keeps prerendered add disabled until hydration, then handles the first click
     expect(container.querySelector("button")).toBe(button);
     expect(button.disabled).toBe(false);
     expect(errors).toEqual([]);
-    fireEvent.click(button);
-    expect(pinTool).toHaveBeenCalledExactlyOnceWith("figma");
+    await act(async () => { fireEvent.click(button); });
+    expect(pinTool).toHaveBeenCalledExactlyOnceWith("figma", []);
     expect(navigate).not.toHaveBeenCalled();
   } finally {
     await act(async () => root?.unmount());

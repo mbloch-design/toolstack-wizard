@@ -27,7 +27,7 @@ Le plugin typographique sans usage sur les pages générées et le tagger Lovabl
 
 ### Migration du catalogue outils
 
-Le catalogue est actuellement hybride : Supabase est prioritaire, avec des JSON locaux utilisés par le build, certains hooks, le diagnostic et les tests. La cible « Supabase source éditoriale unique + snapshot de build généré » et ses gates SEO sont documentées dans `docs/SUPABASE_TOOL_CATALOG_MIGRATION.md`.
+Le catalogue public et le build utilisent par défaut les JSON versionnés, sans lecture Supabase des visiteurs (voir « Source de lecture du catalogue public » ci-dessous). Supabase et les travaux de migration éditoriale sont conservés séparément ; la cible envisagée et ses gates SEO restent documentées dans `docs/SUPABASE_TOOL_CATALOG_MIGRATION.md`, sans activation implicite de cette cible.
 
 Ne pas supprimer `tools_v4.json` ou `tools_index.json` avant d’avoir migré le prerender, les listings, le diagnostic et les tests selon ce plan.
 
@@ -384,3 +384,27 @@ Utiliser un guard `if (!data) return []` **à l'intérieur** du callback `useMem
 | `ToolSummaryBlock` | SEO/LLM summary (visually quiet) |
 | `ToolJsonLd` | Schema.org JSON-LD |
 | `ToolDiagCta` | Bande audit de stack (réécrit : éditorial, sans bleu) |
+
+
+## Source de lecture du catalogue public
+
+Par défaut, les hooks publics lisent le catalogue JSON versionné : index léger,
+catégories, shards de fiches et guides locaux. Les visiteurs ne nécessitent pas de
+base de données active. Le contenu change à la prochaine publication du catalogue.
+
+Le retour aux rafraîchissements Supabase existants est explicite :
+`VITE_CATALOG_READ_SOURCE=supabase`, puis rebuild/redéploiement. Sans cette valeur
+exacte, les lectures restent locales ; `refreshRemote: false` garde priorité.
+Ce réglage ne modifie ni le backoffice, ni les scripts de migration, ni les
+soumissions Redis/Creem. Le garde-fou JSON du build reste inchangé.
+Ne réactiver les lectures distantes qu'après vérification de disponibilité,
+parité des données et budget de quota. Aucun nouveau fournisseur n'est requis.
+
+
+Le plugin `scripts/lib/browser-tool-index.ts` compacte le transport de
+`tools_index.json` uniquement dans le build navigateur : clés mutualisées et
+valeurs complètes, reconstruites en objets avant exposition aux importeurs.
+Ce format n'est pas une source éditoriale ni un contrat à employer dans les
+composants. Le JSON versionné, le SSR, les générateurs et le développement
+restent inchangés ; les tests de fixture contrôlent les champs futurs et les
+budgets de transport. [Mesures R7](PROJECTION_INDEX_NAVIGATEUR_2026-10-08.md#r7-compact-2026-10-17).

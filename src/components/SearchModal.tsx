@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
-import { ArrowRight, BookOpen, Boxes, Clock, Columns2, LayoutGrid, Lightbulb, Search, X } from "@/lib/icons";
+import { ArrowRight, BarChart3, BookOpen, Boxes, Clock, Code2, Columns2, LayoutGrid, Lightbulb, ListChecks, Megaphone, MessagesSquare, PenTool, Receipt, Search, Sparkles, Video, Workflow, X } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useCategories, usePosts, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { guideSearchKey, useCatalogSearch } from "@/hooks/useCatalogSearch";
@@ -38,21 +38,26 @@ const SEARCH_EXAMPLES = [
   { fr: "facturation", en: "invoicing" },
 ];
 
-/** Deux outils connus par besoin (deux logos par ligne, comme les duels) : on reconnaît le besoin à ses logos avant
- * de lire son nom. Choix éditorial, pas un tri automatique (le tri par
- * demande faisait remonter des marques inconnues). */
-const NEED_SHOWCASE: Record<string, string[]> = {
-  productivite: ["notion", "clickup", "todoist"],
-  creation: ["canva", "capcut", "descript"],
-  design: ["figma", "framer", "sketch"],
-  marketing: ["hubspot", "brevo", "mailchimp"],
-  automatisation: ["zapier", "make", "n8n"],
-  dev: ["webflow", "github", "vercel"],
-  communication: ["slack", "zoom", "loom"],
-  donnees: ["google-analytics", "hotjar", "looker-studio"],
-  ia: ["chatgpt", "claude", "perplexity"],
-  admin: ["stripe", "qonto", "pennylane"],
+/** One line glyph per need, in the same 28px tile as every other row of the
+ * window: a single picto language (two 18px logos per need were unreadable
+ * and mixed three visual systems). Logos stay where they are the subject,
+ * in the duels. */
+const NEED_GLYPHS: Record<string, typeof Search> = {
+  productivite: ListChecks,
+  creation: Video,
+  design: PenTool,
+  marketing: Megaphone,
+  automatisation: Workflow,
+  dev: Code2,
+  communication: MessagesSquare,
+  donnees: BarChart3,
+  ia: Sparkles,
+  admin: Receipt,
 };
+function NeedGlyph({ id }: { id: string }) {
+  const Glyph = NEED_GLYPHS[id] || LayoutGrid;
+  return <Glyph />;
+}
 
 /** Recherches récentes, comme Spotlight : enregistrées seulement quand une
  * recherche aboutit (résultat ouvert ou « Voir tous les résultats »), dans ce
@@ -130,11 +135,6 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
   const toolById = useMemo(() => new Map(tools.map((tool) => [tool.id, tool])), [tools]);
   const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
   const postBySearchKey = useMemo(() => new Map(posts.map((post) => [guideSearchKey(post, lang), post])), [posts, lang]);
-  // La couleur vient des vrais logos, pas d'icônes grises.
-  const needLogos = useMemo(() => new Map(CATALOG_NEEDS.map((need) => [
-    need.id,
-    (NEED_SHOWCASE[need.id] || []).map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[],
-  ])), [toolBySlug]);
 
   const fallbackResults = useMemo<SearchResult[]>(() => {
     const normalized = query.trim().toLocaleLowerCase(lang);
@@ -244,7 +244,8 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
       dialogRef.current?.querySelector<HTMLElement>(".gs-guide .gs-row")?.focus();
       return;
     }
-    if (event.key === "ArrowDown") { event.preventDefault(); setActiveIndex((index) => Math.min(index + 1, results.length - 1)); }
+    // The last stop is « See all results », a row like the others.
+    if (event.key === "ArrowDown") { event.preventDefault(); setActiveIndex((index) => Math.min(index + 1, results.length)); }
     if (event.key === "ArrowUp") { event.preventDefault(); setActiveIndex((index) => Math.max(index - 1, 0)); }
     if (event.key === "Enter") {
       event.preventDefault();
@@ -285,9 +286,16 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
             aria-activedescendant={activeIndex >= 0 ? `gs-option-${activeIndex}` : undefined}
             autoComplete="off"
           />
-          {query && <button type="button" className="gs-clear" onClick={() => { setQuery(""); inputRef.current?.focus(); }}>{t("Effacer", "Clear")}</button>}
+          {query && (
+            <button type="button" className="gs-clear" onClick={() => { setQuery(""); inputRef.current?.focus(); }} aria-label={t("Effacer la recherche", "Clear search")}>
+              <X aria-hidden />
+            </button>
+          )}
           </label>
-          <button type="button" className="gs-icon-button" onClick={onClose} aria-label={t("Fermer", "Close")}><X aria-hidden /></button>
+          {/* Mobile only (iOS « Annuler ») : on a large screen Esc and a click
+              outside close the window, and a second round button next to the
+              clear one read as a duplicate. */}
+          <button type="button" className="gs-cancel" onClick={onClose}>{t("Annuler", "Cancel")}</button>
         </div>
         <p className="sr-only" role="status" aria-live="polite">{statusMessage}</p>
 
@@ -315,9 +323,9 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
                             onMouseEnter={() => setActiveIndex(index)}
                             onClick={() => goTo(result.to)}
                           >
-                            {result.tool ? <ToolLogo tool={result.tool} size={32} /> : <span className="gs-result-icon" aria-hidden><KindIcon kind={result.kind} /></span>}
+                            {result.tool ? <ToolLogo tool={result.tool} size={28} className="gs-result-logo" /> : <span className="gs-result-icon" aria-hidden><KindIcon kind={result.kind} /></span>}
                             <span className="gs-result-text">
-                              <strong>{displayText(result.label, lang)}</strong>
+                              <strong><Highlight text={displayText(result.label, lang)} query={query} /></strong>
                               {result.meta && <small>{result.meta}</small>}
                             </span>
                             <ArrowRight className="gs-result-arrow" aria-hidden />
@@ -328,8 +336,18 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
                   );
                 })}
               </div>
-                <button type="button" className="gs-view-all" onClick={viewAllResults}>
-                  {t("Voir tous les résultats pour", "See all results for")} « {query.trim()} » <ArrowRight aria-hidden />
+                <button
+                  type="button"
+                  id={`gs-option-${results.length}`}
+                  className={activeIndex === results.length ? "gs-result gs-view-all is-active" : "gs-result gs-view-all"}
+                  onMouseEnter={() => setActiveIndex(results.length)}
+                  onClick={viewAllResults}
+                >
+                  <span className="gs-result-icon" aria-hidden><Search /></span>
+                  <span className="gs-result-text">
+                    <strong>{t("Tous les résultats pour", "All results for")} « {query.trim()} »</strong>
+                  </span>
+                  <ArrowRight className="gs-result-arrow" aria-hidden />
                 </button>
               </div>
             ) : (
@@ -392,9 +410,7 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
                   {CATALOG_NEEDS.map((need) => (
                     <li key={need.id}>
                       <Link to={`${prefix}/tools?need=${need.id}`} onClick={onClose} className="gs-row">
-                        <span className="gs-row-lead gs-row-logos" aria-hidden>
-                          {(needLogos.get(need.id) || []).slice(0, 2).map((tool) => <ToolLogo key={tool.id} tool={tool} size={18} />)}
-                        </span>
+                        <span className="gs-row-lead" aria-hidden><NeedGlyph id={need.id} /></span>
                         <span className="gs-row-label">{lang === "en" ? need.en : need.fr}</span>
                       </Link>
                     </li>
@@ -414,8 +430,8 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
                       <li key={slugPair}>
                         <Link to={`${prefix}/comparatif/${slugPair}`} onClick={onClose} className="gs-row">
                           <span className="gs-row-lead gs-row-logos" aria-hidden>
-                            <ToolLogo tool={toolA} size={18} />
-                            <ToolLogo tool={toolB} size={18} />
+                            <ToolLogo tool={toolA} size={20} />
+                            <ToolLogo tool={toolB} size={20} />
                           </span>
                           <span className="gs-row-label">{toolA.name} <span className="gs-row-vs">vs</span> {toolB.name}</span>
                         </Link>
@@ -431,11 +447,7 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
                   {GOAL_STACKS.map((stack) => (
                     <li key={stack.slug}>
                       <Link to={`${prefix}/stacks/${stack.slug}`} onClick={onClose} className="gs-row">
-                        <span className="gs-row-lead gs-row-logos" aria-hidden>
-                          {stack.tools.slice(0, 2).map((tool) => (
-                            <ToolLogo key={tool.slug} tool={resolveStackTool(tool, toolBySlug) as ToolSummary} size={18} />
-                          ))}
-                        </span>
+                        <span className="gs-row-lead" aria-hidden><Boxes /></span>
                         <span className="gs-row-label">{lang === "fr" ? stack.objectiveFr : stack.objectiveEn}</span>
                       </Link>
                     </li>
@@ -455,13 +467,23 @@ export function SearchModal({ onClose: close }: { onClose: () => void }) {
   );
 }
 
+/** The typed part of a name, set apart like Spotlight: the eye finds why the
+    row matched. Accent- and case-insensitive; no match leaves the text as is. */
+function Highlight({ text, query }: { text: string; query: string }) {
+  const needle = fold(query.trim());
+  if (needle.length < 2) return <>{text}</>;
+  const at = fold(text).indexOf(needle);
+  if (at < 0) return <>{text}</>;
+  return <>{text.slice(0, at)}<mark className="gs-hit">{text.slice(at, at + needle.length)}</mark>{text.slice(at + needle.length)}</>;
+}
+
 function NeedChips({ prefix, lang, onPick }: { prefix: string; lang: string; onPick: () => void }) {
   return (
     <ul className="gs-list">
       {CATALOG_NEEDS.map((need) => (
         <li key={need.id}>
           <Link to={`${prefix}/tools?need=${need.id}`} onClick={onPick} className="gs-row">
-            <span className="gs-row-lead" aria-hidden><LayoutGrid /></span>
+            <span className="gs-row-lead" aria-hidden><NeedGlyph id={need.id} /></span>
             <span className="gs-row-label">{lang === "en" ? need.en : need.fr}</span>
           </Link>
         </li>
@@ -476,12 +498,6 @@ function KindIcon({ kind }: { kind: ResultKind }) {
   if (kind === "stack") return <Boxes />;
   if (kind === "bestof") return <Lightbulb />;
   return <LayoutGrid />;
-}
-
-/** Same resolution as the homepage: live catalogue data, config fills gaps. */
-function resolveStackTool(tool: StackTool, bySlug: Map<string, ToolSummary>) {
-  const live = bySlug.get(tool.slug);
-  return { ...tool, ...live, name: live?.name || tool.name, websiteUrl: live?.websiteUrl || tool.websiteUrl, logo: tool.logo || live?.logo || undefined };
 }
 
 function categoryName(categories: any[], categoryId: string, lang: string) {

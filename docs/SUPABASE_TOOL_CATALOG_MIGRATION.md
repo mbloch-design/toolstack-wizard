@@ -2,7 +2,16 @@
 
 > Architecture cible pour supprimer les fichiers JSON éditoriaux sans perdre le prerender, le SEO, le GEO ni la résilience du build.
 
-## Décision
+> **Statut au 16 octobre 2026 : cible éditoriale conservée, non activée.**
+> Le build et les lectures du catalogue public utilisent les JSON versionnés.
+> Supabase est INACTIVE ; aucune réactivation ni nouvelle base n'est requise
+> pour servir les visiteurs. Le retour distant est explicite et soumis à
+> disponibilité, parité et budget. Voir [la source active](ARCHITECTURE.md#source-de-lecture-du-catalogue-public)
+> et [le bilan R3/R7](CHARGEMENT_CATALOGUE_2026-10-08.md#actualisation-r3r7--16-octobre-2026).
+> Les constats de fusion et de hooks ci-dessous décrivent la situation ayant
+> motivé cette proposition, pas l'activation de cette migration.
+
+## Décision proposée à l'origine
 
 Oui, tout le catalogue outils peut vivre dans Supabase.
 

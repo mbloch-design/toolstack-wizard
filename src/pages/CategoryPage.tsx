@@ -1,4 +1,5 @@
 import { useLocation, useParams } from "react-router-dom";
+import RailThumb from "@/components/motion/RailThumb";
 import { Link } from "@/lib/routerLinks";
 import { REDIRECTED_TOOL_SLUGS } from "@/lib/redirectedTools";
 import { useState, useEffect, useMemo, type CSSProperties } from "react";
@@ -18,7 +19,7 @@ import { CATALOG_NEEDS } from "@/data/catalogNeeds";
 import { activePlacements, type CatalogPlacement } from "@/data/catalogPlacements";
 import { toolTagline } from "@/data/toolTaglines";
 import { compareByDemand, formatFacetLabel, hasFreePlan, isPaid, knownPrice, toolFacets } from "@/lib/catalogFilters";
-import { categorySeoDescription, categorySeoTitle, isCategoryIndexable } from "@/lib/categorySeo";
+import { categorySeoDescription, categorySeoTitle, isCategoryIndexable, isCategoryLinkable } from "@/lib/categorySeo";
 
 type SortKey = "popular" | "name" | "price-asc";
 type PriceFilter = "all" | "free" | "paid";
@@ -210,7 +211,7 @@ const CategoryPage = () => {
   const hasMore = visibleCount < gridTools.length;
   const needLabel = need ? (lang === "en" ? need.en : need.fr) : "";
   const relatedCats = categories
-    .filter((c) => c.id !== category.id && !siblings.some((s) => s.id === c.id) && isCategoryIndexable(toolCountByCategory.get(c.id) || 0))
+    .filter((c) => c.id !== category.id && !siblings.some((s) => s.id === c.id) && isCategoryLinkable(toolCountByCategory.get(c.id) || 0))
     .sort((a, b) => (toolCountByCategory.get(b.id) || 0) - (toolCountByCategory.get(a.id) || 0))
     .slice(0, 4);
   const exploreState = { explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: displayName };
@@ -263,7 +264,8 @@ const CategoryPage = () => {
 
         <div data-toolbar="catalog" className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
           {/* Real links: each sibling category is its own indexable page. */}
-          <nav className="tt-pillrow" aria-label={t(`Catégories ${needLabel}`, `${needLabel} categories`) as string}>
+          <nav className="tt-pillrow tt-rail" aria-label={t(`Catégories ${needLabel}`, `${needLabel} categories`) as string}>
+            <RailThumb />
             {siblings.length > 1 && siblings.map((sibling) => {
               const active = sibling.id === category.id;
               const name = stripLeadingEmoji(sibling.name, sibling.id);

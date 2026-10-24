@@ -6,8 +6,8 @@ import type { Tool } from "@/data/types";
 
 const { from } = vi.hoisted(() => ({ from: vi.fn() }));
 vi.mock("@/integrations/supabase/client", () => ({ supabase: { from } }));
-beforeEach(() => vi.resetModules());
-afterEach(() => { cleanup(); vi.clearAllMocks(); });
+beforeEach(() => { vi.resetModules(); vi.stubEnv("VITE_CATALOG_READ_SOURCE", "supabase"); });
+afterEach(() => { cleanup(); vi.clearAllMocks(); vi.unstubAllEnvs(); });
 
 async function renderHost() {
   const { SsrToolContext } = await import("@/hooks/useSupabaseData");

@@ -15,6 +15,12 @@ export async function isolate(context: BrowserContext) {
   // Match the exact fixture origin, including port; localhost and other loopback services are blocked too.
   const origin = new URL(process.env.PLAYWRIGHT_BASE_URL!).origin;
   await context.route('**/*', route => new URL(route.request().url()).origin === origin ? route.continue() : route.abort());
+  // Every isolated context starts with a dated refusal that CookieConsent migrates.
+  await context.addInitScript(() => {
+    if (!document.cookie.split(';').some(cookie => cookie.trim().startsWith('tooltrim_consent='))) {
+      localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({version:1,choice:'refused',decidedAt:Date.now(),expiresAt:Date.now()+3600000}));
+    }
+  });
 
 }
 export async function draft(page: Page, value: PersonalStackV4) {
@@ -26,8 +32,11 @@ export async function draft(page: Page, value: PersonalStackV4) {
   }, value);
 }
 export async function dismissConsent(page: Page) {
-  const reject = page.getByRole('button', { name: /^(Refuser|Refuse|Reject)$/ });
+  const reject = page.locator('#cc-main').getByRole('button', { name: /^(Refuser|Refuse|Reject)$/ });
+  // Await migration or the actual asynchronous banner, rather than checking before it mounts.
+  await expect.poll(async () => await page.evaluate(() => document.cookie.split(';').some(cookie => cookie.trim().startsWith('tooltrim_consent='))) || await reject.isVisible()).toBe(true);
   if (await reject.isVisible()) await reject.click();
+  await expect(reject).toBeHidden();
 }
 export async function login(page: Page, lang: 'fr' | 'en', email: string, password = 'fixture-password', expectedVisibleName = email) {
   const accounts = await control(page.request, 'state');
@@ -50,9 +59,10 @@ export async function signOut(page: Page, lang: 'fr' | 'en' = 'en') {
   await page.evaluate(() => { window.scrollTo(0, 0); document.querySelector('.asv2-content')?.scrollTo(0, 0); });
   await page.locator('.ac-header-trigger').click();
   await page.getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
-  await page.getByRole('dialog').getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
+  const dialog = page.getByRole('dialog', {name: lang === 'fr' ? 'Vous déconnecter ?' : 'Sign out?', exact: true});
+  await dialog.getByRole('button', { name: lang === 'fr' ? 'Me déconnecter' : 'Sign out', exact: true }).click();
   await expect(page.locator('.ac-header-trigger--account')).toHaveCount(0);
-  await expect(page.getByRole('dialog')).toHaveCount(0);
+  await expect(dialog).toHaveCount(0);
 }
 export async function snapshot(page: Page) {
   return page.evaluate(async () => {

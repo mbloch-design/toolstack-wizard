@@ -53,7 +53,12 @@ for (const lang of ["fr", "en"]) {
     await page.getByRole("searchbox").fill("chatgpt");
     await page.getByRole("button", { name: lang === "fr" ? "Ajouter ChatGPT" : "Add ChatGPT", exact: true }).click();
     await expect(page.locator(".ms-tool")).toHaveCount(2);
-    await page.evaluate(() => localStorage.setItem("tooltrim-ma-stack-paid-plans-v1", JSON.stringify(["chatgpt"])));
+    await page.evaluate(() => {
+      const key = "tooltrim-personal-stack-v4:anonymous";
+      const state = JSON.parse(localStorage.getItem(key) || "{}");
+      state.billing.paid = ["chatgpt"];
+      localStorage.setItem(key, JSON.stringify(state));
+    });
     await page.reload({ waitUntil: "domcontentloaded" });
     await expect(page.locator(".mf-price")).toContainText(lang === "fr" ? "Estimation partielle" : "Partial estimate");
     await expect(page.locator(".ms-tool")).toHaveCount(2);
@@ -80,7 +85,7 @@ test("a recorded saving retains its currency across changes and reloads", async 
   await deck.getByRole("button", { name: /^Garder Figma/ }).click();
   // The saving is said once, in the budget card.
   await expect(page.locator(".mf")).toContainText(/économisez déjà 9\s€ par mois/);
-  const stored = await page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-ma-stack-decisions-v1") || "{}"));
+  const stored = await page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").decisions);
   expect(stored["canva|figma"].savingCurrency).toBe("EUR");
   await page.evaluate(() => localStorage.setItem("tooltrim:currency", "USD"));
   await page.reload({ waitUntil: "domcontentloaded" });

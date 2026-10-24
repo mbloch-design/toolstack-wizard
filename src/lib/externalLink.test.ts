@@ -16,6 +16,15 @@ describe("safeExternalUrl", () => {
 });
 
 describe("relPourLienOutil", () => {
+  it.each(["https://sovkern.com/", "https://www.sovkern.com/"])("keeps Sovkern dofollow: %s", (url) => {
+    expect(relPourLienOutil(url, "", url)).toBe("noopener noreferrer");
+  });
+  it.each(["https://chronokura.com/", "https://www.chronokura.com/"])(
+    "keeps Chronokura's official link dofollow: %s",
+    (url) => {
+      expect(relPourLienOutil(url, "", url)).toBe("noopener noreferrer");
+    },
+  );
   it.each(["https://drone-ops-mission.fr/", "https://www.drone-ops-mission.fr/"])(
     "keeps the Drone Ops Mission official link dofollow: %s",
     (url) => {

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef, useCallback } from "react";
+import RailThumb from "@/components/motion/RailThumb";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
@@ -388,12 +389,16 @@ const ToolsPage = () => {
           />
           {/* Le titre suit le contexte : « Création » plutôt que « Outils »
               suivi d'un second titre « Création » plus bas. */}
-          <h1 className="tt-catalog-compact-title">{contextTitle || t("Outils", "Tools")}</h1>
-          {contextTitle && !search && (
-            <p className="tt-catalog-context-count">
-              {t(`${filtered.length} outil${filtered.length > 1 ? "s" : ""}`, `${filtered.length} tool${filtered.length > 1 ? "s" : ""}`)}
-            </p>
-          )}
+          {/* Count as a superscript after the title, like the homepage shelves. */}
+          <h1 className="tt-catalog-compact-title">
+            {contextTitle || t("Outils", "Tools")}
+            {contextTitle && !search && (
+              <sup className="tt-title-count">
+                <span aria-hidden="true">{filtered.length}</span>
+                <span className="sr-only">{t(`, ${filtered.length} outil${filtered.length > 1 ? "s" : ""}`, `, ${filtered.length} tool${filtered.length > 1 ? "s" : ""}`)}</span>
+              </sup>
+            )}
+          </h1>
         </div>
 
         <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
@@ -405,11 +410,12 @@ const ToolsPage = () => {
         <div data-toolbar="catalog" className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
           <nav
             ref={pillRowRef}
-            className="tt-pillrow"
+            className="tt-pillrow tt-rail"
             aria-label={t("Filtrer par besoin", "Filter by need") as string}
             // Straight to the DOM: a fade toggle is not worth a re-render per scroll frame.
             onScroll={(event) => { event.currentTarget.dataset.scrolled = String(event.currentTarget.scrollLeft > 4); }}
           >
+            <RailThumb />
             <button
               type="button"
               className={`tt-pill${!needId && !browsedCategoryId ? " tt-pill--active" : ""}`}

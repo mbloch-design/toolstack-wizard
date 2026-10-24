@@ -44,6 +44,27 @@ export const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "meilleurs-outils-consultant-freelance": "best-tools-freelance-consultant",
   "meilleurs-outils-createur-contenu-freelance": "best-tools-freelance-content-creator",
   "meilleurs-outils-ops-manager-freelance": "best-tools-freelance-ops-manager",
+  // Guides anglais qui gardaient le slug français (audit du 19/10/2026).
+  "mesurer-visibilite-ia-geo-2026": "measure-ai-search-visibility-geo-2026",
+  "creer-video-produit-sans-montage": "create-product-video-without-editing",
+  "choisir-outil-premiere-newsletter": "choose-first-newsletter-tool",
+  "andrew-huberman-kit-systeme-audience": "andrew-huberman-kit-audience-system",
+  "atelier-hors-champ-scenographie-espace-raconte": "atelier-hors-champ-scenography-storytelling-space",
+  "auditer-stack-saas-45-minutes": "audit-saas-stack-45-minutes",
+  "marc-delmas-clarifier-entreprise-qui-grandit": "marc-delmas-clarity-for-a-growing-company",
+  "nora-bensaid-produit-sante-depuis-terrain": "nora-bensaid-health-product-from-the-field",
+  "anna-morel-designer-studio-augmente": "anna-morel-solo-designer-augmented-studio",
+  "pourquoi-visualiser-stack-saas": "why-visualize-saas-stack",
+  "top-5-competences-ia-freelance-2026": "top-5-ai-skills-freelancers-2026",
+  "meilleurs-outils-ia-freelances-2026": "best-ai-tools-freelancers-2026",
+  "claude-opus-4-6-guide-complet-freelances": "claude-opus-guide-freelancers",
+  "alternatives-gratuites-notion-freelance-2026": "free-notion-alternatives-freelancers-2026",
+  "stack-minimaliste-freelance-2026": "minimalist-freelance-stack-2026",
+  "canva-pro-rentable": "is-canva-pro-worth-it",
+  "pourquoi-payer-loom": "why-pay-for-loom",
+  "stripe-freelance-tarifs-alternatives": "stripe-freelancers-pricing-alternatives",
+  "perplexity-vs-chatgpt-recherche": "perplexity-vs-chatgpt-research",
+  "notion-gratuit-vs-payant-vrai-calcul": "notion-free-vs-paid-real-cost",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(

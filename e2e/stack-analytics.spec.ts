@@ -24,17 +24,13 @@ async function saveIdea(page: Page, lang = 'fr') {
   const card = page.locator('[data-tool-slug]').filter({has:page.locator('button:not([disabled])')}).first();
   const slug = await card.getAttribute('data-tool-slug');
   await card.getByRole('button').click();
-  const dialog = page.locator('.stack-save-dialog');
-  const choice = dialog.getByRole('checkbox').first();
-  if (await choice.getAttribute('aria-checked') !== 'true') await choice.click();
-  await dialog.getByRole('button', {name:lang === 'fr' ? 'Terminer' : 'Done', exact:true}).click();
-  await expect(dialog).toHaveCount(0);
+  const toast = page.locator('.stack-toast');
+  await expect(toast).toBeVisible();
   await expect(page.locator(`[data-tool-slug="${slug}"]`).getByRole('button')).toBeDisabled();
 }
 
 test.beforeEach(async ({page}) => {
   // No recipe interaction reaches a live analytics account.
-  await page.route('https://datafa.st/**', route => route.fulfill({status:200, body:''}));
   await page.route('**/_vercel/insights/**', route => route.fulfill({status:200, body:''}));
   await page.route('https://www.googletagmanager.com/**', route => route.fulfill({status:200,contentType:'application/javascript',body:''}));
   await page.route('https://*.google-analytics.com/**', route => route.abort());
@@ -49,11 +45,6 @@ for (const [lang, width] of [['fr',390], ['en',1440]] as const) {
     await expect.poll(() => page.evaluate(() => window.__tooltrimAnalyticsConsent)).toBe(true);
     await page.getByRole('link', {name:lang === 'fr' ? 'Explorer autour de ma stack' : 'Explore around my stack',exact:true}).click();
     await expect.poll(async () => (await events(page)).filter(c => c[1] === 'explorer_view').length).toBe(1);
-    // Opening/cancelling a save is not another view or a conversion.
-    await page.locator('[data-tool-slug]').first().getByRole('button').click();
-    await page.keyboard.press('Escape');
-    await expect(page.locator('.stack-save-dialog')).toHaveCount(0);
-    expect((await events(page)).map(c => c[1])).toEqual(['explorer_view']);
     await saveIdea(page, lang);
     await expect.poll(async () => (await events(page)).map(c => c[1])).toEqual(['explorer_view','explorer_save']);
     await page.getByRole('button', {name:lang === 'fr' ? 'Retour à Ma stack' : 'Back to My stack',exact:true}).click();
@@ -122,24 +113,25 @@ test('withdrawal stops the new journey events after the required reload', async 
   expect(await events(page)).toEqual([]);
 });
 
-test('private objective and try-later choice send only the source type and intent', async ({page}) => {
+test('private objective and one-click stack save send only the source type and intent', async ({page}) => {
   await seed(page, 'accepted');
-  await page.goto('/fr/explorer?type=objectif&source=private-client');
+  await page.goto('/fr/explorer?type=objectif&source=private-client&destination=private-client');
   await expect.poll(async () => (await events(page)).length).toBe(1);
   const card = page.locator('[data-tool-slug]').filter({has:page.locator('button:not([disabled])')}).first();
   const slug = await card.getAttribute('data-tool-slug');
   await card.getByRole('button').click();
-  const dialog = page.locator('.stack-save-dialog');
-  await dialog.getByRole('radio',{name:'À essayer',exact:true}).click();
-  await dialog.getByRole('button',{name:'Terminer',exact:true}).click();
-  await expect(dialog).toHaveCount(0);
+  await expect(page.locator('.stack-toast')).toBeVisible();
+  await expect(page.locator(`[data-tool-slug="${slug}"]`).getByRole('button')).toBeDisabled();
   expect(await events(page)).toEqual([
     ['event','explorer_view',{source_type:'objectif'}],
-    ['event','explorer_save',{source_type:'objectif',intent:'wishlist'}],
+    ['event','explorer_save',{source_type:'objectif',intent:'stack'}],
   ]);
   const savedIntent = await page.evaluate(({key,slug}) => JSON.parse(localStorage.getItem(key) || '{}')
     .selection.toolEntries.find((entry: {toolSlug: string}) => entry.toolSlug === slug)?.intent, {key:stackKey,slug});
-  expect(savedIntent).toBe('wishlist');
+  expect(savedIntent).toBe('stack');
+  const savedNeeds = await page.evaluate(({key,slug}) => JSON.parse(localStorage.getItem(key) || '{}').selection.toolEntries.find((entry:{toolSlug:string}) => entry.toolSlug === slug)?.needIds, {key:stackKey,slug});
+  expect(savedNeeds).toContain('private-client');
+  expect(JSON.stringify(await events(page))).not.toMatch(/private-client|Client confidentiel|Private client/);
   await page.reload();
-  await expect.poll(() => page.evaluate(({key,slug}) => JSON.parse(localStorage.getItem(key) || '{}').selection.toolEntries.find((entry:{toolSlug:string})=>entry.toolSlug===slug)?.intent,{key:stackKey,slug})).toBe('wishlist');
+  await expect.poll(() => page.evaluate(({key,slug}) => JSON.parse(localStorage.getItem(key) || '{}').selection.toolEntries.find((entry:{toolSlug:string})=>entry.toolSlug===slug)?.intent,{key:stackKey,slug})).toBe('stack');
 });

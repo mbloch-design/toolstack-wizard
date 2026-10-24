@@ -1,4 +1,5 @@
 import { isToolCoverBlocked } from "@/lib/toolImageBlocklist";
+import { localizeGuideCategory } from "@/lib/guideCategory";
 import { useParams, useLocation } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { useLang } from "@/hooks/useLang";
@@ -34,6 +35,9 @@ import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { findSimilarTools, functionalAffinity } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import { getGuidesForTool } from "@/lib/toolGuides";
+import { getStacksForTool } from "@/lib/toolStacks";
+import { buildPricingDetail, isPricingDetailPilot } from "@/lib/toolPricingDetail";
+import { ToolPricingAnswer, ToolPricingExtras } from "@/components/tool/ToolPricingDetail";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
@@ -165,7 +169,11 @@ const ToolDetailPage = () => {
     setActionBarArmed(false);
     // The bars take over once the in-page tabs have left the screen, so the two
     // tab rows are never visible together.
-    const strip = document.querySelector(".td-scroll-body > .td-tool-subnav") ?? heroRef.current?.querySelector(".td-hero-actions");
+    // On mobile the tabs stick under the top bar and never leave the screen,
+    // so the bottom bar follows the hero buttons it repeats instead.
+    const mobile = window.matchMedia("(max-width: 640px)").matches;
+    const heroActions = heroRef.current?.querySelector(".td-hero-actions");
+    const strip = (mobile ? heroActions : document.querySelector(".td-scroll-body > .td-tool-subnav")) ?? heroActions;
     if (!strip || typeof IntersectionObserver === "undefined") return;
     const observer = new IntersectionObserver(([entry]) => {
       setActionBarArmed(!entry.isIntersecting && entry.boundingClientRect.top < 0);
@@ -356,6 +364,31 @@ const ToolDetailPage = () => {
       })}
     </ul>
   );
+  // Sub-pages were linked only from their own fiche. The pricing and
+  // alternatives sub-pages now link the same sub-page of each alternative,
+  // anchored on the tool's name (« 1Password pricing »), and each other.
+  const renderSubpageLinks = (kind: "prix" | "alternatives") => {
+    const pricingSegment = lang === "en" ? "pricing" : "prix";
+    const others = alternatives.slice(0, 5);
+    if (!others.length) return null;
+    return (
+      <div className="td-subs td-subpage-links">
+        <h3 className="td-subtitle">
+          {kind === "prix" ? t("Comparer les prix", "Compare pricing") : t("Prix des alternatives", "Alternatives pricing")}
+        </h3>
+        <div className="td-chips">
+          {others.map((alt: any) => (
+            <Link key={alt.id} to={`${prefix}/tool/${alt.slug || alt.id}/${pricingSegment}`} className="td-chip">
+              {t(`Prix de ${alt.name}`, `${alt.name} pricing`)}
+            </Link>
+          ))}
+          {kind === "prix"
+            ? <Link to={`${prefix}/tool/${tool.slug || tool.id}/alternatives`} className="td-chip">{t(`Alternatives à ${tool.name}`, `${tool.name} alternatives`)}</Link>
+            : <Link to={`${prefix}/tool/${tool.slug || tool.id}/${pricingSegment}`} className="td-chip">{t(`Prix de ${tool.name}`, `${tool.name} pricing`)}</Link>}
+        </div>
+      </div>
+    );
+  };
   const displayPrice  = resolveMonthlyPrice(tool) || nativePriceFromTool(tool)?.amount || 0;
   // Pas de date de repli. Elle valait « 2026-03-29 » et s'affichait comme
   // « Dernière vérification » sur les 325 fiches sans `pricing_v5`, soit 644
@@ -370,6 +403,11 @@ const ToolDetailPage = () => {
   const primaryCtaUrl = safeAffiliateUrl || safeWebsiteUrl;
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
   const primaryCtaLabel = tool.slug === "tapstitch" ? t("Créer mon premier produit", "Create my first product") : (lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr) || t(`Visiter ${tool.name}`, `Visit ${tool.name}`);
+  // The bottom bar already names the tool next to its logo: its button only
+  // needs the action, so the name keeps the room (custom labels stay as set).
+  const mobileCtaLabel = tool.slug !== "tapstitch" && !(lang === "en" ? tool.affiliateCtaLabelEn : tool.affiliateCtaLabelFr)
+    ? t("Visiter le site", "Visit site")
+    : primaryCtaLabel;
   const trackOutbound = (location: string, label: string) => trackEvent("outbound_tool_click", {
     tool_slug: tool.slug || tool.id,
     tool_name: tool.name,
@@ -425,6 +463,10 @@ const ToolDetailPage = () => {
   const showReview = isPresentation || subPage === "avis";
   const showFaq = isPresentation || subPage === "faq";
   const relatedGuides = getGuidesForTool(tool.slug || tool.id, lang);
+  const relatedStacks = getStacksForTool(tool.slug || tool.id, lang);
+  // Pricing sub-page pilot: what the fiche does not carry (answer, per-seat
+  // cost, pricing FAQ), from the verified grid only.
+  const pricingDetail = subPage === "prix" && isPricingDetailPilot(tool) ? buildPricingDetail(tool, lang) : null;
   const baseToolPath = `${prefix}/tool/${tool.slug || tool.id}`;
   const mobileBarPrice = toolPriceLine(tool, lang, t).priceLine;
   // Accent colour drawn from the tool's logo (scripts/gen-tool-accents.mjs);
@@ -500,7 +542,7 @@ const ToolDetailPage = () => {
                   </li>
                 ))}
                 <li className="td-localnav-pin">
-                  <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" />
+                  <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" flyFrom=".td-hero-logo" />
                 </li>
               </ul>
               <a
@@ -600,7 +642,7 @@ const ToolDetailPage = () => {
                           {primaryCtaLabel}
                           <ExternalLink aria-hidden />
                         </a>}
-                        <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" />
+                        <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="full" flyFrom=".td-hero-logo" />
                         </div>
                         <ToolStackOverlapNote tool={tool} prefix={prefix} lang={lang} t={t} />
                       </div>
@@ -861,13 +903,16 @@ const ToolDetailPage = () => {
                   <h2 className="td-title">
                     {t("Tarifs.", "Pricing.")} <span className="tt-title-muted">{t(`Quel budget pour ${tool.name}\u00a0?`, `What does ${tool.name} cost\u00a0?`)}</span>
                   </h2>
+                  {pricingDetail && <ToolPricingAnswer detail={pricingDetail} />}
                   <ToolPricingSection
                     tool={tool} displayPrice={displayPrice}
                     lang={lang} t={t}
                     onOfficialClick={() => trackOutbound("tool_pricing", "official_pricing")}
                   />
+                  {pricingDetail && <ToolPricingExtras detail={pricingDetail} toolName={tool.name} t={t} />}
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
                   <ToolBundleSection tool={tool} tools={tools} lang={lang} t={t} />
+                  {subPage === "prix" && renderSubpageLinks("prix")}
                 </div>
               </div>
             )}
@@ -889,6 +934,7 @@ const ToolDetailPage = () => {
                       prefix={prefix} lang={lang} t={t}
                     />
                   )}
+                  {subPage === "alternatives" && renderSubpageLinks("alternatives")}
 
                   {/* Substitution cluster — substitution_cluster_v2 groups
                        candidates roughly, but sharing a cluster tag (or a
@@ -1190,9 +1236,43 @@ const ToolDetailPage = () => {
                                 : <ToolLogo tool={tool} size={48} />}
                             </span>
                             <span className="td-guide-card-meta">
-                              {[guide.category, guide.readTime ? t(`${guide.readTime} de lecture`, `${guide.readTime} read`) : null].filter(Boolean).join(" · ")}
+                              {[guide.category ? localizeGuideCategory(guide.category, lang) : null, guide.readTime ? t(`${guide.readTime} de lecture`, `${guide.readTime} read`) : null].filter(Boolean).join(" · ")}
                             </span>
                             <span className="td-guide-card-title">{guide.title}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                </div>
+              </div>
+            )}
+
+            {/* Stacks qui utilisent l'outil : seul chemin d'une fiche vers les
+                stacks, qui ne recevaient sinon de liens que de leur hub. */}
+            {isPresentation && relatedStacks.length > 0 && (
+              <div className="td-subpage-content">
+                <div className="td-section">
+                  <section className="td-guides">
+                    <h2 className="td-title">
+                      {t("Stacks.", "Stacks.")} <span className="tt-title-muted">{t(`Où ${tool.name} trouve sa place.`, `Where ${tool.name} fits in.`)}</span>
+                    </h2>
+                    <ul className="td-guide-cards">
+                      {relatedStacks.map((stack) => (
+                        <li key={stack.slug}>
+                          <Link to={`${prefix}/stacks/${stack.slug}`} className="td-guide-card">
+                            {/* Same iOS-folder cluster as the homepage stacks. */}
+                            <span className="td-guide-card-cover" aria-hidden="true">
+                              <span className="sgs-folder">
+                                {stack.tools.map((stackTool) => (
+                                  <span key={stackTool.slug} className="sgs-folder-app"><ToolLogo tool={stackTool} size={32} className="sgs-folder-logo" /></span>
+                                ))}
+                              </span>
+                            </span>
+                            <span className="td-guide-card-meta">
+                              {t(`${stack.toolCount} outils`, `${stack.toolCount} tools`)}
+                            </span>
+                            <span className="td-guide-card-title">{stack.title}</span>
                           </Link>
                         </li>
                       ))}
@@ -1211,23 +1291,24 @@ const ToolDetailPage = () => {
                   <strong>{tool.name}</strong>
                   {mobileBarPrice && <span>{mobileBarPrice}</span>}
                 </div>
-                <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" />
+                <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" flyFrom=".td-hero-logo" />
                 <a
                   href={primaryCtaUrl}
                   target="_blank"
                   rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
                   className="td-mobile-actionbar-cta"
+                  aria-label={primaryCtaLabel}
                   onClick={() => trackEvent("outbound_tool_click", {
                     tool_slug: tool.slug || tool.id,
                     tool_name: tool.name,
                     cta_location: "tool_mobile_bar",
-                    cta_label: primaryCtaLabel,
+                    cta_label: mobileCtaLabel,
                     destination_domain: getDomainFromUrl(primaryCtaUrl),
                     language: lang,
                     is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
                   })}
                 >
-                  {primaryCtaLabel}
+                  <span>{mobileCtaLabel}</span>
                   <ExternalLink aria-hidden />
                 </a>
               </div>

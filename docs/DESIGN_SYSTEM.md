@@ -1747,3 +1747,9 @@ Quand tout est réglé, la carte large devient le **bilan** : économie en compt
 - Mouvement : aucune `transform` ne doit rester sur un ancêtre du dock mobile fixe (`animation-fill-mode: backwards` sur les étapes). Le bonjour défile mot par mot dans une ligne masquée, sans fondu superposé. Chaque animation a son équivalent `prefers-reduced-motion`.
 - Accessibilité : pas de `aria-live` dans une page qui ouvre une fenêtre Radix, sinon la page reste exposée derrière elle.
 
+
+## Ajout à Ma stack (16/10/2026)
+
+Un seul comportement pour tout le site : `useAddToStack()` (`src/hooks/useAddToStack.ts`), utilisé par `PinToolButton` (cartes, catalogue, fiche outil), l'Explorer et la recherche de Ma stack. Récit : l'image de l'élément se rassemble en jeton, vole en arc jusqu'au « Ma stack » visible (barre collée de l'Explorer, sinon barre du haut), l'outil est ajouté à l'atterrissage (rebond + compteur qui roule), puis la pilule sombre `.stack-toast` propose Annuler / Voir. Sans animation (mouvement réduit, cible invisible) l'ajout est immédiat.
+
+Jetons : `--stack-add-token-size`, `--stack-add-gather`, `--stack-add-travel`, `--stack-add-bump` (lus par `src/lib/stackAddStory.tsx`). Classes : `.stack-fly-ghost`, `.stack-toast*`. La pilule est rendue hors du routeur : jamais de `<Link>` dedans.

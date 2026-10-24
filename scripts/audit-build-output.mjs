@@ -36,7 +36,11 @@ const budgets = {
   // 2026-10-01: 54 more researched fiches and 48 hashed catalogue shards
   // (was 29 by first letter): measured 14,972 files, 987.2 MiB total,
   // 880.1 MiB HTML, 32.5 MiB CSS. Sized for the ~120 dossiers still to merge.
-  files: 15_050,
+  // 2026-10-20: ViralSnap and Sprokl add 20 localized tool routes.
+  // 2026-10-20: four best-of pages (FR/EN) and critical CSS variants of the
+  // pricing pilot. Measured 15,116 files after both; narrow margin kept.
+  // 2026-10-20: Proton Pass and Keeper fiches. Measured 15,167 files.
+  files: 15_200,
   // Four-listing release: measured total 850.2 MiB after Pixlr addition.
   // 2026-10-02 (US-NAV-01): search and menu buttons in the shared topbar add
   // about 2 KB of markup and critical CSS to each of the ~13,100 pages, plus
@@ -51,9 +55,13 @@ const budgets = {
   // Measured 820.6 MiB total, 709.0 MiB HTML; retain existing headroom
   // while preventing the removed documentary/formatting bytes from returning.
   // Historical __SSR_TOOL__ fields removed: retain the measured gain.
-  totalBytes: 831 * MiB,
+  // 2026-10-20: written titles and metas (scripts/seo-meta) run longer than
+  // the templates, repeated in og/twitter/JSON-LD: 717.1 MiB HTML after 265
+  // fiches; 717.9 MiB HTML / 830.0 MiB total measured after 315 (about
+  // +0.8 MiB per 50 fiches). Sized for all 1,247 fiches of the rewrite.
+  totalBytes: 852 * MiB,
   // Three bilingual comparison pages: measured HTML 752.2 MiB (six new routes).
-  htmlBytes: 716 * MiB,
+  htmlBytes: 738 * MiB,
   javascriptBytes: 15 * MiB,
   // 32 MiB (2026-09-30): each researched fiche adds pricing-card critical CSS
   // variants (+0.2 MiB per 25 fiches, 30.7 MiB at 146); sized for the ~200

@@ -11,8 +11,21 @@ import { fitBrandedTitle } from "./seoTitle";
  */
 export const MIN_INDEXABLE_CATEGORY_TOOLS = 10;
 
-export function isCategoryIndexable(toolCount: number): boolean {
+/**
+ * Category pages are out of the index until they are rebuilt (decision of
+ * 19/10/2026): ~150 words of names, off-topic members (Gong and WhatsApp in
+ * project management), French slugs on English URLs, 6 impressions in three
+ * months. They stay reachable and followed for navigation.
+ */
+export const CATEGORY_PAGES_INDEXED = false;
+
+/** Enough tools to be a useful page to link to, indexed or not. */
+export function isCategoryLinkable(toolCount: number): boolean {
   return toolCount >= MIN_INDEXABLE_CATEGORY_TOOLS;
+}
+
+export function isCategoryIndexable(toolCount: number): boolean {
+  return CATEGORY_PAGES_INDEXED && isCategoryLinkable(toolCount);
 }
 
 export function categorySeoTitle(name: string, lang: string, year: number): string {

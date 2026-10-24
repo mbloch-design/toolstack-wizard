@@ -224,6 +224,163 @@
         "en": "The bill to watch is not the plan, it is the usage on top of it. Vercel's Pro plan includes a monthly usage credit then charges per request and per gigabyte beyond its allowances, and Netlify meters usage in credits. Before paying for a second platform, check that the first one is not simply sized wrong.",
         "fr": "La facture à surveiller, ce n'est pas le plan, c'est l'usage par-dessus. Le plan Pro de Vercel inclut un crédit d'usage mensuel puis facture à la requête et au gigaoctet au-delà des quotas, et Netlify mesure l'usage en crédits. Avant de payer une deuxième plateforme, vérifie que la première n'est pas simplement mal dimensionnée."
       }
+    },
+    {
+      "id": "password-managers",
+      "slug": {
+        "en": "best-password-managers-freelancers",
+        "fr": "meilleurs-gestionnaires-mots-de-passe-freelances"
+      },
+      "title": {
+        "en": "Best password managers for freelancers in 2026",
+        "fr": "Meilleurs gestionnaires de mots de passe pour freelances en 2026"
+      },
+      "description": {
+        "en": "NordPass, 1Password, Bitwarden, Proton Pass, Dashlane, Keeper and LastPass compared for freelancers: free plans, real first-year price, renewals.",
+        "fr": "NordPass, 1Password, Bitwarden, Proton Pass, Dashlane, Keeper et LastPass comparés pour un freelance : offres gratuites, vrai prix la première année."
+      },
+      "h1": {
+        "en": "The best password managers for freelancers",
+        "fr": "Les meilleurs gestionnaires de mots de passe pour freelances"
+      },
+      "intro": {
+        "en": "A freelancer stores client logins, banking access and tool accounts in one vault, so the choice is about trust and sharing more than features. All seven cover autofill and encrypted storage. They differ on three things: whether the free plan works across your devices, whether the advertised price is an introductory offer, and how cleanly you can share a vault with a client or a partner.",
+        "fr": "Un freelance range dans un seul coffre les accès clients, la banque et les comptes de ses outils : le choix tient à la confiance et au partage plus qu'aux fonctionnalités. Les sept couvrent le remplissage automatique et le stockage chiffré. Ils se distinguent sur trois points : l'offre gratuite fonctionne-t-elle sur tous vos appareils, le prix affiché est-il une offre de lancement, et peut-on partager proprement un coffre avec un client ou un associé."
+      },
+      "audience": {
+        "en": "for freelancers",
+        "fr": "pour freelances"
+      },
+      "tools": [
+        "nordpass",
+        "1password",
+        "bitwarden",
+        "proton-pass",
+        "dashlane",
+        "keeper",
+        "lastpass"
+      ],
+      "angle": {
+        "en": "Read the billing terms before the price. NordPass's headline price applies to a prepaid two-year plan and its renewal price is not shown on the vendor's page, and 1Password's first-year discount is reserved for new customers. Bitwarden and Proton Pass have free plans that already cover unlimited devices, Proton adding 10 email aliases; Keeper has no free plan and bills yearly only; LastPass limits its free plan to a single device type.",
+        "fr": "Lisez les conditions avant le prix. Le prix d'appel de NordPass vaut pour un abonnement de deux ans payé d'avance, et son prix de renouvellement n'est pas affiché par l'éditeur ; la remise de première année de 1Password est réservée aux nouveaux clients. Bitwarden et Proton Pass ont une offre gratuite qui couvre déjà un nombre illimité d'appareils, Proton y ajoutant 10 alias e-mail ; Keeper n'a pas d'offre gratuite et ne facture qu'à l'année ; LastPass limite la sienne à un seul type d'appareil."
+      }
+    },
+    {
+      "id": "raw-photo-editors",
+      "slug": {
+        "en": "best-raw-photo-editors",
+        "fr": "meilleurs-logiciels-photo-raw"
+      },
+      "title": {
+        "en": "Best RAW photo editors in 2026: Lightroom alternatives compared",
+        "fr": "Meilleurs logiciels photo RAW en 2026 : alternatives à Lightroom"
+      },
+      "description": {
+        "en": "Capture One, Lightroom, DxO PhotoLab, Luminar Neo, Affinity Photo and darktable compared for a freelance photographer: subscription or licence, and what each costs.",
+        "fr": "Capture One, Lightroom, DxO PhotoLab, Luminar Neo, Affinity Photo et darktable comparés pour un photographe freelance : abonnement ou licence, et ce que coûte chacun."
+      },
+      "h1": {
+        "en": "The best RAW photo editors",
+        "fr": "Les meilleurs logiciels de développement photo RAW"
+      },
+      "intro": {
+        "en": "A RAW editor is where a freelance photographer spends most of the job: culling, developing, exporting for the client. The real split is commercial: some tools are subscription-only, others still sell a licence you keep, and two are free: darktable is open source, and Affinity Photo is free with a Canva account. Catalogue management and tethered shooting matter more than filters when the work is paid.",
+        "fr": "Le logiciel RAW est l'endroit où un photographe freelance passe l'essentiel du travail : tri, développement, export pour le client. La vraie différence est commerciale : certains outils ne se vendent qu'en abonnement, d'autres proposent encore une licence que l'on garde, et deux sont gratuits : darktable est open source, et Affinity Photo est gratuit avec un compte Canva. Le catalogue et la prise de vue connectée comptent davantage que les filtres quand le travail est payé."
+      },
+      "audience": {
+        "en": "for freelance photographers",
+        "fr": "pour photographes freelances"
+      },
+      "tools": [
+        "capture-one",
+        "adobe-lightroom",
+        "dxo-photolab",
+        "luminar-neo",
+        "affinity-photo",
+        "darktable"
+      ],
+      "angle": {
+        "en": "Decide on the business model before the features. A subscription keeps you on the latest camera support but bills every month you do not shoot; a licence costs more once and can fall behind new camera bodies. Check each fiche's pricing for which of the two the vendor still sells.",
+        "fr": "Choisissez le modèle économique avant les fonctionnalités. Un abonnement garde la compatibilité avec les nouveaux boîtiers mais se paie aussi les mois sans shooting ; une licence coûte plus cher une fois et peut prendre du retard sur les appareils récents. La fiche de chaque outil indique laquelle des deux formules l'éditeur vend encore."
+      }
+    },
+    {
+      "id": "portfolio-website-builders",
+      "slug": {
+        "en": "best-portfolio-website-builders",
+        "fr": "meilleurs-createurs-site-portfolio"
+      },
+      "title": {
+        "en": "Best portfolio website builders for creatives in 2026",
+        "fr": "Meilleurs créateurs de site portfolio pour créatifs en 2026"
+      },
+      "description": {
+        "en": "Cargo, Readymag, Format, ArtStation, Framer and Pixieset compared for a freelance creative: free plans, what the first paid plan costs, and who each one suits.",
+        "fr": "Cargo, Readymag, Format, ArtStation, Framer et Pixieset comparés pour un créatif freelance : offres gratuites, coût du premier plan payant, et à qui chacun convient."
+      },
+      "h1": {
+        "en": "The best portfolio website builders for creatives",
+        "fr": "Les meilleurs créateurs de site portfolio pour créatifs"
+      },
+      "intro": {
+        "en": "A portfolio is a sales page: it has to load fast, show the work large and be easy to update between two projects. These builders split by audience. Some are made for designers who want layout freedom, some for photographers who also deliver galleries to clients, and one is a community where art directors already look for 3D and concept artists.",
+        "fr": "Un portfolio est une page de vente : il doit charger vite, montrer le travail en grand et se mettre à jour facilement entre deux projets. Ces outils se répartissent par public. Certains visent les designers qui veulent une liberté de mise en page, d'autres les photographes qui livrent aussi des galeries à leurs clients, et l'un est une communauté où les directeurs artistiques cherchent déjà des artistes 3D et concept."
+      },
+      "audience": {
+        "en": "for freelance creatives",
+        "fr": "pour créatifs freelances"
+      },
+      "tools": [
+        "cargo-site",
+        "readymag",
+        "format",
+        "artstation",
+        "framer",
+        "pixieset"
+      ],
+      "angle": {
+        "en": "Count what you actually need to publish: a custom domain, client proofing, a shop or just a page. A builder that bundles galleries and client delivery can replace a second subscription; one that only does layout may need another tool next to it.",
+        "fr": "Listez ce que vous devez réellement publier : un nom de domaine, des épreuves client, une boutique ou simplement une page. Un outil qui inclut galeries et livraison client peut remplacer un deuxième abonnement ; un outil qui ne fait que la mise en page en demandera peut-être un autre à côté."
+      }
+    },
+    {
+      "id": "digital-sculpting-software",
+      "slug": {
+        "en": "best-digital-sculpting-software",
+        "fr": "meilleurs-logiciels-sculpture-3d"
+      },
+      "title": {
+        "en": "Best digital sculpting software in 2026: ZBrush and alternatives",
+        "fr": "Meilleurs logiciels de sculpture 3D en 2026 : ZBrush et alternatives"
+      },
+      "description": {
+        "en": "ZBrush, Blender, Nomad Sculpt, Plasticity, Maya and Cinema 4D compared for a freelance 3D artist: subscription, licence or free, and what each one is built for.",
+        "fr": "ZBrush, Blender, Nomad Sculpt, Plasticity, Maya et Cinema 4D comparés pour un artiste 3D freelance : abonnement, licence ou gratuit, et ce pour quoi chacun est fait."
+      },
+      "h1": {
+        "en": "The best digital sculpting software",
+        "fr": "Les meilleurs logiciels de sculpture 3D"
+      },
+      "intro": {
+        "en": "Sculpting covers two different jobs: organic modelling for characters and creatures, and precise hard-surface modelling for products. Few tools are best at both. A freelance 3D artist usually pairs one sculpting tool with the modelling and rendering suite the client pipeline already uses.",
+        "fr": "La sculpture recouvre deux métiers différents : la modélisation organique pour personnages et créatures, et la modélisation précise de surfaces dures pour les produits. Peu d'outils excellent dans les deux. Un artiste 3D freelance associe en général un outil de sculpture à la suite de modélisation et de rendu que le pipeline du client utilise déjà."
+      },
+      "audience": {
+        "en": "for freelance 3D artists",
+        "fr": "pour artistes 3D freelances"
+      },
+      "tools": [
+        "zbrush",
+        "blender",
+        "nomad-sculpt",
+        "plasticity",
+        "maya",
+        "cinema-4d"
+      ],
+      "angle": {
+        "en": "Match the tool to the deliverable, not to its reputation. Check what file formats your clients expect and whether the subscription you already pay includes a sculpting tool before adding one, since the Maxon suite bundles several of these.",
+        "fr": "Choisissez l'outil selon le livrable, pas selon sa réputation. Vérifiez les formats de fichiers attendus par vos clients et si l'abonnement que vous payez déjà inclut un outil de sculpture avant d'en ajouter un, puisque la suite Maxon en regroupe plusieurs."
+      }
     }
   ]
 }

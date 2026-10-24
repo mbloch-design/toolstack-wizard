@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.addInitScript(() => localStorage.setItem('tooltrim-analytics-consent', JSON.stringify({version:1,choice:'refused',decidedAt:Date.now(),expiresAt:Date.now()+3600000})));
-  await page.route(/google-analytics\.com|googletagmanager\.com|datafa\.st|_vercel\/insights/, route => route.abort());
+  await page.route(/google-analytics\.com|googletagmanager\.com|_vercel\/insights/, route => route.abort());
 });
 
 for (const route of ['/fr/r11-route-inexistante', '/en/tool/r11-inexistant', '/fr/guide/r11-inexistant', '/en/explorer/around/r11-inexistant']) {
@@ -35,12 +35,29 @@ for (const lang of ['fr', 'en']) {
     expect(html).not.toMatch(/rel="(?:canonical|alternate)"/);
   });
 }
-for (const slug of ['meilleurs-outils-ia-freelances-2026', 'claude-opus-4-6-guide-complet-freelances', 'alternatives-gratuites-notion-freelance-2026', 'stack-minimaliste-freelance-2026', 'stripe-freelance-tarifs-alternatives', 'perplexity-vs-chatgpt-recherche', 'notion-gratuit-vs-payant-vrai-calcul']) {
-  test(`${slug}: the published English translation is not redirected to French`, async ({ request }) => {
-    const response = await request.get(`/en/guide/${slug}`, { maxRedirects: 0 });
+// Ces guides anglais ont reçu un slug anglais le 19/10/2026 : l'ancienne URL à
+// slug français redirige vers la traduction, qui reste servie en anglais.
+const ENGLISH_GUIDE_SLUGS: Record<string, string> = {
+  'meilleurs-outils-ia-freelances-2026': 'best-ai-tools-freelancers-2026',
+  'claude-opus-4-6-guide-complet-freelances': 'claude-opus-guide-freelancers',
+  'alternatives-gratuites-notion-freelance-2026': 'free-notion-alternatives-freelancers-2026',
+  'stack-minimaliste-freelance-2026': 'minimalist-freelance-stack-2026',
+  'stripe-freelance-tarifs-alternatives': 'stripe-freelancers-pricing-alternatives',
+  'perplexity-vs-chatgpt-recherche': 'perplexity-vs-chatgpt-research',
+  'notion-gratuit-vs-payant-vrai-calcul': 'notion-free-vs-paid-real-cost',
+};
+for (const [frSlug, enSlug] of Object.entries(ENGLISH_GUIDE_SLUGS)) {
+  test(`${enSlug}: the published English translation is not redirected to French`, async ({ request }) => {
+    const response = await request.get(`/en/guide/${enSlug}`, { maxRedirects: 0 });
     expect(response.status()).toBe(200);
     const html = await response.text();
     expect(html).toContain('lang="en"');
-    expect(html).toContain(`rel="canonical" href="https://tooltrim.com/en/guide/${slug}"`);
+    expect(html).toContain(`rel="canonical" href="https://tooltrim.com/en/guide/${enSlug}"`);
+  });
+
+  test(`${frSlug}: the former English URL redirects to the English slug`, async ({ request }) => {
+    const response = await request.get(`/en/guide/${frSlug}`, { maxRedirects: 0 });
+    expect([301, 308]).toContain(response.status());
+    expect(response.headers().location).toMatch(new RegExp(`/en/guide/${enSlug}$`));
   });
 }

@@ -34,7 +34,7 @@ test("empty → search → add → inspect → remove → undo → persist", asy
   await expect(page.locator(".ms-tool-sheet")).toBeVisible();
   await page.getByRole("button", { name: "Retirer de ma stack", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(0);
-  await page.getByRole("button", { name: "Annuler", exact: true }).click();
+  await page.getByRole("listitem").filter({ hasText: "Figma retiré de ma stack." }).getByRole("button", { name: "Annuler", exact: true }).click();
   await expect(page.locator(".ms-tool")).toHaveCount(1);
   await page.reload({ waitUntil: "domcontentloaded" });
   await expect(page.locator(".ms-tool")).toHaveCount(1);
@@ -48,13 +48,19 @@ test("empty → search → add → inspect → remove → undo → persist", asy
   await context.close();
 });
 
-test("tool profile adds with one click and its saved CTA opens stack context", async ({ page }) => {
+test("tool profile adds with one click and its confirmation opens stack context", async ({ page }) => {
   await page.goto("/fr/tool/figma", { waitUntil: "domcontentloaded" });
   const cta = page.locator(".td-hero-actions .pin-tool-button--full");
   await cta.click();
   await expect(page).toHaveURL(/\/fr\/tool\/figma$/);
   await expect(cta).toContainText("Dans ma stack");
+  // The saved button is a toggle (it asks before removing); the stack context
+  // opens from the confirmation's "Voir". Wait for the add to land first.
+  await expect(page.locator(".stack-toast")).toBeVisible();
   await cta.click();
+  await expect(page.locator(".stack-confirm")).toBeVisible();
+  await page.locator(".stack-confirm-keep").click();
+  await page.locator(".stack-toast-open").click();
   await expect(page).toHaveURL(/ma-stack\?outil=figma/);
   await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
   await page.locator(".ms-tool-sheet").getByRole("link", { name: "Fiche complète", exact: true }).click();
@@ -122,16 +128,16 @@ test("blocked localStorage getter keeps selection usable in memory", async ({ pa
 });
 
 
-test("catalogue refresh updates the same saved selection without persisting tool data", async ({ page }) => {
+test("published local catalogue refresh updates the same saved selection without persisting tool data", async ({ page }) => {
   let name = "Figma — catalogue initial";
-  await page.route("**/*supabase.co/**", async (route) => {
-    expect(["GET", "OPTIONS"]).toContain(route.request().method());
-    if (route.request().url().includes("/rest/v1/tools?")) {
-      await route.fulfill({ json: [{
-        id: "figma", slug: "figma", name, category: "design-tools",
-        pricing: { free: "", paid: "Sur devis" },
-      }] });
-    } else await route.abort();
+  // Simulate a new published snapshot, for both Vite dev and generated builds.
+  await page.route(/\/(?:src\/data\/tools_index\.json|assets\/data-tool-index-[^/]+\.js)(?:\?|$)/, async (route) => {
+    const response = await route.fetch();
+    const literal = JSON.stringify(name);
+    const body = (await response.text())
+      .replaceAll('"Figma"', literal)
+      .replaceAll('\\"Figma\\"', JSON.stringify(literal).slice(1, -1));
+    await route.fulfill({ response, body });
   });
   await page.addInitScript(({ key, state }) => {
     if (!localStorage.getItem(key)) localStorage.setItem(key, JSON.stringify(state));

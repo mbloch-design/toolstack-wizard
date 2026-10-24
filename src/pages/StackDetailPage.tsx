@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
+import { localizeGuideCategory } from "@/lib/guideCategory";
 import { HERO_CLUSTER_SLOTS } from "@/lib/heroCluster";
-import { fitBrandedTitle } from "@/lib/seoTitle";
+import { stackSeoDescription, stackSeoTitle } from "@/lib/stackSeo";
 import { Navigate, useParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
 import { AlertTriangle, ChevronDown, ChevronRight, CircleAlert, Target } from "@/lib/icons";
@@ -12,6 +13,7 @@ import { usdFromEur } from "@/lib/currencyRates";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useStackBySlug } from "@/hooks/useStackDetailData";
 import stackCatalog from "@/data/stacks-catalog-index.json";
+import { getGuidesForTool, type ToolGuideRef } from "@/lib/toolGuides";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
 import {
   STACK_PERSONAS,
@@ -617,19 +619,46 @@ const StackDetailPage = () => {
   // Must be before conditional return (hooks rules)
   const relatedStacks = useMemo(() => {
     if (!stack) return [];
-    const summaries = stackCatalog.stacks;
-    const samePersona = summaries.filter((s) => s.slug !== stack.slug && s.persona === stack.persona);
-    if (samePersona.length >= 3) return samePersona.slice(0, 3);
-    const fill = summaries.filter((s) => s.slug !== stack.slug && s.persona !== stack.persona);
-    return [...samePersona, ...fill].slice(0, 3);
+    // Closest stacks by shared tools and sub-profiles. Taking the first three
+    // of the same persona sent every stack of a persona to the same three
+    // pages, so most stacks only received links from the hub.
+    const ownTools = new Set(asArray(stack.tools).map((slot) => slot.slug));
+    const ownProfiles = new Set(stack.subProfiles);
+    return stackCatalog.stacks
+      .filter((s) => s.slug !== stack.slug)
+      .map((s) => {
+        const shared = s.tools.filter((slot) => ownTools.has(slot.slug)).length;
+        const overlap = shared / Math.max(1, Math.min(ownTools.size, s.tools.length));
+        const profiles = s.subProfiles.filter((p) => ownProfiles.has(p as typeof stack.subProfiles[number])).length;
+        return { s, score: overlap * 2 + profiles * 0.5 + (s.persona === stack.persona ? 0.5 : 0) };
+      })
+      .sort((a, b) => b.score - a.score || a.s.slug.localeCompare(b.s.slug))
+      .slice(0, 3)
+      .map(({ s }) => s);
   }, [stack]);
+
+  // Guides that cover the stack's tools, ranked by how many of them they
+  // cover. Stacks and guides never linked to each other.
+  const relatedGuides = useMemo(() => {
+    if (!stack) return [] as ToolGuideRef[];
+    const found = new Map<string, { guide: ToolGuideRef; hits: number; rank: number }>();
+    asArray(stack.tools).forEach((slot, rank) => {
+      for (const guide of getGuidesForTool(slot.slug, lang)) {
+        const entry = found.get(guide.slug);
+        if (entry) entry.hits++;
+        else found.set(guide.slug, { guide, hits: 1, rank });
+      }
+    });
+    return [...found.values()]
+      .sort((a, b) => b.hits - a.hits || a.rank - b.rank || a.guide.slug.localeCompare(b.guide.slug))
+      .slice(0, 3)
+      .map(({ guide }) => guide);
+  }, [stack, lang]);
 
   useEffect(() => {
     if (!stack) return;
-    const title = lang === "fr"
-      ? fitBrandedTitle(stack.seoTitle || `${stack.title} : outils, usages et budget`)
-      : fitBrandedTitle(stack.seoTitleEn || `${stack.titleEn}: tools, use cases and budget`);
-    const description = getStackMetaDescription(stack, lang);
+    const title = stackSeoTitle(stack, lang);
+    const description = stackSeoDescription(stack, lang);
     setSeoTags({ title, description, url: `${SEO_BASE}/${lang}/stacks/${stack.slug}`, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}/stacks/${stack.slug}`);
     setJsonLd("stack-detail-jsonld", {
@@ -667,7 +696,10 @@ const StackDetailPage = () => {
   /* ── Derived data ───────────────────────────────────────────────────────── */
   const editorial = EDITORIAL_REGISTRY[stack.slug] ?? buildFallbackEditorial(stack);
   const heroDecision = getHeroDecisionMap(stack, editorial, lang);
-  const detailTitle = heroDecision.title.split("\n")[0].replace(/\.$/, "");
+  // The editorial hero title can be a bare profile (« Freelance dev »); the H1
+  // then falls back to the stack's own name so it still says what the page is.
+  const heroTitle = heroDecision.title.split("\n")[0].replace(/\.$/, "");
+  const detailTitle = /stack/i.test(heroTitle) ? heroTitle : t(stack.title, stack.titleEn);
   const heroSubtitle = heroDecision.promise;
   const personaText = t(personaLabel(stack.persona, "fr"), personaLabel(stack.persona, "en"));
 
@@ -882,6 +914,19 @@ const StackDetailPage = () => {
            practical part of the page. */
         : <section id="faq" className="sg-section"><div className="sg-section-heading"><span className="sg-eyebrow">{t("Autodiagnostic", "Self-check")}</span><h2>{t("Les questions à te poser", "Questions to ask yourself")}</h2></div><ol className="sg-checks">{editorial.faq.map((item, i) => <li key={`${stack.slug}-${i}`} className="sg-check"><span className="sg-check-index" aria-hidden>{i + 1}</span><div><h3>{t(item.q, item.qEn)}</h3><p>{t(item.a, item.aEn)}</p></div></li>)}</ol></section>)}
 
+      {relatedGuides.length > 0 && <section className="sg-section"><div className="sg-section-heading"><h2>{t("Les guides pour choisir", "Guides to help you choose")}</h2></div>
+        <ul className="sg-related">
+          {relatedGuides.map((guide) => <li key={guide.slug}>
+            <Link to={`${prefix}/guide/${guide.slug}`} className="sg-related-card">
+              <span className="sg-related-copy">
+                <span className="sg-related-name">{guide.title}</span>
+                <span className="sg-related-sub">{[guide.category ? localizeGuideCategory(guide.category, lang) : null, guide.readTime ? t(`${guide.readTime} de lecture`, `${guide.readTime} read`) : null].filter(Boolean).join(" · ")}</span>
+              </span>
+            </Link>
+          </li>)}
+        </ul>
+      </section>}
+
       {relatedStacks.length > 0 && <section className="sg-section"><div className="sg-section-heading"><h2>{t("D’autres stacks à explorer", "More stacks to explore")}</h2></div>
         <ul className="sg-related">
           {relatedStacks.map((related) => <li key={related.slug}>
@@ -1019,7 +1064,7 @@ const WORKFLOW_STEPS_BY_STACK: Record<string, WorkflowStepDefinition[]> = {
     { id: "moodboard", titleFr: "Moodboard", titleEn: "Moodboard", purposeFr: "Aligner l'intention visuelle.", purposeEn: "Align the visual intent.", match: ["moodboard", "recherche visuelle", "bibliothèque images", "exploration visuelle", "ia ambiance", "retouche image"], slugs: ["milanote", "pinterest", "eagle", "krea-ai", "midjourney", "adobe-photoshop", "indesign"] },
     { id: "plans", titleFr: "Plans", titleEn: "Plans", purposeFr: "Produire les documents techniques.", purposeEn: "Produce technical documents.", match: ["plans", "2d", "dwg", "layout"], slugs: ["layout-sketchup", "autocad-lt"] },
     { id: "3d", titleFr: "3D", titleEn: "3D", purposeFr: "Construire le volume.", purposeEn: "Build the volume.", match: ["3d", "modélisation", "plugin", "hygiène", "géométrie", "formes complexes", "bim", "imports"], slugs: ["sketchup-pro", "fredo6-bundle", "profile-builder-3", "transmutr", "skatter", "cleanup3", "solid-inspector2", "rhino", "revit", "archicad", "blender"] },
-    { id: "rendu", titleFr: "Rendu", titleEn: "Render", purposeFr: "Présenter clairement.", purposeEn: "Present clearly.", match: ["rendu", "image premium", "vidéo / ambiance", "upscale"], slugs: ["d5-render", "enscape", "v-ray", "twinmotion", "magnific-ai", "firefly"] },
+    { id: "rendu", titleFr: "Rendu", titleEn: "Render", purposeFr: "Présenter clairement.", purposeEn: "Present clearly.", match: ["rendu", "image premium", "vidéo / ambiance", "upscale"], slugs: ["d5-render", "enscape", "v-ray", "twinmotion", "magnific", "firefly"] },
     { id: "sourcing", titleFr: "Sourcing", titleEn: "Sourcing", purposeFr: "Organiser matières et mobilier.", purposeEn: "Organize materials and furniture.", match: ["sourcing", "ff&e"], slugs: ["programa"] },
     { id: "budget", titleFr: "Budget", titleEn: "Budget", purposeFr: "Suivre les coûts.", purposeEn: "Track costs.", match: ["budget", "projet / décisions"], slugs: ["notion", "programa"] },
     { id: "validation", titleFr: "Validation", titleEn: "Approval", purposeFr: "Sécuriser les décisions client.", purposeEn: "Secure client decisions.", match: ["validation", "explication client", "signature"], slugs: ["loom", "yousign", "notion"] },
@@ -1522,22 +1567,6 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
   }
 
   return fallback;
-}
-
-function getStackMetaDescription(stack: StackGuide, locale: "fr" | "en"): string {
-  if (stack.slug === "developpeur-freelance-shipper") {
-    return locale === "fr"
-      ? `Stack dev freelance pour coder, partager une preview client, documenter et encaisser sans payer une stack produit trop lourde. Budget cible : ${stack.monthlyBudget}€/mois.`
-      : `Freelance dev stack to code, share a client preview, document, and get paid without paying for an overweight product stack. Target budget: ${usdFromEur(stack.monthlyBudget)}/month.`;
-  }
-  if (stack.slug === "createur-sites-ia-automation") {
-    return locale === "fr"
-      ? `Stack sites IA & automation pour lancer une page, un prototype ou un workflow automatisé sans empiler les outils IA. Budget cible : ${stack.monthlyBudget}€/mois.`
-      : `AI sites and automation stack to launch a page, prototype, or automated workflow without stacking AI tools. Target budget: ${usdFromEur(stack.monthlyBudget)}/month.`;
-  }
-  return locale === "fr"
-    ? `${stack.subtitle} Budget cible : ${stack.monthlyBudget}€/mois.`
-    : `${stack.subtitleEn} Target budget: ${usdFromEur(stack.monthlyBudget)}/month.`;
 }
 
 function getToolDecisionStatus(slot: { role: string; decision?: "core" | "conditional" | "challenge" }) {

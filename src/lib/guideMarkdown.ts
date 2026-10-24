@@ -1,4 +1,4 @@
-import { estLienEditorialDofollow } from "@/lib/externalLink";
+import { estLienEditorialDofollow, estLienRemunere } from "@/lib/externalLink";
 
 export interface GuideTocItem {
   id: string;
@@ -65,11 +65,16 @@ export function renderGuideMarkdown(
   html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, text: string, href: string) => {
     const isInternal = href.startsWith("/") || href.startsWith("#") || /^https?:\/\/(www\.)?tooltrim\.com/i.test(href);
     if (isInternal) return `<a href="${href}">${text}</a>`;
-    // Un lien externe d'article reste nofollow par defaut, sauf pour un
-    // partenaire editorial declare dans la meme allowlist que le CTA des
-    // fiches outil (externalLink.ts) : un domaine n'a qu'un seul statut
-    // dofollow/nofollow a travers tout le site, jamais decide ici au cas par cas.
-    const rel = estLienEditorialDofollow(href) ? "noopener noreferrer" : "nofollow noopener noreferrer";
+    // Un lien d'affiliation reste `sponsored` meme dans le corps d'un
+    // article : c'est une exigence Google, pas un arbitrage SEO (voir
+    // POLITIQUE dans externalLink.ts). Sinon, lien externe d'article en
+    // nofollow par defaut, sauf pour un partenaire editorial declare dans la
+    // meme allowlist que le CTA des fiches outil : un domaine n'a qu'un seul
+    // statut dofollow/nofollow a travers tout le site, jamais decide ici au
+    // cas par cas.
+    const rel = estLienRemunere(href)
+      ? "sponsored noopener noreferrer"
+      : estLienEditorialDofollow(href) ? "noopener noreferrer" : "nofollow noopener noreferrer";
     return `<a href="${href}" target="_blank" rel="${rel}">${text}</a>`;
   });
 

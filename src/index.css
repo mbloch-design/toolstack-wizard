@@ -445,42 +445,50 @@
 
 /* Story article layout: documentary grid inspired by the shared reference. */
 @layer components {
-  .analytics-consent { position: fixed; z-index: 1000; right: 20px; bottom: 20px; width: min(440px, calc(100vw - 32px)); display: flex; gap: 20px; align-items: end; padding: 20px; border: 1px solid #DADAD4; border-radius: var(--radius-stack-plan); background: var(--color-bg); box-shadow: 0 12px 40px rgba(34,34,34,.14); color: #222222; }
-  .analytics-consent__copy { flex: 1; }
-  .analytics-consent__copy strong { display: block; margin-bottom: 6px; font: 600 16px/1.2 var(--font-ui); }
-  .analytics-consent__copy p { margin: 0 0 8px; font: 400 13px/1.45 var(--font-ui); color: var(--color-text-meta); }
-  .analytics-consent__copy a { font: 500 12px/1 var(--font-ui); color: #222222; text-decoration: underline; }
-  .analytics-consent__actions { display: flex; flex-direction: column-reverse; gap: 8px; flex-shrink: 0; }
-  .analytics-consent__actions button { min-height: 36px; padding: 0 14px; border: 1px solid #DADAD4; border-radius: 999px; font: 600 12px/1 var(--font-ui); cursor: pointer; }
-  .analytics-consent__accept { background: var(--color-bg); color: #222222; }
-  .analytics-consent__close { margin-left: 12px; background: transparent; border: 0; padding: 0; font: 500 12px/1 var(--font-ui); text-decoration: underline; cursor: pointer; }
-  .analytics-consent button:focus-visible { outline: 2px solid #222222; outline-offset: 3px; }
-  .analytics-consent__refuse { background: var(--color-bg); color: #222222; }
-  @media (max-width: 560px) {
-    .analytics-consent {
-      right: 0;
-      bottom: calc(66px + env(safe-area-inset-bottom));
-      width: 100%;
-      max-height: min(48vh, 360px);
-      flex-direction: column;
-      align-items: stretch;
-      gap: 12px;
-      padding: 16px;
-      border-right: 0;
-      border-bottom: 0;
-      border-left: 0;
-      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    }
-    .analytics-consent__copy { min-height: 0; overflow: auto; }
-    .analytics-consent__copy p { max-width: 60ch; }
-    .analytics-consent__actions { flex-direction: row; }
-    .analytics-consent__actions button { flex: 1; min-height: 40px; }
+  /* CookieConsent v3 (vanilla-cookieconsent) themed on the site tokens, so
+     it follows light and dark. Accept and Refuse keep the same weight (CNIL). */
+  #cc-main {
+    --cc-font-family: var(--font-ui);
+    --cc-bg: var(--color-surface);
+    --cc-primary-color: var(--color-text);
+    --cc-secondary-color: var(--color-text-secondary);
+    --cc-link-color: var(--color-text);
+    --cc-btn-primary-bg: var(--color-text);
+    --cc-btn-primary-color: var(--color-bg);
+    --cc-btn-primary-border-color: var(--color-text);
+    --cc-btn-primary-hover-bg: var(--color-text-secondary);
+    --cc-btn-primary-hover-color: var(--color-bg);
+    --cc-btn-primary-hover-border-color: var(--color-text-secondary);
+    --cc-btn-secondary-bg: var(--color-text);
+    --cc-btn-secondary-color: var(--color-bg);
+    --cc-btn-secondary-border-color: var(--color-text);
+    --cc-btn-secondary-hover-bg: var(--color-text-secondary);
+    --cc-btn-secondary-hover-color: var(--color-bg);
+    --cc-btn-secondary-hover-border-color: var(--color-text-secondary);
+    --cc-btn-border-radius: var(--radius-pill);
+    --cc-modal-border-radius: var(--radius-lg);
+    --cc-separator-border-color: var(--color-border);
+    --cc-toggle-on-bg: var(--color-text);
+    --cc-toggle-off-bg: var(--color-text-secondary);
+    --cc-toggle-readonly-bg: var(--color-border);
+    --cc-cookie-category-block-bg: var(--color-surface-soft);
+    --cc-cookie-category-block-border: var(--color-border);
+    --cc-cookie-category-block-hover-bg: var(--color-surface-soft);
+    --cc-cookie-category-block-hover-border: var(--color-border);
+    --cc-cookie-category-expanded-block-bg: transparent;
+    --cc-cookie-category-expanded-block-hover-bg: var(--color-surface-soft);
+    --cc-footer-bg: var(--color-surface-soft);
+    --cc-footer-color: var(--color-text-secondary);
+    --cc-footer-border-color: var(--color-border);
+    --cc-overlay-bg: rgba(0, 0, 0, .45);
   }
-  /* Barre d'onglets du bas (jusqu'à 640 px) : le bandeau se pose au-dessus
-     au lieu de la couvrir. */
-  @media (min-width: 561px) and (max-width: 640px) {
-    .analytics-consent { bottom: calc(78px + env(safe-area-inset-bottom)); }
-  }
+  #cc-main .cm--bar { border-top: 1px solid var(--color-border); box-shadow: 0 -8px 32px rgba(0, 0, 0, .08); }
+  #cc-main .cm__title { font-size: 16px; }
+  #cc-main .cm__desc { font-size: 14px; line-height: 1.5; }
+  #cc-main .cm__btn, #cc-main .pm__btn { min-height: 44px; font-weight: 600; }
+  /* Same focus ring as the rest of the site; links reach the 24px target size. */
+  #cc-main :is(button, a, input):focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+  #cc-main .cm__footer a, #cc-main .pm__section a { display: inline-flex; align-items: center; min-height: 24px; }
 }
 @layer components {
   body .ga-header--story {
@@ -8137,6 +8145,15 @@
   .td-tool-page .td-reading-actions h2 { line-height: 1.3; }
   .td-tool-page :is(button, a, summary):focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 4px; }
   .td-faq-heading { margin-bottom: 24px; }
+  /* Pricing sub-page pilot (src/lib/toolPricingDetail.ts): answer, per-seat cost, pricing FAQ. */
+  .td-pricing-answer { margin: 0 0 24px; max-width: 65ch; font: 400 var(--tt-size-body)/1.65 var(--font-ui); color: var(--color-text); }
+  .td-seat-costs, .td-pricing-faq { margin-top: 40px; }
+  .td-seat-costs .td-subtitle, .td-pricing-faq .td-subtitle { margin: 0 0 16px; }
+  .td-seat-table { width: 100%; max-width: 480px; border-collapse: collapse; font: 400 var(--tt-size-body)/1.5 var(--font-ui); color: var(--color-text); font-variant-numeric: tabular-nums; }
+  .td-seat-table caption { caption-side: bottom; padding-top: 12px; text-align: left; font-size: 13px; color: var(--color-muted); }
+  .td-seat-table :is(th, td) { padding: 12px 0; border-bottom: 1px solid var(--color-border); text-align: left; }
+  .td-seat-table thead th { font-weight: 600; font-size: 13px; color: var(--color-muted); }
+  .td-seat-table tbody th { font-weight: 600; }
   .td-faq-heading > p { font: 400 var(--tt-size-body)/1.6 var(--font-ui); color: var(--color-text); max-width: 60ch; }
   .td-faq-list details { border-bottom: 1px solid var(--color-border); }
   .td-faq-list details:first-child { border-top: 1px solid var(--color-border); }
@@ -17389,7 +17406,7 @@
     color: var(--color-text-meta);
     cursor: text;
   }
-  .gs-field > svg { flex: none; width: 20px; height: 20px; }
+  .gs-field > svg { flex: none; width: 20px; height: 20px; transition: color 160ms ease-out; }
   .gs-field:focus-within > svg { color: var(--color-text-strong); }
   .gs-field input {
     flex: 1;
@@ -17406,50 +17423,56 @@
     caret-color: var(--color-text-strong);
   }
   .gs-field input::placeholder { color: var(--color-text-meta); }
+  /* Effacer : la pastille ronde d'iOS (x.circle.fill), dans le champ. */
   .gs-clear {
-    flex: none;
-    min-height: 32px;
-    padding: 0 var(--space-xs);
-    border: 0;
-    border-radius: var(--radius-sm);
-    background: transparent;
-    color: var(--color-text-meta);
-    font: 500 13px/1 var(--font-ui);
-    cursor: pointer;
-  }
-  .gs-clear:hover { color: var(--color-text-strong); }
-  /* Fermer : le rond gris plein de macOS et iOS, croix fine. */
-  .gs-icon-button {
     display: grid;
     flex: none;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     place-items: center;
+    margin-right: var(--space-xs);
+    padding: 0;
     border: 0;
     border-radius: var(--radius-circle);
-    background: var(--gs-fill);
-    color: var(--color-text-secondary);
+    background: color-mix(in srgb, var(--color-text-meta) 70%, transparent);
+    color: var(--color-surface);
     cursor: pointer;
-    transition: background-color 140ms ease-out, color 140ms ease-out;
+    transition: background-color 120ms ease-out;
   }
-  .gs-icon-button:hover { background: var(--gs-fill-hover); color: var(--color-text-strong); }
-  .gs-icon-button svg { width: 14px; height: 14px; stroke-width: 2; }
+  .gs-clear svg { width: 11px; height: 11px; stroke-width: 2.5; }
+  .gs-clear { animation: gs-pop 220ms cubic-bezier(0.34, 1.4, 0.64, 1) both; }
+  @keyframes gs-pop { from { opacity: 0; transform: scale(0.5); } }
+  .gs-clear:hover { background: var(--color-text-secondary); }
+  /* « Annuler » n'existe que sur mobile (voir max-width: 640px). */
+  .gs-cancel { display: none; }
 
-  .gs-body { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+  /* Rows fade out under the field and above the footer instead of being cut
+     by a hard edge (the first 12px are padding, so nothing is hidden at rest). */
+  .gs-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black var(--space-sm), black calc(100% - var(--space-sm)), transparent);
+    mask-image: linear-gradient(to bottom, transparent, black var(--space-sm), black calc(100% - var(--space-sm)), transparent);
+  }
 
   /* Libellé de section : le surtitre du site (--tt-size-kicker, capitales),
      comme « PRÉFÉRENCES » dans le menu mobile. */
+  /* Titre de section : 13 px demi-gras, gris, en casse de phrase (les
+     sections de Spotlight et de la recherche d'apple.com). */
   .gs-label {
     margin: 0 0 var(--space-xs);
     color: var(--color-text-meta);
-    font: 500 12px/1.4 var(--font-ui);
+    font: 600 13px/1.4 var(--font-ui);
+    letter-spacing: -0.005em;
   }
 
   /* Avant la frappe (12 oct. 2026, esprit apple.com) : une seule grille de
      deux colonnes, des lignes identiques (40 px), colonne visuelle fixe de
      44 px puis libellé 15 px régulier. Rien ne flotte : icônes à x = 32,
      libellés à x = 76, titres de section sur le bord des icônes. */
-  .gs-guide { display: grid; gap: var(--space-md); padding: var(--space-xs) var(--space-md) var(--space-md); }
+  .gs-guide { display: grid; gap: var(--space-lg); padding: var(--space-sm) var(--space-md) var(--space-lg); }
   .gs-guide > * { animation: gs-rise 260ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
   .gs-guide > :nth-child(2) { animation-delay: 25ms; }
   .gs-guide > :nth-child(3) { animation-delay: 50ms; }
@@ -17459,33 +17482,54 @@
   .gs-guide .gs-label { margin: 0 0 var(--space-2xs) var(--space-md); }
   /* « Récentes » et son lien « Effacer », sur la même ligne de titre. */
   .gs-label-row { display: flex; align-items: baseline; justify-content: space-between; padding-right: var(--space-sm); }
-  .gs-label-action { padding: 2px 4px; border: 0; border-radius: var(--radius-xs); background: none; color: var(--color-text-meta); font: 500 12px/1.4 var(--font-ui); cursor: pointer; }
+  .gs-label-action { padding: 2px 4px; border: 0; border-radius: var(--radius-xs); background: none; color: var(--color-text-meta); font: 400 13px/1.4 var(--font-ui); cursor: pointer; }
   .gs-label-action:hover, .gs-label-action:focus-visible { color: var(--color-text-strong); }
 
   .gs-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+  /* Une ligne = une tuile de 28 px (picto au trait, ou les deux logos d'un
+     duel) puis le libellé 15 px. Mêmes tuiles que les résultats pendant la
+     frappe : un seul langage de pictos dans toute la fenêtre. */
   .gs-row {
     display: grid;
-    grid-template-columns: 44px minmax(0, 1fr) auto;
+    grid-template-columns: 44px minmax(0, 1fr);
     align-items: center;
     width: 100%;
-    min-height: 40px;
-    padding: 0 var(--space-sm) 0 var(--space-md);
+    min-height: 44px;
+    padding: var(--space-2xs) var(--space-sm) var(--space-2xs) var(--space-md);
     border: 0;
     border-radius: var(--radius-md);
     background: transparent;
     color: var(--color-text-strong);
-    font: 400 15px/1.2 var(--font-ui);
+    font: 400 15px/1.3 var(--font-ui);
+    letter-spacing: -0.01em;
     text-align: left;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 120ms ease-out;
+    transition: background-color 100ms ease-out;
   }
   .gs-row:is(:hover, :focus-visible) { background: var(--gs-fill); }
-  .gs-row-lead { display: flex; align-items: center; color: var(--color-text-meta); }
-  .gs-row-lead > svg { width: 16px; height: 16px; }
-  .gs-row-logos > * { border-radius: var(--radius-xs); box-shadow: 0 0 0 1.5px var(--color-surface); transition: box-shadow 120ms ease-out; }
-  .gs-row-logos > * + * { margin-left: -5px; }
-  .gs-row:is(:hover, :focus-visible) .gs-row-logos > * { box-shadow: 0 0 0 1.5px var(--gs-fill); }
+  .gs-row:active { background: var(--gs-fill-hover); transform: scale(0.985); }
+  .gs-row { transition: background-color 100ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .gs-row-lead {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    place-items: center;
+    border-radius: var(--radius-sm);
+    background: var(--gs-fill);
+    color: var(--color-text-secondary);
+    transition: background-color 100ms ease-out;
+  }
+  .gs-row:is(:hover, :focus-visible) .gs-row-lead { background: var(--color-surface); }
+  .gs-row-lead > svg { width: 15px; height: 15px; }
+  /* Duel : les deux logos sont le sujet, côte à côte et lisibles. */
+  .gs-row-logos { display: flex; width: auto; height: auto; background: none; }
+  .gs-row:is(:hover, :focus-visible) .gs-row-logos { background: none; }
+  .gs-row-logos > * { border-radius: var(--radius-xs); box-shadow: 0 0 0 2px var(--color-surface); transition: box-shadow 100ms ease-out; }
+  .gs-row-logos > * + * { margin-left: -4px; transition: margin-left 200ms cubic-bezier(0.34, 1.3, 0.64, 1), box-shadow 100ms ease-out; }
+  /* Au survol, les deux logos du duel s'écartent : on les voit face à face. */
+  .gs-row:is(:hover, :focus-visible) .gs-row-logos > * + * { margin-left: 3px; }
+  .gs-row:is(:hover, :focus-visible) .gs-row-logos > * { box-shadow: 0 0 0 2px var(--gs-fill); }
   .gs-row-label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .gs-row-vs { color: var(--color-text-meta); }
 
@@ -17494,12 +17538,15 @@
     display: flex;
     flex: none;
     gap: var(--space-md);
-    padding: var(--space-xs) var(--space-md);
+    padding: var(--space-sm) var(--space-xl);
     border-top: 1px solid var(--color-border-soft);
     color: var(--color-text-meta);
     font: 400 12px/1 var(--font-ui);
   }
-  .gs-hints span { display: inline-flex; align-items: center; gap: 4px; }
+  .gs-hints span { display: inline-flex; align-items: center; gap: 6px; }
+  .gs-hints kbd + kbd { margin-left: -3px; }
+  /* Rappels clavier : inutiles au doigt. */
+  @media (hover: none) { .gs-hints { display: none; } }
   .gs-hints kbd {
     display: inline-grid;
     min-width: 18px;
@@ -17508,70 +17555,74 @@
     padding: 0 4px;
     border-radius: var(--radius-xs);
     background: var(--gs-fill);
-    color: var(--color-text-secondary);
-    font: 500 11px/1 var(--font-ui);
+    color: var(--color-text-meta);
+    font: 500 10px/1 var(--font-ui);
+    letter-spacing: 0.02em;
   }
 
-  /* Pendant la frappe */
-  .gs-results { padding: var(--space-md) var(--space-xs) var(--space-xs); }
-  .gs-group + .gs-group { margin-top: var(--space-md); }
-  .gs-group .gs-label { margin: 0 var(--space-md) var(--space-2xs); }
+  /* Pendant la frappe. Même grille que le champ : logos sur le bord de la
+     loupe (x = 32), noms sur le bord du texte tapé (x = 76). */
+  .gs-results { padding: var(--space-sm) var(--space-xl); }
+  .gs-group + .gs-group { margin-top: var(--space-sm); }
+  .gs-group .gs-label { margin: 0 0 var(--space-2xs); padding: var(--space-xs) 0 0; }
   .gs-result {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    width: 100%;
-    min-height: 48px;
-    padding: var(--space-xs) var(--space-md);
+    gap: var(--space-md);
+    width: calc(100% + 2 * var(--space-xs));
+    min-height: 52px;
+    margin-inline: calc(-1 * var(--space-xs));
+    padding: var(--space-xs);
     border: 0;
     border-radius: var(--radius-md);
     background: transparent;
     color: var(--color-text-strong);
     text-align: left;
     cursor: pointer;
+    transition: background-color 100ms ease-out;
   }
   .gs-result.is-active { background: var(--gs-fill); }
+  .gs-result:active { background: var(--gs-fill-hover); transform: scale(0.985); }
+  .gs-result { transition: background-color 100ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  /* Les groupes montent une fois, quand la frappe commence (le bloc se monte
+     à ce moment-là) ; les lettres suivantes ne relancent rien. */
+  .gs-results > * > .gs-group, .gs-results > .gs-view-all { animation: gs-rise 240ms cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .gs-results .gs-group:nth-child(2) { animation-delay: 30ms; }
+  .gs-results .gs-group:nth-child(3) { animation-delay: 60ms; }
+  .gs-results .gs-group:nth-child(n+4), .gs-results > .gs-view-all { animation-delay: 90ms; }
+  .gs-result-logo { flex: none; border-radius: var(--radius-sm) !important; }
   .gs-result-icon {
     display: grid;
     flex: none;
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     place-items: center;
     border-radius: var(--radius-sm);
     background: var(--gs-fill);
-    color: var(--color-text-strong);
+    color: var(--color-text-secondary);
+    transition: background-color 100ms ease-out;
   }
   .gs-result.is-active .gs-result-icon { background: var(--color-surface); }
-  .gs-result-icon svg { width: 16px; height: 16px; }
-  .gs-result-text { display: grid; flex: 1; min-width: 0; gap: 2px; }
-  .gs-result-text strong { overflow: hidden; font: 600 var(--tt-size-card-body)/1.25 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
-  .gs-result-text small { overflow: hidden; color: var(--color-text-meta); font: 400 12px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
-  .gs-result-arrow { flex: none; width: 16px; height: 16px; color: var(--color-text-meta); opacity: 0; transition: opacity 120ms ease-out, transform 120ms ease-out; transform: translateX(-4px); }
-  /* Même règle partout : la flèche apparaît sur l'élément visé (survol,
-     focus clavier, option active), jamais en permanence. */
-  .gs-result.is-active .gs-result-arrow,
-  .gs-view-all {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2xs);
-    width: 100%;
-    min-height: 44px;
-    margin-top: var(--space-xs);
-    padding: 0 var(--space-md);
-    border: 0;
-    border-top: 1px solid var(--color-border-soft);
-    background: transparent;
-    color: var(--color-text-secondary);
-    font: 500 13px/1.2 var(--font-ui);
-    text-align: left;
-    cursor: pointer;
-  }
-  .gs-view-all:hover { color: var(--color-text-strong); }
-  .gs-view-all svg { width: 14px; height: 14px; }
+  .gs-result-icon svg { width: 15px; height: 15px; }
+  .gs-result-text { display: grid; flex: 1; min-width: 0; gap: 1px; }
+  .gs-result-text strong { overflow: hidden; font: 400 15px/1.3 var(--font-ui); letter-spacing: -0.01em; text-overflow: ellipsis; white-space: nowrap; }
+  .gs-result-text small { overflow: hidden; color: var(--color-text-meta); font: 400 13px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
+  /* La partie tapée, en gras : on voit d'un coup d'œil pourquoi la ligne sort. */
+  .gs-hit { background: none; color: inherit; font-weight: 600; }
+  .gs-result-arrow { flex: none; width: 16px; height: 16px; color: var(--color-text-meta); opacity: 0; transform: translateX(-4px); transition: opacity 120ms ease-out, transform 120ms ease-out; }
+  /* La flèche n'apparaît que sur la ligne visée (survol, clavier). */
+  .gs-result.is-active .gs-result-arrow { opacity: 1; transform: none; }
+  /* « Tous les résultats » : une ligne comme les autres, la dernière étape
+     des flèches, séparée par un filet. */
+  .gs-view-all { position: relative; margin-top: var(--space-md); }
+  .gs-view-all::before { content: ""; position: absolute; top: calc(-1 * var(--space-xs)); left: var(--space-xs); right: var(--space-xs); height: 1px; background: var(--color-border-soft); }
+  .gs-view-all .gs-result-text strong { color: var(--color-text-secondary); }
+  .gs-view-all.is-active .gs-result-text strong { color: var(--color-text-strong); }
 
-  .gs-empty { display: grid; gap: var(--space-xs); padding: var(--space-lg); }
+  .gs-empty { display: grid; gap: var(--space-xs); padding: var(--space-lg) var(--space-md); }
+  .gs-empty-title, .gs-empty-text { padding-inline: var(--space-md); }
   .gs-empty-title { margin: 0; color: var(--color-text-strong); font: 600 var(--tt-size-card-title)/1.3 var(--font-ui); }
-  .gs-empty-text { margin: 0 0 4px; color: var(--color-text-meta); font: 400 13px/1.4 var(--font-ui); }
+  .gs-empty-text { margin: 0 0 var(--space-xs); color: var(--color-text-meta); font: 400 15px/1.4 var(--font-ui); }
 
   .dark .gs-dialog { --gs-fill: color-mix(in srgb, var(--color-text-strong) 7%, var(--color-surface)); --gs-fill-hover: color-mix(in srgb, var(--color-text-strong) 11%, var(--color-surface)); }
 
@@ -17591,6 +17642,9 @@
     .gs-dialog, .gs-overlay.is-closing, .gs-overlay.is-closing .gs-dialog { animation: none; }
     .gs-result-arrow, .gs-row, .gs-row-logos > * { transition: none; }
     .gs-guide > * { animation: none; }
+    .gs-clear, .gs-results > * > .gs-group, .gs-results > .gs-view-all { animation: none; }
+    .gs-row, .gs-result, .gs-row-logos > * + *, .gs-field > svg { transition: none; }
+    .gs-row:active, .gs-result:active { transform: none; }
   }
 
   @media (max-width: 640px) {
@@ -17602,9 +17656,13 @@
     .gs-list { grid-template-columns: minmax(0, 1fr); }
     .gs-row { min-height: 44px; }
     .gs-hints { display: none; }
-    /* Cibles tactiles de 44 px au doigt. */
-    .gs-clear { min-width: 44px; min-height: 44px; }
-    .gs-icon-button { width: 36px; height: 36px; }
+    /* Annuler à droite du champ, comme iOS ; la pastille Effacer garde une
+       zone de 44 px au doigt. */
+    .gs-cancel { display: inline-flex; flex: none; align-items: center; min-height: 44px; padding: 0 var(--space-2xs); border: 0; background: none; color: var(--color-text-strong); font: 400 17px/1 var(--font-ui); cursor: pointer; }
+    .gs-field { height: 44px; gap: var(--space-sm); padding-left: var(--space-sm); }
+    .gs-clear { position: relative; }
+    .gs-clear::after { content: ""; position: absolute; inset: -12px; }
+    .gs-results { padding-inline: calc(var(--space-md) + var(--space-sm)); }
   }
 }
 
@@ -27944,8 +28002,9 @@ section[id]:not(.cp-guide-section) {
 }
 .ex-tool-focus-main {
   display: grid;
-  gap: 22px;
-  grid-template-columns: minmax(260px, 38%) minmax(0, 1fr);
+  align-items: center;
+  gap: 32px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   padding: 18px;
 }
 /* Reuses the shared .tc-image cover/fallback logic (OG image when large
@@ -27970,20 +28029,17 @@ section[id]:not(.cp-guide-section) {
 .ex-tool-focus-content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 12px 18px 12px 0;
+  gap: 0;
+  padding: 0 24px 0 0;
 }
-/* Mirrors an e-commerce PDP footer: secondary link low-emphasis on the
-   left, primary "add" action anchored bottom-right — pinned to the base
-   of the column via margin-top: auto rather than floating on the visual. */
+/* Primary then secondary, grouped on the text's left edge. Spacing is
+   tighter inside a group (eyebrow + identity) than between groups. */
 .ex-tool-focus-footer {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 6px;
+  gap: 10px;
+  margin-top: 24px;
 }
 .ex-tool-focus-eyebrow {
   color: var(--color-muted);
@@ -27991,7 +28047,7 @@ section[id]:not(.cp-guide-section) {
   font-size: var(--tt-size-kicker);
   font-weight: 720;
 }
-.ex-tool-focus-title { align-items: center; display: flex; gap: 14px; min-width: 0; }
+.ex-tool-focus-title { align-items: center; display: flex; gap: 14px; margin-top: 10px; min-width: 0; }
 .ex-tool-focus-title > div { min-width: 0; }
 .ex-tool-focus-title h1 {
   color: var(--color-text);
@@ -28017,10 +28073,10 @@ section[id]:not(.cp-guide-section) {
   font-family: var(--font-ui);
   font-size: var(--tt-size-body);
   line-height: 1.5;
-  margin: 0;
+  margin: 16px 0 0;
   overflow: hidden;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
 }
 .ex-tool-focus-profile {
   align-items: center;
@@ -28031,11 +28087,16 @@ section[id]:not(.cp-guide-section) {
   font-weight: 800;
   gap: 8px;
   justify-self: start;
-  min-height: 44px;
+  background: var(--color-text);
+  border-radius: var(--radius-pill);
+  color: var(--color-bg);
+  min-height: 46px;
+  padding: 0 20px;
   white-space: nowrap;
   text-decoration: none;
+  transition: background 150ms ease;
 }
-.ex-tool-focus-profile:hover { text-decoration: underline; text-underline-offset: 4px; }
+.ex-tool-focus-profile:hover { background: color-mix(in srgb, var(--color-text) 88%, var(--color-bg)); }
 .ex-tool-focus-profile:focus-visible { border-radius: var(--radius-xs); outline: 2px solid var(--color-text); outline-offset: 3px; }
 .ex-tool-focus > .ex-directions { border-top: 1px solid var(--color-border); padding: 14px 18px 18px; }
 .ex-back {
@@ -28059,9 +28120,9 @@ section[id]:not(.cp-guide-section) {
    contrast than the secondary link beside it, never shrinks in the row. */
 .ex-tool-focus-add {
   appearance: none;
-  background: var(--color-text);
-  border: 0;
-  color: var(--color-bg);
+  background: transparent;
+  border: 1px solid var(--color-text);
+  color: var(--color-text);
   cursor: pointer;
   flex-shrink: 0;
   font-size: var(--tt-size-card-body);
@@ -28069,9 +28130,9 @@ section[id]:not(.cp-guide-section) {
   padding: 0 20px;
   transition: background 150ms ease;
 }
-.ex-tool-focus-add:hover:not(:disabled) { background: color-mix(in srgb, var(--color-text) 88%, var(--color-bg)); }
+.ex-tool-focus-add:hover:not(:disabled) { background: var(--color-surface-soft); }
 .ex-tool-focus-add:focus-visible { outline: 2px solid var(--color-text); outline-offset: 3px; }
-.ex-tool-focus-add.is-added { background: color-mix(in srgb, #5f7f68 82%, var(--color-text)); color: #fff; cursor: default; }
+.ex-tool-focus-add.is-added { background: color-mix(in srgb, #5f7f68 82%, var(--color-text)); border-color: transparent; color: #fff; cursor: default; }
 .ex-directions { display: grid; gap: 8px; grid-column: 1 / -1; grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .ex-directions--themes { grid-template-columns: repeat(auto-fit, minmax(142px, 1fr)); }
 .ex-directions button { align-items: center; appearance: none; background: var(--color-surface-soft); border-radius: var(--radius-pill); color: var(--color-muted); cursor: pointer; display: flex; font-family: var(--font-ui); font-size: var(--tt-size-card-body); font-weight: 760; justify-content: space-between; min-height: 36px; padding: 0 12px; transition: background 160ms ease, color 160ms ease; }
@@ -28211,7 +28272,7 @@ section[id]:not(.cp-guide-section) {
   .ex-tool-focus-main { grid-template-columns: minmax(0, 1fr); padding: 12px; }
   .ex-tool-focus-visual { border-radius: var(--radius-lg) var(--radius-lg) 0 0; min-height: 0; }
   .ex-tool-focus-visual img { max-height: none; min-height: 0; }
-  .ex-tool-focus-content { border-radius: 0 0 var(--radius-lg) var(--radius-lg); gap: 14px; padding: 24px 20px; }
+  .ex-tool-focus-content { border-radius: 0 0 var(--radius-lg) var(--radius-lg); padding: 20px 8px 8px; }
   .ex-tool-focus-footer { align-items: stretch; flex-direction: column; }
   .ex-tool-focus-add { width: 100%; }
   .ex-tool-focus > .ex-directions { padding: 12px; }
@@ -30631,371 +30692,6 @@ section[id]:not(.cp-guide-section) {
    telle quelle pour que cette consolidation ne change aucun rendu. A trancher
    separement. */
 
-/* ─────────────────────────────────────────────
-   STACK SAVE DIALOG (stack-save-*)
-───────────────────────────────────────────── */
-@layer components {
-  .stack-save-backdrop {
-    align-items: center;
-    background: rgb(34 34 34 / 0.46);
-    display: flex;
-    inset: 0;
-    justify-content: center;
-    padding: 24px;
-    position: fixed;
-    z-index: 1200;
-  }
-
-  .stack-save-dialog {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    box-shadow: 0 24px 80px rgb(34 34 34 / 0.18);
-    color: var(--color-text);
-    display: flex;
-    flex-direction: column;
-    height: min(720px, calc(100dvh - 48px));
-    max-height: calc(100dvh - 48px);
-    max-width: 820px;
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .stack-save-head {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 38px 48px 26px;
-  }
-
-  .stack-save-head h2 {
-    font-family: var(--font-ui);
-    font-size: clamp(24px, 3vw, 34px);
-    font-weight: 500;
-    letter-spacing: -.025em;
-    line-height: 1.15;
-    margin: 0;
-    text-wrap: balance;
-  }
-  .stack-save-head > button {
-    align-items: center;
-    background: transparent;
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    color: var(--color-text);
-    display: inline-flex;
-    height: 42px;
-    justify-content: center;
-    width: 42px;
-  }
-
-  .stack-save-intents {
-    align-items: center;
-    display: flex;
-    gap: 8px;
-    padding: 0 48px 22px;
-  }
-  .stack-save-intents > span {
-    color: var(--color-muted);
-    font: 500 13px/1.3 var(--font-ui);
-    margin-right: 4px;
-  }
-  .stack-save-intents > button {
-    align-items: center;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    color: var(--color-text);
-    display: flex;
-    gap: 7px;
-    min-height: 38px;
-    padding: 0 14px;
-    text-align: left;
-  }
-  .stack-save-intents > button.is-selected {
-    background: var(--color-text);
-    border-color: var(--color-text);
-    color: var(--color-surface);
-  }
-  .stack-save-intents strong { font: 600 13px/1 var(--font-ui); }
-
-  .stack-save-destination-head {
-    align-items: flex-end;
-    display: flex;
-    font-family: var(--font-ui);
-    justify-content: space-between;
-    padding: 22px 24px 10px;
-  }
-  .stack-save-destination-head > div strong,
-  .stack-save-destination-head > div span { display: block; }
-  .stack-save-destination-head strong { font-size: 14px; font-weight: 650; }
-  .stack-save-destination-head span { color: var(--color-muted); font-size: 12px; margin-top: 2px; }
-
-  .stack-save-board-list {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 8px;
-    min-height: 88px;
-    overflow-y: auto;
-    padding: 10px 48px 18px;
-  }
-  .stack-save-section-label {
-    color: var(--color-muted);
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .04em;
-    margin: 4px 0 2px;
-    text-transform: uppercase;
-  }
-  .stack-save-board-list button {
-    align-items: center;
-    background: var(--color-surface);
-    border: 1px solid transparent;
-    border-radius: 10px;
-    color: var(--color-text);
-    display: flex;
-    gap: 12px;
-    min-height: 68px;
-    padding: 12px 14px;
-    text-align: left;
-    width: 100%;
-  }
-  .stack-save-board-list button:hover { background: var(--color-subtle, var(--color-tutorial-surface)); }
-  .stack-save-board-list button.is-selected { background: var(--color-subtle, var(--color-tutorial-surface)); border-color: var(--color-border); }
-  .stack-save-board-thumb {
-    flex: 0 0 auto;
-    height: 44px;
-    position: relative;
-    width: 44px;
-  }
-  .stack-save-board-thumb-icon {
-    align-items: center;
-    background: var(--color-surface-soft);
-    border-radius: 10px;
-    color: var(--color-muted);
-    display: flex;
-    height: 44px;
-    justify-content: center;
-    width: 44px;
-  }
-  /* Secondary cue: up to 2 tools already in that collection, badged onto
-     the category icon rather than replacing it — the icon is the constant,
-     always-legible identity; this is a bonus, not the primary signal. */
-  .stack-save-board-thumb-tools {
-    bottom: -4px;
-    display: flex;
-    position: absolute;
-    right: -4px;
-  }
-  .stack-save-board-thumb-tools > * { border: 2px solid var(--color-surface); border-radius: 7px; margin-left: -8px; }
-  .stack-save-board-thumb-tools > *:first-child { margin-left: 0; }
-  .stack-save-board-list button.is-selected .stack-save-board-thumb-tools > * { border-color: var(--color-subtle, var(--color-tutorial-surface)); }
-  .stack-save-board-mark {
-    align-items: center;
-    border: 1px solid var(--color-border);
-    border-radius: 7px;
-    display: inline-flex;
-    flex: 0 0 auto;
-    height: 27px;
-    justify-content: center;
-    width: 27px;
-  }
-  .stack-save-board-list button.is-selected .stack-save-board-mark { background: var(--color-text); border-color: var(--color-text); color: var(--color-surface); }
-  .stack-save-board-copy { flex: 1; min-width: 0; }
-  .stack-save-board-copy strong,
-  .stack-save-board-copy small { display: block; font-family: var(--font-ui); }
-  .stack-save-board-copy strong { font-size: 15px; font-weight: 620; }
-  .stack-save-board-copy small { color: var(--color-muted); font-size: 12px; margin-top: 3px; }
-  .stack-save-no-result { color: var(--color-muted); font-family: var(--font-ui); font-size: 13px; margin: 18px 0; text-align: center; }
-
-  .stack-save-create-trigger {
-    align-items: center;
-    background: transparent;
-    border: 0;
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    color: var(--color-text);
-    display: flex;
-    font-family: var(--font-ui);
-    font-size: 14px;
-    font-weight: 620;
-    gap: 10px;
-    margin: 0;
-    min-height: 44px;
-    padding: 0 18px;
-    text-align: left;
-  }
-  .stack-save-create {
-    border-top: 1px solid var(--color-border);
-    margin: 0 48px;
-    padding: 14px 0;
-  }
-  .stack-save-create label { display: block; font-family: var(--font-ui); font-size: 12px; font-weight: 620; margin-bottom: 7px; }
-  .stack-save-create > div { display: flex; gap: 8px; }
-  .stack-save-create input { border: 1px solid var(--color-border); border-radius: 10px; flex: 1; font-family: var(--font-ui); min-width: 0; padding: 10px 12px; }
-  .stack-save-create button { background: var(--color-text); border: 0; border-radius: 10px; color: var(--color-surface); font-family: var(--font-ui); font-weight: 650; padding: 0 16px; }
-
-  .stack-save-footer {
-    align-items: center;
-    border-top: 1px solid var(--color-border);
-    display: flex;
-    justify-content: space-between;
-    padding: 22px 48px;
-  }
-  .stack-save-footer-left { align-items: center; display: flex; gap: 12px; }
-  .stack-save-footer button { align-items: center; border-radius: 10px; display: inline-flex; font-family: var(--font-ui); font-size: 14px; font-weight: 650; justify-content: center; min-height: 42px; padding: 0 16px; }
-  .stack-save-footer .stack-save-create-trigger { border-radius: 999px; }
-  .stack-save-remove { background: transparent; border: 0; color: #9b3b31; gap: 7px; padding-left: 0 !important; }
-  .stack-save-confirm { background: var(--color-text); border: 1px solid var(--color-text); border-radius: 999px !important; color: var(--color-surface); min-width: 120px; }
-  .stack-save-confirm:disabled { cursor: not-allowed; opacity: .4; }
-
-  .pin-tool-button--wishlist { background: var(--color-surface); color: var(--color-text); }
-
-  /* ── Compact save-to-collection popover — Pinterest/details.so style:
-     a small bubble anchored to the pin button, every toggle saves
-     instantly, no separate confirm step. Replaces the StackSaveDialog
-     modal for card/button-anchored saves (ExplorerPage's page-level,
-     decoupled trigger still uses the modal). ── */
-  .stack-save-popover {
-    /* !important throughout: PopoverContent ships baked-in Tailwind
-       utilities (w-72, p-4, rounded-md...) that live in the `utilities`
-       layer, which wins over this `components`-layer rule regardless of
-       selector specificity — same reason .stack-save-confirm below needs
-       it for border-radius. */
-    z-index: 80 !important;
-    width: 240px !important;
-    padding: 10px !important;
-    border: 1px solid var(--color-border) !important;
-    border-radius: var(--radius-lg) !important;
-    background: var(--color-surface) !important;
-    box-shadow: 0 16px 40px color-mix(in srgb, var(--color-text) 16%, transparent) !important;
-  }
-  .stack-save-menu { display: grid; gap: 2px; }
-  /* "Ma stack" (icon + label, left) and the wishlist bookmark (icon only,
-     right) are two independent one-click actions sharing a row — same
-     anatomy as the reference's default-board row with its save toggle
-     on the right. Wishlist has no label: the bookmark shape already
-     says "not mine yet, but tempting — set aside for later". */
-  .stack-save-menu-quick {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    padding: 3px;
-    border-radius: var(--radius-md);
-  }
-  .stack-save-menu-quick-main {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    flex: 1;
-    min-width: 0;
-    padding: 5px 4px;
-    border: 0;
-    border-radius: var(--radius-sm);
-    background: transparent;
-    color: var(--color-text);
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    text-align: left;
-  }
-  .stack-save-menu-quick-main:hover { background: var(--color-surface-soft); }
-  .stack-save-menu-quick.is-selected .stack-save-menu-quick-main { color: var(--color-text); }
-  .stack-save-menu-wishlist {
-    display: grid;
-    flex-shrink: 0;
-    place-items: center;
-    width: 32px;
-    height: 32px;
-    border: 0;
-    border-radius: var(--radius-pill);
-    background: transparent;
-    color: var(--color-muted);
-  }
-  .stack-save-menu-wishlist:hover { background: var(--color-surface-soft); color: var(--color-text); }
-  .stack-save-menu-wishlist.is-selected { color: var(--color-text); }
-  .stack-save-menu-list { display: grid; gap: 1px; max-height: 240px; overflow-y: auto; margin-top: 2px; }
-  .stack-save-menu-list button {
-    display: flex;
-    align-items: center;
-    gap: 9px;
-    padding: 6px 7px;
-    border: 0;
-    border-radius: var(--radius-md);
-    background: transparent;
-    color: var(--color-text);
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 550;
-    text-align: left;
-  }
-  .stack-save-menu-list button:hover { background: var(--color-surface-soft); }
-  .stack-save-menu-list button.is-selected { background: var(--color-surface-soft); font-weight: 650; }
-  .stack-save-menu-list button > span:nth-child(2) { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .stack-save-menu-list button > svg:last-child { flex-shrink: 0; }
-  .stack-save-menu-list .stack-save-board-thumb,
-  .stack-save-menu-list .stack-save-board-thumb-icon {
-    width: 28px;
-    height: 28px;
-    border-radius: var(--radius);
-  }
-  .stack-save-menu-list .stack-save-board-thumb-tools > * { border-radius: 5px; }
-  .stack-save-menu-create-trigger {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 7px;
-    border: 0;
-    border-radius: var(--radius-md);
-    background: transparent;
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 550;
-    color: var(--color-text);
-    margin-top: 4px;
-  }
-  .stack-save-menu-create-trigger:hover { background: var(--color-surface-soft); }
-  .stack-save-menu-create { display: flex; gap: 6px; margin-top: 4px; }
-  .stack-save-menu-create input {
-    flex: 1;
-    min-width: 0;
-    padding: 8px 10px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    font-family: var(--font-ui);
-    font-size: 13px;
-  }
-  .stack-save-menu-create button {
-    padding: 0 12px;
-    border: 0;
-    border-radius: var(--radius-md);
-    background: var(--color-text);
-    color: var(--color-surface);
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 650;
-  }
-  .stack-save-menu-create button:disabled { opacity: .4; }
-
-  @media (max-width: 640px) {
-    .stack-save-backdrop { align-items: flex-end; padding: 0; }
-    .stack-save-dialog { border-radius: 10px 10px 0 0; max-height: 92dvh; max-width: none; }
-    .stack-save-head,
-    .stack-save-footer { padding-left: 18px; padding-right: 18px; }
-    .stack-save-intents { padding-left: 18px; padding-right: 18px; }
-    .stack-save-destination-head { padding-left: 18px; padding-right: 18px; }
-    .stack-save-create-trigger,
-    .stack-save-create { margin-left: 18px; margin-right: 18px; }
-    .stack-save-board-list { padding-left: 18px; padding-right: 18px; }
-    .stack-save-intents { align-items: flex-start; flex-wrap: wrap; }
-    .stack-save-intents > span { flex-basis: 100%; }
-    .stack-save-footer { gap: 14px; }
-    .stack-save-footer-left { min-width: 0; }
-    .stack-save-create-trigger { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  }
-}
 
 @layer components {
   /* Comparison reading hierarchy: overview, facts, then optional detail. */
@@ -32336,7 +32032,7 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
 
 .cix-shelf { margin-top: 12px; }
 .cix-shelf .sk-group-title { display: flex; align-items: baseline; gap: 10px; }
-.cix-shelf-count { font: 500 14px/1 var(--font-ui); letter-spacing: 0; color: var(--color-muted); }
+.cix-shelf-count { font: 500 var(--tt-size-card-body)/1 var(--font-ui); letter-spacing: 0; color: var(--color-text-meta); }
 .cix-list {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -32596,6 +32292,28 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
 .gi-card-meta { gap: 10px; margin-top: 10px; font-size: 13px; }
 .gi-card-grid { row-gap: clamp(40px, 4.5vw, 56px); margin-top: clamp(48px, 5vw, 64px); }
 .gi-simple-controls .gi-filter-pills { flex: 1 1 auto; }
+/* En-tête des guides (20 oct. 2026, « trop ») : titre et une phrase, puis une
+   seule barre, filtres à gauche, recherche compacte et tri à droite. La
+   recherche ne pèse plus plus lourd que le titre. */
+.gi-container .gi-hero-sub { max-width: 56ch; margin: 12px 0 0; color: var(--color-text-secondary); font: 400 17px/1.5 var(--font-ui); }
+.gi-simple-controls .gi-simple-search { flex: 0 1 240px; width: auto; min-height: 36px; padding: 0 12px; border: 1px solid transparent; border-radius: var(--radius-pill); background: var(--color-surface-soft); }
+.gi-simple-controls .gi-simple-search:focus-within { border-color: var(--color-border-strong); background: var(--color-surface); }
+.gi-simple-controls .gi-simple-search input { font-size: 14px; }
+/* Une seule ligne de filtres : le rail défile au lieu de passer à la ligne
+   (en français, les libellés plus longs cassaient la pastille active). */
+.gi-simple-controls { flex-wrap: nowrap; }
+.gi-simple-controls .gi-filter-pills { flex: 1 1 auto; min-width: 0; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.gi-simple-controls .gi-filter-pills::-webkit-scrollbar { display: none; }
+.gi-simple-controls .gi-filter-pill { flex: none; }
+.gi-simple-controls .gi-simple-search > svg { width: 16px; height: 16px; }
+.gi-simple-controls .gi-simple-search button { width: 24px; height: 24px; }
+@media (max-width: 900px) {
+  .gi-simple-controls { flex-wrap: wrap; }
+  .gi-simple-controls .gi-filter-pills { flex-basis: 100%; }
+}
+@media (max-width: 700px) {
+  .gi-simple-controls .gi-simple-search { flex-basis: 100%; min-height: 44px; }
+}
 .gi-language-badge {
   padding: 2px 7px;
   border-radius: var(--radius-sm);
@@ -33165,88 +32883,137 @@ img[data-logo-loading] {
   .cp-guide-source-url { display: block; overflow-wrap: anywhere; font-size: .875rem; }
 }
 
-/* ── Pages « meilleurs outils » par intention (BestOfGuidePage.tsx) ─────────
-   Préfixe gb-. Mêmes jetons que les guides : surfaces claires, texte sombre,
-   aucun bouton bleu ni dégradé. */
+/* ── Pages « meilleurs outils » (BestOfGuidePage.tsx), refonte du 20 oct. 2026
+   La page reprend le gabarit des articles (en-tête ga-, couverture d'outils,
+   table des matières collante, colonne de 760 px). Ses blocs propres (gb-)
+   parlent le langage des fiches outils : cartes sans bordure sur surface
+   douce, marqueurs coche / tiret, cartes « Garde-le si / Évite-le si ». */
 @layer components {
-  .gb-wrap { max-width: 880px; margin: 0 auto; padding: 0 var(--space-lg); }
-  .gb-crumbs { padding-top: var(--space-lg); }
-  .gb-hero { padding-top: clamp(24px, 4vw, 48px); padding-bottom: clamp(24px, 4vw, 40px); }
-  .gb-eyebrow { margin: 0 0 var(--space-sm); color: var(--color-muted); font-family: var(--font-ui); font-size: 13px; }
-  .gb-title { margin: 0; font-family: var(--font-ui); font-size: clamp(30px, 4vw, 44px); font-weight: 600; line-height: 1.1; letter-spacing: -0.03em; color: var(--color-text-strong); }
-  .gb-intro { margin: var(--space-md) 0 0; max-width: 680px; color: var(--color-muted); font-size: 18px; line-height: 1.6; }
-  .gb-section { padding-top: clamp(24px, 3.5vw, 40px); padding-bottom: clamp(24px, 3.5vw, 40px); }
-  .gb-h2 { display: flex; align-items: center; gap: 10px; margin: 0 0 var(--space-md); font-family: var(--font-ui); font-size: clamp(22px, 2.4vw, 28px); font-weight: 600; letter-spacing: -0.02em; color: var(--color-text-strong); }
-  .gb-h3 { margin: 0; font-family: var(--font-ui); font-size: 21px; font-weight: 600; letter-spacing: -0.015em; color: var(--color-text-strong); }
-  .gb-text { margin: var(--space-sm) 0 0; color: var(--color-text); font-size: 16px; line-height: 1.65; }
-  .gb-muted { color: var(--color-muted); font-size: 15px; }
-  .gb-note { margin: var(--space-sm) 0 0; color: var(--color-muted); font-size: 13px; }
-  .gb-icon { width: 18px; height: 18px; flex: none; }
+  .gb-article { grid-column: 2; min-width: 0; }
+  .gb-section { margin: 0 0 clamp(56px, 6vw, 80px); scroll-margin-top: calc(var(--navbar-h, 68px) + 24px); }
+  .gb-h2 { display: flex; align-items: center; gap: var(--space-xs); margin: 0 0 var(--space-md); color: var(--color-text-strong); font-family: var(--font-ui); font-size: clamp(24px, 2.2vw, 30px); font-weight: 500; line-height: 1.15; letter-spacing: -0.025em; }
+  .gb-h3 { margin: 0; color: var(--color-text-strong); font-family: var(--font-ui); font-size: 22px; font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
+  .gb-text { margin: 0 0 var(--space-sm); color: var(--color-text-secondary); font-family: var(--font-ui); font-size: 16px; line-height: 1.6; }
+  .gb-muted { color: var(--color-text-meta); font-size: 15px; }
+  .gb-icon { flex: none; width: 16px; height: 16px; }
   .gb-yes { color: var(--color-text-strong); }
-  .gb-no { color: var(--color-muted-light); }
-  .gb-logo { border-radius: var(--radius-sm); flex: none; }
+  .gb-no { color: var(--color-text-meta); }
+  .gb-kicker { display: flex; align-items: center; gap: 6px; margin: 0 0 var(--space-xs); color: var(--color-text-meta); font: 600 var(--tt-size-kicker)/1.3 var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; }
 
-  .gb-picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-md); }
-  .gb-pick { display: flex; flex-direction: column; gap: 10px; padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); color: var(--color-text); text-decoration: none; transition: border-color .15s ease; }
-  .gb-pick:hover { border-color: var(--color-border-strong); }
-  .gb-pick-label { color: var(--color-muted); font-family: var(--font-ui); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
-  .gb-pick-tool { display: flex; align-items: center; gap: 10px; }
-  .gb-pick-name { font-family: var(--font-ui); font-size: 17px; font-weight: 600; color: var(--color-text-strong); }
-  .gb-pick-meta { color: var(--color-muted); font-size: 14px; }
+  /* Nos choix : trois cartes au langage de l'accueil. */
+  .gb-picks { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-sm); }
+  .gb-pick { display: grid; justify-items: start; gap: 6px; padding: var(--space-md); border-radius: var(--radius-lg); background: var(--color-surface-soft); color: var(--color-text-strong); text-decoration: none; transition: background-color 140ms ease-out, transform 160ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .gb-pick:hover, .gb-pick:focus-visible { background: color-mix(in srgb, var(--color-text-strong) 7%, var(--color-surface)); transform: translateY(-1px); }
+  .gb-pick > img { margin-bottom: var(--space-xs); }
+  .gb-pick-label { color: var(--color-text-meta); font: 600 var(--tt-size-kicker)/1.3 var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; }
+  .gb-pick-name { font: 600 18px/1.2 var(--font-ui); letter-spacing: -0.015em; }
+  .gb-pick-meta { color: var(--color-text-secondary); font: 400 var(--tt-size-card-body)/1.4 var(--font-ui); }
+  .gb-take { margin-top: var(--space-md); padding: var(--space-md) var(--space-lg); border-left: 2px solid var(--color-text-strong); border-radius: 0 var(--radius-md) var(--radius-md) 0; background: var(--color-surface-soft); }
+  .gb-take-label { margin: 0 0 var(--space-2xs); color: var(--color-text-strong); font: 600 var(--tt-size-kicker)/1.3 var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; }
+  .gb-take-text { margin: 0; color: var(--color-text); font: 400 16px/1.6 var(--font-ui); }
 
-  .gb-angle { padding: var(--space-md) var(--space-lg); border-left: 3px solid var(--color-text-strong); border-radius: var(--radius-sm); background: var(--color-surface-soft); }
-  .gb-angle-label { display: flex; align-items: center; gap: 8px; margin: 0; font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--color-text-strong); }
-  .gb-angle-text { margin: var(--space-sm) 0 0; font-size: 16px; line-height: 1.65; color: var(--color-text); }
-
-  .gb-table-scroll { overflow-x: auto; border: 1px solid var(--color-border); border-radius: var(--radius-lg); background: var(--color-surface); }
-  .gb-table { width: 100%; border-collapse: collapse; font-size: 15px; }
-  .gb-table th { padding: 12px 14px; border-bottom: 1px solid var(--color-border); color: var(--color-muted); font-family: var(--font-ui); font-size: 12px; font-weight: 500; text-align: left; text-transform: uppercase; letter-spacing: .04em; white-space: nowrap; }
-  .gb-table td { padding: 12px 14px; border-bottom: 1px solid var(--color-border-soft); vertical-align: middle; }
+  /* Comparatif */
+  .gb-table-scroll { overflow-x: auto; border: 1px solid var(--color-border-soft); border-radius: var(--radius-lg); }
+  .gb-table { width: 100%; border-collapse: collapse; font-family: var(--font-ui); font-size: var(--tt-size-card-body); }
+  .gb-table th { padding: var(--space-sm) var(--space-md); border-bottom: 1px solid var(--color-border-soft); color: var(--color-text-meta); font-size: var(--tt-size-kicker); font-weight: 600; letter-spacing: 0.06em; text-align: left; text-transform: uppercase; white-space: nowrap; }
+  .gb-table td { padding: var(--space-sm) var(--space-md); border-bottom: 1px solid var(--color-border-soft); color: var(--color-text); vertical-align: middle; }
   .gb-table tr:last-child td { border-bottom: 0; }
-  .gb-rank { width: 36px; color: var(--color-muted); font-variant-numeric: tabular-nums; }
-  .gb-table-tool { display: flex; flex-direction: column; color: var(--color-text); text-decoration: none; }
-  .gb-table-name { font-weight: 600; color: var(--color-text-strong); }
-  .gb-table-tagline { color: var(--color-muted); font-size: 13px; }
+  .gb-rank { width: 32px; color: var(--color-text-meta); font-variant-numeric: tabular-nums; }
+  .gb-score { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .gb-table-tool { display: flex; align-items: center; gap: var(--space-sm); color: var(--color-text-strong); text-decoration: none; }
+  .gb-table-tool:hover .gb-table-name { text-decoration: underline; text-underline-offset: 3px; }
+  .gb-table-name { display: block; font-weight: 600; }
+  .gb-table-tagline { display: block; color: var(--color-text-meta); font-size: 13px; }
+  .gb-note { margin: var(--space-xs) 0 0; color: var(--color-text-meta); font: 400 13px/1.5 var(--font-ui); }
 
-  .gb-ai-list { display: grid; gap: 0; margin: var(--space-md) 0 0; padding: 0; list-style: none; border-top: 1px solid var(--color-border); }
-  .gb-ai-item { display: grid; grid-template-columns: 180px 1fr; gap: var(--space-md); padding: 12px 0; border-bottom: 1px solid var(--color-border-soft); font-size: 15px; }
-  .gb-ai-name { font-weight: 600; color: var(--color-text-strong); }
-  .gb-ai-text { color: var(--color-text); line-height: 1.55; }
+  .gb-ai-list { display: grid; gap: var(--space-xs); margin: var(--space-sm) 0 0; padding: 0; list-style: none; }
+  .gb-ai-item { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: var(--space-md); padding: var(--space-sm) 0; border-bottom: 1px solid var(--color-border-soft); font-family: var(--font-ui); font-size: 15px; }
+  .gb-ai-name { color: var(--color-text-strong); font-weight: 600; }
+  .gb-ai-text { color: var(--color-text-secondary); line-height: 1.5; }
 
-  .gb-review { padding: var(--space-xl) 0; border-top: 1px solid var(--color-border); scroll-margin-top: calc(var(--navbar-h) + 16px); }
-  .gb-review-head { display: flex; align-items: center; gap: 14px; }
-  .gb-review-tagline { margin: 2px 0 0; color: var(--color-muted); font-size: 14px; }
-  .gb-facts { display: flex; flex-wrap: wrap; gap: 8px; margin: var(--space-md) 0 0; padding: 0; }
-  .gb-facts span { padding: 4px 10px; border-radius: var(--radius-pill); background: var(--color-chip); color: var(--color-text-strong); font-size: 13px; font-weight: 500; }
-  .gb-proscons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); margin-top: var(--space-md); }
-  .gb-list { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; font-size: 15px; line-height: 1.5; }
-  .gb-list li { display: flex; gap: 8px; }
-  .gb-list .gb-icon { margin-top: 2px; }
-  .gb-verdict { display: grid; grid-template-columns: max-content 1fr; gap: 8px 16px; margin: var(--space-md) 0 0; font-size: 15px; line-height: 1.55; }
-  .gb-verdict dt { font-family: var(--font-ui); font-weight: 600; color: var(--color-text-strong); }
-  .gb-verdict dd { margin: 0; color: var(--color-text); }
-  .gb-links { display: flex; flex-wrap: wrap; gap: var(--space-lg); margin: var(--space-md) 0 0; font-family: var(--font-ui); font-size: 14px; font-weight: 500; }
-  .gb-links a { color: var(--color-text-strong); text-decoration: underline; text-underline-offset: 3px; }
+  /* Outil par outil : chaque outil au langage de sa fiche. */
+  .gb-review { padding: clamp(32px, 4vw, 48px) 0; border-top: 1px solid var(--color-border-soft); scroll-margin-top: calc(var(--navbar-h, 68px) + 24px); }
+  .gb-review-head { display: grid; grid-template-columns: auto auto minmax(0, 1fr); align-items: center; gap: var(--space-md); margin-bottom: var(--space-md); }
+  .gb-review-rank { min-width: 28px; color: var(--color-text-meta); font: 500 28px/1 var(--font-ui); letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+  .gb-review-id { min-width: 0; }
+  .gb-review-tagline { margin: 2px 0 0; color: var(--color-text-meta); font: 400 var(--tt-size-card-body)/1.4 var(--font-ui); }
+  .gb-facts { display: flex; flex-wrap: wrap; gap: var(--space-xs); grid-column: 2 / -1; margin: 0; }
+  .gb-facts span { display: inline-flex; align-items: center; min-height: 28px; padding: 0 var(--space-sm); border: 1px solid var(--color-border-soft); border-radius: var(--radius-pill); color: var(--color-text); font: 500 13px/1 var(--font-ui); }
+  .gb-proscons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-lg); margin: var(--space-md) 0; }
+  .gb-list { display: grid; gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
+  .gb-list li { display: flex; gap: var(--space-xs); color: var(--color-text); font: 400 15px/1.5 var(--font-ui); }
+  .gb-list li .gb-icon { margin-top: 3px; }
+  .gb-fit { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-sm); margin: var(--space-md) 0; }
+  .gb-fit-card { padding: var(--space-md); border-radius: var(--radius-lg); background: var(--color-surface-soft); }
+  .gb-fit-card p:last-child { margin: 0; color: var(--color-text); font: 400 15px/1.5 var(--font-ui); }
+  .gb-trap { display: flex; gap: var(--space-xs); margin: var(--space-md) 0; color: var(--color-text-secondary); font: 400 15px/1.5 var(--font-ui); }
+  .gb-trap .gb-icon { margin-top: 3px; color: var(--color-alert); }
+  .gb-trap strong { color: var(--color-text-strong); font-weight: 600; }
+  .gb-links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-xs) var(--space-md); margin: var(--space-md) 0 0; font-family: var(--font-ui); font-size: var(--tt-size-card-body); }
+  .gb-links a { color: var(--color-text); text-decoration: underline; text-decoration-color: var(--color-border); text-underline-offset: 3px; }
+  .gb-links a:hover { text-decoration-color: currentColor; }
+  .gb-links .gb-link-primary { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 var(--space-md); border-radius: var(--radius-pill); background: var(--color-text-strong); color: var(--color-bg); font-weight: 600; text-decoration: none; }
+  .gb-links .gb-link-primary:hover { background: var(--color-text-secondary); }
 
-  .gb-more-list { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--color-border); }
-  .gb-more-list a { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--color-border-soft); color: var(--color-text-strong); font-family: var(--font-ui); font-weight: 500; text-decoration: none; }
+  .gb-method .gb-text { font-size: 15px; }
 
-  @media (max-width: 720px) {
-    .gb-wrap { padding: 0 16px; }
-    .gb-picks { grid-template-columns: 1fr; }
-    .gb-proscons { grid-template-columns: 1fr; }
-    .gb-verdict { grid-template-columns: 1fr; gap: 2px; }
-    .gb-verdict dd { margin-bottom: 8px; }
-    .gb-ai-item { grid-template-columns: 1fr; gap: 2px; }
+  /* FAQ à l'échelle des fiches : questions en 17 px, pas en titres d'affiche. */
+  .gb-faq { border-top: 1px solid var(--color-border-soft); }
+  .gb-faq-item { border-bottom: 1px solid var(--color-border-soft); }
+  .gb-faq-item summary { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-md) 0; cursor: pointer; list-style: none; }
+  .gb-faq-item summary::-webkit-details-marker { display: none; }
+  .gb-faq-item h3 { margin: 0; color: var(--color-text-strong); font: 600 17px/1.35 var(--font-ui); letter-spacing: -0.01em; }
+  .gb-faq-item summary .gb-icon { color: var(--color-text-meta); transition: transform 180ms ease-out; }
+  .gb-faq-item[open] summary .gb-icon { transform: rotate(180deg); }
+  .gb-faq-item p { margin: 0 0 var(--space-md); color: var(--color-text-secondary); font: 400 15px/1.6 var(--font-ui); }
+
+  /* Autres classements : les cartes de l'index des guides. */
+  .gb-more { padding: clamp(56px, 6vw, 88px) 0; border-top: 1px solid var(--color-border-soft); }
+  .gb-more-inner { max-width: var(--layout-max); margin: 0 auto; padding: 0 var(--layout-gutter); }
+  .gb-more-all { display: inline-flex; align-items: center; gap: 6px; color: var(--color-text); font: 500 15px/1 var(--font-ui); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .gb-article { grid-column: 1; }
+    .gb-picks { grid-template-columns: minmax(0, 1fr); }
   }
+  @media (max-width: 640px) {
+    .gb-proscons, .gb-fit { grid-template-columns: minmax(0, 1fr); }
+    .gb-pick { grid-template-columns: 44px minmax(0, 1fr); column-gap: var(--space-sm); row-gap: 2px; align-items: center; }
+    .gb-pick > img { grid-row: span 3; margin: 0; }
+    .gb-review-head { grid-template-columns: auto minmax(0, 1fr); }
+    .gb-review-rank { display: none; }
+    .gb-facts { grid-column: 1 / -1; }
+    .gb-ai-item { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .gb-pick, .gb-faq-item summary .gb-icon { transition: none; } }
 }
 
 @layer components {
-  .gi-bestof { margin: 0 0 var(--space-lg); }
-  .gi-bestof-title { margin: 0 0 var(--space-sm); color: var(--color-muted); font-family: var(--font-ui); font-size: 13px; font-weight: 500; }
-  .gi-bestof-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
-  .gi-bestof-list a { display: inline-flex; padding: 6px 12px; border: 1px solid var(--color-border); border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-text-strong); font-family: var(--font-ui); font-size: 14px; text-decoration: none; }
-  .gi-bestof-list a:hover { border-color: var(--color-border-strong); }
+  /* Index des guides (20 oct. 2026) : deux familles, deux sections. Les
+     classements d'abord, en cartes au langage des articles ; puis le flux daté.
+     Titres de section sur un seul bord gauche, comme sur l'accueil. */
+  .gi-section-head { display: grid; gap: var(--space-xs); margin: 0 0 clamp(24px, 3vw, 32px); }
+  .gi-section-head h2 { margin: 0; color: var(--color-text-strong); font-family: var(--font-ui); font-size: clamp(24px, 2.2vw, 30px); font-weight: 500; line-height: 1.15; letter-spacing: -0.025em; }
+  .gi-section-head p { max-width: 60ch; margin: 0; color: var(--color-text-secondary); font-family: var(--font-ui); font-size: 16px; line-height: 1.5; }
+  /* Classements : après le flux daté, en lignes compactes sur trois colonnes. */
+  .gi-bestof { margin: clamp(72px, 8vw, 112px) 0 0; padding-top: clamp(32px, 4vw, 48px); border-top: 1px solid var(--color-border); }
+  .gi-bestof-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-2xs) var(--space-md); }
+  .gi-rank { display: flex; align-items: center; gap: var(--space-sm); min-height: 72px; padding: var(--space-sm); border-radius: var(--radius-lg); color: var(--color-text-strong); text-decoration: none; transition: background-color 140ms ease-out; }
+  .gi-rank:hover, .gi-rank:focus-visible { background: var(--color-surface-soft); }
+  .gi-rank-logos { display: flex; flex: none; }
+  .gi-rank-logos > * { border-radius: var(--radius-sm); box-shadow: 0 0 0 2px var(--color-bg); transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .gi-rank-logos > * + * { margin-left: -8px; }
+  .gi-rank:is(:hover, :focus-visible) .gi-rank-logos > *:first-child { transform: translateX(-2px); }
+  .gi-rank:is(:hover, :focus-visible) .gi-rank-logos > *:last-child { transform: translateX(2px); }
+  .gi-rank-copy { display: grid; gap: 2px; min-width: 0; }
+  .gi-rank-title { font: 500 15px/1.3 var(--font-ui); letter-spacing: -0.01em; }
+  .gi-rank-meta { color: var(--color-text-meta); font: 400 13px/1.3 var(--font-ui); }
+  @media (max-width: 900px) { .gi-bestof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 560px) { .gi-bestof-grid { grid-template-columns: minmax(0, 1fr); } }
+  @media (prefers-reduced-motion: reduce) { .gi-rank, .gi-rank-logos > * { transition: none; } }
+
+  /* Derniers guides : après la rangée vedette, quatre colonnes sur grand écran. */
+  @media (min-width: 1181px) { .gi-card-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 }
 
 
@@ -33957,7 +33724,11 @@ img[data-logo-loading] {
   .td-mobile-actionbar-id span { overflow: hidden; color: var(--color-muted); font: 400 13px/1.3 var(--font-ui); text-overflow: ellipsis; white-space: nowrap; }
   .td-mobile-actionbar .pin-tool-button { position: static; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border: 1px solid var(--color-border); border-radius: var(--radius-circle); background: var(--color-surface); color: var(--color-text); display: inline-flex; align-items: center; justify-content: center; }
   .td-mobile-actionbar-cta { display: inline-flex; flex: none; align-items: center; gap: 6px; min-height: 44px; padding: 0 18px; border-radius: var(--radius-pill); background: var(--color-text); color: var(--color-surface); font: 600 15px/20px var(--font-ui); text-decoration: none; }
-  .td-mobile-actionbar-cta svg { width: 14px; height: 14px; }
+  .td-mobile-actionbar-cta svg { width: 14px; height: 14px; flex: none; }
+  /* A long custom label shrinks before the tool name does. */
+  .td-mobile-actionbar-cta { flex: 0 1 auto; min-width: 0; }
+  .td-mobile-actionbar-cta span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .td-mobile-actionbar-id { min-width: 64px; }
 }
 @media (max-width: 640px) and (prefers-reduced-motion: reduce) {
   .td-mobile-actionbar { transition: none; }
@@ -35620,7 +35391,6 @@ img[data-logo-loading] {
 /* Focus rings where the audit found none or a faint one. */
 .asv2-sidebar-resizer:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
 .pin-tool-button:focus-visible { box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-text); }
-.analytics-consent__copy a { display: inline-flex; align-items: center; min-height: 24px; }
 /* Stack folder: the apps drift apart with transform, not by animating gap. */
 .home-v2 .sgs-folder { transition: background 200ms ease-out; }
 .home-v2 .sgs-item:hover .sgs-folder { gap: 10px; }
@@ -36955,8 +36725,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .td-tool-page .td-section .td-eyebrow,
   .td-tool-page .td-review-verdict-header .td-eyebrow { font-size: 12px; letter-spacing: 0.05em; }
   .td-tool-page .td-mobile-actionbar,
-  .td-tool-page .td-mobile-actionbar-id,
-  .td-tool-page .td-mobile-actionbar .td-mobile-actionbar-cta { color: var(--color-text); }
+  .td-tool-page .td-mobile-actionbar-id { color: var(--color-text); }
+  /* The CTA is a dark pill: its label takes the surface colour (it was set to
+     the text colour here, which made it invisible). */
+  .td-tool-page .td-mobile-actionbar .td-mobile-actionbar-cta { color: var(--color-surface); }
   .td-tool-page .td-localnav-cta { border-radius: var(--radius-pill); }
 }
 
@@ -38371,6 +38143,583 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   @media (max-width: 1000px) { .ms-start-story { gap: 28px; } }
   @media (max-width: 760px) { .ms-start-story { grid-template-columns: 1fr; gap: 28px; padding-block: 12px 28px; } .ms-start-visual { padding: 20px; } .ms-start-workbench { padding-top: 24px; } }
   @media (prefers-reduced-motion: no-preference) { .ms-start-suggestions button:hover svg:last-child { transform: rotate(90deg); } .ms-start-suggestions button svg:last-child { transition: transform 160ms ease; } }
+
+}
+
+/* Explorer hero, Apple product-tile pass: no box around the hero, the
+   visual carries the brand (so no logo tile beside the name), one text
+   column with a clear ladder (context, name, category, pitch, actions)
+   and both actions on one line. */
+.ex-tool-focus { background: transparent; border-radius: 0; box-shadow: none; overflow: visible; }
+.ex-tool-focus-main { gap: clamp(28px, 4vw, 56px); grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); padding: 8px 0 12px; }
+.ex-tool-focus-visual.tc-image { border-radius: var(--radius-2xl); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 6%, transparent); overflow: hidden; }
+.ex-tool-focus-content { padding: 0; }
+.ex-tool-focus-eyebrow { color: var(--color-text); font-size: 12px; font-weight: 600; letter-spacing: .01em; }
+.ex-tool-focus-title { margin-top: 12px; }
+.ex-tool-focus-title h1 { font-size: var(--tt-size-page-title); font-weight: 600; letter-spacing: -.04em; line-height: 1.02; margin: 0; }
+.ex-tool-focus-title span { color: color-mix(in srgb, var(--color-text) 56%, transparent); display: block; font-size: var(--tt-size-card-body); font-weight: 450; margin-top: 6px; }
+.ex-tool-focus-content > p { color: color-mix(in srgb, var(--color-text) 74%, transparent); font-size: var(--tt-size-section-intro); line-height: 1.45; margin-top: 18px; max-width: 44ch; text-wrap: pretty; }
+.ex-tool-focus-footer { flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.ex-tool-focus-profile, .ex-tool-focus-add { border-radius: var(--radius-pill); font-size: 14px; font-weight: 600; min-height: 44px; padding: 0 18px; white-space: nowrap; }
+.ex-tool-focus-add { border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); }
+.ex-tool-focus-add:hover:not(:disabled) { background: transparent; border-color: var(--color-text); }
+@media (max-width: 960px) {
+  .ex-tool-focus-main { gap: 20px; grid-template-columns: minmax(0, 1fr); padding: 0; }
+  .ex-tool-focus-content { padding: 0 4px; }
+  .ex-tool-focus-footer { flex-direction: row; flex-wrap: wrap; }
+  .ex-tool-focus-profile, .ex-tool-focus-add { flex: 1 1 auto; justify-content: center; width: auto; }
+}
+/* Anchor the text to the visual: eyebrow on the image's top edge, actions
+   on its bottom edge, so the column no longer floats in the middle. */
+@media (min-width: 961px) {
+  .ex-tool-focus-main { align-items: stretch; }
+  /* The image keeps its own ratio and sets the row height; stretching it
+     made aspect-ratio widen it over the text column. */
+  .ex-tool-focus-visual.tc-image { align-self: start; height: auto; max-width: 100%; width: 100%; }
+  .ex-tool-focus-content { padding: 2px 0; }
+  .ex-tool-focus-footer { margin-top: auto; padding-top: 20px; }
+}
+/* Logo sized to the name + category block it sits beside, so the identity
+   reads as one unit; hairline instead of a boxed tile. */
+.ex-tool-focus-title { align-items: center; gap: 16px; }
+.ex-tool-focus-logo { border-radius: var(--radius-lg); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 8%, transparent); flex-shrink: 0; }
+@media (max-width: 960px) { .ex-tool-focus-logo { height: 52px !important; width: 52px !important; } }
+/* Long names step down one size so the name stays on one line beside the
+   logo instead of wrapping into a tall block that unbalances it. */
+.ex-tool-focus-title h1.is-long { font-size: clamp(28px, 2.6vw, 38px); text-wrap: balance; }
+
+/* Zone 2, category filters: active pill is a light outlined chip (no black),
+   counts in the secondary tone, slimmer pinned context on one line. */
+.ex-tag-filter-item { font-weight: 600; gap: 6px; letter-spacing: -.01em; }
+/* Apple segmented control: a soft grey track hugging its items, and one
+   white thumb that glides to the active item instead of each pill
+   switching on and off. */
+.ex-tag-filter-scroll { flex: 0 1 auto; }
+.ex-tag-filter-track { background: var(--color-surface-soft); border-radius: var(--radius-pill); gap: 2px; padding: 4px; position: relative; width: fit-content; max-width: 100%; }
+.ex-tag-filter-thumb {
+  background: var(--color-surface);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text) 10%, transparent), 0 3px 10px color-mix(in srgb, var(--color-text) 6%, transparent);
+  height: calc(100% - 8px);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 4px;
+  transition: transform 320ms cubic-bezier(.32,.72,0,1), width 320ms cubic-bezier(.32,.72,0,1);
+}
+.ex-tag-filter-item { min-height: 40px; position: relative; z-index: 1; }
+.ex-tag-filter-item:hover { background: transparent; color: color-mix(in srgb, var(--color-text) 72%, transparent); }
+.ex-tag-filter-item.is-active, .ex-tag-filter-item.is-active:hover { background: transparent; color: var(--color-text); font-weight: 600; }
+@media (prefers-reduced-motion: reduce) { .ex-tag-filter-thumb { transition: none; } }
+.ex-tag-filter-count { color: color-mix(in srgb, currentColor 55%, transparent); font-size: 12px; font-variant-numeric: tabular-nums; font-weight: 500; }
+.ex-filter-context { gap: 10px; }
+.ex-filter-context-name { color: var(--color-text); font-family: var(--font-ui); font-size: var(--tt-size-card-body); font-weight: 600; max-width: 160px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ex-filter-context-divider { height: 24px; }
+/* Title, then its control, then the grid: 16px from title to control,
+   24px from control to cards, flush with the title's left edge. */
+.ex-results-heading ~ .ex-tag-filter:not(.is-pinned) { margin-top: -19px; }
+.ex-tag-filter:not(.is-pinned) .ex-tag-filter-scroll { margin-left: -2px; }
+.ex-tag-filter:not(.is-pinned) .ex-tag-filter-surface { padding-bottom: 24px; }
+/* Segmented control, compact pass: Apple proportions (36px items in a
+   3px track, regular weight with a semibold selection) so the control
+   reads as a quiet tool under the title, not a second headline. */
+.ex-tag-filter-track { gap: 0; padding: 3px; }
+.ex-tag-filter-thumb { height: calc(100% - 6px); top: 3px; box-shadow: 0 1px 1px color-mix(in srgb, var(--color-text) 8%, transparent), 0 2px 6px color-mix(in srgb, var(--color-text) 6%, transparent); }
+.ex-tag-filter-item { font-size: var(--tt-size-card-body); font-weight: 500; gap: 5px; min-height: 36px; padding: 0 14px; }
+.ex-tag-filter-item.is-active, .ex-tag-filter-item.is-active:hover { font-weight: 600; }
+.ex-tag-filter-count { font-size: 12px; }
+/* Centred section axis: the title and its control sit on the page's
+   centre line, like Apple's section tabs, so the filter structures the
+   grid below instead of weighting its left edge. When pinned, the source
+   context stays on the left and the control keeps the same centre. */
+.ex-results-heading { align-items: center; flex-direction: column; gap: 6px; text-align: center; }
+.ex-tag-filter-surface { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); }
+.ex-tag-filter.is-pinned .ex-tag-filter-surface { gap: 0; }
+.ex-filter-context { grid-column: 1; justify-self: start; }
+.ex-tag-filter-scroll { grid-column: 2; max-width: 100%; }
+.ex-tag-filter:not(.is-pinned) .ex-tag-filter-scroll { margin-left: 0; }
+@media (max-width: 760px) {
+  .ex-tag-filter-surface { grid-template-columns: auto minmax(0, 1fr); }
+  .ex-tag-filter:not(.is-pinned) .ex-tag-filter-surface { grid-template-columns: minmax(0, 1fr); justify-items: center; }
+  .ex-tag-filter:not(.is-pinned) .ex-filter-context { display: none; }
+  .ex-tag-filter:not(.is-pinned) .ex-tag-filter-scroll { grid-column: 1; }
+  .ex-tag-filter-item { min-height: 44px; }
+}
+.ex-results-heading h2 { text-wrap: balance; }
+/* Rhythm: a clear break after the hero, then title, control and grid
+   tightening as they get closer to the content they introduce. */
+.ex-results-heading { margin: 0 0 20px; padding-top: 46px; }
+.ex-tag-filter:not(.is-pinned) .ex-tag-filter-surface { padding-bottom: 32px; }
+
+/* Satisfying switch: the thumb glides with a soft overshoot, the label it
+   lands on settles, and the cards of the new filter rise in one after the
+   other (re-keyed grid). Reduced motion keeps only the state change. */
+.ex-tag-filter-thumb { transition: transform 420ms cubic-bezier(.34,1.36,.5,1), width 420ms cubic-bezier(.34,1.36,.5,1); }
+.ex-tag-filter-item.is-active { animation: ex-filter-settle 420ms cubic-bezier(.34,1.36,.5,1); }
+@keyframes ex-filter-settle { 0% { transform: scale(.94); } 100% { transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .ex-tag-filter-item.is-active { animation: none; }
+}
+
+/* Filter switch as a shared-element transition: cards that stay glide to
+   their new slot, leaving ones shrink away, arriving ones grow in. */
+::view-transition-group(*) { animation-duration: 460ms; animation-timing-function: cubic-bezier(.32,.72,0,1); }
+::view-transition-old(*):only-child { animation: ex-vt-out 220ms ease-in both; }
+::view-transition-new(*):only-child { animation: ex-vt-in 380ms cubic-bezier(.22,1,.36,1) 80ms both; }
+::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+@keyframes ex-vt-out { to { opacity: 0; transform: scale(.92); } }
+@keyframes ex-vt-in { from { opacity: 0; transform: scale(.94) translateY(10px); } }
+.ex-tag-filter-thumb { view-transition-name: ex-filter-thumb; }
+.ex-tag-filter.is-pinned { view-transition-name: ex-filter-bar; }
+::view-transition-group(ex-filter-bar) { z-index: 2; animation: none; }
+::view-transition-group(ex-filter-thumb) { z-index: 3; animation-duration: 420ms; animation-timing-function: cubic-bezier(.34,1.36,.5,1); }
+/* Hero structure: one Apple-style product tile (soft panel, no border)
+   holding a visual that fills its half edge to edge, so image and text
+   always share the same height whatever the description length. */
+.ex-tool-focus { background: color-mix(in srgb, var(--color-surface-soft) 70%, var(--color-surface)); border-radius: var(--radius-2xl); overflow: hidden; }
+.ex-tool-focus-main { align-items: stretch; gap: 0; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); padding: 0; }
+.ex-tool-focus-content { justify-content: center; padding: clamp(28px, 3.4vw, 48px); }
+.ex-tool-focus-footer { margin-top: 24px; padding-top: 0; }
+@media (min-width: 961px) {
+  .ex-tool-focus-visual.tc-image { align-self: stretch; aspect-ratio: auto; border-radius: 0; box-shadow: none; height: 100%; min-height: 300px; }
+  .ex-tool-focus-visual img { height: 100%; object-fit: cover; width: 100%; }
+  .ex-tool-focus-footer { margin-top: 24px; }
+}
+@media (max-width: 960px) {
+  .ex-tool-focus-main { gap: 0; }
+  .ex-tool-focus-visual.tc-image { border-radius: 0; box-shadow: none; }
+  .ex-tool-focus-content { padding: 22px 20px 24px; }
+}
+/* Never crop the OG image (wordmarks get cut): it keeps its ratio, inset
+   in the tile with its own radius, centred against the text. */
+.ex-tool-focus-main { align-items: center; padding: 12px; }
+.ex-tool-focus-visual.tc-image { align-self: center; aspect-ratio: 1200 / 630; border-radius: var(--radius-xl); height: auto; min-height: 0; }
+.ex-tool-focus-visual img { object-fit: cover; }
+.ex-tool-focus-content { padding: clamp(20px, 2.6vw, 36px); }
+@media (min-width: 961px) {
+  .ex-tool-focus-visual.tc-image { align-self: center; aspect-ratio: 1200 / 630; border-radius: var(--radius-xl); height: auto; min-height: 0; }
+}
+@media (max-width: 960px) {
+  .ex-tool-focus-content { padding: 20px 8px 12px; }
+}
+@media (max-width: 960px) {
+  .ex-tool-focus-main { grid-template-columns: minmax(0, 1fr); padding: 10px; }
+  .ex-tool-focus-visual.tc-image { border-radius: var(--radius-xl); }
+}
+/* Visual first, current Apple style: no glow, no drop shadow. The image
+   is the largest thing in the tile and reacts to scroll (slow zoom-out
+   inside its frame as the hero leaves the screen), CSS-only. */
+.ex-tool-focus-media { align-self: center; min-width: 0; }
+.ex-tool-focus-media .ex-tool-focus-visual.tc-image { overflow: hidden; }
+@supports (animation-timeline: view()) {
+  .ex-tool-focus-media .ex-tool-focus-visual img {
+    animation: ex-visual-scroll linear both;
+    animation-range: exit 0% exit 100%;
+    animation-timeline: view();
+  }
+  @keyframes ex-visual-scroll { from { transform: scale(1); } to { transform: scale(1.08); } }
+}
+@media (prefers-reduced-motion: reduce) { .ex-tool-focus-media .ex-tool-focus-visual img { animation: none; } }
+/* Balanced tile: equal halves, actions kept on one line, so the text block
+   matches the image height instead of towering over it. */
+@media (min-width: 961px) {
+  .ex-tool-focus-main { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .ex-tool-focus-footer { flex-wrap: nowrap; }
+  .ex-tool-focus-logo { height: 56px !important; width: 56px !important; }
+}
+
+/* Zone 4, cards, Apple store tile: picture, then one row with logo, name
+   and a small add button, then what the tool does in two quiet lines.
+   The kind of link sits on the picture as a small frosted tag. */
+.ex-card-content { gap: 0; padding-top: 12px; }
+.ex-card-header { align-items: center; gap: 8px; grid-template-columns: 22px minmax(0, 1fr) auto; }
+.ex-card-identity strong { font-size: 15px; min-height: 0; -webkit-line-clamp: 1; }
+.ex-card-description { color: color-mix(in srgb, var(--color-text) 58%, transparent); margin-top: 4px; min-height: 0; }
+.ex-card-media::after { display: none; }
+.ex-card-media img { transition: transform 500ms cubic-bezier(.22,1,.36,1); }
+.ex-card:hover .ex-card-media img { transform: scale(1.03); }
+.ex-card-kind {
+  backdrop-filter: blur(14px) saturate(1.6);
+  background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  font: 600 12px/1 var(--font-ui);
+  left: 10px;
+  padding: 6px 9px;
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+}
+.ex-card-header .ex-card-actions { position: static; right: auto; top: auto; }
+.ex-card-actions button,
+.ex-card-actions button:last-child {
+  background: transparent;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 18%, transparent);
+  color: var(--color-text);
+  height: 32px;
+  min-height: 32px;
+  min-width: 32px;
+  transition: transform 260ms cubic-bezier(.34,1.56,.64,1), background 160ms ease, box-shadow 160ms ease;
+  width: 32px;
+}
+.ex-card-actions button:hover:not(:disabled) { background: var(--color-surface-soft); box-shadow: inset 0 0 0 1px var(--color-text); }
+.ex-card-actions button:active:not(:disabled) { transform: scale(.9); }
+.ex-card-actions button:disabled { background: var(--color-text); box-shadow: none; color: var(--color-bg); animation: ex-add-pop 420ms cubic-bezier(.34,1.56,.64,1); }
+@keyframes ex-add-pop { 0% { transform: scale(.7); } 60% { transform: scale(1.12); } 100% { transform: scale(1); } }
+@media (pointer: coarse) { .ex-card-actions button, .ex-card-actions button:last-child { height: 40px; min-height: 40px; min-width: 40px; width: 40px; } }
+@media (prefers-reduced-motion: reduce) {
+  .ex-card-media img, .ex-card-actions button { transition: none; }
+  .ex-card-actions button:disabled { animation: none; }
+}
+/* A11y audit 16/10: secondary text and counts to >= 4.5:1, solid focus ring
+   on filter items. */
+.ex-card-description { color: color-mix(in srgb, var(--color-text) 70%, transparent); }
+.ex-tool-focus-title span, .ex-tool-focus-eyebrow { color: color-mix(in srgb, var(--color-text) 68%, transparent); }
+.ex-tool-focus-eyebrow { color: var(--color-text); }
+.ex-tag-filter-count { color: color-mix(in srgb, currentColor 70%, transparent); }
+.ex-tag-filter-item:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+/* Design review 16/10: one vertical spine (title, filter, shelf titles all
+   centred) and a little more air inside the card text. */
+.ex-card-content { padding: 14px 2px 4px; }
+.ex-card-description { line-height: 1.5; margin-top: 6px; }
+/* Zone 4, Pinterest masonry: columns of pins with natural heights.
+   A pin is the picture edge to edge (OG ratio, or a square logo tile when a
+   tool has no picture), then logo + name, the precise relation if any, and
+   up to three lines of description. "Ajouter" is the pin's save button:
+   it shows on hover over the picture (always on touch) and pops into
+   "Ajouté". */
+.ex-masonry-columns { align-items: start; display: grid; gap: 20px; grid-template-columns: repeat(var(--ex-cols, 3), minmax(0, 1fr)); }
+.ex-masonry-column { display: grid; gap: 28px; min-width: 0; }
+.ex-masonry .ex-card { height: auto; }
+.ex-card-media { background: var(--color-surface-soft); padding: 0; }
+.ex-card-media.is-logo { aspect-ratio: 1 / 1; }
+.ex-card-media img { border-radius: 0; box-shadow: none; }
+.ex-card:hover .ex-card-media img { transform: scale(1.03); }
+.ex-card-content { padding: 12px 4px 0; }
+.ex-card-header { grid-template-columns: 22px minmax(0, 1fr); }
+.ex-card-identity strong { font-size: var(--tt-size-card-title); font-weight: 600; letter-spacing: -.01em; }
+.ex-card-relation { color: var(--color-text); font: 550 13px/1.35 var(--font-ui); margin: 4px 0 0; }
+.ex-card-description { font-size: var(--tt-size-card-body); line-height: 1.45; margin-top: 4px; -webkit-line-clamp: 3; }
+.ex-card > .ex-card-actions { position: absolute; right: 10px; top: 10px; z-index: 3; }
+.ex-card-actions button,
+.ex-card-actions button:last-child {
+  align-items: center;
+  background: var(--color-surface);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text) 12%, transparent);
+  color: var(--color-text);
+  display: inline-flex;
+  font: 600 13px/1 var(--font-ui);
+  gap: 5px;
+  height: 34px;
+  min-height: 34px;
+  padding: 0 12px 0 10px;
+  width: auto;
+}
+.ex-card-actions button:hover:not(:disabled) { background: var(--color-surface); box-shadow: inset 0 0 0 1px var(--color-text); transform: scale(1.04); }
+.ex-card-actions button:disabled { background: var(--color-text); color: var(--color-bg); }
+@media (hover: hover) and (pointer: fine) {
+  .ex-card > .ex-card-actions { opacity: 0; transform: translateY(-4px); transition: opacity 180ms ease, transform 220ms cubic-bezier(.22,1,.36,1); }
+  .ex-card:hover > .ex-card-actions, .ex-card:focus-within > .ex-card-actions, .ex-card.is-present > .ex-card-actions { opacity: 1; transform: none; }
+}
+@media (max-width: 560px) {
+  .ex-masonry-columns { gap: 12px; }
+  .ex-masonry-column { gap: 20px; }
+  .ex-card-actions button span { display: none; }
+  .ex-card-actions button, .ex-card-actions button:last-child { padding: 0; width: 34px; justify-content: center; }
+}
+/* Lighter pins (16/10): picture, name, and the precise relation when there
+   is one. The description stays for screen readers and appears in the
+   hero once the user recentres on the tool. */
+.ex-masonry .ex-card-description { block-size: 1px; clip-path: inset(50%); margin: 0; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }
+.ex-masonry .ex-card-relation { color: color-mix(in srgb, var(--color-text) 62%, transparent); font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ex-masonry .ex-card-content { padding-top: 10px; }
+.ex-masonry-column { gap: 24px; }
+/* Context back, kept light (16/10): the relation says why the pin is here,
+   then two small lines say what the tool does. */
+.ex-masonry .ex-card-relation { color: var(--color-text); font-weight: 550; }
+.ex-masonry .ex-card-description { block-size: auto; clip-path: none; color: color-mix(in srgb, var(--color-text) 64%, transparent); font-size: 13px; line-height: 1.4; margin-top: 3px; position: static; white-space: normal; width: auto; -webkit-line-clamp: 2; }
+/* A touch lighter (16/10): relation as a quiet 12px caption, description on
+   one line; the name alone carries weight. */
+.ex-masonry .ex-card-relation { color: color-mix(in srgb, var(--color-text) 66%, transparent); font-size: 12px; font-weight: 500; margin-top: 3px; }
+.ex-masonry .ex-card-description { -webkit-line-clamp: 1; }
+.ex-masonry .ex-card-identity strong { font-weight: 600; }
+/* Add-to-stack story: logo ghost in flight, then a dark, clearly visible
+   confirmation pill (logo, name, undo, view) that rises from the bottom. */
+.stack-fly-ghost { align-items: center; background: var(--color-text); border-radius: var(--radius-circle); box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--color-text) 60%, transparent); color: var(--color-bg); display: flex; justify-content: center; left: 0; pointer-events: none; position: fixed; top: 0; transform-origin: center; will-change: transform; z-index: 1000; }
+.stack-fly-ghost svg { height: 18px; width: 18px; }
+.stack-toast {
+  align-items: center;
+  animation: stack-toast-rise 420ms cubic-bezier(.34,1.56,.64,1) both;
+  background: var(--color-text);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--color-text) 55%, transparent);
+  color: var(--color-bg);
+  display: flex;
+  font-family: var(--font-ui);
+  gap: 12px;
+  max-width: min(92vw, 460px);
+  padding: 8px 8px 8px 10px;
+}
+.stack-toast-logo { background: var(--color-surface); border-radius: var(--radius-md); flex-shrink: 0; }
+.stack-toast-text { display: grid; flex: 1; line-height: 1.25; min-width: 0; }
+.stack-toast-text strong { font-size: var(--tt-size-card-body); font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.stack-toast-text span { color: color-mix(in srgb, var(--color-bg) 72%, transparent); font-size: 13px; }
+.stack-toast-undo, .stack-toast-open { align-items: center; border-radius: var(--radius-pill); cursor: pointer; display: inline-flex; font: 600 13px/1 var(--font-ui); min-height: 36px; padding: 0 14px; text-decoration: none; white-space: nowrap; }
+.stack-toast-undo { appearance: none; background: transparent; border: 0; color: var(--color-bg); }
+.stack-toast-undo:hover { background: color-mix(in srgb, var(--color-bg) 14%, transparent); }
+.stack-toast-open { background: var(--color-bg); color: var(--color-text); }
+.stack-toast-open:hover { background: color-mix(in srgb, var(--color-bg) 88%, var(--color-text)); }
+.stack-toast :focus-visible { outline: 2px solid var(--color-bg); outline-offset: 2px; }
+@keyframes stack-toast-rise { from { opacity: 0; transform: translateY(16px) scale(.96); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .stack-toast { animation: none; } }
+.stack-toast-logo { height: 32px; object-fit: contain; padding: 3px; width: 32px; }
+.stack-toast-logo--letter { align-items: center; color: var(--color-text); display: inline-flex; font: 700 15px/1 var(--font-ui); justify-content: center; }
+/* Sticky bar: a "Ma stack" link on the right (landing spot of the add
+   flight while scrolling), and counters that roll in when they change. */
+.ex-filter-stack { align-items: center; border-radius: var(--radius-pill); color: var(--color-text); display: none; flex-shrink: 0; font: 600 var(--tt-size-card-body)/1 var(--font-ui); gap: 8px; grid-column: 3; justify-self: end; min-height: 40px; padding: 0 14px 0 12px; text-decoration: none; transition: background 150ms ease; }
+.ex-tag-filter.is-pinned .ex-filter-stack { display: inline-flex; }
+.ex-filter-stack:hover { background: var(--color-surface-soft); }
+.ex-filter-stack:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+.ex-filter-stack-icon { display: inline-flex; position: relative; }
+.ex-filter-stack-count, .asv2-topbar-cta-badge { animation: ex-count-roll 520ms cubic-bezier(.34,1.56,.64,1) both; }
+.ex-filter-stack-count { align-items: center; background: var(--color-text); border-radius: var(--radius-pill); color: var(--color-bg); display: inline-flex; font: 700 10px/1 var(--font-ui); height: 16px; justify-content: center; min-width: 16px; padding: 0 4px; position: absolute; right: -9px; top: -7px; }
+@keyframes ex-count-roll { 0% { opacity: 0; transform: translateY(70%) scale(.6); } 60% { opacity: 1; transform: translateY(-12%) scale(1.15); } 100% { transform: none; } }
+@media (max-width: 760px) { .ex-filter-stack-label { display: none; } }
+@media (prefers-reduced-motion: reduce) { .ex-filter-stack-count, .asv2-topbar-cta-badge { animation: none; } }
+/* Softer contours: the toast logo sits flush (no white tile), the pinned
+   context logo loses its ring. */
+.stack-toast-logo { background: transparent; border-radius: var(--radius-md); padding: 0; }
+.stack-toast-logo--letter { background: color-mix(in srgb, var(--color-bg) 16%, transparent); color: var(--color-bg); }
+.ex-filter-context img { box-shadow: none; outline: none; }
+/* The site Toaster gives every toast a white card; the add confirmation is
+   its own pill, so its host must stay transparent (no white corners). */
+[data-sonner-toast]:has(.stack-toast) { background: transparent !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; width: auto !important; }
+/* One "Ma stack" at a time: the sticky bar shows its own link only while
+   the top bar is tucked away (scrolling down); scrolling up brings the top
+   bar's button back and hides this one. */
+.asv2-root[data-chrome="shown"] .ex-filter-stack { display: none; }
+/* Responsive: when the bar cannot centre the control between equal sides,
+   context, control and stack link share the row without overlapping. */
+@media (max-width: 1100px) {
+  .ex-tag-filter.is-pinned .ex-tag-filter-surface { gap: 10px; grid-template-columns: auto minmax(0, 1fr) auto; }
+  .ex-tag-filter.is-pinned .ex-tag-filter-scroll { justify-self: stretch; }
+  .ex-filter-stack-label, .ex-filter-context-name, .ex-filter-context-divider { display: none; }
+  .ex-filter-stack { padding: 0 10px; }
+}
+/* Hover pills: every Explorer control names its action in a small dark
+   pill under it, after a short delay (hover or keyboard focus, fine
+   pointers only). Text comes from data-tip, the accessible name stays on
+   aria-label. */
+@media (hover: hover) and (pointer: fine) {
+  .ex-page [data-tip], .ex-tag-filter [data-tip] { position: relative; }
+  .ex-page [data-tip]::after, .ex-tag-filter [data-tip]::after {
+    background: var(--color-text);
+    border-radius: var(--radius-pill);
+    color: var(--color-bg);
+    content: attr(data-tip);
+    font: 600 12px/1 var(--font-ui);
+    left: 50%;
+    opacity: 0;
+    padding: 7px 10px;
+    pointer-events: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    transform: translate(-50%, -4px);
+    transition: opacity 140ms ease, transform 180ms cubic-bezier(.22,1,.36,1);
+    transition-delay: 0ms;
+    white-space: nowrap;
+    z-index: 60;
+  }
+  .ex-page [data-tip]:hover::after, .ex-page [data-tip]:focus-visible::after,
+  .ex-tag-filter [data-tip]:hover::after, .ex-tag-filter [data-tip]:focus-visible::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    transition-delay: 350ms;
+  }
+  /* Right-edge controls open their pill leftwards so it stays on screen. */
+  .ex-card-actions [data-tip]::after, .ex-filter-stack[data-tip]::after { left: auto; right: 0; transform: translateY(-4px); }
+  .ex-card-actions [data-tip]:hover::after, .ex-card-actions [data-tip]:focus-visible::after,
+  .ex-filter-stack[data-tip]:hover::after, .ex-filter-stack[data-tip]:focus-visible::after { transform: none; }
+}
+/* Hover pills must not move positioned controls (filter arrows, card
+   add button): keep their own positioning. */
+.ex-tag-filter .ex-tag-filter-control[data-tip] { position: absolute; }
+/* Overflowing filter control: arrows sit inside the track ends, over a
+   soft fade so labels slide under them instead of being cut. */
+.ex-tag-filter-scroll { position: relative; }
+.ex-tag-filter-control { background: var(--color-surface); box-shadow: 0 1px 3px color-mix(in srgb, var(--color-text) 14%, transparent); height: 32px; width: 32px; }
+.ex-tag-filter-control--left { left: 5px; }
+.ex-tag-filter-control--right { right: 5px; }
+/* Pin button now names its action in data-tip (shared hover-pill text). */
+.tce-hover-actions .pin-tool-button::after { content: attr(data-tip); }
+
+/* Add-to-stack story tokens (read by src/lib/stackAddStory.tsx). */
+:root {
+  --stack-add-token-size: 40;
+  --stack-add-gather: 220;
+  --stack-add-travel: 640;
+  --stack-add-bump: 520;
+}
+/* Remove confirmation for the add-to-stack toggle: a small dark popover
+   under the button (right-aligned), Keep focused by default. */
+.stack-confirm { animation: stack-toast-rise 260ms cubic-bezier(.34,1.56,.64,1) both; background: var(--color-text); border-radius: var(--radius-lg); box-shadow: 0 12px 30px -12px color-mix(in srgb, var(--color-text) 60%, transparent); color: var(--color-bg); display: grid; font-family: var(--font-ui); gap: 10px; padding: 12px; position: fixed; transform-origin: top right; translate: -100% 0; width: max-content; max-width: min(300px, calc(100vw - 32px)); z-index: 1100; }
+.stack-confirm p { font-size: var(--tt-size-card-body); font-weight: 600; margin: 0; }
+.stack-confirm > div { display: flex; gap: 8px; justify-content: flex-end; }
+.stack-confirm button { appearance: none; border: 0; border-radius: var(--radius-pill); cursor: pointer; font: 600 13px/1 var(--font-ui); min-height: 36px; padding: 0 14px; }
+.stack-confirm-keep { background: transparent; color: var(--color-bg); }
+.stack-confirm-keep:hover { background: color-mix(in srgb, var(--color-bg) 14%, transparent); }
+.stack-confirm-remove { background: var(--color-bg); color: var(--color-text); }
+.stack-confirm button:focus-visible { outline: 2px solid var(--color-bg); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .stack-confirm { animation: none; } }
+/* Every add-to-stack control shows the hand cursor. */
+.pin-tool-button:not(:disabled), .ex-card-actions button:not(:disabled), .ex-tool-focus-add:not(:disabled), .stack-toast button, .stack-confirm button { cursor: pointer; }
+.stack-fly-ghost--logo { background: var(--color-surface); box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-text) 10%, transparent), 0 8px 18px -8px color-mix(in srgb, var(--color-text) 55%, transparent); }
+.stack-fly-ghost--logo img { border-radius: var(--radius-md); height: 70%; object-fit: contain; width: 70%; }
+/* Added state tells what a click does: on hover or keyboard focus the
+   label becomes "Retirer de ma stack", both labels share one grid cell so
+   the button keeps its width. */
+.pin-tool-button-text { display: inline-grid; }
+.pin-tool-button-state, .pin-tool-button-hint { grid-area: 1 / 1; transition: opacity 140ms ease, transform 180ms cubic-bezier(.22,1,.36,1); }
+.pin-tool-button-hint { opacity: 0; transform: translateY(4px); }
+.pin-tool-button--active:hover .pin-tool-button-state,
+.pin-tool-button--active:focus-visible .pin-tool-button-state { opacity: 0; transform: translateY(-4px); }
+.pin-tool-button--active:hover .pin-tool-button-hint,
+.pin-tool-button--active:focus-visible .pin-tool-button-hint { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .pin-tool-button-state, .pin-tool-button-hint { transition: none; } }
+/* Overflow edges: labels fade out under the arrows instead of showing
+   through behind them (mask on the track only, arrows stay crisp). */
+.ex-tag-filter-scroll.has-left .ex-tag-filter-track { -webkit-mask-image: linear-gradient(to right, transparent 0, transparent 34px, black 64px); mask-image: linear-gradient(to right, transparent 0, transparent 34px, black 64px); }
+.ex-tag-filter-scroll.has-right .ex-tag-filter-track { -webkit-mask-image: linear-gradient(to left, transparent 0, transparent 34px, black 64px); mask-image: linear-gradient(to left, transparent 0, transparent 34px, black 64px); }
+.ex-tag-filter-scroll.has-left.has-right .ex-tag-filter-track { -webkit-mask-image: linear-gradient(to right, transparent 0, transparent 34px, black 64px, black calc(100% - 64px), transparent calc(100% - 34px), transparent 100%); mask-image: linear-gradient(to right, transparent 0, transparent 34px, black 64px, black calc(100% - 64px), transparent calc(100% - 34px), transparent 100%); }
+/* The rail colour moves to the wrapper while masked, so only the labels
+   fade, not the rail's rounded ends. */
+.ex-tag-filter-scroll.has-left, .ex-tag-filter-scroll.has-right { background: var(--color-surface-soft); border-radius: var(--radius-pill); }
+.ex-tag-filter-scroll.has-left .ex-tag-filter-track, .ex-tag-filter-scroll.has-right .ex-tag-filter-track { background: transparent; }
+/* Filter switch: the whole filter bar is one live layer during the view
+   transition (no separate thumb snapshot floating over the labels); the
+   thumb keeps its own CSS glide inside that live layer. */
+.ex-tag-filter-thumb { view-transition-name: none; }
+.ex-tag-filter, .ex-tag-filter.is-pinned { view-transition-name: ex-filter-bar; }
+::view-transition-group(ex-filter-bar) { animation: none; z-index: 2; }
+::view-transition-old(ex-filter-bar) { display: none; }
+::view-transition-new(ex-filter-bar) { animation: none; }
+/* Zone 5. Relation filter as one removable pill; skeleton pins shaped like
+   real pins (picture, name, caption) laid in the same columns; a quiet
+   end-of-list marker; a lighter empty state without a box. */
+.ex-angle-filter { display: flex; justify-content: center; margin: -12px 0 24px; }
+.ex-angle-pill { align-items: center; appearance: none; background: var(--color-text); border: 0; border-radius: var(--radius-pill); color: var(--color-bg); cursor: pointer; display: inline-flex; font: 600 var(--tt-size-card-body)/1 var(--font-ui); gap: 8px; min-height: 36px; padding: 0 12px 0 16px; text-decoration: none; transition: transform 200ms cubic-bezier(.34,1.56,.64,1); }
+.ex-angle-pill:hover { transform: scale(1.03); }
+.ex-angle-pill:active { transform: scale(.96); }
+.ex-angle-pill:focus-visible { outline: 2px solid var(--color-text); outline-offset: 3px; }
+.ex-masonry-skeletons { margin-top: 24px; }
+.ex-pin-skeleton { display: grid; gap: 10px; }
+.ex-pin-skeleton-media { aspect-ratio: 40 / 21; border-radius: var(--radius-lg); width: 100%; }
+.ex-pin-skeleton-title { height: 14px; width: 55%; }
+.ex-pin-skeleton-line { height: 11px; width: 80%; }
+.ex-list-end { align-items: center; color: color-mix(in srgb, var(--color-text) 64%, transparent); display: flex; flex-direction: column; font: 500 13px/1.4 var(--font-ui); gap: 12px; margin: 56px 0 8px; }
+.ex-list-end::before { background: var(--color-border); content: ""; height: 1px; width: 48px; }
+.ex-list-end button { appearance: none; background: var(--color-surface-soft); border: 0; border-radius: var(--radius-pill); color: var(--color-text); cursor: pointer; font: 600 var(--tt-size-card-body)/1 var(--font-ui); min-height: 40px; padding: 0 16px; }
+.ex-list-end button:hover { background: color-mix(in srgb, var(--color-surface-soft) 85%, var(--color-text)); }
+.ex-list-end button:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+.ex-empty { background: transparent; padding: 32px 24px; }
+.ex-empty h2 { color: var(--color-text); font: 600 var(--tt-size-card-title)/1.3 var(--font-ui); }
+.ex-empty button { font-weight: 600; }
+/* Mobile pass: the pin's add button is a 44px round target on touch
+   screens (icon only), the confirmation pill fits small screens. */
+@media (pointer: coarse), (max-width: 560px) {
+  .ex-card-actions button, .ex-card-actions button:last-child { height: 44px; justify-content: center; min-height: 44px; min-width: 44px; padding: 0; width: 44px; }
+  .ex-card-actions button span { display: none; }
+  .stack-toast { gap: 8px; max-width: calc(100vw - 24px); }
+  .stack-toast-undo, .stack-toast-open { min-height: 40px; padding: 0 12px; }
+}
+/* Shared-element names for the filter transition come from CSS, not an
+   inline style per card (prerendered HTML weight). */
+@supports (view-transition-name: match-element) { .ex-card { view-transition-name: match-element; } }
+/* Back stays reachable before any scroll: the arrow alone sits at the left
+   of the filter row; logo and name join it once the bar is pinned. */
+.ex-tag-filter:not(.is-pinned) .ex-filter-context { max-width: none; opacity: 1; pointer-events: auto; transform: none; }
+.ex-tag-filter:not(.is-pinned) .ex-filter-context > :not(.ex-filter-context-back) { display: none; }
+@media (max-width: 760px) {
+  .ex-tag-filter:not(.is-pinned) .ex-tag-filter-surface { grid-template-columns: auto minmax(0, 1fr); justify-items: stretch; }
+  .ex-tag-filter:not(.is-pinned) .ex-filter-context { display: flex; }
+  .ex-tag-filter:not(.is-pinned) .ex-tag-filter-scroll { grid-column: 2; }
+}
+
+/* ── Site-wide filter rail (16/10/2026) ──────────────────────────────────
+   Every filter row (tools, category, stacks, comparisons, guides, search)
+   uses Explorer's segmented control: a soft grey rail hugging its items, one
+   white thumb that glides to the active item (RailThumb), counts in a quiet
+   tone. Pages keep their own filter logic; only the look is shared. */
+.tt-rail {
+  align-items: center;
+  background: var(--color-surface-soft);
+  border-radius: var(--radius-pill);
+  display: flex;
+  flex: 0 1 auto;
+  gap: 0;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 3px;
+  position: relative;
+  scrollbar-width: none;
+  width: fit-content;
+}
+.tt-rail::-webkit-scrollbar { display: none; }
+.tt-rail-thumb {
+  background: var(--color-surface);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 1px color-mix(in srgb, var(--color-text) 8%, transparent), 0 2px 6px color-mix(in srgb, var(--color-text) 6%, transparent);
+  height: calc(100% - 6px);
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 3px;
+  z-index: 0;
+}
+.tt-rail-thumb.is-ready { transition: transform 420ms cubic-bezier(.34,1.36,.5,1), width 420ms cubic-bezier(.34,1.36,.5,1), opacity 160ms ease; }
+.tt-rail > :not(.tt-rail-thumb) { position: relative; z-index: 1; }
+.tt-rail .tt-pill, .tt-rail .gi-filter-pill, .tt-rail .sp-tab {
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-pill);
+  box-shadow: none;
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-body);
+  font-weight: 500;
+  height: auto;
+  min-height: 36px;
+  padding: 0 14px;
+}
+.tt-rail .tt-pill:hover:not(:disabled):not(.tt-pill--active),
+.tt-rail .gi-filter-pill:hover:not(.gi-filter-pill--active),
+.tt-rail .sp-tab:hover:not(.is-active) { background: transparent; color: color-mix(in srgb, var(--color-text) 72%, transparent); }
+.tt-rail .tt-pill--active, .tt-rail .gi-filter-pill--active, .tt-rail .sp-tab.is-active { background: transparent; color: var(--color-text); font-weight: 600; }
+.tt-rail .tt-pill-count, .tt-rail .sp-tab-count { background: transparent; color: color-mix(in srgb, currentColor 70%, transparent); font-size: 12px; font-variant-numeric: tabular-nums; opacity: 1; }
+.tt-rail .tt-pillrow-divider { background: color-mix(in srgb, var(--color-text) 14%, transparent); height: 18px; }
+/* The removable browsed-category chip keeps a visible frame inside the rail. */
+.tt-rail .tt-pill--chip { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 22%, transparent); }
+.tt-catalog-toolbar .tt-rail { mask-image: none; }
+/* "Filters" sits next to the rail as a matching soft pill. */
+.tt-catalog-toolbar-tail .tt-pill--more { background: var(--color-surface-soft); border: 0; min-height: 42px; }
+@media (pointer: coarse), (max-width: 560px) { .tt-rail .tt-pill, .tt-rail .gi-filter-pill, .tt-rail .sp-tab { min-height: 44px; } }
+@media (prefers-reduced-motion: reduce) { .tt-rail-thumb.is-ready { transition: none; } }
+/* Page titles share Explorer's type: brand face, page-title size, 600,
+   tight tracking; the count under it is a quiet caption like Explorer's
+   category line. */
+.tt-catalog-compact-title,
+.tt-catalog-page .tt-catalog-compact-title,
+.tt-catalog-page .cix-hero-title,
+.gi-container .tt-catalog-compact-title {
+  font-family: var(--font-brand);
+  font-size: var(--tt-size-page-title);
+  font-weight: 600;
+  letter-spacing: -.04em;
+  line-height: 1.02;
+  text-wrap: balance;
 }
 .tt-catalog-context-count { color: color-mix(in srgb, var(--color-text) 68%, transparent); font-size: var(--tt-size-card-body); font-weight: 450; margin-top: 8px; }
 .tt-pillrow.tt-rail, .tt-pillrow.tt-rail[data-scrolled="true"] { -webkit-mask-image: none; mask-image: none; }

@@ -1,6 +1,6 @@
 # ToolTrim editorial index
 # Generated from dist/sitemap.xml and its canonical prerendered pages.
-# Records: 264 (98 guides, 166 comparisons, localized FR/EN pages)
+# Records: 272 (106 guides, 166 comparisons, localized FR/EN pages)
 # Titles and available source summaries only. A missing summary is not inferred. Consult each canonical URL for full content and current offers.
 
 [
@@ -31,8 +31,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "mesurer-visibilite-ia-geo-2026",
-    "url": "https://tooltrim.com/en/guide/mesurer-visibilite-ia-geo-2026",
+    "slug": "measure-ai-search-visibility-geo-2026",
+    "url": "https://tooltrim.com/en/guide/measure-ai-search-visibility-geo-2026",
     "title": "How to Measure AI Search Visibility in 2026",
     "summary": "Track visibility in ChatGPT, Perplexity and Google AI Search with a prompt set, Search Console data and a clear view of GEO score limitations."
   },
@@ -47,8 +47,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "creer-video-produit-sans-montage",
-    "url": "https://tooltrim.com/en/guide/creer-video-produit-sans-montage",
+    "slug": "create-product-video-without-editing",
+    "url": "https://tooltrim.com/en/guide/create-product-video-without-editing",
     "title": "Create a product video without editing experience | ToolTrim",
     "summary": "From brief to export: make a short product video with FlexClip or Movavi while checking trial limits, paid effects and media rights."
   },
@@ -63,8 +63,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "choisir-outil-premiere-newsletter",
-    "url": "https://tooltrim.com/en/guide/choisir-outil-premiere-newsletter",
+    "slug": "choose-first-newsletter-tool",
+    "url": "https://tooltrim.com/en/guide/choose-first-newsletter-tool",
     "title": "First newsletter: Brevo, GetResponse or Kit? | ToolTrim",
     "summary": "Choose around sending frequency, subscribers and the signup journey. Three starting points, practical limits and a test before paying."
   },
@@ -111,8 +111,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "andrew-huberman-kit-systeme-audience",
-    "url": "https://tooltrim.com/en/guide/andrew-huberman-kit-systeme-audience",
+    "slug": "andrew-huberman-kit-audience-system",
+    "url": "https://tooltrim.com/en/guide/andrew-huberman-kit-audience-system",
     "title": "How Huberman Lab passed a million subscribers",
     "summary": "Huberman Lab case study: discover how Kit connected a lead magnet, automations and recommendations to grow past one million email subscribers."
   },
@@ -127,8 +127,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "atelier-hors-champ-scenographie-espace-raconte",
-    "url": "https://tooltrim.com/en/guide/atelier-hors-champ-scenographie-espace-raconte",
+    "slug": "atelier-hors-champ-scenography-storytelling-space",
+    "url": "https://tooltrim.com/en/guide/atelier-hors-champ-scenography-storytelling-space",
     "title": "Atelier Hors-Champ: a scenography studio at work",
     "summary": "Behind the scenes at Atelier Hors-Champ: model-making, lighting, installation, and tools in service of a scenography conceived at the scale of the visitor."
   },
@@ -143,8 +143,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "auditer-stack-saas-45-minutes",
-    "url": "https://tooltrim.com/en/guide/auditer-stack-saas-45-minutes",
+    "slug": "audit-saas-stack-45-minutes",
+    "url": "https://tooltrim.com/en/guide/audit-saas-stack-45-minutes",
     "title": "Audit your SaaS stack in 45 minutes: the method",
     "summary": "Audit your SaaS subscriptions in 45 minutes: usage, overlaps, dependencies, costs, and a decision matrix to keep, challenge, replace, or remove."
   },
@@ -159,8 +159,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
-    "url": "https://tooltrim.com/en/guide/marc-delmas-clarifier-entreprise-qui-grandit",
+    "slug": "marc-delmas-clarity-for-a-growing-company",
+    "url": "https://tooltrim.com/en/guide/marc-delmas-clarity-for-a-growing-company",
     "title": "Bringing Clarity Back to a Growing Company | ToolTrim Stories",
     "summary": "Marc Delmas helps a small manufacturer structure its operations with Airtable, Make, Pipedrive and better-shared decisions."
   },
@@ -175,8 +175,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "nora-bensaid-produit-sante-depuis-terrain",
-    "url": "https://tooltrim.com/en/guide/nora-bensaid-produit-sante-depuis-terrain",
+    "slug": "nora-bensaid-health-product-from-the-field",
+    "url": "https://tooltrim.com/en/guide/nora-bensaid-health-product-from-the-field",
     "title": "Building a Digital Product from the Field | ToolTrim Stories",
     "summary": "Nora Bensaïd designs a healthcare coordination product with Dovetail, Figma, Storybook, Sentry and field-based user research."
   },
@@ -191,8 +191,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "anna-morel-designer-studio-augmente",
-    "url": "https://tooltrim.com/en/guide/anna-morel-designer-studio-augmente",
+    "slug": "anna-morel-solo-designer-augmented-studio",
+    "url": "https://tooltrim.com/en/guide/anna-morel-solo-designer-augmented-studio",
     "title": "Designing like a studio when you work alone | ToolTrim Stories",
     "summary": "A portrait of Anna Morel, independent designer, and her AI-augmented creative workflow: from visual research to brand system."
   },
@@ -207,8 +207,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "pourquoi-visualiser-stack-saas",
-    "url": "https://tooltrim.com/en/guide/pourquoi-visualiser-stack-saas",
+    "slug": "why-visualize-saas-stack",
+    "url": "https://tooltrim.com/en/guide/why-visualize-saas-stack",
     "title": "Why map your SaaS stack instead of using Excel",
     "summary": "Discover why a visual map reveals duplicates, gaps, and friction in your SaaS stack far better than Excel ever could."
   },
@@ -239,8 +239,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "top-5-competences-ia-freelance-2026",
-    "url": "https://tooltrim.com/en/guide/top-5-competences-ia-freelance-2026",
+    "slug": "top-5-ai-skills-freelancers-2026",
+    "url": "https://tooltrim.com/en/guide/top-5-ai-skills-freelancers-2026",
     "title": "Top 5 freelance AI skills to learn in 2026",
     "summary": "The five most profitable freelance AI skills in 2026: Research, Web Building, UGC, Funnels and CRO. A stack under €60/month and the right learning order."
   },
@@ -273,8 +273,8 @@
     "language": "en",
     "slug": "loom-pricing-alternatives",
     "url": "https://tooltrim.com/en/guide/loom-pricing-alternatives",
-    "title": "Loom pricing 2026: worth it, and what else exists",
-    "summary": "Loom costs $15 per user per month in 2026. The honest verdict on whether it is worth it for a freelancer, plus four cheaper alternatives compared."
+    "title": "Loom Pricing 2026: Plans, Free Limits and Alternatives",
+    "summary": "Loom Business costs $18 per user per month, or $15 billed yearly. The free plan stops at 25 videos of 5 minutes. Is it worth it for a freelancer?"
   },
   {
     "type": "guide",
@@ -343,8 +343,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "meilleurs-outils-ia-freelances-2026",
-    "url": "https://tooltrim.com/en/guide/meilleurs-outils-ia-freelances-2026",
+    "slug": "best-ai-tools-freelancers-2026",
+    "url": "https://tooltrim.com/en/guide/best-ai-tools-freelancers-2026",
     "title": "Best AI tools for freelancers in 2026",
     "summary": "Which AI tools a freelancer actually needs in 2026, sorted by category and by profession, with the three mistakes that cost the most."
   },
@@ -359,8 +359,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "claude-opus-4-6-guide-complet-freelances",
-    "url": "https://tooltrim.com/en/guide/claude-opus-4-6-guide-complet-freelances",
+    "slug": "claude-opus-guide-freelancers",
+    "url": "https://tooltrim.com/en/guide/claude-opus-guide-freelancers",
     "title": "Claude Opus: the freelancer's guide for 2026",
     "summary": "Discover how Claude Opus can transform your freelance work. Advanced reasoning, revolutionary coding, and multi-agent orchestration to save time and improve qua"
   },
@@ -375,8 +375,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "alternatives-gratuites-notion-freelance-2026",
-    "url": "https://tooltrim.com/en/guide/alternatives-gratuites-notion-freelance-2026",
+    "slug": "free-notion-alternatives-freelancers-2026",
+    "url": "https://tooltrim.com/en/guide/free-notion-alternatives-freelancers-2026",
     "title": "Free Notion Alternatives for Freelancers (2026) - ToolTrim Guide",
     "summary": "Paid Notion costs 144 € a year. Five free alternatives compared, with their real limits, so you can run your freelance business without paying."
   },
@@ -391,8 +391,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "stack-minimaliste-freelance-2026",
-    "url": "https://tooltrim.com/en/guide/stack-minimaliste-freelance-2026",
+    "slug": "minimalist-freelance-stack-2026",
+    "url": "https://tooltrim.com/en/guide/minimalist-freelance-stack-2026",
     "title": "Freelance Minimalist Stack 2026: 7 Essential Tools & 15 to Cancel",
     "summary": "Optimize your freelance budget with this minimalist stack guide for 2026. Discover 7 essential tools with calculated ROI and 15 tools to cancel immediately. Max"
   },
@@ -439,8 +439,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "canva-pro-rentable",
-    "url": "https://tooltrim.com/en/guide/canva-pro-rentable",
+    "slug": "is-canva-pro-worth-it",
+    "url": "https://tooltrim.com/en/guide/is-canva-pro-worth-it",
     "title": "Canva Pro: is it worth it for a solo freelancer?",
     "summary": "Discover why Canva Pro is considered one of the most profitable investments for freelancers and solopreneurs, offering significant time savings and an immediate"
   },
@@ -455,8 +455,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "pourquoi-payer-loom",
-    "url": "https://tooltrim.com/en/guide/pourquoi-payer-loom",
+    "slug": "why-pay-for-loom",
+    "url": "https://tooltrim.com/en/guide/why-pay-for-loom",
     "title": "Why Pay for Loom? Free vs. Paid Features Explained",
     "summary": "Is Loom worth the cost? Understand the key differences between the free and paid versions, and when to upgrade for asynchronous communication and video archivin"
   },
@@ -519,8 +519,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "stripe-freelance-tarifs-alternatives",
-    "url": "https://tooltrim.com/en/guide/stripe-freelance-tarifs-alternatives",
+    "slug": "stripe-freelancers-pricing-alternatives",
+    "url": "https://tooltrim.com/en/guide/stripe-freelancers-pricing-alternatives",
     "title": "Stripe for freelancers: pricing and alternatives",
     "summary": "What Stripe really costs a freelancer per transaction, and when GoCardless or SumUp works out cheaper. Fees compared, with no affiliate bias."
   },
@@ -535,8 +535,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "perplexity-vs-chatgpt-recherche",
-    "url": "https://tooltrim.com/en/guide/perplexity-vs-chatgpt-recherche",
+    "slug": "perplexity-vs-chatgpt-research",
+    "url": "https://tooltrim.com/en/guide/perplexity-vs-chatgpt-research",
     "title": "Perplexity vs ChatGPT: which one for research?",
     "summary": "Perplexity against ChatGPT for research work: what each one actually does better, and which one is worth paying for when you work on your own."
   },
@@ -551,8 +551,8 @@
   {
     "type": "guide",
     "language": "en",
-    "slug": "notion-gratuit-vs-payant-vrai-calcul",
-    "url": "https://tooltrim.com/en/guide/notion-gratuit-vs-payant-vrai-calcul",
+    "slug": "notion-free-vs-paid-real-cost",
+    "url": "https://tooltrim.com/en/guide/notion-free-vs-paid-real-cost",
     "title": "Notion free vs paid: is the paid plan worth it?",
     "summary": "Is Notion's paid plan worth it for freelancers? Discover the real ROI calculation, hidden features, and when to upgrade (or switch to a free alternative)."
   },
@@ -2115,5 +2115,69 @@
     "url": "https://tooltrim.com/en/guide/best-cloud-hosting-developers",
     "title": "Best cloud hosting for developers in 2026: Vercel, Netlify, Heroku",
     "summary": "Cloud hosting platforms compared for a freelance developer: free tiers, what the first paid plan costs, and where usage billing can surprise you."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-gestionnaires-mots-de-passe-freelances",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-gestionnaires-mots-de-passe-freelances",
+    "title": "Meilleurs gestionnaires de mots de passe pour freelances en 2026",
+    "summary": "NordPass, 1Password, Bitwarden, Proton Pass, Dashlane, Keeper et LastPass comparés pour un freelance : offres gratuites, vrai prix la première année."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-password-managers-freelancers",
+    "url": "https://tooltrim.com/en/guide/best-password-managers-freelancers",
+    "title": "Best password managers for freelancers in 2026",
+    "summary": "NordPass, 1Password, Bitwarden, Proton Pass, Dashlane, Keeper and LastPass compared for freelancers: free plans, real first-year price, renewals."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-logiciels-photo-raw",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-logiciels-photo-raw",
+    "title": "Meilleurs logiciels photo RAW en 2026 : alternatives à Lightroom",
+    "summary": "Capture One, Lightroom, DxO PhotoLab, Luminar Neo, Affinity Photo et darktable comparés pour un photographe freelance : abonnement ou licence, et ce que coûte chacun."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-raw-photo-editors",
+    "url": "https://tooltrim.com/en/guide/best-raw-photo-editors",
+    "title": "Best RAW photo editors in 2026: Lightroom alternatives compared",
+    "summary": "Capture One, Lightroom, DxO PhotoLab, Luminar Neo, Affinity Photo and darktable compared for a freelance photographer: subscription or licence, and what each costs."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-createurs-site-portfolio",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-createurs-site-portfolio",
+    "title": "Meilleurs créateurs de site portfolio pour créatifs en 2026",
+    "summary": "Cargo, Readymag, Format, ArtStation, Framer et Pixieset comparés pour un créatif freelance : offres gratuites, coût du premier plan payant, et à qui chacun convient."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-portfolio-website-builders",
+    "url": "https://tooltrim.com/en/guide/best-portfolio-website-builders",
+    "title": "Best portfolio website builders for creatives in 2026",
+    "summary": "Cargo, Readymag, Format, ArtStation, Framer and Pixieset compared for a freelance creative: free plans, what the first paid plan costs, and who each one suits."
+  },
+  {
+    "type": "guide",
+    "language": "fr",
+    "slug": "meilleurs-logiciels-sculpture-3d",
+    "url": "https://tooltrim.com/fr/guide/meilleurs-logiciels-sculpture-3d",
+    "title": "Meilleurs logiciels de sculpture 3D en 2026 : ZBrush et alternatives",
+    "summary": "ZBrush, Blender, Nomad Sculpt, Plasticity, Maya et Cinema 4D comparés pour un artiste 3D freelance : abonnement, licence ou gratuit, et ce pour quoi chacun est fait."
+  },
+  {
+    "type": "guide",
+    "language": "en",
+    "slug": "best-digital-sculpting-software",
+    "url": "https://tooltrim.com/en/guide/best-digital-sculpting-software",
+    "title": "Best digital sculpting software in 2026: ZBrush and alternatives",
+    "summary": "ZBrush, Blender, Nomad Sculpt, Plasticity, Maya and Cinema 4D compared for a freelance 3D artist: subscription, licence or free, and what each one is built for."
   }
 ]

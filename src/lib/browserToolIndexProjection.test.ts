@@ -1,6 +1,8 @@
 // @vitest-environment node
 import { afterEach, expect, it } from "vitest";
 import { build } from "vite";
+import { gzipSync } from "node:zlib";
+import { DEPRECATED_TOOL_SLUGS } from "./toolVisibility";
 import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
@@ -9,11 +11,11 @@ import { browserToolIndexProjection } from "../../scripts/lib/browser-tool-index
 const roots: string[] = [];
 afterEach(async () => { await Promise.all(roots.splice(0).map(root => rm(root, { recursive: true, force: true }))); });
 
-async function emittedRows(ssr = false) {
+async function emittedRows(ssr = false, customRows?: Record<string, unknown>[], projection = true) {
   const root = await mkdtemp(path.join(tmpdir(), "tooltrim-index-fixture-"));
   roots.push(root);
   await mkdir(path.join(root, "src/data"), { recursive: true });
-  const rows = [
+  const rows = customRows ?? [
     { id: "notion", slug: "notion", name: "Notion", pricing: { free: "Trial, not a free tier", paid: "Custom pricing" }, pricingEn: { paid: "Price unknown" }, nativePrices: [{ amount: 35.9, currency: "USD", period: "annual" }], alternatives: ["figma"] },
     { id: "anthropic", slug: "anthropic", name: "Historical alias" },
     { id: "other", slug: "new-product", name: "Kept", unknownFutureField: { source: "attested" } },
@@ -23,14 +25,14 @@ async function emittedRows(ssr = false) {
   const file = path.join(root, "src/data/tools_index.json");
   await writeFile(file, source);
   await writeFile(path.join(root, "entry.js"), 'import rows from "./src/data/tools_index.json"; export default rows;');
-  const output = await build({ configFile: false, root, logLevel: "silent", plugins: [browserToolIndexProjection()],
+  const output = await build({ configFile: false, root, logLevel: "silent", plugins: projection ? [browserToolIndexProjection()] : [],
     build: { write: false, minify: false, ssr: ssr ? path.join(root, "entry.js") : undefined,
       rollupOptions: { input: path.join(root, "entry.js"), preserveEntrySignatures: "strict", output: { format: "es" } } } });
   if (Array.isArray(output) || !("output" in output)) throw new Error("Unexpected build output");
   const chunk = output.output.find(item => item.type === "chunk" && item.isEntry);
   if (!chunk || chunk.type !== "chunk") throw new Error("No fixture entry");
   const emitted = await import(`data:text/javascript;base64,${Buffer.from(chunk.code).toString("base64")}`);
-  return { rows, emitted: emitted.default, sourceUntouched: await readFile(file, "utf8") === source };
+  return { rows, emitted: emitted.default, bytes: Buffer.byteLength(chunk.code), gzipBytes: gzipSync(chunk.code, { level: 9 }).length, sourceUntouched: await readFile(file, "utf8") === source };
 }
 
 it("omits historical aliases from browser bytes while retaining every visible field and source row", async () => {
@@ -43,4 +45,17 @@ it("keeps the full source index in the SSR bundle", async () => {
   const { rows, emitted, sourceUntouched } = await emittedRows(true);
   expect(emitted).toEqual(rows);
   expect(sourceUntouched).toBe(true);
+});
+
+
+it("reduces real catalogue transport while preserving every value and key order", async () => {
+  const source = JSON.parse(await readFile(path.resolve("src/data/tools_index.json"), "utf8")) as Record<string, unknown>[];
+  const visible = source.filter(row => !DEPRECATED_TOOL_SLUGS.has(String(row.slug || row.id || "")));
+  const baseline = await emittedRows(false, visible, false);
+  const compact = await emittedRows(false, visible);
+  expect(compact.emitted).toEqual(baseline.emitted);
+  expect(compact.emitted.map(Object.keys)).toEqual(baseline.emitted.map(Object.keys));
+  expect(compact.bytes).toBeLessThan(baseline.bytes * 0.92);
+  expect(compact.gzipBytes).toBeLessThan(baseline.gzipBytes * 0.98);
+  expect(compact.sourceUntouched).toBe(true);
 });

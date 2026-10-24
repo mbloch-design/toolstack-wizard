@@ -1,10 +1,7 @@
 {
   "checkedOn": "2026-10-17",
-  "status": "reviewed-local-not-published",
-  "privatePreviewUrl": "https://toolstack-wizard-51jz41sfg-mbloch-designs-projects.vercel.app/fr/tool/sovkern",
-  "privatePreviewDeploymentId": "dpl_8MzV9SYC4pjgPu5dPEFH76618Vjw",
-  "anonymousShareStatus": "blocked-pending-user-approval-for-five-additional-drafts",
-  "validation": "408 tests; app TypeScript; full build including SEO, routing, LLM and output budgets; five routes and card-to-detail score consistency checked in browser",
+  "status": "approved-for-publication",
+  "validation": "Base da086217d7: 474 tests passed; app TypeScript passed; full production build passed including SEO, routing, LLM and output budgets.",
   "method": "Analyse des fonctionnalités et documents officiels, sans test terrain ni estimation de prix non publiés. Les notes évaluent le cas d'usage cible, pas une obligation d'achat pour les freelances.",
   "dependency_status": "approved-fallback",
   "narrative_canon_id": null,
@@ -411,5 +408,12 @@
       "pricingFr": "Extra Small : 90 €/an. Small : 29 €/mois ; Medium : 69 €/mois ; Large : 129 €/mois. Les affichages Extra Small de 7 €/mois facturés annuellement et certains quotas sont contradictoires : confirmer le total au panier.",
       "pricingEn": "Extra Small: $90/year. Small: $29/month; Medium: $69/month; Large: $129/month. Extra Small's $7/month yearly-billed display and some quotas conflict: confirm checkout totals."
     }
-  }
+  },
+  "publicationScope": [
+    "vanta",
+    "drata",
+    "onetrust",
+    "didomi",
+    "axeptio"
+  ]
 }

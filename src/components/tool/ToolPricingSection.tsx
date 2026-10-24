@@ -1,6 +1,6 @@
 import type { Tool } from "@/data/types";
 import { ExternalLink, Package } from "@/lib/icons";
-import { hasGenuineFreeTier, isPriceUndisclosed } from "@/lib/pricing";
+import { hasConfirmedFreeTier, hasGenuineFreeTier, isPlaceholderPricingText, isPriceUndisclosed } from "@/lib/pricing";
 import { relPourLienOutil, safeExternalUrl } from "@/lib/externalLink";
 import { localizePlanName } from "@/lib/planNames";
 import { useCurrency } from "@/hooks/useCurrency";
@@ -79,9 +79,9 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
   // comparaison, lui, reste affiche par ailleurs.
   const enFallback = {
     free: tool.pricing?.free
-      ? (hasGenuineFreeTier(tool.pricing.free) ? "Free plan available." : "No permanent free plan.")
+      ? (hasConfirmedFreeTier(tool) ? "Free plan available." : "")
       : "",
-    paid: tool.pricing?.paid ? "Paid plans available. See the official pricing source for details." : "",
+    paid: tool.pricing?.paid && !isPlaceholderPricingText(tool.pricing.paid) ? "Paid plans available. See the official pricing source for details." : "",
   };
   const pricing = lang === "en"
     ? (isUntranslated(tool.pricingEn, tool.pricing) ? enFallback : (tool.pricingEn || enFallback))
@@ -100,8 +100,10 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
   const canonicalPlans = allPlans.filter((p) => !p.isComparePlan || p.isFree || p === preferredCompare);
   // Texte de carte gratuite qualifié (licence vs coût total) fourni par la projection canonique.
   const freeCard = (pv5 as { free_plan_card?: string } | undefined)?.free_plan_card || null;
-  const hasFree = hasGenuineFreeTier(pricing?.free);
-  const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public");
+  // Bulk placeholders (« Gratuit ou open source selon usage », « Options
+  // payantes possibles… ») are not facts: no card is drawn from them.
+  const hasFree = hasConfirmedFreeTier(tool) && !isPlaceholderPricingText(pricing?.free);
+  const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public") && !isPlaceholderPricingText(pricing.paid);
   const affiliateUrl = safeExternalUrl(tool.affiliateLink);
   const isOneTime = pv5?.compare_plan_kind === "one_time";
   // Même calcul que le titre et la description (toolSeo.ts) : le montant

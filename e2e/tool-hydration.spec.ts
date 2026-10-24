@@ -1,5 +1,10 @@
 import { expect, test } from "@playwright/test";
 
+// Keep synthetic hydration journeys out of production analytics.
+test.beforeEach(async ({ context }) => {
+  await context.route(/https?:\/\/(?:[^/]+\.)?(?:google-analytics\.com|googletagmanager\.com|analytics\.google\.com|vercel-insights\.com|vercel-scripts\.com)\/|\/_vercel\/insights\//, route => route.abort());
+});
+
 // This regression requires generated HTML, not Vite's development SPA shell.
 // Dropping canonical FR fields from the EN bootstrap must trigger this test.
 for (const slug of ["notion", "1001bit-tools", "17hats", "8fig", "adobe-acrobat-sign", "condeco", "viso-ai"]) {
@@ -16,7 +21,9 @@ for (const slug of ["notion", "1001bit-tools", "17hats", "8fig", "adobe-acrobat-
           });
           await context.route("**/*supabase.co/**", route => route.abort());
           await context.route("**/_vercel/insights/**", route => route.fulfill({ contentType: "application/javascript", body: "" }));
-          await context.addInitScript(() => localStorage.setItem("tooltrim-analytics-consent", "refused"));
+          await context.addInitScript(() => localStorage.setItem("tooltrim-analytics-consent", JSON.stringify({
+            version: 1, choice: "refused", decidedAt: Date.now(), expiresAt: Date.now() + 3600000,
+          })));
           const savedState = JSON.stringify({
             version: 3,
             needs: [{ id: "custom-client", labelFr: "Projet client", labelEn: "Client project", order: 10, source: "custom" }],
@@ -101,8 +108,10 @@ test("prerendered stack add waits for scripts, then saves on the first click", a
     await expect(cta).toContainText("Dans ma stack");
     await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").selection?.pinnedToolSlugs)).toContain("figma");
     await cta.click();
-    await expect(page).toHaveURL(/ma-stack\?outil=figma/);
-    await expect(page.locator(".ms-tool-sheet .ms-ts-title")).toHaveText("Figma");
+    await expect(page.locator(".stack-confirm")).toBeVisible();
+    await page.locator(".stack-confirm-keep").click();
+    await expect(page.locator(".stack-confirm")).toHaveCount(0);
+    await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("tooltrim-personal-stack-v4:anonymous") || "{}").selection?.pinnedToolSlugs)).toContain("figma");
   } finally {
     releaseScripts();
   }

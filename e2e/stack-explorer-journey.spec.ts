@@ -23,12 +23,7 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   await expect(card).toBeVisible();
   const added=await card.getAttribute('data-tool-slug');expect(added).toBeTruthy();
   await card.getByRole('button').click();
-  const dialog=page.locator('.stack-save-dialog');await expect(dialog).toBeVisible();
-  await dialog.getByRole('button',{name:lang==='fr'?'Créer une nouvelle collection':'Create a new collection',exact:true}).click();
-  await dialog.getByRole('textbox').fill('Client');
-  await dialog.getByRole('button',{name:lang==='fr'?'Créer':'Create',exact:true}).click();
-  await dialog.getByRole('button',{name:lang==='fr'?'Terminer':'Done',exact:true}).click();
-  await expect(dialog).toHaveCount(0);
+  const toast=page.locator('.stack-toast');await expect(toast).toBeVisible();
   await expect(page.locator(`[data-tool-slug="${added}"]`).getByRole('button')).toBeDisabled();
   await page.getByRole('button',{name:lang==='fr'?'Retour à Ma stack':'Back to My stack',exact:true}).click();
   await expect.poll(()=>new URL(page.url()).pathname).toBe(`/${lang}/ma-stack`);expect(new URL(page.url()).searchParams.get('outil')).toBe('figma');
@@ -45,8 +40,7 @@ for (const lang of ['fr', 'en']) for (const width of [390, 1440]) {
   expect(envelope.version).toBe(4);
   const stored=envelope.selection;
   expect(stored.pinnedToolSlugs).toEqual(expect.arrayContaining(['figma',added]));
-  const collection=stored.needs.find((need:{id:string;labelFr:string})=>need.labelFr==='Client');expect(collection).toBeTruthy();
-  expect(stored.toolEntries.find((entry:{toolSlug:string})=>entry.toolSlug===added).needIds).toContain(collection.id);
+  expect(stored.toolEntries.find((entry:{toolSlug:string})=>entry.toolSlug===added)).toBeTruthy();
   expect(errors).toEqual([]);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1)).toBe(false);
   await page.screenshot({path:test.info().outputPath(`stack-explorer-journey-${lang}-${width}.png`)});

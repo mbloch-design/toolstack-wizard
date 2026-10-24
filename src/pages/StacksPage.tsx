@@ -586,7 +586,15 @@ const StacksPage = () => {
   const toolbarPills = useMemo<ToolbarPill[]>(() => {
     if (cloudObjective) {
       return [
-        { id: "back", label: t("Tout", "All") as string, onClick: () => { setFacetObjectives([]); setFacetSpecialties([]); } },
+        // Telescope: the chosen objective stays visible as the parent segment
+        // (active until a specialty narrows it); clicking it climbs back up.
+        {
+          id: "back",
+          label: optionLabel(OBJECTIVE_OPTIONS, cloudObjective, lang),
+          parent: true,
+          active: facetSpecialties.length === 0,
+          onClick: () => { setFacetObjectives([]); setFacetSpecialties([]); },
+        },
         ...OBJECTIVE_TAG_CLOUD[cloudObjective].map((specialty) => ({
           id: specialty,
           label: subProfileLabel(specialty, lang),

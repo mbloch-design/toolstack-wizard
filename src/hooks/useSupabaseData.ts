@@ -2,7 +2,7 @@ import { applyAuditedToolUrls } from "@/lib/toolUrlCorrections.mjs";
 import { DEPRECATED_TOOL_SLUGS } from "@/lib/toolVisibility";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+import { catalogRemoteReadsEnabled } from "@/lib/catalogReadSource";
 import type { Tool, Category } from "@/data/types";
 import categoriesIndexJson from "@/data/categories_index.json";
 import toolsIndexJson from "@/data/tools_index.json";
@@ -379,17 +379,19 @@ export async function loadLocalPosts(lang: string): Promise<Post[]> {
 let _categoriesCache: Category[] | null = null;
 
 export function useCategories() {
+  const remoteReads = catalogRemoteReadsEnabled();
   // On an already-SSR'd tool page, the static data is from the same build
   // as the page itself — refreshing it on mount only swaps content after
   // it's already painted, causing a visible layout shift for no real
-  // freshness gain. Skip the refresh there; every other page keeps it.
+  // freshness gain. Remote refresh elsewhere requires explicit opt-in.
   const isSsrPage = useIsSsrToolPage();
   const [categories, setCategories] = useState<Category[]>(_categoriesCache ?? staticCategories);
-  const [loading, setLoading] = useState(!_categoriesCache && !isSsrPage);
+  const [loading, setLoading] = useState(remoteReads && !_categoriesCache && !isSsrPage);
 
   useEffect(() => {
-    if (_categoriesCache || isSsrPage) return;
+    if (!remoteReads || _categoriesCache || isSsrPage) return;
     (async () => {
+      const { supabase } = await import("@/integrations/supabase/client");
       const { data, error } = await supabase.from("categories").select("*");
       if (!error && data && data.length > 0) {
         const merged = mergeById(staticCategories, data.map(mapSupabaseCat));
@@ -398,7 +400,7 @@ export function useCategories() {
       }
       setLoading(false);
     })();
-  }, [isSsrPage]);
+  }, [isSsrPage, remoteReads]);
 
   return { categories, loading };
 }
@@ -407,12 +409,8 @@ export function useCategories() {
  * Targeted hook for pages that only need 1-2 specific tools (ComparePage).
  * Avoids loading the full 3.3MB tools_v4.json chunk just to look up two slugs.
  *
- * Strategy:
- *  1. Try Supabase with `.in('slug', [slugA, slugB])` — 2-row payload.
- *  2. If Supabase returns 0 results (offline, prerender, etc.), fall back
- *     to a lazy import of tools_v4.json and find the 2 entries there.
- *  3. Return `{ toolA, toolB, loading }` mapped through the same mapToolFromJson
- *     so consumers get exactly the same Tool shape as useTools().
+ * Reads the local shards by default. Explicit remote opt-in tries a targeted
+ * two-row query first, with the same local fallback and Tool mapping.
  */
 export function useToolPair(slugA: string | undefined | null, slugB: string | undefined | null) {
   const ssrPair = useContext(SsrComparePairContext);
@@ -444,7 +442,8 @@ export function useToolPair(slugA: string | undefined | null, slugB: string | un
         if (cancelled) return;
         if (a && b) { setToolA(a); setToolB(b); setLoading(false); return; }
       }
-      try {
+      if (catalogRemoteReadsEnabled()) try {
+        const { supabase } = await import("@/integrations/supabase/client");
         const { data, error } = await supabase
           .from("tools")
           .select("*")
@@ -501,18 +500,20 @@ interface RefreshOptions {
 }
 
 export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) {
+  const remoteReads = catalogRemoteReadsEnabled(refreshRemote);
   // Same rationale as useCategories above: don't swap the alternatives/
   // summaries list out from under an already-painted SSR'd tool page.
   const isSsrPage = useIsSsrToolPage();
   const [tools, setTools] = useState<ToolSummary[]>(_toolSummariesCache ?? staticToolSummaries);
-  const [loading, setLoading] = useState(refreshRemote && !_toolSummariesCache && !isSsrPage);
+  const [loading, setLoading] = useState(remoteReads && !_toolSummariesCache && !isSsrPage);
 
   useEffect(() => {
-    if (!refreshRemote || _toolSummariesCache || isSsrPage) return;
+    if (!remoteReads || _toolSummariesCache || isSsrPage) return;
     let cancelled = false;
     setLoading(true);
     (async () => {
       try {
+        const { supabase } = await import("@/integrations/supabase/client");
         const { data, error } = await supabase
           .from("tools")
           .select("id, slug, name, category, short_description, short_description_en, pricing, pricing_en, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality, relevant_for, personas, free_alternative, substitutable, better_alternative, published_at, works_with, form_factor")
@@ -578,7 +579,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
       finally { if (!cancelled) setLoading(false); }
     })();
     return () => { cancelled = true; };
-  }, [isSsrPage, refreshRemote]);
+  }, [isSsrPage, remoteReads]);
 
   return { tools, loading };
 }
@@ -591,8 +592,7 @@ export function useToolBySlug(slug: string | undefined) {
 
   useEffect(() => {
     if (!slug) { setLoading(false); return; }
-    // SSR data is already as fresh as the last deploy (the build re-fetches
-    // Supabase for every tool, see entry-server.tsx); re-fetching it again
+    // SSR data is already as fresh as the last deploy; re-fetching it again
     // client-side just for a mid-session freshness guarantee was costing a
     // full Supabase round-trip (~1.1s, confirmed in a real PageSpeed run)
     // sitting in the LCP-relevant critical request chain for no visible
@@ -614,6 +614,8 @@ export function useToolBySlug(slug: string | undefined) {
       // Refresh remotely in parallel, but never keep client navigation behind
       // Supabase. The local catalogue is the immediate rendering source.
       const remoteToolPromise = (async (): Promise<Tool | null> => {
+        if (!catalogRemoteReadsEnabled()) return null;
+        const { supabase } = await import("@/integrations/supabase/client");
         const useCatalogProjection = import.meta.env.VITE_CATALOG_PROJECTION_FICHE !== "false";
         if (useCatalogProjection) {
           try {
@@ -658,6 +660,7 @@ export function useToolBySlug(slug: string | undefined) {
 }
 
 export function usePosts(lang: string, { refreshRemote = true }: RefreshOptions = {}) {
+  const remoteReads = catalogRemoteReadsEnabled(refreshRemote);
   const cachedLocalPosts = localPostsCache.get(lang) ?? [];
   const cachedRemotePosts = remotePostsCache.get(lang);
   const [posts, setPosts] = useState<Post[]>(cachedRemotePosts ?? cachedLocalPosts);
@@ -673,12 +676,12 @@ export function usePosts(lang: string, { refreshRemote = true }: RefreshOptions 
       // Start the remote refresh immediately, but never make local editorial
       // content wait for Supabase. This keeps guides usable when the project is
       // slow, paused or restricted by its egress quota.
-      const remotePostsPromise = refreshRemote
-        ? supabase
+      const remotePostsPromise = remoteReads
+        ? import("@/integrations/supabase/client").then(({ supabase }) => supabase
           .from("posts")
           .select(POSTS_LIST_SELECT)
           .eq("lang", lang)
-          .order("date", { ascending: false })
+          .order("date", { ascending: false }))
         : null;
       const localPosts = await loadLocalPosts(lang);
 
@@ -704,12 +707,13 @@ export function usePosts(lang: string, { refreshRemote = true }: RefreshOptions 
     return () => {
       cancelled = true;
     };
-  }, [lang, refreshRemote]);
+  }, [lang, remoteReads]);
 
   return { posts, loading };
 }
 
 export function usePostBySlug(slug: string | undefined, lang: string, { refreshRemote = true }: RefreshOptions = {}) {
+  const remoteReads = catalogRemoteReadsEnabled(refreshRemote);
   // When the post was server-rendered for this exact slug (see renderGuidePage),
   // seed from the SSR context and skip the client fetch so hydration matches.
   const ssrPost = useContext(SsrPostContext);
@@ -730,13 +734,13 @@ export function usePostBySlug(slug: string | undefined, lang: string, { refreshR
     (async () => {
       setLoading(true);
 
-      const remotePostPromise = refreshRemote
-        ? supabase
+      const remotePostPromise = remoteReads
+        ? import("@/integrations/supabase/client").then(({ supabase }) => supabase
           .from("posts")
           .select("*")
           .eq("slug", slug)
           .eq("lang", lang)
-          .maybeSingle()
+          .maybeSingle())
         : null;
       const localPosts = await loadLocalPosts(lang);
       if (cancelled) return;
@@ -762,7 +766,7 @@ export function usePostBySlug(slug: string | undefined, lang: string, { refreshR
     return () => {
       cancelled = true;
     };
-  }, [cachedPost, slug, lang, refreshRemote, ssrMatches, ssrPost]);
+  }, [cachedPost, slug, lang, remoteReads, ssrMatches, ssrPost]);
 
   return { post, loading };
 }

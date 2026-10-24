@@ -118,7 +118,7 @@ export default function ToolComparisonTable({ tool, alternatives, prefix, lang, 
                 <span className="td-alt-card-name">{row.name}</span>
               </span>
               <span className="td-alt-card-facts">
-                {score.score > 0 && <span><strong>{score.score.toFixed(1)}</strong>/5 · {scoreLabel}</span>}
+                {score.score > 0 && <span><strong>{fr ? score.score.toFixed(1).replace(".", ",") : score.score.toFixed(1)}</strong>/5 · {scoreLabel}</span>}
                 {priceLine && <span>{priceLine}</span>}
               </span>
               {presentation.description && <span className="td-alt-card-desc">{presentation.description}</span>}

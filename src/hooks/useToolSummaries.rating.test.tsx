@@ -16,11 +16,14 @@ describe("editorial scores in catalogue summaries", () => {
     expect(computeToolTrimScore(drata)).toMatchObject({ source: "v2", score: 4.2 });
   });
   it("preserves the editorial axes when a remote summary has no rating column", async () => {
+    vi.stubEnv("VITE_CATALOG_READ_SOURCE", "supabase");
     vi.mocked(supabase.from).mockReturnValue({ select: () => ({ limit: async () => ({ data: [{ id: "drata", slug: "drata", name: "Drata" }], error: null }) }) } as any);
     const wrapper = ({ children }: { children: ReactNode }) => <MemoryRouter>{children}</MemoryRouter>;
     const { result } = renderHook(() => useToolSummaries(), { wrapper });
     await waitFor(() => expect(result.current.loading).toBe(false));
     const drata = result.current.tools.find((tool) => tool.slug === "drata");
     expect(computeToolTrimScore(drata)).toMatchObject({ source: "v2", score: 4.2 });
+    expect(supabase.from).toHaveBeenCalledWith("tools");
+    vi.unstubAllEnvs();
   });
 });

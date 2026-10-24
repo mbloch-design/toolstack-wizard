@@ -140,14 +140,26 @@ function CurrencyPicker({
   );
 }
 
+/** Expanded unless the visitor collapsed it. Prerendered HTML ships expanded;
+    the inline script in index.html collapses it before first paint, so on
+    hydrated pages the DOM already matches this value. */
+function readSidebarPreference(): boolean {
+  if (typeof window === "undefined") return true;
+  try { return localStorage.getItem("tooltrim:sidebar-expanded") !== "false"; } catch { return true; }
+}
+
 export default function AppShellV2({ children }: { children: ReactNode }) {
   const { t, prefix, lang } = useLang();
   const { currency, setCurrency } = useCurrency();
   const { theme, toggle: toggleTheme } = useTheme();
   const location = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
-  // Start compact. An explicitly expanded desktop navigation is remembered per browser.
-  const [sidebarExpanded, setSidebarExpanded] = useState(false);
+  // The labelled navigation is the canonical desktop state. The compact rail
+  // remains available as a deliberate choice and is remembered per browser.
+  // Read the stored choice in the first render, not after mounting: most pages
+  // are re-rendered by createRoot (not hydrated), so starting "expanded" then
+  // correcting in an effect painted the wide bar and animated it shut.
+  const [sidebarExpanded, setSidebarExpanded] = useState(readSidebarPreference);
   const contentRef = useRef<HTMLElement>(null);
   const { state: cartState } = useStackPins();
   const cartCount = cartState.pinnedToolSlugs.length;
@@ -184,7 +196,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   // used everywhere else while a page's breadcrumb is still registering
   // (avoids flashing the search bar for a frame on pages that do have one).
   const showsSearchByDefault = relPath === "/search";
-  const topbarCrumbs: TopbarBreadcrumbItem[] = breadcrumb ?? [{ label: isHome ? t("Accueil", "Home") : t("Recherche", "Search") }];
 
   // Ma stack changes view through query parameters while keeping the same
   // pathname. Always return the shared content rail to its canonical
@@ -253,12 +264,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  useEffect(() => {
-    let storedPreference: string | null = null;
-    try { storedPreference = localStorage.getItem("tooltrim:sidebar-expanded"); } catch { /* Use default navigation. */ }
-    setSidebarExpanded(storedPreference === "true");
-  }, []);
-
   // De 641 à 1 180 px, la barre est une colonne imposée pour laisser la place
   // au contenu. Elle peut quand même se déplier : elle pousse alors le contenu,
   // comme sur grand écran (Michael, 8 oct. 2026 ; avant : par-dessus), sans
@@ -309,9 +314,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
   return (
     <TopbarBreadcrumbContext.Provider value={breadcrumbCtx}>
-    <div className={`asv2-root${shownExpanded ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"}>
+    <div className={`asv2-root${sidebarExpanded || railIsOpen ? " asv2-root--sidebar-expanded" : ""}${railIsOpen ? " asv2-root--rail-open" : ""}`} data-chrome={chromeHidden ? "hidden" : "shown"} suppressHydrationWarning>
       {railIsOpen && <button type="button" className="asv2-rail-backdrop" tabIndex={-1} aria-label={t("Réduire la barre latérale", "Collapse sidebar")} onClick={() => setRailOpen(false)} />}
-      <aside ref={sidebarRef} className="asv2-sidebar" data-expanded={shownExpanded}>
+      <aside ref={sidebarRef} className="asv2-sidebar" data-expanded={shownExpanded} suppressHydrationWarning>
         <div className="asv2-sidebar-top">
           <Link to={prefix} className="asv2-logo" aria-label="ToolTrim">
             <img className="asv2-logo-mark" src={pictoToolTrim} alt="" width={24} height={24} aria-hidden />
@@ -425,7 +430,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         <header
           ref={topbarRef}
           className="asv2-topbar"
-          data-topbar-mode={breadcrumb || isHome || showsSearchByDefault ? "breadcrumb" : "pending"}
+          data-topbar-mode={isHome || showsSearchByDefault ? "search" : breadcrumb ? "breadcrumb" : "pending"}
           data-has-parent={mobileParent ? "true" : undefined}
         >
           {/* Mobile, page profonde : le lien vers le niveau supérieur prend la
@@ -447,10 +452,10 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           {/* Desktop/tablet: the breadcrumb (or nothing on the homepage)
               sits on the left; search lives at the right, in one place.
               Mobile always shows the search bar (see max-width: 640px). */}
-          {(breadcrumb || isHome) && (
+          {breadcrumb && (
             <nav className="asv2-topbar-breadcrumb" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
-              {topbarCrumbs.flatMap((item, i) => {
-                const isLast = i === topbarCrumbs.length - 1;
+              {breadcrumb.flatMap((item, i) => {
+                const isLast = i === breadcrumb.length - 1;
                 const sep = i > 0 ? [<span key={`sep-${i}`}>/</span>] : [];
                 const node = item.href && !isLast
                   ? <Link key={`l-${i}`} to={item.href}>{item.label}</Link>
@@ -460,6 +465,22 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             </nav>
           )}
 
+          <button
+            type="button"
+            className="asv2-search"
+            onClick={() => setSearchOpen(true)}
+            aria-label={t("Rechercher un outil", "Search for a tool")}
+          >
+            <span className="asv2-search-text">
+              <span className="asv2-search-long">{t("Rechercher un outil…", "Search a tool…")}</span>
+              <span className="asv2-search-short">{t("Rechercher", "Search")}</span>
+            </span>
+            <kbd className="asv2-kbd">{shortcut}</kbd>
+            <span className="asv2-search-action" aria-hidden>
+              <Search size={16} aria-hidden />
+            </span>
+          </button>
+
           <div className="asv2-topbar-right">
             {/* Recherche toujours atteignable depuis la barre du haut, même
                 quand le fil d'Ariane occupe la place du champ. */}
@@ -467,12 +488,29 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               type="button"
               className="asv2-topbar-search"
               onClick={() => setSearchOpen(true)}
-              aria-label={t(`Rechercher dans le catalogue (${shortcut})`, `Search the catalogue (${shortcut})`)}
+              aria-label={t(`Rechercher (${shortcut})`, `Search (${shortcut})`)}
             >
-              <Search size={18} aria-hidden />
-              <span className="asv2-topbar-search-label">{t("Rechercher un outil…", "Search for a tool…")}</span>
-              <kbd className="asv2-topbar-search-key">{shortcut}</kbd>
+              <Search size={16} aria-hidden />
+              <span className="asv2-topbar-search-label">{t("Rechercher", "Search")}</span>
+              <kbd className="asv2-kbd">{shortcut}</kbd>
             </button>
+            <AccountMenu />
+            <Link
+              to={`${prefix}/ma-stack`}
+              className="asv2-topbar-cta"
+              aria-label={cartCount > 0 ? `${cartLabel} · ${cartCount}` : cartLabel}
+              aria-current={location.pathname === `${prefix}/ma-stack` ? "page" : undefined}
+            >
+              <span className="asv2-topbar-cta-icon">
+                <Bookmark size={16} aria-hidden />
+                {cartCount > 0 && (
+                  <span key={cartCount} className="asv2-topbar-cta-badge" aria-hidden>
+                    {cartCount > 99 ? "99+" : cartCount}
+                  </span>
+                )}
+              </span>
+              <span>{cartLabel}</span>
+            </Link>
             <button
               ref={menuButtonRef}
               type="button"
@@ -484,13 +522,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             >
               <Menu size={20} aria-hidden />
             </button>
-            <AccountMenu />
-            <Link to={`${prefix}/ma-stack`} className="asv2-topbar-cta" aria-current={relPath === "/ma-stack" ? "page" : undefined} aria-label={cartCount > 0 ? `${cartLabel} · ${cartCount}` : cartLabel}>
-              <span className="asv2-topbar-cta-icon"><Bookmark size={19} aria-hidden />
-                {cartCount > 0 && <span className="asv2-topbar-cta-badge" aria-hidden>{cartCount > 99 ? "99+" : cartCount}</span>}
-              </span>
-              <span>{cartLabel}</span>
-            </Link>
           </div>
         </header>
 
