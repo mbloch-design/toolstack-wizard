@@ -23,6 +23,13 @@ Fusion du back-office avec `origin/main` c6692fe291 à la demande de l’utilisa
 - État compact à deux cartes alignées quand aucun abonnement payant ni question ne reste : retrait des zones vides réservées à la répartition et aux décisions. Les cartes d’une même rangée prennent la hauteur de la plus grande, sans hauteur fixe ni contenu coupé ; les boutons de bilan restent en pied de carte.
 - Bilan adapté aux formules gratuites, sans répétition du message d’absence de forfait payant ; accès aux choix et à l’inventaire conservé.
 - Vérifications : huit parcours FR/EN validés (gratuit, budget encore inconnu, bilan payant, révision), égalité des hauteurs à 1440 et 820 px et absence de débordement à 390 px ; 22 tests unitaires ciblés, TypeScript et design tokens validés ; capture du rendu contrôlée.
+## 2026-10-25 : Usages — scène compacte et choix explicites
+
+- Retour à l’enveloppe initiale : 285 px sur téléphone, 295 px sur tablette et rangée desktop de 230 à 290 px. Question, réponse, correction, résumé et historique gardent la même hauteur.
+- Cinq choix tactiles à icônes, question directe, réponse enregistrée sur place puis Suivant/Terminer explicite ; possibilité de passer, faire une pause et reprendre sans inventer de réponse.
+- Humour FR/EN dans les retours et léger mouvement des icônes, désactivé en mouvement réduit ; clavier radio et focus sans saut de page.
+- Historique dans une scène à défilement interne. Logos de paire contenus aussi lorsque le visuel utilise une initiale.
+- Vérifications : 922 tests unitaires, typecheck, tokens et 20 parcours navigateur authentifiés, dont invariance mesurée dans six formats FR/EN et noms/historiques longs. Revue finale indépendante sans défaut important.
 
 ## 2026-10-25 : Révision du bento — hauteur et reconnexion
 

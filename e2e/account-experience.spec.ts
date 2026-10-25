@@ -511,20 +511,23 @@ for (const lang of ['fr','en'] as const) for(const width of [390,1440]) test(`be
  await control(request,'seed',{email:'bento-review@example.invalid',state:stack});
  await page.goto(`/${lang}/ma-stack`);await login(page,lang,'bento-review@example.invalid');await saved(page,lang);
  const card=page.locator('.mu-card');
- await expect(card.getByRole('heading',{name:fr?'Comment utilisez-vous cet outil ?':'How much do you use this tool?',exact:true})).toBeVisible();
- await card.getByRole('button',{name:fr?'Usage faible':'Low use',exact:true}).click();
- await card.getByRole('button',{name:fr?'Usage intensif':'Intensive use',exact:true}).click();
- await expect(card.getByRole('heading',{name:fr?'Tout est renseigné.':'Everything is filled in.',exact:true})).toBeVisible();
+ await expect(card.getByRole('heading',{name:fr?'Son rythme chez vous ?':'How often do you use it?',exact:true})).toBeVisible();
+ await card.getByRole('radio',{name:fr?'Usage faible':'Low use',exact:true}).click();
+ await expect(card.getByRole('heading',{name:'Motion Array',exact:true})).toBeVisible();
+ await card.getByRole('button',{name:fr?'Suivant':'Next',exact:true}).click();
+ await card.getByRole('radio',{name:fr?'Usage intensif':'Intensive use',exact:true}).click();
+ await card.getByRole('button',{name:fr?'Terminer':'Finish',exact:true}).click();
+ await expect(card.getByRole('heading',{name:fr?'Casting au complet.':"That's the whole cast.",exact:true})).toBeVisible();
  await expect(card).not.toContainText(fr?/bonne taille|marathonien|Puissance/:/right size|marathon runner|Power/);
  await card.scrollIntoViewIfNeeded();await page.screenshot({path:`/tmp/tooltrim-bento-complete-${lang}-${width}.png`,fullPage:false});
- await card.getByRole('button',{name:fr?'Revoir mes choix':'Review my choices',exact:true}).click();
+ await card.getByRole('button',{name:fr?'Revoir mes usages':'Review my use',exact:true}).click();
  const row=card.getByRole('group',{name:fr?'Usage de Motion Array':'Use of Motion Array',exact:true});
- await row.getByRole('button',{name:fr?'Modifier l’usage':'Edit use',exact:true}).click();
- await expect(row.getByRole('button',{name:fr?'Usage faible':'Low use',exact:true})).toHaveAttribute('aria-pressed','true');
- await row.getByRole('button',{name:fr?'Usage soutenu':'Frequent use',exact:true}).click();
+ await expect(row.getByRole('radio',{name:fr?'Usage faible':'Low use',exact:true})).toHaveAttribute('aria-checked','true');
+ await row.getByRole('radio',{name:fr?'Usage soutenu':'Frequent use',exact:true}).click();
  await expect.poll(async()=>(await snapshot(page)).usage?.['motion-array']).toBe(4);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
  const heights=await card.locator('button').evaluateAll(buttons=>buttons.map(button=>button.getBoundingClientRect().height));expect(heights.every(height=>height>=44)).toBe(true);
+ await card.getByRole('button',{name:fr?'Résumé':'Summary',exact:true}).click();
  await card.getByRole('button',{name:fr?'Voir mes outils':'View my tools',exact:true}).click();await expect(page.locator('#ms-all-title')).toBeFocused();
 });
 
@@ -566,6 +569,8 @@ test('reviewing a saved pair takes priority over another pending question and ne
  stack.usage={'motion-array':4};stack.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-19T12:00:00.000Z'}};
  await control(request,'seed',{email:'pair-pending@example.invalid',state:stack});await page.goto('/en/ma-stack');await login(page,'en','pair-pending@example.invalid');await saved(page);
  await page.getByRole('button',{name:'Review my use',exact:true}).click();
+ await page.getByRole('button',{name:'Summary',exact:true}).click();
+ await page.getByRole('button',{name:'History',exact:true}).click();
  await expect.poll(async()=>{const card=await page.locator('.mu-card').boundingBox();const board=await page.locator('.ms-board').boundingBox();return !!card&&!!board&&card.y+card.height<=board.y;}).toBe(true);
  await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
  await expect(page.locator('.mf-now')).toHaveAttribute('data-kind','pair');
@@ -625,4 +630,58 @@ for(const lang of ['fr','en'] as const) test(`all-free stack ${lang}: compact bu
  await page.setViewportSize({width:390,height:900});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await expect(page.locator('.mu-card')).toBeVisible();
+});
+
+for (const lang of ['fr','en'] as const) for (const [width,height,expected] of [[320,900,285],[390,900,285],[820,900,295],[1440,900,290],[1440,800,255.2],[1440,700,230]]) {
+ test(`usage envelope ${lang} ${width}x${height}: answer, next, correction, summary and history stay still`,async({page,request})=>{
+  const fr=lang==='fr';await page.setViewportSize({width,height});
+  const value=state(['motion-array','grammarly','notion','trello']);
+  value.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly','notion','trello'],choices:{'motion-array':{source:'custom',amount:25,currency:'EUR',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'EUR',period:'monthly'}}};
+  value.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-25T00:00:00.000Z'}};
+  await control(request,'seed',{email:'usage-height@example.invalid',state:value});await page.goto(`/${lang}/ma-stack`);await login(page,lang,'usage-height@example.invalid');await saved(page,lang);
+  const card=page.locator('.mu-card');await expect(card).toBeVisible();await card.scrollIntoViewIfNeeded();
+  const stable=async()=>{await expect.poll(async()=>Math.abs((await card.boundingBox())!.height-expected)).toBeLessThan(1);expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);};
+  await stable();
+  expect(await card.getByRole('radio').evaluateAll(radios=>radios.every(r=>r.getBoundingClientRect().height>=56))).toBe(true);
+  const low=card.getByRole('radio',{name:fr?'Usage faible':'Low use',exact:true});await low.hover();await stable();
+  await low.click();await expect(card.getByRole('heading',{name:'Motion Array',exact:true})).toBeVisible();await stable();
+  const next=card.getByRole('button',{name:fr?'Suivant':'Next',exact:true});await next.focus();
+  const before=await page.evaluate(()=>({window:scrollY,content:document.querySelector('.asv2-content')?.scrollTop}));
+  await page.keyboard.press('Enter');await expect(card.getByRole('heading',{name:'Grammarly',exact:true})).toBeFocused();
+  expect(await page.evaluate(()=>({window:scrollY,content:document.querySelector('.asv2-content')?.scrollTop}))).toEqual(before);await stable();
+  await card.getByRole('radio',{name:fr?'Usage régulier':'Regular use',exact:true}).focus();await page.keyboard.press('End');
+  await expect(card.getByRole('radio',{name:fr?'Usage intensif':'Intensive use',exact:true})).toHaveAttribute('aria-checked','true');await stable();
+  await card.getByRole('button',{name:fr?'Terminer':'Finish',exact:true}).click();await stable();
+  await card.getByRole('button',{name:fr?'Revoir mes usages':'Review my use',exact:true}).click();await stable();
+  await card.getByRole('radio',{name:fr?'Usage soutenu':'Frequent use',exact:true}).click();await expect.poll(async()=>(await snapshot(page)).usage?.['motion-array']).toBe(4);await stable();
+  await card.getByRole('button',{name:fr?'Résumé':'Summary',exact:true}).click();await card.getByRole('button',{name:fr?'Historique':'History',exact:true}).click();await stable();
+  await expect(card.getByRole('region',{name:fr?'Historique des choix':'Choice history'})).toBeVisible();
+  await card.getByRole('button',{name:fr?'Résumé':'Summary',exact:true}).click();await stable();
+  await saved(page,lang);await page.reload();await saved(page,lang);await stable();
+  expect((await snapshot(page)).usage).toMatchObject({'motion-array':4,grammarly:5});
+  await page.screenshot({path:test.info().outputPath(`usage-${lang}-${width}-${height}.png`)});
+ });
+}
+
+test('many usage rows and a long choice history stay inside the compact scene',async({page,request})=>{
+ await page.setViewportSize({width:320,height:900});
+ const slugs=['microsoft-dynamics-business-central','motion-array','grammarly','notion','trello'];
+ const value=state(slugs);const paid=slugs.slice(0,3);
+ value.billing={paid,reviewed:slugs,choices:Object.fromEntries(paid.map((slug,index)=>[slug,{source:'custom',amount:99-index,currency:'EUR',period:'monthly'}]))};
+ for(let a=0;a<slugs.length;a++)for(let b=a+1;b<slugs.length;b++){const pair=[slugs[a],slugs[b]].sort().join('|');value.decisions[pair]={kind:'keep-both',kept:slugs[a],saving:0,at:'2026-10-25T00:00:00.000Z'};}
+ await control(request,'seed',{email:'long-usage@example.invalid',state:value});await page.goto('/en/ma-stack');await login(page,'en','long-usage@example.invalid');await saved(page);
+ const card=page.locator('.mu-card');await expect(card.getByRole('heading',{name:/Business Central/})).toBeVisible();
+ for(let index=0;index<3;index++){
+  const geometry=await card.evaluate(el=>{const tool=el.querySelector('.mu-tool')!.getBoundingClientRect(),gauge=el.querySelector('.mu-gauge')!.getBoundingClientRect(),caption=el.querySelector('.mu-caption')!.getBoundingClientRect(),footer=el.querySelector('.mu-footer')!.getBoundingClientRect();return {height:el.getBoundingClientRect().height,noOverlap:tool.bottom<=gauge.top+1&&caption.bottom<=footer.top+1};});
+  expect(geometry.height).toBe(285);expect(geometry.noOverlap).toBe(true);
+  await card.getByRole('radio',{name:'Regular use',exact:true}).click();await card.getByRole('button',{name:index<2?'Next':'Finish',exact:true}).click();
+ }
+ await card.getByRole('button',{name:'History',exact:true}).click();const history=card.getByRole('region',{name:'Choice history'});
+ await expect(history.getByRole('button',{name:'Review this choice',exact:true})).toHaveCount(10);
+ expect(await history.evaluate(el=>el.scrollHeight>el.clientHeight)).toBe(true);
+ await history.getByRole('button',{name:'Review this choice',exact:true}).last().scrollIntoViewIfNeeded();
+ expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(285);
+ await page.emulateMedia({reducedMotion:'no-preference'});await card.getByRole('button',{name:'Summary',exact:true}).click();
+ await card.getByRole('button',{name:'Review my use',exact:true}).click();await card.getByRole('radio',{name:'Intensive use',exact:true}).hover();
+ expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(285);
 });

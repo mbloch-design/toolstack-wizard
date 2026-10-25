@@ -13,26 +13,26 @@ function view({pending=false,count=2,other=false}={}){
 }
 it('ends with a truthful summary and allows reviewing every answer without clearing it',()=>{
  view({count:4});
- expect(screen.getByRole('heading',{name:'Tout est renseigné.'})).toBeVisible();
+ expect(screen.getByRole('heading',{name:'Casting au complet.'})).toBeVisible();
  expect(screen.queryByText(/à la bonne taille|marathonien|Puissance non évaluée/)).not.toBeInTheDocument();
- fireEvent.click(screen.getByRole('button',{name:'Revoir mes choix'}));
- expect(screen.getByRole('heading',{name:'Vos réponses restent à vous.'})).toHaveFocus();
+ fireEvent.click(screen.getByRole('button',{name:'Revoir mes usages'}));
+ expect(screen.getByRole('heading',{name:'Adobe Illustrator'})).toHaveFocus();
+ for(let i=0;i<3;i++) fireEvent.click(screen.getByRole('button',{name:'Suivant'}));
  expect(screen.getByRole('group',{name:'Usage de Tool 3'})).toBeVisible();
+ for(let i=0;i<3;i++) fireEvent.click(screen.getByRole('button',{name:'Outil précédent'}));
  const row=screen.getByRole('group',{name:'Usage de Adobe Illustrator'});
- fireEvent.click(within(row).getByRole('button',{name:'Modifier l’usage'}));
  expect(change).not.toHaveBeenCalled();
- expect(within(row).getByRole('button',{name:'Usage régulier'})).toHaveFocus();
- expect(within(row).getByRole('button',{name:'Usage régulier'})).toHaveAttribute('aria-pressed','true');
- fireEvent.click(within(row).getByRole('button',{name:'Usage faible'}));
+ expect(within(row).getByRole('radio',{name:'Usage régulier'})).toHaveAttribute('aria-checked','true');
+ fireEvent.click(within(row).getByRole('radio',{name:'Usage faible'}));
  expect(change).toHaveBeenCalledWith(1);
 });
 it('never declares completion while another question remains',()=>{
  view({other:true});
- expect(screen.queryByRole('heading',{name:'Tout est renseigné.'})).not.toBeInTheDocument();
+ expect(screen.queryByRole('heading',{name:'Casting au complet.'})).not.toBeInTheDocument();
  expect(screen.getByRole('button',{name:'Revoir mes usages'})).toBeVisible();
 });
 it('asks with explicit named choices and no catalogue power comparison',()=>{
  view({pending:true});
- expect(screen.getByRole('button',{name:'Usage intensif'})).toBeVisible();
+ expect(screen.getByRole('radio',{name:'Usage intensif'})).toBeVisible();
  expect(screen.queryByText(/Puissance|marathonien|bonne taille/)).not.toBeInTheDocument();
 });

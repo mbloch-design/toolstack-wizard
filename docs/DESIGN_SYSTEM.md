@@ -1753,3 +1753,19 @@ Quand tout est réglé, la carte large devient le **bilan** : économie en compt
 Un seul comportement pour tout le site : `useAddToStack()` (`src/hooks/useAddToStack.ts`), utilisé par `PinToolButton` (cartes, catalogue, fiche outil), l'Explorer et la recherche de Ma stack. Récit : l'image de l'élément se rassemble en jeton, vole en arc jusqu'au « Ma stack » visible (barre collée de l'Explorer, sinon barre du haut), l'outil est ajouté à l'atterrissage (rebond + compteur qui roule), puis la pilule sombre `.stack-toast` propose Annuler / Voir. Sans animation (mouvement réduit, cible invisible) l'ajout est immédiat.
 
 Jetons : `--stack-add-token-size`, `--stack-add-gather`, `--stack-add-travel`, `--stack-add-bump` (lus par `src/lib/stackAddStory.tsx`). Classes : `.stack-fly-ghost`, `.stack-toast*`. La pilule est rendue hors du routeur : jamais de `<Link>` dedans.
+
+### Usage review: stable envelope (`StackUsageReview`, `mu-*`, 25/10/2026)
+
+The usage card keeps its original compact envelope at a given viewport, regardless of its content or state. Historical reference (`7fdeff702f`, original usage scene): 290px at 1440×900, 255.19px at 1440×800, approximately 295px on tablet and 285px on a 390px phone. Desktop reuses the existing `--row2` clamp (230–290px); tablet is 295px and phone 285px. The envelope must not animate its height.
+
+User stories and acceptance:
+- **First answer:** show one tool, its current recorded cost and five understandable usage levels. The card remains compact; hover/focus previews a caption without saving. A click or radio arrow selection saves immediately and leaves that tool in place.
+- **Several tools:** explicit Next/Previous changes the scene, never the height. Skip this tool advances without inventing an answer; Take a break opens a partial summary. Progress counts actual recorded answers, not skipped steps. Reload restores recorded usage.
+- **Confirmation:** the checked radio and fixed caption show the answer; Next/Finish is explicit so a focused target cannot disappear underneath the user.
+- **Summary:** distinguish complete stack, completed usage with other questions remaining, and partial progress. Do not derive suitability or savings from usage alone.
+- **Correction:** revisit one tool at a time with its current radio checked; changing it preserves every other answer. Return to summary in the same envelope.
+- **History:** previous pair decisions remain accessible in a separate internally scrollable scene. Reviewing/cancelling a pair preserves its answer until confirmed; do not append a list beneath the card.
+- **Empty/removal/account change:** handle no paid tools and removal of the active tool; rely on existing scoped store/remount and never apply an answer to another tool/account.
+- **Keyboard/motion:** native radio semantics, arrows/Home/End, visible focus, no automatic page scrolling. Reduced motion removes decorative icon movement. Do not introduce a live region behind account dialogs.
+
+Three fixed zones: compact header, reserved scene, footer with 44px controls. Long names have two reserved lines; long history scrolls internally. Humour supplements clear level names: a cameo, a guest appearance, a regular at the desk, practically its own desk, shortcuts known by heart. Five white 56px radio tiles use 20px Iconoir icons and 12px labels; the checked choice has a pale blue fill, border and check. The question is the header, the cost sits beside the tool name, and the caption flows across at most two lines. Icons give a small nod on selection; the outer box and surrounding page stay still. Preserve the approved blue/peach pair-choice card.
