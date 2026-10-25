@@ -566,6 +566,7 @@ test('reviewing a saved pair takes priority over another pending question and ne
  stack.usage={'motion-array':4};stack.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-19T12:00:00.000Z'}};
  await control(request,'seed',{email:'pair-pending@example.invalid',state:stack});await page.goto('/en/ma-stack');await login(page,'en','pair-pending@example.invalid');await saved(page);
  await page.getByRole('button',{name:'Review my use',exact:true}).click();
+ await expect.poll(async()=>{const card=await page.locator('.mu-card').boundingBox();const board=await page.locator('.ms-board').boundingBox();return !!card&&!!board&&card.y+card.height<=board.y;}).toBe(true);
  await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
  await expect(page.locator('.mf-now')).toHaveAttribute('data-kind','pair');
  await expect(page.locator('.mf-now')).toContainText('Your current choice is to keep both.');

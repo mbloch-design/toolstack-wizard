@@ -1,3 +1,9 @@
+## 2026-10-25 : Révision du bento — hauteur et reconnexion
+
+- Les rangées du bento suivent la hauteur des réponses et de l’historique, sans recouvrir les contrôles de l’inventaire.
+- Le helper de connexion couvre aussi l’accueil après la déconnexion. La recette volumineuse conserve ses contrôles de comptage et de débordement, avec une attente ciblée adaptée au chargement à froid.
+- Vérifications ciblées : dix parcours navigateur validés, dont révision d’une paire, reconnexion A/B, affichage desktop et 60 outils sur mobile.
+
 ## 2026-10-25 : Déconnexion accompagnée
 
 - Animation du logo ToolTrim et message léger pendant la déconnexion réelle, sans temporisation artificielle ; animations désactivées si les mouvements réduits sont demandés.

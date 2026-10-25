@@ -178,7 +178,8 @@ test("a substantial stack stays readable at 320px", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 900 });
   await page.addInitScript(({ key, state }) => localStorage.setItem(key, JSON.stringify(state)), { key, state: seed(ids) });
   await page.goto("/fr/ma-stack", { waitUntil: "domcontentloaded" });
-  await expect(page.locator(".ms-tool").first()).toBeVisible();
+  // This fixture loads dozens of catalogue shards on a cold CI runner.
+  await expect(page.locator(".ms-tool").first()).toBeVisible({ timeout: 30_000 });
   expect(await page.locator(".ms-tool").count() + await page.locator(".ms-unavailable > div").count()).toBe(60);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
