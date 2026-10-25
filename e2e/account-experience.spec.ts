@@ -576,3 +576,18 @@ test('reviewing a saved pair takes priority over another pending question and ne
  await expect(page.locator('.mf-step')).toHaveAttribute('aria-label',new RegExp(`of ${countBefore}$`));
  expect((await snapshot(page)).decisions).toEqual({});
 });
+
+
+test('removing a tool closes its saved-pair review without deleting the historic decision',async({page,request})=>{
+ const stack=state(['notion','trello']);stack.billing={paid:[],reviewed:['notion','trello'],choices:{}};
+ stack.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-19T12:00:00.000Z'}};
+ await control(request,'seed',{email:'pair-removal@example.invalid',state:stack});await page.goto('/en/ma-stack');await login(page,'en','pair-removal@example.invalid');await saved(page);
+ await page.getByRole('button',{name:'Review my choices',exact:true}).click();
+ await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
+ await expect(page.getByRole('button',{name:'Cancel review',exact:true})).toBeVisible();
+ const current=await snapshot(page);
+ await change(page,{...current,selection:{...current.selection,pinnedToolSlugs:['notion'],toolEntries:current.selection.toolEntries.filter(entry=>entry.toolSlug==='notion')}});
+ await expect(page.getByRole('button',{name:'Cancel review',exact:true})).toHaveCount(0);
+ await expect(page.locator('.mf-now[data-kind="pair"]')).toHaveCount(0);
+ expect((await snapshot(page)).decisions['notion|trello'].kind).toBe('keep-both');
+});

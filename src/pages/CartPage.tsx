@@ -103,7 +103,7 @@ export default function CartPage() {
   const [pairReview, setPairReview] = useState<{scope:string;epoch:number;key:string}|null>(null);
   const pairReviewTrigger = useRef<HTMLButtonElement | null>(null);
   const requestedReviewKey = pairReview?.scope === reviewScope && pairReview.epoch === reviewEpoch ? pairReview.key : null;
-  const reviewKey = requestedReviewKey && decisions[requestedReviewKey]?.kind === "keep-both" ? requestedReviewKey : null;
+  const reviewKey = requestedReviewKey && decisions[requestedReviewKey]?.kind === "keep-both" && requestedReviewKey.split("|").every(slug => selectedTools.some(tool => toolKey(tool) === slug)) ? requestedReviewKey : null;
   const closePairReview = () => { setPairReview(null); requestAnimationFrame(() => { const target = pairReviewTrigger.current?.isConnected ? pairReviewTrigger.current : document.getElementById("ms-all-title"); target?.focus({ preventScroll: true }); }); };
   const overlapsById = useMemo(() => new Map(selectedTools.map((tool) => [tool.id,
     stackRelations(tool, selectedTools, categories, lang)
@@ -113,6 +113,7 @@ export default function CartPage() {
   // Monthly cost with the same rules as By use: freemium at 0 unless declared
   // paid, total converted at the site's dated rate (Michael, 7 Oct 2026).
   const plans = useStackPaidPlans();
+  const monthlyOf = (tool: ToolSummary) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0; };
   const stackCost = stackMonthlyCost(selectedTools, plans.isPaid, currency, lang);
   // Area colours of the budget ring, stable across the whole stack. Area colours stay those of the whole stack.
   const colorOf = (id: string) => AREA_COLORS[Math.max(0, mapTerritories.findIndex((territory) => territory.id === id))] || AREA_OTHER;
@@ -171,7 +172,6 @@ export default function CartPage() {
   // "checked" once nothing about it waits for an answer, and the ring says
   // how much of the stack is checked.
   const money = (value: number) => `${formatAmount(Math.round(value), currency, lang)}${t("/mois", "/mo")}`;
-  const monthlyOf = (tool: ToolSummary) => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" ? convertAmount(cost.monthly, cost.currency, currency) : 0; };
   // All my tools: one grid of cards, sorted by the tab the person picks.
   // How much the person uses each paid tool: the one thing the catalogue cannot know.
   // Five levels (1 asleep to 5 flat out), kept in the personal stack: they follow the account.
