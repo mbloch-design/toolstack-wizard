@@ -104,7 +104,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
   // payantes possibles… ») are not facts: no card is drawn from them.
   const hasFree = hasConfirmedFreeTier(tool) && !isPlaceholderPricingText(pricing?.free);
   const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public") && !isPlaceholderPricingText(pricing.paid);
-  const affiliateUrl = safeExternalUrl(tool.affiliateLink);
+  const affiliateUrl = safeExternalUrl(pv5?.affiliate_url) || safeExternalUrl(tool.affiliateLink);
   const isOneTime = pv5?.compare_plan_kind === "one_time";
   // Même calcul que le titre et la description (toolSeo.ts) : le montant
   // publié par l'éditeur dans sa devise, sans conversion. Le bloc convertissait
@@ -252,7 +252,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t, onOffi
         <p className="td-plans-foot">
           {verifiedOn && <span>{t(`Vérifiés le ${formatDay(verifiedOn)}`, `Checked on ${formatDay(verifiedOn)}`)}</span>}
           {officialUrl && (
-            <a href={officialUrl} target="_blank" rel={relPourLienOutil(officialUrl, tool.affiliateLink, tool.websiteUrl)} onClick={onOfficialClick}>
+            <a href={officialUrl} target="_blank" rel={relPourLienOutil(officialUrl, affiliateUrl, tool.websiteUrl)} onClick={onOfficialClick}>
               {t("Tarifs officiels", "Official pricing")}
               <ExternalLink aria-hidden />
             </a>

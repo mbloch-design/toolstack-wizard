@@ -226,6 +226,11 @@ Reprise du premier écran connecté : promesse ToolTrim, explication des trois b
 - Remplacement par le token existant `var(--radius-sm)` (0,375 rem, soit 6 px à la taille racine standard). Baseline conservée.
 - Validation : `npm run validate:design-tokens` PASS (221 rayons littéraux) ; test `ToolFeaturesBlock` et build production complet PASS.
 
+## 2026-10-24 · Fiche affiliée Uniqode
+
+- Nouvelle fiche FR/EN : QR dynamiques pour supports imprimés, distinction avec QR statiques gratuits et cartes de visite numériques, note éditoriale sourcée 3,8/5. Paliers actuels Essential/Core/Plus/Business+/Enterprise en USD, taux mensuels publiés avec facturation annuelle explicitée.
+- Premier lien affilié pour les CTA généraux, second lien fourni pour les tarifs, tous deux sponsorisés. Le champ tarifaire optionnel `affiliate_url` conserve le lien principal en fallback et rejette les protocoles non HTTP(S).
+- Logo officiel, image OG et trois visuels produit sourcés, sans captures fabriquées. Publication demandée le 25 octobre 2026, intégrée au dernier main sans changement des autres fiches ni de la configuration des comptes.
 
 ## 2026-10-23 · Retrait d’AutoPhotos.ai
 

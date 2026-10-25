@@ -144,6 +144,8 @@ export interface PricingV5 {
   source_domain?: string;
   verified_on?: string;
   official_source_url?: string;
+  /** Optional tracked destination dedicated to the pricing page. */
+  affiliate_url?: string;
   verification_status?: string;
   // Optional real-cost-by-team-size table (Asana pilot, 2026-06). Absent on
   // most tools, every consumer must handle undefined.

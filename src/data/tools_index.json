@@ -60629,5 +60629,57 @@
       "nordpass",
       "proton-pass"
     ]
+  },
+  {
+    "id": "uniqode",
+    "slug": "uniqode",
+    "name": "Uniqode",
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 3,
+      "notedOn": "2026-10-24"
+    },
+    "categoryId": "analytics",
+    "shortDescription": "Créez des QR codes dynamiques, modifiez leur destination après impression et suivez les scans de vos campagnes.",
+    "shortDescriptionEn": "Create dynamic QR codes, update destinations after printing, and track scans across your campaigns.",
+    "pricing": {
+      "free": "QR codes statiques gratuits, sans modification de destination ni suivi des scans. Essai des fonctions payantes : 14 jours sans carte bancaire.",
+      "paid": "QR dynamiques, facturation annuelle en USD : Essential 9 $US/mois ; Core 49 $US/mois ; Plus 99 $US/mois ; Business+ 399 $US/mois. Enterprise sur devis. Cartes de visite numériques : offre distincte."
+    },
+    "pricingEn": {
+      "free": "Free static QR codes, without editable destinations or scan analytics. Paid-feature trial: 14 days without a credit card.",
+      "paid": "Dynamic QR codes, annual billing in USD: Essential $9/month; Core $49/month; Plus $99/month; Business+ $399/month. Enterprise is custom-priced. Digital business cards are a separate offering."
+    },
+    "nativePrices": [
+      {
+        "amount": 9,
+        "currency": "USD",
+        "period": "monthly"
+      }
+    ],
+    "affiliateLink": "https://try.uniqode.com/lyuxl5fme6c4",
+    "websiteUrl": "https://www.uniqode.com/",
+    "ogImageUrl": "https://cdn.prod.website-files.com/6669ecc72092c5122374cf32/6731094d55afbe708065f595_uniqode-opengraph.png",
+    "logo": "/tool-media/logos/uniqode.png",
+    "tool_type": "specialise",
+    "functional_needs": [
+      "link-management",
+      "qr-codes",
+      "reporting",
+      "lead-generation"
+    ],
+    "verticals": [
+      "marketing",
+      "ecommerce",
+      "retail"
+    ],
+    "relevantFor": [
+      "Commerces avec menus, affiches ou emballages",
+      "Freelances gérant les supports imprimés de clients",
+      "Petites équipes marketing et événementielles"
+    ]
   }
 ]

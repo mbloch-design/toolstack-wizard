@@ -1,0 +1,127 @@
+{
+  "observedOn": "2026-10-24",
+  "status": "approved-for-publication",
+  "dependency_status": "approved-fallback",
+  "narrative_canon_id": null,
+  "narrative_canon_version": null,
+  "claims_projection_offset": null,
+  "scope": "User-requested bilingual affiliate fiche using the existing ToolTrim template. No hands-on test or measured conversion claim.",
+  "sources": [
+    "https://www.uniqode.com/",
+    "https://www.uniqode.com/pricing",
+    "https://docs.uniqode.com/en/articles/17025518-plans-and-pricing-for-qr-codes",
+    "https://docs.uniqode.com/en/articles/9305836-introduction-to-qr-code-analytics"
+  ],
+  "sourceNotes": [
+    "The current Help Center lists Essential/Core/Plus/Business+/Enterprise; pricing-page FAQs still reference older plans. Prefer the current plan table.",
+    "Prices are vendor-published monthly USD rates with annual billing. No annual total, exchange-rate conversion or unlisted monthly subscription inferred.",
+    "Pricing page says annual only; Help Center says monthly billing may be discussed with support. Only the public annual-billing offer is represented.",
+    "Main affiliate GET resolves to /qr-code-generator; dedicated pricing affiliate GET resolves to /pricing, both with PartnerStack parameters.",
+    "Logo is the official apple-touch icon. Gallery visuals and Open Graph image are sourced from the official homepage, not generated screenshots."
+  ],
+  "planTranslations": [
+    {"displayName":"Static QR codes","summary":"Fixed destination, without scan tracking.","featureHighlights":["Free static QR codes","Non-editable destination"]},
+    {"displayName":"Essential","summary":"$9/month, billed annually.","featureHighlights":["15 dynamic QR codes","60 days of analytics history","5 Linkpages and 1 user"]},
+    {"displayName":"Core","summary":"$49/month, billed annually.","featureHighlights":["250 dynamic QR codes","90 days of analytics history","10 Linkpages and 1 user","API, integrations, and CSV export"]},
+    {"displayName":"Plus","summary":"$99/month, billed annually.","featureHighlights":["500 dynamic QR codes","180 days of analytics history","25 Linkpages and 3 users","Custom domain and SSO are paid add-ons"]},
+    {"displayName":"Business+","summary":"$399/month, billed annually.","featureHighlights":["2,000 dynamic QR codes","Advertised lifetime analytics history","100 Linkpages and 5 users","1 custom domain and SSO included"]},
+    {"displayName":"Enterprise","summary":"Custom pricing and limits.","featureHighlights":["Custom volumes and governance","Dedicated support and white-label branding"]}
+  ],
+  "tool": {
+    "id": "uniqode",
+    "slug": "uniqode",
+    "name": "Uniqode",
+    "category": "analytics",
+    "categoryId": "analytics",
+    "shortDescription": "Créez des QR codes dynamiques, modifiez leur destination après impression et suivez les scans de vos campagnes.",
+    "shortDescriptionEn": "Create dynamic QR codes, update destinations after printing, and track scans across your campaigns.",
+    "description": "Uniqode relie vos supports imprimés à des destinations modifiables : menus, fiches produit, pages de campagne ou formulaires. L’intérêt est de conserver le même QR code tout en faisant évoluer son contenu et en suivant les scans.",
+    "longDescription": "Uniqode s’adresse aux commerces, aux petites équipes marketing et aux freelances qui gèrent des supports imprimés pour leurs clients. Un menu, une affiche ou un emballage peut conserver son QR code pendant que la destination change. C’est utile lorsque réimprimer les supports à chaque mise à jour serait contraignant.\n\nLe produit réunit création personnalisée, QR codes dynamiques, Linkpages et formulaires. Les statistiques permettent de comparer les scans ; elles ne constituent pas, à elles seules, une preuve de vente ou de retour sur investissement. Essential couvre les premiers besoins, tandis que Core ajoute notamment l’API, les intégrations et les rapports plus détaillés. Les cartes de visite numériques constituent une offre distincte : leur gratuité ne signifie pas que les QR codes dynamiques sont gratuits.\n\nPour démarrer, l’essai de 14 jours permet de créer un code et de tester sa destination sur un support provisoire. Avant une impression en volume, choisissez le plan adapté au nombre de codes actifs et à l’historique statistique nécessaire. Les codes dynamiques exigent un abonnement actif ; les codes statiques gratuits restent utilisables, mais leur destination ne peut pas être modifiée.",
+    "longDescriptionEn": "Uniqode is aimed at retailers, small marketing teams, and freelancers managing printed materials for clients. A menu, poster, or package can retain its QR code while the destination changes. This is useful when reprinting materials after each update would be inconvenient.\n\nThe product combines branded code creation, dynamic QR codes, Linkpages, and forms. Scan statistics help compare engagement; they do not, on their own, prove sales or return on investment. Essential covers initial needs, while Core adds an API, integrations, and more detailed reporting. Digital business cards are a separate offering: their free tier does not make dynamic QR codes free.\n\nStart with the 14-day trial to create a code and test its destination on a temporary support. Before a large print run, choose a plan that fits the number of active codes and reporting history required. Dynamic codes need an active subscription; free static codes remain usable, but their destinations cannot be changed.",
+    "websiteUrl": "https://www.uniqode.com/",
+    "affiliateLink": "https://try.uniqode.com/lyuxl5fme6c4",
+    "affiliateCtaLabelFr": "Essayer Uniqode gratuitement",
+    "affiliateCtaLabelEn": "Try Uniqode for free",
+    "logo": "/tool-media/logos/uniqode.png",
+    "ogImageUrl": "https://cdn.prod.website-files.com/6669ecc72092c5122374cf32/6731094d55afbe708065f595_uniqode-opengraph.png",
+    "pricing": {
+      "free": "QR codes statiques gratuits, sans modification de destination ni suivi des scans. Essai des fonctions payantes : 14 jours sans carte bancaire.",
+      "paid": "QR dynamiques, facturation annuelle en USD : Essential 9 $US/mois ; Core 49 $US/mois ; Plus 99 $US/mois ; Business+ 399 $US/mois. Enterprise sur devis. Cartes de visite numériques : offre distincte."
+    },
+    "pricingEn": {
+      "free": "Free static QR codes, without editable destinations or scan analytics. Paid-feature trial: 14 days without a credit card.",
+      "paid": "Dynamic QR codes, annual billing in USD: Essential $9/month; Core $49/month; Plus $99/month; Business+ $399/month. Enterprise is custom-priced. Digital business cards are a separate offering."
+    },
+    "pricing_v5": {
+      "compare_price_monthly_eur": null,
+      "compare_plan_name": "Essential",
+      "compare_plan_kind": "paid",
+      "price_reliability": "official_explicit",
+      "verified_on": "2026-10-24",
+      "source_domain": "uniqode.com",
+      "official_source_url": "https://www.uniqode.com/pricing",
+      "affiliate_url": "https://try.uniqode.com/wvxety1c73nj-exlg8",
+      "verification_status": "official_explicit",
+      "usage_sensitive": true,
+      "cautions": ["Les montants mensuels affichés correspondent à une facturation annuelle, pas à un abonnement mensuel sans engagement.", "Les codes dynamiques deviennent inactifs à la fin de l’essai sans abonnement. L’export CSV des statistiques est disponible à partir de Core."],
+      "cautionsEn": ["Displayed monthly rates require annual billing; they are not month-to-month subscription prices.", "Trial dynamic codes become inactive without a subscription. Analytics CSV export starts on Core."],
+      "plans": [
+        {"planKey":"static","displayName":"QR statiques","summary":"Destination fixe, sans suivi des scans.","isFree":true,"isComparePlan":false,"nativeAmount":0,"nativeCurrency":"USD","featureHighlights":["QR codes statiques gratuits","Destination non modifiable"]},
+        {"planKey":"essential","displayName":"Essential","summary":"9 $US/mois, facturation annuelle.","isFree":false,"isComparePlan":true,"nativeAmount":9,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":"annual","taxInclusion":"unknown","observedOn":"2026-10-24","detailsSourceUrl":"https://docs.uniqode.com/en/articles/17025518-plans-and-pricing-for-qr-codes","featureHighlights":["15 QR codes dynamiques","60 jours d’historique statistique","5 Linkpages et 1 utilisateur"]},
+        {"planKey":"core","displayName":"Core","summary":"49 $US/mois, facturation annuelle.","isFree":false,"isComparePlan":false,"nativeAmount":49,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":"annual","taxInclusion":"unknown","observedOn":"2026-10-24","featureHighlights":["250 QR codes dynamiques","90 jours d’historique statistique","10 Linkpages et 1 utilisateur","API, intégrations et export CSV"]},
+        {"planKey":"plus","displayName":"Plus","summary":"99 $US/mois, facturation annuelle.","isFree":false,"isComparePlan":false,"nativeAmount":99,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":"annual","taxInclusion":"unknown","observedOn":"2026-10-24","featureHighlights":["500 QR codes dynamiques","180 jours d’historique statistique","25 Linkpages et 3 utilisateurs","Domaine personnalisé et SSO en options payantes"]},
+        {"planKey":"business-plus","displayName":"Business+","summary":"399 $US/mois, facturation annuelle.","isFree":false,"isComparePlan":false,"nativeAmount":399,"nativeCurrency":"USD","billingPeriod":"monthly","billingCommitment":"annual","taxInclusion":"unknown","observedOn":"2026-10-24","featureHighlights":["2 000 QR codes dynamiques","Historique statistique sans limite de durée annoncée","100 Linkpages et 5 utilisateurs","1 domaine personnalisé et SSO inclus"]},
+        {"planKey":"enterprise","displayName":"Enterprise","summary":"Sur devis, limites personnalisées.","isFree":false,"isComparePlan":false,"nativeAmount":null,"nativeCurrency":"USD","featureHighlights":["Volumes et gouvernance personnalisés","Accompagnement dédié et marque blanche"]}
+      ]
+    },
+    "functional_needs": ["link-management", "qr-codes", "reporting", "lead-generation"],
+    "covers": ["link-management", "qr-codes"],
+    "verticals": ["marketing", "ecommerce", "retail"],
+    "relevantFor": ["Commerces avec menus, affiches ou emballages", "Freelances gérant les supports imprimés de clients", "Petites équipes marketing et événementielles"],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "alternatives": [],
+    "pros": ["La destination d’un code dynamique peut évoluer sans réimprimer le support.", "Les paliers distinguent volume de codes, historique statistique et collaboration.", "Linkpages et formulaires prolongent le parcours après le scan."],
+    "prosEn": ["Dynamic-code destinations can change without reprinting materials.", "Plans distinguish code volume, reporting history, and collaboration.", "Linkpages and forms extend the journey after a scan."],
+    "cons": ["Les QR codes dynamiques reposent sur un abonnement actif.", "Le tarif public est présenté au mois mais facturé annuellement.", "L’export CSV et les analyses détaillées nécessitent Core ou un palier supérieur."],
+    "consEn": ["Dynamic QR codes depend on an active subscription.", "Public rates are displayed monthly but billed annually.", "CSV export and detailed analytics require Core or a higher plan."],
+    "useCases": ["Mettre à jour un menu ou une fiche produit sans changer le QR imprimé.", "Comparer les scans de plusieurs affiches ou supports événementiels.", "Préparer pour un client une campagne imprimée reliée à une page mobile ou à un formulaire."],
+    "useCasesEn": ["Update a menu or product page without changing the printed QR code.", "Compare scans across posters or event materials.", "Prepare a client's print campaign linked to a mobile page or form."],
+    "verdict": {
+      "keepIf": ["Tu mets régulièrement à jour les destinations de QR codes déjà imprimés.", "Tu as besoin de centraliser des campagnes et de suivre leurs scans."],
+      "avoidIf": ["Un QR statique vers une adresse durable suffit à ton besoin.", "Tu veux que des QR dynamiques restent actifs sans maintenir d’abonnement."],
+      "threshold": "Teste d’abord un QR avec l’essai de 14 jours. Essential convient à un premier parc de 15 codes ; choisis Core si l’API, les intégrations ou l’export statistique sont nécessaires."
+    },
+    "verdictEn": {
+      "keepIf": ["You regularly update destinations behind QR codes already in print.", "You need centralized campaigns and scan reporting."],
+      "avoidIf": ["A static QR code pointing to a stable address is enough.", "You need dynamic QR codes to remain active without maintaining a subscription."],
+      "threshold": "Start by testing a QR code during the 14-day trial. Essential suits an initial set of 15 codes; choose Core when API access, integrations, or analytics export are required."
+    },
+    "toolTrimRating": {
+      "valeurAjoutee": 4, "simplicite": 4, "utilisation": 4, "puissance": 4, "reversibilite": 3,
+      "notedOn": "2026-10-24",
+      "evidence": {
+        "valeurAjoutee": "La destination modifiable évite de remplacer un QR déjà imprimé quand la page cible change. Source : https://www.uniqode.com/, 24 octobre 2026.",
+        "simplicite": "Personnalisation des codes et essai sans carte ; le choix du plan dépend surtout du volume et des rapports attendus. Source : https://docs.uniqode.com/en/articles/17025518-plans-and-pricing-for-qr-codes, 24 octobre 2026.",
+        "utilisation": "Adapté aux supports imprimés récurrents et aux campagnes ; un simple lien fixe ne justifie pas forcément le service payant. Source : https://www.uniqode.com/, 24 octobre 2026.",
+        "puissance": "API, intégrations, rapports et collaboration sont disponibles selon le palier, sans être tous inclus à l’entrée. Source : https://docs.uniqode.com/en/articles/17025518-plans-and-pricing-for-qr-codes, 24 octobre 2026.",
+        "reversibilite": "L’export CSV des statistiques commence à Core, mais un QR dynamique imprimé reste dépendant d’un compte actif. Sources : https://www.uniqode.com/pricing et https://docs.uniqode.com/en/articles/9305836-introduction-to-qr-code-analytics, 24 octobre 2026."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Editable destinations avoid replacing an already printed QR code when its target page changes. Source: https://www.uniqode.com/, October 24, 2026.",
+        "simplicite": "Code customization and a no-card trial; plan selection mainly depends on volume and reporting needs. Source: https://docs.uniqode.com/en/articles/17025518-plans-and-pricing-for-qr-codes, October 24, 2026.",
+        "utilisation": "Fits recurring printed materials and campaigns; a simple permanent link does not necessarily justify a paid service. Source: https://www.uniqode.com/, October 24, 2026.",
+        "puissance": "API access, integrations, reports, and collaboration depend on the plan; not all are included at entry level. Source: https://docs.uniqode.com/en/articles/17025518-plans-and-pricing-for-qr-codes, October 24, 2026.",
+        "reversibilite": "Analytics CSV export starts on Core, but printed dynamic codes still depend on an active account. Sources: https://www.uniqode.com/pricing and https://docs.uniqode.com/en/articles/9305836-introduction-to-qr-code-analytics, October 24, 2026."
+      }
+    },
+    "seo": {
+      "metaDescription": "Avis Uniqode : QR codes dynamiques, suivi des scans et tarifs en USD. Comparez les plans et testez l’outil avant d’imprimer vos supports.",
+      "metaDescriptionEn": "Uniqode review: dynamic QR codes, scan analytics, and USD pricing. Compare plans and try the platform before printing campaign materials.",
+      "idealForFr": "Un commerce ou une petite équipe qui veut gérer des QR codes sur des supports imprimés et faire évoluer leur destination.",
+      "idealForEn": "A retailer or small team managing QR codes on printed materials and updating their destinations."
+    }
+  }
+}
