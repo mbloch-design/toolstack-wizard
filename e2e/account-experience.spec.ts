@@ -504,3 +504,75 @@ for (const width of [390,1440]) test(`switching stack language ${width} keeps th
  await expect(page.locator('.ms-tool')).toHaveCount(1);await saved(page,'fr');
  expect((await control(request,'state')).requests.filter((r:{path:string})=>r.path==='/api/stack-account'||r.path==='/api/account-profile').length).toBe(before);
 });
+
+for (const lang of ['fr','en'] as const) for(const width of [390,1440]) test(`bento completion ${lang} ${width}: review choices without unsupported advice`,async({page,request})=>{
+ const fr=lang==='fr';await page.setViewportSize({width,height:1000});
+ const stack=state(['motion-array','grammarly']);stack.billing={paid:['motion-array','grammarly'],reviewed:['motion-array','grammarly'],choices:{'motion-array':{source:'custom',amount:29,currency:'EUR',period:'monthly'},grammarly:{source:'custom',amount:12,currency:'EUR',period:'monthly'}}};
+ await control(request,'seed',{email:'bento-review@example.invalid',state:stack});
+ await page.goto(`/${lang}/ma-stack`);await login(page,lang,'bento-review@example.invalid');await saved(page,lang);
+ const card=page.locator('.mu-card');
+ await expect(card.getByRole('heading',{name:fr?'Comment utilisez-vous cet outil ?':'How much do you use this tool?',exact:true})).toBeVisible();
+ await card.getByRole('button',{name:fr?'Usage faible':'Low use',exact:true}).click();
+ await card.getByRole('button',{name:fr?'Usage intensif':'Intensive use',exact:true}).click();
+ await expect(card.getByRole('heading',{name:fr?'Tout est renseigné.':'Everything is filled in.',exact:true})).toBeVisible();
+ await expect(card).not.toContainText(fr?/bonne taille|marathonien|Puissance/:/right size|marathon runner|Power/);
+ await card.scrollIntoViewIfNeeded();await page.screenshot({path:`/tmp/tooltrim-bento-complete-${lang}-${width}.png`,fullPage:false});
+ await card.getByRole('button',{name:fr?'Revoir mes choix':'Review my choices',exact:true}).click();
+ const row=card.getByRole('group',{name:fr?'Usage de Motion Array':'Use of Motion Array',exact:true});
+ await row.getByRole('button',{name:fr?'Modifier l’usage':'Edit use',exact:true}).click();
+ await expect(row.getByRole('button',{name:fr?'Usage faible':'Low use',exact:true})).toHaveAttribute('aria-pressed','true');
+ await row.getByRole('button',{name:fr?'Usage soutenu':'Frequent use',exact:true}).click();
+ await expect.poll(async()=>(await snapshot(page)).usage?.['motion-array']).toBe(4);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);
+ const heights=await card.locator('button').evaluateAll(buttons=>buttons.map(button=>button.getBoundingClientRect().height));expect(heights.every(height=>height>=44)).toBe(true);
+ await card.getByRole('button',{name:fr?'Voir mes outils':'View my tools',exact:true}).click();await expect(page.locator('#ms-all-title')).toBeFocused();
+});
+
+test('reviewing a kept pair preserves its answer until a replacement is confirmed',async({page,request})=>{
+ const stack=state(['notion','trello']);stack.billing={paid:[],reviewed:['notion','trello'],choices:{}};
+ stack.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-19T12:00:00.000Z'}};
+ await control(request,'seed',{email:'pair-review@example.invalid',state:stack});await page.goto('/en/ma-stack');await login(page,'en','pair-review@example.invalid');await saved(page);
+ const before=(await snapshot(page)).decisions;
+ await page.getByRole('button',{name:'Review my choices',exact:true}).click();
+ await page.locator('.mu-history').getByRole('button',{name:/^(Review again|Review this choice)$/}).click();
+ expect((await snapshot(page)).decisions).toEqual(before);
+ await expect(page.locator('.mf-now')).toBeVisible();
+ for(const width of [1440,390]) {
+  await page.setViewportSize({width,height:900});
+  if(width===390) await page.locator('.mf-now .mf-expand[aria-expanded="false"]').click();
+  for(const face of await page.locator('.mf-face').all()) {
+  await face.hover();
+  await expect.poll(async()=>face.evaluate(el=>{
+   const logo=el.querySelector('.mf-face-logo')!.getBoundingClientRect();
+   const image=el.querySelector('.mf-face-logo > :first-child')!.getBoundingClientRect();
+   const name=el.querySelector('.mf-face-name')!.getBoundingClientRect();
+   return image.width<=logo.width+1 && (image.right<=name.left || image.bottom<=name.top);
+  })).toBe(true);
+  }
+ }
+ await page.setViewportSize({width:1440,height:900});
+ await page.getByRole('button',{name:'Cancel review',exact:true}).click();
+ expect((await snapshot(page)).decisions).toEqual(before);
+ await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
+ await page.getByRole('button',{name:'Keep Notion, remove Trello',exact:true}).click();
+ await expect.poll(async()=>(await snapshot(page)).decisions['notion|trello']?.kind).toBe('keep-one');
+ await expect(page.locator('#ms-all-title')).toBeFocused();
+});
+
+
+test('reviewing a saved pair takes priority over another pending question and never duplicates it',async({page,request})=>{
+ const stack=state(['notion','trello','motion-array','grammarly']);
+ stack.billing={paid:['motion-array'],reviewed:['notion','trello','motion-array'],choices:{'motion-array':{source:'custom',amount:29,currency:'EUR',period:'monthly'}}};
+ stack.usage={'motion-array':4};stack.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-19T12:00:00.000Z'}};
+ await control(request,'seed',{email:'pair-pending@example.invalid',state:stack});await page.goto('/en/ma-stack');await login(page,'en','pair-pending@example.invalid');await saved(page);
+ await page.getByRole('button',{name:'Review my use',exact:true}).click();
+ await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
+ await expect(page.locator('.mf-now')).toHaveAttribute('data-kind','pair');
+ await expect(page.locator('.mf-now')).toContainText('Your current choice is to keep both.');
+ expect((await snapshot(page)).decisions['notion|trello'].kind).toBe('keep-both');
+ const countBefore=(await page.locator('.mf-step').getAttribute('aria-label'))?.match(/\d+$/)?.[0];expect(countBefore).toBeTruthy();
+ await change(page,{...(await snapshot(page)),decisions:{}});
+ await expect(page.getByRole('button',{name:'Cancel review',exact:true})).toHaveCount(0);
+ await expect(page.locator('.mf-step')).toHaveAttribute('aria-label',new RegExp(`of ${countBefore}$`));
+ expect((await snapshot(page)).decisions).toEqual({});
+});

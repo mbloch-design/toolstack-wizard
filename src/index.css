@@ -40304,7 +40304,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 @media (min-width: 761px) {
   .ms-page .mf .mf-now[data-kind="pair"] .mf-face { grid-template-columns: 52px minmax(0, 1fr) auto; }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-face .mf-face-logo { grid-column: 1; grid-row: 1 / span 2; width: 48px !important; height: 48px !important; }
-  .ms-page .mf .mf-now[data-kind="pair"] .mf-face .mf-face-logo img, .ms-page .mf .mf-now[data-kind="pair"] .mf-face .mf-face-logo > :first-child { width: 48px !important; height: 48px !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face .mf-face-logo img, .ms-page .mf .mf-now[data-kind="pair"] .mf-face .mf-face-logo > :first-child { width: 48px !important; height: 48px !important; min-width: 0 !important; min-height: 0 !important; }
 }
 /* Nothing left to decide: no decision card; price stands tall, split and optimisation take the width. */
 @media (min-width: 1181px) { .ms-page .mf .mf-grid:not(:has(.mf-now)) { grid-template-areas: "price bal bal" "price fit fit"; } }
@@ -40785,4 +40785,37 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   @keyframes ms-arrival-breathe { 0%, 100% { opacity: .55; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-3px); } }
   @media (max-width: 640px) { .ms-arrival-outline { grid-template-columns: 1fr; } .ms-arrival-outline span { height: 88px; } }
   @media (prefers-reduced-motion: reduce) { .ms-arrival-mark { animation: none; } }
+}
+
+
+@layer components {
+  .ms-page .mf .mu-card { height: auto; min-height: 0; overflow: visible; gap: 16px; align-self: start; }
+  .mu-kicker { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--color-muted); font: 500 14px/1.4 var(--font-ui); }
+  .mu-card > h2 { margin: 0; font: 600 clamp(21px, 2vw, 26px)/1.2 var(--font-ui); letter-spacing: -.025em; color: var(--color-text-strong); }
+  .mu-copy { margin: 0; font: 400 15px/1.55 var(--font-ui); color: var(--color-muted); }
+  .mu-confirm { display: flex; align-items: center; gap: 8px; margin: 0; font: 500 14px/1.5 var(--font-ui); color: var(--color-text-strong); }
+  .mu-confirm svg { flex: none; }
+  .mu-rows { display: grid; gap: 20px; padding: 0; margin: 0; list-style: none; }
+  .mu-rows > li { display: grid; gap: 12px; min-width: 0; }
+  .mu-rows > li + li { padding-top: 20px; border-top: 1px solid var(--color-border-soft); }
+  .mu-tool { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .mu-tool > div { min-width: 0; }
+  .mu-tool h3 { margin: 0 0 4px; font: 600 18px/1.25 var(--font-ui); color: var(--color-text-strong); overflow-wrap: anywhere; }
+  .mu-tool p { margin: 0; font: 400 14px/1.4 var(--font-ui); color: var(--color-muted); }
+  .mu-options { display: grid; gap: 8px; }
+  .mu-options button { min-height: 44px; padding: 10px 14px; border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-surface); color: var(--color-text-strong); text-align: left; font: 500 15px/1.35 var(--font-ui); cursor: pointer; }
+  .mu-options button:hover { border-color: var(--color-text-strong); }
+  .mu-options button[aria-pressed="true"] { border-color: var(--color-text-strong); box-shadow: inset 0 0 0 1px var(--color-text-strong); }
+  .mu-options button:focus-visible, .mu-card > h2:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+  .mu-answer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font: 400 14px/1.5 var(--font-ui); color: var(--color-muted); }
+  .mu-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+  .ms-page .mf .mu-card .mk-button { min-height: 44px; font-size: 14px; white-space: normal; }
+  .mu-history { padding-top: 16px; border-top: 1px solid var(--color-border-soft); }
+  @media (max-width: 640px) { .ms-page .mf .mu-card .mu-actions > .mk-button { width: 100%; } }
+}
+
+@layer components {
+  .mu-pair { display: grid; gap: 10px; }
+  .mu-pair p { margin: 0; font: 400 14px/1.5 var(--font-ui); }
+  .mu-pair .mk-button { justify-self: start; }
 }

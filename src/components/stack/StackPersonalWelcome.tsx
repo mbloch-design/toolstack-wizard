@@ -56,7 +56,7 @@ export default function StackPersonalWelcome({ empty, pending = 0, children }: {
       ? t(`Bienvenue chez vous. ${pending} petite${s} décision${s}, une à la fois, et c’est plié.`, `Welcome home. ${pending} small decision${s}, one at a time, and you’re done.`)
       : pending > 0
         ? t(`${pending} petite${s} décision${s} vous attend${pending > 1 ? "ent" : ""}. Promis, aucune ne mord.`, `${pending} small decision${s} waiting. None of them bite.`)
-        : t("Tout est à jour. Rien à signaler, à part votre bon goût.", "All up to date. Nothing to report, apart from your good taste.");
+        : t("Votre stack, à votre rythme. Vous gardez la main.", "Your stack, at your pace. You stay in control.");
   const rate = dailyRate ? convertAmount(dailyRate.amount, dailyRate.currency, currency) : null;
   const money = (amount: number) => formatAmount(Math.round(amount), currency, lang);
   return <div className="ms-personal-welcome">

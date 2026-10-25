@@ -1,3 +1,4 @@
+import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
 import StackArrival from "@/components/stack/StackArrival";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
@@ -96,7 +97,14 @@ export default function CartPage() {
   // Pairs kept on purpose (a decision) are no longer flagged anywhere.
   const { currency } = useCurrency();
   const hourly = dailyRate ? convertAmount(dailyRate.amount, dailyRate.currency, currency) / 7 : null;
-  const { decisions, decide, reopen } = useStackDecisions(t, (amount) => `${formatAmount(Math.round(amount), currency, lang)}${t("/mois", "/mo")}`, currency);
+  const { decisions, decide } = useStackDecisions(t, (amount) => `${formatAmount(Math.round(amount), currency, lang)}${t("/mois", "/mo")}`, currency);
+  const reviewScope = getPersonalStackScope();
+  const reviewEpoch = getPersonalStackScopeEpoch(reviewScope);
+  const [pairReview, setPairReview] = useState<{scope:string;epoch:number;key:string}|null>(null);
+  const pairReviewTrigger = useRef<HTMLButtonElement | null>(null);
+  const requestedReviewKey = pairReview?.scope === reviewScope && pairReview.epoch === reviewEpoch ? pairReview.key : null;
+  const reviewKey = requestedReviewKey && decisions[requestedReviewKey]?.kind === "keep-both" ? requestedReviewKey : null;
+  const closePairReview = () => { setPairReview(null); requestAnimationFrame(() => { const target = pairReviewTrigger.current?.isConnected ? pairReviewTrigger.current : document.getElementById("ms-all-title"); target?.focus({ preventScroll: true }); }); };
   const overlapsById = useMemo(() => new Map(selectedTools.map((tool) => [tool.id,
     stackRelations(tool, selectedTools, categories, lang)
       .filter((relation) => (relation.explicit || relation.commonUses.length > 0) && decisions[pairKey(toolKey(tool), toolKey(relation.tool))]?.kind !== "keep-both")
@@ -117,6 +125,14 @@ export default function CartPage() {
   const unreviewed = freemiumTools.filter((tool) => !plans.isReviewed(toolKey(tool)));
   // Hero and Overlaps section share one computation: same pairs, same amount.
   const overlapScore = useMemo(() => scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang, decisions), [selectedTools, categories, plans.paid, plans.choices, currency, lang, decisions]);
+  const reviewingPair = reviewKey ? (() => {
+    const { [reviewKey]: _previous, ...otherChoices } = decisions;
+    const scored = scoreOverlapPairs(selectedTools, categories, plans.isPaid, currency, lang, otherChoices).pairs.find(({a,b}) => pairKey(toolKey(a),toolKey(b)) === reviewKey);
+    if (scored) return scored;
+    const [a,b] = reviewKey.split("|").map(slug => lookup.get(slug));
+    return a && b ? { a, b, shared: [], explicit: false, double: Math.min(monthlyOf(a),monthlyOf(b)) } : undefined;
+  })() : undefined;
+  const decisionPairs = reviewingPair && !overlapScore.pairs.some(({a,b}) => pairKey(toolKey(a),toolKey(b)) === reviewKey) ? [...overlapScore.pairs, reviewingPair] : overlapScore.pairs;
   const overlapPairs = overlapScore.pairs.length;
   // The map marks only tools still in an unsettled pair (pairs kept on purpose
   // and decided pairs no longer come out of scoreOverlapPairs).
@@ -203,7 +219,7 @@ export default function CartPage() {
       ],
       bulk: unreviewed.length > 1 ? { label: t(`Aucun n’est payant (${unreviewed.length})`, `None is paid (${unreviewed.length})`), onClick: () => { unreviewed.forEach(tool => plans.choosePlan(toolKey(tool), null)); trackEvent("stack_freemium_answer", { freemium: unreviewed.length, paid: 0, quick: true }); } } : undefined,
     })),
-    ...overlapScore.pairs.map(({ a, b, shared, explicit, double }): Finding => ({
+    ...decisionPairs.map(({ a, b, shared, explicit, double }): Finding => ({
       key: `pair:${pairKey(toolKey(a), toolKey(b))}`, kind: "pair", tools: [a, b],
       title: t(`${a.name} ou ${b.name}\u00a0?`, `${a.name} or ${b.name}?`),
       detail: why(shared, explicit), costs: [monthlyOf(a), monthlyOf(b)], stake: double,
@@ -222,8 +238,15 @@ export default function CartPage() {
       actions: [{ label: t("Ajouter le prix", "Add the price"), primary: true, ariaLabel: t(`Ajouter le prix de ${tool.name}`, `Add the price of ${tool.name}`), onClick: () => selectTool(toolKey(tool)) }],
     })),
   ];
+  const reviewingFinding = reviewKey ? deckItems.find(item => item.key === `pair:${reviewKey}`) : null;
+  if (reviewingFinding) {
+    reviewingFinding.detail = t("Votre choix actuel : garder les deux. Il reste conservé tant que vous ne confirmez pas une autre réponse.", "Your current choice is to keep both. It stays saved until you confirm another answer.");
+    reviewingFinding.actions = reviewingFinding.actions.map(action => ({ ...action, onClick: () => { action.onClick(); closePairReview(); } }));
+    reviewingFinding.actions.push({ label: t("Annuler la révision", "Cancel review"), onClick: closePairReview });
+  }
   // The first plan or price question gets the tool's catalogue plans, one tap
   // each: most of the time the price is known, the plan is what is missing.
+  const usagePending = selectedTools.length > 1 ? selectedTools.filter(tool => monthlyOf(tool) > 0 && !usage[toolKey(tool)]).length : 0;
   const planItem = deckItems.find((item) => item.kind === "freemium" || item.kind === "price");
   const planTool = planItem?.tools[0];
   const { tool: planDetail } = useToolBySlug(planTool ? toolKey(planTool) : undefined);
@@ -252,12 +275,17 @@ export default function CartPage() {
   const pastSavings = latestRemovedStackDecisions(decisions, pinnedKeys);
   const saved = pastSavings.reduce((sum, d) => sum + (decisionSavingInCurrency(d, currency) ?? 0), 0);
   const unknownSavings = pastSavings.some((d) => d.saving > 0 && decisionSavingInCurrency(d, currency) === null);
-  // The deck keeps what it can act on (reopen pairs kept on purpose); the
-  // saving itself is the budget card's, said once.
-  const history = (keptBoth.length > 0 || unknownSavings) && <p className="ms-decided">
+  // Reviewing a saved decision never deletes it; replacement happens only on confirmation.
+  const history = (keptBoth.length > 0 || unknownSavings) && <div className="ms-decided">
     {unknownSavings && <span>{t("Baisse estimée : devise inconnue.", "Estimated reduction: currency unknown.")}</span>}
-    {keptBoth.length > 0 && <span>{t(`${keptBoth.length} paire${keptBoth.length > 1 ? "s" : ""} gardée${keptBoth.length > 1 ? "s" : ""} volontairement.`, `${keptBoth.length} pair${keptBoth.length > 1 ? "s" : ""} kept on purpose.`)} <button type="button" className="ms-inline-link" onClick={() => keptBoth.forEach((key) => { const [a, b] = key.split("|"); reopen(a, b); })}>{t("Revoir", "Review again")}</button></span>}
-  </p>;
+    {keptBoth.map(key => {
+      const [a,b] = key.split("|").map(slug => lookup.get(slug));
+      if (!a || !b) return null;
+      return <div key={key} className="mu-pair"><p>{t(`${a.name} et ${b.name} : vous gardez les deux.`, `${a.name} and ${b.name}: you keep both.`)}</p>
+        <Button variant="secondary" onClick={event => { pairReviewTrigger.current = event.currentTarget; setPairReview({scope:reviewScope,epoch:reviewEpoch,key}); requestAnimationFrame(() => {document.querySelector(".mf-now")?.scrollIntoView({block:"center"});document.getElementById("mf-now-title")?.focus({preventScroll:true});}); }}>{t("Revoir ce choix", "Review this choice")}</Button>
+      </div>;
+    })}
+  </div>;
   const empty = state.pinnedToolSlugs.length === 0;
   const showSearch = empty || searchOpen;
   const existingIds = new Set(selectedTools.map((tool) => tool.id));
@@ -482,7 +510,7 @@ export default function CartPage() {
         and the next decision beside it. On a phone the deck comes first. */}
     {/* Hero (22/10/2026): a status line, the title, one sentence. */}
     <header className="ms-top ms-personal-hero">
-      <StackPersonalWelcome empty={false} pending={deckItems.length}>
+      <StackPersonalWelcome empty={false} pending={deckItems.length + usagePending}>
         <div className="ms-personal-title-row">
           <h1 ref={inventoryHeadingRef} tabIndex={-1}>{t("Mes outils", "My tools")}</h1>
           <p className="ms-top-status">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""} dans votre stack`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""} in your stack`)}</p>
@@ -515,26 +543,13 @@ export default function CartPage() {
           return [{ key, a: x, b: y, kind: decision.kind === "keep-both" ? "keep-both" as const : "keep-one" as const, kept: lookup.get(decision.kept)?.name, removed: decision.removed ? lookup.get(decision.removed)?.name : undefined, at: decision.at }];
         }).sort((x, y) => String(y.at).localeCompare(String(x.at)));
         return <StackFindings guide={isFreshFromOnboarding()} hourly={hourly} freeTools={selectedTools.filter(tool => monthlyOf(tool) === 0 && !unreviewed.some(item => item.id === tool.id) && !unknownTools.some(item => item.id === tool.id))} lang={lang} total={stackCost.total} format={fmt} toolCount={selectedTools.length}
-          fit={selectedTools.filter((tool) => monthlyOf(tool) > 0).sort((x, y) => monthlyOf(y) - monthlyOf(x)).slice(0, 3).map((tool) => {
-            // Right size: the catalogue's power score (1 to 5) against how much
-            // the person says they use the tool. Alternatives come from the
-            // catalogue only, with their own power score and known price.
-            const mine = monthlyOf(tool);
-            const power = tool.toolTrimRating?.puissance ?? undefined;
-            const alts = (tool.alternatives || []).map((ref) => tools.find((item) => toolKey(item) === ref || item.id === ref))
-              .filter((item): item is ToolSummary => !!item && !existingIds.has(item.id))
-              .map((alt) => { const c = toolMonthlyCost(alt, () => true, lang); return { alt, cost: c.kind === "paid" ? convertAmount(c.monthly, c.currency, currency) : c.kind === "free" ? 0 : -1, power: alt.toolTrimRating?.puissance ?? undefined, href: comparisonPath(prefix, toolKey(tool), toolKey(alt)) }; })
-              .filter((option) => option.cost >= 0 && option.power !== undefined);
-            const cheapest = (list: typeof alts) => [...list].sort((x, y) => x.cost - y.cost)[0];
-            return { tool, cost: mine, power, usage: usage[toolKey(tool)], setUsage: (value: number | null) => setUsage(toolKey(tool), value),
-              same: power === undefined ? undefined : cheapest(alts.filter((option) => (option.power as number) >= power && option.cost < mine)),
-              lighter: power === undefined ? undefined : cheapest(alts.filter((option) => (option.power as number) < power && option.cost < mine)),
-              stronger: power === undefined ? undefined : [...alts.filter((option) => (option.power as number) > power)].sort((x, y) => (y.power as number) - (x.power as number) || x.cost - y.cost)[0],
-              detailHref: `${prefix}/tool/${toolKey(tool)}` };
-          })}
+          fit={selectedTools.filter((tool) => monthlyOf(tool) > 0).sort((x, y) => monthlyOf(y) - monthlyOf(x)).map((tool) => ({
+            tool, cost: monthlyOf(tool), usage: usage[toolKey(tool)], setUsage: (value: number | null) => setUsage(toolKey(tool), value), detailHref: `${prefix}/tool/${toolKey(tool)}`,
+          }))}
+          onReviewTools={() => { document.getElementById("ms-all-title")?.scrollIntoView({ block: "start", behavior: reducedMotion() ? "auto" : "smooth" }); document.getElementById("ms-all-title")?.focus({ preventScroll: true }); }}
           areas={areaCosts.map((area) => ({ id: area.id, label: area.id === "assist" ? t("IA", "AI") : area.label, amount: area.cost, color: colorOf(area.id), tools: (mapTerritories.find((territory) => territory.id === area.id)?.tools || []).map((tool) => ({ tool, amount: monthlyOf(tool) })).filter((row) => row.amount > 0).sort((x, y) => y.amount - x.amount) }))}
           spend={selectedTools.filter((tool) => monthlyOf(tool) > 0).map((tool) => ({ tool, amount: monthlyOf(tool) })).sort((x, y) => y.amount - x.amount)}
-          items={deckItems} saved={saved} toReview={overlapScore.doubleTotal} resolved={resolved} history={history}
+          items={deckItems} reviewFindingKey={reviewingFinding?.key} saved={saved} toReview={overlapScore.doubleTotal} resolved={resolved} history={history}
           onAddTool={() => { setEditing(false); setSearchOpen(true); requestAnimationFrame(() => document.getElementById("ms-search")?.scrollIntoView({ block: "center" })); }}
           exploreHref={state.toolEntries.some((entry) => entry.intent === "stack" && lookup.has(entry.toolSlug)) ? getExplorerHref(prefix, { type: "stack" }) : undefined} />;
       })()}
@@ -545,7 +560,7 @@ export default function CartPage() {
         <section className="ms-mod ms-mod--inventory ms-all" aria-labelledby="ms-all-title">
           <div className="ms-stage-bar">
             <div>
-              <div className="ms-inventory-heading"><h2 id="ms-all-title" className="ms-stage-title">{t("Ma stack", "My stack")}</h2><StackAccountPanel placement="inline" /></div>
+              <div className="ms-inventory-heading"><h2 id="ms-all-title" tabIndex={-1} className="ms-stage-title">{t("Ma stack", "My stack")}</h2><StackAccountPanel placement="inline" /></div>
               <p className="ms-all-sum">{t(`${selectedTools.length} outil${selectedTools.length > 1 ? "s" : ""}`, `${selectedTools.length} tool${selectedTools.length > 1 ? "s" : ""}`)}{stackCost.paid > 0 && <> · {money(stackCost.total)}{(unreviewed.length > 0 || unknownTools.length > 0) && t(" · partiel", " · partial")}</>}</p>
             </div>
             <div className="ms-tools-actions">

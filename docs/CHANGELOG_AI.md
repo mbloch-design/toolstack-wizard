@@ -1,3 +1,10 @@
+## 2026-10-25 : Ma stack — réponses révisables et logos contenus
+
+- Remplacement des verdicts de puissance non étayés par un suivi explicite des usages déclarés ; état final clair et accès aux choix précédents.
+- Revoir une paire conserve la réponse enregistrée tant qu’une nouvelle réponse n’est pas confirmée ; annulation sans perte et focus restauré.
+- Logos des choix limités à la colonne réservée, y compris au survol ; contrôle navigateur desktop et mobile.
+- Vérifications ciblées : huit parcours navigateur validés, tests applicatifs 906 et Ma stack 237 validés avant intégration du dernier main. Publication directe sur main demandée par l’utilisateur.
+
 ## 2026-10-25 — Changer de langue sans recharger Ma stack
 
 Les sélecteurs de langue de la barre latérale et du menu mobile utilisent désormais les liens du routeur interne. Le lien natif rechargeait tout le document, relançait Auth et la lecture de la stack et provoquait le flash signalé sur Ma stack. La destination traduite et les attributs accessibles sont conservés. Régression reproduite avant correction ; deux parcours navigateur (390/1440) prouvent la conservation du document, du compte et des outils, sans nouvel appel profil/stack. Les 903 tests applicatifs, les types et le contrôle des design tokens passent. Validation distante avant publication.

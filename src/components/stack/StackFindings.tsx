@@ -1,5 +1,6 @@
+import StackUsageReview from "./StackUsageReview";
 import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
-import { Activity, Rocket, UserRound, BarChart3, Clock, Moon, Zap, Check, ChevronDown, CircleDot, ClipboardCheck, Flame, Gauge, Plus, Scale, Target, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
+import { Rocket, UserRound, BarChart3, Moon, Zap, Check, ChevronDown, CircleDot, ClipboardCheck, Flame, Plus, Scale, Target, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { Link } from "@/lib/routerLinks";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
@@ -46,16 +47,18 @@ interface Props {
   freeTools?: ToolSummary[];
   /** What is left to decide, in order. */
   items: Finding[];
+  reviewFindingKey?: string;
   /** Estimated monthly amount taken out by past decisions. */
   saved: number;
   /** Amount still at stake across the pairs. */
   toReview: number;
   resolved: Resolved[];
-  /** The paid tools that cost most, sized against their use: power from the catalogue, use from the person. */
+  /** Paid tools and their declared use; no suitability inference from catalogue scores. */
   fit: FitRow[];
   /** Pairs kept on purpose, with a way to review them again. */
   history?: ReactNode;
   onAddTool: () => void;
+  onReviewTools: () => void;
   exploreHref?: string;
   /** The first visit after the onboarding: the decision card keeps guiding. */
   guide?: boolean;
@@ -63,9 +66,7 @@ interface Props {
   hourly?: number | null;
 }
 
-type FitOption = { alt: ToolSummary; cost: number; power?: number; href: string };
-export type FitRow = { tool: ToolSummary; cost: number; power?: number; usage?: number; setUsage: (value: number | null) => void;
-  same?: FitOption; lighter?: FitOption; stronger?: FitOption; detailHref: string };
+export type FitRow = { tool: ToolSummary; cost: number; usage?: number; setUsage: (value: number | null) => void; detailHref: string };
 
 /** The text block of a card: one large figure, the sentence that says what it means, one quiet line of detail. */
 function Lead({ figure, say, sub, tag, extra, color }: { figure: ReactNode; say: ReactNode; sub?: ReactNode; tag?: ReactNode; extra?: ReactNode; color?: string }) {
@@ -183,21 +184,6 @@ function BudgetBar({ areas, total, format, t, view }: { areas: AreaShare[]; tota
   </div>;
 }
 
-/** Five levels of use, from asleep to flat out, each with its icon. */
-const USE_LEVELS = [
-  { fr: "Sieste", en: "Napping", icon: Moon },
-  { fr: "Au ralenti", en: "Idling", icon: Clock },
-  { fr: "Croisière", en: "Cruising", icon: Activity },
-  { fr: "Soutenu", en: "Busy", icon: TrendingUp },
-  { fr: "Plein gaz", en: "Full throttle", icon: Zap },
-];
-
-/** Power on five dots, as the catalogue rates it. */
-function PowerDots({ value, t }: { value?: number; t: (a: string, b: string) => string }) {
-  if (value === undefined) return <span className="mf-power" data-none="">{t("Puissance non évaluée", "Power not rated")}</span>;
-  return <span className="mf-power" role="img" aria-label={t(`Puissance ${value} sur 5`, `Power ${value} of 5`)}>{[1, 2, 3, 4, 5].map((n) => <i key={n} data-on={n <= value ? "" : undefined} />)}</span>;
-}
-
 /** One alternative: mine → theirs, the monthly gap, and the way to compare. */
 function TextLinkRow({ to, row, format, t }: { to: string; row: { tool: ToolSummary; alt: ToolSummary; mine: number; theirs: number }; format: (n: number) => string; t: (a: string, b: string) => string }) {
   return <Link className="mf-cheaper-row" to={to}>
@@ -228,7 +214,7 @@ const icon = (Icon: typeof Wallet, color?: string) => <Icon size={14} strokeWidt
 // costs, then the one thing to decide now, then, quietly, what comes next.
 // Settling the current finding brings the next one in; once nothing is left,
 // the space becomes the summary of what was decided and what it saved.
-export default function StackFindings({ lang, total, format, spend, areas, toolCount, freeTools = [], fit, items, saved, toReview, resolved, history, onAddTool, exploreHref, guide, hourly }: Props) {
+export default function StackFindings({ lang, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly }: Props) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const s = (n: number) => (n > 1 ? "s" : "");
@@ -244,7 +230,6 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
   const [picked, setPicked] = useState<number | null>(null);
   // The decision card lights up when another card sends a question to it.
   const [flash, setFlash] = useState(0);
-  const [useHover, setUseHover] = useState<number | null>(null);
   // What the answer does to the total, shown before the person commits.
   const [preview, setPreview] = useState<number | null>(null);
   // A per-user plan asks how many people, with a stepper: never a free field.
@@ -281,9 +266,16 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
   const [peak, setPeak] = useState(items.length);
   useEffect(() => { if (items.length > peak) setPeak(items.length); }, [items.length, peak]);
   // A question picked from the reliability card comes to the top of the deck.
-  const [first, setFirst] = useState<string | null>(null);
+  const [first, setFirst] = useState<string | null>(reviewFindingKey ?? null);
+  const [appliedReview, setAppliedReview] = useState(reviewFindingKey);
+  const effectiveFirst = reviewFindingKey && reviewFindingKey !== appliedReview ? reviewFindingKey : first;
+  useEffect(() => {
+    if (reviewFindingKey === appliedReview) return;
+    setAppliedReview(reviewFindingKey); setFirst(reviewFindingKey ?? null);
+    if (reviewFindingKey) setLater(keys => keys.filter(key => key !== reviewFindingKey));
+  }, [reviewFindingKey, appliedReview]);
   const queued = [...items.filter((item) => !later.includes(item.key)), ...later.flatMap((key) => items.filter((item) => item.key === key))];
-  const order = [...queued.filter((item) => item.key === first), ...queued.filter((item) => item.key !== first)];
+  const order = [...queued.filter((item) => item.key === effectiveFirst), ...queued.filter((item) => item.key !== effectiveFirst)];
   const top = order[0];
   useEffect(() => {
     if (answerTimer.current !== null) { clearTimeout(answerTimer.current); answerTimer.current = null; }
@@ -368,7 +360,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
         {spend.length > 0 && items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="mf-cost-scope">{t("Les outils à renseigner ne sont pas inclus dans ce montant.", "Tools awaiting a price or plan are not included in this amount.")}</p>}
         {saved > 0 && <p className="mf-verdict">{icon(Check, "var(--color-pro)")}<span>{t("Budget estimé allégé de ", "Estimated budget reduced by ")}<b>{format(saved)}</b>{t(" par mois.", " a month.")}</span></p>}
         {/* Once nothing is left to decide the decision card goes; what can be reopened lives here. */}
-        {!top && history && <div className="mf-history">{history}</div>}
+
       </article>
 
       {/* 2. The one thing to do now, or the summary once everything is settled. */}
@@ -376,7 +368,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
         style={{ ["--a1" as string]: accentOf(top.tools[0]), ["--a2" as string]: accentOf(top.tools[1] || top.tools[0]) }}>
         {/* The image of the decision: its tools, large, on a halo of their brand colours. */}
         {top.kind !== "pair" && <div className="mf-stage" aria-hidden="true">{top.tools.length > 1 ? <Duo a={top.tools[0]} b={top.tools[1]} large /> : <AppIcon tool={top.tools[0]} large />}</div>}
-        <h2 id="mf-now-title" className="sr-only">{t("Prochaine décision", "Next decision")}</h2>
+        <h2 id="mf-now-title" tabIndex={-1} className="sr-only">{t("Prochaine décision", "Next decision")}</h2>
         <p className="mf-k tt-kicker"><span className="mf-k-pill">{guide && (top.kind === "price" || top.kind === "freemium") ? t("Étape suivante", "Next step") : t("Votre décision", "Your decision")}</span>{expander("now", t("la décision", "the decision"))}
           {peak > 1 && <span className="mf-step" aria-label={t(`Étape ${step} sur ${peak}`, `Step ${step} of ${peak}`)}><span className="mf-step-track" aria-hidden="true"><i style={{ width: `${(step / peak) * 100}%` }} /></span>{t(`${step} sur ${peak}`, `${step} of ${peak}`)}</span>}</p>
         {/* The tool in question, on stage: its logo bounces in beside the question. */}
@@ -518,55 +510,9 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
         })() : <p className="mf-t">{areas.length < 3 ? t("La répartition apparaît dès trois domaines dans votre stack.", "The split appears from three areas in your stack.") : t("Aucun coût connu à répartir pour l’instant.", "No known cost to spread yet.")}</p>}
       </article>}
 
-      {/* 5. Right size: is each tool that costs most sized to its use? Power is the
-          catalogue's score, use is the person's answer; the verdict follows. */}
-      {toolCount > 1 && fit.length > 0 && (() => {
-        const answered = fit.filter((row) => row.usage).length;
-        const verdictOf = (row: FitRow): { tone: "ok" | "down" | "up"; text: ReactNode; option?: FitOption } => {
-          const use = row.usage ?? 3, power = row.power;
-          // Five levels of use against five of power: two steps under is under-used, above is outgrowing.
-          const under = power !== undefined ? use <= power - 2 : use <= 2;
-          const over = power !== undefined ? use > power : false;
-          if (under) {
-            if (row.lighter) return { tone: "down", option: row.lighter, text: <>{t("Vous payez un marathonien pour aller chercher le pain. ", "You hired a marathon runner to fetch the bread. ")}<b>{row.lighter.alt.name}</b>{t(` ferait l’affaire pour ${format(row.cost - row.lighter.cost)} de moins par mois.`, ` would do for ${format(row.cost - row.lighter.cost)} less a month.`)}</> };
-            if (row.same) return { tone: "down", option: row.same, text: <><b>{row.same.alt.name}</b>{t(` fait autant pour ${format(row.cost - row.same.cost)} de moins par mois.`, ` does as much for ${format(row.cost - row.same.cost)} less a month.`)}</> };
-            return { tone: "down", text: t("Il dort plus qu’il ne travaille : une formule plus petite suffirait sans doute.", "It sleeps more than it works: a smaller plan would probably do.") };
-          }
-          if (over && row.stronger) return { tone: "up", option: row.stronger, text: <>{t("Il commence à manquer de souffle. ", "It is running out of breath. ")}<b>{row.stronger.alt.name}</b>{t(" va plus loin.", " goes further.")}</> };
-          if (row.same) return { tone: "ok", option: row.same, text: <>{t("Pile à votre taille. Même puissance chez ", "Just your size. Same power at ")}<b>{row.same.alt.name}</b>{t(`, ${format(row.cost - row.same.cost)} de moins par mois.`, `, ${format(row.cost - row.same.cost)} less a month.`)}</> };
-          return { tone: "ok", text: t("Pile à votre taille. Rien à changer.", "Just your size. Nothing to change.") };
-        };
-        const sized = fit.filter((row) => row.usage && verdictOf(row).tone === "ok").length;
-        return <article className="mf-card mf-fit" data-open={openCard === "fit" ? "" : undefined}>
-          <p className="mf-k tt-kicker">{icon(Gauge)}<span className="mf-k-label">{t("Optimisation", "Optimisation")}</span>{(() => { const next = fit.findIndex((row) => !row.usage); return next >= 0 && fit.length > 1 ? <span className="mf-fit-step" aria-label={t(`Question ${next + 1} sur ${fit.length}`, `Question ${next + 1} of ${fit.length}`)}>{fit.map((row, index) => <i key={row.tool.id} data-on={index < next ? "done" : index === next ? "now" : undefined} />)}</span> : null; })()}{expander("fit", t("l’optimisation", "optimisation"))}</p>
-          {fit.length === 0 ? <Lead figure="0" say={t("outil payant à dimensionner.", "paid tool to size.")} />
-            : answered < fit.length
-              ? <Lead figure={t(`${fit.length} outil${s(fit.length)}`, `${fit.length} tool${s(fit.length)}`)} say={t("à mettre à votre taille.", "to fit to your size.")}
-                  sub={t("Dites comment vous vous en servez. On compare à leur puissance.", "Say how you use them. We compare it with their power.")} />
-              : <Lead figure={`${sized} / ${fit.length}`} say={t("à la bonne taille.", "the right size.")}
-                  sub={t("D’après votre usage et la puissance notée au catalogue.", "From your use and the power rated in the catalogue.")} />}
-          {/* One question at a time; once all are answered, what calls for action first. */}
-          <ul className="mf-fit-list">{(fit.some((row) => !row.usage) ? [fit.find((row) => !row.usage)!] : [...fit].sort((x, y) => Number(verdictOf(x).tone === "ok") - Number(verdictOf(y).tone === "ok")).slice(0, order.length === 0 ? 3 : 1)).map((row) => { const verdict = row.usage ? verdictOf(row) : null; return <li key={row.tool.id} data-tone={verdict?.tone}>
-            {!row.usage && row.power !== undefined && <p className="mf-fit-hint">{row.power >= 5 ? t("Un monstre de puissance. Il mérite qu’on s’en serve vraiment.", "A powerhouse. It deserves real use.")
-              : row.power >= 4 ? t("Un outil costaud : vous en tirez le maximum ?", "A sturdy tool: are you getting the most from it?")
-              : row.power >= 3 ? t("Un bon généraliste, ni trop, ni trop peu.", "A solid all-rounder, not too much, not too little.")
-              : t("Un outil léger : parfait s’il ne force pas.", "A light tool: perfect if it never strains.")}</p>}
-            <div className="mf-fit-head"><ToolLogo tool={row.tool} size={28} /><span className="mf-fit-name">{row.tool.name}{row.usage ? <small>{format(row.cost)}{t("/mois", "/mo")} · {t(USE_LEVELS[(row.usage ?? 3) - 1].fr, USE_LEVELS[(row.usage ?? 3) - 1].en)}</small> : <small className="mf-fit-q">{format(row.cost)}{t("/mois", "/mo")}</small>}</span><span className="mf-fit-power">{row.power !== undefined && <small>{t(`Puissance ${row.power}/5`, `Power ${row.power}/5`)}</small>}<PowerDots value={row.power} t={t} /></span></div>
-            {!row.usage
-              ? <div className="mf-fit-gauge" role="radiogroup" aria-label={t(`Usage de ${row.tool.name}`, `Use of ${row.tool.name}`)} onPointerLeave={() => setUseHover(null)}>
-                  {/* Five levels, rising bars, read against the power gauge above. */}
-                  <span className="mf-fit-bars">{USE_LEVELS.map((level, index) => <button key={level.fr} type="button" role="radio" aria-checked={false} aria-label={t(level.fr, level.en)}
-                    data-on={useHover !== null && index <= useHover ? "" : undefined} style={{ ["--h" as string]: `${30 + index * 17.5}%` }}
-                    onPointerEnter={() => setUseHover(index)} onFocus={() => setUseHover(index)} onBlur={() => setUseHover(null)} onClick={() => row.setUsage(index + 1)}><i /></button>)}</span>
-                  {/* The name of the level pointed at, in a slot of fixed size. */}
-                  <span className="mf-fit-level" aria-hidden="true">{useHover === null ? t("Son rythme chez vous ?", "Its pace at your place?") : <>{(() => { const Icon = USE_LEVELS[useHover].icon; return <Icon size={14} aria-hidden />; })()}<b>{t(USE_LEVELS[useHover].fr, USE_LEVELS[useHover].en)}</b></>}</span>
-                </div>
-              : <p className="mf-fit-verdict">{verdict!.text}{" "}
-                  {verdict!.option && <Link className="mk-link" to={verdict!.option.href}>{t("Comparer", "Compare")}</Link>}
-                  <button type="button" className="mf-fit-undo" onClick={() => row.setUsage(null)}>{t("Changer", "Change")}</button></p>}
-          </li>; })}</ul>
-        </article>;
-      })()}
+      {toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsageReview key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
+        complete={!top && fit.every(row => !!row.usage)} history={history} onReviewTools={onReviewTools} />}
+
 
     </div>
   </section>;

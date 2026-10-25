@@ -13,7 +13,7 @@ describe("StackFindings", () => {
   const card = (key: string, onClick = vi.fn()): Finding => ({ key, kind: "freemium", tools: [tool(key)], title: `Payez-vous ${key} ?`, detail: "", actions: [{ label: "Oui, payant", primary: true, onClick }] });
   const pair: Finding = { key: "pair", kind: "pair", tools: [tool("Asana"), tool("Linear")], title: "Asana ou Linear ?", detail: "", costs: [33, 40], stake: 33, actions: [{ label: "Garder Asana", onClick: vi.fn() }] };
   const module = (items: Finding[], extra: Partial<Parameters<typeof StackFindings>[0]> = {}) => render(<MemoryRouter><StackFindings lang="fr" total={446} format={(n) => `${Math.round(n)} €`} toolCount={4}
-    spend={[{ tool: tool("Workable"), amount: 257 }, { tool: tool("SysAid"), amount: 76 }]} areas={[{ id: "rh", label: "RH", amount: 257, color: "#2A78D6" }, { id: "it", label: "IT", amount: 76, color: "#EDA100" }, { id: "ia", label: "IA", amount: 0, color: "#6250D6" }]} fit={[]} items={items} saved={0} toReview={33} resolved={[]} onAddTool={vi.fn()} {...extra} /></MemoryRouter>);
+    spend={[{ tool: tool("Workable"), amount: 257 }, { tool: tool("SysAid"), amount: 76 }]} areas={[{ id: "rh", label: "RH", amount: 257, color: "#2A78D6" }, { id: "it", label: "IT", amount: 76, color: "#EDA100" }, { id: "ia", label: "IA", amount: 0, color: "#6250D6" }]} fit={[]} items={items} saved={0} toReview={33} resolved={[]} onAddTool={vi.fn()} onReviewTools={vi.fn()} {...extra} /></MemoryRouter>);
 
   it("reads the price first, then one decision at a time", () => {
     module([card("Canva"), card("Slack"), card("Notion")]);
