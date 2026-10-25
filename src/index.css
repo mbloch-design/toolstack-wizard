@@ -40819,3 +40819,15 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .mu-pair p { margin: 0; font: 400 14px/1.5 var(--font-ui); }
   .mu-pair .mk-button { justify-self: start; }
 }
+
+@layer components {
+  .ac-dialog.ac-lifecycle--farewell { text-align: center; }
+  .ac-lifecycle--farewell .ac-lifecycle-heading { flex-direction: column; gap: var(--space-lg); }
+  .ac-farewell-mark { position: relative; display: grid; place-items: center; width: 80px; height: 80px; margin-block: var(--space-sm); }
+  .ac-farewell-mark img { position: relative; z-index: 1; animation: ac-farewell-wave 1.4s ease-in-out infinite; }
+  .ac-farewell-mark > span { position: absolute; inset: 0; border: 1px solid var(--color-border); border-radius: var(--radius-circle); animation: ac-farewell-ring 1.4s ease-out infinite; }
+  .ac-farewell-status { margin: var(--space-lg) 0 0; color: var(--color-text-secondary); font-size: 14px; line-height: 1.5; }
+  @keyframes ac-farewell-wave { 0%, 100% { transform: translateY(0) rotate(0); } 35% { transform: translateY(-5px) rotate(-8deg); } 65% { transform: translateY(-3px) rotate(8deg); } }
+  @keyframes ac-farewell-ring { from { transform: scale(.7); opacity: .8; } to { transform: scale(1.15); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .ac-farewell-mark img, .ac-farewell-mark > span { animation: none; } }
+}

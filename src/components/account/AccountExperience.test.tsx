@@ -384,3 +384,29 @@ it("contains keyboard focus in the account menu and restores it after Escape", a
   await waitFor(() => expect(trigger).toHaveFocus());
   expect(document.body.style.pointerEvents).not.toBe("none");
 });
+
+it("shows farewell only while signing out and returns home immediately on success", async () => {
+  let finish!: (ok: boolean) => void;
+  account = { ...account, user, signOut: vi.fn(() => new Promise<boolean>(resolve => { finish = resolve; })) };
+  render(centralContent());
+  fireEvent.click(screen.getByRole('button', { name: 'Sign out action' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Me déconnecter' }));
+  expect(screen.getByRole('heading', {name:'On ferme la porte…'})).toBeVisible();
+  expect(screen.getByRole('status')).toHaveTextContent('Déconnexion en cours…');
+  expect(screen.getByTestId('current-path')).toHaveTextContent('/fr/tool/notion');
+  fireEvent.keyDown(screen.getByRole('dialog'),{key:'Escape'});
+  expect(screen.getByRole('dialog')).toBeVisible();
+  await act(async()=>finish(true));
+  expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  expect(screen.getByTestId('current-path')).toHaveTextContent(/^\/fr$/);
+});
+it("keeps a failed farewell in the confirmation with retry and no home redirect", async () => {
+  account = { ...account, user, signOut: vi.fn().mockResolvedValue(false) };
+  render(centralContent());
+  fireEvent.click(screen.getByRole('button', { name: 'Sign out action' }));
+  await act(async()=>fireEvent.click(screen.getByRole('button', { name: 'Me déconnecter' })));
+  expect(screen.getByRole('heading',{name:'Vous déconnecter ?'})).toBeVisible();
+  expect(screen.getByRole('alert')).toBeVisible();
+  expect(screen.getByRole('button',{name:'Me déconnecter'})).toBeEnabled();
+  expect(screen.getByTestId('current-path')).toHaveTextContent('/fr/tool/notion');
+});

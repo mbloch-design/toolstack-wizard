@@ -1,3 +1,9 @@
+## 2026-10-25 : Déconnexion accompagnée
+
+- Animation du logo ToolTrim et message léger pendant la déconnexion réelle, sans temporisation artificielle ; animations désactivées si les mouvements réduits sont demandés.
+- Succès : retour à l’accueil dans la langue courante et confirmation discrète. Échec : confirmation et possibilité de réessayer ; avertissement des changements non enregistrés conservé.
+- Vérifications : attente, succès, échec et absence de redirection anticipée en tests unitaires ; parcours FR mobile et EN desktop avec réseau ralenti, retour depuis les paramètres.
+
 ## 2026-10-25 : Ma stack — réponses révisables et logos contenus
 
 - Remplacement des verdicts de puissance non étayés par un suivi explicite des usages déclarés ; état final clair et accès aux choix précédents.
