@@ -104,13 +104,13 @@ describe("accounts back-office HTTP boundary", () => {
 });
 
 describe("cosmetic detail projection",()=>{
- it("reads only three profile fields after admin and owner checks; list stays one RPC",async()=>{
+ it("reads only display profile fields after admin and owner checks; list stays one RPC",async()=>{
   const detail={userId:target,email:account.email,displayName:"Custom",createdAt:at,stack:null};
   mocks.rpc.mockImplementation(async(name:string)=>({data:name==="require_account_session"?null:detail,error:null}));
   mocks.maybeSingle.mockResolvedValue({data:{id:target,avatar_url:"https://avatars.githubusercontent.com/u/1",provider_locale:"en",oauth_profile_source:"github"},error:null});
   const f=request({mode:"detail",userId:target});await handler(f.req,f.res);
   expect(f.res.statusCode).toBe(200);expect(f.body).toMatchObject({account:{avatarUrl:"https://avatars.githubusercontent.com/u/1",providerLocale:"en",oauthProfileSource:"github",displayName:"Custom"}});
-  expect(mocks.select).toHaveBeenCalledWith("id, avatar_url, provider_locale, oauth_profile_source");expect(mocks.eq).toHaveBeenCalledWith("id",target);
+  expect(mocks.select).toHaveBeenCalledWith("id, avatar_url, provider_locale, oauth_profile_source, locale");expect(mocks.eq).toHaveBeenCalledWith("id",target);
  });
  it("rejects mismatching owners before lookup and mismatching returned profile owners",async()=>{
   mocks.rpc.mockImplementation(async(name:string)=>({data:name==="require_account_session"?null:{userId:owner,email:null,displayName:null,createdAt:at,stack:null},error:null}));
@@ -128,5 +128,35 @@ describe("cosmetic detail projection",()=>{
  it("never queries profiles for denied admin or list",async()=>{
   const f=request();await handler(f.req,f.res);expect(mocks.from).not.toHaveBeenCalled();
   mocks.getUser.mockResolvedValue({data:{user:user("member@example.test")},error:null});const g=request({mode:"detail",userId:target});await handler(g.req,g.res);expect(g.res.statusCode).toBe(403);expect(mocks.from).not.toHaveBeenCalled();
+ });
+});
+
+describe('workspace projections',()=>{
+ it('returns bounded per-user summaries without leaking raw snapshots',async()=>{
+  const selected={...account};
+  mocks.rpc.mockImplementation(async(name:string)=>({data:name==='require_account_session'?null:{...dashboard,accounts:[selected]},error:null}));
+  const inQuery=vi.fn().mockResolvedValue({data:[{owner_id:target,state:{version:4,selection:{version:3,needs:[{id:'custom',labelFr:'Mon tableau',labelEn:'My board',source:'custom',order:1}],toolEntries:[{toolSlug:'tapstitch',intent:'stack',needIds:['custom'],assignmentMode:'manual',addedAt:at},{toolSlug:'missing',intent:'wishlist',needIds:[],assignmentMode:'pending',addedAt:at}],pinnedToolSlugs:['tapstitch','missing']},billing:{paid:['tapstitch'],reviewed:['tapstitch'],choices:{tapstitch:{source:'custom',amount:0,currency:'EUR',period:'monthly'}}},decisions:{},trade:'designer',dailyRate:{amount:400,currency:'EUR'},usage:{tapstitch:4}}}],error:null});
+  mocks.select.mockReturnValue({in:inQuery});
+  const f=request({include:'insights'});await handler(f.req,f.res);
+  expect(f.res.statusCode).toBe(200);expect(inQuery).toHaveBeenCalledWith('owner_id',[target]);
+  expect(f.body).toMatchObject({accounts:[{insights:{usedTools:1,wishlistTools:1,boards:9,trade:'designer',hasDailyRate:true,amounts:1,usage:1,decisions:0}}]});
+  expect(JSON.stringify(f.body)).not.toContain('Mon tableau');expect(JSON.stringify(f.body)).not.toContain('dailyRate');
+ });
+ it.each(['missing','unexpected','corrupt'])('fails closed for %s snapshot projection',async(kind)=>{
+  mocks.rpc.mockImplementation(async(name:string)=>({data:name==='require_account_session'?null:{...dashboard,accounts:[account]},error:null}));
+  mocks.select.mockReturnValue({in:vi.fn().mockResolvedValue({data:kind==='missing'?[]:[{owner_id:kind==='unexpected'?owner:target,state:{}}],error:null})});
+  const f=request({include:'insights'});await handler(f.req,f.res);expect(f.res.statusCode).toBe(503);
+ });
+ it('never reads snapshots when the user is not an administrator',async()=>{
+  mocks.getUser.mockResolvedValue({data:{user:user('member@example.test')},error:null});
+  const f=request({include:'insights'});await handler(f.req,f.res);expect(f.res.statusCode).toBe(403);expect(mocks.from).not.toHaveBeenCalled();
+ });
+ it('projects verified identity dates only in explicitly requested detail',async()=>{
+  const getUserById=vi.fn().mockResolvedValue({data:{user:{id:target,last_sign_in_at:at,email_confirmed_at:at}},error:null});
+  mocks.createClient.mockReturnValue({auth:{getUser:mocks.getUser,admin:{getUserById}},rpc:mocks.rpc,from:mocks.from});
+  mocks.rpc.mockImplementation(async(name:string)=>({data:name==='require_account_session'?null:{userId:target,email:account.email,displayName:null,createdAt:at,stack:null},error:null}));
+  mocks.maybeSingle.mockResolvedValue({data:{id:target,avatar_url:null,provider_locale:null,oauth_profile_source:null,locale:'fr'},error:null});
+  const f=request({mode:'detail',userId:target,include:'identity'});await handler(f.req,f.res);
+  expect(f.res.statusCode).toBe(200);expect(f.body).toMatchObject({account:{identity:{lastSignInAt:at,emailConfirmedAt:at,locale:'fr'}}});expect(getUserById).toHaveBeenCalledWith(target);
  });
 });

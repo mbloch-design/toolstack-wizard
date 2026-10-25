@@ -12,15 +12,15 @@ beforeEach(()=>{vi.resetAllMocks();mocks.list.mockResolvedValue(dashboard);mocks
 describe("accounts dashboard",()=>{
  it("shows global totals and resolves JSON-only catalogue names while preserving missing references",async()=>{
   render(<AccountsDashboard/>); await screen.findByText("Comptes confirmés");
-  expect(screen.getByTestId("accounts-total")).toHaveTextContent("26");expect(screen.getByRole("link",{name:"Tapstitch"})).toHaveAttribute("href","/fr/tool/tapstitch");
+  expect(screen.getByTestId("accounts-total")).toHaveTextContent("26");fireEvent.click(screen.getByRole("button",{name:"Stacks & outils"}));expect(screen.getByRole("link",{name:"Tapstitch"})).toHaveAttribute("href","/fr/tool/tapstitch");
   expect(screen.getByText("missing-json-tool")).toBeVisible();expect(screen.getByText("Référence absente du catalogue JSON")).toBeVisible();
-  expect(screen.getByText(/26 comptes/)).toBeVisible();
+  expect(screen.getByText(/26 comptes/)).toBeInTheDocument();
  });
  it("requests search and pagination on the server instead of filtering the current page",async()=>{
   render(<AccountsDashboard/>);await screen.findByText("Personne");
-  fireEvent.click(screen.getByRole("button",{name:"Page suivante"}));await waitFor(()=>expect(mocks.list).toHaveBeenLastCalledWith({search:"",page:2,pageSize:25}));
+  fireEvent.click(screen.getByRole("button",{name:"Page suivante"}));await waitFor(()=>expect(mocks.list).toHaveBeenLastCalledWith({search:"",page:2,pageSize:25,includeInsights:true}));
   fireEvent.change(screen.getByRole("searchbox",{name:"Chercher un compte"}),{target:{value:"new@example.test"}});fireEvent.click(screen.getByRole("button",{name:"Rechercher"}));
-  await waitFor(()=>expect(mocks.list).toHaveBeenLastCalledWith({search:"new@example.test",page:1,pageSize:25}));
+  await waitFor(()=>expect(mocks.list).toHaveBeenLastCalledWith({search:"new@example.test",page:1,pageSize:25,includeInsights:true}));
  });
  it("shows source unavailability distinctly from a confirmed zero",async()=>{
   mocks.list.mockRejectedValue(new Error("secret SQL"));render(<AccountsDashboard/>);await screen.findByRole("alert");
@@ -35,8 +35,8 @@ describe("accounts dashboard",()=>{
  it("opens the full saved snapshot read-only with personal choices, needs and historical decisions",async()=>{
   const state=normalizePersonalStack({version:4,selection:{version:3,pinnedToolSlugs:["tapstitch","missing-json-tool"],needs:[{id:"custom-print","labelFr":"Imprimer","labelEn":"Print","source":"custom",order:1}],toolEntries:[{toolSlug:"tapstitch",needIds:["custom-print"],intent:"stack",assignmentMode:"manual",addedAt:at},{toolSlug:"missing-json-tool",needIds:[],intent:"wishlist",assignmentMode:"pending",addedAt:at}]},billing:{paid:["tapstitch"],reviewed:["tapstitch"],choices:{tapstitch:{source:"custom",label:"Mon forfait",amount:17.25,currency:"USD",period:"annual",seats:2,perSeat:true}}},decisions:{"old|tapstitch":{kind:"replace",kept:"tapstitch",removed:"old",saving:12,at}}});
   mocks.detail.mockResolvedValue({...row,stack:{state,revision:7,updatedAt:at}});render(<AccountsDashboard/>);await screen.findByText("Personne");fireEvent.click(screen.getByRole("button",{name:"Voir la stack de person@example.test"}));
-  const detail=await screen.findByRole("region",{name:"Détail du compte"});expect(within(detail).getByText("Mon forfait")).toBeVisible();expect(within(detail).getByText(/17,25/)).toBeVisible();
-  expect(within(detail).getByText(/USD/, { selector: "span" })).toBeVisible();expect(within(detail).getByText(/Imprimer/, { selector: "small" })).toBeVisible();expect(within(detail).getByText(/Économie historique/)).toBeVisible();
+  const detail=await screen.findByRole("region",{name:"Détail du compte"});await within(detail).findByRole("tab",{name:"Budget déclaré"});fireEvent.click(within(detail).getByRole("tab",{name:"Budget déclaré"}));expect(within(detail).getByText("Mon forfait")).toBeVisible();expect(within(detail).getByText(/17,25/)).toBeVisible();
+  expect(within(detail).getByText(/USD/, { selector: "span" })).toBeVisible();fireEvent.click(within(detail).getByRole("tab",{name:"Outils"}));expect(within(detail).getByText(/Imprimer/, { selector: "small" })).toBeVisible();fireEvent.click(within(detail).getByRole("tab",{name:"Décisions"}));expect(within(detail).getByText(/Économie historique/)).toBeVisible();
   expect(within(detail).getByText(/Révision 7/)).toBeVisible();expect(within(detail).queryByRole("button",{name:/Enregistrer|Modifier|Supprimer/})).not.toBeInTheDocument();
  });
  it("keeps detail failures separate from an empty saved stack",async()=>{

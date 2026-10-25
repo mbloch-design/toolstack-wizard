@@ -21,3 +21,12 @@ describe("back-office accounts client",()=>{
   await expect(loadAccountsDashboard()).rejects.toMatchObject({status:503,code:"BACKOFFICE_UNAVAILABLE"});await expect(loadAccountsDashboard()).rejects.toMatchObject({status:503});
  });
 });
+
+it('preserves enriched user summaries and rejects malformed counters',async()=>{
+ const insights={usedTools:2,wishlistTools:1,boards:3,trade:'designer',hasDailyRate:true,amounts:1,usage:2,decisions:0};
+ const account={userId:'id',email:null,displayName:null,createdAt:null,hasStack:true,stackUpdatedAt:null,insights};
+ mocks.fetch.mockResolvedValue({ok:true,status:200,json:async()=>({...value,accounts:[account]})});
+ expect((await loadAccountsDashboard()).accounts[0]).toMatchObject({insights});
+ mocks.fetch.mockResolvedValue({ok:true,status:200,json:async()=>({...value,accounts:[{...account,insights:{...insights,usedTools:-1}}]})});
+ await expect(loadAccountsDashboard()).rejects.toMatchObject({status:503});
+});

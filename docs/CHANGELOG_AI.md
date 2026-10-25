@@ -1,3 +1,13 @@
+## 2026-10-25 — Back-office : pilotage et fiches utilisateurs
+
+- Navigation permanente, vue d’ensemble avec totaux globaux et inscriptions récentes, liste utilisateurs avec recherche/pagination conservées, classement des outils utilisés et envisagés.
+- Fiches lisibles par rubriques : sélection, tableaux, budget déclaré, usage 1–5, décisions et données du snapshot ; métier, TJM, inscription, connexion Auth, langue et confirmation visibles sans ouvrir le JSON. L’identité reste consultable avant toute première sauvegarde.
+- API existante enrichie en lecture seule, après vérification admin/session : résumés limités aux comptes paginés et identité chargée uniquement en détail. Pas de migration, aucune écriture dans les comptes. Les montants gardent devises, périodes, sièges et provenance déclarative ; aucune facture ou statistique d’usage n’est inventée.
+- Sur mobile, ouverture de fiche avec déplacement du focus et défilement vers le détail ; fermeture avec retour à la ligne du compte. Les erreurs d’accès et de source restent distinctes d’un résultat vide.
+- Périmètre explicite : comptes confirmés actifs. GA4, regroupement leads/soumissions et administration éditoriale restent à intégrer ; leurs états sont indiqués dans « Données disponibles ». La navigation historique et la déconnexion privée sont conservées.
+- Validation : 915 tests applicatifs, 304 tests API (18 tests externes ignorés), TypeScript app/API, design tokens, 10 parcours Chromium FR/EN à 390/1440 px, refus d’accès et nettoyage de déconnexion. Revue indépendante sans défaut important ; son point sur l’identité sans snapshot est corrigé par régression. Build production complet : PASS, 844,7 Mio ; compilation SSR renouvelée après les dernières corrections UX/CSS.
+- Livraison dans le worktree `backoffice-pilotage` sur la base origin/main `23c103c42a`. Aucun push ni déploiement effectué. Recette navigateur isolée avec des comptes synthétiques, pas une validation authentifiée sur le domaine public.
+
 ## 2026-10-25 : Ma stack — réponses révisables et logos contenus
 
 - Remplacement des verdicts de puissance non étayés par un suivi explicite des usages déclarés ; état final clair et accès aux choix précédents.

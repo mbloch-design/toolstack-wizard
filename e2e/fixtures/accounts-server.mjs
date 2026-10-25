@@ -185,7 +185,7 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
           const profile = found ? profiles.get(found.id) : null;
           return send(res, 200, { account: found ? { userId: found.id, email: found.email, displayName: profile?.displayName || null,
             avatarUrl: profile?.avatarUrl || null, providerLocale: profile?.providerLocale || null, oauthProfileSource: profile?.oauthProfileSource || null,
-            createdAt: found.created_at, stack: getRecord(found) } : null });
+            createdAt: found.created_at, stack: getRecord(found), ...(url.searchParams.get("include") === "identity" ? { identity: { lastSignInAt: found.last_sign_in_at || null, emailConfirmedAt: found.email_confirmed_at || null, locale: null } } : {}) } : null });
         }
         const all = [...users.values()], search = (url.searchParams.get('search') || '').toLowerCase();
         const filtered = all.filter(item => item.email.includes(search));
@@ -195,8 +195,9 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
           const row = top.get(entry.toolSlug) || { toolSlug: entry.toolSlug, usedAccounts: 0, wishlistAccounts: 0 };
           row[entry.intent === 'wishlist' ? 'wishlistAccounts' : 'usedAccounts']++; top.set(entry.toolSlug, row);
         }
+        const { summarizeAccountStack } = await server.ssrLoadModule("/src/lib/backofficeAccounts.ts");
         return send(res, 200, { totals: { accounts: all.length, accountsWithStack: stacks.size, nonemptyStacks: [...stacks.values()].filter(saved => entries(saved).length).length },
-          topTools: [...top.values()], accounts: filtered.slice((page - 1) * pageSize, page * pageSize).map(item => ({ userId: item.id, email: item.email, displayName: profiles.get(item.id)?.displayName || null, createdAt: item.created_at, hasStack: stacks.has(item.id), stackUpdatedAt: getRecord(item)?.updatedAt || null })), page, pageSize, total: filtered.length, updatedAt: now() });
+          topTools: [...top.values()], accounts: filtered.slice((page - 1) * pageSize, page * pageSize).map(item => ({ userId: item.id, email: item.email, displayName: profiles.get(item.id)?.displayName || null, createdAt: item.created_at, hasStack: stacks.has(item.id), stackUpdatedAt: getRecord(item)?.updatedAt || null, ...(url.searchParams.get("include") === "insights" ? { insights: getRecord(item) ? summarizeAccountStack(getRecord(item).state) : null } : {}) })), page, pageSize, total: filtered.length, updatedAt: now() });
       }
       return fail(res, 404, 'UNKNOWN_FIXTURE_ENDPOINT');
     } catch { return fail(res, 400, 'INVALID_FIXTURE_REQUEST'); }

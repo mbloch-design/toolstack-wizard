@@ -1338,16 +1338,15 @@ export default function BackOfficePage() {
   }
 
   if (activeTab === "accounts") return (
-    <div className="ba-shell">
+    <div className="bo-shell">
       <Breadcrumb items={[{ label: t("Back-office", "Back office") }]} includeSchema={false}/>
-      <header className="ba-heading ba-entry-header"><div><h1>{t("Back-office ToolTrim", "ToolTrim back office")}</h1><p>{adminSession.email || t("Compte connecté", "Signed-in account")}</p></div>
+      <header className="bo-topbar"><div><span className="bo-brand">ToolTrim</span><span className="bo-admin-label">{t("Administration", "Administration")}</span></div><p>{adminSession.email || t("Compte connecté", "Signed-in account")}</p>
         <nav className="ba-actions" aria-label={t("Sections du back-office", "Back-office sections")}>
-          <button className="ba-button" onClick={() => setActiveTab("preprod")}>{t("Diagnostic historique", "Historical diagnostic")}</button>
           <button className="ba-button" disabled={authLoading} onClick={() => void disconnect()}><LogOut aria-hidden="true"/>{t("Fermer", "Sign out")}</button>
         </nav>
       </header>
       {logoutFeedback}
-      <AccountsDashboard key={adminSession.accessToken}/>
+      <AccountsDashboard key={adminSession.accessToken} initialView="overview" onOpenHistory={() => setActiveTab("preprod")}/>
     </div>
   );
 
