@@ -1,6 +1,7 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { LogOut, ShieldAlert, Trash2 } from "@/lib/icons";
 import { useState } from "react";
+import picto from "@/assets/picto-logo.svg";
 import { useLang } from "@/hooks/useLang";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { accountErrorMessage } from "./accountMessages";
@@ -8,10 +9,12 @@ export default function AccountLifecycleDialog({
   kind,
   onClose,
   restoreFocus,
+  onSignedOut,
 }: {
   kind: "signout" | "delete";
   onClose: () => void;
   restoreFocus: () => void;
+  onSignedOut?: () => void;
 }) {
   const { t } = useLang();
   const account = useStackAccount();
@@ -19,6 +22,7 @@ export default function AccountLifecycleDialog({
   const StatusIcon = kind === "delete" ? Trash2 : account.hasUnsavedChanges ? ShieldAlert : LogOut;
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const leaving = busy && kind === "signout";
   async function confirm() {
     if (busy || account.authBusy) return;
     setBusy(true);
@@ -27,7 +31,10 @@ export default function AccountLifecycleDialog({
       const ok = await (kind === "delete"
         ? account.deleteAccount()
         : account.signOut({ discardUnsaved: true }));
-      if (ok) onClose();
+      if (ok) {
+        if (kind === "signout") onSignedOut?.();
+        onClose();
+      }
       else
         setError(
           kind === "delete"
@@ -50,22 +57,24 @@ export default function AccountLifecycleDialog({
       <Dialog.Portal>
         <Dialog.Overlay className="ac-overlay" />
         <Dialog.Content
-          className={`ac-dialog ac-lifecycle${destructive ? " ac-lifecycle--warning" : ""}`}
+          className={`ac-dialog ac-lifecycle${destructive ? " ac-lifecycle--warning" : ""}${leaving ? " ac-lifecycle--farewell" : ""}`}
+          onEscapeKeyDown={(event) => { if (busy) event.preventDefault(); }}
+          onPointerDownOutside={(event) => { if (busy) event.preventDefault(); }}
           onCloseAutoFocus={(event) => {
             event.preventDefault();
             restoreFocus();
           }}
         >
           <div className="ac-lifecycle-heading">
-          <span className="ac-lifecycle-icon" aria-hidden><StatusIcon size={23} /></span>
+          {leaving ? <span className="ac-farewell-mark" aria-hidden><img src={picto} alt="" width={48} height={48} /><span /></span> : <span className="ac-lifecycle-icon" aria-hidden><StatusIcon size={23} /></span>}
           <Dialog.Title className="ac-title">
-            {kind === "delete"
+            {leaving ? t("On ferme la porte…", "Closing the door…") : kind === "delete"
               ? t("Supprimer votre compte ?", "Delete your account?")
               : t("Vous déconnecter ?", "Sign out?")}
           </Dialog.Title>
           </div>
           <Dialog.Description className="ac-intro">
-            {kind === "delete"
+            {leaving ? t("Vous, vous pouvez décrocher. À très vite !", "Time to switch off. See you soon!") : kind === "delete"
               ? t(
                   "Votre compte et sa stack enregistrée seront supprimés définitivement. Les modifications non enregistrées seront abandonnées.",
                   "Your account and saved stack will be permanently deleted. Unsaved changes will be discarded.",
@@ -85,7 +94,7 @@ export default function AccountLifecycleDialog({
               {accountErrorMessage(account.error || error, t)}
             </p>
           )}
-          <div className="ac-lifecycle-actions">
+          {leaving ? <p className="ac-farewell-status" role="status">{t("Déconnexion en cours…", "Signing you out…")}</p> : <div className="ac-lifecycle-actions">
             <button className="ac-button" disabled={busy} onClick={onClose}>
               {kind === "delete"
                 ? t("Conserver mon compte", "Keep my account")
@@ -111,7 +120,7 @@ export default function AccountLifecycleDialog({
                       )
                     : t("Me déconnecter", "Sign out")}
             </button>
-          </div>
+          </div>}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

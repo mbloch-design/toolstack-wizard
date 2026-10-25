@@ -1,3 +1,4 @@
+import { toast } from "sonner";
 import { STACK_AUTH_REQUIRED_EVENT } from "@/lib/stackAuthAccess";
 import {
   createContext,
@@ -37,7 +38,7 @@ export default function AccountExperienceProvider({
   children: ReactNode;
 }) {
   const account = useStackAccount();
-  const { lang } = useLang();
+  const { lang, t } = useLang();
   const location = useLocation();
   const navigate = useNavigate();
   const profile = useAccountProfile(
@@ -153,6 +154,11 @@ export default function AccountExperienceProvider({
             <AccountLifecycleDialog
               key={`${lifecycle.kind}:${lifecycle.owner}`}
               kind={lifecycle.kind}
+              onSignedOut={() => {
+                setIntent(null);
+                navigate(`/${lang}`, { replace: true });
+                toast.success(t("Vous êtes déconnecté. À très vite !", "You’re signed out. See you soon!"));
+              }}
               onClose={() => setLifecycle(null)}
               restoreFocus={restoreFocus}
             />

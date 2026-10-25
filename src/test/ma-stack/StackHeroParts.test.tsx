@@ -10,6 +10,19 @@ const tool = (id: string) => ({ id, slug: id, name: id, categoryId: "x", pricing
 afterEach(() => {cleanup(); setPersonalStackScope("anonymous");});
 
 describe("StackFindings", () => {
+  it("offers keeping both inside the same decision group as either tool", () => {
+    const keepBoth = vi.fn();
+    const { container } = module([{ ...pair, actions: [...pair.actions,
+      { label: "Garder Linear", onClick: vi.fn() },
+      { label: "Garder les deux", onClick: keepBoth },
+    ] }]);
+    const both = screen.getByRole("button", { name: "Garder les deux" });
+    expect(container.querySelector(".mf-duel")?.contains(both)).toBe(true);
+    expect([...container.querySelectorAll(".mf-duel > button")].map(button => button.getAttribute("aria-label"))).toEqual(["Garder Asana", "Garder les deux", "Garder Linear"]);
+    expect(container.querySelector(".mf-links")?.contains(both)).toBe(false);
+    fireEvent.click(both);
+    expect(keepBoth).toHaveBeenCalledOnce();
+  });
   const card = (key: string, onClick = vi.fn()): Finding => ({ key, kind: "freemium", tools: [tool(key)], title: `Payez-vous ${key} ?`, detail: "", actions: [{ label: "Oui, payant", primary: true, onClick }] });
   const pair: Finding = { key: "pair", kind: "pair", tools: [tool("Asana"), tool("Linear")], title: "Asana ou Linear ?", detail: "", costs: [33, 40], stake: 33, actions: [{ label: "Garder Asana", onClick: vi.fn() }] };
   const module = (items: Finding[], extra: Partial<Parameters<typeof StackFindings>[0]> = {}) => render(<MemoryRouter><StackFindings lang="fr" total={446} format={(n) => `${Math.round(n)} €`} toolCount={4}

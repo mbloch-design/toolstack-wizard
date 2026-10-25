@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1246
+# Records: 1247
 # Prices can change; verify current vendor pricing before citation.
 # Pricing text preserves the stated currency and billing period. No inferred monthly EUR price; missing means unknown, not free.
 # Verdicts: verdict_fr / verdict_en mirror the published tool page (score = average of five evidence-graded axes, never paid).
@@ -53859,6 +53859,53 @@
       "weaknesses": [
         "No permanent free plan and no monthly billing in the published grid",
         "Dark web alerts and file storage sold as add-ons"
+      ]
+    }
+  },
+  {
+    "name": "Uniqode",
+    "slug": "uniqode",
+    "url_fr": "https://tooltrim.com/fr/tool/uniqode",
+    "url_en": "https://tooltrim.com/en/tool/uniqode",
+    "website": "https://www.uniqode.com/",
+    "category": "analytics",
+    "pricing": {
+      "free": "QR codes statiques gratuits, sans modification de destination ni suivi des scans. Essai des fonctions payantes : 14 jours sans carte bancaire.",
+      "paid": "QR dynamiques, facturation annuelle en USD : Essential 9 $US/mois ; Core 49 $US/mois ; Plus 99 $US/mois ; Business+ 399 $US/mois. Enterprise sur devis. Cartes de visite numériques : offre distincte."
+    },
+    "description_fr": "Créez des QR codes dynamiques, modifiez leur destination après impression et suivez les scans de vos campagnes.",
+    "description_en": "Create dynamic QR codes, update destinations after printing, and track scans across your campaigns.",
+    "price_verified_on": "2026-10-24",
+    "verdict_fr": {
+      "score": "3.8/5",
+      "label": "Très bon",
+      "keep_if": "Tu mets régulièrement à jour les destinations de QR codes déjà imprimés",
+      "avoid_if": "Un QR statique vers une adresse durable suffit à ton besoin",
+      "strengths": [
+        "La destination d’un code dynamique peut évoluer sans réimprimer le support",
+        "Les paliers distinguent volume de codes, historique statistique et collaboration",
+        "Linkpages et formulaires prolongent le parcours après le scan"
+      ],
+      "weaknesses": [
+        "Les QR codes dynamiques reposent sur un abonnement actif",
+        "Le tarif public est présenté au mois mais facturé annuellement",
+        "L’export CSV et les analyses détaillées nécessitent Core ou un palier supérieur"
+      ]
+    },
+    "verdict_en": {
+      "score": "3.8/5",
+      "label": "Very good",
+      "keep_if": "You regularly update destinations behind QR codes already in print",
+      "avoid_if": "A static QR code pointing to a stable address is enough",
+      "strengths": [
+        "Dynamic-code destinations can change without reprinting materials",
+        "Plans distinguish code volume, reporting history, and collaboration",
+        "Linkpages and forms extend the journey after a scan"
+      ],
+      "weaknesses": [
+        "Dynamic QR codes depend on an active subscription",
+        "Public rates are displayed monthly but billed annually",
+        "CSV export and detailed analytics require Core or a higher plan"
       ]
     }
   }

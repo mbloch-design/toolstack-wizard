@@ -1,3 +1,7 @@
+## 2026-10-25 — Intégration du back-office dans main
+
+Fusion du back-office avec `origin/main` c6692fe291 à la demande de l’utilisateur. Résolution additive des conflits CSS et changelog, sans retirer les nouveautés catalogue, Ma stack et déconnexion. Vérifications sur la fusion : 921 tests app, 304 API, 10 parcours navigateur, types app/API, design tokens et compilation SSR passent. L’ancien dist local, antérieur à Uniqode, est écarté des tests source ; aucun artefact généré versionné. Publication GitHub demandée, état du déploiement distinct.
+
 ## 2026-10-25 — Back-office : pilotage et fiches utilisateurs
 
 - Navigation permanente, vue d’ensemble avec totaux globaux et inscriptions récentes, liste utilisateurs avec recherche/pagination conservées, classement des outils utilisés et envisagés.
@@ -7,6 +11,18 @@
 - Périmètre explicite : comptes confirmés actifs. GA4, regroupement leads/soumissions et administration éditoriale restent à intégrer ; leurs états sont indiqués dans « Données disponibles ». La navigation historique et la déconnexion privée sont conservées.
 - Validation : 915 tests applicatifs, 304 tests API (18 tests externes ignorés), TypeScript app/API, design tokens, 10 parcours Chromium FR/EN à 390/1440 px, refus d’accès et nettoyage de déconnexion. Revue indépendante sans défaut important ; son point sur l’identité sans snapshot est corrigé par régression. Build production complet : PASS, 844,7 Mio ; compilation SSR renouvelée après les dernières corrections UX/CSS.
 - Livraison dans le worktree `backoffice-pilotage` sur la base origin/main `23c103c42a`. Aucun push ni déploiement effectué. Recette navigateur isolée avec des comptes synthétiques, pas une validation authentifiée sur le domaine public.
+
+## 2026-10-25 : Révision du bento — hauteur et reconnexion
+
+- Les rangées du bento suivent la hauteur des réponses et de l’historique, sans recouvrir les contrôles de l’inventaire.
+- Le helper de connexion couvre aussi l’accueil après la déconnexion. La recette volumineuse conserve ses contrôles de comptage et de débordement, avec une attente ciblée adaptée au chargement à froid.
+- Vérifications ciblées : dix parcours navigateur validés, dont révision d’une paire, reconnexion A/B, affichage desktop et 60 outils sur mobile.
+
+## 2026-10-25 : Déconnexion accompagnée
+
+- Animation du logo ToolTrim et message léger pendant la déconnexion réelle, sans temporisation artificielle ; animations désactivées si les mouvements réduits sont demandés.
+- Succès : retour à l’accueil dans la langue courante et confirmation discrète. Échec : confirmation et possibilité de réessayer ; avertissement des changements non enregistrés conservé.
+- Vérifications : attente, succès, échec et absence de redirection anticipée en tests unitaires ; parcours FR mobile et EN desktop avec réseau ralenti, retour depuis les paramètres.
 
 ## 2026-10-25 : Ma stack — réponses révisables et logos contenus
 
@@ -236,6 +252,11 @@ Reprise du premier écran connecté : promesse ToolTrim, explication des trois b
 - Remplacement par le token existant `var(--radius-sm)` (0,375 rem, soit 6 px à la taille racine standard). Baseline conservée.
 - Validation : `npm run validate:design-tokens` PASS (221 rayons littéraux) ; test `ToolFeaturesBlock` et build production complet PASS.
 
+## 2026-10-24 · Fiche affiliée Uniqode
+
+- Nouvelle fiche FR/EN : QR dynamiques pour supports imprimés, distinction avec QR statiques gratuits et cartes de visite numériques, note éditoriale sourcée 3,8/5. Paliers actuels Essential/Core/Plus/Business+/Enterprise en USD, taux mensuels publiés avec facturation annuelle explicitée.
+- Premier lien affilié pour les CTA généraux, second lien fourni pour les tarifs, tous deux sponsorisés. Le champ tarifaire optionnel `affiliate_url` conserve le lien principal en fallback et rejette les protocoles non HTTP(S).
+- Logo officiel, image OG et trois visuels produit sourcés, sans captures fabriquées. Publication demandée le 25 octobre 2026, intégrée au dernier main sans changement des autres fiches ni de la configuration des comptes.
 
 ## 2026-10-23 · Retrait d’AutoPhotos.ai
 
@@ -6192,3 +6213,11 @@ Connexion GitHub réelle confirmée par le propriétaire ; import serveur du nom
 - Régression reproduite avant correction puis 3 tests ciblés PASS. Chrome, composant réel avec observateur normal : 1 requête avant / 0 après pour un logo à 8 000 px après 5 secondes. Chargement au défilement également vérifié avec observateur silencieux ou absent. Les 8 contrôles de correspondance des routes de cache passent.
 - Certains fichiers macOS « dataless » bloquent les validations dans le répertoire de travail. Vérification sur une copie temporaire de HEAD avec les corrections : 409 tests, TypeScript app et build production complet PASS, contrôles SEO/routage et budgets inclus. Accueil, catalogue mobile et fiche Notion contrôlés dans Chrome : aucune erreur JS ni débordement horizontal, aucun logo hors écran forcé en eager. Les autres travaux locaux sont conservés ; aucune économie globale chiffrée sans métriques Vercel.
 - Validation de publication après report sur origin/main actualisé : 906 tests, TypeScript app et build production complet PASS, contrôles SEO/routage et budgets inclus ; les trois routes Chrome passent également. Seul le correctif CDN, ses tests et cette entrée sont inclus dans le commit de publication.
+
+## 2026-10-25 · Trois choix explicites pour les doublons Ma Stack
+
+- Les deux outils et « Garder les deux » forment trois tuiles de même hauteur sur une ligne, y compris sur téléphone. Le choix commun quitte les liens secondaires ; les noms restent complets, sans boutons imbriqués ni séparateurs « ou ».
+- Titre court et contexte d'usage neutre. Palette bleu / pêche retenue par Michael après comparaison de trois accords complémentaires ; duo de logos inclinés et étincelle Iconoir pour une touche visuelle légère, sans fond noir.
+- Les actions existantes et leur persistance sont conservées. Test de régression du groupe et de l'ordre des trois actions ; contrôles Chrome FR/EN à 320, 390 et 1440 px, sans chevauchement ni débordement, avec conservation des deux outils ou retrait du premier/second selon le choix.
+- Validation finale après intégration des changements récents de main : 915 tests, TypeScript app, contrôle des tokens et build production complet PASS, audits SEO/routage et budgets inclus ; 7 scénarios Chrome FR/EN passent à 320/390/1440 px, avec persistance des trois décisions et absence de chevauchement.
+- Report final sur l'avancée concurrente de main (hauteur des lignes de revue et parcours de déconnexion) : 915 tests, TypeScript app, compilation CSS complète et les 7 scénarios Chrome passent à nouveau. Le build production complet ci-dessus a été exécuté avant ce dernier report d'une règle de hauteur indépendante ; les deux changements CSS sont conservés.

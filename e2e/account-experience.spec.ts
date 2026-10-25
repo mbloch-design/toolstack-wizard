@@ -566,6 +566,7 @@ test('reviewing a saved pair takes priority over another pending question and ne
  stack.usage={'motion-array':4};stack.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-19T12:00:00.000Z'}};
  await control(request,'seed',{email:'pair-pending@example.invalid',state:stack});await page.goto('/en/ma-stack');await login(page,'en','pair-pending@example.invalid');await saved(page);
  await page.getByRole('button',{name:'Review my use',exact:true}).click();
+ await expect.poll(async()=>{const card=await page.locator('.mu-card').boundingBox();const board=await page.locator('.ms-board').boundingBox();return !!card&&!!board&&card.y+card.height<=board.y;}).toBe(true);
  await page.locator('.mu-history').getByRole('button',{name:'Review this choice',exact:true}).click();
  await expect(page.locator('.mf-now')).toHaveAttribute('data-kind','pair');
  await expect(page.locator('.mf-now')).toContainText('Your current choice is to keep both.');
@@ -590,4 +591,19 @@ test('removing a tool closes its saved-pair review without deleting the historic
  await expect(page.getByRole('button',{name:'Cancel review',exact:true})).toHaveCount(0);
  await expect(page.locator('.mf-now[data-kind="pair"]')).toHaveCount(0);
  expect((await snapshot(page)).decisions['notion|trello'].kind).toBe('keep-both');
+});
+
+for(const lang of ['fr','en'] as const) test(`friendly logout ${lang}: real pending feedback then home`,async({page,request})=>{
+ const fr=lang==='fr';await page.setViewportSize({width:fr?390:1440,height:900});
+ await page.goto(`/${lang}/ma-stack`);await login(page,lang,`farewell-${lang}@example.invalid`);await saved(page,lang);
+ await control(request,'fault',{path:'/auth/v1/logout',method:'POST',delayMs:2200});
+ await page.locator('.ac-header-trigger').click();await page.getByRole('button',{name:fr?'Me déconnecter':'Sign out',exact:true}).click();
+ const dialog=page.getByRole('dialog');await dialog.getByRole('button',{name:fr?'Me déconnecter':'Sign out',exact:true}).click();
+ await expect(dialog.getByRole('heading',{name:fr?'On ferme la porte…':'Closing the door…',exact:true})).toBeVisible();
+ await expect(dialog.getByRole('status')).toHaveText(fr?'Déconnexion en cours…':'Signing you out…');
+ await expect(dialog.locator('.ac-farewell-mark > span')).toHaveCSS('border-radius','50%');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.screenshot({path:test.info().outputPath(`logout-${lang}.png`)});
+ await expect(page).toHaveURL(`/${lang}`);await expect(dialog).toHaveCount(0);
+ await expect(page.locator('.asv2-topbar').getByRole('button',{name:fr?'Se connecter':'Sign in',exact:true})).toBeVisible();
 });

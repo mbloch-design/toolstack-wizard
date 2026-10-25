@@ -40789,6 +40789,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 
 @layer components {
+  .ms-page .mf .mf-grid:has(.mu-card) { grid-template-rows: auto auto; grid-auto-rows: auto; }
   .ms-page .mf .mu-card { height: auto; min-height: 0; overflow: visible; gap: 16px; align-self: start; }
   .mu-kicker { display: flex; align-items: center; gap: 8px; margin: 0; color: var(--color-muted); font: 500 14px/1.4 var(--font-ui); }
   .mu-card > h2 { margin: 0; font: 600 clamp(21px, 2vw, 26px)/1.2 var(--font-ui); letter-spacing: -.025em; color: var(--color-text-strong); }
@@ -41027,4 +41028,40 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .bo-unpriced { flex-direction: column; }
     .bo-tabs button, .bo-button { min-height: 44px; }
   }
+}
+
+@layer components {
+  .ac-dialog.ac-lifecycle--farewell { text-align: center; }
+  .ac-lifecycle--farewell .ac-lifecycle-heading { flex-direction: column; gap: var(--space-lg); }
+  .ac-farewell-mark { position: relative; display: grid; place-items: center; width: 80px; height: 80px; margin-block: var(--space-sm); }
+  .ac-farewell-mark img { position: relative; z-index: 1; animation: ac-farewell-wave 1.4s ease-in-out infinite; }
+  .ac-farewell-mark > span { position: absolute; inset: 0; border: 1px solid var(--color-border); border-radius: var(--radius-circle); animation: ac-farewell-ring 1.4s ease-out infinite; }
+  .ac-farewell-status { margin: var(--space-lg) 0 0; color: var(--color-text-secondary); font-size: 14px; line-height: 1.5; }
+  @keyframes ac-farewell-wave { 0%, 100% { transform: translateY(0) rotate(0); } 35% { transform: translateY(-5px) rotate(-8deg); } 65% { transform: translateY(-3px) rotate(8deg); } }
+  @keyframes ac-farewell-ring { from { transform: scale(.7); opacity: .8; } to { transform: scale(1.15); opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .ac-farewell-mark img, .ac-farewell-mark > span { animation: none; } }
+}
+
+/* Three complete decisions, readable together even on a phone. */
+@layer components {
+  .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { --mf-choice-peach: #FFE1CC; --mf-choice-line: #F5A66C; --mf-choice-detail: #A34E22; background: #EDF2FF; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-duel.mf-choice-group { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; gap: var(--space-xs); margin: var(--space-lg) 0 0; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face,
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-duel-both { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: 40px minmax(2.6em, auto) auto; align-content: start; align-items: center; justify-items: center; gap: var(--space-xs); min-width: 0; min-height: 136px; margin: 0; padding: var(--space-md) var(--space-xs); border: 0; border-radius: var(--radius-lg); text-align: center; font: 600 14px/1.3 var(--font-ui); cursor: pointer; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-duel.mf-choice-group .mf-face .mf-face-logo { grid-column: 1; grid-row: 1; width: 40px !important; height: 40px !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-duel.mf-choice-group .mf-face .mf-face-logo img { width: 40px !important; height: 40px !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-name { grid-column: 1; grid-row: 2; margin: 0; width: 100%; overflow: visible; text-overflow: clip; white-space: normal; overflow-wrap: anywhere; font: 600 14px/1.3 var(--font-ui); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-cost { grid-column: 1; grid-row: 3; margin: 0; font: 400 13px/1.3 var(--font-ui); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-cta { display: none; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-tag { left: 50%; right: auto; padding: 3px 6px; font-size: 11px; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-duel-both { background: var(--mf-choice-peach); color: var(--ms-ink); box-shadow: inset 0 0 0 1px var(--mf-choice-line); }
+  .ms-page .mf .mf-choice-logos { position: relative; display: flex; align-items: center; justify-content: center; gap: 3px; height: 40px; padding-top: 6px; }
+  .ms-page .mf .mf-choice-logos img:first-child { transform: rotate(10deg) translateY(2px); }
+  .ms-page .mf .mf-choice-logos img:nth-child(2) { transform: rotate(-10deg) translateY(2px); }
+  .ms-page .mf .mf-choice-logos > svg { position: absolute; top: -4px; left: 50%; translate: -50% 0; color: var(--mf-choice-detail); }
+  .ms-page .mf .mf-choice-both-label { max-width: 10ch; }
+  .ms-page .mf .mf-choice-sum { font: 400 13px/1.3 var(--font-ui); opacity: .8; white-space: nowrap; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-duel-both:hover { background: color-mix(in srgb, var(--mf-choice-peach) 78%, white); }
+  .ms-page .mf .mf-duel-both:focus-visible { outline: 2px solid var(--mf-choice-detail); outline-offset: 4px; }
+  .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) .mf-bar-actions { margin-top: var(--space-lg); padding-top: 0; }
 }

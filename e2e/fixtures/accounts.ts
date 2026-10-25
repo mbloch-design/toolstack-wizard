@@ -42,7 +42,9 @@ export async function login(page: Page, lang: 'fr' | 'en', email: string, passwo
   const accounts = await control(page.request, 'state');
   if (!accounts.accounts.some((user: { email: string }) => user.email === email)) await control(page.request, 'seed', { email });
   await dismissConsent(page);
-  await page.getByRole('button', { name: lang === 'fr' ? 'J’ai déjà un compte' : 'I already have an account', exact: true }).click();
+  const welcomeSignIn = page.getByRole('button', { name: lang === 'fr' ? 'J’ai déjà un compte' : 'I already have an account', exact: true });
+  if (await welcomeSignIn.isVisible()) await welcomeSignIn.click();
+  else await page.locator('.asv2-topbar').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
   await page.getByRole('button', { name: lang === 'fr' ? 'Continuer avec l’e-mail' : 'Continue with email', exact: true }).click();
   await page.getByLabel(lang === 'fr' ? 'Adresse e-mail' : 'Email address', { exact: true }).fill(email);
   await page.getByLabel(lang === 'fr' ? 'Mot de passe' : 'Password', { exact: true }).fill(password);
