@@ -12,6 +12,12 @@ Fusion du back-office avec `origin/main` c6692fe291 à la demande de l’utilisa
 - Validation : 915 tests applicatifs, 304 tests API (18 tests externes ignorés), TypeScript app/API, design tokens, 10 parcours Chromium FR/EN à 390/1440 px, refus d’accès et nettoyage de déconnexion. Revue indépendante sans défaut important ; son point sur l’identité sans snapshot est corrigé par régression. Build production complet : PASS, 844,7 Mio ; compilation SSR renouvelée après les dernières corrections UX/CSS.
 - Livraison dans le worktree `backoffice-pilotage` sur la base origin/main `23c103c42a`. Aucun push ni déploiement effectué. Recette navigateur isolée avec des comptes synthétiques, pas une validation authentifiée sur le domaine public.
 
+## 2026-10-25 : Ma stack entièrement gratuite
+
+- État compact à deux cartes alignées quand aucun abonnement payant ni question ne reste : retrait des zones vides réservées à la répartition et aux décisions. Les cartes d’une même rangée prennent la hauteur de la plus grande, sans hauteur fixe ni contenu coupé ; les boutons de bilan restent en pied de carte.
+- Bilan adapté aux formules gratuites, sans répétition du message d’absence de forfait payant ; accès aux choix et à l’inventaire conservé.
+- Vérifications : huit parcours FR/EN validés (gratuit, budget encore inconnu, bilan payant, révision), égalité des hauteurs à 1440 et 820 px et absence de débordement à 390 px ; 22 tests unitaires ciblés, TypeScript et design tokens validés ; capture du rendu contrôlée.
+
 ## 2026-10-25 : Révision du bento — hauteur et reconnexion
 
 - Les rangées du bento suivent la hauteur des réponses et de l’historique, sans recouvrir les contrôles de l’inventaire.

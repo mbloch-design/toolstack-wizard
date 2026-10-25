@@ -607,3 +607,22 @@ for(const lang of ['fr','en'] as const) test(`friendly logout ${lang}: real pend
  await expect(page).toHaveURL(`/${lang}`);await expect(dialog).toHaveCount(0);
  await expect(page.locator('.asv2-topbar').getByRole('button',{name:fr?'Se connecter':'Sign in',exact:true})).toBeVisible();
 });
+
+for(const lang of ['fr','en'] as const) test(`all-free stack ${lang}: compact budget and honest completion`,async({page,request})=>{
+ const slugs=['supabase','typescript','make'];const stack=state(slugs);stack.billing={paid:[],reviewed:slugs,choices:{typescript:{source:'custom',amount:0,currency:'EUR',period:'monthly'}}};
+ await control(request,'seed',{email:`free-only-${lang}@example.invalid`,state:stack});
+ await page.setViewportSize({width:1440,height:900});await page.goto(`/${lang}/ma-stack`);await login(page,lang,`free-only-${lang}@example.invalid`);await saved(page,lang);
+ await expect(page.locator('.mu-card')).toBeVisible();
+ await expect(page.locator('.mf-grid')).toHaveCSS('grid-template-areas','"price fit"');
+ await expect.poll(async()=>{const price=await page.locator('.mf-price').boundingBox();const review=await page.locator('.mu-card').boundingBox();return Math.abs(price!.y-review!.y);}).toBeLessThan(2);
+ await expect.poll(async()=>{const price=await page.locator('.mf-price').boundingBox();const review=await page.locator('.mu-card').boundingBox();return Math.abs(price!.height-review!.height);}).toBeLessThan(2);
+ await expect(page.locator('.mu-card')).toContainText(lang==='fr'?'Votre stack, sans abonnement payant.':'Your stack has no paid plans.');
+ await expect(page.locator('.mf-balance')).toHaveCount(0);
+ await page.screenshot({path:test.info().outputPath(`free-only-${lang}-desktop.png`)});
+ await page.setViewportSize({width:820,height:900});
+ await expect.poll(async()=>{const price=await page.locator('.mf-price').boundingBox();const review=await page.locator('.mu-card').boundingBox();return Math.abs(price!.height-review!.height);}).toBeLessThan(2);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.setViewportSize({width:390,height:900});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await expect(page.locator('.mu-card')).toBeVisible();
+});

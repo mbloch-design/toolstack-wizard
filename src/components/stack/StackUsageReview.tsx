@@ -8,8 +8,8 @@ const LEVELS = [
   ["Usage régulier", "Regular use"], ["Usage soutenu", "Frequent use"], ["Usage intensif", "Intensive use"],
 ];
 /** Declared use is evidence to revisit, never a verdict about product suitability. */
-export default function StackUsageReview({ rows, lang, format, complete, history, onReviewTools }: {
-  rows: FitRow[]; lang: "fr" | "en"; format: (n: number) => string; complete: boolean;
+export default function StackUsageReview({ rows, lang, format, complete, freeOnly = false, history, onReviewTools }: {
+  rows: FitRow[]; lang: "fr" | "en"; format: (n: number) => string; complete: boolean; freeOnly?: boolean;
   history?: ReactNode; onReviewTools: () => void;
 }) {
   const t = (fr: string, en: string) => lang === "fr" ? fr : en;
@@ -38,10 +38,10 @@ export default function StackUsageReview({ rows, lang, format, complete, history
   }, [editing]);
   return <article className="mf-card mf-fit mu-card" data-open="" aria-label={t("Vos usages et vos choix", "Your use and choices")}>
     <p className="mu-kicker"><ListChecks size={18} aria-hidden />{t(complete || !hasUsage ? "Vos choix" : "Vos usages", complete || !hasUsage ? "Your choices" : "Your use")}</p>
-    <h2 ref={heading} tabIndex={-1}>{pending ? t("Comment utilisez-vous cet outil ?", "How much do you use this tool?") : review ? t("Vos réponses restent à vous.", "Your answers, your call.") : complete ? t("Tout est renseigné.", "Everything is filled in.") : hasUsage ? t("Vos usages sont renseignés.", "Your use is recorded.") : t("Vos choix précédents.", "Your previous choices.")}</h2>
+    <h2 ref={heading} tabIndex={-1}>{pending ? t("Comment utilisez-vous cet outil ?", "How much do you use this tool?") : review ? t("Vos réponses restent à vous.", "Your answers, your call.") : complete ? freeOnly ? t("Votre stack, sans abonnement payant.", "Your stack has no paid plans.") : t("Tout est renseigné.", "Everything is filled in.") : hasUsage ? t("Vos usages sont renseignés.", "Your use is recorded.") : t("Vos choix précédents.", "Your previous choices.")}</h2>
     {!pending && !review ? <>
       <p className="mu-copy">{complete
-        ? t("Budget, doublons et usages : vous avez répondu aux questions disponibles. Revenez sur vos choix quand vos besoins changent.", "Budget, overlaps and use: you’ve answered the available questions. Revisit your choices as your needs change.")
+        ? freeOnly ? t("Vos outils sont renseignés en version gratuite. Vous pouvez revoir vos formules à tout moment.", "Your tools are recorded on free plans. You can revisit your plans at any time.") : t("Budget, doublons et usages : vous avez répondu aux questions disponibles. Revenez sur vos choix quand vos besoins changent.", "Budget, overlaps and use: you’ve answered the available questions. Revisit your choices as your needs change.")
         : hasUsage ? t("Vos réponses décrivent votre usage. Vous pouvez les modifier à tout moment.", "Your answers describe your use. You can change them at any time.") : t("Retrouvez les décisions déjà prises. Les questions restantes vous attendent à côté.", "Revisit your earlier decisions. The remaining questions are alongside.")}</p>
       <p className="mu-confirm"><CheckCircle2 size={18} aria-hidden />{t("Vos choix restent modifiables.", "Your choices stay editable.")}</p>
       <div className="mu-actions"><Button variant="primary" onClick={() => setReview(true)}>{t(complete || !hasUsage ? "Revoir mes choix" : "Revoir mes usages", complete || !hasUsage ? "Review my choices" : "Review my use")}</Button></div>

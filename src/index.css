@@ -41065,3 +41065,19 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-duel-both:focus-visible { outline: 2px solid var(--mf-choice-detail); outline-offset: 4px; }
   .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) .mf-bar-actions { margin-top: var(--space-lg); padding-top: 0; }
 }
+
+@layer components {
+  /* Shared row height follows the tallest card; preserve multi-row bento spans. */
+  @media (min-width: 761px) {
+    .ms-page .mf .mf-grid { align-items: stretch !important; }
+    .ms-page .mf .mf-grid > .mf-card { align-self: stretch !important; height: auto !important; }
+    .ms-page .mf .mu-card .mu-actions:last-child { margin-top: auto; padding-top: var(--space-xs); }
+  }
+  /* Override the legacy unlayered bento areas only when these are the two remaining cards. */
+  @media (min-width: 761px) {
+    .ms-page .mf .mf-grid[data-compact] { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) !important; grid-template-areas: "price fit" !important; grid-template-rows: auto !important; align-items: stretch; }
+  }
+  @media (max-width: 760px) {
+    .ms-page .mf .mf-grid[data-compact] { grid-template-areas: "price" "fit" !important; grid-template-rows: auto auto !important; }
+  }
+}

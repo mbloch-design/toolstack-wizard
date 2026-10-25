@@ -307,7 +307,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
   const segments: { id: string; label: string; amount: number; color: string; tool?: ToolSummary }[] = [...shown.map((line, index) => ({ id: line.tool.id, label: line.tool.name, amount: line.amount, color: AREA_COLORS[index], tool: line.tool })),
     ...(otherCount > 0 ? [{ id: "others", label: t(`${otherCount} autre${s(otherCount)}`, `${otherCount} other${s(otherCount)}`), amount: otherAmount, color: AREA_OTHER }] : [])];
   return <section className="mf" aria-label={t("Ma stack en bref", "My stack at a glance")}>
-    <div className="mf-grid" data-starter={toolCount === 1 ? "" : undefined} data-sparse={total === 0 && fit.length === 0 ? "" : undefined} data-next={groups.length} data-done={top ? undefined : ""}>
+    <div className="mf-grid" data-starter={toolCount === 1 ? "" : undefined} data-sparse={top && total === 0 && fit.length === 0 ? "" : undefined} data-compact={!top && toolCount > 1 && total === 0 && fit.length === 0 ? "" : undefined} data-next={groups.length} data-done={top ? undefined : ""}>
       {/* 1. Read first: what the stack costs, and the verdict under it. */}
       <article className="mf-card mf-price" data-open={openCard === "price" ? "" : undefined} data-all={priceAll ? "" : undefined}>
         <p className="mf-k tt-kicker">{icon(Wallet)}{spend.length === 0 && items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Votre budget", "Your budget") : items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel renseigné", "Known budget so far") : t("Budget mensuel renseigné", "Recorded monthly budget")}{expander("price", t("le coût", "the cost"))}</p>
@@ -352,7 +352,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
             <b>{format(otherAmount)}</b>
           </button>}
           {priceAll && spend.length > 4 && <TextLink className="mf-less" onClick={() => setPriceAll(false)}>{t("Réduire", "Show less")}</TextLink>}
-        </> : !items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="mf-empty">{t("Aucun abonnement payant renseigné.", "No paid plans recorded.")}</p>}
+        </> : !items.some(item => item.kind === "price" || item.kind === "freemium") && freeTools.length !== toolCount && <p className="mf-empty">{t("Aucun abonnement payant renseigné.", "No paid plans recorded.")}</p>}
         {freeTools.length > 0 && <div className="mf-cost-complement">
           <p>{t(`${freeTools.length} outil${s(freeTools.length)} gratuit${s(freeTools.length)} · sans coût ajouté`, `${freeTools.length} free tool${s(freeTools.length)} · no added cost`)}</p>
           <ul className="mf-cost-zero">{freeTools.map(tool => <li key={tool.id}><ToolLogo tool={tool} size={22} /><span>{tool.name}</span><b>{t("Gratuit", "Free")}</b></li>)}</ul>
@@ -516,7 +516,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
       </article>}
 
       {toolCount > 1 && (fit.length > 0 || !top || history) && <StackUsageReview key={`${scope}:${scopeEpoch}`} rows={fit} lang={lang} format={format}
-        complete={!top && fit.every(row => !!row.usage)} history={history} onReviewTools={onReviewTools} />}
+        complete={!top && fit.every(row => !!row.usage)} freeOnly={total === 0 && freeTools.length === toolCount} history={history} onReviewTools={onReviewTools} />}
 
 
     </div>
