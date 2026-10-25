@@ -375,16 +375,23 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
         <div className="mf-now-q">{top.kind !== "pair" && <span className="mf-now-logo" aria-hidden="true"><ToolLogo tool={top.tools[0]} size={36} /></span>}<h3>{top.kind === "price" && !(top.plans && top.plans.length) ? t(`Combien vous coûte ${top.tools[0].name} par mois\u00a0?`, `How much does ${top.tools[0].name} cost you a month?`) : top.title}</h3></div>
         <p className="mf-t">{guide && (top.kind === "price" || top.kind === "freemium") ? t("Pour un budget juste, dites-nous laquelle vous payez. Gratuite, ça compte aussi.", "For an honest budget, tell us which one you pay. Free counts too.") : top.detail}</p>
         {/* A duplicate is a face-off: one tap on a face keeps it, and each face says what it saves. */}
-        {top.kind === "pair" && <div className="mf-duel" data-picked={picked !== null ? picked : undefined}>{top.tools.slice(0, 2).map((tool, index) => {
+        {top.kind === "pair" && <div className="mf-duel mf-choice-group" data-picked={picked !== null ? picked : undefined}>{top.tools.slice(0, 2).map((tool, index) => {
           const keep = top.actions.find((action) => action.label.endsWith(tool.name));
           const own = top.costs?.[index] ?? 0, other = top.costs?.[1 - index] ?? 0; // the cheaper face gets the tag
           return <Fragment key={tool.id}>
-            {index === 1 && <span className="mf-duel-or" aria-hidden="true">{t("ou", "or")}</span>}
+            {index === 1 && top.actions.filter((action) => !top.tools.some((candidate) => action.label.endsWith(candidate.name))).map((action) =>
+                <button key={action.label} type="button" className="mf-duel-both" onClick={action.onClick}
+                  aria-label={action.label}
+                  onPointerEnter={() => setPreview(total)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total)} onBlur={() => setPreview(null)}>
+                  <span className="mf-choice-logos" aria-hidden="true">{top.tools.slice(0, 2).map((item) => <ToolLogo key={item.id} tool={item} size={28} />)}<Sparkles size={14} /></span>
+                  <span className="mf-choice-both-label">{action.label}</span>
+                  <span className="mf-choice-sum">{format((top.costs?.[0] ?? 0) + (top.costs?.[1] ?? 0))}{t("/mois", "/mo")}</span>
+                </button>)}
             <button type="button" className="mf-face" onClick={() => pick(index, keep?.onClick)} aria-label={keep?.ariaLabel || keep?.label}
               onPointerEnter={() => setPreview(total - other)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total - other)} onBlur={() => setPreview(null)}
               data-state={picked === null ? undefined : picked === index ? "kept" : "gone"}>
               {own < other && <span className="mf-face-tag">{t("Le moins cher", "Cheaper")}</span>}
-              <span className="mf-face-logo"><ToolLogo tool={tool} size={64} />{picked === index && <span className="mf-face-check" aria-hidden="true"><Check size={16} strokeWidth={3} /></span>}</span>
+              <span className="mf-face-logo"><ToolLogo tool={tool} size={40} />{picked === index && <span className="mf-face-check" aria-hidden="true"><Check size={16} strokeWidth={3} /></span>}</span>
               {picked === index && other > 0 && <span className="mf-face-gain" aria-hidden="true">−{format(other)}{t("/mois", "/mo")}</span>}
               <span className="mf-face-name">{tool.name}</span>
               <span className="mf-face-cost">{own > 0 ? `${format(own)}${t("/mois", "/mo")}` : t("Gratuit", "Free")}</span>
@@ -458,8 +465,6 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
           <div className="mf-links">
             {top.link && <TextLink to={top.link.to} onClick={top.link.onClick}>{top.link.label}</TextLink>}
             {top.bulk && <TextLink onClick={top.bulk.onClick}>{top.bulk.label}</TextLink>}
-            {/* A pair's third answer, keep both, is the quiet one: a link. */}
-            {top.kind === "pair" && top.actions.filter((action) => !top.tools.some((tool) => action.label.endsWith(tool.name))).map((action) => <TextLink key={action.label} onClick={action.onClick}>{action.label}</TextLink>)}
             {order.length > 1 && <TextLink className="mk-link--quiet" onClick={() => { setFirst(null); setLater((keys) => [...keys.filter((key) => key !== top.key), top.key]); }}>{t("Plus tard", "Later")}</TextLink>}
           </div>
           {(top.savePrice || (top.plans && top.plans.length > 0)) && top.kind === "price" && top.actions.map((action) => <TextLink key={action.label} onClick={action.onClick}>{t("Saisie détaillée (sièges, annuel)", "Detailed entry (seats, yearly)")}</TextLink>)}

@@ -205,8 +205,8 @@ export default function CartPage() {
   // The deck: freemium plans first (they set the cost and the overlaps), then
   // the pairs, then the prices nobody has entered.
   const why = (shared: string[], explicit: boolean) => shared.length > 0
-    ? t(`Les deux servent à la même chose : ${stackDisplayLabel(shared[0], lang).toLowerCase()}. Un seul suffit sans doute.`, `Both do the same job: ${shared[0].toLowerCase()}. One is probably enough.`)
-    : explicit ? t("L’un remplace l’autre. Un seul suffit sans doute.", "Either can replace the other. One is probably enough.") : t("Ils font peut-être le même travail.", "They may do the same job.");
+    ? t(`Usage commun : ${stackDisplayLabel(shared[0], lang).toLowerCase()}.`, `Shared use: ${shared[0].toLowerCase()}.`)
+    : explicit ? t("Ces outils peuvent se remplacer selon vos besoins.", "These tools can replace each other depending on your needs.") : t("Ils font peut-être le même travail.", "They may do the same job.");
   const deckItems: Finding[] = [
     ...unreviewed.map((tool): Finding => ({
       key: `freemium:${tool.id}`, kind: "freemium", tools: [tool],
@@ -221,7 +221,7 @@ export default function CartPage() {
     })),
     ...decisionPairs.map(({ a, b, shared, explicit, double }): Finding => ({
       key: `pair:${pairKey(toolKey(a), toolKey(b))}`, kind: "pair", tools: [a, b],
-      title: t(`${a.name} ou ${b.name}\u00a0?`, `${a.name} or ${b.name}?`),
+      title: t("L’un, l’autre ou les deux\u00a0?", "One, the other, or both?"),
       detail: why(shared, explicit), costs: [monthlyOf(a), monthlyOf(b)], stake: double,
       actions: [
         ...[[a, b], [b, a]].map(([keep, drop]) => ({ label: t(`Garder ${keep.name}`, `Keep ${keep.name}`), ariaLabel: t(`Garder ${keep.name}, retirer ${drop.name}`, `Keep ${keep.name}, remove ${drop.name}`),
