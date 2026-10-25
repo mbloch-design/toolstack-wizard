@@ -22,14 +22,18 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(
   const legacy = { version: 3, pinnedToolSlugs: ['notion'], needs: [], toolEntries: [{ toolSlug: 'notion', needIds: [], intent: 'stack', assignmentMode: 'pending', addedAt: '2026-10-19T12:00:00Z' }] };
   await control(request, 'reset', { users: [ { email: 'admin@example.invalid' }, { email: 'detail@example.invalid', state: personal }, { email: 'legacy@example.invalid', state: legacy }, { email: 'empty@example.invalid', state: state([]) }, ...Array.from({ length: 23 }, (_, i) => ({ email: `ordinary-${i}@example.invalid` })) ] });
   await passwordLogin(page, lang); await expect(page.getByTestId('accounts-total')).toHaveText('27');
+  await expect(page.getByRole('complementary', {includeHidden:true})).toHaveCount(1);
   await page.getByRole('button', {name: lang === 'fr' ? 'Vue d’ensemble' : 'Overview',exact:true}).click();
-  await page.locator('.bo-shell').screenshot({path:test.info().outputPath(`${lang}-${width}-overview.png`)});
+  await page.locator('.asv2-root').screenshot({path:test.info().outputPath(`${lang}-${width}-overview.png`)});
   await page.getByRole('button', {name:lang === 'fr' ? 'Utilisateurs':'Users',exact:true}).click();
   await expect(page.locator('.bo-metrics strong')).toHaveText(['27', '3', '2']);
   if (width === 390) {
     await page.getByRole('button', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
     const profile = page.getByRole('region', {name:lang === 'fr' ? 'Détail du compte':'Account detail'});
     await expect(profile).toBeInViewport();
+    await page.getByRole('button', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
+    await expect(profile).toBeInViewport();
+    await expect(profile).toContainText(lang === 'fr' ? 'Aucune stack enregistrée.' : 'No saved stack.');
     await profile.getByRole('button', {name:lang === 'fr' ? 'Fermer le détail':'Close detail',exact:true}).click();
   } await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(25);
   await page.getByRole('button', { name: lang === 'fr' ? 'Page suivante' : 'Next page', exact: true }).click(); await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(2);
@@ -87,7 +91,7 @@ async function seededAdmin(page: import('@playwright/test').Page, request: impor
 }
 test('back-office clean logout purges private primary, backup, plans and decisions', async ({ page, request }) => {
   await seededAdmin(page, request); await openBackOffice(page);
-  await page.locator('.bo-topbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await expect(page.getByRole('button', { name: 'I already have an account', exact: true })).toBeVisible();
   expect((await snapshot(page)).selection.pinnedToolSlugs).toEqual([]);
@@ -100,11 +104,11 @@ test('back-office dirty logout supports cancel, failed signout retry and confirm
   // A failed write followed by the older remote snapshot requires resolution;
   // the debounce's transient unsaved state is intentionally no longer a notice.
   await expect(page.locator('.ms-account [role=status]')).toHaveText('Two versions to resolve');
-  await openBackOffice(page); await page.locator('.bo-topbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await openBackOffice(page); await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
   const confirm = page.getByRole('button', { name: 'Sign out without saving', exact: true }); await expect(confirm).toBeVisible();
   await page.getByRole('button', { name: 'Keep editing', exact: true }).click(); await expect(confirm).toHaveCount(0);
   expect((await snapshot(page)).billing.choices.figma.amount).toBe(99);
-  await page.locator('.bo-topbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
   await control(request, 'fault', { path: '/auth/v1/logout', method: 'POST', status: 400 });
   await confirm.click(); await expect(page.getByRole('alert')).toContainText('Sign-out failed');
   await expect(page.getByTestId('accounts-total')).toBeVisible(); expect((await snapshot(page)).billing.choices.figma.amount).toBe(99);
@@ -133,9 +137,9 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
   }
   await readable('.ba-login, .ba-login-field input');
   await seededAdmin(page, request); await openBackOffice(page);
-  await readable('.bo-button, .bo-search-field, .bo-metrics > button, .bo-card', null);
+  await readable('.bo-button, .bo-search-field, .bo-metrics', null);
   await page.getByRole('button', { name: 'View stack for admin@example.invalid', exact: true }).click(); await readable('.bo-detail', null);
-  await page.locator('.bo-topbar').getByRole('button', { name: 'Sign out', exact: true }).click();
+  await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();
   await page.goto('/en/ma-stack'); await page.getByRole('button', { name: 'I already have an account', exact: true }).click();
   await page.getByRole('button', { name: 'Continue with email', exact: true }).click(); await readable('.ac-providers .ac-button', null); await readable('.ac-form input');

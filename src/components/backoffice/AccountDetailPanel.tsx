@@ -65,7 +65,7 @@ export function AccountDetailPanel({
         <span className="bo-eyebrow">
           {t("Fiche utilisateur", "User profile")}
         </span>
-        <button className="bo-button bo-button-quiet" onClick={onClose}>
+        <button className="mk-button tt-button-secondary bo-button bo-button-quiet" onClick={onClose}>
           <X size={16} aria-hidden />
           {t("Fermer le détail", "Close detail")}
         </button>
@@ -156,7 +156,7 @@ export function AccountDetailPanel({
       ) : (
         <>
           <div
-            className="bo-tabs"
+            className="mk-segmented bo-tabs"
             role="tablist"
             aria-label={t("Données de l’utilisateur", "User data")}
           >
@@ -543,7 +543,7 @@ export function AccountDetailPanel({
           </p>
         </>
       )}
-      <button className="bo-button bo-back" onClick={onClose}>
+      <button className="mk-button tt-button-secondary bo-button bo-back" onClick={onClose}>
         <ArrowLeft size={16} aria-hidden />
         {t("Revenir à la liste", "Back to users")}
       </button>

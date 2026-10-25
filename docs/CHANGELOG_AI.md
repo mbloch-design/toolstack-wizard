@@ -1,3 +1,9 @@
+## 2026-10-25 — Back-office aligné sur le système graphique actif
+
+Retour utilisateur sur la capture : l’habillage précédent ajoutait une seconde coque de dashboard au shell du site. Suppression du logo et de la sidebar internes, navigation locale en segments, actions du kit Ma Stack, indicateurs regroupés dans une surface fonctionnelle sans bordures décoratives, listes ouvertes et classement des outils à la place de l’encart « Beyond registration ». Typographies, espacements, surfaces et boutons suivent les tokens et composants actifs. Aucune modification des API ou droits d’accès.
+
+La recette vérifie une seule sidebar, le shell complet et les parcours FR/EN à 390/1440 px. La revue indépendante confirme l’intégration graphique ; son défaut de réouverture du compte sélectionné est reproduit puis corrigé avec régression (fiche conservée, focus et défilement restaurés). Les données affichées dans les captures sont synthétiques. Validation locale : 922 tests applicatifs, 10 parcours Chromium, types app et design tokens passent. Build production complet et budgets : PASS. Compilation SSR finale renouvelée après la correction de réouverture du compte.
+
 ## 2026-10-25 — Intégration du back-office dans main
 
 Fusion du back-office avec `origin/main` c6692fe291 à la demande de l’utilisateur. Résolution additive des conflits CSS et changelog, sans retirer les nouveautés catalogue, Ma stack et déconnexion. Vérifications sur la fusion : 921 tests app, 304 API, 10 parcours navigateur, types app/API, design tokens et compilation SSR passent. L’ancien dist local, antérieur à Uniqode, est écarté des tests source ; aucun artefact généré versionné. Publication GitHub demandée, état du déploiement distinct.

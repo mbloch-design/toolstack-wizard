@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
+import { Button as StackButton } from "@/components/stack/StackKit";
 import { AccountsDashboard } from "@/components/backoffice/AccountsDashboard";
 import type { Session } from "@supabase/supabase-js";
 import { useStackAccount } from "@/hooks/useStackAccount";
@@ -1338,13 +1339,11 @@ export default function BackOfficePage() {
   }
 
   if (activeTab === "accounts") return (
-    <div className="bo-shell">
+    <div className="bo-shell ms-page">
       <Breadcrumb items={[{ label: t("Back-office", "Back office") }]} includeSchema={false}/>
-      <header className="bo-topbar"><div><span className="bo-brand">ToolTrim</span><span className="bo-admin-label">{t("Administration", "Administration")}</span></div><p>{adminSession.email || t("Compte connecté", "Signed-in account")}</p>
-        <nav className="ba-actions" aria-label={t("Sections du back-office", "Back-office sections")}>
-          <button className="ba-button" disabled={authLoading} onClick={() => void disconnect()}><LogOut aria-hidden="true"/>{t("Fermer", "Sign out")}</button>
-        </nav>
-      </header>
+      <div className="bo-account-toolbar"><p>{t("Administration", "Administration")}<span aria-hidden> · </span>{adminSession.email || t("Compte connecté", "Signed-in account")}</p>
+        <StackButton className="bo-signout" disabled={authLoading} onClick={() => void disconnect()} icon={<LogOut size={16} aria-hidden/>}>{t("Fermer", "Sign out")}</StackButton>
+      </div>
       {logoutFeedback}
       <AccountsDashboard key={adminSession.accessToken} initialView="overview" onOpenHistory={() => setActiveTab("preprod")}/>
     </div>

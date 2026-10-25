@@ -1,6 +1,7 @@
 import { useLang } from "@/hooks/useLang";
 import type { AccountsDashboard } from "@/lib/backofficeAccounts";
-import { ArrowRight, CheckCircle2 } from "@/lib/icons";
+import { ArrowRight } from "@/lib/icons";
+import { ActionRow, TextLink } from "@/components/stack/StackKit";
 import { date, ToolName, tradeLabel } from "./backofficeDisplay";
 
 export function OverviewMetrics({
@@ -15,7 +16,9 @@ export function OverviewMetrics({
     <div className="bo-metrics">
       <button onClick={onUsers}>
         <span>{t("Comptes confirmés", "Confirmed accounts")}</span>
-        <strong data-testid="accounts-total">{data.totals.accounts}</strong>
+        <strong className="mk-figure" data-testid="accounts-total">
+          {data.totals.accounts}
+        </strong>
         <small>
           {t("Comptes actifs dans le périmètre", "Active accounts in scope")}
           <ArrowRight size={16} aria-hidden />
@@ -25,7 +28,7 @@ export function OverviewMetrics({
         <span>
           {t("Comptes avec une sauvegarde", "Accounts with a saved stack")}
         </span>
-        <strong>{data.totals.accountsWithStack}</strong>
+        <strong className="mk-figure">{data.totals.accountsWithStack}</strong>
         <small>
           {t("État personnel synchronisé", "Synchronized personal state")}
           <ArrowRight size={16} aria-hidden />
@@ -33,7 +36,7 @@ export function OverviewMetrics({
       </button>
       <button onClick={onUsers}>
         <span>{t("Stacks non vides", "Nonempty stacks")}</span>
-        <strong>{data.totals.nonemptyStacks}</strong>
+        <strong className="mk-figure">{data.totals.nonemptyStacks}</strong>
         <small>
           {t("Au moins un outil sauvegardé", "At least one saved tool")}
           <ArrowRight size={16} aria-hidden />
@@ -122,12 +125,9 @@ export function BackofficeOverview({
     <>
       <OverviewMetrics data={data} onUsers={onUsers} />
       <div className="bo-overview-grid">
-        <section className="bo-card">
+        <section className="bo-card bo-registrations">
           <div className="bo-section-heading">
             <h2>{t("Inscriptions récentes", "Recent registrations")}</h2>
-            <span className="bo-tag">
-              {t("Comptes confirmés", "Confirmed accounts")}
-            </span>
           </div>
           <p className="bo-meta">
             {t(
@@ -138,23 +138,18 @@ export function BackofficeOverview({
           <ul className="bo-recent-list">
             {data.accounts.slice(0, 5).map((account) => (
               <li key={account.userId}>
-                <button onClick={() => onUser(account.userId)}>
-                  <span className="bo-initial" aria-hidden>
-                    {(account.displayName || account.email || "?")
-                      .slice(0, 1)
-                      .toUpperCase()}
-                  </span>
-                  <span>
-                    <strong>
-                      {account.displayName || account.email || account.userId}
-                    </strong>
-                    <small>
-                      {tradeLabel(account.insights?.trade, lang)} ·{" "}
-                      {date(account.createdAt, lang)}
-                    </small>
-                  </span>
-                  <ArrowRight size={17} aria-hidden />
-                </button>
+                <ActionRow
+                  lead={
+                    <span className="bo-initial">
+                      {(account.displayName || account.email || "?")
+                        .slice(0, 1)
+                        .toUpperCase()}
+                    </span>
+                  }
+                  name={account.displayName || account.email || account.userId}
+                  sub={`${tradeLabel(account.insights?.trade, lang)} · ${date(account.createdAt, lang)}`}
+                  onClick={() => onUser(account.userId)}
+                />
               </li>
             ))}
           </ul>
@@ -163,55 +158,22 @@ export function BackofficeOverview({
               {t("Aucun compte confirmé.", "No confirmed accounts.")}
             </p>
           )}
-          <button className="bo-text-button" onClick={onUsers}>
+          <TextLink onClick={onUsers}>
             {t("Tous les utilisateurs", "All users")}
             <ArrowRight size={15} aria-hidden />
-          </button>
+          </TextLink>
         </section>
-        <section className="bo-card bo-reading">
-          <span className="bo-eyebrow">
-            {t("Comprendre vos utilisateurs", "Understand your users")}
-          </span>
-          <h2>{t("Au-delà de l’inscription", "Beyond registration")}</h2>
-          <p>
+        <div className="bo-ranking-group">
+          <ToolsRanking data={data} compact />
+          <TextLink onClick={onStacks}>
             {t(
-              "Ouvrez une fiche pour retrouver les outils choisis, leur usage, le budget déclaré et le contexte métier.",
-              "Open a profile to explore tool choices, usage, declared budget and professional context.",
+              "Explorer tous les outils sauvegardés",
+              "Explore all saved tools",
             )}
-          </p>
-          <ul>
-            <li>
-              <CheckCircle2 size={17} aria-hidden />
-              {t("Sélections et tableaux", "Selections and boards")}
-            </li>
-            <li>
-              <CheckCircle2 size={17} aria-hidden />
-              {t(
-                "Métier, TJM et abonnements déclarés",
-                "Trade, daily rate and declared subscriptions",
-              )}
-            </li>
-            <li>
-              <CheckCircle2 size={17} aria-hidden />
-              {t(
-                "Usage et décisions enregistrées",
-                "Saved usage and decisions",
-              )}
-            </li>
-          </ul>
-          <p className="bo-meta">
-            {t(
-              "Une rubrique vide reste signalée comme non renseignée.",
-              "Empty fields remain marked as not provided.",
-            )}
-          </p>
-        </section>
+            <ArrowRight size={15} aria-hidden />
+          </TextLink>
+        </div>
       </div>
-      <ToolsRanking data={data} compact />
-      <button className="bo-text-button" onClick={onStacks}>
-        {t("Explorer tous les outils sauvegardés", "Explore all saved tools")}
-        <ArrowRight size={15} aria-hidden />
-      </button>
       <p className="bo-meta bo-source-note">
         {t(
           "Source : comptes confirmés actifs et snapshots sauvegardés. Totaux globaux, sans filtre de période. Dernière actualisation : ",

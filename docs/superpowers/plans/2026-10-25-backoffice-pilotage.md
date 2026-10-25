@@ -41,7 +41,7 @@
 **Files:** src/components/backoffice/AccountsDashboard.tsx, BackofficeOverview.tsx, AccountDetailPanel.tsx, backofficeDisplay.tsx, src/pages/BackOfficePage.tsx, src/index.css; corresponding component tests.
 **Interfaces:** AccountsDashboard accepts initialView and onOpenHistory; default users preserves standalone entry; BackOfficePage chooses overview. Detail accepts AccountDetail and closes without losing list state.
 - [x] Add failing UI tests for overview, user navigation, all saved rubrics, missing fields, annual/per-seat data, source errors and late responses.
-- [x] Build persistent compact sidebar and overview from independently loaded global first-page data; maintain users filters/page across view changes.
+- [x] Build local horizontal navigation inside the shared shell and overview from independently loaded global first-page data; maintain users filters/page across view changes.
 - [x] Build a readable detail panel with profile, selection/tableaux, declared budget, 1–5 usage, trade/TJM, decisions and expandable normalized data. No fabricated timeline.
 - [x] Add stack ranking view and source inventory with explicit GA4 unavailability. Preserve explicit diagnostic entry and logout behavior.
 - [x] Run component, route and API tests to green.
@@ -66,3 +66,12 @@
 915 tests app, 304 API, 10 parcours Chromium FR/EN 390/1440 : passants ; types app/API et design tokens passants. Build complet PASS (844,7 Mio), compilation SSR finale renouvelée après correction mobile/tokens. Revue indépendante terminée : aucun défaut important ; identité sans snapshot corrigée et testée.
 
 Décisions finales : la navigation est locale au workspace (pas de nouveaux chemins publics ni persistance des identifiants/recherches dans l’URL) ; le catalogue et les demandes restent clairement indiqués comme intégrations ultérieures. La lecture utilise les contrats existants, aucun déploiement/migration effectué. Le core.worktree hérité du dépôt pointait sur le checkout principal : une configuration Git locale à ce seul worktree corrige le chemin sans modifier les sources ni le checkout principal.
+
+## Correction graphique après retour utilisateur
+
+- [x] Reproduire en navigateur le doublon de sidebar du dashboard.
+- [x] Retirer coque, logo et sidebar internes ; employer le kit actif de Ma Stack et ses tokens.
+- [x] Remplacer l’encart explicatif par le classement des données déjà disponible.
+- [x] Conserver les rubriques, actions et limites de données sans toucher aux API.
+- [x] Corriger la réouverture du même compte après un test rouge ; préserver fiche, focus et déplacement mobile.
+- [x] Contrôler les captures dans le shell complet et les parcours FR/EN mobile/desktop ; revue indépendante.

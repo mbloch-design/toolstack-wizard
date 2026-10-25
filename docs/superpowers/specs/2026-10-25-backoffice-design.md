@@ -102,7 +102,7 @@ Conserver les fonctionnalités existantes de détail, événements et restitutio
 
 ## Cadre visuel et technique
 
-Réutiliser React, React Router, Supabase et le système visuel ToolTrim : fond crème, surfaces blanches, texte charbon, typographies existantes, icônes Iconoir centralisées. Classes bo-* dans @layer components de src/index.css. En-tête moins haut, navigation latérale desktop, navigation repliable mobile, tableaux compacts et fiche détail lisible. Pas de nouvelle dépendance de dashboard pour ce besoin.
+Réutiliser React, React Router, Supabase et le système visuel ToolTrim : fond crème, surfaces blanches, texte charbon, typographies existantes, icônes Iconoir centralisées. Classes bo-* dans @layer components de src/index.css. En-tête moins haut, navigation locale horizontale du kit Ma Stack à l’intérieur du shell public, tableaux compacts et fiche détail lisible. Pas de nouvelle dépendance de dashboard pour ce besoin.
 
 Pages ou sous-routes adressables, recherche conservée en revenant de la fiche utilisateur. Préserver le chemin /:lang/back-office et les points d’entrée existants après inventaire. Découper les composants par domaine plutôt que prolonger le fichier monolithique.
 
@@ -132,3 +132,9 @@ Ce document n’autorise pas un déploiement. Pas de nouvel outil BI, de suivi i
 ## Périmètre de livraison
 
 Le premier lot conserve le filtre de sécurité existant sur les comptes confirmés actifs. Les fiches et rubriques sont consultables sans migration. La couverture détaillée est par utilisateur, sans agrégat global de complétude non fourni par la RPC. La navigation locale conserve recherche/page pendant la session du workspace ; les liens profonds et filtres dans l’URL sont différés afin de ne pas exposer d’identifiants ou d’e-mails dans l’historique. Catalogue, demandes et GA4 restent signalés dans l’inventaire des sources. Les styles bo-* utilisent les tokens existants ; validation visuelle complète du thème sombre différée, lisibilité contrôlée.
+
+## Correction graphique demandée sur capture — 25 octobre 2026
+
+Le premier habillage a été rejeté par l’utilisateur : une seconde coque de dashboard, une sidebar, un logo supplémentaire et des cartes bordées ne correspondaient pas au système graphique actif. Cette correction conserve les données et les parcours, et réutilise le shell AppShellV2, les composants ActionRow/TextLink du StackKit, les boutons et segments mk-*, les variables ms-* de Ma Stack, les tailles typographiques et espacements documentés. La page n’ajoute plus de sidebar ni de logo ; les sections deviennent une navigation locale horizontale. Les indicateurs partagent une seule surface fonctionnelle ; les listes et le classement s’affichent ouverts. L’encart promotionnel/explicatif est retiré au profit du classement existant, sans nouvelle statistique.
+
+Recette : une seule zone complémentaire (sidebar du shell, y compris masquée sur mobile), captures de la page dans le shell complet, FR/EN 390/1440, rubriques détaillées et déconnexion inchangées. Le défaut de réouverture du compte sélectionné est corrigé : conserver la fiche et y ramener le focus au lieu de relancer un chargement sans requête.

@@ -176,3 +176,17 @@ it("keeps account identity fields readable even before a first stack save", asyn
   expect(within(detail).getByText("fr")).toBeVisible();
   expect(within(detail).getByText("E-mail confirmé le")).toBeVisible();
 });
+it("keeps the loaded profile when the same user is opened again", async () => {
+  mocks.detail.mockResolvedValue({...account, avatarUrl:null,providerLocale:null,oauthProfileSource:null, stack:null});
+  render(<AccountsDashboard/>);
+  await screen.findByText("Camille");
+  const open=screen.getByRole("button",{name:"Voir la stack de camille@example.test"});
+  fireEvent.click(open);
+  const detail=await screen.findByRole("region",{name:"Détail du compte"});
+  await within(detail).findByText("Aucune stack enregistrée.");
+  fireEvent.click(open);
+  expect(await within(detail).findByText("Aucune stack enregistrée.")).toBeVisible();
+  fireEvent.click(screen.getByRole("button",{name:"Vue d’ensemble"}));
+  fireEvent.click(screen.getByRole("button",{name:/Camille/}));
+  expect(within(detail).getByText("Aucune stack enregistrée.")).toBeVisible();
+});
