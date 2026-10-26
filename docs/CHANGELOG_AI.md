@@ -1,3 +1,11 @@
+## 2026-10-26 — Ma stack : recette des usages et annulation des choix
+
+- Révision d’une paire : trois réponses seulement, annulation séparée avec cible tactile de 44 px, choix conservé avant confirmation et retour du focus à l’historique. La destination s’ouvre sur mobile. L’historique n’est plus répété sous la carte de décision ; l’avis de devise inconnue reste accessible avec un seul outil.
+- Usages : aperçu lié à l’identité de l’outil, focus récupéré après retrait ou passage au gratuit, noms accessibles contenant les libellés visibles FR/EN. Texte agrandi et noms longs se déploient dans la scène interne sans changer l’enveloppe initiale (285 px téléphone, 295 px tablette, rangée desktop 230–290 px).
+- Palette bleu/pêche, choix ronds et humour conservés. Sauvegarde immédiate distincte des actions de navigation ; aucune annulation fictive d’une réponse déjà enregistrée.
+- Recette documentée dans `MA_STACK_USAGE_ACCEPTANCE.md` : 950 tests applicatifs, types app et design tokens passent ; 27 parcours Chromium, puis les 8 parcours concernés rejoués après la dernière correction, passent. Régressions reproduites avant correction, revue source indépendante et captures réelles mobile/desktop. Les comptes sont synthétiques ; aucun parcours privé en production ni lecteur d’écran natif n’est certifié.
+- Build production complet, routes générées, SEO et budgets de sortie : PASS. Push et état du déploiement vérifiés séparément.
+
 ## 2026-10-25 — Back-office aligné sur le système graphique actif
 
 Retour utilisateur sur la capture : l’habillage précédent ajoutait une seconde coque de dashboard au shell du site. Suppression du logo et de la sidebar internes, navigation locale en segments, actions du kit Ma Stack, indicateurs regroupés dans une surface fonctionnelle sans bordures décoratives, listes ouvertes et classement des outils à la place de l’encart « Beyond registration ». Typographies, espacements, surfaces et boutons suivent les tokens et composants actifs. Aucune modification des API ou droits d’accès.

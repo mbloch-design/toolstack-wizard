@@ -27,3 +27,15 @@ it("saves a usage level in the personal stack, per scope, and clears it", async 
   act(() => hook.result.current.setUsage("figma", null));
   expect(store.readPersonalStack().usage).toEqual({});
 });
+
+it('keeps answers usable in memory when browser storage cannot be read or written', async () => {
+  Object.defineProperty(window,'localStorage',{configurable:true,value:{getItem(){throw new Error('blocked');},setItem(){throw new Error('quota');},removeItem(){throw new Error('blocked');}}});
+  const store=await import('@/lib/personalStackStore');
+  const {useStackUsage}=await import('./useStackUsage');
+  const hook=renderHook(useStackUsage);
+  act(()=>hook.result.current.setUsage('motion-array',3));
+  expect(hook.result.current.usage).toEqual({'motion-array':3});
+  expect(store.readPersonalStack().usage).toEqual({'motion-array':3});
+  act(()=>hook.result.current.setUsage('motion-array',null));
+  expect(hook.result.current.usage).toEqual({});
+});

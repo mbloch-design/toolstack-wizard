@@ -242,7 +242,7 @@ export default function CartPage() {
   if (reviewingFinding) {
     reviewingFinding.detail = t("Votre choix actuel : garder les deux. Il reste conservé tant que vous ne confirmez pas une autre réponse.", "Your current choice is to keep both. It stays saved until you confirm another answer.");
     reviewingFinding.actions = reviewingFinding.actions.map(action => ({ ...action, onClick: () => { action.onClick(); closePairReview(); } }));
-    reviewingFinding.actions.push({ label: t("Annuler la révision", "Cancel review"), onClick: closePairReview });
+    reviewingFinding.cancelReview = { label: t("Annuler la révision", "Cancel review"), onClick: closePairReview };
   }
   // The first plan or price question gets the tool's catalogue plans, one tap
   // each: most of the time the price is known, the plan is what is missing.

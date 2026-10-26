@@ -24,13 +24,13 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
   const [view, setView] = useState<View>(() => pending ? "question" : "summary");
   const [activeId, setActiveId] = useState<string | undefined>(() => pending?.tool.id ?? rows[0]?.tool.id);
   const [review, setReview] = useState(false);
-  const [hover, setHover] = useState<number | null>(null);
+  const [hover, setHover] = useState<{ id: string; level: number } | null>(null);
   // Removing a tool cannot leave a stale answer handler pointing at it.
   const current = rows.find(row => row.tool.id === activeId) ?? pending ?? rows[0];
   const index = current ? rows.findIndex(row => row.tool.id === current.tool.id) : -1;
   const question = view === "question" && !!current;
   const selected = current?.usage ?? 0;
-  const shown = hover ?? (selected > 0 ? selected - 1 : null);
+  const shown = hover && hover.id === current?.tool.id ? hover.level : selected > 0 ? selected - 1 : null;
   const level = shown === null ? null : LEVELS[shown];
   const next = review ? index + 1 : rows.findIndex((row, i) => i > index && !row.usage);
   const hasNext = next >= 0 && next < rows.length;
@@ -39,6 +39,7 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
   const toolHeading = useRef<HTMLHeadingElement>(null);
   const focusRequested = useRef(false);
   const radios = useRef<(HTMLButtonElement | null)[]>([]);
+  const questionHadFocus = useRef(false);
   const captionId = useId();
   const hadRows = useRef(rows.length > 0);
 
@@ -50,7 +51,7 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
   }, [rows.length, pending?.tool.id]);
 
   useLayoutEffect(() => {
-    if (!focusRequested.current) return;
+    if (!focusRequested.current && !(questionHadFocus.current && document.activeElement === document.body)) return;
     (question ? toolHeading.current : view === "history" ? heading.current : summaryHeading.current)?.focus({ preventScroll: true });
     focusRequested.current = false;
   }, [view, current?.tool.id, question]);
@@ -61,7 +62,8 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
     focusRequested.current = true; setActiveId(rows[target].tool.id); setReview(reviewing); setView("question"); setHover(null);
   };
   const advance = () => hasNext ? openTool(next, review) : scene("summary");
-  const choose = (value: number) => { current?.setUsage(value + 1); setHover(value); };
+  const preview = (level: number) => setHover(current ? { id: current.tool.id, level } : null);
+  const choose = (value: number) => { current?.setUsage(value + 1); preview(value); };
   const arrow = (event: KeyboardEvent<HTMLButtonElement>, from: number) => {
     let to: number;
     if (event.key === "Home") to = 0;
@@ -78,12 +80,12 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
       {rows.length > 0 && <span className="mu-count" aria-label={t(`${answered} usages renseignés sur ${rows.length}`, `Use recorded for ${answered} of ${rows.length}`)}>{answered} / {rows.length}</span>}
     </header>
 
-    {question ? <div key={current.tool.id} className="mu-scene mu-question" role="group" aria-label={t(`Usage de ${current.tool.name}`, `Use of ${current.tool.name}`)}>
+    {question ? <div key={current.tool.id} className="mu-scene mu-question" onFocusCapture={() => { questionHadFocus.current = true; }} onBlurCapture={event => { if (event.target.isConnected && !event.currentTarget.contains(event.relatedTarget as Node)) questionHadFocus.current = false; }} role="group" aria-label={t(`Usage de ${current.tool.name}`, `Use of ${current.tool.name}`)}>
       <div className="mu-tool"><ToolLogo tool={current.tool} size={32} /><div className="mu-tool-label"><h3 ref={toolHeading} tabIndex={-1} title={current.tool.name}>{current.tool.name}</h3></div><p>{format(current.cost)}{t("/mois", "/mo")}</p></div>
       <div className="mu-gauge" role="radiogroup" aria-label={t("Choisir un usage", "Choose use")} aria-describedby={captionId} onPointerLeave={() => setHover(null)}>
-        {LEVELS.map((item, i) => <button key={i} ref={node => { radios.current[i] = node; }} type="button" role="radio" aria-label={t(item.label[0], item.label[1])} aria-checked={selected === i + 1}
+        {LEVELS.map((item, i) => <button key={i} ref={node => { radios.current[i] = node; }} type="button" role="radio" aria-label={`${t(item.short[0], item.short[1])} — ${t(item.label[0], item.label[1])}`} aria-checked={selected === i + 1}
           tabIndex={i === (selected > 0 ? selected - 1 : 0) ? 0 : -1}
-          onPointerEnter={() => setHover(i)} onFocus={() => setHover(i)} onBlur={() => setHover(null)} onKeyDown={event => arrow(event, i)} onClick={() => choose(i)}>
+          onPointerEnter={() => preview(i)} onFocus={() => preview(i)} onBlur={() => setHover(null)} onKeyDown={event => arrow(event, i)} onClick={() => choose(i)}>
           <span className="mu-option-icon" aria-hidden><item.icon size={22} /></span><small aria-hidden>{t(item.short[0], item.short[1])}</small>{selected === i + 1 && <CheckCircle2 size={11} className="mu-option-check" aria-hidden />}
         </button>)}
       </div>

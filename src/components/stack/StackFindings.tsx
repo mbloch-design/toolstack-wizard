@@ -18,6 +18,8 @@ export type Finding = {
   title: string;
   detail: string;
   actions: FindingAction[];
+  /** Leave a historical review without making a new decision. */
+  cancelReview?: FindingAction;
   /** A way to look before answering (compare two tools). */
   link?: { label: string; to: string; onClick?: () => void };
   /** Answers every finding of the same kind at once. */
@@ -223,6 +225,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
   const [splitView, setSplitView] = useState<SplitView>("bar");
   // On a phone each card is a summary line; one opens at a time.
   const [openCard, setOpenCard] = useState<string | null>(null);
+  useEffect(() => { if (reviewFindingKey) setOpenCard("now"); }, [reviewFindingKey]);
   const expander = (id: string, name: string) => <button type="button" className="mf-expand" aria-expanded={openCard === id}
     aria-label={openCard === id ? t(`Replier ${name}`, `Collapse ${name}`) : t(`Ouvrir ${name}`, `Open ${name}`)} onClick={() => setOpenCard(openCard === id ? null : id)}><ChevronDown size={18} aria-hidden /></button>;
   // The face just picked: it lights up, the other swipes away, the saving
@@ -464,6 +467,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
         <div className="mf-bar-actions">
           <div className="mf-links">
             {top.link && <TextLink to={top.link.to} onClick={top.link.onClick}>{top.link.label}</TextLink>}
+            {top.cancelReview && <TextLink className="mf-review-cancel" onClick={top.cancelReview.onClick}>{top.cancelReview.label}</TextLink>}
             {top.bulk && <TextLink onClick={top.bulk.onClick}>{top.bulk.label}</TextLink>}
             {order.length > 1 && <TextLink className="mk-link--quiet" onClick={() => { setFirst(null); setLater((keys) => [...keys.filter((key) => key !== top.key), top.key]); }}>{t("Plus tard", "Later")}</TextLink>}
           </div>
@@ -482,7 +486,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
               icon={logo ? <ToolLogo tool={logo} size={18} /> : undefined}>{action.label}</Button>;
           })}</div>
         </div>
-        {history && <div className="mf-history">{history}</div>}
+        {toolCount <= 1 && history && <div className="mf-history">{history}</div>}
       </section> : null}
 
       {/* 3. How the budget is balanced across verticals: its own block. */}
