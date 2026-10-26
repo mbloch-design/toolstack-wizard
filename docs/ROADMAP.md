@@ -374,4 +374,4 @@ Le propriétaire choisit Upstash Redis gratuit et conserve le traitement manuel 
 
 ### Back-office — dette visuelle (25 octobre 2026)
 
-Le nouveau workspace bo-* utilise les tokens existants. La validation visuelle détaillée du thème sombre reste différée ; les parcours de lecture et de déconnexion sont contrôlés dans les deux préférences. GA4, le regroupement leads/soumissions et l’administration éditoriale du catalogue restent des intégrations distinctes, signalées dans le workspace.
+Le nouveau workspace bo-* utilise les tokens existants. La validation visuelle détaillée du thème sombre reste différée ; les parcours de lecture et de déconnexion sont contrôlés dans les deux préférences. GA4 et le regroupement leads/soumissions restent des intégrations distinctes, signalées dans le workspace. L’éditeur de fiches JSON et la publication groupée sont implémentés le 26 octobre ; leur activation nécessite un jeton GitHub serveur dédié (voir docs/BACKOFFICE_CATALOG_EDITOR.md).

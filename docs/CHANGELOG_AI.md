@@ -1,3 +1,15 @@
+## 2026-10-26 — Édition des fiches JSON et publication groupée
+
+Nouvel onglet Fiches dans le back-office actif : recherche et filtre des brouillons, formulaires FR/EN pour contenu, verdict, tarifs sourcés, liens/médias et SEO, aperçu de contenu et sauvegarde privée. Le bouton principal « Publier toutes les modifications » ouvre le lot global à relire puis envoie les fiches sauvegardées ensemble dans un seul commit sur main. Les champs techniques et les propriétés historiques non prises en charge sont conservés et affichés en lecture seule.
+
+API réservée aux sessions actives et emails administrateurs confirmés. Les brouillons utilisent un hash Redis dédié avec versions monotones et compare-and-set ; publication sur le HEAD GitHub courant, conflits par fiche, mise à jour sans force push, réconciliation des délais réseau ambigus et nettoyage conditionnel préservant les nouvelles sauvegardes. Les identifiants restent immuables ; montants, devises, sources et dates sont validés sans génération de faits ni conversion automatique. Aucune fiche réelle modifiée pour la recette.
+
+Relecture indépendante : saisie bloquée pendant les requêtes, sortie protégée via liens, déconnexion, navigation locale et historique du navigateur ; propriétés imbriquées autorisées dérivées du schéma partagé. Tests de régression rouges puis verts. Vérification : 945 tests applicatifs ; 390 tests API, dont Lua exécuté sur un Redis local isolé ; 16 parcours Chromium FR/EN 390/1440 px, puis 6 parcours éditeur renouvelés après la protection de déconnexion. Types app/node/API et design tokens passent. Build production complet et budgets : PASS ; contrôle renouvelé sur l’état final avant publication. Les anciennes fiches aux rubriques nulles ou au résumé de prix textuel offrent une initialisation structurée explicite ; les alertes de facturation peuvent être ajoutées à une liste vide.
+
+Intégration de `origin/main` e279666d17 par rebase : changelog conservé des deux côtés et CSS ajouté sans modifier les scènes Ma Stack. Après intégration, 966 tests applicatifs, types complets, design tokens, compilation SSR et 16 parcours navigateur renouvelés passent.
+
+Activation de production : Redis et comptes déjà configurés ; `BACKOFFICE_GITHUB_TOKEN` reste à ajouter côté serveur avec accès Contents lecture/écriture au seul dépôt concerné. Aucun jeton CLI personnel copié. Le commit catalogue déclenche le build existant ; « commit envoyé » est distingué de « déployé ». Voir `docs/BACKOFFICE_CATALOG_EDITOR.md`.
+
 ## 2026-10-26 — Ma stack : recette des usages et annulation des choix
 
 - Révision d’une paire : trois réponses seulement, annulation séparée avec cible tactile de 44 px, choix conservé avant confirmation et retour du focus à l’historique. La destination s’ouvre sur mobile. L’historique n’est plus répété sous la carte de décision ; l’avis de devise inconnue reste accessible avec un seul outil.

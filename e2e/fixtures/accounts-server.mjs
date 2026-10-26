@@ -1,5 +1,7 @@
 // Playwright-only loopback Auth/API simulation. No application imports this file.
 import { createServer } from 'vite';
+import { catalogFixture } from './catalog-editor.mjs';
+const catalog = catalogFixture();
 import { randomUUID } from 'node:crypto';
 const port = Number(process.env.PLAYWRIGHT_ACCOUNTS_PORT || 8192);
 const origin = `http://127.0.0.1:${port}`;
@@ -79,7 +81,7 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
       const input = ['POST', 'PUT', 'DELETE'].includes(req.method) ? await body(req) : {};
       if (typeof input.email === 'string' && !normalizeEmail(input.email).endsWith('@example.invalid')) return fail(res, 400, 'FIXTURE_IDENTITIES_ONLY');
       if (path.startsWith('/__accounts-test/')) {
-        if (path.endsWith('/reset')) { users.clear(); tokens.clear(); stacks.clear(); passwords.clear(); profiles.clear(); mail.length = 0; faults.length = 0; requests.length = 0; oauthDenied = false; for (const item of input.users || []) seed(item); return send(res, 200, {}); }
+        if (path.endsWith('/reset')) { catalog.reset(); users.clear(); tokens.clear(); stacks.clear(); passwords.clear(); profiles.clear(); mail.length = 0; faults.length = 0; requests.length = 0; oauthDenied = false; for (const item of input.users || []) seed(item); return send(res, 200, {}); }
         if (path.endsWith('/mailbox')) {
           res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
           return res.end('<!doctype html><title>Local test mailbox</title><h1>Local test mailbox</h1>' + mail.map(item => `<p><a href="/__accounts-test/mail/${item.id}">${item.type === 'recovery' ? 'Recover' : 'Confirm'} ${item.email}</a></p>`).join(''));
@@ -154,8 +156,9 @@ const fixture = { name: 'playwright-account-fixture', configureServer(server) {
       }
       if (path === '/auth/v1/logout') { if (url.searchParams.get('scope') !== 'others') tokens.delete(token); return send(res, 204); }
       if (path.startsWith('/rest/v1/')) return send(res, 200, []);
-      if (!path.startsWith('/api/stack-account') && !path.startsWith('/api/backoffice-accounts') && path !== '/api/account-profile') return fail(res, 503, 'LEGACY_ENDPOINT_DISABLED_IN_RECIPE');
+      if (!path.startsWith('/api/stack-account') && !path.startsWith('/api/backoffice-accounts') && !path.startsWith('/api/backoffice-catalog') && path !== '/api/account-profile') return fail(res, 503, 'LEGACY_ENDPOINT_DISABLED_IN_RECIPE');
       if (!user || !users.has(user.email) || !tokens.has(token)) return fail(res, 401, 'ACCOUNT_SESSION_INVALID');
+      if (path === '/api/backoffice-catalog') return catalog.handle({ req, url, input, user, server, send, fail, res });
       if (path === '/api/account-profile') {
         if (user.deleting) return fail(res, 409, 'ACCOUNT_DELETING');
         const profile = req.method === 'PUT' ? profileFor(user) : importOAuthProfile(user);

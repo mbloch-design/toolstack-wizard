@@ -18,6 +18,7 @@ import {
   ShieldAlert,
   Users,
 } from "@/lib/icons";
+import { CatalogEditor } from "./CatalogEditor";
 import { AccountDetailPanel } from "./AccountDetailPanel";
 import {
   BackofficeOverview,
@@ -26,7 +27,7 @@ import {
 } from "./BackofficeOverview";
 import { accessDenied, date, tradeLabel } from "./backofficeDisplay";
 
-type View = "overview" | "users" | "stacks" | "usage" | "sources";
+type View = "overview" | "users" | "stacks" | "usage" | "sources" | "catalog";
 export function AccountsDashboard({
   initialView = "users",
   onOpenHistory,
@@ -38,6 +39,8 @@ export function AccountsDashboard({
   const searchId = useId();
   const detailRegion = useRef<HTMLElement>(null);
   const [view, setView] = useState<View>(initialView);
+  const [catalogDirty, setCatalogDirty] = useState(false);
+  const [navigationError, setNavigationError] = useState(false);
   const [input, setInput] = useState("");
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
@@ -159,7 +162,10 @@ export function AccountsDashboard({
       document.getElementById(`${searchId}-${closing}`)?.focus(),
     );
   };
-  const navigate = (next: View) => setView(next);
+  const navigate = (next: View) => {
+    if (view === "catalog" && catalogDirty) { setNavigationError(true); return; }
+    setNavigationError(false); setView(next);
+  };
   const openUser = (id: string) => {
     setView("users");
     if (id === selected) {
@@ -187,6 +193,7 @@ export function AccountsDashboard({
       label: t("Stacks & outils", "Stacks & tools"),
       icon: Layers3,
     },
+    { id: "catalog" as const, label: t("Fiches", "Records"), icon: FileText },
     {
       id: "usage" as const,
       label: t("Usage du site", "Site usage"),
@@ -204,8 +211,10 @@ export function AccountsDashboard({
     stacks: t("Stacks & outils", "Stacks & tools"),
     usage: t("Usage du site", "Site usage"),
     sources: t("Données disponibles", "Available data"),
+    catalog: t("Fiches du catalogue", "Catalogue records"),
   }[view];
   const description = {
+    catalog: t("Modifiez les fiches et publiez toutes vos modifications ensemble.", "Edit records and publish all your changes together."),
     overview: t(
       "Qui s’inscrit, ce qui est sauvegardé et les outils qui intéressent vos utilisateurs.",
       "Who registers, what gets saved and the tools your users are interested in.",
@@ -278,7 +287,7 @@ export function AccountsDashboard({
           <button
             type="button"
             className="mk-link bo-history"
-            onClick={onOpenHistory}
+            onClick={() => { if (catalogDirty) { setNavigationError(true); return; } onOpenHistory(); }}
           >
             <FileText size={16} aria-hidden />
             {t("Diagnostic historique", "Historical diagnostic")}
@@ -286,12 +295,13 @@ export function AccountsDashboard({
         )}
       </nav>
       <div className="bo-content">
+        {navigationError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
         <header className="bo-page-heading ac-page-header">
           <div>
             <h1>{title}</h1>
             <p>{description}</p>
           </div>
-          <button
+          {view !== "catalog" && <button
             className="mk-button tt-button-secondary bo-button"
             onClick={() => {
               setOverview(null);
@@ -301,8 +311,9 @@ export function AccountsDashboard({
           >
             <RefreshCw size={16} aria-hidden />
             {t("Actualiser", "Refresh")}
-          </button>
+          </button>}
         </header>
+        {view === "catalog" && <CatalogEditor onDirtyChange={setCatalogDirty} />}
         {(view === "overview" || view === "stacks") &&
           (overviewError ? (
             failure(overviewError, () => setReload((value) => value + 1))
@@ -686,8 +697,8 @@ export function AccountsDashboard({
                 [
                   t("Catalogue & contenus", "Catalogue & content"),
                   t(
-                    "Le catalogue sert à identifier les outils. Son administration éditoriale reste à intégrer.",
-                    "The catalogue identifies tools. Editorial administration still needs integration.",
+                    "Les fiches JSON sont éditables dans l’onglet Fiches. Les brouillons et la publication groupée nécessitent la connexion GitHub du serveur.",
+                    "Edit JSON records in the Records tab. Drafts and batch publication require the server GitHub connection.",
                   ),
                   t("Source identifiée", "Source identified"),
                 ],

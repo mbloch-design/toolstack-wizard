@@ -1,5 +1,8 @@
 {
   "ignoreCommand": "bash scripts/vercel-ignore-build.sh",
+  "functions": {
+    "api/backoffice-catalog.ts": { "maxDuration": 60 }
+  },
   "headers": [
     {
       "source": "/:directory(fonts|hero|home-logos|home-cards|logos|tool-media|editorial|guides|og-images|og-screenshots)/:path*",

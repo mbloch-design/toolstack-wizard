@@ -40919,6 +40919,59 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .bo-pagination { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); margin-top: var(--space-lg); }
   .bo-pagination p { margin: 0; color: var(--ms-meta); font-size: 12px; }
   .bo-pagination > div { display: flex; gap: var(--space-xs); }
+  .bo-catalog { min-width: 0; color: var(--ms-ink); font-family: var(--ap-font); }
+  .bo-catalog-publishbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-lg); padding: var(--space-lg); margin-bottom: var(--space-xl); background: var(--ms-tile); border-radius: var(--ms-r); }
+  .bo-catalog-publishbar strong { font-size: var(--tt-size-body); }
+  .bo-catalog-publishbar p { margin: var(--space-xs) 0 0; color: var(--ms-text2); }
+  .bo-catalog .bo-search { flex-wrap: wrap; }
+  .bo-catalog-filter { display: flex; align-items: center; gap: var(--space-xs); font-size: var(--tt-size-meta); }
+  .bo-catalog-filter input { width: auto; accent-color: var(--ms-ink); }
+  .bo-catalog-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); max-height: 280px; overflow-y: auto; overscroll-behavior: contain; gap: 0 var(--space-lg); }
+  .bo-catalog-list-row { display: flex; align-items: center; gap: var(--space-sm); min-width: 0; padding: var(--space-md) var(--space-xs); border: 0; border-bottom: 1px solid var(--ms-track); background: transparent; color: var(--ms-ink); text-align: left; cursor: pointer; }
+  .bo-catalog-list-row[aria-current="true"], .bo-catalog-list-row:hover { background: var(--ms-tile); }
+  .bo-catalog-list-row > span:first-of-type { flex: 1; min-width: 0; }
+  .bo-catalog-list-row strong, .bo-catalog-list-row small { display: block; overflow-wrap: anywhere; }
+  .bo-catalog-list-row small { margin-top: var(--space-2xs); color: var(--ms-meta); font-size: var(--tt-size-meta); }
+  .bo-catalog-pagination, .bo-catalog-actions { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-sm) var(--space-lg); }
+  .bo-catalog-pagination { justify-content: flex-end; margin-top: var(--space-md); font-size: var(--tt-size-meta); }
+  .bo-catalog-pagination > span { margin-right: auto; }
+  .bo-catalog-editor { margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--ms-track); scroll-margin-top: var(--space-lg); min-width: 0; }
+  .bo-catalog-fields { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); align-items: start; gap: var(--space-lg); margin-top: var(--space-xl); }
+  .bo-catalog-field { display: flex; min-width: 0; flex-direction: column; gap: var(--space-xs); }
+  .bo-catalog-field label, .bo-catalog-fieldset legend { color: var(--ms-ink); font-size: var(--tt-size-meta); font-weight: 600; }
+  .bo-catalog-field textarea, .bo-catalog-field input, .bo-catalog-field select { display: block; width: 100%; min-width: 0; border: 1px solid var(--ms-track); border-radius: var(--radius-sm); background: var(--ms-card); color: var(--ms-ink); padding: var(--space-sm) var(--space-md); font: 400 var(--tt-size-body)/1.5 var(--ap-font); }
+  .bo-catalog-field textarea { resize: vertical; }
+  .bo-catalog :is(button,input,select,textarea):focus-visible { outline: 2px solid var(--ms-ink); outline-offset: 3px; }
+  .bo-catalog button:disabled { opacity: .45; cursor: default; }
+  .bo-catalog-fieldset { display: flex; flex-direction: column; gap: var(--space-md); min-width: 0; border: 0; padding: 0; margin: 0; }
+  .bo-catalog-fieldset legend { margin-bottom: var(--space-md); }
+  .bo-catalog-fields > .bo-catalog-fieldset { padding: var(--space-lg); background: var(--ms-tile); border-radius: var(--ms-r); }
+  .bo-catalog-array-row { display: flex; flex-direction: column; gap: var(--space-xs); min-width: 0; padding-bottom: var(--space-md); border-bottom: 1px solid var(--ms-track); }
+  .bo-catalog-array-row > .mk-link { align-self: flex-end; font-size: var(--tt-size-meta); }
+  .bo-catalog-preview { margin-top: var(--space-xl); overflow-wrap: anywhere; }
+  .bo-catalog-preview > section { margin-top: var(--space-xl); }
+  .bo-catalog-preview-field { margin-top: var(--space-lg); }
+  .bo-catalog-preview h4, .bo-catalog-preview dt { font-weight: 600; margin-bottom: var(--space-xs); }
+  .bo-catalog-preview dd { margin: 0; }
+  .bo-catalog-preview dl > div { margin: var(--space-sm) 0; }
+  .bo-catalog-preview ul { list-style: disc; padding-left: var(--space-lg); }
+  .bo-catalog-prose { white-space: pre-wrap; }
+  .bo-catalog-feedback { padding: var(--space-md) var(--space-lg); margin: 0 0 var(--space-lg); border-left: 2px solid var(--ms-ink); background: var(--ms-tile); overflow-wrap: anywhere; }
+  .bo-catalog-feedback p { margin: 0 0 var(--space-xs); }
+  .bo-catalog-review { margin-bottom: var(--space-xl); padding: var(--space-lg); background: var(--ms-tile); border-radius: var(--ms-r); }
+  .bo-catalog-review > p { margin: var(--space-md) 0; color: var(--ms-text2); }
+  .bo-catalog-review ul { list-style: none; padding: 0; margin: var(--space-lg) 0; }
+  .bo-catalog-review li { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-xs) var(--space-md); padding: var(--space-sm) 0; border-bottom: 1px solid var(--ms-track); }
+  .bo-catalog-review li > span { flex: 1; color: var(--ms-text2); font-size: var(--tt-size-meta); }
+  .bo-catalog-editor-footer { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-lg); padding-top: var(--space-lg); margin-top: var(--space-xl); border-top: 1px solid var(--ms-track); }
+  @media (max-width: 767px) {
+    .bo-catalog-list { grid-template-columns: minmax(0,1fr); max-height: 220px; }
+    .bo-catalog-fields { grid-template-columns: minmax(0,1fr); }
+    .bo-catalog-publishbar { padding: var(--space-md); }
+    .bo-catalog-publishbar > .mk-button { width: 100%; }
+    .bo-catalog .bo-search-field { flex-basis: 100%; }
+    .bo-catalog .bo-tabs { max-width: 100%; overflow-x: auto; }
+  }
   .bo-detail-slot { min-width: 0; scroll-margin-top: var(--space-lg); }
   .bo-detail { min-width: 0; padding: var(--space-xl); border-radius: var(--ms-r); background: var(--ms-tile); }
   .bo-detail-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-sm); margin-bottom: var(--space-lg); }
