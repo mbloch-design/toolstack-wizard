@@ -82,7 +82,7 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
       <div className="mu-tool"><ToolLogo tool={current.tool} size={32} /><div className="mu-tool-label"><h3 ref={toolHeading} tabIndex={-1} title={current.tool.name}>{current.tool.name}</h3></div><p>{format(current.cost)}{t("/mois", "/mo")}</p></div>
       <div className="mu-gauge" role="radiogroup" aria-label={t("Choisir un usage", "Choose use")} aria-describedby={captionId} onPointerLeave={() => setHover(null)}>
         {LEVELS.map((item, i) => <button key={i} ref={node => { radios.current[i] = node; }} type="button" role="radio" aria-label={t(item.label[0], item.label[1])} aria-checked={selected === i + 1}
-          tabIndex={i === (selected > 0 ? selected - 1 : 0) ? 0 : -1} data-lit={shown !== null && i <= shown ? "" : undefined}
+          tabIndex={i === (selected > 0 ? selected - 1 : 0) ? 0 : -1}
           onPointerEnter={() => setHover(i)} onFocus={() => setHover(i)} onBlur={() => setHover(null)} onKeyDown={event => arrow(event, i)} onClick={() => choose(i)}>
           <span className="mu-option-icon" aria-hidden><item.icon size={22} /></span><small aria-hidden>{t(item.short[0], item.short[1])}</small>{selected === i + 1 && <CheckCircle2 size={11} className="mu-option-check" aria-hidden />}
         </button>)}

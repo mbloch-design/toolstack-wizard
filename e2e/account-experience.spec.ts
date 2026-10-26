@@ -620,12 +620,12 @@ for(const lang of ['fr','en'] as const) test(`all-free stack ${lang}: compact bu
  await expect(page.locator('.mu-card')).toBeVisible();
  await expect(page.locator('.mf-grid')).toHaveCSS('grid-template-areas','"price fit"');
  await expect.poll(async()=>{const price=await page.locator('.mf-price').boundingBox();const review=await page.locator('.mu-card').boundingBox();return Math.abs(price!.y-review!.y);}).toBeLessThan(2);
- await expect.poll(async()=>{const price=await page.locator('.mf-price').boundingBox();const review=await page.locator('.mu-card').boundingBox();return Math.abs(price!.height-review!.height);}).toBeLessThan(2);
+ await expect.poll(async()=>Math.abs((await page.locator('.mu-card').boundingBox())!.height-290)).toBeLessThan(1);
  await expect(page.locator('.mu-card')).toContainText(lang==='fr'?'Votre stack, sans abonnement payant.':'Your stack has no paid plans.');
  await expect(page.locator('.mf-balance')).toHaveCount(0);
  await page.screenshot({path:test.info().outputPath(`free-only-${lang}-desktop.png`)});
  await page.setViewportSize({width:820,height:900});
- await expect.poll(async()=>{const price=await page.locator('.mf-price').boundingBox();const review=await page.locator('.mu-card').boundingBox();return Math.abs(price!.height-review!.height);}).toBeLessThan(2);
+ await expect.poll(async()=>Math.abs((await page.locator('.mu-card').boundingBox())!.height-295)).toBeLessThan(1);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.setViewportSize({width:390,height:900});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
@@ -643,6 +643,10 @@ for (const lang of ['fr','en'] as const) for (const [width,height,expected] of [
   const stable=async()=>{await expect.poll(async()=>Math.abs((await card.boundingBox())!.height-expected)).toBeLessThan(1);expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);};
   await stable();
   expect(await card.getByRole('radio').evaluateAll(radios=>radios.every(r=>r.getBoundingClientRect().height>=56))).toBe(true);
+  const rocket=card.getByRole('radio',{name:fr?'Usage intensif':'Intensive use',exact:true});
+  await rocket.hover();
+  await expect(rocket.locator('.mu-option-icon')).toHaveCSS('transform','none');
+  await expect(rocket.locator('.mu-option-icon')).toHaveCSS('transition-duration','0s');
   const low=card.getByRole('radio',{name:fr?'Usage faible':'Low use',exact:true});await low.hover();await stable();
   await low.click();await expect(card.getByRole('heading',{name:'Motion Array',exact:true})).toBeVisible();await stable();
   const next=card.getByRole('button',{name:fr?'Suivant':'Next',exact:true});await next.focus();

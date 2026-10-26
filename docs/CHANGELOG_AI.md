@@ -26,10 +26,10 @@ Fusion du back-office avec `origin/main` c6692fe291 à la demande de l’utilisa
 ## 2026-10-25 : Usages — scène compacte et choix explicites
 
 - Retour à l’enveloppe initiale : 285 px sur téléphone, 295 px sur tablette et rangée desktop de 230 à 290 px. Question, réponse, correction, résumé et historique gardent la même hauteur.
-- Cinq choix tactiles à icônes, question directe, réponse enregistrée sur place puis Suivant/Terminer explicite ; possibilité de passer, faire une pause et reprendre sans inventer de réponse.
+- Cinq choix tactiles ronds, disques blancs/pêche et icônes de la lune à la fusée, question directe, réponse enregistrée sur place puis Suivant/Terminer explicite ; possibilité de passer, faire une pause et reprendre sans inventer de réponse.
 - Humour FR/EN dans les retours et léger mouvement des icônes, désactivé en mouvement réduit ; clavier radio et focus sans saut de page.
 - Historique dans une scène à défilement interne. Logos de paire contenus aussi lorsque le visuel utilise une initiale.
-- Vérifications : 922 tests unitaires, typecheck, tokens et 20 parcours navigateur authentifiés, dont invariance mesurée dans six formats FR/EN et noms/historiques longs. Revue finale indépendante sans défaut important.
+- Vérifications : 929 tests unitaires, typecheck, tokens et 22 parcours navigateur authentifiés, dont invariance mesurée dans six formats FR/EN et noms/historiques longs. Revue visuelle indépendante validée ; défaut de mouvement réduit reproduit puis corrigé avec contrôle navigateur. Build production complet et budgets : PASS.
 
 ## 2026-10-25 : Révision du bento — hauteur et reconnexion
 

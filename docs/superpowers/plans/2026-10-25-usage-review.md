@@ -27,17 +27,17 @@
 
 ## Task 1: Usage scene and navigation
 **Files:** src/components/stack/StackUsageReview.tsx; new neighbouring StackUsageReview.test.tsx; src/index.css.
-- [ ] Write failing tests for answer-in-place, next/previous, reviewing an answer, completion, no paid tools and row removal.
-- [ ] Run tests and confirm the missing behaviours.
-- [ ] Implement one-tool state and native radio keyboard navigation, preserving autosave.
-- [ ] Replace oversized copy and vertical choices with a five visible icon tiles and a fixed feedback slot.
-- [ ] Restore fixed outer dimensions; overflow is contained in the history scene, not the card.
-- [ ] Run targeted and full tests, typecheck and design-token check.
+- [x] Write failing tests for answer-in-place, next/previous, reviewing an answer, completion, no paid tools and row removal.
+- [x] Run tests and confirm the missing behaviours.
+- [x] Implement one-tool state and native radio keyboard navigation, preserving autosave.
+- [x] Replace oversized copy and vertical choices with a five round icon choices and a fixed feedback slot.
+- [x] Restore fixed outer dimensions; overflow is contained in the history scene, not the card.
+- [x] Run targeted and full tests, typecheck and design-token check.
 
 ## Task 2: Complete journey and height contract
 **Files:** e2e/account-experience.spec.ts; docs/DESIGN_SYSTEM.md; docs/CHANGELOG_AI.md.
-- [ ] Update existing completion/review journeys for explicit navigation.
-- [ ] Test bounding height invariance for question, hover, saved answer, next, summary, editing and history in FR/EN at desktop/mobile widths.
-- [ ] Test keyboard/reduced motion and many tools/long names; capture actual routes.
-- [ ] Run the relevant authenticated journeys, build and review the final diff.
-- [ ] Commit/push the scoped correction and verify publication separately from GitHub.
+- [x] Update existing completion/review journeys for explicit navigation.
+- [x] Test bounding height invariance for question, hover, saved answer, next, summary, editing and history in FR/EN at desktop/mobile widths.
+- [x] Test keyboard/reduced motion and many tools/long names; capture actual routes.
+- [x] Run the relevant authenticated journeys, build and review the final diff.
+- [x] Commit/push the scoped correction and verify publication separately from GitHub.

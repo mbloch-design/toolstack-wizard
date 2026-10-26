@@ -40834,7 +40834,12 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   @keyframes mu-scene-in { from { opacity: .65; transform: translateX(4px); } to { opacity: 1; transform: none; } }
   @keyframes mu-icon-nod { 0%, 100% { transform: rotate(0); } 45% { transform: rotate(-12deg); } }
   .ms-page .mf .mu-card .mu-footer .mu-main-action { background: var(--color-stack-tools-soft); color: var(--color-stack-tools-ink); }
-  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mu-card .mu-scene, .ms-page .mf .mu-card .mu-gauge button[aria-checked="true"] .mu-option-icon { animation: none; transition: none; transform: none; } .ms-page .mf .mu-card .mu-gauge button:hover .mu-option-icon, .ms-page .mf .mu-card .mu-gauge button:focus-visible .mu-option-icon { transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .ms-page .mf .mu-card .mu-scene, .ms-page .mf .mu-card .mu-option-icon { animation: none !important; transition: none; }
+    .ms-page .mf .mu-card .mu-gauge button:hover .mu-option-icon,
+    .ms-page .mf .mu-card .mu-gauge button:focus-visible .mu-option-icon,
+    .ms-page .mf .mu-card .mu-gauge button:last-child:hover .mu-option-icon { transform: none; }
+  }
 }
 
 @layer components {

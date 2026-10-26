@@ -91,7 +91,7 @@ describe("compact usage review", () => {
     const props = { lang: "fr" as const, format: (n: number) => `${n} €`, complete: false, onReviewTools: vi.fn() };
     const view = render(<StackUsageReview {...props} rows={[]} />);
     view.rerender(<StackUsageReview {...props} rows={[{
-      tool: { id: "loaded", name: "Motion Array" }, cost: 25, detailHref: "/", setUsage: vi.fn(),
+      tool: { id: "loaded", slug: "motion-array", name: "Motion Array" } as FitRow["tool"], cost: 25, detailHref: "/", setUsage: vi.fn(),
     } as FitRow]} />);
     expect(screen.getByRole("radio", { name: "Usage faible" })).toBeVisible();
   });
