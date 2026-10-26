@@ -75,6 +75,7 @@ export default function CartPage() {
   const addRef = useRef<HTMLButtonElement>(null);
   const lastToolButton = useRef<HTMLButtonElement | null>(null);
   const [editing, setEditing] = useState(false);
+  const [costEditorRequest, setCostEditorRequest] = useState<{slug:string;sequence:number;scope:string;epoch:number}|null>(null);
   const selectedSlug = params.get("outil");
   const lookup = useMemo(() => new Map(tools.flatMap((tool) => [[tool.id, tool], [toolKey(tool), tool]] as [string, ToolSummary][])), [tools]);
   const selectedTools = useMemo(() => Array.from(new Map(state.pinnedToolSlugs.flatMap((slug) => {
@@ -97,7 +98,7 @@ export default function CartPage() {
   // Pairs kept on purpose (a decision) are no longer flagged anywhere.
   const { currency } = useCurrency();
   const hourly = dailyRate ? convertAmount(dailyRate.amount, dailyRate.currency, currency) / 7 : null;
-  const { decisions, decide } = useStackDecisions(t, (amount) => `${formatAmount(Math.round(amount), currency, lang)}${t("/mois", "/mo")}`, currency);
+  const { decisions, decide } = useStackDecisions(t, (amount) => `${formatAmount(amount, currency, lang)}${t("/mois", "/mo")}`, currency);
   const reviewScope = getPersonalStackScope();
   const reviewEpoch = getPersonalStackScopeEpoch(reviewScope);
   const [pairReview, setPairReview] = useState<{scope:string;epoch:number;key:string}|null>(null);
@@ -171,7 +172,7 @@ export default function CartPage() {
   // read through lenses; every open question is a card in one deck; a tool is
   // "checked" once nothing about it waits for an answer, and the ring says
   // how much of the stack is checked.
-  const money = (value: number) => `${formatAmount(Math.round(value), currency, lang)}${t("/mois", "/mo")}`;
+  const money = (value: number) => `${formatAmount(value, currency, lang)}${t("/mois", "/mo")}`;
   // All my tools: one grid of cards, sorted by the tab the person picks.
   // How much the person uses each paid tool: the one thing the catalogue cannot know.
   // Five levels (1 asleep to 5 flat out), kept in the personal stack: they follow the account.
@@ -196,7 +197,7 @@ export default function CartPage() {
   const infoOf = (tool: ToolSummary): MapToolInfo => {
     const cost = toolMonthlyCost(tool, plans.isPaid, lang);
     const pending = pendingIds.has(tool.id);
-    if (cost.kind === "paid") { const monthly = convertAmount(cost.monthly, cost.currency, currency); return { cost: `${formatAmount(Math.round(monthly), currency, lang)}`, share: maxMonthly > 0 ? monthly / maxMonthly : 0, kind: "paid", pending }; }
+    if (cost.kind === "paid") { const monthly = convertAmount(cost.monthly, cost.currency, currency); return { cost: `${formatAmount(monthly, currency, lang)}`, share: maxMonthly > 0 ? monthly / maxMonthly : 0, kind: "paid", pending }; }
     if (cost.kind === "unknown") return { cost: t("Prix ?", "Price?"), share: 0, kind: "unknown", pending };
     return { cost: cost.kind === "freemium-free" && !plans.isReviewed(toolKey(tool)) ? "Freemium" : t("Gratuit", "Free"), share: 0, kind: "free", pending };
   };
@@ -234,8 +235,8 @@ export default function CartPage() {
       key: `price:${tool.id}`, kind: "price", tools: [tool],
       title: t(`Quelle formule de ${tool.name} avez-vous\u00a0?`, `Which ${tool.name} plan do you have?`),
       detail: t("Ce prix manque : l’outil reste exclu du budget renseigné.", "This price is missing: the tool is excluded from the recorded budget."),
-      savePrice: (amount: number) => { plans.setChoice(toolKey(tool), { source: "custom", amount, currency, period: "monthly" }); trackEvent("stack_price_saved", { tool_slug: toolKey(tool), source: "card" }); },
-      actions: [{ label: t("Ajouter le prix", "Add the price"), primary: true, ariaLabel: t(`Ajouter le prix de ${tool.name}`, `Add the price of ${tool.name}`), onClick: () => selectTool(toolKey(tool)) }],
+      savePrice: (amount, invoiceCurrency) => { plans.setChoice(toolKey(tool), { source: "custom", amount, currency: invoiceCurrency, period: "monthly" }); trackEvent("stack_price_saved", { tool_slug: toolKey(tool), source: "card" }); },
+      actions: [{ label: t("Ajouter le prix", "Add the price"), primary: true, ariaLabel: t(`Ajouter le prix de ${tool.name}`, `Add the price of ${tool.name}`), onClick: () => { lastToolButton.current = document.activeElement instanceof HTMLButtonElement ? document.activeElement : null; selectTool(toolKey(tool), true); } }],
     })),
   ];
   const reviewingFinding = reviewKey ? deckItems.find(item => item.key === `pair:${reviewKey}`) : null;
@@ -321,7 +322,8 @@ export default function CartPage() {
     }
   }, [selectedSlug, selected, state.pinnedToolSlugs, params, setParams]);
 
-  function selectTool(slug: string) {
+  function selectTool(slug: string, editCost = false) {
+    setCostEditorRequest(previous => editCost ? {slug, sequence:(previous?.sequence ?? 0) + 1, scope:reviewScope, epoch:reviewEpoch} : null);
     const target = lookup.get(slug);
     if (target && !visibleIds.has(target.id)) setDomainFilter("all");
     const next = new URLSearchParams(params);
@@ -330,6 +332,7 @@ export default function CartPage() {
     trackEvent("stack_tool_open", { tool_slug: slug });
   }
   function closeInspector() {
+    setCostEditorRequest(null);
     const selectedId = selected?.id;
     if (!lastToolButton.current?.isConnected && selectedId) {
       lastToolButton.current = document.querySelector<HTMLButtonElement>(`[data-tool-id="${CSS.escape(selectedId)}"]`);
@@ -535,14 +538,14 @@ export default function CartPage() {
       {/* The findings module: the price first, then one decision at a time,
           then the summary once everything is settled. */}
       {(() => {
-        const fmt = (amount: number) => formatAmount(Math.round(amount), currency, lang);
+        const fmt = (amount: number) => formatAmount(amount, currency, lang);
         const resolved = Object.entries(decisions).flatMap(([key, decision]) => {
           const [x, y] = key.split("|").map((slug) => lookup.get(slug));
           if (!x || !y) return [];
           if (decision.kind === "keep-both" && !(pinnedKeys.has(toolKey(x)) && pinnedKeys.has(toolKey(y)))) return [];
           return [{ key, a: x, b: y, kind: decision.kind === "keep-both" ? "keep-both" as const : "keep-one" as const, kept: lookup.get(decision.kept)?.name, removed: decision.removed ? lookup.get(decision.removed)?.name : undefined, at: decision.at }];
         }).sort((x, y) => String(y.at).localeCompare(String(x.at)));
-        return <StackFindings guide={isFreshFromOnboarding()} hourly={hourly} freeTools={selectedTools.filter(tool => monthlyOf(tool) === 0 && !unreviewed.some(item => item.id === tool.id) && !unknownTools.some(item => item.id === tool.id))} lang={lang} total={stackCost.total} format={fmt} toolCount={selectedTools.length}
+        return <StackFindings currency={currency} converted={selectedTools.some(tool => { const cost = toolMonthlyCost(tool, plans.isPaid, lang); return cost.kind === "paid" && cost.currency !== currency; })} guide={isFreshFromOnboarding()} hourly={hourly} freeTools={selectedTools.filter(tool => monthlyOf(tool) === 0 && !unreviewed.some(item => item.id === tool.id) && !unknownTools.some(item => item.id === tool.id))} lang={lang} total={stackCost.total} format={fmt} toolCount={selectedTools.length}
           fit={selectedTools.filter((tool) => monthlyOf(tool) > 0).sort((x, y) => monthlyOf(y) - monthlyOf(x)).map((tool) => ({
             tool, cost: monthlyOf(tool), usage: usage[toolKey(tool)], setUsage: (value: number | null) => setUsage(toolKey(tool), value), detailHref: `${prefix}/tool/${toolKey(tool)}`,
           }))}
@@ -634,7 +637,7 @@ export default function CartPage() {
         </section>}
       </div>
 
-      <StackToolSheet tool={selected || null} detail={resolved} pairs={overlapScore.pairs} categories={categories} paid={plans} currency={currency} prefix={prefix} lang={lang}
+      <StackToolSheet key={`${reviewScope}:${reviewEpoch}`} editCostRequest={costEditorRequest?.scope === reviewScope && costEditorRequest.epoch === reviewEpoch ? costEditorRequest : null} tool={selected || null} detail={resolved} pairs={overlapScore.pairs} categories={categories} paid={plans} currency={currency} prefix={prefix} lang={lang}
         catalog={tools} stackIds={existingIds}
         onClose={closeInspector} onReturnFocus={() => { if (lastToolButton.current?.isConnected) lastToolButton.current.focus({ preventScroll: true }); }} onSelect={selectTool}
         onRemove={() => selected && removeTool(state.pinnedToolSlugs.find((slug) => lookup.get(slug)?.id === selected.id) || toolKey(selected), selected.name)} />

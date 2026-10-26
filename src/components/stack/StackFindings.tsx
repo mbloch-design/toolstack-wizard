@@ -1,5 +1,7 @@
+import StackInvoiceEntry from "./StackInvoiceEntry";
+import { CURRENCY_RATE_DATE, type Currency } from "@/lib/currencyRates";
 import StackUsageReview from "./StackUsageReview";
-import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
+import { Fragment, useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { Rocket, UserRound, BarChart3, Moon, Zap, Check, ChevronDown, CircleDot, ClipboardCheck, Flame, Plus, Scale, Target, TrendingUp, GitCompare, Layers3, ListChecks, RefreshCw, Sparkles, Tag, TrendingDown, Wallet } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { Link } from "@/lib/routerLinks";
@@ -31,12 +33,14 @@ export type Finding = {
   /** For a plan or price question: the plans to pick from, one tap each. */
   plans?: { key: string; label: string; monthly: number; note?: string; perSeat?: boolean; pick: (seats?: number) => void }[];
   /** For a missing price: saves what the person pays a month, right from the card. */
-  savePrice?: (amount: number) => void;
+  savePrice?: (amount: number, invoiceCurrency: Currency) => void;
   /** For a plan question: the two answers and what each costs a month. */
   options?: { label: string; amount: number }[];
 };
 type Resolved = { key: string; a: ToolSummary; b: ToolSummary; kind: "keep-both" | "keep-one"; kept?: string; removed?: string };
 interface Props {
+  currency?: Currency;
+  converted?: boolean;
   lang: "fr" | "en";
   /** Known monthly total, and how to write an amount ("446 €"). */
   total: number;
@@ -193,20 +197,6 @@ function TextLinkRow({ to, row, format, t }: { to: string; row: { tool: ToolSumm
   </Link>;
 }
 
-/** The answer to "what does it cost?", in the card: an amount, per month, saved on Enter. */
-function PriceField({ onSave, onPreview, t }: { onSave: (amount: number) => void; onPreview?: (amount: number | null) => void; t: (a: string, b: string) => string }) {
-  const [value, setValue] = useState("");
-  const amount = Number(value.replace(",", "."));
-  const ok = value.trim() !== "" && Number.isFinite(amount) && amount >= 0;
-  return <form className="mf-price-field" onSubmit={(event) => { event.preventDefault(); if (ok) onSave(amount); }}>
-    <label><span className="sr-only">{t("Montant mensuel", "Monthly amount")}</span>
-      <input inputMode="decimal" autoComplete="off" placeholder="0" value={value} onChange={(event) => { setValue(event.target.value); const next = Number(event.target.value.replace(",", ".")); onPreview?.(event.target.value.trim() !== "" && Number.isFinite(next) && next >= 0 ? next : null); }} aria-label={t("Montant mensuel en euros", "Monthly amount")} />
-      <span aria-hidden="true">{t("€ / mois", "€ / mo")}</span>
-    </label>
-    <Button variant="primary" type="submit" disabled={!ok}>{t("Enregistrer", "Save")}</Button>
-  </form>;
-}
-
 /** A tool's brand colour from the catalogue, or the ToolTrim neutral. */
 const accentOf = (tool?: ToolSummary) => (tool && (toolAccents as Record<string, string | null>)[toolKey(tool)]) || "var(--color-stack-accent-fallback)";
 
@@ -216,7 +206,7 @@ const icon = (Icon: typeof Wallet, color?: string) => <Icon size={14} strokeWidt
 // costs, then the one thing to decide now, then, quietly, what comes next.
 // Settling the current finding brings the next one in; once nothing is left,
 // the space becomes the summary of what was decided and what it saved.
-export default function StackFindings({ lang, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly }: Props) {
+export default function StackFindings({ lang, currency = "EUR", converted = false, total, format, spend, areas, toolCount, freeTools = [], fit, items, reviewFindingKey, saved, toReview, resolved, history, onAddTool, onReviewTools, exploreHref, guide, hourly }: Props) {
   const fr = lang === "fr";
   const t = (a: string, b: string) => (fr ? a : b);
   const s = (n: number) => (n > 1 ? "s" : "");
@@ -279,6 +269,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
   }, [reviewFindingKey, appliedReview]);
   const queued = [...items.filter((item) => !later.includes(item.key)), ...later.flatMap((key) => items.filter((item) => item.key === key))];
   const order = [...queued.filter((item) => item.key === effectiveFirst), ...queued.filter((item) => item.key !== effectiveFirst)];
+  const previewInvoice = useCallback((amount: number | null) => setPreview(amount === null ? null : total + amount), [total]);
   const top = order[0];
   useEffect(() => {
     if (answerTimer.current !== null) { clearTimeout(answerTimer.current); answerTimer.current = null; }
@@ -339,6 +330,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
                   </button>
                 : toolCount > 0 && <p className="mf-trust" data-exact="">{ring}<span className="mf-trust-text"><b>{t("Budget renseigné", "Budget recorded")}</b><small>{t("Estimation selon les prix et formules renseignés.", "Estimate based on the prices and plans recorded.")}</small>{dots}</span></p>;
             })()}</>; })()}
+        {converted && <p className="mf-invoice-help">{t(`Conversion en ${currency} au taux de référence du ${CURRENCY_RATE_DATE}.`, `Converted to ${currency} using reference rates dated ${CURRENCY_RATE_DATE}.`)}</p>}
         {spend.length > 0 ? <>
           {/* Your stack, by what it costs: the tools that weigh most, each with a thin
               bar for its share; the others as a strip of their logos. */}
@@ -462,7 +454,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
           </div>;
         })()}
         {/* No plan in the catalogue: the only case with an amount to type. */}
-        {top.savePrice && (!top.plans || top.plans.length === 0) && <PriceField key={top.key} onSave={top.savePrice} onPreview={(amount) => setPreview(amount === null ? null : total + amount)} t={t} />}
+        {top.savePrice && (!top.plans || top.plans.length === 0) && <StackInvoiceEntry key={`${scope}:${scopeEpoch}:${top.key}`} currency={currency} lang={lang} onSave={top.savePrice} onPreview={previewInvoice} />}
         {/* One bar, always at the bottom: ways to look or defer on the left, the answers on the right. */}
         <div className="mf-bar-actions">
           <div className="mf-links">
@@ -471,7 +463,7 @@ export default function StackFindings({ lang, total, format, spend, areas, toolC
             {top.bulk && <TextLink onClick={top.bulk.onClick}>{top.bulk.label}</TextLink>}
             {order.length > 1 && <TextLink className="mk-link--quiet" onClick={() => { setFirst(null); setLater((keys) => [...keys.filter((key) => key !== top.key), top.key]); }}>{t("Plus tard", "Later")}</TextLink>}
           </div>
-          {(top.savePrice || (top.plans && top.plans.length > 0)) && top.kind === "price" && top.actions.map((action) => <TextLink key={action.label} onClick={action.onClick}>{t("Saisie détaillée (sièges, annuel)", "Detailed entry (seats, yearly)")}</TextLink>)}
+          {(top.savePrice || (top.plans && top.plans.length > 0)) && top.kind === "price" && top.actions.map((action) => <TextLink className="mf-invoice-details" key={action.label} onClick={action.onClick}>{t("Devise, utilisateurs ou facture annuelle", "Currency, users or yearly billing")}</TextLink>)}
           {/* The effect on the total, on the bar's right: today's figure, then where an answer takes it. */}
           {(top.plans?.length || top.kind === "pair" || top.savePrice || (top.kind === "freemium" && top.options)) && <p className="mf-preview" aria-live="polite">
             <span className="mf-preview-k">{items.some(item => item.kind === "price" || item.kind === "freemium") ? t("Budget partiel", "Partial budget") : t("Budget estimé", "Estimated budget")}</span>

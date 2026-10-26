@@ -773,3 +773,96 @@ test('usage follows a paid-to-free change without retaining a stale preview or k
  await card.getByRole('radio',{name:'Rarely — Low use',exact:true}).press('ArrowDown');
  expect((await snapshot(page)).usage).toEqual({grammarly:2});
 });
+
+for(const lang of ['en','fr'] as const) for(const width of [320,1440]) test(`invoice currency ${lang} ${width}: tester stack, mixed invoice, direct editor and reload`,async({page,request})=>{
+ const en=lang==='en';await page.setViewportSize({width,height:900});
+ const value=state(['cursor','github','vercel']);
+ value.billing={paid:['cursor','github'],reviewed:['cursor','github','vercel'],choices:{cursor:{source:'plan',label:'Teams',amount:40,currency:'USD',period:'monthly',perSeat:true,seats:5}}};
+ await control(request,'seed',{email:'invoice@example.invalid',state:value});
+ await page.addInitScript(()=>localStorage.setItem('tooltrim:currency','USD'));
+ await page.goto(`/${lang}/ma-stack`);await login(page,lang,'invoice@example.invalid');await saved(page,lang);
+ const card=page.locator('.mf-now');
+ const expander=card.locator('.mf-expand[aria-expanded=false]');if(await expander.isVisible())await expander.click();
+ // Resolve a pair first only if the catalogue detects one; keep all tools.
+ if(await card.getByRole('button',{name:en?'Keep both':'Garder les deux',exact:true}).count())await card.getByRole('button',{name:en?'Keep both':'Garder les deux',exact:true}).click();
+ await expect(card.getByRole('textbox')).toBeVisible();
+ expect(await card.locator('.mf-now-q h3').evaluate(el=>getComputedStyle(el).paddingRight)).toBe('0px');
+ expect((await snapshot(page)).billing.choices.github).toBeUndefined();
+ expect(await page.locator('.mf-price .mk-odo').first().getAttribute('aria-label')).toMatch(/200/);
+ await expect(card.getByRole('combobox',{name:en?'Invoice currency':'Devise de facture'})).toHaveValue('USD');
+ await card.getByRole('textbox').fill(en?'12.50':'12,50');
+ await card.getByRole('combobox').selectOption('GBP');
+ if(en && width===1440) {
+  await page.getByRole('button',{name:'Choose currency, US dollar selected',exact:true}).click();
+  await page.getByRole('radio',{name:/EUR/}).click();
+  await expect(card.getByRole('combobox')).toHaveValue('GBP');await expect(card.getByRole('textbox')).toHaveValue('12.50');
+  await expect(card.locator('.mf-invoice-help')).toContainText('GBP → EUR');
+  await page.getByRole('button',{name:/Choose currency, Euro selected/}).click();await page.getByRole('radio',{name:/USD/}).click();
+ }
+ await expect(card.locator('.mf-invoice-help')).toContainText('GBP → USD');
+ await expect(card.locator('.mf-invoice-help')).toContainText('2026-08-27');
+ const save=card.getByRole('button',{name:en?'Save':'Enregistrer',exact:true});
+ expect(await save.evaluate(el=>{const c=getComputedStyle(el).backgroundColor.match(/\d+/g)!.map(Number);return c[2]>c[0]+50;})).toBe(true);
+ expect(await card.evaluate(el=>{const b=el.getBoundingClientRect();return Array.from(el.querySelectorAll('.mf-price-entry input,.mf-price-entry select,.mf-price-entry button')).every(x=>x.getBoundingClientRect().bottom<=b.bottom+1);})).toBe(true);
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await card.screenshot({path:`/tmp/tooltrim-invoice-${lang}-${width}.png`});
+ await card.getByRole('button',{name:en?'Save':'Enregistrer',exact:true}).click();await saved(page,lang);
+ expect((await snapshot(page)).billing.choices.github).toEqual({source:'custom',amount:12.5,currency:'GBP',period:'monthly'});
+ expect((await snapshot(page)).billing.choices.cursor?.seats).toBe(5);
+ await expect(page.locator('.mf-price')).toContainText('2026-08-27');
+ await page.reload();await saved(page,lang);
+ expect((await snapshot(page)).billing.choices.github?.currency).toBe('GBP');
+ // Restore unknown price to exercise the explicit direct-editor link.
+ const next=await snapshot(page);delete next.billing.choices.github;await change(page,next);
+ const open=card.locator('.mf-expand[aria-expanded=false]');if(await open.isVisible())await open.click();
+ await card.getByRole('button',{name:en?'Currency, users or yearly billing':'Devise, utilisateurs ou facture annuelle',exact:true}).click();
+ const sheet=page.getByRole('dialog');const input=sheet.getByLabel(en?'Billed amount':'Montant facturé',{exact:true});
+ await expect(input).toBeVisible();await expect(input).toBeFocused();
+ await input.fill(en?'120.12':'120,12');
+ await sheet.getByRole('group',{name:en?'Invoice currency':'Devise de facture'}).getByRole('button',{name:'EUR',exact:true}).click();
+ await sheet.getByRole('button',{name:en?'Yearly':'Annuel',exact:true}).click();
+ await sheet.locator('.ms-ce-actions').getByRole('button',{name:en?'Cancel':'Annuler',exact:true}).click();
+ await expect(sheet.getByRole('button',{name:en?'Edit my subscription':'Modifier mon abonnement'})).toBeFocused();
+ expect((await snapshot(page)).billing.choices.github).toBeUndefined();
+ await sheet.getByRole('button',{name:en?'Edit my subscription':'Modifier mon abonnement'}).click();
+ await input.fill(en?'120.12':'120,12');
+ await sheet.getByRole('group',{name:en?'Invoice currency':'Devise de facture'}).getByRole('button',{name:'EUR',exact:true}).click();
+ await sheet.getByRole('button',{name:en?'Yearly':'Annuel',exact:true}).click();
+ await input.fill('-1');await expect(sheet.locator('.ms-ce-save')).toBeDisabled();await input.press('Enter');
+ expect((await snapshot(page)).billing.choices.github).toBeUndefined();
+ await input.fill(en?'120.12':'120,12');await sheet.locator('.ms-ce-save').click();await saved(page,lang);
+ expect((await snapshot(page)).billing.choices.github).toEqual({source:'custom',amount:120.12,currency:'EUR',period:'annual'});
+ await sheet.getByRole('button',{name:en?'Close':'Fermer',exact:true}).click();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+
+test('invoice zero can become paid again and editor cancellation restores a visible focus target',async({page,request})=>{
+ const value=state(['notion','vercel']);value.billing={paid:['notion'],reviewed:['notion','vercel'],choices:{notion:{source:'custom',amount:0,currency:'USD',period:'monthly'}}};
+ await control(request,'seed',{email:'zero-invoice@example.invalid',state:value});await page.goto('/en/ma-stack');await login(page,'en','zero-invoice@example.invalid');await saved(page);
+ await page.locator('.ms-inv').getByRole('button',{name:/^Notion,/}).click();const sheet=page.getByRole('dialog');
+ const paid=sheet.getByRole('switch',{name:'Paid subscription for Notion',exact:true});await expect(paid).toHaveAttribute('aria-checked','false');await paid.click();
+ await expect(paid).toHaveAttribute('aria-checked','true');expect((await snapshot(page)).billing.choices.notion).toBeUndefined();
+ const adjust=sheet.getByRole('button',{name:'Edit my subscription'});await adjust.click();
+ await sheet.getByLabel('Or the billed amount',{exact:true}).fill('0');await sheet.locator('.ms-ce-save').click();
+ await expect(adjust).toBeFocused();await expect(paid).toHaveAttribute('aria-checked','false');
+ await adjust.click();await sheet.getByLabel('Or the billed amount',{exact:true}).fill('99');await sheet.getByRole('button',{name:'Cancel',exact:true}).click();
+ await expect(adjust).toBeFocused();expect((await snapshot(page)).billing.choices.notion?.amount).toBe(0);
+});
+
+test('invoice draft cannot cross a personal-stack scope change',async({page,request})=>{
+ const first=state(['github','vercel']);first.billing={paid:['github'],reviewed:['github','vercel'],choices:{github:{source:'custom',amount:15,currency:'USD',period:'monthly'}}};
+ await control(request,'seed',{email:'scope-invoice@example.invalid',state:first});await page.goto('/en/ma-stack');await login(page,'en','scope-invoice@example.invalid');await saved(page);await page.locator('.ms-inv').getByRole('button',{name:/^GitHub,/}).click();
+ const sheet=page.getByRole('dialog');await sheet.getByRole('button',{name:'Edit my subscription'}).click();
+ await sheet.getByLabel('Billed amount',{exact:true}).fill('111');
+ const second=state(['github','vercel']);second.billing={paid:['github'],reviewed:['github','vercel'],choices:{github:{source:'custom',amount:29,currency:'GBP',period:'monthly'}}};
+ await page.evaluate(async value=>{const path='/src/lib/personalStackStore.ts';const store=await import(/* @vite-ignore */ path);store.setPersonalStackScope('invoice-scope-b');store.replacePersonalStack(value);},second);
+ await expect(sheet.getByRole('button',{name:'Edit my subscription'})).toHaveAttribute('aria-expanded','false');
+ await sheet.getByRole('button',{name:'Edit my subscription'}).click();await expect(sheet.getByLabel('Billed amount',{exact:true})).toHaveValue('29');
+ expect((await snapshot(page)).billing.choices.github).toEqual(second.billing.choices.github);
+});
+
+test('invoice native cents remain visible in the recorded budget',async({page,request})=>{
+ const value=state(['cursor','github','vercel']);value.billing={paid:['cursor','github'],reviewed:['cursor','github','vercel'],choices:{cursor:{source:'plan',label:'Teams',amount:40,currency:'USD',period:'monthly',perSeat:true,seats:5},github:{source:'custom',amount:12.5,currency:'USD',period:'monthly'}}};
+ await control(request,'seed',{email:'cents-invoice@example.invalid',state:value});await page.goto('/en/ma-stack');await login(page,'en','cents-invoice@example.invalid');await saved(page);
+ await expect(page.locator('.mf-price .mk-odo').first()).toHaveAttribute('aria-label','$212.50');
+});

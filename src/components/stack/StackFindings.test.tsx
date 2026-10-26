@@ -41,3 +41,10 @@ it('keeps the currency caveat when one tool has no separate usage card',()=>{
  view({count:1,other:true,history:true});
  expect(screen.getByText('Baisse estimée : devise inconnue.')).toBeVisible();
 });
+
+it('names the quick invoice amount and currency in USD rather than euros',()=>{
+ const savePrice=vi.fn();
+ render(<MemoryRouter><StackFindings lang="en" currency="USD" total={200} format={n=>`$${n}`} spend={[]} areas={[]} toolCount={3} fit={[]} items={[{key:'github-price',kind:'price',tools:[tool('github','GitHub')],title:'How much does GitHub cost you a month?',detail:'Unknown price',actions:[],savePrice}]} saved={0} toReview={0} resolved={[]} onAddTool={()=>{}} onReviewTools={()=>{}} /></MemoryRouter>);
+ expect(screen.getByRole('combobox',{name:'Invoice currency'})).toHaveValue('USD');
+ expect(screen.getByRole('textbox',{name:'Monthly billed amount (USD)'})).toBeVisible();
+});

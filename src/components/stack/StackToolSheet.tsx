@@ -1,4 +1,4 @@
-import { useState, useSyncExternalStore } from "react";
+import { useLayoutEffect, useRef, useState, useSyncExternalStore } from "react";
 import StackCostEditor from "@/components/stack/StackCostEditor";
 import Collapse from "@/components/motion/Collapse";
 import ValueChange from "@/components/motion/ValueChange";
@@ -32,6 +32,7 @@ import toolAccents from "@/data/toolAccents.json";
  */
 
 interface Props {
+  editCostRequest?: {slug:string;sequence:number}|null;
   /** The stack's summary of the tool: prices and uses come from it (attested nativePrices). */
   tool: ToolSummary | null;
   /** Full catalogue record when loaded, for the description only. */
@@ -60,20 +61,25 @@ function useNarrow() {
   );
 }
 
-export default function StackToolSheet({ tool, detail, pairs, categories, paid, currency, prefix, lang, onClose, onReturnFocus, onSelect, onRemove, catalog, stackIds }: Props) {
+export default function StackToolSheet({ editCostRequest, tool, detail, pairs, categories, paid, currency, prefix, lang, onClose, onReturnFocus, onSelect, onRemove, catalog, stackIds }: Props) {
   const en = lang === "en";
   const bottom = useNarrow();
   const [editing, setEditing] = useState<string | null>(null);
   // Each opening starts a fresh draft from what is saved.
   const [opened, setOpened] = useState(0);
-  const money = (amount: number) => `≈ ${formatAmount(Math.round(amount), currency, lang)}${en ? "/mo" : "/mois"}`;
+  const adjustButton = useRef<HTMLButtonElement>(null);
+  const closeCostEditor = () => { setEditing(null); adjustButton.current?.focus({preventScroll:true}); };
+  useLayoutEffect(() => {
+    if (editCostRequest && tool && editCostRequest.slug === toolKey(tool)) { setEditing(editCostRequest.slug); setOpened(n => n + 1); }
+  }, [editCostRequest, tool?.id]);
+  const money = (amount: number) => `≈ ${formatAmount(amount, currency, lang)}${en ? "/mo" : "/mois"}`;
 
   return (
     <Sheet open={!!tool} onOpenChange={(open) => { if (!open) onClose(); }}>
       {/* Focus lands on the sheet itself, not on its first control: no stray ring. */}
       <SheetContent side={bottom ? "bottom" : "right"} className="ms-tool-sheet" overlayClassName="ms-sheet-overlay"
         onCloseAutoFocus={(event) => { event.preventDefault(); onReturnFocus(); }}
-        onOpenAutoFocus={(event) => { event.preventDefault(); (event.currentTarget as HTMLElement | null)?.focus({ preventScroll: true }); }}
+        onOpenAutoFocus={(event) => { event.preventDefault(); (event.currentTarget as HTMLElement | null)?.focus({ preventScroll: true }); if (editCostRequest) requestAnimationFrame(() => document.querySelector<HTMLInputElement>(".ms-tool-sheet .ms-cost-editor input")?.focus()); }}
         style={tool && (toolAccents as Record<string, string>)[toolKey(tool)] ? ({ "--tool-accent": (toolAccents as Record<string, string>)[toolKey(tool)] } as React.CSSProperties) : undefined}>
         {/* A close button you can see (36px), top right. */}
         <SheetClose className="ms-ts-close" aria-label={en ? "Close" : "Fermer"}><X size={18} aria-hidden /></SheetClose>
@@ -106,7 +112,7 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
             <section className="ms-ts-group" aria-label={en ? "In my stack" : "Dans ma stack"}>
               {(() => {
                 const choice = paid.choiceFor(slug);
-                const on = paid.isPaid(slug) || !!choice;
+                const on = choice ? cost.kind === "paid" : paid.isPaid(slug);
                 const source = cost.kind !== "paid" ? null
                   : cost.source === "custom" && choice ? `${en ? "Billed amount" : "Montant facturé"} ${formatNativePrice({ amount: choice.amount, currency: choice.currency, period: choice.period }, lang)}`
                   : cost.source === "plan" ? (() => { const users = Math.max(1, choice?.seats || 1); return `${choice?.label || ""}${choice?.perSeat ? ` · ${users} ${en ? (users > 1 ? "users" : "user") : (users > 1 ? "utilisateurs" : "utilisateur")}` : ""}`; })()
@@ -132,14 +138,14 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                       ? (en ? `From ${formatNativePrice(native, lang)}` : `À partir de ${formatNativePrice(native, lang)}`)
                       : (en ? "Paid price not checked" : "Prix payant non relevé")}</small></span>
                     <button type="button" role="switch" aria-checked={on} className="ms-switch" aria-label={en ? `Paid subscription for ${tool.name}` : `Abonnement payant pour ${tool.name}`}
-                      onClick={() => { if (on) { paid.setChoice(slug, null); paid.setPaid(slug, false); } else paid.setPaid(slug, true); }}>
+                      onClick={() => { if (on) { paid.setChoice(slug, null); paid.setPaid(slug, false); } else { if (choice?.amount === 0) paid.setChoice(slug, null); paid.setPaid(slug, true); } }}>
                       <span className="ms-switch-track" aria-hidden="true"><span /></span>
                     </button>
                   </div>}
                   {/* The right figure: a catalogue plan with its seats, or what
                       the person really pays. */}
-                  <button type="button" className="ms-ts-adjust" aria-expanded={open} onClick={() => { if (!open) setOpened((n) => n + 1); setEditing(open ? null : slug); }}>
-                    <span>{en ? "Edit my subscription" : "Modifier mon abonnement"}<small>{en ? "Plan, users or billed amount" : "Offre, utilisateurs ou montant facturé"}</small></span>
+                  <button type="button" className="ms-ts-adjust" ref={adjustButton} aria-expanded={open} onClick={() => { if (!open) setOpened((n) => n + 1); setEditing(open ? null : slug); }}>
+                    <span>{en ? "Edit my subscription" : "Modifier mon abonnement"}<small>{en ? "Plan, users, invoice currency or billed amount" : "Offre, utilisateurs, devise ou montant facturé"}</small></span>
                     <ChevronDown size={16} aria-hidden />
                   </button>
                   {/* Always mounted, opens in height: the content below glides. */}
@@ -148,12 +154,12 @@ export default function StackToolSheet({ tool, detail, pairs, categories, paid, 
                       initial={choice ? { kind: "choice", choice } : freemium && !paid.isPaid(slug) ? { kind: "free" } : { kind: "entry" }}
                       entryLabel={native && native.period !== "once" ? (() => { const amount = native.period === "annual" ? native.amount / 12 : native.amount; return isCurrency(native.currency) ? money(convertAmount(amount, native.currency, currency)) : formatNativePrice(native, lang); })() : null}
                       entryNative={native && native.period !== "once" ? native : null}
-                      onCancel={() => setEditing(null)}
+                      onCancel={closeCostEditor}
                       onSave={(draft) => {
                         // Saved: the stack takes it, the editor closes, the figure above updates.
-                        if (draft.kind === "choice") { paid.setChoice(slug, draft.choice); if (freemium) paid.setPaid(slug, true); }
+                        if (draft.kind === "choice") { paid.setChoice(slug, draft.choice); if (freemium) paid.setPaid(slug, draft.choice.amount > 0); }
                         else { paid.setChoice(slug, null); if (freemium) paid.setPaid(slug, draft.kind === "entry"); }
-                        setEditing(null);
+                        closeCostEditor();
                       }} />
                   </Collapse>
                 </>;
