@@ -26,27 +26,27 @@ function Harness({ initial = [undefined, undefined], history = false }: { initia
 describe("compact usage review", () => {
   it("saves an answer in place and advances only on Next", () => {
     render(<Harness />);
-    expect(screen.getByRole("heading", { name: "Son rythme chez vous ?" })).toBeVisible();
-    const low = screen.getByRole("radio", { name: "Faible — Usage faible" });
+    expect(screen.getByRole("heading", { name: "Vos usages" })).toBeVisible();
+    const low = screen.getByRole("radio", { name: "Peu — Usage faible" });
     fireEvent.click(low);
     expect(low).toHaveAttribute("aria-checked", "true");
     expect(screen.getByRole("heading", { name: "Motion Array" })).toBeVisible();
     expect(screen.getByLabelText("Recorded values")).toHaveTextContent("[1,null]");
     fireEvent.click(screen.getByRole("button", { name: "Suivant" }));
     expect(screen.getByRole("heading", { name: "Grammarly" })).toBeVisible();
-    fireEvent.click(screen.getByRole("radio", { name: "Intensif — Usage intensif" }));
+    fireEvent.click(screen.getByRole("radio", { name: "À fond — Usage intensif" }));
     fireEvent.click(screen.getByRole("button", { name: "Terminer" }));
     expect(screen.getByRole("heading", { name: "Casting au complet." })).toHaveFocus();
   });
 
   it("previews humour without saving and supports radio arrow keys", () => {
     render(<Harness initial={[undefined]} />);
-    const low = screen.getByRole("radio", { name: "Faible — Usage faible" });
+    const low = screen.getByRole("radio", { name: "Peu — Usage faible" });
     fireEvent.pointerEnter(low);
     expect(screen.getByText(/Il fait surtout de la figuration/ )).toBeVisible();
     expect(screen.getByLabelText("Recorded values")).toHaveTextContent("[null]");
     fireEvent.keyDown(low, { key: "End" });
-    expect(screen.getByRole("radio", { name: "Intensif — Usage intensif" })).toHaveAttribute("aria-checked", "true");
+    expect(screen.getByRole("radio", { name: "À fond — Usage intensif" })).toHaveAttribute("aria-checked", "true");
     expect(screen.getByLabelText("Recorded values")).toHaveTextContent("[5]");
   });
 
@@ -62,8 +62,8 @@ describe("compact usage review", () => {
   it("reviews one tool at a time and preserves other answers", () => {
     render(<Harness initial={[1, 5]} />);
     fireEvent.click(screen.getByRole("button", { name: "Revoir mes usages" }));
-    expect(screen.getByRole("radio", { name: "Faible — Usage faible" })).toHaveAttribute("aria-checked", "true");
-    fireEvent.click(screen.getByRole("radio", { name: "Soutenu — Usage soutenu" }));
+    expect(screen.getByRole("radio", { name: "Peu — Usage faible" })).toHaveAttribute("aria-checked", "true");
+    fireEvent.click(screen.getByRole("radio", { name: "Souvent — Usage soutenu" }));
     expect(screen.getByLabelText("Recorded values")).toHaveTextContent("[4,5]");
     fireEvent.click(screen.getByRole("button", { name: "Résumé" }));
     expect(screen.getByText("Casting au complet.")).toBeVisible();
@@ -93,7 +93,7 @@ describe("compact usage review", () => {
     view.rerender(<StackUsageReview {...props} rows={[{
       tool: { id: "loaded", slug: "motion-array", name: "Motion Array" } as FitRow["tool"], cost: 25, detailHref: "/", setUsage: vi.fn(),
     } as FitRow]} />);
-    expect(screen.getByRole("radio", { name: "Faible — Usage faible" })).toBeVisible();
+    expect(screen.getByRole("radio", { name: "Peu — Usage faible" })).toBeVisible();
   });
 });
 
@@ -103,7 +103,7 @@ const row = (id: string, usage?: number): FitRow => ({ tool: { id, slug: id, nam
 it('clears an old preview and retains keyboard context when the active tool disappears', () => {
   const a = row('Tool A'), b = row('Tool B');
   const view = render(<StackUsageReview {...reviewProps} rows={[a, b]} />);
-  act(() => screen.getByRole('radio', { name: 'Intensif — Usage intensif' }).focus());
+  act(() => screen.getByRole('radio', { name: 'À fond — Usage intensif' }).focus());
   expect(screen.getByText(/Il connaît vos raccourcis/)).toBeVisible();
   view.rerender(<StackUsageReview {...reviewProps} rows={[b]} />);
   expect(screen.queryByText(/Il connaît vos raccourcis/)).not.toBeInTheDocument();
@@ -126,7 +126,7 @@ it('skips several tools, pauses, resumes the first missing answer and preserves 
   expect(screen.getByText('1 sur 3 usages renseignés. La suite quand vous voulez.')).toBeVisible();
   fireEvent.click(screen.getByRole('button', { name: 'Reprendre' }));
   expect(screen.getByRole('heading', { name: 'Motion Array' })).toHaveFocus();
-  fireEvent.click(screen.getByRole('radio', { name: 'Faible — Usage faible' }));
+  fireEvent.click(screen.getByRole('radio', { name: 'Peu — Usage faible' }));
   fireEvent.click(screen.getByRole('button', { name: 'Suivant' }));
   fireEvent.click(screen.getByRole('button', { name: 'Outil précédent' }));
   expect(screen.getByRole('radio', { name: 'Régulier — Usage régulier' })).toHaveAttribute('aria-checked', 'true');
@@ -159,7 +159,7 @@ it.each([
 it('finishes a sequence honestly when an earlier tool was skipped', () => {
   render(<Harness />);
   fireEvent.click(screen.getByRole('button', { name: 'Passer cet outil' }));
-  fireEvent.click(screen.getByRole('radio', { name: 'Intensif — Usage intensif' }));
+  fireEvent.click(screen.getByRole('radio', { name: 'À fond — Usage intensif' }));
   fireEvent.click(screen.getByRole('button', { name: 'Terminer' }));
   expect(screen.getByRole('heading', { name: 'On garde votre place.' })).toHaveFocus();
   expect(screen.getByLabelText('Recorded values')).toHaveTextContent('[null,5]');
@@ -192,4 +192,45 @@ it.each([1,2,3,4,5])('records level %i without advancing or overwriting another 
   fireEvent.click(screen.getAllByRole('radio')[value-1]);
   expect(screen.getByLabelText('Recorded values')).toHaveTextContent(`[${value},4]`);
   expect(screen.getByRole('heading',{name:'Motion Array'})).toBeVisible();
+});
+
+it('labels the current tool position independently of recorded answers while reviewing', () => {
+  render(<Harness initial={[1,5]} />);
+  fireEvent.click(screen.getByRole('button',{name:'Revoir mes usages'}));
+  expect(screen.getByLabelText('Outil 1 sur 2')).toHaveTextContent('1 / 2');
+  expect(screen.getByRole('button',{name:'Outil précédent'})).toBeDisabled();
+  fireEvent.click(screen.getByRole('button',{name:'Suivant'}));
+  expect(screen.getByLabelText('Outil 2 sur 2')).toHaveTextContent('2 / 2');
+  expect(screen.getByRole('button',{name:'Terminer'})).toBeEnabled();
+});
+
+it('allows pausing before an answer and retains a stable previous navigation slot', () => {
+  render(<Harness />);
+  expect(screen.getByRole('button',{name:'Outil précédent'})).toBeDisabled();
+  fireEvent.click(screen.getByRole('button',{name:'Faire une pause'}));
+  expect(screen.getByText('0 sur 2 usages renseignés. La suite quand vous voulez.')).toBeVisible();
+  expect(screen.getByLabelText('Recorded values')).toHaveTextContent('[null,null]');
+  fireEvent.click(screen.getByRole('button',{name:'Reprendre'}));
+  expect(screen.getByRole('heading',{name:'Motion Array'})).toBeVisible();
+});
+
+it('does not label a replacement tool saved answer as a preview from the removed tool', () => {
+  const a=row('Tool A'), b=row('Tool B',1);
+  const view=render(<StackUsageReview {...reviewProps} rows={[a,b]} />);
+  fireEvent.pointerEnter(screen.getByRole('radio',{name:'À fond — Usage intensif'}));
+  view.rerender(<StackUsageReview {...reviewProps} rows={[b]} />);
+  expect(screen.getByText(/Il fait surtout de la figuration/)).toBeVisible();
+  expect(screen.queryByText(/Et là/)).not.toBeInTheDocument();
+});
+
+it('offers a real per-tool summary with direct correction and missing answers', () => {
+  render(<Harness initial={[1,undefined]} />);
+  fireEvent.click(screen.getByRole('button',{name:'Faire une pause'}));
+  expect(screen.getByRole('button',{name:'Modifier l’usage de Motion Array : Peu'})).toBeVisible();
+  fireEvent.click(screen.getByRole('button',{name:'Renseigner l’usage de Grammarly'}));
+  expect(screen.getByRole('heading',{name:'Grammarly'})).toHaveFocus();
+  fireEvent.click(screen.getByRole('radio',{name:'Souvent — Usage soutenu'}));
+  fireEvent.click(screen.getByRole('button',{name:'Résumé'}));
+  expect(screen.getByRole('button',{name:'Modifier l’usage de Grammarly : Souvent'})).toBeVisible();
+  expect(screen.getByLabelText('Recorded values')).toHaveTextContent('[1,4]');
 });

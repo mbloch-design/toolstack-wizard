@@ -23,7 +23,7 @@ it('ends with a truthful summary and allows reviewing every answer without clear
  const row=screen.getByRole('group',{name:'Usage de Adobe Illustrator'});
  expect(change).not.toHaveBeenCalled();
  expect(within(row).getByRole('radio',{name:'Régulier — Usage régulier'})).toHaveAttribute('aria-checked','true');
- fireEvent.click(within(row).getByRole('radio',{name:'Faible — Usage faible'}));
+ fireEvent.click(within(row).getByRole('radio',{name:'Peu — Usage faible'}));
  expect(change).toHaveBeenCalledWith(1);
 });
 it('never declares completion while another question remains',()=>{
@@ -33,7 +33,7 @@ it('never declares completion while another question remains',()=>{
 });
 it('asks with explicit named choices and no catalogue power comparison',()=>{
  view({pending:true});
- expect(screen.getByRole('radio',{name:'Intensif — Usage intensif'})).toBeVisible();
+ expect(screen.getByRole('radio',{name:'À fond — Usage intensif'})).toBeVisible();
  expect(screen.queryByText(/Puissance|marathonien|bonne taille/)).not.toBeInTheDocument();
 });
 
