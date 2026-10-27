@@ -1,12 +1,12 @@
 # Remise à plat structurelle du design system ToolTrim
 
-Statut : proposition à valider, 27 octobre 2026. Diagnostic : `docs/DESIGN_SYSTEM_AUDIT.md`. Base inspectée : `ea96a20318`.
+Statut : validé par le propriétaire le 27 octobre 2026 ; exécution autorisée. Diagnostic : `docs/DESIGN_SYSTEM_AUDIT.md`. Base inspectée : `ea96a20318`.
 
 ## Intention
 
 Un nouveau chantier doit hériter automatiquement du système actif. Il ne doit plus demander au propriétaire de repréciser les boutons, les champs ou les surfaces, ni choisir arbitrairement une ancienne famille de styles encore présente. Le back-office est le premier parcours de migration, pas la frontière du problème.
 
-Le demandeur délègue l'apparence de l'outil interne. Les choix techniques ci-dessous sont proposés par Codex ; ils ne sont pas présentés comme déjà approuvés. Les parcours publics conservent leur intention visuelle et leur comportement ; cette remise à plat n'est pas une nouvelle direction artistique du site.
+Le demandeur délègue l'apparence de l'outil interne. Les choix techniques ci-dessous sont pris en charge par Codex dans le périmètre validé. Les parcours publics conservent leur intention visuelle et leur comportement ; cette remise à plat n'est pas une nouvelle direction artistique du site.
 
 ## Approches considérées
 
