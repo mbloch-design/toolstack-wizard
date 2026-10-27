@@ -1,15 +1,15 @@
 import { beforeEach, it, expect, vi } from "vitest";
-import {
-  readCatalog,
-  publishCatalog,
-} from "../../api/_backoffice-catalog-github";
+let readCatalog: typeof import("../../api/_backoffice-catalog-github").readCatalog;
+let publishCatalog: typeof import("../../api/_backoffice-catalog-github").publishCatalog;
 const head = "a".repeat(40),
   tree = "b".repeat(40),
   blob = "c".repeat(40),
   commit = "d".repeat(40);
 const tools = [{ id: "one", slug: "one", name: "One" }];
 const fetcher = vi.fn();
-beforeEach(() => {
+beforeEach(async () => {
+  vi.resetModules();
+  ({ readCatalog, publishCatalog } = await import("../../api/_backoffice-catalog-github"));
   vi.stubGlobal("fetch", fetcher);
   vi.stubEnv("BACKOFFICE_GITHUB_TOKEN", "server-only");
   fetcher.mockReset();
@@ -66,4 +66,54 @@ it("fails closed on a competing ref and never retries with force", async () => {
   await expect(
     publishCatalog({ headSha: head, treeSha: tree, tools, text: "[]" }, tools),
   ).rejects.toMatchObject({ status: 409 });
+});
+
+it("reuses an immutable catalogue while still checking main on every read", async () => {
+  fetcher.mockResolvedValueOnce(json({ object: { sha: head } }))
+    .mockResolvedValueOnce(json({ tree: { sha: tree } }))
+    .mockResolvedValueOnce(new Response(JSON.stringify(tools)))
+    .mockResolvedValueOnce(json({ object: { sha: head } }));
+  await readCatalog();
+  expect((await readCatalog()).tools).toEqual(tools);
+  expect(fetcher).toHaveBeenCalledTimes(4);
+});
+it("loads the new catalogue immediately when main changes", async () => {
+  const changed = [{ id: "one", slug: "one", name: "Updated" }];
+  fetcher.mockResolvedValueOnce(json({ object: { sha: head } }))
+    .mockResolvedValueOnce(json({ tree: { sha: tree } }))
+    .mockResolvedValueOnce(new Response(JSON.stringify(tools)))
+    .mockResolvedValueOnce(json({ object: { sha: commit } }))
+    .mockResolvedValueOnce(json({ tree: { sha: blob } }))
+    .mockResolvedValueOnce(new Response(JSON.stringify(changed)));
+  await readCatalog();
+  expect(await readCatalog()).toMatchObject({ headSha: commit, tools: changed });
+});
+it("does not hide a failed head check behind a cached catalogue", async () => {
+  fetcher.mockResolvedValueOnce(json({ object: { sha: head } }))
+    .mockResolvedValueOnce(json({ tree: { sha: tree } }))
+    .mockResolvedValueOnce(new Response(JSON.stringify(tools)))
+    .mockResolvedValueOnce(json({}, 401));
+  await readCatalog();
+  await expect(readCatalog()).rejects.toMatchObject({ status: 503 });
+});
+it("retries a failed download instead of caching its rejection", async () => {
+  fetcher.mockResolvedValueOnce(json({ object: { sha: head } }))
+    .mockResolvedValueOnce(json({ tree: { sha: tree } }))
+    .mockResolvedValueOnce(new Response("invalid json"))
+    .mockResolvedValueOnce(json({ object: { sha: head } }))
+    .mockResolvedValueOnce(json({ tree: { sha: tree } }))
+    .mockResolvedValueOnce(new Response(JSON.stringify(tools)));
+  await expect(readCatalog()).rejects.toMatchObject({ status: 503 });
+  expect((await readCatalog()).tools).toEqual(tools);
+});
+
+it("shares a pending download for concurrent readers of the same commit", async () => {
+  fetcher.mockImplementation(async (url: string) => {
+    if (url.includes("git/ref/heads/")) return json({ object: { sha: head } });
+    if (url.includes("git/commits/")) return json({ tree: { sha: tree } });
+    return new Response(JSON.stringify(tools));
+  });
+  const sources = await Promise.all([readCatalog(), readCatalog(), readCatalog()]);
+  expect(sources.map((s) => s.tools[0].name)).toEqual(["One", "One", "One"]);
+  expect(fetcher.mock.calls.filter(([url]) => url.includes("contents/"))).toHaveLength(1);
 });

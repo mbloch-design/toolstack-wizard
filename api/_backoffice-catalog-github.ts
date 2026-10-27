@@ -70,21 +70,30 @@ async function head(): Promise<string> {
   };
   return sha(r?.object?.sha);
 }
+// One immutable source per warm function instance. Main is still checked on
+// every request, including mutations: no TTL can conceal a competing commit.
+let cachedSource: { headSha: string; value: Promise<CatalogSource> } | undefined;
 export async function readCatalog(): Promise<CatalogSource> {
   const headSha = await head();
-  const commit = (await github(`git/commits/${headSha}`)) as {
-    tree?: {
-      sha?: unknown;
-    };
-  };
+  if (cachedSource?.headSha === headSha) return cachedSource.value;
+  const entry = { headSha, value: downloadCatalog(headSha) };
+  cachedSource = entry;
+  try {
+    return await entry.value;
+  } catch (error) {
+    if (cachedSource === entry) cachedSource = undefined;
+    throw error;
+  }
+}
+async function downloadCatalog(headSha: string): Promise<CatalogSource> {
+  // Commit metadata and raw content are independent once pinned to the SHA.
+  const [commit, text] = await Promise.all([
+    github(`git/commits/${headSha}`),
+    github(`contents/${CATALOG_PATH}?ref=${headSha}`, "GET", undefined, true),
+  ]) as [{
+    tree?: { sha?: unknown };
+  }, string];
   const treeSha = sha(commit?.tree?.sha);
-  // Contents JSON/base64 responses do not support this 16 MB file. Raw mode does.
-  const text = (await github(
-    `contents/${CATALOG_PATH}?ref=${headSha}`,
-    "GET",
-    undefined,
-    true,
-  )) as string;
   let tools: CatalogTool[];
   try {
     const value: unknown = JSON.parse(text);

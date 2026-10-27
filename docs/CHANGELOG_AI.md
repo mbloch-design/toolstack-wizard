@@ -5,6 +5,20 @@
 - Corrections connexes couvertes par régressions : marge d’illustration obsolète qui écrasait le titre mobile, zéro empêchant de réactiver le payant, focus après annulation/enregistrement et brouillon conservé à la frontière de scope. CTA tactiles et bleu Ma Stack ; aucun changement de schéma, de prix catalogue ou de taux.
 - Recette bornée dans `MA_STACK_INVOICE_ACCEPTANCE.md` : comptes et serveur synthétiques, 4 parcours facture FR/EN à 320/1440 px, zéro, scope et centimes ; régressions usages/décisions conservées. Revue indépendante du calcul, de la persistance et de l’ergonomie ; captures réelles contrôlées. 1 025 tests applicatifs, types app et design tokens passent ; 34 parcours Chromium passent (7 factures + 27 régressions usages/décisions). Le parcours existant inscription/confirmation/sauvegarde/rechargement passe aussi. Build production complet, routes, SEO et budgets : PASS. État du push et du déploiement contrôlé séparément.
 
+## 2026-10-26 — Fluidité des décisions Ma Stack
+
+Le choix d’un outil attendait 720 ms avant toute décision, puis relançait une entrée de 480 ms retardée de 120–190 ms ; « Garder les deux » partait immédiatement et pouvait être déclenché pendant l’attente d’un autre choix. Les trois réponses utilisent désormais le même acquittement de 180 ms, protégé contre un second clic. L’entrée des trois boutons est simultanée en 160 ms, sans mouvement de sortie de l’autre outil. La disposition et les couleurs restent identiques. Le mode mouvement réduit garde une décision immédiate.
+
+Régressions reproduites puis corrigées : délai maximal et double réponse concurrente. Recette Chromium : douze parcours couvrent les trois réponses à 390 et 1440 px, en mouvement normal et réduit, avec enregistrement d’une unique décision et passage à la paire suivante en 200 ms de temps contrôlé. Ce temps de test ne mesure ni le réseau ni la vitesse de rendu de tous les appareils. Captures synthétiques sous `/tmp/tooltrim-pair-fluidity-{390,1440}.png`.
+
+Validation finale après intégration de `main` 9b487fc : 1 027 tests applicatifs, 371 tests API (24 tests Redis ignorés sans serveur dédié), 12 parcours Chromium, types app/node/API, design tokens et build production complet passent. Relecture indépendante sans défaut bloquant.
+
+## 2026-10-26 — Diagnostic et correction des relectures du catalogue back-office
+
+Chaque recherche, page et ouverture de fiche relisait le JSON complet (16 631 802 octets) depuis GitHub après des appels réseau séquentiels. Mesure ponctuelle depuis le poste : réponse HTML 0,14 s ; téléchargement raw public 4,29 s (mesures distinctes, pas un profilage de la session privée de production).
+
+Le serveur conserve désormais une seule source immuable par SHA dans chaque instance chaude et mutualise les téléchargements simultanés. Le HEAD de main et les droits administrateur restent vérifiés à chaque requête ; changement de commit ou échec GitHub jamais masqué par un TTL. Métadonnées du commit et contenu sont téléchargés en parallèle. Aucun cache public des comptes ou brouillons. Un démarrage à froid conserve le coût de la première lecture ; cette correction ne mesure ni ne résout tous les délais Supabase. Tests : réutilisation, concurrence, changement de HEAD, refus distant et nouvelle tentative après erreur.
+
 ## 2026-10-26 — Édition des fiches JSON et publication groupée
 
 Nouvel onglet Fiches dans le back-office actif : recherche et filtre des brouillons, formulaires FR/EN pour contenu, verdict, tarifs sourcés, liens/médias et SEO, aperçu de contenu et sauvegarde privée. Le bouton principal « Publier toutes les modifications » ouvre le lot global à relire puis envoie les fiches sauvegardées ensemble dans un seul commit sur main. Les champs techniques et les propriétés historiques non prises en charge sont conservés et affichés en lecture seule.

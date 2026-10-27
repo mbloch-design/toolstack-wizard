@@ -250,10 +250,10 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
     scheduleAnswer(run, 620);
   };
   const pick = (index: number, run?: () => void) => {
-    if (picked !== null || !run) return;
+    if (picked !== null || answerTimer.current !== null || !run) return;
     if (typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches) { run(); return; }
     setPicked(index);
-    scheduleAnswer(run, 720);
+    scheduleAnswer(run, 180);
   };
   // Progress across the session: the most findings seen at once is the whole run.
   const [peak, setPeak] = useState(items.length);
@@ -375,14 +375,15 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           const own = top.costs?.[index] ?? 0, other = top.costs?.[1 - index] ?? 0; // the cheaper face gets the tag
           return <Fragment key={tool.id}>
             {index === 1 && top.actions.filter((action) => !top.tools.some((candidate) => action.label.endsWith(candidate.name))).map((action) =>
-                <button key={action.label} type="button" className="mf-duel-both" onClick={action.onClick}
+                <button key={action.label} type="button" className="mf-duel-both" onClick={() => pick(2, action.onClick)} disabled={picked !== null}
+                  data-state={picked === null ? undefined : picked === 2 ? "kept" : "gone"}
                   aria-label={action.label}
                   onPointerEnter={() => setPreview(total)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total)} onBlur={() => setPreview(null)}>
                   <span className="mf-choice-logos" aria-hidden="true">{top.tools.slice(0, 2).map((item) => <ToolLogo key={item.id} tool={item} size={28} />)}<Sparkles size={14} /></span>
                   <span className="mf-choice-both-label">{action.label}</span>
                   <span className="mf-choice-sum">{format((top.costs?.[0] ?? 0) + (top.costs?.[1] ?? 0))}{t("/mois", "/mo")}</span>
                 </button>)}
-            <button type="button" className="mf-face" onClick={() => pick(index, keep?.onClick)} aria-label={keep?.ariaLabel || keep?.label}
+            <button type="button" className="mf-face" disabled={picked !== null} onClick={() => pick(index, keep?.onClick)} aria-label={keep?.ariaLabel || keep?.label}
               onPointerEnter={() => setPreview(total - other)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total - other)} onBlur={() => setPreview(null)}
               data-state={picked === null ? undefined : picked === index ? "kept" : "gone"}>
               {own < other && <span className="mf-face-tag">{t("Le moins cher", "Cheaper")}</span>}
