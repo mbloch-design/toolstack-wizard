@@ -1,3 +1,7 @@
+## 2026-10-27 — Localisation des API du back-office
+
+Inspection des fournisseurs : fonctions du déploiement précédent dans `iad1` (Washington), base ToolTrim `rtfyfuwfdpnsogovkwai` dans `eu-central-1` (Francfort). Les endpoints comptes et catalogue effectuent plusieurs appels séquentiels à Auth/Postgres. Configuration ciblée des deux seules API du back-office dans `fra1`, conformément à la configuration par fonction Vercel ; les autres endpoints conservent leur région. Aucune migration, aucun changement d’authentification ou des données. Le gain de latence réseau attendu n’est pas présenté comme une mesure après publication.
+
 ## 2026-10-26 — Factures Ma Stack : devise native et budget cohérents
 
 - Retour testeur Cursor/GitHub/Vercel : suppression de l’euro codé en dur. Saisie rapide avec devise de facture visible et indépendante de la devise d’affichage ; montant natif conservé, équivalent mensuel converti et taux de référence daté expliqués. Les centimes déclarés restent visibles dans le budget et ses montants associés.

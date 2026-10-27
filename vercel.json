@@ -1,7 +1,8 @@
 {
   "ignoreCommand": "bash scripts/vercel-ignore-build.sh",
   "functions": {
-    "api/backoffice-catalog.ts": { "maxDuration": 60 }
+    "api/backoffice-catalog.ts": { "maxDuration": 60, "regions": ["fra1"] },
+    "api/backoffice-accounts.ts": { "regions": ["fra1"] }
   },
   "headers": [
     {
