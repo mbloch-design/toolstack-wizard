@@ -1,3 +1,9 @@
+## 2026-10-27 — Audit de la structure du design system
+
+Retour utilisateur : le back-office réemploie des règles historiques alors que les exigences visuelles n'ont pas été reprécisées. Audit croisé de la cascade, des composants et des autorités documentaires : la compilation restaure la priorité du CSS historique, les contrôles de back-office dépendent du kit métier Ma Stack et d'autres familles compte/diagnostic, les références actives se contredisent et le contrôle de tokens ne vérifie pas les contrats de composants. Reproduction PostCSS exécutée du changement de priorité ; double définition de `--radius-2xl` et 16 blocs `.mf-grid` relevés. Le lecteur du CSS critique doit aussi migrer avant toute bascule native des couches.
+
+Diagnostic actif : `DESIGN_SYSTEM_AUDIT.md`, issu de trois audits croisés. Proposition structurelle : `superpowers/specs/2026-10-27-design-system-reset-design.md`, vérifiée par un contrôle de constructibilité indépendant. La migration supprime les anciennes implémentations par lot, avec retrait du plugin avant clôture ; le back-office est le premier parcours, sans supprimer ses fonctions. **Audit et proposition seulement : aucune modification de code produit, aucun ancien style déclaré supprimé, proposition en attente de validation.**
+
 ## 2026-10-27 — Localisation des API du back-office
 
 Inspection des fournisseurs : fonctions du déploiement précédent dans `iad1` (Washington), base ToolTrim `rtfyfuwfdpnsogovkwai` dans `eu-central-1` (Francfort). Les endpoints comptes et catalogue effectuent plusieurs appels séquentiels à Auth/Postgres. Configuration ciblée des deux seules API du back-office dans `fra1`, conformément à la configuration par fonction Vercel ; les autres endpoints conservent leur région. Aucune migration, aucun changement d’authentification ou des données. Le gain de latence réseau attendu n’est pas présenté comme une mesure après publication.
