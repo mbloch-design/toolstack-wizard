@@ -12,6 +12,25 @@ const LEVELS = [
 ] as const;
 
 type View = "question" | "summary" | "history";
+/** At most this many tiles in the summary line-up; the rest open from a "+N" tile. */
+const LINEUP = 7;
+
+/** A five-step meter, the same shape as the question's, for one answer. */
+function Mini({ value }: { value: number }) {
+  return <span className="mu-mini" aria-hidden>{LEVELS.map((_, i) => <i key={i} data-on={i < value || undefined} />)}</span>;
+}
+
+/** One line read from the answers: who has the lead role, who is an extra. */
+function castingLine(rows: FitRow[], t: (fr: string, en: string) => string) {
+  const answered = rows.filter(row => !!row.usage);
+  if (answered.length < 2) return null;
+  const sorted = [...answered].sort((a, b) => (b.usage ?? 0) - (a.usage ?? 0));
+  const lead = sorted[0], last = sorted[sorted.length - 1];
+  if (lead.usage === last.usage) return t("Tout le monde bosse autant. Belle équipe.", "Everyone pulls the same weight. Nice crew.");
+  return (last.usage ?? 0) <= 2
+    ? t(`${lead.tool.name} tient le premier rôle, ${last.tool.name} fait de la figuration.`, `${lead.tool.name} has the lead, ${last.tool.name} is an extra.`)
+    : t(`${lead.tool.name} tient le premier rôle, ${last.tool.name} le plus petit.`, `${lead.tool.name} has the lead, ${last.tool.name} the smallest part.`);
+}
 /** A single tool occupies the original fixed-size scene; answers remain editable. */
 export default function StackUsageReview({ rows, lang, format, complete, freeOnly = false, history, onReviewTools }: {
   rows: FitRow[]; lang: "fr" | "en"; format: (n: number) => string; complete: boolean; freeOnly?: boolean;
@@ -80,30 +99,32 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
     </header>
 
     {question ? <div key={current.tool.id} className="mu-scene mu-question" onFocusCapture={() => { questionHadFocus.current = true; }} onBlurCapture={event => { if (event.target.isConnected && !event.currentTarget.contains(event.relatedTarget as Node)) questionHadFocus.current = false; }} role="group" aria-label={t(`Usage de ${current.tool.name}`, `Use of ${current.tool.name}`)}>
-      <div className="mu-tool"><ToolLogo tool={current.tool} size={32} /><div className="mu-tool-label"><h3 ref={toolHeading} tabIndex={-1} title={current.tool.name}>{current.tool.name}</h3><p>{format(current.cost)}{t("/mois", "/mo")}</p></div></div>
-      <div className="mu-gauge" role="radiogroup" aria-label={t("Choisir un usage", "Choose use")} aria-describedby={captionId} onPointerLeave={() => setHover(null)}>
-        {LEVELS.map((item, i) => <button key={i} ref={node => { radios.current[i] = node; }} type="button" role="radio" data-filled={i < selected || undefined} aria-label={`${t(item.short[0], item.short[1])} — ${t(item.label[0], item.label[1])}`} aria-checked={selected === i + 1}
+      <div className="mu-tool"><ToolLogo tool={current.tool} size={40} /><div className="mu-tool-label"><h3 ref={toolHeading} tabIndex={-1} title={current.tool.name}>{current.tool.name}</h3><p>{format(current.cost)}{t("/mois", "/mo")} · {t("vous l’utilisez…", "you use it…")}</p></div></div>
+      <div className="mu-gauge" role="radiogroup" aria-label={t("Choisir un usage", "Choose use")} aria-describedby={captionId} data-preview={hover && hover.id === current.tool.id ? hover.level + 1 : undefined} onPointerLeave={() => setHover(null)}>
+        {LEVELS.map((item, i) => <button key={i} ref={node => { radios.current[i] = node; }} type="button" role="radio" data-filled={i < selected || undefined} data-lit={(shown !== null && i <= shown) || undefined} aria-label={`${t(item.short[0], item.short[1])} — ${t(item.label[0], item.label[1])}`} aria-checked={selected === i + 1}
           tabIndex={i === (selected > 0 ? selected - 1 : 0) ? 0 : -1}
           onPointerEnter={() => preview(i)} onFocus={() => preview(i)} onBlur={() => setHover(null)} onKeyDown={event => arrow(event, i)} onClick={() => choose(i)}>
-          <span className="mu-meter-track" aria-hidden><span className="mu-meter-bar">{selected === i + 1 && <CheckCircle2 size={12} />}</span></span><small aria-hidden>{t(item.short[0], item.short[1])}</small>
+          <span className="mu-meter-track" aria-hidden><span className="mu-meter-bar" /></span><small aria-hidden>{t(item.short[0], item.short[1])}</small>
         </button>)}
       </div>
-      <div className="mu-feedback"><span className="mu-reaction" aria-hidden key={`${current.tool.id}:${shown}`}>{level ? <level.icon size={24} /> : <Activity size={24} />}</span><p className="mu-caption" id={captionId}>{level ? <>{hover && hover.id === current.tool.id && hover.level !== selected - 1 && <span className="mu-preview">{t("Et là… ", "Preview: ")}</span>}<span>{t(level.joke[0], level.joke[1])}</span></> : <span>{t("Du figurant au copilote : à vous de caster.", "From cameo to co-pilot. You’re casting.")}</span>}</p></div>
+      <div className="mu-feedback"><span className="mu-reaction" aria-hidden key={`${current.tool.id}:${shown}`}>{level ? <level.icon size={18} /> : <Activity size={18} />}</span><p className="mu-caption" id={captionId}>{level ? <>{hover && hover.id === current.tool.id && hover.level !== selected - 1 && <span className="mu-preview">{t("Et là… ", "Preview: ")}</span>}<span>{t(level.joke[0], level.joke[1])}</span></> : <span>{t("Du figurant au copilote : à vous de caster.", "From cameo to co-pilot. You’re casting.")}</span>}</p></div>
     </div> : view === "history" ? <div className="mu-scene mu-history" role="region" aria-label={t("Historique des choix", "Choice history")} tabIndex={0}>
       {history || <p className="mu-copy">{t("Le carnet de choix attend sa première ligne.", "Your choice notebook is waiting for its first entry.")}</p>}
     </div> : <div className="mu-scene mu-summary">
       <div className="mu-summary-heading">{pending ? <Clock size={22} aria-hidden /> : <CheckCircle2 size={22} aria-hidden />}<h3 ref={summaryHeading} tabIndex={-1}>{rows.length === 0 ? freeOnly ? t("Votre stack, sans abonnement payant.", "Your stack has no paid plans.") : t("Personne à faire auditionner.", "No auditions today.") : pending ? t("On garde votre place.", "Your spot is saved.") : complete ? t("Casting au complet.", "That's the whole cast.") : t("Vos usages sont dans la boîte.", "Usage: that's a wrap.")}</h3></div>
-      <p className="mu-copy">{rows.length === 0 ? t("Pas d’outil payant à évaluer. Vos choix restent accessibles.", "No paid tools to review. Your choices are still here.") : pending ? t(`${answered} sur ${rows.length} usages renseignés. La suite quand vous voulez.`, `Use recorded for ${answered} of ${rows.length}. Pick it up whenever you like.`) : complete ? t("Budget, doublons, usages : tout est renseigné et reste modifiable.", "Budget, overlaps, use: all filled in and still editable.") : t("Les autres questions vous attendent à côté. Vos réponses restent modifiables.", "The other questions are alongside. Your answers stay editable.")}</p>
+      <p className="mu-copy">{rows.length === 0 ? t("Pas d’outil payant à évaluer. Vos choix restent accessibles.", "No paid tools to review. Your choices are still here.") : pending ? t(`${answered} sur ${rows.length} usages renseignés. La suite quand vous voulez.`, `Use recorded for ${answered} of ${rows.length}. Pick it up whenever you like.`) : castingLine(rows, t) ?? t("Tout est renseigné et reste modifiable.", "All filled in and still editable.")}</p>
       {rows.length > 0 && <ul className="mu-answer-list" aria-label={t("Résumé des usages", "Usage summary")}>
-        {rows.map((row, target) => <li key={row.tool.id}><button type="button" onClick={() => openTool(target, true)} aria-label={row.usage ? t(`Modifier l’usage de ${row.tool.name} : ${LEVELS[row.usage - 1].short[0]}`, `Edit use of ${row.tool.name}: ${LEVELS[row.usage - 1].short[1]}`) : t(`Renseigner l’usage de ${row.tool.name}`, `Record use of ${row.tool.name}`)}>
-          <ToolLogo tool={row.tool} size={24} /><span className="mu-answer-name">{row.tool.name}</span><span className="mu-answer-value" data-pending={!row.usage || undefined}>{row.usage ? t(LEVELS[row.usage - 1].short[0], LEVELS[row.usage - 1].short[1]) : t("À renseigner", "Not set")}</span><ChevronRight size={14} aria-hidden />
+        {rows.slice(0, rows.length > LINEUP + 1 ? LINEUP : LINEUP + 1).map((row, target) => <li key={row.tool.id} style={{ ["--i" as string]: target }}><button type="button" onClick={() => openTool(target, true)} data-pending={!row.usage || undefined} aria-label={row.usage ? t(`Modifier l’usage de ${row.tool.name} : ${LEVELS[row.usage - 1].short[0]}`, `Edit use of ${row.tool.name}: ${LEVELS[row.usage - 1].short[1]}`) : t(`Renseigner l’usage de ${row.tool.name}`, `Record use of ${row.tool.name}`)}>
+          <ToolLogo tool={row.tool} size={28} /><span className="mu-answer-text"><span className="mu-answer-name">{row.tool.name}</span><span className="mu-answer-value">{row.usage ? <><Mini value={row.usage} />{t(LEVELS[row.usage - 1].short[0], LEVELS[row.usage - 1].short[1])}</> : t("À renseigner", "Not set")}</span></span>
         </button></li>)}
+        {rows.length > LINEUP + 1 && <li style={{ ["--i" as string]: LINEUP }}><button type="button" className="mu-answer-more" onClick={() => openTool(LINEUP, true)} aria-label={t(`Voir les ${rows.length - LINEUP} autres outils`, `See the other ${rows.length - LINEUP} tools`)}>+{rows.length - LINEUP}</button></li>}
       </ul>}
     </div>}
 
     <footer className="mu-footer">
       {question ? <>
         <button type="button" className="mu-quiet" onClick={() => scene("summary")}>{review ? t("Résumé", "Summary") : t("Faire une pause", "Take a break")}</button>
+        {rows.length > 1 && rows.length <= 12 && <span className="mu-dots" aria-hidden>{rows.map((row, i) => <i key={row.tool.id} data-done={!!row.usage || undefined} data-current={i === index || undefined} />)}</span>}
         <div className="mu-navigation">
           <button type="button" className="mu-nav" disabled={index <= 0} aria-label={t("Outil précédent", "Previous tool")} onClick={() => openTool(index - 1, review)}><ChevronLeft size={18} aria-hidden /></button>
           <button type="button" className={selected ? "mu-next" : "mu-next mu-skip"} aria-label={!selected ? t("Passer cet outil", "Skip this tool") : undefined} onClick={advance}>{!selected ? t("Passer", "Skip") : hasNext ? t("Suivant", "Next") : t("Terminer", "Finish")}<ChevronRight size={16} aria-hidden /></button>
@@ -116,7 +137,7 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
           {rows.length > 0 && <button type="button" className="mu-quiet" onClick={onReviewTools}>{t("Voir mes outils", "View my tools")}</button>}
           {history && <button type="button" className="mu-quiet" onClick={() => scene("history")}>{rows.length ? t("Historique", "History") : t("Revoir mes choix", "Review my choices")}</button>}
         </div>
-        {rows.length > 0 ? <button type="button" className="mu-next" onClick={() => openTool(pending ? rows.indexOf(pending) : 0, !pending)}>{pending ? t("Reprendre", "Resume") : t("Revoir mes usages", "Review my use")}<ChevronRight size={16} aria-hidden /></button>
+        {rows.length > 0 ? <button type="button" className={pending ? "mu-next" : "mu-next mu-skip"} onClick={() => openTool(pending ? rows.indexOf(pending) : 0, !pending)}>{pending ? t("Reprendre", "Resume") : t("Revoir mes usages", "Review my use")}<ChevronRight size={16} aria-hidden /></button>
           : <button type="button" className="mu-next" onClick={onReviewTools}>{t("Voir mes outils", "View my tools")}<ChevronRight size={16} aria-hidden /></button>}
       </>}
     </footer>

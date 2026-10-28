@@ -40795,75 +40795,169 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
 
 @layer components {
-  .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: 285px; box-sizing: border-box; display: grid; grid-template-rows: minmax(26px, max-content) minmax(0, 1fr) minmax(44px, max-content); gap: var(--space-xs); height: var(--mu-height) !important; min-height: var(--mu-height); max-height: var(--mu-height); padding: var(--space-sm); overflow: hidden; align-self: start; container-type: inline-size; background: var(--color-stack-tools-soft); }
-  .ms-page .mf .mu-card > * { width: 100%; max-width: 640px; min-width: 0; justify-self: center; }
-  .ms-page .mf .mu-card .mu-header { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs); }
-  .ms-page .mf .mu-card .mu-header h2 { display: inline-flex; align-items: center; gap: var(--space-xs); margin: 0; min-width: 0; color: var(--color-text-strong); font: 600 17px/1.2 var(--font-ui); }
-  .ms-page .mf .mu-card .mu-header h2 svg { flex: none; }
-  .ms-page .mf .mu-card .mu-count { flex: none; color: var(--color-muted); font: 500 12px/1.2 var(--font-ui); font-variant-numeric: tabular-nums; }
-  .ms-page .mf .mu-card .mu-scene { min-height: 0; min-width: 0; animation: mu-scene-in 180ms ease both; }
-  .ms-page .mf .mu-card .mu-question { display: flex; flex-direction: column; justify-content: safe center; gap: var(--space-2xs); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding: 2px; }
-  .ms-page .mf .mu-card .mu-question > * { flex-shrink: 0; }
-  .ms-page .mf .mu-card .mu-tool { min-height: 34px; display: flex; align-items: center; gap: var(--space-xs); min-width: 0; }
+  /* Usage card, redesign of 28 Oct 2026. One fixed scene height, content on
+     the card's full width (no narrow column floating in the middle), a meter
+     in the card's own ink, a line-up of answers instead of a clipped list,
+     and a line of casting humour read from the answers. */
+  .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: 285px; --mu-ink: var(--color-stack-tools-ink); --mu-track: color-mix(in srgb, var(--mu-ink) 12%, var(--color-surface)); --mu-hint: color-mix(in srgb, var(--mu-ink) 38%, var(--color-surface));
+    box-sizing: border-box; display: grid; grid-template-rows: max-content minmax(0, 1fr) max-content; gap: 12px; height: var(--mu-height) !important; min-height: var(--mu-height); max-height: var(--mu-height); padding: 20px 22px 14px; overflow: hidden; align-self: start; container-type: inline-size; background: var(--color-stack-tools-soft); }
+  .ms-page .mf .mu-card > * { min-width: 0; }
+  .ms-page .mf .mu-card .mu-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .ms-page .mf .mu-card .mu-header h2 { display: inline-flex; align-items: center; gap: 8px; margin: 0; min-width: 0; color: var(--color-text-strong); font: 600 17px/1.2 var(--font-ui); letter-spacing: -.015em; }
+  .ms-page .mf .mu-card .mu-header h2 svg { flex: none; color: var(--mu-ink); }
+  .ms-page .mf .mu-card .mu-count { flex: none; padding: 4px 10px; border-radius: var(--radius-pill); background: var(--color-surface); color: var(--color-text-secondary); font: 600 12px/1.2 var(--font-ui); font-variant-numeric: tabular-nums; }
+  .ms-page .mf .mu-card .mu-scene { min-height: 0; min-width: 0; animation: mu-scene-in 220ms cubic-bezier(.2, .8, .2, 1) both; }
+
+  /* Question: the tool, the meter, the reaction. Side by side when wide. */
+  .ms-page .mf .mu-card .mu-question { display: grid; grid-template-columns: minmax(0, 1fr); grid-template-rows: repeat(3, max-content); grid-template-areas: "tool" "gauge" "feedback"; align-content: safe center; gap: 10px; padding: 2px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; }
+  .ms-page .mf .mu-card .mu-tool { grid-area: tool; display: flex; align-items: center; gap: 12px; min-width: 0; }
   .ms-page .mf .mu-card .mu-tool > :first-child { flex: none; }
   .ms-page .mf .mu-card .mu-tool-label { min-width: 0; display: grid; gap: 2px; }
-  .ms-page .mf .mu-card .mu-tool h3 { display: block; margin: 0; font: 600 14px/1.15 var(--font-ui); color: var(--color-text-strong); overflow-wrap: anywhere; }
-  .ms-page .mf .mu-card .mu-tool p { margin: 0; font: 400 12px/1.2 var(--font-ui); color: var(--color-muted); overflow-wrap: anywhere; }
-  .ms-page .mf .mu-card .mu-gauge { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2px; min-width: 0; padding: 4px; border-radius: 20px; background: var(--color-surface); }
-  .ms-page .mf .mu-card .mu-gauge button { position: relative; box-sizing: border-box; display: flex; flex-direction: column; gap: 4px; align-items: stretch; justify-content: flex-end; min-width: 0; min-height: 72px; padding: 2px 0; border: 1px solid transparent; border-radius: 16px; background: transparent; color: var(--color-text-strong); cursor: pointer; }
-  .ms-page .mf .mu-card .mu-meter-track { display: flex; align-items: flex-end; justify-content: center; height: 40px; flex: none; }
-  .ms-page .mf .mu-card .mu-meter-bar { display: flex; align-items: center; justify-content: center; width: min(72px, calc(100% - 12px)); height: 10px; border-radius: 9px 9px 4px 4px; background: #FFE1CC; color: var(--color-surface); transition: background-color 140ms ease; }
-  .ms-page .mf .mu-card .mu-gauge button:nth-child(2) .mu-meter-bar { height: 17.5px; }
-  .ms-page .mf .mu-card .mu-gauge button:nth-child(3) .mu-meter-bar { height: 25px; }
-  .ms-page .mf .mu-card .mu-gauge button:nth-child(4) .mu-meter-bar { height: 32.5px; }
-  .ms-page .mf .mu-card .mu-gauge button:nth-child(5) .mu-meter-bar { height: 40px; }
-  .ms-page .mf .mu-card .mu-gauge button small { display: block; padding: 3px 0; border-radius: var(--radius-pill); font: 600 12px/1.333333 var(--font-ui); max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
-  .ms-page .mf .mu-card .mu-gauge button[data-filled] .mu-meter-bar { background: #A8BCFF; }
-  .ms-page .mf .mu-card .mu-gauge button:hover { background: #FFF2E9; }
-  .ms-page .mf .mu-card .mu-gauge button[aria-checked="true"] .mu-meter-bar, .ms-page .mf .mu-card .mu-gauge button[aria-checked="true"] small { background: var(--color-stack-tools-ink); color: var(--color-surface); }
-  .ms-page .mf .mu-card .mu-feedback { display: flex; align-items: center; gap: 8px; min-height: 30px; }
-  .ms-page .mf .mu-card .mu-reaction { display: grid; place-items: center; flex: 0 0 28px; height: 28px; border-radius: var(--radius-circle); color: var(--color-stack-tools-ink); background: #FFE1CC; animation: mu-icon-nod 260ms ease; }
-  .ms-page .mf .mu-card .mu-caption { margin: 0; color: var(--color-muted); font: 400 12px/1.25 var(--font-ui); }
-  .ms-page .mf .mu-card .mu-preview { font-weight: 600; }
-  .ms-page .mf .mu-card .mu-summary { overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: var(--space-xs); padding: 2px; }
+  .ms-page .mf .mu-card .mu-tool h3 { margin: 0; font: 600 16px/1.2 var(--font-ui); letter-spacing: -.01em; color: var(--color-text-strong); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ms-page .mf .mu-card .mu-tool p { margin: 0; font: 400 13px/1.3 var(--font-ui); color: var(--color-text-secondary); }
+  .ms-page .mf .mu-card .mu-gauge { grid-area: gauge; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; min-width: 0; padding: 6px; border-radius: 18px; background: var(--color-surface); box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text-strong) 6%, transparent); }
+  .ms-page .mf .mu-card .mu-gauge button { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; min-width: 0; min-height: 76px; padding: 8px 4px 6px; border: 0; border-radius: 13px; background: transparent; color: var(--color-text-secondary); cursor: pointer; transition: background-color 160ms ease, color 160ms ease, transform 160ms cubic-bezier(.34, 1.4, .64, 1); }
+  .ms-page .mf .mu-card .mu-gauge button:hover { background: color-mix(in srgb, var(--mu-ink) 6%, var(--color-surface)); }
+  .ms-page .mf .mu-card .mu-gauge button:active { transform: scale(.96); }
+  .ms-page .mf .mu-card .mu-meter-track { display: flex; align-items: flex-end; justify-content: center; width: 100%; height: 40px; }
+  .ms-page .mf .mu-card .mu-meter-bar { display: block; width: min(56px, 70%); height: 100%; border-radius: 7px; background: var(--mu-track); transform-origin: bottom; transform: scaleY(var(--h)); transition: background-color 180ms ease, transform 260ms cubic-bezier(.34, 1.5, .64, 1); }
+  .ms-page .mf .mu-card .mu-gauge button:nth-child(1) { --h: .22; } .ms-page .mf .mu-card .mu-gauge button:nth-child(2) { --h: .4; } .ms-page .mf .mu-card .mu-gauge button:nth-child(3) { --h: .58; } .ms-page .mf .mu-card .mu-gauge button:nth-child(4) { --h: .78; } .ms-page .mf .mu-card .mu-gauge button:nth-child(5) { --h: 1; }
+  /* Preview while pointing, then the answer itself, bars rising one by one. */
+  .ms-page .mf .mu-card .mu-gauge[data-preview] button[data-lit]:not([data-filled]) .mu-meter-bar { background: var(--mu-hint); }
+  .ms-page .mf .mu-card .mu-gauge button[data-filled] .mu-meter-bar, .ms-page .mf .mu-card .mu-gauge:not([data-preview]) button[data-lit] .mu-meter-bar { background: var(--mu-ink); }
+  .ms-page .mf .mu-card .mu-gauge[data-preview] button[data-filled]:not([data-lit]) .mu-meter-bar { background: var(--mu-hint); }
+  .ms-page .mf .mu-card .mu-gauge button[data-filled] .mu-meter-bar { transition-delay: calc(var(--n, 0) * 30ms); }
+  .ms-page .mf .mu-card .mu-gauge button:nth-child(2) { --n: 1; } .ms-page .mf .mu-card .mu-gauge button:nth-child(3) { --n: 2; } .ms-page .mf .mu-card .mu-gauge button:nth-child(4) { --n: 3; } .ms-page .mf .mu-card .mu-gauge button:nth-child(5) { --n: 4; }
+  .ms-page .mf .mu-card .mu-gauge button[aria-checked="true"] .mu-meter-bar { animation: mu-bar-pop 360ms cubic-bezier(.34, 1.5, .64, 1); }
+  .ms-page .mf .mu-card .mu-gauge button small { display: block; max-width: 100%; font: 500 13px/1.2 var(--font-ui); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ms-page .mf .mu-card .mu-gauge button[aria-checked="true"] { color: var(--mu-ink); }
+  .ms-page .mf .mu-card .mu-gauge button[aria-checked="true"] small { font-weight: 700; }
+  .ms-page .mf .mu-card .mu-feedback { grid-area: feedback; display: flex; align-items: center; gap: 10px; min-height: 28px; }
+  .ms-page .mf .mu-card .mu-reaction { display: grid; place-items: center; flex: 0 0 28px; height: 28px; border-radius: var(--radius-circle); color: var(--color-surface); background: var(--mu-ink); animation: mu-icon-nod 320ms cubic-bezier(.34, 1.5, .64, 1); }
+  .ms-page .mf .mu-card .mu-caption { margin: 0; color: var(--color-text-strong); font: 400 14px/1.35 var(--font-ui); }
+  .ms-page .mf .mu-card .mu-preview { font-weight: 600; color: var(--mu-ink); }
+  @container (min-width: 600px) {
+    .ms-page .mf .mu-card .mu-question { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: max-content max-content; grid-template-areas: "tool gauge" "feedback gauge"; column-gap: 28px; row-gap: 12px; align-content: safe center; }
+    .ms-page .mf .mu-card .mu-tool { align-self: end; }
+    .ms-page .mf .mu-card .mu-feedback { align-self: start; align-items: flex-start; }
+    .ms-page .mf .mu-card .mu-gauge button { min-height: 100px; }
+    .ms-page .mf .mu-card .mu-meter-track { height: 56px; }
+  }
+
+  /* Summary: a verdict, then the cast as tiles; no inner scrolling. */
+  .ms-page .mf .mu-card .mu-summary { display: flex; flex-direction: column; justify-content: safe center; gap: 6px; overflow: hidden; padding: 2px; }
   .ms-page .mf .mu-card .mu-summary-heading { display: flex; align-items: center; gap: 8px; }
-  .ms-page .mf .mu-card .mu-summary-heading > svg { flex: none; color: var(--color-stack-tools-ink); }
-  .ms-page .mf .mu-card .mu-summary h3 { margin: 0; font: 600 16px/1.2 var(--font-ui); color: var(--color-text-strong); }
-  .ms-page .mf .mu-card .mu-answer-list { list-style: none; width: 100%; padding: 0; margin: 0; }
-  .ms-page .mf .mu-card .mu-answer-list li + li { border-top: 1px solid var(--color-border-soft); }
-  .ms-page .mf .mu-card .mu-answer-list button { display: flex; align-items: center; width: 100%; min-height: 44px; gap: 8px; padding: 6px 2px; border: 0; border-radius: 8px; background: transparent; color: var(--color-text-strong); text-align: left; cursor: pointer; font: 500 12px/1.3 var(--font-ui); }
-  .ms-page .mf .mu-card .mu-answer-list button:hover { background: var(--color-surface); }
-  .ms-page .mf .mu-card .mu-answer-list button:focus-visible { outline: 2px solid var(--color-stack-tools-ink); outline-offset: -2px; }
-  .ms-page .mf .mu-card .mu-answer-name { flex: 1; min-width: 0; overflow-wrap: anywhere; }
-  .ms-page .mf .mu-card .mu-answer-value { color: var(--color-stack-tools-ink); }
-  .ms-page .mf .mu-card .mu-answer-value[data-pending] { color: var(--color-muted); }
-  .ms-page .mf .mu-card .mu-answer-list svg { flex: none; }
-  .ms-page .mf .mu-card .mu-copy { margin: 0; font: 400 12.5px/1.4 var(--font-ui); color: var(--color-muted); }
-  .ms-page .mf .mu-card .mu-footer { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs); min-width: 0; border-top: 1px solid var(--color-border-soft); padding-top: 4px; }
-  .ms-page .mf .mu-card .mu-navigation, .ms-page .mf .mu-card .mu-secondary-actions { display: flex; align-items: center; gap: 4px; min-width: 0; }
+  .ms-page .mf .mu-card .mu-summary-heading > svg { flex: none; color: var(--mu-ink); animation: mu-icon-nod 420ms cubic-bezier(.34, 1.5, .64, 1) 120ms both; }
+  .ms-page .mf .mu-card .mu-summary h3 { margin: 0; font: 600 18px/1.2 var(--font-ui); letter-spacing: -.015em; color: var(--color-text-strong); }
+  .ms-page .mf .mu-card .mu-copy { margin: 0; font: 400 14px/1.4 var(--font-ui); color: var(--color-text-secondary); }
+  .ms-page .mf .mu-card .mu-answer-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); grid-auto-rows: 56px; gap: 8px; width: 100%; max-height: 120px; margin: 6px 0 0; padding: 0; overflow: hidden; }
+  .ms-page .mf .mu-card .mu-answer-list li { animation: mu-tile-in 320ms cubic-bezier(.2, .8, .2, 1) calc(var(--i, 0) * 40ms) both; }
+  .ms-page .mf .mu-card .mu-answer-list button { display: flex; align-items: center; gap: 10px; width: 100%; height: 100%; padding: 0 12px; border: 0; border-radius: 14px; background: var(--color-surface); color: var(--color-text-strong); text-align: left; cursor: pointer; box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text-strong) 6%, transparent); transition: transform 180ms cubic-bezier(.34, 1.4, .64, 1), box-shadow 180ms ease; }
+  .ms-page .mf .mu-card .mu-answer-list button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px color-mix(in srgb, var(--color-text-strong) 10%, transparent); }
+  .ms-page .mf .mu-card .mu-answer-list button:active { transform: scale(.98); }
+  .ms-page .mf .mu-card .mu-answer-list button[data-pending] { background: transparent; box-shadow: inset 0 0 0 1.5px var(--mu-hint); }
+  .ms-page .mf .mu-card .mu-answer-list button > :first-child { flex: none; }
+  .ms-page .mf .mu-card .mu-answer-text { display: grid; gap: 3px; min-width: 0; }
+  .ms-page .mf .mu-card .mu-answer-name { font: 600 13px/1.2 var(--font-ui); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ms-page .mf .mu-card .mu-answer-value { display: inline-flex; align-items: center; gap: 6px; font: 500 12px/1.2 var(--font-ui); color: var(--mu-ink); }
+  .ms-page .mf .mu-card button[data-pending] .mu-answer-value { color: var(--color-text-secondary); }
+  .ms-page .mf .mu-card .mu-mini { display: inline-flex; align-items: flex-end; gap: 2px; height: 10px; }
+  .ms-page .mf .mu-card .mu-mini i { width: 3px; border-radius: 1px; background: var(--mu-track); }
+  .ms-page .mf .mu-card .mu-mini i:nth-child(1) { height: 3px; } .ms-page .mf .mu-card .mu-mini i:nth-child(2) { height: 5px; } .ms-page .mf .mu-card .mu-mini i:nth-child(3) { height: 7px; } .ms-page .mf .mu-card .mu-mini i:nth-child(4) { height: 8.5px; } .ms-page .mf .mu-card .mu-mini i:nth-child(5) { height: 10px; }
+  .ms-page .mf .mu-card .mu-mini i[data-on] { background: var(--mu-ink); }
+  .ms-page .mf .mu-card .mu-answer-more { justify-content: center; font: 600 15px/1 var(--font-ui) !important; color: var(--mu-ink) !important; }
+  .ms-page .mf .mu-card .mu-answer-list button:focus-visible { outline: 2px solid var(--mu-ink); outline-offset: 2px; }
+
+  /* Footer: leave, where you are, go on. */
+  .ms-page .mf .mu-card .mu-footer { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-width: 0; padding-top: 10px; border-top: 1px solid color-mix(in srgb, var(--mu-ink) 12%, transparent); }
+  .ms-page .mf .mu-card .mu-navigation, .ms-page .mf .mu-card .mu-secondary-actions { display: flex; align-items: center; gap: 6px; min-width: 0; }
   .ms-page .mf .mu-card .mu-navigation { flex: none; }
-  .ms-page .mf .mu-card .mu-nav, .ms-page .mf .mu-card .mu-quiet, .ms-page .mf .mu-card .mu-next { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 44px; padding: 6px 8px; border: 0; border-radius: var(--radius-pill); font: 600 12px/1.2 var(--font-ui); cursor: pointer; }
-  .ms-page .mf .mu-card .mu-nav { flex: 0 0 44px; width: 44px; background: var(--color-surface); color: var(--color-stack-tools-ink); }
-  .ms-page .mf .mu-card .mu-quiet { min-width: 0; background: none; color: var(--color-muted); font-weight: 500; text-align: left; }
-  .ms-page .mf .mu-card .mu-quiet:hover { color: var(--color-stack-tools-ink); text-decoration: underline; }
-  .ms-page .mf .mu-card .mu-next { flex: 0 1 auto; min-width: 98px; background: var(--color-stack-tools-ink); color: var(--color-surface); }
-  .ms-page .mf .mu-card .mu-next svg { flex: none; }
-  .ms-page .mf .mu-card .mu-navigation .mu-next { width: 112px; flex: none; }
-  .ms-page .mf .mu-card .mu-next.mu-skip { background: var(--color-surface); color: var(--color-stack-tools-ink); box-shadow: inset 0 0 0 1px var(--color-border-soft); }
-  .ms-page .mf .mu-card .mu-nav:disabled { opacity: .35; cursor: default; }
-  .ms-page .mf .mu-card .mu-summary h3:focus-visible, .ms-page .mf .mu-card .mu-gauge button:focus-visible, .ms-page .mf .mu-card .mu-nav:focus-visible, .ms-page .mf .mu-card .mu-quiet:focus-visible, .ms-page .mf .mu-card .mu-next:focus-visible, .ms-page .mf .mu-card .mu-header h2:focus-visible, .ms-page .mf .mu-card .mu-tool h3:focus-visible { outline: 2px solid var(--color-stack-tools-ink); outline-offset: 2px; }
+  .ms-page .mf .mu-card .mu-dots { display: flex; align-items: center; gap: 5px; }
+  .ms-page .mf .mu-card .mu-dots i { width: 6px; height: 6px; border-radius: var(--radius-pill); background: color-mix(in srgb, var(--mu-ink) 22%, transparent); transition: width 240ms cubic-bezier(.34, 1.4, .64, 1), background-color 200ms ease; }
+  .ms-page .mf .mu-card .mu-dots i[data-done] { background: var(--mu-hint); }
+  .ms-page .mf .mu-card .mu-dots i[data-current] { width: 18px; background: var(--mu-ink); }
+  .ms-page .mf .mu-card .mu-nav, .ms-page .mf .mu-card .mu-quiet, .ms-page .mf .mu-card .mu-next { display: inline-flex; align-items: center; justify-content: center; gap: 4px; min-height: 44px; padding: 0 16px; border: 0; border-radius: var(--radius-pill); font: 600 14px/1.2 var(--font-ui); cursor: pointer; transition: background-color 160ms ease, color 160ms ease, transform 160ms cubic-bezier(.34, 1.4, .64, 1); }
+  .ms-page .mf .mu-card .mu-nav:active:not(:disabled), .ms-page .mf .mu-card .mu-next:active { transform: scale(.96); }
+  .ms-page .mf .mu-card .mu-nav { flex: 0 0 44px; width: 44px; padding: 0; background: var(--color-surface); color: var(--mu-ink); }
+  .ms-page .mf .mu-card .mu-quiet { min-width: 0; padding: 0 10px; background: none; color: var(--color-text-secondary); font-weight: 500; }
+  .ms-page .mf .mu-card .mu-quiet:hover { color: var(--mu-ink); background: color-mix(in srgb, var(--mu-ink) 7%, transparent); }
+  .ms-page .mf .mu-card .mu-next { min-width: 112px; background: var(--mu-ink); color: var(--color-surface); }
+  .ms-page .mf .mu-card .mu-next svg { flex: none; transition: transform 180ms cubic-bezier(.34, 1.4, .64, 1); }
+  .ms-page .mf .mu-card .mu-next:hover svg { transform: translateX(3px); }
+  .ms-page .mf .mu-card .mu-next.mu-skip { background: var(--color-surface); color: var(--mu-ink); }
+  .ms-page .mf .mu-card .mu-nav:disabled { opacity: .4; cursor: default; }
+  .ms-page .mf .mu-card :is(.mu-summary h3, .mu-gauge button, .mu-nav, .mu-quiet, .mu-next, .mu-header h2, .mu-tool h3):focus-visible { outline: 2px solid var(--mu-ink); outline-offset: 2px; }
   .ms-page .mf .mu-card .mu-history { overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding: 2px; }
-  .ms-page .mf .mu-card .mu-history:focus-visible { outline: 2px solid var(--color-stack-tools-ink); outline-offset: -2px; }
+  .ms-page .mf .mu-card .mu-history:focus-visible { outline: 2px solid var(--mu-ink); outline-offset: -2px; }
   .ms-page .mf .mu-card .mu-history .ms-decided { margin: 0; }
   .ms-page .mf .mu-card .mu-history .mu-pair + .mu-pair { margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-soft); }
-  @container (max-width: 340px) { .ms-page .mf .mu-card .mu-gauge button small { font-size: 11px; letter-spacing: -.02em; } }
+  @container (max-width: 360px) {
+    .ms-page .mf .mu-card .mu-gauge { gap: 0; padding: 4px; }
+    .ms-page .mf .mu-card .mu-gauge button { padding-inline: 0; }
+    .ms-page .mf .mu-card .mu-gauge button small { font-size: 11.5px; letter-spacing: -.02em; text-overflow: clip; }
+    .ms-page .mf .mu-card .mu-quiet { padding-inline: 6px; font-size: 13px; }
+    .ms-page .mf .mu-card .mu-next { min-width: 0; padding-inline: 12px; font-size: 13px; }
+    .ms-page .mf .mu-card .mu-dots { display: none; }
+    .ms-page .mf .mu-card .mu-answer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 760px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: 330px; padding: 18px 16px 12px; } }
   @media (min-width: 761px) and (max-width: 1180px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: 295px; } }
   @media (min-width: 1181px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: var(--row2, 290px); } }
-  @keyframes mu-scene-in { from { opacity: .65; transform: translateX(4px); } to { opacity: 1; transform: none; } }
-  @keyframes mu-icon-nod { 0%, 100% { transform: rotate(0); } 45% { transform: rotate(-12deg); } }
+
+  /* Hierarchy pass (28 Oct 2026, "tout est au premier plan"): one thing in
+     front per scene (the tool, or the verdict), everything else recedes:
+     no white boxes, quiet counts, the meter on the card itself, a soft glow
+     for freshness. */
+  .ms-page .mf .mf-grid > .mf-card.mu-card { background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--mu-ink) 9%, transparent), transparent 60%), var(--color-stack-tools-soft); }
+  .ms-page .mf .mu-card .mu-header h2 { font-size: 14px; font-weight: 600; color: var(--color-text-secondary); letter-spacing: 0; }
+  .ms-page .mf .mu-card .mu-count { padding: 0; background: none; color: var(--color-text-secondary); font-weight: 500; }
+  .ms-page .mf .mu-card .mu-tool h3 { font-size: 22px; letter-spacing: -.025em; }
+  .ms-page .mf .mu-card .mu-tool p { font-size: 13px; color: var(--color-text-meta, var(--color-text-secondary)); }
+  .ms-page .mf .mu-card .mu-gauge { padding: 0; gap: 2px; background: none; box-shadow: none; }
+  .ms-page .mf .mu-card .mu-gauge button { color: var(--color-text-meta, var(--color-text-secondary)); }
+  .ms-page .mf .mu-card .mu-gauge button:hover { background: color-mix(in srgb, var(--mu-ink) 6%, transparent); }
+  .ms-page .mf .mu-card .mu-meter-bar { width: min(44px, 64%); border-radius: 6px; background: color-mix(in srgb, var(--mu-ink) 13%, transparent); }
+  .ms-page .mf .mu-card .mu-gauge button small { font-weight: 500; font-size: 12.5px; }
+  .ms-page .mf .mu-card .mu-reaction { flex-basis: 22px; height: 22px; background: none; color: var(--mu-ink); }
+  .ms-page .mf .mu-card .mu-caption { font-size: 15px; color: var(--color-text-secondary); font-style: italic; }
+  .ms-page .mf .mu-card .mu-preview { font-style: normal; }
+  .ms-page .mf .mu-card .mu-footer { border-top: 0; padding-top: 0; }
+  .ms-page .mf .mu-card .mu-nav { background: none; }
+  .ms-page .mf .mu-card .mu-nav:hover:not(:disabled) { background: color-mix(in srgb, var(--mu-ink) 8%, transparent); }
+  .ms-page .mf .mu-card .mu-next.mu-skip { background: none; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--mu-ink) 28%, transparent); }
+  .ms-page .mf .mu-card .mu-summary h3 { font-size: 22px; letter-spacing: -.025em; }
+  .ms-page .mf .mu-card .mu-summary-heading > svg { width: 20px; height: 20px; }
+  .ms-page .mf .mu-card .mu-answer-list { grid-auto-rows: 48px; gap: 2px 12px; margin-top: 10px; }
+  .ms-page .mf .mu-card .mu-answer-list button { padding: 0 8px; border-radius: 12px; background: none; box-shadow: none; }
+  .ms-page .mf .mu-card .mu-answer-list button:hover { transform: none; box-shadow: none; background: color-mix(in srgb, var(--mu-ink) 7%, transparent); }
+  .ms-page .mf .mu-card .mu-answer-list button[data-pending] { box-shadow: none; opacity: .7; }
+  .ms-page .mf .mu-card .mu-answer-name { font-weight: 500; }
+  .ms-page .mf .mu-card .mu-answer-value { font-size: 12px; color: var(--color-text-secondary); }
+  .ms-page .mf .mu-card .mu-mini i[data-on] { background: var(--mu-ink); }
+
+  /* Meter reset (28 Oct 2026, "ton sur ton, trop écarté"): an Apple-style
+     staircase. Bars touch (4px apart), neutral grey when empty, the card's
+     ink when filled, no hover box; the bars themselves preview. Labels in
+     readable grey, the chosen one in ink. */
+  .ms-page .mf .mu-card .mu-gauge { --mu-empty: color-mix(in srgb, var(--color-text-strong) 11%, transparent); gap: 4px; width: 100%; max-width: 380px; justify-self: end; }
+  .ms-page .mf .mu-card .mu-gauge button { padding: 0; gap: 8px; border-radius: 0; color: var(--color-text-secondary); }
+  .ms-page .mf .mu-card .mu-gauge button:hover { background: none; }
+  .ms-page .mf .mu-card .mu-meter-bar { width: 100%; border-radius: 5px; background: var(--mu-empty); }
+  .ms-page .mf .mu-card .mu-gauge button:hover .mu-meter-bar { background: color-mix(in srgb, var(--color-text-strong) 18%, transparent); }
+  .ms-page .mf .mu-card .mu-gauge[data-preview] button[data-lit]:not([data-filled]) .mu-meter-bar { background: color-mix(in srgb, var(--mu-ink) 45%, transparent); }
+  .ms-page .mf .mu-card .mu-gauge[data-preview] button[data-filled]:not([data-lit]) .mu-meter-bar { background: color-mix(in srgb, var(--mu-ink) 45%, transparent); }
+  .ms-page .mf .mu-card .mu-gauge button[data-filled] .mu-meter-bar, .ms-page .mf .mu-card .mu-gauge:not([data-preview]) button[data-lit] .mu-meter-bar, .ms-page .mf .mu-card .mu-gauge[data-preview] button[data-lit][data-filled] .mu-meter-bar { background: var(--mu-ink); }
+  .ms-page .mf .mu-card .mu-gauge button small { font-size: 12px; font-weight: 500; }
+  .ms-page .mf .mu-card .mu-gauge button[aria-checked="true"] { color: var(--color-text-strong); }
+  .ms-page .mf .mu-card .mu-gauge button[aria-checked="true"] small { font-weight: 650; }
+  .ms-page .mf .mu-card .mu-gauge button:focus-visible { outline-offset: 4px; border-radius: 6px; }
+  @container (min-width: 600px) { .ms-page .mf .mu-card .mu-question .mu-gauge { width: min(100%, 400px); justify-self: end; } .ms-page .mf .mu-card .mu-question .mu-meter-track { height: 64px; } }
+  @keyframes mu-scene-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  @keyframes mu-icon-nod { 0% { transform: scale(.6) rotate(-14deg); } 60% { transform: scale(1.08) rotate(6deg); } 100% { transform: none; } }
+  @keyframes mu-bar-pop { 0% { transform: scaleY(var(--h)); } 45% { transform: scaleY(calc(var(--h) * 1.12)) scaleX(1.06); } 100% { transform: scaleY(var(--h)); } }
+  @keyframes mu-tile-in { from { opacity: 0; transform: translateY(8px) scale(.97); } to { opacity: 1; transform: none; } }
   @media (prefers-reduced-motion: reduce) {
-    .ms-page .mf .mu-card .mu-scene, .ms-page .mf .mu-card .mu-reaction { animation: none !important; transition: none; }
-    .ms-page .mf .mu-card .mu-meter-bar { transition: none; }
+    .ms-page .mf .mu-card *, .ms-page .mf .mu-card .mu-scene { animation: none !important; transition: none !important; }
   }
 }
 
