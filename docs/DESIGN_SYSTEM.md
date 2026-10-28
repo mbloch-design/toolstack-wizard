@@ -613,6 +613,8 @@ Carte média éditoriale utilisée par le catalogue, les catégories et les rail
 - Le prix et le statut éditorial peuvent se superposer à la miniature sous forme de capsules factuelles.
 - Toute la surface ouvre la fiche ; l’exploration et l’ajout à la stack restent dans un menu contextuel indépendant.
 - `variant="decision"` conserve une anatomie dédiée aux surfaces de manipulation de stack.
+- Le rail « À découvrir » de Ma Stack réutilise cette variante média : trois pistes maximum, miniature 16:10, aucune coque supplémentaire et contexte de catalogue en texte simple (`contextRole`). `mediaActions` accepte une commande secondaire sur la surface d’actions existante ; `onOpen` conserve le suivi du clic. Ces options ne modifient pas les cartes qui ne les fournissent pas.
+- La découverte ouvre aussi aux alternatives et usages proches qualifiés, avec leur raison réelle. Aucune promesse « sans doublon ». Les pistes sont renouvelables ; un outil ajouté reste visible, l’ajout est bloqué pendant son animation. Sur mobile, le rail laisse voir la carte suivante ; le renouvellement revient à la première carte avec focus. Les cibles restent ≥44px, y compris avec un pointeur tactile. Les sources externes ou visuels bloqués conservent le fallback partagé de `ToolCardImage`.
 
 ### ToolCardCompact (tcc-*) — recherche et listes contraintes
 Ligne compacte sans grande miniature, utilisée lorsque la densité prime sur l’inspiration visuelle.

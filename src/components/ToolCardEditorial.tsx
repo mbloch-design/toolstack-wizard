@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Link } from "@/lib/routerLinks";
 import { Compass, Pencil } from "@/lib/icons";
 import PinToolButton from "@/components/PinToolButton";
@@ -54,6 +55,9 @@ interface ToolCardEditorialProps {
    *  real display size lets ToolLogo fetch a sharp enough source instead of
    *  a CSS upscale of a 32px favicon. */
   identityLogoSize?: number;
+  /** Context-specific secondary controls reuse the shared media action surface. */
+  mediaActions?: ReactNode;
+  onOpen?: () => void;
 }
 
 interface CardHoverActionsProps {
@@ -63,9 +67,10 @@ interface CardHoverActionsProps {
   exploreState?: unknown;
   showPin: boolean;
   onOrganize?: () => void;
+  children?: ReactNode;
 }
 
-function CardHoverActions({ tool, t, exploreHref, exploreState, showPin, onOrganize }: CardHoverActionsProps) {
+function CardHoverActions({ tool, t, exploreHref, exploreState, showPin, onOrganize, children }: CardHoverActionsProps) {
   return (
     <div className="tce-hover-actions" aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`)}>
       {exploreHref && (
@@ -90,6 +95,7 @@ function CardHoverActions({ tool, t, exploreHref, exploreState, showPin, onOrgan
           <Pencil size={19} aria-hidden />
         </button>
       )}
+      {children}
       {showPin && (
         <PinToolButton
           slug={tool.slug ?? tool.id}
@@ -125,6 +131,8 @@ export function ToolCardEditorial({
   exploreState,
   onOrganize,
   identityLogoSize = 24,
+  mediaActions,
+  onOpen,
 }: ToolCardEditorialProps) {
   const presentation = getToolPresentation(tool, lang);
   const plan = presentation.planLabel;
@@ -144,6 +152,7 @@ export function ToolCardEditorial({
         {showPin && <PinToolButton slug={tool.slug ?? tool.id} label={tool.name} t={t} compact labelMode="short" />}
         <Link
           to={toolHref}
+          onClick={onOpen}
           state={linkState}
           className={`tce-card tce-card--compact${selected ? " is-selected" : ""}`}
           aria-current={selected ? "true" : undefined}
@@ -174,6 +183,7 @@ export function ToolCardEditorial({
         <Link
           className="tce-primary-link"
           to={toolHref}
+          onClick={onOpen}
           state={linkState}
           aria-label={t(`Voir la fiche de ${tool.name}`, `View ${tool.name}`)}
           aria-current={selected ? "true" : undefined}
@@ -192,7 +202,7 @@ export function ToolCardEditorial({
               </div>
             )}
           />
-          {(exploreHref || showPin || onOrganize) && (
+          {(exploreHref || showPin || onOrganize || mediaActions) && (
             <CardHoverActions
               tool={tool}
               t={t}
@@ -200,7 +210,7 @@ export function ToolCardEditorial({
               exploreState={exploreState}
               showPin={showPin}
               onOrganize={onOrganize}
-            />
+            >{mediaActions}</CardHoverActions>
           )}
         </div>
 
@@ -214,6 +224,7 @@ export function ToolCardEditorial({
               </div>
             </div>
           </div>
+          {contextRole && <p className="tce-media-context">{contextRole}</p>}
         </div>
       </article>
     </div>

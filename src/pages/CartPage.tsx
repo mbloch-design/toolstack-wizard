@@ -1,4 +1,6 @@
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
+import StackDiscovery from "@/components/stack/StackDiscovery";
+import { buildStackDiscovery } from "@/lib/stackDiscovery";
 import StackArrival from "@/components/stack/StackArrival";
 import { useStackAccount } from "@/hooks/useStackAccount";
 import { useAccountExperience } from "@/components/account/AccountExperienceProvider";
@@ -39,7 +41,7 @@ import { stackMonthlyCost, toolMonthlyCost } from "@/lib/stackCost";
 import { convertAmount, formatAmount } from "@/lib/currencyRates";
 import { pairKey, useStackDecisions } from "@/hooks/useStackDecisions";
 import { trackEvent } from "@/lib/analytics";
-import { buildExplorationCandidates, getExplorerHref } from "@/lib/toolExploration";
+import { getExplorerHref } from "@/lib/toolExploration";
 import { SEO_BASE, setHreflang, setNoindex, setSeoTags } from "@/lib/seo";
 
 const normalizeSearch = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
@@ -59,7 +61,7 @@ export default function CartPage() {
   const { state, persistenceStatus, pinTool, unpinTool, restoreTool, requiresAccount } = useStackPins();
   const { dailyRate } = useStackTrade();
   const inventoryHeadingRef = useRef<HTMLHeadingElement>(null);
-  const { addToStack: sharedAddToStack } = useAddToStack();
+  const { addToStack: sharedAddToStack, flyingSlug } = useAddToStack();
   const addToStack = (slug: string, name: string, options: Parameters<typeof sharedAddToStack>[2] = {}) => {
     const wasEmpty = state.pinnedToolSlugs.length === 0;
     return sharedAddToStack(slug, name, { ...options, onAdded: () => {
@@ -143,30 +145,10 @@ export default function CartPage() {
     for (const { a, b } of overlapScore.pairs) { map.set(a.id, [...(map.get(a.id) || []), b]); map.set(b.id, [...(map.get(b.id) || []), a]); }
     return map;
   }, [overlapScore]);
-  // Recommendations: catalogue relations only (extension, host app, suite,
-  // ecosystem). Same-use relations are left out: they would be duplicates.
-  const recos = useMemo(() => {
-    if (selectedTools.length === 0) return [];
-    const base = { getCategoryLabel: (tool: ToolSummary) => stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang), sourceTools: selectedTools, stackEntries: state.toolEntries, tools };
-    // Audited relations first; the legacy rules widen the pool but call any
-    // same-suite tool an "extension", so only a real plugin keeps that word.
-    const audited = buildExplorationCandidates({ ...base, relationPolicy: "audited" });
-    const legacy = buildExplorationCandidates({ ...base, relationPolicy: "legacy" }).map((candidate) => candidate.direction === "extensions" && candidate.tool.tool_type !== "plugin"
-      ? { ...candidate, reasonFr: `Même suite que ${candidate.relatedSource.name}`, reasonEn: `Same suite as ${candidate.relatedSource.name}` } : candidate);
-    const seen = new Set<string>();
-    const perSource = new Map<string, number>();
-    return [...audited, ...legacy].filter((candidate) => {
-      if (seen.has(candidate.tool.id) || candidate.stackState !== "new" || candidate.direction === "alternatives" || candidate.comparisonNeedsReview) return false;
-      // A product's own modules ("attached to") are already part of it: not a recommendation.
-      if (!/^(Extension|Outil hôte|Même suite|Même écosystème)/.test(candidate.reasonFr)) return false;
-      // At most two per tool of the stack, so the picks cover the whole stack.
-      const n = perSource.get(candidate.relatedSource.id) || 0;
-      if (n >= 2) return false;
-      perSource.set(candidate.relatedSource.id, n + 1);
-      seen.add(candidate.tool.id);
-      return true;
-    }).slice(0, 6).map((candidate) => ({ tool: candidate.tool, reason: lang === "fr" ? candidate.reasonFr : candidate.reasonEn }));
-  }, [selectedTools, categories, lang, state.toolEntries, tools]);
+  const recos = useMemo(() => buildStackDiscovery({
+    getCategoryLabel: (tool: ToolSummary) => stackDisplayLabel(stackPlacement(tool, categories, lang).label, lang),
+    sourceTools: selectedTools, stackEntries: state.toolEntries, tools,
+  }), [selectedTools, categories, lang, state.toolEntries, tools]);
   const unknownTools = selectedTools.filter((tool) => toolMonthlyCost(tool, plans.isPaid, lang).kind === "unknown");
   // One page logic (Oct 2026): the stack is shown once, at the centre, and
   // read through lenses; every open question is a card in one deck; a tool is
@@ -615,26 +597,10 @@ export default function CartPage() {
           })()}
         </section>
 
-        {/* 2. What would extend the stack, from the catalogue relations only. */}
-        {recos.length > 0 && <section className="ms-mod ms-recos" aria-labelledby="ms-recos-title">
-          <div className="ms-stage-bar">
-            <div>
-              <h2 id="ms-recos-title" className="ms-stage-title">{t("Pour aller plus loin", "Go further")}</h2>
-              <p className="ms-recos-sub">{t("Des outils liés à ceux que vous avez déjà : extensions, suites, écosystèmes. Aucun ne fait doublon.", "Tools linked to the ones you already have: extensions, suites, ecosystems. None overlaps.")}</p>
-            </div>
-            <Link className="ms-recos-more" to={getExplorerHref(prefix, { type: "stack" })} onClick={() => trackEvent("stack_explorer_click", { source: "recos" })}><Compass size={16} aria-hidden />{t("Tout explorer", "Explore all")}</Link>
-          </div>
-          <ul className="ms-recos-grid">{recos.map((reco) => <li key={reco.tool.id} className="ms-reco">
-            <Link className="ms-reco-main" to={`${prefix}/tool/${toolKey(reco.tool)}`} onClick={() => trackEvent("stack_reco_click", { tool: toolKey(reco.tool) })}>
-              <ToolLogo tool={reco.tool} size={40} />
-              <span className="ms-reco-name">{reco.tool.name}</span>
-              <span className="ms-reco-why">{reco.reason}</span>
-              <span className="ms-reco-price">{stackCatalogPrice(reco.tool, lang) || t("Prix non public", "Price not public")}</span>
-            </Link>
-            <button type="button" className="ms-reco-add" aria-label={t(`Ajouter ${reco.tool.name} à ma stack`, `Add ${reco.tool.name} to my stack`)}
-              onClick={(event) => { addToStack(toolKey(reco.tool), reco.tool.name, { origin: event.currentTarget.closest("li"), onAdded: () => trackEvent("stack_reco_add", { tool: toolKey(reco.tool) }) }); }}><Plus size={18} aria-hidden /></button>
-          </li>)}</ul>
-        </section>}
+        <StackDiscovery key={`${reviewScope}:${reviewEpoch}`} candidates={recos} lang={lang} prefix={prefix}
+          sourceIds={selectedTools.map(tool => tool.id)} selectedIds={selectedTools.map(tool => tool.id)} pendingSlug={flyingSlug}
+          explorerSources={state.toolEntries.filter(entry => entry.intent === "stack").flatMap(entry => { const tool = lookup.get(entry.toolSlug); return tool ? [toolKey(tool)] : []; })}
+          onAdd={(tool, origin) => addToStack(toolKey(tool), tool.name, { origin, onAdded: () => trackEvent("stack_reco_add", { tool: toolKey(tool) }) })} />
       </div>
 
       <StackToolSheet key={`${reviewScope}:${reviewEpoch}`} editCostRequest={costEditorRequest?.scope === reviewScope && costEditorRequest.epoch === reviewEpoch ? costEditorRequest : null} tool={selected || null} detail={resolved} pairs={overlapScore.pairs} categories={categories} paid={plans} currency={currency} prefix={prefix} lang={lang}
