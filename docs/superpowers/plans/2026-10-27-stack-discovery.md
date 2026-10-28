@@ -13,3 +13,7 @@ User wants this section to encourage discovery. Keep it compact and exploratory:
 2. Extract CartPage recommendation calculation into stackDiscovery helper and render StackDiscovery. Replace existing CSS section in components layer.
 3. Test component renewal, added-state stability, empty pool and direct detail/Explorer paths. Actual route FR/EN phone/desktop with Firefly/Adobe example, renewal, addition/reload and Explorer return. Check responsive layout, control targets and no overflow.
 4. Update active design/changelog docs. Run relevant unit/type/design checks, build and scoped push; distinguish Git publication from production deployment.
+
+## Repeatable acceptance
+
+The five discovery journeys are registered in the account fixture suite, excluded from the plain Vite suite. Run `npm run test:e2e:accounts -- e2e/stack-discovery-section.spec.ts` with the configured Playwright Chromium installed. This retains the synthetic API/account boundary after deleting session-only test configs.
