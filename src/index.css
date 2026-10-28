@@ -41293,3 +41293,36 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-tool-sheet .ms-ce-actions :is(.ms-ce-save, .ms-ce-cancel) { min-height: 44px; height: auto; }
   .ms-tool-sheet .ms-ce-actions .ms-ce-save, .ms-tool-sheet .ms-ce-actions .ms-ce-save:hover { background: var(--color-stack-tools-ink); color: var(--color-surface); }
 }
+
+/* Budget card, redesign of 28 Oct 2026: one figure in front, a line that
+   reads it (the year, who pays for what), the rest quietly below. The list
+   sits at the bottom of the card, so the card's height is shared between the
+   figure and the list instead of a blank at the end. */
+.ms-page .mf .mf-grid > .mf-card.mf-price { display: flex !important; flex-direction: column; background: radial-gradient(110% 80% at 0% 0%, color-mix(in srgb, var(--color-text-strong) 4%, transparent), transparent 60%), var(--color-surface-soft); }
+.ms-page .mf .mf-price > .mf-k { font: 600 14px/1.2 var(--font-ui) !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--color-text-secondary) !important; }
+.ms-page .mf .mf-price > .mf-k > svg { width: 16px !important; height: 16px !important; padding: 0 !important; margin-right: 6px; background: none !important; color: var(--color-text-secondary) !important; border-radius: 0 !important; box-shadow: none !important; }
+.ms-page .mf .mf-price .mk-figure { margin-top: 12px; }
+.ms-page .mf .mf-price .mf-price-quip { margin: 6px 0 0; max-width: 34ch; font: 400 15px/1.4 var(--font-ui); color: var(--color-text-secondary); text-wrap: pretty; animation: mf-quip-in 420ms cubic-bezier(.2, .8, .2, 1) 500ms both; }
+.ms-page .mf .mf-price .mf-price-quip > span { color: var(--color-text-strong); font-weight: 600; font-variant-numeric: tabular-nums; }
+@keyframes mf-quip-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.ms-page .mf .mf-price .mf-trust { display: flex; align-items: center; gap: 10px; margin-top: 14px; padding: 0; background: none; box-shadow: none; }
+.ms-page .mf .mf-price .mf-trust .mf-trust-text b { font: 600 13px/1.25 var(--font-ui); }
+.ms-page .mf .mf-price .mf-trust .mf-trust-text small { font: 400 12px/1.3 var(--font-ui); color: var(--color-text-secondary); }
+.ms-page .mf .mf-price .mf-trust .mf-trust-dots { display: none; }
+.ms-page .mf .mf-price .mf-trust-check { display: grid; place-items: center; flex: none; width: 24px; height: 24px; border-radius: var(--radius-circle); background: var(--color-good, var(--ms-good)); color: var(--color-surface); }
+.ms-page .mf .mf-price .mf-trust-check svg { width: 14px; height: 14px; stroke-width: 2.6; }
+.ms-page .mf .mf-price .mf-shares { margin-top: auto !important; padding-top: 16px; }
+.ms-page .mf .mf-price .mf-shares-name { font: 500 14px/1.25 var(--font-ui); }
+.ms-page .mf .mf-price .mf-shares b { font: 600 14px/1.2 var(--font-ui); font-variant-numeric: tabular-nums; }
+.ms-page .mf .mf-price .mf-shares small { font: 500 12px/1.2 var(--font-ui); color: var(--color-text-secondary); font-variant-numeric: tabular-nums; }
+.ms-page .mf .mf-price .mf-shares-bar { height: 6px !important; border-radius: 3px !important; background: color-mix(in srgb, var(--color-text-strong) 8%, transparent) !important; }
+.ms-page .mf .mf-price .mf-shares-bar i { border-radius: 3px !important; }
+.ms-page .mf .mf-price .mf-others { margin: 6px -10px 0; width: calc(100% + 20px); padding: 8px 10px; border-radius: 12px; font: 500 14px/1.2 var(--font-ui); color: var(--color-text-secondary); transition: background-color 160ms ease; }
+.ms-page .mf .mf-price .mf-others:hover { background: color-mix(in srgb, var(--color-text-strong) 5%, transparent); }
+.ms-page .mf .mf-price .mf-others-logos > span { box-shadow: 0 0 0 2px var(--color-surface-soft); border-radius: 6px; }
+.ms-page .mf .mf-price .mf-others-logos > span + span { margin-left: -6px; }
+.ms-page .mf .mf-price .mf-cost-scope { margin-top: 10px; font: 400 12px/1.4 var(--font-ui) !important; color: var(--color-text-secondary); }
+@media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-price .mf-price-quip { animation: none; } }
+/* An exact budget needs no footnote: the check says it. */
+.ms-page .mf .mf-price .mf-trust[data-exact] .mf-trust-text small { display: none; }
+.ms-page .mf .mf-price .mf-trust[data-exact] .mf-trust-check { width: 20px; height: 20px; }

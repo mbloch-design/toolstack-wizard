@@ -315,7 +315,14 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 <p>{t("Dites-nous quelle formule vous utilisez. Gratuite ou payante, chaque réponse aide à y voir plus clair.", "Tell us which plan you use. Free or paid, every answer makes the picture clearer.")}</p>
                 <button type="button" className="mk-link" onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));setOpenCard("now");requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</button>
               </div>
-            : <><Figure value={format(total)} unit={t("/mois", "/mo")} />{(() => {
+            : <><Figure value={format(total)} unit={t("/mois", "/mo")} />{spend.length > 0 && total > 0 && (() => {
+              // The figure, then one line that reads it: the year, and who pays for what.
+              const lead = spend.reduce((a, b) => b.amount > a.amount ? b : a), share = Math.round((lead.amount / total) * 100);
+              const quip = spend.length === 1 ? t("Un seul abonnement, et il fait tout le travail.", "One subscription doing all the work.")
+                : share >= 50 ? t(`${lead.tool.name} en paie ${share >= 75 ? "presque tout" : "plus de la moitié"} à lui seul.`, `${lead.tool.name} pays for ${share >= 75 ? "almost all of it" : "over half of it"} on its own.`)
+                : t("Pas de tyran dans la stack : le budget est bien réparti.", "No tyrant in this stack: the budget is spread out.");
+              return <p className="mf-price-quip"><span>{t(`Soit ${format(total * 12)} par an.`, `That is ${format(total * 12)} a year.`)}</span> {quip}</p>;
+            })()}{(() => {
               // Can the total be trusted? A tool counts once its cost is certain.
               const unsure = items.filter((item) => item.kind === "price" || item.kind === "freemium");
               const pct = toolCount > 0 ? Math.round(((toolCount - unsure.length) / toolCount) * 100) : 100;
@@ -328,7 +335,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 ? <button type="button" className="mf-trust" onClick={() => { setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); }}>
                     {ring}<span className="mf-trust-text"><b>{t(`${toolCount - unsure.length} outil${s(toolCount - unsure.length)} sur ${toolCount} renseigné${s(toolCount - unsure.length)}`, `${toolCount - unsure.length} of ${toolCount} tools priced`)}</b><small>{t(`Estimation partielle : ${left} à confirmer`, `Partial estimate: ${left} to confirm`)}</small>{dots}</span>
                   </button>
-                : toolCount > 0 && <p className="mf-trust" data-exact="">{ring}<span className="mf-trust-text"><b>{t("Budget renseigné", "Budget recorded")}</b><small>{t("Estimation selon les prix et formules renseignés.", "Estimate based on the prices and plans recorded.")}</small>{dots}</span></p>;
+                : toolCount > 0 && <p className="mf-trust" data-exact=""><span className="mf-trust-check" aria-hidden="true">{icon(Check)}</span><span className="mf-trust-text"><b>{t("Budget renseigné", "Budget recorded")}</b><small>{t("Estimation selon les prix et formules renseignés.", "Estimate based on the prices and plans recorded.")}</small>{dots}</span></p>;
             })()}</>; })()}
         {converted && <p className="mf-invoice-help">{t(`Conversion en ${currency} au taux de référence du ${CURRENCY_RATE_DATE}.`, `Converted to ${currency} using reference rates dated ${CURRENCY_RATE_DATE}.`)}</p>}
         {spend.length > 0 ? <>
