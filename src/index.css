@@ -41348,3 +41348,25 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-now .mf-preview-k { font: 500 12px/1.2 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
   @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan) { transition: none !important; transform: none !important; } }
 }
+
+/* Budget split, redesign of 29 Oct 2026: one sentence leads (the share in
+   its area's colour, inline), a line of humour under it, the bar and a quiet
+   legend. No tag, no floating logo, no pill per area. */
+@layer components {
+  .ms-page .mf .mf-balance .mf-lead-tag { display: none !important; }
+  .ms-page .mf .mf-balance .mf-lead h3 { font: 600 22px/1.25 var(--font-ui) !important; letter-spacing: -.02em !important; color: var(--color-text-strong) !important; text-wrap: balance; }
+  .ms-page .mf .mf-balance .mf-lead-fig { display: inline !important; font: inherit !important; font-size: 1em !important; color: var(--lead, var(--color-stack-tools-ink, var(--color-primary))) !important; }
+  .ms-page .mf .mf-balance .mf-lead-say { display: inline !important; font: inherit !important; }
+  .ms-page .mf .mf-balance .mf-lead-sub { margin-top: 8px !important; font: 400 14px/1.4 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
+  .ms-page .mf .mf-balance .mf-lead-quip { margin: 14px 0 0; font: italic 400 15px/1.4 var(--font-ui); color: var(--color-text-secondary); animation: mf-quip-in 420ms cubic-bezier(.2, .8, .2, 1) 400ms both; }
+  .ms-page .mf .mf-balance .mf-bb-title { font: 600 14px/1.2 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
+  .ms-page .mf .mf-balance .mf-bb-chips { gap: 6px 20px !important; }
+  .ms-page .mf .mf-balance .mf-bb-chips button { padding: 6px 10px !important; margin-left: -10px; background: none !important; box-shadow: none !important; border: 0 !important; font: 500 14px/1.2 var(--font-ui) !important; transition: background-color 160ms ease !important; }
+  .ms-page .mf .mf-balance .mf-bb-chips button:hover, .ms-page .mf .mf-balance .mf-bb-chips button[aria-pressed="true"] { background: color-mix(in srgb, var(--color-text-strong) 6%, transparent) !important; }
+  .ms-page .mf .mf-balance .mf-lead h3 { display: block !important; }
+  .ms-page .mf .mf-balance :is(.mf-lead-fig, .mf-lead-say) { font-size: 22px !important; line-height: 1.25 !important; font-weight: 600 !important; letter-spacing: -.02em !important; }
+  .ms-page .mf .mf-balance .mf-bb-chip-amount { font: 600 14px/1.2 var(--font-ui) !important; font-variant-numeric: tabular-nums; color: var(--color-text-strong); }
+  .ms-page .mf .mf-balance .mf-bb-chip-tools > * { box-shadow: 0 0 0 2px var(--color-surface-soft) !important; border-radius: 5px; }
+  .ms-page .mf .mf-balance .mf-bb-chip-tools > * + * { margin-left: -3px !important; }
+  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-balance .mf-lead-quip { animation: none; } }
+}

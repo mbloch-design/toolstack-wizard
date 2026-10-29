@@ -504,16 +504,13 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           // The verdict first: is the money spread, or does one area take most of it?
           const heavy = share >= 50;
           const spread = areas.filter((area) => area.amount > 0).length;
-          // A touch of play on the left: the share rolls in the lead area's colour,
-          // a short honest line, and that area's tools stacked like cards.
-          const deck = (lead.tools || []).slice(0, 4);
-          const extraTools = Math.max(0, (lead.tools || []).length - deck.length);
-          const logos = deck.length > 0 ? <span className="mf-lead-deck" aria-hidden="true">{deck.map((row, index) => <span key={row.tool.id} style={{ ["--i" as string]: index }}><ToolLogo tool={row.tool} size={26} /></span>)}{extraTools > 0 && <em>+{extraTools}</em>}</span> : null;
+          // One line of humour under the reading, from the same shares.
+          const quip = <p className="mf-lead-quip">{share >= 75 ? t("Le reste du budget fait de la figuration.", "The rest of the budget is an extra.") : heavy ? t("Le reste se partage les miettes.", "The rest share the crumbs.") : t("Une stack équilibrée. C’est rare, ça se respecte.", "A balanced stack. Rare, and respected.")}</p>;
           const tag = share >= 75 ? <><Flame size={14} aria-hidden />{t("Premier poste renseigné", "Largest recorded cost")}</> : share >= 50 ? <><TrendingUp size={14} aria-hidden />{t("Premier poste renseigné", "Largest recorded cost")}</> : <><Scale size={14} aria-hidden />{t("Montants par domaine", "Costs by area")}</>;
           return <>{heavy
-            ? <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={logos} figure={<Odometer text={`${share}\u00a0%`} />} say={t(`du budget renseigné pour ${lead.label.replace(/ /g, "\u00a0")}.`, `of recorded costs for ${lead.label}.`)}
+            ? <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={quip} figure={<Odometer text={`${share}\u00a0%`} />} say={t(`du budget renseigné pour ${lead.label.replace(/ /g, "\u00a0")}.`, `of recorded costs for ${lead.label}.`)}
                 sub={t(`${format(lead.amount)} sur ${format(total)} chaque mois.`, `${format(lead.amount)} of ${format(total)} every month.`)} />
-            : <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={logos} figure={t(`${spread} domaines`, `${spread} areas`)} say={t("se partagent les montants renseignés.", "share the recorded costs.")}
+            : <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={quip} figure={t(`${spread} domaines`, `${spread} areas`)} say={t("se partagent les montants renseignés.", "share the recorded costs.")}
                 sub={t(`Le plus gros, ${lead.label}, en prend ${share} %.`, `The largest, ${lead.label}, takes ${share}%.`)} />}
           <BudgetBar areas={areas} total={total} format={format} t={t} view={splitView === "radar" && areas.length < 4 ? "bar" : splitView} /></>;
         })() : <p className="mf-t">{areas.length < 3 ? t("La répartition apparaît dès trois domaines dans votre stack.", "The split appears from three areas in your stack.") : t("Aucun coût connu à répartir pour l’instant.", "No known cost to spread yet.")}</p>}
