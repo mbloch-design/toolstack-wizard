@@ -41838,3 +41838,31 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 :is(.tce-name, .cp-guide-annual > h3, .cp-switch-head > h3, .gi-card-title, .td-editorial-fact-group > h3, .td-procon-title,
   .td-plan-name, .td-subtitle, .td-ai-point-title, .td-explore-title, .gb-h3) { font-weight: 500; }
 .td-eyebrow { font-weight: 330; letter-spacing: .16em; color: var(--color-text-strong); }
+
+/* Tool page hero calls (29 Oct 2026 CTA rule): « Visit » leads as the ink
+   pill (.tt-cta look); « Add to my stack » defers as a quiet link with its
+   bookmark, no border. Pin logic and tracking unchanged. */
+.td-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-xl); }
+.td-hero-actions .td-hero-site-link { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px 0 30px; border: 0; border-radius: var(--radius-pill); background: var(--color-text-strong); color: var(--color-bg); font: 500 15px/1 var(--font-ui); letter-spacing: -.01em; text-decoration: none; transition: background-color 180ms ease, transform 160ms cubic-bezier(.2, .8, .2, 1); }
+.td-hero-actions .td-hero-site-link:hover { background: var(--color-hover-strong); }
+.td-hero-actions .td-hero-site-link:active { transform: scale(.98); }
+.td-hero-actions .td-hero-site-link svg { width: 15px; height: 15px; stroke-width: 1.6; }
+.td-hero-actions .pin-tool-button, .td-hero-actions .pin-tool-button.pin-tool-button--full, .td-hero-actions .pin-tool-button.pin-tool-button--full.pin-tool-button--active { width: auto; height: auto; flex: none; min-height: 40px; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; color: var(--color-text-strong); font: 500 15px/1 var(--font-ui); letter-spacing: -.01em; }
+.td-hero-actions .pin-tool-button:hover, .td-hero-actions .pin-tool-button.pin-tool-button--full:hover { border: 0; background: none; box-shadow: none; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.td-hero-actions .pin-tool-button svg { width: 17px; height: 17px; stroke-width: 1.6; }
+.td-hero-actions :is(.td-hero-site-link, .pin-tool-button):focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 3px; }
+
+/* Tool page, the other calls (29 Oct 2026 CTA rule). The decision's main
+   call is the page pill; its alternative a link; the sticky nav and the
+   phone action bar use the interface pill; utility buttons the grey pill. */
+.td-tool-page .td-decision-cta-main { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px 0 30px; border: 0; border-radius: var(--radius-pill); background: var(--color-text-strong); color: var(--color-bg); font: 500 15px/1 var(--font-ui); letter-spacing: -.01em; text-decoration: none; box-shadow: none; }
+.td-tool-page .td-decision-cta-main { width: auto; max-width: 100%; height: auto; align-self: flex-start; justify-self: start; flex: none; padding-block: 14px; text-align: left; line-height: 1.25; }
+.td-tool-page .td-decision-cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-sm) var(--space-xl); padding: 0; background: none; }
+.td-tool-page .td-decision-cta-main:hover { background: var(--color-hover-strong); color: var(--color-bg); }
+.td-tool-page .td-decision-cta-alt, .td-tool-page .td-decision-compare { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0; border: 0; border-radius: 0; background: none; box-shadow: none; color: var(--color-text-strong); font: 500 15px/1 var(--font-ui); letter-spacing: -.01em; text-decoration: none; }
+.td-tool-page .td-decision-cta-alt:hover, .td-tool-page .td-decision-compare:hover { background: none; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.td-tool-page .td-localnav-cta, .td-tool-page .td-mobile-actionbar-cta { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 0 18px; border: 0; border-radius: var(--radius-pill); background: var(--color-text-strong); color: var(--color-bg); font: 500 14px/1 var(--font-ui); letter-spacing: -.005em; text-decoration: none; box-shadow: none; }
+.td-tool-page .td-localnav-cta:hover, .td-tool-page .td-mobile-actionbar-cta:hover { background: var(--color-hover-strong); color: var(--color-bg); }
+.td-tool-page .td-explore-map-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 40px; padding: 0 18px; border: 0; border-radius: var(--radius-pill); background: var(--color-surface-soft); color: var(--color-text-strong); font: 500 14px/1 var(--font-ui); box-shadow: none; }
+.td-tool-page .td-explore-map-btn:hover { background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface-soft)); }
+.td-tool-page :is(.td-decision-cta-main, .td-decision-cta-alt, .td-decision-compare, .td-localnav-cta, .td-mobile-actionbar-cta, .td-explore-map-btn):focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 3px; }
