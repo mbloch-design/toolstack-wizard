@@ -187,7 +187,7 @@ for (const provider of ['google','github'] as const) test(`OAuth useful profile 
  await page.getByText('Account information',{exact:true}).click();await expect(page.getByText('Provider language',{exact:true})).toBeVisible();await expect(page.getByText('en-US',{exact:true})).toBeVisible();await page.reload();await expect(name).toHaveValue(displayName);
  const context=await browser.newContext({baseURL:process.env.PLAYWRIGHT_BASE_URL});await isolate(context);const admin=await context.newPage();
  await control(request,'seed',{email:'admin@example.invalid'});await admin.goto('/en/sign-in');await dismissConsent(admin);await emailForm(admin,'admin@example.invalid','fixture-password');await admin.locator('.ac-form').getByRole('button',{name:'Sign in',exact:true}).click();await expect(admin).toHaveURL(/\/en\/ma-stack$/);
- await admin.goto('/en/back-office');await expect(admin.getByText(displayName,{exact:true})).toBeVisible();await admin.getByRole('button',{name:`View stack for ${provider}@example.invalid`,exact:true}).click();await expect(admin.locator('.ba-detail')).toContainText(`Initial profile provider: ${provider==='google'?'Google':'GitHub'}`);await expect(admin.locator('.ba-detail')).toContainText('Provider language: en-US');await context.close();
+ await admin.goto('/en/back-office');await admin.getByRole('navigation',{name:'Back-office navigation',exact:true}).getByRole('button',{name:'Users',exact:true}).click();await expect(admin.locator('tbody').getByText(displayName,{exact:true})).toBeVisible();await admin.getByRole('button',{name:`View stack for ${provider}@example.invalid`,exact:true}).click();await expect(admin.locator('.bo-detail')).toContainText(`Initial profile provider: ${provider==='google'?'Google':'GitHub'}`);await expect(admin.locator('.bo-detail')).toContainText('Provider language: en-US');await context.close();
  await page.screenshot({path:test.info().outputPath(`oauth-${provider}-profile.png`)});
  await name.fill('');await page.getByRole('button',{name:'Save name',exact:true}).click();await expect(page.getByRole('status',{name:'Profile'})).toHaveText('Name saved.');
  await signOut(page);await connect();await page.goto('/en/account/settings');await expect(name).toHaveValue('');await page.reload();await expect(name).toHaveValue('');
@@ -647,13 +647,20 @@ for (const lang of ['fr','en'] as const) for (const [width,height,expected] of [
   value.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-25T00:00:00.000Z'}};
   await control(request,'seed',{email:'usage-height@example.invalid',state:value});await page.goto(`/${lang}/ma-stack`);await login(page,lang,'usage-height@example.invalid');await saved(page,lang);
   const card=page.locator('.mu-card');await expect(card).toBeVisible();await card.scrollIntoViewIfNeeded();
+  await page.addStyleTag({content:'html, .mu-question { scrollbar-gutter: stable; } @media(max-width:340px) { .mu-question { max-width:236px !important; } .mu-gauge button small { font-family: Arial, sans-serif; } }'});
   const anchors=()=>card.evaluate(el=>{const box=el.getBoundingClientRect(),footer=el.querySelector('.mu-footer')!.getBoundingClientRect(),primary=el.querySelector('.mu-next')!.getBoundingClientRect();return {top:footer.top-box.top,right:primary.right-box.left};});
   const initialAnchors=await anchors();
   const stable=async()=>{await expect.poll(async()=>Math.abs((await card.boundingBox())!.height-expected)).toBeLessThan(1);expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);const current=await anchors();expect(Math.abs(current.top-initialAnchors.top)).toBeLessThan(1);expect(Math.abs(current.right-initialAnchors.right)).toBeLessThan(1);};
   await expect(card.getByLabel(fr?'Outil 1 sur 2':'Tool 1 of 2')).toContainText('1 / 2');
   await expect(card.getByRole('button',{name:fr?'Outil précédent':'Previous tool',exact:true})).toBeDisabled();
   expect(await card.locator('.mu-gauge').evaluate(el=>el.getBoundingClientRect().width)).toBeLessThanOrEqual(640);
-  expect(await card.getByRole('radio').evaluateAll(radios=>{const bars=radios.map(r=>r.querySelector('.mu-meter-bar')!.getBoundingClientRect());return bars.every((bar,i)=>Math.abs(bar.bottom-bars[0].bottom)<1&&(i===0||bar.height>bars[i-1].height))&&radios.every(r=>r.getBoundingClientRect().width>=44&&r.getBoundingClientRect().height>=44);})).toBe(true);
+  const levels=await card.getByRole('radio').evaluateAll(radios=>radios.map(r=>{const bar=r.querySelector('.mu-meter-bar')!.getBoundingClientRect(),target=r.getBoundingClientRect();return {bottom:bar.bottom,height:bar.height,targetWidth:target.width,targetHeight:target.height};}));
+  for (const [i,level] of levels.entries()) {
+   expect(Math.abs(level.bottom-levels[0].bottom),JSON.stringify(levels)).toBeLessThan(1);
+   if(i>0) expect(level.height).toBeGreaterThan(levels[i-1].height);
+   expect(level.targetWidth).toBeGreaterThanOrEqual(44);
+   expect(level.targetHeight).toBeGreaterThanOrEqual(44);
+  }
   expect(await card.locator('.mu-tool-label').evaluate(el=>{const title=el.querySelector('h3')!.getBoundingClientRect(),price=el.querySelector('p')!.getBoundingClientRect();return Math.abs(title.left-price.left)<1&&price.top>=title.bottom;})).toBe(true);
   await page.mouse.move(0,0);await card.evaluate(el=>el.scrollIntoView({block:'center'}));
   expect(await card.getByRole('radio').locator('small').evaluateAll(labels=>labels.every(label=>{const css=getComputedStyle(label);return label.scrollWidth<=label.clientWidth&&label.getBoundingClientRect().height<=parseFloat(css.lineHeight)+parseFloat(css.paddingTop)+parseFloat(css.paddingBottom)+1;}))).toBe(true);

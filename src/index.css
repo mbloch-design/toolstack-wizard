@@ -40856,7 +40856,10 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mu-card .mu-history:focus-visible { outline: 2px solid var(--color-stack-tools-ink); outline-offset: -2px; }
   .ms-page .mf .mu-card .mu-history .ms-decided { margin: 0; }
   .ms-page .mf .mu-card .mu-history .mu-pair + .mu-pair { margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-soft); }
-  @container (max-width: 340px) { .ms-page .mf .mu-card .mu-gauge button small { font-size: 11px; letter-spacing: -.02em; } }
+  @container (max-width: 340px) {
+    .ms-page .mf .mu-card .mu-gauge { gap: 0; padding: 2px; }
+    .ms-page .mf .mu-card .mu-gauge button small { font-size: 11px; letter-spacing: -.02em; }
+  }
   @media (min-width: 761px) and (max-width: 1180px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: 295px; } }
   @media (min-width: 1181px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: var(--row2, 290px); } }
   @keyframes mu-scene-in { from { opacity: .65; transform: translateX(4px); } to { opacity: 1; transform: none; } }
