@@ -95,12 +95,10 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
     landedOnce.current = true;
     return playHello(helloRef.current, () => setLanded(true));
   }, [step]);
-  // The name field takes the focus only if nothing else holds it: never steal it from a menu, a dialog or a control.
   useEffect(() => {
-    if (!landed || step !== "hello") return;
-    const active = document.activeElement;
-    if (active && active !== document.body && active !== document.documentElement) return;
-    nameField.current?.focus({ preventScroll: true });
+    // A settled greeting must not steal focus restored by the account dialog.
+    if (landed && step === "hello" && document.activeElement === document.body)
+      nameField.current?.focus({ preventScroll: true });
   }, [landed, step]);
 
   const current = TRADES.find((item) => item.id === trade);
