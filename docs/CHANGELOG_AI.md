@@ -1,3 +1,9 @@
+## 2026-10-29 — CI : reprise après intégration du redesign Ma Stack
+
+- Intégration de `50d85f0191` sans remplacer la nouvelle structure ni ses dimensions. Le correctif étroit est placé après les règles de jauge qui le surchargeaient ; pas de changement de hauteur.
+- L’animation d’accueil ne prend plus le focus quand un contrôle est déjà actif : le retour clavier du dialogue comptes reste prioritaire. Les tests de fermeture, authentification tardive et clavier sont conservés.
+- La gouttière de test reste interne à la question ; suppression de la modification artificielle de la gouttière du document. Typecheck complet et tokens passent ; les 119 parcours comptes Chromium passent localement, dont les 12 enveloppes FR/EN, OAuth, factures, synchronisation, back-office et découverte. CI distante contrôlée séparément après push.
+
 ## 2026-10-29 — CI : compatibilité ES2020 et runner Chromium
 
 - Remplacement des appels `Object.hasOwn` du validateur catalogue par `Object.prototype.hasOwnProperty.call` : même contrôle des propriétés propres, compatible avec le contrôle ES2020 de la CI. Les protections contre les clés héritées restent actives.

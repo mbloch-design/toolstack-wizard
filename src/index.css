@@ -40904,15 +40904,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mu-card .mu-history:focus-visible { outline: 2px solid var(--mu-ink); outline-offset: -2px; }
   .ms-page .mf .mu-card .mu-history .ms-decided { margin: 0; }
   .ms-page .mf .mu-card .mu-history .mu-pair + .mu-pair { margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-soft); }
-  @container (max-width: 360px) {
-    .ms-page .mf .mu-card .mu-gauge { gap: 0; padding: 0; }
-    .ms-page .mf .mu-card .mu-gauge button { padding-inline: 0; }
-    .ms-page .mf .mu-card .mu-gauge button small { font-size: 11.5px; letter-spacing: -.02em; text-overflow: clip; }
-    .ms-page .mf .mu-card .mu-quiet { padding-inline: 6px; font-size: 13px; }
-    .ms-page .mf .mu-card .mu-next { min-width: 0; padding-inline: 12px; font-size: 13px; }
-    .ms-page .mf .mu-card .mu-dots { display: none; }
-    .ms-page .mf .mu-card .mu-answer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  }
+
   @media (max-width: 760px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: 330px; padding: 18px 16px 12px; } }
   @media (min-width: 761px) and (max-width: 1180px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: 295px; } }
   @media (min-width: 1181px) { .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-height: var(--row2, 290px); } }
@@ -40965,6 +40957,15 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mu-card .mu-gauge button[aria-checked="true"] small { font-weight: 650; }
   .ms-page .mf .mu-card .mu-gauge button:focus-visible { outline-offset: 4px; border-radius: 6px; }
   @container (min-width: 600px) { .ms-page .mf .mu-card .mu-question .mu-gauge { width: min(100%, 400px); justify-self: end; } .ms-page .mf .mu-card .mu-question .mu-meter-track { height: 64px; } }
+  @container (max-width: 360px) {
+    .ms-page .mf .mu-card .mu-gauge { gap: 0; padding: 0; }
+    .ms-page .mf .mu-card .mu-gauge button { padding-inline: 0; }
+    .ms-page .mf .mu-card .mu-gauge button small { font-size: 11.5px; letter-spacing: -.02em; text-overflow: clip; }
+    .ms-page .mf .mu-card .mu-quiet { padding-inline: 6px; font-size: 13px; }
+    .ms-page .mf .mu-card .mu-next { min-width: 0; padding-inline: 12px; font-size: 13px; }
+    .ms-page .mf .mu-card .mu-dots { display: none; }
+    .ms-page .mf .mu-card .mu-answer-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
   @keyframes mu-scene-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
   @keyframes mu-icon-nod { 0% { transform: scale(.6) rotate(-14deg); } 60% { transform: scale(1.08) rotate(6deg); } 100% { transform: none; } }
   @keyframes mu-bar-pop { 0% { transform: scaleY(var(--h)); } 45% { transform: scaleY(calc(var(--h) * 1.12)) scaleX(1.06); } 100% { transform: scaleY(var(--h)); } }

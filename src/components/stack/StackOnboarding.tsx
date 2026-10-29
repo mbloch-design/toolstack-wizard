@@ -95,7 +95,11 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
     landedOnce.current = true;
     return playHello(helloRef.current, () => setLanded(true));
   }, [step]);
-  useEffect(() => { if (landed && step === "hello") nameField.current?.focus({ preventScroll: true }); }, [landed, step]);
+  useEffect(() => {
+    // A settled greeting must not steal focus restored by the account dialog.
+    if (landed && step === "hello" && document.activeElement === document.body)
+      nameField.current?.focus({ preventScroll: true });
+  }, [landed, step]);
 
   const current = TRADES.find((item) => item.id === trade);
   const index = STEPS.indexOf(step);
