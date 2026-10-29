@@ -41482,4 +41482,23 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   }
   /* Down the sidebar: total and lines at the top, free tools and the scope note settle at the bottom. */
   .ms-page .mf .mf-grid > .mf-card.mf-price .mf-cost-complement { margin-top: auto !important; padding-top: 16px; }
+  /* Duplicate decision, visual pass: the dropped tool shows crossed out at the kept logo's foot,
+     the saving is a filled pill, the cheaper answer carries a green outline. */
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-logo { position: relative; overflow: visible !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-drop { position: absolute; right: -14px; bottom: -8px; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 8px; background: var(--color-surface); box-shadow: 0 0 0 2px var(--color-surface); filter: grayscale(1); opacity: .55; transition: opacity 180ms ease, transform 180ms ease; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-drop::after { content: ""; position: absolute; left: -3px; right: -3px; top: 50%; height: 2px; border-radius: 2px; background: var(--color-text-strong); transform: rotate(-35deg); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face:hover:not(:disabled) .mf-face-drop { opacity: .8; transform: translate(3px, 2px) rotate(8deg); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-out { justify-self: center; padding: 5px 12px; border-radius: var(--radius-pill, 999px); background: color-mix(in srgb, var(--color-text-strong) 6%, transparent); font-size: 14px !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-out[data-gain=""] { background: color-mix(in srgb, var(--color-good, var(--ms-good)) 14%, transparent); font-size: 16px !important; font-weight: 700 !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face[data-best] { box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-good, var(--ms-good)) 55%, transparent), 0 8px 24px color-mix(in srgb, var(--color-good, var(--ms-good)) 12%, transparent) !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face[data-best] .mf-face-tag { padding: 3px 9px !important; border-radius: var(--radius-pill, 999px); background: var(--color-good, var(--ms-good)) !important; color: var(--color-surface) !important; font-size: 11.5px !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both) { row-gap: 10px !important; }
+  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-now[data-kind="pair"] .mf-face-drop { transition: none; } }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-logo > .mf-face-drop { position: absolute !important; inset: auto -14px -8px auto !important; width: 26px !important; height: 26px !important; margin: 0 !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-logo > .mf-face-drop > * { width: 20px !important; height: 20px !important; }
+  /* Dark theme: the decision kept its light tint and lost its text. */
+  .dark .ms-page .mf .mf-now[data-kind="pair"]:has(.mf-choice-group) { background: #1c2540; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-logo > .mf-face-drop { inset: auto -18px -2px auto !important; width: 24px !important; height: 24px !important; overflow: hidden; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-logo > .mf-face-drop > * { flex: none; width: 24px !important; height: 24px !important; min-width: 0 !important; transform: scale(.8); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-face-logo > .mf-face-drop img { width: 18px !important; height: 18px !important; }
 }

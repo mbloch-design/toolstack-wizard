@@ -394,9 +394,11 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 </button>)}
             <button type="button" className="mf-face" disabled={picked !== null} onClick={() => pick(index, keep?.onClick)} aria-label={keep?.ariaLabel || keep?.label}
               onPointerEnter={() => setPreview(total - other)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total - other)} onBlur={() => setPreview(null)}
-              data-state={picked === null ? undefined : picked === index ? "kept" : "gone"}>
+              data-state={picked === null ? undefined : picked === index ? "kept" : "gone"} data-best={own < other ? "" : undefined}>
               {own < other && <span className="mf-face-tag">{t("Le moins cher", "Cheaper")}</span>}
-              <span className="mf-face-logo"><ToolLogo tool={tool} size={40} />{picked === index && <span className="mf-face-check" aria-hidden="true"><Check size={16} strokeWidth={3} /></span>}</span>
+              {/* Who stays and who goes, at a glance: the kept logo, the other one crossed out at its foot. */}
+              <span className="mf-face-logo"><ToolLogo tool={tool} size={40} />{picked === index && <span className="mf-face-check" aria-hidden="true"><Check size={16} strokeWidth={3} /></span>}
+                {top.tools[1 - index] && <span className="mf-face-drop" aria-hidden="true"><ToolLogo tool={top.tools[1 - index]} size={20} /></span>}</span>
               <span className="mf-face-name">{tool.name}</span>
               {/* What the choice does to the budget: keeping one drops the other's cost. */}
               <span className="mf-face-out" data-gain={other > 0 ? "" : "0"}>{other > 0 ? `−${format(other)}${t("/mois", "/mo")}` : t("Aucune économie", "No saving")}</span>
