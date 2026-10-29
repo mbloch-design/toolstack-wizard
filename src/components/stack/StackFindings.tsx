@@ -356,8 +356,9 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           {priceAll && spend.length > 4 && <TextLink className="mf-less" onClick={() => setPriceAll(false)}>{t("Réduire", "Show less")}</TextLink>}
         </> : !items.some(item => item.kind === "price" || item.kind === "freemium") && freeTools.length !== toolCount && <p className="mf-empty">{t("Aucun abonnement payant renseigné.", "No paid plans recorded.")}</p>}
         {freeTools.length > 0 && <div className="mf-cost-complement">
+          {/* Free tools cost nothing, so they take one line: their logos side by side, the names for screen readers and on hover. */}
+          <ul className="mf-cost-zero">{freeTools.slice(0, 6).map(tool => <li key={tool.id} title={tool.name}><ToolLogo tool={tool} size={22} /><span className="sr-only">{tool.name}</span></li>)}{freeTools.length > 6 && <li className="mf-cost-more" title={freeTools.slice(6).map(tool => tool.name).join(", ")}>+{freeTools.length - 6}<span className="sr-only">{freeTools.slice(6).map(tool => tool.name).join(", ")}</span></li>}</ul>
           <p>{t(`${freeTools.length} outil${s(freeTools.length)} gratuit${s(freeTools.length)} · sans coût ajouté`, `${freeTools.length} free tool${s(freeTools.length)} · no added cost`)}</p>
-          <ul className="mf-cost-zero">{freeTools.map(tool => <li key={tool.id}><ToolLogo tool={tool} size={22} /><span>{tool.name}</span><b>{t("Gratuit", "Free")}</b></li>)}</ul>
         </div>}
         {spend.length > 0 && items.some(item => item.kind === "price" || item.kind === "freemium") && <p className="mf-cost-scope">{t("Les outils à renseigner ne sont pas inclus dans ce montant.", "Tools awaiting a price or plan are not included in this amount.")}</p>}
         {saved > 0 && <p className="mf-verdict">{icon(Check, "var(--color-pro)")}<span>{t("Budget estimé allégé de ", "Estimated budget reduced by ")}<b>{format(saved)}</b>{t(" par mois.", " a month.")}</span></p>}

@@ -41460,4 +41460,26 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-choice-both-label { white-space: nowrap !important; }
   /* At 320px five 44px touch targets need the whole width: no gap between the steps. */
   @container (max-width: 360px) { .ms-page .mf .mu-card .mu-gauge { gap: 0 !important; } }
+  /* Bento hierarchy (29/10/2026): the decision is what to do now, so it leads, wide and at its own
+     height. The budget is what those decisions produce, so it runs down the right like an order
+     summary. Usage and split fill the space under the decision; any extra height goes to them. */
+  @media (min-width: 1181px) {
+    .ms-page .mf .mf-grid:has(.mf-now):not([data-sparse]):not([data-starter]):not([data-compact]) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) !important; grid-template-rows: max-content 1fr !important; grid-template-areas: "now now price" "fit bal price" !important; }
+  }
+  /* Free tools: one line of logos, then the sentence. */
+  .ms-page .mf .mf-cost-complement { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .ms-page .mf .mf-cost-complement > p { margin: 0; }
+  .ms-page .mf .mf-cost-zero { display: flex !important; flex-direction: row !important; gap: 0 !important; margin: 0 !important; padding: 0 !important; list-style: none; }
+  .ms-page .mf .mf-cost-zero > li { display: grid !important; place-items: center; width: 30px; height: 30px; margin: 0 0 0 -6px !important; padding: 0 !important; border: 0 !important; border-radius: 9px; background: var(--color-surface); box-shadow: 0 0 0 2px var(--color-surface-soft); }
+  .ms-page .mf .mf-cost-zero > li:first-child { margin-left: 0 !important; }
+  .ms-page .mf .mf-cost-zero > .mf-cost-more { font: 600 11px/1 var(--font-ui); color: var(--color-text-secondary); }
+  /* The budget reads top-down: total, status, then its lines, with no hole in the middle. */
+  .ms-page .mf .mf-grid > .mf-card.mf-price .mf-shares { margin-top: 8px !important; }
+  /* Row 2 under the decision: the usage review on two columns. The split is an insight more than
+     a task, so it closes the bento on the full width, sentence left and chart right. */
+  @media (min-width: 1181px) {
+    .ms-page .mf .mf-grid:has(.mf-now):not([data-sparse]):not([data-starter]):not([data-compact]) { grid-template-rows: max-content max-content max-content !important; grid-template-areas: "now now price" "fit fit price" "bal bal bal" !important; }
+  }
+  /* Down the sidebar: total and lines at the top, free tools and the scope note settle at the bottom. */
+  .ms-page .mf .mf-grid > .mf-card.mf-price .mf-cost-complement { margin-top: auto !important; padding-top: 16px; }
 }
