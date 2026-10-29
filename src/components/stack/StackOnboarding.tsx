@@ -1,3 +1,4 @@
+import { Input, Button } from "@/components/ui/primitives";
 import { useEffect, useMemo, useState } from "react";
 import StackStarter, { readStarterDraft, useStackReading } from "@/components/stack/StackStarter";
 import ToolLogo from "@/components/ToolLogo";
@@ -103,7 +104,7 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
     setStep("trade");
   };
   const progress = index >= 0 && <div className="so-progress" aria-label={t(`Étape ${index + 1} sur ${STEPS.length}`, `Step ${index + 1} of ${STEPS.length}`)}>
-    <button type="button" className="so-back" onClick={() => setStep(index === 0 ? "hello" : STEPS[index - 1])}><ArrowLeft size={16} aria-hidden />{t("Retour", "Back")}</button>
+    <Button appearance="stack-back" variant="secondary" type="button" className="so-back" onClick={() => setStep(index === 0 ? "hello" : STEPS[index - 1])}><ArrowLeft size={16} aria-hidden />{t("Retour", "Back")}</Button>
     <span className="so-bars" aria-hidden="true">{STEPS.map((item, at) => <i key={item} data-on={at <= index ? "" : undefined} />)}</span>
   </div>;
 
@@ -135,9 +136,9 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
           : t("Bienvenue chez vous. Deux questions, et l’espace est à votre image. Promis, pas de formulaire de 12 pages.", "Welcome home. Two questions, and this space is yours. No 12-page form, promise.")}</p>
         {!fromAccount && <label className="so-name">
           <span>{t("Comment doit-on vous appeler ?", "What should we call you?")}</span>
-          <input type="text" value={typed} maxLength={40} autoComplete="given-name" placeholder={t("Votre prénom", "Your first name")} onChange={(event) => setTyped(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") begin(); }} />
+          <Input appearance="stack-name" type="text" value={typed} maxLength={40} autoComplete="given-name" placeholder={t("Votre prénom", "Your first name")} onChange={(event) => setTyped(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") begin(); }} />
         </label>}
-        <button type="button" className="so-primary" onClick={begin}>{t("C’est parti", "Let’s go")}<ArrowRight size={18} aria-hidden /></button>
+        <Button appearance="stack-onboarding" variant="primary" type="button" className="so-primary" onClick={begin}>{t("C’est parti", "Let’s go")}<ArrowRight size={18} aria-hidden /></Button>
       </div>
     </div>}
 
@@ -169,8 +170,8 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
           ? t(`Votre heure vaut environ ${fmt(hourly)}, sur une journée de ${HOURS_PER_DAY} heures.`, `Your hour is worth about ${fmt(hourly)}, on a ${HOURS_PER_DAY}-hour day.`)
           : t("Un ordre de grandeur suffit.", "A ballpark is enough.")}</p>
       </div>
-      <button type="button" className="so-primary" disabled={!rate} onClick={() => { keepRate(rate); setStep("tools"); }}>{t("Continuer", "Continue")}<ArrowRight size={18} aria-hidden /></button>
-      <button type="button" className="so-skip" onClick={() => { setRate(null); keepRate(null); setStep("tools"); }}>{t("Je préfère ne pas le dire", "I’d rather not say")}</button>
+      <Button appearance="stack-onboarding" variant="primary" type="button" className="so-primary" disabled={!rate} onClick={() => { keepRate(rate); setStep("tools"); }}>{t("Continuer", "Continue")}<ArrowRight size={18} aria-hidden /></Button>
+      <Button appearance="stack-skip" variant="quiet" type="button" className="so-skip" onClick={() => { setRate(null); keepRate(null); setStep("tools"); }}>{t("Je préfère ne pas le dire", "I’d rather not say")}</Button>
     </div>}
 
     {step === "tools" && current && <div className="so-step" key="tools">
@@ -206,9 +207,9 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
         <span><b>{t(`${shown.name} ou ${other.name}`, `${shown.name} or ${other.name}`)}</b><small>{why}</small></span>
       </li>)}</ul>}
       <p className="so-next">{t("La suite ? Ajoutez vos autres outils quand vous voulez. Et maintenant, profitez.", "What’s next? Add your other tools whenever you like. Now, enjoy.")}</p>
-      <button type="button" className="so-primary" onClick={() => { if (trade) saved.setTrade(trade); onOpen(picks, name ? t(`Bienvenue chez vous, ${name}. Profitez-en.`, `Welcome home, ${name}. Enjoy.`) : t("Bienvenue chez vous. Profitez-en.", "Welcome home. Enjoy.")); }}>
+      <Button appearance="stack-onboarding-ready" variant="primary" type="button" className="so-primary" onClick={() => { if (trade) saved.setTrade(trade); onOpen(picks, name ? t(`Bienvenue chez vous, ${name}. Profitez-en.`, `Welcome home, ${name}. Enjoy.`) : t("Bienvenue chez vous. Profitez-en.", "Welcome home. Enjoy.")); }}>
         <Check size={18} aria-hidden />{t("Ouvrir mon espace", "Open my space")}
-      </button>
+      </Button>
     </div>}
   </section>;
 }

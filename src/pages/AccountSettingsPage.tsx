@@ -1,3 +1,4 @@
+import { Input, Button, ButtonLink } from "@/components/ui/primitives";
 import { UserRound, ShieldCheck, Palette, Database, Settings2, Download, CheckCircle2, Sun, Moon, Check } from "@/lib/icons";
 import AccountLanguageIcon from "@/components/account/AccountLanguageIcon";
 import AccountAvatar from "@/components/account/AccountAvatar";
@@ -56,7 +57,7 @@ function ProfileEditor({
       <label htmlFor="ac-display-name">
         {t("Nom d’affichage (facultatif)", "Display name (optional)")}
       </label>
-      <input
+      <Input appearance="account"
         id="ac-display-name"
         maxLength={80}
         autoComplete="nickname"
@@ -74,12 +75,12 @@ function ProfileEditor({
         )}
       </p>
       <div className="ac-form-footer">
-      <button className="ac-button ac-button--primary" disabled={busy || name.trim() === (profile.displayName ?? "")}>
+      <Button appearance="account" variant="primary" type="submit"  disabled={busy || name.trim() === (profile.displayName ?? "")}>
         {!busy && <Check size={16} aria-hidden />}
         {busy
           ? t("Enregistrement…", "Saving…")
           : t("Enregistrer le nom", "Save name")}
-      </button>
+      </Button>
       {message && (
         <p
           role={message === "saved" ? "status" : "alert"}
@@ -254,9 +255,9 @@ export default function AccountSettingsPage() {
                       "Your profile is unavailable. Your data has not been replaced.",
                     )}
                   </p>
-                  <button className="ac-button" onClick={experience.retry}>
+                  <Button appearance="account" type="button"  onClick={experience.retry}>
                     {t("Réessayer le profil", "Retry profile")}
-                  </button>
+                  </Button>
                 </>
               )}
             </div>
@@ -314,8 +315,8 @@ export default function AccountSettingsPage() {
                 )}
               </p>
               <div className="ac-actions">
-                <button
-                  className="ac-button"
+                <Button appearance="account" type="button"
+
                   disabled={
                     !account.user?.email ||
                     resetBusy ||
@@ -325,14 +326,14 @@ export default function AccountSettingsPage() {
                   onClick={() => void requestReset()}
                 >
                   {t("Recevoir un lien de mot de passe", "Send password link")}
-                </button>
-                <button
-                  className="ac-text-button"
+                </Button>
+                <Button appearance="account" variant="quiet" type="button"
+
                   disabled={account.authBusy}
                   onClick={experience.requestSignOut}
                 >
                   {t("Me déconnecter", "Sign out")}
-                </button>
+                </Button>
               </div>
               {reset && (
                 <p
@@ -424,13 +425,13 @@ export default function AccountSettingsPage() {
             <div className="ac-section-content">
               <AccountStackStatus key={account.user?.id} />
               <div className="ac-actions">
-                <Link className="ac-button" to={`${prefix}/ma-stack`}>
+                <ButtonLink appearance="account"  to={`${prefix}/ma-stack`}>
                   {t("Ouvrir Ma stack", "Open My stack")}
-                </Link>
-                <button className="ac-button" onClick={exportStack}>
+                </ButtonLink>
+                <Button appearance="account" type="button"  onClick={exportStack}>
                   <Download size={17} aria-hidden />
                   {t("Exporter ma stack en JSON", "Export my stack as JSON")}
-                </button>
+                </Button>
               </div>
               <p className="ac-note">
                 {account.syncStatus === "synced"
@@ -459,13 +460,12 @@ export default function AccountSettingsPage() {
                     "Deletion is permanent. You will be asked to confirm.",
                   )}
                 </p>
-                <button
-                  className="ac-text-button ac-danger"
+                <Button appearance="account" variant="danger-quiet" type="button"
                   disabled={account.authBusy}
                   onClick={experience.requestDeleteAccount}
                 >
                   {t("Supprimer mon compte", "Delete my account")}
-                </button>
+                </Button>
               </div>
             </div>
           </section>

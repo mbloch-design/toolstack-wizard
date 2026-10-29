@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/primitives";
 import { Cloud } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useStackAccount } from "@/hooks/useStackAccount";
@@ -54,17 +55,17 @@ export default function StackAccountPanel({ empty = false, placement = "all" }: 
                 )}
           </p>
           <div className="ac-actions">
-            <button
-              className={account.syncStatus === "session-expired" ? "ac-button ac-button--primary" : "ac-button"}
+            <Button appearance="account" variant={account.syncStatus === "session-expired" ? "primary" : "secondary"} type="button"
+
               onClick={() => experience.openAuth(account.syncStatus === "session-expired" ? "signin" : "signup")}
             >
               {account.syncStatus === "session-expired"
                 ? t("Me reconnecter", "Sign in again")
                 : empty ? t("Créer un compte gratuit", "Create a free account") : t("Enregistrer ma stack", "Save my stack")}
-            </button>
-            {account.syncStatus !== "session-expired" && <button className="ac-text-button" onClick={() => experience.openAuth("signin")}>
+            </Button>
+            {account.syncStatus !== "session-expired" && <Button appearance="account" variant="quiet" type="button"  onClick={() => experience.openAuth("signin")}>
               {t("J’ai déjà un compte", "I already have an account")}
-            </button>}
+            </Button>}
           </div>
         </>
       ) : null}

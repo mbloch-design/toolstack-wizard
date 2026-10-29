@@ -1,3 +1,4 @@
+import { MemoryRouter } from "react-router-dom";
 import { act, fireEvent, render as rtlRender, screen } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 const mocks=vi.hoisted(()=>({legacy:vi.fn(),list:vi.fn(),detail:vi.fn(),getSession:vi.fn(),onAuthStateChange:vi.fn(),signInWithPassword:vi.fn(),signOut:vi.fn()}));
@@ -6,7 +7,7 @@ vi.mock("@/lib/backofficeAccountsApi",()=>({loadAccountsDashboard:mocks.list,loa
 vi.mock("@/lib/backofficeApi",()=>({fetchBackofficeDashboard:mocks.legacy,fetchBackofficeSessionDetail:vi.fn(),updateBackofficeEmailJob:vi.fn(),updateBackofficeSessionAdmin:vi.fn()}));
 import { StackAccountProvider } from "@/hooks/useStackAccount";
 import type { ReactNode } from "react";
-const render = (ui: ReactNode) => rtlRender(<StackAccountProvider enabled={false}>{ui}</StackAccountProvider>);
+const render = (ui: ReactNode) => rtlRender(<MemoryRouter><StackAccountProvider enabled={false}>{ui}</StackAccountProvider></MemoryRouter>);
 import BackOfficePage from "./BackOfficePage";
 import { LangContext } from "@/hooks/useLang";
 afterEach(()=>{vi.useRealTimers();vi.clearAllMocks();vi.unstubAllGlobals();vi.restoreAllMocks();});
@@ -75,4 +76,49 @@ it("reports blocked local cleanup after successful admin signout without claimin
  expect(screen.getByRole("form", { name: "Connexion administrateur" })).toBeInTheDocument();
  expect(screen.getByRole("alert")).toHaveTextContent("le navigateur a bloqué une partie du nettoyage");
  expect(screen.queryByText("La déconnexion a échoué. Réessayez.")).not.toBeInTheDocument();
+});
+
+it.each(["fr", "en"] as const)("keeps the %s administrator form disabled while pending and restores fields after an error", async lang => {
+ vi.stubGlobal("localStorage", window.sessionStorage);
+ mocks.getSession.mockResolvedValue({ data: { session: null } });
+ mocks.onAuthStateChange.mockReturnValue({ data: { subscription: { unsubscribe: vi.fn() } } });
+ let finish: (value: unknown) => void;
+ mocks.signInWithPassword.mockReturnValue(new Promise(resolve => { finish = resolve; }));
+ render(<LangContext.Provider value={{ lang, prefix: `/${lang}`, t: (fr, en) => lang === "en" ? en : fr }}><BackOfficePage /></LangContext.Provider>);
+ await act(async () => {});
+ const email = screen.getByLabelText(lang === "fr" ? "E-mail administrateur" : "Admin email");
+ const password = screen.getByLabelText(lang === "fr" ? "Mot de passe" : "Password");
+ expect(email).toHaveClass("ui-input"); expect(password).toHaveClass("ui-input");
+ email.focus(); expect(email).toHaveFocus();
+ fireEvent.change(email, { target: { value: "admin@example.test" } });
+ fireEvent.change(password, { target: { value: "wrong-password" } });
+ fireEvent.submit(screen.getByRole("form"));
+ const submit = screen.getByRole("button", { name: lang === "fr" ? "Connexion…" : "Signing in…" });
+ expect(submit).toHaveClass("ui-button"); expect(submit).toHaveAttribute("aria-busy", "true");
+ expect(submit).toBeDisabled(); expect(email).toBeDisabled(); expect(password).toBeDisabled();
+ await act(async () => { finish!({ data: { session: null }, error: new Error("Denied") }); });
+ expect(email).toBeEnabled(); expect(password).toBeEnabled();
+ const error = screen.getByRole("alert"); expect(error).toHaveTextContent("Denied");
+ expect(email).toHaveAttribute("aria-describedby", error.id);
+});
+
+it.each(["fr", "en"] as const)("keeps %s historical diagnostics on shared controls and preserves period filtering", async lang => {
+ vi.stubGlobal("localStorage", window.sessionStorage);
+ mocks.getSession.mockResolvedValue({ data: { session: { access_token: "admin-session", user: { email: "admin@example.test" } } } });
+ mocks.onAuthStateChange.mockReturnValue({ data: { subscription: { unsubscribe: vi.fn() } } });
+ mocks.list.mockResolvedValue({ totals: { accounts: 0, accountsWithStack: 0, nonemptyStacks: 0 }, topTools: [], accounts: [], page: 1, pageSize: 25, total: 0, updatedAt: "2026-10-20T12:00:00Z" });
+ mocks.legacy.mockResolvedValue({ sessions: [], emailHealth: [], recentEmailJobs: [], recentRestitutions: [], meta: { days: 30, limit: 150, persona: null, fetchedAt: "2026-10-20T12:00:00Z" } });
+ render(<LangContext.Provider value={{ lang, prefix: `/${lang}`, t: (fr, en) => lang === "en" ? en : fr }}><BackOfficePage /></LangContext.Provider>);
+ await act(async () => {});
+ fireEvent.click(screen.getByRole("button", { name: lang === "fr" ? "Diagnostic historique" : "Historical diagnostic" }));
+ await act(async () => {});
+ const period = screen.getByRole("combobox", { name: lang === "fr" ? "Période" : "Period" });
+ expect(period).toHaveClass("ui-select");
+ expect(screen.getByRole("searchbox", { name: lang === "fr" ? "Chercher une session" : "Search sessions" })).toHaveClass("ui-input");
+ fireEvent.change(period, { target: { value: "7" } });
+ await act(async () => {});
+ expect(mocks.legacy).toHaveBeenLastCalledWith("admin-session", { days: 7, limit: 150, persona: null });
+ const quality = screen.getByRole("button", { name: lang === "fr" ? "Qualité" : "Quality" });
+ expect(quality).toHaveClass("ui-button"); fireEvent.click(quality);
+ expect(quality).toHaveAttribute("aria-pressed", "true");
 });

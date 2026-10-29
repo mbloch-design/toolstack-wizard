@@ -1,3 +1,4 @@
+import { Button, Input } from "@/components/ui/primitives";
 import { loadStackPage } from "@/lib/stackPageLoader";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { useLang } from "@/hooks/useLang";
@@ -136,10 +137,11 @@ export default function AccountAuthForm({
                   : ACCOUNT_GITHUB_ENABLED;
               const name = provider === "google" ? "Google" : "GitHub";
               return (
-                <button
+                <Button appearance="account-provider"
                   type="button"
-                  className={`ac-button ac-provider ac-provider--${provider}`}
+                  className={`ac-provider ac-provider--${provider}`}
                   key={provider}
+                  icon={<AccountProviderIcon provider={provider} />}
                   disabled={disabled || !ready}
                   onClick={() =>
                     void run(() =>
@@ -147,14 +149,13 @@ export default function AccountAuthForm({
                     )
                   }
                 >
-                  <AccountProviderIcon provider={provider} />
                   <span>{t(`Continuer avec ${name}`, `Continue with ${name}`)}</span>
                   {!ready && (
                     <small>
                       {t("Bientôt disponible", "Not available yet")}
                     </small>
                   )}
-                </button>
+                </Button>
               );
             })}
           </div>
@@ -174,16 +175,16 @@ export default function AccountAuthForm({
         </>
       )}
       {step === "providers" && (
-        <button
+        <Button appearance="account"
           type="button"
-          className="ac-button"
+
           disabled={disabled}
           onClick={() => setStep("email")}
         >
           <Mail size={20} aria-hidden />
           {t("Continuer avec l’e-mail", "Continue with email")}
           <ArrowRight size={17} aria-hidden />
-        </button>
+        </Button>
       )}
       {(step === "email" || step === "reset") && (
         <form className="ac-form" onSubmit={submit}>
@@ -198,7 +199,7 @@ export default function AccountAuthForm({
           <label htmlFor={`${id}-email`}>
             {t("Adresse e-mail", "Email address")}
           </label>
-          <input
+          <Input appearance="account"
             ref={emailRef}
             id={`${id}-email`}
             type="email"
@@ -215,7 +216,7 @@ export default function AccountAuthForm({
                 {t("Mot de passe", "Password")}
               </label>
               <div className="ac-password">
-                <input
+                <Input appearance="account-password"
                   id={`${id}-password`}
                   type={show ? "text" : "password"}
                   autoComplete={
@@ -227,9 +228,9 @@ export default function AccountAuthForm({
                   disabled={disabled}
                   onChange={(event) => setPassword(event.target.value)}
                 />
-                <button
+                <Button appearance="account" variant="quiet"
                   type="button"
-                  className="ac-text-button"
+
                   aria-label={
                     show
                       ? t("Masquer le mot de passe", "Hide password")
@@ -239,7 +240,7 @@ export default function AccountAuthForm({
                   onClick={() => setShow(!show)}
                 >
                   {show ? t("Masquer", "Hide") : t("Afficher", "Show")}
-                </button>
+                </Button>
               </div>
               {mode === "signup" ? (
                 <p className="ac-note">
@@ -249,8 +250,8 @@ export default function AccountAuthForm({
                   )}
                 </p>
               ) : (
-                <button
-                  className="ac-text-button"
+                <Button appearance="account" variant="quiet"
+
                   type="button"
                   onClick={() => {
                     setPassword("");
@@ -259,12 +260,12 @@ export default function AccountAuthForm({
                   }}
                 >
                   {t("Mot de passe oublié ?", "Forgot password?")}
-                </button>
+                </Button>
               )}
             </>
           )}
-          <button
-            className="ac-button ac-button--primary"
+          <Button appearance="account" variant="primary"
+
             type="submit"
             disabled={disabled || (step === "reset" && cooldown > 0)}
           >
@@ -275,7 +276,7 @@ export default function AccountAuthForm({
                 : mode === "signup"
                   ? t("Créer mon compte", "Create my account")
                   : t("Se connecter", "Sign in")}
-          </button>
+          </Button>
         </form>
       )}
       {step === "confirm" && (
@@ -290,8 +291,8 @@ export default function AccountAuthForm({
         </div>
       )}
       {(step === "confirm" || error === "ACCOUNT_EMAIL_UNCONFIRMED") && (
-        <button
-          className="ac-button"
+        <Button appearance="account"
+
           type="button"
           disabled={disabled || cooldown > 0}
           onClick={() =>
@@ -303,7 +304,7 @@ export default function AccountAuthForm({
         >
           {t("Renvoyer le lien de confirmation", "Resend confirmation link")}
           {cooldown > 0 ? ` (${cooldown}s)` : ""}
-        </button>
+        </Button>
       )}
       {error && (
         <p className="ac-error" role="alert">
@@ -325,9 +326,9 @@ export default function AccountAuthForm({
       )}
       <div className="ac-auth-footer">
         {step === "confirm" || step === "reset" ? (
-          <button
+          <Button appearance="account" variant="quiet"
             type="button"
-            className="ac-text-button"
+
             onClick={() => {
               setPassword("");
               setStep("email");
@@ -337,7 +338,7 @@ export default function AccountAuthForm({
             }}
           >
             {t("Retour à la connexion", "Back to sign in")}
-          </button>
+          </Button>
         ) : (
           <>
             <span>
@@ -345,9 +346,9 @@ export default function AccountAuthForm({
                 ? t("Pas encore de compte ?", "New to ToolTrim?")
                 : t("Déjà un compte ?", "Already have an account?")}
             </span>
-            <button
+            <Button appearance="account" variant="quiet"
               type="button"
-              className="ac-text-button"
+
               onClick={() =>
                 onModeChange(mode === "signin" ? "signup" : "signin")
               }
@@ -355,7 +356,7 @@ export default function AccountAuthForm({
               {mode === "signin"
                 ? t("Créer un compte", "Create an account")
                 : t("Se connecter", "Sign in")}
-            </button>
+            </Button>
           </>
         )}
       </div>

@@ -1,3 +1,4 @@
+import { Button, Input, PageHeader } from "@/components/ui/primitives";
 import { useEffect, useId, useRef, useState } from "react";
 import { useLang } from "@/hooks/useLang";
 import {
@@ -251,12 +252,11 @@ export function AccountsDashboard({
                 "Data unavailable. Accounts could not be loaded.",
               )}
         </p>
-        <button
-          className="mk-button tt-button-secondary bo-button"
+        <Button variant="secondary"
           onClick={retry}
         >
           {t("Réessayer", "Retry")}
-        </button>
+        </Button>
       </div>
     </div>
   );
@@ -269,9 +269,9 @@ export function AccountsDashboard({
         className="bo-navigation"
         aria-label={t("Navigation du back-office", "Back-office navigation")}
       >
-        <div className="mk-segmented bo-navigation-items">
+        <div className="bo-switches bo-navigation-items">
           {navigation.map((item) => (
-            <button
+            <Button variant={view === item.id ? "primary" : "secondary"}
               type="button"
               key={item.id}
               aria-current={view === item.id ? "page" : undefined}
@@ -280,29 +280,24 @@ export function AccountsDashboard({
             >
               <item.icon size={16} aria-hidden />
               {item.label}
-            </button>
+            </Button>
           ))}
         </div>
         {onOpenHistory && (
-          <button
+          <Button variant="quiet"
             type="button"
-            className="mk-link bo-history"
+            className="bo-history"
             onClick={() => { if (catalogDirty) { setNavigationError(true); return; } onOpenHistory(); }}
           >
             <FileText size={16} aria-hidden />
             {t("Diagnostic historique", "Historical diagnostic")}
-          </button>
+          </Button>
         )}
       </nav>
       <div className="bo-content">
         {navigationError && <p role="alert">{t("Enregistrez ou abandonnez les modifications de la fiche avant de quitter cet écran.", "Save or discard your record edits before leaving this screen.")}</p>}
-        <header className="bo-page-heading ac-page-header">
-          <div>
-            <h1>{title}</h1>
-            <p>{description}</p>
-          </div>
-          {view !== "catalog" && <button
-            className="mk-button tt-button-secondary bo-button"
+        <PageHeader className="bo-page-heading" title={title} description={description}
+          actions={view !== "catalog" && <Button variant="secondary"
             onClick={() => {
               setOverview(null);
               setReload((value) => value + 1);
@@ -311,8 +306,7 @@ export function AccountsDashboard({
           >
             <RefreshCw size={16} aria-hidden />
             {t("Actualiser", "Refresh")}
-          </button>}
-        </header>
+          </Button>} />
         {view === "catalog" && <CatalogEditor onDirtyChange={setCatalogDirty} />}
         {(view === "overview" || view === "stacks") &&
           (overviewError ? (
@@ -347,7 +341,7 @@ export function AccountsDashboard({
             </label>
             <div className="bo-search-field">
               <Search size={18} aria-hidden />
-              <input
+              <Input
                 id={searchId}
                 type="search"
                 value={input}
@@ -358,12 +352,11 @@ export function AccountsDashboard({
                 )}
               />
             </div>
-            <button
-              className="mk-button tt-button-primary bo-button bo-button-primary"
+            <Button variant="primary"
               type="submit"
             >
               {t("Rechercher", "Search")}
-            </button>
+            </Button>
           </form>
           {loading && (
             <p className="bo-loading" role="status">
@@ -479,15 +472,15 @@ export function AccountsDashboard({
                               {date(account.stackUpdatedAt, lang)}
                             </td>
                             <td>
-                              <button
-                                className="mk-button tt-button-secondary bo-button bo-open-user"
+                              <Button variant="secondary"
+                                className="bo-open-user"
                                 id={`${searchId}-${account.userId}`}
                                 onClick={() => openUser(account.userId)}
                                 aria-label={`${t("Voir la stack de", "View stack for")} ${account.email || account.userId}`}
                               >
                                 <span>{t("Ouvrir", "Open")}</span>
                                 <ArrowRight size={16} aria-hidden />
-                              </button>
+                              </Button>
                             </td>
                           </tr>
                         ))}
@@ -511,22 +504,20 @@ export function AccountsDashboard({
                       {t("Page", "Page")} {data.page}/{pages}
                     </p>
                     <div>
-                      <button
-                        className="mk-button tt-button-secondary bo-button"
+                      <Button variant="secondary"
                         aria-label={t("Page précédente", "Previous page")}
                         disabled={loading || page <= 1}
                         onClick={() => setPage((value) => value - 1)}
                       >
                         {t("Précédente", "Previous")}
-                      </button>
-                      <button
-                        className="mk-button tt-button-secondary bo-button"
+                      </Button>
+                      <Button variant="secondary"
                         aria-label={t("Page suivante", "Next page")}
                         disabled={loading || page >= pages}
                         onClick={() => setPage((value) => value + 1)}
                       >
                         {t("Suivante", "Next")}
-                      </button>
+                      </Button>
                     </div>
                   </nav>
                 </div>
@@ -542,12 +533,11 @@ export function AccountsDashboard({
                         <p role="status">
                           {t("Chargement du détail…", "Loading detail…")}
                         </p>
-                        <button
-                          className="mk-button tt-button-secondary bo-button"
+                        <Button variant="secondary"
                           onClick={closeDetail}
                         >
                           {t("Fermer le détail", "Close detail")}
-                        </button>
+                        </Button>
                       </div>
                     ) : detailError ? (
                       <div className="bo-detail">
@@ -563,21 +553,19 @@ export function AccountsDashboard({
                                   "Detail unavailable.",
                                 )}
                           </p>
-                          <button
-                            className="mk-button tt-button-secondary bo-button"
+                          <Button variant="secondary"
                             onClick={() =>
                               setDetailReload((value) => value + 1)
                             }
                           >
                             {t("Réessayer le détail", "Retry detail")}
-                          </button>
+                          </Button>
                         </div>
-                        <button
-                          className="mk-button tt-button-secondary bo-button"
+                        <Button variant="secondary"
                           onClick={closeDetail}
                         >
                           {t("Fermer le détail", "Close detail")}
-                        </button>
+                        </Button>
                       </div>
                     ) : detail ? (
                       <AccountDetailPanel
@@ -593,12 +581,11 @@ export function AccountsDashboard({
                             "This account is no longer available.",
                           )}
                         </p>
-                        <button
-                          className="mk-button tt-button-secondary bo-button"
+                        <Button variant="secondary"
                           onClick={closeDetail}
                         >
                           {t("Fermer le détail", "Close detail")}
-                        </button>
+                        </Button>
                       </div>
                     )}
                   </section>

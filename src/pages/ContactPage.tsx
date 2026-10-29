@@ -1,3 +1,4 @@
+import { Button, ButtonLink, Input, Select, Textarea } from "@/components/ui/primitives";
 import { useEffect, useState, useRef } from "react";
 import { Navigate, useSearchParams } from "react-router-dom";
 import { Link } from "@/lib/routerLinks";
@@ -131,9 +132,9 @@ const ContactPage = () => {
                   )}
             </p>
             <div className="tt-page-hero-cta">
-              <Link to={`${prefix}/tools`} className="tt-button-primary">
+              <ButtonLink variant="primary" appearance="public" size="compact" to={`${prefix}/tools`} >
                 {t("Explorer le catalogue →", "Browse the catalog →")}
-              </Link>
+              </ButtonLink>
               <Link to={`${prefix}/comparatifs`} className="ab-cta-secondary">
                 {t("Voir les comparatifs", "See the comparisons")}
               </Link>
@@ -207,11 +208,11 @@ const ContactPage = () => {
                 <div className="cn-form-row">
                   <div className="tt-form-field">
                     <label htmlFor="contact-tool-name" className="tt-form-label">{t("Nom de l'outil", "Tool name")}</label>
-                    <input id="contact-tool-name" name="toolName" type="text" required maxLength={100} placeholder="Acme" className="tt-form-input" />
+                    <Input appearance="public-form" id="contact-tool-name" name="toolName" type="text" required maxLength={100} placeholder="Acme"  />
                   </div>
                   <div className="tt-form-field">
                     <label htmlFor="contact-tool-url" className="tt-form-label">{t("Site officiel", "Official website")}</label>
-                    <input id="contact-tool-url" name="toolUrl" type="url" required maxLength={300} placeholder="https://…" className="tt-form-input" inputMode="url" />
+                    <Input appearance="public-form" id="contact-tool-url" name="toolUrl" type="url" required maxLength={300} placeholder="https://…"  inputMode="url" />
                   </div>
                 </div>
               )}
@@ -219,37 +220,37 @@ const ContactPage = () => {
               {isToolSubmission && (
                 <div className="tt-form-field">
                   <label htmlFor="contact-role" className="tt-form-label">{t("Ton lien avec l'outil", "Your relationship to the tool")}</label>
-                  <select id="contact-role" name="submitterRole" required defaultValue="" className="tt-form-input">
+                  <Select appearance="public-form" id="contact-role" name="submitterRole" required defaultValue="" >
                     <option value="" disabled>{t("Sélectionner…", "Select…")}</option>
                     <option value="founder">{t("Fondateur·rice / équipe", "Founder / team")}</option>
                     <option value="user">{t("Utilisateur·rice", "User")}</option>
                     <option value="agency">{t("Agence / partenaire", "Agency / partner")}</option>
                     <option value="other">{t("Autre", "Other")}</option>
-                  </select>
+                  </Select>
                 </div>
               )}
               <div className="cn-form-row">
                 <div className="tt-form-field">
                   <label htmlFor="contact-name" className="tt-form-label">{t("Nom", "Name")}</label>
-                  <input
+                  <Input appearance="public-form"
                     id="contact-name"
                     name="name"
                     type="text"
                     required
                     placeholder={t("Ton nom", "Your name")}
-                    className="tt-form-input"
+
                     autoComplete="name"
                   />
                 </div>
                 <div className="tt-form-field">
                   <label htmlFor="contact-email" className="tt-form-label">Email</label>
-                  <input
+                  <Input appearance="public-form"
                     id="contact-email"
                     name="email"
                     type="email"
                     required
                     placeholder="you@example.com"
-                    className="tt-form-input"
+
                     autoComplete="email"
                   />
                 </div>
@@ -260,14 +261,14 @@ const ContactPage = () => {
               ) : (
                 <div className="tt-form-field">
                   <label htmlFor="contact-subject" className="tt-form-label">{t("Sujet", "Subject")}</label>
-                  <input
+                  <Input appearance="public-form"
                     id="contact-subject"
                     name="subject"
                     type="text"
                     required
                     maxLength={160}
                     placeholder={t("En quelques mots…", "In a few words…")}
-                    className="tt-form-input"
+
                     defaultValue={initialSubject}
                   />
                 </div>
@@ -277,7 +278,7 @@ const ContactPage = () => {
                 <label htmlFor="contact-message" className="tt-form-label">
                   {isToolSubmission ? t("Description courte", "Short description") : "Message"}
                 </label>
-                <textarea
+                <Textarea appearance="public-form"
                   id="contact-message"
                   name="message"
                   required
@@ -286,7 +287,7 @@ const ContactPage = () => {
                   placeholder={isToolSubmission
                     ? t("À qui s'adresse l'outil, quel problème résout-il et qu'est-ce qui le distingue ?", "Who is the tool for, what problem does it solve, and what makes it different?")
                     : t("Décris ta demande…", "Describe your request…")}
-                  className="tt-form-input tt-form-textarea"
+
                 />
               </div>
 
@@ -321,7 +322,7 @@ const ContactPage = () => {
                   </div>
                   <div className="tt-form-field">
                     <label htmlFor="contact-badge-url" className="tt-form-label">{t("URL où le badge est visible", "URL where the badge is visible")}</label>
-                    <input id="contact-badge-url" name="badgeUrl" type="url" required maxLength={300} placeholder="https://…" className="tt-form-input" inputMode="url" />
+                    <Input appearance="public-form" id="contact-badge-url" name="badgeUrl" type="url" required maxLength={300} placeholder="https://…"  inputMode="url" />
                   </div>
                   <p className="cn-badge-disclosure">{t("Le badge accélère uniquement la revue. Il ne garantit ni la publication, ni une meilleure note, ni un meilleur classement.", "The badge only speeds up review. It does not guarantee publication, a higher score, or better ranking.")}</p>
                 </div>
@@ -338,17 +339,17 @@ const ContactPage = () => {
               )}
 
               <div className="cn-form-actions">
-                <button
+                <Button variant="primary" appearance="public" size="compact"
                   type="submit"
                   disabled={status === "submitting"}
-                  className="tt-button-primary"
+
                 >
                   {status === "submitting"
                     ? t("Envoi…", "Sending…")
                     : isToolSubmission
                       ? t("Proposer cet outil →", "Submit this tool →")
                       : t("Envoyer le message →", "Send the message →")}
-                </button>
+                </Button>
               </div>
             </form>
 

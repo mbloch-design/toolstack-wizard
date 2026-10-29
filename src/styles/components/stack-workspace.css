@@ -1,0 +1,72 @@
+
+
+  .ms-page { max-width: 1440px; margin: 0 auto; padding: var(--space-2xl) var(--space-2xl) var(--space-3xl); color: hsl(var(--foreground)); font-family: var(--font-ui); }
+
+  .ms-empty-copy { font-size: var(--tt-size-body-large); line-height: 1.5; }
+
+  .ms-empty-copy { max-width: 620px; margin: var(--space-2xl) 0 var(--space-lg); }
+
+  .ms-search { max-width: 680px; margin: 0 0 var(--space-xl); }
+
+  .ms-search-input { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-xs) var(--space-md); border: 1px solid hsl(var(--border)); border-radius: var(--tt-surface-radius-info); background: hsl(var(--card)); }
+
+  .ms-search-input:focus-within { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
+
+  .ms-search-status { padding: var(--space-sm) var(--space-md) var(--space-xs); font-size: var(--tt-size-card-body); }
+
+  .ms-results { list-style: none; padding: 0; }
+
+  .ms-results li { display: flex; align-items: center; gap: var(--space-sm); padding: var(--space-xs) var(--space-md); border-bottom: 1px solid hsl(var(--border)); }
+
+  .ms-results a { flex: 1; padding: var(--space-xs) 0; font-weight: 600; }
+
+  .ms-results button, .ms-icon-action { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: var(--tt-surface-radius-info); flex-shrink: 0; }
+
+  .ms-results button:hover:not(:disabled), .ms-icon-action:hover { background: hsl(var(--secondary)); }
+
+  .ms-results button:disabled { opacity: 0.55; }
+
+  .ms-domain-filters { display: flex; flex: 1; min-width: 0; gap: var(--space-lg); overflow-x: auto; scrollbar-width: thin; }
+
+  .ms-domain-filters button { display: inline-flex; align-items: center; flex-shrink: 0; gap: var(--space-xs); min-height: 60px; padding: var(--space-sm) 0; border-bottom: 2px solid transparent; white-space: nowrap; color: hsl(var(--muted-foreground)); font-size: var(--tt-size-card-body); font-weight: 500; }
+
+  .ms-domain-filters button[aria-pressed="true"] { color: hsl(var(--foreground)); border-bottom-color: hsl(var(--foreground)); font-weight: 600; }
+
+  .ms-domain-filters button > span { display: inline-flex; align-items: center; justify-content: center; min-width: 24px; height: 24px; padding: 0 var(--space-2xs); border-radius: var(--radius-pill); background: hsl(var(--secondary)); font-size: var(--tt-size-kicker); color: hsl(var(--foreground)); }
+
+  .ms-tool { display: flex; align-items: center; text-align: left; gap: var(--space-sm); min-width: 0; width: 100%; padding: var(--space-xs) var(--space-sm); border-radius: var(--tt-surface-radius-info); background: transparent; transition: background 160ms ease; }
+
+  .ms-tool:hover, .ms-tool--selected { background: hsl(var(--secondary)); }
+
+  .ms-tool--selected { outline: 1px solid hsl(var(--border)); }
+  .ms-storage-notice { font-size: var(--tt-size-card-body); line-height: 1.5; margin-bottom: var(--space-lg); }
+
+  .ms-unavailable { margin-top: var(--space-xl); }
+
+  .ms-unavailable > p { font-size: var(--tt-size-card-body); margin-bottom: var(--space-md); }
+
+  .ms-unavailable > div { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); padding: var(--space-xs) 0; border-bottom: 1px solid hsl(var(--border)); overflow-wrap: anywhere; }
+
+  .ms-unavailable button { min-height: 44px; flex-shrink: 0; font-size: var(--tt-size-card-body); }
+
+  .ms-page button:focus-visible, .ms-page a:focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 3px; }
+  @media (max-width: 639px) {
+  .ms-page { padding: var(--space-lg) var(--space-md) var(--space-2xl); }
+
+  .ms-domain-filters { gap: var(--space-md); }
+
+  .ms-empty-copy { font-size: var(--tt-size-body); }
+
+  .ms-empty-copy { margin-top: var(--space-lg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+  .ms-tool { transition: none; } }
+  .ms-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--space-md); margin-top: var(--space-md); }
+  .ms-tool.ms-tool-card { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; column-gap: var(--space-sm); row-gap: var(--space-xs); padding: var(--space-md); background: hsl(var(--secondary) / .4); border: 1px solid transparent; border-radius: var(--tt-surface-radius-info); align-items: start; align-content: start; transition: background 160ms ease, border-color 160ms ease; }
+  .ms-tool-card > :first-child { grid-column: 1; grid-row: 1 / 3; }
+  .ms-tool.ms-tool-card:hover { background: hsl(var(--secondary)); }
+  .ms-tool.ms-tool-card.ms-tool--selected { background: hsl(var(--secondary)); border-color: hsl(var(--foreground)); }
+  .ms-tool-card:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: 3px; }
+  @media (max-width: 639px) {
+    .ms-card-grid { grid-template-columns: 1fr; }
+  }

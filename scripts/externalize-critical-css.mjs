@@ -26,17 +26,10 @@ const walk = (directory) => {
 };
 walk(distDir);
 
-// Chaque bloc critique est construit comme `utilityCss` + `criticalCss`, ou la
-// seconde moitie est identique partout (voir extractCriticalCss dans
-// vite.config.ts). Externalisee telle quelle, cette part constante etait donc
-// recopiee dans chacun des ~780 fichiers emis. C'est ce qui a fait passer le
-// budget CSS au-dessus de 30 Mio et casser le deploiement.
-//
-// Le suffixe est partage dans un socle. Tailwind 4 laisse egalement un long
-// prefixe commun aux pages de contenu ; il est partage seulement sur ces pages.
-// Les trois fragments restent dans leur ordre initial : prefixe, page, socle.
-
+// Share only complete AST boundaries and keep stylesheet order. Retain CSS
+// variants, not thousands of full prerendered HTML documents, in memory.
 const documents = [];
+const variants = new Map();
 let alreadyExternal = 0;
 let standalone = 0;
 
@@ -48,7 +41,13 @@ for (const htmlPath of htmlFiles) {
     else standalone += 1;
     continue;
   }
-  documents.push({ htmlPath, html, css: match[1] });
+  const css = match[1];
+  let variant = variants.get(css);
+  if (!variant) {
+    variant = { css };
+    variants.set(css, variant);
+  }
+  documents.push({ htmlPath, css: variant.css });
 }
 
 // Seuil : en dessous, le round-trip reseau supplementaire ne vaut pas l'octet
@@ -69,7 +68,8 @@ const emitted = new Map();
 let converted = 0;
 let inlineBytes = 0;
 
-for (const [index, { htmlPath, html, css }] of documents.entries()) {
+for (const [index, { htmlPath, css }] of documents.entries()) {
+  const html = fs.readFileSync(htmlPath, "utf8");
   const { own, hasPrefix } = split.parts[index];
   const hash = crypto.createHash("sha256").update(own).digest("hex").slice(0, 16);
   const fileName = `critical-${hash}.css`;

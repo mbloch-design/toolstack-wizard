@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
 import { ChevronLeft } from "@/lib/icons";
-import Segmented from "@/components/motion/Segmented";
+import { Segmented } from "@/components/ui/primitives";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
 import { convertAmount, CURRENCY_RATE_DATE, formatAmount, type Currency } from "@/lib/currencyRates";
 import { toolMonthlyCost } from "@/lib/stackCost";
@@ -94,8 +94,8 @@ export default function StackBudgetBreakdown({ territories: all, colorOf, paid, 
         </div>
         {zoomed
           ? <button type="button" className="ms-zoom-back" onClick={() => { setZoom(null); setFocus(null); }}><ChevronLeft size={16} aria-hidden />{en ? "All areas" : "Tous les domaines"}</button>
-          : total > 0 && areaLines.length > 1 && <Segmented ariaLabel={en ? "Breakdown" : "Répartition"} value={view}
-            options={[{ value: "area", label: en ? "Areas" : "Domaines" }, { value: "tool", label: en ? "Tools" : "Outils" }]}
+          : total > 0 && areaLines.length > 1 && <Segmented appearance="stack" size="compact" mode="toggle" label={en ? "Breakdown" : "Répartition"} value={view}
+            options={[{ id: "area", label: en ? "Areas" : "Domaines" }, { id: "tool", label: en ? "Tools" : "Outils" }]}
             onChange={(key) => { setView(key); setFocus(null); }} />}
       </header>
       {total > 0 && <div className="sg-budget-viz sg-budget-viz--share" onMouseLeave={() => setFocus(null)}>

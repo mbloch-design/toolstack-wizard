@@ -1,0 +1,418 @@
+
+  :root {
+    --tt-size-control-small: 13px;
+    --radius-control-lifecycle: 10px;
+    --tt-size-stack-invoice: 26px;
+    --tt-size-control-search: 17px;
+    --tt-size-control-name: 18px;
+    --tt-size-control-segmented: 13.5px;
+    --color-action-hover: #3A3A38;
+    --color-action-danger: #ad302b;
+    /* ────────────────────────────────────────────
+       DESIGN TOKENS — Awwwards editorial palette
+       ToolTrim blue is the ONLY accent colour.
+    ──────────────────────────────────────────── */
+
+    /* ── Page / surface ── */
+    --background: 0 20% 99%;         /* #FDFCFC — soft near-white */
+    --foreground: 240 3% 12%;        /* #1D1D1F — main text */
+
+    --card: 0 0% 100%;               /* #FFFFFF — pure white cards */
+    --card-foreground: 240 3% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 3% 12%;
+
+    /* ── ToolTrim blue — sole accent, use sparingly ── */
+    --primary: 224 76% 50%;          /* #1E4FCC — active, selected, links, rare CTAs */
+    --primary-foreground: 0 0% 100%;
+
+    /* ── Secondary / muted surfaces ── */
+    --secondary: 60 15% 94%;         /* #F1F1EC — secondary surface */
+    --secondary-foreground: 240 3% 12%;
+
+    --muted: 60 15% 94%;             /* #F1F1EC */
+    --muted-foreground: 240 3% 12%;  /* high-contrast secondary copy */
+
+    /* ── Accent tint (blue, very light) ── */
+    --accent: 224 76% 96%;           /* near-white blue tint */
+    --accent-foreground: 224 76% 44%;
+
+    /* ── Status ── */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* ── Borders ── */
+    --border: 60 7% 84%;             /* #DADAD4 — standard */
+    --input:  60 7% 84%;
+    --ring:   224 76% 50%;           /* ToolTrim blue focus ring */
+
+    /* ── Radius ── */
+    /* ── Radius scale ──
+       Seven steps, nothing between them. Before this, 19 distinct radii were
+       in use (2,3,4,5,6,7,9,10,11,12,13,14,16,18,20,22,24,28px): nobody can
+       tell 6px from 7px, so pick the nearest step — never a new value. */
+    --radius-xs:   0.25rem;            /* 4px  — chips, tiny controls */
+    --radius-sm:   0.375rem;           /* 6px  — inputs, small buttons */
+    --radius:      0.5rem;             /* 8px  — default */
+    --radius-card: 0.5rem;             /* 8px  — cards, editorial */
+    --radius-md:   0.75rem;            /* 12px — panels */
+    --radius-lg:   1rem;               /* 16px — large cards */
+    --radius-xl:   1.25rem;            /* 20px — hero surfaces */             /* 24px — full-bleed blocks */
+    --radius-pill: 9999px;             /* pill badges / filters */
+    --radius-circle: 50%;              /* avatars, dots, round buttons */
+    --radius-2xs: 2px;
+    --radius-stack-plan: 14px;
+    --radius-stack-pair-logo: 9px;
+    --radius-stack-card: 22px;
+    --radius-surface: 24px;              /* large editorial cards */
+    --radius-2xl: 28px;                  /* Apple-style product cards */
+    --radius-stack-card-mobile: 18px;
+    --radius-stack-logo: 13px;
+    --radius-stack-logo-mobile: 11px;
+    --color-stack-accent-fallback: #8E8E93;
+    --color-stack-saving: #0E9F6E;
+    --color-stack-overlap: #E8590C;
+
+    /* ── Component heights ── */
+    --h-btn:   56px;                   /* primary/secondary button */
+    --h-input: 56px;                   /* input fields */
+    --h-btn-sm: 40px;                  /* compact button */
+    --navbar-h: 68px;                  /* fixed navbar height — canonical */
+    --header-height: var(--navbar-h);  /* alias — same value */
+
+    /* ── Layout grid tokens ──────────────────────
+       Usage: @layer components → .layout-shell, .layout-content, etc.
+       All containers use the same --layout-gutter → one breakpoint to rule them all.
+    ─────────────────────────────────────────── */
+    --layout-max:            1440px;   /* full-width shell (hero backgrounds, CTA bands) */
+    /* Editorial content column (guides, articles, tools). Was a hard
+       1280px cap, which left an ever-growing idle margin on wide desktop
+       screens once the viewport passed ~1280px + gutters — the column
+       just stopped growing while the screen kept getting wider. Clamp
+       lets it keep expanding with the viewport (still 1280px minimum,
+       same as before, on anything narrower) up to a 1600px ceiling so
+       it doesn't stretch into unreadable line lengths on ultra-wide
+       monitors either. */
+    --layout-content:        clamp(1280px, 90vw, 1600px);
+    --layout-article:        760px;    /* article text column */
+    --layout-sidebar:        260px;    /* article TOC sidebar */
+    --layout-tool-sidebar:   360px;    /* tool page sticky card */
+    --layout-gutter:         48px;     /* horizontal padding — desktop */
+    --layout-gutter-tablet:  32px;
+    --layout-gutter-mobile:  20px;
+
+    /* ── Spacing scale ── */
+    --space-2xs: 4px;
+    --space-xs:  8px;
+    --space-sm:  12px;
+    --space-md:  16px;
+    --space-lg:  24px;
+    --space-xl:  32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    --space-4xl: 96px;
+
+    /* ── Semantic overrides ── */
+    --savings: 224 76% 50%;          /* ToolTrim blue — featured savings */
+    --savings-foreground: 0 0% 100%;
+    --cancel: 0 72% 55%;
+    --cancel-foreground: 0 0% 100%;
+    --keep: 142 60% 38%;
+    --keep-foreground: 0 0% 100%;
+
+    /* ── Sidebar ── */
+    --sidebar-background: 0 20% 99%;
+    --sidebar-foreground: 240 3% 12%;
+    --sidebar-primary: 224 76% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 60 15% 94%;
+    --sidebar-accent-foreground: 240 3% 12%;
+    --sidebar-border: 60 7% 84%;
+    --sidebar-ring: 224 76% 50%;
+
+    /* ── Font families ── */
+    --font-brand: "Uncut Sans", system-ui, sans-serif;
+    --font-ui:    "Inter Tight", "Inter", system-ui, sans-serif;
+
+    /* ────────────────────────────────────────────
+       SEMANTIC PALETTE REFERENCE (hex aliases)
+       Use with color: var(--color-*) in custom CSS.
+       For Tailwind, use the tokens above.
+    ──────────────────────────────────────────── */
+    /* Identity marks retain their fixed colours in both themes. */
+    --color-flag-white: #FFFFFF;
+    --color-flag-fr-blue: #24469c;
+    --color-flag-fr-red: #e34a4a;
+    --color-flag-en-blue: #203b77;
+    --color-flag-en-red: #d84747;
+    --color-google-blue: #4285F4;
+    --color-google-green: #34A853;
+    --color-google-yellow: #FBBC05;
+    --color-google-red: #EA4335;
+    --color-stack-tools-soft: #ebeffc;
+    --color-stack-tools-ink: #315fc4;
+    --color-stack-budget-soft: #f6eddd;
+    --color-stack-budget-ink: #865b19;
+    --color-stack-overlap-soft: #e9f0e9;
+    --color-stack-overlap-ink: #3a704e;
+    --color-chart-create: #2A78D6;
+    --color-chart-automation: #6250D6;
+    --color-chart-market: #E87BA4;
+    --color-chart-empty: #C7C7CC;
+    --color-bg:            #FFFFFF;
+    --color-surface:       #FFFFFF;
+    --color-surface-soft:  #F5F5F7;
+    --color-chip:          #E0DBD7;    /* deeper warm taupe — tags/badges, one notch past surface-soft */
+    /* Palette warm greys (CLAUDE.md): page backgrounds and secondary surfaces. */
+    --color-bg-warm:       #F6F5F4;
+    --color-surface-warm:  #EDEBE9;
+
+    --color-text:          #1D1D1F;
+    --color-text-strong:   #1D1D1F;
+    --color-muted:         #1D1D1F;
+    --color-muted-light:   #1D1D1F;
+    /* Secondary tones (Michael, 8 Oct 2026): body copy and metadata only,
+       never titles; both pass AA on #FFFFFF and #F6F5F4. */
+    --color-text-secondary: #424245;
+    --color-text-meta:      #6F6F68;
+    --color-title-accent:   #6E6E73;  /* muted second half of a headline */
+    --color-live:           #22B35E;  /* "in progress" status dot */
+    --color-live-text:      #1E7A46;
+    --color-pro:            #1E7A46;  /* "for" accent: verdict sheets */
+    --color-pro-soft:       #EAF6EE;
+    --color-con:            #B4530A;  /* "against" accent */
+    --color-con-soft:       #FCF1E7;
+    --color-on-primary:     #FFFFFF;  /* text on the ToolTrim blue */
+    /* Alerte « payé en double » : orange brûlé, 5:1 sur blanc. */
+    --color-alert:          #BE490A;
+
+    --color-border:        #E6E6E6;
+    --color-border-soft:   #E7E7E0;
+    --color-border-strong: #1D1D1F;
+
+    --color-hover:         #1D1D1F;
+    --color-hover-text:    #FFFFFF;
+    --color-hover-strong:  #000000;    /* deepest press state, one notch past --color-hover */
+
+    /* Dark "ink" surface — floating pill nav, aligned with the footer slab */
+    --color-ink:           oklch(0.20 0.004 100);
+    --color-ink-border:    oklch(0.30 0.004 100);
+
+    --color-accent:        hsl(224 76% 50%);   /* ToolTrim blue */
+    --color-accent-soft:   hsl(224 76% 96%);   /* very light tint */
+
+    /* Editorial illustration and stack-family surfaces. These remain named
+       tokens so component CSS never recreates an ad-hoc colour palette. */
+    --color-story-clay:       #D8C9B8;
+    --color-story-sage:       #BCC4BD;
+    --color-story-sand:       #E4DED1;
+    --color-story-taupe:      #C5B6A1;
+    --color-story-mist:       #D7D8D2;
+    --color-stack-default:    #E5F5FF;
+    --color-stack-ia:         #EEE7FF;
+    --color-stack-organise:   #DFF3EA;
+    --color-stack-design:     #DEF0FB;
+    --color-stack-automate:   #FFE3CF;
+    --color-stack-market:     #F8E2EF;
+    --color-stack-sell:       #E5ECFF;
+    --color-stack-finance:    #E3F0DC;
+    --color-stack-dev:        #E8E0FF;
+    --color-stack-custom:     #F3EAD2;
+    --color-stack-create:     #D8D7D0;
+    --color-tutorial-surface: #F8F8F4;
+
+    /* ── ToolTrim typography scale — canonical size tokens ──────────────────
+       Single source of truth. All page-level classes (cp-*, sd-*, tt-*, ex-*) must
+       reference these vars instead of hard-coding clamp() / px values.
+       To resize a level globally → change ONE var here.
+    ──────────────────────────────────────────────────────────────────────── */
+    --tt-size-hero:          clamp(64px, 8vw, 124px);    /* H1 Compare, ToolDetail */
+    --tt-size-hero-sub:      clamp(22px, 2vw, 30px);     /* Subtitle / promise below H1 */
+    --tt-size-page-title:    clamp(40px, 4.5vw, 56px);   /* Editorial page/article H1 */
+    --tt-size-section-h:     clamp(25px, 2.4vw, 32px);    /* Section title — compact gallery hierarchy */
+    --tt-size-section-intro: clamp(16px, 1.3vw, 18px);   /* Subtitle directly under section title */
+    --tt-size-body-large:    clamp(18px, 1.5vw, 22px);   /* Large body / framing copy */
+    --tt-size-body:          16px;                        /* Standard body */
+    --tt-size-kicker:        11px;                        /* ALL kickers / eyebrows */
+    --tt-size-fact:          clamp(18px, 1.2vw, 22px);   /* Fact/data value */
+    --tt-size-fact-compact:  14px;                        /* Table cell / compact fact */
+    --tt-size-card-title:    15px;                        /* Card / row title */
+    --tt-size-card-body:     14px;                        /* Card body / secondary note */
+    --tt-size-metric:        clamp(24px, 1.8vw, 32px);   /* KPI / metric */
+    --tt-size-cta-h:         clamp(22px, 2.5vw, 36px);    /* CTA band heading */
+
+    /* ── Section / hero spacing ── */
+    --tt-section-y: clamp(56px, 5.5vw, 88px);  /* Section vertical padding — tightened so consecutive sections read as flow, not islands */
+    --tt-hero-pt:   72px;                       /* Hero padding-top */
+    --tt-hero-pb:   64px;                       /* Hero padding-bottom */
+
+    /* ── Border radius scale ── */
+    --tt-radius-sm: 12px;
+    --tt-radius-md: 18px;
+    --tt-radius-lg: 24px;
+    --tt-radius-xl: 32px;
+    /* Public editorial surfaces — use these aliases instead of choosing a
+       geometric radius per component. Controls remain pill/circle tokens. */
+    --tt-surface-radius-info:  var(--tt-radius-sm); /* informative / functional card */
+    --tt-surface-radius-media: var(--tt-radius-md); /* image-led editorial card */
+    --tt-surface-radius-panel: var(--tt-radius-lg); /* grouped section / hero panel */
+  --stack-add-token-size: 40;
+  --stack-add-gather: 220;
+  --stack-add-travel: 640;
+  --stack-add-bump: 520;
+  }
+  *, *::before, *::after {
+    corner-shape: superellipse(1.2);
+  }
+
+  @keyframes tt-press {
+    to { transform: scale(0.97); }
+  }
+  :where(a[href], button:not(:disabled), [role="button"]):active {
+    animation: tt-press 150ms ease-out forwards;
+  }
+  @media (max-width: 1023px) {
+    :root { --layout-gutter: var(--layout-gutter-tablet); }
+  }
+  @media (max-width: 767px) {
+    :root { --layout-gutter: var(--layout-gutter-mobile); }
+  }
+
+  .dark {
+    --color-action-danger: #ff9d95;
+    /* Editorial dark — same warm neutrals, darkened */
+    --background: 0 0% 7%;           /* #111111 */
+    --foreground: 60 8% 87%;         /* #DEDED6 — warm near-white */
+
+    --card: 0 0% 10%;                /* #1A1A1A */
+    --card-foreground: 60 8% 87%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 60 8% 87%;
+
+    --primary: 224 76% 62%;          /* slightly lighter blue for dark bg */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 13%;           /* #222222 */
+    --secondary-foreground: 60 5% 80%;
+
+    --muted: 0 0% 13%;
+    --muted-foreground: 60 3% 55%;   /* #8A8A82 */
+
+    --accent: 224 40% 16%;
+    --accent-foreground: 224 76% 72%;
+
+    --destructive: 0 62% 44%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;              /* #2E2E2E */
+    --input:  0 0% 18%;
+    --ring:   224 76% 62%;
+
+    --keep: 142 55% 44%;
+    --keep-foreground: 0 0% 100%;
+    --cancel: 0 70% 55%;
+    --cancel-foreground: 0 0% 100%;
+    --savings: 224 76% 62%;
+    --savings-foreground: 0 0% 100%;
+
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 60 5% 75%;
+    --sidebar-primary: 224 76% 62%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 13%;
+    --sidebar-accent-foreground: 60 5% 80%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 224 76% 62%;
+
+    /* dark mode hex aliases */
+    --color-bg:            #111111;
+    --color-surface:       #1A1A1A;
+    --color-surface-soft:  #222222;
+    --color-chip:          #2B2A28;
+    --color-bg-warm:       #1A1A1A;
+    --color-surface-warm:  #222222;
+    --color-text:          #DEDED6;
+    --color-text-strong:   #F0F0EA;
+    --color-muted:         #8A8A82;
+    --color-muted-light:   #5E5E58;
+    --color-text-secondary: #C9C9C1;
+    --color-text-meta:      #8A8A82;
+    --color-title-accent:   #9A9AA0;
+    --color-live:           #34C759;
+    --color-live-text:      #5FD38A;
+    --color-pro:            #5FD38A;
+    --color-pro-soft:       #14271C;
+    --color-con:            #F5A35C;
+    --color-con-soft:       #2E2015;
+    --color-on-primary:     #FFFFFF;
+    --color-alert:          #F0874A;
+    --color-border:        #2E2E2E;
+    --color-border-soft:   #262626;
+    --color-border-strong: #DEDED6;
+    --color-hover:         #DEDED6;
+    --color-hover-text:    #111111;
+    --color-hover-strong:  #FFFFFF;    /* inverted: deepest press = brightest */
+    --color-accent:        hsl(224 76% 62%);
+    --color-accent-soft:   hsl(224 40% 16%); --color-logo-plate: #F4F4F1;
+  }
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-ui);
+    font-size: 16px;           /* 15–17px range */
+    line-height: 1.5;          /* 1.45–1.6 range */
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2 {
+    font-family: var(--font-brand);
+    color: hsl(var(--foreground));
+  }
+
+  h1 {
+    font-weight: 600;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+  }
+  h2 {
+    font-weight: 600;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+  }
+  h3, h4, h5, h6 {
+    font-family: var(--font-ui);
+    color: hsl(var(--foreground));
+  }
+  h3 {
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  p {
+    line-height: 1.55;
+  }
+  .prose h1, .prose h2, .prose h3,
+  .prose h4, .prose h5, .prose h6 {
+    font-family: var(--font-brand);
+  }
+  .prose p, .prose li, .prose blockquote {
+    font-family: var(--font-ui);
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+  .prose strong {
+    font-weight: 600;
+  }

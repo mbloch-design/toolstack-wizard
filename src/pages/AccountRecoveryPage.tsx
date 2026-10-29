@@ -1,3 +1,4 @@
+import { ButtonLink, Input, Button } from "@/components/ui/primitives";
 import { useEffect, useId, useRef, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
@@ -95,9 +96,9 @@ export default function AccountRecoveryPage() {
                 )}
               </p>
             )}
-            <Link className="ac-button" to={accountPath(lang, "settings")}>
+            <ButtonLink appearance="account"  to={accountPath(lang, "settings")}>
               {t("Ouvrir mes paramètres", "Open my settings")}
-            </Link>
+            </ButtonLink>
           </>
         ) : account.recoveryStatus === "ready" ? (
           <form
@@ -108,7 +109,7 @@ export default function AccountRecoveryPage() {
             <label htmlFor={`${id}-new`}>
               {t("Nouveau mot de passe", "New password")}
             </label>
-            <input
+            <Input appearance="account"
               id={`${id}-new`}
               autoComplete="new-password"
               type={show ? "text" : "password"}
@@ -127,7 +128,7 @@ export default function AccountRecoveryPage() {
             <label htmlFor={`${id}-confirm`}>
               {t("Confirmer le mot de passe", "Confirm password")}
             </label>
-            <input
+            <Input appearance="account"
               id={`${id}-confirm`}
               autoComplete="new-password"
               type={show ? "text" : "password"}
@@ -137,16 +138,16 @@ export default function AccountRecoveryPage() {
               onChange={(event) => setConfirmation(event.target.value)}
               disabled={busy || account.authBusy}
             />
-            <button
+            <Button appearance="account" variant="quiet"
               type="button"
-              className="ac-text-button"
+
               aria-pressed={show}
               onClick={() => setShow(!show)}
             >
               {show
                 ? t("Masquer les mots de passe", "Hide passwords")
                 : t("Afficher les mots de passe", "Show passwords")}
-            </button>
+            </Button>
             {error && (
               <p className="ac-error" role="alert">
                 {error === "MISMATCH"
@@ -157,12 +158,12 @@ export default function AccountRecoveryPage() {
                   : accountErrorMessage(error, t)}
               </p>
             )}
-            <button
-              className="ac-button ac-button--primary"
+            <Button appearance="account" variant="primary" type="submit"
+
               disabled={busy || account.authBusy}
             >
               {t("Enregistrer le nouveau mot de passe", "Save new password")}
-            </button>
+            </Button>
           </form>
         ) : account.recoveryStatus === "complete" ? (
           <>

@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/primitives";
 import { useState } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useStackAccount } from "@/hooks/useStackAccount";
@@ -20,9 +21,9 @@ export function AccountPrivacyNotice() {
       {account.error === "ACCOUNT_DELETION_UNCONFIRMED" && (
         <div className="ac-notice">
           <p role="alert">{accountErrorMessage(account.error, t)}</p>
-          <button
+          <Button appearance="account"
             type="button"
-            className="ac-button"
+
             disabled={cleaning}
             onClick={() => void clearDevice()}
           >
@@ -30,7 +31,7 @@ export function AccountPrivacyNotice() {
               "Effacer les données de cet appareil",
               "Clear this device's data",
             )}
-          </button>
+          </Button>
         </div>
       )}
       {account.deletionConfirmed && (
@@ -107,20 +108,20 @@ export default function AccountStackStatus() {
             )}
           </p>
           <div className="ac-actions">
-            <button
-              className="ac-button ac-button--primary"
+            <Button appearance="account" variant="primary" type="button"
+
               disabled={busy || account.authBusy}
               onClick={() => void run(account.loadSaved)}
             >
               {t("Retrouver ma stack enregistrée", "Load my saved stack")}
-            </button>
-            <button
-              className="ac-button"
+            </Button>
+            <Button appearance="account" type="button"
+
               disabled={busy || account.authBusy}
               onClick={() => void run(account.addDraft)}
             >
               {t("Ajouter ma nouvelle sélection", "Add my new selection")}
-            </button>
+            </Button>
           </div>
         </div>
       )}
@@ -139,20 +140,20 @@ export default function AccountStackStatus() {
             )}
           </p>
           <div className="ac-actions">
-            <button
-              className="ac-button"
+            <Button appearance="account" type="button"
+
               disabled={busy || account.authBusy}
               onClick={() => void run(account.reloadLatest)}
             >
               {t("Charger la version enregistrée", "Load the saved version")}
-            </button>
-            <button
-              className="ac-button"
+            </Button>
+            <Button appearance="account" type="button"
+
               disabled={busy || account.authBusy}
               onClick={() => void run(account.keepCurrent)}
             >
               {t("Enregistrer ma version actuelle", "Save my current version")}
-            </button>
+            </Button>
           </div>
         </div>
       )}
@@ -166,13 +167,13 @@ export default function AccountStackStatus() {
               "Your selection stays on this device. Try again to restore saving.",
             )}
           </p>
-          <button
-            className="ac-button"
+          <Button appearance="account" type="button"
+
             disabled={busy || account.authBusy}
             onClick={() => void run(account.retry)}
           >
             {t("Réessayer l’enregistrement", "Retry saving")}
-          </button>
+          </Button>
         </>
       )}
       {account.error === "ACCOUNT_DELETION_UNCONFIRMED" && (
@@ -180,8 +181,8 @@ export default function AccountStackStatus() {
           <p className="ac-error" role="alert">
             {accountErrorMessage(account.error, t)}
           </p>
-          <button
-            className="ac-button"
+          <Button appearance="account" type="button"
+
             disabled={busy}
             onClick={() => void run(account.clearLocalAccount)}
           >
@@ -189,7 +190,7 @@ export default function AccountStackStatus() {
               "Effacer les données de cet appareil",
               "Clear this device's data",
             )}
-          </button>
+          </Button>
         </>
       )}
     </div>

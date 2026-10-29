@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/primitives";
 import { useId, useState } from "react";
 import AccountAvatar from "@/components/account/AccountAvatar";
 import { useLang } from "@/hooks/useLang";
@@ -65,10 +66,10 @@ export function AccountDetailPanel({
         <span className="bo-eyebrow">
           {t("Fiche utilisateur", "User profile")}
         </span>
-        <button className="mk-button tt-button-secondary bo-button bo-button-quiet" onClick={onClose}>
+        <Button variant="quiet"  onClick={onClose}>
           <X size={16} aria-hidden />
           {t("Fermer le détail", "Close detail")}
-        </button>
+        </Button>
       </div>
       <div className="bo-profile">
         <AccountAvatar
@@ -156,12 +157,12 @@ export function AccountDetailPanel({
       ) : (
         <>
           <div
-            className="mk-segmented bo-tabs"
+            className="bo-switches bo-tabs"
             role="tablist"
             aria-label={t("Données de l’utilisateur", "User data")}
           >
             {tabs.map((item) => (
-              <button
+              <Button variant={tab === item.id ? "primary" : "secondary"}
                 key={item.id}
                 id={`${id}-${item.id}`}
                 role="tab"
@@ -196,7 +197,7 @@ export function AccountDetailPanel({
                 {item.count !== undefined && (
                   <span aria-hidden>{item.count}</span>
                 )}
-              </button>
+              </Button>
             ))}
           </div>
           {tabs.map((item) => (
@@ -543,10 +544,10 @@ export function AccountDetailPanel({
           </p>
         </>
       )}
-      <button className="mk-button tt-button-secondary bo-button bo-back" onClick={onClose}>
+      <Button variant="secondary" className="bo-back" onClick={onClose}>
         <ArrowLeft size={16} aria-hidden />
         {t("Revenir à la liste", "Back to users")}
-      </button>
+      </Button>
     </div>
   );
 }

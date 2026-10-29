@@ -410,3 +410,11 @@ it("keeps a failed farewell in the confirmation with retry and no home redirect"
   expect(screen.getByRole('button',{name:'Me déconnecter'})).toBeEnabled();
   expect(screen.getByTestId('current-path')).toHaveTextContent('/fr/tool/notion');
 });
+it("owns email controls through shared primitives in a neutral ancestor", async () => {
+  view();
+  expect(screen.getByRole("button", { name: "Continuer avec l’e-mail" })).toHaveClass("ui-button");
+  await emailForm();
+  expect(screen.getByLabelText("Adresse e-mail")).toHaveClass("ui-input");
+  expect(screen.getByLabelText("Adresse e-mail")).toHaveAttribute("data-appearance", "account");
+  expect(screen.getByRole("button", { name: "Se connecter" })).toHaveAttribute("type", "submit");
+});

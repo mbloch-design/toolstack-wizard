@@ -11,17 +11,19 @@ React SPA · Vite + TypeScript · Tailwind CSS v4
 | Framework | React 18 + React Router v7 (mode déclaratif) |
 | Build | Vite |
 | Styles | Tailwind CSS v4 + `@layer components` (classes préfixées) |
-| Data | Supabase (primaire) + JSON local (fallback) |
+| Data | Catalogue public JSON versionné ; comptes et fonctions serveur Supabase |
 | Fonts | Uncut Sans Variable (`--font-brand`) + Inter Tight (`--font-ui`) |
-| Déploiement | Prerender statique via vite-plugin-prerender |
+| Déploiement | Prérendu statique par les plugins Vite du projet ; API Vercel |
 
 ### Compilation CSS
 
-Le compilateur utilise `@tailwindcss/postcss` 4.3.3. Les tokens restent dans `tailwind.config.ts`, chargé explicitement par `@config`. Les sources et la classe éditoriale `ga-cta-btn` sont déclarées dans `src/index.css`.
+Le compilateur utilise `@tailwindcss/postcss` 4.3.3, sans postprocesseur qui retire les couches. `src/index.css` déclare `theme, base, components` et importe les sources dans leur ordre effectif. Les utilitaires générés et les styles applicatifs partagent la couche native `components` pour conserver leur spécificité et leur priorité importante. Les modules `components/` puis `domains/` correspondent aux étapes ordonnées de la cascade, chacun avec un propriétaire nommé. Ne pas réordonner ces imports comme une simple opération de rangement.
 
-`scripts/lib/legacy-css-cascade.mjs` conserve l’ordre historique base → composants → utilitaires → règles éditoriales hors couche. Les couches natives v4 changeraient sinon la priorité des composants existants. Les contrats CSS et les comparaisons en navigateur vérifient cette compatibilité. Les classes restent dans `@layer components` selon les conventions du projet.
+`src/styles/foundations.css` possède les tokens et thèmes ; `tailwind.config.ts` expose leur adaptation utilitaire via `@config`. `src/styles/ui.css` possède les primitives, importées par `src/components/ui/primitives.tsx`. La page assemble leur disposition sans surcharger leur apparence.
 
-Le plugin typographique sans usage sur les pages générées et le tagger Lovable de développement ont été retirés. Les tests React utilisent `@vitejs/plugin-react`, comme le build. Tailwind 4 cible Safari 16.4+, Chrome 111+ et Firefox 128+ ; aucune compatibilité supplémentaire avec les navigateurs antérieurs n’est revendiquée.
+Le plugin critique Vite indexe une fois l’AST de la feuille compilée émise. Chaque prérendu sélectionne un sous-ensemble dans l’ordre original, en conservant couches, conditions, fondations et dépendances. Aucun second parseur de la feuille source ne construit le premier affichage. L’externalisation partage les variantes CSS et relit les documents lors de leur écriture, pour borner la mémoire sur le catalogue complet.
+
+La migration des anciens contrôles est suivie dans `DESIGN_SYSTEM_MIGRATION.md`. Les tests de référence utilisent `playwright.design-system.config.ts` sur build/preview ; les autres tests Playwright ne constituent pas automatiquement une preuve de rendu produit.
 
 ---
 
@@ -47,7 +49,10 @@ Ne pas supprimer `tools_v4.json` ou `tools_index.json` avant d’avoir migré le
 /fr/guides             → GuidesPage
 /fr/guide/:slug        → GuideDetailPage
 /fr/comparatif/:pair   → ComparePage
-/fr/selector           → SelectorPage (diagnostic)
+/fr/back-office        → BackOfficePage (administration et diagnostic historique)
+/fr/ma-stack           → CartPage
+/fr/connexion          → AccountAuthPage
+/fr/compte/parametres   → AccountSettingsPage
 ```
 
 ---

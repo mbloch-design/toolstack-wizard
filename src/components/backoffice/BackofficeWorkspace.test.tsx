@@ -1,4 +1,6 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import type { ReactNode } from "react";
+import { fireEvent, render as testingRender, screen, within } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 import { normalizePersonalStack } from "@/lib/personalStack";
 const mocks = vi.hoisted(() => ({ list: vi.fn(), detail: vi.fn() }));
@@ -189,4 +191,22 @@ it("keeps the loaded profile when the same user is opened again", async () => {
   fireEvent.click(screen.getByRole("button",{name:"Vue d’ensemble"}));
   fireEvent.click(screen.getByRole("button",{name:/Camille/}));
   expect(within(detail).getByText("Aucune stack enregistrée.")).toBeVisible();
+});
+
+function render(ui: ReactNode) { return testingRender(<MemoryRouter>{ui}</MemoryRouter>); }
+
+it("keeps user tabs keyboard reachable through shared action primitives", async () => {
+  mocks.detail.mockResolvedValue({ ...account, avatarUrl: null, providerLocale: null, oauthProfileSource: null,
+    stack: { state: normalizePersonalStack(null), revision: 1, updatedAt: at } });
+  render(<AccountsDashboard />);
+  await screen.findByText("Camille");
+  fireEvent.click(screen.getByRole("button", { name: "Voir la stack de camille@example.test" }));
+  const detail = await screen.findByRole("region", { name: "Détail du compte" });
+  const tools = await within(detail).findByRole("tab", { name: "Outils" });
+  expect(tools).toHaveClass("ui-button"); tools.focus();
+  fireEvent.keyDown(tools, { key: "ArrowRight" });
+  const boards = within(detail).getByRole("tab", { name: "Tableaux" });
+  expect(boards).toHaveFocus(); expect(boards).toHaveAttribute("aria-selected", "true");
+  fireEvent.keyDown(boards, { key: "End" });
+  expect(within(detail).getByRole("tab", { name: "Données" })).toHaveFocus();
 });

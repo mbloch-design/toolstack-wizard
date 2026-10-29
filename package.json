@@ -45,7 +45,7 @@
     "validate:phase4": "node scripts/validate-phase4-readiness.mjs",
     "validate:phase4:sessions": "node scripts/validate-phase4-session-log.mjs",
     "validate:ma-stack": "node scripts/validate-ma-stack-relevance.mjs",
-    "validate:design-tokens": "node scripts/validate-design-tokens.mjs",
+    "validate:design-tokens": "node scripts/validate-design-system.mjs",
     "audit:card-images": "node scripts/audit-card-images.mjs",
     "audit:editorial": "node scripts/audit-editorial-consistency.mjs",
     "audit:build-output": "node scripts/audit-build-output.mjs",
@@ -104,11 +104,13 @@
     "typecheck:app": "tsc --noEmit -p tsconfig.app.json",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
     "typecheck": "npm run typecheck:app && npm run typecheck:node && npm run typecheck:api",
-    "test:seo-contracts": "vitest run --config vitest.research.config.mjs scripts/validate-generated-seo.test.mjs scripts/lib/ssr-contract.test.mjs scripts/lib/compact-html.test.mjs scripts/lib/explorer-related-paths.test.mjs scripts/lib/explorer-r5-review.test.mjs scripts/lib/legacy-css-cascade.test.mjs scripts/lib/shared-critical-css.test.mjs scripts/generated-routing.test.mjs",
+    "test:seo-contracts": "vitest run --config vitest.research.config.mjs scripts/validate-generated-seo.test.mjs scripts/lib/ssr-contract.test.mjs scripts/lib/compact-html.test.mjs scripts/lib/explorer-related-paths.test.mjs scripts/lib/explorer-r5-review.test.mjs scripts/lib/native-css-cascade.test.mjs scripts/lib/compiled-critical-css.test.mjs scripts/lib/shared-critical-css.test.mjs scripts/generated-routing.test.mjs scripts/lib/critical-externalization.test.mjs scripts/lib/design-ownership.test.mjs scripts/lib/public-control-ownership.test.mjs",
     "typecheck:api": "tsc --noEmit -p tsconfig.api.json",
     "test:api": "vitest run --config vitest.api.config.ts",
     "test:accounts:db": "node scripts/test-accounts-db.mjs",
-    "test:accounts:runtime": "node --test scripts/accounts-runtime.test.mjs"
+    "test:accounts:runtime": "node --test scripts/accounts-runtime.test.mjs",
+    "validate:design-system": "node scripts/validate-design-system.mjs",
+    "test:e2e:design-system": "playwright test --config playwright.design-system.config.ts"
   },
   "dependencies": {
     "@orama/orama": "^3.1.18",
@@ -153,6 +155,7 @@
     "parse5": "7.3.0",
     "path-to-regexp": "^6.3.0",
     "postcss": "^8.5.23",
+    "postcss-selector-parser": "7.1.0",
     "postgres": "^3.4.7",
     "tailwindcss": "4.3.3",
     "tsx": "^4.23.15",

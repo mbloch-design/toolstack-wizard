@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/primitives";
 import { useCallback, useMemo, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
 import StackStarter from "@/components/stack/StackStarter";
@@ -119,9 +120,9 @@ export default function StackWelcome() {
     <section className="sl-final" aria-labelledby="sl-final-title">
       {count > 0 && <span className="sl-final-logos" aria-hidden="true">{mine.slice(0, 6).map((tool, index) => <span key={tool.id} style={{ animationDelay: `${index * 70}ms` }}><ToolLogo tool={tool} size={30} /></span>)}</span>}
       <h2 id="sl-final-title">{count > 1 ? t(`Vos ${count} outils vous attendent.`, `Your ${count} tools are waiting.`) : count === 1 ? t("Votre outil vous attend.", "Your tool is waiting.") : t("Prêt en trente secondes.", "Ready in thirty seconds.")}</h2>
-      <button type="button" className="sl-final-cta" disabled={count > 0 && !account.authInitialized} onClick={count > 0 ? reveal : start}>
+      <Button appearance="stack-welcome-final" variant="secondary" type="button" className="sl-final-cta" disabled={count > 0 && !account.authInitialized} onClick={count > 0 ? reveal : start}>
         {count > 0 ? t("Voir mon diagnostic", "See my diagnosis") : t("Commencer", "Start")}<ArrowRight size={18} aria-hidden />
-      </button>
+      </Button>
     </section>
   </div>;
 }

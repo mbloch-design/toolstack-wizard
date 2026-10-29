@@ -1,0 +1,46 @@
+
+.ex-tool-focus { background: transparent; border-radius: 0; box-shadow: none; overflow: visible; }
+.ex-tool-focus-main { gap: clamp(28px, 4vw, 56px); grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); padding: 8px 0 12px; }
+.ex-tool-focus-visual.tc-image { border-radius: var(--radius-2xl); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 6%, transparent); overflow: hidden; }
+.ex-tool-focus-content { padding: 0; }
+.ex-tool-focus-eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .01em; }
+.ex-tool-focus-title { margin-top: 12px; }
+.ex-tool-focus-title h1 { font-size: var(--tt-size-page-title); font-weight: 600; letter-spacing: -.04em; line-height: 1.02; margin: 0; }
+.ex-tool-focus-title span { color: color-mix(in srgb, var(--color-text) 56%, transparent); display: block; font-size: var(--tt-size-card-body); font-weight: 450; margin-top: 6px; }
+.ex-tool-focus-content > p { color: color-mix(in srgb, var(--color-text) 74%, transparent); font-size: var(--tt-size-section-intro); line-height: 1.45; margin-top: 18px; max-width: 44ch; text-wrap: pretty; }
+.ex-tool-focus-footer { flex-wrap: wrap; gap: 10px; }
+.ex-tool-focus-profile, .ex-tool-focus-add { border-radius: var(--radius-pill); font-size: 14px; font-weight: 600; min-height: 44px; padding: 0 18px; white-space: nowrap; }
+.ex-tool-focus-add { border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); }
+.ex-tool-focus-add:hover:not(:disabled) { background: transparent; border-color: var(--color-text); }
+@media (max-width: 960px) {
+  .ex-tool-focus-main { gap: 20px; padding: 0; }
+  .ex-tool-focus-content { padding: 0 4px; }
+  .ex-tool-focus-footer { flex-direction: row; flex-wrap: wrap; }
+  .ex-tool-focus-profile, .ex-tool-focus-add { flex: 1 1 auto; justify-content: center; width: auto; }
+}
+@media (min-width: 961px) {
+  .ex-tool-focus-main { align-items: stretch; }
+  /* The image keeps its own ratio and sets the row height; stretching it
+     made aspect-ratio widen it over the text column. */
+  .ex-tool-focus-visual.tc-image { align-self: start; max-width: 100%; width: 100%; }
+  .ex-tool-focus-content { padding: 2px 0; }
+  .ex-tool-focus-footer { margin-top: auto; padding-top: 20px; }
+}
+.ex-tool-focus-title { align-items: center; gap: 16px; }
+.ex-tool-focus-logo { border-radius: var(--radius-lg); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-text) 8%, transparent); flex-shrink: 0; }
+@media (max-width: 960px) { .ex-tool-focus-logo { height: 52px !important; width: 52px !important; } }
+.ex-tool-focus-title h1.is-long { font-size: clamp(28px, 2.6vw, 38px); text-wrap: balance; }
+.ex-tag-filter-item { font-weight: 600; gap: 6px; letter-spacing: -.01em; }
+.ex-tag-filter-scroll { flex: 0 1 auto; }
+.ex-tag-filter-track { background: var(--color-surface-soft); border-radius: var(--radius-pill); gap: 2px; padding: 4px; position: relative; width: fit-content; max-width: 100%; }
+.ex-tag-filter-thumb {
+  background: var(--color-surface);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text) 10%, transparent), 0 3px 10px color-mix(in srgb, var(--color-text) 6%, transparent);
+  height: calc(100% - 8px);
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 4px;
+  transition: transform 320ms cubic-bezier(.32,.72,0,1), width 320ms cubic-bezier(.32,.72,0,1);
+}

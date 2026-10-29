@@ -14,9 +14,12 @@ Stack : React 18 + React Router v7 (mode déclaratif) + Vite + TypeScript + Tail
 | `src/pages/ToolDetailPage.tsx` | Page outil — template principal |
 | `src/pages/GuidesPage.tsx` | Index guides éditorial |
 | `src/pages/GuideDetailPage.tsx` | Article guide éditorial |
-| `src/components/Navbar.tsx` | Header fixe + mega-panel Explorer |
+| `src/components/v2shell/AppShellV2.tsx` | Shell actif, header et navigation |
 | `src/components/tool/StickyDecisionCard.tsx` | Sidebar sticky décision |
-| `src/index.css` | Système de design complet (@layer components) |
+| `src/index.css` | Entrée CSS : ordre explicite des couches et modules |
+| `src/styles/foundations.css` | Tokens et thèmes canoniques |
+| `src/components/ui/primitives.tsx` | Point d’entrée des contrôles génériques |
+| `src/styles/ui.css` | Apparence autonome des primitives |
 | `docs/DESIGN_SYSTEM.md` | Référence palette, typographie, composants |
 | `docs/ARCHITECTURE.md` | Structure des pages et conventions techniques |
 | `docs/CHANGELOG_AI.md` | Historique des sessions Codex |
@@ -25,27 +28,16 @@ Stack : React 18 + React Router v7 (mode déclaratif) + Vite + TypeScript + Tail
 
 ## Conventions CSS
 
-Toutes les classes de design utilisent `@layer components` dans `src/index.css`.
-Préfixes : `td-*` (tool detail), `gi-*` (guides index), `ga-*` (guide article),
-`tc-*` (tool card), `tce-*` (tool card editorial), `nav-*` (navbar), `panel-*` (mega-panel).
+Les modules sources sont importés par `src/index.css` dans les couches natives explicites. Les tokens appartiennent à `src/styles/foundations.css`, les contrôles génériques à `src/components/ui/primitives.tsx` et `src/styles/ui.css`, les dispositions et composants métier aux modules propriétaires sous `src/styles/`.
+
+Pour une action, un lien ou un champ, importer la primitive commune. Ne pas copier une ancienne classe de bouton ni importer StackKit pour obtenir un contrôle générique. Choisir une variante explicite ; une page ne redéfinit pas l’apparence d’une primitive. Les migrations restantes sont suivies dans `docs/DESIGN_SYSTEM_MIGRATION.md`.
+
+Préfixes : `ui-*` (socle), `bo-*` (administration), `td-*` (fiche), `gi-*`/`ga-*` (guides), `tc-*`/`tce-*` (cartes), `asv2-*` (shell actif).
 
 **Ne pas** utiliser Tailwind inline dans les nouveaux composants éditoriaux.
-**Ne pas** mettre `position: sticky` sur un enfant d'un grid item — toujours sur le grid item lui-même.
+**Ne pas** mettre `position: sticky` sur un enfant d’un grid item — toujours sur le grid item lui-même.
 
-## Variables CSS globales
-
-```css
---navbar-h: 68px        /* hauteur navbar fixe */
---header-height: var(--navbar-h)   /* alias */
---font-brand: "Uncut Sans Variable"
---font-ui: "Inter Tight"
---primary: 224 76% 50%  /* ToolTrim blue — usage très limité */
-```
-
-## Palette
-
-`#222222` texte/CTA · `#F8F8F4` backgrounds · `#EDEDE8` surfaces secondaires ·
-`#FFFFFF` cards · `#DADAD4` borders · `#6F6F68` métadonnées · `#9A9A92` placeholders
+Palette, typographie et variantes : voir uniquement `docs/DESIGN_SYSTEM.md` et leurs propriétaires sources ci-dessus. Aucune seconde palette n’est recopiée ici.
 
 ## Règles à respecter
 
@@ -54,7 +46,7 @@ Préfixes : `td-*` (tool detail), `gi-*` (guides index), `ga-*` (guide article),
 - Pas de grands logos décoratifs
 - Pas d'emojis comme icônes (utiliser le système Iconoir centralisé dans `src/lib/icons.tsx`)
 - Pas de métadonnées répétées (hero ET sidebar)
-- Dark mode : non prioritaire, documenter la dette dans ROADMAP.md
+- Préserver les thèmes et le mouvement réduit existants ; documenter la dette dans ROADMAP.md
 
 ## Commandes utiles
 
@@ -67,9 +59,9 @@ git log --oneline -10  # derniers commits
 ## Workflow typique
 
 1. Lire les docs concernées avant de coder
-2. Modifier CSS dans index.css (classes préfixées)
+2. Utiliser les primitives communes ; modifier le module CSS propriétaire (classes préfixées)
 3. Modifier le composant / la page
-4. `npm run build` pour valider
+4. Tests ciblés, `npm run build`, puis vérification des routes rendues sur preview de production
 5. Commit avec message conventionnel
 6. Mettre à jour CHANGELOG_AI.md
 

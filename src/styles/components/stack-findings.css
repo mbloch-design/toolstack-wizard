@@ -1,0 +1,14 @@
+
+  .ms-page .mf .mf-price .mf-shares li { grid-template-columns: 24px minmax(0, 1.2fr) minmax(24px, 1fr) auto max-content; }
+  .ms-page .mf .mf-price .mf-shares li > small { white-space: nowrap; }
+  .ms-page .mf-cost-complement { margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--color-border); }
+  .ms-page .mf-cost-complement > p, .ms-page .mf-cost-scope { font-size: var(--tt-size-card-body); line-height: 1.5; color: var(--color-text-meta); }
+  .ms-page .mf-cost-zero { display: grid; gap: var(--space-sm); margin-top: var(--space-sm); }
+  .ms-page .mf-cost-zero li { display: flex; align-items: center; gap: var(--space-sm); font-size: var(--tt-size-card-body); }
+  .ms-page .mf-cost-zero li b { margin-left: auto; color: var(--color-text-secondary); font-weight: 400; }
+  .ms-page .mf-cost-scope { margin-top: var(--space-md); }
+  .ms-page .mf .mf-price .mf-trust-text small { white-space: normal; overflow: visible; text-overflow: clip; }
+  @media (min-width: 761px) {
+    .ms-page .mf .mf-grid[data-sparse] { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto; grid-template-areas: "price now now"; align-items: stretch; }
+    .ms-page .mf .mf-grid[data-sparse]:not(:has(.mf-now)) { grid-template-areas: "price price price"; }
+  }

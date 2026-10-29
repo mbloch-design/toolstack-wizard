@@ -313,7 +313,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 <h3>{t("On fait les comptes ?", "Let's talk budget.")}</h3>
                 <p className="mf-budget-reassurance">{t("Promis, pas de tableur.", "No spreadsheet required. Promise.")}</p>
                 <p>{t("Dites-nous quelle formule vous utilisez. Gratuite ou payante, chaque réponse aide à y voir plus clair.", "Tell us which plan you use. Free or paid, every answer makes the picture clearer.")}</p>
-                <button type="button" className="mk-link" onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));setOpenCard("now");requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</button>
+                <TextLink onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));setOpenCard("now");requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</TextLink>
               </div>
             : <><Figure value={format(total)} unit={t("/mois", "/mo")} />{(() => {
               // Can the total be trusted? A tool counts once its cost is certain.
@@ -413,7 +413,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
             return <div className="mf-seats">
               {/* The plan picked, kept in view: changing it is one tap. */}
               <p className="mf-seats-plan"><span><b>{chosen.label}</b> · {t("facturé par personne", "billed per person")}</span>
-                <TextLink className="mk-link--quiet" onClick={() => { setSeatPlan(null); setPreview(null); }}>{t("Changer", "Change")}</TextLink></p>
+                <TextLink onClick={() => { setSeatPlan(null); setPreview(null); }}>{t("Changer", "Change")}</TextLink></p>
               <p className="mf-seats-q">{t("Vous êtes combien à l’utiliser ?", "How many of you use it?")}</p>
               <div className="mf-seats-row">
                 {/* The usual team sizes, one tap; the stepper fine-tunes. */}
@@ -460,9 +460,9 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
         <div className="mf-bar-actions">
           <div className="mf-links">
             {top.link && <TextLink to={top.link.to} onClick={top.link.onClick}>{top.link.label}</TextLink>}
-            {top.cancelReview && <TextLink className="mf-review-cancel" onClick={top.cancelReview.onClick}>{top.cancelReview.label}</TextLink>}
+            {top.cancelReview && <TextLink className="mf-review-cancel" size="default" onClick={top.cancelReview.onClick}>{top.cancelReview.label}</TextLink>}
             {top.bulk && <TextLink onClick={top.bulk.onClick}>{top.bulk.label}</TextLink>}
-            {order.length > 1 && <TextLink className="mk-link--quiet" onClick={() => { setFirst(null); setLater((keys) => [...keys.filter((key) => key !== top.key), top.key]); }}>{t("Plus tard", "Later")}</TextLink>}
+            {order.length > 1 && <TextLink onClick={() => { setFirst(null); setLater((keys) => [...keys.filter((key) => key !== top.key), top.key]); }}>{t("Plus tard", "Later")}</TextLink>}
           </div>
           {(top.savePrice || (top.plans && top.plans.length > 0)) && top.kind === "price" && top.actions.map((action) => <TextLink className="mf-invoice-details" key={action.label} onClick={action.onClick}>{t("Devise, utilisateurs ou facture annuelle", "Currency, users or yearly billing")}</TextLink>)}
           {/* The effect on the total, on the bar's right: today's figure, then where an answer takes it. */}

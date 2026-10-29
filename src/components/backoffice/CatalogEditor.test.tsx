@@ -1,4 +1,6 @@
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import type { ReactNode } from "react";
+import { fireEvent, render as testingRender, screen, within } from "@testing-library/react";
 import { beforeEach, expect, it, vi } from "vitest";
 const api = vi.hoisted(() => ({
   list: vi.fn(),
@@ -131,7 +133,7 @@ it("reviews all saved drafts and publishes the reviewed global revision once", a
     screen.getByRole("button", {
       name: "Publier toutes les modifications (2)",
     }),
-  ).toHaveClass("tt-button-primary");
+  ).toHaveAttribute("data-variant", "primary");
   const review = screen.getByRole("region", {
     name: "Modifications à publier",
   });
@@ -253,3 +255,5 @@ it("preserves unsupported nested fields visibly read-only instead of offering ed
   expect(screen.getByText(/Lecture seule/)).toBeVisible();
   expect(screen.queryByLabelText("ai Angle")).not.toBeInTheDocument();
 });
+
+function render(ui: ReactNode) { return testingRender(<MemoryRouter>{ui}</MemoryRouter>); }

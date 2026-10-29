@@ -25,8 +25,15 @@ Cette référence ne suffit pas aux états privés, aux interactions clavier ni 
 | Classes éditoriales dynamiques | JSON de guides et de catalogue, prérendu | 7 : vérifier sources de données et construction dynamique avant suppression |
 | Tokens et budget de violations agrégé | index.css, validate-design-tokens.mjs | 4/7 : propriétaire unique, scan modulaire et exceptions exactes |
 
-## État
+## État publié de la branche — 29 octobre 2026
 
-- Référence publique capturée ; reproduction après capture en cours de vérification.
-- Extraction critique, primitives, cascade et migrations : en cours ; aucune remise à plat complète revendiquée.
-- Le diagnostic historique reste une fonctionnalité active, pas du code mort.
+Implémentation en cours de validation, pas une clôture de la remise à plat.
+
+- Cascade native en place ; plugin `legacyCssCascade` et extraction critique historique supprimés. Entrée CSS réduite à une liste explicite de modules et tokens fondamentaux consolidés. 537 déclarations strictement redondantes retirées sans déplacer leurs règles.
+- Primitives communes autonomes ; back-office complet, comptes et contrôles génériques Ma Stack migrés. Anciennes familles génériques `tt-button-*`, `ac-button`, `ba-button`, `mk-button/link/segmented`, ancien Segmented motion et champs génériques copiés retirés des consommateurs et de leurs styles remplacés. Les cartes, radios, choix et graphiques métier restent spécialisés.
+- Documentation active unifiée ; contrôle AST des imports, classes copiées, tokens, surcharges directes et indirectes des primitives. Les anciens budgets agrégés sont remplacés par des exceptions exactes, par propriétaire et condition de retrait ; aucune suppression ailleurs ne finance une nouvelle violation.
+- Premier build intégré complet : PASS, y compris SEO, routage, compactage et budgets. CSS critique mutualisé : 44 variantes, ensemble CSS 11,4 Mio ; aucune hausse des budgets. La correction mémoire d’externalisation est couverte par un test de charge sous 96 Mio.
+- Dernière comparaison du build : 26/32 références passent. Six écarts restent ouverts : Soumettre mobile FR/EN (CTA du plan : 48/13px contre 52/15px) et Ma Stack FR/EN mobile/desktop (lien texte devenu plus haut et contrôle de tri). Le contrat de référence n’a pas été réenregistré pour masquer ces écarts.
+- Revue : corrections de l’alignement des icônes, du mouvement réduit, des métadonnées compactes et des surcharges de couleur/taille partagées implémentées et testées. Contrôle final stable du thème compte et du parcours usage à hauteur700 encore requis ; les essais avec HMR ont enregistré une erreur de contexte Provider.
+
+Cette branche peut être poussée pour sauvegarde et revue. La fusion et la mise en production de la remise à plat restent conditionnées aux écarts rendus et à la vérification finale de l’état exact à publier.

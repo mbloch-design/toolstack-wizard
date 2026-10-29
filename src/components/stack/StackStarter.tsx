@@ -1,3 +1,4 @@
+import { Input, Button } from "@/components/ui/primitives";
 import { useEffect, useMemo, useState, type ReactNode } from "react";
 import { ArrowRight, Check, Eye, Lock, Plus, Search, X } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
@@ -139,7 +140,7 @@ export default function StackStarter({ mode, onFinish, onSignIn, onPicksChange, 
       </>}
       <label className="ss-search">
         <Search size={18} aria-hidden />
-        <input id="ss-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t("Un autre outil ? Cherchez-le", "Another tool? Search for it")} aria-label={t("Chercher un outil", "Search for a tool")} />
+        <Input appearance="stack-search-small" id="ss-search" type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t("Un autre outil ? Cherchez-le", "Another tool? Search for it")} aria-label={t("Chercher un outil", "Search for a tool")} />
         {query && <button type="button" className="ss-search-clear" onClick={() => setQuery("")} aria-label={t("Effacer", "Clear")}><X size={16} aria-hidden /></button>}
       </label>
       {term
@@ -178,16 +179,16 @@ export default function StackStarter({ mode, onFinish, onSignIn, onPicksChange, 
           <li><Lock size={13} aria-hidden />{t("Les outils sous-utilisés.", "The tools you barely use.")}</li>
         </ul>
       </div>}
-      <button type="button" className="ac-button ac-button--primary ss-cta" disabled={picked.length === 0 || busy} onClick={() => onFinish(picks)}>{cta}<ArrowRight size={18} aria-hidden /></button>
+      <Button appearance="account-welcome" variant="primary" type="button" className=" ss-cta" disabled={picked.length === 0 || busy} onClick={() => onFinish(picks)}>{cta}<ArrowRight size={18} aria-hidden /></Button>
       {guest && <p className="ss-reassure">{t("Gratuit. Sans carte bancaire.", "Free. No card needed.")}
-        {onSignIn && <> <button type="button" className="ac-text-button" onClick={onSignIn}>{t("J’ai déjà un compte", "I already have an account")}</button></>}</p>}
+        {onSignIn && <> <Button appearance="account" variant="quiet" type="button"  onClick={onSignIn}>{t("J’ai déjà un compte", "I already have an account")}</Button></>}</p>}
     </aside>
 
     {/* Phone: the reading and the action stay under the thumb while choosing. */}
     {picked.length > 0 && <div className="ss-dock" aria-hidden="true">
       <span className="ss-dock-logos">{picked.slice(0, 4).map((tool) => <span key={tool.id}><ToolLogo tool={tool} size={22} /></span>)}</span>
       <span className="ss-dock-text"><b>{t(`${picked.length} outil${s(picked.length)}`, `${picked.length} tool${s(picked.length)}`)}</b>{pairs.length > 0 ? t(` · ${pairs.length} doublon${s(pairs.length)}`, ` · ${pairs.length} duplicate${s(pairs.length)}`) : ""}</span>
-      <button type="button" tabIndex={-1} className="ss-dock-cta" disabled={busy} onClick={() => onFinish(picks)}>{guest ? t("Voir", "See") : ctaLabel ?? t("Créer", "Create")}<ArrowRight size={16} aria-hidden /></button>
+      <Button appearance="stack-dock" variant="secondary" type="button" tabIndex={-1} className="ss-dock-cta" disabled={busy} onClick={() => onFinish(picks)}>{guest ? t("Voir", "See") : ctaLabel ?? t("Créer", "Create")}<ArrowRight size={16} aria-hidden /></Button>
     </div>}
   </section>;
 }

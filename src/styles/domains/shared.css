@@ -1,0 +1,83 @@
+
+@font-face {
+  font-family: "Uncut Sans";
+  src: url("/fonts/UncutSans-Variable.woff2") format("woff2-variations");
+  font-weight: 300 700;
+  font-style: normal;
+  /* optional, not swap: the font is preloaded (index.html) so it's normally
+     ready in time, but if it isn't, never swap it in later — that swap is
+     what was causing a real, measured CLS on headings once SSR made text
+     visible from first paint instead of hiding it behind a loading spinner. */
+  font-display: optional;
+}
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 70% 60% at 52% 28%, rgba(255,255,255,0.92) 0%, transparent 62%),
+    radial-gradient(ellipse 58% 52% at  2%  2%, hsl(214 72% 86% / 0.85) 0%, transparent 58%),
+    radial-gradient(ellipse 52% 48% at 98% 95%, hsl(220 65% 87% / 0.80) 0%, transparent 55%),
+    radial-gradient(ellipse 44% 40% at 10% 92%, hsl(210 60% 89% / 0.65) 0%, transparent 52%),
+    radial-gradient(ellipse 40% 36% at 92%  8%, hsl(218 68% 88% / 0.70) 0%, transparent 50%),
+    hsl(214 52% 93%);
+}
+
+.dark .hero-gradient {
+  background:
+    radial-gradient(ellipse 65% 55% at 50% 30%, hsl(224 50% 14% / 0.55) 0%, transparent 62%),
+    radial-gradient(ellipse 55% 50% at  2%  2%, hsl(224 60% 18% / 0.65) 0%, transparent 56%),
+    radial-gradient(ellipse 50% 46% at 98% 95%, hsl(220 55% 16% / 0.60) 0%, transparent 54%),
+    radial-gradient(ellipse 42% 38% at 10% 92%, hsl(210 50% 14% / 0.50) 0%, transparent 50%),
+    radial-gradient(ellipse 38% 34% at 92%  8%, hsl(218 55% 16% / 0.55) 0%, transparent 48%),
+    hsl(var(--background));
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes logo-reveal {
+  0%   { opacity: 0; transform: scale(0.55) translateY(18px); }
+  100% { opacity: 1; transform: scale(1)    translateY(0px);  }
+}
+@keyframes panel-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes panel-out {
+  from { opacity: 1; transform: translateY(0);    }
+  to   { opacity: 0; transform: translateY(-4px); }
+}
+.cp-page-light {
+  color-scheme: light;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  /* shadcn/tailwind tokens */
+  --background: 0 20% 99%;
+  --foreground: 240 3% 12%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 3% 12%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 3% 12%;
+  --muted: 60 15% 94%;
+  --muted-foreground: 240 3% 12%;
+  --border: 60 7% 84%;
+  --input: 60 7% 84%;
+  --secondary: 60 15% 94%;
+  --secondary-foreground: 240 3% 12%;
+  --accent: 224 76% 96%;
+  --accent-foreground: 224 76% 44%;
+  /* semantic hex tokens */
+  --color-bg:            #FFFFFF;
+  --color-surface:       #FFFFFF;
+  --color-surface-soft:  #F5F5F7;
+  --color-chip:          #E0DBD7;
+  --color-text:          #1D1D1F;
+  --color-text-strong:   #1D1D1F;
+  --color-muted:         #1D1D1F;
+  --color-muted-light:   #1D1D1F;
+  --color-border:        #E6E6E6;
+  --color-border-soft:   #E7E7E0;
+  --color-border-strong: #1D1D1F;
+  --color-hover:         #1D1D1F;
+  --color-hover-text:    #FFFFFF;
+}

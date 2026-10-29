@@ -1,3 +1,4 @@
+import { Input, Select } from "@/components/ui/primitives";
 import { getPersonalStackScope, getPersonalStackScopeEpoch } from "@/lib/personalStackStore";
 import StackArrival from "@/components/stack/StackArrival";
 import { useStackAccount } from "@/hooks/useStackAccount";
@@ -451,7 +452,7 @@ export default function CartPage() {
   // Add search: on top for an empty stack, in My tools otherwise (the add
   // action is a quiet button there, not a hero CTA).
   const searchPanel = showSearch && <section className="ms-search" id="ms-search" aria-label={t("Ajouter un outil", "Add a tool")}>
-      <div className="ms-search-input"><Search size={20} aria-hidden /><input
+      <div className="ms-search-input"><Search size={20} aria-hidden /><Input appearance="stack-search"
         ref={searchRef}
         id={empty ? "ms-first-tool" : undefined}
         type="search"
@@ -585,16 +586,16 @@ export default function CartPage() {
               {/* Three controls, three affordances: filter chips for what needs me, menus to group and sort, icons for the layout. */}
               <div className="ms-inv-bar">
                 <Segmented mode="toggle" className="ms-inv-filters" label={t("Filtrer par statut", "Filter by status")} value={statusFilter} onChange={(id) => setStatusFilter(id)}
-                  options={[{ id: "all", label: t("Tous", "All"), count: counts.all }, ...(counts.review ? [{ id: "review" as const, label: t("À vérifier", "To check"), count: counts.review }] : []), ...(counts.overlap ? [{ id: "overlap" as const, label: t("Doublons", "Overlaps"), count: counts.overlap }] : [])]} />
+                  options={[{ id: "all", label: t("Tous", "All"), count: counts.all }, ...(counts.review ? [{ id: "review" as const, label: t("À vérifier", "To check"), count: counts.review, countTone: "watch" as const }] : []), ...(counts.overlap ? [{ id: "overlap" as const, label: t("Doublons", "Overlaps"), count: counts.overlap, countTone: "overlap" as const }] : [])]} />
                 <div className="ms-inv-tools">
 
                   <label className="ms-sort"><span>{t("Trier :", "Sort:")}</span>
-                    <select value={sortBy} onChange={(event) => sortTo(event.target.value as typeof sortBy)} aria-label={t("Trier mes outils", "Sort my tools")}>
+                    <Select appearance="stack-sort" size="compact" value={sortBy} onChange={(event) => sortTo(event.target.value as typeof sortBy)} aria-label={t("Trier mes outils", "Sort my tools")}>
                       <option value="area">{t("Domaine", "Area")}</option>
                       <option value="cost">{t("Coût", "Cost")}</option>
                       <option value="name">{t("Nom", "Name")}</option>
                       <option value="recent">{t("Ajout récent", "Recently added")}</option>
-                    </select><ChevronDown size={14} aria-hidden /></label>
+                    </Select><ChevronDown size={14} aria-hidden /></label>
                   <div className="ms-layout" role="group" aria-label={t("Affichage", "Layout")}>
                     <button type="button" aria-pressed={layout === "grid"} aria-label={t("Grille", "Grid")} title={t("Grille", "Grid")} onClick={() => setLayout("grid")}><LayoutGrid size={16} aria-hidden /></button>
                     <button type="button" aria-pressed={layout === "list"} aria-label={t("Liste", "List")} title={t("Liste", "List")} onClick={() => setLayout("list")}><List size={16} aria-hidden /></button>

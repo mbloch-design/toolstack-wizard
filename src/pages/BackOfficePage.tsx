@@ -1,6 +1,6 @@
+import { Button, Input, Select, Textarea, TextLink, PageHeader, Field, IconButton } from "@/components/ui/primitives";
 import { useCallback, useEffect, useId, useMemo, useState } from "react";
 import Breadcrumb from "@/components/Breadcrumb";
-import { Button as StackButton } from "@/components/stack/StackKit";
 import { AccountsDashboard } from "@/components/backoffice/AccountsDashboard";
 import type { Session } from "@supabase/supabase-js";
 import { useStackAccount } from "@/hooks/useStackAccount";
@@ -185,9 +185,9 @@ function selectionConfidenceLabel(confidence: string | null, locale: "fr" | "en"
 }
 
 function selectionConfidenceClasses(confidence: string | null) {
-  if (confidence === "high") return "bg-green-100 text-green-800";
-  if (confidence === "medium") return "bg-amber-100 text-amber-800";
-  return "bg-red-100 text-red-700";
+  if (confidence === "high") return "bo-history-status-ok";
+  if (confidence === "medium") return "bo-history-status-watch";
+  return "bo-history-status-error";
 }
 
 function contextLabel(value: string | null, locale: "fr" | "en") {
@@ -214,9 +214,9 @@ function getFlagSeverity(flag: Record<string, unknown>) {
 }
 
 function qualitySeverityClasses(severity: string) {
-  if (severity === "high") return "bg-red-100 text-red-700";
-  if (severity === "medium") return "bg-amber-100 text-amber-800";
-  return "bg-muted text-muted-foreground";
+  if (severity === "high") return "bo-history-status-error";
+  if (severity === "medium") return "bo-history-status-watch";
+  return "bo-history-status-muted";
 }
 
 function pilotageLaneLabel(lane: PilotageLane, locale: "fr" | "en") {
@@ -231,18 +231,18 @@ function pilotageLaneLabel(lane: PilotageLane, locale: "fr" | "en") {
 }
 
 function pilotageLaneClasses(lane: PilotageLane) {
-  if (lane === "email") return "bg-red-100 text-red-700";
-  if (lane === "quality") return "bg-amber-100 text-amber-800";
-  if (lane === "recovery") return "bg-blue-100 text-blue-800";
-  if (lane === "value") return "bg-green-100 text-green-800";
-  return "bg-muted text-muted-foreground";
+  if (lane === "email") return "bo-history-status-error";
+  if (lane === "quality") return "bo-history-status-watch";
+  if (lane === "recovery") return "bo-history-status-info";
+  if (lane === "value") return "bo-history-status-ok";
+  return "bo-history-status-muted";
 }
 
 function pilotagePriorityClasses(priority: PilotageRow["priorityLabel"]) {
-  if (priority === "critical") return "bg-red-100 text-red-700";
-  if (priority === "high") return "bg-amber-100 text-amber-800";
-  if (priority === "medium") return "bg-blue-100 text-blue-800";
-  return "bg-muted text-muted-foreground";
+  if (priority === "critical") return "bo-history-status-error";
+  if (priority === "high") return "bo-history-status-watch";
+  if (priority === "medium") return "bo-history-status-info";
+  return "bo-history-status-muted";
 }
 
 function getRiskFlags(session: BackofficeSession) {
@@ -264,19 +264,19 @@ function getSessionStatus(session: BackofficeSession): Exclude<SessionStatus, "a
 }
 
 function statusClasses(status: Exclude<SessionStatus, "all">) {
-  if (status === "completed") return "bg-green-100 text-green-800";
-  if (status === "abandoned") return "bg-red-100 text-red-700";
-  if (status === "active") return "bg-amber-100 text-amber-800";
-  return "bg-muted text-foreground";
+  if (status === "completed") return "bo-history-status-ok";
+  if (status === "abandoned") return "bo-history-status-error";
+  if (status === "active") return "bo-history-status-watch";
+  return "bo-history-status-muted";
 }
 
 function emailStatusClasses(status: string) {
-  if (["sent", "delivered", "opened", "clicked"].includes(status)) return "bg-green-100 text-green-800";
-  if (status === "failed") return "bg-red-100 text-red-700";
-  if (status === "processing") return "bg-blue-100 text-blue-800";
-  if (status === "queued") return "bg-amber-100 text-amber-800";
-  if (status === "cancelled") return "bg-muted text-muted-foreground";
-  return "bg-muted text-foreground";
+  if (["sent", "delivered", "opened", "clicked"].includes(status)) return "bo-history-status-ok";
+  if (status === "failed") return "bo-history-status-error";
+  if (status === "processing") return "bo-history-status-info";
+  if (status === "queued") return "bo-history-status-watch";
+  if (status === "cancelled") return "bo-history-status-muted";
+  return "bo-history-status-muted";
 }
 
 function getJobMetadata(job: BackofficeEmailJob) {
@@ -337,9 +337,9 @@ function getDashboardRestitutionBySession(restitutions: BackofficeRestitution[])
 }
 
 function preprodCheckClasses(status: PreprodCheckStatus) {
-  if (status === "ok") return "bg-green-100 text-green-800";
-  if (status === "warning") return "bg-amber-100 text-amber-800";
-  return "bg-red-100 text-red-700";
+  if (status === "ok") return "bo-history-status-ok";
+  if (status === "warning") return "bo-history-status-watch";
+  return "bo-history-status-error";
 }
 
 function getJobEmailQuality(job: BackofficeEmailJob) {
@@ -362,10 +362,10 @@ function getJobEmailQuality(job: BackofficeEmailJob) {
 }
 
 function emailQualityClasses(status: string) {
-  if (status === "passed") return "bg-green-100 text-green-800";
-  if (status === "warning") return "bg-amber-100 text-amber-800";
-  if (status === "failed") return "bg-red-100 text-red-700";
-  return "bg-muted text-muted-foreground";
+  if (status === "passed") return "bo-history-status-ok";
+  if (status === "warning") return "bo-history-status-watch";
+  if (status === "failed") return "bo-history-status-error";
+  return "bo-history-status-muted";
 }
 
 function getRestitutionTemplate(restitution: RestitutionLike) {
@@ -1290,59 +1290,55 @@ export default function BackOfficePage() {
   }, [locale, qualityRows]);
 
   const logoutFeedback = <>
-    {logoutError && <p className="ba-login-error" role="alert">{t("La déconnexion a échoué. Réessayez.", "Sign-out failed. Please try again.")}</p>}
-    {(account.privacyWarning || logoutCleanupWarning) && <p className="ba-login-error" role="alert">{account.privacyWarning === "ACCOUNT_LOCAL_RECOVERY_PENDING"
+    {logoutError && <p className="bo-history-login-error" role="alert">{t("La déconnexion a échoué. Réessayez.", "Sign-out failed. Please try again.")}</p>}
+    {(account.privacyWarning || logoutCleanupWarning) && <p className="bo-history-login-error" role="alert">{account.privacyWarning === "ACCOUNT_LOCAL_RECOVERY_PENDING"
       ? t("Certaines données locales n’ont pas encore pu être récupérées. Elles sont conservées sur cet appareil pour une nouvelle tentative.", "Some local data could not be recovered yet. It remains on this device for another attempt.")
       : t("L’affichage personnel a été effacé, mais le navigateur a bloqué une partie du nettoyage. Effacez les données du site ToolTrim dans les réglages de votre navigateur avant de fermer cet appareil partagé.", "Your personal view was cleared, but the browser blocked part of the cleanup. Clear ToolTrim site data in your browser settings before leaving this shared device.")}</p>}
-    {logoutPrompt && <div className="ms-account-choice" aria-busy={authLoading}>
+    {logoutPrompt && <div className="bo-logout-choice" aria-busy={authLoading}>
       <p>{t("Certaines modifications ne sont pas enregistrées. Les abandonner en vous déconnectant ?", "Some changes are not saved. Discard them and sign out?")}</p>
-      <div className="ms-account-actions">
-        <button type="button" className="ms-account-outline-button" disabled={authLoading} onClick={() => void disconnect(true)}>{t("Me déconnecter sans enregistrer", "Sign out without saving")}</button>
-        <button type="button" className="ms-account-text-button" disabled={authLoading} onClick={() => setLogoutPrompt(false)}>{t("Continuer mes modifications", "Keep editing")}</button>
+      <div className="bo-catalog-actions">
+        <Button variant="secondary" type="button"  disabled={authLoading} onClick={() => void disconnect(true)}>{t("Me déconnecter sans enregistrer", "Sign out without saving")}</Button>
+        <Button variant="quiet" type="button"  disabled={authLoading} onClick={() => setLogoutPrompt(false)}>{t("Continuer mes modifications", "Keep editing")}</Button>
       </div>
     </div>}
   </>;
 
   if (!adminSession) {
     return (
-      <section className="ba-shell ba-access" aria-labelledby={`${loginId}-page-title`}>
+      <section className="bo-history-shell bo-history-access" aria-labelledby={`${loginId}-page-title`}>
         <Breadcrumb items={[{ label: t("Back-office", "Back office") }]} includeSchema={false}/>
-        <header className="ba-heading ba-entry-header"><div>
-          <h1 id={`${loginId}-page-title`}>{t("Back-office ToolTrim", "ToolTrim back office")}</h1>
-          <p>{t("Retrouvez les comptes et les stacks enregistrées.", "View accounts and their saved stacks.")}</p>
-        </div></header>
+        <PageHeader className="bo-history-entry-header" title={<span id={`${loginId}-page-title`}>{t("Back-office ToolTrim", "ToolTrim back office")}</span>}
+          description={t("Retrouvez les comptes et les stacks enregistrées.", "View accounts and their saved stacks.")} />
         {logoutFeedback}
-        <form className="ba-login" aria-label={t("Connexion administrateur", "Administrator sign-in")} aria-busy={authLoading}
+        <form className="bo-history-login" aria-label={t("Connexion administrateur", "Administrator sign-in")} aria-busy={authLoading}
           onSubmit={event => { event.preventDefault(); void connect(); }}>
-          <div className="ba-login-heading"><Lock size={20} aria-hidden="true"/><h2>{t("Accès administrateur", "Administrator access")}</h2></div>
-          <p className="ba-login-intro">{t("Connectez-vous avec votre e-mail et votre mot de passe administrateur.", "Sign in with your admin email and password.")}</p>
-          {error && <p id={`${loginId}-error`} className="ba-login-error" role="alert">{error}</p>}
-          <div className="ba-login-field">
-            <label htmlFor={`${loginId}-email`}>{t("E-mail administrateur", "Admin email")}</label>
-            <input id={`${loginId}-email`} type="email" name="username" autoComplete="username" inputMode="email" required
+          <div className="bo-history-login-heading"><Lock size={20} aria-hidden="true"/><h2>{t("Accès administrateur", "Administrator access")}</h2></div>
+          <p className="bo-history-login-intro">{t("Connectez-vous avec votre e-mail et votre mot de passe administrateur.", "Sign in with your admin email and password.")}</p>
+          {error && <p id={`${loginId}-error`} className="bo-history-login-error" role="alert">{error}</p>}
+          <Field label={t("E-mail administrateur", "Admin email")}>
+            <Input id={`${loginId}-email`} type="email" name="username" autoComplete="username" inputMode="email" required
               value={adminEmailInput} onChange={event => setAdminEmailInput(event.target.value)} disabled={authLoading}
               aria-describedby={error ? `${loginId}-error` : undefined}/>
-          </div>
-          <div className="ba-login-field">
-            <label htmlFor={`${loginId}-password`}>{t("Mot de passe", "Password")}</label>
-            <input id={`${loginId}-password`} type="password" name="password" autoComplete="current-password" required
+          </Field>
+          <Field label={t("Mot de passe", "Password")}>
+            <Input id={`${loginId}-password`} type="password" name="password" autoComplete="current-password" required
               value={adminPasswordInput} onChange={event => setAdminPasswordInput(event.target.value)} disabled={authLoading}
               aria-describedby={error ? `${loginId}-error` : undefined}/>
-          </div>
-          <button type="submit" className="tt-button-primary ba-login-submit" disabled={authLoading}>
+          </Field>
+          <Button variant="primary" type="submit" className="bo-history-login-submit" loading={authLoading}>
             {authLoading ? t("Connexion…", "Signing in…") : t("Se connecter", "Sign in")}
-          </button>
-          <p className="ba-login-note">{t("L’accès est réservé aux comptes autorisés côté serveur.", "Access is restricted to accounts authorized by the server.")}</p>
+          </Button>
+          <p className="bo-history-login-note">{t("L’accès est réservé aux comptes autorisés côté serveur.", "Access is restricted to accounts authorized by the server.")}</p>
         </form>
       </section>
     );
   }
 
   if (activeTab === "accounts") return (
-    <div className="bo-shell ms-page">
+    <div className="bo-shell">
       <Breadcrumb items={[{ label: t("Back-office", "Back office") }]} includeSchema={false}/>
       <div className="bo-account-toolbar"><p>{t("Administration", "Administration")}<span aria-hidden> · </span>{adminSession.email || t("Compte connecté", "Signed-in account")}</p>
-        <StackButton className="bo-signout" disabled={authLoading} onClick={() => void disconnect()} icon={<LogOut size={16} aria-hidden/>}>{t("Fermer", "Sign out")}</StackButton>
+        <Button variant="secondary" className="bo-signout" disabled={authLoading} onClick={() => void disconnect()} icon={<LogOut size={16} aria-hidden/>}>{t("Fermer", "Sign out")}</Button>
       </div>
       {logoutFeedback}
       <AccountsDashboard key={adminSession.accessToken} initialView="overview" onOpenHistory={() => setActiveTab("preprod")}/>
@@ -1350,26 +1346,17 @@ export default function BackOfficePage() {
   );
 
   return (
-    <div className="max-w-[1400px] mx-auto px-4 py-6 md:py-10 space-y-6">
-      <button className="ba-button" onClick={() => setActiveTab("accounts")}>{t("Comptes et stacks", "Accounts and stacks")}</button>
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
-        <div>
-          <h1 className="text-2xl font-semibold text-foreground">
-            {t("Back-office diagnostic", "Diagnostic back office")}
-          </h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            {t(
-              "Pilotage onboarding, scoring, persistance et cycle email.",
-              "Operational view for onboarding, scoring, persistence, and email lifecycle."
-            )}
-          </p>
-        </div>
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="h-9 px-3 rounded-md border border-border text-xs inline-flex items-center text-muted-foreground">
+    <div className="bo-history-max-w-1400px bo-history-mx-auto bo-history-px-4 bo-history-py-6 bo-history-md-py-10 bo-history-space-y-6">
+      <Button variant="secondary"  onClick={() => setActiveTab("accounts")}>{t("Comptes et stacks", "Accounts and stacks")}</Button>
+      <PageHeader title={t("Back-office diagnostic", "Diagnostic back office")}
+        description={t("Pilotage onboarding, scoring, persistance et cycle email.", "Operational view for onboarding, scoring, persistence, and email lifecycle.")}
+        actions={
+        <div className="bo-history-flex bo-history-flex-wrap bo-history-items-center bo-history-gap-2">
+          <span className="bo-history-h-9 bo-history-px-3 bo-history-rounded-md bo-history-border bo-history-border-border bo-history-text-xs bo-history-inline-flex bo-history-items-center bo-history-text-muted-foreground">
             {adminSession.email || t("Admin connecté", "Signed-in admin")}
             {adminSession.expiresAt ? ` · ${formatDateTime(adminSession.expiresAt, locale)}` : ""}
           </span>
-          <button
+          <Button variant="secondary"
             onClick={
               activeTab === "pilotage"
                 ? exportPilotageCsv
@@ -1381,270 +1368,246 @@ export default function BackOfficePage() {
                     ? exportRestitutionsCsv
                     : exportQualityCsv
             }
-            className="h-9 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
           >
-            <Download className="w-4 h-4" />
+            <Download className="bo-history-w-4 bo-history-h-4" />
             {t("Exporter CSV", "Export CSV")}
-          </button>
-          <button
+          </Button>
+          <Button variant="secondary"
             onClick={() => void loadDashboard()}
-            className="h-9 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
           >
-            <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
+            <RefreshCw className={`bo-history-w-4 bo-history-h-4 ${loading ? "bo-history-animate-spin" : ""}`} />
             {t("Rafraîchir", "Refresh")}
-          </button>
-          <button
+          </Button>
+          <Button variant="secondary"
             disabled={authLoading} onClick={() => void disconnect()}
-            className="h-9 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
           >
-            <LogOut className="w-4 h-4" />
+            <LogOut className="bo-history-w-4 bo-history-h-4" />
             {t("Fermer", "Sign out")}
-          </button>
-        </div>
-      </div>
+          </Button>
+        </div>} />
 
       {logoutFeedback}
       {error && (
-        <div className="border border-red-300 bg-red-50 text-red-700 rounded-lg px-4 py-3 text-sm">
+        <div role="alert" className="bo-history-border bo-history-border-red-300 bo-history-bg-red-50 bo-history-text-red-700 bo-history-rounded-lg bo-history-px-4 bo-history-py-3 bo-history-text-sm">
           {error}
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-3">
-        <div className="border border-border rounded-lg p-4 bg-card">
-          <div className="text-xs text-muted-foreground">{t("Sessions", "Sessions")}</div>
-          <div className="mt-2 text-2xl font-semibold">{kpis.total}</div>
+      <div className="bo-history-grid bo-history-grid-cols-1 bo-history-md-grid-cols-2 bo-history-xl-grid-cols-5 bo-history-gap-3">
+        <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-4 bo-history-bg-card">
+          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Sessions", "Sessions")}</div>
+          <div className="bo-history-mt-2 bo-history-text-2xl bo-history-font-semibold">{kpis.total}</div>
         </div>
-        <div className="border border-border rounded-lg p-4 bg-card">
-          <div className="text-xs text-muted-foreground">{t("Terminées", "Completed")}</div>
-          <div className="mt-2 text-2xl font-semibold">{kpis.completed}</div>
+        <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-4 bo-history-bg-card">
+          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Terminées", "Completed")}</div>
+          <div className="bo-history-mt-2 bo-history-text-2xl bo-history-font-semibold">{kpis.completed}</div>
         </div>
-        <div className="border border-border rounded-lg p-4 bg-card">
-          <div className="text-xs text-muted-foreground">{t("Score moyen", "Average score")}</div>
-          <div className="mt-2 text-2xl font-semibold">{kpis.avgHealth}</div>
+        <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-4 bo-history-bg-card">
+          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Score moyen", "Average score")}</div>
+          <div className="bo-history-mt-2 bo-history-text-2xl bo-history-font-semibold">{kpis.avgHealth}</div>
         </div>
-        <div className="border border-border rounded-lg p-4 bg-card">
-          <div className="text-xs text-muted-foreground">{t("Gaspillage cumulé/mois", "Cumulative waste/mo")}</div>
-          <div className="mt-2 text-2xl font-semibold">{formatMoney(kpis.monthlyWaste)}</div>
+        <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-4 bo-history-bg-card">
+          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Gaspillage cumulé/mois", "Cumulative waste/mo")}</div>
+          <div className="bo-history-mt-2 bo-history-text-2xl bo-history-font-semibold">{formatMoney(kpis.monthlyWaste)}</div>
         </div>
-        <div className="border border-border rounded-lg p-4 bg-card">
-          <div className="text-xs text-muted-foreground">{t("Succès envoi email", "Email send success")}</div>
-          <div className="mt-2 text-2xl font-semibold">{kpis.emailSuccessRate}%</div>
+        <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-4 bo-history-bg-card">
+          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Succès envoi email", "Email send success")}</div>
+          <div className="bo-history-mt-2 bo-history-text-2xl bo-history-font-semibold">{kpis.emailSuccessRate}%</div>
         </div>
       </div>
 
-      <div className="border border-border rounded-lg bg-card p-3 flex flex-col xl:flex-row gap-3 xl:items-center">
-        <div className="relative xl:max-w-xs w-full">
-          <Search className="w-4 h-4 absolute left-2 top-1/2 -translate-y-1/2 text-muted-foreground" />
-          <input
+      <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3 bo-history-flex bo-history-flex-col bo-history-xl-flex-row bo-history-gap-3 bo-history-xl-items-center">
+        <div className="bo-history-search">
+          <Search className="bo-history-search-icon" aria-hidden="true" />
+          <Input type="search" aria-label={t("Chercher une session", "Search sessions")}
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder={t("Chercher email, prénom, session…", "Search email, first name, session…")}
-            className="h-9 w-full pl-8 pr-3 rounded-md border border-input bg-background text-sm"
           />
         </div>
 
-        <div className="flex items-center gap-2 text-xs text-muted-foreground">
-          <Filter className="w-4 h-4" />
+        <div className="bo-history-flex bo-history-items-center bo-history-gap-2 bo-history-text-xs bo-history-text-muted-foreground">
+          <Filter className="bo-history-w-4 bo-history-h-4" />
           {t("Filtres", "Filters")}
         </div>
 
-        <select
+        <Select aria-label={t("Période", "Period")}
           value={days}
           onChange={(event) => setDays(Number(event.target.value))}
-          className="h-9 rounded-md border border-input bg-background px-3 text-sm"
         >
           <option value={7}>{t("7 jours", "7 days")}</option>
           <option value={30}>{t("30 jours", "30 days")}</option>
           <option value={90}>{t("90 jours", "90 days")}</option>
-        </select>
+        </Select>
 
-        <select
+        <Select aria-label={t("Persona", "Persona")}
           value={personaFilter}
           onChange={(event) => setPersonaFilter(event.target.value)}
-          className="h-9 rounded-md border border-input bg-background px-3 text-sm"
         >
           {personaOptions.map((value) => (
             <option key={value} value={value}>
               {value === "all" ? t("Toutes personas", "All personas") : value}
             </option>
           ))}
-        </select>
+        </Select>
 
-        <select
+        <Select aria-label={t("Profil", "Profile")}
           value={profileFilter}
           onChange={(event) => setProfileFilter(event.target.value)}
-          className="h-9 rounded-md border border-input bg-background px-3 text-sm"
         >
           {profileOptions.map((value) => (
             <option key={value} value={value}>
               {value === "all" ? t("Tous profils", "All profiles") : humanizeId(value)}
             </option>
           ))}
-        </select>
+        </Select>
 
-        <select
+        <Select aria-label={t("Statut", "Status")}
           value={statusFilter}
           onChange={(event) => setStatusFilter(event.target.value as SessionStatus)}
-          className="h-9 rounded-md border border-input bg-background px-3 text-sm"
         >
           <option value="all">{t("Tous statuts", "All statuses")}</option>
           <option value="new">{t("Nouvelles", "New")}</option>
           <option value="active">{t("En cours", "In progress")}</option>
           <option value="completed">{t("Terminées", "Completed")}</option>
           <option value="abandoned">{t("Abandonnées", "Abandoned")}</option>
-        </select>
+        </Select>
 
-        <select
+        <Select aria-label={t("Limite de sessions", "Session limit")}
           value={limit}
           onChange={(event) => setLimit(Number(event.target.value))}
-          className="h-9 rounded-md border border-input bg-background px-3 text-sm"
         >
           <option value={100}>100</option>
           <option value={150}>150</option>
           <option value={250}>250</option>
-        </select>
+        </Select>
       </div>
 
-      <div className="flex flex-wrap items-center gap-2">
-        <button
+      <div className="bo-history-flex bo-history-flex-wrap bo-history-items-center bo-history-gap-2">
+        <Button
           onClick={() => setActiveTab("preprod")}
-          className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
-            activeTab === "preprod" ? "bg-primary text-primary-foreground" : "border border-border"
-          }`}
+          variant={activeTab === "preprod" ? "primary" : "secondary"} aria-pressed={activeTab === "preprod"}
         >
-          <ClipboardCheck className="w-4 h-4" />
+          <ClipboardCheck className="bo-history-w-4 bo-history-h-4" />
           {t("Préprod", "Preprod")}
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => setActiveTab("pilotage")}
-          className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
-            activeTab === "pilotage" ? "bg-primary text-primary-foreground" : "border border-border"
-          }`}
+          variant={activeTab === "pilotage" ? "primary" : "secondary"} aria-pressed={activeTab === "pilotage"}
         >
-          <Activity className="w-4 h-4" />
+          <Activity className="bo-history-w-4 bo-history-h-4" />
           {t("Pilotage", "Command")}
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => setActiveTab("sessions")}
-          className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
-            activeTab === "sessions" ? "bg-primary text-primary-foreground" : "border border-border"
-          }`}
+          variant={activeTab === "sessions" ? "primary" : "secondary"} aria-pressed={activeTab === "sessions"}
         >
-          <Users className="w-4 h-4" />
+          <Users className="bo-history-w-4 bo-history-h-4" />
           {t("Sessions", "Sessions")}
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => setActiveTab("emails")}
-          className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
-            activeTab === "emails" ? "bg-primary text-primary-foreground" : "border border-border"
-          }`}
+          variant={activeTab === "emails" ? "primary" : "secondary"} aria-pressed={activeTab === "emails"}
         >
-          <Mail className="w-4 h-4" />
+          <Mail className="bo-history-w-4 bo-history-h-4" />
           {t("Emails", "Emails")}
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => setActiveTab("restitutions")}
-          className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
-            activeTab === "restitutions" ? "bg-primary text-primary-foreground" : "border border-border"
-          }`}
+          variant={activeTab === "restitutions" ? "primary" : "secondary"} aria-pressed={activeTab === "restitutions"}
         >
-          <FileText className="w-4 h-4" />
+          <FileText className="bo-history-w-4 bo-history-h-4" />
           {t("Restitutions", "Restitutions")}
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={() => setActiveTab("quality")}
-          className={`h-9 px-3 rounded-md text-sm inline-flex items-center gap-2 ${
-            activeTab === "quality" ? "bg-primary text-primary-foreground" : "border border-border"
-          }`}
+          variant={activeTab === "quality" ? "primary" : "secondary"} aria-pressed={activeTab === "quality"}
         >
-          <ShieldAlert className="w-4 h-4" />
+          <ShieldAlert className="bo-history-w-4 bo-history-h-4" />
           {t("Qualité", "Quality")}
-        </button>
+        </Button>
       </div>
 
       {activeTab === "preprod" && (
-        <div className="space-y-4">
-          <div className="border border-border rounded-lg bg-card p-4">
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+        <div className="bo-history-space-y-4">
+          <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-4">
+            <div className="bo-history-flex bo-history-flex-col bo-history-lg-flex-row bo-history-lg-items-start bo-history-lg-justify-between bo-history-gap-4">
               <div>
-                <div className="inline-flex items-center gap-2 text-sm font-medium">
-                  <ClipboardCheck className="w-4 h-4" />
+                <div className="bo-history-inline-flex bo-history-items-center bo-history-gap-2 bo-history-text-sm bo-history-font-medium">
+                  <ClipboardCheck className="bo-history-w-4 bo-history-h-4" />
                   {t("Recette préprod", "Preprod acceptance")}
                 </div>
-                <div className="mt-2 text-2xl font-semibold">
+                <div className="bo-history-mt-2 bo-history-text-2xl bo-history-font-semibold">
                   {preprodSummary.verdict === "ok"
                     ? t("Préprod validée", "Preprod validated")
                     : preprodSummary.verdict === "warning"
                       ? t("Préprod à surveiller", "Preprod needs attention")
                       : t("Préprod bloquée", "Preprod blocked")}
                 </div>
-                <div className="mt-1 text-sm text-muted-foreground">
+                <div className="bo-history-mt-1 bo-history-text-sm bo-history-text-muted-foreground">
                   {t("Contrôle basé sur la dernière session complétée et les données réellement capturées.", "Check based on the latest completed session and captured data.")}
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2">
-                <span className={`inline-flex h-8 items-center px-3 rounded-full text-sm ${preprodCheckClasses(preprodSummary.verdict)}`}>
+              <div className="bo-history-flex bo-history-flex-wrap bo-history-gap-2">
+                <span className={`bo-history-inline-flex bo-history-h-8 bo-history-items-center bo-history-px-3 bo-history-rounded-full bo-history-text-sm ${preprodCheckClasses(preprodSummary.verdict)}`}>
                   {preprodSummary.failed === 0
                     ? t("Aucun échec", "No failure")
                     : t(`${preprodSummary.failed} échec(s)`, `${preprodSummary.failed} failure(s)`)}
                 </span>
-                <a
-                  href={preprodSelectorUrl}
+                <TextLink variant="secondary"
+                  to={preprodSelectorUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="h-8 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
                 >
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="bo-history-w-4 bo-history-h-4" />
                   {t("Ouvrir le tunnel", "Open funnel")}
-                </a>
-                <button
+                </TextLink>
+                <Button variant="secondary"
                   onClick={() => void loadDashboard()}
-                  className="h-8 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
                 >
-                  <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
+                  <RefreshCw className={`bo-history-w-4 bo-history-h-4 ${loading ? "bo-history-animate-spin" : ""}`} />
                   {t("Rafraîchir", "Refresh")}
-                </button>
+                </Button>
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Sessions terminées", "Completed sessions")}</div>
-              <div className="text-lg font-semibold mt-1">{preprodSummary.completedSessions.length}</div>
+          <div className="bo-history-grid bo-history-grid-cols-2 bo-history-lg-grid-cols-5 bo-history-gap-3">
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Sessions terminées", "Completed sessions")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{preprodSummary.completedSessions.length}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Dernier score", "Latest score")}</div>
-              <div className="text-lg font-semibold mt-1">{preprodSummary.latestCompleted?.health_score ?? "—"}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Dernier score", "Latest score")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{preprodSummary.latestCompleted?.health_score ?? "—"}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Restitution manquante", "Missing restitution")}</div>
-              <div className="text-lg font-semibold mt-1 text-red-600">{preprodSummary.completedMissingRestitution.length}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Restitution manquante", "Missing restitution")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1 bo-history-text-red-600">{preprodSummary.completedMissingRestitution.length}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Email manquant", "Missing email")}</div>
-              <div className="text-lg font-semibold mt-1 text-amber-700">{preprodSummary.completedMissingEmailJob.length}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Email manquant", "Missing email")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1 bo-history-text-amber-700">{preprodSummary.completedMissingEmailJob.length}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Emails en erreur", "Email failures")}</div>
-              <div className="text-lg font-semibold mt-1 text-red-600">{preprodSummary.completedWithEmailFailure.length}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Emails en erreur", "Email failures")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1 bo-history-text-red-600">{preprodSummary.completedWithEmailFailure.length}</div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-            <section className="border border-border rounded-lg bg-card overflow-hidden">
-              <div className="px-3 py-2 border-b border-border text-sm font-medium">
+          <div className="bo-history-grid bo-history-grid-cols-1 bo-history-xl-grid-cols-2 bo-history-gap-4">
+            <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-overflow-hidden">
+              <div className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium">
                 {t("Checklist GO29", "GO29 checklist")}
               </div>
-              <div className="divide-y divide-border">
+              <div className="bo-history-divide-y bo-history-divide-border">
                 {preprodSummary.checks.map((check) => (
-                  <div key={check.id} className="p-3 flex items-start justify-between gap-3">
+                  <div key={check.id} className="bo-history-p-3 bo-history-flex bo-history-items-start bo-history-justify-between bo-history-gap-3">
                     <div>
-                      <div className="text-sm font-medium">{locale === "en" ? check.labelEn : check.labelFr}</div>
-                      <div className="mt-1 text-xs text-muted-foreground break-all">{check.detail}</div>
+                      <div className="bo-history-text-sm bo-history-font-medium">{locale === "en" ? check.labelEn : check.labelFr}</div>
+                      <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground bo-history-break-all">{check.detail}</div>
                     </div>
-                    <span className={`shrink-0 inline-flex px-2 py-0.5 rounded-full text-xs ${preprodCheckClasses(check.status)}`}>
+                    <span className={`bo-history-shrink-0 bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${preprodCheckClasses(check.status)}`}>
                       {check.status}
                     </span>
                   </div>
@@ -1652,40 +1615,40 @@ export default function BackOfficePage() {
               </div>
             </section>
 
-            <section className="border border-border rounded-lg bg-card p-3">
-              <div className="text-sm font-medium">{t("Dernière session validée", "Latest validated session")}</div>
+            <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-sm bo-history-font-medium">{t("Dernière session validée", "Latest validated session")}</div>
               {preprodSummary.latestCompleted ? (
-                <div className="mt-3 space-y-2 text-sm">
-                  <div className="flex justify-between gap-3">
-                    <span className="text-muted-foreground">{t("Session", "Session")}</span>
-                    <span className="font-mono text-xs">{preprodSummary.latestCompleted.session_id}</span>
+                <div className="bo-history-mt-3 bo-history-space-y-2 bo-history-text-sm">
+                  <div className="bo-history-flex bo-history-justify-between bo-history-gap-3">
+                    <span className="bo-history-text-muted-foreground">{t("Session", "Session")}</span>
+                    <span className="bo-history-font-mono bo-history-text-xs">{preprodSummary.latestCompleted.session_id}</span>
                   </div>
-                  <div className="flex justify-between gap-3">
-                    <span className="text-muted-foreground">{t("Terminée", "Completed")}</span>
+                  <div className="bo-history-flex bo-history-justify-between bo-history-gap-3">
+                    <span className="bo-history-text-muted-foreground">{t("Terminée", "Completed")}</span>
                     <span>{formatDateTime(preprodSummary.latestCompleted.completed_at, locale)}</span>
                   </div>
-                  <div className="flex justify-between gap-3">
-                    <span className="text-muted-foreground">{t("Persona", "Persona")}</span>
+                  <div className="bo-history-flex bo-history-justify-between bo-history-gap-3">
+                    <span className="bo-history-text-muted-foreground">{t("Persona", "Persona")}</span>
                     <span>{preprodSummary.latestCompleted.persona || "—"}</span>
                   </div>
-                  <div className="flex justify-between gap-3">
-                    <span className="text-muted-foreground">{t("Profil", "Profile")}</span>
+                  <div className="bo-history-flex bo-history-justify-between bo-history-gap-3">
+                    <span className="bo-history-text-muted-foreground">{t("Profil", "Profile")}</span>
                     <span>{getInsightLabel(preprodSummary.latestCompleted, "profile", locale)}</span>
                   </div>
-                  <div className="flex justify-between gap-3">
-                    <span className="text-muted-foreground">{t("Restitution", "Restitution")}</span>
-                    <span className="font-mono text-xs">{preprodSummary.latestRestitution?.id || "—"}</span>
+                  <div className="bo-history-flex bo-history-justify-between bo-history-gap-3">
+                    <span className="bo-history-text-muted-foreground">{t("Restitution", "Restitution")}</span>
+                    <span className="bo-history-font-mono bo-history-text-xs">{preprodSummary.latestRestitution?.id || "—"}</span>
                   </div>
-                  <button
+                  <Button variant="secondary"
                     onClick={() => void openDetail(preprodSummary.latestCompleted?.session_id || "")}
-                    className="mt-2 h-8 px-3 rounded-md border border-border text-sm inline-flex items-center gap-2"
+                    className="bo-history-mt-2"
                   >
-                    <Eye className="w-4 h-4" />
+                    <Eye className="bo-history-w-4 bo-history-h-4" />
                     {t("Voir le détail", "View detail")}
-                  </button>
+                  </Button>
                 </div>
               ) : (
-                <div className="mt-3 text-sm text-muted-foreground">
+                <div className="bo-history-mt-3 bo-history-text-sm bo-history-text-muted-foreground">
                   {t("Aucune session complétée sur la période filtrée.", "No completed session in the selected period.")}
                 </div>
               )}
@@ -1693,19 +1656,19 @@ export default function BackOfficePage() {
           </div>
 
           {(preprodSummary.completedMissingRestitution.length > 0 || preprodSummary.completedMissingEmailJob.length > 0) && (
-            <section className="border border-border rounded-lg bg-card overflow-hidden">
-              <div className="px-3 py-2 border-b border-border text-sm font-medium">
+            <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-overflow-hidden">
+              <div className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium">
                 {t("Anomalies de recette", "Acceptance anomalies")}
               </div>
-              <div className="overflow-auto">
-                <table className="w-full text-sm">
-                  <thead className="bg-muted/40">
-                    <tr className="text-left">
-                      <th className="px-3 py-2 font-medium">{t("Session", "Session")}</th>
-                      <th className="px-3 py-2 font-medium">{t("Terminée", "Completed")}</th>
-                      <th className="px-3 py-2 font-medium">{t("Contact", "Contact")}</th>
-                      <th className="px-3 py-2 font-medium">{t("Anomalie", "Anomaly")}</th>
-                      <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
+              <div className="bo-history-overflow-auto">
+                <table className="bo-history-w-full bo-history-text-sm">
+                  <thead className="bo-history-bg-muted-40">
+                    <tr className="bo-history-text-left">
+                      <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Session", "Session")}</th>
+                      <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Terminée", "Completed")}</th>
+                      <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Contact", "Contact")}</th>
+                      <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Anomalie", "Anomaly")}</th>
+                      <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Action", "Action")}</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1713,19 +1676,18 @@ export default function BackOfficePage() {
                       ...preprodSummary.completedMissingRestitution.map((session) => ({ session, anomaly: t("Restitution manquante", "Missing restitution") })),
                       ...preprodSummary.completedMissingEmailJob.map((session) => ({ session, anomaly: t("Job email manquant", "Missing email job") })),
                     ].slice(0, 12).map(({ session, anomaly }) => (
-                      <tr key={`${session.session_id}-${anomaly}`} className="border-t border-border">
-                        <td className="px-3 py-2 font-mono text-xs">{session.session_id.slice(0, 8)}</td>
-                        <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(session.completed_at, locale)}</td>
-                        <td className="px-3 py-2">{session.email || session.first_name || "—"}</td>
-                        <td className="px-3 py-2">{anomaly}</td>
-                        <td className="px-3 py-2">
-                          <button
+                      <tr key={`${session.session_id}-${anomaly}`} className="bo-history-border-t bo-history-border-border">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-font-mono bo-history-text-xs">{session.session_id.slice(0, 8)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(session.completed_at, locale)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">{session.email || session.first_name || "—"}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">{anomaly}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <Button variant="secondary"
                             onClick={() => void openDetail(session.session_id)}
-                            className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
                           >
-                            <Eye className="w-3.5 h-3.5" />
+                            <Eye className="bo-history-w-3-5 bo-history-h-3-5" />
                             {t("Détails", "Details")}
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                     ))}
@@ -1738,74 +1700,73 @@ export default function BackOfficePage() {
       )}
 
       {activeTab === "pilotage" && (
-        <div className="space-y-4">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Critiques", "Critical")}</div>
-              <div className="text-lg font-semibold mt-1 text-red-600">{pilotage.summary.critical}</div>
+        <div className="bo-history-space-y-4">
+          <div className="bo-history-grid bo-history-grid-cols-2 bo-history-md-grid-cols-5 bo-history-gap-3">
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Critiques", "Critical")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1 bo-history-text-red-600">{pilotage.summary.critical}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Priorité haute", "High priority")}</div>
-              <div className="text-lg font-semibold mt-1">{pilotage.summary.high}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Priorité haute", "High priority")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{pilotage.summary.high}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Revue humaine", "Human review")}</div>
-              <div className="text-lg font-semibold mt-1 text-amber-700">{pilotage.summary.reviewRequired}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Revue humaine", "Human review")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1 bo-history-text-amber-700">{pilotage.summary.reviewRequired}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Relances tunnel", "Funnel recovery")}</div>
-              <div className="text-lg font-semibold mt-1">{pilotage.summary.recovery}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Relances tunnel", "Funnel recovery")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{pilotage.summary.recovery}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Valeur/mois", "Value/mo")}</div>
-              <div className="text-lg font-semibold mt-1">{formatMoney(pilotage.summary.monthlyWaste)}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Valeur/mois", "Value/mo")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{formatMoney(pilotage.summary.monthlyWaste)}</div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
-            <section className="border border-border rounded-lg bg-card p-3">
-              <div className="inline-flex items-center gap-2 text-sm font-medium">
-                <Mail className="w-4 h-4" />
+          <div className="bo-history-grid bo-history-grid-cols-1 bo-history-lg-grid-cols-3 bo-history-gap-3">
+            <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-inline-flex bo-history-items-center bo-history-gap-2 bo-history-text-sm bo-history-font-medium">
+                <Mail className="bo-history-w-4 bo-history-h-4" />
                 {t("Emails à réparer", "Email issues")}
               </div>
-              <div className="mt-2 text-2xl font-semibold">{pilotage.summary.emailIssues}</div>
-              <div className="mt-1 text-xs text-muted-foreground">
+              <div className="bo-history-mt-2 bo-history-text-2xl bo-history-font-semibold">{pilotage.summary.emailIssues}</div>
+              <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">
                 {t("Jobs échoués ou rapports non envoyés.", "Failed jobs or unsent reports.")}
               </div>
             </section>
-            <section className="border border-border rounded-lg bg-card p-3">
-              <div className="inline-flex items-center gap-2 text-sm font-medium">
-                <TrendingDown className="w-4 h-4" />
+            <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-inline-flex bo-history-items-center bo-history-gap-2 bo-history-text-sm bo-history-font-medium">
+                <TrendingDown className="bo-history-w-4 bo-history-h-4" />
                 {t("Economies potentielles", "Potential savings")}
               </div>
-              <div className="mt-2 text-2xl font-semibold">{formatMoney(pilotage.summary.annualSavings)}</div>
-              <div className="mt-1 text-xs text-muted-foreground">
+              <div className="bo-history-mt-2 bo-history-text-2xl bo-history-font-semibold">{formatMoney(pilotage.summary.annualSavings)}</div>
+              <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">
                 {t("Cumul annuel des sessions filtrées.", "Annual total for filtered sessions.")}
               </div>
             </section>
-            <section className="border border-border rounded-lg bg-card p-3">
-              <div className="inline-flex items-center gap-2 text-sm font-medium">
-                <ShieldAlert className="w-4 h-4" />
+            <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-inline-flex bo-history-items-center bo-history-gap-2 bo-history-text-sm bo-history-font-medium">
+                <ShieldAlert className="bo-history-w-4 bo-history-h-4" />
                 {t("File de décision", "Decision queue")}
               </div>
-              <div className="mt-2 text-2xl font-semibold">{pilotage.summary.total}</div>
-              <div className="mt-1 text-xs text-muted-foreground">
+              <div className="bo-history-mt-2 bo-history-text-2xl bo-history-font-semibold">{pilotage.summary.total}</div>
+              <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">
                 {t("Triée par risque, valeur et urgence opérationnelle.", "Sorted by risk, value, and operational urgency.")}
               </div>
             </section>
           </div>
 
-          <div className="border border-border rounded-lg bg-card overflow-hidden">
-            <div className="px-3 py-2 border-b border-border flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2">
-              <div className="text-sm font-medium inline-flex items-center gap-2">
-                <Activity className="w-4 h-4" />
+          <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-overflow-hidden">
+            <div className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-flex bo-history-flex-col bo-history-lg-flex-row bo-history-lg-items-center bo-history-lg-justify-between bo-history-gap-2">
+              <div className="bo-history-text-sm bo-history-font-medium bo-history-inline-flex bo-history-items-center bo-history-gap-2">
+                <Activity className="bo-history-w-4 bo-history-h-4" />
                 {t("Priorités opérationnelles", "Operational priorities")}
               </div>
-              <div className="flex flex-col sm:flex-row gap-2">
-                <select
+              <div className="bo-history-flex bo-history-flex-col bo-history-sm-flex-row bo-history-gap-2">
+                <Select aria-label={t("File de pilotage", "Command lane")}
                   value={pilotageLaneFilter}
                   onChange={(event) => setPilotageLaneFilter(event.target.value as PilotageLane | "all")}
-                  className="h-8 rounded-md border border-input bg-background px-2 text-xs"
                 >
                   <option value="all">{t("Toutes décisions", "All decisions")}</option>
                   <option value="email">{pilotageLaneLabel("email", locale)}</option>
@@ -1813,103 +1774,102 @@ export default function BackOfficePage() {
                   <option value="recovery">{pilotageLaneLabel("recovery", locale)}</option>
                   <option value="value">{pilotageLaneLabel("value", locale)}</option>
                   <option value="watch">{pilotageLaneLabel("watch", locale)}</option>
-                </select>
-                <select
+                </Select>
+                <Select aria-label={t("Priorité", "Priority")}
                   value={pilotagePriorityFilter}
                   onChange={(event) => setPilotagePriorityFilter(event.target.value as PilotageRow["priorityLabel"] | "all")}
-                  className="h-8 rounded-md border border-input bg-background px-2 text-xs"
                 >
                   <option value="all">{t("Toutes priorités", "All priorities")}</option>
                   <option value="critical">critical</option>
                   <option value="high">high</option>
                   <option value="medium">medium</option>
                   <option value="low">low</option>
-                </select>
+                </Select>
               </div>
             </div>
-            <div className="overflow-auto">
-              <table className="w-full text-sm">
-                <thead className="bg-muted/40">
-                  <tr className="text-left">
-                    <th className="px-3 py-2 font-medium">{t("Priorité", "Priority")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Contact", "Contact")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Décision", "Decision")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Raisons", "Reasons")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Valeur", "Value")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Santé", "Health")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Email", "Email")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
+            <div className="bo-history-overflow-auto">
+              <table className="bo-history-w-full bo-history-text-sm">
+                <thead className="bo-history-bg-muted-40">
+                  <tr className="bo-history-text-left">
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Priorité", "Priority")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Contact", "Contact")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Décision", "Decision")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Raisons", "Reasons")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Valeur", "Value")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Santé", "Health")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Email", "Email")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Action", "Action")}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filteredPilotageRows.slice(0, 80).map((row) => {
                     const reasons = locale === "en" ? row.reasonsEn : row.reasonsFr;
                     return (
-                      <tr key={row.sessionId} className="border-t border-border align-top">
-                        <td className="px-3 py-2">
-                          <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${pilotagePriorityClasses(row.priorityLabel)}`}>
+                      <tr key={row.sessionId} className="bo-history-border-t bo-history-border-border bo-history-align-top">
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <span className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${pilotagePriorityClasses(row.priorityLabel)}`}>
                             {row.priorityScore}
                           </span>
-                          <div className="mt-1 text-xs text-muted-foreground">{row.priorityLabel}</div>
+                          <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">{row.priorityLabel}</div>
                         </td>
-                        <td className="px-3 py-2 min-w-[180px]">
-                          <div className="font-medium">{row.firstName || "—"}</div>
-                          <div className="text-xs text-muted-foreground">{row.email || "—"}</div>
-                          <div className="mt-1 text-xs text-muted-foreground">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-min-w-180px">
+                          <div className="bo-history-font-medium">{row.firstName || "—"}</div>
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{row.email || "—"}</div>
+                          <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">
                             {[row.persona, row.profile ? humanizeId(row.profile) : null].filter(Boolean).join(" / ") || "—"}
                           </div>
                         </td>
-                        <td className="px-3 py-2">
-                          <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${pilotageLaneClasses(row.lane)}`}>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <span className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${pilotageLaneClasses(row.lane)}`}>
                             {pilotageLaneLabel(row.lane, locale)}
                           </span>
-                          <div className="mt-1 text-xs text-muted-foreground">{row.status}</div>
+                          <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">{row.status}</div>
                         </td>
-                        <td className="px-3 py-2 min-w-[240px]">
-                          <div className="flex flex-wrap gap-1">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-min-w-240px">
+                          <div className="bo-history-flex bo-history-flex-wrap bo-history-gap-1">
                             {reasons.slice(0, 4).map((reason) => (
-                              <span key={reason} className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted">
+                              <span key={reason} className="bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs bo-history-bg-muted">
                                 {reason}
                               </span>
                             ))}
                             {reasons.length > 4 && (
-                              <span className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted">
+                              <span className="bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs bo-history-bg-muted">
                                 +{reasons.length - 4}
                               </span>
                             )}
                           </div>
                         </td>
-                        <td className="px-3 py-2 whitespace-nowrap">
-                          <div className="font-medium">{formatMoney(row.monthlyWaste)}/mois</div>
-                          <div className="text-xs text-muted-foreground">{formatMoney(row.annualSavings)}/an</div>
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">
+                          <div className="bo-history-font-medium">{formatMoney(row.monthlyWaste)}/mois</div>
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{formatMoney(row.annualSavings)}/an</div>
                         </td>
-                        <td className="px-3 py-2">{row.healthScore ?? "—"}</td>
-                        <td className="px-3 py-2">
-                          <div className={row.emailFailedCount > 0 ? "text-red-600 font-medium" : "text-foreground"}>
+                        <td className="bo-history-px-3 bo-history-py-2">{row.healthScore ?? "—"}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <div className={row.emailFailedCount > 0 ? "bo-history-text-red-600 bo-history-font-medium" : "bo-history-text-foreground"}>
                             {row.emailSentCount}/{row.emailJobsCount}
                           </div>
                           {row.emailFailedCount > 0 && (
-                            <div className="text-xs text-red-600">{row.emailFailedCount} failed</div>
+                            <div className="bo-history-text-xs bo-history-text-red-600">{row.emailFailedCount} failed</div>
                           )}
                         </td>
-                        <td className="px-3 py-2 max-w-[220px]">
-                          <div className="text-xs text-muted-foreground">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-max-w-220px">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">
                             {locale === "en" ? row.actionEn : row.actionFr}
                           </div>
-                          <button
+                          <Button variant="secondary"
                             onClick={() => void openDetail(row.sessionId)}
-                            className="mt-2 h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                            className="bo-history-mt-2"
                           >
-                            <Eye className="w-3.5 h-3.5" />
+                            <Eye className="bo-history-w-3-5 bo-history-h-3-5" />
                             {t("Détails", "Details")}
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                     );
                   })}
                   {!loading && filteredPilotageRows.length === 0 && (
                     <tr>
-                      <td colSpan={8} className="px-3 py-8 text-center text-muted-foreground">
+                      <td colSpan={8} className="bo-history-px-3 bo-history-py-8 bo-history-text-center bo-history-text-muted-foreground">
                         {t("Aucune priorité sur la période", "No priority on this period")}
                       </td>
                     </tr>
@@ -1922,50 +1882,50 @@ export default function BackOfficePage() {
       )}
 
       {activeTab === "sessions" && (
-        <div className="border border-border rounded-lg bg-card overflow-hidden">
-          <div className="overflow-auto">
-            <table className="w-full text-sm">
-              <thead className="bg-muted/40">
-                <tr className="text-left">
-                  <th className="px-3 py-2 font-medium">{t("Créée", "Created")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Contact", "Contact")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Persona", "Persona")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Profil", "Profile")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Tags", "Tags")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Statut", "Status")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Step max", "Max step")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Score", "Score")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Gaspillage/mo", "Waste/mo")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Emails", "Emails")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Événements", "Events")}</th>
-                  <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
+        <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-overflow-hidden">
+          <div className="bo-history-overflow-auto">
+            <table className="bo-history-w-full bo-history-text-sm">
+              <thead className="bo-history-bg-muted-40">
+                <tr className="bo-history-text-left">
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Créée", "Created")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Contact", "Contact")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Persona", "Persona")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Profil", "Profile")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Tags", "Tags")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Statut", "Status")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Step max", "Max step")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Score", "Score")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Gaspillage/mo", "Waste/mo")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Emails", "Emails")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Événements", "Events")}</th>
+                  <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Action", "Action")}</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredSessions.map((session) => {
                   const status = getSessionStatus(session);
                   return (
-                    <tr key={session.session_id} className="border-t border-border">
-                      <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(session.created_at, locale)}</td>
-                      <td className="px-3 py-2">
-                        <div className="font-medium">{session.first_name || "—"}</div>
-                        <div className="text-xs text-muted-foreground">{session.email || "—"}</div>
+                    <tr key={session.session_id} className="bo-history-border-t bo-history-border-border">
+                      <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(session.created_at, locale)}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">
+                        <div className="bo-history-font-medium">{session.first_name || "—"}</div>
+                        <div className="bo-history-text-xs bo-history-text-muted-foreground">{session.email || "—"}</div>
                       </td>
-                      <td className="px-3 py-2">{session.persona || "—"}</td>
-                      <td className="px-3 py-2">
-                        <div className="font-medium">{getInsightLabel(session, "profile", locale)}</div>
-                        <div className="text-xs text-muted-foreground">{humanizeId(session.primary_risk)}</div>
+                      <td className="bo-history-px-3 bo-history-py-2">{session.persona || "—"}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">
+                        <div className="bo-history-font-medium">{getInsightLabel(session, "profile", locale)}</div>
+                        <div className="bo-history-text-xs bo-history-text-muted-foreground">{humanizeId(session.primary_risk)}</div>
                       </td>
-                      <td className="px-3 py-2">
+                      <td className="bo-history-px-3 bo-history-py-2">
                         {(session.admin_tags || []).length > 0 ? (
-                          <div className="flex flex-wrap gap-1">
+                          <div className="bo-history-flex bo-history-flex-wrap bo-history-gap-1">
                             {(session.admin_tags || []).slice(0, 2).map((tag) => (
-                              <span key={tag} className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted">
+                              <span key={tag} className="bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs bo-history-bg-muted">
                                 {tag}
                               </span>
                             ))}
                             {(session.admin_tags || []).length > 2 && (
-                              <span className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted">
+                              <span className="bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs bo-history-bg-muted">
                                 +{(session.admin_tags || []).length - 2}
                               </span>
                             )}
@@ -1974,33 +1934,32 @@ export default function BackOfficePage() {
                           "—"
                         )}
                       </td>
-                      <td className="px-3 py-2">
-                        <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${statusClasses(status)}`}>
+                      <td className="bo-history-px-3 bo-history-py-2">
+                        <span className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${statusClasses(status)}`}>
                           {status}
                         </span>
                       </td>
-                      <td className="px-3 py-2">{session.max_step_seen ?? session.last_step_id ?? "—"}</td>
-                      <td className="px-3 py-2">{session.health_score ?? "—"}</td>
-                      <td className="px-3 py-2">{formatMoney(session.estimated_waste)}</td>
-                      <td className="px-3 py-2">
+                      <td className="bo-history-px-3 bo-history-py-2">{session.max_step_seen ?? session.last_step_id ?? "—"}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">{session.health_score ?? "—"}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">{formatMoney(session.estimated_waste)}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">
                         {session.email_sent_count}/{session.email_jobs_count}
                       </td>
-                      <td className="px-3 py-2">{session.event_count || 0}</td>
-                      <td className="px-3 py-2">
-                        <button
+                      <td className="bo-history-px-3 bo-history-py-2">{session.event_count || 0}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">
+                        <Button variant="secondary"
                           onClick={() => void openDetail(session.session_id)}
-                          className="h-8 px-2 rounded-md border border-border inline-flex items-center gap-1 text-xs"
                         >
-                          <Eye className="w-3.5 h-3.5" />
+                          <Eye className="bo-history-w-3-5 bo-history-h-3-5" />
                           {t("Détails", "Details")}
-                        </button>
+                        </Button>
                       </td>
                     </tr>
                   );
                 })}
                 {!loading && filteredSessions.length === 0 && (
                   <tr>
-                    <td colSpan={12} className="px-3 py-8 text-center text-muted-foreground">
+                    <td colSpan={12} className="bo-history-px-3 bo-history-py-8 bo-history-text-center bo-history-text-muted-foreground">
                       {t("Aucune session trouvée", "No sessions found")}
                     </td>
                   </tr>
@@ -2012,93 +1971,93 @@ export default function BackOfficePage() {
       )}
 
       {activeTab === "emails" && (
-        <div className="space-y-4">
-          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3">
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Total jobs", "Total jobs")}</div>
-              <div className="text-lg font-semibold mt-1">{emailSummary.total}</div>
+        <div className="bo-history-space-y-4">
+          <div className="bo-history-grid bo-history-grid-cols-2 bo-history-md-grid-cols-3 bo-history-xl-grid-cols-6 bo-history-gap-3">
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Total jobs", "Total jobs")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{emailSummary.total}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Sent", "Sent")}</div>
-              <div className="text-lg font-semibold mt-1">{emailSummary.sent}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Sent", "Sent")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{emailSummary.sent}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Delivered", "Delivered")}</div>
-              <div className="text-lg font-semibold mt-1">{emailSummary.delivered}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Delivered", "Delivered")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{emailSummary.delivered}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Opened", "Opened")}</div>
-              <div className="text-lg font-semibold mt-1">{emailSummary.opened}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Opened", "Opened")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{emailSummary.opened}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Clicked", "Clicked")}</div>
-              <div className="text-lg font-semibold mt-1">{emailSummary.clicked}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Clicked", "Clicked")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{emailSummary.clicked}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Failed", "Failed")}</div>
-              <div className="text-lg font-semibold mt-1 text-red-600">{emailSummary.failed}</div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("File d'attente", "Queued")}</div>
-              <div className="text-lg font-semibold mt-1">{emailOpsSummary.queued}</div>
-            </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("À traiter", "Due now")}</div>
-              <div className="text-lg font-semibold mt-1">{emailOpsSummary.dueNow}</div>
-            </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("En traitement", "Processing")}</div>
-              <div className="text-lg font-semibold mt-1">{emailOpsSummary.processing}</div>
-            </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Échecs récents", "Recent failed")}</div>
-              <div className="text-lg font-semibold mt-1 text-red-600">{emailOpsSummary.failed}</div>
-            </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Annulés", "Cancelled")}</div>
-              <div className="text-lg font-semibold mt-1">{emailOpsSummary.cancelled}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Failed", "Failed")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1 bo-history-text-red-600">{emailSummary.failed}</div>
             </div>
           </div>
 
-          <div className="border border-border rounded-lg bg-card overflow-hidden">
-            <div className="px-3 py-2 border-b border-border text-sm font-medium">
+          <div className="bo-history-grid bo-history-grid-cols-2 bo-history-md-grid-cols-5 bo-history-gap-3">
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("File d'attente", "Queued")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{emailOpsSummary.queued}</div>
+            </div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("À traiter", "Due now")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{emailOpsSummary.dueNow}</div>
+            </div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("En traitement", "Processing")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{emailOpsSummary.processing}</div>
+            </div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Échecs récents", "Recent failed")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1 bo-history-text-red-600">{emailOpsSummary.failed}</div>
+            </div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Annulés", "Cancelled")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{emailOpsSummary.cancelled}</div>
+            </div>
+          </div>
+
+          <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-overflow-hidden">
+            <div className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium">
               {t("Santé email par jour et template", "Email health by day and template")}
             </div>
-            <div className="overflow-auto">
-              <table className="w-full text-sm">
-                <thead className="bg-muted/40">
-                  <tr className="text-left">
-                    <th className="px-3 py-2 font-medium">{t("Jour", "Day")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Template", "Template")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Locale", "Locale")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Total", "Total")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Sent", "Sent")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Delivered", "Delivered")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Opened", "Opened")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Clicked", "Clicked")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Failed", "Failed")}</th>
+            <div className="bo-history-overflow-auto">
+              <table className="bo-history-w-full bo-history-text-sm">
+                <thead className="bo-history-bg-muted-40">
+                  <tr className="bo-history-text-left">
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Jour", "Day")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Template", "Template")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Locale", "Locale")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Total", "Total")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Sent", "Sent")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Delivered", "Delivered")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Opened", "Opened")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Clicked", "Clicked")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Failed", "Failed")}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {(dashboard?.emailHealth || []).map((row, index) => (
-                    <tr key={`${row.day}-${row.template_key}-${row.locale}-${index}`} className="border-t border-border">
-                      <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(row.day, locale)}</td>
-                      <td className="px-3 py-2">{row.template_key}</td>
-                      <td className="px-3 py-2">{row.locale}</td>
-                      <td className="px-3 py-2">{row.total_jobs}</td>
-                      <td className="px-3 py-2">{row.sent_jobs}</td>
-                      <td className="px-3 py-2">{row.delivered_jobs}</td>
-                      <td className="px-3 py-2">{row.opened_jobs}</td>
-                      <td className="px-3 py-2">{row.clicked_jobs}</td>
-                      <td className="px-3 py-2 text-red-600">{row.failed_jobs}</td>
+                    <tr key={`${row.day}-${row.template_key}-${row.locale}-${index}`} className="bo-history-border-t bo-history-border-border">
+                      <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(row.day, locale)}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">{row.template_key}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">{row.locale}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">{row.total_jobs}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">{row.sent_jobs}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">{row.delivered_jobs}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">{row.opened_jobs}</td>
+                      <td className="bo-history-px-3 bo-history-py-2">{row.clicked_jobs}</td>
+                      <td className="bo-history-px-3 bo-history-py-2 bo-history-text-red-600">{row.failed_jobs}</td>
                     </tr>
                   ))}
                   {!loading && (dashboard?.emailHealth || []).length === 0 && (
                     <tr>
-                      <td colSpan={9} className="px-3 py-8 text-center text-muted-foreground">
+                      <td colSpan={9} className="bo-history-px-3 bo-history-py-8 bo-history-text-center bo-history-text-muted-foreground">
                         {t("Aucune donnée email sur la période", "No email data on this period")}
                       </td>
                     </tr>
@@ -2109,30 +2068,30 @@ export default function BackOfficePage() {
           </div>
 
           {emailJobActionError && (
-            <div className="border border-red-300 bg-red-50 text-red-700 rounded-lg px-3 py-2 text-sm">
+            <div className="bo-history-border bo-history-border-red-300 bo-history-bg-red-50 bo-history-text-red-700 bo-history-rounded-lg bo-history-px-3 bo-history-py-2 bo-history-text-sm">
               {emailJobActionError}
             </div>
           )}
 
-          <div className="border border-border rounded-lg bg-card overflow-hidden">
-            <div className="px-3 py-2 border-b border-border text-sm font-medium">
+          <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-overflow-hidden">
+            <div className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium">
               {t("Jobs email récents", "Recent email jobs")}
             </div>
-            <div className="overflow-auto">
-              <table className="w-full text-sm">
-                <thead className="bg-muted/40">
-                  <tr className="text-left">
-                    <th className="px-3 py-2 font-medium">{t("Créé", "Created")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Email", "Email")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Template", "Template")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Version", "Version")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Déclencheur", "Trigger")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Status", "Status")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Qualité", "Quality")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Schedule", "Schedule")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Attempts", "Attempts")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Erreur", "Error")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Actions", "Actions")}</th>
+            <div className="bo-history-overflow-auto">
+              <table className="bo-history-w-full bo-history-text-sm">
+                <thead className="bo-history-bg-muted-40">
+                  <tr className="bo-history-text-left">
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Créé", "Created")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Email", "Email")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Template", "Template")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Version", "Version")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Déclencheur", "Trigger")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Status", "Status")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Qualité", "Quality")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Schedule", "Schedule")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Attempts", "Attempts")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Erreur", "Error")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Actions", "Actions")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2141,68 +2100,64 @@ export default function BackOfficePage() {
                     const ctaUrl = getJobCtaUrl(job);
                     const quality = getJobEmailQuality(job);
                     return (
-                      <tr key={job.id} className="border-t border-border">
-                        <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(job.created_at, locale)}</td>
-                        <td className="px-3 py-2">{job.email}</td>
-                        <td className="px-3 py-2">{job.template_key}</td>
-                        <td className="px-3 py-2">{getJobTemplateVersion(job)}</td>
-                        <td className="px-3 py-2">{getJobTrigger(job)}</td>
-                        <td className="px-3 py-2">
-                          <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${emailStatusClasses(job.status)}`}>
+                      <tr key={job.id} className="bo-history-border-t bo-history-border-border">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(job.created_at, locale)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">{job.email}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">{job.template_key}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">{getJobTemplateVersion(job)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">{getJobTrigger(job)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <span className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${emailStatusClasses(job.status)}`}>
                             {job.status}
                           </span>
                         </td>
-                        <td className="px-3 py-2">
+                        <td className="bo-history-px-3 bo-history-py-2">
                           <span
-                            className={`inline-flex px-2 py-0.5 rounded-full text-xs ${emailQualityClasses(quality.status)}`}
+                            className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${emailQualityClasses(quality.status)}`}
                             title={quality.flagIds.join(", ")}
                           >
                             {quality.status}
                             {quality.score != null ? ` ${quality.score}` : ""}
                           </span>
                         </td>
-                        <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(job.scheduled_for, locale)}</td>
-                        <td className="px-3 py-2">{job.attempts}</td>
-                        <td className="px-3 py-2 max-w-[220px] truncate" title={job.last_error || ""}>
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(job.scheduled_for, locale)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">{job.attempts}</td>
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-max-w-220px bo-history-truncate" title={job.last_error || ""}>
                           {job.last_error || "—"}
                         </td>
-                        <td className="px-3 py-2">
-                          <div className="flex flex-wrap gap-1">
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <div className="bo-history-flex bo-history-flex-wrap bo-history-gap-1">
                             {ctaUrl && (
-                              <a
-                                href={ctaUrl}
+                              <TextLink variant="secondary"
+                                to={ctaUrl}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
                               >
-                                <ExternalLink className="w-3.5 h-3.5" />
+                                <ExternalLink className="bo-history-w-3-5 bo-history-h-3-5" />
                                 CTA
-                              </a>
+                              </TextLink>
                             )}
-                            <button
+                            <Button variant="secondary"
                               disabled={isBusy}
                               onClick={() => void runEmailJobAction(job, "retry_now")}
-                              className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1 disabled:opacity-50"
                             >
-                              <RotateCcw className="w-3.5 h-3.5" />
+                              <RotateCcw className="bo-history-w-3-5 bo-history-h-3-5" />
                               {t("Relancer", "Retry")}
-                            </button>
-                            <button
+                            </Button>
+                            <Button variant="secondary"
                               disabled={isBusy}
                               onClick={() => void runEmailJobAction(job, "schedule")}
-                              className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1 disabled:opacity-50"
                             >
-                              <RefreshCw className={`w-3.5 h-3.5 ${isBusy ? "animate-spin" : ""}`} />
+                              <RefreshCw className={`bo-history-w-3-5 bo-history-h-3-5 ${isBusy ? "bo-history-animate-spin" : ""}`} />
                               {t("+1h", "+1h")}
-                            </button>
-                            <button
+                            </Button>
+                            <Button variant="secondary"
                               disabled={isBusy || job.status === "cancelled"}
                               onClick={() => void runEmailJobAction(job, "cancel")}
-                              className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1 disabled:opacity-50"
                             >
-                              <Ban className="w-3.5 h-3.5" />
+                              <Ban className="bo-history-w-3-5 bo-history-h-3-5" />
                               {t("Annuler", "Cancel")}
-                            </button>
+                            </Button>
                           </div>
                         </td>
                       </tr>
@@ -2210,7 +2165,7 @@ export default function BackOfficePage() {
                   })}
                   {!loading && (dashboard?.recentEmailJobs || []).length === 0 && (
                     <tr>
-                      <td colSpan={11} className="px-3 py-8 text-center text-muted-foreground">
+                      <td colSpan={11} className="bo-history-px-3 bo-history-py-8 bo-history-text-center bo-history-text-muted-foreground">
                         {t("Aucun job récent", "No recent jobs")}
                       </td>
                     </tr>
@@ -2223,81 +2178,79 @@ export default function BackOfficePage() {
       )}
 
       {activeTab === "restitutions" && (
-        <div className="space-y-4">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Total restitutions", "Total restitutions")}</div>
-              <div className="text-lg font-semibold mt-1">{restitutionSummary.total}</div>
+        <div className="bo-history-space-y-4">
+          <div className="bo-history-grid bo-history-grid-cols-2 bo-history-md-grid-cols-5 bo-history-gap-3">
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Total restitutions", "Total restitutions")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{restitutionSummary.total}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Email", "Email")}</div>
-              <div className="text-lg font-semibold mt-1">{restitutionSummary.email}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Email", "Email")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{restitutionSummary.email}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Dashboard", "Dashboard")}</div>
-              <div className="text-lg font-semibold mt-1">{restitutionSummary.dashboard}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Dashboard", "Dashboard")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{restitutionSummary.dashboard}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("PDF", "PDF")}</div>
-              <div className="text-lg font-semibold mt-1">{restitutionSummary.pdf}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("PDF", "PDF")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{restitutionSummary.pdf}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Version GO10", "GO10 version")}</div>
-              <div className="text-lg font-semibold mt-1">{restitutionSummary.go10}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Version GO10", "GO10 version")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{restitutionSummary.go10}</div>
             </div>
           </div>
 
-          <div className="border border-border rounded-lg bg-card overflow-hidden">
-            <div className="px-3 py-2 border-b border-border text-sm font-medium">
+          <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-overflow-hidden">
+            <div className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium">
               {t("Restitutions récentes", "Recent restitutions")}
             </div>
-            <div className="overflow-auto">
-              <table className="w-full text-sm">
-                <thead className="bg-muted/40">
-                  <tr className="text-left">
-                    <th className="px-3 py-2 font-medium">{t("Date", "Date")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Canal", "Channel")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Version", "Version")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Template / profil", "Template / profile")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Sujet / risque", "Subject / risk")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Score", "Score")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Session", "Session")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Actions", "Actions")}</th>
+            <div className="bo-history-overflow-auto">
+              <table className="bo-history-w-full bo-history-text-sm">
+                <thead className="bo-history-bg-muted-40">
+                  <tr className="bo-history-text-left">
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Date", "Date")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Canal", "Channel")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Version", "Version")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Template / profil", "Template / profile")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Sujet / risque", "Subject / risk")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Score", "Score")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Session", "Session")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Actions", "Actions")}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {(dashboard?.recentRestitutions || []).map((restitution) => {
                     const ctaUrl = getRestitutionCtaUrl(restitution);
                     return (
-                      <tr key={restitution.id} className="border-t border-border">
-                        <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(restitution.generated_at, locale)}</td>
-                        <td className="px-3 py-2">{restitution.channel}</td>
-                        <td className="px-3 py-2">{restitution.version}</td>
-                        <td className="px-3 py-2">{getRestitutionTemplate(restitution)}</td>
-                        <td className="px-3 py-2 max-w-[280px] truncate" title={getRestitutionSubject(restitution)}>
+                      <tr key={restitution.id} className="bo-history-border-t bo-history-border-border">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(restitution.generated_at, locale)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">{restitution.channel}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">{restitution.version}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">{getRestitutionTemplate(restitution)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-max-w-280px bo-history-truncate" title={getRestitutionSubject(restitution)}>
                           {getRestitutionSubject(restitution)}
                         </td>
-                        <td className="px-3 py-2">{getRestitutionScore(restitution) ?? "—"}</td>
-                        <td className="px-3 py-2 font-mono text-xs">{restitution.session_id.slice(0, 8)}</td>
-                        <td className="px-3 py-2">
-                          <div className="flex flex-wrap gap-1">
-                            <button
+                        <td className="bo-history-px-3 bo-history-py-2">{getRestitutionScore(restitution) ?? "—"}</td>
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-font-mono bo-history-text-xs">{restitution.session_id.slice(0, 8)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <div className="bo-history-flex bo-history-flex-wrap bo-history-gap-1">
+                            <Button variant="secondary"
                               onClick={() => void openDetail(restitution.session_id)}
-                              className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
                             >
-                              <Eye className="w-3.5 h-3.5" />
+                              <Eye className="bo-history-w-3-5 bo-history-h-3-5" />
                               {t("Session", "Session")}
-                            </button>
+                            </Button>
                             {ctaUrl && (
-                              <a
-                                href={ctaUrl}
+                              <TextLink variant="secondary"
+                                to={ctaUrl}
                                 target="_blank"
                                 rel="noreferrer"
-                                className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
                               >
-                                <ExternalLink className="w-3.5 h-3.5" />
+                                <ExternalLink className="bo-history-w-3-5 bo-history-h-3-5" />
                                 CTA
-                              </a>
+                              </TextLink>
                             )}
                           </div>
                         </td>
@@ -2306,7 +2259,7 @@ export default function BackOfficePage() {
                   })}
                   {!loading && (dashboard?.recentRestitutions || []).length === 0 && (
                     <tr>
-                      <td colSpan={8} className="px-3 py-8 text-center text-muted-foreground">
+                      <td colSpan={8} className="bo-history-px-3 bo-history-py-8 bo-history-text-center bo-history-text-muted-foreground">
                         {t("Aucune restitution récente", "No recent restitutions")}
                       </td>
                     </tr>
@@ -2319,46 +2272,46 @@ export default function BackOfficePage() {
       )}
 
       {activeTab === "quality" && (
-        <div className="space-y-4">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Sélections à revoir", "Selections to review")}</div>
-              <div className="text-lg font-semibold mt-1 text-red-600">{selectionQualitySummary.reviewRequired}</div>
+        <div className="bo-history-space-y-4">
+          <div className="bo-history-grid bo-history-grid-cols-2 bo-history-md-grid-cols-5 bo-history-gap-3">
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Sélections à revoir", "Selections to review")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1 bo-history-text-red-600">{selectionQualitySummary.reviewRequired}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Couverture absente", "Missing coverage")}</div>
-              <div className="text-lg font-semibold mt-1">{selectionQualitySummary.missingCoverage}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Couverture absente", "Missing coverage")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{selectionQualitySummary.missingCoverage}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Couverture faible", "Low coverage")}</div>
-              <div className="text-lg font-semibold mt-1">{selectionQualitySummary.lowCoverage}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Couverture faible", "Low coverage")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{selectionQualitySummary.lowCoverage}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Zones moyennes", "Average areas")}</div>
-              <div className="text-lg font-semibold mt-1">{selectionQualitySummary.avgCovered}/{SELECTION_AREA_TOTAL}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Zones moyennes", "Average areas")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{selectionQualitySummary.avgCovered}/{SELECTION_AREA_TOTAL}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Zones ignorées", "Skipped areas")}</div>
-              <div className="text-lg font-semibold mt-1">{selectionQualitySummary.skippedAreas}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Zones ignorées", "Skipped areas")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{selectionQualitySummary.skippedAreas}</div>
             </div>
           </div>
 
-          <div className="border border-border rounded-lg bg-card overflow-hidden">
-            <div className="px-3 py-2 border-b border-border text-sm font-medium inline-flex items-center gap-2">
-              <Layers3 className="w-4 h-4" />
+          <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-overflow-hidden">
+            <div className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium bo-history-inline-flex bo-history-items-center bo-history-gap-2">
+              <Layers3 className="bo-history-w-4 bo-history-h-4" />
               {t("Qualité de sélection utilisateur", "User selection quality")}
             </div>
-            <div className="overflow-auto">
-              <table className="w-full text-sm">
-                <thead className="bg-muted/40">
-                  <tr className="text-left">
-                    <th className="px-3 py-2 font-medium">{t("Créée", "Created")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Contact", "Contact")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Outils", "Tools")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Zones", "Areas")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Confiance", "Confidence")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Zones ignorées", "Skipped areas")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
+            <div className="bo-history-overflow-auto">
+              <table className="bo-history-w-full bo-history-text-sm">
+                <thead className="bo-history-bg-muted-40">
+                  <tr className="bo-history-text-left">
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Créée", "Created")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Contact", "Contact")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Outils", "Tools")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Zones", "Areas")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Confiance", "Confidence")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Zones ignorées", "Skipped areas")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Action", "Action")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2367,64 +2320,64 @@ export default function BackOfficePage() {
                       ? row.session.selected_tools
                       : [];
                     return (
-                      <tr key={row.session.session_id} className="border-t border-border align-top">
-                        <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(row.session.created_at, locale)}</td>
-                        <td className="px-3 py-2">
-                          <div className="font-medium">{row.session.first_name || "—"}</div>
-                          <div className="text-xs text-muted-foreground">{row.session.email || "—"}</div>
+                      <tr key={row.session.session_id} className="bo-history-border-t bo-history-border-border bo-history-align-top">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(row.session.created_at, locale)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <div className="bo-history-font-medium">{row.session.first_name || "—"}</div>
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{row.session.email || "—"}</div>
                         </td>
-                        <td className="px-3 py-2">{selectedTools.length}</td>
-                        <td className="px-3 py-2">
-                          <div className="font-medium">{row.coverage.coveredCount}/{SELECTION_AREA_TOTAL}</div>
-                          <div className="text-xs text-muted-foreground">
+                        <td className="bo-history-px-3 bo-history-py-2">{selectedTools.length}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <div className="bo-history-font-medium">{row.coverage.coveredCount}/{SELECTION_AREA_TOTAL}</div>
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">
                             {row.coverage.missingCount} {t("non vérifiée(s)", "unchecked")}
                           </div>
                         </td>
-                        <td className="px-3 py-2">
-                          <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${selectionConfidenceClasses(row.coverage.confidence)}`}>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <span className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${selectionConfidenceClasses(row.coverage.confidence)}`}>
                             {selectionConfidenceLabel(row.coverage.confidence, locale)}
                           </span>
                         </td>
-                        <td className="px-3 py-2 max-w-[260px]">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-max-w-260px">
                           {row.coverage.skipped.length > 0 ? (
-                            <div className="flex flex-wrap gap-1">
+                            <div className="bo-history-flex bo-history-flex-wrap bo-history-gap-1">
                               {row.coverage.skipped.slice(0, 4).map((item) => (
-                                <span key={item} className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted text-muted-foreground">
+                                <span key={item} className="bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs bo-history-status-muted">
                                   {humanizeId(item)}
                                 </span>
                               ))}
                               {row.coverage.skipped.length > 4 && (
-                                <span className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted">
+                                <span className="bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs bo-history-bg-muted">
                                   +{row.coverage.skipped.length - 4}
                                 </span>
                               )}
                             </div>
                           ) : (
-                            <span className="text-xs text-muted-foreground">—</span>
+                            <span className="bo-history-text-xs bo-history-text-muted-foreground">—</span>
                           )}
                         </td>
-                        <td className="px-3 py-2 max-w-[300px]">
-                          <div className="text-xs text-muted-foreground">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-max-w-300px">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">
                             {!row.coverage.hasCoverage
                               ? t("Session ancienne ou couverture non capturée.", "Older session or coverage not captured.")
                               : row.reviewRequired
                                 ? t("Relire avant d'interpréter le score.", "Review before interpreting score.")
                                 : t("Sélection exploitable.", "Selection is usable.")}
                           </div>
-                          <button
+                          <Button variant="secondary"
                             onClick={() => void openDetail(row.session.session_id)}
-                            className="mt-2 h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                            className="bo-history-mt-2"
                           >
-                            <Eye className="w-3.5 h-3.5" />
+                            <Eye className="bo-history-w-3-5 bo-history-h-3-5" />
                             {t("Détails", "Details")}
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                     );
                   })}
                   {!loading && selectionQualityRows.length === 0 && (
                     <tr>
-                      <td colSpan={7} className="px-3 py-8 text-center text-muted-foreground">
+                      <td colSpan={7} className="bo-history-px-3 bo-history-py-8 bo-history-text-center bo-history-text-muted-foreground">
                         {t("Aucune sélection à revoir sur la période", "No selection needs review on this period")}
                       </td>
                     </tr>
@@ -2434,48 +2387,48 @@ export default function BackOfficePage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("À revoir", "Review required")}</div>
-              <div className="text-lg font-semibold mt-1 text-red-600">{qualitySummary.reviewRequired}</div>
+          <div className="bo-history-grid bo-history-grid-cols-2 bo-history-md-grid-cols-5 bo-history-gap-3">
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("À revoir", "Review required")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1 bo-history-text-red-600">{qualitySummary.reviewRequired}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Confiance moyenne", "Average confidence")}</div>
-              <div className="text-lg font-semibold mt-1">{qualitySummary.avgConfidence}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Confiance moyenne", "Average confidence")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{qualitySummary.avgConfidence}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Flags hauts", "High flags")}</div>
-              <div className="text-lg font-semibold mt-1 text-red-600">{qualitySummary.highFlags}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Flags hauts", "High flags")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1 bo-history-text-red-600">{qualitySummary.highFlags}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Flags moyens", "Medium flags")}</div>
-              <div className="text-lg font-semibold mt-1">{qualitySummary.mediumFlags}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Flags moyens", "Medium flags")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{qualitySummary.mediumFlags}</div>
             </div>
-            <div className="border border-border rounded-lg bg-card p-3">
-              <div className="text-xs text-muted-foreground">{t("Confiance faible", "Low confidence")}</div>
-              <div className="text-lg font-semibold mt-1">{qualitySummary.lowConfidence}</div>
+            <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-p-3">
+              <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Confiance faible", "Low confidence")}</div>
+              <div className="bo-history-text-lg bo-history-font-semibold bo-history-mt-1">{qualitySummary.lowConfidence}</div>
             </div>
           </div>
 
-          <div className="border border-border rounded-lg bg-card overflow-hidden">
-            <div className="px-3 py-2 border-b border-border text-sm font-medium inline-flex items-center gap-2">
-              <ShieldAlert className="w-4 h-4" />
+          <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-bg-card bo-history-overflow-hidden">
+            <div className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium bo-history-inline-flex bo-history-items-center bo-history-gap-2">
+              <ShieldAlert className="bo-history-w-4 bo-history-h-4" />
               {t("Contrôle qualité scoring", "Scoring quality control")}
             </div>
-            <div className="overflow-auto">
-              <table className="w-full text-sm">
-                <thead className="bg-muted/40">
-                  <tr className="text-left">
-                    <th className="px-3 py-2 font-medium">{t("Créée", "Created")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Contact", "Contact")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Persona", "Persona")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Profil", "Profile")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Score", "Score")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Confiance", "Confidence")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Calibration", "Calibration")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Revue", "Review")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Flags", "Flags")}</th>
-                    <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
+            <div className="bo-history-overflow-auto">
+              <table className="bo-history-w-full bo-history-text-sm">
+                <thead className="bo-history-bg-muted-40">
+                  <tr className="bo-history-text-left">
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Créée", "Created")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Contact", "Contact")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Persona", "Persona")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Profil", "Profile")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Score", "Score")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Confiance", "Confidence")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Calibration", "Calibration")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Revue", "Review")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Flags", "Flags")}</th>
+                    <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Action", "Action")}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -2483,87 +2436,87 @@ export default function BackOfficePage() {
                     const firstFlags = row.flags.slice(0, 3);
                     const primaryFlag = row.flags[0];
                     return (
-                      <tr key={row.session.session_id} className="border-t border-border align-top">
-                        <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(row.session.created_at, locale)}</td>
-                        <td className="px-3 py-2">
-                          <div className="font-medium">{row.session.first_name || "—"}</div>
-                          <div className="text-xs text-muted-foreground">{row.session.email || "—"}</div>
+                      <tr key={row.session.session_id} className="bo-history-border-t bo-history-border-border bo-history-align-top">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(row.session.created_at, locale)}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <div className="bo-history-font-medium">{row.session.first_name || "—"}</div>
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{row.session.email || "—"}</div>
                         </td>
-                        <td className="px-3 py-2">{row.session.persona || "—"}</td>
-                        <td className="px-3 py-2">
-                          <div className="font-medium">{getInsightLabel(row.session, "profile", locale)}</div>
-                          <div className="text-xs text-muted-foreground">{humanizeId(row.session.primary_risk)}</div>
+                        <td className="bo-history-px-3 bo-history-py-2">{row.session.persona || "—"}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <div className="bo-history-font-medium">{getInsightLabel(row.session, "profile", locale)}</div>
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{humanizeId(row.session.primary_risk)}</div>
                         </td>
-                        <td className="px-3 py-2">{row.session.health_score ?? "—"}</td>
-                        <td className="px-3 py-2">
-                          <div className="font-medium">{row.confidenceScore ?? "—"}</div>
-                          <div className="text-xs text-muted-foreground">
+                        <td className="bo-history-px-3 bo-history-py-2">{row.session.health_score ?? "—"}</td>
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <div className="bo-history-font-medium">{row.confidenceScore ?? "—"}</div>
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">
                             {row.confidenceLabel || t("Non calculée", "Not computed")}
                           </div>
                         </td>
-                        <td className="px-3 py-2">
-                          <div className="font-medium">{row.calibrationScore ?? "—"}</div>
-                          <div className="text-xs text-muted-foreground">
+                        <td className="bo-history-px-3 bo-history-py-2">
+                          <div className="bo-history-font-medium">{row.calibrationScore ?? "—"}</div>
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">
                             {row.calibrationLabel || t("Calibration absente", "Missing calibration")}
                           </div>
                         </td>
-                        <td className="px-3 py-2">
+                        <td className="bo-history-px-3 bo-history-py-2">
                           <span
-                            className={`inline-flex px-2 py-0.5 rounded-full text-xs ${
-                              row.reviewRequired ? "bg-red-100 text-red-700" : "bg-green-100 text-green-800"
+                            className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${
+                              row.reviewRequired ? "bo-history-status-error" : "bo-history-status-ok"
                             }`}
                           >
                             {row.reviewRequired ? t("Oui", "Yes") : t("OK", "OK")}
                           </span>
                         </td>
-                        <td className="px-3 py-2 min-w-[220px]">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-min-w-220px">
                           {firstFlags.length > 0 ? (
-                            <div className="flex flex-wrap gap-1">
+                            <div className="bo-history-flex bo-history-flex-wrap bo-history-gap-1">
                               {firstFlags.map((flag) => {
                                 const severity = getFlagSeverity(flag);
                                 return (
                                   <span
                                     key={String(flag.id)}
-                                    className={`inline-flex px-2 py-0.5 rounded-full text-xs ${qualitySeverityClasses(severity)}`}
+                                    className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${qualitySeverityClasses(severity)}`}
                                   >
                                     {getLocalizedLabel(flag, locale, humanizeId(String(flag.id || "")))}
                                   </span>
                                 );
                               })}
                               {row.flags.length > firstFlags.length && (
-                                <span className="inline-flex px-2 py-0.5 rounded-full text-xs bg-muted">
+                                <span className="bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs bo-history-bg-muted">
                                   +{row.flags.length - firstFlags.length}
                                 </span>
                               )}
                             </div>
                           ) : (
-                            <span className="text-xs text-muted-foreground">
+                            <span className="bo-history-text-xs bo-history-text-muted-foreground">
                               {row.hasCalibration ? t("Aucun flag", "No flag") : t("Calibration absente", "Missing calibration")}
                             </span>
                           )}
                         </td>
-                        <td className="px-3 py-2 max-w-[300px]">
-                          <div className="text-xs text-muted-foreground">
+                        <td className="bo-history-px-3 bo-history-py-2 bo-history-max-w-300px">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">
                             {primaryFlag
                               ? localizedField(primaryFlag, "action", locale) || "—"
                               : row.hasCalibration
                                 ? row.calibrationSummary || "—"
                                 : t("Relancer un diagnostic GO13 pour obtenir la calibration.", "Run a GO13 diagnostic again to get calibration.")}
                           </div>
-                          <button
+                          <Button variant="secondary"
                             onClick={() => void openDetail(row.session.session_id)}
-                            className="mt-2 h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
+                            className="bo-history-mt-2"
                           >
-                            <Eye className="w-3.5 h-3.5" />
+                            <Eye className="bo-history-w-3-5 bo-history-h-3-5" />
                             {t("Détails", "Details")}
-                          </button>
+                          </Button>
                         </td>
                       </tr>
                     );
                   })}
                   {!loading && qualityRows.length === 0 && (
                     <tr>
-                      <td colSpan={10} className="px-3 py-8 text-center text-muted-foreground">
+                      <td colSpan={10} className="bo-history-px-3 bo-history-py-8 bo-history-text-center bo-history-text-muted-foreground">
                         {t("Aucun diagnostic à revoir sur la période", "No diagnostic needs review on this period")}
                       </td>
                     </tr>
@@ -2576,85 +2529,84 @@ export default function BackOfficePage() {
       )}
 
       {(detailLoading || detail || detailError) && (
-        <div className="fixed inset-0 z-50">
+        <div className="bo-history-fixed bo-history-inset-0 bo-history-z-50">
           <div
-            className="absolute inset-0 bg-black/25"
+            className="bo-history-absolute bo-history-inset-0 bo-history-bg-black-25"
             onClick={() => {
               setDetail(null);
               setDetailError(null);
               setSessionAdminMessage(null);
             }}
           />
-          <aside className="absolute top-0 right-0 h-full w-full max-w-2xl bg-background border-l border-border p-4 overflow-y-auto">
-            <div className="flex items-start justify-between gap-2">
+          <aside className="bo-history-absolute bo-history-top-0 bo-history-right-0 bo-history-h-full bo-history-w-full bo-history-max-w-2xl bo-history-bg-background bo-history-border-l bo-history-border-border bo-history-p-4 bo-history-overflow-y-auto">
+            <div className="bo-history-flex bo-history-items-start bo-history-justify-between bo-history-gap-2">
               <div>
-                <h2 className="text-lg font-semibold">
+                <h2 className="bo-history-text-lg bo-history-font-semibold">
                   {t("Détail session", "Session detail")}
                 </h2>
                 {detail?.session && (
-                  <p className="text-sm text-muted-foreground">
+                  <p className="bo-history-text-sm bo-history-text-muted-foreground">
                     {detail.session.session_id}
                   </p>
                 )}
               </div>
-              <button
+              <IconButton variant="quiet" aria-label={t("Fermer le détail", "Close detail")}
                 onClick={() => {
                   setDetail(null);
                   setDetailError(null);
                   setSessionAdminMessage(null);
                 }}
-                className="h-8 w-8 rounded-md border border-border inline-flex items-center justify-center"
               >
-                <X className="w-4 h-4" />
-              </button>
+                <X className="bo-history-w-4 bo-history-h-4" />
+              </IconButton>
             </div>
 
             {detailLoading && (
-              <div className="mt-6 text-sm text-muted-foreground inline-flex items-center gap-2">
-                <RefreshCw className="w-4 h-4 animate-spin" />
+              <div className="bo-history-mt-6 bo-history-text-sm bo-history-text-muted-foreground bo-history-inline-flex bo-history-items-center bo-history-gap-2">
+                <RefreshCw className="bo-history-w-4 bo-history-h-4 bo-history-animate-spin" />
                 {t("Chargement…", "Loading…")}
               </div>
             )}
 
             {detailError && (
-              <div className="mt-6 border border-red-300 bg-red-50 text-red-700 rounded-lg px-3 py-2 text-sm">
+              <div className="bo-history-mt-6 bo-history-border bo-history-border-red-300 bo-history-bg-red-50 bo-history-text-red-700 bo-history-rounded-lg bo-history-px-3 bo-history-py-2 bo-history-text-sm">
                 {detailError}
               </div>
             )}
 
             {detail && (
-              <div className="mt-5 space-y-5">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                  <div className="border border-border rounded-lg p-3">
-                    <div className="text-xs text-muted-foreground">{t("Score", "Score")}</div>
-                    <div className="text-xl font-semibold mt-1">{detail.session.health_score ?? "—"}</div>
+              <div className="bo-history-mt-5 bo-history-space-y-5">
+                <div className="bo-history-grid bo-history-grid-cols-2 bo-history-md-grid-cols-4 bo-history-gap-3">
+                  <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-3">
+                    <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Score", "Score")}</div>
+                    <div className="bo-history-text-xl bo-history-font-semibold bo-history-mt-1">{detail.session.health_score ?? "—"}</div>
                   </div>
-                  <div className="border border-border rounded-lg p-3">
-                    <div className="text-xs text-muted-foreground">{t("Step max", "Max step")}</div>
-                    <div className="text-xl font-semibold mt-1">{detail.session.max_step_seen ?? "—"}</div>
+                  <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-3">
+                    <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Step max", "Max step")}</div>
+                    <div className="bo-history-text-xl bo-history-font-semibold bo-history-mt-1">{detail.session.max_step_seen ?? "—"}</div>
                   </div>
-                  <div className="border border-border rounded-lg p-3">
-                    <div className="text-xs text-muted-foreground">{t("Emails sent", "Emails sent")}</div>
-                    <div className="text-xl font-semibold mt-1">{detail.session.email_sent_count}</div>
+                  <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-3">
+                    <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Emails sent", "Emails sent")}</div>
+                    <div className="bo-history-text-xl bo-history-font-semibold bo-history-mt-1">{detail.session.email_sent_count}</div>
                   </div>
-                  <div className="border border-border rounded-lg p-3">
-                    <div className="text-xs text-muted-foreground">{t("Waste/mo", "Waste/mo")}</div>
-                    <div className="text-xl font-semibold mt-1">{formatMoney(detail.session.estimated_waste)}</div>
+                  <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-3">
+                    <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Waste/mo", "Waste/mo")}</div>
+                    <div className="bo-history-text-xl bo-history-font-semibold bo-history-mt-1">{formatMoney(detail.session.estimated_waste)}</div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                  <div className="border border-border rounded-lg p-3">
-                    <div className="text-xs text-muted-foreground">{t("Dernier signal client", "Last client signal")}</div>
-                    <div className="text-sm font-medium mt-1">{formatDateTime(detail.session.last_client_seen_at, locale)}</div>
+                <div className="bo-history-grid bo-history-grid-cols-1 bo-history-md-grid-cols-3 bo-history-gap-3">
+                  <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-3">
+                    <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Dernier signal client", "Last client signal")}</div>
+                    <div className="bo-history-text-sm bo-history-font-medium bo-history-mt-1">{formatDateTime(detail.session.last_client_seen_at, locale)}</div>
                   </div>
-                  <div className="border border-border rounded-lg p-3">
-                    <div className="text-xs text-muted-foreground">{t("Dernière reprise", "Last resume")}</div>
-                    <div className="text-sm font-medium mt-1">{formatDateTime(detail.session.resumed_at, locale)}</div>
+                  <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-3">
+                    <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Dernière reprise", "Last resume")}</div>
+                    <div className="bo-history-text-sm bo-history-font-medium bo-history-mt-1">{formatDateTime(detail.session.resumed_at, locale)}</div>
                   </div>
-                  <div className="border border-border rounded-lg p-3">
-                    <div className="text-xs text-muted-foreground">{t("Actions cochées", "Checked actions")}</div>
-                    <div className="text-sm font-medium mt-1">
+                  <div className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-3">
+                    <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Actions cochées", "Checked actions")}</div>
+                    <div className="bo-history-text-sm bo-history-font-medium bo-history-mt-1">
                       {getCompletedActionIds(detail.session).length || detail.session.actions_completed || 0}
                     </div>
                   </div>
@@ -2667,44 +2619,44 @@ export default function BackOfficePage() {
                     localizedField(primaryRisk || null, "label", locale) || humanizeId(detail.session.primary_risk);
                   const primaryRiskDetail = localizedField(primaryRisk || null, "detail", locale);
                   return (
-                    <section className="border border-border rounded-lg p-3 space-y-3">
-                      <div className="inline-flex items-center gap-2 text-sm font-medium">
-                        <Layers3 className="w-4 h-4" />
+                    <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-3 bo-history-space-y-3">
+                      <div className="bo-history-inline-flex bo-history-items-center bo-history-gap-2 bo-history-text-sm bo-history-font-medium">
+                        <Layers3 className="bo-history-w-4 bo-history-h-4" />
                         {t("Lecture diagnostic GO7", "GO7 diagnostic read")}
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div className="rounded-lg border border-border p-3">
-                          <div className="text-xs text-muted-foreground">{t("Profil stack", "Stack profile")}</div>
-                          <div className="mt-1 text-sm font-semibold">{getInsightLabel(detail.session, "profile", locale)}</div>
+                      <div className="bo-history-grid bo-history-grid-cols-1 bo-history-md-grid-cols-3 bo-history-gap-3">
+                        <div className="bo-history-rounded-lg bo-history-border bo-history-border-border bo-history-p-3">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Profil stack", "Stack profile")}</div>
+                          <div className="bo-history-mt-1 bo-history-text-sm bo-history-font-semibold">{getInsightLabel(detail.session, "profile", locale)}</div>
                         </div>
-                        <div className="rounded-lg border border-border p-3">
-                          <div className="text-xs text-muted-foreground">{t("Maturité", "Maturity")}</div>
-                          <div className="mt-1 text-sm font-semibold">{getInsightLabel(detail.session, "maturity", locale)}</div>
+                        <div className="bo-history-rounded-lg bo-history-border bo-history-border-border bo-history-p-3">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Maturité", "Maturity")}</div>
+                          <div className="bo-history-mt-1 bo-history-text-sm bo-history-font-semibold">{getInsightLabel(detail.session, "maturity", locale)}</div>
                         </div>
-                        <div className="rounded-lg border border-border p-3">
-                          <div className="inline-flex items-center gap-1 text-xs text-muted-foreground">
-                            <ShieldAlert className="w-3.5 h-3.5" />
+                        <div className="bo-history-rounded-lg bo-history-border bo-history-border-border bo-history-p-3">
+                          <div className="bo-history-inline-flex bo-history-items-center bo-history-gap-1 bo-history-text-xs bo-history-text-muted-foreground">
+                            <ShieldAlert className="bo-history-w-3-5 bo-history-h-3-5" />
                             {t("Risque principal", "Primary risk")}
                           </div>
-                          <div className="mt-1 text-sm font-semibold">{primaryRiskLabel}</div>
+                          <div className="bo-history-mt-1 bo-history-text-sm bo-history-font-semibold">{primaryRiskLabel}</div>
                           {primaryRiskDetail && (
-                            <div className="mt-1 text-xs text-muted-foreground">{primaryRiskDetail}</div>
+                            <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">{primaryRiskDetail}</div>
                           )}
                         </div>
                       </div>
                       {riskFlags.length > 0 && (
-                        <div className="space-y-2">
+                        <div className="bo-history-space-y-2">
                           {riskFlags.slice(0, 4).map((flag) => (
-                            <div key={String(flag.id)} className="rounded-lg bg-muted/30 px-3 py-2">
-                              <div className="flex items-center justify-between gap-2">
-                                <span className="text-sm font-medium">
+                            <div key={String(flag.id)} className="bo-history-rounded-lg bo-history-bg-muted-30 bo-history-px-3 bo-history-py-2">
+                              <div className="bo-history-flex bo-history-items-center bo-history-justify-between bo-history-gap-2">
+                                <span className="bo-history-text-sm bo-history-font-medium">
                                   {localizedField(flag, "label", locale) || humanizeId(String(flag.id || ""))}
                                 </span>
-                                <span className="text-[10px] uppercase tracking-wide text-muted-foreground">
+                                <span className="bo-history-text-10px bo-history-uppercase bo-history-tracking-wide bo-history-text-muted-foreground">
                                   {String(flag.severity || "low")}
                                 </span>
                               </div>
-                              <p className="mt-1 text-xs text-muted-foreground">
+                              <p className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">
                                 {localizedField(flag, "action", locale) || "—"}
                               </p>
                             </div>
@@ -2734,30 +2686,30 @@ export default function BackOfficePage() {
                     calibration.score == null ||
                     (confidence.score != null && confidence.score < 60);
                   return (
-                    <section className="border border-border rounded-lg p-3 space-y-3">
-                      <div className="inline-flex items-center gap-2 text-sm font-medium">
-                        <ShieldAlert className="w-4 h-4" />
+                    <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-3 bo-history-space-y-3">
+                      <div className="bo-history-inline-flex bo-history-items-center bo-history-gap-2 bo-history-text-sm bo-history-font-medium">
+                        <ShieldAlert className="bo-history-w-4 bo-history-h-4" />
                         {t("Calibration qualité GO13", "GO13 quality calibration")}
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div className="rounded-lg border border-border p-3">
-                          <div className="text-xs text-muted-foreground">{t("Contexte GO15", "GO15 context")}</div>
-                          <div className="mt-1 text-sm font-semibold">
+                      <div className="bo-history-grid bo-history-grid-cols-1 bo-history-md-grid-cols-3 bo-history-gap-3">
+                        <div className="bo-history-rounded-lg bo-history-border bo-history-border-border bo-history-p-3">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Contexte GO15", "GO15 context")}</div>
+                          <div className="bo-history-mt-1 bo-history-text-sm bo-history-font-semibold">
                             {contextLabel(textValue(context, "persona_confidence"), locale)}
                           </div>
-                          <div className="mt-1 text-xs text-muted-foreground">
+                          <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">
                             {contextLabel(textValue(context, "stack_goal"), locale)}
                           </div>
                         </div>
-                        <div className="rounded-lg border border-border p-3">
-                          <div className="text-xs text-muted-foreground">{t("Profils secondaires", "Secondary profiles")}</div>
-                          <div className="mt-1 text-sm font-semibold">
+                        <div className="bo-history-rounded-lg bo-history-border bo-history-border-border bo-history-p-3">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Profils secondaires", "Secondary profiles")}</div>
+                          <div className="bo-history-mt-1 bo-history-text-sm bo-history-font-semibold">
                             {complementarySkills.length > 0 ? complementarySkills.map(humanizeId).join(", ") : "—"}
                           </div>
                         </div>
-                        <div className="rounded-lg border border-border p-3">
-                          <div className="text-xs text-muted-foreground">{t("Spécialités", "Specialties")}</div>
-                          <div className="mt-1 text-sm font-semibold">
+                        <div className="bo-history-rounded-lg bo-history-border bo-history-border-border bo-history-p-3">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Spécialités", "Specialties")}</div>
+                          <div className="bo-history-mt-1 bo-history-text-sm bo-history-font-semibold">
                             {[
                               textValue(context, "primary_specialty"),
                               ...complementarySpecialties,
@@ -2765,33 +2717,33 @@ export default function BackOfficePage() {
                           </div>
                         </div>
                       </div>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                        <div className="rounded-lg border border-border p-3">
-                          <div className="text-xs text-muted-foreground">{t("Confiance", "Confidence")}</div>
-                          <div className="mt-1 text-sm font-semibold">{confidence.score ?? "—"}</div>
-                          <div className="mt-1 text-xs text-muted-foreground">
+                      <div className="bo-history-grid bo-history-grid-cols-1 bo-history-md-grid-cols-3 bo-history-gap-3">
+                        <div className="bo-history-rounded-lg bo-history-border bo-history-border-border bo-history-p-3">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Confiance", "Confidence")}</div>
+                          <div className="bo-history-mt-1 bo-history-text-sm bo-history-font-semibold">{confidence.score ?? "—"}</div>
+                          <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">
                             {confidenceLabel || t("Non calculée", "Not computed")}
                           </div>
                         </div>
-                        <div className="rounded-lg border border-border p-3">
-                          <div className="text-xs text-muted-foreground">{t("Calibration", "Calibration")}</div>
-                          <div className="mt-1 text-sm font-semibold">{calibration.score ?? "—"}</div>
-                          <div className="mt-1 text-xs text-muted-foreground">
+                        <div className="bo-history-rounded-lg bo-history-border bo-history-border-border bo-history-p-3">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Calibration", "Calibration")}</div>
+                          <div className="bo-history-mt-1 bo-history-text-sm bo-history-font-semibold">{calibration.score ?? "—"}</div>
+                          <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">
                             {calibrationLabel || t("Calibration absente", "Missing calibration")}
                           </div>
                         </div>
-                        <div className="rounded-lg border border-border p-3">
-                          <div className="text-xs text-muted-foreground">{t("Revue humaine", "Human review")}</div>
+                        <div className="bo-history-rounded-lg bo-history-border bo-history-border-border bo-history-p-3">
+                          <div className="bo-history-text-xs bo-history-text-muted-foreground">{t("Revue humaine", "Human review")}</div>
                           <div
-                            className={`mt-1 inline-flex px-2 py-0.5 rounded-full text-xs ${
-                              reviewRequired ? "bg-red-100 text-red-700" : "bg-green-100 text-green-800"
+                            className={`bo-history-mt-1 bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${
+                              reviewRequired ? "bo-history-status-error" : "bo-history-status-ok"
                             }`}
                           >
                             {reviewRequired ? t("Conseillée", "Advised") : t("Non requise", "Not required")}
                           </div>
                         </div>
                       </div>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="bo-history-text-xs bo-history-text-muted-foreground">
                         {calibrationSummary ||
                           t(
                             "Cette session ne contient pas encore la nouvelle calibration GO13.",
@@ -2799,23 +2751,23 @@ export default function BackOfficePage() {
                           )}
                       </p>
                       {calibration.flags.length > 0 ? (
-                        <div className="space-y-2">
+                        <div className="bo-history-space-y-2">
                           {calibration.flags.map((flag) => {
                             const severity = getFlagSeverity(flag);
                             return (
-                              <div key={String(flag.id)} className="rounded-lg bg-muted/30 px-3 py-2">
-                                <div className="flex items-center justify-between gap-2">
-                                  <span className="text-sm font-medium">
+                              <div key={String(flag.id)} className="bo-history-rounded-lg bo-history-bg-muted-30 bo-history-px-3 bo-history-py-2">
+                                <div className="bo-history-flex bo-history-items-center bo-history-justify-between bo-history-gap-2">
+                                  <span className="bo-history-text-sm bo-history-font-medium">
                                     {getLocalizedLabel(flag, locale, humanizeId(String(flag.id || "")))}
                                   </span>
-                                  <span className={`inline-flex px-2 py-0.5 rounded-full text-[10px] ${qualitySeverityClasses(severity)}`}>
+                                  <span className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-10px ${qualitySeverityClasses(severity)}`}>
                                     {severity}
                                   </span>
                                 </div>
-                                <p className="mt-1 text-xs text-muted-foreground">
+                                <p className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">
                                   {localizedField(flag, "detail", locale) || "—"}
                                 </p>
-                                <p className="mt-1 text-xs text-muted-foreground">
+                                <p className="bo-history-mt-1 bo-history-text-xs bo-history-text-muted-foreground">
                                   {localizedField(flag, "action", locale) || "—"}
                                 </p>
                               </div>
@@ -2823,7 +2775,7 @@ export default function BackOfficePage() {
                           })}
                         </div>
                       ) : (
-                        <div className="rounded-lg bg-muted/30 px-3 py-2 text-xs text-muted-foreground">
+                        <div className="bo-history-rounded-lg bo-history-bg-muted-30 bo-history-px-3 bo-history-py-2 bo-history-text-xs bo-history-text-muted-foreground">
                           {calibration.score == null
                             ? t("Aucun flag disponible tant que la session n'a pas été recalculée.", "No flag is available until the session is recalculated.")
                             : t("Aucun conflit majeur détecté.", "No major conflict detected.")}
@@ -2833,74 +2785,65 @@ export default function BackOfficePage() {
                   );
                 })()}
 
-                <section className="border border-border rounded-lg p-3 space-y-3">
-                  <div className="inline-flex items-center gap-2 text-sm font-medium">
-                    <Tag className="w-4 h-4" />
+                <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-p-3 bo-history-space-y-3">
+                  <div className="bo-history-inline-flex bo-history-items-center bo-history-gap-2 bo-history-text-sm bo-history-font-medium">
+                    <Tag className="bo-history-w-4 bo-history-h-4" />
                     {t("Annotations back-office", "Back-office annotations")}
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-xs text-muted-foreground">
-                      {t("Tags (séparés par des virgules)", "Tags (comma separated)")}
-                    </label>
-                    <input
+                  <Field label={t("Tags (séparés par des virgules)", "Tags (comma separated)")}>
+                    <Input
                       value={sessionTagsInput}
                       onChange={(event) => setSessionTagsInput(event.target.value)}
                       placeholder={t("ex: prioritaire, follow-up, enterprise", "e.g. priority, follow-up, enterprise")}
-                      className="h-9 w-full px-3 rounded-md border border-input bg-background text-sm"
                     />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs text-muted-foreground">
-                      {t("Note interne", "Internal note")}
-                    </label>
-                    <textarea
+                  </Field>
+                  <Field label={t("Note interne", "Internal note")}>
+                    <Textarea
                       value={sessionNoteInput}
                       onChange={(event) => setSessionNoteInput(event.target.value)}
                       rows={4}
                       placeholder={t("Résumé du contexte, points de vigilance, next step…", "Context summary, watchpoints, next step…")}
-                      className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm resize-y"
                     />
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <button
+                  </Field>
+                  <div className="bo-history-flex bo-history-items-center bo-history-gap-2">
+                    <Button variant="secondary"
                       onClick={() => void saveSessionAdmin()}
-                      disabled={sessionAdminSaving}
-                      className="h-8 px-3 rounded-md border border-border text-sm inline-flex items-center gap-1 disabled:opacity-50"
+                      loading={sessionAdminSaving}
                     >
-                      <Save className="w-3.5 h-3.5" />
+                      <Save className="bo-history-w-3-5 bo-history-h-3-5" />
                       {sessionAdminSaving ? t("Enregistrement…", "Saving…") : t("Enregistrer", "Save")}
-                    </button>
+                    </Button>
                     {sessionAdminMessage && (
-                      <span className="text-xs text-muted-foreground">{sessionAdminMessage}</span>
+                      <span className="bo-history-text-xs bo-history-text-muted-foreground">{sessionAdminMessage}</span>
                     )}
                   </div>
                 </section>
 
-                <section className="border border-border rounded-lg overflow-hidden">
-                  <header className="px-3 py-2 border-b border-border text-sm font-medium inline-flex items-center gap-2">
-                    <Activity className="w-4 h-4" />
+                <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-overflow-hidden">
+                  <header className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium bo-history-inline-flex bo-history-items-center bo-history-gap-2">
+                    <Activity className="bo-history-w-4 bo-history-h-4" />
                     {t("Événements funnel", "Funnel events")}
                   </header>
-                  <div className="max-h-64 overflow-auto">
-                    <table className="w-full text-sm">
-                      <thead className="bg-muted/40">
-                        <tr className="text-left">
-                          <th className="px-3 py-2 font-medium">{t("Date", "Date")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Step", "Step")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Event", "Event")}</th>
+                  <div className="bo-history-max-h-64 bo-history-overflow-auto">
+                    <table className="bo-history-w-full bo-history-text-sm">
+                      <thead className="bo-history-bg-muted-40">
+                        <tr className="bo-history-text-left">
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Date", "Date")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Step", "Step")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Event", "Event")}</th>
                         </tr>
                       </thead>
                       <tbody>
                         {detail.stepEvents.map((event) => (
-                          <tr key={event.id} className="border-t border-border">
-                            <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(event.created_at, locale)}</td>
-                            <td className="px-3 py-2">{event.step_id}</td>
-                            <td className="px-3 py-2">{event.event_name}</td>
+                          <tr key={event.id} className="bo-history-border-t bo-history-border-border">
+                            <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(event.created_at, locale)}</td>
+                            <td className="bo-history-px-3 bo-history-py-2">{event.step_id}</td>
+                            <td className="bo-history-px-3 bo-history-py-2">{event.event_name}</td>
                           </tr>
                         ))}
                         {detail.stepEvents.length === 0 && (
                           <tr>
-                            <td colSpan={3} className="px-3 py-6 text-center text-muted-foreground">
+                            <td colSpan={3} className="bo-history-px-3 bo-history-py-6 bo-history-text-center bo-history-text-muted-foreground">
                               {t("Aucun événement", "No events")}
                             </td>
                           </tr>
@@ -2910,23 +2853,23 @@ export default function BackOfficePage() {
                   </div>
                 </section>
 
-                <section className="border border-border rounded-lg overflow-hidden">
-                  <header className="px-3 py-2 border-b border-border text-sm font-medium inline-flex items-center gap-2">
-                    <Mail className="w-4 h-4" />
+                <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-overflow-hidden">
+                  <header className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium bo-history-inline-flex bo-history-items-center bo-history-gap-2">
+                    <Mail className="bo-history-w-4 bo-history-h-4" />
                     {t("Jobs email", "Email jobs")}
                   </header>
-                  <div className="max-h-64 overflow-auto">
-                    <table className="w-full text-sm">
-                      <thead className="bg-muted/40">
-                        <tr className="text-left">
-                          <th className="px-3 py-2 font-medium">{t("Template", "Template")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Version", "Version")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Status", "Status")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Qualité", "Quality")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Attempts", "Attempts")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Programmé", "Scheduled")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Created", "Created")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Action", "Action")}</th>
+                  <div className="bo-history-max-h-64 bo-history-overflow-auto">
+                    <table className="bo-history-w-full bo-history-text-sm">
+                      <thead className="bo-history-bg-muted-40">
+                        <tr className="bo-history-text-left">
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Template", "Template")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Version", "Version")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Status", "Status")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Qualité", "Quality")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Attempts", "Attempts")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Programmé", "Scheduled")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Created", "Created")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Action", "Action")}</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -2935,61 +2878,58 @@ export default function BackOfficePage() {
                           const ctaUrl = getJobCtaUrl(job);
                           const quality = getJobEmailQuality(job);
                           return (
-                            <tr key={job.id} className="border-t border-border">
-                              <td className="px-3 py-2">
-                                <div className="font-medium">{job.template_key}</div>
-                                <div className="text-xs text-muted-foreground">{getJobTrigger(job)}</div>
+                            <tr key={job.id} className="bo-history-border-t bo-history-border-border">
+                              <td className="bo-history-px-3 bo-history-py-2">
+                                <div className="bo-history-font-medium">{job.template_key}</div>
+                                <div className="bo-history-text-xs bo-history-text-muted-foreground">{getJobTrigger(job)}</div>
                               </td>
-                              <td className="px-3 py-2">{getJobTemplateVersion(job)}</td>
-                              <td className="px-3 py-2">
-                                <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${emailStatusClasses(job.status)}`}>
+                              <td className="bo-history-px-3 bo-history-py-2">{getJobTemplateVersion(job)}</td>
+                              <td className="bo-history-px-3 bo-history-py-2">
+                                <span className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${emailStatusClasses(job.status)}`}>
                                   {job.status}
                                 </span>
                               </td>
-                              <td className="px-3 py-2">
+                              <td className="bo-history-px-3 bo-history-py-2">
                                 <span
-                                  className={`inline-flex px-2 py-0.5 rounded-full text-xs ${emailQualityClasses(quality.status)}`}
+                                  className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${emailQualityClasses(quality.status)}`}
                                   title={quality.flagIds.join(", ")}
                                 >
                                   {quality.status}
                                   {quality.score != null ? ` ${quality.score}` : ""}
                                 </span>
                               </td>
-                              <td className="px-3 py-2">{job.attempts}</td>
-                              <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(job.scheduled_for, locale)}</td>
-                              <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(job.created_at, locale)}</td>
-                              <td className="px-3 py-2">
-                                <div className="flex flex-wrap gap-1">
+                              <td className="bo-history-px-3 bo-history-py-2">{job.attempts}</td>
+                              <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(job.scheduled_for, locale)}</td>
+                              <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(job.created_at, locale)}</td>
+                              <td className="bo-history-px-3 bo-history-py-2">
+                                <div className="bo-history-flex bo-history-flex-wrap bo-history-gap-1">
                                   {ctaUrl && (
-                                    <a
-                                      href={ctaUrl}
+                                    <TextLink variant="secondary"
+                                      to={ctaUrl}
                                       target="_blank"
                                       rel="noreferrer"
-                                      className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
                                     >
-                                      <ExternalLink className="w-3.5 h-3.5" />
+                                      <ExternalLink className="bo-history-w-3-5 bo-history-h-3-5" />
                                       CTA
-                                    </a>
+                                    </TextLink>
                                   )}
-                                  <button
+                                  <Button variant="secondary"
                                     disabled={isBusy}
                                     onClick={() => void runEmailJobAction(job, "retry_now")}
-                                    className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1 disabled:opacity-50"
                                   >
-                                    <RotateCcw className="w-3.5 h-3.5" />
+                                    <RotateCcw className="bo-history-w-3-5 bo-history-h-3-5" />
                                     {t("Relancer", "Retry")}
-                                  </button>
-                                  <button
+                                  </Button>
+                                  <Button variant="secondary"
                                     disabled={isBusy || job.status === "cancelled"}
                                     onClick={() => void runEmailJobAction(job, "cancel")}
-                                    className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1 disabled:opacity-50"
                                   >
-                                    <Ban className="w-3.5 h-3.5" />
+                                    <Ban className="bo-history-w-3-5 bo-history-h-3-5" />
                                     {t("Annuler", "Cancel")}
-                                  </button>
+                                  </Button>
                                 </div>
                                 {job.last_error && (
-                                  <div className="mt-1 text-xs text-red-600 max-w-[280px] truncate" title={job.last_error}>
+                                  <div className="bo-history-mt-1 bo-history-text-xs bo-history-text-red-600 bo-history-max-w-280px bo-history-truncate" title={job.last_error}>
                                     {job.last_error}
                                   </div>
                                 )}
@@ -2999,7 +2939,7 @@ export default function BackOfficePage() {
                         })}
                         {detail.emailJobs.length === 0 && (
                           <tr>
-                            <td colSpan={8} className="px-3 py-6 text-center text-muted-foreground">
+                            <td colSpan={8} className="bo-history-px-3 bo-history-py-6 bo-history-text-center bo-history-text-muted-foreground">
                               {t("Aucun job email", "No email jobs")}
                             </td>
                           </tr>
@@ -3009,39 +2949,39 @@ export default function BackOfficePage() {
                   </div>
                 </section>
 
-                <section className="border border-border rounded-lg overflow-hidden">
-                  <header className="px-3 py-2 border-b border-border text-sm font-medium inline-flex items-center gap-2">
-                    <Activity className="w-4 h-4" />
+                <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-overflow-hidden">
+                  <header className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium bo-history-inline-flex bo-history-items-center bo-history-gap-2">
+                    <Activity className="bo-history-w-4 bo-history-h-4" />
                     {t("Historique email", "Email history")}
                   </header>
-                  <div className="max-h-52 overflow-auto">
-                    <table className="w-full text-sm">
-                      <thead className="bg-muted/40">
-                        <tr className="text-left">
-                          <th className="px-3 py-2 font-medium">{t("Date", "Date")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Job", "Job")}</th>
-                          <th className="px-3 py-2 font-medium">{t("De", "From")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Vers", "To")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Source", "Source")}</th>
+                  <div className="bo-history-max-h-52 bo-history-overflow-auto">
+                    <table className="bo-history-w-full bo-history-text-sm">
+                      <thead className="bo-history-bg-muted-40">
+                        <tr className="bo-history-text-left">
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Date", "Date")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Job", "Job")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("De", "From")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Vers", "To")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Source", "Source")}</th>
                         </tr>
                       </thead>
                       <tbody>
                         {detail.emailJobEvents.map((event) => (
-                          <tr key={event.id} className="border-t border-border">
-                            <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(event.created_at, locale)}</td>
-                            <td className="px-3 py-2 font-mono text-xs">{event.job_id.slice(0, 8)}</td>
-                            <td className="px-3 py-2">{event.status_from || "—"}</td>
-                            <td className="px-3 py-2">
-                              <span className={`inline-flex px-2 py-0.5 rounded-full text-xs ${emailStatusClasses(event.status_to)}`}>
+                          <tr key={event.id} className="bo-history-border-t bo-history-border-border">
+                            <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(event.created_at, locale)}</td>
+                            <td className="bo-history-px-3 bo-history-py-2 bo-history-font-mono bo-history-text-xs">{event.job_id.slice(0, 8)}</td>
+                            <td className="bo-history-px-3 bo-history-py-2">{event.status_from || "—"}</td>
+                            <td className="bo-history-px-3 bo-history-py-2">
+                              <span className={`bo-history-inline-flex bo-history-px-2 bo-history-py-0-5 bo-history-rounded-full bo-history-text-xs ${emailStatusClasses(event.status_to)}`}>
                                 {event.status_to}
                               </span>
                             </td>
-                            <td className="px-3 py-2">{event.event_source}</td>
+                            <td className="bo-history-px-3 bo-history-py-2">{event.event_source}</td>
                           </tr>
                         ))}
                         {detail.emailJobEvents.length === 0 && (
                           <tr>
-                            <td colSpan={5} className="px-3 py-6 text-center text-muted-foreground">
+                            <td colSpan={5} className="bo-history-px-3 bo-history-py-6 bo-history-text-center bo-history-text-muted-foreground">
                               {t("Aucun événement email", "No email events")}
                             </td>
                           </tr>
@@ -3051,48 +2991,47 @@ export default function BackOfficePage() {
                   </div>
                 </section>
 
-                <section className="border border-border rounded-lg overflow-hidden">
-                  <header className="px-3 py-2 border-b border-border text-sm font-medium inline-flex items-center gap-2">
-                    <Layers3 className="w-4 h-4" />
+                <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-overflow-hidden">
+                  <header className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium bo-history-inline-flex bo-history-items-center bo-history-gap-2">
+                    <Layers3 className="bo-history-w-4 bo-history-h-4" />
                     {t("Restitutions", "Restitutions")}
                   </header>
-                  <div className="max-h-52 overflow-auto">
-                    <table className="w-full text-sm">
-                      <thead className="bg-muted/40">
-                        <tr className="text-left">
-                          <th className="px-3 py-2 font-medium">{t("Date", "Date")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Canal", "Channel")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Version", "Version")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Template / profil", "Template / profile")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Sujet / risque", "Subject / risk")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Score", "Score")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Lien", "Link")}</th>
+                  <div className="bo-history-max-h-52 bo-history-overflow-auto">
+                    <table className="bo-history-w-full bo-history-text-sm">
+                      <thead className="bo-history-bg-muted-40">
+                        <tr className="bo-history-text-left">
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Date", "Date")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Canal", "Channel")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Version", "Version")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Template / profil", "Template / profile")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Sujet / risque", "Subject / risk")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Score", "Score")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Lien", "Link")}</th>
                         </tr>
                       </thead>
                       <tbody>
                         {(detail.restitutions || []).map((restitution) => {
                           const ctaUrl = getRestitutionCtaUrl(restitution);
                           return (
-                            <tr key={restitution.id} className="border-t border-border">
-                              <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(restitution.generated_at, locale)}</td>
-                              <td className="px-3 py-2">{restitution.channel}</td>
-                              <td className="px-3 py-2">{restitution.version}</td>
-                              <td className="px-3 py-2">{getRestitutionTemplate(restitution)}</td>
-                              <td className="px-3 py-2 max-w-[240px] truncate" title={getRestitutionSubject(restitution)}>
+                            <tr key={restitution.id} className="bo-history-border-t bo-history-border-border">
+                              <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(restitution.generated_at, locale)}</td>
+                              <td className="bo-history-px-3 bo-history-py-2">{restitution.channel}</td>
+                              <td className="bo-history-px-3 bo-history-py-2">{restitution.version}</td>
+                              <td className="bo-history-px-3 bo-history-py-2">{getRestitutionTemplate(restitution)}</td>
+                              <td className="bo-history-px-3 bo-history-py-2 bo-history-max-w-240px bo-history-truncate" title={getRestitutionSubject(restitution)}>
                                 {getRestitutionSubject(restitution)}
                               </td>
-                              <td className="px-3 py-2">{getRestitutionScore(restitution) ?? "—"}</td>
-                              <td className="px-3 py-2">
+                              <td className="bo-history-px-3 bo-history-py-2">{getRestitutionScore(restitution) ?? "—"}</td>
+                              <td className="bo-history-px-3 bo-history-py-2">
                                 {ctaUrl ? (
-                                  <a
-                                    href={ctaUrl}
+                                  <TextLink variant="secondary"
+                                    to={ctaUrl}
                                     target="_blank"
                                     rel="noreferrer"
-                                    className="h-7 px-2 rounded-md border border-border text-xs inline-flex items-center gap-1"
                                   >
-                                    <ExternalLink className="w-3.5 h-3.5" />
+                                    <ExternalLink className="bo-history-w-3-5 bo-history-h-3-5" />
                                     CTA
-                                  </a>
+                                  </TextLink>
                                 ) : (
                                   "—"
                                 )}
@@ -3102,7 +3041,7 @@ export default function BackOfficePage() {
                         })}
                         {(detail.restitutions || []).length === 0 && (
                           <tr>
-                            <td colSpan={7} className="px-3 py-6 text-center text-muted-foreground">
+                            <td colSpan={7} className="bo-history-px-3 bo-history-py-6 bo-history-text-center bo-history-text-muted-foreground">
                               {t("Aucune restitution", "No restitutions")}
                             </td>
                           </tr>
@@ -3112,33 +3051,33 @@ export default function BackOfficePage() {
                   </div>
                 </section>
 
-                <section className="border border-border rounded-lg overflow-hidden">
-                  <header className="px-3 py-2 border-b border-border text-sm font-medium inline-flex items-center gap-2">
-                    <TrendingDown className="w-4 h-4" />
+                <section className="bo-history-border bo-history-border-border bo-history-rounded-lg bo-history-overflow-hidden">
+                  <header className="bo-history-px-3 bo-history-py-2 bo-history-border-b bo-history-border-border bo-history-text-sm bo-history-font-medium bo-history-inline-flex bo-history-items-center bo-history-gap-2">
+                    <TrendingDown className="bo-history-w-4 bo-history-h-4" />
                     {t("Snapshots", "Snapshots")}
                   </header>
-                  <div className="max-h-52 overflow-auto">
-                    <table className="w-full text-sm">
-                      <thead className="bg-muted/40">
-                        <tr className="text-left">
-                          <th className="px-3 py-2 font-medium">{t("Date", "Date")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Step", "Step")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Progress", "Progress")}</th>
-                          <th className="px-3 py-2 font-medium">{t("Final", "Final")}</th>
+                  <div className="bo-history-max-h-52 bo-history-overflow-auto">
+                    <table className="bo-history-w-full bo-history-text-sm">
+                      <thead className="bo-history-bg-muted-40">
+                        <tr className="bo-history-text-left">
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Date", "Date")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Step", "Step")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Progress", "Progress")}</th>
+                          <th className="bo-history-px-3 bo-history-py-2 bo-history-font-medium">{t("Final", "Final")}</th>
                         </tr>
                       </thead>
                       <tbody>
                         {detail.snapshots.map((snapshot) => (
-                          <tr key={snapshot.id} className="border-t border-border">
-                            <td className="px-3 py-2 whitespace-nowrap">{formatDateTime(snapshot.created_at, locale)}</td>
-                            <td className="px-3 py-2">{snapshot.step_id}</td>
-                            <td className="px-3 py-2">{snapshot.completion_pct != null ? `${snapshot.completion_pct}%` : "—"}</td>
-                            <td className="px-3 py-2">{snapshot.is_final ? <CheckCircle2 className="w-4 h-4 text-green-600" /> : "—"}</td>
+                          <tr key={snapshot.id} className="bo-history-border-t bo-history-border-border">
+                            <td className="bo-history-px-3 bo-history-py-2 bo-history-whitespace-nowrap">{formatDateTime(snapshot.created_at, locale)}</td>
+                            <td className="bo-history-px-3 bo-history-py-2">{snapshot.step_id}</td>
+                            <td className="bo-history-px-3 bo-history-py-2">{snapshot.completion_pct != null ? `${snapshot.completion_pct}%` : "—"}</td>
+                            <td className="bo-history-px-3 bo-history-py-2">{snapshot.is_final ? <CheckCircle2 className="bo-history-w-4 bo-history-h-4 bo-history-text-green-600" /> : "—"}</td>
                           </tr>
                         ))}
                         {detail.snapshots.length === 0 && (
                           <tr>
-                            <td colSpan={4} className="px-3 py-6 text-center text-muted-foreground">
+                            <td colSpan={4} className="bo-history-px-3 bo-history-py-6 bo-history-text-center bo-history-text-muted-foreground">
                               {t("Aucun snapshot", "No snapshots")}
                             </td>
                           </tr>
@@ -3154,8 +3093,8 @@ export default function BackOfficePage() {
       )}
 
       {loading && (
-        <div className="text-sm text-muted-foreground inline-flex items-center gap-2">
-          <RefreshCw className="w-4 h-4 animate-spin" />
+        <div className="bo-history-text-sm bo-history-text-muted-foreground bo-history-inline-flex bo-history-items-center bo-history-gap-2">
+          <RefreshCw className="bo-history-w-4 bo-history-h-4 bo-history-animate-spin" />
           {t("Synchronisation des données…", "Syncing data…")}
         </div>
       )}

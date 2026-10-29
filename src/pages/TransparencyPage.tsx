@@ -1,3 +1,4 @@
+import { ButtonLink } from "@/components/ui/primitives";
 import { useLang } from "@/hooks/useLang";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Link } from "@/lib/routerLinks";
@@ -268,9 +269,9 @@ const TransparencyPage = () => {
 
           {/* ── CTA ── */}
           <div className="ab-cta">
-            <Link to={`${prefix}/contact`} className="tt-button-primary">
+            <ButtonLink variant="primary" appearance="public" size="compact" to={`${prefix}/contact`} >
               {t("Une question ? Écris-nous →", "A question? Write to us →")}
-            </Link>
+            </ButtonLink>
             <Link to={`${prefix}/transparency`} className="ab-cta-secondary">
               {t("Voir la méthodologie", "See the methodology")}
             </Link>

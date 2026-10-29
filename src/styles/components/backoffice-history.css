@@ -1,0 +1,150 @@
+/* Maintained diagnostic views and administrator entry. Controls consume ui primitives. */
+.bo-history-shell { max-width: 1440px; min-width: 0; margin: 0 auto; padding: var(--space-2xl) var(--space-2xl) var(--space-3xl); color: var(--color-text); font-family: var(--font-ui); }
+.bo-history-entry-header { margin-bottom: var(--space-2xl); }
+.bo-history-login { display: grid; gap: var(--space-lg); max-width: 480px; padding: var(--space-xl); border: 1px solid var(--color-border); border-radius: var(--tt-surface-radius-info); background: var(--color-surface); }
+.bo-history-login-heading { display: flex; align-items: center; gap: var(--space-sm); }
+.bo-history-login-heading > svg { flex: none; }
+.bo-history-login h2 { margin: 0; font: 600 var(--tt-size-section-h)/1.2 var(--font-brand); letter-spacing: -.025em; }
+.bo-history-login-intro { margin: 0; color: var(--color-text-secondary); font: 400 var(--tt-size-body)/1.5 var(--font-ui); }
+.bo-history-login-note { margin: 0; color: var(--color-text-meta); font: 400 13px/1.5 var(--font-ui); }
+.bo-history-login-error { margin: 0; color: var(--color-alert); font: 500 14px/1.5 var(--font-ui); }
+.bo-history-login-submit { width: 100%; }
+.bo-history-status-ok, .bo-history-status-error, .bo-history-status-watch, .bo-history-status-info, .bo-history-status-muted { background: var(--color-surface-soft); color: var(--color-text-secondary); }
+.bo-history-status-ok { color: var(--color-pro); background: var(--color-pro-soft); }
+.bo-history-status-error, .bo-history-status-watch { color: var(--color-alert); background: var(--color-con-soft); }
+@keyframes bo-history-spin { to { transform: rotate(360deg); } }
+@media (max-width:640px) { .bo-history-shell { padding: var(--space-lg) var(--space-md) var(--space-2xl); } .bo-history-entry-header { margin-bottom: var(--space-lg); } .bo-history-login { max-width: none; padding: var(--space-lg); } }
+
+/* Diagnostic content arrangement and typography. */
+.bo-history--translate-y-1-2 { transform:translateY(-50%); }
+.bo-history-absolute { position:absolute; }
+.bo-history-align-top { vertical-align:top; }
+.bo-history-animate-spin { animation:none; }
+@media (prefers-reduced-motion: no-preference) { .bo-history-animate-spin { animation:bo-history-spin 1s linear infinite; } }
+.bo-history-bg-background { background:var(--color-bg); }
+.bo-history-bg-black-25 { background:color-mix(in srgb,var(--color-text) 25%,transparent); }
+.bo-history-bg-card { background:var(--color-surface); }
+.bo-history-bg-muted { background:var(--color-surface-soft); }
+.bo-history-bg-muted-30 { background:var(--color-surface-soft); }
+.bo-history-bg-muted-40 { background:var(--color-surface-soft); }
+.bo-history-bg-red-50 { background:var(--color-con-soft); }
+.bo-history-border { border:1px solid var(--color-border); }
+.bo-history-border-b { border-bottom:1px solid var(--color-border); }
+.bo-history-border-border { border-color:var(--color-border); }
+.bo-history-border-l { border-left:1px solid var(--color-border); }
+.bo-history-border-red-300 { border-color:var(--color-alert); }
+.bo-history-border-t { border-top:1px solid var(--color-border); }
+.bo-history-break-all { overflow-wrap:anywhere; }
+.bo-history-fixed { position:fixed; }
+.bo-history-flex { display:flex; }
+.bo-history-flex-col { flex-direction:column; }
+.bo-history-flex-wrap { flex-wrap:wrap; }
+.bo-history-font-medium { font-weight:500; }
+.bo-history-font-mono { font-family:var(--font-mono,monospace); }
+.bo-history-font-semibold { font-weight:600; }
+.bo-history-gap-1 { gap:var(--space-xs); }
+.bo-history-gap-2 { gap:var(--space-sm); }
+.bo-history-gap-3 { gap:var(--space-md); }
+.bo-history-gap-4 { gap:var(--space-lg); }
+.bo-history-grid { display:grid; }
+.bo-history-grid-cols-1 { grid-template-columns:repeat(1,minmax(0,1fr)); }
+.bo-history-grid-cols-2 { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.bo-history-h-3-5 { height:14px; }
+.bo-history-h-4 { height:var(--space-lg); }
+.bo-history-h-8 { height:var(--space-2xl); }
+.bo-history-h-9 { height:36px; }
+.bo-history-h-full { height:100%; }
+.bo-history-inline-flex { display:inline-flex; }
+.bo-history-inset-0 { inset:0; }
+.bo-history-items-center { align-items:center; }
+.bo-history-items-start { align-items:flex-start; }
+.bo-history-justify-between { justify-content:space-between; }
+.bo-history-left-2 { left:var(--space-xs); }
+@media (min-width:1024px) { .bo-history-lg-flex-row { flex-direction:row; } }
+@media (min-width:1024px) { .bo-history-lg-grid-cols-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (min-width:1024px) { .bo-history-lg-grid-cols-5 { grid-template-columns:repeat(5,minmax(0,1fr)); } }
+@media (min-width:1024px) { .bo-history-lg-items-center { align-items:center; } }
+@media (min-width:1024px) { .bo-history-lg-items-start { align-items:flex-start; } }
+@media (min-width:1024px) { .bo-history-lg-justify-between { justify-content:space-between; } }
+.bo-history-max-h-52 { max-height:208px; }
+.bo-history-max-h-64 { max-height:256px; }
+.bo-history-max-w-2xl { max-width:42rem; }
+.bo-history-max-w-1400px { max-width:1400px; }
+.bo-history-max-w-220px { max-width:220px; }
+.bo-history-max-w-240px { max-width:240px; }
+.bo-history-max-w-260px { max-width:260px; }
+.bo-history-max-w-280px { max-width:280px; }
+.bo-history-max-w-300px { max-width:300px; }
+@media (min-width:768px) { .bo-history-md-grid-cols-2 { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:768px) { .bo-history-md-grid-cols-3 { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (min-width:768px) { .bo-history-md-grid-cols-4 { grid-template-columns:repeat(4,minmax(0,1fr)); } }
+@media (min-width:768px) { .bo-history-md-grid-cols-5 { grid-template-columns:repeat(5,minmax(0,1fr)); } }
+@media (min-width:768px) { .bo-history-md-py-10 { padding-block:40px; } }
+.bo-history-min-w-180px { min-width:180px; }
+.bo-history-min-w-220px { min-width:220px; }
+.bo-history-min-w-240px { min-width:240px; }
+.bo-history-mt-1 { margin-top:var(--space-xs); }
+.bo-history-mt-2 { margin-top:var(--space-sm); }
+.bo-history-mt-3 { margin-top:var(--space-md); }
+.bo-history-mt-5 { margin-top:20px; }
+.bo-history-mt-6 { margin-top:var(--space-xl); }
+.bo-history-mx-auto { margin-inline:auto; }
+.bo-history-overflow-auto { overflow:auto; }
+.bo-history-overflow-hidden { overflow:hidden; }
+.bo-history-overflow-y-auto { overflow-y:auto; }
+.bo-history-p-3 { padding:var(--space-md); }
+.bo-history-p-4 { padding:var(--space-lg); }
+.bo-history-px-2 { padding-inline:var(--space-sm); }
+.bo-history-px-3 { padding-inline:var(--space-md); }
+.bo-history-px-4 { padding-inline:var(--space-lg); }
+.bo-history-py-0-5 { padding-block:var(--space-2xs); }
+.bo-history-py-2 { padding-block:var(--space-sm); }
+.bo-history-py-3 { padding-block:var(--space-md); }
+.bo-history-py-6 { padding-block:var(--space-xl); }
+.bo-history-py-8 { padding-block:var(--space-2xl); }
+.bo-history-relative { position:relative; }
+.bo-history-right-0 { right:0; }
+.bo-history-rounded-full { border-radius:var(--radius-pill); }
+.bo-history-rounded-lg { border-radius:var(--radius-lg); }
+.bo-history-rounded-md { border-radius:var(--radius-md); }
+.bo-history-shrink-0 { flex-shrink:0; }
+@media (min-width:640px) { .bo-history-sm-flex-row { flex-direction:row; } }
+.bo-history-space-y-2 > * + * { margin-top:var(--space-sm); }
+.bo-history-space-y-3 > * + * { margin-top:var(--space-md); }
+.bo-history-space-y-4 > * + * { margin-top:var(--space-lg); }
+.bo-history-space-y-5 > * + * { margin-top:20px; }
+.bo-history-space-y-6 > * + * { margin-top:var(--space-xl); }
+.bo-history-text-2xl { font-size:24px; }
+.bo-history-text-10px { font-size:10px; }
+.bo-history-text-amber-700 { color:var(--color-con); }
+.bo-history-text-center { text-align:center; }
+.bo-history-text-foreground { color:var(--color-text); }
+.bo-history-text-green-600 { color:var(--color-pro); }
+.bo-history-text-left { text-align:left; }
+.bo-history-text-lg { font-size:18px; }
+.bo-history-text-muted-foreground { color:var(--color-text-meta); }
+.bo-history-text-red-600 { color:var(--color-alert); }
+.bo-history-text-red-700 { color:var(--color-alert); }
+.bo-history-text-sm { font-size:var(--tt-size-card-body); }
+.bo-history-text-xl { font-size:20px; }
+.bo-history-text-xs { font-size:var(--tt-size-meta); }
+.bo-history-top-0 { top:0; }
+.bo-history-top-1-2 { top:50%; }
+.bo-history-tracking-wide { letter-spacing:.05em; }
+.bo-history-truncate { overflow:hidden;white-space:nowrap;text-overflow:ellipsis; }
+.bo-history-uppercase { text-transform:uppercase; }
+.bo-history-w-3-5 { width:14px; }
+.bo-history-w-4 { width:var(--space-lg); }
+.bo-history-w-full { width:100%; }
+.bo-history-whitespace-nowrap { white-space:nowrap; }
+@media (min-width:1280px) { .bo-history-xl-flex-row { flex-direction:row; } }
+@media (min-width:1280px) { .bo-history-xl-grid-cols-2 { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:1280px) { .bo-history-xl-grid-cols-5 { grid-template-columns:repeat(5,minmax(0,1fr)); } }
+@media (min-width:1280px) { .bo-history-xl-grid-cols-6 { grid-template-columns:repeat(6,minmax(0,1fr)); } }
+@media (min-width:1280px) { .bo-history-xl-items-center { align-items:center; } }
+@media (min-width:1280px) { .bo-history-xl-max-w-xs { max-width:20rem; } }
+.bo-history-z-50 { z-index:50; }
+
+.bo-history-search { display:flex; align-items:center; gap:var(--space-xs); width:100%; min-width:0; }
+.bo-history-search-icon { flex:none; width:16px; height:16px; color:var(--color-text-meta); }
+@media (min-width:1280px) { .bo-history-search { max-width:20rem; } }

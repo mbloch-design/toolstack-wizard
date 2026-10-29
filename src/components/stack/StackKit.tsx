@@ -1,4 +1,5 @@
-import { forwardRef, useEffect, useRef, useState, type ButtonHTMLAttributes, type KeyboardEvent, type ReactNode } from "react";
+import { Button as SharedButton, TextLink as SharedTextLink, Segmented as SharedSegmented, ActionRow as SharedActionRow, type ButtonProps, type ControlSize, type SegmentedProps, type ActionRowProps } from "@/components/ui/primitives";
+import { forwardRef, useEffect, useState, type ReactNode } from "react";
 import { Link } from "@/lib/routerLinks";
 import ToolLogo from "@/components/ToolLogo";
 import { CheckCircle2, ChevronRight, TrendingDown, TrendingUp } from "@/lib/icons";
@@ -123,58 +124,27 @@ export function Footnote({ children }: { children: ReactNode }) {
   return <p className="mk-foot">{children}</p>;
 }
 
-/** Acts on the stack. Primary is the expected answer, secondary the others. */
-export const Button = forwardRef<HTMLButtonElement, ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary"; icon?: ReactNode }>(
-  function Button({ variant = "secondary", icon, children, className, ...rest }, ref) {
-    return <button ref={ref} type="button" {...rest} className={`mk-button ${variant === "primary" ? "tt-button-primary" : "tt-button-secondary"}${className ? ` ${className}` : ""}`} data-variant={variant}>{icon}{children}</button>;
-  });
+/** Compatibility composition: Stack uses explicit compact shared controls. */
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(props, ref) {
+  return <SharedButton appearance="stack" size="compact" {...props} ref={ref} />;
+});
 
-/** Goes to a secondary place, or a secondary action in a footer: underlined text. */
-export function TextLink({ to, onClick, children, className }: { to?: string; onClick?: () => void; children: ReactNode; className?: string }) {
-  const cls = `mk-link${className ? ` ${className}` : ""}`;
-  return to ? <Link className={cls} to={to} onClick={onClick}>{children}</Link> : <button type="button" className={cls} onClick={onClick}>{children}</button>;
+/** Legacy actions remain native buttons; destinations use the navigation primitive. */
+export function TextLink({ to, onClick, children, className, size = "compact" }: { to?: string; onClick?: () => void; children: ReactNode; className?: string; size?: ControlSize }) {
+  return to
+    ? <SharedTextLink appearance="stack" size={size} to={to} onClick={onClick} className={className}>{children}</SharedTextLink>
+    : <SharedButton appearance="stack" size={size} variant="quiet" onClick={onClick} className={className}>{children}</SharedButton>;
 }
 
-/**
- * Changes the view, never the data: a raised thumb in a track. "tabs" drives
- * a panel (arrow keys move between options), "toggle" filters a list.
- */
-export function Segmented<T extends string>({ label, options, value, onChange, mode = "tabs", controls, className }: {
-  label: string; options: { id: T; label: ReactNode; count?: number }[]; value: T | null; onChange: (id: T) => void; mode?: "tabs" | "toggle"; controls?: string; className?: string;
-}) {
-  function onKey(event: KeyboardEvent<HTMLDivElement>) {
-    if (mode !== "tabs") return;
-    const step = event.key === "ArrowRight" ? 1 : event.key === "ArrowLeft" ? -1 : 0;
-    if (!step) return;
-    event.preventDefault();
-    const index = Math.max(0, options.findIndex((option) => option.id === value));
-    const next = options[(index + step + options.length) % options.length].id;
-    onChange(next);
-    event.currentTarget.querySelector<HTMLButtonElement>(`[data-id="${next}"]`)?.focus();
-  }
-  return <div className={`mk-segmented${className ? ` ${className}` : ""}`} role={mode === "tabs" ? "tablist" : "group"} aria-label={label} onKeyDown={onKey}>
-    {options.map((option) => {
-      const on = value === option.id;
-      return <button key={option.id} type="button" data-id={option.id} onClick={() => onChange(option.id)}
-        {...(mode === "tabs" ? { role: "tab", "aria-selected": on, "aria-controls": controls, tabIndex: on || (value === null && option === options[0]) ? 0 : -1 } : { "aria-pressed": on })}>
-        {option.label}{option.count !== undefined && <span>{option.count}</span>}
-      </button>;
-    })}
-  </div>;
+/** Shared tabs own the roving focus and selected-state contract. */
+export function Segmented<T extends string>(props: SegmentedProps<T>) {
+  return <SharedSegmented appearance="stack" size="compact" {...props} />;
 }
 
-/** Opens a tool: icon, name and detail, its value on the right, a chevron. */
-export function ActionRow({ lead, name, sub, end, endTone, onClick, className, children, ...rest }: ButtonHTMLAttributes<HTMLButtonElement> & {
-  lead: ReactNode; name: ReactNode; sub?: ReactNode; /** Right-hand value, e.g. a price. */ end?: ReactNode; endTone?: "watch" | "muted"; children?: ReactNode;
-}) {
-  return <button type="button" {...rest} className={`mk-row mk-row--action${className ? ` ${className}` : ""}`} onClick={onClick}>
-    <span className="mk-row-lead" aria-hidden="true">{lead}</span>
-    <span className="mk-row-text"><span>{name}</span>{sub && <small>{sub}</small>}</span>
-    {end !== undefined && <span className="mk-row-value" data-tone={endTone}>{end}</span>}
-    <ChevronRight size={16} aria-hidden className="mk-row-chevron" />
-    {children}
-  </button>;
-}
+/** Opens a tool through the shared action row. */
+export const ActionRow = forwardRef<HTMLButtonElement, ActionRowProps>(function ActionRow(props, ref) {
+  return <SharedActionRow appearance="stack" size="compact" {...props} ref={ref} />;
+});
 
 /** A settled fact in a list: same layout as LinkRow, but it opens nothing. */
 export function Row({ lead, title, sub }: { lead: ReactNode; title: ReactNode; sub?: ReactNode }) {

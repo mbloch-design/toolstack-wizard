@@ -1,7 +1,7 @@
+import { Button, Input, TextLink } from "@/components/ui/primitives";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useCatalogExitGuard } from "./useCatalogExitGuard";
-import { Button as StackButton } from "@/components/stack/StackKit";
 import ToolLogo from "@/components/ToolLogo";
 import { Search, RefreshCw, ArrowUpRight } from "@/lib/icons";
 import {
@@ -324,7 +324,7 @@ export function CatalogEditor({
             )}
           </p>
         </div>
-        <StackButton
+        <Button
           variant="primary"
           type="button"
 
@@ -338,13 +338,12 @@ export function CatalogEditor({
             `Publier toutes les modifications (${workspace?.drafts.length ?? 0})`,
             `Publish all changes (${workspace?.drafts.length ?? 0})`,
           )}
-        </StackButton>
+        </Button>
       </div>
       {error && (
         <div className="bo-catalog-feedback" role="alert">
           <p>{error}</p>
-          <button
-            className="mk-link"
+          <Button variant="quiet"
             type="button"
             disabled={busy}
             onClick={() => {
@@ -353,7 +352,7 @@ export function CatalogEditor({
             }}
           >
             {t("Actualiser le catalogue", "Refresh catalogue")}
-          </button>
+          </Button>
         </div>
       )}
       {notice && (
@@ -363,16 +362,15 @@ export function CatalogEditor({
       )}
       {receipt && (
         <p className="bo-caption">
-          <a
-            className="mk-link"
-            href={receipt.commitUrl}
+          <TextLink variant="quiet"
+            to={receipt.commitUrl}
             target="_blank"
             rel="noreferrer"
           >
             {t("Voir le commit", "View commit")}{" "}
             {receipt.commitSha.slice(0, 10)}{" "}
             <ArrowUpRight size={14} aria-hidden />
-          </a>
+          </TextLink>
           {receipt.cleanupPending &&
             ` · ${t("Le nettoyage des brouillons reste à réconcilier. Réessayez la publication pour le terminer.", "Draft cleanup needs reconciliation. Retry publication to finish it.")}`}
         </p>
@@ -401,8 +399,7 @@ export function CatalogEditor({
                 <span>
                   {d.fields.map((f) => catalogFieldLabel(f, lang)).join(", ")}
                 </span>
-                <button
-                  className="mk-link"
+                <Button variant="quiet"
                   type="button"
                   disabled={busy}
                   onClick={() => {
@@ -411,12 +408,12 @@ export function CatalogEditor({
                   }}
                 >
                   {t("Relire la fiche", "Review record")}
-                </button>
+                </Button>
               </li>
             ))}
           </ul>
           <div className="bo-catalog-actions">
-            <StackButton
+            <Button
               variant="primary"
 
               type="button"
@@ -427,15 +424,14 @@ export function CatalogEditor({
                 `Confirmer la publication de ${review.drafts.length} fiches`,
                 `Confirm publication of ${review.drafts.length} records`,
               )}
-            </StackButton>
-            <button
-              className="mk-button tt-button-secondary"
+            </Button>
+            <Button variant="secondary"
               type="button"
               disabled={busy}
               onClick={() => setReview(null)}
             >
               {t("Annuler", "Cancel")}
-            </button>
+            </Button>
           </div>
         </section>
       )}
@@ -449,7 +445,7 @@ export function CatalogEditor({
       >
         <div className="bo-search-field">
           <Search size={18} aria-hidden />
-          <input
+          <Input
             type="search"
             aria-label={t("Rechercher une fiche", "Search records")}
             placeholder={t("Rechercher une fiche…", "Search records…")}
@@ -458,15 +454,14 @@ export function CatalogEditor({
             onChange={(event) => setQuery(event.target.value)}
           />
         </div>
-        <button
-          className="mk-button tt-button-secondary"
+        <Button variant="secondary"
           type="submit"
           disabled={busy}
         >
           {t("Rechercher", "Search")}
-        </button>
-        <label className="bo-catalog-filter">
-          <input
+        </Button>
+        <label className="bo-checkbox">
+          <Input
             type="checkbox"
             checked={draftsOnly}
             onChange={(event) => {
@@ -476,8 +471,7 @@ export function CatalogEditor({
           />
           {t("Brouillons uniquement", "Drafts only")}
         </label>
-        <button
-          className="mk-link"
+        <Button variant="quiet"
           type="button"
           aria-label={t("Actualiser les fiches", "Refresh records")}
           disabled={busy || listLoading}
@@ -487,7 +481,7 @@ export function CatalogEditor({
           }}
         >
           <RefreshCw size={18} />
-        </button>
+        </Button>
       </form>
       {listLoading ? (
         <p>{t("Chargement du catalogue…", "Loading catalogue…")}</p>
@@ -534,22 +528,20 @@ export function CatalogEditor({
                 {workspace.total} {t("fiches", "records")} · {t("Page", "Page")}{" "}
                 {workspace.page}
               </span>
-              <button
-                className="mk-link"
+              <Button variant="quiet"
                 type="button"
                 disabled={page <= 1 || busy}
                 onClick={() => setPage((p) => p - 1)}
               >
                 {t("Précédente", "Previous")}
-              </button>
-              <button
-                className="mk-link"
+              </Button>
+              <Button variant="quiet"
                 type="button"
                 disabled={page * workspace.pageSize >= workspace.total || busy}
                 onClick={() => setPage((p) => p + 1)}
               >
                 {t("Suivante", "Next")}
-              </button>
+              </Button>
             </div>
           </>
         )
@@ -572,8 +564,7 @@ export function CatalogEditor({
               <h2>{value.name}</h2>
             </div>
             <div className="bo-catalog-actions">
-              <button
-                className="mk-button tt-button-secondary"
+              <Button variant="secondary"
                 type="button"
                 disabled={busy}
                 onClick={() => setPreview((v) => !v)}
@@ -581,8 +572,8 @@ export function CatalogEditor({
                 {preview
                   ? t("Revenir à l’édition", "Back to editing")
                   : t("Aperçu", "Preview")}
-              </button>
-              <StackButton
+              </Button>
+              <Button
                 variant="primary"
 
                 type="button"
@@ -590,7 +581,7 @@ export function CatalogEditor({
                 onClick={() => void save()}
               >
                 {t("Enregistrer le brouillon", "Save draft")}
-              </StackButton>
+              </Button>
             </div>
           </header>
           {detail.conflict && (
@@ -603,18 +594,18 @@ export function CatalogEditor({
           )}
           <div className="bo-catalog-actions">
             <div
-              className="mk-segmented"
+              className="bo-switches"
               aria-label={t("Langue du contenu", "Content language")}
             >
               {(["fr", "en"] as const).map((language) => (
-                <button
+                <Button variant={locale === language ? "primary" : "secondary"}
                   key={language}
                   type="button"
                   aria-pressed={locale === language}
                   onClick={() => setLocale(language)}
                 >
                   {language === "fr" ? "Français" : "English"}
-                </button>
+                </Button>
               ))}
             </div>
             <p className="bo-caption">
@@ -684,18 +675,18 @@ export function CatalogEditor({
           ) : (
             <>
               <div
-                className="mk-segmented bo-tabs"
+                className="bo-switches bo-tabs"
                 aria-label={t("Rubriques de la fiche", "Record sections")}
               >
                 {GROUPS.map((g) => (
-                  <button
+                  <Button variant={group === g.id ? "primary" : "secondary"}
                     key={g.id}
                     type="button"
                     aria-pressed={group === g.id}
                     onClick={() => setGroup(g.id)}
                   >
                     {t(g.fr, g.en)}
-                  </button>
+                  </Button>
                 ))}
               </div>
               {group === "pricing" && (
@@ -739,21 +730,19 @@ export function CatalogEditor({
                   "Identifiers, technical relations and non-editable data are preserved.",
                 )}
               </p>
-              <a
-                className="mk-link"
-                href={`/${lang}/tool/${detail.tool.slug}`}
+              <TextLink variant="quiet"
+                to={`/${lang}/tool/${detail.tool.slug}`}
                 target="_blank"
                 rel="noreferrer"
               >
                 {t("Voir la fiche publiée", "View published record")}{" "}
                 <ArrowUpRight size={14} aria-hidden />
-              </a>
+              </TextLink>
             </div>
             <div className="bo-catalog-actions">
               {dirty && (
-                <button
+                <Button variant="quiet"
                   type="button"
-                  className="mk-link"
                   disabled={busy}
                   onClick={() => {
                     setValue(detail.tool);
@@ -761,26 +750,24 @@ export function CatalogEditor({
                   }}
                 >
                   {t("Abandonner mes saisies", "Discard my edits")}
-                </button>
+                </Button>
               )}
               {detail.draft && (
-                <button
+                <Button variant="quiet"
                   type="button"
-                  className="mk-link"
                   disabled={busy || dirty}
                   onClick={() => void discard()}
                 >
                   {t("Supprimer ce brouillon", "Remove this draft")}
-                </button>
+                </Button>
               )}
-              <button
+              <Button variant="quiet"
                 type="button"
-                className="mk-link"
                 disabled={busy || dirty}
                 onClick={() => void open(detail.tool.slug)}
               >
                 {t("Recharger la fiche", "Reload record")}
-              </button>
+              </Button>
             </div>
           </footer>
         </section>

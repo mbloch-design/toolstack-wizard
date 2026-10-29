@@ -1,3 +1,4 @@
+import { Button, ButtonLink } from "@/components/ui/primitives";
 import ComparisonDecisionPage from "@/components/compare/ComparisonDecisionPage";
 import { activeCampaignKlaviyoGuides, chatgptClaudeGuides } from "@/data/comparisonDecisionGuides";
 import { affiliateComparisonGuides } from "@/data/affiliateComparisonGuides";
@@ -2123,12 +2124,12 @@ const ComparePage = () => {
             )}
           </p>
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            <button className="tt-button-primary" onClick={() => window.location.reload()}>
+            <Button variant="primary" appearance="public" size="compact"  onClick={() => window.location.reload()}>
               {t("Réessayer", "Try again")}
-            </button>
-            <Link to={`${prefix}/comparatifs`} className="tt-button-secondary">
+            </Button>
+            <ButtonLink variant="secondary" appearance="public" size="compact" to={`${prefix}/comparatifs`} >
               {t("Voir tous les comparatifs", "See all comparisons")}
-            </Link>
+            </ButtonLink>
           </div>
         </div>
       </div>
@@ -2158,9 +2159,9 @@ const ComparePage = () => {
               "The matchup you're looking for isn't in our database yet. Browse the available comparisons."
             )}
           </p>
-          <Link to={`${prefix}/comparatifs`} className="tt-button-primary">
+          <ButtonLink variant="primary" appearance="public" size="compact" to={`${prefix}/comparatifs`} >
             {t("Voir tous les comparatifs →", "See all comparisons →")}
-          </Link>
+          </ButtonLink>
         </div>
       </div>
     );

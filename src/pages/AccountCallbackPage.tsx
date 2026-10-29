@@ -1,3 +1,4 @@
+import { ButtonLink } from "@/components/ui/primitives";
 import StackArrival from "@/components/stack/StackArrival";
 import { isStackReturn, loadStackPage } from "@/lib/stackPageLoader";
 import { useCallback, useEffect, useState } from "react";
@@ -42,7 +43,7 @@ export default function AccountCallbackPage() {
         <div className="ac-callback-content">
         {!account.pendingDraftChoice && !account.conflict && !["error", "unsaved"].includes(account.syncStatus) && <span className="ac-transition-mark" aria-hidden />}
         <p className="ac-transition-title" role="status">{account.pendingDraftChoice || account.conflict ? t("Retrouvez la bonne version de votre stack.", "Choose the right version of your stack.") : ["error", "unsaved"].includes(account.syncStatus) ? t("Vous êtes connecté.", "You are signed in.") : t("Un instant, on retrouve votre stack.", "One moment, finding your stack.")}</p>
-        {!waiting && account.syncStatus === "connecting" && <p className="ac-note">{t("Le chargement prend plus de temps que prévu. Vous pouvez ouvrir votre stack et y suivre la synchronisation.", "Loading is taking longer than expected. You can open your stack and follow synchronization there.")} <Link to={returnTo} replace className="ac-text-button">{t("Continuer", "Continue")}</Link></p>}
+        {!waiting && account.syncStatus === "connecting" && <p className="ac-note">{t("Le chargement prend plus de temps que prévu. Vous pouvez ouvrir votre stack et y suivre la synchronisation.", "Loading is taking longer than expected. You can open your stack and follow synchronization there.")} <ButtonLink appearance="account" variant="quiet" to={returnTo} replace >{t("Continuer", "Continue")}</ButtonLink></p>}
         <AccountAuthJourney
           transition
           mode="signin"
@@ -73,12 +74,12 @@ export default function AccountCallbackPage() {
                       "This link could not sign you in. Try again or request a new link.",
                     )}
           </p>
-          <Link
-            className="ac-button"
+          <ButtonLink appearance="account"
+
             to={`${accountPath(lang, "signin")}?returnTo=${encodeURIComponent(returnTo)}`}
           >
             {t("Retour à la connexion", "Back to sign in")}
-          </Link>
+          </ButtonLink>
         </div>
       )}
     </AccountPageFrame>

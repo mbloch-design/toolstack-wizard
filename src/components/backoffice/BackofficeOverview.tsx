@@ -1,7 +1,7 @@
+import { Button, ActionRow } from "@/components/ui/primitives";
 import { useLang } from "@/hooks/useLang";
 import type { AccountsDashboard } from "@/lib/backofficeAccounts";
 import { ArrowRight } from "@/lib/icons";
-import { ActionRow, TextLink } from "@/components/stack/StackKit";
 import { date, ToolName, tradeLabel } from "./backofficeDisplay";
 
 export function OverviewMetrics({
@@ -14,9 +14,9 @@ export function OverviewMetrics({
   const { t } = useLang();
   return (
     <div className="bo-metrics">
-      <button onClick={onUsers}>
+      <button className="bo-metric" onClick={onUsers}>
         <span>{t("Comptes confirmés", "Confirmed accounts")}</span>
-        <strong className="mk-figure" data-testid="accounts-total">
+        <strong className="bo-figure" data-testid="accounts-total">
           {data.totals.accounts}
         </strong>
         <small>
@@ -24,19 +24,19 @@ export function OverviewMetrics({
           <ArrowRight size={16} aria-hidden />
         </small>
       </button>
-      <button onClick={onUsers}>
+      <button className="bo-metric" onClick={onUsers}>
         <span>
           {t("Comptes avec une sauvegarde", "Accounts with a saved stack")}
         </span>
-        <strong className="mk-figure">{data.totals.accountsWithStack}</strong>
+        <strong className="bo-figure">{data.totals.accountsWithStack}</strong>
         <small>
           {t("État personnel synchronisé", "Synchronized personal state")}
           <ArrowRight size={16} aria-hidden />
         </small>
       </button>
-      <button onClick={onUsers}>
+      <button className="bo-metric" onClick={onUsers}>
         <span>{t("Stacks non vides", "Nonempty stacks")}</span>
-        <strong className="mk-figure">{data.totals.nonemptyStacks}</strong>
+        <strong className="bo-figure">{data.totals.nonemptyStacks}</strong>
         <small>
           {t("Au moins un outil sauvegardé", "At least one saved tool")}
           <ArrowRight size={16} aria-hidden />
@@ -158,20 +158,20 @@ export function BackofficeOverview({
               {t("Aucun compte confirmé.", "No confirmed accounts.")}
             </p>
           )}
-          <TextLink onClick={onUsers}>
+          <Button variant="quiet" onClick={onUsers}>
             {t("Tous les utilisateurs", "All users")}
             <ArrowRight size={15} aria-hidden />
-          </TextLink>
+          </Button>
         </section>
         <div className="bo-ranking-group">
           <ToolsRanking data={data} compact />
-          <TextLink onClick={onStacks}>
+          <Button variant="quiet" onClick={onStacks}>
             {t(
               "Explorer tous les outils sauvegardés",
               "Explore all saved tools",
             )}
             <ArrowRight size={15} aria-hidden />
-          </TextLink>
+          </Button>
         </div>
       </div>
       <p className="bo-meta bo-source-note">

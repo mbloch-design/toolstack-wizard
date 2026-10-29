@@ -5,9 +5,8 @@ import bestOfGuidesConfig from "./src/data/bestOfGuides.json";
 import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
-import postcss from "postcss";
 import { assertSsrRenderers, projectToolBootstrap } from "./scripts/lib/ssr-contract.mjs";
-import { transformSync } from "esbuild";
+import { createCriticalCssExtractor } from "./scripts/lib/compiled-critical-css.mjs";
 import { STACKS } from "./src/data/stacks";
 import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
@@ -1031,8 +1030,6 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           throw new Error("dist-ssr/entry-server.js not found — run `vite build --ssr` first.");
         }
 
-        const cssHrefMatch = baseHtml.match(/<link rel="stylesheet" crossorigin href="([^"]+\.css)"/);
-        const compiledCssPath = cssHrefMatch ? path.resolve(distDir, cssHrefMatch[1].replace(/^\//, "")) : "";
 
         // Build a slug→name lookup for enriching alternative names (used by
         // both the main-page FAQ schema below and the sub-page loop further
@@ -1192,10 +1189,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               try {
                 const { html: markup, relatedPosts } = await renderToolPage(`/${lang}/tool/${slug}`, tool, lang);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-                if (compiledCssPath) {
-                  const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                  if (utilityCss) {
-                    html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                if (extractCompiledCriticalCss) {
+                  const pageCriticalCss = extractCompiledCriticalCss(markup);
+                  if (pageCriticalCss) {
+                    html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                   }
                 }
                 const ssrJson = JSON.stringify(stripUnservedLocale(tool, lang)).replace(/<\/script/gi, "<\\/script");
@@ -1394,10 +1391,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 try {
                   const { html: markup, relatedPosts } = await renderToolPage(`/${lang}/tool/${slug}/${localizedPath}`, tool, lang);
                   html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-                  if (compiledCssPath) {
-                    const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                    if (utilityCss) {
-                      html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                  if (extractCompiledCriticalCss) {
+                    const pageCriticalCss = extractCompiledCriticalCss(markup);
+                    if (pageCriticalCss) {
+                      html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                     }
                   }
                   const ssrJson = JSON.stringify(stripUnservedLocale(tool, lang)).replace(/<\/script/gi, "<\\/script");
@@ -1490,10 +1487,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             try {
               const markup = await renderHomePage(`/${lp.lang}`);
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-              if (compiledCssPath) {
-                const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                if (utilityCss) {
-                  html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+              if (extractCompiledCriticalCss) {
+                const pageCriticalCss = extractCompiledCriticalCss(markup);
+                if (pageCriticalCss) {
+                  html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                 }
               }
             } catch (e) {
@@ -1679,10 +1676,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               const markup = await renderPersonaPillarPage(sp.path, pillarPersona, spLang);
               guideMarkup = markup;
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-              if (compiledCssPath) {
-                const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                if (utilityCss) {
-                  html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+              if (extractCompiledCriticalCss) {
+                const pageCriticalCss = extractCompiledCriticalCss(markup);
+                if (pageCriticalCss) {
+                  html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                 }
               }
               pillarsSsrd++;
@@ -1697,10 +1694,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               const markup = await renderBestOfGuidePage(sp.path, bestOfId, spLang);
               guideMarkup = markup;
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-              if (compiledCssPath) {
-                const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                if (utilityCss) {
-                  html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+              if (extractCompiledCriticalCss) {
+                const pageCriticalCss = extractCompiledCriticalCss(markup);
+                if (pageCriticalCss) {
+                  html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                 }
               }
               bestOfSsrd++;
@@ -1864,10 +1861,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             try {
               const markup = await sectionRenderer(sp.path);
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-              if (compiledCssPath) {
-                const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                if (utilityCss) {
-                  html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+              if (extractCompiledCriticalCss) {
+                const pageCriticalCss = extractCompiledCriticalCss(markup);
+                if (pageCriticalCss) {
+                  html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                 }
               }
             } catch (e) {
@@ -1934,10 +1931,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               try {
                 const markup = await renderExplorerAroundPage(sourcePath);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-                if (compiledCssPath) {
-                  const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                  if (utilityCss) {
-                    html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                if (extractCompiledCriticalCss) {
+                  const pageCriticalCss = extractCompiledCriticalCss(markup);
+                  if (pageCriticalCss) {
+                    html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                   }
                 }
               } catch (e) {
@@ -2019,10 +2016,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               try {
                 const markup = await renderStackPage(`/${lang}/stacks/${stack.slug}`, stack);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-                if (compiledCssPath) {
-                  const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                  if (utilityCss) {
-                    html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                if (extractCompiledCriticalCss) {
+                  const pageCriticalCss = extractCompiledCriticalCss(markup);
+                  if (pageCriticalCss) {
+                    html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                   }
                 }
                 const ssrStackJson = JSON.stringify(stack).replace(/<\/script/gi, "<\\/script");
@@ -2119,10 +2116,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               try {
                 const markup = await renderCategoryPage(`/${lang}/category/${slug}`);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-                if (compiledCssPath) {
-                  const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                  if (utilityCss) {
-                    html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                if (extractCompiledCriticalCss) {
+                  const pageCriticalCss = extractCompiledCriticalCss(markup);
+                  if (pageCriticalCss) {
+                    html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                   }
                 }
               } catch (e) {
@@ -2199,10 +2196,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               try {
                 const markup = await renderComparePage(`/${lang}/comparatif/${comp.slugPair}`, toolA, toolB);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-                if (compiledCssPath) {
-                  const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                  if (utilityCss) {
-                    html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+                if (extractCompiledCriticalCss) {
+                  const pageCriticalCss = extractCompiledCriticalCss(markup);
+                  if (pageCriticalCss) {
+                    html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                   }
                 }
                 const ssrJson = JSON.stringify({ toolA, toolB }).replace(/<\/script/gi, "<\\/script");
@@ -2351,10 +2348,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             try {
               const markup = await renderGuidePage(`/${lang}/${routeKind}/${slug}`, post);
               html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
-              if (compiledCssPath) {
-                const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
-                if (utilityCss) {
-                  html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
+              if (extractCompiledCriticalCss) {
+                const pageCriticalCss = extractCompiledCriticalCss(markup);
+                if (pageCriticalCss) {
+                  html = html.replace(/<style id="critical-css">[\s\S]*?<\/style>/, `<style id="critical-css">${pageCriticalCss}</style>`);
                 }
               }
               const ssrPostJson = JSON.stringify(post).replace(/<\/script/gi, "<\\/script");
@@ -2405,226 +2402,30 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
   };
 }
 
-/**
- * Extracts the small, foundational slice of index.css (CSS variables,
- * @font-face, base resets) that the rest of the page depends on to avoid
- * broken colors (unresolved var() falling back to transparent/black), then
- * inlines it and defers the main stylesheet so it stops blocking render.
- * Built from src/index.css directly (not a hand-maintained copy) so the two
- * never drift apart.
- */
-/**
- * Le CSS injecté dans chaque page l'était brut, commentaires compris : le bloc
- * `:root` des tokens de design pèse à lui seul 9,3 Ko d'en-têtes décoratifs,
- * recopiés à l'identique dans les 13 545 pages prérendues.
- *
- * Minifier ne change rien au rendu — mesuré sur une fiche : 180 variables CSS,
- * `@font-face`, `:root` et `.dark` tous préservés — mais fait passer l'inline
- * de ~29,6 à ~22,4 Ko par page, soit ~95 Mo de build en moins.
- *
- * esbuild plutôt qu'une passe d'expressions régulières : c'est un vrai parseur,
- * il ne cassera pas une `url()` ou une chaîne `content:`. Un échec ne doit
- * jamais faire tomber le build, on retombe alors sur le CSS brut.
- */
-function minifyCss(css: string): string {
-  if (!css) return css;
-  try {
-    return transformSync(css, { loader: "css", minify: true }).code.trim();
-  } catch {
-    return css;
-  }
-}
-
-function extractCriticalCss(): string {
-  const css = fs.readFileSync(path.resolve(__dirname, "src/index.css"), "utf-8");
-  const root = postcss.parse(css);
-  const critical: string[] = [];
-
-  // Measured via a local Lighthouse trace (LayoutShift event, score ~0.55 —
-  // basically the entire CLS on SSR'd tool pages): the raw `body { ... }`
-  // rule below contains `@apply ...`, which is meaningless outside Tailwind's
-  // build pipeline and gets silently dropped by the browser, so margin
-  // collapses to the browser's default ~8px until Tailwind's preflight
-  // (only in the deferred main stylesheet) resets it to 0. That reset is
-  // hardcoded here directly so it's present from the very first paint.
-  critical.push("html, body { margin: 0; }");
-  // Same trace also showed the remaining ~16px top offset surviving the fix
-  // above: Tailwind's preflight (deferred) also zeroes heading/paragraph
-  // margins, which the browser default stylesheet doesn't. Until that
-  // loads, the page's <h1>/<p> sit at their default UA margins, then jump
-  // up once it arrives. Mirror Tailwind's own preflight selector list here.
-  critical.push("blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre { margin: 0; }");
-  // Confirmed via a CDP-level layout-shift trace (PerformanceObserver with
-  // node references, not guessing from a Lighthouse summary): body's own
-  // margin is already 0, but its first DOM child — the Toaster's <ol>
-  // notification region, rendered before any route content — has the
-  // browser default ol margin (~1em) until Tailwind's preflight resets it.
-  // With no border/padding on body separating them, that margin collapses
-  // through and visually pushes body down by exactly that amount.
-  critical.push("ol, ul, menu { margin: 0; padding: 0; list-style: none; }");
-  // Tailwind utility classes (fixed, flex, pt-[68px], etc.) used by the
-  // shell/content can't be extracted here at all — they're generated from
-  // .tsx usage, not hand-written in this file. See extractUsedUtilityCss
-  // below, which pulls those straight from the compiled bundle per-page.
-
-  root.walkAtRules("font-face", (rule) => {
-    critical.push(rule.toString());
-  });
-
-  root.walkRules((rule) => {
-    const sel = rule.selector.trim();
-    if (sel === ":root" || sel === ".dark") {
-      let inMediaGutter = false;
-      let p: postcss.Node["parent"] = rule.parent;
-      while (p) {
-        if (p.type === "atrule" && "name" in p && p.name === "media" && "params" in p && typeof p.params === "string" && /max-width:\s*(1023|767)px/.test(p.params)) {
-          inMediaGutter = true;
-        }
-        p = p.parent;
-      }
-      // Top-level :root/.dark (not the responsive --layout-gutter overrides,
-      // those are non-critical and can arrive with the deferred stylesheet)
-      if (!inMediaGutter) critical.push(rule.toString());
-    }
-    if (sel === "body") critical.push(rule.toString());
-  });
-
-  return minifyCss(critical.join("\n\n"));
-}
-
-// Pulls the compiled rule for every plain (no responsive/hover/dark-mode
-// prefix) utility class actually used in a piece of server-rendered HTML,
-// straight from the real compiled CSS bundle — found necessary after
-// chasing individual Tailwind utilities (fixed, flex-1, pt-[68px]...) by
-// hand turned out to be unbounded (every component uses more of them).
-// Automatic and exhaustive instead of a manually maintained list; prefixed
-// variants (lg:, hover:, dark:) are skipped since they don't affect the
-// very first paint the same way an unstyled-vs-styled timing gap does.
-// Tailwind escapes special characters in a compiled selector with a literal
-// backslash (e.g. class "pt-[68px]" -> selector ".pt-\[68px\]"). Extracts
-// each class token (unescaped) from one CSS selector — only meaningful for
-// "simple" selectors (just one or more chained classes, no combinators/
-// pseudo-classes); returns null for anything more complex so callers skip it
-// rather than risk a wrong match.
-function classesOfSimpleSelector(selector: string): string[] | null {
-  if (!/^(\.(?:[^.\s,]|\\.)+)+$/.test(selector)) return null;
-  const tokens = selector.match(/\.(?:[^.\s,]|\\.)+/g) || [];
-  return tokens.map((t) => t.slice(1).replace(/\\(.)/g, "$1"));
-}
-
-interface IndexedRule { required: string[]; text: string }
-
-// Walks the compiled CSS (top-level rules, plus one level inside @media/
-// @supports) and indexes every simple class selector under each class it
-// requires. A media-scoped match keeps its @media(...) {...} wrapper in
-// `text` instead of being flattened to an unconditional rule — learned the
-// hard way: an earlier version stripped @media content entirely, which
-// fixed one bug (`.td-sidebar-mobile{display:none}` only existing inside
-// a desktop-only media query, wrongly applied everywhere) but broke
-// another (the mobile override that collapses `.td-body-grid` to a single
-// column never arrived, so the *desktop* 2-column grid briefly applied on
-// mobile too, squeezing the sidebar to near-zero width — confirmed via a
-// CDP layout-shift trace against production: CLS ~0.9, mobile only).
-// Keeping the wrapper means the browser evaluates the real media query
-// itself, immediately, exactly as it would once the deferred stylesheet
-// loads — so both the always-hidden-on-desktop and the mobile-collapse
-// rules apply correctly from the very first paint.
-function buildClassRuleIndex(css: string): Map<string, IndexedRule[]> {
-  const index = new Map<string, IndexedRule[]>();
-  function addRule(selectors: string, body: string, wrapBefore: string, wrapAfter: string) {
-    for (const selector of selectors.split(",")) {
-      const required = classesOfSimpleSelector(selector.trim());
-      if (!required || required.length === 0) continue;
-      const text = `${wrapBefore}${selector.trim()}${body}${wrapAfter}`;
-      for (const c of required) {
-        const list = index.get(c) ?? [];
-        list.push({ required, text });
-        index.set(c, list);
-      }
-    }
-  }
-
-  let i = 0;
-  while (i < css.length) {
-    const brace = css.indexOf("{", i);
-    if (brace === -1) break;
-    const selectorsRaw = css.slice(i, brace).trim();
-    let depth = 1;
-    let j = brace + 1;
-    for (; j < css.length && depth > 0; j++) {
-      if (css[j] === "{") depth++;
-      else if (css[j] === "}") depth--;
-    }
-    const body = css.slice(brace, j); // includes braces
-    if (/^@(media|supports)\b/.test(selectorsRaw)) {
-      const inner = body.slice(1, -1);
-      let k = 0;
-      while (k < inner.length) {
-        const ibrace = inner.indexOf("{", k);
-        if (ibrace === -1) break;
-        const innerSelectors = inner.slice(k, ibrace).trim();
-        let idepth = 1;
-        let m = ibrace + 1;
-        for (; m < inner.length && idepth > 0; m++) {
-          if (inner[m] === "{") idepth++;
-          else if (inner[m] === "}") idepth--;
-        }
-        if (innerSelectors && !innerSelectors.startsWith("@")) {
-          addRule(innerSelectors, inner.slice(ibrace, m), `${selectorsRaw}{`, "}");
-        }
-        k = m;
-      }
-    } else if (selectorsRaw && !selectorsRaw.startsWith("@")) {
-      addRule(selectorsRaw, body, "", "");
-    }
-    i = j;
-  }
-  return index;
-}
-
-let classRuleIndex: Map<string, IndexedRule[]> | null = null;
-let compiledCssExists = false;
-function extractUsedUtilityCss(markup: string, compiledCssPath: string): string {
-  if (classRuleIndex === null) {
-    compiledCssExists = fs.existsSync(compiledCssPath);
-    classRuleIndex = compiledCssExists
-      ? buildClassRuleIndex(fs.readFileSync(compiledCssPath, "utf-8"))
-      : new Map();
-  }
-  if (!compiledCssExists) return "";
-
-  // Group by class ATTRIBUTE (not flattened across the whole page) — a
-  // compound selector like `.a.b` only matches an element carrying BOTH
-  // classes together, not two different elements that each have one.
-  const classGroups: Set<string>[] = [];
-  for (const m of markup.matchAll(/class="([^"]*)"/g)) {
-    const group = new Set(m[1].split(/\s+/).filter((c) => c && !c.includes(":")));
-    if (group.size) classGroups.push(group);
-  }
-
-  const seen = new Set<string>();
-  const rules: string[] = [];
-  for (const group of classGroups) {
-    for (const cls of group) {
-      for (const candidate of classRuleIndex.get(cls) ?? []) {
-        if (seen.has(candidate.text)) continue;
-        if (candidate.required.every((c) => group.has(c))) {
-          seen.add(candidate.text);
-          rules.push(candidate.text);
-        }
-      }
-    }
-  }
-  return minifyCss(rules.join(""));
-}
+// Populated from the emitted client asset, once per build. Every prerender uses
+// this same index; source CSS and Tailwind input directives are never critical CSS.
+let extractCompiledCriticalCss: ((markup: string) => string) | null = null;
 
 function criticalCssPlugin(): Plugin {
-  let criticalCss = "";
   return {
     name: "critical-css-inline",
     apply: "build",
     buildStart() {
-      criticalCss = extractCriticalCss();
+      extractCompiledCriticalCss = null;
+    },
+    generateBundle: {
+      order: "post",
+      handler(_options, bundle) {
+        const document = bundle["index.html"];
+        if (!document || document.type !== "asset") throw new Error("Critical CSS requires the emitted index.html");
+        const html = String(document.source);
+        const href = html.match(/<link rel="stylesheet" crossorigin href="([^"]+\.css)"/)?.[1];
+        const stylesheet = href ? bundle[href.replace(/^\//, "")] : undefined;
+        if (!stylesheet || stylesheet.type !== "asset") throw new Error("Critical CSS requires the compiled client stylesheet");
+        const extract = createCriticalCssExtractor(String(stylesheet.source), { coalesceFamilies: true });
+        extractCompiledCriticalCss = extract;
+        document.source = html.replace('<style id="critical-css"></style>', `<style id="critical-css">${extract(html)}</style>`);
+      },
     },
     transformIndexHtml: {
       order: "post",
@@ -2633,7 +2434,7 @@ function criticalCssPlugin(): Plugin {
         //    available before anything else in the document.
         let out = html.replace(
           "<head>",
-          `<head>\n    <style id="critical-css">${criticalCss}</style>`
+          `<head>\n    <style id="critical-css"></style>`
         );
         // 2. Defer the main stylesheet Vite injected (same pattern already
         //    used for Google Fonts below) so it no longer blocks render.

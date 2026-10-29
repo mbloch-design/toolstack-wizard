@@ -1,3 +1,9 @@
+## 2026-10-29 — Remise à plat du design system : implémentation publiée en branche
+
+Après validation de la proposition : extraction critique depuis l’AST compilé, cascade native sans plugin d’aplatissement, modules CSS propriétaires et fondations uniques ; primitives UI communes utilisées par le back-office, les comptes et les contrôles génériques Ma Stack/public. Anciennes implémentations de boutons/champs remplacées supprimées, avec documentation active et contrôles AST/exceptions exactes en CI. Externalisation CSS à mémoire bornée ; mutualisation par familles positives pour limiter les variantes sans changer l’ordre des règles ni relever les budgets.
+
+Le build intégré complet atteint son verdict PASS et produit11,4Mio de CSS (44 variantes critiques). Les contrôles applicatifs et de typage passent sur les lots validés. **Chantier non terminé : 6/32 références visuelles échouent encore sur Soumettre et Ma Stack ; validation stable compte/thème/usage700 et revue finale requises.** L’inventaire `DESIGN_SYSTEM_MIGRATION.md` conserve ces limites. Push de l’état en cours sur la branche `codex/backoffice-pilotage` demandé par le propriétaire ; aucune fusion dans main ni mise en production revendiquée.
+
 ## 2026-10-27 — Audit de la structure du design system
 
 Retour utilisateur : le back-office réemploie des règles historiques alors que les exigences visuelles n'ont pas été reprécisées. Audit croisé de la cascade, des composants et des autorités documentaires : la compilation restaure la priorité du CSS historique, les contrôles de back-office dépendent du kit métier Ma Stack et d'autres familles compte/diagnostic, les références actives se contredisent et le contrôle de tokens ne vérifie pas les contrats de composants. Reproduction PostCSS exécutée du changement de priorité ; double définition de `--radius-2xl` et 16 blocs `.mf-grid` relevés. Le lecteur du CSS critique doit aussi migrer avant toute bascule native des couches.

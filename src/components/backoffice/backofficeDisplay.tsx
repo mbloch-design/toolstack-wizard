@@ -1,3 +1,4 @@
+import { TextLink } from "@/components/ui/primitives";
 import { useLang } from "@/hooks/useLang";
 import toolsIndex from "@/data/tools_index.json";
 import type { Trade } from "@/lib/personalStack";
@@ -45,13 +46,13 @@ export function ToolName({ slug }: { slug: string }) {
   const { lang, t } = useLang();
   const tool = toolNames.get(slug);
   return tool ? (
-    <a
-      href={`/${lang}/tool/${encodeURIComponent(tool.slug)}`}
+    <TextLink variant="secondary"
+      to={`/${lang}/tool/${encodeURIComponent(tool.slug)}`}
       target="_blank"
       rel="noreferrer"
     >
       {tool.name}
-    </a>
+    </TextLink>
   ) : (
     <span className="bo-missing">
       <span>{slug}</span>

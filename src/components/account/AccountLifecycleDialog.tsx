@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/primitives";
 import * as Dialog from "@radix-ui/react-dialog";
 import { LogOut, ShieldAlert, Trash2 } from "@/lib/icons";
 import { useState } from "react";
@@ -95,13 +96,13 @@ export default function AccountLifecycleDialog({
             </p>
           )}
           {leaving ? <p className="ac-farewell-status" role="status">{t("Déconnexion en cours…", "Signing you out…")}</p> : <div className="ac-lifecycle-actions">
-            <button className="ac-button" disabled={busy} onClick={onClose}>
+            <Button appearance="account-lifecycle" type="button"  disabled={busy} onClick={onClose}>
               {kind === "delete"
                 ? t("Conserver mon compte", "Keep my account")
                 : t("Rester connecté", "Stay signed in")}
-            </button>
-            <button
-              className={`ac-button ${destructive ? "ac-lifecycle-discard" : "ac-button--primary"}`}
+            </Button>
+            <Button appearance="account-lifecycle" variant={destructive ? "danger" : "primary"} type="button"
+
               disabled={busy || account.authBusy}
               onClick={() => void confirm()}
             >
@@ -119,7 +120,7 @@ export default function AccountLifecycleDialog({
                         "Sign out without saving",
                       )
                     : t("Me déconnecter", "Sign out")}
-            </button>
+            </Button>
           </div>}
         </Dialog.Content>
       </Dialog.Portal>

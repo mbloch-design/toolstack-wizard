@@ -100,13 +100,13 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
 
     <footer className="mu-footer">
       {question ? <>
-        {index > 0 && <button type="button" className="mu-nav" aria-label={t("Outil précédent", "Previous tool")} onClick={() => openTool(index - 1, review)}><ChevronLeft size={18} aria-hidden /></button>}
-        <button type="button" className="mu-quiet" onClick={() => review || selected > 0 ? scene("summary") : advance()}>{review ? t("Résumé", "Summary") : selected > 0 ? t("Faire une pause", "Take a break") : t("Passer cet outil", "Skip this tool")}</button>
-        <button type="button" className="mu-next" disabled={!selected} onClick={advance}>{hasNext ? t("Suivant", "Next") : t("Terminer", "Finish")}<ChevronRight size={16} aria-hidden /></button>
-      </> : view === "history" ? <><Button variant="secondary" onClick={() => scene("summary")}>{t("Résumé", "Summary")}</Button><Button variant="secondary" onClick={onReviewTools}>{t("Voir mes outils", "View my tools")}</Button></> : <>
-        {pending ? <Button variant="secondary" onClick={() => openTool(rows.indexOf(pending), false)}>{t("Reprendre", "Resume")}</Button> : rows.length > 0 ? <Button variant="secondary" onClick={() => openTool(0, true)}>{t("Revoir mes usages", "Review my use")}</Button> : history ? <Button variant="secondary" onClick={() => scene("history")}>{t("Revoir mes choix", "Review my choices")}</Button> : null}
-        {history && rows.length > 0 && <Button variant="secondary" onClick={() => scene("history")}>{t("Historique", "History")}</Button>}
-        <Button variant="secondary" onClick={onReviewTools}>{t("Voir mes outils", "View my tools")}</Button>
+        {index > 0 && <Button appearance="stack-usage" type="button" className="mu-nav" aria-label={t("Outil précédent", "Previous tool")} onClick={() => openTool(index - 1, review)}><ChevronLeft size={18} aria-hidden /></Button>}
+        <Button appearance="stack-usage" variant="quiet" type="button" className="mu-quiet" onClick={() => review || selected > 0 ? scene("summary") : advance()}>{review ? t("Résumé", "Summary") : selected > 0 ? t("Faire une pause", "Take a break") : t("Passer cet outil", "Skip this tool")}</Button>
+        <Button appearance="stack-usage" variant="primary" type="button" className="mu-next" disabled={!selected} onClick={advance}>{hasNext ? t("Suivant", "Next") : t("Terminer", "Finish")}<ChevronRight size={16} aria-hidden /></Button>
+      </> : view === "history" ? <><Button appearance="stack-usage" variant="secondary" onClick={() => scene("summary")}>{t("Résumé", "Summary")}</Button><Button appearance="stack-usage" variant="secondary" onClick={onReviewTools}>{t("Voir mes outils", "View my tools")}</Button></> : <>
+        {pending ? <Button appearance="stack-usage" variant="secondary" onClick={() => openTool(rows.indexOf(pending), false)}>{t("Reprendre", "Resume")}</Button> : rows.length > 0 ? <Button appearance="stack-usage" variant="secondary" onClick={() => openTool(0, true)}>{t("Revoir mes usages", "Review my use")}</Button> : history ? <Button appearance="stack-usage" variant="secondary" onClick={() => scene("history")}>{t("Revoir mes choix", "Review my choices")}</Button> : null}
+        {history && rows.length > 0 && <Button appearance="stack-usage" variant="secondary" onClick={() => scene("history")}>{t("Historique", "History")}</Button>}
+        <Button appearance="stack-usage" variant="secondary" onClick={onReviewTools}>{t("Voir mes outils", "View my tools")}</Button>
       </>}
     </footer>
   </article>;

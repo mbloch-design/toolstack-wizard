@@ -1,3 +1,4 @@
+import { Button, Input, Select, Textarea, Field } from "@/components/ui/primitives";
 import { isEditableCatalogPath } from "@/lib/backofficeCatalog";
 import { useId } from "react";
 import { useLang } from "@/hooks/useLang";
@@ -201,13 +202,12 @@ export function CatalogField({
       <div className="bo-catalog-field">
         <strong>{title}</strong>
         <CatalogValue value={value} />
-        <button
+        <Button variant="quiet"
           type="button"
-          className="mk-link"
           onClick={() => onChange(initial)}
         >
           {t("Créer les champs structurés", "Create structured fields")}
-        </button>
+        </Button>
       </div>
     );
   if (depth > 9)
@@ -235,9 +235,8 @@ export function CatalogField({
                 onChange(value.map((v, i) => (i === index ? next : v)))
               }
             />
-            <button
+            <Button variant="quiet"
               type="button"
-              className="mk-link"
               aria-label={t(
                 `Retirer ${title} ${index + 1}`,
                 `Remove ${title} ${index + 1}`,
@@ -245,16 +244,15 @@ export function CatalogField({
               onClick={() => onChange(value.filter((_, i) => i !== index))}
             >
               {t("Retirer", "Remove")}
-            </button>
+            </Button>
           </div>
         ))}
-        <button
+        <Button variant="quiet"
           type="button"
-          className="mk-link"
           onClick={() => onChange([...value, emptyOf(value[0], field)])}
         >
           {t(`Ajouter : ${title}`, `Add: ${title}`)}
-        </button>
+        </Button>
       </fieldset>
     );
   if (value && typeof value === "object")
@@ -276,10 +274,9 @@ export function CatalogField({
   const bool = typeof value === "boolean" || booleanKeys.has(field);
   const number = typeof value === "number" || numericKeys.has(field);
   return (
-    <div className="bo-catalog-field">
-      <label htmlFor={id}>{title}</label>
+    <Field className="bo-catalog-field" label={title}>
       {bool ? (
-        <select
+        <Select
           id={id}
           value={value === null ? "" : String(value)}
           onChange={(event) =>
@@ -291,9 +288,9 @@ export function CatalogField({
           <option value="">{t("Non renseigné", "Not provided")}</option>
           <option value="true">{t("Oui", "Yes")}</option>
           <option value="false">{t("Non", "No")}</option>
-        </select>
+        </Select>
       ) : number ? (
-        <input
+        <Input
           id={id}
           type="number"
           min="0"
@@ -306,7 +303,7 @@ export function CatalogField({
           }
         />
       ) : (
-        <textarea
+        <Textarea
           id={id}
           rows={
             /longDescription/.test(field)
@@ -328,7 +325,7 @@ export function CatalogField({
           }
         />
       )}
-    </div>
+    </Field>
   );
 }
 export function CatalogValue({ value }: { value: unknown }) {

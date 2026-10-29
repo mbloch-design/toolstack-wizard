@@ -6,7 +6,7 @@ async function passwordLogin(page: import('@playwright/test').Page, lang: 'fr' |
   await page.goto(`/${lang}/back-office`); await dismissConsent(page);
   await page.getByLabel(lang === 'fr' ? 'E-mail administrateur' : 'Admin email', { exact: true }).fill(email);
   await page.getByLabel(lang === 'fr' ? 'Mot de passe' : 'Password', { exact: true }).fill('fixture-password');
-  await page.locator('.ba-login').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
+  await page.locator('.bo-history-login').getByRole('button', { name: lang === 'fr' ? 'Se connecter' : 'Sign in', exact: true }).click();
   if (email === 'admin@example.invalid') {
     await expect(page.getByRole('heading', { name: lang === 'fr' ? 'Vue d’ensemble' : 'Overview', exact: true })).toBeVisible();
     await page.getByRole('button', { name: lang === 'fr' ? 'Utilisateurs' : 'Users', exact: true }).click();
@@ -27,6 +27,17 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(
   await page.locator('.asv2-root').screenshot({path:test.info().outputPath(`${lang}-${width}-overview.png`)});
   await page.getByRole('button', {name:lang === 'fr' ? 'Utilisateurs':'Users',exact:true}).click();
   await expect(page.locator('.bo-metrics strong')).toHaveText(['27', '3', '2']);
+  const firstUserRow = page.locator('.bo-user-table tbody tr').first();
+  const firstUserAction = firstUserRow.locator('.bo-open-user');
+  await expect(firstUserAction.locator(':scope > svg')).toBeVisible();
+  if (width === 390) {
+    await expect(firstUserRow.locator('.bo-compact-detail')).toBeVisible();
+    await expect(firstUserAction.locator(':scope > span')).toBeHidden();
+  } else {
+    await expect(firstUserRow.locator('.bo-compact-detail')).toBeHidden();
+    await expect(firstUserAction.locator(':scope > span')).toBeVisible();
+  }
+
   if (width === 390) {
     await page.getByRole('button', {name:`${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} admin@example.invalid`,exact:true}).click();
     const profile = page.getByRole('region', {name:lang === 'fr' ? 'Détail du compte':'Account detail'});
@@ -42,6 +53,11 @@ for (const lang of ['fr', 'en'] as const) for (const width of [390, 1440]) test(
   await search.fill('detail@'); await page.locator('.bo-search').getByRole('button').click(); await expect(page.locator('.bo-user-table tbody tr')).toHaveCount(1);
   await expect(page.getByTestId('accounts-total')).toHaveText('27'); await page.getByRole('button', { name: `${lang === 'fr' ? 'Voir la stack de' : 'View stack for'} detail@example.invalid`, exact: true }).click();
   await expect(page.locator('.bo-detail')).toContainText('450 EUR');
+  const selectedUserRow = page.locator('.bo-user-table tbody tr').first();
+  await expect(selectedUserRow.locator('.bo-compact-detail')).toBeVisible();
+  await expect(selectedUserRow.locator('.bo-open-user > span')).toBeHidden();
+  await expect(selectedUserRow.locator('.bo-open-user > svg')).toBeVisible();
+
   await page.getByRole('tab', {name:lang === 'fr' ? 'Usage déclaré':'Declared usage',exact:true}).click();
   await expect(page.getByRole('tabpanel')).toContainText('4 / 5');
   await expect(page.getByRole('tabpanel')).toContainText(lang === 'fr' ? 'Usage soutenu':'Frequent use');
@@ -135,9 +151,9 @@ for (const theme of ['light', 'dark'] as const) test(`account surfaces remain re
     }));
     for (const style of styles) { if (expectedSurface) expect(style.background).toBe(expectedSurface); expect(style.contrast).toBeGreaterThanOrEqual(4.5); }
   }
-  await readable('.ba-login, .ba-login-field input');
+  await readable('.bo-history-login, .bo-history-login .ui-input');
   await seededAdmin(page, request); await openBackOffice(page);
-  await readable('.bo-button, .bo-search-field, .bo-metrics', null);
+  await readable('.bo-workspace .ui-button[data-variant=secondary], .bo-search-field .ui-input, .bo-metrics', null);
   await page.getByRole('button', { name: 'View stack for admin@example.invalid', exact: true }).click(); await readable('.bo-detail', null);
   await page.locator('.bo-account-toolbar').getByRole('button', { name: 'Sign out', exact: true }).click();
   await expect(page.getByRole('form', { name: 'Administrator sign-in' })).toBeVisible();

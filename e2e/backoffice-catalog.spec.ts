@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import { test, expect, control, dismissConsent } from "./fixtures/accounts";
 async function login(page: import("@playwright/test").Page, lang: "fr" | "en") {
   await page.goto(`/${lang}/back-office`);
@@ -11,7 +12,7 @@ async function login(page: import("@playwright/test").Page, lang: "fr" | "en") {
     .getByLabel(lang === "fr" ? "Mot de passe" : "Password", { exact: true })
     .fill("fixture-password");
   await page
-    .locator(".ba-login")
+    .locator(".bo-history-login")
     .getByRole("button", {
       name: lang === "fr" ? "Se connecter" : "Sign in",
       exact: true,
@@ -233,4 +234,18 @@ test("browser Back and Forward preserve unsaved edits before returning to anothe
     .click();
   await page.goBack();
   await expect(page).toHaveURL(/\/fr\/tools$/);
+});
+
+
+test("historical loading indicators respect reduced motion", async ({ page }) => {
+  const css = readFileSync("src/styles/components/backoffice-history.css", "utf8");
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.setContent(`<style>${css}</style><svg class="bo-history-animate-spin" role="img" aria-label="Loading"><circle cx="8" cy="8" r="6" /></svg>`);
+  const indicator = page.getByRole("img", { name: "Loading" });
+  await expect(indicator).toHaveCSS("animation-name", "bo-history-spin");
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(indicator).toHaveCSS("animation-name", "none");
+  // Switching preferences back must still restore the normal pending indicator.
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await expect(indicator).toHaveCSS("animation-name", "bo-history-spin");
 });

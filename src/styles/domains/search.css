@@ -1,0 +1,277 @@
+
+@media (max-width: 390px) {
+  .sd-hero-fact-table {
+    grid-template-columns: 1fr;
+  }
+}
+.sd-hero-editorial {
+  width: min(calc(100% - 48px), 1240px);
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 96px 0 48px;
+}
+.sd-hero-h1 {
+  font-family: var(--font-brand);
+  font-size: clamp(3.25rem, 5.5vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 0.92;
+  color: var(--color-text);
+  margin: 0 0 28px;
+}
+.sd-hero-desc {
+  font-family: var(--font-ui);
+  font-size: clamp(1.0625rem, 1.4vw, 1.3125rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.5;
+  color: #3A3A38;
+  max-width: 640px;
+  margin: 0;
+}
+.sd-hero-eyebrow {
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-kicker);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  display: block;
+  margin-bottom: 20px;
+}
+.sd-hero-fact-table {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  width: min(calc(100% - 48px), 1240px);
+  max-width: 1240px;
+  margin: 56px auto 72px;
+  background: var(--color-border);
+  gap: 1px;
+}
+.sd-fact-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 24px 26px;
+  background: var(--color-surface-soft);
+}
+.sd-fact-label {
+  font-family: var(--font-ui);
+  font-weight: 400;
+  letter-spacing: 0.09em;
+  color: var(--color-text);
+}
+.sd-fact-value {
+  font-family: var(--font-ui);
+  font-size: clamp(0.9375rem, 1.3vw, 1.1875rem);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+@media (max-width: 1024px) {
+  .sd-hero-editorial {
+    padding: 80px 0 40px;
+  }
+  .sd-hero-fact-table {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 48px;
+  }
+}
+@media (max-width: 640px) {
+  .sd-hero-editorial {
+    padding: 56px 0 28px;
+  }
+  .sd-hero-fact-table {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 40px auto 48px;
+  }
+  .sd-fact-col {
+    padding: 18px 16px 20px;
+  }
+  .sd-fact-value {
+    font-size: 0.9375rem;
+  }
+}
+@media (max-width: 390px) {
+  .sd-hero-editorial {
+    padding: 48px 0 24px;
+  }
+  .sd-hero-fact-table {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 32px auto 40px;
+    width: calc(100% - 32px);
+  }
+  .sd-fact-col {
+    padding: 14px 12px 16px;
+  }
+}
+.sd-hero-editorial {
+  padding: 96px 0 20px;
+}
+.sd-hero-fact-table {
+  margin: 44px auto 0;
+}
+@media (max-width: 1024px) {
+  .sd-hero-editorial {
+    padding: 80px 0 16px;
+  }
+  .sd-hero-fact-table {
+    margin-top: 40px;
+  }
+}
+@media (max-width: 640px) {
+  .sd-hero-editorial {
+    padding: 56px 0 12px;
+  }
+  .sd-hero-fact-table {
+    margin: 36px auto 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .sd-hero-editorial {
+    padding: 48px 0 12px;
+  }
+  .sd-hero-fact-table {
+    margin: 32px auto 0;
+  }
+}
+.sd-section[id],
+section[id]:not(.cp-guide-section) {
+  scroll-margin-top: 80px;
+}
+.tt-pillnav {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%) translateY(0);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: min(calc(100vw - 32px), 860px);
+  background: var(--color-ink);
+  border-radius: var(--radius-xl);
+  padding: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24), 0 2px 8px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--color-ink-border);
+  opacity: 1;
+  transition: opacity 220ms ease, transform 220ms ease;
+  /* A fixed + rounded + shadowed element whose transform/opacity animates
+     during an active scroll (the hero-visibility observer can flip mid
+     smooth-scroll) is a known trigger for a brief black compositor flash
+     on Chrome/Android. Promoting it to its own stable GPU layer up front
+     avoids the mid-scroll re-rasterization that causes it. */
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+.tt-pillnav--hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) translateY(12px);
+}
+
+.tt-pillnav-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: opacity 150ms ease;
+}
+
+.tt-pillnav-logo:hover {
+  opacity: 0.85;
+}
+
+.ex-filter-pillnav button.tt-pillnav-logo {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.tt-pillnav-logo-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.tt-pillnav-items {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 4px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tt-pillnav-items::-webkit-scrollbar { display: none; }
+
+.tt-pillnav-item {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+  cursor: pointer;
+  background: transparent;
+}
+@media (hover: hover) and (pointer: fine) {
+  .tt-pillnav-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.tt-pillnav-item--active {
+  color: var(--color-surface);
+  border-color: rgba(255, 255, 255, 0.80);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 600;
+}
+
+.tt-pillnav-item:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+@media (max-width: 767px) {
+  .tt-pillnav {
+    bottom: 16px;
+    max-width: calc(100vw - 24px);
+    padding: 6px;
+    gap: 4px;
+  }
+  .tt-pillnav--hidden {
+    transform: translateX(-50%) translateY(12px);
+    opacity: 0;
+  }
+  .tt-pillnav-logo {
+    width: 44px;
+    height: 44px;
+    border-radius: var(--radius-md);
+  }
+  .tt-pillnav-item {
+    height: 38px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+}

@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/primitives";
 import { isStackReturn } from "@/lib/stackPageLoader";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useEffect } from "react";
@@ -49,12 +50,12 @@ export function AccountAuthJourney({
       </p>}
       {(!transition || !["connecting", "syncing", "synced"].includes(account.syncStatus) || account.pendingDraftChoice || account.conflict) && <AccountStackStatus />}
       {["error", "unsaved"].includes(account.syncStatus) && (
-        <button className="ac-text-button" onClick={onComplete}>
+        <Button appearance="account" variant="quiet" type="button"  onClick={onComplete}>
           {t(
             "Continuer avec la sauvegarde indisponible",
             "Continue while saving is unavailable",
           )}
-        </button>
+        </Button>
       )}
     </div>
   );

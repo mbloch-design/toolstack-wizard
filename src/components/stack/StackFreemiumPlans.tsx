@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/primitives";
 import ToolLogo from "@/components/ToolLogo";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import type { ToolSummary } from "@/hooks/useSupabaseData";
@@ -70,7 +71,7 @@ export default function StackFreemiumPlans({ open, onOpenChange, freemium, paid,
           <p aria-live="polite">{declared.length === 0
             ? (en ? "None paid: your budget stays as it is." : "Aucun payé : votre budget reste tel quel.")
             : en ? `${declared.length} paid, + ≈ ${formatAmount(Math.round(added), currency, lang)}/mo in your budget` : `${declared.length} payé${declared.length > 1 ? "s" : ""}, + ≈ ${formatAmount(Math.round(added), currency, lang)}/mois au budget`}</p>
-          <button type="button" className="tt-button-primary ms-sheet-done" onClick={() => onOpenChange(false)}>{en ? "Done" : "C’est noté"}</button>
+          <Button appearance="stack" variant="primary" type="button" className=" ms-sheet-done" onClick={() => onOpenChange(false)}>{en ? "Done" : "C’est noté"}</Button>
         </div>
       </DialogContent>
     </Dialog>

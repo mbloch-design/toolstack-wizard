@@ -240,3 +240,12 @@ it("leaves settings for home when the authenticated user signs out", () => {
   expect(screen.getByRole("heading", {name:"Accueil public"})).toBeVisible();
   expect(screen.queryByText("Votre espace ToolTrim")).not.toBeInTheDocument();
 });
+it("uses the shared destructive quiet role for deleting an account", () => {
+  view();
+  selectSection("Stack et données");
+  const remove = screen.getByRole("button", { name: "Supprimer mon compte" });
+  expect(remove).toHaveAttribute("data-variant", "danger-quiet");
+  expect(remove).not.toHaveClass("ac-danger");
+  fireEvent.click(remove);
+  expect(mocks.experience.requestDeleteAccount).toHaveBeenCalledOnce();
+});

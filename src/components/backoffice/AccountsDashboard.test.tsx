@@ -1,4 +1,6 @@
-import { act, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
+import type { ReactNode } from "react";
+import { act, fireEvent, render as testingRender, screen, waitFor, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { normalizePersonalStack } from "@/lib/personalStack";
 import { parseAccountDetail } from "@/lib/backofficeAccounts";
@@ -67,3 +69,5 @@ it('shows initial profile provider and informational locale on the detail only',
  fireEvent.click(screen.getByRole('button',{name:'Voir la stack de person@example.test'}));const detail=await screen.findByRole('region',{name:'Détail du compte'});
  await waitFor(()=>expect(within(detail).getByText(/Fournisseur du profil initial : GitHub/)).toBeVisible());expect(within(detail).getByText(/Langue du fournisseur : en-US/)).toBeVisible();expect(detail.querySelector('img')).toHaveAttribute('referrerpolicy','no-referrer');
 });
+
+function render(ui: ReactNode) { return testingRender(<MemoryRouter>{ui}</MemoryRouter>); }
