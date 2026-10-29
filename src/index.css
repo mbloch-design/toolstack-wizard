@@ -41457,4 +41457,6 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both)::after { transition: none; } }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both) { padding-top: 38px !important; }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-choice-both-label { white-space: nowrap !important; }
+  /* At 320px five 44px touch targets need the whole width: no gap between the steps. */
+  @container (max-width: 360px) { .ms-page .mf .mu-card .mu-gauge { gap: 0 !important; } }
 }
