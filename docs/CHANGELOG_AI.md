@@ -1,3 +1,9 @@
+## 2026-10-29 — CI : compatibilité ES2020 et runner Chromium
+
+- Remplacement des appels `Object.hasOwn` du validateur catalogue par `Object.prototype.hasOwnProperty.call` : même contrôle des propriétés propres, compatible avec le contrôle ES2020 de la CI. Les protections contre les clés héritées restent actives.
+- Les deux jobs utilisent Ubuntu 24.04, pris en charge par Playwright 1.58.2 ; `ubuntu-latest` avait basculé vers Ubuntu 26 et bloquait l’installation Chromium. Actions checkout/setup-node v5 et upload-artifact v6 pour leur runtime Node 24, sans modifier le runtime applicatif ni retirer de contrôle.
+- Vérification locale : contrôle ES2020, typecheck complet, 1 043 tests applicatifs, 371 tests API (24 ignorés), contrats runtime comptes et 41 contrats SEO passent. Résultat du workflow distant contrôlé après push.
+
 ## 2026-10-28 — Ma Stack : ouvrir la découverte avec les cartes du site
 
 - La section « Pour aller plus loin » devient « À découvrir » : trois pistes renouvelables, issues des relations qualifiées du catalogue et diversifiées par famille, outil source et direction. Les alternatives et usages proches deviennent explorables ; suppression de la promesse non démontrée « aucun doublon ». Les outils déjà présents, modules rattachés et comparaisons à vérifier sont exclus.

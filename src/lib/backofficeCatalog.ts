@@ -184,7 +184,7 @@ function group(schema: Record<string, Check>): Check {
         ...Object.keys(v),
       ])) {
         if (equal(previous[key], v[key])) continue;
-        if (!Object.hasOwn(schema, key) || !Object.hasOwn(v, key)) fail();
+        if (!Object.prototype.hasOwnProperty.call(schema, key) || !Object.prototype.hasOwnProperty.call(v, key)) fail();
         schema[key](v[key], previous[key]);
       }
     },
@@ -249,7 +249,7 @@ const plan: Check = (v, b) => {
       "isFree",
       "isComparePlan",
     ])
-      if (!Object.hasOwn(v, key)) fail();
+      if (!Object.prototype.hasOwnProperty.call(v, key)) fail();
   }
   if (
     !record(b) ||
@@ -404,7 +404,7 @@ export function isEditableCatalogPath(
   if (
     !path.length ||
     typeof path[0] !== "string" ||
-    !Object.hasOwn(checks, path[0])
+    !Object.prototype.hasOwnProperty.call(checks, path[0])
   )
     return false;
   let check: Check = checks[path[0]];
@@ -413,7 +413,7 @@ export function isEditableCatalogPath(
       if (!Number.isSafeInteger(part) || part < 0 || !check.item) return false;
       check = check.item;
     } else {
-      if (!check.children || !Object.hasOwn(check.children, part)) return false;
+      if (!check.children || !Object.prototype.hasOwnProperty.call(check.children, part)) return false;
       check = check.children[part];
     }
   }
@@ -434,7 +434,7 @@ export function validateCatalogTool(
     fail();
   const tool = value as CatalogTool;
   for (const key of changedCatalogFields(base, tool)) {
-    if (!Object.hasOwn(checks, key) || !Object.hasOwn(tool, key)) fail();
+    if (!Object.prototype.hasOwnProperty.call(checks, key) || !Object.prototype.hasOwnProperty.call(tool, key)) fail();
     checks[key](tool[key], base[key]);
   }
   for (const key of ["pricing_v5", "pricing_v5En"]) {
