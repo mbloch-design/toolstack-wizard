@@ -194,7 +194,7 @@ export default function CartPage() {
     ...unreviewed.map((tool): Finding => ({
       key: `freemium:${tool.id}`, kind: "freemium", tools: [tool],
       title: t(`Quelle formule de ${tool.name} avez-vous\u00a0?`, `Which ${tool.name} plan do you have?`),
-      detail: t("Précisez votre formule pour inclure cet outil dans votre budget.", "Choose your plan to include this tool in your budget."),
+      detail: t("Gratuite ou payante, on ne juge pas. Ça complète juste votre budget.", "Free or paid, no judgement. It just completes your budget."),
       options: (() => { const paid = toolMonthlyCost(tool, () => true, lang); return paid.kind === "paid" ? [{ label: t("Version gratuite", "Free plan"), amount: 0 }, { label: t("Plan payant", "Paid plan"), amount: convertAmount(paid.monthly, paid.currency, currency) }] : undefined; })(),
       actions: [
         { label: t("Non, version gratuite", "No, free version"), onClick: () => { plans.choosePlan(toolKey(tool), null); trackEvent("stack_freemium_answer", { freemium: 1, paid: 0 }); } },

@@ -41326,3 +41326,25 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 /* An exact budget needs no footnote: the check says it. */
 .ms-page .mf .mf-price .mf-trust[data-exact] .mf-trust-text small { display: none; }
 .ms-page .mf .mf-price .mf-trust[data-exact] .mf-trust-check { width: 20px; height: 20px; }
+
+/* Decision card, redesign of 28 Oct 2026: the question in front; the label,
+   the step and the budget preview recede. No answer looks chosen before the
+   person picks one: every face starts neutral, and the hovered one lifts. */
+@layer components {
+  .ms-page .mf .mf-now .mf-k-pill { padding: 0 !important; background: none !important; color: var(--color-text-secondary) !important; font: 600 14px/1.2 var(--font-ui) !important; box-shadow: none !important; }
+  .ms-page .mf .mf-now .mf-step { color: var(--color-text-secondary); font: 500 12px/1.2 var(--font-ui); }
+  .ms-page .mf .mf-now .mf-now-q h3 { font: 600 24px/1.2 var(--font-ui) !important; letter-spacing: -.025em !important; }
+  .ms-page .mf .mf-now > .mf-t { font: 400 15px/1.45 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
+  .ms-page .mf .mf-now .mf-duel-both { background: var(--color-surface) !important; border-color: transparent !important; box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text-strong) 6%, transparent) !important; }
+  .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan) { border: 0 !important; box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text-strong) 6%, transparent) !important; transition: transform 200ms cubic-bezier(.34, 1.4, .64, 1), box-shadow 200ms ease !important; }
+  .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan):hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 0 0 2px var(--color-stack-tools-ink, var(--color-primary)), 0 12px 28px color-mix(in srgb, var(--color-text-strong) 10%, transparent) !important; }
+  .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan):active:not(:disabled) { transform: scale(.98); }
+  .ms-page .mf .mf-now .mf-face-tag { background: none !important; color: var(--color-good, var(--ms-good)) !important; font: 600 12px/1.2 var(--font-ui) !important; box-shadow: none !important; }
+  .ms-page .mf .mf-now .mf-choice-logos svg { color: var(--color-stack-tools-ink, var(--color-primary)); }
+  .ms-page .mf .mf-now .mf-plan-name { padding-right: 30px !important; min-width: 0; }
+  .ms-page .mf .mf-now .mf-plan-name > span { white-space: normal !important; overflow: visible !important; text-wrap: balance; line-height: 1.2; }
+  .ms-page .mf .mf-now .mf-plan-radio { border-width: 1.5px !important; }
+  .ms-page .mf .mf-now .mf-seats-ok { background: var(--color-stack-tools-ink, var(--color-primary)) !important; border-color: transparent !important; }
+  .ms-page .mf .mf-now .mf-preview-k { font: 500 12px/1.2 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
+  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-now :is(.mf-face, .mf-duel-both, .mf-plan) { transition: none !important; transform: none !important; } }
+}
