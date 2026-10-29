@@ -204,8 +204,8 @@ export default function CartPage() {
     })),
     ...decisionPairs.map(({ a, b, shared, explicit, double }): Finding => ({
       key: `pair:${pairKey(toolKey(a), toolKey(b))}`, kind: "pair", tools: [a, b],
-      title: t("L’un, l’autre ou les deux\u00a0?", "One, the other, or both?"),
-      detail: why(shared, explicit), costs: [monthlyOf(a), monthlyOf(b)], stake: double,
+      title: t(`${a.name} et ${b.name} font le même travail.`, `${a.name} and ${b.name} do the same job.`),
+      detail: `${why(shared, explicit)} ${t("Lequel garder\u00a0?", "Which one stays?")}`, costs: [monthlyOf(a), monthlyOf(b)], stake: double,
       actions: [
         ...[[a, b], [b, a]].map(([keep, drop]) => ({ label: t(`Garder ${keep.name}`, `Keep ${keep.name}`), ariaLabel: t(`Garder ${keep.name}, retirer ${drop.name}`, `Keep ${keep.name}, remove ${drop.name}`),
           onClick: () => decide("keep-one", { slug: toolKey(keep), name: keep.name }, { slug: toolKey(drop), name: drop.name }, monthlyOf(drop), "stack") })),

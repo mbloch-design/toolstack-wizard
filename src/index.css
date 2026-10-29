@@ -41419,4 +41419,42 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-starter-next > :is(button, .mk-button):hover svg { transform: rotate(90deg) scale(1.08); }
   .ms-page .mf .mf-starter-next > :is(button, .mk-button):active { transform: scale(.97); }
   @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-starter-next > :is(button, .mk-button) svg { transition: none; } }
+  /* Ring and radar: the legend keeps room for full area names, the chart takes what is left. */
+  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) { grid-template-columns: minmax(0, auto) minmax(220px, 1fr) !important; }
+  .ms-page .mf .mf-balance .mf-bb:is([data-view="radar"], [data-view="ring"]) :is(.mf-bb-radar, .mf-bb-ring) { max-width: 100%; }
+  /* Dark theme: the usage card had no dark surface, so its light tint swallowed the text. */
+  .dark .ms-page .mf .mf-grid > .mf-card.mu-card { --mu-ink: #afc4ff; background: radial-gradient(120% 90% at 100% 0%, color-mix(in srgb, var(--mu-ink) 10%, transparent), transparent 60%), #1c2540 !important; }
+  /* No-scroll contract (29/10/2026): no box of the bento scrolls or cuts its content. Rows keep
+     their reference height as a floor and grow with the tallest card; names wrap instead of fading. */
+  .ms-page .mf .mf-grid { grid-template-rows: minmax(var(--row1, auto), auto) minmax(var(--row2, auto), auto) !important; grid-auto-rows: auto !important; }
+  .ms-page .mf .mf-grid > .mf-card, .ms-page .mf .mf-grid > .mf-card.mu-card { height: auto !important; max-height: none !important; overflow: visible !important; }
+  .ms-page .mf .mf-grid > .mf-card.mu-card { min-height: var(--mu-height); }
+  .ms-page .mf :is(.mf-shares, .mf-bb-legend, .mf-bb-chips, .mf-fit-list), .ms-page .mf .mu-card :is(.mu-question, .mu-summary, .mu-history, .mu-answer-list) { overflow: visible !important; max-height: none !important; }
+  .ms-page .mf :is(.mf-plan-name, .mf-plan-name > span, .mf-plan-name em, .mf-shares-name, .mf-face-name, .mf-bb-name, .mf-cheaper-text span, .mf-cheaper-text small, .mf-area-tiles span, .mf-trust-text small, .mf-seats-sum, .mf-bb-caption small, .mf-lead-sub, .mf-bb-chips button span),
+  .ms-page .mf .mu-card :is(.mu-tool h3, .mu-gauge button small, .mu-answer-name) { overflow: visible !important; text-overflow: clip !important; white-space: normal !important; -webkit-line-clamp: unset !important; overflow-wrap: anywhere; }
+  .ms-page .mf .mf-now .mf-plan-name { display: block !important; min-height: 0 !important; }
+  .ms-page .mf .mu-card .mu-answer-list { grid-auto-rows: auto !important; }
+  /* Usage card from 400px: two columns, the tool and its line on the left, a compact selector on the right. */
+  @container (min-width: 400px) and (max-width: 599px) {
+    .ms-page .mf .mu-card .mu-question { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); grid-template-rows: auto auto; grid-template-areas: "tool gauge" "feedback gauge"; align-items: center; column-gap: 16px; }
+    .ms-page .mf .mu-card .mu-tool h3 { font-size: 18px; }
+    .ms-page .mf .mu-card .mu-question .mu-meter-track { height: 44px; }
+    .ms-page .mf .mu-card .mu-gauge button small { font-size: 11px; }
+  }
+  /* Duplicate decision (29/10/2026): each tile reads as an answer. A ring says it can be picked,
+     the line under the name says what the choice does to the budget, the tag sits inside the tile. */
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both) { position: relative; grid-template-rows: 40px auto auto auto !important; gap: 6px !important; padding: 22px 14px 16px !important; cursor: pointer; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both)::after { content: ""; position: absolute; top: 12px; right: 12px; width: 18px; height: 18px; box-sizing: border-box; border: 1.5px solid color-mix(in srgb, var(--color-text-strong) 22%, transparent); border-radius: var(--radius-circle); transition: border-color 160ms ease, border-width 160ms ease; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both):hover:not(:disabled)::after { border: 5px solid var(--color-stack-tools-ink, var(--color-primary)); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both)[data-state="kept"]::after { border: 5px solid var(--color-good, var(--ms-good)); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-tag { position: absolute !important; top: 12px !important; left: 14px !important; right: auto !important; transform: none !important; margin: 0 !important; padding: 0 !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face-name, .mf-choice-both-label) { grid-row: 2 !important; font: 600 15px/1.25 var(--font-ui) !important; color: var(--color-text-strong); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-out { grid-row: 3; font: 600 15px/1.2 var(--font-ui); font-variant-numeric: tabular-nums; color: var(--color-text-secondary); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-out[data-gain=""] { color: var(--color-good, var(--ms-good)); }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-cost { grid-row: 4 !important; color: var(--color-text-meta, var(--color-text-secondary)); font-size: 12.5px !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-face-gain { display: none; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-now-q h3 { text-wrap: balance; }
+  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both)::after { transition: none; } }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group :is(.mf-face, .mf-duel-both) { padding-top: 38px !important; }
+  .ms-page .mf .mf-now[data-kind="pair"] .mf-choice-group .mf-choice-both-label { white-space: nowrap !important; }
 }

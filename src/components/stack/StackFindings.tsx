@@ -388,17 +388,18 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                   onPointerEnter={() => setPreview(total)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total)} onBlur={() => setPreview(null)}>
                   <span className="mf-choice-logos" aria-hidden="true">{top.tools.slice(0, 2).map((item) => <ToolLogo key={item.id} tool={item} size={28} />)}<Sparkles size={14} /></span>
                   <span className="mf-choice-both-label">{action.label}</span>
-                  <span className="mf-choice-sum">{format((top.costs?.[0] ?? 0) + (top.costs?.[1] ?? 0))}{t("/mois", "/mo")}</span>
+                  <span className="mf-face-out" data-gain="0">{t("Budget inchangé", "Budget unchanged")}</span>
+                  <span className="mf-face-cost">{t(`les deux, ${format((top.costs?.[0] ?? 0) + (top.costs?.[1] ?? 0))}/mois`, `both, ${format((top.costs?.[0] ?? 0) + (top.costs?.[1] ?? 0))}/mo`)}</span>
                 </button>)}
             <button type="button" className="mf-face" disabled={picked !== null} onClick={() => pick(index, keep?.onClick)} aria-label={keep?.ariaLabel || keep?.label}
               onPointerEnter={() => setPreview(total - other)} onPointerLeave={() => setPreview(null)} onFocus={() => setPreview(total - other)} onBlur={() => setPreview(null)}
               data-state={picked === null ? undefined : picked === index ? "kept" : "gone"}>
               {own < other && <span className="mf-face-tag">{t("Le moins cher", "Cheaper")}</span>}
               <span className="mf-face-logo"><ToolLogo tool={tool} size={40} />{picked === index && <span className="mf-face-check" aria-hidden="true"><Check size={16} strokeWidth={3} /></span>}</span>
-              {picked === index && other > 0 && <span className="mf-face-gain" aria-hidden="true">−{format(other)}{t("/mois", "/mo")}</span>}
               <span className="mf-face-name">{tool.name}</span>
-              <span className="mf-face-cost">{own > 0 ? `${format(own)}${t("/mois", "/mo")}` : t("Gratuit", "Free")}</span>
-              <span className="mf-face-cta" aria-hidden="true">{t("Garder", "Keep")}</span>
+              {/* What the choice does to the budget: keeping one drops the other's cost. */}
+              <span className="mf-face-out" data-gain={other > 0 ? "" : "0"}>{other > 0 ? `−${format(other)}${t("/mois", "/mo")}` : t("Aucune économie", "No saving")}</span>
+              <span className="mf-face-cost">{own > 0 ? t(`seul, ${format(own)}/mois`, `alone, ${format(own)}/mo`) : t("seul, gratuit", "alone, free")}</span>
             </button>
           </Fragment>;
         })}</div>}

@@ -627,12 +627,12 @@ for(const lang of ['fr','en'] as const) test(`all-free stack ${lang}: compact bu
  await expect(page.locator('.mu-card')).toBeVisible();
  await expect(page.locator('.mf-grid')).toHaveCSS('grid-template-areas','"price fit"');
  await expect.poll(async()=>{const price=await page.locator('.mf-price').boundingBox();const review=await page.locator('.mu-card').boundingBox();return Math.abs(price!.y-review!.y);}).toBeLessThan(2);
- await expect.poll(async()=>Math.abs((await page.locator('.mu-card').boundingBox())!.height-290)).toBeLessThan(1);
+ await expect.poll(async()=>(await page.locator('.mu-card').boundingBox())!.height).toBeGreaterThanOrEqual(289); // no-scroll contract: 290px is a floor
  await expect(page.locator('.mu-card')).toContainText(lang==='fr'?'Votre stack, sans abonnement payant.':'Your stack has no paid plans.');
  await expect(page.locator('.mf-balance')).toHaveCount(0);
  await page.screenshot({path:test.info().outputPath(`free-only-${lang}-desktop.png`)});
  await page.setViewportSize({width:820,height:900});
- await expect.poll(async()=>Math.abs((await page.locator('.mu-card').boundingBox())!.height-295)).toBeLessThan(1);
+ await expect.poll(async()=>(await page.locator('.mu-card').boundingBox())!.height).toBeGreaterThanOrEqual(294);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.setViewportSize({width:390,height:900});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
@@ -711,12 +711,12 @@ test('many usage rows and a long choice history stay inside the compact scene',a
  }
  await card.getByRole('button',{name:'History',exact:true}).click();const history=card.getByRole('region',{name:'Choice history'});
  await expect(history.getByRole('button',{name:'Review this choice',exact:true})).toHaveCount(10);
- expect(await history.evaluate(el=>el.scrollHeight>el.clientHeight)).toBe(true);
+ expect(await history.evaluate(el=>el.scrollHeight<=el.clientHeight+1)).toBe(true); // no-scroll contract: the history grows instead
  await history.getByRole('button',{name:'Review this choice',exact:true}).last().scrollIntoViewIfNeeded();
- expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(330);
+ expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(330); expect(await card.evaluate(el=>[el,...el.querySelectorAll('*')].every(n=>n.scrollHeight<=n.clientHeight+1||!/(auto|scroll|hidden)/.test(getComputedStyle(n).overflowY)))).toBe(true);
  await page.emulateMedia({reducedMotion:'no-preference'});await card.getByRole('button',{name:'Summary',exact:true}).click();
  await card.getByRole('button',{name:'Review my use',exact:true}).click();await card.getByRole('radio',{name:'A lot — Intensive use',exact:true}).hover();
- expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(330);
+ expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(330); expect(await card.evaluate(el=>[el,...el.querySelectorAll('*')].every(n=>n.scrollHeight<=n.clientHeight+1||!/(auto|scroll|hidden)/.test(getComputedStyle(n).overflowY)))).toBe(true);
 });
 
 test('usage answers survive a failed cloud write and retry without lying about saved status', async ({page,request}) => {
@@ -758,7 +758,7 @@ test('usage keeps the original envelope and readable nonoverlapping controls wit
  await page.goto('/fr/ma-stack');await login(page,'fr','usage-text@example.invalid');await saved(page,'fr');
  const card=page.locator('.mu-card');
  await card.evaluate(el=>{for(const text of el.querySelectorAll<HTMLElement>('h2,h3,p,small,.mu-count,.mu-footer button'))text.style.fontSize=`${parseFloat(getComputedStyle(text).fontSize)*2}px`;});
- expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(330);
+ expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(330); expect(await card.evaluate(el=>[el,...el.querySelectorAll('*')].every(n=>n.scrollHeight<=n.clientHeight+1||!/(auto|scroll|hidden)/.test(getComputedStyle(n).overflowY)))).toBe(true);
  expect(await card.getByRole('radio').evaluateAll(radios=>radios.every(r=>{const icon=r.querySelector('.mu-meter-track')!.getBoundingClientRect(),label=r.querySelector('small')!.getBoundingClientRect();return label.top>=icon.bottom&&label.bottom<=r.getBoundingClientRect().bottom+1&&label.width<=r.getBoundingClientRect().width+1;}))).toBe(true);
  expect(await card.evaluate(el=>{const tool=el.querySelector('.mu-tool')!.getBoundingClientRect(),gauge=el.querySelector('.mu-gauge')!.getBoundingClientRect(),caption=el.querySelector('.mu-caption')!.getBoundingClientRect();return tool.bottom<=gauge.top+1&&gauge.bottom<=caption.top+1;})).toBe(true);
  expect(await card.evaluate(el=>{const tool=el.querySelector('.mu-tool')!,gauge=el.querySelector('.mu-gauge')!,caption=el.querySelector('.mu-caption')!;return tool.querySelector('h3')!.getBoundingClientRect().bottom<=tool.getBoundingClientRect().bottom+1&&Array.from(gauge.querySelectorAll('button')).every(b=>b.getBoundingClientRect().bottom<=gauge.getBoundingClientRect().bottom+1)&&caption.scrollHeight<=caption.clientHeight+1;})).toBe(true);

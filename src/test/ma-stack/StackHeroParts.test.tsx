@@ -93,9 +93,9 @@ describe("StackFindings", () => {
     expect(screen.getByRole("text", { name: "58\u00a0%" })).toBeTruthy();
     expect(screen.getByText("du budget renseigné pour RH.")).toBeTruthy();
   });
-  it("shows a pair as two faces and tags the cheaper one", () => {
+  it("shows a pair as two faces, each with what it saves, and tags the cheaper one", () => {
     const { container } = module([pair]);
-    expect([...container.querySelectorAll(".mf-face")].map((node) => node.textContent)).toEqual(["Le moins cherAsana33 €/moisGarder", "Linear40 €/moisGarder"]);
+    expect([...container.querySelectorAll(".mf-face")].map((node) => node.textContent)).toEqual(["Le moins cherAsana−40 €/moisseul, 33 €/mois", "Linear−33 €/moisseul, 40 €/mois"]);
   });
   it("answers the decision on top", () => {
     const onClick = vi.fn();
