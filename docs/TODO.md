@@ -164,6 +164,10 @@ Base saine (397 URL live : 200, canonical, H1, hreflang réciproque, JSON-LD val
 - [x] P1 bilan en bento à quatre blocs (22 oct.) : coût par outil, décision du moment en couleur de marque (plus de bloc noir), équilibre par domaine en radar (échelle racine carrée), « À suivre ». La suite n'est plus fondue dans la carte décision.
 - [ ] P2 donnée : le domaine « Autres usages » porte 82 % du budget de la stack test (Workable, SysAid). Le radar le montre honnêtement, mais ce fourre-tout rend l'équilibre peu parlant ; ranger ces outils dans un vrai domaine (RH, support IT) dans le catalogue.
 
+## Accueil, « Explorer par besoin » (29 oct. 2026)
+- [x] Grille qui flottait (colonnes de 720 px pour 350 px de texte en 1920, 2 692 px d'une seule colonne en 820) : 2 colonnes dès 700 px, 3 dès 1600 px, sans fond ni boîte (tuiles et 4 colonnes jugées trop lourdes), un seul écart entre besoins en largeur et en hauteur, en-têtes alignés avec flèche au bord droit, étiquettes sur une ligne, carrousel sur téléphone (2 114 → 250 px de haut).
+- [ ] `e2e/responsive-shell.spec.ts` « Explorer et Ma stack gardent leur axe responsive » échoue déjà sur main (cherche `.ms-top h1`, absent de la Ma stack actuelle) : remettre le test à jour.
+
 ## Ma stack en tableau de bord (7 oct. 2026)
 - Ordre validé (parcours) : hero inchangé, puis Recoupements (ce que je peux simplifier), puis Budget (anneau par domaine ou par outil, zoom local par domaine) puis Mes outils. Fil conducteur : combien je paie, et combien je paie en double. La question freemium se pose une fois (bandeau après le hero, fenêtre « Lesquels payez-vous ? », mémorisée par outil) ; les recoupements sont chiffrés (« ≈ X €/mois en double ») et triés par montant. Bandeau de bulles retiré. Commits locaux non poussés.
 - E2E `catalogue refresh updates the same saved selection` échoue : il attend le prix Supabase sur la carte, or la carte lit désormais `nativePrices` attestés. Réécrire le test (constat, pas encore fait).

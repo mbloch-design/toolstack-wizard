@@ -49,7 +49,7 @@ const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true, 
     // Ask remote sources for twice the display size: a 42px logo fed a 64px
     // favicon looked soft on Retina screens.
     const wanted = size * 2;
-    const candidates = getToolLogoSources(tool, wanted <= 32 ? 32 : wanted <= 64 ? 64 : 128);
+    const candidates = getToolLogoSources(tool, wanted <= 32 ? 32 : wanted <= 64 ? 64 : wanted <= 128 ? 128 : 256);
     return allowRemoteSources
       ? candidates
       : candidates.filter((source) => source.startsWith("/") || source.startsWith("data:"));

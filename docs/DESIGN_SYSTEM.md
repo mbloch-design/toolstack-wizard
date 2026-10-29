@@ -43,6 +43,23 @@ Aucun `<img>` direct, aucun composant local, aucun carré vide sans fallback.
 
 La route d'accueil utilise `HomePageV2.tsx`, `HeroSectionV2.tsx` et `StackGoalsSection.tsx`. Les composants de l'ancienne homepage ont été retirés : ne pas réintroduire leurs exceptions de logos ou leurs styles pour un nouveau chantier. Consulter les composants actifs et les tokens dans `src/index.css`.
 
+## Couleur et image : la règle (29 oct. 2026)
+
+Référence de qualité : apple.com. Chaque couleur saturée vibre, chaque image est d'une précision parfaite.
+
+**Couleur**
+- Toute couleur saturée (accent, alertes, statuts, couleurs de données, nouvelles touches de couleur) a deux valeurs : sa valeur sRGB dans les jetons, et un jumeau `oklch` plus vif dans le bloc `@media (color-gamut: p3)` de `src/index.css` (« Display P3, the rule »).
+- Le jumeau garde la même luminosité `L` (le contraste du texte tient) et augmente la chroma : +20 % pour les aplats et pastilles, +12 % pour les couleurs utilisées comme texte.
+- Les dégradés s'interpolent `in oklch` (pas de gris au milieu). Jamais de filtre `saturate()` ou `hue-rotate()` pour « raviver » : ils écrêtent en sRGB.
+- Les neutres (gris, blancs, encre) restent tels quels : le P3 ne leur apporte rien.
+- Les couleurs des domaines de Ma stack sont des jetons (`--color-area-1` à `-6`, `--color-area-other`) avec leur jumeau P3 ; `AREA_COLORS` renvoie ces `var()`. En SVG, les passer en `style={{ stroke }}` / `style={{ fill }}`, jamais en attribut (un attribut n'accepte pas `var()`).
+
+**Image**
+- Jamais d'image agrandie : chaque visuel est servi à 2x (et 3x pour les petites icônes), via `srcset`, en WebP ou AVIF.
+- Logos et pictogrammes en vectoriel (SVG) dès que possible ; sinon une source d'au moins 2x la taille affichée.
+- Recadrages, arrondis et ombres au pixel près : pas de bord blanc incrusté dans un logo, pas de double cadre.
+- Animations de décor : uniquement `transform` et `opacity` (composées par la carte graphique), jamais de propriété qui force à repeindre à chaque image.
+
 ## Palette
 
 | Token | Valeur | Usage |

@@ -318,7 +318,7 @@ function simpleIconCandidateKeys(tool: LogoCandidateTool, domain: string) {
   return Array.from(candidates).filter(Boolean);
 }
 
-export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 = 64): string[] {
+export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 | 256 = 64): string[] {
   const sources: string[] = [];
 
   // 0. Self-hosted icon for featured tools.
@@ -326,7 +326,8 @@ export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 
   const localSlug = LOCAL_LOGO_ALIASES[localKey] || localKey;
   // The build caps its file count, so an icon that already exists in another
   // format is reused rather than duplicated.
-  const LOCAL_LOGO_EXT: Record<string, string> = { chatgpt: "webp" };
+  // Vector where the raster was below 2x (29 Oct 2026, image rule).
+  const LOCAL_LOGO_EXT: Record<string, string> = { chatgpt: "svg", notion: "svg" };
   if (LOCAL_LOGO_SLUGS.has(localSlug)) sources.push(`/home-logos/${localSlug}.${LOCAL_LOGO_EXT[localSlug] || "png"}`);
 
   // 1. Custom logo override. Accept canonical remote URLs and local assets:
@@ -386,6 +387,6 @@ export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 
   return Array.from(new Set(sources));
 }
 
-export function getToolLogoUrl(tool: LogoCandidateTool, size: 32 | 64 | 128 = 64): string | null {
+export function getToolLogoUrl(tool: LogoCandidateTool, size: 32 | 64 | 128 | 256 = 64): string | null {
   return getToolLogoSources(tool, size)[0] || null;
 }

@@ -1,4 +1,4 @@
-// Shared by the homepage ("De vraies stacks, choisies selon votre objectif")
+// Shared by the homepage ("Des stacks prêtes à l’emploi")
 // and the search dialog ("Partir d'une stack").
 export type StackTool = { slug: string; name: string; websiteUrl: string; logo?: string };
 
@@ -42,7 +42,7 @@ export const GOAL_STACKS: GoalStack[] = [
     subtitleEn: "Publish, repurpose, and capture requests without paying for three copilots.",
     tools: [
       // Self-hosted: Simple Icons no longer carries the OpenAI mark.
-      { slug: "chatgpt", name: "ChatGPT", websiteUrl: "https://chat.openai.com", logo: "/home-logos/chatgpt.webp" },
+      { slug: "chatgpt", name: "ChatGPT", websiteUrl: "https://chat.openai.com", logo: "/home-logos/chatgpt.svg" },
       { slug: "beehiiv", name: "Beehiiv", websiteUrl: "https://beehiiv.com" },
       { slug: "canva", name: "Canva", websiteUrl: "https://canva.com" },
       { slug: "buffer", name: "Buffer", websiteUrl: "https://buffer.com" },

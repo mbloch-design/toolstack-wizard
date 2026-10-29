@@ -106,7 +106,7 @@ function SplitRing({ areas, active, onPoint, label }: { areas: AreaShare[]; acti
     <circle className="mf-ring-track" cx="50" cy="50" r={r} />
     {sum > 0 && areas.map((area, index) => {
       const length = Math.max(0.5, (area.amount / sum) * c - gap);
-      const arc = <circle key={area.id} cx="50" cy="50" r={r} stroke={area.color} strokeDasharray={`${length} ${c - length}`} strokeDashoffset={-offset}
+      const arc = <circle key={area.id} cx="50" cy="50" r={r} style={{ stroke: area.color }} strokeDasharray={`${length} ${c - length}`} strokeDashoffset={-offset}
         transform="rotate(-90 50 50)" data-on={active === area.id ? "" : undefined} style={{ ["--i" as string]: index }}
         onPointerEnter={() => onPoint(area.id)} onPointerLeave={() => onPoint(null)} />;
       offset += (area.amount / sum) * c;
@@ -131,7 +131,7 @@ function SplitRadar({ areas, active, onPoint, label }: { areas: AreaShare[]; act
     <polygon className="mf-radar-shape" points={areas.map((area, i) => at(i, k(area.amount)).join(",")).join(" ")} />
     {areas.map((area, i) => { const [x, y] = at(i, k(area.amount)); return <g key={area.id} onPointerEnter={() => onPoint(area.id)} onPointerLeave={() => onPoint(null)}>
       <circle className="mf-radar-hit" cx={x} cy={y} r="8" />
-      <circle className="mf-radar-dot" cx={x} cy={y} r={active === area.id ? 3.6 : 2.4} fill={area.color} data-on={active === area.id ? "" : undefined} />
+      <circle className="mf-radar-dot" cx={x} cy={y} r={active === area.id ? 3.6 : 2.4} style={{ fill: area.color }} data-on={active === area.id ? "" : undefined} />
     </g>; })}
   </svg>;
 }

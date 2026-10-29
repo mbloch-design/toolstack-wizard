@@ -1,3 +1,10 @@
+## 2026-10-29 · Accueil : direction « luxe », couleurs P3, netteté des images
+
+- Hero : scène gris froid, lueur Display P3 (taches `oklch` animées en `transform` seulement, ~4 % du CPU contre ~80 % avant), grain, trois orbites de 42 glyphes de marque (Simple Icons CC0, intégrés dans `src/data/heroGlyphs.ts`) avec halos qui effacent la ligne sous chaque logo. Surtitre fin, titre Uncut Sans, boutons « pilule + lien ». Visiteur avec stack : « Reprendre ma stack » avec 3 logos et le compte ; connecté : salutation par prénom et titre selon l'heure.
+- Sections : titres en Uncut Sans display, en-têtes titre/intro à gauche et « Tout voir » à droite, 96 à 140px entre sections. Stacks en tuiles gris froid (titre « Des stacks prêtes à l’emploi »). Besoins : 3 outils (référence, choix, découverte), logos alignés, survol sans boîte. Comparatifs : la question est le duel (logos dans la phrase, « ou » en italique) sur tuiles compactes. Guides et pied de page dans la même voix. Composant `Rail` retiré (inutilisé).
+- Couleur : jumeaux `oklch` P3 pour les jetons saturés (accent, alerte, statuts) et les couleurs de domaines de Ma stack (`--color-area-*`, `AREA_COLORS` renvoie des `var()`). Règle écrite dans `docs/DESIGN_SYSTEM.md` (« Couleur et image »).
+- Images : ChatGPT et Notion en SVG local, logos distants demandés à 2x jusqu'à 256px. Typecheck, 1 043 tests, gate des tokens passent.
+
 ## 2026-10-29 — CI : reprise après intégration du redesign Ma Stack
 
 - Intégration de `50d85f0191` sans remplacer la nouvelle structure ni ses dimensions. Le correctif étroit est placé après les règles de jauge qui le surchargeaient ; pas de changement de hauteur.

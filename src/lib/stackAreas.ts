@@ -10,5 +10,7 @@ export type Territory = { id: string; label: string; tools: ToolSummary[]; group
 // on the #F5F5F7 surface (21 Oct 2026). No orange or red: those mean "to
 // review" on Ma stack. A 7th area and beyond take the neutral, never a cycled
 // hue; every area is always labelled by name.
-export const AREA_COLORS = ["#2A78D6", "#EDA100", "#6250D6", "#1BAF7A", "#E87BA4", "#008300"];
-export const AREA_OTHER = "#8E8E93";
+// CSS tokens (src/index.css), so they get their Display P3 twin (29 Oct 2026).
+// They work in style props; in SVG pass them as style, not as attributes.
+export const AREA_COLORS = ["var(--color-area-1)", "var(--color-area-2)", "var(--color-area-3)", "var(--color-area-4)", "var(--color-area-5)", "var(--color-area-6)"];
+export const AREA_OTHER = "var(--color-area-other)";

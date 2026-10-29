@@ -31,12 +31,12 @@ const StackGoalsSection = () => {
         <div className="sgs-head">
           <div>
             <h2 className="v2-section-title">
-              {t("De vraies stacks, choisies selon votre objectif", "Real stacks, picked by what you need to do")}
+              {t("Des stacks prêtes à l’emploi", "Ready-made stacks")}
             </h2>
             <p className="sgs-lead">
               {t(
-                "Quatre points de départ parmi notre bibliothèque de plus de 200 stacks.",
-                "Four starting points from our library of 200+ curated stacks.",
+                "Les outils qui vont ensemble pour un même besoin, avec leur coût mensuel et le piège à éviter.",
+                "The tools that work together for one job, with their monthly cost and the trap to avoid.",
               )}
             </p>
           </div>
@@ -53,7 +53,7 @@ const StackGoalsSection = () => {
                 <span className="sgs-folder" aria-hidden>
                   {stack.tools.slice(0, 4).map((tool) => (
                     <span key={tool.slug} className="sgs-folder-app">
-                      <ToolLogo tool={resolve(tool) as any} size={32} className="sgs-folder-logo" />
+                      <ToolLogo tool={resolve(tool) as any} size={40} className="sgs-folder-logo" />
                     </span>
                   ))}
                 </span>

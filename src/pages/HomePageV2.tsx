@@ -4,8 +4,8 @@ import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { HOME_COMPARISONS } from "@/data/homeComparisons";
 import { displayText } from "@/lib/typography";
 import { REDIRECTED_TOOL_SLUGS } from "@/lib/redirectedTools";
-import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight } from "@/lib/icons";
+import { useEffect, useMemo } from "react";
+import { ArrowRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -61,7 +61,7 @@ const WATCHLIST = [
 const HOME_TOOL_ASSETS: Record<string, { cover: string | null; logo?: string }> = {
   "affinity-photo": { cover: "/home-cards/affinity-photo.webp", logo: "/home-logos/affinity-photo.webp" },
   box: { cover: "/home-cards/box.webp", logo: "/home-logos/box.webp" },
-  chatgpt: { cover: "/og-screenshots/chatgpt.jpg", logo: "/home-logos/chatgpt.webp" },
+  chatgpt: { cover: "/og-screenshots/chatgpt.jpg", logo: "/home-logos/chatgpt.svg" },
   circle: { cover: "/home-cards/circle.webp", logo: "/home-logos/circle.webp" },
   claude: { cover: "/home-cards/claude.webp" },
   cursor: { cover: "/home-cards/cursor.webp", logo: "/home-logos/cursor.webp" },
@@ -85,61 +85,6 @@ function withHomeAssets<T extends { id: string; name: string; slug?: string; ogI
     ogImageUrl: asset.cover || undefined,
     logo: asset.logo || tool.logo,
   };
-}
-
-/* ── Horizontal shelf (App Store style) ──
-   Native scroll with snap, the next card peeking past the edge instead of
-   pagination dots. Mouse users get prev/next buttons that fade in on hover;
-   touch devices hide them and just swipe. resetKey snaps back to the start
-   when the content changes (e.g. another host tab). */
-function Rail({ children, resetKey, previousLabel, nextLabel }: {
-  children: ReactNode;
-  resetKey?: string;
-  previousLabel: string;
-  nextLabel: string;
-}) {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [edges, setEdges] = useState({ start: true, end: false });
-
-  const updateEdges = useCallback(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    setEdges({
-      start: track.scrollLeft <= 4,
-      end: track.scrollLeft + track.clientWidth >= track.scrollWidth - 4,
-    });
-  }, []);
-
-  useEffect(() => {
-    trackRef.current?.scrollTo({ left: 0 });
-    updateEdges();
-  }, [resetKey, updateEdges]);
-
-  useEffect(() => {
-    window.addEventListener("resize", updateEdges);
-    return () => window.removeEventListener("resize", updateEdges);
-  }, [updateEdges]);
-
-  const scrollByPage = (direction: 1 | -1) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    track.scrollBy({ left: direction * track.clientWidth * 0.9, behavior: reduceMotion ? "auto" : "smooth" });
-  };
-
-  return (
-    <div className="v2-rail">
-      <div ref={trackRef} className="v2-rail-track" onScroll={updateEdges}>
-        {children}
-      </div>
-      <button type="button" className="v2-rail-nav v2-rail-nav--prev" onClick={() => scrollByPage(-1)} aria-label={previousLabel} disabled={edges.start}>
-        <ChevronLeft aria-hidden />
-      </button>
-      <button type="button" className="v2-rail-nav v2-rail-nav--next" onClick={() => scrollByPage(1)} aria-label={nextLabel} disabled={edges.end}>
-        <ChevronRight aria-hidden />
-      </button>
-    </div>
-  );
 }
 
 /* ── Generic section header ── */
@@ -400,24 +345,23 @@ export default function HomePageV2() {
                 to={`${prefix}/comparatifs`}
                 linkLabel={t("Tous les comparatifs", "All comparisons")}
               />
-              <Rail
-                previousLabel={t("Comparatifs précédents", "Previous comparisons") as string}
-                nextLabel={t("Comparatifs suivants", "Next comparisons") as string}
-              >
-                {homeComparisons.map(({ comparison, toolA, toolB }) => (
-                  <div key={comparison.slugPair} className="v2-rail-item">
+              {/* Four whole comparisons on a grid, no cut carousel (29 Oct 2026). */}
+              <ul className="hc-grid">
+                {homeComparisons.slice(0, 4).map(({ comparison, toolA, toolB }) => (
+                  <li key={comparison.slugPair}>
                     <Link to={`${prefix}/comparatif/${comparison.slugPair}`} className="hc-card">
-                      <span className="hc-duel" aria-hidden="true">
-                        <span className="hc-icon hc-icon--a"><ToolLogo tool={toolA as any} size={72} alt="" /></span>
-                        <span className="hc-swap">⇄</span>
-                        <span className="hc-icon hc-icon--b"><ToolLogo tool={toolB as any} size={72} alt="" /></span>
+                      {/* The question is the duel (29 Oct 2026): each logo sits inside the
+                          sentence at text height, « ou » is the hinge, in italic. */}
+                      <span className="hc-title">
+                        <span className="hc-name"><span className="hc-mark" aria-hidden="true"><ToolLogo tool={toolA as any} size={40} alt="" /></span>{toolA.name}</span>
+                        {" "}<em className="hc-or">{t("ou", "or")}</em>{" "}
+                        <span className="hc-name"><span className="hc-mark" aria-hidden="true"><ToolLogo tool={toolB as any} size={40} alt="" /></span>{toolB.name}</span>{displayText(t(" ?", "?"), lang)}
                       </span>
-                      <span className="hc-title">{displayText(t(`${toolA.name} ou ${toolB.name} ?`, `${toolA.name} or ${toolB.name}?`), lang)}</span>
                       <span className="hc-summary">{displayText(lang === "en" ? comparison.summaryEn || comparison.summary : comparison.summary, lang)}</span>
                     </Link>
-                  </div>
+                  </li>
                 ))}
-              </Rail>
+              </ul>
             </section>
           )}
 
