@@ -106,8 +106,8 @@ function SplitRing({ areas, active, onPoint, label }: { areas: AreaShare[]; acti
     <circle className="mf-ring-track" cx="50" cy="50" r={r} />
     {sum > 0 && areas.map((area, index) => {
       const length = Math.max(0.5, (area.amount / sum) * c - gap);
-      const arc = <circle key={area.id} cx="50" cy="50" r={r} style={{ stroke: area.color }} strokeDasharray={`${length} ${c - length}`} strokeDashoffset={-offset}
-        transform="rotate(-90 50 50)" data-on={active === area.id ? "" : undefined} style={{ ["--i" as string]: index }}
+      const arc = <circle key={area.id} cx="50" cy="50" r={r} strokeDasharray={`${length} ${c - length}`} strokeDashoffset={-offset}
+        transform="rotate(-90 50 50)" data-on={active === area.id ? "" : undefined} style={{ stroke: area.color, ["--i" as string]: index }}
         onPointerEnter={() => onPoint(area.id)} onPointerLeave={() => onPoint(null)} />;
       offset += (area.amount / sum) * c;
       return arc;

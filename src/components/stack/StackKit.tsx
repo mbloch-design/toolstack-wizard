@@ -198,8 +198,8 @@ export function Donut({ slices, label }: { slices: Slice[]; label: string }) {
     <circle className="mk-donut-track" cx="50" cy="50" r={r} />
     {sum > 0 && slices.map((slice, index) => {
       const length = Math.max(0, (slice.amount / sum) * c - gap);
-      const dash = <circle key={slice.id} cx="50" cy="50" r={r} style={{ stroke: slice.color }} strokeDasharray={`${length} ${c - length}`} strokeDashoffset={-offset}
-        transform="rotate(-90 50 50)" style={{ ["--i" as string]: index }}><title>{`${slice.label} · ${slice.value}`}</title></circle>;
+      const dash = <circle key={slice.id} cx="50" cy="50" r={r} strokeDasharray={`${length} ${c - length}`} strokeDashoffset={-offset}
+        transform="rotate(-90 50 50)" style={{ stroke: slice.color, ["--i" as string]: index }}><title>{`${slice.label} · ${slice.value}`}</title></circle>;
       offset += (slice.amount / sum) * c;
       return dash;
     })}
