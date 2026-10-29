@@ -647,7 +647,7 @@ for (const lang of ['fr','en'] as const) for (const [width,height,expected] of [
   value.decisions={'notion|trello':{kind:'keep-both',kept:'notion',saving:0,at:'2026-10-25T00:00:00.000Z'}};
   await control(request,'seed',{email:'usage-height@example.invalid',state:value});await page.goto(`/${lang}/ma-stack`);await login(page,lang,'usage-height@example.invalid');await saved(page,lang);
   const card=page.locator('.mu-card');await expect(card).toBeVisible();await card.scrollIntoViewIfNeeded();
-  await page.addStyleTag({content:'html, .mu-question { scrollbar-gutter: stable; } @media(max-width:340px) { .mu-question { max-width:236px !important; } .mu-gauge button small { font-family: Arial, sans-serif; } }'});
+  await page.addStyleTag({content:'.mu-question { scrollbar-gutter: stable; } @media(max-width:340px) { .mu-question { max-width:236px !important; } .mu-gauge button small { font-family: Arial, sans-serif; } }'});
   const anchors=()=>card.evaluate(el=>{const box=el.getBoundingClientRect(),footer=el.querySelector('.mu-footer')!.getBoundingClientRect(),primary=el.querySelector('.mu-next')!.getBoundingClientRect();return {top:footer.top-box.top,right:primary.right-box.left};});
   const initialAnchors=await anchors();
   const stable=async()=>{await expect.poll(async()=>Math.abs((await card.boundingBox())!.height-expected)).toBeLessThan(1);expect(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)).toBe(false);const current=await anchors();expect(Math.abs(current.top-initialAnchors.top)).toBeLessThan(1);expect(Math.abs(current.right-initialAnchors.right)).toBeLessThan(1);};

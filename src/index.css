@@ -40905,7 +40905,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mu-card .mu-history .ms-decided { margin: 0; }
   .ms-page .mf .mu-card .mu-history .mu-pair + .mu-pair { margin-top: var(--space-sm); padding-top: var(--space-sm); border-top: 1px solid var(--color-border-soft); }
   @container (max-width: 360px) {
-    .ms-page .mf .mu-card .mu-gauge { gap: 0; padding: 4px; }
+    .ms-page .mf .mu-card .mu-gauge { gap: 0; padding: 0; }
     .ms-page .mf .mu-card .mu-gauge button { padding-inline: 0; }
     .ms-page .mf .mu-card .mu-gauge button small { font-size: 11.5px; letter-spacing: -.02em; text-overflow: clip; }
     .ms-page .mf .mu-card .mu-quiet { padding-inline: 6px; font-size: 13px; }
