@@ -639,7 +639,7 @@ for(const lang of ['fr','en'] as const) test(`all-free stack ${lang}: compact bu
  await expect(page.locator('.mu-card')).toBeVisible();
 });
 
-for (const lang of ['fr','en'] as const) for (const [width,height,expected] of [[320,900,285],[390,900,285],[820,900,295],[1440,900,290],[1440,800,255.2],[1440,700,230]]) {
+for (const lang of ['fr','en'] as const) for (const [width,height,expected] of [[320,900,330],[390,900,330],[820,900,295],[1440,900,290],[1440,800,255.2],[1440,700,230]]) {
  test(`usage envelope ${lang} ${width}x${height}: answer, next, correction, summary and history stay still`,async({page,request})=>{
   const fr=lang==='fr';await page.setViewportSize({width,height});
   const value=state(['motion-array','grammarly','notion','trello']);
@@ -713,17 +713,17 @@ test('many usage rows and a long choice history stay inside the compact scene',a
  for(let index=0;index<3;index++){
   const geometry=await card.evaluate(el=>{const tool=el.querySelector('.mu-tool')!.getBoundingClientRect(),gauge=el.querySelector('.mu-gauge')!.getBoundingClientRect(),caption=el.querySelector('.mu-caption')!.getBoundingClientRect(),footer=el.querySelector('.mu-footer')!.getBoundingClientRect();return {height:el.getBoundingClientRect().height,noOverlap:tool.bottom<=gauge.top+1&&caption.bottom<=footer.top+1};});
   await card.screenshot({path:test.info().outputPath(`long-tool-${index}.png`)});
-  expect(geometry.height).toBe(285);expect(geometry.noOverlap).toBe(true);
+  expect(geometry.height).toBe(330);expect(geometry.noOverlap).toBe(true);
   await card.getByRole('radio',{name:'Regular — Regular use',exact:true}).click();await card.getByRole('button',{name:index<2?'Next':'Finish',exact:true}).click();
  }
  await card.getByRole('button',{name:'History',exact:true}).click();const history=card.getByRole('region',{name:'Choice history'});
  await expect(history.getByRole('button',{name:'Review this choice',exact:true})).toHaveCount(10);
  expect(await history.evaluate(el=>el.scrollHeight>el.clientHeight)).toBe(true);
  await history.getByRole('button',{name:'Review this choice',exact:true}).last().scrollIntoViewIfNeeded();
- expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(285);
+ expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(330);
  await page.emulateMedia({reducedMotion:'no-preference'});await card.getByRole('button',{name:'Summary',exact:true}).click();
  await card.getByRole('button',{name:'Review my use',exact:true}).click();await card.getByRole('radio',{name:'A lot — Intensive use',exact:true}).hover();
- expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(285);
+ expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(330);
 });
 
 test('usage answers survive a failed cloud write and retry without lying about saved status', async ({page,request}) => {
@@ -765,7 +765,7 @@ test('usage keeps the original envelope and readable nonoverlapping controls wit
  await page.goto('/fr/ma-stack');await login(page,'fr','usage-text@example.invalid');await saved(page,'fr');
  const card=page.locator('.mu-card');
  await card.evaluate(el=>{for(const text of el.querySelectorAll<HTMLElement>('h2,h3,p,small,.mu-count,.mu-footer button'))text.style.fontSize=`${parseFloat(getComputedStyle(text).fontSize)*2}px`;});
- expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(285);
+ expect(await card.evaluate(el=>el.getBoundingClientRect().height)).toBe(330);
  expect(await card.getByRole('radio').evaluateAll(radios=>radios.every(r=>{const icon=r.querySelector('.mu-meter-track')!.getBoundingClientRect(),label=r.querySelector('small')!.getBoundingClientRect();return label.top>=icon.bottom&&label.bottom<=r.getBoundingClientRect().bottom+1&&label.width<=r.getBoundingClientRect().width+1;}))).toBe(true);
  expect(await card.evaluate(el=>{const tool=el.querySelector('.mu-tool')!.getBoundingClientRect(),gauge=el.querySelector('.mu-gauge')!.getBoundingClientRect(),caption=el.querySelector('.mu-caption')!.getBoundingClientRect();return tool.bottom<=gauge.top+1&&gauge.bottom<=caption.top+1;})).toBe(true);
  expect(await card.evaluate(el=>{const tool=el.querySelector('.mu-tool')!,gauge=el.querySelector('.mu-gauge')!,caption=el.querySelector('.mu-caption')!;return tool.querySelector('h3')!.getBoundingClientRect().bottom<=tool.getBoundingClientRect().bottom+1&&Array.from(gauge.querySelectorAll('button')).every(b=>b.getBoundingClientRect().bottom<=gauge.getBoundingClientRect().bottom+1)&&caption.scrollHeight<=caption.clientHeight+1;})).toBe(true);

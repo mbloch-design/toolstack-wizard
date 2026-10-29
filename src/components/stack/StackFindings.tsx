@@ -315,7 +315,14 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 <p>{t("Dites-nous quelle formule vous utilisez. Gratuite ou payante, chaque réponse aide à y voir plus clair.", "Tell us which plan you use. Free or paid, every answer makes the picture clearer.")}</p>
                 <button type="button" className="mk-link" onClick={() => { const next = items.find(item => item.kind === "price" || item.kind === "freemium"); if(next){setFirst(next.key);setLater(keys=>keys.filter(key=>key!==next.key));setOpenCard("now");requestAnimationFrame(()=>document.getElementById("mf-now-title")?.scrollIntoView({block:"center",behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"}));} }}>{t("Préciser ma première formule", "Choose my first plan")}</button>
               </div>
-            : <><Figure value={format(total)} unit={t("/mois", "/mo")} />{(() => {
+            : <><Figure value={format(total)} unit={t("/mois", "/mo")} />{spend.length > 0 && total > 0 && (() => {
+              // The figure, then one line that reads it: the year, and who pays for what.
+              const lead = spend.reduce((a, b) => b.amount > a.amount ? b : a), share = Math.round((lead.amount / total) * 100);
+              const quip = spend.length === 1 ? t("Un seul abonnement, et il fait tout le travail.", "One subscription doing all the work.")
+                : share >= 50 ? t(`${lead.tool.name} en paie ${share >= 75 ? "presque tout" : "plus de la moitié"} à lui seul.`, `${lead.tool.name} pays for ${share >= 75 ? "almost all of it" : "over half of it"} on its own.`)
+                : t("Pas de tyran dans la stack : le budget est bien réparti.", "No tyrant in this stack: the budget is spread out.");
+              return <p className="mf-price-quip"><span>{t(`Soit ${format(total * 12)} par an.`, `That is ${format(total * 12)} a year.`)}</span> {quip}</p>;
+            })()}{(() => {
               // Can the total be trusted? A tool counts once its cost is certain.
               const unsure = items.filter((item) => item.kind === "price" || item.kind === "freemium");
               const pct = toolCount > 0 ? Math.round(((toolCount - unsure.length) / toolCount) * 100) : 100;
@@ -328,7 +335,7 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
                 ? <button type="button" className="mf-trust" onClick={() => { setFirst(unsure[0].key); setLater((keys) => keys.filter((key) => key !== unsure[0].key)); setFlash(Date.now()); }}>
                     {ring}<span className="mf-trust-text"><b>{t(`${toolCount - unsure.length} outil${s(toolCount - unsure.length)} sur ${toolCount} renseigné${s(toolCount - unsure.length)}`, `${toolCount - unsure.length} of ${toolCount} tools priced`)}</b><small>{t(`Estimation partielle : ${left} à confirmer`, `Partial estimate: ${left} to confirm`)}</small>{dots}</span>
                   </button>
-                : toolCount > 0 && <p className="mf-trust" data-exact="">{ring}<span className="mf-trust-text"><b>{t("Budget renseigné", "Budget recorded")}</b><small>{t("Estimation selon les prix et formules renseignés.", "Estimate based on the prices and plans recorded.")}</small>{dots}</span></p>;
+                : toolCount > 0 && <p className="mf-trust" data-exact=""><span className="mf-trust-check" aria-hidden="true">{icon(Check)}</span><span className="mf-trust-text"><b>{t("Budget renseigné", "Budget recorded")}</b><small>{t("Estimation selon les prix et formules renseignés.", "Estimate based on the prices and plans recorded.")}</small>{dots}</span></p>;
             })()}</>; })()}
         {converted && <p className="mf-invoice-help">{t(`Conversion en ${currency} au taux de référence du ${CURRENCY_RATE_DATE}.`, `Converted to ${currency} using reference rates dated ${CURRENCY_RATE_DATE}.`)}</p>}
         {spend.length > 0 ? <>
@@ -484,9 +491,10 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
 
       {/* 3. How the budget is balanced across verticals: its own block. */}
       {toolCount === 1 && !top && <article className="mf-card mf-starter-next" data-open="">
-        <span className="mf-starter-icon" aria-hidden="true"><Layers3 size={24} /></span>
+        {/* The one tool, and two free seats waiting next to it. */}
+        <span className="mf-starter-seats" aria-hidden="true">{(spend[0]?.tool || freeTools[0]) ? <span className="mf-starter-seat" data-on=""><ToolLogo tool={(spend[0]?.tool || freeTools[0])!} size={30} /></span> : null}<span className="mf-starter-seat"><Plus size={18} /></span><span className="mf-starter-seat"><Plus size={18} /></span></span>
         <h2>{t("Votre stack prend forme.", "Your stack is taking shape.")}</h2>
-        <p>{t("Votre premier outil est en place. Ajoutez ceux que vous utilisez aussi pour mieux comprendre votre budget et les usages qui se recoupent.", "Your first tool is in place. Add the others you use to understand your budget and where their uses overlap.")}</p>
+        <p>{t("Un outil, c’est un début. Ajoutez les autres : dès deux, on repère ce qui se recoupe et ce que ça coûte.", "One tool is a start. Add the others: from two on, we spot what overlaps and what it costs.")}</p>
         <Button variant="primary" icon={<Plus size={18} aria-hidden />} onClick={onAddTool}>{t("Ajouter un autre outil", "Add another tool")}</Button>
       </article>}
       {toolCount > 1 && total > 0 && <article className="mf-card mf-balance" data-open={openCard === "bal" ? "" : undefined}>
@@ -497,16 +505,13 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
           // The verdict first: is the money spread, or does one area take most of it?
           const heavy = share >= 50;
           const spread = areas.filter((area) => area.amount > 0).length;
-          // A touch of play on the left: the share rolls in the lead area's colour,
-          // a short honest line, and that area's tools stacked like cards.
-          const deck = (lead.tools || []).slice(0, 4);
-          const extraTools = Math.max(0, (lead.tools || []).length - deck.length);
-          const logos = deck.length > 0 ? <span className="mf-lead-deck" aria-hidden="true">{deck.map((row, index) => <span key={row.tool.id} style={{ ["--i" as string]: index }}><ToolLogo tool={row.tool} size={26} /></span>)}{extraTools > 0 && <em>+{extraTools}</em>}</span> : null;
+          // One line of humour under the reading, from the same shares.
+          const quip = <p className="mf-lead-quip">{share >= 75 ? t("Le reste du budget fait de la figuration.", "The rest of the budget is an extra.") : heavy ? t("Le reste se partage les miettes.", "The rest share the crumbs.") : t("Une stack équilibrée. C’est rare, ça se respecte.", "A balanced stack. Rare, and respected.")}</p>;
           const tag = share >= 75 ? <><Flame size={14} aria-hidden />{t("Premier poste renseigné", "Largest recorded cost")}</> : share >= 50 ? <><TrendingUp size={14} aria-hidden />{t("Premier poste renseigné", "Largest recorded cost")}</> : <><Scale size={14} aria-hidden />{t("Montants par domaine", "Costs by area")}</>;
           return <>{heavy
-            ? <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={logos} figure={<Odometer text={`${share}\u00a0%`} />} say={t(`du budget renseigné pour ${lead.label.replace(/ /g, "\u00a0")}.`, `of recorded costs for ${lead.label}.`)}
+            ? <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={quip} figure={<Odometer text={`${share}\u00a0%`} />} say={t(`du budget renseigné pour ${lead.label.replace(/ /g, "\u00a0")}.`, `of recorded costs for ${lead.label}.`)}
                 sub={t(`${format(lead.amount)} sur ${format(total)} chaque mois.`, `${format(lead.amount)} of ${format(total)} every month.`)} />
-            : <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={logos} figure={t(`${spread} domaines`, `${spread} areas`)} say={t("se partagent les montants renseignés.", "share the recorded costs.")}
+            : <Lead tag={tag} color={lead.color === AREA_OTHER ? undefined : lead.color} extra={quip} figure={t(`${spread} domaines`, `${spread} areas`)} say={t("se partagent les montants renseignés.", "share the recorded costs.")}
                 sub={t(`Le plus gros, ${lead.label}, en prend ${share} %.`, `The largest, ${lead.label}, takes ${share}%.`)} />}
           <BudgetBar areas={areas} total={total} format={format} t={t} view={splitView === "radar" && areas.length < 4 ? "bar" : splitView} /></>;
         })() : <p className="mf-t">{areas.length < 3 ? t("La répartition apparaît dès trois domaines dans votre stack.", "The split appears from three areas in your stack.") : t("Aucun coût connu à répartir pour l’instant.", "No known cost to spread yet.")}</p>}

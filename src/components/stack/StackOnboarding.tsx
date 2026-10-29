@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import StackStarter, { readStarterDraft, useStackReading } from "@/components/stack/StackStarter";
 import ToolLogo from "@/components/ToolLogo";
 import { ArrowLeft, ArrowRight, Briefcase, Check, Code2, Minus, Palette, Plus, Rocket, Video, Workflow, type IconComponent } from "@/lib/icons";
@@ -13,6 +13,7 @@ import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { TRADE_TOOLS } from "@/data/tradeTools";
 import type { StackPersona } from "@/data/stacks";
 import { toolKey } from "@/lib/stackView";
+import { playHello } from "@/components/stack/helloMotion";
 import { useStackTrade } from "@/hooks/useStackTrade";
 
 /**
@@ -83,12 +84,18 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
   const greeting = lang === "en" ? (hour < 12 && hour >= 5 ? "Good morning" : hour < 18 && hour >= 5 ? "Good afternoon" : "Good evening") : (hour >= 18 || hour < 5 ? "Bonsoir" : "Bonjour");
 
   // The hello melts through a few languages (CSS only) and lands on the person's own; the rest follows.
+  // The rest follows while the greeting is still settling, so the screen never sits idle.
   const [landed, setLanded] = useState(() => reduced());
-  useEffect(() => {
-    if (landed) return;
-    const timer = window.setTimeout(() => setLanded(true), HELLOS.length * 440 + 300);
-    return () => window.clearTimeout(timer);
-  }, [landed]);
+  const nameField = useRef<HTMLInputElement>(null);
+  const helloRef = useRef<HTMLSpanElement>(null);
+  const landedOnce = useRef(landed);
+  // Played once, before the first paint so the greeting never flashes; coming back to this step shows it settled.
+  useLayoutEffect(() => {
+    if (step !== "hello" || !helloRef.current || landedOnce.current) return;
+    landedOnce.current = true;
+    return playHello(helloRef.current, () => setLanded(true));
+  }, [step]);
+  useEffect(() => { if (landed && step === "hello") nameField.current?.focus({ preventScroll: true }); }, [landed, step]);
 
   const current = TRADES.find((item) => item.id === trade);
   const index = STEPS.indexOf(step);
@@ -122,10 +129,14 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
       {handed.length > 0 && <span className="so-cluster" aria-hidden="true">{known(handed).slice(0, 5).map((tool, at) => <span key={tool.id} style={{ animationDelay: `${120 + at * 80}ms` }}><ToolLogo tool={tool} size={34} /></span>)}</span>}
       <h1 id="ss-title">
         <span className="sr-only">{name ? `${greeting}, ${name}.` : `${greeting}.`}</span>
-        <span className="so-hello-line" aria-hidden="true">
-          <span className="so-hello-stage">
-            {HELLOS.map((word, at) => <span key={word} className="so-hw" style={{ ["--i" as string]: at }}>{word}</span>)}
-            <span className="so-hw so-hw--final" style={{ ["--i" as string]: HELLOS.length }}>{greeting}{name ? <>, <em>{name}</em></> : ""}.<span className="so-wave">👋</span></span>
+        <span className="so-greet" aria-hidden="true" ref={helloRef}>
+          <span className="so-hello-line">
+            {HELLOS.map((word) => <span key={word} className="so-hw">{[...word].map((letter, at) => <i key={at}>{letter}</i>)}</span>)}
+            <span className="so-hello-final">
+              {greeting.split(" ").map((word, at, all) => <span key={at}>{word}{at === all.length - 1 ? (name ? "," : ".") : ""}</span>)}
+              <span className="so-wave">👋</span>
+              {name && <><span><em>{name}<i /></em></span><span className="so-dot">.</span></>}
+            </span>
           </span>
         </span>
       </h1>
@@ -135,7 +146,7 @@ export default function StackOnboarding({ onOpen }: { onOpen: (slugs: string[], 
           : t("Bienvenue chez vous. Deux questions, et l’espace est à votre image. Promis, pas de formulaire de 12 pages.", "Welcome home. Two questions, and this space is yours. No 12-page form, promise.")}</p>
         {!fromAccount && <label className="so-name">
           <span>{t("Comment doit-on vous appeler ?", "What should we call you?")}</span>
-          <input type="text" value={typed} maxLength={40} autoComplete="given-name" placeholder={t("Votre prénom", "Your first name")} onChange={(event) => setTyped(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") begin(); }} />
+          <input ref={nameField} type="text" value={typed} maxLength={40} autoComplete="given-name" placeholder={t("Votre prénom", "Your first name")} onChange={(event) => setTyped(event.target.value)} onKeyDown={(event) => { if (event.key === "Enter") begin(); }} />
         </label>}
         <button type="button" className="so-primary" onClick={begin}>{t("C’est parti", "Let’s go")}<ArrowRight size={18} aria-hidden /></button>
       </div>
