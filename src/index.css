@@ -306,7 +306,7 @@
     --tt-size-hero:          clamp(64px, 8vw, 124px);    /* H1 Compare, ToolDetail */
     --tt-size-hero-sub:      clamp(22px, 2vw, 30px);     /* Subtitle / promise below H1 */
     --tt-size-page-title:    clamp(40px, 4.5vw, 56px);   /* Editorial page/article H1 */
-    --tt-size-section-h:     clamp(25px, 2.4vw, 32px);    /* Section title — compact gallery hierarchy */
+    --tt-size-section-h:     clamp(30px, 3vw, 42px);      /* Section title: Uncut Sans 500 (29 Oct 2026 rule) */
     --tt-size-section-intro: clamp(16px, 1.3vw, 18px);   /* Subtitle directly under section title */
     --tt-size-body-large:    clamp(18px, 1.5vw, 22px);   /* Large body / framing copy */
     --tt-size-body:          16px;                        /* Standard body */
@@ -5064,13 +5064,14 @@
     color: hsl(var(--foreground));
   }
 
+  /* 500, not 600: contrast comes from size and face (29 Oct 2026 rule). */
   h1 {
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.0;
     letter-spacing: -0.04em;
   }
   h2 {
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.0;
     letter-spacing: -0.04em;
   }
@@ -5081,7 +5082,7 @@
     color: hsl(var(--foreground));
   }
   h3 {
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.03em;
   }
@@ -5172,9 +5173,9 @@
   .tt-section-title {
     margin: 0;
     color: var(--color-text-strong);
-    font-family: var(--font-ui);
+    font-family: var(--font-brand);
     font-size: var(--tt-size-section-h);
-    font-weight: 620;
+    font-weight: 500;
     letter-spacing: -0.035em;
     line-height: 1.08;
   }
@@ -5263,51 +5264,33 @@
      Use these site-wide instead of page-specific
      button styles. Never create a local .foo-btn.
   ───────────────────────────────────────────── */
-  .tt-button-primary {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-    height: 40px;
-    padding: 0 18px;
-    background: var(--color-text);
-    border: none;
-    border-radius: var(--radius);
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--color-surface);
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: background 0.15s ease;
+  /* Calls to action (29 Oct 2026 rule, docs/DESIGN_SYSTEM.md « CTA »):
+     one ink pill that leads, everything else defers. 500 weight, pill
+     radius, no border on the primary; the secondary is a quiet tile pill.
+     For a page's main call use .tt-cta (52px) and .tt-cta-link. */
+  .tt-button-primary, .tt-button-secondary {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex-shrink: 0;
+    min-height: 40px; padding: 0 18px; border: 0; border-radius: var(--radius-pill);
+    font: 500 14px/1 var(--font-ui); letter-spacing: -.005em; text-decoration: none; white-space: nowrap; cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease, transform 120ms ease;
   }
-  .tt-button-primary:hover { background: #3A3A38; }
-  /* Both buttons render with no visible focus state at all (verified: a
-     tabbed-to .tt-button-primary computes outline: none with nothing to
-     replace it) — every other interactive control in this file gets a
-     :focus-visible outline, these two global, site-wide button classes
-     didn't. */
-  .tt-button-primary:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
-  .tt-button-secondary {
-    display: inline-flex;
-    align-items: center;
-    flex-shrink: 0;
-    height: 40px;
-    padding: 0 18px;
-    background: transparent;
-    border: 1.5px solid var(--color-border-strong);
-    border-radius: var(--radius);
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--color-text);
-    text-decoration: none;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-  .tt-button-secondary:hover { background: var(--color-text); color: var(--color-surface); }
-  .tt-button-secondary:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+  .tt-button-primary { background: var(--color-text-strong); color: var(--color-bg); }
+  .tt-button-primary:hover { background: var(--color-hover-strong); }
+  .tt-button-secondary { background: var(--color-surface-soft); color: var(--color-text-strong); }
+  .tt-button-secondary:hover { background: color-mix(in srgb, var(--color-text-strong) 9%, var(--color-surface-soft)); color: var(--color-text-strong); }
+  .tt-button-primary:active, .tt-button-secondary:active { transform: scale(.98); }
+  .tt-button-primary:focus-visible, .tt-button-secondary:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 2px; }
+  .tt-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px 0 30px; border: 0; border-radius: var(--radius-pill); background: var(--color-text-strong); color: var(--color-bg); font: 500 15px/1 var(--font-ui); letter-spacing: -.01em; text-decoration: none; white-space: nowrap; cursor: pointer; transition: background-color 180ms ease, transform 160ms cubic-bezier(.2, .8, .2, 1); }
+  .tt-cta:hover { background: var(--color-hover-strong); }
+  .tt-cta:active { transform: scale(.98); }
+  .tt-cta-link { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0; border: 0; background: none; color: var(--color-text-strong); font: 500 15px/1 var(--font-ui); letter-spacing: -.01em; text-decoration: none; cursor: pointer; }
+  .tt-cta-link:hover { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+  .tt-cta svg, .tt-cta-link svg { width: 16px; height: 16px; stroke-width: 1.6; transition: transform 200ms cubic-bezier(.2, .8, .2, 1); }
+  .tt-cta:hover svg, .tt-cta-link:hover svg { transform: translateX(2px); }
+  .tt-cta:focus-visible, .tt-cta-link:focus-visible { outline: 2px solid var(--color-text-strong); outline-offset: 3px; }
+  /* Type roles: section title, eyebrow, lead (29 Oct 2026 rule). */
+  .tt-eyebrow { display: block; font: 330 11.5px/1.4 var(--font-ui); letter-spacing: .16em; text-transform: uppercase; color: var(--color-text-strong); }
+  .tt-lead { max-width: 56ch; margin: 0; font: 400 17px/1.45 var(--font-ui); letter-spacing: -.01em; color: var(--color-text-strong); }
 
 }
 
@@ -7323,7 +7306,7 @@
   .tce-name {
     font-family: var(--font-ui);
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.25;
     letter-spacing: -0.015em;
     color: var(--color-text);
@@ -7870,25 +7853,23 @@
   .tt-section-action {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    color: var(--color-text);
-    font-family: var(--font-ui);
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.2;
+    gap: 6px;
+    color: var(--color-text-strong);
+    font: 500 15px/1.3 var(--font-ui);
+    letter-spacing: -.01em;
     text-decoration: none;
     white-space: nowrap;
   }
   .tt-section-action svg {
-    width: 15px;
-    height: 15px;
+    width: 16px;
+    height: 16px;
     flex: 0 0 auto;
-    stroke-width: 2;
+    stroke-width: 1.6;
     transition: transform 160ms ease-out;
   }
   .tt-section-action:hover svg,
   .tt-section-action:focus-visible svg {
-    transform: translateX(3px);
+    transform: translateX(2px);
   }
   .tt-section-action:focus-visible {
     border-radius: var(--radius-xs);
@@ -8144,7 +8125,7 @@
   .td-tool-page :is(.td-analysis-lead, .td-analysis-paragraph, .td-editorial-intro-copy) { max-width: 65ch; }
   .td-tool-page .td-analysis-paragraph { line-height: 1.65; letter-spacing: 0; }
   .td-tool-page .td-analysis-lead { line-height: 1.5; letter-spacing: -.015em; }
-  .td-tool-page .td-subtitle { font-size: 22px; line-height: 1.3; font-weight: 600; }
+  .td-tool-page .td-subtitle { font-size: 22px; line-height: 1.3; font-weight: 500; }
   .td-tool-page :is(.td-eyebrow, .td-editorial-facts h3) { font-size: 12px; line-height: 1.5; letter-spacing: .06em; }
   .td-tool-page :is(.td-title, .td-editorial-intro-title) { margin-bottom: 20px; }
   .td-tool-page .td-editorial-intro-head { gap: 8px; margin-bottom: 24px; }
@@ -8901,7 +8882,7 @@
     display: block;
     font-family: var(--font-ui);
     font-size: var(--tt-size-kicker);
-    font-weight: 600;
+    font-weight: 330;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-muted);
@@ -9305,7 +9286,7 @@
   .td-subtitle {
     font-family: var(--font-ui);
     font-size: clamp(1.25rem, 2vw, 1.625rem);
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: -0.03em;
     line-height: 1.12;
     color: var(--color-text);
@@ -21726,7 +21707,7 @@ section[id]:not(.cp-guide-section) {
    Card layouts stay different, but their typographic voice no longer does. */
 .tt-catalog-page .tce-name {
   font-size: var(--tt-size-card-title);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.015em;
 }
@@ -24620,7 +24601,7 @@ section[id]:not(.cp-guide-section) {
   margin: 0;
   font-family: var(--font-ui);
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.015em;
   color: var(--color-text);
 }
@@ -24802,7 +24783,7 @@ section[id]:not(.cp-guide-section) {
 .home-v2 .tce-name {
   max-width: 100%;
   font-size: var(--v2-type-card-title);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
 }
 .home-v2 .tce-category {
@@ -25126,7 +25107,7 @@ section[id]:not(.cp-guide-section) {
 .sgs-item-title {
   font-family: var(--font-ui);
   font-size: 19px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.015em;
   color: var(--color-text-strong);
 }
@@ -31704,7 +31685,7 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
 /* ── Comparison hero: two app cards face to face ─────────────────────── */
 .cp-guide-hero .cp-vs-title {
   display: block;
-  font: 600 clamp(34px, 4.4vw, 60px)/1.02 var(--font-brand);
+  font: 500 clamp(34px, 4.4vw, 60px)/1.02 var(--font-brand);
   letter-spacing: -0.045em;
 }
 .cp-guide-hero .cp-vs-title > span { color: var(--color-muted); font-weight: 500; }
@@ -32293,9 +32274,9 @@ a.sg-app:hover .sg-app-chevron { transform: translateX(2px); color: var(--color-
   text-transform: uppercase;
   color: var(--color-muted);
 }
-.gi-card-title { font-weight: 600; letter-spacing: -0.015em; color: var(--color-text-strong); }
-.gi-card--featured .gi-card-title { font-weight: 600; letter-spacing: -0.03em; }
-.gi-card--compact .gi-card-title { font-weight: 600; }
+.gi-card-title { font-weight: 500; letter-spacing: -0.015em; color: var(--color-text-strong); }
+.gi-card--featured .gi-card-title { font-weight: 500; letter-spacing: -0.03em; }
+.gi-card--compact .gi-card-title { font-weight: 500; }
 .gi-card-meta { gap: 10px; margin-top: 10px; font-size: 13px; }
 .gi-card-grid { row-gap: clamp(40px, 4.5vw, 56px); margin-top: clamp(48px, 5vw, 64px); }
 .gi-simple-controls .gi-filter-pills { flex: 1 1 auto; }
@@ -33935,7 +33916,7 @@ img[data-logo-loading] {
 .td-plan--reference { border-color: var(--color-text); }
 .td-plan--soon { opacity: .7; }
 .td-plan-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; min-height: 22px; }
-.td-plan-name { margin: 0; color: var(--color-text); font: 600 15px/1.25 var(--font-ui); }
+.td-plan-name { margin: 0; color: var(--color-text); font: 500 15px/1.25 var(--font-ui); }
 /* Repère posé sur le bord haut : il n'abaisse pas le prix de sa colonne. */
 .td-plan-badge {
   position: absolute; top: -10px; left: 16px;
@@ -35350,11 +35331,11 @@ img[data-logo-loading] {
 
 /* Section titles: one size, clearly above the card titles. */
 .home-v2 .v2-section-title { font: 600 var(--h-section)/1.15 var(--font-ui); letter-spacing: -.025em; color: var(--h-ink); }
-/* Card and group titles: 18 / 600. */
+/* Card and group titles: 18 / 500. */
 .home-v2 .v2-shelf-cell-name,
 .home-v2 .sgs-item-title,
 .home-v2 .tce-name,
-.home-v2 .v2-today-title { font: 600 18px/1.25 var(--font-ui); letter-spacing: -.015em; color: var(--h-ink); }
+.home-v2 .v2-today-title { font: 500 18px/1.25 var(--font-ui); letter-spacing: -.015em; color: var(--h-ink); }
 /* The lead guide title never outranks its section title. */
 .home-v2 .v2-today-card--feature .v2-today-title { font-size: clamp(22px, 2.3vw, 32px); line-height: 1.12; letter-spacing: -.02em; max-width: 24ch; }
 /* Items and body. */
@@ -36187,7 +36168,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf-balance-body { grid-template-columns: minmax(0, 1fr); justify-items: center; }
   .ms-page .mf-balance-list { width: 100%; }
 }
-.ms-page .mf-queue-card .mk-figure { font-size: var(--tt-size-section-h); }
+.ms-page .mf-queue-card .mk-figure { font-size: clamp(25px, 2.4vw, 32px); }
 .ms-page .mf-queue-card .mk-figure small { font-size: 15px; }
 .ms-page .mf-queue-card .mf-queue { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--space-md); margin: var(--space-lg) 0 0; padding: var(--space-md) 0 0; border: 0; background: none; box-shadow: inset 0 1px 0 var(--ms-line); }
 .ms-page .mf-queue-card .mf-next-body { color: var(--ms-ink); }
@@ -37013,7 +36994,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .td-tool-page .td-editorial-fact-group h3,
   .td-tool-page .td-editorial-fact-list dt,
   .td-tool-page .td-profit-card-head,
-  .td-tool-page .td-ai-stance { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; }
+  .td-tool-page .td-ai-stance { font-size: 12px; font-weight: 330; letter-spacing: 0.05em; }
 
   /* Readability floor: nothing under 12px. */
   .td-tool-page .td-compare-current-badge,
@@ -37034,7 +37015,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 
   .td-tool-page .td-subtitle,
   .td-tool-page .td-review-label,
-  .td-tool-page .td-guides-title { font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
+  .td-tool-page .td-guides-title { font-size: 22px; font-weight: 500; letter-spacing: -0.02em; }
   .td-tool-page .td-plan-price strong { font-size: 26px; font-weight: 600; }
 
   .td-tool-page .td-localnav-title > span,
@@ -37247,7 +37228,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     outline: 1px solid var(--color-border-soft);
   }
   .td-tool-page .td-pricing .td-plan-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 0 0 10px; }
-  .td-tool-page .td-pricing .td-plan-name { margin: 0; font-family: var(--font-ui); font-size: 17px; font-weight: 600; line-height: 1.3; color: var(--color-text); }
+  .td-tool-page .td-pricing .td-plan-name { margin: 0; font-family: var(--font-ui); font-size: 17px; font-weight: 500; line-height: 1.3; color: var(--color-text); }
   .td-tool-page .td-pricing .td-plan-badge {
     position: static; transform: none; order: 2;
     padding: 3px 9px; border-radius: var(--radius-pill);
@@ -38296,7 +38277,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ac-header-trigger:hover { background: color-mix(in srgb, var(--color-text) 6%, transparent); }
   .ac-header-name { max-width: 120px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
   .ac-avatar { display: inline-grid; place-items: center; width: 32px; height: 32px; flex-shrink: 0; border-radius: var(--radius-circle); background: var(--color-text); color: var(--color-surface); font-size: var(--tt-size-card-body); font-weight: 600; }
-  .ac-avatar--large { width: 56px; height: 56px; font-size: var(--tt-size-section-h); }
+  .ac-avatar--large { width: 56px; height: 56px; font-size: 28px; }
   .ac-menu { z-index: 205; width: min(300px, calc(100vw - 32px)); background: var(--color-surface); color: var(--color-text); border: 1px solid var(--color-border); border-radius: var(--tt-radius-sm); padding: var(--space-sm); }
   .ac-menu-identity { padding: var(--space-sm); border-bottom: 1px solid var(--color-border); display: flex; flex-direction: column; gap: var(--space-2xs); overflow-wrap: anywhere; }
   .ac-menu-identity span { color: var(--color-text-secondary); font-size: var(--tt-size-card-body); }
@@ -39043,7 +39024,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .tt-catalog-toolbar-tail .tt-pill--more { background: var(--color-surface-soft); border: 0; min-height: 42px; }
 @media (pointer: coarse), (max-width: 560px) { .tt-rail .tt-pill, .tt-rail .gi-filter-pill, .tt-rail .sp-tab { min-height: 44px; } }
 @media (prefers-reduced-motion: reduce) { .tt-rail-thumb.is-ready { transition: none; } }
-/* Page titles share Explorer's type: brand face, page-title size, 600,
+/* Page titles share Explorer's type: brand face, page-title size, 500,
    tight tracking; the count under it is a quiet caption like Explorer's
    category line. */
 .tt-catalog-compact-title,
@@ -39052,7 +39033,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
 .gi-container .tt-catalog-compact-title {
   font-family: var(--font-brand);
   font-size: var(--tt-size-page-title);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -.04em;
   line-height: 1.02;
   text-wrap: balance;
@@ -41514,7 +41495,7 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
     .bo-metrics { grid-template-columns: minmax(0,1fr); padding: var(--space-sm) var(--space-lg); margin-bottom: var(--space-xl); }
     .bo-metrics > button { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: var(--space-xs); padding: var(--space-lg) 0; border-right: 0; border-bottom: 1px solid var(--ms-track); }
     .bo-metrics > button:last-child { border-bottom: 0; }
-    .bo-metrics .mk-figure { grid-column: 2; grid-row: 1/3; font-size: var(--tt-size-section-h); }
+    .bo-metrics .mk-figure { grid-column: 2; grid-row: 1/3; font-size: clamp(25px, 2.4vw, 32px); }
     .bo-metrics small { grid-column: 1; }
     .bo-user-table .bo-optional { display: none; }
     .bo-user-table .bo-compact-detail { display: block !important; }
@@ -41838,3 +41819,22 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-face-logo > .mf-face-drop > * { flex: none; width: 24px !important; height: 24px !important; min-width: 0 !important; transform: scale(.8); }
   .ms-page .mf .mf-now[data-kind="pair"] .mf-face-logo > .mf-face-drop img { width: 18px !important; height: 18px !important; }
 }
+
+
+/* ── Section titles, site-wide (29 Oct 2026 rule, DESIGN_SYSTEM.md
+   « Règle typographique »). Every page's own H2 class speaks the home's
+   voice: Uncut Sans 500, tight, ink. Sizes come from --tt-size-section-h. */
+:is(.ts-h2, .es-title, .td-editorial-intro-title, .td-overview-title, .sd-section-title, .tt-editorial-opening-title,
+  .tt-catalog-results-title, .ab-section-title, .sp-section-heading h2, .sp-overview-heading h2, .ex-results-heading h2,
+  .ac-section-heading h2, .ac-settings-section > h2, .v2-section-title, .gi-stories-row-header > h2) {
+  font-family: var(--font-brand); font-weight: 500; letter-spacing: -.035em; color: var(--color-text-strong);
+}
+
+/* Titles weight, site-wide (29 Oct 2026 rule): 500 everywhere, the
+   contrast comes from size and face. Same selectors as the page rules so
+   this later block wins without !important. */
+:is(.tt-catalog-compact-title, .tt-section-title, .tt-shelf-head > h2, .sk-group-title, .cp-vs-title, .cp-guide-section > h2,
+  .cp-glance-head > h3, .td-title, .cix-hero-title) { font-family: var(--font-brand); font-weight: 500; }
+:is(.tce-name, .cp-guide-annual > h3, .cp-switch-head > h3, .gi-card-title, .td-editorial-fact-group > h3, .td-procon-title,
+  .td-plan-name, .td-subtitle, .td-ai-point-title, .td-explore-title, .gb-h3) { font-weight: 500; }
+.td-eyebrow { font-weight: 330; letter-spacing: .16em; color: var(--color-text-strong); }

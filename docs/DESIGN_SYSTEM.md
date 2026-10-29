@@ -173,10 +173,26 @@ Définis dans `:root` (`src/index.css`). **Utiliser uniquement ces valeurs** —
 ### Hiérarchie des sections
 
 - Un H1 ou un hero peut employer `--tt-size-hero` ou `--tt-size-page-title`.
-- Un H2 qui introduit une section emploie toujours `--tt-size-section-h` : il ne doit jamais se comporter comme un second hero.
-- Le sous-titre est placé directement sous le H2 avec un écart de `8px` et utilise `--tt-size-section-intro`.
-- L'action éventuelle reste secondaire, alignée à droite sur desktop et sous le titre sur mobile.
-- Elle utilise `.tt-section-action` : 14px/600, icône Lucide de 15px et déplacement de 3px au survol. La flèche pointe à droite pour naviguer et vers le bas pour rejoindre une ancre interne.
+### Règle typographique (29 oct. 2026, définie sur l'accueil)
+
+| Rôle | Classe | Police | Graisse | Taille | Couleur |
+|---|---|---|---|---|---|
+| Titre de section (H2) | `.tt-section-title` | Uncut Sans | 500 | `--tt-size-section-h` (30 à 42px), interlettrage -0,035em | encre |
+| Surtitre | `.tt-eyebrow` | Inter Tight | 330 | 11,5px, capitales, +0,16em | encre (jamais gris) |
+| Intro sous titre | `.tt-lead` | Inter Tight | 400 | 17px, 56ch max | encre |
+| Titre de carte | local | Uncut Sans | 500 | 21px, -0,02em | encre |
+| Corps de carte | local | Inter Tight | 400 | 15px | encre |
+
+- Le contraste vient de la taille et de la police, pas du gris : textes en encre, graisses 400/500, pas de 600 dans les titres.
+- En-tête de section : titre et intro à gauche, `.tt-section-action` à droite sur la dernière ligne de l'intro ; dessous sur mobile.
+
+### Règle CTA (29 oct. 2026)
+
+- **Un seul appel qui mène par vue** : `.tt-cta`, pilule encre de 52px, 15px/500, flèche fine qui glisse de 2px au survol, pas d'icône décorative.
+- **L'appel qui l'accompagne est un lien** : `.tt-cta-link`, texte encre 15px/500 et flèche, soulignement au survol seulement. Jamais deux pilules côte à côte.
+- **Boutons d'interface** (formulaires, panneaux, back-office) : `.tt-button-primary` (pilule encre 40px) et `.tt-button-secondary` (pilule gris froid, sans contour), 14px/500.
+- **Action de section** : `.tt-section-action`, 15px/500 encre, flèche 16px.
+- Ne plus créer de bouton local (`.foo-btn`, `.foo-cta`) : composer avec ces quatre classes.
 - Les rails éditoriaux utilisent `CarouselControls` et `CarouselPagination` : boutons circulaires de 36px, icônes de 16px, état désactivé à faible contraste et pagination active en pilule de 20px. Ne pas recréer de contrôles locaux.
 - Dans une galerie ou un rail, les images portent la présence visuelle ; la typographie ne doit pas les concurrencer.
 - Les kickers sont facultatifs. Ne pas en ajouter uniquement pour donner artificiellement de la hauteur au header.
