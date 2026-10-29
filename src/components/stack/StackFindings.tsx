@@ -491,9 +491,10 @@ export default function StackFindings({ lang, currency = "EUR", converted = fals
 
       {/* 3. How the budget is balanced across verticals: its own block. */}
       {toolCount === 1 && !top && <article className="mf-card mf-starter-next" data-open="">
-        <span className="mf-starter-icon" aria-hidden="true"><Layers3 size={24} /></span>
+        {/* The one tool, and two free seats waiting next to it. */}
+        <span className="mf-starter-seats" aria-hidden="true">{(spend[0]?.tool || freeTools[0]) ? <span className="mf-starter-seat" data-on=""><ToolLogo tool={(spend[0]?.tool || freeTools[0])!} size={30} /></span> : null}<span className="mf-starter-seat"><Plus size={18} /></span><span className="mf-starter-seat"><Plus size={18} /></span></span>
         <h2>{t("Votre stack prend forme.", "Your stack is taking shape.")}</h2>
-        <p>{t("Votre premier outil est en place. Ajoutez ceux que vous utilisez aussi pour mieux comprendre votre budget et les usages qui se recoupent.", "Your first tool is in place. Add the others you use to understand your budget and where their uses overlap.")}</p>
+        <p>{t("Un outil, c’est un début. Ajoutez les autres : dès deux, on repère ce qui se recoupe et ce que ça coûte.", "One tool is a start. Add the others: from two on, we spot what overlaps and what it costs.")}</p>
         <Button variant="primary" icon={<Plus size={18} aria-hidden />} onClick={onAddTool}>{t("Ajouter un autre outil", "Add another tool")}</Button>
       </article>}
       {toolCount > 1 && total > 0 && <article className="mf-card mf-balance" data-open={openCard === "bal" ? "" : undefined}>

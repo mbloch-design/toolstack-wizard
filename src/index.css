@@ -41370,3 +41370,40 @@ html, .asv2-content { scroll-padding-bottom: var(--consent-h, 0px); }
   .ms-page .mf .mf-balance .mf-bb-chip-tools > * + * { margin-left: -3px !important; }
   @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-balance .mf-lead-quip { animation: none; } }
 }
+
+/* One-tool card and the all-settled grid (29 Oct 2026): the starter shows its
+   tool beside two free seats that wiggle on hover; the primary action uses
+   the stack ink. In the tall budget card, the list follows the figure. */
+@layer components {
+  .ms-page .mf .mf-starter-next .mf-starter-seats { display: flex; gap: 10px; margin-bottom: 18px; }
+  .ms-page .mf .mf-starter-next .mf-starter-seat { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 14px; border: 1.5px dashed color-mix(in srgb, var(--color-text-strong) 22%, transparent); color: var(--color-text-secondary); transition: transform 260ms cubic-bezier(.34, 1.5, .64, 1), border-color 160ms ease, color 160ms ease; }
+  .ms-page .mf .mf-starter-next .mf-starter-seat[data-on] { border: 0; background: var(--color-surface); box-shadow: 0 1px 2px color-mix(in srgb, var(--color-text-strong) 8%, transparent), 0 6px 16px color-mix(in srgb, var(--color-text-strong) 8%, transparent); animation: mu-icon-nod 420ms cubic-bezier(.34, 1.5, .64, 1) both; }
+  .ms-page .mf .mf-starter-next:hover .mf-starter-seat:not([data-on]) { border-color: var(--color-stack-tools-ink, var(--color-primary)); color: var(--color-stack-tools-ink, var(--color-primary)); }
+  .ms-page .mf .mf-starter-next:hover .mf-starter-seat:nth-child(2) { transform: rotate(-6deg) translateY(-2px); }
+  .ms-page .mf .mf-starter-next:hover .mf-starter-seat:nth-child(3) { transform: rotate(5deg) translateY(-2px); transition-delay: 40ms; }
+  .ms-page .mf .mf-starter-next h2 { font: 600 26px/1.15 var(--font-ui) !important; letter-spacing: -.025em !important; }
+  .ms-page .mf .mf-starter-next p { max-width: 46ch; font: 400 15px/1.5 var(--font-ui) !important; color: var(--color-text-secondary) !important; }
+  .ms-page .mf .mf-starter-next .mk-button, .ms-page .mf .mf-starter-next button { background: var(--color-stack-tools-ink, var(--color-primary)) !important; border-color: transparent !important; color: var(--color-surface) !important; }
+  .ms-page .mf .mf-grid[data-done] .mf-price .mf-shares { margin-top: 28px !important; }
+  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-starter-next .mf-starter-seat { transition: none; animation: none !important; transform: none !important; } }
+}
+@layer components {
+  /* Side by side when wide: the words and the button on the left, the seats
+     on the right, larger, slightly fanned. The button's plus sits in its own
+     disc and turns a quarter on hover, like a seat being added. */
+  .ms-page .mf .mf-starter-next { container-type: inline-size; }
+  @container (min-width: 620px) {
+    .ms-page .mf .mf-starter-next { display: grid !important; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "title seats" "copy seats" "action seats"; column-gap: 40px; align-content: center; }
+    .ms-page .mf .mf-starter-next h2 { grid-area: title; }
+    .ms-page .mf .mf-starter-next p { grid-area: copy; }
+    .ms-page .mf .mf-starter-next > button, .ms-page .mf .mf-starter-next > .mk-button { grid-area: action; justify-self: start; }
+    .ms-page .mf .mf-starter-next .mf-starter-seats { grid-area: seats; align-self: center; margin: 0; gap: 14px; }
+    .ms-page .mf .mf-starter-next .mf-starter-seat { width: 76px; height: 76px; border-radius: 20px; }
+    .ms-page .mf .mf-starter-next .mf-starter-seat:nth-child(1) { transform: rotate(-4deg); }
+    .ms-page .mf .mf-starter-next .mf-starter-seat:nth-child(3) { transform: rotate(4deg); }
+  }
+  .ms-page .mf .mf-starter-next > :is(button, .mk-button) svg { box-sizing: content-box; padding: 3px; border-radius: var(--radius-circle); background: var(--color-surface); color: var(--color-stack-tools-ink, var(--color-primary)); transition: transform 320ms cubic-bezier(.34, 1.5, .64, 1); }
+  .ms-page .mf .mf-starter-next > :is(button, .mk-button):hover svg { transform: rotate(90deg) scale(1.08); }
+  .ms-page .mf .mf-starter-next > :is(button, .mk-button):active { transform: scale(.97); }
+  @media (prefers-reduced-motion: reduce) { .ms-page .mf .mf-starter-next > :is(button, .mk-button) svg { transition: none; } }
+}
