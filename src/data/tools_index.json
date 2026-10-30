@@ -60696,8 +60696,8 @@
       "lastActivityVerifiedOn": null
     },
     "categoryId": "organization",
-    "shortDescription": "Application de bureau (Linux/macOS/Windows) qui bascule l'entrée vidéo d'un moniteur compatible DDC/CI par simple clic, et transfère texte et fichiers entre plusieurs ordinateurs sans configuration réseau.",
-    "shortDescriptionEn": "Desktop application (Linux/macOS/Windows) that switches a DDC/CI-compatible monitor's video input with a single click, and transfers text and files between computers with no network setup.",
+    "shortDescription": "Application de bureau (Linux/macOS/Windows) qui bascule l'entrée vidéo d'un moniteur compatible DDC/CI par simple clic, et transfère texte et fichiers entre plusieurs ordinateurs sans configuration réseau ni pare-feu.",
+    "shortDescriptionEn": "Desktop application (Linux/macOS/Windows) that switches a DDC/CI-compatible monitor's video input with a single click, and transfers text and files between computers with no network or firewall configuration needed.",
     "pricing": {
       "free": "Pas de plan gratuit permanent. Essai d'un mois, carte bancaire requise, résiliable depuis le compte.",
       "paid": "5,95 $/mois, formule unique."

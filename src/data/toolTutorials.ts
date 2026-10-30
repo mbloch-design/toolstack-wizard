@@ -1,6 +1,8 @@
 export interface ToolTutorial {
-  provider: "youtube" | "native" | "wistia";
+  provider: "youtube" | "native" | "wistia" | "iframe";
   videoUrl?: string;
+  /** "iframe" provider only: direct embeddable player URL (not a watch page). */
+  embedUrl?: string;
   posterUrl?: string;
   videoId: string;
   titleFr: string;
@@ -245,6 +247,13 @@ export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
     author: "Linear", duration: "4:01",
     sourceUrl: "https://www.youtube.com/watch?v=9Q5BoiIFBiY",
     publishedOn: "2025-06-09", verifiedOn: "2026-07-28",
+  }],
+  displayswitcher: [{
+    provider: "iframe", videoId: "cO6roAnyTon",
+    embedUrl: "https://videos.nebulasoftware.com/player/cO6roAnyTon?ff=true&controls=1&sec=0",
+    titleFr: "Présentation officielle de DisplaySwitcher", titleEn: "Official DisplaySwitcher overview",
+    author: "Nebula Software", duration: "Nebula Software",
+    sourceUrl: "https://nebulasoftware.com/product/displayswitcher/", verifiedOn: "2026-10-30",
   }],
 };
 
