@@ -72,6 +72,16 @@ describe("couverture des pages /alternatives", () => {
       .toBeLessThanOrEqual(175);
   });
 
+  it("raccorde 1Password au voisinage sécurité déjà classé", () => {
+    const passwordManager = served.find(t => t.slug === "1password");
+    const bitwarden = served.find(t => t.slug === "bitwarden");
+    expect(passwordManager).toBeDefined();
+    expect(bitwarden).toBeDefined();
+    expect(passwordManager!.categoryId).toBe(bitwarden!.categoryId);
+    expect(functionalAffinity(passwordManager as any, bitwarden as any)).toBeGreaterThan(0);
+    expect(neighbourCount(passwordManager!)).toBeGreaterThan(0);
+  });
+
   it("n'accepte pas un voisinage de catégorie sans affinité fonctionnelle", () => {
     // La catégorie seule ne qualifie rien : « creation » compte 226 outils, et
     // un classement par note y proposait FLUX AI et Grammarly en face

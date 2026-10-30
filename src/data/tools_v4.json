@@ -1484,7 +1484,7 @@
     ],
     "functional_needs": [
       "mots-de-passe",
-      "securite"
+      "security"
     ],
     "betterAlternative": null,
     "migrationGuide": null,

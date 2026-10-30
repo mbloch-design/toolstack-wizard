@@ -332,7 +332,7 @@
     "substitution_cluster_v2": "password-manager",
     "functional_needs": [
       "mots-de-passe",
-      "securite"
+      "security"
     ],
     "verticals": [
       "manager-dsi",
