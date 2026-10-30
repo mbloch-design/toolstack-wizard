@@ -90,18 +90,21 @@
    tokens : modifier un atome le modifie partout où il apparaît. */
 :root {
   /* Texte */
-  --tt-eyebrow-font: 500 .75rem/1.4 var(--tt-ui);   --tt-eyebrow-tracking: .08em;
-  --tt-title-xl-font: 500 clamp(2.75rem, 5.4vw, 4.5rem)/1.04 var(--tt-display); --tt-title-xl-tracking: -.022em;
-  --tt-title-l-font: 500 1.5rem/1.15 var(--tt-display);  --tt-title-l-tracking: -.02em;
-  --tt-title-m-font: 500 1.3125rem/1.2 var(--tt-display); --tt-title-m-tracking: -.017em;
-  --tt-title-section-font: 500 2rem/1.1 var(--tt-display); --tt-title-section-tracking: -.022em;
-  --tt-label-font: 500 .9375rem/1.3 var(--tt-ui);   --tt-label-tracking: -.005em;
+  /* Échelle validée (planche, chapitre 02) : 64 · 42 · 21 · 17 lecture · 16 texte · 14 détail ·
+     12 en capitales seulement. Graisses 400 et 500, un cran plus fin en sombre. */
+  --tt-eyebrow-font: var(--tt-w-strong) .75rem/1.4 var(--tt-ui);   --tt-eyebrow-tracking: .08em;
+  --tt-title-xl-font: var(--tt-w-strong) clamp(2.625rem, 5vw, 4rem)/1.04 var(--tt-display); --tt-title-xl-tracking: -.022em;
+  /* Titre L et titre M partagent le palier 21 de l'échelle. */
+  --tt-title-l-font: var(--tt-w-strong) 1.3125rem/1.2 var(--tt-display);  --tt-title-l-tracking: -.017em;
+  --tt-title-m-font: var(--tt-w-strong) 1.3125rem/1.2 var(--tt-display); --tt-title-m-tracking: -.017em;
+  --tt-title-section-font: var(--tt-w-strong) 2.625rem/1.08 var(--tt-display); --tt-title-section-tracking: -.021em;
+  --tt-label-font: var(--tt-w-strong) 1rem/1.3 var(--tt-ui);   --tt-label-tracking: -.005em;
   --tt-text-font: var(--tt-w-text) 1rem/1.55 var(--tt-read);
   --tt-note-font: var(--tt-w-text) .875rem/1.4 var(--tt-read);
   /* Chiffres */
-  --tt-figure-font: 500 3rem/1 var(--tt-display);   --tt-figure-tracking: -.03em;
-  --tt-amount-font: 500 1.0625rem/1 var(--tt-display); --tt-amount-tracking: -.01em;
-  --tt-unit-font: var(--tt-w-text) .75rem/1 var(--tt-read);
+  --tt-figure-font: var(--tt-w-strong) 2.625rem/1 var(--tt-display);   --tt-figure-tracking: -.021em;
+  --tt-amount-font: var(--tt-w-strong) 1.0625rem/1 var(--tt-display); --tt-amount-tracking: -.01em;
+  --tt-unit-font: var(--tt-w-text) .875rem/1 var(--tt-read);
   --tt-gain-ink: color-mix(in oklch, var(--tt-live) 72%, var(--tt-ink));
   /* Surfaces */
   --tt-tile-pad: 28px;
@@ -111,7 +114,7 @@
   --tt-row-ring-on: 0 0 0 2px var(--tt-brand);
   --tt-row-gone: .45;
   /* Repères */
-  --tt-tag-font: 500 .75rem/1 var(--tt-ui);
+  --tt-tag-font: var(--tt-w-strong) .875rem/1 var(--tt-ui);
   --tt-logo-plate: #FFFFFF;
   --tt-logo-radius: 23%;
   --tt-logo-shadow: 0 0 0 .5px rgb(0 0 0 / .08), 0 4px 10px -6px rgb(0 0 0 / .3);
@@ -208,7 +211,7 @@
 .tt-cutgauge-mark { position: relative; z-index: 1; width: 0; align-self: stretch; }
 .tt-cutgauge-mark::after { content: ""; position: absolute; left: -.5px; bottom: -4px; width: 1px; height: 11px; background: var(--tt-brand); }
 .tt-cutgauge-mark svg { position: absolute; left: -8px; top: -2px; width: 16px; height: 16px; fill: var(--tt-brand); transform: rotate(90deg); }
-.tt-cutgauge-legend { display: flex; justify-content: space-between; gap: 12px; font: var(--tt-w-text) .875rem/1.3 var(--tt-read); color: var(--tt-ink); }
+.tt-cutgauge-legend { display: flex; justify-content: space-between; gap: 12px; font: var(--tt-note-font); color: var(--tt-ink); }
 @keyframes tt-grow { from { transform: scaleX(0); } }
 
 /* ── Atomes : les classes ──────────────────────────────────────────────── */
@@ -220,11 +223,11 @@
 .tt-label { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); color: var(--tt-ink); }
 .tt-text { margin: 0; font: var(--tt-text-font); color: var(--tt-ink); text-wrap: pretty; }
 .tt-note { margin: 0; font: var(--tt-note-font); color: var(--tt-ink); }
-.tt-figure { font: var(--tt-figure-font); letter-spacing: var(--tt-figure-tracking); font-variant-numeric: tabular-nums; color: var(--tt-ink); }
-.tt-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--tt-ink); }
+.tt-figure { font: var(--tt-figure-font); letter-spacing: var(--tt-figure-tracking); color: var(--tt-ink); }
+.tt-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); white-space: nowrap; color: var(--tt-ink); }
 :is(.tt-figure, .tt-amount) small { margin-left: 3px; font: var(--tt-unit-font); letter-spacing: 0; }
 :is(.tt-figure, .tt-amount)[data-gain] { color: var(--tt-gain-ink); }
-.tt-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 8px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); color: var(--tt-ink); white-space: nowrap; }
+.tt-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); color: var(--tt-ink); white-space: nowrap; }
 .tt-tag--overlap { background: color-mix(in oklch, var(--tt-overlap) 14%, transparent); color: color-mix(in oklch, var(--tt-overlap) 78%, var(--tt-ink)); }
 .tt-tag--live { background: color-mix(in oklch, var(--tt-live) 14%, transparent); color: var(--tt-gain-ink); }
 /* Le fil d'Ariane : des liens en note, un séparateur en filigrane, la page courante appuyée. */
@@ -243,7 +246,7 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-logo-tile { display: grid; place-items: center; flex: none; border-radius: var(--tt-logo-radius); background: var(--tt-logo-plate); box-shadow: var(--tt-logo-shadow); }
 .tt-check { display: grid; place-items: center; width: 20px; height: 20px; border-radius: var(--tt-r-round); background: var(--tt-brand); color: #fff; box-shadow: 0 0 0 2px var(--tt-bg); animation: tt-bump 420ms cubic-bezier(.34, 1.6, .64, 1); }
 .tt-check svg { width: 12px; height: 12px; }
-.tt-steps { display: inline-flex; align-items: center; gap: 8px; font: var(--tt-eyebrow-font); letter-spacing: .04em; font-variant-numeric: tabular-nums; color: var(--tt-ink); }
+.tt-steps { display: inline-flex; align-items: center; gap: 8px; font: var(--tt-note-font); font-variant-numeric: tabular-nums; color: var(--tt-ink); }
 .tt-steps-track { display: inline-flex; gap: 3px; }
 .tt-steps-track i { width: 14px; height: 2px; border-radius: var(--tt-r-pill); background: var(--tt-tile-2); }
 .tt-steps-track i[data-on] { background: var(--tt-ink); }
@@ -283,7 +286,7 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-scale button[data-on] .tt-scale-bar { background: var(--tt-ink); }
 .tt-scale button[aria-checked="true"] .tt-scale-bar { background: var(--tt-brand); transform: scaleY(1.06); }
 .tt-scale button[aria-checked="true"] .tt-scale-label { font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); }
-@container (max-width: 380px) { .tt-scale-label { font-size: .75rem; } .tt-scale button[aria-checked="true"] .tt-scale-label { font-size: .75rem; } }
+
 .tt-scale button:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 4px; border-radius: var(--tt-r-chip); }
 
 /* ── Organisme : l'en-tête de page ──────────────────────────────────────── */
@@ -392,8 +395,8 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 .tt-choice-text { display: grid; gap: 2px; min-width: 0; }
 .tt-choice-name { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); }
 .tt-choice-note { font: var(--tt-note-font); }
-.tt-choice-tag { display: inline-flex; align-items: center; min-height: 22px; padding: 0 8px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); }
-.tt-choice-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tt-choice-tag { display: inline-flex; align-items: center; min-height: 26px; padding: 0 10px; border-radius: var(--tt-r-pill); background: var(--tt-tile); font: var(--tt-tag-font); }
+.tt-choice-amount { font: var(--tt-amount-font); letter-spacing: var(--tt-amount-tracking); white-space: nowrap; }
 .tt-choice-amount small { margin-left: 2px; font: var(--tt-unit-font); }
 .tt-choice-amount[data-gain] { color: var(--tt-gain-ink); }
 /* Étroit : le montant passe sous le texte, la rangée garde sa lecture. */
