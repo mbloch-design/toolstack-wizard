@@ -286,6 +286,55 @@ button.tt-row { cursor: pointer; font: inherit; text-align: left; }
 @container (max-width: 380px) { .tt-scale-label { font-size: .75rem; } .tt-scale button[aria-checked="true"] .tt-scale-label { font-size: .75rem; } }
 .tt-scale button:focus-visible { outline: 2px solid var(--tt-focus); outline-offset: 4px; border-radius: var(--tt-r-chip); }
 
+/* ── Organisme : l'en-tête de page ──────────────────────────────────────── */
+/* Surtitre, grand titre, une note de contexte ; l'action rare à droite. */
+.tt-pagehead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px; }
+.tt-pagehead > div { display: grid; gap: 10px; }
+
+/* ── Organisme : l'en-tête de section ───────────────────────────────────── */
+.tt-sectionhead { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; }
+.tt-sectionhead > div { display: grid; gap: 6px; max-width: 60ch; }
+
+/* ── Organisme : la répartition ─────────────────────────────────────────── */
+/* Le chiffre, une barre empilée fine à la couleur des domaines, la légende. */
+.tt-split { display: grid; gap: 16px; padding: var(--tt-tile-pad); border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); }
+.tt-split-bar { display: flex; gap: 3px; height: 10px; }
+.tt-split-bar i { flex: var(--f, 1); min-width: 6px; border-radius: var(--tt-r-pill); background: var(--c, var(--tt-ink)); transform-origin: left; animation: tt-grow 900ms var(--tt-ease) both; }
+.tt-split-legend { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px 24px; margin: 0; padding: 0; list-style: none; }
+.tt-split-legend li { display: grid; grid-template-columns: 10px minmax(0, 1fr) auto; align-items: center; gap: 10px; min-height: 28px; }
+.tt-split-legend li > i { width: 10px; height: 10px; border-radius: var(--tt-r-round); background: var(--c, var(--tt-ink)); }
+
+/* ── Molécule : la carte d'outil ─────────────────────────────────────────── */
+/* Une tuile : le logo et ce qu'il coûte en haut, le nom, puis son état. */
+.tt-toolcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.tt-toolcard { position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr); grid-template-areas: "logo amount" "name name" "state state"; align-items: start; gap: 12px 10px; width: 100%; padding: 16px; border: 0; border-radius: var(--tt-r-tile); background: var(--tt-tile); color: var(--tt-ink); text-align: left; font: inherit; cursor: pointer; transition: background-color var(--tt-dur-state) ease, transform var(--tt-dur-press) ease; }
+.tt-toolcard:hover { background: var(--tt-tile-2); }
+.tt-toolcard:active { transform: scale(.985); }
+.tt-toolcard > .tt-logo-tile { grid-area: logo; width: 40px; height: 40px; }
+.tt-toolcard > .tt-amount { grid-area: amount; justify-self: end; }
+.tt-toolcard > .tt-label { grid-area: name; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tt-toolcard > .tt-tag { grid-area: state; justify-self: start; }
+.tt-groupname { display: flex; align-items: baseline; gap: 10px; }
+.tt-groupname > i { align-self: center; width: 8px; height: 8px; border-radius: var(--tt-r-round); background: var(--c, var(--tt-ink)); }
+
+/* ── Molécule : la carte média ──────────────────────────────────────────── */
+/* La capture porte la présence ; le texte reste en dessous, calme. */
+.tt-mediacards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px 16px; }
+.tt-mediacard { display: grid; gap: 10px; color: var(--tt-ink); text-decoration: none; }
+.tt-mediacard-shot { aspect-ratio: 16 / 10; overflow: hidden; border-radius: var(--tt-r-card); background: var(--tt-tile); }
+.tt-mediacard-shot img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--tt-ease); }
+.tt-mediacard:hover .tt-mediacard-shot img { transform: scale(1.03); }
+.tt-mediacard-id { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.tt-mediacard-id > .tt-logo-tile { width: 24px; height: 24px; }
+
+/* ── Organisme : le pied de page ────────────────────────────────────────── */
+.tt-foot { display: grid; grid-template-columns: minmax(0, 1.2fr) repeat(4, minmax(0, 1fr)); gap: 32px 24px; padding-block: 64px 32px; }
+.tt-foot-col { display: grid; align-content: start; gap: 12px; }
+.tt-foot-col a { color: var(--tt-ink); text-decoration: none; font: var(--tt-label-font); letter-spacing: var(--tt-label-tracking); }
+.tt-foot-col a:hover { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.tt-foot-legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 24px; border-top: 1px solid var(--tt-line); }
+@media (max-width: 900px) { .tt-foot { grid-template-columns: repeat(2, minmax(0, 1fr)); } .tt-foot > :first-child { grid-column: 1 / -1; } }
+
 /* ── Organisme : vos usages ────────────────────────────────────────────── */
 /* Pensé pour le geste : répondre fait avancer, tout se joue sur une bande.
    En-tête : retour, étapes, « Plus tard ». Puis l'outil, puis l'échelle avec
