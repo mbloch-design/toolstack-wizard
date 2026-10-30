@@ -1,3 +1,9 @@
+## 2026-10-30 · Ma stack sur le système, du fil d'Ariane au pied de page
+
+- Fil d'Ariane (tout le site) en molécule `.tt-crumbs` ; atome titre de section ; étiquettes `.tt-tag--overlap` / `--live`. Un pont d'atomes branche l'en-tête, les titres de section, les groupes, les cartes d'outils, « À découvrir », le budget et le pied de page sur les tokens d'atome.
+- « Vos usages » devient l'organisme `.tt-usage` de la planche : répondre à la souris fait avancer (700 ms pour lire la phrase), « Passer » / « Suivant » / « Terminer » au bout de l'échelle, retour et pause dans l'en-tête, échelle en barres fines. Au clavier, les flèches choisissent sans avancer. Test ajouté.
+- Vérifié : 1 045 tests, typecheck, gate, e2e accessibilité et hero Ma stack. Échecs connus inchangés : `pricing-audit-regressions` ×3 (déjà en to-do), fluidité instable sur serveur de dev.
+
 ## 2026-10-30 · Design system : la couche d'atomes
 
 - Le système partagé est rangé en couches : tokens, atomes (token composite + classe), molécules, organismes. La carte de décision, la carte de verdict et les surcharges du site lisent les tokens d'atome : modifier un atome se répercute partout.

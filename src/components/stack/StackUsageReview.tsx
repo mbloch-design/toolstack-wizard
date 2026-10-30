@@ -81,7 +81,19 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
   };
   const advance = () => hasNext ? openTool(next, review) : scene("summary");
   const preview = (level: number) => setHover(current ? { id: current.tool.id, level } : null);
-  const choose = (value: number) => { current?.setUsage(value + 1); preview(value); };
+  // Répondre fait avancer (Michael, 30/10/2026) : un clic de souris ou de
+  // doigt enregistre, laisse lire la phrase, puis passe à l'outil suivant.
+  // Au clavier, les flèches choisissent sans avancer ; le bouton du bout de
+  // la bande fait avancer.
+  const advanceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (advanceTimer.current) clearTimeout(advanceTimer.current); }, []);
+  const choose = (value: number, fromPointer = false) => {
+    current?.setUsage(value + 1); preview(value);
+    if (!fromPointer) return;
+    if (advanceTimer.current) clearTimeout(advanceTimer.current);
+    const reduce = typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+    advanceTimer.current = setTimeout(() => { advanceTimer.current = null; advance(); }, reduce ? 0 : 700);
+  };
   const arrow = (event: KeyboardEvent<HTMLButtonElement>, from: number) => {
     let to: number;
     if (event.key === "Home") to = 0;
@@ -92,22 +104,32 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
     event.preventDefault(); choose(to); radios.current[to]?.focus({ preventScroll: true });
   };
 
-  return <article className="mf-card mf-fit mu-card" data-open="" data-view={question ? "question" : view === "history" ? "history" : "summary"} aria-label={t("Vos usages et vos choix", "Your use and choices")}>
-    <header className="mu-header">
-      <h2 ref={heading} tabIndex={-1}><ListChecks size={18} aria-hidden />{t(view === "history" || rows.length === 0 ? "Vos choix" : "Vos usages", view === "history" || rows.length === 0 ? "Your choices" : "Your use")}</h2>
-      {rows.length > 0 && <span className="mu-count" aria-label={question ? t(`Outil ${index + 1} sur ${rows.length}`, `Tool ${index + 1} of ${rows.length}`) : t(`${answered} usages renseignés sur ${rows.length}`, `Use recorded for ${answered} of ${rows.length}`)}>{question && <span>{t("Outil", "Tool")} </span>}{question ? index + 1 : answered} / {rows.length}</span>}
+  return <article className="mf-card mf-fit mu-card tt-usage" data-open="" data-view={question ? "question" : view === "history" ? "history" : "summary"} aria-label={t("Vos usages et vos choix", "Your use and choices")}>
+    <header className="tt-usage-head">
+      <span className="tt-usage-where">
+        <h2 ref={heading} tabIndex={-1} className="tt-eyebrow">{t(view === "history" || rows.length === 0 ? "Vos choix" : "Vos usages", view === "history" || rows.length === 0 ? "Your choices" : "Your use")}</h2>
+      {rows.length > 0 && <span className="mu-count tt-steps" aria-label={question ? t(`Outil ${index + 1} sur ${rows.length}`, `Tool ${index + 1} of ${rows.length}`) : t(`${answered} usages renseignés sur ${rows.length}`, `Use recorded for ${answered} of ${rows.length}`)}>{question && rows.length <= 12 && <span className="tt-steps-track" aria-hidden>{rows.map((row, i) => <i key={row.tool.id} data-on={i <= index || undefined} />)}</span>}{question ? t(`${index + 1} sur ${rows.length}`, `${index + 1} of ${rows.length}`) : t(`${answered} sur ${rows.length}`, `${answered} of ${rows.length}`)}</span>}
+      </span>
+      {question && <span className="tt-usage-acts">
+        <button type="button" className="tt-usage-back" disabled={index <= 0} aria-label={t("Outil précédent", "Previous tool")} onClick={() => openTool(index - 1, review)}><ChevronLeft size={16} aria-hidden /></button>
+        <button type="button" className="tt-usage-later" onClick={() => scene("summary")}>{review ? t("Résumé", "Summary") : t("Faire une pause", "Take a break")}</button>
+      </span>}
     </header>
 
     {question ? <div key={current.tool.id} className="mu-scene mu-question" onFocusCapture={() => { questionHadFocus.current = true; }} onBlurCapture={event => { if (event.target.isConnected && !event.currentTarget.contains(event.relatedTarget as Node)) questionHadFocus.current = false; }} role="group" aria-label={t(`Usage de ${current.tool.name}`, `Use of ${current.tool.name}`)}>
-      <div className="mu-tool"><ToolLogo tool={current.tool} size={40} /><div className="mu-tool-label"><h3 ref={toolHeading} tabIndex={-1} title={current.tool.name}>{current.tool.name}</h3><p>{format(current.cost)}{t("/mois", "/mo")} · {t("vous l’utilisez…", "you use it…")}</p></div></div>
-      <div className="mu-gauge" role="radiogroup" aria-label={t("Choisir un usage", "Choose use")} aria-describedby={captionId} data-preview={hover && hover.id === current.tool.id ? hover.level + 1 : undefined} onPointerLeave={() => setHover(null)}>
-        {LEVELS.map((item, i) => <button key={i} ref={node => { radios.current[i] = node; }} type="button" role="radio" data-filled={i < selected || undefined} data-lit={(shown !== null && i <= shown) || undefined} aria-label={`${t(item.short[0], item.short[1])} — ${t(item.label[0], item.label[1])}`} aria-checked={selected === i + 1}
+      <div className="tt-usage-tool"><ToolLogo tool={current.tool} size={48} className="tt-logo-tile" /><div className="tt-usage-tool-text"><h3 ref={toolHeading} tabIndex={-1} title={current.tool.name} className="tt-title-m">{current.tool.name}</h3><p className="tt-note">{format(current.cost)}{t("/mois", "/mo")} · {t("vous l’utilisez…", "you use it…")}</p></div></div>
+      <div className="tt-usage-band">
+      <div className="tt-scale" role="radiogroup" aria-label={t("Choisir un usage", "Choose use")} aria-describedby={captionId} data-preview={hover && hover.id === current.tool.id ? hover.level + 1 : undefined} onPointerLeave={() => setHover(null)}>
+        {LEVELS.map((item, i) => <button key={i} ref={node => { radios.current[i] = node; }} type="button" role="radio" data-filled={i < selected || undefined} data-on={i < selected || undefined} data-lit={(shown !== null && i <= shown) || undefined} style={{ ["--h" as string]: [14, 32, 52, 74, 100][i], ["--i" as string]: i }} aria-label={`${t(item.short[0], item.short[1])} — ${t(item.label[0], item.label[1])}`} aria-checked={selected === i + 1}
           tabIndex={i === (selected > 0 ? selected - 1 : 0) ? 0 : -1}
-          onPointerEnter={() => preview(i)} onFocus={() => preview(i)} onBlur={() => setHover(null)} onKeyDown={event => arrow(event, i)} onClick={() => choose(i)}>
-          <span className="mu-meter-track" aria-hidden><span className="mu-meter-bar" /></span><small aria-hidden>{t(item.short[0], item.short[1])}</small>
+          onPointerEnter={() => preview(i)} onFocus={() => preview(i)} onBlur={() => setHover(null)} onKeyDown={event => arrow(event, i)} onClick={event => choose(i, event.detail > 0)}>
+          <span className="tt-scale-bar" aria-hidden /><span className="tt-scale-label" aria-hidden>{t(item.short[0], item.short[1])}</span>
         </button>)}
       </div>
-      <div className="mu-feedback"><span className="mu-reaction" aria-hidden key={`${current.tool.id}:${shown}`}>{level ? <level.icon size={18} /> : <Activity size={18} />}</span><p className="mu-caption" id={captionId}>{level ? <>{hover && hover.id === current.tool.id && hover.level !== selected - 1 && <span className="mu-preview">{t("Et là… ", "Preview: ")}</span>}<span>{t(level.joke[0], level.joke[1])}</span></> : <span>{t("Du figurant au copilote : à vous de caster.", "From cameo to co-pilot. You’re casting.")}</span>}</p></div>
+      {/* Le bout de la bande : passer, ou avancer au clavier. La souris ne quitte pas la rangée. */}
+      <button type="button" className="tt-usage-skip" aria-label={!selected ? t("Passer cet outil", "Skip this tool") : undefined} onClick={advance}><i aria-hidden="true" /><span>{!selected ? t("Passer", "Skip") : hasNext ? t("Suivant", "Next") : t("Terminer", "Finish")}</span></button>
+      </div>
+      <div className="tt-usage-feedback"><p className="tt-note" id={captionId}>{level ? <>{hover && hover.id === current.tool.id && hover.level !== selected - 1 && <span className="mu-preview">{t("Et là… ", "Preview: ")}</span>}<span>{t(level.joke[0], level.joke[1])}</span></> : <span>{t("Du figurant au copilote : à vous de caster.", "From cameo to co-pilot. You’re casting.")}</span>}</p></div>
     </div> : view === "history" ? <div className="mu-scene mu-history" role="region" aria-label={t("Historique des choix", "Choice history")} tabIndex={0}>
       {history || <p className="mu-copy">{t("Le carnet de choix attend sa première ligne.", "Your choice notebook is waiting for its first entry.")}</p>}
     </div> : <div className="mu-scene mu-summary">
@@ -122,14 +144,7 @@ export default function StackUsageReview({ rows, lang, format, complete, freeOnl
     </div>}
 
     <footer className="mu-footer">
-      {question ? <>
-        <button type="button" className="mu-quiet" onClick={() => scene("summary")}>{review ? t("Résumé", "Summary") : t("Faire une pause", "Take a break")}</button>
-        {rows.length > 1 && rows.length <= 12 && <span className="mu-dots" aria-hidden>{rows.map((row, i) => <i key={row.tool.id} data-done={!!row.usage || undefined} data-current={i === index || undefined} />)}</span>}
-        <div className="mu-navigation">
-          <button type="button" className="mu-nav" disabled={index <= 0} aria-label={t("Outil précédent", "Previous tool")} onClick={() => openTool(index - 1, review)}><ChevronLeft size={18} aria-hidden /></button>
-          <button type="button" className={selected ? "mu-next" : "mu-next mu-skip"} aria-label={!selected ? t("Passer cet outil", "Skip this tool") : undefined} onClick={advance}>{!selected ? t("Passer", "Skip") : hasNext ? t("Suivant", "Next") : t("Terminer", "Finish")}<ChevronRight size={16} aria-hidden /></button>
-        </div>
-      </> : view === "history" ? <>
+      {question ? null : view === "history" ? <>
         <button type="button" className="mu-quiet" onClick={onReviewTools}>{t("Voir mes outils", "View my tools")}</button>
         <button type="button" className="mu-next" onClick={() => scene("summary")}><ChevronLeft size={16} aria-hidden />{t("Résumé", "Summary")}</button>
       </> : <>
