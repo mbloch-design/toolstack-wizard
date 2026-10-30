@@ -13,6 +13,109 @@ const plan = {
   observedOn: "2026-10-30",
   priceStatus: "paid",
 };
+it("rejects identity-less plan replacement under a display-name-only grant", () => {
+  const old = { ...base, pricing_v5: { plans: [plan] } };
+  const actor = contract.catalogCapabilities({
+    isAdmin: true,
+    editablePaths: ["pricing_v5.plans.*.displayName"],
+  });
+  expect(() => contract.validateCatalogDraft(old, {
+    ...old,
+    pricing_v5: { plans: [{ displayName: "Replacement" }] },
+  }, actor)).toThrow();
+});
+it("rejects empty ungranted container creation under a name-only grant", () => {
+  const actor = contract.catalogCapabilities({
+    isAdmin: true,
+    editablePaths: ["name"],
+  });
+  for (const edit of [{ verdict: {} }, { pros: [] }])
+    expect(() => contract.validateCatalogDraft(base, { ...base, ...edit }, actor)).toThrow();
+});
+it("rejects renaming an otherwise retained offer and keeps genuine add remove and reorder", () => {
+  const other = {
+    ...plan,
+    planKey: "other",
+    displayName: "Other",
+    isComparePlan: false,
+  };
+  const old = { ...base, pricing_v5: { plans: [plan, other] } };
+  expect(() => contract.validateCatalogDraft(old, {
+    ...old,
+    pricing_v5: { plans: [{ ...plan, planKey: "renamed" }, other] },
+  })).toThrow();
+  expect(contract.isEditableCatalogPath([
+    "pricing_v5", "plans", 0, "planKey",
+  ])).toBe(false);
+  const added = {
+    ...plan,
+    planKey: "new",
+    displayName: "New",
+    isComparePlan: false,
+  };
+  for (const plans of [[other, plan], [other], [], [plan, other, added]])
+    expect(contract.validateCatalogPublication(old, {
+      ...old, pricing_v5: { plans },
+    })).toMatchObject({ pricing_v5: { plans } });
+  expect(contract.validateCatalogDraft(old, {
+    ...old, pricing_v5: {},
+  })).toMatchObject({ pricing_v5: {} });
+});
+it("requires explicit intent for new and price-edited legacy offers while preserving untouched neighbors", () => {
+  const { priceStatus: _status, ...legacy } = plan;
+  expect(() => contract.validateCatalogPublication(base, {
+    ...base, pricing_v5: { plans: [legacy] },
+  })).toThrow();
+  const old = { ...base, pricing_v5: { plans: [legacy] } };
+  expect(() => contract.validateCatalogPublication(old, {
+    ...old,
+    pricing_v5: { plans: [{ ...legacy, nativeAmount: 20 }] },
+  })).toThrow();
+  expect(contract.validateCatalogPublication(old, {
+    ...old,
+    pricing_v5: { plans: [{ ...legacy, displayName: "Editorial" }] },
+  })).toMatchObject({ pricing_v5: { plans: [{ displayName: "Editorial" }] } });
+  expect(contract.validateCatalogPublication(old, {
+    ...old,
+    pricing_v5: {
+      plans: [legacy, { ...plan, planKey: "new", isComparePlan: false }],
+    },
+  })).toMatchObject({ pricing_v5: { plans: [legacy, {}] } });
+});
+it("rejects pooled locale comparison conflicts but deduplicates proven shared copies", () => {
+  const conflict = {
+    ...base,
+    pricing_v5: { plans: [plan] },
+    pricing_v5En: { plans: [{ ...plan, planKey: "second", nativeAmount: 25 }] },
+  };
+  expect(() => contract.validateCatalogPublication(base, conflict)).toThrow();
+  const localized = {
+    ...base,
+    pricing_v5: { plans: [plan] },
+    pricing_v5En: { plans: [{ ...plan, displayName: "English" }] },
+  };
+  expect(contract.validateCatalogPublication(base, localized)).toEqual(localized);
+  const old = { ...conflict };
+  expect(contract.validateCatalogPublication(old, {
+    ...old,
+    pricing_v5: { plans: [{ ...plan, summary: "Editorial" }] },
+  })).toMatchObject({ pricing_v5: { plans: [{ summary: "Editorial" }] } });
+  expect(() => contract.validateCatalogPublication(old, {
+    ...old,
+    pricing_v5En: { plans: [{ ...plan, planKey: "second", nativeAmount: 30 }] },
+  })).toThrow();
+});
+it("blocks a newly independent reference when an absent price fact becomes null", () => {
+  const old = {
+    ...base,
+    pricing_v5: { plans: [plan] },
+    pricing_v5En: { plans: [{ ...plan }] },
+  };
+  expect(() => contract.validateCatalogPublication(old, {
+    ...old,
+    pricing_v5En: { plans: [{ ...plan, observedMarket: null }] },
+  })).toThrow();
+});
 it("retains incomplete safe drafts and exposes precise publication blockers", () => {
   const value = {
     ...base,

@@ -110,6 +110,10 @@ function removalIssues(
   if (old == null) return [];
   if (!isCatalogPathAllowed(capabilities, path))
     return [issue(path, "DELETE_FORBIDDEN")];
+  // Removing offers is an authorized business operation, including their keys
+  // and retained historic fields. It is distinct from editing a retained row.
+  if (schema.kind === "array" && path[path.length - 1] === "plans")
+    return [];
   if (schema.kind === "union") {
     const matching = schema.variants?.find((v) =>
       record(old)
@@ -171,10 +175,19 @@ function shape(
   }
   if (schema.kind === "object") {
     if (!record(v)) return [issue(path, "OBJECT_REQUIRED")];
+    if (!record(b) && !isCatalogPathAllowed(capabilities, path))
+      return [issue(path, "PATH_FORBIDDEN")];
     const old = record(b) ? b : {};
     return [...new Set([...Object.keys(v), ...Object.keys(old)])].flatMap(
       (k) => {
         if (equal(v[k], old[k])) return [];
+        // A key may only be supplied while creating an offer with the array grant.
+        if (k === "planKey" && path[path.length - 2] === "plans")
+          return !record(b) &&
+            isCatalogPathAllowed(capabilities, path.slice(0, -1)) &&
+            typeof v[k] === "string"
+            ? []
+            : [issue([...path, k], "PLAN_IDENTITY_PROTECTED")];
         // The identity pass below verifies deterministic initialization against base evidence.
         if (
           k === "priceObservationId" &&
@@ -197,18 +210,43 @@ function shape(
     if (!Array.isArray(v) || v.length > 100)
       return [issue(path, "ARRAY_REQUIRED")];
     const old = Array.isArray(b) ? b : [];
+    if (!Array.isArray(b) && !isCatalogPathAllowed(capabilities, path))
+      return [issue(path, "PATH_FORBIDDEN")];
     // A narrow child grant cannot authorize reordering, insertion or deletion of rows.
     if (
       (v.length !== old.length ||
         v.some(
           (x, i) =>
             record(x) &&
-            x.planKey !== undefined &&
+            (path[path.length - 1] === "plans" || x.planKey !== undefined) &&
             x.planKey !== (record(old[i]) ? old[i].planKey : undefined),
         )) &&
       !isCatalogPathAllowed(capabilities, path)
     )
       return [issue(path, "PATH_FORBIDDEN")];
+    if (path[path.length - 1] === "plans") {
+      const removed = old.filter(
+        (p) => record(p) && !v.some((x) => record(x) && x.planKey === p.planKey),
+      );
+      // A key-only replacement is a demonstrable rename. A snapshot cannot
+      // distinguish every delete+create from a rename plus arbitrary edits.
+      const renamedIndex = v.findIndex(
+        (x) =>
+          record(x) &&
+          !old.some((p) => record(p) && p.planKey === x.planKey) &&
+          removed.some(
+            (p) =>
+              record(p) &&
+              [...new Set([...Object.keys(p), ...Object.keys(x)])]
+                .filter((key) => key !== "planKey")
+                .every((key) => equal(p[key], x[key])),
+          ),
+      );
+      if (renamedIndex >= 0)
+        return [
+          issue([...path, renamedIndex, "planKey"], "PLAN_IDENTITY_PROTECTED"),
+        ];
+    }
     return v.flatMap((x, i) => {
       const previous =
         path[path.length - 1] === "plans" && record(x)
@@ -455,6 +493,8 @@ function publishIssues(
           (k) => !equal(p[k], old[k]),
         );
       if (!factsChanged) continue;
+      if (!nonempty(p.priceStatus))
+        add(`${row.path}.priceStatus`, "PRICE_STATUS_REQUIRED");
       if (!nonempty(p.detailsSourceUrl))
         add(`${row.path}.detailsSourceUrl`, "SOURCE_REQUIRED");
       if (!validDate(p.observedOn))
@@ -501,6 +541,34 @@ function publishIssues(
       )
         add(`${row.path}.pricingUnit`, "USAGE_UNIT_REQUIRED");
     }
+  }
+  // The public selector pools both localized records. Only proven shared facts
+  // are one observation; independent references in the same currency conflict.
+  const references = (value: CatalogTool) =>
+    catalogPlanRows(initializeCatalogPriceObservations(value)).filter(
+      (row) => row.plan.isComparePlan,
+    );
+  const pooled = references(tool),
+    previousReferences = references(base);
+  for (const currency of new Set(pooled.map((row) => row.plan.nativeCurrency))) {
+    const own = pooled.filter((row) => row.plan.nativeCurrency === currency);
+    const observations = new Set(
+      own.map((row) => row.plan.priceObservationId ?? row.path),
+    );
+    if (observations.size < 2) continue;
+    const signature = (entries: typeof own) => entries.map(({ plan }) =>
+      JSON.stringify([
+        plan.planKey,
+        ...PRICE_FACT_FIELDS.map((key) => [
+          key, Object.prototype.hasOwnProperty.call(plan, key), plan[key],
+        ]),
+      ]),
+    ).sort();
+    const previous = previousReferences.filter(
+      (row) => row.plan.nativeCurrency === currency,
+    );
+    if (!equal(signature(own), signature(previous)))
+      add(`${own[1].path}.isComparePlan`, "DUPLICATE_CURRENCY_REFERENCE");
   }
   for (const root of ["pricing_v5", "pricing_v5En"]) {
     const p = tool[root],

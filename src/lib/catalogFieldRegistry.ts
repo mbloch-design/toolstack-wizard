@@ -443,8 +443,8 @@ function register(path: string, schema: CatalogField) {
       path.endsWith(".priceObservationId") || path.endsWith(".planKey")
         ? "identity"
         : "editorial",
-    editable: !path.endsWith(".priceObservationId"),
-    deletion: path.endsWith(".priceObservationId")
+    editable: !path.endsWith(".priceObservationId") && !path.endsWith(".planKey"),
+    deletion: path.endsWith(".priceObservationId") || path.endsWith(".planKey")
       ? "protected"
       : schema.optional
         ? "remove"
